@@ -1,0 +1,65 @@
+name: segment-docs
+kind: service
+
+
+container:
+  image: segment-docs
+  repository: 528451384384.dkr.ecr.us-west-2.amazonaws.com
+  # cmd:
+  #   - /bin/segment-docs
+
+
+resources:
+  cpu_shares: 128
+  mem_mb: 128
+
+
+expose:
+  - name: http
+    port: 3000
+    proto: http
+    health_check_path: /internal/health
+
+
+count:
+  min: 1
+  max: 1
+
+  ## Change policy to "cpu_mem_tracking" to scale on cpu and memory
+  autoscale_policy: "disabled"
+
+
+labels:
+  team: enterprise-core
+  owner: bryan.mikaelian@segment.com
+
+
+# Uncomment to enable autodeploys for your environments
+# autodeploy:
+#   stage:
+#     branch: "staging"
+#   production:
+#     branch: "master"
+
+
+# config:
+#   stage:
+#     ENV_VAR: "value"
+#     SECRET:
+#       provider: "chamber"
+#       key: "segment-docs.secret"
+#   production: {}
+
+
+config-providers:
+  - name: "chamber"
+    type: "chamber"
+  - name: "tfe-stage"
+    type: "terraform"
+    options:
+      environment: "segment/stage"
+  - name: "tfe-prod"
+    type: "terraform"
+    options:
+      environment: "segment/production"
+
