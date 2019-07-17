@@ -1,2 +1,4 @@
 # segment-docs
-Segment Documentation. Powered by Jekyll.
+
+This is a blank template for segment-docs
+
