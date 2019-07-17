@@ -7,21 +7,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Dependencies
-          command: |
-            make deps
-      - run:
-          name: Tests
-          command: |
-            make test
-      - run:
-          name: Build
+          name: Build static site
           command: |
             make build
-      - run:
-          name: Publish Code
-          command: |
-            make publish
 
 workflows:
   version: 2

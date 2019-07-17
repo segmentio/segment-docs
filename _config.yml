@@ -36,3 +36,4 @@ plugins:
 exclude:
   - vendor/bundle/
   - vendor/cache/
+  - Makefile

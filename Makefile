@@ -5,3 +5,7 @@ dev:
 	  --volume="$(PWD):/srv/jekyll" \
 	  jekyll/jekyll \
 	  jekyll serve -H 0.0.0.0
+
+.PHONY: build
+build:
+	echo "todo buildme"
