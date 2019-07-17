@@ -1,15 +1,7 @@
-.PHONY: deps
-deps:
-	@echo "Install Deps"
-
-.PHONY: test
-test:
-	@echo "Perform Tests"
-
-.PHONY: build
-build:
-	@echo "Build code"
-
-.PHONY: publish
-publish:
-	@echo "Build code"
+.PHONY: dev
+dev:
+	docker run -it \
+	  -p 4000:4000 \
+	  --volume="$(PWD):/srv/jekyll" \
+	  jekyll/jekyll \
+	  jekyll serve -H 0.0.0.0
