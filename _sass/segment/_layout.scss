@@ -27,7 +27,7 @@
 }
 
 #doc-toc {
-  padding-left: 47px;
+  padding-left: 44px;
   min-width: $sidenav-width;
 }
 
@@ -91,6 +91,9 @@
   background-color: $secondary-color;
   width: 64px;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .block-grid-item > .content {

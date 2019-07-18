@@ -1,23 +1,31 @@
 - name: Guides
+  icon: icon-guides.svg
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam purus"
 
 - name: Acadamy
+  icon: icon-academy.svg
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam purus"
 
 - name: Connections
+  icon: icon-connections.svg
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam purus"
 
 - name: Protocols
+  icon: icon-protocols.svg
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam purus"
 
 - name: Personas
+  icon: icon-personas.svg
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam purus"
 
 - name: Privacy
+  icon: icon-privacy.svg
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam purus"
 
 - name: App
+  icon: icon-app.svg
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam purus"
 
 - name: Partners
+  icon: icon-partners.svg
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam purus"

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="22px" viewBox="0 0 29 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <g id="docs-design-final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="1.1-docs-home" transform="translate(-808.000000, -343.000000)" stroke="#2B604B" stroke-width="0.93">
+            <g id="Group-6" transform="translate(808.000000, 344.000000)">
+                <path d="M24.4226087,16.5782609 C24.4226087,18.1417391 20.1365217,19.9208696 14.8395652,19.9208696 C9.5426087,19.9208696 5.25652174,18.1417391 5.25652174,16.5782609" id="Path"></path>
+                <path d="M5.25652174,16.5782609 L5.25652174,8.38347826" id="Path"></path>
+                <path d="M24.4226087,8.38347826 L24.4226087,16.5782609" id="Path"></path>
+                <polygon id="Path" points="0.673913043 6.10565217 14.8395652 -3.23296945e-13 29.0052174 6.10565217 14.8395652 12.2113043"></polygon>
+                <path d="M0.673913043,6.10565217 L0.673913043,16.3086957" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

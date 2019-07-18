@@ -8,7 +8,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam pur
 <div class="l-block-grid-collection">
   {% for section in site.data.sections %}
     <a class="block-grid-item" href="#">
-      <div class="logo"></div>
+      <div class="logo">
+        <img src="/assets/icons/home/{{ section.icon }}" />
+      </div>
       <div class="content">
         <h3 class="title">{{ section.name }}</h3>
         <p class="description">{{ section.description }}</p>
