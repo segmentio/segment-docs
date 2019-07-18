@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<article id="doc-content">
+  {%- if page.title -%}
+  <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+</article>
+<div id="doc-toc">
+  <div class="l-doc-toc-wrapper">
+    <h4>On this page</h4>
+    <ul>
+      <li>Documentation</li>
+      <li>Getting Started</li>
+      <li>Questions?</li>
+    </ul>
+  </div>
+</div>

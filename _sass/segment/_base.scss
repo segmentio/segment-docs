@@ -1,0 +1,123 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+  * Basic styling
+  */
+body {
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height}
+    $base-font-family;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  display: flex;
+  min-height: 100%;
+  flex-direction: row;
+}
+
+/**
+  * Set `margin-bottom` to maintain vertical rhythm
+  */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
+%vertical-rhythm {
+  margin-bottom: $spacing-unit / 3;
+}
+
+/**
+  * `main` element
+  */
+main {
+  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+/**
+  * Headings
+  */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $base-font-weight;
+}
+
+/**
+  * Horizontal Rule
+  */
+hr {
+  height: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid $text-color-light;
+  margin-top: $spacing-unit;
+  margin-bottom: $spacing-unit;
+}
+
+/**
+  * links
+  */
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  &:visited {
+    color: darken($brand-color, 15%);
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/**
+  * Wrapper
+  */
+.wrapper {
+  max-width: $content-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+
+  @include media-query($on-laptop) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width: calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
