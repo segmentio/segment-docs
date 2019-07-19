@@ -1,7 +1,7 @@
 - name: Guides
+  slug: guides
   icon: icon-guides.svg
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam purus"
-  path: /guides
 
 - name: Acadamy
   icon: icon-academy.svg

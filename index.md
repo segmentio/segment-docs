@@ -6,8 +6,8 @@ layout: content
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam purus ullamcorper suscipit a et urna. Donec at enim non velit mollis feugiat. Sed arcu purus, condimentum.
 
 <div class="l-block-grid-collection">
-  {% for category in site.data.categories %}
-  <a class="block-grid-item" href="{{ category.path }}">
+{% for category in site.data.categories %}
+  <a class="block-grid-item" href="{{site.baseurl}}{{ category.slug }}">
       <div class="logo">
         <img src="/assets/icons/home/{{ category.icon }}" />
       </div>
@@ -18,6 +18,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam pur
     </a>
   {% endfor %}
 </div>
+
+{:toc}
 
 ---
 
