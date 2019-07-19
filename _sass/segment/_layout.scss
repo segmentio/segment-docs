@@ -31,18 +31,30 @@
   min-width: $sidenav-width;
 }
 
+.l-breadcrumb-wrapper {
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 32px;
+  margin-left: -5px;
+  color: $text-color-breadcrumb;
+}
+
+.l-breadcrumb-wrapper a {
+  color: $text-color-breadcrumb;
+  padding: 0 5px;
+}
+
 .l-docs-wrapper {
   outline: none;
   display: flex;
   padding-left: 47px;
-  padding-top: 97px;
   background: $background-color;
 }
 
 .l-doc-toc-wrapper {
   position: -webkit-sticky;
   position: sticky;
-  top: 47px;
+  top: 81px;
   color: $text-color-grey;
 }
 

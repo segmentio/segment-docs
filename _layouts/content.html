@@ -3,8 +3,10 @@ layout: default
 ---
 
 <article id="doc-content">
+  {% include breadcrumb.html %} 
+
   {%- if page.title -%}
-  <h1 class="page-heading">{{ page.title }}</h1>
+    <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
   {{ site.baseurl }}

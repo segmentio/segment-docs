@@ -6,14 +6,14 @@ layout: content
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam purus ullamcorper suscipit a et urna. Donec at enim non velit mollis feugiat. Sed arcu purus, condimentum.
 
 <div class="l-block-grid-collection">
-  {% for section in site.data.sections %}
-    <a class="block-grid-item" href="#">
+  {% for category in site.data.categories %}
+  <a class="block-grid-item" href="{{ category.path }}">
       <div class="logo">
-        <img src="/assets/icons/home/{{ section.icon }}" />
+        <img src="/assets/icons/home/{{ category.icon }}" />
       </div>
       <div class="content">
-        <h3 class="title">{{ section.name }}</h3>
-        <p class="description">{{ section.description }}</p>
+        <h3 class="title">{{ category.name }}</h3>
+        <p class="description">{{ category.description }}</p>
       </div>
     </a>
   {% endfor %}
