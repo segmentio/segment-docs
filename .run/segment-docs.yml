@@ -16,9 +16,9 @@ resources:
 
 expose:
   - name: http
-    port: 3000
+    port: 80
     proto: http
-    health_check_path: /internal/health
+    health_check_path: /
 
 
 count:
