@@ -1,8 +1,5 @@
-FROM jekyll/jekyll
+FROM nginx:1.12-alpine
+COPY _site /usr/share/nginx/html
+EXPOSE 80
 
-EXPOSE 4000
-
-COPY . .
-RUN jekyll build
-
-ENTRYPOINT ["jekyll", "serve"]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
