@@ -61,10 +61,3 @@ config-providers:
     type: "terraform"
     options:
       environment: "segment/production"
-
-
-external:
-  stage:
-    fqdn: "site-docs-v2.segment.build"
-  production:
-    fqdn: "site-docs-v2.segment.com"
