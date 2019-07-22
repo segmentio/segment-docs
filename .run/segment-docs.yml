@@ -25,7 +25,6 @@ count:
   min: 1
   max: 1
 
-  ## Change policy to "cpu_mem_tracking" to scale on cpu and memory
   autoscale_policy: "disabled"
 
 
@@ -63,3 +62,9 @@ config-providers:
     options:
       environment: "segment/production"
 
+
+external:
+  stage:
+    fqdn: "site-docs-v2.segment.build"
+  production:
+    fqdn: "site-docs-v2.segment.com"
