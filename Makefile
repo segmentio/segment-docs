@@ -1,7 +1,7 @@
-.PHONY: start
+.PHONY: run
 run:
 	make build && \
-	make release && \
+	docker build . -t segment-docs:latest && \
 	echo "Starting segment-docs at http://localhost:4000" && \
 	docker run -p 4000:80 segment-docs:latest
 
@@ -10,11 +10,12 @@ build:
 	docker run -it \
 	  --volume="$(PWD):/srv/jekyll" \
 	  jekyll/jekyll \
-	  jekyll build
+		bundle package && \
+		bundle install && \
+	  bundle exec jekyll build
 
 .PHONY: release
 release:
-	docker build . -t segment-docs:latest
 		
 .PHONY: dev
 dev:
