@@ -6,7 +6,7 @@ sidebar: Overview
 
 ## Overview
 
-Personas is built on Segment’s core platform that allows you to personalize messages across channels, optimize ad spend, and improve targeting. It runs on the first-party data that you are collecting from your Segment Sources, including mobile, web, server, and event cloud sources.  
+Personas is built on Segment’s core platform that allows you to personalize messages across channels, optimize ad spend, and improve targeting. It runs on the first-party data that you are collecting from your Segment Sources, including mobile, web, server, and event cloud sources.
 
 There are three pillars of Personas:
 
