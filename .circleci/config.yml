@@ -16,7 +16,7 @@ jobs:
           environment:
             ECR_REPOSITORY_NAME: segment-docs
           command: |
-            # curl -sLu "$GH_LOGIN:" https://raw.githubusercontent.com/segmentio/scripts/master/circle/trebuchet.sh | bash
+            curl -sLu "$GH_LOGIN:" https://raw.githubusercontent.com/segmentio/scripts/master/circle/trebuchet.sh | bash
 
 workflows:
   version: 2
