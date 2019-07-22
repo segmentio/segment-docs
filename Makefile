@@ -14,9 +14,6 @@ build:
 		bundle install && \
 	  bundle exec jekyll build
 
-.PHONY: release
-release:
-		
 .PHONY: dev
 dev:
 	docker run -it \

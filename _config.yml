@@ -1,6 +1,6 @@
 title: Segment
 description: ""
-baseurl: "/docs/v2" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://0.0.0.0:4000" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
@@ -15,3 +15,5 @@ exclude:
   - vendor/bundle/
   - vendor/cache/
   - Makefile
+  - Dockerfile
+  - README.md
