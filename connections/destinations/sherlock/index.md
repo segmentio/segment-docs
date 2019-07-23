@@ -9,7 +9,7 @@ This integration is maintained by Sherlock. For questions or help with your inte
 
 ## Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Sherock" within the Destinations Catalog and confirm the

@@ -11,7 +11,7 @@ _**NOTE:** The Freshmarketer Destination is currently in beta, which means that 
 
 ## Getting Started
 
-{{>connection-modes}} 
+<!-- {{>connection-modes}} --> 
 
 1. From your Segment UI’s Destinations page click **Add Destination**.
 2. Search for “Freshmarketer” in the Destinations Catalog and confirm the Source you’d like to connect to.

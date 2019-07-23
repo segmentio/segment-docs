@@ -8,7 +8,7 @@ This document was last updated on June 15th, 2018. If you notice any gaps, outda
 
 ## Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 1. From your Segment UI’s Destinations page click on “Add Destination”.
 2. Search for “Quora” within the Destinations Catalog and confirm the Source you’d like to connect to. 

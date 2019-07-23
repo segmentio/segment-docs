@@ -14,7 +14,7 @@ _**NOTE:** The MSG91 Destination is currently in beta, which means that they are
 
 ## Getting Started
 
-{{>connection-modes}} 
+<!-- {{>connection-modes}} --> 
   
 1.  From your Segment UI’s Destinations page click on “Add Destination”.
     

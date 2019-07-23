@@ -10,7 +10,7 @@ This document was last updated on July 26th, 2018. If you notice any gaps, outda
 
 ## Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 Because the VWO destination needs to be on the page right away, there are two ways for the VWO Javascript snippet to be loaded on your page. You can either:
 

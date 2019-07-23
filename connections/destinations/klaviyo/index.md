@@ -14,7 +14,7 @@ This document was last updated on September 6, 2018. If you notice any gaps, out
 
 ## Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 1. From your Segment UI’s Destinations page click on “Add Destination”.
 2. Search for “{{integration.name}}” within the Destinations Catalog and confirm the Source you’d like to connect to.

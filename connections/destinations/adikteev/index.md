@@ -8,7 +8,7 @@ This destination is maintained by Adikteev. For any issues with the destination,
 
 ## Getting Started
 
-{{>connection-modes}} 
+<!-- {{>connection-modes}} --> 
 
 Currently, this destination supports events originating from Mobile sources alone. 
 
