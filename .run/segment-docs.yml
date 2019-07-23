@@ -33,12 +33,9 @@ labels:
   owner: bryan.mikaelian@segment.com
 
 
-# Uncomment to enable autodeploys for your environments
-# autodeploy:
-#   stage:
-#     branch: "staging"
-#   production:
-#     branch: "master"
+autodeploy:
+  stage:
+    branch: "staging"
 
 
 # config:
