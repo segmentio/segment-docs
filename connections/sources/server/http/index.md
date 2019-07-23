@@ -63,7 +63,7 @@ POST https://api.segment.io/v1/identify
 }
 ```
 This call is identifying  the user by his unique User ID (the one you know him by in your database) and labeling him with `email`, `name`, and `industry` traits.
-
+<!--
 <table>
   {{> spec-field-anonymous-id }}
   {{> spec-field-context }}
@@ -72,6 +72,7 @@ This call is identifying  the user by his unique User ID (the one you know him b
   {{> spec-field-identify-traits }}
   {{> spec-field-user-id }}
 </table>
+-->
 
 Find details on the **identify method payload** in our [Spec](/docs/spec/identify/).
 
@@ -106,7 +107,7 @@ POST https://api.segment.io/v1/track
 `track` event properties can be anything you want to record. In this case, `name` and `revenue`.
 
 The `track` call has the following fields:
-
+<!--
 <table>
   {{> spec-field-anonymous-id }}
   {{> spec-field-context }}
@@ -116,6 +117,7 @@ The `track` call has the following fields:
   {{> spec-field-timestamp }}
   {{> spec-field-user-id }}
 </table>
+-->
 
 Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/spec/track/).
 
@@ -136,7 +138,7 @@ POST https://api.segment.io/v1/page
 }
 ```
 The `page` call has the following fields:
-
+<!--
 <table>
   {{> spec-field-anonymous-id }}
   {{> spec-field-context }}
@@ -146,6 +148,7 @@ The `page` call has the following fields:
   {{> spec-field-timestamp }}
   {{> spec-field-user-id }}
 </table>
+-->
 
 Find details on the **`page` payload** in our [Spec](/docs/spec/page/).
 
@@ -170,6 +173,7 @@ POST https://api.segment.io/v1/screen
 
 The `screen` call has the following fields:
 
+<!--
 <table>
   {{> spec-field-anonymous-id }}
   {{> spec-field-context }}
@@ -179,6 +183,7 @@ The `screen` call has the following fields:
   {{> spec-field-timestamp }}
   {{> spec-field-user-id }}
 </table>
+-->
 
 Find details on the **`screen` payload** in our [Spec](/docs/spec/screen/).
 
@@ -207,6 +212,7 @@ POST https://api.segment.io/v1/group
 ```
 The `group` call has the following fields:
 
+<!--
 <table>
   {{> spec-field-anonymous-id }}
   {{> spec-field-context }}
@@ -216,6 +222,7 @@ The `group` call has the following fields:
   {{> spec-field-group-traits }}
   {{> spec-field-user-id }}
 </table>
+-->
 
 Find more details about `group` including the **`group` payload** in our [Spec](/docs/spec/group/).
 
@@ -239,6 +246,7 @@ POST https://api.segment.io/v1/alias
 ```
 The `alias` call has the following fields:
 
+<!--
 <table>
   {{> spec-field-context }}
   {{> spec-field-integrations }}
@@ -246,6 +254,7 @@ The `alias` call has the following fields:
   {{> spec-field-timestamp }}
   {{> spec-field-user-id }}
 </table>
+-->
 
 For more details on the `alias` call and payload, check out our [Spec](/docs/spec/alias/).
 

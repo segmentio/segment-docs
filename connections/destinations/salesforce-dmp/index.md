@@ -17,7 +17,7 @@ us improve the {{integration.name}} Destination and its documentation, please
 
 ## Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 Next, configure the Destination in the Segment web app:
 

@@ -7,7 +7,7 @@ This document was last updated on January 25, 2018. If you notice any gaps, outd
 
 ## Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 1. From your Segment UI’s Destinations page click on “Add Destination”.
 2. Search for “FullStory” within the Destinations Catalog and confirm the Source you’d like to connect to. Please note the source must be sending events via our Javascript library Analytics.js. 

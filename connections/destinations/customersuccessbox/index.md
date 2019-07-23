@@ -11,7 +11,7 @@ _**NOTE:** The CustomerSuccessBox Destination is currently in beta, which means 
 
 ## Getting Started
 
-{{>connection-modes}} 
+<!-- {{>connection-modes}} --> 
 
 
 ### Adding Destination
