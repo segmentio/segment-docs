@@ -12,7 +12,7 @@ _**NOTE:** The EMMA Destination is currently in beta, which means that they are 
 
 ## Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 1. From your Segment UI's Destinations page, click "Add Destination".
 2. Search for "EMMA" in the Destinations Catalog, and confirm the Source you'd like to connect to.

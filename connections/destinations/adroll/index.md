@@ -14,7 +14,7 @@ This document was last updated on January 26, 2018. If you notice any gaps, outd
 
 ## Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 1. From your Segment UI’s Destinations page click on “Add Destination”.
 2. Search for “Adroll" within the Destinations Catalog and confirm the Source you’d like to connect to.
@@ -99,4 +99,4 @@ Prior to rolling out Segment ID's, AdRoll allowed "named segments". If your acco
 
 ## Troubleshooting
 
-{{> client-side-script-unverified}}
+<!--{{> client-side-script-unverified}}-->

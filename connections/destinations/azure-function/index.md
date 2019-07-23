@@ -11,7 +11,7 @@ _**NOTE:** Azure Function is currently in beta, and this doc was last updated on
 
 # Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 ## Build an Azure Function to Process Segment Events
 

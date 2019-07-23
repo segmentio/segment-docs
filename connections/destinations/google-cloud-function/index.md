@@ -11,7 +11,7 @@ _**NOTE:** Google Cloud Function is currently in beta, and this doc was last upd
 
 # Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 ## Build a Google Cloud Function to Process Segment Events
 

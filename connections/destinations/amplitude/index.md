@@ -31,7 +31,7 @@ our documentation, please [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 1. From your Segment UI’s Destinations page click on "Add Destination".
 

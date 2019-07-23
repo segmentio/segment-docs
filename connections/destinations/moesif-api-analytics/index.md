@@ -12,7 +12,7 @@ _**NOTE:** The Moesif API Analytics Destination is currently in beta, which mean
 
 ## Getting Started
 
-{{>connection-modes}} 
+<!-- {{>connection-modes}} --> 
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Moesif" within the Destinations Catalog and confirm the Source you'd like to connect to.

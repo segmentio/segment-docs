@@ -9,7 +9,7 @@ _**NOTE:** The Asayer Destination is currently in beta, which means that they ar
 
 ## Getting Started
 
-{{>connection-modes}} 
+<!-- {{>connection-modes}} --> 
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Asayer" within the Destinations Catalog and confirm the Source you'd like to connect to.

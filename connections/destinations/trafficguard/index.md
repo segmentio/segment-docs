@@ -13,7 +13,7 @@ _**NOTE:** The TrafficGuard Destination is currently in beta, which means that t
 
 ## Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "TrafficGuard" within the Destinations Catalog and confirm the Source you'd like to connect to.

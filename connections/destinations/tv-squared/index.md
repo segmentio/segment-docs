@@ -8,7 +8,7 @@ This document was last updated on April 20th, 2018. If you notice any gaps, outd
 
 ## Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 1. From your Segment UI’s Destinations page click on “Add Destination”.
 

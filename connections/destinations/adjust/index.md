@@ -9,7 +9,7 @@ This document was last updated on January 31, 2018. If you notice any gaps, out-
 
 ## Getting Started
 
-{{>connection-modes}}
+<!-- {{>connection-modes}} -->
 
 1. From your Segment UI's Destinations page click on "Add Destination". 
 2. Search for "Adjust" within the Destinations Catalog and confirm the Source you'd like to connect to.
