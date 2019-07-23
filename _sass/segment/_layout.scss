@@ -4,8 +4,8 @@
   display: flex;
   display: grid;
 
-  grid-template-columns: minmax(252px, calc(50% - 405px)) 1010px 1fr;
-  grid-template-columns: minmax(252px, calc((100% - 1262px) / 2 + 226px)) 1010px 1fr;
+  grid-template-columns: minmax(252px, calc(50% - 405px)) 1fr;
+  grid-template-columns: minmax(252px, calc((100% - 1262px) / 2 + 226px)) 1fr;
 }
 
 #sidenav {
@@ -16,23 +16,37 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  margin-right: $content-padding;
+  min-width: $sidenav-width;
   background-color: $grey-color;
+}
+
+#sidenav > nav {
+  margin-left: 226px;
+}
+
+#topnav {
+  height: $topnav-height;
+  box-shadow: $elevated-shadow;
+  padding-left: $content-padding;
+}
+
+#doc-content {
+  background: $background-color;
 }
 
 #doc-content {
   overflow-x: visible;
-  min-width: $content-width - 10;
+  min-width: $content-width;
 }
+
 
 #doc-toc {
   padding-left: 44px;
-  min-width: $content-width / 5;
+  min-width: $sidenav-width - 40px;
 }
 
 .l-breadcrumb-wrapper {
   display: flex;
-  margin-top: 25px;
   margin-bottom: 32px;
   margin-left: -5px;
   color: $text-color-breadcrumb;
@@ -43,15 +57,16 @@
   padding: 0 5px;
 }
 
-.l-docs-wrapper {
-  outline: none;
+.l-doc-container {
   display: flex;
-  background: $background-color;
+  margin-left: $content-padding;
+  margin-top: 25px;
 }
 
 .l-doc-toc-wrapper {
   position: -webkit-sticky;
   position: sticky;
+  margin-top: 60px;
   top: 81px;
   color: $text-color-grey;
 }
@@ -89,9 +104,10 @@
   display: flex;
   align-items: center;
   color: $text-color;
-  width: $grid-gutter-unit * 14;
+  width: $grid-gutter-unit * 13;
   height: 84px;
   padding: 22px $grid-gutter-unit;
+  padding-right: $grid-gutter-unit;
   margin-bottom: $grid-gutter-unit;
   margin-left: $grid-gutter-unit;
   border-radius: $border-radius-unit;

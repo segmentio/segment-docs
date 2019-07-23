@@ -2,24 +2,26 @@
 layout: default
 ---
 
-<article id="doc-content">
-  {% include breadcrumb.html %} 
+<div class="l-doc-container">
+  <article id="doc-content">
+    {% include breadcrumb.html %} 
 
 
-  {%- if page.title -%}
-    <h1 id="{{page.title | downcase}}" class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
-  {{ content }}
-</article>
-<div id="doc-toc">
-  <div class="l-doc-toc-wrapper">
-    <h4>On this page</h4>
     {%- if page.title -%}
-      <ul>
-        <li><a href="#{{page.title | downcase}}"> {{page.title}}</a></li>
-      </ul>
+      <h1 id="{{page.title | downcase}}" class="page-heading">{{ page.title }}</h1>
     {%- endif -%}
-    {% include toc.html html=content h_max=2 %} 
+
+    {{ content }}
+  </article>
+  <div id="doc-toc">
+    <div class="l-doc-toc-wrapper">
+      <h4>On this page</h4>
+      {%- if page.title -%}
+        <ul>
+          <li><a href="#{{page.title | downcase}}"> {{page.title}}</a></li>
+        </ul>
+      {%- endif -%}
+      {% include toc.html html=content h_max=2 %} 
+    </div>
   </div>
 </div>
