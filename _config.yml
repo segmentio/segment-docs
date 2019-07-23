@@ -11,7 +11,7 @@ defaults:
     scope: 
       path: ""
     values:
-      layout: "content"
+      layout: "page"
 plugins:
 
 # Exclude from processing.
