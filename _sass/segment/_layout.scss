@@ -28,6 +28,12 @@
   height: $topnav-height;
   box-shadow: $elevated-shadow;
   padding-left: $content-padding;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  padding: 0px 30px;
+  padding-left: $content-padding;
 }
 
 #doc-content {
@@ -136,4 +142,28 @@
   .description {
     margin-bottom: 0;
   }
+}
+
+.l-topnav-search  {
+  height: 100%;
+  display: flex;
+  align-items: center
+}
+
+.l-topnav-search > input {
+  height: inherit;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+.l-topnav-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.l-topnav-links > a {
+  margin-left: 30px;
 }
