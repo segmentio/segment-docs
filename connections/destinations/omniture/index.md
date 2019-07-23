@@ -57,7 +57,7 @@ Here's an example mapping in our interface:
 
 And the corresponding `track` call:
 
-{{{api-example '{
+<!--\{\{\{api-example '{
   "action": "track",
   "userId": "12345",
   "event": "Played Song",
@@ -65,7 +65,7 @@ And the corresponding `track` call:
     "song": "YMCA",
     "genre": "Disco"
   }
-}'}}}
+}'}}}-->
 
 In this example Segment will automatically send the following data to Omniture:
 
