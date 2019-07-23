@@ -184,7 +184,7 @@ For this example these event attributes are sent to Google Analytics:
 
 And another [`track`](/docs/spec/track/) example, this time with all Google Analytics event parameters:
 
-{{{api-example '{
+<!--\{\{\{api-example '{
   "userId": "12345",
   "action": "track",
   "event": "Logged In",
@@ -193,7 +193,7 @@ And another [`track`](/docs/spec/track/) example, this time with all Google Anal
     "label": "Premium",
     "value": 50
   }
-}'}}}
+}'}}}-->
 
 That call will create a Google Analytics event with these attributes:
 
@@ -225,13 +225,13 @@ To create an event with the `nonInteraction` flag just pass us an event property
 
 Here's an example:
 
-{{{api-example '{
+<!--\{\{\{api-example '{
   "action": "track",
   "event": "Viewed Legal Info",
   "properties": {
     "nonInteraction": 1
   }
-}'}}}
+}'}}}-->
 
 - - -
 

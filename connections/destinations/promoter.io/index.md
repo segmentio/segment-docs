@@ -21,7 +21,7 @@ Within the `identify` event, Promoter requires a `userId` and `email`, while `fi
 
 Here’s an example:
 
-{{{api-example '{
+<!--\{\{\{api-example '{
   "userId": "12345",
   "action": "identify",
   "traits": {
@@ -30,7 +30,7 @@ Here’s an example:
     "lastName": "Mosby",
     "plan": "Premium"
   }
-}'}}}
+}'}}}-->
 
 
 ## Track
@@ -43,7 +43,7 @@ Note: if you are using our client-side javascript library ([Analytics.js](/docs/
 
 Here’s an example:
 
-{{{api-example '{
+<!--\{\{\{api-example '{
   "userId": "12345",
   "action": "track",
   "event": "Friend Invited",
@@ -51,11 +51,9 @@ Here’s an example:
     "category": "viral",
     "totalInvites": 50
   }
-}'}}}
+}'}}}-->
 
 
 ### Completed Order
 
 When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/spec/ecommerce/v2/), we will send the event and data to Promoter as a custom event with the data stored with Promoter for future use.
-
-
