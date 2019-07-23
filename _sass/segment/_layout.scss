@@ -147,10 +147,12 @@
 .l-topnav-search  {
   height: 100%;
   display: flex;
-  align-items: center
+  align-items: center;
+  flex: 1;
 }
 
 .l-topnav-search > input {
+  width: 100%;
   height: inherit;
   font-size: 16px;
   margin: 0;
