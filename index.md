@@ -19,8 +19,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam pur
   {% endfor %}
 </div>
 
-{:toc}
-
 ---
 
 ## Getting Started

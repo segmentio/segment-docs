@@ -1,6 +1,6 @@
 <div class="l-breadcrumb-wrapper">
   {% assign breadcrumbs = page.url | remove:'/index.html' | split: '/' %}
-  <a href="/">Home</a>
+  <a href="{{site.baseurl}}/">Home</a>
   {% for crumb in breadcrumbs offset: 1 %}
     {% if forloop.last %}
       / {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}

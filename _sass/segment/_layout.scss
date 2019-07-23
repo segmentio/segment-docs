@@ -16,8 +16,7 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  width: 100%;
-  min-width: $sidenav-width;
+  margin-right: $content-padding;
   background-color: $grey-color;
 }
 
@@ -28,7 +27,7 @@
 
 #doc-toc {
   padding-left: 44px;
-  min-width: $sidenav-width;
+  min-width: $content-width / 5;
 }
 
 .l-breadcrumb-wrapper {
@@ -47,7 +46,6 @@
 .l-docs-wrapper {
   outline: none;
   display: flex;
-  padding-left: 47px;
   background: $background-color;
 }
 
