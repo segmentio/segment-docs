@@ -7,9 +7,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ipsum aliquam pur
 
 <div class="l-block-grid-collection">
 {% for category in site.data.categories %}
-  <a class="block-grid-item" href="{{site.baseurl}}{{ category.slug }}">
+  <a class="block-grid-item" href="{{site.baseurl}}/{{ category.slug }}">
       <div class="logo">
-        <img src="/assets/icons/home/{{ category.icon }}" />
+        <img src="{{site.baseurl}}/assets/icons/home/{{ category.icon }}" />
       </div>
       <div class="content">
         <h3 class="title">{{ category.name }}</h3>

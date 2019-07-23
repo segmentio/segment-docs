@@ -18,7 +18,7 @@ expose:
   - name: http
     port: 80
     proto: http
-    health_check_path: /
+    health_check_path: /docs/v2/
 
 
 count:
