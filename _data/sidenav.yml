@@ -1,0 +1,33 @@
+sections:
+  - sectiontitle: Guides
+    section:
+    - path: /guides/overview
+      title: Overview
+    - sectiontitle: Getting started
+      section:
+      - title: The promise land
+        path: /guides/getting-started/the-promise-land
+
+  - sectiontitle: Connections
+    section:
+      path: /connections
+
+  - sectiontitle: Protocols
+    section:
+      path: /protocols
+
+  - sectiontitle: Personas
+    section:
+      path: /personas
+
+  - sectiontitle: Privacy
+    section:
+      path: /privacy
+
+  - sectiontitle: App
+    section:
+      path: /segment-app
+
+  - sectiontitle: Partners
+    section:
+      path: /partners
