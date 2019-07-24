@@ -4,35 +4,60 @@
   display: flex;
   display: grid;
 
-  grid-template-columns: minmax(252px, calc(50% - 405px)) 1010px 1fr;
-  grid-template-columns: minmax(252px, calc((100% - 1262px) / 2 + 226px)) 1010px 1fr;
+  grid-template-columns: minmax($sidenav-width, calc(50% - 405px)) 1fr;
+  grid-template-columns: minmax($sidenav-width, calc((100% - 1200px) / 2)) 1fr;
+}
+
+#docs > main {
+  display: flex;
+  flex-direction: column;
 }
 
 #sidenav {
   display: flex;
   flex: 0;
-  flex-grow: 1;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   height: 100vh;
-  margin-right: $content-padding;
+  min-width: $sidenav-width;
   background-color: $grey-color;
+}
+
+#sidenav > nav {
+  margin-left: 226px;
+}
+
+#topnav {
+  height: $topnav-height;
+  border-bottom:  1px solid rgba(67, 90, 111, 0.2);
+  padding: 0px 30px;
+  padding-left: $content-padding;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+#doc-content {
+  background: $background-color;
 }
 
 #doc-content {
   overflow-x: visible;
-  min-width: $content-width - 10;
+  width: $content-width;
+  display: flex;
+  flex-direction: column
 }
+
 
 #doc-toc {
   padding-left: 44px;
-  min-width: $content-width / 5;
+  min-width: $sidenav-width - 50px;
 }
 
 .l-breadcrumb-wrapper {
   display: flex;
-  margin-top: 25px;
   margin-bottom: 32px;
   margin-left: -5px;
   color: $text-color-breadcrumb;
@@ -43,15 +68,17 @@
   padding: 0 5px;
 }
 
-.l-docs-wrapper {
-  outline: none;
+.l-doc-container {
   display: flex;
-  background: $background-color;
+  flex: 0;
+  margin-left: $content-padding;
+  margin-top: 25px;
 }
 
 .l-doc-toc-wrapper {
   position: -webkit-sticky;
   position: sticky;
+  margin-top: 60px;
   top: 81px;
   color: $text-color-grey;
 }
@@ -89,9 +116,10 @@
   display: flex;
   align-items: center;
   color: $text-color;
-  width: $grid-gutter-unit * 14;
+  width: $grid-gutter-unit * 13;
   height: 84px;
   padding: 22px $grid-gutter-unit;
+  padding-right: $grid-gutter-unit;
   margin-bottom: $grid-gutter-unit;
   margin-left: $grid-gutter-unit;
   border-radius: $border-radius-unit;
@@ -120,4 +148,35 @@
   .description {
     margin-bottom: 0;
   }
+}
+
+.l-topnav-search  {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.l-topnav-search > img {
+  margin-right: 10px;
+  opacity: 0.5;
+}
+
+.l-topnav-search > input {
+  width: 100%;
+  height: inherit;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+.l-topnav-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.l-topnav-links > a {
+  margin-left: 30px;
 }
