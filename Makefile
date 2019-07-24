@@ -1,5 +1,5 @@
-.PHONY: run
-run:
+.PHONY: docs
+docs:
 	make build && \
 	docker build . -t segment-docs:latest && \
 	echo "Running segment docs at http://localhost:4000/docsv2/" && \

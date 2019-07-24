@@ -151,6 +151,11 @@
   flex: 1;
 }
 
+.l-topnav-search > img {
+  margin-right: 10px;
+  opacity: 0.5;
+}
+
 .l-topnav-search > input {
   width: 100%;
   height: inherit;
