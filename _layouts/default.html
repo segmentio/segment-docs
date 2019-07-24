@@ -4,10 +4,12 @@
   <body>
     <div id="docs">
       {% include sidenav.html %}
-      <div id="doc-content">
+      <main>
         {% include topnav.html %}
-        {{ content }}
-      </div>
+        <div id="doc-content">
+          {{ content }}
+        </div>
+      </main>
     </div>
     <script type="text/javascript">
       (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
