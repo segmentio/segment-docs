@@ -216,7 +216,7 @@ For Segment’s Optimizely Full Stack iOS destination, see Segment's [Optimizely
 4. Instantiate Optimizely - you’ll use this instance to invoke methods from Optimizely’s decision API such as `activate` and `isFeatureEnabled`.
 5. Instantiate Segment’s global Analytics object with an Optimizely factory registered:
 
-  ```objective-c
+  ```objc
   [config use:[SEGOptimizelyIntegrationFactory instanceWithToken: /* your Optimizely project id /* launchOptions:launchOptions]];
   ```
 
@@ -242,7 +242,7 @@ If `identify` is invoked with a `userId`, under the hood, Segment sets `[Optimiz
 
 Upon an Optimizely experiment activation, Segment’s Optimizely Classic<>iOS SDK triggers a `track` event, which Segment then forwards to all enabled downstream destinations:
 
-```objective-c
+```objc
 [[SEGAnalytics sharedAnalytics] track:@"Experiment Viewed"
                                        properties:@{
                                                     @"experimentId" : data.experimentId,

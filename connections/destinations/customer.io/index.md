@@ -44,7 +44,7 @@ Page events will be sent to Customer.io as a `Page View` event where name and pr
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/screen/) does. An example call would look like:
 
-```objective-c
+```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 

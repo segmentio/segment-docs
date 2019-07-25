@@ -82,13 +82,13 @@ There are a few pieces of code that must be in place. First, open your project�
 
 * Find the line which starts the method:
 
-```objective-c
+```objc
 (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:
 ```
 
 and paste the following piece of code within:
 
-```objective-c
+```objc
 [[Branch getInstance] initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary * _Nonnull params, NSError * _Nullable error) {
 // do stuff with deep link data (nav to page, display content, etc)
 NSLog(@"%@", params);
@@ -97,7 +97,7 @@ NSLog(@"%@", params);
 
 * You will also need to add the following as a separate method:
 
-```objective-c
+```objc
 (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
 // handler for URI Schemes (depreciated in iOS 9.2+, but still used by some apps)
 [[Branch getInstance] application:app openURL:url options:options];
@@ -111,7 +111,7 @@ return YES;
 
 This method is necessary to receive a Branch parameter when the URI scheme is called and the app open immediately. It will automatically call the **Deep Link Handler** registered above:
 
-```objective-c
+```objc
 (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:NSString *)sourceApplication annotation:(id)annotation {
     // pass the url to the handle deep link call
     [[Branch getInstance] handleDeepLink:url];
@@ -125,7 +125,7 @@ This method is necessary to receive a Branch parameter when the URI scheme is ca
 
 Additionally, in iOS9, if you list content in Spotlight with Branch, you’ll want to receive those parameters in this App Delegate callback.
 
-```objective-c
+```objc
 (BOOL)application:(UIApplication *)application
 continueUserActivity:(NSUserActivity *)userActivity
  restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
@@ -168,7 +168,7 @@ You can retrieve the deep link data at any time from the Branch singleton by cal
 
 This is the latest set of deep link data from the most recent link that was clicked. If you minimize the app and reopen it, the session will be cleared and so will this data.
 
-```objective-c
+```objc
 NSDictionary *params = [[Branch getInstance] getLatestReferringParams];
 ```
 
@@ -176,7 +176,7 @@ NSDictionary *params = [[Branch getInstance] getLatestReferringParams];
 
 These are the first set of deep link data the ever referred the user. Once it’s been set for a given user, it can never be updated. This is useful for referral programs.
 
-```objective-c
+```objc
 NSDictionary *params = [[Branch getInstance] getFirstReferringParams];
 ```
 
@@ -192,14 +192,14 @@ Deep linking is an incredibly important part of building your app, and essential
 
 Below is how to create your own Branch Links. In order to share these links, we’ve built a *native share sheet for Android* and implemented a simple way to use *UIActivityViewController* on *iOS*. Check out the section on [content sharing](https://dev.branch.io/recipes/content_sharing/ios).
 
-```objective-c
+```objc
 #import "BranchUniversalObject.h"
 #import "BranchLinkProperties.h"
 ```
 
 First create the object that you’d like to link to:
 
-```objective-c
+```objc
 BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
 branchUniversalObject.title = @"My Content Title";
 branchUniversalObject.contentDescription = @"My Content Description";
@@ -222,7 +222,7 @@ withValue:@"http://example.com/ios"];
 
 Lastly, create the link by referencing the universal object.
 
-```objective-c
+```objc
 [branchUniversalObject getShortUrlWithLinkProperties:linkProperties andCallback:^(NSString *url, NSError *error) {
     if (!error) {
         NSLog(@"success getting url! %@", url);
@@ -242,7 +242,7 @@ The work in this section will take place in the view controller that you want to
 
 In the view controller that will display on link click, first import `Branch.h`.
 
-```objective-c
+```objc
 import "Branch.h"
 ```
 
@@ -250,14 +250,14 @@ import "Branch.h"
 
 Make your view controller conform to the delegate `BranchDeepLinkingController`.
 
-```objective-c
+```objc
 @interface ExampleDeepLinkingController : UIViewController <BranchDeepLinkingController>
 ```
 
 ##### Configure your view on load
 Receive the delegate method that will be called when the view controller is loaded from a link click.
 
-```objective-c
+```objc
 @synthesize deepLinkingCompletionDelegate;
 - (void)configureControlWithData:(NSDictionary *)data {
   NSString *pictureUrl = data[@"product_picture"];
@@ -277,7 +277,7 @@ Receive the delegate method that will be called when the view controller is load
 
 Since the view controller is displayed modally, you should add a close button that let’s the user minimize to continue the remainder of your flow.
 
-```objective-c
+```objc
 (IBAction)closePressed {
     [self.deepLinkingCompletionDelegate deepLinkingControllerCompleted];
 }
@@ -289,7 +289,7 @@ Lastly, you need to tell Branch which view controller you will use and which key
 
 **Note**: If you don’t know what this key is, see [Creating Links](https://dev.branch.io/recipes/quickstart_guide/ios/#creating-links)
 
-```objective-c
+```objc
 (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -310,7 +310,7 @@ Lastly, you need to tell Branch which view controller you will use and which key
 #### Where to define your deep link keys
 You can define the deep link metadata in the `Branch Universal Object` that you’ll create before creating a deep link.
 
-```objective-c
+```objc
 BranchUniversalObject *branchUniversalObject = [[BranchUniversalObject alloc] initWithCanonicalIdentifier:@"item/12345"];
 branchUniversalObject.title = @"My Content Title";
 branchUniversalObject.contentDescription = @"My Content Description";
@@ -327,7 +327,7 @@ This section will describe a routing example in an abstract way. In case you wan
 
 Inside of the deepLinkHandler, you will want to examine the params dictionary to determine whether the user clicked on a link to content. Below is an example assuming that the links correspond to pictures.
 
-```objective-c
+```objc
 (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *****)launchOptions {
 
   // initialize the session, setup a deep link handler
@@ -373,7 +373,7 @@ If you’re [creating links dynamically](https://dev.branch.io/overviews/link_cr
 
 #### SDK/API link control
 
-```objective-c
+```objc
 BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
 linkProperties.feature = @"sharing";
 linkProperties.channel = @"facebook";

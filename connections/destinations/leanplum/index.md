@@ -53,7 +53,7 @@ CocoaPods is the dependency manager we use for Objective-C projects. If you alre
 
     Add the following lines into your AppDelegate:
 
-    ```objective-c
+    ```objc
     String *const SEGMENT_WRITE_KEY = @" [YOUR_SEGMENT_WRITE_KEY] ";
     SEGAnalyticsConfiguration *config =
         [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
