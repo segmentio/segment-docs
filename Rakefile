@@ -3,9 +3,9 @@ require 'yaml'
 namespace :nav do
   desc 'Updates _data/sidenav.yml based on the current available docs'
   task :update do
-    p 'Updating _data/sidenav.yml based on current docs...gco '
+    p 'Updating _data/sidenav.yml based on current docs...'
 
-    docs = FileList.new('./**/*.md').exclude("./vendor/**/*.md", './*.md', "./_site/**/*.md")
+    docs = FileList.new('./**/*.md').exclude("./vendor/**/*.md", './*.md', "./_*/**/*.md")
     nav = []
     sections = {}
 
@@ -64,7 +64,7 @@ namespace :nav do
 
     nav = { nav: sections.values }
 
-    File.open("nav.yml","w") do |file|
+    File.open("./_data/sidenav.yml","w") do |file|
       file.write nav.to_yaml({ indention: 4 })
     end 
   end
