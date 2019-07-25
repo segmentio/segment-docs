@@ -7,12 +7,13 @@ url: "http://0.0.0.0:4000" # the base hostname & protocol for your site, e.g. ht
 markdown: kramdown
 theme: minima
 defaults:
-  - 
-    scope: 
+  -
+    scope:
       path: ""
     values:
       layout: "page"
 plugins:
+  - jekyll-redirect-from
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
