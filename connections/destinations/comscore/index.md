@@ -164,7 +164,7 @@ Please take note that iOS and Android expect different casing. We expect `snake_
 
 Example on passing destination specific option values through on iOS
 
-```objective-c
+```objc
 options:@{
   @"integrations": @{
    @"comScore" : @{

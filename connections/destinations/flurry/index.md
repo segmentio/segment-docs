@@ -27,7 +27,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 An example iOS call would look like:
 
-```objective-c
+```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 

@@ -11,7 +11,7 @@ This document was last updated on January 31, 2018. If you notice any gaps, out-
 
 <!-- {{>connection-modes}} -->
 
-1. From your Segment UI's Destinations page click on "Add Destination". 
+1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Adjust" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Do not need to include Adjust's SDK natively as this prevent you from successfully implementing the Adjust.
 4. Depending on the source you've selected, include Adjust's library by adding the following lines to your dependency configuration.
@@ -26,13 +26,13 @@ pod "Segment-Adjust"
 
 After adding the dependency, you must register the destination with our SDK.  To do this, import the Adjust destination in your `AppDelegate`:
 
-```objective-c
+```objc
 #import <Segment-Adjust/SEGAdjustIntegrationFactory.h>
 ```
 
 And add the following lines:
 
-```objective-c
+```objc
 NSString *const SEGMENT_WRITE_KEY = @" ... ";
 SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
 
@@ -211,4 +211,3 @@ By default, our destination enables event buffering for Adjust. This saves your 
 ### Deep Linking
 
 The destination does not automatically support deep linking out of the box (you'd need to write code here regardless). This means you can use [Adjust's deep-linking](https://github.com/adjust/ios_sdk#7-set-up-deep-link-reattributions) by accessing [the Adjust SDK directly](/docs/sources/mobile/ios/#faq).
-

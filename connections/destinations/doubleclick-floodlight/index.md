@@ -40,7 +40,7 @@ Assuming the below is an example Floodlight tag mapping:
 
 With the following `track` call:
 
-```objective-c
+```objc
 [[SEGAnalytics sharedAnalytics] track:@"Free El"
                            properties:@{ @"show": @"Stranger Things", @"source": @"Netflix", @"greatestShowEver": YES }];
 ```
