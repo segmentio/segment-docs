@@ -5,6 +5,14 @@ docs:
 	echo "Running segment docs at http://localhost:4000/docsv2/" && \
 	docker run -p 4000:80 segment-docs:latest
 
+
+.PHONY: deps
+deps:
+	docker run -it \
+	  --volume="$(PWD):/srv/jekyll" \
+	  jekyll/jekyll \
+		bundle install
+
 .PHONY: build
 build:
 	docker run -it \
