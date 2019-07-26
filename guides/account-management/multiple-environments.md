@@ -1,6 +1,7 @@
 ---
-title: "I want to set up Segment for multiple environments (Development, Production, Testing, etc.) should I create multiple workspaces or multiple sources?"
+title: "How do I set up a Segment for dev, prod, and testing environments?"
 ---
+"I want to set up Segment for multiple environments (Development, Production, Testing, etc.) should I create multiple workspaces or multiple sources?"
 
 We recommend that instead of setting up separate workspaces for different environments (local/dev/prod), you set up one workspace and make each of these environments a _different source_. 
 
