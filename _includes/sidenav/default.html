@@ -1,0 +1,25 @@
+<ul>
+  <li>
+    <a class="section" href="{{site.baseurl}}/">
+      <img src="{{site.baseurl}}/assets/icons/nav/home.svg"></img>
+      Home
+    </a>
+  </li>
+  {% for section in site.data.sidenav.sections %}
+    {% assign title = section.section_title %}
+    
+    {% if title == "Segment-app" %}
+      {% assign title = "App" %}
+    {% endif %}
+
+    {% assign slug = title | downcase %}
+    <li>
+      <a class="section" href="">
+        <img src="{{site.baseurl}}/assets/icons/nav/{{ slug }}.svg"></img>
+        {{ title }}
+      </a>
+      {% for item in section.section %}
+      {% endfor %}
+    </li>
+  {% endfor %}
+</ul>

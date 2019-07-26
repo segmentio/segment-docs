@@ -1,1443 +1,1414 @@
 ---
-:nav:
-- :section_title: Api
-  :section:
-  - :path: "/api"
-    :title: Index
-  - :section:
-    - :path: "/api/config-api/api-design"
-      :title: Api design
-  - :section:
-    - :path: "/api/config-api/authentication"
-      :title: Authentication
-  - :section_title: Destination filters
-    :section:
-    - :path: api/config-api/destination-filters/fql
-      :title: Fql
-    - :path: api/config-api/destination-filters
-      :title: Index
-  - :section:
-    - :path: "/api/config-api"
-      :title: Index
-  - :section:
-    - :path: "/api/config-api/reference"
-      :title: Reference
-  - :section:
-    - :path: "/api/config-api/tutorial-javascript-google-analytics"
-      :title: Tutorial javascript google analytics
-- :section_title: Connections
-  :section:
-  - :path: "/connections"
-    :title: Index
-  - :section_title: Aboardly
-    :section:
-    - :path: connections/destinations/aboardly
-      :title: Index
-  - :section_title: Activecampaign
-    :section:
-    - :path: connections/destinations/activecampaign
-      :title: Index
-  - :section_title: Adikteev
-    :section:
-    - :path: connections/destinations/adikteev
-      :title: Index
-  - :section_title: Adjust
-    :section:
-    - :path: connections/destinations/adjust
-      :title: Index
-  - :section_title: Adobe analytics
-    :section:
-    - :path: connections/destinations/adobe-analytics
-      :title: Index
-  - :section_title: Adobe target
-    :section:
-    - :path: connections/destinations/adobe-target
-      :title: Index
-  - :section_title: Adroll
-    :section:
-    - :path: connections/destinations/adroll
-      :title: Index
-  - :section_title: Adtriba
-    :section:
-    - :path: connections/destinations/adtriba
-      :title: Index
-  - :section_title: Adwords remarketing lists
-    :section:
-    - :path: connections/destinations/adwords-remarketing-lists
-      :title: Index
-  - :section_title: Adwords
-    :section:
-    - :path: connections/destinations/adwords
-      :title: Index
-  - :section_title: Akita
-    :section:
-    - :path: connections/destinations/akita
-      :title: Index
-  - :section_title: Alexa
-    :section:
-    - :path: connections/destinations/alexa
-      :title: Index
-  - :section_title: All aboard
-    :section:
-    - :path: connections/destinations/all-aboard
-      :title: Index
-  - :section_title: Amazon kinesis firehose
-    :section:
-    - :path: connections/destinations/amazon-kinesis-firehose
-      :title: Index
-  - :section_title: Amazon kinesis
-    :section:
-    - :path: connections/destinations/amazon-kinesis
-      :title: Index
-  - :section_title: Amazon lambda
-    :section:
-    - :path: connections/destinations/amazon-lambda
-      :title: Index
-  - :section_title: Amazon personalize
-    :section:
-    - :path: connections/destinations/amazon-personalize
-      :title: Index
-  - :section_title: Amazon s3
-    :section:
-    - :path: connections/destinations/amazon-s3
-      :title: Index
-  - :section_title: Ambassador
-    :section:
-    - :path: connections/destinations/ambassador
-      :title: Index
-  - :section_title: Amplitude
-    :section:
-    - :path: connections/destinations/amplitude
-      :title: Index
-  - :section_title: Appcues
-    :section:
-    - :path: connections/destinations/appcues
-      :title: Index
-  - :section_title: Appsflyer
-    :section:
-    - :path: connections/destinations/appsflyer
-      :title: Index
-  - :section_title: Apptimize
-    :section:
-    - :path: connections/destinations/apptimize
-      :title: Index
-  - :section_title: Apteligent
-    :section:
-    - :path: connections/destinations/apteligent
-      :title: Index
-  - :section_title: Aptrinsic
-    :section:
-    - :path: connections/destinations/aptrinsic
-      :title: Index
-  - :section_title: Asayer
-    :section:
-    - :path: connections/destinations/asayer
-      :title: Index
-  - :section_title: Auryc
-    :section:
-    - :path: connections/destinations/auryc
-      :title: Index
-  - :section_title: Autopilothq
-    :section:
-    - :path: connections/destinations/autopilothq
-      :title: Index
-  - :section_title: Azure function
-    :section:
-    - :path: connections/destinations/azure-function
-      :title: Index
-  - :section_title: Azuresqldw
-    :section:
-    - :path: connections/destinations/azuresqldw
-      :title: Index
-  - :section_title: Batch
-    :section:
-    - :path: connections/destinations/batch
-      :title: Index
-  - :section_title: Bigquery
-    :section:
-    - :path: connections/destinations/bigquery
-      :title: Index
-  - :section_title: Bing ads
-    :section:
-    - :path: connections/destinations/bing-ads
-      :title: Index
-  - :section_title: Blendo
-    :section:
-    - :path: connections/destinations/blendo
-      :title: Index
-  - :section_title: Boomtrain
-    :section:
-    - :path: connections/destinations/boomtrain
-      :title: Index
-  - :section_title: Branch metrics
-    :section:
-    - :path: connections/destinations/branch-metrics
-      :title: Index
-  - :section_title: Braze
-    :section:
-    - :path: connections/destinations/braze
-      :title: Index
-  - :section_title: Bronto
-    :section:
-    - :path: connections/destinations/bronto
-      :title: Index
-  - :section_title: Bugherd
-    :section:
-    - :path: connections/destinations/bugherd
-      :title: Index
-  - :section_title: Bugsnag
-    :section:
-    - :path: connections/destinations/bugsnag
-      :title: Index
-  - :section_title: Bytegain
-    :section:
-    - :path: connections/destinations/bytegain
-      :title: Index
-  - :section_title: Callexa
-    :section:
-    - :path: connections/destinations/callexa
-      :title: Index
-  - :section_title: Callingly
-    :section:
-    - :path: connections/destinations/callingly
-      :title: Index
-  - :section_title: Candu
-    :section:
-    - :path: connections/destinations/candu
-      :title: Index
-  - :section_title: Castle
-    :section:
-    - :path: connections/destinations/castle
-      :title: Index
-  - :section_title: Chameleon
-    :section:
-    - :path: connections/destinations/chameleon
-      :title: Index
-  - :section_title: Chartbeat
-    :section:
-    - :path: connections/destinations/chartbeat
-      :title: Index
-  - :section_title: Churnzero
-    :section:
-    - :path: connections/destinations/churnzero
-      :title: Index
-  - :section_title: Clearbit enrichment
-    :section:
-    - :path: connections/destinations/clearbit-enrichment
-      :title: Index
-  - :section_title: Clearbit reveal
-    :section:
-    - :path: connections/destinations/clearbit-reveal
-      :title: Index
-  - :section_title: Clearbrain
-    :section:
-    - :path: connections/destinations/clearbrain
-      :title: Index
-  - :section_title: Clevertap
-    :section:
-    - :path: connections/destinations/clevertap
-      :title: Index
-  - :section_title: Clicky
-    :section:
-    - :path: connections/destinations/clicky
-      :title: Index
-  - :section_title: Clientsuccess
-    :section:
-    - :path: connections/destinations/clientsuccess
-      :title: Index
-  - :section_title: Comscore
-    :section:
-    - :path: connections/destinations/comscore
-      :title: Index
-  - :section_title: Convertflow
-    :section:
-    - :path: connections/destinations/convertflow
-      :title: Index
-  - :section_title: Convertro
-    :section:
-    - :path: connections/destinations/convertro
-      :title: Index
-  - :section_title: Cordialio
-    :section:
-    - :path: connections/destinations/cordialio
-      :title: Index
-  - :section_title: Countly
-    :section:
-    - :path: connections/destinations/countly
-      :title: Index
-  - :section_title: Crazy egg
-    :section:
-    - :path: connections/destinations/crazy-egg
-      :title: Index
-  - :section_title: Criteo
-    :section:
-    - :path: connections/destinations/criteo
-      :title: Index
-  - :section_title: Cruncher
-    :section:
-    - :path: connections/destinations/cruncher
-      :title: Index
-  - :section_title: Cubitic
-    :section:
-    - :path: connections/destinations/cubitic
-      :title: Index
-  - :section_title: Curebit
-    :section:
-    - :path: connections/destinations/curebit
-      :title: Index
-  - :section_title: Custify
-    :section:
-    - :path: connections/destinations/custify
-      :title: Index
-  - :section_title: Customer.io
-    :section:
-    - :path: connections/destinations/customer.io
-      :title: Index
-  - :section_title: Customersuccessbox
-    :section:
-    - :path: connections/destinations/customersuccessbox
-      :title: Index
-  - :section_title: Cxense
-    :section:
-    - :path: connections/destinations/cxense
-      :title: Index
-  - :section_title: Db2
-    :section:
-    - :path: connections/destinations/db2
-      :title: Index
-  - :section_title: Delighted
-    :section:
-    - :path: connections/destinations/delighted
-      :title: Index
-  - :section:
-    - :path: "/connections/destinations/destination-filters"
-      :title: Destination filters
-  - :section_title: Doubleclick floodlight
-    :section:
-    - :path: connections/destinations/doubleclick-floodlight
-      :title: Index
-  - :section_title: Dreamdata io
-    :section:
-    - :path: connections/destinations/dreamdata-io
-      :title: Index
-  - :section_title: Drift
-    :section:
-    - :path: connections/destinations/drift
-      :title: Index
-  - :section_title: Drip
-    :section:
-    - :path: connections/destinations/drip
-      :title: Index
-  - :section_title: Elevio
-    :section:
-    - :path: connections/destinations/elevio
-      :title: Index
-  - :section_title: Eloqua
-    :section:
-    - :path: connections/destinations/eloqua
-      :title: Index
-  - :section_title: Emarsys
-    :section:
-    - :path: connections/destinations/emarsys
-      :title: Index
-  - :section_title: Emma
-    :section:
-    - :path: connections/destinations/emma
-      :title: Index
-  - :section_title: Epica
-    :section:
-    - :path: connections/destinations/epica
-      :title: Index
-  - :section_title: Errorception
-    :section:
-    - :path: connections/destinations/errorception
-      :title: Index
-  - :section_title: Evergage
-    :section:
-    - :path: connections/destinations/evergage
-      :title: Index
-  - :section_title: Extole
-    :section:
-    - :path: connections/destinations/extole
-      :title: Index
-  - :section_title: Facebook app events
-    :section:
-    - :path: connections/destinations/facebook-app-events
-      :title: Index
-  - :section_title: Facebook offline conversions
-    :section:
-    - :path: connections/destinations/facebook-offline-conversions
-      :title: Index
-  - :section_title: Facebook pixel server side
-    :section:
-    - :path: connections/destinations/facebook-pixel-server-side
-      :title: Index
-  - :section_title: Facebook pixel
-    :section:
-    - :path: connections/destinations/facebook-pixel
-      :title: Index
-  - :section_title: Factorsai
-    :section:
-    - :path: connections/destinations/factorsai
-      :title: Index
-  - :section_title: Faq
-    :section:
-    - :path: connections/destinations/faq
-      :title: Index
-    - :path: connections/sources/faq
-      :title: Index
-    - :path: connections/warehouses/faq
-      :title: Index
-  - :section_title: Firebase
-    :section:
-    - :path: connections/destinations/firebase
-      :title: Index
-  - :section_title: Flurry
-    :section:
-    - :path: connections/destinations/flurry
-      :title: Index
-  - :section_title: Foxmetrics
-    :section:
-    - :path: connections/destinations/foxmetrics
-      :title: Index
-  - :section_title: Framed.io
-    :section:
-    - :path: connections/destinations/framed.io
-      :title: Index
-  - :section_title: Freshdesk
-    :section:
-    - :path: connections/destinations/freshdesk
-      :title: Index
-  - :section_title: Freshmarketer
-    :section:
-    - :path: connections/destinations/freshmarketer
-      :title: Index
-  - :section_title: Freshsales
-    :section:
-    - :path: connections/destinations/freshsales
-      :title: Index
-  - :section_title: Friendbuy
-    :section:
-    - :path: connections/destinations/friendbuy
-      :title: Index
-  - :section_title: Frontleaf
-    :section:
-    - :path: connections/destinations/frontleaf
-      :title: Index
-  - :section_title: Fullstory
-    :section:
-    - :path: connections/destinations/fullstory
-      :title: Index
-  - :section_title: Funnelfox
-    :section:
-    - :path: connections/destinations/funnelfox
-      :title: Index
-  - :section_title: Gainsight
-    :section:
-    - :path: connections/destinations/gainsight
-      :title: Index
-  - :section_title: Gauges
-    :section:
-    - :path: connections/destinations/gauges
-      :title: Index
-  - :section_title: Goedle
-    :section:
-    - :path: connections/destinations/goedle
-      :title: Index
-  - :section_title: Google adwords new
-    :section:
-    - :path: connections/destinations/google-adwords-new
-      :title: Index
-  - :section_title: Google analytics
-    :section:
-    - :path: connections/destinations/google-analytics
-      :title: Index
-  - :section_title: Google cloud function
-    :section:
-    - :path: connections/destinations/google-cloud-function
-      :title: Index
-  - :section_title: Google cloud pubsub
-    :section:
-    - :path: connections/destinations/google-cloud-pubsub
-      :title: Index
-  - :section_title: Google tag manager
-    :section:
-    - :path: connections/destinations/google-tag-manager
-      :title: Index
-  - :section_title: Gosquared
-    :section:
-    - :path: connections/destinations/gosquared
-      :title: Index
-  - :section_title: Heap
-    :section:
-    - :path: connections/destinations/heap
-      :title: Index
-  - :section_title: Help scout
-    :section:
-    - :path: connections/destinations/help-scout
-      :title: Index
-  - :section_title: Hindsight
-    :section:
-    - :path: connections/destinations/hindsight
-      :title: Index
-  - :section_title: Hittail
-    :section:
-    - :path: connections/destinations/hittail
-      :title: Index
-  - :section_title: Hotjar
-    :section:
-    - :path: connections/destinations/hotjar
-      :title: Index
-  - :section_title: Hubspot
-    :section:
-    - :path: connections/destinations/hubspot
-      :title: Index
-  - :section_title: Hull
-    :section:
-    - :path: connections/destinations/hull
-      :title: Index
-  - :section_title: Hydra
-    :section:
-    - :path: connections/destinations/hydra
-      :title: Index
-  - :section_title: Ibm ubx
-    :section:
-    - :path: connections/destinations/ibm-ubx
-      :title: Index
-  - :section_title: Impact radius
-    :section:
-    - :path: connections/destinations/impact-radius
-      :title: Index
-  - :section:
-    - :path: "/connections/destinations"
-      :title: Index
-  - :section_title: Indicative
-    :section:
-    - :path: connections/destinations/indicative
-      :title: Index
-  - :section_title: Infinario
-    :section:
-    - :path: connections/destinations/infinario
-      :title: Index
-  - :section_title: Insidevault
-    :section:
-    - :path: connections/destinations/insidevault
-      :title: Index
-  - :section_title: Inspectlet
-    :section:
-    - :path: connections/destinations/inspectlet
-      :title: Index
-  - :section_title: Intellimize
-    :section:
-    - :path: connections/destinations/intellimize
-      :title: Index
-  - :section_title: Intercom
-    :section:
-    - :path: connections/destinations/intercom
-      :title: Index
-  - :section_title: Iron.io
-    :section:
-    - :path: connections/destinations/iron.io
-      :title: Index
-  - :section_title: Iterable
-    :section:
-    - :path: connections/destinations/iterable
-      :title: Index
-  - :section_title: Kahuna
-    :section:
-    - :path: connections/destinations/kahuna
-      :title: Index
-  - :section_title: Keen io
-    :section:
-    - :path: connections/destinations/keen-io
-      :title: Index
-  - :section_title: Kenshoo infinity
-    :section:
-    - :path: connections/destinations/kenshoo-infinity
-      :title: Index
-  - :section_title: Kissmetrics
-    :section:
-    - :path: connections/destinations/kissmetrics
-      :title: Index
-  - :section_title: Kitemetrics
-    :section:
-    - :path: connections/destinations/kitemetrics
-      :title: Index
-  - :section_title: Klaviyo
-    :section:
-    - :path: connections/destinations/klaviyo
-      :title: Index
-  - :section_title: Knowtify
-    :section:
-    - :path: connections/destinations/knowtify
-      :title: Index
-  - :section_title: Kochava
-    :section:
-    - :path: connections/destinations/kochava
-      :title: Index
-  - :section_title: Kubric
-    :section:
-    - :path: connections/destinations/kubric
-      :title: Index
-  - :section_title: Kustomer
-    :section:
-    - :path: connections/destinations/kustomer
-      :title: Index
-  - :section_title: Leadboxer
-    :section:
-    - :path: connections/destinations/leadboxer
-      :title: Index
-  - :section_title: Leanplum
-    :section:
-    - :path: connections/destinations/leanplum
-      :title: Index
-  - :section_title: Librato
-    :section:
-    - :path: connections/destinations/librato
-      :title: Index
-  - :section_title: Linkedin conversion tag
-    :section:
-    - :path: connections/destinations/linkedin-conversion-tag
-      :title: Index
-  - :section_title: Linkedin insight tag
-    :section:
-    - :path: connections/destinations/linkedin-insight-tag
-      :title: Index
-  - :section_title: Livechat
-    :section:
-    - :path: connections/destinations/livechat
-      :title: Index
-  - :section_title: Localytics
-    :section:
-    - :path: connections/destinations/localytics
-      :title: Index
-  - :section_title: Lucky orange
-    :section:
-    - :path: connections/destinations/lucky-orange
-      :title: Index
-  - :section_title: Lytics
-    :section:
-    - :path: connections/destinations/lytics
-      :title: Index
-  - :section_title: Mabl
-    :section:
-    - :path: connections/destinations/mabl
-      :title: Index
-  - :section_title: Madkudu
-    :section:
-    - :path: connections/destinations/madkudu
-      :title: Index
-  - :section_title: Mailchimp
-    :section:
-    - :path: connections/destinations/mailchimp
-      :title: Index
-  - :section_title: Mailjet
-    :section:
-    - :path: connections/destinations/mailjet
-      :title: Index
-  - :section_title: Mammoth
-    :section:
-    - :path: connections/destinations/mammoth
-      :title: Index
-  - :section_title: Marketo static lists
-    :section:
-    - :path: connections/destinations/marketo-static-lists
-      :title: Index
-  - :section_title: Marketo v2
-    :section:
-    - :path: connections/destinations/marketo-v2
-      :title: Index
-  - :section_title: Marketo
-    :section:
-    - :path: connections/destinations/marketo
-      :title: Index
-  - :section_title: Millennial media
-    :section:
-    - :path: connections/destinations/millennial-media
-      :title: Index
-  - :section_title: Mixpanel
-    :section:
-    - :path: connections/destinations/mixpanel
-      :title: Index
-  - :section_title: Moengage
-    :section:
-    - :path: connections/destinations/moengage
-      :title: Index
-  - :section_title: Moesif api analytics
-    :section:
-    - :path: connections/destinations/moesif-api-analytics
-      :title: Index
-  - :section_title: Monetate
-    :section:
-    - :path: connections/destinations/monetate
-      :title: Index
-  - :section_title: Moosend
-    :section:
-    - :path: connections/destinations/moosend
-      :title: Index
-  - :section_title: Mouseflow
-    :section:
-    - :path: connections/destinations/mouseflow
-      :title: Index
-  - :section_title: Movable ink
-    :section:
-    - :path: connections/destinations/movable-ink
-      :title: Index
-  - :section_title: Msg91
-    :section:
-    - :path: connections/destinations/msg91
-      :title: Index
-  - :section_title: Mutiny
-    :section:
-    - :path: connections/destinations/mutiny
-      :title: Index
-  - :section_title: Nanigans
-    :section:
-    - :path: connections/destinations/nanigans
-      :title: Index
-  - :section_title: New relic
-    :section:
-    - :path: connections/destinations/new-relic
-      :title: Index
-  - :section_title: Nielsen dcr
-    :section:
-    - :path: connections/destinations/nielsen-dcr
-      :title: Index
-  - :section_title: Nielsen dtvr
-    :section:
-    - :path: connections/destinations/nielsen-dtvr
-      :title: Index
-  - :section_title: Northstar by growthhackers
-    :section:
-    - :path: connections/destinations/northstar-by-growthhackers
-      :title: Index
-  - :section_title: Nudgespot
-    :section:
-    - :path: connections/destinations/nudgespot
-      :title: Index
-  - :section_title: Olark
-    :section:
-    - :path: connections/destinations/olark
-      :title: Index
-  - :section_title: Omniture
-    :section:
-    - :path: connections/destinations/omniture
-      :title: Index
-  - :section_title: Onesignal
-    :section:
-    - :path: connections/destinations/onesignal
-      :title: Index
-  - :section_title: Optimizely full stack
-    :section:
-    - :path: connections/destinations/optimizely-full-stack
-      :title: Index
-  - :section_title: Optimizely web
-    :section:
-    - :path: connections/destinations/optimizely-web
-      :title: Index
-  - :section_title: Outbound
-    :section:
-    - :path: connections/destinations/outbound
-      :title: Index
-  - :section_title: Pardot
-    :section:
-    - :path: connections/destinations/pardot
-      :title: Index
-  - :section_title: Parsely
-    :section:
-    - :path: connections/destinations/parsely
-      :title: Index
-  - :section_title: Pendo
-    :section:
-    - :path: connections/destinations/pendo
-      :title: Index
-  - :section_title: Perfect audience
-    :section:
-    - :path: connections/destinations/perfect-audience
-      :title: Index
-  - :section_title: Perimeterx
-    :section:
-    - :path: connections/destinations/perimeterx
-      :title: Index
-  - :section_title: Persistiq
-    :section:
-    - :path: connections/destinations/persistiq
-      :title: Index
-  - :section_title: Personas facebook ads
-    :section:
-    - :path: connections/destinations/personas-facebook-ads
-      :title: Index
-  - :section_title: Personyze
-    :section:
-    - :path: connections/destinations/personyze
-      :title: Index
-  - :section_title: Pingdom
-    :section:
-    - :path: connections/destinations/pingdom
-      :title: Index
-  - :section_title: Pinterest tag
-    :section:
-    - :path: connections/destinations/pinterest-tag
-      :title: Index
-  - :section_title: Piwik
-    :section:
-    - :path: connections/destinations/piwik
-      :title: Index
-  - :section_title: Planhat
-    :section:
-    - :path: connections/destinations/planhat
-      :title: Index
-  - :section_title: Pointillist
-    :section:
-    - :path: connections/destinations/pointillist
-      :title: Index
-  - :section_title: Postgres
-    :section:
-    - :path: connections/destinations/postgres
-      :title: Index
-  - :section_title: Preact
-    :section:
-    - :path: connections/destinations/preact
-      :title: Index
-  - :section_title: Primer
-    :section:
-    - :path: connections/destinations/primer
-      :title: Index
-  - :section_title: Promoter.io
-    :section:
-    - :path: connections/destinations/promoter.io
-      :title: Index
-  - :section_title: Proof
-    :section:
-    - :path: connections/destinations/proof
-      :title: Index
-  - :section_title: Qualaroo
-    :section:
-    - :path: connections/destinations/qualaroo
-      :title: Index
-  - :section_title: Quantcast
-    :section:
-    - :path: connections/destinations/quantcast
-      :title: Index
-  - :section_title: Quanticmind
-    :section:
-    - :path: connections/destinations/quanticmind
-      :title: Index
-  - :section_title: Quora conversion pixel
-    :section:
-    - :path: connections/destinations/quora-conversion-pixel
-      :title: Index
-  - :section_title: Ramen
-    :section:
-    - :path: connections/destinations/ramen
-      :title: Index
-  - :section_title: Redshift
-    :section:
-    - :path: connections/destinations/redshift
-      :title: Index
-  - :section_title: Refersion
-    :section:
-    - :path: connections/destinations/refersion
-      :title: Index
-  - :section_title: Refiner
-    :section:
-    - :path: connections/destinations/refiner
-      :title: Index
-  - :section_title: Relay
-    :section:
-    - :path: connections/destinations/relay
-      :title: Index
-  - :section_title: Repeater
-    :section:
-    - :path: connections/destinations/repeater
-      :title: Index
-  - :section_title: Responsys
-    :section:
-    - :path: connections/destinations/responsys
-      :title: Index
-  - :section_title: Rollbar
-    :section:
-    - :path: connections/destinations/rollbar
-      :title: Index
-  - :section_title: Route
-    :section:
-    - :path: connections/destinations/route
-      :title: Index
-  - :section_title: Saasquatch
-    :section:
-    - :path: connections/destinations/saasquatch
-      :title: Index
-  - :section_title: Sailthru
-    :section:
-    - :path: connections/destinations/sailthru
-      :title: Index
-  - :section_title: Salesforce dmp
-    :section:
-    - :path: connections/destinations/salesforce-dmp
-      :title: Index
-  - :section_title: Salesforce live agent
-    :section:
-    - :path: connections/destinations/salesforce-live-agent
-      :title: Index
-  - :section_title: Salesforce marketing cloud
-    :section:
-    - :path: connections/destinations/salesforce-marketing-cloud
-      :title: Index
-  - :section_title: Salesforce
-    :section:
-    - :path: connections/destinations/salesforce
-      :title: Index
-  - :section_title: Salesmachine
-    :section:
-    - :path: connections/destinations/salesmachine
-      :title: Index
-  - :section_title: Satismeter
-    :section:
-    - :path: connections/destinations/satismeter
-      :title: Index
-  - :section_title: Savio
-    :section:
-    - :path: connections/destinations/savio
-      :title: Index
-  - :section_title: Scopeai
-    :section:
-    - :path: connections/destinations/scopeai
-      :title: Index
-  - :section_title: Seg
-    :section:
-    - :path: connections/destinations/seg
-      :title: Index
-  - :section_title: Selligent
-    :section:
-    - :path: connections/destinations/selligent
-      :title: Index
-  - :section_title: Sendwithus
-    :section:
-    - :path: connections/destinations/sendwithus
-      :title: Index
-  - :section_title: Sentry
-    :section:
-    - :path: connections/destinations/sentry
-      :title: Index
-  - :section_title: Serenytics
-    :section:
-    - :path: connections/destinations/serenytics
-      :title: Index
-  - :section_title: Shareasale
-    :section:
-    - :path: connections/destinations/shareasale
-      :title: Index
-  - :section_title: Sherlock
-    :section:
-    - :path: connections/destinations/sherlock
-      :title: Index
-  - :section_title: Simplereach
-    :section:
-    - :path: connections/destinations/simplereach
-      :title: Index
-  - :section_title: Singular
-    :section:
-    - :path: connections/destinations/singular
-      :title: Index
-  - :section_title: Slack
-    :section:
-    - :path: connections/destinations/slack
-      :title: Index
-  - :section_title: Slicingdice
-    :section:
-    - :path: connections/destinations/slicingdice
-      :title: Index
-  - :section_title: Smartlook
-    :section:
-    - :path: connections/destinations/smartlook
-      :title: Index
-  - :section_title: Smbstream
-    :section:
-    - :path: connections/destinations/smbstream
-      :title: Index
-  - :section_title: Smyte
-    :section:
-    - :path: connections/destinations/smyte
-      :title: Index
-  - :section_title: Snapengage
-    :section:
-    - :path: connections/destinations/snapengage
-      :title: Index
-  - :section_title: Snowflake
-    :section:
-    - :path: connections/destinations/snowflake
-      :title: Index
-  - :section_title: Sparkpage
-    :section:
-    - :path: connections/destinations/sparkpage
-      :title: Index
-  - :section_title: Split
-    :section:
-    - :path: connections/destinations/split
-      :title: Index
-  - :section_title: Strikedeck
-    :section:
-    - :path: connections/destinations/strikedeck
-      :title: Index
-  - :section_title: Stripe radar
-    :section:
-    - :path: connections/destinations/stripe-radar
-      :title: Index
-  - :section_title: Survicate
-    :section:
-    - :path: connections/destinations/survicate
-      :title: Index
-  - :section_title: Swrve
-    :section:
-    - :path: connections/destinations/swrve
-      :title: Index
-  - :section_title: Tableau
-    :section:
-    - :path: connections/destinations/tableau
-      :title: Index
-  - :section_title: Tag injector
-    :section:
-    - :path: connections/destinations/tag-injector
-      :title: Index
-  - :section_title: Tamber
-    :section:
-    - :path: connections/destinations/tamber
-      :title: Index
-  - :section_title: Taplytics
-    :section:
-    - :path: connections/destinations/taplytics
-      :title: Index
-  - :section_title: Tealium audience stream
-    :section:
-    - :path: connections/destinations/tealium-audience-stream
-      :title: Index
-  - :section_title: Totango
-    :section:
-    - :path: connections/destinations/totango
-      :title: Index
-  - :section_title: Track js
-    :section:
-    - :path: connections/destinations/track-js
-      :title: Index
-  - :section_title: Trackier
-    :section:
-    - :path: connections/destinations/trackier
-      :title: Index
-  - :section_title: Tractionboard
-    :section:
-    - :path: connections/destinations/tractionboard
-      :title: Index
-  - :section_title: Trafficguard
-    :section:
-    - :path: connections/destinations/trafficguard
-      :title: Index
-  - :section_title: Tray.io
-    :section:
-    - :path: connections/destinations/tray.io
-      :title: Index
-  - :section_title: Treasure data
-    :section:
-    - :path: connections/destinations/treasure-data
-      :title: Index
-  - :section_title: Trustpilot
-    :section:
-    - :path: connections/destinations/trustpilot
-      :title: Index
-  - :section_title: Tune
-    :section:
-    - :path: connections/destinations/tune
-      :title: Index
-  - :section_title: Tv squared
-    :section:
-    - :path: connections/destinations/tv-squared
-      :title: Index
-  - :section_title: Twitter ads
-    :section:
-    - :path: connections/destinations/twitter-ads
-      :title: Index
-  - :section_title: Unwaffle
-    :section:
-    - :path: connections/destinations/unwaffle
-      :title: Index
-  - :section_title: Upcall
-    :section:
-    - :path: connections/destinations/upcall
-      :title: Index
-  - :section_title: Urban airship
-    :section:
-    - :path: connections/destinations/urban-airship
-      :title: Index
-  - :section_title: Userengage
-    :section:
-    - :path: connections/destinations/userengage
-      :title: Index
-  - :section_title: Useriq
-    :section:
-    - :path: connections/destinations/useriq
-      :title: Index
-  - :section_title: Userlike
-    :section:
-    - :path: connections/destinations/userlike
-      :title: Index
-  - :section_title: Userlist
-    :section:
-    - :path: connections/destinations/userlist
-      :title: Index
-  - :section_title: Userpilot
-    :section:
-    - :path: connections/destinations/userpilot
-      :title: Index
-  - :section_title: Uservoice
-    :section:
-    - :path: connections/destinations/uservoice
-      :title: Index
-  - :section_title: Vero
-    :section:
-    - :path: connections/destinations/vero
-      :title: Index
-  - :section_title: Visual website optimizer
-    :section:
-    - :path: connections/destinations/visual-website-optimizer
-      :title: Index
-  - :section_title: Vitally
-    :section:
-    - :path: connections/destinations/vitally
-      :title: Index
-  - :section_title: Watchtower
-    :section:
-    - :path: connections/destinations/watchtower
-      :title: Index
-  - :section_title: Watsi
-    :section:
-    - :path: connections/destinations/watsi
-      :title: Index
-  - :section_title: Webengage
-    :section:
-    - :path: connections/destinations/webengage
-      :title: Index
-  - :section_title: Webhooks
-    :section:
-    - :path: connections/destinations/webhooks
-      :title: Index
-  - :section_title: Whale alerts
-    :section:
-    - :path: connections/destinations/whale-alerts
-      :title: Index
-  - :section_title: Wigzo
-    :section:
-    - :path: connections/destinations/wigzo
-      :title: Index
-  - :section_title: Wishpond
-    :section:
-    - :path: connections/destinations/wishpond
-      :title: Index
-  - :section_title: Woopra
-    :section:
-    - :path: connections/destinations/woopra
-      :title: Index
-  - :section_title: Wootric
-    :section:
-    - :path: connections/destinations/wootric
-      :title: Index
-  - :section_title: Xtremepush
-    :section:
-    - :path: connections/destinations/xtremepush
-      :title: Index
-  - :section_title: Yandex metrica
-    :section:
-    - :path: connections/destinations/yandex-metrica
-      :title: Index
-  - :section_title: Youbora
-    :section:
-    - :path: connections/destinations/youbora
-      :title: Index
-  - :section_title: Zaius
-    :section:
-    - :path: connections/destinations/zaius
-      :title: Index
-  - :section_title: Zapier
-    :section:
-    - :path: connections/destinations/zapier
-      :title: Index
-  - :section_title: Zendesk
-    :section:
-    - :path: connections/destinations/zendesk
-      :title: Index
-  - :section_title: Zopim
-    :section:
-    - :path: connections/destinations/zopim
-      :title: Index
-  - :section:
-    - :path: "/connections/sources"
-      :title: Index
-  - :section_title: Visual tagger
-    :section:
-    - :path: connections/sources/visual-tagger
-      :title: Index
-  - :section:
-    - :path: "/connections/spec"
-      :title: Index
-  - :section:
-    - :path: "/connections/warehouses"
-      :title: Index
-- :section_title: Guides
-  :section:
-  - :path: "/guides"
-    :title: Index
-  - :section_title: Can i move a source from one workspace to another
-    :section:
-    - :path: guides/account-management/can-i-move-a-source-from-one-workspace-to-another
-      :title: Index
-  - :section_title: Can i recover a source or workspace after i delete it
-    :section:
-    - :path: guides/account-management/can-i-recover-a-source-or-workspace-after-i-delete-it
-      :title: Index
-  - :section_title: How do i add a team member
-    :section:
-    - :path: guides/account-management/how-do-i-add-a-team-member
-      :title: Index
-  - :section_title: How do i delete my workspace entirely
-    :section:
-    - :path: guides/account-management/how-do-i-delete-my-workspace-entirely
-      :title: Index
-  - :section_title: I want to set up segment for multiple environments development
+sections:
+- section_title: Connections
+  section:
+  - path: "/connections"
+    title: Index
+  - section_title: Aboardly
+    section:
+    - path: connections/destinations/aboardly
+      title: Index
+  - section_title: Activecampaign
+    section:
+    - path: connections/destinations/activecampaign
+      title: Index
+  - section_title: Adikteev
+    section:
+    - path: connections/destinations/adikteev
+      title: Index
+  - section_title: Adjust
+    section:
+    - path: connections/destinations/adjust
+      title: Index
+  - section_title: Adobe analytics
+    section:
+    - path: connections/destinations/adobe-analytics
+      title: Index
+  - section_title: Adobe target
+    section:
+    - path: connections/destinations/adobe-target
+      title: Index
+  - section_title: Adroll
+    section:
+    - path: connections/destinations/adroll
+      title: Index
+  - section_title: Adtriba
+    section:
+    - path: connections/destinations/adtriba
+      title: Index
+  - section_title: Adwords remarketing lists
+    section:
+    - path: connections/destinations/adwords-remarketing-lists
+      title: Index
+  - section_title: Adwords
+    section:
+    - path: connections/destinations/adwords
+      title: Index
+  - section_title: Akita
+    section:
+    - path: connections/destinations/akita
+      title: Index
+  - section_title: Alexa
+    section:
+    - path: connections/destinations/alexa
+      title: Index
+  - section_title: All aboard
+    section:
+    - path: connections/destinations/all-aboard
+      title: Index
+  - section_title: Amazon kinesis firehose
+    section:
+    - path: connections/destinations/amazon-kinesis-firehose
+      title: Index
+  - section_title: Amazon kinesis
+    section:
+    - path: connections/destinations/amazon-kinesis
+      title: Index
+  - section_title: Amazon lambda
+    section:
+    - path: connections/destinations/amazon-lambda
+      title: Index
+  - section_title: Amazon personalize
+    section:
+    - path: connections/destinations/amazon-personalize
+      title: Index
+  - section_title: Amazon s3
+    section:
+    - path: connections/destinations/amazon-s3
+      title: Index
+  - section_title: Ambassador
+    section:
+    - path: connections/destinations/ambassador
+      title: Index
+  - section_title: Amplitude
+    section:
+    - path: connections/destinations/amplitude
+      title: Index
+  - section_title: Appcues
+    section:
+    - path: connections/destinations/appcues
+      title: Index
+  - section_title: Appsflyer
+    section:
+    - path: connections/destinations/appsflyer
+      title: Index
+  - section_title: Apptimize
+    section:
+    - path: connections/destinations/apptimize
+      title: Index
+  - section_title: Apteligent
+    section:
+    - path: connections/destinations/apteligent
+      title: Index
+  - section_title: Aptrinsic
+    section:
+    - path: connections/destinations/aptrinsic
+      title: Index
+  - section_title: Asayer
+    section:
+    - path: connections/destinations/asayer
+      title: Index
+  - section_title: Auryc
+    section:
+    - path: connections/destinations/auryc
+      title: Index
+  - section_title: Autopilothq
+    section:
+    - path: connections/destinations/autopilothq
+      title: Index
+  - section_title: Azure function
+    section:
+    - path: connections/destinations/azure-function
+      title: Index
+  - section_title: Azuresqldw
+    section:
+    - path: connections/destinations/azuresqldw
+      title: Index
+  - section_title: Batch
+    section:
+    - path: connections/destinations/batch
+      title: Index
+  - section_title: Bigquery
+    section:
+    - path: connections/destinations/bigquery
+      title: Index
+  - section_title: Bing ads
+    section:
+    - path: connections/destinations/bing-ads
+      title: Index
+  - section_title: Blendo
+    section:
+    - path: connections/destinations/blendo
+      title: Index
+  - section_title: Boomtrain
+    section:
+    - path: connections/destinations/boomtrain
+      title: Index
+  - section_title: Branch metrics
+    section:
+    - path: connections/destinations/branch-metrics
+      title: Index
+  - section_title: Braze
+    section:
+    - path: connections/destinations/braze
+      title: Index
+  - section_title: Bronto
+    section:
+    - path: connections/destinations/bronto
+      title: Index
+  - section_title: Bugherd
+    section:
+    - path: connections/destinations/bugherd
+      title: Index
+  - section_title: Bugsnag
+    section:
+    - path: connections/destinations/bugsnag
+      title: Index
+  - section_title: Bytegain
+    section:
+    - path: connections/destinations/bytegain
+      title: Index
+  - section_title: Callexa
+    section:
+    - path: connections/destinations/callexa
+      title: Index
+  - section_title: Callingly
+    section:
+    - path: connections/destinations/callingly
+      title: Index
+  - section_title: Candu
+    section:
+    - path: connections/destinations/candu
+      title: Index
+  - section_title: Castle
+    section:
+    - path: connections/destinations/castle
+      title: Index
+  - section_title: Chameleon
+    section:
+    - path: connections/destinations/chameleon
+      title: Index
+  - section_title: Chartbeat
+    section:
+    - path: connections/destinations/chartbeat
+      title: Index
+  - section_title: Churnzero
+    section:
+    - path: connections/destinations/churnzero
+      title: Index
+  - section_title: Clearbit enrichment
+    section:
+    - path: connections/destinations/clearbit-enrichment
+      title: Index
+  - section_title: Clearbit reveal
+    section:
+    - path: connections/destinations/clearbit-reveal
+      title: Index
+  - section_title: Clearbrain
+    section:
+    - path: connections/destinations/clearbrain
+      title: Index
+  - section_title: Clevertap
+    section:
+    - path: connections/destinations/clevertap
+      title: Index
+  - section_title: Clicky
+    section:
+    - path: connections/destinations/clicky
+      title: Index
+  - section_title: Clientsuccess
+    section:
+    - path: connections/destinations/clientsuccess
+      title: Index
+  - section_title: Comscore
+    section:
+    - path: connections/destinations/comscore
+      title: Index
+  - section_title: Convertflow
+    section:
+    - path: connections/destinations/convertflow
+      title: Index
+  - section_title: Convertro
+    section:
+    - path: connections/destinations/convertro
+      title: Index
+  - section_title: Cordialio
+    section:
+    - path: connections/destinations/cordialio
+      title: Index
+  - section_title: Countly
+    section:
+    - path: connections/destinations/countly
+      title: Index
+  - section_title: Crazy egg
+    section:
+    - path: connections/destinations/crazy-egg
+      title: Index
+  - section_title: Criteo
+    section:
+    - path: connections/destinations/criteo
+      title: Index
+  - section_title: Cruncher
+    section:
+    - path: connections/destinations/cruncher
+      title: Index
+  - section_title: Cubitic
+    section:
+    - path: connections/destinations/cubitic
+      title: Index
+  - section_title: Curebit
+    section:
+    - path: connections/destinations/curebit
+      title: Index
+  - section_title: Custify
+    section:
+    - path: connections/destinations/custify
+      title: Index
+  - section_title: Customer.io
+    section:
+    - path: connections/destinations/customer.io
+      title: Index
+  - section_title: Customersuccessbox
+    section:
+    - path: connections/destinations/customersuccessbox
+      title: Index
+  - section_title: Cxense
+    section:
+    - path: connections/destinations/cxense
+      title: Index
+  - section_title: Db2
+    section:
+    - path: connections/destinations/db2
+      title: Index
+  - section_title: Delighted
+    section:
+    - path: connections/destinations/delighted
+      title: Index
+  - section:
+    - path: "/connections/destinations/destination-filters"
+      title: Destination filters
+  - section_title: Doubleclick floodlight
+    section:
+    - path: connections/destinations/doubleclick-floodlight
+      title: Index
+  - section_title: Dreamdata io
+    section:
+    - path: connections/destinations/dreamdata-io
+      title: Index
+  - section_title: Drift
+    section:
+    - path: connections/destinations/drift
+      title: Index
+  - section_title: Drip
+    section:
+    - path: connections/destinations/drip
+      title: Index
+  - section_title: Elevio
+    section:
+    - path: connections/destinations/elevio
+      title: Index
+  - section_title: Eloqua
+    section:
+    - path: connections/destinations/eloqua
+      title: Index
+  - section_title: Emarsys
+    section:
+    - path: connections/destinations/emarsys
+      title: Index
+  - section_title: Emma
+    section:
+    - path: connections/destinations/emma
+      title: Index
+  - section_title: Epica
+    section:
+    - path: connections/destinations/epica
+      title: Index
+  - section_title: Errorception
+    section:
+    - path: connections/destinations/errorception
+      title: Index
+  - section_title: Evergage
+    section:
+    - path: connections/destinations/evergage
+      title: Index
+  - section_title: Extole
+    section:
+    - path: connections/destinations/extole
+      title: Index
+  - section_title: Facebook app events
+    section:
+    - path: connections/destinations/facebook-app-events
+      title: Index
+  - section_title: Facebook offline conversions
+    section:
+    - path: connections/destinations/facebook-offline-conversions
+      title: Index
+  - section_title: Facebook pixel server side
+    section:
+    - path: connections/destinations/facebook-pixel-server-side
+      title: Index
+  - section_title: Facebook pixel
+    section:
+    - path: connections/destinations/facebook-pixel
+      title: Index
+  - section_title: Factorsai
+    section:
+    - path: connections/destinations/factorsai
+      title: Index
+  - section_title: Faq
+    section:
+    - path: connections/destinations/faq
+      title: Index
+    - path: connections/sources/faq
+      title: Index
+    - path: connections/warehouses/faq
+      title: Index
+  - section_title: Firebase
+    section:
+    - path: connections/destinations/firebase
+      title: Index
+  - section_title: Flurry
+    section:
+    - path: connections/destinations/flurry
+      title: Index
+  - section_title: Foxmetrics
+    section:
+    - path: connections/destinations/foxmetrics
+      title: Index
+  - section_title: Framed.io
+    section:
+    - path: connections/destinations/framed.io
+      title: Index
+  - section_title: Freshdesk
+    section:
+    - path: connections/destinations/freshdesk
+      title: Index
+  - section_title: Freshmarketer
+    section:
+    - path: connections/destinations/freshmarketer
+      title: Index
+  - section_title: Freshsales
+    section:
+    - path: connections/destinations/freshsales
+      title: Index
+  - section_title: Friendbuy
+    section:
+    - path: connections/destinations/friendbuy
+      title: Index
+  - section_title: Frontleaf
+    section:
+    - path: connections/destinations/frontleaf
+      title: Index
+  - section_title: Fullstory
+    section:
+    - path: connections/destinations/fullstory
+      title: Index
+  - section_title: Funnelfox
+    section:
+    - path: connections/destinations/funnelfox
+      title: Index
+  - section_title: Gainsight
+    section:
+    - path: connections/destinations/gainsight
+      title: Index
+  - section_title: Gauges
+    section:
+    - path: connections/destinations/gauges
+      title: Index
+  - section_title: Goedle
+    section:
+    - path: connections/destinations/goedle
+      title: Index
+  - section_title: Google adwords new
+    section:
+    - path: connections/destinations/google-adwords-new
+      title: Index
+  - section_title: Google analytics
+    section:
+    - path: connections/destinations/google-analytics
+      title: Index
+  - section_title: Google cloud function
+    section:
+    - path: connections/destinations/google-cloud-function
+      title: Index
+  - section_title: Google cloud pubsub
+    section:
+    - path: connections/destinations/google-cloud-pubsub
+      title: Index
+  - section_title: Google tag manager
+    section:
+    - path: connections/destinations/google-tag-manager
+      title: Index
+  - section_title: Gosquared
+    section:
+    - path: connections/destinations/gosquared
+      title: Index
+  - section_title: Heap
+    section:
+    - path: connections/destinations/heap
+      title: Index
+  - section_title: Help scout
+    section:
+    - path: connections/destinations/help-scout
+      title: Index
+  - section_title: Hindsight
+    section:
+    - path: connections/destinations/hindsight
+      title: Index
+  - section_title: Hittail
+    section:
+    - path: connections/destinations/hittail
+      title: Index
+  - section_title: Hotjar
+    section:
+    - path: connections/destinations/hotjar
+      title: Index
+  - section_title: Hubspot
+    section:
+    - path: connections/destinations/hubspot
+      title: Index
+  - section_title: Hull
+    section:
+    - path: connections/destinations/hull
+      title: Index
+  - section_title: Hydra
+    section:
+    - path: connections/destinations/hydra
+      title: Index
+  - section_title: Ibm ubx
+    section:
+    - path: connections/destinations/ibm-ubx
+      title: Index
+  - section_title: Impact radius
+    section:
+    - path: connections/destinations/impact-radius
+      title: Index
+  - section:
+    - path: "/connections/destinations"
+      title: Index
+  - section_title: Indicative
+    section:
+    - path: connections/destinations/indicative
+      title: Index
+  - section_title: Infinario
+    section:
+    - path: connections/destinations/infinario
+      title: Index
+  - section_title: Insidevault
+    section:
+    - path: connections/destinations/insidevault
+      title: Index
+  - section_title: Inspectlet
+    section:
+    - path: connections/destinations/inspectlet
+      title: Index
+  - section_title: Intellimize
+    section:
+    - path: connections/destinations/intellimize
+      title: Index
+  - section_title: Intercom
+    section:
+    - path: connections/destinations/intercom
+      title: Index
+  - section_title: Iron.io
+    section:
+    - path: connections/destinations/iron.io
+      title: Index
+  - section_title: Iterable
+    section:
+    - path: connections/destinations/iterable
+      title: Index
+  - section_title: Kahuna
+    section:
+    - path: connections/destinations/kahuna
+      title: Index
+  - section_title: Keen io
+    section:
+    - path: connections/destinations/keen-io
+      title: Index
+  - section_title: Kenshoo infinity
+    section:
+    - path: connections/destinations/kenshoo-infinity
+      title: Index
+  - section_title: Kissmetrics
+    section:
+    - path: connections/destinations/kissmetrics
+      title: Index
+  - section_title: Kitemetrics
+    section:
+    - path: connections/destinations/kitemetrics
+      title: Index
+  - section_title: Klaviyo
+    section:
+    - path: connections/destinations/klaviyo
+      title: Index
+  - section_title: Knowtify
+    section:
+    - path: connections/destinations/knowtify
+      title: Index
+  - section_title: Kochava
+    section:
+    - path: connections/destinations/kochava
+      title: Index
+  - section_title: Kubric
+    section:
+    - path: connections/destinations/kubric
+      title: Index
+  - section_title: Kustomer
+    section:
+    - path: connections/destinations/kustomer
+      title: Index
+  - section_title: Leadboxer
+    section:
+    - path: connections/destinations/leadboxer
+      title: Index
+  - section_title: Leanplum
+    section:
+    - path: connections/destinations/leanplum
+      title: Index
+  - section_title: Librato
+    section:
+    - path: connections/destinations/librato
+      title: Index
+  - section_title: Linkedin conversion tag
+    section:
+    - path: connections/destinations/linkedin-conversion-tag
+      title: Index
+  - section_title: Linkedin insight tag
+    section:
+    - path: connections/destinations/linkedin-insight-tag
+      title: Index
+  - section_title: Livechat
+    section:
+    - path: connections/destinations/livechat
+      title: Index
+  - section_title: Localytics
+    section:
+    - path: connections/destinations/localytics
+      title: Index
+  - section_title: Lucky orange
+    section:
+    - path: connections/destinations/lucky-orange
+      title: Index
+  - section_title: Lytics
+    section:
+    - path: connections/destinations/lytics
+      title: Index
+  - section_title: Mabl
+    section:
+    - path: connections/destinations/mabl
+      title: Index
+  - section_title: Madkudu
+    section:
+    - path: connections/destinations/madkudu
+      title: Index
+  - section_title: Mailchimp
+    section:
+    - path: connections/destinations/mailchimp
+      title: Index
+  - section_title: Mailjet
+    section:
+    - path: connections/destinations/mailjet
+      title: Index
+  - section_title: Mammoth
+    section:
+    - path: connections/destinations/mammoth
+      title: Index
+  - section_title: Marketo static lists
+    section:
+    - path: connections/destinations/marketo-static-lists
+      title: Index
+  - section_title: Marketo v2
+    section:
+    - path: connections/destinations/marketo-v2
+      title: Index
+  - section_title: Marketo
+    section:
+    - path: connections/destinations/marketo
+      title: Index
+  - section_title: Millennial media
+    section:
+    - path: connections/destinations/millennial-media
+      title: Index
+  - section_title: Mixpanel
+    section:
+    - path: connections/destinations/mixpanel
+      title: Index
+  - section_title: Moengage
+    section:
+    - path: connections/destinations/moengage
+      title: Index
+  - section_title: Moesif api analytics
+    section:
+    - path: connections/destinations/moesif-api-analytics
+      title: Index
+  - section_title: Monetate
+    section:
+    - path: connections/destinations/monetate
+      title: Index
+  - section_title: Moosend
+    section:
+    - path: connections/destinations/moosend
+      title: Index
+  - section_title: Mouseflow
+    section:
+    - path: connections/destinations/mouseflow
+      title: Index
+  - section_title: Movable ink
+    section:
+    - path: connections/destinations/movable-ink
+      title: Index
+  - section_title: Msg91
+    section:
+    - path: connections/destinations/msg91
+      title: Index
+  - section_title: Mutiny
+    section:
+    - path: connections/destinations/mutiny
+      title: Index
+  - section_title: Nanigans
+    section:
+    - path: connections/destinations/nanigans
+      title: Index
+  - section_title: New relic
+    section:
+    - path: connections/destinations/new-relic
+      title: Index
+  - section_title: Nielsen dcr
+    section:
+    - path: connections/destinations/nielsen-dcr
+      title: Index
+  - section_title: Nielsen dtvr
+    section:
+    - path: connections/destinations/nielsen-dtvr
+      title: Index
+  - section_title: Northstar by growthhackers
+    section:
+    - path: connections/destinations/northstar-by-growthhackers
+      title: Index
+  - section_title: Nudgespot
+    section:
+    - path: connections/destinations/nudgespot
+      title: Index
+  - section_title: Olark
+    section:
+    - path: connections/destinations/olark
+      title: Index
+  - section_title: Omniture
+    section:
+    - path: connections/destinations/omniture
+      title: Index
+  - section_title: Onesignal
+    section:
+    - path: connections/destinations/onesignal
+      title: Index
+  - section_title: Optimizely full stack
+    section:
+    - path: connections/destinations/optimizely-full-stack
+      title: Index
+  - section_title: Optimizely web
+    section:
+    - path: connections/destinations/optimizely-web
+      title: Index
+  - section_title: Outbound
+    section:
+    - path: connections/destinations/outbound
+      title: Index
+  - section_title: Pardot
+    section:
+    - path: connections/destinations/pardot
+      title: Index
+  - section_title: Parsely
+    section:
+    - path: connections/destinations/parsely
+      title: Index
+  - section_title: Pendo
+    section:
+    - path: connections/destinations/pendo
+      title: Index
+  - section_title: Perfect audience
+    section:
+    - path: connections/destinations/perfect-audience
+      title: Index
+  - section_title: Perimeterx
+    section:
+    - path: connections/destinations/perimeterx
+      title: Index
+  - section_title: Persistiq
+    section:
+    - path: connections/destinations/persistiq
+      title: Index
+  - section_title: Personas facebook ads
+    section:
+    - path: connections/destinations/personas-facebook-ads
+      title: Index
+  - section_title: Personyze
+    section:
+    - path: connections/destinations/personyze
+      title: Index
+  - section_title: Pingdom
+    section:
+    - path: connections/destinations/pingdom
+      title: Index
+  - section_title: Pinterest tag
+    section:
+    - path: connections/destinations/pinterest-tag
+      title: Index
+  - section_title: Piwik
+    section:
+    - path: connections/destinations/piwik
+      title: Index
+  - section_title: Planhat
+    section:
+    - path: connections/destinations/planhat
+      title: Index
+  - section_title: Pointillist
+    section:
+    - path: connections/destinations/pointillist
+      title: Index
+  - section_title: Postgres
+    section:
+    - path: connections/destinations/postgres
+      title: Index
+  - section_title: Preact
+    section:
+    - path: connections/destinations/preact
+      title: Index
+  - section_title: Primer
+    section:
+    - path: connections/destinations/primer
+      title: Index
+  - section_title: Promoter.io
+    section:
+    - path: connections/destinations/promoter.io
+      title: Index
+  - section_title: Proof
+    section:
+    - path: connections/destinations/proof
+      title: Index
+  - section_title: Qualaroo
+    section:
+    - path: connections/destinations/qualaroo
+      title: Index
+  - section_title: Quantcast
+    section:
+    - path: connections/destinations/quantcast
+      title: Index
+  - section_title: Quanticmind
+    section:
+    - path: connections/destinations/quanticmind
+      title: Index
+  - section_title: Quora conversion pixel
+    section:
+    - path: connections/destinations/quora-conversion-pixel
+      title: Index
+  - section_title: Ramen
+    section:
+    - path: connections/destinations/ramen
+      title: Index
+  - section_title: Redshift
+    section:
+    - path: connections/destinations/redshift
+      title: Index
+  - section_title: Refersion
+    section:
+    - path: connections/destinations/refersion
+      title: Index
+  - section_title: Refiner
+    section:
+    - path: connections/destinations/refiner
+      title: Index
+  - section_title: Relay
+    section:
+    - path: connections/destinations/relay
+      title: Index
+  - section_title: Repeater
+    section:
+    - path: connections/destinations/repeater
+      title: Index
+  - section_title: Responsys
+    section:
+    - path: connections/destinations/responsys
+      title: Index
+  - section_title: Rollbar
+    section:
+    - path: connections/destinations/rollbar
+      title: Index
+  - section_title: Route
+    section:
+    - path: connections/destinations/route
+      title: Index
+  - section_title: Saasquatch
+    section:
+    - path: connections/destinations/saasquatch
+      title: Index
+  - section_title: Sailthru
+    section:
+    - path: connections/destinations/sailthru
+      title: Index
+  - section_title: Salesforce dmp
+    section:
+    - path: connections/destinations/salesforce-dmp
+      title: Index
+  - section_title: Salesforce live agent
+    section:
+    - path: connections/destinations/salesforce-live-agent
+      title: Index
+  - section_title: Salesforce marketing cloud
+    section:
+    - path: connections/destinations/salesforce-marketing-cloud
+      title: Index
+  - section_title: Salesforce
+    section:
+    - path: connections/destinations/salesforce
+      title: Index
+  - section_title: Salesmachine
+    section:
+    - path: connections/destinations/salesmachine
+      title: Index
+  - section_title: Satismeter
+    section:
+    - path: connections/destinations/satismeter
+      title: Index
+  - section_title: Savio
+    section:
+    - path: connections/destinations/savio
+      title: Index
+  - section_title: Scopeai
+    section:
+    - path: connections/destinations/scopeai
+      title: Index
+  - section_title: Seg
+    section:
+    - path: connections/destinations/seg
+      title: Index
+  - section_title: Selligent
+    section:
+    - path: connections/destinations/selligent
+      title: Index
+  - section_title: Sendwithus
+    section:
+    - path: connections/destinations/sendwithus
+      title: Index
+  - section_title: Sentry
+    section:
+    - path: connections/destinations/sentry
+      title: Index
+  - section_title: Serenytics
+    section:
+    - path: connections/destinations/serenytics
+      title: Index
+  - section_title: Shareasale
+    section:
+    - path: connections/destinations/shareasale
+      title: Index
+  - section_title: Sherlock
+    section:
+    - path: connections/destinations/sherlock
+      title: Index
+  - section_title: Simplereach
+    section:
+    - path: connections/destinations/simplereach
+      title: Index
+  - section_title: Singular
+    section:
+    - path: connections/destinations/singular
+      title: Index
+  - section_title: Slack
+    section:
+    - path: connections/destinations/slack
+      title: Index
+  - section_title: Slicingdice
+    section:
+    - path: connections/destinations/slicingdice
+      title: Index
+  - section_title: Smartlook
+    section:
+    - path: connections/destinations/smartlook
+      title: Index
+  - section_title: Smbstream
+    section:
+    - path: connections/destinations/smbstream
+      title: Index
+  - section_title: Smyte
+    section:
+    - path: connections/destinations/smyte
+      title: Index
+  - section_title: Snapengage
+    section:
+    - path: connections/destinations/snapengage
+      title: Index
+  - section_title: Snowflake
+    section:
+    - path: connections/destinations/snowflake
+      title: Index
+  - section_title: Sparkpage
+    section:
+    - path: connections/destinations/sparkpage
+      title: Index
+  - section_title: Split
+    section:
+    - path: connections/destinations/split
+      title: Index
+  - section_title: Strikedeck
+    section:
+    - path: connections/destinations/strikedeck
+      title: Index
+  - section_title: Stripe radar
+    section:
+    - path: connections/destinations/stripe-radar
+      title: Index
+  - section_title: Survicate
+    section:
+    - path: connections/destinations/survicate
+      title: Index
+  - section_title: Swrve
+    section:
+    - path: connections/destinations/swrve
+      title: Index
+  - section_title: Tableau
+    section:
+    - path: connections/destinations/tableau
+      title: Index
+  - section_title: Tag injector
+    section:
+    - path: connections/destinations/tag-injector
+      title: Index
+  - section_title: Tamber
+    section:
+    - path: connections/destinations/tamber
+      title: Index
+  - section_title: Taplytics
+    section:
+    - path: connections/destinations/taplytics
+      title: Index
+  - section_title: Tealium audience stream
+    section:
+    - path: connections/destinations/tealium-audience-stream
+      title: Index
+  - section_title: Totango
+    section:
+    - path: connections/destinations/totango
+      title: Index
+  - section_title: Track js
+    section:
+    - path: connections/destinations/track-js
+      title: Index
+  - section_title: Trackier
+    section:
+    - path: connections/destinations/trackier
+      title: Index
+  - section_title: Tractionboard
+    section:
+    - path: connections/destinations/tractionboard
+      title: Index
+  - section_title: Trafficguard
+    section:
+    - path: connections/destinations/trafficguard
+      title: Index
+  - section_title: Tray.io
+    section:
+    - path: connections/destinations/tray.io
+      title: Index
+  - section_title: Treasure data
+    section:
+    - path: connections/destinations/treasure-data
+      title: Index
+  - section_title: Trustpilot
+    section:
+    - path: connections/destinations/trustpilot
+      title: Index
+  - section_title: Tune
+    section:
+    - path: connections/destinations/tune
+      title: Index
+  - section_title: Tv squared
+    section:
+    - path: connections/destinations/tv-squared
+      title: Index
+  - section_title: Twitter ads
+    section:
+    - path: connections/destinations/twitter-ads
+      title: Index
+  - section_title: Unwaffle
+    section:
+    - path: connections/destinations/unwaffle
+      title: Index
+  - section_title: Upcall
+    section:
+    - path: connections/destinations/upcall
+      title: Index
+  - section_title: Urban airship
+    section:
+    - path: connections/destinations/urban-airship
+      title: Index
+  - section_title: Userengage
+    section:
+    - path: connections/destinations/userengage
+      title: Index
+  - section_title: Useriq
+    section:
+    - path: connections/destinations/useriq
+      title: Index
+  - section_title: Userlike
+    section:
+    - path: connections/destinations/userlike
+      title: Index
+  - section_title: Userlist
+    section:
+    - path: connections/destinations/userlist
+      title: Index
+  - section_title: Userpilot
+    section:
+    - path: connections/destinations/userpilot
+      title: Index
+  - section_title: Uservoice
+    section:
+    - path: connections/destinations/uservoice
+      title: Index
+  - section_title: Vero
+    section:
+    - path: connections/destinations/vero
+      title: Index
+  - section_title: Visual website optimizer
+    section:
+    - path: connections/destinations/visual-website-optimizer
+      title: Index
+  - section_title: Vitally
+    section:
+    - path: connections/destinations/vitally
+      title: Index
+  - section_title: Watchtower
+    section:
+    - path: connections/destinations/watchtower
+      title: Index
+  - section_title: Watsi
+    section:
+    - path: connections/destinations/watsi
+      title: Index
+  - section_title: Webengage
+    section:
+    - path: connections/destinations/webengage
+      title: Index
+  - section_title: Webhooks
+    section:
+    - path: connections/destinations/webhooks
+      title: Index
+  - section_title: Whale alerts
+    section:
+    - path: connections/destinations/whale-alerts
+      title: Index
+  - section_title: Wigzo
+    section:
+    - path: connections/destinations/wigzo
+      title: Index
+  - section_title: Wishpond
+    section:
+    - path: connections/destinations/wishpond
+      title: Index
+  - section_title: Woopra
+    section:
+    - path: connections/destinations/woopra
+      title: Index
+  - section_title: Wootric
+    section:
+    - path: connections/destinations/wootric
+      title: Index
+  - section_title: Xtremepush
+    section:
+    - path: connections/destinations/xtremepush
+      title: Index
+  - section_title: Yandex metrica
+    section:
+    - path: connections/destinations/yandex-metrica
+      title: Index
+  - section_title: Youbora
+    section:
+    - path: connections/destinations/youbora
+      title: Index
+  - section_title: Zaius
+    section:
+    - path: connections/destinations/zaius
+      title: Index
+  - section_title: Zapier
+    section:
+    - path: connections/destinations/zapier
+      title: Index
+  - section_title: Zendesk
+    section:
+    - path: connections/destinations/zendesk
+      title: Index
+  - section_title: Zopim
+    section:
+    - path: connections/destinations/zopim
+      title: Index
+  - section:
+    - path: "/connections/sources"
+      title: Index
+  - section_title: Visual tagger
+    section:
+    - path: connections/sources/visual-tagger
+      title: Index
+  - section:
+    - path: "/connections/spec"
+      title: Index
+  - section:
+    - path: "/connections/warehouses"
+      title: Index
+- section_title: Guides
+  section:
+  - path: "/guides"
+    title: Index
+  - section_title: Can i move a source from one workspace to another
+    section:
+    - path: guides/account-management/can-i-move-a-source-from-one-workspace-to-another
+      title: Index
+  - section_title: Can i recover a source or workspace after i delete it
+    section:
+    - path: guides/account-management/can-i-recover-a-source-or-workspace-after-i-delete-it
+      title: Index
+  - section_title: How do i add a team member
+    section:
+    - path: guides/account-management/how-do-i-add-a-team-member
+      title: Index
+  - section_title: How do i delete my workspace entirely
+    section:
+    - path: guides/account-management/how-do-i-delete-my-workspace-entirely
+      title: Index
+  - section_title: I want to set up segment for multiple environments development
       production testing etc should i create multiple workspaces or multiple sources
-    :section:
-    - :path: guides/account-management/i-want-to-set-up-segment-for-multiple-environments-development-production-testing-etc-should-i-create-multiple-workspaces-or-multiple-sources
-      :title: Index
-  - :section:
-    - :path: "/guides/account-management"
-      :title: Index
-  - :section_title: What do team members have access to is there special permissioning
+    section:
+    - path: guides/account-management/i-want-to-set-up-segment-for-multiple-environments-development-production-testing-etc-should-i-create-multiple-workspaces-or-multiple-sources
+      title: Index
+  - section:
+    - path: "/guides/account-management"
+      title: Index
+  - section_title: What do team members have access to is there special permissioning
       to allow access to only certain sources
-    :section:
-    - :path: guides/account-management/what-do-team-members-have-access-to-is-there-special-permissioning-to-allow-access-to-only-certain-sources
-      :title: Index
-  - :section_title: What is the difference between an account and a workspace
-    :section:
-    - :path: guides/account-management/what-is-the-difference-between-an-account-and-a-workspace
-      :title: Index
-  - :section_title: Why can t i add the integration i want
-    :section:
-    - :path: guides/account-management/why-can-t-i-add-the-integration-i-want
-      :title: Index
-  - :section_title: Will deleting my account cancel my subscription
-    :section:
-    - :path: guides/account-management/will-deleting-my-account-cancel-my-subscription
-      :title: Index
-  - :section_title: How do i test my connections
-    :section:
-    - :path: guides/best-practices/how-do-I-test-my-connections
-      :title: Index
-  - :section_title: How do i collect pageviews on the server side
-    :section:
-    - :path: guides/best-practices/how-do-i-collect-pageviews-on-the-server-side
-      :title: Index
-  - :section_title: How do i measure the roi of my marketing campaigns
-    :section:
-    - :path: guides/best-practices/how-do-i-measure-the-roi-of-my-marketing-campaigns
-      :title: Index
-  - :section_title: How to implement an e commerce tracking plan
-    :section:
-    - :path: guides/best-practices/how-to-implement-an-e-commerce-tracking-plan
-      :title: Index
-  - :section_title: How to track your customers across channels and devices
-    :section:
-    - :path: guides/best-practices/how-to-track-your-customers-across-channels-and-devices
-      :title: Index
-  - :section:
-    - :path: "/guides/best-practices"
-      :title: Index
-  - :section_title: Preparing for the gdpr
-    :section:
-    - :path: guides/best-practices/preparing-for-the-gdpr
-      :title: Index
-  - :section_title: Should i instrument data collection on the client or server
-    :section:
-    - :path: guides/best-practices/should-i-instrument-data-collection-on-the-client-or-server
-      :title: Index
-  - :section_title: User deletion and suppression
-    :section:
-    - :path: guides/best-practices/user-deletion-and-suppression
-      :title: Index
-  - :section_title: What are best practices for identifying users
-    :section:
-    - :path: guides/best-practices/what-are-best-practices-for-identifying-users
-      :title: Index
-  - :section_title: What s a tracking plan and why should you care
-    :section:
-    - :path: guides/best-practices/what-s-a-tracking-plan-and-why-should-you-care
-      :title: Index
-  - :section_title: How does segment handle duplicate data
-    :section:
-    - :path: guides/general/how-does-segment-handle-duplicate-data
-      :title: Index
-  - :section:
-    - :path: "/guides/general"
-      :title: Index
-  - :section_title: What are cloud sources
-    :section:
-    - :path: guides/general/what-are-cloud-sources
-      :title: Index
-  - :section_title: What is a destination
-    :section:
-    - :path: guides/general/what-is-a-destination
-      :title: Index
-  - :section_title: What is a source
-    :section:
-    - :path: guides/general/what-is-a-source
-      :title: Index
-  - :section_title: What is a warehouse
-    :section:
-    - :path: guides/general/what-is-a-warehouse
-      :title: Index
-  - :section_title: What is a workspace
-    :section:
-    - :path: guides/general/what-is-a-workspace
-      :title: Index
-  - :section_title: What is segment
-    :section:
-    - :path: guides/general/what-is-segment
-      :title: Index
-  - :section_title: What is the difference between segment and tag managers
-    :section:
-    - :path: guides/general/what-is-the-difference-between-segment-and-tag-managers
-      :title: Index
-  - :section:
-    - :path: "/guides/getting-started"
-      :title: Index
-  - :section:
-    - :path: "/guides/getting-started/the-promise-land"
-      :title: The promise land
-  - :section_title: How do i control what data is sent to my destinations
-    :section:
-    - :path: guides/miscellaneous/how-do-i-control-what-data-is-sent-to-my-destinations
-      :title: Index
-  - :section_title: How many unique events can be logged in my segment schema table
-    :section:
-    - :path: guides/miscellaneous/how-many-unique-events-can-be-logged-in-my-segment-schema-table
-      :title: Index
-  - :section:
-    - :path: "/guides/miscellaneous"
-      :title: Index
-  - :section_title: Is it possible to ignore internet bots
-    :section:
-    - :path: guides/miscellaneous/is-it-possible-to-ignore-internet-bots
-      :title: Index
-  - :section_title: Is segment impacted by intelligent tracking prevention
-    :section:
-    - :path: guides/miscellaneous/is-segment-impacted-by-intelligent-tracking-prevention
-      :title: Index
-  - :section_title: What identifiers can the merged profile be queried updated with
-    :section:
-    - :path: guides/miscellaneous/what-identifiers-can-the-merged-profile-be-queried-updated-with
-      :title: Index
-  - :section_title: How do i find my write key
-    :section:
-    - :path: guides/setup/how-do-i-find-my-write-key
-      :title: Index
-  - :section_title: How do i import historical data
-    :section:
-    - :path: guides/setup/how-do-i-import-historical-data
-      :title: Index
-  - :section_title: How do i migrate code from other analytics tools
-    :section:
-    - :path: guides/setup/how-do-i-migrate-code-from-other-analytics-tools
-      :title: Index
-  - :section:
-    - :path: "/guides/setup"
-      :title: Index
-  - :section_title: What if i change my domain name
-    :section:
-    - :path: guides/setup/what-if-i-change-my-domain-name
-      :title: Index
-  - :section_title: Do you offer any plan discounts for startups or non profits
-    :section:
-    - :path: guides/usage-and-billing/do-you-offer-any-plan-discounts-for-startups-or-non-profits
-      :title: Index
-  - :section_title: Do you offer refunds
-    :section:
-    - :path: guides/usage-and-billing/do-you-offer-refunds
-      :title: Index
-  - :section_title: How are mtus calculated by segment
-    :section:
-    - :path: guides/usage-and-billing/how-are-mtus-calculated-by-segment
-      :title: Index
-  - :section_title: How do i find out my usage data
-    :section:
-    - :path: guides/usage-and-billing/how-do-i-find-out-my-usage-data
-      :title: Index
-  - :section_title: How does my event and object volume impact my pricing
-    :section:
-    - :path: guides/usage-and-billing/how-does-my-event-and-object-volume-impact-my-pricing
-      :title: Index
-  - :section_title: I ve never had to pay us sales tax on my invoices before what
-      s changed
-    :section:
-    - :path: guides/usage-and-billing/i-ve-never-had-to-pay-us-sales-tax-on-my-invoices-before-what-s-changed
-      :title: Index
-  - :section:
-    - :path: "/guides/usage-and-billing"
-      :title: Index
-  - :section_title: Is there a free trial for paid plans
-    :section:
-    - :path: guides/usage-and-billing/is-there-a-free-trial-for-paid-plans
-      :title: Index
-  - :section_title: What caused an unexpected spike in my mtu count
-    :section:
-    - :path: guides/usage-and-billing/what-caused-an-unexpected-spike-in-my-mtu-count
-      :title: Index
-  - :section_title: What does throughput limit stands for
-    :section:
-    - :path: guides/usage-and-billing/what-does-throughput-limit-stands-for
-      :title: Index
-  - :section_title: What if i cancel my workspace before the end of a month on the
+    section:
+    - path: guides/account-management/what-do-team-members-have-access-to-is-there-special-permissioning-to-allow-access-to-only-certain-sources
+      title: Index
+  - section_title: What is the difference between an account and a workspace
+    section:
+    - path: guides/account-management/what-is-the-difference-between-an-account-and-a-workspace
+      title: Index
+  - section_title: Why can t i add the integration i want
+    section:
+    - path: guides/account-management/why-can-t-i-add-the-integration-i-want
+      title: Index
+  - section_title: Will deleting my account cancel my subscription
+    section:
+    - path: guides/account-management/will-deleting-my-account-cancel-my-subscription
+      title: Index
+  - section_title: How do i test my connections
+    section:
+    - path: guides/best-practices/how-do-I-test-my-connections
+      title: Index
+  - section_title: How do i collect pageviews on the server side
+    section:
+    - path: guides/best-practices/how-do-i-collect-pageviews-on-the-server-side
+      title: Index
+  - section_title: How do i measure the roi of my marketing campaigns
+    section:
+    - path: guides/best-practices/how-do-i-measure-the-roi-of-my-marketing-campaigns
+      title: Index
+  - section_title: How to implement an e commerce tracking plan
+    section:
+    - path: guides/best-practices/how-to-implement-an-e-commerce-tracking-plan
+      title: Index
+  - section_title: How to track your customers across channels and devices
+    section:
+    - path: guides/best-practices/how-to-track-your-customers-across-channels-and-devices
+      title: Index
+  - section:
+    - path: "/guides/best-practices"
+      title: Index
+  - section_title: Preparing for the gdpr
+    section:
+    - path: guides/best-practices/preparing-for-the-gdpr
+      title: Index
+  - section_title: Should i instrument data collection on the client or server
+    section:
+    - path: guides/best-practices/should-i-instrument-data-collection-on-the-client-or-server
+      title: Index
+  - section_title: User deletion and suppression
+    section:
+    - path: guides/best-practices/user-deletion-and-suppression
+      title: Index
+  - section_title: What are best practices for identifying users
+    section:
+    - path: guides/best-practices/what-are-best-practices-for-identifying-users
+      title: Index
+  - section_title: What s a tracking plan and why should you care
+    section:
+    - path: guides/best-practices/what-s-a-tracking-plan-and-why-should-you-care
+      title: Index
+  - section_title: How does segment handle duplicate data
+    section:
+    - path: guides/general/how-does-segment-handle-duplicate-data
+      title: Index
+  - section:
+    - path: "/guides/general"
+      title: Index
+  - section_title: What are cloud sources
+    section:
+    - path: guides/general/what-are-cloud-sources
+      title: Index
+  - section_title: What is a destination
+    section:
+    - path: guides/general/what-is-a-destination
+      title: Index
+  - section_title: What is a source
+    section:
+    - path: guides/general/what-is-a-source
+      title: Index
+  - section_title: What is a warehouse
+    section:
+    - path: guides/general/what-is-a-warehouse
+      title: Index
+  - section_title: What is a workspace
+    section:
+    - path: guides/general/what-is-a-workspace
+      title: Index
+  - section_title: What is segment
+    section:
+    - path: guides/general/what-is-segment
+      title: Index
+  - section_title: What is the difference between segment and tag managers
+    section:
+    - path: guides/general/what-is-the-difference-between-segment-and-tag-managers
+      title: Index
+  - section:
+    - path: "/guides/getting-started"
+      title: Index
+  - section:
+    - path: "/guides/getting-started/the-promise-land"
+      title: The promise land
+  - section_title: How do i control what data is sent to my destinations
+    section:
+    - path: guides/miscellaneous/how-do-i-control-what-data-is-sent-to-my-destinations
+      title: Index
+  - section_title: How many unique events can be logged in my segment schema table
+    section:
+    - path: guides/miscellaneous/how-many-unique-events-can-be-logged-in-my-segment-schema-table
+      title: Index
+  - section:
+    - path: "/guides/miscellaneous"
+      title: Index
+  - section_title: Is it possible to ignore internet bots
+    section:
+    - path: guides/miscellaneous/is-it-possible-to-ignore-internet-bots
+      title: Index
+  - section_title: Is segment impacted by intelligent tracking prevention
+    section:
+    - path: guides/miscellaneous/is-segment-impacted-by-intelligent-tracking-prevention
+      title: Index
+  - section_title: What identifiers can the merged profile be queried updated with
+    section:
+    - path: guides/miscellaneous/what-identifiers-can-the-merged-profile-be-queried-updated-with
+      title: Index
+  - section_title: How do i find my write key
+    section:
+    - path: guides/setup/how-do-i-find-my-write-key
+      title: Index
+  - section_title: How do i import historical data
+    section:
+    - path: guides/setup/how-do-i-import-historical-data
+      title: Index
+  - section_title: How do i migrate code from other analytics tools
+    section:
+    - path: guides/setup/how-do-i-migrate-code-from-other-analytics-tools
+      title: Index
+  - section:
+    - path: "/guides/setup"
+      title: Index
+  - section_title: What if i change my domain name
+    section:
+    - path: guides/setup/what-if-i-change-my-domain-name
+      title: Index
+  - section_title: Do you offer any plan discounts for startups or non profits
+    section:
+    - path: guides/usage-and-billing/do-you-offer-any-plan-discounts-for-startups-or-non-profits
+      title: Index
+  - section_title: Do you offer refunds
+    section:
+    - path: guides/usage-and-billing/do-you-offer-refunds
+      title: Index
+  - section_title: How are mtus calculated by segment
+    section:
+    - path: guides/usage-and-billing/how-are-mtus-calculated-by-segment
+      title: Index
+  - section_title: How do i find out my usage data
+    section:
+    - path: guides/usage-and-billing/how-do-i-find-out-my-usage-data
+      title: Index
+  - section_title: How does my event and object volume impact my pricing
+    section:
+    - path: guides/usage-and-billing/how-does-my-event-and-object-volume-impact-my-pricing
+      title: Index
+  - section_title: I ve never had to pay us sales tax on my invoices before what s
+      changed
+    section:
+    - path: guides/usage-and-billing/i-ve-never-had-to-pay-us-sales-tax-on-my-invoices-before-what-s-changed
+      title: Index
+  - section:
+    - path: "/guides/usage-and-billing"
+      title: Index
+  - section_title: Is there a free trial for paid plans
+    section:
+    - path: guides/usage-and-billing/is-there-a-free-trial-for-paid-plans
+      title: Index
+  - section_title: What caused an unexpected spike in my mtu count
+    section:
+    - path: guides/usage-and-billing/what-caused-an-unexpected-spike-in-my-mtu-count
+      title: Index
+  - section_title: What does throughput limit stands for
+    section:
+    - path: guides/usage-and-billing/what-does-throughput-limit-stands-for
+      title: Index
+  - section_title: What if i cancel my workspace before the end of a month on the
       monthly plan will i get a final bill
-    :section:
-    - :path: guides/usage-and-billing/what-if-i-cancel-my-workspace-before-the-end-of-a-month-on-the-monthly-plan-will-i-get-a-final-bill
-      :title: Index
-  - :section_title: What is a billing cycle
-    :section:
-    - :path: guides/usage-and-billing/what-is-a-billing-cycle
-      :title: Index
-  - :section_title: What is the difference between an event and an object
-    :section:
-    - :path: guides/usage-and-billing/what-is-the-difference-between-an-event-and-an-object
-      :title: Index
-  - :section_title: What is the startup program
-    :section:
-    - :path: guides/usage-and-billing/what-is-the-startup-program
-      :title: Index
-  - :section_title: Why are you applying us sales tax to my invoice
-    :section:
-    - :path: guides/usage-and-billing/why-are-you-applying-us-sales-tax-to-my-invoice
-      :title: Index
-  - :section_title: Why is my mtu count higher or lower than the user count i see
-      in my downstream destinations other tools
-    :section:
-    - :path: guides/usage-and-billing/why-is-my-mtu-count-higher-or-lower-than-the-user-count-i-see-in-my-downstream-destinations-other-tools
-      :title: Index
-- :section_title: Legal
-  :section:
-  - :path: "/legal"
-    :title: Index
-- :section_title: Partners
-  :section:
-  - :path: "/partners"
-    :title: Index
-- :section_title: Personas
-  :section:
-  - :path: "/personas"
-    :title: Index
-- :section_title: Privacy
-  :section:
-  - :path: "/privacy"
-    :title: Index
-- :section_title: Protocols
-  :section:
-  - :path: "/protocols"
-    :title: Index
-- :section_title: Segment-app
-  :section:
-  - :path: "/segment-app"
-    :title: Index
+    section:
+    - path: guides/usage-and-billing/what-if-i-cancel-my-workspace-before-the-end-of-a-month-on-the-monthly-plan-will-i-get-a-final-bill
+      title: Index
+  - section_title: What is a billing cycle
+    section:
+    - path: guides/usage-and-billing/what-is-a-billing-cycle
+      title: Index
+  - section_title: What is the difference between an event and an object
+    section:
+    - path: guides/usage-and-billing/what-is-the-difference-between-an-event-and-an-object
+      title: Index
+  - section_title: What is the startup program
+    section:
+    - path: guides/usage-and-billing/what-is-the-startup-program
+      title: Index
+  - section_title: Why are you applying us sales tax to my invoice
+    section:
+    - path: guides/usage-and-billing/why-are-you-applying-us-sales-tax-to-my-invoice
+      title: Index
+  - section_title: Why is my mtu count higher or lower than the user count i see in
+      my downstream destinations other tools
+    section:
+    - path: guides/usage-and-billing/why-is-my-mtu-count-higher-or-lower-than-the-user-count-i-see-in-my-downstream-destinations-other-tools
+      title: Index
+- section_title: Partners
+  section:
+  - path: "/partners"
+    title: Index
+- section_title: Personas
+  section:
+  - path: "/personas"
+    title: Index
+- section_title: Privacy
+  section:
+  - path: "/privacy"
+    title: Index
+- section_title: Protocols
+  section:
+  - path: "/protocols"
+    title: Index
+- section_title: Segment-app
+  section:
+  - path: "/segment-app"
+    title: Index

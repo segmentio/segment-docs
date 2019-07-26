@@ -24,10 +24,6 @@
   background-color: $grey-color;
 }
 
-#sidenav > nav {
-  margin-left: 226px;
-}
-
 #topnav {
   height: $topnav-height;
   border-bottom:  1px solid rgba(67, 90, 111, 0.2);
@@ -54,6 +50,36 @@
 #doc-toc {
   padding-left: 44px;
   min-width: $sidenav-width - 50px;
+}
+
+.l-sidenav-wrapper {
+  margin-top: $topnav-height;
+  padding-top: 25px;
+  margin-left: auto;
+  padding-right: 44px;
+}
+
+.l-sidenav-wrapper > ul {
+  list-style: none;
+}
+
+.l-sidenav-wrapper  li {
+  margin-bottom: $spacing-unit / 2;
+}
+
+.l-sidenav-wrapper li > a {
+  display: flex;
+  align-items: center;
+  img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+}
+
+.l-sidenav-wrapper .section {
+  color: $text-color;
+  font-weight: 500;
 }
 
 .page-heading {

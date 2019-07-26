@@ -1,5 +1,12 @@
 <div id="sidenav">
-  <nav>
-    
+  <nav class="l-sidenav-wrapper">
+    {% case page.layout %}
+      {% when "sources" %}
+      {% when "destinations" %}
+      {% when "partners" %}
+      {% when "legal" %}
+      {% else %}
+        {% include sidenav/default.html %}
+    {% endcase %}
   </nav>
 </div>
