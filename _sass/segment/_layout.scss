@@ -53,15 +53,30 @@
 }
 
 .l-sidenav-wrapper {
-  margin-top: $topnav-height + 2px;
-  padding-top: 25px;
+  padding: 0 44px;
   margin-left: auto;
-  padding-right: 44px;
+  margin-right: 0;
+  margin-top: 15px;
+}
+
+.l-sidenav-wrapper > .logo {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  a {
+    height: 35px;
+    margin-right: 10px;
+  }
+  svg {
+    height: inherit;
+  }
 }
 
 .l-sidenav-wrapper > ul {
   list-style: none;
   border-bottom: 1px solid $text-color;
+  margin-left: 0;
   margin-bottom: 25px;
   padding-bottom: 25px;
   &:last-child {
