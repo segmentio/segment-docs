@@ -3,7 +3,15 @@ description: Smoketest page
 title: Testing page
 hide_from_sitemap: true
 toc_min: 1
+beta: true
+deprecated: true
+redirect_from:
+- /test/test/
+- /guides/testing/
 ---
+
+
+{% include content/connection-modes.md %}
 
 Welcome to the documentation test page!
 

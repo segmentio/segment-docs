@@ -15,7 +15,7 @@ This document was last updated on July 11th, 2018. If you notice any gaps, outda
 
 ## Getting Started
 
-<!-- {{>connection-modes}} -->
+{% include content/connection-modes.md %}
 
 ### Web
 

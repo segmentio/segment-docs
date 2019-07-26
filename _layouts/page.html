@@ -4,11 +4,19 @@ layout: default
 
 <div class="l-doc-container">
   <article id="doc-content">
-    {% include breadcrumb.html %} 
+    {% include breadcrumb.html %}
 
 
     {%- if page.title -%}
       <h1 id="{{page.title | downcase}}" class="page-heading">{{ page.title }}</h1>
+    {%- endif -%}
+
+    {%- if page.beta -%}
+    {% include content/beta.md %}
+    {%- endif -%}
+
+    {%- if page.deprecated -%}
+    {% include content/deprecated.md %}
     {%- endif -%}
 
     {{ content }}
@@ -21,7 +29,7 @@ layout: default
           <li><a href="#{{page.title | downcase}}"> {{page.title}}</a></li>
         </ul>
       {%- endif -%}
-      {% include toc.html html=content h_max=2 %} 
+      {% include toc.html html=content h_max=2 %}
     </div>
   </div>
 </div>

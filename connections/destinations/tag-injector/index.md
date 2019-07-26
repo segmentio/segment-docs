@@ -8,7 +8,7 @@ _**NOTE:** {{integration.name}} is only available for select customers at this t
 
 ## Getting Started
 
-<!-- {{>connection-modes}} -->
+{% include content/connection-modes.md %}
 
 1. Once you have access, with the link provided confirm the Source you’d like to connect to.
 2. You have the following configuration options which will manipulate the page at runtime:
