@@ -9,7 +9,7 @@ _**NOTE:** The Auryc Destination is currently in beta, which means that they are
 
 ## Getting Started
 
-<!-- {{>connection-modes}} --> 
+{% include content/connection-modes.md %}
 
 1. From your Segment UI’s Destinations page click on “Add Destination”.
 2. Search for Auryc within the Destinations Catalog and confirm the Source you’d like to connect to. Please note the source must be sending events via our Javascript library Analytics.js.

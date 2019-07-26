@@ -9,7 +9,7 @@ _**NOTE:** The Tamber Destination is currently in beta, which means that they ar
 
 ## Getting Started
 
-<!-- {{>connection-modes}} --> 
+{% include content/connection-modes.md %}
 
 1. From your [Tamber dashboard](https://dashboard.tamber.com), head to Sources > Segment and click enable.
 2. Follow the instructions to configure your Destination and optionally defined a custom name for your `item` and click save.

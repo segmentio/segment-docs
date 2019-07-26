@@ -11,7 +11,7 @@ The guide below explains how to install Segment in your Bigcommerce store. All y
 
 - - -
 
-{{>deprecated}}
+{% include content/deprecated.md %}
 
 ## Step 1: Segment Account
 

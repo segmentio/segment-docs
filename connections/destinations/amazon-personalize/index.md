@@ -14,7 +14,7 @@ Developing the machine-learning capabilities necessary to produce these sophisti
 
 ## Getting Started
 
-<!-- {{>connection-modes}} -->
+{% include content/connection-modes.md %}
 
 There are a few pre-requisites:
 

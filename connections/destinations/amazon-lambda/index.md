@@ -10,7 +10,7 @@ With Lambda, you can run code for virtually any type of application or backend s
 
 ## Getting Started
 
-<!-- {{>connection-modes}} -->
+{% include content/connection-modes.md %}
 
 
 ## Build a Lambda Function to Process Segment Events

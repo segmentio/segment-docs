@@ -12,7 +12,7 @@ _**NOTE:** Mutiny is currently in beta, which means that they are still actively
 
 ## Getting Started
 
-<!-- {{>connection-modes}} --> 
+{% include content/connection-modes.md %}
 
 To setup Mutiny to receive Segment data:
 1. From your Segment Project's Destinations page click on "Add Destination".

@@ -13,7 +13,7 @@ All you need to get up and running is to copy and paste a few snippets of code i
 
 - - -
 
-{{>deprecated}}
+{% include content/deprecated.md %}
 
 
 ## Step 1: Segment Account
