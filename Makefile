@@ -15,13 +15,6 @@ build:
 		bundle install && \
 	  bundle exec jekyll build
 
-.PHONY: clean
-clean:
-	docker run -it \
-	  --volume="$(PWD):/srv/jekyll" \
-	  jekyll/jekyll \
-	  jekyll clean
-
 .PHONY: nav
 nav:
 	docker run -it \
