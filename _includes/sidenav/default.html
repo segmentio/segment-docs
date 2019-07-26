@@ -1,6 +1,6 @@
 <ul>
-  <li>
-    <a class="section" href="{{site.baseurl}}/">
+  <li class="section">
+    <a href="{{site.baseurl}}/">
       <img src="{{site.baseurl}}/assets/icons/nav/home.svg"></img>
       Home
     </a>
@@ -13,8 +13,8 @@
     {% endif %}
 
     {% assign slug = title | downcase %}
-    <li>
-      <a class="section" href="">
+    <li class="section">
+      <a href="">
         <img src="{{site.baseurl}}/assets/icons/nav/{{ slug }}.svg"></img>
         {{ title }}
       </a>
