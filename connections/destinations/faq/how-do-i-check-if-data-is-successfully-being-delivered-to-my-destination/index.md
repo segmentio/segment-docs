@@ -10,7 +10,7 @@ Segment sends billions of events to destinations every week. If we encounter any
 
 Here is an example of what the Event Delivery tool looks like:
 
-![](../../images/asset_jXaoBuF6.png)
+![](../images/asset_jXaoBuF6.png)
 
 ## When to use Event Delivery?
 
@@ -36,11 +36,11 @@ Scenarios when this tool will be useful: 
 
 Event Delivery can be accessed within any supported destination in the App. It’s located on the tab under “Settings” for each destination. 
 
-![](../../images/asset_rzYZESor.png)
+![](../images/asset_rzYZESor.png)
 
 To get to any individuals destination view, you should navigate to the destination overview page
 
-![](../../images/asset_feyzNqcy.png)
+![](../images/asset_feyzNqcy.png)
 
 ## How to use Event Delivery?
 
@@ -51,7 +51,7 @@ The UI consists of 3 key parts that report on Segment's ability to deliver your 
 
 There is a drop down menu to select your time period. All of the UI is updated based on the time period you select. 
 
-![](../../images/asset_Qs4r85sc.png)
+![](../images/asset_Qs4r85sc.png)
 
 ## 2.**Key Metrics**
 
@@ -68,14 +68,14 @@ From left to right in the above graphic:
 
 The purpose of the table is to provide you a summary of the different errors we've seen in a given period and the most important information on them. All of the rows in the table are clickable and expand to give you more information. 
 
-![](../../images/asset_V6hldpCl.png)
+![](../images/asset_V6hldpCl.png)
 
 *   **Error detail view**
     
     *   When we see an error, we want to give you as much information to help you solve your problem. See below for an example of what this view looks like. 
         
 
-![](../../images/asset_CgNb4wVN.png)
+![](../images/asset_CgNb4wVN.png)
 
 This view includes: 
 
@@ -109,7 +109,7 @@ This view includes: 
 
 When debugging, it's helpful to see when issues start, stop and trend over time. 
 
-![](../../images/asset_9FRFTAso.png)
+![](../images/asset_9FRFTAso.png)
 
 **Event Delivery**
 

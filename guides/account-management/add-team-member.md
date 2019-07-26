@@ -14,7 +14,7 @@ Owners must sign up for a personal account before gaining access to the workspac
 
 To add new owners to a workspace, go to your workspace settings at [https://segment.com/YOUR\_WORKSPACE/settings/team](https://segment.com/YOUR_WORKSPACE/settings/team). You can also access this from the account dropdown in the menu when you are logged into your account.
 
-![](../../images/asset_vCFbkibE.png)
+![](../images/asset_vCFbkibE.png)
 
 Remember, every owner in a workspace has full read/write access to every Source within that workspace.
 
@@ -24,7 +24,7 @@ Business Tier Workspaces can add team members with Read-Only permissions to thei
 
 To update your team members’ roles, go to Workspace Settings > Team Settings, and select the appropriate role. 
 
-![](../../images/asset_0ri7jEET.gif)
+![](../images/asset_0ri7jEET.gif)
 
 ### Source Collaborators
 
@@ -32,7 +32,7 @@ You can invite Source Collaborators to any Source(s) to which you have access. A
 
 To add a Source Collaborator, navigate to the Settings page for a given Source, and click Collaborators from the left-hand menu.
 
-![](../../images/asset_ZMFMf52j.png)
+![](../images/asset_ZMFMf52j.png)
 
 ## Team Management with Single Sign On
 

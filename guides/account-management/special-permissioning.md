@@ -18,8 +18,8 @@ At present, Business Tier workspaces can have **Owners,** **Read-Only Members,**
 
 To update your team members’ roles, go to Workspace Settings > Team Settings, and select the appropriate role. 
 
-![](../../images/asset_2wdC9nj8.gif)
+![](../images/asset_2wdC9nj8.gif)
 
 To add a Source Collaborator, navigate to the Settings page for a given Source, and click Collaborators from the left-hand menu.
 
-![](../../images/asset_NF4F4Vox.png)
+![](../images/asset_NF4F4Vox.png)

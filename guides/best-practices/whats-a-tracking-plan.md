@@ -10,7 +10,7 @@ The tracking plan has been such an instrumental document for helping organizatio
 
 In this tutorial, we’ll share with you the underlying data philosophies that guide the creation of tracking plans, as well as a system for determining what events to include or exclude, and why.
 
-![](../../images/asset_Vz7CoQEs.png)
+![](../images/asset_Vz7CoQEs.png)
 
 ## Data philosophies
 
@@ -94,7 +94,7 @@ For a community, on the other hand, there is an entirely different set of action
 
 With this, they’re able to measure key metrics around engagement and understand how users are moving towards their ultimate conversion event: curation content for others.
 
-![](../../images/asset_YGJfULkg.jpg)
+![](../images/asset_YGJfULkg.jpg)
 
 This is Charlene Li’s set of user engagement events for communities. For more information, check out [this article](https://segment.com/blog/growthhackers-community-metrics/) from GrowthHackers about the events they track and why.
 

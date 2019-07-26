@@ -12,15 +12,15 @@ Safari ITP 2.1 will expire client-side, first-party cookies after 7 days. Analyt
 
 We do this by setting the Segment ID in the cookie and local storage in the browser. When the cookie value does not exist, and it falls within the 365 day expiry time frame, we copy the Segment ID from the value in local storage onto the cookie.
 
-It's best practice to make sure you call [identify](https://segment.com/docs/spec/identify/) upon loading any pages that are accessible by a logged in user. This will ensure the highest degree of accuracy for known users. 
+It's best practice to make sure you call [identify](https://segment.com/docs/spec/identify/) upon loading any pages that are accessible by a logged in user. This will ensure the highest degree of accuracy for known users.
 
-You can read more about the Analytics.js persistence strategy [here](https://segment.com/docs/sources/website/analytics.js/#segment-id-persistance). 
+You can read more about the Analytics.js persistence strategy [here](https://segment.com/docs/sources/website/analytics.js/#segment-id-persistance).
 
-The Segment, server-side libraries are not impacted by ITP. 
+The Segment, server-side libraries are not impacted by ITP.
 
 **Can I change the Segment ID persistence to use the cookie only?**
 
-Yes, in your website source settings, you can navigate to Analytics.js and disable "Use local storage for Segment ID". This will remove any persistence to local storage of the Segment ID and will use the cookie exclusively. This UI switch will be rolling out over the coming weeks. 
+Yes, in your website source settings, you can navigate to Analytics.js and disable "Use local storage for Segment ID". This will remove any persistence to local storage of the Segment ID and will use the cookie exclusively. This UI switch will be rolling out over the coming weeks.
 
 **How is subdomain tracking impacted by Safari ITP?**
 
@@ -37,9 +37,9 @@ Advertising and Retargeting Destinations are most likely to be affected, and we 
 Many tools have already issued guidance on how they will be impacted by ITP and steps you can take to respect your customers’ privacy. Here are resources to get you started:
 
 *   [AdRoll](https://help.adroll.com/hc/en-us/articles/212675877-Retargeting-on-Safari)
-    
+
 *   [AdWords](https://support.google.com/adwords/answer/7521212?hl=en&utm_source=awfe&utm_medium=referral&utm_campaign=notifications&authuser=1)
-    
+
 *   [DoubleClick Floodlight ](https://support.google.com/ds/answer/7524055)
-    
+
 *   [Facebook](https://developers.facebook.com/blog/post/2017/10/05/intelligent-tracking-prevention/)

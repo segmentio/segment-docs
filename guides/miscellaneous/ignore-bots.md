@@ -38,7 +38,7 @@ We do indeed use Amazon’s hosting services, which are based in Boardman, Orego
 One way you can confirm whether or not traffic is coming from Segment vs. a bot is to check the userAgent of the inbound call. Ours is:
 
 ```
-'Mozilla/5.0 (' + deviceModel.slice(0, -3) + '; CPU ' + osName + ' ' + 
-osVersion.replace(/\./g, '_') + ' like Mac OS X) AppleWebKit/600.1.4 (KHTML, 
+'Mozilla/5.0 (' + deviceModel.slice(0, -3) + '; CPU ' + osName + ' ' +
+osVersion.replace(/\./g, '_') + ' like Mac OS X) AppleWebKit/600.1.4 (KHTML,
 like Gecko) Version/' + osVersion.charAt(0) + '.0 Mobile/10B329 Safari/8536.25'
 ```
