@@ -5,6 +5,7 @@ SIDENAV_FILE_BLACKLIST = [
   './vendor/**/*.md', 
   './legal/**/*.md', 
   './api/**/*.md', 
+  './connections/**/*.md', 
   './*.md', 
   './_*/**/*.md'
 ]
@@ -34,15 +35,15 @@ namespace :nav do
       k = root
       sections[k] ||= { 'section_title' => root.capitalize, 'section' => [{ 'path' => "/#{root}", 'title' => SIDENAV_INDEX_DEFAULT_TITLE}] }
 
-      if paths.size == 3
+      if paths.size <= 3
         path = nil
         path_title = nil
 
         if paths.last == "index.md"
-          path = paths[0..3].join("/").gsub("/index.md", "")
+          path = paths[0..paths.size].join("/").gsub("/index.md", "")
           path_title = SIDENAV_INDEX_DEFAULT_TITLE
         else
-          path = paths[0..3].join("/").gsub(".md", "")
+          path = paths[0..paths.size].join("/").gsub(".md", "")
           path_title = path.split("/").last.gsub("-", " ").capitalize
         end
 

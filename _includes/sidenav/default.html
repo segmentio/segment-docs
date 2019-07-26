@@ -5,8 +5,8 @@
       Home
     </a>
   </li>
-  {% for section in site.data.sidenav.sections %}
-    {% assign title = section.section_title %}
+  {% for root_section in site.data.sidenav.sections %}
+    {% assign title = root_section.section_title %}
     
     {% if title == "Segment-app" %}
       {% assign title = "App" %}
@@ -18,8 +18,25 @@
         <img src="{{site.baseurl}}/assets/icons/nav/{{ slug }}.svg"></img>
         {{ title }}
       </a>
-      {% for item in section.section %}
-      {% endfor %}
     </li>
+    {% if title == "Protocols" %}
+      <li>
+
+        <ul>
+          {% for item in root_section.section %}
+            {% if item.path %}
+              <li>
+                <a href="{{site.baseurl}}{{ item.path }}">{{ item.title }}</a>
+              </li>
+            {% endif %}
+            {% for subsection in item.section %}
+              <li>
+                <a href="{{ site.baseurl }}{{ subsection.path }}">{{ subsection.title }}</a>
+              </li>
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>
