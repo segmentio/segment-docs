@@ -5,13 +5,18 @@ docs:
 	echo "Running segment docs at http://localhost:4000/docsv2/" && \
 	docker run -p 4000:80 segment-docs:latest
 
+.PHONY: env
+env:
+	gem install bundler && \
+	bundle install
+
+.PHONY: clean
+clean:
+	bundle exec jekyll clean
 
 .PHONY: deps
 deps:
-	docker run -it \
-	  --volume="$(PWD):/srv/jekyll" \
-	  jekyll/jekyll \
-		bundle install
+	bundle install
 
 .PHONY: build
 build:
@@ -24,8 +29,5 @@ build:
 
 .PHONY: dev
 dev:
-	docker run -it \
-	  -p 4000:4000 \
-	  --volume="$(PWD):/srv/jekyll" \
-	  jekyll/jekyll \
-	  jekyll serve -H 0.0.0.0
+	make clean && \
+	bundle exec jekyll serve --incremental -H 0.0.0.0
