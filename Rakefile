@@ -1,6 +1,6 @@
 require 'yaml'
 
-SIDENAV_INDEX_DEFAULT_TITLE = 'Index'
+SIDENAV_INDEX_DEFAULT_TITLE = 'Overview'
 SIDENAV_FILE_BLACKLIST = [
   './vendor/**/*.md', 
   './legal/**/*.md', 
@@ -39,13 +39,10 @@ namespace :nav do
         path = nil
         path_title = nil
 
-        if paths.last == "index.md"
-          path = paths[0..paths.size].join("/").gsub("/index.md", "")
-          path_title = SIDENAV_INDEX_DEFAULT_TITLE
-        else
-          path = paths[0..paths.size].join("/").gsub(".md", "")
-          path_title = path.split("/").last.gsub("-", " ").capitalize
-        end
+        next if paths.last == "index.md"
+        
+        path = paths[0..paths.size].join("/").gsub(".md", "")
+        path_title = path.split("/").last.gsub("-", " ").capitalize
 
         sections[k]['section'] << { 'section' => [{ 'path' => "/#{path}", 'title' => path_title }]}
       end
