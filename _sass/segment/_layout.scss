@@ -96,7 +96,7 @@
   display: flex;
   flex-direction: column;
   color: $text-color;
-  font-weight: 500;
+  font-weiyyght: 500;
   img {
     height: 18px;
     width: 18px;
@@ -109,7 +109,7 @@
   }
 }
 
-.l-sidenav-wrapper li > ul {
+.l-sidenav-wrapper li > ul.l-sidenav-subnav {
   margin-left: 28px;
   li, a {
     font-weight: normal;
@@ -117,7 +117,8 @@
   }
 }
 
-.l-sidenav-wrapper li >div, .l-sidenav-wrapper a {
+.l-sidenav-wrapper li.section > div, 
+.l-sidenav-wrapper li.section > a {
   color: $text-color;
   font-weight: 500;
   display: flex;
@@ -131,12 +132,47 @@
 
 .l-sidenav-subnav > li {
   margin-bottom: $spacing-unit / 2;
+  font-weight: normal;
+  color: $text-color-breadcrumb;
+}
+
+.l-sidenav-subnav > li > div {
+  display: flex;
+  align-items: center;
+  img {
+    height: 12px;
+    width: 12px;
+  }
+}
+
+.l-sidenav-subnav:not(.section) {
+  img {
+    margin-left: -21px;
+  }
+  img.collapsed {
+    display: block;
+  }
+  img.expanded {
+    display: none;
+  }
+}
+
+.l-sidenav-collapsible {
 }
 
 .l-sidenav-collapsible.expanded > .l-sidenav-subnav {
   display: block;
 }
 
+.l-sidenav-subnav > .l-sidenav-collapsible.expanded {
+  img.collapsed {
+    display: none;
+  }
+  
+  img.expanded {
+    display: block;
+  }
+}
 
 .page-heading {
   font-size: 32px;

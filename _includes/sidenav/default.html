@@ -13,7 +13,8 @@
     {% endif %}
 
     {% assign slug = title | downcase %}
-    <li class="section l-sidenav-collapsible">
+
+    <li class="l-sidenav-collapsible section">
       <div class="js-collapse">
         <img src="{{site.baseurl}}/assets/icons/nav/{{ slug }}.svg"></img>
         {{ title }}
@@ -25,11 +26,22 @@
               <a href="{{site.baseurl}}{{ item.path }}">{{ item.title }}</a>
             </li>
           {% endif %}
-          {% for subsection in item.section %}
-            <li>
-              <a href="{{ site.baseurl }}{{ subsection.path }}">{{ subsection.title }}</a>
-            </li>
-          {% endfor %}
+          {% if item.section_title %}
+          <li class="l-sidenav-collapsible">
+            <div class="js-collapse">
+              <img class="collapsed" src="{{site.baseurl}}/assets/icons/nav/plus.svg"></img>
+              <img class="expanded" src="{{site.baseurl}}/assets/icons/nav/minus.svg"></img>
+              {{ item.section_title }}
+            </div>
+            <ul class="l-sidenav-subnav">
+              {% for subsection in item.section %}
+                <li>
+                  <a href="{{ site.baseurl }}{{ subsection.path }}">{{ subsection.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endif %}
         {% endfor %}
       </ul>
     </li>
