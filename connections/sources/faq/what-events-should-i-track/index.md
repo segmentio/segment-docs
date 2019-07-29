@@ -25,4 +25,4 @@ Here are some rules to follow when spec-ing out your tracking plan to keep it ne
 *   Only add events as you feel they’re missing.
     
 
-![](../../images/asset_nVdJ3ZyA.png)
+![](../images/asset_nVdJ3ZyA.png)

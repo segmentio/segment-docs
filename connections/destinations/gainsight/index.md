@@ -10,7 +10,7 @@ This document was last updated on October 18, 2018. If you notice any gaps, outd
 ## Getting Started
 
 
-<!-- {{>connection-modes}} -->
+{% include content/connection-modes.md %}
 
 
 1. From your Segment UI’s Destinations page click on “Add Destination”.

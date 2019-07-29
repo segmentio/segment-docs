@@ -3,7 +3,7 @@ title: "How to Install Segment on a Tumblr Blog [Deprecated]"
 hidden: true
 ---
 
-{{>deprecated}}
+{% include content/deprecated.md %}
 
 
 Segment makes it simple to add a bunch of great analytics and engagement tools to your Tumblr blog.

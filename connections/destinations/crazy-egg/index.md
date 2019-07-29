@@ -9,7 +9,7 @@ This document was last updated on 18th January, 2018. If you notice any gaps, ou
 
 ## Getting Started
 
-<!-- {{>connection-modes}} -->
+{% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Crazy Egg" within the Destinations Catalog and confirm the Source you'd like to connect to.

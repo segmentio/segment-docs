@@ -10,7 +10,7 @@ _**NOTE:** {{integration.name}} is currently in beta and this doc was last updat
 
 ## Getting Started
 
-<!-- {{>connection-modes}} -->
+{% include content/connection-modes.md %}
 
 Perform the following steps to get started with Segment’s Movable Ink destination:
 1. Ensure you have an active Movable Ink account.

@@ -14,7 +14,7 @@ Destination and its documentation, please [let us know](https://segment.com/help
 
 ## Getting Started
 
-<!-- {{>connection-modes}} -->
+{% include content/connection-modes.md %}
 
 1. Download the `at.js` file from Adobe and include it in the `head` of your
    website above the Segment snippet. Because Adobe Target is an A/B testing
