@@ -1,7 +1,7 @@
 $(function() {
   $(".js-collapse").on("click", function(e) {
     e.preventDefault();
-    toggleSideNavSection($(this));
+    toggleSideNavSection($(this).parent());
   });
 });
 
