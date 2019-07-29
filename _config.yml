@@ -23,6 +23,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Makefile
+  - Rakefile
   - Dockerfile
   - README.md
   - conf/

@@ -57,6 +57,7 @@
   margin-left: auto;
   margin-right: 0;
   margin-top: 15px;
+  overflow-y: scroll;
 }
 
 .l-sidenav-wrapper > .logo {
@@ -93,13 +94,18 @@
 
 .l-sidenav-wrapper li {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   color: $text-color;
   font-weight: 500;
   img {
     height: 18px;
     width: 18px;
     margin-right: 10px;
+  }
+  
+  > div:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }
 }
 
@@ -111,12 +117,24 @@
   }
 }
 
-
-.l-sidenav-wrapper a {
+.l-sidenav-wrapper li >div, .l-sidenav-wrapper a {
   color: $text-color;
   font-weight: 500;
   display: flex;
   align-items: center;
+}
+
+.l-sidenav-subnav {
+  display: none;
+  margin-top: $spacing-unit / 2;
+}
+
+.l-sidenav-subnav > li {
+  margin-bottom: $spacing-unit / 2;
+}
+
+.l-sidenav-collapsible.expanded > .l-sidenav-subnav {
+  display: block;
 }
 
 

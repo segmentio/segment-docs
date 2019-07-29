@@ -25,9 +25,6 @@ sections:
     section:
     - path: guides/account-management/i-want-to-set-up-segment-for-multiple-environments-development-production-testing-etc-should-i-create-multiple-workspaces-or-multiple-sources
       title: Index
-  - section:
-    - path: "/guides/account-management"
-      title: Index
   - section_title: What do team members have access to is there special permissioning
       to allow access to only certain sources
     section:
@@ -65,9 +62,6 @@ sections:
     section:
     - path: guides/best-practices/how-to-track-your-customers-across-channels-and-devices
       title: Index
-  - section:
-    - path: "/guides/best-practices"
-      title: Index
   - section_title: Preparing for the gdpr
     section:
     - path: guides/best-practices/preparing-for-the-gdpr
@@ -91,9 +85,6 @@ sections:
   - section_title: How does segment handle duplicate data
     section:
     - path: guides/general/how-does-segment-handle-duplicate-data
-      title: Index
-  - section:
-    - path: "/guides/general"
       title: Index
   - section_title: What are cloud sources
     section:
@@ -124,14 +115,8 @@ sections:
     - path: guides/general/what-is-the-difference-between-segment-and-tag-managers
       title: Index
   - section:
-    - path: "/guides/getting-started"
-      title: Index
-  - section:
     - path: "/guides/getting-started/the-promise-land"
       title: The promise land
-  - section:
-    - path: "/guides"
-      title: Index
   - section_title: How do i control what data is sent to my destinations
     section:
     - path: guides/miscellaneous/how-do-i-control-what-data-is-sent-to-my-destinations
@@ -139,9 +124,6 @@ sections:
   - section_title: How many unique events can be logged in my segment schema table
     section:
     - path: guides/miscellaneous/how-many-unique-events-can-be-logged-in-my-segment-schema-table
-      title: Index
-  - section:
-    - path: "/guides/miscellaneous"
       title: Index
   - section_title: Is it possible to ignore internet bots
     section:
@@ -166,9 +148,6 @@ sections:
   - section_title: How do i migrate code from other analytics tools
     section:
     - path: guides/setup/how-do-i-migrate-code-from-other-analytics-tools
-      title: Index
-  - section:
-    - path: "/guides/setup"
       title: Index
   - section_title: What if i change my domain name
     section:
@@ -198,9 +177,6 @@ sections:
       changed
     section:
     - path: guides/usage-and-billing/i-ve-never-had-to-pay-us-sales-tax-on-my-invoices-before-what-s-changed
-      title: Index
-  - section:
-    - path: "/guides/usage-and-billing"
       title: Index
   - section_title: Is there a free trial for paid plans
     section:
@@ -263,9 +239,6 @@ sections:
     - path: "/partners/enable-with-segment"
       title: Enable with segment
   - section:
-    - path: "/partners"
-      title: Index
-  - section:
     - path: "/partners/plugins"
       title: Plugins
   - section:
@@ -297,9 +270,6 @@ sections:
     - path: "/personas/identity-resolution"
       title: Identity resolution
   - section:
-    - path: "/personas"
-      title: Index
-  - section:
     - path: "/personas/personas-gdpr"
       title: Personas gdpr
   - section:
@@ -315,9 +285,6 @@ sections:
   section:
   - path: "/privacy"
     title: Index
-  - section:
-    - path: "/privacy"
-      title: Index
 - section_title: Protocols
   section:
   - path: "/protocols"
@@ -331,9 +298,6 @@ sections:
   - section:
     - path: "/protocols/faq"
       title: Faq
-  - section:
-    - path: "/protocols"
-      title: Index
   - section:
     - path: "/protocols/schema"
       title: Schema
@@ -350,9 +314,6 @@ sections:
   - section:
     - path: "/segment-app/concepts"
       title: Concepts
-  - section:
-    - path: "/segment-app"
-      title: Index
   - section:
     - path: "/segment-app/membership"
       title: Membership
