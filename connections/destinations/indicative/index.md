@@ -8,7 +8,7 @@ This document was last updated on 18th October, 2018. If you notice any gaps, ou
 
 ## Getting Started
 
-<!-- {{>connection-modes}} -->
+{% include content/connection-modes.md %}
 
 1. [Create an Indicative account](https://app.indicative.com/#/login/register?utm_source=partners&utm_medium=segment&utm_campaign=integration).
 

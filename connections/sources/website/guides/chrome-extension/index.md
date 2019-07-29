@@ -7,7 +7,7 @@ You can easily load our browserify'd `analytics-node` package into a Chrome Exte
 
 This allows you to collect information about your users, like how they interact with and use your extension.
 
-{{>deprecated}}
+{% include content/deprecated.md %}
 
 ## Getting Started
 

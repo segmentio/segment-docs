@@ -11,7 +11,7 @@ Our plugin even tracks [WooCommerce](/docs/sources/website/guides/woocommerce) a
 
 ---
 
-{{>deprecated}}
+{% include content/deprecated.md %}
 
 The current version of this plugin should be free of bugs but any existing and future development will be paused for the time being.
 

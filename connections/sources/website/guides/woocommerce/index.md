@@ -7,7 +7,7 @@ Installing Segment in a Woo Commerce store is extremely simple and doesn't requi
 
 <div align="center">![ghost logo](/docs/sources/website/guides/woocommerce/images/logo.png)</div>
 
-{{>deprecated}}
+{% include content/deprecated.md %}
 
 We recommend using third party guides or destinations such as the [guide from WooCommerce](https://woocommerce.com/products/segment-io-integration/) or [ExtensionWorks](http://www.extensionworks.com/product/woocommerce-segment-io/).
 

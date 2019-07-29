@@ -39,17 +39,17 @@ Please double check the source link, the Source ID and the api host to ensure th
 
 You will need to first login to AWS and navigate to CloudFront. 
 
-![](../../images/create_cloudfront_distribution.png)
+![](../images/create_cloudfront_distribution.png)
 
 Click "Create Distribution"
 
 Here, you will need to select a delivery method for your content. Select the "Get Started" button in the "Web" section. 
 
-![](../../images/cloudfront_distribution_web.png)
+![](../images/cloudfront_distribution_web.png)
 
 Now we'll need to configure our distribution settings. Under origin settings, you will need to update the following values: 
 
-![](../../images/cloudfront_distribution_settings.png)
+![](../images/cloudfront_distribution_settings.png)
 
 <table>
   <tr>

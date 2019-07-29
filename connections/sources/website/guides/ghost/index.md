@@ -11,7 +11,7 @@ The guide below explains how to install Segment in your Ghost blog. All you need
 
 - - -
 
-{{>deprecated}}
+{% include content/deprecated.md %}
 
 
 ## Create a Segment Account
