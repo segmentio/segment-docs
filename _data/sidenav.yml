@@ -6,225 +6,228 @@ sections:
     title: Overview
   - section:
     - path: "/guides/account-management/account-vs-workspace"
-      title: Account vs workspace
+      title: What is the difference between an account and a workspace?
   - section:
     - path: "/guides/account-management/add-team-member"
-      title: Add team member
+      title: How do I add a team member?
   - section:
     - path: "/guides/account-management/cancel-my-subscription"
-      title: Cancel my subscription
+      title: Will deleting my account cancel my subscription?
   - section:
     - path: "/guides/account-management/cant-add-integration"
-      title: Cant add integration
+      title: Why can’t I add the integration I want?
   - section:
     - path: "/guides/account-management/delete-workspace"
-      title: Delete workspace
+      title: How do I delete my workspace entirely?
   - section:
     - path: "/guides/account-management/move-source-workspace"
-      title: Move source workspace
+      title: Can I move a source from one workspace to another?
   - section:
     - path: "/guides/account-management/multiple-environments"
-      title: Multiple environments
+      title: How do I set up a Segment for dev, prod, and testing environments?
   - section:
     - path: "/guides/account-management/recover-source-workspace"
-      title: Recover source workspace
+      title: Can I recover a source or workspace after I delete it?
   - section:
     - path: "/guides/account-management/special-permissioning"
-      title: Special permissioning
+      title: What do team members have access to? Is there special permissioning to
+        allow access to only certain sources?
   - section:
     - path: "/guides/best-practices/best-practices-identify"
-      title: Best practices identify
+      title: What are best practices for identifying users?
   - section:
     - path: "/guides/best-practices/collect-on-client-or-server"
-      title: Collect on client or server
+      title: Should I instrument data collection on the client or server?
   - section:
     - path: "/guides/best-practices/collect-pageviews-serverside"
-      title: Collect pageviews serverside
+      title: How do I collect pageviews on the server side?
   - section:
     - path: "/guides/best-practices/cross-channel-tracking"
-      title: Cross channel tracking
+      title: How do we track your customers across channels and devices?
   - section:
     - path: "/guides/best-practices/ecommerce-tracking-plan"
-      title: Ecommerce tracking plan
+      title: How do we implement an e-commerce tracking plan?
   - section:
     - path: "/guides/best-practices/measure-marketing-roi"
-      title: Measure marketing roi
+      title: How do I measure the ROI of my Marketing Campaigns?
   - section:
     - path: "/guides/best-practices/preparing-for-gdpr"
-      title: Preparing for gdpr
+      title: Preparing for the GDPR
   - section:
     - path: "/guides/best-practices/test-connections"
-      title: Test connections
+      title: How do I test my connections?
   - section:
     - path: "/guides/best-practices/user-deletion-suppression"
-      title: User deletion suppression
+      title: User Deletion and Suppression
   - section:
     - path: "/guides/best-practices/whats-a-tracking-plan"
-      title: Whats a tracking plan
+      title: What’s a tracking plan and why should you care?
   - section:
     - path: "/guides/general/cloud-sources"
-      title: Cloud sources
+      title: What are object cloud sources?
   - section:
     - path: "/guides/general/duplicate-data"
-      title: Duplicate data
+      title: How does Segment handle duplicate data?
   - section:
     - path: "/guides/general/segment-vs-tag-managers"
-      title: Segment vs tag managers
+      title: What is the difference between Segment and tag managers?
   - section:
     - path: "/guides/general/what-is-segment"
-      title: What is segment
+      title: What is Segment?
   - section:
     - path: "/guides/general/whats-a-destination"
-      title: Whats a destination
+      title: What is a destination?
   - section:
     - path: "/guides/general/whats-a-source"
-      title: Whats a source
+      title: What is a source?
   - section:
     - path: "/guides/general/whats-a-warehouse"
-      title: Whats a warehouse
+      title: What is a warehouse?
   - section:
     - path: "/guides/general/whats-a-workspace"
-      title: Whats a workspace
+      title: What is a workspace?
   - section:
     - path: "/guides/getting-started/the-promise-land"
-      title: The promise land
+      title: The promised land
   - section:
     - path: "/guides/miscellaneous/destination-data-control"
-      title: Destination data control
+      title: How do I use Schema Controls?
   - section:
     - path: "/guides/miscellaneous/identifiers-merged"
-      title: Identifiers merged
+      title: What identifiers can the merged profile be queried/updated with?
   - section:
     - path: "/guides/miscellaneous/ignore-bots"
-      title: Ignore bots
+      title: Is it possible to ignore internet bots?
   - section:
     - path: "/guides/miscellaneous/intelligent-tracking-prevention"
-      title: Intelligent tracking prevention
+      title: Is Segment impacted by Intelligent Tracking Prevention?
   - section:
     - path: "/guides/miscellaneous/unique-events"
-      title: Unique events
+      title: How many unique events and properties can be logged in my Segment Schema
+        table?
   - section:
     - path: "/guides/setup/change-domain"
-      title: Change domain
+      title: What if I change my domain name?
   - section:
     - path: "/guides/setup/find-writekey"
-      title: Find writekey
+      title: How do I find my write key?
   - section:
     - path: "/guides/setup/import-historical-data"
-      title: Import historical data
+      title: How do I import historical data?
   - section:
     - path: "/guides/setup/migrate-from-other-tools"
-      title: Migrate from other tools
+      title: How do I migrate code from other analytics tools?
   - section:
     - path: "/guides/usage-and-billing/billing-cycle"
-      title: Billing cycle
+      title: What is a billing cycle?
   - section:
     - path: "/guides/usage-and-billing/cancelation-final-bill"
-      title: Cancelation final bill
+      title: How do I change my plan?
   - section:
     - path: "/guides/usage-and-billing/discounts-for-startups-npos"
-      title: Discounts for startups npos
+      title: Do you offer coupons?
   - section:
     - path: "/guides/usage-and-billing/event-vs-object"
-      title: Event vs object
+      title: What is the difference between an event and an object?
   - section:
     - path: "/guides/usage-and-billing/mtu-calculation"
-      title: Mtu calculation
+      title: How are MTUs calculated by Segment?
   - section:
     - path: "/guides/usage-and-billing/mtu-count-vs-other-tools"
-      title: Mtu count vs other tools
+      title: Why is my MTU count higher or lower than the user count I see in my downstream
+        destinations/other tools?
   - section:
     - path: "/guides/usage-and-billing/mtu-spikes"
-      title: Mtu spikes
+      title: What caused an unexpected spike in my MTU count?
   - section:
     - path: "/guides/usage-and-billing/pay-us-sales-tax"
-      title: Pay us sales tax
+      title: I've never had to pay US sales tax on my invoices before, what's changed?
   - section:
     - path: "/guides/usage-and-billing/refunds"
-      title: Refunds
+      title: Do you offer refunds?
   - section:
     - path: "/guides/usage-and-billing/startup-program"
-      title: Startup program
+      title: What is the Segment Startup Program?
   - section:
     - path: "/guides/usage-and-billing/throughput-limit"
-      title: Throughput limit
+      title: What does throughput limit stand for?
   - section:
     - path: "/guides/usage-and-billing/trial-for-paid-plans"
-      title: Trial for paid plans
+      title: Is there a free trial for paid plans?
   - section:
     - path: "/guides/usage-and-billing/us-sales-tax"
-      title: Us sales tax
+      title: Why are you applying US sales tax to my invoice?
   - section:
     - path: "/guides/usage-and-billing/view-usage"
-      title: View usage
+      title: How do I find out my usage data?
   - section:
     - path: "/guides/usage-and-billing/volume-and-pricing"
-      title: Volume and pricing
+      title: How does my event and object volume impact my pricing?
 - section_title: Partners
   section:
   - path: "/partners"
     title: Overview
   - section:
     - path: "/partners/build-functions"
-      title: Build functions
+      title: Building a Subscription Function
   - section:
     - path: "/partners/build-webhook"
-      title: Build webhook
+      title: Building a Subscription Webhook
   - section:
     - path: "/partners/checklist"
-      title: Checklist
+      title: Public Beta Checklist
   - section:
     - path: "/partners/co-marketing"
-      title: Co marketing
+      title: Co-marketing
   - section:
     - path: "/partners/conceptual-model"
-      title: Conceptual model
+      title: Conceptual Model
   - section:
     - path: "/partners/enable-with-segment"
-      title: Enable with segment
+      title: Using OAuth to Build a Two-Click Enable Flow
   - section:
     - path: "/partners/plugins"
-      title: Plugins
+      title: Building a Plugin
   - section:
     - path: "/partners/spec"
-      title: Spec
+      title: Segment Spec for Partners
   - section:
     - path: "/partners/streams"
-      title: Streams
+      title: Building a Stream
   - section:
     - path: "/partners/subscriptions"
-      title: Subscriptions
+      title: Building a Subscription
 - section_title: Personas
   section:
   - path: "/personas"
     title: Overview
   - section:
     - path: "/personas/activation"
-      title: Activation
+      title: 'Personas: Activation'
   - section:
     - path: "/personas/audiences"
-      title: Audiences
+      title: 'Personas: Audiences'
   - section:
     - path: "/personas/computed-traits"
-      title: Computed traits
+      title: 'Personas: Computed Traits'
   - section:
     - path: "/personas/faqs"
-      title: Faqs
+      title: Frequently Asked Questions
   - section:
     - path: "/personas/identity-resolution"
-      title: Identity resolution
+      title: 'Personas: Identity Resolution'
   - section:
     - path: "/personas/personas-gdpr"
-      title: Personas gdpr
+      title: Personas and GDPR
   - section:
     - path: "/personas/profile-api"
-      title: Profile api
+      title: 'Personas: Profile API'
   - section:
     - path: "/personas/sql-traits"
-      title: Sql traits
+      title: 'Personas: SQL Traits'
   - section:
     - path: "/personas/warehouses"
-      title: Warehouses
+      title: Personas and Warehouses
 - section_title: Privacy
   section:
   - path: "/privacy"
@@ -235,41 +238,16 @@ sections:
     title: Overview
   - section:
     - path: "/protocols/anomaly_detection"
-      title: Anomaly_detection
+      title: 'Protocols: Anomaly Detection'
   - section:
     - path: "/protocols/apis-and-extensions"
-      title: Apis and extensions
+      title: 'Protocols: APIs and Extensions'
   - section:
     - path: "/protocols/faq"
-      title: Faq
+      title: 'Protocols: FAQ'
   - section:
     - path: "/protocols/schema"
-      title: Schema
+      title: 'Protocols: Schema Controls'
   - section:
     - path: "/protocols/tracking-plan"
-      title: Tracking plan
-- section_title: Segment-app
-  section:
-  - path: "/segment-app"
-    title: Overview
-  - section:
-    - path: "/segment-app/audit-trail"
-      title: Audit trail
-  - section:
-    - path: "/segment-app/concepts"
-      title: Concepts
-  - section:
-    - path: "/segment-app/membership"
-      title: Membership
-  - section:
-    - path: "/segment-app/mfa"
-      title: Mfa
-  - section:
-    - path: "/segment-app/roles"
-      title: Roles
-  - section:
-    - path: "/segment-app/secure-password"
-      title: Secure password
-  - section:
-    - path: "/segment-app/sso"
-      title: Sso
+      title: 'Protocols: Tracking Plan'

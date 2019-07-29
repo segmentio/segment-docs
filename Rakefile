@@ -26,7 +26,7 @@ namespace :nav do
                       .reject { |p| p == '.'}
       
 
-      if paths.size == 0 || paths.size > 4
+      if paths.size == 0 || paths.size > 3
         # Not a valid path or some deep-nested directory structure we don't support
         next
       end
@@ -42,30 +42,15 @@ namespace :nav do
         next if paths.last == "index.md"
         
         path = paths[0..paths.size].join("/").gsub(".md", "")
-        path_title = path.split("/").last.gsub("-", " ").capitalize
+
+        begin
+          f = YAML.load_file("./#{path}.md")
+          path_title = f["title"]
+        rescue
+          path_title = path.split("/").last.gsub("-", " ").capitalize
+        end
 
         sections[k]['section'] << { 'section' => [{ 'path' => "/#{path}", 'title' => path_title }]}
-      end
-
-      if paths.size == 4
-        path = paths[0...4].join("/")
-        title = paths[2].gsub("-", " ").capitalize
-        subtitle = paths[3].gsub("-", " ").capitalize
-        subsection = nil
-
-        if !subsection = sections[k]['section'].select { |x| x['section_title'] == title }.first
-          subsection = { 'section_title' => title, 'section' => [] }
-          sections[k]['section'] <<  subsection
-        end
-
-        if path.split("/").last == "index.md"
-          path = path.gsub("/index.md", "")
-          subsection['section'] << { 'path' => path, 'title' => SIDENAV_INDEX_DEFAULT_TITLE }
-        else
-          path = path.gsub(".md", "")
-          title = paths[3].gsub(".md", "").capitalize
-          subsection['section'] << { 'path' => path, 'title' => title }
-        end
       end
     end
 
