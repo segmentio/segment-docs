@@ -10,7 +10,7 @@ Segment Business plan customers can use Schema Controls to manage which events a
 If you no longer want to track a specific event, you can either remove it from your code or, if you’re on the Business plan, you can block track calls right from the Segment UI. To do so, click on the Schema tab in a Source and toggle the event to enable or block an event.
 
 
-![](../../images/asset_ZCRZqdO9.gif)
+![](../images/asset_ZCRZqdO9.gif)
 
 
 Once you block an event in Segment, we’ll stop forwarding it to all of your Cloud and Device mode Destinations, including your warehouses. You can remove the events from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties.
@@ -51,7 +51,7 @@ Destination flags are case sensitive and match the [Destination’s name in the 
 Segment Business tier customers can block track calls from delivering to specific Destinations in the Segment UI. Visit a Source Schema page and click on the “Integrations” column to view specific Destination filters. Toggle the filter to block or enable an event to a Destination.
 
 
-![](../../images/asset_d3SRmkWy.gif)
+![](../images/asset_d3SRmkWy.gif)
 
 ## Schema Defaults
 
@@ -60,7 +60,7 @@ If you’ve solidified your tracking plan and don’t want any rogue events find
 Locking your schema only takes a few seconds and prevents new rogue events from polluting your Destinations. To configure Schema Defaults, go to your source Schema page, and select “General” from the left-hand navigation.
 
 
-![](../../images/asset_A8jUVuph.gif)
+![](../images/asset_A8jUVuph.gif)
 
 
 ### Overview of Schema Default Settings

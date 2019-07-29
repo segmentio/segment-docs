@@ -14,7 +14,7 @@ As your data volume grows and your team writes more queries, you might be runnin
 
 To check if you’re getting close to your max, run this query. It will tell you the percentage of storage used in your cluster. We recommend never exceeding 75-80% of your storage capacity. If you’re nearing capacity, consider adding some more nodes.
 
-![](../../images/asset_HvZs8FpE.png)
+![](../images/asset_HvZs8FpE.png)
 
 [Learn how to resize your cluster here.](http://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html)
 
@@ -50,7 +50,7 @@ If you have multiple ETL processes loading into your warehouse at the same time,
 
 If you’re a Segment Business Tier customer, you can schedule your sync times under Warehouses Settings.
 
-![](../../images/asset_fRccrNNd.png)
+![](../images/asset_fRccrNNd.png)
 
 In addition, you might want to take advantage of Redshift’s [Workload Management](http://docs.aws.amazon.com/redshift/latest/dg/c_workload_mngmt_classification.html) that helps ensure fast-running queries won’t get stuck behind long ones.
 
@@ -69,7 +69,7 @@ Our initial recommendation is for 2 WLM queues:
 2.  leave the default queue with a concurrency of `5`
     
 
-![](../../images/asset_sHNEIURK.png)
+![](../images/asset_sHNEIURK.png)
 
 Generally, we are responsible for most writes in the databases we connect to, so having a higher concurrency allows us to write as quickly as possible. However, if you are also using the same database for your own ETL process, you may want to use the same concurrency for both groups. In addition, you may even require additional queues if you have other applications writing to the database.
 
