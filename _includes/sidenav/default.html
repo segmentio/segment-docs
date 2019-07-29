@@ -14,7 +14,15 @@
 
     {% assign slug = title | downcase %}
 
-    <li class="l-sidenav-collapsible section">
+    
+    {% assign root = page.url | remove: '.html' | split: '/' %}
+
+    {% assign klass = "section" %}
+    {% if root[1] == slug %}
+      {% assign klass = "section expanded" %}
+    {% endif %}
+
+    <li class="l-sidenav-collapsible {{klass}}">
       <div class="js-collapse">
         <img src="{{site.baseurl}}/assets/icons/nav/{{ slug }}.svg"></img>
         {{ title }}
@@ -23,7 +31,7 @@
         {% for item in root_section.section %}
           {% if item.path %}
             <li>
-              <a href="{{site.baseurl}}{{ item.path }}">{{ item.title }}</a>
+                <a href="{{site.baseurl}}{{ item.path }}">{{ item.title }}</a>
             </li>
           {% endif %}
           {% if item.section_title %}

@@ -40,7 +40,6 @@
 }
 
 #doc-content {
-  overflow-x: visible;
   width: $content-width;
   display: flex;
   flex-direction: column
@@ -85,6 +84,7 @@
   }
 }
 
+
 .l-sidenav-wrapper  li {
   margin-bottom: $spacing-unit / 2;
   &:last-child {
@@ -96,7 +96,7 @@
   display: flex;
   flex-direction: column;
   color: $text-color;
-  font-weiyyght: 500;
+  font-weight: 500;
   img {
     height: 18px;
     width: 18px;
@@ -125,9 +125,19 @@
   align-items: center;
 }
 
+.l-sidenav-wrapper li.section  a.active {
+  color: $brand-color;
+}
+
+
 .l-sidenav-subnav {
   display: none;
   margin-top: $spacing-unit / 2;
+}
+
+.l-sidenav-subnav  p {
+  color: $brand-color;
+  margin-bottom: 0;
 }
 
 .l-sidenav-subnav > li {
@@ -157,7 +167,20 @@
   }
 }
 
-.l-sidenav-collapsible {
+.l-fixed-sidenav-section{
+  a {
+    color: $text-color;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    ul a {
+      font-weight: normal;
+    }
+  }
 }
 
 .l-sidenav-collapsible.expanded > .l-sidenav-subnav {
