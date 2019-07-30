@@ -5,6 +5,8 @@ hide_from_sitemap: true
 toc_min: 1
 beta: true
 deprecated: true
+changefreq: daily
+seo-priority: 1.0
 redirect_from:
 - /test/test
 - /guides/testing
