@@ -6,8 +6,8 @@ toc_min: 1
 beta: true
 deprecated: true
 redirect_from:
-- /test/test/
-- /guides/testing/
+- /test/test
+- /guides/testing
 ---
 
 
