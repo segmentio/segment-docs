@@ -4,7 +4,6 @@
   display: flex;
   display: grid;
 
-  grid-template-columns: minmax($sidenav-width, calc(50% - 405px)) 1fr;
   grid-template-columns: minmax($sidenav-width, calc((100% - 1200px) / 2)) 1fr;
 }
 
@@ -20,14 +19,14 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  min-width: $sidenav-width;
+  width: 100%;
+  overflow: scroll;
   background-color: $grey-color;
 }
 
 #topnav {
   height: $topnav-height;
   border-bottom:  1px solid rgba(67, 90, 111, 0.2);
-  padding: 0px 30px;
   padding-left: $content-padding;
   display: flex;
   align-items: center;
@@ -40,9 +39,10 @@
 }
 
 #doc-content {
-  width: $content-width;
+  min-width: 950px;
+  max-width: $content-width;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
 
 
@@ -52,11 +52,12 @@
 }
 
 .l-sidenav-wrapper {
-  padding: 0 44px;
-  margin-left: auto;
-  margin-right: 0;
+  margin: 0;
   margin-top: 15px;
-  overflow-y: scroll;
+  position: absolute;
+  left: calc(100% - 280px);
+  right: 0;
+  padding: 0 33px;
 }
 
 .l-sidenav-wrapper > .logo {
@@ -75,42 +76,37 @@
 
 .l-sidenav-wrapper > ul {
   list-style: none;
-  border-bottom: 1px solid $text-color;
   margin-left: 0;
   margin-bottom: 25px;
-  padding-bottom: 25px;
-  &:last-child {
-    border: 0;
-  }
+  overflow: hidden;
+  
 }
 
 
 .l-sidenav-wrapper  li {
-  margin-bottom: $spacing-unit / 2;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.l-sidenav-wrapper li {
   display: flex;
+  margin-bottom: $spacing-unit / 2;
   flex-direction: column;
   color: $text-color;
   font-weight: 500;
   img {
     height: 18px;
     width: 18px;
-    margin-right: 10px;
+    margin-right: 12px;
   }
   
   > div:hover {
     text-decoration: underline;
     cursor: pointer;
   }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .l-sidenav-wrapper li > ul.l-sidenav-subnav {
-  margin-left: 28px;
+  margin-left: 30px;
   li, a {
     font-weight: normal;
     color: $text-color-breadcrumb;
@@ -156,9 +152,6 @@
 }
 
 .l-sidenav-subnav:not(.section) {
-  img {
-    margin-left: -21px;
-  }
   img.collapsed {
     display: block;
   }
@@ -167,7 +160,17 @@
   }
 }
 
-.l-fixed-sidenav-section{
+.l-sidenav-wrapper > .l-fixed-sidenav-section:only-of-type {
+  border: 0;
+  padding: 0;
+  max-width: initial;
+}
+
+.l-fixed-sidenav-section {
+  border-top: 1px solid $text-color;
+  padding-top: 25px;
+  max-width: 150px;
+
   a {
     color: $text-color;
   }
@@ -177,7 +180,11 @@
     align-items: center;
     flex-direction: row;
 
-    ul a {
+    ul {
+      margin-left: 28px;
+    }
+
+    ul a, a {
       font-weight: normal;
     }
   }
@@ -323,5 +330,5 @@
 }
 
 .l-topnav-links > a {
-  margin-left: 30px;
+  margin-right: 30px;
 }

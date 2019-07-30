@@ -3,8 +3,6 @@ require 'yaml'
 SIDENAV_INDEX_DEFAULT_TITLE = 'Overview'
 SIDENAV_FILE_BLACKLIST = [
   './vendor/**/*.md', 
-  './legal/**/*.md', 
-  './api/**/*.md', 
   './connections/**/*.md', 
   './*.md', 
   './_*/**/*.md'
@@ -17,7 +15,6 @@ namespace :nav do
     p 'Updating _data/sidenav.yml based on current docs...'
 
     docs = FileList.new('./**/*.md').exclude(SIDENAV_FILE_BLACKLIST)
-    nav = []
     sections = Hash.new()
 
     docs.map do |file_list|
@@ -71,14 +68,44 @@ namespace :nav do
       else
         sections[k]['section'] << { 'path' => "/#{path}", 'title' => path_title }
       end
-
     end
 
-    nav = { 'sections' => sections.values }
 
-    File.open("./_data/sidenav.yml","w") do |file|
-      file.write nav.to_yaml({ indention: 4, separator: '' })
+    main_sections = {}
+    legal_sections = {}
+    api_sections = {}
+    partners_sections = {}
+
+    sections.each do |k, v|
+      if k == 'legal'
+        legal_sections[k] = v
+      elsif k == 'api'
+        api_sections[k] = v
+      elsif k == 'partners'
+        partners_sections[k] = v
+      else
+        main_sections[k] = v
+      end
+    end
+
+    main_nav = { 'sections' => main_sections.values }
+    legal_nav = { 'sections' => legal_sections.values }
+    partners_nav = { 'sections' => partners_sections.values }
+
+    # Main sidenav
+    File.open("./_data/sidenav/default.yml","w") do |file|
+      file.write main_nav.to_yaml({ indention: 4, separator: '' })
     end 
+
+    # Legal sidenav
+    File.open("./_data/sidenav/legal.yml","w") do |file|
+      file.write legal_nav.to_yaml({ indention: 4, separator: '' })
+    end
+
+    # Partners sidenav
+    File.open("./_data/sidenav/partners.yml","w") do |file|
+      file.write partners_nav.to_yaml({ indention: 4, separator: '' })
+    end
   end
 end
 
