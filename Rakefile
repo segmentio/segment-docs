@@ -74,12 +74,15 @@ namespace :nav do
     main_sections = {}
     legal_sections = {}
     api_sections = {}
+    partners_sections = {}
 
     sections.each do |k, v|
       if k == 'legal'
         legal_sections[k] = v
       elsif k == 'api'
         api_sections[k] = v
+      elsif k == 'partners'
+        partners_sections[k] = v
       else
         main_sections[k] = v
       end
@@ -87,6 +90,7 @@ namespace :nav do
 
     main_nav = { 'sections' => main_sections.values }
     legal_nav = { 'sections' => legal_sections.values }
+    partners_nav = { 'sections' => partners_sections.values }
 
     # Main sidenav
     File.open("./_data/sidenav/default.yml","w") do |file|
@@ -96,6 +100,11 @@ namespace :nav do
     # Legal sidenav
     File.open("./_data/sidenav/legal.yml","w") do |file|
       file.write legal_nav.to_yaml({ indention: 4, separator: '' })
+    end
+
+    # Partners sidenav
+    File.open("./_data/sidenav/partners.yml","w") do |file|
+      file.write partners_nav.to_yaml({ indention: 4, separator: '' })
     end
   end
 end

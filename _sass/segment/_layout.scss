@@ -160,6 +160,12 @@
   }
 }
 
+.l-sidenav-wrapper > .l-fixed-sidenav-section:only-of-type {
+  border: 0;
+  padding: 0;
+  max-width: initial;
+}
+
 .l-fixed-sidenav-section {
   border-top: 1px solid $text-color;
   padding-top: 25px;

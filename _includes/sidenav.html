@@ -22,6 +22,8 @@
 
     {% if page.url contains "/legal" %}
       {% include sidenav/legal.html %}
+    {% elsif page.url contains "/partners" %}
+      {% include sidenav/partners.html %}
     {% else %}
       {% include sidenav/default.html %}
     {% endif %}

@@ -1,0 +1,8 @@
+<ul class="l-fixed-sidenav-section">
+  {% assign item = site.data.sidenav.partners.sections | first %}
+  {% for item in item.section %}
+    <li>
+      <a href="{{site.baseurl}}{{ item.path }}">{{ item.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
