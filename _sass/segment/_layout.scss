@@ -4,7 +4,6 @@
   display: flex;
   display: grid;
 
-  grid-template-columns: minmax($sidenav-width, calc(50% - 405px)) 1fr;
   grid-template-columns: minmax($sidenav-width, calc((100% - 1200px) / 2)) 1fr;
 }
 
@@ -21,6 +20,7 @@
   top: 0;
   height: 100vh;
   width: 100%;
+  overflow: scroll;
   background-color: $grey-color;
 }
 
@@ -39,8 +39,8 @@
 }
 
 #doc-content {
+  min-width: 950px;
   max-width: $content-width;
-  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -55,8 +55,9 @@
   margin: 0;
   margin-top: 15px;
   position: absolute;
+  left: calc(100% - 280px);
   right: 0;
-  padding: 0 30px;
+  padding: 0 33px;
 }
 
 .l-sidenav-wrapper > .logo {
@@ -75,13 +76,10 @@
 
 .l-sidenav-wrapper > ul {
   list-style: none;
-  border-bottom: 1px solid $text-color;
   margin-left: 0;
   margin-bottom: 25px;
-  padding-bottom: 25px;
-  &:last-child {
-    border: 0;
-  }
+  overflow: hidden;
+  
 }
 
 
@@ -91,7 +89,6 @@
   flex-direction: column;
   color: $text-color;
   font-weight: 500;
-  overflow: hidden;
   img {
     height: 18px;
     width: 18px;
@@ -155,9 +152,6 @@
 }
 
 .l-sidenav-subnav:not(.section) {
-  img {
-    margin-left: -24px;
-  }
   img.collapsed {
     display: block;
   }
@@ -167,6 +161,10 @@
 }
 
 .l-fixed-sidenav-section {
+  border-top: 1px solid $text-color;
+  padding-top: 25px;
+  max-width: 150px;
+
   a {
     color: $text-color;
   }
