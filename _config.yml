@@ -13,9 +13,9 @@ defaults:
       path: ""
     values:
       layout: "page"
-    
+
 plugins:
-#  - jekyll-sitemap
+  - jekyll-sitemap
   - jekyll-redirect-from
 
 
