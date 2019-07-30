@@ -469,4 +469,4 @@ Intercom only allows a total of [120 unique event names](http://docs.intercom.io
 
 If you want to prevent some of your events from being passed to Intercom and thus prevent the error, you can filter out Intercom in those events using the [Selecting Destinations](https://segment.com/docs/guides/best-practices/should-i-instrument-data-collection-on-the-client-or-server/#selecting-destinations) feature available on all of our libraries.
 
-<!--{{>personas}}-->
+{% include content/personas.md %}

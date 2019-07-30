@@ -346,6 +346,6 @@ If you hate defaults you can configure analytics-go with the following fields:
 
 ## Troubleshooting
 
-{{> troubleshooting-intro}}
-{{> troubleshooting-server-debugger}}
-{{> troubleshooting-server-integration}}
+{% include content/troubleshooting-intro.md %}
+
+
