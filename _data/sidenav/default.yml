@@ -189,7 +189,7 @@ sections:
     title: 'Protocols: Schema Controls'
   - path: "/protocols/tracking-plan"
     title: 'Protocols: Tracking Plan'
-- section_title: Segment-app
+- section_title: App
   section:
   - path: "/segment-app"
     title: Overview

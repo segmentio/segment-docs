@@ -7,17 +7,10 @@
   </li>
   {% for root_section in site.data.sidenav.default.sections %}
     {% assign title = root_section.section_title %}
-    
-    {% if title == "Segment-app" %}
-      {% assign title = "App" %}
-    {% endif %}
-
     {% assign slug = title | downcase %}
-
-    
     {% assign root = page.url | remove: '.html' | split: '/' %}
-
     {% assign klass = "section" %}
+    
     {% if root[1] == slug %}
       {% assign klass = "section expanded" %}
     {% endif %}

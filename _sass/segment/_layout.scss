@@ -20,14 +20,13 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  min-width: $sidenav-width;
+  width: 100%;
   background-color: $grey-color;
 }
 
 #topnav {
   height: $topnav-height;
   border-bottom:  1px solid rgba(67, 90, 111, 0.2);
-  padding: 0px 30px;
   padding-left: $content-padding;
   display: flex;
   align-items: center;
@@ -40,9 +39,10 @@
 }
 
 #doc-content {
-  width: $content-width;
+  max-width: $content-width;
+  width: 100%;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
 
 
@@ -52,11 +52,11 @@
 }
 
 .l-sidenav-wrapper {
-  padding: 0 44px;
-  margin-left: auto;
-  margin-right: 0;
+  margin: 0;
   margin-top: 15px;
-  overflow-y: scroll;
+  position: absolute;
+  right: 0;
+  padding: 0 30px;
 }
 
 .l-sidenav-wrapper > .logo {
@@ -86,31 +86,30 @@
 
 
 .l-sidenav-wrapper  li {
-  margin-bottom: $spacing-unit / 2;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.l-sidenav-wrapper li {
   display: flex;
+  margin-bottom: $spacing-unit / 2;
   flex-direction: column;
   color: $text-color;
   font-weight: 500;
+  overflow: hidden;
   img {
     height: 18px;
     width: 18px;
-    margin-right: 10px;
+    margin-right: 12px;
   }
   
   > div:hover {
     text-decoration: underline;
     cursor: pointer;
   }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .l-sidenav-wrapper li > ul.l-sidenav-subnav {
-  margin-left: 28px;
+  margin-left: 30px;
   li, a {
     font-weight: normal;
     color: $text-color-breadcrumb;
@@ -157,7 +156,7 @@
 
 .l-sidenav-subnav:not(.section) {
   img {
-    margin-left: -21px;
+    margin-left: -24px;
   }
   img.collapsed {
     display: block;
@@ -327,5 +326,5 @@
 }
 
 .l-topnav-links > a {
-  margin-left: 30px;
+  margin-right: 30px;
 }
