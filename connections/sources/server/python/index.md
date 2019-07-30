@@ -672,9 +672,9 @@ We have heard from our customers that Google App Engine does not resolve project
 
 Keep in mind that we have a size limit of `32KB` per request and `500KB` per batch request!
 
-{{> troubleshooting-intro}}
-{{> troubleshooting-server-debugger}}
-{{> troubleshooting-server-integration}}
+{% include content/troubleshooting-intro.md %}
+
+
 
 ### Overriding Context Value
 

@@ -506,9 +506,9 @@ $ sudo service cron reload    # reload the cron daemon
 
 ## Troubleshooting
 
-{{> troubleshooting-intro}}
-{{> troubleshooting-server-debugger}}
-{{> troubleshooting-server-integration}}
+{% include content/troubleshooting-intro.md %}
+
+
 
 
 ## 3rd-Party Libraries

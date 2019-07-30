@@ -99,4 +99,4 @@ Prior to rolling out Segment ID's, AdRoll allowed "named segments". If your acco
 
 ## Troubleshooting
 
-<!--{{> client-side-script-unverified}}-->
+{% include content/client-side-script-unverified.md %}

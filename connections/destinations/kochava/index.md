@@ -113,7 +113,7 @@ When it is able to retrieve iAd information, it will augment all `track` events.
 
 Because this information in passed through the context object, this will not be received by other downstream integrations, unless explicitly mapped. Kochava is currently the only integration which supports Apple Search Ads.
 
-<!--{{>personas}}-->
+{% include content/personas.md %}
 
 ## Troubleshooting
 
