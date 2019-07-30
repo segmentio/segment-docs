@@ -1,17 +1,18 @@
-# handlebars, not migrated yet
-base-bottom.hbs
+# handlebars, complex & have lots of SEO stuff
 base-footer.hbs
-base-sidebar.hbs
 base-top.hbs
+
+# double check integration into current layouts
 data-collection-footer.hbs
-navigation.hbs
+base-bottom.hbs
 
 
-# complex, not migrated yet
+# mostly done, needs an adult
 integration-foot.md
 
-
-
+# won't do / don't need to do
+navigation.hbs
+base-sidebar.hbs
 
 # done
 client-side-script-unverified.md
@@ -39,8 +40,8 @@ spec-field-type.md
 spec-field-user-id.md
 spec-field-version.md
 spec-identities.md
-troubleshooting-intro.md
 
+troubleshooting-intro.md
 
 ### Condensed into troubleshooting-intro.md for simplicity.
 troubleshooting-server-debugger.md
