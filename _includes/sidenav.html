@@ -20,55 +20,10 @@
       Docs
     </div>
 
-    {% case page.layout %}
-      {% when "sources" %}
-      {% when "destinations" %}
-      {% when "partners" %}
-      {% when "legal" %}
-      {% else %}
-        {% include sidenav/default.html %}
-    {% endcase %}
-
-    <ul class="l-fixed-sidenav-section">
-      <li>
-        <a href="{{site.baseurl}}/api">
-          <img src="{{site.baseurl}}/assets/icons/nav/reference.svg"></img>
-          API Reference
-        </a>
-      </li>
-      <li>
-        <a href="https://segment.com/help">
-          <img src="{{site.baseurl}}/assets/icons/nav/help.svg"></img>
-          Help
-        </a>
-      </li>
-    </ul>
-
-    <ul class="l-fixed-sidenav-section">
-      <li>
-        <img src="{{site.baseurl}}/assets/icons/nav/learn-more.svg"></img>
-        Learn More
-      </li>
-      <li>
-        <ul>
-          <li>
-            <a href="https://segment.com/recipes">
-              Recipes
-            </a>
-          </li>
-          <li>
-            <a href="https://segment.com/university">
-              University
-            </a>
-          </li>
-          <li>
-            <a href="https://segment.com/academy">
-              Academy
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-
+    {% if page.url contains "/legal" %}
+      {% include sidenav/legal.html %}
+    {% else %}
+      {% include sidenav/default.html %}
+    {% endif %}
   </nav>
 </div>

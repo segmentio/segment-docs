@@ -167,7 +167,7 @@
   }
 }
 
-.l-fixed-sidenav-section{
+.l-fixed-sidenav-section {
   a {
     color: $text-color;
   }
@@ -177,7 +177,11 @@
     align-items: center;
     flex-direction: row;
 
-    ul a {
+    ul {
+      margin-left: 28px;
+    }
+
+    ul a, a {
       font-weight: normal;
     }
   }
