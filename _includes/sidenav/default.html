@@ -11,7 +11,7 @@
     {% assign root = page.url | remove: '.html' | split: '/' %}
     {% assign klass = "section" %}
     
-    {% if root[1] == slug %}
+    {% if root[1] == slug or (root[1] == "segment-app" and slug == "app") %}
       {% assign klass = "section expanded" %}
     {% endif %}
 
