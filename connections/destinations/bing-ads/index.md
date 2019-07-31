@@ -69,4 +69,4 @@ analytics.track('Order Completed', {
 
 ## Troubleshooting
 
-{{> client-side-script-unverified}}
+{% include content/client-side-script-unverified.md %}

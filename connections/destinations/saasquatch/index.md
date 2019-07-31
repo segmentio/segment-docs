@@ -6,7 +6,7 @@ All you need to get started is your SaaSquatch Tenant Alias. Enter that into you
 
 Here's a quick video on what you need to do:
 
-<!--\{\{\{youtube 'dvNJb3G316E'}}}-->
+{% comment %}{{{youtube 'dvNJb3G316E'}}}{% endcomment %}
 
 - - -
 

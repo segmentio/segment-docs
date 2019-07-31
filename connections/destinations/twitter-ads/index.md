@@ -364,4 +364,4 @@ window.twq('track', 'AddPaymentInfo', {});
 
 ## Troubleshooting
 
-{{> client-side-script-unverified}}
+{% include content/client-side-script-unverified.md %}

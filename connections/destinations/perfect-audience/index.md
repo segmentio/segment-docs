@@ -43,4 +43,4 @@ If you're using our [ecommerce spec](/docs/spec/ecommerce/v2/) and passing the `
 
 ## Troubleshooting
 
-{{> client-side-script-unverified}}
+{% include content/client-side-script-unverified.md %}

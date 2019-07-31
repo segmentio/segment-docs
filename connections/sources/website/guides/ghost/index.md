@@ -27,7 +27,7 @@ Once your Segment account is ready to go you'll need to install a few lines of j
 
 Here's your standard snippet:
 
-<!--\{\{\{snippet-example 'YOUR_WRITE_KEY'}}}-->
+{% comment %}\{\{\{snippet-example 'YOUR_WRITE_KEY'{% endcomment %}
 
 
 ### Basic Setup

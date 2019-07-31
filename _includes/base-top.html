@@ -1,0 +1,61 @@
+<html>
+<body>
+  <!-- TODO: old nav, can likely be discarded
+  <header role="banner" class="Site-header">
+    <nav role="navigation" class="Navigation">
+      <div class="Navigation-left">
+        <h1 class="Navigation-item">
+          <a href="/" class="Navigation-logo">
+            Segment
+          </a>
+        </h1>
+        <a class="Navigation-subtitle" href="/docs">Docs</a>
+      </div>
+      <div class="Navigation-middle">
+        {% for each collection in site.collections %}
+          {{#isnt @key 'Platforms'}}
+            {{#isnt @key 'Legal'}}
+              {{#isnt @key 'Home'}}
+                <a
+                  class="DocsNav-tab {{#is @key ../../../collection}}active{{/is}}"
+                  href="/docs/{{this.0.path}}">{{@key}}</a>
+              {{/isnt}}
+            {{/isnt}}
+          {{/isnt}}
+        {{/each}}
+      </div>-->
+      <!-- TODO: old topnav "responsive" hamburger - should we keep this? -->
+      <div class="Navigation-right">
+        <div class="Navigation-LinkList Navigation-item">
+          <a href="/contact">Contact Support</a>
+        </div>
+        <a open-sidebar href="#" class="Navigation-Burger Navigation-item"></a>
+      </div>
+    </nav>
+    {{> base-sidebar }}
+    <!-- TODO: ^ appears to render a list of the top-level nav items as a dropdown for the burger. Probably not needed, since the sidenav should always show -->
+
+    <!-- TODO: get consent manager working -->
+    <div id="consent-manager"></div>
+
+<!-- script to support the hamburger menu? -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const openSidebarButton = document.querySelector('[open-sidebar]')
+        const sidebar = document.querySelector('nav.Sidebar')
+        openSidebarButton.addEventListener('click', (e) => {
+          e.preventDefault()
+          sidebar.toggleAttribute('open')
+        })
+      });
+/*<!-- old Segment tracking for docs --> */
+      Array.from(document.querySelectorAll('.DocsNav-tab')).forEach(tab => {
+        tab.onclick = function(e) {
+          window.analytics.track('Docs Top Nav Clicked', {
+            docs_page_context: window.location.pathname,
+            docs_page_click: e.target.href
+          })
+        }
+      })
+    </script>
+  </header>

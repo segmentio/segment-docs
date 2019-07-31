@@ -196,4 +196,4 @@ Here are some common errors you may come across and how to resolve:
 
 `Invalid Credentials` - occurs when IAM permissions are not set up correctly. Check the IAM policy and role.
 
-<!--{{>personas}}-->
+{% include content/personas.md %}

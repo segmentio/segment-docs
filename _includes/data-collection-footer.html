@@ -1,0 +1,26 @@
+<div class="DataCollection-Footer" style="
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: .75rem;
+    margin-right: .75rem;">
+    <!-- TODO clean up styling here  -->
+  <div class="DataCollection-Block DataCollection-Left">
+    <p class="DataCollection-Left-Container">© <span id="year"></span>, Segment.io, Inc.</p>
+  </div>
+  <div class="DataCollection-Block DataCollection-Right">
+    <div class="DataCollection-Right-Container">
+      <a class="DataCollection-link" href="#" id="open-consent-manager">Website Data Collection Preferences</button>
+      <a href="https://segment.com/docs/legal/privacy" class="DataCollection-link">Privacy</a>
+      <a href="https://segment.com/docs/legal/terms" class="DataCollection-link">Terms</a>
+    </div>
+  </div>
+</div>
+<script>
+  var d = new Date().getFullYear();
+  document.getElementById("year").innerHTML = d;
+</script>
+<!-- TODO get consent manager working - Not sure if this is how you actually call a cdn but hey!-->
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script src="/../assets/consent-manager.js" defer></script>

@@ -32,4 +32,4 @@ As this is automatically included in the `analytics.js` snippet by default, you 
 ### I can't map user variables
 The current Crazy Egg Destination doesn't support mapping of user variables out of the box. You will need to add your own additional Javascript as specified [here](https://help.crazyegg.com/articles/61-user-variables).
 
-{{> client-side-script-unverified}}
+{% include content/client-side-script-unverified.md %}
