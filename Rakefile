@@ -3,9 +3,7 @@ require 'yaml'
 SIDENAV_INDEX_DEFAULT_TITLE = 'Overview'
 SIDENAV_FILE_BLACKLIST = [
   './vendor/**/*.md', 
-  './connections/sources/**.md', 
-  './connections/destinations/**/*/index.md',
-  './connections/warehouses/**/*/index.md',
+  './connections/**/**.md', 
   './*.md', 
   './_*/**/*.md'
 ]
