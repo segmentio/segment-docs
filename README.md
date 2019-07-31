@@ -2,7 +2,7 @@
 
 This is a blank template for segment-docs
 
-Swiftype is set up as a script in _layouts/default.html
+Swiftype is set up as a script in `_layouts/default.html`
 
 
 # Syntax highlighting
@@ -16,9 +16,11 @@ A list of the cues rouge accepts can be found [here](https://github.com/rouge-ru
 
 - redirect_from: takes an array of URLs, and generates a "stub" page at this URL which redirects to the file in which you're listing this.
 
-- beta: default false. When true, show a "in beta" warning in the page layout
+- beta: default false. When true, show an "in beta" warning in the page layout (see the warning in `_includes/content/beta.md`)
 
-- hide_from_sitemap: TODO
+- hide_from_sitemap: TODO - this probably overlaps with the `hidden:` flag we need to implement wanted to make.
+
+- feedback: defaults to true. When false, hide the feedback footer. Good for legal and landing pages,
 
 - seo-priority: values from `1.0` to `0.1`, default: `0.5 `. Sets the `Priority` tag in the sitemap
 
