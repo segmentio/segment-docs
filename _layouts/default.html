@@ -9,6 +9,9 @@
         <div id="doc-content">
           {{ content }}
         </div>
+        <div style="position: absolute; bottom: 10px;">
+          {% include data-collection-footer.html %}
+        </div>
       </main>
     </div>
     <script type="text/javascript">
@@ -19,6 +22,28 @@
 
       _st('install','dsmQzTck4zz2vQNsXLJW','2.0.0');
     </script>
-    {% include data-collection-footer.html %}
+
+    <script type="application/ld+json">
+    [
+      {
+        {{!-- Name --}}
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Segment",
+        "url": "https://segment.com"
+      }, {
+        {{!-- Logo and social links --}}
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Segment",
+        "url": "https://segment.com",
+        "logo": "https://segment.com/build/public/public/images/touch-icon.png",
+        "sameAs": [
+          "https://twitter.com/segment",
+          "https://www.linkedin.com/company/segment-io"
+        ]
+      }
+    ]
+    </script>
   </body>
 </html>
