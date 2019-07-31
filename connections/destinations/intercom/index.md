@@ -312,7 +312,7 @@ Analytics.with(context).identify("123", traits, options);
 
 If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/sources/website/analytics.js/#selecting-integrations), the context object will look like this:
 
-```json
+```
 {
      integrations: {
          All: false,

@@ -1,0 +1,52 @@
+<footer class="Page-footer" style="text-align:center; display: flex;">
+  {% if feedback != false %}
+  <div class="Page-feedback-card">
+          <img src="/assets/icon-s-tech-support.svg" height="48" width="48" style="
+    margin: auto;"> <br> Questions? Need help? <a href="https://segment.com/help/contact/">Contact us</a>!
+      </div>
+      <div class="Page-feedback-card">
+        <div>
+          <span class="Feedback">
+          <span>Was this page helpful?</span><br>
+          <span class="Feedback-btn-wrapper">
+            <label id="Feedback-yes" class="Feedback-btn">
+              <input type="radio">
+              <span class="Feedback-btn-label">Yes</span>
+            </label>
+            <label id="Feedback-no" class="Feedback-btn">
+              <input type="radio">
+              <span class="Feedback-btn-label">No</span>
+            </label>
+          </span>
+        </span>
+    </div>
+    <div style="padding-top:1rem;">
+      Can we improve this doc?<br>
+      Email us: docs-feedback@segment.com!
+    </div>
+{% endif %}
+</footer>
+
+<script>
+  ;(function () {
+    var helpful = document.querySelector('#Feedback-yes')
+    var unhelpful = document.querySelector('#Feedback-no')
+    var feedback = document.querySelector('.Feedback')
+    helpful.addEventListener('click', function (e) {
+      feedback.innerText = 'Thanks for your feedback!'
+      window.analytics.track('Docs Rated', {
+        title: '{{title}}',
+        helpful: true,
+        url: document.URL
+      })
+    })
+    unhelpful.addEventListener('click', function (e) {
+      feedback.innerText = 'Thanks for your feedback!'
+      window.analytics.track('Docs Rated', {
+        title: '{{title}}',
+        helpful: false,
+        url: document.URL
+      })
+    })
+  })()
+</script>
