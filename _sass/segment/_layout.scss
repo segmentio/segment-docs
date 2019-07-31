@@ -79,16 +79,34 @@
   margin-left: 0;
   margin-bottom: 25px;
   overflow: hidden;
-  
-}
 
+  > li.back  {
+    margin-bottom: $spacing-unit / 4;
+    margin-left: -5px;
+    a {
+      display: flex;
+      align-items: center;
+      color: $text-color;
+      font-weight: normal;
+
+      > img {
+        margin-right: 5px;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  > li.heading {
+    font-weight: 500;
+    opacity: 1;
+  }
+}
 
 .l-sidenav-wrapper  li {
   display: flex;
   margin-bottom: $spacing-unit / 2;
   flex-direction: column;
   color: $text-color;
-  font-weight: 500;
   img {
     height: 18px;
     width: 18px;
@@ -103,13 +121,18 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  &:not(.section) {
+    a, div {
+      opacity: 0.8;
+    }
+  }
 }
 
 .l-sidenav-wrapper li > ul.l-sidenav-subnav {
   margin-left: 30px;
   li, a {
     font-weight: normal;
-    color: $text-color-breadcrumb;
   }
 }
 
@@ -121,28 +144,22 @@
   align-items: center;
 }
 
-.l-sidenav-wrapper li.section  a.active {
-  color: $brand-color;
+.l-sidenav-wrapper a {
+  color: $text-color;
 }
-
 
 .l-sidenav-subnav {
   display: none;
   margin-top: $spacing-unit / 2;
 }
 
-.l-sidenav-subnav  p {
-  color: $brand-color;
-  margin-bottom: 0;
-}
-
 .l-sidenav-subnav > li {
   margin-bottom: $spacing-unit / 2;
   font-weight: normal;
-  color: $text-color-breadcrumb;
+  color: $text-color;
 }
 
-.l-sidenav-subnav > li > div {
+.l-sidenav-subnav div {
   display: flex;
   align-items: center;
   img {
@@ -151,7 +168,7 @@
   }
 }
 
-.l-sidenav-subnav:not(.section) {
+.l-sidenav-collapsible > div {
   img.collapsed {
     display: block;
   }
@@ -159,6 +176,23 @@
     display: none;
   }
 }
+
+.l-sidenav-collapsible.expanded {
+  > .l-sidenav-subnav {
+    display: block;
+  }
+
+  > div {
+    img.collapsed {
+      display: none;
+    }
+  
+    img.expanded {
+      display: block;
+    }
+  }
+}
+
 
 .l-sidenav-wrapper > .l-fixed-sidenav-section:only-of-type {
   border: 0;
@@ -171,10 +205,6 @@
   padding-top: 25px;
   max-width: 150px;
 
-  a {
-    color: $text-color;
-  }
-
   li {
     display: flex;
     align-items: center;
@@ -184,23 +214,10 @@
       margin-left: 28px;
     }
 
-    ul a, a {
+    &:not(.section) a {
+      color: $text-color;
       font-weight: normal;
     }
-  }
-}
-
-.l-sidenav-collapsible.expanded > .l-sidenav-subnav {
-  display: block;
-}
-
-.l-sidenav-subnav > .l-sidenav-collapsible.expanded {
-  img.collapsed {
-    display: none;
-  }
-  
-  img.expanded {
-    display: block;
   }
 }
 

@@ -60,7 +60,7 @@ namespace :nav do
 
         if !subsection = sections[k]['section'].select { |x| x['section_title'] == subsection_title }.first
           # new sub-section found
-          subsection = { 'section_title' => subsection_title, 'section' => [] }
+          subsection = { 'section_title' => subsection_title, 'slug' => paths[0...2].join('/'), 'section' => [] }
           sections[k]['section'] <<  subsection
         end
 
@@ -90,6 +90,7 @@ namespace :nav do
 
     main_nav = { 'sections' => main_sections.values }
     legal_nav = { 'sections' => legal_sections.values }
+    api_nav = { 'sections' => api_sections.values }
     partners_nav = { 'sections' => partners_sections.values }
 
     # Main sidenav
@@ -100,6 +101,11 @@ namespace :nav do
     # Legal sidenav
     File.open("./_data/sidenav/legal.yml","w") do |file|
       file.write legal_nav.to_yaml({ indention: 4, separator: '' })
+    end
+
+    # API sidenav
+    File.open("./_data/sidenav/api.yml","w") do |file|
+      file.write api_nav.to_yaml({ indention: 4, separator: '' })
     end
 
     # Partners sidenav

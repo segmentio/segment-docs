@@ -29,38 +29,44 @@
         {% for item in root_section.section %}
           {% if item.path %}
             <li>
-                <a href="{{site.baseurl}}{{ item.path }}">{{ item.title }}</a>
+              <a href="{{site.baseurl}}{{ item.path }}">{{ item.title }}</a>
             </li>
           {% endif %}
           {% if item.section_title %}
-          <li class="l-sidenav-collapsible">
-            <div class="js-collapse">
-              <img class="collapsed" src="{{site.baseurl}}/assets/icons/nav/plus.svg"></img>
-              <img class="expanded" src="{{site.baseurl}}/assets/icons/nav/minus.svg"></img>
-              {{ item.section_title }}
-            </div>
-            <ul class="l-sidenav-subnav">
-              {% for subsection in item.section %}
-                <li>
-                  <a href="{{ site.baseurl }}{{ subsection.path }}">{{ subsection.title }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </li>
+            <li class="l-sidenav-collapsible">
+              <div class="js-collapse">
+                <img class="collapsed" src="{{site.baseurl}}/assets/icons/nav/plus.svg"></img>
+                <img class="expanded" src="{{site.baseurl}}/assets/icons/nav/minus.svg"></img>
+                {{ item.section_title }}
+              </div>
+              <ul class="l-sidenav-subnav">
+                {% for subsection in item.section %}
+                  <li>
+                    <a href="{{ site.baseurl }}{{ subsection.path }}">{{ subsection.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
           {% endif %}
         {% endfor %}
       </ul>
     </li>
   {% endfor %}
+  <li class="section">
+    <a href="{{site.baseurl}}/partners">
+      <img src="{{site.baseurl}}/assets/icons/nav/partners.svg"></img>
+      Partners
+    </a>
+  </li>
 </ul>
 <ul class="l-fixed-sidenav-section">
-  <li>
+  <li class="section">
     <a href="{{site.baseurl}}/api">
       <img src="{{site.baseurl}}/assets/icons/nav/reference.svg"></img>
       API Reference
     </a>
   </li>
-  <li>
+  <li class="section">
     <a href="https://segment.com/help">
       <img src="{{site.baseurl}}/assets/icons/nav/help.svg"></img>
       Help
@@ -69,7 +75,7 @@
 </ul>
 
 <ul class="l-fixed-sidenav-section">
-  <li>
+  <li class="section">
     <img src="{{site.baseurl}}/assets/icons/nav/learn-more.svg"></img>
     Learn More
   </li>
