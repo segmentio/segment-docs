@@ -2,6 +2,7 @@
 
 This is a blank template for segment-docs
 
+Swiftype is set up as a script in _layouts/default.html
 
 
 # Syntax highlighting
