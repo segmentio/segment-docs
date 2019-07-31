@@ -7,7 +7,7 @@
 {% endif }
 
 
-{% if integration.components %} <!-- i think this populates if there's any value?-->
+{% if integration.components %}
 
 ## Supported Sources and Connection Modes
 
@@ -59,9 +59,9 @@ This destination *requires* a **Device-based** Connection Mode for **Mobile** da
 Segment lets you change these destination settings via your Segment dashboard without having to touch any code.
 
 <!-- I'm not sure how to handle the `each` here  -->
-{{#each integration.options}}
+{% for options in integrations %}
 {% if hidden == false and label != "Unused"}}
-### {{label}}
-{{{description}}}
+### {{ option.label}}
+{{{option.description}}}
 {% endif %}
-{{/each}}
+{% endfor %}

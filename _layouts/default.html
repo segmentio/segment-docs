@@ -1,5 +1,75 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  {%- include head.html -%}
+<head>
+  <!-- TODO: Logic to set title needs to be rewritten -->
+  {% if sourceTitle %}
+    <title>{{ sourceTitle }} {{ sourceCategory }} Source | Segment</title>
+  {% else %}
+    <title>{{ title }} {% if landing == false %}Documentation - Segment{% endif %}</title>
+  {% endif %}
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Segment" />
+  <meta property="og:title" content="{{title}} {{#isnt landing true}}Documentation - Segment{{/isnt}}" />
+  <meta property="og:image" content="https://images.ctfassets.net/9u2t3ap6pctb/4s5A4gsq5NsG9Zeil5BBoL/537f85b510477c440d07b3017e000319/190305_OGimage_Templates_Universal03.png" />
+
+  <meta name="viewport" content="width=1200" />
+  {{!-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
+
+  <meta name="twitter:site" content="@segment" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  {% if description %}
+    <meta name="description" content="{{description}}">
+    <meta property="og:description" content="{{description}}" />
+  {% else %}
+    <meta name="description" content="The technical documentation for Segment.">
+    <meta property="og:description" content="The technical documentation for Segment.">
+  {% endif %}
+
+  {% if hidden %}
+    <meta name="robots" content="noindex" />
+  {% else %}
+    <meta class="swiftype" name="section" data-type="enum" content="Documentation" />
+    <meta class="swiftype" name="title" data-type="string" content="{{title}}" />
+    <meta class="swiftype" name="priority" data-type="integer" content="2" />
+  {% endif %}
+
+  <link rel="icon" sizes="192x192" href="https://segment.com/build/public/public/images/touch-icon.png">
+  <link rel="apple-touch-icon" href="https://segment.com/build/public/public/images/touch-icon.png">
+  <link rel="mask-icon" href="https://segment.com/build/public/public/images/favicon-mask.svg" color="#49B882">
+
+  <!-- Unclear if we need this, commenting out for now
+  {% if path %}
+    <link rel="canonical" href="https://segment.com/docs/{{path}}/" />
+  {% else %}
+    <link rel="canonical" href="https://segment.com/docs/" />
+  {% endif %}-->
+
+
+  <script>
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+
+      {% if collection %}
+        window.analytics.page('Docs', {
+          section: '{{collection}}',
+          topic: '{{title}}'
+        });
+      {% else %}
+        window.analytics.page('Docs');
+      {% endif %}
+    }}();
+  </script>
+
+  <meta name="application-name" content="Segment">
+  <meta name="theme-color" content="#00386C">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <!-- Old version, Possibly no longer needed?
+    <link rel="stylesheet" href="/docs/bundle.css">-->
+
   <body>
     <div id="docs">
       {% include sidenav.html %}
