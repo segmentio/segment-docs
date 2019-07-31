@@ -1,0 +1,17 @@
+<ul class="l-fixed-sidenav-section">
+  <li class="back">
+    <a href="{{site.baseurl}}/">
+      <img src="{{site.baseurl}}/assets/icons/nav/chevron-left.svg"></img>
+      Back
+    </a>
+  </li>
+  <li class="heading">
+    Partners
+  </li>
+  {% assign item = site.data.sidenav.partners.sections | first %}
+  {% for item in item.section %}
+    <li>
+      <a href="{{site.baseurl}}{{ item.path }}">{{ item.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,35 @@
+<ul>
+  <li class="back">
+    <a href="{{site.baseurl}}/">
+      <img src="{{site.baseurl}}/assets/icons/nav/chevron-left.svg"></img>
+      Back
+    </a>
+  </li>
+  <li class="heading">
+    Segment APIs
+  </li>
+  {% assign item = site.data.sidenav.api.sections | first %}
+  {% for item in item.section %}
+    {% if item.path %}
+    <li>
+        <a href="{{site.baseurl}}{{ item.path }}">{{ item.title }}</a>
+      </li>
+    {% endif %}
+    {% if item.section_title %}
+      <li class="l-sidenav-collapsible l-sidenav-subnav">
+        <div class="js-collapse">
+          <img class="collapsed" src="{{site.baseurl}}/assets/icons/nav/plus.svg"></img>
+          <img class="expanded" src="{{site.baseurl}}/assets/icons/nav/minus.svg"></img>
+          {{ item.section_title }}
+        </div>
+        <ul class="l-sidenav-subnav">
+          {% for subsection in item.section %}
+            <li>
+              <a href="{{ site.baseurl }}{{ subsection.path }}">{{ subsection.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
