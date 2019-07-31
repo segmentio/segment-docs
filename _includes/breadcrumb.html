@@ -3,9 +3,9 @@
   <a href="{{site.baseurl}}/">Home</a>
   {% for crumb in breadcrumbs offset: 1 %}
     {% if forloop.last %}
-      / {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
+      / {{page.title}}
     {% else %}
-      / <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in breadcrumbs limit: crumb_limit %}{{ crumb | remove: '.html' | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
+      / <a href="{{site.baseurl}}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in breadcrumbs limit: crumb_limit %}{{ crumb | remove: '.html' | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
     {% endif %}
   {% endfor %}
 </div>

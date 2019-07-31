@@ -1,0 +1,101 @@
+<ul>
+  <li class="section">
+    <a href="{{site.baseurl}}/">
+      <img src="{{site.baseurl}}/assets/icons/nav/home.svg"></img>
+      Home
+    </a>
+  </li>
+  {% for root_section in site.data.sidenav.default.sections %}
+    {% assign title = root_section.section_title %}
+    
+    {% if title == "Segment-app" %}
+      {% assign title = "App" %}
+    {% endif %}
+
+    {% assign slug = title | downcase %}
+    {% assign root = page.url | remove: '.html' | split: '/' %}
+    {% assign klass = "section" %}
+    
+    {% if root[1] == slug or (root[1] == "segment-app" and slug == "app") %}
+      {% assign klass = "section expanded" %}
+    {% endif %}
+
+    <li class="l-sidenav-collapsible {{klass}}">
+      <div class="js-collapse">
+        <img src="{{site.baseurl}}/assets/icons/nav/{{ slug }}.svg"></img>
+        {{ title }}
+      </div>
+      <ul class="l-sidenav-subnav">
+        {% for item in root_section.section %}
+          {% if item.path %}
+            <li>
+              <a href="{{site.baseurl}}{{ item.path }}">{{ item.title }}</a>
+            </li>
+          {% endif %}
+          {% if item.section_title %}
+            <li class="l-sidenav-collapsible">
+              <div class="js-collapse">
+                <img class="collapsed" src="{{site.baseurl}}/assets/icons/nav/plus.svg"></img>
+                <img class="expanded" src="{{site.baseurl}}/assets/icons/nav/minus.svg"></img>
+                {{ item.section_title }}
+              </div>
+              <ul class="l-sidenav-subnav">
+                {% for subsection in item.section %}
+                  <li>
+                    <a href="{{ site.baseurl }}{{ subsection.path }}">{{ subsection.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+  <li class="section">
+    <a href="{{site.baseurl}}/partners">
+      <img src="{{site.baseurl}}/assets/icons/nav/partners.svg"></img>
+      Partners
+    </a>
+  </li>
+</ul>
+<ul class="l-fixed-sidenav-section">
+  <li class="section">
+    <a href="{{site.baseurl}}/api">
+      <img src="{{site.baseurl}}/assets/icons/nav/reference.svg"></img>
+      API Reference
+    </a>
+  </li>
+  <li class="section">
+    <a href="https://segment.com/help">
+      <img src="{{site.baseurl}}/assets/icons/nav/help.svg"></img>
+      Help
+    </a>
+  </li>
+</ul>
+
+<ul class="l-fixed-sidenav-section">
+  <li class="section">
+    <img src="{{site.baseurl}}/assets/icons/nav/learn-more.svg"></img>
+    Learn More
+  </li>
+  <li>
+    <ul>
+      <li>
+        <a href="https://segment.com/recipes">
+          Recipes
+        </a>
+      </li>
+      <li>
+        <a href="https://segment.com/university">
+          University
+        </a>
+      </li>
+      <li>
+        <a href="https://segment.com/academy">
+          Academy
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>

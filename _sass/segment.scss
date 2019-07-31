@@ -56,4 +56,4 @@ $on-laptop: 800px !default;
   font-size: $base-font-size * $ratio;
 }
 
-@import "segment/base", "segment/layout";
+@import "segment/base", "segment/layout", "segment/syntax-highlighting";
