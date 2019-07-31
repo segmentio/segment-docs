@@ -5,6 +5,7 @@ sections:
   - path: "/guides"
     title: Overview
   - section_title: Account management
+    slug: guides/account-management
     section:
     - path: "/guides/account-management/account-vs-workspace"
       title: What is the difference between an account and a workspace?
@@ -26,6 +27,7 @@ sections:
       title: What do team members have access to? Is there special permissioning to
         allow access to only certain sources?
   - section_title: Best Practices
+    slug: guides/best-practices
     section:
     - path: "/guides/best-practices/best-practices-identify"
       title: What are best practices for identifying users?
@@ -48,6 +50,7 @@ sections:
     - path: "/guides/best-practices/whats-a-tracking-plan"
       title: What’s a tracking plan and why should you care?
   - section_title: General
+    slug: guides/general
     section:
     - path: "/guides/general/cloud-sources"
       title: What are object cloud sources?
@@ -66,10 +69,12 @@ sections:
     - path: "/guides/general/whats-a-workspace"
       title: What is a workspace?
   - section_title: Getting started
+    slug: guides/getting-started
     section:
     - path: "/guides/getting-started/the-promise-land"
       title: The promised land
   - section_title: Misc FAQs
+    slug: guides/miscellaneous
     section:
     - path: "/guides/miscellaneous/destination-data-control"
       title: How do I use Schema Controls?
@@ -83,6 +88,7 @@ sections:
       title: How many unique events and properties can be logged in my Segment Schema
         table?
   - section_title: Set up
+    slug: guides/setup
     section:
     - path: "/guides/setup/change-domain"
       title: What if I change my domain name?
@@ -93,6 +99,7 @@ sections:
     - path: "/guides/setup/migrate-from-other-tools"
       title: How do I migrate code from other analytics tools?
   - section_title: Usage and Billing
+    slug: guides/usage-and-billing
     section:
     - path: "/guides/usage-and-billing/billing-cycle"
       title: What is a billing cycle?
