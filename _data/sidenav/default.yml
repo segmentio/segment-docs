@@ -2,19 +2,24 @@
 sections:
 - section_title: Connections
   section:
-  - path: "/connections"
-    title: Overview
+  - path: "/connections/spec"
+    title: Spec
+  - section_title: Sources
+    slug: connections/Sources
   - section_title: Destinations
     slug: connections/destinations
     section:
+    - path: "/connections/destinations"
+      title: Overview
     - path: "/connections/destinations/destination-filters"
       title: Destinations Filters
-  - section_title: The Segment Spec
-    slug: connections/spec
-    section: []
-  - section_title: Warehouses and Data Storage
+    - path: "/connections/destinations/catalog"
+      title: Destinations catalog
+  - section_title: Warehouses
     slug: connections/warehouses
-    section: []
+    section:
+      - path: "/connections/warehouses"
+        title: Overview
 - section_title: Guides
   section:
   - path: "/guides"

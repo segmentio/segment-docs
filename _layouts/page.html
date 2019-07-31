@@ -17,15 +17,17 @@ layout: default
 
     {{ content }}
   </article>
-  <div id="doc-toc">
-    <div class="l-doc-toc-wrapper">
-      <h4>On this page</h4>
-      {%- if page.title -%}
-        <ul>
-          <li><a href="#{{page.title | downcase}}"> {{page.title}}</a></li>
-        </ul>
-      {%- endif -%}
-      {% include toc.html html=content h_max=2 %}
+  {%- unless page.hide_toc -%}
+    <div id="doc-toc">
+      <div class="l-doc-toc-wrapper">
+        <h4>On this page</h4>
+        {%- if page.title -%}
+          <ul>
+            <li><a href="#{{page.title | downcase}}"> {{page.title}}</a></li>
+          </ul>
+        {%- endif -%}
+        {% include toc.html html=content h_max=2 %}
+      </div>
     </div>
-  </div>
+  {%- endunless -%}
 </div>
