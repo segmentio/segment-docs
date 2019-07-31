@@ -3,7 +3,9 @@ require 'yaml'
 SIDENAV_INDEX_DEFAULT_TITLE = 'Overview'
 SIDENAV_FILE_BLACKLIST = [
   './vendor/**/*.md', 
-  './connections/**/*.md', 
+  './connections/sources/**.md', 
+  './connections/destinations/**/*/index.md',
+  './connections/warehouses/**/*/index.md',
   './*.md', 
   './_*/**/*.md'
 ]
@@ -25,6 +27,7 @@ namespace :nav do
 
       if paths.size == 0 || paths.size > 3
         # Not a valid path or some deep-nested directory structure we don't support
+        p "skipping #{paths.join("/")}"
         next
       end
     
@@ -36,7 +39,6 @@ namespace :nav do
       path_title = nil
       path = paths[0..paths.size].join("/").gsub(".md", "")
 
-
       begin
         f = YAML.load_file("./#{path}.md")
         path_title = f["title"]
@@ -47,10 +49,16 @@ namespace :nav do
       sections[k] ||= { 'section_title' => root.capitalize, 'section' => [{ 'path' => "/#{root}", 'title' => SIDENAV_INDEX_DEFAULT_TITLE}] }
 
       # Skip the index e.g overview page for each section since we are setting it above
-      next if paths.last == "index.md"
+      if paths.join("/") == "#{root}/index.md" 
+        p "skipping #{paths.join("/")}"
+        next
+      else
+        p "found #{paths.join("/")}"
+      end
 
       if paths.size == 3
         subsection_title = nil
+
         begin
           f = YAML.load_file("./#{paths[0]}/#{paths[1]}/index.md")
           subsection_title = f["title"]
@@ -63,6 +71,9 @@ namespace :nav do
           subsection = { 'section_title' => subsection_title, 'slug' => paths[0...2].join('/'), 'section' => [] }
           sections[k]['section'] <<  subsection
         end
+
+        # Skip the index page for the subsection
+        next if path.gsub("/index", "") == paths[0...2].join("/")
 
         subsection['section'] << { 'path' => "/#{path}", 'title' => path_title }
       else
