@@ -4,14 +4,14 @@ hide_toc: true
 ---
 
 <div class="l-chiclet-collection">
-  {% for destination in site.destinations %}
-    <a class="chiclet-item" href="{{site.baseurl}}/connections/destinations/{{ destination.name | downcase }}">
+  {% for destination in site.data.catalog.destinations.destinations %}
+    <a class="chiclet-item" href="{{site.baseurl}}/{{ destination.name | replace: "catalog", "connections" }}">
       <div class="logo">
-        <img src="{{destination.logos[1].mark}}" />
+        <img src="{{destination.logos.mark}}" />
       </div>
       <div class="content">
         <p class="title">{{ destination.display_name }}</p>
-        <p class="category">{{ destination.categories[0].primary }}</p>
+        <p class="category">{{ destination.categories.primary }}</p>
       </div>
     </a>
   {% endfor %}
