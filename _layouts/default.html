@@ -2,18 +2,17 @@
 <head>
   <!-- TODO: Logic to set title needs to be rewritten -->
   {% if sourceTitle %}
-    <title>{{ sourceTitle }} {{ sourceCategory }} Source | Segment</title>
+    <title>{{ page.sourceTitle }} {{ sourceCategory }} Source | Segment</title>
   {% else %}
-    <title>{{ title }} {% if landing == false %}Documentation - Segment{% endif %}</title>
+    <title>{{ page.title }} - Segment</title>
   {% endif %}
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Segment" />
-  <meta property="og:title" content="{{title}} {{#isnt landing true}}Documentation - Segment{{/isnt}}" />
+  <meta property="og:title" content="{{page.title}} - Segment" />
   <meta property="og:image" content="https://images.ctfassets.net/9u2t3ap6pctb/4s5A4gsq5NsG9Zeil5BBoL/537f85b510477c440d07b3017e000319/190305_OGimage_Templates_Universal03.png" />
 
   <meta name="viewport" content="width=1200" />
-  {{!-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
 
   <meta name="twitter:site" content="@segment" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -44,31 +43,12 @@
   {% else %}
     <link rel="canonical" href="https://segment.com/docs/" />
   {% endif %}-->
-
-
-  <script>
-    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
-
-      {% if collection %}
-        window.analytics.page('Docs', {
-          section: '{{collection}}',
-          topic: '{{title}}'
-        });
-      {% else %}
-        window.analytics.page('Docs');
-      {% endif %}
-    }}();
-  </script>
-
   <meta name="application-name" content="Segment">
   <meta name="theme-color" content="#00386C">
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-  <!-- Old version, Possibly no longer needed?
-    <link rel="stylesheet" href="/docs/bundle.css">-->
 
   <body>
     <div id="docs">
@@ -78,45 +58,56 @@
         <div id="doc-content">
           {{ content }}
         </div>
-        <div style="position: absolute; bottom: 10px;">
+        <footer>
           {% include data-collection-footer.html %}
-        </div>
+        </footer>
       </main>
     </div>
-    <script type="text/javascript">
-      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-      _st('install','dsmQzTck4zz2vQNsXLJW','2.0.0');
-    </script>
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
-    <script src="{{ "./assets/main.js" | relative_url}}"></script>
-    <script type="application/ld+json">
-    [
-      {
-        {{!-- Name --}}
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "name": "Segment",
-        "url": "https://segment.com"
-      }, {
-        {{!-- Logo and social links --}}
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "name": "Segment",
-        "url": "https://segment.com",
-        "logo": "https://segment.com/build/public/public/images/touch-icon.png",
-        "sameAs": [
-          "https://twitter.com/segment",
-          "https://www.linkedin.com/company/segment-io"
-        ]
-      }
-    ]
-    </script>
   </body>
+
+  <script type="text/javascript">
+    (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+    })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+    _st('install','dsmQzTck4zz2vQNsXLJW','2.0.0');
+  </script>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+  <script src="{{ "./assets/main.js" | relative_url}}"></script>
+  <!-- TODO get consent manager working -->
+  <script src="{{ "./assets/consent-manager.js" | relative_url}}"></script>
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Segment",
+      "url": "https://segment.com"
+    }, {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Segment",
+      "url": "https://segment.com",
+      "logo": "https://segment.com/build/public/public/images/touch-icon.png",
+      "sameAs": [
+        "https://twitter.com/segment",
+        "https://www.linkedin.com/company/segment-io"
+      ]
+    }
+  ]
+  </script>
+
+  <script>
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+      // TODO: Enable tracking....
+      //  window.analytics.page('Docs');
+    }}();
+  </script>
 </html>

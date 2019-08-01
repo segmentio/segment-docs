@@ -12,6 +12,25 @@
   flex-direction: column;
 }
 
+main > footer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  margin-right: 30px;
+}
+
+footer > p {
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+footer a {
+  margin-left: 10px;
+}
+
 #sidenav {
   display: flex;
   flex: 0;
@@ -36,13 +55,12 @@
 
 #doc-content {
   background: $background-color;
-}
-
-#doc-content {
+  height: 100%;
   min-width: 950px;
   max-width: $content-width;
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 
 
@@ -50,6 +68,7 @@
   padding-left: 44px;
   min-width: $sidenav-width - 50px;
 }
+
 
 .l-sidenav-wrapper {
   margin: 0;
