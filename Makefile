@@ -27,7 +27,8 @@ catalog:
 	docker run -it \
 	  --volume="$(PWD):/srv/jekyll" \
 	  jekyll/jekyll \
-		rake catalog:update
+		bundle install && \
+		bundle exec rake catalog:update
 
 .PHONY: docker-clean
 docker-clean:
