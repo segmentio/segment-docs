@@ -1,4 +1,6 @@
 require 'yaml'
+require 'json'
+require 'erb'
 
 SIDENAV_INDEX_DEFAULT_TITLE = 'Overview'
 SIDENAV_FILE_BLACKLIST = [
@@ -125,8 +127,43 @@ namespace :nav do
 end
 
 namespace :catalog do
-  desc 'Updates _data/catalog.yml based on the current catalog available in the Platform API'
+  desc 'Updates the catalog collections based on the current data available in the Platform API'
   task :update do
-    p 'Updating _data/catalog.yml based on current Segment Catalog...'
+  end
+
+  desc 'Updates the catalog collections based on the current data available in the Platform API'
+  task :update_destinations do
+    # TODO Read from platform api...
+    json = File.read("templates/destinations.json")
+    destinations = []
+    begin
+     destinations = JSON.parse(json)["destinations"]
+    rescue
+      return
+    end
+
+    # Use ERB template to generate appropriate collection .md doc...
+    template = File.read('./templates/destination.md.erb')
+    destinations.each do |d|
+      d['name'] = d["name"].split("/").last
+
+      # Hashes aren't supported in front matter.
+      d.each do |k,v|
+        case v
+        when Hash
+          d[k] = d[k].map do |k,v| 
+            { k.to_s => v }
+          end
+        end
+      end
+      
+      @front_matter = d.to_yaml.gsub("---","").strip
+      @doc_path = "connections/destinations/#{d['name']}"
+      
+      destination = ERB.new(template).result()
+      File.open("./collections/_destinations/#{d['name']}.md","w") do |file|
+        file.write destination
+      end
+    end
   end
 end

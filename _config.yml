@@ -33,3 +33,4 @@ exclude:
   - Dockerfile
   - README.md
   - conf/
+  - templates/
