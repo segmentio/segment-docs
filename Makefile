@@ -79,4 +79,3 @@ deps:
 dev:
 	make clean && \
 	bundle exec jekyll serve --incremental -H 0.0.0.0
-	  jekyll serve -H 0.0.0.0
