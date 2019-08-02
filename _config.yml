@@ -12,6 +12,8 @@ defaults:
       path: ""
     values:
       layout: "page"
+      hidden: false
+      beta: false
 
 plugins:
   - jekyll-sitemap
