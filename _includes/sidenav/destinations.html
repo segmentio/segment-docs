@@ -8,4 +8,12 @@
   <li class="heading">
     Destinations catalog
   </li>
+  {% assign destinations = site.data.catalog.destinations.destinations %}
+  {% for destination in destinations %}
+    {% if destination.status contains "PUBLIC" or destination.status contains "BETA" %}
+      <li>
+          <a href="{{site.baseurl}}/{{ destination.name | replace: "catalog", "connections"}}/">{{ destination.display_name }}</a>
+        </li>
+    {% endif %}
+  {% endfor %}
 </ul>

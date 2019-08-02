@@ -12,23 +12,17 @@ build:
 	  --volume="$(PWD):/srv/jekyll" \
 	  jekyll/jekyll \
 		bundle package && \
-		bundle install && \
+		make deps && \
+		make catalog && \
 	  bundle exec jekyll build
 
 .PHONY: nav
 nav:
-	docker run -it \
-	  --volume="$(PWD):/srv/jekyll" \
-	  jekyll/jekyll \
-		rake nav:update
+	bundle exec rake nav:update
 
 .PHONY: catalog
 catalog:
-	docker run -it \
-	  --volume="$(PWD):/srv/jekyll" \
-	  jekyll/jekyll \
-		bundle install && \
-		bundle exec rake catalog:update
+	bundle exec rake catalog:update
 
 .PHONY: docker-clean
 docker-clean:
@@ -52,6 +46,21 @@ docker-dev:
 	  jekyll/jekyll \
 	  jekyll serve --incremental -H 0.0.0.0
 		.PHONY: docs
+
+.PHONY: docker-nav
+docker-nav:
+	docker run -it \
+	  --volume="$(PWD):/srv/jekyll" \
+	  jekyll/jekyll \
+		bundle exec rake nav:update
+		
+.PHONY: docker-catalog
+docker-catalog:
+	docker run -it \
+	  --volume="$(PWD):/srv/jekyll" \
+	  jekyll/jekyll \
+		bundle install && \
+		bundle exec rake catalog:update
 
 .PHONY: env
 env:

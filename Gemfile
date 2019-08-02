@@ -5,6 +5,7 @@ gem "jekyll", "~> 3.8.6"
 group :development do
   gem "faraday"
   gem "rake"
+  gem "dotenv"
 end
 
 
