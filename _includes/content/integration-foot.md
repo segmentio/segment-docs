@@ -4,7 +4,7 @@
 
 {% include content/personas.md %}
 
-{% endif }
+{% endif %}
 
 
 {% if integration.components %}
@@ -33,14 +33,13 @@
 </table>
 
 To learn more about about Connection Modes and what dictates which we support, [see here](https://segment.com/docs/integrations/#connection-modes).
-
 {% endif %}
 
 {% if integration.browserUnbundlingSupported == true and integration.browserUnbundlingPublic == true %}
 We offer an optional **Cloud-based** Connection Mode for **Web** data with {{ integration.name }}. As a reminder, this removes the {{ integration.name }} javascript library from your site, improving performance.
 {% if integration.browserUnbundlingChangelog == true %} However, there are a few disparities between the Cloud-based and Device-based connection modes to keep in mind brefore enabling it in the Segment app. When you enable the **Cloud-based** destination mode, here's what happens:
 
-<!--{% comment% } I don't know if this even works anymore {% comment %}-->
+<!--I don't know if this even works anymore-->
 
 {{ integration.browserUnbundlingIntegrationChangelog }}
 {{ integration.browserUnbundlingChangelog }}
@@ -60,8 +59,9 @@ Segment lets you change these destination settings via your Segment dashboard wi
 
 <!-- I'm not sure how to handle the `each` here  -->
 {% for options in integrations %}
-{% if hidden == false and label != "Unused"}}
+  {% if hidden == false and label != "Unused"}}
 ### {{ option.label}}
 {{{option.description}}}
-{% endif %}
+  {% endif %}
+{% endif %} <!-- jekyll is complaining when i use an `endfor` here -->
 {% endfor %}

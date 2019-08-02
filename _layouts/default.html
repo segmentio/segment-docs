@@ -9,10 +9,14 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Segment" />
-  <meta property="og:title" content="{{page.title}} - Segment" />
+  <meta property="og:title" content="{{page.title}} {% unless landing %}Documentation{% endunless %} - Segment" />
   <meta property="og:image" content="https://images.ctfassets.net/9u2t3ap6pctb/4s5A4gsq5NsG9Zeil5BBoL/537f85b510477c440d07b3017e000319/190305_OGimage_Templates_Universal03.png" />
 
   <meta name="viewport" content="width=1200" />
+  {% raw %}
+  {{!-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
+  <!-- Not sure what this does, leaving it for now -->
+  {% raw %}
 
   <meta name="twitter:site" content="@segment" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -59,6 +63,8 @@
           {{ content }}
         </div>
         <footer>
+        {% include feedback-footer.html %}
+        <div style="position: absolute; bottom: 10px;">
           {% include data-collection-footer.html %}
         </footer>
       </main>
@@ -82,6 +88,7 @@
   <script src="{{ "./assets/main.js" | relative_url}}"></script>
   <!-- TODO get consent manager working -->
   <script src="{{ "./assets/consent-manager.js" | relative_url}}"></script>
+    {% raw %}
 
   <script type="application/ld+json">
   [
@@ -103,7 +110,7 @@
     }
   ]
   </script>
-
+    {% endraw %}
   <script>
     !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
       // TODO: Enable tracking....

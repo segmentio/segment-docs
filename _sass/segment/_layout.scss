@@ -131,7 +131,7 @@ footer a {
     width: 18px;
     margin-right: 12px;
   }
-  
+
   > div:hover {
     text-decoration: underline;
     cursor: pointer;
@@ -155,7 +155,7 @@ footer a {
   }
 }
 
-.l-sidenav-wrapper li.section > div, 
+.l-sidenav-wrapper li.section > div,
 .l-sidenav-wrapper li.section > a {
   color: $text-color;
   font-weight: 500;
@@ -205,7 +205,7 @@ footer a {
     img.collapsed {
       display: none;
     }
-  
+
     img.expanded {
       display: block;
     }
@@ -367,4 +367,38 @@ footer a {
 
 .l-topnav-links > a {
   margin-right: 30px;
+}
+
+
+
+.Page-footer {
+  text-align: center;
+  display: flex;
+  margin: 1rem;
+  margin-top: 5rem;
+  width: 75%;
+  align-self: flex-start;
+}
+
+.Page-feedback-card {
+  padding: 1rem;
+  width: 50%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(217, 227, 237);
+  border-radius: 8px;
+}
+
+
+.feedback-btn {
+  margin: 0px 5px;
+}
+
+.feedback-btn,
+.feedback-btn input {
+  cursor: pointer;
+}
+
+.feedback-btn-label {
+  margin: 0px 5px;
 }
