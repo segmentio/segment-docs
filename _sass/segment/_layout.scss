@@ -23,6 +23,13 @@ main > footer {
   margin-right: 30px;
 }
 
+footer > #feedback {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
 footer > #data-collection {
   display: flex;
   align-items: center;
@@ -37,6 +44,7 @@ footer > #data-collection p {
 footer > #data-collection a {
   margin-left: 10px;
 }
+
 
 #sidenav {
   display: flex;
