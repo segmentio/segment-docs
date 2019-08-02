@@ -51,10 +51,11 @@ footer > #data-collection a {
 }
 
 #topnav {
-  height: $topnav-height + 24px;
+  height: $topnav-height;
   border-bottom:  1px solid rgba(67, 90, 111, 0.2);
   padding-left: $content-padding;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
   font-size: 18px;
@@ -381,8 +382,6 @@ footer > #data-collection a {
 .Page-footer {
   text-align: center;
   display: flex;
-  margin: 1rem;
-  margin-top: 5rem;
   width: 75%;
   align-self: flex-start;
 }
