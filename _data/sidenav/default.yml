@@ -1,5 +1,25 @@
 ---
 sections:
+- section_title: Connections
+  section:
+  - path: "/connections/spec"
+    title: Spec
+  - section_title: Sources
+    slug: connections/Sources
+  - section_title: Destinations
+    slug: connections/destinations
+    section:
+    - path: "/connections/destinations"
+      title: Overview
+    - path: "/connections/destinations/destination-filters"
+      title: Destinations Filters
+    - path: "/connections/destinations/catalog"
+      title: Destinations catalog
+  - section_title: Warehouses
+    slug: connections/warehouses
+    section:
+      - path: "/connections/warehouses"
+        title: Overview
 - section_title: Guides
   section:
   - path: "/guides"
@@ -68,11 +88,6 @@ sections:
       title: What is a warehouse?
     - path: "/guides/general/whats-a-workspace"
       title: What is a workspace?
-  - section_title: Getting started
-    slug: guides/getting-started
-    section:
-    - path: "/guides/getting-started/the-promise-land"
-      title: The promised land
   - section_title: Misc FAQs
     slug: guides/miscellaneous
     section:

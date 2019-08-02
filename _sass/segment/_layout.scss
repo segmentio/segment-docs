@@ -15,6 +15,7 @@
 main > footer {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   margin-top: 60px;
@@ -22,14 +23,28 @@ main > footer {
   margin-right: 30px;
 }
 
-footer > p {
+footer > #feedback {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+footer > #data-collection {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+}
+
+footer > #data-collection p {
   margin-bottom: 0;
   margin-right: 10px;
 }
 
-footer a {
+footer > #data-collection a {
   margin-left: 10px;
 }
+
 
 #sidenav {
   display: flex;
@@ -48,6 +63,7 @@ footer a {
   border-bottom:  1px solid rgba(67, 90, 111, 0.2);
   padding-left: $content-padding;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
   font-size: 18px;
@@ -374,8 +390,6 @@ footer a {
 .Page-footer {
   text-align: center;
   display: flex;
-  margin: 1rem;
-  margin-top: 5rem;
   width: 75%;
   align-self: flex-start;
 }
@@ -389,7 +403,6 @@ footer a {
   border-radius: 8px;
 }
 
-
 .feedback-btn {
   margin: 0px 5px;
 }
@@ -401,4 +414,82 @@ footer a {
 
 .feedback-btn-label {
   margin: 0px 5px;
+}
+
+.l-chiclet-collection {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 2 * ($spacing-unit / 3);
+  margin-bottom: $grid-gutter-unit * -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: ($grid-gutter-unit + 10px) * -1;
+}
+
+.l-chiclet-collection > .chiclet-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 20px;
+  color: $text-color;
+  width: 185px;
+  height: 185px;
+  padding: 35px 20px 20px;
+  margin-bottom: $grid-gutter-unit;
+  margin-left: $grid-gutter-unit + 10px;
+  border-radius: $border-radius-unit;
+  box-shadow: $elevated-shadow;
+  text-decoration: none;
+}
+
+.chiclet-item > .logo {
+  height: 32px;
+  &.mark {
+    width: 32px;
+  }
+
+  &.full {
+    width: 128px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.chiclet-item > .logo {
+  height: 32px;
+  &.mark {
+    width: 32px;
+  }
+
+  &.full {
+    width: 128px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.chiclet-item > .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 17px;
+  .title {
+    text-align: center;
+    overflow-x: hidden;
+  }
+  .category {
+    background-color: $grey-color;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: $base-font-size;
+  }
 }

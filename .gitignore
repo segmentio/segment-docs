@@ -4,3 +4,6 @@ _site
 vendor
 .bundle
 .DS_Store
+_data/catalog/destinations.yml
+_data/catalog/sources.yml
+.env

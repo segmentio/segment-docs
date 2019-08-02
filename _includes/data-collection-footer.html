@@ -1,11 +1,13 @@
-<p>© <span id="year"></span>, Segment.io, Inc.</p>
-<a class="DataCollection-link" href="#" id="open-consent-manager">Website Data Collection Preferences</button>
-<a href="{{ "/legal/privacy" | relative_url}}" class="DataCollection-link">Privacy</a>
-<a href="{{ "/legal/terms" | relative_url}}" class="DataCollection-link">Terms</a>
-<script>
-  var d = new Date().getFullYear();
-  document.getElementById("year").innerHTML = d;
-</script>
-<!-- TODO get consent manager working - Not sure if this is how you actually call a cdn but hey!-->
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script src="/docsv2/assets/consent-manager.js" defer></script>
+<div id="data-collection">
+  <p>© <span id="year"></span>, Segment.io, Inc.</p>
+  <a class="DataCollection-link" href="#" id="open-consent-manager">Website Data Collection Preferences</button>
+  <a href="{{ "/legal/privacy" | relative_url}}" class="DataCollection-link">Privacy</a>
+  <a href="{{ "/legal/terms" | relative_url}}" class="DataCollection-link">Terms</a>
+  <script>
+    var d = new Date().getFullYear();
+    document.getElementById("year").innerHTML = d;
+  </script>
+  <!-- TODO get consent manager working - Not sure if this is how you actually call a cdn but hey!-->
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="/docsv2/assets/consent-manager.js" defer></script>
+</div>
