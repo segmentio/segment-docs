@@ -65,7 +65,9 @@ docker-catalog:
 .PHONY: env
 env:
 	gem install bundler && \
-	bundle install
+	bundle install && \
+	cp _templates/destinations.example.yml _data/catalog/destinations.yml && \
+	cp _templates/sources.example.yml _data/catalog/sources.yml
 
 .PHONY: clean
 clean:
