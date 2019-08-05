@@ -26,11 +26,11 @@
       {% include sidenav/partners.html %}
     {% elsif page.url contains "/api" %}
       {% include sidenav/api.html %}
-    {% elsif page.url contains "/connections/destinations"  %}
+    {% elsif page.url contains "/connections/destinations/catalog"  %}
       {% include sidenav/destinations.html %}
-    {% elsif page.url contains "/connections/sources" %}
+    {% elsif page.url contains "/connections/sources/catalog" %}
       {% include sidenav/sources.html %}
-    {% elsif page.url contains "/connections/warehouses" %}
+    {% elsif page.url contains "/connections/warehouses/catalog" %}
       {% include sidenav/warehouses.html %}
     {% else %}
       {% include sidenav/default.html %}
