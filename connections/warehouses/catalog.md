@@ -15,13 +15,13 @@ hide_toc: true
 
       <div class="{{class}}">
         {% if warehouse.logos.mark != '' %}
-          <img alt="{{warehouse.name}}" src="{{warehouse.logos.mark}}" />
+          <img alt="{{warehouse.display_name}}" src="{{warehouse.logos.mark}}" />
         {% else %}
-          <img alt="{{warehouse.name}}" src="{{warehouse.logos.logo}}" />
+          <img alt="{{warehouse.display_name}}" src="{{warehouse.logos.logo}}" />
         {% endif %}
         </div>
       <div class="content">
-        <p class="title">{{ warehouse.name }}</p>
+        <p class="title">{{ warehouse.display_name }}</p>
       </div>
     </a>
   {% endfor %}

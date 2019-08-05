@@ -1,0 +1,18 @@
+<ul>
+  <li class="back">
+    <a href="{{site.baseurl}}/connections/warehouses">
+      <img src="{{site.baseurl}}/assets/icons/nav/chevron-left.svg"></img>
+      Back
+    </a>
+  </li>
+  <li class="heading">
+    Warehouses catalog
+  </li>
+  {% assign warehouses = site.data.catalog.warehouses.warehouses %}
+
+  {% for warehouse in warehouses %}
+    <li>
+      <a  href="{{site.baseurl}}/{{ warehouse.name | replace: "catalog", "connections" }}">{{warehouse.display_name}}</a>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,7 +1,7 @@
 <div id="sidenav">
   <nav class="l-sidenav-wrapper">
     <div class="logo">
-      <a href="https://segment.com">
+      <a href="{{site.baseurl}}/">
         <svg style="fill: rgb(18, 66, 74);" data-icon="icon-segment_logo" width="140" height="100" viewBox="0 0 304.59 62.33" class="">
           <path d="M.25,24.34a1.16,1.16,0,0,1-.13-.91A31.39,31.39,0,0,1,10.57,6.91,30.31,30.31,0,0,1,39.9,1.72a1.17,1.17,0,0,1,.67.62,1.2,1.2,0,0,1,0,.91l-1.5,4a1.14,1.14,0,0,1-1.45.7,23.82,23.82,0,0,0-23,4.11A24.77,24.77,0,0,0,6.5,25a1.16,1.16,0,0,1-1.12.87l-.26,0L1,24.88a1.15,1.15,0,0,1-.73-.54" fill-rule="evenodd"></path>
           <path d="M60,34.28a1.16,1.16,0,0,0-.79-.44L55,33.4a1.16,1.16,0,0,0-1.26,1A24.58,24.58,0,0,1,46,49.3a23.83,23.83,0,0,1-24.79,4.76,1.14,1.14,0,0,0-1.48.65l-1.64,4a1.15,1.15,0,0,0,0,.91,1.11,1.11,0,0,0,.65.64,30,30,0,0,0,11.05,2.09,30.32,30.32,0,0,0,20.62-8.09,31.36,31.36,0,0,0,9.79-19.08,1.16,1.16,0,0,0-.24-.88&quot;" fill-rule="evenodd"></path>
@@ -26,8 +26,12 @@
       {% include sidenav/partners.html %}
     {% elsif page.url contains "/api" %}
       {% include sidenav/api.html %}
-    {% elsif page.url contains "/connections/destinations" and page.url != "/connections/destinations/"  %}
+    {% elsif page.url contains "/connections/destinations"  %}
       {% include sidenav/destinations.html %}
+    {% elsif page.url contains "/connections/sources" %}
+      {% include sidenav/sources.html %}
+    {% elsif page.url contains "/connections/warehouses" %}
+      {% include sidenav/warehouses.html %}
     {% else %}
       {% include sidenav/default.html %}
     {% endif %}
