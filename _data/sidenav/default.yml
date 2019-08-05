@@ -6,6 +6,9 @@ sections:
     title: Spec
   - section_title: Sources
     slug: connections/Sources
+    section:
+    - path: "/connections/sources/catalog"
+      title: Sources catalog
   - section_title: Destinations
     slug: connections/destinations
     section:
@@ -20,6 +23,8 @@ sections:
     section:
       - path: "/connections/warehouses"
         title: Overview
+      - path: "/connections/warehouses/catalog"
+        title: Warehouses catalog
 - section_title: Guides
   section:
   - path: "/guides"
