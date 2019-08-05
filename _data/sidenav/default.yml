@@ -23,6 +23,8 @@ sections:
     section:
       - path: "/connections/warehouses"
         title: Overview
+      - path: "/connections/warehouses/catalog"
+        title: Warehouses catalog
 - section_title: Guides
   section:
   - path: "/guides"
