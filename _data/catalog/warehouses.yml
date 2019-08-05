@@ -1,0 +1,44 @@
+---
+warehouses:
+- name: Redshift
+  slug: redshift
+  public: true
+  logos:
+    default: https://d3hotuclm6if1r.cloudfront.net/logos/redshift-default.svg
+    mark: 
+- name: BigQuery
+  slug: bigquery
+  public: true
+  logos:
+    default: https://cdn.filepicker.io/api/file/bDzeRa75SZc6FfgfoUK6
+    mark: https://cdn.filepicker.io/api/file/Vk6iFlMvQeynbg30ZEtt
+- name: Postgres
+  slug: postgres
+  public: true
+  logos:
+    default: https://d3hotuclm6if1r.cloudfront.net/logos/postgres-default.svg
+    mark: 
+- name: Snowflake
+  slug: snowflake
+  public: true
+  logos:
+    default: https://cdn.filepicker.io/api/file/JrQWOYvMRRCVvSHp4HL0
+    mark: https://cdn.filepicker.io/api/file/OBhrGoCRKaSyvAhDX3fw
+- name: IBM Db2 Warehouse
+  slug: db2
+  public: true
+  logos:
+    default: https://image.ibb.co/i4rS3K/IBM_Db2_logotype_pos_RGB.jpg
+    mark: 
+- name: Azure SQL Database
+  slug: azuresqldb
+  public: false
+  logos:
+    default: https://msftplayground.com/wp-content/uploads/2017/04/logoAzureSql.png
+    mark: 
+- name: Azure SQL Data Warehouse
+  slug: azuresqldw
+  public: true
+  logos:
+    default: https://cdn.filepicker.io/api/file/VKbuWjNjQPKOnOWijFe4
+    mark: https://cdn.filepicker.io/api/file/EUJvt69Q7qMqCvGrVtiu
