@@ -9,18 +9,21 @@ platforms -> what data do we recognize-->
   {% if destination.components.type == "ios" or destination.components.type == "android" %}
     {% assign has-mobile = true %}
     {% assign device-mobile = true %}
+  {% endif %}
   {% if destination.components.type == "browser" %}
     {% assign has-browser = true %}
     {% assign device-web = true %}
+  {% endif %}
   {% if destination.components.type == "server" %}
     {% assign has-server = true %}
     {% assign device-server = true %}
+  {% endif %}
 {% endfor %}
 
 <!-- `cloud-web` is complicated -->
 {% if has-browser == true and browserUnbundlingSupported == true && browserUnbundlingPublic == true %}
   {% assign cloud-web = true %}
-{% elseif has-server == true and has-browser == false and destination.platforms.browser == true %}
+{% elsif has-server == true and has-browser == false and destination.platforms.browser == true %}
   {% assign cloud-web = true %}
 {% else %}
   {% assign cloud-web = false %}
@@ -28,12 +31,12 @@ platforms -> what data do we recognize-->
 
 <!-- cloud-mobile only checks for server? -->
 {% if has-server == true %}
-{% assign cloud-mobile = true}
+{% assign cloud-mobile = true %}
 {% endif %}
 
 <!-- cloud-server is also complicated -->
 {% if has-server == true and destaintion.platforms.server == true %}
-{% assign cloud-mobile = true}
+{% assign cloud-mobile = true %}
 {% endif %}
 
 <table>
