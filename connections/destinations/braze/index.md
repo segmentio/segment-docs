@@ -1,5 +1,9 @@
 ---
+title: Braze
 rewrite: true
+redirect_from:
+- '/integrations/appboy/'
+- '/destinations/appboy/'
 ---
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni channel customer experiences.
