@@ -158,7 +158,7 @@ footer > #data-collection a {
   }
 
   &:not(.section) {
-    a, div {
+    a:not(.active), div {
       opacity: 0.8;
     }
   }
