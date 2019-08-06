@@ -266,7 +266,6 @@ footer > #data-collection a {
 
 .l-breadcrumb-wrapper {
   display: flex;
-  margin-bottom: 32px;
   margin-left: -5px;
   color: $text-color-breadcrumb;
 }
@@ -291,17 +290,21 @@ footer > #data-collection a {
   color: $text-color-grey;
 }
 
-.l-doc-toc-wrapper > h4 {
+.l-doc-toc-wrapper > p {
   text-transform: uppercase;
+  font-weight: normal;
 }
 
-.l-doc-toc-wrapper > ul {
+.l-doc-toc-wrapper > ul, li > ul {
   list-style-type: none;
   margin: 0;
 }
 
 .l-doc-toc-wrapper li {
   margin-bottom: $spacing-unit / 3;
+  ul {
+    margin-top: $spacing-unit / 3;
+  }
 }
 
 .l-doc-toc-wrapper a {

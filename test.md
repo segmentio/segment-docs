@@ -3,10 +3,12 @@ description: Smoketest page
 title: Testing page
 hide_from_sitemap: true
 toc_min: 1
+toc_max: 2
 beta: true
 deprecated: true
 changefreq: daily
 seo-priority: 1.0
+layout: page
 redirect_from:
 - /test/test
 - /guides/testing
