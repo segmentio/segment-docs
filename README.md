@@ -16,7 +16,7 @@ Use the local build process to preview local changes. If you're doing a release,
 
 ### Makefile commands
 
-- docs: (??)
+- docs: builds the docs and serves the static content via nginx
 - build: runs a local jekyll build.
 - nav: (TODO)
 - catalog: (TODO)
@@ -24,6 +24,7 @@ Use the local build process to preview local changes. If you're doing a release,
 - docker-deps: runs `bundle install` on a docker host.
 - docker-dev: runs `jekyll serve` on a docker host.
 - env: for when you're first getting set up: installs bundler, and installs the deps for the repo.
+- seed: copies all example data files out of the `_templates` directory and puts them in the `_data` directory.
 - clean: runs `jekyll clean` locally
 - deps: re-runs `bundle install` locally.
 - dev: runs `jekyll serve` locally (but is shorter and easier to type!)

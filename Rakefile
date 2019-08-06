@@ -18,6 +18,11 @@ PLATFORM_API_URL = "https://platform.segmentapis.com"
 namespace :nav do
   desc 'Updates _data/sidenav.yml based on the current available docs'
   task :update do
+    unless ENV['FORCE_NAV_UPDATE']
+      p "WARNING. This a destructive action and will break the current sidenav. Re-run with FORCE_NAV_UPDATE=1 if you are sure you want to do this" 
+      exit
+    end
+
     p 'Updating _data/sidenav.yml based on current docs...'
 
     docs = FileList.new('./**/*.md').exclude(SIDENAV_FILE_BLACKLIST)
