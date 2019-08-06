@@ -306,6 +306,9 @@ footer > #data-collection a {
 
 .l-doc-toc-wrapper a {
   color: $text-color-grey;
+  &.active {
+    color: $brand-color;
+  }
 }
 
 .l-block-grid-collection {
