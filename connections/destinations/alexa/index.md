@@ -1,5 +1,6 @@
 ---
 rewrite: true
+redirect_from: '/integrations/alexa/'
 ---
 [Alexa](https://www.alexa.com/) helps improve your website's SEO and conduct competitive analysis. They help your business get better marketing results. The {{integration.name}} Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-alexa).
 
@@ -22,4 +23,3 @@ Alexa will now start tracking your website to help optimize your SEO and underst
 ### Alexa could not find the Certify Code
 
 Alexa's installation detector does not actually execute Javascript on the page (our Analytics.js Javascript needs to run to insert their Javascript). Instead, its detector looks for the snippet/image tag directly and therefore, misses the detection. This should not impact your utilization of Alexa.
-

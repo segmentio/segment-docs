@@ -1,5 +1,6 @@
 ---
 rewrite: true
+redirect_from: '/integrations/apptimize'
 ---
 [Apptimize](https://apptimize.com/) empowers product teams to efficiently run A/B tests, rollout and manage new features, and deliver personalized user experiences. Our Apptimize destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/Apptimize/analytics-ios-integration-apptimize) and [Android](https://github.com/Apptimize/analytics-android-integration-apptimize).
 
@@ -12,7 +13,7 @@ This document was last updated on April 27, 2018. If you notice any gaps, outdat
  1. From your Segment UI’s Destinations page click on “Add Destination”.
  2. Search for “Apptimize“ within the Destinations Catalog and confirm the Source you’d like to connect to.
  3. Drop in your Apptimize application key, the 31 character key which you can find in your [Apptimize app settings](https://apptimize.com/admin/settings/apps).
- 4. Depending on the mobile library you've selected, follow the below instructions to complete your setup. 
+ 4. Depending on the mobile library you've selected, follow the below instructions to complete your setup.
 
 _**NOTE:** There is also an advanced setting to publish Apptimize experiment data to Segment. If you choose to automatically record screen events or track Application lifecycle events, these will also be reflected in Apptimize. You also have access to all normal Apptimize non-Segment functionality. To integrate, simply pull in the destination as a dependency and include the Apptimize Integration Factory when setting up Segment Analytics. _
 
@@ -50,11 +51,11 @@ _**NOTE:** There is also an advanced setting to publish Apptimize experiment dat
 
 ### Manually Initialize Apptimize
 
-Since both iOS and Android destinations are initialized asynchronously by Segment, you can manually initialize Apptimize and run experiments without waiting for Segment to initialize for you. 
+Since both iOS and Android destinations are initialized asynchronously by Segment, you can manually initialize Apptimize and run experiments without waiting for Segment to initialize for you.
 
-**Note**: Make sure that the Apptimize app key matches the key in the Segment dashboard. 
+**Note**: Make sure that the Apptimize app key matches the key in the Segment dashboard.
 
-#### iOS 
+#### iOS
 
 Set the plist property ‘ApptimizeAppKey’ to the corresponding app key for the app.
 

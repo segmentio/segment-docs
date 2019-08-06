@@ -1,5 +1,6 @@
 ---
 rewrite: true
+redirect_from: '/integrations/amazon-kinesis-firehose'
 ---
 [Amazon Kinesis Firehose](https://aws.amazon.com/kinesis/data-firehose/) is the easiest way to load streaming data into AWS. It can capture, transform, and load streaming data into Amazon Kinesis Analytics, Amazon S3, Amazon Redshift, and Amazon Elasticsearch Service, enabling near real-time analytics with existing business intelligence tools and dashboards you’re already using today. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security.
 
@@ -104,10 +105,10 @@ If you haven’t had a chance to review our spec, please take a look to understa
 ```
 analytics.group("0e8c78ea9d9dsasahjg", {
   name: "group_name",
-  employees: 3, 
+  employees: 3,
   plan: "enterprise",
   industry: "Technology"
-});  
+});
 ```
 
 ## Multiple Sources

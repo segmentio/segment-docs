@@ -1,7 +1,9 @@
-
+---
+redirect_from: '/integrations/amazon-kinesis-firehose'
+---
 ## Getting Started
 
-The Amazon S3 destination puts the raw logs of the data we're receiving into your S3 bucket, encrypted, no matter what region the bucket is in.
+The Amazon S3 destination puts the raw logs of the data Segment receives into your S3 bucket, encrypted, no matter what region the bucket is in.
 
 **Note:** The data is copied into your bucket every hour around the :40 minute mark. You may see multiple files over a period of time depending on how much data is copied.
 

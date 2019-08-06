@@ -1,6 +1,12 @@
 ---
 title: Sources
 sidebar: Overview
+redirect_from:
+- '/guides/sources/what-can-I-do-with-sources-data'
+- '/sources/etl-billing/'
+- '/sources/etl-usage/'
+- '/sources/5/'
+- '/sources/cloud-app/'
 ---
 
 ## Website

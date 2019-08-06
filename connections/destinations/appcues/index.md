@@ -1,4 +1,6 @@
-
+---
+redirect_from: '/integrations/appcues'
+---
 Our Appcues destination code is [open-source on
 GitHub](https://github.com/appcues/analytics.js-integration-appcues)
 if you want to check it out.

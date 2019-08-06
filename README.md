@@ -33,6 +33,7 @@ Use the local build process to preview local changes. If you're doing a release,
 ## Searching
 
 Swiftype is set up as a script in `_layouts/default.html`
+Default.html is the container through which all the individual other layouts (currently one) are built to have the right title, seo, etc.
 
 
 ## Syntax highlighting
@@ -48,7 +49,7 @@ A list of the cues rouge accepts can be found [here](https://github.com/rouge-ru
 
 - `beta`: default false. When true, show an "in beta" warning in the page layout (see the warning in `_includes/content/beta.md`)
 
-- hidden: omits the file from the `sitemap.xml` and adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file. TODO: it should probably also omit the item from the navbar generator script 🤔
+- `hidden`: omits the file from the `sitemap.xml` and adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file. TODO: it should probably also omit the item from the navbar generator script 🤔
 
 - `feedback`: defaults to true. When false, hide the feedback footer. Good for legal and landing pages,
 
