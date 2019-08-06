@@ -1,3 +1,5 @@
+# Core...
+
 .PHONY: docs
 docs:
 	make seed && \
@@ -17,6 +19,8 @@ build:
 		make catalog && \
 	  bundle exec jekyll build
 
+# Helper commands...
+
 .PHONY: nav
 nav:
 	bundle exec rake nav:update
@@ -24,6 +28,32 @@ nav:
 .PHONY: catalog
 catalog:
 	bundle exec rake catalog:update
+
+.PHONY: env
+env:
+	gem install bundler && \
+	bundle install
+
+.PHONY: seed
+seed:
+	cp _templates/destinations.example.yml _data/catalog/destinations.yml && \
+	cp _templates/sources.example.yml _data/catalog/sources.yml
+
+.PHONY: clean
+clean:
+	bundle exec jekyll clean
+
+.PHONY: deps
+deps:
+	bundle install
+
+.PHONY: dev
+dev:
+	make clean && \
+	bundle exec jekyll serve --incremental -H 0.0.0.0
+
+
+# Docker-based commands...
 
 .PHONY: docker-clean
 docker-clean:
@@ -62,29 +92,3 @@ docker-catalog:
 	  jekyll/jekyll \
 		bundle install && \
 		bundle exec rake catalog:update
-
-.PHONY: env
-env:
-	gem install bundler && \
-	bundle install && \
-	cp _templates/destinations.example.yml _data/catalog/destinations.yml && \
-	cp _templates/sources.example.yml _data/catalog/sources.yml
-
-.PHONY: seed
-seed:
-	cp _templates/destinations.example.yml _data/catalog/destinations.yml && \
-	cp _templates/sources.example.yml _data/catalog/sources.yml
-
-
-.PHONY: clean
-clean:
-	bundle exec jekyll clean
-
-.PHONY: deps
-deps:
-	bundle install
-
-.PHONY: dev
-dev:
-	make clean && \
-	bundle exec jekyll serve --incremental -H 0.0.0.0
