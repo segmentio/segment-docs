@@ -1,5 +1,6 @@
 .PHONY: docs
 docs:
+	make seed && \
 	make build && \
 	docker build . -t segment-docs:latest && \
 	echo "Running segment docs at http://localhost:4000/docsv2/" && \
@@ -68,6 +69,12 @@ env:
 	bundle install && \
 	cp _templates/destinations.example.yml _data/catalog/destinations.yml && \
 	cp _templates/sources.example.yml _data/catalog/sources.yml
+
+.PHONY: seed
+seed:
+	cp _templates/destinations.example.yml _data/catalog/destinations.yml && \
+	cp _templates/sources.example.yml _data/catalog/sources.yml
+
 
 .PHONY: clean
 clean:
