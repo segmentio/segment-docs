@@ -140,7 +140,6 @@ You can add a link to a YouTube video like this:
 
 [Drop Events using Destination Filters](https://www.youtube.com/watch?v=47dhAF1Hoco "Drop Events using Destination Filters"){:target="_blank" class="_"}
 
-
 ## Lists
 
 - Bullet list item 1
