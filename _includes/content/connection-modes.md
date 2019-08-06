@@ -1,6 +1,7 @@
-The first step is to make sure {{ destination.title }} supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](https://segment.com/docs/destinations/#connection-modes).
+{% assign destination = site.data.catalog.destinations.destinations.display_name.[page.title] %}
 
-
+<h1>{{ page.slug }}, {{page.title}}</h1>
+<h1> {{ destination }} </h1>
 <!--
 components -> how do we send data
 platforms -> what data do we recognize-->
@@ -38,6 +39,8 @@ platforms -> what data do we recognize-->
 {% if has-server == true and destaintion.platforms.server == true %}
 {% assign cloud-mobile = true %}
 {% endif %}
+
+The first step is to make sure {{ destination.title }} supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](https://segment.com/docs/destinations/#connection-modes).
 
 <table>
   <tr>
