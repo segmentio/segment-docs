@@ -1,5 +1,6 @@
 ---
 rewrite: true
+redirect_from: '/integrations/appsflyer'
 ---
 [AppsFlyer](https://www.appsflyer.com/) is the world's leading mobile attribution & marketing analytics platform, helping app marketers around the world make better decisions. Our AppsFlyer destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/AppsFlyerSDK/segment-appsflyer-ios) and [Android](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration).
 
@@ -23,7 +24,7 @@ AppsFlyer offers an **augmentative** server-side [HTTP API](https://support.apps
 
 **Important**: Keep in mind that the server-side destination is not meant to *supplant* the client side SDK! In order for AppsFlyer to properly attribute, you must bundle their mobile SDK! The server-side destination should not be used alone. Also, keep in mind if you are passing in `appsFlyerId` for server-side calls, you will not be able to disable events from sending to AppsFlyer via your Segment dashboard.
 
-If you'd like to use AppsFlyer fully server-side, this can be done but it is a Enterprise Customer Feature and you need to contact your AppsFlyer representative to enable this feature. 
+If you'd like to use AppsFlyer fully server-side, this can be done but it is a Enterprise Customer Feature and you need to contact your AppsFlyer representative to enable this feature.
 
 ## Identify
 
@@ -57,14 +58,14 @@ Finally, we automatically use AppsFlyer’s transactionId-based de-duplication w
 
 If you'd like to attribute offline events with a certain user or device, the server-side destination may be employed.
 
-AppsFlyer requires the following properties for this attribution: 
+AppsFlyer requires the following properties for this attribution:
 
-**AppsFlyer Device ID** 
+**AppsFlyer Device ID**
 
 Send the **AppsFlyer Device ID** with each event at `integrations.AppsFlyer.appsFlyerId`, see example below.
-This identifier is unique to each device and can be [retrieved using the AppsFlyer SDK](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-). It is a good idea to store this value in an external database where it may be easily accessible by a server or website environments. 
+This identifier is unique to each device and can be [retrieved using the AppsFlyer SDK](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-). It is a good idea to store this value in an external database where it may be easily accessible by a server or website environments.
 
-**Device Type** 
+**Device Type**
 
 AppsFlyer requires the user's device type as either `'ios'` or `'android'`, passed at `context.device.type` object, see example below.
 
@@ -109,7 +110,7 @@ All other `properties` will be sent to AppsFlyer as custom properties inside `ev
 Segment will automatically trigger an `Install Attributed` event if you have **trackAttributionData** enabled in your settings, and the Segment-AppsFlyer integration installed in your app. The event payload will adhere to our `Install Attributed` event specification documented [here](/docs/spec/mobile/#install-attributed) and will propagate to your other downstream destinations.
 
 ### Server
-If you are tracking events server-side, AppsFlyer can still send attribution postbacks but you will need to configure this functionality in your AppsFlyer account. To enable this, navigate to your AppsFlyer app and on the sidebar of the main screen click on **Integrated Partners** and search for Segment. You will be prompted with a couple of configuration options and asked to input your Segment Write Key. Once enabled, successfully attributed app installs will begin showing up as `Install Attributed` events similar to the client side behavior documented above. 
+If you are tracking events server-side, AppsFlyer can still send attribution postbacks but you will need to configure this functionality in your AppsFlyer account. To enable this, navigate to your AppsFlyer app and on the sidebar of the main screen click on **Integrated Partners** and search for Segment. You will be prompted with a couple of configuration options and asked to input your Segment Write Key. Once enabled, successfully attributed app installs will begin showing up as `Install Attributed` events similar to the client side behavior documented above.
 
 If you are sending in the attribution data yourself, for iOS be sure the following properties are sent in within the campaign object on the `Install Attributed` or `Application Opened` event so Appsflyer can correctly attribute it as an Apple Search Ad event. These values should be returned by the [Apple Search Ads API](https://searchads.apple.com/advanced/help/measure-results/#attribution-api):
 

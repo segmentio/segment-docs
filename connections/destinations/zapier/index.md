@@ -1,6 +1,8 @@
 ---
 rewrite: true
 beta: true
+redirect_from:
+- /integrations/zapier/
 ---
 [Zapier](https://zapier.com/apps/integrations) empowers businesses to create processes and systems that let computers do what they do best - automating information transfer, allowing humans to be more productive.
 
@@ -22,7 +24,7 @@ beta: true
 
 6. From your Segment UI's Destinations page click on "Add Destination".
 7. Search for "Zapier" within the Destinations Catalog and confirm the Source you'd like to connect to.
-8. Add your custom Webhook URLs to your destination settings as desired. 
+8. Add your custom Webhook URLs to your destination settings as desired.
 9. Starting sending data!
 
 ## Page / Screen

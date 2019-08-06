@@ -30,6 +30,8 @@ Use the local build process to preview local changes. If you're doing a release,
 - docker-nav: runs `make nav` on a docker host.
 - docker-catalog: runs `make catalog` on a docker host.
 
+# Layouts
+Default.html is the container through which all the individual other layouts (currently one) are built to have the right title, seo, etc.
 
 # Platform Config API + Catalog
 

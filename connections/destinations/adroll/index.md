@@ -1,5 +1,6 @@
 ---
 rewrite: true
+redirect_from: '/integrations/addroll/'
 ---
 
 [AdRoll](https://developers.adroll.com/) is a retargeting network that allows you to show ads to visitors who've landed on your site while browsing the web. The {{integration.name}} Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-adroll).
