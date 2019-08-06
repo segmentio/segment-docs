@@ -1,6 +1,14 @@
 ---
 title: Spec
 sidebar: Overview
+redirect_from:
+- '/advanced/spec/'
+- '/advanced/spec/car-rentals/'
+- '/advanced/spec/hotels/'
+- '/spec/car-rentals/'
+- '/spec/flights/'
+- '/spec/hotels/'
+- '/spec/local/'
 ---
 
 The Segment Spec has three components.
@@ -26,5 +34,3 @@ Third, it **shares the events we recommend you track for a particular industry b
  - [E-Commerce](/docs/spec/ecommerce/v2/)
  - [Video](/docs/spec/video/)
  - [B2B SaaS](/docs/spec/b2b-saas/)
-
-

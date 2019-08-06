@@ -2,6 +2,8 @@
 title: Destinations
 sidebar: Overview
 rewrite: true
+redirect_from:
+- /integrations/
 ---
 
 ## Sources vs Destinations

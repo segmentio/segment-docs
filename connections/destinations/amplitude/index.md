@@ -1,5 +1,6 @@
 ---
 rewrite: true
+redirect_from: '/integrations/amplitude'
 ---
 
 [Amplitude](https://amplitude.com/) is an event tracking and segmentation

@@ -1,5 +1,6 @@
 ---
 rewrite: true
+redirect_from: '/integrations/ambassador'
 ---
 [Ambassador](https://www.getambassador.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) empowers companies to easily create, track & manage custom incentives that drive referrals and evangelize their users. The Ambassador Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-ambassador).
 
@@ -17,7 +18,7 @@ This document was last updated on September 03, 2018. If you notice any gaps, ou
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. 
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does.
 
 For Ambassador it takes the unique `userId` of a user and a specific set of traits. All supported `traits` are listed in the example below:
 
@@ -42,7 +43,7 @@ _**NOTE:** You can optionally use the URL campaign map to enroll the user as an 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. 
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
 
 For Ambassador `track` events will be recorded as a conversion if the Segment event name is mapped to a campaign in your Ambassador destination settings in the Segment UI. All supported `properties` are listed in the example below:
 

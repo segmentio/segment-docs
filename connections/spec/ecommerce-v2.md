@@ -1,6 +1,9 @@
 ---
 title: 'Spec: V2 Ecommerce Events'
 sidebar: 'Ecommerce'
+redirect_from:
+- '/advanced/spec/ecommerce/'
+- '/advanced/spec/ecommerce/v2/'
 ---
 
 Segment’s e-commerce spec helps define the journey for a customer as they browse your store, click on promotions, view products, add those products to a cart, and complete a purchase.
