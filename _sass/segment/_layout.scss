@@ -169,6 +169,10 @@ footer > #data-collection a {
   li, a {
     font-weight: normal;
   }
+
+  a.active {
+    color: $brand-color;
+  }
 }
 
 .l-sidenav-wrapper li.section > div,
