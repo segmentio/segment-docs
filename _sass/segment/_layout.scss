@@ -85,6 +85,14 @@ footer > #data-collection a {
   min-width: $sidenav-width - 50px;
 }
 
+#consent-manager {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
 
 .l-sidenav-wrapper {
   margin: 0;

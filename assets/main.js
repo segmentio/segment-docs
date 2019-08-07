@@ -91,3 +91,16 @@ var resetTocHighlighting = function() {
 };
 
 window.addEventListener("scroll", highlightTocItem, false);
+
+/*
+ * Consent Manager
+ */
+var openButton = document.getElementById("open-consent-manager");
+
+function buttonClick(e) {
+  // Prevent the implicit consent from kicking in
+  e.stopPropagation();
+  e.preventDefault();
+  consentManager.openConsentManager();
+}
+openButton.addEventListener("click", buttonClick, false);
