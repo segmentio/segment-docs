@@ -14,15 +14,15 @@ Use the local build process to preview local changes. If you're doing a release,
 
 ## Makefile commands
 
-- docs: locally builds the docs and serves the static content via a Docker container running nginx
-- build: Builds the site docs. Used by CI to publish the docs to staging and production
-- nav: Rebuilds the entire nav datafile based on the current doc structure. This is destructive and should not be used unless absolutely necessary.
-- catalog: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key saved in .env
-- env: for when you're first getting set up: installs bundler, and installs the deps for the repo.
-- seed: copies all example data files out of the `_templates` directory and puts them in the `_data` directory.
-- clean: runs `jekyll clean` locally
-- deps: re-runs `bundle install` locally.
-- dev: runs `jekyll serve` locally with incremental builds. Useful when updating CSS, JS, or content and you don't want to rebuild everytime.
+- `docs`: locally builds the docs and serves the static content via a Docker container running nginx
+- `build`: Builds the site docs. Used by CI to publish the docs to staging and production
+- `nav`: Rebuilds the entire nav datafile based on the current doc structure. This is destructive and should not be used unless absolutely necessary.
+- `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key saved in .env
+- `env`: for when you're first getting set up: installs bundler, and installs the deps for the repo.
+- `seed`: copies all example data files out of the `_templates` directory and puts them in the `_data` directory.
+- `clean`: runs `jekyll clean` locally
+- `deps`: re-runs `bundle install` locally.
+- `dev`: runs `jekyll serve` locally with incremental builds. Useful when updating CSS, JS, or content and you don't want to rebuild everytime.
 
 - docker-clean: runs a `jekyll clean` on a docker host.
 - docker-deps: runs `bundle install` on a docker host.
@@ -34,7 +34,7 @@ Use the local build process to preview local changes. If you're doing a release,
 # Platform Config API + Catalog
 
 ### Data Source
-The Segment Config API is currently providing the data for the Source and Destination catalog pages. This happens at build time and the results are stored in the respective `_data/catalog` yml files. 
+The Segment Config API is currently providing the data for the Source and Destination catalog pages. This happens at build time and the results are stored in the respective `_data/catalog` yml files.
 
 ### Catalog Data + Doc Links
 By default, the links on the catalog page and respective sidenavs will attempt to automagically set hyperlinks, for actual doc file, at the path `connections/:type/:slug`. However, given the transitory state of Docs V2, these links might 404 since the respective doc might be in a different directory.
@@ -45,7 +45,7 @@ These two catalogs are hardcoded in the `_data` directory since the Config API d
 # Sidenav
 The sidenav is managed by the files in `_data/sidenav/`. Depending on what section we are in determines the file used. We currently support up to 2 levels deep on a sidenav.
 
-# Breacrumb
+# Breadcrumb
 The current breadcrumb is currently determined based on the `page.path` and the current page's `title` front-matter attribute.
 
 # Searching
@@ -57,7 +57,7 @@ Swiftype is set up as a script in `_layouts/default.html`
 
 We're using Rouge, set in the `_config.yml`. It's now default for Jekyll 3 and later, so 🎉.
 
-A list of the cues rouge accepts can be found [here](https://github.com/rouge-ruby/rouge/wiki/list-of-supported-languages-and-lexers).
+A list of the cues Rouge accepts can be found [here](https://github.com/rouge-ruby/rouge/wiki/list-of-supported-languages-and-lexers).
 
 
 # Frontmatter
