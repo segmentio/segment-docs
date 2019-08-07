@@ -17,7 +17,7 @@
 
 To learn more about about Connection Modes and what dictates which we support, [see here](https://segment.com/docs/destinations/#connection-modes).
 
-{% endif %} 
+{% endif %}
 
 {% if destination_from_api.browserUnbundlingSupported == true and destination_from_api.browserUnbundlingPublic == true %}
 We offer an optional **Cloud-based** Connection Mode for **Web** data with {{ destination_from_api.display_name }}. As a reminder, this removes the {{ destination.name }} javascript library from your site, improving performance.
