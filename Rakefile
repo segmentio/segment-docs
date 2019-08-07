@@ -138,6 +138,11 @@ end
 namespace :catalog do
   desc 'Updates the catalog data files based on the current data available in the Platform API'
   task :update do
+    if !ENV['PLATFORM_API_TOKEN']
+      p "No API Key found. Skipping catalog updates from Platform API..."
+      exit
+    end
+
     p "Saving catalogs from Platform API..."
     Rake::Task["catalog:update_destinations"].invoke
     Rake::Task["catalog:update_sources"].invoke
