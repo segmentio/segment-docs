@@ -1,7 +1,9 @@
 <hr/>
-
+{% assign name = page.path | replace: "connections", "catalog" | remove: "/index.md" %}
+<!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
+{% assign destination_from_api = site.data.catalog.destinations.destinations | where: "name", name | first %}
 <!-- if it uses Identify calls and is available on Server, you can use personas?  -->
-{% if destination.methods.identify == true and destination.platforms.server == true %}
+{% if destination_from_api.methods.identify == true and destination_from_api.platforms.server == true %}
 {% include content/personas.md %}
 
 {% endif %}
