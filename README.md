@@ -1,12 +1,10 @@
 # segment-docs
 
-This is a blank template for segment-docs
-
-## Contributing to the Segment Docs
+# Contributing to the Segment Docs
 
 You can make a limited range of edits from the Github site, but this system works best if you clone it locally so you can run test builds.
 
-### Setup instructions
+# Setup instructions
 1. First, clone the repo to your local machine.
 2. From the command-line, run `make env` to run the Ruby bundler and install the stuff you need to run the repo.
    **Tip**: If you ever need to do this again, you can run `make deps`.
@@ -14,7 +12,7 @@ You can make a limited range of edits from the Github site, but this system work
 
 Use the local build process to preview local changes. If you're doing a release, you can use the `make docs` to see how this would work in the docker container environment that's more like production.
 
-### Makefile commands
+## Makefile commands
 
 - docs: locally builds the docs and serves the static content via a Docker container running nginx
 - build: Builds the site docs. Used by CI to publish the docs to staging and production
@@ -33,7 +31,7 @@ Use the local build process to preview local changes. If you're doing a release,
 - docker-catalog: runs `make catalog` on a docker host.
 
 
-## Platform Config API + Catalog
+# Platform Config API + Catalog
 
 ### Data Source
 The Segment Config API is currently providing the data for the Source and Destination catalog pages. This happens at build time and the results are stored in the respective `_data/catalog` yml files. 
@@ -44,22 +42,25 @@ By default, the links on the catalog page and respective sidenavs will attempt t
 ### Object Sources and Warehouses
 These two catalogs are hardcoded in the `_data` directory since the Config API does not expose these resources.
 
-## Sidenav
+# Sidenav
 The sidenav is managed by the files in `_data/sidenav/`. Depending on what section we are in determines the file used. We currently support up to 2 levels deep on a sidenav.
 
-## Searching
+# Breacrumb
+The current breadcrumb is currently determined based on the `page.path` and the current page's `title` front-matter attribute.
+
+# Searching
 
 Swiftype is set up as a script in `_layouts/default.html`
 
 
-## Syntax highlighting
+# Syntax highlighting
 
 We're using Rouge, set in the `_config.yml`. It's now default for Jekyll 3 and later, so 🎉.
 
 A list of the cues rouge accepts can be found [here](https://github.com/rouge-ruby/rouge/wiki/list-of-supported-languages-and-lexers).
 
 
-## Frontmatter
+# Frontmatter
 
 - `redirect_from`: defaults to none. Takes an array of URLs from the frontmatter in a file, and generates a "stub" page at each URL. Each stub file redirects to the original file.
 
