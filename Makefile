@@ -1,4 +1,5 @@
 # Core...
+JEKYLL_ENV ?= development
 
 .PHONY: docs
 docs:
@@ -11,13 +12,14 @@ docs:
 
 .PHONY: build
 build:
+	echo "Building site for ${JEKYLL_ENV}"
 	docker run -it \
 	  --volume="$(PWD):/srv/jekyll" \
 	  jekyll/jekyll \
 		bundle package && \
 		make deps && \
 		make catalog && \
-	  bundle exec jekyll build
+	  JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build
 
 # Helper commands...
 
