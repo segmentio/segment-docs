@@ -62,14 +62,11 @@ A list of the cues Rouge accepts can be found [here](https://github.com/rouge-ru
 
 # Frontmatter
 
-- `redirect_from`: defaults to none. Takes an array of URLs from the frontmatter in a file, and generates a "stub" page at each URL. Each stub file redirects to the original file.
-
 - `beta`: default false. When true, show an "in beta" warning in the page layout (see the warning in `_includes/content/beta.md`)
-
-- hidden: omits the file from the `sitemap.xml` and adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file. TODO: it should probably also omit the item from the navbar generator script 🤔
-
+- `description`: takes a string. Adds the text here to the meta "description" tag used for SEO purposes
 - `feedback`: defaults to true. When false, hide the feedback footer. Good for legal and landing pages,
-
-- `seo-priority`: values from `1.0` to `0.1`, default: `0.5 `. Sets the `Priority` tag in the sitemap
-
+- `hidden`: omits the file from the `sitemap.xml` and adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file. TODO: it should probably also omit the item from the navbar generator script 🤔
+- `hide_toc`: hides the right-nav TOC that's generated from H2s
+- `redirect_from`: defaults to none. Takes an array of URLs from the frontmatter in a file, and generates a "stub" page at each URL. Each stub file redirects to the original file.
 - `seo-changefreq`: default: `weekly `. Use the values [in the sitemap spec](https://www.sitemaps.org/protocol.html#xmlTagDefinitions). - sets the `changefreq` tag in the sitemap.xml generator, which tells search crawlers how often to check back.
+- `seo-priority`: values from `1.0` to `0.1`, default: `0.5 `. Sets the `Priority` tag in the sitemap
