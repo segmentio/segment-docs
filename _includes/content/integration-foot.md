@@ -1,6 +1,6 @@
 <hr/>
-{% assign name = page.path | replace: "connections", "catalog" | remove: "/index.md" %}
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
+{% assign name = page.path | replace: "connections", "catalog" | remove: "/index.md" %}
 {% assign destination_from_api = site.data.catalog.destinations.destinations | where: "name", name | first %}
 <!-- if it uses Identify calls and is available on Server, you can use personas?  -->
 {% if destination_from_api.methods.identify == true and destination_from_api.platforms.server == true %}
@@ -38,7 +38,6 @@ This destination *requires* a **Device-based** Connection Mode for **Mobile** da
 
 Segment lets you change these destination settings via your Segment dashboard without having to touch any code.
 
-<!-- I'm not sure how to handle the `each` here  -->
 {% for item in destination_from_api.options %}
 {% if item.hidden == false and item.label != "Unused" %}
 ### {{ item.label }}
