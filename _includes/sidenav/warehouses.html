@@ -11,8 +11,10 @@
   {% assign warehouses = site.data.catalog.warehouses.warehouses %}
 
   {% for warehouse in warehouses %}
+    {% assign doc_path = warehouse.name | replace: "catalog", "connections" | replace: "warehouses", "destinations" %}
+
     <li>
-      <a  href="{{site.baseurl}}/{{ warehouse.name | replace: "catalog", "connections" }}">{{warehouse.display_name}}</a>
+      <a  href="{{doc_path | relative_url}}">{{warehouse.display_name}}</a>
     </li>
   {% endfor %}
 </ul>

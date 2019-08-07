@@ -9,7 +9,17 @@ jobs:
       - run:
           name: Build static site
           command: |
-            make build
+            
+            ENV=development
+            
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              ENV=production
+            fi;
+            if [ "${CIRCLE_BRANCH}" == "staging" ]; then
+              ENV=staging
+            fi;
+            
+            JEKYLL_ENV=$ENV make build
 
       - run:
           name: Publish to Trebuchet

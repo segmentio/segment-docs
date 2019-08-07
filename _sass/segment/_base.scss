@@ -95,10 +95,6 @@ a {
   color: $brand-color;
   text-decoration: none;
 
-  &:visited {
-    color: darken($brand-color, 15%);
-  }
-
   &:hover {
     text-decoration: underline;
   }
@@ -170,21 +166,58 @@ h1,
 h2,
 h3,
 h4,
-h5,
+h5 {
+  font-weight: 500;
+}
+
+
+h1 {
+  font-size: 35px;
+  margin-top: 35px;
+  line-height: 40px;
+}
+
+h2 {
+  font-size: 29px;
+  margin-top: 29px;
+  line-height: 32px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-top: 24px;
+  line-height: 28px;
+}
+
+h4 {
+  font-size: 20px;
+  margin-top: 20px;
+  line-height: 24px;
+}
+
+h5 {
+  font-size: 16px;
+  margin-top: 16px;
+  line-height: 20px;
+}
+
 h6 {
-  font-weight: $base-font-weight;
+  font-size: 14px;
+  margin-top: 14px;
+  font-weight: 600;
+  line-height: 20px;
 }
 
 /**
   * Blockquotes
   */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  color: $text-color;
+  font-size: $base-font-size;
+  border-left: 4px solid $brand-color;
   padding-left: $spacing-unit / 2;
-  @include relative-font-size(1.125);
-  letter-spacing: -1px;
-  font-style: italic;
+  margin-top: $spacing-unit;
+  margin-bottom: $spacing-unit;
 
   > :last-child {
     margin-bottom: 0;
@@ -199,7 +232,7 @@ code {
   @include relative-font-size(0.9375);
   border: 1px solid $grey-color-light;
   border-radius: 3px;
-  background-color: #eef;
+  background-color: $grey-color;
 }
 
 code {
@@ -230,27 +263,52 @@ pre {
   * Tables
   */
 table {
+  margin-top: 20px;
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
-  color: lighten($text-color, 18%);
+  border: 1px solid #EDF0F2;
   border-collapse: collapse;
-  border: 1px solid $grey-color-light;
-  tr {
-    &:nth-child(even) {
-      background-color: lighten($grey-color-light, 6%);
+  font-size: 12px;
+
+  tbody tr:first-child, thead > tr {
+    height: 32px;
+    td {
+      height: 48px;
+    }
+    th {
+      background-color: #F5F6F7;
+      padding: 0 12px;
+      font-weight: 500;
     }
   }
-  th,
+  
   td {
-    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+    padding: 0 12px;
+    font-weight: 400;
   }
-  th {
+  tr {
+    height: 48px;
+    color: $text-color;
     background-color: lighten($grey-color-light, 3%);
-    border: 1px solid darken($grey-color-light, 4%);
     border-bottom-color: darken($grey-color-light, 12%);
   }
-  td {
-    border: 1px solid $grey-color-light;
+  tr {
+    border: 1px solid #EDF0F2;
   }
 }
+
+/**
+  * Lists
+  */
+
+  ul, ol {
+    font-weight: 400;
+    margin-left: 1.1em;
+    box-sizing: border-box;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+  }

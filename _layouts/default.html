@@ -1,8 +1,8 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
   <!-- TODO: Logic to set title needs to be rewritten -->
-  {% if sourceTitle %}
-    <title>{{ page.sourceTitle }} {{ sourceCategory }} Source | Segment</title>
+  {% if page.sourceTitle %}
+    <title>{{ page.sourceTitle }} {{ page.sourceCategory }} Source | Segment</title>
   {% else %}
     <title>{{ page.title }} - Segment</title>
   {% endif %}
@@ -15,19 +15,19 @@
   <meta name="twitter:site" content="@segment" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  {% if description %}
-    <meta name="description" content="{{description}}">
-    <meta property="og:description" content="{{description}}" />
+  {% if page.description %}
+    <meta name="description" content="{{page.description}}">
+    <meta property="og:description" content="{{page.description}}" />
   {% else %}
     <meta name="description" content="The technical documentation for Segment.">
     <meta property="og:description" content="The technical documentation for Segment.">
   {% endif %}
 
-  {% if hidden %}
+  {% if page.hidden %}
     <meta name="robots" content="noindex" />
   {% else %}
     <meta class="swiftype" name="section" data-type="enum" content="Documentation" />
-    <meta class="swiftype" name="title" data-type="string" content="{{title}}" />
+    <meta class="swiftype" name="title" data-type="string" content="{{page.title}}" />
     <meta class="swiftype" name="priority" data-type="integer" content="2" />
   {% endif %}
 
@@ -51,6 +51,7 @@
   <body>
     <div id="docs">
       {% include sidenav.html %}
+      <div id="consent-manager"></div>
       <main>
         {% include topnav.html %}
         <div id="doc-content">
@@ -65,7 +66,14 @@
       </main>
     </div>
   </body>
+  {% comment %}
+    JS for site
+  {% endcomment %}
+  <script src="{{ "./assets/main.js" | relative_url}}"></script>
 
+  {% comment %}
+    Swifttype
+  {% endcomment %}
   <script type="text/javascript">
     (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
     (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
@@ -75,16 +83,9 @@
     _st('install','dsmQzTck4zz2vQNsXLJW','2.0.0');
   </script>
 
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-
-  <script src="{{ "./assets/main.js" | relative_url}}"></script>
-  <!-- TODO get consent manager working -->
-  <script src="{{ "./assets/consent-manager.js" | relative_url}}"></script>
-    {% raw %}
-
+  {% comment %}
+    Google Search Results Metadata
+  {% endcomment %}
   <script type="application/ld+json">
   [
     {
@@ -105,11 +106,119 @@
     }
   ]
   </script>
-    {% endraw %}
+
+  {% comment %}
+   A.JS
+
+   Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
+   Everything else: https://app.segment.com/segment_prod/sources/segment_docs_v2
+  {% endcomment %}
+  {% if jekyll.environment == "production" %}
+    {% assign write_key = "QAKKJEtNsXpsNfCCBeWCLNxkaaLO7pgp" %}
+  {% else %}
+    {% assign write_key = "4RMd3zwDx4TkYAlt2k1iLB4xMUKQeOks" %}
+  {% endif %}
+  
+
   <script>
-    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
-      // TODO: Enable tracking....
-      //  window.analytics.page('Docs');
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+      analytics.page('Docs');
     }}();
+  </script>
+
+  {% comment %}
+    Consent Manager
+  {% endcomment %}
+  <script>
+    window.consentManagerConfig = function (exports) {
+      var React = exports.React
+      var inEU = exports.inEU
+      var openConsentManager = exports.openConsentManager
+      var openButton = document.getElementById('open-consent-manager')
+
+      function buttonClick (e) {
+        // Prevent the implicit consent from kicking in
+        e.stopPropagation()
+        e.preventDefault()
+        openConsentManager()
+      }
+      openButton.addEventListener('click', buttonClick, false)
+
+      var bannerContent = (
+        React.createElement(
+          'span',
+          null,
+          'We use cookies (and other similar technologies) to collect data to improve your experience on our site. By using our website, you\u2019re agreeing to the collection of data as described in our',
+          ' ',
+          React.createElement(
+            'a',
+            { href: '/docsv2/legal/website-data-collection-policy/', target: '_blank' },
+            'Website Data Collection Policy'
+          ),
+          '.'
+        )
+      )
+      var preferencesDialogTitle = 'Website Data Collection Preferences'
+      var preferencesDialogContent = (
+        React.createElement(
+          'div',
+          null,
+          React.createElement(
+            'p',
+            null,
+            'Segment uses data collected by cookies and JavaScript libraries to improve your browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site.'
+          ),
+          React.createElement(
+            'p',
+            null,
+            'By using our website, you\u2019re agreeing to our',
+            ' ',
+            React.createElement(
+              'a',
+              { href: '/docsv2/legal/website-data-collection-policy/', target: '_blank' },
+              'Website Data Collection Policy'
+            ),
+            '.'
+          ),
+          React.createElement(
+            'p',
+            null,
+            'The table below outlines how we use this data by category. To opt out of a category of data collection, select \u201CNo\u201D and save your preferences.'
+          )
+        )
+      )
+      var cancelDialogTitle = 'Are you sure you want to cancel?'
+      var cancelDialogContent = (
+        React.createElement(
+          'div',
+          null,
+          'Your preferences have not been saved. By continuing to use our website, you\u2019re agreeing to our',
+          ' ',
+          React.createElement(
+            'a',
+            { href: '/docsv2/legal/website-data-collection-policy/', target: '_blank' },
+            'Website Data Collection Policy'
+          ),
+          '.'
+        )
+      )
+
+      return {
+        container: '#consent-manager',
+        writeKey: '{{write_key}}',
+        shouldRequireConsent: inEU,
+        bannerContent: bannerContent,
+        preferencesDialogTitle: preferencesDialogTitle,
+        preferencesDialogContent: preferencesDialogContent,
+        cancelDialogTitle: cancelDialogTitle,
+        cancelDialogContent: cancelDialogContent
+      }
+    }
+  </script>
+  <script
+    src="https://unpkg.com/@segment/consent-manager@1.2.0/standalone/consent-manager.js"
+    crossorigin="anonymous"
+    defer
+  >
   </script>
 </html>

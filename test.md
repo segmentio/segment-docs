@@ -3,10 +3,12 @@ description: Smoketest page
 title: Testing page
 hide_from_sitemap: true
 toc_min: 1
+toc_max: 2
 beta: true
 deprecated: true
 changefreq: daily
 seo-priority: 1.0
+layout: page
 redirect_from:
 - /test/test
 - /guides/testing
@@ -137,7 +139,6 @@ might be interesting. You can use them with Markdown or HTML images.
 You can add a link to a YouTube video like this:
 
 [Drop Events using Destination Filters](https://www.youtube.com/watch?v=47dhAF1Hoco "Drop Events using Destination Filters"){:target="_blank" class="_"}
-
 
 ## Lists
 

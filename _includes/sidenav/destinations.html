@@ -19,8 +19,9 @@
         </div>
         <ul class="l-sidenav-subnav">
           {% for destination in category.items %}
+            {% assign doc_path = destination.name | replace: "catalog", "connections" %}
             <li>
-              <a href="{{site.baseurl}}/{{ destination.name | replace: "catalog", "connections" }}">
+              <a href="{{doc_path | relative_url }}">
                 {{destination.display_name}}
               </a>
             </li>

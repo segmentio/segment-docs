@@ -6,7 +6,9 @@ hide_toc: true
 <div class="l-chiclet-collection">
   {% assign warehouses = site.data.catalog.warehouses.warehouses %}
   {% for warehouse in warehouses %}
-    <a  class="chiclet-item" href="{{site.baseurl}}/{{ warehouse.name | replace: "catalog", "connections" }}">
+    {% assign doc_path = warehouse.name | replace: "catalog", "connections" | replace: "warehouses", "destinations" %}
+
+    <a  class="chiclet-item centered" href="{{doc_path | relative_url }}">
       {% if warehouse.logos.mark != '' %}
         {% assign class = "logo mark" %}
       {% else %}
