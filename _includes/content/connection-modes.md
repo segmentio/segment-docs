@@ -1,5 +1,5 @@
-{% assign name = page.path | replace: "connections", "catalog" | remove: "/index.md" %}
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
+{% assign name = page.path | replace: "connections", "catalog" | remove: "/index.md" %}
 {% assign destination_from_api = site.data.catalog.destinations.destinations | where: "name", name | first %}
 {% assign components_from_api = {{destination_from_api}}.components %}
 <!--
