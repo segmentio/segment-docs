@@ -44,6 +44,9 @@ By default, the links on the catalog page and respective sidenavs will attempt t
 ### Object Sources and Warehouses
 These two catalogs are hardcoded in the `_data` directory since the Config API does not expose these resources.
 
+## Sidenav
+The sidenav is managed by the files in `_data/sidenav/`. Depending on what section we are in determines the file used. We currently support up to 2 levels deep on a sidenav.
+
 ## Searching
 
 Swiftype is set up as a script in `_layouts/default.html`

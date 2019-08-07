@@ -9,8 +9,10 @@ sections:
     section:
     - path: "/connections/sources"
       title: Overview
-    - path: "/connections/sources/faq"
-      title: FAQ
+    - path: "/connections/sources/visual-tagger"
+      title: "Visual tagger"
+    - path: "connections/sources/faq"
+      title: "FAQ"
     - path: "/connections/sources/catalog"
       title: Sources catalog
   - section_title: Destinations

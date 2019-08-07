@@ -147,6 +147,7 @@ footer > #data-collection a {
 
 .l-sidenav-wrapper  li {
   display: flex;
+  margin-top: 0;
   margin-bottom: $spacing-unit / 2;
   flex-direction: column;
   color: $text-color;
