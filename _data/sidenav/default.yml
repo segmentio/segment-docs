@@ -7,6 +7,10 @@ sections:
   - section_title: Sources
     slug: connections/Sources
     section:
+    - path: "/connections/sources"
+      title: Overview
+    - path: "/connections/sources/faq"
+      title: FAQ
     - path: "/connections/sources/catalog"
       title: Sources catalog
   - section_title: Destinations

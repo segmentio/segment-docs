@@ -20,19 +20,49 @@
       Docs
     </div>
 
+    {% assign app_sources = site.data.catalog.sources.sources %}
+    {% assign cloud_sources = site.data.catalog.cloud_sources.sources %}
+    {% assign destinations = site.data.catalog.destinations.destinations %}
+    {% assign sources = app_sources | concat: cloud_sources | uniq: 'display_name' %}
+
+    {% assign resource_name = page.path | replace: "connections", "catalog" | replace: ".md", "" | replace: "/index", "" %}
+    {% assign current_destination = destinations | where: "name", resource_name | first %}
+    {% assign current_source = sources | where: "name", resource_name | first %}
+
     {% if page.url contains "/legal" %}
+      {% comment %}
+        Legal Sidenav
+      {% endcomment %}
       {% include sidenav/legal.html %}
     {% elsif page.url contains "/partners" %}
+      {% comment %}
+        Partners Sidenav
+      {% endcomment %}
       {% include sidenav/partners.html %}
-    {% elsif page.url contains "/api" %}
+    {% elsif page.url contains "/config-api" or page.url == '/api/' %}
+      {% comment %}
+        API Reference Sidenav
+      {% endcomment %}
       {% include sidenav/api.html %}
-    {% elsif page.url contains "/connections/destinations/catalog"  %}
+    {% elsif page.url contains "/connections/destinations/catalog" or current_destination.name %}
+      {% comment %}
+        Destinations Catalog Sidenav
+      {% endcomment %}
       {% include sidenav/destinations.html %}
-    {% elsif page.url contains "/connections/sources/catalog" %}
+    {% elsif page.url contains "/connections/sources/catalog" or current_source.name  %}
+      {% comment %}
+        Sources Catalog Sidenav
+      {% endcomment %}
       {% include sidenav/sources.html %}
     {% elsif page.url contains "/connections/warehouses/catalog" %}
+      {% comment %}
+        Warehouses Catalog Sidenav
+      {% endcomment %}
       {% include sidenav/warehouses.html %}
     {% else %}
+      {% comment %}
+        Basic Sidenav
+      {% endcomment %}
       {% include sidenav/default.html %}
     {% endif %}
   </nav>
