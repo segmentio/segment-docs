@@ -297,3 +297,18 @@ table {
     border: 1px solid #EDF0F2;
   }
 }
+
+/**
+  * Lists
+  */
+
+  ul, ol {
+    font-weight: 400;
+    margin-left: 1.1em;
+    box-sizing: border-box;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+  }
