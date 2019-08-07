@@ -13,8 +13,10 @@
   {% assign sources = app_sources | concat: cloud_sources | uniq: 'display_name' | sort: 'display_name' %}
 
   {% for source in sources %}
+    {% assign doc_path = source.name | replace: "catalog", "connections" %}
+
     <li>
-      <a  href="{{site.baseurl}}/{{ source.name | replace: "catalog", "connections" }}">{{source.display_name}}</a>
+      <a href="{{doc_path | relative_url }}">{{source.display_name}}</a>
     </li>
   {% endfor %}
 </ul>

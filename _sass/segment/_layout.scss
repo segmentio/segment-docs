@@ -181,10 +181,14 @@ footer > #data-collection a {
   font-weight: 500;
   display: flex;
   align-items: center;
+
 }
 
 .l-sidenav-wrapper a {
   color: $text-color;
+  &.active {
+    color: $brand-color;
+  }
 }
 
 .l-sidenav-subnav {
@@ -256,6 +260,10 @@ footer > #data-collection a {
     &:not(.section) a {
       color: $text-color;
       font-weight: normal;
+    }
+
+    a.active  {
+      color: $brand-color;
     }
   }
 }

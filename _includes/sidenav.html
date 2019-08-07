@@ -22,12 +22,19 @@
 
     {% assign app_sources = site.data.catalog.sources.sources %}
     {% assign cloud_sources = site.data.catalog.cloud_sources.sources %}
-    {% assign destinations = site.data.catalog.destinations.destinations %}
     {% assign sources = app_sources | concat: cloud_sources | uniq: 'display_name' %}
+    {% assign destinations = site.data.catalog.destinations.destinations %}
+    {% assign warehouses = site.data.catalog.warehouses.warehouses %}
 
+
+    {% comment %}
+      Logic to determine if we are viewing a resource. Controls sidenav state
+    {% endcomment %}
     {% assign resource_name = page.path | replace: "connections", "catalog" | replace: ".md", "" | replace: "/index", "" %}
-    {% assign current_destination = destinations | where: "name", resource_name | first %}
+    {% assign warehouse_name = resource_name | replace: "destinations", "warehouses" %}
     {% assign current_source = sources | where: "name", resource_name | first %}
+    {% assign current_destination = destinations | where: "name", resource_name | first %}
+    {% assign current_warehouse = warehouses | where: "name", warehouse_name | first %}
 
     {% if page.url contains "/legal" %}
       {% comment %}
@@ -54,7 +61,7 @@
         Sources Catalog Sidenav
       {% endcomment %}
       {% include sidenav/sources.html %}
-    {% elsif page.url contains "/connections/warehouses/catalog" %}
+    {% elsif page.url contains "/connections/warehouses/catalog" or current_warehouse.name %}
       {% comment %}
         Warehouses Catalog Sidenav
       {% endcomment %}

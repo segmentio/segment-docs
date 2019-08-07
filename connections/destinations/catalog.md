@@ -6,8 +6,10 @@ hide_toc: true
 <div class="l-chiclet-collection">
   {% assign destinations = site.data.catalog.destinations.destinations %}
   {% for destination in destinations %}
+    {% assign doc_path = destination.name | replace: "catalog", "connections" %}
+
     {% if destination.status contains "PUBLIC" or destination.status contains "BETA" %}
-      <a  class="chiclet-item" href="{{site.baseurl}}/{{ destination.name | replace: "catalog", "connections" }}">
+      <a  class="chiclet-item" href="{{doc_path | relative_url}}">
         {% if destination.logos.mark != '' %}
           {% assign class = "logo mark" %}
         {% else %}

@@ -9,7 +9,9 @@ hide_toc: true
   {% assign sources = app_sources | concat: cloud_sources | uniq: 'display_name' | sort: 'display_name' %}
 
   {% for source in sources %}
-    <a class="chiclet-item centered" href="{{site.baseurl}}/{{ source.name | replace: "catalog", "connections" }}">
+    {% assign doc_path = source.name | replace: "catalog", "connections" %}
+
+    <a  class="chiclet-item centered" href="{{doc_path | relative_url}}">
       {% if source.logos.mark != '' %}
         {% assign class = "logo mark" %}
       {% else %}
