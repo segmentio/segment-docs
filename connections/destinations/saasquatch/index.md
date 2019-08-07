@@ -4,9 +4,9 @@
 
 All you need to get started is your SaaSquatch Tenant Alias. Enter that into your Segment Destinations settings for SaaSquatch and you're good to go!
 
-Here's a quick video on what you need to do:
+<!-- Here's a quick video on what you need to do: -->
 
-{% comment %}{{{youtube 'dvNJb3G316E'}}}{% endcomment %}
+<!-- remove link to https://www.youtube.com/watch?v=dvNJb3G316E -->
 
 - - -
 

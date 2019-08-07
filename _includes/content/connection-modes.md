@@ -1,12 +1,11 @@
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
 {% assign name = page.path | replace: "connections", "catalog" | remove: "/index.md" %}
 {% assign destination_from_api = site.data.catalog.destinations.destinations | where: "name", name | first %}
-{% assign components_from_api = {{destination_from_api}}.components %}
 <!--
 components -> how do we send data
 platforms -> what data do we recognize-->
 
-{% for item in components_from_api %}
+{% for item in destination_from_api.components %}
   {% if item.type == "IOS" or item.type == "ANDROID" %}
     {% assign has_mobile = true %}
     {% assign device_mobile = true %}
@@ -15,11 +14,14 @@ platforms -> what data do we recognize-->
     {% assign has_browser = true %}
     {% assign device_web = true %}
   {% endif %}
-  {% if item.type == "CLOUD" %}
+  {% if item.type == "SERVER" %}
     {% assign has_server = true %}
-    {% assign device_server = true %}
   {% endif %}
 {% endfor %}
+
+{% if destination_from_api.direct == true or destination_from_api.platforms.server == true %}
+  {% assign has_server = true %}
+{% endif %}
 
 <!-- `cloud_web` is complicated -->
 {% if has_browser == true and destination_from_api.browserUnbundlingSupported == true && destination_from_api.browserUnbundlingPublic == true %}
@@ -37,10 +39,12 @@ platforms -> what data do we recognize-->
 
 <!-- cloud_server is also complicated -->
 {% if has_server == true and destination_from_api.platforms.server == true %}
-{% assign cloud_mobile = true %}
+{% assign cloud_server = true %}
 {% endif %}
 
 The first step is to make sure {{ destination_from_api.display_name }} supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](https://segment.com/docs/destinations/#connection-modes).
+
+//cloud_server and device_server are reversed?
 
 <table>
   <tr>
