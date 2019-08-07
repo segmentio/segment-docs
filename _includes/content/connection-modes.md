@@ -17,6 +17,9 @@ platforms -> what data do we recognize-->
   {% if item.type == "SERVER" %}
     {% assign has_server = true %}
   {% endif %}
+  {% if item.type == "CLOUD" %}
+    {% assign has_server = true %}
+  {% endif %}
 {% endfor %}
 
 {% if destination_from_api.direct == true or destination_from_api.platforms.server == true %}
@@ -43,8 +46,6 @@ platforms -> what data do we recognize-->
 {% endif %}
 
 The first step is to make sure {{ destination_from_api.display_name }} supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](https://segment.com/docs/destinations/#connection-modes).
-
-//cloud_server and device_server are reversed?
 
 <table>
   <tr>

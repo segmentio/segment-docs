@@ -17,7 +17,7 @@
 
 To learn more about about Connection Modes and what dictates which we support, [see here](https://segment.com/docs/destinations/#connection-modes).
 
-{% endif %}
+{% endif %} 
 
 {% if destination_from_api.browserUnbundlingSupported == true and destination_from_api.browserUnbundlingPublic == true %}
 We offer an optional **Cloud-based** Connection Mode for **Web** data with {{ destination_from_api.display_name }}. As a reminder, this removes the {{ destination.name }} javascript library from your site, improving performance.
@@ -33,10 +33,6 @@ This destination *requires* a **Device-based** Connection Mode for **Mobile** da
 
 Segment lets you change these destination settings via your Segment dashboard without having to touch any code.
 
-TEST
-
-{{ destination_from_api.settings }}
-
 {% for item in destination_from_api.settings %}
   {% unless item.deprecated == true %}
 ### {{ item.display_name }}
@@ -45,6 +41,3 @@ TEST
 
   {% endunless %}
 {% endfor %}
-
-
-testing
