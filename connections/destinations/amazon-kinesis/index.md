@@ -1,5 +1,6 @@
 ---
 rewrite: true
+redirect_from: '/integrations/amazon-kinesis'
 ---
 [Amazon Kinesis](https://aws.amazon.com/kinesis/) enables you to build custom applications that process or analyze streaming data for specialized needs. Amazon Kinesis Streams can continuously capture and store terabytes of data per hour from hundreds of thousands of sources such as website clickstreams, financial transactions, social media feeds, IT logs, and location-tracking events.
 
@@ -90,10 +91,10 @@ An example group call is shown below:
 ```
 analytics.group("0e8c78ea9d9dsasahjg", {
   name: "group_name",
-  employees: 3, 
+  employees: 3,
   plan: "enterprise",
   industry: "Technology"
-});  
+});
 ```
 
 ## Troubleshooting

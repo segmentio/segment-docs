@@ -1,5 +1,6 @@
 ---
-rewrite: true
+title: ActiveCampaign
+redirect_from: '/integrations/activecampaign/'
 ---
 
 [ActiveCampaign](https://www.activecampaign.com) is an integrated email marketing, marketing automation, and small business CRM. It allows you to send beautiful newsletters, setup behavioral based automations, and benefit from sales automation. This destination is maintained by ActiveCampaign. For any issues with the destination, please [reach out to their team](https://www.activecampaign.com/contact/).

@@ -8,7 +8,7 @@ layout: default
 
 
     {%- if page.title -%}
-      <h1 id="{{page.title | downcase}}" class="page-heading">{{ page.title }}</h1>
+      <h1 id="{{page.title | downcase}}" class="page-heading">{{ page.title }} {% unless page.landing %}{{ page.integration_type | capitalize }}{% endunless %}</h1>
     {%- endif -%}
 
     {%- if page.beta -%}

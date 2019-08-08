@@ -30,9 +30,10 @@ Use the local build process to preview local changes. If you're doing a release,
 - docker-nav: runs `make nav` on a docker host.
 - docker-catalog: runs `make catalog` on a docker host.
 
+# Layouts
+Default.html is the container through which all the individual other layouts (currently one) are built to have the right title, seo, etc.
 
 # Platform Config API + Catalog
-
 
 ### Data Source
 The Segment Config API is currently providing the data for the Source and Destination catalog pages. This happens at build time and the results are stored in the respective `_data/catalog` yml files.
@@ -84,7 +85,6 @@ $ make catalog
 You create your own token via the Access Management Page. Feel free to use [`segment-engineering`](https://app.segment.com/segment-engineering/settings/access-management) or [`segment_prod`](https://app.segment.com/segment_prod/settings/access-management). Once you have the token, set the value in the `.env` file.
 
 
-
 ### Catalog Data + Doc Links
 By default, the links on the catalog page and respective sidenavs will attempt to automagically set hyperlinks, for actual doc file, at the path `connections/:type/:slug`. However, given the transitory state of Docs V2, these links might 404 since the respective doc might be in a different directory.
 
@@ -100,12 +100,13 @@ The current breadcrumb is currently determined based on the `page.path` and the 
 # Searching
 
 Swiftype is set up as a script in `_layouts/default.html`
+Default.html is the container through which all the individual other layouts (currently one) are built to have the right title, seo, etc.
+
 
 
 # Syntax highlighting
 
 We're using Rouge, set in the `_config.yml`. It's now default for Jekyll 3 and later, so 🎉.
-
 A list of the cues Rouge accepts can be found [here](https://github.com/rouge-ruby/rouge/wiki/list-of-supported-languages-and-lexers).
 
 

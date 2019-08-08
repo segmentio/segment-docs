@@ -7,13 +7,21 @@ url: "http://0.0.0.0:4000" # the base hostname & protocol for your site, e.g. ht
 markdown: kramdown
 highlighter: rouge
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
     values:
       layout: "page"
       hidden: false
       beta: false
+  - scope:
+      path: "connections/destinations"
+    values:
+      integration_type: destination
+  - scope:
+      path: "connections/sources"
+    values:
+      integration_type: source
+
 
 plugins:
   - jekyll-sitemap

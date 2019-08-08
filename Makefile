@@ -54,7 +54,7 @@ deps:
 .PHONY: dev
 dev:
 	make clean && \
-	bundle exec jekyll serve --incremental -H 0.0.0.0
+	bundle exec jekyll serve --incremental -H 0.0.0.0 -V
 
 
 # Docker-based commands...
@@ -88,7 +88,7 @@ docker-nav:
 	  --volume="$(PWD):/srv/jekyll" \
 	  jekyll/jekyll \
 		bundle exec rake nav:update
-		
+
 .PHONY: docker-catalog
 docker-catalog:
 	docker run -it \
