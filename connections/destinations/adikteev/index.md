@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Adikteev
 ---
 
 This destination is maintained by Adikteev. For any issues with the destination, please [reach out to their team](mailto:contact@adikteev.com).
@@ -10,7 +10,7 @@ This destination is maintained by Adikteev. For any issues with the destination,
 
 {% include content/connection-modes.md %}
 
-Currently, this destination supports events originating from Mobile sources alone. 
+Currently, this destination supports events originating from Mobile sources alone.
 
 You can read more about how to define a source [here](https://segment.com/docs/guides/getting-started/what-is-a-source/).
 

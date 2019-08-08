@@ -7,6 +7,7 @@ redirect_from:
 - '/sources/etl-usage/'
 - '/sources/5/'
 - '/sources/cloud-app/'
+landing: true
 ---
 
 ## Website

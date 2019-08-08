@@ -4,7 +4,11 @@ sidebar: Overview
 rewrite: true
 redirect_from:
 - /integrations/
+landing: true
 ---
+
+<h1>{{ integration_type }}</h1>
+
 
 ## Sources vs Destinations
 

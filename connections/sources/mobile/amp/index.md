@@ -62,7 +62,7 @@ A `page` call is included by default when you include Segment Analytics into you
 
 ## Track
 
-The Track method (referred to as `click` in AMP) lets you record any actions your users perform. 
+The Track method (referred to as `click` in AMP) lets you record any actions your users perform.
 
 In order to track these `click` events simply add a trigger with a `selector`, which behaves the same way as [CSS Selectors](https://www.w3schools.com/cssref/css_selectors.asp), which will send that event once the user clicks:
 
@@ -97,7 +97,7 @@ In order to track these `click` events simply add a trigger with a `selector`, w
 ### Default Properties
 
 A few properties are automatically collected with each page view and track call:
-  
+
   ```json
 {
   "anonymousId": "amp-<unique-id>",
@@ -110,7 +110,7 @@ A few properties are automatically collected with each page view and track call:
   "context.screen.height": 800
 }
   ```
-  
+
 ### Custom Properties
 
 If you would like to collect additional, custom properties, include an `extraUrlParams` object. All properties you'd like to include must follow the format of `properties.<property_name>`:
@@ -137,7 +137,7 @@ If you would like to collect additional, custom properties, include an `extraUrl
 
 ### UTM Parameters
 
-Our AMP Source doesn't automatically collect UTM parameters for you but you can define these explictly as a property. An example of this is shown below: 
+Our AMP Source doesn't automatically collect UTM parameters for you but you can define these explictly as a property. An example of this is shown below:
 
 ```html
 <amp-analytics type="segment">
@@ -184,25 +184,25 @@ In order to enable this feature, you will need to include a `linkers` object set
 ## Troubleshooting
 
 ### Can I use client-side Destinations?
-No. All AMP data is sent from Google's servers to our server-side API and subsequently only onto our server-side Destinations. You will only be able to use our server-side destinations and their relevant setting. For example, for Google Analytics, please use the "Server-side Tracking ID". 
+No. All AMP data is sent from Google's servers to our server-side API and subsequently only onto our server-side Destinations. You will only be able to use our server-side destinations and their relevant setting. For example, for Google Analytics, please use the "Server-side Tracking ID".
 
 ### How do I identify users?
-Because AMP is static, it doesn’t provide many options for persistently identifying users. AMP provides a basic cookie mechanism called an AMP Client ID which is a uniquely generated cookie for every unique end user's AMP session. Depending on Google's caching settings, you may receive multiple AMP Client IDs for the same user. Segment will [capture](https://github.com/ampproject/amphtml/blob/b8abe2137f1a50ca6173a258fced64e41a46c763/extensions/amp-analytics/0.1/vendors.js#L1629-L1659) this AMP Client ID as an `anonymous_id` and it will be of this format: `amp-REDmCPH4F0QX44kCFomrcA`. 
+Because AMP is static, it doesn’t provide many options for persistently identifying users. AMP provides a basic cookie mechanism called an AMP Client ID which is a uniquely generated cookie for every unique end user's AMP session. Depending on Google's caching settings, you may receive multiple AMP Client IDs for the same user. Segment will [capture](https://github.com/ampproject/amphtml/blob/b8abe2137f1a50ca6173a258fced64e41a46c763/extensions/amp-analytics/0.1/vendors.js#L1629-L1659) this AMP Client ID as an `anonymous_id` and it will be of this format: `amp-REDmCPH4F0QX44kCFomrcA`.
 
 ### How do I manager user identities client-side and server-side?
-There is no user identity management client-side with AMP, so to join user sessions together you'll need to capture the AMP Client ID on your server-side and join it with your `user_id` in your warehouse.  
+There is no user identity management client-side with AMP, so to join user sessions together you'll need to capture the AMP Client ID on your server-side and join it with your `user_id` in your warehouse.
 
 ```
 AMP Source: amp_client_id as anonymous_id
 Server Source: amp_client_id as anonymous_id, user_id as user_id
 ```
 
-This identity schema will allow you to join down funnel interaction with earlier website browsing behavior. On the server-side, you can grab the `amp_client_id` from the `ajs_anonymous_id` header. 
+This identity schema will allow you to join down funnel interaction with earlier website browsing behavior. On the server-side, you can grab the `amp_client_id` from the `ajs_anonymous_id` header.
 
 
 ### Why aren't all my IDs prefixed with an 'amp-'?
 
-All AMP events won't consistently have an 'amp-' prefixed ID as this is only included in the event that the AMP page is directly visited on your domain. 
+All AMP events won't consistently have an 'amp-' prefixed ID as this is only included in the event that the AMP page is directly visited on your domain.
 For further details please refer to the various `Client ID` scenarios in relation to AMP pages [here]( https://developers.google.com/analytics/devguides/collection/amp-analytics/client-id) (we can only guarantee that if the 3rd scenario happens, the AMP ID will get generated and picked up).
 
 

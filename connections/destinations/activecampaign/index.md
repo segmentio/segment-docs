@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: ActiveCampaign
 redirect_from: '/integrations/activecampaign/'
 ---
 
