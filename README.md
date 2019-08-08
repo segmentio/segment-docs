@@ -19,7 +19,7 @@ Use the local build process to preview local changes. If you're doing a release,
 - `nav`: Rebuilds the entire nav datafile based on the current doc structure. This is destructive and should not be used unless absolutely necessary.
 - `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key saved in .env
 - `env`: for when you're first getting set up: installs bundler, and installs the deps for the repo.
-- `seed`: copies all example data files out of the `_templates` directory and puts them in the `_data` directory.
+- `seed`: copies all example data files out of the `_templates` directory and puts them in the `_data` directory. Useful if you don't have a way to setup an API key.
 - `clean`: runs `jekyll clean` locally
 - `deps`: re-runs `bundle install` locally.
 - `dev`: runs `jekyll serve` locally with incremental builds. Useful when updating CSS, JS, or content and you don't want to rebuild everytime.
@@ -35,13 +35,55 @@ Default.html is the container through which all the individual other layouts (cu
 
 # Platform Config API + Catalog
 
-<<<<<<< HEAD
 ### Data Source
 The Segment Config API is currently providing the data for the Source and Destination catalog pages. This happens at build time and the results are stored in the respective `_data/catalog` yml files.
-=======
-Swiftype is set up as a script in `_layouts/default.html`
-Default.html is the container through which all the individual other layouts (currently one) are built to have the right title, seo, etc.
->>>>>>> f9858afd5105e38333395d32d4562ca02a8e92f8
+
+For local development, you can always run `make seed` to use the example files if you don't want to mess with interacting with the Platform API.
+
+### API Key
+The Platform API needs an API key to pull in the _latest_ catalog data and currently looks for one in the environment variable `PLATFORM_API_TOKEN`. This value is stored in a special file named `.env` that the appropriate scripts reference.. You can what this file looks like by looking at `.env.example` 
+
+
+If you want to interact with the Platform API, locally, first make sure you have run `make env`. This will create the appropriate `.env` file for you to work with
+
+**NOTE: Never check-in `.env` or remove it from `.gitignore`.**
+
+Once your local environment is configured, you then have two options to pull Platform API data: You can use the token in [`chamber`](https://github.com/segmentio/chamber) or you can create your own token. The one in chamber is also used by CircleCI when the docs are built + deployed.
+
+#### Chamber
+
+If you installed and have access to `chamber`, run the following command:
+
+```
+$ aws-okta exec prod-privileged -- chamber read segment-docs platform_api_key
+```
+
+or for staging...
+
+```
+$ aws-okta exec stage-privileged -- chamber read segment-docs platform_api_key
+```
+
+You should get something like this as the output of the command.
+```
+Key			Value												Version		LastModified	User
+platform_api_key	[REDACTED FOR DOCS]		2		08-05 10:24:55	arn:aws:sts::752180062774:assumed-role/production-write/bryan.mikaelian@segment.com
+```
+
+Edit the `.env` file (generated from `make env`) and replace the environment variable with the token above. `make catalog` should then work and you should see some output like this:
+
+```
+$ make catalog
+"Saving catalogs from Platform API..."
+"Finished Destinations."
+"Finished Sources."
+"Done."
+```
+
+#### Bring your own token
+
+You create your own token via the Access Management Page. Feel free to use [`segment-engineering`](https://app.segment.com/segment-engineering/settings/access-management) or [`segment_prod`](https://app.segment.com/segment_prod/settings/access-management). Once you have the token, set the value in the `.env` file.
+
 
 ### Catalog Data + Doc Links
 By default, the links on the catalog page and respective sidenavs will attempt to automagically set hyperlinks, for actual doc file, at the path `connections/:type/:slug`. However, given the transitory state of Docs V2, these links might 404 since the respective doc might be in a different directory.
@@ -58,16 +100,13 @@ The current breadcrumb is currently determined based on the `page.path` and the 
 # Searching
 
 Swiftype is set up as a script in `_layouts/default.html`
+Default.html is the container through which all the individual other layouts (currently one) are built to have the right title, seo, etc.
+
 
 
 # Syntax highlighting
 
-<<<<<<< HEAD
 We're using Rouge, set in the `_config.yml`. It's now default for Jekyll 3 and later, so 🎉.
-=======
-- `hidden`: omits the file from the `sitemap.xml` and adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file. TODO: it should probably also omit the item from the navbar generator script 🤔
->>>>>>> f9858afd5105e38333395d32d4562ca02a8e92f8
-
 A list of the cues Rouge accepts can be found [here](https://github.com/rouge-ruby/rouge/wiki/list-of-supported-languages-and-lexers).
 
 
