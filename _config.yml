@@ -18,7 +18,7 @@ defaults:
     values:
       integration_type: destination
   - scope:
-      path: "connections/sources"
+      path: "connections/sources/catalog"
     values:
       integration_type: source
 

@@ -31,7 +31,7 @@ Use the local build process to preview local changes. If you're doing a release,
 - docker-catalog: runs `make catalog` on a docker host.
 
 # Layouts
-Default.html is the container through which all the individual other layouts (currently one) are built to have the right title, seo, etc.
+`default.html` is the container through which all the individual other layouts (currently one, `page.html`) are built to have the right title, seo, etc.
 
 # Platform Config API + Catalog
 
@@ -41,8 +41,7 @@ The Segment Config API is currently providing the data for the Source and Destin
 For local development, you can always run `make seed` to use the example files if you don't want to mess with interacting with the Platform API.
 
 ### API Key
-The Platform API needs an API key to pull in the _latest_ catalog data and currently looks for one in the environment variable `PLATFORM_API_TOKEN`. This value is stored in a special file named `.env` that the appropriate scripts reference.. You can what this file looks like by looking at `.env.example` 
-
+The Platform API needs an API key to pull in the _latest_ catalog data and currently looks for one in the environment variable `PLATFORM_API_TOKEN`. This value is stored in a special file named `.env` that the appropriate scripts reference. You can what this file looks like by looking at `.env.example`
 
 If you want to interact with the Platform API, locally, first make sure you have run `make env`. This will create the appropriate `.env` file for you to work with
 
@@ -54,25 +53,25 @@ Once your local environment is configured, you then have two options to pull Pla
 
 If you installed and have access to `chamber`, run the following command:
 
-```
+```bash
 $ aws-okta exec prod-privileged -- chamber read segment-docs platform_api_key
 ```
 
 or for staging...
 
-```
+```bash
 $ aws-okta exec stage-privileged -- chamber read segment-docs platform_api_key
 ```
 
 You should get something like this as the output of the command.
-```
+```bash
 Key			Value												Version		LastModified	User
 platform_api_key	[REDACTED FOR DOCS]		2		08-05 10:24:55	arn:aws:sts::752180062774:assumed-role/production-write/bryan.mikaelian@segment.com
 ```
 
 Edit the `.env` file (generated from `make env`) and replace the environment variable with the token above. `make catalog` should then work and you should see some output like this:
 
-```
+```bash
 $ make catalog
 "Saving catalogs from Platform API..."
 "Finished Destinations."
@@ -100,8 +99,6 @@ The current breadcrumb is currently determined based on the `page.path` and the 
 # Searching
 
 Swiftype is set up as a script in `_layouts/default.html`
-Default.html is the container through which all the individual other layouts (currently one) are built to have the right title, seo, etc.
-
 
 
 # Syntax highlighting
@@ -117,6 +114,8 @@ A list of the cues Rouge accepts can be found [here](https://github.com/rouge-ru
 - `feedback`: defaults to true. When false, hide the feedback footer. Good for legal and landing pages,
 - `hidden`: omits the file from the `sitemap.xml` and adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file. TODO: it should probably also omit the item from the navbar generator script 🤔
 - `hide_toc`: hides the right-nav TOC that's generated from H2s
+- `integration_type`: This is set on two paths in the `_config.yml` to add a noun (Source or Destination) to the end of the title, and the end of the title tag in the html layout.
+- `landing`: defaults to false. Use this to drop the noun set by `integration_type` from the title and heading.
 - `redirect_from`: defaults to none. Takes an array of URLs from the frontmatter in a file, and generates a "stub" page at each URL. Each stub file redirects to the original file.
 - `seo-changefreq`: default: `weekly `. Use the values [in the sitemap spec](https://www.sitemaps.org/protocol.html#xmlTagDefinitions). - sets the `changefreq` tag in the sitemap.xml generator, which tells search crawlers how often to check back.
 - `seo-priority`: values from `1.0` to `0.1`, default: `0.5 `. Sets the `Priority` tag in the sitemap
