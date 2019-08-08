@@ -34,7 +34,9 @@ catalog:
 .PHONY: env
 env:
 	gem install bundler && \
-	bundle install
+	bundle install && \
+	cp -i .env.example .env | true && \
+	echo "Environment configured"
 
 .PHONY: seed
 seed:
