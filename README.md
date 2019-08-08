@@ -35,8 +35,13 @@ Default.html is the container through which all the individual other layouts (cu
 
 # Platform Config API + Catalog
 
+<<<<<<< HEAD
 ### Data Source
 The Segment Config API is currently providing the data for the Source and Destination catalog pages. This happens at build time and the results are stored in the respective `_data/catalog` yml files.
+=======
+Swiftype is set up as a script in `_layouts/default.html`
+Default.html is the container through which all the individual other layouts (currently one) are built to have the right title, seo, etc.
+>>>>>>> f9858afd5105e38333395d32d4562ca02a8e92f8
 
 ### Catalog Data + Doc Links
 By default, the links on the catalog page and respective sidenavs will attempt to automagically set hyperlinks, for actual doc file, at the path `connections/:type/:slug`. However, given the transitory state of Docs V2, these links might 404 since the respective doc might be in a different directory.
@@ -57,7 +62,11 @@ Swiftype is set up as a script in `_layouts/default.html`
 
 # Syntax highlighting
 
+<<<<<<< HEAD
 We're using Rouge, set in the `_config.yml`. It's now default for Jekyll 3 and later, so 🎉.
+=======
+- `hidden`: omits the file from the `sitemap.xml` and adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file. TODO: it should probably also omit the item from the navbar generator script 🤔
+>>>>>>> f9858afd5105e38333395d32d4562ca02a8e92f8
 
 A list of the cues Rouge accepts can be found [here](https://github.com/rouge-ruby/rouge/wiki/list-of-supported-languages-and-lexers).
 
