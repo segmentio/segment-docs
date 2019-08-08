@@ -6,10 +6,6 @@ redirect_from:
 - /integrations/
 landing: true
 ---
-
-<h1>{{ integration_type }}</h1>
-
-
 ## Sources vs Destinations
 
 Segment has [Sources](/docs/sources/) and [Destinations](/docs/destinations/). [Sources](/docs/sources/) send data _into_ Segment, while [Destinations](/docs/destinations/) receive data _from_ Segment.
