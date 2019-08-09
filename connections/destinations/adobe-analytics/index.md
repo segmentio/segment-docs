@@ -1,9 +1,7 @@
 ---
 title: Adobe Analytics
-rewrite: true
 redirect_from: '/integrations/adobe-analytics'
 ---
-<!-- LR note: Setting rewrite true to remove bad boilerplate, manually including the footer partial-->
 
 Once you enable Adobe Analytics (formerly known as Omniture/Sitecatalyst) in Segment, you can start sending data from any of our [libraries](/docs/sources/) to an Adobe report suite. When you send events from our mobile SDKs or server-side libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics `Data Insertion API`.
 

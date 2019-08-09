@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 [Smartlook](https://smartlook.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a product analytics tool for websites and mobile apps offering visitor recordings, heatmaps, conversion funnels and automatic event tracking.
 

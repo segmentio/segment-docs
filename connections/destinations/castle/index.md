@@ -1,3 +1,7 @@
+---
+title: Castle 
+---
+
 # Integrating through Segment
 This guide is also available from [Segment's documentation](https://segment.com/docs/integrations/castle/).
 

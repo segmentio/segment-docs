@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 [Refersion](https://refersion.com/?utm_source=segment&utm_medium=partner) is a fully-loaded affiliate and influencer marketing platform that you can launch in minutes; they handle the heavy lifting so you can focus on building partnerships with your affiliates. By connecting Refersion with Segment you will easily be able to create new affiliate accounts.
 

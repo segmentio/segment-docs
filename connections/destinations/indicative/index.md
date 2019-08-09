@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Indicative]( https://app.indicative.com/#/login/register?utm_source=partners&utm_medium=segment&utm_campaign=integration) is a behavioral analytics platform designed to help Marketing and Product teams optimize user engagement, conversion, and retention. 

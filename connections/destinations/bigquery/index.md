@@ -1,6 +1,5 @@
 ---
 title: BigQuery
-rewrite: true
 ---
 
 

@@ -1,4 +1,5 @@
 ---
+title: Akita
 beta: true
 ---
 

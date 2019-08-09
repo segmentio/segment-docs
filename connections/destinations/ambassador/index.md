@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Ambassador
 redirect_from: '/integrations/ambassador'
 ---
 [Ambassador](https://www.getambassador.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) empowers companies to easily create, track & manage custom incentives that drive referrals and evangelize their users. The Ambassador Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-ambassador).

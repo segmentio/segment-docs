@@ -1,4 +1,6 @@
-
+---
+title: Apteligent
+---
 
 Our Apteligent destination code is open sourced on Github. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-crittercism), [Android](https://github.com/segment-integrations/analytics-android-integration-crittercism).
 

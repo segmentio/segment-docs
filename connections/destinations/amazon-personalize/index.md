@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Amazon Personalize
 ---
 
 Segment makes it easy to send your data to Amazon Personalize (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to Amazon Personalize in the format they understand. [Learn more about how to use Amazon Personalize with Segment.](https://segment.com/integrations/amazon-personalize)
@@ -192,7 +192,7 @@ Browse to the S3 service page in the AWS console and navigate to the bucket path
 
 **Historical Data Preparation**
 
-Segment’s S3 destination will contain a copy of all of the source data you have configured to go to S3.  In your S3 bucket you will have a folder called `/segment-logs`.  Under this folder will be another folder for each source of data you have connected to your Segment S3 destination.   
+Segment’s S3 destination will contain a copy of all of the source data you have configured to go to S3.  In your S3 bucket you will have a folder called `/segment-logs`.  Under this folder will be another folder for each source of data you have connected to your Segment S3 destination.
 
 Note that this step is not required unless you plan to do batch data extraction from S3.
 
@@ -502,7 +502,7 @@ Be sure to prefix each key with `--` as shown. Substitute your account ID for `[
 ![](images/GlueRunJobParams.png)
 
 
-Click the "Run job" button to start the job.  Not that this dialog scrolls.  
+Click the "Run job" button to start the job.  Not that this dialog scrolls.
 
 Once the job has started running you will see log output in the "Logs" tab at the bottom of the page. It may take a few minutes to complete.
 
@@ -646,7 +646,7 @@ In the next section, we will build a real-time clickstream ingestion pipeline th
 
 ## Getting Recommendations and Live Event Updates
 
-Once you deployed your Personalize solution and enabled a Campaign, your Lambda can consume event notifications from Segment and use the Solution and Campaign to react to events which will drive your business cases.  
+Once you deployed your Personalize solution and enabled a Campaign, your Lambda can consume event notifications from Segment and use the Solution and Campaign to react to events which will drive your business cases.
 
 The example code we provide below shows how to forward events to the Personalize Solution you deployed to keep your model updated.  It then forwards an `identify` event back to Segment with the recommendations from your Solution.
 
@@ -984,7 +984,7 @@ Go back to your Segment workspace tab or window, and click on the source which w
 ![](images/SegmentWriteKey.png)
 
 
-Back again to your Lambda tab or window, and paste the key under a property called ‘connections_source_api_key’.  
+Back again to your Lambda tab or window, and paste the key under a property called ‘connections_source_api_key’.
 
 *Make sure to click ‘SAVE’* here or you will need to do this again.
 

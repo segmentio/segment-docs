@@ -1,3 +1,7 @@
+---
+title: Google Adwords
+---
+
 Our Google AdWords destination code is open-source on GitHub if you want to check it out.
 [Our clientside javascript destination.](https://github.com/segment-integrations/analytics.js-integration-adwords).
 ## Web
@@ -33,7 +37,7 @@ analytics.track('Order Completed', { revenue: 33 });
 
 If you enable **Send Remarketing Tag** for an event mapping in your settings, we will send a dynamic remarketing tag in addition to a normal conversion tag. You can use these properties in your Adwords account to create audiences to remarket to!
 
-If you'd like to **only** send a Dynamic Remarketing Tag you can just leave the **Label** field blank. 
+If you'd like to **only** send a Dynamic Remarketing Tag you can just leave the **Label** field blank.
 
 ### Multiple Conversion IDs
 

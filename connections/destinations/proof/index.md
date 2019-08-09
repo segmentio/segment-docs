@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 [Proof Experiences](https://useproof.com/experiences?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps B2B SaaS businesses increase new trials and demos by creating delightfully personalized experiences for their visitors and customers.
 

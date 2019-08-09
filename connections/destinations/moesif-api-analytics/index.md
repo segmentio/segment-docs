@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 ## Moesif API Analytics Destination

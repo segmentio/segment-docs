@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Crazy Egg
 ---
 
 [Crazy Egg](https://www.crazyegg.com/) is a user testing tool that gives you heatmaps, clickmaps and scrollmaps of your visitors interacting with your site. It helps you learn where your users are having trouble. The {{integration.name}} Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-crazy-egg).

@@ -1,5 +1,4 @@
 ---
-rewrite: true
 redirect_from: '/integrations/appsflyer'
 slug: appsflyer
 title: AppsFlyer

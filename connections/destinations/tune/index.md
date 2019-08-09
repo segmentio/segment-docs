@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [TUNE](https://www.tune.com/) helps attribute mobile app events to the advertisements that a customer interacted with. We take care of sending those mobile events to TUNE so that they can be reconciled with ad views. The attributed data can then be [routed](#postbacks) back into other tools that you have enabled in Segment.

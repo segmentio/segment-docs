@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Sentry](https://sentry.io) is open-source error tracking that helps developers monitor and fix crashes in real time. Iterate continuously. Boost efficiency. Improve user experience. The `analytics.js` Sentry Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-sentry).

@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 [Xtremepush](https://xtremepush.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete digital engagement platform. Empowering global brands to create personalised, real-time experiences for their customers across mobile, web, email, SMS and social. Xtremepush's clients are increasing revenue through data-driven, contextually-relevant interactions. The software is flexible, reliable and quick to deploy, backed up by a team of expert strategists and technical support.
 

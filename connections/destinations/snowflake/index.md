@@ -1,6 +1,6 @@
 ---
 title: Snowflake
-rewrite: true
+
 ---
 
 [Snowflake](https://docs.snowflake.net/manuals/index.html) is a data warehouse built for the cloud. Snowflake delivers performance, simplicity, concurrency and affordability.

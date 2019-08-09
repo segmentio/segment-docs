@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Kochava](https://www.kochava.com/) offers mobile app attribution and mobile app analytics providing holistic, unbiased measurement for precise, real-time visualization of app performance through the funnel. 

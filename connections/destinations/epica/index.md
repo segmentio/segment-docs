@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [EPICA](https://www.epica.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the world’s first Prediction-as-a-Service platform. Powered by AI, EPICA captures, processes and analyses online data sources to accurately predict customer behavior. EPICA provides predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.

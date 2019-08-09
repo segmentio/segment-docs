@@ -1,3 +1,6 @@
+---
+title: Adriba
+---
 [Adtriba](https://www.adtriba.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows advertisers to track, control and optimize their marketing activities across all digital marketing channels through AI and user journey analysis.
 
 This destination is maintained by Adtriba. For any issues with the destination, please [reach out to their team](mailto:support@adtriba.com).
@@ -22,7 +25,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page()
 ```
 
-Page calls will be sent to Adtriba as a `pageview`. 
+Page calls will be sent to Adtriba as a `pageview`.
 
 
 ## Identify
@@ -50,6 +53,6 @@ analytics.track('Conversion', {
 })
 ```
 
-Track calls will be sent to Adtriba as a `track` event. 
+Track calls will be sent to Adtriba as a `track` event.
 
 Trigger additional events by using [Semantic Events](https://segment.com/docs/spec/semantic/) in order to enrich the Adtriba machine learning process.

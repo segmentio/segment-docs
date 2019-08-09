@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Zopim, now Zendesk Chat](https://developer.zendesk.com/rest_api/docs/chat/introduction), is a live chat solution that helps businesses increase sales conversion by engaging important leads on their websites. The `analytics.js` Zopim Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-zopim).

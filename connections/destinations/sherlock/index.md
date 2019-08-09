@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 Sherlock is the first engagement scoring application for SaaS businesses who want to truly understand user engagement. Build an engagement algorithm and understand the engagement of your users, accounts and segments.

@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 [Strikedeck](https://strikedeck.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Customer Success platform which actively manages customer relationships to reduce churn, increase existing revenue and influence new sales. Strikedeck includes  Customer Engagement Analytics, Health Scorecard, Notifications, Recommendations & Actions. 
 

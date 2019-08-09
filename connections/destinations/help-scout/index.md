@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Help Scout](https://www.helpscout.net/) is a help desk software company which provides an email-based customer support platform, knowledge base tool, and an embeddable search/contact widget for customer service professionals.

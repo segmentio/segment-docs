@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Candu
 ---
 
 [Candu](https://www.candu.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a learning platform within your app. Candu empowers you to upskill and retain your customers with in-product courses and just-in-time training.
@@ -27,12 +27,12 @@ An example call would look like:
 analytics.page()
 ```
 
-Page calls will be sent to Candu as a `page` event. You will be able to use `page` events to ensure content is displayed in the right context. 
+Page calls will be sent to Candu as a `page` event. You will be able to use `page` events to ensure content is displayed in the right context.
 
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/page/) does. 
+If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/page/) does.
 
 An example call would look like:
 
@@ -40,12 +40,12 @@ An example call would look like:
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Screen calls will be sent to Candu as a `screen` event. 
+Screen calls will be sent to Candu as a `screen` event.
 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. 
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does.
 
 An example call would look like:
 
@@ -55,14 +55,14 @@ analytics.identify('userId123', {
 });
 ```
 
-Identify calls will be sent to Candu as an `identify` event. The Identify call is used to record the identity of a user, which enables us to send her the most relevant content and update her information. 
+Identify calls will be sent to Candu as an `identify` event. The Identify call is used to record the identity of a user, which enables us to send her the most relevant content and update her information.
 
 Additionally, Identify calls will adapt how the customer is using the learning materials.
 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. 
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
 
 An example call would look like:
 

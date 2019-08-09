@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Adroll
 redirect_from: '/integrations/addroll/'
 ---
 

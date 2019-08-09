@@ -1,3 +1,7 @@
+---
+title: Chartbeat
+---
+
 Our Chartbeat destination code is open-source on GitHub if you want to [check it out](https://github.com/segment-integrations/analytics.js-integration-chartbeat).
 
 ## Getting Started

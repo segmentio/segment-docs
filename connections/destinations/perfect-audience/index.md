@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Perfect audience](http://www.perfectaudience.com/) is a retargeting platform that lets marketers bring back lost web visitors through Facebook ads and banner ads in the web.

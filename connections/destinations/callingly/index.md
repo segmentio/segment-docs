@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Callingly
 ---
 
 [Callingly](https://callingly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically gets your sales team on the phone with your incoming leads within seconds, generating better results and happy customers.
@@ -16,7 +16,7 @@ _**NOTE:** The Callingly Destination is currently in beta, which means that they
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Callingly" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Callingly Integrations page](https://callingly.com/dashboard/integrations). Click "Connect" on the Segment integration to enable it.
-4. In the Segment integration settings on the [Callingly Integrations page](https://callingly.com/dashboard/integrations) you can also select which Team will receive the calls triggered from Segment events. 
+4. In the Segment integration settings on the [Callingly Integrations page](https://callingly.com/dashboard/integrations) you can also select which Team will receive the calls triggered from Segment events.
 
 ## Identify
 
@@ -27,7 +27,7 @@ analytics.identify('userId123', {
   firstName: 'John',
   lastName: 'Doe',
   phone: '555-555-5555',
-  email: 'john.doe@segment.com' 
+  email: 'john.doe@segment.com'
 });
 ```
 

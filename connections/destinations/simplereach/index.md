@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [SimpleReach](https://simplereach.com/) helps brands, agencies, and publishers increase the impact of their content marketing. The {{integration.name}} Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-simplereach).

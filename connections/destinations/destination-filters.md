@@ -1,6 +1,6 @@
 ---
 title: Destinations Filters
-rewrite: true
+
 ---
 
 Destination Filters allow you to control the data flowing into each specific destination, by conditionally preventing data from being sent to cloud-based (server-side) destinations. You can filter out entire events, or just specific fields in the properties, traits, or in the context of your events.

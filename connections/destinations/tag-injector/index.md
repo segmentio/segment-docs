@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 Segment has built a Tag Injector Destination to give Segment users the flexibility needed to load and configure client-side tools.

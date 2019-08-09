@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 [Trustpilot](https://www.trustpilot.com/) is an open and independent review platform. On Trustpilot, people can share and discover reviews of businesses, and businesses can gain insights and showcase their service and products performance through reviews.
 

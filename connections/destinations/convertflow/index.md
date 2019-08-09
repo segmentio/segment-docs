@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: ConvertFlow
 ---
 [ConvertFlow](https://www.convertflow.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the all-in-one platform for converting your website visitors. From one builder, you can create, personalize and launch dynamic website content, forms, popups, sticky bars, surveys, quizzes and landing pages, without coding.
 
@@ -28,6 +28,6 @@ analytics.identify('userId123', {
 
 **IMPORTANT:** The _email_ trait is a required field for the Identify call to reach ConvertFlow.
 
-Upon identification, ConvertFlow will perform a 2-way sync with any email service providers (ESPs/CRMs) integrated with your ConvertFlow website, so you can begin targeting and personalizing for identified contacts on your website based on their segmentation in your ESP/CRM. 
+Upon identification, ConvertFlow will perform a 2-way sync with any email service providers (ESPs/CRMs) integrated with your ConvertFlow website, so you can begin targeting and personalizing for identified contacts on your website based on their segmentation in your ESP/CRM.
 
 Contact records created by the `identify` function can be found in your ConvertFlow website dashboard in the "contacts" page.

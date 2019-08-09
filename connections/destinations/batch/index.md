@@ -1,5 +1,5 @@
 ---
-title: batch
+title: Batch
 hidden: false
 beta: true
 ---
@@ -81,7 +81,7 @@ Tracked events are attached to the installation ID, and the installation ID itse
 
 ## Track
 
-When you `track` an event, we will send that event to Batch after converting the name to fit Batch's event naming rules.  
+When you `track` an event, we will send that event to Batch after converting the name to fit Batch's event naming rules.
 
 For example, an event named `Ad Shown` will become `AD_SHOWN`. Note that this means that event names longer than 30 characters will be truncated.
 The events `title` property will become the event's label.

@@ -1,14 +1,18 @@
-## **Getting Started**
+---
+title: Branch Metrics
+---
+
+## Getting Started
 
 Branch is a bundled destination. You will need to add their destination to your SDK.
 
-First you will need to [sign up for a free Branch account](http://branch.io/signup?bmp=segment) and follow the steps on their Dashboard to complete setup and retrieve your API Key.
+First, [sign up for a free Branch account](http://branch.io/signup?bmp=segment) and follow the steps on their Dashboard to complete setup and retrieve your API Key.
 
 Next you will have to set up deep link routing and enable your app to create links, the guides for which are below
 
 # iOS
 
-**Note that the below code snippets are in objective-c. The [Swift setup guide](https://docs.branch.io/apps/segment-ios/#step-2-add-some-code-to-your-appdelegate), as well as setup guides for advanced product features can all be found in [Branch’s Developer Portal](https://dev.branch.io/?bmp=segment).  
+**Note that the below code snippets are in objective-c. The [Swift setup guide](https://docs.branch.io/apps/segment-ios/#step-2-add-some-code-to-your-appdelegate), as well as setup guides for advanced product features can all be found in [Branch’s Developer Portal](https://dev.branch.io/?bmp=segment).
 
 Also, when referencing Branch’s quickstart guide within the dev portal, don’t worry about installing the SDK files.  Segment has already taken care of that for you.  Skip down to the section entitled "PList Configuration".
 
@@ -186,9 +190,9 @@ NSDictionary *params = [[Branch getInstance] getFirstReferringParams];
 
 Deep linking is an incredibly important part of building your app, and essential for delivering a high quality user experience. When a user clicks a link, you should take them to the exact thing they clicked on. Here’s how to do it.
 
-### Create your deep link 
+### Create your deep link
 
-`BranchUniversalObject` is the best way of tracking and sharing content with Branch. It provides convenient methods for sharing, deep linking, and tracking how often that content is viewed. This information is then used to provide you with powerful content analytics. 
+`BranchUniversalObject` is the best way of tracking and sharing content with Branch. It provides convenient methods for sharing, deep linking, and tracking how often that content is viewed. This information is then used to provide you with powerful content analytics.
 
 Below is how to create your own Branch Links. In order to share these links, we’ve built a *native share sheet for Android* and implemented a simple way to use *UIActivityViewController* on *iOS*. Check out the section on [content sharing](https://dev.branch.io/recipes/content_sharing/ios).
 
@@ -214,9 +218,9 @@ Then define the properties of the link you’d like to create.
 BranchLinkProperties *linkProperties = [[BranchLinkProperties alloc] init];
 linkProperties.feature = @"sharing";
 linkProperties.channel = @"facebook";
-[linkProperties addControlParam:@"$desktop_url" 
+[linkProperties addControlParam:@"$desktop_url"
 withValue:@"http://example.com/home"];
-[linkProperties addControlParam:@"$ios_url" 
+[linkProperties addControlParam:@"$ios_url"
 withValue:@"http://example.com/ios"];
 ```
 
@@ -394,7 +398,7 @@ You can also control it for individual marketing links by inserting the keys and
 ## **Getting Started**
 
 
-First you will have to set up deep link routing and enable your app to create links, the guide for which is below.  You can also visit [Branch’s Developer Portal](https://dev.branch.io/?bmp=segment) for advanced deep link features, integration customizations, and API reference guides.  
+First you will have to set up deep link routing and enable your app to create links, the guide for which is below.  You can also visit [Branch’s Developer Portal](https://dev.branch.io/?bmp=segment) for advanced deep link features, integration customizations, and API reference guides.
 
 If you referencing Branch’s quickstart guide within the dev portal, don’t worry about installing the SDK files.  Segment has already taken care of that for you.  Skip down to the section entitled "Manifest configuration".
 

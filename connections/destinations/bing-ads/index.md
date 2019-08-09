@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Bing Ads
 ---
 
  [Bing Ads](https://bingads.microsoft.com) enables Marketers to track and monitor campaigns, clicks, CTRs, spend and budget. Bing Ads lets you place cross-device product ads in front of Bing, Yahoo, and MSN customers and support imported pay-per-click ad campaigns from third-party platforms like Google AdWords. With Bing Ads you can also retarget ads to customers after they complete an action like leaving a shopping cart or viewing a product without purchasing. Learn more about all you can do with Bing Ads [here](https://advertise.bingads.microsoft.com/en-us/resources/training/what-is-bing-ads). You can also browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-bing-ads).
@@ -30,11 +30,11 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page();
 ```
 
-Page events will be sent to Bing Ads as a `Page Load` event where name and properties are optional. 
+Page events will be sent to Bing Ads as a `Page Load` event where name and properties are optional.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. 
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
 
 In order for us to map your track events to a Conversion Goal, you'll first need to create the goal on your Bing Ads account:
 

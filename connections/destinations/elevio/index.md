@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Elevio](https://elev.io/) is a continuous user education platform that makes your product easier to learn and use. It helps your organization increase user engagement through up-skilling and education while reducing support loads and customer churn. The {{integration.name}} Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-elevio).

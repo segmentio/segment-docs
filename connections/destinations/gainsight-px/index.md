@@ -1,6 +1,7 @@
 ---
-rewrite: true
-title: 'Gainsight PX Destination'
+title: Gainsight PX
+alias: Aptrinsic
+redirect_from: /destinations/aptrinsic
 ---
 
 [Gainsight PX](https://www.gainsight.com/product-experience/) (formerly known as Aptrinsic) provides a personalized product experience platform to help companies acquire, retain, and grow customers by creating real-time, personalized engagements driven by product usage data. With Gainsight PX, companies can implement an effective product-led go-to-market strategy that will increase product adoption and customer lifetime value.
@@ -16,9 +17,9 @@ This document was last updated on June 14, 2018. If you notice any gaps, outdate
   1. From your Segment UI’s Destinations page click on “Add Destination”.
   2. Search for “Gainsight PX” within the Destinations Catalog and confirm the Source you’d like to connect to.
   3. To find your Gainsight PX key, log into Gainsight PX and navigate to Settings > Products > Web App. If you have not already entered the URL for your web application, do that and click the Generate button. The Tag Key is the value to the right of the URL value. Use the "Copy" button to copy the value to your clipboard.
-  
+
   ![](images/TagKey.png)
-  
+
   4. Paste the Gainsight PX Tag Key into the Segment connection settings API Key field.
   5. We will automatically initialize Gainsight PX with your API key upon loading Analytics.js. In about 5-10 minutes the CDN will be updated and Gainsight PX snippet will be initialized onto your page. Note: By using this integration, you will not need to include the Gainsight PX tag on your page, it will be loaded automatically by Segment..
 
@@ -49,7 +50,7 @@ If you haven’t had a chance to review our spec, please take a look to understa
 An example track call is shown below:
 ```
 analytics.track("Form submitted", {
-  product: "book", 
+  product: "book",
   title: "The Name of the Wind"
 });
 ```
@@ -63,10 +64,10 @@ An example group call is shown below:
 ```
 analytics.group("0e8c78ea9d9dsasahjg", {
   name: "group_name",
-  employees: 3, 
+  employees: 3,
   plan: "enterprise",
   industry: "Technology"
-});  
+});
 ```
 
 When you call group, we will send groupId as the account id to Gainsight PX. Group

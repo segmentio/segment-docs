@@ -1,4 +1,5 @@
 ---
+title: Boomtrain
 beta: true
 ---
 

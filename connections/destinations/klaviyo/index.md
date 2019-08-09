@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Klaviyo](https://www.klaviyo.com/features/overview) is a powerful email platform focused on ecommerce that helps companies make more money. It supports segmentation based on category and event triggers like product bought, page viewed, email engagement, or amount spent.

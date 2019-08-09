@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: AWS Lambda
 ---
 
 Segment makes it easy to send your data to AWS Lambda (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to AWS Lambda in the format they understand. [Learn more about how to use AWS Lambda with Segment.](https://segment.com/integrations/amazon-lambda)

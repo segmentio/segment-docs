@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 [Savio](https://savio.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables B2B SaaS teams to centrally managed customer feedback so they can make better product decisions.
 

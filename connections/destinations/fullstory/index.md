@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 [FullStory](https://help.fullstory.com/11269-Develop) lets product and support teams easily understand everything about the customer experience. The Segment integration for FullStory helps accurately identify your customers within the FullStory dashboard. 
 

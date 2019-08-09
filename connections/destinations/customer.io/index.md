@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Customer.io
 ---
 
 [Customer.io](https://customer.io/) lets you send automated email, push, SMS, letters, and webhooks based on your customer's activities in your app or product. It makes conversion tracking, optimization and remarketing easier than ever. The `analytics.js` {{integration.name}} Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-customerio).
@@ -15,7 +15,7 @@ This document was last updated on January 26, 2018. If you notice any gaps, out-
 * [Ask engaged users to take an NPS survey with Customer.io](Ask engaged users to take an NPS survey with Customer.io)
 * [Get users to your Aha moment faster with email via Customer.io](https://segment.com/recipes/aha-activation-customerio/)
 * [Ask your best customers to leave a review at just the right moment with Customer.io](https://segment.com/recipes/automate-customer-reviews-customerio/)
-* 
+*
 
 
 ## Getting Started

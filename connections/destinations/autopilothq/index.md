@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Autopilot
 ---
 [Autopilot](https://www.autopilothq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps thousands of organizations around the world automate their marketing with visual and simple customer journey marketing software.
 

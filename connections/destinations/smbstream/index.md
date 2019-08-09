@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 [SMBStreams](https://www.buzzboard.com/smbstreams/solutions/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations. The most comprehensive set of data is maintained, integrated and then delivered as important insights across your sales and marketing organization.
 

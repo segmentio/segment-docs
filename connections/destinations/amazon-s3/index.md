@@ -1,4 +1,5 @@
 ---
+title: Amazon S3
 redirect_from: '/integrations/amazon-kinesis-firehose'
 ---
 ## Getting Started

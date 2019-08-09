@@ -1,6 +1,6 @@
 ---
 title: IBM Db2
-rewrite: true
+
 ---
 
 Use [IBM Db2](https://www.ibm.com/analytics/us/en/db2/) with Segment to get

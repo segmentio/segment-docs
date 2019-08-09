@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Vitally](https://vitally.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer success platform for B2B SaaS companies that wraps your unified customer data with powerful analytics, alerts, and workflows to help you build successful customers.

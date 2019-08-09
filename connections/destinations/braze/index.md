@@ -1,6 +1,5 @@
 ---
 title: Braze
-rewrite: true
 redirect_from:
 - '/integrations/appboy/'
 - '/destinations/appboy/'

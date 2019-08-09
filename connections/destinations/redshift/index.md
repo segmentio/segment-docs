@@ -1,6 +1,6 @@
 ---
 title: Redshift
-rewrite: true
+
 ---
 
 This guide will explain how to provision a Redshift cluster and allow the Segment warehouse connector to write to it.

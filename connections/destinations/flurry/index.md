@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Flurry](https://developer.yahoo.com/flurry/docs/) provides you with the tools and resources you need to gain a deep level of understanding about your users' behavior in your apps.  

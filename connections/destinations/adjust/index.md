@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Adjust
 redirect_from: '/integrations/adjust/'
 ---
 

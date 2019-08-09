@@ -1,6 +1,5 @@
 ---
 title: comScore
-beta: false
 ---
 
 Our comScore destination code is open-source on GitHub if you want to check it out! [For Analytics.js](https://github.com/segment-integrations/analytics.js-integration-comscore). [For Analytics-iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore). [For Analytics-Android](https://github.com/segment-integrations/analytics-android-integration-comscore)

@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Auryc
 ---
 [Auryc](https://www.auryc.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a client-side journey intelligence platform that surfaces real-time insights with powerful visual context across all of your digital ecommerce journeys. Auryc helps enterprises find and resolve the customer journey issues that directly impact conversions and customer satisfaction.
 

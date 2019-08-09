@@ -1,5 +1,5 @@
 ---
-rewrite: true 
+title: Adobe Target
 beta: true
 ---
 [Adobe Target](https://www.adobe.com/marketing-cloud/target.html) removes the
@@ -30,7 +30,7 @@ Destination and its documentation, please [let us know](https://segment.com/help
 
 When a user clicks on an Adobe Target experiment, you can fire a `track` event
 to collect relevant information. All track events *must* include an `mboxName`
-as an integration-specific option for the event to be forwarded to Adobe: 
+as an integration-specific option for the event to be forwarded to Adobe:
 
 ```javascript
 analytics.track('Clicked Experiment', {
@@ -45,7 +45,7 @@ analytics.track('Clicked Experiment', {
 ```
 
 We map track events to Adobe's `trackEvent` method. The event mapping for the
-above event would look like this: 
+above event would look like this:
 
 ```javascript
 window.adobe.target.trackEvent({
@@ -57,12 +57,12 @@ window.adobe.target.trackEvent({
 ```
 
 We handle special mapping for "Order Completed" events, so an event sent to
-Segment like this: 
+Segment like this:
 
 ```javascript
 analytics.track('Order Completed', {
   orderId: 'abc-123',
-  revenue: 100, 
+  revenue: 100,
   products: [
     {
       productId: '123'
@@ -80,7 +80,7 @@ analytics.track('Order Completed', {
 });
 ```
 
-Would be mapped like this to Adobe: 
+Would be mapped like this to Adobe:
 
 ```javascript
 window.adobe.target.trackEvent({
@@ -103,7 +103,7 @@ page, Segment doesn't automatically fire "Experiment Viewed" events like we do
 for other A/B testing destinations. Instead, you can hook into either Adobe's
 `adobe.target.event.REQUEST_SUCCEEDED` or
 `adobe.target.event.CONTENT_RENDERING_SUCCEEDED` event and fire an `Experiment
-Viewed` event with the experiment values you choose: 
+Viewed` event with the experiment values you choose:
 
 ```javascript
 document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function() {
@@ -134,7 +134,7 @@ can read more about preventing page flicker in Adobe's [documentation here](http
 
 Settings for Adobe Target can be specified in their dashboard, or in a
 `window.targetGlobalSettings` object on your website. Note this object must be
-defined and populated *before* `at.js`. 
+defined and populated *before* `at.js`.
 
 If you're seeing the console error "AT: Adobe Target content delivery is
 disabled. Ensure that you can save cookies to your current domain, there is no

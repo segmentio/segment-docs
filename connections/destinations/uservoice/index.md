@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Uservoice](https://www.uservoice.com/) is a customer support and feedback tool that lets your users submit feedback right from your site, and helps you manage all the incoming requests.

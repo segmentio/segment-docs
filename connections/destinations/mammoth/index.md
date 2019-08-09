@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 [Mammoth](https://mammoth.io/integrations/segment-com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve analytics for analysts, businesses, and developers who can leverage Mammoth’s data warehousing, data discovery & data preparation abilities to arrive at insights.
 

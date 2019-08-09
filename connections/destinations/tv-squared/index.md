@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [TV Squared](https://tvsquared.com/) enables you to pull same-day TV performance analytics so you can manage TV spend, and create data-driven TV media plans based on network, days, programs, and genres. Our TV Squared Destination is open-source. You can browse the code [in Github](https://github.com/segment-integrations/analytics.js-integration-tvsquared).

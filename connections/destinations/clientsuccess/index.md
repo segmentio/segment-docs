@@ -1,3 +1,6 @@
+---
+title: ClientSuccess 
+---
 This destination is maintained by ClientSuccess.
 
 ## Getting Started (for CSMs)
@@ -41,5 +44,3 @@ When you track a `page` event, Segment will send that event to ClientSuccess as 
 ## Group
 
 When you call `group`, Segment will send that group's information to ClientSuccess with `groupId` as the id and `name` as the group name.  Both `groupId` and `name` are required for ClientSuccess.
-
-

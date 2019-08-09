@@ -1,4 +1,5 @@
 ---
+title: Appcues
 redirect_from: '/integrations/appcues'
 ---
 Our Appcues destination code is [open-source on

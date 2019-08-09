@@ -1,10 +1,10 @@
 ---
-rewrite: true
+title: Bugsnag
 ---
 
 [Bugsnag](https://docs.bugsnag.com/api/data-access/) helps you detect and diagnose crashes in your application. Depending on the data you provide, Bugsnag can filter errors based on user name, user email, timeline, release stages, paying user status, and more.
 
-At the moment, we support the following integrations: 
+At the moment, we support the following integrations:
 
 Web | [Analytics.js SDK 2.1.0](https://github.com/segment-integrations/analytics.js-integration-bugsnag)
 Android | [Android SDK 2.0.0](https://github.com/segment-integrations/analytics-android-integration-bugsnag)

@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) powers your product decisions with a unified solution for feature flagging and experimentation. With Split, you can safely rollout new functionality using sophisticated user targeting, measure impact of change on engineering, product, and business metrics, and rapidly iterate to refine functionality anywhere in the application stack.

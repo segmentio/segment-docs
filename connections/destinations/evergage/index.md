@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Evergage](https://www.evergage.com/) offers a cloud-based platform that empowers digital marketers to increase engagement and conversions through real-time 1:1 personalization. The `analytics.js` {{integration.name}} Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-evergage).

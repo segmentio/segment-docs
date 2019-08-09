@@ -1,3 +1,7 @@
+---
+title: CleverTap
+---
+
 ## Getting Started
 
 Once the Segment library is integrated, toggle CleverTap on in your Segment destinations, and add your CleverTap Account ID and CleverTap Account Token which you can find in the CleverTap Dashboard under Settings.
@@ -51,15 +55,15 @@ When you send a `screen` event via the server-side destination or the iOS bundle
 2. Next, declare CleverTap's destination in your Analytics instance:
 
    ```
-   Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY_HERE")  
-     .use(CleverTapIntegration.FACTORY)  
-     ...  
-     .build();  
+   Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY_HERE")
+     .use(CleverTapIntegration.FACTORY)
+     ...
+     .build();
    ```
 
-### Integrating Push     
+### Integrating Push
 
-1. In your AndroidManifest.xml, register the following CleverTap services.  
+1. In your AndroidManifest.xml, register the following CleverTap services.
 
     ```
     <service
@@ -84,10 +88,10 @@ When you send a `screen` event via the server-side destination or the iOS bundle
 1. In your AndroidManifest.xml, add the CleverTap InAppNotificationActivity.
 
     ```
-    <activity  
-            android:name="com.clevertap.android.sdk.InAppNotificationActivity"  
-            android:configChanges="orientation|keyboardHidden"  
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />  
+    <activity
+            android:name="com.clevertap.android.sdk.InAppNotificationActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     ```
 
     No further action is required to integrate in-app notifications, which are registered for and requested by default by our CleverTap Segment integration.
@@ -115,7 +119,7 @@ CleverTap has created a sample Android application that integrates CleverTap via
     [SEGAnalytics setupWithConfiguration:config];
     ```
 
-### Integrating Push     
+### Integrating Push
 
 1. Follow the directions to register for push at: [https://segment.com/docs/libraries/ios/#how-do-i-use-push-notifications-](https://segment.com/docs/libraries/ios/#how-do-i-use-push-notifications-).
 

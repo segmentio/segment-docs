@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Wootric](https://www.wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the AI-powered platform, based on the Net Promoter Score℠ system, for measuring and boosting customer happiness. The {{integration.name}} Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-wootric).

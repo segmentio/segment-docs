@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 [Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) uses your Segment data to deliver multitouch, account-based attribution. This enables B2B companies to understand the impact on revenue of every touch in their customer journey.
 

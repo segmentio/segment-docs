@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 [Userlist.io](https://userlist.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to send behavior-based messages to your SaaS users. It’s great for onboarding users as well as nurturing them throughout their journey. 
 

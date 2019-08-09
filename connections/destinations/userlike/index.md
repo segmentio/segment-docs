@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Userlike](https://www.userlike.com/en/) is B2C live chat software optimized for website and messenger support - it enables real-time analysis, so you can see web visitors and actions taken. Our Userlike destination code is open source and is viewable [here](https://github.com/segment-integrations/analytics.js-integration-userlike). 

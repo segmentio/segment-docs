@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: ChurnZero
 ---
 
 [ChurnZero](https://churnzero.net/) is a real-time Customer Success platform that helps subscription businesses fight churn, expand current accounts, increase product adoption and optimize the customer experience.

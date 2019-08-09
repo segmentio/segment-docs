@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 SnapEngage is an enterprise chat software for businesses. It allows you to capture more leads, drive conversions, reduce response times, and increase customer satisfaction. Our SnapEngage destination code is open source - you can check it out [here](https://github.com/segment-integrations/analytics.js-integration-snapengage).

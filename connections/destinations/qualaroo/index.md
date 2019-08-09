@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Qualaroo](https://qualaroo.com/home) is a user testing tool that lets you add a survey to any page on your site, so you can get targeted user feedback as the user is performing a task. The `analytics.js` {{integration.name}} Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-qualaroo).

@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Amplitude
 redirect_from: '/integrations/amplitude'
 ---
 

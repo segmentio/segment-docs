@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Facebook App Events](https://developers.facebook.com/docs/app-events) collects required information from one of Segment's mobile SDKs ([iOS](https://segment.com/docs/sources/mobile/ios/) or [Android](https://segment.com/docs/sources/mobile/android/)) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The {{integration.name}} Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events).

@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [MSG91](https://msg91.com/) provides SMS marketing/transactional automation for businesses. With Segment you can send SMS with a single call.

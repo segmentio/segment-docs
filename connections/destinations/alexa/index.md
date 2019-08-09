@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Alexa
 redirect_from: '/integrations/alexa/'
 ---
 [Alexa](https://www.alexa.com/) helps improve your website's SEO and conduct competitive analysis. They help your business get better marketing results. The {{integration.name}} Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-alexa).

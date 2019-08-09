@@ -1,3 +1,7 @@
+---
+title: Chameleon
+---
+
 Our Chameleon destination code is open-source on GitHub if you want to [check it out](https://github.com/segment-integrations/analytics.js-integration-chameleon).
 
 ## Getting started

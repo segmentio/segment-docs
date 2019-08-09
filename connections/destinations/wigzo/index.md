@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Wigzo](https://www.wigzo.com/) is a Contextual Marketing Platform that helps marketers send Smarter Communication in Email or In-App. 

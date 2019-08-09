@@ -1,5 +1,5 @@
 ---
-rewrite: true
+title: Custify
 ---
 [Custify](https://www.custify.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)’s Customer Success Platform is designed for B2B SaaS businesses and enables them to reduce their churn and increase customer lifetime value.
 
@@ -49,10 +49,10 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {
-  name: "Initech", 
+  name: "Initech",
   industry: "Technology",
-  employees: 329, 
-  plan: "enterprise", 
+  employees: 329,
+  plan: "enterprise",
   "total billed": 830
 });
 ```

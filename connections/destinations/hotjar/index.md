@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Hotjar](https://help.hotjar.com/hc/en-us) enables you to understand how "vistors are really using your website" by offering a full set of user experience tools: heat maps, session recordings, and form analytics.

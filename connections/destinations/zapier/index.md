@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 beta: true
 redirect_from:
 - /integrations/zapier/

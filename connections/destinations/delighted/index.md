@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Delighted](https://delighted.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the modern customer feedback solution used by the world’s most coveted brands to deliver stellar experiences to their customers.

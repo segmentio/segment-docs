@@ -1,5 +1,5 @@
 ---
-rewrite: true
+
 ---
 
 [Movable Ink](https://movableink.com/) lets email marketers deliver jaw-dropping customer experiences. Our cloud-based software activates any data to generate intelligent content at the moment of open.
