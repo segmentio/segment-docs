@@ -1,7 +1,7 @@
 ---
 title: Destinations
 sidebar: Overview
-rewrite: true
+
 redirect_from:
 - /integrations/
 landing: true
