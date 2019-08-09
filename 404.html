@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: /404.html
 ---
 
 <style type="text/css" media="screen">
@@ -22,3 +23,12 @@ layout: default
   <p><strong>Page not found :(</strong></p>
   <p>The requested page could not be found.</p>
 </div>
+
+<script>
+  !function(){
+  window.analytics.track('Docs 404', {
+    docs_page_404_context: document.referrer
+  }
+  )
+}
+</script>
