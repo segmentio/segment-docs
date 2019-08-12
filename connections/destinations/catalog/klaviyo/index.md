@@ -1,5 +1,5 @@
 ---
-
+title: Klaviyo
 ---
 
 [Klaviyo](https://www.klaviyo.com/features/overview) is a powerful email platform focused on ecommerce that helps companies make more money. It supports segmentation based on category and event triggers like product bought, page viewed, email engagement, or amount spent.
@@ -55,7 +55,7 @@ When you call `identify` on analytics.js, we call Klaviyo's `identify` with the 
 We will map the following Segment spec'd traits to Klaviyo [special people properties](http://www.klaviyo.com/docs):
 
 | **Segment Traits | Klaviyo Traits** |
-|  ------ | ------- | 
+|  ------ | ------- |
 | `userId` | `$id` |
 | `email` | `$email` |
 | `phoneNumber` | `$phone_number` |
@@ -70,7 +70,7 @@ When you call `identify` from one of our mobile or server-side libraries, we wil
 If your `userId` is an email, or you provide an email in `traits.email`, we'll send it as the `$email` property to Klaviyo. We will map the following Segment spec'd traits to Klaviyo [special people properties](http://www.klaviyo.com/docs):
 
 | **Segment Traits | Klaviyo Properties** |
-|  ------ | ------- | 
+|  ------ | ------- |
 | `userId` | `$id` |
 | `email` | `$email` |
 | `phoneNumber` | `$phone_number` |
@@ -98,7 +98,7 @@ When you call `identify` using a **server side** library, you can optionally sen
 
 In order for this to work, you must add the **Private Key** inside the Klaviyo settings in Segment. You can generate a private key by clicking `Account > Settings > API Keys > Create API Key` inside Klaviyo.
 
-You can choose to provide a default `listId` that we can fallback on when adding users to a list. If you'd like to override this default `listId`, you can also do so by sending it manually via code in `destinations.Klaviyo.listId`. 
+You can choose to provide a default `listId` that we can fallback on when adding users to a list. If you'd like to override this default `listId`, you can also do so by sending it manually via code in `destinations.Klaviyo.listId`.
 
 **Important**: You must provide an `email` in your `traits` or send `email` as the `userId`. Be sure to provide the `Private Key` in the Klaviyo settings for this to work.
 
@@ -158,15 +158,15 @@ We will also map the following Segment spec'd properties to Klaviyo's [special p
 ### Ecommerce
 
 The below table shows the out of the box mappings in our integration between our e-commerce spec and Klaviyo's spec:
- 
+
 | **Segment Ecommerce Spec | Klaviyo Standard Event** |
-|  ------ | ------- | 
+|  ------ | ------- |
 | `Completed Order` | `Ordered Product` |
 
 The below table shows the parameter mappings in our integration between Order Completed properties and and Klaviyo's standard properties:
 
 | **Segment Properties | Klaviyo Properties** |
-|  ------ | ------- | 
+|  ------ | ------- |
 | `revenue` | `$value` |
 | `eventId` or `orderId` | `$event_id` |
 

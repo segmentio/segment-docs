@@ -1,3 +1,7 @@
+---
+title: Lytics
+---
+
 ## Getting Started
 
 1. Lytics uses our Javascript library so make sure to [go through our quickstart guide to get setup on that first](/docs/tutorials/quickstart-analytics.js/).

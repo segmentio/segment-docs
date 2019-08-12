@@ -1,12 +1,12 @@
 ---
-
+title: Lucky Orange
 ---
 
 [Lucky Orange](https://www.luckyorange.com/) lets you quickly see who is on your site and interact with them in many ways. With Lucky Orange, you can chat with visitors on your site, actually watch their mouse move around the screen and click in real time, play them back as recording, generate beautiful heat maps of clicks, mouse movements (eye tracking), and scroll depth, create quick insightful polls, and more. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-lucky-orange).
 
 This document was last updated on October 16, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
-## Getting Started 
+## Getting Started
 
 {% include content/connection-modes.md %}
 
@@ -21,9 +21,9 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```
 analytics.identify("97980cfea0067", {
-  name: "Peter Gibbons", 
-  email: "peter@initech.com", 
+  name: "Peter Gibbons",
+  email: "peter@initech.com",
 });
 ```
 
-Calling `identify` will create and update visitors in Lucky Orange. All traits to Lucky Orange and each trait will create a new column in the visitor view. If `name` and `email` are set in an `identify` call, Lucky Orange will also try to find an  Gravatar associated with the user. 
+Calling `identify` will create and update visitors in Lucky Orange. All traits to Lucky Orange and each trait will create a new column in the visitor view. If `name` and `email` are set in an `identify` call, Lucky Orange will also try to find an  Gravatar associated with the user.

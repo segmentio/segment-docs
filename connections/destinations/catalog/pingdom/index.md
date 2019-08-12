@@ -1,4 +1,6 @@
-
+---
+title: Pingdom
+---
 
 ## Getting Started
 

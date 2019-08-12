@@ -1,7 +1,7 @@
 ---
-
+title: Personyze
 ---
-[Personyze](https://www.personyze.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete cross-channel personalization solution for showing highly optimized content in websites, emails, and apps using targeting and recommendation engines, and a variety of content creation, editing, and A/B testing tools. 
+[Personyze](https://www.personyze.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete cross-channel personalization solution for showing highly optimized content in websites, emails, and apps using targeting and recommendation engines, and a variety of content creation, editing, and A/B testing tools.
 
 This destination is maintained by Personyze. For any issues with the destination, please [reach out to their team](mailto:info@personyze.com).
 
@@ -14,7 +14,7 @@ _**NOTE:** Personyze is currently in beta, which means that they are still activ
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Personyze" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Personyze dashboard](https://personyze.com/site/tracker/condition/index#cat=Account%20settings%2FMain%20settings%2FIntegrations/conditions) under Account Settings > Integrations > Segment > Get Keys
-4. Once you’ve updated the API key in Segment, data from the source you selected will be shown right away in Personyze under “Manage Visitor Profiles”. 
+4. Once you’ve updated the API key in Segment, data from the source you selected will be shown right away in Personyze under “Manage Visitor Profiles”.
 
 
 ## Identify
@@ -29,7 +29,7 @@ analytics.identify('userId123', {
 
 Identify calls will be sent to Personyze to update the Visitor Profile. You can see this updated under Dashboard > Users as well as in the Live Visits view.
 
-The following traits are explicitly mapped in Personzyne: 
+The following traits are explicitly mapped in Personzyne:
 
 * email
 * firstName

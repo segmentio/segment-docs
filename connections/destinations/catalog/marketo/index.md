@@ -1,4 +1,6 @@
-
+---
+title: Marketo
+---
 
 ## Getting Started
 
@@ -41,9 +43,9 @@ Note that we will automatically send `userId` as a trait. Normally, the `userId`
 
 When you can [`identify`](/docs/spec/identify/) with a `traits` object on any of the server-side languages, we make a call to Marketo's `syncLead` SOAP API action. This call either creates or a updates `traits` on a lead based on the email address either in `userId` or `traits.email`.
 
-We will attempt to PascalCase server-side traits. So if you send `secondFavoriteColor` as a trait, we will convert that to `SecondFavoriteColor`, so you should set the trait **API name** in Marketo to `SecondFavoriteColor`. If you send the trait as `second_favorite_color`, we will convert that to `Second_favorite_color`, so you should set the API name to be `Second_favorite_color` (this is less than ideal; however, we plan to update this behavior in v2 of our Marketo destination, so stay tuned!). 
+We will attempt to PascalCase server-side traits. So if you send `secondFavoriteColor` as a trait, we will convert that to `SecondFavoriteColor`, so you should set the trait **API name** in Marketo to `SecondFavoriteColor`. If you send the trait as `second_favorite_color`, we will convert that to `Second_favorite_color`, so you should set the API name to be `Second_favorite_color` (this is less than ideal; however, we plan to update this behavior in v2 of our Marketo destination, so stay tuned!).
 
-Note that leads can only be synced every 30 seconds via the SOAP API. If you exceed the allowed request amount, you will see `Exceeded lock attempts` errors in your debugger. 
+Note that leads can only be synced every 30 seconds via the SOAP API. If you exceed the allowed request amount, you will see `Exceeded lock attempts` errors in your debugger.
 
 Our server side destination with Marketo **requires your encryption key** along with your email for authentication, please ensure you have provided it in your Segment settings.
 

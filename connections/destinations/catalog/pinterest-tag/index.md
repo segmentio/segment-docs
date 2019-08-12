@@ -1,4 +1,6 @@
-
+---
+title: Pinterest Tag
+---
 ## Getting Started
 
 When you toggle on the Pinterest Tag in Segment, this is what happens:

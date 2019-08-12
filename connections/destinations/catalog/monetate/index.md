@@ -1,3 +1,6 @@
+---
+title: Monetate
+---
 ## Getting Started
 
 Segment allows you to track events directly into Monetate, and create, test, deploy, and measure personalized marketing campaigns.
