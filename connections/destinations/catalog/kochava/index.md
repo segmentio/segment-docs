@@ -1,8 +1,8 @@
 ---
-
+title: Kochava
 ---
 
-[Kochava](https://www.kochava.com/) offers mobile app attribution and mobile app analytics providing holistic, unbiased measurement for precise, real-time visualization of app performance through the funnel. 
+[Kochava](https://www.kochava.com/) offers mobile app attribution and mobile app analytics providing holistic, unbiased measurement for precise, real-time visualization of app performance through the funnel.
 
 _**NOTE:** As outlined in [Kochava's documentation](https://support.freeappanalytics.com/server-to-server-integration/segment-integration/), you must have a paid account with Kochava to utilize the Segment-Kochava Destination._
 

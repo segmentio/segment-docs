@@ -1,3 +1,6 @@
+---
+title: Piwik
+---
 ## Getting Started
 
 To get started using Piwik via Segment you'll need your Site ID and Server URL. Both are available in your Piwik snippet.

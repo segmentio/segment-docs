@@ -1,3 +1,6 @@
+---
+title: Livechat
+---
 
 ## Getting Started
 
@@ -19,7 +22,7 @@ When you call `identify` on analytics.js, we take all the `traits` you provide a
 With this destination, you can automatically record `track` events for live chat conversations. If you select this option, we’ll collect the following events:
 * Live Chat Conversation Started
 * Live Chat Conversation Ended
-* Live Chat Message 
+* Live Chat Message
 * Live Chat Message Received
 
 These events will then flow out to your other tools, so you can do things like analyze if users who chat spend more money over time.

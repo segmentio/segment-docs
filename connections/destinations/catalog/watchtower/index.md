@@ -1,5 +1,5 @@
 ---
-
+title: Watchtower
 ---
 
 [Watchtower](https://www.watchtower.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a platform to discover, classify, and protect sensitive data, like customer PII, across cloud services & data infrastructure. This enables you to identify sensitive data that you're ingesting and sending to various business-critical systems -- so you can manage the customer data you're disseminating across services.
@@ -25,7 +25,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page()
 ```
 
-Page calls will be sent to Watchtower as a `pageview`. 
+Page calls will be sent to Watchtower as a `pageview`.
 
 
 ## Screen
@@ -36,7 +36,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Screen calls will be sent to Watchtower as a `screenview`. 
+Screen calls will be sent to Watchtower as a `screenview`.
 
 
 ## Identify

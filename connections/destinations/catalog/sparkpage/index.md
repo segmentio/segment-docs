@@ -1,3 +1,6 @@
+---
+title: SparkPage
+---
 This destination is maintained by SparkPage.
 
 ## Getting Started
@@ -10,7 +13,7 @@ SparkPage supports the identify and track methods.
 
 ## Identify
 
-When you identify a user, we'll pass that user's information to SparkPage with userId as SparkPage's User ID. 
+When you identify a user, we'll pass that user's information to SparkPage with userId as SparkPage's User ID.
 
 Segment's special traits recognized as SparkPage's standard user profile fields (in parentheses) are:
 

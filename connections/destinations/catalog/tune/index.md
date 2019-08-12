@@ -1,5 +1,5 @@
 ---
-
+title: Tune
 ---
 
 [TUNE](https://www.tune.com/) helps attribute mobile app events to the advertisements that a customer interacted with. We take care of sending those mobile events to TUNE so that they can be reconciled with ad views. The attributed data can then be [routed](#postbacks) back into other tools that you have enabled in Segment.
@@ -20,11 +20,11 @@ This document was last updated on May 8, 2018. If you notice any gaps, outdated 
 4.  In your TUNE account, ensure that you have created a new app by navigating to Applications > Apps > Add A New App.
 5.  Depending on library you've installed, please follow the additional steps below to finish setting up!
 
-### iOS 
+### iOS
 
 When using our [iOS library](/docs/sources/mobile/ios/), make sure you are using the AdSupport Framework. You can verify this by checking if `context.device.advertisingId` (formerly `context.device.idfa`) is getting set in your source's debugger (check raw format).
 
-### Xamarin 
+### Xamarin
 
 #### Xamarin.iOS
 
@@ -45,7 +45,7 @@ ASIdentifierManager.SharedManager.IsAdvertisingTrackingEnabled
 
 #### Xamarin.Android
 
-For Android apps built with Xamarin, you first need to add the Google Play Services component through the Xamarin Component Store by navigating to Project > Get More Components. 
+For Android apps built with Xamarin, you first need to add the Google Play Services component through the Xamarin Component Store by navigating to Project > Get More Components.
 
 You then need to set the `context.device.advertisingId` field to the Google Advertising ID.
 
@@ -121,7 +121,7 @@ You can track the effectiveness of a mobile ad campaign by tracking key conversi
 
 ### Server
 
-When sending your data [server-side](/docs/sources/#server), contextual fields `context.app.namespace` and `context.device.advertisingId` must be manually sent in all calls. 
+When sending your data [server-side](/docs/sources/#server), contextual fields `context.app.namespace` and `context.device.advertisingId` must be manually sent in all calls.
 
 ### Xamarin
 
@@ -136,13 +136,13 @@ Install attribution is the most common use case for mobile attribution tools. To
 
 TUNE supports special events beyond install attribution which are mapped to the Segment [Ecommerce Spec](https://segment.com/docs/spec/ecommerce/v2/):
 
-| Segment Event             | TUNE Event         | 
+| Segment Event             | TUNE Event         |
 |---------------------------|--------------------|
 | Product Viewed            | Content View       |
 | Product Added             | Add to Cart        |
 | Product Added to Wishlist | Add to Wishlist    |
 | Checkout Step Viewed      | Checkout Initiated |
-| Order Completed           | Purchase           | 
+| Order Completed           | Purchase           |
 
 If you send an event with a name not included in the list above, Segment will send it to TUNE as a generic conversion event. You can then assign those events to pre-defined event categories in TUNE.
 

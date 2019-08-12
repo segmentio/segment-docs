@@ -1,3 +1,6 @@
+---
+title: UrbanAirship
+---
 The Urban Airship destination code is open sourced on Github. Feel free to check it out: [Android](https://github.com/urbanairship/android-segment-integration), [iOS](https://github.com/urbanairship/ios-segment-integration)
 
 ## Screen
@@ -107,4 +110,3 @@ To listen for when the Urban Airship destination is ready, listen for the `SEGAn
                                               selector:@selector(airshipReady)
                                                   name:@"io.segment.analytics.integration.did.start"
                                                 object:[SEGUrbanAirshipIntegrationFactory instance].key];
-

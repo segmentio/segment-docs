@@ -1,5 +1,5 @@
 ---
-
+title: Refersion
 ---
 [Refersion](https://refersion.com/?utm_source=segment&utm_medium=partner) is a fully-loaded affiliate and influencer marketing platform that you can launch in minutes; they handle the heavy lifting so you can focus on building partnerships with your affiliates. By connecting Refersion with Segment you will easily be able to create new affiliate accounts.
 
@@ -14,8 +14,8 @@ _**NOTE:** The Refersion Destination is currently in beta, which means that they
 You have two options to connect - either automatically within your Refersion dashboard, or manually by copying and pasting an API key into the Segment dashboard.
 
 ### Option 1 - Refersion UI
-1. In Refersion, find "Segment" in the Integrations section of the Account > Settings page. 
-2.  After pressing "Enable with Segment Integration" you will choose the first data source from the pop-up screen. 
+1. In Refersion, find "Segment" in the Integrations section of the Account > Settings page.
+2.  After pressing "Enable with Segment Integration" you will choose the first data source from the pop-up screen.
 3. When the initial connection is established you will be able to connect additional sources to your Refersion destination.
 
 ### Option 2 - Segment UI

@@ -1,5 +1,5 @@
 ---
-
+title: Slack
 ---
 
 [Slack](https://slack.com/) is a team collaboration tool where work flows. It's where the people you need, the information you share, and the tools you use come together to get things done.
@@ -12,7 +12,7 @@ This document was last updated on January 25, 2018. If you notice any gaps, out-
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Slack" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. In your Slack custom integration settings, create a new [Incoming Webhook](https://my.slack.com/services/new/incoming-webhook/) URL by selecting a Slack channel associated with your account. 
+3. In your Slack custom integration settings, create a new [Incoming Webhook](https://my.slack.com/services/new/incoming-webhook/) URL by selecting a Slack channel associated with your account.
 4. Enter this in your Segment UI settings under 'Incoming Webhook URL'. The Slack channel you selected will be the default channel which will receive events.
 
 ## Identify
@@ -32,7 +32,7 @@ By default, your `identify` calls will not be sent through to Slack unless you h
 Once you've saved your whitelisted traits, you can now use them alongside [Handlebars expressions](http://handlebarsjs.com/expressions.html) syntax within a template. Make sure you reference the spec for the [Identify method](https://segment.com/docs/spec/identify/) and [common object](https://segment.com/docs/spec/common/). `Identify` events that contain the whitelisted `traits` will appear as a Slack message with the following default template:
 ```
 Identified user \{{name}}. \n\{{traits}}
-``` 
+```
 where "name" is the first found of the following:
 * `context.traits.name`
 * `context.traits.firstName` + `context.traits.lastName`
@@ -64,7 +64,7 @@ analytics.track('Email Opened', {
 ### Event Channels
 By default, all `track` events are sent to the default Slack channel configured in the Segment UI when [getting started](https://segment.com/docs/destinations/slack/#getting-started). To prevent events from sending you will need to modify your track call to use [selective integrations](https://segment.com/docs/sources/website/analytics.js/#selecting-integrations). Business Tier customers also have the option to filter the events within the "Schema" section of the Segment UI.
 
-If you would like to have specific events be sent to a particular channel (#channel) or user (@user) via a direct message, you can specify this in the "Events Channels" settings within the Segment UI. 
+If you would like to have specific events be sent to a particular channel (#channel) or user (@user) via a direct message, you can specify this in the "Events Channels" settings within the Segment UI.
 
 
 ### Event Templates
@@ -94,7 +94,7 @@ Email Opened
 ```
 and create the following template:
 ```
-\{{name}} opened an email from \{{properties.name}} (\{{properties.email}}) 
+\{{name}} opened an email from \{{properties.name}} (\{{properties.email}})
 ```
 Which would result in the following message within your Slack channel depending on how "name" was set:
 ```
@@ -102,7 +102,7 @@ Jane opened an email from John Doe (john.doe@gmail.com)
 ```
 
 ### Regex Matching
-In addition to exact event names, you can also enter regex patterns for channels and templates to map multiple events to a single channel or template rather than creating a mapping for each individual event. An example which captures all event names in both lower and upper case ending in "-ing" would look like: 
+In addition to exact event names, you can also enter regex patterns for channels and templates to map multiple events to a single channel or template rather than creating a mapping for each individual event. An example which captures all event names in both lower and upper case ending in "-ing" would look like:
 ```
 /[a-zA-Z]+ing$/g
 ```
@@ -118,5 +118,3 @@ In order for `identify` events to work, please make sure you [whitelist the trai
 
 ### I'm seeing [object Object] in my Slack message
 If you try to print an object (eg., `\{{properties}}`), you will see [object Object] in Slack. Drill down to a primitive type value (eg., `properties.plan`).
-
-

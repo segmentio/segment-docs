@@ -1,3 +1,7 @@
+---
+title: Pointillist
+---
+
 ## Getting Started
 
 Once the Segment library is integrated with your server code, site or app, toggle Pointillist ON in the Segment dashboard, and add your Pointillist API key.

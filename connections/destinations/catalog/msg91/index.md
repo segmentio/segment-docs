@@ -1,5 +1,5 @@
 ---
-
+title: MSG91
 ---
 
 [MSG91](https://msg91.com/) provides SMS marketing/transactional automation for businesses. With Segment you can send SMS with a single call.
@@ -10,16 +10,16 @@ This destination is maintained by MSG91. For any issues with the destination, pl
 
 _**NOTE:** The MSG91 Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 23, 2019. If you are interested in joining their beta program or have any feedback to help improve the MSG91 Destination and its documentation, please [let  their team know](mailto:support@msg91.com)!_
 
- 
+
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
-  
+
 1.  From your Segment UI’s Destinations page click on “Add Destination”.
-    
+
 2.  Search for “MSG91” within the Destinations Catalog and confirm the Source you’d like to connect to.
-    
+
 3. Drop in the "API Key" into your Segment Settings UI which you can find from your [MSG91 dashboard](https://control.msg91.com/signin/) in the API page using the ['API' option in the sidebar](https://help.msg91.com/article/177-where-can-i-find-my-authentication-key). It is recommended that you create a brand new API key for the Segment destination.
 
 
@@ -36,7 +36,7 @@ If you haven’t had a chance to review our spec, please take a look to understa
     "phone": "phone number to send SMS on",
     "firstName": "Firstname of SMS receiver",
     "message": "Thank you for singup, this is test SMS",
-    "senderID": "Ex. flipKT, MSGIND, Vodaphn"     
+    "senderID": "Ex. flipKT, MSGIND, Vodaphn"
   },
   "userId": "test-user-0md4g"
 }
@@ -55,7 +55,7 @@ If you haven’t had a chance to review our spec, please take a look to understa
   "type": "page",
   "name": "Home",
   "properties": {
-    "phone": "Phone number to send SMS",  
+    "phone": "Phone number to send SMS",
     "firstName": "John",
     "message": "Thank you for singup, this is test SMS",
     "senderID": "Ex. flipKT, MSGIND, Vodaph"
@@ -74,7 +74,7 @@ If you haven’t had a chance to review our spec, please take a look to understa
   "type": "screen",
   "name": "Home",
   "properties": {
-    "phone": "Phone number to send SMS", 
+    "phone": "Phone number to send SMS",
     "firstName": "John",
     "message": "Thank you for singup, this is test SMS",
     "senderID": "Ex. flipKT, MSGIND, Vodaph"
@@ -92,7 +92,7 @@ If you haven’t had a chance to review our spec, please take a look to understa
   "type": "track",
   "event": "Clicked Login Button",
   "properties": {
-    "phone": "Phone number to send SMS",  
+    "phone": "Phone number to send SMS",
     "firstName": "John",
     "message": "Thank you for singup, this is test SMS",
     "senderID": "Ex. flipKT, MSGIND, Vodaph"
@@ -101,7 +101,7 @@ If you haven’t had a chance to review our spec, please take a look to understa
 ```
 Track calls will be sent to MSG91 as a `Send SMS` event.
 
-  
+
 
 ## Troubleshooting
 
@@ -113,7 +113,7 @@ Make sure you send the following properties/ traits to send SMS.
 
 ```
 "properties": {
-  "phone": "Phone number to send SMS", 
+  "phone": "Phone number to send SMS",
   "firstName": "John",
   "message": "Thank you for singup, this is test SMS",
   "senderID": "Ex. flipKT, MSGIND, Vodaph"

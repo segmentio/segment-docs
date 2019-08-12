@@ -1,3 +1,6 @@
+---
+title: Salesforce Live Agent
+---
 ## Getting Started
 
 To get started, please follow Salesforce's [instructions](https://help.salesforce.com/articleView?id=live_agent_create_deployments.htm&type=5) to create a live agent deployment. If you have already done this, please navigate to the "deployment code" of the Live Agent deployment you would like to have Segment integrate with. It will look something like this:
@@ -9,14 +12,14 @@ liveagent.init('https://d.la3-c1cs-phx.salesforceliveagent.com/chat', '1111D0000
 </script>
 ```
 
-When you toggle on Salesforce Live Agent in Segment, we'll begin loading the Salesforce Live Agent web SDK on any pages you have Segment deployed. Their accompanying API functionality will be available to interact with however, **we will not initialize their API automatically**. This is because their API has two core functions: 
+When you toggle on Salesforce Live Agent in Segment, we'll begin loading the Salesforce Live Agent web SDK on any pages you have Segment deployed. Their accompanying API functionality will be available to interact with however, **we will not initialize their API automatically**. This is because their API has two core functions:
 
 - Control the visual configuration of the chat experience (set the size of the chat window, conditionally display buttons based on whether the chat agent is online/offline, etc.)
 - Send data about the `Case`, `Account`, and `Contact` to your chat agent as well as your Salesforce CRM deployment using a pre-chat form
 
-The latter functionality described above is what Segment integrates with. However, Salesforce's API stipulates that you must define the data you want to send to your Agent/Salesforce instance *before* you initialize their SDK. 
+The latter functionality described above is what Segment integrates with. However, Salesforce's API stipulates that you must define the data you want to send to your Agent/Salesforce instance *before* you initialize their SDK.
 
-This presents a problem because this data is generally only available after some kind of form submission by the user. Because Segment has no way of knowing if the page the user is on will contain such a form submission, we cannot decide at page load whether we need to initialize the Live Agent SDK right away (to allow for chat window customization) or wait until sometime after page load (once the user has submitted the information you request). 
+This presents a problem because this data is generally only available after some kind of form submission by the user. Because Segment has no way of knowing if the page the user is on will contain such a form submission, we cannot decide at page load whether we need to initialize the Live Agent SDK right away (to allow for chat window customization) or wait until sometime after page load (once the user has submitted the information you request).
 
 In short, **our integration cannot proactively initialize the Live Agent SDK on page load on your behalf**. The specific instructions regarding initialization options are outlined below.
 

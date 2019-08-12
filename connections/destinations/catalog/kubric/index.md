@@ -1,5 +1,5 @@
 ---
-
+title: Kubric
 ---
 [Kubric](https://kubric.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to create personalised creatives for your users and deliver them using emails, push-notifications, Facebook & various other channels.
 
@@ -25,7 +25,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page()
 ```
 
-Page calls will be sent to Kubric as a `page`. 
+Page calls will be sent to Kubric as a `page`.
 
 
 ## Screen
@@ -36,7 +36,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Screen calls will be sent to Kubric as a `screen`. 
+Screen calls will be sent to Kubric as a `screen`.
 
 
 ## Identify
@@ -61,4 +61,3 @@ analytics.track('Clicked Login Button')
 ```
 
 Track calls will be sent to Kubric as a `track` event.
-

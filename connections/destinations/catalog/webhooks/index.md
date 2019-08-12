@@ -1,5 +1,5 @@
 ---
-
+title: Webhooks
 ---
 [Webhooks](https://segment.com/integrations/webhooks) submit real-time user data to your own HTTP endpoints. A Webhook is an HTTP callback: a simple event-notification via HTTP POST. A web application implementing Webhooks will POST a message to a URL when certain things happen.
 

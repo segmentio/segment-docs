@@ -1,3 +1,6 @@
+---
+title: Optimizely Web
+---
 ## Getting Started
 
 Segment’s **Optimizely Web (previously Optimizely)** destination supports the following Optimizely products:

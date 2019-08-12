@@ -1,3 +1,6 @@
+---
+title: Nudgespot
+---
 ## Getting Started
 
 When you toggle on Nudgespot in Segment, this is what happens:

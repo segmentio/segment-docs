@@ -1,5 +1,5 @@
 ---
-
+title: Parse.ly
 ---
 
 [Parse.ly](https://www.parse.ly) provides web analyses and content optimization for online publishers by partnering with them to provide clear audience insights through intuitive analytics.

@@ -1,3 +1,6 @@
+---
+title: Twitter Ads
+---
 [Our Twitter Ads destination code](https://github.com/segment-integrations/analytics.js-integration-twitter-ads) is all open-source on GitHub if you want to check it out.
 
 **Use Cases**

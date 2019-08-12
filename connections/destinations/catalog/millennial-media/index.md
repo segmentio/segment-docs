@@ -1,3 +1,6 @@
+---
+title: Millennial Media
+---
 ## Getting Started
 
 You'll need to map from the Segment event name to the Millennial Media Pixel ID in your Segment source's Millennial Media Destination page.

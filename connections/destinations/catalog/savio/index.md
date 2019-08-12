@@ -1,5 +1,5 @@
 ---
-
+title: Savio
 ---
 [Savio](https://savio.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables B2B SaaS teams to centrally managed customer feedback so they can make better product decisions.
 
@@ -42,7 +42,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {
-  name: "Initech", 
+  name: "Initech",
 });
 ```
 
@@ -50,8 +50,8 @@ Including the `plan` and `mrr` traits will allow you to filter feedback in Savio
 
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {
-  name: "Initech", 
-  plan: "enterprise", 
+  name: "Initech",
+  plan: "enterprise",
   mrr: 99
 });
 ```

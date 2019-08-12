@@ -1,4 +1,6 @@
-
+---
+title: Nanigans
+---
 
 ## Getting Started
 

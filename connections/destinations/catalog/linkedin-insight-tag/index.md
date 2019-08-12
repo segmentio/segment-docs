@@ -1,3 +1,6 @@
+---
+title: LinkedIn Insight Tag
+---
 
 ## Getting Started
 

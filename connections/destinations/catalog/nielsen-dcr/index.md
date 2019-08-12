@@ -1,3 +1,6 @@
+---
+title: Nielsen Digital Content Ratings
+---
 ## Getting Started
 
 Nielsen-DCR is supported on mobile apps and web browsers.

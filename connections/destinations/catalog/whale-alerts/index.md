@@ -1,3 +1,6 @@
+---
+title: Whalr Alerts
+---
 This destination is maintained by Whalr.
 
 ## About Whalr
@@ -26,9 +29,9 @@ The first step is to send Whalr your customer's email addresses via the Segment 
 
 	{
 	  "type" : "identify",
-	  
+
 	  "userId" : [however you identify your customer],
-	 
+
 	  "traits" : {
 			    "email" : [email address]
 				  }

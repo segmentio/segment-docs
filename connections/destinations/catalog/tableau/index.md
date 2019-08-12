@@ -1,3 +1,7 @@
+---
+title: Tableau
+---
+
 ## Getting Started
 
 In your Tableau dashboard, go to the "To A Server" category in the Connect panel on the page's left side. Click on the Amazon Redshift tab.

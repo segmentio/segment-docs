@@ -1,8 +1,8 @@
 ---
-
+title: Perfect Audience
 ---
 
-[Perfect audience](http://www.perfectaudience.com/) is a retargeting platform that lets marketers bring back lost web visitors through Facebook ads and banner ads in the web.
+[Perfect Audience](http://www.perfectaudience.com/) is a retargeting platform that lets marketers bring back lost web visitors through Facebook ads and banner ads in the web.
 
 This document was last updated on October 24th, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 

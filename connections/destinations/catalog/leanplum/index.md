@@ -1,5 +1,5 @@
 ---
-
+title: Leanplum
 ---
 
 [Leanplum](https://www.leanplum.com/) helps mobile teams orchestrate multi-channel campaigns — from messaging to the in-app experience — all from a single mobile marketing platform.

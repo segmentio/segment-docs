@@ -1,3 +1,6 @@
+---
+title: Localytics
+---
 Our Localytics mobile destination code is open sourced on Github. Feel free to
 check it out:
 [iOS](https://github.com/segment-integrations/analytics-ios-integration-localytics),

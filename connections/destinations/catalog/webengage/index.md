@@ -1,3 +1,6 @@
+---
+title: WebEngage
+---
 This integration is maintained by [WebEngage Support](support@webengage.com).
 
 ## Getting Started
@@ -54,19 +57,19 @@ And add the following lines to your AppDelegate's `application:didFinishLaunchin
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     //Initialise Segment
     SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"XXXXXXXXXXXXXXXXXXXXXXXXXXX"];
-    
+
     //Additional Segment Configuration
     configuration.trackApplicationLifecycleEvents = NO; // Enable this to record certain application events automatically!
     configuration.recordScreenViews = NO; // Enable this to record screen views automatically!
-    
+
     //Register WebEngage Integration With Segment
     [configuration use:[WEGSegmentIntegrationFactory instanceWithApplication:application launchOptions:launchOptions]];
-    
+
     [SEGAnalytics setupWithConfiguration:configuration];
-    
+
     return YES;
 }
 ```
@@ -81,7 +84,7 @@ When a user is identified, Segment will send that user's information to WebEngag
 
 ## Track
 
-When you `track` an event, Segment will send that event and its properties to WebEngage. Each event will have the necessary data about the user (`anonymousId` and `userId`) who performed the event. 
+When you `track` an event, Segment will send that event and its properties to WebEngage. Each event will have the necessary data about the user (`anonymousId` and `userId`) who performed the event.
 
 An event name can be maximum 50 characters long. Event attribute values can be booleans, numbers, strings and dates only.
 The maximum length of attribute names is 50 characters and of String data type attribute values is 1000 characters.

@@ -1,5 +1,5 @@
 ---
-
+title: NorthStar by Growthhackers
 ---
 [NorthStar by Growthhackers](http://growthhackers.com/software) provides a project management tool for growth teams, allowing companies to create and prioritize ideas, run experiments and gather data to learn upon!
 
@@ -13,7 +13,7 @@ _**NOTE:** The NorthStar by Growthhackers Destination is currently in beta, whic
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "NorthStar by Growthhackers" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find following the path: "Integrations" > "Segment" > "Settings". 
+3. Drop in the "API Key" into your Segment Settings UI which you can find following the path: "Integrations" > "Segment" > "Settings".
 
 ## Track
 

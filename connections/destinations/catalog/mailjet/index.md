@@ -1,4 +1,6 @@
-
+---
+title: Mailjet
+---
 This destination is maintained by Mailjet. For any issues with the destination, you may [contact their team](mailto:support@mailjet.com).
 
 ## Getting Started

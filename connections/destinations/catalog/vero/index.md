@@ -1,3 +1,6 @@
+---
+title: Vero
+---
 Our Vero destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-vero), [Server](https://github.com/segmentio/integration-vero).
 
 ## Getting Started
@@ -21,7 +24,7 @@ When you call [`identify`](/docs/spec/identify/) on analytics.js, we augment `tr
 
 If no `email` is attached, the user is created in Vero but cannot be emailed. If you send omit the `userId`, Vero will use the email as the ID, which is is not recommended. Check out the [Vero docs](http://www.getvero.com/help/adding-data-to-vero/creating-and-matching-vero-user-ids/) for more information.
 
-A `userId` is a required value for all types of calls. Be sure you call `identify` with a `userId` for subsequent `track` calls to populate into Vero correctly. For server side calls, you will have to manually pass in the `userId` at the top level. 
+A `userId` is a required value for all types of calls. Be sure you call `identify` with a `userId` for subsequent `track` calls to populate into Vero correctly. For server side calls, you will have to manually pass in the `userId` at the top level.
 
 ### Server Side
 

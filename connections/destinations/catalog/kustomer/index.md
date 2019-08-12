@@ -1,5 +1,5 @@
 ---
-
+title: Kustomer
 ---
 [Kustomer](https://www.kustomer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the next-generation customer management platform for the people-first enterprise. It enables support teams to get a holistic view of the customers they are engaging with, resulting in meaningful interactions between businesses and customers.
 
@@ -15,7 +15,7 @@ _**NOTE:** The Kustomer data source is currently in beta, which means that they 
 2. Search for "Kustomer" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. If this is the first time setting up Kustomer as a destination, you'll need to install the Segment App in your Kustomer Account.
 4. In your Kustomer account, go to **Settings** > **Apps Directory** and install the **Segment** App.
-5. After installing the Segment App, you need to go to the **Segment App Settings Page** listed directly underneath the Apps Directory page. From this page you will need to click the large green "Enable with Segment" button. 
+5. After installing the Segment App, you need to go to the **Segment App Settings Page** listed directly underneath the Apps Directory page. From this page you will need to click the large green "Enable with Segment" button.
 
 **NOTE:** Kustomer stores anonymous activity for 30 days but you will not see this activity in their UI unless the customer is identified using the [Identify](https://segment.com/docs/destinations/kustomer/#identify) call.
 
@@ -55,7 +55,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Identify calls will be sent to Kustomer which will create or update a standard customer object record. If a record with a corresponding `userId` exists, that record will be updated. If a customer record doesn't already exist, a new customer record will be created. 
+Identify calls will be sent to Kustomer which will create or update a standard customer object record. If a record with a corresponding `userId` exists, that record will be updated. If a customer record doesn't already exist, a new customer record will be created.
 
 All of the overlapping attributes in the Segment [traits](https://segment.com/docs/spec/identify/#traits) documentation are mapped to standard Kustomer attributes by default. In addition to the Segment traits, the following attributes are automatically mapped from Segment to Kustomer:
 
@@ -71,7 +71,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```
 analytics.track("Registered", {
-  plan: "Pro Annual", 
+  plan: "Pro Annual",
   accountType: "Facebook",
   kustomer_session_id:"abc123"
 });

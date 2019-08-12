@@ -1,3 +1,7 @@
+---
+title: SendwithUs
+---
+
 [Our SendwithUs destination code](https://github.com/segmentio/integration-sendwithus) is all open-source on GitHub if you want to check it out.
 
 ## Identify

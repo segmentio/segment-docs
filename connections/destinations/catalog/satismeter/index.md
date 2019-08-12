@@ -1,3 +1,7 @@
+---
+title: SatisMeter
+---
+
 [Our SatisMeter destination code](https://github.com/segment-integrations/analytics.js-integration-satismeter) is all open-source on GitHub if you want to check it out.
 
 See SatisMeter in action on their [sample app](https://app.satismeter.com/sample).

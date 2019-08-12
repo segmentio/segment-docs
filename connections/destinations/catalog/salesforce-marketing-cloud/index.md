@@ -1,4 +1,6 @@
-
+---
+title: Salesforce Marketing Cloud
+---
 ## Getting Started
 
 Segment's Salesforce Marketing Cloud destination allows you to add contacts without using SOAP APIs.
