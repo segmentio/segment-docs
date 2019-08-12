@@ -1,4 +1,7 @@
-This destination is maintained by Treasure Data. 
+---
+title: Treasure Data
+---
+This destination is maintained by Treasure Data.
 
 Once the Segment library is integrated with your server, toggle Treasure Data on in your Segment destinations, and add your API key (which you can find in your Treasure Data console). You will also need to specify the destination database name.
 

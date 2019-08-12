@@ -1,3 +1,7 @@
+---
+title: Taplytics
+---
+
 Our Taplytics destination code is open sourced on Github. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-taplytics), [Android](https://github.com/segment-integrations/analytics-android-integration-taplytics).
 
 ## Getting Started

@@ -1,3 +1,6 @@
+---
+title: SaaSquatch
+---
 [Our Saasquatch destination code](https://github.com/segment-integrations/analytics.js-integration-saasquatch) is all open-source on GitHub if you want to check it out.
 
 ## Getting Started

@@ -1,5 +1,5 @@
 ---
-
+title: Survicate
 ---
 [Survicate](https://survicate.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete toolkit for customer feedback. From website optimization and customer satisfaction surveys to complex customer insight processes integrated with your email campaigns.
 
@@ -27,15 +27,15 @@ analytics.identify('userId123', {
   companySize: '50'
 });
 ```
-When you call Identify, we pass Segment traits as respondents' attributes to Survicate. They can be used to trigger website surveys or filter survey results. 
+When you call Identify, we pass Segment traits as respondents' attributes to Survicate. They can be used to trigger website surveys or filter survey results.
 
-All traits passed in Identify calls will be available in Survicate - once you view a respondent profile or export survey data. 
+All traits passed in Identify calls will be available in Survicate - once you view a respondent profile or export survey data.
 
 All `camelCase` attribute keys are translated to `snake_case`.
 
 Attributes which are standardized in Survicate include: `first_name`, `last_name`, `email`, `organization`, `department`, `job_title`, `phone`, `website`, `country`, `address_one`, `address_two`, `city`, `state`, `zip`, `fax`, `annual_revenue`, `employees`
 
-All *object attributes* will be flattened to attributes prefixed by object key. All *array attributes* will be omitted. 
+All *object attributes* will be flattened to attributes prefixed by object key. All *array attributes* will be omitted.
 
 ```
 analytics.identify('1234', {
@@ -73,7 +73,7 @@ analytics.group('group123', {
 });
 ```
 
-All Group traits will be passed to respondent attributes with `group_` prefix. All `camelCase` attribute keys are translated to `snake_case`. All *object attributes* will be flattened to attributes prefixed by object key. All *array attributes* will be omitted. 
+All Group traits will be passed to respondent attributes with `group_` prefix. All `camelCase` attribute keys are translated to `snake_case`. All *object attributes* will be flattened to attributes prefixed by object key. All *array attributes* will be omitted.
 
 ```
 analytics.group('group123', {
@@ -105,7 +105,7 @@ The above described call creates the following respondent's traits in Survicate:
 
 ### Sending survey answers to Segment
 
-Once the Segment integration is enabled in Survicate Integrations tab, it starts sending track events from your client-side source. Here's a sample call that will be triggered when a survey is answered. 
+Once the Segment integration is enabled in Survicate Integrations tab, it starts sending track events from your client-side source. Here's a sample call that will be triggered when a survey is answered.
 
 ```
 analytics.track('survicate_survey_answered', {

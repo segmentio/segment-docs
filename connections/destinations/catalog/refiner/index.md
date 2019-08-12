@@ -1,5 +1,5 @@
 ---
-
+title: Refiner
 ---
 [Refiner](https://refiner.io?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a user qualification and lead scoring platform for B2B SaaS companies with a free trial or freemium model. Refiner helps self-service SaaS providers to identify and convert more high-revenue accounts.
 
@@ -44,10 +44,10 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {
-  name: "Initech", 
+  name: "Initech",
   industry: "Technology",
-  employees: 329, 
-  plan: "enterprise", 
+  employees: 329,
+  plan: "enterprise",
   "total billed": 830
 });
 ```

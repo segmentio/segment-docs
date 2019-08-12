@@ -1,3 +1,6 @@
+---
+title: Woopra
+---
 Our Woopra destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-woopra), [Server](https://github.com/segmentio/integration-woopra).
 
 ## Getting Started
@@ -13,7 +16,7 @@ Woopra is supported on client-side and server-side.
 
 ## Page
 
-When you call `.page()` in the browser, we will pass all the properties of the page such as `url`, `referrer`, `path`, and etc. If you pass a `name` in your `.page()` call, we will send that as `title` to Woopra. 
+When you call `.page()` in the browser, we will pass all the properties of the page such as `url`, `referrer`, `path`, and etc. If you pass a `name` in your `.page()` call, we will send that as `title` to Woopra.
 
 *Note*: `.page()` calls are not supported when sending those events server side or via mobile libraries.
 
@@ -59,7 +62,7 @@ If you want your server side events to be seen as part of the same "source" or s
 ```js
 analytics.ready(function(){
   var woopraCookie = window.woopra.cookie;
-  
+
   // pass this value to your server
 });
 ```
@@ -86,8 +89,8 @@ This should let Woopra know that this server side event is part of the same sess
 
 ### Split user profiles
 
-If you are seeing split user profiles, the most likely culprit is that you are calling `.identify()` only on the backend using one of our server side libraries but **NOT** on the client side with `analytics.js`. 
+If you are seeing split user profiles, the most likely culprit is that you are calling `.identify()` only on the backend using one of our server side libraries but **NOT** on the client side with `analytics.js`.
 
-Calling `.identify()` in the browser will effectively map the `userId` you passed in with the `wooTracker` cookie value. So in the event that you call `.identify()` on the server side first, you **MUST** call `.identify()` on the client side as well to tie the `wooTracker` cookie to that `userId`. 
+Calling `.identify()` in the browser will effectively map the `userId` you passed in with the `wooTracker` cookie value. So in the event that you call `.identify()` on the server side first, you **MUST** call `.identify()` on the client side as well to tie the `wooTracker` cookie to that `userId`.
 
-Doing so will ensure that duplicate profiles are not created. 
+Doing so will ensure that duplicate profiles are not created.

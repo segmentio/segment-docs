@@ -1,3 +1,7 @@
+---
+title: Smyte
+---
+
 This destination is maintained by Smyte.
 
 - - -

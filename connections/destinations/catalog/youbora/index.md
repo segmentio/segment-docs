@@ -1,3 +1,6 @@
+---
+title: Youbora
+---
 ## Getting Started
 
 ### Web Destination
@@ -168,7 +171,7 @@ analytics.track('Video Playback Completed', { session_id: 1 });
 
 When an ad begins to load, you should use our [Video Ad
 Started](/docs/spec/video/#ad-events) event. We will map the properties from
-these events to the following Youbora video metadata fields: 
+these events to the following Youbora video metadata fields:
 
 <table>
     <tr>
@@ -308,6 +311,6 @@ See the below example for what a working implementation looks like:
       });
       analytics.page();
     }}();
-      
+
   </script>
 ```

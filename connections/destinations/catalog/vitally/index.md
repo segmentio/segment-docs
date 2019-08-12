@@ -1,5 +1,5 @@
 ---
-
+title: Vitally
 ---
 
 [Vitally](https://vitally.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer success platform for B2B SaaS companies that wraps your unified customer data with powerful analytics, alerts, and workflows to help you build successful customers.
@@ -20,7 +20,7 @@ Enabling Vitally as a destination in Segment can be done in one click from your 
   ![](https://i.imgur.com/6fztyvS.png)
 
 2. In a separate tab/window, make sure you are logged into your Segment account
-3. Configure the Segment integration via the one-click "Enable with Segment" button. Choose the primary source of product usage data in Segment and Segment will automatically create a destination for Vitally: 
+3. Configure the Segment integration via the one-click "Enable with Segment" button. Choose the primary source of product usage data in Segment and Segment will automatically create a destination for Vitally:
 
   ![](https://i.imgur.com/uGHrIvX.gif)
 
@@ -69,9 +69,9 @@ If you haven't had a chance to review the spec, please take a look to understand
 
 ```
 analytics.group("accountId123", {
-  name: "Initech", 
-  industry: "Technology", 
-  plan: "enterprise", 
+  name: "Initech",
+  industry: "Technology",
+  plan: "enterprise",
   mrr: 2000
 });
 ```

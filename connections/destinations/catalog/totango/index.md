@@ -1,3 +1,6 @@
+---
+title: Totango
+---
 Our Totango destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-totango), [Server](https://github.com/segmentio/integration-totango).
 
 ## Getting Started
@@ -125,4 +128,3 @@ analytics.identify({
   }
 });
 ```
-

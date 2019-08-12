@@ -1,5 +1,5 @@
 ---
-
+title: Zapier
 beta: true
 redirect_from:
 - /integrations/zapier/

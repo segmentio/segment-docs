@@ -1,6 +1,5 @@
 ---
 title: Redshift
-
 ---
 
 This guide will explain how to provision a Redshift cluster and allow the Segment warehouse connector to write to it.
@@ -191,4 +190,3 @@ Segment allows you to schedule the time and frequency of loading data into your 
 You can schedule your warehouse syncs by going to `Warehouse > Settings > Sync Schedule`. You can schedule up to the number of syncs allowed on your billing plan.
 
 ![sync schedule image](../images/syncsched.png)
-

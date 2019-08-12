@@ -1,13 +1,13 @@
 ---
-
+title: Wigzo
 ---
 
-[Wigzo](https://www.wigzo.com/) is a Contextual Marketing Platform that helps marketers send Smarter Communication in Email or In-App. 
-Which means changing content dynamically based on User behaviour on Website and App. 
+[Wigzo](https://www.wigzo.com/) is a Contextual Marketing Platform that helps marketers send Smarter Communication in Email or In-App.
+Which means changing content dynamically based on User behaviour on Website and App.
 Using Wigzo's predictive technologies companies can produce Dynamic content blocks which automatically populates in emails based on User behaviour and Context.
 This destination is maintained by Wigzo. For any issues with the destination, please [reach out to their team](mailto:support@wigzo.com)
 
-This document was last updated on November 7, 2018. 
+This document was last updated on November 7, 2018.
 If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please let us know!
 
 ## Getting Started
@@ -29,7 +29,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page();
 ```
 
-When you call `.page()` in the browser, we will pass all the properties of the page such as `url`, `title`, `path` etc. If you pass a name in your `.page()` call, we will send that as title to Wigzo. 
+When you call `.page()` in the browser, we will pass all the properties of the page such as `url`, `title`, `path` etc. If you pass a name in your `.page()` call, we will send that as title to Wigzo.
 
 ## Identify
 
@@ -74,4 +74,4 @@ var options = {
 analytics.track('Product Viewed', productData, options);
 ```
 
-**IMPORTANT**: Please make sure to follow the Segment ecommerce spec and include the `product_id` for product related events 
+**IMPORTANT**: Please make sure to follow the Segment ecommerce spec and include the `product_id` for product related events

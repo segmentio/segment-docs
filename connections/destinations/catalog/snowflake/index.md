@@ -1,6 +1,5 @@
 ---
 title: Snowflake
-
 ---
 
 [Snowflake](https://docs.snowflake.net/manuals/index.html) is a data warehouse built for the cloud. Snowflake delivers performance, simplicity, concurrency and affordability.
@@ -101,14 +100,14 @@ SEGMENT_USER#(no warehouse)@(no database).(no schema)>SELECT 1;
 +---+
 1 Row(s) produced. Time Elapsed: 0.093s
 SEGMENT_USER#(no warehouse)@(no database).(no schema)>USE WAREHOUSE "SEGMENT_WAREHOUSE";
-+----------------------------------+                                            
++----------------------------------+
 | status                           |
 |----------------------------------|
 | Statement executed successfully. |
 +----------------------------------+
 1 Row(s) produced. Time Elapsed: 0.118s
 SEGMENT_USER#SEGMENT_WAREHOUSE@(no database).(no schema)>USE DATABASE "SEGMENT_EVENTS";
-+----------------------------------+                                            
++----------------------------------+
 | status                           |
 |----------------------------------|
 | Statement executed successfully. |

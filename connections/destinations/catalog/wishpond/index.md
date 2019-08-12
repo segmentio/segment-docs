@@ -1,4 +1,5 @@
 ---
+title: Wishpond
 beta: true
 ---
 

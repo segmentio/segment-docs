@@ -1,5 +1,5 @@
 ---
-
+title: Proof
 ---
 [Proof Experiences](https://useproof.com/experiences?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps B2B SaaS businesses increase new trials and demos by creating delightfully personalized experiences for their visitors and customers.
 
@@ -26,7 +26,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page()
 ```
 
-Page calls will be sent to Proof Experiences as a `pageview`. 
+Page calls will be sent to Proof Experiences as a `pageview`.
 
 
 ## Identify

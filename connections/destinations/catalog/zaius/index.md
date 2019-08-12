@@ -1,3 +1,7 @@
+---
+title: Zaius
+---
+
 This destination is maintained by Zaius.
 
 - - -
@@ -32,5 +36,3 @@ Zaius will be able to process any of your track events and properties sent throu
 
 ### Page
 The Zaius platform processes all of the page events passed into the Segment as well.
-
-

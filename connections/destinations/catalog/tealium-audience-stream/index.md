@@ -1,6 +1,6 @@
 ---
 beta: true
-title: 'Tealium AudienceStream'
+title: Tealium AudienceStream
 ---
 
 ## Getting Started
@@ -16,5 +16,3 @@ Segment `track` events will pass through to Tealium AudienceStream as `link` eve
 ## Page / Screen
 
 Segment `page` and `screen` events will pass through to Tealium AudienceStream as `view` events. Any event `properties` and the `context` object will be passed as part of the payload.
-
-

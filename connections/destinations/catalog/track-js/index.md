@@ -1,9 +1,13 @@
+---
+title: Track JS
+---
+
 ## Getting Started
 
 When you toggle on Track JS as a destination in Segment, this is what happens:
 
 + Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading Track JS onto your page. This means you should remove Track JS' snippet from your page.
-+ Track JS will automatically start recording error data. 
++ Track JS will automatically start recording error data.
 
 Since Track JS only records data about errors, it does not collect any of the data represented by our API.
 

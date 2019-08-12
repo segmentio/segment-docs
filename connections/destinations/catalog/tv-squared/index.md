@@ -1,5 +1,5 @@
 ---
-
+title: TV Squared
 ---
 
 [TV Squared](https://tvsquared.com/) enables you to pull same-day TV performance analytics so you can manage TV spend, and create data-driven TV media plans based on network, days, programs, and genres. Our TV Squared Destination is open-source. You can browse the code [in Github](https://github.com/segment-integrations/analytics.js-integration-tvsquared).
@@ -28,7 +28,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page();
 ```
 
-When you call `page` in Analytics.js, we call TV Squared's `Basic Hit Tracker`. Keep in mind, our Analytics.js library will **automatically fire a `page` call on every page on which it is loaded**, and so unless you want to call `Basic Hit Tracker` more than once, you shouldn't need to do anything additional here. 
+When you call `page` in Analytics.js, we call TV Squared's `Basic Hit Tracker`. Keep in mind, our Analytics.js library will **automatically fire a `page` call on every page on which it is loaded**, and so unless you want to call `Basic Hit Tracker` more than once, you shouldn't need to do anything additional here.
 
 ## Track
 
@@ -43,9 +43,9 @@ analytics.track('Completed Purchase', {
 });
 ```
 
-When you call [`track`](/docs/spec/track/) in Analytics.js, we call TV Squared's `Action Tracker` - where in addition to the `event name`, you can specify a dictionary of properties that will get sent to TV Squared. 
+When you call [`track`](/docs/spec/track/) in Analytics.js, we call TV Squared's `Action Tracker` - where in addition to the `event name`, you can specify a dictionary of properties that will get sent to TV Squared.
 
-As per the example above, TV Squared **requires** that you pass in a `revenue`, `productType`, `orderId`, and `promo` property into each of your calls. If you cannot provide a value for one or more of the aforementioned properties, don't worry, you can simply pass in an empty string to send the event. 
+As per the example above, TV Squared **requires** that you pass in a `revenue`, `productType`, `orderId`, and `promo` property into each of your calls. If you cannot provide a value for one or more of the aforementioned properties, don't worry, you can simply pass in an empty string to send the event.
 
 ### Event Whitelisting
 

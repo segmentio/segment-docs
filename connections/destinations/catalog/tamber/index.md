@@ -1,5 +1,5 @@
 ---
-
+title: Tamber
 ---
 [Tamber](https://tamber.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables you to build your own Google-scale recommendation features in minutes. Deploy cutting edge deep learning models, and run A/B tests to optimize results.
 
@@ -16,7 +16,7 @@ _**NOTE:** The Tamber Destination is currently in beta, which means that they ar
 3. You may now use either the one-click activation button to complete your setup or continue reading the below steps to manually add the Tamber Destination from within Segment using the "API Key" displayed.
 4. From your Segment UI's Destinations page click on "Add Destination".
 5. Search for "Tamber" within the Destinations Catalog and confirm the Source you'd like to connect to.
-6. Drop the "API Key" into your Segment Settings UI. If you do not have the key from the steps above, you can find it in your [Tamber dashboard](https://dashboard.tamber.com) as the "Project Key" in your project's dashboard. 
+6. Drop the "API Key" into your Segment Settings UI. If you do not have the key from the steps above, you can find it in your [Tamber dashboard](https://dashboard.tamber.com) as the "Project Key" in your project's dashboard.
 
 
 ## Identify
@@ -38,7 +38,7 @@ Identify calls will be sent to Tamber as a [`user-update`](https://tamber.com/do
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call to Segment would look like: 
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call to Segment would look like:
 
 ```
 analytics.track("Watched", {

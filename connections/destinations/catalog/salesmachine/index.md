@@ -1,3 +1,6 @@
+---
+title: Salesmachine
+---
 This destination is maintained by Salesmachine.
 
 ## Getting Started
@@ -29,4 +32,3 @@ When you call `group`, we will send an account call to Salesmachine.io and link 
 ## Alias
 
 When you call `alias`, we will send an alias call to Salesmachine.io.
-

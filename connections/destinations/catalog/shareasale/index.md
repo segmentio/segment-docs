@@ -1,4 +1,6 @@
-
+---
+title: ShareASale
+---
 ## Getting Started
 
 When you toggle on ShareASale in Segment, this is what happens:
@@ -19,4 +21,3 @@ ShareASale only supports the event "Order Completed", which requires the followi
 - `orderId`
 - `total` or `subtotal`
 - an optional `repeat` property to signify whether a customer has bought from you before. Valid values for this property are `true` or `false`.
-

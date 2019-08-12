@@ -1,7 +1,7 @@
 ---
-
+title: Strikedeck
 ---
-[Strikedeck](https://strikedeck.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Customer Success platform which actively manages customer relationships to reduce churn, increase existing revenue and influence new sales. Strikedeck includes  Customer Engagement Analytics, Health Scorecard, Notifications, Recommendations & Actions. 
+[Strikedeck](https://strikedeck.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Customer Success platform which actively manages customer relationships to reduce churn, increase existing revenue and influence new sales. Strikedeck includes  Customer Engagement Analytics, Health Scorecard, Notifications, Recommendations & Actions.
 
 This destination is maintained by Strikedeck. For any issues with the destination, please [reach out to their team](mailto:support@strikedeck.com).
 
@@ -14,7 +14,7 @@ _**NOTE:** The Strikedeck Destination is currently in beta, which means that the
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Strikedeck" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your Strikedeck settings page. Go to Settings -> Connector and click on "Segment". Copy the API Key from this page. 
+3. Drop in the "API Key" into your Segment Settings UI which you can find from your Strikedeck settings page. Go to Settings -> Connector and click on "Segment". Copy the API Key from this page.
 
 ## Page
 
@@ -24,7 +24,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page()
 ```
 
-Page calls will be sent to Strikedeck as a `pageview`. 
+Page calls will be sent to Strikedeck as a `pageview`.
 
 
 ## Screen
@@ -35,7 +35,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Screen calls will be sent to Strikedeck as a `screenview`. 
+Screen calls will be sent to Strikedeck as a `screenview`.
 
 
 ## Identify

@@ -1,7 +1,7 @@
 ---
-
+title: SlicingDice
 ---
-[SlicingDice](https://slicingdice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an all-in-one data warehouse. It's a fully managed cloud data warehouse with optional built-in tools for data integration, exploration, visualization and machine learning. 
+[SlicingDice](https://slicingdice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an all-in-one data warehouse. It's a fully managed cloud data warehouse with optional built-in tools for data integration, exploration, visualization and machine learning.
 
 This destination is maintained by SlicingDice. For any issues with the destination, please [reach out to their team](mailto:support@slicingdice.com).
 
@@ -80,10 +80,10 @@ Track calls will be sent to SlicingDice using the following columns:
 If you haven’t had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. An example call would look like:
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {
-  name: "Initech", 
+  name: "Initech",
   industry: "Technology",
-  employees: 329, 
-  plan: "enterprise", 
+  employees: 329,
+  plan: "enterprise",
   "total billed": 830
 });
 ```

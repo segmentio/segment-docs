@@ -1,3 +1,6 @@
+---
+title: Route
+---
 [Our Route destination code](https://github.com/segment-integrations/analytics.js-integration-route) is all open-source on GitHub if you want to check it out.
 
 ## Getting Started

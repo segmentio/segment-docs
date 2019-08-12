@@ -1,5 +1,5 @@
 ---
-
+title: UserIQ
 ---
 
 [UserIQ](http://useriq.com) empowers companies to deliver what each user needs to be successful in every moment, starting with adoption. Our platform collects user engagement data from your product and allows you to communicate to your users when they are most engaged: within the product itself.
@@ -24,7 +24,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page("pageName")
 ```
 
-Page calls will be sent to UserIQ as a `pageview`. 
+Page calls will be sent to UserIQ as a `pageview`.
 
 
 ## Screen
@@ -35,7 +35,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Screen calls will be sent to UserIQ as a `screenview`. 
+Screen calls will be sent to UserIQ as a `screenview`.
 
 
 ## Identify

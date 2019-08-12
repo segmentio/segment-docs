@@ -232,7 +232,7 @@ Furthermore, if you do not provide Segment with **all** of the primary key colum
 
 ### Map UserId
 
-In order to attribute the event record in your Supplemental Tables with the matching records in your Profile Lists or Profile Extension Tables, we recommend enabling the **Map Segment UserId** option. If enabled, we will send the `userId` attached to the `.track()` payload as a Responsys field. 
+In order to attribute the event record in your Supplemental Tables with the matching records in your Profile Lists or Profile Extension Tables, we recommend enabling the **Map Segment UserId** option. If enabled, we will send the `userId` attached to the `.track()` payload as a Responsys field.
 
 **IMPORTANT**: Make sure if you are mapping an existing Supplemental Table, you have created a field in your table called `CUSTOMER_ID_`! Otherwise if you have not created the table and is relying on Segment to do so, we will create the field `CUSTOMER_ID_` and set the field type as `STR500`.
 

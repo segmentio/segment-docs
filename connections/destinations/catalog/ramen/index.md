@@ -1,3 +1,7 @@
+---
+title: Ramen
+---
+
 ## Getting Started
 ​
 When you toggle on Ramen in Segment, this is what happens:

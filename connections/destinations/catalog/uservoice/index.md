@@ -1,5 +1,5 @@
 ---
-
+title: UserVoice
 ---
 
 [Uservoice](https://www.uservoice.com/) is a customer support and feedback tool that lets your users submit feedback right from your site, and helps you manage all the incoming requests.
@@ -44,10 +44,10 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {
-  name: "Initech", 
+  name: "Initech",
   industry: "Technology",
-  employees: 329, 
-  plan: "enterprise", 
+  employees: 329,
+  plan: "enterprise",
   "total billed": 830
 });
 ```

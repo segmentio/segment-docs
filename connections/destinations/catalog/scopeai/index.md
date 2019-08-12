@@ -1,5 +1,5 @@
 ---
-
+title: ScopeAI
 ---
 [ScopeAI](https://www.getscopeai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) improves communication between support and product teams by aggregating user feedback and tracking the impact of bugs or issues and feature requests.
 
@@ -27,9 +27,9 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page()
 ```
 
-Page calls will be sent to ScopeAI as a `pageview`. 
+Page calls will be sent to ScopeAI as a `pageview`.
 
-You can filter by this data in ScopeAI by finding "Page View" under "User Attributes". 
+You can filter by this data in ScopeAI by finding "Page View" under "User Attributes".
 
 This data can be used to customize analysis on ScopeAI, information on how can be found [here](http://help.getscopeai.com/getting-started/customizing-analysis).
 
