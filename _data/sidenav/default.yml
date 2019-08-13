@@ -29,8 +29,20 @@ sections:
     section:
       - path: "/connections/warehouses"
         title: Overview
+      - path: "/connections/warehouses/choose-warehouse"
+        title: Choosing a Warehouse
+      - path: "/connections/warehouses/add-warehouse-users"
+        title: Add users to a Warehouse
+      - path: "/connections/warehouses/redshift-faq"
+        title: "Redshift Best Practices"
+      - path: "/connections/warehouses/redshift-tuning"
+        title: "Improving Redshift performance"
+      - path: "/connections/warehouses/warehouse-errors"
+        title: "Warehouse Error codes"
+      - path: "/connections/warehouses/faq"
+        title: Warehouses FAQs
       - path: "/connections/warehouses/catalog"
-        title: Warehouses catalog
+        title: Warehouses Catalog
 - section_title: Guides
   section:
   - path: "/guides"
@@ -72,6 +84,10 @@ sections:
       title: How do we implement an e-commerce tracking plan?
     - path: "/guides/best-practices/measure-marketing-roi"
       title: How do I measure the ROI of my Marketing Campaigns?
+    - path: "/guides/best-practices/measure-marketing-roi2"
+      title: "Use Warehouses to measure marketing ROI"
+    - path: "/guides/best-practices/forecast-with-sql"
+      title: Forecasting with SQL and Warehouses
     - path: "/guides/best-practices/preparing-for-gdpr"
       title: Preparing for the GDPR
     - path: "/guides/best-practices/test-connections"
