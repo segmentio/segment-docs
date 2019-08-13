@@ -10,6 +10,6 @@ Sources belong to a workspace and the URL will look something like this:
 
 You can create new sources using the button in the workspace view. Each source you create will have a write key which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/sources/website/analytics.js/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/sources/website/analytics.js/quickstart/) includes:
 
-```
+```js
 analytics.load("YOUR_WRITE_KEY");
 ```

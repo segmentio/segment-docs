@@ -19,13 +19,13 @@ For our analysis walkthrough, we’ll use fictitious e-commerce and marketing da
 Toastmates is currently running these two campaigns:
 
 *   “National Toast Day”, where $5 off was applied if you made a purchase on that day
-    
+
 *   “A Toast To Your Friend”, where you can buy toast for a friend at $5 off
-    
+
 
 Each of these campaigns used a combination of channels. Here is a table with the channels and corresponding UTM parameters so when we build the SQL query, we can make sure all of the traffic sources are accounted for.
 
-![](../images/asset_WwwTDt1y.png)
+![](images/asset_WwwTDt1y.png)
 
 We’ll use SQL below to measure the performance of each campaign and what that means for future marketing activities.
 
@@ -35,7 +35,7 @@ The following query creates a table where each row is a customer and the columns
 
 Feel free to copy and paste the below query for your analysis so long as you replace `national-toast-day` with your own UTM campaign parameter.
 
-```
+```sql
     with
 
     users as (
@@ -87,11 +87,11 @@ Feel free to copy and paste the below query for your analysis so long as you rep
 
 Here are the first four rows of the resulting table:
 
-![](../images/asset_F8fdbUBk.jpg)
+![](images/asset_F8fdbUBk.jpg)
 
 Then, we can use tweak the query above into the one below to perform some simple `COUNT` and `SUM` on the previous table to get conversion metrics as well as total revenue derived from the campaign.
 
-```
+```sql
     with
 
     users as (
@@ -145,7 +145,7 @@ Then, we can use tweak the query above into the one below to perform some simple
 
 Here is the resulting table:
 
-![](../images/asset_wiAeFR79.png)
+![](images/asset_wiAeFR79.png)
 
 This analysis not only gives us a great snapshot of the conversion points along each campaign’s funnel, but also shows that we’ve generated $3,100.37 from the National Toast Day campaign and $3,824.68 from the Toast Your Friend campaign. Also we can see that the quality of the traffic from the National Toast Day is higher, but we’ve had more total traffic from Toast Your Friend, which makes sense since it’s an ongoing campaign.
 
@@ -158,9 +158,9 @@ The main costs that are incorporated in an ROI calculation are salaries (pro-rat
 The costs associated with a given campaign consist of two major pieces: the person-hour cost and any associated media spend.
 
 *   Calculating the pro-rated person-hour is an estimate of the number of hours and people used to setup and manage the campaign, then multiplied by the hourly rates based off their annual salaries.
-    
+
 *   The media spend is the advertising cost for distributing creatives to generate traffic to your store
-    
+
 
 _Want to easily export advertising data from_ [Google Adwords](https://segment.com/sources/adwords) _or_ [Facebook Ads](https://segment.com/sources/facebook-ads)_?_ _Check out_ [Segment Sources](https://segment.com/sources).
 
@@ -172,7 +172,7 @@ Campaign ROI = (Profit Attributed to Campaign – Campaign Cost) / Campaign Cost
 
 Here is a spreadsheet to illustrate the ROI calculation for both campaigns:
 
-![](../images/asset_BMZJWW6A.png)
+![](images/asset_BMZJWW6A.png)
 
 Though ROI numbers are one success metric, it’s an important benchmark for comparing performance when launching new campaigns or comparing against past campaigns.
 
@@ -186,7 +186,7 @@ The analysis is similar to measuring the performance across a single campaign, w
 
 You can copy the below into your favorite editor, as long as you change out the `context_campaign_name` and `context_campaign_medium` parameters to ones that applies to your business.
 
-```
+```sql
     with
 
     users as (
@@ -241,7 +241,7 @@ You can copy the below into your favorite editor, as long as you change out the 
 
 The resulting table:
 
-![](../images/asset_Umn2E6DH.png)
+![](images/asset_Umn2E6DH.png)
 
 Since the National Toast Day campaign is relatively new, the majority of the traffic is from the email and an article (“news”). But we can see that the social channels have a lower conversion from store visits to product views. Email has the best overall conversion to revenue, which may be attributed to the recipients already familiar with the Toastmates brand or having previously had a stellar end-to-end shopping experience.
 

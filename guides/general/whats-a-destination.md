@@ -8,4 +8,4 @@ All these tools run on the same data: who are your customers and what are they d
 
 We eliminate this process by introducing an abstraction layer. You just send your data to us. We understand it, translate it, and send it along to any destination you toggle on in the Segment destinations catalog. Immediately, your user data will start flowing into those tools’ dashboards. No extra code required!
 
-We support many categories of destinations, from advertising to marketing, email to customer support, CRM to user testing, and even data warehouses. You can view a complete list of our [destinations](https://segment.com/docs/integrations) or check out our [destination page](https://segment.com/integrations) for a searchable list broken down by category.
+We support many categories of destinations, from advertising to marketing, email to customer support, CRM to user testing, and even data warehouses. You can view a complete list of our [destinations](https://segment.com/docs/destinations) or check out our [destination page](https://segment.com/destinations) for a searchable list broken down by category.
