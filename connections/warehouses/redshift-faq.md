@@ -24,7 +24,7 @@ Like with most data warehouses, column data types (string, integer, float, etc.)
 
 All Segment-managed schemas have a default VARCHAR size of 512 in order to keep performance high. If you wish to increase the VARCHAR size, you can run the following query to create a temp column with the VARCHAR size of your choosing. The query then copies over the data from the original column, drops the original column and finally renames the temp column back to the original column. Keep in mind that this process will not backfill any truncated data. The only way to currently backfill this truncated data is to run a backfill which requires a Business Tier Segment account. NOTE: The following query will only work if you’re changing the VARCHAR size of a string column. Please do not use this query to change a column type (i.e. integer to float).
 
-![](../images/asset_gDRQKtQF.png)
+![](images/asset_gDRQKtQF.png)
 
 ### Blacklisted track call properties:
 
