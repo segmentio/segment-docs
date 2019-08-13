@@ -234,3 +234,5 @@ As a current user of Segment-Firebase iOS, you will be able to pull in the lates
 For details on the new mapping, you can check out our documentation [here](https://segment.com/docs/destinations/firebase/#event-mappings).
 
 Please let us know if you have any questions. We recommend upgrading as soon as possible, and please [let us know](/contact) if you have any feedback about both the Firebase iOS and Android betas.
+
+{% include content/integration-foot.md %}

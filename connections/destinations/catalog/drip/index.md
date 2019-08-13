@@ -26,3 +26,5 @@ When you call [`track`](/docs/spec/track/), we'll send the event to Drip with th
 ## Sending Data from Drip
 
 Drip supports sending [email events](/docs/spec/email/) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.
+
+{% include content/integration-foot.md %}

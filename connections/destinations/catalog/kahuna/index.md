@@ -139,3 +139,5 @@ For `Completed Order`, we will track the Kahuna User Attributes "Last Purchase D
 If you chose not to bundle the Kahuna Mobile SDK, then you will have to implement your own Push Message processors, and you won’t have access to Kahuna’s In-App feature.
 
 If you decide to implement your own Push Message processors, then make sure you pass the Push Tokens to Kahuna via Server Side.  You can do this by sending it inside `context.device.token`. We will send this to Kahuna as `push_token`.
+
+{% include content/integration-foot.md %}

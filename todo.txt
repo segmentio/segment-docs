@@ -1,53 +1,8 @@
 - redirects
+- Find and import google-cloud-storage
 - add {% include content/integration-foot.md %}  to anything that didn't have rewrite: true
 
 
-doubleclick-floodlight
-drip
-eloqua
-errorception
-extole
-facebook-pixel-server-side
-firebase
-framed.io
-freshdesk
-freshsales
-friendbuy
-frontleaf
-gauges
-google-adwords-new
-google-analytics
-google-cloud-pubsub
-google-cloud-storage
-gosquared
-hindsight
-hittail
-hull
-impact-radius
-infinario
-insidevault
-intellimize
-iron.io
-iterable
-kahuna
-keen-io
-kenshoo-infinity
-knowtify
-leadboxer
-librato
-linkedin-conversion-tag
-linkedin-insight-tag
-livechat
-localytics
-lytics
-madkudu
-mailjet
-marketo
-marketo-v2
-millennial-media
-moengage
-monetate
-moosend
 nanigans
 nielsen-dcr
 nudgespot

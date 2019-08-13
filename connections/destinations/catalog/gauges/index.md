@@ -24,3 +24,6 @@ When you call [`page`](/docs/spec/page/), we call Gauges' `track` method with no
 ### My visits aren't showing up in Gauges
 
 Gauges doesn’t record data from any browser where you’ve signed into Gauges. That way your data doesn’t get polluted by your own actions. If you want your browsing to show up in Gauges - open an incognito/private window in your browser.
+
+
+{% include content/integration-foot.md %} 

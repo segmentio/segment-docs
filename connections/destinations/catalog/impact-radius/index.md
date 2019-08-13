@@ -328,3 +328,6 @@ We integrate with Impact mobile attribution capabilities via our [Deep Link Open
     <td>googleaid</td>
   </tr>
 </table>
+
+
+{% include content/integration-foot.md %}

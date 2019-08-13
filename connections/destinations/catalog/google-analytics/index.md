@@ -903,3 +903,5 @@ Analytics.track(
 Google Analytics requires the `context.app.name` passed in each call. Since the `analytics-ios` SDK pulls it in [locally](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-110725), you may see the error "`context.app.name` required" if you are not providing a `CFBundleDisplayName` within your **Info.plist** file.
 
 To resolve this error, ensure you [provide a localized info dictionary](https://github.com/segmentio/analytics-ios/blob/760be85a5119c2e8bd31a745ce2ec30385a0ad69/Pod/Classes/Internal/SEGSegmentIntegration.m#L110) as outlined [here](https://developer.apple.com/library/ios/qa/qa1823/_index.html).
+
+{% include content/integration-foot.md %} 

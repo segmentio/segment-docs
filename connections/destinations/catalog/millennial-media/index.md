@@ -8,3 +8,5 @@ You'll need to map from the Segment event name to the Millennial Media Pixel ID 
 ### Getting your Pixel ID
 
 We built this destination off [this documentation](http://docs.millennialmedia.com/conversion-tracking/S2S/mobile-web.html) please refer to that or let us know if you have any questions!
+
+{% include content/integration-foot.md %}

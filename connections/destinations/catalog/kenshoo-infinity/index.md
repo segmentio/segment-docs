@@ -55,3 +55,6 @@ customParamObjectSchools_gradSchool_graduationYear: '2011',
 ```
 
 *Note*: All values are encoded.
+
+
+{% include content/integration-foot.md %}

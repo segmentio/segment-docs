@@ -1,5 +1,5 @@
 ---
-title: GoSquared 
+title: GoSquared
 ---
 
 ## Getting Started
@@ -62,3 +62,5 @@ GoSquared converts the [`group`](/docs/spec/group/) method into an identify call
 ## Ecommerce
 
 GoSquared supports our [Ecommerce tracking API](/docs/spec/ecommerce/v2/#order-completed), so the `Order Completed` event will be tracked as a [GoSquared Transaction](https://www.gosquared.com/docs/tracking/api/js#transactions).
+
+{% include content/integration-foot.md %}
