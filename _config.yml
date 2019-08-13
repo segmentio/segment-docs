@@ -13,6 +13,8 @@ defaults:
       layout: "page"
       hidden: false
       beta: false
+      seo-priority: 0.5
+      seo-changefreq: weekly
   - scope:
       path: "connections/destinations"
     values:
