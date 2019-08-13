@@ -845,8 +845,8 @@ For detailed information about each destination, select one from the list to lea
 
 ### Analyzing with SQL
 
-[How do I forecast LTV with SQL and Excel for e-commerce businesses?](/docs/guides/warehouses/how-to-forecast-ltv-with-sql-and-excel)
+[How do I forecast LTV with SQL and Excel for e-commerce businesses?](/docs/guides/data-driven/forecase-with-sql)
 
-[How do I measure the ROI of my Marketing Campaigns?](/docs/guides/warehouses/how-to-measure-roi-of-marketing-campaigns)
+[How do I measure the ROI of my Marketing Campaigns?](../../guides/warehouses/measure-marketing-roi)
 
 For additional information, check out our [Guides](/docs/guides/) section.

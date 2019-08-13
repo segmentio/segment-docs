@@ -1,3 +1,3 @@
 ---
-title: General
+title: Intro to Segment
 ---
