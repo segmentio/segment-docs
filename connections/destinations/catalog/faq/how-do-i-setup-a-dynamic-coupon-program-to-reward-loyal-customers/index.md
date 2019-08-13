@@ -40,7 +40,7 @@ We’ll conduct a split test (half of the cohort will represent the control grou
 
 ## Set it up
 
-First, register for an account with Customer.io and Amplitude. Then, enable Customer.io and enable Amplitude on your Segment project. Finally, go into your Customer.io account and enable “sending data to Segment”:
+First, register for an account with Customer.io and Amplitude. Then, enable Customer.io and enable Amplitude on your Segment project. Finally, go into your Customer.io account and enable "sending data to Segment":
 
 ![](../images/asset_tps7HAgP.png)
 
@@ -52,13 +52,13 @@ When everything is enabled, customer event data such as `Order Completed` and `P
 
 ## Define the cohort in Customer.io
 
-Now we define the specific cohort in Customer.io as per our conditions listed earlier: someone who spends over $20 per order and shops over twice a month. In Customer.io, go to “Segments” and “Create Segment”:
+Now we define the specific cohort in Customer.io as per our conditions listed earlier: someone who spends over $20 per order and shops over twice a month. In Customer.io, go to "Segments" and "Create Segment":
 
 ![](../images/asset_kTaK5L7l.png)
 
 After this cohort is created, then when a customer makes the third purchase in a month and it’s over $20, then she will be added to this segment.
 
-Next, we’ll create a “segment trigger campaign”, where Customer.io will send a message the first time someone enters a segment. The segment in this case will be the one we just created: Coupon Loyalty Experiment.
+Next, we’ll create a "segment trigger campaign", where Customer.io will send a message the first time someone enters a segment. The segment in this case will be the one we just created: Coupon Loyalty Experiment.
 
 ![](../images/asset_lE6v8cXN.png)
 

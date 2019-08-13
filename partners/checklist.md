@@ -78,11 +78,11 @@ Once you've decided, you can:
 
 - Test component with the Dev Center Test Suite and get all green or yellow tests
 
-We also highly encourage you to build a 1-click enablement of your tool with OAuth and the Segment Config API. Partners who have implemented “Enable with Segment” button in their sign-up flows have reported 2X increase in conversions. You can [refer to the docs for full details about building an Enable with Segment button](https://segment.com/docs/partners/enable-with-segment/).
+We also highly encourage you to build a 1-click enablement of your tool with OAuth and the Segment Config API. Partners who have implemented "Enable with Segment" button in their sign-up flows have reported 2X increase in conversions. You can [refer to the docs for full details about building an Enable with Segment button](https://segment.com/docs/partners/enable-with-segment/).
 
 - Implement one-click setup via Enable with Segment / OAuth
 
-> Note: If you are time constrained, you may skip the above step for now. Once we see at-least 5 customers using your public beta integration, it’s a hard requirement to build “Enable with Segment” button in your sign-up flows or app/settings page for general availability. By building this, we are making it super easy for future customers to turn ON your Integration. Not doing so, will result in de-listing your Integration from the Segment Catalog.
+> Note: If you are time constrained, you may skip the above step for now. Once we see at-least 5 customers using your public beta integration, it’s a hard requirement to build "Enable with Segment" button in your sign-up flows or app/settings page for general availability. By building this, we are making it super easy for future customers to turn ON your Integration. Not doing so, will result in de-listing your Integration from the Segment Catalog.
 
 ## 5. Partner Test
 
@@ -159,7 +159,7 @@ The Segment Dev Center team also needs an account to easily test your integratio
 Once you have built your components, written docs, and filled in all the required metadata, you can submit your app for approval.
 
 - Finish the developer center in-app checklist items
-- Click “Submit for Review”
+- Click "Submit for Review"
 
 ## 9. Segment Public Beta Approval
 

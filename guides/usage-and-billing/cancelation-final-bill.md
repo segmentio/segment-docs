@@ -2,7 +2,7 @@
 title: "How do I change my plan?"
 ---
 
-If you already have a Segment workspace, you can change which plan your workspace is on by navigating to the “Usage & Billing” menu, then finding the “Plans” page. You can select your new plan on the “Plans” page.
+If you already have a Segment workspace, you can change which plan your workspace is on by navigating to the "Usage & Billing" menu, then finding the "Plans" page. You can select your new plan on the "Plans" page.
 
 _If you cancel or downgrade your workspace within your 2-week trial period, you will not incur any charges._
 

@@ -11,9 +11,9 @@ This document was last updated on April 28, 2018. If you notice any gaps, outdat
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on “Add Destination”.
+1. From your Segment UI’s Destinations page click on "Add Destination".
 
-2. Search for “Hotjar” within the Destinations Catalog and confirm the Javascript source you’d like to connect to.
+2. Search for "Hotjar" within the Destinations Catalog and confirm the Javascript source you’d like to connect to.
 
 3. Add your Hotjar Site ID - which you can find under Settings and Sites & Organizations in our Hotjar dashboard - to your Destination settings. It should be a whole number (e.g. 123456).
 

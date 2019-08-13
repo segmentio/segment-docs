@@ -17,7 +17,7 @@ If you have previously enabled sending email events via the Mailjet destination 
 
 3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you’d like, but we recommend sticking to something that reflects the Source itself, like `Mailjet` for nickname and `Mailjet` for the schema name.
 
-4. The next page (“Overview”) will surface your **Segment write key for Mailjet.** Copy this write key. 
+4. The next page ("Overview") will surface your **Segment write key for Mailjet.** Copy this write key. 
 
 5. To finish the setup, you’ll have to go into your Mailjet account and enter this Segment write key in their integrations settings. Find the right place in Mailjet by clicking App Connections > Segment.
 

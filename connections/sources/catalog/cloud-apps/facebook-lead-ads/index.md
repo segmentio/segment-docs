@@ -15,7 +15,7 @@ _**NOTE:** Facebook Lead Ads is currently in beta and this doc was last updated 
 ## Getting Started
 
 1. Set up a Facebook Lead Ad campaign if you haven’t already. Instructions on how to do so are [here](https://www.facebook.com/business/help/1462876307360828).
-2. Search for "Facebook Lead Ads” within the Sources Catalog and confirm by clicking "Connect"
+2. Search for "Facebook Lead Ads" within the Sources Catalog and confirm by clicking "Connect"
 3. Give the source a name. The name is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself, like Facebook Lead Ads or Facebook Lead Ads Prod. 
 4. Click Create And Continue then Connect to OAuth into Facebook.
 5. Select which accounts you would like to sync (you may change this selection later).

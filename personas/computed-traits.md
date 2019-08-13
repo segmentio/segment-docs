@@ -119,7 +119,7 @@ Account-level examples:
 ![](images/_1542074153487.png)
 
 ## Conditions
-All computed trait types support a common “Add Conditions” section. Conditions defined here restrict the messages considered when calculating the final value of the computed trait by looking at a property of the events. For example, you could limits events to only those where “price” is greater than 30.00 or where “page.url” contains “pricing”.
+All computed trait types support a common "Add Conditions" section. Conditions defined here restrict the messages considered when calculating the final value of the computed trait by looking at a property of the events. For example, you could limits events to only those where "price" is greater than 30.00 or where "page.url" contains "pricing".
 
 There are twelve different operators currently available.
 - equals

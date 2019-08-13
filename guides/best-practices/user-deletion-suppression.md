@@ -10,7 +10,7 @@ In keeping with our commitment to GDPR and CCPA readiness, Segment offers the ab
 
 ## Overview
 
-All deletion and suppression actions in Segment are asynchronous, and are categorized as what we call “Regulations.” **Regulations** are requests to Segment to control your data flow. They can be issued from your Segment Workspace Settings page under **End User Privacy.**
+All deletion and suppression actions in Segment are asynchronous, and are categorized as what we call "Regulations." **Regulations** are requests to Segment to control your data flow. They can be issued from your Segment Workspace Settings page under **End User Privacy.**
 
 ![](images/asset_N9oxVGCs.png)
 
@@ -38,7 +38,7 @@ To remove a user from the suppression list, create an `UNSUPPRESSION` regulation
 
 When you create a `SUPPRESS_AND_DELETE` regulation, the user is actively suppressed, and Segment begins permanently deleting all data associated with this user from your workspace. This includes scanning and removing all messages related to that `userId` from all storage mediums that don’t automatically expire data within 30 days, including archives, databases, and intermediary stores.
 
-Messages with this `userId` are also deleted from your connected raw data Destinations, including Redshift, BigQuery, Postgres, Snowflake and Amazon S3. Warehouse deletions happen using a DML run against your cluster or instance, and we delete from S3 by “recopying” clean versions of any files in your bucket that included data about that `userId`.
+Messages with this `userId` are also deleted from your connected raw data Destinations, including Redshift, BigQuery, Postgres, Snowflake and Amazon S3. Warehouse deletions happen using a DML run against your cluster or instance, and we delete from S3 by "recopying" clean versions of any files in your bucket that included data about that `userId`.
 
 Finally, we also forward these deletion requests to a growing list of supported partners.
 
@@ -321,7 +321,7 @@ The access token is returned in the JSON payload at `data.login.access_token`
 
 Note that your Segment password should always be kept secret. It’s imperative that you treat it as a privileged secret in your program. We recommend using something like [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-create-generic-template.html) or [Chamber](https://segment.com/blog/the-right-way-to-manage-secrets/) to securely store, encrypt, and decrypt your password on program or request handler invocation. **Do not attempt to create Regulations from your browser or a client application, as you would expose this secret.**
 
-Once you have your access token, include it in the `Authorization` header with the prefix `“Bearer "`.
+Once you have your access token, include it in the `Authorization` header with the prefix `"Bearer "`.
 
 Here’s a full bash example of authenticating and making a deletion request:
 
@@ -404,7 +404,7 @@ Use the following guide to migrate your GraphQL based workflow's to use the new 
 ```
 mutation {
   createWorkspaceRegulation(
-    workspaceSlug: “workspace-slug"
+    workspaceSlug: "workspace-slug"
     type: SUPPRESS
     userId: "userIdToDelete"
   ) {
@@ -418,10 +418,10 @@ mutation {
 POST /v1beta/workspaces/workspace-slug/regulation
 
 {
-    “regulation_type”: “suppress”,
-    “attributes”: {
-        “name”: “userId”,
-        “values”: [“foo”, “bar”]
+    "regulation_type": "suppress",
+    "attributes": {
+        "name": "userId",
+        "values": ["foo", "bar"]
     }
 }
 ```
@@ -445,10 +445,10 @@ mutation {
 POST /v1beta/workspaces/workspace-slug/source/source-slug/regulation
 
 {
-    “regulation_type”: “suppress”,
-    “attributes”: {
-        “name”: “userId”,
-        “values”: [“foo”, “bar”]
+    "regulation_type": "suppress",
+    "attributes": {
+        "name": "userId",
+        "values": ["foo", "bar"]
     }
 }
 ```
@@ -472,12 +472,12 @@ mutation {
 POST /v1beta/workspaces/workspace-slug/source/source-slug/regulation
 
 {
-    “attributes” {
-        “name”: “objectId”,
-        “values”: [“foo”, “bar”]
+    "attributes" {
+        "name": "objectId",
+        "values": ["foo", "bar"]
     },
-    “regulation_type”: “delete”,
-    “collection”: “workspaces/myworkspace/sources/js/col”
+    "regulation_type": "delete",
+    "collection": "workspaces/myworkspace/sources/js/col"
 }
 ```
 
@@ -547,4 +547,4 @@ Currently, we can forward requests to the following destinations:
 
 Segment cannot guarantee that data is deleted from your Destinations. When you issue a user deletion request, Segment forwards the request to supported streaming Destinations. You must still contact these Destinations to confirm that they have executed the request.
 
-**NOTE:**  If you have the Amplitude destination enabled in one or more sources, you’ll must include Amplitude’s secret key in each destination(s) settings so they can accept the deletion request. (You add it in the Amplitude destination settings, under “Secret Key”). You can find your Secret Key on the [General Settings](https://amplitude.zendesk.com/hc/en-us/articles/235649848-Settings#project-general-settings) of your Amplitude project.
+**NOTE:**  If you have the Amplitude destination enabled in one or more sources, you’ll must include Amplitude’s secret key in each destination(s) settings so they can accept the deletion request. (You add it in the Amplitude destination settings, under "Secret Key"). You can find your Secret Key on the [General Settings](https://amplitude.zendesk.com/hc/en-us/articles/235649848-Settings#project-general-settings) of your Amplitude project.

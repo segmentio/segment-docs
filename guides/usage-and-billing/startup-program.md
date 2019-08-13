@@ -36,7 +36,7 @@ If you've been accepted to the program, you'll receive an email with a welcome m
 **Where can I view the credits applied to my Segment account?**
 The Startup Program credits are reflected in the Workspace usage and billing page.
 
-**Do I have to be a “new” customer to receive a coupon?**
+**Do I have to be a "new" customer to receive a coupon?**
 New and current Segment users who have not previously received any other coupon are eligible to apply.
 
 **What happens if I go over my total credit applied?**

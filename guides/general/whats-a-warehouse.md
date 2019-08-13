@@ -15,6 +15,6 @@ When selecting and building a data warehouse, there are three questions to consi
 3.  How will the data be used?
     
 
-Relational databases are great when you know and predefine the information collected and how it will be linked. This is usually the type of database used in the world of user analytics. For instance, a users table might be populated with the columns “name”, “email address”, “plan name”, etc.
+Relational databases are great when you know and predefine the information collected and how it will be linked. This is usually the type of database used in the world of user analytics. For instance, a users table might be populated with the columns "name", "email address", "plan name", etc.
 
 Examples of data warehouses include Amazon Redshift, Google BigQuery, MySQL, and Postgres.

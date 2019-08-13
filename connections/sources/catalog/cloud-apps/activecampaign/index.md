@@ -17,24 +17,24 @@ If you have previously enabled sending email events via the ActiveCampaign desti
 
 3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you’d like, but we recommend sticking to something that reflects the Source itself, like `ActiveCampaign` for nickname and `activecampaign` for the schema name.
 
-4. The next page (“Overview”) will surface your **Segment write key for ActiveCampaign.** Copy this write key. 
+4. The next page ("Overview") will surface your **Segment write key for ActiveCampaign.** Copy this write key. 
 
 5. In your ActiveCampaign account, navigate to http://YOURACCOUNT.activehosted.com/apps/#/segment
 
-6. Scroll to the bottom of the page to where it says “Send email events data from ActiveCampaign to Segment.”
+6. Scroll to the bottom of the page to where it says "Send email events data from ActiveCampaign to Segment."
 
-7. Click the “OFF” toggle.
+7. Click the "OFF" toggle.
 ![off](https://cldup.com/QLv153k6CU.png)
 
-8. This will open a modal for you to enter your Segment.com write key. Enter your write key and click “Connect”.
+8. This will open a modal for you to enter your Segment.com write key. Enter your write key and click "Connect".
 
-9. The toggle will now say “ON”.
+9. The toggle will now say "ON".
 ![on](https://cldup.com/cv4rU1Ivg5.png)
 
 10. Once the first event occurs, you’ll always see the last event that occurred in this box.
 ![last event](https://cldup.com/5OZGDQD3wB.png)
 
-11. If you ever need to re-enter your Segment write key, just click “Re-enter your Segment write key.”
+11. If you ever need to re-enter your Segment write key, just click "Re-enter your Segment write key."
 
 12. In Segment, click into your ActiveCampaign Source in `segment.com/<your-workspace>/sources`. From there you’ll be able to add Destinations where you want to see email events.
 

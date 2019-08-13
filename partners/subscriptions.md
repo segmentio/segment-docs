@@ -54,7 +54,7 @@ To provide a great experience for users, and to help us test your integration, y
 
 After successfully testing your Component, make sure you've completed all [launch requirements](/docs/partners/#launch-requirements) and then it’s time to submit it for approval.
 
-Please remember, you will not be able to edit your App information once you submit for approval, so please review all the details before hitting the “Submit for Review” button in Subscription "Publish" window.
+Please remember, you will not be able to edit your App information once you submit for approval, so please review all the details before hitting the "Submit for Review" button in Subscription "Publish" window.
 
 ![](images/submit.png)
 
@@ -88,7 +88,7 @@ Yes!
 
 To start, a Segment customer will track their user actions using our `track` method. Segment has [industry specs](https://segment.com/docs/spec/semantic/) to define semantic naming to follow, so when sending events in for a particular event flow, such as Ecommerce, Live Chat, Video and Email events, Segment can translate these semantic event names into other downstream tools.
 
-It is essential that the destination follows the relevant industry specs when translating a Segment event into how the destination tool understands the event. That way, customers can enable any new integration and specced events, such as “Order Completed”, and it will automatically work with the new downstream destination.
+It is essential that the destination follows the relevant industry specs when translating a Segment event into how the destination tool understands the event. That way, customers can enable any new integration and specced events, such as "Order Completed", and it will automatically work with the new downstream destination.
 
 ### Are the events guaranteed to send in order?
 

@@ -16,7 +16,7 @@ To enable SSO-based login from the Segment login page (app.segment.com/login), y
 
 Segment’s SSO configuration is entirely self-service; we don’t require any back and forth with our team in order to test and enable the feature on your workspace. However, we are here to help! Don’t hesitate to [get in touch](https://segment.com/help/contact/) if you run into any questions or issues.
 
-To get started, go to your workspace settings and choose the “Connections” tab under “Authentication” and click “Add New Connection.” Follow the steps to create a SAML connection.
+To get started, go to your workspace settings and choose the "Connections" tab under "Authentication" and click "Add New Connection." Follow the steps to create a SAML connection.
 
 ![](images/asset_JR9CRr6f.png)
 
@@ -32,7 +32,7 @@ Your provider will ask you for a few things from Segment, which we provide in th
 
 ### A few gotchas to look out for:
 
-*   Different IDPs have different nomenclature for the Audience URL. Some call it “Audience URI,” some call it “Entity ID”, some call it “Service Provider Entity ID.” It’s likely there are only two required fields without correct defaults, and they correspond to the SSO URL and Audience URL values above.
+*   Different IDPs have different nomenclature for the Audience URL. Some call it "Audience URI," some call it "Entity ID", some call it "Service Provider Entity ID." It’s likely there are only two required fields without correct defaults, and they correspond to the SSO URL and Audience URL values above.
 
 *   In all IDPs we’ve worked with, the default NameID option is the correct one. Make sure it’s using the emailAddress schema.
 
@@ -40,12 +40,12 @@ Your provider will ask you for a few things from Segment, which we provide in th
 
 *   Different IDPs store records of your employees differently. The only attribute mapping we require is to make sure you’re sending `email` . In Okta this is at `user.email`. In Duo this is `mail`.
 
-*   Make sure you’ve enabled “send all attributes” (not just NameID) if applicable for your IDP.
+*   Make sure you’ve enabled "send all attributes" (not just NameID) if applicable for your IDP.
 
 *   No RelayState is required. This is also sometimes called `Target`.
 
 
-Once you’ve created the application in your IDP, you can come back to Segment and click “Next”.
+Once you’ve created the application in your IDP, you can come back to Segment and click "Next".
 
 ## Configure Segment to Talk to Your IDP.
 
@@ -53,7 +53,7 @@ Your IDP will provide a URL and x.509 certificate. Copy them into their respecti
 
 ![](images/asset_s19XDgWX.png)
 
-Once you do that, click “Configure Connection.” You’re all set!
+Once you do that, click "Configure Connection." You’re all set!
 
 ## Test your connection with IDP-initiated SSO.
 
@@ -65,27 +65,27 @@ You can now test via IDP-initiated SSO (by clicking login to Segment from within
 
 ## Setup — GSuite
 
-GSuite configuration is incredibly simple with Segment. To get started, go to your workspace settings and choose the “Connections” tab under “Authentication” and click “Add New Connection.” Follow the steps to create a “Google Apps For Work” connection.
+GSuite configuration is incredibly simple with Segment. To get started, go to your workspace settings and choose the "Connections" tab under "Authentication" and click "Add New Connection." Follow the steps to create a "Google Apps For Work" connection.
 
 You simply enter your domain (or, if you’ve verified it already, choose it from the dropdown) and then click the resulting link to authorize the connection.
 
 ## Enabling Segment-initiated login
 
-Segment supports “interruption” on the login page for emails that match your workspace’s domain.
+Segment supports "interruption" on the login page for emails that match your workspace’s domain.
 
 ![](images/asset_IC593KEZ.gif)
 
-In order to enable this, you’ll need to verify your domain with Segment. To do that, go to the “Domains” tab under “Authentication” in the workspace settings page.
+In order to enable this, you’ll need to verify your domain with Segment. To do that, go to the "Domains" tab under "Authentication" in the workspace settings page.
 
 ![](images/asset_MSaDZk2f.png)
 
-Enter your domain and click “Add Domain.” When you click verify, you’re given two options to verify your domain, either via a meta tag to add to your `/index.html` at the root or a DNS txt record that you can add via your DNS provider. Once you do so and click verify, you’re ready to go!
+Enter your domain and click "Add Domain." When you click verify, you’re given two options to verify your domain, either via a meta tag to add to your `/index.html` at the root or a DNS txt record that you can add via your DNS provider. Once you do so and click verify, you’re ready to go!
 
 ## FAQ
 
 **Do you support automatic user provisioning?**
 
-Segment supports “just in time” user permissioning; new users who authenticate via your IDP are automatically created in Segment as read-only members.
+Segment supports "just in time" user permissioning; new users who authenticate via your IDP are automatically created in Segment as read-only members.
 
 If the user already exists in Segment then we will associate your IDP identity with your existing Segment user account.
 

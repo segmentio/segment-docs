@@ -22,7 +22,7 @@ If you have previously enabled sending email events via the Iterable destination
 
   ![](images/Iterable2.png)
 
-4. The next page (“Overview”) will surface your **Segment write key for Iterable.** Copy this write key. 
+4. The next page ("Overview") will surface your **Segment write key for Iterable.** Copy this write key. 
 
   ![](images/Iterable3.png)
 

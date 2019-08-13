@@ -30,7 +30,7 @@ You should now see a Summary page with a Components section. This section lists 
 Segment will pass any traits you specify in an `identify` call through to the *Identify Data Extension* you specify in the Segment UI. You'll need to create this Data Extension manually in SMC's Contact Builder UI. When creating a Data Extension in SMC, you can set up as many or as few traits as you would like, but a good starting point for your schema is to include Segment's [standard identify traits][].
 
 ### Set up your subdomain
-Segment will use your unique Salesforce subdomain to make API calls to SFMC. Your subdomain is represented by a 28-character string starting with the letters “mc” in any of your base URIs. For example, in the base URI `mc563885gzs27c5t9-63k636ttgm.rest.marketingcloudapis.com`, the subdomain is `mc563885gzs27c5t9-63k636ttgm`.
+Segment will use your unique Salesforce subdomain to make API calls to SFMC. Your subdomain is represented by a 28-character string starting with the letters "mc" in any of your base URIs. For example, in the base URI `mc563885gzs27c5t9-63k636ttgm.rest.marketingcloudapis.com`, the subdomain is `mc563885gzs27c5t9-63k636ttgm`.
 
 **If you do not set your subdomain, Segment will use the legacy V1 endpoint and your events can result in authentication errors.**
 

@@ -10,7 +10,7 @@ This document was last updated on October 16, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on “Add Destination”.
+1. From your Segment UI’s Destinations page click on "Add Destination".
 2. Search for Help Scout within the Destinations Catalog and confirm the Source you’d like to connect to.
 3. Copy your Help Scout API key and paste it into to the API Key field in your Segment settings for Help Scout. You can find your API Key on the Help Scout API keys page by navigating from the [Help Scout Dashboard](https://secure.helpscout.net/).
 

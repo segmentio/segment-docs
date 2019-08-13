@@ -17,7 +17,7 @@ Every Push messaging focuses around three key features:
 
 ### Choose an destination
 
-It’s best practice to self evaluate when trying to choose the “one” that suits your needs.
+It’s best practice to self evaluate when trying to choose the "one" that suits your needs.
 
 1.  What’s your user base size? Is it more than 10k? If not, you can try demo versions of mobile marketing automation libraries.
 2.  Are you looking for a tool only to support push notification or provide an entire marketing suite ?
@@ -58,7 +58,7 @@ Test different action words, phrases, message lengths, etc.
 
 *   Marketing automation
 
-To “auto-enroll” new users into existing campaigns
+To "auto-enroll" new users into existing campaigns
 
 *   Measure the right metrics
 

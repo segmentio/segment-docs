@@ -16,12 +16,12 @@ This article outlines common questions about our Native Mobile Spec. To learn wh
     
 *   Faster time to value: Set up your destinations with key metrics like Daily Active Users, sessions, and in-app purchases right away!
     
-*   Measure ROI of campaigns: Analyze campaign performance with spec’d events like “campaign hit”, “install attributed” and “push notification opened” in your favorite analytics or BI tool.
+*   Measure ROI of campaigns: Analyze campaign performance with spec’d events like "campaign hit", "install attributed" and "push notification opened" in your favorite analytics or BI tool.
     
 
 ### Which destinations currently take advantage of the mobile spec?
 
-Our [Facebook App Events](https://segment.com/docs/integrations/facebook-app-events/) server-side destination currently takes advantage of the “Application Installed” event to power new features like custom audience creation, dynamic ads and conversion tracking, without needing to sit on the device. Soon, more destinations like Google Adwords and Salesforce Marketing Cloud and attribution providers will offer similar functionality.
+Our [Facebook App Events](https://segment.com/docs/integrations/facebook-app-events/) server-side destination currently takes advantage of the "Application Installed" event to power new features like custom audience creation, dynamic ads and conversion tracking, without needing to sit on the device. Soon, more destinations like Google Adwords and Salesforce Marketing Cloud and attribution providers will offer similar functionality.
 
 
 ### How does all of this work?

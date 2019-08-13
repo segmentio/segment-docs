@@ -62,7 +62,7 @@ In the Segment App, select Add Destination:
 
 <img src="./images/add_destination.png" style="max-width: 682px">
 
-Search for and select “Db2”:
+Search for and select "Db2":
 
 <img src="./images/search_results.png" style="max-width: 842px">
 

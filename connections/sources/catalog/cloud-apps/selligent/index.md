@@ -18,7 +18,7 @@ If you have previously enabled sending email events via the Selligent destinatio
 
 3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you’d like, but we recommend sticking to something that reflects the Source itself, like `Selligent` for nickname and `selligent` for the schema name.
 
-4. The next page (“Overview”) will surface your **Segment write key for Selligent.** Copy this write key. 
+4. The next page ("Overview") will surface your **Segment write key for Selligent.** Copy this write key. 
 
 5. To finish the setup, send your write key to your Selligent Account Manager. He/she will enable the Source for you on Selligent's end. 
 

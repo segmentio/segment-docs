@@ -4,9 +4,9 @@ title: "How do I collect pageviews on the server side?"
 
 Generally, we believe that client-side collection is appropriate for collection of basic pageviews.
 
-If you’d like to track `page` calls from your server to Segment, we recommend doing it in addition to any client side tracking you’re doing with analytics.js, and doing it in a separate “source” so that you can configure where to send the (probably redundant, albeit higher-fidelity) data.
+If you’d like to track `page` calls from your server to Segment, we recommend doing it in addition to any client side tracking you’re doing with analytics.js, and doing it in a separate "source" so that you can configure where to send the (probably redundant, albeit higher-fidelity) data.
 
-With this approach, you might use a request “middleware” to log a `pageview` with every page load from your server.
+With this approach, you might use a request "middleware" to log a `pageview` with every page load from your server.
 
 There are a few things to be mindful of if you want to make sure you can attribute these (anonymous) page views to the appropriate user in your client-side source (eg, for effectively joining these tables together to do down-funnel behavioral attribution). You’ll want to ensure they share an anonymousId by respecting one if it’s already there ,and setting it yourself if not. To do that, you can read and modify the `ajs_anonymous_id` cookie value in the request.
 

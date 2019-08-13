@@ -86,7 +86,7 @@ The general approach is to use an arbitrary `anonymousId` (e.g. a UUID) in the s
 
 ## Estimating the Impact of Moving Server-side
 
-If you want to get a quick estimate for the number of additional clicks you’d track using server-side tracking, you can use “redirect tracking” with a URL shortener to estimate the number of clicks coming from Google Adwords or Facebook Ads. This will give you an estimate for the number of times an ad is clicked (minus some bounce in the few hundred milliseconds of the redirect), which will closely match server-side `page()` tracking should you choose to implement it.
+If you want to get a quick estimate for the number of additional clicks you’d track using server-side tracking, you can use "redirect tracking" with a URL shortener to estimate the number of clicks coming from Google Adwords or Facebook Ads. This will give you an estimate for the number of times an ad is clicked (minus some bounce in the few hundred milliseconds of the redirect), which will closely match server-side `page()` tracking should you choose to implement it.
 
 ![](../images/asset_pkFkyAKr.png)
 

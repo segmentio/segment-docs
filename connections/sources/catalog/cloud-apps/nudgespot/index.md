@@ -17,7 +17,7 @@ If you have previously enabled sending email events via the Nudgespot destinatio
 
 3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you’d like, but we recommend sticking to something that reflects the Source itself, like `Nudgespot` for nickname and `nudgespot` for the schema name.
 
-4. The next page (“Overview”) will surface your **Segment write key for Nudgespot.** Copy this write key. 
+4. The next page ("Overview") will surface your **Segment write key for Nudgespot.** Copy this write key. 
 
 5. To finish the setup, you’ll have to go into your Nudgespot account and enter this Segment write key in their integrations settings. Find the right place in Nudgespot in Setup > Send Email Events to Segment.com.
 

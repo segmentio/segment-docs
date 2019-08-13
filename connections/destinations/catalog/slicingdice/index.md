@@ -54,9 +54,9 @@ analytics.identify('userId123', {
 ```
 
 Identify calls will be sent to SlicingDice using the following columns:
-* `{source_name}-identifies-user-id`: contains the “userId” attribute of an Identify call
-* `{source_name}-identifies-{attribute_name}`: contains the “traits” attributes of an Identify call, saving each one as an individual column
-* `{source_name}-identifies-context-{attribute_name}`: contains the “context” attributes of an Identify call, saving each one as an individual column
+* `{source_name}-identifies-user-id`: contains the "userId" attribute of an Identify call
+* `{source_name}-identifies-{attribute_name}`: contains the "traits" attributes of an Identify call, saving each one as an individual column
+* `{source_name}-identifies-context-{attribute_name}`: contains the "context" attributes of an Identify call, saving each one as an individual column
 
 
 ## Track
@@ -69,9 +69,9 @@ analytics.track('Clicked Login Button')
 
 Track calls will be sent to SlicingDice using the following columns:
 
-* `{source_name}-track-event`: contains the “event” attribute of a Track call
-* `{source_name}-track-{attribute_name}`: contains the “properties” attributes of a Track call, saving each one as an individual column
-* `{source_name}-track-context-{attribute_name}`: contains the “context” attributes of a Track call, saving each one as an individual column
+* `{source_name}-track-event`: contains the "event" attribute of a Track call
+* `{source_name}-track-{attribute_name}`: contains the "properties" attributes of a Track call, saving each one as an individual column
+* `{source_name}-track-context-{attribute_name}`: contains the "context" attributes of a Track call, saving each one as an individual column
 
 *Observation: if your* `context` *attribute has nested attributes, your column names will follow this pattern:* `{source_name}-track-context-{attribute_name}{nested_attribute_name}`
 
@@ -92,7 +92,7 @@ Group calls will be sent to SlicingDice using the following columns:
 
 * `{source_name}-groups-group-id`: contains the `groupID` attribute of a Group call
 * `{source_name}-groups-{attribute_name}`: contains the `traits` attributes of a Group call, saving each one as an individual column
-* `{source_name}-groups-context-{attribute_name}`: contains the “context” attributes of a Group call, saving each one as an individual column
+* `{source_name}-groups-context-{attribute_name}`: contains the "context" attributes of a Group call, saving each one as an individual column
 
     *Observation: Group calls will also be sent to SlicingDice using the following [Account](https://segment.com/docs/destinations/#warehouse-schemas) columns that holds the latest state of a group.*
     * `{source_name}-accounts-group-id`: contains the `groupId` attribute of a Group call

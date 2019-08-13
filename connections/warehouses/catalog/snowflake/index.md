@@ -45,7 +45,7 @@ CREATE DATABASE "SEGMENT_EVENTS";
 
 ### Create Role for Segment
 
-You need to run these commands rather than creating a role with the “Create Role” dialog in the UI.
+You need to run these commands rather than creating a role with the "Create Role" dialog in the UI.
 
 This role will be attached to Segment’s user and it gives just enough permissions for loading data in your database. We recommend not reusing this role for other operations.
 
@@ -129,7 +129,7 @@ USE DATABASE "SEGMENT_EVENTS";
 After creating a Snowflake warehouse, the next step is to connect Segment.
 
 1. In the Segment App, select Add Destination.
-2. Search for and select “Snowflake”.
+2. Search for and select "Snowflake".
 3. Add your credentials as follows:
 - User - The user name (as created above).
 - Password - The password for the user.
@@ -143,7 +143,7 @@ After creating a Snowflake warehouse, the next step is to connect Segment.
 
 ### Whitelisting IPs
 
-If you create a network policy with Snowflake, add the following IP address to the “Allowed IP Addresses” list: `52.25.130.38/32`
+If you create a network policy with Snowflake, add the following IP address to the "Allowed IP Addresses" list: `52.25.130.38/32`
 
 ### Multi-Factor Authentication (MFA) & SSO
 
@@ -167,7 +167,7 @@ We strongly recommend creating a unique Warehouse, Database and Role for the Seg
 
 ## Troubleshooting
 
-### I get “Object does not exist” when running “USE DATABASE” or “USE WAREHOUSE”, even if the warehouse or the database are created.
+### I get "Object does not exist" when running "USE DATABASE" or "USE WAREHOUSE", even if the warehouse or the database are created.
 
 Make sure you have created the role and assigned the proper permissions with the account `SYSADMIN` or `ACCOUNTADMIN`. Other non-system accounts don’t assign the right permissions.
 

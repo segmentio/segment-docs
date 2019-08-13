@@ -13,7 +13,7 @@ This document was last updated on October 12, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI’s Destinations page click on “Add Destination”.
+  1. From your Segment UI’s Destinations page click on "Add Destination".
   2. Search for "Autopilot" within the Destinations Catalog and confirm the Source you’d like to connect to.
   3. Drop in your "API Key" from [here](https://login.autopilothq.com/login#settings/app-connections/segment-sync) or go to Autopilot: Settings -> App Connections -> Segment and copy/paste the API key which is listed there.
   4. Once enabled 'identify' and 'track' calls will be sent to Autopilot.

@@ -19,8 +19,8 @@ Because the VWO destination needs to be on the page right away, there are two wa
 
 Additionaly, to enable the destination please follow these instructions:
 
-1. From your Segment UI’s Destinations page click on “Add Destination”.
-2. Search for “Visual Web Optimizer” within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI’s Destinations page click on "Add Destination".
+2. Search for "Visual Web Optimizer" within the Destinations Catalog and confirm the Source you’d like to connect to.
 3. Toggle the destination on!
 
 
@@ -75,10 +75,10 @@ analytics.track('Order Completed', {
 If you are using VWO together with Google Analytics, you can enable this setting to add the `nonInteraction` flag to your `Experiment Viewed` track events. This can help with low bounce rates.
 
 ### Library Tolerance
-The maximum amount of time (in milliseconds) to wait for VWO’s full library to be downloaded before simply displaying your original page. This setting is only effective if “Use Async Smart Code” is set to “true”.
+The maximum amount of time (in milliseconds) to wait for VWO’s full library to be downloaded before simply displaying your original page. This setting is only effective if "Use Async Smart Code" is set to "true".
 
 ### Settings Tolerance
-The maximum amount of time (in milliseconds) to wait for test settings before VWO will simply display your original page. This setting is only effective if “Use Async Smart Code” is set to “true”.
+The maximum amount of time (in milliseconds) to wait for test settings before VWO will simply display your original page. This setting is only effective if "Use Async Smart Code" is set to "true".
 
 ## Use Existing JQuery
-If your page already includes JQuery, you can set this to “true”. Otherwise, VWO will include JQuery onto the page for you. VWO needs JQuery on the page to function correctly. This setting is only effective if “Use Async Smart Code” is enabled.
+If your page already includes JQuery, you can set this to "true". Otherwise, VWO will include JQuery onto the page for you. VWO needs JQuery on the page to function correctly. This setting is only effective if "Use Async Smart Code" is enabled.

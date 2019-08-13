@@ -451,7 +451,7 @@ You can either send the property value as a string (ie. `'brady'`) or as an arra
 
 ### Merchandising Events
 
-The Merchandising Events settings allow you to set eVars and events on a per-product basis within the “products” string, and support increment and currency events. This provides robust product string support, which you can read more about [here](https://marketing.adobe.com/resources/help/en_US/sc/implement/products.html).
+The Merchandising Events settings allow you to set eVars and events on a per-product basis within the "products" string, and support increment and currency events. This provides robust product string support, which you can read more about [here](https://marketing.adobe.com/resources/help/en_US/sc/implement/products.html).
 
 The setting operates as follows:
 

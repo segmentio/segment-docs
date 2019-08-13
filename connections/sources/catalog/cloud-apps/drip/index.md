@@ -18,7 +18,7 @@ If you have previously enabled sending email events via the Drip destination dur
 
 3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you’d like, but we recommend sticking to something that reflects the Source itself, like `Drip` for nickname and `drip` for the schema name.
 
-4. The next page (“Overview”) will surface your **Segment write key for Drip.** Copy this write key. 
+4. The next page ("Overview") will surface your **Segment write key for Drip.** Copy this write key. 
 
 5. To finish the setup, you’ll have to go into your Drip account and enter this Segment write key in their integrations settings. Find the right place in Drip by clicking Settings > Integrations > Segment.
 

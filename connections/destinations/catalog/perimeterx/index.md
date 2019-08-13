@@ -19,15 +19,15 @@ Here's how you can get started using PerimeterX!
 
 + Click the "Admin" tab inside the console.
 + Click "New Policy".
-+ Rename your new policy by clicking the words “Policy name” in the new policy and then
-click “Apply Changes”.
++ Rename your new policy by clicking the words "Policy name" in the new policy and then
+click "Apply Changes".
 
 ![](https://cloudup.com/cg69lTztbJx+)
 
 ### 3. Configure your Application
 
-+ Click the “Admin” tab inside the console.
-+ Define your first application by clicking the button “Create a New Application” and filling
++ Click the "Admin" tab inside the console.
++ Define your first application by clicking the button "Create a New Application" and filling
 in the modal.
 + Select the policy that you would like to use (default is pxDefault_Policy and you should
 use the policy that you just created)

@@ -16,7 +16,7 @@ Connect is supported on the client-side, server-side and on mobile.
 
 ## Identify
 
-Connect needs to identify users and their data to track who we should message. Segment will pass your UserID and any traits that you store on that user to Connect. (Note: Segment refers to user data as “traits”; Connect refers to user data as “attributes”.)
+Connect needs to identify users and their data to track who we should message. Segment will pass your UserID and any traits that you store on that user to Connect. (Note: Segment refers to user data as "traits"; Connect refers to user data as "attributes".)
 
         analytics.identify({
           userId: '019mr8mf4r',

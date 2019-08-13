@@ -590,7 +590,7 @@ The "Import user-item interaction data" step is displayed next. To complete this
 
 For the "IAM service role", select "Create a new role" from the dropdown. In the next pop-up, we recommend listing your bucket name in the "Specific S3 buckets" option, but you're free to choose the option that best suits your needs.
 
-Next you will need the location of the CSV file you generated in the earlier steps.  This needs to be configured in the “Data Location” field on this screen.
+Next you will need the location of the CSV file you generated in the earlier steps.  This needs to be configured in the "Data Location" field on this screen.
 
 ![](images/PersonalizeImportJob.png)
 
@@ -692,7 +692,7 @@ While setting up the new role, add the policy you created in the previous step.
 
 Finish with any other setup items you may want (like `tags`). Once that’s complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
 
-Select the “Trust Relationships” tab, then click the “Edit trust relationship” button.
+Select the "Trust Relationships" tab, then click the "Edit trust relationship" button.
 
 ![](images/LambdaTrustRelationship.png)
 
@@ -868,7 +868,7 @@ Enter a name for your Event Tracker.
 
 You will need to configure a role for Personalize to that allows it to execute the tracker.  This is the same as the execution role you defined earlier for Personalize:
 
-Often this is automatically included as a policy labelled "AmazonPersonalizeFullAccess”
+Often this is automatically included as a policy labelled "AmazonPersonalizeFullAccess"
 
 ```
     {
@@ -917,7 +917,7 @@ Often this is automatically included as a policy labelled "AmazonPersonalizeFull
     }
 ```
 
-This may be automatically included as policy “AmazonPersonalize-ExecutionPolicy-<some-set-of-numbers>”
+This may be automatically included as policy "AmazonPersonalize-ExecutionPolicy-<some-set-of-numbers>"
 
 ```
     {
@@ -998,7 +998,7 @@ Your lambda is now ready to receive events from Segment.  Next, you will need to
 
 Once your Lambda function is enabled, you can send it events from Segment using the Personalize Destination.
 
-Search for “Amazon Personalize” in our catalog. Connect the destination to the source you created previously. Now you will be presented with the Amazon Personalize Settings.
+Search for "Amazon Personalize" in our catalog. Connect the destination to the source you created previously. Now you will be presented with the Amazon Personalize Settings.
 
 We allow you to send each call type to a different Lambda. If you leave the Lambda field blank for a given call type, we won’t attempt to send any of those calls.
 

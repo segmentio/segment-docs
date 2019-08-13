@@ -21,7 +21,7 @@ If you have previously enabled sending email events via the Vero destination dur
 
   ![](images/vero2.png)
 
-4. The next page (“Overview”) will surface your **Segment write key for Vero.** Copy this write key. 
+4. The next page ("Overview") will surface your **Segment write key for Vero.** Copy this write key. 
 
 5. To finish the setup, you’ll have to go into your Vero account and enter this Segment write key in their integrations settings. Find the right place in Vero by clicking [Integrations](https://app.getvero.com/settings/integrations?integrations=all) > Segment.
 

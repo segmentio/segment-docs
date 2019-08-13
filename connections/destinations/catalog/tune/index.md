@@ -14,8 +14,8 @@ This document was last updated on May 8, 2018. If you notice any gaps, outdated 
 
 {% include content/connection-modes.md %}
 
-1.  From your Segment UI’s Destinations page click on “Add Destination”.
-2.  Search for “TUNE” within the Destinations Catalog and confirm the Source you’d like to connect to.
+1.  From your Segment UI’s Destinations page click on "Add Destination".
+2.  Search for "TUNE" within the Destinations Catalog and confirm the Source you’d like to connect to.
 3.  Add your TUNE Advertiser ID in the Segment Settings UI from [your TUNE Dashboard](https://developers.tune.com/sdk/finding-your-advertiser-id-and-conversion-key/).
 4.  In your TUNE account, ensure that you have created a new app by navigating to Applications > Apps > Add A New App.
 5.  Depending on library you've installed, please follow the additional steps below to finish setting up!

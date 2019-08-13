@@ -2,13 +2,13 @@
 title: "Can I move a source from one workspace to another?"
 ---
 
-Segment doesn’t have the ability to “merge” workspaces, however you can achieve the same effect by moving your existing sources to a single workspace.
+Segment doesn’t have the ability to "merge" workspaces, however you can achieve the same effect by moving your existing sources to a single workspace.
 
 You can move sources between workspaces by clicking the sources tab in the top left of your workspace,
 
 ![](../images/asset_1fupuBg7.png)
 
-heading to “Settings" for the requisite source,
+heading to "Settings" for the requisite source,
 
 ![](../images/asset_a4KXK0QG.png)
 

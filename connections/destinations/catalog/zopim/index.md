@@ -13,8 +13,8 @@ This document was last updated on June 11th, 2018. If you notice any gaps, outda
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on “Add Destination”.
-2. Search for “Zopim” within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI’s Destinations page click on "Add Destination".
+2. Search for "Zopim" within the Destinations Catalog and confirm the Source you’d like to connect to.
 3. Add your Zopim ID to your Destination Settings. If you are using the `Chat Widget`, you can find your Zopim ID in the widget script itself. See example below:
 
 ```

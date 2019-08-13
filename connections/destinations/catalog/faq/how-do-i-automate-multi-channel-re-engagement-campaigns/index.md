@@ -29,7 +29,7 @@ Before we proceed, it’s important to register for these tools and enable them 
 
 When you send tracking data from your app or website to Segment, Segment will send the same data to all of your tools. Segment also collects key messaging events like Push Notification Opened and Email Opened from AppBoy and Customer.io, respectively, and sends that to other tools. By defining cohorts based on these events, you can create dynamic campaign audiences, to which customers can add and remove themselves.
 
-In each of your destinations—Appboy, Facebook, Customer.io, AdRoll—you can create custom campaigns to show display ads or send emails to a specific segment of users who have performed (or not performed) a given action, or “event.” In this cross-channel re-engagement example, we’ll start with push notifications.
+In each of your destinations—Appboy, Facebook, Customer.io, AdRoll—you can create custom campaigns to show display ads or send emails to a specific segment of users who have performed (or not performed) a given action, or "event." In this cross-channel re-engagement example, we’ll start with push notifications.
 
 ## 1st Line of Defense: The Push Notification
 

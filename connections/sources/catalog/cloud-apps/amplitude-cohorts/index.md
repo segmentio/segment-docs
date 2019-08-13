@@ -31,8 +31,8 @@ Segment `identify` events.
 ![Add your Segment writeKey](./images/amplitude-segment-writekey.png)
 
  7. If you would like to set up automated export on an hourly or daily basis,
-    you can use Amplitude's Cohort Sync feature. Click “Advanced Preferences”
-    and select “Segment” as the integration.
+    you can use Amplitude's Cohort Sync feature. Click "Advanced Preferences"
+    and select "Segment" as the integration.
  8. From your Segment account, click into your Amplitude Cohorts Source, and
      you’ll be able to add other downstream destinations where you want to see
      your Behavioral Cohort data.

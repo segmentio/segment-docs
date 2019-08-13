@@ -100,7 +100,7 @@ Page calls will be sent to the webhook dataset you created earlier. You can filt
 If you haven’t had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/screen/) does. An example call would look like:
 
 ```
-[[SEGAnalytics sharedAnalytics] screen:@ “Home”];
+[[SEGAnalytics sharedAnalytics] screen:@ "Home"];
 ```
 
 Screen calls will be sent to the webhook dataset you created earlier. You can filter this data into a different view after you have set up JSON extract pipelines.

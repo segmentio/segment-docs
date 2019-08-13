@@ -18,7 +18,7 @@ The Team trial is a 14-day free trial of Segment’s [Team plan](https://segment
 
 You automatically receive a two week trial when you sign up for a Team plan. 
 
-**Do I have to be a “new” customer to receive the free Team trial?**
+**Do I have to be a "new" customer to receive the free Team trial?**
 
 The free trial is available to all customers who have never had a Team plan. This includes new customers as well as customers who have previously been on the Developer plan. 
 
@@ -26,7 +26,7 @@ The free trial is available to all customers who have never had a Team plan. Thi
 
 If you’re upgrading from a Developer plan, you are required to add your payment information. 
 
-If you are signing up for a new Team plan, you do not have to add your payment information during sign up. However, if you would like to continue to use the Team plan after the 14 day trial, please add your credit card information on the “Payment Information” page in your workspace before the trial ends. 
+If you are signing up for a new Team plan, you do not have to add your payment information during sign up. However, if you would like to continue to use the Team plan after the 14 day trial, please add your credit card information on the "Payment Information" page in your workspace before the trial ends. 
 
 **What happens when the two week trial ends?**
 

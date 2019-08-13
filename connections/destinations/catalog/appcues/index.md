@@ -116,6 +116,6 @@ lifecycle events that can be tracked:
 * `coachmarks_completed`
 
 To enable this feature, go to the Integrations Settings in Appcues and
-click “Activate” under the Segment integration.
+click "Activate" under the Segment integration.
 
 {% include content/integration-foot.md %}

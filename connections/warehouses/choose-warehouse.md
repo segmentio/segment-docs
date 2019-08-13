@@ -38,4 +38,4 @@ Fixed-price plans are geared toward high-volume customers and allow you to rent 
 
 Redshift does require you to create a cluster, schedule vacuums, choose sort and distribution keys, and resize your cluster as storage and performance needs change over time.
 
-BigQuery is “fully-managed”, which means that you’ll never have to resize, vacuum, or adjust distribution or sort keys. All of that is handled by BigQuery.
+BigQuery is "fully-managed", which means that you’ll never have to resize, vacuum, or adjust distribution or sort keys. All of that is handled by BigQuery.

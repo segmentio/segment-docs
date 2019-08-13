@@ -13,7 +13,7 @@ In your favorite BI or analytics tool, you’ll be able to analyze your email ca
 1. From your workspace’s segment.com/<your-workspace>/sources page, click Add source.
 2. Choose Blueshift.
 3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you’d like, but we recommend sticking to something that reflects the Source itself, like Blueshift for nickname and Blueshift for the schema name.
-4. The next page (“Overview”) will surface your Segment write key for Blueshift. Copy this write key.
+4. The next page ("Overview") will surface your Segment write key for Blueshift. Copy this write key.
 5. To finish the setup, you’ll have to go into your Blueshift account and enter this Segment write key in their destinations settings. Find the right place in Blueshift by clicking Account > Webhooks:
 
 ![](https://i.gyazo.com/39c3955d4ea74e0a8ff07ef6651d4b30.png)
@@ -136,7 +136,7 @@ Below is a table of properties that are sent for the events above:
 
 ## UserId
 
-Blueshift sends their `customer_id` associated with the message recipient as the top level `userId` field. Additionally, we will also send “email” and “blueshift_user_uuid” under `context.traits`.
+Blueshift sends their `customer_id` associated with the message recipient as the top level `userId` field. Additionally, we will also send "email" and "blueshift_user_uuid" under `context.traits`.
 
 ## Send Data to Blueshift
 

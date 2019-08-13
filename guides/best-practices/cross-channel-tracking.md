@@ -18,15 +18,15 @@ Digital marketing consists of owned marketing, earned marketing, and paid market
 
 ![](../images/asset_WyEIhjxB.png)
 
-“Owned” marketing encompasses all activities you have full control over. It can be further split into first- and second-party data. First-party data is customer data generated on your site or in your app. Second-party data is customer data generated when your customers interact with your email or push notifications (e.g. “Email Opened”, “Push Notification Received”).
+"Owned" marketing encompasses all activities you have full control over. It can be further split into first- and second-party data. First-party data is customer data generated on your site or in your app. Second-party data is customer data generated when your customers interact with your email or push notifications (e.g. "Email Opened", "Push Notification Received").
 
-“Earned” marketing is when publications, newsletters or blogs organically create some content that refers to or promotes you.
+"Earned" marketing is when publications, newsletters or blogs organically create some content that refers to or promotes you.
 
-Paid acquisition, like display ads or embedded advertorials, don’t exist on your domain. To track the inbound traffic from both “earned” and paid acquisition sources, we use UTM parameters (and deep links if you’re directing a customer to a specific screen in your mobile app that has the product to purchase).
+Paid acquisition, like display ads or embedded advertorials, don’t exist on your domain. To track the inbound traffic from both "earned" and paid acquisition sources, we use UTM parameters (and deep links if you’re directing a customer to a specific screen in your mobile app that has the product to purchase).
 
 **Track engagement on your email channels**
 
-While these are still under “owned” marketing, they happen off your domain. An example is sending an engagement email to your customer base with a call-to-action to visit your store. If you’re using Segment and an email or push notification tool on our platform, you can easily collect second-party data such as “Email Sent” and “Push Notification Opened”.
+While these are still under "owned" marketing, they happen off your domain. An example is sending an engagement email to your customer base with a call-to-action to visit your store. If you’re using Segment and an email or push notification tool on our platform, you can easily collect second-party data such as "Email Sent" and "Push Notification Opened".
 
 _Learn more about which_ [email](https://segment.com/catalog#integrations/email) and [push notification tools](https://segment.com/catalog#integrations/push-notifications) _are supported on Segment._
 
@@ -87,18 +87,18 @@ UTM parameters are only used when linking to your site from outside of your doma
 
 UTM parameters contain three essential components:
 
-*   **utm\_campaign**: this is the name of your campaign. All marketing activities that support this campaign, needs to have the same utm\_campaign so that downstream analysis to measure performance for this specific campaign can be done off this primary key. Examples: “national-toastday”
+*   **utm\_campaign**: this is the name of your campaign. All marketing activities that support this campaign, needs to have the same utm\_campaign so that downstream analysis to measure performance for this specific campaign can be done off this primary key. Examples: "national-toastday"
     
-*   **utm\_medium**: how the traffic is coming to your site? Is it through email, a display ad, an online forum? This ensures our downstream analysis can easily see which channel performs the best. Examples: “email”, “paid-display”, “paid-social”, “organic-social”
+*   **utm\_medium**: how the traffic is coming to your site? Is it through email, a display ad, an online forum? This ensures our downstream analysis can easily see which channel performs the best. Examples: "email", "paid-display", "paid-social", "organic-social"
     
-*   **utm\_source**: where is the traffic specifically coming from? You can be specific here. This ensures our downstream analysis can measure which specific source brings the most conversions. Examples: “twitter”, “customer.io” (email tool), “facebook”, “adroll”.
+*   **utm\_source**: where is the traffic specifically coming from? You can be specific here. This ensures our downstream analysis can measure which specific source brings the most conversions. Examples: "twitter", "customer.io" (email tool), "facebook", "adroll".
     
 
 With these being optional:
 
-*   **utm\_content**: for multiple calls to action on a single page, utm\_content indicates which one. For example, on a website, there may be three different display ads. While the link on each display ad will have the same utm\_campaign, utm\_medium, and utm\_source, the utm\_content will be different. Examples: “banner”, “left-side”, “bottom-side”
+*   **utm\_content**: for multiple calls to action on a single page, utm\_content indicates which one. For example, on a website, there may be three different display ads. While the link on each display ad will have the same utm\_campaign, utm\_medium, and utm\_source, the utm\_content will be different. Examples: "banner", "left-side", "bottom-side"
     
-*   **utm\_term**: this is the parameter suggested for paid search to identify keywords for your ad. If you’re using Google Adwords and have enabled “autotagging”, then you don’t need to worry about this. Otherwise, you can manually pass the keywords from your search terms through this parameter so that you can see which keywords convert the most. Note that this parameter is reserved explicitly for search. Examples: “toast”, “butter”, “jam”.
+*   **utm\_term**: this is the parameter suggested for paid search to identify keywords for your ad. If you’re using Google Adwords and have enabled "autotagging", then you don’t need to worry about this. Otherwise, you can manually pass the keywords from your search terms through this parameter so that you can see which keywords convert the most. Note that this parameter is reserved explicitly for search. Examples: "toast", "butter", "jam".
     
 
 [Learn more about the semantics with each UTM parameter.](https://docs.google.com/file/d/0By71e2L6SonANjViYWUyOTktOGQ2Ny00NWJmLThlY2MtMDU3MzJhNWU0MDg1/edit?hl=en) _The key isn’t to stick with the definitions that closely, but to be consistent within your own analytics system._
@@ -173,7 +173,7 @@ This works by using a `userId` instead of an `anonymousId` to track key events a
 
 [Learn more about pulling the entire user journey for a single user given a userId.](https://segment.com/docs/guides/sources/joining-user-profiles/)
 
-Unfortunately, tracking the same user across devices only works if she logs into each device. Anonymous browsing in each distinct “experience” (e.g. mobile safari, native iPhone, browser on laptop) generates its own unique `anonymousId` . Each `anonymousId` is limited to the scope of that browser or app, only measuring activities in those sessions. It’s not until the user logs in when the `userId` is generated (if she is registering for a new account) or the `userId` is retrieved from your database, and then mapped to the `anonymousId` of that session. Segment will keep a table of `anonymousId` s mapped to a single `userId`so you can analyze a user’s activity across multiple devices.
+Unfortunately, tracking the same user across devices only works if she logs into each device. Anonymous browsing in each distinct "experience" (e.g. mobile safari, native iPhone, browser on laptop) generates its own unique `anonymousId` . Each `anonymousId` is limited to the scope of that browser or app, only measuring activities in those sessions. It’s not until the user logs in when the `userId` is generated (if she is registering for a new account) or the `userId` is retrieved from your database, and then mapped to the `anonymousId` of that session. Segment will keep a table of `anonymousId` s mapped to a single `userId`so you can analyze a user’s activity across multiple devices.
 
 If a user logs in on multiple devices, then you would be able to analyze even the anonymous activity across those devices. Consequently, it’s important to encourage your users to log in so that you have this capability.
 

@@ -23,6 +23,6 @@ Here are some general password guidelines:
 
 ### Has my password been compromised?
 
-If you see a message that says “This password is known to have been previously compromised in a data breach”, it means that the password you typed has been used before, and was in a database that was compromised and put on the internet. This does **not** mean that Segment has been compromised, or that someone has accessed your Segment account. Check out [Have I Been Pwned](https://haveibeenpwned.com/Passwords) for more information, and choose a different password.
+If you see a message that says "This password is known to have been previously compromised in a data breach", it means that the password you typed has been used before, and was in a database that was compromised and put on the internet. This does **not** mean that Segment has been compromised, or that someone has accessed your Segment account. Check out [Have I Been Pwned](https://haveibeenpwned.com/Passwords) for more information, and choose a different password.
 
 ![](images/password-picker.png)

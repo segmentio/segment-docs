@@ -10,7 +10,7 @@ Segment’s Client SDKs (analytics.js, analytics-ios, and analytics-android) ser
 
 SDK Plugins are an appropriate component for your App if your source or destination requires client-side side effects, such as collecting ambient data in the client (Heatmapping, Error & Performance Monitoring tools), relying on device-native context such as third party cookies (Advertising pixels), or needs to actively modify the Client UI (e.g. A/B testing, Push Notification, In-App Messaging and LiveChat).
 
-_**Note:** SDK Plugins show up in our Connections Catalog as a “Device Based Destination” today, but this is subject to change, especially as we add support for more data data *collection*, *enrichment*, and *transformation* oriented primitives to plugins._
+_**Note:** SDK Plugins show up in our Connections Catalog as a "Device Based Destination" today, but this is subject to change, especially as we add support for more data data *collection*, *enrichment*, and *transformation* oriented primitives to plugins._
 
 Please follow the documentation carefully. Segment will not approve submissions for SDK plugin components that don't follow best practices or don't provide any more functionality than that supported by a [subscription](/docs/partners/subscription), as customers universally prefer Cloud Mode to Device Mode when available.
 

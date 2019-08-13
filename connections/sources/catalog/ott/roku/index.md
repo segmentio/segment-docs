@@ -33,7 +33,7 @@ The library consists of three parts:
 2. **source/SegmentAnalytics.brs** - Implementation responsible for making HTTP requests to Segment REST API for identify, track, screen, group or alias. Includes handling for batching, error handling. Must be used within context of SceneGraph Task node. Cannot be used directly within context of SceneGraph UI components.
 3. **components/SegmentAnalyticsTask.brs/xml** - SceneGraph Task node that will be running for the entire lifecycle of the app. Responsible for delegating calls to SegmentAnalytics.brs to make requests to Segment REST API.
 
-The “components” folder contains SceneGraph components and the “source” folder contains BrightScript files. The content of each folder must be included in the respective folder of the application. Depending on the application folder structure and where the library files are included, SegmentAnalyticsTask.xml might need to be updated to reflect the file paths.
+The "components" folder contains SceneGraph components and the "source" folder contains BrightScript files. The content of each folder must be included in the respective folder of the application. Depending on the application folder structure and where the library files are included, SegmentAnalyticsTask.xml might need to be updated to reflect the file paths.
 
 
 ### Initializing the library
@@ -43,32 +43,32 @@ To instantiate the library, you first need to update the application scene .xml 
 1. Include SegmentAnalyticsConnector.brs BrightScript file
 
 ```
-<script type=”text/brightscript” uri=”pkg:/source/analytics/SegmentAnalyticsConnector.brs />
+<script type="text/brightscript" uri="pkg:/source/analytics/SegmentAnalyticsConnector.brs />
 ```
 
 2. Include SegmentAnalyticsTask node component under the children tag
 
 ```
-<SegmentAnalyticsTask id=”segmentAnalyticsTask” />
+<SegmentAnalyticsTask id="segmentAnalyticsTask" />
 ```
 
-3. Once you have those tags in place you can initialize the library in your “init()” function of your scene as follows:
+3. Once you have those tags in place you can initialize the library in your "init()" function of your scene as follows:
 
 ```
-task =  m.top.findNode(“segmentAnalyticsTask”)
+task =  m.top.findNode("segmentAnalyticsTask")
 m.library = SegmentAnalyticsConnector(task)
 
 config = {
-  “writeKey”: ”WRITE KEY”
-  “debug”: true
-  “queueSize”: 3
-  “retryLimit”: 0
+  "writeKey": "WRITE KEY"
+  "debug": true
+  "queueSize": 3
+  "retryLimit": 0
 }
 
 m.library.init(config)
 ```
 
-The “config” object in the example above has four values that you can set:
+The "config" object in the example above has four values that you can set:
 
 **writeKey (required)**: A string type field that is the write key to the source of your workspace hosted on Segment.
 
@@ -88,15 +88,15 @@ This is what an identify call looks like in BrightScript with your library insta
 
 ```
 exampleTraitsObject = {
-  “email”: test@test.com
-  “name”: “TestName”
+  "email": test@test.com
+  "name": "TestName"
 }
 
 exampleOptionsObject = {
-  “extraInformation”: “test”
+  "extraInformation": "test"
 }
 
-m.library.identify(“exampleUserId”, exampleTraitsObject, exampleOptionsObject)
+m.library.identify("exampleUserId", exampleTraitsObject, exampleOptionsObject)
 ```
 
 After identifying the user you can start to invoke the other methods calls library (track, screen, group and alias) with the same userID to associate them within the segment analytics system.
@@ -107,16 +107,16 @@ Identify lets you tie a user to their record trait about them. It includes a uni
 An example of the method call would be as follows:
 
 ```
-userId = “1sdf1fw4xgafs”
+userId = "1sdf1fw4xgafs"
  
 traits = {
-  “email”: testEmail@gmail.com
-  “name”: “John Doe”
-  “accountType” : “tier-1”
+  "email": testEmail@gmail.com
+  "name": "John Doe"
+  "accountType" : "tier-1"
 }
 
 options = {
-  “timeStamp”: “2019-04-23T19:24:13+00:00”
+  "timeStamp": "2019-04-23T19:24:13+00:00"
 }
 
 m.library.identify(userId, traits, options)
@@ -132,24 +132,24 @@ The identify call has the following fields:
 
 ## Track
 
-The track event lets you record actions users perform. Every action triggers what we call an “event”, which can also have associated properties.
+The track event lets you record actions users perform. Every action triggers what we call an "event", which can also have associated properties.
 
 For this call in particular we suggest tracking events that are successful such as page loaded, click action performed and etc…
 
 This is an example of how you would invoke the track call in the Roku library:
 
 ```
-eventName = “fast forward button press”
+eventName = "fast forward button press"
  
 properties = {
-  “timeSkipped”: “60”
-  “mediaType”: “movie”
-  “timeInMovie”: “35:20”
+  "timeSkipped": "60"
+  "mediaType": "movie"
+  "timeInMovie": "35:20"
 }
 
 options = {
-  “userId”: “1sdf1fw4xgafs”
-  “timeStamp”: “2019-04-23T19:24:13+00:00”
+  "userId": "1sdf1fw4xgafs"
+  "timeStamp": "2019-04-23T19:24:13+00:00"
 }
 
 m.library.track(eventName, properties, options)
@@ -170,19 +170,19 @@ The screen method lets you track which screen the user sees when it is loaded. I
 Example of a screen call:
 
 ```
-name = “Main Screen”
+name = "Main Screen"
  
-category = “All”
+category = "All"
  
 properties = {
-  “hasCarousel”: “false”
-  “isLoggedIn”: “false”
-  “showingMovies”: “true”
+  "hasCarousel": "false"
+  "isLoggedIn": "false"
+  "showingMovies": "true"
 }
 
 options = {
-  “userId”: “1sdf1fw4xgafs”
-  “timeStamp”: “2019-04-23T19:24:13+00:00”
+  "userId": "1sdf1fw4xgafs"
+  "timeStamp": "2019-04-23T19:24:13+00:00"
 }
 
 m.library.screen(name, category, properties, options)
@@ -205,18 +205,18 @@ Helps associate an identified user with a group. Groups can be companies, organi
 An example of a group call would be:
 
 ```
-userId = “1sdf1fw4xgafs”
+userId = "1sdf1fw4xgafs"
  
-groupId = “1s2s3d2sd2a”
+groupId = "1s2s3d2sd2a"
  
 traits = {
-  “company”: “trackers.inc”
-  “field”:  “advertising”
-  “specialty”: “media tracking”
+  "company": "trackers.inc"
+  "field":  "advertising"
+  "specialty": "media tracking"
 }
  
 options = {
-    “timeStamp”: “2019-04-23T19:24:13+00:00”
+    "timeStamp": "2019-04-23T19:24:13+00:00"
 }
 
 m.library.group(userId, groupId, traits, options)
@@ -237,11 +237,11 @@ Allows you to associate one identity with another.
 An example of an alias call would be:
 
 ```
-userId = “1sdf1fw4xgafs”
+userId = "1sdf1fw4xgafs"
  
 options = {
-  “previousId”: “123c-dsad-2da2-da2ds”
-  “timeStamp”: “2019-04-23T19:24:13+00:00”
+  "previousId": "123c-dsad-2da2-da2ds"
+  "timeStamp": "2019-04-23T19:24:13+00:00"
 }
 
 m.library.alias(userId, options)
@@ -263,7 +263,7 @@ So for example, in the case you add a track message that is just below 500k char
 If you want to see how big your request is getting you can use set the debug property to true on the config object before initializing our library.  This will output a log on how big each request is getting when you queue/send them out.
 
 ### How can I see the logs for the library?
-You can follow [this guide](https://www.howtogeek.com/290787/how-to-enable-developer-mode-and-sideload-roku-apps/) to set your device into developer mode and [this one](https://sdkdocs.roku.com/display/sdkdoc/Debugging+Your+Application) to debug and surface logs out of your app. There are currently two levels of debugging which are “DEBUG” and “ERROR”.
+You can follow [this guide](https://www.howtogeek.com/290787/how-to-enable-developer-mode-and-sideload-roku-apps/) to set your device into developer mode and [this one](https://sdkdocs.roku.com/display/sdkdoc/Debugging+Your+Application) to debug and surface logs out of your app. There are currently two levels of debugging which are "DEBUG" and "ERROR".
 
 ### Does the Roku library support device-mode integrations?
 The Roku library only supports cloud-mode destinations. If you have a need for a device mode integration in your Roku application please [reach out](https://segment.com/help/contact/). 
