@@ -43,6 +43,8 @@ sections:
         title: "Improving Redshift performance"
       - path: "/connections/warehouses/warehouse-errors"
         title: "Warehouse Error codes"
+      - path: "/connections/warehouses/faq"
+        title: Warehouses FAQs
       - path: "/connections/warehouses/catalog"
         title: Warehouses Catalog
 - section_title: Guides
