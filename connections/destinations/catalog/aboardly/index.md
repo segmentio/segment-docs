@@ -18,3 +18,6 @@ When you `identify` a user, we'll pass that user's information to Aboardly with 
 ## Track
 
 When you `track` an event, we will send that event to Aboardly as a custom event.
+
+
+{% include content/integration-foot.md %}

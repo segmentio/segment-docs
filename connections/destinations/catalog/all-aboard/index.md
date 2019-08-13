@@ -40,3 +40,5 @@ Segment allows you to expose what your users do in your application. This inform
 For instance, using our simple example above perhaps you only want to invite customers who completed the registration process to an onboarding call. The `finished_registration: TRUE` trait allows you to quickly identify these customers.
 
 Traits are also useful in helping you have a more personal dialog with your trial customers. More personal call invitations encourage your most qualified customers to schedule a call with you.
+
+{% include content/integration-foot.md %}

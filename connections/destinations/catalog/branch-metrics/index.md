@@ -837,3 +837,6 @@ LinkProperties linkProperties = new LinkProperties()
 You can also control it for individual marketing links by inserting the keys and values into the deep link data section.
 
 ![image alt text](images/image_0.png)
+
+
+{% include content/integration-foot.md %}

@@ -1,5 +1,5 @@
 ---
-title: Castle 
+title: Castle
 ---
 
 # Integrating through Segment
@@ -197,3 +197,5 @@ end
 Castle's adaptive authentication tells you whether to allow access, initiate a second factor of authentication, or log out the user.
 
 Since all Segment calls are called asynchronously, you will need to use Castle's native SDKs to perform [adaptive authentication](https://castle.io/docs/authentication).
+
+{% include content/integration-foot.md %}

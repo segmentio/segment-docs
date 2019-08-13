@@ -299,3 +299,5 @@ Criteo can receive dates in a specific format, in order for us to pass along dat
 ### Is the mobile integration bundled?
 
 Even though we don't support integrating with Criteo via Segment from a server source, it's still not necessary for you to [bundle](https://segment.com/docs/guides/sources/bundled-SDK-vs-server/) the Criteo SDK into the Segment SDK! This is because while our mobile integration with them is powered from our servers, the integration requires metadata that can only be supplied by the user's mobile device (which is collected and passed along automatically by the Segment mobile SDK).
+
+{% include content/integration-foot.md %}

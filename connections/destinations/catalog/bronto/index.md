@@ -21,3 +21,4 @@ analytics.track('Order Completed', {
   orderId: '55c497bf'
 });
 ```
+{% include content/integration-foot.md %}

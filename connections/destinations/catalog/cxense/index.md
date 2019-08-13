@@ -92,3 +92,5 @@ window.cX.callQueue.push(['sendEvent', 'Shared Article', {
     title: 'How to View a Solar Eclipse Without Damaging Your Eyes'
 }])
 ```
+
+{% include content/integration-foot.md %}

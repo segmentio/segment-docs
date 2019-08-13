@@ -50,3 +50,6 @@ When you call `page`, Segment will send that event to Akita as a `Page View`.
 ## Track
 
 When you call `track`, Segment will send that event to Akita as an `Event`.
+
+
+{% include content/integration-foot.md %}

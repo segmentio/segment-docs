@@ -40,3 +40,5 @@ Product tours should lead to user actions and so offer the option of tagging eac
 
 ## Help
 For more information, please refer to [Chameleon's docs](https://docs.trychameleon.com) or [email them](mailto:support@trychameleon.com).
+
+{% include content/integration-foot.md %}
