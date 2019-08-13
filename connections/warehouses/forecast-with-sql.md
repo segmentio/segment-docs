@@ -32,7 +32,7 @@ Then, we’ll use [this Google Sheet](https://docs.google.com/spreadsheets/d/1hc
 
 To retrieve a table with the right columns for analysis, let’s use the follow SQL query:
 
-```
+```sql
     with
     first_transaction as (
         select  u.email,

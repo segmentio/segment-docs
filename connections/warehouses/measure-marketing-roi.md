@@ -19,9 +19,9 @@ For our analysis walkthrough, we’ll use fictitious e-commerce and marketing da
 Toastmates is currently running these two campaigns:
 
 *   “National Toast Day”, where $5 off was applied if you made a purchase on that day
-    
+
 *   “A Toast To Your Friend”, where you can buy toast for a friend at $5 off
-    
+
 
 Each of these campaigns used a combination of channels. Here is a table with the channels and corresponding UTM parameters so when we build the SQL query, we can make sure all of the traffic sources are accounted for.
 
@@ -41,11 +41,11 @@ Here are the first four rows of the resulting table:
 
 ![](../images/asset_vyQw0KkL.png)
 
-Then, we can use tweak the query above into the one below to perform some simple `COUNT` and `SUM` on the previous table to get conversion metrics as well as total revenue derived from the campaign.  
+Then, we can use tweak the query above into the one below to perform some simple `COUNT` and `SUM` on the previous table to get conversion metrics as well as total revenue derived from the campaign.
 
 ![](../images/asset_Hy1ECxwg.png)
 
-Here is the resulting table:  
+Here is the resulting table:
 
 ![](../images/asset_F9LPOF1g.png)
 
@@ -60,9 +60,9 @@ The main costs that are incorporated in an ROI calculation are salaries (pro-rat
 The costs associated with a given campaign consist of two major pieces: the person-hour cost and any associated media spend.
 
 *   Calculating the pro-rated person-hour is an estimate of the number of hours and people used to setup and manage the campaign, then multiplied by the hourly rates based off their annual salaries.
-    
+
 *   The media spend is the advertising cost for distributing creatives to generate traffic to your store
-    
+
 
 _Want to easily export advertising data from_ [Google Adwords](/sources/adwords) _or_ [Facebook Ads](/sources/facebook-ads)_?_ _Check out_ [Segment Sources](/sources).
 
