@@ -128,3 +128,5 @@ analytics.identify({
   }
 });
 ```
+
+{% include content/integration-foot.md %}

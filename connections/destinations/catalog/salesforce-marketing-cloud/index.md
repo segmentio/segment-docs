@@ -213,3 +213,5 @@ In order to take advantage of this functionality, you will need to create attrib
 [app center - summary]: /docs/integrations/salesforce-marketing-cloud/images/new_app-4_summary.png
 [eventing API]: https://code.exacttarget.com/apis-sdks/rest-api/v1/hub/data-events/putDataExtensionRowByKeyAsync.html
 [standard identify traits]: https://segment.com/docs/spec/identify/#traits
+
+{% include content/integration-foot.md %}

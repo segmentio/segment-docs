@@ -10,3 +10,5 @@ When you toggle on Pingdom in Segment, this is what happens:
 + Pingdom will automatically start recording page load times. Go to [Pingdom](https://my.pingdom.com/rum) to view your page load performance data.
 
 Since Pingdom only records data about page load performance, it does not collect any of the data represented by our API.
+
+{% include content/integration-foot.md %}

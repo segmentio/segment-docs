@@ -8,26 +8,17 @@ This destination is built and supported by Selligent. If you run into any issues
 ## Getting Started
 
 Once the Segment Connector is integrated with Message Studio,
-the Segment API shall support receiving Segment’s &quot;Identify&quot; and
-&quot;Track&quot; event data. Message Studio translates these events as follows:</p>
-
-
->Identify: add records to an Internal Data Source (IDS)
-
->Track: add records to an Interaction Extension
+the Segment API shall support receiving Segment’s "Identify" and "Track" event data. Message Studio translates these events as follows:
+- Identify: add records to an Internal Data Source (IDS)
+- Track: add records to an Interaction Extension
 
 These records can be used to enhance the targeting and
-personalization of your email messages within the Message Studio platform.</p>
-
+personalization of your email messages within the Message Studio platform.
 
 ## Identify
 
 When you identify a user, we’ll pass that user’s information to
-Message Studio as a record in the configured Internal Data Source.&nbsp; Since
-the Internal Data Source schema is flexible, each customer’s destination with
-Segment will require unique mapping of the Internal Data Source fields.&nbsp;
-Customers should contact their Selligent Relationship Manager so we can work
-with them to configure the mapping to best meet their needs.
+Message Studio as a record in the configured Internal Data Source. Since the Internal Data Source schema is flexible, each customer’s destination with Segment will require unique mapping of the Internal Data Source fields. Customers should contact their Selligent Relationship Manager so we can work with them to configure the mapping to best meet their needs.
 
 
 ### Example Internal Data Source Schema
@@ -108,3 +99,5 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>acct_
 
 <p class=MsoNormal style='margin-top:10.0pt'>If you have any questions, please
 contact your Selligent Relationship Manager for assistance.</p>
+
+{% include content/integration-foot.md %}

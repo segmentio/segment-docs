@@ -91,7 +91,7 @@ analytics.track('event', {
       }
     }
   }
-}
+})
 ```
 
 ### Goals
@@ -101,3 +101,5 @@ If you want to flag specific events as Piwik Goals you can do so by mapping thos
 ![piwik goals settings](images/goals.png)
 
 Fill in the event on the left and the Goal ID from Piwik on the right. Then every time the event happens we'll fire Piwik's `trackGoal` method.
+
+{% include content/integration-foot.md %}

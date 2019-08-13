@@ -50,3 +50,5 @@ You have the option to map up to 10 of your Segment `.identify()` traits to cust
 ![](https://cloudup.com/cmA_dv62kgp+)
 3. In your Segment PerimeterX Destination settings, enter the name of the `.identify()` trait you'd like to map the the custom parameter you created and then enter the number of the custom parameter (1-10).
 ![](https://cloudup.com/cnKeeTBLune+)
+
+{% include content/integration-foot.md %}

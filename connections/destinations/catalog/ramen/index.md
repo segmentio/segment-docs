@@ -144,3 +144,5 @@ If the above all look correct, and you are sending `timestamp` and `auth_hash`, 
 + `auth_hash` is being calculated correctly
 ​
 If you are still having trouble, you can email [Ramen support](mailto:support@ramen.is).
+
+{% include content/integration-foot.md %}

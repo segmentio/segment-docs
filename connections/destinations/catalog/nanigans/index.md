@@ -34,3 +34,5 @@ By default, if you send any data with either the iOS or Android library, we will
 If you'd like to send any other server side event using a server side library, you can either enable the option "Send Events to Mobile Endpoint" in your Nanigans settings. However, this means that ALL server side events sent from your server side library will be sent to the mobile endpoint.
 
 If you are unsure which endpoint to send to, please contact Nanigans support!
+
+{% include content/integration-foot.md %}

@@ -2,7 +2,6 @@
 title: Omniture
 ---
 
-
 ## Getting Started
 
 When you toggle on Omniture in Segment, our CDN is updated within 5-10 minutes. Then our javascript will start sending all mapped `track` calls to your Omniture installation.
@@ -163,3 +162,5 @@ After the settings cache refreshes, our library will automatically start sending
 ### Custom Links
 
 In order to populate the Custom Links report when sending data server-side, you'll need to pass `context.page.url` manually.
+
+{% include content/integration-foot.md %}

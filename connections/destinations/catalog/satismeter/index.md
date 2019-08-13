@@ -74,3 +74,5 @@ Make sure you are sending an `analytics.identify()` call when the page is loaded
 ### The SatisMeter widget shows up right after sign-up
 It is important to send the `createdAt` trait to `analytics.identify()` method. Without this SatisMeter widget will be shown right after sign-up to every user that fits your other targeting settings.
 You can change the targeting settings in Targeting section of SatisMeter settings.
+
+{% include content/integration-foot.md %}

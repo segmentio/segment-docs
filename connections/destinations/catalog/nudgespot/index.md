@@ -42,3 +42,5 @@ Nudgespot supports sending [email events](/docs/spec/email/) to other tools on t
 ### When will I see data from my mobile app?
 
 If you already have an app deployed with the Segment source, and you just turned on Nudgespot, it will take up to an hour for all your mobile users to refresh their Segment settings cache, and learn about the new service that you want to send to. After the settings cache refreshes, our source will automatically start sending data to Nudgespot.
+
+{% include content/integration-foot.md %}

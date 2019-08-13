@@ -117,3 +117,5 @@ Include the following rules in your ProGuard file.
  -keep class com.webengage.sdk.android.**{*;}
 -dontwarn com.webengage.sdk.android.**
 ```
+
+{% include content/integration-foot.md %}

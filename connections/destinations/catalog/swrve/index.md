@@ -68,19 +68,19 @@ No further action is required to integrate in-app messages or Conversations, whi
 
 1. Add this line to your `Podfile`:
 
-  ```
+  ```objc
   pod 'Segment-Swrve'
   ```
 
 2. Register the integration. To do this, import the Swrve integration in your `AppDelegate`:
 
-  ```
+  ```objc
   #import <SwrveSegment/SEGSwrveIntegrationFactory.h>
   ```
 
   And add the following lines:
 
-  ```
+  ```objc
   NSString *const SEGMENT_WRITE_KEY = @"...";
   SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
 
@@ -125,3 +125,5 @@ All other traits will be sent to Swrve as custom user properties. Traits will be
 ## Track
 
 When you `track` an event, we will send that event directly to Swrve as a custom event. Event properties will be sent to Swrve as event payloads. Properties will be converted to strings before sending.
+
+{% include content/integration-foot.md %}

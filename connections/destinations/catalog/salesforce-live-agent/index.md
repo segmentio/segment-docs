@@ -51,3 +51,5 @@ Many of the settings required to allow Segment to integrate with your Live Agent
 liveagent.init('https://{LIVE_AGENT_ENDPOINT_URL}.salesforceliveagent.com/chat', {DEPLOYMENT_ID}, {ORG_ID});
 </script>
 ```
+
+{% include content/integration-foot.md %}

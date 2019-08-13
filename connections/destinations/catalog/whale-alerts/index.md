@@ -59,3 +59,5 @@ Once Whalr has enough information to move beyond the out-of-box intelligence, ou
 
 ## Contact Whalr
 [Contact us](mailto:customersuccess@whalr.com) if you need additional support.
+
+{% include content/integration-foot.md %}

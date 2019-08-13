@@ -33,3 +33,5 @@ analytics.identify( 'u1234', {
 ```
 
 For more information about Referral SaaSquatch check out [their docs](http://docs.referralsaasquatch.com/segment-io)!
+
+{% include content/integration-foot.md %}

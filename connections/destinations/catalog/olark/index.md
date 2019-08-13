@@ -70,3 +70,5 @@ These events will be sent to other tools in your stack that can accept track cal
 To learn more about the live chat events you can capture with this destination, head on over to our [Live Chat spec docs](/docs/spec/live-chat/).
 
 ![Turn on Olark](images/olarklivechat.png)
+
+{% include content/integration-foot.md %}

@@ -79,3 +79,5 @@ Segment automatically binds the following properties to Pinterest [Event Data](h
 + `nested within the e-commerce products array: brand` => product_brand
 
 In the Segment.com Pinterest Tag destination settings, one can also define their own custom properties, in addition to the mapped properties above.
+
+{% include content/integration-foot.md %}

@@ -285,3 +285,5 @@ You should enter `address_street` as your Segment Property Name.
 ### I'm seeing a 'Merge cannot be done on one field' in the Segment debugger!
 
 This error occurs when you try to upsert a record to a Profile Extension Table but you did not provide any additional traits other than what we used to match the columns. For PETs, we use your `userId` or `traits.email` from your `.identify()` calls to upsert the record. You need to send at least one other trait that would map to a field in your PET.
+
+{% include content/integration-foot.md %}

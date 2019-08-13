@@ -36,3 +36,5 @@ A table with all of your screen method calls. This table will include all of the
 ### source.event_name
 
 For track calls, each event like `Signed Up` or `Order Completed` also has it's own table, with columns for each of the event's distinct properties.
+
+{% include content/integration-foot.md %}

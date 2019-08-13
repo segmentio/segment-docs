@@ -61,3 +61,5 @@ We attempt to match users in your audience with the identifiers that Facebook su
 ## How do lookalikes work?
 
 You can create a seed audience in Personas and then sync that to Facebook. For example, you might want to create a group of high-value users that have spent a certain amount of money on your product. In Facebook, you can then create a lookalike based on that audience.
+
+{% include content/integration-foot.md %}

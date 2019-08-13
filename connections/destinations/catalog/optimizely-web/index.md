@@ -435,3 +435,5 @@ More importantly, to send the true referrer value with the initial `page` call i
   }}();
 </script>
 ```
+
+{% include content/integration-foot.md %}

@@ -28,3 +28,5 @@ This feature makes use of JavaScript Source Maps to translate the minified code 
   b. Upload pre-deploy: at the beginning of your deploy script, upload a source map package via Rollbar's API.
 
   For more detail on providing your source map, checkout [Rollbar's documentation here](https://rollbar.com/docs/source-maps/#step-2-provide-your-source-map).
+
+{% include content/integration-foot.md %}

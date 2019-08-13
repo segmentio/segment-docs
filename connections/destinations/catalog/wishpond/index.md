@@ -78,3 +78,5 @@ Make sure you have copied the right keys from Wishpond’s [“API Keys” dialo
 [Analytics.js]: https://segment.com/docs/libraries/analytics.js/
 [ci-link]: https://circleci.com/gh/segment-integrations/analytics.js-integration-wishpond
 [ci-badge]: https://circleci.com/gh/segment-integrations/analytics.js-integration-wishpond.svg?style=svg
+
+{% include content/integration-foot.md %}

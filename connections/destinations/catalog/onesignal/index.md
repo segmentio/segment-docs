@@ -45,3 +45,5 @@ OneSignal will also assign the following custom tags based on user attributes or
 - `Website`
 
 All of the above values can be used to deliver and schedule notifications to your users from the OneSignal dashboard.
+
+{% include content/integration-foot.md %}
