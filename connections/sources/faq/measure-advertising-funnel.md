@@ -93,18 +93,18 @@ If you want to get a quick estimate for the number of additional clicks you’d 
 Here’s how it works…
 
 1.  Use a URL shortener like bit.ly to link to a landing page, with a custom parameter like `?ttg=2` .
-    
+
 2.  Add the shortened link to your ad.
-    
+
 3.  Measure total clicks from the bit.ly stats page.
-    
+
 
 ![](../images/asset_vMpEZBVz.png)
 
 1.  In your warehouse, count the number of pages with that unique url parameter from step 1 (make sure you’re looking at the same timeframe).
-    
 
-```
+
+```sql
 select received_at, url
 from <site>.pages
 where url like '%/warehouses%'
