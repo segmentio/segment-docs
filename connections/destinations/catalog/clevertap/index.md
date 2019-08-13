@@ -150,3 +150,5 @@ CleverTap has created a sample iOS application that integrates CleverTap via Seg
 If you chose not to bundle the CleverTap Mobile SDK, then you will have to implement your own Push Message processors (and you won’t have access to CleverTap’s In-App feature).
 
 If you decide to implement your own Push Message processors, then you can pass push tokens to CleverTap via the server-side destination. You can do this by sending it inside context.device.token.
+
+{% include content/integration-foot.md %}

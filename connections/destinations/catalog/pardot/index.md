@@ -30,7 +30,7 @@ Our script will use the most appropriate campaign Id.
 
 ### Pardot Version 3 and Version 4
 
-There are currently two active versions of the Pardot platform, version 3 and version 4. The major change in version 4 is the new ability to create multiple prospects in Pardot with the same email address. 
+There are currently two active versions of the Pardot platform, version 3 and version 4. The major change in version 4 is the new ability to create multiple prospects in Pardot with the same email address.
 
 Previously, this was not possible. Email was used by Pardot as a distinct identifier. In version 4 however, in order to update an *existing* prospect, you must provide either the Pardot ID for a given user OR the Salesforce FID. If one of these values is not provided in a request, Pardot will create a new prospect. More information is available on their [website](http://developer.pardot.com/kb/api-version-4/).
 
@@ -107,7 +107,7 @@ If a user existed in your Pardot instance with a custom field called `org_id` an
 
 Alternatively, you can specify in your integration settings that we use the `userId` passed in as an argument to the `identify` event to match the user on. Keeping with the above example, if you already were using your internal `org_id` as the `userId` for Segment events, you could enable this option and avoid having to explicitly define it as a trait.
 
-**Important**: If you have users in Pardot that do not have values for the custom field you will be using as a lookup field, you will likely see duplicate prospects being created. 
+**Important**: If you have users in Pardot that do not have values for the custom field you will be using as a lookup field, you will likely see duplicate prospects being created.
 
 If possible, we recommend you explore bulk updating all existing users to ensure they have a value for this custom field before enabling the integration.
 
@@ -122,3 +122,5 @@ On the client-side browser we load Pardot's javascript snippet to enable [anonym
 If you are using Version 4 of the API and are using a lookup field to match existing prospects with Segment `identify` events, trying to update a prospect's email will result in a new prospect being created. This is because the Pardot API only allows read operations with email as the query (or PardotID/SaleforceFID but if you were passing those, this issue would be irrelevant to you). What ends up happening is our integration performs a read operation for a prospect matching the new email being passed in. This will not return a lookup field match and thus a new user will be generated.
 
 To update a user's email, you must pass either a PardotID or a SaleforceFID (see above for specifics on how to do this).
+
+{% include content/integration-foot.md %}

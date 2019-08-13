@@ -278,3 +278,5 @@ The comScore SDK will collect unique device id's under the hood, so based on thi
 
 ### How does comScore determine the application name?
 Used in the classification from comScore’s Audience reporting, comScore retrieves the application name from your app’s Info.plist application bundle name as returned by `CFBundleName`.  If you want to override the automatically retrieved value, you can provide a string with your preferred app name.
+
+{% include content/integration-foot.md %}

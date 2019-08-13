@@ -1,5 +1,5 @@
 ---
-title: Optimizely Full Stack 
+title: Optimizely Full Stack
 beta: true
 ---
 
@@ -126,3 +126,5 @@ Invoking a Segment `identify` event sets Segment `traits` as Optimziely `attribu
 ### Notification Listeners
 
 Notification listeners are not available when implementing Optimizely via Segment using cloud mode. However, notification listeners are straightforward to set up, as [documented here on Optimizely's site](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners).
+
+{% include content/integration-foot.md %}

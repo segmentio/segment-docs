@@ -59,3 +59,5 @@ Here’s an example:
 ### Completed Order
 
 When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/spec/ecommerce/v2/), we will send the event and data to Promoter as a custom event with the data stored with Promoter for future use.
+
+{% include content/integration-foot.md %}

@@ -1,7 +1,7 @@
 ---
 title: DoubleClick Floodlight
 ---
- 
+
 ## Getting Started
 
 The DoubleClick Floodlight destination allows you to make calls directly to Floodlight based on your mapped events. All you have to do is drop in your **DoubleClick Advertiser ID** into your settings and map the Segment `track` events to their corresponding Floodlight tags.
@@ -114,3 +114,5 @@ Analytics.with(context).track("Free El", new Properties().putValue("show", "Stra
 Please refrain from mapping custom variables that are PII. Please refer to the [warning](https://support.google.com/dfa/partner/answer/2548879?hl=en) by DoubleClick:
 
 The terms of your DoubleClick contract prohibit passing any information to us that we could use or recognize as personally identifiable information (PII). If you enter certain key-values into a field in a DoubleClick product, you may see a warning that reminds you that you must not use key-values to pass data that we would recognize as PII. Key-values that trigger this warning include, for example, email and username. Note that it is okay to use these key-values if your purpose is not to collect information that DoubleClick could use or recognize as PII. (For example, email=weekly is fine, but passing a user’s email address is not.) If you do choose one of these key-values, DoubleClick may contact you in the future to confirm that you are not using them in a way that is prohibited.
+
+{% include content/integration-foot.md %}

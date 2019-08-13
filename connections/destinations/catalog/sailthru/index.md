@@ -275,3 +275,5 @@ Sailthru does not accept nested custom traits or properties, so by default we wi
 
 ### Replays
 Note that Sailthru does not support historical replay.
+
+{% include content/integration-foot.md %}

@@ -38,3 +38,5 @@ The App ID for your app can be taken from the destination guide provided by Boom
 
 
 If you have any questions, or suggestions on we can improve this documentation, feel free to [contact us](http://boomtrain.com/contact/).
+
+{% include content/integration-foot.md %}

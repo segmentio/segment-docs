@@ -91,3 +91,5 @@ When you call `screen` we'll automatically log an event like `Viewed ABC Screen`
 ### Other Features
 #### Labels
 The destination does not currently support labels. If this is important to you, please [let us know](https://segment.com/help/contact/).
+
+{% include content/integration-foot.md %}

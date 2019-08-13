@@ -43,3 +43,5 @@ This event helps Smyte identify whether the user is suspicious.
 ## Screen
 
 This event also helps Smyte identify whether the user is suspicious.
+
+{% include content/integration-foot.md %}

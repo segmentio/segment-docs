@@ -54,3 +54,5 @@ We attempt to match users in your audience with the identifiers that Google supp
 ### What Adwords platforms are supported?
 
 This destination supports Search, Gmail, and Youtube ad campaigns. Adwords does not support Display campaigns through remarketing lists.
+
+{% include content/integration-foot.md %}

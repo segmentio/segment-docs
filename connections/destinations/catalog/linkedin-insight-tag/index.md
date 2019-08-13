@@ -52,3 +52,6 @@ From there, click **Configure LinkedIn Insight Tag** and select the source for w
 ![](images/Nmad4zYvWy.png)
 
 Select that option and paste in the LinkedIn Data Partner ID that you copied earlier. Click **Save**, then click **Activate Destination**. Our servers build the latest CDN for that source, and the LinkedIn Insight Tag loads on the sites that use that source's Segment snippet!
+
+
+{% include content/integration-foot.md %}

@@ -15,3 +15,5 @@ Errorception is only supported on the client-side.
 ## Identify
 
 This is only active if you set the `meta` setting to be true. When you call [`identify`](/docs/spec/identify/) we set Errorception's `_errs.meta` to be the `traits` you passed in.
+
+{% include content/integration-foot.md %}

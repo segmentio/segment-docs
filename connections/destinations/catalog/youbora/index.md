@@ -303,7 +303,7 @@ See the below example for what a working implementation looks like:
               html5: [
                 {
                   player: 'html5-player',
-                  options: {}
+                  options: {}}
               ]
             }
           }
@@ -314,3 +314,5 @@ See the below example for what a working implementation looks like:
 
   </script>
 ```
+
+{% include content/integration-foot.md %}

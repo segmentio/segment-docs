@@ -130,3 +130,5 @@ analytics.alias('old-email@segment.com','new-email@segment.com')
 ```
 
 If both parameters are not email address types, the call is ignored in Seg.
+
+{% include content/integration-foot.md %}

@@ -32,3 +32,5 @@ This will send the event to Taplytics with the associated properties. If you inc
 
 ## Reset
 If your app supports the ability for a user to logout and login with a new identity, then you’ll need to call reset in your mobile app. Here we will call Taplytic's resetUser implementation to ensure the user information remains consistent.
+
+{% include content/integration-foot.md %}

@@ -51,3 +51,6 @@ Here’s an example:
     "locale": "en-US"
   }
 }' {% endcomment %}
+
+
+{% include content/integration-foot.md %}

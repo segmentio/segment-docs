@@ -137,3 +137,5 @@ When you call a `page` event, we send a pageview to Freshsales. You can send ext
 ### Custom Fields Aren’t Updating
 
 Make sure that the traits you’re passing through match the custom field’s internal name and data type.
+
+{% include content/integration-foot.md %}

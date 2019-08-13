@@ -27,56 +27,56 @@ or setting up automation rules.
 
 1) Include the Urban Airship dependency in the project’s build.gradle file:
 
-    repositories {
-       ...
-
-       maven {
-          url  "https://urbanairship.bintray.com/android"
-       }
-    }
-
-
-    dependencies {
-       ...
-
-       // Urban Airship SDK
-       compile 'com.urbanairship.android:segment-integration:1.0.+'
-    }
+```java
+repositories {
+   ...
+   maven {
+      url  "https://urbanairship.bintray.com/android"
+   }
+}
+dependencies {
+   ...
+   // Urban Airship SDK
+   compile 'com.urbanairship.android:segment-integration:1.0.+'
+}
+```
 
 
 2) Verify the `applicationId` is set in the project’s build.gradle file:
 
-
+```java
     android {
        ...
-
        defaultConfig {
           ...
-
           applicationId "com.example.application"
        }
     }
+```
 
 
 3) Add the Urban Airship Destination factory:
 
+```java
     Analytics analytics = new Analytics.Builder(context, writeKey)
        .use(UrbanAirshipIntegration.FACTORY)
        ...
        .build();
-
+```
 
 ### Enabling user notifications
 
 Once the Urban Airship destination is ready, you can enable user notifications with the following:
 
-    analytics.onIntegrationReady(UrbanAirshipIntegration.URBAN_AIRSHIP_KEY, new Analytics.Callback<Object>() {
-          @Override
-          public void onReady(Object instance) {
-             UAirship airship = (UAirship) instance;
-             airship.getPushManager().setUserNotificationsEnabled(true);
-          }
-       });
+```js
+analytics.onIntegrationReady(UrbanAirshipIntegration.URBAN_AIRSHIP_KEY, new Analytics.Callback<Object>() {
+      @Override
+      public void onReady(Object instance) {
+         UAirship airship = (UAirship) instance;
+         airship.getPushManager().setUserNotificationsEnabled(true);
+      }
+   });
+```
 
 
 ## iOS
@@ -90,23 +90,29 @@ Once the Urban Airship destination is ready, you can enable user notifications w
 
 2) Use the Urban Airship Destination:
 
-    SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
+   ```objc
+   SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 
-    [config use:[SEGUrbanAirshipIntegrationFactory instance]];
+   [config use:[SEGUrbanAirshipIntegrationFactory instance]];
 
-    [SEGAnalytics setupWithConfiguration:config];
-
+   [SEGAnalytics setupWithConfiguration:config];
+   ```
 
 ### Enabling user notifications
 
 Once the Urban Airship destination is ready, you can enable user notifications with the following:
 
+```objc
     [UAirship push].userPushNotificationsEnabled = YES;
-
+```
 
 To listen for when the Urban Airship destination is ready, listen for the `SEGAnalyticsIntegrationDidStart` event in `NSNotificationCenter`:
 
-    [[[NSNotificationCenter defaultCenter] addObserver:self
-                                              selector:@selector(airshipReady)
-                                                  name:@"io.segment.analytics.integration.did.start"
-                                                object:[SEGUrbanAirshipIntegrationFactory instance].key];
+```objc
+[[[NSNotificationCenter defaultCenter] addObserver:self
+  selector:@selector(airshipReady)
+      name:@"io.segment.analytics.integration.did.start"
+    object:[SEGUrbanAirshipIntegrationFactory instance].key];
+```
+
+{% include content/integration-foot.md %}

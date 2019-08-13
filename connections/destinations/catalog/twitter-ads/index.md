@@ -368,3 +368,5 @@ window.twq('track', 'AddPaymentInfo', {});
 ## Troubleshooting
 
 {% include content/client-side-script-unverified.md %}
+
+{% include content/integration-foot.md %}

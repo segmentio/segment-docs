@@ -79,3 +79,5 @@ Push notifications on Android require a bit of extra work to setup.
     });
 }
 ```
+
+{% include content/integration-foot.md %}

@@ -57,3 +57,5 @@ This event must contain a revenue property that specifies the amount spent using
   "version": "1.1"
 }
 ```
+
+{% include content/integration-foot.md %}

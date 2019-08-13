@@ -55,3 +55,5 @@ We will forward the following to Keen:
     revenue: 19.99
 }
 ```
+
+{% include content/integration-foot.md %}

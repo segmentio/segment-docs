@@ -446,3 +446,5 @@ There are some further optional features you can read about here:
 While updating the MoEngage settings on the Segment Dashboard, you can enable the logging functionality of the MoEngage SDK to see the SDK logs on the browser console. Just set `Enable Debug Logging` to `On` and the SDK will be loaded in debug mode.
 
 NOTE: When debug mode is enabled, the events and attributes of the users are sent to the `TEST` environment of your MoEngage App.
+
+{% include content/integration-foot.md %}

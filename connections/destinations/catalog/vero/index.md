@@ -120,3 +120,5 @@ analytics.identify('324LKJF', {
     }
 })
 ```
+
+{% include content/integration-foot.md %}

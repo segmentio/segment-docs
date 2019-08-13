@@ -61,3 +61,5 @@ Here's an example `track` call (omitting common fields) with all the required pr
   }
 }
 ```
+
+{% include content/integration-foot.md %}

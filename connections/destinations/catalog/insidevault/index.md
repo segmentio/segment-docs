@@ -28,3 +28,5 @@ analytics.enqueue(TrackMessage.builder("Purchased Item")
     )
 );
 ```
+
+{% include content/integration-foot.md %}

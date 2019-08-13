@@ -216,3 +216,6 @@ The following properties are optional, if you'd like to see more, please get in 
 </table>
 
 Here's Google documentation for the endpoint we hit [for iOS apps](https://developers.google.com/app-conversion-tracking/ios/conversion-tracking-server#reporting_in-app_conversions_from_an_analytics_server) and [for Android Apps](https://developers.google.com/app-conversion-tracking/android/conversion-tracking-server#in-app_conversions). It can take 24-48 hours for conversions to show up in the conversions dashboard.
+
+
+{% include content/integration-foot.md %}

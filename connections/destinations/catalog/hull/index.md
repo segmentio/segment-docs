@@ -114,3 +114,6 @@ will add the following traits on all users that belong to the group :
 Internally, we flatten objects and use '/' as a separator. They're really stored as `traits_group/name`. Our sources handle nesting for you when you receive data coming from Hull
 
 __Note: This feature is optional and not enabled by default. You should only enable it if your users can only belong to one group.__
+
+
+{% include content/integration-foot.md %}

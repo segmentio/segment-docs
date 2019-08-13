@@ -56,3 +56,5 @@ analytics.track('Conversion', {
 Track calls will be sent to Adtriba as a `track` event.
 
 Trigger additional events by using [Semantic Events](https://segment.com/docs/spec/semantic/) in order to enrich the Adtriba machine learning process.
+
+{% include content/integration-foot.md %}

@@ -26,3 +26,5 @@ analytics.ready(function(){
 ```
 
 Note that the `userId` parameter is automatically determined.
+
+{% include content/integration-foot.md %}

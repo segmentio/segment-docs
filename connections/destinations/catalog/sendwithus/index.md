@@ -19,3 +19,5 @@ When you call identify from one of our libraries, this will create a customer in
 ## Track
 
 To see your [`track`](/docs/spec/track) events in Sendwithus, ensure that you have first created a Segment.com integration under Automation > Triggers. If you select 'Add Trigger' and select the Segment Event Name dropdown, you'll see a list of event names that you have sent through.
+
+{% include content/integration-foot.md %}

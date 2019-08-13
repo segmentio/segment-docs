@@ -60,3 +60,5 @@ Any custom traits of the `.group()` call will follow same logic as `Identify` me
 Verify that API key your using in Segment is not revoked by going to **App settings > Advanced > Segment API keys** at [app.userengage.com](https://app.userengage.com).
 
 If problem still persist verify that domain the request from is trusted. You can edit domains you trust by going to **App settings > Advanced > Domains** at [app.userengage.com](https://app.userengage.com).
+
+{% include content/integration-foot.md %}

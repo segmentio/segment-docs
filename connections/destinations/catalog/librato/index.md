@@ -25,6 +25,7 @@ analytics.track({
   event: 'Event Triggered'
   properties: {
     value: 2
+  }
   });
 ```
 
@@ -83,3 +84,5 @@ analytics.track('507f191e81', 'Event Triggered',
   }
 })
  ```
+
+{% include content/integration-foot.md %}

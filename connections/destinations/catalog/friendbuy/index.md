@@ -3,7 +3,7 @@ title: Friendbuy
 ---
 
 ## Getting Started
- 
+
 Setting up Friendbuy is very simple! Just login to your Friendbuy account, go to **Integration Code** > and copy the **Site ID** above the snippet box. Then paste it into your Friendbuy Destiation setting back in the Segment UI as seen in the gif below:
 
 ![](https://i.gyazo.com/f02339b0c4d567e1413c6f3891062c98.gif)
@@ -107,3 +107,5 @@ Then we will iterate over each item in your `properties.products` and send the f
     }
   }
 ```
+
+{% include content/integration-foot.md %}

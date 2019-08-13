@@ -54,3 +54,5 @@ __If you have any questions feel free to contact Callexa at:__ [info@callexa.com
 
 ---
 _Net Promoter, Net Promoter Score, and NPS are trademarks of Satmetrix Systems, Inc., Bain & Company, Inc., and Fred Reichheld.
+
+{% include content/integration-foot.md %}

@@ -205,3 +205,5 @@ If you want to set your passwords to never expire, you can do so in **Salesforce
 ### Updating Lead Status
 
 Currently Segment does not support updating the Salesforce Lead Status field due to constraints of the Salesforce API.
+
+{% include content/integration-foot.md %}

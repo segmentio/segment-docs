@@ -22,3 +22,5 @@ When you call `identify`, we keep track of the current user and will include ide
 Segment supports Extole events in our client-side library through the `track` method.
 
 **Note:** Remember, because Extole tracks custom user data, be sure to call [`identify`](#identify) before attempting to call [`track`](#track).
+
+{% include content/integration-foot.md %}

@@ -29,3 +29,5 @@ All you have to do is make a [`track`](/docs/spec/track/) call to send a custom 
 ### Revenue
 
 It's easy to track revenue in Countly through Segment. All you have to do is use our [`track`](/docs/spec/track/) method with a property labeled `revenue`. The value must be a number.
+
+{% include content/integration-foot.md %}

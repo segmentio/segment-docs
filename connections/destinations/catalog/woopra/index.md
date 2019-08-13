@@ -94,3 +94,5 @@ If you are seeing split user profiles, the most likely culprit is that you are c
 Calling `.identify()` in the browser will effectively map the `userId` you passed in with the `wooTracker` cookie value. So in the event that you call `.identify()` on the server side first, you **MUST** call `.identify()` on the client side as well to tie the `wooTracker` cookie to that `userId`.
 
 Doing so will ensure that duplicate profiles are not created.
+
+{% include content/integration-foot.md %}

@@ -1,5 +1,5 @@
 ---
-title: Google Adwords New Experience 
+title: Google Adwords New Experience
 ---
 
 
@@ -46,3 +46,5 @@ The only exception is that for `Order Completed` events, we will map Google's se
 ## Multiple AdWords Account
 
 If you are an enterprise that uses multiple AdWords accounts (usually managed by various third party agencies) you can override the top level default Google Conversion ID at the event level by entering it into the settings.
+
+{% include content/integration-foot.md %} 

@@ -25,3 +25,5 @@ When you `identify` a user, we'll pass that user's information to Planhat with `
 In addition, all calls will get Segment as 'source'.
 
 If the `userId` or `traits.email` matches an existing Contact in Planhat the Identify-call will automatically be associated with that Contact. Otherwise a new Contact will be created in Planhat. New Contacts received from Segment can either be discarded or manually assigned to a Customer profile in Planhat.
+
+{% include content/integration-foot.md %}

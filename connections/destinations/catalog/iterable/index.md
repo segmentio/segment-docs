@@ -100,3 +100,5 @@ Iterable supports sending push notification events to Segment. These events will
 
 They support the following events:
 `Push Delivered`, `Push Bounced`, `Mobile App Uninstalled`, `Push Opened`
+
+{% include content/integration-foot.md %}

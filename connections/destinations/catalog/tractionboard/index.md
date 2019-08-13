@@ -39,3 +39,5 @@ With this method we will change the id to a certain user saving the old one as a
 ## Screen
 
 It's the same that the page method. Currently we don't support mobile apps, but we can get events from them.
+
+{% include content/integration-foot.md %}

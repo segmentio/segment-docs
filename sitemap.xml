@@ -12,7 +12,7 @@ layout: null
     {% for doc in docs %}
     {% unless doc.hidden %}
       <url>
-        <loc>{{ doc.url | replace:'/index.html','/' | absolute_url | xml_escape }}</loc><changefreq>{% if doc.seo-changefreq %}{{doc.seo-changefreq}} {% else %}weekly{% endif %}</changefreq><priority>{% if doc.seo-priority %}{{doc.seo-priority}}{% else %}0.5{% endif %}</priority>
+        <loc>{{ doc.url | replace:'/index.html','/' | absolute_url | xml_escape }}</loc><changefreq>{% if doc.seo-changefreq %}{{doc.seo-changefreq}}{% else %}weekly{% endif %}</changefreq><priority>{% if doc.seo-priority %}{{doc.seo-priority}}{% else %}0.5{% endif %}</priority>
         {% if doc.last_modified_at or doc.date %}<lastmod>{{ doc.last_modified_at | default: doc.date | date_to_xmlschema }}</lastmod>
         {% endif %}
       </url>

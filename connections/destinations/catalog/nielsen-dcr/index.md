@@ -335,3 +335,5 @@ The Parent Client ID and Sub-Brand (VCID) values are automatically populated thr
 #### Can I override the Nielsen-DCR `clientId` and `subbrand` values?
 
 In the event that your app contains multiple brands and sub-brands, Segment lets you override the `clientId` and `subbrand` values, to give credit to another brand or sub-brand. In your Segment dashboard, under "Client Id Property Name", indicate a payload property to be mapped to the Nielsen `clientId`. To override a `subbrand`, indicate a payload property to mapped to Nielsen `subbrand` under "Subbrand Property Name".
+
+{% include content/integration-foot.md %}

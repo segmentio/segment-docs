@@ -26,3 +26,5 @@ All other traits will be sent to SparkPage as custom attributes.
 ## Track
 
 When you track an event, we will send that event to SparkPage as a custom API event.
+
+{% include content/integration-foot.md %}

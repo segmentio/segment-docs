@@ -53,3 +53,5 @@ Bugsnag will show you the `userId` and `traits` in the Users tab of each error.
 ## Error Reporting
 
 In addition to sending Bugsnag user-specific information, you can send handled exceptions and diagnostic data to your Bugsnag dashboard using Bugsnag's native methods. Documentation on these methods is available [on their website](https://docs.bugsnag.com/platforms/browsers/#reporting-handled-exceptions).
+
+{% include content/integration-foot.md %}

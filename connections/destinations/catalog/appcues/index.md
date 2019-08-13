@@ -117,3 +117,5 @@ lifecycle events that can be tracked:
 
 To enable this feature, go to the Integrations Settings in Appcues and
 click “Activate” under the Segment integration.
+
+{% include content/integration-foot.md %}

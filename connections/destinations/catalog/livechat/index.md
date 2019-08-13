@@ -30,3 +30,5 @@ These events will then flow out to your other tools, so you can do things like a
 To learn more about the live chat events you can capture with this destination, head on over to our [Live Chat spec docs](/docs/spec/live-chat/).
 
 ![Turn on LiveChat](Images/livechaton.png)
+
+{% include content/integration-foot.md %}
