@@ -2,7 +2,7 @@
 title: "Should I instrument data collection on the client or server?"
 ---
 
-One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?”
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?"
 
 This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](https://segment.com/academy/collecting-data/when-to-track-on-the-client-vs-server/). It’s worth a read!
 
@@ -34,7 +34,7 @@ For example, if you’re sending triggered emails based on events, it’s probab
 
 #### Calculated from your database
 
-Another good type of data to send server-side are things that need to be calculated from a database query. This might be something like “Friend Count” if your site or app is a social network.
+Another good type of data to send server-side are things that need to be calculated from a database query. This might be something like "Friend Count" if your site or app is a social network.
 
 #### Sensitive information
 
@@ -42,6 +42,6 @@ Sensitive information is also best kept out of browsers. Any data you don’t wa
 
 ### Selecting Destinations
 
-Each Segment library allows an `integrations` object either as a top level object or nested in options object. [Check your library docs](https://segment.com/docs/sources/) for details; look for the section titled [“Selecting Destinations”](https://segment.com/docs/sources/website/analytics.js/#selecting-integrations).
+Each Segment library allows an `integrations` object either as a top level object or nested in options object. [Check your library docs](https://segment.com/docs/sources/) for details; look for the section titled ["Selecting Destinations"](https://segment.com/docs/sources/website/analytics.js/#selecting-integrations).
 
 This flag may be especially useful in Legacy source types, where an event might be triggered on both the client & server for various reasons. The following will cause the payload to be sent to all enabled tools EXCEPT Facebook Pixel:

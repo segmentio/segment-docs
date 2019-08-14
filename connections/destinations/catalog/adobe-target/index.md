@@ -121,7 +121,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function() {
 ### Preventing Page Flicker
 
 Page flicker may occur when default content momentarily displays to a visitor
-prior to the A/B “activity” content replacing it. One approach to preventing
+prior to the A/B "activity" content replacing it. One approach to preventing
 page flicker in conjunction with Segment would be to create a global mbox. Adobe
 will automatically set the HTML body style opacity to 0, which keeps the page
 content hidden while allowing the browser to still execute page load. After a

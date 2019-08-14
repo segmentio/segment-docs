@@ -34,7 +34,7 @@ Scenarios when this tool will be useful: 
 
 ## Where to find it? 
 
-Event Delivery can be accessed within any supported destination in the App. It’s located on the tab under “Settings” for each destination. 
+Event Delivery can be accessed within any supported destination in the App. It’s located on the tab under "Settings" for each destination. 
 
 ![](../images/asset_rzYZESor.png)
 

@@ -17,8 +17,8 @@ This document was last updated on January 18, 2019. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1.  From your Segment UI’s Destinations page click on “Add Destination”.
-2.  Search for “Intercom” within the Destinations Catalog and confirm the Source you’d like to connect to.
+1.  From your Segment UI’s Destinations page click on "Add Destination".
+2.  Search for "Intercom" within the Destinations Catalog and confirm the Source you’d like to connect to.
 3.  Authorize your Intercom account in Segment and select the Intercom Account you want to sync with Segment. You can choose which account to sync in the drop down menu in the top right. If you have opted to utilize our [server-side sources](https://segment.com/docs/sources/#server), we will begin passing data through our servers once you activate the Destination. For other libraries please continue reading below.
 4. Find your "App ID" within the Intercom UI following [the instructions here](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-app-id) or by navigating to the Gear Menu and clicking on "App Settings" followed by "API Keys". It should look something like this: `9iefb489`.
 

@@ -19,6 +19,6 @@ Before you connect a source, check out the [sources documentation](https://segm
 
 Next, you’ll also need to get the credentials for your [warehouse](https://segment.com/docs/warehouses/).
 
-Once you have the necessary credentials (or are logged in to OAuth for your cloud source), you should be ready to go! Go to the “sources catalog” in the app, choose your preferred source and you will be prompted to enter your credentials or OAuth. Then, go to the “warehouses” tab and enter the credentials for your warehouse if you don’t already have one connected to Segment.
+Once you have the necessary credentials (or are logged in to OAuth for your cloud source), you should be ready to go! Go to the "sources catalog" in the app, choose your preferred source and you will be prompted to enter your credentials or OAuth. Then, go to the "warehouses" tab and enter the credentials for your warehouse if you don’t already have one connected to Segment.
 
 Based on your plan, you will be able to schedule a certain number of syncs per day. We suggest setting these up so your dashboards and reports are fresh for reporting, but not at the same time of day that a lot of people are querying your database.

@@ -146,9 +146,9 @@ To collect a Segment property as an SFDMP `user attribute` instead, contact your
 SFDMP can split an attribute value into many individual values based on a
 delimiter. For example, say you have a property `colors` with a value
 `red,green,blue,yellow`. You can adjust your SFDMP settings so that it recognizes a comma as a delimiter for this attribute. That way, you can
-create audience Segments based on individual attribute values such as “red”,
-“green”, “blue” and “yellow” rather than on complete strings like
-“red,green,blue,yellow”.
+create audience Segments based on individual attribute values such as "red",
+"green", "blue" and "yellow" rather than on complete strings like
+"red,green,blue,yellow".
 
 To set up a custom delimiter, contact your Salesforce representative.
 

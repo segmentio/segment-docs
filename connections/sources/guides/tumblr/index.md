@@ -14,7 +14,7 @@ Segment makes it simple to add a bunch of great analytics and engagement tools t
 2. Open your Tumblr Dashboard in a new window.
 3. Click Settings (the gear icon) at the top of your Tumblr Dashboard.
 4. Click the blog you’d like to update on the left side of the page.
-5. Click “Customize” in the Theme section.
+5. Click "Customize" in the Theme section.
 6. Paste the Segment snippet into the "Description" field.
 7. Click "Save."
 

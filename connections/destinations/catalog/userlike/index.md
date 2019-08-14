@@ -10,8 +10,8 @@ This document was last updated on October 22, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on “Add Destination”.
-2. Search for “Userlike” within the Destinations Catalog and confirm the Source you’d like to connect to - keep in mind, that the Userlike destination is only compatible with our Javascript source.
+1. From your Segment UI’s Destinations page click on "Add Destination".
+2. Search for "Userlike" within the Destinations Catalog and confirm the Source you’d like to connect to - keep in mind, that the Userlike destination is only compatible with our Javascript source.
 3. Add your Secret Key to your destination settings in Segment - your Secret Key can be found under Config > Install > Secret in your Userlike dashboard. It should look something like this: 8a3707ab96df8354253c158a25f908b84dc655c27d5828a1a97d99f08bfba6f4.
 4. Once you enable the destination, our CDN is updated within 5-10 minutes. Analytics.js will start asynchronously loading Userlike's javascript onto your page. Please remember to remove Userlike's snippet from your page.
 

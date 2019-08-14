@@ -196,7 +196,7 @@ import com.segment.analytics.Properties.Product;
 Properties properties = new Properties();
 
 // add orderId and revenue to the properties object
-properties.putValue(“orderId”, String orderId).putValue(“revenue”, double revenue);
+properties.putValue("orderId", String orderId).putValue("revenue", double revenue);
 
 // initialize a new product
 Product product1 = new Product(String id, String sku, double price);
@@ -208,7 +208,7 @@ Product product2 = new Product(String id, String sku, double price);
 properties.putProducts(product1, product2);
 
 // pass the properties object into your Order Completed event
-Analytics.with(context).track(“Order Completed”, properties);
+Analytics.with(context).track("Order Completed", properties);
 ```
 
 Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/spec/track/).

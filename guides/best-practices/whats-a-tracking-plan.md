@@ -44,7 +44,7 @@ The traits represent dimensions in your data that you can group or pivot on. For
 
 Tracking is about learning and taking action. Which events will help you understand your funnels? Which events represent trigger points that help you define your marketing automation?
 
-The events you track should demonstrate a strong transfer of value, either from you to your user, or vice versa. For instance, a user providing an email address represents the user transferring value to you. Another example is a key activation event. For us at Segment, that event would be “Project Data Sent” for Segment, which indicates that the customer is using a core service of Segment’s product. For an ecommerce consumer company like Postmates, that might be “Order Placed”.
+The events you track should demonstrate a strong transfer of value, either from you to your user, or vice versa. For instance, a user providing an email address represents the user transferring value to you. Another example is a key activation event. For us at Segment, that event would be "Project Data Sent" for Segment, which indicates that the customer is using a core service of Segment’s product. For an ecommerce consumer company like Postmates, that might be "Order Placed".
 
 The tracked events should be generic and high-level. There should never be any event names that are dynamically generated. This will only clutter the data for all of your analytics and marketing tools downstream, rendering them difficult to use. Instead, for capturing more specific, detailed information, use properties.
 
@@ -77,7 +77,7 @@ For an ecommerce company, however, the main events might be something like:
 *   **Order Completed**
     
 
-Note that Segment has a set of “reserved” event names specifically for ecommerce, called our [ecommerce spec](https://segment.com/docs/spec/ecommerce/v2). Check it out to see which events we cover and how they are used in our downstream destinations.
+Note that Segment has a set of "reserved" event names specifically for ecommerce, called our [ecommerce spec](https://segment.com/docs/spec/ecommerce/v2). Check it out to see which events we cover and how they are used in our downstream destinations.
 
 For a community, on the other hand, there is an entirely different set of actions that indicate engagement, listed in the below pyramid. For example, [GrowthHacker’s](https://growthhackers.com/) funnel of actions from least to most engaged are:
 
@@ -124,9 +124,9 @@ analytics.track(userId, 'Lead Captured', {
 });
 ```
 
-The high level event is “Lead Captured” and all of the details are tucked into the `properties` dictionary. In our downstream tools, we’ll be able to easily look at how many leads were captured in different locations on our site.
+The high level event is "Lead Captured" and all of the details are tucked into the `properties` dictionary. In our downstream tools, we’ll be able to easily look at how many leads were captured in different locations on our site.
 
-If you want to learn more about how properties are used by downstream tools, check out [“](https://segment.com/academy/collecting-data/the-anatomy-of-a-track-call/)[The Anatomy of a Track Call”](https://segment.com/academy/collecting-data/the-anatomy-of-a-track-call/).
+If you want to learn more about how properties are used by downstream tools, check out ["](https://segment.com/academy/collecting-data/the-anatomy-of-a-track-call/)[The Anatomy of a Track Call"](https://segment.com/academy/collecting-data/the-anatomy-of-a-track-call/).
 
 ## Achieving data-informed growth
 

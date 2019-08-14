@@ -13,8 +13,8 @@ This document was last updated on May 08, 2018. If you notice any gaps, out-date
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on “Add Destination”.
-2. Search for “MailChimp” within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI’s Destinations page click on "Add Destination".
+2. Search for "MailChimp" within the Destinations Catalog and confirm the Source you’d like to connect to.
 3. Drop in your MailChimp "API key" into the connection settings. It is recommended that you create a brand new API key for the Segment destination. MailChimp restricts each API key to a maximum of 10 concurrent requests, so creating a dedicated one for Segment will ensure maximum throughput for outgoing calls. You can read more about API keys on [MailChimp's docs](http://kb.mailchimp.com/integrations/api-integrations/about-api-keys).
 4. Drop in your MailChimp "Audience ID" into your connection settings.
 

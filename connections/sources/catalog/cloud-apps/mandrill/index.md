@@ -32,7 +32,7 @@ Take your company’s email analysis to the next level by **adding Mandrill as a
 
 ### Streaming
 
-The Mandrill source is comprised only of a streaming component which listens in real time for inbound webhooks from [Mandrill’s Webhooks](https://mandrill.zendesk.com/hc/en-us/articles/205583217-Introduction-to-Webhooks) and batches the events to be uploaded on your next warehouse flush. These events are only ever appended to your warehouse. Since Mandrill is strictly used for transactional emails triggered directly by API calls, there are no “dimensional” concepts in their data model that would require any additional components.
+The Mandrill source is comprised only of a streaming component which listens in real time for inbound webhooks from [Mandrill’s Webhooks](https://mandrill.zendesk.com/hc/en-us/articles/205583217-Introduction-to-Webhooks) and batches the events to be uploaded on your next warehouse flush. These events are only ever appended to your warehouse. Since Mandrill is strictly used for transactional emails triggered directly by API calls, there are no "dimensional" concepts in their data model that would require any additional components.
 
 
 ## Collections

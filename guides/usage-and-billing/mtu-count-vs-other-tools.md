@@ -17,7 +17,7 @@ For example, consider these instances with some of our most popular destinations
 
 **Amplitude:**
 
-*   By default, Segment won’t send standard [`page`](https://segment.com/docs/spec/page/) or [`screen`](https://segment.com/docs/spec/screen/) calls to Amplitude. However, you can enable sending `page` and `screen` calls with the following destination settings, which you can find under the “Advanced Options” tab.
+*   By default, Segment won’t send standard [`page`](https://segment.com/docs/spec/page/) or [`screen`](https://segment.com/docs/spec/screen/) calls to Amplitude. However, you can enable sending `page` and `screen` calls with the following destination settings, which you can find under the "Advanced Options" tab.
     
 *   If you’re using a server-side library or the Segment HTTP API to send events or traits about anonymous visitors, Amplitude won’t automatically be able to identify that anonymous user as being the same person when they log in. To have Amplitude connect the dots, when you call `.identify()` on user log-in, you should include both the `anonymousId` you were using before the user logged in, as well as their `userId`.
     

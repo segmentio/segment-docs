@@ -37,7 +37,7 @@ Eligible startups can [apply directly](http://segment.com/industry/startups) for
 **Where can I view which coupons are applied to my account?**
 The Startup Program credits are reflected in the Workspace usage and billing page. Other coupons applied to your workspace are not currently reflected in the Segment application. If you are curious about a promotion you are currently on, or if you workspace has a coupon applied, please reach out [to our support team](https://segment.com/contact/billing).
 
-**Do I have to be a “new” customer to receive a coupon?**
+**Do I have to be a "new" customer to receive a coupon?**
 The Segment Startup Program is only for customers that have not previously received any other coupon. Both the non-profit and accelerator promotion can be redeemed regardless if you’re a new customer or have been with us for years. A user/workspace can only receive any coupon once.
 
 **What happens when my coupon expires?**

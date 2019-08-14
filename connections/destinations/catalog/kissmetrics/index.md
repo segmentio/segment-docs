@@ -11,9 +11,9 @@ This document was last updated on July 3, 2018. If you notice any gaps, out-date
 
 When you toggle on KISSmetrics in Segment, this is what happens:
 
-1. From your Segment UI’s Destinations page click on “Add Destination”.
+1. From your Segment UI’s Destinations page click on "Add Destination".
 2. Search for "KISSmetrics" within the Destinations Catalog and confirm the Source you’d like to connect to.
-3. Drop in your KISSmetrics "API Key” into the connection settings.
+3. Drop in your KISSmetrics "API Key" into the connection settings.
 4. If you are using KISSmetrics via Segment’s client-side analytics.js library, we asynchronously load KISSmetrics Javascript library onto the page. This means you should remove KISSmetrics's snippet from your page. Your KISSmetrics source will start automatically collecting "Visited Site" events and [other automatically tracked events](http://support.kissmetrics.com/article/show/javascript-settings).
 
 ## Page

@@ -71,7 +71,7 @@ Enable the Visual Tagger integration for the source you created above.
 4. Click **Tag an Event** and mouse over parts of the site. The mouse highlights components that you can add an event tag to.
 5. Click a component to open the **Tag Creation** panel, where you can adjust the event tag's configuration.
    For each event, there are the following configuration options:
-   - _Selector_: The CSS selector that the event will be added to. If you are unsure whether or not the right selector has been chosen (or you need to go up a level in the elements tree to a parent element), click on the “Elements” dropdown where you can explore the tree.
+   - _Selector_: The CSS selector that the event will be added to. If you are unsure whether or not the right selector has been chosen (or you need to go up a level in the elements tree to a parent element), click on the "Elements" dropdown where you can explore the tree.
    - _URL_: The page that the event should be fired from
    - _Trigger_: What user action should trigger the event. Currently, we support:
      - `click` - when a user clicks on an element -

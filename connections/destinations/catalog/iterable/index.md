@@ -77,7 +77,7 @@ analytics.track("Order Completed", {
 
 ## Page
 
-Calling `page` to track pageviews will register as a custom event within Iterable. If you have a page called “shoppingCart” the custom event will be called “shoppingCart page” within Iterable.
+Calling `page` to track pageviews will register as a custom event within Iterable. If you have a page called "shoppingCart" the custom event will be called "shoppingCart page" within Iterable.
 
 If a user does not already exist in Iterable, calling `page` for a user event will add that user into the system. Be sure to pass in the `email` the first time you call page for a user, since Iterable keys users by `email`. After the first time, you can call page with `userId`.
 

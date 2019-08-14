@@ -75,7 +75,7 @@ For more info refer to this [link](https://segment.com/docs/sources/mobile/ios/#
 
 ### Tracking Events
 
-Event tracking is used to track user behaviour in an app. **track** lets you record the actions your users perform. Every action triggers i.e,“event”, which can also have associated attributes.
+Event tracking is used to track user behaviour in an app. **track** lets you record the actions your users perform. Every action triggers i.e,"event", which can also have associated attributes.
 
  ```[[SEGAnalytics sharedAnalytics] track:@"Item Purchased" properties:@{ @"item": @"Sword of Heracles"}];```
 

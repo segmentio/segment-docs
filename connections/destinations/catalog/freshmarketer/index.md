@@ -14,7 +14,7 @@ _**NOTE:** The Freshmarketer Destination is currently in beta, which means that 
 {% include content/connection-modes.md %}
 
 1. From your Segment UI’s Destinations page click **Add Destination**.
-2. Search for “Freshmarketer” in the Destinations Catalog and confirm the Source you’d like to connect to.
+2. Search for "Freshmarketer" in the Destinations Catalog and confirm the Source you’d like to connect to.
 3. Go to your Freshmarketer dashboard (Admin Settings > API Settings) and copy your API Key.
 4. In the Freshmarketer settings in the Segment UI, paste your API Key.
 

@@ -30,7 +30,7 @@ warehouse in Segment.
 2. Configure [Cloud Platform](https://console.cloud.google.com/):
   - If you don’t have a project already, [create one](https://support.google.com/cloud/answer/6251787?hl=en&ref_topic=6158848).
   - If you have an existing project, you will need to [enable the BigQuery API](https://cloud.google.com/bigquery/quickstart-web-ui).
-    Once you've done so, you should see BigQuery in the [“Resources” section](https://cl.ly/0W2i2I2B2R0M) of Cloud Platform.
+    Once you've done so, you should see BigQuery in the ["Resources" section](https://cl.ly/0W2i2I2B2R0M) of Cloud Platform.
   - **Note:** make sure [billing is enabled](https://support.google.com/cloud/answer/6293499#enable-billing) on your project,
     otherwise Segment will not be able to write into the cluster.
 3. Copy your project ID, as you will need it later.

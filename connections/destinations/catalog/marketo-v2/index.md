@@ -215,7 +215,7 @@ You can do one of the following to prevent duplicate leads:
 | alex@email.com    | ABC1234    |
 | natasha@email.com | XYZ9876    |
 
-To upload a list to Marketo, when you are in Lead Database, click All Leads. Then click “New”, then “Import List” from the drop down. Select your CSV, then click “Next”. Make sure “Email Address” and “userId” are the Marketo Fields selected then click “Next”. Name your list or select a pre-existing list. Select “None” for Acquisition Program. Then Click “Import”.
+To upload a list to Marketo, when you are in Lead Database, click All Leads. Then click "New", then "Import List" from the drop down. Select your CSV, then click "Next". Make sure "Email Address" and "userId" are the Marketo Fields selected then click "Next". Name your list or select a pre-existing list. Select "None" for Acquisition Program. Then Click "Import".
 
 ![](images/jBhuNezWWP.gif)
 
@@ -234,7 +234,7 @@ There are a few necessary steps that have to be taken to Migrate from Marketo to
 2. Two custom fields must be created in Marketo: userId and anonymousId. Check out [Getting Started](https://segment.com/docs/integrations/marketo-v2/#-2-you-must-create-a-user-id-and-an-anonymous-id-field-in-marketo-) for exact details on how to create these custom fields in Marketo.
 3. `Track` calls must be mapped in your Destination settings. Our Marketo Destination sent `track` calls as a Munchkin Visit WebPage event in Marketo. In Marketo V2, we'll send your track calls to your Marketo Custom Activities. Detailed instructions [here](https://segment.com/docs/integrations/marketo-v2/#track).
 4. If there are any custom Lead fields that you’d like sent to Marketo in your `Identify` calls, you must add them in your Destination settings. Detailed instructions [here](https://segment.com/docs/integrations/marketo-v2/#identify).
-5. Update anything in Marketo that rely on the way V1 sends `.track()` events to be triggered by your custom activities. For example, our V1 Marketo destination sent track events as a “Visit Web Page” event with `/event/<your_event_name>`. So if you a workflow that is triggered by a “Visit Web Page” event where the web page contains `/event/<your_event_name>`, you'll have to swap out the "Visit Web Page" event trigger you have with your Custom Attribute Trigger. In the right side bar, click the "Custom" folder under "Triggers" and select the trigger that you set for your custom activity:
+5. Update anything in Marketo that rely on the way V1 sends `.track()` events to be triggered by your custom activities. For example, our V1 Marketo destination sent track events as a "Visit Web Page" event with `/event/<your_event_name>`. So if you a workflow that is triggered by a "Visit Web Page" event where the web page contains `/event/<your_event_name>`, you'll have to swap out the "Visit Web Page" event trigger you have with your Custom Attribute Trigger. In the right side bar, click the "Custom" folder under "Triggers" and select the trigger that you set for your custom activity:
 ![](images/cPD4kP65buG+.png)
 
 

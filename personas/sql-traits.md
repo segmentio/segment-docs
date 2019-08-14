@@ -50,10 +50,10 @@ To connect BigQuery to Segment SQL Traits, you will need to create a service acc
 
 > IMPORTANT: We suggest adding only the BigQuery Data Viewer and BigQuery Job User roles to your service account. Adding other roles to your service account may prevent Segment from being able to connect.
 
-4. Click “Create Key”
+4. Click "Create Key"
 ![](bigquery_setup4.png)
 
-5. Click “Create” with “JSON” format selected
+5. Click "Create" with "JSON" format selected
 ![](images/bigquery_setup5.png)
 
 6. Create new BigQuery Warehouse Source in Personas

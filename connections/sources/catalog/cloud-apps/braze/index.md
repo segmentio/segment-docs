@@ -13,7 +13,7 @@ In your favorite BI or analytics tool, you’ll be able to analyze your mobile, 
 1. From your workspace Overview page, click Add Source.
 2. Choose Braze
 3. Give the Source a name. The name will be used to identify this source within your workspace. You can name it however you’d like, but we recommend sticking to something that reflects the Source itself, like Braze.
-4. The next page “Overview” will surface your Segment write key for Braze. Copy this write key.
+4. The next page "Overview" will surface your Segment write key for Braze. Copy this write key.
 5. To finish the setup, you need to activate "Currents" in Braze which requires reaching out to Braze Support or your Customer Support Manager. Braze Currents is only available in select Braze packages and cannot be configured within Braze without assistance from your Braze Customer Success representative.  
 
 

@@ -17,9 +17,9 @@ There are two scenarios where you might want to use the Event Tester:
 
 ## Ensuring an event is successfully making it to a specific destination
 
-**1\. Choose an event from the Source Debugger that you want to debug and select “Validate”**
+**1\. Choose an event from the Source Debugger that you want to debug and select "Validate"**
 
-Go to your Source Debugger, select an event and in the top right hand side of the debugger view, select “Validate”.
+Go to your Source Debugger, select an event and in the top right hand side of the debugger view, select "Validate".
 
 ![](../images/asset_GgyOswJA.png)
 
@@ -31,13 +31,13 @@ Select the destination that you want to test this event with. At this time, you 
 
 **3\. Send event to destination**
 
-The event payload from your debugger that you just selected will automatically load in the JSON view. You have the option to edit the payload if you want. Assuming it looks good, select “Send Event” at the bottom right of the screen. 
+The event payload from your debugger that you just selected will automatically load in the JSON view. You have the option to edit the payload if you want. Assuming it looks good, select "Send Event" at the bottom right of the screen. 
 
 ![](../images/asset_J7TEDYvY.png)
 
 **4\. Ensure you’re happy to send the test event to the destination**
 
- This is a real event that will appear in your end tool alongside your existing data. If you’re not comfortable with this, then select “Cancel” and do not send the event. 
+ This is a real event that will appear in your end tool alongside your existing data. If you’re not comfortable with this, then select "Cancel" and do not send the event. 
 
 ![](../images/asset_Yxw1DJqb.png)
 

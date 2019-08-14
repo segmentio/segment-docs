@@ -13,7 +13,7 @@ This document was last updated on October 19, 2018. If you notice any gaps, outd
 
 ## Getting Started
 
-1. From your Segment UI’s Sources page click on “Add Source”.
+1. From your Segment UI’s Sources page click on "Add Source".
 2. Search for AutopilotHQ within the Sources Catalog and confirm by clicking "Connect".
 3. Give the Source a nickname and follow the setup flow to "Add Source". The nickname is a label used in the Segment interface, and Segment creates a related schema name, which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Sign in to your Autopilot account and visit the [Segment destination](https://app.autopilothq.com/#settings/app-connections/segment-sync) to connect.

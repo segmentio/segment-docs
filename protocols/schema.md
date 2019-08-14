@@ -46,18 +46,18 @@ All customers can filter specific events from being sent to specific Destination
     });
 ```
 
-Destination flags are case sensitive and match the [Destination’s name in the docs](https://segment.com/docs/destinations/) (i.e. “AdLearn Open Platform”, “awe.sm”, “MailChimp”, etc.).
+Destination flags are case sensitive and match the [Destination’s name in the docs](https://segment.com/docs/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
-Segment Business tier customers can block track calls from delivering to specific Destinations in the Segment UI. Visit a Source Schema page and click on the “Integrations” column to view specific Destination filters. Toggle the filter to block or enable an event to a Destination.
+Segment Business tier customers can block track calls from delivering to specific Destinations in the Segment UI. Visit a Source Schema page and click on the "Integrations" column to view specific Destination filters. Toggle the filter to block or enable an event to a Destination.
 
 
 ![](../images/asset_d3SRmkWy.gif)
 
 ## Schema Defaults
 
-If you’ve solidified your tracking plan and don’t want any rogue events finding their way to your warehouses and end tools, we recommend activating Schema Defaults. When you lock your schema, or set your Schema Defaults to “Block,” Segment will automatically prevent new calls from being sent downstream. You can activate this for new events—including `track`, `page`, and `screen` calls—or for new `identify` traits and `group` properties.
+If you’ve solidified your tracking plan and don’t want any rogue events finding their way to your warehouses and end tools, we recommend activating Schema Defaults. When you lock your schema, or set your Schema Defaults to "Block," Segment will automatically prevent new calls from being sent downstream. You can activate this for new events—including `track`, `page`, and `screen` calls—or for new `identify` traits and `group` properties.
 
-Locking your schema only takes a few seconds and prevents new rogue events from polluting your Destinations. To configure Schema Defaults, go to your source Schema page, and select “General” from the left-hand navigation.
+Locking your schema only takes a few seconds and prevents new rogue events from polluting your Destinations. To configure Schema Defaults, go to your source Schema page, and select "General" from the left-hand navigation.
 
 
 ![](../images/asset_A8jUVuph.gif)

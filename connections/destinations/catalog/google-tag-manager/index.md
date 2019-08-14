@@ -11,8 +11,8 @@ This document was last updated on April 30, 2018. If you notice any gaps, outdat
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on “Add Destination”.
-2. Search for “Google Tag Manager” within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI’s Destinations page click on "Add Destination".
+2. Search for "Google Tag Manager" within the Destinations Catalog and confirm the Source you’d like to connect to.
 3. In your Segment UI's destination settings, enter your Container ID (note: it should start with "GTM-"). You can find this in the Admin section of your [GTM dashboard](https://tagmanager.google.com/#/admin/).
 4. GTM will be loaded on any pages where your Segment snippet is initialized and `analytics.page` gets called in client-side Javascript. Once you've turned on GTM through Segment, you can use Segment `track` events to populate the GTM `dataLayer`.
 

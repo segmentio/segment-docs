@@ -51,7 +51,7 @@ Destination receives the **Application Installed** event and attributes the inst
 
 Device-Mode Connection
 
-For tools that support this, if you have enabled “Track Attribution Data” in your Segment dashboard, our integration listens to the attribution tool’s SDK for a change in attribution state. **Note**: Not all device-mode attribution tools offer “Track Attribution Data” functionality.  See the settings section for a particular tool in your Segment dashboard for confirmation. 
+For tools that support this, if you have enabled "Track Attribution Data" in your Segment dashboard, our integration listens to the attribution tool’s SDK for a change in attribution state. **Note**: Not all device-mode attribution tools offer "Track Attribution Data" functionality.  See the settings section for a particular tool in your Segment dashboard for confirmation. 
 
 When there is a change in attribution state, the integration code triggers an **Install Attributed** call to be sent back to your Segment source (and on to all other enabled destinations - in device and cloud mode).  
 

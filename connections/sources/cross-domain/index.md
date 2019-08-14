@@ -104,7 +104,7 @@ The time it takes to resolve the cross domain identifier can depend on a few fac
 Whether our solution will work for a particular user is up to that user and their browser. Let’s look at the three most common browsers:
 
 #### Chrome
-By default, Chrome does not block any cookies. Chrome does give the user two other options, “Block 3rd party cookies and site data” and “Block sites from setting any data.” Chrome does not have a setting that allows 2nd party cookies while blocking 3rd party cookies.
+By default, Chrome does not block any cookies. Chrome does give the user two other options, "Block 3rd party cookies and site data" and "Block sites from setting any data." Chrome does not have a setting that allows 2nd party cookies while blocking 3rd party cookies.
 
 | Cookie Setting                        | Cross-Domain Analytics | Third-Party Cookie Solutions |
 | ------------------------------------- | --------------------- | ---------------------------- |

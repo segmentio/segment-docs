@@ -18,9 +18,9 @@ For our analysis walkthrough, we’ll use fictitious e-commerce and marketing da
 
 Toastmates is currently running these two campaigns:
 
-*   “National Toast Day”, where $5 off was applied if you made a purchase on that day
+*   "National Toast Day", where $5 off was applied if you made a purchase on that day
 
-*   “A Toast To Your Friend”, where you can buy toast for a friend at $5 off
+*   "A Toast To Your Friend", where you can buy toast for a friend at $5 off
 
 
 Each of these campaigns used a combination of channels. Here is a table with the channels and corresponding UTM parameters so when we build the SQL query, we can make sure all of the traffic sources are accounted for.
@@ -243,7 +243,7 @@ The resulting table:
 
 ![](images/asset_Umn2E6DH.png)
 
-Since the National Toast Day campaign is relatively new, the majority of the traffic is from the email and an article (“news”). But we can see that the social channels have a lower conversion from store visits to product views. Email has the best overall conversion to revenue, which may be attributed to the recipients already familiar with the Toastmates brand or having previously had a stellar end-to-end shopping experience.
+Since the National Toast Day campaign is relatively new, the majority of the traffic is from the email and an article ("news"). But we can see that the social channels have a lower conversion from store visits to product views. Email has the best overall conversion to revenue, which may be attributed to the recipients already familiar with the Toastmates brand or having previously had a stellar end-to-end shopping experience.
 
 We can further breakdown this analysis by seeing which email, display ads, and social channels performed the best, by adding `utm_source` and `utm_content` ,assuming that you’ve properly added them in your earned and paid media links. Also note that this preliminary analysis in SQL doesn’t account for double-counted users, who had impressions with our brand on multiple channels (e.g. someone seeing a display ad, yet converted on the email outreach). Fortunately, there are multi-touch attribution models that can be applied to better understand the weights of each activity towards conversion.
 

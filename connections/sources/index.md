@@ -10,9 +10,14 @@ redirect_from:
 landing: true
 ---
 
-## Website
+## What is a source?
 
-[Analytics.js](/docs/sources/website/analytics.js/), our Javascript library, is the most powerful way to track customer data from your website. We recommend it over server-side libraries as the default installation for any website.
+{% include content/whats-a-source.md %}
+
+
+## Website libraries
+
+[Analytics.js](/docs/sources/website/analytics.js/), our Javascript library, is the most powerful way to track customer data from your website. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
 
 ## Mobile
 

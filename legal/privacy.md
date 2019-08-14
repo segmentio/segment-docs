@@ -10,7 +10,7 @@ feedback: false
 
 <br />
 
-This Privacy Policy explains how Segment.io, Inc. (“Segment”, or “we”, “us” or “our”) collects, uses and shares your personal information if you visit www.segment.com  (the “Site”) or register to use our services, and explains your choices for how we handle your personal information.  For convenience, the Site and our services are collectively referred to as the “Service.”
+This Privacy Policy explains how Segment.io, Inc. ("Segment", or "we", "us" or "our") collects, uses and shares your personal information if you visit www.segment.com  (the "Site") or register to use our services, and explains your choices for how we handle your personal information.  For convenience, the Site and our services are collectively referred to as the "Service."
 
 Segment respects your privacy rights and is committed to transparency in how we collect, use and share your personal information.  If you have any questions or concerns about your personal information or this Privacy Policy, email us at privacy@segment.com.
 
@@ -38,7 +38,7 @@ Users in the European Economic Area should be sure to read the important informa
 
 ## Segment’s Service and Client Services Data
 
-Registered customers of the Service (“**Clients**”) use it to collect information about how their own users use Client websites, applications, services (“Client Services”) and related third-party applications ("Client Services Data”).  Clients also use the Service to more efficiently route Client Services Data to their own third party applications/services and control how their own third party applications/services exchange Client Services Data.
+Registered customers of the Service ("**Clients**") use it to collect information about how their own users use Client websites, applications, services ("Client Services") and related third-party applications ("Client Services Data").  Clients also use the Service to more efficiently route Client Services Data to their own third party applications/services and control how their own third party applications/services exchange Client Services Data.
 
 Client Services Data may include, without limitation, information about the identity of Client users (such as name, postal address, e-mail address, IP address and phone number), as well as information about the pages users visit, the features they use, and the actions they take while using the Client Services.
 This Privacy Policy does not apply to Client Services Data or to Client Services, and we are not responsible for our Clients’ handling of Client Services Data.  Our Clients have their own policies regarding the collection, use and disclosure of your personal information.  To learn about how a particular Client handles your personal information, we encourage you to read the Client’s privacy statement.  Our use of Client Services Data provided by our Clients in connection with our Service is subject to the written agreement between Segment and Client.
@@ -180,7 +180,7 @@ In some of our communications, we track clicks on links in the communications to
 
 ## Social Media Widgets
 
-Our Service may include social media features, such as the Facebook “like” button and widgets, such as the “share this” button. These features may collect your personal information and track your use of the Service. These social media features are either hosted by a third party or hosted directly in the Service. Your interactions with these features are governed by the privacy policy of the company providing such functionality.
+Our Service may include social media features, such as the Facebook "like" button and widgets, such as the "share this" button. These features may collect your personal information and track your use of the Service. These social media features are either hosted by a third party or hosted directly in the Service. Your interactions with these features are governed by the privacy policy of the company providing such functionality.
 
 <a id="Payment-Information"></a>
 
@@ -262,7 +262,7 @@ Email: [privacy@segment.com](mailto:privacy@segment.com)
 
 ### Personal information
 
-References to “personal information” in this Privacy Policy are equivalent to “personal data” governed by European data protection legislation.
+References to "personal information" in this Privacy Policy are equivalent to "personal data" governed by European data protection legislation.
 
 ### Controller, Data Protection Officer and EU Representative
 Segment.io, Inc. is the controller of your personal information covered by this Privacy Policy for purposes of European data protection legislation and you can contact us and our Data Protection Officer using the contact details listed in the Contact Us section above.  Our EU representative is:
@@ -326,9 +326,9 @@ Segment itself has self-certified to the EU-U.S. and Swiss-U.S. Privacy Shield. 
 
 Effective as of July 18, 2018.
 
-Segment.io, Inc. (“**Segment**” or “**we**”, “**us**” or “**our**”) complies with the EU-U.S. Privacy Shield Framework and the Swiss-U.S. Privacy Shield Framework as set forth by the U.S. Department of Commerce regarding the collection, use, and retention of personal data transferred to it in the United States from the European Economic Area (“**EEA**”) or Switzerland, respectively.  We have certified to the Department of Commerce that we adhere to the Privacy Shield Principles.  To learn more about the Privacy Shield program, the Privacy Shield Principles and to view our certification, please visit [www.privacyshield.gov](https://www.privacyshield.gov).
+Segment.io, Inc. ("**Segment**" or "**we**", "**us**" or "**our**") complies with the EU-U.S. Privacy Shield Framework and the Swiss-U.S. Privacy Shield Framework as set forth by the U.S. Department of Commerce regarding the collection, use, and retention of personal data transferred to it in the United States from the European Economic Area ("**EEA**") or Switzerland, respectively.  We have certified to the Department of Commerce that we adhere to the Privacy Shield Principles.  To learn more about the Privacy Shield program, the Privacy Shield Principles and to view our certification, please visit [www.privacyshield.gov](https://www.privacyshield.gov).
 
-**Scope.**  Our certification of adherence to the Privacy Shield Principles applies to the personal data that (a) we collect from our customers and other visitors to our website for account management, billing or marketing purposes (“**Segment User Data**”) and (b) that we process on behalf of our customers in providing online services to them under a service agreement (“**Services Data**”).
+**Scope.**  Our certification of adherence to the Privacy Shield Principles applies to the personal data that (a) we collect from our customers and other visitors to our website for account management, billing or marketing purposes ("**Segment User Data**") and (b) that we process on behalf of our customers in providing online services to them under a service agreement ("**Services Data**").
 
 **Data processed.**  The Segment User Data that we collect, use and share is described in our Privacy Policy.  While our customers decide what Services Data to submit, it typically includes information about their own users and how they use the customer’s sites, applications and services and third party applications.  We process Services Data as instructed by our customers and do not own or control Services Data.
 

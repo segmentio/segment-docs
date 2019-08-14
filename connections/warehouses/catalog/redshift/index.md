@@ -30,7 +30,7 @@ There are two kinds of Redshift clusters: **Dense Compute** and **Dense Storage
 You can skip this step if you already have a Redshift cluster:
 1. Open the Redshift Console: ![Image](https://dchtm6r471mui.cloudfront.net/s_9E0FAF328A50D6414F8EE93032E0A4832F38AF0538D044654A30BAD2A803B585_1442512145764_Screen+Shot+2015-09-17+at+10.25.47+AM.png)
 
-2. Click on “Launch Cluster”: ![Image](https://dchtm6r471mui.cloudfront.net/s_9E0FAF328A50D6414F8EE93032E0A4832F38AF0538D044654A30BAD2A803B585_1442512172034_Screen+Shot+2015-09-17+at+10.26.03+AM.png)
+2. Click on "Launch Cluster": ![Image](https://dchtm6r471mui.cloudfront.net/s_9E0FAF328A50D6414F8EE93032E0A4832F38AF0538D044654A30BAD2A803B585_1442512172034_Screen+Shot+2015-09-17+at+10.26.03+AM.png)
 
 3. Fill out the cluster details (make sure to select a secure password!): ![Image](https://cloudup.com/cVcF5ZtC51a+)
 
@@ -93,7 +93,7 @@ Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC
 
   ![](../images/redshift_permissioning5.png)
 
-4. Click on “Add Connection Type”
+4. Click on "Add Connection Type"
 
   ![](../images/redshift_permissioning6.png)
 
@@ -109,7 +109,7 @@ Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC
 
   ![](../images/redshift_permissioning8.png)
 
-3. Select the “Inbound” tab and then “Edit”
+3. Select the "Inbound" tab and then "Edit"
 
   ![](../images/redshift_permissioning9.png)
 

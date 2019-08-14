@@ -133,7 +133,7 @@ While setting up the new role, add the policy you created in the previous step.
 
 Finish with any other setup items you may want (like `tags`). Once that’s complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
 
-Select the “Trust Relationships” tab, then click the “Edit trust relationship” button.
+Select the "Trust Relationships" tab, then click the "Edit trust relationship" button.
 
 ![](images/LambdaTrustRelationship.png)
 
@@ -170,7 +170,7 @@ If you have multiple Source’s using this Role, replace the `sts:ExternalId` se
 
 ## Configure Segment Lambda Destination
 
-Search for “Lambda" in our catalog. Connect the destination to the source you created previously. Now you will be presented with the AWS Lambda settings.
+Search for "Lambda" in our catalog. Connect the destination to the source you created previously. Now you will be presented with the AWS Lambda settings.
 
 
 ## FAQ

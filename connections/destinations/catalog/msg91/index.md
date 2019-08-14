@@ -16,9 +16,9 @@ _**NOTE:** The MSG91 Destination is currently in beta, which means that they are
 
 {% include content/connection-modes.md %}
 
-1.  From your Segment UI’s Destinations page click on “Add Destination”.
+1.  From your Segment UI’s Destinations page click on "Add Destination".
 
-2.  Search for “MSG91” within the Destinations Catalog and confirm the Source you’d like to connect to.
+2.  Search for "MSG91" within the Destinations Catalog and confirm the Source you’d like to connect to.
 
 3. Drop in the "API Key" into your Segment Settings UI which you can find from your [MSG91 dashboard](https://control.msg91.com/signin/) in the API page using the ['API' option in the sidebar](https://help.msg91.com/article/177-where-can-i-find-my-authentication-key). It is recommended that you create a brand new API key for the Segment destination.
 

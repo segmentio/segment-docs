@@ -24,7 +24,7 @@ This destination is maintained by Singular. For any issues with the destination,
 
 ## Install Attribution
 
-Enable automatic tracking of lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) via initialization config parameters ([iOS](https://segment.com/docs/sources/mobile/ios/#application-lifecycle-tracking), [Android](https://segment.com/docs/sources/mobile/android/#step-2-initialize-the-client)) to track installs and sessions in Singular. The Singular “**session**” will be sent automatically by the integration as long as you are including the events above.
+Enable automatic tracking of lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) via initialization config parameters ([iOS](https://segment.com/docs/sources/mobile/ios/#application-lifecycle-tracking), [Android](https://segment.com/docs/sources/mobile/android/#step-2-initialize-the-client)) to track installs and sessions in Singular. The Singular "**session**" will be sent automatically by the integration as long as you are including the events above.
 
 
 ## Apple Search Ads Attribution

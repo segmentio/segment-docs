@@ -14,7 +14,7 @@ In this guide, we’ll share with you the core events most relevant to e-commerc
 
 ## Identifying your customers
 
-Before diving into specific event tracking, you’ll want to make sure you track who your users are with the the `.identify()` call. You should call `.identify()` whenever a visitor provides you with a piece of information, at which point they become “known users.” The `.identify()` call creates or updates a record of your customer with a set of traits in your tools and warehouse. But how do you choose which traits about your user to include?
+Before diving into specific event tracking, you’ll want to make sure you track who your users are with the the `.identify()` call. You should call `.identify()` whenever a visitor provides you with a piece of information, at which point they become "known users." The `.identify()` call creates or updates a record of your customer with a set of traits in your tools and warehouse. But how do you choose which traits about your user to include?
 
 Traits are pieces of data that you track about a specific user. Read our guide about selecting traits to learn more.
 
@@ -120,7 +120,7 @@ Lastly, we have a set of semantic campaign events that are automatically collect
 
 [Check out the full list of e-commerce events you should track.](https://segment.com/docs/spec/ecommerce/v2)
 
-You may notice a pattern in the event names. We’ve selected the “Object Action” naming convention to ensure that all of our event data is clean and easily analyzable, while choosing “snake\_case” for the traits and properties. It doesn’t matter what you choose, so long as it’s consistent. Without a uniform and enforced naming framework to guide developers that add tracking code later, your data could get marred with conflicting naming structures. Learn more about the importance of naming conventions.
+You may notice a pattern in the event names. We’ve selected the "Object Action" naming convention to ensure that all of our event data is clean and easily analyzable, while choosing "snake\_case" for the traits and properties. It doesn’t matter what you choose, so long as it’s consistent. Without a uniform and enforced naming framework to guide developers that add tracking code later, your data could get marred with conflicting naming structures. Learn more about the importance of naming conventions.
 
 _We recommend tracking core checkout activity on the server-side. Learn more about_ [tracking on the client vs. server](https://segment.com/docs/guides/sources/client-vs-server/).
 

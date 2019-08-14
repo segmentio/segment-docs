@@ -15,7 +15,7 @@ This document was last updated on October 8, 2018. If you notice any gaps, outda
 {% include content/connection-modes.md %}
 
 1. If you have not already, create your app within the Kochava dashboard. Check out Kochava's documentation for information on [creating your app](http://support.kochava.com/create-manage-apps/create-edit-apps).
-2. From your Segment UI’s Destinations page click on “Add Destination”.
+2. From your Segment UI’s Destinations page click on "Add Destination".
 3. Search for "Kochava" within the Destinations Catalog and confirm the Source you’d like to connect to.
 4. In the Kochava app, grab your Kochava App GUID (Globally Unique Identifier)
 5. Copy the Kochava GUID into the Segment Destinations Settings UI under "API key".

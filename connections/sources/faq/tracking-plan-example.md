@@ -61,7 +61,7 @@ This is currently recorded with the legacy name `Created a Source`, but we’d l
 
 SENT SOURCE DATA
 
-The tricky thing with this event is that it’s unique per source, but everything else is tracked per user. So we’ll want to record a “Sent Source Data” event: once a day, for each user, for every source they’re connected with that had data sent. So a user might be an owner/collaborator on 3 sources that sent data today, in which case we’ll send 3 “Sent Source Data” events, one for each of those sources. We still want to differentiate workspace stuff from user account stuff.
+The tricky thing with this event is that it’s unique per source, but everything else is tracked per user. So we’ll want to record a "Sent Source Data" event: once a day, for each user, for every source they’re connected with that had data sent. So a user might be an owner/collaborator on 3 sources that sent data today, in which case we’ll send 3 "Sent Source Data" events, one for each of those sources. We still want to differentiate workspace stuff from user account stuff.
 
 ```js
 analytics.track(userId,'Sent Source Data',{// source

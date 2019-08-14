@@ -242,7 +242,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>type</td>
-     <td> The type of this ticket. Possible values: "problem", "incident", "question" or "task”.</td>
+     <td> The type of this ticket. Possible values: "problem", "incident", "question" or "task".</td>
    </tr>
    <tr>
      <td>subject</td>
@@ -262,7 +262,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
    </tr>
    <tr>
      <td>status</td>
-     <td> The state of the ticket. Possible values: "new", "open", "pending", "hold", "solved", "closed”.</td>
+     <td> The state of the ticket. Possible values: "new", "open", "pending", "hold", "solved", "closed".</td>
    </tr>
    <tr>
      <td>recipient</td>

@@ -13,8 +13,8 @@ This document was last updated on March 27, 2018. If you notice any gaps, outdat
 
 {% include content/connection-modes.md %}
 
-1.  From your Segment UI’s Destinations page click on “Add Destination”.
-2.  Search for “Active Campaign” within the Destinations Catalog and confirm the Source you’d like to connect to.
+1.  From your Segment UI’s Destinations page click on "Add Destination".
+2.  Search for "Active Campaign" within the Destinations Catalog and confirm the Source you’d like to connect to.
 3.  Add your API URL and API Key which can be found in your ActiveCampaign UI Settings page under the Developer tab.
 4.  Since the Segment ActiveCampaign destination integration is 100% handled through Segment, you don't need to install ActiveCampaign site tracking or event tracking Javascript code.
 

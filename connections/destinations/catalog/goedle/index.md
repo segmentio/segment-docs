@@ -11,8 +11,8 @@ This document was last updated on May 16, 2018. If you notice any gaps, outdated
 
 {% include content/connection-modes.md %}
 
-1.  From your Segment UI’s Destinations page click on “Add Destination”.
-2.  Search for “Goedle” within the Destinations Catalog and confirm the Source you’d like to connect to.
+1.  From your Segment UI’s Destinations page click on "Add Destination".
+2.  Search for "Goedle" within the Destinations Catalog and confirm the Source you’d like to connect to.
 3.  In your Segment Settings UI, enter your goedle.io app key which you received upon [sign up](https://go.goedle.io/signup "Sign up at goedle.io").
 4.  After activating, goedle.io will start automatically collecting data from your website, mobile app, or game. However, it will take up to 24 hours for goedle.io to process this data and predict future user behavior - you will receive an email from goedle.io when your data is available.
 

@@ -10,7 +10,7 @@ To start sending data to Firebase Analytics from your Android project, you’ll 
 
 - Register your mobile app with Firebase at `https://console.firebase.google.com`
 
-- Once your app is registered, you’ll be prompted to download a `google-services.json` file. Place this in your Application’s “app” folder. This file contains all necessary configurations and cannot be used across multiple apps. If you’re configuring Firebase for other apps, you should create a new view in your Firebase console and download a unique `google-services.json`  file for each.
+- Once your app is registered, you’ll be prompted to download a `google-services.json` file. Place this in your Application’s "app" folder. This file contains all necessary configurations and cannot be used across multiple apps. If you’re configuring Firebase for other apps, you should create a new view in your Firebase console and download a unique `google-services.json`  file for each.
 
 ***Module-level build.gradle**: Add the Segment-Firebase SDK and apply the Google Services plugin at the end of the file:
 
@@ -96,7 +96,7 @@ When you call `identify` Segment will map to the corresponding Firebase Analytic
 
 You can use these traits to create audiences and views to analyze your users’ behavior.
 
-**Note**: Google prohibits sending PII to Firebase unless [“robust notice” is given to your app users](https://firebase.google.com/policies/analytics/). For iOS apps, you must include the iAD Framework to automatically collect the Age, Gender, and Interests Firebase properties.
+**Note**: Google prohibits sending PII to Firebase unless ["robust notice" is given to your app users](https://firebase.google.com/policies/analytics/). For iOS apps, you must include the iAD Framework to automatically collect the Age, Gender, and Interests Firebase properties.
 
 Learn more about [Firebase's reporting dashboard here](https://support.google.com/firebase/answer/6317517?hl=en&ref_topic=6317489).
 
@@ -174,7 +174,7 @@ Segment maps the followed Segment specced properties (left) to the corresponding
 
 ### Passing Revenue and Currency
 
-Ecommerce events containing “revenue” or “total” must also include the appropriate ISO 4217 “currency” string for revenue data to populate to the Firebase dashboard. If a “currency” value is not included, Segment default to "USD".
+Ecommerce events containing "revenue" or "total" must also include the appropriate ISO 4217 "currency" string for revenue data to populate to the Firebase dashboard. If a "currency" value is not included, Segment default to "USD".
 
 ```js
 Properties properties = new Properties()

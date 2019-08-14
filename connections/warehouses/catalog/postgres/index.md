@@ -136,7 +136,7 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 
     **Master Username** is the username you will use to log in to the instance.
 
-    **Master Password** is a password that is 8 to 128 ASCII characters long that doesn’t contain the characters /, “, or @.
+    **Master Password** is a password that is 8 to 128 ASCII characters long that doesn’t contain the characters /, ", or @.
 
     When you're done entering your settings, click **Next Step**.
     ![](images/rds6.png)

@@ -2,7 +2,7 @@
 title: "How do I forecast LTV with SQL and Excel for e-commerce?"
 ---
 
-Customer Lifetime Value (“LTV”) is the amount of money that an individual customer will spend with a given business in the future. It’s often used to value cohorts in your customer base, determine how much to spend in acquiring or retaining new users in a given cohort, rank customers, and measure the success of marketing activities from a baseline LTV forecast.
+Customer Lifetime Value ("LTV") is the amount of money that an individual customer will spend with a given business in the future. It’s often used to value cohorts in your customer base, determine how much to spend in acquiring or retaining new users in a given cohort, rank customers, and measure the success of marketing activities from a baseline LTV forecast.
 
 The LTV calculation is not straightforward for e-commerce businesses, since future payments are not contractual: at any moment, a customer may never make a single purchase again. Additionally, forecasting future purchases requires statistical modeling that many current LTV formulas lack.
 
@@ -16,7 +16,7 @@ In this guide, we assume that you’re using the tracking scheme we described in
 
 In a non-contractual setting, we can’t use a simple retention rate to determine when customers terminate their relationship. This is because the retention rate is a linear model that doesn’t accurately predict whether a customer has ended her relationship with the company or is merely in the midst of a long hiatus between transactions.
 
-The most accurate non-contractual LTV model, named “Buy Til You Die” (“BTYD”), focuses on calculating the discounted estimation of future purchases based on recency of last purchase, frequency of purchases, and average purchase value. This model uses non-linear modeling to predict whether or not a user is “alive” or “dead” given historic transactions to forecast future probability and size of purchases.
+The most accurate non-contractual LTV model, named "Buy Til You Die" ("BTYD"), focuses on calculating the discounted estimation of future purchases based on recency of last purchase, frequency of purchases, and average purchase value. This model uses non-linear modeling to predict whether or not a user is "alive" or "dead" given historic transactions to forecast future probability and size of purchases.
 
 Since LTV is a critical metric for e-commerce companies, it’s important that this model, instead of simpler linear formula that is based on retention rates, is used for it’s calculation.
 
@@ -113,17 +113,17 @@ After Solver runs, cells B1:B4 will be updated to represent the model’s estima
 
 ## Model and predict future customer purchases
 
-The model requires four pieces of information about each customer’s past purchasing history: her “recency” (how many “time units” her last transaction occurred), “frequency” (how many transactions she made over the specified time period), the length of time over which we have observed her purchasing behavior, and the average transaction size.
+The model requires four pieces of information about each customer’s past purchasing history: her "recency" (how many "time units" her last transaction occurred), "frequency" (how many transactions she made over the specified time period), the length of time over which we have observed her purchasing behavior, and the average transaction size.
 
 In our example, we have the purchasing behavior data over the course of six months with each unit of time being a single day.
 
-We’ll apply a both a beta-geometric and a negative binomial distribution (“BG/NBD”) to these inputs and then use Excel to estimate the model parameters (an alternative would be the Pareto/NBD model). These probability distributions are used because they accurately reflect the underlying assumptions of the aggregation of realistic individual buying behavior. ([Learn more about these models](http://www.brucehardie.com/notes/021/palive_for_BGNBD.pdf)).
+We’ll apply a both a beta-geometric and a negative binomial distribution ("BG/NBD") to these inputs and then use Excel to estimate the model parameters (an alternative would be the Pareto/NBD model). These probability distributions are used because they accurately reflect the underlying assumptions of the aggregation of realistic individual buying behavior. ([Learn more about these models](http://www.brucehardie.com/notes/021/palive_for_BGNBD.pdf)).
 
 After estimating the model parameters, we’ll predict a particular customer’s conditional expected transactions by applying the same historic purchasing data to Bayes’ Theorem, which describes the probability of an event based on prior knowledge of conditions related to the event.
 
 **Estimating the model parameters**
 
-The top left part of the first sheet represent the parameters of the BG/NBD model that must be fitted to the historic data you paste in. These four parameters (r, alpha, a, and b) will have “starting values” of 1.0, since we’ll use Excel Solver to determine their actual values.
+The top left part of the first sheet represent the parameters of the BG/NBD model that must be fitted to the historic data you paste in. These four parameters (r, alpha, a, and b) will have "starting values" of 1.0, since we’ll use Excel Solver to determine their actual values.
 
 The values in columns F to J represent variables in the BG/NBD model. Column F, in particular, defines a single customer’s contribution to a the overarching function, on which we’ll use Solver to determine the parameters. In statistics, this function is called the likelihood function, which is a function of the parameters of a statistical model.
 
@@ -135,7 +135,7 @@ With the new parameter estimates, we can now predict a customer’s future purch
 
 In the next sheet, we apply Bayes’ Theorem to the historic purchasing information to forecast the quantity of transactions in the next period. We’ll then multiply the expected quantity with the average transaction size to calculate the expected revenue for that period, which we can extrapolate as an annuity, of which we can find the present discounted value (assuming discount rate is 10%).
 
-Central to the Bayes’ Theorem formula is the Gaussian hypergeometric function, which is defined by “2F1” in column M. We evaluate the hypergeometric function as if it were a truncated series: by adding terms to the series until each term is small enough that it becomes trivial. In the spreadsheet, we sum the series to it’s 50th term.
+Central to the Bayes’ Theorem formula is the Gaussian hypergeometric function, which is defined by "2F1" in column M. We evaluate the hypergeometric function as if it were a truncated series: by adding terms to the series until each term is small enough that it becomes trivial. In the spreadsheet, we sum the series to it’s 50th term.
 
 The rest of the variables in Bayes’ Theorem is in columns I through L, which use the inputs from the customer’s historic purchasing information, as well as the model parameter estimates as determined from Solver (cells B1:B4).
 

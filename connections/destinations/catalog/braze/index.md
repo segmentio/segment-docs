@@ -23,8 +23,8 @@ This document was last updated on June 13, 2018. If you notice any gaps, outdate
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on “Add Destination”.
-2. Search for “Braze” within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI’s Destinations page click on "Add Destination".
+2. Search for "Braze" within the Destinations Catalog and confirm the Source you’d like to connect to.
 3. In your Segment Settings UI, add the "API Key" which can be found in your Braze Dashboard under App Settings > Manage App Group.
 4. You will also need to setup a new App Group REST API Key in the Braze Dashboard under App Settings > Developer Console > API Settings. Instructions can be found [here](https://www.braze.com/documentation/REST_API/#creating-and-managing-rest-api-keys). **Note:** For this App Group REST API Key, you will only need to select users.track endpoint under "User Data"
 5. If you are implementing via Analytics.js, Segment will automatically load the [Braze Web SDK](https://www.braze.com/documentation/Web/). Otherwise, depending on the source you’ve selected, include Braze’s library by adding the following lines to your dependency configuration.
@@ -326,7 +326,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 ### Soft Push Prompts
 
-1. Follow [step one](https://www.Braze.com/documentation/Web/#soft-push-prompts) to create a “Prime for Push” in-app messaging Campaign on the Braze dashboard.
+1. Follow [step one](https://www.Braze.com/documentation/Web/#soft-push-prompts) to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
 
 2. Disable your [Automatically Send In-App Messages Destination setting](https://segment.com/docs/integrations/Braze/#settings). By default, it is enabled when you enable the Braze destination.
 
