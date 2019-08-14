@@ -7,9 +7,9 @@ Dotenv.load
 
 SIDENAV_INDEX_DEFAULT_TITLE = 'Overview'
 SIDENAV_FILE_BLACKLIST = [
-  './vendor/**/*.md', 
-  './connections/**/**.md', 
-  './*.md', 
+  './vendor/**/*.md',
+  './connections/**/**.md',
+  './*.md',
   './_*/**/*.md'
 ]
 
@@ -19,7 +19,7 @@ namespace :nav do
   desc 'Updates _data/sidenav.yml based on the current available docs'
   task :update do
     unless ENV['FORCE_NAV_UPDATE']
-      p "WARNING. This a destructive action and will break the current sidenav. Re-run with FORCE_NAV_UPDATE=1 if you are sure you want to do this" 
+      p "WARNING. This a destructive action and will break the current sidenav. Re-run with FORCE_NAV_UPDATE=1 if you are sure you want to do this"
       exit
     end
 
@@ -32,14 +32,14 @@ namespace :nav do
       paths = file_list.to_s
                       .split('/')
                       .reject { |p| p == '.'}
-      
+
 
       if paths.size == 0 || paths.size > 3
         # Not a valid path or some deep-nested directory structure we don't support
         p "skipping #{paths.join("/")}"
         next
       end
-    
+
       root = paths[0]
       k = root
 
@@ -58,7 +58,7 @@ namespace :nav do
       sections[k] ||= { 'section_title' => root.capitalize, 'section' => [{ 'path' => "/#{root}", 'title' => SIDENAV_INDEX_DEFAULT_TITLE}] }
 
       # Skip the index e.g overview page for each section since we are setting it above
-      if paths.join("/") == "#{root}/index.md" 
+      if paths.join("/") == "#{root}/index.md"
         p "skipping #{paths.join("/")}"
         next
       else
@@ -114,9 +114,9 @@ namespace :nav do
     partners_nav = { 'sections' => partners_sections.values }
 
     # Main sidenav
-    File.open("./_data/sidenav/default.yml","w") do |file|
+    File.open("./_data/sidenav/main.yml","w") do |file|
       file.write main_nav.to_yaml({ indention: 4, separator: '' })
-    end 
+    end
 
     # Legal sidenav
     File.open("./_data/sidenav/legal.yml","w") do |file|
@@ -214,7 +214,7 @@ def get_catalog(url:, page_token: "")
     req.headers['Content-Type'] = 'application/json'
     req.headers['Authorization'] = "Bearer #{ENV["PLATFORM_API_TOKEN"]}"
   end
-  
+
 
   JSON.parse(resp.body)
 end
