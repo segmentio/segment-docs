@@ -9,3 +9,8 @@ redirect_from:
 - '/sql/common-queries/traits-by-user/'
 - '/warehouses/common-queries/'
 ---
+
+
+## What's a Warehouse?
+
+{% include content/whats-a-warehouse.md %}
