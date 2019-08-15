@@ -106,6 +106,15 @@ Swiftype is set up as a script in `_layouts/default.html`
 We're using Rouge, set in the `_config.yml`. It's now default for Jekyll 3 and later, so 🎉.
 A list of the cues Rouge accepts can be found [here](https://github.com/rouge-ruby/rouge/wiki/list-of-supported-languages-and-lexers).
 
+# Note Blocks
+We're using [Premonition](https://github.com/lazee/premonition) for our Note blocks. This is stock right now, with four styles: `note`, `info`, `warning`, and `error`. We might build more later.
+
+You'd write a block like this:
+```md
+> warning "I am a warning"
+> The body of the warning goes here. Premonition allows you to write any `Markdown` inside the block.
+```
+
 
 # Frontmatter
 

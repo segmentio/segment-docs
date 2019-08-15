@@ -48,6 +48,7 @@ GEM
     multipart-post (2.1.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
+    premonition (2.0.0)
     public_suffix (3.1.1)
     rake (12.3.3)
     rb-fsevent (0.10.3)
@@ -77,6 +78,7 @@ DEPENDENCIES
   jekyll (~> 3.8.6)
   jekyll-redirect-from
   jekyll-sitemap
+  premonition (~> 2.0.0)
   rake
   tzinfo (~> 1.2)
   tzinfo-data

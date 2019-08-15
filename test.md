@@ -14,8 +14,9 @@ redirect_from:
 - /guides/testing
 ---
 
+> note "This is a note"
+> Some note text foo bar baz
 
-{% include content/connection-modes.md %}
 
 Welcome to the documentation test page!
 

@@ -28,6 +28,7 @@ defaults:
 plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
+  - premonition
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
