@@ -41,6 +41,11 @@
         Legal Sidenav
       {% endcomment %}
       {% include sidenav/legal.html %}
+    {% elsif page.url contains "/glossary" %}
+      {% comment %}
+        Glossary Sidenav
+      {% endcomment %}
+      {% include sidenav/glossary.html %}
     {% elsif page.url contains "/partners" %}
       {% comment %}
         Partners Sidenav
