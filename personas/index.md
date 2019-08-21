@@ -1,6 +1,5 @@
 ---
-title: Personas
-sidebar: Overview
+title: Personas Overview
 ---
 
 

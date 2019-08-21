@@ -1,6 +1,5 @@
 ---
-title: 'Personas: SQL Traits'
-sidebar: 'SQL Traits'
+title: 'Personas SQL Traits'
 ---
 
 SQL Traits give you the flexibility of querying your data warehouse and importing the resulting user or account traits into Personas. This is useful for several use cases including:
@@ -76,7 +75,7 @@ If you are sending [object cloud sources](https://segment.com/docs/sources/#clou
 
 ![Preview all users with an open Zendesk ticket](images/sql_traits_preview1.png)
 
-A successful preview will return a sample of users and their traits. Note that if we have seen this user before in Personas, you will see a green checkmark, and click on that user to view their user profile.  
+A successful preview will return a sample of users and their traits. Note that if we have seen this user before in Personas, you will see a green checkmark, and click on that user to view their user profile.
 
 ![Click on a user to check out their profile. If a user has a question mark, we haven’t seen this user_id in Personas before](images/sql_traits_preview2.png)
 
@@ -126,7 +125,7 @@ Common use cases here include syncing Salesforce Leads or Accounts, syncing Zend
 **Description:** Imports data from the Salesforce leads and contacts table
 
 ```
-    select external_id_c as user_id,  
+    select external_id_c as user_id,
     lead_score_c,
     lead_age_c,
     lead_status

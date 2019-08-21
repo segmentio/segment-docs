@@ -5,7 +5,8 @@ hide_toc: true
 feedback: false
 layout: page
 ---
+<span id="doc-content" />
 
 {% for entry in site.data.glossary %}### **{{ entry[0] }}**
-{{ entry[1] | markdownify | strip_html | strip }}
+{{ entry[1] | markdownify }}
 {% endfor %}
