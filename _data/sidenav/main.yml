@@ -165,25 +165,25 @@ sections:
 - section_title: Personas
   section:
   - path: "/personas"
-    title: Overview
+    title: Personas Overview
   - path: "/personas/activation"
-    title: 'Personas: Activation'
+    title: 'Personas Activation'
   - path: "/personas/audiences"
-    title: 'Personas: Audiences'
+    title: 'Audiences'
   - path: "/personas/computed-traits"
-    title: 'Personas: Computed Traits'
-  - path: "/personas/faqs"
-    title: Frequently Asked Questions
+    title: 'Computed Traits'
   - path: "/personas/identity-resolution"
-    title: 'Personas: Identity Resolution'
-  - path: "/personas/personas-gdpr"
-    title: Personas and GDPR
+    title: 'Identity Resolution'
   - path: "/personas/profile-api"
-    title: 'Personas: Profile API'
+    title: 'Personas Profile API'
   - path: "/personas/sql-traits"
-    title: 'Personas: SQL Traits'
+    title: 'Personas SQL Traits'
   - path: "/personas/warehouses"
-    title: Personas and Warehouses
+    title: 'Personas Warehouse Sync'
+  - path: "/personas/personas-gdpr"
+    title: 'Personas and GDPR'
+  - path: "/personas/faqs"
+    title: 'Frequently Asked Questions'
 - section_title: Privacy
   section:
   - path: "/privacy"

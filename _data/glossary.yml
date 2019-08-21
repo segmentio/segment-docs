@@ -1,17 +1,11 @@
 Analytics: |
   The field of data analysis. Analytics often involves studying past historical data to research trends, to analyze the effects of decisions or events, or to evaluate the performance of a given tool or scenario. The goal of analytics is to improve the business by gaining understanding which can be used to make improvements or changes.
-base image: |
-  An image that has no parent is a **base image**.
-
-Analytics: |
-  The field of data analysis. Analytics often involves studying past historical data to research trends, to analyze the effects of decisions or events, or to evaluate the performance of a given tool or scenario. The goal of analytics is to improve the business by gaining understanding which can be used to make improvements or changes.
 
 Analytics.js: |
   The Segment wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
 
 App: |
   The app is the main Segment web application, the part you have to log in to get to, where you turn on integrations, see events in the debugger, manage your tracking plan, and so on.
-
 
 Asynchronous: |
   Asynchronous means occurring without a specific order or sequence. In engineering, it's most often used for things like when you have to ask a server for a piece of information. If that was a synchronous task, while you were waiting for the server to respond you wouldn't be able to do anything else, you'd just be stuck waiting. But since it's asynchronous, you can request information from a server, continue to go do a bunch of other tasks, and then when the server responds you can get back to what you were doing to start. Basically it lets you work on multiple things at once (in parallel) instead of needing to finish everything in the order it comes in. Think of it like one of the ways computers are able to multi-task.
@@ -102,9 +96,12 @@ SDK: |
   Stands for software development kit. This is a combination of libraries and used mostly in the context of building mobile or native apps.
 
 SQL: |
-  (pronounced ‘sequel’)
+  (pronounced 'sequel')
   Structured Query Language. The standard language for retrieving information from a database.  It's often called "relational" because all the queries are related to relations between the data. For instance, find me all users who are named "Alice" would translate to...
-  'select * from users where first_name equals "Alice"'
+
+  ```SQL
+  select * from users where first_name equals "Alice"
+  ```
 
 Source: |
   A website, server library, mobile SDK, or cloud application which can send data into Segment.

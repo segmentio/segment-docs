@@ -1,6 +1,5 @@
 ---
-title: 'Personas and Warehouses'
-sidebar: Warehouse Sync
+title: 'Personas Warehouse Sync'
 ---
 ## How does Personas sync to my data warehouse?
 Personas provides a complete, up-to-date view of your users customer journey as it unfolds. We know that one of the best ways to understand this journey is through SQL in a Data Warehouses. With Personas, we automatically load the synthesized Computed Traits and Audiences into your warehouse, so you can include this data in your reporting and analysis.

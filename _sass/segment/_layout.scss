@@ -73,7 +73,7 @@ footer > #data-collection a {
 #doc-content {
   background: $background-color;
   height: 100%;
-  max-width: fit-content;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
@@ -292,7 +292,7 @@ footer > #data-collection a {
   padding: 0 5px;
 }
 
-article.l-doc-container{
+article.doc-content{
   max-width: 800px;
 }
 

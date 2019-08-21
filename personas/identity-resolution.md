@@ -1,6 +1,5 @@
 ---
-title: 'Personas: Identity Resolution'
-sidebar: 'Identity Resolution'
+title: 'Identity Resolution'
 ---
 
 ## Identity Graph
