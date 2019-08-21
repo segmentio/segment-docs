@@ -1,0 +1,128 @@
+Analytics: |
+  The field of data analysis. Analytics often involves studying past historical data to research trends, to analyze the effects of decisions or events, or to evaluate the performance of a given tool or scenario. The goal of analytics is to improve the business by gaining understanding which can be used to make improvements or changes.
+base image: |
+  An image that has no parent is a **base image**.
+
+Analytics: |
+  The field of data analysis. Analytics often involves studying past historical data to research trends, to analyze the effects of decisions or events, or to evaluate the performance of a given tool or scenario. The goal of analytics is to improve the business by gaining understanding which can be used to make improvements or changes.
+
+Analytics.js: |
+  The Segment wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
+
+App: |
+  The app is the main Segment web application, the part you have to log in to get to, where you turn on integrations, see events in the debugger, manage your tracking plan, and so on.
+
+
+Asynchronous: |
+  Asynchronous means occurring without a specific order or sequence. In engineering, it's most often used for things like when you have to ask a server for a piece of information. If that was a synchronous task, while you were waiting for the server to respond you wouldn't be able to do anything else, you'd just be stuck waiting. But since it's asynchronous, you can request information from a server, continue to go do a bunch of other tasks, and then when the server responds you can get back to what you were doing to start. Basically it lets you work on multiple things at once (in parallel) instead of needing to finish everything in the order it comes in. Think of it like one of the ways computers are able to multi-task.
+
+AWS: |
+  Amazon Web Services, a large cloud service provider.
+
+Catalog: |
+  Segment's list of available sources, destinations, and warehouses. You can access the catalog from the [Segment website](https://segment.com/catalog/), and from inside the Segment app.
+
+CDN: |
+  Content Delivery Network. CDNs are a network of servers which make downloading files faster for the user, by placing them all around the world to reduce data transit time. When you have servers in a CDN, they're much closer on average to the end user. If someone is using Segment in Asia, they don't have to download our files all the way from California, they can get them from a server much closer to them in the network.
+
+CDP: |
+  Customer Data Pipeline
+
+Cookies: |
+  Cookies are small pieces of text that are stored by the browser on a website. Cookies have a **name** and a **value**. They may also be set from Javascript using `document.cookie`. Our analytics.js script sets up a cookie called `ajs_uid` to store the user's id.
+
+  Every time you make a request to a website, you send along the cookies that you have stored. It's how the website figures out who you should be logged in as. You can think of it sort of like a passport as a form of ID. When you first enter your username and password, the website generates a secure cookie, and tells your browser to store it. From then on, your browser sends along the cookie as a way of identifying yourself to the website.
+
+Client Side: |
+  This refers to a group of libraries that can send data to Segment. Usually used in contrast to Server Side.
+
+  *Client-side libraries*  sit on the "client", which means they can collect contextual data about your users. The 3 main libraries that are considered "client side" are [Analytics.js](https://segment.com/docs/libraries/analytics.js/), which is used on websites and powers most of our [plugins and platform guides](https://segment.com/docs/platforms/), our [iOS SDK](https://segment.com/docs/libraries/ios/), and our [Android SDK](https://segment.com/docs/libraries/android/). Savvy end users can access the information you are sending when you use client-side libraries. These libraries are designed to track a single end user, in real time, as they use your site or app. Client-side libraries are able to maintain a cache of information about each user on that user's device (browser or phone) that way we know that device belongs to a consistent anonymousId or userId and a list of traits like name, email, etc.
+
+Debugger: |
+  This is the place in the app where you can see your events flowing through Segment
+
+Destination: |
+  a place you can send data
+
+DMP: |
+  Data management platform
+
+DSP: |
+  Demand-side platform
+
+ETL: |
+  Extract, Transform and Load. Referring to the process of extracting data from a production system, transforming it with enriching data into a new format, and then loading it into a data warehouse for analysis (a separate database from production).
+
+Identify: |
+  a call that gathers information about who the user is.
+
+JSON: |
+  JSON, or JavaScript Object Notation, is a convenient format for storing structured data.
+
+Library: |
+  A library is a reusable piece of code which acts as a building block for higher level pieces of code. It's the software equivalent of a 'tool'. For instance, take Instagram filters. In the good old days, to take a picture with an interesting filter, you had to adjust the aperture length, the focal length, the exposure and film speed to get the desired effect. But now, you can just use Instagram, and press a button to get the pre-tuned filter that you want. They've packaged those effects in software and made them re-usable.
+
+  The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](https://segment.com/docs/libraries/). Libraries are either “[Client Side](#Client-Side)” or “[Server Side](#Server-Side)”.
+
+Method: |
+  A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, etc. are methods you can invoke on those objects.
+
+MTU: |
+  Monthly Tracked Users.  You can find more about how they are calculated [here](https://segment.com/docs/guides/usage-and-billing/how-are-mtus-calculated-by-segment/) but in short, they are calculated by adding the number unique userIds and number of unique anonymousIds that a customer tracks with Segment.
+
+OTT (Over the Top): |
+  Over the top (OTT) refers to content providers that distribute streaming media as a standalone product directly to viewers over the Internet, bypassing telecommunications, multichannel television, and broadcast television platforms that traditionally act as a controller or distributor of such content.
+
+Page: |
+  The Segment API call records that a user 'viewed a page'. It's recorded by calling `analytics.page()`. You can optionally pass in a `name` and a `category`.
+
+Postgres: |
+  Opensource SQL server
+
+Redshift: |
+  An analytics data warehouse from Amazon Web Services. Made for loading in tons of event data, and then analyzing it with complex queries. It's designed to be fast and cheap.
+
+Retry: |
+  How often we attempt to redeliver a payload before marking it as failed.
+
+Replay: |
+  The ability to re-send your user data to new destinations and tools.
+
+Schema: |
+  A schema is a word used to refer to the design of a database, including what fields there are, and what data types each one contains. If you were to think of a database as a spreadsheet, the schema would be the top row with the field labels, plus the data types and formatting rules for each column.
+
+  In Segment, you can send data to a Warehouse which has a schema based on the types of data you collect and route through Segment, and which updates as the data you collect changes.
+
+Server Side: |
+  Refers to a group of libraries that can send data to Segment.  This could also could refer to people sending data directly to [our API](https://segment.com/docs/libraries/http/) without using a “library”. Usually used in contrast to [Client Side](#Client-Side).
+
+  *Server-side libraries* run on a server and are completely invisible to end users. Find the full list of server-side languages Segment supports [in our docs](https://segment.com/docs/libraries/#server). These libraries can be used to track a user in realtime as they use your app, but are also able to run batches of calls to update many end users at once. Server-side libraries do not maintain "state" which means every API call you make must include every detail you want to see inside of Segment.
+
+SDK: |
+  Stands for software development kit. This is a combination of libraries and used mostly in the context of building mobile or native apps.
+
+SQL: |
+  (pronounced ‘sequel’)
+  Structured Query Language. The standard language for retrieving information from a database.  It's often called "relational" because all the queries are related to relations between the data. For instance, find me all users who are named "Alice" would translate to...
+  'select * from users where first_name equals "Alice"'
+
+Source: |
+  A website, server library, mobile SDK, or cloud application which can send data into Segment.
+
+Spec: |
+  Short for "Specification"
+
+SSP: |
+  Supply-side Platform
+
+Throughput: |
+  The number of calls you can make. This is set in your account plan.
+
+Track: |
+  Type of API call (method) which records any actions that users perform on a web or mobile app.
+
+Tracking Plan: |
+  A tracking plan is a tool that our customers use to keep track of their analytics setup. It contains all of the events, pages, traits and properties they want to record with information about how each is laid out. It's often in a spreadsheet or document, but we're actually building the functionality into the core product so that people can plan out their tracking setup right from inside Segment.
+
+Warehouses: |
+  Segment’s Data warehouse product.  All event data can be sent to one of several Warehouses, where your team can use it to perform more complex analysis of the data.

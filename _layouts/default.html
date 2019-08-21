@@ -55,7 +55,9 @@
         </div>
         <footer>
           <div id="feedback">
+            {% if page.feedback != false %}
             {% include feedback-footer.html %}
+            {% endif %}
           </div>
           {% include data-collection-footer.html %}
         </footer>

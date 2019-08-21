@@ -73,8 +73,7 @@ footer > #data-collection a {
 #doc-content {
   background: $background-color;
   height: 100%;
-  min-width: 950px;
-  max-width: $content-width;
+  max-width: fit-content;
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
@@ -293,8 +292,13 @@ footer > #data-collection a {
   padding: 0 5px;
 }
 
+article.l-doc-container{
+  max-width: 800px;
+}
+
 .l-doc-container {
   display: flex;
+  width: fit-content;
   flex: 0;
   margin-left: $content-padding;
   margin-top: 25px;
@@ -335,6 +339,7 @@ footer > #data-collection a {
 .l-block-grid-collection {
   margin: 0;
   padding: 0;
+  width: 1000px;
   list-style-type: none;
   margin-top: 2 * ($spacing-unit / 3);
   margin-bottom: $grid-gutter-unit * -1;
