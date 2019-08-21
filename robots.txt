@@ -1,0 +1,5 @@
+# allow all Swiftype search crawls
+User-agent: Swiftbot
+Disallow:
+
+Sitemap: http://segment.build/docsv2/sitemap.xml
