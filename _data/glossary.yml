@@ -99,7 +99,9 @@ SQL: |
   (pronounced 'sequel')
   Structured Query Language. The standard language for retrieving information from a database.  It's often called "relational" because all the queries are related to relations between the data. For instance, find me all users who are named "Alice" would translate to...
 
-  `select * from users where first_name equals "Alice"`
+  ```SQL
+  select * from users where first_name equals "Alice"
+  ```
 
 Source: |
   A website, server library, mobile SDK, or cloud application which can send data into Segment.

@@ -165,7 +165,7 @@ sections:
 - section_title: Personas
   section:
   - path: "/personas"
-    title: Overview
+    title: Personas Overview
   - path: "/personas/activation"
     title: 'Personas Activation'
   - path: "/personas/audiences"
