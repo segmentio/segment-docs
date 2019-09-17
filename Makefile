@@ -9,7 +9,6 @@ docs:
 	echo "Running segment docs at http://localhost:4000/docsv2/" && \
 	docker run -p 4000:80 segment-docs:latest
 
-
 .PHONY: build
 build:
 	echo "Building site for ${JEKYLL_ENV}"
@@ -20,6 +19,17 @@ build:
 		make deps && \
 		make catalog && \
 	  JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build
+
+.PHONY: docker-serve
+make docker-serve:
+	echo "Building site for ${JEKYLL_ENV}"
+	docker run -it \
+	  --volume="$(PWD):/srv/jekyll" \
+	  jekyll/jekyll \
+		bundle package && \
+		make clean && \
+		make deps && \
+	  JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll serve --trace --incremental -H 0.0.0.0 -V
 
 # Helper commands...
 
@@ -54,8 +64,11 @@ deps:
 .PHONY: dev
 dev:
 	make clean && \
-	bundle exec jekyll serve --incremental -H 0.0.0.0 -V
+	bundle exec jekyll serve --trace --incremental -H 0.0.0.0 -V
 
+.PHONE: trace
+trace:
+	bundle exec jekyll build --trace
 
 # Docker-based commands...
 
