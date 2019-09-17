@@ -54,8 +54,11 @@ deps:
 .PHONY: dev
 dev:
 	make clean && \
-	bundle exec jekyll serve --incremental -H 0.0.0.0 -V
+	bundle exec jekyll serve --trace --incremental -H 0.0.0.0 -V
 
+.PHONE: trace
+trace:
+	bundle exec jekyll build --trace
 
 # Docker-based commands...
 
