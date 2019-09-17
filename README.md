@@ -17,7 +17,7 @@ Use the local build process to preview local changes. If you're doing a release,
 - `docs`: locally builds the docs and serves the static content via a Docker container running nginx
 - `build`: Builds the site docs. Used by CI to publish the docs to staging and production
 - `nav`: Rebuilds the entire nav datafile based on the current doc structure. This is destructive and should not be used unless absolutely necessary.
-- `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key saved in .env
+- `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key to be passed in env via PLATFORM_API_TOKEN
 - `env`: for when you're first getting set up: installs bundler, and installs the deps for the repo.
 - `seed`: copies all example data files out of the `_templates` directory and puts them in the `_data` directory. Useful if you don't have a way to setup an API key.
 - `clean`: runs `jekyll clean` locally
