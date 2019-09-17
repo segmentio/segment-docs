@@ -4,7 +4,10 @@
 
 You can make a limited range of edits from the Github site, but this system works best if you clone it locally so you can run test builds.
 
-# Setup instructions
+# Local development with docker, without platform-api
+Run `make docker-serve`
+
+# Local development with ruby on local machine
 1. First, clone the repo to your local machine.
 2. From the command-line, run `make env` to run the Ruby bundler and install the stuff you need to run the repo.
    **Tip**: If you ever need to do this again, you can run `make deps`.
@@ -16,6 +19,7 @@ Use the local build process to preview local changes. If you're doing a release,
 
 - `docs`: locally builds the docs and serves the static content via a Docker container running nginx
 - `build`: Builds the site docs. Used by CI to publish the docs to staging and production
+- `docker-serve`: Uses docker to build the docs locally, without needing to refresh the catalog from the platform-api
 - `nav`: Rebuilds the entire nav datafile based on the current doc structure. This is destructive and should not be used unless absolutely necessary.
 - `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key to be passed in env via PLATFORM_API_TOKEN
 - `env`: for when you're first getting set up: installs bundler, and installs the deps for the repo.
