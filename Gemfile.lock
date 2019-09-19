@@ -40,6 +40,8 @@ GEM
       listen (~> 3.0)
     kramdown (1.17.0)
     liquid (4.0.3)
+    liquid-c (4.0.0)
+      liquid (>= 3.0.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -78,6 +80,7 @@ DEPENDENCIES
   jekyll (~> 3.8.6)
   jekyll-redirect-from
   jekyll-sitemap
+  liquid-c
   premonition (~> 2.0.0)
   rake
   tzinfo (~> 1.2)
