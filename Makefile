@@ -20,15 +20,6 @@ build:
 		make catalog && \
 	  JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build
 
-.PHONY: docker-serve
-docker-serve:
-	docker run --rm \
-	  -e "JEKYLL_ENV=development" \
-	  -p 127.0.0.1:4000:4000/tcp \
-	  --volume="$PWD:/srv/jekyll" \
-	  -it jekyll/jekyll \
-	  jekyll serve --trace --incremental -H 0.0.0.0 -V
-
 # Helper commands...
 
 .PHONY: nav
@@ -69,6 +60,15 @@ trace:
 	bundle exec jekyll build --trace
 
 # Docker-based commands...
+
+.PHONY: docker-serve
+docker-serve:
+	docker run --rm \
+	  -e "JEKYLL_ENV=development" \
+	  -p 127.0.0.1:4000:4000/tcp \
+	  --volume="$(PWD):/srv/jekyll" \
+	  -it jekyll/jekyll \
+	  jekyll serve --trace --incremental -H 0.0.0.0 -V
 
 .PHONY: docker-clean
 docker-clean:
