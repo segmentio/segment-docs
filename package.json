@@ -1,0 +1,8 @@
+{
+  "name": "segment-docs",
+  "version": "1.0.0",
+  "repository": "git@github.com:segmentio/segment-docs.git",
+  "author": "Jeff Knight <jeffrey.knight@segment.com>",
+  "license": "UNLICENSED",
+  "private": true
+}
