@@ -15,17 +15,9 @@ You can make a limited range of edits from the Github site, but this system work
 
 # Local development with docker, without platform-api
 
-* Install docker. For OSX: https://docs.docker.com/docker-for-mac/install/
 * If using OSX, install command line tools, `xcode-select --install`
-* Run
-```
-docker run --rm \
-  -e "JEKYLL_ENV=development" \
-  -p 127.0.0.1:4000:4000/tcp \
-  --volume="$PWD:/srv/jekyll" \
-  -it jekyll/jekyll \
-  jekyll serve --trace --incremental -H 0.0.0.0 -V
-```
+* Install docker. For OSX: https://docs.docker.com/docker-for-mac/install/
+* Run `make docker-serve`
 
 Use the local build process to preview local changes. If you're doing a release, you can use the `make docs` to see how this would work in the docker container environment that's more like production.
 
