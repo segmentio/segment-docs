@@ -22,14 +22,12 @@ build:
 
 .PHONY: docker-serve
 make docker-serve:
-	echo "Building site for ${JEKYLL_ENV}"
-	docker run -it \
-	  --volume="$(PWD):/srv/jekyll" \
-	  jekyll/jekyll \
-		bundle package && \
-		make clean && \
-		make deps && \
-	  JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll serve --trace --incremental -H 0.0.0.0 -V
+	docker run --rm \
+	  -e "JEKYLL_ENV=development" \
+	  -p 127.0.0.1:4000:4000/tcp \
+	  --volume="$PWD:/srv/jekyll" \
+	  -it jekyll/jekyll \
+	  jekyll serve --trace --incremental -H 0.0.0.0 -V
 
 # Helper commands...
 
