@@ -11,13 +11,14 @@ You can make a limited range of edits from the Github site, but this system work
 * Setup local ruby env, `make env`
 * Install project deps, `make deps`
 * Run server, `make dev`
-* Visit http://localhost:4000
+* Visit http://localhost:4000/docsv2/
 
 # Local development with docker, without platform-api
 
 * If using OSX, install command line tools, `xcode-select --install`
 * Install docker. For OSX: https://docs.docker.com/docker-for-mac/install/
 * Run `make docker-serve`
+* Visit http://localhost:4000/docsv2/
 
 Use the local build process to preview local changes. If you're doing a release, you can use the `make docs` to see how this would work in the docker container environment that's more like production.
 
