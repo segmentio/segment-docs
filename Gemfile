@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.0.0"
+gem "jekyll", "~> 3.8.6"
 gem "liquid-c"
 
 group :development do
