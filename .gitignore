@@ -6,3 +6,5 @@ vendor
 .DS_Store
 .env
 .jekyll-cache
+.idea/
+*.iml
