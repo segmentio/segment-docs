@@ -21,7 +21,7 @@ build:
 	  JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build
 
 .PHONY: docker-serve
-make docker-serve:
+docker-serve:
 	docker run --rm \
 	  -e "JEKYLL_ENV=development" \
 	  -p 127.0.0.1:4000:4000/tcp \

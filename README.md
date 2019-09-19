@@ -4,14 +4,19 @@
 
 You can make a limited range of edits from the Github site, but this system works best if you clone it locally so you can run test builds.
 
-# Local development with docker, without platform-api
-Run `make docker-serve`
+# Local development with ruby, without platform-api
 
-# Local development with ruby on local machine
-1. First, clone the repo to your local machine.
-2. From the command-line, run `make env` to run the Ruby bundler and install the stuff you need to run the repo.
-   **Tip**: If you ever need to do this again, you can run `make deps`.
-3. Run a test `make dev` to run Jekyll locally. It should serve the docs at `0.0.0.0:4000` on your local machine.
+* Install command line tools, `xcode-select --install`
+* Setup local ruby env, `make env`
+* Install project deps, `make deps`
+* Run server, `make dev`
+* Visit http://localhost:4000
+
+# Local development with docker, without platform-api
+
+* Install command line tools, `xcode-select --install`
+* Run `make docker-serve`
+* Visit http://localhost:4000
 
 Use the local build process to preview local changes. If you're doing a release, you can use the `make docs` to see how this would work in the docker container environment that's more like production.
 
