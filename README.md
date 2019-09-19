@@ -6,7 +6,8 @@ You can make a limited range of edits from the Github site, but this system work
 
 # Local development with ruby, without platform-api
 
-* Install command line tools, `xcode-select --install`
+* If using OSX, install command line tools, `xcode-select --install`
+* If using Linux, install Ruby https://www.ruby-lang.org/en/documentation/installation/
 * Setup local ruby env, `make env`
 * Install project deps, `make deps`
 * Run server, `make dev`
@@ -14,7 +15,8 @@ You can make a limited range of edits from the Github site, but this system work
 
 # Local development with docker, without platform-api
 
-* Install command line tools, `xcode-select --install`
+* Install docker. For OSX: https://docs.docker.com/docker-for-mac/install/
+* If using OSX, install command line tools, `xcode-select --install`
 * Run
 ```
 docker run --rm \
