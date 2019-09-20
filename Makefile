@@ -2,118 +2,177 @@ BIN := ./node_modules/.bin
 
 # Core...
 JEKYLL_ENV ?= development
+DOCKER_TTY := docker run --rm -e "JEKYLL_ENV=$(JEKYLL_ENV)" -e "BUILD_CATALOG=$(BUILD_CATALOG)" -p 127.0.0.1:4000:4000/tcp --volume="$(PWD):/srv/jekyll" -it jekyll/jekyll
 
-.PHONY: docs
-docs: node_modules
-	$(BIN)/webpack --mode=production
-	make seed && \
-	make build && \
-	docker build . -t segment-docs:latest && \
-	echo "Running segment docs at http://localhost:4000/docsv2/" && \
-	docker run -p 4000:80 segment-docs:latest
+.PHONY: dev
+dev: node_modules vendor/bundle
+	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
+		"$(BIN)/webpack --mode=development --watch" \
+		"bundle exec jekyll serve --trace --incremental -H 0.0.0.0 -V"
 
 .PHONY: build
-build: node_modules
-	echo "Building site for ${JEKYLL_ENV}"
-	docker run -it \
-	  --volume="$(PWD):/srv/jekyll" \
-	  jekyll/jekyll \
-		bundle package && \
-		make deps && \
-		make catalog && \
-	  JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build
+build: node_modules vendor/bundle
+	@bundle package
 
-# Helper commands...
+ifdef BUILD_CATALOG
+	@echo "building catalog..."
+	@bundle exec rake catalog:update
+endif
 
-.PHONY: nav
-nav:
-	bundle exec rake nav:update
+	@$(BIN)/webpack --mode=production
+	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build
+
+.PHONY: package
+package: build
+	@docker build . -t segment-docs:latest
+
+.PHONY: serve
+serve: package
+	@docker run -p 4000:80 segment-docs:latest
 
 .PHONY: catalog
-catalog:
+catalog: vendor/bundle
 	bundle exec rake catalog:update
 
-.PHONY: env
-env:
-	gem install bundler
-	cp -i .env.example .env | true
-	echo "Environment configured"
-
-.PHONY: seed
-seed:
-	cp _templates/destinations.example.yml _data/catalog/destinations.yml && \
-	cp _templates/sources.example.yml _data/catalog/sources.yml
+.PHONY: deps
+deps: node_modules vendor/bundle
 
 .PHONY: clean
 clean:
-	bundle exec jekyll clean
+	@rm -Rf _site
+	@rm -Rf .sass-cache
+	@rm -Rf .jekyll-metadata
+	@rm -Rf .jekyll-cache
+	@rm -f assets/docs.bundle.js
 
-.PHONY: deps
-deps:
-	bundle install
-
-.PHONY: dev
-dev: node_modules
-	make clean && \
-	$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
-	  "$(BIN)/webpack --mode=development --watch" \
-	  "bundle exec jekyll serve --trace --incremental -H 0.0.0.0 -V"
-
-
-.PHONE: trace
-trace:
-	bundle exec jekyll build --trace
-
-# Docker-based commands...
-
-.PHONY: docker-serve
-docker-serve: node_modules
-	$(BIN)/webpack --mode=development
-	docker run --rm \
-	  -e "JEKYLL_ENV=development" \
-	  -p 127.0.0.1:4000:4000/tcp \
-	  --volume="$(PWD):/srv/jekyll" \
-	  -it jekyll/jekyll \
-	  jekyll serve --trace --incremental -H 0.0.0.0 -V
-
-.PHONY: docker-clean
-docker-clean:
-	docker run -it \
-	  --volume="$(PWD):/srv/jekyll" \
-	  jekyll/jekyll \
-	  jekyll clean
-
-.PHONY: docker-deps
-docker-deps:
-	docker run -it \
-	  --volume="$(PWD):/srv/jekyll" \
-	  jekyll/jekyll \
-		bundle install
-
-.PHONY: docker-dev
-docker-dev: node_modules
-	docker run -it \
-	  -p 4000:4000 \
-	  --volume="$(PWD):/srv/jekyll" \
-	  jekyll/jekyll \
-	  $(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
-	  "$(BIN)/webpack --mode=development --watch" \
-	  "jekyll serve --incremental -H 0.0.0.0"
-
-.PHONY: docker-nav
-docker-nav:
-	docker run -it \
-	  --volume="$(PWD):/srv/jekyll" \
-	  jekyll/jekyll \
-		bundle exec rake nav:update
-
-.PHONY: docker-catalog
-docker-catalog:
-	docker run -it \
-	  --volume="$(PWD):/srv/jekyll" \
-	  jekyll/jekyll \
-		bundle install && \
-		bundle exec rake catalog:update
+.PHONY: clean-deps
+clean-deps:
+	@rm -Rf vendor
+	@rm -Rf node_modules
+	@rm -Rf .bundle
 
 node_modules: package.json yarn.lock
 	yarn --frozen-lockfile
+
+vendor/bundle: Gemfile Gemfile.lock
+	bundle install --path vendor/bundle
+
+.PHONY: docker-dev
+docker-dev:
+	$(DOCKER_TTY) make dev
+
+.PHONY: docker-build
+docker-build:
+	$(DOCKER_TTY) make build
+
+#.PHONY: docs
+#docs: node_modules
+#	$(BIN)/webpack --mode=production
+#	make seed && \
+#	make build && \
+#	docker build . -t segment-docs:latest && \
+#	echo "Running segment docs at http://localhost:4000/docsv2/" && \
+#	docker run -p 4000:80 segment-docs:latest
+#
+#.PHONY: build
+#build: node_modules
+#	echo "Building site for ${JEKYLL_ENV}"
+#	docker run -it \
+#	  --volume="$(PWD):/srv/jekyll" \
+#	  jekyll/jekyll \
+#		bundle package && \
+#		make deps && \
+#		make catalog && \
+#	  JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build
+#
+## Helper commands...
+#
+#.PHONY: nav
+#nav:
+#	bundle exec rake nav:update
+#
+#.PHONY: catalog
+#catalog:
+#	bundle exec rake catalog:update
+#
+#.PHONY: env
+#env:
+#	gem install bundler
+#	cp -i .env.example .env | true
+#	echo "Environment configured"
+#
+#.PHONY: seed
+#seed:
+#	cp _templates/destinations.example.yml _data/catalog/destinations.yml && \
+#	cp _templates/sources.example.yml _data/catalog/sources.yml
+#
+#.PHONY: clean
+#clean:
+#	bundle exec jekyll clean
+#
+#.PHONY: deps
+#deps:
+#	bundle install
+#
+#.PHONY: dev
+#dev: node_modules
+#	make clean && \
+#	$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
+#	  "$(BIN)/webpack --mode=development --watch" \
+#	  "bundle exec jekyll serve --trace --incremental -H 0.0.0.0 -V"
+#
+#
+#.PHONE: trace
+#trace:
+#	bundle exec jekyll build --trace
+#
+## Docker-based commands...
+#
+#.PHONY: docker-serve
+#docker-serve: node_modules
+#	$(BIN)/webpack --mode=development
+#	docker run --rm \
+#	  -e "JEKYLL_ENV=development" \
+#	  -p 127.0.0.1:4000:4000/tcp \
+#	  --volume="$(PWD):/srv/jekyll" \
+#	  -it jekyll/jekyll \
+#	  jekyll serve --trace --incremental -H 0.0.0.0 -V
+#
+#.PHONY: docker-clean
+#docker-clean:
+#	docker run -it \
+#	  --volume="$(PWD):/srv/jekyll" \
+#	  jekyll/jekyll \
+#	  jekyll clean
+#
+#.PHONY: docker-deps
+#docker-deps:
+#	docker run -it \
+#	  --volume="$(PWD):/srv/jekyll" \
+#	  jekyll/jekyll \
+#		bundle install
+#
+#.PHONY: docker-dev
+#docker-dev: node_modules
+#	docker run -it \
+#	  -p 4000:4000 \
+#	  --volume="$(PWD):/srv/jekyll" \
+#	  jekyll/jekyll \
+#	  $(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
+#	  "$(BIN)/webpack --mode=development --watch" \
+#	  "jekyll serve --incremental -H 0.0.0.0"
+#
+#.PHONY: docker-nav
+#docker-nav:
+#	docker run -it \
+#	  --volume="$(PWD):/srv/jekyll" \
+#	  jekyll/jekyll \
+#		bundle exec rake nav:update
+#
+#.PHONY: docker-catalog
+#docker-catalog:
+#	docker run -it \
+#	  --volume="$(PWD):/srv/jekyll" \
+#	  jekyll/jekyll \
+#		bundle install && \
+#		bundle exec rake catalog:update

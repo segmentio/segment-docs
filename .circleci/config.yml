@@ -19,7 +19,7 @@ jobs:
               ENV=staging
             fi;
             
-            JEKYLL_ENV=$ENV make build
+            JEKYLL_ENV=$ENV BUILD_CATALOG=1 make docker-build
 
       - run:
           name: Publish to Trebuchet
