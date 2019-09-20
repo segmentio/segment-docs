@@ -1,8 +1,11 @@
+BIN := ./node_modules/.bin
+
 # Core...
 JEKYLL_ENV ?= development
 
 .PHONY: docs
-docs:
+docs: node_modules
+	$(BIN)/webpack --mode=production
 	make seed && \
 	make build && \
 	docker build . -t segment-docs:latest && \
@@ -10,7 +13,7 @@ docs:
 	docker run -p 4000:80 segment-docs:latest
 
 .PHONY: build
-build:
+build: node_modules
 	echo "Building site for ${JEKYLL_ENV}"
 	docker run -it \
 	  --volume="$(PWD):/srv/jekyll" \
@@ -32,9 +35,8 @@ catalog:
 
 .PHONY: env
 env:
-	gem install bundler && \
-	bundle install && \
-	cp -i .env.example .env | true && \
+	gem install bundler
+	cp -i .env.example .env | true
 	echo "Environment configured"
 
 .PHONY: seed
@@ -51,9 +53,12 @@ deps:
 	bundle install
 
 .PHONY: dev
-dev:
+dev: node_modules
 	make clean && \
-	bundle exec jekyll serve --trace --incremental -H 0.0.0.0 -V
+	$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
+	  "$(BIN)/webpack --mode=development --watch" \
+	  "bundle exec jekyll serve --trace --incremental -H 0.0.0.0 -V"
+
 
 .PHONE: trace
 trace:
@@ -62,7 +67,8 @@ trace:
 # Docker-based commands...
 
 .PHONY: docker-serve
-docker-serve:
+docker-serve: node_modules
+	$(BIN)/webpack --mode=development
 	docker run --rm \
 	  -e "JEKYLL_ENV=development" \
 	  -p 127.0.0.1:4000:4000/tcp \
@@ -85,13 +91,14 @@ docker-deps:
 		bundle install
 
 .PHONY: docker-dev
-docker-dev:
+docker-dev: node_modules
 	docker run -it \
 	  -p 4000:4000 \
 	  --volume="$(PWD):/srv/jekyll" \
 	  jekyll/jekyll \
-	  jekyll serve --incremental -H 0.0.0.0
-		.PHONY: docs
+	  $(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
+	  "$(BIN)/webpack --mode=development --watch" \
+	  "jekyll serve --incremental -H 0.0.0.0"
 
 .PHONY: docker-nav
 docker-nav:
@@ -107,3 +114,6 @@ docker-catalog:
 	  jekyll/jekyll \
 		bundle install && \
 		bundle exec rake catalog:update
+
+node_modules: package.json yarn.lock
+	yarn --frozen-lockfile

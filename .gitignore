@@ -9,3 +9,4 @@ vendor
 .idea/
 *.iml
 node_modules/
+assets/docs.bundle.js
