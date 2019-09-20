@@ -57,7 +57,7 @@ docker-dev:
 
 .PHONY: docker-build
 docker-build:
-	$(DOCKER_TTY) make build
+	@$(DOCKER_TTY) make build
 
 #.PHONY: docs
 #docs: node_modules
