@@ -2,7 +2,7 @@ BIN := ./node_modules/.bin
 
 # Core...
 JEKYLL_ENV ?= development
-DOCKER_TTY := docker run --rm -e "JEKYLL_ENV=$(JEKYLL_ENV)" -e "BUILD_CATALOG=$(BUILD_CATALOG)" -p 127.0.0.1:4000:4000/tcp --volume="$(PWD):/srv/jekyll" -it jekyll/jekyll
+DOCKER_TTY := docker run --rm -e "JEKYLL_ENV=$(JEKYLL_ENV)" -e "BUILD_CATALOG=$(BUILD_CATALOG)" -e "PLATFORM_API_TOKEN=$(PLATFORM_API_TOKEN)" -p 127.0.0.1:4000:4000/tcp --volume="$(PWD):/srv/jekyll" -it jekyll/jekyll
 
 .PHONY: dev
 dev: node_modules vendor/bundle
