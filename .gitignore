@@ -6,3 +6,7 @@ vendor
 .DS_Store
 .env
 .jekyll-cache
+.idea/
+*.iml
+node_modules/
+assets/docs.bundle.js

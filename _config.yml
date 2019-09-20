@@ -44,3 +44,14 @@ exclude:
   - README.md
   - conf/
   - _templates
+  - src/
+  - node_modules/
+  - package.json
+  - yarn.lock
+  - .idea/
+  - .sass-cache/
+  - .jekyll-cache/
+  - .github/
+  - .circleci/
+  - .run/
+  - webpack.config.js
