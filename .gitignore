@@ -8,3 +8,4 @@ vendor
 .jekyll-cache
 .idea/
 *.iml
+node_modules/
