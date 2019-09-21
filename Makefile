@@ -35,8 +35,8 @@ deps: node_modules vendor/bundle
 clean:
 	@rm -Rf _site
 	@rm -Rf .sass-cache
-	@rm -Rf .jekyll-metadata
 	@rm -Rf .jekyll-cache
+	@rm -Rf src/.jekyll-metadata
 	@rm -f assets/docs.bundle.js
 
 .PHONY: clean-deps
