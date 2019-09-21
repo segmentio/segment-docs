@@ -45,6 +45,11 @@ clean-deps:
 	@rm -Rf node_modules
 	@rm -Rf .bundle
 
+.PHONY: seed
+seed:
+	@cp templates/destinations.example.yml src/_data/catalog/destinations.yml
+	@cp templates/sources.example.yml src/_data/catalog/sources.yml
+
 node_modules: package.json yarn.lock
 	yarn --frozen-lockfile
 
@@ -94,11 +99,6 @@ docker-build:
 #	gem install bundler
 #	cp -i .env.example .env | true
 #	echo "Environment configured"
-#
-#.PHONY: seed
-#seed:
-#	cp _templates/destinations.example.yml _data/catalog/destinations.yml && \
-#	cp _templates/sources.example.yml _data/catalog/sources.yml
 #
 #.PHONY: clean
 #clean:
