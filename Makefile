@@ -12,7 +12,7 @@ dev: node_modules vendor/bundle
 
 .PHONY: build
 build: node_modules vendor/bundle
-	@bundle exec rake catalog:update
+#	@bundle exec rake catalog:update
 	@$(BIN)/webpack --mode=production
 	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build
 
@@ -26,7 +26,7 @@ serve: package
 
 .PHONY: catalog
 catalog: vendor/bundle
-	bundle exec rake catalog:update
+	@bundle exec rake catalog:update
 
 .PHONY: deps
 deps: node_modules vendor/bundle
@@ -35,8 +35,8 @@ deps: node_modules vendor/bundle
 clean:
 	@rm -Rf _site
 	@rm -Rf .sass-cache
-	@rm -Rf .jekyll-metadata
 	@rm -Rf .jekyll-cache
+	@rm -Rf src/.jekyll-metadata
 	@rm -f assets/docs.bundle.js
 
 .PHONY: clean-deps
@@ -44,6 +44,11 @@ clean-deps:
 	@rm -Rf vendor
 	@rm -Rf node_modules
 	@rm -Rf .bundle
+
+.PHONY: seed
+seed:
+	@cp templates/destinations.example.yml src/_data/catalog/destinations.yml
+	@cp templates/sources.example.yml src/_data/catalog/sources.yml
 
 node_modules: package.json yarn.lock
 	yarn --frozen-lockfile
@@ -94,11 +99,6 @@ docker-build:
 #	gem install bundler
 #	cp -i .env.example .env | true
 #	echo "Environment configured"
-#
-#.PHONY: seed
-#seed:
-#	cp _templates/destinations.example.yml _data/catalog/destinations.yml && \
-#	cp _templates/sources.example.yml _data/catalog/sources.yml
 #
 #.PHONY: clean
 #clean:
