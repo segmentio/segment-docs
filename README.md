@@ -4,42 +4,34 @@
 
 You can make a limited range of edits from the Github site, but this system works best if you clone it locally so you can run test builds.
 
-# Local development with ruby, without platform-api
+# Quickstart (local development with docker)
+You will need to have Docker installed https://docs.docker.com/install/
+* If using Linux, run `make docker-dev`
+* Visit http://localhost:4000/docsv2/
+
+# Local development with `ruby` and `node`, without platform-api
 
 * If using OSX, install command line tools, `xcode-select --install`
-* If using Linux, install Ruby https://www.ruby-lang.org/en/documentation/installation/
-* Setup local ruby env, `make env`
-* Install project deps, `make deps`
+* Install `Ruby` https://www.ruby-lang.org/en/documentation/installation/
+* Install `Node` https://nodejs.org/en/download/
+* Install `Yarn` https://yarnpkg.com/en/docs/install
+* Install `Bundler` `gem install bundler`
 * Run server, `make dev`
 * Visit http://localhost:4000/docsv2/
 
-# Local development with docker, without platform-api
-
-* If using OSX, install command line tools, `xcode-select --install`
-* Install docker. For OSX: https://docs.docker.com/docker-for-mac/install/
-* Run `make docker-serve`
-* Visit http://localhost:4000/docsv2/
-
-Use the local build process to preview local changes. If you're doing a release, you can use the `make docs` to see how this would work in the docker container environment that's more like production.
-
 ## Makefile commands
 
-- `docs`: locally builds the docs and serves the static content via a Docker container running nginx
 - `build`: Builds the site docs. Used by CI to publish the docs to staging and production
-- `docker-serve`: Uses docker to build the docs locally, without needing to refresh the catalog from the platform-api
 - `nav`: Rebuilds the entire nav datafile based on the current doc structure. This is destructive and should not be used unless absolutely necessary.
 - `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key to be passed in env via PLATFORM_API_TOKEN
-- `env`: for when you're first getting set up: installs bundler, and installs the deps for the repo.
 - `seed`: copies all example data files out of the `_templates` directory and puts them in the `_data` directory. Useful if you don't have a way to setup an API key.
-- `clean`: runs `jekyll clean` locally
-- `deps`: re-runs `bundle install` locally.
+- `clean`: removes all build artifacts
+- `clean-deps`: removes all doownloaded `gems` and `node_modules`
+- `deps`: installs the required `gems` and `node_modules`
 - `dev`: runs `jekyll serve` locally with incremental builds. Useful when updating CSS, JS, or content and you don't want to rebuild everytime.
 
-- docker-clean: runs a `jekyll clean` on a docker host.
-- docker-deps: runs `bundle install` on a docker host.
+- docker-build: runs `make build` on a docker host.
 - docker-dev: runs `make dev` on a docker host.
-- docker-nav: runs `make nav` on a docker host.
-- docker-catalog: runs `make catalog` on a docker host.
 
 # Layouts
 `default.html` is the container through which all the individual other layouts (currently one, `page.html`) are built to have the right title, seo, etc.
