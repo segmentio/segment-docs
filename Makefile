@@ -2,14 +2,19 @@ BIN := ./node_modules/.bin
 
 # Core...
 JEKYLL_ENV ?= development
-DOCKER_TTY := docker run --rm -e "JEKYLL_ENV=$(JEKYLL_ENV)" -e "PLATFORM_API_TOKEN=$(PLATFORM_API_TOKEN)" -p 127.0.0.1:4000:4000/tcp --volume="$(PWD):/srv/jekyll" -it jekyll/jekyll
 
 .PHONY: dev
 dev: node_modules vendor/bundle
 	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
 		"$(BIN)/webpack --mode=development --watch" \
-		"bundle exec jekyll serve --trace --incremental -H 0.0.0.0 -V"
+		"bundle exec jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
 
+.PHONY: intialize-work-dir
+intialize-work-dir:
+	@mkdir -p _site
+	@chmod -R 777 _site/
+	@bundle install
+	
 .PHONY: build
 build: node_modules vendor/bundle
 #	@bundle exec rake catalog:update
@@ -43,18 +48,19 @@ clean:
 clean-deps:
 	@rm -Rf vendor
 	@rm -Rf node_modules
-	@rm -Rf .bundle
 
 .PHONY: seed
 seed:
 	@cp templates/destinations.example.yml src/_data/catalog/destinations.yml
 	@cp templates/sources.example.yml src/_data/catalog/sources.yml
 
+.PHONY: node_modules
 node_modules: package.json yarn.lock
 	yarn --frozen-lockfile
 
+.PHONY: vendor/bundle
 vendor/bundle: Gemfile Gemfile.lock
-	bundle install --path vendor/bundle
+	bundle install
 
 .PHONY: docker-dev
 docker-dev:
@@ -63,6 +69,7 @@ docker-dev:
 .PHONY: docker-build
 docker-build:
 	@$(DOCKER_TTY) make build
+	bundle install
 
 #.PHONY: docs
 #docs: node_modules

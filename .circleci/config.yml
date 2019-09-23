@@ -9,7 +9,6 @@ jobs:
       - run:
           name: Build static site
           command: |
-            
             ENV=development
             
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
@@ -19,7 +18,7 @@ jobs:
               ENV=staging
             fi;
             
-            JEKYLL_ENV=$ENV make docker-build
+            docker run --rm -e "JEKYLL_ENV=$ENV" -e "PLATFORM_API_TOKEN=$PLATFORM_API_TOKEN" --volume="$PWD:/srv/jekyll" -it jekyll/jekyll make build
 
       - run:
           name: Publish to Trebuchet
