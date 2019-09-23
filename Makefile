@@ -12,7 +12,7 @@ dev: node_modules vendor/bundle
 
 .PHONY: build
 build: node_modules vendor/bundle
-	@bundle exec rake catalog:update
+#	@bundle exec rake catalog:update
 	@$(BIN)/webpack --mode=production
 	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build
 
@@ -26,7 +26,7 @@ serve: package
 
 .PHONY: catalog
 catalog: vendor/bundle
-	bundle exec rake catalog:update
+	@bundle exec rake catalog:update
 
 .PHONY: deps
 deps: node_modules vendor/bundle
