@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  jekyll:
+    command: make dev
+    image: jekyll/jekyll:latest
+    volumes:
+      - '.:/srv/jekyll'
+      - './vendor/bundle:/usr/local/bundle'
+    ports:
+      - 4000:4000
+    container_name: jekyll

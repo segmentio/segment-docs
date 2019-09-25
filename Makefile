@@ -3,14 +3,6 @@ BIN := ./node_modules/.bin
 # Core...
 JEKYLL_ENV ?= development
 
-DOCKER_TTY := docker run --rm \
-	-e "JEKYLL_ENV=$(JEKYLL_ENV)" \
-	-e "PLATFORM_API_TOKEN=$(PLATFORM_API_TOKEN)" \
-	-p 127.0.0.1:4000:4000/tcp \
-	--volume="$(PWD):/srv/jekyll" \
-	--volume="$(PWD)/vendor/bundle:/usr/local/bundle" \
-	-it jekyll/jekyll
-
 .PHONY: dev
 dev: node_modules vendor/bundle
 	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
@@ -63,14 +55,6 @@ node_modules: package.json yarn.lock
 .PHONY: vendor/bundle
 vendor/bundle: Gemfile Gemfile.lock
 	bundle install
-
-.PHONY: docker-dev
-docker-dev:
-	$(DOCKER_TTY) make dev
-
-.PHONY: docker-build
-docker-build:
-	@$(DOCKER_TTY) make build
 
 #.PHONY: docs
 #docs: node_modules
