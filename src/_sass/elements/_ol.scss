@@ -1,25 +1,22 @@
 ol {
   list-style-type: none;
   counter-reset: list-items;
-  padding-left: 25px;
+  padding-start: 25px;
 
   li {
     counter-increment: list-items;
     font-size: 15px;
-    line-height: 2;
+    line-height: 30px;
     position: relative;
     
     &::before {
       content: counter(list-items) ". ";
       display: block;
-      top: .2em;
+      top: 0;
       color: color(primary-dark);
       font-weight: 500;
-      line-height: 1.71;
       position: absolute;
-      left: 0;
-      transform: translateX(calc(-100% - 7px));
-      font-size: 14px;
+      left: -20px;
     }
   }
 }
