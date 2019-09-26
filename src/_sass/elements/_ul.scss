@@ -1,6 +1,6 @@
 ul {
   list-style-type: none;
-  padding-inline-start: 25px;
+  padding-left: 25px;
 
   li {
     position: relative;
@@ -12,7 +12,7 @@ ul {
       content: "";
       width: 6px;
       height: 6px;
-      background-color: color(gray-dark);
+      background-color: color(gray);
       opacity: 0.5;
       border-radius: 50%;
       display: block;
