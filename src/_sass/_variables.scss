@@ -1,43 +1,3 @@
-/// Font weight of headings.
-///
-/// @type {Number|Keyword}
-$heading-font-weight: 500 !default;
-
-/// Font family of headings.
-///
-/// @type {Keyword|Values}
-$heading-font-family: 'SGMT Post Grotesk' !default;
-
-/// Base font size set on the root html element.
-///
-/// @type {Value}
-$font-size: 15px !default;
-
-/// Base font weight set on the root html element.
-///
-/// @type {Value}
-$font-weight: 400 !default;
-
-/// Base line height determines the basic unit of vertical rhythm.
-///
-/// @type {Number}
-$font-line-height: 27px !default;
-
-/// Base font size set on the root html element.
-///
-/// @type {Color}
-$font-color: #435A6F !default;
-
-/// Default font family.
-///
-/// @type {Value|Values}
-$font-family-primary: "SGMT Post Grotesk", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
-
-/// Monospace font family.
-///
-/// @type {Value|Values}
-$font-family-monospace: "Droid Sans Mono", "Lucida Console", "Monaco", monospace !default;
-
 /// Collection of colors.
 ///
 /// @type {Map}
@@ -82,4 +42,47 @@ $color-values: (
   white: #ffffff
 ) !default;
 
-$heading-color: map-get($color-values, secondary);
+/// Base font size set on the root html element.
+///
+/// @type {Value}
+$font-size: 15px !default;
+
+/// Base font weight set on the root html element.
+///
+/// @type {Value}
+$font-weight: 400 !default;
+
+/// Base line height determines the basic unit of vertical rhythm.
+///
+/// @type {Number}
+$font-line-height: 27px !default;
+
+/// Base font size set on the root html element.
+///
+/// @type {Color}
+$font-color: #435A6F !default;
+
+/// Default font family.
+///
+/// @type {Value|Values}
+$font-family-primary: "SGMT Post Grotesk", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+
+/// Monospace font family.
+///
+/// @type {Value|Values}
+$font-family-monospace: "Droid Sans Mono", "Lucida Console", "Monaco", monospace !default;
+
+/// Font weight of headings.
+///
+/// @type {Number|Keyword}
+$heading-font-weight: 500 !default;
+
+/// Font family of headings.
+///
+/// @type {Keyword|Values}
+$heading-font-family: 'SGMT Post Grotesk' !default;
+
+/// Color of headings.
+///
+/// @type {Color}
+$heading-color: map-get($color-values, secondary) !default;
