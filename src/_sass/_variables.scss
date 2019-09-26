@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /// Font weight of headings.
 ///
 /// @type {Number|Keyword}
@@ -8,7 +7,7 @@ $heading-font-weight: 500 !default;
 ///
 /// @type {Keyword|Values}
 $heading-font-family: 'SGMT Post Grotesk' !default;
-=======
+
 /// Base font size set on the root html element.
 ///
 /// @type {Value}
@@ -82,4 +81,5 @@ $color-values: (
   black: #000000,
   white: #ffffff
 ) !default;
->>>>>>> develop
+
+$heading-color: map-get($color-values, secondary);
