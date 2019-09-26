@@ -5,16 +5,15 @@
 /// @prop {Color} primary-dark
 /// @prop {Color} secondary
 /// @prop {Color} secondary-dark
-/// @prop {Color} thirdary
-/// @prop {Color} thirdary-dark
-/// @prop {Color} code-primary
-/// @prop {Color} code-primary
-/// @prop {Color} code-secondary
-/// @prop {Color} code-thirdary
-/// @prop {Color} code-quaternary
-/// @prop {Color} code-senary
-/// @prop {Color} code-septenary
-/// @prop {Color} code-octonary
+/// @prop {Color} gray
+/// @prop {Color} gray-dark
+/// @prop {Color} code-gray
+/// @prop {Color} code-green
+/// @prop {Color} code-blue
+/// @prop {Color} code-violet
+/// @prop {Color} code-pink
+/// @prop {Color} code-red
+/// @prop {Color} code-orange
 /// @prop {Color} info
 /// @prop {Color} success
 /// @prop {Color} warning
@@ -32,7 +31,8 @@ $color-values: (
   code-green: #52bd95,
   code-blue: #2e98df,
   code-violet: #9166ca,
-  code-pink: #d52039,
+  code-pink: #ff678d,
+  code-red: #d52039,
   code-orange: #f89c56,
   info: #4286e2,
   success: #1dc989,
