@@ -1,0 +1,21 @@
+ol {
+  list-style-type: none;
+  counter-reset: list-items;
+  padding-left: 25px;
+
+  li {
+    counter-increment: list-items;
+    line-height: 30px;
+    position: relative;
+    
+    &::before {
+      content: counter(list-items) ". ";
+      display: block;
+      top: 0;
+      color: color(primary-dark);
+      font-weight: 500;
+      position: absolute;
+      left: -20px;
+    }
+  }
+}
