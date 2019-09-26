@@ -1,11 +1,10 @@
 ol {
   list-style-type: none;
   counter-reset: list-items;
-  padding-start: 25px;
+  padding-left: 25px;
 
   li {
     counter-increment: list-items;
-    font-size: 15px;
     line-height: 30px;
     position: relative;
     
