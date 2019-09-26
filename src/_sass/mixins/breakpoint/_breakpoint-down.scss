@@ -1,0 +1,15 @@
+/// Outputs facing down media query for breakpoint.
+///
+/// @param {String} $name
+///
+/// @example scss - example
+///   @include breakpoint-down(large)
+/// @example css - output
+///   @media (max-width: 60em) { }
+@mixin breakpoint-down($name) {
+  $width: breakpoint($name);
+
+  @media (max-width: #{$width - $breakpoint-offset}) {
+    @content;
+  }
+}
