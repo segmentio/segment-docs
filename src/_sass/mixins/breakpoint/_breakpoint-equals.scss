@@ -1,0 +1,39 @@
+/// Outputs range media query for breakpoint.
+///
+/// @param {String} $name
+///
+/// @example scss - example
+///   @include breakpoint-equals(large) { }
+/// @example css - output
+///   @media (min-width: 45em) and (max-width: 60em) { }
+@mixin breakpoint-equals($name) {
+  $names: list($breakpoint-sizes, "keys");
+  $width: breakpoint($name);
+
+  $i: index($breakpoint-sizes, $name $width);
+
+  @if $i != null and $i > 1 {
+    $n: $i + 1;
+
+    @if $i < length($names) {
+      $next: nth($names, $n);
+      $next-width: breakpoint($next);
+
+      @media (min-width: #{$width}) and (max-width: #{$next-width}) {
+        @content;
+      }
+    }
+
+    @else {
+      @include breakpoint-up($name) {
+        @content;
+      }
+    }
+  }
+
+  @else {
+    @include breakpoint-down($name) {
+      @content;
+    }
+  }
+}
