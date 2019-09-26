@@ -1,0 +1,23 @@
+ol {
+  list-style-type: none;
+  counter-reset: list-items;
+
+  li {
+    counter-increment: list-items;
+    font-size: 15px;
+    line-height: 2;
+    position: relative;
+    
+    &::before {
+      content: counter(list-items) ". ";
+      display: block;
+      top: .1em;
+      color: color(primary-dark);
+      font-weight: 500;
+      line-height: 1.71;
+      position: absolute;
+      left: 0;
+      transform: translateX(calc(-100% - 10px));
+    }
+  }
+}
