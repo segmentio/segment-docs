@@ -17,3 +17,11 @@ layout: page
     1. nested
 3. three
     1. nested
+
+* Item
+    * First Subitem
+    * Second Subitem
+* Item
+    - Subitem
+    - Subitem
+* Item
