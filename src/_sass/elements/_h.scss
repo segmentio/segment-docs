@@ -10,7 +10,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  color: $heading-color;
+  color: $secondary;
   font-weight: $heading-font-weight;
   font-family: $heading-font-family;
 }
@@ -62,31 +62,5 @@ h5, .h5 {
   @include breakpoint(medium up) {
     font-size: 18px;
     line-height: 24px;
-  }
-}
-
-@each $breakpoint, $heading in $heading-sizes {
-  @if ($breakpoint == $heading-size) {
-    @each $h, $size in $heading {
-      #{$h} {
-        font-size: $size;
-      }
-      .#{$h} {
-        font-size: $size;
-      }
-    }
-  }
-
-  @else {
-    @include breakpoint($breakpoint up) {
-      @each $h, $size in $heading {
-        #{$h} {
-          font-size: $size;
-        }
-        .#{$h} {
-          font-size: $size;
-        }
-      }
-    }
   }
 }
