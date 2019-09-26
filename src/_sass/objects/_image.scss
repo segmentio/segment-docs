@@ -1,15 +1,3 @@
-// Image
-//
-// Component for controlling images.
-//
-// .image--expand    - Image stretches to fill all width space of its container.
-// .image--top       - Aligns image verticaly to the top.
-// .image--middle    - Aligns image verticaly to the middle.
-// .image--bottom    - Aligns image verticaly to the bottom.
-//
-// Markup: objects/image/html/image.html
-//
-// Style guide: Objects.Image
 .image {
   display: inline-block;
   max-width: 100%;
@@ -17,21 +5,5 @@
 
   &--expand {
     width: 100%;
-  }
-
-  &--shadow {
-    box-shadow: 0 2px 4px 0 rgba(color(black), 0.5);
-  }
-
-  &--top {
-    vertical-align: top;
-  }
-
-  &--middle {
-    vertical-align: middle;
-  }
-
-  &--bottom {
-    vertical-align: bottom;
   }
 }
