@@ -1,6 +1,7 @@
 ol {
   list-style-type: none;
   counter-reset: list-items;
+  padding-inline-start: 25px;
 
   li {
     counter-increment: list-items;
@@ -11,13 +12,13 @@ ol {
     &::before {
       content: counter(list-items) ". ";
       display: block;
-      top: .1em;
+      top: .2em;
       color: color(primary-dark);
       font-weight: 500;
       line-height: 1.71;
       position: absolute;
       left: 0;
-      transform: translateX(calc(-100% - 10px));
+      transform: translateX(calc(-100% - 7px));
     }
   }
 }
