@@ -1,7 +1,7 @@
 ol {
   list-style-type: none;
   counter-reset: list-items;
-  padding-inline-start: 25px;
+  padding-left: 25px;
 
   li {
     counter-increment: list-items;
