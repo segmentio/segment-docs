@@ -45,24 +45,41 @@
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 
   <body>
-    <div id="docs">
-      {% include sidenav.html %}
-      <div id="consent-manager"></div>
-      <main>
-        {% include topnav.html %}
-        <div class="l-doc-container">
-          {{ content }}
-        </div>
-        <footer>
-          <div id="feedback">
+    <div class="docs">
+      <div class="docs__body">
+        <div class="stage">
+          <div class="docs__aside stage__aside">
+            {% include navbar/logo.html %}
+
+            {% include menu/menu.html %}
+          </div>
+
+          <main class="stage__body">
+            {% include navbar/search.html %}
+
+            <div class="stage__content">
+              {{ content }}
+            </div>
+          </main>
+
+          <div class="stage__sidebar">
+            {% include navbar/nav.html %}
+
             {% if page.feedback != false %}
-            {% include feedback-footer.html %}
+              <div id="feedback">
+                {% include feedback-footer.html %}
+              </div>
             {% endif %}
           </div>
-          {% include data-collection-footer.html %}
-        </footer>
-      </main>
+        </div>
+      </div>
+
+      <footer>
+        {% include data-collection-footer.html %}
+      </footer>
     </div>
+
+    <div id="consent-manager"></div>
 
     {% comment %}
       JS for site
