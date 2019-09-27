@@ -24,6 +24,9 @@
 
 // Objects
 // =================================================
+@import "objects/flex";
+@import "objects/gutter";
+@import "objects/waffle";
 @import "objects/image";
 
 // Elements
@@ -35,4 +38,11 @@
 
 // Components
 // =================================================
+@import "components/stage";
+@import "components/logo";
 @import "components/note";
+@import "components/button-link";
+
+// Pages
+// =================================================
+@import "pages/docs";
