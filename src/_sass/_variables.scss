@@ -83,7 +83,7 @@ $font-line-height: 27px !default;
 /// Base font size set on the root html element.
 ///
 /// @type {Color}
-$font-color: #435A6F !default;
+$font-color: map-get($color-values, secondary-dark) !default;
 
 /// Default font family.
 ///
