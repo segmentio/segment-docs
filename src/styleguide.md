@@ -25,3 +25,8 @@ layout: page
     - Subitem
     - Subitem
 * Item
+
+{% include components/alert.html type="info" content="This is my sample note." %}
+{% include components/alert.html type="success" content="This is my sample note." %}
+{% include components/alert.html type="warning" content="This is my sample note." %}
+{% include components/alert.html type="error" content="This is my sample note." %}
