@@ -1,0 +1,164 @@
+.flex {
+  $this: &;
+
+  display: flex;
+
+  &__column {
+    flex: 1;
+    max-width: 100%;
+
+    &--start {
+      align-self: flex-end;
+    }
+
+    &--center {
+      align-self: center;
+    }
+
+    &--end {
+      align-self: flex-end;
+    }
+
+    &--baseline {
+      align-self: baseline;
+    }
+
+    &--stretch {
+      align-self: stretch;
+    }
+
+    @for $i from 1 through $flex-columns {
+      &--#{$i} {
+        flex-basis: percentage($i / $flex-columns);
+        max-width: percentage($i / $flex-columns);
+      }
+    }
+
+    &--shrink {
+      flex: 0 1 auto;
+    }
+
+    @each $breakpoint, $width in $flex-sizes {
+      @include breakpoint($breakpoint up) {
+        @for $i from 1 through $flex-columns {
+          &--#{$i}\@#{$breakpoint} {
+            flex-basis: percentage($i / $flex-columns);
+            max-width: percentage($i / $flex-columns);
+          }
+        }
+      }
+    }
+
+    &--shrink {
+      @each $breakpoint, $width in $flex-sizes {
+        @include breakpoint($breakpoint up) {
+          &\@#{$breakpoint} {
+            flex: 0 1 auto;
+          }
+        }
+      }
+    }
+  }
+
+  &--inline {
+    display: inline-flex;
+  }
+
+  &--start {
+    justify-content: flex-start;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--end {
+    justify-content: flex-end;
+  }
+
+  &--justify {
+    justify-content: space-between;
+  }
+
+  &--space {
+    justify-content: space-around;
+  }
+
+  &--top {
+    align-items: flex-start;
+  }
+
+  &--middle {
+    align-items: center;
+  }
+
+  &--bottom {
+    align-items: flex-end;
+  }
+
+  &--stretch {
+    align-items: stretch;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+
+  &--stack {
+    flex-direction: column;
+
+    &#{$this}--reverse {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &--queue {
+    flex-direction: row;
+
+    &#{$this}--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &--reverse {
+    @each $breakpoint, $width in $flex-sizes {
+      @include breakpoint($breakpoint up) {
+        &\@#{$breakpoint} {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+
+  &--stack {
+    @each $breakpoint, $width in $flex-sizes {
+      @include breakpoint($breakpoint up) {
+        &\@#{$breakpoint} {
+          flex-direction: column;
+
+          &[class*="flex--reverse"] {
+            flex-direction: column-reverse;
+          }
+        }
+      }
+    }
+  }
+
+  &--queue {
+    @each $breakpoint, $width in $flex-sizes {
+      @include breakpoint($breakpoint up) {
+        &\@#{$breakpoint} {
+          flex-direction: row;
+
+          &[class*="flex--reverse"] {
+            flex-direction: row-reverse;
+          }
+        }
+      }
+    }
+  }
+}

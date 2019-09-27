@@ -60,6 +60,53 @@ $breakpoint-sizes: (
   xxlarge: 1440px
 ) !default;
 
+/// Collection of flex sizes by breakpoint.
+///
+/// @type {Map}
+$flex-sizes: (
+  xsmall: 420px,
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  xlarge: 1200px,
+  xxlarge: 1440px
+) !default;
+
+/// Number of columns per flex.
+///
+/// @type {Number}
+$flex-columns: 12 !default;
+
+/// Collection of gutter sizes.
+///
+/// @type {Map}
+$gutter-sizes: (
+  none: 0,
+  small: 0.3rem,
+  medium: 0.5rem,
+  large: 1rem,
+) !default;
+
+/// Default gutter size.
+///
+/// @type {Keyword}
+$gutter-size: medium !default;
+
+/// Collection of waffle sizes.
+///
+/// @type {Map}
+$waffle-sizes: (
+  none: 0,
+  small: 0.3rem,
+  medium: 0.5rem,
+  large: 1rem,
+) !default;
+
+/// Default gutter size.
+///
+/// @type {Keyword}
+$waffle-size: medium !default;
+
 /// Offset value between breakpoints ranges.
 ///
 /// @type {Value}
