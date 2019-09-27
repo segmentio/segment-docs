@@ -5,6 +5,8 @@ hidden: true
 layout: page
 ---
 
+{% include components/button-link.html text="Find out more" href="https://segment.com" %}
+
 # Heading 1
 ## Heading 2
 ### Heading 3
