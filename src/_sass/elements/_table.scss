@@ -1,15 +1,5 @@
 table {
   text-align: left;
-  
-  tr {
-    display: grid;
-    grid-template-columns: 4fr 2fr 8fr;
-    gap: 45px;
-
-    @include breakpoint(medium up) {
-      gap: 10px;
-    }
-  }
 
   td {
     color: color(secondary-dark);

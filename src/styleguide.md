@@ -5,12 +5,11 @@ hidden: true
 layout: page
 ---
 
-<<<<<<< HEAD
 | Field                    | Type   | Description                                                                                                                    |
 |--------------------------|--------|--------------------------------------------------------------------------------------------------------------------------------|
 | traits optional          | Object | Free-form dictionary of traits of the user, like email or name. See the Traits field docs for a list of reserved trait names   |
 | userId optional/required | String | Unique identifier for the user in your database A userId or an anonymousId is required,See the Identities docs for more detail |
-=======
+
 # Heading 1
 ## Heading 2
 ### Heading 3
@@ -48,4 +47,3 @@ layout: page
 {% include components/alert.html type="success" content="This is my sample note." %}
 {% include components/alert.html type="warning" content="This is my sample note." %}
 {% include components/alert.html type="error" content="This is my sample note." %}
->>>>>>> develop
