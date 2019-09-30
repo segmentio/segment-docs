@@ -1,0 +1,43 @@
+.note {
+  padding: 24px 24px 24px 16px;
+  background-color: color(gray-light);
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 22px;
+
+  & > * + * {
+    margin-top: 5px;
+  }
+
+  &__header {
+    display: flex;
+
+    & > * + * {
+      margin-left: 10px;
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    & > * + * {
+      margin-left: 20px;
+    }
+  }
+
+  &__text {
+    & > * {
+      display: inline;
+    }
+  }
+
+  &__heading {
+    color: color(secondary);
+    font-weight: 700;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+}

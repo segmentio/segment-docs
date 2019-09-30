@@ -1,0 +1,17 @@
+.logo {
+  line-height: 1.5;
+  text-decoration: none;
+
+  &__suffix {
+    font-weight: 700;
+    font-size: 14px;
+
+    @include breakpoint(medium up) {
+      font-size: 16px;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}

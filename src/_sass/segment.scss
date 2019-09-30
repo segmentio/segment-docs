@@ -24,8 +24,30 @@
 
 // Objects
 // =================================================
+@import "objects/flex";
+@import "objects/gutter";
+@import "objects/waffle";
 @import "objects/image";
 
 // Elements
 // =================================================
+<<<<<<< HEAD
 @import "elements/table";
+=======
+@import "elements/a";
+@import "elements/h";
+@import "elements/ul";
+@import "elements/ol";
+
+// Components
+// =================================================
+@import "components/stage";
+@import "components/logo";
+@import "components/note";
+@import "components/button-link";
+@import "components/alert";
+
+// Pages
+// =================================================
+@import "pages/docs";
+>>>>>>> develop
