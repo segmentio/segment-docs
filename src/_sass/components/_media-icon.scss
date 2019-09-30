@@ -14,7 +14,7 @@
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: repeat(3, auto);
-    grid-template-areas: "\31  \32 " "\31  \33 " "\34  \34 ";
+    grid-template-areas: "icon heading" "icon content" "content-mobile content-mobile";
     column-gap: 15px;
 
     @include breakpoint(medium up) {
@@ -48,7 +48,7 @@
     border-radius: 8px;
     background-color: color(gray-light);
     transition: 0.3s background;
-    grid-area: \31;
+    grid-area: icon;
 
     @include breakpoint(medium up) {
       width: 64px;
@@ -69,19 +69,19 @@
     font-size: 14px;
     color: color(secondary-dark);
     padding-top: 15px;
-    grid-area: \34;
+    grid-area: content-mobile;
     line-height: 1.57;
 
     @include breakpoint(medium up) {
       padding-top: 0;
-      grid-area: \33;
+      grid-area: content;
     }
   }
 
   &__heading {
     display: flex;
     align-items: center;
-    grid-area: \32;
+    grid-area: heading;
   }
 
   &__anchor {
@@ -123,7 +123,7 @@
         display: grid;
         grid-template-columns: auto 1fr;
         grid-template-rows: repeat(3, auto);
-        grid-template-areas: "\31  \32 " "\31  \33 " "\34  \34 ";
+        grid-template-areas: "icon heading" "icon content" "content-mobile content-mobile";
       }
     }
 

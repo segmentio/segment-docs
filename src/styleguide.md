@@ -27,7 +27,7 @@ layout: page
 * Item
 
 {% include components/media-icon.html variant="small" href="#" icon="media/academy" title="Title" content="This is my sample note." %}
-{% include components/media-icon.html variant="large" href="#" icon="media/academy" title="Title" content="This is my sample note." excerpt="Read more" excerpt-link="#" %}
+{% include components/media-icon.html variant="large" href="#" icon="media/academy" title="Title" content="This is my sample note." excerpt="Read more" %}
 {% include components/button-link.html text="Find out more" href="https://segment.com" %}
 
 {% capture note %}
