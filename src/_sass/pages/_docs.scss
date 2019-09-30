@@ -2,6 +2,7 @@
   &__aside {
     position: relative;
     z-index: 0;
+    padding-top: 15px;
 
     &::before {
       content: "";
@@ -16,10 +17,10 @@
   }
 
   &__body {
-    width: 100%;
-    max-width: 1180px;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 15px;
+  }
+
+  &__sidebar {
+    padding-top: 15px;
   }
 }

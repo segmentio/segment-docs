@@ -1,5 +1,10 @@
 .stage {
   display: flex;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 
   &__aside {
     flex: 0 0 240px;

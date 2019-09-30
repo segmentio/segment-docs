@@ -46,31 +46,29 @@
 
   <body>
     <div class="docs">
-      <div class="docs__body">
-        <div class="stage">
-          <div class="docs__aside stage__aside">
-            {% include navbar/logo.html %}
+      <div class="stage">
+        <div class="docs__aside stage__aside">
+          {% include navbar/logo.html %}
 
-            {% include menu/menu.html %}
+          {% include menu/menu.html %}
+        </div>
+
+        <main class="docs__body stage__body">
+          {% include navbar/search.html %}
+
+          <div class="stage__content">
+            {{ content }}
           </div>
+        </main>
 
-          <main class="stage__body">
-            {% include navbar/search.html %}
+        <div class="docs__sidebar stage__sidebar">
+          {% include navbar/nav.html %}
 
-            <div class="stage__content">
-              {{ content }}
+          {% if page.feedback != false %}
+            <div id="feedback">
+              {% include feedback-footer.html %}
             </div>
-          </main>
-
-          <div class="stage__sidebar">
-            {% include navbar/nav.html %}
-
-            {% if page.feedback != false %}
-              <div id="feedback">
-                {% include feedback-footer.html %}
-              </div>
-            {% endif %}
-          </div>
+          {% endif %}
         </div>
       </div>
 
