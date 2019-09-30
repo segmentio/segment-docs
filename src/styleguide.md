@@ -26,4 +26,5 @@ layout: page
     - Subitem
 * Item
 
-{% include components/media-icon.html href="#" icon="media-icons/owl" title="Title" content="This is my sample note." %}
+{% include components/media-icon.html variant="small" href="#" icon="media/owl" title="Title" content="This is my sample note." %}
+{% include components/media-icon.html variant="large" href="#" icon="media/owl" title="Title" content="This is my sample note." excerpt="Read more" excerpt-link="#" %}

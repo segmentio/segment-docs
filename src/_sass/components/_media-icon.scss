@@ -1,0 +1,100 @@
+.media-icon {
+  $this: &;
+
+  border: 1px solid color(border-gray);
+  background-color: color(white);
+  transition: 0.3s box-shadow;
+  border-radius: 8px;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 15px;
+    width: 100%;
+    color: color(secondary-dark);
+
+    @include breakpoint(medium up) {
+      padding: 24px;
+      padding-bottom: 32px;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(18, 66, 74, 0.08);
+
+    #{$this}__icon {
+      background-color: rgba(color(primary-light), 0.16);
+    }
+
+    svg > * {
+      fill: color(primary);
+      transition: 0.3s fill;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: color(gray-light);
+    transition: 0.3s background;
+
+    @include breakpoint(medium up) {
+      width: 64px;
+      height: 64px;
+    }
+
+    svg {
+      width: 32px;
+      max-height: 32px;
+    }
+  }
+
+  &__heading {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &__content {
+    font-size: 14px;
+    color: color(secondary-dark);
+  }
+
+  &__anchor {
+    svg {
+      display: none;
+      height: 16px;
+
+      @include breakpoint(medium up) {
+        display: block;
+      }
+    }
+
+    @include breakpoint(medium up) {
+      position: absolute;
+      top: 50px;
+      right: 25px;
+    }
+  }
+
+  &__excerpt {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.43;
+    color: color(primary);
+    text-decoration: underline;
+
+    @include breakpoint(medium up) {
+      display: none;
+    }
+  }
+}
