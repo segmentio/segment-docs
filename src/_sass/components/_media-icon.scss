@@ -12,12 +12,15 @@
     width: 100%;
     color: color(secondary-dark);
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: "icon heading" "icon content" "content-mobile content-mobile";
     column-gap: 15px;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "icon heading" "content content";
 
-    @include breakpoint(medium up) {
+    @include breakpoint(large up) {
+      grid-template-columns: auto 1fr auto;
+      grid-template-rows: repeat(2, auto);
+      grid-template-areas: "icon heading anchor" "icon content anchor";
       padding: 24px;
       padding-bottom: 32px;
     }
@@ -50,7 +53,7 @@
     transition: 0.3s background;
     grid-area: icon;
 
-    @include breakpoint(medium up) {
+    @include breakpoint(large up) {
       width: 64px;
       height: 64px;
     }
@@ -68,12 +71,12 @@
   &__content {
     font-size: 14px;
     color: color(secondary-dark);
-    padding-top: 15px;
-    grid-area: content-mobile;
+    margin-top: 15px;
+    grid-area: content;
     line-height: 1.57;
 
-    @include breakpoint(medium up) {
-      padding-top: 0;
+    @include breakpoint(large up) {
+      margin-top: 0;
       grid-area: content;
     }
   }
@@ -85,19 +88,16 @@
   }
 
   &__anchor {
-    svg {
-      display: none;
-      height: 16px;
+    display: none;
+    align-self: center;
+    grid-area: anchor;
 
-      @include breakpoint(medium up) {
-        display: block;
-      }
+    @include breakpoint(large up) {
+      display: block;
     }
 
-    @include breakpoint(medium up) {
-      position: absolute;
-      top: 50px;
-      right: 25px;
+    svg {
+      height: 16px;
     }
   }
 
@@ -108,7 +108,7 @@
     color: color(primary);
     text-decoration: underline;
 
-    @include breakpoint(medium up) {
+    @include breakpoint(large up) {
       display: none;
     }
   }
@@ -119,9 +119,9 @@
       flex-direction: column;
       align-items: center;
 
-      @include breakpoint(medium up) {
+      @include breakpoint(large up) {
         display: grid;
-        grid-template-columns: auto 1fr;
+        grid-template-columns: auto 1fr auto;
         grid-template-rows: repeat(3, auto);
         grid-template-areas: "icon heading" "icon content" "content-mobile content-mobile";
       }
@@ -130,11 +130,11 @@
     #{$this}__content {
       text-align: center;
       line-height: 1.33;
-      padding-top: 10px;
+      margin-top: 10px;
       
-      @include breakpoint(medium up) {
+      @include breakpoint(large up) {
         text-align: left;
-        padding-top: 0;
+        margin-top: 0;
       }
     }
 
@@ -142,7 +142,7 @@
       line-height: 1.33;
       padding-top: 15px;
       
-      @include breakpoint(medium up) {
+      @include breakpoint(large up) {
         text-align: left;
         padding-top: 0;
       }
