@@ -1,0 +1,37 @@
+.waffle {
+  $this: &;
+
+  $size: map-get($waffle-sizes, $waffle-size);
+
+  margin: -#{$size / 2};
+
+  & > * {
+    padding: $size / 2;
+  }
+
+  @each $name, $size in $waffle-sizes {
+    @if $name != $waffle-size {
+      &--#{$name} {
+        margin: -#{$size / 2};
+
+        & > * {
+          padding: $size / 2;
+        }
+      }
+    }
+  }
+
+  @each $breakpoint, $width in $breakpoint-sizes {
+    @include breakpoint($breakpoint up) {
+      @each $name, $size in $waffle-sizes {
+        &--#{$name}\@#{$breakpoint} {
+          margin: -#{$size / 2};
+
+          & > * {
+            padding: $size / 2;
+          }
+        }
+      }
+    }
+  }
+}

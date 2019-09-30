@@ -1,0 +1,22 @@
+.stage {
+  display: flex;
+
+  &__aside {
+    flex: 0 0 240px;
+    max-width: 240px;
+    padding-right: 26px;
+  }
+
+  &__body {
+    flex: 1;
+    max-width: 100%;
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+
+  &__sidebar {
+    flex: 0 0 240px;
+    max-width: 240px;
+    padding-left: 26px;
+  }
+}
