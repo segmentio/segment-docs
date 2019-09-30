@@ -25,3 +25,5 @@ layout: page
     - Subitem
     - Subitem
 * Item
+
+{% include components/list-steps.html number="1" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
