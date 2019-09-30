@@ -32,6 +32,11 @@
     font-size: 15px;
     line-height: 1.73;
     color: color(secondary-dark);
-    padding-top: 10px;
+    margin-top: 10px;
+
+    &--align {
+      margin-left: 40px;      
+      margin-top: 0;
+    }
   }
 }
