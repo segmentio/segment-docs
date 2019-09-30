@@ -37,3 +37,8 @@ layout: page
   Server-side data management is when tag sends data into your web server, then your web server passes that data to the destination system/server.
 {% endcapture %}
 {% include components/note.html title="Server-side tracking" content=server_side_tracking buttonTitle="Find out more" buttonHref="https://segment.com" %}
+
+{% include components/alert.html type="info" content="This is my sample note." %}
+{% include components/alert.html type="success" content="This is my sample note." %}
+{% include components/alert.html type="warning" content="This is my sample note." %}
+{% include components/alert.html type="error" content="This is my sample note." %}
