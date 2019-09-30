@@ -26,10 +26,8 @@ layout: page
     - Subitem
 * Item
 
-<<<<<<< HEAD
-{% include components/media-icon.html variant="small" href="#" icon="media/owl" title="Title" content="This is my sample note." %}
-{% include components/media-icon.html variant="large" href="#" icon="media/owl" title="Title" content="This is my sample note." excerpt="Read more" excerpt-link="#" %}
-=======
+{% include components/media-icon.html variant="small" href="#" icon="media/academy" title="Title" content="This is my sample note." %}
+{% include components/media-icon.html variant="large" href="#" icon="media/academy" title="Title" content="This is my sample note." excerpt="Read more" excerpt-link="#" %}
 {% include components/button-link.html text="Find out more" href="https://segment.com" %}
 
 {% capture note %}
@@ -41,4 +39,3 @@ layout: page
   Server-side data management is when tag sends data into your web server, then your web server passes that data to the destination system/server.
 {% endcapture %}
 {% include components/note.html title="Server-side tracking" content=server_side_tracking buttonTitle="Find out more" buttonHref="https://segment.com" %}
->>>>>>> develop

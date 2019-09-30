@@ -8,16 +8,23 @@
 
   &__inner {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px 15px;
+    padding: 15px;
     width: 100%;
     color: color(secondary-dark);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "\31  \32 " "\31  \33 " "\34  \34 ";
+    column-gap: 15px;
 
     @include breakpoint(medium up) {
       padding: 24px;
       padding-bottom: 32px;
     }
+  }
+
+  svg > * {
+    transition: 0.3s fill;
   }
 
   &:hover {
@@ -29,7 +36,6 @@
 
     svg > * {
       fill: color(primary);
-      transition: 0.3s fill;
     }
   }
 
@@ -42,6 +48,7 @@
     border-radius: 8px;
     background-color: color(gray-light);
     transition: 0.3s background;
+    grid-area: \31;
 
     @include breakpoint(medium up) {
       width: 64px;
@@ -54,12 +61,6 @@
     }
   }
 
-  &__heading {
-    padding: 0 15px;
-    display: flex;
-    align-items: center;
-  }
-
   a {
     text-decoration: none;
   }
@@ -67,6 +68,20 @@
   &__content {
     font-size: 14px;
     color: color(secondary-dark);
+    padding-top: 15px;
+    grid-area: \34;
+    line-height: 1.57;
+
+    @include breakpoint(medium up) {
+      padding-top: 0;
+      grid-area: \33;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    grid-area: \32;
   }
 
   &__anchor {
@@ -95,6 +110,42 @@
 
     @include breakpoint(medium up) {
       display: none;
+    }
+  }
+
+  &--small {
+    #{$this}__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include breakpoint(medium up) {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: "\31  \32 " "\31  \33 " "\34  \34 ";
+      }
+    }
+
+    #{$this}__content {
+      text-align: center;
+      line-height: 1.33;
+      padding-top: 10px;
+      
+      @include breakpoint(medium up) {
+        text-align: left;
+        padding-top: 0;
+      }
+    }
+
+    #{$this}__heading {
+      line-height: 1.33;
+      padding-top: 15px;
+      
+      @include breakpoint(medium up) {
+        text-align: left;
+        padding-top: 0;
+      }
     }
   }
 }
