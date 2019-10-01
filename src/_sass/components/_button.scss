@@ -1,0 +1,12 @@
+.button {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+
+  &--small {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.14;
+  }
+}

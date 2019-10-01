@@ -47,3 +47,6 @@ layout: page
 {% include components/alert.html type="success" content="This is my sample note." %}
 {% include components/alert.html type="warning" content="This is my sample note." %}
 {% include components/alert.html type="error" content="This is my sample note." %}
+
+{% include components/button.html size="standard" text="Sign up" href="https://segment.com" %}
+{% include components/button.html size="small" text="Yes" href="https://segment.com" %}
