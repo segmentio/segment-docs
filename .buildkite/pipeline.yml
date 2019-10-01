@@ -4,14 +4,8 @@ steps:
     command:
       - npm config set "//registry.npmjs.org/:_authToken" $${NPM_TOKEN}
       - yarn install --frozen-lockfile
-      - mkdir -p _site
-      - bundle install
+      - make intialize-work-dir
       - make build
-      - make zip-package
-      - test-command
-    branches: !master
-    artifact_paths:
-      - ".archive/*"
     env:
       SEGMENT_CONTEXTS: "snyk,npm"
     plugins:
@@ -26,47 +20,3 @@ steps:
             - AWS_SESSION_TOKEN
             - BUILDKITE_BRANCH
   
-  - wait: ~ 
-
-  - label: ":hammer: Deploy - Stage"
-    command:
-      - buildkite-agent artifact download .archive/* .
-      - make unzip-package
-      - make sync-to-s3
-    branches: staging
-    env:
-      SEGMENT_CONTEXTS: "aws-credentials-stage"
-
-
-  - label: ":hammer: Build Prod Dependencies"
-    command:
-      - npm config set "//registry.npmjs.org/:_authToken" $${NPM_TOKEN}
-      - yarn install --frozen-lockfile
-      - make intialize-work-dir
-      - make build
-      - make zip-package
-    branches: master
-    env:
-      SEGMENT_CONTEXTS: "snyk,npm,aws-credentials-prod"
-    plugins:
-      - docker#v3.3.0:
-          image: jekyll/jekyll
-          environment:
-            - NPM_TOKEN
-            - AWS_REGION
-            - AWS_DEFAULT_REGION
-            - AWS_ACCESS_KEY_ID
-            - AWS_SECRET_ACCESS_KEY
-            - AWS_SESSION_TOKEN
-  
-  - wait: ~ 
-
-  - label: ":hammer: Deploy - Prod"
-    command:
-      - buildkite-agent artifact download .archive/* .
-      - make unzip-package
-      - make sync-to-s3
-    branches: master
-    env:
-      SEGMENT_CONTEXTS: "aws-credentials-prod"
-
