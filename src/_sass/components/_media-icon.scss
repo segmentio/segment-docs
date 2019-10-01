@@ -52,11 +52,11 @@
     background-color: color(gray-light);
     transition: 0.3s background;
     grid-area: icon;
-    align-self: baseline;
 
     @include breakpoint(large up) {
       width: 64px;
       height: 64px;
+      align-self: baseline;
     }
 
     svg {
