@@ -2,12 +2,9 @@
 steps:
   - label: ":hammer: Build Dependencies"
     command:
-      - pwd
       - npm config set "//registry.npmjs.org/:_authToken" $${NPM_TOKEN}
       - yarn install --frozen-lockfile
-      - bundle install
       - chown -R jekyll /workdir
-      # - make intialize-work-dir
       - make build
     env:
       SEGMENT_CONTEXTS: "snyk,npm"
