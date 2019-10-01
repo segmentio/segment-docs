@@ -55,3 +55,7 @@ layout: page
 {% include components/alert.html type="success" content="This is my sample note." %}
 {% include components/alert.html type="warning" content="This is my sample note." %}
 {% include components/alert.html type="error" content="This is my sample note." %}
+
+{% include components/list-steps.html number="1" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="2" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="3" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
