@@ -66,3 +66,18 @@ layout: page
 {% include components/list-steps.html number="1" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
 {% include components/list-steps.html number="2" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
 {% include components/list-steps.html number="3" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+
+Analytics.js, our Javascript `library`, is the most powerful way to track customer data from your `website`. If you’re just starting out, we recommend it over server-side libraries as the simplest installation for any website.
+
+```js
+analytics.identify('025pikachu025', {
+  email: 'peekAtMe@email.poke',
+  name: 'Pikachu'
+  }, {
+  integrations: {
+    'All': false,
+    'Intercom': true,
+    'Google Analytics': true,
+  }
+});
+```
