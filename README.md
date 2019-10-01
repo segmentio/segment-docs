@@ -6,11 +6,9 @@ You can make a limited range of edits from the Github site, but this system work
 
 # Quickstart (local development with docker)
 You will need to have Docker installed https://docs.docker.com/install/
-<<<<<<< HEAD
-* If using Linux, run `make docker-dev`
-=======
+
 * If using Linux, run `docker-compose up`
->>>>>>> 5fd61f84... Update README.md
+
 * Visit http://localhost:4000/docsv2/
 
 # Local development with `ruby` and `node`, without platform-api
