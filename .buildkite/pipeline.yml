@@ -4,7 +4,8 @@ steps:
     command:
       - npm config set "//registry.npmjs.org/:_authToken" $${NPM_TOKEN}
       - yarn install --frozen-lockfile
-      - make intialize-work-dir
+      - bundle install
+      # - make intialize-work-dir
       - make build
     env:
       SEGMENT_CONTEXTS: "snyk,npm"
