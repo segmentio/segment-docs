@@ -64,6 +64,14 @@
         <div class="docs__sidebar stage__sidebar">
           {% include navbar/nav.html %}
 
+          {%- unless page.hide_toc -%}
+            <div>
+              <p>On this page</p>
+
+              {% include toc.html html=content h_max=2 %}
+            </div>
+          {%- endunless -%}
+
           {% if page.feedback != false %}
             <div id="feedback">
               {% include feedback-footer.html %}

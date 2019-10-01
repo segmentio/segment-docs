@@ -16,6 +16,12 @@ layout: page
 #### Heading 4
 ##### Heading 5
 
+# [Heading 1](#h1) {#h1}
+## [Heading 2](#h2) {#h2}
+### [Heading 3](#h3) {#h3}
+#### [Heading 4](#h4) {#h4}
+##### [Heading 5](#h5) {#h5}
+
 1. one
     1. nested
 2. two
@@ -31,6 +37,8 @@ layout: page
     - Subitem
 * Item
 
+{% include components/media-icon.html variant="small" href="#" icon="media/academy" title="Title" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus. Suscipit nesciunt labore nulla numquam excepturi?" excerpt="Read more" %}
+{% include components/media-icon.html variant="large" href="#" icon="media/academy" title="Title" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus. Suscipit nesciunt labore nulla numquam excepturi?" excerpt="Read more" %}
 {% include components/button-link.html text="Find out more" href="https://segment.com" %}
 
 {% capture note %}
@@ -54,3 +62,7 @@ layout: page
 {% include components/button-fill.html size="small" text="Sign up" href="https://segment.com" %}
 {% include components/button-fill.html size="small" variant="white" text="Yes" href="https://segment.com" %}
 {% include components/button-hollow.html size="small" text="Log in" href="https://segment.com" %}
+
+{% include components/list-steps.html number="1" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="2" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="3" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}

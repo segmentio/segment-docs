@@ -24,6 +24,7 @@
 
 // Objects
 // =================================================
+@import "objects/list";
 @import "objects/flex";
 @import "objects/gutter";
 @import "objects/waffle";
@@ -31,14 +32,12 @@
 
 // Elements
 // =================================================
-@import "elements/table";
 @import "elements/a";
 @import "elements/h";
-@import "elements/ul";
-@import "elements/ol";
 
 // Components
 // =================================================
+@import "components/media-icon";
 @import "components/stage";
 @import "components/logo";
 @import "components/note";
@@ -47,7 +46,12 @@
 @import "components/button";
 @import "components/button-fill";
 @import "components/button-hollow";
+@import "components/markdown";
+@import "components/list-steps";
+@import "components/input";
+@import "components/field";
 
 // Pages
 // =================================================
 @import "pages/docs";
+@import "pages/page";

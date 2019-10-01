@@ -1,0 +1,217 @@
+.markdown {
+  & > h1, h2, h3, h4, h5, h6 {
+    position: relative;
+
+    a[href^="#"] {
+      color: $heading-color;
+
+      &::before {
+        content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxkZWZzPgogICAgPHBhdGggZD0iTTMuNzUgOWMuMjEgMCAuNC0uMDguNTMtLjIybDQuNS00LjVhLjc1Ljc1IDAgMCAwLTEuMDctMS4wNmwtNC41IDQuNUEuNzUuNzUgMCAwIDAgMy43NSA5aC4wMXptMi44OS0xLjUxTDQuOCA5LjNsLS43NS43NWgtLjAxYy0uMjcuMjctLjY0LjQ1LTEuMDUuNDVBMS41IDEuNSAwIDAgMSAxLjUgOWMwLS40MS4xOC0uNzguNDUtMS4wNXYtLjAxbC43NC0uNzUgMS44My0xLjgzYy0uMjQtLjA4LS41LS4xMi0uNzctLjEyLS44MyAwLTEuNTcuMzQtMi4xLjlsLS4wMi0uMDItLjc1Ljc1LjAxLjAxQy4zNCA3LjQzIDAgOC4xOCAwIDlhMyAzIDAgMCAwIDMgM2MuODMgMCAxLjU3LS4zNSAyLjEtLjlsLjAyLjAyLjc1LS43NS0uMDEtLjAxYTIuOTUgMi45NSAwIDAgMCAuNzgtMi44N3pNMTIgM2EzIDMgMCAwIDAtMy0zYy0uODIgMC0xLjU3LjM0LTIuMS45TDYuODcuODdsLS43NS43NS4wMS4wMWEyLjg2IDIuODYgMCAwIDAtLjc4IDIuODdMNy4yIDIuN2wuNzUtLjc1aC4wMWMuMjctLjI3LjY0LS40NSAxLjA1LS40NS44MiAwIDEuNS42OCAxLjUgMS41IDAgLjQxLS4xOC43OC0uNDUgMS4wNXYuMDFsLS43NC43NS0xLjgzIDEuODRhMi45NSAyLjk1IDAgMCAwIDIuODctLjc4bC4wMi4wMS43NS0uNzUtLjAxLS4wMWMuNTQtLjU0Ljg5LTEuMjguODktMi4xMXoiIGlkPSJhIi8+CiAgPC9kZWZzPgogIDx1c2UgZmlsbD0iI0E1QjBCQSIgZmlsbC1ydWxlPSJub256ZXJvIiB4bGluazpocmVmPSIjYSIvPgo8L3N2Zz4=");
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        opacity: 0;
+        transform: translate(-18px, -50%);
+        pointer-events: none;
+        transition: opacity .3s ease;
+      }
+
+      &:hover {
+        color: $heading-color;
+        text-decoration: none;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  & > h1 {
+    @include breakpoint(medium up) {
+      margin-top: 32px;
+    }
+  }
+
+  & > h2 {
+    @include breakpoint(medium up) {
+      margin-top: 48px;
+    }
+  }
+
+  & > h3 {
+    @include breakpoint(medium up) {
+      margin-top: 48px;
+    }
+  }
+
+  & > h4 {
+    @include breakpoint(medium up) {
+      margin-top: 24px;
+    }
+  }
+
+  & > h5 {
+    @include breakpoint(medium up) {
+      margin-top: 24px;
+    }
+  }
+
+  & > h6 {
+    @include breakpoint(medium up) {
+      margin-top: 16px;
+    }
+  }
+
+  & > p {
+    @include breakpoint(medium up) {
+      margin-top: 16px;
+    }
+  }
+
+  & > ul, ol {
+    @include breakpoint(medium up) {
+      margin-top: 8px;
+    }
+  }
+
+  & > pre {
+    @include breakpoint(medium up) {
+      margin-top: 24px;
+    }
+    margin-bottom: 24px;
+  }
+
+  & > hr {
+    @include breakpoint(medium up) {
+      margin-top: 48px;
+    }
+  }
+
+  & > table {
+    @include breakpoint(medium up) {
+      margin-top: 24px;
+    }
+  }
+
+  & > img {
+    @include breakpoint(medium up) {
+      margin-top: 24px;
+    }
+  }
+
+  & > div {
+    @include breakpoint(medium up) {
+      margin-top: 16px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 25px;
+
+    li {
+      position: relative;
+      font-size: 15px;
+      color: color(secondary-dark);
+      line-height: 2;
+
+      &::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background-color: color(gray);
+        opacity: 0.5;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        top: .75em;
+        left: 0;
+        transform: translateX(calc(-100% - 10px));
+      }
+    }
+  }
+
+  ol {
+    list-style-type: none;
+    counter-reset: list-items;
+    padding-left: 25px;
+
+    li {
+      counter-increment: list-items;
+      line-height: 30px;
+      position: relative;
+
+      &::before {
+        content: counter(list-items) ". ";
+        display: block;
+        top: 0;
+        color: color(primary-dark);
+        font-weight: 500;
+        position: absolute;
+        left: -20px;
+      }
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    text-align: left;
+
+    td {
+      color: color(secondary-dark);
+      vertical-align: top;
+    }
+
+    thead {
+      font-size: 14px;
+      font-weight: 500;
+      background-color: color(gray-light);
+      border-radius: 4px;
+      font-weight: 500;
+      line-height: 1.71;
+      padding: 12px;
+    }
+
+    tbody {
+      font-size: 15px;
+      line-height: 1.73;
+      padding: 12px;
+    }
+
+    th, td {
+      padding: 5px 25px;
+
+      &:first-of-type {
+        padding-left: 15px;
+      }
+
+      &:last-of-type {
+        padding-right: 15px;
+      }
+
+      @include breakpoint(medium up) {
+        padding: 10px 35px;
+
+        &:first-of-type {
+          padding-left: 5px;
+        }
+
+        &:last-of-type {
+          padding-right: 5px;
+        }
+      }
+    }
+
+    th {
+      padding-top: 13px;
+      padding-bottom: 13px;
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid rgba(color(secondary), 0.1);
+      }
+    }
+  }
+}

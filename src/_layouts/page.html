@@ -1,25 +1,23 @@
 ---
 layout: default
 ---
-  <article id="doc-content">
-    {% include breadcrumb.html %}
 
+<article class="page">
+  {% include breadcrumb.html %}
 
+  <div class="page__body">
     {%- if page.title -%}
-      <h1 id="{{page.title | downcase}}" class="page-heading">{{ page.title }} {% unless page.landing %}{{ page.integration_type | capitalize }}{% endunless %}</h1>
+      <h1 id="{{ page.title | downcase }}" class="page__heading">
+        {{ page.title }} {% unless page.landing %}{{ page.integration_type | capitalize }}{% endunless %}
+      </h1>
     {%- endif -%}
 
     {%- if page.beta -%}
-    {% include content/beta.md %}
+      {% include content/beta.md %}
     {%- endif -%}
 
-    {{ content }}
-  </article>
-  {%- unless page.hide_toc -%}
-    <div id="doc-toc">
-      <div class="l-doc-toc-wrapper">
-        <p>On this page</p>
-        {% include toc.html html=content h_max=2 %}
-      </div>
+    <div class="markdown">
+      {{ content }}
     </div>
-  {%- endunless -%}
+  </div>
+</article>
