@@ -24,6 +24,7 @@
 
 // Objects
 // =================================================
+@import "objects/list";
 @import "objects/flex";
 @import "objects/gutter";
 @import "objects/waffle";
@@ -31,11 +32,8 @@
 
 // Elements
 // =================================================
-@import "elements/table";
 @import "elements/a";
 @import "elements/h";
-@import "elements/ul";
-@import "elements/ol";
 
 // Components
 // =================================================
