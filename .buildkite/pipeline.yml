@@ -4,8 +4,7 @@ steps:
     command:
       - npm config set "//registry.npmjs.org/:_authToken" $${NPM_TOKEN}
       - yarn install --frozen-lockfile
-      - bundle install
-      # - make intialize-work-dir
+      - chown -R jekyll /workdir
       - make build
     env:
       SEGMENT_CONTEXTS: "snyk,npm"
