@@ -52,6 +52,7 @@
     background-color: color(gray-light);
     transition: 0.3s background;
     grid-area: icon;
+    align-self: baseline;
 
     @include breakpoint(large up) {
       width: 64px;
@@ -129,7 +130,7 @@
 
     #{$this}__content {
       text-align: center;
-      line-height: 1.33;
+      line-height: 1.57;
       margin-top: 10px;
       
       @include breakpoint(large up) {
