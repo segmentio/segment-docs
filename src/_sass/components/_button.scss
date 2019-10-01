@@ -3,14 +3,22 @@
   font-weight: 500;
   line-height: 1.5;
   text-align: center;
-  padding: 12px 23px;
+  padding: 12px 15px;
   display: inline-block;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   &--small {
     font-size: 14px;
     font-weight: 500;
     line-height: 1.14;
     padding: 9px 8px;
+  }
+
+  &--large {
+    padding: 12px 23px;
   }
 }
