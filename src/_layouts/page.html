@@ -2,20 +2,22 @@
 layout: default
 ---
 
-<article>
+<article class="page">
   {% include breadcrumb.html %}
 
-  {%- if page.title -%}
-    <h1 id="{{ page.title | downcase }}">
-      {{ page.title }} {% unless page.landing %}{{ page.integration_type | capitalize }}{% endunless %}
-    </h1>
-  {%- endif -%}
+  <div class="page__body">
+    {%- if page.title -%}
+      <h1 id="{{ page.title | downcase }}" class="page__heading">
+        {{ page.title }} {% unless page.landing %}{{ page.integration_type | capitalize }}{% endunless %}
+      </h1>
+    {%- endif -%}
 
-  {%- if page.beta -%}
-    {% include content/beta.md %}
-  {%- endif -%}
+    {%- if page.beta -%}
+      {% include content/beta.md %}
+    {%- endif -%}
 
-  <div class="markdown">
-    {{ content }}
+    <div class="markdown">
+      {{ content }}
+    </div>
   </div>
 </article>
