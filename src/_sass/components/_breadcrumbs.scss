@@ -1,0 +1,20 @@
+.breadcrumbs {
+  &__item {
+    &::before {
+      height: 18px;
+      width: 1px;
+      background-color: color(border-gray-dark);
+      opacity: 1;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(27deg);
+      border-radius: 0;
+    }
+
+    &:first-of-type {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
