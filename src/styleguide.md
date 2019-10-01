@@ -37,6 +37,8 @@ layout: page
     - Subitem
 * Item
 
+{% include components/media-icon.html variant="small" href="#" icon="media/academy" title="Title" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus. Suscipit nesciunt labore nulla numquam excepturi?" excerpt="Read more" %}
+{% include components/media-icon.html variant="large" href="#" icon="media/academy" title="Title" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus. Suscipit nesciunt labore nulla numquam excepturi?" excerpt="Read more" %}
 {% include components/button-link.html text="Find out more" href="https://segment.com" %}
 
 {% capture note %}
