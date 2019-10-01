@@ -4,6 +4,7 @@ table {
 
   td {
     color: color(secondary-dark);
+    vertical-align: top;
   }
 
   thead {
@@ -34,7 +35,7 @@ table {
     }
 
     @include breakpoint(medium up) {
-      padding: 5px 35px;
+      padding: 10px 35px;
 
       &:first-of-type {
         padding-left: 5px;
@@ -49,5 +50,11 @@ table {
   th {
     padding-top: 13px;
     padding-bottom: 13px;
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid rgba(color(secondary), 0.1);
+    }
   }
 }
