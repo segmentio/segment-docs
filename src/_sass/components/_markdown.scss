@@ -1,0 +1,91 @@
+.markdown {
+  & > h1, h2, h3, h4, h5, h6 {
+    a[href^="#"] {
+      color: $heading-color;
+
+      &:hover {
+        color: $heading-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  & > h1 {
+    @include breakpoint(medium up) {
+      margin-top: 32px;
+    }
+  }
+
+  & > h2 {
+    @include breakpoint(medium up) {
+      margin-top: 48px;
+    }
+  }
+
+  & > h3 {
+    @include breakpoint(medium up) {
+      margin-top: 48px;
+    }
+  }
+
+  & > h4 {
+    @include breakpoint(medium up) {
+      margin-top: 24px;
+    }
+  }
+
+  & > h5 {
+    @include breakpoint(medium up) {
+      margin-top: 24px;
+    }
+  }
+
+  & > h6 {
+    @include breakpoint(medium up) {
+      margin-top: 16px;
+    }
+  }
+
+  & > p {
+    @include breakpoint(medium up) {
+      margin-top: 16px;
+    }
+  }
+
+  & > ul, ol {
+    @include breakpoint(medium up) {
+      margin-top: 8px;
+    }
+  }
+
+  & > pre {
+    @include breakpoint(medium up) {
+      margin-top: 24px;
+    }
+    margin-bottom: 24px;
+  }
+
+  & > hr {
+    @include breakpoint(medium up) {
+      margin-top: 48px;
+    }
+  }
+
+  & > table {
+    @include breakpoint(medium up) {
+      margin-top: 24px;
+    }
+  }
+
+  & > img {
+    @include breakpoint(medium up) {
+      margin-top: 24px;
+    }
+  }
+
+  & > div {
+    @include breakpoint(medium up) {
+      margin-top: 16px;
+    }
+  }
+}
