@@ -10,6 +10,7 @@ $color-values: (
   gray-light: #f7f9fa,
   gray-lighter: #f9fafb,
   gray: #a5b0ba,
+  gray-middle: #f2f4f5,
   gray-dark: #435A6F,
   border-gray: #edf0ed,
   border-gray-dark: #dbe1ea,
@@ -66,6 +67,8 @@ $gutter-sizes: (
   small: 0.3rem,
   medium: 0.5rem,
   large: 1rem,
+  xlarge: 1.5rem,
+  xxlarge: 2rem,
 ) !default;
 
 /// Default gutter size.

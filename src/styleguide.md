@@ -81,3 +81,5 @@ analytics.identify('025pikachu025', {
   }
 });
 ```
+
+{% include components/panel.html %}

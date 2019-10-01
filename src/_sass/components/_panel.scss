@@ -1,0 +1,16 @@
+.panel {
+  background-color: color(gray-middle);
+  padding: 22px 30px 30px;
+
+  &__input {
+    padding: 12px 20px;
+  }
+
+  &__separator {
+    display: block;
+
+    @include breakpoint(medium up) {
+      display: none;
+    }
+  }
+}
