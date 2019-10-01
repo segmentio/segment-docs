@@ -4,20 +4,13 @@
   line-height: 1.5;
   text-align: center;
   padding: 12px 23px;
+  display: inline-block;
+  text-decoration: none;
 
   &--small {
     font-size: 14px;
     font-weight: 500;
     line-height: 1.14;
     padding: 9px 8px;
-  }
-
-  &__icon {
-    margin-right: 5px;
-
-    svg {
-      max-height: 14px;
-      width: 16px;
-    }
   }
 }

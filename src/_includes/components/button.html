@@ -1,8 +1,3 @@
-<a href="{{ include.href }}" class="button button--{{ include.size }} flex">
-  {% if include.icon %}
-    <div class="button__icon">
-      {% include_relative assets/icons/symbols/{{ include.icon }}.svg %}
-    </div>
-  {% endif %}
+<a href="{{ include.href }}" class="button {% if include.size %}button--{{ include.size }}{% endif %} flex">
   {{ include.text }}
 </a>
