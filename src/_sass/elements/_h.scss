@@ -30,7 +30,7 @@ h2, .h2 {
   line-height: 32px;
 
   @include breakpoint(medium up) {
-    font-size: 42px;
+    font-size: 30px;
     line-height: 32px;
   }
 }
