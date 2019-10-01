@@ -2,7 +2,7 @@
   &__aside {
     position: relative;
     z-index: 0;
-    padding-top: 15px;
+    padding-top: 25px;
 
     &::before {
       content: "";
@@ -21,6 +21,6 @@
   }
 
   &__sidebar {
-    padding-top: 15px;
+    padding-top: 19px;
   }
 }
