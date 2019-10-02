@@ -1,0 +1,30 @@
+.panel {
+  position: relative;
+  background-color: color(gray-lighter);
+  border-radius: 8px;
+  overflow: hidden;
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    padding: 22px 15px 15px;
+
+    @include breakpoint(medium up) {
+      padding: 22px 30px 30px;
+    }
+  }
+
+  &__pattern {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    z-index: -1;
+
+    @include breakpoint(medium up) {
+      display: block;
+    }
+  }
+
+
+}
