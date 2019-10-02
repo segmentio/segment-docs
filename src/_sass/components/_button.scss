@@ -6,9 +6,15 @@
   padding: 12px 15px;
   display: inline-block;
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     text-decoration: none;
+  }
+
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
   }
 
   &--small {
