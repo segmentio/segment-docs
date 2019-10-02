@@ -1,0 +1,13 @@
+.breadcrumbs {
+  font-size: 14px;
+  color: color(gray);
+
+  &__link {
+    color: color(gray-dark);
+
+    &:hover {
+      color: color(primary);
+      text-decoration: none;
+    }
+  }
+}
