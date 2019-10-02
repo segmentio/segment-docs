@@ -1,0 +1,10 @@
+.nav {
+  & > * + * {
+    margin-top: 10px;
+  }
+
+  &__title {
+    font-weight: 500;
+    color: color(white);
+  }
+}

@@ -1,0 +1,32 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-top: 70px;
+  padding-bottom: 120px;
+  background-color: color(secondary);
+  font-size: 16px;
+  color: color(white);
+
+  &__container {
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &__aside {
+    & > * + * {
+      margin-top: 20px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-10%, 15%);
+    z-index: -1;
+  }
+}
