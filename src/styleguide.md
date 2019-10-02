@@ -107,3 +107,9 @@ analytics.identify('025pikachu025', {
 {% include components/alert.html type="success" content="This is my sample note." %}
 {% include components/alert.html type="warning" content="This is my sample note." %}
 {% include components/alert.html type="error" content="This is my sample note." %}
+
+---
+
+## Panel
+
+{% include components/panel.html title="Get started with Segment" content="Segment is the easiest way to integrate your websites & mobile apps data to 250+ analytics and growth tools." %}
