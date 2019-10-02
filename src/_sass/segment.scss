@@ -24,6 +24,7 @@
 
 // Objects
 // =================================================
+@import "objects/list";
 @import "objects/flex";
 @import "objects/gutter";
 @import "objects/waffle";
@@ -31,11 +32,10 @@
 
 // Elements
 // =================================================
-@import "elements/table";
 @import "elements/a";
 @import "elements/h";
-@import "elements/ul";
-@import "elements/ol";
+@import "elements/pre";
+@import "elements/code";
 
 // Components
 // =================================================
@@ -45,12 +45,17 @@
 @import "components/note";
 @import "components/button-link";
 @import "components/alert";
+@import "components/button";
+@import "components/button-fill";
+@import "components/button-hollow";
 @import "components/markdown";
 @import "components/list-steps";
 @import "components/input";
 @import "components/field";
 @import "components/breadcrumbs";
+@import "components/highlight";
 
 // Pages
 // =================================================
 @import "pages/docs";
+@import "pages/page";

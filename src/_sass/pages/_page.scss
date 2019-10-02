@@ -1,0 +1,15 @@
+.page {
+  & > * + * {
+    margin-top: 24px;
+  }
+
+  &__body {
+    & > * + * {
+      margin-top: 32px;
+    }
+  }
+
+  &__heading {
+    color: color(primary);
+  }
+}

@@ -1,20 +1,13 @@
 .breadcrumbs {
-  &__item {
-    &::before {
-      height: 18px;
-      width: 1px;
-      background-color: color(border-gray-dark);
-      opacity: 1;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%) rotate(27deg);
-      border-radius: 0;
-    }
+  font-size: 14px;
+  color: color(gray);
 
-    &:first-of-type {
-      &::before {
-        display: none;
-      }
+  &__link {
+    color: color(gray-dark);
+
+    &:hover {
+      color: color(primary);
+      text-decoration: none;
     }
   }
 }
