@@ -1,7 +1,7 @@
 <div  class="media-icon media-icon--{{ include.variant }}">
   <a class="media-icon__inner" href="{{ include.href }}">
     <span class="media-icon__icon">
-      {% include_relative assets/icons/{{ include.icon }}.svg %}
+      {% include icons/{{ include.icon }}.svg %}
     </span>
     <h5 class="media-icon__heading">{{ include.title }}</h5>
     <div class="media-icon__content">
@@ -15,7 +15,7 @@
     </div>
     {% if include.variant == 'large' %}
       <div class="media-icon__anchor">
-        {% include_relative assets/icons/anchor.svg %}
+        {% include icons/anchor.svg %}
       </div>
     {% endif %}
   </a>
