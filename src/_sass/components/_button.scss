@@ -12,6 +12,11 @@
     text-decoration: none;
   }
 
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   &--small {
     font-size: 14px;
     font-weight: 500;

@@ -3,7 +3,7 @@ layout: default
 ---
 
 <article class="page">
-  {% include breadcrumb.html %}
+  {% include components/breadcrumbs.html %}
 
   <div class="page__body">
     {%- if page.title -%}
@@ -16,7 +16,7 @@ layout: default
       {% include content/beta.md %}
     {%- endif -%}
 
-    <div class="markdown">
+    <div class="markdown" data-headings-anchors>
       {{ content }}
     </div>
   </div>

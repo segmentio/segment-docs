@@ -1,0 +1,11 @@
+.sidebar {
+  position: sticky;
+  top: 18px;
+  left: 0;
+
+  & > * + * {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid color(gray-light);
+  }
+}
