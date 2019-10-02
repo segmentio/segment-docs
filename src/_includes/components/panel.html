@@ -1,20 +1,31 @@
 <div class="panel">
-  <h4>Get started with Segment</h4>
-  <div class="panel__content">
-    Segment is the easiest way to integrate your websites & mobile apps data to 250+ analytics and growth tools.
-  </div>
-  <div class="gutter gutter--none gutter--xxlarge@medium flex flex--wrap flex--middle">
-    <div class="gutter gutter--none gutter--medium@medium flex flex--wrap">
-      <div class="flex">
-        <input type="email" class="panel__input input">
-      </div>
-      <div>
-        <button class="button button-fill">Request demo</button>
+  <div class="panel__inner">
+    <div class="flex">
+      <div class="flex__column flex__column--12 flex__column--9@medium">
+        <h4>Get started with Segment</h4>
+        <div class="panel__content">
+          Segment is the easiest way to integrate your websites & mobile apps data to 250+ analytics and growth tools.
+        </div>
       </div>
     </div>
-    <div class="panel__separator">or</div>
-    <a href="#" class="button-link">
-      Create free account
-    </a>
+    <div class="panel__form-wrapper gutter gutter--none gutter--xlarge@medium flex flex--wrap flex--middle">
+      <form action="#" class="panel__form gutter gutter--none gutter--medium@medium flex flex--wrap flex__column flex__column--12 flex__column--9@medium">
+        <div class="flex flex__column flex__column--12 flex__column--8@medium">
+          <input type="email" placeholder="Your work e-mail" class="panel__input input">
+        </div>
+        <div class="flex__column flex__column--12 flex__column--shrink@medium">
+          <button class="button button--expand button--large button-fill">Request demo</button>
+        </div>
+      </form>
+      <div class="panel__separator flex__column flex__column--12">
+        <span>or</span>
+      </div>
+      <a href="#" class="panel__link-button flex__column flex__column--12 flex__column--shrink@medium">
+        Create free account
+      </a>
+    </div>
+    <div class="panel__pattern">
+      {% include_relative assets/icons/patterns/dots.svg %}
+    </div>
   </div>
 </div>
