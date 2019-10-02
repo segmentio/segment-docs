@@ -1,22 +1,26 @@
 .stage {
   display: flex;
+  width: 100%;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 
   &__aside {
-    flex: 0 0 240px;
-    max-width: 240px;
-    padding-right: 26px;
+    flex: 0 0 230px;
+    max-width: 230px;
+    padding-right: 25px;
   }
 
   &__body {
     flex: 1;
     max-width: 100%;
     padding-left: 72px;
-    padding-right: 72px;
+    padding-right: 62px;
   }
 
   &__sidebar {
-    flex: 0 0 240px;
-    max-width: 240px;
-    padding-left: 26px;
+    flex: 0 0 142px;
+    max-width: 142px;
   }
 }

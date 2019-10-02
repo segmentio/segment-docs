@@ -1,0 +1,20 @@
+.button-fill {
+  border-radius: 4px;
+  background-color: color(primary);
+  color: color(white);
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(82, 189, 149, 0.08);
+  }
+
+  &--white {
+    background-color: color(white);
+    color: color(gray);
+    transition: 0.3s color;
+
+    &:hover {
+      color: color(success);
+    }
+  }
+}
