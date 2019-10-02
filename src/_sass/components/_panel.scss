@@ -1,6 +1,6 @@
 .panel {
   position: relative;
-  background-color: color(gray-middle);
+  background-color: color(gray-lighter);
   border-radius: 8px;
   overflow: hidden;
 
@@ -53,7 +53,7 @@
     }
 
     span {
-      background-color: color(gray-middle);
+      background-color: color(gray-lighter);
       padding: 0 15px;
     }
   }
