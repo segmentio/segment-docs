@@ -21,7 +21,7 @@
           {% for destination in category.items %}
             {% assign doc_path = destination.name | replace: "catalog", "connections" %}
             <li>
-              <a href="{{doc_path | relative_url }}">
+              <a href="{{doc_path | relative_url }}/">
                 {{destination.display_name}}
               </a>
             </li>

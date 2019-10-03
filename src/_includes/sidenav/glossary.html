@@ -11,7 +11,7 @@
   {% assign item = site.data.glossary %}
   {% for item in site.data.glossary %}
     <li>
-      <a href="{{site.baseurl}}/glossary#{{ item | first | downcase | replace: ' ', '-' }}">{{ item | first }}</a>
+      <a href="{{site.baseurl}}/glossary/#{{ item | first | downcase | replace: ' ', '-' }}">{{ item | first }}</a>
     </li>
   {% endfor %}
 </ul>
