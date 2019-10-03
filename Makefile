@@ -9,6 +9,12 @@ dev: node_modules vendor/bundle
 		"$(BIN)/webpack --mode=development --watch" \
 		"bundle exec jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
 
+.PHONY: intialize-work-dir
+intialize-work-dir:
+	@mkdir -p _site
+	@chmod -R 777 _site/
+	@bundle install
+	
 .PHONY: build
 build: node_modules vendor/bundle
 #	@bundle exec rake catalog:update
@@ -55,6 +61,16 @@ node_modules: package.json yarn.lock
 .PHONY: vendor/bundle
 vendor/bundle: Gemfile Gemfile.lock
 	bundle install
+
+.PHONY: docker-dev
+docker-dev:
+	$(DOCKER_TTY) make dev
+
+.PHONY: docker-build
+docker-build:
+	@$(DOCKER_TTY) make build
+	bundle install
+
 
 #.PHONY: docs
 #docs: node_modules
