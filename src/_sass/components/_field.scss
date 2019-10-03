@@ -6,10 +6,11 @@
   &__input {
     display: block;
     vertical-align: middle;
-  }
+    padding: 6px;
 
-  &__input {
-    padding: 12px 20px;
+    @include breakpoint(medium up)  {
+      padding: 12px 20px;
+    }
   }
 
   &--expand {
@@ -31,9 +32,13 @@
       top: 0;
       left: 0;
       z-index: 1;
-      width: 60px;
+      width: 40px;
       height: 100%;
       color: color(gray);
+
+      @include breakpoint(medium up)  {
+        width: 60px;
+      }
     }
   }
 }

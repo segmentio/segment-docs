@@ -1,1 +1,3 @@
-console.log('hello world');
+import searchNavbar from './search-navbar'
+
+searchNavbar()
