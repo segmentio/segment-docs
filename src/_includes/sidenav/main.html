@@ -29,7 +29,7 @@
         {% for item in root_section.section %}
           {% if item.path %}
             <li>
-              <a href="{{site.baseurl}}{{ item.path }}">{{ item.title }}</a>
+              <a href="{{site.baseurl}}{{ item.path }}/">{{ item.title }}</a>
             </li>
           {% endif %}
           {% if item.section_title %}
@@ -42,7 +42,7 @@
               <ul class="l-sidenav-subnav">
                 {% for subsection in item.section %}
                   <li>
-                    <a href="{{ site.baseurl }}{{ subsection.path }}">{{ subsection.title }}</a>
+                    <a href="{{ site.baseurl }}{{ subsection.path }}/">{{ subsection.title }}</a>
                   </li>
                 {% endfor %}
               </ul>
@@ -53,13 +53,13 @@
     </li>
   {% endfor %}
   <li class="section">
-    <a href="{{site.baseurl}}/partners">
+    <a href="{{site.baseurl}}/partners/">
       <img src="{{site.baseurl}}/assets/icons/nav/partners.svg"></img>
       Partners
     </a>
   </li>
   <li class="section">
-    <a href="{{site.baseurl}}/glossary">
+    <a href="{{site.baseurl}}/glossary/.">
       <img src="{{site.baseurl}}/assets/icons/nav/partners.svg"></img>
       Glossary
     </a>
@@ -67,13 +67,13 @@
 </ul>
 <ul class="l-fixed-sidenav-section">
   <li class="section">
-    <a href="{{site.baseurl}}/api">
+    <a href="{{site.baseurl}}/api/">
       <img src="{{site.baseurl}}/assets/icons/nav/reference.svg"></img>
       API Reference
     </a>
   </li>
   <li class="section">
-    <a href="https://segment.com/help">
+    <a href="https://segment.com/help/">
       <img src="{{site.baseurl}}/assets/icons/nav/help.svg"></img>
       Help
     </a>
@@ -88,17 +88,17 @@
     </div>
     <ul class="l-sidenav-subnav">
       <li>
-        <a href="https://segment.com/recipes">
+        <a href="https://segment.com/recipes/">
           Recipes
         </a>
       </li>
       <li>
-        <a href="https://segment.com/university">
+        <a href="https://segment.com/university/">
           University
         </a>
       </li>
       <li>
-        <a href="https://segment.com/academy">
+        <a href="https://segment.com/academy/">
           Academy
         </a>
       </li>
