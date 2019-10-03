@@ -1,13 +1,13 @@
 <div class="footer">
   <div class="footer__container">
     <div class="flex flex--wrap waffle waffle--large">
-      {% for menu in site.data.menu.sections %}
+      {% for nav in site.data.nav.sections %}
         <div class="flex__column flex__column--4 flex__column--2@large">
           <div class="nav">
-            <p class="nav__title">{{ menu.section_title }}</p>
+            <p class="nav__title">{{ nav.section_title }}</p>
 
             <ul class="nav-list">
-              {% for item in menu.section %}
+              {% for item in nav.section %}
                 <li>
                   <a class="nav-list__link" href="{{ item.path }}">{{ item.title }}</a>
                 </li>

@@ -64,7 +64,7 @@
         <div class="docs__sidebar stage__sidebar">
           {% include navbar/nav.html %}
 
-          <div class="sidebar">
+          <div class="sidebar sidebar--sticky">
             {%- unless page.hide_toc -%}
               <div data-menu-side>
                 {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
