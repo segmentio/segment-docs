@@ -110,6 +110,6 @@ analytics.identify('025pikachu025', {
 
 ---
 
-## Panel
+## Callout
 
-{% include components/panel.html title="Get started with Segment" content="Segment is the easiest way to integrate your websites & mobile apps data to 250+ analytics and growth tools." %}
+{% include components/callout.html title="Get started with Segment" content="Segment is the easiest way to integrate your websites & mobile apps data to 250+ analytics and growth tools." %}
