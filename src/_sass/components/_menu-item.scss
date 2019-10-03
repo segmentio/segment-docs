@@ -19,6 +19,10 @@
     }
   }
 
+  &__chevron {
+    color: color(gray);
+  }
+
   &--active {
     & > #{$this}__body {
       display: block;
