@@ -15,3 +15,5 @@ sections:
       title: Reference
     - path: "/api/config-api/tutorial-javascript-google-analytics"
       title: Creating a Javascript web source and Google Analytics destination
+- section_title: Help
+  path: "/help"

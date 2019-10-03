@@ -5,15 +5,17 @@
     display: none;
   }
 
-  &__trigger {
-    font-weight: 700;
-  }
-
   &__link {
     color: color(gray);
 
     &:hover {
       color: color(primary);
+      text-decoration: none;
+    }
+
+    &--highlight {
+      color: color(gray-dark);
+      font-weight: 500;
     }
   }
 

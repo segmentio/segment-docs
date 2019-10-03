@@ -1,5 +1,9 @@
 <li class="menu-item" data-accordion data-class-active="menu-item--active">
-  <span class="menu-item__trigger" data-ref="accordion[trigger]">{{ include.root_section.section_title }}</span>
+  {% if include.root_section.path %}
+    <a class="menu-item__link menu-item__link--highlight" href="{{ site.baseurl }}{{ item.path }}">{{ include.root_section.section_title }}</a>
+  {% else %}
+    <span class="menu-item__link menu-item__link--highlight" data-ref="accordion[trigger]">{{ include.root_section.section_title }}</span>
+  {% endif %}
 
   {% if include.root_section.section %}
     <ul class="menu-item__body" data-ref="accordion[body]">
@@ -10,7 +14,7 @@
           {% endif %}
 
           {% if item.section_title %}
-            <span class="menu-item__trigger" data-ref="accordion[trigger]">{{ item.section_title }}</span>
+            <span class="menu-item__link" data-ref="accordion[trigger]">{{ item.section_title }}</span>
 
             <ul class="menu-item__body" data-ref="accordion[body]">
               {% for subsection in item.section %}

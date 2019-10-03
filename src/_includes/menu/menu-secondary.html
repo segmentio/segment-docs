@@ -1,11 +1,7 @@
 <nav class="menu">
   <ul class="list list--unstyle">
-    {% for root_section in site.data.menu.api.sections %}
+    {% for root_section in site.data.menu.secondary.sections %}
       {% include menu/menu-item.html root_section=root_section %}
     {% endfor %}
-
-    <li class="menu-item">
-      <a class="menu-item__link" href="#">Help</a>
-    </li>
   </ul>
 </nav>
