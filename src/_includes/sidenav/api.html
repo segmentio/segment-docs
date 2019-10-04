@@ -12,7 +12,7 @@
   {% for item in item.section %}
     {% if item.path %}
     <li>
-        <a href="{{site.baseurl}}{{ item.path }}">{{ item.title }}</a>
+        <a href="{{site.baseurl}}{{ item.path }}/">{{ item.title }}</a>
       </li>
     {% endif %}
     {% if item.section_title %}
@@ -25,7 +25,7 @@
         <ul class="l-sidenav-subnav">
           {% for subsection in item.section %}
             <li>
-              <a href="{{ site.baseurl }}{{ subsection.path }}">{{ subsection.title }}</a>
+              <a href="{{ site.baseurl }}{{ subsection.path }}/">{{ subsection.title }}</a>
             </li>
           {% endfor %}
         </ul>
