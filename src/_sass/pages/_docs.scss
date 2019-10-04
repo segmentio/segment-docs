@@ -21,6 +21,8 @@
   }
 
   &__body {
+    max-width: 824px;
+
     @include breakpoint(large up)  {
       padding-top: 15px;
     }
