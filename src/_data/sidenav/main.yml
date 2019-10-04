@@ -1,7 +1,5 @@
 ---
 sections:
-- section_title: Home
-  path: "/"
 - section_title: Guides
   section:
   - path: "/guides"
@@ -204,7 +202,7 @@ sections:
     title: 'Protocols: Schema Controls'
   - path: "/protocols/tracking-plan"
     title: 'Protocols: Tracking Plan'
-- section_title: Segment Web App
+- section_title: Segment-app
   section:
   - path: "/segment-app"
     title: Overview
@@ -222,27 +220,3 @@ sections:
     title: Picking a secure password
   - path: "/segment-app/sso"
     title: Single Sign On
-- section_title: Partners
-  section:
-  - path: "/partners"
-    title: Overview
-  - path: "/partners/build-functions"
-    title: Building a Subscription Function
-  - path: "/partners/build-webhook"
-    title: Building a Subscription Webhook
-  - path: "/partners/checklist"
-    title: Public Beta Checklist
-  - path: "/partners/co-marketing"
-    title: Co-marketing
-  - path: "/partners/conceptual-model"
-    title: Conceptual Model
-  - path: "/partners/enable-with-segment"
-    title: Using OAuth to Build a Two-Click Enable Flow
-  - path: "/partners/plugins"
-    title: Building a Plugin
-  - path: "/partners/spec"
-    title: Segment Spec for Partners
-  - path: "/partners/streams"
-    title: Building a Stream
-  - path: "/partners/subscriptions"
-    title: Building a Subscription
