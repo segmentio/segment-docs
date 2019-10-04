@@ -11,7 +11,6 @@
     background-color: color(primary);
     font-size: 16px;
     font-weight: 600;
-    line-height: 1.5;
     color: color(white);
     display: block;
     text-align: center;
@@ -25,7 +24,7 @@
 
     @include breakpoint(medium up)  {
       font-size: 20px;
-    }    
+    }
   }
 
   &__content {
@@ -34,7 +33,7 @@
     margin-top: 10px;
 
     &--align {
-      margin-left: 40px;      
+      margin-left: 40px;
       margin-top: 0;
     }
   }
