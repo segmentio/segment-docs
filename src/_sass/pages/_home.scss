@@ -1,0 +1,11 @@
+.home {
+  &__markdown {
+    & > p {
+      margin-top: 5px;
+    }
+
+    & > div {
+      margin-top: 15px;
+    }
+  }
+}

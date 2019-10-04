@@ -1,5 +1,6 @@
 ---
 title: Segment Documentation
+layout: home
 landing: true
 hide_toc: true
 redirect_from:
@@ -15,7 +16,7 @@ redirect_from:
 - '/troubleshooting/data'
 ---
 
-**Welcome to the Segment Documentation!**
+Welcome to the Segment!
 Get familiar with our products, features, and integrations!
 
 {% include landing.html %}

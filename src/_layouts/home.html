@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<article class="home page">
+  {% include components/breadcrumbs.html %}
+
+  <div>
+    {%- if page.title -%}
+      <h1 id="{{ page.title | downcase }}" class="page__heading">
+        {{ page.title }} {% unless page.landing %}{{ page.integration_type | capitalize }}{% endunless %}
+      </h1>
+    {%- endif -%}
+
+    {%- if page.beta -%}
+      {% include content/beta.md %}
+    {%- endif -%}
+
+    <div class="home__markdown markdown" data-headings-anchors>
+      {{ content }}
+    </div>
+  </div>
+</article>
