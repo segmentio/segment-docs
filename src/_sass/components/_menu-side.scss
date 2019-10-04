@@ -1,0 +1,20 @@
+.menu-side {
+  $this: &;
+
+  list-style-type: none;
+  padding-left: 0;
+
+  &__link {
+    color: color(gray);
+
+    &:hover {
+      text-decoration: none;
+      color: color(gray-dark);
+    }
+  }
+
+  & {
+    list-style-type: none;
+    padding-left: 0;
+  }
+}

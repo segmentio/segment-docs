@@ -1,0 +1,25 @@
+<div class="widget" data-feedback>
+  <p class="widget__heading">Was this page helpful?</p>
+
+  <div class="flex">
+    <div class="flex__column flex__column--6">
+      <button class="button button--small button-fill button-fill--white" data-ref="feedback[helpful]">
+        <span class="button__icon">
+          {% include icons/symbols/thumb-up.svg %}
+        </span>
+
+        <span>Yes</span>
+      </button>
+    </div>
+
+    <div class="flex__column flex__column--6">
+      <button class="button button--small button-fill button-fill--white" data-ref="feedback[unhelpful]">
+        <span class="button__icon">
+          {% include icons/symbols/thumb-down.svg %}
+        </span>
+
+        <span>No</span>
+      </button>
+    </div>
+  </div>
+</div>

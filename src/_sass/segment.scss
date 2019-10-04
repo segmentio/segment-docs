@@ -34,6 +34,7 @@
 // =================================================
 @import "elements/a";
 @import "elements/h";
+@import "elements/hr";
 @import "elements/pre";
 @import "elements/code";
 
@@ -44,6 +45,8 @@
 @import "components/logo";
 @import "components/note";
 @import "components/button-link";
+@import "components/thumbnail-integration";
+@import "components/destinations-catalog";
 @import "components/alert";
 @import "components/button";
 @import "components/button-fill";
@@ -58,8 +61,24 @@
 @import "components/navbar-mobile";
 @import "components/menu-button";
 @import "components/search-button";
+@import "components/callout";
+@import "components/panel";
+@import "components/nav";
+@import "components/nav-list";
+@import "components/social-list";
+@import "components/footer";
+@import "components/footer-mobile";
+@import "components/sidebar";
+@import "components/widget";
+@import "components/menu";
+@import "components/menu-side";
+@import "components/menu-item";
 
 // Pages
 // =================================================
 @import "pages/docs";
 @import "pages/page";
+
+// Vendors
+// =================================================
+@import "vendors/swiftype";

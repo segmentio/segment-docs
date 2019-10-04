@@ -26,7 +26,6 @@ defaults:
     values:
       integration_type: source
 
-
 plugins:
   - jekyll-sitemap
   - jekyll-redirect-from

@@ -1,0 +1,25 @@
+.menu-item {
+  $this: &;
+
+  & > &__body {
+    display: none;
+  }
+
+  &__trigger {
+    font-weight: 700;
+  }
+
+  &__link {
+    color: color(gray);
+
+    &:hover {
+      color: color(primary);
+    }
+  }
+
+  &--active {
+    & > #{$this}__body {
+      display: block;
+    }
+  }
+}
