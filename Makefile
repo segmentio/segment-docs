@@ -17,7 +17,7 @@ intialize-work-dir:
 	
 .PHONY: build
 build: node_modules vendor/bundle
-#	@bundle exec rake catalog:update
+	@chown -R jekyll /workdir
 	@$(BIN)/webpack --mode=production
 	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build
 
