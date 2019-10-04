@@ -1,10 +1,15 @@
 .footer {
+  display: none;
   overflow: hidden;
   padding-top: 70px;
   padding-bottom: 120px;
   background-color: color(secondary);
   font-size: 16px;
   color: color(white);
+
+  @include breakpoint(large up) {
+    display: block;
+  }
 
   &__container {
     position: relative;
