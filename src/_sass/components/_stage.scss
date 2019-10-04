@@ -16,7 +16,7 @@
     padding-right: 25px;
 
     @include breakpoint(large up)  {
-      display: flex;
+      display: block;
     }
   }
 

@@ -24,7 +24,11 @@
     z-index: 0;
 
     #{$this}__input {
-      padding-left: 60px;
+      padding-left: 40px;
+
+      @include breakpoint(medium up)  {
+        padding-left: 60px;
+      }
     }
 
     #{$this}__icon {
