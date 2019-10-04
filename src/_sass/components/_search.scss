@@ -1,0 +1,7 @@
+.search {
+  display: none;
+
+  @include breakpoint(large up)  {
+    display: block;
+  }
+}

@@ -21,7 +21,9 @@
   }
 
   &__body {
-    padding-top: 15px;
+    @include breakpoint(large up)  {
+      padding-top: 15px;
+    }
 
     & > * + * {
       margin-top: 25px;
