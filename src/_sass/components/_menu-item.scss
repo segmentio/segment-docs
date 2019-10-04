@@ -1,12 +1,55 @@
 .menu-item {
   $this: &;
 
+  display: block;
+
+  &__body {
+    position: relative;
+    list-style-type: none;
+    margin-top: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 34px;
+
+    & > * + * {
+      margin-top: 12px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 8px;
+      display: block;
+      width: 1px;
+      height: 100%;
+      background-color: color(border-gray-dark);
+    }
+
+    &--nested {
+      margin-top: 12px;
+      padding-left: 18px;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      & > * {
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+
+      &::before {
+        left: 0;
+      }
+    }
+  }
+
   & > &__body {
     display: none;
   }
 
   &__link {
     color: color(gray);
+    line-height: 1.25;
 
     &:hover {
       color: color(primary);
@@ -17,6 +60,16 @@
       color: color(gray-dark);
       font-weight: 500;
     }
+
+    &--icon {
+      #{$this}__icon {
+        flex: 0 0 16px;
+        width: 16px;
+        color: color(gray);
+        vertical-align: middle;
+        margin-right: 18px;
+      }
+    }
   }
 
   &__chevron {
@@ -26,6 +79,18 @@
   &--active {
     & > #{$this}__body {
       display: block;
+    }
+
+    & > #{$this}__link {
+      color: color(primary);
+
+      #{$this}__icon {
+        color: color(primary);
+      }
+
+      #{$this}__chevron {
+        transform: rotate(180deg);
+      }
     }
   }
 }
