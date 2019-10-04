@@ -1,0 +1,11 @@
+.widget {
+  &__heading {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  & > * + * {
+    margin-top: 6px;
+  }
+}

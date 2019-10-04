@@ -1,0 +1,74 @@
+---
+sections:
+- section_title: Product
+  section:
+  - path: "https://segment.com/product/connections/"
+    title: Connections
+  - path: "https://segment.com/product/protocols/"
+    title: Protocols
+  - path: "https://segment.com/product/personas/"
+    title: Personas
+  - path: "https://segment.com/catalog/"
+    title: Integrations Catalog
+  - path: "https://segment.com/pricing/"
+    title: Pricing
+  - path: "https://segment.com/security/"
+    title: Security
+  - path: "https://segment.com/product/gdpr/"
+    title: GDPR
+- section_title: For Developers
+  section:
+  - path: "https://segment.com/docs/"
+    title: Documentation
+  - path: "https://segment.com/docs/sources/"
+    title: Segment API
+  - path: "https://segment.com/partners/developer-center/"
+    title: Build on Segment
+  - path: "https://open.segment.com/"
+    title: Open Source
+  - path: "https://segment.com/engineering/"
+    title: Engineering Team
+- section_title: For Businesses
+  section:
+  - path: "https://segment.com/docs/"
+    title: Customer Stories
+  - path: "https://segment.com/docs/sources/"
+    title: Enterprise
+  - path: "https://segment.com/partners/developer-center/"
+    title: Startups
+  - path: "https://open.segment.com/"
+    title: Retail
+  - path: "https://segment.com/engineering/"
+    title: Marketplace
+  - path: "https://segment.com/engineering/"
+    title: B2B Software
+  - path: "https://segment.com/engineering/"
+    title: Mobile
+- section_title: Company
+  section:
+  - path: "https://segment.com/docs/"
+    title: Careers
+  - path: "https://segment.com/docs/sources/"
+    title: Blog
+  - path: "https://segment.com/partners/developer-center/"
+    title: Press
+  - path: "https://open.segment.com/"
+    title: FTFY Podcast
+  - path: "https://segment.com/engineering/"
+    title: Events
+- section_title: Support
+  section:
+  - path: "https://segment.com/docs/"
+    title: Help Center
+  - path: "https://segment.com/docs/sources/"
+    title: Contact us
+  - path: "https://segment.com/partners/developer-center/"
+    title: Resources
+  - path: "https://open.segment.com/"
+    title: Recipes
+  - path: "https://segment.com/engineering/"
+    title: Security Bulletins
+  - path: "https://segment.com/engineering/"
+    title: Documentation
+  - path: "https://segment.com/engineering/"
+    title: Become a Partner

@@ -1,0 +1,16 @@
+.social-list {
+  $this: &;
+
+  padding-left: 0;
+  list-style: none;
+
+  &__link {
+    color: color(white);
+  }
+
+  &--dark {
+    #{$this}__link {
+      color: color(gray);
+    }
+  }
+}

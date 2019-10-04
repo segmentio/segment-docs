@@ -1,0 +1,40 @@
+.list-steps {
+  &__item {
+    list-style-type: none;
+    position: relative;
+  }
+
+  &__number {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: color(primary);
+    font-size: 16px;
+    font-weight: 600;
+    color: color(white);
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__title {
+    margin-left: 40px;
+
+    @include breakpoint(medium up)  {
+      font-size: 20px;
+    }
+  }
+
+  &__content {
+    line-height: 1.73;
+    color: color(secondary-dark);
+    margin-top: 10px;
+
+    &--align {
+      margin-left: 40px;
+      margin-top: 0;
+    }
+  }
+}

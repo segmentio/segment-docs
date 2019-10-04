@@ -1,0 +1,42 @@
+.alert {
+  position: relative;
+  padding: 15px 20px;
+  font-size: 14px;
+  line-height: 1.57;
+  background-color: color(gray-lighter);
+  border-radius: 4px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    border-radius: 2px;
+  }
+
+  &--info {
+    &::before {
+      background-color: color(info);
+    }
+  }
+
+  &--success {
+    &::before {
+      background-color: color(success);
+    }
+  }
+
+  &--warning {
+    &::before {
+      background-color: color(warning);
+    }
+  }
+
+  &--error {
+    &::before {
+      background-color: color(error);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+pre {
+  background-color: color(gray-light);
+  border-radius: 4px;
+  padding: 10px 15px;
+
+  @include breakpoint(medium up) {
+    padding: 20px 25px;
+  }
+}

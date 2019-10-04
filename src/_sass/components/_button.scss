@@ -1,0 +1,34 @@
+.button {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  padding: 12px 15px;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &--small {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.14;
+    padding: 9px 8px;
+  }
+
+  &--large {
+    padding: 14px 20px;
+  }
+
+  &--expand {
+    width: 100%;
+  }
+}

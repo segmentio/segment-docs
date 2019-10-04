@@ -1,0 +1,95 @@
+.highlight {
+  .hll { background-color: color(gray); }
+
+  .lineno {
+    background-color: color(gray);
+    color: color(code-pink);
+  }
+
+  /* --- Generics --- */
+  .ge { font-style: italic; } /* emph */
+  .gs { font-weight: bold; } /* strong */
+
+  /* --- Operators --- */
+  .o { color: color(code-green); } /* Operator */
+  .ow { color: color(code-green); } /* Word */
+
+  /* --- Comments --- */
+  .c { color: color(gray); font-style: italic; } /* Comment */
+  .cm { color: color(gray); font-style: italic; } /* Multi-line */
+  .cp { color: color(gray); font-style: italic; } /* Preproc */
+  .c1 { color: color(gray); font-style: italic; } /* Single */
+  .cs { color: color(gray); font-style: italic; } /* Special */
+
+  /* --- Names --- */
+  .n { color: color(code-gray); } /* Name */
+  .py { color: color(code-gray); } /* Property */
+  .nl { color: color(code-gray); } /* Label */
+  .ni { color: color(code-gray); } /* Entity */
+  .nb { color: color(code-gray); } /* Builtin */ /* shell commands */
+  .bp { color: color(code-gray); } /* Builtin.Pseudo */
+  .nf { color: color(code-gray); } /* Function */
+  .na { color: color(code-gray); } /* Attribute */
+  .nx { color: color(code-pink); } /* Other */
+  .nc { color: color(code-red); } /* Class */
+  .nn { color: color(code-red); } /* Namespace */
+  .no { color: color(code-red); } /* Constant */
+  .ne { color: color(code-red); } /* Exception */
+  .nd { color: color(code-green); } /* Decorator */
+  .nt { color: color(code-green); } /* Tag */
+
+  /* --- Keywords --- */
+  .kn { color: color(code-green); } /* Namespace */
+  .k { color: color(code-orange); } /* Keyword */
+  .kc { color: color(code-orange); } /* Constant */
+  .kd { color: color(code-orange); } /* Declaration */
+  .kp { color: color(code-orange); } /* Pseudo */
+  .kr { color: color(code-orange); } /* Reserved */
+  .kt { color: color(code-red); } /* Type */
+
+  /* --- Variables --- */
+  .nv { color: color(code-red); } /* Variable */
+  .vc { color: color(code-red); } /* Class */
+  .vg { color: color(code-red); } /* Global */
+  .vi { color: color(code-red); } /* Instance */
+
+  /* --- Numerals --- */
+  .m { color: color(code-orange); } /* Number */
+  .il { color: color(code-orange); } /* Long */
+  .mf { color: color(code-orange); } /* Float */
+  .mh { color: color(code-orange); } /* Hex */
+  .mi { color: color(code-orange); } /* Integer */
+  .mo { color: color(code-orange); } /* Oct */
+
+  /* --- Strings --- */
+  .s { color: color(code-blue); } /* String */
+  .sr { color: color(code-blue); } /* Regex */
+  .sb { color: color(code-blue); } /* Backtick */
+  .s2 { color: color(code-blue); } /* Double */
+  .sh { color: color(code-blue); } /* Heredoc */
+  .sx { color: color(code-blue); } /* Other */
+  .s1 { color: color(code-blue); } /* Single */
+  .ss { color: color(code-blue); } /* Symbol */
+  .se { color: color(code-orange); } /* Escape */
+  .si { color: color(code-orange); } /* Interpol */
+  .sc { color: color(code-gray); } /* Char */
+  .sd { color: color(gray); } /* Doc */
+
+  /* --- Other Literals --- */
+  .l { color: color(code-orange); } /* Literal */
+  .ld { color: color(code-blue); } /* Date */
+
+  /* --- Typographic Elements --- */
+  .p { color: color(code-gray); } /* Punctuation */
+  .w { color: color(code-gray); } /* Whitespace */ /* shouldn't this have a background-color instead ? */
+
+  /* --- Others --- */
+  .err { color: color(code-red); } /* Error */
+  .gp { color: color(code-red); } /* shell prompt */
+
+  /* --- Style --- */
+  .gi { color: color(code-blue); } /* inserted */
+  .gd { color: color(code-red); } /* deleted */
+  .gh { color: color(code-gray); font-weight: bold; } /* heading */
+  .gu { color: color(code-green); font-weight: bold; } /* subheading */
+}

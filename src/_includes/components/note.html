@@ -1,0 +1,27 @@
+<div class="note">
+  {% if include.title %}
+    <div class="note__header">
+      <span class="note__icon">
+        {% include icons/alerts/info-note.svg %}
+      </span>
+
+      <h4>{{ include.title }}</h4>
+    </div>
+
+    <div class="note__text">
+      {{ include.content | markdownify }}
+      {% include components/button-link.html text=include.buttonTitle href=include.buttonHref %}
+    </div>
+  {% else %}
+    <div class="note__content">
+      <span class="note__icon">
+        {% include icons/alerts/info-note.svg %}
+      </span>
+
+      <div class="note__text">
+        <span class="note__heading">NOTE:</span> {{ include.content | markdownify }}
+        {% include components/button-link.html text=include.buttonTitle href=include.buttonHref %}
+      </div>
+    </div>
+  {% endif %}
+</div>
