@@ -1,31 +1,39 @@
 - name: Guides
   icon: icon-guides.svg
   description: "Start here! Best practices, Setup steps, and other useful information."
+  path: /guides
 
 - name: Academy
   icon: icon-academy.svg
   description: "Learn more about the 'whys' and 'hows' of analytics. A great read if you're just getting started."
+  path: /academy
 
 - name: App
   icon: icon-app.svg
   description: "Learn your way around the Segment web application - hook up data sources to tools and warehouses, set up filtering, and more."
+  path: /app
 
 - name: Connections
   icon: icon-connections.svg
   description: "Collect data once, and integrate tools for analytics, growth, marketing and more."
+  path: /connections
 
 - name: Protocols
   icon: icon-protocols.svg
   description: "Prevent data quality issues before they start with a tracking schema and data quality enforcement."
+  path: /protocols
 
 - name: Personas
   icon: icon-personas.svg
   description: "Improve your interactions by building audiences to personalize experiences."
+  path: /personas
 
 - name: Privacy
   icon: icon-privacy.svg
   description: "Respect your customers’ privacy with tools for data discovery and policy enforcement."
+  path: /privacy
 
 - name: Partners
   icon: icon-partners.svg
   description: "Join the Segment Platform and enable thousands of companies to activate their first party data."
+  path: /partners
