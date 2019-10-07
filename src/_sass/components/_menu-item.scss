@@ -65,6 +65,36 @@
         margin-right: 18px;
       }
     }
+
+    &--indicator {
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -18px;
+        height: 100%;
+        width: 2px;
+        background-color: color(primary);
+      }
+    }
+
+    &--indicator-large {
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -26px;
+        height: 100%;
+        width: 2px;
+        background-color: color(primary);
+      }
+    }
   }
 
   &__chevron {
