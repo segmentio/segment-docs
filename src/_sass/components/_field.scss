@@ -8,7 +8,7 @@
     vertical-align: middle;
     padding: 6px;
 
-    @include breakpoint(medium up)  {
+    @include breakpoint(large up)  {
       padding: 12px 20px;
     }
   }
@@ -25,23 +25,41 @@
 
     #{$this}__input {
       padding-left: 40px;
+      padding-right: 40px;
 
-      @include breakpoint(medium up)  {
+      @include breakpoint(large up)  {
         padding-left: 60px;
+        padding-right: 60px;
       }
     }
 
     #{$this}__icon {
       position: absolute;
       top: 0;
-      left: 0;
       z-index: 1;
       width: 40px;
       height: 100%;
       color: color(gray);
 
-      @include breakpoint(medium up)  {
+      @include breakpoint(large up)  {
         width: 60px;
+      }
+
+      &--left {
+        left: 0;
+      }
+
+      &--right {
+        right: 0;
+      }
+    }
+
+    #{$this}__button {
+      color: color(gray);
+      cursor: pointer;
+
+      @include breakpoint(large up)  {
+        display: none;
       }
     }
   }
