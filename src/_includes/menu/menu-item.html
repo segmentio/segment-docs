@@ -1,21 +1,45 @@
 <li class="menu-item" data-accordion data-class-active="menu-item--active">
-  <span class="menu-item__trigger" data-ref="accordion[trigger]">{{ include.root_section.section_title }}</span>
+  {% if include.root_section.path %}
+    <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}{{ item.path }}">
+      <div class="menu-item__icon flex__column">
+        {% include icons/menu/icon-{{ include.root_section.section_title | slugify }}.svg %}
+      </div>
+
+      <div class="flex__column">{{ include.root_section.section_title }}</div>
+    </a>
+  {% else %}
+    <div class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" data-ref="accordion[trigger]">
+      <div class="menu-item__icon flex__column">
+        {% include icons/menu/icon-{{ include.root_section.section_title | slugify }}.svg %}
+      </div>
+
+      <div class="flex__column">{{ include.root_section.section_title }}</div>
+    </div>
+  {% endif %}
 
   {% if include.root_section.section %}
     <ul class="menu-item__body" data-ref="accordion[body]">
       {% for item in root_section.section %}
         <li class="menu-item" data-accordion data-class-active="menu-item--active">
           {% if item.path %}
-            <a class="menu-item__link" href="{{ site.baseurl }}{{ item.path }}">{{ item.title }}</a>
+            <a class="menu-item__link flex" href="{{ site.baseurl }}{{ item.path }}">{{ item.title }}</a>
           {% endif %}
 
           {% if item.section_title %}
-            <span class="menu-item__trigger" data-ref="accordion[trigger]">{{ item.section_title }}</span>
+            <div class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
+              <div class="flex__column">
+                {{ item.section_title }}
+              </div>
 
-            <ul class="menu-item__body" data-ref="accordion[body]">
+              <div class="menu-item__chevron flex__column flex__column--shrink">
+                {% include icons/symbols/chevron-down.svg %}
+              </div>
+            </div>
+
+            <ul class="menu-item__body menu-item__body--nested" data-ref="accordion[body]">
               {% for subsection in item.section %}
                 <li>
-                  <a class="menu-item__link" href="{{ site.baseurl }}{{ subsection.path }}">{{ subsection.title }}</a>
+                  <a class="menu-item__link flex" href="{{ site.baseurl }}{{ subsection.path }}">{{ subsection.title }}</a>
                 </li>
               {% endfor %}
             </ul>
