@@ -1,14 +1,7 @@
 <div class="flex flex--wrap waffle waffle--large">
   {% for category in site.data.landing %}
-    {% assign url = category.name | downcase %}
-
-    {% if url contains "app" %}
-      {% assign url = url | replace: "app", "segment-app" %}
-      {% assign category_href = url | relative_path %}
-    {% endif %}
-
     <div class="flex__column flex__column--6">
-      {% include components/media-icon.html variant="small" href=category_href icon=category.icon title=category.name content=category.description %}
+      {% include components/media-icon.html variant="small" href=category.path icon=category.icon title=category.name content=category.description %}
     </div>
   {% endfor %}
 </div>
