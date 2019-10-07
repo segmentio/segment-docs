@@ -1,6 +1,8 @@
+{{ page.path }}
+
 <li class="menu-item" data-accordion data-class-active="menu-item--active">
   {% if include.root_section.path %}
-    <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}{{ item.path }}">
+    <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}{{ include.root_section.path }}">
       <div class="menu-item__icon flex__column">
         {% include icons/menu/icon-{{ include.root_section.section_title | slugify }}.svg %}
       </div>
