@@ -10,7 +10,7 @@
 
 - name: App
   icon: icon-app.svg
-  description: "Learn your way around the Segment web application - hook up data sources to tools and warehouses, set up filtering, and more."
+  description: "Learn your way around the app. Hook up data sources to tools, set up filtering, and more."
   path: /app
 
 - name: Connections
