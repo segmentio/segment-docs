@@ -1,0 +1,51 @@
+<div class="flex flex--wrap flex--justify waffle">
+  <div class="flex__column flex__column--5">
+    <div class="flex flex--stack flex--justify waffle container container--stretch">
+      <div class="flex__column">
+        <h4>Need support?</h4>
+
+        <p>If you need any help visit our Support page and get in touch with us.</p>
+      </div>
+
+      <div class="flex__column flex__column--shrink">
+        {% include components/button-link.html text="Go to support" href="https://segment.com" %}
+      </div>
+    </div>
+  </div>
+
+  <div class="flex__column flex__column--5">
+    <div class="flex flex--stack flex--justify waffle container container--stretch">
+      <div class="flex__column">
+        <h4>Was this page helpful?</h4>
+      </div>
+
+      <div class="flex__column">
+        <div class="flex">
+          <div class="flex__column flex__column--shrink">
+            <button class="button button--small button-fill button-fill--white" data-ref="feedback[helpful]">
+              <span class="button__icon">
+                {% include icons/symbols/thumb-up.svg %}
+              </span>
+
+              <span>Yes</span>
+            </button>
+          </div>
+
+          <div class="flex__column flex__column--shrink">
+            <button class="button button--small button-fill button-fill--white" data-ref="feedback[unhelpful]">
+              <span class="button__icon">
+                {% include icons/symbols/thumb-down.svg %}
+              </span>
+
+              <span>No</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex__column flex__column--shrink">
+        {% include components/button-link.html text="Send us feedback" href="https://segment.com" %}
+      </div>
+    </div>
+  </div>
+</div>
