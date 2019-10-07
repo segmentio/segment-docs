@@ -36,6 +36,8 @@
   }
 
   & > h2 {
+    margin-top: 35px;
+
     @include breakpoint(medium up) {
       margin-top: 48px;
     }
