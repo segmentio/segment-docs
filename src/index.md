@@ -38,4 +38,6 @@ Get familiar with our products, features, and integrations!
 {% include components/list-steps.html number="2" heading="Digging in on technical details?" content=step2 %}
 {% include components/list-steps.html number="3" heading="Ready to get started implementing?" content=step3 %}
 
+<br>
+
 Be sure to check out the [Guides](/docsv2/guides/) for FAQs and Best Practices, and dig in to the [App](/docsv2/segment-app/) section to get to know the Segment web app.
