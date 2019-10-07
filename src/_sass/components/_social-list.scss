@@ -10,7 +10,7 @@
 
   &--dark {
     #{$this}__link {
-      color: color(gray);
+      color: color(gray-darker);
     }
   }
 }
