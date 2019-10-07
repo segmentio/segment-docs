@@ -23,6 +23,7 @@
   &__body {
     @include breakpoint(large up)  {
       padding-top: 15px;
+      padding-bottom: 70px;
     }
 
     & > * + * {

@@ -2,12 +2,12 @@
   <span class="list-steps__number">{{ include.number }}</span>
   {% if include.heading == %}
     <div class="list-steps__content list-steps__content--align">
-      {{ include.content }}
+      {{ include.content | markdownify }}
     </div>
   {% else %}
     <h5 class="list-steps__title">{{ include.heading }}</h5>
     <div class="list-steps__content">
-      {{ include.content }}
+      {{ include.content | markdownify }}
     </div>
   {% endif %}
 </div>
