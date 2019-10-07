@@ -4,20 +4,20 @@
 <li class="menu-item {% if currentPage[0] == currentPath %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
   {% if include.root_section.path %}
     <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}{{ include.root_section.path }}">
-      <div class="menu-item__icon flex__column">
+      <span class="menu-item__icon flex__column">
         {% include icons/menu/icon-{{ currentPath }}.svg %}
-      </div>
+      </span>
 
-      <div class="flex__column">{{ include.root_section.section_title }}</div>
+      <span class="flex__column">{{ include.root_section.section_title }}</span>
     </a>
   {% else %}
-    <div class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" data-ref="accordion[trigger]">
-      <div class="menu-item__icon flex__column">
+    <button class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" data-ref="accordion[trigger]">
+      <span class="menu-item__icon flex__column">
         {% include icons/menu/icon-{{ currentPath }}.svg %}
-      </div>
+      </span>
 
-      <div class="flex__column">{{ include.root_section.section_title }}</div>
-    </div>
+      <span class="flex__column">{{ include.root_section.section_title }}</span>
+    </button>
   {% endif %}
 
   {% if include.root_section.section %}
@@ -36,15 +36,15 @@
           {% endif %}
 
           {% if item.section_title %}
-            <div class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
-              <div class="flex__column">
+            <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
+              <span class="flex__column">
                 {{ item.section_title }}
-              </div>
+              </span>
 
               <div class="menu-item__chevron flex__column flex__column--shrink">
                 {% include icons/symbols/chevron-down.svg %}
-              </div>
-            </div>
+              </span>
+            </button>
 
             <ul class="menu-item__body menu-item__body--nested" data-ref="accordion[body]">
               {% for subsection in item.section %}

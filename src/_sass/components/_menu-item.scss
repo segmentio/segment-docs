@@ -43,8 +43,11 @@
   }
 
   &__link {
+    width: 100%;
+    text-align: left;
     color: color(gray);
     line-height: 1.25;
+    outline: 0;
 
     &:hover {
       color: color(primary);
