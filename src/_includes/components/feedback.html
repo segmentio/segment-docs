@@ -1,25 +1,27 @@
-<div class="flex flex--wrap flex--justify waffle">
-  <div class="flex__column flex__column--5">
-    <div class="flex flex--stack flex--justify waffle container container--stretch">
-      <div class="flex__column">
-        <h4>Need support?</h4>
+<div class="flex flex--wrap waffle waffle--xxlarge@medium">
+  <div class="flex__column flex__column--6">
+    <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium container container--stretch">
+      <div class="flex__column flex__column--shrink">
+        <div class="feedback-box__content">
+          <h4>Need support?</h4>
 
-        <p>If you need any help visit our Support page and get in touch with us.</p>
+          <p>If you need any help visit our Support page and get in touch with us.</p>
+        </div>
       </div>
 
       <div class="flex__column flex__column--shrink">
-        {% include components/button-link.html text="Go to support" href="https://segment.com" %}
+        {% include components/button-link.html text="Go to Support" href="https://segment.com" %}
       </div>
     </div>
   </div>
 
-  <div class="flex__column flex__column--5">
-    <div class="flex flex--stack flex--justify waffle container container--stretch">
-      <div class="flex__column">
+  <div class="flex__column flex__column--6">
+    <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium container container--stretch">
+      <div class="flex__column flex__column--shrink">
         <h4>Was this page helpful?</h4>
       </div>
 
-      <div class="flex__column">
+      <div class="flex__column flex__column--shrink">
         <div class="flex">
           <div class="flex__column flex__column--shrink">
             <button class="button button--small button-fill button-fill--white" data-ref="feedback[helpful]">

@@ -1,0 +1,10 @@
+.feedback-box {
+  font-size: 14px;
+  line-height: 22px;
+
+  &__content {
+    & > * + * {
+      margin-top: 5px;
+    }
+  }
+}
