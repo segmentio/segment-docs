@@ -17,4 +17,12 @@
       color: color(success);
     }
   }
+
+  &--borderable {
+    border: 1px solid color(border-gray-dark);
+
+    @include breakpoint(medium up)  {
+      border: none;
+    }
+  }
 }

@@ -1,6 +1,6 @@
 <div class="flex flex--wrap waffle waffle--xxlarge@medium">
-  <div class="flex__column flex__column--6">
-    <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium container container--stretch">
+  <div class="flex__column flex__column--6 flex">
+    <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium">
       <div class="flex__column flex__column--shrink">
         <div class="feedback-box__content">
           <h4>Need support?</h4>
@@ -15,32 +15,32 @@
     </div>
   </div>
 
-  <div class="flex__column flex__column--6">
-    <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium container container--stretch">
+  <div class="flex__column flex__column--6 flex">
+    <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium">
       <div class="flex__column flex__column--shrink">
-        <h4>Was this page helpful?</h4>
-      </div>
+        <div class="feedback-box__content">
+          <h4>Was this page helpful?</h4>
 
-      <div class="flex__column flex__column--shrink">
-        <div class="flex">
-          <div class="flex__column flex__column--shrink">
-            <button class="button button--small button-fill button-fill--white" data-ref="feedback[helpful]">
-              <span class="button__icon">
-                {% include icons/symbols/thumb-up.svg %}
-              </span>
+          <div class="flex gutter gutter--large">
+            <div class="flex__column flex__column--shrink">
+              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-ref="feedback[helpful]">
+                <span class="button__icon">
+                  {% include icons/symbols/thumb-up.svg %}
+                </span>
 
-              <span>Yes</span>
-            </button>
-          </div>
+                <span>Yes</span>
+              </button>
+            </div>
 
-          <div class="flex__column flex__column--shrink">
-            <button class="button button--small button-fill button-fill--white" data-ref="feedback[unhelpful]">
-              <span class="button__icon">
-                {% include icons/symbols/thumb-down.svg %}
-              </span>
+            <div class="flex__column flex__column--shrink">
+              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-ref="feedback[unhelpful]">
+                <span class="button__icon">
+                  {% include icons/symbols/thumb-down.svg %}
+                </span>
 
-              <span>No</span>
-            </button>
+                <span>No</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
