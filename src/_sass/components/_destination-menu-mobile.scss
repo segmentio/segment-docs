@@ -1,4 +1,6 @@
 .destination-menu-mobile {
+  $this: &;
+
   position: relative;
   padding: 20px 0 25px 0;
   position: sticky;
@@ -12,32 +14,46 @@
   &::before {
     position: absolute;
     top: 0;
-    width: 150vw;
+    width: calc(100% + 2px);
     height: 100%;
-    left: -50vw;
+    left: -1px;
     background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, white 17px, white 100%);
     display: block;
     z-index: -1;
     content: "";
   }
 
+  &__select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 10px;
+    transform: translateY(-50%);
+    margin-right: 0;
+    transition: 0.3s transform;
+  }
+
   &__select {
     padding: 8px 15px;
     border: 1px solid color(border-gray);
     border-radius: 4px 4px 0 0;
+
+    &--active {
+      #{$this}__select-arrow {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
   }
 
   &__select-inner {
     position: relative;
 
     svg {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      width: 10px;
-      transform: translateY(-50%);
+      margin-right: 8px;
+      width: 14px;
     }
   }
+
 
   &__list {
     box-shadow: 0 8px 16px 0 rgba(18, 66, 74, 0.08);
