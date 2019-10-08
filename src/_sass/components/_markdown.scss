@@ -3,7 +3,7 @@
   & > h2,
   & > h3,
   & > h4,
-  & > h5, 
+  & > h5,
   & > h6 {
     position: relative;
 
@@ -36,6 +36,8 @@
   }
 
   & > h2 {
+    margin-top: 35px;
+
     @include breakpoint(medium up) {
       margin-top: 48px;
     }
@@ -77,11 +79,16 @@
     }
   }
 
+  pre {
+    max-width: 100%;
+    overflow-y: auto;
+  }
+
   & > pre {
     @include breakpoint(medium up) {
       margin-top: 24px;
+      margin-bottom: 24px;
     }
-    margin-bottom: 24px;
   }
 
   & > hr {
@@ -97,12 +104,6 @@
     }
   }
 
-  & > img {
-    @include breakpoint(medium up) {
-      margin-top: 24px;
-    }
-  }
-
   & > div {
     @include breakpoint(medium up) {
       margin-top: 16px;
@@ -111,6 +112,11 @@
 
   img {
     max-width: 100%;
+
+    @include breakpoint(medium up) {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
   }
 
   ul {

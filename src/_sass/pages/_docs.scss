@@ -3,6 +3,7 @@
     position: relative;
     z-index: 0;
     padding-top: 25px;
+    padding-bottom: 25px;
 
     &::before {
       content: "";
@@ -22,8 +23,9 @@
 
   &__body {
     @include breakpoint(large up)  {
+      max-width: 824px;
       padding-top: 15px;
-      padding-bottom: 75px;
+      padding-bottom: 70px;
     }
 
     & > * + * {
@@ -33,7 +35,7 @@
 
   &__sidebar {
     padding-top: 19px;
-    padding-bottom: 75px;
+    padding-bottom: 25px;
 
     & > * + * {
       margin-top: 74px;

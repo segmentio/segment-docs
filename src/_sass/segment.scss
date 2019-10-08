@@ -29,6 +29,7 @@
 @import "objects/gutter";
 @import "objects/waffle";
 @import "objects/image";
+@import "objects/container";
 
 // Elements
 // =================================================
@@ -40,7 +41,6 @@
 
 // Components
 // =================================================
-@import "components/media-icon";
 @import "components/stage";
 @import "components/logo";
 @import "components/note";
@@ -75,12 +75,17 @@
 @import "components/menu-item";
 @import "components/destination-menu";
 @import "components/destination-menu-mobile";
+@import "components/columns";
+@import "components/feedback-box";
+@import "components/media-icon";
+@import "components/media-thumbnail";
 
 // Pages
 // =================================================
 @import "pages/docs";
 @import "pages/page";
 @import "pages/destinations";
+@import "pages/home";
 
 // Vendors
 // =================================================

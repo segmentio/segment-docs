@@ -1,3 +1,5 @@
+import './track/menu'
+
 import feedback from './feedback'
 import accordion from './accordion'
 import searchNavbar from './search-navbar'

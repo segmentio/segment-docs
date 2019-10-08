@@ -1,7 +1,7 @@
 <div  class="media-icon media-icon--{{ include.variant }}">
-  <a class="media-icon__inner" href="{{ include.href }}">
+  <a class="media-icon__inner" href="{{ site.baseurl }}{{ include.href }}">
     <span class="media-icon__icon">
-      {% include icons/{{ include.icon }}.svg %}
+      {% include icons/media/{{ include.icon }} %}
     </span>
     <h5 class="media-icon__heading">{{ include.title }}</h5>
     <div class="media-icon__content">

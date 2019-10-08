@@ -1,6 +1,12 @@
 .breadcrumbs {
   font-size: 14px;
   color: color(gray);
+  white-space: nowrap;
+
+  &__item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   &__link {
     color: color(gray-dark);

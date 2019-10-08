@@ -32,11 +32,6 @@
       padding-top: 0;
       padding-bottom: 0;
 
-      & > * {
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-
       &::before {
         left: 0;
       }
@@ -48,8 +43,12 @@
   }
 
   &__link {
-    color: color(gray);
+    width: 100%;
+    text-align: left;
+    color: color(gray-dark);
     line-height: 1.25;
+    outline: 0;
+    cursor: pointer;
 
     &:hover {
       color: color(primary);
@@ -68,6 +67,36 @@
         color: color(gray);
         vertical-align: middle;
         margin-right: 18px;
+      }
+    }
+
+    &--indicator {
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -18px;
+        height: 100%;
+        width: 2px;
+        background-color: color(primary);
+      }
+    }
+
+    &--indicator-large {
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -26px;
+        height: 100%;
+        width: 2px;
+        background-color: color(primary);
       }
     }
   }
