@@ -20,7 +20,9 @@
         {% assign category_icon = category.name | slugify %}
         <li class="destination-menu-mobile__item" >
           <a class="destination-menu-mobile__link" href="#{{ category.name }}" title="{{ category.name }}" data-ref="dropdown-menu[link]" >
-            {% include icons/destinations-catalog/{{ category_icon }}.svg %}
+            <span class="destination-menu-mobile__icon">
+              {% include icons/destinations-catalog/{{ category_icon }}.svg %}
+            </span>
             {{ category.name }}
           </a>
         </li>

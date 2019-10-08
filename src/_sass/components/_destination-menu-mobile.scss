@@ -48,9 +48,11 @@
   &__select-inner {
     position: relative;
 
-    svg {
-      margin-right: 8px;
-      width: 14px;
+    #{$this}__icon {
+      svg {
+        margin-right: 8px;
+        width: 14px;
+      }
     }
   }
 
@@ -66,19 +68,21 @@
     transition: 0.3s max-height;
 
     &--active {
-      max-height: 400px;
+      max-height: 396px;
     }
   }
 
   &__item {
+    & + & {
+      border-top: 1px solid rgba(color(gray), 0.2);
+    }
+  }
+
+  &__icon {
     svg {
       width: 14px;
       max-height: 14px;
       margin-right: 8px;
-    }
-
-    & + & {
-      border-top: 1px solid rgba(color(gray), 0.2);
     }
   }
 
@@ -92,6 +96,7 @@
     transition: 0.3s color, 0.3s font-weight;
     text-decoration: none;
     padding: 5px 15px;
+    border: 1px solid transparent;
 
     &--active,
     &:hover,
