@@ -1,4 +1,6 @@
 .panel {
+  $this: &;
+
   position: relative;
   background-color: color(gray-lighter);
   border-radius: 8px;
@@ -26,5 +28,27 @@
     }
   }
 
+  &--primary {
+    background-color: color(primary);
+    color: color(white);
 
+    h1, h2, h3, h4, h5, h6 {
+      color: color(white);
+    }
+
+    a {
+      color: color(white);
+      font-size: 14px;
+    }
+  }
+
+  &--mobile {
+    @include breakpoint(large up) {
+      display: none;
+    }
+
+    #{$this}__pattern {
+      display: block;
+    }
+  }
 }

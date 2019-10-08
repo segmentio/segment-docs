@@ -18,6 +18,8 @@ redirect_from:
 Welcome to the Segment!
 Get familiar with our products, features, and integrations!
 
+{% include components/callout-mobile.html heading="Segment Platform" content="Integrate once. Connect your entire stack." buttonText="Learn more about Segment" buttonHref="segment.com" %}
+
 {% include landing.html %}
 
 ## Getting Started
