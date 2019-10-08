@@ -2,6 +2,7 @@
 title: Segment Documentation
 landing: true
 hide_toc: true
+layout: page
 redirect_from:
 - '/api/'
 - '/big-picture/'

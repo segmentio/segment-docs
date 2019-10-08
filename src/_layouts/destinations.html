@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+<div class="docs">
+  <div class="stage">
+    <div class="docs__aside stage__aside">
+      {% include navbar/logo.html %}
+
+      {% include menu/menu.html %}
+    </div>
+
+    <main class="docs__body stage__body">
+      <div>
+        <div class="search">
+          {% include navbar/search.html %}
+        </div>
+
+        <nav class="navbar-mobile" data-search-navbar data-active-class="navbar-mobile--active">
+          <div class="flex flex--middle">
+            <div class="flex__column">
+              {% include navbar/logo.html %}
+            </div>
+
+            <div class="flex__column flex__column--shrink">
+              <div class="flex flex--medium gutter gutter--large">
+                <div class="flex__column">
+                  <button class="search-button" data-ref="search-navbar[trigger]">
+                    {% include icons/symbols/search.svg %}
+                  </button>
+                </div>
+
+                <div class="flex__column">
+                  <button class="menu-button">
+                    <span class="menu-button__line"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-mobile__search">
+            {% include navbar/search.html %}
+          </div>
+        </nav>
+      </div>
+
+
+      <div class="stage__content">
+        <article class="destinations">
+          {% include components/breadcrumbs.html %}
+
+          {%- if page.title -%}
+            <h1 id="{{ page.title | downcase }}" class="destinations__heading">
+              {{ page.title }}
+            </h1>
+          {%- endif -%}
+
+          {% include sidebar/destinations-menu-mobile.html %}
+
+          <div class="destinations__body markdown">
+            {{ content }}
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <div class="docs__sidebar stage__sidebar">
+      {% include navbar/nav.html %}
+
+      <div class="sidebar sidebar--sticky">
+        {% include sidebar/destinations-menu.html %}
+        {% include sidebar/feedback.html %}
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    {% include components/footer.html %}
+  </footer>
+</div>

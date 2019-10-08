@@ -23,6 +23,7 @@
   &__body {
     @include breakpoint(large up)  {
       padding-top: 15px;
+      padding-bottom: 75px;
     }
 
     & > * + * {
@@ -32,6 +33,7 @@
 
   &__sidebar {
     padding-top: 19px;
+    padding-bottom: 75px;
 
     & > * + * {
       margin-top: 74px;

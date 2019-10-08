@@ -1,0 +1,29 @@
+{% assign destination_categories = site.data.catalog.destinations.destinations | group_by:"categories.primary" | sort: "name" %}
+
+<div class="destination-menu-mobile" data-dropdown-menu>
+  <div class="destination-menu-mobile__select" data-ref="dropdown-menu[head]" data-active-class="destination-menu-mobile__select--active">
+    <div class="destination-menu-mobile__select-inner">
+      Lorem ipsum dolor sit amet
+
+      <svg viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1l3 3 3-3" stroke="#A5B0BA" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <ul class="destination-menu-mobile__list list list--unstyle" data-ref="dropdown-menu[body]" data-active-class="destination-menu-mobile__list--active">
+    {% for category in destination_categories %}
+      {% assign category_name_size = category.name | size %}
+      {% if category_name_size != 0 %}
+        {% assign category_icon = category.name | slugify %}
+        <li class="destination-menu-mobile__item" >
+          <a class="destination-menu-mobile__link" href="#{{ category.name }}" title="{{ category.name }}">
+            {% include icons/destinations-catalog/{{ category_icon }}.svg %}
+            {{ category.name }}
+          </a>
+        </li>
+
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
