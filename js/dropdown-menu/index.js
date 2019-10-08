@@ -1,6 +1,6 @@
 const COMPONENT_SELECTOR = '[data-dropdown-menu]'
 const DROPDOWN_HEAD = '[data-ref="dropdown-menu[head]"]'
-const DROPDOWN_BODY = '[data-ref="[body]"]'
+const DROPDOWN_BODY = '[data-ref="dropdown-menu[body]"]'
 const ACTIVE_CLASS_ATTR = 'data-active-class'
 
 export default function () {
