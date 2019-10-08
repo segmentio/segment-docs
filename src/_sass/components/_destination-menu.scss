@@ -1,0 +1,38 @@
+.destination-menu {
+  &__list {
+    overflow-y: auto;
+    max-height: calc(100vh - 20px);
+  }
+
+  &__item {
+    & + & {
+      margin-top: 13px;
+    }
+
+    svg {
+      width: 14px;
+      max-height: 14px;
+      margin-right: 8px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    width: 100%;
+    color: color(gray);
+    font-size: 14px;
+    line-height: 20px;
+    transition: 0.3s color, 0.3s font-weight;
+    text-decoration: none;
+
+    &--active {
+      color: color(secondary-dark);
+      font-weight: 500;
+    }
+
+    &:hover {
+      color: color(secondary-dark);
+      text-decoration: none;
+    }
+  }
+}

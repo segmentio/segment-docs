@@ -1,13 +1,14 @@
 ---
 title: Destination catalog
 hide_toc: true
+layout: destinations
 ---
 
 {% assign destination_categories = site.data.catalog.destinations.destinations | group_by:"categories.primary" | sort: "name" %}
 
 <div class="destinations-catalog">
   {% for category in destination_categories %}
-    <div class="destinations-catalog__section">
+    <div class="destinations-catalog__section" id="{{ category.name }}">
       {% assign category_name_size = category.name | size %}
       {% if category_name_size != 0 %}
         {% assign category_icon = category.name | slugify %}
