@@ -17,6 +17,7 @@
     padding: 12px 20px;
     width: 100%;
     border: 1px solid color(border-gray);
+    -webkit-appearance: none;
 
     &::placeholder {
       color: color(gray)
@@ -47,7 +48,7 @@
     }
 
     span {
-      background-color: color(gray-lighter);
+      background-color: #f2f4f5;
       padding: 0 15px;
     }
   }

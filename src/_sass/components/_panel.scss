@@ -2,14 +2,14 @@
   $this: &;
 
   position: relative;
-  background-color: color(gray-lighter);
+  background-color: #f2f4f5;
   border-radius: 8px;
   overflow: hidden;
 
   &__inner {
     position: relative;
     z-index: 1;
-    padding: 22px 15px 15px;
+    padding: 22px 15px 30px;
 
     @include breakpoint(medium up) {
       padding: 22px 30px 30px;
@@ -45,6 +45,10 @@
   &--mobile {
     @include breakpoint(large up) {
       display: none;
+    }
+
+    #{$this}__inner {
+      padding: 22px 15px 15px;
     }
 
     #{$this}__pattern {
