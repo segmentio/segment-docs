@@ -3,6 +3,11 @@ title: Styleguide
 description: The styleguide of front-end components
 hidden: true
 layout: page
+contributors:
+  - name: Paul Mccall
+    position: Lead Developer
+    image_path: paul-mccall.png
+    date: 23.08.2019
 ---
 
 ---
@@ -76,6 +81,12 @@ analytics.identify('025pikachu025', {
   }
 });
 ```
+
+---
+
+## Avatar
+
+{% include components/avatar.html %}
 
 ---
 

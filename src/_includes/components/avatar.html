@@ -1,0 +1,35 @@
+{% assign contributor = page.contributors | first %}
+{% assign day = contributor.date | date: "%-d"  %}
+
+{% if contributor %}
+  <div class="avatar">
+    <div class="flex gutter gutter--large">
+      <div class="flex__column flex__column--shrink">
+        <img src="{{ site.baseurl }}/images/{{ contributor.image_path }}" alt="">
+      </div>
+
+      <div class="flex__column">
+        <div class="avatar__content">
+          <div>
+            <p class="avatar__title">Updated on
+              {% case day %}
+                {% when '1' or '21' or '31' %}{{ day }}st,
+                {% when '2' or '22' %}{{ day }}nd,
+                {% when '3' or '23' %}{{ day }}rd,
+                {% else %}{{ day }}th,
+              {% endcase %}
+              {{ contributor.date | date: "%B" }}
+              {{ contributor.date | date: "%Y" }}
+            </p>
+
+            <p class="avatar__info">by {{ contributor.name }} - {{ contributor.position }}</p>
+          </div>
+
+          <div>
+            {% include components/button-link.html text="See all contributors" href="#" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
