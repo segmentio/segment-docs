@@ -1,6 +1,6 @@
-const COMPONENT_NAME = 'data-search-navbar'
+const COMPONENT_NAME = 'data-menu-mobile'
 const COMPONENT_SELECTOR = `[${COMPONENT_NAME}]`
-const TRIGGER_SELECTOR = '[data-ref*="search-navbar[trigger]"]'
+const TRIGGER_SELECTOR = '[data-ref*="menu-mobile[trigger]"]'
 
 const DEFAULTS = {
   classActive: 'active'
