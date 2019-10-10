@@ -4,12 +4,14 @@ const DROPDOWN_HEAD_INNER = '[data-ref="dropdown-menu[head-inner]"]'
 const DROPDOWN_BODY = '[data-ref="dropdown-menu[body]"]'
 const DROPDOWN_LINK = '[data-ref="dropdown-menu[link]"]'
 const ACTIVE_CLASS_ATTR = 'data-active-class'
+const ANCHOR = '[data-ref="dropdown-menu[item]"]'
 
 export default function () {
   const components = document.querySelectorAll(COMPONENT_SELECTOR)
 
   components.forEach(component => {
     const dropdownHeadInner = component.querySelector(DROPDOWN_HEAD_INNER)
+    const itemActiveClass = component.getAttribute(ACTIVE_CLASS_ATTR)
 
     const dropdownHead = component.querySelector(DROPDOWN_HEAD)
     const dropdownHeadActive = dropdownHead.getAttribute(ACTIVE_CLASS_ATTR)
@@ -24,13 +26,23 @@ export default function () {
       dropdownBody.classList.toggle(dropdownBodyActive)
     })
 
+    const updateValue = (dest) => {
+      dropdownHeadInner.innerHTML = dest.innerHTML
+    }
+
     links.forEach(link => {
       link.addEventListener('click', () => {
-        dropdownHeadInner.innerHTML = link.innerHTML
+        updateValue(link)
 
         dropdownHead.classList.remove(dropdownHeadActive)
         dropdownBody.classList.remove(dropdownBodyActive)
       })
+    })
+
+    window.addEventListener('scroll', () => {
+      const currentActiveIndicator = document.querySelector(`${ANCHOR}.${itemActiveClass} a`)
+
+      updateValue(currentActiveIndicator)
     })
   })
 }
