@@ -19,7 +19,7 @@
       {% if category_name_size != 0 %}
         {% assign category_icon = category.name | slugify %}
         <li class="destination-menu-mobile__item" data-ref="dropdown-menu[item]">
-          <a class="destination-menu-mobile__link" href="#{{ category.name }}" title="{{ category.name }}" data-ref="dropdown-menu[link]" >
+          <a class="destination-menu-mobile__link" href="#{{ category.name | slugify }}" title="{{ category.name }}" data-ref="dropdown-menu[link]" >
             <span class="destination-menu-mobile__icon">
               {% include icons/destinations-catalog/{{ category_icon }}.svg %}
             </span>
