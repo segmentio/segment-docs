@@ -2,7 +2,7 @@
   $this: &;
 
   &__item {
-    margin-top: 10px;
+    margin-top: 25px;
 
     & + & {
       border-top: 1px solid rgba(color(secondary), 0.16);
@@ -16,12 +16,13 @@
     color: color(secondary);
     line-height: 1.71;
     position: relative;
-    padding: 17px 0;
+    margin: 17px 0;
+    margin-bottom: 12px;
   }
 
   &__body {
     display: none;
-    padding-top: 10px;
+    padding-bottom: 20px;
   }
 
   &__icon {
@@ -32,10 +33,6 @@
     right: 20px;
     transform: translateY(-50%);
     transition: 0.3s transform;
-  }
-
-  & + & {
-    margin-top: 30px;
   }
 
   &--active {
