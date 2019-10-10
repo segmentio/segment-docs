@@ -36,7 +36,7 @@
   }
 
   & > h2 {
-    margin-top: 35px;
+    margin-top: 32px;
 
     @include breakpoint(medium up) {
       margin-top: 48px;
@@ -44,36 +44,48 @@
   }
 
   & > h3 {
+    margin-top: 24px;
+
     @include breakpoint(medium up) {
       margin-top: 48px;
     }
   }
 
   & > h4 {
+    margin-top: 16px;
+
     @include breakpoint(medium up) {
       margin-top: 24px;
     }
   }
 
   & > h5 {
+    margin-top: 16px;
+
     @include breakpoint(medium up) {
       margin-top: 24px;
     }
   }
 
   & > h6 {
+    margin-top: 8px;
+
     @include breakpoint(medium up) {
       margin-top: 16px;
     }
   }
 
   & > p {
+    margin-top: 8px;
+
     @include breakpoint(medium up) {
       margin-top: 16px;
     }
   }
 
   & > ul, ol {
+    margin-top: 8px;
+
     @include breakpoint(medium up) {
       margin-top: 8px;
     }
@@ -85,33 +97,28 @@
   }
 
   & > pre {
-    @include breakpoint(medium up) {
-      margin-top: 24px;
-      margin-bottom: 24px;
-    }
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
 
   & > hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
     @include breakpoint(medium up) {
       margin-top: 48px;
       margin-bottom: 48px;
     }
   }
 
-  & > table {
-    @include breakpoint(medium up) {
-      margin-top: 24px;
-    }
-  }
-
   & > div {
-    @include breakpoint(medium up) {
-      margin-top: 16px;
-    }
+    margin-top: 16px;
   }
 
   img {
     max-width: 100%;
+    margin-top: 18px;
+    margin-bottom: 18px;
 
     @include breakpoint(medium up) {
       margin-top: 24px;
@@ -193,25 +200,25 @@
     }
 
     th, td {
-      padding: 5px 25px;
+      padding: 5px 10px;
 
       &:first-of-type {
-        padding-left: 15px;
+        padding-left: 5px;
       }
 
       &:last-of-type {
-        padding-right: 15px;
+        padding-right: 5px;
       }
 
       @include breakpoint(medium up) {
         padding: 10px 35px;
 
         &:first-of-type {
-          padding-left: 5px;
+          padding-left: 15px;
         }
 
         &:last-of-type {
-          padding-right: 5px;
+          padding-right: 15px;
         }
       }
     }
@@ -226,5 +233,9 @@
         border-bottom: 1px solid rgba(color(secondary), 0.1);
       }
     }
+  }
+
+  & > table {
+    margin-top: 24px;
   }
 }

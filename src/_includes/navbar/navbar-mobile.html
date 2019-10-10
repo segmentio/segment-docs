@@ -1,0 +1,35 @@
+<nav
+  class="navbar-mobile"
+  data-search-navbar='{ "classActive": "navbar-mobile--searching" }'
+  data-menu-mobile='{ "classActive": "navbar-mobile--active" }'
+>
+  <div class="navbar-mobile__wrapper flex flex--middle">
+    <div class="flex__column">
+      {% include navbar/logo.html %}
+    </div>
+
+    <div class="flex__column flex__column--shrink">
+      <div class="flex flex--medium gutter gutter--large">
+        <div class="flex__column">
+          <button class="navbar-mobile__search-button search-button" data-ref="search-navbar[trigger]">
+            {% include icons/symbols/search.svg %}
+          </button>
+        </div>
+
+        <div class="flex__column">
+          <button class="navbar-mobile__menu-button menu-button" data-ref="menu-mobile[trigger]">
+            <span class="menu-button__line"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="navbar-mobile__search">
+    {% include navbar/search.html %}
+  </div>
+
+  <div class="navbar-mobile__panel">
+    {% include menu/menu-mobile.html %}
+  </div>
+</nav>
