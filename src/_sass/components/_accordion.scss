@@ -17,7 +17,7 @@
     line-height: 1.71;
     position: relative;
     margin: 17px 0;
-    margin-bottom: 12px;
+    cursor: pointer;
   }
 
   &__body {
@@ -32,12 +32,15 @@
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
-    transition: 0.3s transform;
   }
 
   &--active {
     #{$this}__icon {
       transform: translateY(-50%) rotate(180deg);
+    }
+
+    #{$this}__heading {
+      margin-bottom: 12px;
     }
 
     #{$this}__body {
