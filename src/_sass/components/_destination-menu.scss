@@ -5,6 +5,8 @@
   }
 
   &__item {
+    color: color(gray);
+
     & + & {
       margin-top: 13px;
     }
@@ -15,11 +17,15 @@
       margin-right: 8px;
       margin-top: 2px;
     }
+
+    &--active {
+      color: color(primary);
+    }
   }
 
   &__link {
     width: 100%;
-    color: color(gray);
+    color: inherit;
     font-size: 14px;
     line-height: 20px;
     transition: 0.3s color, 0.3s font-weight;
