@@ -1,4 +1,4 @@
-const MenuSpy = require('menuspy');
+import MenuSpy from 'menuspy'
 const COMPONENT_SELECTOR = '[data-anchors-indicator]'
 const ACTIVE_CLASS = 'data-active-class'
 
