@@ -11,6 +11,7 @@
   }
 
   &__heading {
+    padding-right: 20px;
     font-size: 15px;
     font-weight: 500;
     color: color(secondary);
@@ -37,11 +38,11 @@
   }
 
   &__icon {
-    width: 8px;
+    width: 10px;
     color: rgba(color(secondary-dark), 0.5);
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 0;
     transform: translateY(-50%);
   }
 
