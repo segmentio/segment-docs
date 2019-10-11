@@ -73,6 +73,7 @@ contributors:
 {% include components/button-fill.html size="small" text="Sign up" href="https://segment.com" %}
 {% include components/button-fill.html size="small" variant="white" text="Yes" href="https://segment.com" %}
 {% include components/button-hollow.html size="small" text="Log in" href="https://segment.com" %}
+{% include components/button-link.html text="Find out more" href="https://segment.com" %}
 
 ---
 
@@ -103,9 +104,8 @@ analytics.identify('025pikachu025', {
 
 ## Media Icons
 
-{% include components/media-icon.html variant="small" href="#" icon="icon-academy.svg" title="Title" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus. Suscipit nesciunt labore nulla numquam excepturi?" excerpt="Read more" %}
-{% include components/media-icon.html variant="large" href="#" icon="icon-academy.svg" title="Title" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus. Suscipit nesciunt labore nulla numquam excepturi?" excerpt="Read more" %}
-{% include components/button-link.html text="Find out more" href="https://segment.com" %}
+{% include components/media-icon.html href="#" icon="media/icon-academy.svg" title="Title" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus. Suscipit nesciunt labore nulla numquam excepturi?" %}
+{% include components/media-icon.html href="#" icon="media/icon-academy.svg" title="Title" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus. Suscipit nesciunt labore nulla numquam excepturi?" variant="related" %}
 
 ---
 
