@@ -5,12 +5,6 @@ const UNHELPFUL_BUTTON_SELECTOR = `[data-ref="feedback[unhelpful]"]`
 const CONTENT_SELECTOR = `[data-ref="feedback[content]"]`
 const ACTIVE_CLASS = 'data-active-class'
 
-const DEFAULTS = {
-  message: {
-    success: 'If you need help or have any questions, please consider contacting <a href="#">Support</a>.'
-  }
-}
-
 export default function () {
   const components = document.querySelectorAll(COMPONENT_SELECTOR)
 
