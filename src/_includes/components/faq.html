@@ -1,0 +1,20 @@
+<div class="faq">
+  {% for item in include.items %}
+    <div class="accordion" data-accordion-group>
+
+      <h3>{{ item[0] }}</h3>
+
+      {% for itemEl in item[1] %}
+      <div class="accordion__item" data-accordion data-class-active="accordion--active">
+        <div class="accordion__heading" data-ref="accordion[trigger]">
+          {{ itemEl.title }}
+          <div class="accordion__icon">
+            {% include icons/symbols/chevron-down.svg %}
+          </div>
+        </div>
+        <div class="accordion__body" data-ref="accordion[body]">{{ itemEl.content }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>

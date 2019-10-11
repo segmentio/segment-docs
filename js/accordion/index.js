@@ -1,3 +1,5 @@
+import { accordionTriggered } from './events'
+
 const COMPONENT_NAME = 'data-accordion'
 const COMPONENT_SELECTOR = `[${COMPONENT_NAME}]`
 const TRIGGER_SELECTOR = `[data-ref="accordion[trigger]"]`
@@ -17,6 +19,7 @@ export default function () {
         trigger.addEventListener('click', (event) => {
           event.preventDefault()
 
+          components[i].dispatchEvent(accordionTriggered)
           components[i].classList.toggle(activeClass)
         })
       }
