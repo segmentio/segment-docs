@@ -13,8 +13,7 @@
           </div>
         </div>
         <div class="accordion__body" data-ref="accordion[body]">
-          {{ itemEl.content }}
-          <a href="{{itemEl.link}}" class="accordion__link button-link">Read more</a>
+          {{ itemEl.content | markdownify }}
         </div>
       </div>
       {% endfor %}
