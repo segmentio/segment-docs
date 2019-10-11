@@ -2,6 +2,8 @@
 title: Sources catalog
 hide_toc: true
 landing: true
+icon: symbols/connections.svg
+excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
 ---
 
 <div class="l-chiclet-collection">

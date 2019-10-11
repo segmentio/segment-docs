@@ -1,22 +1,27 @@
-<div  class="media-icon media-icon--{{ include.variant }}">
+<div class="media-icon">
   <a class="media-icon__inner" href="{{ site.baseurl }}{{ include.href }}">
     <span class="media-icon__icon">
-      {% include icons/media/{{ include.icon }} %}
+      {% include icons/{{ include.icon }} %}
     </span>
-    <h5 class="media-icon__heading">{{ include.title }}</h5>
-    <div class="media-icon__content">
-      {{ include.content }}
 
-      {% if include.variant == 'large' %}
-        <span class="media-icon__excerpt">
-          {{ include.excerpt }}
-        </span>
+    <h5 class="media-icon__heading">{{ include.title }}</h5>
+
+    <div class="media-icon__content">
+      <span>{{ include.content }}</span>
+
+      {% if include.variant == 'related' %}
+        <span class="media-icon__related button-link">Read more</span>
+      {% else %}
+        <div class="media-icon__excerpt button-link flex flex--end flex--middle gutter">
+          <span>Go to the page</span>
+
+          {% include icons/anchor.svg %}
+        </div>
       {% endif %}
     </div>
-    {% if include.variant == 'large' %}
-      <div class="media-icon__anchor">
-        {% include icons/anchor.svg %}
-      </div>
-    {% endif %}
+
+    <div class="media-icon__anchor">
+      {% include icons/anchor.svg %}
+    </div>
   </a>
 </div>
