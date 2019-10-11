@@ -1,6 +1,8 @@
 ---
 title: Platforms
 hidden: true
+icon: media/icon-guides.svg
+excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
 ---
 
 
@@ -23,7 +25,7 @@ We currently offer free plugins for the following platforms:
 
 ## Guides
 
-> **NOTE**: Official Segment support for the following guides are deprecated. These guides may be out of date and thus we recommend using third party guides to integrate with these tools. 
+> **NOTE**: Official Segment support for the following guides are deprecated. These guides may be out of date and thus we recommend using third party guides to integrate with these tools.
 
 In addition to native plugins we have written detailed guides for other popular platforms to get you up and running without needing any technical documentation:
 

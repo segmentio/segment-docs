@@ -1,0 +1,5 @@
+{% for related_url in page.related %}
+  {% assign subpage = site.pages | where: 'url', related_url | first %}
+
+  {% include components/media-icon.html variant="related" href="#" icon=subpage.icon title=subpage.title content=subpage.excerpt %}
+{% endfor %}
