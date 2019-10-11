@@ -3,32 +3,56 @@ layout: default
 permalink: /404.html
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<div class="docs">
+  <div class="stage">
+    <div class="docs__aside stage__aside">
+      {% include navbar/logo.html %}
+      {% include menu/menu.html %}
+    </div>
 
-<div class="container">
-  <h1>404</h1>
+    <main class="docs__body stage__body">
+      <div>
+        {% include navbar/navbar-mobile.html %}
+      </div>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+      <div class="stage__content">
+        <div class="page-404">
+          <div class="flex">
+            <div class="flex__column--12 flex__column--9@xlarge">
+              <h1>The page you were looking for doesn’t exist.</h1>
+              <div class="flex">
+                <div class="flex__column--10 markdown">
+                  <p>You may have mistyped the address or the page may have moved. Double-check the URL and try again or search the term.</p>
+
+                  <div class="search">
+                    {% include navbar/search.html placeholder="Enter a search term" %}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="page-404__numeric-heading__wrapper markdown flex__column--3 flex--middle">
+              <span class="page-404__numeric-heading">404</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="docs__sidebar stage__sidebar">
+      {% include navbar/nav.html %}
+    </div>
+  </div>
+
+  <footer>
+    {% include components/footer.html %}
+  </footer>
 </div>
 
 <script>
   !function(){
-  window.analytics.track('Docs 404', {
-    docs_page_404_context: document.referrer
+    window.analytics.track('Docs 404', {
+      docs_page_404_context: document.referrer
+    })
   }
-  )
-}
 </script>
