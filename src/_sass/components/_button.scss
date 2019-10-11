@@ -8,6 +8,10 @@
   text-decoration: none;
   cursor: pointer;
 
+  &:disabled {
+    pointer-events: none;
+  }
+
   &:hover {
     text-decoration: none;
   }
