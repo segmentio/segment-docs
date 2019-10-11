@@ -8,7 +8,7 @@ layout: destinations
 
 <div class="destinations-catalog">
   {% for category in destination_categories %}
-    <div class="destinations-catalog__section" id="{{ category.name }}">
+    <div class="destinations-catalog__section" id="{{ category.name | slugify }}">
       {% assign category_name_size = category.name | size %}
       {% if category_name_size != 0 %}
         {% assign category_icon = category.name | slugify %}

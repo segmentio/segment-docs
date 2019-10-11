@@ -5,6 +5,17 @@
     line-height: 1.5;
   }
 
+  &__content {
+    font-size: 14px;
+    line-height: 1.71;
+    color: color(gray);
+
+    a {
+      text-decoration: underline;
+      font-weight: 500;
+    }
+  }
+
   & > * + * {
     margin-top: 6px;
   }

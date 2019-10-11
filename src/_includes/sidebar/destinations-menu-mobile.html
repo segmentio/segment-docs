@@ -1,6 +1,6 @@
 {% assign destination_categories = site.data.catalog.destinations.destinations | group_by:"categories.primary" | sort: "name" %}
 
-<div class="destination-menu-mobile" data-dropdown-menu>
+<div class="destination-menu-mobile" data-dropdown-menu data-anchors-indicator data-active-class="destination-menu-mobile__item--active">
   <div class="destination-menu-mobile__select" data-ref="dropdown-menu[head]" data-active-class="destination-menu-mobile__select--active">
     <div class="destination-menu-mobile__select-inner">
       <span class="flex flex--middle" data-ref="dropdown-menu[head-inner]">
@@ -18,8 +18,8 @@
       {% assign category_name_size = category.name | size %}
       {% if category_name_size != 0 %}
         {% assign category_icon = category.name | slugify %}
-        <li class="destination-menu-mobile__item" >
-          <a class="destination-menu-mobile__link" href="#{{ category.name }}" title="{{ category.name }}" data-ref="dropdown-menu[link]" >
+        <li class="destination-menu-mobile__item" data-ref="dropdown-menu[item]">
+          <a class="destination-menu-mobile__link" href="#{{ category.name | slugify }}" title="{{ category.name }}" data-ref="dropdown-menu[link]" >
             <span class="destination-menu-mobile__icon">
               {% include icons/destinations-catalog/{{ category_icon }}.svg %}
             </span>
