@@ -7,38 +7,40 @@ permalink: /404.html
   <div class="stage">
     <div class="docs__aside stage__aside">
       {% include navbar/logo.html %}
-
       {% include menu/menu.html %}
     </div>
 
     <main class="docs__body stage__body">
       <div>
-        <div class="search">
-          {% include navbar/search.html placeholder="test1" %}
-        </div>
-
         {% include navbar/navbar-mobile.html %}
       </div>
 
       <div class="stage__content">
-        {{ content }}
+        <div class="page-404">
+          <div class="flex">
+            <div class="flex__column--12 flex__column--9@xlarge">
+              <h1>The page you were looking for doesn’t exist.</h1>
+              <div class="flex">
+                <div class="flex__column--10 markdown">
+                  <p>You may have mistyped the address or the page may have moved. Double-check the URL and try again or search the term.</p>
+
+                  <div class="search">
+                    {% include navbar/search.html placeholder="Enter a search term" %}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="page-404__numeric-heading__wrapper markdown flex__column--3 flex--middle">
+              <span class="page-404__numeric-heading">404</span>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
     <div class="docs__sidebar stage__sidebar">
       {% include navbar/nav.html %}
-
-      <div class="sidebar sidebar--sticky">
-        {%- unless page.hide_toc -%}
-          <div data-menu-side>
-            {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
-          </div>
-        {%- endunless -%}
-
-        {% if page.feedback != false %}
-          {% include sidebar/feedback.html %}
-        {% endif %}
-      </div>
     </div>
   </div>
 

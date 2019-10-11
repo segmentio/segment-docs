@@ -1,0 +1,19 @@
+.page-404 {
+  @include breakpoint(large up) {
+    margin-top: 55px;
+  }
+
+  &__numeric-heading {
+    color: rgba(color(gray), 0.1);
+    font-size: 195px;
+    font-weight: 900;
+  }
+
+  &__numeric-heading__wrapper {
+    display: none;
+
+    @include breakpoint(large up) {
+      display: flex;
+    }
+  }
+}
