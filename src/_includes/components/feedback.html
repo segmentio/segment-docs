@@ -21,9 +21,9 @@
         <div class="feedback-box__content">
           <h4>Was this page helpful?</h4>
 
-          <div class="flex gutter gutter--large">
+          <div class="flex gutter gutter--large" data-feedback>
             <div class="flex__column flex__column--shrink">
-              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-ref="feedback[helpful]">
+              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-ref="feedback[helpful]" data-active-class="button-fill--primary">
                 <span class="button__icon">
                   {% include icons/symbols/thumb-up.svg %}
                 </span>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="flex__column flex__column--shrink">
-              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-ref="feedback[unhelpful]">
+              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-ref="feedback[unhelpful]" data-active-class="button-fill--error-light">
                 <span class="button__icon">
                   {% include icons/symbols/thumb-down.svg %}
                 </span>

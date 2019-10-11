@@ -14,7 +14,10 @@ export default function () {
     const content = components[i].querySelector(CONTENT_SELECTOR)
 
     const clickHandler = () => {
-      content.hidden = false
+      if (content) {
+        content.hidden = false
+      }
+
       helpfulButton.disabled = true
       unhelpfulButton.disabled = true
     }

@@ -29,11 +29,20 @@
   &--primary {
     background-color: color(primary);
     color: color(white);
+
+    &:hover {
+      background-color: color(primary);
+      color: color(white);
+    }
   }
 
   &--error-light {
     background-color: rgba(color(error), 0.78);
     color: color(white);
-  }
 
+    &:hover {
+      background-color: rgba(color(error), 0.78);
+      color: color(white);
+    }
+  }
 }
