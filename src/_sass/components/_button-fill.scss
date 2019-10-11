@@ -25,4 +25,15 @@
       border: none;
     }
   }
+
+  &--primary {
+    background-color: color(primary);
+    color: color(white);
+  }
+
+  &--error-light {
+    background-color: rgba(color(error), 0.78);
+    color: color(white);
+  }
+
 }
