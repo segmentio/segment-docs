@@ -19,6 +19,10 @@
     position: relative;
     margin: 17px 0;
     cursor: pointer;
+
+    @include breakpoint(medium up)  {
+      padding-right: 40px;
+    }
   }
 
   &__body {
@@ -44,6 +48,10 @@
     top: 50%;
     right: 0;
     transform: translateY(-50%);
+
+    @include breakpoint(medium up)  {
+      right: 20px;
+    }
   }
 
   &--active {
