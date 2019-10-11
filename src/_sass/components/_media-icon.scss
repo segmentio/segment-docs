@@ -1,7 +1,6 @@
 .media-icon {
   $this: &;
 
-  height: 100%;
   border: 1px solid color(border-gray);
   background-color: color(white);
   transition: 0.3s box-shadow;
@@ -9,9 +8,8 @@
 
   &__inner {
     position: relative;
-    padding: 10px;
+    padding: 15px;
     width: 100%;
-    height: 100%;
     color: color(secondary-dark);
     display: grid;
     column-gap: 15px;
@@ -28,7 +26,8 @@
     }
   }
 
-  svg > * {
+  svg {
+    color: color(secondary);
     transition: 0.3s fill;
   }
 
@@ -39,7 +38,7 @@
       background-color: rgba(color(primary-light), 0.16);
     }
 
-    svg > * {
+    svg {
       fill: color(primary);
     }
   }
@@ -72,16 +71,19 @@
   }
 
   &__content {
-    font-size: 12px;
+    font-size: 14px;
     color: color(secondary-dark);
     margin-top: 15px;
     grid-area: content;
     line-height: 1.57;
 
+    & > * + * {
+      margin-top: 10px;
+    }
+
     @include breakpoint(large up) {
       margin-top: 0;
       grid-area: content;
-      font-size: 14px;
     }
   }
 
@@ -107,49 +109,25 @@
 
   &__excerpt {
     font-size: 14px;
-    font-weight: 500;
     line-height: 1.43;
     color: color(primary);
-    text-decoration: underline;
+    text-align: right;
+
+    svg {
+      height: 16px;
+      color: color(primary);
+    }
 
     @include breakpoint(large up) {
       display: none;
     }
   }
 
-  &--small {
-    #{$this}__inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  &__related {
+    color: color(primary);
 
-      @include breakpoint(large up) {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        grid-template-rows: repeat(3, auto);
-        grid-template-areas: "icon heading" "icon content" "content-mobile content-mobile";
-      }
-    }
-
-    #{$this}__content {
-      text-align: center;
-      line-height: 1.57;
-      margin-top: 10px;
-
-      @include breakpoint(large up) {
-        text-align: left;
-        margin-top: 0;
-      }
-    }
-
-    #{$this}__heading {
-      line-height: 1.33;
-      padding-top: 15px;
-
-      @include breakpoint(large up) {
-        text-align: left;
-        padding-top: 0;
-      }
+    @include breakpoint(large up) {
+      display: none;
     }
   }
 }
