@@ -11,6 +11,7 @@
   }
 
   &__heading {
+    padding-right: 20px;
     font-size: 15px;
     font-weight: 500;
     color: color(secondary);
@@ -18,6 +19,10 @@
     position: relative;
     margin: 17px 0;
     cursor: pointer;
+
+    @include breakpoint(medium up)  {
+      padding-right: 40px;
+    }
   }
 
   &__body {
@@ -37,12 +42,16 @@
   }
 
   &__icon {
-    width: 8px;
+    width: 10px;
     color: rgba(color(secondary-dark), 0.5);
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 0;
     transform: translateY(-50%);
+
+    @include breakpoint(medium up)  {
+      right: 20px;
+    }
   }
 
   &--active {
