@@ -12,7 +12,10 @@
             {% include icons/symbols/chevron-down.svg %}
           </div>
         </div>
-        <div class="accordion__body" data-ref="accordion[body]">{{ itemEl.content }}</div>
+        <div class="accordion__body" data-ref="accordion[body]">
+          {{ itemEl.content }}
+          <a href="{{itemEl.link}}" class="accordion__link button-link">Read more</a>
+        </div>
       </div>
       {% endfor %}
     </div>
