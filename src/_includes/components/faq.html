@@ -12,7 +12,9 @@
             {% include icons/symbols/chevron-down.svg %}
           </div>
         </div>
-        <div class="accordion__body" data-ref="accordion[body]">{{ itemEl.content }}</div>
+        <div class="accordion__body" data-ref="accordion[body]">
+          {{ itemEl.content | markdownify }}
+        </div>
       </div>
       {% endfor %}
     </div>
