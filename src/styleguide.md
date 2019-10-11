@@ -3,6 +3,22 @@ title: Styleguide
 description: The styleguide of front-end components
 hidden: true
 layout: page
+faq:
+  Source:
+    - title : "Should I track client or server-side?"
+      content : "One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It’s worth a read!"
+    - title : "What are best practices in identifying users?"
+      content : "One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It’s worth a read!"
+  Cloud Sources:
+    - title : "What are cloud sources?"
+      content : "One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It’s worth a read!"
+    - title : "How do cloud sources work?"
+      content : "One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It’s worth a read!"
+contributors:
+  - name: Paul Mccall
+    position: Lead Developer
+    image_path: paul-mccall.png
+    date: 23.08.2019
 ---
 
 ---
@@ -79,6 +95,12 @@ analytics.identify('025pikachu025', {
 
 ---
 
+## Avatar
+
+{% include components/avatar.html %}
+
+---
+
 ## Media Icons
 
 {% include components/media-icon.html variant="small" href="#" icon="icon-academy.svg" title="Title" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus. Suscipit nesciunt labore nulla numquam excepturi?" excerpt="Read more" %}
@@ -113,3 +135,9 @@ analytics.identify('025pikachu025', {
 ## Callout
 
 {% include components/callout.html title="Get started with Segment" content="Segment is the easiest way to integrate your websites & mobile apps data to 250+ analytics and growth tools." %}
+
+---
+
+## FAQ
+
+{% include components/faq.html items=page.faq %}
