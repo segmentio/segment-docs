@@ -25,20 +25,20 @@ layout: main
 
       <h2>FAQ</h2>
 
-      {% include components/faq.html %}
+      {% include components/faq.html items=page.faq %}
     {% endif %}
 
 
     {% if page.contributors %}
-      {% include components/avatar.html %}
+      {% include components/avatar.html contributors=page.contributors %}
     {% endif %}
 
     {% if page.related %}
       <hr>
-      
+
       <h2>Further reading</h2>
 
-      {% include components/related.html %}
+      {% include components/related.html items=page.related %}
     {% endif %}
 
     <hr>

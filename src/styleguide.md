@@ -97,12 +97,6 @@ analytics.identify('025pikachu025', {
 
 ---
 
-## Avatar
-
-{% include components/avatar.html %}
-
----
-
 ## Media Icons
 
 {% include components/media-icon.html href="#" icon="media/icon-academy.svg" title="Title" content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ratione ipsum fugiat nostrum velit iure, molestiae accusamus tempora quos laborum, ex modi illum delectus. Suscipit nesciunt labore nulla numquam excepturi?" %}
@@ -130,15 +124,3 @@ analytics.identify('025pikachu025', {
 {% include components/alert.html type="success" content="This is my sample note." %}
 {% include components/alert.html type="warning" content="This is my sample note." %}
 {% include components/alert.html type="error" content="This is my sample note." %}
-
----
-
-## Callout
-
-{% include components/callout.html title="Get started with Segment" content="Segment is the easiest way to integrate your websites & mobile apps data to 250+ analytics and growth tools." %}
-
----
-
-## FAQ
-
-{% include components/faq.html items=page.faq %}
