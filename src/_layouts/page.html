@@ -5,7 +5,7 @@ layout: main
 <article class="page">
   {% include components/breadcrumbs.html %}
 
-  <div class="page__body">
+  <div class="page__body" data-headings-anchors>
     {%- if page.title -%}
       <h1 id="{{ page.title | downcase }}" class="page__heading">
         {{ page.title }} {% unless page.landing %}{{ page.integration_type | capitalize }}{% endunless %}
@@ -16,18 +16,15 @@ layout: main
       {% include content/beta.md %}
     {%- endif -%}
 
-    <div class="markdown" data-headings-anchors>
+    <div class="markdown">
       {{ content }}
     </div>
 
     {% if page.faq %}
       <hr>
 
-      <h2>FAQ</h2>
-
       {% include components/faq.html items=page.faq %}
     {% endif %}
-
 
     {% if page.contributors %}
       {% include components/avatar.html contributors=page.contributors %}
@@ -35,8 +32,6 @@ layout: main
 
     {% if page.related %}
       <hr>
-
-      <h2>Further reading</h2>
 
       {% include components/related.html items=page.related %}
     {% endif %}
