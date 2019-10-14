@@ -18,12 +18,15 @@ faq:
     - title: "Should I track client or server-side?"
       content: |
         One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
+      link: /sources/catalog
     - title: "What are best practices in identifying users?"
       content: |
         One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
+      link: /sources/catalog
     - title: "What events should I track?"
       content: |
         One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
+      link: /sources/catalog
     - title: "How do I join user profiles?"
       content: |
         One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
@@ -34,12 +37,15 @@ faq:
     - title: "What are cloud sources?"
       content: |
         One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
+      link: /sources/catalog
     - title: "How do cloud sources work?"
       content: |
         One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
+      link: /sources/catalog
     - title: "What can I do with cloud app source data?"
       content: |
         One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
+      link: /sources/catalog
     - title: "What are some common cloud source errors and how do I debug them?"
       content: |
         One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
