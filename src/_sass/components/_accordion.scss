@@ -32,13 +32,13 @@
     @include breakpoint(medium up)  {
       padding-right: 45px;
     }
+  }
 
-    a {
-      text-decoration: underline;
-      font-weight: 500;
-      display: block;
-      margin-top: 7px;
-    }
+  &__link {
+    text-decoration: underline;
+    font-weight: 500;
+    display: block;
+    margin-top: 7px;
   }
 
   &__icon {
