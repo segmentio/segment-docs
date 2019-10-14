@@ -26,8 +26,12 @@
   }
 
   &__text {
-    & > * {
+    & > p:first-of-type {
       display: inline;
+    }
+
+    & > * + * {
+      margin-top: 25px;
     }
   }
 
