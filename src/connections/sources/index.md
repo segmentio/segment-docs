@@ -199,19 +199,3 @@ We’d love to know what other sources of data you’d like to analyze. Please [
 ## Visual Tagger (Beta)
 
 [Getting started with Segment Visual Tagger](/docs/sources/visual-tagger)
-
----
-
-## FAQ
-
-{% include components/faq.html items=page.faq %}
-
-<br>
-
-{% include components/avatar.html %}
-
----
-
-## Further reading
-
-{% include components/related.html %}
