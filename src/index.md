@@ -15,6 +15,7 @@ redirect_from:
 - '/troubleshooting/data'
 ---
 
+# H1
 Welcome to the Segment!
 Get familiar with our products, features, and integrations!
 
