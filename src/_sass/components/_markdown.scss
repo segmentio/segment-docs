@@ -29,13 +29,13 @@
     }
   }
 
-  & > h1:not(:first-child) {
+  & > h1 {
     @include breakpoint(medium up) {
       margin-top: 32px;
     }
   }
 
-  & > h2:not(:first-child) {
+  & > h2 {
     margin-top: 32px;
 
     @include breakpoint(medium up) {
@@ -43,7 +43,7 @@
     }
   }
 
-  & > h3:not(:first-child) {
+  & > h3 {
     margin-top: 24px;
 
     @include breakpoint(medium up) {
@@ -51,7 +51,7 @@
     }
   }
 
-  & > h4:not(:first-child) {
+  & > h4 {
     margin-top: 16px;
 
     @include breakpoint(medium up) {
@@ -59,7 +59,7 @@
     }
   }
 
-  & > h5:not(:first-child) {
+  & > h5 {
     margin-top: 16px;
 
     @include breakpoint(medium up) {
@@ -67,7 +67,7 @@
     }
   }
 
-  & > h6:not(:first-child) {
+  & > h6 {
     margin-top: 8px;
 
     @include breakpoint(medium up) {
@@ -237,5 +237,9 @@
 
   & > table {
     margin-top: 24px;
+  }
+
+  & > *:first-child {
+    margin-top: 0;
   }
 }
