@@ -1,4 +1,4 @@
-{% assign contributor = page.contributors | first %}
+{% assign contributor = include.contributors | first %}
 {% assign day = contributor.date | date: "%-d"  %}
 
 {% if contributor %}

@@ -1,7 +1,9 @@
 <div class="media-icon">
   <a class="media-icon__inner" href="{{ site.baseurl }}{{ include.href }}">
     <span class="media-icon__icon">
-      {% include icons/{{ include.icon }} %}
+      {% if include.icon %}
+        {% include icons/{{ include.icon }} %}
+      {% endif %}
     </span>
 
     <h5 class="media-icon__heading">{{ include.title }}</h5>
