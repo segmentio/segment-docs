@@ -8,6 +8,7 @@ import menuMobile from './menu-mobile'
 import headingsAnchors from './headings-anchors'
 import dropdownMenu from './dropdown-menu'
 import anchorsIndicator from './anchors-indicator'
+import codeExample from './code-example'
 
 feedback()
 accordion()
@@ -17,3 +18,4 @@ menuMobile()
 headingsAnchors()
 dropdownMenu()
 anchorsIndicator()
+codeExample()

@@ -97,6 +97,26 @@ analytics.identify('025pikachu025', {
 });
 ```
 
+{% codeexample %}
+{% codeexampletab JavaScript %}
+```js
+console.log('example');
+```
+{% endcodeexampletab %}
+
+{% codeexampletab HTML %}
+```html
+<div id="example"></div>
+```
+{% endcodeexampletab %}
+
+{% codeexampletab CSS %}
+```css
+#example { color: red; }
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
 ---
 
 ## Media Icons
