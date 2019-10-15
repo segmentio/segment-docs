@@ -120,7 +120,7 @@ $font-color: map-get($color-values, secondary-dark) !default;
 /// Default font family.
 ///
 /// @type {Value|Values}
-$font-family-primary: "SGMT Post Grotesk", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$font-family-primary: "Graphik Web", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
 
 /// Monospace font family.
 ///
@@ -135,7 +135,7 @@ $heading-font-weight: 500 !default;
 /// Font family of headings.
 ///
 /// @type {Keyword|Values}
-$heading-font-family: 'SGMT Post Grotesk' !default;
+$heading-font-family: $font-family-primary !default;
 
 /// Color of headings.
 ///
