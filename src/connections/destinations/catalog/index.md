@@ -8,12 +8,12 @@ layout: destinations
 
 <div class="destinations-catalog">
   {% for category in destination_categories %}
-    <div class="destinations-catalog__section" id="{{ category.name | slugify }}">
+    <div class="destinations-catalog__section markdown" id="{{ category.name | slugify }}">
       {% assign category_name_size = category.name | size %}
       {% if category_name_size != 0 %}
         {% assign category_icon = category.name | slugify %}
 
-        <h2 class="destinations-catalog__title">
+        <h2 class="destinations-catalog__title" id="{{ category.name | slugify }}">
           {% include icons/destinations-catalog/{{ category_icon }}.svg %}
 
           {{ category.name }}
