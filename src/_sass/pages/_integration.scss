@@ -1,0 +1,26 @@
+.integration {
+  display: block;
+
+  & > * + * {
+    margin-top: 33px;
+  }
+
+  &__body {
+    margin-top: 70px;
+
+    & > h2 {
+      margin-top: 70px;
+      position: relative;
+
+      &::after {
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        top: -35px;
+        left: 0;
+        background-color: rgba(color(secondary), 0.16);
+        content: "";
+      }
+    }
+  }
+}
