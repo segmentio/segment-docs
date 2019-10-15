@@ -36,12 +36,12 @@
     }
   }
 
-  &--error-light {
-    background-color: rgba(color(error), 0.78);
+  &--gray {
+    background-color: color(gray);
     color: color(white);
 
     &:hover {
-      background-color: rgba(color(error), 0.78);
+      background-color: color(gray);
       color: color(white);
     }
   }
