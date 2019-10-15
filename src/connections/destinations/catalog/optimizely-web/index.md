@@ -1,5 +1,7 @@
 ---
 title: Optimizely Web
+mark: https://cdn.filepicker.io/api/file/8nygQ8DuSbWK01VIjZE5
+excerpt: Segment makes it easy to send your data to [Optimizely Web](#) (and lots of other destinations). Once you've tracked your data through our open source [libraries](#) we'll translate and route your data to Optimizely Web in the format they understand. [Learn more](#) about how to use Optimizely Web with Segment.
 ---
 ## Getting Started
 
@@ -37,18 +39,18 @@ Segment provides specific implementation details for each Optimizely product in 
 
 ### Getting Started
 
-1. In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*).
-2. Go to your project’s home page in your Optimizely dashboard, then navigate to Settings -> Implementation and select the snippet version you’d like to include on your Web page.
-3. In your Optimizely dashboard, select "Use Both Optimizely X and Optimizely Classic" under "Snippet Configuration."
-4. In your Optimizely dashboard, copy the snippet provided at the bottom of the page. The snippet looks something like this:
+{% include components/list-steps.html number="1" content='In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*)' %}
+{% include components/list-steps.html number="2" content="Go to your project’s home page in your Optimizely dashboard, then navigate to Settings -> Implementation and select the snippet version you’d like to include on your Web page." %}
+{% include components/list-steps.html number="3" content='In your Optimizely dashboard, select "Use Both Optimizely X and Optimizely Classic" under "Snippet Configuration."' %}
+{% include components/list-steps.html number="4" content="In your Optimizely dashboard, copy the snippet provided at the bottom of the page. The snippet looks something like this:" %}
 
-  ```javascript
+  ```html
   <script src="//cdn.optimizely.com/js/#########.js"></script>
   ```
 
-5. Include the snippet immediately after the opening `<head>` tag on every page where you’d like to include Optimizely’s JavaScript.
-6. Now, paste your Segment snippet below the Optimizely snippet on every page where you’d like to include Segment’s JavaScript.
-7. Finally, remember to define any `metrics` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`.
+{% include components/list-steps.html number="5" content="Include the snippet immediately after the opening `<head>` tag on every page where you’d like to include Optimizely’s JavaScript." %}
+{% include components/list-steps.html number="6" content="Now, paste your Segment snippet below the Optimizely snippet on every page where you’d like to include Segment’s JavaScript." %}
+{% include components/list-steps.html number="7" content="Finally, remember to define any `metrics` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`." %}
 
 ### Track
 
@@ -161,24 +163,26 @@ If you run multiple experiments during a user session, since `traits` are cached
 
 ## Optimizely Classic Android
 
-**NOTE: Optimizely Mobile Classic has been officially deprecated as of September 30, 2018. You won't be able to start new experiments in Classic.**
+{% capture noteAndroid %}
+  Optimizely Mobile Classic has been officially deprecated as of September 30, 2018. You won't be able to start new experiments in Classic.
+{% endcapture %}
+{% include components/note.html content=noteAndroid %}
 
 For Segment’s Optimizely Full Stack Android destination, see Segment's [Optimizely Full Stack](./../optimizely-full-stack/index.md) documentation.
 
 ### Getting Started
-1. In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*).
-2. Go to your project’s home page in your Optimizely dashboard and retrieve your `projectId` - you’ll need this to instantiate Optimizely.
-3. Include the desired version of the Optimizely Classic Android SDK as a dependency in your Android app.
-4. Instantiate Optimizely - you’ll use this instance to invoke methods from Optimizely’s decision API such as `activate` and `isFeatureEnabled`.
-5. Instantiate Segment’s global Analytics object with an Optimizely factory registered:
+{% include components/list-steps.html number="1" content='In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*).' %}
+{% include components/list-steps.html number="2" content="Go to your project’s home page in your Optimizely dashboard and retrieve your `projectId` - you’ll need this to instantiate Optimizely." %}
+{% include components/list-steps.html number="3" content="Include the desired version of the Optimizely Classic Android SDK as a dependency in your Android app." %}
+{% include components/list-steps.html number="4" content="Instantiate Optimizely - you’ll use this instance to invoke methods from Optimizely’s decision API such as `activate` and `isFeatureEnabled`." %}
+{% include components/list-steps.html number="5" content="Instantiate Segment’s global Analytics object with an Optimizely factory registered:" %}
 
   ```java
   analytics.use(OptimizelyIntegration.createFactory(context, /* your Optimizely projectId */));
   ```
 
-  Since Optimizely needs to be initialized as early as possible, you need to supply your Optimizely `projectId` when you initialize the factory registered with the analytics client. Once registered, Segment maps `track` and `identify` events to Optimizely methods.
-
-7. Finally, remember to define any `metrics` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`.
+{% include components/list-steps.html number="6" content="Since Optimizely needs to be initialized as early as possible, you need to supply your Optimizely `projectId` when you initialize the factory registered with the analytics client. Once registered, Segment maps `track` and `identify` events to Optimizely methods." %}
+{% include components/list-steps.html number="7" content="Finally, remember to define any `metrics` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`." %}
 
 ### Track
 
@@ -208,16 +212,19 @@ Upon an Optimizely experiment activation, Segment’s Optimizely Classic<>Androi
 
 ## Optimizely Classic iOS
 
-**NOTE: Optimizely Mobile Classic has been officially deprecated as of September 30, 2018. You won't be able to start new experiments in Classic.**
+{% capture noteIOS %}
+  Optimizely Mobile Classic has been officially deprecated as of September 30, 2018. You won't be able to start new experiments in Classic.
+{% endcapture %}
+{% include components/note.html content=noteIOS %}
 
 For Segment’s Optimizely Full Stack iOS destination, see Segment's [Optimizely Full Stack documentation](./../optimizelyx/index.md).
 
 ### Getting Started
-1. In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*).
-2. Go to your project’s home page in your Optimizely dashboard and retrieve your `projectId` - you’ll need this to instantiate Optimizely.
-3. Include the desired version of the Optimizely 1.x iOS SDK as a dependency in your iOS app.
-4. Instantiate Optimizely - you’ll use this instance to invoke methods from Optimizely’s decision API such as `activate` and `isFeatureEnabled`.
-5. Instantiate Segment’s global Analytics object with an Optimizely factory registered:
+{% include components/list-steps.html number="1" content='In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*).' %}
+{% include components/list-steps.html number="2" content="Go to your project’s home page in your Optimizely dashboard and retrieve your `projectId` - you’ll need this to instantiate Optimizely." %}
+{% include components/list-steps.html number="3" content="Include the desired version of the Optimizely 1.x iOS SDK as a dependency in your iOS app." %}
+{% include components/list-steps.html number="4" content="Instantiate Optimizely - you’ll use this instance to invoke methods from Optimizely’s decision API such as `activate` and `isFeatureEnabled`." %}
+{% include components/list-steps.html number="5" content="Instantiate Segment’s global Analytics object with an Optimizely factory registered:" %}
 
   ```objc
   [config use:[SEGOptimizelyIntegrationFactory instanceWithToken: /* your Optimizely project id /* launchOptions:launchOptions]];
@@ -225,7 +232,8 @@ For Segment’s Optimizely Full Stack iOS destination, see Segment's [Optimizely
 
 Since Optimizely needs to be initialized as early as possible, you need to supply the Optimizely `projectId` when you initialize the factory registered with the analytics client. Once registered, Segment maps `track` and `identify` to Optimizely.
 
-6. Finally, remember to define any `metrics` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`.
+{% include components/list-steps.html number="6" content="Finally, remember to define any `metrics` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`." %}
+
 
 ### Track
 
@@ -259,13 +267,13 @@ Upon an Optimizely experiment activation, Segment’s Optimizely Classic<>iOS SD
 
 ### Getting Started
 
-1. In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*).
-2. Go to your project’s home page in your Optimizely dashboard, then navigate to Settings -> Implementation and select the snippet version you’d like to include on your Web page.
-3. In your Optimizely dashboard, select "Use only Optimizely X" under "Snippet Configuration."
-4. In your Optimizely dashboard, copy the snippet provided at the bottom of the page.
-5. Include the snippet immediately after the opening `<head>` tag on every page where you’d like to include Optimizely’s JavaScript.
-6. Now, paste your Segment snippet below the Optimizely snippet on every page where you’d like to include Segment’s JavaScript.
-7. Finally, remember to define any `metrics` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`.
+{% include components/list-steps.html number="1" content='In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*).' %}
+{% include components/list-steps.html number="2" content="Go to your project’s home page in your Optimizely dashboard, then navigate to Settings -> Implementation and select the snippet version you’d like to include on your Web page." %}
+{% include components/list-steps.html number="3" content='In your Optimizely dashboard, select "Use only Optimizely X" under "Snippet Configuration."' %}
+{% include components/list-steps.html number="4" content="In your Optimizely dashboard, copy the snippet provided at the bottom of the page." %}
+{% include components/list-steps.html number="5" content="Include the snippet immediately after the opening `<head>` tag on every page where you’d like to include Optimizely’s JavaScript." %}
+{% include components/list-steps.html number="6" content="Now, paste your Segment snippet below the Optimizely snippet on every page where you’d like to include Segment’s JavaScript." %}
+{% include components/list-steps.html number="7" content="Finally, remember to define any `metrics` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`." %}
 
 ### Track
 
@@ -359,12 +367,12 @@ If you’re sending your experiments to Google Analytics in the form of `track` 
 
 ### Getting Started
 
-1. In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*).
-2. Require Optimizely’s `@optimizely/optimizely-sdk` on your site and create an `optimizelyClientInstance`.
-3. The instance must be named `optmizelyClientInstance`.
-4. Attach the `optimizelyClientInstance` to the `window` so Segment recognizes it.
-5. Now, paste your Segment snippet below the Optimizely implementation on every page where you’d like to include Segment’s JavaScript. Or, if you’ve implemented Optimizely in a separate file, ensure Segment loads only after Optimizely has been initialized.
-6. Finally, remember to define any `metrics` and `attributes` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`.
+{% include components/list-steps.html number="1" content='In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*).' %}
+{% include components/list-steps.html number="2" content="Require Optimizely’s `@optimizely/optimizely-sdk` on your site and create an `optimizelyClientInstance`." %}
+{% include components/list-steps.html number="3" content="The instance must be named `optmizelyClientInstance`." %}
+{% include components/list-steps.html number="4" content="Attach the `optimizelyClientInstance` to the `window` so Segment recognizes it." %}
+{% include components/list-steps.html number="5" content="Now, paste your Segment snippet below the Optimizely implementation on every page where you’d like to include Segment’s JavaScript. Or, if you’ve implemented Optimizely in a separate file, ensure Segment loads only after Optimizely has been initialized." %}
+{% include components/list-steps.html number="46" content="Finally, remember to define any `metrics` and `attributes` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`." %}
 
 ### Track
 

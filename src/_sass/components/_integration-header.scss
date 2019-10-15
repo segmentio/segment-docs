@@ -1,0 +1,19 @@
+.integration-header {
+  @include breakpoint(large up) {
+    display: flex;
+  }
+
+  &__icon {
+    float: left;
+    margin-right: 20px;
+    width: 141px;
+    height: 141px;
+    background-color: color(gray-light);
+    border-radius: 8px;
+    padding: 25px;
+  }
+
+  &__content {
+    margin-top: 5px;
+  }
+}
