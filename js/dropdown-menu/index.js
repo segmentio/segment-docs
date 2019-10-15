@@ -42,7 +42,9 @@ export default function () {
     window.addEventListener('scroll', () => {
       const currentActiveIndicator = document.querySelector(`${ANCHOR}.${itemActiveClass} a`)
 
-      updateValue(currentActiveIndicator)
+      if (currentActiveIndicator) {
+        updateValue(currentActiveIndicator)
+      }
     })
   })
 }

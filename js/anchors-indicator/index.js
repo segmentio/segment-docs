@@ -3,7 +3,8 @@ const COMPONENT_SELECTOR = '[data-anchors-indicator]'
 const ACTIVE_CLASS = 'data-active-class'
 
 const OPTIONS = {
-  enableLocationHash: false
+  enableLocationHash: false,
+  threshold: -300
 }
 
 export default function () {
