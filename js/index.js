@@ -9,6 +9,7 @@ import headingsAnchors from './headings-anchors'
 import dropdownMenu from './dropdown-menu'
 import anchorsIndicator from './anchors-indicator'
 import codeExample from './code-example'
+import popover from './popover'
 
 feedback()
 accordion()
@@ -19,3 +20,4 @@ headingsAnchors()
 dropdownMenu()
 anchorsIndicator()
 codeExample()
+popover()
