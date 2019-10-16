@@ -10,6 +10,7 @@ import dropdownMenu from './dropdown-menu'
 import anchorsIndicator from './anchors-indicator'
 import codeExample from './code-example'
 import popover from './popover'
+import searchBar404 from './search-bar-404'
 
 feedback()
 accordion()
@@ -21,3 +22,4 @@ dropdownMenu()
 anchorsIndicator()
 codeExample()
 popover()
+searchBar404()
