@@ -1,21 +1,33 @@
-<div class="sidebar">
-  {% include menu/menu-primary.html %}
+<div class="menu-panels sidebar" data-menu-panels>
+  <div class="menu-panels__root" data-ref="menu-panels[root]">
+    {% include menu/menu-primary.html %}
 
-  <nav class="menu">
-    <ul class="menu__list list list--unstyle">
-      {% for root_section in site.data.sidenav.api.sections %}
-        {% include menu/menu-item.html root_section=root_section %}
-      {% endfor %}
+    <nav class="menu">
+      <ul class="menu__list list list--unstyle">
+        {% for root_section in site.data.sidenav.api.sections %}
+          {% include menu/menu-item.html root_section=root_section %}
+        {% endfor %}
 
-      <li class="menu-item">
-        <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/help/">
-          <div class="menu-item__icon flex__column">
-            {% include icons/menu/icon-help.svg %}
-          </div>
+        <li class="menu-item">
+          <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/help/">
+            <div class="menu-item__icon flex__column">
+              {% include icons/menu/icon-help.svg %}
+            </div>
 
-          <div class="flex__column">Help</div>
-        </a>
-      </li>
-    </ul>
-  </nav>
+            <div class="flex__column">Help</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="menu-panels__panels">
+    <nav class="menu" data-ref="menu-panels[view]" data-target="{{ site.baseurl }}/connections/destinations/catalog">
+      <ul class="menu__list list list--unstyle">
+        {% assign destination_categories = site.data.catalog.destinations.destinations | group_by:"categories.primary" | sort: "name" %}
+
+        destinations
+      </ul>
+    </nav>
+  </div>
 </div>

@@ -5,6 +5,10 @@ url: "http://0.0.0.0:4000" # the base hostname & protocol for your site, e.g. ht
 source: ./src
 
 permalink: /:categories/:title/
+exclude:
+  - "*.md"
+include:
+  - "styleguide.md"
 
 # Build settings
 markdown: kramdown

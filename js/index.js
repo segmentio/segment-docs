@@ -10,12 +10,14 @@ import dropdownMenu from './dropdown-menu'
 import anchorsIndicator from './anchors-indicator'
 import codeExample from './code-example'
 import popover from './popover'
+import menuPanels from './menu-panels'
 
 feedback()
 accordion()
 accordionGroup()
 searchNavbar()
 menuMobile()
+menuPanels()
 headingsAnchors()
 dropdownMenu()
 anchorsIndicator()
