@@ -205,19 +205,19 @@ sections:
   section:
   - path: "/segment-app"
     title: Segment web app overview
-    - section_title: Access Control (IAM)
-      section:
-      - path: "/segment-app/iam/concepts"
-        title: Access Management Concepts
-      - path: "/segment-app/iam/membership"
-        title: Managing members
-      - path: "/segment-app/iam/mfa"
-        title: Multi-Factor Authentication (MFA)
-      - path: "/segment-app/iam/secure-password"
-        title: Picking a secure password
-      - path: "/segment-app/iam/sso"
-        title: Single Sign On
-    - path: "/segment-app/roles"
-      title: Roles
-    - path: "/segment-app/audit-trail"
-      title: Audit Trail
+  - section_title: Access Control (IAM)
+    section:
+    - path: "/segment-app/iam/concepts"
+      title: Access Management Concepts
+    - path: "/segment-app/iam/membership"
+      title: Managing members
+    - path: "/segment-app/iam/mfa"
+      title: Multi-Factor Authentication (MFA)
+    - path: "/segment-app/iam/secure-password"
+      title: Picking a secure password
+    - path: "/segment-app/iam/sso"
+      title: Single Sign On
+  - path: "/segment-app/roles"
+    title: Roles
+  - path: "/segment-app/audit-trail"
+    title: Audit Trail
