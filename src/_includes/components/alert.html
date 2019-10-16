@@ -1,7 +1,9 @@
 <div class="alert alert--{{ include.type }}" role="alert">
   <div class="flex gutter gutter--large">
     <div class="flex__column flex__column--shrink">
-      {% include icons/alerts/{{ include.type }}.svg %}
+      <div class="alert__icon">
+        {% include icons/alerts/{{ include.type }}.svg %}
+      </div>
     </div>
 
     <div class="flex__column">
