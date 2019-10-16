@@ -22,6 +22,18 @@ contributors:
     position: Lead Developer
     image_path: paul-mccall.png
     date: 23.08.2019
+  - name: Jane Doe
+    position: Lead Developer
+    image_path: jane-doe.png
+    date: 23.08.2019
+  - name: Porter Braun
+    position: Lead Developer
+    image_path: porter-braun.png
+    date: 23.08.2019
+  - name: Monica Buck
+    position: Lead Developer
+    image_path: monica-buck.png
+    date: 23.08.2019
 ---
 
 ---
