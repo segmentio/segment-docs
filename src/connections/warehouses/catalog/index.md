@@ -8,7 +8,7 @@ hide_toc: true
     <div class="flex flex--wrap waffle waffle--large">
       {% assign warehouses = site.data.catalog.warehouses.warehouses %}
       {% for warehouse in warehouses %}
-        {% assign doc_path = warehouse.name | replace: "catalog", "connections" | replace: "warehouses", "destinations" %}
+        {% assign doc_path = warehouse.name | replace: "catalog", "connections" | replace: "warehouses", "warehouses/catalog" %}
 
         <div class="flex__column flex__column--6 flex__column--4@medium">
           <a class="thumbnail-integration" href="{{ doc_path | relative_url }}">
