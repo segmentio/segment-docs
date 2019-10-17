@@ -16,6 +16,10 @@ layout: main
       {% include content/beta.md %}
     {%- endif -%}
 
+    {%- unless page.hide_toc -%}
+      {% include sidebar/mobile-menu-side.html %}
+    {%- endunless -%}
+
     <div class="markdown">
       {{ content }}
     </div>
