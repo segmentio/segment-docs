@@ -44,6 +44,8 @@ If you’re interested in implementing Optimizely Full Stack server-side or on m
 * [Use Optimizely to A/B test which CTAs lead to more signups](https://segment.com/recipes/ab-test-cta-signups-optimizely/)
 * [Test which call to action (CTA) results in more shopping cart conversions with Optimizely](https://segment.com/recipes/ab-test-cta-conversions-optimizely/)
 
+---
+
 ## Implementation Prerequisite
 
 Optimizely works differently than other Segment destinations: It requires that customers implement at least some Optimizely functionalities natively.
@@ -53,6 +55,8 @@ Although Segment maps `track`, and in some cases `page`, events to Optimizely’
 This limitation requires that customers include a native Optimizely snippet or implementation before their Segment snippet or implementation on pages or in mobile apps where Optimizely experiments run.
 
 Segment provides specific implementation details for each Optimizely product in the sections below, in addition to details of the out-of-the-box mappings Segment's Optimizely component handles for Optimizely users.
+
+---
 
 ## Optimizely Classic Web
 
@@ -180,6 +184,8 @@ analytics.identify({
 
 If you run multiple experiments during a user session, since `traits` are cached, subsequent experiments would fire `identify` calls that contain previous experiment data.
 
+---
+
 ## Optimizely Classic Android
 
 {% capture noteAndroid %}
@@ -229,6 +235,8 @@ Upon an Optimizely experiment activation, Segment’s Optimizely Classic<>Androi
             .putValue("variationName", optimizelyExperimentData.variationName));
 ```
 
+---
+
 ## Optimizely Classic iOS
 
 {% capture noteIOS %}
@@ -246,7 +254,7 @@ For Segment’s Optimizely Full Stack iOS destination, see Segment's [Optimizely
 {% include components/list-steps.html number="5" content="Instantiate Segment’s global Analytics object with an Optimizely factory registered:" %}
 
   ```objc
-  [config use:[SEGOptimizelyIntegrationFactory instanceWithToken: /* your Optimizely project id /* launchOptions:launchOptions]];
+  [config use:[SEGOptimizelyIntegrationFactory instanceWithToken: /* your Optimizely project id */ launchOptions:launchOptions]];
   ```
 
 Since Optimizely needs to be initialized as early as possible, you need to supply the Optimizely `projectId` when you initialize the factory registered with the analytics client. Once registered, Segment maps `track` and `identify` to Optimizely.
@@ -281,6 +289,8 @@ Upon an Optimizely experiment activation, Segment’s Optimizely Classic<>iOS SD
                                                     @"variationName" : data.variationName
                                                     }];
 ```
+
+---
 
 ## Optimizely X Web
 
@@ -382,6 +392,8 @@ If you’re sending your experiments to Google Analytics in the form of `track` 
 
   ![](images/customdimensions.png)
 
+---
+
 ## Optimizely Full Stack (JavaScript)
 
 ### Getting Started
@@ -425,6 +437,8 @@ If you are sending anonymous data to Optimizely X Full Stack via their server-si
     Optimizely: { userId: 'some anonymousId' }
   });
   ```
+
+---
 
 ## Troubleshooting
 
