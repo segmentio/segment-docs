@@ -2,6 +2,23 @@
 title: Optimizely Web
 mark: https://cdn.filepicker.io/api/file/8nygQ8DuSbWK01VIjZE5
 excerpt: Segment makes it easy to send your data to [Optimizely Web](#) (and lots of other destinations). Once you've tracked your data through our open source [libraries](#) we'll translate and route your data to Optimizely Web in the format they understand. [Learn more](#) about how to use Optimizely Web with Segment.
+contributors:
+  - name: Paul Mccall
+    position: Lead Developer
+    image_path: paul-mccall.png
+    date: 23.08.2019
+  - name: Jane Doe
+    position: Lead Developer
+    image_path: jane-doe.png
+    date: 23.08.2019
+  - name: Porter Braun
+    position: Lead Developer
+    image_path: porter-braun.png
+    date: 23.08.2019
+  - name: Monica Buck
+    position: Lead Developer
+    image_path: monica-buck.png
+    date: 23.08.2019
 ---
 ## Getting Started
 
