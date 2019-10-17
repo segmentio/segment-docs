@@ -36,6 +36,7 @@ layout: default
                   {{ page.title }}
                 </h1>
               {%- endif -%}
+
               {%- if page.excerpt -%}
                 <div class="integration-header__content">
                   {{ page.excerpt | markdownify }}
@@ -43,6 +44,12 @@ layout: default
               {%- endif -%}
             </div>
           </div>
+          
+          <hr>
+
+          {%- unless page.hide_toc -%}
+            {% include sidebar/mobile-menu-side.html %}
+          {%- endunless -%}
 
           <div class="integration__body markdown">
             {{ content }}
