@@ -1,5 +1,5 @@
-<div class="menu-panels sidebar" data-menu-panels>
-  <div class="menu-panels__root" data-ref="menu-panels[root]">
+<div class="menu-panels" data-menu-panels data-class-active="menu-panels--active">
+  <div class="menu-panels__root sidebar" data-ref="menu-panels[root]">
     {% include menu/menu-primary.html %}
 
     <nav class="menu">
@@ -21,8 +21,8 @@
     </nav>
   </div>
 
-  <div class="menu-panels__panels">
-    <nav class="menu" data-ref="menu-panels[view]" data-target="{{ site.baseurl }}/connections/destinations/catalog">
+  <div class="menu-panels__track">
+    <nav class="menu-panels__view menu" data-ref="menu-panels[view]" data-target="{{ site.baseurl }}/connections/destinations/catalog" data-class-active="menu-panels__view--active">
       <ul class="menu__list list list--unstyle">
         {% assign destination_categories = site.data.catalog.destinations.destinations | group_by:"categories.primary" | sort: "name" %}
 
