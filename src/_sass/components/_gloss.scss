@@ -1,0 +1,10 @@
+.markdown ul li.gloss {
+  font-size: 14px;
+  color: color(gray);
+  line-height: 1.29;
+  margin-bottom: 5px;
+
+  &::before {
+    display: none;
+  }
+}

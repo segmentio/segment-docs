@@ -8,8 +8,10 @@ excerpt: Segment makes it easy to send your data to [Optimizely Web](#) (and lot
 Segment’s **Optimizely Web (previously Optimizely)** destination supports the following Optimizely products:
 
 * [Optimizely Classic](#optimizely-classic-web)
-* [Optimizely Classic Android 1.x](#optimizely-classic-android) (NOTE: This has been deprecated by Optimizely as of September 30, 2018.)
-* [Optimizely Classic iOS 1.x](#optimizely-classic-ios) (NOTE: This has been deprecated by Optimizely as of September 30, 2018.)
+* [Optimizely Classic Android 1.x](#optimizely-classic-android)
+* {:.gloss} (NOTE: This has been deprecated by Optimizely as of September 30, 2018.)
+* [Optimizely Classic iOS 1.x](#optimizely-classic-ios)
+* {:.gloss} (NOTE: This has been deprecated by Optimizely as of September 30, 2018.)
 * [Optimizely X Web](#optimizely-x-web)
 * [Optimizely Full Stack (JavaScript)](#optimizely-full-stack-javascript)
 
