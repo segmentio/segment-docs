@@ -43,6 +43,7 @@
   &__content {
     padding-left: 20px;
     padding-right: 20px;
+    position: relative;
 
     @include breakpoint(large up)  {
       padding-left: 0;
