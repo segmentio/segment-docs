@@ -5,9 +5,11 @@
 
   <input class="field__input input DocsNav-search-input" type="text" placeholder="{{ include.placeholder }}"/>
 
-  <div class="field__icon field__icon--right flex flex--middle flex--center">
-    <button class="field__button" data-ref="search-navbar[trigger]">
-      {% include icons/symbols/close.svg %}
-    </button>
-  </div>
+  {% unless include.mobile %}
+    <div class="field__icon field__icon--right flex flex--middle flex--center">
+      <button class="field__button" data-ref="search-navbar[trigger]">
+        {% include icons/symbols/close.svg %}
+      </button>
+    </div>
+  {% endunless %}
 </div>
