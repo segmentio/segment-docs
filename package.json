@@ -18,7 +18,5 @@
     "webpack-cli": "3.3.9"
   },
   "dependencies": {
-    "intersection-observer": "0.7.0",
-    "menuspy": "1.3.0"
   }
 }

@@ -6,6 +6,16 @@ const options = {
   rootMargin: 50
 }
 
+function throttle(fn, wait) {
+  var time = Date.now();
+  return function() {
+    if ((time + wait - Date.now()) < 0) {
+      fn();
+      time = Date.now();
+    }
+  }
+}
+
 export default () => {
   const components = document.querySelectorAll(COMPONENT_SELECTOR)
 
@@ -34,6 +44,6 @@ export default () => {
         }
       });
     }
-    window.addEventListener("scroll", scrollspy);
+    window.addEventListener("scroll", throttle(scrollspy, 200))
   })
 }
