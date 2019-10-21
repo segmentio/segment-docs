@@ -4,7 +4,6 @@ const DROPDOWN_HEAD_INNER = '[data-ref="dropdown-menu[head-inner]"]'
 const DROPDOWN_BODY = '[data-ref="dropdown-menu[body]"]'
 const DROPDOWN_LINK = '[data-ref="dropdown-menu[link]"]'
 const ACTIVE_CLASS_ATTR = 'data-active-class'
-const ANCHOR = '[data-ref="dropdown-menu[item]"]'
 
 export default function () {
   const components = document.querySelectorAll(COMPONENT_SELECTOR)
@@ -40,7 +39,7 @@ export default function () {
     })
 
     window.addEventListener('scroll', () => {
-      const currentActiveIndicator = document.querySelector(`${ANCHOR}.${itemActiveClass} a`)
+      const currentActiveIndicator = document.querySelector(`${DROPDOWN_LINK}.${itemActiveClass}`)
 
       if (currentActiveIndicator) {
         updateValue(currentActiveIndicator)
