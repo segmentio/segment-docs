@@ -6,70 +6,76 @@ icon: symbols/connections.svg
 excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
 ---
 
-<div class="l-chiclet-collection">
-  {% assign app_sources = site.data.catalog.sources.sources %}
-  {% assign cloud_sources = site.data.catalog.cloud_sources.sources %}
-  {% assign sources = app_sources | concat: cloud_sources | uniq: 'display_name' | sort: 'display_name' %}
+<div class="destinations-catalog">
 
-  {% for source in sources %}
-    {% assign doc_path = source.name | replace: "catalog", "connections/sources" %}
-    {% if source.categories contains 'website'%}
-<!-- Show AJs first -->
-    <a  class="chiclet-item centered" href="{{doc_path | relative_url}}">
-      {% if source.logos.mark != '' %}
-        {% assign class = "logo mark" %}
-      {% else %}
-        {% assign class = "logo full" %}
+  {% assign items = site.data.catalog.sources.sources %}
+  {% assign categories_array = "" | split: ',' %}
+
+  {% for item in items %}
+    {% assign main_category = item.categories[0] %}
+    {% unless categories_array contains main_category %}
+      {% if main_category and main_category != "" %}
+        {% assign categories_array = categories_array | push: main_category %}
       {% endif %}
-
-      <div class="{{class}}">
-        {% if source.logos.mark != '' %}
-          <img alt="{{source.display_name}}" src="{{source.logos.mark}}" />
-        {% else %}
-          <img alt="{{source.display_name}}" src="{{source.logos.logo}}" />
-        {% endif %}
-        </div>
-      <div class="content">
-        <p class="title">{{ source.display_name }}</p>
-      </div>
-    </a>
-    {% elsif source.categories contains 'server'%}
-    <a  class="chiclet-item centered" href="{{doc_path | relative_url}}">
-      {% if source.logos.mark != '' %}
-        {% assign class = "logo mark" %}
-      {% else %}
-        {% assign class = "logo full" %}
-      {% endif %}
-
-      <div class="{{class}}">
-        {% if source.logos.mark != '' %}
-          <img alt="{{source.display_name}}" src="{{source.logos.mark}}" />
-        {% else %}
-          <img alt="{{source.display_name}}" src="{{source.logos.logo}}" />
-        {% endif %}
-        </div>
-      <div class="content">
-        <p class="title">{{ source.display_name }}</p>
-      </div>
-    </a>
-    {% else %}
-    <a  class="chiclet-item centered" href="{{doc_path | relative_url}}">
-      {% if source.logos.mark != '' %}
-        {% assign class = "logo mark" %}
-      {% else %}
-        {% assign class = "logo full" %}
-      {% endif %}
-
-      <div class="{{class}}">
-        {% if source.logos.mark != '' %}
-          <img alt="{{source.display_name}}" src="{{source.logos.mark}}" />
-        {% else %}
-          <img alt="{{source.display_name}}" src="{{source.logos.logo}}" />
-        {% endif %}
-        </div>
-      <div class="content">
-        <p class="title">{{ source.display_name }}</p>
-      </div>
-    </a>
-    {% endif %}
+    {% endunless %}
   {% endfor %}
+  {% for item in items %}
+    {% assign main_category = item.categories[0] %}
+    {% unless categories_array contains main_category %}
+      {% unless main_category and main_category != "" %}
+        {% assign categories_array = categories_array | push: 'Uncategorized' %}
+      {% endunless %}
+    {% endunless %}
+  {% endfor %}
+
+  {% for category in categories_array %}
+    <div class="destinations-catalog__section" id="{{ category.name | slugify }}">
+      <h2 class="destinations-catalog__title">
+        {{ category }}
+      </h2>
+      <div class="flex flex--wrap waffle waffle--large">
+        {% for item in items %}
+          {% if item.categories[0] and item.categories[0] != "" %}
+            {% if item.categories[0] == category %}
+              <div class="flex__column flex__column--6 flex__column--4@medium">
+                <a class="thumbnail-integration" href="{{ doc_path | relative_url }}">
+                  <div class="thumbnail-integration__content flex flex--stack flex--center flex--middle">
+                    <div class="thumbnail-integration__logo">
+                      {% if item.logos.mark != '' %}
+                        <img class="image" alt="{{item.display_name}}" src="{{item.logos.mark}}" />
+                      {% else %}
+                        <img class="image" alt="{{item.display_name}}" src="{{item.logos.logo}}" />
+                      {% endif %}
+                    </div>
+                    <h5>{{ item.display_name }}</h5>
+                  </div>
+                  {% if item.status == 'PUBLIC_BETA' %}
+                    <p class="thumbnail-integration__label">Beta</p>
+                  {% endif %}
+                </a>
+              </div>
+            {% endif %}
+          {% else %}
+            <div class="flex__column flex__column--6 flex__column--4@medium">
+              <a class="thumbnail-integration" href="{{ doc_path | relative_url }}">
+                <div class="thumbnail-integration__content flex flex--stack flex--center flex--middle">
+                  <div class="thumbnail-integration__logo">
+                    {% if item.logos.mark != '' %}
+                      <img class="image" alt="{{item.display_name}}" src="{{item.logos.mark}}" />
+                    {% else %}
+                      <img class="image" alt="{{item.display_name}}" src="{{item.logos.logo}}" />
+                    {% endif %}
+                  </div>
+                  <h5>{{ item.display_name }}</h5>
+                </div>
+                {% if item.status == 'PUBLIC_BETA' %}
+                  <p class="thumbnail-integration__label">Beta</p>
+                {% endif %}
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
