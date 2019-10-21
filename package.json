@@ -18,6 +18,5 @@
     "webpack-cli": "3.3.9"
   },
   "dependencies": {
-    "menuspy": "1.3.0"
   }
 }

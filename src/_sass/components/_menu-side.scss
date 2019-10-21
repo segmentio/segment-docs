@@ -8,15 +8,6 @@
     margin-top: 12px;
   }
 
-  &__item {
-    &--active {
-      #{$this}__link {
-        font-weight: 500;
-        color: color(secondary-dark);
-      }
-    }
-  }
-
   &__link {
     display: block;
     font-size: 14px;
@@ -26,6 +17,11 @@
     &:hover {
       text-decoration: none;
       color: color(gray-dark);
+    }
+
+    &--active {
+      font-weight: 500;
+      color: color(secondary-dark);
     }
   }
 
