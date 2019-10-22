@@ -1,0 +1,25 @@
+.back-scrolling {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #e4ebee;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: 200ms ease;
+
+  &:hover {
+    background-color: #bdcbd2;
+  }
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
