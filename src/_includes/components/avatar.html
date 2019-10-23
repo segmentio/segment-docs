@@ -1,5 +1,4 @@
 {% assign contributor = include.contributors | first %}
-{% assign day = contributor.date | date: "%-d"  %}
 
 {% if contributor %}
   <div class="popover" data-popover data-active-class="popover--active">
@@ -13,13 +12,7 @@
           <div class="avatar__content">
             <div>
               <p class="avatar__title">Updated on
-                {% case day %}
-                  {% when '1' or '21' or '31' %}{{ day }}st
-                  {% when '2' or '22' %}{{ day }}nd
-                  {% when '3' or '23' %}{{ day }}rd
-                  {% else %}{{ day }}th
-                {% endcase %}
-
+                {{ contributor.date | ordinal }}
                 {{ contributor.date | date: "%B" }},
                 {{ contributor.date | date: "%Y" }}
               </p>
@@ -42,13 +35,7 @@
 
                       <div class="flex__column">
                         <p class="avatar__title">Updated on
-                          {% case day %}
-                            {% when '1' or '21' or '31' %}{{ day }}st
-                            {% when '2' or '22' %}{{ day }}nd
-                            {% when '3' or '23' %}{{ day }}rd
-                            {% else %}{{ day }}th
-                          {% endcase %}
-
+                          {{ other_contributor.date | ordinal }}
                           {{ other_contributor.date | date: "%B" }},
                           {{ other_contributor.date | date: "%Y" }}
                         </p>
