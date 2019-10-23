@@ -188,14 +188,6 @@ sections:
   logos:
     logo: 'https://d3hotuclm6if1r.cloudfront.net/logos/http-default.svg'
     mark: ''
-- name: catalog/sources/ios
-  display_name: iOS
-  description: ''
-  categories:
-  - Mobile
-  logos:
-    logo: 'https://cdn.filepicker.io/api/file/qWgSP5cpS7eeW2voq13u'
-    mark: ''
 - name: catalog/sources/iterable
   display_name: Iterable
   description: ''
@@ -319,6 +311,14 @@ sections:
   logos:
     logo: 'https://d3hotuclm6if1r.cloudfront.net/logos/nudgespot-default.svg'
     mark: 'https://cdn.filepicker.io/api/file/Z49DVScMTzi7DIFD2WCZ'
+- name: catalog/sources/php
+  display_name: PHP
+  description: ''
+  categories:
+  - Server
+  logos:
+    logo: 'https://cdn.filepicker.io/api/file/cbA43LX9SXi2USnZZjig'
+    mark: ''
 - name: catalog/sources/pendo
   display_name: Pendo
   description: >-
@@ -330,14 +330,6 @@ sections:
   logos:
     logo: 'https://cdn.filepicker.io/api/file/v2UrjfzpQaKkIC85He25'
     mark: 'https://cdn.filepicker.io/api/file/T93xOnE9TqQ0ag8qbU7E'
-- name: catalog/sources/php
-  display_name: PHP
-  description: ''
-  categories:
-  - Server
-  logos:
-    logo: 'https://cdn.filepicker.io/api/file/cbA43LX9SXi2USnZZjig'
-    mark: ''
 - name: catalog/sources/pixel-tracking-api
   display_name: Pixel Tracking API
   description: ''
@@ -453,3 +445,11 @@ sections:
   logos:
     logo: 'https://cdn.filepicker.io/api/file/bzmEOg5CRO2RWAVFeHb5'
     mark: 'https://cdn.filepicker.io/api/file/lIl1q5XSRriNiYAodvnC'
+- name: catalog/sources/ios
+  display_name: iOS
+  description: ''
+  categories:
+  - Mobile
+  logos:
+    logo: 'https://cdn.filepicker.io/api/file/qWgSP5cpS7eeW2voq13u'
+    mark: ''

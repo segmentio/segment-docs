@@ -207,15 +207,6 @@ items:
   mark: ''
   categories:
   - Server
-- display_name: iOS
-  slug: ios
-  name: catalog/sources/ios
-  description: ''
-  url: connections/sources/catalog/ios
-  logo: 'https://cdn.filepicker.io/api/file/qWgSP5cpS7eeW2voq13u'
-  mark: ''
-  categories:
-  - Mobile
 - display_name: Iterable
   slug: iterable
   name: catalog/sources/iterable
@@ -350,6 +341,15 @@ items:
   mark: 'https://cdn.filepicker.io/api/file/Z49DVScMTzi7DIFD2WCZ'
   categories:
   - Email Marketing
+- display_name: PHP
+  slug: php
+  name: catalog/sources/php
+  description: ''
+  url: connections/sources/catalog/php
+  logo: 'https://cdn.filepicker.io/api/file/cbA43LX9SXi2USnZZjig'
+  mark: ''
+  categories:
+  - Server
 - display_name: Pendo
   slug: pendo
   name: catalog/sources/pendo
@@ -362,15 +362,6 @@ items:
   mark: 'https://cdn.filepicker.io/api/file/T93xOnE9TqQ0ag8qbU7E'
   categories:
   - Analytics
-- display_name: PHP
-  slug: php
-  name: catalog/sources/php
-  description: ''
-  url: connections/sources/catalog/php
-  logo: 'https://cdn.filepicker.io/api/file/cbA43LX9SXi2USnZZjig'
-  mark: ''
-  categories:
-  - Server
 - display_name: Pixel Tracking API
   slug: pixel-tracking api
   name: catalog/sources/pixel-tracking-api
@@ -498,3 +489,12 @@ items:
   mark: 'https://cdn.filepicker.io/api/file/lIl1q5XSRriNiYAodvnC'
   categories:
   - Analytics
+- display_name: iOS
+  slug: ios
+  name: catalog/sources/ios
+  description: ''
+  url: connections/sources/catalog/ios
+  logo: 'https://cdn.filepicker.io/api/file/qWgSP5cpS7eeW2voq13u'
+  mark: ''
+  categories:
+  - Mobile
