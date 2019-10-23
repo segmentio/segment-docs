@@ -11,6 +11,7 @@ import anchorsIndicator from './anchors-indicator'
 import codeExample from './code-example'
 import popover from './popover'
 import searchBar404 from './search-bar-404'
+import backScrolling from './back-scrolling'
 
 feedback()
 accordion()
@@ -23,3 +24,4 @@ anchorsIndicator()
 codeExample()
 popover()
 searchBar404()
+backScrolling()
