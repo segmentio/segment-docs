@@ -8,7 +8,10 @@ require('dotenv').config();
 PLATFORM_API_URL = "https://platform.segmentapis.com"
 
 const slugify = (displayName) => {
-  return displayName.toLowerCase().replace(' ', '-')
+  let slug = displayName.toLowerCase().replace(/\s+/g, '-')
+  if (slug === '.net') slug = 'net'
+  if (slug === 'roku-(alpha)') slug = 'roku'
+  return slug
 }
 
 const getCatalog = async (url, page_token = "") => {
@@ -52,6 +55,7 @@ const updateSourcesV2 = async () => {
   let sources = []
   let sourcesUpdated = []
   let nextPageToken = null
+
   while (nextPageToken !== "") {
     const res = await getCatalog(`${PLATFORM_API_URL}/v1beta/catalog/sources`, nextPageToken)
     sources = sources.concat(res.sources)
@@ -62,19 +66,37 @@ const updateSourcesV2 = async () => {
     if(a.display_name > b.display_name) { return 1; }
     return 0;
   })
+  const libraryCategories = [
+    'server',
+    'mobile',
+    'ott',
+    'roku',
+    'website'
+  ]
   sources.forEach(source => {
     let slug = slugify(source.display_name)
+   
+    let url = ''
+    let mainCategory = source.categories[0] ? source.categories[0].toLowerCase() : ''
+    if (libraryCategories.includes(mainCategory)) {
+      url = `connections/sources/catalog/libraries/${mainCategory}/${slug}`
+    } else {
+      url = `connections/sources/catalog/cloud-apps/${slug}`
+    }
     let updatedSource = {
       display_name: source.display_name,
       slug,
       name: source.name,
       description: source.description,
-      url: `connections/sources/catalog/${slug}`,
-      logo:  source.logos.logo,
-      mark: source.logos.mark,
+      url,
+      logo: {
+        url: source.logos.logo
+      },
+      mark: {
+        url: source.logos.mark
+      },
       categories: source.categories
     }
-    // console.log(updatedSource)
     sourcesUpdated.push(updatedSource)
   })
   const options = { noArrayIndent: true };
@@ -118,16 +140,24 @@ const updateDestinationsV2 = async () => {
   })
   destinations.forEach(destination => {
     let slug = slugify(destination.display_name)
+
+    let categories = [destination.categories.primary, destination.categories.secondary, ...destination.categories.additional]
+    categories = categories.filter(category => category != '')
+
     let updatedDestination = {
       display_name: destination.display_name,
       slug,
       name: destination.name,
       description: destination.description,
-      url: `connections/sources/catalog/${slug}`,
+      url: `connections/destinations/catalog/${slug}`,
       status: destination.status,
-      logo:  destination.logos.logo,
-      mark: destination.logos.mark,
-      categories: destination.categories
+      logo:  {
+        url: destination.logos.logo
+      },
+      mark: {
+        url: destination.logos.mark
+      },
+      categories
     }
     destinationsUpdated.push(updatedDestination)
   })
@@ -137,7 +167,7 @@ const updateDestinationsV2 = async () => {
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalogV2/destinations.yml`), output);
 }
 
-updateSources()
+// updateSources()
 updateSourcesV2()
-updateDestinations()
+// updateDestinations()
 updateDestinationsV2()
