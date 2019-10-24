@@ -1,0 +1,140 @@
+.menu-item {
+  $this: &;
+
+  display: block;
+
+  &__body {
+    position: relative;
+    list-style-type: none;
+    margin-top: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 34px;
+
+    & > * + * {
+      margin-top: 12px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 8px;
+      display: block;
+      width: 1px;
+      height: 100%;
+      background-color: color(border-gray-dark);
+    }
+
+    &--nested {
+      margin-top: 12px;
+      padding-left: 18px;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      &::before {
+        left: 0;
+      }
+    }
+  }
+
+  & > &__body {
+    display: none;
+  }
+
+  &__link {
+    width: 100%;
+    text-align: left;
+    color: color(gray-dark);
+    line-height: 1.25;
+    outline: 0;
+    cursor: pointer;
+
+    &:hover {
+      color: color(primary);
+      text-decoration: none;
+    }
+
+    &--small {
+      font-size: 14px;
+    }
+
+    &--highlight {
+      color: color(gray-dark);
+      font-weight: 500;
+    }
+
+    &--icon {
+      #{$this}__icon {
+        flex: 0 0 16px;
+        width: 16px;
+        color: color(gray);
+        vertical-align: middle;
+        margin-right: 18px;
+      }
+    }
+
+    &--indicator {
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -18px;
+        height: 100%;
+        width: 2px;
+        background-color: color(primary);
+      }
+    }
+
+    &--indicator-large {
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -26px;
+        height: 100%;
+        width: 2px;
+        background-color: color(primary);
+      }
+    }
+  }
+
+  &__chevron {
+    color: color(gray);
+  }
+
+  &--active {
+    & > #{$this}__body {
+      display: block;
+    }
+
+    & > #{$this}__link {
+      color: color(primary);
+
+      #{$this}__icon {
+        color: color(primary);
+      }
+
+      #{$this}__chevron {
+        transform: rotate(180deg);
+      }
+    }
+
+    &#{$this}--gray {
+      & > #{$this}__link {
+        color: rgba(color(gray-dark), 0.8);
+        font-weight: 500;
+      }
+    }
+  }
+
+  &--separated {
+    margin-top: 45px;
+  }
+}

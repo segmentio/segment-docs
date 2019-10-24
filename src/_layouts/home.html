@@ -1,0 +1,29 @@
+---
+layout: main
+---
+
+<article class="home page">
+  <div class="home__body">
+    <div>
+      {%- if page.title -%}
+        <h1 id="{{ page.title | downcase }}" class="home__heading page__heading">
+          {{ page.title }} {% unless page.landing %}{{ page.integration_type | capitalize }}{% endunless %}
+        </h1>
+      {%- endif -%}
+
+      {%- if page.beta -%}
+        {% include content/beta.md %}
+      {%- endif -%}
+
+      <div class="home__markdown markdown" data-headings-anchors>
+        {{ content }}
+      </div>
+    </div>
+
+    <hr>
+
+    {% include components/feedback.html %}
+
+    {% include components/callout.html %}
+  </div>
+</article>

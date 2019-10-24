@@ -1,0 +1,50 @@
+.code-example {
+  &__nav {
+    $nav: &;
+
+    & > * + * {
+      margin-left: 10px;
+    }
+
+    &-item {
+      $item: &;
+
+      border-bottom: 2px solid transparent;
+
+      &:first-of-type {
+        #{$nav}-link {
+          padding-left: 0;
+        }
+      }
+
+      &--active {
+        border-bottom: 2px solid color(primary);
+
+        #{$nav}-link {
+          color: color(primary);
+        }
+      }
+    }
+
+    &-link {
+      padding: 13px 8px;
+      display: block;
+      color: color(gray);
+      font-size: 14px;
+      font-weight: 500;
+
+      &:hover {
+        color: color(primary);
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__tab {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}

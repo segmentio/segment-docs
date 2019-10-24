@@ -9,8 +9,6 @@ You will need to have Docker installed https://docs.docker.com/install/
 
 * If using Linux, run `docker-compose up`
 
-* Visit http://localhost:4000/docsv2/
-
 # Local development with `ruby` and `node`, without platform-api
 
 * If using OSX, install command line tools, `xcode-select --install`

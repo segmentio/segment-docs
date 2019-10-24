@@ -1,0 +1,25 @@
+<ul class="breadcrumbs flex gutter list list--unstyle">
+  {% assign breadcrumbs = page.url | remove:'/index.html' | split: '/' %}
+
+  <li>
+    <a class="breadcrumbs__link" href="{{ site.baseurl }}/">Home</a>
+  </li>
+
+  {% for crumb in breadcrumbs offset: 1 %}
+    <li>/</li>
+
+    {% if forloop.last %}
+      <li class="breadcrumbs__item">
+        {{ page.title }}
+      </li>
+    {% else %}
+      <li>
+        {% assign crumb_limit = forloop.index | plus: 1 %}
+
+        <a class="breadcrumbs__link" href="{{ site.baseurl }}{% for crumb in breadcrumbs limit: crumb_limit %}{{ crumb | remove: '.html' | append: '/' }}{% endfor %}">
+          {{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

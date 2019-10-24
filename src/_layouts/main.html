@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<div class="docs">
+  <div class="stage">
+    <div class="docs__aside stage__aside">
+      {% include navbar/logo.html %}
+
+      {% include menu/menu.html %}
+    </div>
+
+    <main class="docs__body stage__body">
+      <div>
+        <div class="search">
+          {% include navbar/search.html placeholder="Search documentation, ex. protocolos..." %}
+        </div>
+
+        {% include navbar/navbar-mobile.html %}
+      </div>
+
+      <div class="stage__content">
+        {{ content }}
+      </div>
+    </main>
+
+    <div class="docs__sidebar stage__sidebar">
+      {% include navbar/nav.html %}
+
+      <div class="sidebar sidebar--sticky">
+        {%- unless page.hide_toc -%}
+          <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+            {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
+          </div>
+        {%- endunless -%}
+
+        {% if page.feedback != false %}
+          {% include sidebar/feedback.html %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    {% include components/footer.html %}
+  </footer>
+</div>

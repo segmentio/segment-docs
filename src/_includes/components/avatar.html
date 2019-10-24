@@ -1,0 +1,55 @@
+{% assign contributor = include.contributors | first %}
+
+{% if contributor %}
+  <div class="popover" data-popover data-active-class="popover--active">
+    <div class="avatar">
+      <div class="flex gutter gutter--large">
+        <div class="flex__column flex__column--shrink">
+          <img src="{{ site.baseurl }}/images/{{ contributor.image_path }}" alt="">
+        </div>
+
+        <div class="flex__column">
+          <div class="avatar__content">
+            <div>
+              <p class="avatar__title">Updated on
+                {{ contributor.date | ordinal }}
+                {{ contributor.date | date: "%B" }},
+                {{ contributor.date | date: "%Y" }}
+              </p>
+
+              <p class="avatar__info">by {{ contributor.name }} - {{ contributor.position }}</p>
+            </div>
+
+            <div>
+              <a class="button-link" href="#" data-popover-target="contributors">See all contributors</a>
+            </div>
+
+            <div class="popover__body" data-popover-body="contributors">
+              <div class="avatars-list">
+                {% for other_contributor in include.contributors offset:1 %}
+                  <div class="avatar">
+                    <div class="flex gutter gutter--large">
+                      <div class="flex__column flex__column--shrink">
+                        <img src="{{ site.baseurl }}/images/{{ other_contributor.image_path }}" alt="">
+                      </div>
+
+                      <div class="flex__column">
+                        <p class="avatar__title">Updated on
+                          {{ other_contributor.date | ordinal }}
+                          {{ other_contributor.date | date: "%B" }},
+                          {{ other_contributor.date | date: "%Y" }}
+                        </p>
+
+                        <p class="avatar__info">by {{ other_contributor.name }} - {{ other_contributor.position }}</p>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

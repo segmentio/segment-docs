@@ -14,7 +14,7 @@ intialize-work-dir:
 	@mkdir -p _site
 	@chmod -R 777 _site/
 	@bundle install
-	
+
 .PHONY: build
 build: node_modules vendor/bundle
 #	@bundle exec rake catalog:update
@@ -70,7 +70,6 @@ docker-dev:
 docker-build:
 	@$(DOCKER_TTY) make build
 	bundle install
-
 
 #.PHONY: docs
 #docs: node_modules

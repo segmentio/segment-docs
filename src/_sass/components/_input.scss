@@ -1,0 +1,16 @@
+.input {
+  line-height: inherit;
+  font-family: $font-family-primary;
+  border: 1px solid color(border-gray-dark);
+  background-color: color(white);
+  color: color(gray-dark);
+  border-radius: 4px;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &::placeholder {
+    color: color(gray);
+  }
+}
