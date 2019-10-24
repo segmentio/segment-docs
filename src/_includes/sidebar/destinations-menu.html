@@ -1,18 +1,15 @@
-{% assign destination_categories = site.data.catalog.destinations.destinations | group_by:"categories.primary" | sort: "name" %}
+{% assign categories = site.data.catalogV2.destination_categories.items %}
 
 <div class="destination-menu" data-anchors-indicator data-sections=".destinations-catalog__section" data-active-class="destination-menu__link--active">
   <ul class="destination-menu__list list list--unstyle">
-    {% for category in destination_categories %}
-      {% assign category_name_size = category.name | size %}
-      {% if category_name_size != 0 %}
-        {% assign category_icon = category.name | slugify %}
-        <li class="destination-menu__item">
-          <a class="destination-menu__link flex" href="#{{ category.name | slugify }}" title="{{ category.name }}">
-            {% include icons/destinations-catalog/{{ category_icon }}.svg %}
-            {{ category.name }}
-          </a>
-        </li>
-      {% endif %}
+    {% for category in categories %}
+      {% assign category_icon = category.display_name | slugify %}
+      <li class="destination-menu__item">
+        <a class="destination-menu__link flex" href="#{{ category.display_name | slugify }}" title="{{ category.display_name }}">
+          {% include icons/destinations-catalog/{{ category_icon }}.svg %}
+          {{ category.display_name }}
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </div>

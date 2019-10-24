@@ -4,35 +4,32 @@ hide_toc: true
 layout: destinations
 ---
 
-{% assign destination_categories = site.data.catalog.destinations.destinations | group_by:"categories.primary" | sort: "name" %}
-
 <div class="destinations-catalog">
-  {% for category in destination_categories %}
-    <div class="destinations-catalog__section markdown" id="{{ category.name | slugify }}">
-      {% assign category_name_size = category.name | size %}
-      {% if category_name_size != 0 %}
-        {% assign category_icon = category.name | slugify %}
+  {% assign categories = site.data.catalogV2.destination_categories.items %}
 
-        <h2 class="destinations-catalog__title" id="{{ category.name | slugify }}">
-          {% include icons/destinations-catalog/{{ category_icon }}.svg %}
+  {% for category in categories %}
+    <div class="destinations-catalog__section markdown" id="{{ category.display_name | slugify }}">
+      {% assign category_icon = category.display_name | slugify %}
 
-          {{ category.name }}
-        </h2>
-      {% endif %}
+      <h2 class="destinations-catalog__title" id="{{ category.display_name | slugify }}">
+        {% include icons/destinations-catalog/{{ category_icon }}.svg %}
+
+        {{ category.display_name }}
+      </h2>
 
       <div class="flex flex--wrap waffle waffle--large">
-        {% for destination in category.items %}
-          {% assign doc_path = destination.name | replace: "catalog", "connections" | replace: "destinations", "destinations/catalog"  %}
+        {% assign destinations = site.data.catalogV2.destinations.items | where: "categories", category.display_name %}
 
+        {% for destination in destinations %}
           {% if destination.status contains "PUBLIC" or destination.status contains "BETA" %}
             <div class="flex__column flex__column--6 flex__column--4@medium">
-              <a class="thumbnail-integration" href="{{ doc_path | relative_url }}">
+              <a class="thumbnail-integration" href="{{ site.baseurl }}/{{ destination.url }}">
                 <div class="thumbnail-integration__content flex flex--stack flex--center flex--middle">
                   <div class="thumbnail-integration__logo">
-                    {% if destination.logos.mark != '' %}
-                      <img class="image" alt="{{destination.display_name}}" src="{{destination.logos.mark}}" />
+                    {% if destination.mark.url != '' %}
+                      <img class="image" alt="{{ destination.display_name }}" src="{{ destination.mark.url }}">
                     {% else %}
-                      <img class="image" alt="{{destination.display_name}}" src="{{destination.logos.logo}}" />
+                      <img class="image" alt="{{ destination.display_name }}" src="{{ destination.logo.url }}">
                     {% endif %}
                   </div>
 
