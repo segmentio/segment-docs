@@ -51,7 +51,7 @@ layout: default
                     {% for destination in destinations %}
                       {% if destination.status contains "PUBLIC" or destination.status contains "BETA" %}
                         <div class="flex__column flex__column--6 flex__column--4@medium">
-                          <a class="thumbnail-integration" href="{{ site.baseurl }}/{{ destination.url }}">
+                          <a class="thumbnail-integration" href="{{ site.baseurl }}/{{ destination.url }}/">
                             <div class="thumbnail-integration__content flex flex--stack flex--center flex--middle">
                               <div class="thumbnail-integration__logo">
                                 {% if destination.mark.url != '' %}
