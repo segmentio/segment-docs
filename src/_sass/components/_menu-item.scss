@@ -137,4 +137,22 @@
   &--separated {
     margin-top: 45px;
   }
+
+  &--compact {
+    & > #{$this}__body {
+      padding-left: 25px;
+
+      &::before {
+        left: 0;
+      }
+    }
+
+    #{$this}__link {
+      &--indicator {
+        &::before {
+          left: -25px;
+        }
+      }
+    }
+  }
 }

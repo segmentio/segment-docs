@@ -7,7 +7,7 @@ layout: default
     <div class="docs__aside stage__aside">
       {% include navbar/logo.html %}
 
-      {% include menu/menu.html %}
+      {% include menu/menu-{{ page.integration_type }}.html %}
     </div>
 
     <main class="docs__body stage__body">
@@ -15,6 +15,7 @@ layout: default
         <div class="search">
           {% include navbar/search.html placeholder="Search documentation, ex. protocolos..." %}
         </div>
+
         {% include navbar/navbar-mobile.html %}
       </div>
 
@@ -43,7 +44,7 @@ layout: default
               {%- endif -%}
             </div>
           </div>
-          
+
           <hr>
 
           {%- unless page.hide_toc -%}
