@@ -8,10 +8,10 @@ layout: destinations
   {% assign categories = site.data.catalogV2.destination_categories.items %}
 
   {% for category in categories %}
-    <div class="destinations-catalog__section markdown" id="{{ category.display_name | slugify }}">
-      {% assign category_icon = category.display_name | slugify %}
+    <div class="destinations-catalog__section markdown" id="{{ category.slug | slugify }}">
+      {% assign category_icon = category.slug | slugify %}
 
-      <h2 class="destinations-catalog__title" id="{{ category.display_name | slugify }}">
+      <h2 class="destinations-catalog__title" id="{{ category.slug | slugify }}">
         {% include icons/destinations-catalog/{{ category_icon }}.svg %}
 
         {{ category.display_name }}
