@@ -24,8 +24,7 @@ sections:
     - path: "/guides/account-management/recover-source-workspace"
       title: Can I recover a source or workspace after I delete it?
     - path: "/guides/account-management/special-permissioning"
-      title: What do team members have access to? Is there special permissioning to
-        allow access to only certain sources?
+      title: What do team members have access to? Is there special permissioning to allow access to only certain sources?
   - section_title: Best Practices
     slug: guides/best-practices
     section:
@@ -205,18 +204,20 @@ sections:
 - section_title: Segment-app
   section:
   - path: "/segment-app"
-    title: Overview
-  - path: "/segment-app/audit-trail"
-    title: Audit Trail
-  - path: "/segment-app/concepts"
-    title: Concepts
-  - path: "/segment-app/membership"
-    title: Manage members
-  - path: "/segment-app/mfa"
-    title: Multi-Factor Authentication (MFA)
+    title: Segment web app overview
+  - section_title: Access Control (IAM)
+    section:
+    - path: "/segment-app/iam/concepts"
+      title: Access Management Concepts
+    - path: "/segment-app/iam/membership"
+      title: Managing members
+    - path: "/segment-app/iam/mfa"
+      title: Multi-Factor Authentication (MFA)
+    - path: "/segment-app/iam/secure-password"
+      title: Picking a secure password
+    - path: "/segment-app/iam/sso"
+      title: Single Sign On
   - path: "/segment-app/roles"
     title: Roles
-  - path: "/segment-app/secure-password"
-    title: Picking a secure password
-  - path: "/segment-app/sso"
-    title: Single Sign On
+  - path: "/segment-app/audit-trail"
+    title: Audit Trail
