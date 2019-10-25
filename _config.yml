@@ -27,6 +27,10 @@ defaults:
       path: "connections/sources/catalog"
     values:
       integration_type: source
+  - scope:
+      path: "connections/warehouses/catalog"
+    values:
+      integration_type: warehouse
 
 plugins_dir: ./_plugins
 plugins:

@@ -7,7 +7,7 @@ layout: default
     <div class="docs__aside stage__aside">
       {% include navbar/logo.html %}
 
-      {% include menu/menu.html %}
+      {% include menu/menu-{{ page.integration_type }}.html %}
     </div>
 
     <main class="docs__body stage__body">
@@ -21,7 +21,7 @@ layout: default
 
 
       <div class="stage__content">
-        <article class="integration page">
+        <article class="integration page" data-headings-anchors>
           {% include components/breadcrumbs.html %}
 
           <div class="integration-header">
@@ -36,6 +36,7 @@ layout: default
                   {{ page.title }}
                 </h1>
               {%- endif -%}
+
               {%- if page.excerpt -%}
                 <div class="integration-header__content">
                   {{ page.excerpt | markdownify }}
@@ -44,8 +45,21 @@ layout: default
             </div>
           </div>
 
-          <div class="integration__body markdown">
-            {{ content }}
+          <hr>
+
+          {%- unless page.hide_toc -%}
+            {% include sidebar/mobile-menu-side.html %}
+          {%- endunless -%}
+
+          <div class="integration__body page__body">
+            <div class="markdown">
+              {{ content }}
+            </div>
+
+            {% if page.contributors %}
+              {% include components/avatar.html contributors=page.contributors %}
+            {% endif %}
+            {% include components/callout.html %}
           </div>
         </article>
       </div>
@@ -56,7 +70,7 @@ layout: default
 
       <div class="sidebar sidebar--sticky">
         {%- unless page.hide_toc -%}
-          <div data-anchors-indicator data-active-class="menu-side__item--active">
+          <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
             {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
           </div>
         {%- endunless -%}

@@ -3,6 +3,14 @@
     margin-top: 90px;
   }
 
+  &__heading {
+    line-height: 56px;
+
+    & + * {
+      margin-top: 10px;
+    }
+  }
+
   &__numeric-heading {
     color: rgba(color(gray), 0.1);
     font-size: 195px;
@@ -11,8 +19,12 @@
 
   &__numeric-heading__wrapper {
     display: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 
-    @include breakpoint(large up) {
+    @include breakpoint(xlarge up) {
       display: flex;
     }
   }

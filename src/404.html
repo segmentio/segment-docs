@@ -19,13 +19,13 @@ permalink: /404.html
         <div class="page-404">
           <div class="flex">
             <div class="flex__column--12 flex__column--9@xlarge">
-              <h1>The page you were looking for doesn’t exist.</h1>
+              <h1 class="page-404__heading">The page you were looking for doesn’t exist.</h1>
               <div class="flex">
-                <div class="flex__column--10 markdown">
+                <div class="flex__column--12 flex__column--10@xlarge markdown">
                   <p>You may have mistyped the address or the page may have moved. Double-check the URL and try again or search the term.</p>
 
-                  <div class="search">
-                    {% include navbar/search.html placeholder="Enter a search term" %}
+                  <div class="search search--mobile" data-search>
+                    {% include navbar/search.html placeholder="Enter a search term" mobile="true" %}
                   </div>
                 </div>
               </div>

@@ -125,9 +125,34 @@
         transform: rotate(180deg);
       }
     }
+
+    &#{$this}--gray {
+      & > #{$this}__link {
+        color: rgba(color(gray-dark), 0.8);
+        font-weight: 500;
+      }
+    }
   }
 
   &--separated {
     margin-top: 45px;
+  }
+
+  &--compact {
+    & > #{$this}__body {
+      padding-left: 25px;
+
+      &::before {
+        left: 0;
+      }
+    }
+
+    #{$this}__link {
+      &--indicator {
+        &::before {
+          left: -25px;
+        }
+      }
+    }
   }
 }
