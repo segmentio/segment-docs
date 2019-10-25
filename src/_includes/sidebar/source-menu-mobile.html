@@ -1,0 +1,31 @@
+{% assign destination_categories = site.data.catalogV2.source_categories.items | sort: "name" %}
+
+<div class="destination-menu-mobile" data-anchors-indicator data-sections=".destinations-catalog__section" data-active-class="destination-menu-mobile__item--active">
+  <div class="destination-menu-mobile__select" data-ref="dropdown-menu[head]" data-active-class="destination-menu-mobile__select--active">
+    <div class="destination-menu-mobile__select-inner">
+      <span class="flex flex--middle" data-ref="dropdown-menu[head-inner]">
+        Choose category
+      </span>
+
+      <svg viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg" class="destination-menu-mobile__select-arrow">
+        <path d="M1 1l3 3 3-3" stroke="#A5B0BA" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <ul class="destination-menu-mobile__list list list--unstyle" data-ref="dropdown-menu[body]" data-active-class="destination-menu-mobile__list--active">
+    {% for category in destination_categories %}
+      {% assign category_name_size = category.display_name | size %}
+      {% if category_name_size != 0 %}
+        {% assign category_icon = category.display_name | slugify %}
+        <li class="destination-menu-mobile__item">
+          <a class="destination-menu-mobile__link" href="#{{ category.display_name | slugify }}" title="{{ category.display_name }}" data-ref="dropdown-menu[link]" >
+            <span class="destination-menu-mobile__icon">
+            </span>
+            {{ category.display_name }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

@@ -1,7 +1,7 @@
 ---
 title: Destination catalog
 hide_toc: true
-layout: destinations
+layout: catalog
 ---
 
 {% assign destination_categories = site.data.catalog.destinations.destinations | group_by:"categories.primary" | sort: "name" %}
