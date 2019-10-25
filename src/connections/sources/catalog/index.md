@@ -11,7 +11,7 @@ layout: catalog
   {% assign categories = site.data.catalogV2.source_categories.items %}
   {% for category in categories %}
     <div class="destinations-catalog__section markdown" id="{{ category.display_name | slugify }}">
-      <h2 class="destinations-catalog__title">
+      <h2 class="destinations-catalog__title" id="{{ category.display_name | slugify }}">
         {{ category.display_name }}
       </h2>
       <div class="flex flex--wrap waffle waffle--large">
