@@ -29,7 +29,7 @@ layout: default
             </h1>
           {%- endif -%}
 
-          {% include sidebar/destinations-menu-mobile.html %}
+          {% include sidebar/{{ page.integration_type }}-menu-mobile.html %}
 
           <div class="destinations__body" data-headings-anchors>
             <div class="destinations-catalog">
@@ -84,7 +84,7 @@ layout: default
       {% include navbar/nav.html %}
 
       <div class="sidebar sidebar--sticky">
-        {% include sidebar/destinations-menu.html %}
+        {% include sidebar/{{ page.integration_type }}-menu.html %}
         {% include sidebar/feedback.html %}
       </div>
     </div>
