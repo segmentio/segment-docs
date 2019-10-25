@@ -42,8 +42,7 @@
     max-height: 100vh;
     background-color: color(gray-light);
     transform: translateY(-100%);
-    overflow-y: scroll;
-    padding: 76px 24px 24px 24px;
+    overflow: hidden;
     transition: transform 0.3s ease;
   }
 
