@@ -13,13 +13,11 @@ export default function () {
 
     for (let t = 0; t < triggers.length; t++) {
       triggers[t].addEventListener('click', (event) => {
-        event.preventDefault()
-
-        let currentView = [].slice.call(views).filter((view) => {
+        let currentView = Array.from(views).filter((view) => {
           return view.getAttribute('data-target') === triggers[t].getAttribute('href')
         })
 
-        if (currentView) {
+        if (currentView.length) {
           event.preventDefault()
 
           components[i].classList.add(components[i].getAttribute('data-class-active'))
