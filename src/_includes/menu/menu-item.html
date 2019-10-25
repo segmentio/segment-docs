@@ -3,7 +3,7 @@
 
 <li class="menu-item {% if currentPage[0] == currentPath %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
   {% if include.root_section.path %}
-    <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}{{ include.root_section.path }}">
+    <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}{{ include.root_section.path }}/">
       <span class="menu-item__icon flex__column">
         {% include icons/menu/icon-{{ currentPath }}.svg %}
       </span>
@@ -32,7 +32,7 @@
 
         <li class="menu-item menu-item--gray {% if currentPage == currentPath or currentSectionSlug == currentSectionPath %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
           {% if item.path %}
-            <a class="menu-item__link {% if currentPage == currentPath or currentSectionSlug == currentSectionPath %}menu-item__link--indicator-large{% endif %} flex" href="{{ site.baseurl }}{{ item.path }}">{{ item.title }}</a>
+            <a class="menu-item__link {% if currentPage == currentPath or currentSectionSlug == currentSectionPath %}menu-item__link--indicator-large{% endif %} flex" href="{{ site.baseurl }}{{ item.path }}/">{{ item.title }}</a>
           {% endif %}
 
           {% if item.section_title %}
@@ -53,7 +53,7 @@
 
                 <li class="menu-item {% if currentPage == currentPath %}menu-item--active menu-item--indicator{% endif %}" data-accordion data-class-active="menu-item--active">
                   {% if subsection.path %}
-                    <a class="menu-item__link {% if currentPage == currentPath %}menu-item__link--indicator{% endif %} flex" href="{{ site.baseurl }}{{ subsection.path }}">{{ subsection.title }}</a>
+                    <a class="menu-item__link {% if currentPage == currentPath %}menu-item__link--indicator{% endif %} flex" href="{{ site.baseurl }}{{ subsection.path }}/">{{ subsection.title }}</a>
                   {% endif %}
 
                   {% if subsection.section_title %}
@@ -73,7 +73,7 @@
                         {% assign currentPath = subsubsection.path | downcase | replace_first: "/" "" %}
 
                         <li class="menu-item {% if currentPage == currentPath %}menu-item--active menu-item--indicator{% endif %}">
-                          <a class="menu-item__link {% if currentPage == currentPath %}menu-item__link--indicator{% endif %} flex" href="{{ site.baseurl }}{{ subsubsection.path }}">{{ subsubsection.title }}</a>
+                          <a class="menu-item__link {% if currentPage == currentPath %}menu-item__link--indicator{% endif %} flex" href="{{ site.baseurl }}{{ subsubsection.path }}/">{{ subsubsection.title }}</a>
                         </li>
                       {% endfor %}
                     </ul>

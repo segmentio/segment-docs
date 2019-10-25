@@ -1,0 +1,57 @@
+.menu-panels {
+  $this: &;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__root {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 76px 24px 24px 24px;
+  }
+
+  &__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+  }
+
+  &__view {
+    transition: all 0.5s ease;
+    width: 100%;
+    height: 100%;
+    padding: 76px 24px 24px 24px;
+    pointer-events: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &--active {
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+
+  &--active {
+    #{$this}__root {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    #{$this}__side {
+      transform: translateX(0);
+    }
+  }
+}

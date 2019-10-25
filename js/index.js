@@ -10,6 +10,7 @@ import dropdownMenu from './dropdown-menu'
 import anchorsIndicator from './anchors-indicator'
 import codeExample from './code-example'
 import popover from './popover'
+import menuPanels from './menu-panels'
 import searchBar404 from './search-bar-404'
 import backScrolling from './back-scrolling'
 
@@ -18,6 +19,7 @@ accordion()
 accordionGroup()
 searchNavbar()
 menuMobile()
+menuPanels()
 headingsAnchors()
 dropdownMenu()
 anchorsIndicator()
