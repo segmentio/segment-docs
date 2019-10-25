@@ -8,13 +8,14 @@ export default function () {
 
   for (let i = 0; i < components.length; i++) {
     const triggers = components[i].querySelectorAll('a')
+    const back = components[i].querySelectorAll(BACK_SELECTOR)
     const views = components[i].querySelectorAll(VIEW_SELECTOR)
 
     for (let t = 0; t < triggers.length; t++) {
       triggers[t].addEventListener('click', (event) => {
         event.preventDefault()
 
-        let currentView = Array.from(views).filter((view) => {
+        let currentView = [].slice.call(views).filter((view) => {
           return view.getAttribute('data-target') === triggers[t].getAttribute('href')
         })
 
@@ -28,6 +29,16 @@ export default function () {
           }
 
           currentView[0].classList.add(currentView[0].getAttribute('data-class-active'))
+        }
+      })
+    }
+
+    for (let b = 0; b < back.length; b++) {
+      back[b].addEventListener('click', (event) => {
+        components[i].classList.remove(components[i].getAttribute('data-class-active'))
+
+        for (let v = 0; v < views.length; v++) {
+          views[v].classList.remove(views[v].getAttribute('data-class-active'))
         }
       })
     }
