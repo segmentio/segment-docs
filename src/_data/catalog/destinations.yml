@@ -12158,7 +12158,11 @@ items:
     type: BOOLEAN
     deprecated: false
     required: false
-    description: "If you enable In-Pixel Metadata, Segment will map page properties to Parsely's `metadata` format, allowing you to eschew their out-of-band metadata crawling. This has tradeoffs and is not the recommended approach—\_please be sure to check with your Parsely rep prior to enabling this setting. Requires Dynamic Tracking to be set to `true`."
+    description: If you enable In-Pixel Metadata, Segment will map page properties
+      to Parsely's `metadata` format, allowing you to eschew their out-of-band metadata
+      crawling. This has tradeoffs and is not the recommended approach— please be
+      sure to check with your Parsely rep prior to enabling this setting. Requires
+      Dynamic Tracking to be set to `true`.
     settings: []
   - name: trackEvents
     display_name: Track Events

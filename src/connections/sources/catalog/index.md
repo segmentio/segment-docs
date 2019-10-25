@@ -2,72 +2,40 @@
 title: Sources catalog
 hide_toc: true
 landing: true
+icon: symbols/connections.svg
+excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
+layout: catalog
 ---
 
-<div class="l-chiclet-collection">
-  {% assign app_sources = site.data.catalog.sources.sources %}
-  {% assign cloud_sources = site.data.catalog.cloud_sources.sources %}
-  {% assign sources = app_sources | concat: cloud_sources | uniq: 'display_name' | sort: 'display_name' %}
-
-  {% for source in sources %}
-    {% assign doc_path = source.name | replace: "catalog", "connections/sources" %}
-    {% if source.categories contains 'website'%}
-<!-- Show AJs first -->
-    <a  class="chiclet-item centered" href="{{doc_path | relative_url}}">
-      {% if source.logos.mark != '' %}
-        {% assign class = "logo mark" %}
-      {% else %}
-        {% assign class = "logo full" %}
-      {% endif %}
-
-      <div class="{{class}}">
-        {% if source.logos.mark != '' %}
-          <img alt="{{source.display_name}}" src="{{source.logos.mark}}" />
-        {% else %}
-          <img alt="{{source.display_name}}" src="{{source.logos.logo}}" />
-        {% endif %}
-        </div>
-      <div class="content">
-        <p class="title">{{ source.display_name }}</p>
+<div class="destinations-catalog">
+  {% assign categories = site.data.catalogV2.source_categories.items %}
+  {% for category in categories %}
+    <div class="destinations-catalog__section markdown" id="{{ category.display_name | slugify }}">
+      <h2 class="destinations-catalog__title" id="{{ category.display_name | slugify }}">
+        {{ category.display_name }}
+      </h2>
+      <div class="flex flex--wrap waffle waffle--large">
+        {% assign integrations = site.data.catalogV2.sources.items | where: "categories", category.display_name %}
+        {% for integration in integrations %}
+          <div class="flex__column flex__column--6 flex__column--4@medium">
+            <a class="thumbnail-integration" href="{{ site.baseurl }}/{{ integration.url }}">
+              <div class="thumbnail-integration__content flex flex--stack flex--center flex--middle">
+                <div class="thumbnail-integration__logo">
+                  {% if integration.logos.mark != '' %}
+                    <img class="image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
+                  {% else %}
+                    <img class="image" alt="{{integration.display_name}}" src="{{integration.logo.url}}" />
+                  {% endif %}
+                </div>
+                <h5>{{ integration.display_name }}</h5>
+              </div>
+              {% if integration.status == 'PUBLIC_BETA' %}
+                <p class="thumbnail-integration__label">Beta</p>
+              {% endif %}
+            </a>
+          </div>
+        {% endfor %}
       </div>
-    </a>
-    {% elsif source.categories contains 'server'%}
-    <a  class="chiclet-item centered" href="{{doc_path | relative_url}}">
-      {% if source.logos.mark != '' %}
-        {% assign class = "logo mark" %}
-      {% else %}
-        {% assign class = "logo full" %}
-      {% endif %}
-
-      <div class="{{class}}">
-        {% if source.logos.mark != '' %}
-          <img alt="{{source.display_name}}" src="{{source.logos.mark}}" />
-        {% else %}
-          <img alt="{{source.display_name}}" src="{{source.logos.logo}}" />
-        {% endif %}
-        </div>
-      <div class="content">
-        <p class="title">{{ source.display_name }}</p>
-      </div>
-    </a>
-    {% else %}
-    <a  class="chiclet-item centered" href="{{doc_path | relative_url}}">
-      {% if source.logos.mark != '' %}
-        {% assign class = "logo mark" %}
-      {% else %}
-        {% assign class = "logo full" %}
-      {% endif %}
-
-      <div class="{{class}}">
-        {% if source.logos.mark != '' %}
-          <img alt="{{source.display_name}}" src="{{source.logos.mark}}" />
-        {% else %}
-          <img alt="{{source.display_name}}" src="{{source.logos.logo}}" />
-        {% endif %}
-        </div>
-      <div class="content">
-        <p class="title">{{ source.display_name }}</p>
-      </div>
-    </a>
-    {% endif %}
+    </div>
   {% endfor %}
+</div>

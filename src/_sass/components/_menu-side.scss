@@ -1,0 +1,32 @@
+.menu-side {
+  $this: &;
+
+  list-style-type: none;
+  padding-left: 0;
+
+  & > * + * {
+    margin-top: 12px;
+  }
+
+  &__link {
+    display: block;
+    font-size: 14px;
+    color: color(gray);
+    line-height: 1.25;
+
+    &:hover {
+      text-decoration: none;
+      color: color(gray-dark);
+    }
+
+    &--active {
+      font-weight: 500;
+      color: color(secondary-dark);
+    }
+  }
+
+  & {
+    list-style-type: none;
+    padding-left: 0;
+  }
+}

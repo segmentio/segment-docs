@@ -1,0 +1,15 @@
+{% assign categories = site.data.catalogV2.destination_categories.items %}
+
+<div class="destination-menu" data-anchors-indicator data-sections=".destinations-catalog__section" data-active-class="destination-menu__link--active">
+  <ul class="destination-menu__list list list--unstyle">
+    {% for category in categories %}
+      {% assign category_icon = category.slug | slugify %}
+      <li class="destination-menu__item">
+        <a class="destination-menu__link flex" href="#{{ category.slug | slugify }}" title="{{ category.display_name }}">
+          {% include icons/destinations-catalog/{{ category_icon }}.svg %}
+          {{ category.display_name }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

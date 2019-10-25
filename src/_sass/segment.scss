@@ -1,59 +1,106 @@
-@charset "utf-8";
+// Variables
+// =================================================
+@import "variables";
 
-// Typopgraphy
-$base-font-family: "SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-  "Segoe UI Symbol" !default;
-$base-font-size: 15px !default;
-$base-font-weight: normal !default;
-$small-font-size: $base-font-size * 0.875 !default;
-$base-line-height: 1.75 !default;
-$table-text-align: left !default;
+// Functions & Mixins
+// =================================================
+@import "functions/get";
+@import "functions/color";
+@import "functions/breakpoint";
+@import "mixins/breakpoint/breakpoint-up";
+@import "mixins/breakpoint/breakpoint-down";
+@import "mixins/breakpoint/breakpoint-equals";
+@import "mixins/breakpoint/breakpoint";
 
-// Colors
-$text-color: #12424a !default;
-$text-color-breadcrumb: rgba(67, 90, 111, 0.8);
-$text-color-grey: rgba(67, 90, 111, 0.5);
-$text-color-light: rgba(67, 90, 111, 0.2);
-$background-color: #ffffff !default;
-$brand-color: #52bd95 !default;
-$secondary-color: #f6f4eb !default;
-$grey-color: #f7f7f7 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark: darken($grey-color, 25%) !default;
-$elevated-shadow: rgba(67, 90, 111, 0.3) 0px 0px 1px,
-  rgba(67, 90, 111, 0.47) 0px 2px 4px -2px;
+// Fonts
+// =================================================
+@import "fonts/droid-sans-mono";
+@import "fonts/graphik-web";
 
-// Units
-$spacing-unit: 37px !default;
-$grid-gutter-unit: 30px !default;
-$border-radius-unit: 5px !default;
-$content-padding: 47px !default;
+// Generics
+// =================================================
+@import "generics/standardize";
+@import "generics/typography";
 
-// Width of the content areas
-$content-width: 1250px !default;
-$topnav-height: 60px !default;
-$sidenav-width: 270px !default;
+// Objects
+// =================================================
+@import "objects/list";
+@import "objects/flex";
+@import "objects/gutter";
+@import "objects/waffle";
+@import "objects/image";
+@import "objects/container";
 
+// Elements
+// =================================================
+@import "elements/a";
+@import "elements/h";
+@import "elements/hr";
+@import "elements/pre";
+@import "elements/code";
 
-$on-palm: 600px !default;
-$on-laptop: 800px !default;
+// Components
+// =================================================
+@import "components/stage";
+@import "components/logo";
+@import "components/note";
+@import "components/button-link";
+@import "components/thumbnail-integration";
+@import "components/destinations-catalog";
+@import "components/alert";
+@import "components/button";
+@import "components/button-fill";
+@import "components/button-hollow";
+@import "components/markdown";
+@import "components/list-steps";
+@import "components/input";
+@import "components/field";
+@import "components/breadcrumbs";
+@import "components/highlight";
+@import "components/search";
+@import "components/navbar-mobile";
+@import "components/menu-button";
+@import "components/search-button";
+@import "components/callout";
+@import "components/panel";
+@import "components/nav";
+@import "components/nav-list";
+@import "components/social-list";
+@import "components/footer";
+@import "components/footer-mobile";
+@import "components/sidebar";
+@import "components/widget";
+@import "components/menu";
+@import "components/menu-side";
+@import "components/menu-item";
+@import "components/menu-panels";
+@import "components/destination-menu";
+@import "components/destination-menu-mobile";
+@import "components/columns";
+@import "components/feedback-box";
+@import "components/media-icon";
+@import "components/media-thumbnail";
+@import "components/accordion";
+@import "components/faq";
+@import "components/avatar";
+@import "components/related-list";
+@import "components/integration-header";
+@import "components/code-example";
+@import "components/popover";
+@import "components/avatars-list";
+@import "components/mobile-menu-side";
+@import "components/gloss";
+@import "components/back-scrolling";
 
-// Use media queries like this:
-// @include media-query($on-palm) {
-//   .wrapper {
-//     padding-right: $spacing-unit / 2;
-//     padding-left: $spacing-unit / 2;
-//   }
-// }
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
-}
+// Pages
+// =================================================
+@import "pages/docs";
+@import "pages/page";
+@import "pages/destinations";
+@import "pages/home";
+@import "pages/page-404";
+@import "pages/integration";
 
-@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
-}
-
-@import "segment/base", "segment/layout", "segment/syntax-highlighting";
+// Vendors
+// =================================================
+@import "vendors/swiftype";

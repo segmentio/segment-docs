@@ -1,0 +1,17 @@
+{% assign destination_categories = site.data.catalogV2.source_categories.items | sort: "name" %}
+
+<div class="destination-menu" data-anchors-indicator data-sections=".destinations-catalog__section" data-active-class="destination-menu__link--active">
+  <ul class="destination-menu__list list list--unstyle">
+    {% for category in destination_categories %}
+      {% assign category_name_size = category.display_name | size %}
+      {% if category_name_size != 0 %}
+        {% assign category_icon = category.display_name | slugify %}
+        <li class="destination-menu__item">
+          <a class="destination-menu__link flex" href="#{{ category.display_name | slugify }}" title="{{ category.display_name }}">
+            {{ category.display_name }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

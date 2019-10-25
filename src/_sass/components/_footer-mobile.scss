@@ -1,0 +1,12 @@
+.footer-mobile {
+  padding: 25px 20px;
+  text-align: center;
+
+  @include breakpoint(large up) {
+    display: none;
+  }
+
+  & > * + * {
+    margin-top: 15px;
+  }
+}
