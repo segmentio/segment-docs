@@ -48,6 +48,8 @@ export default () => {
         }
       })
     }
+
+    scrollspy()
     window.addEventListener('scroll', throttle(scrollspy, 200))
   })
 }
