@@ -13,7 +13,7 @@ items:
 - display_name: Marketing Automation
   slug: marketing-automation
 - display_name: SMS & Push Notifications
-  slug: sms-&-push-notifications
+  slug: sms-push-notifications
 - display_name: Custom
   slug: custom
 - display_name: Analytics
@@ -31,7 +31,7 @@ items:
 - display_name: Feature Flagging
   slug: feature-flagging
 - display_name: A/B Testing
-  slug: a/b-testing
+  slug: ab-testing
 - display_name: Performance Monitoring
   slug: performance-monitoring
 - display_name: Advertising

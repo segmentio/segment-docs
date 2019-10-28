@@ -53,7 +53,7 @@ items:
   name: catalog/destinations/adroll
   description: >-
     AdRoll is a retargeting network that allows you to show ads to visitors
-    who've landed on your site while browsing the web.
+    who've landed on your site while browsing the web. 
   url: connections/destinations/catalog/adroll
   status: PUBLIC
   logo:
@@ -84,7 +84,7 @@ items:
     performance-driven marketers target and engage their app audiences with
     customized, immersive creatives. Combining science and creativity, Adikteev
     delivers measurable results that increase user LTV and fuel business
-    growth.
+    growth. 
   url: connections/destinations/catalog/adikteev
   status: PUBLIC_BETA
   logo:
@@ -927,7 +927,7 @@ items:
     Cruncher provides an end-to-end data crunching platform with a focus on data
     science and advanced analytics for analysts and business people. It lets you
     bring all your siloed data sources in one place and empowers you to extract
-    deep insights using a powerful, yet simple interface.
+    deep insights using a powerful, yet simple interface. 
   url: connections/destinations/catalog/cruncher
   status: PUBLIC_BETA
   logo:
@@ -960,12 +960,12 @@ items:
   - Surveys
   - Customer Success
 - display_name: CustomFit.ai
-  slug: customfit.ai
+  slug: customfitai
   name: catalog/destinations/customfitai
   description: >-
     Chisel Hyper Customized App Experiences & Intelligent Alternative User
     Journeys to increase market reach & App usage
-  url: connections/destinations/catalog/customfit.ai
+  url: connections/destinations/catalog/customfitai
   status: PUBLIC_BETA
   logo:
     url: >-
@@ -980,13 +980,13 @@ items:
   - Customer Success
   - Marketing Automation
 - display_name: Customer.io
-  slug: customer.io
+  slug: customerio
   name: catalog/destinations/customer.io
   description: >-
     Customer.io is an automated email tool. It lets you set up rules to
     automatically send emails to your users after they perform actions, making
     drip email campaigns really easy.
-  url: connections/destinations/catalog/customer.io
+  url: connections/destinations/catalog/customerio
   status: PUBLIC
   logo:
     url: 'https://cdn.filepicker.io/api/file/GyZ581zaSTmv9T1ivLE0'
@@ -1495,12 +1495,12 @@ items:
   - Livechat
   - CRM
 - display_name: Google Ads (Classic)
-  slug: google-ads-(classic)
+  slug: google-ads-classic
   name: catalog/destinations/adwords
   description: >-
     Advertise on Google and put your message in front of potential customers
     right when they're searching for what you have to offer.
-  url: connections/destinations/catalog/google-ads-(classic)
+  url: connections/destinations/catalog/google-ads-classic
   status: PUBLIC
   logo:
     url: 'https://cdn.filepicker.io/api/file/O54PEswFQAC7ZZDLSBZ5'
@@ -1509,12 +1509,12 @@ items:
   categories:
   - Advertising
 - display_name: Google Ads (Gtag)
-  slug: google-ads-(gtag)
+  slug: google-ads-gtag
   name: catalog/destinations/google-adwords-new
   description: >-
     Advertise on Google and put your message in front of potential customers
     right when they're searching for what you have to offer.
-  url: connections/destinations/catalog/google-ads-(gtag)
+  url: connections/destinations/catalog/google-ads-gtag
   status: PUBLIC_BETA
   logo:
     url: 'https://cdn.filepicker.io/api/file/xD85G8KNQhupxDbqnbHe'
@@ -1559,7 +1559,7 @@ items:
     Ingest event streams from anywhere, at any scale, for simple, reliable,
     real-time stream analytics. Google Cloud Pub/Sub is a simple, reliable,
     scalable foundation for stream analytics and event-driven computing
-    systems.
+    systems. 
   url: connections/destinations/catalog/google-cloud-pubsub
   status: PUBLIC
   logo:
@@ -1611,7 +1611,6 @@ items:
     url: >-
       https://public-segment-devcenter-production.s3.amazonaws.com/b39d6ee9-1499-42f2-be9b-e5735043ddf5.svg
   categories:
-  - Analytics
   - Customer Success
   - Performance Monitoring
 - display_name: Heap
@@ -1834,13 +1833,13 @@ items:
   - Customer Success
   - Email Marketing
 - display_name: Iron.io
-  slug: iron.io
+  slug: ironio
   name: catalog/destinations/iron.io
   description: >-
     Iron.io provides a queueing service for building distributed applications.
     Our integration will send your analytics data directly to their queues so
     you can programmatically interact with them.
-  url: connections/destinations/catalog/iron.io
+  url: connections/destinations/catalog/ironio
   status: PUBLIC
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/iron-io-default.svg'
@@ -2239,7 +2238,7 @@ items:
   description: >-
     Mixpanel is an event tracking tool targeted at web apps with lots of
     features: funnel, retention and people tracking; advanced segmentation; and
-    sending email and notifications.
+    sending email and notifications. 
   url: connections/destinations/catalog/mixpanel
   status: PUBLIC
   logo:
@@ -2761,12 +2760,12 @@ items:
   categories:
   - Analytics
 - display_name: Promoter.io
-  slug: promoter.io
+  slug: promoterio
   name: catalog/destinations/promoter.io
   description: >-
     Promoter.io helps companies grow by identifying and leveraging a brands most
     loyal customers, or Promoters, who drive referrals and recommendations.
-  url: connections/destinations/catalog/promoter.io
+  url: connections/destinations/catalog/promoterio
   status: PUBLIC
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/promoter.io-default.svg'
@@ -2843,7 +2842,7 @@ items:
     The Quora Conversion Pixel lets you track and optimize conversions from your
     Quora Ad campaigns. This pixel sends data back to Quora so you can measure
     activity, track conversions and optimize accordingly. After you've setup the
-    integration you can view conversions in the Quora Ads Manager.
+    integration you can view conversions in the Quora Ads Manager. 
   url: connections/destinations/catalog/quora-conversion-pixel
   status: PUBLIC
   logo:
@@ -2859,7 +2858,7 @@ items:
     Connect™ is a complete business intelligence solution for understanding the
     full user experience of your mobile app–from installation, to activity, to
     conversion–with the flexibility to capture its unique business rules and
-    user behaviors.
+    user behaviors. 
   url: connections/destinations/catalog/radiumone-connect
   status: PUBLIC
   logo:
@@ -2928,7 +2927,7 @@ items:
   name: catalog/destinations/repeater
   description: >-
     The Segment repeater integration repeats a source stream to one or multiple
-    other sources.
+    other sources. 
   url: connections/destinations/catalog/repeater
   status: PUBLIC
   logo:
@@ -3033,7 +3032,7 @@ items:
   description: >-
     Salescamp is designed for modern sales team, to simplify daily sales
     activity and automation, lead collection, communication and deal
-    management.
+    management.  
   url: connections/destinations/catalog/salescamp-crm
   status: PUBLIC_BETA
   logo:
@@ -4056,7 +4055,7 @@ items:
     behavior using actionable data. The platform delivers high quality and
     reliable insights based on real-time data, in order for your business to
     ensure the delivery of flawless video and a high quality of experiences to
-    your users.
+    your users. 
   url: connections/destinations/catalog/youbora
   status: PUBLIC_BETA
   logo:
@@ -4160,12 +4159,12 @@ items:
   - Video
   - Analytics
 - display_name: goedle.io
-  slug: goedle.io
+  slug: goedleio
   name: catalog/destinations/goedle
   description: >-
     Predict your customer’s behavior. Increase conversions and retention with
     powerful AI and intelligent marketing automation.
-  url: connections/destinations/catalog/goedle.io
+  url: connections/destinations/catalog/goedleio
   status: PUBLIC
   logo:
     url: 'https://cdn.filepicker.io/api/file/6vtAy6hSbeg4QMelSuJp'
@@ -4210,13 +4209,13 @@ items:
   categories:
   - Heatmaps & Recordings
 - display_name: tray.io
-  slug: tray.io
+  slug: trayio
   name: catalog/destinations/tray.io
   description: >-
     tray.io is a visual workflow tool for building custom integrations triggered
     by Segment events. You can trigger workflows by passing data to over 60
     tools including Salesforce, Slack, or Marketo.
-  url: connections/destinations/catalog/tray.io
+  url: connections/destinations/catalog/trayio
   status: PUBLIC
   logo:
     url: 'https://cdn.filepicker.io/api/file/05dfa8PhRRyv2oXHUzGw'
