@@ -159,13 +159,13 @@ items:
   categories:
   - Server
 - display_name: Customer.io
-  slug: customer.io
+  slug: customerio
   name: catalog/sources/customerio
   description: >-
     Customer.io is an automated email tool. It lets you set up rules to
     automatically send emails to your users after they perform actions, making
     drip email campaigns really easy.
-  url: connections/sources/catalog/cloud-apps/customer.io
+  url: connections/sources/catalog/cloud-apps/customerio
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/customerio-default.svg'
   mark:
@@ -271,7 +271,7 @@ items:
   slug: javascript
   name: catalog/sources/javascript
   description: >-
-    This is our most flexible and powerful tracking system, using analytics.js.
+    This is our most flexible and powerful tracking system, using analytics.js. 
     Track and analyze information about your visitors and customers, and every
     action that they take, in any of our 140 integrations, business intelligence
     tools, or directly with SQL tools.
@@ -378,10 +378,10 @@ items:
   - Customer Success
   - Performance Monitoring
 - display_name: Node.js
-  slug: node.js
+  slug: node
   name: catalog/sources/node.js
   description: ''
-  url: connections/sources/catalog/libraries/server/node.js
+  url: connections/sources/catalog/libraries/server/node
   logo:
     url: 'https://cdn.filepicker.io/api/file/1gENqOjST9GLydIWdznH'
   mark:
@@ -526,12 +526,12 @@ items:
   categories:
   - Server
 - display_name: Shopify (by Littledata)
-  slug: shopify-(by-littledata)
+  slug: shopify-by-littledata
   name: catalog/sources/shopify-littledata
   description: >-
     Littledata is a third-party plugin for installing Segment and collecting
     robust ecommerce data on your Shopify store
-  url: connections/sources/catalog/libraries/website/shopify-(by-littledata)
+  url: connections/sources/catalog/libraries/website/shopify-by-littledata
   logo:
     url: 'https://cdn.filepicker.io/api/file/o871amWREKVzwCH3GNXN'
   mark:
