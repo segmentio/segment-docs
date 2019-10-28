@@ -1,0 +1,86 @@
+# Manually generated
+items:
+- display_name: Redshift
+  slug: redshift
+  name: catalog/warehouses/redshift
+  description: ''
+  url: connections/warehouses/catalog/redshift
+  status: PUBLIC
+  logo: 
+    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/redshift-default.svg'
+  mark:
+    url: ''
+  categories:
+    - Warehouses
+- display_name: BigQuery
+  slug: bigquery
+  name: catalog/warehouses/bigquery
+  description: ''
+  url: connections/warehouses/catalog/bigquery
+  status: PUBLIC
+  logo: 
+    url: 'https://cdn.filepicker.io/api/file/bDzeRa75SZc6FfgfoUK6'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/Vk6iFlMvQeynbg30ZEtt'
+  categories:
+    - Warehouses
+- display_name: Postgres
+  slug: postgres
+  name: catalog/warehouses/postgres
+  description: ''
+  url: connections/warehouses/catalog/postgres
+  status: PUBLIC
+  logo:
+    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/postgres-default.svg'
+  mark:
+    url: ''
+  categories:
+    - Warehouses
+- display_name: Snowflake
+  slug: snowflake
+  name: catalog/warehouses/snowflake
+  description: ''
+  url: connections/warehouses/catalog/snowflake
+  status: PUBLIC
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/JrQWOYvMRRCVvSHp4HL0'
+  mark: 
+    url: 'https://cdn.filepicker.io/api/file/OBhrGoCRKaSyvAhDX3fw'
+  categories:
+    - Warehouses
+- display_name: IBM Db2 Warehouse
+  slug: db2
+  name: catalog/warehouses/db2
+  description: ''
+  url: connections/warehouses/catalog/db2
+  status: PUBLIC
+  logo: 
+    url: 'https://image.ibb.co/i4rS3K/IBM_Db2_logotype_pos_RGB.jpg'
+  mark: 
+    url: ''
+  categories:
+    - Warehouses
+- display_name: Azure SQL Database
+  slug: azuresqldb
+  name: catalog/warehouses/azuresqldb
+  description: ''
+  url: connections/warehouses/catalog/azuresqldb
+  status: PUBLIC_BETA
+  logo: 
+    url: 'https://msftplayground.com/wp-content/uploads/2017/04/logoAzureSql.png'
+  mark:
+    url: ''
+  categories:
+    - Warehouses
+- display_name: Azure SQL Data Warehouse
+  slug: azuresqldw
+  name: catalog/warehouses/azuresqldw
+  description: ''
+  url: connections/warehouses/catalog/azuresqldw
+  status: PUBLIC
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/VKbuWjNjQPKOnOWijFe4'
+  mark: 
+    url: 'https://cdn.filepicker.io/api/file/EUJvt69Q7qMqCvGrVtiu'
+  categories:
+    - Warehouses
