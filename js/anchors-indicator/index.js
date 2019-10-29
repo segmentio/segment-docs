@@ -24,10 +24,18 @@ export default () => {
 
     function scrollspy() {
       sections.forEach(current => {
-        let currentElementOffset = current.offsetTop;
-        let scrollPosition =
-          document.documentElement.scrollTop || document.body.scrollTop;
-        if (currentElementOffset <= scrollPosition + (window.innerHeight / 2)) {
+        let currentElementOffset = current.offsetTop
+        let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
+
+        let position = null
+
+        if (window.innerWidth >= 768) {
+          position = scrollPosition + (window.innerHeight * 0.2)
+        } else {
+          position = scrollPosition + (window.innerHeight * 0.6)
+        }
+
+        if (currentElementOffset <= position) {
           allLinks.forEach(currentLink => {
             currentLink.classList.remove(activeClass);
           });
@@ -41,6 +49,8 @@ export default () => {
         }
       });
     }
+
+    window.addEventListener('load', scrollspy())
     window.addEventListener("scroll", throttle(scrollspy, 200))
   })
 }
