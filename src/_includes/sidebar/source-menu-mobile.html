@@ -1,9 +1,9 @@
 {% assign destination_categories = site.data.catalogV2.source_categories.items | sort: "name" %}
 
-<div class="destination-menu-mobile" data-anchors-indicator data-sections=".destinations-catalog__section" data-active-class="destination-menu-mobile__item--active">
+<div class="destination-menu-mobile" data-dropdown-menu data-anchors-indicator data-sections=".destinations-catalog__section" data-active-class="destination-menu-mobile__item--active">
   <div class="destination-menu-mobile__select" data-ref="dropdown-menu[head]" data-active-class="destination-menu-mobile__select--active">
     <div class="destination-menu-mobile__select-inner">
-      <span class="flex flex--middle" data-ref="dropdown-menu[head-inner]">
+      <span data-ref="dropdown-menu[head-inner]">
         Choose category
       </span>
 

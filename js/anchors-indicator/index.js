@@ -2,9 +2,6 @@
 const COMPONENT_SELECTOR = '[data-anchors-indicator]'
 const ACTIVE_CLASS = 'data-active-class'
 const SECTION_ATTR= 'data-sections'
-const options = {
-  rootMargin: 50
-}
 
 const throttle = (fn, wait) => {
   var time = Date.now()
@@ -30,7 +27,15 @@ export default () => {
         let currentElementOffset = current.offsetTop
         let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
 
-        if (currentElementOffset <= scrollPosition + options.rootMargin) {
+        let position = null
+
+        if (window.innerWidth >= 768) {
+          position = scrollPosition + (window.innerHeight * 0.2)
+        } else {
+          position = scrollPosition + (window.innerHeight * 0.6)
+        }
+
+        if (currentElementOffset <= position) {
           allLinks.forEach(currentLink => {
             currentLink.classList.remove(activeClass)
           })
@@ -49,7 +54,7 @@ export default () => {
       })
     }
 
-    scrollspy()
-    window.addEventListener('scroll', throttle(scrollspy, 200))
+    window.addEventListener('load', scrollspy())
+    window.addEventListener("scroll", throttle(scrollspy, 50))
   })
 }
