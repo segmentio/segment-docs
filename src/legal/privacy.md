@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy
 sidebar: Privacy Policy
-feedback: false
+hide-feedback: true
 ---
 
 [email]: mailto:legal@segment.com

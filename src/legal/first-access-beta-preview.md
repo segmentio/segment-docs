@@ -1,7 +1,7 @@
 ---
 title: "First-Access and Beta Preview"
 sidebar: "First-Access and Beta Preview"
-feedback: false
+hide-feedback: true
 ---
 
 ### SEGMENT FIRST-ACCESS AND BETA PREVIEW TERMS AND CONDITIONS

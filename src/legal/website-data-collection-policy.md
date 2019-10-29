@@ -1,7 +1,7 @@
 ---
 title: Website Data Collection Policy
 sidebar: Website Data Collection Policy
-feedback: false
+hide-feedback: true
 ---
 
 Segment uses data collected by cookies and javascript libraries to improve your browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site.

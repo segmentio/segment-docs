@@ -1,7 +1,7 @@
 ---
 hidden: true
 title: Segment Premium Online Terms of Service
-feedback: false
+hide-feedback: true
 ---
 
 **SEGMENT PREMIUM ONLINE CUSTOMER AGREEMENT**

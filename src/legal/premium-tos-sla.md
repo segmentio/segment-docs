@@ -1,7 +1,7 @@
 ---
 hidden: true
 title: Segment SLA for Premium Terms of Service
-feedback: false
+hide-feedback: true
 ---
 
 _Last Updated June 22nd, 2019_

@@ -1,7 +1,7 @@
 ---
 title: List of Data Subprocessors
 sidebar: List of Data Subprocessors
-feedback: false
+hide-feedback: true
 ---
 
 [email]: mailto:legal@segment.com

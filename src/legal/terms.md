@@ -1,7 +1,7 @@
 ---
 title: Terms of Service
 sidebar: Terms of Service
-feedback: false
+hide-feedback: true
 ---
 
 [email]: mailto:legal@segment.com
