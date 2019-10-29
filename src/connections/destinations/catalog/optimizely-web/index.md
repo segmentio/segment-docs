@@ -403,7 +403,7 @@ If you’re sending your experiments to Google Analytics in the form of `track` 
 {% include components/list-steps.html number="3" content="The instance must be named `optmizelyClientInstance`." %}
 {% include components/list-steps.html number="4" content="Attach the `optimizelyClientInstance` to the `window` so Segment recognizes it." %}
 {% include components/list-steps.html number="5" content="Now, paste your Segment snippet below the Optimizely implementation on every page where you’d like to include Segment’s JavaScript. Or, if you’ve implemented Optimizely in a separate file, ensure Segment loads only after Optimizely has been initialized." %}
-{% include components/list-steps.html number="46" content="Finally, remember to define any `metrics` and `attributes` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`." %}
+{% include components/list-steps.html number="6" content="Finally, remember to define any `metrics` and `attributes` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`." %}
 
 ### Track
 
