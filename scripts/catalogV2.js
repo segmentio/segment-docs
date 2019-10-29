@@ -76,6 +76,7 @@ const getConnectionModes = (destination) => {
         }
         break
       case 'CLOUD':
+        connectionModes.cloud.mobile = true
         if (destination.platforms.server) {
           connectionModes.cloud.server = true
         }
@@ -85,7 +86,6 @@ const getConnectionModes = (destination) => {
         break
     }  
   })
-  // console.log()
   return connectionModes
 }
 

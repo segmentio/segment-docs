@@ -20,7 +20,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: AdLearn Open Platform
   slug: adlearn-open-platform
@@ -147,7 +147,7 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: false
 - display_name: Adjust
   slug: adjust
@@ -172,7 +172,7 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
 - display_name: Adobe Analytics
   slug: adobe-analytics
@@ -198,7 +198,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Adtriba
   slug: adtriba
@@ -226,7 +226,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Airship
   slug: airship
@@ -302,7 +302,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Amazon Kinesis
   slug: amazon-kinesis
@@ -329,7 +329,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Amazon Kinesis Firehose
   slug: amazon-kinesis-firehose
@@ -360,7 +360,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Amazon Lambda
   slug: amazon-lambda
@@ -384,7 +384,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Amazon Personalize
   slug: amazon-personalize
@@ -408,7 +408,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Amazon S3
   slug: amazon-s3
@@ -479,7 +479,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: AppNexus
   slug: appnexus
@@ -523,7 +523,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: AppsFlyer
   slug: appsflyer
@@ -544,7 +544,7 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
 - display_name: Apptimize
   slug: apptimize
@@ -640,7 +640,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Auryc
   slug: auryc
@@ -686,7 +686,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Azure Function
   slug: azure-function
@@ -711,7 +711,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Batch
   slug: batch
@@ -782,7 +782,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Blueshift
   slug: blueshift
@@ -807,7 +807,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Branch Metrics
   slug: branch-metrics
@@ -831,7 +831,7 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
 - display_name: Braze
   slug: braze
@@ -856,7 +856,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Bronto
   slug: bronto
@@ -956,7 +956,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Callingly
   slug: callingly
@@ -983,7 +983,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Calq
   slug: calq
@@ -1004,7 +1004,7 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
 - display_name: Candu
   slug: candu
@@ -1031,7 +1031,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Castle
   slug: castle
@@ -1054,7 +1054,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Chameleon
   slug: chameleon
@@ -1078,7 +1078,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Chartbeat
   slug: chartbeat
@@ -1126,7 +1126,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: ClearBrain
   slug: clearbrain
@@ -1152,7 +1152,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Clearbit Enrichment
   slug: clearbit-enrichment
@@ -1176,7 +1176,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Clearbit Reveal
   slug: clearbit-reveal
@@ -1201,7 +1201,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: CleverTap
   slug: clevertap
@@ -1227,7 +1227,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Clicky
   slug: clicky
@@ -1275,7 +1275,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: ConvertFlow
   slug: convertflow
@@ -1326,7 +1326,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Countly
   slug: countly
@@ -1397,7 +1397,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Criteo Offline Conversions
   slug: criteo-offline-conversions
@@ -1480,7 +1480,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Custify
   slug: custify
@@ -1560,7 +1560,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: CustomerSuccessBox
   slug: customersuccessbox
@@ -1587,7 +1587,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Delighted
   slug: delighted
@@ -1612,7 +1612,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: DoubleClick Floodlight
   slug: doubleclick-floodlight
@@ -1636,7 +1636,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Dreamdata IO
   slug: dreamdata-io
@@ -1662,7 +1662,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Drift
   slug: drift
@@ -1683,7 +1683,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Drip
   slug: drip
@@ -1707,7 +1707,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: EMMA
   slug: emma
@@ -1735,7 +1735,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: EPICA
   slug: epica
@@ -1763,7 +1763,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Elevio
   slug: elevio
@@ -1807,7 +1807,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Email Aptitude
   slug: email-aptitude
@@ -1861,7 +1861,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Errorception
   slug: errorception
@@ -1935,7 +1935,7 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
 - display_name: Facebook Offline Conversions
   slug: facebook-offline-conversions
@@ -1960,7 +1960,7 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
 - display_name: Facebook Pixel
   slug: facebook-pixel
@@ -2113,7 +2113,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Freshsales
   slug: freshsales
@@ -2138,7 +2138,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Friendbuy
   slug: friendbuy
@@ -2261,7 +2261,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Gainsight PX
   slug: gainsight-px
@@ -2338,7 +2338,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Google Ads (Classic)
   slug: google-ads-classic
@@ -2361,7 +2361,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Google Ads (Gtag)
   slug: google-ads-gtag
@@ -2408,7 +2408,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Google Cloud Function
   slug: google-cloud-function
@@ -2432,7 +2432,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Google Cloud PubSub
   slug: google-cloud-pubsub
@@ -2457,7 +2457,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Google Tag Manager
   slug: google-tag-manager
@@ -2503,7 +2503,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Hawkei
   slug: hawkei
@@ -2553,7 +2553,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Hello Bar
   slug: hello-bar
@@ -2599,7 +2599,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: HitTail
   slug: hittail
@@ -2672,7 +2672,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Hull
   slug: hull
@@ -2698,7 +2698,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: IBM UBX
   slug: ibm-ubx
@@ -2724,7 +2724,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Improvely
   slug: improvely
@@ -2773,7 +2773,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Inspectlet
   slug: inspectlet
@@ -2822,7 +2822,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Interana
   slug: interana
@@ -2874,7 +2874,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Iron.io
   slug: ironio
@@ -2898,7 +2898,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Iterable
   slug: iterable
@@ -2924,7 +2924,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: KISSmetrics
   slug: kissmetrics
@@ -2949,7 +2949,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Kahuna
   slug: kahuna
@@ -2973,7 +2973,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Keen
   slug: keen
@@ -2998,7 +2998,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Kitemetrics
   slug: kitemetrics
@@ -3029,7 +3029,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Klaviyo
   slug: klaviyo
@@ -3054,7 +3054,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Kochava
   slug: kochava
@@ -3077,7 +3077,7 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
 - display_name: Kustomer
   slug: kustomer
@@ -3103,7 +3103,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Lazy Lantern
   slug: lazy-lantern
@@ -3152,7 +3152,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Learndot
   slug: learndot
@@ -3199,7 +3199,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: LinkedIn Insight Tag
   slug: linkedin-insight-tag
@@ -3326,7 +3326,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Madkudu
   slug: madkudu
@@ -3348,7 +3348,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: MailChimp
   slug: mailchimp
@@ -3369,7 +3369,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Mailjet
   slug: mailjet
@@ -3392,7 +3392,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Mammoth
   slug: mammoth
@@ -3415,7 +3415,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Marketo Static Lists
   slug: marketo-static-lists
@@ -3462,7 +3462,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: MediaMath
   slug: mediamath
@@ -3508,7 +3508,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Mixpanel
   slug: mixpanel
@@ -3532,7 +3532,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: MoEngage
   slug: moengage
@@ -3557,7 +3557,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Moesif API Analytics
   slug: moesif-api-analytics
@@ -3629,7 +3629,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: MouseStats
   slug: mousestats
@@ -3701,7 +3701,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Mutiny
   slug: mutiny
@@ -3730,7 +3730,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Nanigans
   slug: nanigans
@@ -3753,7 +3753,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Natero
   slug: natero
@@ -3776,7 +3776,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Navilytics
   slug: navilytics
@@ -3823,7 +3823,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Nielsen DCR
   slug: nielsen-dcr
@@ -3874,7 +3874,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Nudgespot
   slug: nudgespot
@@ -3897,7 +3897,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Olark
   slug: olark
@@ -3943,7 +3943,7 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
 - display_name: Optimizely Full Stack
   slug: optimizely-full-stack
@@ -3966,7 +3966,7 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
 - display_name: Optimizely Web
   slug: optimizely-web
@@ -4016,7 +4016,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Parsely
   slug: parsely
@@ -4065,7 +4065,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Perfect Audience
   slug: perfect-audience
@@ -4117,7 +4117,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Personas Facebook Custom Audiences
   slug: personas-facebook-custom-audiences
@@ -4172,7 +4172,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Pingdom
   slug: pingdom
@@ -4295,7 +4295,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Podsights
   slug: podsights
@@ -4341,7 +4341,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Promoter.io
   slug: promoterio
@@ -4364,7 +4364,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Proof Experiences
   slug: proof-experiences
@@ -4389,7 +4389,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Qualaroo
   slug: qualaroo
@@ -4462,7 +4462,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Quora Conversion Pixel
   slug: quora-conversion-pixel
@@ -4513,7 +4513,7 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
 - display_name: Ramen
   slug: ramen
@@ -4537,7 +4537,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Refersion
   slug: refersion
@@ -4567,7 +4567,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Refiner
   slug: refiner
@@ -4594,7 +4594,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Repeater
   slug: repeater
@@ -4617,7 +4617,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Responsys
   slug: responsys
@@ -4641,7 +4641,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Rockerbox
   slug: rockerbox
@@ -4716,7 +4716,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: SaaSquatch
   slug: saasquatch
@@ -4761,7 +4761,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Salescamp CRM
   slug: salescamp-crm
@@ -4814,7 +4814,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Salesforce Marketing Cloud
   slug: salesforce-marketing-cloud
@@ -4839,7 +4839,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Salesmachine
   slug: salesmachine
@@ -4863,7 +4863,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: SatisMeter
   slug: satismeter
@@ -4887,7 +4887,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Savio
   slug: savio
@@ -4916,7 +4916,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: ScopeAI
   slug: scopeai
@@ -4943,7 +4943,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Seg
   slug: seg
@@ -4967,7 +4967,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Sentry
   slug: sentry
@@ -5020,7 +5020,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: ShareASale
   slug: shareasale
@@ -5066,7 +5066,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: SimpleReach
   slug: simplereach
@@ -5120,7 +5120,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Slack
   slug: slack
@@ -5141,7 +5141,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: SlicingDice
   slug: slicingdice
@@ -5169,7 +5169,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Smartlook
   slug: smartlook
@@ -5269,7 +5269,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Stitch Data
   slug: stitch-data
@@ -5293,7 +5293,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Strikedeck
   slug: strikedeck
@@ -5323,7 +5323,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Survicate
   slug: survicate
@@ -5392,7 +5392,7 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
+      mobile: true
       server: true
 - display_name: TV Squared
   slug: tv-squared
@@ -5467,7 +5467,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Taplytics
   slug: taplytics
@@ -5539,7 +5539,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Track JS
   slug: track-js
@@ -5589,7 +5589,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Tractionboard
   slug: tractionboard
@@ -5613,7 +5613,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: TrafficGuard
   slug: trafficguard
@@ -5644,7 +5644,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Treasure Data
   slug: treasure-data
@@ -5668,7 +5668,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Trustpilot
   slug: trustpilot
@@ -5697,7 +5697,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Twitter Ads
   slug: twitter-ads
@@ -5750,7 +5750,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Upcall
   slug: upcall
@@ -5777,7 +5777,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: UserEngage
   slug: userengage
@@ -5802,7 +5802,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: UserIQ
   slug: useriq
@@ -5833,7 +5833,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: UserVoice
   slug: uservoice
@@ -5909,7 +5909,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Userpilot
   slug: userpilot
@@ -5957,7 +5957,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Visual Website Optimizer
   slug: visual-website-optimizer
@@ -6005,7 +6005,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: WalkMe
   slug: walkme
@@ -6065,7 +6065,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Webhooks
   slug: webhooks
@@ -6089,7 +6089,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Whale Alerts
   slug: whale-alerts
@@ -6113,7 +6113,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Whale Watch
   slug: whale-watch
@@ -6134,7 +6134,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Wigzo
   slug: wigzo
@@ -6161,7 +6161,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Wishpond
   slug: wishpond
@@ -6187,7 +6187,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Woopra
   slug: woopra
@@ -6211,7 +6211,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Wootric
   slug: wootric
@@ -6292,7 +6292,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Yandex Metrica
   slug: yandex-metrica
@@ -6392,7 +6392,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Zapier
   slug: zapier
@@ -6413,7 +6413,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Zendesk
   slug: zendesk
@@ -6436,7 +6436,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Zendesk Connect
   slug: zendesk-connect
@@ -6464,7 +6464,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: Zopim
   slug: zopim
@@ -6538,7 +6538,7 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
 - display_name: hydra
   slug: hydra
@@ -6616,5 +6616,5 @@ items:
       server: false
     cloud:
       web: true
-      mobile: false
+      mobile: true
       server: true
