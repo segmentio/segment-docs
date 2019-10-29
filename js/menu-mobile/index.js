@@ -3,7 +3,8 @@ const COMPONENT_SELECTOR = `[${COMPONENT_NAME}]`
 const TRIGGER_SELECTOR = '[data-ref*="menu-mobile[trigger]"]'
 
 const DEFAULTS = {
-  classActive: 'active'
+  classActive: 'active',
+  classBody: 'active'
 }
 
 export default function () {
@@ -18,6 +19,7 @@ export default function () {
         event.preventDefault()
 
         component.classList.toggle(settings.classActive)
+        document.body.classList.toggle(settings.classBody)
       })
     }
   }
