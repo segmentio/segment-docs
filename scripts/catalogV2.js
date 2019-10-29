@@ -153,7 +153,8 @@ const updateDestinations = async () => {
       mark: {
         url: destination.logos.mark
       },
-      categories: tempCategories
+      categories: tempCategories,
+      settings: destination.settings
     }
     destinationsUpdated.push(updatedDestination)
 
