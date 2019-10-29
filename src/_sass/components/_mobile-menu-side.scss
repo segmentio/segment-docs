@@ -24,6 +24,11 @@
 
   &__link {
     color: rgba(color(gray-dark), 0.8);
+
+    &:hover {
+      text-decoration: none;
+      color: color(gray-dark);
+    }
   }
 
   &__divider {
