@@ -14,13 +14,17 @@
     svg {
       width: 14px;
       max-height: 14px;
-      margin-right: 8px;
-      margin-top: 2px;
     }
 
     &--active {
       color: color(secondary-dark);
     }
+  }
+
+  &__icon {
+    width: 14px;
+    margin-right: 5px;
+    margin-top: 8px;
   }
 
   &__link {
