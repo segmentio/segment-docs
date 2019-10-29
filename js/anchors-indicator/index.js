@@ -51,6 +51,6 @@ export default () => {
     }
 
     window.addEventListener('load', scrollspy())
-    window.addEventListener("scroll", throttle(scrollspy, 200))
+    window.addEventListener("scroll", throttle(scrollspy, 50))
   })
 }
