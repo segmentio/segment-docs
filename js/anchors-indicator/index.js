@@ -2,9 +2,6 @@
 const COMPONENT_SELECTOR = '[data-anchors-indicator]'
 const ACTIVE_CLASS = 'data-active-class'
 const SECTION_ATTR= 'data-sections'
-const options = {
-  rootMargin: 50
-}
 
 const throttle = (fn, wait) => {
   var time = Date.now();
@@ -30,7 +27,7 @@ export default () => {
         let currentElementOffset = current.offsetTop;
         let scrollPosition =
           document.documentElement.scrollTop || document.body.scrollTop;
-        if (currentElementOffset <= scrollPosition + options.rootMargin) {
+        if (currentElementOffset <= scrollPosition + (window.innerHeight / 2)) {
           allLinks.forEach(currentLink => {
             currentLink.classList.remove(activeClass);
           });
