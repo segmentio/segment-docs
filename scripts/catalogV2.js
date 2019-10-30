@@ -211,6 +211,7 @@ const updateDestinations = async () => {
         url: destination.logos.mark
       },
       categories: tempCategories,
+      settings: destination.settings,
       connection_modes
     }
     destinationsUpdated.push(updatedDestination)
