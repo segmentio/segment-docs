@@ -18,6 +18,7 @@ defaults:
       beta: false
       seo-priority: 0.5
       seo-changefreq: weekly
+      hide-feedback: false
   - scope:
       path: "connections/destinations"
     values:
@@ -27,6 +28,7 @@ defaults:
       path: "connections/sources/catalog"
     values:
       integration_type: source
+      layout: integration
   - scope:
       path: "connections/warehouses/catalog"
     values:

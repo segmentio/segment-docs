@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy - 2016
 hidden: true
-feedback: false
+hide-feedback: true
 ---
 
 [email]: mailto:legal@segment.com

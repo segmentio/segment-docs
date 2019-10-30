@@ -39,6 +39,56 @@ const getCatalog = async (url, page_token = "") => {
   }
 }
 
+const getConnectionModes = (destination) => {
+  let connectionModes = {
+    device: {
+      web: false,
+      mobile: false,
+      server: false
+    },
+    cloud: {
+      web: false,
+      mobile: false,
+      server: false
+    }
+  }
+  destination.components.forEach(component => {
+    switch (component.type) {
+      case 'IOS':
+        connectionModes.device.mobile = true
+        break
+      case 'ANDROID':
+        connectionModes.device.mobile = true
+        break
+      case 'WEB':
+        if (destination.browserUnbundlingSupported && destination.browserUnbundlingPublic) {
+          connectionModes.cloud.web = true
+        }
+        connectionModes.device.web = true
+        break
+      case 'SERVER':
+        connectionModes.cloud.mobile = true
+        if (destination.platforms.server) {
+          connectionModes.cloud.server = true
+        }
+        if (destination.platforms.browser) {
+          connectionModes.cloud.web = true
+        }
+        break
+      case 'CLOUD':
+        connectionModes.cloud.mobile = true
+        if (destination.platforms.server) {
+          connectionModes.cloud.server = true
+        }
+        if (destination.platforms.browser) {
+          connectionModes.cloud.web = true
+        }
+        break
+    }  
+  })
+  return connectionModes
+}
+
 const updateSources = async () => {
   let sources = []
   let sourcesUpdated = []
@@ -140,6 +190,13 @@ const updateDestinations = async () => {
     let tempCategories = [destination.categories.primary, destination.categories.secondary, ...destination.categories.additional]
     tempCategories = tempCategories.filter(category => category != '')
 
+    let connection_modes = getConnectionModes({
+      components: destination.components,
+      platforms: destination.platforms,
+      browserUnbundlingSupported: destination.browserUnbundlingSupported,
+      browserUnbundlingPublic: destination.browserUnbundlingPublic
+    })
+
     let updatedDestination = {
       display_name: destination.display_name,
       slug,
@@ -154,7 +211,8 @@ const updateDestinations = async () => {
         url: destination.logos.mark
       },
       categories: tempCategories,
-      settings: destination.settings
+      settings: destination.settings,
+      connection_modes
     }
     destinationsUpdated.push(updatedDestination)
 

@@ -30,13 +30,14 @@ layout: default
       <div class="sidebar sidebar--sticky">
         {%- unless page.hide_toc -%}
           <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+            <p class="sidebar__title">On this page</p>
             {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
           </div>
         {%- endunless -%}
 
-        {% if page.feedback != false %}
+        {% unless page.hide-feedback %}
           {% include sidebar/feedback.html %}
-        {% endif %}
+        {% endunless %}
       </div>
     </div>
   </div>
