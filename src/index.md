@@ -3,7 +3,6 @@ title: Segment Documentation
 layout: home
 landing: true
 redirect_from:
-- '/api/'
 - '/big-picture/'
 - '/big-picture/best-practices/'
 - '/big-picture/what-we-do/'
