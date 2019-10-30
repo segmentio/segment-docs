@@ -6,7 +6,7 @@ hide_toc: true
 <div class="destinations-catalog">
   <div class="destinations-catalog__section">
     <div class="flex flex--wrap waffle waffle--large">
-      {% assign warehouses = site.data.catalogV2.warehouse.items %}
+      {% assign warehouses = site.data.catalog.warehouse.items %}
 
       {% for warehouse in warehouses %}
         {% if warehouse.status contains "PUBLIC" or warehouse.status contains "BETA" %}
