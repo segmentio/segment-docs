@@ -1,6 +1,6 @@
 {% assign activeState = false %}
 {% assign currentSlug = page.url | split: "/" | last %}
-{% assign currentIntegration = site.data.catalogV2.sources.items | where: "slug", currentSlug | first %}
+{% assign currentIntegration = site.data.catalog.sources.items | where: "slug", currentSlug | first %}
 
 <div class="sidebar sidebar--dark">
   <nav class="menu">
@@ -19,10 +19,10 @@
 
   <nav class="menu menu--compact">
     <ul class="menu__list list list--unstyle">
-      {% assign categories = site.data.catalogV2.destination_categories.items %}
+      {% assign categories = site.data.catalog.destination_categories.items %}
 
       {% for category in categories %}
-        {% assign integrations = site.data.catalogV2.sources.items | where: "categories", category.display_name %}
+        {% assign integrations = site.data.catalog.sources.items | where: "categories", category.display_name %}
 
         <li class="menu-item menu-item--gray menu-item--compact {% if currentIntegration.categories contains category.display_name and activeState != true %}{% assign activeState = true %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
           <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">

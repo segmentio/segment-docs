@@ -1,6 +1,6 @@
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
 {% assign currentSlug = page.url | split: "/" | last %}
-{% assign currentIntegration = site.data.catalogV2.destinations.items | where: "slug", currentSlug | first %}
+{% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
 {% assign connectionModes = currentIntegration.connection_modes %}
 <!--
 components -> how do we send data

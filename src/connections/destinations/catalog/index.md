@@ -5,7 +5,7 @@ layout: catalog
 ---
 
 <div class="destinations-catalog">
-  {% assign categories = site.data.catalogV2.destination_categories.items %}
+  {% assign categories = site.data.catalog.destination_categories.items %}
 
   {% for category in categories %}
     <div class="destinations-catalog__section markdown" id="{{ category.slug | slugify }}">
@@ -18,7 +18,7 @@ layout: catalog
       </h2>
 
       <div class="flex flex--wrap waffle waffle--large">
-        {% assign destinations = site.data.catalogV2.destinations.items | where: "categories", category.display_name %}
+        {% assign destinations = site.data.catalog.destinations.items | where: "categories", category.display_name %}
 
         {% for destination in destinations %}
           {% if destination.status contains "PUBLIC" or destination.status contains "BETA" %}

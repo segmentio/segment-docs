@@ -8,7 +8,7 @@ layout: catalog
 ---
 
 <div class="destinations-catalog">
-  {% assign categories = site.data.catalogV2.source_categories.items %}
+  {% assign categories = site.data.catalog.source_categories.items %}
   {% assign promoted_categories = "Website, Mobile, Server, Ott" | split: ", " %}
 
   {% for category in promoted_categories %}
@@ -17,7 +17,7 @@ layout: catalog
         {{ category }}
       </h2>
       <div class="flex flex--wrap waffle waffle--large">
-        {% assign integrations = site.data.catalogV2.sources.items | where: "categories", category %}
+        {% assign integrations = site.data.catalog.sources.items | where: "categories", category %}
         {% for integration in integrations %}
           <div class="flex__column flex__column--6 flex__column--4@medium">
             <a class="thumbnail-integration" href="{{ site.baseurl }}/{{ integration.url }}">
@@ -47,7 +47,7 @@ layout: catalog
       Cloud-apps
     </h2>
     <div class="flex flex--wrap waffle waffle--large">
-      {% assign integrations = site.data.catalogV2.sources.items %}
+      {% assign integrations = site.data.catalog.sources.items %}
       {% for integration in integrations %}
         {% unless integration.categories contains promoted_categories[0] or integration.categories contains promoted_categories[1] or integration.categories contains promoted_categories[2] or integration.categories contains promoted_categories[3]%}
           <div class="flex__column flex__column--6 flex__column--4@medium">
