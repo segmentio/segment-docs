@@ -27,6 +27,7 @@ defaults:
       path: "connections/sources/catalog"
     values:
       integration_type: source
+      layout: integration
   - scope:
       path: "connections/warehouses/catalog"
     values:
