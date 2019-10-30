@@ -1,7 +1,7 @@
 ---
 title: Security
 sidebar: Security
-feedback: false
+hide-feedback: true
 ---
 
 We take the responsibility of helping you manage your customer data seriously. That’s why security and privacy are key focus areas for our organization and product development. To learn more about Segment's Security program, please visit [our security page](https://segment.com/security/).

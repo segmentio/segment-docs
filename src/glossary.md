@@ -2,7 +2,7 @@
 title: "Segment Glossary"
 description: "Glossary of terms used in the Segment documentation"
 hide_toc: true
-feedback: false
+hide-feedback: true
 layout: page
 ---
 <span id="doc-content" />

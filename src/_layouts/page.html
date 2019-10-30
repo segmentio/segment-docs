@@ -42,7 +42,9 @@ layout: main
 
     <hr>
 
+    {% unless page.hide-feedback %}
     {% include components/feedback.html %}
+    {% endunless %}
 
     {% include components/callout.html %}
   </div>

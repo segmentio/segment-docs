@@ -18,6 +18,7 @@ defaults:
       beta: false
       seo-priority: 0.5
       seo-changefreq: weekly
+      hide-feedback: false
   - scope:
       path: "connections/destinations"
     values:

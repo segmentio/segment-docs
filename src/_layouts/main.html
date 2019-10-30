@@ -35,9 +35,9 @@ layout: default
           </div>
         {%- endunless -%}
 
-        {% if page.feedback != false %}
+        {% unless page.hide-feedback %}
           {% include sidebar/feedback.html %}
-        {% endif %}
+        {% endunless %}
       </div>
     </div>
   </div>

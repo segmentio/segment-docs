@@ -43,7 +43,9 @@ layout: default
 
       <div class="sidebar sidebar--sticky">
         {% include sidebar/{{ page.integration_type }}-menu.html %}
+        {% unless page.hide-feedback %}
         {% include sidebar/feedback.html %}
+        {% endunless %}
       </div>
     </div>
   </div>

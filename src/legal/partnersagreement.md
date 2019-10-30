@@ -1,7 +1,7 @@
 ---
 title: Segment Partner Program Agreement
 sidebar: Segment Partner Program Agreement
-feedback: false
+hide-feedback: true
 ---
 
 ## Segment Partner Program Agreement
