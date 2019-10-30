@@ -13,6 +13,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/AihHusTMaZdUXL7OlFDw'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: AdLearn Open Platform
   slug: adlearn-open-platform
   name: catalog/destinations/adlearn-open-platform
@@ -31,6 +40,15 @@ items:
   - Analytics
   - Enrichment
   - A/B Testing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: AdQuick
   slug: adquick
   name: catalog/destinations/adquick
@@ -48,6 +66,15 @@ items:
   - Analytics
   - Customer Success
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: AdRoll
   slug: adroll
   name: catalog/destinations/adroll
@@ -62,6 +89,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/IKo2fU59RROBsNtj4lHs'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: AdWords Remarketing Lists
   slug: adwords-remarketing-lists
   name: catalog/destinations/adwords-remarketing-lists
@@ -76,6 +112,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/9VImDdjKTFWSWvdsPLxh'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Adikteev
   slug: adikteev
   name: catalog/destinations/adikteev
@@ -95,6 +140,15 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/d159a61b-530e-43bd-90c1-f090dad90c78.svg
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: false
 - display_name: Adjust
   slug: adjust
   name: catalog/destinations/adjust
@@ -111,6 +165,15 @@ items:
   categories:
   - Attribution
   - Deep Linking
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - display_name: Adobe Analytics
   slug: adobe-analytics
   name: catalog/destinations/adobe-analytics
@@ -128,6 +191,15 @@ items:
   categories:
   - Analytics
   - Video
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Adtriba
   slug: adtriba
   name: catalog/destinations/adtriba
@@ -147,6 +219,15 @@ items:
   - Attribution
   - Advertising
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Airship
   slug: airship
   name: catalog/destinations/airship
@@ -166,6 +247,15 @@ items:
   - SMS & Push Notifications
   - Email Marketing
   - Marketing Automation
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Alexa
   slug: alexa
   name: catalog/destinations/alexa
@@ -181,6 +271,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/jplK0HFyT5CKTc6FHkfP'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Amazon EventBridge
   slug: amazon-eventbridge
   name: catalog/destinations/amazon-eventbridge
@@ -196,6 +295,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/aOyvwBpXRUOoeEPETStK'
   categories:
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Amazon Kinesis
   slug: amazon-kinesis
   name: catalog/destinations/amazon-kinesis
@@ -214,6 +322,15 @@ items:
   categories:
   - Analytics
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Amazon Kinesis Firehose
   slug: amazon-kinesis-firehose
   name: catalog/destinations/amazon-kinesis-firehose
@@ -236,6 +353,15 @@ items:
   categories:
   - Analytics
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Amazon Lambda
   slug: amazon-lambda
   name: catalog/destinations/amazon-lambda
@@ -251,6 +377,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/gRmECESRRZiqkIxjbjeq'
   categories:
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Amazon Personalize
   slug: amazon-personalize
   name: catalog/destinations/amazon-personalize
@@ -266,6 +401,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/xq0IiYdQL6fTigF2XkSC'
   categories:
   - Personalization
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Amazon S3
   slug: amazon-s3
   name: catalog/destinations/amazon-s3
@@ -281,6 +425,15 @@ items:
   categories:
   - Analytics
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Ambassador
   slug: ambassador
   name: catalog/destinations/ambassador
@@ -295,6 +448,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/jQNYYdyGQGqLZ6sLPs41'
   categories:
   - Referrals
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Amplitude
   slug: amplitude
   name: catalog/destinations/amplitude
@@ -310,6 +472,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/Nmj7LgOQR62rdAmlbnLO'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: AppNexus
   slug: appnexus
   name: catalog/destinations/appnexus
@@ -322,6 +493,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/A3YvNdKgTuaEWDfebPFF'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Appcues
   slug: appcues
   name: catalog/destinations/appcues
@@ -336,6 +516,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/lDwvVrfTG6yHeZnaV2QX'
   categories:
   - Personalization
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: AppsFlyer
   slug: appsflyer
   name: catalog/destinations/appsflyer
@@ -348,6 +537,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/AnJUEBvxRouLLOvIeQuK'
   categories:
   - Attribution
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - display_name: Apptimize
   slug: apptimize
   name: catalog/destinations/apptimize
@@ -363,6 +561,15 @@ items:
   categories:
   - A/B Testing
   - Feature Flagging
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Asayer
   slug: asayer
   name: catalog/destinations/asayer
@@ -382,6 +589,15 @@ items:
   - Customer Success
   - Performance Monitoring
   - Raw Data
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Atatus
   slug: atatus
   name: catalog/destinations/atatus
@@ -396,6 +612,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/SXUMgP7bQmmrG0iU5PKU'
   categories:
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Attribution
   slug: attribution
   name: catalog/destinations/attribution
@@ -408,6 +633,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/sybdw0htTTKBmrgD1jJI'
   categories:
   - Attribution
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Auryc
   slug: auryc
   name: catalog/destinations/auryc
@@ -424,6 +658,15 @@ items:
   - Analytics
   - Heatmaps & Recordings
   - Surveys
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: AutopilotHQ
   slug: autopilothq
   name: catalog/destinations/autopilothq
@@ -436,6 +679,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/2wLIOq1URP6JDqk5dioG'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Azure Function
   slug: azure-function
   name: catalog/destinations/azure-function
@@ -452,6 +704,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/R2lShT3T7e5Gru53ZxIg'
   categories:
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Batch
   slug: batch
   name: catalog/destinations/batch
@@ -467,6 +728,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/dIf53pwHTBWYHmzaPHPY'
   categories:
   - SMS & Push Notifications
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Bing Ads
   slug: bing-ads
   name: catalog/destinations/bing-ads
@@ -479,6 +749,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/Do3bOQnYSGmiixtUuxIY'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Blendo
   slug: blendo
   name: catalog/destinations/blendo
@@ -496,6 +775,15 @@ items:
   categories:
   - Raw Data
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Blueshift
   slug: blueshift
   name: catalog/destinations/blueshift
@@ -512,6 +800,15 @@ items:
   - SMS & Push Notifications
   - Advertising
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Branch Metrics
   slug: branch-metrics
   name: catalog/destinations/branch-metrics
@@ -527,6 +824,15 @@ items:
   categories:
   - Deep Linking
   - Attribution
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - display_name: Braze
   slug: braze
   name: catalog/destinations/appboy
@@ -543,6 +849,15 @@ items:
   - SMS & Push Notifications
   - CRM
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Bronto
   slug: bronto
   name: catalog/destinations/bronto
@@ -555,6 +870,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/nEGQhEixQlSGYOQS9TE2'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: BugHerd
   slug: bugherd
   name: catalog/destinations/bugherd
@@ -570,6 +894,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/JlCHETRSFKLsgb9pEdHh'
   categories:
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Bugsnag
   slug: bugsnag
   name: catalog/destinations/bugsnag
@@ -585,6 +918,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/1ttsQcwwRDGHBG3XjVFT'
   categories:
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: ByteGain
   slug: bytegain
   name: catalog/destinations/bytegain
@@ -607,6 +949,15 @@ items:
   - Analytics
   - CRM
   - Marketing Automation
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Callingly
   slug: callingly
   name: catalog/destinations/callingly
@@ -625,6 +976,15 @@ items:
   - Marketing Automation
   - Performance Monitoring
   - SMS & Push Notifications
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Calq
   slug: calq
   name: catalog/destinations/calq
@@ -637,6 +997,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/lVoOHitVTsCb57PTPImA'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - display_name: Candu
   slug: candu
   name: catalog/destinations/candu
@@ -655,6 +1024,15 @@ items:
   categories:
   - Customer Success
   - Personalization
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Castle
   slug: castle
   name: catalog/destinations/castle
@@ -669,6 +1047,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/C8J91fmdTveqfSKgWXuB'
   categories:
   - Security & Fraud
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Chameleon
   slug: chameleon
   name: catalog/destinations/chameleon
@@ -684,6 +1071,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/wYJH1fRTS06duZylIuwa'
   categories:
   - Personalization
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Chartbeat
   slug: chartbeat
   name: catalog/destinations/chartbeat
@@ -699,6 +1095,15 @@ items:
   categories:
   - Analytics
   - Video
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: ChurnZero
   slug: churnzero
   name: catalog/destinations/churnzero
@@ -714,6 +1119,15 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/637c618b-e08d-4e02-8715-3011a112421c.svg
   categories:
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: ClearBrain
   slug: clearbrain
   name: catalog/destinations/clearbrain
@@ -731,6 +1145,15 @@ items:
   - Personalization
   - Marketing Automation
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Clearbit Enrichment
   slug: clearbit-enrichment
   name: catalog/destinations/clearbit-enrichment
@@ -746,6 +1169,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/i0PsWtFJSGS5LmpQhIt1'
   categories:
   - Enrichment
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Clearbit Reveal
   slug: clearbit-reveal
   name: catalog/destinations/clearbit-reveal
@@ -762,6 +1194,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/gOzgg71MRjWXEX7RlI3D'
   categories:
   - Enrichment
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: CleverTap
   slug: clevertap
   name: catalog/destinations/clevertap
@@ -779,6 +1220,15 @@ items:
   categories:
   - SMS & Push Notifications
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Clicky
   slug: clicky
   name: catalog/destinations/clicky
@@ -794,6 +1244,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/RFbSlcFXTviwsah6T6Je'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: ClientSuccess
   slug: clientsuccess
   name: catalog/destinations/clientsuccess
@@ -809,6 +1268,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/7wqqN8ZPTxnOjzm0uhRZ'
   categories:
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: ConvertFlow
   slug: convertflow
   name: catalog/destinations/convertflow
@@ -827,6 +1295,15 @@ items:
   - Personalization
   - A/B Testing
   - Surveys
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Convertro
   slug: convertro
   name: catalog/destinations/convertro
@@ -842,6 +1319,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/MOlYccb5SUapWfpFuoFB'
   categories:
   - Attribution
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Countly
   slug: countly
   name: catalog/destinations/countly
@@ -856,6 +1342,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/Go3hSbicQqOAoatz7lQc'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Crazy Egg
   slug: crazy-egg
   name: catalog/destinations/crazy-egg
@@ -871,6 +1366,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/UVZIeUbXQheT5qLBmaHF'
   categories:
   - Heatmaps & Recordings
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Criteo
   slug: criteo
   name: catalog/destinations/criteo
@@ -886,6 +1390,15 @@ items:
     url: ''
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Criteo Offline Conversions
   slug: criteo-offline-conversions
   name: catalog/destinations/criteo-offline-conversions
@@ -905,6 +1418,15 @@ items:
   - A/B Testing
   - Attribution
   - Personalization
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Crittercism
   slug: crittercism
   name: catalog/destinations/crittercism
@@ -920,6 +1442,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/TaVJ7QIUQEaMDEiChNio'
   categories:
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Cruncher
   slug: cruncher
   name: catalog/destinations/cruncher
@@ -942,6 +1473,15 @@ items:
   - Performance Monitoring
   - Personalization
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Custify
   slug: custify
   name: catalog/destinations/custify
@@ -959,6 +1499,15 @@ items:
   - Performance Monitoring
   - Surveys
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: CustomFit.ai
   slug: customfitai
   name: catalog/destinations/customfitai
@@ -979,6 +1528,15 @@ items:
   - Analytics
   - Customer Success
   - Marketing Automation
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Customer.io
   slug: customerio
   name: catalog/destinations/customer.io
@@ -995,6 +1553,15 @@ items:
   categories:
   - Email Marketing
   - SMS & Push Notifications
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: CustomerSuccessBox
   slug: customersuccessbox
   name: catalog/destinations/customersuccessbox
@@ -1013,6 +1580,15 @@ items:
   - Customer Success
   - Performance Monitoring
   - Surveys
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Delighted
   slug: delighted
   name: catalog/destinations/delighted
@@ -1029,6 +1605,15 @@ items:
     url: ''
   categories:
   - Surveys
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: DoubleClick Floodlight
   slug: doubleclick-floodlight
   name: catalog/destinations/doubleclick-floodlight
@@ -1044,6 +1629,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/ulUiqB4SSqO9aVl1vhsD'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Dreamdata IO
   slug: dreamdata-io
   name: catalog/destinations/dreamdata-io
@@ -1061,6 +1655,15 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/72592d03-7475-4a82-ab80-bbd5e8f68d9e.svg
   categories:
   - Attribution
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Drift
   slug: drift
   name: catalog/destinations/drift
@@ -1073,6 +1676,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/lx1HlXvFRxusbOpm4lGy'
   categories:
   - Livechat
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Drip
   slug: drip
   name: catalog/destinations/drip
@@ -1088,6 +1700,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/WE9VRNdaSWGS2h3jtQHA'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: EMMA
   slug: emma
   name: catalog/destinations/emma
@@ -1107,6 +1728,15 @@ items:
   - Attribution
   - SMS & Push Notifications
   - Deep Linking
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: EPICA
   slug: epica
   name: catalog/destinations/epica
@@ -1126,6 +1756,15 @@ items:
   - Advertising
   - Marketing Automation
   - Personalization
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Elevio
   slug: elevio
   name: catalog/destinations/elevio
@@ -1138,6 +1777,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/tKeulSfoQfWSrtzKw3V6'
   categories:
   - Customer Success
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Eloqua
   slug: eloqua
   name: catalog/destinations/eloqua
@@ -1152,6 +1800,15 @@ items:
     url: ''
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Email Aptitude
   slug: email-aptitude
   name: catalog/destinations/email-aptitude
@@ -1166,6 +1823,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/FBle3qouTVWC2mxLuacM'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Emarsys
   slug: emarsys
   name: catalog/destinations/emarsys
@@ -1188,6 +1854,15 @@ items:
   - Customer Success
   - SMS & Push Notifications
   - Marketing Automation
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Errorception
   slug: errorception
   name: catalog/destinations/errorception
@@ -1203,6 +1878,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/m4pC634pTDdxa8z4mfQA'
   categories:
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Evergage
   slug: evergage
   name: catalog/destinations/evergage
@@ -1221,6 +1905,15 @@ items:
   - Personalization
   - Analytics
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Facebook App Events
   slug: facebook-app-events
   name: catalog/destinations/facebook-app-events
@@ -1235,6 +1928,15 @@ items:
   categories:
   - Advertising
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - display_name: Facebook Offline Conversions
   slug: facebook-offline-conversions
   name: catalog/destinations/facebook-offline-conversions
@@ -1251,6 +1953,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/TP1ONlaTGaF8fjL5XWhI'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - display_name: Facebook Pixel
   slug: facebook-pixel
   name: catalog/destinations/facebook-pixel
@@ -1265,6 +1976,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/YmPSqN04QvGRGBkNgkUB'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: FactorsAI
   slug: factorsai
   name: catalog/destinations/factorsai
@@ -1279,6 +1999,15 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/9a3f1dcd-557f-4231-9a9e-c31e9f7581ad.svg
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Firebase
   slug: firebase
   name: catalog/destinations/firebase
@@ -1296,6 +2025,15 @@ items:
   - Analytics
   - Advertising
   - CRM
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Flurry
   slug: flurry
   name: catalog/destinations/flurry
@@ -1313,6 +2051,15 @@ items:
   - Analytics
   - Advertising
   - SMS & Push Notifications
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: FoxMetrics
   slug: foxmetrics
   name: catalog/destinations/foxmetrics
@@ -1328,6 +2075,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/eGJ6e8ZjREWpyaV15zyo'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Freshmarketer
   slug: freshmarketer
   name: catalog/destinations/freshmarketer
@@ -1350,6 +2106,15 @@ items:
   - Email Marketing
   - Heatmaps & Recordings
   - Marketing Automation
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Freshsales
   slug: freshsales
   name: catalog/destinations/freshsales
@@ -1366,6 +2131,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/aomSTmKCQ4mAnNVkvU6j'
   categories:
   - CRM
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Friendbuy
   slug: friendbuy
   name: catalog/destinations/friendbuy
@@ -1378,6 +2152,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/rRjOUuTtRePNf1AAgnkA'
   categories:
   - Referrals
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: FullStory
   slug: fullstory
   name: catalog/destinations/fullstory
@@ -1392,6 +2175,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/agRznVcSl2VKC7hagAAH'
   categories:
   - Heatmaps & Recordings
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: FunnelEnvy
   slug: funnelenvy
   name: catalog/destinations/funnelenvy
@@ -1409,6 +2201,15 @@ items:
   - A/B Testing
   - Marketing Automation
   - Tag Managers
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: FunnelFox
   slug: funnelfox
   name: catalog/destinations/funnelfox
@@ -1427,6 +2228,15 @@ items:
   - Personalization
   - Raw Data
   - CRM
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Gainsight
   slug: gainsight
   name: catalog/destinations/gainsight
@@ -1444,6 +2254,15 @@ items:
   - Customer Success
   - Surveys
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Gainsight PX
   slug: gainsight-px
   name: catalog/destinations/aptrinsic
@@ -1462,6 +2281,15 @@ items:
   - Personalization
   - Surveys
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Gauges
   slug: gauges
   name: catalog/destinations/gauges
@@ -1477,6 +2305,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/uRw6QeVTeuOk5UKbmSIu'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: GoSquared
   slug: gosquared
   name: catalog/destinations/gosquared
@@ -1494,6 +2331,15 @@ items:
   - Analytics
   - Livechat
   - CRM
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Google Ads (Classic)
   slug: google-ads-classic
   name: catalog/destinations/adwords
@@ -1508,6 +2354,15 @@ items:
     url: ''
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Google Ads (Gtag)
   slug: google-ads-gtag
   name: catalog/destinations/google-adwords-new
@@ -1522,6 +2377,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/uOqd5KSBaYTXQk22gQzs'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Google Analytics
   slug: google-analytics
   name: catalog/destinations/google-analytics
@@ -1537,6 +2401,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/zebLRcY3RtOlynDXTgNk'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Google Cloud Function
   slug: google-cloud-function
   name: catalog/destinations/google-cloud-function
@@ -1552,6 +2425,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/WiFQdbz0Q1mTNVov0YSh'
   categories:
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Google Cloud PubSub
   slug: google-cloud-pubsub
   name: catalog/destinations/google-cloud-pubsub
@@ -1568,6 +2450,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/4ovy1EpqSDm0yDnfL2kI'
   categories:
   - Raw Data
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Google Tag Manager
   slug: google-tag-manager
   name: catalog/destinations/google-tag-manager
@@ -1582,6 +2473,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/JL6sFm7tTlq2915HPGQj'
   categories:
   - Tag Managers
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: HasOffers
   slug: hasoffers
   name: catalog/destinations/hasoffers
@@ -1596,6 +2496,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/P2aIrSIQwifJjqA5PaAG'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Hawkei
   slug: hawkei
   name: catalog/destinations/hawkei
@@ -1613,6 +2522,15 @@ items:
   categories:
   - Customer Success
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Heap
   slug: heap
   name: catalog/destinations/heap
@@ -1628,6 +2546,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/jhJBfmjkQIuqEEOhqNEW'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Hello Bar
   slug: hello-bar
   name: catalog/destinations/hello-bar
@@ -1642,6 +2569,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/ygF17BmtTYKma8wWHKfg'
   categories:
   - Personalization
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Help Scout
   slug: help-scout
   name: catalog/destinations/help-scout
@@ -1656,6 +2592,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/C4EffTBS1Sg6AeYE5d8j'
   categories:
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: HitTail
   slug: hittail
   name: catalog/destinations/hittail
@@ -1671,6 +2616,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/RfqpKjrOSJau7I8OJPZF'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Hotjar
   slug: hotjar
   name: catalog/destinations/hotjar
@@ -1685,6 +2639,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/8LXFsmQVQq2tbURxFWyo'
   categories:
   - Heatmaps & Recordings
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: HubSpot
   slug: hubspot
   name: catalog/destinations/hubspot
@@ -1702,6 +2665,15 @@ items:
   - Analytics
   - CRM
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Hull
   slug: hull
   name: catalog/destinations/hull
@@ -1719,6 +2691,15 @@ items:
   - Personalization
   - Enrichment
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: IBM UBX
   slug: ibm-ubx
   name: catalog/destinations/ibm-ubx
@@ -1736,6 +2717,15 @@ items:
       https://www-03.ibm.com/press/us/en/attachment/20190.wss?fileId=ATTACH_FILE2&fileName=ibmpos_blue.jpg
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Improvely
   slug: improvely
   name: catalog/destinations/improvely
@@ -1750,6 +2740,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/eSTjLDXtSqgl8UQlVIH1'
   categories:
   - Attribution
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Indicative
   slug: indicative
   name: catalog/destinations/indicative
@@ -1767,6 +2766,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/yiAdT9Y5RZeD6VIaOmlj'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Inspectlet
   slug: inspectlet
   name: catalog/destinations/inspectlet
@@ -1782,6 +2790,15 @@ items:
     url: ''
   categories:
   - Heatmaps & Recordings
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Intellimize
   slug: intellimize
   name: catalog/destinations/intellimize
@@ -1798,6 +2815,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/2bHRWqHAQA6eVmnz5HEq'
   categories:
   - Personalization
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Interana
   slug: interana
   name: catalog/destinations/interana
@@ -1815,6 +2841,15 @@ items:
   - Attribution
   - Customer Success
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Intercom
   slug: intercom
   name: catalog/destinations/intercom
@@ -1832,6 +2867,15 @@ items:
   - Livechat
   - Customer Success
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Iron.io
   slug: ironio
   name: catalog/destinations/iron.io
@@ -1847,6 +2891,15 @@ items:
     url: ''
   categories:
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Iterable
   slug: iterable
   name: catalog/destinations/iterable
@@ -1864,6 +2917,15 @@ items:
   categories:
   - SMS & Push Notifications
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: KISSmetrics
   slug: kissmetrics
   name: catalog/destinations/kissmetrics
@@ -1880,6 +2942,15 @@ items:
   categories:
   - Analytics
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Kahuna
   slug: kahuna
   name: catalog/destinations/kahuna
@@ -1895,6 +2966,15 @@ items:
   categories:
   - SMS & Push Notifications
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Keen
   slug: keen
   name: catalog/destinations/keen-io
@@ -1911,6 +2991,15 @@ items:
   - Analytics
   - Raw Data
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Kitemetrics
   slug: kitemetrics
   name: catalog/destinations/kitemetrics
@@ -1933,6 +3022,15 @@ items:
   - Analytics
   - Attribution
   - Marketing Automation
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Klaviyo
   slug: klaviyo
   name: catalog/destinations/klaviyo
@@ -1949,6 +3047,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/EevsDDpTuKHJ59dx8gGZ'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Kochava
   slug: kochava
   name: catalog/destinations/kochava
@@ -1963,6 +3070,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/KY3HhcdRcmVD7gdvAstU'
   categories:
   - Attribution
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - display_name: Kustomer
   slug: kustomer
   name: catalog/destinations/kustomer
@@ -1980,6 +3096,15 @@ items:
   categories:
   - Customer Success
   - CRM
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Lazy Lantern
   slug: lazy-lantern
   name: catalog/destinations/lazy-lantern
@@ -1994,6 +3119,15 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/1a23d159-e0db-45ac-bdf1-313f144e9cbc.svg
   categories:
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Leanplum
   slug: leanplum
   name: catalog/destinations/leanplum
@@ -2011,6 +3145,15 @@ items:
   - A/B Testing
   - Personalization
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Learndot
   slug: learndot
   name: catalog/destinations/learndot
@@ -2025,6 +3168,15 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/bbb38b06-8199-4ec2-bb44-2bddad4b3589.svg
   categories:
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Librato
   slug: librato
   name: catalog/destinations/librato
@@ -2040,6 +3192,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/3xF0bFACSmGNuxtWTqHg'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: LinkedIn Insight Tag
   slug: linkedin-insight-tag
   name: catalog/destinations/linkedin-insight-tag
@@ -2058,6 +3219,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/Tlr7odwhT0SGSkfKF6wW'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: LiveChat
   slug: livechat
   name: catalog/destinations/livechat
@@ -2072,6 +3242,15 @@ items:
     url: ''
   categories:
   - Livechat
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Localytics
   slug: localytics
   name: catalog/destinations/localytics
@@ -2089,6 +3268,15 @@ items:
   - Analytics
   - SMS & Push Notifications
   - Attribution
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Lucky Orange
   slug: lucky-orange
   name: catalog/destinations/lucky-orange
@@ -2106,6 +3294,15 @@ items:
   - Heatmaps & Recordings
   - Livechat
   - Surveys
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Lytics
   slug: lytics
   name: catalog/destinations/lytics
@@ -2122,6 +3319,15 @@ items:
   categories:
   - Analytics
   - Personalization
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Madkudu
   slug: madkudu
   name: catalog/destinations/madkudu
@@ -2135,6 +3341,15 @@ items:
   categories:
   - Analytics
   - Enrichment
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: MailChimp
   slug: mailchimp
   name: catalog/destinations/mailchimp
@@ -2147,6 +3362,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/W4f0tAuTTsWwoYH9b3um'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Mailjet
   slug: mailjet
   name: catalog/destinations/mailjet
@@ -2161,6 +3385,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/uMFWhqRT0aEYRRTenXRp'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Mammoth
   slug: mammoth
   name: catalog/destinations/mammoth
@@ -2175,6 +3408,15 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/a0e7e00d-960c-4739-b425-6dd579dd534f.svg
   categories:
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Marketo Static Lists
   slug: marketo-static-lists
   name: catalog/destinations/marketo-static-lists
@@ -2190,6 +3432,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/vu6U5mVXQmqafnoyD7Sw'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Marketo V2
   slug: marketo-v2
   name: catalog/destinations/marketo-v2
@@ -2204,6 +3455,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/vu6U5mVXQmqafnoyD7Sw'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: MediaMath
   slug: mediamath
   name: catalog/destinations/mediamath
@@ -2218,6 +3478,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/R5NDpSSFQnptgR46Bjwr'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Millennial Media
   slug: millennial-media
   name: catalog/destinations/millennial-media
@@ -2232,6 +3501,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/QdpLniFeSwCa39eV6xRV'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Mixpanel
   slug: mixpanel
   name: catalog/destinations/mixpanel
@@ -2247,6 +3525,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/7fjgkCRQwaiKEzPg2yl9'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: MoEngage
   slug: moengage
   name: catalog/destinations/moengage
@@ -2263,6 +3550,15 @@ items:
   - SMS & Push Notifications
   - Analytics
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Moesif API Analytics
   slug: moesif-api-analytics
   name: catalog/destinations/moesif-api-analytics
@@ -2279,6 +3575,15 @@ items:
   - CRM
   - Customer Success
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Monetate
   slug: monetate
   name: catalog/destinations/monetate
@@ -2294,6 +3599,15 @@ items:
   categories:
   - A/B Testing
   - Personalization
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Moosend
   slug: moosend
   name: catalog/destinations/moosend
@@ -2308,6 +3622,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/2eJ6ybF0SZSgUVMe77rj'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: MouseStats
   slug: mousestats
   name: catalog/destinations/mousestats
@@ -2323,6 +3646,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/p6USTEkRc2RauUB5gQDb'
   categories:
   - Heatmaps & Recordings
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Mouseflow
   slug: mouseflow
   name: catalog/destinations/mouseflow
@@ -2337,6 +3669,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/VgvMtObQCGtBu4mW6qox'
   categories:
   - Heatmaps & Recordings
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Movable Ink
   slug: movable-ink
   name: catalog/destinations/movable-ink
@@ -2353,6 +3694,15 @@ items:
   categories:
   - Email
   - Personalization
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Mutiny
   slug: mutiny
   name: catalog/destinations/mutiny
@@ -2373,6 +3723,15 @@ items:
   - Analytics
   - Marketing Automation
   - Personalization
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Nanigans
   slug: nanigans
   name: catalog/destinations/nanigans
@@ -2387,6 +3746,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/YCja8zMDRlKrVOAPCSnd'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Natero
   slug: natero
   name: catalog/destinations/natero
@@ -2401,6 +3769,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/h5qBHSlJRha9lOeDUNZ4'
   categories:
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Navilytics
   slug: navilytics
   name: catalog/destinations/navilytics
@@ -2415,6 +3792,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/U2peEFakQyqATscvu8k8'
   categories:
   - Heatmaps & Recordings
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: New Relic
   slug: new-relic
   name: catalog/destinations/new-relic
@@ -2430,6 +3816,15 @@ items:
   categories:
   - Analytics
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Nielsen DCR
   slug: nielsen-dcr
   name: catalog/destinations/nielsen-dcr
@@ -2443,6 +3838,15 @@ items:
   categories:
   - Video
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: NorthStar by Growthhackers
   slug: northstar-by-growthhackers
   name: catalog/destinations/northstar-by-growthhackers
@@ -2463,6 +3867,15 @@ items:
   - Marketing Automation
   - Performance Monitoring
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Nudgespot
   slug: nudgespot
   name: catalog/destinations/nudgespot
@@ -2477,6 +3890,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/lO0Ng56XSC6YtsJ7njLw'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Olark
   slug: olark
   name: catalog/destinations/olark
@@ -2492,6 +3914,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/KSLlrxv6RYOMC7qoNMM7'
   categories:
   - Livechat
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: OneSignal
   slug: onesignal
   name: catalog/destinations/onesignal
@@ -2505,6 +3936,15 @@ items:
   categories:
   - SMS & Push Notifications
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - display_name: Optimizely Full Stack
   slug: optimizely-full-stack
   name: catalog/destinations/optimizelyx
@@ -2519,6 +3959,15 @@ items:
   - A/B Testing
   - Personalization
   - Feature Flagging
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - display_name: Optimizely Web
   slug: optimizely-web
   name: catalog/destinations/optimizely
@@ -2537,6 +3986,15 @@ items:
   - A/B Testing
   - Personalization
   - Feature Flagging
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Pardot
   slug: pardot
   name: catalog/destinations/pardot
@@ -2551,6 +4009,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/EkGHIQuzS8WOe5oR1eeZ'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Parsely
   slug: parsely
   name: catalog/destinations/parsely
@@ -2566,6 +4033,15 @@ items:
   categories:
   - Video
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Pendo
   slug: pendo
   name: catalog/destinations/pendo
@@ -2582,6 +4058,15 @@ items:
   categories:
   - Analytics
   - Surveys
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Perfect Audience
   slug: perfect-audience
   name: catalog/destinations/perfect-audience
@@ -2597,6 +4082,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/6hXUszULSIeAOAPFm5Rq'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: PersistIQ
   slug: persistiq
   name: catalog/destinations/persistiq
@@ -2616,6 +4110,15 @@ items:
   categories:
   - Marketing Automation
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Personas Facebook Custom Audiences
   slug: personas-facebook-custom-audiences
   name: catalog/destinations/personas-facebook-ads
@@ -2631,6 +4134,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/6KPTpxDRBySZm7dYVeDD'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Personyze
   slug: personyze
   name: catalog/destinations/personyze
@@ -2653,6 +4165,15 @@ items:
   - Email Marketing
   - Marketing Automation
   - Personalization
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Pingdom
   slug: pingdom
   name: catalog/destinations/pingdom
@@ -2668,6 +4189,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/hH1ZYoYBSe6dEs3JKECy'
   categories:
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Pinterest Tag
   slug: pinterest-tag
   name: catalog/destinations/pinterest-tag
@@ -2685,6 +4215,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/c0FLP8T2q3uNipn0KO5Q'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Piwik
   slug: piwik
   name: catalog/destinations/piwik
@@ -2701,6 +4240,15 @@ items:
     url: ''
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: PixelMe
   slug: pixelme
   name: catalog/destinations/pixelme
@@ -2716,6 +4264,15 @@ items:
   categories:
   - Analytics
   - Attribution
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Planhat
   slug: planhat
   name: catalog/destinations/planhat
@@ -2731,6 +4288,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/HnK9nROwRR2E3bsvYQPe'
   categories:
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Podsights
   slug: podsights
   name: catalog/destinations/podsights
@@ -2745,6 +4311,15 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/59955fa5-91be-4206-96e5-08426d83021a.svg
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Pointillist
   slug: pointillist
   name: catalog/destinations/pointillist
@@ -2759,6 +4334,15 @@ items:
     url: ''
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Promoter.io
   slug: promoterio
   name: catalog/destinations/promoter.io
@@ -2773,6 +4357,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/q4Tp8NO1QRKfvVoCwPwU'
   categories:
   - Surveys
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Proof Experiences
   slug: proof-experiences
   name: catalog/destinations/proof
@@ -2789,6 +4382,15 @@ items:
   - Personalization
   - Marketing Automation
   - A/B Testing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Qualaroo
   slug: qualaroo
   name: catalog/destinations/qualaroo
@@ -2804,6 +4406,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/SBTBQdYaTqyShx3RVifP'
   categories:
   - Surveys
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Quantcast
   slug: quantcast
   name: catalog/destinations/quantcast
@@ -2820,6 +4431,15 @@ items:
   categories:
   - Advertising
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: QuanticMind
   slug: quanticmind
   name: catalog/destinations/quanticmind
@@ -2835,6 +4455,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/gW66rIOQquq4HGuLptQt'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Quora Conversion Pixel
   slug: quora-conversion-pixel
   name: catalog/destinations/quora-conversion-pixel
@@ -2851,6 +4480,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/OTgJ0vQjSq6ditpcoRVS'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: RadiumOne Connect
   slug: radiumone-connect
   name: catalog/destinations/radiumone-connect
@@ -2868,6 +4506,15 @@ items:
   categories:
   - Advertising
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - display_name: Ramen
   slug: ramen
   name: catalog/destinations/ramen
@@ -2883,6 +4530,15 @@ items:
   categories:
   - Customer Success
   - Surveys
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Refersion
   slug: refersion
   name: catalog/destinations/refersion
@@ -2904,6 +4560,15 @@ items:
   - Analytics
   - Attribution
   - Referrals
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Refiner
   slug: refiner
   name: catalog/destinations/refiner
@@ -2922,6 +4587,15 @@ items:
   - Enrichment
   - Marketing Automation
   - Surveys
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Repeater
   slug: repeater
   name: catalog/destinations/repeater
@@ -2936,6 +4610,15 @@ items:
     url: ''
   categories:
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Responsys
   slug: responsys
   name: catalog/destinations/responsys
@@ -2951,6 +4634,15 @@ items:
     url: ''
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Rockerbox
   slug: rockerbox
   name: catalog/destinations/hindsight
@@ -2965,6 +4657,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/UPZyKBZCRtSpy1nyZPj5'
   categories:
   - Attribution
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Rollbar
   slug: rollbar
   name: catalog/destinations/rollbar
@@ -2980,6 +4681,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/vvLtnCodQkyynxvAftxZ'
   categories:
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: SMBStreams
   slug: smbstreams
   name: catalog/destinations/smbstream
@@ -2999,6 +4709,15 @@ items:
   - Enrichment
   - Analytics
   - Enrichment
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: SaaSquatch
   slug: saasquatch
   name: catalog/destinations/saasquatch
@@ -3011,6 +4730,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/73fWa291RlaldjXAULay'
   categories:
   - Referrals
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Sailthru
   slug: sailthru
   name: catalog/destinations/sailthru
@@ -3026,6 +4754,15 @@ items:
   categories:
   - CRM
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Salescamp CRM
   slug: salescamp-crm
   name: catalog/destinations/salescamp-crm
@@ -3046,6 +4783,15 @@ items:
   - Customer Success
   - Email Marketing
   - Marketing Automation
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Salesforce
   slug: salesforce
   name: catalog/destinations/salesforce
@@ -3061,6 +4807,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/HLEOQJkQTWWdFpnDsbln'
   categories:
   - CRM
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Salesforce Marketing Cloud
   slug: salesforce-marketing-cloud
   name: catalog/destinations/salesforce-marketing-cloud
@@ -3077,6 +4832,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/VNJ7hcAjR1mY6HCvHAMP'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Salesmachine
   slug: salesmachine
   name: catalog/destinations/salesmachine
@@ -3092,6 +4856,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/hcUOFhx6TXOxBa9HzexG'
   categories:
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: SatisMeter
   slug: satismeter
   name: catalog/destinations/satismeter
@@ -3107,6 +4880,15 @@ items:
   categories:
   - Surveys
   - Customer Success
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Savio
   slug: savio
   name: catalog/destinations/savio
@@ -3127,6 +4909,15 @@ items:
   categories:
   - Surveys
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: ScopeAI
   slug: scopeai
   name: catalog/destinations/scopeai
@@ -3145,6 +4936,15 @@ items:
   categories:
   - Analytics
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Seg
   slug: seg
   name: catalog/destinations/seg
@@ -3160,6 +4960,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/fQjruGjSguStPlndEbOv'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Sentry
   slug: sentry
   name: catalog/destinations/sentry
@@ -3174,6 +4983,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/2NN3shcjSXSbKlEWXOwr'
   categories:
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Serenytics
   slug: serenytics
   name: catalog/destinations/serenytics
@@ -3195,6 +5013,15 @@ items:
   - Performance Monitoring
   - Raw Data
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: ShareASale
   slug: shareasale
   name: catalog/destinations/shareasale
@@ -3207,6 +5034,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/pOciCRBS4CuZpqEkWvtM'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Sherlock
   slug: sherlock
   name: catalog/destinations/sherlock
@@ -3223,6 +5059,15 @@ items:
   categories:
   - Analytics
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: SimpleReach
   slug: simplereach
   name: catalog/destinations/simplereach
@@ -3237,6 +5082,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/Je4sFCsJSSOx7Q3UihRT'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Singular
   slug: singular
   name: catalog/destinations/singular
@@ -3259,6 +5113,15 @@ items:
   - Deep Linking
   - Marketing Automation
   - Security & Fraud
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Slack
   slug: slack
   name: catalog/destinations/slack
@@ -3271,6 +5134,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/yY0YBb6Q7miV1nAwuCOX'
   categories:
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: SlicingDice
   slug: slicingdice
   name: catalog/destinations/slicingdice
@@ -3290,6 +5162,15 @@ items:
   - Raw Data
   - Analytics
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Smartlook
   slug: smartlook
   name: catalog/destinations/smartlook
@@ -3306,6 +5187,15 @@ items:
   - Analytics
   - Analytics
   - Heatmaps & Recordings
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: SnapEngage
   slug: snapengage
   name: catalog/destinations/snapengage
@@ -3321,6 +5211,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/SFo8VfUXQKmgII5LGzgI'
   categories:
   - Livechat
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Spinnakr
   slug: spinnakr
   name: catalog/destinations/spinnakr
@@ -3336,6 +5235,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/2ufgGDAwSGCUGAT5PK7x'
   categories:
   - Personalization
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Split
   slug: split
   name: catalog/destinations/split
@@ -3354,6 +5262,15 @@ items:
   - Feature Flagging
   - A/B Testing
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Stitch Data
   slug: stitch-data
   name: catalog/destinations/stitch-data
@@ -3369,6 +5286,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/fYD3V7UTZO90YC0dptyI'
   categories:
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Strikedeck
   slug: strikedeck
   name: catalog/destinations/strikedeck
@@ -3390,6 +5316,15 @@ items:
   - CRM
   - Marketing Automation
   - Surveys
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Survicate
   slug: survicate
   name: catalog/destinations/survicate
@@ -3406,6 +5341,15 @@ items:
   - Surveys
   - Analytics
   - Enrichment
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Swrve
   slug: swrve
   name: catalog/destinations/swrve
@@ -3420,6 +5364,15 @@ items:
   - Analytics
   - SMS & Push Notifications
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: TUNE
   slug: tune
   name: catalog/destinations/tune
@@ -3432,6 +5385,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/XyCTLnEkRQO7DsAyPnJg'
   categories:
   - Attribution
+  connection_modes:
+    device:
+      web: false
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
 - display_name: TV Squared
   slug: tv-squared
   name: catalog/destinations/tv-squared
@@ -3446,6 +5408,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/IasUnw4uSVzVNE6f6jw7'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Talkable
   slug: talkable
   name: catalog/destinations/curebit
@@ -3460,6 +5431,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/ywvoCzPhRHCrPkEi3NnF'
   categories:
   - Referrals
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Tamber
   slug: tamber
   name: catalog/destinations/tamber
@@ -3480,6 +5460,15 @@ items:
   - Analytics
   - Marketing Automation
   - SMS & Push Notifications
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Taplytics
   slug: taplytics
   name: catalog/destinations/taplytics
@@ -3495,6 +5484,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/QmY3nWHRStacuvHg097O'
   categories:
   - A/B Testing
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Tapstream
   slug: tapstream
   name: catalog/destinations/tapstream
@@ -3510,6 +5508,15 @@ items:
     url: ''
   categories:
   - Attribution
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Totango
   slug: totango
   name: catalog/destinations/totango
@@ -3525,6 +5532,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/Dxs3VAniTzeGiwXgx6vh'
   categories:
   - Customer Success
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Track JS
   slug: track-js
   name: catalog/destinations/track-js
@@ -3539,6 +5555,15 @@ items:
     url: ''
   categories:
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Trackier
   slug: trackier
   name: catalog/destinations/trackier
@@ -3557,6 +5582,15 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/079ac1cf-3bbc-43dc-9a0e-429386e3f809.svg
   categories:
   - A/B Testing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Tractionboard
   slug: tractionboard
   name: catalog/destinations/tractionboard
@@ -3572,6 +5606,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/WPH6iqNURsuwVI7sIbM8'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: TrafficGuard
   slug: trafficguard
   name: catalog/destinations/trafficguard
@@ -3594,6 +5637,15 @@ items:
   - Analytics
   - Attribution
   - Performance Monitoring
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Treasure Data
   slug: treasure-data
   name: catalog/destinations/treasure-data
@@ -3609,6 +5661,15 @@ items:
   categories:
   - Raw Data
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Trustpilot
   slug: trustpilot
   name: catalog/destinations/trustpilot
@@ -3629,6 +5690,15 @@ items:
   - Customer Success
   - Email Marketing
   - Surveys
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Twitter Ads
   slug: twitter-ads
   name: catalog/destinations/twitter-ads
@@ -3643,6 +5713,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/LOBMSIn9QOiqKThkzoO1'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Unwaffle
   slug: unwaffle
   name: catalog/destinations/unwaffle
@@ -3664,6 +5743,15 @@ items:
   - Customer Success
   - Marketing Automation
   - Personalization
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Upcall
   slug: upcall
   name: catalog/destinations/upcall
@@ -3682,6 +5770,15 @@ items:
   - Marketing Automation
   - Customer Success
   - Personalization
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: UserEngage
   slug: userengage
   name: catalog/destinations/userengage
@@ -3698,6 +5795,15 @@ items:
   - Personalization
   - SMS & Push Notifications
   - Email
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: UserIQ
   slug: useriq
   name: catalog/destinations/useriq
@@ -3720,6 +5826,15 @@ items:
   - Customer Success
   - Email Marketing
   - Surveys
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: UserVoice
   slug: uservoice
   name: catalog/destinations/uservoice
@@ -3736,6 +5851,15 @@ items:
   categories:
   - Surveys
   - Customer Success
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Userlike
   slug: userlike
   name: catalog/destinations/userlike
@@ -3750,6 +5874,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/ZUvJamUkRMSW8bDRjjq6'
   categories:
   - Livechat
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Userlist
   slug: userlist
   name: catalog/destinations/userlist
@@ -3769,6 +5902,15 @@ items:
   - Email Marketing
   - CRM
   - Marketing Automation
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Userpilot
   slug: userpilot
   name: catalog/destinations/userpilot
@@ -3785,6 +5927,15 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/028c7a68-7071-4a56-b358-19dc32ecc479.svg
   categories:
   - Personalization
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Vero
   slug: vero
   name: catalog/destinations/vero
@@ -3799,6 +5950,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/9uPJymwKRTm2XHExWArK'
   categories:
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Visual Website Optimizer
   slug: visual-website-optimizer
   name: catalog/destinations/visual-website-optimizer
@@ -3814,6 +5974,15 @@ items:
     url: ''
   categories:
   - A/B Testing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Vitally
   slug: vitally
   name: catalog/destinations/vitally
@@ -3829,6 +5998,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/7YIwJmHSKCQYlqMsEpOP'
   categories:
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: WalkMe
   slug: walkme
   name: catalog/destinations/walkme
@@ -3848,6 +6026,15 @@ items:
   - Customer Success
   - Heatmaps & Recordings
   - Surveys
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: WebEngage
   slug: webengage
   name: catalog/destinations/webengage
@@ -3871,6 +6058,15 @@ items:
   - Analytics
   - CRM
   - Marketing Automation
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Webhooks
   slug: webhooks
   name: catalog/destinations/webhooks
@@ -3886,6 +6082,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/x6L6egddQpivLFywWnxZ'
   categories:
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Whale Alerts
   slug: whale-alerts
   name: catalog/destinations/whale-alerts
@@ -3901,6 +6106,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/gaFWe4gpT0e0NiOWa1k5'
   categories:
   - CRM
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Whale Watch
   slug: whale-watch
   name: catalog/destinations/whale-watch
@@ -3913,6 +6127,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/DUjnSmx8QpmGojHxtBtm'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Wigzo
   slug: wigzo
   name: catalog/destinations/wigzo
@@ -3931,6 +6154,15 @@ items:
   - Personalization
   - SMS & Push Notifications
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Wishpond
   slug: wishpond
   name: catalog/destinations/wishpond
@@ -3948,6 +6180,15 @@ items:
   - CRM
   - Personalization
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Woopra
   slug: woopra
   name: catalog/destinations/woopra
@@ -3963,6 +6204,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/j0ZaPGdETrGxR4pVUQjf'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Wootric
   slug: wootric
   name: catalog/destinations/wootric
@@ -3978,6 +6228,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/4mlUu1VFS9WTb1Jy4nRa'
   categories:
   - Surveys
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Xplenty
   slug: xplenty
   name: catalog/destinations/xplenty
@@ -3995,6 +6254,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/33EAmuFARMuAGTt0uEuU'
   categories:
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Xtremepush
   slug: xtremepush
   name: catalog/destinations/xtremepush
@@ -4017,6 +6285,15 @@ items:
   - Email Marketing
   - Marketing Automation
   - Personalization
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Yandex Metrica
   slug: yandex-metrica
   name: catalog/destinations/yandex-metrica
@@ -4032,6 +6309,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/7Cegrlr4QjS1RtBFz23I'
   categories:
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Yellowhammer
   slug: yellowhammer
   name: catalog/destinations/yellowhammer
@@ -4046,6 +6332,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/i9rDCo6uQDCUo4gaqpWm'
   categories:
   - Advertising
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Youbora
   slug: youbora
   name: catalog/destinations/youbora
@@ -4065,6 +6360,15 @@ items:
   categories:
   - Video
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: Zaius
   slug: zaius
   name: catalog/destinations/zaius
@@ -4081,6 +6385,15 @@ items:
   - SMS & Push Notifications
   - Advertising
   - Email Marketing
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Zapier
   slug: zapier
   name: catalog/destinations/zapier
@@ -4093,6 +6406,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/JL6gndQSUiWvV0aEGCvz'
   categories:
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Zendesk
   slug: zendesk
   name: catalog/destinations/zendesk
@@ -4107,6 +6429,15 @@ items:
     url: 'https://cdn.filepicker.io/api/file/00Q0vqRSB6RbdAzlvDSx'
   categories:
   - Customer Success
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Zendesk Connect
   slug: zendesk-connect
   name: catalog/destinations/outbound
@@ -4126,6 +6457,15 @@ items:
   categories:
   - SMS & Push Notifications
   - Email Marketing
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: Zopim
   slug: zopim
   name: catalog/destinations/zopim
@@ -4141,6 +6481,15 @@ items:
   categories:
   - Customer Success
   - Livechat
+  connection_modes:
+    device:
+      web: true
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: comScore
   slug: comscore
   name: catalog/destinations/comscore
@@ -4158,6 +6507,15 @@ items:
   categories:
   - Video
   - Analytics
+  connection_modes:
+    device:
+      web: true
+      mobile: true
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: goedle.io
   slug: goedleio
   name: catalog/destinations/goedle
@@ -4173,6 +6531,15 @@ items:
   categories:
   - Analytics
   - Personalization
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
 - display_name: hydra
   slug: hydra
   name: catalog/destinations/hydra
@@ -4190,6 +6557,15 @@ items:
   - Customer Success
   - Email Marketing
   - Marketing Automation
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: mabl
   slug: mabl
   name: catalog/destinations/mabl
@@ -4208,6 +6584,15 @@ items:
       https://public-segment-devcenter-production.s3.amazonaws.com/24e48c92-68b6-4a97-af5e-74b987666880.svg
   categories:
   - Heatmaps & Recordings
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
 - display_name: tray.io
   slug: trayio
   name: catalog/destinations/tray.io
@@ -4224,3 +6609,12 @@ items:
   categories:
   - Personalization
   - Raw Data
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
