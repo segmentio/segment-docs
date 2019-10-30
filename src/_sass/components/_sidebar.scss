@@ -11,6 +11,12 @@
     left: 0;
   }
 
+  &__title {
+    font-weight: 500;
+    padding-bottom: 10px;
+    font-size: 14px;
+  }
+
   &--dark {
     & > * + * {
       border-top: 1px solid color(border-gray-dark);

@@ -1,6 +1,7 @@
 {% assign categories = site.data.catalogV2.destination_categories.items %}
 
 <div class="destination-menu" data-anchors-indicator data-sections=".destinations-catalog__section" data-active-class="destination-menu__link--active">
+  <p class="destination-menu__title">On this page</p>
   <ul class="destination-menu__list list list--unstyle">
     {% for category in categories %}
       {% assign category_icon = category.slug | slugify %}
