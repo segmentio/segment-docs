@@ -393,5 +393,3 @@ When sending a HTTP call from a user's device, you can collect the IP address by
 ## Troubleshooting
 
 {% include content/troubleshooting-intro.md %}
-
-
