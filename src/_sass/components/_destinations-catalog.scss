@@ -1,0 +1,19 @@
+.destinations-catalog {
+  & > * + * {
+    margin-top: 55px;
+  }
+
+  &__section {
+    & > * + * {
+      margin-top: 20px;
+    }
+  }
+
+  &__title {
+    svg {
+      width: 24px;
+      height: 24px;
+      color: color(secondary);
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.breadcrumbs {
+  position: relative;
+  padding-left: 15px;
+  font-size: 14px;
+  color: color(gray);
+  white-space: nowrap;
+
+  @include breakpoint(medium up)  {
+    padding-left: 0;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "...";
+    color: color(gray-dark);
+
+    @include breakpoint(medium up)  {
+      display: none;
+    }
+  }
+
+  & > li {
+    display: none;
+
+    @include breakpoint(medium up)  {
+      display: block;
+    }
+
+    &:nth-last-of-type(-n+4) {
+      display: block;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__link {
+    color: color(gray-dark);
+
+    &:hover {
+      color: color(primary);
+      text-decoration: none;
+    }
+  }
+}

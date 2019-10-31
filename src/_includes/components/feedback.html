@@ -1,0 +1,57 @@
+<div class="flex flex--wrap waffle waffle--xxlarge@medium">
+  <div class="flex__column flex__column--6 flex">
+    <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium">
+      <div class="flex__column flex__column--shrink">
+        <div class="feedback-box__content">
+          <h4>Need support?</h4>
+
+          <p>If you need any help visit our Support page and get in touch with us.</p>
+        </div>
+      </div>
+
+      <div class="flex__column flex__column--shrink">
+        {% include components/button-link.html text="Go to Support" href="https://segment.com" %}
+      </div>
+    </div>
+  </div>
+
+  <div class="flex__column flex__column--6 flex">
+    <div class="feedback-box flex flex--stack flex--justify waffle waffle--none waffle--large@medium">
+      <div class="flex__column flex__column--shrink">
+        <div class="feedback-box__content" data-feedback>
+          <h4>Was this page helpful?</h4>
+
+          <div class="flex gutter gutter--large">
+            <div class="flex__column flex__column--shrink">
+              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-ref="feedback[helpful]" data-active-class="button-fill--primary">
+                <span class="button__icon">
+                  {% include icons/symbols/thumb-up.svg %}
+                </span>
+
+                <span>Yes</span>
+              </button>
+            </div>
+
+            <div class="flex__column flex__column--shrink">
+              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-ref="feedback[unhelpful]" data-active-class="button-fill--gray">
+                <span class="button__icon">
+                  {% include icons/symbols/thumb-down.svg %}
+                </span>
+
+                <span>No</span>
+              </button>
+            </div>
+          </div>
+
+          <p class="widget__content" data-ref="feedback[content]" hidden>
+            If you need help or have any questions, please consider contacting <a href="#">Support</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex__column flex__column--shrink">
+        {% include components/button-link.html text="Send us feedback" href="https://segment.com" %}
+      </div>
+    </div>
+  </div>
+</div>

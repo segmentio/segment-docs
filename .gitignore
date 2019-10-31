@@ -2,8 +2,10 @@ _site
 .sass-cache
 .jekyll-metadata
 vendor
-.bundle
 .DS_Store
-_data/catalog/destinations.yml
-_data/catalog/sources.yml
 .env
+.jekyll-cache
+.idea/
+*.iml
+node_modules/
+src/assets/docs.bundle.js

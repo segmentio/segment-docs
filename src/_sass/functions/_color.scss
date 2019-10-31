@@ -1,0 +1,11 @@
+/// Retrives color value of specifed color from $color-values map.
+///
+/// @param {String} $name
+/// @require {Map} $color-values
+/// @return {Color} Color value
+///
+/// @example scss - example
+///   color(gray);
+@function color($name) {
+  @return get($color-values, $name);
+}

@@ -1,0 +1,5 @@
+# allow all Swiftype search crawls
+User-agent: Swiftbot
+Disallow:
+
+Sitemap: http://segment-docs-stage.s3-website-us-west-2.amazonaws.com/docsv2/sitemap.xml

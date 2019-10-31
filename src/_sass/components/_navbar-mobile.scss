@@ -1,0 +1,73 @@
+.navbar-mobile {
+  $this: &;
+
+  position: relative;
+  z-index: 10;
+  background-color: color(white);
+  box-shadow: 0 1px 2px 0 rgba(67, 90, 111, 0.08);
+  color: color(gray);
+
+  @include breakpoint(large up)  {
+    display: none;
+  }
+
+  &__wrapper {
+    padding: 17px 20px;
+    background-color: color(white);
+    transition: background-color 0.2s ease;
+  }
+
+  &__search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: calc(100% - 40px);
+    transform: translate(20px, 12px);
+    opacity: 0;
+    transition: opacity 0.2s ease, z-index 0s linear 0.2s;
+  }
+
+  &__search-button {
+    transition: opacity 0.2s ease;
+  }
+
+  &__panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    background-color: color(gray-light);
+    transform: translateY(-100%);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  &--searching {
+    #{$this}__search {
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 0.2s ease, z-index 0s linear;
+    }
+  }
+
+  &--active {
+    z-index: 10;
+
+    #{$this}__wrapper {
+      background-color: color(gray-light);
+    }
+
+    #{$this}__search-button {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #{$this}__panel {
+      transform: translateY(0);
+    }
+  }
+}

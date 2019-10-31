@@ -1,0 +1,53 @@
+.destination-menu {
+  &__title {
+    font-weight: 500;
+    padding-bottom: 10px;
+    font-size: 14px;
+  }
+
+  &__list {
+    overflow-y: auto;
+    max-height: calc(100vh - 20px);
+  }
+
+  &__item {
+    color: color(gray);
+
+    & + & {
+      margin-top: 13px;
+    }
+
+    svg {
+      width: 14px;
+      max-height: 14px;
+    }
+
+    &--active {
+      color: color(secondary-dark);
+    }
+  }
+
+  &__icon {
+    width: 14px;
+    margin-right: 8px;
+    margin-top: 3px;
+  }
+
+  &__link {
+    width: 100%;
+    color: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+
+    &--active {
+      color: color(secondary-dark);
+      font-weight: 500;
+    }
+
+    &:hover {
+      color: color(secondary-dark);
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+.avatars-list {
+  & > * + * {
+    margin-top: 16px;
+  }
+}

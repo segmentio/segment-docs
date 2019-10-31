@@ -1,0 +1,33 @@
+.menu-button {
+  position: relative;
+  width: 22px;
+  height: 16px;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: color(gray);
+    border-radius: 1px;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &__line {
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background: color(gray);
+    border-radius: 1px;
+  }
+}

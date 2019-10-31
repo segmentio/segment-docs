@@ -1,0 +1,51 @@
+---
+layout: main
+---
+
+<article class="page">
+  {% include components/breadcrumbs.html %}
+
+  <div class="page__body" data-headings-anchors>
+    {%- if page.title -%}
+      <h1 id="{{ page.title | downcase }}" class="page__heading">
+        {{ page.title }} {% unless page.landing %}{{ page.integration_type | capitalize }}{% endunless %}
+      </h1>
+    {%- endif -%}
+
+    {%- if page.beta -%}
+      {% include content/beta.md %}
+    {%- endif -%}
+
+    {%- unless page.hide_toc -%}
+      {% include sidebar/mobile-menu-side.html %}
+    {%- endunless -%}
+
+    <div class="markdown">
+      {{ content }}
+    </div>
+
+    {% if page.faq %}
+      <hr>
+
+      {% include components/faq.html items=page.faq %}
+    {% endif %}
+
+    {% if page.contributors %}
+      {% include components/avatar.html contributors=page.contributors %}
+    {% endif %}
+
+    {% if page.related %}
+      <hr>
+
+      {% include components/related.html items=page.related %}
+    {% endif %}
+
+    <hr>
+
+    {% unless page.hide-feedback %}
+    {% include components/feedback.html %}
+    {% endunless %}
+
+    {% include components/callout.html %}
+  </div>
+</article>

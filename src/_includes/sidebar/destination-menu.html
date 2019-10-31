@@ -1,0 +1,18 @@
+{% assign categories = site.data.catalog.destination_categories.items %}
+
+<div class="destination-menu" data-anchors-indicator data-sections=".destinations-catalog__section" data-active-class="destination-menu__link--active">
+  <p class="destination-menu__title">On this page</p>
+  <ul class="destination-menu__list list list--unstyle">
+    {% for category in categories %}
+      {% assign category_icon = category.slug | slugify %}
+      <li class="destination-menu__item">
+        <a class="destination-menu__link flex" href="#{{ category.slug | slugify }}" title="{{ category.display_name }}">
+          <span class="destination-menu__icon">
+            {% include icons/destinations-catalog/{{ category_icon }}.svg %}
+          </span>
+          {{ category.display_name }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

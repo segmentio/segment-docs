@@ -1,0 +1,48 @@
+.note {
+  padding: 24px 16px;
+  background-color: color(gray-light);
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 22px;
+
+  & > * + * {
+    margin-top: 5px;
+  }
+
+  &__header {
+    display: flex;
+
+    & > * + * {
+      margin-left: 10px;
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    & > * + * {
+      margin-left: 20px;
+    }
+  }
+
+  &__text {
+    & > p:first-of-type {
+      display: inline;
+    }
+
+    & > * + * {
+      margin-top: 25px;
+    }
+  }
+
+  &__heading {
+    color: color(secondary);
+    font-weight: 500;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    margin-top: 4px;
+  }
+}

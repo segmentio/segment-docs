@@ -1,0 +1,18 @@
+{% assign destination_categories = "Website, Mobile, Server, Ott" | split: ", " %}
+
+<div class="destination-menu" data-anchors-indicator data-sections=".destinations-catalog__section" data-active-class="destination-menu__link--active">
+  <ul class="destination-menu__list list list--unstyle">
+    {% for category in destination_categories %}
+      <li class="destination-menu__item">
+        <a class="destination-menu__link flex" href="#{{ category | slugify }}" title="{{ category.display_name }}">
+          {{ category }}
+        </a>
+      </li>
+    {% endfor %}
+    <li class="destination-menu__item">
+      <a class="destination-menu__link flex" href="#cloud-apps" title="Cloud apps">
+        Cloud apps
+      </a>
+    </li>
+  </ul>
+</div>

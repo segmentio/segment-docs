@@ -1,0 +1,30 @@
+.back-scrolling {
+  position: fixed;
+  z-index: 1;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #e4ebee;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+
+  @include breakpoint(medium up)  {
+    bottom: 40px;
+    right: 40px;
+  }
+
+  &:hover {
+    background-color: #bdcbd2;
+  }
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

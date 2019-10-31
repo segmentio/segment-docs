@@ -1,0 +1,42 @@
+/// Outputs media query for passed breakpoint.
+///
+/// @param {List} $formula
+/// @access public
+///
+/// @example scss - example
+///   @include breakpoint(large) { }
+///   @include breakpoint(large up) { }
+///   @include breakpoint(large down) { }
+/// @example css - output
+///   @media (min-width: 45em) and (max-width: 60em) { }
+///   @media (min-width: 60em) { }
+///   @media (max-width: 60em) { }
+@mixin breakpoint($formula) {
+  $name: nth($formula, 1);
+  $type: nth($formula, length($formula));
+
+  // While breakpoint is facing up,
+  // generate `min` media query.
+  @if $type == "up" {
+    @include breakpoint-up($name) {
+      @content;
+    }
+  }
+
+  // While breakpoint is facing down,
+  // generate `max` media query.
+  @if $type == "down" {
+    @include breakpoint-down($name) {
+      @content;
+    }
+  }
+
+  // While breakpoint type is equal to name
+  // we know that type was not explicit,
+  // so generate `rage` media query.
+  @if $type == $name {
+    @include breakpoint-equals($name) {
+      @content;
+    }
+  }
+}
