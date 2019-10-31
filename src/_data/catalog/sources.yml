@@ -159,13 +159,13 @@ items:
   categories:
   - Server
 - display_name: Customer.io
-  slug: customerio
+  slug: customer-io
   name: catalog/sources/customerio
   description: >-
     Customer.io is an automated email tool. It lets you set up rules to
     automatically send emails to your users after they perform actions, making
     drip email campaigns really easy.
-  url: connections/sources/catalog/cloud-apps/customerio
+  url: connections/sources/catalog/cloud-apps/customer-io
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/customerio-default.svg'
   mark:
@@ -378,10 +378,10 @@ items:
   - Customer Success
   - Performance Monitoring
 - display_name: Node.js
-  slug: node
+  slug: node-js
   name: catalog/sources/node.js
   description: ''
-  url: connections/sources/catalog/libraries/server/node
+  url: connections/sources/catalog/libraries/server/node-js
   logo:
     url: 'https://cdn.filepicker.io/api/file/1gENqOjST9GLydIWdznH'
   mark:

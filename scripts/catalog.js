@@ -14,10 +14,11 @@ const slugify = (displayName) => {
     .replace('-&-', '-')
     .replace('/', '')
     .replace(/[\(\)]/g, '')
-    .replace('.','')
+    .replace('.','-')
 
-  if (slug === 'nodejs') slug = 'node'
+  if (slug === '-net') slug = 'net'
   if (slug === 'roku-alpha') slug = 'roku'
+
   return slug
 }
 
