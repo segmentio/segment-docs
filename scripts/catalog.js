@@ -18,6 +18,8 @@ const slugify = (displayName) => {
 
   if (slug === 'nodejs') slug = 'node'
   if (slug === 'roku-alpha') slug = 'roku'
+  if (slug === 'javascript') slug = 'analytics.js'
+  if (slug === 'http-api') slug = 'http'
   return slug
 }
 
