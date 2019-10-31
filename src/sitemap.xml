@@ -12,7 +12,7 @@ layout: null
     {% for doc in docs %}
     {% unless doc.hidden %}
       <url>
-        <loc>{{ doc.url | remove:'/index' | replace:'.html','/' | absolute_url | xml_escape }}</loc><changefreq>{% if doc.seo-changefreq %}{{doc.seo-changefreq}}{% else %}weekly{% endif %}</changefreq><priority>{% if doc.seo-priority %}{{doc.seo-priority}}{% else %}0.5{% endif %}</priority>
+        <loc>{{ doc.url | remove:'/index' | replace:'.html','/' | absolute_url | xml_escape }}</loc><changefreq>{{doc.seo-changefreq}}</changefreq><priority>{{doc.seo-priority}}</priority>
         {% if doc.last_modified_at or doc.date %}<lastmod>{{ doc.last_modified_at | default: doc.date | date_to_xmlschema }}</lastmod>
         {% endif %}
       </url>
@@ -24,7 +24,7 @@ layout: null
   {% for page in pages %}
   {% unless page.hidden %}
     <url>
-      <loc>{{ page.url | remove:'/index' | replace:'.html','/' | absolute_url | xml_escape }}</loc><changefreq>{% if page.seo-changefreq %}{{page.seo-changefreq}}{% else %}weekly{% endif %}</changefreq><priority>{% if page.seo-priority %}{{page.seo-priority}}{% else %}0.5{% endif %}</priority>
+      <loc>{{ page.url | remove:'/index' | replace:'.html','/' | absolute_url | xml_escape }}</loc><changefreq>{{page.seo-changefreq}}</changefreq><priority>{{page.seo-priority}}</priority>
       {% if page.last_modified_at %}
         <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
       {% endif %}
@@ -37,8 +37,8 @@ layout: null
   {% unless file.hidden %}
     <url>
       <loc>{{ file.path | remove:'/index' | replace:'.html','/' | absolute_url | xml_escape }}</loc>
-      <changefreq>{% if file.seo-changefreq %}{{file.seo-changefreq}} {% else %}weekly{% endif %}</changefreq>
-      <priority>{% if file.seo-priority %}{{file.seo-priority}}{% else %}0.5{% endif %}</priority>
+      <changefreq>{{file.seo-changefreq}}</changefreq>
+      <priority>{{file.seo-priority}}</priority>
       <lastmod>{{ file.modified_time | date_to_xmlschema }}</lastmod>
     </url>
     {% endunless %}
