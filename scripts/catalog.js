@@ -90,6 +90,28 @@ const getConnectionModes = (destination) => {
   return connectionModes
 }
 
+/**
+ * 
+ * If catalog item does not exist, create folder and index.md file for it, and record it as incomplete for later fill in
+ */
+const doesCatalogItemExist = (item) => {
+  const docsPath = `src/${item.url}`
+
+  if (!fs.existsSync(docsPath)) {
+    console.log(`${item.slug} does not exist: ${docsPath}`)
+    let content =`---\ntitle: '${item.display_name} Source'\nhidden: true\n---`
+    if (!docsPath.includes('/sources/')) {
+      let betaFlag = ''
+      if (item.status === 'PUBLIC_BETA') {
+        betaFlag = 'beta: true\n'
+      }
+      content =`---\ntitle: '${item.display_name} Destination'\nhidden: true\n${betaFlag}---\n{% include content/integration-foot.md %}`
+    }
+    fs.mkdirSync(docsPath)
+    fs.writeFileSync(`${docsPath}/index.md`, content)
+    fs.appendFileSync('src/_data/catalog/incompleteDocs.txt', `${docsPath}\n`)
+  }
+}
 const updateSources = async () => {
   let sources = []
   let sourcesUpdated = []
@@ -143,7 +165,7 @@ const updateSources = async () => {
       categories: source.categories
     }
     sourcesUpdated.push(updatedSource)
-    
+    doesCatalogItemExist(updatedSource)
     // add unique source categories to set
     source.categories.reduce((s, e) => s.add(e), categories);
   })
@@ -216,7 +238,7 @@ const updateDestinations = async () => {
       connection_modes
     }
     destinationsUpdated.push(updatedDestination)
-
+    doesCatalogItemExist(updatedDestination)
     // add unique destination categories to set
     tempCategories.reduce((s, e) => s.add(e), categories);
   })
