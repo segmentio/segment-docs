@@ -93,4 +93,10 @@
     {% capture my_toc %}{: #{{ include.id }}}
 {{ my_toc | lstrip }}{% endcapture %}
   {% endif %}
-{% endcapture %}{% assign tocWorkspace = '' %}{{ my_toc | markdownify | strip }}
+{% endcapture %}{% assign tocWorkspace = '' %}
+
+{% assign amount = _hAttrToStrip | size %}
+{% if amount > 0 %}
+  <p class="destination-menu__title">On this page</p>
+  {{ my_toc | markdownify | strip }}
+{% endif %}
