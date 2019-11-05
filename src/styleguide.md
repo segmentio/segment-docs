@@ -140,21 +140,24 @@ console.log('example');
 
 ## Notes
 
-{% capture note %}
-  Our [browser and mobile libraries](https://segment.com) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don’t need to worry about them when using those libraries.
-{% endcapture %}
-{% include components/note.html content=note %}
+> note ""
+> **NOTE:** Our [browser and mobile libraries](https://segment.com) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don’t need to worry about them when using those libraries.
 
-{% capture server_side_tracking %}
-  Server-side data management is when tag sends data into your web server, then your web server passes that data to the destination system/server.
-{% endcapture %}
-{% include components/note.html title="Server-side tracking" content=server_side_tracking buttonTitle="Find out more" buttonHref="https://segment.com" %}
+> note "Server-side tracking"
+> Server-side data management is when tag sends data into your web server, then your web server passes that data to the destination system/server. [Find out more](https://segment.com)
 
 ---
 
 ## Alerts
 
-{% include components/alert.html type="info" content="This is my sample note." %}
-{% include components/alert.html type="success" content="This is my sample note." %}
-{% include components/alert.html type="warning" content="This is my sample note." %}
-{% include components/alert.html type="error" content="This is my sample note." %}
+> info ""
+> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+
+> success ""
+> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+
+> warning ""
+> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+
+> error ""
+> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.

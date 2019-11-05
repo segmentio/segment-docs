@@ -64,7 +64,9 @@ Beyond the common fields, an `identify` call has the following fields:
 | `traits` <br> optional            | Object      | Free-form dictionary of traits of the user, like `email` or `name`. <br> See the [Traits field docs](/docs/spec/identify#traits) |
 | `userId` <br> optional/required   | String      | Unique identifier for the user in your database. A userId or an anonymousId is required.<br> See the [Identities docs](/docs/spec/identify#identities) for more detail. |
 
-{% include components/alert.html type="success" content="Your message has been sent successfully. This is a paragraph showing alert box. Indicates a successful or positive action." %}
+
+> success ""
+> Your message has been sent successfully. This is a paragraph showing alert box. Indicates a successful or positive action.
 
 ## Example
 
@@ -87,7 +89,8 @@ Here's a complete example of an `identify` call:
 
 The `identify` call specifies a customer identity that you can reference across the customer's whole lifetime. **Every `identify` call must have a [User ID](/docs/spec/identify#user-id) or an [Anonymous ID](/docs/spec/identify#anonymous-id)**, depending on how much you know about the user in question.
 
-{% include components/alert.html type="info" content="Please read the comments carefully. This is a paragraph showing information box. Indicates a neutral informative change or action." %}
+> info ""
+> Please read the comments carefully. This is a paragraph showing information box. Indicates a neutral informative change or action.
 
 ### Anonymous ID
 
@@ -95,14 +98,13 @@ There are certain cases where you don't actually know who the user is according 
 
 In these cases, you should use an Anonymous ID.
 
-{% include components/alert.html type="warning" content="There was a problem with your network connection. Indicates a warning that might need attention. This is a paragraph showing warning box." %}
+> warning
+> There was a problem with your network connection. Indicates a warning that might need attention. This is a paragraph showing warning box.
 
 The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don't have any readily available identifier, you can always generate a new random one—we recommend [UUIDs](http://en.wikipedia.org/wiki/Universally_unique_identifier).
 
-{% capture AnonymousID_note %}
-  Our [browser and mobile libraries](/docs/sources/) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don’t need to worry about them when using those libraries.
-{% endcapture %}
-{% include components/note.html content=AnonymousID_note %}
+> note ""
+> **NOTE:** Our [browser and mobile libraries](https://segment.com) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don’t need to worry about them when using those libraries.
 
 ### User ID
 
@@ -146,10 +148,8 @@ Reserved traits we've standardized:
 | `username`    | String          | User's username <br> This should be unique to each user, like the usernames of Twitter or GitHub. |
 | `website`     | String          | Website of a user |
 
-{% capture Traits_note %}
-  You might be used to some destinations recognizing special traits by slightly different names. For example, Mixpanel recognizes a `$created` trait when the user's account was first created, while Intercom recognizes the same trait as `created_at` instead.  Luckily, you don't have to worry about those inconsistencies. Just pass us `createdAt`. **We’ll handle all of the destination-specific conversions for you automatically.**  Same goes for the rest of the reserved traits.
 
-  **You can pass these reserved traits using camelCase or snake_case**, so in Javascript you can match the rest of your camel-case code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. That way the API never seems alien to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations.
-{% endcapture %}
-
-{% include components/note.html content=Traits_note %}
+> note ""
+> **NOTE:** You might be used to some destinations recognizing special traits by slightly different names. For example, Mixpanel recognizes a `$created` trait when the user's account was first created, while Intercom recognizes the same trait as `created_at` instead.  Luckily, you don't have to worry about those inconsistencies. Just pass us `createdAt`. **We’ll handle all of the destination-specific conversions for you automatically.**  Same goes for the rest of the reserved traits.
+>
+> **You can pass these reserved traits using camelCase or snake_case**, so in Javascript you can match the rest of your camel-case code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. That way the API never seems alien to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations.

@@ -188,10 +188,8 @@ If you run multiple experiments during a user session, since `traits` are cached
 
 ## Optimizely Classic Android
 
-{% capture noteAndroid %}
-  Optimizely Mobile Classic has been officially deprecated as of September 30, 2018. You won't be able to start new experiments in Classic.
-{% endcapture %}
-{% include components/note.html content=noteAndroid %}
+> note ""
+> Optimizely Mobile Classic has been officially deprecated as of September 30, 2018. You won't be able to start new experiments in Classic.
 
 For Segment’s Optimizely Full Stack Android destination, see Segment's [Optimizely Full Stack](./../optimizely-full-stack/index.md) documentation.
 
@@ -239,10 +237,8 @@ Upon an Optimizely experiment activation, Segment’s Optimizely Classic<>Androi
 
 ## Optimizely Classic iOS
 
-{% capture noteIOS %}
-  Optimizely Mobile Classic has been officially deprecated as of September 30, 2018. You won't be able to start new experiments in Classic.
-{% endcapture %}
-{% include components/note.html content=noteIOS %}
+> note ""
+> Optimizely Mobile Classic has been officially deprecated as of September 30, 2018. You won't be able to start new experiments in Classic.
 
 For Segment’s Optimizely Full Stack iOS destination, see Segment's [Optimizely Full Stack documentation](./../optimizelyx/index.md).
 

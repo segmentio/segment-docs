@@ -146,10 +146,9 @@ Our server-side sources let you send analytics data directly from your servers. 
 - [Ruby](/docs/sources/server/ruby/)
 - [.NET](/docs/sources/server/net/)
 
-{% capture server_side_tracking %}
-  Server-side data management is when tag sends data into your web server, then your web server passes that data to the destination system/server.
-{% endcapture %}
-{% include components/note.html title="Server-side tracking" content=server_side_tracking buttonTitle="Find out more" buttonHref="https://segment.com" %}
+> note "Server-side tracking"
+> Server-side data management is when tag sends data into your web server, then your web server passes that data to the destination system/server.
+> [Find out more](https://segment.com)
 
 ---
 
