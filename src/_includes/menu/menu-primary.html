@@ -15,5 +15,15 @@
     {% for root_section in site.data.sidenav.partners.sections %}
       {% include menu/menu-item.html root_section=root_section %}
     {% endfor %}
+
+    <li class="menu-item">
+      <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/glossary/">
+        <div class="menu-item__icon flex__column">
+          {% include icons/menu/icon-help.svg %}
+        </div>
+
+        <div class="flex__column">Glossary</div>
+      </a>
+    </li>
   </ul>
 </nav>
