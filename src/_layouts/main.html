@@ -6,8 +6,8 @@ layout: default
   <div class="stage">
     <div class="docs__aside stage__aside">
       {% include navbar/logo.html %}
-      {% assign currentPage = page.path | downcase | split: "." %}
-      {% if currentPage[0] == 'glossary' %}
+      {% assign currentPage = page.url | downcase | split: "/" %}
+      {% if currentPage[1] == 'glossary' %}
         {% include menu/menu-glossary.html %}
       {% else %}
         {% include menu/menu.html %}

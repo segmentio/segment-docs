@@ -25,14 +25,7 @@
       
         {% if site.data.glossary %}
           <ul class="menu-item__body">
-            {% for item in site.data.glossary %}
-              {% assign currentPage = page.path | downcase | replace: "/index.md" "" | replace: ".md" "" %}
-              {% assign currentPath = item.path | downcase | replace_first: "/" "" %}
-      
-              {% assign currentSectionPage = page.path | downcase | split: "/" %}
-              {% assign currentSectionPath = item.slug | downcase %}
-              {% capture currentSectionSlug %}{{ currentSectionPage[0] | downcase }}/{{ currentSectionPage[1] | downcase }}{% endcapture %}
-      
+            {% for item in site.data.glossary %}     
               <li class="menu-item menu-item--gray" data-accordion data-class-active="menu-item--active">
                 {% if item[0] %}
                   <a class="menu-item__link flex" href="#{{ item[0] | slugify }}">{{ item[0] }}</a>
