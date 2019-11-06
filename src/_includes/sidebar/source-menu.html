@@ -6,12 +6,19 @@
     {% for category in destination_categories %}
       <li class="destination-menu__item">
         <a class="destination-menu__link flex" href="#{{ category | slugify }}" title="{{ category.display_name }}">
+          {% assign category_icon = category | slugify %}
+          <span class="destination-menu__icon">
+            {% include icons/destinations-catalog/{{ category_icon }}.svg %}
+          </span>
           {{ category }}
         </a>
       </li>
     {% endfor %}
     <li class="destination-menu__item">
       <a class="destination-menu__link flex" href="#cloud-apps" title="Cloud apps">
+        <span class="destination-menu__icon">
+          {% include icons/destinations-catalog/cloud-apps.svg %}
+        </span>
         Cloud apps
       </a>
     </li>
