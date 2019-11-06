@@ -5,7 +5,7 @@ layout: catalog
 ---
 
 <div class="destinations-catalog">
-  {% assign categories = site.data.catalog.destination_categories.items %}
+  {% assign categories = site.data.catalog.destination_categories.items | sort:"display_name" %}
 
   {% for category in categories %}
     <div class="destinations-catalog__section markdown" id="{{ category.slug | slugify }}">
