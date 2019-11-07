@@ -1,0 +1,30 @@
+.related-categories {
+  &__list {
+    & > * + * {
+      margin-top: 8px;
+    }
+  }
+
+  &__item {
+    background-color: rgba(color(secondary-lighter), 0.4);
+    border: 1px solid color(secondary-light);
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 16px;
+    display: inline;
+
+    &:hover {
+      background-color: color(secondary-lighter);
+    }
+  }
+
+  &__link {
+    color: color(secondary-dark);
+    padding: 4px 5px;
+    display: block;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

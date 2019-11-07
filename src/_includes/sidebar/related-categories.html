@@ -1,0 +1,15 @@
+<div class="related-categories">
+  <p class="destination-menu__title">Related categories</p>
+  <ul class="related-categories__list menu-side">
+    {% assign currentSlug = page.url | split: "/" | last %}
+    {% assign currentIntegration = include.items | where: "slug", currentSlug | first %}
+
+    {% for category in currentIntegration.categories %}
+      <li class="related-categories__item">
+        <a href="../#{{ category | slugify }}" class="related-categories__link">
+          {{ category }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

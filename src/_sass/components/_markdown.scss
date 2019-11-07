@@ -80,6 +80,7 @@
 
   & > p {
     margin-top: 8px;
+    overflow-wrap: break-word;
 
     @include breakpoint(medium up) {
       margin-top: 16px;
