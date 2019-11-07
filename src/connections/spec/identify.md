@@ -3,9 +3,9 @@ title: 'Spec: Identify'
 sidebar: Identify
 contributors:
   - name: Paul Mccall
-    position: Lead Developer
-    image_path: paul-mccall.png
     date: 23.08.2019
+  - name: Jane Doe
+    date: 20.08.2019
 related:
   - "/connections/sources/catalog/"
   - "/connections/sources/faq/"
