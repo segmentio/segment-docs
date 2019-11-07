@@ -7,10 +7,7 @@
     {% include sidebar/related-content.html items=page.related %}
   {% endif %}
 
-  {% if page.url contains 'sources' %}
-    {% include sidebar/related-categories.html items=site.data.catalog.sources.items %}
-  {% elsif page.url contains 'destinations' %}
-    {% include sidebar/related-categories.html items=site.data.catalog.destinations.items %}
-  {% endif %}
+  {% include sidebar/related-categories.html %}
+
   <hr class="mobile-menu-side__divider">
 </div>
