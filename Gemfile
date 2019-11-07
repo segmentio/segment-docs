@@ -1,7 +1,6 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 3.8.6"
-gem "nokogiri", "~> 1.10.4"
 gem "liquid-c"
 
 group :development do
