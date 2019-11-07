@@ -1,52 +1,56 @@
-{% assign contributor = include.contributors | first %}
+{% assign recent_contributor = site.data.contributors.list | where: "name", include.contributors[0].name | first %}
 
-{% if contributor %}
+{% if recent_contributor %}
   <div class="popover" data-popover data-active-class="popover--active">
     <div class="avatar">
       <div class="flex gutter gutter--large">
         <div class="flex__column flex__column--shrink">
-          <img src="{{ site.baseurl }}/images/{{ contributor.image_path }}" alt="">
+          <img src="{{ site.baseurl }}/images/{{ recent_contributor.image_path }}" alt="">
         </div>
 
         <div class="flex__column">
           <div class="avatar__content">
             <div>
               <p class="avatar__title">Updated on
-                {{ contributor.date | ordinal }}
-                {{ contributor.date | date: "%B" }},
-                {{ contributor.date | date: "%Y" }}
+                {{ include.contributors[0].date | ordinal }}
+                {{ include.contributors[0].date | date: "%B" }},
+                {{ include.contributors[0].date | date: "%Y" }}
               </p>
 
-              <p class="avatar__info">by {{ contributor.name }} - {{ contributor.position }}</p>
+              <p class="avatar__info">by {{ recent_contributor.name }} - {{ recent_contributor.position }}</p>
             </div>
 
-            <div>
-              <a class="button-link" href="#" data-popover-target="contributors">See all contributors</a>
-            </div>
+            {% if include.contributors.size > 1 %}
+              <div>
+                <a class="button-link" href="#" data-popover-target="contributors">See all contributors</a>
+              </div>
 
-            <div class="popover__body" data-popover-body="contributors">
-              <div class="avatars-list">
-                {% for other_contributor in include.contributors offset:1 %}
-                  <div class="avatar">
-                    <div class="flex gutter gutter--large">
-                      <div class="flex__column flex__column--shrink">
-                        <img src="{{ site.baseurl }}/images/{{ other_contributor.image_path }}" alt="">
-                      </div>
+              <div class="popover__body" data-popover-body="contributors">
+                <div class="avatars-list">
+                  {% for person in include.contributors offset:1 %}
+                    {% assign contributor = site.data.contributors.list | where: "name", person.name | first %}
 
-                      <div class="flex__column">
-                        <p class="avatar__title">Updated on
-                          {{ other_contributor.date | ordinal }}
-                          {{ other_contributor.date | date: "%B" }},
-                          {{ other_contributor.date | date: "%Y" }}
-                        </p>
+                    <div class="avatar">
+                      <div class="flex gutter gutter--large">
+                        <div class="flex__column flex__column--shrink">
+                          <img src="{{ site.baseurl }}/images/{{ contributor.image_path }}" alt="">
+                        </div>
 
-                        <p class="avatar__info">by {{ other_contributor.name }} - {{ other_contributor.position }}</p>
+                        <div class="flex__column">
+                          <p class="avatar__title">Updated on
+                            {{ person.date | ordinal }}
+                            {{ person.date | date: "%B" }},
+                            {{ person.date | date: "%Y" }}
+                          </p>
+
+                          <p class="avatar__info">by {{ contributor.name }} - {{ contributor.position }}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                {% endfor %}
+                  {% endfor %}
+                </div>
               </div>
-            </div>
+            {% endif %}
           </div>
         </div>
       </div>
