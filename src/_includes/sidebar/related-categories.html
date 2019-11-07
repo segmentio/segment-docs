@@ -1,19 +1,31 @@
-{% if page.url contains 'destinations' %}
+{% if page.url contains 'sources' %}
+  {% assign items = site.data.catalog.sources.items %}
+  {% assign catalog_url = site.url | append: "/docsv2/connections/sources/catalog" %}
+{% elsif page.url contains 'destinations' %}
   {% assign items = site.data.catalog.destinations.items %}
   {% assign catalog_url = site.url | append: "/docsv2/connections/destinations/catalog/" %}
-  {% assign current_slug = page.url | split: "/" | last %}
-  {% assign current_integration = items | where: "slug", current_slug | first %}
-
-  <div class="related-categories">
-    <p class="destination-menu__title">Related categories</p>
-    <ul class="related-categories__list menu-side">
-      {% for category in current_integration.categories %}
-        <li class="related-categories__item">
-          <a href="{{ catalog_url }}/#{{ category | slugify }}" class="related-categories__link">
-            {{ category }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
 {% endif %}
+
+{% assign sources_promoted_cateories = "Website, Mobile, Server, Ott" | split: ", " %}
+{% assign group_of_promoted_categories = "Cloud app" %}
+{% assign current_slug = page.url | split: "/" | last %}
+{% assign current_integration = items | where: "slug", current_slug | first %}
+
+<div class="related-categories">
+  <p class="destination-menu__title">Related categories</p>
+  <ul class="related-categories__list menu-side">
+    {% for category in current_integration.categories %}
+      {% assign result_category = category %}
+      {% for sources_promoted_category in sources_promoted_cateories %}
+        {% if category == sources_promoted_category  %}
+          {% assign result_category = group_of_promoted_categories %}
+        {% endif %}
+      {% endfor %}
+      <li class="related-categories__item">
+        <a href="{{ catalog_url }}/#{{ result_category | slugify }}" class="related-categories__link">
+          {{ result_category }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
