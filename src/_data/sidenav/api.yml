@@ -1,6 +1,6 @@
 ---
 sections:
-- section_title: Api
+- section_title: APIs
   section:
   - path: "/api"
     title: Overview
