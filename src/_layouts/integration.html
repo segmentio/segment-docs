@@ -75,6 +75,12 @@ layout: default
           </div>
         {%- endunless -%}
 
+        {% if page.related %}
+          {% include sidebar/related-content.html items=page.related %}
+        {% endif %}
+
+        {% include sidebar/related-categories.html %}
+
         {% unless page.hide-feedback %}
           {% include sidebar/feedback.html %}
         {% endunless %}

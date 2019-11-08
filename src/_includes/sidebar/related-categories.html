@@ -1,0 +1,19 @@
+{% if page.url contains 'destinations' %}
+  {% assign items = site.data.catalog.destinations.items %}
+  {% assign catalog_url = site.url | append: "/docsv2/connections/destinations/catalog/" %}
+  {% assign current_slug = page.url | split: "/" | last %}
+  {% assign current_integration = items | where: "slug", current_slug | first %}
+
+  <div class="related-categories">
+    <p class="destination-menu__title">Related categories</p>
+    <ul class="related-categories__list menu-side">
+      {% for category in current_integration.categories %}
+        <li class="related-categories__item">
+          <a href="{{ catalog_url }}/#{{ category | slugify }}" class="related-categories__link">
+            {{ category }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
