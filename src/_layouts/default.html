@@ -72,6 +72,21 @@
     <div id="consent-manager"></div>
 
     {% comment %}
+     A.JS
+
+     Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
+     Everything else: https://app.segment.com/segment_prod/sources/segment_docs_v2
+    {% endcomment %}
+    {% if jekyll.environment == "production" %}
+      {% assign write_key = "QAKKJEtNsXpsNfCCBeWCLNxkaaLO7pgp" %}
+      {% assign swiftype_key = "dsmQzTck4zz2vQNsXLJW" %}
+      
+    {% else %}
+      {% assign write_key = "4RMd3zwDx4TkYAlt2k1iLB4xMUKQeOks" %}
+      {% assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" %}
+    {% endif %}
+
+    {% comment %}
       JS for site
     {% endcomment %}
     <script src="{{ "./assets/docs.bundle.js" | relative_url}}"></script>
@@ -85,7 +100,7 @@
       e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
       })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-      _st('install','dsmQzTck4zz2vQNsXLJW','2.0.0');
+      _st('install','{{swiftype_key}}','2.0.0');
     </script>
 
     {% comment %}
@@ -111,19 +126,6 @@
       }
     ]
     </script>
-
-    {% comment %}
-     A.JS
-
-     Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
-     Everything else: https://app.segment.com/segment_prod/sources/segment_docs_v2
-    {% endcomment %}
-    {% if jekyll.environment == "production" %}
-      {% assign write_key = "QAKKJEtNsXpsNfCCBeWCLNxkaaLO7pgp" %}
-    {% else %}
-      {% assign write_key = "4RMd3zwDx4TkYAlt2k1iLB4xMUKQeOks" %}
-    {% endif %}
-
 
     <script>
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
