@@ -19,13 +19,13 @@
           <span class="menu-item__icon flex__column">
             {% include icons/menu/icon-home.svg %}
           </span>
-    
+
           <span class="flex__column">Glossary</span>
         </button>
-      
+
         {% if site.data.glossary %}
           <ul class="menu-item__body">
-            {% for item in site.data.glossary %}     
+            {% for item in site.data.glossary %}
               <li class="menu-item menu-item--gray">
                 {% if item[0] %}
                   <a class="menu-item__link flex" href="#{{ item[0] | slugify }}">{{ item[0] }}</a>
@@ -34,7 +34,7 @@
             {% endfor %}
           </ul>
         {% endif %}
-      </li>      
+      </li>
     </ul>
   </nav>
 </div>
