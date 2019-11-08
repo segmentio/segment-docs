@@ -1,0 +1,13 @@
+<div>
+  <p class="destination-menu__title">Related content</p>
+  <ul class="menu-side">
+    {% for related_url in include.items %}
+      {% assign subpage = site.pages | where: 'url', related_url | first %}
+      <li>
+        <a href="{{ subpage.url }}" class="menu-side__link">
+          {{ subpage.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -9,6 +9,10 @@
     margin-top: 5px;
   }
 
+  & > * + div {
+    margin-top: 20px;
+  }
+
   &__title {
     font-weight: 500;
   }
