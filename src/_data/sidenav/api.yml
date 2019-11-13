@@ -11,7 +11,8 @@ sections:
       title: API Design
     - path: "/api/config-api/authentication"
       title: Authentication
-    - path: "/api/config-api/reference"
+    - path: "https://reference.segmentapis.com/"
       title: Reference
+      menu_icon: "new-tab"
     - path: "/api/config-api/tutorial-javascript-google-analytics"
       title: Creating a Javascript web source and Google Analytics destination
