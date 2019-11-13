@@ -41,12 +41,12 @@
     text-decoration: none;
 
     &--active {
-      color: color(secondary-dark);
+      color: color(primary);
       font-weight: 500;
     }
 
     &:hover {
-      color: color(secondary-dark);
+      color: color(primary);
       text-decoration: none;
     }
   }

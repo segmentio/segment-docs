@@ -1,11 +1,12 @@
 .sidebar {
   & > * + * {
     margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid color(border-gray);
   }
 
   & > * + *:last-child {
     padding-top: 32px;
-    border-top: 1px solid color(border-gray);
   }
 
   &--sticky {
