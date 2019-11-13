@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.8.6"
+gem "jekyll", github: "jekyll/jekyll"
 gem "liquid-c"
 
 group :development do
@@ -15,6 +15,8 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'jekyll-redirect-from'
   gem "premonition", "~> 2.0.0"
+  gem "jekyll-commonmark"
+  gem "jekyll-include-cache"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
