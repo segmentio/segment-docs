@@ -1,6 +1,7 @@
 ---
 title: Warehouses catalog
 hide_toc: true
+menu_icon: "read-more"
 ---
 
 <div class="destinations-catalog">
