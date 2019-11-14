@@ -5,14 +5,14 @@
 >
   <div class="navbar-mobile__wrapper flex flex--middle">
     <div class="flex__column">
-      {% include navbar/logo.html %}
+      {% include_cached navbar/logo.html %}
     </div>
 
     <div class="flex__column flex__column--shrink">
       <div class="flex flex--medium gutter gutter--large">
         <div class="flex__column">
           <button class="navbar-mobile__search-button search-button" data-ref="search-navbar[trigger]">
-            {% include icons/symbols/search.svg %}
+            {% include_cached icons/symbols/search.svg %}
           </button>
         </div>
 
@@ -26,10 +26,10 @@
   </div>
 
   <div class="navbar-mobile__search">
-    {% include navbar/search.html placeholder="Search the Segment documentation..." %}
+    {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
   </div>
 
   <div class="navbar-mobile__panel">
-    {% include menu/menu-mobile.html %}
+    {% include_cached menu/menu-mobile.html %}
   </div>
 </nav>

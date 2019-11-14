@@ -6,6 +6,8 @@ source: ./src
 
 permalink: /:categories/:title/
 
+
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
@@ -39,3 +41,4 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - premonition
+  - jekyll-commonmark
