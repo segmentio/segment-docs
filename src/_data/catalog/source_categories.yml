@@ -31,7 +31,7 @@ items:
 - display_name: Feature Flagging
   slug: feature-flagging
 - display_name: A/B Testing
-  slug: ab-testing
+  slug: a-b-testing
 - display_name: Performance Monitoring
   slug: performance-monitoring
 - display_name: Advertising

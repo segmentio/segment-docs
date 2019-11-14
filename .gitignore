@@ -9,3 +9,4 @@ vendor
 *.iml
 node_modules/
 src/assets/docs.bundle.js
+# Make sure to update `analytics` to the full path to your Typewriter client.

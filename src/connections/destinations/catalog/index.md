@@ -8,7 +8,7 @@ layout: catalog
   {% assign categories = site.data.catalog.destination_categories.items | sort:"display_name" %}
 
   {% for category in categories %}
-    <div class="destinations-catalog__section markdown" id="{{ category.display_name | slugify }}">
+    <div class="destinations-catalog__section markdown">
       {% assign category_icon = category.slug | slugify %}
 
       <h2 class="destinations-catalog__title" id="{{ category.slug | slugify }}">

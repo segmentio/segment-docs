@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+    "paths": {
+      "typewriter/*": ["./analytics/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

@@ -1,7 +1,7 @@
 const COMPONENT_NAME = 'data-search-navbar'
 const COMPONENT_SELECTOR = `[${COMPONENT_NAME}]`
 const TRIGGER_SELECTOR = '[data-ref*="search-navbar[trigger]"]'
-
+const typewriter = require('analytics')
 const DEFAULTS = {
   classActive: 'active'
 }
@@ -21,4 +21,8 @@ export default function () {
       })
     }
   }
+
+  document.getElementsByClassName('st-search-input')[0].addEventListener('click', function () {
+    typewriter.docsSearchClicked()
+  })
 }

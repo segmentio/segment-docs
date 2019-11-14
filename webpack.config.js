@@ -6,6 +6,11 @@ module.exports = {
         filename: 'docs.bundle.js',
         path: path.join(__dirname, 'src', 'assets'),
     },
+    resolve: {
+        alias: {
+            'analytics': path.resolve('analytics')
+        }
+    },
     module: {
         rules: [
             {

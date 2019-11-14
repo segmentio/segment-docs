@@ -65,7 +65,7 @@
     }
   }
 
-  &__form {
+  &__form {        
     @include breakpoint(medium up) {
       margin-bottom: 0;
     }
