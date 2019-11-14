@@ -1,4 +1,5 @@
 const COMPONENT_SELECTOR = '[data-back-scrolling]'
+const typewriter = require('analytics')
 
 export default function () {
   const components = document.querySelectorAll(COMPONENT_SELECTOR)
@@ -14,7 +15,7 @@ export default function () {
 
     components[i].addEventListener('click', e => {
       e.preventDefault()
-
+      typewriter.scrollToTopClicked()
       window.scrollTo({top: 0, behavior: 'smooth'})
     })
   }

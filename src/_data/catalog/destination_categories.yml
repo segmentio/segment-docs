@@ -9,7 +9,7 @@ items:
 - display_name: Enrichment
   slug: enrichment
 - display_name: A/B Testing
-  slug: ab-testing
+  slug: a-b-testing
 - display_name: Customer Success
   slug: customer-success
 - display_name: Performance Monitoring

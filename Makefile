@@ -5,6 +5,7 @@ JEKYLL_ENV ?= development
 
 .PHONY: dev
 dev: node_modules vendor/bundle
+	@npx typewriter
 	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
 		"$(BIN)/webpack --mode=development --watch" \
 		"bundle exec jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
@@ -17,6 +18,7 @@ intialize-work-dir:
 
 .PHONY: build
 build: node_modules vendor/bundle
+	@npx typewriter
 	@chown -R jekyll /workdir
 	@$(BIN)/webpack --mode=production
 	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build

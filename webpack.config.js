@@ -8,7 +8,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            analytics: path.resolve('./analytics')
+            'analytics': path.resolve('analytics')
         }
     },
     module: {

@@ -28,27 +28,24 @@ export default () => {
         let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
 
         let position = null
-
+        
         if (window.innerWidth >= 768) {
           position = scrollPosition + (window.innerHeight * 0.2)
         } else {
           position = scrollPosition + (window.innerHeight * 0.6)
         }
-
         if (currentElementOffset <= position) {
           allLinks.forEach(currentLink => {
             currentLink.classList.remove(activeClass)
           })
-          const currentID = current.getAttribute('id')
-
+          const currentID = current.querySelector('h2').getAttribute('id')
           if ( currentID ) {
             component
             .querySelector(`a[href='#${currentID}']`)
             .classList.add(activeClass)
           }
         } else {
-          const currentID = current.getAttribute('id')
-
+          const currentID = current.querySelector('h2').getAttribute('id')
           component.querySelector(`a[href='#${currentID}']`).classList.remove(activeClass)
         }
       })

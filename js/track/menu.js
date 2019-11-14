@@ -1,3 +1,5 @@
+const typewriter = require('analytics')
+
 document.addEventListener('DOMContentLoaded', () => {
   const openSidebarButton = document.querySelector('[open-sidebar]')
   const sidebar = document.querySelector('nav.Sidebar')
@@ -9,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 Array.from(document.querySelectorAll('.DocsNav-tab')).forEach(tab => {
   tab.onclick = function(e) {
-    window.analytics.track('Docs Top Nav Clicked', {
+    typewriter.docsNavClicked({
       docs_page_context: window.location.pathname,
       docs_page_click: e.target.href
     })

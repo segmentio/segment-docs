@@ -4,7 +4,7 @@ const HELPFUL_BUTTON_SELECTOR = `[data-ref="feedback[helpful]"]`
 const UNHELPFUL_BUTTON_SELECTOR = `[data-ref="feedback[unhelpful]"]`
 const CONTENT_SELECTOR = `[data-ref="feedback[content]"]`
 const ACTIVE_CLASS = 'data-active-class'
-const typewritter = require('analytics')
+const typewriter = require('analytics')
 
 export default function () {
   const components = document.querySelectorAll(COMPONENT_SELECTOR)
@@ -30,10 +30,10 @@ export default function () {
       helpfulButton.classList.add(activeClass)
 
       clickHandler()
-      window.analytics.track('Docs Rated', {
-        title: '{{title}}',
+      typewriter.docsRated({
+        title: `${document.title}`,
         helpful: true,
-        url: document.URL
+        url: document.url
       })
     })
 
@@ -44,11 +44,10 @@ export default function () {
       unhelpfulButton.classList.add(activeClass)
 
       clickHandler()
-      typewritter.docs
-      window.analytics.track('Docs Rated', {
-        title: '{{title}}',
+      typewriter.docsRated({
+        title: `${document.title}`,
         helpful: false,
-        url: document.URL
+        url: document.url
       })
     })
   }
