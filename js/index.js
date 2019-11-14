@@ -1,5 +1,3 @@
-// import './track/menu'
-
 import feedback from './feedback'
 import accordion from './accordion'
 import accordionGroup from './accordion-group'
@@ -14,7 +12,8 @@ import popover from './popover'
 import menuPanels from './menu-panels'
 import searchBar404 from './search-bar-404'
 import backScrolling from './back-scrolling'
-
+import navigation from './navigation'
+import tracking from './tracking'
 feedback()
 accordion()
 accordionGroup()
@@ -29,3 +28,5 @@ codeExample()
 popover()
 searchBar404()
 backScrolling()
+navigation()
+tracking()
