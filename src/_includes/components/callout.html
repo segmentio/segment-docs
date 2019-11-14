@@ -12,15 +12,14 @@
 
       <div class="callout__form-wrapper flex flex--wrap flex--middle gutter gutter--none gutter--xlarge@xlarge">
         <div class="flex__column flex__column--12 flex__column--9@xlarge">
-          <div class="gutter gutter--none gutter--medium@medium flex flex--wrap">
-            <form class="callout__form flex__column">
-              <input class="callout__input input input--expand" type="email" placeholder="Your work e-mail">
-            </form>
-
-            <div class="flex__column flex__column--12 flex__column--shrink@medium">
-              <a href="https://segment.com/contact/demo/" class="button button--large button--expand button-fill">Request demo</a>
+          <form class="callout__form gutter gutter--none gutter--medium@medium flex flex--wrap" onsubmit="event.preventDefault(); handleDemoSubmit()">
+            <div class="flex__column">
+              <input class="callout__input input input--expand" id="demoEmailInput" type="email" required placeholder="Your work e-mail">
             </div>
-          </div>
+            <div class="flex__column flex__column--12 flex__column--shrink@medium">
+              <input type="submit" class="button button--large button--expand button-fill " value="Request Demo">
+            </div>
+          </form>
         </div>
 
         <div class="callout__separator flex__column flex__column--12">
@@ -36,4 +35,17 @@
         {% include icons/patterns/dots.svg %}
       </div>
     </div>
-  </div>
+</div>
+<script>
+  function handleDemoSubmit(e) {
+    const email = document.getElementById('demoEmailInput').value
+    const url = window.location.href
+    const location = 'Docs Footer SignUp Form'
+    window.analytics.track('Lead Captured', {
+      email: 'e',
+      url,
+      location
+    })
+    window.location.href = `https://segment.com/contact/demo/?email=${btoa(email)}`
+  }
+</script>
