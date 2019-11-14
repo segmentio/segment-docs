@@ -29,6 +29,13 @@ export default () => {
 
         let position = null
         
+        let currentID = null
+        if (current.tagName === 'H2') {
+          currentID = current.id
+        } else {
+          currentID = current.querySelector('h2').getAttribute('id')
+        }
+        
         if (window.innerWidth >= 768) {
           position = scrollPosition + (window.innerHeight * 0.2)
         } else {
@@ -37,15 +44,13 @@ export default () => {
         if (currentElementOffset <= position) {
           allLinks.forEach(currentLink => {
             currentLink.classList.remove(activeClass)
-          })
-          const currentID = current.querySelector('h2').getAttribute('id')
+          })          
           if ( currentID ) {
             component
             .querySelector(`a[href='#${currentID}']`)
             .classList.add(activeClass)
           }
         } else {
-          const currentID = current.querySelector('h2').getAttribute('id')
           component.querySelector(`a[href='#${currentID}']`).classList.remove(activeClass)
         }
       })
