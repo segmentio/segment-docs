@@ -86,8 +86,10 @@ function withTypewriterContext(message = {}) {
  * @property {string} [title] -
  */
 /**
- * @typedef RelatedCategoryClicked
- * @property {Record<string, any>} [] -
+ * @typedef LeadCaptured
+ * @property {string} [email] -
+ * @property {string} [location] -
+ * @property {string} [url] -
  */
 /**
  * Fires a 'Docs Nav Clicked' track call.
@@ -219,6 +221,60 @@ export function docsSearchClicked(props, options, callback) {
 	}
 }
 /**
+ * Fires a 'Lead Captured' track call.
+ *
+ * @param {LeadCaptured} [props] - The analytics properties that will be sent to Segment.
+ * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
+ * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
+ * 		call is fired.
+ */
+export function leadCaptured(props, options, callback) {
+	const schema = {
+		$schema: 'http://json-schema.org/draft-07/schema#',
+		labels: {},
+		properties: {
+			context: {},
+			properties: {
+				properties: {
+					email: {
+						description: '',
+						type: 'string',
+					},
+					location: {
+						description: '',
+						type: 'string',
+					},
+					url: {
+						description: '',
+						type: 'string',
+					},
+				},
+				type: 'object',
+			},
+			traits: {
+				type: 'object',
+			},
+		},
+		title: 'Lead Captured',
+		type: 'object',
+	}
+	const message = {
+		event: 'Lead Captured',
+		properties: props || {},
+		options,
+	}
+	validateAgainstSchema(message, schema)
+	const a = analytics()
+	if (a) {
+		a.track(
+			'Lead Captured',
+			props || {},
+			withTypewriterContext(options),
+			callback
+		)
+	}
+}
+/**
  * Fires a 'Link Clicked' track call.
  *
  * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
@@ -292,52 +348,6 @@ export function pageViewed(props, options, callback) {
 	if (a) {
 		a.track(
 			'Page Viewed',
-			props || {},
-			withTypewriterContext(options),
-			callback
-		)
-	}
-}
-/**
- * Fires a 'Related Category Clicked' track call.
- *
- * @param {RelatedCategoryClicked} [props] - The analytics properties that will be sent to Segment.
- * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
- * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
- * 		call is fired.
- */
-export function relatedCategoryClicked(props, options, callback) {
-	const schema = {
-		$schema: 'http://json-schema.org/draft-07/schema#',
-		labels: {},
-		properties: {
-			context: {},
-			properties: {
-				properties: {
-					'': {
-						description: '',
-						type: 'object',
-					},
-				},
-				type: 'object',
-			},
-			traits: {
-				type: 'object',
-			},
-		},
-		title: 'Related Category Clicked',
-		type: 'object',
-	}
-	const message = {
-		event: 'Related Category Clicked',
-		properties: props || {},
-		options,
-	}
-	validateAgainstSchema(message, schema)
-	const a = analytics()
-	if (a) {
-		a.track(
-			'Related Category Clicked',
 			props || {},
 			withTypewriterContext(options),
 			callback
@@ -467,6 +477,15 @@ const clientAPI = {
 	 */
 	docsSearchClicked,
 	/**
+	 * Fires a 'Lead Captured' track call.
+	 *
+	 * @param {LeadCaptured} [props] - The analytics properties that will be sent to Segment.
+	 * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
+	 * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
+	 * 		call is fired.
+	 */
+	leadCaptured,
+	/**
 	 * Fires a 'Link Clicked' track call.
 	 *
 	 * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
@@ -484,15 +503,6 @@ const clientAPI = {
 	 * 		call is fired.
 	 */
 	pageViewed,
-	/**
-	 * Fires a 'Related Category Clicked' track call.
-	 *
-	 * @param {RelatedCategoryClicked} [props] - The analytics properties that will be sent to Segment.
-	 * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
-	 * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
-	 * 		call is fired.
-	 */
-	relatedCategoryClicked,
 	/**
 	 * Fires a 'Scroll to Top Clicked' track call.
 	 *

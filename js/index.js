@@ -3,6 +3,7 @@
 import feedback from './feedback'
 import accordion from './accordion'
 import accordionGroup from './accordion-group'
+import callout from './callout'
 import searchNavbar from './search-navbar'
 import menuMobile from './menu-mobile'
 import headingsAnchors from './headings-anchors'
@@ -17,6 +18,7 @@ import backScrolling from './back-scrolling'
 feedback()
 accordion()
 accordionGroup()
+callout()
 searchNavbar()
 menuMobile()
 menuPanels()

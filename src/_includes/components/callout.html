@@ -12,7 +12,7 @@
 
       <div class="callout__form-wrapper flex flex--wrap flex--middle gutter gutter--none gutter--xlarge@xlarge">
         <div class="flex__column flex__column--12 flex__column--9@xlarge">
-          <form class="callout__form gutter gutter--none gutter--medium@medium flex flex--wrap" onsubmit="event.preventDefault(); handleDemoSubmit()">
+          <form class="callout__form gutter gutter--none gutter--medium@medium flex flex--wrap" id="demoForm">
             <div class="flex__column">
               <input class="callout__input input input--expand" id="demoEmailInput" type="email" required placeholder="Your work e-mail">
             </div>
@@ -36,16 +36,3 @@
       </div>
     </div>
 </div>
-<script>
-  function handleDemoSubmit(e) {
-    const email = document.getElementById('demoEmailInput').value
-    const url = window.location.href
-    const location = 'Docs Footer SignUp Form'
-    window.analytics.track('Lead Captured', {
-      email,
-      url,
-      location
-    })
-    window.location.href = `https://segment.com/contact/demo/?email=${btoa(email)}`
-  }
-</script>
