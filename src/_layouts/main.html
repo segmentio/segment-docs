@@ -5,7 +5,7 @@ layout: default
 <div class="docs">
   <div class="stage">
     <div class="docs__aside stage__aside">
-      {% include navbar/logo.html %}
+      {% include_cached navbar/logo.html %}
 
       {% assign currentPage = page.url | downcase | split: "/" %}
       {% if currentPage[1] == 'glossary' %}
@@ -22,10 +22,10 @@ layout: default
     <main class="docs__body stage__body">
       <div>
         <div class="search">
-          {% include navbar/search.html placeholder="Search the Segment documentation..." %}
+          {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
         </div>
 
-        {% include navbar/navbar-mobile.html %}
+        {% include_cached navbar/navbar-mobile.html %}
       </div>
 
       <div class="stage__content">
@@ -34,12 +34,12 @@ layout: default
     </main>
 
     <div class="docs__sidebar stage__sidebar">
-      {% include navbar/nav.html %}
+      {% include_cached navbar/nav.html %}
 
       <div class="sidebar sidebar--sticky">
         {%- unless page.hide_toc -%}
           <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
-            {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
+            {% include_cached sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
           </div>
         {%- endunless -%}
 
@@ -48,13 +48,13 @@ layout: default
         {% endif %}
 
         {% unless page.hide-feedback %}
-          {% include sidebar/feedback.html %}
+          {% include_cached sidebar/feedback.html %}
         {% endunless %}
       </div>
     </div>
   </div>
 
   <footer>
-    {% include components/footer.html %}
+    {% include_cached components/footer.html %}
   </footer>
 </div>

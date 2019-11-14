@@ -1,0 +1,6034 @@
+    1  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"\n
+    2  clear
+    3  sudo nano ~/.zshrc
+    4  clear
+    5  sudo nano ~/.zshrc
+    6  sudo apt-get install fonts-powerline\n
+    7  brew install zsh-syntax-highlighting\n
+    8  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k\n
+    9  sudo nano ~/.zshrc
+   10  ls
+   11  yarn serve
+   12  cd ..
+   13  ls
+   14  cd meal-prep
+   15  yarn serve
+   16  yarn add axios
+   17  yarn serve
+   18  yarn add firebase
+   19  yarn serve
+   20  cd ..
+   21  git clone git@github.com:michalbujalski/firebase-auth-demo.git
+   22  ls
+   23  cd firebase-auth-demo
+   24  npm install
+   25  yarn install
+   26  yarn serve
+   27  ls
+   28  sudo yarn install
+   29  yarn serve
+   30  ls
+   31  clear
+   32  sudo npm install
+   33  yarn serve
+   34  ls
+   35  yarn dev
+   36  clear
+   37  yarn dev
+   38  clear
+   39  yarn dev
+   40  ps aux | grep node
+   41  kill -9 PID
+   42  killall node
+   43  yarn dev
+   44  npm i firebase
+   45  sudo npm i firebase
+   46  yarn dev
+   47  yarn add firebase
+   48  yarn dev
+   49  killall node
+   50  yarn dev
+   51  sudo yarn add
+   52  sudo yarn dev
+   53  yarn dev
+   54  yarn install
+   55  yarn serve
+   56  cd ..
+   57  git clone 
+   58  git clone git@gitlab.com:tonikstudio/imaids.git
+   59  yarn install
+   60  yarn serve
+   61  npm run serve
+   62  clear
+   63  yarn dec
+   64  yarn dev
+   65  yarn install
+   66  yarn dev
+   67  yarn serve
+   68  yarn dev
+   69  git add .
+   70  git commit -m 'Subbmit form & success screen'
+   71  git push
+   72  git add .
+   73  git commit - m 'Subbmit amendment'
+   74  git push
+   75  cd ..
+   76  cd meal-prep
+   77  cd ..
+   78  cd imaids
+   79  yarn dev
+   80  cd ..
+   81  cd intellegi
+   82  yarn watch
+   83  yarn serve
+   84  cd ..
+   85  git clone git@github.com:sandiprb/VueJS-Firebase.git
+   86  ls
+   87  cd VueJS-Firebase
+   88  yarn install
+   89  yarn serve
+   90  yarn dev
+   91  cd ..
+   92  git clone git@github.com:tripflex/vue-firebase-anon-convert.git
+   93  ls
+   94  open .
+   95  yarn install
+   96  npm install
+   97  sudo npm install
+   98  npm run dev
+   99  cd ..
+  100  ls
+  101  cd ..
+  102  git clone git@github.com:tripflex/vue-firebase-anon-convert.git
+  103  cd vue-firebase-anon-convert
+  104  yarn install
+  105  yarn dev
+  106  npm run dev
+  107  ls
+  108  yarn watch
+  109  yarn serve
+  110  yarn install
+  111  yarn serve
+  112  npm install
+  113  ls
+  114  cd ..
+  115  git clone App.vue\nassets\ncomponents\nconfig\nmain.js\nrouter\nviews\nvuex
+  116  git clone git@github.com:CaptainYouz/vue-firebase-tutorial.git\nassets\ncomponents\nconfig\nmain.js\nrouter\nviews\nvuex
+  117  clear
+  118  ls
+  119  git@github.com:CaptainYouz/vue-firebase-tutorial.git
+  120  cd vue-firebase-
+  121  cd vue-firebase-tutorial
+  122  yarn install
+  123  yarn serve
+  124  cd ..
+  125  ls
+  126  cd meal-prep
+  127  yarn serve
+  128  ls
+  129  cd ..
+  130  git clone git@github.com:michalbujalski/firebase-auth-demo.git
+  131  cd firebase-auth-demo
+  132  yarn install
+  133  yarn dev
+  134  cd ..
+  135  git clone git@github.com:cornflourblue/vue-vuex-registration-login-example.git
+  136  cd vue-vuex-registration-login-example
+  137  yarn install
+  138  yarn serve
+  139  yarn dev
+  140  yarn watch
+  141  yarn start
+  142  cd ..
+  143  ls
+  144  cd ..
+  145  git clone git@github.com:rajatk16/dc-covers.git
+  146  cd dc-covers
+  147  yarn install
+  148  yarn dev
+  149  yarn add vuefire
+  150  yarn dev
+  151  cd ..
+  152  git clone vgit@github.com:LoveMeWithoutAll/book-
+  153  git@github.com:LoveMeWithoutAll/book-blog.git
+  154  git clone git@github.com:LoveMeWithoutAll/book-blog.git
+  155  ls
+  156  cd book-blog
+  157  yarn install
+  158  yarn serve
+  159  cd ..
+  160  git clone git@github.com:aofdev/vue-firebase-auth-vuex.git
+  161  cd vue-firebase-auth-vuex
+  162  yarn install
+  163  yarn serve
+  164  yarn dev
+  165  cd ..
+  166  git clone git@github.com:maciejtrzcinski/vuex-sample.git
+  167  ls
+  168  cd vuex-sample
+  169  yarn install
+  170  yarn serve
+  171  yarn dev
+  172  open .
+  173  cd ..
+  174  ls
+  175  cd imaids
+  176  yarn serve
+  177  yarn dev
+  178  npm install --save es6-promise\n
+  179  yarn add es6-promise
+  180  yarn add babel-polyfill
+  181  yarn add babel-plugin-transform-async-to-generator
+  182  yarn add isomorphic-fetch
+  183  yarn dev
+  184  yarn add smoothscroll-polyfill\n
+  185  yarn dev
+  186  yarn serve
+  187  yarn add firebase
+  188  yarn serve
+  189  cd ..
+  190  git clone git@github.com:tonik/stylelint-config.git
+  191  ls
+  192  cd stylelint-config
+  193  ls
+  194  yarn install
+  195  yarn serve
+  196  yarn dev
+  197  yarn serve
+  198  yarn watch
+  199  yarn serve
+  200  yarn watch]
+  201  yarn watch
+  202  git add .
+  203  git status
+  204  git commit -m 'Mobile animation'
+  205  git push
+  206  git commit -m 'Remove dots bellow testimonials'
+  207  git add .
+  208  git commit -m 'Remove dots bellow testimonials'
+  209  git push
+  210  git add .
+  211  git commit -m 'review'
+  212  git push
+  213  yarn watch
+  214  git add .
+  215  git commit -m 'review'
+  216  git push
+  217  git add .
+  218  git commit -m 'align elements'
+  219  git push
+  220  git fetch origin
+  221  git checkout -b f-review origin/f-review
+  222  git checkout  f-review origin/f-review
+  223  git fetch origin
+  224  git checkout origin/master
+  225  git merge
+  226  git merge --no-ff f-review\n
+  227  yarn serve
+  228  yarn dev
+  229  git add .
+  230  git commit -m 'Review'
+  231  git push
+  232  yarn serve
+  233  yarn watch
+  234  yarn dev
+  235  yarn serve
+  236  git status
+  237  git add .
+  238  git commit -m 'feat(): Authorisation core'
+  239  git push
+  240  cd ..
+  241  git clone git@github.com:garethredfern/vue-auth-demo.git
+  242  cd vue-auth-demo
+  243  yarn install
+  244  yarn dev
+  245  git add .
+  246  git commit -m 'Refactor'
+  247  git push
+  248  git add .
+  249  git commit -m 'Validation amendment'
+  250  git push
+  251  yarn install
+  252  yarn watch
+  253  npm run dev
+  254  npm install
+  255  sudo npm install
+  256  npm run dev
+  257  yarn add gulp-sass
+  258  npm run dev 
+  259  npm install
+  260  npm run dev
+  261  sudo npm install
+  262  npm run dev
+  263  yarn dev
+  264  clear
+  265  npm run dev
+  266  npm run watch
+  267  yarn watch
+  268  yarn dev
+  269  yarn serve
+  270  yarn watch
+  271  /Applications/GIMP-2.10.app/Contents/Resources/lib/gimp/2.0/plug-ins/file-png ; exit;
+  272  cd ..
+  273  git clone https://gitlab.com/tonikstudio/breakout/jump-capital.git
+  274  git clone git@gitlab.com:tonikstudio/breakout/jump-capital.git
+  275  ls
+  276  cd jump-capital
+  277  git add .
+  278  git status
+  279  git commit -m 'nm'
+  280  git push
+  281  git add .
+  282  git status
+  283  git add .
+  284  git status
+  285  git add .
+  286  git status
+  287  clear
+  288  git add .
+  289  git status
+  290  git add .gitignore
+  291  git status
+  292  git add .
+  293  git status
+  294  git push
+  295  yarn watch
+  296  cd ..
+  297  cd jump-capital-setup
+  298  yarn watch
+  299  cd ../jump-capital
+  300  yarn watch
+  301  npm install
+  302  yarn watch
+  303  defaults write com.apple.Finder AppleShowAllFiles true
+  304  killall Finder
+  305  yarn watch
+  306  yarn dev
+  307  yarn watch
+  308  git add .
+  309  git commit -m 'Footer structure'
+  310  git push
+  311  git add .
+  312  git commit -m 'Footer general emendments'
+  313  git push
+  314  git checkout -b 'c-content-middle-box'
+  315  git checkout -b 'c-section-box'
+  316  yarn watch
+  317  yarn dev
+  318  git add .
+  319  git status
+  320  git commit -m 'Remove class on valid'
+  321  git push
+  322  git add .
+  323  git commit -m 'Our people & our companies'
+  324  git push
+  325  yarn serve
+  326  yarn dev
+  327  yarn serve
+  328  cd ~/
+  329  ls
+  330  cd Desktop
+  331  cd test
+  332  ls
+  333  nano skrypt.sh
+  334  cd ..
+  335  git clone git@github.com:cathyhax/image-uploader.git
+  336  ls
+  337  cd image-uploader
+  338  yarn install
+  339  yarn dev
+  340  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-4a2d6d9d13d4420b9b906e6d2ee441ab; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp3129e94a.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  341  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-a7f2632372b34f45bfe7dfbd68044129; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp386bf96b.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  342  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-eef726d56bc44c5e8af9b9763cb1ede5; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp3227cb7e.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  343  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-5cd45c2398824e659ab90b3225baaa5d; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp55e82f40.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  344  yarn dev
+  345  cd ..
+  346  git clone git@github.com:drangelod/nsvfbprofile.git
+  347  yarn install
+  348  yarn dev
+  349  yarn watch
+  350  yarn run
+  351  tns run <platform> --bundle
+  352  tns run macos --bundle
+  353  yarn serve
+  354  openssl genrsa -des3 -out rootCA.key 2048\n
+  355  yarn serve
+  356  openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
+  357  clear
+  358  openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
+  359  clear
+  360  openssl genrsa -des3 -out rootCA.key 2048\n
+  361  openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem\n
+  362  openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config <( cat server.csr.cnf )
+  363  clear
+  364  openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config <( cat server.csr.cnf )\n
+  365  openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 500 -sha256 -extfile v3.ext\n
+  366  nano server.csr.cnf
+  367  nano v3.ext
+  368  openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config <( cat server.csr.cnf )\n
+  369  openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 500 -sha256 -extfile v3.ext\n
+  370  yarn serve
+  371  open .
+  372  yarn serve
+  373  yarn watch
+  374  git add .
+  375  git commit -m 'How we invest & What we look for'
+  376  git push
+  377  yarn watch
+  378  git add .
+  379  git commit -m 'Content update'
+  380  git push
+  381  yarn add swiper
+  382  yarn watch
+  383  yarn install
+  384  yarn watch
+  385  npm install swiper
+  386  yarn watch
+  387  npm install siema
+  388  yarn watch
+  389  git add .
+  390  git commit -m 'Siema slider'
+  391  git push
+  392  cd ..
+  393  git clone git@github.com:savvyapps/SAVuegram.git
+  394  ls
+  395  cd nsvfbprofile
+  396  yarn install
+  397  yarn dev
+  398  npm run dev
+  399  yarn install
+  400  npm run dev
+  401  ls
+  402  npm install
+  403  cd  ..
+  404  ls
+  405  cd SAVuegram
+  406  yarn install
+  407  yarn dev
+  408  yarn watch
+  409  yarn dev
+  410  yarn serve
+  411  /Users/bartek/Desktop/program.sh; exit
+  412  ls
+  413  cd Desktop
+  414  ./program.sh
+  415  sudo ./program.sh
+  416  ./program.sh
+  417  ls
+  418  cd Desktop
+  419  ./program.sh
+  420  sudo ./program.sh
+  421  /Users/bartek/Desktop/program.sh; exit
+  422  ls
+  423  cd Desktop
+  424  sh program.sh
+  425  cd Desktop
+  426  sh program.sh
+  427  cd Desktop
+  428  sh program.sh
+  429  clear
+  430  sh program.sh
+  431  clear
+  432  sh program.sh
+  433  clear
+  434  sh program.sh
+  435  clear
+  436  sh program.sh
+  437  clear
+  438  sh program.sh
+  439  clear
+  440  sh program.sh
+  441  clear
+  442  sh program.sh
+  443  clear
+  444  sh program.sh
+  445  yarn watch
+  446  yarn add glide
+  447  yarn watch
+  448  yarn dev
+  449  yarn serve
+  450  yarn watch
+  451  yarn dev
+  452  git add .
+  453  git commit -m "general amendments"
+  454  git push
+  455  git push --set-upstream origin Review
+  456  git add .
+  457  git commit -m "General amendments"
+  458  git push
+  459  git add .
+  460  git commit "Change redirect page after send"
+  461  git push
+  462  git commit -m "Change redirect page after send"
+  463  git push
+  464  yarn dev
+  465  git add .
+  466  git commit -m "Remove rows in input"
+  467  git push
+  468  yarn watch
+  469  git add .
+  470  git commit -m "Update estimation formula"
+  471  git push
+  472  yarn watch
+  473  yarn prod
+  474  yarn watch
+  475  yarn dev
+  476  git add .
+  477  git commit -m 'Movies optimize'
+  478  git push
+  479  yarn watch
+  480  cd ..
+  481  git clone git@gitlab.com:tonikstudio/breakout/jump-capital.git
+  482  ls
+  483  clear
+  484  ls
+  485  git clone git@gitlab.com:tonikstudio/breakout/jump-capital.git
+  486  cd jump-capital
+  487  yarn install
+  488  yarn watch
+  489  git add .
+  490  git commit -m 'Homepage general'
+  491  git push
+  492  yarn dev
+  493  yarn watch
+  494  yarn install
+  495  yarn watch
+  496  yarn dev
+  497  ifconfig
+  498  git add .
+  499  git status
+  500  git commit -m 'Placeholders'
+  501  git push
+  502  yarn dev
+  503  yarn build
+  504  yarn watch
+  505  yarn build
+  506  yarn watch
+  507  git add .
+  508  git commit -m 'Homepage'
+  509  git push
+  510  yarn watch
+  511  yarn serve
+  512  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-599a41cb9d8f4489946aa91cf63addca; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp52de256e.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  513  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-9039b0af74514e40b0515f721fe8325b; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp1c12b6c1.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  514  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-5b156f597e43448a922a139ce39e050b; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmpd3bf930.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  515  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-6f1cf335104a43dcbde3bc0d2f0c77d6; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp580ba1de.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  516  yarn dev
+  517  yarn build
+  518  open .
+  519  yarn dev
+  520  yarn watch
+  521  yarn dev
+  522  yarn build
+  523  yarn watch
+  524  git fetch origin
+  525  git checkout -b c-homepage  origin/c-homepage
+  526  git fwtch origin
+  527  git fetch origin/master
+  528  git merge --no-ff c-homepage
+  529  git ad 
+  530  git add .
+  531  git commit -m 'Button to link & semantics'
+  532  git push
+  533  git add .
+  534  git commit -m 'Buttons to links'
+  535  git push
+  536  git add .
+  537  git commit 'Amendments'
+  538  git push
+  539  git commit -m 'Amendments'
+  540  git push
+  541  git add .
+  542  git commit -m 'Button center'
+  543  git push
+  544  git add .
+  545  git commit -m 'WIP'
+  546  git push
+  547  git add .
+  548  git commit --amend 
+  549  git push --force
+  550  git add .
+  551  git commit -m Refactor of navigation
+  552  git push
+  553  git commit -m "Refactor of navigation"
+  554  git push
+  555  git add .
+  556  git commit -m 'Refactor of "What we look for"'
+  557  git push
+  558  git add .
+  559  git commit -m "Refactor of sections"
+  560  git push
+  561  ifconfig
+  562  git add .
+  563  git commit -m "Refactor carousel"
+  564  git push
+  565  git add .
+  566  git commit -m "Align amendment"
+  567  git push
+  568  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-97b0b6a7043644e390943c28a65b5176; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp10eacc6b.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  569  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-94e7cdfdae404852af9deebe9e5fc266; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp1f78caca.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  570  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-6b9d25f025454608bda916bc50ecad17; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp15e29d27.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  571  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-509de40801b043dd9c0430867ecf70c6; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp6509b294.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  572  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-a49fa94d2ef2429e8b0e68656a045530; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp592b8af.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  573  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-75c5bf1aa7bd4f328194a457b495b91d; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp72a28c3f.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  574  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-082b35980a3546bea9dd650a42e8b465; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp5a42d82c.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  575  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-a34f6a4189ed4b88aca97fe88ca057ca; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp2a5386b4.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  576  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-7fc51330b7dc472aa3b7a5f1f946ac3c; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp31f0750d.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  577  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-2befbbcca49a43029e9f6c458f746003; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp4bd675e4.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  578  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-7a0b183c9dae4bf5a45ce3271b441ee3; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp7f9705de.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  579  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-806f8345d50741d48026c403e8c49cd0; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp60804688.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  580  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-561e2e5c50314ad6832e7ec050371124; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp616e3f5d.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  581  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-c725724f38b24d3d9c85ea0ac71e781f; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp59eded46.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  582  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-f62ccd4443af42c3807d01bc673e3d69; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp5cf6e113.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+  583  yarn dev
+  584  yarn build
+  585  cd ..
+  586  cd jump-capital
+  587  yarn watch
+  588  git add .
+  589  git status
+  590  git commit -m 'Perks'
+  591  git push
+  592  git push --set-upstream origin c-perks
+  593  git add .
+  594  git commit -m "Team member structure"
+  595  git push
+  596  cd ..
+  597  cd jump-capital
+  598  git add .
+  599  git commit -m "Navigation update"
+  600  git push
+  601  cd ..
+  602  cd jump-capital
+  603  git add .
+  604  git commit -m "Team member"
+  605  git push
+  606  git push --set-upstream origin c-team-member
+  607  cd ..
+  608  cd jump-capital
+  609  git reset HEAD^1
+  610  yarn watch
+  611  git reset --hard origin/c-homepage
+  612  git add .
+  613  git commit -m "Active slide"
+  614  git push
+  615  git add .
+  616  git commit -m "Slider animations"
+  617  git push
+  618  cd ..
+  619  cd jump-capital
+  620  git status
+  621  git add .
+  622  git commit -m "Hover state"
+  623  git push
+  624  git add .
+  625  git commit -m 'Review'
+  626  git push
+  627  git add .
+  628  git commit -m 'Review'
+  629  git push
+  630  yarn watch]
+  631  yarn watch
+  632  git add .
+  633  git commit -m 'Init'
+  634  git push
+  635  git push --set-upstream origin c-testimonial
+  636  yarn watch
+  637  git add .
+  638  git commit -m 'Review'
+  639  git push
+  640  git commit -m 'Review'
+  641  git add .
+  642  git commit -m 'Review'
+  643  git push
+  644  yarn watch
+  645  git add .
+  646  git commit -m 'Review'
+  647  git push
+  648  yarn watch
+  649  git add .
+  650  git commit -m "Testimonial"
+  651  git push
+  652  git add .
+  653  git commit -m "fix(): Div to button"
+  654  git push
+  655  git add .
+  656  git commit -m 'fix(): review'
+  657  git push
+  658  git add .
+  659  git commit -m 'fix(): review'
+  660  git push
+  661  yarn watch
+  662  yarn serve
+  663  yarn watch
+  664  git add .
+  665  git commit -m 'Company logo & General amendments'
+  666  git push
+  667  git push --set-upstream origin c-company-logo
+  668  yatn watch
+  669  yarn watch
+  670  git add .
+  671  git commit -m "fix(): Button component"
+  672  git push
+  673  git add .
+  674  git commit -m "Remove list object"
+  675  git push
+  676  git push --set-upstream origin fix-list-object
+  677  git push --set-upstream origin fix-button
+  678  git add .
+  679  git commit -m "Review"
+  680  git push
+  681  git add .
+  682  git commit -m "Review"
+  683  git push
+  684  git add .
+  685  git commit -m "Review"
+  686  git push
+  687  cd ..
+  688  cd jump-capital
+  689  ls
+  690  git rm -rf public/*.*
+  691  git status
+  692  git rm -rf public/**.*
+  693  git rm -rf public/**.
+  694  git rm -rf public/**
+  695  git rm -rf public/*/*.*
+  696  git reset
+  697  git commit -m "Review"
+  698  git add /
+  699  git add .
+  700  git status
+  701  git commit -m "Review"
+  702  git push
+  703  cd ..
+  704  cd jump-capital
+  705  git checkout -b 'fix-homepage'
+  706  git status
+  707  git add .
+  708  git commit -m "fix(): Revert company logo"
+  709  git push
+  710  git add .
+  711  git commit -m "Remove svg icon"
+  712  git push
+  713  git checkout origin/master -- resources/assets/sass/partials/_footer.scss
+  714  git status
+  715  git checkout origin/master -- resources/assets/sass/partials/_navigation.scss
+  716  git checkout origin/master -- src/partials/footer.html src/partials/navigation.html src/partials/section-box.html
+  717  git status
+  718  git add .
+  719  git commit -m 'Revert homepage fixes'
+  720  git push
+  721  git add .
+  722  git commit -m 'Remove h1 from logotype'
+  723  git push
+  724  git checkout origin/master -- src/partials/navigation.html
+  725  git add .
+  726  git commit -m 'Revert navbar'
+  727  git push
+  728  git add .
+  729  git commit -m 'Remove h1 from navbar'
+  730  git push
+  731  git add .
+  732  git commit -m 'Remove h1 from navbar'
+  733  git push
+  734  yarn watch
+  735  git add .
+  736  git commit -m 'Testimonial slider'
+  737  git push
+  738  git add .
+  739  git commit -m 'Design amendments'
+  740  git push
+  741  git push --set-upstream origin c-testimonials-slider
+  742  git add .
+  743  git commit -m 'Review'
+  744  git push
+  745  git add .
+  746  git commit -m 'Variant'
+  747  git push
+  748  yarn watch
+  749  git add .
+  750  git commit -m 'Company logo'
+  751  git push
+  752  git add .
+  753  git commit -m 'Variant'
+  754  git push
+  755  git add .
+  756  git commit -m 'Indentation'
+  757  git push
+  758  yarn watch
+  759  git add .
+  760  git commit -m 'Button transition'
+  761  git push
+  762  git add .
+  763  git commit -m 'Slider track'
+  764  git push
+  765  git add .
+  766  git commit -m 'Content'
+  767  git push
+  768  git add .
+  769  git commit -m 'Slider events'
+  770  git push
+  771  git add .
+  772  git commit -m 'Margin'
+  773  git push
+  774  git add .
+  775  git commit-m 'Remove border'
+  776  git push
+  777  git add .
+  778  git commit -m 'SVG optimize'
+  779  git push
+  780  git add .
+  781  git commit -m 'Review'
+  782  git push
+  783  git add .
+  784  git commit -m 'Review'
+  785  git push
+  786  yarn watch
+  787  git add .
+  788  git commit -m 'Grid'
+  789  git push
+  790  git push --set-upstream origin c-grid
+  791  git add .
+  792  git commit -m 'Borders'
+  793  git push
+  794  git add .
+  795  git commit -m 'Ordering'
+  796  git push
+  797  git reset
+  798  git status
+  799  yarn watch
+  800  git add .
+  801  git commit -m 'Portfolio page'
+  802  hit push
+  803  git push
+  804  git push --set-upstream origin p-portfolio
+  805  yarn watch
+  806  git add .
+  807  git commit -m 'Portfolio pge structure & select customize'
+  808  git push
+  809  yarn watch
+  810  git add .
+  811  git commit -m 'Portfolio page'
+  812  git push
+  813  git add .
+  814  git commit -m 'Grid for potrfolio'
+  815  git push
+  816  git add .
+  817  git commit -m 'Init'
+  818  git push
+  819  git push --set-upstream origin p-team
+  820  yarn watch
+  821  git reset
+  822  yarn watch
+  823  git add .
+  824  git commit -m 'Structure'
+  825  git push
+  826  git add .
+  827  git commit -m 'Team page'
+  828  git push
+  829  git add .
+  830  git commit -m 'Fonts update'
+  831  git push
+  832  git push --set-upstream origin fix-fonts
+  833  /Users/bartek/Downloads/program.sh; exit
+  834  cd ../../..
+  835  cd bartek
+  836  ls
+  837  cd Documents
+  838  ls
+  839  cd ..
+  840  cd Downloads
+  841  ls
+  842  ./ proggram.sh
+  843  sudo ./ proggram.sh
+  844  sudo run proggram.sh
+  845  /Users/bartek/Downloads/program.sh
+  846  /Users/bartek/Downloads/program.sh; exit
+  847  git add .
+  848  git commit -m 'Enable modifications of profile'
+  849  git push
+  850  yarn serve
+  851  yarn watch
+  852  git add .
+  853  git commit -m 'General amendments'
+  854  git push
+  855  git add .
+  856  git status
+  857  git commit -m 'Slider review'
+  858  git push
+  859  yarn serve
+  860  /Users/bartek/Downloads/script2; exit
+  861  /Users/bartek/Downloads/script2.sh; exit
+  862  yarn watch
+  863  git add .
+  864  git commit -m 'Refactor'
+  865  git push
+  866  cd ~/
+  867  ls
+  868  cd Downloads
+  869  ls
+  870  sudo ./program.sh
+  871  ./program.sh
+  872  /Users/bartek/Downloads/program.sh; exit
+  873  ./program.sh
+  874  sh program.sh
+  875  yarn serve
+  876  cd ~/
+  877  cd Downloads
+  878  sh program.sh
+  879  clear
+  880  sh program.sh
+  881  cd Downloads
+  882  sh program.sh
+  883  clear
+  884  sh program.sh
+  885  clear
+  886  sh program.sh
+  887  clear
+  888  sh program.sh
+  889  yarn serve
+  890  yarn watch
+  891  git add .
+  892  git commit -m 'Homepage bug'
+  893  git push
+  894  yarn watch
+  895  git add .
+  896  git commit -m "Refactor"
+  897  git push
+  898  git add .
+  899  git commit -m 'Custom selects'
+  900  git push
+  901  git add .
+  902  git commit -m 'Weights'
+  903  git push
+  904  git add .
+  905  git commit -m 'Remove title component'
+  906  git push
+  907  git push --set-upstream origin fix-title
+  908  git add .
+  909  git commit -m "Init"
+  910  git push
+  911  git push --set-upstream origin fix-menu
+  912  yarn watch
+  913  git add .
+  914  git commit -m 'widths'
+  915  git push
+  916  git add .
+  917  git commit -m 'Widths'
+  918  git push
+  919  git add .
+  920  git commit -m 'Widths'
+  921  git push
+  922  git add .
+  923  git commit -m 'Menu amendment'
+  924  git push
+  925  git add .
+  926  git commit -m 'Add form to filters'
+  927  git push
+  928  clear
+  929  git push
+  930  git add .
+  931  git commit -m 'Move active class to HTML & amendment of animation'
+  932  git push
+  933  clear
+  934  git push
+  935  git log
+  936  git push --force
+  937  git add .
+  938  gir commit -m 'RWD'
+  939  git push
+  940  git push --force
+  941  git add .
+  942  git commit -m 'Paddings'
+  943  git push
+  944  git push --force
+  945  yarn serve
+  946  yarn watch
+  947  git add .
+  948  git commit -m 'Popup integrate'
+  949  git push
+  950  git push --force
+  951  yarn serve
+  952  yarn dev
+  953  git add .
+  954  git commit -m 'RWD, Active state'
+  955  git push
+  956  git add .
+  957  git commit -m 'Validate form'
+  958  git push
+  959  git pull
+  960  git pull master
+  961  cd ..
+  962  git clone https://github.com/tac0810/vue-to-php-mailer.git
+  963  git cd vue-to-php-mailer
+  964  cd vue-to-php-mailer
+  965  yarn install
+  966  yarn serve
+  967  yarn watch
+  968  yarn dev
+  969  npm run watch
+  970  open .
+  971  cd ..
+  972  cd imaids
+  973  yarn dev
+  974  cd ..
+  975  ls
+  976  cd bartek
+  977  ls
+  978  cd Applications
+  979  ls
+  980  open .
+  981  cd ..
+  982  ls
+  983  cd Applications
+  984  cd MAMP
+  985  cd htdocs
+  986  open .
+  987  cd ..
+  988  open .
+  989  yarn dev
+  990  git add .
+  991  git commit -m 'Remove CTA from subpages'
+  992  git push
+  993  git push --force
+  994  yarn build
+  995  yarn dev
+  996  git add .
+  997  git commit -m 'Preloader'
+  998  git push
+  999  yarn build
+ 1000  git add .
+ 1001  git commit -m 'Add muted attr for video'
+ 1002  git push
+ 1003  git add .
+ 1004  git commit -m 'Remove additional method'
+ 1005  git push
+ 1006  yarn serve
+ 1007  yarn dev
+ 1008  yarn build
+ 1009  git add .
+ 1010  git commit -m 'fix(): backgrounds, cta'
+ 1011  git push
+ 1012  git push --force
+ 1013  yarn serve
+ 1014  yarn dev
+ 1015  yarn serve
+ 1016  git add .
+ 1017  git commit -m 'Redesign user panel'
+ 1018  git push
+ 1019  git add .
+ 1020  git commit -m 'Refactor of relogin'
+ 1021  git push
+ 1022  yarn serve
+ 1023  ls
+ 1024  cd Downloads
+ 1025  ./program.sh
+ 1026  sudo ./program.sh
+ 1027  /Users/bartek/Downloads/program\ \(1\).sh; exit
+ 1028  cd Downloads
+ 1029  ./program.sh
+ 1030  sudo ./program.sh
+ 1031  sudo ./program
+ 1032  sh program
+ 1033  sh program.sh
+ 1034  clear
+ 1035  sh program.sh
+ 1036  clear
+ 1037  sh program.sh
+ 1038  clear
+ 1039  sh program(1).sh
+ 1040  sh program (1).sh
+ 1041  sh programz
+ 1042  clear
+ 1043  cd ../
+ 1044  cd Documents
+ 1045  sh program.sh
+ 1046  clear
+ 1047  sh program.sh
+ 1048  clear
+ 1049  sh program.sh
+ 1050  cd Documents
+ 1051  sh ./program.sh
+ 1052  which useradd
+ 1053  which usermod
+ 1054  ls
+ 1055  cd Documents
+ 1056  sh program.sh
+ 1057  /usr/sbin/useradd
+ 1058  cd Documents
+ 1059  zip -er program.sh
+ 1060  zip -er program.sh.zip
+ 1061  zip -e program.sh.zip
+ 1062  zip -e test.zip program.sh
+ 1063  zip -e skrypt.zip program.sh
+ 1064  yarn serve
+ 1065  yarn dev
+ 1066  yarn serve
+ 1067  git add .
+ 1068  git commit -m 'Change password'
+ 1069  git push
+ 1070  yarn dev
+ 1071  yarn build
+ 1072  git add .
+ 1073  git commit -m 'Footer img'
+ 1074  git push
+ 1075  yarn build
+ 1076  yarn dev
+ 1077  yarn build
+ 1078  docker -v
+ 1079  yarn build
+ 1080  git add .
+ 1081  git commit -m 'Footer logotypes'
+ 1082  git push
+ 1083  cd Codes
+ 1084  cd imaids_api
+ 1085  docker-compose up
+ 1086  git add .
+ 1087  git commit -m 'Config'
+ 1088  git push
+ 1089  git push --force
+ 1090  git remote set-url origin git@gitlab.com:tonikstudio/imaids/imaids-tmp.git\n
+ 1091  yarn dev
+ 1092  yarn build
+ 1093  yarn dev
+ 1094  git add .
+ 1095  git commit -m 'Estimation formula, routing'
+ 1096  git push
+ 1097  yarn serve
+ 1098  git add .
+ 1099  git commit -m 'Visual changes'
+ 1100  git push
+ 1101  clear
+ 1102  yarn serve
+ 1103  yarn dev
+ 1104  yarn watch
+ 1105  yarn serve
+ 1106  yarn start
+ 1107  yarn up
+ 1108  yarn serve
+ 1109  yarn dev
+ 1110  git add .
+ 1111  git commit -m 'feat(): Preloading'
+ 1112  git push
+ 1113  yarn build
+ 1114  cd ..
+ 1115  git clone git@gitlab.com:tonikstudio/imaids/imaids-api.git
+ 1116  ls
+ 1117  cd imaids-api
+ 1118  docker composer up
+ 1119  docker-composer up
+ 1120  docker-compose up
+ 1121  cd public_html
+ 1122  composer install
+ 1123  yarn dev
+ 1124  yarn add axios
+ 1125  git status
+ 1126  yarn add axios
+ 1127  yarn dev
+ 1128  git add .
+ 1129  git status
+ 1130  git commit -m 'Init'
+ 1131  git push
+ 1132  git push --set-upstream origin c-api-communication
+ 1133  docker-compose
+ 1134  docker-compose up
+ 1135  cd public_html
+ 1136  composer install
+ 1137  docker-compose up
+ 1138  composer install
+ 1139  docker-compose up
+ 1140  composer require klein/klein
+ 1141  yarn dv
+ 1142  yarn dev
+ 1143  yarn build
+ 1144  yarn serve
+ 1145  git add .
+ 1146  git commit -m 'fix(): senstitive password'
+ 1147  git push
+ 1148  yarn dev
+ 1149  cd public_html
+ 1150  docker-compose up
+ 1151  git reset
+ 1152  git status
+ 1153  docker-compose up
+ 1154  git add .
+ 1155  git commit -m 'refactor(): mailing'
+ 1156  git push
+ 1157  git chechout -b 'fix-mailer'
+ 1158  git add .
+ 1159  git commit -m 'init'
+ 1160  git push
+ 1161  git checkout -b 'fix-mailer'
+ 1162  git add .
+ 1163  git push
+ 1164  git push --set-upstream origin fix-mailer
+ 1165  git status
+ 1166  git add .
+ 1167  git commit -m 'Init'
+ 1168  git push
+ 1169  docker-compose up
+ 1170  yarn dev
+ 1171  git add .
+ 1172  git commit -m 'fix(preloader): change delay and styles'
+ 1173  git push
+ 1174  yarn build
+ 1175  cd ..
+ 1176  cd imaids-api
+ 1177  cd public_html
+ 1178  docker-compose up
+ 1179  cd..
+ 1180  cd ..
+ 1181  docker-compose up
+ 1182  cd public_html
+ 1183  docker-compose up
+ 1184  cd public_html
+ 1185  docker-compose up
+ 1186  docker-compose down
+ 1187  docker-compose up
+ 1188  cd public_html
+ 1189  docker-compose up
+ 1190  docker-compose down
+ 1191  docker-compose up
+ 1192  cd Codes/imaids-api/public_html
+ 1193  docker-compose up
+ 1194  yarn dev
+ 1195  docker-compose up
+ 1196  yarn build
+ 1197  YARN BUILD
+ 1198  yarn build
+ 1199  git add .
+ 1200  git status
+ 1201  git commit -m 'Merge'
+ 1202  git push
+ 1203  yarn build
+ 1204  yarn dev
+ 1205  ifconfig
+ 1206  exit
+ 1207  yarn build
+ 1208  git add .
+ 1209  git commit -m 'RWD'
+ 1210  git push
+ 1211  git push --force
+ 1212  yarn build
+ 1213  yarn add axios
+ 1214  yarn build
+ 1215  clear
+ 1216  yarn add axios
+ 1217  yarn install
+ 1218  yarn build
+ 1219  yarn dev
+ 1220  yarn build
+ 1221  yarn dev
+ 1222  yarn build
+ 1223  git add .
+ 1224  git commit -m 'API communication'
+ 1225  git push
+ 1226  git add .
+ 1227  git commit -m 'Message structure & Klein remove'
+ 1228  git push
+ 1229  yarn serve
+ 1230  yarn dev
+ 1231  yarn serve
+ 1232  yarn dev
+ 1233  ifconfig
+ 1234  yarn build
+ 1235  git add .
+ 1236  git commit -m 'fix(rwd):Sizing & positioning'
+ 1237  git push
+ 1238  ifconfig
+ 1239  webpack-dev-server --port 3000 --hot --host 0.0.0.0
+ 1240  yarn dev
+ 1241  webpack-dev-server --host 0.0.0.0
+ 1242  yarn dev
+ 1243  webpack-dev-server --host 0.0.0.0
+ 1244  vue cli
+ 1245  vue 
+ 1246  vue
+ 1247  yarn dev
+ 1248  webpack-dev-server --port 3000 --hot --host 0.0.0.0
+ 1249  yarn dev
+ 1250  git add .
+ 1251  git commit -m 'fix(scroll): bug in mobile touch scroll'
+ 1252  git push
+ 1253  yarn build
+ 1254  yarn serve
+ 1255  yarn dev
+ 1256  yarn uild
+ 1257  yarn build
+ 1258  git add .
+ 1259  git commit -m 'fix(rwd): spaces & olark API'
+ 1260  git push
+ 1261  git commit --amend 'fix(rwd): spaces, videos, olark API'
+ 1262  git push
+ 1263  yarn serve
+ 1264  git add .
+ 1265  git commit -m 'Register proccess'
+ 1266  git push
+ 1267  git add .
+ 1268  git commit -m 'Introduction panels'
+ 1269  git push
+ 1270  yarn serve
+ 1271  yarn dev
+ 1272  cd ..
+ 1273  sudo rm -rf SAVuegram
+ 1274  git clone git@github.com:savvyapps/SAVuegram.git
+ 1275  cd SAVuegram
+ 1276  yarn install
+ 1277  yarn dev
+ 1278  yarn build
+ 1279  exit
+ 1280  yarn build
+ 1281  git add .
+ 1282  git commit -m 'Review'
+ 1283  git push
+ 1284  yarn dev
+ 1285  yarn build
+ 1286  yarn serve
+ 1287  git add .
+ 1288  git commit -m 'Workspaces & projects'
+ 1289  git push
+ 1290  yarn dev
+ 1291  yarn serve
+ 1292  yarn dev
+ 1293  yarn build
+ 1294  npm install intersection-observer\n
+ 1295  yarn dev
+ 1296  npm install --save axios babel-polyfill isomorphic-fetch smoothscroll-polyfill
+ 1297  yarn build
+ 1298  npm install intersection-observer
+ 1299  yarn build
+ 1300  yarn serve
+ 1301  git add .
+ 1302  git commit -m 'Workspaces map'
+ 1303  git push
+ 1304  yarn build
+ 1305  git add .
+ 1306  git commit -m 'Images update, typography, IE & Edge support, content'
+ 1307  git push
+ 1308  git add .
+ 1309  git commit -m 'List of projects and styling list of workspaces'
+ 1310  git push
+ 1311  yarn serve
+ 1312  yarn dev
+ 1313  yarn build
+ 1314  yarn serve
+ 1315  yarn build
+ 1316  git add .
+ 1317  git commit -m 'fix(): spacing, optimize'
+ 1318  git push
+ 1319  yarn build
+ 1320  git add .
+ 1321  git commit -m 'Projects list'
+ 1322  git push
+ 1323  yarn build
+ 1324  yarn dev
+ 1325  yarn build
+ 1326  git add .
+ 1327  git commit -m 'Custom scroll refactor'
+ 1328  git push
+ 1329  yarn build
+ 1330  yarn dev
+ 1331  yarn build
+ 1332  yarn dev
+ 1333  git add .
+ 1334  git commit -m 'fix(ui-circle): RWD positioning'
+ 1335  git push
+ 1336  yarn build
+ 1337  yarn serve
+ 1338  yarn dev
+ 1339  yarn build
+ 1340  yarn serve
+ 1341  yarn dev
+ 1342  git add .
+ 1343  git commit -m 'fix(): Amendments'
+ 1344  git push
+ 1345  git add .
+ 1346  git commit -m 'fix(scroll): Scroll to bottom'
+ 1347  git push
+ 1348  yarn build
+ 1349  git add .
+ 1350  git commit -m 'refactor(scrolltobottom): method'
+ 1351  git push
+ 1352  yarn build
+ 1353  yarn dev
+ 1354  git add .
+ 1355  git commit -m 'Preloader, image update and observer animations'
+ 1356  git push
+ 1357  git add .
+ 1358  git commit -m 'Front-end amendments'
+ 1359  git push
+ 1360  git add .
+ 1361  git commit -m 'refactor(observerAnimations): change to mixin'
+ 1362  git push
+ 1363  yarn build
+ 1364  yarn serve
+ 1365  yarn dev
+ 1366  git add .
+ 1367  git commit -m 'fix(routing): Additional preloader for subpages'
+ 1368  git push
+ 1369  git add .
+ 1370  git commit -m 'fix(routing): Additional preloader for subpages'
+ 1371  git push
+ 1372  git push --force
+ 1373  yarn build
+ 1374  yarn serve
+ 1375  yarn dev
+ 1376  yarn build
+ 1377  git add .
+ 1378  git commit -m 'SVG performance'
+ 1379  git push
+ 1380  yarn build
+ 1381  yarn dev
+ 1382  yarn serve
+ 1383  yarn build
+ 1384  git status
+ 1385  yarn dev
+ 1386  yarn build
+ 1387  yarn dev
+ 1388  yarn build
+ 1389  git add .
+ 1390  git commit -m 'fix(): preloader & validation'
+ 1391  git push
+ 1392  yarn serve
+ 1393  yarn dev
+ 1394  yarn build
+ 1395  yarn dev
+ 1396  exit
+ 1397  git add .
+ 1398  git commit -m 'fix(validation): update textarea regex'
+ 1399  git push
+ 1400  yarn build
+ 1401  git add .
+ 1402  git commit -m 'production()'
+ 1403  git push
+ 1404  git add .
+ 1405  git status
+ 1406  git commit -m 'refactor()'
+ 1407  git push
+ 1408  git push --force
+ 1409  yarn dev
+ 1410  yarn build
+ 1411  git add .
+ 1412  git commit -m 'GA codes'
+ 1413  git push
+ 1414  yarn dev
+ 1415  yarn run
+ 1416  yarn serve
+ 1417  yarn build
+ 1418  yarn watch
+ 1419  yarn dev
+ 1420  yarn build
+ 1421  yarn watch
+ 1422  yarn dev
+ 1423  yarn build
+ 1424  yarn watch
+ 1425  yarn install
+ 1426  yarn watch
+ 1427  yarn dev
+ 1428  yarn build
+ 1429  yarn dev
+ 1430  yarn watch
+ 1431  yarn add intersection-observer
+ 1432  yarn install
+ 1433  yarn watch
+ 1434  yarn add intersection-observer-pollyfill
+ 1435  yarn add intersection-observer-polyfill
+ 1436  yarn install
+ 1437  git clone git@gitlab.com:tonikstudio/labs/snippets/cookies-box.git
+ 1438  cd cookies-box
+ 1439  git add .
+ 1440  git status
+ 1441  git commit -m 'Init'
+ 1442  git push
+ 1443  yarn watch
+ 1444  generate id & placeholder image
+ 1445  git push
+ 1446  git add .
+ 1447  clear
+ 1448  git add .
+ 1449  yarn watch
+ 1450  ls
+ 1451  open .
+ 1452  yarn serve
+ 1453  yarn dev
+ 1454  yarn watch
+ 1455  yarn serve
+ 1456  yarn dev
+ 1457  yarn watch
+ 1458  ifconfig
+ 1459  yarn watch
+ 1460  exit
+ 1461  yarn watch
+ 1462  yarn add vimeo
+ 1463  yarn install
+ 1464  yarn watch
+ 1465  cd ..
+ 1466  git clone git@gitlab.com:tonikstudio/labs/snippets/yt-player.git
+ 1467  cd yt-player
+ 1468  yarn watch
+ 1469  yarn dev
+ 1470  yarn banner
+ 1471  yarn build
+ 1472  yarn install
+ 1473  yarn watch
+ 1474  yarn dev
+ 1475  yarn build
+ 1476  git add .
+ 1477  git status
+ 1478  git commit -m 'chore(): Initial commit'
+ 1479  git push
+ 1480  yarn build
+ 1481  git add .
+ 1482  git status
+ 1483  git commit -m 'chore: Names update'
+ 1484  git push
+ 1485  git commit --amend
+ 1486  git commit -m 'chore(): Initial commit' --amend
+ 1487  git push
+ 1488  git ush --force
+ 1489  git push --force
+ 1490  cd ..
+ 1491  git clone git@gitlab.com:tonikstudio/labs/snippets/lazy-loading.git
+ 1492  yarn install
+ 1493  yarn build
+ 1494  git add .
+ 1495  git commit -m 'chore(): Initial commit'
+ 1496  git push
+ 1497  cd ..
+ 1498  git clone git@gitlab.com:tonikstudio/labs/snippets/cookies-box.git
+ 1499  cd cookies-box
+ 1500  yarn install
+ 1501  yarn build
+ 1502  git add .
+ 1503  git commit -m 'chore(): Initial commit'
+ 1504  git push
+ 1505  git add .
+ 1506  git commit --ammend
+ 1507  git commit --amend
+ 1508  git push
+ 1509  git add .
+ 1510  git status
+ 1511  git commit
+ 1512  git commit -m 'chore(): Initial commit'
+ 1513  git push
+ 1514  cd ..
+ 1515  git clone git@gitlab.com:tonikstudio/labs/snippets/vimeo-player.git
+ 1516  cd vimeo-player
+ 1517  yarn install
+ 1518  yarn build
+ 1519  yarn install
+ 1520  yarn build
+ 1521  git build
+ 1522  yarn build
+ 1523  git commit -m 'chore(): Initial commit'
+ 1524  git add .
+ 1525  git commit -m 'chore(): Initial commit'
+ 1526  git push
+ 1527  cd ../
+ 1528  cd yt-player
+ 1529  git status
+ 1530  yarn build
+ 1531  git add .
+ 1532  git commit -m 'chore(): Initial commit'
+ 1533  git push
+ 1534  git fetch origin master
+ 1535  git merge origin master
+ 1536  git merge origin master\n
+ 1537  git commit -m 'chore(): Initial commit'
+ 1538  git merge origin master\n
+ 1539  git commit -m 'chore(): Initial commit'
+ 1540  git add .
+ 1541  git push
+ 1542  yarn build
+ 1543  git add .
+ 1544  git commit -m 'chore(): Initial commit'
+ 1545  git push
+ 1546  git add .
+ 1547  git commit -m 'chore(): Names update'
+ 1548  git push
+ 1549  yarn build
+ 1550  git add .
+ 1551  git commit -m 'chore(): Names update'
+ 1552  git push
+ 1553  git build
+ 1554  arn build
+ 1555  yarn build
+ 1556  git add .
+ 1557  git commit -m 'chore(): Names update'
+ 1558  git push
+ 1559  cd ..
+ 1560  git clone git@gitlab.com:tonikstudio/labs/snippets/expander.git
+ 1561  cd expander
+ 1562  yarn install
+ 1563  yarn watch
+ 1564  yarn build
+ 1565  yarn install
+ 1566  yarn build
+ 1567  git add .
+ 1568  git commit -m 'chore(): Initial commit'
+ 1569  git push
+ 1570  yarn serve
+ 1571  yarn build
+ 1572  create-react-app react
+ 1573  yarn create react-app react
+ 1574  yarn create react-app my-app
+ 1575  yarn start
+ 1576  cd my
+ 1577  yarn start
+ 1578  cd my-app
+ 1579  yarn start
+ 1580  yarn serve
+ 1581  git add .
+ 1582  git commit -m 'Tasks list'
+ 1583  git push
+ 1584  git chechout -b 'task'
+ 1585  git checkout -b 'task'
+ 1586  exit
+ 1587  yarn serve
+ 1588  git add .
+ 1589  git commit -m 'sorted tasks'
+ 1590  git push
+ 1591  git push --set-upstream origin task
+ 1592  git status
+ 1593  yarn add vuejs-datepicker
+ 1594  yarn install
+ 1595  yarn add vuejs-datepicker --save\n
+ 1596  yarn install
+ 1597  yarn serve
+ 1598  yarn add firebase
+ 1599  yarn serve
+ 1600  git add -p
+ 1601  yarn serve
+ 1602  git add .
+ 1603  git commit -m 'Task sidebar'
+ 1604  git push
+ 1605  yarn serve
+ 1606  git commit -m 'Charts'
+ 1607  git add .
+ 1608  git commit -m 'charts'
+ 1609  git push
+ 1610  yarn watch
+ 1611  yarn dev
+ 1612  yarn 
+ 1613  yarn build
+ 1614  cd ../..
+ 1615  cd ..
+ 1616  cd Sites
+ 1617  cd wocker
+ 1618  vagrant ssh
+ 1619  vagrant up
+ 1620  vagrant ssh
+ 1621  vagrant up
+ 1622  vagrant init
+ 1623  vagrant up
+ 1624  brew cask install vagrant
+ 1625  brew cask reinstall vagrant
+ 1626  vagrant up
+ 1627  vagrant plugin update
+ 1628  vagrant up
+ 1629  cd ~/Users
+ 1630  cd ..
+ 1631  cd bartek
+ 1632  ls
+ 1633  mkdir base
+ 1634  vagrant up
+ 1635  cd ..
+ 1636  brew uninstall vagrant
+ 1637  rm -rf /opt/vagrant
+ 1638  rm -rf /usr/local/bin/vagrant
+ 1639  sudo pkgutil --forget com.vagrant.vagrant\n
+ 1640  brew cask install vagrant
+ 1641  brew cask reinstall vagran
+ 1642  brew cask reinstall vagrant
+ 1643  vagrant up
+ 1644  brew reinstall virtualbox
+ 1645  brew cask install virtualbox
+ 1646  vagrant up
+ 1647  sudo /Library/StartupItems/VirtualBox/VirtualBox restart\n
+ 1648  sudo restart /Library/StartupItems/VirtualBox/VirtualBox\n
+ 1649  sudo /Library/StartupItems/VirtualBox/VirtualBox restart\n
+ 1650  cd /Library/Application\ Support/VirtualBox/LaunchDaemons/\n
+ 1651  sudo ./VirtualBoxStartup.sh restart\n
+ 1652  vagrant up
+ 1653  vagrant ini
+ 1654  vagrant init
+ 1655  sudo vagrant init
+ 1656  vagrant up
+ 1657  sudo vagrant up
+ 1658  vagrant up
+ 1659  vagrant plugin install vagrant-hostsupdater
+ 1660  vagrant up
+ 1661  /Volumes/VirtualBox/VirtualBox_Uninstall.tool ; exit;
+ 1662  vagrant up
+ 1663  yarn watch
+ 1664  exit
+ 1665  cd ..
+ 1666  cd snippets
+ 1667  git clone git@gitlab.com:tonikstudio/labs/snippets/pie-chart.git
+ 1668  yarn install
+ 1669  yarn build
+ 1670  git add .
+ 1671  git commit -m 'chore(): Init'
+ 1672  git push
+ 1673  vagrant up
+ 1674  exit
+ 1675  vagrant up
+ 1676  sudo /Library/StartupItems/VirtualBox/VirtualBox restart\n
+ 1677  cd ../..
+ 1678  cd ..
+ 1679  cd Library/StartupItems
+ 1680  ls
+ 1681  vagrant up
+ 1682  sudo modprobe vboxnetadp\n
+ 1683  sudo kextutil vboxnetadp\n
+ 1684  /Volumes/VirtualBox/VirtualBox_Uninstall.tool ; exit;
+ 1685  sudo kextutil vboxnetadp\n
+ 1686  vagrant up
+ 1687  vagrant ssh
+ 1688  docker-compose down
+ 1689  vagrant up
+ 1690  vagrant ssh
+ 1691  vagrant up
+ 1692  vagrant ssh
+ 1693  ls
+ 1694  cd data/pozyczkomocni
+ 1695  git clone git@gitlab.com:tonikstudio/pozyczkomocni/pozyczkomocni.git
+ 1696  composer install
+ 1697  cd wp-content/themes/wp-pozyczkomocni-theme
+ 1698  composer install
+ 1699  cd ../..
+ 1700  cd plugins/wp-pozyczkomocni-plugin
+ 1701  composer install
+ 1702  cd ..
+ 1703  cd wp-pozyczkomocni-api
+ 1704  composer install
+ 1705  cd ../..
+ 1706  cd themes/wp-pozyczkomocni-theme
+ 1707  npm install
+ 1708  yarn install
+ 1709  yarn dev
+ 1710  composer lint
+ 1711  composer install
+ 1712  composer global require squizlabs/php_codesniffer\n
+ 1713  composer global require squizlabs/php_codesniffer
+ 1714  composer lint
+ 1715  cd data/pozyczkomocni/wp-content/themes/wp-pozyczkomocni-theme
+ 1716  composer lint
+ 1717  ls
+ 1718  cd Sites/wocker/data/pozyczkomocni/wp-content/themes/wp-pozyczkomocni-theme
+ 1719  composer lint
+ 1720  git status
+ 1721  git pull
+ 1722  git status
+ 1723  git add .
+ 1724  git status
+ 1725  cd wp-content/themes/wp-pozyczkomocni-theme
+ 1726  git status
+ 1727  git add .
+ 1728  git commit -m 'refactor(languages)'
+ 1729  git push
+ 1730  git reset --hard HEAD~1
+ 1731  git status
+ 1732  git pull
+ 1733  git reset --hard HEAD~1
+ 1734  git push
+ 1735  git pull
+ 1736  git reset --hard HEAD~1
+ 1737  git commit -m 'amend'
+ 1738  git push
+ 1739  git pull
+ 1740  git reset --hard HEAD~1
+ 1741  git revert
+ 1742  git log --oneline
+ 1743  clear
+ 1744  git log --oneline
+ 1745  git pull
+ 1746  git log --oneline
+ 1747  git revert e181453
+ 1748  git status
+ 1749  git commit -m 'revert'
+ 1750  git push
+ 1751  git git pull
+ 1752  git pull
+ 1753  git add .
+ 1754  git status
+ 1755  git commit -m 'refactor(lenguages): remove entire return, disable kill function & rename'
+ 1756  git push
+ 1757  git pull
+ 1758  git add .
+ 1759  git commit -m 'refactor(recaptcha): Removed check of user logged'
+ 1760  git push
+ 1761  cd ../..
+ 1762  cd ../../..
+ 1763  cd ../..
+ 1764  cd Codes
+ 1765  git clone https://gitlab.com/tonikstudio/pozyczkomocni/vue-pozyczkomocni-component
+ 1766  ls
+ 1767  cd vue-pozyczkomocni-component
+ 1768  yarn install
+ 1769  yarn serve
+ 1770  npm install
+ 1771  yarn install
+ 1772  yarn serve
+ 1773  cd Codes/vue-pozyczkomocni-component
+ 1774  composer install
+ 1775  yarn install
+ 1776  yarn serve
+ 1777  rm -r node_modules
+ 1778  rm packa-lock.json
+ 1779  rm package-lock.json
+ 1780  npm i
+ 1781  open .
+ 1782  yarn install
+ 1783  npm run serve
+ 1784  yarn install
+ 1785  npm run serve
+ 1786  cd Codes/pozyczkomocni
+ 1787  yarn serve
+ 1788  yarn watch
+ 1789  git add
+ 1790  git add .
+ 1791  git status
+ 1792  git commit -m 'feature(promotion): Structure & styles'
+ 1793  git push
+ 1794  git status
+ 1795  yarn install
+ 1796  yarn start
+ 1797  yarn install
+ 1798  yarn dev
+ 1799  yarn start
+ 1800  yarn dev
+ 1801  yarn start
+ 1802  cd ..
+ 1803  git clone git@gitlab.com:tonikstudio/mender/mender.git
+ 1804  yarn install
+ 1805  yarn watch
+ 1806  yarn start
+ 1807  yarn dev
+ 1808  yarn watch
+ 1809  git add .
+ 1810  git commit -m 'Composed input'
+ 1811  git push
+ 1812  git push --set-upstream origin c-composed-input
+ 1813  git add .
+ 1814  git commit -m 'Background'
+ 1815  git push
+ 1816  git add .
+ 1817  gt commit -m 'refactor(): pattern'
+ 1818  git commit -m 'refactor(): pattern'
+ 1819  git push
+ 1820  git add .
+ 1821  yarn watch
+ 1822  git add .
+ 1823  yarn watch
+ 1824  exit
+ 1825  git add .
+ 1826  yarn watch
+ 1827  exit
+ 1828  git add .
+ 1829  git commit -m 'Init'
+ 1830  git push
+ 1831  git push --set-upstream origin c-partners-list
+ 1832  git add .
+ 1833  yarn build
+ 1834  git add .
+ 1835  yarn watch
+ 1836  git add .
+ 1837  git commit -m 'fix(partners-list): Add justify to container'
+ 1838  git push
+ 1839  git add .
+ 1840  git commit -m 'feat(check-list): Introduce check list component'
+ 1841  git push
+ 1842  git push --set-upstream origin c-check-list
+ 1843  git add .
+ 1844  git commit -m 'feat(menu): Structure & styles'
+ 1845  git push
+ 1846  git push --set-upstream origin c-menu
+ 1847  git add .
+ 1848  git commit -m 'feat(menu): Toggled dropdown'
+ 1849  git push
+ 1850  git add .
+ 1851  git commit -m 'feat(top-bar): Structure & styles'
+ 1852  git push
+ 1853  flex flex--middle
+ 1854  git push --set-upstream origin c-top-bar
+ 1855  git push
+ 1856  yarn watch
+ 1857  git add .
+ 1858  git commit -m 'fix(box): Change size secondary box'
+ 1859  git push
+ 1860  git push --set-upstream origin c-box
+ 1861  git add .
+ 1862  git status
+ 1863  git add .
+ 1864  cd Codes/vue-pozyczkomocni-component
+ 1865  yarn serve
+ 1866  yarn watch
+ 1867  yarn dev
+ 1868  cd ..
+ 1869  cd pozyczkomocni
+ 1870  yarn serve
+ 1871  git add .
+ 1872  git commit -m 'refactor(Promotion): Modify structure, remove redundant color variable & improve code formatting'
+ 1873  git push
+ 1874  yarn watch
+ 1875  git add .
+ 1876  git commit -m 'feat(validate): Introduce validate'
+ 1877  git add .
+ 1878  git commit -m 'fix(Validate): change action'
+ 1879  git push
+ 1880  git push --set-upstream origin c-validation
+ 1881  git add .
+ 1882  git commit -m 'fix(Subtitle): change div to span inside h3 tag'
+ 1883  git push
+ 1884  git add .
+ 1885  git commit -m 'fix(Checkbox): color & positioning'
+ 1886  git push
+ 1887  yarn watch
+ 1888  git add .
+ 1889  git commit -m 'refactor(Validation): adding an exception'
+ 1890  git push
+ 1891  git add .
+ 1892  git commit -m 'refactor(Check-list): alignment of the bullet to the first line, change variable name, delete repeats of classes, systematizing font size'
+ 1893  git push
+ 1894  yarn watch
+ 1895  git add .
+ 1896  exit
+ 1897  git commit -m 'refactor(Top-bar): change spread to gutter, remove opacity from SVG icon, remove magic number from padding'
+ 1898  git push
+ 1899  yarn watch
+ 1900  exit
+ 1901  git add .
+ 1902  git commit -m 'fix(check-list): Change px to em'
+ 1903  git push
+ 1904  git add .
+ 1905  git commit -m 'refactor(partners-list): remove component class'
+ 1906  git push
+ 1907  git add .
+ 1908  git commit -m 'refactor(validation): Change type detection & improve structure'
+ 1909  git push
+ 1910  yarn watch
+ 1911  git add .
+ 1912  git commit -m 'feat(contact-banner): init'
+ 1913  git push
+ 1914  git push --set-upstream origin c-contact-banner
+ 1915  git add .
+ 1916  git commit -m 'feat(box): Add badge to box'
+ 1917  git push
+ 1918  yarn watch
+ 1919  git add .
+ 1920  git commit -m 'refactor(menu): change spread to waffle, RWD, add aria-attrs, separation of dropdown'
+ 1921  git push
+ 1922  git add .
+ 1923  git commit -m 'fix(menu): RWD spacing'
+ 1924  git push
+ 1925  git add .
+ 1926  git commit -m 'fix(composed-input): Change variable name, change input focus styles'
+ 1927  git push
+ 1928  git add .
+ 1929  git commit -m 'fix(composed-input): Change paddings'
+ 1930  git push
+ 1931  yarn watch
+ 1932  git add .
+ 1933  git commit -m 'feat(validation): Add custom events for form'
+ 1934  git push
+ 1935  git pull --rebase
+ 1936  git add .
+ 1937  git commit -m 'feat(validation): Add custom events for form'
+ 1938  git pull --rebase
+ 1939  git push
+ 1940  cd Sites
+ 1941  vagrant up
+ 1942  vagrant ssh
+ 1943  vagrant up
+ 1944  cd ../../..
+ 1945  cd ..
+ 1946  cd Site
+ 1947  cd ..
+ 1948  ls
+ 1949  cd ..
+ 1950  ls
+ 1951  cd ~
+ 1952  ls
+ 1953  cd Sites
+ 1954  vagrant up
+ 1955  ls
+ 1956  cd wocker
+ 1957  vagrant up
+ 1958  cd wocker
+ 1959  vagrant up
+ 1960  vagrant ssh
+ 1961  exit
+ 1962  ls
+ 1963  cd data
+ 1964  vagrant ssh
+ 1965  git add .
+ 1966  git commit -m 'feat(contact-banner): Introduce'
+ 1967  git push
+ 1968  cd Sites/wocker/data
+ 1969  vagrant ssh
+ 1970  cd ..
+ 1971  git clone git@gitlab.com:tonikstudio/tonik/website.git
+ 1972  ls
+ 1973  cd website
+ 1974  yarn install
+ 1975  gatsby develop
+ 1976  yarn install gatsby
+ 1977  yarn global add gatsby
+ 1978  gatsby develop
+ 1979  ls
+ 1980  open .
+ 1981  yarn watch
+ 1982  git add .
+ 1983  git commit -m 'chore(): Merge with master'
+ 1984  git push
+ 1985  git add .
+ 1986  git commit -m 'fix(partners-list): Add space between logotypes'
+ 1987  git push
+ 1988  git add .
+ 1989  git commit -m 'fix(composed-input): Remove box-shadow from input'
+ 1990  git push
+ 1991  git add .
+ 1992  git commit -m 'fix(box): Change text color'
+ 1993  git push
+ 1994  git add .
+ 1995  git commit -m 'fix(menu): Change dropdown width'
+ 1996  git push
+ 1997  git add .
+ 1998  git commit -m 'fix(top-bar): RWD'
+ 1999  git push
+ 2000  git add .
+ 2001  git commit -m 'fix(top-bar): RWD'
+ 2002  git push
+ 2003  yarn watch
+ 2004  git add .
+ 2005  git commit -m 'Merge with master'
+ 2006  git ush
+ 2007  git push
+ 2008  git add .
+ 2009  git commit -m 'fix(social-list): Remove opacity from svg icons & add transition'
+ 2010  git push
+ 2011  git add .
+ 2012  git commit -m 'style(): Remove whitespaces'
+ 2013  git push
+ 2014  yarn watch
+ 2015  git status
+ 2016  cleear
+ 2017  vlear
+ 2018  clear
+ 2019  git add .
+ 2020  feat(nav): Init
+ 2021  git commit -m 'feat(nav): Init'
+ 2022  git push
+ 2023  git push --set-upstream origin c-nav
+ 2024  git fetch origin
+ 2025  git checkout -b c-menu origin/c-menu\n
+ 2026  git checkout c-menu origin/c-menu\n
+ 2027  yarn watch
+ 2028  git add .
+ 2029  git checkout HEAD -- resources/assets/sass/app.scss
+ 2030  git checkout HEAD -- app.scss
+ 2031  git checkout HEAD -- resources/assets/sass/app.scss
+ 2032  yarn watch
+ 2033  git checkout HEAD -- resources/assets/sass/components/_badge.scss
+ 2034  git checkout HEAD -- resources/assets/sass/components/badge.scss
+ 2035  git reset --soft HEAD~1
+ 2036  git reset --hard HEAD~1
+ 2037  git add .
+ 2038  git commit -m 'Merge with master'
+ 2039  git push
+ 2040  yarn watch
+ 2041  git add .
+ 2042  git commit -m 'feat(menu): Introduce'
+ 2043  git push
+ 2044  git push --set-upstream origin c-menu-rev
+ 2045  git add .
+ 2046  git commit -m 'chore(): Merge with master'
+ 2047  git push
+ 2048  git add .
+ 2049  git commit -m 'feat(nav): Structure'
+ 2050  git push
+ 2051  yarn watch
+ 2052  git add .
+ 2053  git commit -m 'feat(nav): Introduce'
+ 2054  git push
+ 2055  yarn watch
+ 2056  git add .
+ 2057  git commit -m 'feat(how-it-works): Introduce'
+ 2058  git push
+ 2059  git push --set-upstream origin how-it-works
+ 2060  yarn watch
+ 2061  git add .
+ 2062  git commit -m 'Merge with master'
+ 2063  git push
+ 2064  yarn watch
+ 2065  git add .
+ 2066  git commit -m 'feat(how-it-works): Introduce navigation'
+ 2067  git push
+ 2068  yarn watch
+ 2069  git add .
+ 2070  git commit -m 'feat(open-source): Init & structure'
+ 2071  git push
+ 2072  git push --set-upstream origin open-source
+ 2073  yarn watch
+ 2074  git status
+ 2075  git add .
+ 2076  git commit -m 'feat(open-source): features'
+ 2077  git push
+ 2078  yarn watch
+ 2079  git push
+ 2080  yarn watch
+ 2081  git add .
+ 2082  git commit -m 'feeat(open-source): support banner'
+ 2083  git push
+ 2084  git add .
+ 2085  git commit -m 'feeat(open-source): banner containers'
+ 2086  git push
+ 2087  git add .
+ 2088  git commit -m 'feat(open-source): RWD'
+ 2089  git push
+ 2090  yarn watch
+ 2091  git add .
+ 2092  git commit -m 'Introduce'
+ 2093  git push
+ 2094  git add .
+ 2095  git commit -m 'feat(open-source): Introduce'
+ 2096  git push
+ 2097  yarn watch
+ 2098  git add .
+ 2099  git commit -m 'fix(nav): Animation of rotating arrows, move top-bar to nav component'
+ 2100  git push
+ 2101  git push --set-upstream origin f-menu
+ 2102  yarn watch
+ 2103  git add .
+ 2104  git commit -m 'Add missing pattern to hero'
+ 2105  git push
+ 2106  yarn watch
+ 2107  git add .
+ 2108  git commit -m 'fix(features): Repleace image'
+ 2109  git push
+ 2110  git push --set-upstream origin f-features
+ 2111  yarn watch
+ 2112  git add .
+ 2113  git commit -m 'fix(button): Improved arrow alignment'
+ 2114  git push
+ 2115  git push --set-upstream origin f-arrows
+ 2116  yarn watch
+ 2117  git add .
+ 2118  git commit -m 'feat(open-source): Initial'
+ 2119  git push
+ 2120  git push --set-upstream origin p-open-source
+ 2121  git add .
+ 2122  git commit -m 'feat(open-source): Introduce'
+ 2123  git push
+ 2124  git add .
+ 2125  git commit -m 'Merge from master'
+ 2126  git push
+ 2127  yarn watch
+ 2128  git add .
+ 2129  git commit -m 'fix(open-source): RWD'
+ 2130  git push
+ 2131  git add .
+ 2132  git commit -m 'fix(open-source): page backgorund'
+ 2133  git push
+ 2134  git add .
+ 2135  git commit -m 'fix(open-source): RWD'
+ 2136  git push
+ 2137  yarn watch
+ 2138  git add .
+ 2139  git commit -m 'feat(newsletter): Add validation'
+ 2140  git push
+ 2141  git push --set-upstream origin c-newsletter
+ 2142  yarn watch
+ 2143  git add .
+ 2144  git commit -m 'fix(open-source-get-started): fonts'
+ 2145  git push
+ 2146  git push --set-upstream origin f-open-source-fonts
+ 2147  cd ..
+ 2148  cd Sites
+ 2149  git clone git@gitlab.com:tonikstudio/breakout/mavens/mavens.git
+ 2150  brew install docker docker-machine docker-compose
+ 2151  ls
+ 2152  cd mavens
+ 2153  composer install
+ 2154  composer install --prefer-source
+ 2155  docker create default
+ 2156  docker -v
+ 2157  brew install docker docker-machine docker-compose
+ 2158  brew doctor
+ 2159  docker -v
+ 2160  docker-machine
+ 2161  brew upgrade docker docker-machine docker-compose
+ 2162  docker -b
+ 2163  docker -v
+ 2164  docker-machine -v
+ 2165  docker -v
+ 2166  docker-marchine
+ 2167  docker-machine
+ 2168  brew upgrade docker-machine
+ 2169  brew reinstall docker-machine
+ 2170  docker-machine
+ 2171  brew reinstall docker-machine
+ 2172  brew reinstall docker-compose
+ 2173  brew reinstall docker-machine
+ 2174  rm -rf /usr/local/var/homebrew/locks\n
+ 2175  brew reinstall docker-machine
+ 2176  brew reinstall docker-compose
+ 2177  clear
+ 2178  docker-copose
+ 2179  docker-compose
+ 2180  clea
+ 2181  clear
+ 2182  docker-machine create default
+ 2183  eval $(docker-machine env default)\n
+ 2184  docker-compose up
+ 2185  docker-machinde ip default
+ 2186  docker-machine ip default
+ 2187  sudo vim /etc/hosts
+ 2188  ls
+ 2189  cd wp-content/themes/mavens-theme
+ 2190  npm install
+ 2191  git checkout -b c-badge-step\n
+ 2192  ls
+ 2193  cd ../..
+ 2194  npm run watch
+ 2195  exit
+ 2196  yarn install
+ 2197  yarn watch
+ 2198  git status
+ 2199  git add .
+ 2200  git commit -m 'Initialize components structure & introduce badge-step component'
+ 2201  git push
+ 2202  git push --set-upstream origin c-badge-step
+ 2203  git add .
+ 2204  git status
+ 2205  yarn watch
+ 2206  git add .
+ 2207  git status
+ 2208  git add .
+ 2209  git status
+ 2210  exit
+ 2211  git add .
+ 2212  git checkout -b c-social-icons
+ 2213  git add .
+ 2214  git status
+ 2215  git add .
+ 2216  git status
+ 2217  git reset
+ 2218  git reset --hard
+ 2219  git status
+ 2220  yarn watch
+ 2221  git add .
+ 2222  git status
+ 2223  git push
+ 2224  git push --set-upstream origin c-social-icons
+ 2225  git add .
+ 2226  style(): Add new line at the end of file
+ 2227  git push
+ 2228  git pull
+ 2229  git push
+ 2230  git merge develop
+ 2231  git checkout develop
+ 2232  git checkout develop -f
+ 2233  git pull
+ 2234  git checkout c-social-icons
+ 2235  git merge develop
+ 2236  git add.
+ 2237  git add .
+ 2238  git commit -m 'chore(): Resolve conflicts'
+ 2239  git push
+ 2240  git push --force
+ 2241  git checkout develop
+ 2242  git pull
+ 2243  clear
+ 2244  yarn watch
+ 2245  npm i
+ 2246  yarn watch
+ 2247  npm run watch
+ 2248  ls
+ 2249  cd wp-content/themes/mavens-theme
+ 2250  yarn watch
+ 2251  npm install
+ 2252  yarn install
+ 2253  yarn watch
+ 2254  cd Sites
+ 2255  cd mavens
+ 2256  eval $(docker-machine env default)\n
+ 2257  docker-compose up
+ 2258  docker-machine default
+ 2259  docker-machine start default
+ 2260  eval $(docker-machine env default)\n
+ 2261  docker-compose up
+ 2262  yarn watch
+ 2263  git add .
+ 2264  git status
+ 2265  git checkout c-ribbon
+ 2266  git checkout -b c-ribbon
+ 2267  git checkout -b 'c-ribbon'
+ 2268  git checkout  'c-ribbon'
+ 2269  git status
+ 2270  git add .
+ 2271  git status
+ 2272  git commit -m 'feat(ribbon): Introduce ribbon component'
+ 2273  git push
+ 2274  git push --set-upstream origin c-ribbon
+ 2275  git status
+ 2276  git push --force
+ 2277  git push --set-upstream origin c-ribbon --force
+ 2278  git add .
+ 2279  git status
+ 2280  git commit -m 'fix(compress svg icons)'
+ 2281  git push
+ 2282  yarn watch
+ 2283  cd wp-content/themes/mavens-theme
+ 2284  yarn watch
+ 2285  git checkout develop
+ 2286  git status
+ 2287  git checkout 'develop'
+ 2288  git pull
+ 2289  git checkout 'develop'
+ 2290  git status
+ 2291  cd wp-content/themes/mavens-theme
+ 2292  yarn watch
+ 2293  git reset
+ 2294  git reset --hard
+ 2295  git status
+ 2296  yarn watch
+ 2297  git reset --hard
+ 2298  yarn watch
+ 2299  cd wp-content/themes/mavens-theme
+ 2300  yarn watch
+ 2301  docker-machine start default
+ 2302  eval $(docker-machine env default)\n
+ 2303  docker-compose up
+ 2304  cd Sites/mavens/wp-content/themes/mavens-theme
+ 2305  cd ../..
+ 2306  cd ..
+ 2307  docker-compose up
+ 2308  git reset --hard
+ 2309  git status
+ 2310  git clean -fd
+ 2311  git status
+ 2312  git checkout 'develop'
+ 2313  git pull
+ 2314  git checkout 'c-badge'
+ 2315  git fetch origin
+ 2316  git merge origin/develop
+ 2317  git checkout 'c-badge'
+ 2318  git fetch origin
+ 2319  git merge origin/develop
+ 2320  git add .
+ 2321  git status
+ 2322  git checkout 'c-badge'
+ 2323  git checkout c-badge
+ 2324  git checkout 'c-badge'
+ 2325  git reset
+ 2326  git reset --hard
+ 2327  git checkout 'c-badge'
+ 2328  git fetch
+ 2329  git checkout 'c-badge'
+ 2330  git fetch
+ 2331  git checkout 'c-badge'
+ 2332  yarn watch
+ 2333  cd wp-content/themes/mavens-theme
+ 2334  yarn watch
+ 2335  git add .
+ 2336  git checkout 'c-badge'
+ 2337  git clean -fd
+ 2338  git checkout 'c-badge'
+ 2339  git reset
+ 2340  git reset --hard
+ 2341  git checkout 'c-badge'
+ 2342  git fetch
+ 2343  git checkout 'c-badge'
+ 2344  git add .
+ 2345  git commit -m 'feat(): Introduce badge component'
+ 2346  git push
+ 2347  git checkout -b 'c-badge'
+ 2348  git status
+ 2349  git fetch origin/develop
+ 2350  cd wp-content/themes/mavens-theme
+ 2351  yarn watch
+ 2352  git checkout 'c-ribbon'
+ 2353  git add .
+ 2354  git commit -m 'feat(): Add svg icons'
+ 2355  git push
+ 2356  git push --force
+ 2357  git add .
+ 2358  git push
+ 2359  git push --force
+ 2360  git checkout 'badge-step'
+ 2361  git checkout 'c-badge-step'
+ 2362  yarn watch
+ 2363  git status
+ 2364  git add .
+ 2365  git commit -m 'fix(): Use utilities'
+ 2366  git push
+ 2367  git push --force
+ 2368  git reset --hard
+ 2369  yarn watch
+ 2370  eval $(docker-machine env default)\n
+ 2371  docker-machine start default
+ 2372  eval $(docker-machine env default)\n
+ 2373  docker-compose run
+ 2374  docker-compose start
+ 2375  git add .
+ 2376  git commit -m 'fix(): Use ulitities for border-radius property'
+ 2377  git push
+ 2378  git push --force
+ 2379  git checkout 'c-ribbon'
+ 2380  git pull
+ 2381  git checkout 'c-badge'
+ 2382  git checkout 'c-badge-step'
+ 2383  git add .
+ 2384  git commit -m 'fix(): Remove flex property'
+ 2385  git push
+ 2386  git push --force
+ 2387  git checkout 'c-badge-step'
+ 2388  git add .
+ 2389  git commit -m 'fix(): Remove flex property'
+ 2390  git push
+ 2391  git push --force
+ 2392  git checkout 'c-ribbon'
+ 2393  git add .
+ 2394  git commit -m 'fix(): Change space to waffle utilities'
+ 2395  git push
+ 2396  git checkout 'develop'
+ 2397  git pull
+ 2398  git checkout -b 'c-panel-callout'
+ 2399  git status
+ 2400  git add .
+ 2401  git commit -m 'feat(): Introduce panel-callout component'
+ 2402  git push
+ 2403  git push --set-upstream origin c-panel-callout
+ 2404  git checkout -b 'c-callout-media'
+ 2405  git pull
+ 2406  git add .
+ 2407  git commit -m 'feat(): Introduce callout media'
+ 2408  git push
+ 2409  git push --set-upstream origin c-callout-media
+ 2410  git revert
+ 2411  git rev-parse HEAD\n
+ 2412  git status
+ 2413  git revert 3de95b7543accd3817630a8da516dfa36ea722fd
+ 2414  git status
+ 2415  git reset
+ 2416  git status
+ 2417  git reset --hard
+ 2418  git revert 3de95b7543accd3817630a8da516dfa36ea722fd
+ 2419  git status
+ 2420  git add .
+ 2421  git status
+ 2422  git commit -m 'feat(): Introduce callout-media component'
+ 2423  git push
+ 2424  git rev-parse HEAD\n
+ 2425  git revert 4029783005b0fc3b72c3215ceacfd2e857926841
+ 2426  git checkout develop
+ 2427  git checkout -b 'c-callout-media-1'
+ 2428  git add .
+ 2429  git status
+ 2430  git add .
+ 2431  git commit -m 'feat(): Introduce callout-media component'
+ 2432  git push
+ 2433  git push --set-upstream origin c-callout-media-1
+ 2434  git checkout 'c-ribbon'
+ 2435  git add .
+ 2436  git status
+ 2437  git commit -m 'fix(): Remove changes for badge component'
+ 2438  git push
+ 2439  git chaeckout develop
+ 2440  git checkout develop
+ 2441  git pull
+ 2442  git checkout -b 'c-panel-link'
+ 2443  git add .
+ 2444  git commit -m 'feat(): Introduce panel-link component'
+ 2445  git push
+ 2446  git push --set-upstream origin c-panel-link
+ 2447  git push --set-upstream origin c-panel-link --hard
+ 2448  git add .
+ 2449  git commit -m 'fix(): change divs to spans & add transition'
+ 2450  git push
+ 2451  git checkout develop
+ 2452  git ull
+ 2453  git pull
+ 2454  git checkout -b 'grid-icon'
+ 2455  git pull
+ 2456  cd wp-content/themes/mavens-theme
+ 2457  yarn watch
+ 2458  git add .
+ 2459  git commit -m 'feat(): Introduce grid-icon component'
+ 2460  git push
+ 2461  git push --set-upstream origin grid-icon
+ 2462  git checkout 'c-badge-step'
+ 2463  git add .
+ 2464  git commit -m 'style(): Double quotes'
+ 2465  git push
+ 2466  git push --force
+ 2467  git checkout develop
+ 2468  git pull
+ 2469  git checkout -b 'c-panel-cirlce'
+ 2470  git pull
+ 2471  git checkout develop
+ 2472  git pull
+ 2473  git checkout -b 'c-panel-circle'
+ 2474  git pull
+ 2475  git checkout c-social-icons
+ 2476  git add .
+ 2477  git status
+ 2478  git add .
+ 2479  git status
+ 2480  git pull
+ 2481  git reset
+ 2482  git reset --hard
+ 2483  git add .
+ 2484  git status
+ 2485  git checkout develop
+ 2486  git pull
+ 2487  git checkout 'c-social-icons'
+ 2488  git add .
+ 2489  git status
+ 2490  ls
+ 2491  cd wp-content/themes/mavens-theme
+ 2492  yarn watch
+ 2493  git status
+ 2494  git add .
+ 2495  git commit -m 'feat(): Init'
+ 2496  git push
+ 2497  git push --set-upstream origin c-panel-circle
+ 2498  eval $(docker-machine env default)\n
+ 2499  docker-compose run
+ 2500  docker-compose run default
+ 2501  docker-machine run default
+ 2502  docker-machine start
+ 2503  docker-machine run default
+ 2504  docker-compose run default
+ 2505  docker-compose run
+ 2506  docker-compose run default
+ 2507  cd Sites/mavens
+ 2508  docker-compose run default
+ 2509  docker-machine run
+ 2510  docker-machine start default
+ 2511  eval $(docker-machine env default)\n
+ 2512  git checkout c-callout-media
+ 2513  eval $(docker-machine env default)\n
+ 2514  docker-machine start default
+ 2515  eval $(docker-machine env default)\n
+ 2516  git add .
+ 2517  git status
+ 2518  git commit -m 'fix(): Add image'
+ 2519  git push
+ 2520  git checkout 'panel-callout'
+ 2521  git checkout 'c-panel-callout'
+ 2522  git add .
+ 2523  git commit -m 'fix(): Remove flex'
+ 2524  git push
+ 2525  git add .
+ 2526  git commit -m 'fix(): Change space to waffle'
+ 2527  git push
+ 2528  git checkout 'c-grid-icon'
+ 2529  git checkout 'grid-icon'
+ 2530  eval $(docker-machine env default)\n
+ 2531  docker-compose up
+ 2532  git status
+ 2533  git reset
+ 2534  git status
+ 2535  git reset --hard
+ 2536  git status
+ 2537  git clean -fd
+ 2538  git add .
+ 2539  git status
+ 2540  git commit -m 'fix(): Add hover state'
+ 2541  git push
+ 2542  git push --force
+ 2543  git checkout 'c-panel-circle'
+ 2544  yarn watch
+ 2545  git add .
+ 2546  git commit -m 'refactor(): Change structure'
+ 2547  git push
+ 2548  git checkout callout-media
+ 2549  git pull
+ 2550  git status
+ 2551  git add .
+ 2552  git status
+ 2553  git commit -m 'fix(): Add image'
+ 2554  git push
+ 2555  git rev-parse HEAD
+ 2556  git revert 8738cca4808eeded521678825e0ef137127bafd1
+ 2557  git checkout 'c-callout-media'
+ 2558  git reset --hard
+ 2559  git checkout 'c-callout-media'
+ 2560  git push
+ 2561  git checkout 'c-callout-media'
+ 2562  git clean -fd
+ 2563  git checkout 'c-callout-media'
+ 2564  git add .
+ 2565  git status
+ 2566  git commit -m 'fix(): Add image'
+ 2567  git push
+ 2568  git push --force
+ 2569  git add .
+ 2570  git commit -m 'fix(): Add image'
+ 2571  git push
+ 2572  git checkout 'c-callout-media-1'
+ 2573  git add .
+ 2574  git commit -m 'fix(): Add image'
+ 2575  git push
+ 2576  git push --force
+ 2577  git add .
+ 2578  git status
+ 2579  gir checkout 'c-panel-link'
+ 2580  git pull
+ 2581  git checkout c-panel-link
+ 2582  git add .
+ 2583  git commit -m 'refactor(): Change spread to gutter'
+ 2584  git push
+ 2585  git add .
+ 2586  git commit -m 'Remove height and width & change aligning to right'
+ 2587  git rev-parse HEAD
+ 2588  git revert 7cae4587dd838ffa5471e7eb8108368ae736992b
+ 2589  git add .
+ 2590  git commit -m 'refactor(): Remove height and width & change aligning to right'
+ 2591  git add .
+ 2592  git commit -m 'refactor(): Remove height and width & change aligning to right'
+ 2593  git push
+ 2594  git checkout c-ribbon
+ 2595  git add .
+ 2596  git commit -m 'refactor(): RWD'
+ 2597  git ush
+ 2598  git push
+ 2599  git push --force
+ 2600  git checkout c-panel-circle
+ 2601  git pull
+ 2602  cd Sites/mavens/wp-content/themes/mavens-theme
+ 2603  yarn watch
+ 2604  ls
+ 2605  cd wp-content/themes/mavens-theme
+ 2606  yarn watch
+ 2607  git pull
+ 2608  git add .
+ 2609  git status
+ 2610  git add
+ 2611  git add .
+ 2612  git commit -m 'feat(): Introduce panel-circle component'
+ 2613  git push
+ 2614  git checkout develop
+ 2615  git pull
+ 2616  git checkout c-callout-media
+ 2617  git pull
+ 2618  git fetch
+ 2619  git checkout c-callout-media-1
+ 2620  git reset
+ 2621  git reset --hard
+ 2622  git add .
+ 2623  git commit -m 'fix(): RWD'
+ 2624  git push
+ 2625  git checkout c-panel-circle
+ 2626  git add .
+ 2627  git push
+ 2628  git add .
+ 2629  git status
+ 2630  git checkout develop
+ 2631  yarn watch
+ 2632  git checkout -b c-grid-ribbon
+ 2633  git checkout develop
+ 2634  git pull
+ 2635  git checkout -b c-grid-ribbon
+ 2636  yarn watch
+ 2637  docker-compose up
+ 2638  git checkout  c-grid-ribbon
+ 2639  git pull
+ 2640  git reset --hard
+ 2641  git clean -fd
+ 2642  git add .
+ 2643  git commit -m 'feat(): Introduce grid-ribbon component'
+ 2644  git push
+ 2645  git checkout c-panel-circle
+ 2646  git pull
+ 2647  git add .
+ 2648  git commit -m 'fix(): Revert removed includes'
+ 2649  git push
+ 2650  git add .
+ 2651  git commit -m 'fix(): Add states for component'
+ 2652  git push
+ 2653  git checkout c-panel-link
+ 2654  git pull
+ 2655  git add .
+ 2656  git commit -m 'fix(): Change color in focus state'
+ 2657  git push
+ 2658  git add .
+ 2659  gcd
+ 2660  git checkout develop
+ 2661  git pull
+ 2662  git reset --hard
+ 2663  gcd
+ 2664  git pull
+ 2665  git checkout c-grid-ribbon
+ 2666  merge develop
+ 2667  git merge develop
+ 2668  git add .
+ 2669  git status
+ 2670  git add .
+ 2671  git commit -m 'Resolve conflicts'
+ 2672  git push
+ 2673  git push --force
+ 2674  git add .
+ 2675  git commit -m 'refactor(): Structure'
+ 2676  git push
+ 2677  cd wp-content/themes/mavens-theme
+ 2678  yarn watch
+ 2679  git checkout 'c-table-ribbon'
+ 2680  git checkout develop
+ 2681  git pull
+ 2682  git checkout -b 'c-table-ribbon'
+ 2683  git pull
+ 2684  eval $(docker-machine env default)\n
+ 2685  docker-compose up
+ 2686  docker-machine run default
+ 2687  docker-machine start default
+ 2688  eval $(docker-machine env default)\n
+ 2689  docker-compose up
+ 2690  cd Sites/mavens
+ 2691  docker-compose up
+ 2692  yarn watch
+ 2693  git add .
+ 2694  git commit -m 'feat(): Introduce table-grid component'
+ 2695  git push
+ 2696  git push --set-upstream origin c-table-ribbon
+ 2697  gmd
+ 2698  gcd
+ 2699  git pull
+ 2700  git checkout c-table-ribbon 
+ 2701  git merge develop
+ 2702  git pull
+ 2703  git push
+ 2704  git status
+ 2705  git add .
+ 2706  git push
+ 2707  got a
+ 2708  git add .
+ 2709  git commit -m 'fix(): color'
+ 2710  git push
+ 2711  git pull
+ 2712  git status
+ 2713  git add .
+ 2714  git commit -m 'refactor(): Combine table-ribbon with table-ribbon__inner'
+ 2715  git push
+ 2716  git add .
+ 2717  git commit -m 'Conflicts'
+ 2718  git push
+ 2719  git checkout c-table-icons
+ 2720  git checkout table-icons
+ 2721  gcd
+ 2722  git pull
+ 2723  git checkout -b 'c-panel-content'
+ 2724  git pull
+ 2725  clear
+ 2726  yarn watch
+ 2727  clear
+ 2728  yarn watch
+ 2729  git add .
+ 2730  wip(): Structure for panel-content component
+ 2731  git push
+ 2732  git push --set-upstream origin c-panel-content
+ 2733  gcd
+ 2734  git checkout c-panel-content
+ 2735  git push --force
+ 2736  git status
+ 2737  git add .
+ 2738  git commit -m wip(): Structure
+ 2739  git push
+ 2740  git checkout c-panel-content
+ 2741  exit
+ 2742  git add .
+ 2743  git status
+ 2744  git commit -m 'wip(): Structure'
+ 2745  git push
+ 2746  gcd
+ 2747  git pull
+ 2748  git checkout -b c-table-icons
+ 2749  git pull
+ 2750  yarn watch
+ 2751  git add .
+ 2752  git commit -m 'feat(): Introduce table-icons component'
+ 2753  git push
+ 2754  git push --set-upstream origin c-table-icons
+ 2755  git add .
+ 2756  git commit -m 'fix(): Change border colors & remove yarn.lock'
+ 2757  git push
+ 2758  git add .
+ 2759  git commit -m 'fix(): Add gutter to column'
+ 2760  git push
+ 2761  git push --force
+ 2762  git add .
+ 2763  git commit -m 'refactor(): Remove duplicated hover'
+ 2764  git push
+ 2765  gcd
+ 2766  git pull
+ 2767  git checkout c-table-icons
+ 2768  git pull
+ 2769  git fetch origin
+ 2770  git merge develop
+ 2771  git status
+ 2772  git checkout c-panel-content
+ 2773  git fetch origin
+ 2774  git merge develop
+ 2775  git status
+ 2776  git add .
+ 2777  git commit -m 'Merge from develop'
+ 2778  git push
+ 2779  git status
+ 2780  clear
+ 2781  yarn watch
+ 2782  git status
+ 2783  git add .
+ 2784  git commit -m 'feat(): Add grid-icon'
+ 2785  git push
+ 2786  git checkout c-grid-icons
+ 2787  git checkout c-table-icons
+ 2788  git checkout c-panel-content
+ 2789  git add .
+ 2790  git commit -m 'feat(): Introduce panel-content component'
+ 2791  git push
+ 2792  git add .
+ 2793  ls
+ 2794  cd wp-content/themes/mavens-theme
+ 2795  yarn watch
+ 2796  git add .
+ 2797  git commit -m 'style(): Remove spaces'
+ 2798  git push
+ 2799  gcd
+ 2800  git pull
+ 2801  git checkout -b 'c-slider-avatars'
+ 2802  git pull
+ 2803  yarn watch
+ 2804  git status
+ 2805  git add .
+ 2806  git commit -m 'feat(): Init'
+ 2807  git push
+ 2808  git push --set-upstream origin c-slider-avatars
+ 2809  ls
+ 2810  cd wp-content/themes/mavens-theme
+ 2811  yarn watch
+ 2812  docker start default
+ 2813  docker-machine start default
+ 2814  eval $(docker-machine env default)\n
+ 2815  docker-compose up
+ 2816  cd Sites/mavens
+ 2817  docker-compose up
+ 2818  docker-machine start default
+ 2819  eval $(docker-machine env default)\n
+ 2820  cd Sites/mavens/docker-compose up
+ 2821  cd Sites/mavens
+ 2822  docker-compose up
+ 2823  ls
+ 2824  cd wp-content/themes/mavens-theme
+ 2825  yarn watch
+ 2826  git add .
+ 2827  git commit -m 'feat(): Introduce slider-avatars component'
+ 2828  git push
+ 2829  gcd
+ 2830  git pull
+ 2831  git checkout c-slider-avatars
+ 2832  git merge develop
+ 2833  git pull
+ 2834  git status
+ 2835  gcd
+ 2836  git pul
+ 2837  git pull
+ 2838  git checkout fix-svgs-ids
+ 2839  git merge develop
+ 2840  git reset --hard
+ 2841  git clean -fd
+ 2842  git reset --hard
+ 2843  git clean -fd
+ 2844  git add .
+ 2845  git status
+ 2846  it reset --hard
+ 2847  git clean -fd
+ 2848  git reset --hard
+ 2849  git clean -fd
+ 2850  git status
+ 2851  clean
+ 2852  clear
+ 2853  git add .
+ 2854  git status
+ 2855  git add .
+ 2856  git commit -m 'wip(): Warning set'
+ 2857  git push
+ 2858  git status
+ 2859  open .
+ 2860  cd Documents
+ 2861  open .
+ 2862  cd Documents
+ 2863  cd bungee
+ 2864  cd ..
+ 2865  open .
+ 2866  cd wp-content/themes/mavens-theme
+ 2867  yarn watch
+ 2868  git add .
+ 2869  cd wp-content/themes/mavens-theme
+ 2870  git add .
+ 2871  git status
+ 2872  git commit -m 'Rest of icons'
+ 2873  git push
+ 2874  gcd
+ 2875  git pull
+ 2876  git checkout p-template-case-studies
+ 2877  git pull
+ 2878  ls
+ 2879  yarn watch
+ 2880  docker-machine run default
+ 2881  docker-machine start default
+ 2882  eval $(docker-machine env default)\n
+ 2883  docker-compose up
+ 2884  cd Sites/mavens
+ 2885  docker-compose up
+ 2886  cd wp-content/themes/mavens-theme
+ 2887  yarn watch
+ 2888  git add .
+ 2889  git commit -m 'feat(): Init'
+ 2890  git push
+ 2891  gcd
+ 2892  git pull
+ 2893  git checkout p-template-case-studies
+ 2894  git pull
+ 2895  git merge develop
+ 2896  git add .
+ 2897  git status
+ 2898  git commit -m 'wip()'
+ 2899  git push
+ 2900  git merge develop
+ 2901  git add .
+ 2902  git status
+ 2903  git commit -m 'feat(): Introduce case studies page'
+ 2904  git push
+ 2905  git add .
+ 2906  git commit -m 'fix(): overflow'
+ 2907  git push
+ 2908  git add .
+ 2909  git commit -m 'refactor(): Move protruding-content to modifier of page__content block'
+ 2910  git push
+ 2911  git add .
+ 2912  git commit -m 'refactor()'
+ 2913  git push
+ 2914  cd wp-content/themes/mavens-theme
+ 2915  yarnw atch
+ 2916  yarn watch
+ 2917  docker-machine run default
+ 2918  docker-machine start default
+ 2919  docker-machine up
+ 2920  eval $(docker-machine env default)\n
+ 2921  cd Sites/mavens
+ 2922  docker-compose up
+ 2923  git status
+ 2924  gcd
+ 2925  git pull
+ 2926  git checkout -b 'p-template-careers'
+ 2927  git pull
+ 2928  yarn watch
+ 2929  yarn install
+ 2930  git add .
+ 2931  git commit -m 'Init'
+ 2932  git push
+ 2933  git push --set-upstream origin p-template-careers
+ 2934  git checkout 'p-tempalte-case-studies'
+ 2935  git add .
+ 2936  git commit -m 'fix(): Semantic'
+ 2937  git push
+ 2938  git checkout 'p-tempalte-case-studies'
+ 2939  git checkout 'c-template-carrers'
+ 2940  git pull
+ 2941  yarn watch
+ 2942  git add .
+ 2943  git commit -m 'wip()'
+ 2944  git push
+ 2945  gcd
+ 2946  git pull
+ 2947  git checkout 'c-template-carrers'
+ 2948  git checkout 'p-template-carrers'
+ 2949  clean
+ 2950  clear
+ 2951  git checkout 'p-template-carrers'
+ 2952  git checkout 'p-template-careers'
+ 2953  git checkout 'p-template-pratices'
+ 2954  gcd
+ 2955  git pull
+ 2956  git checkout 'p-template-pratices'
+ 2957  git checkout 'p-template-practices'
+ 2958  git checkout 'p-template-carrers'
+ 2959  git checkout 'p-template-careers'
+ 2960  gcd
+ 2961  git add .
+ 2962  git commit -m 'wip()'
+ 2963  gcd
+ 2964  git pull
+ 2965  git checkout 'p-template-careers'
+ 2966  git add .
+ 2967  git commit -m 'wip()'
+ 2968  gcd
+ 2969  git checkout 'p-template-careers'
+ 2970  git status
+ 2971  gs
+ 2972  git merge develop
+ 2973  yarn watch
+ 2974  git add .
+ 2975  git status -m 'Merge with develop'
+ 2976  git commit -m 'Merge with develop'
+ 2977  git push
+ 2978  gcd
+ 2979  git checkout 'p-template-careers'
+ 2980  docker-machine start default
+ 2981  eval $(docker-machine env default)\n
+ 2982  cd Sites/mavens
+ 2983  docker-compose up
+ 2984  yarn watch
+ 2985  git status
+ 2986  cd wp-content/themes/mavens-theme
+ 2987  git status
+ 2988  yarn watch
+ 2989  git merge develop
+ 2990  gcd
+ 2991  git pull
+ 2992  git checkout 'p-template-careers'
+ 2993  cd wp-content/themes/mavens-theme
+ 2994  yarn watch
+ 2995  gcd
+ 2996  git status
+ 2997  git add .
+ 2998  git commit -m 'wip()'
+ 2999  git push
+ 3000  gcd
+ 3001  git pull
+ 3002  git checkout p-template-careers
+ 3003  git pull
+ 3004  git merge develop
+ 3005  git status
+ 3006  git add .
+ 3007  git commit -m 'Structure'
+ 3008  git push
+ 3009  gcd
+ 3010  git pull
+ 3011  git checkout -b 'p-single-practice'
+ 3012  git pull
+ 3013  git add .
+ 3014  git commit -m 'Init'
+ 3015  git checkout p-template-careers
+ 3016  git checkout 'p-single-practice'
+ 3017  git add .
+ 3018  git commit -m 'wip()'
+ 3019  git push
+ 3020  git push --set-upstream origin p-single-practice
+ 3021  gcd
+ 3022  git pull
+ 3023  git reset --hard
+ 3024  git checkout p-single-practice
+ 3025  cd wp-content/themes/mavens-theme
+ 3026  yarn watch
+ 3027  docker-machine start default
+ 3028  eval $(docker-machine env default)\n
+ 3029  cd Sites/mavens
+ 3030  docker-compose up
+ 3031  git add .
+ 3032  git commit -m 'wip()'
+ 3033  git push
+ 3034  gcd
+ 3035  git pull
+ 3036  git checkout p-single-practice
+ 3037  git pull
+ 3038  git add .
+ 3039  gcm
+ 3040  git commit -m 'feat(single-practice): medical'
+ 3041  git push
+ 3042  git add .
+ 3043  git commit -m 'feat(single-practice): warning'
+ 3044  git push
+ 3045  git add .
+ 3046  git commit -m 'feat(single-practice): warning'
+ 3047  gp
+ 3048  git add ,
+ 3049  git add .
+ 3050  git commit -m 'feat(single-practice): success'
+ 3051  git push
+ 3052  git merge develop
+ 3053  git pull
+ 3054  gcd
+ 3055  git reset --hard
+ 3056  gcd
+ 3057  git pull
+ 3058  git checkout p-single-practice
+ 3059  git pull
+ 3060  git merge develop
+ 3061  git add .
+ 3062  git commit -m 'Resolve conflicts'
+ 3063  git push
+ 3064  cd wp-content/themes/mavens-theme
+ 3065  yarn watch
+ 3066  gcd
+ 3067  git pull
+ 3068  git checkout p-single-practice
+ 3069  git pull
+ 3070  docker-machine start default
+ 3071  eval $(docker-machine env default)\n
+ 3072  cd Sites/mavens
+ 3073  docker-compose up
+ 3074  git add .
+ 3075  git commit -m 'fix(): headings'
+ 3076  git push
+ 3077  git add .
+ 3078  git commit -m 'fix(): git add .'
+ 3079  git commit -m 'fix(): icons columns'
+ 3080  git push
+ 3081  git add .
+ 3082  git commit -m 'fix(): icons'
+ 3083  git push
+ 3084  docker-machine start default
+ 3085  eval $(docker-machine env default)\n
+ 3086  docker-compose up
+ 3087  git pull
+ 3088  gatsby develop
+ 3089  ls
+ 3090  yarn install
+ 3091  gatsby develop
+ 3092  git reset --hard
+ 3093  gcm
+ 3094  git pull
+ 3095  gatsby develop
+ 3096  gcd
+ 3097  gatsby develop
+ 3098  cd wp-content/themes/mavens-theme
+ 3099  yarn watch
+ 3100  docker-machine start default
+ 3101  eval $(docker-machine env default)\n
+ 3102  cd Sites/mavens
+ 3103  docker-compose up
+ 3104  git pull
+ 3105  git add .
+ 3106  git commit -m 'fix(): Icons'
+ 3107  git push
+ 3108  git status
+ 3109  git push
+ 3110  cd ../../..
+ 3111  ls
+ 3112  cd ../..
+ 3113  cd Codes
+ 3114  mkdir WeatherApp
+ 3115  cd WeatherApp
+ 3116  vue create weatherapp
+ 3117  yarn serve
+ 3118  ls
+ 3119  cd weatherapp
+ 3120  yarn serve
+ 3121  la
+ 3122  yarn serve
+ 3123  npm install sass-loader --save-dev\n\n
+ 3124  yarn install sass-loader --save-dev
+ 3125  yarn install sass-loader
+ 3126  yarn add sass-loader
+ 3127  yarn serve
+ 3128  npm update --depth=9999 vue-loader
+ 3129  yarn update
+ 3130  yarn upgrate
+ 3131  yarn upgrade
+ 3132  yarn serve
+ 3133  ls
+ 3134  git pull
+ 3135  docker-compose up
+ 3136  composer install
+ 3137  b3JkZXJfaWQ9OTcyNTZ8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE3LTAxLTEyIDE2OjUyOjMy
+ 3138  composer install
+ 3139  brew install docker-machine-nfs
+ 3140  docker-machine-nfs default
+ 3141  docker-compose up
+ 3142  cd wp-content/themes/mavens-theme
+ 3143  git checkout -b 'integrate-case-studies'
+ 3144  clear
+ 3145  git status
+ 3146  git reset --hard
+ 3147  git status
+ 3148  clear
+ 3149  git commit -m 'wip()'
+ 3150  git add .
+ 3151  git commit -m 'wip()'
+ 3152  git push
+ 3153  git push --set-upstream origin integrate-case-studies
+ 3154  git fetch --all
+ 3155  git merge integrate-frontpage
+ 3156  git merge origin/integrate-frontpage
+ 3157  docker-machine start default
+ 3158  eval $(docker-machine env default)\n
+ 3159  cd Sites/mavens
+ 3160  docker-compose up
+ 3161  cd wp-content/themes/mavens-theme
+ 3162  yarn watch
+ 3163  exit
+ 3164  git add .
+ 3165  git commit -m 'wip()'
+ 3166  gcd
+ 3167  git pull
+ 3168  git checkout integrate-case-studies 
+ 3169  git merge develop
+ 3170  git add .
+ 3171  git commit -m 'feat(): Integrate case studies'
+ 3172  git push
+ 3173  docker-machine start default
+ 3174  eval $(docker-machine env default)\n
+ 3175  cd Sites
+ 3176  cd mavens
+ 3177  docker-compose up
+ 3178  git pull
+ 3179  git checkout integrate-case-studies
+ 3180  git pull
+ 3181  cd wp-content/themes/mavens-theme
+ 3182  git pull
+ 3183  yarn watch
+ 3184  git pull
+ 3185  git status
+ 3186  gcd
+ 3187  git pull
+ 3188  git status
+ 3189  git pull
+ 3190  git checkout -b 'integrate-contact'
+ 3191  git pull
+ 3192  git add .
+ 3193  git commit -m 'feat(): Integrate contact'
+ 3194  git push
+ 3195  form
+ 3196  git push --set-upstream origin integrate-contact
+ 3197  gcd
+ 3198  git pull
+ 3199  git checkout develop-review
+ 3200  yarn watch
+ 3201  exit
+ 3202  git add .
+ 3203  git commit -m 'feat(): Single practice info-dark'
+ 3204  git push
+ 3205  git rev-parse HEAD
+ 3206  git reverse 875331d56b9f21d97957280993e073283eba900f
+ 3207  git revert 875331d56b9f21d97957280993e073283eba900f
+ 3208  git checkout -b 'p-single-practices-info-dark'
+ 3209  git add .
+ 3210  git commit -m 'feat(): Single practice info-dark'
+ 3211  git push
+ 3212  git push --set-upstream origin p-single-practices-info-dark
+ 3213  git add .
+ 3214  git comit -m 'fix(): img'
+ 3215  git commit -m 'fix(): img'
+ 3216  git push
+ 3217  git checkout develop-review
+ 3218  git pull
+ 3219  git log --oneline
+ 3220  git rev-parse HEAD
+ 3221  git revert 5b134b62d8ec820d70e88eb6704494140a097fb3
+ 3222  git push
+ 3223  git checkout 'p-single-practices-info-dark'
+ 3224  git merge develop-review
+ 3225  git add .
+ 3226  git commit -m 'Resolve conflicts'
+ 3227  git push
+ 3228  git checkout develop-review 
+ 3229  git pull
+ 3230  git checkout -b 'p-single-practice-error'
+ 3231  git status
+ 3232  clear
+ 3233  git clear -fd
+ 3234  git clean -fd
+ 3235  git reset --hard
+ 3236  git clean -fd
+ 3237  git add .
+ 3238  git commit -m 'feat(): Single practice error'
+ 3239  git push
+ 3240  git push --set-upstream origin p-single-practice-error
+ 3241  git checkout p-single-practice-info-dark
+ 3242  git checkout p-single-practices-info-dark
+ 3243  cd wp-content/m
+ 3244  git checkout p-single-practices-info-dark
+ 3245  ls
+ 3246  cd wp-content/themes/mavens-theme
+ 3247  git checkout p-single-practices-info-dark
+ 3248  git add .
+ 3249  git status
+ 3250  git reset --hard
+ 3251  git add .
+ 3252  git status
+ 3253  git push
+ 3254  git clear -fd
+ 3255  git clean -fd
+ 3256  git add .
+ 3257  git status
+ 3258  git add .
+ 3259  git commit -m 'fix(): template'
+ 3260  git push
+ 3261  gcd
+ 3262  git pull
+ 3263  cd Sites/mavens
+ 3264  docker-machine start default
+ 3265  eval $(docker-machine env default)\n
+ 3266  docker-compose up
+ 3267  clear
+ 3268  yarn watch
+ 3269  git checkout -b 'p-case-study'
+ 3270  git checkout -b 'integrate-case-study'
+ 3271  git pull
+ 3272  git add .
+ 3273  git commit -m 'wip()'
+ 3274  git push
+ 3275  git push --set-upstream origin integrate-case-study
+ 3276  git checkout integrate-single-practice
+ 3277  git pull
+ 3278  git checkout integrate-case-studies
+ 3279  git checkout integrate-case-study
+ 3280  git merge integrate-single-practice
+ 3281  git add .
+ 3282  git commit -m 'feat(): Integrate case study'
+ 3283  git push
+ 3284  git add .
+ 3285  git commit -m 'fix(): Hero'
+ 3286  git push
+ 3287  gcd
+ 3288  git pull
+ 3289  git status
+ 3290  git pull
+ 3291  docker-machine start default
+ 3292  eval $(docker-machine env default)\n
+ 3293  cd Sites/mavens
+ 3294  docker-compose up
+ 3295  yarn watch
+ 3296  cd wp-content/themes/mavens-theme
+ 3297  yarn watch
+ 3298  gcd
+ 3299  git pull
+ 3300  git checkout -b 'f-careers-content-size'
+ 3301  git add .
+ 3302  git commit -m 'fix(): Font size in the content'
+ 3303  git push
+ 3304  git push --set-upstream origin f-careers-content-size
+ 3305  gcd
+ 3306  git pull
+ 3307  git reset --hard
+ 3308  git checkout -b 'f-careers-container-width'
+ 3309  git add .
+ 3310  git commit -m 'fix(): Change container width'
+ 3311  git push
+ 3312  git push --set-upstream origin f-careers-container-width
+ 3313  gcd
+ 3314  git pull
+ 3315  git checkout -b 'f-case-study-quote-text'
+ 3316  git add .
+ 3317  git commit -m 'fix(): Change font-weight'
+ 3318  git push
+ 3319  git push --set-upstream origin f-case-study-quote-text
+ 3320  gcd
+ 3321  git pull
+ 3322  git checkout -b 'f-careers-font-size'
+ 3323  git add .
+ 3324  git commit -m 'fix(): Change font-size'
+ 3325  git push
+ 3326  git push --set-upstream origin f-careers-font-size
+ 3327  gcd
+ 3328  git pull
+ 3329  git checkout -b 'f-quote-space'
+ 3330  git add .
+ 3331  git commit -m 'fix(): Change spaces'
+ 3332  git push
+ 3333  git push --set-upstream origin f-quote-space
+ 3334  gcd
+ 3335  git pull
+ 3336  git checkout -b 'f-case-study-badges-space'
+ 3337  git add .
+ 3338  git commit -m 'fix(): Change space between badges'
+ 3339  git push
+ 3340  git push --set-upstream origin f-case-study-badges-space
+ 3341  npm install
+ 3342  yarn install
+ 3343  git status
+ 3344  git add .
+ 3345  git commit -m 'style()'
+ 3346  git push
+ 3347  git add .
+ 3348  git commit -m 'fix(): Change paragraph to div'
+ 3349  git push
+ 3350  gcd
+ 3351  git checkout -b 'f-careers-space-button'
+ 3352  git add .
+ 3353  git commit -m 'fix(): Change paragraph with content to div'
+ 3354  git push
+ 3355  git push --set-upstream origin f-careers-space-button
+ 3356  gcd
+ 3357  git pull
+ 3358  git checkout f-case-study-quote-text
+ 3359  git pull
+ 3360  yarn watch
+ 3361  git checkout fix-about-roots-headings
+ 3362  git checkout f-careers-space-button
+ 3363  git checkout fix-about-roots-headings
+ 3364  git checkout fix-practices-thumbnail-circle
+ 3365  git checkout fix-practices-thumbnails-circle
+ 3366  git pull
+ 3367  git checkout fix-about-roots-headings
+ 3368  git pull
+ 3369  git checkout fix-practices-slider-section
+ 3370  git pull
+ 3371  git checkout fix-about-roots-headings
+ 3372  git pull
+ 3373  gcd
+ 3374  git pull
+ 3375  git status
+ 3376  git reset --hard
+ 3377  gcd
+ 3378  git pull
+ 3379  git checkout 146-about-missing-second-line-of-words-slider
+ 3380  git pull
+ 3381  git reset --hard
+ 3382  git clear --fd
+ 3383  git clean --fd
+ 3384  git clean -fd
+ 3385  yarn watch
+ 3386  gcd
+ 3387  git pull
+ 3388  git checkout 130-single-product-missing-panel-logos
+ 3389  git pul
+ 3390  git pull
+ 3391  gcd
+ 3392  git pull
+ 3393  git checkout -b 'fix-commercial-focused-products'
+ 3394  git pull
+ 3395  clear
+ 3396  gcd
+ 3397  git pull
+ 3398  docker-machine start default
+ 3399  eval $(docker-machine env default)\n
+ 3400  cd Sites/mavens
+ 3401  docker-compose up
+ 3402  cd wp-content/themes
+ 3403  yarn watch
+ 3404  cd mavens-theme
+ 3405  yarn watch
+ 3406  git add .
+ 3407  git commit -m 'fix(): Change space'
+ 3408  git push
+ 3409  git pull
+ 3410  git checkout -b 'single-study-spacing-slider'
+ 3411  git add .
+ 3412  git commit -m 'fix(): Change space in slider'
+ 3413  git push
+ 3414  git push --set-upstream origin single-study-spacing-slider
+ 3415  git add .
+ 3416  git commit -m 'fix(): Change space in top section'
+ 3417  git puh
+ 3418  git push
+ 3419  gcd
+ 3420  git pull
+ 3421  git checkout -b '82-commercial-focused-products'
+ 3422  git add .
+ 3423  git commit -m 'fix(): Change spacing in heading'
+ 3424  git push
+ 3425  git push --set-upstream origin 82-commercial-focused-products
+ 3426  git merge develop
+ 3427  gcd
+ 3428  git pull
+ 3429  git reset
+ 3430  git reset --hard
+ 3431  git pull
+ 3432  git reset --hard
+ 3433  git add .
+ 3434  git reset --hard
+ 3435  git checkout -b '93-icons cntainer-should-have-a-small-padding'
+ 3436  git checkout -b '93-icons cntainer-should-hav'
+ 3437  git checkout -b '93-icons-cntainer-should-have-a-small-padding'
+ 3438  git add .
+ 3439  git commit -m 'fix(): Add padding on the sides'
+ 3440  git push
+ 3441  git push --set-upstream origin 93-icons-cntainer-should-have-a-small-padding
+ 3442  gcd
+ 3443  git pull
+ 3444  git add .
+ 3445  git reset --hard
+ 3446  git checkout -b '71-space-between-heading-and-button'
+ 3447  git reset --hard
+ 3448  git add .
+ 3449  git commit -m 'fix(): Change space between heading and more button'
+ 3450  git push
+ 3451  git push --set-upstream origin 71-space-between-heading-and-button
+ 3452  composer up -a
+ 3453  docker-compose -a
+ 3454  docker-compose help up
+ 3455  docker-compose up --build
+ 3456  docker-compose rm app
+ 3457  docker-compose up
+ 3458  gcd
+ 3459  git pull
+ 3460  git reset --hard
+ 3461  git pull
+ 3462  git reset --hard
+ 3463  git pull
+ 3464  git reset --hard
+ 3465  git reset --hard origin/develop
+ 3466  git checkout -b '72-missing-grid-image'
+ 3467  git add .
+ 3468  git commit -m 'fix(): Add and positioning grid image in hero'
+ 3469  git push
+ 3470  git push --set-upstream origin 72-missing-grid-image
+ 3471  git add .
+ 3472  git commit -m 'fix(): Amendments for spaces and size of logos'
+ 3473  git push
+ 3474  git pull
+ 3475  yarn watch
+ 3476  gatsby develop
+ 3477  yarn watch
+ 3478  cd wp-content/themes/mavens-theme
+ 3479  yarn watch
+ 3480  docker-machine start default
+ 3481  eval $(docker-machine env default)\n
+ 3482  cd Sites/mavens
+ 3483  docker-compose up
+ 3484  gcd
+ 3485  git pull
+ 3486  git reset --hard origin/develop
+ 3487  git pull
+ 3488  clear
+ 3489  git checkout -b '78-space-between-icons'
+ 3490  git add .
+ 3491  git commit -m 'fix(): Change space between icons and content'
+ 3492  git push
+ 3493  git push --set-upstream origin 78-space-between-icons
+ 3494  gcd
+ 3495  git pull
+ 3496  git checkout -b '114-footer-space-between-logo-and-menu'
+ 3497  git add .
+ 3498  git commit -m 'fix(): Change space between logo and menu on mobile'
+ 3499  git push
+ 3500  git push --set-upstream origin 114-footer-space-between-logo-and-menu
+ 3501  gcd
+ 3502  git pull
+ 3503  git checkout -b '84-solutions-spacings'
+ 3504  git add .
+ 3505  git commit -m 'fix(): Spacings'
+ 3506  git push
+ 3507  git push --set-upstream origin 84-solutions-spacings
+ 3508  gcd
+ 3509  git pull
+ 3510  git checkout -b '87-products-solutions'
+ 3511  git add .
+ 3512  git commit -m 'fix(): Spaces'
+ 3513  git push
+ 3514  git push --set-upstream origin 87-products-solutions
+ 3515  gcd
+ 3516  git reset --hard
+ 3517  gcd
+ 3518  git pull
+ 3519  git checkout -b '152-button-text'
+ 3520  git checkout -b '152-menu-button-text'
+ 3521  git add .
+ 3522  git commit -m 'fix(): Amendment text in menu button'
+ 3523  git push
+ 3524  git push --set-upstream origin 152-menu-button-text
+ 3525  gcd
+ 3526  git checkout 72-missing-grid-image
+ 3527  git pull
+ 3528  git add .
+ 3529  git commit -m 'fix(): CR'
+ 3530  git push
+ 3531  gcd
+ 3532  git pull
+ 3533  git checkout '152-menu-button-text'
+ 3534  git add .
+ 3535  git commit -m 'fix(): Change unit of letter-spacing property'
+ 3536  git push
+ 3537  gcd
+ 3538  git pull
+ 3539  git reset --hard
+ 3540  git pull
+ 3541  git checkout -b '110--user-artboard-rwd'
+ 3542  git add .
+ 3543  git status
+ 3544  git add .
+ 3545  git commit -m 'fix(): Reducing the artwork width'
+ 3546  git push]
+ 3547  git push
+ 3548  git push --set-upstream origin 110--user-artboard-rwd
+ 3549  gcd
+ 3550  git pull
+ 3551  git checkout -b '75-space-betwee-square-slider-elements'
+ 3552  git add .
+ 3553  git status
+ 3554  git commit -m 'fix(): Change space between elements of squere slider'
+ 3555  git push
+ 3556  git push --set-upstream origin 75-space-betwee-square-slider-elements
+ 3557  git reset --hard
+ 3558  gcd
+ 3559  git reset --hard
+ 3560  git pull
+ 3561  git checkout -b '141-swiping-out-of-viewport'
+ 3562  git add .
+ 3563  git commit -m 'fix(): Disable swiping out of vieport'
+ 3564  git push
+ 3565  git push --set-upstream origin 141-swiping-out-of-viewport
+ 3566  git reset --hard
+ 3567  git checkout '87-products-solutions'
+ 3568  git add .
+ 3569  git commit -m 'fix(): Remove duplicated content'
+ 3570  git push
+ 3571  docker-machine start default
+ 3572  eval $(docker-machine env default)\n
+ 3573  cd Sites/mavens
+ 3574  docker-compose up
+ 3575  cd wp-content/themes/mavens-theme
+ 3576  yarn watch
+ 3577  gcd
+ 3578  git pull
+ 3579  git checkout -b '118-footer-line-height'
+ 3580  ga .
+ 3581  gc
+ 3582  gp
+ 3583  git push --set-upstream origin 118-footer-line-height
+ 3584  gc -m
+ 3585  cdm
+ 3586  gcm
+ 3587  gcd
+ 3588  git pull
+ 3589  gp
+ 3590  git checkout -b '111-frontpage-peeked-items'
+ 3591  clear
+ 3592  ga .
+ 3593  git commit -m 'fix(): Enlarge peek property for practices slider'
+ 3594  gp
+ 3595  git push --set-upstream origin 111-frontpage-peeked-items
+ 3596  gd .
+ 3597  git add .
+ 3598  git status
+ 3599  git reset --hard
+ 3600  gcd
+ 3601  git pull
+ 3602  git checkout -b '151-gradient-background'
+ 3603  ga.
+ 3604  git add .
+ 3605  git status
+ 3606  git commit -m 'fix(): Hero gradient background'
+ 3607  gp
+ 3608  git push --set-upstream origin 151-gradient-background
+ 3609  gcd
+ 3610  git pull
+ 3611  gcd
+ 3612  gp
+ 3613  git reset --hard origin/develop
+ 3614  git pull
+ 3615  docker-machine
+ 3616  docker-machine start default
+ 3617  eval $(docker-machine env default)\n
+ 3618  git reset --hard
+ 3619  git pull
+ 3620  gatsby develop
+ 3621  npm i -g gatsby-cli
+ 3622  yarn install
+ 3623  yarn upgrade
+ 3624  gatsby develop\n: 1568809475:0;gatsby develop
+ 3625  yarn add ga
+ 3626  yarn global add gatsby-cli
+ 3627  gatby new tet
+ 3628  gatsby new tet
+ 3629  cd ..
+ 3630  gatsby new gatsby-portfolio
+ 3631  gatsby new portfolio
+ 3632  cd portfolio
+ 3633  gatsby develop
+ 3634  git clone git@github.com:bartlomiej-krakowski/portfolio.git
+ 3635  git add .
+ 3636  gi status
+ 3637  git status
+ 3638  git init
+ 3639  git add README.md
+ 3640  git add .
+ 3641  git status
+ 3642  git commit -m "chore(): Initial commit"
+ 3643  git add .
+ 3644  git commit -m "chore(): Initial commit"
+ 3645  git remote add origin git@github.com:bartlomiej-krakowski/portfolio.git
+ 3646  cd ..
+ 3647  cd ~
+ 3648  cd Codes
+ 3649  gatsby new portfolio
+ 3650  git init
+ 3651  cd portfolio
+ 3652  git init
+ 3653  git add .
+ 3654  git status
+ 3655  git init
+ 3656  git add .
+ 3657  git add README.md
+ 3658  git commit -m 'chore(): Initial commit'
+ 3659  git remote add origin git@github.com:bartlomiej-krakowski/portfolio.git
+ 3660  git push -u origin master
+ 3661  gatsby develop
+ 3662  npm install --save gatsby-plugin-styled-components styled-components babel-plugin-styled-components
+ 3663  yarn add gatsby-plugin-styled-components styled-components babel-plugin-styled-components
+ 3664  git add .
+ 3665  git commit -m 'feat(): Add theme provider, layout and utilities'
+ 3666  git push
+ 3667  git add .
+ 3668  git commit -m 'feat(): Add additional colors'
+ 3669  gp
+ 3670  ga
+ 3671  ga .
+ 3672  git commit -m 'feat(): Change structure of fonts variables'
+ 3673  gp
+ 3674  ga .
+ 3675  git commit -m 'fix(): Restructuring layout'
+ 3676  p
+ 3677  gp
+ 3678  ga .
+ 3679  git comit -m 'style(): Remove reduntant code'
+ 3680  git commit -m 'style(): Remove reduntant code'
+ 3681  gp
+ 3682  ga .
+ 3683  git commit -m 'feat(): Add components page'
+ 3684  gp
+ 3685  ga .
+ 3686  git commit -m 'style(): Remove reduntant components'
+ 3687  gp
+ 3688  gcd
+ 3689  git checkout -b 'develop'
+ 3690  git checkot -b '1-button'
+ 3691  git checkout -b '1-button'
+ 3692  git status
+ 3693  ga .
+ 3694  git commit -m 'feat(): Introduce button component'
+ 3695  gp
+ 3696  git push --set-upstream origin 1-button
+ 3697  ga .
+ 3698  git status
+ 3699  git commit -m 'feat(): Restructuring styled'
+ 3700  gp
+ 3701  gatsby develop
+ 3702  xcode-select --install
+ 3703  xcode-select --install\n
+ 3704  make env\n
+ 3705  make deps
+ 3706  cd Sites/
+ 3707  ls
+ 3708  cd segment
+ 3709  make env\n
+ 3710  make deps
+ 3711  make dev
+ 3712  clear
+ 3713  xcode-select --install
+ 3714  make env
+ 3715  sudo make env
+ 3716  gem install eventmachine -v '1.2.7' --source\n'https://rubygems.org/'
+ 3717  sudo gem install eventmachine -v '1.2.7' --source 'https://rubygems.org/'
+ 3718  sudo make env
+ 3719  sudo make deps
+ 3720  sudo make dev
+ 3721  gem install jekyll
+ 3722  sudo gem install jekyll
+ 3723  sudo make dev
+ 3724  sudo gem install jekyll
+ 3725  sudo make dev
+ 3726  brew install rubby
+ 3727  brew install ruby
+ 3728  sudo make dev
+ 3729  sudo gem install jekyll
+ 3730  sudo make dev
+ 3731  make dev
+ 3732  jekkyl -v
+ 3733  jekyll -v
+ 3734  gem install bundler jekyll
+ 3735  sudo gem install bundler jekyll
+ 3736  jekyll -v
+ 3737  sudo gem install jekyll
+ 3738  jekyll -v
+ 3739  sudo xcode-select --install
+ 3740  brew install rbenv
+ 3741  eval "$(rbenv init -)"
+ 3742  rbenv install 2.3.0
+ 3743  rbenv global 2.3.0
+ 3744  git reset --hard
+ 3745  gatsby develop
+ 3746  gp
+ 3747  git pull
+ 3748  git branch --set-upstream-to=origin/develop
+ 3749  git pull
+ 3750  git checkout -b '2-git pull origin/develop'
+ 3751  git pull origin/develop'\n\n\nw\n\n''
+ 3752  git chekcout origin/develop
+ 3753  git checkout origin/develop
+ 3754  git pull
+ 3755  git pull develop
+ 3756  nano /root/.ssh/id_rsa.pub
+ 3757  nano ~/root/.ssh/id_rsa.pub
+ 3758  git push
+ 3759  git push --set-upstream origin develop
+ 3760  git pull
+ 3761  gatsby develop
+ 3762  gcm
+ 3763  git pull
+ 3764  gcd
+ 3765  git merge origin/master
+ 3766  gatsby develop
+ 3767  git checkout  '1-button'
+ 3768  ga .
+ 3769  git comiit -m 'style(): Change name of button component'
+ 3770  git commit -m 'style(): Change name of button component'
+ 3771  gp
+ 3772  gc -b '4-headline'
+ 3773  git checkout -b '4-headline'
+ 3774  gcm
+ 3775  giyt pull
+ 3776  git pull
+ 3777  git checkout -b '4-headline'
+ 3778  git checkout '4-headline'
+ 3779  git merge master
+ 3780  gcm
+ 3781  gatsby develop
+ 3782  git pull
+ 3783  git status
+ 3784  git reset --hard
+ 3785  git pull
+ 3786  git checkout -b 'fix-dd-animated-text-behind-graphic'
+ 3787  yarn watch
+ 3788  cd wp-content/themes/mavens-theme
+ 3789  yarn watch
+ 3790  clear
+ 3791  docker-machine start default
+ 3792  eval "$(rbenv init -)"
+ 3793  eval $(docker-machine env default)\n
+ 3794  cd Sites/m
+ 3795  cd Sites/mavens
+ 3796  docker-compose up
+ 3797  gcd
+ 3798  git pull
+ 3799  git reset --hard origin/develop
+ 3800  ls
+ 3801  wp-content
+ 3802  cd themes/mavens-theme
+ 3803  git pull
+ 3804  git checkout -b 'fix-dd-animated-text-behind-graphic'
+ 3805  git add .
+ 3806  git status
+ 3807  git commit -m 'fix(): Add z-index to words slider'
+ 3808  git push
+ 3809  git push --set-upstream origin fix-dd-animated-text-behind-graphic
+ 3810  gcd
+ 3811  git pull
+ 3812  git checkout 'fix-dd-animated-text-behind-graphic'
+ 3813  git reset --hard
+ 3814  gcd
+ 3815  git pull
+ 3816  git checkout -b 'practices-header-graphics-too-small'
+ 3817  gatsby develop
+ 3818  git reset --hard
+ 3819  git pull
+ 3820  git checkout '4-headline'
+ 3821  git status
+ 3822  git add .
+ 3823  git status
+ 3824  gs
+ 3825  git commit -m 'feat(): Introduce headline component'
+ 3826  gp
+ 3827  git push --set-upstream origin 4-headline
+ 3828  ga .
+ 3829  git commit -m 'fix(): Change structure'
+ 3830  gp
+ 3831  gcm
+ 3832  git pull
+ 3833  git checkout -b '6-number-indicators'
+ 3834  ga .
+ 3835  git commit -m 'feat(): Introduce number indicators'
+ 3836  gp
+ 3837  git push --set-upstream origin 6-number-indicators
+ 3838  docker-machine start default
+ 3839  eval $(docker-machine env default)\n
+ 3840  cd Sites/mavens
+ 3841  docker-compose up
+ 3842  cd wp-content/themes/mavens-theme
+ 3843  yarn watch
+ 3844  exit
+ 3845  git pull
+ 3846  git merge develop
+ 3847  git merge origin/develop
+ 3848  git status
+ 3849  git reset --hard
+ 3850  gcd
+ 3851  git pull
+ 3852  git checkout -b 'fix-grid-icon-states'
+ 3853  git add .
+ 3854  git commit -m 'fix(): Fix hover and click states for grid cion component'
+ 3855  gp
+ 3856  git push --set-upstream origin fix-grid-icon-states
+ 3857  gcd
+ 3858  git pull
+ 3859  git checkout -b 'fix-words-slider'
+ 3860  ga .
+ 3861  git commit -m 'fix(): Fix words slider'
+ 3862  gp
+ 3863  git push --set-upstream origin fix-words-slider
+ 3864  git add .
+ 3865  git commit -m 'style(): Remove reduntant comment'
+ 3866  gp
+ 3867  gatsby develop
+ 3868  ls
+ 3869  cd ..
+ 3870  ls
+ 3871  cd wp-content/themes
+ 3872  cd m
+ 3873  cd mavens-theme
+ 3874  git log -2 --oneline --index.php
+ 3875  git log -2 --oneline -- index.php
+ 3876  gpl
+ 3877  git pull
+ 3878  git checkout -b 'fix-ribbon'
+ 3879  yarn watch
+ 3880  wp-content/themes/mavens-theme
+ 3881  git pull
+ 3882  gcd
+ 3883  git pull
+ 3884  git checkout -b 'fix-ribbon'
+ 3885  yarn watch
+ 3886  ga .
+ 3887  git status
+ 3888  git commit -n
+ 3889  git commit -m 'fix(): Change width of headline & change line-height'
+ 3890  gp
+ 3891  git push --set-upstream origin fix-ribbon
+ 3892  git reset --hard
+ 3893  gcd
+ 3894  git pull
+ 3895  git checkout -b 'fix-carousel-photo-fade'
+ 3896  git add .
+ 3897  git status
+ 3898  git commit -m 'fix(): Change overlay on slides'
+ 3899  gp
+ 3900  git push --set-upstream origin fix-carousel-photo-fade
+ 3901  ga .
+ 3902  git commit -m 'fix(): Add transition'
+ 3903  gp
+ 3904  git rev-parse HEAD\n
+ 3905  git reset --hard
+ 3906  git revert b9745d1f988ba7c48c741e5e6e2d60491a2668a3
+ 3907  git push
+ 3908  git status
+ 3909  git add .
+ 3910  git commit -m 'Revert'
+ 3911  git push
+ 3912  git add .
+ 3913  git commit -m 'Revert transition'
+ 3914  gp
+ 3915  git reset --hard
+ 3916  gcd
+ 3917  git pull
+ 3918  git checkout -b 'fix(): Add height restriction for icon wrapper'
+ 3919  git checkout -b 'fix-baselines-and-spacing-off'
+ 3920  ga .
+ 3921  git commit -m 'fix(): Add height restriction for icon wrapper'
+ 3922  gp
+ 3923  git status
+ 3924  ga .
+ 3925  git status
+ 3926  git commit -m 'fix(): Distance reduction'
+ 3927  gp
+ 3928  git push --set-upstream origin fix-baselines-and-spacing-off
+ 3929  cd wp-content/themes/mavens-theme
+ 3930  git add .
+ 3931  git status
+ 3932  git commit -m 'style(): Change of order properties on outline'
+ 3933  gp
+ 3934  gatsby develop
+ 3935  gcm
+ 3936  git pull
+ 3937  git checkout -b 'prop-types'
+ 3938  yarn add  prop-types\n
+ 3939  ga .
+ 3940  git commit -m 'fix(): Add proptypes'\n
+ 3941  gp
+ 3942  git push --set-upstream origin prop-types
+ 3943  gcm
+ 3944  git pull
+ 3945  git checkout -b '8-grid-lines'
+ 3946  git add .
+ 3947  git commit -m 'feat(): Introduce grid lines component'
+ 3948  gp
+ 3949  git push --set-upstream origin 8-grid-lines
+ 3950  ga .
+ 3951  git commit -m 'fix(): Change z-index'
+ 3952  gp
+ 3953  gatsby develop
+ 3954  gcm
+ 3955  git pull
+ 3956  git checkout -b '13-circle-headline'
+ 3957  yarn install
+ 3958  docker-compose up
+ 3959  docker-machinse start default
+ 3960  docker-machine start default
+ 3961  docker-compose up
+ 3962  eval $(docker-machine env default)\n
+ 3963  docker-machine start default
+ 3964  cd Sites/segment
+ 3965  docker-compose up
+ 3966  docker run -p 8080:4000
+ 3967  ls
+ 3968  cd _site
+ 3969  docker run -p 8080:4000
+ 3970  docker-machine stop default
+ 3971  docker-machine start default -p 4000
+ 3972  docker run -v $(pwd):/site bretfisher/jekyll new .
+ 3973  cd ..
+ 3974  docker run -v $(pwd):/site bretfisher/jekyll new .
+ 3975  docker run -p 8080:4000 -v $(pwd):/site bretfisher/jekyll-serve
+ 3976  mkdir test
+ 3977  docker run -v $(pwd):/site bretfisher/jekyll new .\n
+ 3978  docker run -v $(pwd):/site segment new .\n
+ 3979  docker run -v $(pwd):/site docsv2 new .\n
+ 3980  cd ..
+ 3981  docker run -v $(pwd):/site docsv2 new .\n
+ 3982  cd segment
+ 3983  docker run -v $(pwd):/site docsv2 new .\n
+ 3984  gem install bundler
+ 3985  sudo gem install bundler
+ 3986  make dev
+ 3987  sudo make dev
+ 3988  docker-compose up
+ 3989  docker-machine start default
+ 3990  docker-compose up
+ 3991  sudo docker-compose up
+ 3992  docker-machine start default
+ 3993  sudo docker-compose up
+ 3994  docker-machine start default
+ 3995  docker-compose up
+ 3996  sudo docker-compose up
+ 3997  sudo docker-machine start default
+ 3998  sudo chown -R $(whoami) $(brew --prefix)/*
+ 3999  docker-compose up
+ 4000  whoami
+ 4001  cd /usr/local/include
+ 4002  ls
+ 4003  sudo chown -R $(whoami) /usr/local/* /usr/local/.git
+ 4004  sudo chown -R $(whoami) /usr/local/*
+ 4005  docker-compose up
+ 4006  cd ~/Sites/segment
+ 4007  docker-compose up
+ 4008  cd ~/usr/lo
+ 4009  cd ~/usr/
+ 4010  cd ~/usr
+ 4011  cd ../..
+ 4012  cd ..
+ 4013  ls
+ 4014  cd ..
+ 4015  ls
+ 4016  cd usr
+ 4017  cd loca
+ 4018  cd local
+ 4019  ls
+ 4020  gem install bundler
+ 4021  sudo gem install bundler
+ 4022  sudo chown -R $(whoami) /usr/local\n\n
+ 4023  sudo chown -R $(whoami) /usr/local
+ 4024  cd ../..
+ 4025  sudo chown -R $(whoami) /usr/local
+ 4026  cd usr
+ 4027  chmod 777 local
+ 4028  sudo chmod 777 local
+ 4029  sudo gem install
+ 4030  bundle install
+ 4031  sudo bundle install
+ 4032  gem install eventmachine -v '1.2.7' --source 'https://rubygems.org/'
+ 4033  sudo gem install eventmachine -v '1.2.7' --source 'https://rubygems.org/'
+ 4034  bundle install
+ 4035  docker-compose up
+ 4036  docker-machine star defa
+ 4037  docker-machine start default
+ 4038  docker-compose up
+ 4039  docker-machine start default
+ 4040  cd ..
+ 4041  cd ~/Sites/segment
+ 4042  docker-compose up
+ 4043  brew install ruby
+ 4044  brew reinstall rub.
+ 4045  brew reinstall ruby
+ 4046  gem install bundler
+ 4047  docker-compose up
+ 4048  cd ../../..
+ 4049  cd ..
+ 4050  ls
+ 4051  cd ..
+ 4052  cd usr/lo
+ 4053  cd usr/local
+ 4054  ls
+ 4055  sudo chmod 777 bundle
+ 4056  sudo chmod 777 bundle/*
+ 4057  sudo chmod 777 bundle/*/*
+ 4058  sudo chmod 777 bundle/*/*/*
+ 4059  sudo chmod 777 bundle/*/*/*/*
+ 4060  cd ~/Sites/segment
+ 4061  docker-compose up
+ 4062  cd ..
+ 4063  cd ../../..
+ 4064  ls
+ 4065  cd usr
+ 4066  sudo chmod 777 local
+ 4067  cd local
+ 4068  sudo chmod 777 */*/*/*
+ 4069  sudo chmod 777 */*/*/
+ 4070  ls
+ 4071  cd bu
+ 4072  cd bundle
+ 4073  sudo chmod 777 */*/*
+ 4074  sudo chmod 777 */*/*/*
+ 4075  ls
+ 4076  cd ruby
+ 4077  sudo chmod 777 *
+ 4078  sudo chmod 777 */*
+ 4079  sudo chmod 777 */*/*
+ 4080  sudo chmod 777 */*/*/*
+ 4081  sudo chmod 777 */*/*/*/*
+ 4082  sudo chmod 777 */*/*/*/*/*
+ 4083  sudo chmod 777 */*/*/*/*/*/*
+ 4084  sudo chmod 777 */*/*/*/*/*/*/*
+ 4085  sudo chmod 777 */*/*/*/*/*/*/*/*
+ 4086  sudo chmod 777 */*/*/*/*/*/*/*/*/*
+ 4087  sudo chmod 777 */*/*/*/*/*/*/*/*/*/*
+ 4088  sudo chmod 777 */*/*/*/*/*/*/*/*/*/*/*
+ 4089  sudo chmod 777 */*/*/*/*/*/*/*/*/*/*/*/*
+ 4090  sudo chmod 777 */*/*/*/*/*/*/*/*/*/*/*/*/*
+ 4091  sudo chmod 777 */*/*/*/*/*/*/*/*/*/*/*/*/*/*
+ 4092  sudo chmod 777 */*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+ 4093  sudo chmod 777 */*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+ 4094  cd ~/Sites/segment
+ 4095  docker-compose up
+ 4096  make dev
+ 4097  sudo chmod 777 */*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/
+ 4098  sudo chown -R $(whoami) /usr/local\n\n
+ 4099  sudo chown -R $(whoami) /usr/local/*\n\n
+ 4100  sudo chown -R $(whoami) /usr/local/bundle\n\n
+ 4101  sudo chown -R $(whoami) /usr/local/bundle/*\n\n
+ 4102  sudo chown -R $(whoami) /usr/local/bundle/*/*\n\n
+ 4103  sudo chown -R $(whoami) /usr/local/bundle/*/*/*\n\n
+ 4104  sudo chown -R $(whoami) /usr/local/bundle/**/\n\n
+ 4105  sudo chown -R $(whoami) /usr/local/bundle/**/*\n\n
+ 4106  sudo chown -R $(whoami) /usr/local/bundle/*/**\n\n
+ 4107  docker-compose up
+ 4108  yarn config set ignore-engines true
+ 4109  docker-compose up
+ 4110  sudo docker-compose up
+ 4111  sudo docker-machine start default
+ 4112  docker-machine create segment-docs
+ 4113  eval $(docker-machine env default)\n
+ 4114  eval $(docker-machine env segment-docs)\n
+ 4115  docker-compose up
+ 4116  gem uninstall jekyll & gem install jekyll
+ 4117  sudo gem uninstall jekyll & gem install jekyll
+ 4118  cd ../../..
+ 4119  cd ..
+ 4120  ls
+ 4121  cd ,,
+ 4122  cd ..
+ 4123  ls
+ 4124  cd Library
+ 4125  cd Ruby
+ 4126  ls
+ 4127  cd Gems
+ 4128  sudo chmod 777 2.3.0
+ 4129  sudo chmod 777 2.3.0/*
+ 4130  sudo chmod 777 2.3.0/*/*
+ 4131  sudo chmod 777 2.3.0/**
+ 4132  sudo chmod 777 2.3.0/**/*
+ 4133  sudo gem uninstall jekyll & gem install jekyll
+ 4134  cd ~/Sites
+ 4135  ls
+ 4136  cd segment
+ 4137  ls
+ 4138  cd _site
+ 4139  python -m SimpleHTTPServer 8080
+ 4140  python -m SimpleHTTPServer 4000
+ 4141  ping localhost
+ 4142  cd ..
+ 4143  docker-compose up
+ 4144  ping localhost:4000
+ 4145  ping localhost
+ 4146  bundle exec jekyll serve --host 0.0.0.0
+ 4147  cd ~/Sites/segment
+ 4148  bundle exec jekyll serve --host 0.0.0.0
+ 4149  bundle install
+ 4150  sudo bundle install
+ 4151  bundle exec jekyll serve --host 0.0.0.0
+ 4152  jekyll -v
+ 4153  sudo gem install jekyll
+ 4154  bundle exec jekyll serve --host 0.0.0.0
+ 4155  jekyll -v
+ 4156  jekyll new test
+ 4157  gem install jekyll
+ 4158  docker -run
+ 4159  docker run -v 
+ 4160  sudo bundle update
+ 4161  jekyll
+ 4162  docker run -v ~/Sites/segment -p 4000:4000 -t -i fstab/jekyll bash -c 'cd /home/jekyll/doc-root; sudo bundle update; jekyll serve --host=0.0.0.0 --force_polling'\n
+ 4163  docker run -v ~/Sites/segment:/home/jekyll/doc-root -p 4000:4000
+ 4164  docker-compose run app jekyll new site
+ 4165  docker-machine start segment-docs segment-docs
+ 4166  docker-compose run app jekyll new site
+ 4167  docker-machine start segment-docs default
+ 4168  docker-compose run app jekyll new site
+ 4169  docker-compose up
+ 4170  docker-machine start segment-docs
+ 4171  docker-compose up
+ 4172  docker-machine stop segment-docs
+ 4173  docker-machine stop default
+ 4174  docker-machine start segment-docs
+ 4175  docker-compose up
+ 4176  ping http://0.0.0.0:4000/docsv2/
+ 4177  ping http://0.0.0.0:4000
+ 4178  ping http://0.0.0.0
+ 4179  CMD ["bundle", "exec", "jekyll", "serve", "--livereload", "--host", "0.0.0.0"]\n
+ 4180  CMD ["bundle", "exec", "jekyll", "serve", "--livereload", "--host", "0.0.0.0"]
+ 4181  CMD ["bundle", "exec", "jekyll", "serve", "--livereload", "--host", "0.0.0.0"]\n
+ 4182  ifconfig
+ 4183  ping 192.168.99.255
+ 4184  docker inspect go-server
+ 4185  docker run --rm --net compose_default -p 3000:3000 --name go-server -d gobuild
+ 4186  ping localhost
+ 4187  docker-compose up
+ 4188  docker-machine stop default
+ 4189  docker-machine stop segment-docs
+ 4190  docker-machine start segment-docs
+ 4191  docker-compose up
+ 4192  ping localhost
+ 4193  ping 0.0.0.0
+ 4194  docker-compose up
+ 4195  docker-machine stop segment-docs
+ 4196  docker-machine stop default
+ 4197  docker-compose up
+ 4198  docker-machine stop segment-docs
+ 4199  docker-machine stop default
+ 4200  eval $(docker-machine env segment-docs)\n
+ 4201  docker-compose up
+ 4202  docker-machine start segment-docs default
+ 4203  docker-machine start segment-docs
+ 4204  docker-compose up
+ 4205  gem uninstall ruby
+ 4206  brew remove rbenv
+ 4207  rm -rf ~/.rbenv
+ 4208  vi ~/.bash_profile
+ 4209  nano ~/.bash_profile
+ 4210  nano ~/.bashrc
+ 4211  . ~/.bash_profile && . ~/.bashrc
+ 4212  yarn upgrade
+ 4213  gatsby develop
+ 4214  ga .
+ 4215  git status
+ 4216  git commit -m 'feat(): Introduce circle headline component'
+ 4217  gp
+ 4218  git push --set-upstream origin 13-circle-headline
+ 4219  gcm
+ 4220  git pull
+ 4221  gpl
+ 4222  git checkout -b '12-menu-button'
+ 4223  gatsby develop
+ 4224  cd ../..
+ 4225  cd Codes
+ 4226  cd portfolio
+ 4227  gatsby develop
+ 4228  git pull
+ 4229  gatsby develop
+ 4230  yarn install
+ 4231  gatsby develop
+ 4232  yarn install
+ 4233  yarn watch
+ 4234  git status
+ 4235  git reset --hard
+ 4236  make dev
+ 4237  docker-machine start segment-docs
+ 4238  eval $(docker-machine env segment-docs)\n
+ 4239  cd Sites/segment
+ 4240  docker-compose up
+ 4241  make dev
+ 4242  sudo make dev
+ 4243  gatsby develop
+ 4244  clear
+ 4245  git add .
+ 4246  git commit -m 'feat(): Introduce menu button'
+ 4247  gp
+ 4248  git push --set-upstream origin 12-menu-button
+ 4249  gcm
+ 4250  git pull
+ 4251  git checkout -b '5-ribbon-logo'
+ 4252  git pull
+ 4253  gcd
+ 4254  git pull
+ 4255  docker-compose up
+ 4256  eval $(docker-machine env segment-docs)\n
+ 4257  docker-compose up
+ 4258  gcd
+ 4259  git pull
+ 4260  git reset --hard
+ 4261  git checkout -b '2-headings'
+ 4262  gcd
+ 4263  git checkout -b '1-colors'
+ 4264  ga .
+ 4265  git status
+ 4266  ga .
+ 4267  git status
+ 4268  git commit -m 'feat(): Prepare colors palette'
+ 4269  gp
+ 4270  git push --set-upstream origin 1-colors
+ 4271  git branch -u 1-colors
+ 4272  git branch -u upstream/1-colors
+ 4273  git branch --set-upstream-to=upstream/1-colors
+ 4274  git branch --set-upstream-to=upstream/1-colors 1-colors
+ 4275  gp
+ 4276  ga .
+ 4277  git commit -m 'fix(): Change names of colors'
+ 4278  gp
+ 4279  gcd
+ 4280  git checkout -b '2-headlings'
+ 4281  ga .
+ 4282  git commit -m 'feat(): Prepare headings'
+ 4283  gp
+ 4284  git push --set-upstream origin 2-headlings
+ 4285  git checkout  '1-colors'
+ 4286  ga .
+ 4287  git commit -m 'fix(): Change props map'
+ 4288  gp
+ 4289  gcd
+ 4290  git pull
+ 4291  git checkout -b '29-image-object'
+ 4292  ga .
+ 4293  git commit -m 'feat(): Introduce image object'
+ 4294  gp
+ 4295  @import "objects/wrapper";\n
+ 4296  git push --set-upstream origin 29-image-object
+ 4297  docker-compose up
+ 4298  ga .
+ 4299  git commit -m 'fix(): Remove reduntant code'
+ 4300  gp
+ 4301  gcd
+ 4302  git pull
+ 4303  git checkout -b '9-list-ordered'
+ 4304  docker-compose up
+ 4305  ga .
+ 4306  git commit -m 'feat(): Introduce ordered list'
+ 4307  gp
+ 4308  git push --set-upstream origin 9-list-ordered
+ 4309  git status
+ 4310  ga .
+ 4311  git push --set-upstream origin 9-list-ordered
+ 4312  ga .
+ 4313  git status
+ 4314  git commit -m 'chore(): Remove changes in Markfile'
+ 4315  gp
+ 4316  git checkout '2-headings'
+ 4317  git pull
+ 4318  git pull origin/2-headings
+ 4319  git checkout 2-headlings
+ 4320  ga .
+ 4321  git commit -m 'fix(): Remove reduntant code & change headings color'
+ 4322  gp
+ 4323  gcd
+ 4324  git pull
+ 4325  git checkout -b '8-list-unordered'
+ 4326  ga .
+ 4327  git commit -m 'feat(): Introduce unordered list'
+ 4328  gp
+ 4329  git push --set-upstream origin 8-list-unordered
+ 4330  ga .
+ 4331  git commit -m 'fix(): Change padding of nested list'
+ 4332  gp
+ 4333  git checkout '9-list-ordered'
+ 4334  gcd
+ 4335  git pull
+ 4336  gcd
+ 4337  git reset --hard
+ 4338  git pull
+ 4339  gcd
+ 4340  git pull
+ 4341  git checkout '9-list-ordered'
+ 4342  git merge develop
+ 4343  git status
+ 4344  git add .
+ 4345  git commit -m 'Resolve conflicts'
+ 4346  go
+ 4347  gp
+ 4348  ga .
+ 4349  git commit -m 'fix(): Change padding of nested list & change aligning'
+ 4350  gp
+ 4351  gcd
+ 4352  git pull
+ 4353  git checkout -b '7-anchor'
+ 4354  ga .
+ 4355  git commit -m 'feat(): Introduce anchor component'
+ 4356  gp
+ 4357  git push --set-upstream origin 7-anchor
+ 4358  gcd
+ 4359  git pull
+ 4360  git checkout -b '11-table'
+ 4361  ga .
+ 4362  git commit -m 'wip(): Structure and imports'
+ 4363  gp
+ 4364  git push --set-upstream origin 11-table
+ 4365  git checkout '2-headlings'
+ 4366  gcd
+ 4367  git reset --hard
+ 4368  gcd
+ 4369  git pull
+ 4370  git checkout '2-headlings'
+ 4371  git merge develop
+ 4372  ga .
+ 4373  git commit -m 'Resolve conflicts'
+ 4374  gp
+ 4375  ga .
+ 4376  git status
+ 4377  git commit -m 'fix(): Add specific variable for color'
+ 4378  gp
+ 4379  gcd
+ 4380  git pull
+ 4381  git checkout '9-list-ordered'
+ 4382  ga .
+ 4383  git commit -m 'fix(): Change padding-inline-start to padding'
+ 4384  gp
+ 4385  git checkout '8-list-unordered'
+ 4386  ga .
+ 4387  git commit -m 'fix(): Change padding-inline-start to padding & change variable of color'
+ 4388  gp
+ 4389  git checkout '9-list-ordered'
+ 4390  ga .
+ 4391  git commit -m 'fix(): Change font size of numbers'
+ 4392  gp
+ 4393  ga .
+ 4394  git commit -m 'refactor()'
+ 4395  git checkout '11-table'
+ 4396  git checkout '9-list-ordered'
+ 4397  ga .
+ 4398  git commit -m 'refactor()'
+ 4399  gp
+ 4400  git checkout '9-ordered-list'
+ 4401  git checkout '9-list-ordered'
+ 4402  ga .
+ 4403  git commit -m 'refactor()'
+ 4404  gp
+ 4405  git checkout '11-table'
+ 4406  git rev-parse HEAD
+ 4407  git revert 2f47eb022d32e78853a7b04244765865a206a4b0
+ 4408  gatsby develop
+ 4409  cler
+ 4410  clear
+ 4411  ga .
+ 4412  git commit -m 'fix(): Fix exports'
+ 4413  gp
+ 4414  git push --set-upstream origin 5-ribbon-logo
+ 4415  gatsby develop
+ 4416  ga .
+ 4417  git commit -m 'feat(): Introduce table'
+ 4418  gp
+ 4419  gcd
+ 4420  git pull
+ 4421  git checkout -b '32-alert-component'
+ 4422  docker-compose up
+ 4423  make dev
+ 4424  cd Sites/segment
+ 4425  make dev
+ 4426  eval $(docker-machine env segment-docs)\n
+ 4427  docker-compose up
+ 4428  ga .
+ 4429  git status
+ 4430  ga .
+ 4431  git status
+ 4432  ga .
+ 4433  git commit -m 'feat(): Introduce alert component'
+ 4434  gp
+ 4435  git push --set-upstream origin 32-alert-component
+ 4436  gcd
+ 4437  git pull
+ 4438  git checkout -b '21-list-steps'
+ 4439  git reset --hard
+ 4440  gcd
+ 4441  git pull
+ 4442  git checkout -b 'media-icon'
+ 4443  git add .
+ 4444  git status
+ 4445  git reset --hard
+ 4446  git add .
+ 4447  git status
+ 4448  ga .
+ 4449  git commit -m 'wip(): Structure'
+ 4450  gp
+ 4451  git checkout '32-alert-component'
+ 4452  ga .
+ 4453  git commit -m 'fix(): Change icon position'
+ 4454  gp
+ 4455  git checkout  'media-icon'
+ 4456  yarn add gsap
+ 4457  git status
+ 4458  ga .
+ 4459  git commit -m 'fix()'
+ 4460  gp
+ 4461  gdm
+ 4462  gcm
+ 4463  git pull
+ 4464  git checkout -b 'scroll-indicator'
+ 4465  yarn add gsap
+ 4466  gatsby develop
+ 4467  clear
+ 4468  gatsby develop
+ 4469  docker-machine start segment-docs segment-docs
+ 4470  eval $(docker-machine env segment-docs)\n
+ 4471  docker-compose up
+ 4472  docker-machine start segment-docs
+ 4473  docker-compose up
+ 4474  eval $(docker-machine env segment-docs)\n
+ 4475  docker-compose up
+ 4476  ga .
+ 4477  git commit -m 'wip()'
+ 4478  gp
+ 4479  gcd
+ 4480  git pull
+ 4481  git checkout 'media-icon'
+ 4482  git merge develop
+ 4483  ga .
+ 4484  git commit -m 'Merge develop'
+ 4485  gp
+ 4486  docker-compose up
+ 4487  git checkout '21-list-steps'
+ 4488  git reset --hard
+ 4489  git checkout '21-list-steps'
+ 4490  git pull
+ 4491  git reset --hard
+ 4492  git checkout 'media-icon'
+ 4493  git pull
+ 4494  ga .
+ 4495  git commit -m 'feat(): Introduce media icon'
+ 4496  gp
+ 4497  gcd
+ 4498  git pull
+ 4499  git checkout -b '21-list-steps'
+ 4500  git checkout -b '21-steps-list'
+ 4501  git checkout '21-list-steps'
+ 4502  git pull
+ 4503  git checkout 'media-icon'
+ 4504  git checkout '21-list-steps'
+ 4505  ga .
+ 4506  git commit -m 'wip()'
+ 4507  git checkout 'panel-icon'
+ 4508  git checkout 'media-icon'
+ 4509  ga .
+ 4510  git status
+ 4511  ga .
+ 4512  git commit -m 'refactor()'
+ 4513  gp
+ 4514  docker-compose up
+ 4515  ga .
+ 4516  git status
+ 4517  git commit -m 'refactor()'
+ 4518  gp
+ 4519  gcd
+ 4520  git pull
+ 4521  git checkout '20-list-steps'
+ 4522  git checkout '21-steps-list'
+ 4523  git checkout '21-list-steps'
+ 4524  git checkout table
+ 4525  git checkout 11-table
+ 4526  ga .
+ 4527  git commit -m 'wip()'
+ 4528  git checkout 11-table
+ 4529  git status
+ 4530  git reset --hard
+ 4531  git merge develop
+ 4532  ga .
+ 4533  git commit -m 'Merge develop'
+ 4534  gp
+ 4535  ga .
+ 4536  git commit -m 'fix(): Resolve conflicts'
+ 4537  gp
+ 4538  ga .
+ 4539  git status
+ 4540  git commit -m 'refactor()'
+ 4541  gp
+ 4542  git push --force
+ 4543  gcd
+ 4544  git pull
+ 4545  git checkout 11-table
+ 4546  git push origin/11-table
+ 4547  gcd
+ 4548  git push origin/11-table
+ 4549  git checkout 11-table
+ 4550  gcd
+ 4551  git checkout -b '11-table'
+ 4552  git pull
+ 4553  git checkout -b '11-table'
+ 4554  git checkout 11-table
+ 4555  git push -u origin 11-table
+ 4556  gcd
+ 4557  git pull
+ 4558  git checkout -b table
+ 4559  ga .
+ 4560  git commit -m 'feat(): Introduce refactored table'
+ 4561  gp
+ 4562  git push --set-upstream origin table
+ 4563  docker-machine start segment-doccs
+ 4564  eval $(docker-machine env segment-docs)\n
+ 4565  docker-machine start segment-docs
+ 4566  eval $(docker-machine env segment-docs)\n
+ 4567  docker-compose up
+ 4568  gcd
+ 4569  git pull
+ 4570  git checkout 21-list-steps 
+ 4571  docker-compose up
+ 4572  ga .
+ 4573  git status
+ 4574  git commit -m 'feat(): Introduce list steps'
+ 4575  gp
+ 4576  git push --set-upstream origin 21-list-steps
+ 4577  ga .
+ 4578  feat(): Add variant without heading
+ 4579  gp
+ 4580  fit commit -m feat(): Add variant without heading
+ 4581  fit commit -m 'feat(): Add variant without heading'
+ 4582  ga .
+ 4583  fit commit -m 'feat(): Add variant without heading'
+ 4584  git status
+ 4585  gp
+ 4586  git add .
+ 4587  git commit -m 'feat(): Add variant without heading'
+ 4588  gp
+ 4589  docker-machine run segment-docs
+ 4590  docker-machine start segment-docs
+ 4591  gcd
+ 4592  git pull
+ 4593  git checkout -b 'buttons'
+ 4594  eval $(docker-machine env segment-docs)\n
+ 4595  docker-machine start segment-docs
+ 4596  eval $(docker-machine env segment-docs)\n
+ 4597  docker-compose up
+ 4598  ga .
+ 4599  git status
+ 4600  git commit -m 'wip()'
+ 4601  git checkout 'media-icon'
+ 4602  git pull
+ 4603  gir reset --hard
+ 4604  git reset --hard
+ 4605  git clean --fd
+ 4606  git cleae --fd
+ 4607  git clear --fd
+ 4608  git clean -fd
+ 4609  ga .
+ 4610  git commit -m 'fix(): Change aligning icon & change line height'
+ 4611  gp
+ 4612  git checkout table
+ 4613  ga .
+ 4614  git commit -m 'fix(): CHange aligning and borders'
+ 4615  gp
+ 4616  git checkout 21-list-steps
+ 4617  ga .
+ 4618  git status
+ 4619  git commit -m 'fix(): Change li to div'
+ 4620  gp
+ 4621  ga .
+ 4622  git commit -m 'fix(): Remove reduntant font size'
+ 4623  gp
+ 4624  git cehckout media-icon
+ 4625  git checkout media-icon
+ 4626  ga .
+ 4627  git commit -m 'fix(): RWD'
+ 4628  gp
+ 4629  git checkout 'buttons'
+ 4630  ga .
+ 4631  gs
+ 4632  git status
+ 4633  ga .
+ 4634  git status
+ 4635  ga .
+ 4636  git commit -m 'wip(): Icon'
+ 4637  gp
+ 4638  git push --set-upstream origin buttons
+ 4639  docker-compose up
+ 4640  docker-machine start segment-docs segment-docs
+ 4641  docker-machine start segment-docs
+ 4642  eval $(docker-machine env segment-docs)\n
+ 4643  docker-compose up
+ 4644  eval $(docker-machine env segment-docs)\n
+ 4645  docker-compose up
+ 4646  ga .
+ 4647  git commit -m 'feat(): Introduce buttons'
+ 4648  gp
+ 4649  gcd
+ 4650  git pull
+ 4651  git reset --hard
+ 4652  git checkout -b 'breadcrumbs'
+ 4653  ga .
+ 4654  git commit -m 'wip()'
+ 4655  gp
+ 4656  git push --set-upstream origin breadcrumbs
+ 4657  git checkout 'buttons'
+ 4658  git pull
+ 4659  ga .
+ 4660  git commit -m 'fix(): Add new variant and remove text decoration'
+ 4661  gp
+ 4662  ga .
+ 4663  git commit -m 'fix(): Remove ine height'
+ 4664  gp
+ 4665  git checkout breadcrumbs
+ 4666  git reset --hard
+ 4667  ga .
+ 4668  git commit -m 'feat(): Introduce breadcrumbs component'
+ 4669  gp
+ 4670  gcd
+ 4671  git pull
+ 4672  git checkout -b 'panel-component'
+ 4673  ga .
+ 4674  git commit -m 'wip(): Structure'
+ 4675  gp
+ 4676  git push --set-upstream origin panel-component
+ 4677  ga .
+ 4678  git commit -m 'fix(): Add border radius'
+ 4679  gp
+ 4680  gatsby develop
+ 4681  clear
+ 4682  docker-machine start segment-docs
+ 4683  eval $(docker-machine env segment-docs)\n
+ 4684  docker-compose up
+ 4685  git pull
+ 4686  docker-compose up
+ 4687  eval $(docker-machine env segment-docs)\n
+ 4688  docker-compose up
+ 4689  ga .
+ 4690  git status
+ 4691  git commit -m 'feat(): Introduce panel component'
+ 4692  gp
+ 4693  ga .
+ 4694  git commit -m 'fix(): Change color'
+ 4695  gp
+ 4696  ga .
+ 4697  git commit -m 'fix(): Change color'
+ 4698  gp
+ 4699  ga .
+ 4700  git commit -m 'fix(): Add params in include'
+ 4701  gp
+ 4702  gcd
+ 4703  git pull
+ 4704  git checkout -b 'search'
+ 4705  git reset --hard
+ 4706  git clear -fd
+ 4707  git clean -fd
+ 4708  git reset --hard
+ 4709  git clean -fd
+ 4710  ga .
+ 4711  git status
+ 4712  git commit -m 'feat(): Introduce new styles for search'
+ 4713  gp
+ 4714  git push --set-upstream origin search
+ 4715  ga .
+ 4716  git commit -m 'fix(): Change paddings'
+ 4717  gp
+ 4718  gcd
+ 4719  git pull
+ 4720  git checkout search
+ 4721  gcd
+ 4722  git pull
+ 4723  git checkout -b 'menu-item'
+ 4724  git reset --hard
+ 4725  git checkout panel
+ 4726  git reset --hard
+ 4727  git checkout panel
+ 4728  git checkout panel-component
+ 4729  git add .
+ 4730  git status
+ 4731  git commit -m 'refactor(): separating the panel into a panel and callout'
+ 4732  gp
+ 4733  gcd
+ 4734  git pull
+ 4735  git checkout -b 'callout'
+ 4736  git reset --hard
+ 4737  ga .
+ 4738  git status
+ 4739  git clear -fd
+ 4740  git clean -fd
+ 4741  ga .
+ 4742  git status
+ 4743  git reset --hard
+ 4744  git clean -fd
+ 4745  ga .
+ 4746  git status
+ 4747  git commit -m 'feat(): Introduce callout component'
+ 4748  gp
+ 4749  git push --set-upstream origin callout
+ 4750  ga .
+ 4751  git commit -m 'fix(): Change order of classes'
+ 4752  gp
+ 4753  git checkout menu-item
+ 4754  git pull
+ 4755  git reset --hard
+ 4756  clear
+ 4757  clean
+ 4758  clear
+ 4759  ga .
+ 4760  git commit -m 'wip(): Structure'
+ 4761  gp
+ 4762  git push --set-upstream origin menu-item
+ 4763  gcd
+ 4764  git checkout breadcrumbs
+ 4765  git reset --hard
+ 4766  git checkout menu-item
+ 4767  ga .
+ 4768  git commit -m 'wip(): Basic styles'
+ 4769  gp
+ 4770  git checkout search
+ 4771  ga .
+ 4772  git commit -m 'style(): Change name of file'
+ 4773  gp
+ 4774  git checkout menu-item
+ 4775  ga .
+ 4776  git commit -m 'feat(): Nested lists'
+ 4777  gp
+ 4778  git checkout panel-component
+ 4779  ga .
+ 4780  git commit -m 'fix(): Minify svg pattern'
+ 4781  gp
+ 4782  git checkout menu-item
+ 4783  ga .
+ 4784  git commit -m 'feat(): Introduce basic styles and structure'
+ 4785  gp
+ 4786  git checkout panel
+ 4787  git checkout callout
+ 4788  git reset --hard
+ 4789  git pull
+ 4790  git clean -fd
+ 4791  gatsby develop
+ 4792  docker-machine start segment-docs
+ 4793  eval $(docker-machine env segment-docs)\n
+ 4794  docker-compose up
+ 4795  eval $(docker-machine env segment-docs)\n
+ 4796  docker-compose up
+ 4797  git reset --hard
+ 4798  git checkout menu-item
+ 4799  eval $(docker-machine env segment-docs)\n
+ 4800  docker-compose up
+ 4801  gatsby develop
+ 4802  ga .
+ 4803  git commit -m 'wip(): Scroll inidcator to refactor'
+ 4804  gp
+ 4805  git push --set-upstream origin scroll-indicator
+ 4806  gcm
+ 4807  git pull
+ 4808  \n<svg width="121px" height="121px" viewBox="0 0 121 121" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\n        <g id="Group" fill="#B620E0" stroke="#B620E0" stroke-width="3">\n            <path d="M60.5,1.5 C27.9151998,1.5 1.5,27.9151998 1.5,60.5 C1.5,93.0848002 27.9151998,119.5 60.5,119.5 C93.0848002,119.5 119.5,93.0848002 119.5,60.5 C119.5,27.9151998 93.0848002,1.5 60.5,1.5 Z M64.1063398,56.891336 L84.1646945,56.8824553 L84.1617772,63.0758846 L64.1097162,63.0843654 L64.1192959,83.1438536 L57.9259413,83.1409363 L57.9157616,63.0877419 L37.8582502,63.0976645 L37.8611675,56.904235 L57.9133104,56.8947125 L57.9040868,36.8374092 L64.0975162,36.8403266 L64.1063398,56.891336 Z" id="Combined-Shape"></path>\n        </g>\n        <path d="M41,60 L81,60" id="Line-2" stroke="#979797" stroke-width="3" stroke-linecap="square"></path>\n        <path d="M61,40 L61,80" id="Line-3" stroke="#979797" stroke-width="3" stroke-linecap="square"></path>\n    </g>\n</svg
+ 4809  git checkout -b '7-see-more-button'
+ 4810  git pull
+ 4811  gatsby develop
+ 4812  ga .
+ 4813  git commit -m 'wip(): Structure'
+ 4814  gp
+ 4815  ga .
+ 4816  git commit -m 'wip()'
+ 4817  gp
+ 4818  git push --set-upstream origin 7-see-more-button
+ 4819  ga .
+ 4820  git commit -m 'feat(): Introduce see more button'
+ 4821  gp
+ 4822  ga .
+ 4823  git commit -m 'fix(): Change rotation on hover'
+ 4824  gp
+ 4825  git checkout develop
+ 4826  git pull
+ 4827  git checkout scroll-indicator
+ 4828  ga .
+ 4829  git commit -m 'refactor(): Separate styles'
+ 4830  gp
+ 4831  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-7b62dc08aa9b4d8f88e2a5cf48b315ea; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp7c8cc580.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4832  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-298c92ad8aa74c32b12145317825647e; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp527f7df8.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4833  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-d3edae6f8a8b46019dfb8a46ad0e0e76; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp122550a1.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4834  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-efd0ee950c8441d9927e12484891f5bd; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp5c3118ed.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4835  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-3a2d4120bbde40cba80e04ede717dc08; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp4d76deb3.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4836  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-1f493737c80d478f923b8f83d3a85104; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp2e2af9dd.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4837  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-a0bee36ab1264419a924324c496efb01; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp4b4879e9.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4838  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-7e5485e1149144188e87e778c36558d0; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp4f4c230b.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4839  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-0ec1c4351b2d43a99f2e8187a64ab7b0; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp3ad6cf2b.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4840  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-625c108d27774aea87411c742b1f6d66; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp69af8a07.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4841  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-af9c43c65edb435cac1956349eb896eb; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp6df4d7c0.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4842  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-145b720d5e2c4b68a5c6ca16d38f3a46; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp4d4abbc3.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4843  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-bd2ffa459e074922aa91d85f04e1be30; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp5c85d007.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4844  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-4296be4a996147bcbdc64c7d8e7213ca; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp404a588f.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4845  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-ff5538e288104de795b43c5853069339; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp474e6acf.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4846  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-e2b20326de334aef9c12785e81a03041; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp2fd81659.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4847  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-4b13f2aa040248c1bf47efe9fc737487; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmpbe6099e.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4848  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-c486f5937c4d443f9973251fd4defbb6; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp6e588e59.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4849  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-0726c89782f746e192b39d4db66d97e5; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp4c8f9235.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4850  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-5676df6661124202b587aaa48f648646; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp31a019f3.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 4851  gatsby develop
+ 4852  ga .
+ 4853  git status
+ 4854  git commit -m 'fix(): Structure'
+ 4855  gp
+ 4856  gcm
+ 4857  git pull
+ 4858  git checkout f-grid-lines
+ 4859  git checkout -b f-grid-lines
+ 4860  ga .
+ 4861  git commit -m 'fix(): CHange positioning of grid lines'
+ 4862  gp
+ 4863  git push --set-upstream origin f-grid-lines
+ 4864  gcm
+ 4865  git pull
+ 4866  git reset --hard
+ 4867  git pull
+ 4868  11-random-shapes
+ 4869  git checkout -b 11-random-shapes
+ 4870  gatsby develop
+ 4871  docker-machine start segment-docs
+ 4872  git reset --hard
+ 4873  eval $(docker-machine env segment-docs)\n
+ 4874  docker-compose up
+ 4875  clear
+ 4876  gatsby develop
+ 4877  gcd
+ 4878  git pull
+ 4879  git reset --hard
+ 4880  git clean -fd
+ 4881  git pull
+ 4882  eval $(docker-machine env segment-docs)\n
+ 4883  docker-compose up
+ 4884  ga .
+ 4885  git status
+ 4886  git reset --hard
+ 4887  git checkout -b 'p-destinations-catalog'
+ 4888  eval $(docker-machine env segment-docs)\n
+ 4889  docker-compose up
+ 4890  eval $(docker-machine env segment-docs)\n
+ 4891  docker-compose up
+ 4892  eval $(docker-machine env segment-docs)\n
+ 4893  docker-compose up
+ 4894  cd ..
+ 4895  git clone git@gitlab.com:tonikstudio/pozyczkomocni/wp-pozyczkomocni-plugin.git
+ 4896  cd wp-pozyczkomocni-plugin
+ 4897  npm install
+ 4898  open .\n: 1570444486:0;open .
+ 4899  npm run prod
+ 4900  npm run build
+ 4901  docker-machine start segment-docs
+ 4902  eval $(docker-machine env segment-docs)\n
+ 4903  docker-compose up
+ 4904  eval $(docker-machine env segment-docs)\n
+ 4905  docker-compose up
+ 4906  eval $(docker-machine env segment-docs)\n
+ 4907  docker-compose up
+ 4908  eval $(docker-machine env segment-docs)\n
+ 4909  docker-compose up
+ 4910  git status
+ 4911  eval $(docker-machine env segment-docs)\n
+ 4912  git status
+ 4913  docker-compose up
+ 4914  eval $(docker-machine env segment-docs)\n
+ 4915  docker-compose up
+ 4916  eval $(docker-machine env segment-docs)\n
+ 4917  docker-compose up
+ 4918  eval $(docker-machine env segment-docs)\n
+ 4919  docker-compose up
+ 4920  eval $(docker-machine env segment-docs)\n
+ 4921  docker-compose up
+ 4922  eval $(docker-machine env segment-docs)\n
+ 4923  docker-compose up
+ 4924  eval $(docker-machine env segment-docs)\n
+ 4925  docker-compose up
+ 4926  eval $(docker-machine env segment-docs)\n
+ 4927  docker-compose up
+ 4928  eval $(docker-machine env segment-docs)\n
+ 4929  docker-compose up
+ 4930  eval $(docker-machine env segment-docs)\n
+ 4931  docker-compose up
+ 4932  eval $(docker-machine env segment-docs)\n
+ 4933  docker-compose up
+ 4934  eval $(docker-machine env segment-docs)\n
+ 4935  docker-compose up
+ 4936  ga .
+ 4937  git status
+ 4938  ga .
+ 4939  git status
+ 4940  git commit -m 'feat(): Introduce catalog page'
+ 4941  gp
+ 4942  git push --set-upstream origin p-destinations-catalog
+ 4943  gcm
+ 4944  git pull
+ 4945  git checkout staging
+ 4946  git pull
+ 4947  git checkout 'p-destinations-catalog'
+ 4948  git pull
+ 4949  ga .
+ 4950  git commit -m 'feat(): Change placeholder text'
+ 4951  gp
+ 4952  eval $(docker-machine env segment-docs)\n
+ 4953  docker-compose up
+ 4954  ga .
+ 4955  git status
+ 4956  ga .
+ 4957  git status
+ 4958  ga .
+ 4959  git commit -m 'fix(): Updating state, change behavior on click'
+ 4960  gp
+ 4961  git pull
+ 4962  ga .
+ 4963  git status
+ 4964  ga .
+ 4965  git commit -m 'fix(): Updating state, change behavior on click'
+ 4966  gp
+ 4967  git checkout staging
+ 4968  git pull
+ 4969  git checkout 'p-destinations-catalog'
+ 4970  eval $(docker-machine env segment-docs)\n
+ 4971  docker-compose up
+ 4972  ga .
+ 4973  git status
+ 4974  git reset --hard
+ 4975  ga .
+ 4976  git status
+ 4977  git commit -m 'fix(): Change size of arrow, add default border to links and change height of dropdown'
+ 4978  gp
+ 4979  ga.
+ 4980  git status
+ 4981  git commit -m 'fix(): Change height of list'
+ 4982  gp
+ 4983  git status
+ 4984  ga .
+ 4985  git commit -m 'fix(): Change height of list'
+ 4986  gp
+ 4987  gcs
+ 4988  git checkout staging
+ 4989  git pull
+ 4990  git checkout -b '28-accordion'
+ 4991  docker-machine start segment-docs
+ 4992  eval $(docker-machine env segment-docs)\n
+ 4993  docker-compose up
+ 4994  git status
+ 4995  eval $(docker-machine env segment-docs)\n
+ 4996  docker-compose up
+ 4997  eval $(docker-machine env segment-docs)\n
+ 4998  docker-compose up
+ 4999  eval $(docker-machine env segment-docs)\n
+ 5000  docker-compose up
+ 5001  ga .
+ 5002  git status
+ 5003  git commit -m 'feat(): Introduce accordion'
+ 5004  gp
+ 5005  git push --set-upstream origin 28-accordion
+ 5006  git checkout staging
+ 5007  git pull
+ 5008  git checkout -b '65-qa-right-sidebar'
+ 5009  eval $(docker-machine env segment-docs)\n
+ 5010  git checkout -b '65-qa-right-sidebar'
+ 5011  docker-compose up
+ 5012  eval $(docker-machine env segment-docs)\n
+ 5013  docker-compose up
+ 5014  git status
+ 5015  git reset --hard
+ 5016  ga .
+ 5017  git commit -m 'wip()'
+ 5018  gp
+ 5019  git push --set-upstream origin 65-qa-right-sidebar
+ 5020  git checkout -b '28-accordion'
+ 5021  git checkout '28-accordion'
+ 5022  eval $(docker-machine env segment-docs)\n
+ 5023  docker-compose up
+ 5024  docker-machine start segment-docs
+ 5025  eval $(docker-machine env segment-docs)\n
+ 5026  docker-compose up
+ 5027  git status
+ 5028  ga .
+ 5029  git status
+ 5030  git commit -m 'refactor()'
+ 5031  gp
+ 5032  git checkout 65-qa-right-sidebar 
+ 5033  eval $(docker-machine env segment-docs)\n
+ 5034  docker-compose up
+ 5035  ga .
+ 5036  ifconfig
+ 5037  eval $(docker-machine env segment-docs)\n
+ 5038  yarn add menuspy
+ 5039  docker-compose up
+ 5040  ga .
+ 5041  git status
+ 5042  ga .
+ 5043  git status
+ 5044  git commit -m 'fix(): Suport for mobile Safari, add anchor indicator, centering icons'
+ 5045  gp
+ 5046  git status
+ 5047  git reset --hard
+ 5048  git checkout staging
+ 5049  git pull
+ 5050  git checkout -b 'qa-64-media'
+ 5051  ga .
+ 5052  git status
+ 5053  git commit -m 'fix(): restriction of box height'
+ 5054  gp
+ 5055  git push --set-upstream origin qa-64-media
+ 5056  git checkout staging
+ 5057  git pull
+ 5058  git checkout -b 'qa-70-links'
+ 5059  git checkout -b 'qa-70-banner-links'
+ 5060  ga .
+ 5061  fix(): Add missing links to CTA Banner component
+ 5062  gp
+ 5063  git push --set-upstream origin qa-70-banner-links
+ 5064  gp
+ 5065  git status
+ 5066  ga .
+ 5067  git commit -m 'fix(): Add missing links to CTA Banner component'
+ 5068  gp
+ 5069  ga .
+ 5070  git reset --hard
+ 5071  git checkout staging
+ 5072  git checkout qa-70-banner-links 
+ 5073  ga .
+ 5074  git status
+ 5075  git commit -m 'fix(): Remove margin in form'
+ 5076  gp
+ 5077  git checkout staging
+ 5078  git status
+ 5079  gcs
+ 5080  git reset --hard
+ 5081  gcs
+ 5082  git checkout -b 'qa-67-consent-manager-link'
+ 5083  ga .
+ 5084  git commit -m 'feat(): Add link to consent manager'
+ 5085  gp
+ 5086  git push --set-upstream origin qa-67-consent-manager-link
+ 5087  git reset --hard
+ 5088  git status
+ 5089  ga .
+ 5090  git commit -m 'wip()'
+ 5091  gp
+ 5092  git checkout 65-qa-right-sidebar 
+ 5093  docker-compose up
+ 5094  ga .
+ 5095  git commit -m 'fix(): add slugify filter'
+ 5096  gp
+ 5097  git checkout 65-qa-right-sidebar 
+ 5098  docker-compose up
+ 5099  ga .
+ 5100  git commit -m 'fix(): Change require to import JS'
+ 5101  gp
+ 5102  git checkout -b 'qa-68-feedback'
+ 5103  docker-compose up
+ 5104  docker-machine start default
+ 5105  eval $(docker-machine env segment-docs)\n
+ 5106  docker-machine start segment-docs
+ 5107  eval $(docker-machine env segment-docs)\n
+ 5108  docker-compose up
+ 5109  eval $(docker-machine env segment-docs)\n
+ 5110  docker-compose up
+ 5111  ga .
+ 5112  git status
+ 5113  ga .
+ 5114  git status
+ 5115  git commit -m 'feat(): Introduce new design'
+ 5116  gp
+ 5117  git push --set-upstream origin qa-68-feedback
+ 5118  ga .
+ 5119  git commit -m 'style(): Remove redundant code'
+ 5120  gp
+ 5121  gcd
+ 5122  gcs
+ 5123  git checkout staging
+ 5124  git pull
+ 5125  git checkout -b '61-qa-heading'
+ 5126  eval $(docker-machine env segment-docs)\n
+ 5127  docker-compose up
+ 5128  ga .
+ 5129  git status
+ 5130  ga .
+ 5131  git status
+ 5132  git commit -m 'fix(): Change color of heading and fix spaces'
+ 5133  gp
+ 5134  git push --set-upstream origin 61-qa-heading
+ 5135  git checkout staging
+ 5136  git pull
+ 5137  git checkout -b '69-qa-faq'
+ 5138  ga .
+ 5139  git status
+ 5140  ga .
+ 5141  git commit -m 'fix(): Add missing link and add padding'
+ 5142  gp
+ 5143  git push --set-upstream origin 69-qa-faq
+ 5144  git reset --hard
+ 5145  git checkout staging
+ 5146  git pull
+ 5147  git checkout -b '66-404-page'
+ 5148  docker-compose up
+ 5149  ga .
+ 5150  git status
+ 5151  ga .
+ 5152  git commit -m 'wip()'
+ 5153  gp
+ 5154  git push --set-upstream origin 66-404-page
+ 5155  git checkout 69-qa-faq
+ 5156  ga .
+ 5157  git status
+ 5158  git commit -m 'fix(): Change dedicated link field to markdownify content'
+ 5159  gp
+ 5160  git checkout 68
+ 5161  git checkout qa-68-feedback
+ 5162  docker-compose up
+ 5163  ga .
+ 5164  git status
+ 5165  git commit -m 'fix(): Add hover state, remove underline'
+ 5166  gp
+ 5167  git push --set-upstream origin 68-feedback
+ 5168  git checkout staging
+ 5169  git pull
+ 5170  git checkout -b '68-feedback'
+ 5171  ga .
+ 5172  git commit -m 'fix(): Add hover state and remove underline from content'
+ 5173  gp
+ 5174  git push --set-upstream origin 68-feedback
+ 5175  git checkout qa-68-feedback
+ 5176  git pull
+ 5177  ga .
+ 5178  git status
+ 5179  git commit -m 'fix(): Add hover state and remove underline from content'
+ 5180  gp
+ 5181  git checkout 66-404-page 
+ 5182  docker-compose up
+ 5183  git pull
+ 5184  eval $(docker-machine env segment-docs)\n
+ 5185  docker-compose up
+ 5186  docker-machine start segment-docs
+ 5187  eval $(docker-machine env segment-docs)\n
+ 5188  docker-compose up
+ 5189  ga .
+ 5190  git status
+ 5191  git commit -m 'feeat(): Introduce 404 page'
+ 5192  gp
+ 5193  ga .
+ 5194  git commit -m 'fix(): Change top margin'
+ 5195  gp
+ 5196  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"\n
+ 5197  brew cask install android-platform-tools\n
+ 5198  adb devices
+ 5199  adb devices\n
+ 5200  gatsby develop
+ 5201  docker-machine start segment-docs
+ 5202  eval $(docker-machine env segment-docs)\n
+ 5203  docker-compose up
+ 5204  eval $(docker-machine env segment-docs)\n
+ 5205  docker-compose up
+ 5206  eval $(docker-machine env segment-docs)\n
+ 5207  docker-compose up
+ 5208  eval $(docker-machine env segment-docs)\n
+ 5209  docker-compose up
+ 5210  git status
+ 5211  eval $(docker-machine env segment-docs)\n
+ 5212  docker-compose up
+ 5213  eval $(docker-machine env segment-docs)\n
+ 5214  docker-compose up
+ 5215  eval $(docker-machine env segment-docs)\n
+ 5216  docker-compose up
+ 5217  eval $(docker-machine env segment-docs)\n
+ 5218  docker-compose up
+ 5219  eval $(docker-machine env segment-docs)\n
+ 5220  docker-compose up
+ 5221  git reset --hard
+ 5222  git checkout staging
+ 5223  git pull
+ 5224  git checkout -b 39-integration-page'
+ 5225  git checkout -b '39-integration-page'
+ 5226  eval $(docker-machine env segment-docs)\n
+ 5227  docker-compose up
+ 5228  eval $(docker-machine env segment-docs)\n
+ 5229  docker-compose up
+ 5230  eval $(docker-machine env segment-docs)\n
+ 5231  docker-compose up
+ 5232  eval $(docker-machine env segment-docs)\n
+ 5233  docker-compose up
+ 5234  docker-machine start segment-docs
+ 5235  eval $(docker-machine env segment-docs)\n
+ 5236  docker-compose up
+ 5237  gatsby develop
+ 5238  ga .
+ 5239  git status
+ 5240  ga .
+ 5241  git status
+ 5242  ga .
+ 5243  git status
+ 5244  ga .
+ 5245  git status
+ 5246  ga .
+ 5247  git status
+ 5248  ga .
+ 5249  git commit -m 'feat(): Introduce single integration page'
+ 5250  gp
+ 5251  git push --set-upstream origin 39-integration-page
+ 5252  git checkout staging
+ 5253  git pull
+ 5254  git checkout -b 'fix-feedback-module'
+ 5255  eval $(docker-machine env segment-docs)\n
+ 5256  docker-compose up
+ 5257  git checkout 39-integration-page
+ 5258  git reset --hard
+ 5259  git checkout 39-integration-page
+ 5260  eval $(docker-machine env segment-docs)\n
+ 5261  docker-compose up
+ 5262  ga .
+ 5263  git status
+ 5264  git commit -m 'feat(): Add default layout for all integrations'
+ 5265  gp
+ 5266  git checkout 'fix-feedback-module'
+ 5267  eval $(docker-machine env segment-docs)\n
+ 5268  docker-compose up
+ 5269  ga .
+ 5270  git commit -m 'fix(): Change background to gray'
+ 5271  gp
+ 5272  git checkout staging
+ 5273  git pull
+ 5274  git checkout -b 'fix-right-sidebar'
+ 5275  git pull
+ 5276  git status
+ 5277  docker-compose up
+ 5278  ga .
+ 5279  git commit -m 'wip(): Change treshold yo compensate for the sidebar error'
+ 5280  git commit -m 'wip(): Change treshold to compensate for the sidebar error'
+ 5281  gp 
+ 5282  git push --set-upstream origin fix-right-sidebar
+ 5283  git checkout staging
+ 5284  git checkout -b 'fix-anchors-links'
+ 5285  docker-compose up
+ 5286  ga .
+ 5287  git status
+ 5288  git commit -m 'fix(): Make clicable headings'
+ 5289  gp
+ 5290  git push --set-upstream origin fix-anchors-links
+ 5291  git checkout staging
+ 5292  git pull
+ 5293  git checkout -b 'fix-alert-icon-position'
+ 5294  ga .
+ 5295  git commit -m 'fix(): Change position of icon'
+ 5296  gp
+ 5297  git push --set-upstream origin fix-alert-icon-position
+ 5298  git status
+ 5299  git checkout staging
+ 5300  git pull
+ 5301  git checkout -b 'fix-get-started-panel'
+ 5302  bash -c 'clear; cd "/Users/bartek/Projects/TravelOffice/TravelOffice/bin/Debug/netcoreapp3.0"; export ASPNETCORE_URLS=""; "/usr/local/share/dotnet/dotnet" "/Users/bartek/Projects/TravelOffice/TravelOffice/bin/Debug/netcoreapp3.0/TravelOffice.dll" ; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp6b0400b8.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5303  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-f8bd58b185114891b495b1fd24c0658e; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmpc9a31ed.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5304  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-4bccc6e184284801bdb0ba582bfea0cb; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp65e71a58.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5305  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-57bc39264dbe4d3a8bd20c5b9a7b875e; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp6f726422.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5306  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-3a57c276085b47928ba1cf10e48e0c89; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp542e14b4.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5307  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-960c10a0782445e5be003700380df119; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp714c0d0.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5308  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-26193b231e5340aebc8d0fcc0ee1aabb; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp39901386.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5309  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-64befd02a0f14af7976f4b71e44d1d66; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmpbacb19b.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5310  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-4ca9848f610f467787e71680a5dd07f9; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp5664c6d0.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5311  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-538ca3c2314b42db960fc55e859e6233; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmpd0f5870.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5312  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-a621c973071b49908066b56bfe5730d0; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp39b31ee0.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5313  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-d8c10829ad7a4e31af82e57e962c9414; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmpf5f13e7.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5314  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-1a2f712c08674ef5b6d91c4a86e71d56; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmpc3dab9c.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5315  bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/CoreFxPipe_vsdbg-ui-5b4bf52177194024b5dabe9d2add42ed; echo $? > /var/folders/1n/8bq_5kh1129bw8wbkv772xs00000gn/T/tmp6d91c644.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+ 5316  docker-machine start segment-docs
+ 5317  eval $(docker-machine env segment-docs)\n
+ 5318  docker-compose up
+ 5319  git status
+ 5320  ga .
+ 5321  git commit -m 'fix(): Add space in callout component'
+ 5322  gp
+ 5323  git push --set-upstream origin fix-get-started-panel
+ 5324  git checkout staging
+ 5325  git pull
+ 5326  git checkout -b 'fix-sources-catalog'
+ 5327  ga .
+ 5328  git status
+ 5329  git commit -m 'feat(): Introduce catalog layout for sources catalog page'
+ 5330  gp
+ 5331  git push --set-upstream origin fix-sources-catalog
+ 5332  git checkout right-sidebar
+ 5333  git checkout fix-right-sidebar
+ 5334  git checkout staging
+ 5335  git pull
+ 5336  git checkut -b '78-warehouses-catalog'
+ 5337  git checkout -b '78-warehouses-catalog'
+ 5338  ga .
+ 5339  git status
+ 5340  git commit -m 'feat(): Introduce catalog layout for warehouses catalog page'
+ 5341  gp
+ 5342  git push --set-upstream origin 78-warehouses-catalog
+ 5343  git checkout staging
+ 5344  git pull
+ 5345  git checkout -b 'fix-missing-mobile-nav'
+ 5346  git status
+ 5347  git checkout staging
+ 5348  git checkout fix-sources-catalog
+ 5349  git reset --hard
+ 5350  docker-machine start segment-docs
+ 5351  eval $(docker-machine env segment-docs)\n
+ 5352  docker-compose up
+ 5353  docker-machine start segment-docs
+ 5354  eval $(docker-machine env segment-docs)\n
+ 5355  docker-compose up
+ 5356  ga .
+ 5357  git status
+ 5358  git commit -m 'fix(): Add sorted groups'
+ 5359  gp
+ 5360  git checkout staging
+ 5361  git status
+ 5362  git reset --hard
+ 5363  git checkout staging
+ 5364  git pull
+ 5365  git checkout -b 'fix-anchors-links'
+ 5366  git checkout -b '62-fix-anchors-links'
+ 5367  ga .
+ 5368  git status
+ 5369  git commit -m 'fix(): Add pointer cursor for headings'
+ 5370  gp
+ 5371  git push --set-upstream origin 62-fix-anchors-links
+ 5372  git reset --hard
+ 5373  git checkout staging
+ 5374  git pull
+ 5375  git checkout -b '88-fix-console-error-404'
+ 5376  ga .
+ 5377  git commit -m 'fix(): Remove link to nonexistent file'
+ 5378  gp
+ 5379  git push --set-upstream origin 88-fix-console-error-404
+ 5380  git checkout staging
+ 5381  git pull
+ 5382  git checkout -b '86-fix-author-get-started'
+ 5383  ga .
+ 5384  git commit -m 'wip()'
+ 5385  git checkout staging
+ 5386  git pul
+ 5387  git pull
+ 5388  git reset --hard
+ 5389  git pull
+ 5390  git checkout -b '85-fix-note-paragraph'
+ 5391  git reset --hard
+ 5392  ga .
+ 5393  git status
+ 5394  ga .
+ 5395  git commit -m 'fix(): Change styles for note'
+ 5396  gp
+ 5397  git push --set-upstream origin 85-fix-note-paragraph
+ 5398  git checkout '86-fix-author-get-started'
+ 5399  ga .
+ 5400  git commit --amend
+ 5401  gp
+ 5402  git push --set-upstream origin 86-fix-author-get-started
+ 5403  git checkout staging
+ 5404  git pull
+ 5405  git checkout -b '66-404-page'
+ 5406  git checkout -b '66-fix-404-page'
+ 5407  clear
+ 5408  docker-machine start segment-docs
+ 5409  eval $(docker-machine env segment-docs)\n
+ 5410  docker-compose up
+ 5411  ga .
+ 5412  git status
+ 5413  git commit -m 'fix(): Change line-eight of heading, align symbol to right'
+ 5414  gp
+ 5415  git push --set-upstream origin 66-fix-404-page
+ 5416  git checkout staging
+ 5417  git pull
+ 5418  git checkout 65-fix-right-sidebar
+ 5419  git checkout fix-65-right-sidebar
+ 5420  git checkout fix-right-sidebar
+ 5421  git pull
+ 5422  docker-compose up
+ 5423  yarn add intersection-observer
+ 5424  docker-compose up
+ 5425  docker-machine start segment-docs
+ 5426  eval $(docker-machine env segment-docs)\n
+ 5427  docker-compose up
+ 5428  docker-machine start segment-docs
+ 5429  eval $(docker-machine env segment-docs)\n
+ 5430  docker-compose up
+ 5431  gatsby develop
+ 5432  docker-machine start segment-docs
+ 5433  eval $(docker-machine env segment-docs)\n
+ 5434  docker-compose up
+ 5435  gatsby develop
+ 5436  docker-compose up
+ 5437  ga .
+ 5438  git status
+ 5439  ga .
+ 5440  git commit -m 'fix(): Fix detection of the active section'
+ 5441  gp
+ 5442  docker-compose up
+ 5443  ga .
+ 5444  git status
+ 5445  git commit -m 'fix(): Remove redundant dependencies & add throttle function to scroll event'
+ 5446  gp
+ 5447  docker-compose up
+ 5448  ga .
+ 5449  git commit -m 'refactor(): Convert throttle to arrow function'
+ 5450  gp
+ 5451  gatsby develop
+ 5452  git status
+ 5453  git add .
+ 5454  git commit -m 'fix(): RWD'
+ 5455  gp
+ 5456  yarn serve
+ 5457  yarn watch
+ 5458  yarn dev
+ 5459  gatsby develop
+ 5460  docker-machine start segment-docs segment-docs
+ 5461  docker-machine start segment-docs
+ 5462  eval $(docker-machine env segment-docs)\n
+ 5463  docker-compose up
+ 5464  eval $(docker-machine env segment-docs)\n
+ 5465  docker-compose up
+ 5466  gatsby develop
+ 5467  ga .
+ 5468  git status
+ 5469  git commit -m 'feat(): Add generated shapes'
+ 5470  gp
+ 5471  git push --set-upstream origin 11-random-shapes
+ 5472  yarn dev
+ 5473  yarn build
+ 5474  npm run build
+ 5475  docker-machine start segment-docs
+ 5476  eval $(docker-machine env segment-docs)\n
+ 5477  docker-compose up
+ 5478  git checkout staging
+ 5479  git pull
+ 5480  docker-compose up
+ 5481  gatsby develop
+ 5482  git pull
+ 5483  docker-compose up
+ 5484  git pull
+ 5485  docker-compose up
+ 5486  git pull
+ 5487  git reset --hard
+ 5488  git checkout -b 'sources-catalog'
+ 5489  yarn build
+ 5490  git pull
+ 5491  docker-compose up
+ 5492  yarn dev
+ 5493  yarn build
+ 5494  docker-machine start segment-docs
+ 5495  eval $(docker-machine env segment-docs)\n
+ 5496  docker-compose up
+ 5497  git status
+ 5498  docker-compose up
+ 5499  eval $(docker-machine env segment-docs)\n
+ 5500  docker-compose up
+ 5501  eval $(docker-machine env segment-docs)\n
+ 5502  docker-compose up
+ 5503  eval $(docker-machine env segment-docs)\n
+ 5504  docker-compose up
+ 5505  eval $(docker-machine env segment-docs)\n
+ 5506  docker-compose up
+ 5507  ga .
+ 5508  git status
+ 5509  ga .
+ 5510  git status
+ 5511  ga .
+ 5512  git commit -m 'refactor(sources): Introduce another loop based on new data files'
+ 5513  gp
+ 5514  git push --set-upstream origin sources-catalog
+ 5515  gatsby develop
+ 5516  ga .
+ 5517  git status
+ 5518  ga .
+ 5519  git commit -m 'fix(): Fix aligmeny'
+ 5520  git commit -m 'fix(): Fix aligment'
+ 5521  gp
+ 5522  gatsby develop
+ 5523  git reset --hard
+ 5524  gatsby develop
+ 5525  ga .
+ 5526  git status
+ 5527  git commit -m 'refactor(): Icons grid based on CSS grid'
+ 5528  gp
+ 5529  gatsby develop
+ 5530  yarn dev
+ 5531  yarn build
+ 5532  ga .
+ 5533  git commit -m 'fix(): Update content, change video to images'
+ 5534  gp
+ 5535  gatsby develop
+ 5536  docker-machine start default
+ 5537  eval $(docker-machine env segment-docs)\n
+ 5538  docker-machine start se
+ 5539  docker-machine start segment-docs
+ 5540  eval $(docker-machine env segment-docs)\n
+ 5541  docker-compose up
+ 5542  git status
+ 5543  git checkout aster
+ 5544  git pull
+ 5545  git checkout -b 'fix-anchors -list'
+ 5546  git checkout -b 'fix-anchors-list'
+ 5547  git pull
+ 5548  clear
+ 5549  docker-compose up
+ 5550  docker-c
+ 5551  docker-compose up
+ 5552  git reset --hard
+ 5553  ga .
+ 5554  git clean -fd
+ 5555  ga .
+ 5556  git reset --hard
+ 5557  docker-compose up
+ 5558  ga .
+ 5559  git status
+ 5560  git commit -m 'fix(): Active state on first menu position & remove transition from menu items'
+ 5561  gp
+ 5562  git push --set-upstream origin fix-anchors-list
+ 5563  git checkout master
+ 5564  git pull
+ 5565  git checkout -b 'fix-anchors-list'
+ 5566  git checkout -b 'f-anchors-list'
+ 5567  ga .
+ 5568  git status
+ 5569  git commit -m 'fix(): Active state on first menu position & remove transition from menu items'
+ 5570  gp
+ 5571  git push --set-upstream origin f-anchors-list
+ 5572  git checkout master
+ 5573  git pull
+ 5574  git checkout -b 'f-404-page'
+ 5575  ga .
+ 5576  git status
+ 5577  git commit -m 'fix(): Change line height on mobile'
+ 5578  gp
+ 5579  git push --set-upstream origin f-404-page
+ 5580  git checkout 'f-anchors-list'
+ 5581  docker-compose up
+ 5582  git reset --hard
+ 5583  git clean -fd
+ 5584  docker-compose up
+ 5585  ga .
+ 5586  git status
+ 5587  git commit -m 'fix(): Set active state on load page'
+ 5588  gp
+ 5589  git reset --hard
+ 5590  git checkout master
+ 5591  git pull
+ 5592  git checkout -b 'fix-sources-catalog'
+ 5593  docker-compose up
+ 5594  ga .
+ 5595  git status
+ 5596  git commit -m 'fix(): Fixes for mobile context menu, layout structure and mobile Safari fixes'
+ 5597  gp
+ 5598  git checkout  'fix-sources-catalog'
+ 5599  git checkout master
+ 5600  git pull
+ 5601  git checkout -b 'f-sources-catalog'
+ 5602  docker-compose up
+ 5603  git status
+ 5604  ga .
+ 5605  git status
+ 5606  git reset --hard
+ 5607  git clean -fd
+ 5608  gatsby develop
+ 5609  docker-compose up
+ 5610  docker-machine start segment-docs
+ 5611  eval $(docker-machine env segment-docs)\n
+ 5612  docker-compose up
+ 5613  eval $(docker-machine env segment-docs)\n
+ 5614  docker-compose up
+ 5615  eval $(docker-machine env segment-docs)\n
+ 5616  docker-compose up
+ 5617  git status
+ 5618  git reset --hard
+ 5619  gcm
+ 5620  git pull
+ 5621  git checkout  'f-sources-catalog'
+ 5622  ga .
+ 5623  git status
+ 5624  git reset --hard
+ 5625  git clean -fd
+ 5626  ga .
+ 5627  git status
+ 5628  gcm
+ 5629  git pull
+ 5630  git reset --hard
+ 5631  git clean -fd
+ 5632  ga .
+ 5633  git status
+ 5634  git fetch
+ 5635  gss
+ 5636  pwd
+ 5637  ls
+ 5638  ga .
+ 5639  gss
+ 5640  glol
+ 5641  ga .
+ 5642  git reset
+ 5643  gss
+ 5644  git checkout 'f-sources-catalog'
+ 5645  glol
+ 5646  gpsup
+ 5647  git reset --soft origin/master 
+ 5648  gss
+ 5649  git commit -m 'fix(): sources catalog'
+ 5650  gp
+ 5651  gp --force
+ 5652  gcm
+ 5653  git pull
+ 5654  git checkout 'f-sources-catalog'
+ 5655  git checkou scripts/catalogV2.js
+ 5656  git checkout scripts/catalogV2.js
+ 5657  git fetch origin\n
+ 5658  git reset --hard origin/master\n
+ 5659  clear
+ 5660  ga .
+ 5661  gss
+ 5662  gpsup
+ 5663  gpsup --force
+ 5664  gss
+ 5665  ga .
+ 5666  git commit -m 'fix(): sources catalog'
+ 5667  gp
+ 5668  docker-compose up
+ 5669  ga .
+ 5670  gss
+ 5671  git commit -m 'fix(): Fix menuspy and Safarii topbar'
+ 5672  gp
+ 5673  docker-compose up
+ 5674  git reset --hard
+ 5675  gatsby develop
+ 5676  ga .
+ 5677  git commit -m 'fix(): Reduction throttle'
+ 5678  gp
+ 5679  gcm
+ 5680  git pull
+ 5681  ga .
+ 5682  git reset --hard
+ 5683  git fetch origin\n
+ 5684  git reset --hard origin/master\n
+ 5685  ga .
+ 5686  gss
+ 5687  ga .
+ 5688  git status
+ 5689  gcm
+ 5690  git pull
+ 5691  git reset --hard origin/master
+ 5692  gss
+ 5693  git fetch
+ 5694  git fetch origin\n
+ 5695  git reset --hard origin/master\n
+ 5696  git rebase --abort
+ 5697  clear
+ 5698  git pull
+ 5699  git rebase --abort
+ 5700  git reset --hard origin/master\n
+ 5701  git checkout right-sidebar-icons
+ 5702  git checkout -b f-right-sidebar-icons
+ 5703  ga .
+ 5704  gss
+ 5705  git commit -m 'fix(): Fix aligning of icons'
+ 5706  gp
+ 5707  gpsup
+ 5708  ga. 
+ 5709  ga .
+ 5710  gss
+ 5711  git commit -m 'wip(): scrollable icons'
+ 5712  gp
+ 5713  git reset --hard
+ 5714  ga .
+ 5715  git status
+ 5716  git commit -m 'refactor(): Remove redundant code'
+ 5717  gp
+ 5718  ga .
+ 5719  gatsby develop
+ 5720  docker-machine start segment-docs
+ 5721  eval $(docker-machine env segment-docs)\n
+ 5722  docker-compose up
+ 5723  ga .
+ 5724  git commit -m 'fix(): Change groups of categories'
+ 5725  gp
+ 5726  git reset --hard
+ 5727  gi
+ 5728  gcm
+ 5729  git pull
+ 5730  git checkout -b '165-sorting-in-the-sources-catalog'
+ 5731  docker-compose up
+ 5732  ga .
+ 5733  git commit -m 'fix(): Change groups of categories'
+ 5734  gp
+ 5735  gpup
+ 5736  gpsup
+ 5737  gcm
+ 5738  git pull
+ 5739  git checkout -b 'icons-alignment'
+ 5740  ga .
+ 5741  gss
+ 5742  git commit -m 'fix(): alignment of icons in sidebar'
+ 5743  gp
+ 5744  gpsup
+ 5745  gcm
+ 5746  git pull
+ 5747  git checkout -b 'fix-wrapping-words-in-codeblocks'
+ 5748  ga .
+ 5749  git commit -m 'fix(): Add wrapping text to codeblock'
+ 5750  gpsup
+ 5751  gatsby develop
+ 5752  ga .
+ 5753  gss
+ 5754  git commit -m 'wip(): parallax of visible elements'
+ 5755  gp
+ 5756  yarn add scrollmagic
+ 5757  gatsby develop
+ 5758  gatsby build
+ 5759  gatsby develop
+ 5760  ga .
+ 5761  git commit -m 'refactor(): Remove Intersection observer'
+ 5762  gp
+ 5763  ga .
+ 5764  git commit -m 'fix(): Add throttle and missing initiation of hook'
+ 5765  gp
+ 5766  gatsby develop
+ 5767  ga .
+ 5768  gss
+ 5769  git commit -m 'fix(): Change range of speed'
+ 5770  gp
+ 5771  gatsby develop
+ 5772  gp
+ 5773  gcm
+ 5774  gl
+ 5775  gs
+ 5776  gss
+ 5777  gcb footer
+ 5778  gatsby build
+ 5779  gatsby develop
+ 5780  ga .
+ 5781  gss
+ 5782  git commit -m 'feat(): Introduce footer'
+ 5783  gp
+ 5784  gpsup
+ 5785  ga .
+ 5786  git commit -m 'fix(): Change button to hyperlink'
+ 5787  gp
+ 5788  gatsby develop
+ 5789  docker-machine start segment-docs
+ 5790  eval $(docker-machine env segment-docs)\n
+ 5791  docker-compose up
+ 5792  git reset --hard
+ 5793  docker-compose up
+ 5794  git reset --hard
+ 5795  docker-compose up
+ 5796  git reset --hard
+ 5797  gcm
+ 5798  gpl
+ 5799  git pull
+ 5800  gcb hide-right-nav-if-there-are-no-h2s
+ 5801  docker-compose up
+ 5802  ga .
+ 5803  gss
+ 5804  docker-compose up
+ 5805  ga .
+ 5806  docker-compose up
+ 5807  ga .
+ 5808  gss
+ 5809  git commit -m 'fix(): Hide side menu heading when on page are no H2 headings'
+ 5810  gp
+ 5811  gpsup
+ 5812  gatsby develop
+ 5813  ga .
+ 5814  gss
+ 5815  ga .
+ 5816  gss
+ 5817  ga .
+ 5818  gss
+ 5819  gcm
+ 5820  gpl
+ 5821  gl
+ 5822  gcb next-project-footer
+ 5823  docker-machine start segment-docs
+ 5824  eval $(docker-machine env segment-docs)\n
+ 5825  gss
+ 5826  git reset --hard
+ 5827  docker-compose up
+ 5828  gcm
+ 5829  gl
+ 5830  git reset --hard
+ 5831  gl
+ 5832  gcb '198-heading-link-icon'
+ 5833  ga .
+ 5834  git commit -m 'fix(): Change positioning of heading icon'
+ 5835  gp
+ 5836  gpsup
+ 5837  gatsby develop
+ 5838  docker-machine start segment-docs
+ 5839  docker-compose up
+ 5840  eval $(docker-machine env segment-docs)\n
+ 5841  docker-compose up
+ 5842  eval $(docker-machine env segment-docs)\n
+ 5843  docker-compose up
+ 5844  eval $(docker-machine env segment-docs)\n
+ 5845  docker-compose up
+ 5846  gcm
+ 5847  gl
+ 5848  gcb '202-introduce-category-badges'
+ 5849  docker-compose up
+ 5850  docker-machine start segment-docs
+ 5851  eval $(docker-machine env segment-docs)\n
+ 5852  docker-compose up
+ 5853  docker-machine stop segment-docs
+ 5854  docker-machine start segment-docs
+ 5855  eval $(docker-machine env segment-docs)\n
+ 5856  docker-compose up
+ 5857  ga .
+ 5858  gss
+ 5859  git commit -m 'feat(): Introduce related content & categories'
+ 5860  docker-compose up
+ 5861  ga .
+ 5862  git commit -m 'fix(): Change slugs'
+ 5863  gp
+ 5864  gpsup
+ 5865  gatsby develop
+ 5866  docker-compose up
+ 5867  docker-machine start segment-docs
+ 5868  eval $(docker-machine env segment-docs)\n
+ 5869  docker-compose up
+ 5870  ga .
+ 5871  git commit -m 'fix(): Change of catalog linking'
+ 5872  gp
+ 5873  git checkout -b 'related-categories-for-sources'
+ 5874  ga .
+ 5875  git commit -m 'feat(): Introduce related category badges to sources integrations'
+ 5876  gp
+ 5877  gpsup
+ 5878  gatsby develop
+ 5879  ga .
+ 5880  git co
+ 5881  clear
+ 5882  ga .
+ 5883  git commit -m 'feat(): Introduce watched "Next project" footer'
+ 5884  gp
+ 5885  gpsup
+ 5886  ga .
+ 5887  git commit -m 'fix(): Add delay to collapse transition'
+ 5888  gp
+ 5889  gcm
+ 5890  gl
+ 5891  gcb 'project-thumbnail'
+ 5892  cdm
+ 5893  gcm
+ 5894  gl
+ 5895  gss
+ 5896  git reset --hard
+ 5897  gl
+ 5898  gcb 'f-review'
+ 5899  ga .
+ 5900  git commit -m 'fix(): Safari fixes'
+ 5901  gpsup
+ 5902  gp
+ 5903  gss
+ 5904  docker-machine start segment-docs
+ 5905  eval $(docker-machine env segment-docs)\n
+ 5906  docker composer up
+ 5907  docker-compose up
+ 5908  git reset --hard
+ 5909  gcm
+ 5910  gl
+ 5911  gcb '224-alphabetize-warehouses-catalog'
+ 5912  ga .
+ 5913  git commit -m 'fix(): Alphabetize Warehouses catalog'
+ 5914  gpsup
+ 5915  gcm
+ 5916  gl
+ 5917  gcb 226-separate-toc-and-related-categories'\n
+ 5918  gcb '226-separate-toc-and-related-categories'\n
+ 5919  ga .
+ 5920  gss
+ 5921  ga .
+ 5922  gss
+ 5923  ga .
+ 5924  gcmsg 'fix(): Separate toc and related categories'
+ 5925  gpsup
+ 5926  gcm
+ 5927  gl
+ 5928  docker-compose up
+ 5929  ga .
+ 5930  gcm
+ 5931  gss
+ 5932  git reset --hard
+ 5933  gcb 227-glossary-menu
+ 5934  docker-compose up
+ 5935  ga .
+ 5936  gss
+ 5937  gcmsg 'fix(): change linking in menu'
+ 5938  gpsup
+ 5939  git reset --hard
+ 5940  gcm
+ 5941  gl
+ 5942  gcb 204-icons-in-left-menu
+ 5943  docker-compose up
+ 5944  ga.
+ 5945  ga .
+ 5946  gss
+ 5947  gcmsg 'feat(): Add icons to the left menu'
+ 5948  gpsup
+ 5949  gcm
+ 5950  gl
+ 5951  gcb performance
+ 5952  bundle exec jekyll clean
+ 5953  git reset --hard
+ 5954  docker-compose up
+ 5955  eval $(docker-machine env segment-docs)\n
+ 5956  docker-compose up
+ 5957  docker-machine stop segment-docs
+ 5958  docker-machine start segment-docs
+ 5959  eval $(docker-machine env segment-docs)\n
+ 5960  docker-compose up
+ 5961  docker-compose exec jekyll -it sh
+ 5962  docker-compose up
+ 5963  eval $(docker-machine env default)\n
+ 5964  eval $(docker-machine env segment-docs)\n
+ 5965  docker-compose exec jekyll -it sh
+ 5966  docker-compose exec jekyll sh
+ 5967  ga .
+ 5968  git commit -m 'wip()'
+ 5969  gcm
+ 5970  git checkout 204-icons-in-left-menu
+ 5971  clear
+ 5972  eval $(docker-machine env segment-docs)\n
+ 5973  docker-compose exec jekyll sh
+ 5974  docker-compose up
+ 5975  git reset --hard
+ 5976  docker-compose up
+ 5977  ga .
+ 5978  gss
+ 5979  gcmsg 'fix(): Add menu_icon field to api yml file'
+ 5980  gp
+ 5981  docker-machine start segment-docs
+ 5982  eval $(docker-machine env segment-docs)\n
+ 5983  docker-compose up
+ 5984  GSS
+ 5985  gss
+ 5986* docker-compose up
+ 5987  gss
+ 5988  ga .
+ 5989  gss
+ 5990  git commit -m 'fix(): Manually adding icon attributes for menu'
+ 5991  gp
+ 5992  gcm
+ 5993  gl
+ 5994  gcb 225-forward-email-to-address-field
+ 5995* docker-compose up
+ 5996  ga .
+ 5997  gss
+ 5998  git commit -m 'feat(): Add email field to query string in form'
+ 5999  gp
+ 6000  gpsup
+ 6001  gss
+ 6002  gcm
+ 6003  gl
+ 6004  gcb fix-left-menu-graphik-font
+ 6005  gcm
+ 6006  gcb fix-left-menu-styles
+ 6007  gss
+ 6008  ga .
+ 6009  git commit -m 'fix(): Change styles in left menu'
+ 6010  gp
+ 6011  gpsup
+ 6012  gcm
+ 6013  gl
+ 6014  gcb styleguide-graphik
+ 6015* eval $(docker-machine env segment-docs)\n
+ 6016* docker-compose up
+ 6017  gss
+ 6018  ga .
+ 6019  gss
+ 6020  gcmsg 'fix(): Introduce new styleguide'
+ 6021  gp
+ 6022  gpsup
+ 6023  gc performance
+ 6024  git checkout performance
+ 6025* docker-compose up
+ 6026* eval $(docker-machine env segment-docs)\n
+ 6027* docker-compose up
+ 6028  docker-compose exec jekyll -it sh
+ 6029  gss
+ 6030  git reset --hard
+ 6031  gss
+ 6032  docker-compose exec jekyll -it sh
+ 6033  docker-compose exec jekyll sh
+ 6034  docker-compose exec jekyll -it sh

@@ -5,31 +5,31 @@ layout: default
 <div class="docs">
   <div class="stage">
     <div class="docs__aside stage__aside">
-      {% include navbar/logo.html %}
+      {% include_cached navbar/logo.html %}
 
-      {% include menu/menu.html %}
+      {% include_cached menu/menu.html %}
     </div>
 
     <main class="docs__body stage__body">
       <div>
         <div class="search">
-          {% include navbar/search.html placeholder="Search the Segment documentation..." %}
+          {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
         </div>
 
-        {% include navbar/navbar-mobile.html %}
+        {% include_cached navbar/navbar-mobile.html %}
       </div>
 
 
       <div class="stage__content">
         <article class="destinations">
-          {% include components/breadcrumbs.html %}
+          {% include_cached components/breadcrumbs.html %}
           {%- if page.title -%}
             <h1 id="{{ page.title | downcase }}" class="destinations__heading page__heading">
               {{ page.title }}
             </h1>
           {%- endif -%}
 
-          {% include sidebar/{{ page.integration_type }}-menu-mobile.html %}
+          {% include_cached sidebar/{{ page.integration_type }}-menu-mobile.html %}
 
           <div class="destinations__body" data-headings-anchors>
             {{ content }}
@@ -39,7 +39,7 @@ layout: default
     </main>
 
     <div class="docs__sidebar stage__sidebar">
-      {% include navbar/nav.html %}
+      {% include_cached navbar/nav.html %}
 
       <div class="sidebar sidebar--sticky">
         {% include sidebar/{{ page.integration_type }}-menu.html %}
@@ -51,6 +51,6 @@ layout: default
   </div>
 
   <footer>
-    {% include components/footer.html %}
+    {% include_cached components/footer.html %}
   </footer>
 </div>

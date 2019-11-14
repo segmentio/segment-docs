@@ -6,8 +6,7 @@ source: ./src
 
 permalink: /:categories/:title/
 
-exclude:
-  - .jekyll-cache
+
 
 # Build settings
 markdown: kramdown
@@ -43,4 +42,3 @@ plugins:
   - jekyll-redirect-from
   - premonition
   - jekyll-commonmark
-  - jekyll-include-cache
