@@ -6,6 +6,11 @@ source: ./src
 
 permalink: /:categories/:title/
 
+exclude:
+  - "*.md"
+include:
+  - "styleguide.md"
+
 # Build settings
 markdown: kramdown
 highlighter: rouge

@@ -81,6 +81,7 @@
   & > p {
     margin-top: 8px;
     overflow-wrap: break-word;
+    line-height: 26px;
 
     @include breakpoint(medium up) {
       margin-top: 16px;
@@ -151,8 +152,13 @@
         position: absolute;
         top: .75em;
         left: 0;
-        transform: translateX(calc(-100% - 10px));
+        transform: translateX(calc(-100% - 14px));
       }
+
+      & > ul, ol {
+        margin-top: 0;
+      }
+
     }
   }
 
@@ -175,6 +181,10 @@
         position: absolute;
         left: -20px;
       }
+
+      & > ul, ol {
+        margin-top: 0;
+      }
     }
   }
 
@@ -185,6 +195,7 @@
     td {
       color: color(secondary-dark);
       vertical-align: top;
+      line-height: 26px;
     }
 
     thead {
