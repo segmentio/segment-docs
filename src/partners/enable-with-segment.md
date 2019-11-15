@@ -3,7 +3,7 @@ title: Using OAuth to Build a Two-Click Enable Flow
 sidebar: Enable with Segment
 ---
 
-> If you’re a customer who just wants to build a simple script or app against a single workspace, you may want to use [Personal Access Tokens](/docs/config-api/authentication).
+> If you're a customer who just wants to build a simple script or app against a single workspace, you may want to use [Personal Access Tokens](/docs/config-api/authentication).
 
 ## Concepts
 
@@ -11,7 +11,7 @@ Segment supports OAuth with our [Config API](/docs/config-api) to enable partner
 
 ### Apps
 
-As a partner developing an integration using Segment’s Config API, everything starts from an **App**. An App behaves like a standard OAuth client, but adds granular permissions. When a user installs your App through the familiar OAuth flow, we require the user to grant access to a specific workspace and source. The user must also be a Workspace Owner of the authorized workspace.
+As a partner developing an integration using Segment's Config API, everything starts from an **App**. An App behaves like a standard OAuth client, but adds granular permissions. When a user installs your App through the familiar OAuth flow, we require the user to grant access to a specific workspace and source. The user must also be a Workspace Owner of the authorized workspace.
 
 As a destination partner, you may only manage your own destination on the workspace and source authorized by the user.
 
@@ -19,7 +19,7 @@ As a destination partner, you may only manage your own destination on the worksp
 
 Segment Workspace Owners authorize your App on their workspace using a web-based authorization flow, exactly like OAuth. When authorized, Segment creates an **App Install** on the workspace.
 
-Therefore, the token returned by Segment isn't tied to a user – it's tied to an App Install. That’s why we call it an Install Token.
+Therefore, the token returned by Segment isn't tied to a user – it's tied to an App Install. That's why we call it an Install Token.
 
 ## Setup Guide
 
@@ -214,7 +214,7 @@ If you created the app with any of these scopes, and then updated the scope in i
 There are references above for `destination/<slug>`, but what should the `<slug>` be? The "slug" is the destination that you want to manage for the user. To see the exact slug we are expecting for your destination:
 
  -  If you just submitted a destination in the Developer Center for approval, you can see the slug on the submission form, or in the URL once submitted.
- -  If your destination is already public, look at the Segment Catalog and find your destination. That exact slug should appear in the URL. So it would be `clearbrain` for this destination https://segment.com/integrations/clearbrain/
+ -  If your destination is already public, look at the Segment Catalog and find your destination. That exact slug should appear in the URL. So it would be `clearbrain` for this destination /docs/destinations/clearbrain/
 
 ### What should the exact `create` body be to enable my destination?
 
@@ -269,7 +269,7 @@ We support `destination/<slug>`,  `workspace` and `workspace:read`. You set thes
 
 Run the partner app (you're looking at it!) so you can see all the steps involved in setting up your app, installing it and then accessing resources.
 
-You don’t need to learn OAuth! If you use the standard Oauth implementation in your programming language, like we do in the partner app, all this complexity should be hidden from you.
+You don't need to learn OAuth! If you use the standard Oauth implementation in your programming language, like we do in the partner app, all this complexity should be hidden from you.
 
 ### During OAuth code exchange I get a "missing a required parameter" error
 
@@ -297,9 +297,9 @@ Yes. This conforms to the OAuth spec, and is done for security purposes.
 
 ### I am getting `install already exists` error
 
-You already installed the app on this workspace, so you can’t install it again. You can use your current `access_token` to simply access resources on this workspace.
+You already installed the app on this workspace, so you can't install it again. You can use your current `access_token` to simply access resources on this workspace.
 
-When the app was installed, you should have received a Segment `workspace` and  `install_name` so you can store it in your own db along with the user’s info. If the user tries to install this app again, you can check your db and see that they already installed your app, and can skip the install flow.
+When the app was installed, you should have received a Segment `workspace` and  `install_name` so you can store it in your own db along with the user's info. If the user tries to install this app again, you can check your db and see that they already installed your app, and can skip the install flow.
 
 ### OK I managed to create an App. How do I use your APIs?
 

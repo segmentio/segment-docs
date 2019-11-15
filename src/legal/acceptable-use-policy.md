@@ -1,6 +1,7 @@
 ---
 title: "Acceptable Use Policy"
 sidebar: "Acceptable Use Policy"
+feedback: false
 hide-feedback: true
 ---
 

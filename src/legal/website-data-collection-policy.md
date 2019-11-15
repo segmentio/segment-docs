@@ -1,12 +1,13 @@
 ---
 title: Website Data Collection Policy
 sidebar: Website Data Collection Policy
+feedback: false
 hide-feedback: true
 ---
 
 Segment uses data collected by cookies and javascript libraries to improve your browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site.
 
-By using our website, you’re agreeing to our Website Data Collection Policy as described below. If you want to update your preferences, you can do so by clicking "Website Data Collection Preferences" in the left-hand corner of the page.
+By using our website, you're agreeing to our Website Data Collection Policy as described below. If you want to update your preferences, you can do so by clicking "Website Data Collection Preferences" at the bottom of this page.
 
 ## How do we collect data on our website?
 

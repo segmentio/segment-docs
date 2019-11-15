@@ -6,7 +6,7 @@ Picking a strong password is one of the most important things you can do to prot
 
 ### Under the Hood
 
-When you first create a Segment account, or when you reset or change the password of an existing account, you’ll see some tools which Segment uses to help you choose a strong password. We use [zxcvbn](https://blogs.dropbox.com/tech/2012/04/zxcvbn-realistic-password-strength-estimation/) to show your password strength, and [Have I Been Pwned](https://haveibeenpwned.com/Passwords) to notify you if your password has been found in any data breaches. Your password is never stored in plaintext, and is securely stored using the [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) password hashing function in our database.
+When you first create a Segment account, or when you reset or change the password of an existing account, you'll see some tools which Segment uses to help you choose a strong password. We use [zxcvbn](https://blogs.dropbox.com/tech/2012/04/zxcvbn-realistic-password-strength-estimation/) to show your password strength, and [Have I Been Pwned](https://haveibeenpwned.com/Passwords) to notify you if your password has been found in any data breaches. Your password is never stored in plaintext, and is securely stored using the [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) password hashing function in our database.
 
 ### General Guidance
 

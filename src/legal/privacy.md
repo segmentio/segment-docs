@@ -1,6 +1,7 @@
 ---
 title: Privacy Policy
 sidebar: Privacy Policy
+feedback: false
 hide-feedback: true
 ---
 
@@ -36,12 +37,12 @@ Users in the European Economic Area should be sure to read the important informa
 
 <a id="Segments-Service-and-Client-User-Data"></a>
 
-## Segment’s Service and Client Services Data
+## Segment's Service and Client Services Data
 
 Registered customers of the Service ("**Clients**") use it to collect information about how their own users use Client websites, applications, services ("Client Services") and related third-party applications ("Client Services Data").  Clients also use the Service to more efficiently route Client Services Data to their own third party applications/services and control how their own third party applications/services exchange Client Services Data.
 
 Client Services Data may include, without limitation, information about the identity of Client users (such as name, postal address, e-mail address, IP address and phone number), as well as information about the pages users visit, the features they use, and the actions they take while using the Client Services.
-This Privacy Policy does not apply to Client Services Data or to Client Services, and we are not responsible for our Clients’ handling of Client Services Data.  Our Clients have their own policies regarding the collection, use and disclosure of your personal information.  To learn about how a particular Client handles your personal information, we encourage you to read the Client’s privacy statement.  Our use of Client Services Data provided by our Clients in connection with our Service is subject to the written agreement between Segment and Client.
+This Privacy Policy does not apply to Client Services Data or to Client Services, and we are not responsible for our Clients' handling of Client Services Data.  Our Clients have their own policies regarding the collection, use and disclosure of your personal information.  To learn about how a particular Client handles your personal information, we encourage you to read the Client's privacy statement.  Our use of Client Services Data provided by our Clients in connection with our Service is subject to the written agreement between Segment and Client.
 
 <a id="Personal-Information-We-Collect"></a>
 
@@ -68,7 +69,7 @@ We may obtain additional information about you from third party sources, such as
 
 ### Information automatically collected
 
-Our servers may automatically record certain information about how you use the Service, such as your Internet Protocol (IP) address, device and browser type, operating system, the pages or features of the Service that you browsed and the time spent on those pages or features, the frequency with which you use the Service, search terms, the links that you click on or use, and other statistics.  We collect this information in server logs and by using cookies and similar tracking technologies to analyze trends, administer the website, track users’ movements around the website, gather demographic information about our user base as a whole, and deliver advertising. See our [Website Data Collection Policy](https://segment.com/docs/legal/website-data-collection-policy/) for more information.
+Our servers may automatically record certain information about how you use the Service, such as your Internet Protocol (IP) address, device and browser type, operating system, the pages or features of the Service that you browsed and the time spent on those pages or features, the frequency with which you use the Service, search terms, the links that you click on or use, and other statistics.  We collect this information in server logs and by using cookies and similar tracking technologies to analyze trends, administer the website, track users' movements around the website, gather demographic information about our user base as a whole, and deliver advertising. See our [Website Data Collection Policy](https://segment.com/docs/legal/website-data-collection-policy/) for more information.
 
 ### Sensitive personal information
 
@@ -112,13 +113,13 @@ We and our partners may serve you ads in the Service or third party sites, inclu
 
 ### To create anonymous data
 
-We may create aggregated and other anonymous data from our users’ personal information.  We make personal information into anonymous data by removing information that makes the data personally identifiable to you.  We may use this anonymous data and share it with third parties for our lawful business purposes.
+We may create aggregated and other anonymous data from our users' personal information.  We make personal information into anonymous data by removing information that makes the data personally identifiable to you.  We may use this anonymous data and share it with third parties for our lawful business purposes.
 
 <a id="for-compliance-fraud-prevention-and-safety"></a>
 
 ### For security, compliance, fraud prevention and safety
 
-We may use your personal information as we believe appropriate to (a) investigate or prevent violation of the law or our Terms of Service; (b) secure the Service; (c) protect our, your or others’ rights, privacy, safety or property; and (d) protect, investigate and deter against fraudulent, harmful, unauthorized, unethical or illegal activity.
+We may use your personal information as we believe appropriate to (a) investigate or prevent violation of the law or our Terms of Service; (b) secure the Service; (c) protect our, your or others' rights, privacy, safety or property; and (d) protect, investigate and deter against fraudulent, harmful, unauthorized, unethical or illegal activity.
 
 <a id="for-compliance-with-the-law"></a>
 
@@ -152,7 +153,7 @@ We do not share or sell the personal information that you provide us with other 
 All Segment account holders may review, update, correct or delete the personal information in their registration profile by logging into their account. Segment account holders may also contact us at privacy@segment.com to accomplish the foregoing or if you have additional requests or questions.
 
 ### Access to Data Controlled by our Clients
-Segment has no direct relationship with the individuals whose personal information is contained within the Client Services Data processed by the Service. An individual who seeks to access, correct or delete personal information provided by our Clients should direct their request the Client.  Similarly, if your Service account is administered by your employer or other organization, you should direct your request regarding your account or personal information (including requests to access, correct or delete it) to the organization’s administrator.  See the [Organization-Administered Accounts](#Organization-Administered-Accounts) section below for details. You may also contact us at [privacy@segment.com](mailto:privacy@segment.com) if you have additional questions or concerns.
+Segment has no direct relationship with the individuals whose personal information is contained within the Client Services Data processed by the Service. An individual who seeks to access, correct or delete personal information provided by our Clients should direct their request the Client.  Similarly, if your Service account is administered by your employer or other organization, you should direct your request regarding your account or personal information (including requests to access, correct or delete it) to the organization's administrator.  See the [Organization-Administered Accounts](#Organization-Administered-Accounts) section below for details. You may also contact us at [privacy@segment.com](mailto:privacy@segment.com) if you have additional questions or concerns.
 
 ### Marketing communications
 
@@ -170,7 +171,7 @@ If you do not provide information indicated as required or mandatory within the 
 
 ## Tracking and Targeted Advertising
 
-We may allow service providers and other third parties to use cookies and other tracking technologies to track your browsing activity over time and across the Service and third party websites. For example, we may partner with third party advertisers to display advertising on the Site or manage our advertising on other sites. These advertisers may also provide you targeted ads based upon your interests on third party sites.  We also use third party website analytics services that help us analyze users’ interactions with the Site. For more details, see our [Website Data Collection Policy](https://segment.com/docs/legal/website-data-collection-policy/).  You may opt out of certain tracking activities on our Site in our [Website Data Collection Preferences](https://segment.com/docs/legal/website-data-collection-policy/#how-do-we-collect-data-on-our-website-) center.  In addition, some advertising networks allow you to opt out of targeted advertising.  For more information, visit [http://www.aboutads.info/choices/](http://www.aboutads.info/choices/) or [http://www.youronlinechoices.com](http://www.youronlinechoices.com).
+We may allow service providers and other third parties to use cookies and other tracking technologies to track your browsing activity over time and across the Service and third party websites. For example, we may partner with third party advertisers to display advertising on the Site or manage our advertising on other sites. These advertisers may also provide you targeted ads based upon your interests on third party sites.  We also use third party website analytics services that help us analyze users' interactions with the Site. For more details, see our [Website Data Collection Policy](https://segment.com/docs/legal/website-data-collection-policy/).  You may opt out of certain tracking activities on our Site in our [Website Data Collection Preferences](https://segment.com/docs/legal/website-data-collection-policy/#how-do-we-collect-data-on-our-website-) center.  In addition, some advertising networks allow you to opt out of targeted advertising.  For more information, visit [http://www.aboutads.info/choices/](http://www.aboutads.info/choices/) or [http://www.youronlinechoices.com](http://www.youronlinechoices.com).
 
 Some Internet browsers may be configured to send "Do Not Track" signals to the online services that you visit. We currently do not respond to do not track or similar signals. To find out more about "Do Not Track," please visit http://www.allaboutdnt.com.
 
@@ -217,13 +218,13 @@ We may make available in the Service, or link to, features that allow you to sha
 
 ## Children
 
-The Service is not directed at, and Segment does not knowingly acquire or receive personal information from, children under the age of 16.  If we learn that any user of the Service is under the age of 16, we will take appropriate steps to delete that individual’s personal information and restrict that individual from future access to the Service.
+The Service is not directed at, and Segment does not knowingly acquire or receive personal information from, children under the age of 16.  If we learn that any user of the Service is under the age of 16, we will take appropriate steps to delete that individual's personal information and restrict that individual from future access to the Service.
 
 <a id="Organization-Administered-Accounts"></a>
 
 ## Organization-Administered Accounts
 
-Where the Service is provided to you through your employer or another organization, that organization is the administrator of the Service and we act only as its service provider.  We are not responsible for the privacy or security practices of these organizations, which have their own privacy policies, and we encourage you to contact them with your privacy-related questions or requests to access, correct or delete your personal information. Please note that your organization’s administrator may be able to:
+Where the Service is provided to you through your employer or another organization, that organization is the administrator of the Service and we act only as its service provider.  We are not responsible for the privacy or security practices of these organizations, which have their own privacy policies, and we encourage you to contact them with your privacy-related questions or requests to access, correct or delete your personal information. Please note that your organization's administrator may be able to:
 
 * require you to reset your account password;
 * restrict, suspend or terminate your access to the Service;
@@ -233,7 +234,7 @@ Where the Service is provided to you through your employer or another organizati
 * change your information, including profile information; and
 * restrict your ability to edit, restrict, modify or delete information.
 
-Please contact your organization or refer to your administrator’s organizational policies for more information.
+Please contact your organization or refer to your administrator's organizational policies for more information.
 
 <a id="Changes-to-This-Privacy-Policy"></a>
 
@@ -330,7 +331,7 @@ Segment.io, Inc. ("**Segment**" or "**we**", "**us**" or "**our**") complies wit
 
 **Scope.**  Our certification of adherence to the Privacy Shield Principles applies to the personal data that (a) we collect from our customers and other visitors to our website for account management, billing or marketing purposes ("**Segment User Data**") and (b) that we process on behalf of our customers in providing online services to them under a service agreement ("**Services Data**").
 
-**Data processed.**  The Segment User Data that we collect, use and share is described in our Privacy Policy.  While our customers decide what Services Data to submit, it typically includes information about their own users and how they use the customer’s sites, applications and services and third party applications.  We process Services Data as instructed by our customers and do not own or control Services Data.
+**Data processed.**  The Segment User Data that we collect, use and share is described in our Privacy Policy.  While our customers decide what Services Data to submit, it typically includes information about their own users and how they use the customer's sites, applications and services and third party applications.  We process Services Data as instructed by our customers and do not own or control Services Data.
 
 **Purposes of data processing.**  We collect, use and share Segment User Data for the purposes described in our Privacy Policy.  We process Services Data for the purpose of providing our online services to our customers, which may include accessing and processing the data to provide the services, to correct and address technical or service problems, to follow instructions of the customer who submitted the data, or in response to contractual requirements.
 
@@ -351,7 +352,7 @@ In addition, we may be required to disclose any personal data that we process in
 
 If your personal data includes Segment Personal Data, you can request access to that data and request that we correct amend, or delete it if it is inaccurate or processed in violation of Privacy Shield by emailing your request to [privacy@segment.com](mailto:privacy@segment.com).  We may request specific information from you to help us confirm your identity and process your request. Applicable law may require or permit us to decline your request.  If we decline your request, we will tell you why, subject to legal restrictions.
 
-**U.S. Federal Trade Commission Enforcement.**  Segment’s commitments under the Privacy Shield are subject to the regulatory enforcement powers of the U.S. Federal Trade Commission.  
+**U.S. Federal Trade Commission Enforcement.**  Segment's commitments under the Privacy Shield are subject to the regulatory enforcement powers of the U.S. Federal Trade Commission.  
 If there is any conflict between the terms in this Privacy Shield Notice and the Privacy Shield Principles, the Privacy Shield Principles shall take precedence.
 
 

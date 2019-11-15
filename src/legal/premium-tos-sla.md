@@ -1,6 +1,7 @@
 ---
 hidden: true
 title: Segment SLA for Premium Terms of Service
+feedback: false
 hide-feedback: true
 ---
 

@@ -27,7 +27,7 @@ Apps represent a unit of functionality that Segment users can add to their works
 
 "Sources and Destinations" are a bit more complicated under the hood than publishing and subscribing to data to and from Segment's servers. For instance:
 
-- We offer SDKs that expose runtime support for plugins so that Destinations may be configured in either Cloud Mode or Device Mode.
+- We offer SDKs that expose runtime support for plugins so that Destinations may be configured in either Cloud-mode or Device-mode.
 - Within Destinations, we have Streaming Destinations, Batch Destinations, and Warehouse Destinations, all of which receive different data, via different processes, at different intervals and with varying degrees of control and flexibility.
 - On the Sources side, integrations are categorized based on whether they send Objects or Events, whether they are "Push" or "Pull," and whether they are built and hosted by Segment or by Partners.
 
@@ -43,12 +43,12 @@ In the future Segment will enable Partners to build Streams and Syncs that will 
 
 ## Plugins
 
-Plugins are the basis for [Device Mode Destinations](/docs/destinations/#connection-modes) and, in the future, possibly Device Mode Sources.
+Plugins are the basis for [Device-mode Destinations](/docs/destinations/#connection-modes) and, in the future, possibly Device-mode Sources.
 
-Client SDK Plugins are used to augment Subscriptions and Streams by shipping code to the End User’s Device via Segment’s SDKs:
+Client SDK Plugins are used to augment Subscriptions and Streams by shipping code to the End User's Device via Segment's SDKs:
 
 - [analytics.js](https://segment.com/docs/sources/website/analytics.js/)
-- [analytics-ios](/docs/sources/mobile/ios/#packaging-destinations-with-device-based-connection-modes)
+- [analytics-ios](/docs/sources/mobile/ios/#packaging-destinations-using-device-mode)
 - [analytics-android](/docs/sources/mobile/android/#sending-data-to-destinations)
 
 These SDKs serve as microcosms of the Segment runtime — they enable the dynamic orchestration of event collection, cleaning/transformation, and delivery.
@@ -61,7 +61,7 @@ Web plugins are loaded into [analytics.js](https://segment.com/docs/sources/webs
 
 ### Mobile Plugins
 
-Mobile plugins are loaded into [analytics-ios](/docs/sources/mobile/ios/#packaging-destinations-with-device-based-connection-modes) or [analytics-android](/docs/sources/mobile/android/#sending-data-to-destinations)).
+Mobile plugins are loaded into [analytics-ios](/docs/sources/mobile/ios/#packaging-destinations-using-device-mode) or [analytics-android](/docs/sources/mobile/android/#sending-data-to-destinations)).
 
 ## Streams
 
@@ -69,7 +69,7 @@ Streams are the basis for sending events to Segment directly as an [Event Source
 
 ## Subscriptions
 
-Subscriptions are the basis for [Cloud Mode Destinations](/docs/destinations/#connection-modes), and are the starting point for our partnership. Subscriptions can be created, configured, and managed in the Segment Developer Center.
+Subscriptions are the basis for [Cloud-mode Destinations](/docs/destinations/#connection-modes), and are the starting point for our partnership. Subscriptions can be created, configured, and managed in the Segment Developer Center.
 
 Subscriptions give you complete control over how you want to store, transform and process your customers' data. It means that our customers can immediately start sending you data from any one of our [sources](/docs/sources)—from the browser, from their mobile apps, or from their servers—with no added work. Segment [Business Plan](https://segment.com/pricing/) customers can also [**replay**](https://segment.com/docs/guides/destinations/what-are-my-data-export-options/) historical data from our archives, which means you can demonstrate the full value of your tool immediately upon enablement.
 

@@ -1,5 +1,6 @@
 ---
-title: 'Personas Warehouse Sync'
+title: 'Personas and Warehouses'
+sidebar: Warehouse Sync
 ---
 ## How does Personas sync to my data warehouse?
 Personas provides a complete, up-to-date view of your users customer journey as it unfolds. We know that one of the best ways to understand this journey is through SQL in a Data Warehouses. With Personas, we automatically load the synthesized Computed Traits and Audiences into your warehouse, so you can include this data in your reporting and analysis.
@@ -50,4 +51,4 @@ Warehouses also sync based on your billing plan and scheduled warehouse frequenc
 
 ### Can I sync the identities table to my warehouse?
 
-Not yet. We’re working on this feature, and if you’re interested please let your CSM know or get in touch with us [here](https://segment.com/help/contact/).
+Not yet. We're working on this feature, and if you're interested please let your CSM know or get in touch with us [here](https://segment.com/help/contact/).

@@ -1,6 +1,6 @@
 ---
 title: 'Protocols: Anomaly Detection'
-sidebar: Anomaly Detection
+sidebar: Protocols Anomaly Detection
 ---
 
 If you're using Protocols, you might want to get notifications when an anomaly in event volumes or Protocols violation counts occurs. This document clarifies what we mean by anomaly detection, gives examples of anomalies that might be relevant to your business, and provides some example solutions of how to monitor and alert on anomalies using some standard tools available today.
@@ -9,7 +9,7 @@ If you're using Protocols, you might want to get notifications when an anomaly i
 
 Anomaly detection means finding out when your data collection is broken, missing, or incorrect. This covers a huge range of functionality!
 
-When you first start using Protocols, you might focus on fixing data quality issues for a limited set of business critical events. After those first issues are resolved, you might notifications if new issues occur or if old issues reoccur, so you can avoid manually monitoring data quality. New issues often occur when a new app version is released, and for many companies, that's weekly!
+When you first start using Protocols, you might focus on fixing data quality issues for a limited set of business critical events. After those first issues are resolved, you might get notifications if new issues occur or if old issues reoccur, so you can avoid manually monitoring data quality. New issues often occur when a new app version is released, and for many companies, that's weekly!
 
 The issues you care about for anomaly detection are different for each business. An anomaly for one company could be completely normal for another company. For example, an B2B company would expect a steep drop-off of traffic and event volume on weekends, while a media or entertainment company would expect to see a rise in activity in the evenings and on weekends for their different locales.
 
@@ -28,7 +28,7 @@ Regardless of the solution you choose, we recommend that you create a new Segmen
 
 Next, set up [Violation forwarding](/docs/protocols/tracking-plan/#violation-forwarding) for each Tracking Plan connected to the Source. Once connected, your sources will look like:
 
-![](./../images/protocols_meta_source_setup.png)
+![](images/protocols_meta_source_setup.png)
 
 **Note: When you enable violation forwarding, it counts as 1 MTU toward your monthly MTU limit. If you are on an API plan, all forwarded violations count against your API limit. Violations might also generate costs in downstream destinations and data warehouses.**
 
@@ -47,13 +47,13 @@ Source: \{{properties.sourceName}} \nEvent: \{{properties.eventName}} \nViolatio
 ```
 When you're done, it'll look like the screenshot below.
 
-![](./../images/slack_violation_generated_setup.png)
+![](images/slack_violation_generated_setup.png)
 
 
 ### Create customized Anomaly Detection dashboards in a BI tool
 Custom dashboards are a great way to focus your teams around the metrics and events that matter most to your business. With a few simple queries you can build a dashboard to share with teams, so everyone can understand how well they're doing against your data quality objectives. Here's an example dashboard that can be built with the queries.
 
-![](./../images/anomaly_detection_dashboard.png)
+![](images/anomaly_detection_dashboard.png)
 
 Note: For all queries below, replace `protocols_audit_source` with whatever schema name you set for your forwarded violations source.
 

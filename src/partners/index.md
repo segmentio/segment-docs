@@ -7,11 +7,11 @@ sidebar: Overview
 
 Over 19,000 companies use Segment as their central hub for collecting and synthesizing first-party customer data. Customers use Segment Sources to collect all data across all their properties (web, mobile, CRMs, email etc.) and send this data into Destinations (SaaS tools, internal databases or queues, or a data warehouse) to perform analytics, run marketing campaigns and much more.
 
-Below is a sample screenshot of a customer’s Segment dashboard, showing all their sources of data on the left, and destinations for their data on the right.
+Below is a sample screenshot of a customer's Segment dashboard, showing all their sources of data on the left, and destinations for their data on the right.
 
 ![](images/overview.png)
 
-Segment’s core feature is our Connections Catalog:
+Segment's core feature is our Connections Catalog:
 
 ![](images/catalog.gif)
 
@@ -60,7 +60,7 @@ The Segment Developer Center team will test your components in this fashion befo
 
 ## Document your Component
 
-To provide a great experience for users, and to help us test your integration, you need to document your integration. Segment expects docs both on your site about Segment, and on Segment’s site about your integration. We provide templates for our docs to help you get started.
+To provide a great experience for users, and to help us test your integration, you need to document your integration. Segment expects docs both on your site about Segment, and on Segment's site about your integration. We provide templates for our docs to help you get started.
 
 ## Submitting for Review
 

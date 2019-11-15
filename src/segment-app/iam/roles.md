@@ -89,6 +89,16 @@ The following roles are only available to Segment Business Tier accounts.
   </tr>
 </table>
 
+### Workspace
+<table>
+  <tr>
+    <td>Role</td>
+    <td>Description</td>
+    <td>Scope</td>
+  </tr>
+  <tr>
+    <td>Minimal workspace access</td>
+    <td>Users with minimal workspace access can only view the workspace, without access to any sub-resources or ability to edit the workspace.</td>
 ---
 
 ## Connecting resources
