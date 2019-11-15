@@ -1,0 +1,28 @@
+<nav role="navigation" class="Sidebar">
+
+  <div class="HalfSheet SidebarTabs">
+    {{#each collections}}
+      {{#isnt @key 'Platforms'}}
+        {{#isnt @key 'Legal'}}
+          {{#isnt @key 'Home'}}
+            <a
+              class="SidebarTabs-Tab {{#is @key ../../../collection}}active{{/is}}"
+              href="/docs/{{this.0.path}}/">{{@key}}</a>
+          {{/isnt}}
+        {{/isnt}}
+      {{/isnt}}
+    {{/each}}
+  </div>
+
+</nav>
+
+<script>
+  Array.from(document.querySelectorAll('.SidebarTabs-Tab')).forEach(tab => {
+    tab.onclick = function(e) {
+      window.analytics.track('Docs Sidenav Clicked', {
+        docs_page_context: window.location.pathname,
+        docs_page_click: e.target.href
+      })
+    }
+  })
+</script>
