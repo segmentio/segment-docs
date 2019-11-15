@@ -2,8 +2,6 @@
 title: 'Spec: A/B Testing Events'
 sidebar: 'A/B Testing'
 hidden: true
-redirect_from:
-  - '/advanced/spec/ab-testing/'
 ---
 
 This guide explains what data should be sent to Segment *from* A/B Testing tools and hence is targeted to partners who send A/B testing data back into Segment rather than targeted to customers themselves. The [semantic events](/docs/spec/semantic) detailed below represent the ideal for A/B Testing events.

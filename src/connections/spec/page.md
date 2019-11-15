@@ -30,12 +30,12 @@ Beyond the common fields, the `page` call takes the following fields:
 
 <table>
   <tr>
-    <th>**Field**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
-  {% include content/spec-field-page-name.md %}
-  {% include content/spec-field-page-properties.md %}
+  {{> spec-field-page-name }}
+  {{> spec-field-page-properties }}
 </table>
 
 
@@ -73,7 +73,7 @@ Here's a complete example of a `page` call:
 
 ## Identities
 
-{% include content/spec-identities.md %}
+{{> spec-identities }}
 
 ## Properties
 
@@ -87,9 +87,9 @@ Reserved properties we have standardized:
 
 <table>
   <tr>
-    <th>**Property**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>`name`</td>

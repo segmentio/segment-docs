@@ -30,9 +30,9 @@ The ecommerce category includes the following semantic events:
 
 ## Viewed Product Category
 
-Category pages are a staple of Ecommerce. They let the user browse all of the products in a specific category. You’ll want to track all of your product category pages so you can quickly see which categories are most popular.
+Category pages are a staple of Ecommerce. They let the user browse all of the products in a specific category. You'll want to track all of your product category pages so you can quickly see which categories are most popular.
 
-To do that, you’ll want to record a specially recognized event called `Viewed Product Category` using a `track call. This event fires when a visitor views a product category. That view might happen on a page, screen, or modal.
+To do that, you'll want to record a specially recognized event called `Viewed Product Category` using a `track call. This event fires when a visitor views a product category. That view might happen on a page, screen, or modal.
 
 ### Properties
 
@@ -45,19 +45,19 @@ Property        | Type   | Description
 
 ### Example
 
-{% comment %}\{\{\{api-example '{
+{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Viewed Product Category",
   "properties": {
     "category": "Games"
   }
-{% endcomment %}
+}' }}}
 
 
 ## Viewed Product
 
-The second special event to record for an Ecommerce installation is 'Viewed Product'. To record that you’ll use a `track` call.This event fires when a visitor views a product. That view might happen on a page, screen, or preview modal.
+The second special event to record for an Ecommerce installation is 'Viewed Product'. To record that you'll use a `track` call.This event fires when a visitor views a product. That view might happen on a page, screen, or preview modal.
 
 Note that the properties are required to tell individual tools, like Google Analytics, about the specific product that was viewed. You can always add your own custom properties as well.
 
@@ -77,7 +77,7 @@ _Note: The `sku` and `id` do not have to be different. If they are different, ty
 
 ### Example
 
-{% comment %}\{\{\{api-example '{
+{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Viewed Product",
@@ -88,7 +88,7 @@ _Note: The `sku` and `id` do not have to be different. If they are different, ty
     "price": 18.99,
     "category": "Games"
   }
-}' }}}{% endcomment %}
+}' }}}
 
 
 ## Added / Removed Product
@@ -112,7 +112,7 @@ Property   | Type   | Description
 
 ### Example
 
-{% comment %}\{\{\{api-example '{
+{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Added Product",
@@ -124,9 +124,9 @@ Property   | Type   | Description
     "quantity": 3,
     "category": "Games"
   }
-{% endcomment %}
+}' }}}
 
-{% comment %}\{\{\{api-example '{
+{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Removed Product",
@@ -138,7 +138,7 @@ Property   | Type   | Description
     "quantity": 2,
     "category": "Games"
   }
-{% endcomment %}
+}' }}}
 
 
 ## Completing an Order
@@ -147,7 +147,7 @@ The final step is to record a `Order Completed` event when people complete your 
 
 Be sure to **include all items in the cart as event properties**, with the same properties from the previous calls, like so:
 
-{% comment %}\{\{\{api-example '{
+{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Completed Order",
@@ -175,10 +175,10 @@ Be sure to **include all items in the cart as event properties**, with the same 
       "category": "Games"
     }]
   }
-{% endcomment %}
+}' }}}
 
 **Note**: Some destinations require `total` in place of `revenue`. Specific requirements will be outlined in each destination's documentation.
 
 ## Google Analytics Enhanced Ecommerce
 
-If you're using Google Analytics enhanced ecommerce there are some special events you might also want to add. Details in [our GA docs](/docs/integrations/google-analytics/#enhanced-ecommerce).
+If you're using Google Analytics enhanced ecommerce there are some special events you might also want to add. Details in [our GA docs](/docs/destinations/google-analytics/#enhanced-ecommerce).

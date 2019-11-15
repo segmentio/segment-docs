@@ -39,12 +39,12 @@ Beyond the common fields, the `group` call takes the following fields:
 
 <table>
   <tr>
-    <th>**Field**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
-  {% include content/spec-field-group-id.md %}}
-  {% include content/spec-field-group-traits.md %}}
+  {{> spec-field-group-id }}
+  {{> spec-field-group-traits }}
 </table>
 
 
@@ -85,7 +85,7 @@ Here's a complete example of a `group` call:
 
 ## Identities
 
-{% include content/spec-identities.md %}
+{{> spec-identities }}
 
 ## Group ID
 
@@ -102,9 +102,9 @@ The following are the reserved traits we have standardized:
 
 <table>
   <tr>
-    <th>**Trait**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Trait</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>`address`</td>
@@ -170,6 +170,6 @@ The following are the reserved traits we have standardized:
   </tr>
 </table>
 
-**Note:** You might be used to some destinations recognizing special properties differently. For example, Mixpanel has a special `track_charges` method for accepting revenue. Luckily, you don’t have to worry about those inconsistencies. Just pass us `revenue`.  **We’ll handle all of the destination-specific conversions for you automatically.** Same goes for the rest of the reserved properties.
+**Note:** You might be used to some destinations recognizing special properties differently. For example, Mixpanel has a special `track_charges` method for accepting revenue. Luckily, you don't have to worry about those inconsistencies. Just pass us `revenue`.  **We'll handle all of the destination-specific conversions for you automatically.** Same goes for the rest of the reserved properties.
 
 **Traits are case-insensitive**, so in Javascript you can match the rest of your camel-case code by sending `createdAt`, and in Ruby you can match your snake-case code by sending `created_at`. That way the API never seems alien to your code base.

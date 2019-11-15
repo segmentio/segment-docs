@@ -1,15 +1,9 @@
 ---
 title: Spec
 sidebar: Overview
-redirect_from:
-- '/advanced/spec/'
-- '/advanced/spec/car-rentals/'
-- '/advanced/spec/hotels/'
-- '/spec/car-rentals/'
-- '/spec/flights/'
-- '/spec/hotels/'
-- '/spec/local/'
 ---
+
+The Segment Spec provides guidance on meaningful data to capture, and the best format for it, across all of our libraries and APIs. If you implement Segment using these formats, it's simple to translate your data to downstream tools.
 
 The Segment Spec has three components.
 

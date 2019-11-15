@@ -28,12 +28,12 @@ Beyond the common fields, the `screen` call takes the following fields:
 
 <table>
   <tr>
-    <th>**Field**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
-  {% include content/spec-field-screen-name.md %}
-  {% include content/spec-field-screen-properties.md %}
+  {{> spec-field-screen-name }}
+  {{> spec-field-screen-properties }}
 </table>
 
 ## Example
@@ -69,7 +69,7 @@ Here's a complete example of a `screen` call:
 
 ## Identities
 
-{% include content/spec-identities.md %}
+{{> spec-identities }}
 
 
 ## Name
@@ -87,9 +87,9 @@ Reserved properties we have standardized:
 
 <table>
   <tr>
-    <th>**Property**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>`name`</td>

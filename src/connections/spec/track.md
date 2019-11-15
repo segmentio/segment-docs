@@ -33,12 +33,12 @@ Beyond the common fields, the `track` call has the following fields:
 
 <table>
   <tr>
-    <th>**Field**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
-  {% include content/spec-field-event.md %}
-  {% include content/spec-field-event-properties.md %}
+  {{> spec-field-event }}
+  {{> spec-field-event-properties }}
 </table>
 
 ## Example
@@ -80,7 +80,7 @@ Here's a complete example of a `track` call:
 
 ## Identities
 
-{% include content/spec-identities.md %}
+{{> spec-identities }}
 
 ## Event
 
@@ -105,9 +105,9 @@ The following is all the reserved properties we have standardized that apply to 
 
 <table>
   <tr>
-    <th>**Property**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>`revenue`</td>
@@ -129,4 +129,4 @@ The following is all the reserved properties we have standardized that apply to 
   </tr>
 </table>
 
-**Note:** You might be used to some destinations recognizing special properties differently. For example, Mixpanel has a special `track_charges` method for accepting revenue. Luckily, you don’t have to worry about those inconsistencies. Just pass us `revenue`.  **We’ll handle all of the destination-specific conversions for you automatically.** Same goes for the rest of the reserved properties.
+**Note:** You might be used to some destinations recognizing special properties differently. For example, Mixpanel has a special `track_charges` method for accepting revenue. Luckily, you don't have to worry about those inconsistencies. Just pass us `revenue`.  **We'll handle all of the destination-specific conversions for you automatically.** Same goes for the rest of the reserved properties.
