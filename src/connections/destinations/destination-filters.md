@@ -1,9 +1,9 @@
 ---
 title: Destinations Filters
-
+rewrite: true
 ---
 
-Destination Filters allow you to control the data flowing into each specific destination, by conditionally preventing data from being sent to cloud-based (server-side) destinations. You can filter out entire events, or just specific fields in the properties, traits, or in the context of your events.
+Destination Filters allow you to control the data flowing into each specific destination, by conditionally preventing data from being sent to cloud-mode  destinations. You can filter out entire events, or just specific fields in the properties, traits, or in the context of your events.
 
 With Destination Filters, you can:
 
@@ -21,7 +21,7 @@ With Destination Filters, you can:
 
 ### Destination Filtering Limitations
 
-* Destination Filters can only be applied to Server-side ("cloud mode") streaming destinations. Device mode destinations are not supported.
+* Destination Filters can only be applied to Cloud-mode ("server-side") streaming destinations. Device-mode destinations are not supported.
 
 * You cannot apply Destination Filters to Warehouses or S3 destinations.
 
@@ -124,17 +124,18 @@ You are currently limited to 10 filters per destination. If you need help
 consolidating filters or would like to discuss your use case, [contact us](https://segment.com/help/contact/)!
 
 
-**Q: When will you support device mode?**
+**Q: When will you support device-mode?**
 
-We expect to support Analytics.js device mode destinations in the summer of
-2019. Please [contact us](https://segment.com/help/contact/) if you are interested in beta testing this feature.
+Device-mode destination filters for Web are currently in Early Access Preview.
+
+Please [contact us](https://segment.com/help/contact/) if you are interested in testing this feature.
 
 **Q: When will you support warehouses?**
 
 If you want to filter out events from warehouses, the best way to do that today
 is with the existing Selective Sync feature.
 
-**Q: I don’t see a "name" property at the top level of my events to filter on "event name"!**
+**Q: I don't see a "name" property at the top level of my events to filter on "event name"!**
 
 Generally, only Track calls have "name" properties, which corresponds to the
 "Event" field in an event.
