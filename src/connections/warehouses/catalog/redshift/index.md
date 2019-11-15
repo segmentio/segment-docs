@@ -1,5 +1,6 @@
 ---
-title: Redshift
+title: Redshift Warehouse Destination
+rewrite: true
 ---
 
 This guide will explain how to provision a Redshift cluster and allow the Segment warehouse connector to write to it.
@@ -17,7 +18,7 @@ There are four steps to get started using Redshift with Segment:
 
 ### Pick the best instance for your needs
 
-While the number of events (database records) are important, the storage capacity utilization of your cluster depends primarily on the number of unique tables and columns created in the cluster. Keep in mind that each unique `.track()` event creates a new table, and each property sent creates a new column in that table. For reason, we highly recommend starting with a detailed [tracking plan](https://segment.com/docs/guides/sources/can-i-see-an-example-of-a-tracking-plan/) before implementing Segment libraries to ensure that only necessary events are being passed to Segment in a consistent way.
+While the number of events (database records) are important, the storage capacity utilization of your cluster depends primarily on the number of unique tables and columns created in the cluster. Keep in mind that each unique `.track()` event creates a new table, and each property sent creates a new column in that table. For reason, we highly recommend starting with a detailed [tracking plan](/docs/protocols/example-tracking-plan/) before implementing Segment libraries to ensure that only necessary events are being passed to Segment in a consistent way.
 
 There are two kinds of Redshift clusters: **Dense Compute** and **Dense Storage**
 
@@ -28,18 +29,18 @@ There are two kinds of Redshift clusters: **Dense Compute** and **Dense Storage
 ### Provision a new Redshift Cluster
 
 You can skip this step if you already have a Redshift cluster:
-1. Open the Redshift Console: ![Image](https://dchtm6r471mui.cloudfront.net/s_9E0FAF328A50D6414F8EE93032E0A4832F38AF0538D044654A30BAD2A803B585_1442512145764_Screen+Shot+2015-09-17+at+10.25.47+AM.png)
+1. Open the Redshift Console: ![](images/Screen+Shot+2015-09-17+at+10.25.47+AM.png)
 
-2. Click on "Launch Cluster": ![Image](https://dchtm6r471mui.cloudfront.net/s_9E0FAF328A50D6414F8EE93032E0A4832F38AF0538D044654A30BAD2A803B585_1442512172034_Screen+Shot+2015-09-17+at+10.26.03+AM.png)
+2. Click on "Launch Cluster": ![](images/Screen+Shot+2015-09-17+at+10.26.03+AM.png)
 
-3. Fill out the cluster details (make sure to select a secure password!): ![Image](https://cloudup.com/cVcF5ZtC51a+)
+3. Fill out the cluster details (make sure to select a secure password!): ![Image](images/cVcF5ZtC51a+.png)
 
-4. Choose your cluster size: ![Image](https://dchtm6r471mui.cloudfront.net/s_44CD3F5DCB47AEA207AE953843562909E61C60E02387C9750A3C430F1134FEFF_1442616281635_undefined)
+4. Choose your cluster size: ![](images/1442616281635_undefined.png)
 
 5. Setup your cluster Security Group or VPC and proceed to review (see below for instructions on settings up a VPC group)
 
 
-Now that you've provisioned your Redshift cluster, you’ll need to configure your Redshift cluster to allow Segment to access it.
+Now that you've provisioned your Redshift cluster, you'll need to configure your Redshift cluster to allow Segment to access it.
 
 ### Create a Database User
 
@@ -67,7 +68,7 @@ After creating a Redshift warehouse, the next step is to connect Segment:
 3. Enter your Redshift credentials
 
 ## Security
-VPCs keep servers inaccessible to traffic from the internet. With VPC, you’re able to designate specific web servers access to your servers.  In this case, you will be whitelisting the [Segment IPs](https://segment.com/docs/guides/warehouses/whitelist-ip-addresses/) to write to your data warehouse.
+VPCs keep servers inaccessible to traffic from the internet. With VPC, you're able to designate specific web servers access to your servers.  In this case, you will be whitelisting the [Segment IPs](https://segment.com/docs/guides/warehouses/whitelist-ip-addresses/) to write to your data warehouse.
 
 ## Best Practice
 
@@ -76,10 +77,10 @@ VPCs keep servers inaccessible to traffic from the internet. With VPC, you’re 
 Redshift clusters can either be in a **EC2 Classic subnet** or **VPC subnet**.
 
 If your cluster has a field called `Cluster Security Groups`, proceed to [EC2 Classic](/docs/warehouses/redshift/#ec2-classic)
-![](../images/redshift_permissioning1.png)
+![](images/redshift_permissioning1.png)
 
 Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC](/docs/warehouses/redshift/#ec2-vpc)
-![](../images/redshift_permissioning2.png)
+![](images/redshift_permissioning2.png)
 
 #### EC2-Classic
 
@@ -87,19 +88,19 @@ Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC
 
 2. Click on the Cluster Security Groups
 
-  ![](../images/redshift_permissioning4.png)
+  ![](images/redshift_permissioning4.png)
 
 3. Open the Cluster Security Group
 
-  ![](../images/redshift_permissioning5.png)
+  ![](images/redshift_permissioning5.png)
 
 4. Click on "Add Connection Type"
 
-  ![](../images/redshift_permissioning6.png)
+  ![](images/redshift_permissioning6.png)
 
 5. Choose Connection Type CIDR/IP and authorize Segment to write into your Redshift Port using `52.25.130.38/32`
 
-  ![](../images/redshift_permissioning7.png)
+  ![](images/redshift_permissioning7.png)
 
 #### EC2-VPC
 
@@ -107,33 +108,33 @@ Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC
 
 2. Click on the VPC Security Groups
 
-  ![](../images/redshift_permissioning8.png)
+  ![](images/redshift_permissioning8.png)
 
 3. Select the "Inbound" tab and then "Edit"
 
-  ![](../images/redshift_permissioning9.png)
+  ![](images/redshift_permissioning9.png)
 
 4. Allow Segment to write into your Redshift Port using `52.25.130.38/32`
 
-  ![](../images/redshift_permissioning10.png)
+  ![](images/redshift_permissioning10.png)
 
   You can find more information on that [here](http://docs.aws.amazon.com/redshift/latest/mgmt/managing-clusters-vpc.html). 
 
 5. Navigate back to your Redshift Cluster Settings: `Redshift Dashboard > Clusters > Select Your Cluster`
 
 6. Select the "Cluster" button and then "Modify"
-  ![](../images/redshift_cluster_modify.png)
+  ![](images/redshift_cluster_modify.png)
 
 7. Make sure the "Publicly Accessible" option is set to "Yes"
-  ![Image](http://docs.aws.amazon.com/redshift/latest/mgmt/images/rs-mgmt-clusters-modify.png)
+  ![](http://docs.aws.amazon.com/redshift/latest/mgmt/images/rs-mgmt-clusters-modify.png)
 
 8. Check your "Outbound" tab to make sure your Redshift instance is setup to make outbound requests to the Segment S3 bucket. The default behavior is to allow all outbound traffic, but security groups can be put in place to limit outbound behavior.
 
-  ![](../images/redshift_outbound_permissions.png)
+  ![](images/redshift_outbound_permissions.png)
 
 9. If your outbound traffic is not configured to allow all traffic, you can switch to default settings or specifically whitelist the Segment S3 buckets
 
-  ![](../images/redshift_custom_outbound_group.png)
+  ![](images/redshift_custom_outbound_group.png)
 
 ### Electing to encrypt your data 
 
@@ -169,7 +170,7 @@ It's often the case that our customers want to combine 1st party transactional a
 
 If you're interested in importing data into a Redshift cluster, it's important that you follow these [guidelines](/docs/faqs/warehouses/custom-data/).
 
-Additionally, there a number of tools which provide syncing services between databases (mySQL, SQL Server, Oracle, PostgreSQL). Here is a list of some we’ve seen used by customers.
+Additionally, there a number of tools which provide syncing services between databases (mySQL, SQL Server, Oracle, PostgreSQL). Here is a list of some we've seen used by customers.
 
 - [SymmetricDS (Open Source)](http://www.symmetricds.org/?__hstc=222691652.f2c5ed50a3a9703ac3be5283918044ad.1436399176206.1437192161002.1437244552315.24&__hssc=222691652.12.1437244552315&__hsfp=2203243415)
 - [FlyData](https://www.flydata.com/products/?__hstc=222691652.f2c5ed50a3a9703ac3be5283918044ad.1436399176206.1437192161002.1437244552315.24&__hssc=222691652.12.1437244552315&__hsfp=2203243415)
@@ -183,10 +184,6 @@ You can also unload data to a s3 bucket and then load the data into another Reds
 
 ### Can I customize my sync schedule?
 
-Your data will be available in Warehouses within 24-48 hours after your first sync. Your warehouse will then be on a sync schedule based on your [Warehouse Plan](/pricing#warehouses).
+{{>warehouse-sync-sched}}
 
-Segment allows you to schedule the time and frequency of loading data into your data warehouse. 
-
-You can schedule your warehouse syncs by going to `Warehouse > Settings > Sync Schedule`. You can schedule up to the number of syncs allowed on your billing plan.
-
-![sync schedule image](../images/syncsched.png)
+![sync schedule image](images/syncsched.png)

@@ -1,5 +1,6 @@
 ---
-title: Azure SQL Data Warehouse
+title: Azure SQL Data Warehouse Destination
+rewrite: true
 ---
 
 Azure's [SQL Data Warehouse](https://azure.microsoft.com/en-us/services/sql-data-warehouse/) is a fast, flexible, and secure analytics platform for the enterprise.

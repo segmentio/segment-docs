@@ -1,5 +1,5 @@
 ---
-title: Postgres
+title: Postgres Warehouse Destination
 rewite: true
 ---
 PostgreSQL, often simply Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. As a database server, its primary functions are to store data securely and return that data in response to requests from other software applications. It can handle workloads ranging from small single-machine applications to large Internet-facing applications (or for data warehousing) with many concurrent users. PostgreSQL is the default database on macOS Server, and it is also available for Microsoft Windows and Linux (supplied in most distributions).
@@ -69,13 +69,13 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 
 1. Log in to your AWS account.
 
-    If you don’t have an AWS account, you can sign up for an account by visiting the [AWS homepage](http://aws.amazon.com/) and clicking 'Create an AWS Account' in the top right-hand corner.
+    If you don't have an AWS account, you can sign up for an account by visiting the [AWS homepage](http://aws.amazon.com/) and clicking 'Create an AWS Account' in the top right-hand corner.
 
 2. Open the RDS Console.
 
     Go to the [RDS console](https://console.aws.amazon.com/rds/) when you are logged in to AWS.
 
-3. Select the region you’d like to place the database in.
+3. Select the region you'd like to place the database in.
 
     In the top right-hand corner of the console, you should see a drop-down with the available AWS regions. We suggest putting your database in `US West` for the best performance.
 
@@ -93,7 +93,7 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 
     ![](images/rds3.png)
 
-6. Select whether or not you’d like to use the database for production purposes.
+6. Select whether or not you'd like to use the database for production purposes.
 
     There are two differences between the production and non-production options on this screen.
 
@@ -101,7 +101,7 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 
     **Provisioned IOPS** helps to guarantee the disk I/O performance of a database. Due to the fact that databases often cannot keep all of their data in RAM, they must store some data on disk. When running queries, the database may have to read data from the disk. With Provisioned IOPS, Amazon guarantees that disk will be able to perform a certain number of reads and writes a second.
 
-    If you anticipate high utilization on your Postgres database, or if downtime is unacceptable, choose **Production**. If you don’t plan to have high-utilization of your database or periods of downtime are acceptable and you know how to recover from them, choose **Dev/Test**.
+    If you anticipate high utilization on your Postgres database, or if downtime is unacceptable, choose **Production**. If you don't plan to have high-utilization of your database or periods of downtime are acceptable and you know how to recover from them, choose **Dev/Test**.
 
     After choosing, click **Next**.
 
@@ -109,24 +109,24 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 
 7. Specify the DB Details.
 
-    Enter details about the database in the next screen. If you’re not sure about an option, there are some details in this document below, and some tips provided in the sidebar when you edit an option.
+    Enter details about the database in the next screen. If you're not sure about an option, there are some details in this document below, and some tips provided in the sidebar when you edit an option.
     The instance options are:
 
     **License Model:** only has one option, so choose the default.
 
-    **DB Engine Version:** specifies the version of Postgres to use. If you aren’t sure which version you’d like to use, the default is fine.
+    **DB Engine Version:** specifies the version of Postgres to use. If you aren't sure which version you'd like to use, the default is fine.
 
-    **DB Instance Class:** selects the machine your database will run on. If you’re not sure what DB instance class is suitable for your database, check the [DB Instance Classes chart ](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html)and the [Pricing Page](http://aws.amazon.com/rds/pricing/).
+    **DB Instance Class:** selects the machine your database will run on. If you're not sure what DB instance class is suitable for your database, check the [DB Instance Classes chart ](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html)and the [Pricing Page](http://aws.amazon.com/rds/pricing/).
 
     **Multi-AZ Deployment:** whether or not you want a backup machine on standby. The pricing is equivalent to running two instances.
 
-    **Storage Type:** specifies the type of disk you’d like to use for the instance. From the sidebar information:
+    **Storage Type:** specifies the type of disk you'd like to use for the instance. From the sidebar information:
 
       - General Purpose (SSD)storage is suitable for a broad range of database workloads. Provides baseline of 3 IOPS/GB and ability to burst to 3,000 IOPS.
       - Provisioned IOPS (SSD)storage is suitable for I/O-intensive database workloads. Provides flexibility to provision I/O ranging from 1,000 to 30,000 IOPS.
       - Magnetic storage may be used for small database workloads where data is accessed less frequently.
 
-    Provisioned IOPS allows you to specify what performance guarantees you’d like on disk I/O.
+    Provisioned IOPS allows you to specify what performance guarantees you'd like on disk I/O.
 
     ![](images/rds5.png)
 
@@ -136,7 +136,7 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 
     **Master Username** is the username you will use to log in to the instance.
 
-    **Master Password** is a password that is 8 to 128 ASCII characters long that doesn’t contain the characters /, ", or @.
+    **Master Password** is a password that is 8 to 128 ASCII characters long that doesn't contain the characters /, ", or @.
 
     When you're done entering your settings, click **Next Step**.
     ![](images/rds6.png)
@@ -145,32 +145,32 @@ As a supplement to this guide, Amazon has created an official guide to [setting 
 
     The options for Network & Security are:
 
-      - **VPC** specifies the Virtual Private Cloud you want the servers to reside in. If you have previously set up a VPC that you want the database in, select it here. If you aren’t sure or don’t have a VPC set up, select Create New VPC
-      - **Subnet Group** specifies the subnets that the DB instances can use in the VPC. If you’re not sure, select Create new DB Subnet Group
+      - **VPC** specifies the Virtual Private Cloud you want the servers to reside in. If you have previously set up a VPC that you want the database in, select it here. If you aren't sure or don't have a VPC set up, select Create New VPC
+      - **Subnet Group** specifies the subnets that the DB instances can use in the VPC. If you're not sure, select Create new DB Subnet Group
       - **Publicly Accessible** specifies whether your DB instances are internet-addressable. This option must be set to Yes.
       - **Availability Zone** specifies which availability zone you want the instances to reside in. If you have a preference, you can set it here, else leave it on the No Preference default.
-      - **VPC Security Groups** specify traffic rules concerning what traffic can leave the instances and what traffic can arrive at the instance. Unless you’ve previously made a security group specifically for DB instances, it’s best to create a new one.
+      - **VPC Security Groups** specify traffic rules concerning what traffic can leave the instances and what traffic can arrive at the instance. Unless you've previously made a security group specifically for DB instances, it's best to create a new one.
 
     The options for Database Options are:
 
       - Database Name is an optional value for a Postgres database to be created at instance startup. We highly recommend filling this out to avoid manual creation of the database unless you have a good reason to create a database manually. This value must be 8 characters or less. If you fill this out, keep a note of what the value is.
       - Database Port specifies what port the DB listens on. The default of 5432 is fine.
-      - DB Parameter Group specifies the configuration applied to the database. If you haven’t created a custom parameter group that you want to use, choosing the default is fine.
+      - DB Parameter Group specifies the configuration applied to the database. If you haven't created a custom parameter group that you want to use, choosing the default is fine.
       - Option Group specifies additional options of the database. At the time of writing, option groups are not available for Postgres.
-      - Copy Tags To Snapshots specifies whether you want the tags metadata on DB instances copied to corresponding instance snapshots.  It’s fine to leave it on the default, but you can [learn more about it here.](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html)
-      - Enable Encryption allows you to specify whether you want the database and snapshots to be encrypted. If you choose to enable encryption, your data will be encrypted with AES-256, both in the instances themselves and in data at rest. There are some limitations though, which you can [read about here](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). You will also have to specify a key in the AWS Key Management Service. If you select Yes, another option will appear to allow you to select what key you’d like to use.
+      - Copy Tags To Snapshots specifies whether you want the tags metadata on DB instances copied to corresponding instance snapshots.  It's fine to leave it on the default, but you can [learn more about it here.](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html)
+      - Enable Encryption allows you to specify whether you want the database and snapshots to be encrypted. If you choose to enable encryption, your data will be encrypted with AES-256, both in the instances themselves and in data at rest. There are some limitations though, which you can [read about here](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html). You will also have to specify a key in the AWS Key Management Service. If you select Yes, another option will appear to allow you to select what key you'd like to use.
 
     The options for Backup are:
 
       - Backup Retention Period specifies how long you want to retain automatic point-in-time recovery backups. Specifying a longer period of time will increase cost.
-      - Backup Window allows you to select the time of day you’d like backups to occur. If you have no preference, select No Preference.
+      - Backup Window allows you to select the time of day you'd like backups to occur. If you have no preference, select No Preference.
 
     The options for Maintenance are:
 
       - Auto Minor Version Upgrade allows you to choose whether or not the database automatically receives minor version upgrade.
       - Maintenance Window allows you to select a period of time that you prefer updates and other maintenance to be applied. If you select No Preference, a random time period will be picked. We recommend choosing a time window where usage is historically low.
 
-    When you’re finished choosing settings, press `Launch DB Instance`.
+    When you're finished choosing settings, press `Launch DB Instance`.
 
     ![](images/rds7.png)
     ![](images/rds8.png)
@@ -319,7 +319,7 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
 1. Open up Segment in another browser window or tab
 
-    Visit the [Segment Workspaces screen](http://segment.com/workspaces). Click the workspace you’d like the database to be associated with.
+    Visit the [Segment Workspaces screen](http://segment.com/workspaces). Click the workspace you'd like the database to be associated with.
 
     <img src="images/segment1.png" width="500">
 
@@ -342,21 +342,17 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
 5. Verify that the database connected successfully.
 
-    You should see a message indicating that the connection was successful. If not, check that you entered the settings correctly. If it still isn’t working, feel free to [contact us](/contact)!
+    You should see a message indicating that the connection was successful. If not, check that you entered the settings correctly. If it still isn't working, feel free to [contact us](/contact)!
 
 ### Sync schedule
 
-Your data will be available in Warehouses between 24 and 48 hours from your first sync. Your warehouse will then be on a sync schedule based on your [Warehouse Plan](/pricing#warehouses).
+{{>warehouse-sync-sched}}
 
-Segment allows you to schedule the time and how often you load data into your data warehouse.
-
-You can schedule your warehouse syncs by going to **Warehouse > Settings > Sync Schedule**. You can schedule up to the number of syncs allowed on your billing plan.
-
-   ![](images/segment5.png)
+![](images/segment5.png)
 
 
 ## Security
-Make sure you’re logging in with a user that has read and write permissions so that we can write to your database.
+Make sure you're logging in with a user that has read and write permissions so that we can write to your database.
 
 - Whitelist the Segment IP (`52.25.130.38/32`)
 - Create a service user that has `read/write` permissions.
@@ -435,7 +431,7 @@ In order to resolve the error, check the following settings:
 This error can be caused for a few reasons:
 
 - Your Warehouse went offline.
-- There’s a setting needed for Segment to connect which hasn’t been correctly configured. Please refer to our Warehouse docs to ensure all steps outlined there have been followed.</td>
+- There's a setting needed for Segment to connect which hasn't been correctly configured. Please refer to our Warehouse docs to ensure all steps outlined there have been followed.</td>
     </tr>
     <tr>
         <td>Schema <schema_name> does not exist</td>
