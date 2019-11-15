@@ -1,6 +1,5 @@
 ---
-title: Batch
-hidden: false
+title: Batch Destination
 beta: true
 ---
 
@@ -97,5 +96,3 @@ All of our supported Segment integration features will work automatically, with 
 Batch's other features are available directly by using the native SDK, which comes bundled with this integration.
 
 To leverage the native SDK through Segment, follow the instructions outlined [here for Android](https://segment.com/docs/sources/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) and [here for iOS](https://segment.com/docs/sources/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-).
-
-{% include content/integration-foot.md %}

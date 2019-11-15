@@ -1,5 +1,6 @@
 ---
-title: Indicative
+title: Indicative Destination
+rewrite: true
 ---
 
 [Indicative]( https://app.indicative.com/#/login/register?utm_source=partners&utm_medium=segment&utm_campaign=integration) is a behavioral analytics platform designed to help Marketing and Product teams optimize user engagement, conversion, and retention.
@@ -8,7 +9,7 @@ This document was last updated on 18th October, 2018. If you notice any gaps, ou
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. [Create an Indicative account](https://app.indicative.com/#/login/register?utm_source=partners&utm_medium=segment&utm_campaign=integration).
 
@@ -20,7 +21,7 @@ This document was last updated on 18th October, 2018. If you notice any gaps, ou
 
 5. To connect multiple sources to this project, simply repeat steps 2 - 4.
 
-You’re all set! Walkthrough the [Interactive Demo](https://app.indicative.com/#/onboard/tutorial?utm_source=partners&utm_medium=segment&utm_campaign=integration) to get ramped up quickly and easily!
+you're all set! Walkthrough the [Interactive Demo](https://app.indicative.com/#/onboard/tutorial?utm_source=partners&utm_medium=segment&utm_campaign=integration) to get ramped up quickly and easily!
 
 For additional information, contact `support@indicative.com`.
 

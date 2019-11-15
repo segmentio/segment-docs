@@ -1,5 +1,5 @@
 ---
-title: Marketo
+title: Marketo Destination
 ---
 
 ## Getting Started
@@ -58,9 +58,9 @@ Analytics.identify("hj2kf92ds212",
         .put("name", "Tom Smykowski"));
 ```
 
-Marketo uses cookies to keep track of visitors and their sessions while visiting your website. The cookie data is stored in the visitor’s browser, and is sent along to Marketo every time a new event occurs. This allows them to show a single unique lead between multiple page reloads.
+Marketo uses cookies to keep track of visitors and their sessions while visiting your website. The cookie data is stored in the visitor's browser, and is sent along to Marketo every time a new event occurs. This allows them to show a single unique lead between multiple page reloads.
 
-Your servers also have access to this cookie, so they can re-use it when you send server-side events to Segment. If you don’t use the existing cookie Segment will use either the userId or sessionId to make the server-side request to Marketo. When we create a new cookie, the client-side and server-side events from the same user will look like two distinct leads when viewed in Marketo. The cookieId takes precedence over all other keys, so if you send both the cookieId and the userId - the cookieId will match first and the userId for that lead will be updated.
+Your servers also have access to this cookie, so they can re-use it when you send server-side events to Segment. If you don't use the existing cookie Segment will use either the userId or sessionId to make the server-side request to Marketo. When we create a new cookie, the client-side and server-side events from the same user will look like two distinct leads when viewed in Marketo. The cookieId takes precedence over all other keys, so if you send both the cookieId and the userId - the cookieId will match first and the userId for that lead will be updated.
 
 To associate leads in server-side Marketo, there are currently three options with Segment:
 
@@ -74,9 +74,9 @@ If you choose to pass the cookie with your calls, it will look like this:
 id:561-HYG-937&token:_mch-marketo.com-1374552656411-90718
 ```
 
-If you want our server-side destination to use your user’s Marketo Cookie, pass it to us in the `context['Marketo'].marketoCookie` object.
+If you want our server-side destination to use your user's Marketo Cookie, pass it to us in the `context['Marketo'].marketoCookie` object.
 
-Here’s a Ruby example:
+Here's a Ruby example:
 
 ```ruby
 Analytics.identify(
@@ -122,5 +122,3 @@ For more information about syncronising your Marketo leads, please [visit their 
 To create a custom field in Marketo, follow Marketo's [documentation for creating a custom field](http://docs.marketo.com/display/public/DOCS/Create+a+Custom+Field+in+Marketo). Be sure that the **API Name** is `PascalCase`'d, as our destination will account for Marketo's Pascal trait standards.
 
 For instance, if you configure `SomeTrait` in the **API Name** field (the **Name** value does not matter), you can pass in this field as `someTrait`, and we will convert this to `SomeTrait` when sending into Marketo. Note that if you configured **API Name** to be `someTrait`, and passed it in as `someTrait` in your call, this would fail to send.
-
-{% include content/integration-foot.md %}

@@ -1,6 +1,8 @@
 ---
-title: Emarsys
+title: Emarsys Destination
+rewrite: true
 ---
+
 [The Emarsys Marketing Platform](https://www.emarsys.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows consumer-facing companies of any industry to convert, grow and retain their clients by enabling automated and personalized interactions across the customer lifecycle and across channels and devices.
 
 This destination is maintained by Emarsys. For any issues with the destination, please [reach out to their team](mailto:help@support.emarsys.com).
@@ -9,7 +11,7 @@ NOTE: The Emarsys Destination is currently in beta, which means that they are st
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Emarsys" within the Destinations Catalog and confirm the Source you'd like to connect to.

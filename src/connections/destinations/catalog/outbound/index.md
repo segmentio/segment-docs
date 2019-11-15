@@ -1,5 +1,5 @@
 ---
-title: Outbound
+title: Connect Destination
 ---
 
 ## Getting Started
@@ -18,26 +18,28 @@ Connect is supported on the client-side, server-side and on mobile.
 
 Connect needs to identify users and their data to track who we should message. Segment will pass your UserID and any traits that you store on that user to Connect. (Note: Segment refers to user data as "traits"; Connect refers to user data as "attributes".)
 
-        analytics.identify({
-          userId: '019mr8mf4r',
-          traits: {
-            name: 'Michael Bolton',
-            email: 'mbolton@initech.com',
-            phone: '1234567890',
-          },
-          context: {
-            device: {
-              type: "ios",
-              token: 'XXXYYYZZZ'
-        }}});
+```js
+analytics.identify({
+  userId: '019mr8mf4r',
+  traits: {
+    name: 'Michael Bolton',
+    email: 'mbolton@initech.com',
+    phone: '1234567890',
+  },
+  context: {
+    device: {
+      type: "ios",
+      token: 'XXXYYYZZZ'
+}}});
+```
 
 Segment traits correspond to specific top level attributes within Connect. These attributes are used to send and customize messages on various channels:
 
-+ name maps to Connect’s first_name and last_name attributes recommended for targeted copy.
-+ email maps to Connect’s email attribute required for email campaigns
-+ phone maps to Connect’s phone_number attribute for sms & voice campaigns
-+ context.device.token maps to Connect’s apns or fcm attribute for iOS and Android Push.
-+ timezone maps to Connect’s timezone attribut recommended to use Connect’s time of day message delivery feature (note - Connect only accepts Olson name values) These are automatically collected if you’re using Segment’s mobile SDKs
++ `name` maps to Connect's `first_name` and `last_name` attributes recommended for targeted copy.
++ `email` maps to Connect's `email` attribute required for email campaigns
++ `phone` maps to Connect's `phone_number` attribute for sms & voice campaigns
++ `context.device.token` maps to Connect's `apns` or `fcm` attribute for iOS and Android Push.
++ `timezone` maps to Connect's `timezone` attribute recommended to use Connect's time of day message delivery feature (note - Connect only accepts Olson name values) These are automatically collected if you're using Segment's mobile SDKs.
 
 
 ## Alias
@@ -56,7 +58,7 @@ Events and their properties are used to trigger and customize message campaigns 
           source: 'Analytics Academy'
         });
 
-Connect’s campaign filters allow you to target specific segments of users based on events, event properties, and attributes. Having specific events and attributes allow you to better target your audiences with custom messaging:
+Connect's campaign filters allow you to target specific segments of users based on events, event properties, and attributes. Having specific events and attributes allow you to better target your audiences with custom messaging:
 
 ![Campaign Filters](images/Create_Campaign.png)
 
@@ -85,5 +87,3 @@ Now that everything is hooked up, you can start messaging your users! Check out 
 1. [Getting started with Connect](https://support.zendesk.com/hc/en-us/articles/360022370293-Introduction-Getting-started-with-Connect)
 2. [Understanding events in Connect](https://support.zendesk.com/hc/en-us/articles/360022178494-Understanding-Connect-events)
 3. [Create a trigger based campaign](https://support.zendesk.com/hc/en-us/articles/360022362093-Creating-a-trigger-based-campaign)
-
-{% include content/integration-foot.md %}

@@ -1,15 +1,13 @@
 ---
-title: Braze
-redirect_from:
-- '/integrations/appboy/'
-- '/destinations/appboy/'
+title: Braze Destination
+rewrite: true
 ---
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni channel customer experiences.
 
-The {{integration.name}} Destination is open-source on GitHub. You can browse the code on Github: [iOS](https://github.com/Appboy/appboy-segment-ios), [Android](https://github.com/Appboy/appboy-segment-android), [Web](https://github.com/segment-integrations/analytics.js-integration-appboy), [Server](https://github.com/segmentio/integration-appboy).
+The Braze Destination is open-source on GitHub. You can browse the code on Github: [iOS](https://github.com/Appboy/appboy-segment-ios), [Android](https://github.com/Appboy/appboy-segment-android), [Web](https://github.com/segment-integrations/analytics.js-integration-appboy), [Server](https://github.com/segmentio/integration-appboy).
 
-_**NOTE:** There are currently two major of the Braze SDK. Make sure you read [important notes](https://segment.com/docs/destinations/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2._
+_**NOTE:** There are currently two major versions of the Braze SDK. Make sure you read [important notes](https://segment.com/docs/destinations/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2._
 
 This document was last updated on June 13, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
@@ -21,13 +19,13 @@ This document was last updated on June 13, 2018. If you notice any gaps, outdate
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Braze" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Braze" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. In your Segment Settings UI, add the "API Key" which can be found in your Braze Dashboard under App Settings > Manage App Group.
 4. You will also need to setup a new App Group REST API Key in the Braze Dashboard under App Settings > Developer Console > API Settings. Instructions can be found [here](https://www.braze.com/documentation/REST_API/#creating-and-managing-rest-api-keys). **Note:** For this App Group REST API Key, you will only need to select users.track endpoint under "User Data"
-5. If you are implementing via Analytics.js, Segment will automatically load the [Braze Web SDK](https://www.braze.com/documentation/Web/). Otherwise, depending on the source you’ve selected, include Braze’s library by adding the following lines to your dependency configuration.
+5. If you are implementing via Analytics.js, Segment will automatically load the [Braze Web SDK](https://www.braze.com/documentation/Web/). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
 
 
 ### iOS
@@ -119,7 +117,7 @@ When you Identify a user, we'll pass that user's information to Braze with `user
 | `address.country` | `country`   |
 | `gender`          | `gender`    |
 
-All other traits (except their [reserved keys](https://www.braze.com/documentation/Platform_Wide/#reserved-keys)) will be sent to Braze as custom attributes. You can send arrays as trait values but not nested objects.
+All other traits (except their [reserved keys](https://www.braze.com/documentation/Platform_Wide/#reserved-keys)) will be sent to Braze as custom attributes. You can send an array of strings as trait values but not nested objects.
 
 
 ## Track
@@ -204,13 +202,13 @@ In-app messages will be registered for and requested by default. This functional
 
 Instructions on how to set this up within Braze can be found in their [docs](https://www.Braze.com/academy/Best_Practices/#in-app-message-behavior). Once setup, it allows you to trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, simply make an identify with the corresponding [userId](https://segment.com/docs/spec/identify/#user-id) for that user.
 
-If you don’t want your site to immediately display new In-App Messages when they’re received, you can disable automatic display and register your own display subscribers. To do this:
+If you don't want your site to immediately display new In-App Messages when they're received, you can disable automatic display and register your own display subscribers. To do this:
 
-1. Disable your [Automatically Send In-App Messages Destinations setting](https://segment.com/docs/integrations/Braze/#settings). By default, it is enabled when you enable the Braze destination.
+1. Disable your [Automatically Send In-App Messages Destinations setting](/docs/destinations/braze/#settings). By default, it is enabled when you enable the Braze destination.
 
 2. Create your subscriber by calling:
 
-    ```
+    ```js
     analytics.ready(function() {
       window.appboy.subscribeToNewInAppMessages(function(inAppMessages) {
          // Display the first in-app message. You could defer display here by pushing this message to code      within in your own application.
@@ -237,7 +235,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
     ```
     [[SEGAppboyIntegrationFactory instance] saveLaunchOptions:launchOptions];
     ```
-3. In your application’s application:didReceiveRemoteNotification: method, add the following:
+3. In your application's application:didReceiveRemoteNotification: method, add the following:
     ```
     [[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];
     ```
@@ -257,7 +255,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 #### Android
 
 1. Follow the directions in Braze's [push notification docs](https://www.Braze.com/documentation/Android/#push-notifications).
-2. If you don’t have Braze automatically register for push (i.e. you pass the push token from an FCM or manual GCM registration) you need to ensure you call `registerAppboyPushMessages` after Braze is initialized. You can do this by checking if Braze is initialized before trying to pass the push token, and waiting for initializing to set if not.
+2. If you don't have Braze automatically register for push (i.e. you pass the push token from an FCM or manual GCM registration) you need to ensure you call `registerAppboyPushMessages` after Braze is initialized. You can do this by checking if Braze is initialized before trying to pass the push token, and waiting for initializing to set if not.
 
     You can do this in an `onIntegrationReady` method:
 
@@ -300,7 +298,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
     **Note:** This will immediately request push permission from the user.
 
-    If you wish to show your own push-related UI to the user before requesting push permission (known as a soft push prompt), you can test to see if push is supported in the user’s browser by calling:
+    If you wish to show your own push-related UI to the user before requesting push permission (known as a soft push prompt), you can test to see if push is supported in the user's browser by calling:
 
     ```
     analytics.ready(function() {
@@ -310,7 +308,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
      });
     ```
 
-    Braze recommends checking to see if this returns `true` since not all browsers can recieve push notifications. [See below](https://segment.com/docs/integrations/braze/#soft-push-prompts) for instructions on setting up a soft push prompt using Braze In-App Messages.
+    Braze recommends checking to see if this returns `true` since not all browsers can recieve push notifications. [See below](/docs/destinations/braze/#soft-push-prompts) for instructions on setting up a soft push prompt using Braze In-App Messages.
 
     If you'd like to unsubscribe a user, you can do so by calling:
 
@@ -328,7 +326,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 1. Follow [step one](https://www.Braze.com/documentation/Web/#soft-push-prompts) to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
 
-2. Disable your [Automatically Send In-App Messages Destination setting](https://segment.com/docs/integrations/Braze/#settings). By default, it is enabled when you enable the Braze destination.
+2. Disable your [Automatically Send In-App Messages Destination setting](/docs/destinations/braze/#settings). By default, it is enabled when you enable the Braze destination.
 
 3. Add the following snippet to your site:
 

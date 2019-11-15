@@ -1,5 +1,6 @@
 ---
-title: Upcall
+rewrite: true
+title: Upcall Destination
 ---
 
 [Upcall](https://www.upcall.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) creates real phone conversations seconds after a lead comes in and automatically follows up at the right time and with the right message, 24/7/365.
@@ -12,7 +13,7 @@ _**NOTE:** Upcall is currently in beta, which means that there may still be some
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Upcall" within the Destinations Catalog and confirm the Source you'd like to connect to.

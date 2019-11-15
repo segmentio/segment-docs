@@ -1,5 +1,6 @@
 ---
-title: Vitally
+rewrite: true
+title: Vitally Destination
 ---
 
 [Vitally](https://vitally.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer success platform for B2B SaaS companies that wraps your unified customer data with powerful analytics, alerts, and workflows to help you build successful customers.
@@ -11,28 +12,28 @@ _**NOTE:** Vitally is currently in beta, and this doc was last updated on Februa
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 Enabling Vitally as a destination in Segment can be done in one click from your Vitally account. These instructions are also detailed in the [Vitally help center](http://docs.vitally.io/en/articles/3-sending-segment-data-to-vitally).
 
 1. Navigate to the Segment integration page within your Vitally account. This can be found in your **Account Settings** in Vitally by navigating to the **Product Data** integrations list.
 
-  ![](https://i.imgur.com/6fztyvS.png)
+  ![](images/6fztyvS.png)
 
 2. In a separate tab/window, make sure you are logged into your Segment account
 3. Configure the Segment integration via the one-click "Enable with Segment" button. Choose the primary source of product usage data in Segment and Segment will automatically create a destination for Vitally:
 
-  ![](https://i.imgur.com/uGHrIvX.gif)
+  ![](images/uGHrIvX.gif)
 
 4. You'll now be able to see and manage your Vitally Destination directly from your Segment workspace
 
-  ![](https://i.imgur.com/2JQwIBK.png)
+  ![](images/2JQwIBK.png)
 
 5. That's it! Once we receive at least 1 event from Segment, you'll be able to proceed with the setup process and configure how to [create accounts from Segment](http://docs.vitally.io/en/articles/4)
 
 ## Identify
 
-If you haven't had a chance to review the spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review the spec, please take a look to understand what the [Identify method](/docs/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -67,7 +68,7 @@ Track calls are used in Vitally to [track and analyze](http://docs.vitally.io/en
 
 If you haven't had a chance to review the spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. An example call would look like:
 
-```
+```js
 analytics.group("accountId123", {
   name: "Initech",
   industry: "Technology",

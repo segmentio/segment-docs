@@ -1,5 +1,6 @@
 ---
-title: Adikteev
+rewrite: true
+title: Adikteev Destination
 ---
 
 This destination is maintained by Adikteev. For any issues with the destination, please [reach out to their team](mailto:contact@adikteev.com).
@@ -8,7 +9,7 @@ This destination is maintained by Adikteev. For any issues with the destination,
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 Currently, this destination supports events originating from Mobile sources alone.
 

@@ -1,6 +1,7 @@
 ---
-title: Salesforce Marketing Cloud
+title: Salesforce Marketing Cloud Destination
 ---
+
 ## Getting Started
 
 Segment's Salesforce Marketing Cloud destination allows you to add contacts without using SOAP APIs.
@@ -166,7 +167,7 @@ In order to take advantage of this functionality, you will need to create attrib
   </tr>
   <tr>
       <td>device.model</td>
-      <td>Device Model</td>
+      <td>Device-model</td>
   </tr>
   <tr>
       <td>device.name</td>
@@ -209,9 +210,7 @@ In order to take advantage of this functionality, you will need to create attrib
 <!-- Links -->
 
 [app-center]: https://appcenter-auth.exacttargetapps.com/
-[app center - permissions]: /docs/integrations/salesforce-marketing-cloud/images/new_app-3_data_access.png
-[app center - summary]: /docs/integrations/salesforce-marketing-cloud/images/new_app-4_summary.png
+[app center - permissions]: /docs/destinations/salesforce-marketing-cloud/images/new_app-3_data_access.png
+[app center - summary]: /docs/destinations/salesforce-marketing-cloud/images/new_app-4_summary.png
 [eventing API]: https://code.exacttarget.com/apis-sdks/rest-api/v1/hub/data-events/putDataExtensionRowByKeyAsync.html
 [standard identify traits]: https://segment.com/docs/spec/identify/#traits
-
-{% include content/integration-foot.md %}

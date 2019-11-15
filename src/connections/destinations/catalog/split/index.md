@@ -1,5 +1,6 @@
 ---
-title: Split
+rewrite: true
+title: Split Destination
 ---
 
 [Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) powers your product decisions with a unified solution for feature flagging and experimentation. With Split, you can safely rollout new functionality using sophisticated user targeting, measure impact of change on engineering, product, and business metrics, and rapidly iterate to refine functionality anywhere in the application stack.
@@ -13,7 +14,7 @@ _**NOTE:** Split is currently in beta, which means that there may still be some 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for Split within the Destinations Catalog and confirm the Source you'd like to connect to.
@@ -25,7 +26,7 @@ To find your key, log into Split and navigate to "Admin Settings" > "Integration
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
 
-```
+```js
 analytics.page({
   userId: "some_user_id",
   category: "Merchant",
@@ -35,7 +36,7 @@ analytics.page({
 
 Page calls will be sent to Split with a format of `viewed_<page_name>_page`.
 
-Split will record events for page method calls that have a name associated with them. E.g. page(‘signup’) translates to viewed_signup_page.
+Split records events for page method calls that have a name associated with them. For example, `page('signup')` translates to `viewed_signup_page`.
 
 If you would not like Split to receive `page` calls, you can configure in your integration settings in Split.
 
@@ -43,7 +44,7 @@ If you would not like Split to receive `page` calls, you can configure in your i
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/page/) does. An example call would look like:
 
-```
+```js
 analytics.screen({
   userId: "some_user_id",
   category: "Merchant",
@@ -53,7 +54,7 @@ analytics.screen({
 
 Screen calls will be sent to Split with a format of `viewed_<page_name>_screen`.
 
-Split will record events for page method calls that have a name associated with them. E.g. page(‘signup’) translates to viewed_signup_screen.
+Split will record events for page method calls that have a name associated with them. For example, `page('signup')` translates to `viewed_signup_page`.
 
 If you would not like Split to receive `screen` calls, you can configure in your integration settings in Split.
 
@@ -62,7 +63,7 @@ If you would not like Split to receive `screen` calls, you can configure in your
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
 
-```
+```js
 analytics.identify("userId1", {
   name: "Peter Gibbons",
   email: "peter@initech.com",
@@ -81,7 +82,7 @@ If you would not like Split to receive `identify` calls, you can configure in yo
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
 
-```
+```js
 analytics.track("Registered", {
   plan: "Pro Annual",
   accountType: "Facebook"

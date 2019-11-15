@@ -1,12 +1,12 @@
 ---
-title: CleverTap
+title: CleverTap Destination
 ---
 
 ## Getting Started
 
 Once the Segment library is integrated, toggle CleverTap on in your Segment destinations, and add your CleverTap Account ID and CleverTap Account Token which you can find in the CleverTap Dashboard under Settings.
 
-You can integrate CleverTap via a server-side or mobile destination (iOS or Andriod). If you are interested in using CleverTap’s push notifications or in-app notifications products, you should use the mobile destinations.
+You can integrate CleverTap via a server-side or mobile destination (iOS or Andriod). If you are interested in using CleverTap's push notifications or in-app notifications products, you should use the mobile destinations.
 
 All server-side destination requests require either a Segment Anonymous ID or a userId in the payload.
 
@@ -15,7 +15,7 @@ CleverTap supports the `identify`, `track`, `page` (server-side only), and `scre
 
 ## Identify
 
-When you identify a user, we'll pass that user's information to CleverTap with userId as CleverTap's Identity value. A number of Segment's special traits map to CleverTap's standard user profile fields.  You’ll pass the key on the left into Segment and we will transform it to the key on the right before sending to CleverTap.
+When you identify a user, we'll pass that user's information to CleverTap with userId as CleverTap's Identity value. A number of Segment's special traits map to CleverTap's standard user profile fields.  You'll pass the key on the left into Segment and we will transform it to the key on the right before sending to CleverTap.
 
 - `name` maps to `Name`
 - `birthday` maps to `DOB`
@@ -54,7 +54,7 @@ When you send a `screen` event via the server-side destination or the iOS bundle
 
 2. Next, declare CleverTap's destination in your Analytics instance:
 
-   ```
+   ```java
    Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY_HERE")
      .use(CleverTapIntegration.FACTORY)
      ...
@@ -65,7 +65,7 @@ When you send a `screen` event via the server-side destination or the iOS bundle
 
 1. In your AndroidManifest.xml, register the following CleverTap services.
 
-    ```
+    ```xml
     <service
         android:name="com.clevertap.android.sdk.FcmTokenListenerService">
         <intent-filter>
@@ -87,7 +87,7 @@ When you send a `screen` event via the server-side destination or the iOS bundle
 
 1. In your AndroidManifest.xml, add the CleverTap InAppNotificationActivity.
 
-    ```
+    ```xml
     <activity
             android:name="com.clevertap.android.sdk.InAppNotificationActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -107,17 +107,19 @@ CleverTap has created a sample Android application that integrates CleverTap via
 
 1. Add the CleverTap Segment Pod to your Podfile:
 
-    `pod 'Segment-CleverTap'`
+   ```objc
+   `pod 'Segment-CleverTap'`
+   ```
 
-    We recommend using the latest version on [CocoaPods](https://cocoapods.org/pods/Segment-CleverTap) since it will contain the most up to date features and bug fixes.
+   We recommend using the latest version on [CocoaPods](https://cocoapods.org/pods/Segment-CleverTap) since it will contain the most up to date features and bug fixes.
 
 2. Next, declare CleverTap's integration in your app delegate instance:
 
-    ```
-    SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY_HERE"];
-    [config use:[SEGCleverTapIntegrationFactory instance]];
-    [SEGAnalytics setupWithConfiguration:config];
-    ```
+   ```objc
+   SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY_HERE"];
+   [config use:[SEGCleverTapIntegrationFactory instance]];
+   [SEGAnalytics setupWithConfiguration:config];
+   ```
 
 ### Integrating Push
 
@@ -125,15 +127,15 @@ CleverTap has created a sample Android application that integrates CleverTap via
 
 2. In your application's application:didReceiveRemoteNotification: method, add the following:
 
-    `[[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];`
+   `[[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];`
 
 3. If you integrated the application:didReceiveRemoteNotification:fetchCompletionHandler: in your app, add the following to that method:
 
-    `[[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];`
+   `[[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];`
 
 4. If you implemented handleActionWithIdentifier:forRemoteNotification:, add the following to that method:
 
-    `[[SEGAnalytics sharedAnalytics] handleActionWithIdentifier:identifier forRemoteNotification:userInfo];`
+   `[[SEGAnalytics sharedAnalytics] handleActionWithIdentifier:identifier forRemoteNotification:userInfo];`
 
 ### In-App Notifications
 
@@ -147,8 +149,6 @@ CleverTap has created a sample iOS application that integrates CleverTap via Seg
 
 ### Push Tokens
 
-If you chose not to bundle the CleverTap Mobile SDK, then you will have to implement your own Push Message processors (and you won’t have access to CleverTap’s In-App feature).
+If you chose not to bundle the CleverTap Mobile SDK, then you will have to implement your own Push Message processors (and you won't have access to CleverTap's In-App feature).
 
 If you decide to implement your own Push Message processors, then you can pass push tokens to CleverTap via the server-side destination. You can do this by sending it inside context.device.token.
-
-{% include content/integration-foot.md %}

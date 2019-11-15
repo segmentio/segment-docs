@@ -1,7 +1,6 @@
 ---
-redirect_from: '/integrations/appsflyer'
-slug: appsflyer
-title: AppsFlyer
+rewrite: true
+title: AppsFlyer Destination
 ---
 [AppsFlyer](https://www.appsflyer.com/) is the world's leading mobile attribution & marketing analytics platform, helping app marketers around the world make better decisions. Our AppsFlyer destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/AppsFlyerSDK/segment-appsflyer-ios) and [Android](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration).
 
@@ -9,10 +8,10 @@ This document was last updated on April 27, 2018. If you notice any gaps, outdat
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-  1. From your Segment UI’s Destinations page click on "Add Destination".
-  2. Search for "AppsFlyer" within the Destinations Catalog and confirm the Source you’d like to connect to.
+  1. From your Segment UI's Destinations page click on "Add Destination".
+  2. Search for "AppsFlyer" within the Destinations Catalog and confirm the Source you'd like to connect to.
   3. Drop in your `AppsFlyer Dev Key`, which can be retrieved from the App Settings section of your AppsFlyer account.
   4. Follow the instructions in the Github repos: [iOS SDK](https://github.com/AppsFlyerSDK/segment-appsflyer-ios) and [Android SDK](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration).
   5. After you build and release to the app store, we start translating and sending your data to AppsFlyer automatically.
@@ -51,9 +50,9 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 When you call `track`, we translate it automatically and send the event to AppsFlyer.
 
-We include all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on our spec’d properties.
+We include all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on our spec'd properties.
 
-Finally, we automatically use AppsFlyer’s transactionId-based de-duplication when you send an an `orderId` (see the [e-commerce spec](https://segment.com/docs/spec/ecommerce/v2/)).
+Finally, we automatically use AppsFlyer's `transactionId` deduplication when you send an an `orderId` (see the [e-commerce spec](https://segment.com/docs/spec/ecommerce/v2/)).
 
 ### Server
 
@@ -133,7 +132,7 @@ If you are sending in the attribution data yourself, for iOS be sure the followi
 
 For example, an attribution event coming from an attribution partner would look like:
 
-```objc
+```objective-c
 [[SEGAnalytics sharedAnalytics] track:@"Install Attributed", properties: @{
     @"provider" : @"Appsflyer/Tune/Kochava/Branch",
     @"campaign" : @{
@@ -157,11 +156,11 @@ For example, an attribution event coming from an attribution partner would look 
 
 ### Revenue Tracking
 
-The destination automatically recognizes spec’d `revenue` property and translates them to AppsFlyer’s revenue tracking method.
+The destination automatically recognizes spec'd `revenue` property and translates them to AppsFlyer's revenue tracking method.
 
 ### Transaction De-duplication
 
-The destination automatically recognizes the spec’d `orderId` property, and sends it as the Transaction ID to AppsFlyer for revenue de-duplication.
+The destination automatically recognizes the spec'd `orderId` property, and sends it as the Transaction ID to AppsFlyer for revenue de-duplication.
 
 ### In-App Purchase Receipts
 
@@ -171,6 +170,6 @@ The destination does not currently support in-app purchase receipts. If this is 
 
 The destination does not automatically support out-of-the-box deeplinking (you need to write code here regardless!).
 
-Therefore, you can use AppsFlyer’s OneLink integration which is a single, smart, tracking link that can be used to track on both Android and iOS. OneLink tracking links can launch your app when it is already installed instead of redirecting the user to the app store.
+Therefore, you can use AppsFlyer's OneLink integration which is a single, smart, tracking link that can be used to track on both Android and iOS. OneLink tracking links can launch your app when it is already installed instead of redirecting the user to the app store.
 
 For more details, please review the [AppsFlyer OneLink Setup Guide](https://support.appsflyer.com/hc/en-us/articles/207032246-OneLink-Setup-Guide). More information is available in the AppsFlyer SDK Integration Guides ([iOS](https://support.appsflyer.com/hc/en-us/articles/207032066-AppsFlyer-SDK-Integration-iOS), [Android](https://support.appsflyer.com/hc/en-us/articles/207032126-AppsFlyer-SDK-Integration-Android)) and Segment's mobile FAQs ([iOS](/docs/server/mobile/ios/#faq), [Android](/docs/libraries/android/#faq)).

@@ -1,11 +1,12 @@
 ---
-title: Pinterest Tag
+title: Pinterest Destination
 ---
+
 ## Getting Started
 
 When you toggle on the Pinterest Tag in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading Pinterest Tag's tracking snippet onto your page. This means you should remove Pinterest Tag's snippet from your page.
++ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Pinterest Tag's tracking snippet onto your page. This means you should remove Pinterest Tag's snippet from your page.
 + Pinterest Tag will automatically start tracking visits and the defined events located on Pinterest Tag's documentation.
 
 Here's how you can get started with using the Pinterest Tag!
@@ -80,4 +81,16 @@ Segment automatically binds the following properties to Pinterest [Event Data](h
 
 In the Segment.com Pinterest Tag destination settings, one can also define their own custom properties, in addition to the mapped properties above.
 
-{% include content/integration-foot.md %}
+## Enable Enhanced Match
+
+Segment supports Pinterest Enhanced Match in two scenarios:
+1. where a user is already identified when they visit your site
+2. when a user visits your site anonymously but is identified at some later point.
+
+To support Pinterest Enhanced Match in the first scenario, go to the Pinterest Tag destination settings in the Segment web app, and click **Enable Enhanced Match to on Page Load**. This attaches the hashed email address on the initial page load conversion event. For more information see the [Pinterest enhanced-match documentation here](https://help.pinterest.com/en/business/article/enhanced-match).
+
+To support the second scenario, where a user visits your site anonymously, but is identified at a later point, you do not need to change any of the Pinterest destination settings. Instead, you can make an `identify()` call with the user's email address, which triggers a Pinterest `set()` method. This saves the identification parameters so they can be sent with the next event, so it's important to `set` the values as early as possible.
+
+> **Note**: Nothing appears in the network tab in your browser or in the tag helper extension after `set()` is called. However, a hashed value for an `'em'` parameter is added in the next event call, in a JSON object encoded in the URL. You can also see the email box in the tag helper extension.
+
+If you use Segment's `identify()` method to enable Pinterest's Enhanced Match, you only collect this information for events _after_ you enable the setting. Pinterest does not retroactively update values for past events.

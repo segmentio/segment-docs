@@ -1,5 +1,5 @@
 ---
-title: Eloqua
+title: Eloqua Destination
 ---
 
 ## Page
@@ -213,9 +213,6 @@ analytics.track({
     traits: {
       name: "Segment.com",
       groupId: "1234567"
-    }
   }
 })
 ```
-
-{% include content/integration-foot.md %}

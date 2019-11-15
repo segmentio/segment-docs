@@ -1,5 +1,6 @@
 ---
-title: Singular
+rewrite: true
+title: Singular Destination
 ---
 
 [Singular](https://www.singular.net/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Marketing Intelligence Platform that transforms marketing data into accurate, granular and actionable insights to drive growth. By unifying marketing campaign data with attribution data, marketers can measure ROI from every touchpoint across multiple channels for a single source of truth.
@@ -8,7 +9,7 @@ This destination is maintained by Singular. For any issues with the destination,
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Singular" within the Destinations Catalog and confirm the Source you'd like to connect to.

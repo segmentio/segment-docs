@@ -1,5 +1,6 @@
 ---
-title: Callingly
+title: Callingly Destination
+rewrite: true
 ---
 
 [Callingly](https://callingly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically gets your sales team on the phone with your incoming leads within seconds, generating better results and happy customers.
@@ -11,7 +12,7 @@ _**NOTE:** The Callingly Destination is currently in beta, which means that they
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Callingly" within the Destinations Catalog and confirm the Source you'd like to connect to.

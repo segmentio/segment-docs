@@ -1,19 +1,20 @@
 ---
-title: Ambassador
-redirect_from: '/integrations/ambassador'
+rewrite: true
+title: Ambassador Destination
 ---
+
 [Ambassador](https://www.getambassador.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) empowers companies to easily create, track & manage custom incentives that drive referrals and evangelize their users. The Ambassador Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-ambassador).
 
 This document was last updated on September 03, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
   1. From your Segment UI's Destinations page click on "Add Destination".
   2. Search for "Ambassador" within the Destinations Catalog and confirm the Source you'd like to connect to.
   3. Drop in your "Client ID" from your Ambassador dashboard, and populate any "Campaigns" to be mapped as per the below [Mapping campaigns to URLs](#mapping-campaigns-to-urls) section.
-  4. In about 5-10 minutes the CDN will be updated and the Ambassador snippet will be initialized onto your page.
+  4. In about 45 minutes the CDN will be updated and the Ambassador snippet will be initialized onto your page.
   5. Since Ambassador only records specific events and user data, events and users may not appear in Ambassador until you start using the API outlined below.
 
 ## Identify

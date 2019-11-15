@@ -1,6 +1,7 @@
 ---
-title: Salesforce Live Agent
+title: Salesforce Live Agent Destination
 ---
+
 ## Getting Started
 
 To get started, please follow Salesforce's [instructions](https://help.salesforce.com/articleView?id=live_agent_create_deployments.htm&type=5) to create a live agent deployment. If you have already done this, please navigate to the "deployment code" of the Live Agent deployment you would like to have Segment integrate with. It will look something like this:
@@ -51,5 +52,3 @@ Many of the settings required to allow Segment to integrate with your Live Agent
 liveagent.init('https://{LIVE_AGENT_ENDPOINT_URL}.salesforceliveagent.com/chat', {DEPLOYMENT_ID}, {ORG_ID});
 </script>
 ```
-
-{% include content/integration-foot.md %}

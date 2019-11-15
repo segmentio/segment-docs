@@ -1,7 +1,9 @@
 ---
-title: Custify
+title: Custify Destination
+rewrite: true
 ---
-[Custify](https://www.custify.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)’s Customer Success Platform is designed for B2B SaaS businesses and enables them to reduce their churn and increase customer lifetime value.
+
+[Custify](https://www.custify.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)'s Customer Success Platform is designed for B2B SaaS businesses and enables them to reduce their churn and increase customer lifetime value.
 
 This destination is maintained by Custify. For any issues with the destination, please [reach out to their team](mailto:contact@custify.com).
 
@@ -10,7 +12,7 @@ _**NOTE:** The Custify Destination is currently in beta, which means that they a
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Custify" within the Destinations Catalog and confirm the Source you'd like to connect to.

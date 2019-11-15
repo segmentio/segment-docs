@@ -1,5 +1,6 @@
 ---
-title: Trustpilot
+rewrite: true
+title: Trustpilot Destination
 ---
 [Trustpilot](https://www.trustpilot.com/) is an open and independent review platform. On Trustpilot, people can share and discover reviews of businesses, and businesses can gain insights and showcase their service and products performance through reviews.
 
@@ -9,7 +10,7 @@ _**NOTE:** The Trustpilot Destination is currently in beta, which means that the
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Trustpilot" within the Destinations Catalog and confirm the Source you'd like to connect to.

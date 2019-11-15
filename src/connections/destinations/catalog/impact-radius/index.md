@@ -1,5 +1,5 @@
 ---
-title: Impact Radius
+title: Impact Destination
 ---
 
 ## Getting Started
@@ -9,18 +9,18 @@ To get started, you will need to ensure your account has access to the Impact AP
 For tracking on Web, you will need your...
 
 1. Account SID
-Your Account SID can be found by clicking on the gear icon in the top right of your Impact Dashboard and selecting **Technical Settings**.
+   Your Account SID can be found by clicking on the gear icon in the top right of your Impact Dashboard and selecting **Technical Settings**.
 
 2. Authentication Token
-Can be found in the same place as your Account SID (labeled **Auth Token**)
+   Can be found in the same place as your Account SID (labeled **Auth Token**)
 
 3. Tracking Domain
-From your Impact Dashboard, click on Tracking Settings > General. The tracking domain should look something like `projectname.sjv.io`.
+   From your Impact Dashboard, click on Tracking Settings > General. The tracking domain should look something like `projectname.sjv.io`.
 
-For all tracking sources (web, mobile, server) you will need your...
+   For all tracking sources (web, mobile, server) you will need your...
 
 4. Campaign ID
-Your campaign id will be displayed in the top right corner of your Impact dashboard. It will be the four numbers next to your campaign name.
+   Your campaign id will be displayed in the top right corner of your Impact dashboard. It will be the four numbers next to your campaign name.
 
 - - -
 
@@ -36,11 +36,11 @@ Impact passes a query parameter named `CLICKID` as a part of their tracking urls
 
 Impact recommends you cache this value in the users browser (using a cookie or local storage) if you want to attribute any subsequent user interactions to the initial ad source. We ask that you continue doing this if you are using this integration to track web conversions and pass the cached id as part of the `context.referrer` object. It should look like this:
 
-```
+```js
 analytics.track('Some Conversion Event' { someProperty: true }, {
   context: {
     referrer: {
-      type: 'impact',
+      type: ' impactRadius ',
       id: <CACHED_CLICK_ID>
     }
   }
@@ -328,6 +328,3 @@ We integrate with Impact mobile attribution capabilities via our [Deep Link Open
     <td>googleaid</td>
   </tr>
 </table>
-
-
-{% include content/integration-foot.md %}

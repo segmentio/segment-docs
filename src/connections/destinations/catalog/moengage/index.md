@@ -1,11 +1,12 @@
 ---
-title: MoEngage
+title: MoEngage Destination
 ---
+
 ## Getting Started
 
 Once the Segment library is integrated with your app, toggle MoEngage on in your Segment
 integrations. These new settings will take up to an hour to propagate to all of your existing
-users. For new users it’ll be instantaneous!
+users. For new users it'll be instantaneous!
 
 Segment-MoEngage Integration is a bundled integration, requires client-side integration.
 
@@ -19,11 +20,11 @@ To setup MoEngage do the following:
   3. Enable MoEngage Integration.
   4. Go to MoEngage Settings and enter the MoEngage AppID, obtained in **Step1**.
   5. Save the changes.
-  6. Make sure the `Connection Mode` is set to `Device Mode`. This is required in order to make use
+  6. Make sure the `Connection Mode` is set to `Device-mode`. This is required in order to make use
       of features like push notification and in-app feature of MoEngage SDK.
 
 These new settings will take up to an hour to propagate to all of your existing users. For new
-users it’ll be instantaneous! Segment-MoEngage Integration is a bundled integration, requires client side integration.
+users it'll be instantaneous! Segment-MoEngage Integration is a bundled integration, requires client side integration.
 
 ![Settings](images/segment_settings.png)
 
@@ -83,7 +84,7 @@ That's all you need for tracking data. For more info refer this [link](https://s
 
 ### Reset Users
 
-The *reset* method clears the SDK’s internal stores for the current user. This is useful for apps where users can log in and out with different identities over time.
+The *reset* method clears the SDK's internal stores for the current user. This is useful for apps where users can log in and out with different identities over time.
 
  ```[[SEGAnalytics sharedAnalytics] reset];```
 
@@ -127,7 +128,7 @@ Push Notifications are a great way to keep your users engaged and informed about
 
 1.Follow the directions to register for push using Segment SDK in this [link](https://segment.com/docs/libraries/ios/#how-do-i-use-push-notifications-).
 
-2.In your application’s application:didReceiveRemoteNotification: method, add the following:
+2.In your application's application:didReceiveRemoteNotification: method, add the following:
 
  ```[[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];```
 
@@ -363,7 +364,7 @@ Use [track](https://segment.com/docs/sources/mobile/android/#track) to track eve
 This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
 
 #### Reset
-If your app supports the ability for a user to logout and login with a new identity, then you’ll need to call reset for the Analytics client.
+If your app supports the ability for a user to logout and login with a new identity, then you'll need to call reset for the Analytics client.
 
 #### Migrating from older version(One time process)
 Please refer to [this](http://docs.moengage.com/docs/migrating-to-7xxx) link to migrate from SDK version less than 2.0.00
@@ -434,7 +435,7 @@ Use [Identify](https://segment.com/docs/sources/website/analytics.js/#identify) 
 Use [track](https://segment.com/docs/sources/website/analytics.js/#track) to track events and user behaviour in your app. This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
 
 ### Reset
-If your website supports the ability for a user to logout and login with a new identity, then you’ll need to call [reset](https://segment.com/docs/sources/website/analytics.js/#reset-logout) method in `analytics.js`.
+If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](https://segment.com/docs/sources/website/analytics.js/#reset-logout) method in `analytics.js`.
 
 ### Optional
 There are some further optional features you can read about here:
@@ -446,5 +447,3 @@ There are some further optional features you can read about here:
 While updating the MoEngage settings on the Segment Dashboard, you can enable the logging functionality of the MoEngage SDK to see the SDK logs on the browser console. Just set `Enable Debug Logging` to `On` and the SDK will be loaded in debug mode.
 
 NOTE: When debug mode is enabled, the events and attributes of the users are sent to the `TEST` environment of your MoEngage App.
-
-{% include content/integration-foot.md %}

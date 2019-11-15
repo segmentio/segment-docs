@@ -1,5 +1,5 @@
 ---
-title: Cordial
+title: Cordial Destination
 beta: true
 ---
 
@@ -80,5 +80,3 @@ Update your Cordial/Segment field mapping using the same JSON format as in the P
 
 ### GET https://admin.cordial.io/api/integrations
 Retrieve a JSON list of integrations you have set up with Cordial.
-
-{% include content/integration-foot.md %}

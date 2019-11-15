@@ -1,9 +1,9 @@
 ---
-title: Zopim
-alias: Zendesk Chat
+rewrite: true
+title: Zopim Destination
 ---
 
-[Zopim, now Zendesk Chat](https://developer.zendesk.com/rest_api/docs/chat/introduction), is a live chat solution that helps businesses increase sales conversion by engaging important leads on their websites. The `analytics.js` Zopim Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-zopim).
+[Zendesk Chat](https://developer.zendesk.com/rest_api/docs/chat/introduction), (previously called Zopim) is a live chat solution that helps businesses increase sales conversion by engaging important leads on their websites. The `analytics.js` Zendesk Chat Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-zopim).
 
 **NOTE:** Zendesk Chat currently offers [two types of widgets](https://support.zendesk.com/hc/en-us/articles/115007912068-Using-the-Chat-JavaScript-API): a standalone `Chat Widget`, which is mainly designed to provide chat related features, and a `Web Widget`, which incorporates both Zendesk Chat and Zendesk Support functionalities. At the moment, Segment only supports the `Chat Widget`. For more details refer to the "Getting Started" section below.
 
@@ -11,13 +11,13 @@ This document was last updated on June 11th, 2018. If you notice any gaps, outda
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Zopim" within the Destinations Catalog and confirm the Source you’d like to connect to.
-3. Add your Zopim ID to your Destination Settings. If you are using the `Chat Widget`, you can find your Zopim ID in the widget script itself. See example below:
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Zopim" within the Destinations Catalog and confirm the Source you'd like to connect to. (This is the old name.)
+3. Add your Zendesk Chat ID (Zopim ID) to your Destination Settings. If you are using the `Chat Widget`, you can find your ID in the widget script itself. See example below:
 
-```
+```js
 <!--Start of Zendesk Chat Script-->
 <script type="text/javascript">
 window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
@@ -29,16 +29,16 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 <!--End of Zendesk Chat Script-->
 ```
 
-On the other hand, if you are using the `Web Widget` (see example below), **you will need to contact Zendesk Support in order to get your Zopim ID:**
+If you are using the `Web Widget` (see example below), **you will need to contact Zendesk Support in order to get your Chat Account ID or you can follow the steps outlined [here](https://support.zendesk.com/hc/en-us/articles/360022366613-How-do-I-find-my-Chat-Account-Key-):**
 
-```
+```js
 <!-- Start of Zendesk Widget script -->
 <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="SUBDOMAIN.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
 /*]]>*/</script>
 <!-- End of Zendesk Widget script -->
 ```
 
-4. In about 5-10 minutes the CDN will be updated and Zompim's snippet will be initialized onto your page.
+4. In about 45 minutes the CDN updates and the Zendesk Chat snippet is initialized onto your page.
 
 ## Identify
 
@@ -52,11 +52,11 @@ analytics.identify('ze8rt1u89', {
 });
 ```
 
-When you call identify, the `name`, `email`, and `phone` traits included in the call will be set to the current user in Zopim.
+When you call identify, the `name`, `email`, and `phone` traits included in the call will be set to the current user in Zendesk Chat.
 
 ## Record Live Chat Events
 
-With this destination, you can automatically record `track` events for live chat conversations. If you select this option, we’ll collect the following events:
+With this destination, you can automatically record `track` events for live chat conversations. If you select this option, we'll collect the following events:
 * Live Chat Conversation Started
 * Live Chat Conversation Ended
 
@@ -64,10 +64,10 @@ These events will then flow out to your other tools, so you can do things like a
 
 To learn more about the live chat events you can capture with this destination, head on over to our [Live Chat spec docs](/docs/spec/live-chat/).
 
-![Turn on Zopim](images/recordlivechat.png)
+![Turn on Zendesk Chat](images/recordlivechat.png)
 
 ## Troubleshooting
 
-### I want to hide the Zopim widget on certain pages, or after a analytics.js call is made.
+### I want to hide the Zendesk Chat widget on certain pages, or after a analytics.js call is made.
 
-Currently, the best way to ensure that the Zopim widget does not load on a page is to fire a small Javascript snippet as [documented here on Zopim's site](https://api.zopim.com/files/meshim/widget/controllers/liveChatAPI/Window-js.html#$zopim.livechat.window.hide). To ensure that the Zopim snippet fires after the Zopim library has loaded on the page, you can either wrap the snippet in an [analytics.ready()](/docs/sources/website/analytics.js/#ready) method with any conditional logic you'd like, or place the script in the callback of any analytics.js (`.track()`, `.identify()`, etc) call so that it will hide after that call is made.
+Currently, the best way to ensure that the Zendesk Chat widget does not load on a page is to fire a small Javascript snippet as [documented here on the legacy Zopim site](https://api.zopim.com/files/meshim/widget/controllers/liveChatAPI/Window-js.html#$zopim.livechat.window.hide). To ensure that the Zendesk Chat snippet fires after the library loads on the page, you can either wrap the snippet in an [analytics.ready()](/docs/sources/website/analytics.js/#ready) method with any conditional logic you'd like, or place the script in the callback of any analytics.js (`.track()`, `.identify()`, etc) call so that it hides after that call is made.

@@ -1,6 +1,5 @@
 ---
-title: Rockerbox
-alias: hindsight
+title: Rockerbox Destination
 ---
 
 ## Getting Started
@@ -14,5 +13,3 @@ When you trigger a `.page()` call, we will fire `window.RB.track('view')` and pa
 ## Track
 
 Rockerbox can accept any custom `.track()` events and properties.
-
-{% include content/integration-foot.md %}

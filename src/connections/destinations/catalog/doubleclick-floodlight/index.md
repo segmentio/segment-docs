@@ -1,5 +1,5 @@
 ---
-title: DoubleClick Floodlight
+title: DoubleClick Floodlight Destination
 ---
 
 ## Getting Started
@@ -36,11 +36,11 @@ Such generated user agent string might look something like this:
 
 Assuming the below is an example Floodlight tag mapping:
 
-![floodlight-tag-settings](https://cloudup.com/c2HROpnXF5r+)
+![floodlight-tag-settings](images/c2HROpnXF5r+.png)
 
 With the following `track` call:
 
-```objc
+```objective-c
 [[SEGAnalytics sharedAnalytics] track:@"Free El"
                            properties:@{ @"show": @"Stranger Things", @"source": @"Netflix", @"greatestShowEver": YES }];
 ```
@@ -99,20 +99,21 @@ If you add Custom Floodlight Variables to a report as metrics, note that they wi
 
 Click Save.
 
-## COPA Compliance
+## COPPA Compliance
 
-DoubleClick Floodlight lets you set a parameter called `tag_for_child_directed_treatment` as either `0` or `1` if you want to mark a particular tag as coming from a user under the age of 13, under the [COPA](https://www.ftc.gov/news-events/media-resources/protecting-consumer-privacy/kids-privacy-coppa) compliance.
+DoubleClick Floodlight lets you set a parameter called `tag_for_child_directed_treatment` as either `0` or `1` if you want to mark a particular tag as coming from a user under the age of 13, under the [COPPA](https://www.ftc.gov/news-events/media-resources/protecting-consumer-privacy/kids-privacy-coppa) compliance.
 
-If you want to set this flag, you can send an integration option namespaced as `copaCompliant` with `true` or `false` (default):
+If you want to set this flag, you can send an integration option namespaced as `coppaCompliant` with `true` or `false` (default):
 
 ```java
-Analytics.with(context).track("Free El", new Properties().putValue("show", "Stranger Things").putValue("source", "Netflix").putValue("greatestShowEver", true), new Options().setIntegrationOptions("DoubleClick Floodlight", new ValueMap().putValue("copaCompliant", true));
+
+Analytics.with(context).track("Free El", new Properties().putValue("show", "Stranger Things").putValue("source", "Netflix").putValue("greatestShowEver", true), new Options().setIntegrationOptions("DoubleClick Floodlight", new ValueMap().putValue("coppaCompliant", true)));
 ```
+
+> Note: This flag was previously called "copaCompliant" instead of "coppaCompliant". The method has been aliased to preserve the old functionality, and you do not need to update it if you used the old spelling.
 
 ## Sending Personally Identifiable Information (PII)
 
 Please refrain from mapping custom variables that are PII. Please refer to the [warning](https://support.google.com/dfa/partner/answer/2548879?hl=en) by DoubleClick:
 
-The terms of your DoubleClick contract prohibit passing any information to us that we could use or recognize as personally identifiable information (PII). If you enter certain key-values into a field in a DoubleClick product, you may see a warning that reminds you that you must not use key-values to pass data that we would recognize as PII. Key-values that trigger this warning include, for example, email and username. Note that it is okay to use these key-values if your purpose is not to collect information that DoubleClick could use or recognize as PII. (For example, email=weekly is fine, but passing a user’s email address is not.) If you do choose one of these key-values, DoubleClick may contact you in the future to confirm that you are not using them in a way that is prohibited.
-
-{% include content/integration-foot.md %}
+The terms of your DoubleClick contract prohibit passing any information to us that we could use or recognize as personally identifiable information (PII). If you enter certain key-values into a field in a DoubleClick product, you may see a warning that reminds you that you must not use key-values to pass data that we would recognize as PII. Key-values that trigger this warning include, for example, email and username. Note that it is okay to use these key-values if your purpose is not to collect information that DoubleClick could use or recognize as PII. (For example, email=weekly is fine, but passing a user's email address is not.) If you do choose one of these key-values, DoubleClick may contact you in the future to confirm that you are not using them in a way that is prohibited.

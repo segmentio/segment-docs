@@ -1,5 +1,5 @@
 ---
-title: Apteligent
+title: Apteligent Destination
 ---
 
 Our Apteligent destination code is open sourced on Github. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-crittercism), [Android](https://github.com/segment-integrations/analytics-android-integration-crittercism).
@@ -23,5 +23,3 @@ Apteligent can show you information about the user using your app. You can recor
 When an error occurs, you'll want to know what user actions led to the crash. Apteligent allows you to leave "breadcrumbs" for this purpose.
 
 Whenever you call [`track`](/docs/spec/track/), we'll leave a breadcrumb in Apteligent. `Track` takes the name of the event and any optional `properties` you want to associate with the event.
-
-{% include content/integration-foot.md %}

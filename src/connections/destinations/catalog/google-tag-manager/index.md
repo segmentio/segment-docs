@@ -1,18 +1,19 @@
 ---
-title: Google Tag Manager
+title: Google Tag Manager Destination
+rewrite: true
 ---
 
-[Google Tag Manager](https://support.google.com/tagmanager) (GTM) is a tag management system that allows you to quickly and easily update tags and code snippets on your website or mobile apps. Once the Tag Manager snippet has been added to your website or mobile app, you can configure tags via a web-based user interface without having to alter and deploy additional code. This reduces errors and frees you from having to involve a developer whenever you need to make changes. The {{integration.name}} Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-google-tag-manager).
+[Google Tag Manager](https://support.google.com/tagmanager) (GTM) is a tag management system that allows you to quickly and easily update tags and code snippets on your website or mobile apps. Once you add the Tag Manager snippet to your website or mobile app, you can configure tags using a web-based user interface without having to alter and deploy additional code. This reduces errors and frees you from having to involve a developer whenever you need to make changes. The Google Tag Manager Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-google-tag-manager).
 
-This document was last updated on April 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [please let us know!](https://segment.com/help/contact)
+This document was last updated on April 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [please let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Google Tag Manager" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Google Tag Manager" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. In your Segment UI's destination settings, enter your Container ID (note: it should start with "GTM-"). You can find this in the Admin section of your [GTM dashboard](https://tagmanager.google.com/#/admin/).
 4. GTM will be loaded on any pages where your Segment snippet is initialized and `analytics.page` gets called in client-side Javascript. Once you've turned on GTM through Segment, you can use Segment `track` events to populate the GTM `dataLayer`.
 

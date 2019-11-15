@@ -1,5 +1,5 @@
 ---
-title: Iterable
+title: Iterable Destination
 ---
 
 ## Getting Started
@@ -18,9 +18,9 @@ When you switch on the Iterable destination in your Segment dashboard, your data
 
 ## Identify
 
-When you call `identify` with one of Segment’s sources, we’ll call Iterable’s [update user endpoint](https://api.iterable.com/api/docs#!/users/updateUser_post_7), to add data for that particular user. You can also call `identify` to update user fields.
+When you call `identify` with one of Segment's sources, we'll call Iterable's [update user endpoint](https://api.iterable.com/api/docs#!/users/updateUser_post_7), to add data for that particular user. You can also call `identify` to update user fields.
 
-Iterable keys users by `email` or a user ID. This user ID will be the Segment `userId` if sent. Anonymous user tracking is also an option, for more details see the section on tracking anonymous users below. Note that if you fail to send either of `userId` or `email` and also have anonymous user tracking disabled, Iterable will not accept the request and it will throw an error.
+Iterable keys users by `email` or a user ID. This user ID will be the Segment `userId` if sent. Note that if you fail to send either of `userId` or `email`, Iterable won't accept the request and throws an error.
 
 ### Merge Nested Objects
 
@@ -47,12 +47,10 @@ analytics.identify({
 
 This `identify` event would merge the `mobile` property for this user with any other settings that were previously a part of that users settings field.
 
-### Tracking anonymous users
-By enabling the 'Track Anonymous' integration setting, you can track users for whom you have neither a email address nor user ID. When this setting is turned on and the integration receives a request without either field, we will generate an email address of the format `[Segment Anonymous ID]@placeholder.email` and send that to Iterable as the user's email address. When the user is identified and we receive another `identify` request with the same anonymous ID along with email address and/or `userId` we will send a request to Iterable to update the profile.
 
 ## Track
 
-When you call `track` with one of Segment’s sources, we’ll call Iterable’s [track API endpoint](https://api.iterable.com/api/docs#!/events/track_post_0), and send over the event properties as the data fields in the request. The name of the `track` event will show up as a Custom Event in Iterable, and will be available to trigger workflows, segment users, and view analytics.
+When you call `track` with one of Segment's sources, we'll call Iterable's [track API endpoint](https://api.iterable.com/api/docs#!/events/track_post_0), and send over the event properties as the data fields in the request. The name of the `track` event will show up as a Custom Event in Iterable, and will be available to trigger workflows, segment users, and view analytics.
 
 If a user does not already exist in Iterable, calling `track` for a user event will add that user into the system. You can track with either an `email` or userId (if a `userId` exists for that email).
 
@@ -83,7 +81,7 @@ If a user does not already exist in Iterable, calling `page` for a user event wi
 
 ### Example steps:
 
-Call `page` with `userId` and `email`; if with `email` and the `email` doesn’t exist, the user will be created.
+Call `page` with `userId` and `email`; if with `email` and the `email` doesn't exist, the user will be created.
 
 
 ## Sending Email Data from Iterable
@@ -92,7 +90,7 @@ Iterable supports sending [email events](/docs/spec/email/) to other tools on th
 
 To enable this feature, go to Destinations, Third Party, and select Segment in the Add Destinations button. Then, enter your API key.
 
-![Send email events from Iterable](https://cldup.com/_5lJvJan7N.png)
+![Send email events from Iterable](images/Iterable1.png)
 
 ## Sending Push Notification Data from Iterable
 
@@ -100,5 +98,3 @@ Iterable supports sending push notification events to Segment. These events will
 
 They support the following events:
 `Push Delivered`, `Push Bounced`, `Mobile App Uninstalled`, `Push Opened`
-
-{% include content/integration-foot.md %}

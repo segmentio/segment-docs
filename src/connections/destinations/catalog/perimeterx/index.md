@@ -1,5 +1,5 @@
 ---
-title: PerimeterX
+title: PerimeterX Destination
 beta: true
 ---
 
@@ -7,7 +7,7 @@ beta: true
 
 When you toggle on the PerimeterX Destination in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading PerimeterX’s snippet onto your page. This means you should remove PerimeterX’s snippet from your page.
++ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading PerimeterX's snippet onto your page. This means you should remove PerimeterX's snippet from your page.
 
 + PerimeterX will send an `.identify()` call back to Segment on every page load with the following custom trait: `pxResult`. The value of `pxResult` will be either 0 or 1 meaning the traffic is either human or non-human.
 
@@ -22,7 +22,7 @@ Here's how you can get started using PerimeterX!
 + Rename your new policy by clicking the words "Policy name" in the new policy and then
 click "Apply Changes".
 
-![](https://cloudup.com/cg69lTztbJx+)
+![](images/cg69lTztbJx.png)
 
 ### 3. Configure your Application
 
@@ -32,7 +32,7 @@ in the modal.
 + Select the policy that you would like to use (default is pxDefault_Policy and you should
 use the policy that you just created)
 
-![](https://cloudup.com/c1DmbmMK5q8+)
+![](images/c1DmbmMK5q8.png)
 
 ### 4. Copy your Application ID and paste into your Segment PerimeterX settings
 
@@ -47,8 +47,6 @@ You have the option to map up to 10 of your Segment `.identify()` traits to cust
 
 1. Create the custom parameter in PerimeterX. Click "Admin" > "Applications" > choose your application. Under "Custom parameters" click "Add".
 2. Choose a Parameter (1-10) and then a display name.
-![](https://cloudup.com/cmA_dv62kgp+)
+![](images/cmA_dv62kgp.png)
 3. In your Segment PerimeterX Destination settings, enter the name of the `.identify()` trait you'd like to map the the custom parameter you created and then enter the number of the custom parameter (1-10).
-![](https://cloudup.com/cnKeeTBLune+)
-
-{% include content/integration-foot.md %}
+![](images/cnKeeTBLune.png)

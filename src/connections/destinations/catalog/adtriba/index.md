@@ -1,6 +1,8 @@
 ---
-title: Adriba
+title: Adriba Destination
 ---
+
+
 [Adtriba](https://www.adtriba.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows advertisers to track, control and optimize their marketing activities across all digital marketing channels through AI and user journey analysis.
 
 This destination is maintained by Adtriba. For any issues with the destination, please [reach out to their team](mailto:support@adtriba.com).
@@ -10,7 +12,7 @@ _**NOTE:** The Adtriba Destination is currently in beta, which means that they a
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Adtriba" within the Destinations Catalog and confirm the Source you'd like to connect to.
@@ -56,5 +58,3 @@ analytics.track('Conversion', {
 Track calls will be sent to Adtriba as a `track` event.
 
 Trigger additional events by using [Semantic Events](https://segment.com/docs/spec/semantic/) in order to enrich the Adtriba machine learning process.
-
-{% include content/integration-foot.md %}

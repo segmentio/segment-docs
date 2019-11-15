@@ -1,5 +1,6 @@
 ---
-title: Survicate
+rewrite: true
+title: Survicate Destination
 ---
 [Survicate](https://survicate.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete toolkit for customer feedback. From website optimization and customer satisfaction surveys to complex customer insight processes integrated with your email campaigns.
 
@@ -10,7 +11,7 @@ _**NOTE:** The Survicate Destination is currently in beta, which means that they
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Survicate" within the Destinations Catalog and confirm the Source you'd like to connect to.

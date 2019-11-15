@@ -1,5 +1,6 @@
 ---
-title: Quora Conversion Pixel
+rewrite: true
+title: Quora Conversion Pixel Destination
 ---
 
 [Quora Conversion Pixel](https://www.quora.com/business) enables you to attribute downstream user actions on your website to your ad campaigns running on Quora.com. Our client-side Destination code is open source. You can browse the code in GitHub [here](https://github.com/segment-integrations/analytics.js-integration-quora-conversion-pixel).
@@ -8,10 +9,10 @@ This document was last updated on June 15th, 2018. If you notice any gaps, outda
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Quora" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Quora" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Add your Quora Conversion Pixel Key to your Destination settings. To get this you will need to do the following:
 
 	i. Log into your [Quora Ads Manager Account](https://www.quora.com/ads/account).
@@ -22,7 +23,6 @@ This document was last updated on June 15th, 2018. If you notice any gaps, outda
 
 	iv. Under "Option A: Install a Javascript Pixel," find your Quora Conversion Pixel Key in the Quora Javascript Pixel - the key is embedded in a tag that looks like `qp('init', '7cc5a029c2604daa8365d15ff337146e')`. In the example below, the key is `7cc5a029c2604daa8365d15ff337146e`.
 
-   ![](https://cl.ly/3F2B0A0x3K1x)
 
 ## Track
 

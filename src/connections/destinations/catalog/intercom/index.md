@@ -1,5 +1,6 @@
 ---
-title: Intercom
+title: Intercom Destination
+rewrite: true
 ---
 
 [Intercom](https://www.intercom.com/) makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination is open-source. You can browse the code for [analytics.js](https://github.com/segment-integrations/analytics.js-integration-intercom), [iOS](https://github.com/segment-integrations/analytics-ios-integration-intercom) and [Android](https://github.com/segment-integrations/analytics-android-integration-intercom) on Github.
@@ -8,23 +9,23 @@ This document was last updated on January 18, 2019. If you notice any gaps, outd
 
 **Use Cases**
 
-* [Personalize Intercom live chat messages based on a visitor’s matched industry](https://segment.com/recipes/personalize-intercom-live-chat-industry/)
-* [Deliver hyper-relevant Intercom messages based on a visitor’s job role](https://segment.com/recipes/personalize-intercom-live-chat-role/)
+* [Personalize Intercom live chat messages based on a visitor's matched industry](https://segment.com/recipes/personalize-intercom-live-chat-industry/)
+* [Deliver hyper-relevant Intercom messages based on a visitor's job role](https://segment.com/recipes/personalize-intercom-live-chat-role/)
 * [Trigger Intercom messages when users are likely to upgrade with ClearBrain](https://segment.com/recipes/trigger-upgrade-messages-intent-intercom-clearbrain/)
-* [Personalize Intercom welcome messages by incorporating a visitor’s company](https://segment.com/recipes/personalize-intercom-live-chat-with-company-name/)
+* [Personalize Intercom welcome messages by incorporating a visitor's company](https://segment.com/recipes/personalize-intercom-live-chat-with-company-name/)
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1.  From your Segment UI’s Destinations page click on "Add Destination".
-2.  Search for "Intercom" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1.  From your Segment UI's Destinations page click on "Add Destination".
+2.  Search for "Intercom" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3.  Authorize your Intercom account in Segment and select the Intercom Account you want to sync with Segment. You can choose which account to sync in the drop down menu in the top right. If you have opted to utilize our [server-side sources](https://segment.com/docs/sources/#server), we will begin passing data through our servers once you activate the Destination. For other libraries please continue reading below.
 4. Find your "App ID" within the Intercom UI following [the instructions here](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-app-id) or by navigating to the Gear Menu and clicking on "App Settings" followed by "API Keys". It should look something like this: `9iefb489`.
 
 ### Client
 
-1. Activate your Intercom Destination and our CDN will be updated within 5-10 minutes.
+1. Activate your Intercom Destination and our CDN will be updated within 45 minutes.
 2. Our snippet will then start asynchronously loading Intercom's `library.js` onto your page. This means you should remove Intercom's snippet from your page.
 
 ### Mobile
@@ -113,12 +114,12 @@ Here's how Segment parameters are mapped to those in the `intercomSettings` obje
 
 **NOTE:** Intercom does not accept trait values longer than 255 characters.
 
-If a user with `traits.company` is identified and the `company_id` does not match a known company, a new company will be created in Intercom. If company is a string, we will set the `company_id` as a hash of `company_name` as an id is required to [associate the user to the company](https://developers.intercom.io/reference#user-model). The [`group` call](docs/destinations/intercom/#group) may be used to create/update company profiles explicitly.
+If a user with `traits.company` is identified and the `company_id` does not match a known company, a new company will be created in Intercom. If company is a string, we will set the `company_id` as a hash of `company_name` as an id is required to [associate the user to the company](https://developers.intercom.io/reference#user-model). The [`group` call](/docs/destinations/intercom/#group) may be used to create/update company profiles explicitly.
 
 
 ### Server
 
-When you call Identify from any of the server-side libraries or mobile sources in Cloud Mode we'll map our [special traits](/docs/spec/identify/#traits) (`email`, `firstName`, `lastName`, `createdAt`, and `company`) to Intercom special properties.
+When you call Identify from any of the server-side libraries or mobile sources in Cloud-mode we'll map our [special traits](/docs/spec/identify/#traits) (`email`, `firstName`, `lastName`, `createdAt`, and `company`) to Intercom special properties.
 
 If you want to use Intercom's `last_request_at`, you'll need to pass in `active: true` in the context object. Then, by default we will set `last_request_at` to the current time; however, if you pass in your own timestamp, pass it in as `lastRequestAt` (in camelCase), and we'll set `last_request_at` to that value in our server-side sources.
 
@@ -130,7 +131,7 @@ Intercom supports both logged-in or logged-out users. You will need to register 
 
 Intercom allows users to choose to track only known or only unknown users, as well as both. Segment will support the ability to track both by checking for logged in users (determined by the `userId`) and falling back to setting the user as "Unidentified" if this is not present.
 
-Intercom knows when your app is backgrounded and comes alive again, so you won’t need to re-register your users.
+Intercom knows when your app is backgrounded and comes alive again, so you won't need to re-register your users.
 
 Segment maps the following Intercom standard attributes on `identify`.
 
@@ -171,7 +172,7 @@ analytics.track('Product Purchased', {
 
 *Note:* Because Intercom only associates Track events with known users, an Identify call with a `userId` is required before Track events will be associated properly.
 
-When you call `track` from any of the server-side libraries or mobile sources in `cloud mode` (i.e. without our beta Segment mobile Intercom SDK installed), you will need to include either the `userId` or `email` of an existing user within Intercom.
+When you call `track` from any of the server-side libraries or mobile sources in `cloud-mode` (i.e. without our beta Segment mobile Intercom SDK installed), you will need to include either the `userId` or `email` of an existing user within Intercom.
 
 
 ### Revenue and currency
@@ -213,7 +214,7 @@ analytics.group('companyId123', {
 
 Segment supports Intercom companies in all of our sources. Users can be put into multiple groups, which will associate them to multiple companies in Intercom.
 
-When you call Group from any of our server-side libraries or mobile sources in cloud mode (i.e. without our beta Segment mobile Intercom SDK installed), you will need to include either the `userId` or `email` of an existing user within Intercom.
+When you call Group from any of our server-side libraries or mobile sources in cloud-mode (i.e. without our beta Segment mobile Intercom SDK installed), you will need to include either the `userId` or `email` of an existing user within Intercom.
 
 **Note:** In order for the Company Sessions Count to update within Intercom, the company must first be recorded in an `identify` call.
 
@@ -233,11 +234,11 @@ When you call Group from any of our server-side libraries or mobile sources in c
 
 ## Reset
 
-Segment supports Intercom's `reset` method only for Device Mode Mobile sources. The bundled mobile SDK’s `reset` method unregisters a user in Intercom. When users want to log out of your app and you call Segment's `reset` method, Segment will call:
+Segment supports Intercom's `reset` method only for Device-mode Mobile sources. The bundled mobile SDK's `reset` method unregisters a user in Intercom. When users want to log out of your app and you call Segment's `reset` method, Segment will call:
 
 On iOS:
 
-```objc
+```objective-c
   [Intercom reset];
 ```
 
@@ -251,7 +252,7 @@ On Android:
 
 ### Arrays and Objects
 
-Intercom does **not** support custom arrays or objects. Per Intercom’s request, we removed support for this feature starting Aug 21st, 2017. This means that if you want a certain user `trait` or event `property` to be sent to Intercom, you must send them at the top level.
+Intercom does **not** support custom arrays or objects. Per Intercom's request, we removed support for this feature starting Aug 21st, 2017. This means that if you want a certain user `trait` or event `property` to be sent to Intercom, you must send them at the top level.
 
 This limitation does not apply, however, for mapping `company` objects on [`identify`](/docs/spec/identify/) calls. We will continue to handle that in the same way as before. This is only applicable for any custom traits or properties.
 
@@ -312,7 +313,7 @@ Analytics.with(context).identify("123", traits, options);
 
 If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/sources/website/analytics.js/#selecting-integrations), the context object will look like this:
 
-```
+```json
 {
      integrations: {
          All: false,
@@ -423,7 +424,7 @@ analytics.onIntegrationReady("Intercom", new Callback() {
 });
 ```
 
-```objc
+```objective-c
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(integrationDidStart:) name:SEGAnalyticsIntegrationDidStart object:nil];
 
 - (void)integrationDidStart:(nonnull NSNotification *)notification
@@ -469,4 +470,4 @@ Intercom only allows a total of [120 unique event names](http://docs.intercom.io
 
 If you want to prevent some of your events from being passed to Intercom and thus prevent the error, you can filter out Intercom in those events using the [Selecting Destinations](https://segment.com/docs/guides/best-practices/should-i-instrument-data-collection-on-the-client-or-server/#selecting-destinations) feature available on all of our libraries.
 
-{% include content/personas.md %}
+{{>personas}}

@@ -1,12 +1,12 @@
 ---
-title: Keen
+title: Keen Destination
 ---
 
 ## Getting Started
 
 When you toggle on Keen in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading keen.js onto your page. This means you should remove Keen's snippet from your page.
++ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading keen.js onto your page. This means you should remove Keen's snippet from your page.
 + Since Keen only records custom events and custom user data, no events or users will appear in Keen until you start using the API outlined below.
 
 Keen is supported on the client side and server side.
@@ -55,5 +55,3 @@ We will forward the following to Keen:
     revenue: 19.99
 }
 ```
-
-{% include content/integration-foot.md %}

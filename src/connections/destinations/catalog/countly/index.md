@@ -1,8 +1,8 @@
 ---
-title: Countly
+title: Countly Destination
 ---
 
-Our Countly destination code is open sourced on Github. Feel free to check it out: [iOS](https://github.com/segmentio/analytics-ios/tree/master/Analytics/Integrations/Countly), [Android](https://github.com/segmentio/analytics-android/tree/master/analytics-integrations/countly).
+Our Countly destination code is open source on Github. Feel free to check it out: [iOS](https://github.com/segmentio/analytics-ios/tree/master/Analytics/Integrations/Countly), [Android](https://github.com/segmentio/analytics-android/tree/master/analytics-integrations/countly).
 
 ## Getting Started
 
@@ -29,5 +29,3 @@ All you have to do is make a [`track`](/docs/spec/track/) call to send a custom 
 ### Revenue
 
 It's easy to track revenue in Countly through Segment. All you have to do is use our [`track`](/docs/spec/track/) method with a property labeled `revenue`. The value must be a number.
-
-{% include content/integration-foot.md %}

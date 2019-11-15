@@ -1,5 +1,5 @@
 ---
-title: Preact
+title: Preact Destination
 ---
 
 ## Identify
@@ -35,5 +35,3 @@ analytics.track('!Image upload error', {
     Message: 'File size too large'
     });
 ```
-
-{% include content/integration-foot.md %}

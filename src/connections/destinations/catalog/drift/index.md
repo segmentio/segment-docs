@@ -1,29 +1,30 @@
 ---
-title: Drift
+title: Drift Destination
+rewrite: true
 ---
-[Drift](http://www.drift.com/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the world’s first and only conversational marketing platform. Instead of traditional marketing and sales platforms that rely on forms and follow ups, Drift connects your business with the best leads in real-time.
+[Drift](http://www.drift.com/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the world's first and only conversational marketing platform. Instead of traditional marketing and sales platforms that rely on forms and follow ups, Drift connects your business with the best leads in real-time.
 
-The `analytics.js` device mode destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-drift).
+The `analytics.js` device-mode destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-drift).
 
-The cloud mode destination is maintained by Drift. For any issues with the destination, please [reach out to their team](https://www.drift.com/help/).
+The cloud-mode destination is maintained by Drift. For any issues with the destination, please [reach out to their team](https://www.drift.com/help/).
 
 This document was last updated on January 25, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
-* [Personalize Drift live chat messages based on a visitor’s matched industry](https://segment.com/recipes/personalize-drift-live-chat-industry/)
-* [Deliver hyper-relevant Drift messages based on a visitor’s job role](https://segment.com/recipes/personalize-drift-live-chat-role/)
+* [Personalize Drift live chat messages based on a visitor's matched industry](https://segment.com/recipes/personalize-drift-live-chat-industry/)
+* [Deliver hyper-relevant Drift messages based on a visitor's job role](https://segment.com/recipes/personalize-drift-live-chat-role/)
 * [Use Drift messages and email to nudge users to the Aha moment](https://segment.com/recipes/drift-message-aha-moment/)
 * [Personalize Drift welcome messages by including a visitor's company name](https://segment.com/recipes/personalize-drift-live-chat-with-company-name/)
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-  1. From your Segment UI’s Destinations page click on "Add Destination".
-  2. Search for "Drift" within the Destinations Catalog and confirm the Source you’d like to connect to.
+  1. From your Segment UI's Destinations page click on "Add Destination".
+  2. Search for "Drift" within the Destinations Catalog and confirm the Source you'd like to connect to.
   3. Drop in your `API Key` and `Embed ID` as obtained from your Drift account (if Drift account not accessible yet, please [email the team](mailto:team@drift.com) to get a link for the Drift account creation).
-  4. If you're using analytics.js and 'identify' users by default, Drift will work automatically. If you don’t have analytics.js setup, after enabling the Drift destination in Segment, you must 'identify' users in order for Drift to display in your product.
+  4. If you're using analytics.js and 'identify' users by default, Drift will work automatically. If you don't have analytics.js setup, after enabling the Drift destination in Segment, you must 'identify' users in order for Drift to display in your product.
 
 ## Page
 

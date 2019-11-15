@@ -1,8 +1,7 @@
 ---
-title: Infinario
+title: Infinario Destination
+beta: true
 ---
-
-
 ## Getting Started
 
 1. Create a free account and project at https://cloud.infinario.com/ if you haven't done so already
@@ -45,5 +44,3 @@ This call is currently only supported partially. Whenever a user is assigned to 
 - - -
 
 Please consult the [Infinario guides](http://guides.infinario.com/) to see what can you do with the data you tracked.
-
-{% include content/integration-foot.md %}

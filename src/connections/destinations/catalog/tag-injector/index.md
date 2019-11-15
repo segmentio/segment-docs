@@ -1,16 +1,17 @@
 ---
-title: Tag Injector
+rewrite: true
+title: Tag Injector Destination
 ---
 
 Segment has built a Tag Injector Destination to give Segment users the flexibility needed to load and configure client-side tools.
 
-_**NOTE:** {{integration.name}} is only available for select customers at this time._
+_**NOTE:** Tag Injector is only available for select customers at this time._
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. Once you have access, with the link provided confirm the Source you’d like to connect to.
+1. Once you have access, with the link provided confirm the Source you'd like to connect to.
 2. You have the following configuration options which will manipulate the page at runtime:
   - **URL**: A URL to the Javascript code to load on the page as the `src` attribute of the `<script>` tag.
   - **Raw**: Raw Javascript code to load onto the page within a `<script>` tag.
@@ -35,4 +36,4 @@ You will be able to distinguish tags loaded via Segment's Tag Injector through t
 
 ### Script injection location and ordering
 
-The Tag Injector will always inject the configured tags as `<script>` elements inserted into the document’s `<head>`. These `<script>` elements will be inserted in the order they are defined in the Tag Injector settings.
+The Tag Injector will always inject the configured tags as `<script>` elements inserted into the document's `<head>`. These `<script>` elements will be inserted in the order they are defined in the Tag Injector settings.

@@ -1,10 +1,10 @@
 ---
-title: Kahuna
+title: Kahuna Destination
 ---
 
 ## Getting Started
 
-Segment makes it easy to send your data to Kahuna. Once you’re tracking data through our iOS, Android or server side libraries, we'll translate and route your data to Kahuna in the format they can process.
+Segment makes it easy to send your data to Kahuna. Once you're tracking data through our iOS, Android or server side libraries, we'll translate and route your data to Kahuna in the format they can process.
 
 If you have mobile apps, then Kahuna recommends using the Segment [iOS](https://segment.com/docs/libraries/ios) and or [Android](https://segment.com/docs/libraries/android) library and bundling Kahuna (see [Mobile](#mobile) section below).
 
@@ -14,7 +14,7 @@ Be sure to enable Kahuna in your Segment destinations page and provide your **Ka
 
 ## Mobile
 
-In order to leverage the full capability of Kahuna’s Push Messaging and In-App features, you will have to bundle the Kahuna SDK while configuring your Segment mobile SDKs.
+In order to leverage the full capability of Kahuna's Push Messaging and In-App features, you will have to bundle the Kahuna SDK while configuring your Segment mobile SDKs.
 
 ### Android
 
@@ -104,11 +104,11 @@ We will also send any relevant device information such as device token, app name
 
 ## Track
 
-You can also use [`track`](/docs/spec/track/) calls to send event data using Kahuna’s `Intelligent Events`.
+You can also use [`track`](/docs/spec/track/) calls to send event data using Kahuna's `Intelligent Events`.
 
 Whenever you call track, we'll send an event to Kahuna with the event name and a unix timestamp. We will also pass through any properties of the event. If `properties.quantity` and `properties.revenue` are set, then we will send the event name as well as count and value. For value, we will first multiply `properties.revenue` by `100` before sending to Kahuna since Kahuna tracks value in cents not dollars.
 
-**Note:** We will flatten any compound objects such as nested objects or arrays. We will also strip any properties that have values of `null` since Kahuna’s API does not support these values. Lastly, just like the `identify` call, we will send any relevant device parameters we can send based off the context of the call.
+**Note:** We will flatten any compound objects such as nested objects or arrays. We will also strip any properties that have values of `null` since Kahuna's API does not support these values. Lastly, just like the `identify` call, we will send any relevant device parameters we can send based off the context of the call.
 
 ## Screen
 
@@ -116,7 +116,7 @@ When you call [`screen`](/docs/spec/screen/) in your mobile app, we send a scree
 
 ## E-Commerce
 
-Segment supports a deeper Kahuna destination with e-commerce tracking in our **mobile** SDKs (NOT in server side). All you have to do is adhere to our [`e-commerce tracking API`](/docs/spec/ecommerce/v2/) and we’ll track Kahuna e-commerce specific user attributes.
+Segment supports a deeper Kahuna destination with e-commerce tracking in our **mobile** SDKs (NOT in server side). All you have to do is adhere to our [`e-commerce tracking API`](/docs/spec/ecommerce/v2/) and we'll track Kahuna e-commerce specific user attributes.
 
 #### Viewed Product Category
 
@@ -136,8 +136,6 @@ For `Completed Order`, we will track the Kahuna User Attributes "Last Purchase D
 
 ### Send Push Token via Server-Side
 
-If you chose not to bundle the Kahuna Mobile SDK, then you will have to implement your own Push Message processors, and you won’t have access to Kahuna’s In-App feature.
+If you chose not to bundle the Kahuna Mobile SDK, then you will have to implement your own Push Message processors, and you won't have access to Kahuna's In-App feature.
 
 If you decide to implement your own Push Message processors, then make sure you pass the Push Tokens to Kahuna via Server Side.  You can do this by sending it inside `context.device.token`. We will send this to Kahuna as `push_token`.
-
-{% include content/integration-foot.md %}

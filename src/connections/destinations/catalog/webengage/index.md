@@ -1,6 +1,7 @@
 ---
-title: WebEngage
+title: WebEngage Destination
 ---
+
 This integration is maintained by [WebEngage Support](support@webengage.com).
 
 ## Getting Started
@@ -117,5 +118,3 @@ Include the following rules in your ProGuard file.
  -keep class com.webengage.sdk.android.**{*;}
 -dontwarn com.webengage.sdk.android.**
 ```
-
-{% include content/integration-foot.md %}

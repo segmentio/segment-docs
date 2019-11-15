@@ -1,5 +1,6 @@
 ---
-title: Serenytics
+rewrite: true
+title: Serenytics Destination
 ---
 [Serenytics](https://www.serenytics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides an all-in-one data platform to create dashboards. It comes with an embedded Redshift data warehouse, an ETL, a Python scheduler and a  dashboard editor. It is dedicated to small/medium data teams looking for a full-featured data stack who don't want to create and maintain it internally.
 
@@ -15,7 +16,7 @@ _**NOTE:** The Serenytics Destination is currently in beta, which means that the
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 From Serenytics app using OAuth:
 1. In Serenytics, in the [datasources list](https://app.serenytics.com/studio/data_sources), click on the button `New data source` and select the tab `Web services and API` and click on `Segment`.

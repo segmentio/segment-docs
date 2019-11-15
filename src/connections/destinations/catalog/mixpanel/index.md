@@ -1,5 +1,6 @@
 ---
-title: Mixpanel
+rewrite: true
+title: Mixpanel Destination
 ---
 [Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source. You can browse the code on Github for [Client](https://github.com/segment-integrations/analytics.js-integration-mixpanel), [Server](https://github.com/segmentio/integration-mixpanel), [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel) and [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel).
 
@@ -7,10 +8,10 @@ This document was last updated on April 30, 2018. If you notice any gaps, outdat
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. From your Segment UI’s Destinations page click on **Add Destination**.
-2. Search for Mixpanel within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on **Add Destination**.
+2. Search for Mixpanel within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Copy your Mixpanel "API Secret" and "Token", and paste them into the Connection Settings in Segment.
 4. Enable the destination to start sending your data to Mixpanel.
 
@@ -75,9 +76,9 @@ Group calls are sent to Mixpanel if, **and only if**, the Group Identifier Trait
 
 If the group call **does not** have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
 
-### Client Side
+### Group using Device-mode
 
-When you call the Identify method from the client in either a browser via Analytics.js or one of our mobile SDKs a bunch of things happen:
+When you call the Identify method from the client in either a browser using Analytics.js or one of our mobile SDKs a bunch of things happen:
 
 We start by recognizing and translating our [special traits](/docs/spec/identify#special-traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. You'll pass the key on the left into Segment and we will transform it to the key on the right before sending to Mixpanel.
 
@@ -112,9 +113,9 @@ We start by recognizing and translating our [special traits](/docs/spec/identify
   </tr>
 </table>
 
-### Server
+### Group using Cloud-mode
 
-When you call the Identify method from any of our server-side libraries, we create or update the user in Mixpanel People with the traits you provide. Calling `identify` doesn't create any users in the standard Mixpanel reporting interface since that only supports `track` events.
+When you call the Identify method from any of our server libraries, we create or update the user in Mixpanel People with the traits you provide. Calling `identify` doesn't create any users in the standard Mixpanel reporting interface since that only supports `track` events.
 
 You won't see server-side `traits` appear as super-properties on any events you track. This is because Mixpanel [has no REST API](https://github.com/mixpanel/mixpanel-node/issues/48) for setting [super properties](https://mixpanel.com/docs/managing-users/managing-user_advanced/specific-properties) for a `distinct_id`, so [`identify`](/docs/spec/identify/) calls only affect Mixpanel People.
 
@@ -171,7 +172,7 @@ Read more about how Mixpanel recommends using `alias` [in their docs](https://mi
 
 **Note:** Due to technical limitations with aliasing server-side, aliasing on the client is recommended whenever possible.
 
-### Client
+### Alias using Device-mode
 
 In client-side Javascript you only need to pass the new identified `userId`. We will automatically alias the old anonymous `id` to your new `userId`.
 
@@ -183,7 +184,7 @@ analytics.identify('12345');
 analytics.track('Signed Up');
 ```
 
-### Server
+### Alias using Cloud-mode
 
 If an `identify` or `track` call arrives to Mixpanel with a new `distinct_id` too quickly after an `alias` call, there is a race condition between the event and the alias call. As long as your `identify` and `track` calls arrive ~1 second after the `alias`, this shouldn't be an issue; when the alias queue is backed up, Mixpanel queues events as well, mitigating the race condition.
 
@@ -225,7 +226,7 @@ As you can see we recommend flushing the [`alias`](/docs/spec/alias) to give Mix
 
 If you're tracking anonymous users in one of our server-side libraries that makes things a lot easier. All you have to do is [`alias`](/docs/spec/alias/) the anonymous `id` to the new `userId`.
 
-Here's a Python example of the [`alias`](docs/spec/alias/), [`identify`](/docs/spec/identify/), [`track`](/docs/spec/track/) sequence where the anonymous `id` was `92fh49fqh9849hf` and the new `userId` is `12345`:
+Here's a Python example of the [`alias`](/docs/spec/alias/), [`identify`](/docs/spec/identify/), [`track`](/docs/spec/track/) sequence where the anonymous `id` was `92fh49fqh9849hf` and the new `userId` is `12345`:
 
 ```python
 analytics.alias('92fh49fqh9849hf', '12345')
@@ -276,7 +277,7 @@ We do not map `$library_version` since that is reserved for Mixpanel's library v
 
 ### Autotrack
 
-Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported via Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/sources/website/analytics.js/), [iOS](/docs/sources/mobile/ios/), [Android](/docs/sources/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed via segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
+Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported via Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/sources/website/analytics.js/), [iOS](/docs/sources/mobile/ios/), [Android](/docs/sources/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed via Segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
 
 ### People
 

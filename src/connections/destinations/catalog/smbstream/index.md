@@ -1,5 +1,6 @@
 ---
-title: SMBStreams
+rewrite: true
+title: SMBStreams Destination
 ---
 [SMBStreams](https://www.buzzboard.com/smbstreams/solutions/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations. The most comprehensive set of data is maintained, integrated and then delivered as important insights across your sales and marketing organization.
 
@@ -9,7 +10,7 @@ _**NOTE:** The SMBStreams Destination is currently in beta, which means that the
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "SMBStreams" within the Destinations Catalog and confirm the Source you'd like to connect to.

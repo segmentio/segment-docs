@@ -1,5 +1,6 @@
 ---
-title: Kochava
+title: Kochava Destination
+rewrite: true
 ---
 
 [Kochava](https://www.kochava.com/) offers mobile app attribution and mobile app analytics providing holistic, unbiased measurement for precise, real-time visualization of app performance through the funnel.
@@ -12,11 +13,11 @@ This document was last updated on October 8, 2018. If you notice any gaps, outda
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. If you have not already, create your app within the Kochava dashboard. Check out Kochava's documentation for information on [creating your app](http://support.kochava.com/create-manage-apps/create-edit-apps).
-2. From your Segment UI’s Destinations page click on "Add Destination".
-3. Search for "Kochava" within the Destinations Catalog and confirm the Source you’d like to connect to.
+2. From your Segment UI's Destinations page click on "Add Destination".
+3. Search for "Kochava" within the Destinations Catalog and confirm the Source you'd like to connect to.
 4. In the Kochava app, grab your Kochava App GUID (Globally Unique Identifier)
 5. Copy the Kochava GUID into the Segment Destinations Settings UI under "API key".
 
@@ -31,7 +32,7 @@ If you haven't had a chance to review our spec, please take a look to understand
                            properties:@{ @"item": @"Sword of Heracles", @"revenue": @2.95 }];
 ```
 
-Kochava is able to accommodate any post-install track event that is passed into its system. Events, when received for the first time, will auto provision into the Kochava dashboard. There is no need to create / provision the post-install track event ahead of time. When enabling Kochava in the Segment dashboard, you should expect to see any / all actions you’re tracking with Segment appear in your Kochava account.
+Kochava is able to accommodate any post-install track event that is passed into its system. Events, when received for the first time, will auto provision into the Kochava dashboard. There is no need to create / provision the post-install track event ahead of time. When enabling Kochava in the Segment dashboard, you should expect to see any / all actions you're tracking with Segment appear in your Kochava account.
 
 `context.device.type` (has value of 'ios' or 'android'), `context.device.advertising_id` (IDFA on iOS and adID on Android) **and** `context.device.id` are required in all calls to Kochava.
 
@@ -113,7 +114,7 @@ When it is able to retrieve iAd information, it will augment all `track` events.
 
 Because this information in passed through the context object, this will not be received by other downstream integrations, unless explicitly mapped. Kochava is currently the only integration which supports Apple Search Ads.
 
-{% include content/personas.md %}
+{{>personas}}
 
 ## Troubleshooting
 

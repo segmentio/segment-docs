@@ -1,5 +1,5 @@
 ---
-title: Watsi
+title: Watsi Destination
 ---
 
 The Watsi destination gives you the ability to create a trigger which will send a Watsi gift card to your users based on your Segment events!
@@ -61,5 +61,3 @@ Here's an example `track` call (omitting common fields) with all the required pr
   }
 }
 ```
-
-{% include content/integration-foot.md %}
