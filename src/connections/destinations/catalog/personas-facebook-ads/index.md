@@ -1,5 +1,5 @@
 ---
-title: Personas Facebook Ads
+title: Personas Facebook Ads Destination
 ---
 
 ## Overview
@@ -21,9 +21,9 @@ This will allow you to run advertising campaigns in Facebook without having to b
 
 Steps:
 - Go to `https://app.segment.com/<your-workspace-slug>/destinations/catalog/personas-facebook-ads`
-- Configure FB on the personas source that we’ve pre-created for you (should be called `Personas default`)
-- Authorize Facebook Ads (NOTE: If you’ve already authorized FB before in your Segment workspace, the flow will skip the part where it redirects to Facebook to authorize Segment)
-![](images/_1515622618588.png)
+- Configure FB on the personas source that we've pre-created for you (should be called `Personas default`)
+- Authorize Facebook Ads (NOTE: If you've already authorized FB before in your Segment workspace, the flow will skip the part where it redirects to Facebook to authorize Segment)
+![](images/1515622618588.png)
 - Make sure that you select a Facebook ad account id to sync to. *Note that you should have ad account 'Advertiser' or 'Admin' access for Personas to be able to send custom audiences*.
 
 
@@ -39,7 +39,7 @@ Steps:
 
 
 ### 3. Check FB for audience, should sync within a couple of minutes
-![](http://g.recordit.co/njhDdn1o3E.gif)
+![](images/njhDdn1o3E.gif)
 
 
 - Inside Facebook go to Business Manager > All tools > Assets > Audiences
@@ -61,5 +61,3 @@ We attempt to match users in your audience with the identifiers that Facebook su
 ## How do lookalikes work?
 
 You can create a seed audience in Personas and then sync that to Facebook. For example, you might want to create a group of high-value users that have spent a certain amount of money on your product. In Facebook, you can then create a lookalike based on that audience.
-
-{% include content/integration-foot.md %}

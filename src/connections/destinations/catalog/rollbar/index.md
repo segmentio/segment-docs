@@ -1,6 +1,7 @@
 ---
-title: Rollbar
+title: Rollbar Destination
 ---
+
 ## Getting Started
 
 When you toggle on Rollbar in Segment, we'll start sending data to the Rollbar API for your account. Currently, Rollbar will send data from our analytics.js library.
@@ -15,7 +16,7 @@ The first thing you'll want to do is to [`identify`](/docs/spec/identify/) a use
 
 This feature makes use of JavaScript Source Maps to translate the minified code references back into the original source. To use this feature in Rollbar, be sure to do the following:
 
-1. Enable source maps and fill out the Code Version in your [Rollbar settings](https://segment.com/docs/integrations/rollbar/#settings) in the Segment UI.
+1. Enable source maps and fill out the Code Version in your [Rollbar settings](/docs/destinations/rollbar/#settings) in the Segment UI.
 
 2. Provide your source map. There are two ways you can do this:
 
@@ -28,5 +29,3 @@ This feature makes use of JavaScript Source Maps to translate the minified code 
   b. Upload pre-deploy: at the beginning of your deploy script, upload a source map package via Rollbar's API.
 
   For more detail on providing your source map, checkout [Rollbar's documentation here](https://rollbar.com/docs/source-maps/#step-2-provide-your-source-map).
-
-{% include content/integration-foot.md %}

@@ -1,5 +1,5 @@
 ---
-title: Chameleon
+title: Chameleon Destination
 ---
 
 Our Chameleon destination code is open-source on GitHub if you want to [check it out](https://github.com/segment-integrations/analytics.js-integration-chameleon).
@@ -40,5 +40,3 @@ Product tours should lead to user actions and so offer the option of tagging eac
 
 ## Help
 For more information, please refer to [Chameleon's docs](https://docs.trychameleon.com) or [email them](mailto:support@trychameleon.com).
-
-{% include content/integration-foot.md %}

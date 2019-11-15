@@ -1,5 +1,6 @@
 ---
-title: Flurry
+title: Flurry Destination
+rewrite: true
 ---
 
 [Flurry](https://developer.yahoo.com/flurry/docs/) provides you with the tools and resources you need to gain a deep level of understanding about your users' behavior in your apps.
@@ -10,10 +11,10 @@ This document was last updated on January 10, 2019. If you notice any gaps, outd
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Flurry" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Flurry" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your Flurry "API Key" in Segment's Settings UI. You can retrieve this from your Flurry Admin > Apps > API Key. It should look like "4KKKGS3BAK4WW8WJ93DN".
 4. Follow the instructions in the Github repos: [iOS SDK](https://github.com/segment-integrations/analytics-ios-integration-flurry) and [Android SDK](https://github.com/segment-integrations/analytics-android-integration-flurry).
 5. Once the Segment library is integrated with your app, toggle Flurry on in your Segment UI.
@@ -27,7 +28,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 An example iOS call would look like:
 
-```objc
+```objective-c
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 

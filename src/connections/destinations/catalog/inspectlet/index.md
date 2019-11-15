@@ -1,5 +1,6 @@
 ---
-title: Inspectlet
+title: Inspectlet Destination
+rewrite: true
 ---
 
 [Inspectlet](https://www.inspectlet.com/) lets you analyze user behavior instantly with Eye Tracking Heatmaps, Screen Capture (record and playback actual visitor sessions), and User-Interaction Analytics. The Inspectlet Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-inspectlet).
@@ -8,13 +9,13 @@ This document was last updated on 20th June, 2018. If you notice any gaps, out-d
 
 ## Getting Started
 
- {% include content/connection-modes.md %}
+ {{>connection-modes}}
 
-  1. From your Segment UI’s Destinations page click on "Add Destination".
-  2. Search for "Inspectlet" within the Destinations Catalog and confirm the Source you’d like to connect to.
-  3. Take your Inspectlet WID (website’s ID), you can find it after clicking the Get Install Code button for your site in your Inspectlet dashboard. It will appear near the beginning of your embed code snippet. It should be a series of numbers, like 9492461759.
+  1. From your Segment UI's Destinations page click on "Add Destination".
+  2. Search for "Inspectlet" within the Destinations Catalog and confirm the Source you'd like to connect to.
+  3. Take your Inspectlet WID (website's ID), you can find it after clicking the Get Install Code button for your site in your Inspectlet dashboard. It will appear near the beginning of your embed code snippet. It should be a series of numbers, like 9492461759.
   4. Add the WID in the "Connection Settings" section in Segment.
-  5. Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading Inspectlet's tracker.js onto your page. This means you should remove Inspectlet's snippet from your page.
+  5. Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Inspectlet's tracker.js onto your page. This means you should remove Inspectlet's snippet from your page.
   6. Your Inspectlet dashboard will start showing recordings.
 
 ## Page

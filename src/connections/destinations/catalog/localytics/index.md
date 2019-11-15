@@ -1,6 +1,7 @@
 ---
-title: Localytics
+title: Localytics Destination
 ---
+
 Our Localytics mobile destination code is open sourced on Github. Feel free to
 check it out:
 [iOS](https://github.com/segment-integrations/analytics-ios-integration-localytics),
@@ -79,5 +80,3 @@ Push notifications on Android require a bit of extra work to setup.
     });
 }
 ```
-
-{% include content/integration-foot.md %}

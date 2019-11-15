@@ -1,5 +1,5 @@
 ---
-title: Tableau
+title: Tableau Destination
 ---
 
 ## Getting Started
@@ -21,5 +21,3 @@ You may get an error that looks like the below. If so, fear not! You just need t
 ![](images/tableausetup2.png)
 
 You'll have to close out of Tableau as you set up the necessary drivers. Once those are installed, restart Tableau, repeat the getting started steps.
-
-{% include content/integration-foot.md %}

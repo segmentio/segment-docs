@@ -1,5 +1,5 @@
 ---
-title: Promoter.io
+title: Promoter Destination
 ---
 
 ## Getting Started
@@ -21,9 +21,9 @@ By calling `identify`, you will effectively be creating a new contact for your o
 
 Within the `identify` event, Promoter requires a `userId` and `email`, while `firstName` and `lastName` are optional. However, it is encouraged that you pass in as many attributes that are meaningful to your organization around the context of NPS. You will be able to filter your score by every single attribute or combination of attributes provided.
 
-Here’s an example:
+Here's an example:
 
-{% comment %}\{\{\{api-example '{
+{{{api-example '{
   "userId": "12345",
   "action": "identify",
   "traits": {
@@ -32,20 +32,20 @@ Here’s an example:
     "lastName": "Mosby",
     "plan": "Premium"
   }
-}'{% endcomment %}
+}'}}}
 
 
 ## Track
 
 By creating a track event you will effectively trigger a survey to be sent to your contact.
 
-The track event should have an associated userId sent with it. That userId **needs** to match the userId sent with the `identify` event. This is the only way we know which contact you would like to associate this event to. We will send a survey to that contact using the campaign that’s associated to Segment within Promoter.
+The track event should have an associated userId sent with it. That userId **needs** to match the userId sent with the `identify` event. This is the only way we know which contact you would like to associate this event to. We will send a survey to that contact using the campaign that's associated to Segment within Promoter.
 
 Note: if you are using our client-side javascript library ([Analytics.js](/docs/sources/website/analytics.js)) and already called `identify` we will automatically include the `userId` with every `track` call.
 
-Here’s an example:
+Here's an example:
 
-{% comment %}\{\{\{api-example '{
+{{{api-example '{
   "userId": "12345",
   "action": "track",
   "event": "Friend Invited",
@@ -53,11 +53,9 @@ Here’s an example:
     "category": "viral",
     "totalInvites": 50
   }
-}'{% endcomment %}
+}'}}}
 
 
 ### Completed Order
 
 When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/spec/ecommerce/v2/), we will send the event and data to Promoter as a custom event with the data stored with Promoter for future use.
-
-{% include content/integration-foot.md %}

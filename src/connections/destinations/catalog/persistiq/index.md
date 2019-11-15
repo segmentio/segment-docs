@@ -1,5 +1,6 @@
 ---
-title: PersistIQ
+rewrite: true
+title: PersistIQ Destination
 ---
 [PersistIQ](https://www.persistiq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the easiest sales engagement software to use. Sales teams use PersistIQ to connect with more prospects using targeted emails, calls, and tasks.
 
@@ -10,7 +11,7 @@ _**NOTE:** The PersistIQ Destination is currently in beta, which means that they
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "PersistIQ" within the Destinations Catalog and confirm the Source you'd like to connect to.

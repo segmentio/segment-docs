@@ -1,5 +1,6 @@
 ---
-title: Xtremepush
+rewrite: true
+title: Xtremepush Destination
 ---
 [Xtremepush](https://xtremepush.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete digital engagement platform. Empowering global brands to create personalised, real-time experiences for their customers across mobile, web, email, SMS and social. Xtremepush's clients are increasing revenue through data-driven, contextually-relevant interactions. The software is flexible, reliable and quick to deploy, backed up by a team of expert strategists and technical support.
 
@@ -10,7 +11,7 @@ _**NOTE:** The Xtremepush Destination is currently in beta, which means that the
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Xtremepush" within the Destinations Catalog and confirm the Source you'd like to connect to.
@@ -28,7 +29,7 @@ analytics.identify('userId123', {
 });
 ```
 
-When you identify a user, we’ll pass that user’s information to Xtremepush and will try to update or create a new user based on whether a Profile exists with that `user_id`.
+When you identify a user, we'll pass that user's information to Xtremepush and will try to update or create a new user based on whether a Profile exists with that `user_id`.
 
 Some special traits will also be used as additional user identifiers:
 

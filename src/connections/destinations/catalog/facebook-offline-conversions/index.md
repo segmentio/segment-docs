@@ -1,5 +1,6 @@
 ---
-title: Facebook Offline Conversions
+title: Facebook Offline Conversions Destination
+rewrite: true
 ---
 
 [Facebook Offline Conversions](https://www.facebook.com/business/help/1782327938668950?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables offline event tracking, so marketers can run campaigns, upload transaction data, and compare in-store transactions.
@@ -7,15 +8,16 @@ title: Facebook Offline Conversions
 This document was last updated on April 24, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
-- [Track offline conversions from Facebook Ads](https://segment.com/recipes/facebook-offline-conversion-tracking/)
+
+* [Track offline conversions from Facebook Ads](https://segment.com/recipes/facebook-offline-conversion-tracking/)
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
+1. From your Segment UI's Destinations page click on "Add Destination".
 
-2. Search for "Facebook Offline Conversions" within the Destinations Catalog and confirm the Source you’d like to connect to.
+2. Search for "Facebook Offline Conversions" within the Destinations Catalog and confirm the Source you'd like to connect to.
 
 3. Authorize Segment to send data on your behalf by connecting through OAuth:
 
@@ -70,8 +72,8 @@ The following table shows how we map Segment's [semantic ecommerce](https://segm
 
 <table>
   <tr>
-    <th>**Segment Event Name**</th>
-    <th>**Facebook Semantic Conversion Event Name**</th>
+    <th>Segment Event Name</th>
+    <th>Facebook Semantic Conversion Event Name</th>
   </tr>
   <tr>
     <td>Products Searched</td>
@@ -113,8 +115,8 @@ The following table shows how we map Segment raw message fields or `properties` 
 
 <table>
   <tr>
-    <th>**Segment Property**</th>
-    <th>**Facebook Semantic Conversion Parameters**</th>
+    <th>Segment Property</th>
+    <th>Facebook Semantic Conversion Parameters</th>
   </tr>
   <tr>
     <td>Hardcoded as `"Segment"`</td>
@@ -161,8 +163,8 @@ Since `track` events by default do not require you to send user metadata, it is 
 
 <table>
   <tr>
-    <th>**Segment `context.traits` Properties**</th>
-    <th>**Facebook Match Key Parameters**</th>
+    <th>Segment `context.traits` Properties</th>
+    <th>Facebook Match Key Parameters</th>
   </tr>
   <tr>
     <td>`email`</td>

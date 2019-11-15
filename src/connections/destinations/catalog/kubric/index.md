@@ -1,5 +1,6 @@
 ---
-title: Kubric
+title: Kubric Destination
+rewrite: true
 ---
 [Kubric](https://kubric.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to create personalised creatives for your users and deliver them using emails, push-notifications, Facebook & various other channels.
 
@@ -10,7 +11,7 @@ _**NOTE:** The Kubric Destination is currently in beta, which means that they ar
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Kubric" within the Destinations Catalog and confirm the Source you'd like to connect to.

@@ -1,5 +1,6 @@
 ---
-title: SnapEngage
+rewrite: true
+title: SnapEngage Destination
 ---
 
 SnapEngage is an enterprise chat software for businesses. It allows you to capture more leads, drive conversions, reduce response times, and increase customer satisfaction. Our SnapEngage destination code is open source - you can check it out [here](https://github.com/segment-integrations/analytics.js-integration-snapengage).
@@ -8,15 +9,15 @@ This document was last updated on October 22, 2018. If you notice any gaps, outd
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
+1. From your Segment UI's Destinations page click on "Add Destination".
 
-2. Search for "SnapEngage" within the Destinations Catalog and confirm the Source you’d like to connect to - keep in mind that our "SnapEngage" destination is only compatible with our client-side [analytics.js](https://segment.com/docs/sources/website/analytics.js/) library.
+2. Search for "SnapEngage" within the Destinations Catalog and confirm the Source you'd like to connect to - keep in mind that our "SnapEngage" destination is only compatible with our client-side [analytics.js](https://segment.com/docs/sources/website/analytics.js/) library.
 
 3. Add your SnapEngage `Widget ID` to your destination settings in Segment. You can find the `Widget ID` in your SnapEngage Javascript snippet. It will look something like this: 0c739ebb-2016-44a0-b1da-a5b5eb272474. Alternatively, the `Widget ID` can also be found under the _Advanced Widget ID_ section of the _Get the Code_ tab in the Admin Dashboard when logged in to SnapEngage.
 
-4. Once you enable the destination, our CDN is updated within 5-10 minutes. Analytics.js will start asynchronously loading SnapEngage's javascript onto your page. Please remember to remove SnapEngages's snippet from your page.
+4. Once you enable the destination, our CDN is updated within 45 minutes. Analytics.js will start asynchronously loading SnapEngage's javascript onto your page. Please remember to remove SnapEngages's snippet from your page.
 
 ## Identify
 

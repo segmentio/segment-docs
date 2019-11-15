@@ -1,5 +1,6 @@
 ---
-title: Savio
+rewrite: true
+title: Savio Destination
 ---
 [Savio](https://savio.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables B2B SaaS teams to centrally managed customer feedback so they can make better product decisions.
 
@@ -10,7 +11,7 @@ _**NOTE:** Savio is currently in beta, which means that they are still actively 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Savio" within the Destinations Catalog and confirm the Source you'd like to connect to.

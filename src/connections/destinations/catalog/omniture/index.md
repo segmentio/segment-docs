@@ -1,10 +1,11 @@
 ---
-title: Omniture
+title: Omniture Destination
 ---
+
 
 ## Getting Started
 
-When you toggle on Omniture in Segment, our CDN is updated within 5-10 minutes. Then our javascript will start sending all mapped `track` calls to your Omniture installation.
+When you toggle on Omniture in Segment, our CDN is updated within 45 minutes. Then our javascript will start sending all mapped `track` calls to your Omniture installation.
 
 If you already host an Omniture instance on your page, we will hook into that. In the absence of an existing client-side instance we will create one that points to the **Tracking Server URL** you entered in your Omniture settings on Segment.
 
@@ -58,7 +59,7 @@ Here's an example mapping in our interface:
 
 And the corresponding `track` call:
 
-{% comment %}\{\{\{api-example '{
+{{{api-example '{
   "action": "track",
   "userId": "12345",
   "event": "Played Song",
@@ -66,7 +67,7 @@ And the corresponding `track` call:
     "song": "YMCA",
     "genre": "Disco"
   }
-}'{% endcomment %}
+}'}}}
 
 In this example Segment will automatically send the following data to Omniture:
 
@@ -162,5 +163,3 @@ After the settings cache refreshes, our library will automatically start sending
 ### Custom Links
 
 In order to populate the Custom Links report when sending data server-side, you'll need to pass `context.page.url` manually.
-
-{% include content/integration-foot.md %}

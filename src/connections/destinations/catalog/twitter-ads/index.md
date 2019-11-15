@@ -1,6 +1,7 @@
 ---
-title: Twitter Ads
+title: Twitter Destination
 ---
+
 [Our Twitter Ads destination code](https://github.com/segment-integrations/analytics.js-integration-twitter-ads) is all open-source on GitHub if you want to check it out.
 
 **Use Cases**
@@ -36,7 +37,7 @@ Each time you [`track`](/docs/spec/track) an event from the browser with our Twi
 
 You can find your conversion pixel IDs after you create the single conversion event inside Twitter:
 
-![](https://cloudup.com/cS23YRgfUy9+)
+![](images/cS23YRgfUy9.png)
 
 For example, if your mapping in Segment looks like this:
 
@@ -73,8 +74,8 @@ The following table shows which Segment events map to which type of Twitter tags
 
 <table>
   <tr>
-    <th>**Segment Event Name**</th>
-    <th>**Twitter Tag Type**</th>
+    <th>Segment Event Name</th>
+    <th>Twitter Tag Type</th>
   </tr>
   <tr>
     <td>Order Completed</td>
@@ -110,8 +111,8 @@ The following table show how the properties of Segment events would map to Twitt
 
 <table>
   <tr>
-    <th>**Segment Property Name**</th>
-    <th>**Twitter Parameter**</th>
+    <th>Segment Property Name</th>
+    <th>Twitter Parameter</th>
   </tr>
   <tr>
     <td>value / revenue / (price * quantity)</td>
@@ -367,6 +368,4 @@ window.twq('track', 'AddPaymentInfo', {});
 
 ## Troubleshooting
 
-{% include content/client-side-script-unverified.md %}
-
-{% include content/integration-foot.md %}
+{{> client-side-script-unverified}}

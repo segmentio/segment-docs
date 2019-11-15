@@ -1,5 +1,6 @@
 ---
-title: FactorsAI
+title: FactorsAI Destination
+rewrite: true
 ---
 [FactorsAI](https://www.factors.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides advanced and intuitive analytics for marketers and product managers, to help drive growth. With FactorsAI you get immediate insights to optimize marketing campaigns, improve conversions and understand user behaviours that drive feature adoption and retention.
 
@@ -9,7 +10,7 @@ _**NOTE:** The FactorsAI Destination is currently in beta, which means that they
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "FactorsAI" within the Destinations Catalog and confirm the Source you'd like to connect to.

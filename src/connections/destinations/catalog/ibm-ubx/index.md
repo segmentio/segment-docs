@@ -1,5 +1,6 @@
 ---
-title: IBM Universal Behavior Exchange
+title: IBM Universal Behavior Exchange Destination
+rewrite: true
 beta: true
 ---
 
@@ -10,12 +11,10 @@ Marketing Portfolio* - without the need for custom software integration. In
 effect, UBX is the "Segment" of IBM's ecosystem. Once data is routed to IBM, you
 can send it to any destination in UBX's portfolio.
 
-_**NOTE:** {{integration.name}} is currently in beta and this doc was last
+_**NOTE:** IBM UBX is currently in beta and this doc was last
 updated on May 7, 2018. This means that there may still be some bugs for us to
 iron out and we're excited to hear your thoughts. If you are interested in
-joining or have any feedback to help us improve the {{integration.name}}
-Destination and its documentation, please [let us
-know](https://segment.com/help/contact)!_
+joining or have any feedback to help us improve the IBM UBX Destination and its documentation, please [let us know](https://segment.com/help/contact)!_
 
 ## Getting Started
 
@@ -28,7 +27,7 @@ endpoint in UBX will not be able to receive Segment data until you have enabled
 both the destination in the Segment UI *and* requested activation of the
 endpoint from Segment's support team._
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "IBM UBX" within the Destinations Catalog and confirm the Source

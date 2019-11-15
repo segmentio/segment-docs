@@ -1,5 +1,6 @@
 ---
-title: Unwaffle
+rewrite: true
+title: Unwaffle Destination
 ---
 
 [Unwaffle](https://unwaffle.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps SaaS businesses improve their Free Trial conversion rates. By tracking every action that your trialers take, Unwaffle can discover patterns that lead to successful conversions and provide actionable recommendations to boost trial funnel performance.
@@ -10,7 +11,7 @@ _**NOTE:** The Unwaffle Destination is currently in beta, that they are still ac
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Unwaffle" within the Destinations Catalog and confirm the Source you'd like to connect to.

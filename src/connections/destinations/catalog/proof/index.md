@@ -1,5 +1,6 @@
 ---
-title: Proof
+rewrite: true
+title: Proof Destination
 ---
 [Proof Experiences](https://useproof.com/experiences?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps B2B SaaS businesses increase new trials and demos by creating delightfully personalized experiences for their visitors and customers.
 
@@ -10,7 +11,7 @@ _**NOTE:** Proof Experiences is currently in beta, which means that there may st
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Proof Experiences" within the Destinations Catalog and confirm the Source you'd like to connect to.

@@ -1,12 +1,12 @@
 ---
-title: Livechat
+title: LiveChat Destination
 ---
 
 ## Getting Started
 
 When you toggle on LiveChat in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading LiveChat's javascript onto your page. This means you should remove LiveChat's snippet from your page.
++ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading LiveChat's javascript onto your page. This means you should remove LiveChat's snippet from your page.
 + LiveChat's chat box will appear on your page and you can start chatting with visitors.
 
 LiveChat is only supported on the client-side.
@@ -19,7 +19,7 @@ When you call `identify` on analytics.js, we take all the `traits` you provide a
 
 ## Record Live Chat Events
 
-With this destination, you can automatically record `track` events for live chat conversations. If you select this option, we’ll collect the following events:
+With this destination, you can automatically record `track` events for live chat conversations. If you select this option, we'll collect the following events:
 * Live Chat Conversation Started
 * Live Chat Conversation Ended
 * Live Chat Message
@@ -30,5 +30,3 @@ These events will then flow out to your other tools, so you can do things like a
 To learn more about the live chat events you can capture with this destination, head on over to our [Live Chat spec docs](/docs/spec/live-chat/).
 
 ![Turn on LiveChat](Images/livechaton.png)
-
-{% include content/integration-foot.md %}

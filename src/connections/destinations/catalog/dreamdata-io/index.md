@@ -1,7 +1,8 @@
 ---
-title: Dreamdata IO
+title: Dreamdata IO Destination
+rewrite: true
 ---
-[Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) uses your Segment data to deliver multitouch, account-based attribution. This enables B2B companies to understand the impact on revenue of every touch in their customer journey.
+[Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) uses your Segment data to deliver multitouch, per account attribution. This enables B2B companies to understand the impact on revenue of every touch in their customer journey.
 
 This destination is maintained by [Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, please [reach out to their team](mailto:friends@dreamdata.io).
 
@@ -10,7 +11,7 @@ _**NOTE:** [Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Dreamdata IO" within the Destinations Catalog and confirm the Source you'd like to connect to.

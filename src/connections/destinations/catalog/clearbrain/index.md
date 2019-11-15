@@ -1,5 +1,6 @@
 ---
-title: ClearBrain
+title: ClearBrain Destination
+rewrite: true
 ---
 [ClearBrain](https://clearbrain.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
 
@@ -21,7 +22,7 @@ _**NOTE:** ClearBrain is currently in beta, and this doc was last updated on Jan
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "ClearBrain" within the Destinations Catalog and confirm the Source you'd like to connect to.

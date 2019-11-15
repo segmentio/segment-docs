@@ -1,5 +1,6 @@
 ---
-title: Bugsnag
+title: Bugsnag Destination
+rewrite: true
 ---
 
 [Bugsnag](https://docs.bugsnag.com/api/data-access/) helps you detect and diagnose crashes in your application. Depending on the data you provide, Bugsnag can filter errors based on user name, user email, timeline, release stages, paying user status, and more.
@@ -15,14 +16,14 @@ This document was last updated on July 11th, 2018. If you notice any gaps, outda
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 ### Web
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Bugsnag" within the Destinations Catalog and confirm the project you’d like to connect to
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Bugsnag" within the Destinations Catalog and confirm the project you'd like to connect to
 3. Add your API key to your connection settings. You can find your API key in your Bugsnag dashboard under "Settings", which is located in the upper left-hand corner
-4. We’ll automatically initialize Bugsnag's javascript script with your API key upon loading analytics.js
+4. We'll automatically initialize Bugsnag's javascript script with your API key upon loading analytics.js
 
 ### Mobile
 
@@ -53,5 +54,3 @@ Bugsnag will show you the `userId` and `traits` in the Users tab of each error.
 ## Error Reporting
 
 In addition to sending Bugsnag user-specific information, you can send handled exceptions and diagnostic data to your Bugsnag dashboard using Bugsnag's native methods. Documentation on these methods is available [on their website](https://docs.bugsnag.com/platforms/browsers/#reporting-handled-exceptions).
-
-{% include content/integration-foot.md %}

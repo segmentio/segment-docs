@@ -1,5 +1,6 @@
 ---
-title: Cruncher
+title: Cruncher Destination
+rewrite: true
 ---
 [Cruncher](https://cruncherlabs.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides an end-to-end data crunching platform with a focus on data science and advanced analytics for analysts and business people. It lets you bring all your siloed data sources in one place and empowers you to extract deep insights using a powerful, yet simple interface.
 
@@ -10,7 +11,7 @@ _**NOTE:** Cruncher is currently in beta, which means that they are still active
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Cruncher" within the Destinations Catalog and confirm the Source you'd like to connect to.

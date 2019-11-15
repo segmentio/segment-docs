@@ -1,12 +1,12 @@
 ---
-title: Friendbuy
+title: Friendbuy Destination
 ---
 
 ## Getting Started
 
 Setting up Friendbuy is very simple! Just login to your Friendbuy account, go to **Integration Code** > and copy the **Site ID** above the snippet box. Then paste it into your Friendbuy Destiation setting back in the Segment UI as seen in the gif below:
 
-![](https://i.gyazo.com/f02339b0c4d567e1413c6f3891062c98.gif)
+![](images/f02339b0c4d567e1413c6f3891062c98.gif)
 
 This Destination allows you to:
 
@@ -19,7 +19,7 @@ This Destination allows you to:
 
 In order to load specific widgets on your various web pages, you can configure your settings to map your _named_ `.page()` call(s) to your desired Friendbuy Widget(s). You will also be able to configure a number of optionally [advanced widget configurations](http://developers.friendbuy.com/#widget-options) such as **auto delay** and **custom parameters**. Please see the following gif for example:
 
-![](https://i.gyazo.com/23163f90cfc1f375f6c0da3a06060da4.gif)
+![](images/23163f90cfc1f375f6c0da3a06060da4.gif)
 
 There are two types of Widgets you can map to your `.page()` calls:
 
@@ -107,5 +107,3 @@ Then we will iterate over each item in your `properties.products` and send the f
     }
   }
 ```
-
-{% include content/integration-foot.md %}

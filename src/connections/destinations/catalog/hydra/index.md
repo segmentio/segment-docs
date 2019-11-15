@@ -1,5 +1,6 @@
 ---
-title: hydra
+title: Hydra Destination
+rewrite: true
 ---
 [Hydra](https://hydra.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps marketing, sales operations and customer success teams implement holistic predictive analytics tailored to their own business without writing a single line of code. Hydra is capable of scanning a wide range of sources such as product usage, user demographic data, firmographic data, chat conversations, help desk tickets, emails and marketing engagement to discover signals and make predictions.
 
@@ -9,7 +10,7 @@ _**NOTE:** The Hydra Destination is currently in beta, which means that they are
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 
 1. From your Segment UI's Destinations page click on "Add Destination".

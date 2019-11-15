@@ -1,5 +1,6 @@
 ---
-title: UserIQ
+rewrite: true
+title: UserIQ Destination
 ---
 
 [UserIQ](http://useriq.com) empowers companies to deliver what each user needs to be successful in every moment, starting with adoption. Our platform collects user engagement data from your product and allows you to communicate to your users when they are most engaged: within the product itself.
@@ -10,7 +11,7 @@ _**NOTE:** The UserIQ Destination is currently in beta, which means that they ar
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "UserIQ" within the Destinations Catalog and confirm the Source you'd like to connect to.

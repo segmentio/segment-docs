@@ -1,5 +1,6 @@
 ---
-title: Lucky Orange
+title: Lucky Orange Destination
+rewrite: true
 ---
 
 [Lucky Orange](https://www.luckyorange.com/) lets you quickly see who is on your site and interact with them in many ways. With Lucky Orange, you can chat with visitors on your site, actually watch their mouse move around the screen and click in real time, play them back as recording, generate beautiful heat maps of clicks, mouse movements (eye tracking), and scroll depth, create quick insightful polls, and more. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-lucky-orange).
@@ -8,12 +9,12 @@ This document was last updated on October 16, 2018. If you notice any gaps, outd
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "{{integration.name}}" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Lucky Orange" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your Site ID from the Lucky Orange.
-4. We’ll automatically initialize Lucky Orange’s library upon loading analytics.js.
+4. We'll automatically initialize Lucky Orange's library upon loading analytics.js.
 
 ## Identify
 

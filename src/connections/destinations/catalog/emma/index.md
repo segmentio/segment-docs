@@ -1,5 +1,6 @@
 ---
-title: Emma
+title: Emma Destination
+rewrite: true
 ---
 
 [EMMA](https://emma.io/en/features/) helps you track campaigns from your trusted networks, Google Ads campaigns, Facebook and Instagram campaigns, and Twitter campaigns. You can also track user activities in your app, so you can send personalizes push notifications and in-app campaigns like banners, start-views etc.
@@ -11,7 +12,7 @@ _**NOTE:** The EMMA Destination is currently in beta, which means that they are 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page, click "Add Destination".
 2. Search for "EMMA" in the Destinations Catalog, and confirm the Source you'd like to connect to.

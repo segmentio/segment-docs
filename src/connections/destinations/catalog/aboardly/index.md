@@ -1,6 +1,7 @@
 ---
-title: Aboardly
+title: Aboardly Destination
 ---
+
 This destination is maintained by Aboardly.
 
 ## Getting Started
@@ -18,6 +19,3 @@ When you `identify` a user, we'll pass that user's information to Aboardly with 
 ## Track
 
 When you `track` an event, we will send that event to Aboardly as a custom event.
-
-
-{% include content/integration-foot.md %}

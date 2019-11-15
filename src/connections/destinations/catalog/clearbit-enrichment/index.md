@@ -1,5 +1,6 @@
 ---
-title: Clearbit Enrichment
+title: Clearbit Enrichment Destination
+rewrite: true
 ---
 
 [Clearbit Enrichment](https://clearbit.com/segment) helps customers enrich and append real-time data to an email or domain, driving growth or powering your product with social data, location, job title, company size and technology.
@@ -14,10 +15,10 @@ This document was last updated on April 20th, 2018. If you notice any gaps, outd
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Clearbit Enrichment" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Clearbit Enrichment" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. In your Segment UI's destination settings, enter your Clearbit **secret** API key (note: it should start with "sk_"). You can find this in the API section of your [Clearbit dashboard](https://dashboard.clearbit.com/api).
 
 To verify that the destination has been set up correctly, check the Debugger section of your Segment Source. Assuming everything is as it should be, you should start seeing Clearbit Enrichment data populate in the `identify` events – click on the specific event you're interested in to see Clearbit Enrichment traits. These traits will now be available to other Segment destinations in your account. Notice that all Clearbit Enrichment traits are prefixed with `clearbit_` to ensure they don't conflict with existing traits.

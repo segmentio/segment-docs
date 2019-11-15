@@ -1,5 +1,6 @@
 ---
-title: FunnelFox
+title: FunnelFox Destination
+rewrite: true
 ---
 [FunnelFox](https://www.funnelfox.com/integrations/segment?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to sort your sales operations in just a few clicks. Integrate your sales tools to eliminate data silos, get accurate CRM data to make the right decisions and know when opportunities require attention.
 
@@ -10,7 +11,7 @@ _**NOTE:** The FunnelFox Destination is currently in beta, which means that they
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "FunnelFox" within the Destinations Catalog and confirm the Source you'd like to connect to.

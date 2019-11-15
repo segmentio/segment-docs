@@ -1,5 +1,6 @@
 ---
-title: mabl
+rewrite: true
+title: Mabl Destination
 ---
 
 Only [mabl](https://mabl.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) offers scriptless cross-browser web testing, auto-healing tests, visual testing, and diagnostics in one simple service. mabl helps you improve the speed and quality of your release pipeline by allowing you to test every release, at scale, on a single platform, with no infrastructure to manage.
@@ -11,7 +12,7 @@ _**NOTE:** The mabl Destination is currently in beta, which means that they are 
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "mabl" within the Destinations Catalog and confirm the Source you'd like to connect to.

@@ -1,5 +1,6 @@
 ---
-title: ScopeAI
+rewrite: true
+title: ScopeAI Destination
 ---
 [ScopeAI](https://www.getscopeai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) improves communication between support and product teams by aggregating user feedback and tracking the impact of bugs or issues and feature requests.
 
@@ -10,7 +11,7 @@ _**NOTE:** ScopeAI is currently in beta, which means that they are still activel
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "ScopeAI" within the Destinations Catalog and confirm the Source you'd like to connect to.

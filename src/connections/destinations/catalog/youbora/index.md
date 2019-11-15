@@ -1,13 +1,14 @@
 ---
-title: Youbora
+title: Youbora Destination
 ---
+
 ## Getting Started
 
 ### Web Destination
 
 When you toggle on Youbora for a website in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start
++ Our CDN is updated within 45 minutes. Then our snippet will start
   asynchronously loading Youbora's Javascript onto your page. This means you
   should remove Youbora's snippet from your page.
 + Youbora will automatically start recording data.
@@ -303,7 +304,7 @@ See the below example for what a working implementation looks like:
               html5: [
                 {
                   player: 'html5-player',
-                  options: {}}
+                  options: {}
               ]
             }
           }
@@ -314,5 +315,3 @@ See the below example for what a working implementation looks like:
 
   </script>
 ```
-
-{% include content/integration-foot.md %}

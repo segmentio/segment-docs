@@ -1,24 +1,25 @@
 ---
-title: Clearbit Reveal
+title: Clearbit Reveal Destination
+rewrite: true
 ---
 
 [Clearbit Reveal](https://clearbit.com/segment) helps customers instantly match IP addresses with company names, and see full profiles for all site visitors. It turns your anonymous web traffic into a full company profile — complete with industry, employee count, funding details, and much more. You can find a list of the different attributes you can collect with Clearbit [here](https://clearbit.com/attributes). This destination is maintained by Clearbit. For any issues with the destination, please [reach out to their team](mailto:support@clearbit.com)
 
-This document was last updated on August 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [please let us know!](https://segment.com/help/contact)
+This document was last updated on August 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [please let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
-* [Personalize Intercom live chat messages based on a visitor’s matched industry](https://segment.com/recipes/personalize-intercom-live-chat-industry/)
-* [Deliver hyper-relevant Intercom messages based on a visitor’s job role](https://segment.com/recipes/personalize-intercom-live-chat-role/)
-* [Personalize Intercom welcome messages by incorporating a visitor’s company](https://segment.com/recipes/personalize-intercom-live-chat-with-company-name/)
+* [Personalize Intercom live chat messages based on a visitor's matched industry](https://segment.com/recipes/personalize-intercom-live-chat-industry/)
+* [Deliver hyper-relevant Intercom messages based on a visitor's job role](https://segment.com/recipes/personalize-intercom-live-chat-role/)
+* [Personalize Intercom welcome messages by incorporating a visitor's company](https://segment.com/recipes/personalize-intercom-live-chat-with-company-name/)
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 Setup within Segment:
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Clearbit Reveal" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Clearbit Reveal" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. In your Segment Settings UI, enter your Clearbit **secret** API key (note: it should start with "sk_"). You can find this in the API section of your [Clearbit dashboard](https://dashboard.clearbit.com/api).
 
 Setup within Clearbit:
@@ -43,7 +44,7 @@ analytics.page('Home', {
 
 When you call `page` event from Analytics.js, Clearbit Reveal will send back an enriched `identify` call from their servers. For this to work you **must** send an IP address in the context of your Page calls. Our Analytics.js library collects the IP address for you, otherwise you need to manually retrieve and set it in `context.ip`. The Clearbit Reveal Destination is a server-side destination so you will need to use your secret key. This enriched identify call will only arrive in downstream destinations that are configured to receive server-side `identify` events.
 
-You can find details on what traits Clearbit adds and exactly what will be in the enriched Identify call on [Clearbit’s site](https://segment.clearbit.com/mapping) and full documentation on the Reveal API in the [docs here](https://clearbit.com/docs#reveal-api).
+You can find details on what traits Clearbit adds and exactly what will be in the enriched Identify call on [Clearbit's site](https://segment.clearbit.com/mapping) and full documentation on the Reveal API in the [docs here](https://clearbit.com/docs#reveal-api).
 
 **Notes**
 1. Clearbit Reveal attributes will not populate on every single identify event as Reveal will not have 100% match rates for your traffic.

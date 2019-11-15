@@ -1,5 +1,6 @@
 ---
-title: Strikedeck
+rewrite: true
+title: Strikedeck Destination
 ---
 [Strikedeck](https://strikedeck.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Customer Success platform which actively manages customer relationships to reduce churn, increase existing revenue and influence new sales. Strikedeck includes  Customer Engagement Analytics, Health Scorecard, Notifications, Recommendations & Actions.
 
@@ -10,7 +11,7 @@ _**NOTE:** The Strikedeck Destination is currently in beta, which means that the
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Strikedeck" within the Destinations Catalog and confirm the Source you'd like to connect to.

@@ -1,14 +1,13 @@
 ---
-title: Zapier
+rewrite: true
 beta: true
-redirect_from:
-- /integrations/zapier/
+title: Zapier Destination
 ---
 [Zapier](https://zapier.com/apps/integrations) empowers businesses to create processes and systems that let computers do what they do best - automating information transfer, allowing humans to be more productive.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. Navigate to your Zapier dashboard and select "Make A Zap" - you'll need at least one Zap so you can tell Segment where to route data later on.
 2. Search "Webhooks", then select "Catch Raw Hook" (Segment POSTs raw data to Zapier via our destination).

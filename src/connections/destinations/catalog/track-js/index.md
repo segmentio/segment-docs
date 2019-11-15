@@ -1,15 +1,20 @@
 ---
-title: Track JS
+rewrite: true
+title: trackJs Destination
 ---
+[Track JS](https://trackjs.com/) monitors your web applications for JavaScript errors, alerting you with amazing context about how the user, application, and network got into trouble. The `analytics.js` trackJs Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/trackjs).
+
+This document was last updated on November 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
-When you toggle on Track JS as a destination in Segment, this is what happens:
+{{>connection-modes}}
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading Track JS onto your page. This means you should remove Track JS' snippet from your page.
-+ Track JS will automatically start recording error data.
-
-Since Track JS only records data about errors, it does not collect any of the data represented by our API.
+  1. From your Segment UI's Destinations page click on "Add Destination".
+  2. Search for "Track JS" within the Destinations Catalog and confirm the Source you'd like to connect to.
+  3. Drop in your Token as retrieved from your Track JS [setup page](https://my.trackjs.com/customer/login?returnUrl=%2fcustomer%2fsetup#install-locally).
+  4. Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Track JS onto your page. This means you should remove Track JS' snippet from your page.
+  5. The Track JS Destination doesn't utilize any Segment API calls (e.g. identify, track, etc) so, once it's loaded, it will automatically start recording error data.
 
 ## Non-supported options
 
@@ -26,5 +31,3 @@ analytics.ready(function(){
 ```
 
 Note that the `userId` parameter is automatically determined.
-
-{% include content/integration-foot.md %}

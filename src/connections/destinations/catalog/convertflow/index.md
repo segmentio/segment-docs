@@ -1,5 +1,6 @@
 ---
-title: ConvertFlow
+title: ConvertFlow Destination
+rewrite: true
 ---
 [ConvertFlow](https://www.convertflow.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the all-in-one platform for converting your website visitors. From one builder, you can create, personalize and launch dynamic website content, forms, popups, sticky bars, surveys, quizzes and landing pages, without coding.
 
@@ -10,7 +11,7 @@ _**NOTE:** The ConvertFlow Destination is currently in beta, which means that th
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "ConvertFlow" within the Destinations Catalog and confirm the Source you'd like to connect to.

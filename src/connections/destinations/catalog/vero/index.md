@@ -1,13 +1,14 @@
 ---
-title: Vero
+title: Vero Destination
 ---
+
 Our Vero destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-vero), [Server](https://github.com/segmentio/integration-vero).
 
 ## Getting Started
 
 Vero helps you send targeted emails to customers based on their behavior. When you toggle on Vero in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading Vero's m.js onto your page. This means you should remove Vero's snippet from your page.
++ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Vero's m.js onto your page. This means you should remove Vero's snippet from your page.
 + Since Vero only records custom events and custom user data, no events or users will appear in Vero until you start using the API outlined below.
 
 Vero is supported on the client-side, server-side and mobile.
@@ -120,5 +121,3 @@ analytics.identify('324LKJF', {
     }
 })
 ```
-
-{% include content/integration-foot.md %}

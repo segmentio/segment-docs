@@ -1,5 +1,6 @@
 ---
-title: Slack
+rewrite: true
+title: Slack Destination
 ---
 
 [Slack](https://slack.com/) is a team collaboration tool where work flows. It's where the people you need, the information you share, and the tools you use come together to get things done.
@@ -8,7 +9,7 @@ This document was last updated on January 25, 2018. If you notice any gaps, out-
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Slack" within the Destinations Catalog and confirm the Source you'd like to connect to.

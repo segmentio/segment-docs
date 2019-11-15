@@ -1,5 +1,6 @@
 ---
-title: ChurnZero
+title: ChurnZero Destination
+rewrite: true
 ---
 
 [ChurnZero](https://churnzero.net/) is a real-time Customer Success platform that helps subscription businesses fight churn, expand current accounts, increase product adoption and optimize the customer experience.
@@ -11,12 +12,12 @@ _**NOTE:** ChurnZero is currently in beta, and this doc was last updated on Febr
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "ChurnZero" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "API Key" into your Segment Settings UI which you can find within ChurnZero under [Admin > Application Keys](https://app.churnzero.net/#/app/admin/applicationKeys). Please be sure you are providing the key for your Production instance of ChurnZero.
-4. Once you’ve completed Steps 1-3, notify your ChurnZero Implementation Specialist or Customer Success Manager. The ChurnZero team will finalize your set-up for you. Please note that you must also provide your Implementation Specialist or CSM with your company’s [Segment Implementation Requirements](https://churnzerohelp.zendesk.com/hc/en-us/articles/360022631452-Usage-Data-Segment-com-Destination).
+4. Once you've completed Steps 1-3, notify your ChurnZero Implementation Specialist or Customer Success Manager. The ChurnZero team will finalize your set-up for you. Please note that you must also provide your Implementation Specialist or CSM with your company's [Segment Implementation Requirements](https://churnzerohelp.zendesk.com/hc/en-us/articles/360022631452-Usage-Data-Segment-com-Destination).
 
 
 ## Identify

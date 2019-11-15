@@ -1,20 +1,21 @@
 ---
-title: Adobe Target
+rewrite: true
 beta: true
+title: Adobe Target Destination
 ---
 [Adobe Target](https://www.adobe.com/marketing-cloud/target.html) removes the
 coding and setup hassles of A/B testing to help you quickly discover which
 offers, experiences and messages truly engage your visitors.
 
-_**NOTE:** {{integration.name}} is currently in beta, and this doc was last
+_**NOTE:** Adobe Target is currently in beta, and this doc was last
 updated on March 7, 2018. This means that there may still be some bugs for us to
 iron out, and we're excited to hear your thoughts. If you are interested in
-joining or have any feedback to help us improve the {{integration.name}}
+joining or have any feedback to help us improve the Adobe Target
 Destination and its documentation, please [let us know](https://segment.com/help/contact)!_
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. Download the `at.js` file from Adobe and include it in the `head` of your
    website above the Segment snippet. Because Adobe Target is an A/B testing

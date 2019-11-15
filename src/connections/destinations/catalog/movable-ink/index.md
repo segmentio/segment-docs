@@ -1,18 +1,19 @@
 ---
-title: Movable Ink
+rewrite: true
+title: Movable Ink Destination
 ---
 
 [Movable Ink](https://movableink.com/) lets email marketers deliver jaw-dropping customer experiences. Our cloud-based software activates any data to generate intelligent content at the moment of open.
 
 This destination is maintained by [Movable Ink](https://movableink.com/). If you have any issues, please contact Movable Ink at support@movableink.com.
 
-_**NOTE:** {{integration.name}} is currently in beta and this doc was last updated on March 14, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the {{integration.name}} Destination and its documentation, and please [let us know](https://segment.com/help/contact)!_
+_**NOTE:** Movable Ink is currently in beta and this doc was last updated on March 14, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Movable Ink Destination and its documentation, and please [let us know](https://segment.com/help/contact)!_
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-Perform the following steps to get started with Segment’s Movable Ink destination:
+Perform the following steps to get started with Segment's Movable Ink destination:
 1. Ensure you have an active Movable Ink account.
 2. Turn on the Movable Ink destination via the Segment dashboard.
 3. Talk to your Movable Ink account manager to get your Movable Ink API key.
@@ -30,7 +31,7 @@ Once the Movable Ink API receives this `identify` event, it will associate the e
 ## Track
 If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
 
-When you send a `track` event with one of Segment’s sources, Movable Ink will normalize them into the same events that Movable Ink’s API would normally receive. They will then be available to target against in behavioral marketing campaign content as well as being available in **Custom Apps** and **Behavioral Apps**.
+When you send a `track` event with one of Segment's sources, Movable Ink will normalize them into the same events that Movable Ink's API would normally receive. They will then be available to target against in behavioral marketing campaign content as well as being available in **Custom Apps** and **Behavioral Apps**.
 
 Track events that are sent to Movable Ink will be attributed to the user identifier provided by any `identify` call. This user identifier may be an email or another unique identifier if one exists for that user.
 
@@ -61,4 +62,4 @@ The `track` event `Order Completed` is used to create conversion events in **Sig
 ## Troubleshooting/ FAQ
 
 ### No Events in Movable Ink associated with profiles
-Remember, the `track` events `Product Viewed` and `Product Added` must include `sku` or `product_id` _and_ must include a `url`. These properties enable events to be associated with an user’s profile.
+Remember, the `track` events `Product Viewed` and `Product Added` must include `sku` or `product_id` _and_ must include a `url`. These properties enable events to be associated with an user's profile.

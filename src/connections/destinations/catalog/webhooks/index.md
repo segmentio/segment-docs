@@ -1,16 +1,17 @@
 ---
-title: Webhooks
+rewrite: true
+title: Webhooks Destination
 ---
-[Webhooks](https://segment.com/integrations/webhooks) submit real-time user data to your own HTTP endpoints. A Webhook is an HTTP callback: a simple event-notification via HTTP POST. A web application implementing Webhooks will POST a message to a URL when certain things happen.
+Segment Webhooks submit real-time user data to your own HTTP endpoints. A Webhook is an HTTP callback: a simple event-notification via HTTP POST. A web application implementing Webhooks will POST a message to a URL when certain things happen.
 
 This document was last updated on January 28, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Webhooks" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Webhooks" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Specify up to five different Webhook URLs, you would like to forward data to.
 4. Add in any header values you would like to add to the HTTP requests
 5. If you require authentication, add in a [shared secret](https://segment.com/docs/destinations/webhooks/#authentication).
@@ -221,4 +222,4 @@ Under 'Connection Settings', you can provide up to 5 webhooks.
 
 ### Retries
 
-Our webhooks destination will retry any failed requests once.
+Our webhooks destination will retry any request that returns 5xx errors, multiple times, for a maximum of 4 hours.

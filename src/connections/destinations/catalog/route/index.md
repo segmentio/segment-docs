@@ -1,6 +1,7 @@
 ---
-title: Route
+title: Route Destination
 ---
+
 [Our Route destination code](https://github.com/segment-integrations/analytics.js-integration-route) is all open-source on GitHub if you want to check it out.
 
 ## Getting Started
@@ -25,5 +26,3 @@ When you `identify` a contact, we'll pass that contact's information to Route wi
 When you `track` an event, we will send that event to Route using the following data:
 
 - `eventName` [`string`]
-
-{% include content/integration-foot.md %}

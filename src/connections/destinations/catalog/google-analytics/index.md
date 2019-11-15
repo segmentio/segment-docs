@@ -1,21 +1,40 @@
 ---
-title: Google Analytics
+title: Google Analytics Destination
 ---
+
+<!-- TOC depthFrom:1 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+ - [Getting Started](#getting-started)
+ - [Page & Screen](#page-screen)
+ - [Identify](#identify)
+ - [Track](#track)
+ - [E-Commerce](#e-commerce)
+ - [Enhanced E-Commerce](#enhanced-e-commerce)
+ - [Server Side](#server-side)
+ - [Features](#features)
+ - [Troubleshooting](#troubleshooting)
+ - [Migrating Deprecated Google Analytics Mobile SDKs to Firebase](#migrating-deprecated-google-analytics-mobile-sdks-to-firebase)
+ - [Mobile Apps - DEPRECATED](#mobile-apps-deprecated)
+
+<!-- /TOC -->
+
+## Deprecating Mobile SDKs
+
+Using Segment's Google Analytics mobile SDKs you could previously measure and optimize user engagement with your mobile-apps. On October 31st 2019, Google is sunsetting the Google Analytics mobile-apps reporting based on the Google Analytics Services SDKs for Android and iOS. This means all data collection and processing for properties that receive data from the Google Analytics Service SDK for mobile apps will stop. Google is deprecating Google Analytics in favor of Firebase SDKs. View the [migration tutorial below](#migrating-deprecated-google-analytics-mobile-sdks-to-firebase) to learn more about how to migrate your Google Analytics mobile-apps to Segment's Firebase SDK.
+
 
 ## Getting Started
 
 
 When you toggle on Google Analytics in Segment, this is what happens:
 
-  - Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading Google Analytics javascript library onto your web page. **This means you should remove Google's snippet from your page.**
+  - Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Google Analytics javascript library onto your web page. **This means you should remove Google's snippet from your page.**
 
   - Your Google Analytics real-time dashboard will start showing live concurrent visitors.
 
-  - Any iOS and Android apps running our mobile libraries will start sending data to Google Analytics. New settings will take up to an hour to propagate to all of your existing users.Or if you just added the iOS or Android library to your app code, it'll be instantaneous!
+  - Google Analytics will start automatically collecting data on your site. It takes several hours for Google to process this data and add it to your reports, but you should still see events showing up in their real-time events dashboard.
 
-  - Google Analytics will start automatically collecting data on your site or mobile app. It takes several hours for Google to process this data and add it to your reports, but you should still see events showing up in their real-time events dashboard.
-
-Segment supports Google Analytics client-side and the server-side tracking, in addition to mobile app analytics for iOS and Android.
+Segment supports Google Analytics client-side and the server-side tracking.
 
 These docs will only cover GA Universal features, since the [Classic tracking method has been depreciated](http://analytics.blogspot.com/2014/04/universal-analytics-out-of-beta-into.html).
 
@@ -29,8 +48,6 @@ When you call [`page`](/docs/spec/page), we send a pageview to Google Analytics.
 The resulting `page` event name in Google Analytics will correspond to the `fullName` of your page event. `fullName` consists of a combination of the `category` and `name` parameters. For example, `analytics.page('Home');` would produce a `Home` page event in GA's dashboard, whereas `analytics.page('Retail Page', 'Home');` would produce an event called `Retail Page Home`.
 
 Note that when sending `page` views from one of Segment's server-side libraries, a `url` property is required. Otherwise, Google Analytics will silently reject your `page` event.
-
-When you call [`screen`](/docs/spec/screen) in your mobile app, we send a screen view to Google Analytics for mobile apps.
 
 If you are sending a [`screen`](/docs/spec/screen) call server-side, you must pass in an [application name](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#appName) through Segment's `context.app.name` object or Google will reject your event.
 
@@ -97,22 +114,20 @@ If you are passing an **email**, **phone number**, **full name** or other PII as
 
 ### Custom Dimensions
 
-Google Analytics has multiple scopes for each custom dimensions: hit (synonymous with events), session, user, product (required enhanced ecommerce to be enabled).
-
-Our client-side analytics.js library supports both hit and product scoped custom dimensions.
-Our mobile libraries (Android and iOS) support only hit scoped custom dimensions.
-
-We do not currently support session or user scoped custom dimenstions.
+Google Analytics has multiple scopes for each custom dimensions: hit (synonymous with events), session, user, product (required enhanced ecommerce to be enabled). Our client-side analytics.js library supports all of them.
 
 Configuring Custom Dimensions:
 First, configure the Custom Dimensions in your Google Analytics admin page. [Read how to set those up here](https://support.google.com/analytics/answer/2709829?hl=en).
 
 Once you are set up in Google Analytics, you are ready to map traits and properties to your custom dimensions.
-From your Segment Dashboard, open the destinations catalog and select the Google Analytics destination, then Advanced Options. Locate Custom Dimensions and declare the mapping.
+From your Segment Dashboard, open the destinations catalog and select the Google Analytics destination, then Settings. Locate Custom Dimensions and declare the mapping.
 
-Here's an example of mapping "Gender" to "dimension9" and "User Type" to "dimension17":
+Here's an example of mapping "Gender" to dimension "1" and "User Type" to dimension "2":
 
+On Segment:
 ![custom dimension mapping screenshot](images/dimension-mapping.png)
+On Google:
+![custom dimension mapping screenshot](images/dimension-mapping-google-analytics.png)
 
 **Note:** A particular trait or property may only be mapped to a single Custom Dimension at a time.
 
@@ -142,7 +157,7 @@ You can specify in the setting what you want this event action to be named. We w
 
 Segment makes it simple to save your A/B testing versions to custom dimensions in Google Analytics. All you have to do is map an experiment to a custom dimension in the Google Analytics Advanced Options inside Segment.
 
-If you are using Cloud Mode or server-side Google Analytics destinations, you can also send this data automatically using our `experiment_id`, `experiment_name`, `variation_id`, and `variation_name` properties. If both an experiment and variation are defined, then this will send automatically. Note that we will use the ids over the names, if both exist (for example, sending experiment_id, experiment_name, and variation_name in a call will ultimately send experiment_id and variation_name).
+If you are using Cloud-mode or server-side Google Analytics destinations, you can also send this data automatically using our `experiment_id`, `experiment_name`, `variation_id`, and `variation_name` properties. If both an experiment and variation are defined, then this will send automatically. Note that we will use the ids over the names, if both exist (for example, sending experiment_id, experiment_name, and variation_name in a call will ultimately send experiment_id and variation_name).
 
 When you have an active A/B test on a page, Segment will either set that experiment as a property or a user trait, depending on how you opt to send experiment data to other tools on your A/B testing tool's Segment settings page. The property or trait for A/B test experiments are labeled like this:
 
@@ -166,7 +181,7 @@ If you want to record that property or trait as a custom dimension you'd map **E
 
 We'll record a Google Analytics event whenever you make a [`track`](/docs/spec/track) call. You can see your events inside Google Analytics under **Behavior** -> **Events** -> **Overview**. Keep reading for more details about the Google Analytics event category, action, label, value and how to populate them.
 
-Events can be sent from the browser, your server, or our mobile SDKs. Here's a basic [`track`](/docs/spec/track) example:
+Events can be sent from the browser or your server. Here's a basic [`track`](/docs/spec/track) example:
 
 ```javascript
 analytics.track('Logged In');
@@ -187,7 +202,7 @@ For this example these event attributes are sent to Google Analytics:
 
 And another [`track`](/docs/spec/track/) example, this time with all Google Analytics event parameters:
 
-{% comment %}\{\{\{api-example '{
+{{{api-example '{
   "userId": "12345",
   "action": "track",
   "event": "Logged In",
@@ -196,7 +211,7 @@ And another [`track`](/docs/spec/track/) example, this time with all Google Anal
     "label": "Premium",
     "value": 50
   }
-}'{% endcomment %}
+}'}}}
 
 That call will create a Google Analytics event with these attributes:
 
@@ -228,13 +243,13 @@ To create an event with the `nonInteraction` flag just pass us an event property
 
 Here's an example:
 
-{% comment %}\{\{\{api-example '{
+{{{api-example '{
   "action": "track",
   "event": "Viewed Legal Info",
   "properties": {
     "nonInteraction": 1
   }
-}'{% endcomment %}
+}'}}}
 
 - - -
 
@@ -495,67 +510,6 @@ analytics.track('Order Refunded', {
 
 - - -
 
-
-## Mobile Apps
-
-Segment supports Google Analytics mobile app analytics via our iOS and Android sources. For getting started with our mobile sources, check out the [iOS](/docs/sources/mobile/ios/) and [Android](/docs/sources/mobile/android/) technical docs.
-
-When including Segment-GoogleAnalytics in your project, we bundle IDFA support by default. You can choose to exclude IDFA Support by specifying `pod "Segment-GoogleAnalytics/Core"`. Doing this, we will only bundle the Segment and Core GA libraries, excluding GoogleIDFASupport.
-
-You'll need to create a new Google Analytics property for your mobile app. You can't mix website and mobile apps within the same Google Analytics property. You can however mix Android and iOS implementations of the same app, or many different builds of the same app inside the same property.
-
-Here are [Google's Best Practices for Mobile App Analytics](https://support.google.com/analytics/answer/2587087):
-
-  - Track different apps in separate properties
-  - Track different platforms of an app in separate properties
-  - Track app editions based on feature similarities
-  - Track different app versions in the same property
-
-
-### Add the Mobile Tracking Id Field
-
-The first thing you'll want to do if you're bundling the Segment-GoogleAnalytics SDK is to add your **Mobile Tracking Id** to your Google Analytics settings inside Segment. This ensures that data can flow from each user's mobile device to Google Analytics. Otherwise, Segment won't know where to send your data, and the events will be lost.
-
-
-### When Will I See Data?
-
-If you already have an app deployed with the Segment library, and you just turned on Google Analytics mobile, it will take up to an hour for all your mobile users to refresh their Segment settings cache, and learn about the new service that you want to send to.
-
-After the settings cache refreshes, our library will automatically start sending data to Google Analytics.
-
-
-### Android Permissions
-
-You'll need to make sure you added these permissions to your `AndroidManifest.xml`:
-
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-```
-
-
-### Calling Google Analytics Directly
-
-Since our SDKs bundle the Google Analytics SDK, you can access the Google Analytics `Tracker` object directly. Here's an Android example:
-```java
-GoogleAnalytics ga = GoogleAnalytics.getInstance(this);
-Tracker tracker = ga.newTracker('<your tracking id>');
-```
-```java
-// perform custom actions, such as user timings
-tracker.send(new HitBuilders.TimingBuilder()
-    .setCategory(getTimingCategory())
-    .setValue(getTimingInterval())
-    .setVariable(getTimingName())
-    .setLabel(getTimingLabel())
-    .build());
-```
-
-This allows you to perform custom actions with Google Analytics, such as [user timings](https://developers.google.com/analytics/devguides/collection/android/v4/usertimings).
-
-- - -
-
-
 ## Server Side
 
 When you track an event or pageview with one of our server-side libraries or [HTTP API](/docs/sources/server/http/) we will send it along to the Google Analytics REST API.
@@ -564,7 +518,7 @@ When you track an event or pageview with one of our server-side libraries or [HT
 
 ### Combining Server-side and Client-side Events
 
-Google Analytics uses cookies to keep track of visitors and their sessions while visiting your website. The cookie data is stored in the visitor's browser, and is sent along to Google Analytics every time a new pageview or event occurs. This allows Google Analytics to show  a single unique visitor between multiple page reloads.
+Google Analytics uses cookies to keep track of visitors and their sessions while visiting your website. The cookie data is stored in the visitor's browser, and is sent along to Google Analytics every time a new pageview or event occurs. This allows Google Analytics to show a single unique visitor between multiple page reloads.
 
 Your servers also have access to this cookie, so they can re-use it when you send server-side events to Segment. If you don't use the existing cookie Segment has to create a new one to make the server-side request to Google Analytics. When we create a new cookie the client-side and server-side events from the same user will look like two distinct visitors in Google Analytics.
 
@@ -595,7 +549,7 @@ ga(function (tracker) {
 });
 ```
 
-If you want our server-side destination to use your user's `clientId`, pass it to us in the `context['Google Analytics'].clientId` object. You must pass this value manually on every call as we do not store this value for you. If you do not pass this through, we look for the `userId` or `anonymousId` value and set it as the `cid`.
+If you want our server-side destination to use your user's `clientId`, pass it to us in the `context.integrations['Google Analytics'].clientId` object. You must pass this value manually on every call as we do not store this value for you. If you do not pass this through, we look for the `userId` or `anonymousId` value and set the hashed value of either `userId` or `anonymousId` as the `cid`.
 
 *Here's a Ruby example:*
 ```ruby
@@ -606,8 +560,10 @@ Analytics.track(
     linkText     : 'Next'
   },
   context: {
-    'Google Analytics' => {
-        clientId: '1033501218.1368477899'
+    integrations: {
+     'Google Analytics' => {
+       clientId: '1033501218.1368477899'
+     }
     }
   }
 )
@@ -636,7 +592,7 @@ Analytics.track(
 
 ### Visitor Geo-Location
 
-Google Analytics uses the IP address of the HTTP request to determine the location of the visitor. This happens automatically for client-side and mobile tracking, but takes a little more work for server-side calls.
+Google Analytics uses the IP address of the HTTP request to determine the location of the visitor. This happens automatically for client-side tracking, but takes a little more work for server-side calls.
 
 For geo-location to work from a server-side call you'll need to include the visitor's `ip` in your `.track()` call.
 
@@ -869,7 +825,7 @@ Using Segment won't affect your bounce rates in Google Analytics.
 
 If you see your bounce rates drop after installing Segment make sure you don't have multiple copies of our snippet on your page. Also be sure you're not calling `page` more than once when the page loads.
 
-If you call `track` on page load make sure to set `nonInteraction` to `1`. You can also set all events to be non-interactive by default in `Advanced Options`.  Read more in our [non-interaction events](#non-interaction-events) docs.
+If you call `track` on page load make sure to set `nonInteraction` to `1`. You can also set all events to be non-interactive by default in `Advanced Options`. Read more in our [non-interaction events](#non-interaction-events) docs.
 
 
 ### Traffic from Boardman or Segmentio Browser
@@ -904,4 +860,182 @@ Google Analytics requires the `context.app.name` passed in each call. Since the 
 
 To resolve this error, ensure you [provide a localized info dictionary](https://github.com/segmentio/analytics-ios/blob/760be85a5119c2e8bd31a745ce2ec30385a0ad69/Pod/Classes/Internal/SEGSegmentIntegration.m#L110) as outlined [here](https://developer.apple.com/library/ios/qa/qa1823/_index.html).
 
-{% include content/integration-foot.md %} 
+
+## Migrating Deprecated Google Analytics Mobile SDKs to Firebase
+
+
+### What's happening with Google Analytics Mobile SDKs?
+
+On October 31st 2019, Google is sunsetting the Google Analytics mobile-apps reporting based on the Google Analytics Services SDKs for Android and iOS. This means all data collection and processing for properties that receive data from the Google Analytics Service SDK for mobile apps will stop. Google is deprecating Google Analytics in favor of Firebase SDKs. To learn more, see the Google [public notice here](https://support.google.com/firebase/answer/9167112?hl=en).
+
+
+### Is Segment removing the Google Analytics Destination?
+
+The Google Analytics mobile SDKs for Segment will not be removed from the catalog, but they will be marked as deprecated and will stop functioning when Google deprecates the original Google Analytics service. To replace the Google Analytics mobile SDKs, we suggest that you migrate your current Segment Google Analytics Mobile destinations to the Segment Firebase Destinations.
+
+
+### Getting Started with Firebase
+
+For more detailed information for each of the classes and methods in the Firebase SDK by platform visit the [Firebase Analytics SDK documentation](https://firebase.google.com/docs/reference).
+
+**Installing the iOS SDK**
+For information on how to add the Segment-Firebase SDK and register the dependency with the Segment SDK visit [Segment's Firebase for iOS](https://segment.com/docs/destinations/firebase/#ios) documentation.
+
+**Installing the Android SDK**
+For information on how to add the Segment-Firebase SDK and apply the Google Services plugin visit [Segment's Firebase for Android](https://segment.com/docs/destinations/firebase/#android) documentation.
+
+
+### Comparing Google Analytics and Firebase Functionality
+
+| **Google Analytics Functionality**              | **Firebase Functionality**                                                   | **Supported?** |
+| ----------------------------------------------- | ---------------------------------------------------------------------------- | -------------- |
+| Enable/disable anonymize (obfuscate) device IP. | Enforced in Firebase.                                                        | ✅              |
+| Automatic reporting of uncaught exceptions .    | Use [Crashlytics](https://firebase.google.com/docs/crashlytics/get-started). | ✅              |
+| Report when Android Activity starts and stops.  | On Activity Resumed, we set the current screen.                              | ✅              |
+
+### Migrating Screen Calls
+
+Segment's Google Analytics SDK sends a screen view to Google Analytics for mobile apps when you call `screen` in your mobile app. For Segment's Android GA SDK, we will send a hit on product events on Screen calls using the screen name as the event name for `Product *:` formatted screen names.
+
+The Firebase SDK collects screen information automatically, so when you migrate to Segment's Firebase Analytics SDK, you will notice that Segment no longer needs to map screen events.
+
+For Android, Segment passes contextual screen information into each screen view on each activity's `onResume` callback. To ensure that this screen information is not lost now that we no longer perform a mapping step, we recommend that you add a `label` value to each activity in your app's `AndroidManifest.xml` file. At the moment, Firebase does not allow you to disable automatic screen tracking for Android.
+
+For iOS, you can configure `recordScreenViews` which will automatically track screen views, or pass in a screen manually using a [screen](https://segment.com/docs/spec/screen/) call. You can disable Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
+
+To send product events in the Firebase SDK you must invoke a track call separately from the screen call.
+
+
+### Migrating Identify Calls
+
+Previously, if you used Google Analytics on Identify calls, Segment only passed the ID of the call, because passing PII is against the Google Analytics Terms of Service. In order to pass additional user properties to Google Analytics you had to define custom dimensions and metrics within the Google Analytics UI.
+
+The Firebase Terms of Service, also prohibits you from passing PII, however on an Identify call Segment sends all user traits in an Identify payload to Firebase as user properties. In order to be used in analytics tooling these user properties need to be configured in your Firebase console. If you want to prevent PII from being sent to Firebase, and were previously relying on Segment to strip this information from your calls, you must re-route or remove this from the tracking implementation.
+
+Firebase Analytics supports sending up to 25 user properties. Once set, user property values persist throughout the app lifecycle and across sessions. The following user property names are reserved and cannot be used: `first_open_time`, `last_deep_link_referrer`, and `user_id`.
+
+### Migrating Track Calls
+
+Segment's Google Analytics Mobile SDKs record an event whenever you make a `.track()` call. The events can be generated with an `action`, `category`, `label`, and `value`. You can also set additional custom dimensions and metrics from your payload properties.
+
+When migrating to Segment's Firebase Analytics SDK the following Segment events are mapped to FirebaseAnalytics events:
+
+| **Segment Event**           | **Android Firebase Events** | **iOS Firebase Events**      |
+| --------------------------- | --------------------------- | ---------------------------- |
+| `Product Added`             | `Event.ADD_TO_CART`         | `kFIREventAddToCart`         |
+| `Checkout Started`          | `Event.BEGIN_CHECKOUT`      | `kFIREventBeginCheckout`     |
+| `Order Completed`           | `Event.ECOMMERCE_PURCHASE`  | `kFIREventEcommercePurchase` |
+| `Order Refunded`            | `Event.PURCHASE_REFUND`     | `kFIREventPurchaseRefund`    |
+| `Product Viewed`            | `Event.VIEW_ITEM`           | `kFIREventViewItem`          |
+| `Product List Viewed`       | `Event.VIEW_ITEM_LIST`      | `kFIREventViewItemList`      |
+| `Payment Info Entered`      | `Event.ADD_PAYMENT_INFO`    | `kFIREventAddPaymentInfo`    |
+| `Promotion Viewed`          | `Event.PRESENT_OFFER`       | `kFIREventPresentOffer`      |
+| `Product Added to Wishlist` | `Event.ADD_TO_WISHLIST`     | `kFIREventAddToWishlist`     |
+| `Product Shared`            | `Event.SHARE`               | `kFIREventShare`             |
+| `Product Clicked`           | `Event.SELECT_CONTENT`      | `kFIREventSelectContent`     |
+| `Product Searched`          | `Event.SEARCH`              | `kFIREventSearch`            |
+
+
+
+> **Note**: Google Analytics supported mapping `Product Removed` to Google Analytics `Product.ACTION_REMOVED`. This event is not mapped in the Segment Firebase mobile SDKs and will be sent as a custom event.
+
+The following Segment properties are mapped to Firebase Analytics properties:
+
+| **Segment Property** | **Android Firebase Property** | **iOS Firebase Property**    |
+| -------------------- | ----------------------------- | ---------------------------- |
+| `category`           | `Param.ITEM_CATEGORY`         | `kFIRParameterItemCategory`  |
+| `product_id`         | `Param.ITEM_ID`               | `kFIRParameterItemID`        |
+| `name`               | `Param.ITEM_NAME`             | `kFIRParameterItemName`      |
+| `price`              | `Param.PRICE`                 | `kFIRParameterPrice`         |
+| `quantity`           | `Param.QUANTITY`              | `kFIRParameterQuantity`      |
+| `query`              | `Param.SEARCH_TERM`           | `kFIRParameterSearchTerm`    |
+| `shipping`           | `Param.SHIPPING`              | `kFIRParameterShipping`      |
+| `tax`                | `Param.TAX`                   | `kFIRParameterTax`           |
+| `total`              | `Param.VALUE`                 | `kFIRParameterValue`         |
+| `revenu``e`          | `Param.VALUE`                 | `kFIRParameterValue`         |
+| `order_id`           | `Param.TRANSACTION_ID`        | `kFIRParameterTransactionID` |
+| `currency`           | `Param.CURRENCY`              | `kFIRParameterTransactionID` |
+
+
+
+> **Note**: Firebase Analytics does not support `action` or `label` in their [predefined event parameter names](https://firebase.google.com/docs/reference/cpp/group/parameter-names), and Segment's Firebase SDK does not support mapping those properties. If you want to pass those properties to Firebase please send them as a custom property.
+
+**Custom Events and Properties**
+Segment's Firebase Analytics SDK allows you to send custom events and properties. If you make a `track()` call but the event name is not one of the above mappings, Segment calls `logEventWithName` (iOS) or `logEvent` (Android). This allows you to pass any custom event name you want. Event names must contain 1 to 40 alphanumeric characters or underscores, per the [Firebase documentation](https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Event). The Segment Firebase SDKs format custom event names to remove trailing whitespace and replace all spaces and periods with underscores.
+Firebase Analytics supports up to 500 event names, and each event can have up to 25 parameters.
+
+
+> **Note**: Firebase has a [list of](https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Classes/FIRAnalytics#/c:objc(cs)FIRAnalytics(cm)logEventWithName:parameters:) [reserved](https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Classes/FIRAnalytics#/c:objc(cs)FIRAnalytics(cm)logEventWithName:parameters:) [event names](https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Classes/FIRAnalytics#/c:objc(cs)FIRAnalytics(cm)logEventWithName:parameters:) which cannot be used.
+
+
+### Recording Uncaught Exceptions
+
+Segment's Google Analytics mobile SDK supports automatic reporting of uncaught exceptions for iOS and Android platforms.
+
+Firebase supports recording of uncaught exceptions through the use of [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics). Firebase Crashlytics is a lightweight, realtime crash reporter that helps you track, prioritize, and fix stability issues that erode your app quality. Crashlytics saves you troubleshooting time by intelligently grouping crashes and highlighting the circumstances that lead up to them.
+
+To get started with Firebase Crashlytics so you can generate comprehensive crash reports in your Firebase console follow the [set up guide outlined in the Firebase documentation](https://firebase.google.com/docs/crashlytics/get-started) for iOS or Android.
+
+### Can Segment do it for me?
+
+You might wonder why Segment can't just send your Google Analytics events cloud-mode from your mobile applications. We've confirmed that Google identified the customers who are impacted by the Google Analytics sunset plan, flagged those accounts, and sent deprecation notices.
+
+If you received this deprecation notice, your property has already been flagged for deprecation - so sending events cloud-mode won't make Google Analytics to collect and process that data after October 31st, 2019.
+
+
+## Mobile Apps - DEPRECATED
+
+Segment supports Google Analytics mobile app analytics via our iOS and Android sources. For getting started with our mobile sources, check out the [iOS](/docs/sources/mobile/ios/) and [Android](/docs/sources/mobile/android/) technical docs.
+
+When including Segment-GoogleAnalytics in your project, we bundle IDFA support by default. You can choose to exclude IDFA Support by specifying `pod "Segment-GoogleAnalytics/Core"`. Doing this, we will only bundle the Segment and Core GA libraries, excluding GoogleIDFASupport.
+
+You'll need to create a new Google Analytics property for your mobile app. You can't mix website and mobile apps within the same Google Analytics property. You can however mix Android and iOS implementations of the same app, or many different builds of the same app inside the same property.
+
+Here are [Google's Best Practices for Mobile App Analytics](https://support.google.com/analytics/answer/2587087):
+
+  - Track different apps in separate properties
+  - Track different platforms of an app in separate properties
+  - Track app editions based on feature similarities
+  - Track different app versions in the same property
+
+
+### Add the Mobile Tracking Id Field
+
+The first thing you'll want to do if you're bundling the Segment-GoogleAnalytics SDK is to add your **Mobile Tracking Id** to your Google Analytics settings inside Segment. This ensures that data can flow from each user's mobile device to Google Analytics. Otherwise, Segment won't know where to send your data, and the events will be lost.
+
+
+### When Will I See Data?
+
+If you already have an app deployed with the Segment library, and you just turned on Google Analytics mobile, it will take up to an hour for all your mobile users to refresh their Segment settings cache, and learn about the new service that you want to send to.
+
+After the settings cache refreshes, our library will automatically start sending data to Google Analytics.
+
+
+### Android Permissions
+
+You'll need to make sure you added these permissions to your `AndroidManifest.xml`:
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+
+### Calling Google Analytics Directly
+
+Since our SDKs bundle the Google Analytics SDK, you can access the Google Analytics `Tracker` object directly. Here's an Android example:
+```java
+GoogleAnalytics ga = GoogleAnalytics.getInstance(this);
+Tracker tracker = ga.newTracker('<your tracking id>');
+```
+```java
+// perform custom actions, such as user timings
+tracker.send(new HitBuilders.TimingBuilder()
+    .setCategory(getTimingCategory())
+    .setValue(getTimingInterval())
+    .setVariable(getTimingName())
+    .setLabel(getTimingLabel())
+    .build());
+```
+
+This allows you to perform custom actions with Google Analytics, such as [user timings](https://developers.google.com/analytics/devguides/collection/android/v4/usertimings).

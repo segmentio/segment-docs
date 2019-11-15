@@ -1,5 +1,6 @@
 ---
-title: Kitemetrics
+title: Kitemetrics Destination
+rewrite: true
 ---
 [Kitemetrics](https://kitemetrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides keyword level attribution for Apple Search Ads and associates them with In-App Purchases.  Kitemetrics allows you to leverage automation to easily manage and optimize Apple Search Ads campaigns and bids.
 
@@ -10,7 +11,7 @@ _**NOTE:** The Kitemetrics Destination is currently in beta, which means that th
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 
 1. From your Segment UI's Destinations page click on "Add Destination".
@@ -45,7 +46,7 @@ SEGAnalytics.setup(with: configuration)
 ```
 
 Objective-C
-```objc
+```objectivec
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.trackApplicationLifecycleEvents = YES;
 configuration.trackAttributionData = YES;
@@ -67,7 +68,7 @@ SEGAnalytics.shared().screen("Screen Title")
 ```
 
 Objective-C
-```objc
+```objectivec
 [[SEGAnalytics sharedAnalytics] screen:@"Screen Title"];
 ```
 
@@ -79,7 +80,7 @@ configuration.recordScreenViews = true
 ```
 
 Objective-C
-```objc
+```objectivec
 configuration.recordScreenViews = YES;
 ```
 

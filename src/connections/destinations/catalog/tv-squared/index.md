@@ -1,5 +1,6 @@
 ---
-title: TV Squared
+rewrite: true
+title: tvsquared Destination
 ---
 
 [TV Squared](https://tvsquared.com/) enables you to pull same-day TV performance analytics so you can manage TV spend, and create data-driven TV media plans based on network, days, programs, and genres. Our TV Squared Destination is open-source. You can browse the code [in Github](https://github.com/segment-integrations/analytics.js-integration-tvsquared).
@@ -8,17 +9,17 @@ This document was last updated on April 20th, 2018. If you notice any gaps, outd
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
+1. From your Segment UI's Destinations page click on "Add Destination".
 
-2. Search for "TV Squared" within the Destinations Catalog and confirm the Javascript source you’d like to connect to.
+2. Search for "TV Squared" within the Destinations Catalog and confirm the Javascript source you'd like to connect to.
 
 3. Add your TV Squared Brand ID and Client ID to your Segment Settings UI. You can find this within your TV Squared dashboard.
 
-4. We’ll automatically load TV Squared's Javascript tracking snippet onto the page once analytics.js loads. Please make sure you remove TV Squared's snippet from your code.
+4. We'll automatically load TV Squared's Javascript tracking snippet onto the page once analytics.js loads. Please make sure you remove TV Squared's snippet from your code.
 
-5. TV Squared will start automatically recording events after approximately 5-10 minutes, once our CDN is updated.
+5. TV Squared will start automatically recording events after approximately 45 minutes, once our CDN is updated.
 
 ## Page
 
@@ -49,7 +50,7 @@ As per the example above, TV Squared **requires** that you pass in a `revenue`, 
 
 ### Event Whitelisting
 
-For each event that you want to track (e.g. via analytics.track(your_event_name, …)), you will need to whitelist the event in your destination settings (under "Event Whitelist"). For example, if you want analytics.track(‘Order Completed’) and analytics.track(‘Sale’) events to be sent, then you will need to add Order Completed and Sale to this list.
+For each event that you want to track (e.g. via analytics.track(your_event_name, …)), you will need to whitelist the event in your destination settings (under "Event Whitelist"). For example, if you want analytics.track('Order Completed`) and analytics.track('Sale`) events to be sent, then you will need to add Order Completed and Sale to this list.
 
 ### Custom Track Properties
 

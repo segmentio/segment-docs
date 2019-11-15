@@ -1,5 +1,5 @@
 ---
-title: Sailthru
+title: Sailthru Destination
 beta: false
 ---
 
@@ -15,7 +15,7 @@ The Sailthru server-side destination will allow you to add users, send custom ev
 - Use the [ecommerce v2](/docs/spec/ecommerce/v2/) events to track `Order Completed`, `Product Added`, and `Product Removed`.
   -  For `Product Added` and `Product Removed` events, whether there is an `email` or not, we need to make a request to grab the items in the user's cart. We rely on the `userId` value for this request. It is essential that you have a `userId` on these calls, otherwise they will not make it to Sailthru.
   - To trigger abandoned cart campaigns, you must pass in a `reminder_time` and `reminder_template` on the `Product Added`and `Product Removed` events.
-  - The template passed through as `reminder_template` must match the public name configured in Sailthru’s UI.
+  - The template passed through as `reminder_template` must match the public name configured in Sailthru's UI.
 - We recommend appending `traits.email` whenever possible in your `identify` calls. If you send an `identify` call without a `traits.email` and only a `userId`, the profile will be created in Sailthru but you would not be able to find that user via their **User Look Up** feature.
 
 - - -
@@ -49,9 +49,9 @@ When you `identify` a user, we will pass that user's information to Sailthru wit
 
 Segment will automatically alias users for you so if you `identify` a user who you had previously only identified with an `anonymousId`, we will merge the profile with `anonymousId` into a new profile with `userId` as long as you pass both `anonymousId` and `userId`.
 
-An `identify` event will appear in Sailthru’s user lookup feature if there is an email present (Sailthru only allows a user lookup up based on an email):
+An `identify` event will appear in Sailthru's user lookup feature if there is an email present (Sailthru only allows a user lookup up based on an email):
 
-![](images/8751534977images/.png)
+![](images/1488751534977.png)
 
 Or within the **Users > Lists** feature, based on the default list you configured in the Segment UI or passed in through the destinations object like so:
 
@@ -67,7 +67,7 @@ analytics.identify("38472034892",{
   });
 ```
 
-![](images/8751628625images/.png)
+![](images/1488751628625.png)
 
 You can also configure an `optout_email` value in the Segment UI, or pass in a value through the destinations object with one of the Sailthru expected values:
 
@@ -89,18 +89,18 @@ So if you send an `identify` call without a `traits.email` and only a `userId`, 
 
 When you `track` an event, we will send that event to Sailthru as a custom event. **Important**: You must have each event mapped in Sailthru within **Communications > Lifecycle Optimizer** in order to leverage the custom event. Be sure that the **Status** is set to **Active**:
 
-![](images/8218489126images/.png)
+![](images/1488218489126.png)
 
 Your account must have triggers or lifecycle optimizer enabled. This should be enabled when the account is setup, however, just to be sure you may need to reach out to your account representative to confirm it is enabled.
 
 A custom event will hit the **Sailthru Lifecycle Optimizer** feature. Navigate to **Communications > Lifecycle Optimizer** in your Sailthru dashboard:
 
-![](images/8751128521images/.png)
+![](images/1488751128521.png)
 
 
 Configure a custom event to a new flow and trigger a follow up action to the event:
 
-![](images/8751210325images/.png)
+![](images/1488751210325.png)
 
 
 For instance, in the above example notice that the `Registered` event will add the user who trigger the event to a list.
@@ -109,14 +109,14 @@ For instance, in the above example notice that the `Registered` event will add t
 
 When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/spec/ecommerce/v2/#order-completed), we will send the products you've listed to Sailthru's purchase log:
 
-![](images/8752018885images/.png)
+![](images/1488752018885.png)
 
 In addition, it will also appear within the user view under purchase history:
 
-![](images/8752126668images/.png)
+![](images/1488752126668.png)
 
 Note that the main identifier is `email` not `id`
-![](images/7272939423images/.png)
+![](images/1487272939423.png)
 
 Sailthru does not allow the `extid` to be the main lookup identifier for their Purchase API. Instead, Sailthru requires an `email` as the primary identifier. Segment will make a GET request to retrieve the user's email based on their `userId`, which is their `extid` in Sailthru.
 
@@ -151,7 +151,7 @@ Note that purchases cannot be edited once they are posted.
 
 In addition to `Order Completed` events, we support the concept of [Sailthru's Abandonded Carts](https://getstarted.sailthru.com/email/transactionals/abandoned-shopping-carts/) via Segment's `Product Added` and `Product Removed` events. When these events are triggered, Segment will pass in `incomplete: 1` to signify that the order is incomplete.
 
-To leverage the functionality of sending transactional emails when a user abandonds his or her cart, you must pass in a `reminder_time` and `reminder_template` on the `Product Added` and `Product Removed` events. The template passed through as `reminder_template` must match the **public name** configured in Sailthru’s UI.
+To leverage the functionality of sending transactional emails when a user abandonds his or her cart, you must pass in a `reminder_time` and `reminder_template` on the `Product Added` and `Product Removed` events. The template passed through as `reminder_template` must match the **public name** configured in Sailthru's UI.
 
 If you send in a `Product Added` event without a valid template, Sailthru will return an error. If you send in a `Product Added` event with the `reminder_template` param, it will successfully send in and appear in the user view within their **incomplete purchase cart**. Some example values for `reminder_time` are 60 minutes, 24 hrs, 2 weeks. Segment will handle passing in the `+` increment.
 
@@ -275,5 +275,3 @@ Sailthru does not accept nested custom traits or properties, so by default we wi
 
 ### Replays
 Note that Sailthru does not support historical replay.
-
-{% include content/integration-foot.md %}

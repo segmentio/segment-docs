@@ -1,4 +1,5 @@
 ---
+rewrite: true
 title: Userpilot
 ---
 [Userpilot](https://userpilot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps product teams increase user adoption by allowing them to trigger highly personalized onboarding experiences across the user journey. The Segment integration will help you install and send data to Userpilot without added development time.
@@ -37,7 +38,7 @@ Calling `identify` from `analytics.js` will trigger the `userpilot.identify`. We
 
 Data passed in the `identify` can be organized under different categories.
 * Properties about the user such as `plan` or `userRole` to help targetting a specifc segment.
-* Properties to personlize the content of the Userpilot experiences such as `name` or `company`
+* Properties to personlize the content of the Userplot experiences such as `name` or `company`
 * Properties to target users based on their lifecycle such as `createdAt`. This will allow you to target newly created accounts or accounts that have yet to achieve a certain feature in the user lifecyle.
 
 

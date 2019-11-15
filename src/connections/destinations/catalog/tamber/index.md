@@ -1,5 +1,6 @@
 ---
-title: Tamber
+rewrite: true
+title: Tamber Destination
 ---
 [Tamber](https://tamber.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables you to build your own Google-scale recommendation features in minutes. Deploy cutting edge deep learning models, and run A/B tests to optimize results.
 
@@ -9,7 +10,7 @@ _**NOTE:** The Tamber Destination is currently in beta, which means that they ar
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
+{{>connection-modes}}
 
 1. From your [Tamber dashboard](https://dashboard.tamber.com), head to Sources > Segment and click enable.
 2. Follow the instructions to configure your Destination and optionally defined a custom name for your `item` and click save.
