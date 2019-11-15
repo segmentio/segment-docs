@@ -53,6 +53,8 @@
     line-height: 1.25;
     outline: 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 
     &:hover {
       color: color(primary);
@@ -75,6 +77,16 @@
         color: color(gray);
         vertical-align: middle;
         margin-right: 18px;
+
+        &--small {
+          flex: 0 0 12px;
+          width: 12px;
+        }
+
+        &--right {
+          margin-right: 0;
+          margin-left: 12px;
+        }
       }
     }
 
