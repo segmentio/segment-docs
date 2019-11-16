@@ -4,15 +4,15 @@ title: "How do I collect pageviews on the server side?"
 
 Generally, we believe that client-side collection is appropriate for collection of basic pageviews.
 
-If you’d like to track `page` calls from your server to Segment, we recommend doing it in addition to any client side tracking you’re doing with analytics.js, and doing it in a separate "source" so that you can configure where to send the (probably redundant, albeit higher-fidelity) data.
+If you'd like to track `page` calls from your server to Segment, we recommend doing it in addition to any client side tracking you're doing with analytics.js, and doing it in a separate "source" so that you can configure where to send the (probably redundant, albeit higher-fidelity) data.
 
 With this approach, you might use a request "middleware" to log a `pageview` with every page load from your server.
 
-There are a few things to be mindful of if you want to make sure you can attribute these (anonymous) page views to the appropriate user in your client-side source (eg, for effectively joining these tables together to do down-funnel behavioral attribution). You’ll want to ensure they share an anonymousId by respecting one if it’s already there ,and setting it yourself if not. To do that, you can read and modify the `ajs_anonymous_id` cookie value in the request.
+There are a few things to be mindful of if you want to make sure you can attribute these (anonymous) page views to the appropriate user in your client-side source (eg, for effectively joining these tables together to do down-funnel behavioral attribution). You'll want to ensure they share an anonymousId by respecting one if it's already there ,and setting it yourself if not. To do that, you can read and modify the `ajs_anonymous_id` cookie value in the request.
 
 Be sure to pass through as many fields as you can in our [page](https://segment.com/docs/spec/page/) and [context](https://segment.com/docs/spec/common/) spec, so that you get full functionality in any downstream tools you choose to enable. We recommend specifically ensuring you pass the **url, path, host, title, query, and referrer** in the message `properties` and **ip and user-agent** in the message `context` .
 
-Here’s an example of an express middleware function that covers all those edge cases!
+Here's an example of an express middleware function that covers all those edge cases!
 
 If you have any questions or would like help generally adopting this method for other languages and frameworks, be sure to [get in touch](https://segment.com/help/contact/).
 

@@ -1,58 +1,76 @@
 ---
 title: Destinations
 sidebar: Overview
-
-redirect_from:
-- /integrations/
-landing: true
+rewrite: true
 ---
+
 ## Sources vs Destinations
 
-Segment has [Sources](/docs/sources/) and [Destinations](/docs/destinations/). [Sources](/docs/sources/) send data _into_ Segment, while [Destinations](/docs/destinations/) receive data _from_ Segment.
+Segment has [Sources](/docs/sources/) and [Destinations](/docs/destinations/). Sources send data _into_ Segment, while Destinations receive data _from_ Segment.
+
+## Types of Sources
+
+Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud App, plus a fifth type: User-created [Source Functions](/docs/sources/custom/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, for example a ticketing system such as [Zendesk](/docs/sources/cloud-apps/zendesk/), a payments system such as [Stripe](/docs/sources/cloud-apps/stripe/), or a marketing tool like [Braze](/docs/sources/cloud-apps/braze/).
 
 ## Source Compatibility
 
-Segment has four types of sources: Web, Mobile, Server, and Cloud App. Our web source is [analytics.js](/docs/sources/website/analytics.js/), an example of a mobile source would be [analytics-ios](/docs/sources/mobile/ios/), an example of a server source would be [analytics-node](/docs/sources/server/node/), and an example of a cloud app source would be our [Stripe source](/docs/sources/cloud-apps/stripe/).
-
-Different destinations might only be compatible with specific source types. Many destinations are compatible with all four types of sources, but some are only compatible with a few types (for example, web only, or server only). To find out which types of sources a specific destination is compatible with, check the "Supported Sources and Connection Modes" section of that destination's documentation page.
+Many destinations can accept data from all four types of sources, but some are only compatible with specific source types (for example, web only, or server only). To find out which source types a specific destination can accept data from, check the documentation for that destination for a "Supported Sources and Connection Modes" section.
 
 ## Connection Modes
 
-Segment's native client-side libraries (analytics.js, iOS, and Android) have the ability to pull in client-side dependendencies for *Device-based Connection Modes* with our destination partners.
+Our Web source (Analytics.js), and our native client-side libraries (iOs, Android, react-native) allow you to choose how you send data to Segment from your website or app. Two ways are available:
 
-When you choose to use a *Device-based Connection Mode*, Segment includes some additional mapping logic which pulls the third-party library for your destination into the browser or our SDK. We then translate your tracking events into the native API format that the tool expects, and send the data directly from the user’s device to the destination’s servers. This may be optional or required to ensure full functionality of the tool and a few other factors explained below.
+- **Cloud-mode**: in this mode, the sources send data directly to the Segment servers, which then translate it for each connected downstream destination, and send it on. Translation is done on the Segment servers, keeping your page size, method count, and load time small.
 
-In contrast, when you use *Cloud-based Connection Modes*, Segment forwards data to the destination directly via our servers, saving you from incurring the additional size and method count of the destination's mobile SDK or web library.
 
-### Why do some destinations offer or require Device-based Connection Modes?
+- **Device-mode**: in this mode, you include additional code on your website or mobile app, which allows Segment to translate the data you collected on the device, and then send it directly to your destinations without sending it to the Segment servers first. (You still send your data to the Segment servers, but this occurs asynchronously.) This is also called "wrapping" or "bundling", and it might be required when the source has to be loaded on the page to work, or loaded directly on the device to function correctly.
 
-There are two primary factors that dictate whether we build and support Device-based or Cloud-based Connection Modes (or both!) for a given destination partner.
+> **Note:** If you use Server source libraries, they only send data directly to Segment in Cloud-mode. (Server library implementations operate in the server backend, and can't load additional destination SDKs.)
 
-**Cross-domain and Cross-application Anonymous Attribution**
 
-*Mobile*:
-On mobile, even anonymous identifiers are generally persistent. This allows us to build Cloud-based destinations as the default. Using native advertising identifiers, our partners are able to reconcile a user who, for example, viewed an advertisement in one app and installed another app as a result, regardless of their SDK being present on the device.
+### When should I use Device-mode? When should I use Cloud-mode?
 
-Some partners do more advanced reconciliation based on additional factors, and will require their SDK be packaged on the device as a result. For those destinations, we'll offer a Device-based Connection Mode.
+There are two main things we consider when we decide to build Device- or Cloud-Modes (or both!) for a destination partner
 
-*Web*:
-On web, cross domain identity resolution — a critical component of attribution modeling — requires the attribution tool to employ a third party cookie for tracking a user anonymously across domains. Since, as a matter of principle, Segment only uses first party cookies and does not sync our cookies with any partners, analytics.js and the data it collects itself is insufficient for view-through attribution with ad networks.
+#### 1. Anonymous Attribution Methodology
 
-We allow our customers to take advantage of advertising and attribution tools by loading their respective libraries and pixels in the context of the browser and triggering Deviced-based requests to that provider in response to Segment API calls.
+**Mobile Attribution**
 
-**Client-native Destination Functionality**
+The anonymous identifiers used on mobile devices are usually static, which means we don't need to do additional resolution, and we can build Cloud-mode destinations by default. Because Segment uses native advertising identifiers on mobile devices, you don't need a full SDK on the device to reconcile or identify a user. For example, you might track users who viewed an advertisement in one app and installed another app as a result.
 
-On both mobile and web, it's common for our partners to offer client-side functionality in their SDKs and libraries that extend beyond the primary use case of data collection. In these cases, we offer Device-based Connection Modes so that you can still completely abstract over the *implementation* of their SDK and ensure that all the data you collect with Segment is still routed appropriately, while availing you of their complete native functionality.
+However, some mobile attribution tools do more advanced reconciliation based on more than the native identifier, which requires the SDK on the device to work properly. For those destinations, we offer device-mode which packages the tool's SDK with our client-side library, so that you can get the entire range of tool functionality.
 
-Some features that would require a Device-based Connection Mode include automatic A/B testing; displaying user surveys, live chat or in-app notifications; touch/hover heatmapping; and accessing rich data such as CPU usage, network data, or raised exceptions.
+**Web Attribution**
+
+Cross-domain identity resolution for websites requires that the attribution tool use a third-party cookie so it can track a user anonymously across domains. This is a critical component of attribution modeling. As a matter of principle Segment only uses first-party cookies and does not share cookies with partners, so Analytics.js and the data it collects aren't enough to generate view-through attribution in ad networks.
+
+Customers can load their libraries and pixels in the context of the browser, and trigger requests to attribution providers from their device in response to Segment API calls to take advantage of advertising and attribution tools.
+
+#### 2. Client-native Destination Features
+
+Many of our destinations offer client-side features beyond data collection in their SDKs and libraries, for both mobile and web. In these cases, we offer Device-mode SDKs so that you can collect information on the device using Segment, but still get the destination's complete native functionality.
+
+Some features that usually require a Device-mode include automatic A/B testing; displaying user surveys, live chat or in-app notifications; touch/hover heatmapping; and accessing rich device data such as CPU usage, network data, or raised exceptions.
+
 
 ### Choosing a Connection Mode
 
-Cloud-based Connection Modes are the default on mobile (where you can simply elect not to package the third-party SDK and our Cloud-based destination will forward data instead). On web, we have a few destinations currently in beta with a Cloud-based Connection Modes to help improve your site performance.
+There are tradeoffs between using cloud-mode (sending through Segment) and device-mode (sending in parallel to Segment). In general, Cloud-mode is preferred because you then benefit from the Segment systems' features, like retries, Replay, Warehouses, Privacy blocking, filtering, and more. However, you should consider using device-mode if you use destinations which record information directly on the user's device. These types of tools might lose functionality if they aren't loaded directly on the
 
-Before you turn on or opt for this mode, consider if the destination you’re using has some features that require device-based interactions (see the examples above). For example, if you use the Cloud-based Connection Mode for Mixpanel, you won’t be able to use their features for in-app surveys or auto-tracking, which can be really valuable! But you’ll get your data in their reporting and people features just fine.
+#### Website source connection modes
 
-### How do I tell which Connection Modes and Platforms are supported for an Destination?
+Our website sources use a device-mode by default, because so many website-based destinations require that they be loaded on the page, and because size and page performance are less of a concern than on mobile. If your website source only collects information that you can instrument yourself, then you can use cloud-mode!
+
+For example, a web-chat destination must be loaded to connect to the service and collect metrics efficiently - you don't expect it to route chat messages through Segment! This _does_ mean that Segment might not receive a small amount of the destination-specific information from your users. In the chat example, if the destination is calculating, for example, idle time between messages, that data would appear in the destination's tooling, but not necessarily in the Segment data.
+
+#### Mobile source connection modes
+
+By default, destinations configured on a mobile source send their data directly to the Segment servers, then translate it and use Cloud-mode to forward it to destinations. "Cloud-mode" means that we send the data directly from our servers, to their servers. This means you don't need to package third-party SDKs for destinations that can accept cloud-mode data. Some primarily web-based destinations also allow cloud-mode, which can help reduce app size, and improve load time and performance. You can read more about the [effects of mobile app size on downloads in our blog](https://segment.com/blog/mobile-app-size-effect-on-downloads/).
+
+Before you turn on or opt-in for Cloud-mode for a mobile source, consider if your destinations have features that require interactions on the device or require device-specific data (see the examples above). For example, if you use cloud-mode for Mixpanel, you'll get your data on reporting and people, but won’t be able to use their features for in-app surveys or auto-tracking. These can be really valuable, but might not be a priority for your team.
+
+
+### How can I tell which Connection Modes and Platforms are supported for a Destination?
 
 The first place to look is the individual destination doc. Each one will have a matrix of supported Sources and Connection Modes.
 
@@ -60,7 +78,7 @@ In order to override the default, check the destination settings pane in the app
 
 ## Data Deliverability
 
-Segment increases deliverability to destinations in two ways: retries and replays. Retries happen automatically for all customers, while replays are available on request for [Business](https://segment.com/pricing) customers.
+Segment increases deliverability to destinations in two ways: [retries](#retries) and [replays](/docs/guides/general/what-is-replay/). Retries happen automatically for all customers, while replays are available on request for [Business](https://segment.com/pricing) customers.
 
 ### Retries
 
@@ -75,10 +93,10 @@ If the delivery of the payload is not successfully sent due to connection issues
 <table>
   <tr>
     <th>Platform</th>
-    <th title="Sleep duration before the first retry">Initial Wait</th>
-    <th title="Rate of growth of the sleep duration between each retry">Wait Growth</th>
-    <th title="Maximum sleep duration between retries">Max Wait</th>
-    <th title="Maximum number of individual retries">Max Attempts</th>
+    <th><p><b>Initial Wait</b></p><p>Sleep duration before the first retry</p></th>
+    <th><p><b>Wait Growth</b></p><p>Rate of growth of the sleep duration between each retry</p></th>
+    <th><p><b>Max Wait</b></p><p>Maximum sleep duration between retries</p></th>
+    <th><p><b>Max Attempts</b></p><p>Maximum number of individual retries</p></th>
   </tr>
   <tr>
     <th>C++</th>
@@ -168,7 +186,7 @@ You can see the current destination endpoint API success rates and final deliver
 
 ### Replays
 
-Replays allow customers to replay historical data from our S3 logs into downstream server-side destinations. If you want to try out a new email or analytics tool, for example, we can replay your historical data for the past 6 months into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage. Replay is available to our [Business](https://segment.com/pricing) customers, and you can learn more by [contacting us](https://segment.com/contact/sales).
+[Replays](/docs/guides/general/what-is-replay/) allow customers to load historical data from our S3 logs into downstream destinations which accept cloud-mode data. So, for example, if you wanted to try out a new email or analytics tool, we can replay your historical data into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage. Replay is available to our [Business](https://segment.com/pricing) customers, and you can learn more by [contacting us](https://segment.com/contact/sales).
 
 ## Warehouse Schemas
 
@@ -193,7 +211,7 @@ The table below describes the schema in Segment Warehouses:
   </tr>
   <tr>
     <td>`<source>.users`</td>
-    <td>A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of of a user. The `id` column in the users table is equivalent to the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To get at a user's anonymousIds, you'll need to query the identifies table. *If you observe any duplicates in the users table, please [contact us](/contact).*</td>
+    <td>A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of of a user. The `id` column in the users table is equivalent to the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To get at a user's anonymousIds, you'll need to query the identifies table. *If you observe any duplicates in the users table, please [contact us](/contact/).*</td>
   </tr>
   <tr>
     <td>`<source>.pages`</td>
@@ -423,7 +441,7 @@ ORDER by column_name
   </tbody>
 </table>
 
-The pages table can give you interesting information about page views that happen on your site, for example you can see the number of page views grouped by week:
+The pages table can give you interesting information about page views that happen on your site, for example you can see the number of page views grouped by day:
 
 ```sql
 SELECT DATE(sent_at) AS Day, COUNT(*) AS Views
@@ -651,7 +669,7 @@ ORDER BY 1
 
 The  source.event tables have all of the same columns as the source.track tables, but they also include columns specific to the properties of each event.
 
-So if you’re recording an event like:
+So if you're recording an event like:
 
 ```js
 analytics.track('Register', {
@@ -735,7 +753,7 @@ ORDER BY day
 
 #### New Columns
 
-Columns are created for new event properties and traits. We process the incoming data to Segment in batches, based on either data size or an interval of time. If the table doesn’t exist we lock and create the table. If the table exists but new columns need to be created, we perform a diff and alter the table to append new columns.
+Columns are created for new event properties and traits. We process the incoming data to Segment in batches, based on either data size or an interval of time. If the table doesn't exist we lock and create the table. If the table exists but new columns need to be created, we perform a diff and alter the table to append new columns.
 
 **Note:** We create tables for each of your custom events, and columns for each event's custom properties. Redshift itself has limits on how many can be created, so we do not allow unbounded event or property spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar._
 
@@ -755,15 +773,15 @@ After analyzing the data from dozens of customers we set the string column lengt
 
 We special-case compression for some known columns like event names and timestamps. The others default to LZO. We may add look-ahead sampling down the road, but from inspecting the datasets today this would be unnecessary complexity.
 
-After a column is created, Redshift doesn’t allow altering. Swapping and renaming may work down the road, but this would likely cause thrashing and performance issues. If you would like to change the column size, see our [docs here](/docs/faqs/warehouses/redshift-limitations/#varchar-size-limits-).
+After a column is created, Redshift doesn't allow altering. Swapping and renaming may work down the road, but this would likely cause thrashing and performance issues. If you would like to change the column size, see our [docs here](/docs/faqs/warehouses/redshift-limitations/#varchar-size-limits-).
 
 ### Timestamps
 
 There are four timestamps associated with every Segment API call: `timestamp`, `original_timestamp`, `sent_at` and `received_at`.
 
-All four timestamps are passed through to your Warehouse for every ETL’d event. In most cases the timestamps are fairly close together, but they have different meanings which are important.
+All four timestamps are passed through to your Warehouse for every ETL'd event. In most cases the timestamps are fairly close together, but they have different meanings which are important.
 
-`timestamp` is the UTC-converted timestamp which is set by the Segment library. If you are importing historical events via a server-side library, this is the timestamp you’ll want to reference in your queries!
+`timestamp` is the UTC-converted timestamp which is set by the Segment library. If you are importing historical events via a server-side library, this is the timestamp you'll want to reference in your queries!
 
 `original_timestamp` is the original timestamp set by the Segment library at the time the event is created.  Keep in mind, this timestamp can be affected by device clock skew. You can override this value by manually passing in a value for `timestamp` which will then be relabed as `original_timestamp`. Generally, this timestamp should be ignored in favor of the `timestamp` column.
 
@@ -771,7 +789,7 @@ All four timestamps are passed through to your Warehouse for every ETL’d event
 
 `received_at` is UTC timestamp set by the Segment API when the API receives the payload from client or server. All tables use `received_at` for the sort key.
 
-**IMPORTANT:** We highly recommend using the `received_at` timestamp for all queries based on time. The reason for this is two-fold. First, the `sent_at` timestamp relies on a client’s device clock being accurate, which is generally unreliable. Secondly, we set `received_at` as the sort key in Redshift schemas, which means queries will execute much faster when using `received_at`. You can continue to use `timestamp` or `sent_at` timestamps in queries if `received_at` doesn’t work for your analysis, but the queries will take longer to complete.
+**IMPORTANT:** We highly recommend using the `received_at` timestamp for all queries based on time. The reason for this is two-fold. First, the `sent_at` timestamp relies on a client's device clock being accurate, which is generally unreliable. Secondly, we set `received_at` as the sort key in Redshift schemas, which means queries will execute much faster when using `received_at`. You can continue to use `timestamp` or `sent_at` timestamps in queries if `received_at` doesn't work for your analysis, but the queries will take longer to complete.
 
 However, `received_at` does not ensure chronology of events.  For queries based on event chronology, `timestamp` should be used.
 
@@ -801,7 +819,7 @@ Check out our help center for [Frequently Asked Questions around our Redshift pr
 
 ## Catalog
 
-If you’re just looking to explore all of our destinations check out the [destinations catalog](/catalog).
+If you're just looking to explore all of our destinations check out the [destinations catalog](/catalog).
 
 For detailed information about each destination, select one from the list to learn how our API methods are implemented for that destination, and how you can use it through Segment.
 
@@ -845,8 +863,8 @@ For detailed information about each destination, select one from the list to lea
 
 ### Analyzing with SQL
 
-[How do I forecast LTV with SQL and Excel for e-commerce businesses?](/docs/guides/data-driven/forecase-with-sql)
+[How do I forecast LTV with SQL and Excel for e-commerce businesses?](/docs/guides/warehouses/how-to-forecast-ltv-with-sql-and-excel)
 
-[How do I measure the ROI of my Marketing Campaigns?](../../guides/warehouses/measure-marketing-roi)
+[How do I measure the ROI of my Marketing Campaigns?](/docs/guides/warehouses/how-to-measure-roi-of-marketing-campaigns)
 
 For additional information, check out our [Guides](/docs/guides/) section.

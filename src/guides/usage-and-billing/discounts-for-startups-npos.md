@@ -4,18 +4,17 @@ title: "Do you offer coupons?"
 
 We do! Segment currently offers coupons on an ongoing basis for:
 
-
 1. Early-stage startups
 2. Participants and alumni of our Accelerator partners
 3. Non-profits
 
 **Early-stage startups**
-Segment offers a **Startup Program** to enable early startups to track data correctly and easily test the marketing and analytics tools necessary to grow their business. Participating startups receive $25,000 in annual credit toward our monthly [Team plan](https://segment.com/pricing/) for as long as they meet our eligibility requirements (up to 2 years). 
+Segment offers a **Startup Program** to enable early startups to track data correctly and easily test the marketing and analytics tools necessary to grow their business. Participating startups receive $25,000 in annual credit toward our monthly [Team plan](https://segment.com/pricing/) for as long as they meet our eligibility requirements (up to 2 years).
 
 Learn more about the Segment Startup Program and eligibility requirements here.
 
 **Participants and Alumni of Accelerator Partners**
-We currently partner with various accelerator programs around the globe to offer promotions for both current and alumni participants. Contact your accelerator administrator to see if they partner with Segment and for more information on how to redeem the coupon. 
+We currently partner with various accelerator programs around the globe to offer promotions for both current and alumni participants. Contact your accelerator administrator to see if they partner with Segment and for more information on how to redeem the coupon.
 
 If your accelerator does not participate in our program, please have them [apply here](https://airtable.com/shr84MIvVo4k8xbaO) or [reach out](https://segment.com/help/contact) to us with the details of your program and the best point of contact for consideration.
 

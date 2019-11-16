@@ -8,14 +8,14 @@ Segment offers a **Startup Program** to enable early startups to track data corr
 - Incorporated less than two years ago
 - Raised no more than $5MM in total funding
 - Located in Google Cloud [eligible territory](https://cloud.google.com/terms/cloud-sales-list)
-- Haven’t previously received other Segment discounts
+- haven't previously received other Segment discounts
 
 The Segment Startup Program includes three components:
 
 
-- Segment’s **Startup Deal** - Participating startups receive $25,000* in annual credit toward our monthly [Team plan](https://segment.com/pricing/) for as long as they meet our eligibility requirements (up to 2 years).
-- Partner **Startup Deals** - We’ve partnered with other technology companies that offer valuable tools for startups to offer exclusive deals and promotions from marketing, data warehouse, and analytics tools. Check out the [list of deals](https://bit.ly/segment-partner-deals).
-- **Startup Resources** - Segment offers learning materials on topics like analytics, product-market fit, and more for founders to become experts on data analytics and making the most of Segment’s technology.
+- Segment's **Startup Deal** - Participating startups receive $25,000* in annual credit toward our monthly [Team plan](https://segment.com/pricing/) for as long as they meet our eligibility requirements (up to 2 years).
+- Partner **Startup Deals** - We've partnered with other technology companies that offer valuable tools for startups to offer exclusive deals and promotions from marketing, data warehouse, and analytics tools. Check out the [list of deals](https://bit.ly/segment-partner-deals).
+- **Startup Resources** - Segment offers learning materials on topics like analytics, product-market fit, and more for founders to become experts on data analytics and making the most of Segment's technology.
 
 Interested companies can apply [here](http://segment.com/industry/startups).
 
@@ -43,7 +43,7 @@ New and current Segment users who have not previously received any other coupon 
 If you go over the total credit applied, you will be charged for the additional usage for that month.
 
 **What happens when my credits expire?**
-Once you’ve used your total credits, you might be eligible to renew for another year at a discounted rate. Otherwise, we can talk about options for upgrading your plan.
+Once you've used your total credits, you might be eligible to renew for another year at a discounted rate. Otherwise, we can talk about options for upgrading your plan.
 
 **How do I get the startup partner deals?**
 Once you've been accepted to the Segment Startup Program, you can apply for the partner deals using [this form](http://bit.ly/segment-deal-redeem). (You can view a list of the available deals [here](https://bit.ly/segment-partner-deals).)

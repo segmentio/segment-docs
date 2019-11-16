@@ -10,11 +10,11 @@ This guide provides you with the tools to answer these questions with SQL so tha
 
 ## Analyze campaign performance
 
-The goal of marketing campaigns is to drive engagement and conversions. Most commonly performed by attracting traffic to the site, these campaigns use UTM parameters for attribution. In our analysis, we’ll be heavily relying on UTM parameters to analyze not only campaign, but also channel performance.
+The goal of marketing campaigns is to drive engagement and conversions. Most commonly performed by attracting traffic to the site, these campaigns use UTM parameters for attribution. In our analysis, we'll be heavily relying on UTM parameters to analyze not only campaign, but also channel performance.
 
 [Learn how to effectively use UTM parameters in your marketing campaign strategies.](https://segment.com/docs/guides/sources/how-to-track-customers-across-channels-devices)
 
-For our analysis walkthrough, we’ll use fictitious e-commerce and marketing data from on-demand artisanal toast company, Toastmates.
+For our analysis walkthrough, we'll use fictitious e-commerce and marketing data from on-demand artisanal toast company, Toastmates.
 
 Toastmates is currently running these two campaigns:
 
@@ -25,17 +25,17 @@ Toastmates is currently running these two campaigns:
 
 Each of these campaigns used a combination of channels. Here is a table with the channels and corresponding UTM parameters so when we build the SQL query, we can make sure all of the traffic sources are accounted for.
 
-![](images/asset_WwwTDt1y.png)
+![](../../images/asset_WwwTDt1y.png)
 
-We’ll use SQL below to measure the performance of each campaign and what that means for future marketing activities.
+We'll use SQL below to measure the performance of each campaign and what that means for future marketing activities.
 
 ## Build the funnel
 
-The following query creates a table where each row is a customer and the columns are the date time when a key funnel event happens that have the `context_campaign_name` to match that of the `UTM_campaign` . The key funnel events in this analysis are `Store Visited`(based on a page view to the store URL), `Product Viewed` , and `Order Completed` . Given that each channel may have some key top of the funnel action that is unique to itself, let’s save that analysis for when we’re analyzing across channels.
+The following query creates a table where each row is a customer and the columns are the date time when a key funnel event happens that have the `context_campaign_name` to match that of the `UTM_campaign` . The key funnel events in this analysis are `Store Visited`(based on a page view to the store URL), `Product Viewed` , and `Order Completed` . Given that each channel may have some key top of the funnel action that is unique to itself, let's save that analysis for when we're analyzing across channels.
 
 Feel free to copy and paste the below query for your analysis so long as you replace `national-toast-day` with your own UTM campaign parameter.
 
-```sql
+```
     with
 
     users as (
@@ -87,7 +87,7 @@ Feel free to copy and paste the below query for your analysis so long as you rep
 
 Here are the first four rows of the resulting table:
 
-![](images/asset_F8fdbUBk.jpg)
+![](../../images/asset_F8fdbUBk.jpg)
 
 Then, we can use tweak the query above into the one below to perform some simple `COUNT` and `SUM` on the previous table to get conversion metrics as well as total revenue derived from the campaign.
 
@@ -145,11 +145,11 @@ Then, we can use tweak the query above into the one below to perform some simple
 
 Here is the resulting table:
 
-![](images/asset_wiAeFR79.png)
+![](../../images/asset_wiAeFR79.png)
 
-This analysis not only gives us a great snapshot of the conversion points along each campaign’s funnel, but also shows that we’ve generated $3,100.37 from the National Toast Day campaign and $3,824.68 from the Toast Your Friend campaign. Also we can see that the quality of the traffic from the National Toast Day is higher, but we’ve had more total traffic from Toast Your Friend, which makes sense since it’s an ongoing campaign.
+This analysis not only gives us a great snapshot of the conversion points along each campaign's funnel, but also shows that we've generated $3,100.37 from the National Toast Day campaign and $3,824.68 from the Toast Your Friend campaign. Also we can see that the quality of the traffic from the National Toast Day is higher, but we've had more total traffic from Toast Your Friend, which makes sense since it's an ongoing campaign.
 
-But this is not yet ROI, since we haven’t incorporated the spend—the labor of your marketing team and the paid acquisition channels to source part of this traffic—that went into these channels.
+But this is not yet ROI, since we haven't incorporated the spend—the labor of your marketing team and the paid acquisition channels to source part of this traffic—that went into these channels.
 
 **Add campaign costs**
 
@@ -172,11 +172,11 @@ Campaign ROI = (Profit Attributed to Campaign – Campaign Cost) / Campaign Cost
 
 Here is a spreadsheet to illustrate the ROI calculation for both campaigns:
 
-![](images/asset_BMZJWW6A.png)
+![](../../images/asset_BMZJWW6A.png)
 
-Though ROI numbers are one success metric, it’s an important benchmark for comparing performance when launching new campaigns or comparing against past campaigns.
+Though ROI numbers are one success metric, it's an important benchmark for comparing performance when launching new campaigns or comparing against past campaigns.
 
-But how can we go one step further and see what worked and what didn’t? One approach is to see which channels convert better, so you know how to adjust your marketing spend or media buys in your current campaigns or future ones.
+But how can we go one step further and see what worked and what didn't? One approach is to see which channels convert better, so you know how to adjust your marketing spend or media buys in your current campaigns or future ones.
 
 ## Analyze channel performance
 
@@ -241,18 +241,18 @@ You can copy the below into your favorite editor, as long as you change out the 
 
 The resulting table:
 
-![](images/asset_Umn2E6DH.png)
+![](../../images/asset_Umn2E6DH.png)
 
 Since the National Toast Day campaign is relatively new, the majority of the traffic is from the email and an article ("news"). But we can see that the social channels have a lower conversion from store visits to product views. Email has the best overall conversion to revenue, which may be attributed to the recipients already familiar with the Toastmates brand or having previously had a stellar end-to-end shopping experience.
 
-We can further breakdown this analysis by seeing which email, display ads, and social channels performed the best, by adding `utm_source` and `utm_content` ,assuming that you’ve properly added them in your earned and paid media links. Also note that this preliminary analysis in SQL doesn’t account for double-counted users, who had impressions with our brand on multiple channels (e.g. someone seeing a display ad, yet converted on the email outreach). Fortunately, there are multi-touch attribution models that can be applied to better understand the weights of each activity towards conversion.
+We can further breakdown this analysis by seeing which email, display ads, and social channels performed the best, by adding `utm_source` and `utm_content` ,assuming that you've properly added them in your earned and paid media links. Also note that this preliminary analysis in SQL doesn't account for double-counted users, who had impressions with our brand on multiple channels (e.g. someone seeing a display ad, yet converted on the email outreach). Fortunately, there are multi-touch attribution models that can be applied to better understand the weights of each activity towards conversion.
 
-[Learn more about multi-touch attribution models.](https://segment.com/academy/collecting-data/an-introduction-to-multi-touch-attribution/)
+[Learn more about multi-touch attribution models.](https://segment.com/academy/advanced-analytics/an-introduction-to-multi-touch-attribution/)
 
 ## Build repeatable hit marketing campaigns
 
 Measuring the ROI and performance of marketing campaigns and marketing channels tells a compelling story about what types of campaigns resonate with your audience. How does your audience like to be engaged? Text, push notifications, email? What campaign messaging hooks work the best in getting them back at your store?
 
-You can apply this analytical approach and performance measurement techniques to a wide variety of marketing activities, such as offline marketing, billboards, or sponsoring events. These insights can empower your team to focus on what works and eliminate what doesn’t.
+You can apply this analytical approach and performance measurement techniques to a wide variety of marketing activities, such as offline marketing, billboards, or sponsoring events. These insights can empower your team to focus on what works and eliminate what doesn't.
 
 [Talk to a product specialist](https://segment.com/contact/sales) _to learn how companies like Warby Parker and Crate & Barrel use a data warehouse to increase engagement and sales._

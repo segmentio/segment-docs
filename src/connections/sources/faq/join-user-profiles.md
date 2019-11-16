@@ -2,13 +2,13 @@
 title: "How do I join user profiles?"
 ---
 
-One of the first questions we get when our customers start querying all of their data is, how do I join all this data together? For example, let’s say you’d like to know if support interactions in Zendesk increase revenue in Stripe, or which percentage of users opened your email campaign and visited your website or mobile app? The key to answering these advanced questions is tying your data together across these sources. To do that, you need a common user identifier.
+One of the first questions we get when our customers start querying all of their data is, how do I join all this data together? For example, let's say you'd like to know if support interactions in Zendesk increase revenue in Stripe, or which percentage of users opened your email campaign and visited your website or mobile app? The key to answering these advanced questions is tying your data together across these sources. To do that, you need a common user identifier.
 
 **What is the user ID problem?**
 
 Each SaaS tool you use has its own way of identifying users with a unique primary key. And, you will find each of these different IDs across different collections of tables in your database. So, when you want to start matching Joe Shmo who entered a ticket in Zendesk and also clicked through a campaign in Mailchimp, it starts to get tricky.
 
-![](../images/asset_qpY6bhaY.png)
+![](../../images/asset_qpY6bhaY.png)
 
 For example, Stripe keeps track of users with a `customer_id`, Segment requires a`user_id`, and Marketo uses `email` to uniquely identify each person.
 
@@ -31,7 +31,7 @@ Though we wish you could use a database ID for everything, some tools force you 
 
 For Segment Destination Users
 
-Integrating as many tools as possible through Segment will make your joins down the road a little easier. When you use Segment to [`identify`](https://segment.com/docs/spec/identify) users, we’ll send the same ID and traits out to all the destinations you turn on in our interface. (More about [Segment destinations](https://segment.com/docs/integrations).)
+Integrating as many tools as possible through Segment will make your joins down the road a little easier. When you use Segment to [`identify`](https://segment.com/docs/spec/identify) users, we'll send the same ID and traits out to all the destinations you turn on in our interface. (More about [Segment destinations](https://segment.com/docs/destinations).)
 
 A few of our destination partners accept an external ID, where they will insert the same Segment user ID. Then you can join tables in one swoop. For example, Zendesk saves the Segment User ID as `external_id`, making a Segment-Zendesk join look like this:
 
@@ -42,7 +42,7 @@ JOINsegment.usersusers
 ON zendesk.tickets.external_id = segment.user_id
 ```
 
-Here’s a look at the Segment destinations that store the Segment User ID:
+Here's a look at the Segment destinations that store the Segment User ID:
 
 **Tool**
 
@@ -70,11 +70,11 @@ intercom.users.user\_id
 
 **How to merge identities**
 
-Whether you’re using Segment or not, we suggest creating a master user identities table that maps IDs for each of your sources.
+Whether you're using Segment or not, we suggest creating a master user identities table that maps IDs for each of your sources.
 
 This table will cut down on the number of joins you have to do because some IDs may only exist in one out of many tables related to a source.
 
-Here’s sample query to create a master user identities table:
+Here's sample query to create a master user identities table:
 
 ```
 CREATE TABLE user_identities AS (
@@ -111,7 +111,7 @@ group by 1,2,3,4,5,6
 )
 ```
 
-You’ll spit out a user table that looks something like this:
+You'll spit out a user table that looks something like this:
 
 **segment\_id**
 
@@ -173,11 +173,11 @@ cus\_6yrv9bwLgXN78s
 
 55f6a142bd531ec6930005fa
 
-While creating this table in SQL is a good strategy, we’d be remiss not to point out a few drawbacks to this approach. First, you need to run this nightly or at some regular interval. And, if you have a large user base, it might take a while to run. That said, it’s probably still worth it.
+While creating this table in SQL is a good strategy, we'd be remiss not to point out a few drawbacks to this approach. First, you need to run this nightly or at some regular interval. And, if you have a large user base, it might take a while to run. That said, it's probably still worth it.
 
 **How to run a query with your joined data**
 
-So what can you do once you have all of your ID’s mapped? Answer some pretty nifty questions that is. Here are just a few SQL examples addressing questions that incorporate more than one source of customer data.
+So what can you do once you have all of your ID's mapped? Answer some pretty nifty questions that is. Here are just a few SQL examples addressing questions that incorporate more than one source of customer data.
 
 **Segment + Zendesk**
 
@@ -219,7 +219,7 @@ ORDERBY2desc
 
 An alternative to the lookup user table in SQL would be writing a script to grab user IDs across your third-party tools and dump them into your database.
 
-You’d have to ping the APIs of each tool with something like an email, and ask them toreturn the key or id for the corresponding user in their tool.
+You'd have to ping the APIs of each tool with something like an email, and ask them toreturn the key or id for the corresponding user in their tool.
 
 A sample script, to run on a nightly chron job, would look something like this:
 
@@ -255,4 +255,4 @@ if (err) return err;
 });
 ```
 
-[Here is the documentation for Zendesk’s API for more information](https://developer.zendesk.com/rest_api/docs/core/users).
+[Here is the documentation for Zendesk's API for more information](https://developer.zendesk.com/rest_api/docs/core/users).
