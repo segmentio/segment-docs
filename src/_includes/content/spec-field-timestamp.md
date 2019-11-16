@@ -1,5 +1,6 @@
 <tr>
-  <td>`timestamp` *optional*</td>
+  <td>`timestamp`</td>
+  <td>*optional*</td>
   <td>Date</td>
   <td>Timestamp when the message itself took place, defaulted to the current time by the Segment Tracking API
     <p>It is an [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date string</p>
