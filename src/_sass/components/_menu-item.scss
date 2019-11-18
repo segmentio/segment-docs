@@ -27,13 +27,13 @@
     }
 
     &--nested {
-      margin-top: 25px;
+      margin-top: 16px;
       padding-left: 18px;
       padding-top: 0;
       padding-bottom: 0;
 
       & > * + * {
-        margin-top: 22px;
+        margin-top: 16px;
       }
 
       &::before {
