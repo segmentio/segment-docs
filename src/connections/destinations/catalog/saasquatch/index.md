@@ -10,7 +10,7 @@ All you need to get started is your SaaSquatch Tenant Alias. Enter that into you
 
 Here's a quick video on what you need to do:
 
-{{{youtube 'dvNJb3G316E'}}}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dvNJb3G316E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - - -
 
