@@ -99,7 +99,7 @@ For that, you need to make the following calls:
 
 [Application Installed](https://segment.com/docs/spec/mobile/#application-installed) events will add or update a device in the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_update) API endpoint. Please note, you must pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/spec/common/#context).
 
-{{{api-example '{
+{% comment %}{{{api-example '{
 "action": "track",
 "userId": "019mr8mf4r",
 "event": "Application Installed",
@@ -113,12 +113,12 @@ For that, you need to make the following calls:
     "type": "ios"
   }
 }
-}'}}}
+}'}}}{% endcomment %}
 
  ## Application Opened
 [Application Opened](https://segment.com/docs/spec/mobile/#application-opened) events will add or update a device device in the person's Customer.io profile using the same endpoint as above.  If a device already exists, Customer.io will update its `last_used_at` timestamp. Again, please ensure you pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/spec/common/#context).
 
-{{{api-example '{
+{% comment %}{{{api-example '{
 "action": "track",
 "userId": "019mr8mf4r",
 "event": "Application Opened",
@@ -132,13 +132,13 @@ For that, you need to make the following calls:
     "type": "ios"
   }
 }
-}'}}}
+}'}}}{% endcomment %}
 
  ## Application Uninstalled
 [Application Uninstalled](https://segment.com/docs/spec/mobile/#application-installed) events will remove the device from the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_delete) API endpoint. Please note, you must pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/spec/common/#context).
 
 
-{{{api-example '{
+{% comment %}{{{api-example '{
 "action": "track",
 "userId": "019mr8mf4r",
 "event": "Application Uninstalled",
@@ -152,7 +152,7 @@ For that, you need to make the following calls:
     "type": "ios"
   }
 }
-}'}}}
+}'}}}{% endcomment %}
 
 ### Sending Data from Customer.io
 

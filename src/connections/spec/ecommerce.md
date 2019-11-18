@@ -45,14 +45,14 @@ Property        | Type   | Description
 
 ### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Viewed Product Category",
   "properties": {
     "category": "Games"
   }
-}' }}}
+}' }}}{% endcomment %}
 
 
 ## Viewed Product
@@ -77,7 +77,7 @@ _Note: The `sku` and `id` do not have to be different. If they are different, ty
 
 ### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Viewed Product",
@@ -88,7 +88,7 @@ _Note: The `sku` and `id` do not have to be different. If they are different, ty
     "price": 18.99,
     "category": "Games"
   }
-}' }}}
+}' }}}{% endcomment %}
 
 
 ## Added / Removed Product
@@ -112,7 +112,7 @@ Property   | Type   | Description
 
 ### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Added Product",
@@ -124,9 +124,9 @@ Property   | Type   | Description
     "quantity": 3,
     "category": "Games"
   }
-}' }}}
+}' }}}{% endcomment %}
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Removed Product",
@@ -138,7 +138,7 @@ Property   | Type   | Description
     "quantity": 2,
     "category": "Games"
   }
-}' }}}
+}' }}}{% endcomment %}
 
 
 ## Completing an Order
@@ -147,7 +147,7 @@ The final step is to record a `Order Completed` event when people complete your 
 
 Be sure to **include all items in the cart as event properties**, with the same properties from the previous calls, like so:
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Completed Order",
@@ -175,7 +175,7 @@ Be sure to **include all items in the cart as event properties**, with the same 
       "category": "Games"
     }]
   }
-}' }}}
+}' }}}{% endcomment %}
 
 **Note**: Some destinations require `total` in place of `revenue`. Specific requirements will be outlined in each destination's documentation.
 

@@ -34,7 +34,7 @@ We use the context fields that we capture with our SDKs automatically to populat
 
 When a user views a particular product or offering inside your application, you should call our [Product Viewed](/docs/spec/ecommerce/v2/#product-viewed) event and we'll map that to Criteo Events' `viewProduct` tag. You'll need to make sure that the products on your `Product List Viewed` event have a `productId` property. As with all our integrations, casing does not matter! Your properties  can be camelCase or snake_case, both will work.
 
-{{{api-example-client '{
+{% comment %}{{{api-example-client '{
     "action": "track",
     "event": "Product Viewed",
     "userId": "userId",
@@ -52,7 +52,7 @@ When a user views a particular product or offering inside your application, you 
         "position": "3",
         "value": "18.99"
     }
-}'}}}
+}'}}}{% endcomment %}
 
 On web, the above Javascript example would result in the firing of the following Criteo Events tag:
 
@@ -64,7 +64,7 @@ window.criteo_q.push({ event: 'viewItem', item: '507f1f77bc' })
 
 When a user views a list of products inside your application, you should call our [Product List Viewed](/docs/spec/ecommerce/v2/#product-list-viewed) event and we'll map that to Criteo Events' `viewListing` tag. Same as above, make sure you have your item's `productId` or `product_id` on the event!
 
-{{{api-example-client '{
+{% comment %}{{{api-example-client '{
     "action": "track",
     "event": "Product List Viewed",
     "userId": "userId",
@@ -90,7 +90,7 @@ When a user views a list of products inside your application, you should call ou
             }
         ]
     }
-}'}}}
+}'}}}{% endcomment %}
 
 On web, the above Javascript example would result in the firing of the following Criteo Events tag:
 
@@ -105,7 +105,7 @@ When a user views their Cart or Order details inside your application, you shoul
 
 You will need to have a products array of product objects in your Segment [Cart Viewed](/docs/spec/ecommerce/v2/#cart-viewed) event with at least `id`, `price` and `quantity` properties on each product object in that array.
 
-{{{api-example-client '{
+{% comment %}{{{api-example-client '{
     "action": "track",
     "event": "Product List Viewed",
     "userId": "userId",
@@ -132,7 +132,7 @@ You will need to have a products array of product objects in your Segment [Cart 
             }
         ]
     }
-}'}}}
+}'}}}{% endcomment %}
 
 On web, the above Javascript example would result in the firing of the following Criteo Events tag:
 
@@ -158,7 +158,7 @@ When a user completes an order or purchase inside your application, you should c
 
 You will need to have a products array of product objects in your Segment [Order Completed](/docs/spec/ecommerce/v2/#order-completed) event with at least `id`, `price` and `quantity` properties on each product object in that array. You also must pass an `orderId`.
 
-{{{api-example-client '{
+{% comment %}{{{api-example-client '{
     "action": "track",
     "event": "Product List Viewed",
     "userId": "userId",
@@ -192,7 +192,7 @@ You will need to have a products array of product objects in your Segment [Order
           }
         ]
     }
-}'}}}
+}'}}}{% endcomment %}
 
 On web, the above Javascript example would result in the firing of the following Criteo Events tag:
 

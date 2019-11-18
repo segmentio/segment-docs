@@ -31,21 +31,21 @@ Cubitic requires 2 events:
 
 A `Started Session` event that is sent each time a user session starts. This event can be sent with any properties that you like, for e.g.
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Started Session",
   "properties": {
     "category": "Games"
   }
-}' }}}
+}'}}}{% endcomment %}
 
 * For spend prediction:
 
 We require the above `Started Session` event, in addition to a `Order Completed` event that is fired whenever a user makes a cash purchase.
-This event must contain a revenue property that specifies the amount spent using any consistant denomination for all users, for e.g. report all purchases in USD
+This event must contain a revenue property that specifies the amount spent using any consistent denomination for all users, for e.g. report all purchases in USD
 
-```
+```js
 {
   "type": "track",
   "event": "Completed Order",

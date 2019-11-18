@@ -23,7 +23,7 @@ Within the `identify` event, Promoter requires a `userId` and `email`, while `fi
 
 Here's an example:
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "12345",
   "action": "identify",
   "traits": {
@@ -32,7 +32,7 @@ Here's an example:
     "lastName": "Mosby",
     "plan": "Premium"
   }
-}'}}}
+}'}}}{% endcomment %}
 
 
 ## Track
@@ -45,7 +45,7 @@ Note: if you are using our client-side javascript library ([Analytics.js](/docs/
 
 Here's an example:
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "12345",
   "action": "track",
   "event": "Friend Invited",
@@ -53,7 +53,7 @@ Here's an example:
     "category": "viral",
     "totalInvites": 50
   }
-}'}}}
+}'}}}{% endcomment %}
 
 
 ### Completed Order

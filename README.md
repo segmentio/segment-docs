@@ -24,11 +24,11 @@ You will need to have Docker installed https://docs.docker.com/install/
 - `build`: Builds the site docs. Used by CI to publish the docs to staging and production
 - `nav`: Rebuilds the entire nav datafile based on the current doc structure. This is destructive and should not be used unless absolutely necessary.
 - `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key to be passed in env via PLATFORM_API_TOKEN
-- `nav`: Builds the side navs for 'main', 'legal', 'api', 'partners' and stores the output in `/src/_data/sidenav-auto/`. This output isn't used for the actual build.
-- `typewritter`: pulls in the current state of the Docs tracking plan for implementing Segment tracking
+- `sidenav`: Builds the side navs for 'main', 'legal', 'api', 'partners' and stores the output in `/src/_data/sidenav-auto/`. This output isn't used for the actual build.
+- `typewriter`: pulls in the current state of the Docs tracking plan for implementing Segment tracking
 - `seed`: copies all example data files out of the `_templates` directory and puts them in the `_data` directory. Useful if you don't have a way to setup an API key.
 - `clean`: removes all build artifacts
-- `clean-deps`: removes all doownloaded `gems` and `node_modules`
+- `clean-deps`: removes all downloaded `gems` and `node_modules`
 - `deps`: installs the required `gems` and `node_modules`
 - `dev`: runs `jekyll serve` locally with incremental builds. Useful when updating CSS, JS, or content and you don't want to rebuild everytime.
 

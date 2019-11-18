@@ -107,7 +107,7 @@ Below is the full list of Video Playback Events.
 
 #### Video Playback Started
 When a user presses Play; after the last user action required for playback to begin (eg, after user login/authentication).
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Playback Started",
     "userId": "userId",
@@ -129,11 +129,11 @@ When a user presses Play; after the last user action required for playback to be
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}
+}'}}}{% endcomment %}
 
 #### Video Playback Paused
 When a user presses Pause.
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Playback Paused",
     "userId": "userId",
@@ -152,11 +152,11 @@ When a user presses Pause.
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}
+}'}}}{% endcomment %}
 
 #### Video Playback Interrupted
 When the playback stops unintentionally (ie. network loss, browser close/redirect, app crash). With this event you can pass `method` as a property to denote the cause of the interruption.
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Playback Interrupted",
     "userId": "userId",
@@ -176,11 +176,11 @@ When the playback stops unintentionally (ie. network loss, browser close/redirec
       "livestream": false,
       "method": "network loss"
     }
-}'}}}
+}'}}}{% endcomment %}
 
 #### Video Playback Buffer Started
 When playback starts buffering content or an ad.
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Playback Buffer Started",
     "userId": "userId",
@@ -199,11 +199,11 @@ When playback starts buffering content or an ad.
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}
+}'}}}{% endcomment %}
 
 #### Video Playback Buffer Completed
 When playback finishes buffering content or an ad.
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Playback Buffer Completed",
     "userId": "userId",
@@ -222,11 +222,11 @@ When playback finishes buffering content or an ad.
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}
+}'}}}{% endcomment %}
 
 #### Video Playback Seek Started
 When a user manually seeks a certain position of the content or ad in the playback. Pass in the `seek_position` to denote where the user is seeking to, and pass in the `position` property to denote where the user is seeking from.
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Playback Seek Started",
     "userId": "userId",
@@ -246,11 +246,11 @@ When a user manually seeks a certain position of the content or ad in the playba
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}
+}'}}}{% endcomment %}
 
 #### Video Playback Seek Completed
 After a user manually seeks to a certain position of the content or ad in the playback. Pass in the `position` property to denote where the user desires to begin the playback from.
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Playback Seek Completed",
     "userId": "userId",
@@ -269,11 +269,11 @@ After a user manually seeks to a certain position of the content or ad in the pl
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}
+}'}}}{% endcomment %}
 
 #### Video Playback Resumed
 When playback is resumed, by the user, after being paused.
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Playback Resumed",
     "userId": "userId",
@@ -292,11 +292,11 @@ When playback is resumed, by the user, after being paused.
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}
+}'}}}{% endcomment %}
 
 #### Video Playback Completed
 When playback is complete and only when the session is finished.
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Playback Completed",
     "userId": "userId",
@@ -315,7 +315,7 @@ When playback is complete and only when the session is finished.
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}
+}'}}}{% endcomment %}
 
 ---
 
@@ -328,7 +328,7 @@ Consider, for example, a playback session that might have some content and one m
 ### Content Event Object
 All content events share the same event properties that describe information about the current video content the user is interacting with. Below is a full list of the supported properties of this object.
 
-```
+```js
 {
   session_id:   String
   asset_id:     String
@@ -413,7 +413,7 @@ Below is the full list of Video Content Events.
 
 #### Video Content Started
 When a video content segment starts playing within a playback.
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Content Started",
     "userId": "userId",
@@ -432,11 +432,11 @@ When a video content segment starts playing within a playback.
       "full_episode": true,
       "keywords": ["nature", "forests", "earth"]
     }
-}'}}}
+}'}}}{% endcomment %}
 
 #### Video Content Playing
 Heartbeats that you can fire every n seconds to track how far into the content the user is currently viewing as indicated by the `position`.
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Content Playing",
     "userId": "userId",
@@ -455,11 +455,11 @@ Heartbeats that you can fire every n seconds to track how far into the content t
       "full_episode": true,
       "keywords": ["nature", "forests", "earth"]
     }
-}'}}}
+}'}}}{% endcomment %}
 
 #### Video Content Completed
 When a video content segment completes playing within a playback. That is, `position` and `total_length` are equal.
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Content Completed",
     "userId": "userId",
@@ -478,7 +478,7 @@ When a video content segment completes playing within a playback. That is, `posi
       "full_episode": true,
       "keywords": ["nature", "forests", "earth"]
     }
-}'}}}
+}'}}}{% endcomment %}
 
 
 ## Ads
@@ -492,7 +492,7 @@ Just like Content events, Ad Events also live underneath the playback level and 
 ### Ad Event Object
 All ad events share the same event properties that describe information about the current ad content the user is interacting with. Below is a full list of the supported properties of this object.
 
-```
+```js
   session_id:   String
   asset_id:     String
   pod_id:       String
@@ -553,7 +553,7 @@ For Video Ad Playing events, this property can be set to indicate when a specifi
 
 #### Video Ad Started
 
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Ad Started",
     "userId": "userId",
@@ -568,11 +568,11 @@ For Video Ad Playing events, this property can be set to indicate when a specifi
       "publisher": "Apple",
       "load_type": "dynamic"
     }
-}'}}}
+}'}}}{% endcomment %}
 
 #### Video Ad Playing
 
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Ad Playing",
     "userId": "userId",
@@ -587,11 +587,11 @@ For Video Ad Playing events, this property can be set to indicate when a specifi
       "publisher": "Apple",
       "load_type": "dynamic"
     }
-}'}}}
+}'}}}{% endcomment %}
 
 #### Video Ad Completed
 
-{{{api-example '{
+{% comment %}{{{api-example '{
     "action": "track",
     "event": "Video Ad Completed",
     "userId": "userId",
@@ -606,7 +606,7 @@ For Video Ad Playing events, this property can be set to indicate when a specifi
       "publisher": "Apple",
       "load_type": "dynamic"
     }
-}'}}}
+}'}}}{% endcomment %}
 
 ## Resuming Playback
 

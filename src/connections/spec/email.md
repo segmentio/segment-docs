@@ -48,7 +48,7 @@ Property               | Type   | Description
 
 ##### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "user_id": "019mr8mf4r",
   "action": "track",
   "event": "Email Bounced",
@@ -65,7 +65,7 @@ Property               | Type   | Description
     "campaign_id": "123",
     "campaign_name": "New Customer Discount"
   }
-}' }}}
+}' }}}{% endcomment %}
 
 
 ### Email Delivered
@@ -94,7 +94,7 @@ Property               | Type   | Description
 
 ##### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "user_id": "019mr8mf4r",
   "action": "track",
   "event": "Email Delivered",
@@ -111,7 +111,7 @@ Property               | Type   | Description
     "campaign_id": "123",
     "campaign_name": "New Customer Discount"
   }
-}' }}}
+}' }}}{% endcomment %}
 
 
 ### Email Link Clicked
@@ -145,7 +145,7 @@ Property               | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "user_id": "019mr8mf4r",
   "action": "track",
   "event": "Email Link Clicked",
@@ -164,7 +164,7 @@ Property               | Type   | Description
     "link_id": "101",
     "link_url": "https://www.buymyshirts.com?promo=NEWCUSTOMER"
   }
-}' }}}
+}' }}}{% endcomment %}
 
 
 ### Email Marked as Spam
@@ -195,7 +195,7 @@ Property               | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "user_id": "019mr8mf4r",
   "action": "track",
   "event": "Email Marked as Spam",
@@ -212,7 +212,7 @@ Property               | Type   | Description
     "campaign_id": "123",
     "campaign_name": "New Customer Discount"
   }
-}' }}}
+}' }}}{% endcomment %}
 
 
 ### Email Opened
@@ -243,7 +243,7 @@ Property               | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "user_id": "019mr8mf4r",
   "action": "track",
   "event": "Email Opened",
@@ -260,7 +260,7 @@ Property               | Type   | Description
     "campaign_id": "123",
     "campaign_name": "New Customer Discount"
   }
-}' }}}
+}' }}}{% endcomment %}
 
 
 ### Unsubscribed
@@ -294,7 +294,7 @@ Property               | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "user_id": "019mr8mf4r",
   "action": "track",
   "event": "Unsubscribed",
@@ -313,4 +313,4 @@ Property               | Type   | Description
     "list_id": "1425",
     "list_name": "New customers"
   }
-}' }}}
+}' }}}{% endcomment %}

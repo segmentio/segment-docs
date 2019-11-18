@@ -13,7 +13,7 @@ you must pass this as a trait without the `cf_` prefix. For e.g. if you have a c
 
 Here's an example:
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "user_id": "019mr8mf4r",
   "action": "identify",
   "traits": {
@@ -27,7 +27,7 @@ Here's an example:
     "timezone": "Europe/Amsterdam",
     "locale": "en-US"
   }
-}' }}}
+}' }}}{% endcomment %}
 
 ## Group
 
@@ -35,7 +35,7 @@ When you call [`group`](/docs/spec/group/) we will insert or update an organizat
 
 Here's an example:
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "user_id": "019mr8mf4r",
   "group_id": "0e8c78ea9d97a7b8185e8632",
   "action": "group",
@@ -51,4 +51,4 @@ Here's an example:
     "timezone": "Europe/Amsterdam",
     "locale": "en-US"
   }
-}' }}}
+}' }}}{% endcomment %}

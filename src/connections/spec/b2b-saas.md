@@ -43,7 +43,7 @@ Property                | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Account Created",
@@ -53,7 +53,7 @@ Property                | Type   | Description
   "context": {
       "groupId": "acct_123"
       }
-}' }}}
+}' }}}{% endcomment %}
 
 ### Account Deleted
 
@@ -70,7 +70,7 @@ Property                | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Account Deleted",
@@ -80,7 +80,7 @@ Property                | Type   | Description
   "context": {
       "groupId": "acct_123"
       }
-}' }}}
+}' }}}{% endcomment %}
 
 ### Signed Up
 
@@ -103,7 +103,7 @@ Property                | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Signed Up",
@@ -119,7 +119,7 @@ Property                | Type   | Description
   "context": {
       "groupId": "acct_123"
       }
-}' }}}
+}' }}}{% endcomment %}
 
 ### Signed In
 
@@ -136,7 +136,7 @@ Property                | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Signed In",
@@ -146,7 +146,7 @@ Property                | Type   | Description
   "context": {
       "groupId": "acct_123"
       }
-}' }}}
+}' }}}{% endcomment %}
 
 ### Signed Out
 
@@ -163,7 +163,7 @@ Property                | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Signed Out",
@@ -173,7 +173,7 @@ Property                | Type   | Description
   "context": {
       "groupId": "acct_123"
       }
-}' }}}
+}' }}}{% endcomment %}
 
 ### Invite Sent
 
@@ -192,7 +192,7 @@ Property                | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Invite Sent",
@@ -205,7 +205,7 @@ Property                | Type   | Description
   "context": {
       "groupId": "acct_123"
       }
-}' }}}
+}' }}}{% endcomment %}
 
 ### Account Added User
 
@@ -222,7 +222,7 @@ Property                | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Account Added User",
@@ -232,7 +232,7 @@ Property                | Type   | Description
   "context": {
       "groupId": "acct_123"
       }
-}' }}}
+}' }}}{% endcomment %}
 
 ### Account Removed User
 
@@ -248,7 +248,7 @@ Property                | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Account Removed User",
@@ -256,7 +256,7 @@ Property                | Type   | Description
   "context": {
       "groupId": "acct_123"
       }
-}' }}}
+}' }}}{% endcomment %}
 
 ### Trial Started
 
@@ -275,7 +275,7 @@ Property                | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Trial Started",
@@ -287,7 +287,7 @@ Property                | Type   | Description
   "context": {
       "groupId": "acct_123"
       }
-}' }}}
+}' }}}{% endcomment %}
 
 ### Trial Ended
 
@@ -306,7 +306,7 @@ Property                | Type   | Description
 
 #### Example
 
-{{{api-example '{
+{% comment %}{{{api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Trial Ended",
@@ -318,4 +318,4 @@ Property                | Type   | Description
   "context": {
       "groupId": "acct_123"
       }
-}' }}}
+}' }}}{% endcomment %}
