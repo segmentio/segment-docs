@@ -12,7 +12,7 @@ An `integrations object` may be passed in the `options` of  `group`, `identify`
 
 All customers can filter specific events from being sent to specific Destinations (except for warehouses) by updating their tracking code. Here is an example showing how to send a single message only to Intercom and Google Analytics:
 
-```
+```js
 analytics.identify('025pikachu025', {
   email: 'peekAtMe@email.poke',
   name: 'Pikachu',
@@ -32,7 +32,7 @@ If you're on Segment's Business plan, you can filter track calls right from the 
 
 ![](../images/asset_d3SRmkWy.gif)
 
-## **How do I block or disable specific events and properties from being sent to all Destinations?**
+## How do I block or disable specific events and properties from being sent to all Destinations?
 
 If you no longer want to track an event, you can either remove it from your code or, if you're on the Business plan, you can block track calls right from the Segment UI on your Source Schema page by adjusting the toggle for each event.
 
@@ -40,7 +40,7 @@ If you no longer want to track an event, you can either remove it from your code
 
 Once you block an event in Segment, we'll stop forwarding it to all of your Destinations, including your warehouses. You can remove it from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties. 
 
-* * *
+---
 
 _Note: The following features are currently in beta._
 
@@ -91,20 +91,20 @@ You will need to upgrade to the latest [iOS](https://segment.com/docs/sources/mo
 New events refer to events that have not previously been sent to a given Source. Let's say you've only sent the following events from your Javascript source:
 
 *   `Products Searched`
-    
+
 *   `Product List Viewed`
-    
+
 *   `Product List Filtered`
-    
+
 
 Your Schema Default setting will not have any impact on these three events because they are not considered new. You can manually block them, but your Schema Default setting will not change the status of these events. 
 
 Here's what will happen the first time a new event, `Promotion Viewed`, is sent to this Source:
 
 *   **Schema Default Set to Allow:** `Promotion Viewed` will be "allowed," which means the event will be sent to all enabled Destinations.
-    
+
 *   **Schema Default Set to Block:** `Promotion Viewed` will be "blocked," which means the event will not be sent to any Destinations.
-    
+
 
 ## **What happens to blocked events and properties? **
 
@@ -119,9 +119,9 @@ First, you will want to create a new Source to receive data from blocked Events 
 After you have created a new source, go to the Schema page for your primary Source and then select "General" from the left-hand navigation. Under "Advanced Settings," you will see two options:
 
 *   Block and discard: select this option if you want to permanently discard data from blocked Events and Traits.
-    
+
 *   Forward: select this option if you would like to forward data from blocked Events and Traits to a separate source.
-    
+
 
 Select "Forward," and then select the new Source you created to receive blocked data. **As a reminder, if you choose to route blocked events, this will contribute to your MTU count. **
 
@@ -142,7 +142,7 @@ Whether you're just about to implement a new spec or you have been tracking the 
 Here are a few signs you may be ready to lock your schema:
 
 *   You are concerned about developers implementing rogue events
-    
+
 *   You want to actively approve which events are tracked and routed to your downstream Destinations
-    
+
 *   You have created a tracking plan and want to use Segment to enforce it
