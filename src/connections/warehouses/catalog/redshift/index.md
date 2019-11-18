@@ -184,6 +184,6 @@ You can also unload data to a s3 bucket and then load the data into another Reds
 
 ### Can I customize my sync schedule?
 
-{{>warehouse-sync-sched}}
+{% include content/warehouse-sync-sched.md %}
 
 ![sync schedule image](images/syncsched.png)

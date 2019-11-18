@@ -7,7 +7,7 @@ Our Magento extension lets you send your ecommerce analytics data to [any of our
 
 The extension automatically collects information about the customer, which pages they visit, which products they add and remove from their cart, and which orders they complete.
 
-{{>deprecated}}
+{% include content/deprecated.md %}
 
 The current version of this plugin should be free of bugs but any existing and future development will be paused for the time being. We recommend exploring and using third party alternatives.
 

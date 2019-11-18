@@ -9,7 +9,7 @@ This document was last updated on January 29, 2018. If you notice any gaps, outd
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 Before you can track conversions or target audiences, you need to create a UET tag in Bing Ads and then add it to the destination settings. Follow the steps within [the Bing Ads documentation to create a UET tag](https://advertise.bingads.microsoft.com/en-us/resources/training/universal-event-tracking).
 
@@ -70,4 +70,4 @@ analytics.track('Order Completed', {
 
 ## Troubleshooting
 
-{{> client-side-script-unverified}}
+{% include content/client-side-script-unverified.md %}

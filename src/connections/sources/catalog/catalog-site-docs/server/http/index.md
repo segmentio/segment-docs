@@ -64,12 +64,12 @@ POST https://api.segment.io/v1/identify
 This call is identifying  the user by his unique User ID (the one you know him by in your database) and labeling him with `email`, `name`, and `industry` traits.
 
 <table>
-  {{> spec-field-anonymous-id }}
-  {{> spec-field-context }}
-  {{> spec-field-integrations }}
-  {{> spec-field-timestamp }}
-  {{> spec-field-identify-traits }}
-  {{> spec-field-user-id }}
+  {% include content/spec-field-anonymous-id.md %}
+  {% include content/spec-field-context.md %}
+  {% include content/spec-field-integrations.md %}
+  {% include content/spec-field-timestamp.md %}
+  {% include content/spec-field-identify-traits.md %}
+  {% include content/spec-field-user-id.md %}
 </table>
 
 Find details on the **identify method payload** in our [Spec](/docs/spec/identify/).
@@ -107,13 +107,13 @@ POST https://api.segment.io/v1/track
 The `track` call has the following fields:
 
 <table>
-  {{> spec-field-anonymous-id }}
-  {{> spec-field-context }}
-  {{> spec-field-event }}
-  {{> spec-field-integrations }}
-  {{> spec-field-event-properties }}
-  {{> spec-field-timestamp }}
-  {{> spec-field-user-id }}
+  {% include content/spec-field-anonymous-id.md %}
+  {% include content/spec-field-context.md %}
+  {% include content/spec-field-event.md %}
+  {% include content/spec-field-integrations.md %}
+  {% include content/spec-field-event-properties.md %}
+  {% include content/spec-field-timestamp.md %}
+  {% include content/spec-field-user-id.md %}
 </table>
 
 Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/spec/track/).
@@ -137,13 +137,13 @@ POST https://api.segment.io/v1/page
 The `page` call has the following fields:
 
 <table>
-  {{> spec-field-anonymous-id }}
-  {{> spec-field-context }}
-  {{> spec-field-integrations }}
-  {{> spec-field-page-name }}
-  {{> spec-field-page-properties }}
-  {{> spec-field-timestamp }}
-  {{> spec-field-user-id }}
+  {% include content/spec-field-anonymous-id.md %}
+  {% include content/spec-field-context.md %}
+  {% include content/spec-field-integrations.md %}
+  {% include content/spec-field-page-name.md %}
+  {% include content/spec-field-page-properties.md %}
+  {% include content/spec-field-timestamp.md %}
+  {% include content/spec-field-user-id.md %}
 </table>
 
 Find details on the **`page` payload** in our [Spec](/docs/spec/page/).
@@ -170,13 +170,13 @@ POST https://api.segment.io/v1/screen
 The `screen` call has the following fields:
 
 <table>
-  {{> spec-field-anonymous-id }}
-  {{> spec-field-context }}
-  {{> spec-field-integrations }}
-  {{> spec-field-screen-name }}
-  {{> spec-field-screen-properties }}
-  {{> spec-field-timestamp }}
-  {{> spec-field-user-id }}
+  {% include content/spec-field-anonymous-id.md %}
+  {% include content/spec-field-context.md %}
+  {% include content/spec-field-integrations.md %}
+  {% include content/spec-field-screen-name.md %}
+  {% include content/spec-field-screen-properties.md %}
+  {% include content/spec-field-timestamp.md %}
+  {% include content/spec-field-user-id.md %}
 </table>
 
 Find details on the **`screen` payload** in our [Spec](/docs/spec/screen/).
@@ -207,13 +207,13 @@ POST https://api.segment.io/v1/group
 The `group` call has the following fields:
 
 <table>
-  {{> spec-field-anonymous-id }}
-  {{> spec-field-context }}
-  {{> spec-field-group-id }}
-  {{> spec-field-integrations }}
-  {{> spec-field-timestamp }}
-  {{> spec-field-group-traits }}
-  {{> spec-field-user-id }}
+  {% include content/spec-field-anonymous-id.md %}
+  {% include content/spec-field-context.md %}
+  {% include content/spec-field-group-id.md %}
+  {% include content/spec-field-integrations.md %}
+  {% include content/spec-field-timestamp.md %}
+  {% include content/spec-field-group-traits.md %}
+  {% include content/spec-field-user-id.md %}
 </table>
 
 Find more details about `group` including the **`group` payload** in our [Spec](/docs/spec/group/).
@@ -239,11 +239,11 @@ POST https://api.segment.io/v1/alias
 The `alias` call has the following fields:
 
 <table>
-  {{> spec-field-context }}
-  {{> spec-field-integrations }}
-  {{> spec-field-previous-id }}
-  {{> spec-field-timestamp }}
-  {{> spec-field-user-id }}
+  {% include content/spec-field-context.md %}
+  {% include content/spec-field-integrations.md %}
+  {% include content/spec-field-previous-id.md %}
+  {% include content/spec-field-timestamp.md %}
+  {% include content/spec-field-user-id.md %}
 </table>
 
 For more details on the `alias` call and payload, check out our [Spec](/docs/spec/alias/).
@@ -382,6 +382,6 @@ When sending a HTTP call from a user's device, you can collect the IP address by
 
 ## Troubleshooting
 
-{{> troubleshooting-intro}}
-{{> troubleshooting-server-debugger}}
-{{> troubleshooting-server-integration}}
+{% include content/troubleshooting-intro.md %}
+{% include content/troubleshooting-server-debugger.md %}
+{% include content/troubleshooting-server-integration.md %}

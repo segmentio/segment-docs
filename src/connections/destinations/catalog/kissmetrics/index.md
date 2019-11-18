@@ -8,7 +8,7 @@ This document was last updated on July 3, 2018. If you notice any gaps, out-date
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 When you toggle on KISSmetrics in Segment, this is what happens:
 

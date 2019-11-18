@@ -7,7 +7,7 @@ Installing Segment in a Goodsie store couldn't get much easier. All you have to 
 
 <div align="center">![goodsie logo](/docs/sources/website/guides/goodsie/images/logo.png)</div>
 
-{{>deprecated}}
+{% include content/deprecated.md %}
 
 ## Step 1: Segment Account
 

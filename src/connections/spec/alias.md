@@ -38,8 +38,8 @@ Beyond the common fields, the `alias` call takes the following fields:
     <th>Type</th>
     <th>Description</th>
   </tr>
-  {{> spec-field-previous-id }}
-  {{> spec-field-user-id }}
+  {% include content/spec-field-previous-id.md %}
+  {% include content/spec-field-user-id.md %}
 </table>
 
 

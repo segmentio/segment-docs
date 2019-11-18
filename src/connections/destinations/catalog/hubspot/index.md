@@ -11,7 +11,7 @@ This document was last updated on March 30, 2018. If you notice any gaps, outdat
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "HubSpot" within the Destinations Catalog and confirm the Source you'd like to connect to.

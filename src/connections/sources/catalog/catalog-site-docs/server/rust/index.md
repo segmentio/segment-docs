@@ -374,6 +374,6 @@ There is a maximum of `500KB` per batch request and `32KB` per call.
 
 ## Troubleshooting
 
-{{> troubleshooting-intro}}
-{{> troubleshooting-server-debugger}}
-{{> troubleshooting-server-integration}}
+{% include content/troubleshooting-intro.md %}
+{% include content/troubleshooting-server-debugger.md %}
+{% include content/troubleshooting-server-integration.md %}

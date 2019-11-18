@@ -71,7 +71,7 @@ analytics.page('Home', {}, {
 
 ### Troubleshooting
 
-{{> client-side-script-unverified }}
+{% include content/client-side-script-unverified.md %}
 
 ## Mobile Destination
 When you toggle on Quantcast for a mobile app in Segment, this is what happens:

@@ -13,7 +13,7 @@ _**NOTE:** The Airship Destination is currently in beta, which means that they a
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 Follow these steps to configure the integration
 

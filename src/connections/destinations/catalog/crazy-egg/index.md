@@ -10,7 +10,7 @@ This document was last updated on 18th January, 2018. If you notice any gaps, ou
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Crazy Egg" within the Destinations Catalog and confirm the Source you'd like to connect to.
@@ -33,4 +33,4 @@ As this is automatically included in the `analytics.js` snippet by default, you 
 ### I can't map user variables
 The current Crazy Egg Destination doesn't support mapping of user variables out of the box. You will need to add your own additional Javascript as specified [here](https://help.crazyegg.com/articles/61-user-variables).
 
-{{> client-side-script-unverified}}
+{% include content/client-side-script-unverified.md %}

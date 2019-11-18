@@ -481,9 +481,9 @@ client.Track(...);
 
 ## Troubleshooting
 
-{{> troubleshooting-intro}}
-{{> troubleshooting-server-debugger}}
-{{> troubleshooting-server-integration}}
+{% include content/troubleshooting-intro.md %}
+{% include content/troubleshooting-server-debugger.md %}
+{% include content/troubleshooting-server-integration.md %}
 
 ### Logging
 

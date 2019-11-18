@@ -32,8 +32,8 @@ Beyond the common fields, the `screen` call takes the following fields:
     <th>Type</th>
     <th>Description</th>
   </tr>
-  {{> spec-field-screen-name }}
-  {{> spec-field-screen-properties }}
+  {% include content/spec-field-screen-name.md %}
+  {% include content/spec-field-screen-properties.md %}
 </table>
 
 ## Example
@@ -69,7 +69,7 @@ Here's a complete example of a `screen` call:
 
 ## Identities
 
-{{> spec-identities }}
+{% include content/spec-identities.md %}
 
 
 ## Name

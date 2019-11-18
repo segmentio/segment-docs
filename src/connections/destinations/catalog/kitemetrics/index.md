@@ -11,7 +11,7 @@ _**NOTE:** The Kitemetrics Destination is currently in beta, which means that th
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 
 1. From your Segment UI's Destinations page click on "Add Destination".

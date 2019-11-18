@@ -12,7 +12,7 @@ _**NOTE:** Vitally is currently in beta, and this doc was last updated on Februa
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 Enabling Vitally as a destination in Segment can be done in one click from your Vitally account. These instructions are also detailed in the [Vitally help center](http://docs.vitally.io/en/articles/3-sending-segment-data-to-vitally).
 

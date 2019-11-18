@@ -34,8 +34,8 @@ Beyond the common fields, the `page` call takes the following fields:
     <th>Type</th>
     <th>Description</th>
   </tr>
-  {{> spec-field-page-name }}
-  {{> spec-field-page-properties }}
+  {% include content/spec-field-page-name.md %}
+  {% include content/spec-field-page-properties.md %}
 </table>
 
 
@@ -73,7 +73,7 @@ Here's a complete example of a `page` call:
 
 ## Identities
 
-{{> spec-identities }}
+{% include content/spec-identities.md %}
 
 ## Properties
 

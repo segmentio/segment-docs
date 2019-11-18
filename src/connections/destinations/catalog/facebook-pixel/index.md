@@ -15,7 +15,7 @@ This document was last updated on 31st October, 2018. If you notice any gaps, ou
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Facebook Pixel" within the Destinations Catalog and confirm the Source you'd like to connect to.
@@ -196,4 +196,4 @@ Facebook counts conversions per person, as opposed to Google Analytics which cou
 
 If someone saw or clicked on your ad on a mobile phone then later came back directly to purchase on a desktop machine Google Analytics wouldn't know that this was the same person, but Facebook would. In that scenario Google Analytics counts 2 unique visits with a conversion last attributed to a direct visit on desktop. Facebook counts one conversion with the conversion properly attributed to the last ad click/view on mobile.
 
-{{> client-side-script-unverified}}
+{% include content/client-side-script-unverified.md %}

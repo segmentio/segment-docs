@@ -11,7 +11,7 @@ The guide below explains how to install Segment in your Ghost blog. All you need
 
 - - -
 
-{{>deprecated}}
+{% include content/deprecated.md %}
 
 
 ## Create a Segment Account
@@ -52,7 +52,7 @@ We remove that line from the snippet because we'll manually add a [`page`](/docs
 
 All of the remaining sections refer to a file in your Ghost theme folder. You'll need to copy the snippet provided and paste it into the `.hbs` file specified.
 
-We recommend pasting the code we provide above the `\{{> footer}}` tag.
+We recommend pasting the code we provide above the `{% raw %}{{> footer}}{% endraw %}` tag.
 
 
 ## Index Page
@@ -68,7 +68,7 @@ The first page we'll track is the Index page.
 </script>
 ```
 
-Make sure the above script is pasted right above the `\{{> footer}}` tag. That way it won't have any issues with any other logic happening on the page.
+Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% endraw %}` tag. That way it won't have any issues with any other logic happening on the page.
 
 
 ## Blog Post
@@ -95,7 +95,7 @@ Make sure the above script is pasted right above the `\{{> footer}}` tag. That w
 ```
 
 
-Make sure the above script is pasted right above the `\{{> footer}}` tag. That way it won't have any issues with any other logic happening on the page.
+Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% endraw %}` tag. That way it won't have any issues with any other logic happening on the page.
 
 
 ## Static Page
@@ -121,7 +121,7 @@ Make sure the above script is pasted right above the `\{{> footer}}` tag. That w
 </script>
 ```
 
-Make sure the above script is pasted right above the `\{{> footer}}` tag. That way it won't have any issues with any other logic happening on the page.
+Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% endraw %}` tag. That way it won't have any issues with any other logic happening on the page.
 
 
 ## Tags Page
@@ -137,7 +137,7 @@ Make sure the above script is pasted right above the `\{{> footer}}` tag. That w
 </script>
 ```
 
-Make sure the above script is pasted right above the `\{{> footer}}` tag. That way it won't have any issues with any other logic happening on the page.
+Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% endraw %}` tag. That way it won't have any issues with any other logic happening on the page.
 
 
 ## 404 Page
@@ -150,7 +150,7 @@ Make sure the above script is pasted right above the `\{{> footer}}` tag. That w
 </script>
 ```
 
-Make sure the above script is pasted right above the `\{{> footer}}` tag. That way it won't have any issues with any other logic happening on the page.
+Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% endraw %}` tag. That way it won't have any issues with any other logic happening on the page.
 
 
 ## That's It!

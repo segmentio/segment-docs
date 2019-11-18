@@ -346,7 +346,7 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
 ### Sync schedule
 
-{{>warehouse-sync-sched}}
+{% include content/warehouse-sync-sched.md %}
 
 ![](images/segment5.png)
 

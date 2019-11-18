@@ -207,7 +207,7 @@ a need for streaming data into BigQuery, please [contact us](/contact/requests).
 
 ### Can I customize my sync schedule?
 
-{{>warehouse-sync-sched}}
+{% include content/warehouse-sync-sched.md %}
 
 ![sync schedule image](../images/syncsched.png)
 

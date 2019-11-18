@@ -13,7 +13,7 @@ This document was last updated on October 8, 2018. If you notice any gaps, outda
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 1. If you have not already, create your app within the Kochava dashboard. Check out Kochava's documentation for information on [creating your app](http://support.kochava.com/create-manage-apps/create-edit-apps).
 2. From your Segment UI's Destinations page click on "Add Destination".
@@ -91,7 +91,7 @@ configuration.middlewares = @[ [SEGADTracker middleware] ];
 
 When it is able to retrieve iAd information, it will augment all `track` events. The attribution information is transformed to Segment context this way:
 
-```
+```objc
 [analytics track:@"Application Installed",
     properties: nil,
     options: @{
@@ -114,7 +114,7 @@ When it is able to retrieve iAd information, it will augment all `track` events.
 
 Because this information in passed through the context object, this will not be received by other downstream integrations, unless explicitly mapped. Kochava is currently the only integration which supports Apple Search Ads.
 
-{{>personas}}
+{% include content/personas.md %}
 
 ## Troubleshooting
 

@@ -1254,4 +1254,4 @@ Since we cannot automatically track page data for **server side** calls, if you 
 ---
 
 
-{{>integration-foot}}
+{% include content/integration-foot.md %}

@@ -27,10 +27,10 @@ And here's the corresponding Javascript event that would generate the above payl
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {
-  name: "Initech", 
+  name: "Initech",
   industry: "Technology",
-  employees: 329, 
-  plan: "enterprise", 
+  employees: 329,
+  plan: "enterprise",
   "total billed": 830
 });
 ```
@@ -43,8 +43,8 @@ Beyond the common fields, the `group` call takes the following fields:
     <th>Type</th>
     <th>Description</th>
   </tr>
-  {{> spec-field-group-id }}
-  {{> spec-field-group-traits }}
+  {% include content/spec-field-group-id.md %}
+  {% include content/spec-field-group-traits.md %}
 </table>
 
 
@@ -85,7 +85,7 @@ Here's a complete example of a `group` call:
 
 ## Identities
 
-{{> spec-identities }}
+{% include content/spec-identities.md %}
 
 ## Group ID
 

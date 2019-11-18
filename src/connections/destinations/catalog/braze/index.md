@@ -19,7 +19,7 @@ This document was last updated on June 13, 2018. If you notice any gaps, outdate
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Braze" within the Destinations Catalog and confirm the Source you'd like to connect to.
@@ -32,7 +32,7 @@ This document was last updated on June 13, 2018. If you notice any gaps, outdate
 
 1. Add the Braze Segment Pod to your `Podfile`:
 
-    ```
+    ```objc
     pod 'Segment-Appboy'
     ```
 
@@ -40,7 +40,7 @@ This document was last updated on June 13, 2018. If you notice any gaps, outdate
 
 2. Next, declare Braze's destination in your app delegate instance:
 
-    ```
+    ```objc
       SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY_HERE"];
       [config use:[SEGAppboyIntegrationFactory instance]];
       [SEGAnalytics setupWithConfiguration:config];

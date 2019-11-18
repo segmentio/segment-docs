@@ -15,7 +15,7 @@ If you notice any gaps, out-dated information or simply want to leave some feedb
 
 The first step is to make sure Wigzo supports the source type and connection mode you've chosen to implement. You can learn more about what dictates the connection modes we support [here](https://segment.com/docs/destinations/#connection-modes).
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Wigzo" within the Destinations Catalog and confirm the Source you'd like to connect to.

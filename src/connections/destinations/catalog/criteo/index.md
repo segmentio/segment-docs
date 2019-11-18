@@ -5,7 +5,7 @@ rewrite: true
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 Currently this destination supports events originating from Mobile or Web sources (not Server). You can read more about how define a source [here](/docs/guides/getting-started/what-is-a-source/).
 

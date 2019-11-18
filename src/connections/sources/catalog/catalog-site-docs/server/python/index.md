@@ -677,9 +677,9 @@ If you're having issues with threads outliving your request, please check [Backg
 
 Keep in mind that we have a size limit of `32KB` per request and `500KB` per batch request!
 
-{{> troubleshooting-intro}}
-{{> troubleshooting-server-debugger}}
-{{> troubleshooting-server-integration}}
+{% include content/troubleshooting-intro.md %}
+{% include content/troubleshooting-server-debugger.md %}
+{% include content/troubleshooting-server-integration.md %}
 
 ### Overriding Context Value
 

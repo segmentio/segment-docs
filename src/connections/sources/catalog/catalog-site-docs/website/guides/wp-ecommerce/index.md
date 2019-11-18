@@ -3,7 +3,7 @@ title: "WP eCommerce Plugin [Deprecated]"
 hidden: true
 ---
 
-{{>deprecated}}
+{% include content/deprecated.md %}
 
 Installing Segment in a WP eCommerce store is extremely simple and doesn't require any code! All you have to do is install the Segment WordPress plugin and add your Segment **Write Key**.
 

@@ -37,8 +37,8 @@ Beyond the common fields, the `track` call has the following fields:
     <th>Type</th>
     <th>Description</th>
   </tr>
-  {{> spec-field-event }}
-  {{> spec-field-event-properties }}
+  {% include content/spec-field-event.md %}
+  {% include content/spec-field-event-properties.md %}
 </table>
 
 ## Example
@@ -80,7 +80,7 @@ Here's a complete example of a `track` call:
 
 ## Identities
 
-{{> spec-identities }}
+{% include content/spec-identities.md %}
 
 ## Event
 

@@ -15,7 +15,7 @@ _**NOTE:** The Lazy Lantern Destination is currently in beta, which means that t
 ## Getting Started
 
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 ### Automated Setup
 1. Log into your [Lazy Lantern dashboard](https://app.lazylantern.com).

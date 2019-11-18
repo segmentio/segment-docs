@@ -15,7 +15,7 @@ Developing the machine-learning capabilities necessary to produce these sophisti
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 There are a few pre-requisites:
 
@@ -1022,4 +1022,4 @@ This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/d
 
 Due to how our event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/), works, your Lambda can't take more than 5 seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us), as well as docs for your language of choice, for tips on optimizing performance.
 
-{{>personas}}
+{% include content/personas.md %}

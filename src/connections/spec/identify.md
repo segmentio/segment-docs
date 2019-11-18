@@ -54,8 +54,8 @@ Beyond the common fields, an `identify` call has the following fields:
     <th>Type</th>
     <th>Description</th>
   </tr>
-  {{> spec-field-identify-traits }}
-  {{> spec-field-user-id }}
+  {% include content/spec-field-identify-traits.md %}
+  {% include content/spec-field-user-id.md %}
 </table>
 
 

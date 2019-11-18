@@ -8,7 +8,7 @@ This document was last updated on July 17, 2018. If you notice any gaps, outdate
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 1. Create a Kinesis stream.
    A stream is composed of multiple shards, each of which provides a fixed unit of capacity. The total capacity of the stream is the sum of the capacities of its shards. Each shard corresponds to 1 MB/s of write capacity and 2 MB/s of read capacity. See the [Amazon Kinesis Developer Guide](http://docs.aws.amazon.com/streams/latest/dev/introduction.html) for more information on estimating number of shards needed for your stream. Follow these [instructions](http://docs.aws.amazon.com/streams/latest/dev/learning-kinesis-module-one-create-stream.html) in order to create a new AWS Kinesis Stream.

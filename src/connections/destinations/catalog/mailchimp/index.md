@@ -12,7 +12,7 @@ This document was last updated on May 08, 2018. If you notice any gaps, out-date
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "MailChimp" within the Destinations Catalog and confirm the Source you'd like to connect to.

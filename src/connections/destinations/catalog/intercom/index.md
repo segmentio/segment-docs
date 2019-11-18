@@ -16,7 +16,7 @@ This document was last updated on January 18, 2019. If you notice any gaps, outd
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
 2.  Search for "Intercom" within the Destinations Catalog and confirm the Source you'd like to connect to.
@@ -470,4 +470,4 @@ Intercom only allows a total of [120 unique event names](http://docs.intercom.io
 
 If you want to prevent some of your events from being passed to Intercom and thus prevent the error, you can filter out Intercom in those events using the [Selecting Destinations](https://segment.com/docs/guides/best-practices/should-i-instrument-data-collection-on-the-client-or-server/#selecting-destinations) feature available on all of our libraries.
 
-{{>personas}}
+{% include content/personas.md %}

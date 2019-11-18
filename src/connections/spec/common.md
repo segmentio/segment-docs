@@ -106,16 +106,16 @@ In more detail these common fields for every API call are:
     <th>Type</th>
     <th>Description</th>
   </tr>
-  {{> spec-field-anonymous-id }}
-  {{> spec-field-context }}
-  {{> spec-field-integrations }}
-  {{> spec-field-message-id }}
-  {{> spec-field-received-at }}
-  {{> spec-field-sent-at }}
-  {{> spec-field-timestamp }}
-  {{> spec-field-type }}
-  {{> spec-field-user-id }}
-  {{> spec-field-version }}
+  {% include content/spec-field-anonymous-id.md %}
+  {% include content/spec-field-context.md %}
+  {% include content/spec-field-integrations.md %}
+  {% include content/spec-field-message-id.md %}
+  {% include content/spec-field-received-at.md %}
+  {% include content/spec-field-sent-at.md %}
+  {% include content/spec-field-timestamp.md %}
+  {% include content/spec-field-type.md %}
+  {% include content/spec-field-user-id.md %}
+  {% include content/spec-field-version.md %}
 </table>
 
 Beyond this common structure, each API call adds a few specialized top-level fields.

@@ -2,8 +2,8 @@
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
 {% assign currentSlug = page.url | split: "/" | last %}
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
-<!-- if it uses Identify calls and is available on Server, you can use personas?  -->
-{% if currentIntegration.methods.identify == true and currentIntegration.platforms.server == true %}
+
+{% if currentIntegration.platforms.server == true %}
 {% include content/personas.md %}
 
 {% endif %}
@@ -41,3 +41,14 @@ Segment lets you change these destination settings via your Segment dashboard wi
 
   {% endunless %}
 {% endfor %}
+
+{% assign oldname = currentIntegration.slug | capitalize %}
+{% if currentIntegration.display_name != oldname %}
+
+## Adding {{ currentIntegration.display_name }} to the integrations object
+
+To add {{ currentIntegration.display_name }} to the `integrations` JSON object (for example, <a href="https://segment.com/docs/guides/general/filtering-data/#filtering-with-the-integrations-object">to filter data from a specific source</a>), use one of the {{ currentIntegration.previousNames.length }} valid names for this integration:
+{% for name in currentIntegration.previousNames }
+        <li><code>{{name}}</code></li>
+    {% endfor}}
+{% endif %}

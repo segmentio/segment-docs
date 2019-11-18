@@ -12,7 +12,7 @@ _**NOTE:** The CustomerSuccessBox Destination is currently in beta, which means 
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 
 ### Adding Destination

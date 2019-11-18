@@ -10,7 +10,7 @@ _**NOTE:** The Interana Destination is currently in beta, which means that they 
 
 ## Getting Started
 
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 To set up the Interana Integration, first you will need:
 The root URL for your destination cloud storage directory
