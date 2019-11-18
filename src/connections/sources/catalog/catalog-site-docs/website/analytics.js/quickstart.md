@@ -15,7 +15,7 @@ If you want to dive deeper at any point, check out the [Analytics.js reference](
 
 Installing Segment is easy, just paste this snippet into the head of your site:
 
-{{{snippet-example 'YOUR_WRITE_KEY'}}}
+{% comment %}{{{snippet-example 'YOUR_WRITE_KEY'}}}{% endcomment %}
 
 When you paste it, you'll need to replace `YOUR_WRITE_KEY` with your Segment project's **Write Key**, which you can find in your project setup guide or settings.
 
