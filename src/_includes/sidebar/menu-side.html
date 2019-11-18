@@ -33,6 +33,7 @@
   {% assign maxHeader = include.h_max | default: 6 %}
   {% assign nodes = include.html | split: '<h' %}
   {% assign firstHeader = true %}
+  {% assign amount = 0 %}
 
   {% capture listModifier %}{% if orderedList %}1.{% else %}-{% endif %}{% endcapture %}
 
@@ -45,6 +46,8 @@
 
     {% if headerLevel < minHeader or headerLevel > maxHeader %}
       {% continue %}
+    {% else %}
+      {% assign amount = i | plus:1 %}
     {% endif %}
 
     {% if firstHeader %}
@@ -95,7 +98,7 @@
   {% endif %}
 {% endcapture %}{% assign tocWorkspace = '' %}
 
-{% assign amount = _hAttrToStrip | size %}
+
 {% if amount > 0 %}
   <p class="destination-menu__title">On this page</p>
   {{ my_toc | markdownify | strip }}
