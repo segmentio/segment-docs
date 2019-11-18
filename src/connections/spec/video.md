@@ -107,7 +107,7 @@ Below is the full list of Video Playback Events.
 
 #### Video Playback Started
 When a user presses Play; after the last user action required for playback to begin (eg, after user login/authentication).
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Playback Started",
     "userId": "userId",
@@ -129,11 +129,37 @@ When a user presses Play; after the last user action required for playback to be
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Playback Started",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "content_asset_ids": ["0129370"],
+      "content_pod_ids": ["segA", "segB"],
+      "ad_asset_id": ["ad123", "ad097"],
+      "ad_pod_id": ["adSegA", "adSegB"],
+      "ad_type": ["mid-roll", "post-roll"],
+      "position": 0,
+      "total_length": 392,
+      "bitrate": 100,
+      "framerate": 29.00,
+      "video_player": "youtube",
+      "sound": 88,
+      "full_screen": false,
+      "ad_enabled": true,
+      "quality": "hd1080",
+      "livestream": false
+    }
+}
+```
 
 #### Video Playback Paused
 When a user presses Pause.
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Playback Paused",
     "userId": "userId",
@@ -152,11 +178,35 @@ When a user presses Pause.
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Playback Paused",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "content_asset_id": "0129370",
+      "content_pod_id": "segA",
+      "position": 278,
+      "total_length": 392,
+      "bitrate": 100,
+      "framerate": 29.00,
+      "video_player": "youtube",
+      "sound": 55,
+      "full_screen": false,
+      "ad_enabled": false,
+      "quality": "hd1080",
+      "livestream": false
+    }
+}
+```
 
 #### Video Playback Interrupted
 When the playback stops unintentionally (ie. network loss, browser close/redirect, app crash). With this event you can pass `method` as a property to denote the cause of the interruption.
-{% comment %}{{{api-example '{
+
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Playback Interrupted",
     "userId": "userId",
@@ -176,11 +226,35 @@ When the playback stops unintentionally (ie. network loss, browser close/redirec
       "livestream": false,
       "method": "network loss"
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Playback Interrupted",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "content_asset_id": "0129370",
+      "content_pod_id": "segA",
+      "position": 278,
+      "total_length": 392,
+      "bitrate": 100,
+      "framerate": 29.00,
+      "video_player": "youtube",
+      "sound": 55,
+      "full_screen": false,
+      "ad_enabled": false,
+      "quality": "hd1080",
+      "livestream": false,
+      "method": "network loss"
+    }
+}
+```
 
 #### Video Playback Buffer Started
 When playback starts buffering content or an ad.
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Playback Buffer Started",
     "userId": "userId",
@@ -199,11 +273,34 @@ When playback starts buffering content or an ad.
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Playback Buffer Started",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "content_asset_id": "0129370",
+      "content_pod_id": "segA",
+      "position": 278,
+      "total_length": 392,
+      "bitrate": 100,
+      "framerate": 29.00,
+      "video_player": "youtube",
+      "sound": 55,
+      "full_screen": false,
+      "ad_enabled": false,
+      "quality": "hd1080",
+      "livestream": false
+    }
+}
+```
 
 #### Video Playback Buffer Completed
 When playback finishes buffering content or an ad.
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Playback Buffer Completed",
     "userId": "userId",
@@ -222,11 +319,34 @@ When playback finishes buffering content or an ad.
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Playback Buffer Completed",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "content_asset_id": "0129370",
+      "content_pod_id": "segA",
+      "position": 278,
+      "total_length": 392,
+      "bitrate": 100,
+      "framerate": 29.00,
+      "video_player": "youtube",
+      "sound": 55,
+      "full_screen": false,
+      "ad_enabled": false,
+      "quality": "hd1080",
+      "livestream": false
+    }
+}
+```
 
 #### Video Playback Seek Started
 When a user manually seeks a certain position of the content or ad in the playback. Pass in the `seek_position` to denote where the user is seeking to, and pass in the `position` property to denote where the user is seeking from.
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Playback Seek Started",
     "userId": "userId",
@@ -246,11 +366,35 @@ When a user manually seeks a certain position of the content or ad in the playba
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Playback Seek Started",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "content_asset_id": "0129370",
+      "content_pod_id": "segA",
+      "position": 278,
+      "seek_position": 320,
+      "total_length": 392,
+      "bitrate": 100,
+      "framerate": 29.00,
+      "video_player": "youtube",
+      "sound": 55,
+      "full_screen": false,
+      "ad_enabled": false,
+      "quality": "hd1080",
+      "livestream": false
+    }
+}
+```
 
 #### Video Playback Seek Completed
 After a user manually seeks to a certain position of the content or ad in the playback. Pass in the `position` property to denote where the user desires to begin the playback from.
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Playback Seek Completed",
     "userId": "userId",
@@ -269,11 +413,34 @@ After a user manually seeks to a certain position of the content or ad in the pl
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Playback Seek Completed",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "content_asset_id": "0129370",
+      "content_pod_id": "segA",
+      "position": 320,
+      "total_length": 392,
+      "bitrate": 100,
+      "framerate": 29.00,
+      "video_player": "youtube",
+      "sound": 55,
+      "full_screen": false,
+      "ad_enabled": false,
+      "quality": "hd1080",
+      "livestream": false
+    }
+}
+```
 
 #### Video Playback Resumed
 When playback is resumed, by the user, after being paused.
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Playback Resumed",
     "userId": "userId",
@@ -292,11 +459,34 @@ When playback is resumed, by the user, after being paused.
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Playback Resumed",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "content_asset_id": "0129370",
+      "content_pod_id": "segA",
+      "position": 278,
+      "total_length": 392,
+      "bitrate": 100,
+      "framerate": 29.00,
+      "video_player": "youtube",
+      "sound": 55,
+      "full_screen": false,
+      "ad_enabled": false,
+      "quality": "hd1080",
+      "livestream": false
+    }
+}
+```
 
 #### Video Playback Completed
 When playback is complete and only when the session is finished.
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Playback Completed",
     "userId": "userId",
@@ -315,7 +505,30 @@ When playback is complete and only when the session is finished.
       "quality": "hd1080",
       "livestream": false
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Playback Completed",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "content_asset_id": "0129370",
+      "content_pod_id": "segA",
+      "position": 392,
+      "total_length": 392,
+      "bitrate": 100,
+      "framerate": 29.00,
+      "video_player": "youtube",
+      "sound": 55,
+      "full_screen": false,
+      "ad_enabled": false,
+      "quality": "hd1080",
+      "livestream": false
+    }
+}
+```
 
 ---
 
@@ -413,7 +626,7 @@ Below is the full list of Video Content Events.
 
 #### Video Content Started
 When a video content segment starts playing within a playback.
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Content Started",
     "userId": "userId",
@@ -432,11 +645,34 @@ When a video content segment starts playing within a playback.
       "full_episode": true,
       "keywords": ["nature", "forests", "earth"]
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Content Started",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "asset_id": "0129370",
+      "pod_id": "segA",
+      "program": "Planet Earth",
+      "title": "Seasonal Forests",
+      "description": "David Attenborough reveals the greatest woodlands on earth.",
+      "season": "1",
+      "position": 0,
+      "total_length": 3600,
+      "genre": "Documentary",
+      "publisher": "BBC",
+      "full_episode": true,
+      "keywords": ["nature", "forests", "earth"]
+    }
+}
+```
 
 #### Video Content Playing
 Heartbeats that you can fire every n seconds to track how far into the content the user is currently viewing as indicated by the `position`.
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Content Playing",
     "userId": "userId",
@@ -455,11 +691,34 @@ Heartbeats that you can fire every n seconds to track how far into the content t
       "full_episode": true,
       "keywords": ["nature", "forests", "earth"]
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Content Playing",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "asset_id": "0129370",
+      "pod_id": "segA",
+      "program": "Planet Earth",
+      "title": "Seasonal Forests",
+      "description": "David Attenborough reveals the greatest woodlands on earth.",
+      "season": "1",
+      "position": 10,
+      "total_length": 3600,
+      "genre": "Documentary",
+      "publisher": "BBC",
+      "full_episode": true,
+      "keywords": ["nature", "forests", "earth"]
+    }
+}
+```
 
 #### Video Content Completed
 When a video content segment completes playing within a playback. That is, `position` and `total_length` are equal.
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Content Completed",
     "userId": "userId",
@@ -478,7 +737,30 @@ When a video content segment completes playing within a playback. That is, `posi
       "full_episode": true,
       "keywords": ["nature", "forests", "earth"]
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Content Completed",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "asset_id": "0129370",
+      "pod_id": "segA",
+      "program": "Planet Earth",
+      "title": "Seasonal Forests",
+      "description": "David Attenborough reveals the greatest woodlands on earth.",
+      "season": "1",
+      "position": 3600,
+      "total_length": 3600,
+      "genre": "Documentary",
+      "publisher": "BBC",
+      "full_episode": true,
+      "keywords": ["nature", "forests", "earth"]
+    }
+}
+```
 
 
 ## Ads
@@ -553,7 +835,7 @@ For Video Ad Playing events, this property can be set to indicate when a specifi
 
 #### Video Ad Started
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Ad Started",
     "userId": "userId",
@@ -568,11 +850,30 @@ For Video Ad Playing events, this property can be set to indicate when a specifi
       "publisher": "Apple",
       "load_type": "dynamic"
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Ad Started",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "asset_id": "0129370",
+      "pod_id": "segA",
+      "type": "pre-roll",
+      "title": "The New New Thing!",
+      "position": 0,
+      "total_length": 30,
+      "publisher": "Apple",
+      "load_type": "dynamic"
+    }
+}
+```
 
 #### Video Ad Playing
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Ad Playing",
     "userId": "userId",
@@ -587,11 +888,30 @@ For Video Ad Playing events, this property can be set to indicate when a specifi
       "publisher": "Apple",
       "load_type": "dynamic"
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Video Ad Playing",
+    "userId": "userId",
+    "properties": {
+      "session_id": "12345",
+      "asset_id": "0129370",
+      "pod_id": "segA",
+      "type": "pre-roll",
+      "title": "The New New Thing!",
+      "position": 5,
+      "total_length": 30,
+      "publisher": "Apple",
+      "load_type": "dynamic"
+    }
+}
+```
 
 #### Video Ad Completed
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
     "action": "track",
     "event": "Video Ad Completed",
     "userId": "userId",
@@ -606,7 +926,26 @@ For Video Ad Playing events, this property can be set to indicate when a specifi
       "publisher": "Apple",
       "load_type": "dynamic"
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "action": "track",
+  "event": "Video Ad Completed",
+  "userId": "userId",
+  "properties": {
+    "session_id": "12345",
+    "asset_id": "0129370",
+    "pod_id": "segA",
+    "type": "pre-roll",
+    "title": "The New New Thing!",
+    "position": 30,
+    "total_length": 30,
+    "publisher": "Apple",
+    "load_type": "dynamic"
+  }
+}
+```
 
 ## Resuming Playback
 

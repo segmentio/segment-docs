@@ -13,7 +13,7 @@ you must pass this as a trait without the `cf_` prefix. For e.g. if you have a c
 
 Here's an example:
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "user_id": "019mr8mf4r",
   "action": "identify",
   "traits": {
@@ -27,7 +27,25 @@ Here's an example:
     "timezone": "Europe/Amsterdam",
     "locale": "en-US"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "user_id": "019mr8mf4r",
+  "action": "identify",
+  "traits": {
+    "name": "Peter Gibbons",
+    "email": "pgibbons@initech.com",
+    "plan": "developer",
+    "department": "Marketing",
+    "created_at": "2013-01-07"
+  },
+  "context": {
+    "timezone": "Europe/Amsterdam",
+    "locale": "en-US"
+  }
+}
+```
 
 ## Group
 
@@ -35,7 +53,7 @@ When you call [`group`](/docs/spec/group/) we will insert or update an organizat
 
 Here's an example:
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "user_id": "019mr8mf4r",
   "group_id": "0e8c78ea9d97a7b8185e8632",
   "action": "group",
@@ -51,4 +69,24 @@ Here's an example:
     "timezone": "Europe/Amsterdam",
     "locale": "en-US"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "user_id": "019mr8mf4r",
+  "group_id": "0e8c78ea9d97a7b8185e8632",
+  "action": "group",
+  "traits": {
+    "name": "Initech",
+    "industry": "Technology",
+    "employees": 329,
+    "plan": "enterprise",
+    "total billed": 830,
+    "createdAt": "2014-12-01"
+  },
+  "context": {
+    "timezone": "Europe/Amsterdam",
+    "locale": "en-US"
+  }
+}
+```

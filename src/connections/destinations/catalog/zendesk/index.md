@@ -37,7 +37,7 @@ When you call `identify` we will insert or update a user record in Zendesk. We'l
 
 Here's an example:
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "action": "identify",
   "userId": "12345",
   "traits": {
@@ -47,7 +47,21 @@ Here's an example:
     "organizationId": 6789,
     "phone": "763-555-2342"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "action": "identify",
+  "userId": "12345",
+  "traits": {
+    "name": "Kobe Bryant",
+    "email": "kobe@lakers.com",
+    "timezone": "America/Los_Angeles",
+    "organizationId": 6789,
+    "phone": "763-555-2342"
+  }
+}
+```
 
 By default, Users in Zendesk have many standard attributes associated with a single User record. Segment, at this time, is mapping to a subset of these. If you attempt to send data to a Zendesk attribute that we have not yet mapped, it will create a custom field for this (it will not update the existing attribute).
 
@@ -115,7 +129,7 @@ When you call `group` we will insert or update an organization in Zendesk. We'll
 
 Here's an example:
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "action": "group",
   "groupId": "908172409",
   "userId": "6789",
@@ -124,7 +138,20 @@ Here's an example:
     "url": "https://lakers.com",
     "deleted": false
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "action": "group",
+  "groupId": "908172409",
+  "userId": "6789",
+  "traits": {
+    "name": "LA Lakers",
+    "url": "https://lakers.com",
+    "deleted": false
+  }
+}
+```
 
 Every time you call group, we will also link the organization to the user making the request.
 

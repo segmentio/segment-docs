@@ -31,14 +31,25 @@ Cubitic requires 2 events:
 
 A `Started Session` event that is sent each time a user session starts. This event can be sent with any properties that you like, for e.g.
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Started Session",
   "properties": {
     "category": "Games"
   }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Started Session",
+  "properties": {
+    "category": "Games"
+  }
+}
+```
 
 * For spend prediction:
 

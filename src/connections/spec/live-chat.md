@@ -41,7 +41,7 @@ Property                | Type   | Description
 
 #### Example
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Live Chat Conversation Started",
@@ -54,7 +54,24 @@ Property                | Type   | Description
     "message_body": "But my stapler...",
     "message_id": "beaffc193618cbe"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Live Chat Conversation Started",
+  "properties": {
+    "agent_id": "bce89acdd11901",
+    "agent_name": "Peter Gibbons",
+    "agent_username": "pgibbons",
+    "conversation_duration": 0,
+    "conversation_id": "abd627dbecffc",
+    "message_body": "But my stapler...",
+    "message_id": "beaffc193618cbe"
+  }
+}
+```
 
 
 ### Live Chat Conversation Ended
@@ -76,7 +93,7 @@ Property                | Type   | Description
 
 #### Example
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Live Chat Conversation Ended",
@@ -89,7 +106,24 @@ Property                | Type   | Description
     "message_body": "I\'ll... set the building on fire",
     "message_id": "bcadac1183618cbe"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Live Chat Conversation Ended",
+  "properties": {
+    "agent_id": "bce89acdd11901",
+    "agent_name": "Peter Gibbons",
+    "agent_username": "pgibbons",
+    "conversation_duration": 203,
+    "conversation_id": "abd627dbecffc",
+    "message_body": "I\'ll... set the building on fire",
+    "message_id": "bcadac1183618cbe"
+  }
+}
+```
 
 
 ### Live Chat Message Sent
@@ -111,7 +145,7 @@ Property                | Type   | Description
 
 #### Example
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Live Chat Message Sent",
@@ -124,7 +158,24 @@ Property                | Type   | Description
     "message_body": "But then they switched from the Swingline to the Boston stapler!",
     "message_id": "beaffc193618cbe"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Live Chat Message Sent",
+  "properties": {
+    "agent_id": "bce89acdd11901",
+    "agent_name": "Peter Gibbons",
+    "agent_username": "pgibbons",
+    "conversation_duration": 45,
+    "conversation_id": "abd627dbecffc",
+    "message_body": "But then they switched from the Swingline to the Boston stapler!",
+    "message_id": "beaffc193618cbe"
+  }
+}
+```
 
 
 ### Live Chat Message Received
@@ -146,7 +197,7 @@ Property                | Type   | Description
 
 #### Example
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Live Chat Message Received",
@@ -159,4 +210,21 @@ Property                | Type   | Description
     "message_body": "Yeah, uh huh, okay, Milton",
     "message_id": "beaffc193618cbe"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Live Chat Message Received",
+  "properties": {
+    "agent_id": "bce89acdd11901",
+    "agent_name": "Peter Gibbons",
+    "agent_username": "pgibbons",
+    "conversation_duration": 98,
+    "conversation_id": "abd627dbecffc",
+    "message_body": "Yeah, uh huh, okay, Milton",
+    "message_id": "beaffc193618cbe"
+  }
+}
+```

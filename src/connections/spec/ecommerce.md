@@ -45,14 +45,25 @@ Property        | Type   | Description
 
 ### Example
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Viewed Product Category",
   "properties": {
     "category": "Games"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Viewed Product Category",
+  "properties": {
+    "category": "Games"
+  }
+}
+```
 
 
 ## Viewed Product
@@ -77,7 +88,7 @@ _Note: The `sku` and `id` do not have to be different. If they are different, ty
 
 ### Example
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Viewed Product",
@@ -88,7 +99,22 @@ _Note: The `sku` and `id` do not have to be different. If they are different, ty
     "price": 18.99,
     "category": "Games"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Viewed Product",
+  "properties": {
+    "id": "507f1f77bcf86cd799439011",
+    "sku": "G-32",
+    "name": "Monopoly: 3rd Edition",
+    "price": 18.99,
+    "category": "Games"
+  }
+}
+```
 
 
 ## Added / Removed Product
@@ -112,7 +138,7 @@ Property   | Type   | Description
 
 ### Example
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Added Product",
@@ -124,9 +150,25 @@ Property   | Type   | Description
     "quantity": 3,
     "category": "Games"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Added Product",
+  "properties": {
+    "id": "507f1f77bcf86cd799439011",
+    "sku": "45790-32",
+    "name": "Monopoly: 3rd Edition",
+    "price": 18.99,
+    "quantity": 3,
+    "category": "Games"
+  }
+}
+```
 
-{% comment %}{{{api-example '{
+
+{% comment %} api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Removed Product",
@@ -138,7 +180,23 @@ Property   | Type   | Description
     "quantity": 2,
     "category": "Games"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Removed Product",
+  "properties": {
+    "id": "507f1f77bcf86cd799439011",
+    "sku": "45790-32",
+    "name": "Monopoly: 3rd Edition",
+    "price": 18.99,
+    "quantity": 2,
+    "category": "Games"
+  }
+}
+```
 
 
 ## Completing an Order
@@ -147,7 +205,7 @@ The final step is to record a `Order Completed` event when people complete your 
 
 Be sure to **include all items in the cart as event properties**, with the same properties from the previous calls, like so:
 
-{% comment %}{{{api-example '{
+{% comment %} api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
   "event": "Completed Order",
@@ -175,7 +233,39 @@ Be sure to **include all items in the cart as event properties**, with the same 
       "category": "Games"
     }]
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Completed Order",
+  "properties": {
+    "orderId": "50314b8e9bcf000000000000",
+    "revenue": 25.00,
+    "shipping": 3.00,
+    "tax": 2.00,
+    "discount": 2.50,
+    "coupon": "hasbros",
+    "currency": "USD",
+    "products": [{
+      "id": "507f1f77bcf86cd799439011",
+      "sku": "45790-32",
+      "name": "Monopoly: 3rd Edition",
+      "price": 19.00,
+      "quantity": 1,
+      "category": "Games"
+    }, {
+      "id": "505bd76785ebb509fc183733",
+      "sku": "46493-32",
+      "name": "Uno Card Game",
+      "price": 3.00,
+      "quantity": 2,
+      "category": "Games"
+    }]
+  }
+}
+```
 
 **Note**: Some destinations require `total` in place of `revenue`. Specific requirements will be outlined in each destination's documentation.
 

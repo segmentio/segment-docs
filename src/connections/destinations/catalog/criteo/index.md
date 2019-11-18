@@ -34,7 +34,7 @@ We use the context fields that we capture with our SDKs automatically to populat
 
 When a user views a particular product or offering inside your application, you should call our [Product Viewed](/docs/spec/ecommerce/v2/#product-viewed) event and we'll map that to Criteo Events' `viewProduct` tag. You'll need to make sure that the products on your `Product List Viewed` event have a `productId` property. As with all our integrations, casing does not matter! Your properties  can be camelCase or snake_case, both will work.
 
-{% comment %}{{{api-example-client '{
+{% comment %} api-example-client '{
     "action": "track",
     "event": "Product Viewed",
     "userId": "userId",
@@ -52,7 +52,29 @@ When a user views a particular product or offering inside your application, you 
         "position": "3",
         "value": "18.99"
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Product Viewed",
+    "userId": "userId",
+    "properties": {
+        "product_id": "507f1f77bc",
+        "sku": "G-32",
+        "category": "Games",
+        "name": "Monopoly: 3rd Edition",
+        "brand": "Hasbro",
+        "variant": "200 pieces",
+        "price": "18.99",
+        "quantity": "1",
+        "coupon": "MAYDEALS",
+        "currency": "usd",
+        "position": "3",
+        "value": "18.99"
+    }
+}
+```
 
 On web, the above Javascript example would result in the firing of the following Criteo Events tag:
 
@@ -64,7 +86,7 @@ window.criteo_q.push({ event: 'viewItem', item: '507f1f77bc' })
 
 When a user views a list of products inside your application, you should call our [Product List Viewed](/docs/spec/ecommerce/v2/#product-list-viewed) event and we'll map that to Criteo Events' `viewListing` tag. Same as above, make sure you have your item's `productId` or `product_id` on the event!
 
-{% comment %}{{{api-example-client '{
+{% comment %} api-example-client '{
     "action": "track",
     "event": "Product List Viewed",
     "userId": "userId",
@@ -90,7 +112,37 @@ When a user views a list of products inside your application, you should call ou
             }
         ]
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Product List Viewed",
+    "userId": "userId",
+    "properties": {
+        "list_id": "First Last",
+        "category": "Deals",
+        "products": [
+            {
+              "product_id": "1",
+              "sku": "45790-32",
+              "name": "Monopoly: 3rd Edition",
+              "price": "19",
+              "position": "1",
+              "category": "Games"
+            },
+            {
+              "product_id": "2",
+              "sku": "46493-32",
+              "name": "Uno Card Game",
+              "price": "3",
+              "position": "2",
+              "category": "Games"
+            }
+        ]
+    }
+}
+```
 
 On web, the above Javascript example would result in the firing of the following Criteo Events tag:
 
@@ -105,7 +157,7 @@ When a user views their Cart or Order details inside your application, you shoul
 
 You will need to have a products array of product objects in your Segment [Cart Viewed](/docs/spec/ecommerce/v2/#cart-viewed) event with at least `id`, `price` and `quantity` properties on each product object in that array.
 
-{% comment %}{{{api-example-client '{
+{% comment %} api-example-client '{
     "action": "track",
     "event": "Product List Viewed",
     "userId": "userId",
@@ -132,7 +184,38 @@ You will need to have a products array of product objects in your Segment [Cart 
             }
         ]
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Product List Viewed",
+    "userId": "userId",
+    "properties": {
+        "cart_id": "a21232d13c",
+        "products": [
+            {
+              "product_id": "1",
+              "sku": "45790-32",
+              "name": "Monopoly: 3rd Edition",
+              "quantity": "6",
+              "price": "19",
+              "position": "1",
+              "category": "Games"
+            },
+            {
+              "product_id": "2",
+              "sku": "46493-32",
+              "name": "Uno Card Game",
+              "quantity": "2",
+              "price": "3",
+              "position": "2",
+              "category": "Games"
+            }
+        ]
+    }
+}
+```
 
 On web, the above Javascript example would result in the firing of the following Criteo Events tag:
 
@@ -158,7 +241,7 @@ When a user completes an order or purchase inside your application, you should c
 
 You will need to have a products array of product objects in your Segment [Order Completed](/docs/spec/ecommerce/v2/#order-completed) event with at least `id`, `price` and `quantity` properties on each product object in that array. You also must pass an `orderId`.
 
-{% comment %}{{{api-example-client '{
+{% comment %} api-example-client '{
     "action": "track",
     "event": "Product List Viewed",
     "userId": "userId",
@@ -192,7 +275,45 @@ You will need to have a products array of product objects in your Segment [Order
           }
         ]
     }
-}'}}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+    "action": "track",
+    "event": "Product List Viewed",
+    "userId": "userId",
+    "properties": {
+        "checkout_id": "908asdfdfs9",
+        "order_id": "098dsf098f",
+        "affiliation": "Google Store",
+        "total": 30,
+        "revenue": 25,
+        "shipping": 3,
+        "tax": 2,
+        "discount": 2.5,
+        "coupon": "hasbros",
+        "currency": "USD",
+        "products": [
+          {
+            "product_id": "507f1f77bcf86cd799439011",
+            "sku": "45790-32",
+            "name": "Monopoly: 3rd Edition",
+            "price": 19,
+            "quantity": 1,
+            "category": "Games"
+          },
+          {
+            "product_id": "505bd76785ebb509fc183733",
+            "sku": "46493-32",
+            "name": "Uno Card Game",
+            "price": 3,
+            "quantity": 2,
+            "category": "Games"
+          }
+        ]
+    }
+}
+```
 
 On web, the above Javascript example would result in the firing of the following Criteo Events tag:
 

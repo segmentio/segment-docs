@@ -52,7 +52,19 @@ The following events will be tracked automatically when lifecycle events are ena
 
 This event fires when a user **first** opens your mobile application. Note, if the user never opens your app after installing, we will not be able to collect this event. This event does not wait for attribution or campaign information to be received, and is collected automatically by our SDKs. Advertising providers like Facebook and Google require discrete install events to correctly attribute installs to ads served through their platform.
 
-{% comment %}{{{api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Installed", "properties": { "version": "1.2.3", "build": 1234 }}' }}}{% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Installed", "properties": { "version": "1.2.3", "build": 1234 }}'}}} {% endcomment %}
+
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Application Installed",
+  "properties": {
+    "version": "1.2.3", "build": 1234
+  }
+}
+```
 
 **Property** | **Type** | **Description**
 ---          | ---      | ---
@@ -64,7 +76,20 @@ This event fires when a user **first** opens your mobile application. Note, if t
 
 This event fires when a user launches or foregrounds your mobile application after the first open. It will fire after the `Application Installed` event and again after the app is re-opened after being closed. This event does not wait for attribution information to be received but may include information about referring applications or deep link URLs if available to the application upon open.
 
-{% comment %}{{{api-example '{"userId": "019mr8mf4r", "action": "track", "event": "Application Opened", "properties": { "from_background": false, "referring_application": "GMail", "url": "url://location" }}' }}}{% endcomment %}
+{% comment %} api-example '{"userId": "019mr8mf4r", "action": "track", "event": "Application Opened", "properties": { "from_background": false, "referring_application": "GMail", "url": "url://location" }}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Application Opened",
+  "properties": {
+    "from_background": false,
+    "referring_application": "GMail",
+    "url": "url://location"
+  }
+}
+```
 
  **Property** | **Type** | **Description**
  ---          | ---      | ---
@@ -80,13 +105,36 @@ This event fires when a user launches or foregrounds your mobile application aft
 
 This event should be sent when a user backgrounds the application upon [`applicationDidEnterBackground`](https://developer.apple.com/reference/uikit/uiapplicationdelegate/1622997-applicationdidenterbackground)
 
-{% comment %}{{{api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Backgrounded", "properties": {}}' }}}{% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Backgrounded", "properties": {}}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Application Backgrounded",
+  "properties": {}
+}
+```
 
 ### Application Updated
 
 This event fires when a user updates the application. Our SDK will automatically collect this event in lieu of an "Application Opened" event when we determine that the Open is first since an update.
 
-{% comment %}{{{api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Updated", "properties": { "previous_version": "1.1.2", "previous_build": 1234,  "version": "1.2.0", "build": 1456 }}' }}}{% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Updated", "properties": { "previous_version": "1.1.2", "previous_build": 1234,  "version": "1.2.0", "build": 1456 }}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Application Updated",
+  "properties": {
+    "previous_version": "1.1.2",
+    "previous_build": 1234,
+    "version": "1.2.0",
+    "build": 1456
+  }
+}
+```
 
 **Property** | **Type** | **Description**
 ---          | ---      | ---
@@ -99,14 +147,31 @@ This event fires when a user updates the application. Our SDK will automatically
 
 Fire this event when a user uninstalls the application. Several destination partners will detect this for you using Silent Push Notifications and send this event to Segment on your behalf.
 
-{% comment %}{{{api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Uninstalled", "properties": {}}' }}}{% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Uninstalled", "properties": {}}'}}} {% endcomment %}
 
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Application Uninstalled",
+  "properties": {}
+}
+```
 
 ### Application Crashed
 
 You can send this event when you receive a crash notification from your app, but is not meant to supplant traditional crash reporting tools. By tracking crashes as an analytics event with device and user information, you can analyze the which types of users are impacted by crashes and how those crashes, in turn, affect their engagement. You may also want to target those customers with tailored communications in other channels if they've encountered several crashes.
 
-{% comment %}{{{api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Crashed", "properties": {}}' }}}{% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Crashed", "properties": {}}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Application Crashed",
+  "properties": {}
+}
+```
 
 ## Campaign Events
 
@@ -116,7 +181,25 @@ As the walls between apps become increasingly lowered, capturing information abo
 
 When Segment or an integrated partner can discern the source of an install, we'll collect an `Install Attributed` event. This event may be sent to Segment via server-to-server connection from your attribution provider, or directly on the device via packaged destinations. In either case, this will happen **after** install, and does not apply to all installs, which is why it is a discrete event.
 
-{% comment %}{{{api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Install Attributed", "properties": { "provider": "Tune/Kochava/Branch/AppsFlyer", "campaign": { "source": "Network/FB/AdWords/MoPub/Source", "name": "Campaign Name", "content": "Organic Content Title",  "ad_creative": "Red Hello World Ad", "ad_group": "Red Ones" }}}' }}}{% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Install Attributed", "properties": { "provider": "Tune/Kochava/Branch/AppsFlyer", "campaign": { "source": "Network/FB/AdWords/MoPub/Source", "name": "Campaign Name", "content": "Organic Content Title",  "ad_creative": "Red Hello World Ad", "ad_group": "Red Ones" }}}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Install Attributed",
+  "properties": {
+    "provider": "Tune/Kochava/Branch/AppsFlyer",
+    "campaign": {
+      "source": "Network/FB/AdWords/MoPub/Source",
+      "name": "Campaign Name",
+      "content": "Organic Content Title",
+      "ad_creative": "Red Hello World Ad",
+      "ad_group": "Red Ones"
+    }
+  }
+}
+```
 
 **Property**            | **Type** | **Description**
 ---                     | ---      | ---
@@ -132,7 +215,23 @@ When Segment or an integrated partner can discern the source of an install, we'l
 
 This event can be sent when a push notification is received in the app. It can be automatically enabled on [iOS](/sources/mobile/ios/#automatic-push-notification-tracking).
 
-{% comment %}{{{api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Push Notification Received", "properties": { "campaign": { "medium": "Push", "source": "Vendor Name", "name": "Referral Flow", "content": "Your friend invited you to play a match."}}}' }}}{% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Push Notification Received", "properties": { "campaign": { "medium": "Push", "source": "Vendor Name", "name": "Referral Flow", "content": "Your friend invited you to play a match."}}}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Push Notification Received",
+  "properties": {
+    "campaign": {
+      "medium": "Push",
+      "source": "Vendor Name",
+      "name": "Referral Flow",
+      "content": "Your friend invited you to play a match."
+    }
+  }
+}
+```
 
 **Property**        | **Type** | **Description**
 -------             | -----    | -----
@@ -145,7 +244,25 @@ This event can be sent when a push notification is received in the app. It can b
 
 This event can be sent when a user taps on a push notification associated with your app. It can be automatically enabled on [iOS](/sources/mobile/ios/#automatic-push-notification-tracking).
 
-{% comment %}{{{api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Push Notification Tapped", "properties": {"action": "Accept", "campaign": { "medium": "Push", "source": "Vendor Name", "name": "Referral Flow", "content": "Your friend invited you to play a match." }}}' }}}{% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Push Notification Tapped", "properties": {"action": "Accept", "campaign": { "medium": "Push", "source": "Vendor Name", "name": "Referral Flow", "content": "Your friend invited you to play a match." }}}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Push Notification Tapped",
+  "properties": {
+    "action": "Accept",
+    "campaign": {
+      "medium": "Push",
+      "source": "Vendor Name",
+      "name": "Referral Flow",
+      "content": "Your friend invited you to play a match."
+    }
+  }
+}
+```
+
 
 **Property**        | **Type** | **Description**
 -------             | -----    | -----
@@ -159,7 +276,24 @@ This event can be sent when a user taps on a push notification associated with y
 
 This event fires when a push notification from a provider bounces. If your push notification provider forwards push lifecycle events to Segment, they should include this event in their suite.
 
-{% comment %}{{{api-example '{ "userId": "019mr8mf4r", "action": "track", "event":"Push Notification Bounced", "properties": { "action": "Accept", "campaign": { "medium": "Push", "source": "Vendor Name", "name": "Referral Flow", "content": "Your friend invited you to play a match." }}}' }}}{% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event":"Push Notification Bounced", "properties": { "action": "Accept", "campaign": { "medium": "Push", "source": "Vendor Name", "name": "Referral Flow", "content": "Your friend invited you to play a match." }}}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event":"Push Notification Bounced",
+  "properties": {
+    "action": "Accept",
+    "campaign": {
+      "medium": "Push",
+      "source": "Vendor Name",
+      "name": "Referral Flow",
+      "content": "Your friend invited you to play a match."
+    }
+  }
+}
+```
 
 **Property**        | **Type** | **Description**
 -------             | -----    | -----
@@ -177,7 +311,19 @@ This event is fired *in addition* to the associated `Application Opened` event.
 
 Our [iOS](/docs/sources/mobile/ios/#automatic-deep-link-tracking) SDK can collect this event automatically if configured to do so.
 
-{% comment %}{{{api-example '{"userId": "019mr8mf4r", "action": "track", "event": "Deep Link Opened", "properties": {"provider": "Branch Metrics", "url": "app://landing" }}'}}}{% endcomment %}
+{% comment %} api-example '{"userId": "019mr8mf4r", "action": "track", "event": "Deep Link Opened", "properties": {"provider": "Branch Metrics", "url": "app://landing" }}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Deep Link Opened",
+  "properties": {
+    "provider": "Branch Metrics",
+    "url": "app://landing"
+  }
+}
+```
 
 **Property** | **Type** | **Description**
 ---          | ---      | ---
@@ -188,7 +334,19 @@ Our [iOS](/docs/sources/mobile/ios/#automatic-deep-link-tracking) SDK can collec
 
 This event may be provided by deep link providers postback mechanisms or an internal redirect service if you use one in order to provide a waypoint funnel step between your content or advertisement and the resulting app open.
 
-{% comment %}{{{api-example '{"userId": "019mr8mf4r", "action": "track", "event": "Deep Link Clicked", "properties": {"provider": "Branch Metrics", "url": "brnch.io/1234"}}' }}}{% endcomment %}
+{% comment %} api-example '{"userId": "019mr8mf4r", "action": "track", "event": "Deep Link Clicked", "properties": {"provider": "Branch Metrics", "url": "brnch.io/1234"}}'}}} {% endcomment %}
+
+```js
+{
+  "userId": "019mr8mf4r",
+  "action": "track",
+  "event": "Deep Link Clicked",
+  "properties": {
+    "provider": "Branch Metrics",
+    "url": "brnch.io/1234"
+  }
+}
+```
 
 **Property** | **Type** | **Description**
 ---          | ---      | ---
