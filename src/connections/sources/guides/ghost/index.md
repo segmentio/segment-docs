@@ -68,7 +68,7 @@ The first page we'll track is the Index page.
 </script>
 ```
 
-Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% endraw %}` {% endraw %} tag. That way it won't have any issues with any other logic happening on the page.
+Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% endraw %}` tag. That way it won't have any issues with any other logic happening on the page.
 
 
 ## Blog Post
