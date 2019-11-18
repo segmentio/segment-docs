@@ -43,7 +43,7 @@ Workspace owners can create labels for sources and Personas spaces from the Segm
 Labels currently only apply to Sources and Personas Spaces.
 
 4. *Where can I assign labels?*
-Workspace owners can assign bulk assign labels to sources and Personas spaces using the “Assign Labels” tab in the **Labels** screen. Source admins and Personas space admins can edit the labels on their individual resources in the “Settings” tab.
+Workspace owners can assign bulk assign labels to sources and Personas spaces using the "Assign Labels" tab in the **Labels** screen. Source admins and Personas space admins can edit the labels on their individual resources in the "Settings" tab.
 
 5. *Where can labels be used?*
 Once a label has been created and has been assigned to resources within the workspace, workspace owners can now use these labels to restrict permissions on user access, restrict which sources can be connected to a Personas space through a Connection Policy, and organize sources by viewing these labels as columns in the Sources page.
@@ -58,7 +58,7 @@ No, a label cannot be renamed. If you need to rename a label, we recommend you c
 No, you can only assign one value per category. This is to ensure there is no confusion in logic around permissions. For example, if a user is assigned permission to brand:A, it would be unclear to the workspace owner if this user gets access to a source labeled both `brand:A` and `brand:B` or only sources with the sole label `brand:A`.
 
 9. *How does assigning a user permissions based on labels work?*
-Labels are additive, so you can only further restrict a user’s permissions by adding more labels. If a user has access to everything labeled environment:production, we assume no restrictions on any other category of label. This user has less restricted permissions than another user who has access to everything with `environment:production` AND `region:apac`.
+Labels are additive, so you can only further restrict a user's permissions by adding more labels. If a user has access to everything labeled environment:production, we assume no restrictions on any other category of label. This user has less restricted permissions than another user who has access to everything with `environment:production` AND `region:apac`.
 
 For example, if the following sources had these set of labels:
 

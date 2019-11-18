@@ -3,29 +3,29 @@ title: 'Nudgespot Source'
 ---
 Nudgespot is the easiest way to trigger emails, SMS, push notifications or in-app messages to your customers, at the right time.  [Visit Website](http://www.nudgespot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
-Take your company’s email analysis to the next level by **adding Nudgespot as a Source to Segment.** We’ll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Nudgespot as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you’ll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you’ll be able to join your Nudgespot data with the event data you’re already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Nudgespot with Segment.](/sources/nudgespot)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Nudgespot data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Nudgespot with Segment.](/sources/nudgespot)
 
 ## Getting Started
 <span> </span>
 If you have previously enabled sending email events via the Nudgespot destination during our beta (using a project write key), you do not need to create new Nudgespot source. Your email data will continue to flow as normal.
 
-1. From your workspace’s `segment.com/<your-workspace>/sources page`, click `Add source`.
+1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
 
 2. Choose Nudgespot.
 
-3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you’d like, but we recommend sticking to something that reflects the Source itself, like `Nudgespot` for nickname and `nudgespot` for the schema name.
+3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you'd like, but we recommend sticking to something that reflects the Source itself, like `Nudgespot` for nickname and `nudgespot` for the schema name.
 
 4. The next page ("Overview") will surface your **Segment write key for Nudgespot.** Copy this write key. 
 
-5. To finish the setup, you’ll have to go into your Nudgespot account and enter this Segment write key in their integrations settings. Find the right place in Nudgespot in Setup > Send Email Events to Segment.com.
+5. To finish the setup, you'll have to go into your Nudgespot account and enter this Segment write key in their integrations settings. Find the right place in Nudgespot in Setup > Send Email Events to Segment.com.
 
 6. Click **Save**.
 
-7. In Segment, click into your Nudgespot Source in `segment.com/<your-workspace>/sources`. From there you’ll be able to add Destinations where you want to see email events.
+7. In Segment, click into your Nudgespot Source in `segment.com/<your-workspace>/sources`. From there you'll be able to add Destinations where you want to see email events.
 
-That’s it! As you send emails, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled. 
+That's it! As you send emails, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled. 
 
 ## Components
 
@@ -41,9 +41,9 @@ Collections are the groupings of data we pull from your Source. In your warehous
 
 <table>
   <tr>
-    <th>**Collection**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Collection</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>Email Delivered</td>
@@ -63,7 +63,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
     <tr>
     <td>Email Unsubscribed</td>
     <td>Event</td>
-    <td>Recipient clicked on message’s subscription management link</td>
+    <td>Recipient clicked on message's subscription management link</td>
   </tr>
     <tr>
     <td>Email Bounced</td>
@@ -77,7 +77,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
   </tr>
 </table>
 
-<!-- Example: To query the Email Delivered table, you’d write a query like this:
+<!-- Example: To query the Email Delivered table, you'd write a query like this:
 
 ```sql
 select *
@@ -90,4 +90,4 @@ from nudgespot.email_delivered
 
 ## Send data to Nudgespot
 
-The Nudgespot Source works better when you also connect Nudgespot as an destination. With the Nudgespot **Destination**, you can use Segment to send Nudgespot user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Nudgespot? Head on over to our [Nudgespot destination docs](/docs/integrations/nudgespot/).
+The Nudgespot Source works better when you also connect Nudgespot as an destination. With the Nudgespot **Destination**, you can use Segment to send Nudgespot user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Nudgespot? Head on over to our [Nudgespot destination docs](/docs/destinations/nudgespot/).

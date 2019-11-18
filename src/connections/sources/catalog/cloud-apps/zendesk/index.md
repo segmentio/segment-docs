@@ -2,7 +2,7 @@
 title: Zendesk Source
 ---
 
-Zendesk is a cloud-based customer service platform for enterprises. It provides a cloud-based customer support platform which allows quicker and easier interaction between businesses and customers. [Visit website](https://www.zendesk.com/)
+Zendesk is a customer service platform for enterprises, which provides a customer support platform that allows quicker and easier interaction between businesses and customers. [Visit website](https://www.zendesk.com/)
 
 This is an [Object Cloud Source](https://segment.com/docs/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
 
@@ -10,13 +10,13 @@ This document was last updated on April, 2018. If you notice any gaps, outdated 
 
 ## Getting Started
 
-1. From your workspace’s `sources` page, click `add source`.
+1. From your workspace's `sources` page, click `add source`.
 
 2. Choose Zendesk.
 
 3. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Zendesk` for nickname and `zendesk` or `zendesk_prod` for the schema name.
 
-  **Note** that you can add multiple instances if you have multiple Zendesk accounts. That’s why we allow you to customize the source’s nickname and schema name!
+  **Note** that you can add multiple instances if you have multiple Zendesk accounts. That's why we allow you to customize the source's nickname and schema name!
 
   ![](Images/zendesk1.png)
 
@@ -26,7 +26,7 @@ This document was last updated on April, 2018. If you notice any gaps, outdated 
 
   ![](Images/zendesk2.png)
 
-5. When you click Authorize, you’ll be dropped into Zendesk’s OAuth flow. Once you sign in and grant permissions, you’ll be good to go!
+5. When you click Authorize, you'll be dropped into Zendesk's OAuth flow. Once you sign in and grant permissions, you'll be good to go!
 Make sure the user has Admin authorizations as we use the incremental export API from Zendesk, which requires Admin access.
 
   ![](Images/zendesk3.png)
@@ -38,13 +38,13 @@ The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/
 
 ### Sync
 
-The Zendesk source is built with a sync component, which means we’ll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we’ll grab all the Zendesk objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance’s schema name you designated upon creation (ie. `zendesk_prod.users`).
+The Zendesk source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Zendesk objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. `zendesk_prod.users`).
 
 Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Zendesk.  For example,  if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, we don’t support filtering which objects or properties get synced. If you’re interested in this feature, please let us know!
+At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, please let us know!
 
 ## Collections
 

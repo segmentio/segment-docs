@@ -41,11 +41,11 @@ And of course, import the SDK in the files that you use it with:
 #import <Analytics/SEGAnalytics.h>
 ```
 
-### Including SDKs for destinations with Device-based Connection Modes
+### Including SDKs for destinations using Device-mode
 
-In the interest of keeping our SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data will be sent via Segment's servers to any tools you've enabled by the default Cloud-based Connection Mode.
+In the interest of keeping our SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data is sent using Segment's servers to any tools you've enabled using the default Cloud-mode.
 
-[As described here](/docs/integrations/#why-do-some-integrations-offer-or-require-device-based-connection-modes-), some integrations require or offer Device-based Connection Modes. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/sources/mobile/ios#packaging-destinations-with-device-based-connection-modes).
+[As described here](/docs/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/sources/mobile/ios#packaging-destinations-using-device-mode).
 
 Now that the SDK is installed and setup, you're ready to...
 
@@ -94,7 +94,7 @@ configuration.trackPushNotifications = YES;
 ```
 
 ### Automatic Deep Link Tracking
-Tracking deep linking will automatically track `Deep Link Clicked` and `Deep Link Opened`. 
+Tracking deep linking will automatically track `Deep Link Clicked` and `Deep Link Opened`.
 
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
@@ -204,7 +204,7 @@ The `track` call has the following fields:
 
 The [`screen`](/docs/spec/screen/) method lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
 
-You’ll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
+You'll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
 
 Example `screen` call:
 
@@ -236,7 +236,7 @@ Find details on the **`screen` payload** in our [Spec](/docs/spec/screen/).
 
 `group` lets you associate an [identified user](/docs/sources/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/integrations/intercom/), [Preact](/docs/integrations/preact/) and [Totango](/docs/integrations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
 
 Example `group` call:
 
@@ -272,7 +272,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/integrations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/integrations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/destinations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/destinations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -313,6 +313,10 @@ Clearing all information about the user is as simple as calling:
 [[SEGAnalytics sharedAnalytics] reset];
 ```
 
+Events queued on disk are not cleared and are uploaded the next time the app starts.
+
+> **Note**: Each time you call `reset`, a new AnonymousId is generated the next time the app is opened, which can impact the number of Monthly Tracked Users (MTUs) you process.
+
 ### Disabling Data Collection for Users who opt out
 
 Depending on the audience for your app (e.g. children) or the countries where you sell your app (e.g. the EU), you may need to offer the ability for users to opt-out of analytics data collection inside your app. You can turn off forwarding to ALL destinations including Segment itself:
@@ -327,7 +331,7 @@ Or if they opt-back-in, you can re-enable data collection:
 [[SEGAnalytics sharedAnalytics] enable];
 ```
 
-Note: disabling the Segment SDK ensures that all data collection method invocations (eg. `track`, `identify`, etc) are ignored; however, it does not tear down inititialized SDKs. If your packaged SDKs are collecting data automatically or outside of Segment, disabling Segment does not address that. We recommend invoking corresponding disable methods in each of your packaged SDKs in response to user opt-out to ensure any automatic data collection is stopped. 
+Note: disabling the Segment SDK ensures that all data collection method invocations (eg. `track`, `identify`, etc) are ignored; however, it does not tear down inititialized SDKs. If your packaged SDKs are collecting data automatically or outside of Segment, disabling Segment does not address that. We recommend invoking corresponding disable methods in each of your packaged SDKs in response to user opt-out to ensure any automatic data collection is stopped.
 
 ## Selecting Destinations
 
@@ -345,7 +349,7 @@ options:@{
 }
 ```
 
-Here’s an example showing an `- track:` call that is sent to all enabled destinations except Mixpanel:
+Here's an example showing an `- track:` call that is sent to all enabled destinations except Mixpanel:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] track:@"Product Rated"
@@ -353,9 +357,9 @@ Here’s an example showing an `- track:` call that is sent to all enabled desti
                               options:@{ @"integrations": @{ @"All": @YES, @"Mixpanel": @NO }}];
 ```
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/integrations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
-**Note:** Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it’s a much simpler way of managing your filters and can be updated with no code changes on your side.
+**Note:** Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
 ### Destinations in Debugger
 
@@ -420,7 +424,7 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 `context` is an object that encapsulates everything about an event in the stream. `next` is a callback function that should be invoked when the current middleware is done processing the event and can pass the processed event down to the next middleware in the chain.
 
-`SEGContext` object is not very information rich by itself. Typically you will need to use `eventType`  and `payload` to get more information about an event. 
+`SEGContext` object is not very information rich by itself. Typically you will need to use `eventType`  and `payload` to get more information about an event.
 
 ```
 @interface SEGContext : NSObject <NSCopying>
@@ -439,9 +443,9 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 - (SEGContext *_Nonnull)modify:(void (^_Nonnull)(id<SEGMutableContext> _Nonnull ctx))modify;
 
 @end
-```   
+```
 
-If you look at `SEGEventType` more carefully, you’ll realize that middleware is not only capable of handling `track` , `identify` and other normal analytics APIs, even calls like `reset` , `flush` and `openURL` go through and can therefore be processed by the middleware pipeline.
+If you look at `SEGEventType` more carefully, you'll realize that middleware is not only capable of handling `track` , `identify` and other normal analytics APIs, even calls like `reset` , `flush` and `openURL` go through and can therefore be processed by the middleware pipeline.
 
 ```
 typedef NS_ENUM(NSInteger, SEGEventType) {
@@ -485,7 +489,7 @@ There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enu
 @end
 ```
 
-Finally, to use a middleware, you will need to provide it to the `SEGAnalyticsConfiguration` object prior to the initialization of `SEGAnalytics` . 
+Finally, to use a middleware, you will need to provide it to the `SEGAnalyticsConfiguration` object prior to the initialization of `SEGAnalytics` .
 
 ```
 @interface SEGAnalyticsConfiguration : NSObject
@@ -689,7 +693,7 @@ To use the `master` branch for Carthage users, use this line in your `Cartfile`:
 github "segmentio/analytics-ios" "master"
 ```
 
-## Packaging Destinations with Device-based Connection Modes
+## Packaging Destinations using Device-mode
 
 By default, our `Analytics` pod packages no external SDKs.
 
@@ -697,7 +701,7 @@ By default, our `Analytics` pod packages no external SDKs.
 pod 'Analytics', '~> 3.1.0'
 ```
 
-If you would like to add any destinations with Device-based Connection Modes, first add the dependencies you need. You can find these in our app when you open the destination sheet for any mobile destination with a Device-based Connection Mode option.
+To add destinations using Device-mode, first add the dependencies you need. You can find these in our app when you open the destination sheet for any mobile destination with a Device-mode option.
 
 
 
@@ -716,7 +720,7 @@ After adding the dependency, you must register the destination with our SDK.
 
 SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 
-// Add any of your Device-based destinations.
+// Add any of your Device-mode destinations.
 [config use:[SEGGoogleAnalyticsIntegrationFactory instance]];
 [config use:[BNCBranchIntegrationFactory instance]];
 ...
@@ -724,7 +728,7 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 [SEGAnalytics setupWithConfiguration:config];
 ```
 
-We recommend using Device-based destinations and Connection Modes sparingly to reduce the size of your application.
+We recommend using Device-mode destinations sparingly to reduce the size of your application.
 
 ## FAQ
 
@@ -753,7 +757,7 @@ Please note, if you are choosing to not use a dependency manager, you must keep 
 
 ### What if your SDK doesn't support feature X?
 
-If you're using a Device-based Connection Mode for a mobile destination, if you want to access a feature from a tool's native SDK, you can include the header file and call the method just as normal.
+If you're using a Device-mode for a mobile destination, if you want to access a feature from a tool's native SDK, you can include the header file and call the method just as normal.
 
 For example, you might want access to Flurry's location logging or Localytics's attribution parameters. To use the destination's SDK, just import the headers and then access the SDK as you would without Segment. We'll still handle initialization, event, screen & user tracking, plus all the proxied services and data storage for you.
 
@@ -779,11 +783,11 @@ For services that send push notifications, you first want to [create a Push SSL 
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   SEGAnalyticsConfiguration* configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
-  
+
   // Use launchOptions to track tapped notifications
   configuration.launchOptions = launchOptions;
   [SEGAnalytics setupWithConfiguration:configuration];
-  
+
   if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerForRemoteNotifications)]) {
     UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeSound |
     UIUserNotificationTypeBadge;
@@ -856,7 +860,7 @@ Our SDK does not support iOS 5. If you need support for iOS 5 it's possible by f
 
 ### Is The Segment SDK Compatible with Swift?
 
-Indeed! Swift’s compatibility with Objective-C lets you create a source that contains files written in either language, so to use our SDK from a Swift source just follow the instructions from Apple [here](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
+Indeed! Swift's compatibility with Objective-C lets you create a source that contains files written in either language, so to use our SDK from a Swift source just follow the instructions from Apple [here](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
 
 ### Can I help develop a destination?
 
@@ -925,37 +929,37 @@ This was due to an old [CocoaPods limitation](https://github.com/CocoaPods/Cocoa
    ```
 
 ### No events in my debugger
-1. Verify you have followed all [Getting Started](docs/sources/mobile/ios/#getting-started) steps 
+1. Verify you have followed all [Getting Started](/docs/sources/mobile/ios/#getting-started) steps
 2. Verify you have entered the correct writeKey for your source
     - If the writeKey you have entered is something other than a string or an empty string your app may crash
-    - If the writeKey you have entered is a valid form but not the correct writeKey for your specific source, you will not see an error response. Data will be accepted by Segment but not able to be correctly routed to your source (debugger). 
+    - If the writeKey you have entered is a valid form but not the correct writeKey for your specific source, you will not see an error response. Data will be accepted by Segment but not able to be correctly routed to your source (debugger).
 3. [Enable logging](/docs/sources/mobile/ios/#logging) to confirm if call is being sent to Segment
 
 
-### No events in my destinations 
+### No events in my destinations
 1. Verify that your destination is enabled
 2. Verify your destination credentials entered in your Segment dashboard are correct
-3. Make sure the destination can accept what you’re sending:  
-   - Does the integration have device-mode/cloud-mode support? Confirm you are sending via the correct connection mode. 
+3. Make sure the destination can accept what you're sending:
+   - Does the integration have device-mode/cloud-mode support? Confirm you are sending via the correct connection mode.
    - Does the destination accept the type of call you are sending? Not all destinations accept all calls: page, track, etc.
 4. If you are still not seeing data in your destination, continue debugging based on which type of connection mode you are using.
 
 
-### Debugging Device-Based Connection Mode Destinations
+### Debugging Device-mode Destinations
 
-If you are using device-based connection mode, you should see the value of that integration set to false in the `integrations` object. That means that the data is being sent from the device to the destination SDK, and not through Segment’s servers. This is expected if you elected to use a device-based connection mode destination’s SDK with Segment’s during installation. 
+If you are using device-mode, you should see the value of that integration set to false in the `integrations` object. That means that the data is being sent from the device to the destination SDK, and not through Segment's servers. This is expected if you chose to use a device-mode destination's SDK with Segment's during installation.
 
 Enable verbose [logging](/docs/sources/mobile/ios/#logging) and trigger the call in question. You should see a call to Segment triggered as well as to the partner SDK.  It will show you exactly which partner method was invoked and the arguments it was invoked with!
 
-### Debugging Cloud-Based Connection Mode Destinations
+### Debugging Cloud-mode Destinations
 
-Look at the raw JSON in your debugger.  Does the call look like what is expected? 
+Look at the raw JSON in your debugger.  Does the call look like what is expected?
 
-Read through [the docs for that destination](/docs/destinations/) to see expected event format, behavior and caveats for that destination. 
+Read through [the docs for that destination](/docs/destinations/) to see expected event format, behavior and caveats for that destination.
 
 ### Migrating to v3 from earlier releases
 
-v3 was an API compatible release, but there are a few additional steps for packaging destinations with Device-based Connection Modes and migrating from the older data format.
+v3 was an API compatible release, but there are a few additional steps for packaging destinations using Device-mode and migrating from the older data format.
 
 Firstly, we changed how the anonymousId was stored between v2 and v3. You'll need to read the old anonymousId and set it so that it's moved to the new location.
 
@@ -970,7 +974,7 @@ if (oldAnonymousId) {
 }
 ```
 
-In version 3, we’ve organized the destinations to be make the core SDK even leaner and smaller. The `Analytics/Segmentio` pod is not available any longer. It has been renamed to `Analytics` (which previously packaged all possible destinations). Version 3 of `Analytics` only includes the core library which forwards data directly to . To add a destination with a Device-based Connection Mode, you must manually add that destination's dependencies, like so:
+In version 3, we've organized the destinations to be make the core SDK even leaner and smaller. The `Analytics/Segmentio` pod is not available any longer. It has been renamed to `Analytics` (which previously packaged all possible destinations). Version 3 of `Analytics` only includes the core library which forwards data directly to . To add a destination using Device-mode, you must manually add that destination's dependencies, like so:
 
 ```ruby
 pod 'Segment-Bugsnag'
@@ -989,7 +993,7 @@ pod 'Segment-GoogleAnalytics'
 
 SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 
-// Add any of your Device-based destination components.
+// Add any of your Device-mode destination components.
 [config use:[SEGGoogleAnalyticsIntegrationFactory instance]];
 [config use:[BNCBranchIntegrationFactory instance]];
 ...
@@ -1003,7 +1007,7 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 Feel free to [reach out to us](/help) with the following information:
 
 - The version of our SDK you are using
-- Whether you are using device-based or cloud-based connection mode
-- Logs of the call in question 
+- Whether you are using device- or cloud-mode
+- Logs of the call in question
 - Screenshots of the event in the Segment debugger
 - Screenshots of what you are seeing in your destination

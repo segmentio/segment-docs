@@ -1,27 +1,40 @@
 ---
-title: Braze
+title: Braze Source
 ---
 
-Braze is a marketing automation and customer engagement platform. Growth, Engagement, and Marketing teams use Braze to build great long term relationships with their customers across key digital channels.  
+[Braze](https://www.braze.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a marketing automation and customer engagement platform. Growth, Engagement, and Marketing teams use Braze to build great long term relationships with their customers across key digital channels.
 
-Take your company’s marketing and customer engagement to the next level by adding Braze as a Segment Source, via Braze's Currents product. We’ll automatically collect marketing and analytics events, forward them to your destinations, and load them into your data warehouse.
+Take your company's marketing and customer engagement to the next level by adding Braze as a Segment Source, via Braze's Currents product. We'll automatically collect marketing and analytics events, forward them to your destinations, and load them into your data warehouse.
 
-In your favorite BI or analytics tool, you’ll be able to analyze your mobile, email, and web marketing campaign data in SQL or through drag-and-drop reports. You’ll be able to join your Braze data with the event data you’re already sending through Segment to analyze the impacts of your marketing and engagement programs.
+In your favorite BI or analytics tool, you'll be able to analyze your mobile, email, and web marketing campaign data in SQL or using drag-and-drop reports. You'll be able to join your Braze data with the event data you're already sending through Segment to analyze the impacts of your marketing and engagement programs.
+
+This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into other enabled Segment Destinations.
+
+This source is maintained by Braze. For any issues with the source, you may [contact their team](https://www.braze.com/docs/support_contact/).
+
+This document was last updated on October 03, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+
+_**NOTE:** If you are interested in using Braze, please reach out to your Braze Customer Success Manager. Braze Currents is only available in select Braze packages and cannot be configured within Braze without assistance from their team._
 
 ## Getting Started
 
-1. From your workspace Overview page, click Add Source.
-2. Choose Braze
-3. Give the Source a name. The name will be used to identify this source within your workspace. You can name it however you’d like, but we recommend sticking to something that reflects the Source itself, like Braze.
-4. The next page "Overview" will surface your Segment write key for Braze. Copy this write key.
-5. To finish the setup, you need to activate "Currents" in Braze which requires reaching out to Braze Support or your Customer Support Manager. Braze Currents is only available in select Braze packages and cannot be configured within Braze without assistance from your Braze Customer Success representative.  
+1. From the Segment Sources page click **Add Source**.
+2. Search for "Braze" in the Sources Catalog and confirm by clicking "Connect".
+3. Give the Source a nickname and follow the setup steps to "Add Source".
+   The nickname is used as a label for the source in your Segment interface, and Segment creates a related schema name. The schema name is the namespace you'll query against in a warehouse. The nickname can be anything, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (for example, `Braze_Prod`, `Braze_Staging`, `Braze_Dev`).
+4. The next page "Overview" shows the Segment write key for Braze. Copy this write key.
+5. To finish set up, contact Braze Support or your Customer Support Manager to activate "Currents" in Braze.
+   Braze Currents is only available in select Braze packages and cannot be configured within Braze without assistance from your Braze Customer Success representative.
+6. Go back to Segment, click into the Braze Source and you can add Destinations where you want to receive your Braze data.
+   Events are now sent to these destinations and automatically loaded into any warehouses you have enabled.
 
+## Components
+**Stream**
+Braze uses our stream Source component to send events to Segment. These events are then available in any Destination that accepts server-side events, including your data warehouse.
 
-Now when you go back to Segment, click into your Braze Source and you’ll be able to add Destinations where you want to receive your Braze data. Events will now be sent to your destinations and automatically loaded into any warehouses you have enabled.
+## Events
 
-## Braze Events
-
-Below is a table of events that Braze sends to Segment. These are the events that will appear in your warehouse or your destinations, depending on what connections you enable in Segment:
+Below is a table of events that Braze sends to Segment. These events show up as tables in your Warehouse, and as regular events in your other Destinations.
 
 <table>
   <tr>
@@ -55,7 +68,7 @@ Below is a table of events that Braze sends to Segment. These are the events tha
   <tr>
   <tr>
    <td>Email Soft Bounced</td>
-   <td>Braze attempted to send an email, but the User’s receiving mail server temporarily bounced it. (Reasons may include: inbox full, server down, etc.)</td>
+   <td>Braze attempted to send an email, but the User's receiving mail server temporarily bounced it. (Reasons may include: inbox full, server down, etc.)</td>
   </tr>
   <tr>
    <td>Email Marked As Spam</td>
@@ -67,7 +80,7 @@ Below is a table of events that Braze sends to Segment. These are the events tha
   </tr>
   <tr>
    <td>Subscription Group State Changed</td>
-   <td>User’s subscription group state changed to ‘Subscribed’ or ‘Unsubscribed’</td>
+   <td>User's subscription group state changed to `Subscribed` or `Unsubscribed`</td>
   </tr>
   <tr>
    <td>Push Notification Sent</td>
@@ -129,7 +142,7 @@ Below is a table of events that Braze sends to Segment. These are the events tha
 
 ## Braze Event Properties
 
-Below is a table of properties that are sent for the events above:
+Below are tables outlining the properties included in the events listed above.
 
 <table>
   <tr>
@@ -184,14 +197,16 @@ Below is a table of properties that are sent for the events above:
   </tr>
 </table>
 
-*NOTE*: The Braze Source is currently in Beta. **The names of Apps, Campaigns, Canvases (including Canvas Variations and Canvas Steps), and News Feed Cards will be made available as event properties in an upcoming version of the source, in addition to the API Identifiers already listed above**.
-
-## User Identification
-
 Braze will send the Braze `external_user_id` as the top level `userId` field. This is the same `userId` that Braze originally receives from the downstream destination with Segment. Braze will only send events associated with users who have an `external_user_id` set.
 
-## Send Segment Data to Braze
+## Adding Destinations
 
-The entire source with Braze can be even better if you also connect to it as a downstream destination within Segment. With Segment's Braze destination, you can send user and event data to Braze in order to target customers with messaging campaigns.
+Now that your Source is set up, you can connect it with Destinations.
 
-Want to start sending website or mobile data to Braze? Head on over to our [Braze destination docs](https://segment.com/docs/destinations/braze/).
+Log in to your downstream tools and make sure that the events are populating in your Debugger, and that they contain all of the properties you expect. If something isn't working as you expect, see the Destination docs for troubleshooting.
+
+If there are problems with how the events arrive to Segment, [contact the Braze team](https://www.braze.com/docs/support_contact/).
+
+## Sending Data To Braze
+
+The Braze Source works better when you also connect Braze as a Destination. With the Braze Destination, you can use Segment to send event data to Braze in order to target customers with messaging campaigns. Want to start sending data TO Braze? Head on over to our [Braze docs](https://segment.com/docs/destinations/braze/).

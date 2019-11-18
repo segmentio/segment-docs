@@ -1,5 +1,5 @@
 ---
-title: 'Amplitude Cohorts Event Source'
+title: 'Amplitude Engage Event Source'
 ---
 
 This source combines Amplitude's analytics with Segment's rich connections
@@ -11,7 +11,7 @@ Segment `identify` events.
 
 ## Getting Started
  1. From your Sources page in Segment, click **Add source**.
- 2. Choose **Amplitude Cohorts**, then click **Connect**.
+ 2. Choose **Amplitude Engage**, then click **Connect**.
  3. Give the Source a nickname. The nickname is a label used in the Segment interface.
  4. From the new Source's Overview page, copy the Segment `writeKey`.
  5. To export users from Amplitude to Segment, first, in Amplitude, create the
@@ -33,11 +33,11 @@ Segment `identify` events.
  7. If you would like to set up automated export on an hourly or daily basis,
     you can use Amplitude's Cohort Sync feature. Click "Advanced Preferences"
     and select "Segment" as the integration.
- 8. From your Segment account, click into your Amplitude Cohorts Source, and
-     you’ll be able to add other downstream destinations where you want to see
+ 8. From your Segment account, click into your Amplitude Engage Source, and
+     you'll be able to add other downstream destinations where you want to see
      your Behavioral Cohort data.
 
-You’re all set! Behavioral Cohorts will now sync to Segment based on the sync
+you're all set! Behavioral Cohorts will now sync to Segment based on the sync
 schedule you defined in Amplitude.
 
 ## How Amplitude Syncs Cohorts

@@ -1,5 +1,5 @@
 ---
-title: Delighted
+title: Delighted Source
 rewrite: true
 ---
 [Delighted](https://delighted.com/) is the fastest and easiest way to gather actionable feedback from your customers. Use the feedback you gather from customers in all of your decision making processes. Send your feedback to your BI and data warehouses automatically.
@@ -12,11 +12,11 @@ This document was last updated on October 19, 2018. If you notice any gaps, outd
 
 ## Getting Started
 
-1. From your Segment UI’s Sources page click on "Add Source".
+1. From your Segment UI's Sources page click on "Add Source".
 2. Search for Delighted within the Sources Catalog and confirm by clicking "Connect".
 3. Give the Source a nickname and follow the setup steps to "Add Source". The nickname is used as a label for the source in your Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be anything, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Sign in to your Delighted account and visit the [Segment destination](https://delighted.com/integrations/segment) to connect.
-5. Once you connect with Segment you need to choose which ‘track’ events you’d like to use as triggers for surveys to be sent people. Then you can configure Delighted to send feedback back to Segment by following the next 2 steps.
+5. Once you connect with Segment you need to choose which `track` events you'd like to use as triggers for surveys to be sent people. Then you can configure Delighted to send feedback back to Segment by following the next 2 steps.
 6. Enable the "Sync feedback to Segment" option.
 7. Copy the Write Key from your Delighted source within Segment and paste it into the provided box within Delighted
 
@@ -118,4 +118,4 @@ If there are any issues with how the events are arriving to Segment, please [con
 
 ## Sending Data To Delighted
 
-The Delighted Source works only when you also connect Delighted as a downstream destination within Segment. With the Delighted Destination, you can send Delighted user and event data, which you can use to trigger surveys. Head on over to our [Delighted destination docs](https://segment.com/docs/integrations/delighted/).
+The Delighted Source works only when you also connect Delighted as a downstream destination within Segment. With the Delighted Destination, you can send Delighted user and event data, which you can use to trigger surveys. Head on over to our [Delighted destination docs](/docs/destinations/delighted/).

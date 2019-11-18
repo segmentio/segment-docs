@@ -9,7 +9,7 @@ This will allow you to write SQL to analyze your analyze your email marketing ca
 
 This is an [Object Cloud Source](https://segment.com/docs/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
 
-_**NOTE:** Marketo is currently in beta and this doc was last updated on April 30, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you have any feedback to help us improve the {{integration.name}} Source and its documentation, and please [let us know](https://segment.com/help/contact)!_
+_**NOTE:** Marketo is currently in beta and this doc was last updated on April 30, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you have any feedback to help us improve the Marketo Source and its documentation, and please [let us know](https://segment.com/help/contact)!_
 
 ## Getting Started
 
@@ -19,22 +19,22 @@ You will need Admin permissions to your Marketo account.
 
 ### Add a new Marketo source
 
-1. From your workspace’s `sources` page, click `add source`.
+1. From your workspace's `sources` page, click `add source`.
 2. Choose Marketo.
 3. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like Marketo for nickname and marketo or marketo_prod for the schema name.
 4. Configure your Marketo source with the required settings (see section below for details)
-![](https://dzwonsemrish7.cloudfront.net/items/3u1T0g1e1B3S1i012005/Image%202018-04-30%20at%205.27.07%20PM.png)
+![](images/Image2018-04-30at5.27.07PM.png)
 
 
 ### Configure your Marketo Source
 
 1. Open Marketo
 2. Go to Admin > Munchkin to find your Munchkin Account ID
-![](https://cl.ly/3V231x470L1X/Image%202018-04-30%20at%205.28.54%20PM.png)
+![](images/Image2018-04-30at5.28.54PM.png)
 3. Go to Admin > LaunchPoint
-  a. If you don’t already have a REST service setup, follow [these steps](http://developers.marketo.com/rest-api/custom-services/).
+  a. If you don't already have a REST service setup, follow [these steps](http://developers.marketo.com/rest-api/custom-services/).
   b. Then, copy the "Client ID" and "Client Secret" parameters.
-  ![](https://cl.ly/0S060P2Y2E3R/Image%202018-04-30%20at%205.29.32%20PM.png)
+  ![](images/Image2018-04-30at5.29.32PM.png)
   c. Paste the "Client ID" and "Client Secret" into the Segment Marketo source settings.
 
 You're done! Data should start flowing into your Warehouse in the next few hours.
@@ -45,7 +45,7 @@ You're done! Data should start flowing into your Warehouse in the next few hours
 ### Sync
 
 
-The Marketo source is built with a sync component, which means we’ll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we’ll grab all the Marketo objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance’s schema name you designated upon creation (ie. my_source.charges).
+The Marketo source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Marketo objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. my_source.charges).
 
 Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Marketo. For example, if `first_name` goes from `Jess` to `Jessica` between syncs, on its next sync that field will be `Jessica`.
 
@@ -273,16 +273,16 @@ If you have other applications that use the Marketo API, this can interfere with
 
 ### What Marketo API are you using?
 
-We’re primarily using the REST API, but also use the Lead Activity Bulk API to reduce the number of requests needed to sync.
+We're primarily using the REST API, but also use the Lead Activity Bulk API to reduce the number of requests needed to sync.
 
 ### Can I get other collections not default synced by the source?
 
 Yes! Please [contact us](/help/contact) to request additional collections.
 
 ### Can I get other columns not default synced by the source?
-Yes! For leads and activities, we’ve introduced a custom fields setting where you can enter comma-separated (no spaces, etc.) custom fields to sync by their REST API name.
+Yes! For leads and activities, we've introduced a custom fields setting where you can enter comma-separated (no spaces, etc.) custom fields to sync by their REST API name.
 
-![](https://d2mxuefqeaa7sj.cloudfront.net/s_6D5CE4EA856EC72E0480B346CB0DE60F99C9F293F87452BF5BA91C853297F834_1470282525853_Screen+Shot+2016-08-03+at+8.48.29+PM.png)
+![](images/s_6D5CE4EA856EC72E0480B346CB0DE60F99C9F293F87452BF5BA91C853297F834_1470282525853_Screen+Shot+2016-08-03+at+8.48.29+PM.png)
 
 
  By default, we only sync the following fields on the leads collection:
@@ -294,4 +294,4 @@ Yes! For leads and activities, we’ve introduced a custom fields setting where 
 - createdAt
 - updatedAt
 
-You can find a full list of standard fields and their REST API names [here](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/). If there are other fields you’re interested in, [contact us](/help/contact) and we’ll get you setup.
+You can find a full list of standard fields and their REST API names [here](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/). If there are other fields you're interested in, [contact us](/help/contact) and we'll get you setup.

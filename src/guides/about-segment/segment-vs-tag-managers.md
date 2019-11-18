@@ -23,7 +23,7 @@ While it is also possible to fire Segment's Analytics.js library through a tag m
 
 - Segment's Engineering team conduct all QA and regression testing assuming a native installation of Analytics.js on the page. They do not check for a tag manager 'hybrid' approach. Therefore when it comes to troubleshooting, it can be difficult to pinpoint root cause of a technical issue.
 
-- One of Segment's main charters is to not lose data. Our system and cloud infrastructure is designed to ensure that data loss does not happen. If you implement the entry point of data capture (Segment’s libraries) through an additional tool like a Tag Manager, you introduce additional risk of data loss and make it difficult or impossible to troubleshoot.
+- One of Segment's main charters is to not lose data. Our system and cloud infrastructure is designed to ensure that data loss does not happen. If you implement the entry point of data capture (Segment's libraries) through an additional tool like a Tag Manager, you introduce additional risk of data loss and make it difficult or impossible to troubleshoot.
 
 - This implementation architecture can cause major performance issues, such as delays with any events that need to occur early in your funnel.
 

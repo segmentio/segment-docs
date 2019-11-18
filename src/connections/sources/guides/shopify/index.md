@@ -29,7 +29,7 @@ Once your Segment account is ready to go you'll need to copy/ paste a few lines 
 
 Everything you need can be found in your Shopify Admin under Themes > Customize Theme > Edit HTML/CSS. Each section below includes a reference to one of the folders and liquid templates that can be found on the left side of this page.
 
-If you want to track all events as [non-interaction to Google Analytics](/docs/integrations/google-analytics/#non-interaction-events), make sure to add an event property to specify this.
+If you want to track all events as [non-interaction to Google Analytics](/docs/destinations/google-analytics/#non-interaction-events), make sure to add an event property to specify this.
 
 
 ### 2a: Add Your Snippet to All Pages
@@ -387,21 +387,21 @@ Following step 2f, I added my snippet (write key removed for the example) and th
 _________
 
 For this example, I added a little check:
-![](https://cloudup.com/c9uURuw6uzV+)
+![](images/c9uURuw6uzV.png)
 
 _________
 
 Analytics calls as expected on page leading to Checkout:
-![](https://cloudup.com/crS2yIB6Q5F+)
+![](images/crS2yIB6Q5F.png)
 
 _________
 
 No Segment activity on the actual Checkout pages:
-![](https://cloudup.com/cBl8eW59DkH+) ![](https://cloudup.com/cxTrdae3J37+)
+![](images/cBl8eW59DkH.png) ![](images/cxTrdae3J37.png)
 
 _________
 
 On the final Thank You/ Order Status page, Segment is collecting data again and the little check event "Checkout - Additional contents and scripts" is fired:
-![](https://cloudup.com/cGy2NE9qog5+)
+![](images/cGy2NE9qog5.png)
 
 _________

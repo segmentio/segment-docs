@@ -26,7 +26,7 @@ You can always click the Segment logo in the top left corner to get back to the 
 
 The Sources tab lists everything that is sending data to your Segment workspace. Sources are organized by type: website, mobile, sever, or by cloud-app type, like CRM or payments.
 
-Each Source has a Status and a list of Destinations. A Source’s Status tells you whether or not the source is sending data to Segment, and how long it's been since we last saw data from the source. The Source’s Destinations list shows you which Destinations are receiving data from that Source. You can expand them for more detail.
+Each Source has a Status and a list of Destinations. A Source's Status tells you whether or not the source is sending data to Segment, and how long it's been since we last saw data from the source. The Source's Destinations list shows you which Destinations are receiving data from that Source. You can expand them for more detail.
 
 ## Destinations
 
@@ -44,7 +44,7 @@ The Catalog is always growing, so check out the "New and Noteworthy" section fro
 
 ## Personas and Protocols
 
-If you have Protocols or Personas enabled in your workspace, you’ll see sections for those too. Protocols helps you structure and maintain the format of the data you send through Segment, and Personas helps you use your Segment data to build audiences and better understand your users.
+If you have Protocols or Personas enabled in your workspace, you'll see sections for those too. Protocols helps you structure and maintain the format of the data you send through Segment, and Personas helps you use your Segment data to build audiences and better understand your users.
 
 These features are fairly advanced, but you can learn more about them by [requesting a demo](https://segment.com/contact/sales/), or reading more in the [Personas documentation](/docs/personas/), and the [Protocols documentation](/docs/protocols/).
 

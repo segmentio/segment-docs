@@ -31,13 +31,13 @@ We occasionally offer special promotions. Customers will be notified directly if
 Coupons are applied to your monthly (or annual) bill, which reduces the corresponding charge to your credit card. Coupons can either take the format of a percent-off or a dollar value-off your bill. If your coupon is a percentage-off your bill, the dollar value of the coupon may change as your bill may fluctuate month-to-month.
 
 **How do I redeem a coupon?**
-Eligible startups can [apply directly](http://segment.com/industry/startups) for the Segment Startup Program. Other coupons can be redeemed by reaching out to Segment’s [support](https://segment.com/contact/billing) team, who will apply the promotion to your account.
+Eligible startups can [apply directly](http://segment.com/industry/startups) for the Segment Startup Program. Other coupons can be redeemed by reaching out to Segment's [support](https://segment.com/contact/billing) team, who will apply the promotion to your account.
 
 **Where can I view which coupons are applied to my account?**
 The Startup Program credits are reflected in the Workspace usage and billing page. Other coupons applied to your workspace are not currently reflected in the Segment application. If you are curious about a promotion you are currently on, or if you workspace has a coupon applied, please reach out [to our support team](https://segment.com/contact/billing).
 
 **Do I have to be a "new" customer to receive a coupon?**
-The Segment Startup Program is only for customers that have not previously received any other coupon. Both the non-profit and accelerator promotion can be redeemed regardless if you’re a new customer or have been with us for years. A user/workspace can only receive any coupon once.
+The Segment Startup Program is only for customers that have not previously received any other coupon. Both the non-profit and accelerator promotion can be redeemed regardless if you're a new customer or have been with us for years. A user/workspace can only receive any coupon once.
 
 **What happens when my coupon expires?**
 When your promotion expires, your bill returns to the normal, non-discounted rate. Certain promotions may include a follow-up discount immediately after the promotion expires.

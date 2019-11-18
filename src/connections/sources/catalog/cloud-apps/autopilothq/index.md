@@ -1,9 +1,9 @@
 ---
-title: Autopilot
+title: Autopilot Source
 ---
 [Autopilot](https://autopilothq.com/) makes automating customer journeys as simple as drawing on a whiteboard. Engage at just the right time with personalized emails, in-app messages, SMS, and postcards.
 
-Take your company’s email analysis to the next level by adding Autopilot as a Source to Segment. We’ll automatically collect email events like Email Delivered and Email Opened, forward them to your destinations, and load them into your data warehouse.
+Take your company's email analysis to the next level by adding Autopilot as a Source to Segment. We'll automatically collect email events like Email Delivered and Email Opened, forward them to your destinations, and load them into your data warehouse.
 
 This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
@@ -13,12 +13,12 @@ This document was last updated on October 19, 2018. If you notice any gaps, outd
 
 ## Getting Started
 
-1. From your Segment UI’s Sources page click on "Add Source".
+1. From your Segment UI's Sources page click on "Add Source".
 2. Search for AutopilotHQ within the Sources Catalog and confirm by clicking "Connect".
 3. Give the Source a nickname and follow the setup flow to "Add Source". The nickname is a label used in the Segment interface, and Segment creates a related schema name, which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Sign in to your Autopilot account and visit the [Segment destination](https://app.autopilothq.com/#settings/app-connections/segment-sync) to connect.
 
-![](https://i.gyazo.com/4764ec5d9aeb26bd0e503604db243dae.gif)
+![](images/4764ec5d9aeb26bd0e503604db243dae.gif)
 
 ## Components
 **Stream**
@@ -61,7 +61,7 @@ Additionally, Autopilot also sends `email` and `contact_id` under `context.trait
   </tr>
   <tr>
    <td>Email Unsubscribed</td>
-   <td>Recipient clicked on message’s subscription management link</td>
+   <td>Recipient clicked on message's subscription management link</td>
   </tr>
   <tr>
    <td>Email Replied</td>

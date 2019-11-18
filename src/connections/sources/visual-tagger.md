@@ -1,16 +1,16 @@
 ---
-title: Visual Tagger User Guide
-sourceTitle: 'Visual Tagger (Beta)'
+title: Visual Tagger (Alpha) User Guide
+sourceTitle: 'Visual Tagger (Alpha)'
 sourceCategory: 'Tools'
 ---
 
-**Note**: Downloading the Visual Tagger Chrome Extension constitutes acknowledgment of the [Visual Tagger Beta Product Terms and Conditions](#Beta-Product-Terms-Conditions), and acceptance of the [Segment Beta Terms and Conditions](/docs/legal/first-access-beta-preview/).
+**Note**: Downloading the Visual Tagger Chrome Extension constitutes acknowledgment of the [Visual Tagger Alpha Product Terms and Conditions](#Alpha-Product-Terms-Conditions), and acceptance of the [Segment Alpha Terms and Conditions](/docs/legal/first-access-beta-preview/). If you are interested in gaining access to the Visual Tagger (Alpha), please email beta@segment.com! 
 
 ## Overview
 
-Segment offers tons of functionality with downstream integrations once you’ve started sending data into Segment, but the first step of setting up event tracking on your website or web app can be a challenge! Segment’s Visual Tagger shortens the process of implementing event tracking on your site by letting you add events without writing any code.
+Segment offers tons of functionality with downstream integrations once you've started sending data into Segment, but the first step of setting up event tracking on your website or web app can be a challenge! Segment's Visual Tagger shortens the process of implementing event tracking on your site by letting you add events without writing any code.
 
-The Visual Tagger is a Chrome Extension created by Segment that allows you to create Segment track events on a website or web app by pointing and clicking on parts of the site’s UI. When you create events in the Visual Tagger, it sends real track events into Segment.
+The Visual Tagger is a Chrome Extension created by Segment that allows you to create Segment track events on a website or web app by pointing and clicking on parts of the site's UI. When you create events in the Visual Tagger, it sends real track events into Segment.
 
 ## Supported Features:
 
@@ -18,7 +18,7 @@ The Visual Tagger is a Chrome Extension created by Segment that allows you to cr
 - `identify` calls
 - Ability to send form field values as properties on a `Form Submitted` track event
 
-## Beta Requirements and Limitations
+## Alpha Requirements and Limitations
 
 ### Requirements:
 
@@ -27,9 +27,10 @@ The Visual Tagger is a Chrome Extension created by Segment that allows you to cr
 - You must have the Segment snippet for Analytics.js already installed on the website you want to use Visual Tagger for.
 - You must use the Google Chrome browser. The Visual Tagger is currently only available as a Chrome Extension.
 
-### Current Limitations (see Roadmap below for planned improvements)
+### Current Limitations
 
-- **Support is currently limited for adding properties to `track` calls**. Creating a `track` event based on `form` element and `submit` handler will add the form fields as properties to the `track` event.
+- **MFA and SSO login are currently unsupported**. If you use MFA or SSO to log in, Visual Tagger unfortunately won't work. It is on our roadmap to add support for MFA and SSO login. If you would like for us to prioritize this feature, please email us at beta@segment.com.
+- **Support is currently limited for adding properties to `track` calls**. Creating a `track` event based on `form` element and `submit` handler will add the form fields as properties to the `track` event. It is on our roadmap to add more support for adding properties to `track` events.
 - **Only `track` and `identify` calls are supported**. Other methods are not yet available in Visual Tagger.
 - **We are currently unable to notify you if tracking breaks** due to changes in the website UI.
 
@@ -37,8 +38,7 @@ The Visual Tagger is a Chrome Extension created by Segment that allows you to cr
 
 ### Install the Chrome Extension
 
-1. Download and install the [Visual Tagger Chrome extension](https://chrome.google.com/webstore/detail/segment-visual-tagger/ahofbpemlckjfmcebnanjmkhpcmnbjia).
-   The extension is private while the Visual Tagger is in beta. Once you install the extension, it appears in the browser in the extensions area.
+1. Download and install the Visual Tagger Chrome Extension. The extension is private while the Visual Tagger is in Alpha. Once you install the extension, it appears in the browser in the extensions area.
    ![Segment Visual Tagger in the browser extensions](images/steps-2.png)
 
 ### Install the Segment snippet on your site
@@ -47,8 +47,8 @@ Before you start: Make sure you have Workspace Owner or Source Admin privileges,
 
 1. Log in to your Segment Workspace and create a Javascript Source.
 2. Copy the Analytics.js script tag which appears.
-3. Paste this tag into your website’s code within the `<head>` tag.
-   If you’re having trouble with this step, follow the [Analytics.js Quickstart Guide](/docs/sources/website/analytics.js).
+3. Paste this tag into your website's code within the `<head>` tag.
+   If you're having trouble with this step, follow the [Analytics.js Quickstart Guide](/docs/sources/website/analytics.js).
    ![Install Segment snippet on your site](images/steps-3.png)
 
 ### Enable the Visual Tagger integration
@@ -56,7 +56,7 @@ Before you start: Make sure you have Workspace Owner or Source Admin privileges,
 Enable the Visual Tagger integration for the source you created above.
 
 1. Navigate to your source settings and click on the Analytics.js tab.
-2. Accept the beta terms and toggle to enable/disable the integration.
+2. Accept the alpha terms and toggle to enable/disable the integration.
    ![Enable the Viusal Tagger integration](images/steps-4.png)
 
 ### Tag Events Using Visual Tagger
@@ -74,9 +74,9 @@ Enable the Visual Tagger integration for the source you created above.
    - _Selector_: The CSS selector that the event will be added to. If you are unsure whether or not the right selector has been chosen (or you need to go up a level in the elements tree to a parent element), click on the "Elements" dropdown where you can explore the tree.
    - _URL_: The page that the event should be fired from
    - _Trigger_: What user action should trigger the event. Currently, we support:
-     - `click` - when a user clicks on an element -
-     - `focus` - when a user’s mouse enters a form field -
-     - `blur` - when a user exists a form field that was focused on
+     - `click` - when a user clicks on an element
+     - `focus` - when a user's mouse enters a form field
+     - `blur` - when a user exits a form field that was focused on
      - `submit` - when a user submits a form
    - _Event Name_ What the event should be named. We recommend that you follow the Segment Spec for standard naming conventions.
      ![Element selection](images/steps-8.gif)
@@ -100,9 +100,9 @@ All events that you create in Visual Tagger appear in the **Tagged Events** pane
 
 ### Does the Visual Tagger impact my site or app's performance?
 
-The Visual Tagger integration has very minimal negative impact to your site’s performance, because it installs a single event handler that makes an asynchronous call to Segment when a tag’s event is invoked. The integration makes an initial request that takes the same amount of time required to load Analytics.js, and it is cached for subsequent requests.
+The Visual Tagger integration has very minimal negative impact to your site's performance, because it installs a single event handler that makes an asynchronous call to Segment when a tag's event is invoked. The integration makes an initial request that takes the same amount of time required to load Analytics.js, and it is cached for subsequent requests.
 
-However, adding a large number of tags to your site could potentially impact your site’s performance. To guard against this we limit the number of tags you can add using Visual Tagger to 99 while the Visual Tagger is in beta.
+However, adding a large number of tags to your site could potentially impact your site's performance. To guard against this we limit the number of tags you can add using Visual Tagger to 99 while the Visual Tagger is in alpha.
 
 ### How many events can I create with Visual Tagger?
 
@@ -116,7 +116,7 @@ Currently, Visual Tagger only supports direct string matching on URLs. More flex
 
 Yes. The Chrome DOM is queried on runtime, so you can track dynamically generated elements like modals (for example) using the Visual Tagger.
 
-### Once the Visual Tagger supports properties, can I grab info from the data layer that’s not visually on the page?
+### Once the Visual Tagger supports properties, can I grab info from the data layer that's not visually on the page?
 
 In the short term, only information that is visually present on the page will be available for use in the Visual Tagger. We're considering implementing a data layer as part of our roadmap.
 
@@ -125,12 +125,16 @@ In the short term, only information that is visually present on the page will be
 Events that were added using the Visual Tagger (as opposed to in code) have a `context` property in the event payload that says `"visual_tagger": true`.
 Events _not_ implemented using the Visual Tagger do not have this property.
 
+### If I have MFA or SSO enabled on my Segment account, can I login and use Visual Tagger?
+
+Visual Tagger does **not** support accounts that have MFA or SSO enabled to login into the extension. We are planning to add MFA support before the General Availability launch.
+
 ### When will the Visual Tagger be Generally Availabile, have standard support and fully stable releases?
 
 General Availability launch is planned for Fall of 2019.
 
-## Beta Product Terms & Conditions
+## Alpha Product Terms & Conditions
 
-Segment cannot make commitments around warranties, support, service levels, etc. and will not be liable for any loss of use, lost or inaccurate data or failure of security mechanisms in connection with your use of this or other beta products, until we release the feature to general availability.
+Segment cannot make commitments around warranties, support, service levels, etc. and will not be liable for any loss of use, lost or inaccurate data or failure of security mechanisms in connection with your use of this or other alpha products, until we release the feature to general availability.
 
 In particular, this means that events instrumented via Visual Tagger may be less reliable and prone to breakage than standard Segment track events instrumented via code.

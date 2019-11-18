@@ -3,7 +3,7 @@ title: "Chrome Extension [Deprecated]"
 hidden: true
 ---
 
-You can easily load our browserify'd `analytics-node` package into a Chrome Extension and send your analytics data to [any of our server-side destinations](/integrations).
+You can easily load our browserify'd `analytics-node` package into a Chrome Extension and send your analytics data to [any of our server-side destinations](/docs/destinations).
 
 This allows you to collect information about your users, like how they interact with and use your extension.
 

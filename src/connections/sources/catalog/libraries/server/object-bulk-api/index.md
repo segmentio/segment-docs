@@ -13,7 +13,7 @@ It differs from the Object API in that it is designed to:
 - Guarantees in-order processing of data.
 - Allow Customers and Partners to build their own Cloud Apps.
 
-NOTE: We haven’t yet created tooling akin to our core analytics-<language> libraries so you’ll need to use our HTTP API directly for now.
+NOTE: We haven't yet created tooling akin to our core analytics-<language> libraries so you'll need to use our HTTP API directly for now.
 
 ### Batched Object Data
 The `Batched Object Data` the API accepts is a file of line separated objects, in JSON form, compressed using `Gzip`. 

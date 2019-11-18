@@ -72,7 +72,7 @@ analytics.track('Clicked Login Button')
 
 Track calls will be sent to Hawkei as a `track` event. Use the method track anywhere you want to create an event in your code.
 
-You’ll want to create events that are part of critical paths in your application that you intend to add to the flows you want to monitor.
+You'll want to create events that are part of critical paths in your application that you intend to add to the flows you want to monitor.
 
 ## Troubleshooting
 

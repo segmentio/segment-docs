@@ -1,4 +1,5 @@
 ---
+title: Stripe Source
 rewrite: true
 ---
 [Stripe](https://stripe.com/about) builds economic infrastructure for the internet, that enables businesses of every size to accept payments and manage their businesses online.
@@ -8,16 +9,16 @@ This is an [Object Cloud Source](https://segment.com/docs/sources/#object-cloud-
 This document was last updated on July 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
- 1. From your workspace’s `/sources` page, click `add source`.
+ 1. From your workspace's `/sources` page, click `add source`.
  2. Choose Stripe.
  3. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Stripe` for nickname and `stripe` or `stripe_prod` for the schema name.
- _**NOTE:** that you can add multiple instances if you have multiple Stripe accounts. That’s why we allow you to customize the source’s nickname and schema name!_
- 4. When you click connect, you’ll be dropped into Stripe’s OAuth flow. Once you sign in and grant permissions, you’ll be good to go!
+ _**NOTE:** that you can add multiple instances if you have multiple Stripe accounts. That's why we allow you to customize the source's nickname and schema name!_
+ 4. When you click connect, you'll be dropped into Stripe's OAuth flow. Once you sign in and grant permissions, you'll be good to go!
 
 ## Components
 
 ### Sync
-The Stripe source is built with a sync component, which means we’ll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we’ll grab all the Stripe objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance’s schema name you designated upon creation (ie. `stripe_prod.charges`).
+The Stripe source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Stripe objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. `stripe_prod.charges`).
 
 Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Stripe.  For example,  if `subscription_status` goes from `active` to `inactive` between syncs, on its next sync that tickets status will be `inactive`.
 
@@ -45,8 +46,8 @@ Collections are the groupings of resources we pull from your source. In your war
 |  invoice_items | object | Sometimes you want to add a charge or credit to a customer but only actually charge the customer's card at the end of a regular billing cycle. This is useful for combining several charges to minimize per-transaction fees or having Stripe tabulate your usage-based billing totals. For more info, see [Stripe's API docs](https://stripe.com/docs/api#invoiceitems) |
 |  invoice_lines | object | When retrieving an invoice, you'll get a lines property containing the total count of line items and the first handful of those items For more info, see [Stripe's API docs](https://stripe.com/docs/api#invoice_lines) |
 |  invoices | object | Invoices are statements of what a customer owes for a particular billing period, including subscriptions, invoice items, and any automatic proration adjustments if necessary. For more info, see [Stripe's API docs](https://stripe.com/docs/api#invoices) |
-| payment_intents  | object | A PaymentIntent tracks the process of collecting a payment from your customer. A PaymentIntent transitions through multiple statuse throughout its lifetime and ultimately creates at most one successful charge. For more info, see [Stripe’s API docs](https://stripe.com/docs/api/payment_intents) |
-| payment_methods  | object | PaymentMethod objects represent your customer's payment instruments. They can be used with [PaymentIntents](https://stripe.com/docs/payments/payment-intents) to collect payments or saved to Customer objects to store instrument details for future payments. For more info, see [Stripe’s API docs](https://stripe.com/docs/payments/payment-methods) |
+| payment_intents  | object | A PaymentIntent tracks the process of collecting a payment from your customer. A PaymentIntent transitions through multiple statuse throughout its lifetime and ultimately creates at most one successful charge. For more info, see [Stripe's API docs](https://stripe.com/docs/api/payment_intents) |
+| payment_methods  | object | PaymentMethod objects represent your customer's payment instruments. They can be used with [PaymentIntents](https://stripe.com/docs/payments/payment-intents) to collect payments or saved to Customer objects to store instrument details for future payments. For more info, see [Stripe's API docs](https://stripe.com/docs/payments/payment-methods) |
 |  plans | object | A subscription plan contains the pricing information for different products and feature levels on your site. For more info, see [Stripe's API docs](https://stripe.com/docs/api#plans) |
 |  refunds | object | Refund objects allow you to refund a charge that has previously been created but not yet refunded. Funds will be refunded to the credit or debit card that was originally charged. The fees you were originally charged are also refunded. For more info, see [Stripe's API docs](https://stripe.com/docs/api#refunds) |
 |  subscriptions | object | Subscriptions allow you to charge a customer's card on a recurring basis. A subscription ties a customer to a particular plan you've created. For more info, see [Stripe's API docs](https://stripe.com/docs/api#subscriptions) |
@@ -59,7 +60,7 @@ Below are tables outlining the properties included in the collections listed abo
 ### accounts
 |  Property Name | Description |
 |  ------ | ------ |
-| email | The primary user’s email address |
+| email | The primary user's email address |
 | statement_descriptor | The default text that appears on credit card statements when a charge is made directly on the account |
 | display_name | The display name for this account |
 | timezone | The timezone used in the Stripe Dashboard for this account |
@@ -104,7 +105,7 @@ Below are tables outlining the properties included in the collections listed abo
 | description | An arbitrary string attached to the object |
 | fee | Fees (in cents) paid for this transaction |
 | net | Net amount of the transaction, in cents |
-| status | If the transaction’s net funds are available in the Stripe balance yet |
+| status | If the transaction's net funds are available in the Stripe balance yet |
 | type | Transaction type |
 | source | The Stripe object to which this transaction is related |
 
@@ -140,8 +141,8 @@ Below are tables outlining the properties included in the collections listed abo
 | brand | Card brand |
 | country | Two-letter ISO code representing the country of the card |
 | cvc_check | If a CVC was provided, results of the check |
-| exp_month | Two-digit number representing the card’s expiration month |
-| exp_year | Four-digit number representing the card’s expiration year |
+| exp_month | Two-digit number representing the card's expiration month |
+| exp_year | Four-digit number representing the card's expiration year |
 | funding | Card funding type |
 | name | Cardholder name |
 | last4 | The last four digits of the card |
@@ -170,7 +171,7 @@ Below are tables outlining the properties included in the collections listed abo
 | receipt_email | This is the email address that the receipt for this charge was sent to |
 | receipt_number | This is the transaction number that appears on email receipts sent for this charge |
 | refunded | Whether the charge has been fully refunded |
-| statement_descriptor | Extra information about a charge. This will appear on your customer’s credit card statement |
+| statement_descriptor | Extra information about a charge. This will appear on your customer's credit card statement |
 | status | The status of the payment |
 
 ### coupons
@@ -188,11 +189,11 @@ Below are tables outlining the properties included in the collections listed abo
 ### customers
 |  Property Name | Description |
 |  ------ | ------ |
-| account_balance | Current balance, if any, being stored on the customer’s account |
+| account_balance | Current balance, if any, being stored on the customer's account |
 | currency | Three-letter ISO code for the currency the customer can be charged in for recurring billing purpose |
-| delinquent | When the customer’s latest invoice is billed by charging automatically, delinquent is true if the invoice’s latest charge is failed |
+| delinquent | When the customer's latest invoice is billed by charging automatically, delinquent is true if the invoice's latest charge is failed |
 | description | An arbitrary string attached to the object |
-| email | The customer’s email address |
+| email | The customer's email address |
 
 ### discounts
 |  Property Name | Description |
@@ -227,7 +228,7 @@ Below are tables outlining the properties included in the collections listed abo
 |  Property Name | Description |
 |  ------ | ------ |
 | amount_due | Final amount due at this time for this invoice |
-| application_fee | The fee in cents that will be applied to the invoice and transferred to the application owner’s Stripe account when the invoice is paid |
+| application_fee | The fee in cents that will be applied to the invoice and transferred to the application owner's Stripe account when the invoice is paid |
 | attempt_count | Number of payment attempts made for this invoice, from the perspective of the payment retry schedule |
 | attempted | Whether an attempt has been made to pay the invoice |
 | charge_id | ID of the latest charge generated for this invoice, if any |
@@ -239,7 +240,7 @@ Below are tables outlining the properties included in the collections listed abo
 | paid | Whether payment was successfully collected for this invoice |
 | receipt_number | This is the transaction number that appears on email receipts sent for this invoice |
 | starting_balance | Starting customer balance before the invoice is frozen |
-| statement_descriptor | Extra information about an invoice for the customer’s credit card statement |
+| statement_descriptor | Extra information about an invoice for the customer's credit card statement |
 | subscription_id | The subscription that this invoice was prepared for, if any |
 | subtotal | Total of all subscriptions, invoice items, and prorations on the invoice before any discount is applied |
 | tax | The amount of tax included in the total, calculated from tax_percent and the subtotal. If no tax_percent is defined, this value will be null |
@@ -256,8 +257,8 @@ Below are tables outlining the properties included in the collections listed abo
 | proration | If true, this line item is a proration |
 | quantity | The quantity of the subscription, if the line item is a subscription or a proration |
 | invoice_id | The ID of the invoice to which this line belongs |
-| period_start | Start of the line item’s billing period |
-| period_end | End of the line item’s billing period |
+| period_start | Start of the line item's billing period |
+| period_end | End of the line item's billing period |
 | plan_id | The id of the Plan that this invoice_line belongs to |
 | subscription_id | If id is prefixed with `sub_` then this is the line item's UUID, else it is the ID of The subscription that the invoice item pertains to, if any.  |
 | type | A string identifying the type of the source of this line item, either an `InvoiceItem` or a `Subscription` |
@@ -285,7 +286,7 @@ Below are tables outlining the properties included in the collections listed abo
 | payment_method_id         | ID of the payment method used in this PaymentIntent.         |
 | receipt_email             | Email address that the receipt for the resulting payment will be sent to. |
 | review_id                 | ID of the review associated with this PaymentIntent, if any. |
-| statement_descriptor      | Extra information about a PaymentIntent. This will appear on your customer’s statement when this PaymentIntent succeeds in creating a charge. |
+| statement_descriptor      | Extra information about a PaymentIntent. This will appear on your customer's statement when this PaymentIntent succeeds in creating a charge. |
 | status                    | Status of this PaymentIntent, one of `requires_payment_method`, `requires_confirmation`, `requires_action`, `processing`, `requires_capture`, `canceled`, or `succeeded`. Read more about each PaymentIntent [status](https://stripe.com/docs/payments/payment-intents/status). |
 | transfer_data_destination | The account (if any) the payment will be attributed to for tax reporting, and where funds from the payment will be transferred to upon payment success. |
 | transfer_group            | A string that identifies the resulting payment as part of a group. See the PaymentIntents [use case for connected accounts](https://stripe.com/docs/payments/payment-intents/use-cases#connected-accounts) for details. |
@@ -331,7 +332,7 @@ Below are tables outlining the properties included in the collections listed abo
 ### subscriptions
 |  Property Name | Description |
 |  ------ | ------ |
-| application_fee_percent | This represents the percentage of the subscription invoice subtotal that will be transferred to the application owner’s Stripe account |
+| application_fee_percent | This represents the percentage of the subscription invoice subtotal that will be transferred to the application owner's Stripe account |
 | cancel_at_period_end | If the subscription has been canceled with the at_period_end flag set to true, cancel_at_period_end on the subscription will be true |
 | customer_id | ID of the customer who owns the subscription |
 | quantity | The quantity of the plan to which the customer should be subscribed |
@@ -363,9 +364,9 @@ Below are tables outlining the properties included in the collections listed abo
 ## V2 Changelog
 In September 2017, Segment will upgrade all Stripe sources to sync incrementally, using the [List Events](https://stripe.com/docs/api#list_events) endpoint to sync changes to Stripe objects. There are a few benefits to this approach…
 
-  - **Faster sync times:** for larger accounts, we’ve seen performance improve by 10x
+  - **Faster sync times:** for larger accounts, we've seen performance improve by 10x
   - **Additional Object Properties:** Events provide additional metadata about objects, like their creation time and deletion time
-  - **Reduced load on the Stripe API:** Our new Stripe source helps cut down load on our partner’s API, and reduces unnecessary data transfer
+  - **Reduced load on the Stripe API:** Our new Stripe source helps cut down load on our partner's API, and reduces unnecessary data transfer
 
 ### How It Works
 1. The Stripe Source will run a full sync of all objects, using the `List All` endpoints for `Charges`, `Customers`, `Refunds`, etc.

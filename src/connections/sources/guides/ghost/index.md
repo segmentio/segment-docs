@@ -27,7 +27,7 @@ Once your Segment account is ready to go you'll need to install a few lines of j
 
 Here's your standard snippet:
 
-{% comment %}\{\{\{snippet-example 'YOUR_WRITE_KEY'{% endcomment %}
+{% comment %} {{{snippet-example 'YOUR_WRITE_KEY'}}}{% endcomment %}
 
 
 ### Basic Setup
@@ -76,8 +76,6 @@ Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% en
 **File:** `post.hbs`
 
 **Code:**
-{% raw %}
-
 ```js
 <script type="text/javascript">
   analytics.page('Post', {
@@ -95,7 +93,6 @@ Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% en
   }
 </script>
 ```
-{% endraw %}
 
 
 Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% endraw %}` tag. That way it won't have any issues with any other logic happening on the page.
@@ -106,7 +103,6 @@ Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% en
 **File:** `page.hbs`
 
 **Code:**
-{% raw %}
 ```js
 <script type="text/javascript">
   analytics.page('Static', {
@@ -124,7 +120,6 @@ Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% en
   }
 </script>
 ```
-{% endraw %}
 
 Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% endraw %}` tag. That way it won't have any issues with any other logic happening on the page.
 
@@ -133,7 +128,6 @@ Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% en
 
 **File:** `tags.hbs`
 
-{% raw %}
 ```js
 <script type="text/javascript">
   analytics.page('Tags', {
@@ -142,7 +136,6 @@ Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% en
   })
 </script>
 ```
-{% endraw %}
 
 Make sure the above script is pasted right above the `{% raw %}{{> footer}}{% endraw %}` tag. That way it won't have any issues with any other logic happening on the page.
 

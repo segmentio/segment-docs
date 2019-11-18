@@ -171,7 +171,7 @@ Analytics.identify("hj2kf92ds212", traits,
         .setIntegration("KISSmetrics", true));
 ```
 
-In this case, we’re specifying that we want this `identify` to only go to KISSmetrics. `"All", false` says that no destination should be enabled unless otherwise specified. `"KISSmetrics", true` turns on KissMetrics, etc.
+In this case, we're specifying that we want this `identify` to only go to KISSmetrics. `"All", false` says that no destination should be enabled unless otherwise specified. `"KISSmetrics", true` turns on KissMetrics, etc.
 
 
 ### Destinations in Debugger
@@ -512,9 +512,9 @@ To help you evaluate the baggage each destination comes with, we've compiled a h
 | Tapstream                | ~30KB             | ~300                 |
 | Countly                  | ~20KB             | ~150                 |
 
-<sup>1</sup> *Google Analytics takes up a huge amount since it comes with Play Services, which includes APIs for Google Ads, Google Drive, Google Plus and many more! Chances are you’re not using all of them. Luckily if you’re a Gradle user, you can [strip away the unused modules](https://gist.github.com/dmarcato/d7c91b94214acd936e42) and reduce bloat.*
+<sup>1</sup> *Google Analytics takes up a huge amount since it comes with Play Services, which includes APIs for Google Ads, Google Drive, Google Plus and many more! Chances are you're not using all of them. Luckily if you're a Gradle user, you can [strip away the unused modules](https://gist.github.com/dmarcato/d7c91b94214acd936e42) and reduce bloat.*
 
-<sup>2</sup> *Localytics doesn’t provide a jar so we [compiled one ourselves](http://search.maven.org/#artifactdetails%7Cio.segment.analytics.android%7Clocalytics%7C1.4.1%7Cjar).*
+<sup>2</sup> *Localytics doesn't provide a jar so we [compiled one ourselves](http://search.maven.org/#artifactdetails%7Cio.segment.analytics.android%7Clocalytics%7C1.4.1%7Cjar).*
 
 ## Building
 

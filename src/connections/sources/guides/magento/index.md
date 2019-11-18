@@ -3,7 +3,7 @@ title: Magento Plugin [Deprecated]
 hidden: true
 ---
 
-Our Magento extension lets you send your ecommerce analytics data to [any of our destinations](/integrations) without writing any code yourself. You can be up an running with a complete ecommerce tracking setup in minutes!
+Our Magento extension lets you send your ecommerce analytics data to [any of our destinations](/docs/destinations) without writing any code yourself. You can be up an running with a complete ecommerce tracking setup in minutes!
 
 The extension automatically collects information about the customer, which pages they visit, which products they add and remove from their cart, and which orders they complete.
 

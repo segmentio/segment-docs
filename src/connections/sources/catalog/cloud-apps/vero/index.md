@@ -3,33 +3,33 @@ title: 'Vero Source'
 ---
 Vero is an email marketing tool that lets you set up automated emails to your users that get sent after they've completed certain actions. [Visit Website](http://getvero.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
-Take your company’s email analysis to the next level by **adding Vero as a Source to Segment.** We’ll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Vero as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you’ll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you’ll be able to join your Vero data with the event data you’re already sending through Segment to analyze the down-funnel effects of your emails. 
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Vero data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. 
 
 ## Getting Started
 
 If you have previously enabled sending email events via the Vero destination during our beta (using a project write key), you do not need to create new Vero source. Your email data will continue to flow as normal.
 
-1. From your workspace’s `segment.com/<your-workspace>/sources page`, click `Add source`.
+1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
 
 2. Choose Vero.
 
   ![](images/vero1.png)
 
-3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you’d like, but we recommend sticking to something that reflects the Source itself, like `Vero` for nickname and `vero` for the schema name.
+3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you'd like, but we recommend sticking to something that reflects the Source itself, like `Vero` for nickname and `vero` for the schema name.
 
   ![](images/vero2.png)
 
 4. The next page ("Overview") will surface your **Segment write key for Vero.** Copy this write key. 
 
-5. To finish the setup, you’ll have to go into your Vero account and enter this Segment write key in their integrations settings. Find the right place in Vero by clicking [Integrations](https://app.getvero.com/settings/integrations?integrations=all) > Segment.
+5. To finish the setup, you'll have to go into your Vero account and enter this Segment write key in their integrations settings. Find the right place in Vero by clicking [Integrations](https://app.getvero.com/settings/integrations?integrations=all) > Segment.
 
 6. Click **Save**.
 
-7. In Segment, click into your Vero Source in `segment.com/<your-workspace>/sources`. From there you’ll be able to add Destinations where you want to see email events.
+7. In Segment, click into your Vero Source in `segment.com/<your-workspace>/sources`. From there you'll be able to add Destinations where you want to see email events.
 
-That’s it! As you send emails, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled. 
+That's it! As you send emails, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled. 
 
 ## Components
 
@@ -45,9 +45,9 @@ Collections are the groupings of data we pull from your Source. In your warehous
 
 <table>
   <tr>
-    <th>**Collection**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Collection</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>Email Sent</td>
@@ -72,7 +72,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
     <tr>
     <td>Email Unsubscribed</td>
     <td>Event</td>
-    <td>Recipient clicked on message’s subscription management link</td>
+    <td>Recipient clicked on message's subscription management link</td>
   </tr>
     <tr>
     <td>Email Bounced</td>
@@ -86,7 +86,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
   </tr>
 </table>
 
-<!-- Example: To query the Email Delivered table, you’d write a query like this:
+<!-- Example: To query the Email Delivered table, you'd write a query like this:
 
 ```sql
 select *
@@ -99,4 +99,4 @@ from activecampaign.email_delivered
 
 ## Send data to Vero
 
-The Vero Source works better when you also connect Vero as an destination. With the Vero **Destination**, you can use Segment to send Vero user and event data from which you trigger email campaigns. Want to start sending website or mobile data to Vero? Head on over to our [Vero destination docs](/docs/integrations/vero/).
+The Vero Source works better when you also connect Vero as an destination. With the Vero **Destination**, you can use Segment to send Vero user and event data from which you trigger email campaigns. Want to start sending website or mobile data to Vero? Head on over to our [Vero destination docs](/docs/destinations/vero/).

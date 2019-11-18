@@ -210,7 +210,7 @@ Find details on the **`page` payload** in our [Spec](/docs/spec/page/).
 
 `group` lets you associate an [identified user](/docs/sources/server/php/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/integrations/intercom/), [Preact](/docs/integrations/preact/) and [Totango](/docs/integrations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
 
 Example `group` call:
 
@@ -255,7 +255,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/integrations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/integrations/kissmetrics/#alias) and [Trak.io](/docs/integrations/trak.io/#alias) if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/destinations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/destinations/kissmetrics/#alias) and [Trak.io](/docs/destinations/trak.io/#alias) if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -314,7 +314,7 @@ For more details about `alias` including the **`alias` call payload**, check out
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
 
-Historical imports can only be done into destinations that can accept historical timestamp’ed data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
+Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
 **Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
 
@@ -340,11 +340,11 @@ Segment::track(array(
 
 In this case, we're specifying that we want this track to only go to Mixpanel and Customer.io. `"all" => false` says that no destination should be enabled unless otherwise specified. `"Mixpanel" => true` turns on Mixpanel, etc.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/integrations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:**
 
-- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it’s a much simpler way of managing your filters and can be updated with no code changes on your side.
+- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
 - If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard will still count towards your API usage.
 
@@ -392,13 +392,13 @@ Segment::init("YOUR_WRITE_KEY", array(
 
 ### Lib-Curl Consumer
 
-The [lib-curl consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Segment/Consumer/LibCurl.php) is a reliable option for low-volume sources or if you want fast response times under light loads. The library runs synchronously, queuing calls and sending them in batches to Segment’s servers. By default, this happens every 100 calls, or at the end of serving the page. By default, we ignore http responses to optimize the library’s speed, but you can choose to wait for these responses by enabling debug mode.
+The [lib-curl consumer](https://github.com/segmentio/analytics-php/blob/master/lib/Segment/Consumer/LibCurl.php) is a reliable option for low-volume sources or if you want fast response times under light loads. The library runs synchronously, queuing calls and sending them in batches to Segment's servers. By default, this happens every 100 calls, or at the end of serving the page. By default, we ignore http responses to optimize the library's speed, but you can choose to wait for these responses by enabling debug mode.
 
 If your servers are handling more than 20 requests per second, you may want to look at the [file consumer](#file-consumer) to optimize performance.
 
 There is a maximum of `500KB` per batch request and `132KB` per call.
 
-The lib-curl consumer is Segment’s default PHP library, although you may still initialize it explicitly and set queue and batch sizes in the library’s initialization settings.
+The lib-curl consumer is Segment's default PHP library, although you may still initialize it explicitly and set queue and batch sizes in the library's initialization settings.
 
 ```php
 Segment::init("YOUR_WRITE_KEY", array(
@@ -507,8 +507,8 @@ $ sudo service cron reload    # reload the cron daemon
 ## Troubleshooting
 
 {% include content/troubleshooting-intro.md %}
-
-
+{% include content/troubleshooting-server-debugger.md %}
+{% include content/troubleshooting-server-integration.md %}
 
 
 ## 3rd-Party Libraries

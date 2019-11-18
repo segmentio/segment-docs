@@ -13,24 +13,24 @@ This document was last updated on July 10, 2018. If you notice any gaps, outdate
 
 ## Getting Started
 
-1. From your workspace’s `/sources` page, click `add source`.
+1. From your workspace's `/sources` page, click `add source`.
 
 2. Choose HubSpot.
 
 3. Give the source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like `HubSpot` for nickname and `hubspot`, `hub`, or `hubspot_prod` for the schema name.
 
-  **Note** that you can add multiple instances if you have multiple HubSpot accounts. That’s why we allow you to customize the source’s nickname and schema name!
+  **Note** that you can add multiple instances if you have multiple HubSpot accounts. That's why we allow you to customize the source's nickname and schema name!
 
-4. Finally, connect an account with **admin API permissions** to access your HubSpot data. This account should be an active user on a Professional or Enterprise plan. Check out [HubSpot’s docs on how to get your API Key](http://knowledge.hubspot.com/articles/kcs_article/integrations/how-do-i-get-my-hubspot-api-key).
+4. Finally, connect an account with **admin API permissions** to access your HubSpot data. This account should be an active user on a Professional or Enterprise plan. Check out [HubSpot's docs on how to get your API Key](http://knowledge.hubspot.com/articles/kcs_article/integrations/how-do-i-get-my-hubspot-api-key).
 
-Voila! We’ll begin syncing your HubSpot data into Segment momentarily, and it will be written to your warehouse at your next Warehouse run.
+Voila! We'll begin syncing your HubSpot data into Segment momentarily, and it will be written to your warehouse at your next Warehouse run.
 
 
 ## Components
 
 ### Sync
 
-The HubSpot source is built with a sync component, which means we’ll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we’ll grab all the HubSpot objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance’s schema name you designated upon creation (ie. my_source.charges).
+The HubSpot source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the HubSpot objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. my_source.charges).
 
 Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in HubSpot. For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
@@ -48,7 +48,7 @@ Due to HubSpot's [API Rate Limits](http://developers.hubspot.com/apps/api_guidel
 
 |  Collection | Type | Description |
 |  ------ | ------ | ------ |
-|  contacts | Object | Contacts represent people in an Organization’s address book. For more info, check out [HubSpot's API docs](http://developers.hubspot.com/docs/methods/contacts/get_contacts) |
+|  contacts | Object | Contacts represent people in an Organization's address book. For more info, check out [HubSpot's API docs](http://developers.hubspot.com/docs/methods/contacts/get_contacts) |
 | contact_identity_profiles | Object | Contact identity profiles represent identities of a contact.
 | contact_identities | Object | Contact identities represent communication methods for a contact's profile (email, lead, etc.).
 | form_submissions | Event | Form submissions represent input from contacts in forms created via HubSpot
@@ -63,6 +63,8 @@ Due to HubSpot's [API Rate Limits](http://developers.hubspot.com/apps/api_guidel
 ## Collection Properties
 
 Below are tables outlining the properties included in the collections listed above. To see the full description of each property, please refer to the HubSpot documentation linked in the collections above.
+
+If you have Custom Properties on any of these collections that you would like to sync, submit a ticket detailing the custom properties [here](http://segment.com/help/contact) and we can enable it for you.
 
 ### Contacts
 |  Property Name | Description |

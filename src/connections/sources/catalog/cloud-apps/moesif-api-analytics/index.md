@@ -1,6 +1,7 @@
 ---
-title: Moesif API Analytics
+title: Moesif API Analytics Source
 ---
+
 [Moesif API Analytics](https://www.moesif.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps you make data-driven product decisions that grows your API platform. Using API analytics, understand how your customers and partners use your APIs and what drives long term engagement and retention.
 
 This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.

@@ -108,7 +108,7 @@ Once extracted, add the static NielsenAppApi.framework to the project and
 ensure it's in the `Frameworks` folder, and that it is linked.
 
 Nielsen also requires the following frameworks, which must be included into
-Link Binary with Libraries (within app target’s Build Phases). However, if
+Link Binary with Libraries (within app target's Build Phases). However, if
 using the dynamic framework, these will dynamically be linked and there is no
 need to manually link these. - AdSupport.framework -
 SystemConfiguration.framework - CoreLocation.framework (Not applicable for
