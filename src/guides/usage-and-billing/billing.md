@@ -9,7 +9,6 @@ On our monthly Team plan, your billing cycle will start the day after your 14-da
 On our annual Team plan, you will be billed at the end of your 14-day trail for the sum of the entire year of service at a certain number of MTU. All overages for annual plans are billed at the end of your monthly billing cycle.
 
 
-
 ## How do I change my plan?
 
 If you already have a Segment workspace, you can change which plan your workspace is on by navigating to the "Usage & Billing" menu, then finding the "Plans" page. You can select your new plan on the "Plans" page.
@@ -52,7 +51,7 @@ We also offer the Developer plan, which includes up to 1,000 MTUs, at no cost to
 
 Find out more about the different plans and which one suits your needs best [here](https://segment.com/pricing). 
 
-## **Team Trial FAQ**
+## Team Trial FAQ
 
 **What is the Team trial?**
 

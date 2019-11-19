@@ -2,8 +2,6 @@
 title: MTUs, Throughput and Billing
 ---
 
-
-
 ## How does Segment calculate MTUs?
 
 **MTUs are Monthly Tracked Users**
@@ -16,20 +14,20 @@ We only count users once per month, even if they perform multiple actions across
 
 Object-based Sources (like Salesforce, Zendesk, and Stripe) _don't impact your MTU counts_ because there are no IDs. However they do impact your overall object count.
 
-![](../../images/asset_D2CxVx1I.png)
+![](images/asset_D2CxVx1I.png)
 
 **And event based cloud-app sources?**
 
 Event based (mostly email sources like Klaviyo, Vero, Drip, etc.) _do create MTUs_ because they have IDs associated.
 
-![](../../images/asset_otFE2fhI.png)
+![](images/asset_otFE2fhI.png)
 
 
 ## How do I find out my usage data?
 
 If you have questions about your data usage or how it relates to your bill, we recommend logging into your Segment workspace, clicking on the top left arrow in the navigation bar, and going to the Usage page within the Usage & Billing category.
 
-![](../../images/asset_ZvCX7wXJ.png)
+![](images/asset_ZvCX7wXJ.png)
 
 On that page you will see what plan you're on, what data volumes your plan includes, and how much data you used during a billing period. If you have used data volumes past what your bill includes, the page will provide information about what volume of data was in overage and what your overage rate is.
 
@@ -63,7 +61,7 @@ Comparing numbers between any two end-tools (or between Segment and an end tool)
 
 For example, consider these instances with some of our most popular destinations:
 
-**Google Analytics:**
+### Google Analytics:
 
 *   When sending `page` views from one of Segment's server-side libraries, a `url` property is required. Otherwise, Google Analytics will silently reject your `page` event.
 
@@ -71,8 +69,7 @@ For example, consider these instances with some of our most popular destinations
 
 *   If you want to pass the `id` from your [`identify`](https://segment.com/docs/spec/identify) calls to Google Analytics - enable **Send User-ID to GA** in your Advanced Google Analytics settings on the Segment destinations catalog.
 
-
-**Amplitude:**
+### Amplitude
 
 *   By default, Segment won't send standard [`page`](https://segment.com/docs/spec/page/) or [`screen`](https://segment.com/docs/spec/screen/) calls to Amplitude. However, you can enable sending `page` and `screen` calls with the following destination settings, which you can find under the "Advanced Options" tab.
 
@@ -83,7 +80,6 @@ For example, consider these instances with some of our most popular destinations
 
 Please contact our [support team](https://segment.com/help/contact/) for further inquiries about a specific tool you have questions about to ensure there isn't an implementation error.
 
-
 ## What caused an unexpected spike in my MTU count?
 
 Typically, MTU counts increase when you have an increase in users or visitors on instrumented parts of your application. Occasionally, a big press release or marketing campaign can lead to an influx of visitors.
@@ -92,20 +88,13 @@ The other potential cause of big increases is that you added tracking to new par
 
 There are also some scenarios in which MTU numbers may be higher than expected because a new anonymousId or userId may be generated for a single user.
 
-1) Analytics.reset() was called
-
-2) If the user already had a userId assigned (aka user\_id was NOT null), and then identify(xxx) was called with a different userId value
-
-3) If the anonymousId is changed manually, via analytics.user().anonymousId(xxx)
-
-4) If the user goes from one page to another, and each page has a different domain- in this case the 2nd page will have a different anonymousId
-
-5) If the user goes from one page to another and the second page exists within an iFrame
-
-6) If the user visits the website from a different browser - each browser will generate a different anonymousId
-
-7) If the user visits the page incognito
-
-8) If the user clears their cookies
+- `Analytics.reset()` was called
+- If the user already had a userId assigned (meaning `user_id` was NOT `null`), and then `identify(xxx)` was called with a different `userId` value
+- If the `anonymousId` is changed manually, via `analytics.user().anonymousId(xxx)`
+- If the user goes from one page to another, and each page has a different domain - in this case the second page will have a different `anonymousId`
+- If the user goes from one page to another and the second page exists within an iFrame
+- If the user visits the website from a different browser - each browser generates a different `anonymousId`
+- If the user visits the page incognito
+- If the user clears their cookies
 
 If you suspect there is an implementation error causing your MTU number to rise please contact us immediately and we are happy to help you resolve the issue.
