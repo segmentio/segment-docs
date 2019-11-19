@@ -10,13 +10,13 @@ In this article, we dig into the nuances of data collection and potential gotcha
 
 Today, most marketing teams think about their paid acquisition funnel as three major steps…
 
-![](../../images/asset_hHyDC8eL.png)
+![](images/funnel_hHyDC8eL.png)
 
 This makes sense when looking at overall campaign performance, but hides several crucial funnel steps that can make the difference between increasing a campaign's spend and shutting it off due to poor results.
 
 Because page optimization and ad blockers can impact measurement of your funnel, it's important to look at the four additional steps happening between the ad click and conversions.
 
-![](../../images/asset_WRSs3Iag.png)
+![](images/funnel_WRSs3Iag.png)
 
 Let's go through each true funnel step in a little more detail.
 
@@ -38,7 +38,7 @@ There are three less-obvious contributors to fall-off across the paid acquisitio
 
 For the sake of illustration, this means that if you have 100 ad clicks, you will be able to count most but not all corresponding page views because some visitors may bounce (exit or hit the back button) before analytics.js is executed. Similarly, you may miss some attributable conversions due to slow load times (your page calls can't fire in time) and ad blockers (which often block analytics not just ads).
 
-![](../../images/asset_AiN7L5rw.png)
+![](images/funnel_AiN7L5rw.png)
 
 Here's how it works.
 
@@ -68,7 +68,7 @@ That said, many ad blockers do block analytics tools like Google Analytics, Mixp
 
 Segment offers two ways of joining your user clickstream data to your paid acquisition channels: standard client-side tracking or advanced server-side page calls.
 
-![](../../images/asset_TbpPljpe.png)
+![](images/funnel_TbpPljpe.png)
 
 Both options come with their own tradeoffs that are important to consider for your use case.
 
@@ -88,7 +88,7 @@ The general approach is to use an arbitrary `anonymousId` (e.g. a UUID) in the s
 
 If you want to get a quick estimate for the number of additional clicks you'd track using server-side tracking, you can use "redirect tracking" with a URL shortener to estimate the number of clicks coming from Google Adwords or Facebook Ads. This will give you an estimate for the number of times an ad is clicked (minus some bounce in the few hundred milliseconds of the redirect), which will closely match server-side `page()` tracking should you choose to implement it.
 
-![](../../images/asset_pkFkyAKr.png)
+![](images/funnel_pkFkyAKr.png)
 
 Here's how it works…
 
@@ -99,7 +99,7 @@ Here's how it works…
 3.  Measure total clicks from the bit.ly stats page.
 
 
-![](../../images/asset_vMpEZBVz.png)
+![](images/funnel_vMpEZBVz.png)
 
 1.  In your warehouse, count the number of pages with that unique url parameter from step 1 (make sure you're looking at the same timeframe).
 

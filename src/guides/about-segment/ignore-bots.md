@@ -18,7 +18,7 @@ As such, you generally have two options:
 
 **Write custom logic that suppresses bot activity from being sent to Segment:** if you want to prevent bot traffic from making it to Segment in the first place, another option is to write your own custom code. The logic, in pseudo-code, would look something like this if you know a particular characteristic of the bot traffic to filter out, such as the userAgent:
 
-```
+```js
 var robots = [useragent1, useragent2]
 if ! window.navigator.userAgent in robots
   // send analytics calls
@@ -37,7 +37,7 @@ We do indeed use Amazon's hosting services, which are based in Boardman, Oregon.
 
 One way you can confirm whether or not traffic is coming from Segment vs. a bot is to check the userAgent of the inbound call. Ours is:
 
-```
+```js
 'Mozilla/5.0 (' + deviceModel.slice(0, -3) + '; CPU ' + osName + ' ' +
 osVersion.replace(/\./g, '_') + ' like Mac OS X) AppleWebKit/600.1.4 (KHTML,
 like Gecko) Version/' + osVersion.charAt(0) + '.0 Mobile/10B329 Safari/8536.25'

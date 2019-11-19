@@ -8,7 +8,7 @@ One of the first questions we get when our customers start querying all of their
 
 Each SaaS tool you use has its own way of identifying users with a unique primary key. And, you will find each of these different IDs across different collections of tables in your database. So, when you want to start matching Joe Shmo who entered a ticket in Zendesk and also clicked through a campaign in Mailchimp, it starts to get tricky.
 
-![](../../images/asset_qpY6bhaY.png)
+![](images/asset_qpY6bhaY.png)
 
 For example, Stripe keeps track of users with a `customer_id`, Segment requires a`user_id`, and Marketo uses `email` to uniquely identify each person.
 
@@ -35,10 +35,10 @@ Integrating as many tools as possible through Segment will make your joins down 
 
 A few of our destination partners accept an external ID, where they will insert the same Segment user ID. Then you can join tables in one swoop. For example, Zendesk saves the Segment User ID as `external_id`, making a Segment-Zendesk join look like this:
 
-```
+```sql
 SELECT zendesk.external_id, users.user_id
 FROM zendesk.tickets zendesk
-JOINsegment.usersusers
+JOIN segment.usersusers
 ON zendesk.tickets.external_id = segment.user_id
 ```
 
@@ -76,7 +76,7 @@ This table will cut down on the number of joins you have to do because some IDs 
 
 Here's sample query to create a master user identities table:
 
-```
+```sql
 CREATE TABLE user_identities AS (
 select
 segment.id as segment_id,
@@ -181,7 +181,7 @@ So what can you do once you have all of your ID's mapped? Answer some pretty nif
 
 **Segment + Zendesk**
 
-```
+```sql
 -- Which referral source is sending us the most tickets?
 SELECTsegment.referral_source,
 COUNT(zendesk.ticket_id) AS count_of_tickets
@@ -221,9 +221,9 @@ An alternative to the lookup user table in SQL would be writing a script to grab
 
 You'd have to ping the APIs of each tool with something like an email, and ask them toreturn the key or id for the corresponding user in their tool.
 
-A sample script, to run on a nightly chron job, would look something like this:
+A sample script, to run on a nightly cron job, would look something like this:
 
-```
+```js
 var request = require('superagent'); // https://www.npmjs.com/package/superagent
 
 var username = '<your-username>';

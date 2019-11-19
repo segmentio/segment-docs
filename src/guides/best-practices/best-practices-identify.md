@@ -30,7 +30,7 @@ Once the userId exists for a new user two calls need to be made: [identify](htt
 
 ### Example
 
-Let's look at [Rdio](http://www.rdio.com/?__hstc=222691652.f2c5ed50a3a9703ac3be5283918044ad.1436399176206.1436471072852.1436475066092.6&__hssc=222691652.6.1436475066092&__hsfp=368606253) as an example. When a new visitor goes to their site that visitor is anonymous. As soon as the visitor connects their Facebook account, Rdio knows who they are and creates a user record.
+Let's look at Rdio as an example. When a new visitor goes to their site that visitor is anonymous. As soon as the visitor logs in and connects their Facebook account, Rdio knows who they are and creates a user record.
 
 As part of that new user record the person is assigned a userId. Let's say the new userId is `12345`. Rdio will then need to fire the following calls on the welcome page:
 
@@ -39,7 +39,7 @@ analytics.identify('12345',{  name:'Jake Peterson',  email:'jake.peterson@exampl
 analytics.track('Account Created',{  authentication:'Facebook'})
 ```
 
-[Identify](https://segment.com/docs/tracking-api/identify) signals that the user of this browser is user `12345`. And also sets name and email as traits of user `12345`.
+[Identify](https://segment.com/docs/connections/sources/catalog/libraries/server/http/#identify) signals that the user of this browser is user `12345`. And also sets name and email as traits of user `12345`.
 
 [Track](https://segment.com/docs/tracking-api/track) records an event that says `12345` registered for an account via Facebook.
 
@@ -61,7 +61,15 @@ analytics.track('Account Created', { authentication:'Facebook'})
 So far the user is only identified by their userId. Later, all the user's traits can be filled in via Python (or any of our other server-side [sources](https://segment.com/docs/sources/server)).
 
 ```js
-analytics.identify('12345',{'email':'jake.peterson@example.com','name':'Jake Peterson','friends':372,'city':'San Francisco','state':'CA','gender':'Male','age':25,'plan':'Free'})
+analytics.identify('12345',{
+  'email':'jake.peterson@example.com',
+  'name':'Jake Peterson',
+  'friends':372,'city':'San Francisco',
+  'state':'CA',
+  'gender':'Male',
+  'age':25,
+  'plan':'Free'
+})
 ```
 
 #### Aliasing server-side

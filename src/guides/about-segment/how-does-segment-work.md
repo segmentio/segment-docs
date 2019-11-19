@@ -22,4 +22,5 @@ Our Web source (Analytics.js), and our native client-side libraries (iOs, Androi
 
 - **Device-mode**: in this mode, you include additional code on your website or mobile app, which allows Segment to translate the data you collected on the device, and then send it directly to your destinations without sending it to the Segment servers first. (You still send your data to the Segment servers, but this occurs asynchronously.) This is also called "wrapping" or "bundling", and it might be required when the source has to be loaded on the page to work, or loaded directly on the device to function correctly.
 
-> **Note:** If you use Server source libraries, they only send data directly to Segment in Cloud-mode. (Server libraries don't as a rule have an additional device to push translation to.)
+> note
+> If you use Server source libraries, they only send data directly to Segment in Cloud-mode. (Server libraries don't as a rule have an additional device to push translation to.)

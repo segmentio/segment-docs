@@ -4,7 +4,7 @@ title: Filtering your Segment Data
 
 There are many ways you can use Segment to filter event and object based data to control which destinations it reaches. This document lists the most commonly used ways you can filter data in Segment, and explains when you'd use each.
 
-<img src="/docs/homepage/segment-diagram.png" style="max-width: 500px;">
+<img src="/docs/images/segment-diagram.png" style="max-width: 500px;">
 
 ## Filtering with the Integrations Object
 
@@ -48,7 +48,7 @@ Destination Filters are available in workspaces that are on a Business Tier plan
 
 ![](images/destination-filter-create.png)
 
-You can set up Destination Filters from the Segment web app by navigating to the destination from which you want to exclude the data, and clicking the **Destination Filters** tab. From there you can create new filter rules, and edit, enable, and disable existing filters. See the [Destination Filters documentation](https://segment.com/docs/destinations/destination-filters/) for more details.
+You can set up Destination Filters from the Segment web app by navigating to the destination from which you want to exclude the data, and clicking the **Destination Filters** tab. From there you can create new filter rules, and edit, enable, and disable existing filters. See the [Destination Filters documentation](https://segment.com/docs/connections/destinations/destination-filters/) for more details.
 
 You can set up Destination filters using the options presented in the Segment web app, or using Segment's Filter Query Logic (FQL). If you use FQL, your query syntax is limited to 5kb per query.
 

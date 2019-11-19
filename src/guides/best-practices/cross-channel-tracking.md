@@ -8,7 +8,7 @@ But these off-domain and cross-device brand interactions are equally, if not mor
 
 In this guide, we'll share where and how to track these critical events so that you can understand your customer's journey before they even get to your storefront, as well as their preferred shopping experiences.
 
-_If you're interested in learning about what to track,_ [check out our guide on creating an e-commerce tracking plan](https://segment.com/docs/guides/sources/how-to-implement-an-ecommerce-tracking-plan).
+_If you're interested in learning about what to track,_ [check out our guide on creating an e-commerce tracking plan](/docs/protocols/ecommerce-tracking-plan/).
 
 [Talk to a product specialist today](https://segment.com/contact/sales) about building a clean, high-quality data spec so you can focus on brand engagement and sales growth.
 
@@ -16,7 +16,7 @@ _If you're interested in learning about what to track,_ [check out our guide on 
 
 Digital marketing consists of owned marketing, earned marketing, and paid marketing.
 
-![](../../images/asset_WyEIhjxB.png)
+![](images/x-channel_WyEIhjxB.png)
 
 "Owned" marketing encompasses all activities you have full control over. It can be further split into first- and second-party data. First-party data is customer data generated on your site or in your app. Second-party data is customer data generated when your customers interact with your email or push notifications (e.g. "Email Opened", "Push Notification Received").
 
@@ -51,27 +51,27 @@ In your email template HTML, include an image tag where the `src` is a URL that 
 
 An example of the payload that will be sent to Segment upon an email open is:
 
-```
-    {
-      "writeKey": "YOUR_WRITE_KEY",
-      "userId": "025waflo3d65",
-      "event": "Email Opened",
-      "properties": {
-        "subject": "Try Our New $10 Toast",
-        "email": "andy@segment.com"
-      }
-    }
+```js
+{
+  "writeKey": "YOUR_WRITE_KEY",
+  "userId": "025waflo3d65",
+  "event": "Email Opened",
+  "properties": {
+    "subject": "Try Our New $10 Toast",
+    "email": "andy@segment.com"
+  }
+}
 ```
 
 Then, you would base64 encode that and append it to the Segment endpoint:
 
-```
+```text
 https://api.segment.io/v1/pixel/track?data=<base64-ENCODED-JSON>
 ```
 
 Add the complete URL as the `src` in the image tag.
 
-```
+```text
 <img src="https://api.segment.io/v1/pixel/track?data=eyJ3cml0ZUtleSI6ICJZT1VSX1dSSVRFX0tFWSIsICJ1c2VySWQiOiAiMDI1cGlrYWNodTAyNSIsICJldmVudCI6ICJFbWFpbCBPcGVuZWQiLCAicHJvcGVydGllcyI6IHsgICAic3ViamVjdCI6ICJUaGUgRWxlY3RyaWMgRGFpbHkiLCAgICJlbWFpbCI6ICJwZWVrQXRNZUBlbWFpbC5wb2tlIiB9fQ">
 ```
 
@@ -81,7 +81,7 @@ Add the complete URL as the `src` in the image tag.
 
 UTM parameters are types of query strings added to the end of a URL. When clicked, they let the domain owners track where incoming traffic is coming from and understand what aspects of their marketing campaigns are driving traffic.
 
-![](../../images/asset_GWqnp2I6.png)
+![](images/x-channel_GWqnp2I6.png)
 
 UTM parameters are only used when linking to your site from outside of your domain. When a visitor arrives to your site via a link containing UTM parameters, Segment's client-side analytics.js library will automatically parse the URL's query strings, and store them within the `context` object as outlined [here](https://segment.com/docs/spec/common/#context-fields-automatically-collected). These parameters do not persist to subsequent calls unless you pass them explicitly.
 
@@ -133,7 +133,7 @@ Your UTM parameters would match a pattern such as
 
 An example would be a National Toast Day campaign. This campaign would include emails, paid acquisition (via AdRoll and Facebook Ads), organic social (Twitter), and promotional content on partners' blogs.
 
-![](../../images/asset_Z3KerVHZ.png)
+![](images/x-channel_Z3KerVHZ.png)
 
 Having the consistent UTM parameters naming convention simplifies the downstream analysis and the ease of querying across dimensions, such as within the campaign, which medium or source was the best. Or which placement of the display ad led to the most conversions.
 

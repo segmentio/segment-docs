@@ -7,7 +7,6 @@ Switching from your current client-side javascript event tracking to Segment is 
  - Google Analytics
  - Mixpanel
 
-
 If you'd like us to add more tools or mobile/server-side examples to this guide [let us know](https://segment.com/help/contact/)!
 
 ## Google Analytics
@@ -191,13 +190,13 @@ Alias is necessary in Mixpanel to tie together an anonymous visitor with an iden
 
 In client-side javascript passing a single argument will alias the current anonymous or identified visitor distinct\_id to the userId you pass into it:
 
-```
+```js
 mixpanel.alias('1234');
 ```
 
 Becomes:
 
-```
+```js
 analytics.alias('1234');
 ```
 
@@ -273,13 +272,13 @@ This also works when you include a userId argument in your identify call.
 
 As you can see Segment also recognizes special traits like email and name and translates them to the keys that Mixpanel expects (we automatically add the dollar sign).
 
-For more information check out [our Mixpanel docs](/docs/destinations/mixpanel).
+For more information check out [our Mixpanel docs](/docs/connections/destinations/catalog/mixpanel).
 
 ### Increment
 
 To use Mixpanel increment through Segment you won't event need anything in your code! All you have to do is list the events you'd like to increment automatically in your Mixpanel destination settings.
 
-Read more in [our Mixpanel Increment Docs](/docs/destinations/mixpanel#increment).
+Read more in [our Mixpanel Increment Docs](/docs/connections/destinations/catalog/mixpanel#increment).
 
 ### Revenue
 

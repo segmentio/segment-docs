@@ -8,12 +8,12 @@ For example, [Wanelo](http://wanelo.com/?__hstc=222691652.f2c5ed50a3a9703ac3be5
 
 Every Push messaging focuses around three key features:
 
-*   Content -Diversify your messaging just as you would with an investment portfolio. you want to target your consumers with right content and avoid opt out for push. For example: Netflix uses push notifications to let users know when their favorite shows are available. Rather than sending every user a notification every time any new show or season is released.
-    
-*   Frequency- Consider your App Store Category. News/Sports apps send push notifications daily or multiple times a day if its "game day". So do Social Networking/Messaging apps. However, apps that are utilitarian - Travel, Food & Drink, Health & Fitness, Productivity, etc. - only message when necessary.
-    
-*   Timing- Always send push notifications to users in their local timezone. In general, mobile usage peaks between 6pm - 10pm.
-    
+- **Content** - Diversify your messaging just as you would with an investment portfolio. you want to target your consumers with right content and avoid opt out for push. For example: Netflix uses push notifications to let users know when their favorite shows are available. Rather than sending every user a notification every time any new show or season is released.
+
+- **Frequency** - Consider your App Store Category. News/Sports apps send push notifications daily or multiple times a day if its "game day". So do Social Networking/Messaging apps. However, apps that are utilitarian - Travel, Food & Drink, Health & Fitness, Productivity, etc. - only message when necessary.
+
+- **Timing** - Always send push notifications to users in their local timezone. In general, mobile usage peaks between 6pm - 10pm.
+
 
 ### Choose an destination
 

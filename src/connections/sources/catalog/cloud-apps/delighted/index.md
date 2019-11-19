@@ -111,7 +111,7 @@ Below are tables outlining the properties included in the events listed above.
 
 Now that your Source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the [Destination docs](https://segment.comdocs/connections/destinations/) for troubleshooting.
+Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the [Destination docs](https://segment.com/docs/connections/destinations/) for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, please [contact the Delighted team](hello@delighted.com).
 
