@@ -2,6 +2,14 @@ const typewriter = require('analytics')
 
 export default function() {
 
+  let scrolledToBottom = false
+  window.onscroll = function(ev) {
+    if (!scrolledToBottom && (window.innerHeight + window.pageYOffset) >= document.getElementsByClassName('stage__content')[0].offsetHeight) {//document.body.offsetHeight) {
+        scrolledToBottom = true
+        console.log("you're at the bottom of the page");
+    }
+  }
+  
   // Array.from(document.querySelectorAll('.menu-item__link')).forEach(link => {
   //   link.onclick = function(e) {
   //     typewriter.docsNavClicked({
