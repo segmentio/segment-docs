@@ -1,6 +1,5 @@
 ---
 title: Destinations
-sidebar: Overview
 rewrite: true
 ---
 

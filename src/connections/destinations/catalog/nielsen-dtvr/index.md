@@ -1,7 +1,5 @@
 ---
 title: Nielsen DTVR Destination
-sidebar: Nielsen DTVR
-hidden: false
 rewrite: true
 ---
 

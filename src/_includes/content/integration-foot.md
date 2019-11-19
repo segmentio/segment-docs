@@ -4,7 +4,9 @@
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
 
 {% if currentIntegration.platforms.server == true %}
+{% unless page.hide-personas-parital%}
 {% include content/personas.md %}
+{% endunless %}
 
 {% endif %}
 
@@ -31,7 +33,7 @@ This destination *requires* a **Device-based** Connection Mode for **Mobile** da
 
 ## Settings
 
-Segment lets you change these destination settings via your Segment dashboard without having to touch any code.
+Segment lets you change these destination settings from your Segment dashboard without having to touch any code.
 
 {% for item in currentIntegration.settings %}
   {% unless item.deprecated == true %}

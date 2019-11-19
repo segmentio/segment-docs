@@ -1,6 +1,5 @@
 ---
 title: 'Spec: Screen'
-sidebar: Screen
 ---
 
 The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of `page`, in your mobile app, along with any properties about the screen. Calling `page` or [`screen`](/docs/spec/screen/) in one of our [sources](docs/connections/sources/) is one of the first steps to getting started with Segment.

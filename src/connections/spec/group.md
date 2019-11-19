@@ -1,6 +1,5 @@
 ---
 title: 'Spec: Group'
-sidebar: Group
 ---
 
 The `group` API call is how you associate an individual user with a group—be it a company, organization, account, project, team or whatever other crazy name you came up with for the same concept!

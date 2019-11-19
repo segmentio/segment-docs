@@ -1,6 +1,5 @@
 ---
 title: Spec
-sidebar: Overview
 ---
 
 The Segment Spec provides guidance on meaningful data to capture, and the best format for it, across all of our libraries and APIs. If you implement Segment using these formats, it's simple to translate your data to downstream tools.

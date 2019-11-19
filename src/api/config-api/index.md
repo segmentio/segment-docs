@@ -1,6 +1,5 @@
 ---
 title: Config API
-sidebar: Overview
 ---
 
 The Config API enables you to programmatically manage Segment workspaces, sources, destinations and more. With the API you can:

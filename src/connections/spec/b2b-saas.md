@@ -1,7 +1,5 @@
 ---
 title: 'Spec: B2B SaaS'
-sidebar: 'B2B SaaS'
-hidden: false
 ---
 
 This guide explains how B2B SaaS companies should send core user and account lifecycle data to Segment.

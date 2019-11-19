@@ -1,6 +1,5 @@
 ---
 title: 'Spec: Live Chat Events'
-sidebar: 'Live Chat Events'
 hidden: true
 ---
 

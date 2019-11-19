@@ -1,6 +1,5 @@
 ---
 title: Sailthru Destination
-beta: false
 ---
 
 ## Getting Started
