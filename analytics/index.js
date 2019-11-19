@@ -92,46 +92,6 @@ function withTypewriterContext(message = {}) {
  * @property {string} [url] -
  */
 /**
- * Fires a 'Docs Nav Clicked' track call.
- *
- * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
- * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
- * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
- * 		call is fired.
- */
-export function docsNavClicked(props, options, callback) {
-	const schema = {
-		$schema: 'http://json-schema.org/draft-07/schema#',
-		labels: {},
-		properties: {
-			context: {},
-			properties: {
-				type: 'object',
-			},
-			traits: {
-				type: 'object',
-			},
-		},
-		title: 'Docs Nav Clicked',
-		type: 'object',
-	}
-	const message = {
-		event: 'Docs Nav Clicked',
-		properties: props || {},
-		options,
-	}
-	validateAgainstSchema(message, schema)
-	const a = analytics()
-	if (a) {
-		a.track(
-			'Docs Nav Clicked',
-			props || {},
-			withTypewriterContext(options),
-			callback
-		)
-	}
-}
-/**
  * Fires a 'Docs Rated' track call.
  *
  * @param {DocsRated} [props] - The analytics properties that will be sent to Segment.
@@ -178,46 +138,6 @@ export function docsRated(props, options, callback) {
 	const a = analytics()
 	if (a) {
 		a.track('Docs Rated', props || {}, withTypewriterContext(options), callback)
-	}
-}
-/**
- * Fires a 'Docs Search Clicked' track call.
- *
- * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
- * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
- * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
- * 		call is fired.
- */
-export function docsSearchClicked(props, options, callback) {
-	const schema = {
-		$schema: 'http://json-schema.org/draft-07/schema#',
-		labels: {},
-		properties: {
-			context: {},
-			properties: {
-				type: 'object',
-			},
-			traits: {
-				type: 'object',
-			},
-		},
-		title: 'Docs Search Clicked',
-		type: 'object',
-	}
-	const message = {
-		event: 'Docs Search Clicked',
-		properties: props || {},
-		options,
-	}
-	validateAgainstSchema(message, schema)
-	const a = analytics()
-	if (a) {
-		a.track(
-			'Docs Search Clicked',
-			props || {},
-			withTypewriterContext(options),
-			callback
-		)
 	}
 }
 /**
@@ -315,6 +235,46 @@ export function linkClicked(props, options, callback) {
 	}
 }
 /**
+ * Fires a 'Nav Clicked' track call.
+ *
+ * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
+ * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
+ * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
+ * 		call is fired.
+ */
+export function navClicked(props, options, callback) {
+	const schema = {
+		$schema: 'http://json-schema.org/draft-07/schema#',
+		labels: {},
+		properties: {
+			context: {},
+			properties: {
+				type: 'object',
+			},
+			traits: {
+				type: 'object',
+			},
+		},
+		title: 'Nav Clicked',
+		type: 'object',
+	}
+	const message = {
+		event: 'Nav Clicked',
+		properties: props || {},
+		options,
+	}
+	validateAgainstSchema(message, schema)
+	const a = analytics()
+	if (a) {
+		a.track(
+			'Nav Clicked',
+			props || {},
+			withTypewriterContext(options),
+			callback
+		)
+	}
+}
+/**
  * Fires a 'Page Viewed' track call.
  *
  * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
@@ -395,14 +355,14 @@ export function scrollToTopClicked(props, options, callback) {
 	}
 }
 /**
- * Fires a 'Side Nav Clicked' track call.
+ * Fires a 'Search Clicked' track call.
  *
  * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
  * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
  * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
  * 		call is fired.
  */
-export function sideNavClicked(props, options, callback) {
+export function searchClicked(props, options, callback) {
 	const schema = {
 		$schema: 'http://json-schema.org/draft-07/schema#',
 		labels: {},
@@ -415,11 +375,11 @@ export function sideNavClicked(props, options, callback) {
 				type: 'object',
 			},
 		},
-		title: 'Side Nav Clicked',
+		title: 'Search Clicked',
 		type: 'object',
 	}
 	const message = {
-		event: 'Side Nav Clicked',
+		event: 'Search Clicked',
 		properties: props || {},
 		options,
 	}
@@ -427,7 +387,7 @@ export function sideNavClicked(props, options, callback) {
 	const a = analytics()
 	if (a) {
 		a.track(
-			'Side Nav Clicked',
+			'Search Clicked',
 			props || {},
 			withTypewriterContext(options),
 			callback
@@ -450,15 +410,6 @@ const clientAPI = {
 	 */
 	setTypewriterOptions,
 	/**
-	 * Fires a 'Docs Nav Clicked' track call.
-	 *
-	 * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
-	 * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
-	 * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
-	 * 		call is fired.
-	 */
-	docsNavClicked,
-	/**
 	 * Fires a 'Docs Rated' track call.
 	 *
 	 * @param {DocsRated} [props] - The analytics properties that will be sent to Segment.
@@ -467,15 +418,6 @@ const clientAPI = {
 	 * 		call is fired.
 	 */
 	docsRated,
-	/**
-	 * Fires a 'Docs Search Clicked' track call.
-	 *
-	 * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
-	 * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
-	 * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
-	 * 		call is fired.
-	 */
-	docsSearchClicked,
 	/**
 	 * Fires a 'Lead Captured' track call.
 	 *
@@ -495,6 +437,15 @@ const clientAPI = {
 	 */
 	linkClicked,
 	/**
+	 * Fires a 'Nav Clicked' track call.
+	 *
+	 * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
+	 * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
+	 * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
+	 * 		call is fired.
+	 */
+	navClicked,
+	/**
 	 * Fires a 'Page Viewed' track call.
 	 *
 	 * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
@@ -513,14 +464,14 @@ const clientAPI = {
 	 */
 	scrollToTopClicked,
 	/**
-	 * Fires a 'Side Nav Clicked' track call.
+	 * Fires a 'Search Clicked' track call.
 	 *
 	 * @param {Record<string, any>} [props] - The analytics properties that will be sent to Segment.
 	 * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
 	 * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
 	 * 		call is fired.
 	 */
-	sideNavClicked,
+	searchClicked,
 }
 export default new Proxy(clientAPI, {
 	get(target, method) {
