@@ -1,0 +1,25 @@
+sections:
+- section_title: Partners
+  section:
+  - path: /partners
+    title: Join the Segment Platform
+  - path: /partners/build-functions
+    title: Building a Subscription Function
+  - path: /partners/build-webhook
+    title: Building a Subscription Webhook
+  - path: /partners/checklist
+    title: Public Beta Checklist
+  - path: /partners/co-marketing
+    title: Co-marketing
+  - path: /partners/conceptual-model
+    title: Conceptual Model
+  - path: /partners/enable-with-segment
+    title: Using OAuth to Build a Two-Click Enable Flow
+  - path: /partners/plugins
+    title: Building a Plugin
+  - path: /partners/spec
+    title: Segment Spec for Partners
+  - path: /partners/streams
+    title: Building a Stream
+  - path: /partners/subscriptions
+    title: Building a Subscription
