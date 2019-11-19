@@ -57,7 +57,6 @@ faq:
 related:
   - "/connections/sources/catalog/"
   - "/connections/sources/faq/"
-  - "/connections/sources/guides/"
 ---
 
 

@@ -4,7 +4,6 @@ landing: true
 related:
   - "/connections/sources/catalog/"
   - "/connections/sources/faq/"
-  - "/connections/sources/guides/"
 icon: media/icon-academy.svg
 excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
 ---
