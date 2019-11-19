@@ -1,8 +1,5 @@
-<!-- Page generated {{ site.time }} -->
-<!-- relative link basehrefs -->
-
 {% capture basehref %}{{ page.url }}{% endcapture %}
-
+{% assign sectionNames = basehref | split: "/" %}
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
   <base href="/docsv2{{ basehref }}" />
@@ -27,7 +24,9 @@
   {% if page.hidden %}
     <meta name="robots" content="noindex" />
   {% else %}
-    <meta class="swiftype" name="section" data-type="enum" content="Documentation" />
+    <meta class="swiftype" name="section" data-type="enum" content="{{ sectionNames[1] }}" />
+    <meta class="swiftype" name="info" data-type="enum" content="{{page.description}}" />
+    <meta class="swiftype" name="description" data-type="enum" content="{{page.description}}" />
     <meta class="swiftype" name="title" data-type="string" content="{{page.title}}" />
     <meta class="swiftype" name="priority" data-type="integer" content="2" />
   {% endif %}

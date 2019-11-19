@@ -28,14 +28,19 @@ export default () => {
         let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
 
         let position = null
-        
+
+        let currentItem = null
         let currentID = null
         if (current.tagName === 'H2') {
           currentID = current.id
         } else {
           currentID = current.querySelector('h2').getAttribute('id')
         }
-        
+
+        if (currentID) {
+          currentItem = component.querySelector(`a[href='#${currentID}']`)
+        }
+
         if (window.innerWidth >= 768) {
           position = scrollPosition + (window.innerHeight * 0.2)
         } else {
@@ -44,14 +49,15 @@ export default () => {
         if (currentElementOffset <= position) {
           allLinks.forEach(currentLink => {
             currentLink.classList.remove(activeClass)
-          })          
-          if ( currentID ) {
-            component
-            .querySelector(`a[href='#${currentID}']`)
-            .classList.add(activeClass)
+          })
+
+          if (currentItem) {
+            currentItem.classList.add(activeClass)
           }
         } else {
-          component.querySelector(`a[href='#${currentID}']`).classList.remove(activeClass)
+          if (currentItem) {
+            currentItem.classList.remove(activeClass)
+          }
         }
       })
     }

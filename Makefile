@@ -32,11 +32,11 @@ serve: package
 
 .PHONY: catalog
 catalog: vendor/bundle
-	@node server/catalog.js
+	@node scripts/catalog.js
 
 .PHONY: sidenav
 sidenav: vendor/bundle
-	@node server/nav.js
+	@node scripts/nav.js
 
 .PHONY: typewriter
 typewriter: npx typewriter
