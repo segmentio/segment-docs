@@ -1,6 +1,9 @@
 ---
 title: 'Spec: Identify'
-sidebar: Identify
+related:
+  - "/connections/sources/catalog/"
+  - "/connections/sources/faq/"
+  - "/connections/sources/guides/"
 ---
 
 `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them like their email, name, etc.
@@ -39,9 +42,9 @@ And here's the corresponding Javascript event that would generate the above payl
 
 ```js
 analytics.identify("97980cfea0067", {
-  name: "Peter Gibbons", 
-  email: "peter@initech.com", 
-  plan: "premium", 
+  name: "Peter Gibbons",
+  email: "peter@initech.com",
+  plan: "premium",
   logins: 5
 });
 ```
@@ -242,4 +245,4 @@ Reserved traits we've standardized:
 
 **Note:** You might be used to some destinations recognizing special traits by slightly different names. For example, Mixpanel recognizes a `$created` trait when the user's account was first created, while Intercom recognizes the same trait as `created_at` instead.  Luckily, you don't have to worry about those inconsistencies. Just pass us `createdAt`. **We'll handle all of the destination-specific conversions for you automatically.**  Same goes for the rest of the reserved traits.
 
-**You can pass these reserved traits using camelCase or snake_case**, so in Javascript you can match the rest of your camel-case code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. That way the API never seems alien to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations. 
+**You can pass these reserved traits using camelCase or snake_case**, so in Javascript you can match the rest of your camel-case code by sending `firstName`, while in Ruby you can match your snake-case code by sending `first_name`. That way the API never seems alien to your code base. Keep in mind that not all destinations support these reserved traits, so sending these traits in camelCase and snake_case can result in two sets of traits in other destinations.
