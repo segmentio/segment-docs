@@ -1,5 +1,5 @@
 ---
-title: "How do I decide between Redshift, Postgres, and BigQuery?"
+title: Choosing a Warehouse
 ---
 
 ## Comparing Redshift and Postgres

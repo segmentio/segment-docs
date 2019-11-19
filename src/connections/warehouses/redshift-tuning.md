@@ -14,7 +14,7 @@ As your data volume grows and your team writes more queries, you might be runnin
 
 To check if you're getting close to your max, run this query. It will tell you the percentage of storage used in your cluster. We recommend never exceeding 75-80% of your storage capacity. If you're nearing capacity, consider adding some more nodes.
 
-![](../../images/asset_HvZs8FpE.png)
+![](images/asset_HvZs8FpE.png)
 
 [Learn how to resize your cluster here.](http://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html)
 
@@ -25,22 +25,22 @@ Another thing you'll want to check is if your queries are efficient. For example
 A few tips for writing performant queries:
 
 *   Consider using `INNER joins` as they are are more efficient that `LEFT joins`.
-    
+
 *   Stay away from `UNION` whenever possible.
-    
+
 *   Specify multiple levels of conditionals when you can.
-    
+
 *   Use [`EXPLAIN`](https://www.periscopedata.com/blog/explain-and-other-tools-for-query-optimization.html) to show the query execution plan and cost.
-    
+
 
 To learn more about writing beautiful SQL, check out these resources:
 
 *   [Periscope on Query Performance](https://www.periscopedata.com/amazon-redshift-guide/helpful-admin-queries#query-performance)
-    
+
 *   [Mode on Performance Tuning SQL Queries](https://community.modeanalytics.com/sql/tutorial/sql-performance-tuning/)
-    
+
 *   [Chartio on Improving Query Performance](https://support.chartio.com/knowledgebase/improving-query-performance)
-    
+
 
 ### 3\. Multiple ETL processes and queries running
 
@@ -50,7 +50,7 @@ If you have multiple ETL processes loading into your warehouse at the same time,
 
 If you're a Segment Business Tier customer, you can schedule your sync times under Warehouses Settings.
 
-![](../../images/asset_fRccrNNd.png)
+![](images/asset_fRccrNNd.png)
 
 In addition, you might want to take advantage of Redshift's [Workload Management](http://docs.aws.amazon.com/redshift/latest/dg/c_workload_mngmt_classification.html) that helps ensure fast-running queries won't get stuck behind long ones.
 
@@ -65,11 +65,11 @@ Before our SQL statements, we use `set query_group to "segment";` to group all
 Our initial recommendation is for 2 WLM queues:
 
 1.  a queue for the `segment` query group with a concurrency of `10`
-    
-2.  leave the default queue with a concurrency of `5`
-    
 
-![](../../images/asset_sHNEIURK.png)
+2.  leave the default queue with a concurrency of `5`
+
+
+![](images/asset_sHNEIURK.png)
 
 Generally, we are responsible for most writes in the databases we connect to, so having a higher concurrency allows us to write as quickly as possible. However, if you are also using the same database for your own ETL process, you may want to use the same concurrency for both groups. In addition, you may even require additional queues if you have other applications writing to the database.
 
