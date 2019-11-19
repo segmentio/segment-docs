@@ -113,7 +113,6 @@ const doesCatalogItemExist = (item) => {
   }
 }
 
-
 const updateSources = async () => {
   let sources = []
   let sourcesUpdated = []

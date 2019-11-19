@@ -1,5 +1,6 @@
 {% capture basehref %}{{ page.url }}{% endcapture %}
 {% assign sectionNames = basehref | split: "/" %}
+
 {% assign sectionName = sectionNames[1] | capitalize %}
 {% assign currentSlug = page.url | split: "/" | last %}
 {% assign priority = 2 %}
