@@ -75,5 +75,5 @@ Object.keys(sections).filter(key => !key.includes('/')).forEach((key) => {
 ].forEach(([ name, sections ]) => {
     const options = { noArrayIndent: true };
     const output = yaml.safeDump({ sections: Object.values(sections) }, options);
-    fs.writeFileSync(path.resolve(__dirname, `../src/_data/sidenav-auto/${name}.yml`), output);
+    fs.writeFileSync(path.resolve(__dirname, `../src/_data/sidenav/_auto/${name}.yml`), output);
 });
