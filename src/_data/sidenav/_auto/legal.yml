@@ -1,10 +1,10 @@
 sections:
 - section_title: Legal
   section:
-  - path: /legal
-    title: Terms of Service
   - path: /legal/acceptable-use-policy
     title: Acceptable Use Policy
+  - path: /legal/enhanced-onboarding-support
+    title: Enhanced Onboarding Support
   - path: /legal/first-access-beta-preview
     title: First-Access and Beta Preview
   - path: /legal/partnersagreement

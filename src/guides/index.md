@@ -1,7 +1,5 @@
 ---
-title: Guides
-rewrite: true
-hidden: true
+title: Getting started with Segment
 ---
 
-test:
+Getting started with Segment

@@ -1,5 +1,5 @@
 ---
-title: "How does Segment handle duplicate data?"
+title: How does Segment handle duplicate data?
 ---
 
 Segment has a special de-duplication service that sits just behind the api.segment.com endpoint, and attempts to drop duplicate data. However, that de-duplication api has to hold the entire set of events in memory in order to know whether or not it has seen that event already. Segment will store 24 hours worth of event `message_id`'s. Effectively, this means Segment will de-duplicate data that appears inside a 24 hour sliding window.
@@ -10,6 +10,6 @@ Since the api layer is de-duping during this window, duplicate events that are f
 
 Keep in mind that Segment's libraries all generate `message_id`s for you for each event payload, with the exception of our HTTP API, which assigns each event a unique `message_id` when the message is ingested, although you could of course override and manually assign a `message_id` if you wanted.
 
-### What identifiers can the merged profile be queried/updated with?"
+### What identifiers can the merged profile be queried/updated with?
 
 Any of the external IDs can be used to query a profile. When a profile is requested, we will traverse the merge graph and resolve all merged profiles. The result is a single profile, with the latest state of all traits, events, and identifiers.

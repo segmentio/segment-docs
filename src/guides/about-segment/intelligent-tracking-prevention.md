@@ -1,5 +1,5 @@
 ---
-title: "Is Segment impacted by Intelligent Tracking Prevention?"
+title: Is Segment impacted by Intelligent Tracking Prevention?
 ---
 
 Intelligent Tracking Prevention (ITP) is a new feature that was launched with Apple's Safari 11 browser. ITP is a machine learning model used to identify and classify which top domains use cross-site tracking. If ITP classifies a website as having the ability to track users cross-site, the website is subject to stricter cookie policies. Specifically, any third-party cookies or cookies from sites classified by ITP will be automatically purged after 24 hours of inactivity. With Safari ITP 2.1, all client-side cookies will be automatically purged after 7 days of inactivity.

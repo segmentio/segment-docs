@@ -1,5 +1,5 @@
 ---
-title: "Is it possible to ignore internet bots?"
+title: How can I ignore internet bots?
 ---
 
 ## But wait, I don't even know what a bot is!

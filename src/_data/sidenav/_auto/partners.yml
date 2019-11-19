@@ -14,7 +14,7 @@ sections:
   - path: /partners/conceptual-model
     title: Conceptual Model
   - path: /partners/enable-with-segment
-    title: Using OAuth to Build a Two-Click Enable Flow
+    title: Use OAuth to Build a Two-Click Enable Flow
   - path: /partners/plugins
     title: Building a Plugin
   - path: /partners/spec
