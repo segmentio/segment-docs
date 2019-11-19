@@ -1,0 +1,202 @@
+sections:
+- section_title: Guides
+  section:
+  - path: /guides
+    title: Guides
+  - section_title: Account Management
+    slug: guides/account-management
+    section:
+    - path: /guides/account-management
+      title: Account management
+    - path: /guides/account-management/account-vs-workspace
+      title: What is the difference between an account and a workspace?
+    - path: /guides/account-management/add-team-member
+      title: How do I add a team member?
+    - path: /guides/account-management/cancel-my-subscription
+      title: Will deleting my account cancel my subscription?
+    - path: /guides/account-management/cant-add-integration
+      title: Why can’t I add the integration I want?
+    - path: /guides/account-management/delete-workspace
+      title: How do I delete my workspace entirely?
+    - path: /guides/account-management/move-source-workspace
+      title: Can I move a source from one workspace to another?
+    - path: /guides/account-management/multiple-environments
+      title: 'How do I set up a Segment for dev, prod, and testing environments?'
+    - path: /guides/account-management/recover-source-workspace
+      title: Can I recover a source or workspace after I delete it?
+    - path: /guides/account-management/special-permissioning
+      title: >-
+        What do team members have access to? Is there special permissioning to
+        allow access to only certain sources?
+  - section_title: Best Practices
+    slug: guides/best-practices
+    section:
+    - path: /guides/best-practices
+      title: Best Practices
+    - path: /guides/best-practices/best-practices-identify
+      title: What are best practices for identifying users?
+    - path: /guides/best-practices/collect-on-client-or-server
+      title: Should I instrument data collection on the client or server?
+    - path: /guides/best-practices/collect-pageviews-serverside
+      title: How do I collect pageviews on the server side?
+    - path: /guides/best-practices/cross-channel-tracking
+      title: How do we track your customers across channels and devices?
+    - path: /guides/best-practices/ecommerce-tracking-plan
+      title: How do we implement an e-commerce tracking plan?
+    - path: /guides/best-practices/forecast-with-sql
+      title: How do I forecast LTV with SQL and Excel for e-commerce?
+    - path: /guides/best-practices/measure-marketing-roi-2
+      title: How do we measure the ROI of marketing campaigns?
+    - path: /guides/best-practices/measure-marketing-roi
+      title: How do I measure the ROI of my Marketing Campaigns?
+    - path: /guides/best-practices/preparing-for-gdpr
+      title: Preparing for the GDPR
+    - path: /guides/best-practices/test-connections
+      title: How do I test my connections?
+    - path: /guides/best-practices/user-deletion-suppression
+      title: User Deletion and Suppression
+    - path: /guides/best-practices/whats-a-tracking-plan
+      title: What’s a tracking plan and why should you care?
+  - section_title: General
+    slug: guides/general
+    section:
+    - path: /guides/general
+      title: Intro to Segment
+    - path: /guides/general/duplicate-data
+      title: How does Segment handle duplicate data?
+    - path: /guides/general/segment-vs-tag-managers
+      title: What is the difference between Segment and tag managers?
+    - path: /guides/general/whats-a-workspace
+      title: What is a workspace?
+  - section_title: Miscellaneous
+    slug: guides/miscellaneous
+    section:
+    - path: /guides/miscellaneous
+      title: Misc FAQs
+    - path: /guides/miscellaneous/destination-data-control
+      title: How do I use Schema Controls?
+    - path: /guides/miscellaneous/identifiers-merged
+      title: What identifiers can the merged profile be queried/updated with?
+    - path: /guides/miscellaneous/ignore-bots
+      title: Is it possible to ignore internet bots?
+    - path: /guides/miscellaneous/intelligent-tracking-prevention
+      title: Is Segment impacted by Intelligent Tracking Prevention?
+    - path: /guides/miscellaneous/unique-events
+      title: >-
+        How many unique events and properties can be logged in my Segment Schema
+        table?
+  - section_title: Setup
+    slug: guides/setup
+    section:
+    - path: /guides/setup
+      title: Set up
+    - path: /guides/setup/change-domain
+      title: What if I change my domain name?
+    - path: /guides/setup/find-writekey
+      title: How do I find my write key?
+    - path: /guides/setup/import-historical-data
+      title: How do I import historical data?
+    - path: /guides/setup/migrate-from-other-tools
+      title: How do I migrate code from other analytics tools?
+  - section_title: Usage And Billing
+    slug: guides/usage-and-billing
+    section:
+    - path: /guides/usage-and-billing
+      title: Usage and Billing
+    - path: /guides/usage-and-billing/billing-cycle
+      title: What is a billing cycle?
+    - path: /guides/usage-and-billing/cancelation-final-bill
+      title: How do I change my plan?
+    - path: /guides/usage-and-billing/discounts-for-startups-npos
+      title: Do you offer coupons?
+    - path: /guides/usage-and-billing/event-vs-object
+      title: What is the difference between an event and an object?
+    - path: /guides/usage-and-billing/mtu-calculation
+      title: How are MTUs calculated by Segment?
+    - path: /guides/usage-and-billing/mtu-count-vs-other-tools
+      title: >-
+        Why is my MTU count higher or lower than the user count I see in my
+        downstream destinations/other tools?
+    - path: /guides/usage-and-billing/mtu-spikes
+      title: What caused an unexpected spike in my MTU count?
+    - path: /guides/usage-and-billing/pay-us-sales-tax
+      title: >-
+        I've never had to pay US sales tax on my invoices before, what's
+        changed?
+    - path: /guides/usage-and-billing/refunds
+      title: Do you offer refunds?
+    - path: /guides/usage-and-billing/startup-program
+      title: What is the Segment Startup Program?
+    - path: /guides/usage-and-billing/throughput-limit
+      title: What does throughput limit stand for?
+    - path: /guides/usage-and-billing/trial-for-paid-plans
+      title: Is there a free trial for paid plans?
+    - path: /guides/usage-and-billing/us-sales-tax
+      title: Why are you applying US sales tax to my invoice?
+    - path: /guides/usage-and-billing/view-usage
+      title: How do I find out my usage data?
+    - path: /guides/usage-and-billing/volume-and-pricing
+      title: How does my event and object volume impact my pricing?
+- section_title: Personas
+  section:
+  - path: /personas
+    title: Personas Overview
+  - path: /personas/activation
+    title: Personas Activation
+  - path: /personas/audiences
+    title: Audiences
+  - path: /personas/computed-traits
+    title: Personas Computed Traits
+  - path: /personas/faqs
+    title: Frequently Asked Questions
+  - path: /personas/identity-resolution
+    title: Identity Resolution
+  - path: /personas/personas-gdpr
+    title: Personas and GDPR
+  - path: /personas/profile-api
+    title: Personas Profile API
+  - path: /personas/sql-traits
+    title: Personas SQL Traits
+  - path: /personas/warehouses
+    title: Personas Warehouse Sync
+- section_title: Privacy
+  section:
+  - path: /privacy
+    title: Privacy
+- section_title: Protocols
+  section:
+  - path: /protocols
+    title: Protocols
+  - path: /protocols/anomaly_detection
+    title: 'Protocols: Anomaly Detection'
+  - path: /protocols/apis-and-extensions
+    title: 'Protocols: APIs and Extensions'
+  - path: /protocols/faq
+    title: 'Protocols: FAQ'
+  - path: /protocols/schema
+    title: 'Protocols: Schema Controls'
+  - path: /protocols/tracking-plan
+    title: 'Protocols: Tracking Plan'
+- section_title: Segment App
+  section:
+  - path: /segment-app
+    title: The Segment Web App
+  - path: /segment-app/audit-trail
+    title: Audit Trail
+  - section_title: Iam
+    slug: segment-app/iam
+    section:
+    - path: /segment-app/iam/concepts
+      title: Concepts
+    - path: /segment-app/iam/iam
+      title: Identity & Access Management Overview
+    - path: /segment-app/iam/membership
+      title: Manage members
+    - path: /segment-app/iam/mfa
+      title: Multi-Factor Authentication (MFA)
+    - path: /segment-app/iam/secure-password
+      title: Picking a secure password
+    - path: /segment-app/iam/sso
+      title: Single Sign On
+  - path: /segment-app/roles
+    title: Roles
