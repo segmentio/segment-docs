@@ -1,5 +1,20 @@
 {% capture basehref %}{{ page.url }}{% endcapture %}
 {% assign sectionNames = basehref | split: "/" %}
+{% assign sectionName = sectionNames[1] | capitalize %}
+{% assign currentSlug = page.url | split: "/" | last %}
+{% assign priority = 2 %}
+{% if page.integration_type == "destination" %}
+  {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
+  {% assign description = currentIntegration.description %}
+  {% assign priority = 4 %}
+{% elsif page.integration_type == "source" %}
+  {% assign currentIntegration = site.data.catalog.sources.items | where: "slug", currentSlug | first %}
+  {% assign description = currentIntegration.description %}
+  {% assign priority = 4 %}
+{% else %}
+  {% assign description = "The technical documentation for Segment." %}
+{% endif %}
+
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
   <base href="/docsv2{{ basehref }}" />
@@ -13,22 +28,18 @@
   <meta name="twitter:site" content="@segment" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  {% if page.description %}
-    <meta name="description" content="{{page.description}}">
-    <meta property="og:description" content="{{page.description}}" />
-  {% else %}
-    <meta name="description" content="The technical documentation for Segment.">
-    <meta property="og:description" content="The technical documentation for Segment.">
-  {% endif %}
+
+  <meta name="description" content="{{description}}">
+  <meta property="og:description" content="{{description}}" />
 
   {% if page.hidden %}
     <meta name="robots" content="noindex" />
   {% else %}
-    <meta class="swiftype" name="section" data-type="enum" content="{{ sectionNames[1] }}" />
-    <meta class="swiftype" name="info" data-type="enum" content="{{page.description}}" />
-    <meta class="swiftype" name="description" data-type="enum" content="{{page.description}}" />
+    <meta class="swiftype" name="section" data-type="enum" content="{{ sectionName }}" />
+    <meta class="swiftype" name="info" data-type="enum" content="{{description}}" />
+    <meta class="swiftype" name="description" data-type="enum" content="{{description}}" />
     <meta class="swiftype" name="title" data-type="string" content="{{page.title}}" />
-    <meta class="swiftype" name="priority" data-type="integer" content="2" />
+    <meta class="swiftype" name="priority" data-type="integer" content="{{priority}}" />
   {% endif %}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 

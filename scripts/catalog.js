@@ -113,32 +113,6 @@ const doesCatalogItemExist = (item) => {
   }
 }
 
-/**
- * 
- * Update catalog item frontmatter description
- */
-function updateCatalogItemDescription (description, display_name, url) {
-  let updatedDescription = description.length ? description.trim() : `The technical documentation for ${display_name}`
-  const itemPath = path.resolve(__dirname, `../src/${url}/index.md`)
-  const originalText = fs.readFileSync(itemPath, 'utf8')
-  // Get index of closing '---'
-  const frontMatterIndex = originalText.substring(4).indexOf('---') + 3
-  const frontMatter = originalText.substring(0, frontMatterIndex)
-  let newText = ''
-  if (!frontMatter.match(/^description:(.)*$/gm)) {
-    updatedDescription = `\ndescription: "${updatedDescription}"`
-    newText = frontMatter + `${updatedDescription}` + originalText.substring(frontMatterIndex)
-  } else {
-    newText = originalText.replace(/^description:.*$/gm, `description: "${updatedDescription}"`)
-  }
-  
-  try {
-    fs.writeFileSync(itemPath, newText)
-  } catch (e) {
-    console.error(`Couldn't write to file: ${uritemPathl}`)
-    console.error(e)
-  }
-}
 
 const updateSources = async () => {
   let sources = []
@@ -194,7 +168,6 @@ const updateSources = async () => {
     }
     sourcesUpdated.push(updatedSource)
     doesCatalogItemExist(updatedSource)
-    updateCatalogItemDescription(source.description, source.display_name, url)
     // add unique source categories to set
     source.categories.reduce((s, e) => s.add(e), categories);
   })
@@ -268,7 +241,6 @@ const updateDestinations = async () => {
     }
     destinationsUpdated.push(updatedDestination)
     doesCatalogItemExist(updatedDestination)
-    updateCatalogItemDescription(destination.description, destination.display_name, url)
     // add unique destination categories to set
     tempCategories.reduce((s, e) => s.add(e), categories);
   })
