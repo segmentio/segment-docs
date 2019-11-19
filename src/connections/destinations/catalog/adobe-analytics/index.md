@@ -4,7 +4,7 @@ rewrite: true
 ---
 <!-- LR note: Setting rewrite true to remove bad boilerplate, manually including the footer partial-->
 
-Once you enable Adobe Analytics (formerly known as Omniture/Sitecatalyst) in Segment, you can start sending data from any of our [libraries](/docs/sources/) to an Adobe report suite. When you send events from our mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics `Data Insertion API`.
+Once you enable Adobe Analytics (formerly known as Omniture/Sitecatalyst) in Segment, you can start sending data from any of our [libraries](docs/connections/sources/) to an Adobe report suite. When you send events from our mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics `Data Insertion API`.
 
 The following documentation provides detailed explanation of how both destination the Device-mode and Cloud-mode components work. For FAQs about Device- vs Cloud-mode tracking, unique users, identifiers, and more, read the Best Practices at the bottom of this page!
 

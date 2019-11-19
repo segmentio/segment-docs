@@ -46,7 +46,7 @@ To make use of these of cloud sources, we suggest going through the following st
 3.  Choose your preferred sync time
 
 
-Before you connect a source, check out the [sources documentation](https://segment.com/docs/sources/). See what kind of credentials you will need to enable the source. Different sources require different levels of permissioning.
+Before you connect a source, check out the [sources documentation](https://segment.comdocs/connections/sources/). See what kind of credentials you will need to enable the source. Different sources require different levels of permissioning.
 
 Next, you'll also need to get the credentials for your [warehouse](https://segment.com/docs/warehouses/).
 

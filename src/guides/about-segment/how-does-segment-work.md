@@ -8,7 +8,7 @@ We take care of the messy analytics installation process for you, so you can spe
 
 ## Start a workspace
 
-Segment has [Sources](/docs/sources/) and [Destinations](/docs/destinations/). Sources send data _into_ Segment, while Destinations receive data _from_ Segment.
+Segment has [Sources](docs/connections/sources/) and [Destinations](docs/connections/destinations/). Sources send data _into_ Segment, while Destinations receive data _from_ Segment.
 
 ## Collect data with Sources
 

@@ -6,7 +6,7 @@ sourceCategory: 'Mobile'
 ---
 
 
-This tutorial will help you start sending analytics data from your iOS app to Segment. Once you're done you'll be able to turn on [any of our destinations](/docs/destinations/) with the flip of a switch! No more waiting for App Store approval.
+This tutorial will help you start sending analytics data from your iOS app to Segment. Once you're done you'll be able to turn on [any of our destinations](docs/connections/destinations/) with the flip of a switch! No more waiting for App Store approval.
 
 If you want to dive deeper at any point, check out the [iOS Library Reference](/docs/libraries/ios/).
 

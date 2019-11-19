@@ -22,7 +22,7 @@ You will need to setup two key pieces, regardless of the CDN provider you're usi
 
 Follow the directions listed for Cloudfront or use your own CDN setup. Once you have completed those steps and have verified that your proxy is working for both cdn.segment.com and api.segment.io, email us with the following template email:
 
-```
+```text
 Hi,
 
 This is {person} from {company}. I would like to request a proxy be added for the following source(s) to point to the corresponding proxy url:

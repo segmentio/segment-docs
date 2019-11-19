@@ -7,11 +7,11 @@ At a high level Segment provides a simple product model for customer data. Segme
 
 ## Sources
 
-Segment Customers use [Sources](https://segment.com/docs/sources/) to collect all data across all their properties (web, mobile, CRMs, email etc.).
+Segment Customers use [Sources](https://segment.comdocs/connections/sources/) to collect all data across all their properties (web, mobile, CRMs, email etc.).
 
 ## Destinations
 
-Segment Customers use Segment to intelligently route this data with a flip of a switch to [Destinations](https://segment.com/docs/destinations/) where they perform analytics, run marketing campaigns, and much more.
+Segment Customers use Segment to intelligently route this data with a flip of a switch to [Destinations](https://segment.comdocs/connections/destinations/) where they perform analytics, run marketing campaigns, and much more.
 
 ## Spec
 

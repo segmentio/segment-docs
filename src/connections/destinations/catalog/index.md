@@ -6,7 +6,7 @@ rewrite: true
 
 ## Sources vs Destinations
 
-Segment has [Sources](/docs/sources/) and [Destinations](/docs/destinations/). Sources send data _into_ Segment, while Destinations receive data _from_ Segment.
+Segment has [Sources](docs/connections/sources/) and [Destinations](docs/connections/destinations/). Sources send data _into_ Segment, while Destinations receive data _from_ Segment.
 
 ## Types of Sources
 

@@ -308,7 +308,7 @@ Track {
 
 In this case, we're specifying that we want this `Track` to only go to Vero. `All: false` says that no destination should be enabled unless otherwise specified. `Vero: true` turns on Vero, etc.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:**
 

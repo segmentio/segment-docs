@@ -322,7 +322,7 @@ analytics.enqueue(TrackMessage.builder("Button Clicked")
 
 In this case, we're specifying that we want this identify to only go to Amplitude. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "Amplitude", true }` turns on Amplitude.
 
-destination flags are **case sensitive** and match [the destination's name in the docs](/docs/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+destination flags are **case sensitive** and match [the destination's name in the docs](docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:**
 

@@ -32,7 +32,7 @@ If you choose to turn off the Segment ID cookie persistence in your website sett
 
 ITP will impact Destinations that rely on third-party cookies, but because ITP uses a machine learning model to identify and classify domains, it is unclear which specific Destinations will be impacted.
 
-Advertising and Retargeting Destinations are most likely to be affected, and we recommend evaluating each of your [Advertising and Retargeting Destinations](https://segment.com/docs/destinations/) on a case-by-case basis. 
+Advertising and Retargeting Destinations are most likely to be affected, and we recommend evaluating each of your [Advertising and Retargeting Destinations](https://segment.comdocs/connections/destinations/) on a case-by-case basis. 
 
 Many tools have already issued guidance on how they will be impacted by ITP and steps you can take to respect your customers' privacy. Here are resources to get you started:
 

@@ -320,7 +320,7 @@ In our client side, iOS, and Android components, if the preferred `logRevenueV2`
 
 To track revenue with Amplitude, we recommend using our [Order Completed](/docs/spec/ecommerce/v2/#order-completed) event. This event allows you to define a list of products that a user purchased in a transaction. The need for this functionality is most applicable to sites that have a shopping cart experience.
 
-This event's functionality is currently only available for data originating from a server or web [source](https://segment.com/docs/sources/). An `Order Completed` event from mobile using our bundled Amplitude integration
+This event's functionality is currently only available for data originating from a server or web [source](https://segment.comdocs/connections/sources/). An `Order Completed` event from mobile using our bundled Amplitude integration
 will work the same as our standard `track` event documented above.
 
 Here's an example of how you'd create an "Order Completed" event:

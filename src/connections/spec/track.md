@@ -5,7 +5,7 @@ sidebar: Track
 
 The `track` API call is how you record any actions your users perform, along with any properties that describe the action.
 
-Each action is known as an event. Each event has a name, like **Registered**, and properties, for example a **Registered** event might have properties like `plan` or `accountType`. Calling `track` in one of our [sources](/docs/sources/) is one of the first steps to getting started with Segment.
+Each action is known as an event. Each event has a name, like **Registered**, and properties, for example a **Registered** event might have properties like `plan` or `accountType`. Calling `track` in one of our [sources](docs/connections/sources/) is one of the first steps to getting started with Segment.
 
 Here's the payload of a typical `track` call with most [common fields](/docs/spec/common/) removed:
 

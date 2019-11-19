@@ -340,7 +340,7 @@ Segment::track(array(
 
 In this case, we're specifying that we want this track to only go to Mixpanel and Customer.io. `"all" => false` says that no destination should be enabled unless otherwise specified. `"Mixpanel" => true` turns on Mixpanel, etc.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:**
 

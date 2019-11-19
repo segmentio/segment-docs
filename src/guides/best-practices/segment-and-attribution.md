@@ -76,4 +76,4 @@ analytics.track('Install Attributed', {
 });
 ```
 
-For more detailed information on a particular attribution destination and functionality, see our [destinations docs](https://segment.com/docs/destinations/).
+For more detailed information on a particular attribution destination and functionality, see our [destinations docs](https://segment.comdocs/connections/destinations/).
