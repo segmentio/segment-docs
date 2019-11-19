@@ -1,5 +1,5 @@
 ---
-title: "How do I import historical data?"
+title: How do I import historical data?
 ---
 
 When transitioning over to Segment customers commonly want to import historical data to tools they are migrating to or evaluating.

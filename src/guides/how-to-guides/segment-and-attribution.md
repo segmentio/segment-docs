@@ -1,5 +1,5 @@
 ---
-title: "What role does Segment play in Attribution?"
+title: What role does Segment play in Attribution?
 ---
 
 At a higher level, attribution tools allow you to connect a specific campaign to user acquisition, giving you more visibility into campaign performance.  See [our destination catalog](https://segment.com/catalog) for list of attribution tools Segment supports. 
@@ -7,11 +7,11 @@ At a higher level, attribution tools allow you to connect a specific campaign to
 There are three stages of mobile attribution as it relates to Segment. 
 
 1.  Customer installs your app
-    
+
 2.  The install is attributed by an attribution provider (Adjust, AppsFlyer, etc)
-    
+
 3.  Attribution information is sent back to Segment
-    
+
 
 Here is a bit more information on what is happening at each of those stages. 
 

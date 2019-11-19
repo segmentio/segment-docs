@@ -1,5 +1,5 @@
 ---
-title: "How do we set up event-triggered notifications or alerts?"
+title: How do we set up event-triggered notifications or alerts?
 ---
 
 Below you'll find a bunch of ways to setup notifications for yourself based on the data you're sending through Segment. 

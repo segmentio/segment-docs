@@ -1,6 +1,8 @@
 sections:
 - section_title: Legal
   section:
+  - path: /legal
+    title: Terms of Service
   - path: /legal/acceptable-use-policy
     title: Acceptable Use Policy
   - path: /legal/enhanced-onboarding-support
@@ -35,7 +37,5 @@ sections:
     title: Terms of Service - 2017
   - path: /legal/terms-updates
     title: Updates - Terms of Service
-  - path: /legal/terms
-    title: Terms of Service
   - path: /legal/website-data-collection-policy
     title: Website Data Collection Policy

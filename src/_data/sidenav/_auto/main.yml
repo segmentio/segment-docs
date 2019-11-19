@@ -2,65 +2,56 @@ sections:
 - section_title: Guides
   section:
   - path: /guides
-    title: Getting started with Segment
-  - section_title: About Segment
-    slug: guides/about-segment
-    section:
-    - path: /guides/about-segment
-      title: Intro to Segment
-    - path: /guides/about-segment/duplicate-data
-      title: How does Segment handle duplicate data?
-    - path: /guides/about-segment/filtering-data
-      title: Filtering your Segment Data
-    - path: /guides/about-segment/how-does-segment-work
-      title: How does Segment work?
-    - path: /guides/about-segment/ignore-bots
-      title: How can I ignore internet bots?
-    - path: /guides/about-segment/intelligent-tracking-prevention
-      title: Is Segment impacted by Intelligent Tracking Prevention?
-    - path: /guides/about-segment/segment-vs-tag-managers
-      title: What is the difference between Segment and tag managers?
-    - path: /guides/about-segment/what-is-replay
-      title: What is Replay?
-    - path: /guides/about-segment/whats-a-workspace
-      title: What is a workspace?
-  - section_title: Best Practices
-    slug: guides/best-practices
-    section:
-    - path: /guides/best-practices
-      title: How-to Guides
-    - path: /guides/best-practices/automated-multichannel-reengagement
-      title: How do I automate multi-channel re-engagement campaigns?
-    - path: /guides/best-practices/best-practices-identify
-      title: What are best practices for identifying users?
-    - path: /guides/best-practices/collect-on-client-or-server
-      title: Should I instrument data collection on the client or server?
-    - path: /guides/best-practices/collect-pageviews-serverside
-      title: How do I collect pageviews on the server side?
-    - path: /guides/best-practices/create-push-notification
-      title: How do we craft a push notification?
-    - path: /guides/best-practices/cross-channel-tracking
-      title: How do we track your customers across channels and devices?
-    - path: /guides/best-practices/dynamic-coupon-program
-      title: How do I setup a dynamic coupon program to reward loyal customers?
-    - path: /guides/best-practices/forecast-with-sql
-      title: How do I forecast LTV with SQL and Excel for e-commerce?
-    - path: /guides/best-practices/import-historical-data
-      title: How do I import historical data?
-    - path: /guides/best-practices/join-user-profiles
-      title: How do I join user profiles?
-    - path: /guides/best-practices/measure-advertising-funnel
-      title: How do I measure my advertising funnel?
-    - path: /guides/best-practices/measure-marketing-roi
-      title: How do I measure the ROI of my Marketing Campaigns?
-    - path: /guides/best-practices/migrate-from-other-tools
-      title: How do I migrate code from other analytics tools?
-    - path: /guides/best-practices/segment-and-attribution
-      title: What role does Segment play in Attribution?
-    - path: /guides/best-practices/set-up-notifications-alerts
-      title: How do we set up event-triggered notifications or alerts?
+    title: Getting Started with Segment
   - path: /guides/cant-add-integration
     title: Why can't I add the integration I want?
+  - path: /guides/duplicate-data
+    title: How does Segment handle duplicate data?
+  - path: /guides/filtering-data
+    title: Filtering your Segment Data
+  - path: /guides/how-does-segment-work
+    title: How does Segment work?
+  - section_title: How To Guides
+    slug: guides/how-to-guides
+    section:
+    - path: /guides/how-to-guides
+      title: How-to Guides
+    - path: /guides/how-to-guides/automated-multichannel-reengagement
+      title: How do I automate multi-channel re-engagement campaigns?
+    - path: /guides/how-to-guides/best-practices-identify
+      title: What are best practices for identifying users?
+    - path: /guides/how-to-guides/collect-on-client-or-server
+      title: Should I collect data on the client or server?
+    - path: /guides/how-to-guides/collect-pageviews-serverside
+      title: How do I collect page views on the server side?
+    - path: /guides/how-to-guides/create-push-notification
+      title: How do I create a push notification?
+    - path: /guides/how-to-guides/cross-channel-tracking
+      title: How do we track your customers across channels and devices?
+    - path: /guides/how-to-guides/dynamic-coupon-program
+      title: How do I setup a dynamic coupon program to reward loyal customers?
+    - path: /guides/how-to-guides/forecast-with-sql
+      title: How do I forecast LTV with SQL and Excel for e-commerce?
+    - path: /guides/how-to-guides/import-historical-data
+      title: How do I import historical data?
+    - path: /guides/how-to-guides/join-user-profiles
+      title: How do I join user profiles?
+    - path: /guides/how-to-guides/measure-advertising-funnel
+      title: How do I measure my advertising funnel?
+    - path: /guides/how-to-guides/measure-marketing-roi
+      title: How do I measure the ROI of my Marketing Campaigns?
+    - path: /guides/how-to-guides/migrate-from-other-tools
+      title: How do I migrate code from other analytics tools?
+    - path: /guides/how-to-guides/segment-and-attribution
+      title: What role does Segment play in Attribution?
+    - path: /guides/how-to-guides/set-up-notifications-alerts
+      title: How do we set up event-triggered notifications or alerts?
+  - path: /guides/ignore-bots
+    title: How can I ignore internet bots?
+  - path: /guides/intelligent-tracking-prevention
+    title: Is Segment impacted by Intelligent Tracking Prevention?
+  - path: /guides/segment-vs-tag-managers
+    title: What is the difference between Segment and tag managers?
   - section_title: Usage And Billing
     slug: guides/usage-and-billing
     section:
@@ -74,6 +65,8 @@ sections:
       title: 'MTUs, Throughput and Billing'
     - path: /guides/usage-and-billing/startup-program
       title: What is the Segment Startup Program?
+  - path: /guides/what-is-replay
+    title: What is Replay?
 - section_title: Personas
   section:
   - path: /personas

@@ -1,5 +1,5 @@
 ---
-title: "What are best practices for identifying users?"
+title: What are best practices for identifying users?
 ---
 
 This tutorial will help you track newly registered users the right way. The process of shifting from an anonymous visitor to an identified user requires some special tracking.

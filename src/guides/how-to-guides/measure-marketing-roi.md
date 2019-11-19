@@ -1,5 +1,5 @@
 ---
-title: "How do I measure the ROI of my Marketing Campaigns?"
+title: How do I measure the ROI of my Marketing Campaigns?
 ---
 
 The purpose of marketing campaigns is to drive traffic to your store front. But how do you know which campaigns yield the most conversions or what channel across the campaigns were most effective?

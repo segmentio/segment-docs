@@ -1,5 +1,5 @@
 ---
-title: "How do I migrate code from other analytics tools?"
+title: How do I migrate code from other analytics tools?
 ---
 
 Switching from your current client-side javascript event tracking to Segment is easy. Below you can find migration guides for the following tools:

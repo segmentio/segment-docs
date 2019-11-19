@@ -1,5 +1,5 @@
 ---
-title: "How do I collect pageviews on the server side?"
+title: How do I collect page views on the server side?
 ---
 
 Generally, we believe that client-side collection is appropriate for collection of basic pageviews.
