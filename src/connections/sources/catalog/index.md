@@ -5,6 +5,7 @@ landing: true
 icon: symbols/connections.svg
 excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
 layout: catalog
+menu_icon: "read-more"
 ---
 
 <div class="destinations-catalog">

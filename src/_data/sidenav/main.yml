@@ -145,6 +145,7 @@ sections:
       title: "FAQ"
     - path: "/connections/sources/catalog"
       title: Sources catalog
+      menu_icon: read-more
   - section_title: Destinations
     slug: connections/destinations
     section:
@@ -154,6 +155,7 @@ sections:
       title: Destinations Filters
     - path: "/connections/destinations/catalog"
       title: Destinations catalog
+      menu_icon: read-more
   - section_title: Warehouses
     slug: connections/warehouses
     section:
@@ -161,6 +163,7 @@ sections:
         title: Overview
       - path: "/connections/warehouses/catalog"
         title: Warehouses catalog
+        menu_icon: read-more
 - section_title: Personas
   section:
   - path: "/personas"

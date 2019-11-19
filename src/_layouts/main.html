@@ -19,39 +19,7 @@ layout: default
       {% endif %}
     </div>
 
-    <main class="docs__body stage__body">
-      <div>
-        <div class="search">
-          {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
-        </div>
-
-        {% include_cached navbar/navbar-mobile.html %}
-      </div>
-
-      <div class="stage__content">
-        {{ content }}
-      </div>
-    </main>
-
-    <div class="docs__sidebar stage__sidebar">
-      {% include_cached navbar/nav.html %}
-
-      <div class="sidebar sidebar--sticky">
-        {%- unless page.hide_toc -%}
-          <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
-            {% include_cached sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
-          </div>
-        {%- endunless -%}
-
-        {% if page.related %}
-          {% include sidebar/related-content.html items=page.related %}
-        {% endif %}
-
-        {% unless page.hide-feedback %}
-          {% include_cached sidebar/feedback.html %}
-        {% endunless %}
-      </div>
-    </div>
+    {{ content }}
   </div>
 
   <footer>

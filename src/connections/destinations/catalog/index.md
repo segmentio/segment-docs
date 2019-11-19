@@ -2,6 +2,7 @@
 title: Destination catalog
 hide_toc: true
 layout: catalog
+menu_icon: "read-more"
 ---
 
 <div class="destinations-catalog">

@@ -33,7 +33,14 @@ serve: package
 
 .PHONY: catalog
 catalog: vendor/bundle
-	@bundle exec rake catalog:update
+	@node scripts/catalog.js
+
+.PHONY: sidenav
+sidenav: vendor/bundle
+	@node scripts/nav.js
+
+.PHONY: typewriter
+typewriter: npx typewriter
 
 .PHONY: deps
 deps: node_modules vendor/bundle

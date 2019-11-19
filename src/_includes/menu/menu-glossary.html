@@ -28,7 +28,7 @@
             {% for item in site.data.glossary %}
               <li class="menu-item menu-item--gray">
                 {% if item[0] %}
-                  <a class="menu-item__link flex" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}#{{ item[0] | slugify }}">{{ item[0] }}</a>
+                  <a class="menu-item__link flex" href="{{ site.baseurl }}{{ page.url }}#{{ item[0] | slugify }}">{{ item[0] }}</a>
                 {% endif %}
               </li>
             {% endfor %}
