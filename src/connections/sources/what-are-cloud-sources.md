@@ -1,6 +1,20 @@
 ---
-title: "How do cloud sources work?"
+title: What are Cloud-App Sources?
 ---
+
+Cloud-App Sources allow you to pull in data from third-party tools so you can use it in Segment. There are two types of Cloud Apps: **Object** and **Event** sources. As in the basic tracking API, objects usually contain information about a person or group which is updated over time, while event data happens once, and is appended to a list.
+
+### Event Cloud-App Sources
+Event Cloud Sources can export their data both into Segment warehouses, and into other enabled Segment integrations that work with event data.
+
+### Object Cloud-App Sources
+Object Cloud App Sources can export data and import it directly into a Segment warehouse. You *must* have a Segment warehouse enabled before you enable these. From the warehouse, you analyze your data with SQL, or use Personas's SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
+
+> note
+> In the app, data from website, mobile, and server sources can go to a warehouse **or** to destinations. Object Cloud-App Source data can **only** go to Warehouses.
+
+
+## How do cloud sources work?
 
 Sources are functionally comprised of either one or both of the following components: a "sync" component and a "streaming" component. They work together to populate logical collections of data based on upstream resource availability and following data normalization best practices. These collections may be either events (append only data streams, akin to "facts" in data warehousing parlance) or objects (dimensional values that may be updated based on changes in state upstream).
 
@@ -22,10 +36,6 @@ Streaming components are used to listen in real time to webhooks from downstream
 
 Both sync and streaming components can forward data to our event tracking and objects upsertion API processing layers, but generally sync components are used to fetch objects and streaming components listen for events.
 
-
-## What are object cloud sources?
-
-To use object cloud sources (Salesforce, Zendesk, Stripe, etc.), you must also have a warehouse setup in your Segment account. In the app data from website, mobile, and server sources can go to a warehouse **or** to destinations. Object cloud source data can **only** go to Warehouses.
 
 ### What do you need to get started?
 
