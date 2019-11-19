@@ -1,6 +1,5 @@
 ---
 title: 'Spec: Track'
-sidebar: Track
 ---
 
 The `track` API call is how you record any actions your users perform, along with any properties that describe the action.
@@ -24,7 +23,7 @@ And here's the corresponding Javascript event that would generate the above payl
 
 ```js
 analytics.track("Registered", {
-  plan: "Pro Annual", 
+  plan: "Pro Annual",
   accountType: "Facebook"
 });
 ```

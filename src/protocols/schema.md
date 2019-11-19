@@ -1,6 +1,5 @@
 ---
-title: 'Schema Controls'
-sidebar: Schema Controls
+title: Schema Controls
 ---
 
 Segment Business plan customers can use Schema Controls to manage which events are allowed to pass through Segment and on to Destinations. These filters are a first-line defense to help you protect the integrity of your data, and the decisions made with it.

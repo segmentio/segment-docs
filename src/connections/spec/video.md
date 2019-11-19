@@ -1,6 +1,5 @@
 ---
-title: 'Video Spec'
-sidebar: 'Video'
+title: Video Spec
 ---
 
 Segment's video spec helps you define how a customer is engaging with your video and ad content. The below documentation covers the naming syntax and conventions for how you should send events when tracking video analytics.

@@ -1,6 +1,5 @@
 ---
 title: Security
-sidebar: Security
 feedback: false
 hide-feedback: true
 ---

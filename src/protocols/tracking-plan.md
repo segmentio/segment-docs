@@ -1,6 +1,5 @@
 ---
-title: 'Protocols: Tracking Plan'
-sidebar: Protocols Tracking Plans
+title: 'Protocols: Tracking Plans'
 ---
 
 
@@ -75,7 +74,7 @@ We recommend that you keep traits optional because `.identify()` and `.group()` 
 
 Tracking Plan Libraries make it easy to scale the creation of multiple Tracking Plans within your workspace. You can create libraries for track events or track event properties (Note: we do not currently support identify/group traits libraries). Editing Tracking Plan Libraries is identical to [editing Tracking Plans](/docs/protocols/tracking-plan/#create-a-tracking-plan).
 
-Once created, you can import event or property Libraries into a Tracking Plan using a simple wizard flow. 
+Once created, you can import event or property Libraries into a Tracking Plan using a simple wizard flow.
 
 To create a new Library:
 1. In the left navigation, click **Protocols**

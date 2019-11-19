@@ -1,6 +1,5 @@
 ---
 title: "What Should I track?"
-sidebar: What to Track
 ---
 
 As the central hub for your customer data, we think it's important to give you the benefit of some hard-won best practices from our happiest and most successful customers.

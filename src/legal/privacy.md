@@ -1,6 +1,5 @@
 ---
 title: Privacy Policy
-sidebar: Privacy Policy
 feedback: false
 hide-feedback: true
 ---

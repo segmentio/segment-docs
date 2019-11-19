@@ -1,6 +1,5 @@
 ---
 title: "First-Access and Beta Preview"
-sidebar: "First-Access and Beta Preview"
 feedback: false
 hide-feedback: true
 ---

@@ -1,6 +1,5 @@
 ---
 title: Conceptual Model
-sidebar: Conceptual Model
 ---
 
 At a high level Segment provides a simple product model for customer data. Segment collects data via "sources" and routes data to "destinations". Along the way data is translated to and from the "spec" -- a specification for how to represent customer data events.

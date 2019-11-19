@@ -1,6 +1,5 @@
 ---
 title: 'Spec: Alias'
-sidebar: Alias
 ---
 
 

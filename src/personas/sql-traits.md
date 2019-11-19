@@ -1,6 +1,5 @@
 ---
 title: 'Personas: SQL Traits'
-sidebar: 'SQL Traits'
 ---
 
 SQL Traits allow you to import user or account traits from your data warehouse back into Personas to build audiences, or to enhance Segment data that you send to other destinations.

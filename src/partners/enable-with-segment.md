@@ -1,6 +1,5 @@
 ---
-title: Using OAuth to Build a Two-Click Enable Flow
-sidebar: Enable with Segment
+title: Use OAuth to Build a Two-Click Enable Flow
 ---
 
 > If you're a customer who just wants to build a simple script or app against a single workspace, you may want to use [Personal Access Tokens](/docs/config-api/authentication).

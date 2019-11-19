@@ -1,6 +1,5 @@
 ---
 title: 'Personas: Profile API'
-sidebar: Profile API
 ---
 
 The Segment Profile API provides a single API to read user-level and account-level customer data. Segment now allows you to query the entire user or account object programmatically, including the `external_ids` , `traits` , and `events` that make up a user's journey through your product.
@@ -69,7 +68,7 @@ Your namespace ID can be found here: [https://app.segment.com/goto-my-workspace/
     https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/events
 
 
-  ii. Replace <your-namespace-id> with your own namespace id found here: 
+  ii. Replace <your-namespace-id> with your own namespace id found here:
       [https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access](https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access)
 
 

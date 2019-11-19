@@ -1,6 +1,5 @@
 ---
 title: 'Protocols: APIs and Extensions'
-sidebar: Protocols APIs and Extensions
 ---
 
 ## Config API

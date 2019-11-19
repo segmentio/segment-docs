@@ -1,6 +1,5 @@
 ---
 title: 'Personas: Activation'
-sidebar: Activation
 ---
 
 ## Activation

@@ -1,6 +1,5 @@
 ---
 title: 'Personas: Audiences'
-sidebar: 'Audiences'
 ---
 
 Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be sycned to hundreds of destinations or available via the [Profile API](/docs/personas/profile-api).
@@ -21,7 +20,7 @@ You can also specify two different types of time-windows, `within` and `in betwe
 
 ### Custom Traits
 
-You can also build audiences based on custom traits. These can traits collected from your apps when a user completes a form, or signs up, via an (identify)[/docs/spec/identify] call. You can also check out the Personas user explorer to see examples of these traits.  
+You can also build audiences based on custom traits. These can traits collected from your apps when a user completes a form, or signs up, via an (identify)[/docs/spec/identify] call. You can also check out the Personas user explorer to see examples of these traits.
 
 ### Computed Traits
 

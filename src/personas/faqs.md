@@ -1,6 +1,5 @@
 ---
-title: 'Frequently Asked Questions'
-sidebar: FAQs
+title: Personas Frequently Asked Questions
 ---
 
 ## Can I use the Profile API on the client-side?

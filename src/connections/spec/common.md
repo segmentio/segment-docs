@@ -1,6 +1,5 @@
 ---
 title: 'Spec: Common Fields'
-sidebar: Common Fields
 ---
 
 In the Segment [Spec](/docs/spec/) all the [API calls](/docs/spec#api-calls) have a common structure, and a few common fields.

@@ -1,6 +1,5 @@
 ---
 title: Identity & Access Management Overview
-sidebar: Overview
 ---
 Access management lets workspace owners manage which users can access different parts of their Segment workspaces.
 

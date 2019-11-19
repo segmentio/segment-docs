@@ -1,6 +1,5 @@
 ---
 title: 'Spec: A/B Testing Events'
-sidebar: 'A/B Testing'
 hidden: true
 ---
 

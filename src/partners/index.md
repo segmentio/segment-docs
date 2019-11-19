@@ -1,6 +1,5 @@
 ---
 title: Join the Segment Platform
-sidebar: Overview
 ---
 
 ## Building on Segment

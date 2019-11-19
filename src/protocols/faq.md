@@ -1,6 +1,5 @@
 ---
-title: 'Protocols: FAQ'
-sidebar: Protocols FAQ
+title: Protocols FAQ
 ---
 
 ## Protocols Tracking Plan
@@ -60,7 +59,7 @@ Blocked events will not count towards your MTU counts as long as blocked event f
 ## Protocols Transformations
 
 ### Do transformations work with Segment replays?
-If you create a destination scoped transformation and request a replay for that destination, the transformation will transform events into the destination. It's not recommended to request a replay to resend events to a destination as that will likely result in duplicate events in the destination. 
+If you create a destination scoped transformation and request a replay for that destination, the transformation will transform events into the destination. It's not recommended to request a replay to resend events to a destination as that will likely result in duplicate events in the destination.
 
 ### What can't I create multiple transformations of the same type for the same event?
 To reduce the risk of creating circular and conflicting transformations, we only allow a single transformation to be created for each distinct source, event, destination and type pairing. That means you cannot create two **Rename track event** transformations for a `order_completed` event. This eliminates the possibility of different stakeholders creating conflicting transformations to satisfy their own needs. It also simplifies the Transformations list view, making it much easier to sort and filter by source, event, destination, etc.

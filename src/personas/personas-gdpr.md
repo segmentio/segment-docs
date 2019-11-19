@@ -1,6 +1,5 @@
 ---
 title: 'Personas and GDPR'
-sidebar: Personas and GDPR
 ---
 
 ## Is Personas compatible with Segment's GDPR features?

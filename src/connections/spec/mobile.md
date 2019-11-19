@@ -1,6 +1,5 @@
 ---
 title: 'Native Mobile Spec'
-sidebar: Mobile
 ---
 
 One of the core components of the Segment [Spec](/docs/spec/) is the [`track`](/docs/spec/track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to `screen` calls, you'll want to send **specific event names** that we recognize semantically. That way, we can transform them correctly before sending them off to downstream destinations.

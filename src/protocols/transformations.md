@@ -1,6 +1,5 @@
 ---
 title: 'Protocols: Transformations'
-sidebar: Protocols Transformations
 ---
 
 ## What is a Transformation?
@@ -24,11 +23,11 @@ Our goal is to make Transformations a powerful tool that complements a well stru
 
 ## View all Transformations
 
-All Protocols Transformations are listed in the Transformations tab in the Protocols section. The list view supports filtering and sorting to organize transformations by transformation type, source, and destination. 
+All Protocols Transformations are listed in the Transformations tab in the Protocols section. The list view supports filtering and sorting to organize transformations by transformation type, source, and destination.
 
 ![](images/transformation_list_view.png)
 
-Transformations can be enabled and disabled directly from the list view using the toggle. 
+Transformations can be enabled and disabled directly from the list view using the toggle.
 
 Transformations can be deleted and edited by clicking on the overflow menu. When editing a Transformation, only the resulting event or property names, and Transformation name can be edited. If you want to select a different event or source, create a separate Transformation rule.
 

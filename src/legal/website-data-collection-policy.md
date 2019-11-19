@@ -1,6 +1,5 @@
 ---
 title: Website Data Collection Policy
-sidebar: Website Data Collection Policy
 feedback: false
 hide-feedback: true
 ---

@@ -1,8 +1,5 @@
 ---
 title: Objects API
-sourceTitle: 'Objects API'
-sourceCategory: 'Server'
-sidebar: 'Objects API'
 ---
 
 NOTE: The Objects API is in beta, and so features and names may change without notice as we continue to build.

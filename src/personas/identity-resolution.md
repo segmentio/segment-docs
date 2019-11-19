@@ -1,6 +1,5 @@
 ---
 title: 'Personas: Identity Resolution'
-sidebar: 'Identity Resolution'
 ---
 
 ## Identity Graph
@@ -75,4 +74,4 @@ analytics.track('Subscription Upgraded', {
 })
 ```
 
-Personas will automatically create a user (user_id: `use_123`)  with the custom externalId (phone: `123-456-7890`). Then, you query the users phone record by using the external id (phone: `123-456-7890`), or update this profile using that externalId going forward. (Note: externalIDs must be lower-case.) 
+Personas will automatically create a user (user_id: `use_123`)  with the custom externalId (phone: `123-456-7890`). Then, you query the users phone record by using the external id (phone: `123-456-7890`), or update this profile using that externalId going forward. (Note: externalIDs must be lower-case.)

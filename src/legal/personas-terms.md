@@ -1,6 +1,5 @@
 ---
 title: "Terms of Service: Personas"
-sidebar: "Terms of Service: Personas"
 feedback: false
 hide-feedback: true
 ---
