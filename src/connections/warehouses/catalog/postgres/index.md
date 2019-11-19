@@ -256,7 +256,7 @@ Compose uses Segment for hooking together web analytics, email, and social track
 
     You'll notice in your PostgreSQL database that a new schema has been created for each source that was synced. Under the production source schema a whole bunch of tables were created. You can see the tables in the Compose data browser "Tables" view:
 
-    ![](../images/compose1.png)
+    ![](images/compose1.png)
 
     When the Segment data is loaded to the PostgreSQL database, several tables are created by default: `aliases`, `groups`, `identifies`, `pages`, `screens` and `tracks`. You might also have `accounts` and `users` tables if you use unique calls for groups and for identifies. To learn more about these default tables and their fields, see the [Segment schema documentation](https://segment.com/docs/destinations/#warehouse-schemas).
 

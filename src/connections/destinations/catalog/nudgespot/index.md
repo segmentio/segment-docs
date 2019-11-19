@@ -36,7 +36,7 @@ The Segment [`track`](/docs/spec/track/) method maps events and event properties
 
 Nudgespot supports sending [email events](/docs/spec/email/) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on. To enable this feature, enter in your Write Key when setting up your account.
 
-![Send email events from Nudgespot](https://cldup.com/h911sko8RG.png)
+![Send email events from Nudgespot](images/h911sko8RG.png)
 
 ## Troubleshooting
 

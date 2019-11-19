@@ -18,7 +18,7 @@ Once a label is in use (either assigned to a resource or used to restrict permis
 
 > **Note**: While only Workspace Owners can bulk-edit labels, Source and Space admins can edit the labels on sources and spaces they have access to from. To do this, go to the **Settings** tab for each item.
 
-Workspace owners can also grant specific [Roles](../roles/) access to specific labels. For example, you might give a Source Admin access to only Sources that have the `Prod` label.
+Workspace owners can also grant specific [Roles](roles/) access to specific labels. For example, you might give a Source Admin access to only Sources that have the `Prod` label.
 
 Permissions can then be assigned to users in Access Management by label, on the Source Admin, Source Read-Only, Personas Admin, Personas User and Personas Read-Only users.
 ![](images/labels-access-mgmt.png)

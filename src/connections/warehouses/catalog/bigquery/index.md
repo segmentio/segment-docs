@@ -209,7 +209,7 @@ a need for streaming data into BigQuery, please [contact us](/contact/requests).
 
 {% include content/warehouse-sync-sched.md %}
 
-![sync schedule image](../images/syncsched.png)
+![sync schedule image](images/syncsched.png)
 
 ## Troubleshooting
 

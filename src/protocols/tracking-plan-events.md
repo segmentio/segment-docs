@@ -13,16 +13,16 @@ Our most successful and happiest customers, irrespective of size, limit their tr
 Here are some rules to follow when spec-ing out your tracking plan to keep it neat, tidy, and semantically useful:
 
 *   Don't create event names dynamically.
-    
-*   Don't create events to track properties.
-    
-*   Don't create property keys dynamically.
-    
-*   Make sure every event helps you answer a question about your business.
-    
-*   Start with your core customer lifecycle to construct your funnel.
-    
-*   Only add events as you feel they're missing.
-    
 
-![](../images/asset_nVdJ3ZyA.png)
+*   Don't create events to track properties.
+
+*   Don't create property keys dynamically.
+
+*   Make sure every event helps you answer a question about your business.
+
+*   Start with your core customer lifecycle to construct your funnel.
+
+*   Only add events as you feel they're missing.
+
+
+![](images/asset_nVdJ3ZyA.png)

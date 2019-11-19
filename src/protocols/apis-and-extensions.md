@@ -84,7 +84,7 @@ Programmatic access to the Config API for resources that you own happens through
 
 To set up Segment Protocols through the API you first need to create a personal access token with **full access** to your workspace through the `workspace` scope. Use your Segment account email and password:
 
-```shell
+```bash
 $ USER=me@example.com
 $ PASS=<your Segment password>
 $ WORKSPACE=<your Segment workspace>
@@ -108,7 +108,7 @@ Example response:
 }
 ```
 
-**Note that you can not retrive the plain-text `token` later, so you should save it in a secret manager.**
+**Note that you can not retrieve the plain-text `token` later, so you should save it in a secret manager.**
 
 ### Create a Source
 
@@ -116,7 +116,7 @@ The Config API enables you to create event sources, each of which has a correspo
 
 Let's create an event source to see how the Tracking Plan works on data we send to it:
 
-```shell
+```bash
 $ ACCESS_TOKEN=<ACCESS-TOKEN-VALUE>
 
 $ curl \
@@ -147,7 +147,7 @@ Example response:
 
 For good measure, let's send a couple of events to our new Source. Note that `event` and `userID` are required. See the [Tracking API spec](https://segment.com/docs/sources/server/http/#track) for more details.
 
-```shell
+```bash
 $ WRITE_KEY=LxKXARX9IuqR9v0gn7y2Fw1iHi0ephbF
 
 $ curl https://api.segment.io/v1/track \
@@ -175,13 +175,13 @@ $ curl https://api.segment.io/v1/track \
 
 To verify your events were sent to the Source, open the event debugger in your browser, e.g. https://app.segment.com/example/sources/js/debugger.
 
-![](../../config-api/images/tracking-plan-debugger.png)
+![](images/tracking-plan-debugger.png)
 
 ### Create a Tracking Plan
 
 Now we can configure a Tracking Plan on the workspace. Here we define that we only expect a single event `User Logged In` with a required `username` property. This will help us find and eliminate events with subtle differences like the name `User Login` or properties like `userName`, resulting in pristine data in Segment and all Destinations.
 
-```shell
+```bash
 $ curl \
     -H "Authorization: Bearer $ACCESS_TOKEN" \
     -d '{
@@ -267,7 +267,7 @@ Example response:
 
 Over time the Tracking Plan will evolve and include more events. We can update the plan to include another event `User Created` with a required `username` property:
 
-```shell
+```bash
 $ curl \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -X PUT \
@@ -414,15 +414,15 @@ Open the Protocols section in your browser, e.g. https://app.segment.com/example
 
 Click on "My Tracking Plan" to open the editor and review the events.
 
-![](../../config-api/images/tracking-plan-editor.png)
+![](images/tracking-plan-editor.png)
 
 Now open the Source Schema in your browser, e.g. https://app.segment.com/example/sources/js/schema2/events. We can see the that one event we sent conforms to the plan, and the other does not.
 
-![](../../config-api/images/tracking-plan-schema.png)
+![](images/tracking-plan-schema.png)
 
 Now connect the tracking plan to the source:
 
-```shell
+```bash
 $ curl \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -X POST \
@@ -443,7 +443,7 @@ Now we can go all-in on the Tracking Plan, and block events that don't conform f
 
 Click "Edit" next to "Unplanned Data", and select "Block" for unplanned track calls.
 
-![](../../config-api/images/tracking-plan-block.png)
+![](images/tracking-plan-block.png)
 
 From here, we can also configure a Source to receive violation notifications.
 
@@ -453,7 +453,7 @@ We'll use the write keys returned from the creation operation against the Source
 
 Example command:
 
-```shell
+```bash
 $ curl https://debug-api.segment.com/v1/track \
   -u $WRITE_KEY: \
   -H 'Content-type: application/json' \
@@ -476,7 +476,7 @@ Example response:
 
 Example command:
 
-```shell
+```bash
 $ curl https://debug-api.segment.com/v1/track \
   -u $WRITE_KEY: \
   -H 'Content-type: application/json' \
@@ -500,7 +500,7 @@ Example response:
 
 Example command:
 
-```shell
+```bash
 $ curl https://debug-api.segment.com/v1/track \
   -u $WRITE_KEY: \
   -H 'Content-type: application/json' \

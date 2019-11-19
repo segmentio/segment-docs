@@ -35,7 +35,7 @@ Before you enable Responsys in your destinations page, there are a few things in
 
 _NOTE_: You can find your account's endpoint by simply going to your Oracle Responsys login screen and looking at your url.
 
-![responsy-pod-settings](https://i.gyazo.com/77aba325cd56bcb6e55f12a59afbab0c.png)
+![responsy-pod-settings](images/77aba325cd56bcb6e55f12a59afbab0c.png)
 
 2. Enter your **username** and **password** for your Responsys account. We require these credentials in order to retrieve an auth token from Oracle in order to send data to your account on your behalf.
 
