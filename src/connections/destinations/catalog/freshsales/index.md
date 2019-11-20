@@ -1,8 +1,7 @@
 ---
-title: Freshsales
+title: Freshsales Destination
 ---
-
-This destination is maintained by Freshsales. For any issues with the destination contact us at support@freshsales.io.
+This destination is maintained by [Freshsales](https://www.freshworks.com/freshsales-crm/?utm_source=segmentio&amp;utm_medium=docs&amp;utm_campaign=partners). For any issues with the destination contact us at support@freshsales.io.
 
 ## Getting Started
 
@@ -34,7 +33,7 @@ You can use `identify` to create a lead or a contact when a website visitor fill
 }
 </pre>
 
-By default, every `identity` is created as a lead. If you’d like an identity to be a contact, you’d need to pass `fs_contact` as `true` as a part of traits.
+By default, every `identity` is created as a lead. If you'd like an identity to be a contact, you'd need to pass `fs_contact` as `true` as a part of traits.
 
 <pre>
 {
@@ -53,21 +52,21 @@ By default, every `identity` is created as a lead. If you’d like an identity t
 </pre>
 
 ### Traits
-`traits` are pieces of information you know about a user that are included in an ‘identify’ method.
+`traits` are pieces of information you know about a user that are included in an `identify` method.
 
 ### Default Traits
 Segment has reserved some traits that have semantic meanings for users. You should only use reserved traits for their intended meaning. Check the [Segment Spec](/docs/spec/identify/#traits) to get a list of reserved traits.
 
-![Default Traits](https://cldup.com/lvbDssc2kP.png)
+![Default Traits](images/lvbDssc2kP.png)
 
 All attributes that are a part of traits should correspond to the internal names of those fields in Freshsales. Attributes that are not mapped with their corresponding fields are ignored.
 
-However, we make exception to two attributes ‘title’ and ‘phone’ that are part of default traits. They are automatically mapped to Freshsales attributes ‘job_title’ and ‘work_number’ respectively.
+However, we make exception to two attributes `title` and `phone` that are part of default traits. They are automatically mapped to Freshsales attributes `job_title` and `work_number` respectively.
 
 ### Custom Traits:
 As part of traits, you can send custom fields created in Freshsales by using their internal names in camel case. You can find internal names in corresponding field settings page. Also, custom fields will not be automatically created. You have to create them in Freshsales before proceeding to send data from Segment. To learn more about creating custom fields in Freshsales check this [link](https://support.freshsales.io/support/solutions/articles/214558-how-to-add-custom-fields-for-leads-contacts-accounts-and-deals).
 
-![Custom Traits](https://cldup.com/szDo5891Qq.png)
+![Custom Traits](images/szDo5891Qq.png)
 
 ### Objects:
 Accounts and Deals associated to a contact or lead can also be updated in Freshsales. The objects company and deal in the identity correspond to the Accounts and Deals in Freshsales. You can pass the `traits` of the company or the deal along with the respective objects in the identity.
@@ -134,8 +133,6 @@ When you call a `page` event, we send a pageview to Freshsales. You can send ext
 
 ## Troubleshooting
 
-### Custom Fields Aren’t Updating
+### Custom Fields Aren't Updating
 
-Make sure that the traits you’re passing through match the custom field’s internal name and data type.
-
-{% include content/integration-foot.md %}
+Make sure that the traits you're passing through match the custom field's internal name and data type.

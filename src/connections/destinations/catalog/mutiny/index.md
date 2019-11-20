@@ -1,5 +1,6 @@
 ---
-title: Mutiny
+rewrite: true
+title: Mutiny Destination
 ---
 
 [Mutiny](https://mutinyhq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to personalize your website content based on customer's activity and 3rd party data. By integrating with [Segment](https://segment.com), you can easily and accurately track conversions and integrate 1st party data for personalization with Mutiny.

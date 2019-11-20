@@ -1,8 +1,9 @@
 ---
-title: Crazy Egg
+title: Crazy Egg Destination
+rewrite: true
 ---
 
-[Crazy Egg](https://www.crazyegg.com/) is a user testing tool that gives you heatmaps, clickmaps and scrollmaps of your visitors interacting with your site. It helps you learn where your users are having trouble. The {{integration.name}} Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-crazy-egg).
+[Crazy Egg](https://www.crazyegg.com/) is a user testing tool that gives you heatmaps, clickmaps and scrollmaps of your visitors interacting with your site. It helps you learn where your users are having trouble. The Crazy Egg Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-crazy-egg).
 
 This document was last updated on 18th January, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
@@ -14,7 +15,7 @@ This document was last updated on 18th January, 2018. If you notice any gaps, ou
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Crazy Egg" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Navigate to the [Setup page within your Crazy Egg UI](https://app.crazyegg.com/v2/install/manually) and copy the Account Number which should be a series of 8-9 numbers in bold.
-4. Enter this within the Segment UI under "Account Number" and Crazy Egg will automatically start recording heatmap data once the CDN updates in 5-10 minutes.
+4. Enter this within the Segment UI under "Account Number" and Crazy Egg will automatically start recording heatmap data once the CDN updates in 45 minutes.
 5. Complete the set-up flow by entering the URL of the page you want heatmap tracking implemented for.
 6. Navigate to the [Crazy Egg Dashboard](https://app.crazyegg.com/v2/dashboard) to track the data. It's worth noting that it may take up to 24-48 hours for initial data to show up.
 

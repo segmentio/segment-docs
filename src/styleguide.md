@@ -6,16 +6,16 @@ layout: page
 faq:
   Source:
     - title : "Should I track client or server-side?"
-      content : "One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It’s worth a read!"
+      content : "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
       link: /sources/catalog
     - title : "What are best practices in identifying users?"
-      content : "One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It’s worth a read!"
+      content : "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
   Cloud Sources:
     - title : "What are cloud sources?"
-      content : "One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It’s worth a read!"
+      content : "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
       link: /sources
     - title : "How do cloud sources work?"
-      content : "One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It’s worth a read!"
+      content : "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
       link: /sources/catalog
 contributors:
   - name: Paul Mccall
@@ -65,9 +65,9 @@ contributors:
     - Subitem
 * Item
 
-{% include components/list-steps.html number="1" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
-{% include components/list-steps.html number="2" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
-{% include components/list-steps.html number="3" heading="Totally new here?" content="Not sure what to track or why? Check out Segment’s Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="1" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="2" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
+{% include components/list-steps.html number="3" heading="Totally new here?" content="Not sure what to track or why? Check out Segment's Analytics Academy to learn more about the wide world of analytics, including the what and why and some stories about beautiful stacks." %}
 
 ---
 
@@ -94,7 +94,7 @@ contributors:
 
 ## Code Blocks
 
-Analytics.js, our Javascript `library`, is the most powerful way to track customer data from your `website`. If you’re just starting out, we recommend it over server-side libraries as the simplest installation for any website.
+Analytics.js, our Javascript `library`, is the most powerful way to track customer data from your `website`. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
 
 ```js
 analytics.identify('025pikachu025', {
@@ -141,7 +141,7 @@ console.log('example');
 ## Notes
 
 > note ""
-> **NOTE:** Our [browser and mobile libraries](https://segment.com) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don’t need to worry about them when using those libraries.
+> **NOTE:** Our [browser and mobile libraries](https://segment.com) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
 
 > note "Server-side tracking"
 > Server-side data management is when tag sends data into your web server, then your web server passes that data to the destination system/server. [Find out more](https://segment.com)

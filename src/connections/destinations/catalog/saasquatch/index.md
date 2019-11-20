@@ -1,15 +1,16 @@
 ---
-title: SaaSquatch
+title: SaaSquatch Destination
 ---
+
 [Our Saasquatch destination code](https://github.com/segment-integrations/analytics.js-integration-saasquatch) is all open-source on GitHub if you want to check it out.
 
 ## Getting Started
 
 All you need to get started is your SaaSquatch Tenant Alias. Enter that into your Segment Destinations settings for SaaSquatch and you're good to go!
 
-<!-- Here's a quick video on what you need to do: -->
+Here's a quick video on what you need to do:
 
-<!-- remove link to https://www.youtube.com/watch?v=dvNJb3G316E -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dvNJb3G316E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - - -
 
@@ -33,5 +34,3 @@ analytics.identify( 'u1234', {
 ```
 
 For more information about Referral SaaSquatch check out [their docs](http://docs.referralsaasquatch.com/segment-io)!
-
-{% include content/integration-foot.md %}

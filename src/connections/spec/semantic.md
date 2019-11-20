@@ -1,6 +1,5 @@
 ---
 title: 'Spec: Semantic Events'
-sidebar: 'Semantic Events'
 ---
 
 One of the core components of the Segment [Spec](/docs/spec) is the [`track`](/docs/spec/track) call. It describes any arbitrary event that the user has triggered. For some industry verticals and applications, we've standardized event names. For Ecommerce tracking, for example, there are **specific event names and properties** that we recognize semantically. This semantic meaning allows us to specially recognize and transform key events before sending them off to each different tool.

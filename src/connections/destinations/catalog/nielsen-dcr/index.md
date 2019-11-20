@@ -1,6 +1,7 @@
 ---
-title: Nielsen Digital Content Ratings
+title: Nielsen DCR Destination
 ---
+
 ## Getting Started
 
 Nielsen-DCR is supported on mobile apps and web browsers.
@@ -82,7 +83,7 @@ You will need to fill out a license agreement form and have the contact informat
 
 Once extracted, add the static NielsenAppApi.framework to the project and ensure it's in the `Frameworks` folder, and that it is linked.
 
-Nielsen also requires the following frameworks, which must be included into Link Binary with Libraries (within app target’s Build Phases) - NOTE - if using the dynamic framework, these will dynamically be linked and there is no need to manually link these.
+Nielsen also requires the following frameworks, which must be included into Link Binary with Libraries (within app target's Build Phases) - NOTE - if using the dynamic framework, these will dynamically be linked and there is no need to manually link these.
   - AdSupport.framework
   - SystemConfiguration.framework
   - CoreLocation.framework (Not applicable for International (Germany))
@@ -197,7 +198,11 @@ From there we will map to the relevant events on the instance as outlined below:
 | Heartbeat timer updated | `Video Playback Seek Completed` |
 | `-(void) end` and Heartbeat timer stopped | `Video Playback Completed` |
 
-Segment-Nielsen-DCR does not map any playback properties.
+Segment-Nielsen-DCR does not map any playback properties (ie. send metadata) on mobile.
+
+Web supports the use case of tracking a user switching back and forth from amongst multiple videos at the same time. To do so, Segment checks the metadata on playback interrupted events and sends Nielsen updated metadata if we see that the video content has changed. We do so by storing the current `asset_id` in memory and checking to see if the `asset_id` value has changed.
+
+For playback events, Segment's video spec expects either `ad_asset_id​` or `content_asset_id​` depending on whether the video is an ad or content. Segment will default to mapping `ad_asset_id` to Nielsen's ad metadata `assetid` and `content_asset_id` to Nielsen's content metadata. The default Segment property can be overridden in your integration settings: `Custom Content Asset Id Property Name` or `Custom Ad Asset Id Property Name`.
 
 ### Content Events
 
@@ -221,6 +226,10 @@ Segment-Nielsen-DCR does not map any playback properties.
 | `length`                   | `total_length`   |
 | `pipmode`                  | `options.pipmode`|
 | `type`                     | `'content'` (hardcoded)|
+| `adLoadType`               | `options.adLoadType`|
+| `hasAds`                   | `options.hasAds`|
+| `crossId1`                 | `options.crossId1`|
+| `crossId2`                 | `options.crossId2`|
 
 Please take note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
 
@@ -261,7 +270,7 @@ Please take note that iOS and Android expect different casing. We expect `snake_
 
 Example on passing destination specific option values through on iOS
 
-```objc
+```objective-c
 options:@{
   @"integrations": @{
    @"nielsen-dcr" : @{
@@ -318,13 +327,13 @@ Content originator ID. This value is only required for distributors.
 
 #### How do you determine App Name?
 
-Segment-Nielsen-DCR iOS retrieves the application name from your app’s `Info.plist` application bundle name as returned by `CFBundleName` .
+Segment-Nielsen-DCR iOS retrieves the application name from your app's `Info.plist` application bundle name as returned by `CFBundleName` .
 
 For Android, we retrieve the name of the application package from the [PackageManager](https://developer.android.com/reference/android/content/Context.html#getPackageManager()).
 
 #### How do you determine App Version?
 
-Segment-Nielsen-DCR retrieves the application version from your app’s `Info.plist` application bundle name as returned by `CFBundleVersion`.
+Segment-Nielsen-DCR retrieves the application version from your app's `Info.plist` application bundle name as returned by `CFBundleVersion`.
 
 For Android, we retrieve the version of the application package from the [PackageManager](https://developer.android.com/reference/android/content/Context.html#getPackageManager()).
 
@@ -335,5 +344,3 @@ The Parent Client ID and Sub-Brand (VCID) values are automatically populated thr
 #### Can I override the Nielsen-DCR `clientId` and `subbrand` values?
 
 In the event that your app contains multiple brands and sub-brands, Segment lets you override the `clientId` and `subbrand` values, to give credit to another brand or sub-brand. In your Segment dashboard, under "Client Id Property Name", indicate a payload property to be mapped to the Nielsen `clientId`. To override a `subbrand`, indicate a payload property to mapped to Nielsen `subbrand` under "Subbrand Property Name".
-
-{% include content/integration-foot.md %}

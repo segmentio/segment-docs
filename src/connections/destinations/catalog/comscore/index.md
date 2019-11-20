@@ -1,5 +1,5 @@
 ---
-title: comScore
+title: comScore Destination
 ---
 
 Our comScore destination code is open-source on GitHub if you want to check it out! [For Analytics.js](https://github.com/segment-integrations/analytics.js-integration-comscore). [For Analytics-iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore). [For Analytics-Android](https://github.com/segment-integrations/analytics-android-integration-comscore)
@@ -10,7 +10,7 @@ Our comScore destination code is open-source on GitHub if you want to check it o
 
 When you toggle on comScore in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading comScore's beacon.js onto your page. **This means you should remove comScore's snippet from your page.**
++ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading comScore's beacon.js onto your page. **This means you should remove comScore's snippet from your page.**
 + comScore will automatically start recording data.
 
 ## Mobile
@@ -41,7 +41,7 @@ These new settings will take up to an hour to propagate to all of your existing 
 
 #### App Name
 
-You can include your **App Name** which will be included in all payloads. comScore retrieves the application name from your app’s `Info.plist` application bundle name as returned by `CFBundleName` . This value is used in the classification from comScore’s Audience reporting. If you want to override the automatically retrieved value, you can provide a string with your preferred app name.
+You can include your **App Name** which will be included in all payloads. comScore retrieves the application name from your app's `Info.plist` application bundle name as returned by `CFBundleName` . This value is used in the classification from comScore's Audience reporting. If you want to override the automatically retrieved value, you can provide a string with your preferred app name.
 
 #### HTTPS
 We default **Use HTTPS** to true so that your data is always sent encrypted.
@@ -77,7 +77,7 @@ Calling `flush` will clear the offline cache with comScore's `flushOfflineCache`
 
 ## Video Streaming
 
-**Disclaimer**: The video tracking functionality is in beta. If you have feedback on this beta functionality, please reach out to us via our [contact form](https://segment.com/help/contact). In addition, you must be using version 3.0.0 of the Segment-comScore SDK for this functionality.
+**Note**: The video tracking functionality is in beta for **mobile only**, and requires version 3.0.0 of the `Segment-comScore` SDK. If you have feedback on or questions about this beta feature, [please contact us](https://segment.com/help/contact)!
 
 To get started tracking video content through Segment, make sure you are using a media player that has an API which allows you to detect the player state. Please also refer to our [Video Spec](https://segment.com/docs/spec/video/) and implement video tracking as outlined there. We will map the semantic events to comScore's relevant methods.
 
@@ -161,12 +161,12 @@ Please take note that iOS and Android expect different casing. We expect `snake_
 
 ## Additional Video Destinations Specific Options
 
-Example on passing destination specific option values through on iOS
+Example on passing destination specific option values through on iOS:
 
-```objc
+```objective-c
 options:@{
   @"integrations": @{
-   @"comScore" : @{
+   @"com-score" : @{
      @"c3": @"c3 value",
      @"c4: @"c4 value",
      @"c6" : @"c6 value",
@@ -277,6 +277,4 @@ The SDK auto-collects the internal device names, which comScore maps to their re
 The comScore SDK will collect unique device id's under the hood, so based on this there is some filtering that can happen here. IN order to see a number for this metric, you need to select a Geography, Client ID, and Platform in the comScore dashboard. The *All* option will not produce a unique device.
 
 ### How does comScore determine the application name?
-Used in the classification from comScore’s Audience reporting, comScore retrieves the application name from your app’s Info.plist application bundle name as returned by `CFBundleName`.  If you want to override the automatically retrieved value, you can provide a string with your preferred app name.
-
-{% include content/integration-foot.md %}
+Used in the classification from comScore's Audience reporting, comScore retrieves the application name from your app's Info.plist application bundle name as returned by `CFBundleName`.  If you want to override the automatically retrieved value, you can provide a string with your preferred app name.

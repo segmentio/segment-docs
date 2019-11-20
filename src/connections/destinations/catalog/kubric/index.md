@@ -1,5 +1,6 @@
 ---
-title: Kubric
+title: Kubric Destination
+rewrite: true
 ---
 [Kubric](https://kubric.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to create personalised creatives for your users and deliver them using emails, push-notifications, Facebook & various other channels.
 

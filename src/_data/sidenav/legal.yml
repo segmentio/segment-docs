@@ -2,41 +2,37 @@
 sections:
 - section_title: Legal
   section:
-  - path: "/legal"
-    title: Overview
-  - path: "/legal/acceptable-use-policy"
+  - path: /legal/
+    title: Segment Terms of Service
+  - path: /legal/acceptable-use-policy
     title: Acceptable Use Policy
-  - path: "/legal/first-access-beta-preview"
+  - path: /legal/enhanced-onboarding-support
+    title: Enhanced Onboarding Support
+  - path: /legal/first-access-beta-preview
     title: First-Access and Beta Preview
-  - path: "/legal/partnersagreement"
+  - path: /legal/partnersagreement
     title: Segment Partner Program Agreement
-  - path: "/legal/personas-terms"
+  - path: /legal/personas-terms
     title: 'Terms of Service: Personas'
-  - path: "/legal/premium-tos-security"
+  - path: /legal/premium-tos-security
     title: Segment Premium Information Security Policy
-  - path: "/legal/premium-tos-sla"
-    title: Segment SLA for Premium Terms of Service
-  - path: "/legal/premium-tos"
-    title: Segment Premium Online Terms of Service
-  - path: "/legal/privacy-04-2018"
+  - path: /legal/privacy-04-2018
     title: Privacy Policy
-  - path: "/legal/privacy-2017"
+  - path: /legal/privacy-2017
     title: Privacy Policy - 2016
-  - path: "/legal/privacy-updates"
+  - path: /legal/privacy-updates
     title: Updates - Privacy Policy
-  - path: "/legal/privacy"
+  - path: /legal/privacy
     title: Privacy Policy
-  - path: "/legal/security"
+  - path: /legal/security
     title: Security
-  - path: "/legal/subprocessors"
+  - path: /legal/subprocessors
     title: List of Data Subprocessors
-  - path: "/legal/terms-2016"
+  - path: /legal/terms-2016
     title: Terms of Service - 2016
-  - path: "/legal/terms-2017"
+  - path: /legal/terms-2017
     title: Terms of Service - 2017
-  - path: "/legal/terms-updates"
+  - path: /legal/terms-updates
     title: Updates - Terms of Service
-  - path: "/legal/terms"
-    title: Terms of Service
-  - path: "/legal/website-data-collection-policy"
+  - path: /legal/website-data-collection-policy
     title: Website Data Collection Policy

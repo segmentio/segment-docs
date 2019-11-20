@@ -1,12 +1,12 @@
 ---
-title: LinkedIn Insight Tag
+title: LinkedIn Insight Tag Destination
 ---
 
 ## Getting Started
 
 When you enable the LinkedIn Insight Tag destination in Segment, this is what happens:
 
-- The Segment CDN updates in 5 to 10 minutes. After that, the Segment snippet asynchronously loads LinkedIn Insight Tag's tracking snippet on your page. (If you already had the LinkedIn Insight Tag's snippet installed on your page, you should remove it.)
+- The Segment CDN updates within 45 minutes. After that, the Segment snippet asynchronously loads LinkedIn Insight Tag's tracking snippet on your page. (If you already had the LinkedIn Insight Tag's snippet installed on your page, you should remove it.)
 - The LinkedIn Insight Tag automatically starts loading the pixel on sites which you load Analytics.js on.
 
 The LinkedIn Insight Tag Destination doesn't use any Segment API calls (e.g. Identify, Track, etc), so you'll use the site-wide Insight Tag.
@@ -52,6 +52,3 @@ From there, click **Configure LinkedIn Insight Tag** and select the source for w
 ![](images/Nmad4zYvWy.png)
 
 Select that option and paste in the LinkedIn Data Partner ID that you copied earlier. Click **Save**, then click **Activate Destination**. Our servers build the latest CDN for that source, and the LinkedIn Insight Tag loads on the sites that use that source's Segment snippet!
-
-
-{% include content/integration-foot.md %}

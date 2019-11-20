@@ -1,5 +1,6 @@
 ---
-title: PersistIQ
+rewrite: true
+title: PersistIQ Destination
 ---
 [PersistIQ](https://www.persistiq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the easiest sales engagement software to use. Sales teams use PersistIQ to connect with more prospects using targeted emails, calls, and tasks.
 

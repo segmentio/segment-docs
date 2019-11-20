@@ -1,10 +1,10 @@
 ---
-title: 'Identity Resolution'
+title: 'Personas: Identity Resolution'
 ---
 
 ## Identity Graph
 
-Identity Resolution is a major new upgrade to the Segment platform. The Segment Identity Graph merges the complete history of each customer into a single profile, no matter where they interact with your business. Identity Resolution allows you to understand a user’s interaction across web, mobile, server, and third party partner touch-points in realtime, using an online and offline ID graph with support for cookie IDs, device IDs, emails, and custom external IDs. If you are sending the [group](/docs/spec/group) call, you can also understand user behavior at the account-level.
+Identity Resolution is a major new upgrade to the Segment platform. The Segment Identity Graph merges the complete history of each customer into a single profile, no matter where they interact with your business. Identity Resolution allows you to understand a user's interaction across web, mobile, server, and third party partner touch-points in realtime, using an online and offline ID graph with support for cookie IDs, device IDs, emails, and custom external IDs. If you are sending the [group](/docs/spec/group) call, you can also understand user behavior at the account-level.
 
 ![](images/identity_resolution_1.png)
 
@@ -25,7 +25,7 @@ Identity Resolution is a major new upgrade to the Segment platform. The Segment 
 
 ## Identity Example
 
-Let’s say a new anonymous user visits your Pricing page:
+Let's say a new anonymous user visits your Pricing page:
 
 ```
 analytics.page('Pricing', {
@@ -56,7 +56,7 @@ analytics.track('User Signup', {
 At this point, the Identity Graph associates external ID (user_id: `use_123`) with the same user `use_4paotyretuj4Ta2bEYQ0vKOq1e7`.
 ![](images/identity_resolution_3.png)
 
-And if you’re going beyond customer data (the users collection), Personas will automatically resolve identity for any other external ID's that you bind to users - such as a phone number or any custom identifier that you support. As seen in the below example, you can send custom `externalIds` in the `context` object of any call to our API.
+And if you're going beyond customer data (the users collection), Personas will automatically resolve identity for any other external ID's that you bind to users - such as a phone number or any custom identifier that you support. As seen in the below example, you can send custom `externalIds` in the `context` object of any call to our API.
 
 ```
 analytics.track('Subscription Upgraded', {
@@ -74,4 +74,4 @@ analytics.track('Subscription Upgraded', {
 })
 ```
 
-Personas will automatically create a user (user_id: `use_123`)  with the custom externalId (phone: `123-456-7890`). Then, you query the users phone record by using the external id (phone: `123-456-7890`), or update this profile using that externalId going forward.
+Personas will automatically create a user (user_id: `use_123`)  with the custom externalId (phone: `123-456-7890`). Then, you query the users phone record by using the external id (phone: `123-456-7890`), or update this profile using that externalId going forward. (Note: externalIDs must be lower-case.)

@@ -1,13 +1,14 @@
 ---
-title: Woopra
+title: Woopra Destination
 ---
+
 Our Woopra destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-woopra), [Server](https://github.com/segmentio/integration-woopra).
 
 ## Getting Started
 
 When you toggle on Woopra in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading Woopra's javascript onto your page. This means you should remove Woopra's snippet from your page.
++ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Woopra's javascript onto your page. This means you should remove Woopra's snippet from your page.
 + Woopra will start automatically collecting data on your site.
 
 Woopra is supported on client-side and server-side.
@@ -94,5 +95,3 @@ If you are seeing split user profiles, the most likely culprit is that you are c
 Calling `.identify()` in the browser will effectively map the `userId` you passed in with the `wooTracker` cookie value. So in the event that you call `.identify()` on the server side first, you **MUST** call `.identify()` on the client side as well to tie the `wooTracker` cookie to that `userId`.
 
 Doing so will ensure that duplicate profiles are not created.
-
-{% include content/integration-foot.md %}

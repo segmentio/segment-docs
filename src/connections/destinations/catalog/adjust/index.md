@@ -1,9 +1,9 @@
 ---
-title: Adjust
-redirect_from: '/integrations/adjust/'
+rewrite: true
+title: Adjust Destination
 ---
 
-[Adjust](https://adjust.com) is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The {{integration.name}} Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-adjust) and [Android](https://github.com/segment-integrations/analytics-android-integration-adjust).
+[Adjust](https://adjust.com) is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-adjust) and [Android](https://github.com/segment-integrations/analytics-android-integration-adjust).
 
 This document was last updated on January 31, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
@@ -27,13 +27,13 @@ pod "Segment-Adjust"
 
 After adding the dependency, you must register the destination with our SDK.  To do this, import the Adjust destination in your `AppDelegate`:
 
-```objc
+```objective-c
 #import <Segment-Adjust/SEGAdjustIntegrationFactory.h>
 ```
 
 And add the following lines:
 
-```objc
+```objective-c
 NSString *const SEGMENT_WRITE_KEY = @" ... ";
 SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
 
@@ -74,7 +74,7 @@ After you build and release to the App Store, we'll automatically start translat
 
 ### Server
 
-Our server-side integration allows you to send *supplemental* data to Adjust via our server-side integration.  This, however, *does not* include attribution events.  If you are relying on the Adjust server-side component, and you are not bundling the Segment-Adjust SDK, your installs will not be attributed. Ecommerce events and other general `track` events are supported out of the box. You **must** map your `track` events to your custom Adjust Event Token in your [Adjust destination settings](#map-your-events-to-custom-adjust-event-tokens).
+Our Cloud-mode integration allows you to send *supplemental* data to Adjust.  This, however, *does not* include attribution events. If you are relying on the Adjust server-side component, and you are not bundling the Segment-Adjust SDK, your installs will not be attributed. E-commerce events and other general `track` events are supported out of the box. You **must** map your `track` events to your custom Adjust Event Token in your [Adjust destination settings](#map-your-events-to-custom-adjust-event-tokens).
 
 Additionally, to send any events to Adjust from the server, you must include the `device.id` as well as the `device.type` in the context object of your event. For example:
 
@@ -165,14 +165,14 @@ Since there will not be a change in attribution for registered testing devices y
 To do so:
 1. Take note of the IDFA/advertisingId (you can find this in the raw view of an event in your Segment debugger)
 2. Uninstall the app from your device
-3. Delete the `IDFA`/`advertisingId` from [Adjust’s testing console](https://docs.adjust.com/en/testing-console/)
+3. Delete the `IDFA`/`advertisingId` from [Adjust's testing console](https://docs.adjust.com/en/testing-console/)
 4. Re-install the app on the device and you should now see the device register in Adjust and an `Install Attributed` triggered.
 
 ### Server
 
-Unlike the client-side option to send `Install Attributed` to Segment, the server-side option will not include device context information nor will it be sent to enabled device mode destinations.
+Unlike the Device-mode option to send `Install Attributed` to Segment, the Cloud-mode option will not include device context information nor will it be sent to enabled device mode destinations.
 
-If you are bundling the Segment-Adjust integration and would like attribution data sent from Adjust's servers back to Segment, you can [enable Segment as a Special Partner in Adjust](https://docs.adjust.com/en/special-partners/segment/#sending-partner-parameters-to-segment). Once set up, Install Attributed will be sent server-side to Segment and on to enabled server-side destinations.
+If you are bundling the Segment-Adjust integration and would like attribution data sent from Adjust's servers back to Segment, you can [enable Segment as a Special Partner in Adjust](https://docs.adjust.com/en/special-partners/segment/#sending-partner-parameters-to-segment). Once set up, Install Attributed will be sent to Segment, and on to enabled Cloud-mode destinations.
 
 Please reach out to the Adjust team at `support@adjust.com` for questions related to enabling Segment as a Adjust Special Partner.
 
@@ -195,7 +195,7 @@ The destination will automatically recognize the spec'd `orderId` property, and 
 
 ### Duplicate Purchase Events
 
-If you're using Adjust's iOS SDK, it will automatically takes care of duplicate purchase events. We will use Adjust's `transactionId`-based deduplication when you send an `orderId` (see the [ecommerce spec](/docs/spec/ecommerce/v2/#order-completed)).
+If you're using Adjust's iOS SDK, it will automatically takes care of duplicate purchase events. We use Adjust's default deduplication (using `transactionId`) when you send an `orderId` (see the [ecommerce spec](/docs/spec/ecommerce/v2/#order-completed)).
 
 ### In-App Purchase Receipts
 

@@ -1,5 +1,6 @@
 ---
-title: Marketo Static Lists
+rewrite: true
+title: Marketo Static Lists Destination
 ---
 
 ## Overview
@@ -20,7 +21,7 @@ To create a role with full API access:
 2. Click Users & Roles on the left side bar.
 3. Click on the Roles tab.
 4. Click New Role. Name your role and check the API Access & Lead Database boxes. Click Create.
-![](https://d2mxuefqeaa7sj.cloudfront.net/s_0CECB4C5BE2DE2EC3E89C2B2329005B7605E1BB0AD39D650A563F63DC1401240_1535049072312_Screen+Shot+2018-08-23+at+11.30.37+AM.png)
+![](../marketo-v2/images/edit-role.png)
 
 
 Now that you've created an API role, you have to assign that role to an API only user.
@@ -36,7 +37,7 @@ Next, create a Service and get Client Secret and Client ID from that Service.
 3. Select Custom for the Service from the drop down.
 4. Select the new user you invited.
 5. Click View Details on the new service that you've created and a small window will display with your Client Secret and Client ID. Copy and paste them into your Destination's Settings.
-![](https://cloudup.com/c3s0qJ-dDSO+)
+![](../marketo-v2/images/c3s0qJ-dDSO+.png)
 6. Finally, go to your Lead Database and create a folder under Group Lists. Copy the name of this folder into your Destination Settings in Personas.
 
 

@@ -1,12 +1,12 @@
-- name: Guides
+- name: Getting Started
   icon: icon-guides.svg
   description: "Start here! Best practices, Setup steps, and other useful information."
   path: /guides/
 
-- name: Academy
+- name: How-to Guides
   icon: icon-academy.svg
   description: "Learn more about the 'whys' and 'hows' of analytics. A great read if you're just getting started."
-  path: /academy/
+  path: /guides/best-practices/
 
 - name: App
   icon: icon-app.svg

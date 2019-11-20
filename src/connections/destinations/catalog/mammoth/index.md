@@ -1,7 +1,8 @@
 ---
-title: Mammoth
+rewrite: true
+title: Mammoth Destination
 ---
-[Mammoth](https://mammoth.io/integrations/segment-com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve analytics for analysts, businesses, and developers who can leverage Mammoth’s data warehousing, data discovery & data preparation abilities to arrive at insights.
+[Mammoth](https://mammoth.io/integrations/segment-com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve analytics for analysts, businesses, and developers who can leverage Mammoth's data warehousing, data discovery & data preparation abilities to arrive at insights.
 
 [Mammoth](https://mammoth.io) allows you to blend your data from Segment with other sources of data such as databases and files. Using Mammoth, you can build multiple data pipelines, which are constructed by applying transforms through a no coding interface. Mammoth also allows for the visual discovery of the data and easy exports to databases such as MySQL, elasticsearch, and PostgreSQL.
 
@@ -25,7 +26,7 @@ There are three steps to get started using Mammoth with Segment. You can registe
 
 ### 1. Create a webhook dataset on Mammoth.
 
-Mammoth Segment destination requires a dataset on Mammoth’s side. There are multiple types of datasets you can add. You want to add a webhook type of dataset on Mammoth for Segment Integration.
+Mammoth Segment destination requires a dataset on Mammoth's side. There are multiple types of datasets you can add. You want to add a webhook type of dataset on Mammoth for Segment Integration.
 
 
 
@@ -34,13 +35,11 @@ Mammoth Segment destination requires a dataset on Mammoth’s side. There are mu
 3. This will open the add dataset dialog. Make sure the option selected is *Webhooks*.
 4. Give your dataset a name & click on Done. A new dataset will appear in the data library.
 
-![](https://i.imgur.com/A8mLIPZ.png)
+![](images/A8mLIPZ.png)
 
 The dataset you created will have an API KEY which will be needed to proceed on Segment UI. Here is how you copy it:
 
-
-![](https://i.imgur.com/JsTuMCy.png)
-
+![](images/JsTuMCy.png)
 
 
 1. Click on the new dataset you created in the previous step.
@@ -86,7 +85,7 @@ Mammoth recommends that you use the *Save as Dataset* task in the *ADD TASK* men
 
 ## Page
 
-If you haven’t had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -97,7 +96,7 @@ Page calls will be sent to the webhook dataset you created earlier. You can filt
 
 ## Screen
 
-If you haven’t had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/screen/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/screen/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@ "Home"];
@@ -108,7 +107,7 @@ Screen calls will be sent to the webhook dataset you created earlier. You can fi
 
 ## Identify
 
-If you haven’t had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -121,7 +120,7 @@ Identify calls will be sent to the webhook dataset you created earlier. You can 
 
 ## Track
 
-If you haven’t had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')

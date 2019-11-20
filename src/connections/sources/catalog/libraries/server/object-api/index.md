@@ -1,15 +1,12 @@
 ---
 title: Objects API
-sourceTitle: 'Objects API'
-sourceCategory: 'Server'
-sidebar: 'Objects API'
 ---
 
 NOTE: The Objects API is in beta, and so features and names may change without notice as we continue to build.
 
 The Segment Objects API allows you to send business objects relevant to your business right to Redshift and other Segment supported data warehouses.
 
-NOTE: We haven’t yet added support for set to our core analytics-<language> libraries so you’ll need to use our HTTP API directly or our independent Go(lang) client for now.
+NOTE: We haven't yet added support for set to our core analytics-<language> libraries so you'll need to use our HTTP API directly or our independent Go(lang) client for now.
 
 ### Authentication
 
@@ -48,7 +45,7 @@ Note: The average response time increases with the synchronous objects API heade
 
 It is recommended that you use snake case when naming any object properties.
 
-```
+```json
 {
   "properties": {
     "name": "Charming Beach Room Facing Ocean",
@@ -62,7 +59,7 @@ It is recommended that you use snake case when naming any object properties.
 
 You should use plural collection names wherever possible. The collection name should describe the group of one or many objects within the collection.
 
-```
+```json
 "collection": "rooms"
 "collection": "products"
 "collection": "reviews"
@@ -196,7 +193,7 @@ You can use the objects-go library to send object data easily from your Go serve
 
 You can use the objects-go library like this:
 
-```Go
+```go
 Client.Set(&objects.Object{
   ID: "room1000",
   Collection: "rooms"
@@ -204,7 +201,7 @@ Client.Set(&objects.Object{
     "name": "Charming Beach Room Facing Ocean",
     "location": "Lihue, HI",
     "review_count": 47,
-})
+}})
 
 // Second call on the same object
 Client.Set(*objects.Object{
@@ -213,7 +210,7 @@ Client.Set(*objects.Object{
   Properties: map[string]interface{}{
     "owner": "Calvin",
     "public_listing": true,
-})
+}})
 
 // Make sure objects are flushed before your main goroutine exits
 Client.Close()
@@ -223,7 +220,7 @@ View the Objects-go library on Github [here](https://github.com/segmentio/object
 
 Here is a `curl` example of how to get started:
 
-```
+```bash
 curl https://objects.segment.com/v1/set \
    -u PROJECT_WRITE_KEY: \
    -H 'Content-Type: application/json' \

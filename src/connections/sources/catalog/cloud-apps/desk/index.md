@@ -17,7 +17,7 @@ You will need a Desk.com account with administrator privileges.
 
 ### Add a new Desk.com source
 
-1. From your workspace’s `sources` page, click `add source`.
+1. From your workspace's `sources` page, click `add source`.
 3. Choose Desk.com.
 4. Choose a name for your Desk.com source to identify it within your workspace.
 ![](images/desk_com_image_1.png)
@@ -29,7 +29,7 @@ You will need a Desk.com account with administrator privileges.
 
 ## Components 
 
-The Desk.com source is built with a sync component, which means we’ll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we’ll grab all the Desk.com objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance’s schema name you designated upon creation (ie. `desk_com.cases`).
+The Desk.com source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Desk.com objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. `desk_com.cases`).
 
 Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Desk.com. For example, if `priority` goes from `2` to `4` between syncs, on its next sync that priority value will be `4`.
 

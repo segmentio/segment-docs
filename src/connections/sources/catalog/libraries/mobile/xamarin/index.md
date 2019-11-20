@@ -39,7 +39,7 @@ Analytics.Initialize("YOUR_WRITE_KEY");
 
 You only need to initialize once at the start of your program. You can then keep using the `Analytics` singleton anywhere in your code.
 
-The default initialization settings are production-ready and queue messages on another thread before sending any requests. In development you might want to use [development settings](docs/sources/mobile/xamarin/#development-settings).
+The default initialization settings are production-ready and queue messages on another thread before sending any requests. In development you might want to use [development settings](/docs/sources/mobile/xamarin/#development-settings).
 
 ## Identify
 
@@ -125,9 +125,9 @@ Find details on **best practices in event naming** as well as the **`track` meth
 
 The [`screen`](/docs/spec/screen/) method lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
 
-You’ll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
+You'll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
 
-Not all services support screen, so when it’s not supported explicitly, the screen method tracks as an event with the same parameters.
+Not all services support screen, so when it's not supported explicitly, the screen method tracks as an event with the same parameters.
 
 Example `screen` call:
 
@@ -168,7 +168,7 @@ Find details on the **`screen` payload** in our [Spec](/docs/spec/screen/).
 
 `group` lets you associate an [identified user](/docs/sources/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/integrations/intercom/), [Preact](/docs/integrations/preact/) and [Totango](/docs/integrations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
 
 Example `group` call:
 
@@ -205,7 +205,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/integrations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/integrations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/destinations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/destinations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -266,9 +266,9 @@ Analytics.Client.Identify("hj2kf92ds212", new Traits() {
 
 In this case, we're specifying that we want this identify to only go to KISSmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "KISSmetrics", true }` turns on KISSmetrics, etc.
 
-destination flags are **case sensitive** and match [the destination's name in the docs](/docs/integrations) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+destination flags are **case sensitive** and match [the destination's name in the docs](/docs/destinations) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
-**Note:** Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it’s a much simpler way of managing your filters and can be updated with no code changes on your side.
+**Note:** Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
 ## Historical Import
 

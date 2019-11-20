@@ -1,5 +1,6 @@
 ---
-title: Candu
+title: Candu Destination
+rewrite: true
 ---
 
 [Candu](https://www.candu.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a learning platform within your app. Candu empowers you to upskill and retain your customers with in-product courses and just-in-time training.

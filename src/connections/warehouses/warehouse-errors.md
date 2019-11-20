@@ -8,11 +8,11 @@ This is a permissioning issue. To learn how to set up proper permissions, you ca
 
 ### ERROR: Cannot execute query because system is in resize mode (SQLSTATE 57014)
 
-This error occurs when your cluster is currently resizing. The warehouse will continue on its scheduled run interval - once the resize is complete, we’ll load all data from the failed run.
+This error occurs when your cluster is currently resizing. The warehouse will continue on its scheduled run interval - once the resize is complete, we'll load all data from the failed run.
 
 ### ERROR: 1040 (SQLSTATE XX000)
 
-This is a Redshift 500 - an internal server error. This is usually caused by having too many tables or too many columns. If you’re seeing this error, [please visit our contact form to submit a request](/contact/support).
+This is a Redshift 500 - an internal server error. This is usually caused by having too many tables or too many columns. If you're seeing this error, [please visit our contact form to submit a request](/contact/support).
 
 ### read tcp XXX.XX.XX.XXXX:XXXX-XXX.XX.XX.XXXX:XXXX: read: connection timed out
 

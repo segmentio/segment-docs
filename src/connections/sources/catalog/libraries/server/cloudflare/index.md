@@ -9,23 +9,23 @@ Segment makes it simple for Cloudflare customers to integrate analytics, email m
 
 The guide below explains how to install Segment on your Cloudflare-hosted website. All you need to get up and running is to create a Cloudflare source and turn on the Segment app for your website. The following guide will show you how, step by step.
 
-Don’t have a Segment account? No problem, [sign up here](https://segment.com/signup?utm_source=cloudflare&utm_medium=docs&utm_campaign=partners).
+Don't have a Segment account? No problem, [sign up here](https://segment.com/signup?utm_source=cloudflare&utm_medium=docs&utm_campaign=partners).
 
 ## Getting Started
 
-1. From your workspace’s **segment.com/your-workspace/sources** page, then click [Add source](https://segment.com/workspaces?next=sources/catalog).
+1. From your workspace's **segment.com/your-workspace/sources** page, then click [Add source](https://segment.com/workspaces?next=sources/catalog).
 2. Choose Cloudflare.
 3. Give the Source a nickname (usually the domain of your site, e.g. segment.com). The nickname is a label used in the Segment interface and in a data warehouse if you choose to use one. *You can edit the name later.*
 4. The next page, **Overview**, will surface your Segment write key for Cloudflare. Copy this write key.
-5. To finish the setup, you’ll have to go into your Cloudflare account and enter this Segment write key in their app settings. [Install the app  here](https://cloudflare.com/apps/segment/install?source=segment-docs).
+5. To finish the setup, you'll have to go into your Cloudflare account and enter this Segment write key in their app settings. [Install the app  here](https://cloudflare.com/apps/segment/install?source=segment-docs).
 
 ![Screenshot of Cloudflare Segment App](https://i.imgur.com/LX36x8R.png)
 
-Turn on the "Automatically Track Page Views" option in Cloudflare to collect page view data. Now when you go back to Segment, click into your Cloudflare Source and you’ll be able to add other downstream Destinations where you want to see your website's events.
+Turn on the "Automatically Track Page Views" option in Cloudflare to collect page view data. Now when you go back to Segment, click into your Cloudflare Source and you'll be able to add other downstream Destinations where you want to see your website's events.
 
 For example, if you want to turn on [Google Analytics](https://google.com/analytics) or [Intercom](https://intercom.com) then you can just navigate to your source's "destinations" page (e.g. **segment.com/your-workspace/sources/your-site/integrations**) and connect new tools.
 
-That’s it! As visitors come on to your site, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled.
+That's it! As visitors come on to your site, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled.
 
 ## What Data Gets Sent
 

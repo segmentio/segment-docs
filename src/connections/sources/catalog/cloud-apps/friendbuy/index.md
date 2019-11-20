@@ -5,7 +5,7 @@ Friendbuy is a referral marketing platform that powers modern day word of mouth.
 
 Adding Friendbuy as a Source to Segment is a surefire way to elevate analysis of your referral program performance. Friendbuy will automatically send referral events and important metadata to Segment.
 
-These events can be passed to your Segment Destinations such as data warehouses and analytics tools. Joined with data from other marketing programs, you can start telling a unified story of each customer’s journey and tailor your reporting to the KPIs that matter most.
+These events can be passed to your Segment Destinations such as data warehouses and analytics tools. Joined with data from other marketing programs, you can start telling a unified story of each customer's journey and tailor your reporting to the KPIs that matter most.
 
 ## Getting Started
  1. From your Sources page in Segment, click **Add source**.  
@@ -19,9 +19,9 @@ These events can be passed to your Segment Destinations such as data warehouses 
 
 ![Segment write key](./images/segment-write-key.png)
 
- 8. From your Segment account, click into your Friendbuy Source and you’ll be able to add other downstream Destinations where you want to see referral events.
+ 8. From your Segment account, click into your Friendbuy Source and you'll be able to add other downstream Destinations where you want to see referral events.
 
-You’re all set! Referral events such as shares, conversions, and reward evaluations will now be sent to Segment and any other destinations that you've enabled.
+you're all set! Referral events such as shares, conversions, and reward evaluations will now be sent to Segment and any other destinations that you've enabled.
 
 ## Customer Data
 All referral events provided to Segment are in the context of specific customer (the advocate).  Below are the customer attributes that Friendbuy provides to Segment along with these events.  Wherever possible, customer data is mapped to Segment's reserved properties as defined in the [Segment Identify spec](https://segment.com/docs/spec/identify/).
@@ -38,12 +38,12 @@ All referral events provided to Segment are in the context of specific customer 
 
 ## Referral Events
 
-Below are the events that Friendbuy sends to Segment. These events will also appear in your Destinations, depending on which platforms you’ve enabled in Segment.
+Below are the events that Friendbuy sends to Segment. These events will also appear in your Destinations, depending on which platforms you've enabled in Segment.
 
 | Event	Name |	Description |
 |--|--|
 |	Referral Shared	|	An advocate shares with a friend through a Friendbuy referral widget (or REST API) to a channel such as email, Facebook, Messenger, Twitter, etc.	|
-|	Referral Converted	|	A referred friend signs up or orders through an advocate’s referral	|
+|	Referral Converted	|	A referred friend signs up or orders through an advocate's referral	|
 |	Referral Reward Evaluated	|	A conversion is evaluated for fraud checks and criteria to determine if an advocate reward should be approved or rejected	|
 
 ### Referral Shared
@@ -63,7 +63,7 @@ Below are the properties that are included in the Referral Shared event payload.
 |	reward_type	|	Merchant defined Reward Type for the advocate reward 	|
 |	reward_amount	|	Merchant defined Reward Amount for the advocate reward 	|
 |	newsletter_opt_in	|	Indicates if an advocate opted in to receiving newsletter communications 	|
-|	reminder_opt_in	|	Indicates if an advocate requested Friendbuy to send referred friend a reminder if they haven’t converted within 3 days 	|
+|	reminder_opt_in	|	Indicates if an advocate requested Friendbuy to send referred friend a reminder if they haven't converted within 3 days 	|
 
 ###  Referral Converted
 Below are the properties that are included in the Referral Converted event payload. Wherever possible, referral conversion data is mapped to Segment's reserved properties as defined in the [Segment Ecommerce spec](https://segment.com/docs/spec/ecommerce/v2/#core-ordering).
@@ -83,12 +83,12 @@ Below are the properties that are included in the Referral Converted event paylo
 |	friend_new_customer	|	Indicator from the merchant that the order is associated to a new customer 	|
 |	friend_email	|	Email address of the purchaser 	|
 |	flagged_self_referral	|	Indicates a self referral based fraud checks enabled by the merchant	|
-|	fraud_same browser	|	Result of Friendbuy’s automatic comparison of referrals and orders made by the same browser and session 	|
-|	fraud_same_customer_id	|	Result of Friendbuy’s automatic comparison of referrals and purchases with the same email addresses 	|
-|	fraud_normal_sensitivity_email_address	|	Result of Friendbuy’s automatic comparison of referrals and orders with a similar email address based on a basic algorithm that uses case normalization and strips domain 	|
-|	fraud_high_sensitivity_email_address	|	Result of Friendbuy’s automatic comparison of referrals and orders with a similar email address based on a advanced algorithm with an adjustable threshold 	|
-|	fraud_same_ip_address	|	Result of Friendbuy’s automatic comparison of referrals and orders made with the same IP addresses 	|
-|	fraud_same_ip_and_user_agent	|	Result of Friendbuy’s automatic comparison of referrals and orders with made with the same IP addresses and same user agent 	|
+|	fraud_same browser	|	Result of Friendbuy's automatic comparison of referrals and orders made by the same browser and session 	|
+|	fraud_same_customer_id	|	Result of Friendbuy's automatic comparison of referrals and purchases with the same email addresses 	|
+|	fraud_normal_sensitivity_email_address	|	Result of Friendbuy's automatic comparison of referrals and orders with a similar email address based on a basic algorithm that uses case normalization and strips domain 	|
+|	fraud_high_sensitivity_email_address	|	Result of Friendbuy's automatic comparison of referrals and orders with a similar email address based on a advanced algorithm with an adjustable threshold 	|
+|	fraud_same_ip_address	|	Result of Friendbuy's automatic comparison of referrals and orders made with the same IP addresses 	|
+|	fraud_same_ip_and_user_agent	|	Result of Friendbuy's automatic comparison of referrals and orders with made with the same IP addresses and same user agent 	|
 |	share_id	|	Friendbuy internal id of the share (NULL if channel is PURL) 	|
 |	referral_code	|	Friendbuy internal identifier used to make attribution between friend order and advocate referral 	|
 |	channel	|	Friendbuy channel the share was issued from (email, facebook, facebook messenger, twitter) 	|
@@ -120,4 +120,4 @@ Below are the properties that are included in the Referral Reward Evaluated even
 In order to take advantage of this Source destination, you must be sending Friendbuy customer data either through  their ['track','order' JavaScript integration](https://developers.friendbuy.com/#tracking) or by POSTing shares and orders to the [REST API](https://developers.friendbuy.com/#rest-api).
 
 ## Send Data to Friendbuy
-The Friendbuy Source works better when you also connect Friendbuy as a downstream destination within Segment. With the Friendbuy Destination, you can use Segment’s snippets to load Friendbuy’s JavaScript integration used to power loading widgets and tracking of customers, orders, and products. Check out the [Friendbuy Destination documentation](https://segment.com/docs/destinations/friendbuy/) to get started.
+The Friendbuy Source works better when you also connect Friendbuy as a downstream destination within Segment. With the Friendbuy Destination, you can use Segment's snippets to load Friendbuy's JavaScript integration used to power loading widgets and tracking of customers, orders, and products. Check out the [Friendbuy Destination documentation](https://segment.com/docs/destinations/friendbuy/) to get started.

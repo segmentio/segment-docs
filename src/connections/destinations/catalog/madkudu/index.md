@@ -1,6 +1,7 @@
 ---
-title: MadKudu
+title: MadKudu Destination
 ---
+
 This destination is built and supported by MadKudu. If you run into any issues with the destination, please reach out to their support team.
 
 ## Getting Started
@@ -13,11 +14,11 @@ The enriched CRM profiles solves 2 problems for your sales reps:
 + Reduces wasted time on unqualified leads.
 + Prevents reps from missing high-value leads.
 
-### MadKudu’s solution
+### MadKudu's solution
 
 Unlike traditional lead scoring solutions, MadKudu requires no manual effort or guesswork. MadKudu uses rigorous statistical methods based on data science to identify the most qualified leads based on customer demographics.
 
-Additionally, MadKudu uses a customer’s in-app behavior to detect sales opportunities such as closing, churn, or upsell.
+Additionally, MadKudu uses a customer's in-app behavior to detect sales opportunities such as closing, churn, or upsell.
 
 ## Getting Started
 
@@ -35,6 +36,4 @@ These events are enriched with other data, aggregated, and pushed to appropriate
 
 ## Questions?
 
-More details available on [MadKudu’s website](http://www.madkudu.com/segment) or email  [hello@madkudu.com](mailto:hello@madkudu.com).
-
-{% include content/integration-foot.md %}
+More details available on [MadKudu's website](http://www.madkudu.com/segment) or email  [hello@madkudu.com](mailto:hello@madkudu.com).

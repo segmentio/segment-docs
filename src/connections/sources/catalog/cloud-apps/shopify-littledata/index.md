@@ -1,5 +1,5 @@
 ---
-title: Shopify by Littledata
+title: Shopify by Littledata Source
 ---
 
 Littledata is a smart analytics app that automates ecommerce tracking. Littledata's [Shopify-to-Segment connection](https://www.littledata.io/connections/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically tracks key ecommerce events on a Shopify or Shopify Plus store, so you can use Shopify as a source in your Segment workspace.
@@ -7,9 +7,6 @@ Littledata is a smart analytics app that automates ecommerce tracking. Littledat
 Littledata uses a smart tracking script that can be applied to any Shopify site. The app uses server-side tracking to ensure 100% accuracy, gathering data at every customer touch point.
 
 This integration is maintained by Littledata. Please [reach out to their team](mailto:support@littledata.io) with any questions.
-
-_**NOTE:** Segment by Littledata is currently in beta, which means that they are still actively developing the integration. This doc was last updated on May 14, 2019. If you are interested in joining their beta program or have any feedback, please [let  their team know](mailto:support@littledata.io)!_
-
 
 ## Getting Started
 
@@ -20,7 +17,7 @@ _**NOTE:** Segment by Littledata is currently in beta, which means that they are
 5. **Sign up** for a Littledata account using an email address, Google login or Facebook login. *More team members can be added to the subscription after completing the installation process.*
 6. Add the [**Segment write key**](https://segment.com/docs/guides/setup/how-do-i-find-my-write-key/) for the source that is going to send data in the **input field**.
 ![](images/eLUh6GF.png)
-7. Choose either an **Automatic** or a **Manual** install. *Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](http://help.littledata.io/segment-connection/segment-app-manual-installation-guide).*
+7. Choose either an **Automatic** or a **Manual** install. *Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/).*
 ![](images/iYM76VI.png)
 9. Segment's **analytics.js** library, Littledata **tracking script** and **webhooks** will be automatically applied to the store and the installation proccess will then be complete.
 ![](images/kvjNx4M.png)

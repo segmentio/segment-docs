@@ -1,5 +1,6 @@
 ---
-title: Leanplum
+title: Leanplum Destination
+rewrite: true
 ---
 
 [Leanplum](https://www.leanplum.com/) helps mobile teams orchestrate multi-channel campaigns — from messaging to the in-app experience — all from a single mobile marketing platform.
@@ -10,8 +11,8 @@ This document was last updated on January 29, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Leanplum" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Leanplum" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Navigate to your "App Settings" within the Leanplum UI and open up your "Keys & Settings"
 4. Copy the "App ID" into the Segment Settings UI under "Leanplum Application ID"
 5. We recommend creating 2 Leanplum Destinations, 1 for production and 1 for development.
@@ -53,7 +54,7 @@ CocoaPods is the dependency manager we use for Objective-C projects. If you alre
 
     Add the following lines into your AppDelegate:
 
-    ```objc
+    ```objective-c
     String *const SEGMENT_WRITE_KEY = @" [YOUR_SEGMENT_WRITE_KEY] ";
     SEGAnalyticsConfiguration *config =
         [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];

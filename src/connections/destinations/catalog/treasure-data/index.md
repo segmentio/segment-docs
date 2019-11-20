@@ -1,6 +1,7 @@
 ---
-title: Treasure Data
+title: Treasure Destination
 ---
+
 This destination is maintained by Treasure Data.
 
 Once the Segment library is integrated with your server, toggle Treasure Data on in your Segment destinations, and add your API key (which you can find in your Treasure Data console). You will also need to specify the destination database name.
@@ -36,5 +37,3 @@ A table with all of your screen method calls. This table will include all of the
 ### source.event_name
 
 For track calls, each event like `Signed Up` or `Order Completed` also has it's own table, with columns for each of the event's distinct properties.
-
-{% include content/integration-foot.md %}

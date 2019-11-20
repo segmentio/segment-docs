@@ -1,6 +1,7 @@
 ---
 title: Privacy Policy
 hidden: true
+feedback: false
 hide-feedback: true
 ---
 

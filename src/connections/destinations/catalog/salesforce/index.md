@@ -1,5 +1,5 @@
 ---
-title: Salesforce
+title: Salesforce Destination
 ---
 
 ## Getting Started
@@ -24,7 +24,7 @@ Also make sure that IP Security is disabled in this Salesforce user account. Thi
 
 ## Identify
 
-Our destination makes it simple to integrate Salesforce. This destination supports the most important pain point for Salesforce users: getting your prospective customers into Salesforce as Leads from your website or mobile app.
+Our destination makes it simple to integrate Salesforce. This destination supports the most important pain point for Salesforce users: getting your prospective customers into Salesforce as Leads from your website or mobile app. Creating/updating Leads is the default behavior of `identify` events. If you would like to customize this you can do so leveraging [Actions](#custom-actions)
 
 ### Identifying a Lead
 
@@ -90,7 +90,7 @@ By default we do not send identify calls to Salesforce, given their strict API l
 
 ## Group
 
-`.group()` calls will now create or update **Account Objects** inside Salesforce. When we receive a group call, similar to the `.identify()` call, we will first check using the `groupId` to see if the Account Object already exists in your SF account. Depending on the response, we will update that object or create a new one.
+`.group()` calls will now create or update **Account Objects** inside Salesforce. When we receive a group call, similar to the `.identify()` call, we will first check using the `groupId` to see if the Account Object already exists in your SF account. Depending on the response, we will update that object or create a new one. Creating/updating Accounts is the default behavior of `group` events. If you would like to customize this you can do so leveraging [Actions](#custom-actions)
 
 Take this sample `.group()` call that you might send to Segment:
 
@@ -154,6 +154,18 @@ In order to send custom traits, you must do the same steps as you had done for t
 
 Salesforce has documented strict validations on their semantic traits. We will trim all of those traits if they go over the limit. Please refer to their docs for [Account Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_account.htm#topic-title) and [Lead Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_lead.htm) to make sure you are sending the trait values under these limits if you do not want to see them trimmed off.
 
+## Custom Actions
+If you need to manually configure how your Segment events interact with SFDC resources, you can do so using the [Actions](#actions) setting. This setting allows you to trigger standard CRUD operation (Create, Read, Update/Upsert, Delete) on your internal SFDC resources in response to your Segment events. You can configure as many of these actions as you would like. Each action must be associated with either a specific `track` event or **all** `identify` events. Actions can be further configured to map event properties to SFDC fields. Here's an example action configuration that will create a new Case in Salesforce in response to an **Issue Submitted** `track` event:
+
+![action example](images/action-example.png)
+
+### Upsert Actions
+Upsert actions will either create or update a resource in SFDC. In order for these to work, you must provide an External Id Field in in your action configuration that we can use to determine if the resource exists or not. You must also map an event property to this field as a Field Mapping. Here's an example:
+
+![upsert action example](images/upsert-action-example.png)
+
+In this example, we are creating or updating a Contact in SFDC based on whether or not the `userId` property in `identify` events maps to a Contact with a custom `UserId__c` field value in SFDC.
+
 ## Troubleshooting
 
 ### Creating Other Resources
@@ -205,5 +217,3 @@ If you want to set your passwords to never expire, you can do so in **Salesforce
 ### Updating Lead Status
 
 Currently Segment does not support updating the Salesforce Lead Status field due to constraints of the Salesforce API.
-
-{% include content/integration-foot.md %}

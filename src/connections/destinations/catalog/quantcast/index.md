@@ -1,5 +1,5 @@
 ---
-title: Quantcast
+title: Quantcast Destination
 ---
 
 We have both web and mobile destinations with Quantcast. The two integrations are outlined below. Our Quantcast destination code is also open source on Github. Feel free to check it out: [analytics-ios-integration-quantcast](https://github.com/segment-integrations/analytics-ios-integration-quantcast), [analytics.js-integration-quantcast](https://github.com/segment-integrations/analytics.js-integration-quantcast).
@@ -7,7 +7,7 @@ We have both web and mobile destinations with Quantcast. The two integrations ar
 ## Web Destination
 When you toggle on Quantcast for a website in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading quant.js onto your page. This means you should remove Quantcast's snippet from your page.
++ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading quant.js onto your page. This means you should remove Quantcast's snippet from your page.
 + Quantcast will automatically start recording data. If this is the first time sending data to Quantcast it can take them up to **12 days** to process your new data.
 
 Quantcast supports the `identify` and `track` methods on our API.
@@ -71,7 +71,7 @@ analytics.page('Home', {}, {
 
 ### Troubleshooting
 
-{{> client-side-script-unverified }}
+{% include content/client-side-script-unverified.md %}
 
 ## Mobile Destination
 When you toggle on Quantcast for a mobile app in Segment, this is what happens:
@@ -91,5 +91,3 @@ When you call `screen` we'll automatically log an event like `Viewed ABC Screen`
 ### Other Features
 #### Labels
 The destination does not currently support labels. If this is important to you, please [let us know](https://segment.com/help/contact/).
-
-{% include content/integration-foot.md %}

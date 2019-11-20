@@ -1,23 +1,23 @@
 ---
-title: Callexa
+title: Callexa Destination
 beta: true
 ---
 
-This destination is maintained by Wigzo.
+> This destination is maintained by Wigzo.
 
 Enhance your existing Segment configuration with Callexa to collect valuable Customer Feedback. Callexa enables you to conduct professional customer surveys using the well-established Net Promoter Score. Surveys can be customized through our WYSIWYG Editor, enriched with additional tag ratings and follow-up questions and regular statistical reports allow you to track development of your NPS. Turn good ratings into testimonials and embed them on your Website.
 
 ## Getting Started
 
-  - Register your free Starter account at: https://feedback.callexa.com
-  - Create and style your survey template
-  - Click the "Recipients" button and open the tab panel labeled "Segment"
-  - Copy the survey API key to your clipboard
-  - Head over to your Segment dashboard and enable the Callexa Destination using the API key
-  - To enable sync back capabilities copy back your "Write Key" (found unter Source Keys) to Callexa
-  - Back in Callexa enable the Automation and hit "Save"
+- Register your free Starter account at: https://feedback.callexa.com
+- Create and style your survey template
+- Click the "Recipients" button and open the tab panel labeled "Segment"
+- Copy the survey API key to your clipboard
+- Head over to your Segment dashboard and enable the Callexa Destination using the API key
+- To enable sync back capabilities copy back your "Write Key" (found unter Source Keys) to Callexa
+- Back in Callexa enable the Automation and hit "Save"
 
- That's it, new customer records added with the `identify` method will now automatically be surveyed via email.
+That's it, new customer records added with the `identify` method will now automatically be surveyed via email.
 
 ## Identify
 
@@ -54,5 +54,3 @@ __If you have any questions feel free to contact Callexa at:__ [info@callexa.com
 
 ---
 _Net Promoter, Net Promoter Score, and NPS are trademarks of Satmetrix Systems, Inc., Bain & Company, Inc., and Fred Reichheld.
-
-{% include content/integration-foot.md %}

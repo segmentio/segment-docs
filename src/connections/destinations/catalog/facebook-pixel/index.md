@@ -1,8 +1,9 @@
 ---
-title: Facebook Pixel
+title: Facebook Pixel Destination
+rewrite: true
 ---
 
-[Facebook Pixel](https://developers.facebook.com/docs/facebook-pixel) lets you measure and optimize the performance of your Facebook Ads. It makes conversion tracking, optimization and remarketing easier than ever. The {{integration.name}} Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-facebook-pixel).
+[Facebook Pixel](https://developers.facebook.com/docs/facebook-pixel) lets you measure and optimize the performance of your Facebook Ads. It makes conversion tracking, optimization and remarketing easier than ever. The Facebook Pixel Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-facebook-pixel).
 
 _**NOTE:** Facebook has deprecated their modular "Ads For Websites" suite, which previously comprised Facebook Custom Audiences and Facebook Conversion Tracking. We've consolidated those two destinations into this new and improved "Facebook Pixel" destination._
 
@@ -128,7 +129,7 @@ Facebook Pixel uses a custom timestamp format: an ISO 8601 timestamp without tim
 
 ### Advanced Matching
 
-The Segment Facebook Pixel integration supports [Advanced Matching](https://developers.facebook.com/docs/facebook-pixel/pixel-with-ads/conversion-tracking#advanced_match) which enables you to send your customer data through the pixel to match more website actions with Facebook users. With this additional data, you can report and optimize your ads for more conversions and build larger re-marketing audiences. When the page loads, before we fire off the pixels, we'll check for traits that the user has been previously identified with and send that along with each call.
+The Segment Facebook Pixel integration supports [Advanced Matching](https://developers.facebook.com/docs/facebook-pixel/advanced/advanced-matching) which enables you to send your customer data through the pixel to match more website actions with Facebook users. With this additional data, you can report and optimize your ads for more conversions and build larger re-marketing audiences. When the page loads, before we fire off the pixels, we'll check for traits that the user has been previously identified with and send that along with each call.
 
 Facebook accepts the following properties:
 
@@ -143,6 +144,8 @@ Facebook accepts the following properties:
 - Zip code
 
 If you follow Segment's [spec](/docs/spec/identify/#traits), these would automatically be sent correctly.
+
+Facebook also accepts an External ID. This can be any unique ID from the advertiser, such as loyalty membership IDs, user IDs, and external cookie IDs. In order to send an `external_id` to Facebook you can indicate which user trait you would like Segment to map to `external_id` using the **Client-Side Only: Advanced Match Trait Key for External ID** setting.
 
 ## Settings
 
@@ -183,13 +186,13 @@ We recommend using our `trackLink` or `trackForm` helpers to delay the page redi
 
 This may be due to conversion events being sent from your development, staging, or testing environments. We recommend setting up separate source for each environment. That way you can either point events to test conversion pixels in Facebook Conversion Tracking or turn off Facebook Conversion Tracking completely in non-production environments.
 
-Double check that your mapped conversion events aren’t happening anywhere else on your site. If the user reloads the conversion page or re-triggers the tracked event they may be double counted.
+Double check that your mapped conversion events aren't happening anywhere else on your site. If the user reloads the conversion page or re-triggers the tracked event they may be double counted.
 
 Facebook's conversion reports count view-through conversions as well as click-through conversions by default. You can change that setting inside Facebook Conversion Tracking in the report attribution settings.
 
 ### Facebook Conversions Not Matching Google Analytics
 
-Facebook counts conversions per person, as opposed to Google Analytics which counts per browser cookie session (unless you're using [Google Analytics User-ID](/docs/integrations/google-analytics/#user-id)).
+Facebook counts conversions per person, as opposed to Google Analytics which counts per browser cookie session (unless you're using [Google Analytics User-ID](/docs/destinations/google-analytics/#user-id)).
 
 If someone saw or clicked on your ad on a mobile phone then later came back directly to purchase on a desktop machine Google Analytics wouldn't know that this was the same person, but Facebook would. In that scenario Google Analytics counts 2 unique visits with a conversion last attributed to a direct visit on desktop. Facebook counts one conversion with the conversion properly attributed to the last ad click/view on mobile.
 

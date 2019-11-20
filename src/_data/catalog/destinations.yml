@@ -11259,7 +11259,7 @@ items:
     string_validators:
       regexp: ''
     description: >-
-      To find your API key, log into Pendo and navigate to “your user name” >
+      To find your API key, log into Pendo and navigate to "your user name" >
       Site settings > Basic Information > API key. If your account has not fully
       been set up yet, you can see the API key inside of the code snippet on the
       Pendo setup page.
@@ -14087,11 +14087,11 @@ items:
     string_validators:
       regexp: '^.{8,}$'
     description: >-
-      To find your key, log into Split and navigate to “Admin Settings” >
-      “Integrations” > select your desired workspace > “Segment”. There you can
+      To find your key, log into Split and navigate to "Admin Settings" >
+      "Integrations" > select your desired workspace > "Segment". There you can
       find the key for each configured integration. If you don’t have an
       integration configured, be sure to configure your integration in the
-      section “Configure as a destination in Segment” and click save to generate
+      section "Configure as a destination in Segment" and click save to generate
       a key. For more information, learn more in Split’s [integration
       documentation](https://segment.com/docs/destinations/split/).
     settings: []
@@ -15264,7 +15264,7 @@ items:
     string_validators:
       regexp: '^[a-zA-Z0-9]*$'
     description: >-
-      Drop in the “Integration Key” into your Segment Settings UI which you can
+      Drop in the "Integration Key" into your Segment Settings UI which you can
       find on https://businessapp.b2b.trustpilot.com/#/ecommerce/segment
     settings: []
   connection_modes:

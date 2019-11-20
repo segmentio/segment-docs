@@ -1,5 +1,6 @@
 ---
-title: Blendo
+title: Blendo Destination
+rewrite: true
 ---
 
 [Blendo](https://www.blendo.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an ELT platform that syncs all your sales, marketing, financial or any other data, from your SaaS tools to your data warehouse.

@@ -1,10 +1,10 @@
 ---
-title: Convertro
+title: Convertro Destination
 ---
 
 ## Getting Started
 
-Our Convertro destination let's you track customer data from either your website data or your mobile data. When you send data via `analytics.js` we will use Convertro's JS library to send `.identify()` and `.track()` data.
+Our Convertro destination lets you track customer data from either your website data or your mobile data. When you send data via `analytics.js` we will use Convertro's JS library to send `.identify()` and `.track()` data.
 
 If you are sending data using our mobile libraries, we will use their server to server API to send `.identify()` and `.track()` data.
 
@@ -60,6 +60,3 @@ When you call `.track()`, we will send that event to Convertro by setting the `e
 ## Application Installed
 
 We will send this automatically collected [`Application Installed` event](/docs/spec/mobile/) to Convertro's `Installs` endpoint.
-
-
-{% include content/integration-foot.md %}

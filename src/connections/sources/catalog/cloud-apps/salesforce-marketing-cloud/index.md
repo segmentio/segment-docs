@@ -1,13 +1,13 @@
 ---
-title: Salesforce Marketing Cloud
+title: Salesforce Marketing Cloud Source
 beta: true
 ---
 
-[Salesforce Marketing Cloud](https://www.salesforce.com/ca/products/marketing-cloud/overview/), formerly known as 
-ExactTarget, is a marketing automation suite with the ability to build complete customer journeys as well as creating, 
+[Salesforce Marketing Cloud](https://www.salesforce.com/ca/products/marketing-cloud/overview/), formerly known as
+ExactTarget, is a marketing automation suite with the ability to build complete customer journeys as well as creating,
 targeting, tracking, and managing email and digital media campaigns.
 
-With the Segment Salesforce Marketing Cloud Source, you can extract data from Marketing Cloud and send them 
+With the Segment Salesforce Marketing Cloud Source, you can extract data from Marketing Cloud and send them
 to a data warehouse such as Redshift or Big Query with ease, avoiding having to build your own expensive custom solutions.
 
 If you are trying to setup Salesforce Marketing Cloud as a destination to receive data from Segment, check out
@@ -40,7 +40,7 @@ client secret and subdomain setup for the destination. To enable the permissions
 5. Click "Save".
 
 **If you do not have a Salesforce Marketing Cloud Segment Destination**, follow the steps below to acquire the client ID
-and client secret: 
+and client secret:
 
 1. Log in to your Salesforce Marketing Cloud account.
 2. Click your name in the top-right corner of the screen and select "Administration".
@@ -59,8 +59,8 @@ You should now see a Summary page with a Components section. This section lists 
 Segment will use your unique Salesforce subdomain to make API calls to SFMC. Your subdomain is represented by a 28-character string starting with the letters "mc" in any of your base URIs. For example, in the base URI `mc563885gzs27c5t9-63k636ttgm.rest.marketingcloudapis.com`, the subdomain is `mc563885gzs27c5t9-63k636ttgm`.
 
 ### Enable the Salesforce Marketing Cloud Source
-        
-1. From your Segment workspace’s `/Sources` page, click `Add Source`.
+
+1. From your Segment workspace's `/Sources` page, click `Add Source`.
 2. Under the Email Marketing category, choose Salesforce Marketing Cloud and click `Connect`.
 3. Give your source a name to identify it within your workspace.
 4. Select the data warehouses to connect the source to.
@@ -72,16 +72,16 @@ Segment will use your unique Salesforce subdomain to make API calls to SFMC. You
 
 ### Sync
 
-The Salesforce Marketing Cloud source is built with a sync component, which means we’ll make requests to their API on 
-your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we’ll grab all the 
-Salesforce objects (and their corresponding properties) according to the Collections Table below. The objects will be 
-written into a separate schema, corresponding to the source instance’s schema name you designated upon creation. 
+The Salesforce Marketing Cloud source is built with a sync component, which means we'll make requests to their API on
+your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the
+Salesforce objects (and their corresponding properties) according to the Collections Table below. The objects will be
+written into a separate schema, corresponding to the source instance's schema name you designated upon creation.
 For example, if you went with `sfmc_prod`, the `campaigns` collection will be accessible at `sfmc_prod.campaigns` in SQL.
 
 Each sync will only sync the data that has been modified since the previous sync.
 
-The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, 
-and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your 
+The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub,
+and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your
 Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
 ## Collections
@@ -98,7 +98,7 @@ Collections are the groupings of resources we pull from your source. In your war
 ## Collection Properties
 
 Segment performs a one-to-one mapping of all publicly available fields from Salesforce Marketing Cloud. Below are tables
-outlining the properties included in the collections listed above.To see the full description of each property, please 
+outlining the properties included in the collections listed above.To see the full description of each property, please
 refer to the Salesforce Marketing Cloud documentation linked in each [collection](#collections) above.
 
 ### Campaigns
@@ -113,7 +113,7 @@ refer to the Salesforce Marketing Cloud documentation linked in each [collection
 | id            | The campaign's unique ID in Salesforce Marketing Cloud |
 | modified_date | Timestamp when the campaign was last modified          |
 | name          | The campaign name                                      |
- 
+
 ### Campaign Assets
 
 | Property Name | Description                                                                                                                                                                                                                       |

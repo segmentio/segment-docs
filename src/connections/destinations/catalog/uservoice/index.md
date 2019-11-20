@@ -1,5 +1,6 @@
 ---
-title: UserVoice
+rewrite: true
+title: UserVoice Destination
 ---
 
 [Uservoice](https://www.uservoice.com/) is a customer support and feedback tool that lets your users submit feedback right from your site, and helps you manage all the incoming requests.
@@ -15,7 +16,7 @@ This document was last updated on November 8th, 2018. If you notice any gaps, ou
 3. Add your Javascript API Key (Your API Key appears in the javascript snippet URL as widget.uservoice.com/APIKEY.js.) and enable the destination in Segment.
 4. We'll automatically start recording data.
 
-When UserVoice is enabled in Segment, our CDN will update within 5-10 minutes, and Uservoice's javascript is asynchronously loaded onto your page. Please remember to remove UserVoice's snippet from your page.
+When UserVoice is enabled in Segment, our CDN will update within 45 minutes, and Uservoice's javascript is asynchronously loaded onto your page. Please remember to remove UserVoice's snippet from your page.
 
 ## Identify
 

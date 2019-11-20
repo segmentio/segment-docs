@@ -1,6 +1,7 @@
 ---
-title: Bronto
+title: Bronto Destination
 ---
+
 Our Bronto destination code is open-source on GitHub if you want to [check it out](https://github.com/segment-integrations/analytics.js-integration-bronto).
 
 ## Getting Started
@@ -21,4 +22,3 @@ analytics.track('Order Completed', {
   orderId: '55c497bf'
 });
 ```
-{% include content/integration-foot.md %}

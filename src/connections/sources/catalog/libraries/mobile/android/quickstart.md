@@ -7,7 +7,7 @@ sourceCategory: 'Mobile'
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 
-This tutorial will help you start sending analytics data from your Android app to Segment and any of our destinations, using our Android library. As soon as you’re setup you’ll be able to turn on any new destinations with the flip of a switch!
+This tutorial will help you start sending analytics data from your Android app to Segment and any of our destinations, using our Android library. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
 
 If you want to dive deeper at any point, check out the [Android Source Reference](/docs/sources/mobile/android).
 
@@ -61,7 +61,7 @@ Ensure that the necessary permissions are declared in your application's `Androi
 
 ## Step 4. Identify Users
 
-The `identify` method is one of our core API methods. It’s how you tie one of your users and their actions to a recognizable userId. It also lets you record traits about the user, like their email, name, account type, etc. You can read more about it in the [identify reference](/docs/sources/mobile/android#identify).
+The `identify` method is one of our core API methods. It's how you tie one of your users and their actions to a recognizable userId. It also lets you record traits about the user, like their email, name, account type, etc. You can read more about it in the [identify reference](/docs/sources/mobile/android#identify).
 
 When and where you call `identify` depends on how your users are authenticated, but doing it in the `onCreate` method of your [Application](http://developer.android.com/reference/android/app/Application.html) class would be most common, as long as you know who your user is. If your user is still anonymous, you should skip this part and we'll attribute the subsequent events to an `anonymousId` instead.
 

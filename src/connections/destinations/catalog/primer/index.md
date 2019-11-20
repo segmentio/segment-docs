@@ -1,6 +1,6 @@
 ---
-title: Primer
 beta: true
+title: Primer Destination
 ---
 
 ## Getting Started
@@ -30,5 +30,3 @@ Segment's special traits are attached on to the Primer User's user properties.
 ## Track
 
 When you `track` an event, we will send that event to Primer as a custom event.
-
-{% include content/integration-foot.md %}

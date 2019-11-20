@@ -1,8 +1,9 @@
 ---
-title: Amazon Personalize
+rewrite: true
+title: Amazon Personalize Destination
 ---
 
-Segment makes it easy to send your data to Amazon Personalize (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to Amazon Personalize in the format they understand. [Learn more about how to use Amazon Personalize with Segment.](https://segment.com/integrations/amazon-personalize)
+Segment makes it easy to send your data to Amazon Personalize (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to Amazon Personalize in the format they understand. [Learn more about how to use Amazon Personalize with Segment.](/docs/destinations/amazon-personalize)
 
 [Amazon Personalize](https://aws.amazon.com/personalize/) is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications. AWS Personalize enables…
 
@@ -23,9 +24,9 @@ There are a few pre-requisites:
 2. Ability to deploy Lambda functions in Amazon Web Services
 3. Access to AWS Personalize
 
-Don’t have an S3, Redshift warehouse, or Snowflake warehouse set up? You can read more about setting up S3 [here](https://segment.com/docs/destinations/amazon-s3/), Redshift [here](https://segment.com/docs/destinations/redshift/), and Snowflake [here](https://segment.com/docs/destinations/snowflake/).
+don't have an S3, Redshift warehouse, or Snowflake warehouse set up? You can read more about setting up S3 [here](https://segment.com/docs/destinations/amazon-s3/), Redshift [here](https://segment.com/docs/destinations/redshift/), and Snowflake [here](https://segment.com/docs/destinations/snowflake/).
 
-***If you’re a Segment business tier customer, reach out to your Success contact to initiate a replay to S3 or your Warehouse.***
+***If you're a Segment business tier customer, reach out to your Success contact to initiate a replay to S3 or your Warehouse.***
 
 
 There are three main parts to using Amazon Personalize with Segment:
@@ -192,7 +193,7 @@ Browse to the S3 service page in the AWS console and navigate to the bucket path
 
 **Historical Data Preparation**
 
-Segment’s S3 destination will contain a copy of all of the source data you have configured to go to S3.  In your S3 bucket you will have a folder called `/segment-logs`.  Under this folder will be another folder for each source of data you have connected to your Segment S3 destination.
+Segment's S3 destination will contain a copy of all of the source data you have configured to go to S3.  In your S3 bucket you will have a folder called `/segment-logs`.  Under this folder will be another folder for each source of data you have connected to your Segment S3 destination.
 
 Note that this step is not required unless you plan to do batch data extraction from S3.
 
@@ -661,7 +662,7 @@ Sign in to the [Identity and Access Management (IAM) console](https://console.aw
 
 Select the **Create Policy from JSON** option and use the following template policy in the `Policy Document` field. Be sure to change the {region}, {account-id} and {function-names} with the applicable values. An example of a Lambda ARN `arn:aws:lambda:us-west-2:355207333203:function:``my-example-function`.
 
-_Note: you can put in a placeholder ARN for now, as you will need to come back to this step to update with the ARN of your Lambda once that’s been created._
+_Note: you can put in a placeholder ARN for now, as you will need to come back to this step to update with the ARN of your Lambda once that's been created._
 
 ```
 {
@@ -690,7 +691,7 @@ Sign in to the [Identity and Access Management (IAM) console](https://console.aw
 
 While setting up the new role, add the policy you created in the previous step.
 
-Finish with any other setup items you may want (like `tags`). Once that’s complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
+Finish with any other setup items you may want (like `tags`). Once that's complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
 
 Select the "Trust Relationships" tab, then click the "Edit trust relationship" button.
 
@@ -719,7 +720,7 @@ Copy and paste the following into your trust relationship. You should replace `<
 }
 ```
 
-If you have multiple Source’s using this Role, replace the `sts:ExternalId` setting above with
+If you have multiple Source's using this Role, replace the `sts:ExternalId` setting above with
 
 ```
     "sts:ExternalId": ["YOUR_SEGMENT_SOURCE_ID", "ANOTHER_SOURCE_ID", "A_THIRD_SOURCE_ID"]
@@ -763,7 +764,7 @@ You should now be able to see the code (and associate folders) in the code edito
 
 Segment will call your lambda once per event.  The provided code will map Segment event fields from the Segment event it gets, and send them to your Personalize Tracker. It will then call Personalize to get a recommendation for the userId in the event, and push that recommendation back as a user trait into Segment, using the `identify` call.
 
-Make sure you are clicking ‘Save’ frequently during the next steps!
+Make sure you are clicking **Save** frequently during the next steps!
 
 **Wire up Personalize API using Lambda Layer (Preview only)**
 
@@ -984,9 +985,9 @@ Go back to your Segment workspace tab or window, and click on the source which w
 ![](images/SegmentWriteKey.png)
 
 
-Back again to your Lambda tab or window, and paste the key under a property called ‘connections_source_api_key’.
+Back again to your Lambda tab or window, and paste the key under a property called `connections_source_api_key`.
 
-*Make sure to click ‘SAVE’* here or you will need to do this again.
+_Make sure to click **Save**_ here or you will need to do this again.
 
 ![](images/LambdaRecCampaignArn.png)
 
@@ -1000,7 +1001,7 @@ Once your Lambda function is enabled, you can send it events from Segment using 
 
 Search for "Amazon Personalize" in our catalog. Connect the destination to the source you created previously. Now you will be presented with the Amazon Personalize Settings.
 
-We allow you to send each call type to a different Lambda. If you leave the Lambda field blank for a given call type, we won’t attempt to send any of those calls.
+We allow you to send each call type to a different Lambda. If you leave the Lambda field blank for a given call type, we won't attempt to send any of those calls.
 
 
 **Track**

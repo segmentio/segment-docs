@@ -1,13 +1,14 @@
 ---
-title: Totango
+title: Totango Destination
 ---
+
 Our Totango destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-totango), [Server](https://github.com/segmentio/integration-totango).
 
 ## Getting Started
 
 To get started with Totango and Segment, toggle Totango on in your Segment destinations and add your **Service ID**, which you can find in your Totango settings.
 
-Once you've done that, those new settings will propagate to our CDN (that usually takes around 5 minutes) and Totango will be live on your site! Since Totango is all about identified users, the next thing you'll want to do is add a few API calls with exactly the information Totango needs. We'll show you how..
+Once you've done that, those new settings will propagate to our CDN (that usually takes around 45 minutes) and Totango will be live on your site! Since Totango is all about identified users, the next thing you'll want to do is add a few API calls with exactly the information Totango needs. We'll show you how..
 
 **Note:** As part of setup, you should know the user and call `identify` before the `group` call. Remember that every `page` and `track` call that you want to show up in Totango must be tied to a `groupId` (Totango calls this Account ID). , however.
 
@@ -47,7 +48,7 @@ It looks like this:
 analytics.page('Blog', '15,000 Ways to Increase Conversion');
 ```
 
-You can label as many categories / modules as you need, but as a best practice you’ll probably want to have around 5 for a small – medium sized app to 20 for a very large web-application. Not sure which modules to use? Check out Totango's [Best Practices guide](http://help.totango.com/best-practices/preparing-an-integration-worksheet/).
+You can label as many categories / modules as you need, but as a best practice you'll probably want to have around 5 for a small – medium sized app to 20 for a very large web-application. Not sure which modules to use? Check out Totango's [Best Practices guide](http://help.totango.com/best-practices/preparing-an-integration-worksheet/).
 
 
 ## Identify
@@ -128,5 +129,3 @@ analytics.identify({
   }
 });
 ```
-
-{% include content/integration-foot.md %}

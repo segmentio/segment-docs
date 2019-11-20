@@ -1,16 +1,17 @@
 ---
-title: Adobe Analytics
-redirect_from: '/integrations/adobe-analytics'
+title: Adobe Analytics Destination
+rewrite: true
 ---
+<!-- LR note: Setting rewrite true to remove bad boilerplate, manually including the footer partial-->
 
-Once you enable Adobe Analytics (formerly known as Omniture/Sitecatalyst) in Segment, you can start sending data from any of our [libraries](/docs/sources/) to an Adobe report suite. When you send events from our mobile SDKs or server-side libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics `Data Insertion API`.
+Once you enable Adobe Analytics (formerly known as Omniture/Sitecatalyst) in Segment, you can start sending data from any of our [libraries](docs/connections/sources/) to an Adobe report suite. When you send events from our mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics `Data Insertion API`.
 
-The following documentation provides detailed explanation of how both destination components work (Device-Based and Cloud-Based). For FAQs about client vs server-side tracking, unique users, identifiers, and more, read the Best Practices at the bottom of this page!
+The following documentation provides detailed explanation of how both destination the Device-mode and Cloud-mode components work. For FAQs about Device- vs Cloud-mode tracking, unique users, identifiers, and more, read the Best Practices at the bottom of this page!
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Planning for Adobe Analytics](#planning-for-adobe-analytics)
-- [Device-Based - Analytics.js](#device-based-analytics-js)
+- [Device-mode - Analytics.js](#device-mode-analytics-js)
 - [Cloud-mode - aka Server-side](#cloud-mode-aka-server-side)
 - [Implementing Segment for Adobe Analytics](#implementing-segment-for-adobe-analytics)
 - [Adobe Analytics List Variables - lVars](#adobe-analytics-list-variables-lvars)
@@ -32,17 +33,17 @@ Both Segment and Adobe Analytics have recommended standard formats for tracking 
 We strongly recommend that you create a tracking plan for both your Segment and Adobe Analytics events before you send any events or properties to Adobe. This will help you map your Segment events to Adobe `events`, and Segment properties to Adobe variables. If you decide to set up Adobe Analytics for mobile, you'll have to do this mapping in both the Segment settings, and the Adobe Mobile Services dashboard - so it's good to keep your options open!
 
 
-### Choosing between Device-based and Server-Side
-If you're using client-side javascript, by default Segment "bundles" (mobile) or "wraps" (when using Analytics.js) the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics `Appmeasurement.js` library. Adobe's client-side libraries can provide services to other Adobe suites and products, however they can also increase the size of your page.
+### Choosing between Device-mode and Cloud-mode
+If you're using device-mode javascript, by default Segment "bundles" (mobile) or "wraps" (when using Analytics.js) the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics `Appmeasurement.js` library. Adobe's client-side libraries can provide services to other Adobe suites and products, however they can also increase the size of your page.
 
-If you prefer, you can enable the Cloud-based Connection Mode, and send data through the Segment servers where it is then mapped and sent on to Adobe Analytics. You enable Cloud-Based Connection Mode for Javascript or Legacy sources from the Adobe Analytics source settings.
+If you prefer, you can enable [Cloud-mode](/docs/destinations/#connection-modes), and send data through the Segment servers where it is then mapped and sent on to Adobe Analytics. You enable Cloud-mode for Javascript or Legacy sources from the Adobe Analytics source settings in the Segment app.
 
-Our server-side Adobe Analytics destination also provides support for **Adobe Mobile Services** "states", "actions", and lifecycle events, metrics, and dimensions.
+Our Cloud-mode Adobe Analytics destination also provides support for **Adobe Mobile Services** "states", "actions", and lifecycle events, metrics, and dimensions.
 
 ### Connecting Segment to Adobe Analytics
 To set up Adobe Analytics as a destination for your Segment data, Segment needs some information on how to connect to Adobe.
 
-- If you're using Device-based data collection with Analytics.js, or using a server-side library, you need your Adobe Report Suite ID, and your Tracking Server URL. You'll add this information in the Destination settings in the Segment app UI so that Segment can send information to Adobe.
+- If you're using Device-mode data collection with Analytics.js, or using a server-side library, you need your Adobe Report Suite ID, and your Tracking Server URL. You'll add this information in the Destination settings in the Segment app UI so that Segment can send information to Adobe.
 
 - If you're collecting data from mobile devices, you can download the `ADBMobileConfig.json` file instead of specifying these settings in the UI which contains that information. Follow the instructions in Adobe's documentation, [here for iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/dev_qs.html), and [here for Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/dev_qs.html).
 
@@ -56,9 +57,9 @@ It can also take up to an hour for all of the mobile users' Segment settings cac
 
 ---
 
-## Device-Based - Analytics.js
+## Device-mode - Analytics.js
 
-Device-based web data is sent using Analytics.js, with Analytics.js either serving as a wrapper/bundle around the Adobe Analytics code, or sending directly to Segment servers where the data is then sent on to the Adobe destination.
+Device-mode web data is sent using Analytics.js, with Analytics.js either serving as a wrapper/bundle around the Adobe Analytics code, or sending directly to Segment servers where the data is then sent on to the Adobe destination.
 
 ### Initialization
 
@@ -76,7 +77,7 @@ To use Adobe's Marketing Cloud Visitor ID Service, enter your **Marketing Cloud 
 
 ## Cloud-mode - aka Server-side
 
-"Cloud mode" data is data sent _without_ bundling the Segment-Adobe-Analytics SDK. It can be sent using mobile libraries, Analytics.js, and other server based libraries.
+"Cloud-mode" data is data sent _without_ bundling the Segment-Adobe-Analytics SDK. It can be sent using mobile libraries, Analytics.js, and other server-based sources.
 
 *For more information on mobile native integrations using Segment's iOS and Android Adobe Analytics SDKs, see the [next section in this doc](#setting-up-adobe-analytics-for-mobile).*
 
@@ -578,7 +579,7 @@ Segment concatenates `list_var1` into `hello|world` and `prop1` into `howdy:yall
 ### No Fallbacks for VisitorId
 As Adobe Analytics customers begin to migrate from using visitorId to using the marketingCloudVisitorID (MCVID), we introduced a new setting called **No Fallbacks for Visitor ID**, to assist in this transition. If you disable  **Drop Visitor ID**, Segment sends a `<visitorID>` in these three scenarios:
 
-1. A customer isn’t sending timestamps (meaning the Timestamp Option setting is set to disabled)
+1. A customer isn't sending timestamps (meaning the Timestamp Option setting is set to disabled)
 2. A customer is using hybrid timestamp mode and is sending `visitorId`
 3. A customer is using hybrid timestamp mode and is sending `visitorId` and timestamp
 
@@ -593,7 +594,7 @@ Segment supports Adobe Analytics Mobile Services. With Segment, you don't need t
 
 To learn more about Segment's mobile libraries, check out the [iOS](/docs/libraries/ios) and [Android](/docs/libraries/android) technical docs.
 
-Our Adobe-Analytics mobile SDKs are currently in beta. We invite you to try them and send us feedback through our [contact form](segment.com/help/contact/).
+Our Adobe-Analytics mobile SDKs are currently in beta. We invite you to try them and send us feedback through our [contact form](https://segment.com/help/contact/).
 
 ### Setting Up the Mobile SDKs
 
@@ -617,7 +618,7 @@ compile 'com.segment.analytics.android.integrations:adobe-analytics:1.0.0'
 
 
 iOS:
-```objc
+```objective-c
 pod 'Segment-Adobe-Analytics', '1.1.0-beta'
 ```
 
@@ -665,7 +666,7 @@ Config.setUserIdentifier("123");
 
 And on iOS:
 
-```objc
+```objective-c
 [ADBMobile setUserIdentifier:@"123"];
 ```
 
@@ -679,7 +680,7 @@ Analytics.trackState("Home Screen", <properties mapped in contextData>);
 
 And on iOS:
 
-```objc
+```objective-c
 [self.ADBMobile trackState:@"Home Screen" data:<properties mapped in contextData>];
 ```
 
@@ -693,7 +694,7 @@ Analytics.trackEvent("Clicked A Button", <properties mapped in contextData>);
 
 And on iOS:
 
-```objc
+```objective-c
 [ADBMobile trackAction:@"Clicked A Button" data:<properties mapped in contextData>];
 ```
 
@@ -705,7 +706,7 @@ Calling `reset` sets your user's `visitorId` to  `null`. `null` is Adobe's defau
 Config.setUserIdentifier(null);
 ```
 
-```objc
+```objective-c
 [ADBMobile trackingClearCurrentBeacon];
 ```
 
@@ -719,7 +720,7 @@ Analytics.sendQueuedHits();
 
 And on iOS:
 
-```objc
+```objective-c
 [ADBMobile trackingSendQueuedHits];
 ```
 
@@ -791,7 +792,7 @@ Analytics.with(this).track("Video Playback Started",
 
 The following example shows how to set an integration-specific option on iOS:
 
-```objc
+```objective-c
 options:@{
   @"integrations": @{
    @"Adobe Analytics" : @{
@@ -1137,9 +1138,9 @@ On iOS, pass in an integration specific option `debug: @YES` on `Video Playback 
 
 There are a few common questions that we've heard over time that are worth mentioning.
 
-### Reducing API calls by sending events on page
+### Reducing API calls by sending events on page or screen
 
-You might want to associate Adobe `<events>` with Segment page events to reduce the number of API calls Segment sends to Adobe Analytics.
+You might want to associate Adobe `<events>` with Segment page or screen events to reduce the number of API calls Segment sends to Adobe Analytics.
 
 For example, instead of sending the Product Viewed event as a `track` to AA, you can trigger a Segment `page` call with an `integrations.Adobe Analytics.events` passed in, with an array of the Adobe events to send:
 
@@ -1155,7 +1156,7 @@ When the integration option `events` is passed in, we map the events and send th
 
 _Considerations_
 
-- We do not automatically map to Adobe Pre-Defined events on `page` calls
+- We do not automatically map to Adobe Pre-Defined events on `page` or `screen` calls
 - You must change your implementation to pass integration: AA: false on the event you do not want duplicated.
 
 ```javascript
@@ -1163,6 +1164,61 @@ _Considerations_
     "Adobe Analytics": false
     }
 ```
+
+### Setting custom linkTypes, linkNames and linkUrls
+If you are setting up the Adobe Analytics destination in cloud-mode, you can pass in custom linkTypes, linkNames and linkURLs.
+
+**Note**: If you pass in the `visitorId` in a destination specific `integration` object within your Segment `page` or `track` events, then the `visitorId` passed will persist on page or track calls that occur after an identify call. This will effectively supersede Segment stting the `visitorId` variable to your `userId` after an `identify` call.
+
+We know this is daunting territory, so please don't hesitate to reach out directly for guidance!
+
+**Setting the event linkType**
+
+By default, Segment's integration with Adobe Analytics automatically sets an events linkType as a custom link or 'o' for 'other' within the s.tl() call. If you want to set the linkType of an event as download or exit links, you can pass in the following values within the `integrations.adobe analytics` object of your Segment event payload.
+
+A value of `d` or `D` will map to download links and a value of `e` or `E` will map to exit links
+
+Below is a sample snippet of how you would set a Segment event as a download link type:
+
+```javascript
+"integrations": {
+    "Adobe Analytics": {
+      "linkType": "d"
+    }
+}
+```
+
+If you pass in Segment events with a download (d or D) linkType, it will populate the Download link report in your Adobe Analytics reporting suite. If you pass in Segment events with a exit (e or E) linkType, it will populate the Exit link report in your Adobe Analytics reporting suite. Finally, if you pass in Segment event with either no linkType or a value of "o" or "O" in the integration.Adobe Analytics object, it will populate the custom link report in your Adobe Analytics reporting suite.
+
+**Setting the event linkName**
+
+If you want to pass in a custom LinkName to Adobe Analytics, you can now define it by passing it as a string within the `integrations.Adobe Anlaytics`object of your Segment event. An example would be like the one below:
+
+```javascript
+"integrations": {
+        "Adobe Analytics": {
+          "linkName": "some link name"
+        }
+    }
+```
+
+If a custom linkName is not specified in the integration specific object in the payload, Segment will default to mapping `linkName` to the value from `(context.page.url)`. If there is no URL present Segment will set `linkName`  to `No linkName provided`.
+
+NOTE: The `useLegacyLinkName` setting in the UI will be respected if you have the setting enabled and you send a custom `linkName` in the integration specific object.
+
+**Setting the event LinkURL**
+
+If you want to pass in a custom LinkUrl to Adobe Analytics, you can do this by passing it as a string within the `integrations.Adobe Anlaytics`object of your Segment event. An example would be like the one below:
+
+```javascript
+"integrations": {
+        "Adobe Analytics": {
+          "linkUrl": "some link url"
+        }
+    }
+```
+
+If a custom linkUrl is not specified in the integration specific object in the payload, Segment will default to mapping `linkUrl` to the `(context.page.url)`. If there is no URL present Segment will set `linkUrl`  to `No linkUrl provided`.
 
 
 ### Best practices for userId and sessioning

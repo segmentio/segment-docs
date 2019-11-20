@@ -1,5 +1,5 @@
 ---
-title: Marketo
+title: Marketo V2 Destination
 ---
 
 ## Getting Started
@@ -111,8 +111,8 @@ When you call [`Track`](/docs/spec/track/), Segment maps the event to a pre-defi
 
 2. You must either:
 
-- Enable [Cloud Mode](https://segment.com/docs/integrations/marketo-v2/#supported-sources-and-connection-modes)
-- Enable [Device Mode](https://segment.com/docs/integrations/marketo-v2/#supported-sources-and-connection-modes) and enable the [Send Track Events Server Side](/docs/destinations/marketo-v2/#send-track-events-server-side) setting
+- Enable [Cloud-mode](/docs/destinations/marketo-v2/#supported-sources-and-connection-modes)
+- Enable [Device-mode](/docs/destinations/marketo-v2/#supported-sources-and-connection-modes) and enable the [Send Track Events Server Side](/docs/destinations/marketo-v2/#send-track-events-server-side) setting
 - Send track events from one of our [server side libraries](https://segment.com/docs/sources/#server)
 
 Here is a sample Ruby  `.track()` event:
@@ -181,7 +181,7 @@ If you'd like to track anonymous activity but don't want to have to parse throug
 
 ## Marketo API Limits
 
-We do our best to limit the amount of API calls that we are making to Marketo but if you are hitting your 50k/day limit, we’d recommend only sending events to Marketo that you need. To prevent an event from being sent to Marketo, you can select destinations by doing the following:
+We do our best to limit the amount of API calls that we are making to Marketo but if you are hitting your 50k/day limit, we'd recommend only sending events to Marketo that you need. To prevent an event from being sent to Marketo, you can select destinations by doing the following:
 
 ```js
     analytics.identify({
@@ -196,19 +196,19 @@ We do our best to limit the amount of API calls that we are making to Marketo bu
     })
 ```
 
-### Hybrid Device/Cloud Mode
-Another option is to use Marketo in [Device Mode](https://segment.com/docs/integrations/marketo-v2/#supported-sources-and-connection-modes) (assuming you are tracking events from a Website). Marketo does not limit API calls that originate from their Web SDK but it also only supports capturing Identify and Page events. If you would also like to capture Track events, you can choose to have these be routed through our server-side integration.
+### Hybrid Device/Cloud-mode
+Another option is to use Marketo in [Device-mode](/docs/destinations/marketo-v2/#supported-sources-and-connection-modes) (assuming you are tracking events from a Website). Marketo does not limit API calls that originate from their Web SDK but it also only supports capturing Identify and Page events. If you would also like to capture Track events, you can choose to have these be routed through our server-side integration.
 
 To enable this "Hybrid" mode, select the [Send Track Events Server Side](/docs/destinations/marketo-v2/#send-track-events-server-side) setting and follow the instructions for mapping [Track](/docs/destinations/marketo-v2/#track) events defined above.
 
 ### Preventing Duplicate Leads
 
-Marketo allows you to upsert leads based on any field. We use email and userId as well as anonymousId if you are tracking anonymous activity. We will first use email since that is the field Marketo recommends is unique for your leads. However, many  `.track()` and `.page()` calls don’t include an email address so then we will use the `userId` or `anonymousId` passed in your `.track()` and `.page()` calls to associate these events to leads in Marketo.
+Marketo allows you to upsert leads based on any field. We use email and userId as well as anonymousId if you are tracking anonymous activity. We will first use email since that is the field Marketo recommends is unique for your leads. However, many  `.track()` and `.page()` calls don't include an email address so then we will use the `userId` or `anonymousId` passed in your `.track()` and `.page()` calls to associate these events to leads in Marketo.
 
 You can do one of the following to prevent duplicate leads:
 
 
-1. **Recommended:** Upload a CSV adding your userId to all your leads in Marketo **before** enabling the destination. After you’ve [created the userId field](https://segment.com/docs/integrations/marketo-v2/#-2-you-must-create-a-user-id-and-an-anonymous-id-field-in-marketo-) in Marketo, you can upload a list of all your users with an email column and a userId column. Your CSV should look like this:
+1. **Recommended:** Upload a CSV adding your userId to all your leads in Marketo **before** enabling the destination. After you've [created the userId field](/docs/destinations/marketo-v2/#-2-you-must-create-a-user-id-and-an-anonymous-id-field-in-marketo-) in Marketo, you can upload a list of all your users with an email column and a userId column. Your CSV should look like this:
 
 | **email**         | **userId** |
 | ----------------- | ---------- |
@@ -216,8 +216,6 @@ You can do one of the following to prevent duplicate leads:
 | natasha@email.com | XYZ9876    |
 
 To upload a list to Marketo, when you are in Lead Database, click All Leads. Then click "New", then "Import List" from the drop down. Select your CSV, then click "Next". Make sure "Email Address" and "userId" are the Marketo Fields selected then click "Next". Name your list or select a pre-existing list. Select "None" for Acquisition Program. Then Click "Import".
-
-![](images/jBhuNezWWP.gif)
 
 2. Manually merge leads in Marketo. Follow [these instructions to merge](http://docs.marketo.com/display/public/DOCS/Find+and+Merge+Duplicate+People) any duplicate leads found in Marketo after enabling the destination.
 3. Make sure to call identify first. This is already a recommended best practice as [part of our spec](https://segment.com/docs/spec/identify/).
@@ -230,10 +228,10 @@ There are a few necessary steps that have to be taken to Migrate from Marketo to
 **Important: Make sure you disable Marketo once you are done getting set up with Marketo V2. If you leave both enabled, there will likely be duplicate data in your Marketo account.**
 
 
-1. Your Marketo credentials in your Segment Destination settings need to be updated. Our Marketo Destination used Marketo's SOAP API and Marketo V2 uses Marketo's REST API which requires different credentials. Check out the [Getting Started](https://segment.com/docs/integrations/marketo-v2/#-1-enter-your-marketo-credentials-into-your-destination-settings-we-ll-need-your-munchkin-account-id-client-secret-and-client-id-) guide for what credentials you'll need.
-2. Two custom fields must be created in Marketo: userId and anonymousId. Check out [Getting Started](https://segment.com/docs/integrations/marketo-v2/#-2-you-must-create-a-user-id-and-an-anonymous-id-field-in-marketo-) for exact details on how to create these custom fields in Marketo.
-3. `Track` calls must be mapped in your Destination settings. Our Marketo Destination sent `track` calls as a Munchkin Visit WebPage event in Marketo. In Marketo V2, we'll send your track calls to your Marketo Custom Activities. Detailed instructions [here](https://segment.com/docs/integrations/marketo-v2/#track).
-4. If there are any custom Lead fields that you’d like sent to Marketo in your `Identify` calls, you must add them in your Destination settings. Detailed instructions [here](https://segment.com/docs/integrations/marketo-v2/#identify).
+1. Your Marketo credentials in your Segment Destination settings need to be updated. Our Marketo Destination used Marketo's SOAP API and Marketo V2 uses Marketo's REST API which requires different credentials. Check out the [Getting Started](/docs/destinations/marketo-v2/#-1-enter-your-marketo-credentials-into-your-destination-settings-we-ll-need-your-munchkin-account-id-client-secret-and-client-id-) guide for what credentials you'll need.
+2. Two custom fields must be created in Marketo: userId and anonymousId. Check out [Getting Started](/docs/destinations/marketo-v2/#-2-you-must-create-a-user-id-and-an-anonymous-id-field-in-marketo-) for exact details on how to create these custom fields in Marketo.
+3. `Track` calls must be mapped in your Destination settings. Our Marketo Destination sent `track` calls as a Munchkin Visit WebPage event in Marketo. In Marketo V2, we'll send your track calls to your Marketo Custom Activities. Detailed instructions [here](/docs/destinations/marketo-v2/#track).
+4. If there are any custom Lead fields that you'd like sent to Marketo in your `Identify` calls, you must add them in your Destination settings. Detailed instructions [here](/docs/destinations/marketo-v2/#identify).
 5. Update anything in Marketo that rely on the way V1 sends `.track()` events to be triggered by your custom activities. For example, our V1 Marketo destination sent track events as a "Visit Web Page" event with `/event/<your_event_name>`. So if you a workflow that is triggered by a "Visit Web Page" event where the web page contains `/event/<your_event_name>`, you'll have to swap out the "Visit Web Page" event trigger you have with your Custom Attribute Trigger. In the right side bar, click the "Custom" folder under "Triggers" and select the trigger that you set for your custom activity:
 ![](images/cPD4kP65buG+.png)
 
@@ -242,6 +240,4 @@ To figure out what the trigger name for that Custom Activity is, navigate to the
 
 ![](images/cg6YhDEPWXv+.png)
 
-6. When enabling Marketo V2, because of the way Marketo’s API works, there is potential to create duplicate leads, especially when the first enabling the destination. For ways to prevent this, check out the Preventing Duplicate Leads.
-
-{% include content/integration-foot.md %}
+6. When enabling Marketo V2, because of the way Marketo's API works, there is potential to create duplicate leads, especially when the first enabling the destination. For ways to prevent this, check out the Preventing Duplicate Leads.

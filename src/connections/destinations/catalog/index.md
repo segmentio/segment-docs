@@ -1,5 +1,5 @@
 ---
-title: Destination catalog
+title: Destination Catalog
 hide_toc: true
 layout: catalog
 menu_icon: "read-more"

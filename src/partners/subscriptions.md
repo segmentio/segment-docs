@@ -45,14 +45,14 @@ Finally you should verify the data in your service.
 
 ## Document your Subscription
 
-To provide a great experience for users, and to help us test your integration, you need to document your integration. Segment expects docs both on your site about Segment, and on Segment’s site about your integration. We provide templates for our docs to help you get started:
+To provide a great experience for users, and to help us test your integration, you need to document your integration. Segment expects docs both on your site about Segment, and on Segment's site about your integration. We provide templates for our docs to help you get started:
 
 - For https://segment.com/docs/ about your integration ([HackMD template](https://hackmd.io/t7amLXluS7-39rg7ARZgSA))
 - For https://segment.com/catalog/ about your integration ([Google Docs template](https://docs.google.com/document/d/1kvAvAHLyM3pOq-lBcZJhP_X_KivHlk1eiFy-5ERWDXc/edit))
 
 ## Submit your App for Review
 
-After successfully testing your Component, make sure you've completed all [launch requirements](/docs/partners/#launch-requirements) and then it’s time to submit it for approval.
+After successfully testing your Component, make sure you've completed all [launch requirements](/docs/partners/#launch-requirements) and then it's time to submit it for approval.
 
 Please remember, you will not be able to edit your App information once you submit for approval, so please review all the details before hitting the "Submit for Review" button in Subscription "Publish" window.
 
@@ -64,11 +64,11 @@ Once you have submitted your Subscription for review, Segment will review it and
 
 ### How do customers collect data?
 
-A mutual customer will use `analytics.js` (our client-side javascript library), a server-side library, or one of our mobile SDK’s to implement our [api methods](https://segment.com/docs/spec/). For more information on Segment libraries, you can refer to our [source documentation](https://segment.com/docs/sources/#website).
+A mutual customer will use `analytics.js` (our client-side javascript library), a server-side library, or one of our mobile SDK's to implement our [api methods](https://segment.com/docs/spec/). For more information on Segment libraries, you can refer to our [source documentation](https://segment.com/docs/sources/#website).
 
 ### Does Segment automatically collect any data?
 
-Only our `analytics.js` and mobile SDK’s collect contextual information from the device. Our server-side libraries do not collect contextual information, and a user is responsible for sending additional context themselves.
+Only our `analytics.js` and mobile SDK's collect contextual information from the device. Our server-side libraries do not collect contextual information, and a user is responsible for sending additional context themselves.
 
 For more info on our automatically collected fields, please refer to [this document](https://segment.com/docs/spec/common/).
 
@@ -80,7 +80,7 @@ For unknown users, Segment will handle generating a unique `anonymousId` via our
 
 Segment handles cacheing these values on our mobile SDKs and client-side analytics.js library and sending the values on subsequent calls. Our server-side libraries rely on the customer creating either the `anonymousId` or `userId` and passing this in on each call.
 
-Read more about our unique Id’s [here](https://segment.com/blog/a-brief-history-of-the-uuid/).
+Read more about our unique Id's [here](https://segment.com/blog/a-brief-history-of-the-uuid/).
 
 ### Do you have semantic events?
 
@@ -126,6 +126,6 @@ You can subscribe to updates [here](https://status.segment.com/).
 
 ### Does Segment retry data?
 
-Segment retries nine times over the course of four hours. This will increase the number of attempts for messages, so we’ll try and re-deliver them another 4 times after some backoff.
+Segment retries nine times over the course of four hours. This will increase the number of attempts for messages, so we'll try and re-deliver them another 4 times after some backoff.
 
-We don’t retry anywhere which is the sign of an expired API key or failed payment. However, if we push bad code that results in a malformed payload and a 400 or 422 response from an endpoint, we also won’t retry given that the call would not ever succeed.
+We don't retry anywhere which is the sign of an expired API key or failed payment. However, if we push bad code that results in a malformed payload and a 400 or 422 response from an endpoint, we also won't retry given that the call would not ever succeed.

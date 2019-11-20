@@ -6,15 +6,15 @@ While Redshift clusters are incredibly scalable and efficient, limitations are i
 
 ### Reserved words:
 
-Redshift does not allow you to create tables or columns using reserved words. To avoid naming convention issues, we prepend a `_` to any reserved word names. If you’re having trouble finding a column or table, you can check the list of [Redshift reserved words](http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html) or search for the table with a prepended underscore like `_open`.
+Redshift does not allow you to create tables or columns using reserved words. To avoid naming convention issues, we prepend a `_` to any reserved word names. If you're having trouble finding a column or table, you can check the list of [Redshift reserved words](http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html) or search for the table with a prepended underscore like `_open`.
 
 ### Table count limitations:
 
-Redshift sets the maximum number of tables you can create in a cluster to 9,900 including temporary tables. While it’s rare to reach that limit, we recommend keeping an eye on the number of tables our warehouse connector is creating in your cluster. Keep in mind that a new table is created for each unique event you send to Segment, which becomes an issue if events are being dynamically generated.
+Redshift sets the maximum number of tables you can create in a cluster to 9,900 including temporary tables. While it's rare to reach that limit, we recommend keeping an eye on the number of tables our warehouse connector is creating in your cluster. Keep in mind that a new table is created for each unique event you send to Segment, which becomes an issue if events are being dynamically generated.
 
 ### Cluster node limitations:
 
-When setting up your Redshift cluster, you can select between dense storage (ds2) and dense compute (dc1) cluster types. Dense compute nodes are SSD based which allocates only 200GB per node, but results in faster queries. Dense storage nodes are hard disk based which allocates 2TB of space per node, but result in slower queries. When scaling up your cluster by adding nodes, it’s important to remember that adding more nodes will not add space linearly. As you add more dc1 nodes, the amount of preallocated space for each table increases. For example, if you have a table with 10 columns, Redshift will preallocate 20mb of space (10 columns X 2 slices) per node. That means that the same table will preallocate 20mb of space in a single ds2 cluster, and 200mb in a 10 node dc1 cluster.
+When setting up your Redshift cluster, you can select between dense storage (ds2) and dense compute (dc1) cluster types. Dense compute nodes are SSD based which allocates only 200GB per node, but results in faster queries. Dense storage nodes are hard disk based which allocates 2TB of space per node, but result in slower queries. When scaling up your cluster by adding nodes, it's important to remember that adding more nodes will not add space linearly. As you add more dc1 nodes, the amount of preallocated space for each table increases. For example, if you have a table with 10 columns, Redshift will preallocate 20mb of space (10 columns X 2 slices) per node. That means that the same table will preallocate 20mb of space in a single ds2 cluster, and 200mb in a 10 node dc1 cluster.
 
 ### Column type changes:
 
@@ -22,7 +22,7 @@ Like with most data warehouses, column data types (string, integer, float, etc.)
 
 ### VARCHAR size limits:
 
-All Segment-managed schemas have a default VARCHAR size of 512 in order to keep performance high. If you wish to increase the VARCHAR size, you can run the following query to create a temp column with the VARCHAR size of your choosing. The query then copies over the data from the original column, drops the original column and finally renames the temp column back to the original column. Keep in mind that this process will not backfill any truncated data. The only way to currently backfill this truncated data is to run a backfill which requires a Business Tier Segment account. NOTE: The following query will only work if you’re changing the VARCHAR size of a string column. Please do not use this query to change a column type (i.e. integer to float).
+All Segment-managed schemas have a default VARCHAR size of 512 in order to keep performance high. If you wish to increase the VARCHAR size, you can run the following query to create a temp column with the VARCHAR size of your choosing. The query then copies over the data from the original column, drops the original column and finally renames the temp column back to the original column. Keep in mind that this process will not backfill any truncated data. The only way to currently backfill this truncated data is to run a backfill which requires a Business Tier Segment account. NOTE: The following query will only work if you're changing the VARCHAR size of a string column. Please do not use this query to change a column type (i.e. integer to float).
 
 ![](images/asset_gDRQKtQF.png)
 

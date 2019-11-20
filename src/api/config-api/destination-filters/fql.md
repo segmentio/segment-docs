@@ -66,6 +66,22 @@ example, the following fields can be pointed to by the associated field paths:
 }
 ```
 
+### Escaping Field Paths
+
+If your field name has a character not in the set of `{a-z A-Z 0-9 _ -}`, you
+must escape it using a `\` character. For example, the nested field
+below can be referred to by `properties.product\ 1.price`:
+
+```json
+{
+  "properties": {
+    "product 1": {
+      "price": "19.99"
+    }
+  }
+}
+```
+
 ## Operators
 
 ### Boolean
@@ -157,7 +173,7 @@ you should use `contains()`.
 
 If your FQL statement is invalid (for example `userId = oops"`), your Segment
 event will not be sent on to downstream Destinations. We default to not sending
-the event to ensure that invalid FQL doesn’t cause sensitive information like
+the event to ensure that invalid FQL doesn't cause sensitive information like
 PII to be incorrectly sent to Destinations.
 
 For this reason, we strongly recommend that you use the Destination Filters

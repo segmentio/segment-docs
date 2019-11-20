@@ -48,7 +48,7 @@ Property               | Type   | Description
 
 ##### Example
 
-{% comment %}\{\{\{api-example '{
+{% comment %} api-example '{
   "user_id": "019mr8mf4r",
   "action": "track",
   "event": "Email Bounced",
@@ -65,7 +65,28 @@ Property               | Type   | Description
     "campaign_id": "123",
     "campaign_name": "New Customer Discount"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "user_id": "019mr8mf4r",
+  "action": "track",
+  "event": "Email Bounced",
+  "context": {
+    "ip": "67.207.109.102",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
+    "traits": {
+      "email": "pgibbons@initech.com"
+    }
+  },
+  "properties": {
+    "email_id": "18vzF7u3z",
+    "email_subject": "First shirt on us!",
+    "campaign_id": "123",
+    "campaign_name": "New Customer Discount"
+  }
+}
+```
 
 
 ### Email Delivered
@@ -94,7 +115,7 @@ Property               | Type   | Description
 
 ##### Example
 
-{% comment %}\{\{\{api-example '{
+{% comment %} api-example '{
   "user_id": "019mr8mf4r",
   "action": "track",
   "event": "Email Delivered",
@@ -111,7 +132,28 @@ Property               | Type   | Description
     "campaign_id": "123",
     "campaign_name": "New Customer Discount"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "user_id": "019mr8mf4r",
+  "action": "track",
+  "event": "Email Delivered",
+  "context": {
+    "ip": "67.207.109.102",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
+    "traits": {
+      "email": "pgibbons@initech.com"
+    }
+  },
+  "properties": {
+    "email_id": "18vzF7u3z",
+    "email_subject": "First shirt on us!",
+    "campaign_id": "123",
+    "campaign_name": "New Customer Discount"
+  }
+}
+```
 
 
 ### Email Link Clicked
@@ -145,7 +187,7 @@ Property               | Type   | Description
 
 #### Example
 
-{% comment %}\{\{\{api-example '{
+{% comment %} api-example '{
   "user_id": "019mr8mf4r",
   "action": "track",
   "event": "Email Link Clicked",
@@ -164,7 +206,30 @@ Property               | Type   | Description
     "link_id": "101",
     "link_url": "https://www.buymyshirts.com?promo=NEWCUSTOMER"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "user_id": "019mr8mf4r",
+  "action": "track",
+  "event": "Email Link Clicked",
+  "context": {
+    "ip": "67.207.109.102",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
+    "traits": {
+      "email": "joanna@chotchkies.com"
+    }
+  },
+  "properties": {
+    "email_id": "18vzF7u3z",
+    "email_subject": "First shirt on us!",
+    "campaign_id": "123",
+    "campaign_name": "New Customer Discount",
+    "link_id": "101",
+    "link_url": "https://www.buymyshirts.com?promo=NEWCUSTOMER"
+  }
+}
+```
 
 
 ### Email Marked as Spam
@@ -195,7 +260,7 @@ Property               | Type   | Description
 
 #### Example
 
-{% comment %}\{\{\{api-example '{
+{% comment %} api-example '{
   "user_id": "019mr8mf4r",
   "action": "track",
   "event": "Email Marked as Spam",
@@ -212,7 +277,28 @@ Property               | Type   | Description
     "campaign_id": "123",
     "campaign_name": "New Customer Discount"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "user_id": "019mr8mf4r",
+  "action": "track",
+  "event": "Email Marked as Spam",
+  "context": {
+    "ip": "67.207.109.102",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
+    "traits": {
+      "email": "mwaddams@initech.com"
+    }
+  },
+  "properties": {
+    "email_id": "18vzF7u3z",
+    "email_subject": "First shirt on us!",
+    "campaign_id": "123",
+    "campaign_name": "New Customer Discount"
+  }
+}
+```
 
 
 ### Email Opened
@@ -243,7 +329,7 @@ Property               | Type   | Description
 
 #### Example
 
-{% comment %}\{\{\{api-example '{
+{% comment %} api-example '{
   "user_id": "019mr8mf4r",
   "action": "track",
   "event": "Email Opened",
@@ -260,7 +346,28 @@ Property               | Type   | Description
     "campaign_id": "123",
     "campaign_name": "New Customer Discount"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "user_id": "019mr8mf4r",
+  "action": "track",
+  "event": "Email Opened",
+  "context": {
+    "ip": "67.207.109.102",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
+    "traits": {
+      "email": "pgibbons@initech.com"
+    }
+  },
+  "properties": {
+    "email_id": "18vzF7u3z",
+    "email_subject": "First shirt on us!",
+    "campaign_id": "123",
+    "campaign_name": "New Customer Discount"
+  }
+}
+```
 
 
 ### Unsubscribed
@@ -294,7 +401,7 @@ Property               | Type   | Description
 
 #### Example
 
-{% comment %}\{\{\{api-example '{
+{% comment %} api-example '{
   "user_id": "019mr8mf4r",
   "action": "track",
   "event": "Unsubscribed",
@@ -313,4 +420,27 @@ Property               | Type   | Description
     "list_id": "1425",
     "list_name": "New customers"
   }
-}' }}}{% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "user_id": "019mr8mf4r",
+  "action": "track",
+  "event": "Unsubscribed",
+  "context": {
+    "ip": "67.207.109.102",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
+    "traits": {
+      "email": "pgibbons@initech.com"
+    }
+  },
+  "properties": {
+    "email_id": "18vzF7u3z",
+    "email_subject": "First shirt on us!",
+    "campaign_id": "123",
+    "campaign_name": "New Customer Discount",
+    "list_id": "1425",
+    "list_name": "New customers"
+  }
+}
+```

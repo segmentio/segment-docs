@@ -1,9 +1,8 @@
 ---
 title: 'Spec: Page'
-sidebar: Page
 ---
 
-The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling `page` or [`screen`](/docs/spec/screen/) in one of our [sources](/docs/sources/) is one of the first steps to getting started with Segment.
+The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling `page` or [`screen`](/docs/spec/screen/) in one of our [sources](docs/connections/sources/) is one of the first steps to getting started with Segment.
 
 **Note:** **In `analytics.js` a `page` call is included in the snippet by default** just after `analytics.load`. We do that because you **must** call this method at least once per page load. However, you can choose to add an optional `name` or `properties` to the default call, or call it multiple times if you have a single-page application.
 
@@ -30,9 +29,9 @@ Beyond the common fields, the `page` call takes the following fields:
 
 <table>
   <tr>
-    <th>**Field**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   {% include content/spec-field-page-name.md %}
   {% include content/spec-field-page-properties.md %}
@@ -87,9 +86,9 @@ Reserved properties we have standardized:
 
 <table>
   <tr>
-    <th>**Property**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>`name`</td>
@@ -132,7 +131,7 @@ Reserved properties we have standardized:
     <tr>
     <td>`keywords`</td>
     <td>Array[String]</td>
-    <td>A list/array of kewords describing the content of the page. 
+    <td>A list/array of kewords describing the content of the page.
       <p> The keywords would most likely be the same as, or similar to, the keywords you would find in an html [meta](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes) tag for SEO purposes. This property is mainly used by content publishers that rely heavily on pageview tracking. This is not automatically collected.</p>
     </td>
   </tr>

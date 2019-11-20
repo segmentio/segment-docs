@@ -1,5 +1,5 @@
 ---
-title: Oracle Responsys
+title: Oracle Responsys Destination
 ---
 
 ## Getting Started
@@ -35,7 +35,7 @@ Before you enable Responsys in your destinations page, there are a few things in
 
 _NOTE_: You can find your account's endpoint by simply going to your Oracle Responsys login screen and looking at your url.
 
-![responsy-pod-settings](https://i.gyazo.com/77aba325cd56bcb6e55f12a59afbab0c.png)
+![responsy-pod-settings](images/77aba325cd56bcb6e55f12a59afbab0c.png)
 
 2. Enter your **username** and **password** for your Responsys account. We require these credentials in order to retrieve an auth token from Oracle in order to send data to your account on your behalf.
 
@@ -116,6 +116,9 @@ The above call will try to first find an existing record in the provided Profile
     <td>`COUNTRY_`</td>
   </tr>
 </table>
+
+#### Email and Mobile Permission Statuses
+If you would like to keep track of users who are opting in or out of marketing communications  in your apps and websites please indicate a key of the custom trait to map to Responsys `EMAIL_PERMISSION_STATUS_` or `MOBILE_PERMISSION_STATUS_` fields in your Segment settings. **NOTE:** The value of this custom trait key must be a boolean. When the value is true that indicates the user wants to opt in and false indicates the user wants to opt out. Segment will transform that boolean into the appropriate Responsys accepted format (`I` or `O`).
 
 _Responsys does not have an API to create Profile Lists so you must create one manually inside their UI_.
 
@@ -285,5 +288,3 @@ You should enter `address_street` as your Segment Property Name.
 ### I'm seeing a 'Merge cannot be done on one field' in the Segment debugger!
 
 This error occurs when you try to upsert a record to a Profile Extension Table but you did not provide any additional traits other than what we used to match the columns. For PETs, we use your `userId` or `traits.email` from your `.identify()` calls to upsert the record. You need to send at least one other trait that would map to a field in your PET.
-
-{% include content/integration-foot.md %}

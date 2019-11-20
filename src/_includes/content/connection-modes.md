@@ -18,13 +18,13 @@ The first step is to make sure {{ currentIntegration.display_name }} supports th
     <th>Server</th>
   </tr>
   <tr>
-    <td>📱 Device-based</td>
+    <td>📱 Device-mode</td>
     <td>{% if connectionModes.device.web == true %} ✅ {% endif %}</td>
     <td>{% if connectionModes.device.mobile == true %} ✅ {% endif %}</td>
     <td>{% if connectionModes.device.server == true %} ✅ {% endif %}</td>
   </tr>
   <tr>
-    <td>☁️  Cloud-based</td>
+    <td>☁️  Cloud-mode</td>
     <td>{% if connectionModes.cloud.web == true %} ✅ {% endif %}</td>
     <td>{% if connectionModes.cloud.mobile == true %} ✅ {% endif %}</td>
     <td>{% if connectionModes.cloud.server == true %} ✅ {% endif %}</td>

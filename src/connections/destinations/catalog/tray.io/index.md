@@ -1,6 +1,7 @@
 ---
-title: Tray.io
+title: Tray Destination
 ---
+
 ## Getting Started
 
 Once your application is set up and instrumented with Segment, turn on tray in your Segment destinations page. After that, log in to your tray account and create a new workflow, using Segment as your trigger.
@@ -10,7 +11,7 @@ You can target up to 10 discrete tray workflows from within Segment.
 ## Message Types
 Tray supports all message types. You can filter the message type when you configure the trigger within tray.
 
-![](images/tray-types.png)
+![](./images/tray-types.png)
 
 ### Delete
 
@@ -24,6 +25,4 @@ The payload will consist of:
 
 In order to receive and process the message, we recommend starting with an "All Message Types" filter, and then removing all the default types and adding `"delete"` manually. We're working with tray to add a dedicated `"delete"` message type filter in the dropdown pictured above.
 
-![](images/tray-delete-setup.gif)
-
-{% include content/integration-foot.md %}
+![](./images/tray-delete-setup.gif)

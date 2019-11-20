@@ -1,6 +1,5 @@
 ---
 title: 'Spec: Group'
-sidebar: Group
 ---
 
 The `group` API call is how you associate an individual user with a group—be it a company, organization, account, project, team or whatever other crazy name you came up with for the same concept!
@@ -27,10 +26,10 @@ And here's the corresponding Javascript event that would generate the above payl
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {
-  name: "Initech", 
+  name: "Initech",
   industry: "Technology",
-  employees: 329, 
-  plan: "enterprise", 
+  employees: 329,
+  plan: "enterprise",
   "total billed": 830
 });
 ```
@@ -39,12 +38,12 @@ Beyond the common fields, the `group` call takes the following fields:
 
 <table>
   <tr>
-    <th>**Field**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
-  {% include content/spec-field-group-id.md %}}
-  {% include content/spec-field-group-traits.md %}}
+  {% include content/spec-field-group-id.md %}
+  {% include content/spec-field-group-traits.md %}
 </table>
 
 
@@ -102,9 +101,9 @@ The following are the reserved traits we have standardized:
 
 <table>
   <tr>
-    <th>**Trait**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Trait</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>`address`</td>
@@ -170,6 +169,6 @@ The following are the reserved traits we have standardized:
   </tr>
 </table>
 
-**Note:** You might be used to some destinations recognizing special properties differently. For example, Mixpanel has a special `track_charges` method for accepting revenue. Luckily, you don’t have to worry about those inconsistencies. Just pass us `revenue`.  **We’ll handle all of the destination-specific conversions for you automatically.** Same goes for the rest of the reserved properties.
+**Note:** You might be used to some destinations recognizing special properties differently. For example, Mixpanel has a special `track_charges` method for accepting revenue. Luckily, you don't have to worry about those inconsistencies. Just pass us `revenue`.  **We'll handle all of the destination-specific conversions for you automatically.** Same goes for the rest of the reserved properties.
 
 **Traits are case-insensitive**, so in Javascript you can match the rest of your camel-case code by sending `createdAt`, and in Ruby you can match your snake-case code by sending `created_at`. That way the API never seems alien to your code base.

@@ -1,22 +1,19 @@
 ---
 title: Objects Bulk API
-sourceTitle: 'Objects Bulk API'
-sourceCategory: 'Server'
-sidebar: 'Objects Bulk API'
 ---
 
 NOTE: The Objects Bulk API is in beta, and so features and names may change without notice as we continue to build.
 
-The Segment Objects Bulk API allows you to send a batched file of objects relevant to your business right to Redshift and other Segment supported data warehouses. 
+The Segment Objects Bulk API allows you to send a batched file of objects relevant to your business right to Redshift and other Segment supported data warehouses.
 It differs from the Object API in that it is designed to:
 - Handle large payloads of data.
 - Guarantees in-order processing of data.
 - Allow Customers and Partners to build their own Cloud Apps.
 
-NOTE: We haven’t yet created tooling akin to our core analytics-<language> libraries so you’ll need to use our HTTP API directly for now.
+NOTE: We haven't yet created tooling akin to our core analytics-<language> libraries so you'll need to use our HTTP API directly for now.
 
 ### Batched Object Data
-The `Batched Object Data` the API accepts is a file of line separated objects, in JSON form, compressed using `Gzip`. 
+The `Batched Object Data` the API accepts is a file of line separated objects, in JSON form, compressed using `Gzip`.
 The maximum size of a single `object` is 400KB and maximum uncompressed size of a file 512MB.
 
 Example objects:
@@ -156,7 +153,7 @@ Possible HTTP responses include:
 
 ### snake_case properties
 
-It is recommended that you use snake case when naming any object properties. 
+It is recommended that you use snake case when naming any object properties.
 
 ```
 {
@@ -180,7 +177,7 @@ You should use plural collection names wherever possible. The collection name sh
 
 ## De-dupe & merge
 
-Objects with the same object ID will get de-duped and properties will get merged. By sending in partial objects with the same object ID, we will merge the properties and you can query the latest data in your data warehouse. 
+Objects with the same object ID will get de-duped and properties will get merged. By sending in partial objects with the same object ID, we will merge the properties and you can query the latest data in your data warehouse.
 
 For example, if you make the following requests with the following payloads:
 
@@ -189,7 +186,7 @@ For example, if you make the following requests with the following payloads:
 {"id": "2561341","collection": "rooms","properties": {"name": "Charming Beach Room Facing Ocean","location": "Lihue, HI","review_count": 48}}
 ```
 
-When you query your warehouse you will see the following: 
+When you query your warehouse you will see the following:
 
 ```SQL
 select id, name, location, review_count from airbnb.rooms
@@ -206,6 +203,6 @@ select id, name, location, review_count from airbnb.rooms
 If the program that collects your data runs a a predefines schedule then use **Objects Bulk API**.
 If the data being collected is streaming all of the time then the **Objects API** is more suitable.
 
-### Can you just pull data automatically from my database? 
+### Can you just pull data automatically from my database?
 
 If you would like this feature, please [contact us](https://segment.com/contact/) and let us know.

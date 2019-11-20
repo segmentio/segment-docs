@@ -1,5 +1,6 @@
 ---
-title: New Relic
+rewrite: true
+title: New Relic Destination
 ---
 [New Relic](https://newrelic.com/insights) enables you to better understand, using their real-time analytics, the end-to-end business impact of your software performance.
 
@@ -9,8 +10,8 @@ This document was last updated on August 29, 2018. If you notice any gaps, outda
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI’s Destinations page click on "Add Destination".
-  2. Search for "New Relic" within the Destinations Catalog and confirm the Source you’d like to connect to.
+  1. From your Segment UI's Destinations page click on "Add Destination".
+  2. Search for "New Relic" within the Destinations Catalog and confirm the Source you'd like to connect to.
   3. Drop in your Insights [Account ID](https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/account-id) and your [Insert Key](https://docs.newrelic.com/docs/insights/insights-data-sources/custom-data/insert-custom-events-insights-api#register).
   4. Once destination enabled we'll start forwarding your calls to New Relic.
 

@@ -1,9 +1,8 @@
 ---
 title: Radar Source
-beta: false
 ---
 
-Radar is the location platform for mobile apps. You can use Radar to add location context and tracking to your apps in <10 lines of code. The Radar Segment Source is a Cloud-based event source. Instead of packaging Radar's SDK via Segment's, you include, configure, and initialize their SDK separately. Radar then sends all events that it detects and infers to Segment via its servers. As a result, only destinations with Cloud-based connection modes are compatible with the Radar source. 
+Radar is the location platform for mobile apps. You can use Radar to add location context and tracking to your apps in less than ten lines of code. The Radar Segment Source is a Cloud-mode event source. Instead of packaging Radar's SDK using Segment as a wrapper, you include, configure, and initialize their SDK separately. Radar then sends all events that it detects and infers to Segment via its servers. As a result, only destinations that allow Cloud-mode are compatible with the Radar source.
 
 The Radar platform has three products: *Geofences*, *Insights*, and *Places*.
 
@@ -56,17 +55,17 @@ Radar will send the following events to your Segment warehouses and destinations
   <tr>
     <td>latitude</td>
     <td>float</td>
-    <td>The latitude of the user’s location at the time of the event.</td>
+    <td>The latitude of the user's location at the time of the event.</td>
   </tr>
   <tr>
     <td>longitude</td>
     <td>float</td>
-    <td>The longitude of the user’s location at the time of the event.</td>
+    <td>The longitude of the user's location at the time of the event.</td>
   </tr>
   <tr>
     <td>accuracy</td>
     <td>float</td>
-    <td>The accuracy of the user’s location at the time of the event in meters.</td>
+    <td>The accuracy of the user's location at the time of the event in meters.</td>
   </tr>
   <tr>
     <td>geofence_id</td>
@@ -107,17 +106,17 @@ Radar will send the following events to your Segment warehouses and destinations
   <tr>
     <td>latitude</td>
     <td>float</td>
-    <td>The latitude of the user’s location at the time of the event.</td>
+    <td>The latitude of the user's location at the time of the event.</td>
   </tr>
   <tr>
     <td>longitude</td>
     <td>float</td>
-    <td>The longitude of the user’s location at the time of the event.</td>
+    <td>The longitude of the user's location at the time of the event.</td>
   </tr>
   <tr>
     <td>accuracy</td>
     <td>float</td>
-    <td>The accuracy of the user’s location at the time of the event in meters.</td>
+    <td>The accuracy of the user's location at the time of the event in meters.</td>
   </tr>
   <tr>
     <td>geofence_id</td>
@@ -163,12 +162,12 @@ Radar will send the following events to your Segment warehouses and destinations
   <tr>
     <td>latitude</td>
     <td>float</td>
-    <td>The latitude of the user’s location at the time of the event.</td>
+    <td>The latitude of the user's location at the time of the event.</td>
   </tr>
   <tr>
     <td>longitude</td>
     <td>float</td>
-    <td>The longitude of the user’s location at the time of the event.</td>
+    <td>The longitude of the user's location at the time of the event.</td>
   </tr>
   <tr>
     <td>accuracy</td>
@@ -359,7 +358,7 @@ Radar will send the following events to your Segment warehouses and destinations
   <tr>
     <td>accuracy</td>
     <td>float</td>
-    <td>The accuracy of the user’s location at the time of the event in meters.</td>
+    <td>The accuracy of the user's location at the time of the event in meters.</td>
   </tr>
   <tr>
     <td>place_id</td>
@@ -420,7 +419,7 @@ Radar will send the following events to your Segment warehouses and destinations
   <tr>
     <td>accuracy</td>
     <td>float</td>
-    <td>The accuracy of the user’s location at the time of the event in meters.</td>
+    <td>The accuracy of the user's location at the time of the event in meters.</td>
   </tr>
   <tr>
     <td>placeId</td>
@@ -508,27 +507,27 @@ Radar will also send the following user traits to Segment, depending on Radar us
   <tr>
     <td>radar_geofence_tags</td>
     <td>array <string></td>
-    <td>An array of tags of the user’s last known geofences.</td>
+    <td>An array of tags of the user's last known geofences.</td>
   </tr>
   <tr>
     <td>radar_geofence_external_ids</td>
     <td>array <string></td>
-    <td>An array of external IDs of the user’s last known geofences.</td>
+    <td>An array of external IDs of the user's last known geofences.</td>
   </tr>
   <tr>
     <td>radar_place_id</td>
     <td>string</td>
-    <td>The ID of the user’s last known place, provided by Radar.</td>
+    <td>The ID of the user's last known place, provided by Radar.</td>
   </tr>
   <tr>
     <td>radar_place_name</td>
     <td>string</td>
-    <td>The name of the user’s last known place.</td>
+    <td>The name of the user's last known place.</td>
   </tr>
   <tr>
     <td>radar_place_facebook_id</td>
     <td>string</td>
-    <td>The Facebook ID of the user’s last known place.</td>
+    <td>The Facebook ID of the user's last known place.</td>
   </tr>
   <tr>
     <td>radar_place_categories</td>
@@ -538,12 +537,12 @@ Radar will also send the following user traits to Segment, depending on Radar us
   <tr>
     <td>radar_place_chain_name</td>
     <td>string</td>
-    <td>The name of the chain of the user’s last known place. See https://www.onradar.com/documentation/places/chains.</td>
+    <td>The name of the chain of the user's last known place. See https://www.onradar.com/documentation/places/chains.</td>
   </tr>
   <tr>
     <td>radar_place_chain_slug</td>
     <td>string</td>
-    <td>A human-readable unique ID for the chain of the user’s last known place. See https://www.onradar.com/documentation/places/chains.</td>
+    <td>A human-readable unique ID for the chain of the user's last known place. See https://www.onradar.com/documentation/places/chains.</td>
   </tr>
   <tr>
     <td>radar_insights_state_home</td>

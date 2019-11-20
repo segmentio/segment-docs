@@ -1,5 +1,6 @@
 ---
-title: Slack
+rewrite: true
+title: Slack Destination
 ---
 
 [Slack](https://slack.com/) is a team collaboration tool where work flows. It's where the people you need, the information you share, and the tools you use come together to get things done.

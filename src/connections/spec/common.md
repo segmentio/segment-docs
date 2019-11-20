@@ -1,9 +1,10 @@
 ---
 title: 'Spec: Common Fields'
-sidebar: Common Fields
 ---
 
-In the Segment [Spec](/docs/spec/) all the [API calls](/docs/spec#api-calls) have a common structure, and a few common fields. However, not every destination accepts every specced field. If you have a question about what fields a destination *will* accept, you can refer to the destination's docs page, or check out our [open-source destination code on Github](https://github.com/segment-integrations).
+In the Segment [Spec](/docs/spec/) all the [API calls](/docs/spec#api-calls) have a common structure, and a few common fields.
+
+However, not all destinations accept all fields included in the Spec. Not sure which fields an destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on Github](https://github.com/segment-integrations).
 
 ## Structure
 Every API call has the same core structure and fields. These fields describe user identity, timestamping and mechanical aides like API version.
@@ -43,7 +44,7 @@ Here's an example of these common fields in raw JSON:
       "name": "analytics.js",
       "version": "2.11.1"
     },
-    "locale": "nl-NL",
+    "locale": "en-US",
     "location": {
       "city": "San Francisco",
       "country": "United States",
@@ -53,7 +54,7 @@ Here's an example of these common fields in raw JSON:
     },
     "network": {
       "bluetooth": false,
-      "carrier": "T-Mobile NL",
+      "carrier": "T-Mobile US",
       "cellular": true,
       "wifi": false
     },
@@ -99,9 +100,10 @@ Here's an example of these common fields in raw JSON:
 In more detail these common fields for every API call are:
 <table>
   <tr>
-    <th>**Field**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Field</th>
+    <th>Optional?</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   {% include content/spec-field-anonymous-id.md %}
   {% include content/spec-field-context.md %}
@@ -119,13 +121,13 @@ Beyond this common structure, each API call adds a few specialized top-level fie
 
 ## Context
 
-Context is a dictionary of extra information that provides useful context about a datapoint, for example the user's `ip` address or `locale`. Context is a complete and explicit specification, so properties outside the spec will be ignored. You should **only use** Context fields for their intended meaning.
+Context is a dictionary of extra information that provides useful context about a datapoint, for example the user's `ip` address or `locale`. Context is a complete and explicit specification, so properties outside the spec are ignored. You should **only use** Context fields for their intended meaning.
 
 <table>
   <tr>
-    <th>**Field**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>`active`</td>
@@ -290,7 +292,7 @@ Integrations defaults to the following:
 }
 ```
 
-This is because [Salesforce](/docs/integrations/salesforce/) has strict limits on API calls, and we don't want to run over your limits by accident.
+This is because [Salesforce](/docs/destinations/salesforce/) has strict limits on API calls, and we don't want to run over your limits by accident.
 
 Sending data to the rest of our destinations is opt-out so if you don't specify the destination as false in this object, it will be sent to rest of the destinations that can accept it.
 

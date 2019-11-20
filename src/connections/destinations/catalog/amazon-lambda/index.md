@@ -1,8 +1,9 @@
 ---
-title: AWS Lambda
+rewrite: true
+title: Amazon Lambda Destination
 ---
 
-Segment makes it easy to send your data to AWS Lambda (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to AWS Lambda in the format they understand. [Learn more about how to use AWS Lambda with Segment.](https://segment.com/integrations/amazon-lambda)
+Segment makes it easy to send your data to AWS Lambda (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to AWS Lambda in the format they understand. [Learn more about how to use AWS Lambda with Segment.](/docs/destinations/amazon-lambda)
 
 [AWS Lambda](https://aws.amazon.com/lambda/) lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
 
@@ -77,7 +78,7 @@ Click "Next".
 
 Give your stack a meaningful name. The "ExternalId" parameter corresponds to the "External ID" setting in your Segment Lambda destination settings. The "LambdaARN" parameter corresponds to the "Lambda" setting in your Segment Lambda destination settings.
 
-![](CloudFormationStackDetails.png)
+![](images/CloudFormationStackDetails.png)
 
 You can leave the next page as is, no changes needed. On the last page, review your template details and click "Create".
 
@@ -102,7 +103,7 @@ Sign in to the [Identity and Access Management (IAM) console](https://console.aw
 
 Select the **Create Policy from JSON** option and use the following template policy in the `Policy Document` field. Be sure to change the {region}, {account-id} and {function-names} with the applicable values. An example of a Lambda ARN `arn:aws:lambda:us-west-2:355207333203:function:``my-example-function`.
 
-_Note: you can put in a placeholder ARN for now, as you will need to come back to this step to update with the ARN of your Lambda once that’s been created._
+_Note: you can put in a placeholder ARN for now, as you will need to come back to this step to update with the ARN of your Lambda once that's been created._
 
 ```
 {
@@ -131,7 +132,7 @@ Sign in to the [Identity and Access Management (IAM) console](https://console.aw
 
 While setting up the new role, add the policy you created in the previous step.
 
-Finish with any other setup items you may want (like `tags`). Once that’s complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
+Finish with any other setup items you may want (like `tags`). Once that's complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
 
 Select the "Trust Relationships" tab, then click the "Edit trust relationship" button.
 
@@ -162,7 +163,7 @@ Copy and paste the following into your trust relationship. You should replace `<
 }
 ```
 
-If you have multiple Source’s using this Role, replace the `sts:ExternalId` setting above with
+If you have multiple Source's using this Role, replace the `sts:ExternalId` setting above with
 
 ```
     "sts:ExternalId": ["YOUR_SEGMENT_SOURCE_ID", "ANOTHER_SOURCE_ID", "A_THIRD_SOURCE_ID"]

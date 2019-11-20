@@ -17,7 +17,7 @@ Subscribe to the [release feed](https://github.com/segmentio/analytics-react-nat
 #### iOS
 
 - CocoaPods (**recommended**)
-  - To add CocoaPods to your app, follow [these instructions](https://facebook.github.io/react-native/docs/integration-with-existing-apps#configuring-cocoapods-dependencies).  
+  - To add CocoaPods to your app, follow [these instructions](https://facebook.github.io/react-native/docs/integration-with-existing-apps#configuring-cocoapods-dependencies).
 
 ### Install the SDK
 
@@ -61,11 +61,11 @@ Here are the steps for installing manually:
 
 Please note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
 
-### Including SDKs for destinations with Device-based Connection Modes
+### Including SDKs for destinations using Device-mode
 
-In the interest of keeping our SDK lightweight, Analytics only installs the Segment destination. This means that all your data will be sent via Segment's servers to any tools you've enabled by the default Cloud-based Connection Mode.
+In the interest of keeping our SDK lightweight, Analytics only installs the Segment destination. This means that all your data is sent using Segment's servers to any tools you've enabled using the default Cloud-mode.
 
-[As described here](/docs/integrations/#why-do-some-integrations-offer-or-require-device-based-connection-modes-), some integrations require or offer Device-based Connection Modes. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/sources/mobile/react-native#packaging-integrations).
+[As described here](/docs/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/sources/mobile/react-native#packaging-integrations).
 
 Now that the SDK is installed and setup, you're ready to...
 
@@ -145,7 +145,7 @@ The `track` call has the following fields:
 
 The [`screen`](/docs/spec/screen/) method lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
 
-You’ll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
+You'll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
 
 Example `screen` call:
 
@@ -174,7 +174,7 @@ Find details on the **`screen` payload** in our [Spec](/docs/spec/screen/).
 
 `group` lets you associate an [identified user](/docs/sources/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/integrations/intercom/), [Preact](/docs/integrations/preact/) and [Totango](/docs/integrations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
 
 Example `group` call:
 
@@ -204,7 +204,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/integrations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/integrations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/destinations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/destinations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -335,13 +335,13 @@ Or if they opt-back-in, you can re-enable data collection:
 analytics.enable()
 ```
 
-Note: disabling the Segment SDK ensures that all data collection method invocations (eg. `track`, `identify`, etc) are ignored; however, it does not tear down inititialized SDKs. If your packaged SDKs are collecting data automatically or outside of Segment, disabling Segment does not address that. We recommend invoking corresponding disable methods in each of your packaged SDKs in response to user opt-out to ensure any automatic data collection is stopped. 
+Note: disabling the Segment SDK ensures that all data collection method invocations (eg. `track`, `identify`, etc) are ignored; however, it does not tear down inititialized SDKs. If your packaged SDKs are collecting data automatically or outside of Segment, disabling Segment does not address that. We recommend invoking corresponding disable methods in each of your packaged SDKs in response to user opt-out to ensure any automatic data collection is stopped.
 
-## Packaging Destinations with Device-based Connection Modes
+## Packaging Destinations using Device-mode
 
 By default, our `@segment/analytics-react-native` npm packages no external SDKs.
 
-If you would like to add any destinations with Device-based Connection Modes, first add the dependencies you need. You can find these in our app when you open the destination sheet for any mobile destination with a Device-based Connection Mode option.
+To add destinations using Device-mode, first add the dependencies you need. You can find these in our app when you open the destination sheet for any mobile destination with a Device-mode option.
 
 
 
@@ -358,13 +358,13 @@ import Branch from '@segment/analytics-react-native-branch'
 import GoogleAnalytics from '@segment/analytics-react-native-google-analytics'
 
 await analytics.setup('YOUR_WRITE_KEY', {
-  // Add any of your Device-based destinations.
+  // Add any of your Device-mode destinations.
   using: [Bugsnag, Branch, GoogleAnalytics]
   // ...
 })
 ```
 
-We recommend using Device-based destinations and Connection Modes sparingly to reduce the size of your application.
+We recommend using Device-mode destinations sparingly to reduce the size of your application.
 
 ## Anonymizing IP
 
@@ -396,11 +396,11 @@ For services that send push notifications, you first want to [create a Push SSL 
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   SEGAnalyticsConfiguration* configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
-  
+
   // Use launchOptions to track tapped notifications
   configuration.launchOptions = launchOptions;
   [SEGAnalytics setupWithConfiguration:configuration];
-  
+
   if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerForRemoteNotifications)]) {
     UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeSound |
     UIUserNotificationTypeBadge;
@@ -434,7 +434,7 @@ For services that send push notifications, you first want to [create a Push SSL 
 
 #### On Android
 
-If you're using a Device-based Connection Mode for a mobile destination, you can always access features from that tool's native SDK.
+If you're using Device-mode for a mobile destination, you can always access features from that tool's native SDK.
 
 To make sure you use the same instance of these destinations as we do, you can register a listener that notifies you when the destinations are ready. This will be called synchronously if the destinations are notified, and asynchronously if the destinations aren't yet ready.
 
@@ -466,7 +466,7 @@ analytics.onIntegrationReady(BundledIntegration.FLURRY, new Callback() {
 
 ### How Do You Handle Unique Identifiers?
 
-A key component of any analytics platform is consistently and accurately identifying users. Some kind of ID must be assigned and persisted on the device so that user actions can be effectively studied. This is especially important for funnel conversion analysis and retention analysis. Naturally the Analytics SDK needs a unique ID for each user. 
+A key component of any analytics platform is consistently and accurately identifying users. Some kind of ID must be assigned and persisted on the device so that user actions can be effectively studied. This is especially important for funnel conversion analysis and retention analysis. Naturally the Analytics SDK needs a unique ID for each user.
 
 #### iOS
 
@@ -484,13 +484,13 @@ We also collect the [Android ID](http://developer.android.com/reference/android/
 
 ### How does the SDK queue API calls?
 
-Our library queues API calls and uploads them in batches so that we don’t drain your user’s battery life by making a network request for each event tracked.
+Our library queues API calls and uploads them in batches so that we don't drain your user's battery life by making a network request for each event tracked.
 
-As soon as you send as an event, we’ll save it to disk, and if queue size reaches your specified maximum queue size (which is 20 by default), we flush the queue and upload all the events in a single batch. Since the data is persisted right away, there is no data loss even if the app is killed, or the operating system crashes.
+As soon as you send as an event, we'll save it to disk, and if queue size reaches your specified maximum queue size (which is 20 by default), we flush the queue and upload all the events in a single batch. Since the data is persisted right away, there is no data loss even if the app is killed, or the operating system crashes.
 
-The queue behavior may differ for Device-based destinations. For instance, Mixpanel’s SDK queues events and then flushes them when the app goes to the background only.
+The queue behavior may differ for Device-mode destinations. For instance, Mixpanel's SDK queues events and then flushes them when the app goes to the background only.
 
-This is why even if you see events in the debugger, the Device-based destination may not show them on their dashboards yet, simply because their mobile SDK may still have them queued. The opposite may also happen, that we have some events queued so they haven’t shown up in the debugger, but the Device-based destination has already sent the events to their servers.
+This is why even if you see events in the debugger, the Device-mode destination may not show them on their dashboards yet, simply because their mobile SDK may still have them queued. The opposite may also happen, that we have some events queued so they haven't shown up in the debugger, but the Device-mode destination has already sent the events to their servers.
 
 ### Can I help develop a destination?
 
@@ -507,33 +507,33 @@ _Note_: While the network is deprecated, the relevant [framework](https://develo
 ## Troubleshooting
 
 ### No events in my debugger
-1. Verify you have followed all [Getting Started](docs/sources/mobile/react-native/#getting-started) steps 
+1. Verify you have followed all [Getting Started](/docs/sources/mobile/react-native/#getting-started) steps
 2. Verify you have entered the correct writeKey for your source
     - If the writeKey you have entered is something other than a string or an empty string your app may crash
-    - If the writeKey you have entered is a valid form but not the correct writeKey for your specific source, you will not see an error response. Data will be accepted by Segment but not able to be correctly routed to your source (debugger). 
+    - If the writeKey you have entered is a valid form but not the correct writeKey for your specific source, you will not see an error response. Data will be accepted by Segment but not able to be correctly routed to your source (debugger).
 3. [Enable logging](/docs/sources/mobile/react-native/#logging) to confirm if call is being sent to Segment
 
 
-### No events in my destinations 
+### No events in my destinations
 1. Verify that your destination is enabled
 2. Verify your destination credentials entered in your Segment dashboard are correct
-3. Make sure the destination can accept what you’re sending:  
-   - Does the integration have device-mode/cloud-mode support? Confirm you are sending via the correct connection mode. 
+3. Make sure the destination can accept what you're sending:
+   - Does the integration have device-mode/cloud-mode support? Confirm you are sending via the correct connection mode.
    - Does the destination accept the type of call you are sending? Not all destinations accept all calls: page, track, etc.
 4. If you are still not seeing data in your destination, continue debugging based on which type of connection mode you are using.
 
 
-### Debugging Device-Based Connection Mode Destinations
+### Debugging Device-mode Destinations
 
-If you are using device-based connection mode, you should see the value of that integration set to false in the `integrations` object. That means that the data is being sent from the device to the destination SDK, and not through Segment’s servers. This is expected if you elected to use a device-based connection mode destination’s SDK with Segment’s during installation. 
+If you are using device-mode, you should see the value of that integration set to false in the `integrations` object. That means that the data is being sent from the device to the destination SDK, and not through Segment's servers. This is expected if you chose to use a device-mode destination's SDK with Segment's during installation.
 
 Enable verbose [logging](/docs/sources/mobile/react-native/#logging) and trigger the call in question. You should see a call to Segment triggered as well as to the partner SDK.  It will show you exactly which partner method was invoked and the arguments it was invoked with!
 
-### Debugging Cloud-Based Connection Mode Destinations
+### Debugging Cloud-mode Destinations
 
-Look at the raw JSON in your debugger.  Does the call look like what is expected? 
+Look at the raw JSON in your debugger.  Does the call look like what is expected?
 
-Read through [the docs for that destination](/docs/destinations/) to see expected event format, behavior and caveats for that destination. 
+Read through [the docs for that destination](docs/connections/destinations/) to see expected event format, behavior and caveats for that destination.
 
 
 ### Still having issues?
@@ -541,7 +541,7 @@ Read through [the docs for that destination](/docs/destinations/) to see expecte
 Feel free to [reach out to us](/help) with the following information:
 
 - The version of our SDK you are using
-- Whether you are using device-based or cloud-based connection mode
-- Logs of the call in question 
+- Whether you are using device- or cloud-mode
+- Logs of the call in question
 - Screenshots of the event in the Segment debugger
 - Screenshots of what you are seeing in your destination

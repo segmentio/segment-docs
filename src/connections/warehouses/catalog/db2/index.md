@@ -1,5 +1,6 @@
 ---
-title: IBM Db2
+title: IBM Db2 Destination
+rewrite: true
 ---
 
 Use [IBM Db2](https://www.ibm.com/analytics/us/en/db2/) with Segment to get
@@ -8,14 +9,9 @@ guide will walk through what you need to know to get up and running with Db2
 Warehouse and Segment in a flash.
 
 Note: This document refers specifically to [IBM Db2 Warehouse on
-Cloud][db2_cloud], [IBM Db2 Warehouse](db2_warehouse), and the [IBM Integrated
-Analytics System](db2_ias). For questions related to any of these products,
-please see the [IBM Cloud Docs][db2_cloud_docs].
-
-[db2_cloud]: http://https//www.ibm.com/cloud/db2-warehouse-on-cloud
-[db2_warehouse]: https://www.ibm.com/ca-en/marketplace/db2-warehouse
-[db2_ias]: https://www.ibm.com/ca-en/marketplace/integrated-analytics-system
-[db2_cloud_docs]: https://console.bluemix.net/docs/services/Db2whc/index.html
+Cloud](https://www.ibm.com/cloud/db2-warehouse-on-cloud), [IBM Db2 Warehouse](https://www.ibm.com/analytics/db2), and the [IBM Integrated
+Analytics System](https://www.ibm.com/products/integrated-analytics-system). For questions related to any of these products,
+please see the [IBM Cloud Docs](https://cloud.ibm.com/docs).
 
 If you notice any gaps, outdated information or simply want to leave some
 feedback to help us improve our documentation, please [let us
@@ -85,7 +81,7 @@ database shortly.
 ### Whitelisting IPs
 
 If your Db2 Warehouse is in a private network, be sure to [whitelist
-Segment’s IP
+Segment's IP
 address](https://segment.com/docs/guides/warehouses/which-ips-should-i-whitelist/).
 Otherwise, we will not be able to load your data.
 

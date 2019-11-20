@@ -3,29 +3,29 @@ title: 'Mailjet Source'
 ---
 Mailjet is a powerful email service provider that enables you to send, deliver and track transactional and marketing emails all from one single account. With Mailjet, Marketers and Developers can send and track emails via API, User Interface or SMTP Relay. <!-- [Visit Website]() -->
 
-Take your company’s email analysis to the next level by **adding Mailjet as a Source to Segment.** We’ll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Mailjet as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you’ll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you’ll be able to join your Mailjet data with the event data you’re already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Mailjet with Segment.](/sources/mailjet)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Mailjet data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Mailjet with Segment.](/sources/mailjet)
 
 ## Getting Started
 <span> </span>
 If you have previously enabled sending email events via the Mailjet destination during our beta (using a project write key), you do not need to create new Mailjet source. Your email data will continue to flow as normal.
 
-1. From your workspace’s `segment.com/<your-workspace>/sources page`, click `Add source`.
+1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
 
 2. Choose Mailjet.
 
-3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you’d like, but we recommend sticking to something that reflects the Source itself, like `Mailjet` for nickname and `Mailjet` for the schema name.
+3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you'd like, but we recommend sticking to something that reflects the Source itself, like `Mailjet` for nickname and `Mailjet` for the schema name.
 
 4. The next page ("Overview") will surface your **Segment write key for Mailjet.** Copy this write key. 
 
-5. To finish the setup, you’ll have to go into your Mailjet account and enter this Segment write key in their integrations settings. Find the right place in Mailjet by clicking App Connections > Segment.
+5. To finish the setup, you'll have to go into your Mailjet account and enter this Segment write key in their integrations settings. Find the right place in Mailjet by clicking App Connections > Segment.
 
 6. Click **Save**.
 
-7. In Segment, click into your Mailjet Source in `segment.com/<your-workspace>/sources`. From there you’ll be able to add Destinations where you want to see email events.
+7. In Segment, click into your Mailjet Source in `segment.com/<your-workspace>/sources`. From there you'll be able to add Destinations where you want to see email events.
 
-That’s it! As you send emails, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled. 
+That's it! As you send emails, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled. 
 
 ## Components
 
@@ -41,9 +41,9 @@ Collections are the groupings of data we pull from your Source. In your warehous
 
 <table>
   <tr>
-    <th>**Collection**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Collection</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>Email Delivered</td>
@@ -63,7 +63,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
     <tr>
     <td>Email Unsubscribed</td>
     <td>Event</td>
-    <td>Recipient clicked on message’s subscription management link</td>
+    <td>Recipient clicked on message's subscription management link</td>
   </tr>
     <tr>
     <td>Email Bounced</td>
@@ -77,7 +77,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
   </tr>
 </table>
 
-<!-- Example: To query the Email Delivered table, you’d write a query like this:
+<!-- Example: To query the Email Delivered table, you'd write a query like this:
 
 ```sql
 select *
@@ -91,4 +91,4 @@ from Mailjet.email_delivered
 
 <!--  ## Send data to Mailjet
 
-The Mailjet Source works better when you also connect Mailjet as an destination. With the Mailjet **Destination**, you can use Segment to send Mailjet user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Mailjet? Head on over to our [Mailjet destination docs](/docs/integrations/mailjet/). -->
+The Mailjet Source works better when you also connect Mailjet as an destination. With the Mailjet **Destination**, you can use Segment to send Mailjet user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Mailjet? Head on over to our [Mailjet destination docs](/docs/destinations/mailjet/). -->

@@ -1,44 +1,45 @@
 ---
+title: Intercom Source
 rewrite: true
 ---
 
 [Intercom](http://intercom.com) is a customer platform with a suite of products for live chat, marketing, feedback, and support. With Intercom you will be able to send targeted messages to the right people at the right time, manage conversations with leads and customers at scale and create, organize, and publish articles to help people get answers to their questions and get started with your app.
 
-Take your company’s email analysis to the next level by **adding Intercom as a Source to Segment.** We’ll automatically collect objects like `Users` and `Conversations` and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Intercom as a Source to Segment.** We'll automatically collect objects like `Users` and `Conversations` and load them into your data warehouse. 
 
 This is an [Object Cloud Source](https://segment.com/docs/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
 
 ## Getting Started
 
-1. From your workspace’s `/sources` page, click `add source`.
+1. From your workspace's `/sources` page, click `add source`.
 
 2. Choose Intercom and press **connect**.
 
 3. OAuth into Intercom
-![](http://res.cloudinary.com/yie8zci2/image/upload/v1499287454/intercom_source_qnsoxh.png)
+![](images/intercom_source_qnsoxh.png)
 
 4. We will verify all the required permissions
 ![](images/image_1_Intercom.png)
 
-5. Configure the name for the Intercom schema in your warehouse 
+5. Configure the name for the Intercom schema in your warehouse
 ![](images/image_2_Intercom.png)
 
 6. Add a warehouse or connect Intercom to an already existing warehouse in your workspace
 ![](images/image_3_Intercom.png)
 
-Voila! We’ll begin syncing your Intercom data into Segment momentarily, and it will be written to your warehouse at your next Warehouse run.
+Voila! We'll begin syncing your Intercom data into Segment momentarily, and it will be written to your warehouse at your next Warehouse run.
 
 ## Components
 
 ### Sync
 
-Our Intercom source has a sync component, which means we’ll make requests to [their API](https://developers.intercom.io/docs/) on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we’ll grab all the Intercom objects (and their corresponding properties) according to the collections table below. The objects will be written into a designated schema corresponding to the source instance’s schema name you designated upon creation. For example, if you went with `intercom_prod`, the `users` collection will be accessible at `intercom_prod.users` in SQL.
+Our Intercom source has a sync component, which means we'll make requests to [their API](https://developers.intercom.io/docs/) on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Intercom objects (and their corresponding properties) according to the collections table below. The objects will be written into a designated schema corresponding to the source instance's schema name you designated upon creation. For example, if you went with `intercom_prod`, the `users` collection will be accessible at `intercom_prod.users` in SQL.
 
 Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Intercom.  For example,  if the `users.last_seen_ip` will be the latest value upon each sync.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, we don’t support filtering which objects or properties get synced. If you’re interested in this feature, please let us know!
+At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, please let us know!
 
 ## Collections
 
@@ -167,7 +168,7 @@ Collections are the groupings of resources we pull from your source. In your war
 | name | The name of the admin or team |
 | email | The email address of the admin. This attribute is null for teams |
 | job_title | The job title of the admin |
-| away_mode_enabled | Identifies if this admin is currently set in away mode to automatically reassign new conversations to your app’s default inbox |
+| away_mode_enabled | Identifies if this admin is currently set in away mode to automatically reassign new conversations to your app's default inbox |
 | away_mode_reassign | When in away mode you can still reply to conversations. If this is set to true then any replies will automatically go into your app's default inbox |
 | team_ids | This is a list of teams id's that you are part of. Only set if the type is 'admin' |
 | admin_ids  This is the list of admins on the team. Only set if the type is 'team' |
@@ -177,7 +178,7 @@ Collections are the groupings of resources we pull from your source. In your war
 ## Social Profiles
 
 |  Property Name | Description |
-|  ------ | ------ 
+|  ------ | ------
 | id | Optional. User ID on the service
 | name | The name of the service (e.g., twitter, facebook) |
 | url | The user homepage on the service |

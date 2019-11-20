@@ -1,15 +1,14 @@
 ---
 title: Config API
-sidebar: Overview
-redirect_from: /platform-api/
 ---
 
 The Config API enables you to programmatically manage Segment workspaces, sources, destinations and more. With the API you can:
 
 * List all your workspace Sources and Destinations to see how data flows through Segment
 * Create new Destinations - or delete them -  with a few lines of code
+* Create new users and assign them to scoped roles
 * Configure, disable, or view Sources and manage connected Destinations
-* Get a complete view of all the Sources and Destinations available in Segment’s catalog
+* Get a complete view of all the Sources and Destinations available in Segment's catalog
 * Configure a Tracking Plan to see how data conforms to your expected schema
 * Query Event Delivery metrics to build custom dashboards and alerts to monitor delivery of your events to destinations
 * Filter entire events or individual fields from reaching specific destinations
@@ -25,8 +24,9 @@ The Config API is a set of REST services under segmentapis.com:
 | [Sources][5]                | Manage workspace sources                               |
 | [Destinations][6]           | Manage workspace destinations                          |
 | [Tracking Plans][7]         | Manage workspace tracking plans                        |
-| [Event Delivery Metrics][8] | Get event delivery metrics for cloud mode destinations |
+| [Event Delivery Metrics][8] | Get event delivery metrics for cloud-mode destinations |
 | [Destination Filters][9]    | Manage destination filters                             |
+| [IAM][10]                    | Manage workspace users and roles                       |
 
 [1]: https://reference.segmentapis.com/#cd642f96-0fca-42a1-a727-e16fd33c7e8f
 [2]: https://reference.segmentapis.com/#7a63ac88-43af-43db-a987-7ed7d677a8c8
@@ -37,6 +37,7 @@ The Config API is a set of REST services under segmentapis.com:
 [7]: https://reference.segmentapis.com/#c4647e3c-fe1b-4e2f-88b9-6634841eb4e5
 [8]: https://reference.segmentapis.com/#51d89077-efd7-429b-85d4-155ac2cd07aa
 [9]: https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5
+[10]: https://reference.segmentapis.com/?version=latest#c4b14304-9112-4803-aa26-c08678cbe26a
 
 To see all the API methods and models see the [Segment Config API Reference](https://reference.segmentapis.com/).
 

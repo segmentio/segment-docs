@@ -1,6 +1,5 @@
 ---
 title: 'Spec: Alias'
-sidebar: Alias
 ---
 
 
@@ -8,9 +7,9 @@ The `alias` method is used to merge two user identities, effectively connecting 
 
 Since this is our most advanced method we have added sections to each docs page for destinations that use it:
 
-- [KISSmetrics](/docs/integrations/kissmetrics#alias)
-- [Mixpanel](/docs/integrations/mixpanel#alias)
-- [Vero](/docs/integrations/vero#alias)
+- [KISSmetrics](/docs/destinations/kissmetrics#alias)
+- [Mixpanel](/docs/destinations/mixpanel#alias)
+- [Vero](/docs/destinations/vero#alias)
 
 Here's the payload of a basic `alias` call that will associate this user's existing `id` (email address) with a new one (a database ID), with most [common fields](/docs/spec/common/) removed:
 
@@ -34,9 +33,9 @@ Beyond the common fields, the `alias` call takes the following fields:
 
 <table>
   <tr>
-    <th>**Field**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   {% include content/spec-field-previous-id.md %}
   {% include content/spec-field-user-id.md %}

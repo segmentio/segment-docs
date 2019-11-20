@@ -1,5 +1,5 @@
 ---
-title: Chatlio
+title: Chatlio Source
 beta: true
 ---
 
@@ -7,14 +7,14 @@ Chatlio is a live chat tool that allows you to talk to your customers through yo
 
 ## Getting Started
 
-1. From your workspace’s `segment.com/<your-workspace>/sources` page, click Add source.
+1. From your workspace's `segment.com/<your-workspace>/sources` page, click Add source.
 2. Choose Chatlio.
-3. Give the Source a name. The name will be used to identify this source within your workspace. You can name it however you’d like, but we recommend sticking to something that reflects the Source itself, like Chatlio.
+3. Give the Source a name. The name will be used to identify this source within your workspace. You can name it however you'd like, but we recommend sticking to something that reflects the Source itself, like Chatlio.
 4. The next page "Overview" will surface your Segment write key for Chatlio. Copy this write key.
-5. To finish the setup, you’ll have to go into your [Chatlio dashboard](https://chatlio.com/app/#/login) and enter the Segment write key in the settings towards the bottom of the page.
-6. Now when you go back to Segment, click into your Chatlio Source and you’ll be able to add other downstream Destinations where you want to see live chat events.
+5. To finish the setup, you'll have to go into your [Chatlio dashboard](https://chatlio.com/app/#/login) and enter the Segment write key in the settings towards the bottom of the page.
+6. Now when you go back to Segment, click into your Chatlio Source and you'll be able to add other downstream Destinations where you want to see live chat events.
 
-That’s it! As you engage with your users, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled.
+That's it! As you engage with your users, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled.
 
 ## Chatlio Events
 

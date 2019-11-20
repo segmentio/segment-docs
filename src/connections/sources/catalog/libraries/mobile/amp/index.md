@@ -5,7 +5,7 @@ title: Analytics for AMP
 The [Segment AMP](https://www.ampproject.org/docs/reference/components/amp-analytics#segment) component makes it easy to send your data to lots of tools without having to learn, test or implement a new AMP component every time.
 The component automatically collects default properties and sends a page view.
 
-**NOTE:** Since our AMP source sends data directly to our servers, only destinations that support [cloud-based connection modes](/docs/integrations/#connection-modes) are compatible with AMP.
+**NOTE:** Since our AMP source sends data directly to our servers, only destinations that support [cloud-mode](/docs/destinations/#connection-modes) are compatible with AMP.
 
 
 ## Getting Started
@@ -159,7 +159,7 @@ Our AMP Source doesn't automatically collect UTM parameters for you but you can 
 
 ## AMP Linker
 
-In order to maintain a merged session for a user navigating from an AMP page served from AMP cache to a non-AMP page, you will need to leverage the [AMP Linker](https://amphtml.wordpress.com/2018/09/17/measuring-user-journeys-across-the-amp-cache-and-your-website/) feature. It works by decorating outgoing links from AMP cache with params such as AMP Client ID in a URL parameter and gets written into a first-party cookie.
+In order to maintain a merged session for a user navigating from an AMP page served from AMP cache to AMP pages hosted on your domain, you will need to leverage the [AMP Linker](https://amp.dev/documentation/examples/advertising-analytics/joining_analytics_sessions/) feature. It works by decorating outgoing links from AMP cache with params such as AMP Client ID in a URL parameter and gets written into a first-party cookie.
 
 In order to enable this feature, you will need to include a `linkers` object set to `true` within your configuration.
 
@@ -187,7 +187,7 @@ In order to enable this feature, you will need to include a `linkers` object set
 No. All AMP data is sent from Google's servers to our server-side API and subsequently only onto our server-side Destinations. You will only be able to use our server-side destinations and their relevant setting. For example, for Google Analytics, please use the "Server-side Tracking ID".
 
 ### How do I identify users?
-Because AMP is static, it doesn’t provide many options for persistently identifying users. AMP provides a basic cookie mechanism called an AMP Client ID which is a uniquely generated cookie for every unique end user's AMP session. Depending on Google's caching settings, you may receive multiple AMP Client IDs for the same user. Segment will [capture](https://github.com/ampproject/amphtml/blob/b8abe2137f1a50ca6173a258fced64e41a46c763/extensions/amp-analytics/0.1/vendors.js#L1629-L1659) this AMP Client ID as an `anonymous_id` and it will be of this format: `amp-REDmCPH4F0QX44kCFomrcA`.
+Because AMP is static, it doesn't provide many options for persistently identifying users. AMP provides a basic cookie mechanism called an AMP Client ID which is a uniquely generated cookie for every unique end user's AMP session. Depending on Google's caching settings, you may receive multiple AMP Client IDs for the same user. Segment will [capture](https://github.com/ampproject/amphtml/blob/b8abe2137f1a50ca6173a258fced64e41a46c763/extensions/amp-analytics/0.1/vendors.js#L1629-L1659) this AMP Client ID as an `anonymous_id` and it will be of this format: `amp-REDmCPH4F0QX44kCFomrcA`.
 
 ### How do I manager user identities client-side and server-side?
 There is no user identity management client-side with AMP, so to join user sessions together you'll need to capture the AMP Client ID on your server-side and join it with your `user_id` in your warehouse.

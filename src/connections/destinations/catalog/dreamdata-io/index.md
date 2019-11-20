@@ -1,7 +1,8 @@
 ---
-title: Dreamdata IO
+title: Dreamdata IO Destination
+rewrite: true
 ---
-[Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) uses your Segment data to deliver multitouch, account-based attribution. This enables B2B companies to understand the impact on revenue of every touch in their customer journey.
+[Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) uses your Segment data to deliver multitouch, per account attribution. This enables B2B companies to understand the impact on revenue of every touch in their customer journey.
 
 This destination is maintained by [Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, please [reach out to their team](mailto:friends@dreamdata.io).
 

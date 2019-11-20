@@ -1,6 +1,6 @@
 ---
-title: ActiveCampaign
-redirect_from: '/integrations/activecampaign/'
+rewrite: true
+title: ActiveCampaign Destination
 ---
 
 [ActiveCampaign](https://www.activecampaign.com) is an integrated email marketing, marketing automation, and small business CRM. It allows you to send beautiful newsletters, setup behavioral based automations, and benefit from sales automation. This destination is maintained by ActiveCampaign. For any issues with the destination, please [reach out to their team](https://www.activecampaign.com/contact/).
@@ -13,8 +13,8 @@ This document was last updated on March 27, 2018. If you notice any gaps, outdat
 
 {% include content/connection-modes.md %}
 
-1.  From your Segment UI’s Destinations page click on "Add Destination".
-2.  Search for "Active Campaign" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1.  From your Segment UI's Destinations page click on "Add Destination".
+2.  Search for "Active Campaign" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3.  Add your API URL and API Key which can be found in your ActiveCampaign UI Settings page under the Developer tab.
 4.  Since the Segment ActiveCampaign destination integration is 100% handled through Segment, you don't need to install ActiveCampaign site tracking or event tracking Javascript code.
 
@@ -23,7 +23,7 @@ This document was last updated on March 27, 2018. If you notice any gaps, outdat
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
 
-```
+```js
 analytics.page();
 ```
 
@@ -36,7 +36,7 @@ When you call `page`, we will send that event to ActiveCampaign as a `site track
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
 
-```
+```js
 analytics.identify('ze8rt1u89', {
   firstName: 'Zaphod',
   lastName: 'Beeblebrox',
@@ -80,7 +80,7 @@ ActiveCampaign also supports updating a contact's custom fields with this integr
 
 For example, if you have a contact in ActiveCampaign with these custom fields:
 
-![](https://d226aj4ao1t61q.cloudfront.net/jda1490xo_screenshot2015-12-07at3.58.27pm.png)
+![](images/jda1490xo_screenshot2015-12-07at3.58.27pm.png)
 
 You can update those fields using this identify call:
 

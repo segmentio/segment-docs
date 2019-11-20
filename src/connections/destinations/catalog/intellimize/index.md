@@ -1,5 +1,5 @@
 ---
-title: Intellimize
+title: Intellimize Destination
 beta: true
 ---
 
@@ -24,5 +24,3 @@ When you call any of these events, Segment will relay the events to Intellimize'
 ## Settings
 
 You will need to enter your API key in the Destination Settings page for Intellimize. To retrieve your API key, reach out to your account representative at Intellimize or to segment@intellimize.com.
-
-{% include content/integration-foot.md %}

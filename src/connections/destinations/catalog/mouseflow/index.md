@@ -1,5 +1,6 @@
 ---
-title: Mouseflow
+rewrite: true
+title: Mouseflow Destination
 ---
 
 [Mouseflow](https://mouseflow.com/) is a session replay and heatmap tool that shows how visitors click, move, scroll, browse, and pay attention on websites. It helps clients simplify their analytics to make decisions that matter. The `analytics.js` Mouseflow Destination is open-source. You can browse the code [on GitHub](hhttps://github.com/segment-integrations/analytics.js-integration-mouseflow).
@@ -10,10 +11,10 @@ This document was last updated on April 28, 2018. If you notice any gaps, outdat
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Mouseflow" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Mouseflow" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your Site ID within the Segment Settings UI. You can find this in [your Mouseflow UI](http://help.mouseflow.com/knowledge_base/topics/how-do-i-find-my-mouseflow-site-id).
-4. In about 5-10 minutes the CDN will be updated and Mouseflow snippet will be initialized onto your page.
+4. In about 45 minutes the CDN will be updated and Mouseflow snippet will be initialized onto your page.
 
 ## Page
 
