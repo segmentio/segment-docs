@@ -1,5 +1,5 @@
 ---
-title: Privacy Portal Overview
+title: Privacy Tools Overview
 ---
 
 Segment includes a suite of Privacy tools to help your organization comply with regulations like the GDPR and the CCPA.

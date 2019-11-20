@@ -4,15 +4,13 @@ feedback: false
 hide-feedback: true
 ---
 
-[email]: mailto:legal@segment.com
-
 > Effective as of July 18th, 2018.
 
 <br />
 
 This Privacy Policy explains how Segment.io, Inc. ("Segment", or "we", "us" or "our") collects, uses and shares your personal information if you visit www.segment.com  (the "Site") or register to use our services, and explains your choices for how we handle your personal information.  For convenience, the Site and our services are collectively referred to as the "Service."
 
-Segment respects your privacy rights and is committed to transparency in how we collect, use and share your personal information.  If you have any questions or concerns about your personal information or this Privacy Policy, email us at privacy@segment.com.
+Segment respects your privacy rights and is committed to transparency in how we collect, use and share your personal information.  If you have any questions or concerns about your personal information or this Privacy Policy, email us at [privacy@segment.com](mailto:privacy@segment.com).
 
 Users in the European Economic Area should be sure to read the important information provided [here](#Additional-Information-for-European-Union).
 
@@ -149,7 +147,7 @@ We do not share or sell the personal information that you provide us with other 
 
 ### Access, Update, Correct or Delete Your Information
 
-All Segment account holders may review, update, correct or delete the personal information in their registration profile by logging into their account. Segment account holders may also contact us at privacy@segment.com to accomplish the foregoing or if you have additional requests or questions.
+All Segment account holders may review, update, correct or delete the personal information in their registration profile by logging into their account. Segment account holders may also contact us at [privacy@segment.com](mailto:privacy@segment.com) to accomplish the foregoing or if you have additional requests or questions.
 
 ### Access to Data Controlled by our Clients
 Segment has no direct relationship with the individuals whose personal information is contained within the Client Services Data processed by the Service. An individual who seeks to access, correct or delete personal information provided by our Clients should direct their request the Client.  Similarly, if your Service account is administered by your employer or other organization, you should direct your request regarding your account or personal information (including requests to access, correct or delete it) to the organization's administrator.  See the [Organization-Administered Accounts](#Organization-Administered-Accounts) section below for details. You may also contact us at [privacy@segment.com](mailto:privacy@segment.com) if you have additional questions or concerns.
@@ -334,7 +332,7 @@ Segment.io, Inc. ("**Segment**" or "**we**", "**us**" or "**our**") complies wit
 
 **Purposes of data processing.**  We collect, use and share Segment User Data for the purposes described in our Privacy Policy.  We process Services Data for the purpose of providing our online services to our customers, which may include accessing and processing the data to provide the services, to correct and address technical or service problems, to follow instructions of the customer who submitted the data, or in response to contractual requirements.
 
-**Inquiries and complaints.** If you believe Segment maintains your personal data within the scope of our Privacy Shield certification, you may direct any inquiries or complaints concerning our Privacy Shield compliance to privacy@segment.com.  If you are located in the EEA or Switzerland and have an unresolved privacy or data use concern that we have not addressed satisfactorily, please contact our U.S.-based third party dispute resolution provider (free of charge) at [https://feedback-form.truste.com/watchdog/request](https://feedback-form.truste.com/watchdog/request).
+**Inquiries and complaints.** If you believe Segment maintains your personal data within the scope of our Privacy Shield certification, you may direct any inquiries or complaints concerning our Privacy Shield compliance to [privacy@segment.com](mailto:privacy@segment.com).  If you are located in the EEA or Switzerland and have an unresolved privacy or data use concern that we have not addressed satisfactorily, please contact our U.S.-based third party dispute resolution provider (free of charge) at [https://feedback-form.truste.com/watchdog/request](https://feedback-form.truste.com/watchdog/request).
 
 **Arbitration.**  If you are located in the EEA or Switzerland and neither Segment nor our dispute resolution provider resolves your complaint, you may be entitled to invoke binding arbitration under certain conditions more fully described on the [Privacy Shield website](https://www.privacyshield.gov/article?id=How-to-Submit-a-Complaint).
 

@@ -23,7 +23,7 @@ Event based (mostly email sources like Klaviyo, Vero, Drip, etc.) _do create MTU
 ![](images/asset_otFE2fhI.png)
 
 
-## How do I find out my usage data?
+## How do I see my usage data?
 
 If you have questions about your data usage or how it relates to your bill, we recommend logging into your Segment workspace, clicking on the top left arrow in the navigation bar, and going to the Usage page within the Usage & Billing category.
 
@@ -32,11 +32,11 @@ If you have questions about your data usage or how it relates to your bill, we r
 On that page you will see what plan you're on, what data volumes your plan includes, and how much data you used during a billing period. If you have used data volumes past what your bill includes, the page will provide information about what volume of data was in overage and what your overage rate is.
 
 
-## What is the difference between an event and an object?"
+## What is the difference between an event and an object?
 
 Events append only data streams, akin to "facts" in data warehousing parlance, and objects are dimensional values that may be updated based on changes in state upstream. Each source will note if it is object-based or event-based in its documentation.
 
-## How does my event and object volume impact my pricing?"
+## How does my event and object volume impact my pricing?
 
 We allow for each workspace to send up to 250 API calls + objects per MTU. This means that on a plan with a 10,000 MTU limit you can send up to 2.5M API calls + objects per month. Most customers will never hit this limit; business plans are eligible for custom limits.
 
@@ -55,7 +55,7 @@ We allow for each workspace to send up to 250 API calls + objects per MTU. This 
 We allow for each workspace to send up to 250 API calls + objects per MTU. This means that on a plan with a 10,000 MTU limit you can send up to 2.5M API calls + objects per month. Most customers will never hit this limit; business plans are eligible for custom limits.
 
 
-## Why is my MTU count higher or lower than the user count I see in my downstream destinations/other tools?"
+## Why is my MTU count different from what I see in my destinations/other tools?
 
 Comparing numbers between any two end-tools (or between Segment and an end tool) is rarely going to produce identical numbers. Each tool accepts and defines incoming data slightly differently, and they will not always match 100% depending on what types of data the tool accepts.
 
