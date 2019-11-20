@@ -2,7 +2,7 @@
 title: Use OAuth to Build a Two-Click Enable Flow
 ---
 
-> If you're a customer who just wants to build a simple script or app against a single workspace, you may want to use [Personal Access Tokens](/docs/config-api/authentication).
+> If you're a customer who just wants to build a simple script or app against a single workspace, you may want to use [Workspace Access Tokens](/docs/config-api/authentication).
 
 ## Concepts
 
@@ -63,10 +63,14 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
    ![Step 7](images/enable-with-segment/step7.png)
 
    > You **must** specify `http://localhost:8888/auth/segment/callback` in the Developer Center list of redirect URLs. The redirect URLs serve as a whitelist. Without the whitelisted URL, the OAuth flow in the `partnerapp` won't work.
-4. Finally, create a component of your choice in Developer Center.
+4. Optionally set a new scope. The options, from most to least restrictive are:
+  * `destination/<SLUG>` (e.g. `destination/airship`) -- create or update a single destination type on a single source a user consents to. This allows you to manage a secret like `apiKey` on your company's destination automatically but nothing else. Note that you may need to update the scope to the right destination slug if your app name differs.
+  * `workspace:read` -- read-only access to all the settings and metadata on a single workspace a user consents to. This allows you to build integrations like a dashboard that gets and displays a workspace event delivery metrics
+  * `workspace` -- full acess to all the settings on a single workspace a user consents to. This allows you to build deep integrations that create sources, destinations and more.
+5. Finally, create a component of your choice in Developer Center.
    ![Step 8](images/enable-with-segment/step8.png)
 
-   > You **must** create at least one component. Otherwise, Segment can't create an instance of your destination to create an Install of your App, because the destination doesn't exist!
+   > You generally will create a component and build a flow to create an Install of your app. However you can also build a flow to create an install of an existing destination by changing the OAuth scope.
 
 ### 3. Run through an example OAuth flow
 
@@ -160,7 +164,7 @@ You can refresh the token with the installation token API. The token expires in 
 $ INSTALL_NAME=installs/7
 $ curl \
   -u "$CLIENT_ID:$CLIENT_SECRET" \
-  http://localhost/v1beta/$INSTALL_NAME/token
+  https://platform.segmentapis.com/v1beta/$INSTALL_NAME/token
 ```
 
 ```json
@@ -192,7 +196,7 @@ The example below shows how you would get a users workspace if you had any of th
 $ INSTALL_TOKEN=YL8a0w-Boz1EgZgmD2ELZvsxakjqSMwO8xe7tV-ToSk.nKaLX2QHocqalHR3O4BdoYdcopk3hjW4izYHMG14cxQ
 $ curl \
   -H "Authorization: Bearer $INSTAL_TOKEN" \
-  http://localhost/v1beta/workspaces
+  https://platform.segmentapis.com/v1beta/workspaces
 ```
 
 ```json
