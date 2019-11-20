@@ -1,5 +1,5 @@
 ---
-title: Sources
+title: Sources Overview
 landing: true
 related:
   - "/connections/sources/catalog/"

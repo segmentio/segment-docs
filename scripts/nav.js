@@ -4,7 +4,7 @@ const fs = require('fs');
 const fm = require('front-matter');
 const yaml = require('js-yaml');
 
-const ignore = [ 'connections/**', '_*/**', '*.md' ];
+const ignore = [ 'catalog/**', '_*/**', '*.md' ];
 
 const capitalize = (str) => str.charAt(0).toLocaleUpperCase() + str.slice(1);
 const getTitle = (str) => str.split('-').map(capitalize).join(' ');

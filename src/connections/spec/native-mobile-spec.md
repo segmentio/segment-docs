@@ -1,5 +1,5 @@
 ---
-title: "What is the native mobile spec?"
+title: What is the native mobile spec?
 ---
 
 # What is the Native Mobile Spec?

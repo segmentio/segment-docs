@@ -1,6 +1,5 @@
 ---
-title: Destinations
-rewrite: true
+title: Destinations Overview
 ---
 
 ## Sources vs Destinations

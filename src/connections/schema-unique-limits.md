@@ -1,5 +1,5 @@
 ---
-title: "How many unique events and properties can be logged in my Segment Schema table?"
+title: Are there limits on my Segment Schema?
 ---
 
 **How many unique events can be logged in my Segment Schema table?**

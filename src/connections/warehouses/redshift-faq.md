@@ -1,6 +1,8 @@
 ---
-title: "What are the limitations of Redshift clusters and our Redshift connector?"
+title: Redshift cluster and Redshift connector limitations
 ---
+
+> "Are there limitations of Redshift clusters and our Redshift connector?"
 
 While Redshift clusters are incredibly scalable and efficient, limitations are imposed to ensure that clusters maintain performance.
 
