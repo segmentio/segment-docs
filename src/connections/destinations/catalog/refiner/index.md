@@ -1,5 +1,6 @@
 ---
-title: Refiner
+rewrite: true
+title: Refiner Destination
 ---
 [Refiner](https://refiner.io?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a user qualification and lead scoring platform for B2B SaaS companies with a free trial or freemium model. Refiner helps self-service SaaS providers to identify and convert more high-revenue accounts.
 

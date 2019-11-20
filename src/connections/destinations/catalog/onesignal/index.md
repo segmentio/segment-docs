@@ -1,9 +1,10 @@
 ---
-title: OneSignal
+title: OneSignal Destination
 ---
+
 ## Getting Started
 
-After integrating Segment with your app, enable OneSignal in your Segment destinations. Use your OneSignal App ID to enable the destination. This ID can be found on the settings page for your app on the OneSignal dashboard.
+After destination Segment with your app, enable OneSignal in your segment destinations. Use your OneSignal App ID to enable the destination. This ID can be found on the settings page for your app on the OneSignal dashboard.
 
 OneSignal will only track new users. If you have existing push notification data in another service, please get in touch with us to transfer it over: support@onesignal.com
 
@@ -19,7 +20,7 @@ OneSignal will store the following data fields about a user:
 
 - `App Version`
 - `Device Type`
-- `Device Model`
+- `Device-model`
 - `Device OS Version`
 - `Push Notification Token` (If available)
 - `Advertising ID` (If available)
@@ -45,5 +46,3 @@ OneSignal will also assign the following custom tags based on user attributes or
 - `Website`
 
 All of the above values can be used to deliver and schedule notifications to your users from the OneSignal dashboard.
-
-{% include content/integration-foot.md %}

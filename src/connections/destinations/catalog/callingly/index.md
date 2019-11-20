@@ -1,5 +1,6 @@
 ---
-title: Callingly
+title: Callingly Destination
+rewrite: true
 ---
 
 [Callingly](https://callingly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically gets your sales team on the phone with your incoming leads within seconds, generating better results and happy customers.

@@ -1,5 +1,6 @@
 ---
-title: Serenytics
+rewrite: true
+title: Serenytics Destination
 ---
 [Serenytics](https://www.serenytics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides an all-in-one data platform to create dashboards. It comes with an embedded Redshift data warehouse, an ETL, a Python scheduler and a  dashboard editor. It is dedicated to small/medium data teams looking for a full-featured data stack who don't want to create and maintain it internally.
 

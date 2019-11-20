@@ -1,8 +1,7 @@
 ---
-title: Zapier
+rewrite: true
 beta: true
-redirect_from:
-- /integrations/zapier/
+title: Zapier Destination
 ---
 [Zapier](https://zapier.com/apps/integrations) empowers businesses to create processes and systems that let computers do what they do best - automating information transfer, allowing humans to be more productive.
 

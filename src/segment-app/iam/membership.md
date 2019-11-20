@@ -9,7 +9,7 @@ title: Manage members
 
    ![](images/access-mngt-table.png)
 2. Click **Invite Team Member**.
-3. Enter the user’s email address and choose their roles.
+3. Enter the user's email address and choose their roles.
 
    _Note: If you are on a Developer or Team plan, only the `workspace owner` and `source admin` roles are available._
    ![](images/invite-user.png)

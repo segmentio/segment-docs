@@ -82,7 +82,7 @@ The "config" object in the example above has four values that you can set:
 
 You can begin to use the library by invoking the identify call as it allows you to let you identify the user in your app. It also lets you record traits about the user, like their email, name, account type, etc.
 
-When you call this method that is ultimately up to you. It is recommended that you try to call it as early as possible in a block of code that already has your user information instantiated and ready to populate. If however, you’re doing an anonymous tracking you can omit this call entirely and supply an anonymousId field to the track calls.
+When you call this method that is ultimately up to you. It is recommended that you try to call it as early as possible in a block of code that already has your user information instantiated and ready to populate. If however, you're doing an anonymous tracking you can omit this call entirely and supply an anonymousId field to the track calls.
 
 This is what an identify call looks like in BrightScript with your library instantiated with the above example:
 
@@ -102,7 +102,7 @@ m.library.identify("exampleUserId", exampleTraitsObject, exampleOptionsObject)
 After identifying the user you can start to invoke the other methods calls library (track, screen, group and alias) with the same userID to associate them within the segment analytics system.
 
 ## Identify
-Identify lets you tie a user to their record trait about them. It includes a unique user ID and any optional traits you know about them. We recommend calling identify a single time when the user’s account is first created, and only identifying again later when their traits change.
+Identify lets you tie a user to their record trait about them. It includes a unique user ID and any optional traits you know about them. We recommend calling identify a single time when the user's account is first created, and only identifying again later when their traits change.
 
 An example of the method call would be as follows:
 
@@ -256,7 +256,7 @@ m.library.alias(userId, options)
 Currently, this library leverages the Segment batch API endpoint, which is why you are able to set a queue limit on the config object before a method gets sent out as a request. You simply set the queueSize to 1 on config object to get the same effect for a message sending a single request.
 
 ### What is the size limit of each request?
-The size limit is 500k characters on the data body per request as noted on Segment batch API, which would be the parameters you’re using for each message (identify, track, screen, group, alias). The size limit takes precedence over the queue limit in determining when a request gets sent out.
+The size limit is 500k characters on the data body per request as noted on Segment batch API, which would be the parameters you're using for each message (identify, track, screen, group, alias). The size limit takes precedence over the queue limit in determining when a request gets sent out.
   
 So for example, in the case you add a track message that is just below 500k characters, then add a group message that tips the data size over 500k, the system will send out the message that has been queued before (track) and then queue in the next message (group) call. Single messages that are over 500k characters in size will be rejected from the library.
 
@@ -266,4 +266,4 @@ If you want to see how big your request is getting you can use set the debug pro
 You can follow [this guide](https://www.howtogeek.com/290787/how-to-enable-developer-mode-and-sideload-roku-apps/) to set your device into developer mode and [this one](https://sdkdocs.roku.com/display/sdkdoc/Debugging+Your+Application) to debug and surface logs out of your app. There are currently two levels of debugging which are "DEBUG" and "ERROR".
 
 ### Does the Roku library support device-mode integrations?
-The Roku library only supports cloud-mode destinations. If you have a need for a device mode integration in your Roku application please [reach out](https://segment.com/help/contact/). 
+The Roku library only supports cloud-mode destinations. If you have a need for a device-mode integration in your Roku application please [reach out](https://segment.com/help/contact/). 

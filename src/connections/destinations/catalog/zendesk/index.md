@@ -1,10 +1,11 @@
 ---
-title: Zendesk
+rewrite: true
+title: Zendesk Destination
 ---
 
 [Zendesk](https://www.zendesk.com/support/documentation/) is a premier, cloud-based customer service application. It was designed with one purpose in mind: to improve communication between a company and its customers. Their products allow businesses to be more reliable, flexible, and scalable. They help improve communication and make sense of massive amounts of data. Above all, they work together to build the best experience for your customers.
 
-This document was last updated on April 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [please let us know!](https://segment.com/help/contact)
+This document was last updated on April 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [please let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
@@ -12,8 +13,8 @@ This document was last updated on April 30, 2018. If you notice any gaps, outdat
 {% include content/connection-modes.md %}
 
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Zendesk" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Zendesk" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. There are two ways to authenticate your Zendesk account with Segment:
    * Use the standard email and password you use to Sign In to your Zendesk account. In the Zendesk settings, add your email in the **Email** setting and your password in the **Password** setting.
    * Use Zendesk OAuth with a unique token. Get the corresponding token from your Zendesk account: **Settings > Channels > API** and under the Settings Tab choose the corresponding token from the "Active API Tokens" list. In the Zendesk settings, add your `email/token` in the **Email** setting (i.e. `peter@intech.com/token` - use the actual word token in your email address) and add the actual token in the **Password** setting.
@@ -36,7 +37,7 @@ When you call `identify` we will insert or update a user record in Zendesk. We'l
 
 Here's an example:
 
-{% comment %}\{\{\{api-example '{
+{% comment %} api-example '{
   "action": "identify",
   "userId": "12345",
   "traits": {
@@ -46,7 +47,21 @@ Here's an example:
     "organizationId": 6789,
     "phone": "763-555-2342"
   }
-}' {% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "action": "identify",
+  "userId": "12345",
+  "traits": {
+    "name": "Kobe Bryant",
+    "email": "kobe@lakers.com",
+    "timezone": "America/Los_Angeles",
+    "organizationId": 6789,
+    "phone": "763-555-2342"
+  }
+}
+```
 
 By default, Users in Zendesk have many standard attributes associated with a single User record. Segment, at this time, is mapping to a subset of these. If you attempt to send data to a Zendesk attribute that we have not yet mapped, it will create a custom field for this (it will not update the existing attribute).
 
@@ -114,7 +129,7 @@ When you call `group` we will insert or update an organization in Zendesk. We'll
 
 Here's an example:
 
-{% comment %}\{\{\{api-example '{
+{% comment %} api-example '{
   "action": "group",
   "groupId": "908172409",
   "userId": "6789",
@@ -123,7 +138,20 @@ Here's an example:
     "url": "https://lakers.com",
     "deleted": false
   }
-}' {% endcomment %}
+}'}}} {% endcomment %}
+
+```js
+{
+  "action": "group",
+  "groupId": "908172409",
+  "userId": "6789",
+  "traits": {
+    "name": "LA Lakers",
+    "url": "https://lakers.com",
+    "deleted": false
+  }
+}
+```
 
 Every time you call group, we will also link the organization to the user making the request.
 

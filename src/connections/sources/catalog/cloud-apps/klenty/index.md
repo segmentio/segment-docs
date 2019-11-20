@@ -1,5 +1,5 @@
 ---
-title: Klenty
+title: Klenty Source
 ---
 [Klenty](https://www.klenty.com/) helps sales teams to send personalized emails and automated follow-ups at scale. With Klenty, your sales team can completely automate their email outreach and focus on closing more deals.
 
@@ -11,7 +11,7 @@ _**NOTE:** The Klenty Source is currently in beta, which means that they are sti
 
 ## Getting Started
 
-1. From your Segment UI’s Sources page click on "Add Source".
+1. From your Segment UI's Sources page click on "Add Source".
 2. Search for "Klenty" within the Sources Catalog and confirm by clicking "Connect".
 3. Give the Source a nickname and follow the setup flow to "Add Source". The nickname is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Copy the Write key from the Segment UI and log in to your Klenty account - navigate to Settings > Integrations > Segment Integration and paste the key to connect.

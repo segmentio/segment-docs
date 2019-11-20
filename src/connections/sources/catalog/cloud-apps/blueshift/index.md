@@ -1,27 +1,27 @@
 ---
-title: Blueshift
+title: Blueshift Source
 ---
 
 Blueshift is an AI powered customer engagement platform for growth marketers. With Blueshift, you can setup programmatic cross-channel marketing campaigns across Email, Mobile, Website and other channels.
 
-Take your company’s email analysis to the next level by adding Blueshift as a Source to Segment. We’ll automatically collect email events like **Email Delivered** and **Email Opened**, forward them to your destinations, and load them into your data warehouse.
+Take your company's email analysis to the next level by adding Blueshift as a Source to Segment. We'll automatically collect email events like **Email Delivered** and **Email Opened**, forward them to your destinations, and load them into your data warehouse.
 
-In your favorite BI or analytics tool, you’ll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you’ll be able to join your Blueshift data with the event data you’re already sending through Segment to analyze the down-funnel effects of your emails.
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Blueshift data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails.
 
 ## Getting Started
 
-1. From your workspace’s segment.com/<your-workspace>/sources page, click Add source.
+1. From your workspace's segment.com/<your-workspace>/sources page, click Add source.
 2. Choose Blueshift.
-3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you’d like, but we recommend sticking to something that reflects the Source itself, like Blueshift for nickname and Blueshift for the schema name.
+3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you'd like, but we recommend sticking to something that reflects the Source itself, like Blueshift for nickname and Blueshift for the schema name.
 4. The next page ("Overview") will surface your Segment write key for Blueshift. Copy this write key.
-5. To finish the setup, you’ll have to go into your Blueshift account and enter this Segment write key in their destinations settings. Find the right place in Blueshift by clicking Account > Webhooks:
+5. To finish the setup, you'll have to go into your Blueshift account and enter this Segment write key in their destinations settings. Find the right place in Blueshift by clicking Account > Webhooks:
 
-![](https://i.gyazo.com/39c3955d4ea74e0a8ff07ef6651d4b30.png)
+![](images/39c3955d4ea74e0a8ff07ef6651d4b30.png)
 
 6. Click Save.
-7. Now when you go back to Segment, click into your Blueshift Source and you’ll be able to add other downstream Destinations where you want to see email events.
+7. Now when you go back to Segment, click into your Blueshift Source and you'll be able to add other downstream Destinations where you want to see email events.
 
-That’s it! As you send emails, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled.
+That's it! As you send emails, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled.
 
 ## Blueshift Events
 
@@ -54,7 +54,7 @@ Below is a table of events that Blueshift sends to Segment. These are the events
   </tr>
   <tr>
    <td>Unsubscribe</td>
-   <td>Recipient clicked on message’s subscription management link</td>
+   <td>Recipient clicked on message's subscription management link</td>
   </tr>
 </table>
 
@@ -140,4 +140,4 @@ Blueshift sends their `customer_id` associated with the message recipient as the
 
 ## Send Data to Blueshift
 
-The Blueshift Source works better when you also connect Blueshift as a downstream destination within Segment. With the Blueshift Destination, you can send Blueshift user and event data, which you can use to trigger email campaigns. Want to start sending website or mobile to Blueshift? Head on over to our [Blueshift destination docs](https://segment.com/docs/integrations/blueshift/).
+The Blueshift Source works better when you also connect Blueshift as a downstream destination within Segment. With the Blueshift Destination, you can send Blueshift user and event data, which you can use to trigger email campaigns. Want to start sending website or mobile to Blueshift? Head on over to our [Blueshift destination docs](/docs/destinations/blueshift/).

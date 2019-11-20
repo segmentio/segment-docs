@@ -1,5 +1,6 @@
 ---
-title: Kustomer
+title: Kustomer Destination
+rewrite: true
 ---
 [Kustomer](https://www.kustomer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the next-generation customer management platform for the people-first enterprise. It enables support teams to get a holistic view of the customers they are engaging with, resulting in meaningful interactions between businesses and customers.
 
@@ -31,7 +32,7 @@ analytics.page('Pricing', {
 });
 ```
 
-Page calls will sent as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it will cluster this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn’t have session tracking [here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/)).
+Page calls will sent as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it will cluster this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn't have session tracking [here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/)).
 
 
 ## Screen
@@ -43,7 +44,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 properties:@{ @"kustomer_session_id": @"abc123" }];
 ```
 
-Screen calls will sent as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it will cluster this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn’t have session tracking [here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/)).
+Screen calls will sent as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it will cluster this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn't have session tracking [here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/)).
 
 ## Identify
 
@@ -77,4 +78,4 @@ analytics.track("Registered", {
 });
 ```
 
-Track calls will sent as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it will cluster this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn’t have session tracking [here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/)).
+Track calls will sent as a `tracking event` to Kustomer on the timeline of the customer who was tracked. If the `kustomer_session_id` is included, it will cluster this tracking event into a single "session" on the customer's timeline. If no `kustomer_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn't have session tracking [here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/)).

@@ -1,5 +1,6 @@
 ---
-title: FunnelFox
+title: FunnelFox Destination
+rewrite: true
 ---
 [FunnelFox](https://www.funnelfox.com/integrations/segment?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to sort your sales operations in just a few clicks. Integrate your sales tools to eliminate data silos, get accurate CRM data to make the right decisions and know when opportunities require attention.
 

@@ -1,9 +1,9 @@
 ---
-title: 'Frequently Asked Questions'
+title: Personas Frequently Asked Questions
 ---
 
 ## Can I use the Profile API on the client-side?
-For security reasons, we require the Profile API only be used server-side. The Profile API allows you to look up data about any user given an identifier (e.g. email, `anonymousId`, or `userId`) and an authorized access secret. While this enables powerful personalization workflows, it could also let your customers’ data fall into the wrong hands if the access secret were exposed on the client.
+For security reasons, we require the Profile API only be used server-side. The Profile API allows you to look up data about any user given an identifier (e.g. email, `anonymousId`, or `userId`) and an authorized access secret. While this enables powerful personalization workflows, it could also let your customers' data fall into the wrong hands if the access secret were exposed on the client.
 
 Instead, by creating an authenticated personalization endpoint server-side backed by the Personas Profile API, you can serve up personalized data to your users without the risk of their information falling into the wrong hands.
 
@@ -44,11 +44,11 @@ Identity Graph automatically collects a rich set of external IDs without any add
 4. Common external IDs (`email`)
 5. Cross domain analytics IDs (`cross_domain_id`)
 
-If you want Identity Graph to operate on a different custom ID, you can pass it in using `context.externalIds` on an `identify()` or `track()`. If you’re interested in this feature, please contact your CSM to discuss the best way to implement this feature.
+If you want Identity Graph to operate on a different custom ID, you can pass it in using `context.externalIds` on an `identify()` or `track()`. If you're interested in this feature, please contact your CSM to discuss the best way to implement this feature.
 
 ## How do historical lookback windows work?
 
-Personas allows you to compute new traits and audiences of your users based on their entire customer journey, and all historical data you’ve tracked with Segment.
+Personas allows you to compute new traits and audiences of your users based on their entire customer journey, and all historical data you've tracked with Segment.
 
 When you create a new computed trait or audience, you include a lookback window that determines how far back into the past the trait or audiences will be computed.
 
@@ -67,11 +67,11 @@ The trait and audience will automatically update going forward as historical eve
 Each incoming event is analyzed and external IDs are extracted (`user_id`, `anonymous_id`, `email`). The simplified algorithm works as follows:
 
 - We first search the Identity Graph for incoming external IDs.
-- If we find no users, we’ll create one.
+- If we find no users, we'll create one.
 - If one user is returned, then that user is chosen.
 - If multiple users are returned, our merge protection kicks in and checks the validity of all of the provided external IDs.
-  - If the merge protection checks pass, we’ll create a new merge connection between those two users. The first user profile ever created becomes the parent profile, and all merged users become child profiles.
-  - If the merge protection checks fail, we’ll discard the lowest precedence external ID and re-run the algorithm.
+  - If the merge protection checks pass, we'll create a new merge connection between those two users. The first user profile ever created becomes the parent profile, and all merged users become child profiles.
+  - If the merge protection checks fail, we'll discard the lowest precedence external ID and re-run the algorithm.
 
 ![](images/merging_1.png)
 
@@ -82,16 +82,16 @@ Each incoming event is analyzed and external IDs are extracted (`user_id`, `anon
 ## Is all matching deterministic, or is there any support for probabilistic matching?
 All Profile matching is deterministic and based on first-party data that you've collected.
 
-We do not support probabilistic matching. We’ve found that most marketing automation use cases require 100% confidence that a user is who you think they are (sending an email, delivering a recommendation, etc). We’ve found the best way to support this is through a deterministic identity algorithm.
+We do not support probabilistic matching. We've found that most marketing automation use cases require 100% confidence that a user is who you think they are (sending an email, delivering a recommendation, etc). We've found the best way to support this is through a deterministic identity algorithm.
 
 ## Should I use Personas if I already have a marketing automation tool?
 Personas pairs well with marketing automation tools on the Segment platform.
 
 You can think of Personas as the brain on top of your raw data streams, synthesizing those event streams into profiles, relationships, clusters, and new insights about your users.
 
-From there, your marketing, product, sales, and success teams have channels on which they can act on a user’s needs.
+From there, your marketing, product, sales, and success teams have channels on which they can act on a user's needs.
 
-They can reach out via livechat, email, push notification, or text. Success can better prioritize their support ticket in Zendesk, or hone in on the customer’s problem faster. On the sales side, they can focus on the products a prospect is most engaged with, or focus on getting the customer on the right plan. Your product team can serve specific recommendations, based on that user’s specific needs next time they visit your site.
+They can reach out via livechat, email, push notification, or text. Success can better prioritize their support ticket in Zendesk, or hone in on the customer's problem faster. On the sales side, they can focus on the products a prospect is most engaged with, or focus on getting the customer on the right plan. Your product team can serve specific recommendations, based on that user's specific needs next time they visit your site.
 
 Today, most businesses are forced to think about each channel as individual siloes. With Personas, all channels — including your marketing automation tool — can be powered by the same, singular understanding of your users.
 
@@ -111,7 +111,7 @@ The audience in the image below includes all users that have Product Added in th
 **Important:** Funnel Audiences compute based on all instances of the parent event within the lookback period. This means that if you have a user that Product Added ⟶ Order Completed ⟶ Product Added, this user would be entered into the Abandoned Cart state despite having previously completed an order.
 
 ## What happens to conflicting and non-conflicting profile attributes?
-If two merged user profiles contain conflicting profile attributes, we’ll select the newest, or last updated, attributes when querying the profile. In the future, we’ll let the conflict resolution policies be configurable.
+If two merged user profiles contain conflicting profile attributes, we'll select the newest, or last updated, attributes when querying the profile. In the future, we'll let the conflict resolution policies be configurable.
 
 ## What is Personas Merge Protection?
 Personas merge protection algorithm protects your identity graph from unnecessary merges by finding and removing untrusted external IDs. Here's an example:

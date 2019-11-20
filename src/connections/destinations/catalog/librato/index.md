@@ -1,12 +1,12 @@
 ---
-title: Librato
+title: Librato Destination
 ---
 
 ## Getting Started
 
 When you toggle on Librato in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes with our custom Librato provider inside analytics.js.
++ Our CDN is updated within 45 minutes with our custom Librato provider inside analytics.js.
 + Since Librato only records custom events, no metrics will appear in Librato until you start using the API outlined below.
 
 Librato supports our `track` method for both client-side and server-side.
@@ -19,14 +19,13 @@ When you call [`track`](/docs/spec/track/), we add a gauge measurement to Librat
 
 Here's an example using Node.js
 
-```javascript
+```js
 analytics.track({
   userId: '507f191e81',
   event: 'Event Triggered'
   properties: {
     value: 2
-  }
-  });
+  }});
 ```
 
 And here's an example with Python
@@ -84,5 +83,3 @@ analytics.track('507f191e81', 'Event Triggered',
   }
 })
  ```
-
-{% include content/integration-foot.md %}

@@ -2,7 +2,7 @@
 title: Public Beta Checklist
 ---
 
-The purpose of this checklist is to give you a window into the full integration lifecycle, from how you first get started with Developer Center, to how we’ll test your app before it goes live. 
+The purpose of this checklist is to give you a window into the full integration lifecycle, from how you first get started with Developer Center, to how we'll test your app before it goes live. 
 
 ## 1. Partner Access
 
@@ -60,7 +60,7 @@ The Segment Dev Center team is here to help you every step of the way. You can e
 
 Once you are approved you can start building your Segment App. In a nutshell you will build a webhook service or write JavaScript code to process data from Segment, or write a browser JavaScript SDK plugin to collect data or modify a website. You can [refer to the docs for full details about building and testing Segment App Components](https://segment.com/docs/partners/).
 
-Building your integration consists of a few different choices. You’ll want to decide…
+Building your integration consists of a few different choices. You'll want to decide…
 
 - How do you want to collect data? Web plugins only run in-browser, while subscriptions capture data from everywhere.
 - How do you want to process data? Webhooks allow you to build a traditional web service to receive Segment data. Functions allow you to write JavaScript code that translates data to an existing API.
@@ -82,7 +82,7 @@ We also highly encourage you to build a 1-click enablement of your tool with OAu
 
 - Implement one-click setup via Enable with Segment / OAuth
 
-> Note: If you are time constrained, you may skip the above step for now. Once we see at-least 5 customers using your public beta integration, it’s a hard requirement to build "Enable with Segment" button in your sign-up flows or app/settings page for general availability. By building this, we are making it super easy for future customers to turn ON your Integration. Not doing so, will result in de-listing your Integration from the Segment Catalog.
+> Note: If you are time constrained, you may skip the above step for now. Once we see at-least 5 customers using your public beta integration, it's a hard requirement to build "Enable with Segment" button in your sign-up flows or app/settings page for general availability. By building this, we are making it super easy for future customers to turn ON your Integration. Not doing so, will result in de-listing your Integration from the Segment Catalog.
 
 ## 5. Partner Test
 
@@ -113,7 +113,7 @@ This is the real test to see how a lot of a Segment Users real-world data is ref
 
 ## 6. Partner Docs
 
-To provide a great experience for users, and to help us test your integration, you need to document your integration. Segment expects docs both on your site about Segment, and on Segment’s site about your integration. We provide templates for our docs to help you get started.
+To provide a great experience for users, and to help us test your integration, you need to document your integration. Segment expects docs both on your site about Segment, and on Segment's site about your integration. We provide templates for our docs to help you get started.
 
 We also encourage marketing content that showcases how easy and powerful your integration is to set up and use thru Segment.
 
@@ -141,8 +141,8 @@ Before Segment can publish your app in the public catalog for all users to see (
 
 - Docs links
     - For your docs
-    - For Segment’s docs
-    - For Segment’s public catalog
+    - For Segment's docs
+    - For Segment's public catalog
 
 The Segment Dev Center team also needs an account to easily test your integration.
 

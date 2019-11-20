@@ -1,5 +1,5 @@
 ---
-title: 'ProveSource Source'
+title: ProveSouce Source
 ---
 [ProveSource](https://provesrc.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a social proof platform, that lets you show recent activities and reviews that happen on your website - signups, purchases, positive reviews and more, this helps build trust with your visitors and ultimately increases your conversions rates.
 
@@ -12,7 +12,7 @@ _**NOTE:** The ProveSource Source is currently in beta, which means that they ar
 
 ## Getting Started
 
-1. From your Segment UI’s Sources page click on "Add Source".
+1. From your Segment UI's Sources page click on "Add Source".
 2. Search for "ProveSource" within the Sources Catalog and confirm by clicking "Connect".
 3. Give the Source a nickname and follow the setup flow to "Add Source". The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Copy the Write key from the Segment UI and log in to your ProveSource account - navigate to [Settings](https://console.provesrc.com/#/settings) > Integrations > Click Edit next to Segment Integration and paste the key to connect.

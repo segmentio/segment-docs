@@ -1,5 +1,6 @@
 ---
-title: CustomerSuccessBox
+title: CustomerSuccessBox Destination
+rewrite: true
 ---
 
 [CustomerSuccessBox](https://customersuccessbox.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is Outcome Driven Customer Success software, which helps maximize retention, drive product adoption and grow revenue for your B2B SaaS

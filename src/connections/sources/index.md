@@ -1,73 +1,12 @@
 ---
 title: Sources
-sidebar: Overview
-redirect_from:
-- '/guides/sources/what-can-I-do-with-sources-data'
-- '/sources/etl-billing/'
-- '/sources/etl-usage/'
-- '/sources/5/'
-- '/sources/cloud-app/'
 landing: true
-contributors:
-  - name: Paul Mccall
-    position: Lead Developer
-    image_path: paul-mccall.png
-    date: 23.08.2019
-  - name: Jane Doe
-    position: Lead Developer
-    image_path: jane-doe.png
-    date: 23.08.2019
-  - name: Porter Braun
-    position: Lead Developer
-    image_path: porter-braun.png
-    date: 23.08.2019
-  - name: Monica Buck
-    position: Lead Developer
-    image_path: monica-buck.png
-    date: 23.08.2019
-faq:
-  Source:
-    - title: "Should I track client or server-side?"
-      content: |
-        One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
-      link: /sources/catalog
-    - title: "What are best practices in identifying users?"
-      content: |
-        One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
-      link: /sources/catalog
-    - title: "What events should I track?"
-      content: |
-        One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
-      link: /sources/catalog
-    - title: "How do I join user profiles?"
-      content: |
-        One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
-    - title: "How do I measure my advertising funnel?"
-      content: |
-        One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
-  Cloud Sources:
-    - title: "What are cloud sources?"
-      content: |
-        One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
-      link: /sources/catalog
-    - title: "How do cloud sources work?"
-      content: |
-        One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
-      link: /sources/catalog
-    - title: "What can I do with cloud app source data?"
-      content: |
-        One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
-      link: /sources/catalog
-    - title: "What are some common cloud source errors and how do I debug them?"
-      content: |
-        One of the most common questions we receive is: “Should I use one of your client-side libraries or one of your server-side libraries?” This is such an important topic that we’ve written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](/docs/sources/mobile/ios). It’s worth a read!
-
 related:
   - "/connections/sources/catalog/"
   - "/connections/sources/faq/"
-  - "/connections/sources/guides/"
+icon: media/icon-academy.svg
+excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
 ---
-
 
 ## What is a source?
 
@@ -134,7 +73,7 @@ Our Mobile SDKs are the best way to simplify your iOS, Android, and Xamarin app 
 
 ## Server
 
-Our server-side sources let you send analytics data directly from your servers. We only recommend tracking from your servers when client-side tracking won't work. Check out [our guide on server-side tracking](/docs/guides/sources/client-vs-server) if you're not sure whether it makes sense for your use case.
+Our server-side sources let you send analytics data directly from your servers. We only recommend tracking from your servers when device-mode tracking (tracking on the client) won't work. Check out [our guide on server-side tracking](/docs/guides/sources/client-vs-server) if you're not sure whether it makes sense for your use case.
 
 {: .columns }
 - [Clojure](/docs/sources/server/clojure/)
@@ -146,9 +85,8 @@ Our server-side sources let you send analytics data directly from your servers. 
 - [Ruby](/docs/sources/server/ruby/)
 - [.NET](/docs/sources/server/net/)
 
-> note "Server-side tracking"
-> Server-side data management is when tag sends data into your web server, then your web server passes that data to the destination system/server.
-> [Find out more](https://segment.com)
+> note "Cloud-mode tracking"
+> Server-side data management is when tag sends data to the Segment servers, which then pass that data to the destination system.
 
 ---
 
@@ -221,11 +159,11 @@ Our [Pixel Tracking API](/docs/sources/server/pixel-tracking-api/) lets you trac
 | Email Link Clicked      | Recipient clicked on a link within the message. You need to enable Click Tracking for getting this type of event |
 | Email Bounced           | Receiving server could not or would not accept message |
 | Email Marked as Spam    | Recipient marked message as spam |
-| Unsubscribe             | Recipient clicked on message’s subscription management link |
+| Unsubscribe             | Recipient clicked on message's subscription management link |
 
 ### Source request
 
-We’d love to know what other sources of data you’d like to analyze. Please [log your request](/contact/requests/source/).
+We'd love to know what other sources of data you'd like to analyze. Please [log your request](/contact/requests/source/).
 
 ---
 

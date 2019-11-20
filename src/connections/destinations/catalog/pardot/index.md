@@ -1,5 +1,5 @@
 ---
-title: Pardot
+title: Pardot Destination
 name: Pardot
 ---
 
@@ -7,7 +7,7 @@ name: Pardot
 
 When you toggle on Pardot in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page.
++ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page.
 + Pardot will start automatically collecting anonymous visitor data data on your site.
 
 Pardot is supported on the client-side and server-side.
@@ -122,5 +122,3 @@ On the client-side browser we load Pardot's javascript snippet to enable [anonym
 If you are using Version 4 of the API and are using a lookup field to match existing prospects with Segment `identify` events, trying to update a prospect's email will result in a new prospect being created. This is because the Pardot API only allows read operations with email as the query (or PardotID/SaleforceFID but if you were passing those, this issue would be irrelevant to you). What ends up happening is our integration performs a read operation for a prospect matching the new email being passed in. This will not return a lookup field match and thus a new user will be generated.
 
 To update a user's email, you must pass either a PardotID or a SaleforceFID (see above for specifics on how to do this).
-
-{% include content/integration-foot.md %}

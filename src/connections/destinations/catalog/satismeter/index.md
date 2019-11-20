@@ -1,5 +1,5 @@
 ---
-title: SatisMeter
+title: SatisMeter Destination
 ---
 
 [Our SatisMeter destination code](https://github.com/segment-integrations/analytics.js-integration-satismeter) is all open-source on GitHub if you want to check it out.
@@ -32,12 +32,12 @@ Users need to be identified in order to target surveys at the right time.
 
 Identifying of users is done by calling an `analytics.identify` method using the [analytics.js](/docs/sources/website/analytics.js/) library. The recommended traits are `name`, `email` and `createdAt`, however SatisMeter will collect any other traits you'd like to see next to feedback from your customers.
 
-Here’s an example of the identify call:
-```
+Here's an example of the identify call:
+```js
 analytics.identify('007', {
- name: 'James Bond’,
- email: ‘007@sis.gov.uk’,
- createdAt: ‘2015-06-16T09:19:47.155Z’
+ name: 'James Bond',
+ email: '007@sis.gov.uk',
+ createdAt: '2015-06-16T09:19:47.155Z'
 });
 ```
 
@@ -74,5 +74,3 @@ Make sure you are sending an `analytics.identify()` call when the page is loaded
 ### The SatisMeter widget shows up right after sign-up
 It is important to send the `createdAt` trait to `analytics.identify()` method. Without this SatisMeter widget will be shown right after sign-up to every user that fits your other targeting settings.
 You can change the targeting settings in Targeting section of SatisMeter settings.
-
-{% include content/integration-foot.md %}

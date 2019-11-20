@@ -1,11 +1,12 @@
 ---
-title: Whalr Alerts
+title: Whalr Destination
 ---
+
 This destination is maintained by Whalr.
 
 ## About Whalr
 
-Right now, your sales team is in the dark.  If you’re a typical site on the Web, you don't know who's in the sales funnel or what they're doing, and you're just waiting for a call from people who have already decided to buy.  That's not sales; that's customer service.
+Right now, your sales team is in the dark.  If you're a typical site on the Web, you don't know who's in the sales funnel or what they're doing, and you're just waiting for a call from people who have already decided to buy.  That's not sales; that's customer service.
 
 Whalr puts you back in control.  You can see who is using your system, you know what they are doing, and you know what you need to do to get them to buy.  Whalr gives you identity, contextual, and behavioral intelligence about your customers.  What does that mean?
 
@@ -59,5 +60,3 @@ Once Whalr has enough information to move beyond the out-of-box intelligence, ou
 
 ## Contact Whalr
 [Contact us](mailto:customersuccess@whalr.com) if you need additional support.
-
-{% include content/integration-foot.md %}

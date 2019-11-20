@@ -1,11 +1,10 @@
 ---
 title: 'Protocols: APIs and Extensions'
-sidebar: APIs and Extensions
 ---
 
 ## Config API
 
-Protocols customers get access to the Segment Config API, which enables programmatic creation, configuration, and fetching of core Segment platform resources such as Sources, Destinations, and now Tracking Plans. The Config API represents Segment's commitment to developers, enabling customers to extend their workflows around customer data collection and activation. The Config API will be generally available to customers in coming months and will be evolving with more functionality throughout next year.
+Protocols customers get access to the Segment Config API, which enables programmatic creation, configuration, and fetching of core Segment platform resources such as Sources, Destinations, and now Tracking Plans. The Config API represents Segment's commitment to developers, enabling customers to extend their workflows around customer data collection and activation. The Config API will be generally available to customers in coming months and will be evolving with more features throughout next year.
 
 ### Supported Operations
 
@@ -40,8 +39,8 @@ analytics.Integrations["Segment.io"].prototype.enqueue = function(path, msg, fn)
 
 ### Enable debug mode with querystring flag
 
-Analytics.js does not have a built-in ‘debug mode’ flag yet. You can add a querystring flag to your Segment instrumentation with the following snippet:
-```  
+Analytics.js does not have a built-in 'debug mode' flag yet. You can add a querystring flag to your Segment instrumentation with the following snippet:
+```
 // Point to the debug-api when the URL contains the query param "?segment_debug=true"
 
 var apiHost;
@@ -85,7 +84,7 @@ Programmatic access to the Config API for resources that you own happens through
 
 To set up Segment Protocols through the API you first need to create a personal access token with **full access** to your workspace through the `workspace` scope. Use your Segment account email and password:
 
-```shell
+```bash
 $ USER=me@example.com
 $ PASS=<your Segment password>
 $ WORKSPACE=<your Segment workspace>
@@ -109,7 +108,7 @@ Example response:
 }
 ```
 
-**Note that you can not retrive the plain-text `token` later, so you should save it in a secret manager.**
+**Note that you can not retrieve the plain-text `token` later, so you should save it in a secret manager.**
 
 ### Create a Source
 
@@ -117,7 +116,7 @@ The Config API enables you to create event sources, each of which has a correspo
 
 Let's create an event source to see how the Tracking Plan works on data we send to it:
 
-```shell
+```bash
 $ ACCESS_TOKEN=<ACCESS-TOKEN-VALUE>
 
 $ curl \
@@ -148,7 +147,7 @@ Example response:
 
 For good measure, let's send a couple of events to our new Source. Note that `event` and `userID` are required. See the [Tracking API spec](https://segment.com/docs/sources/server/http/#track) for more details.
 
-```shell
+```bash
 $ WRITE_KEY=LxKXARX9IuqR9v0gn7y2Fw1iHi0ephbF
 
 $ curl https://api.segment.io/v1/track \
@@ -176,13 +175,13 @@ $ curl https://api.segment.io/v1/track \
 
 To verify your events were sent to the Source, open the event debugger in your browser, e.g. https://app.segment.com/example/sources/js/debugger.
 
-![](../platform-api/images/tracking-plan-debugger.png)
+![](images/tracking-plan-debugger.png)
 
 ### Create a Tracking Plan
 
 Now we can configure a Tracking Plan on the workspace. Here we define that we only expect a single event `User Logged In` with a required `username` property. This will help us find and eliminate events with subtle differences like the name `User Login` or properties like `userName`, resulting in pristine data in Segment and all Destinations.
 
-```shell
+```bash
 $ curl \
     -H "Authorization: Bearer $ACCESS_TOKEN" \
     -d '{
@@ -268,7 +267,7 @@ Example response:
 
 Over time the Tracking Plan will evolve and include more events. We can update the plan to include another event `User Created` with a required `username` property:
 
-```shell
+```bash
 $ curl \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -X PUT \
@@ -415,15 +414,15 @@ Open the Protocols section in your browser, e.g. https://app.segment.com/example
 
 Click on "My Tracking Plan" to open the editor and review the events.
 
-![](../../platform-api/images/tracking-plan-editor.png)
+![](images/tracking-plan-editor.png)
 
 Now open the Source Schema in your browser, e.g. https://app.segment.com/example/sources/js/schema2/events. We can see the that one event we sent conforms to the plan, and the other does not.
 
-![](../../platform-api/images/tracking-plan-schema.png)
+![](images/tracking-plan-schema.png)
 
 Now connect the tracking plan to the source:
 
-```shell
+```bash
 $ curl \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -X POST \
@@ -444,17 +443,17 @@ Now we can go all-in on the Tracking Plan, and block events that don't conform f
 
 Click "Edit" next to "Unplanned Data", and select "Block" for unplanned track calls.
 
-![](../../platform-api/images/tracking-plan-block.png)
+![](images/tracking-plan-block.png)
 
 From here, we can also configure a Source to receive violation notifications.
 
-You can verify how the Tracking Plan works by sending events to the [`debug-api.segment.com`](#debug-api) endpoint. 
+You can verify how the Tracking Plan works by sending events to the [`debug-api.segment.com`](#debug-api) endpoint.
 
-We'll use the write keys returned from the creation operation against the Sources API as the password to the debug tracking API. 
+We'll use the write keys returned from the creation operation against the Sources API as the password to the debug tracking API.
 
 Example command:
 
-```shell
+```bash
 $ curl https://debug-api.segment.com/v1/track \
   -u $WRITE_KEY: \
   -H 'Content-type: application/json' \
@@ -477,7 +476,7 @@ Example response:
 
 Example command:
 
-```shell
+```bash
 $ curl https://debug-api.segment.com/v1/track \
   -u $WRITE_KEY: \
   -H 'Content-type: application/json' \
@@ -501,7 +500,7 @@ Example response:
 
 Example command:
 
-```shell
+```bash
 $ curl https://debug-api.segment.com/v1/track \
   -u $WRITE_KEY: \
   -H 'Content-type: application/json' \
@@ -525,7 +524,7 @@ Example response:
 
 ## Google Sheets Tracking Plan Uploader
 
-Thousands of Segment customers have used Google Sheets to build Tracking Plans. We created the following template to help you draft a Tracking Plan and easily upload that Tracking Plan to Segment. Keep in mind that uploading changes from Google Sheets will overwrite any changes made within the Segment UI.
+Thousands of Segment customers have used Google Sheets to build Tracking Plans. We created the following template to help you draft a Tracking Plan and easily upload that Tracking Plan to Segment. Keep in mind that uploading changes from Google Sheets will overwrite any changes made in the Segment UI.
 
 [Link to Tracking Plan Google Sheets template](https://docs.google.com/spreadsheets/u/1/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/copy) (Feel free to make a copy!)
 

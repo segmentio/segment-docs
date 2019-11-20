@@ -2,6 +2,7 @@
 title: Analytics for Clojure
 sourceTitle: 'Clojure'
 sourceCategory: 'Server'
+shortName: 'clojure'
 ---
 
 The clojure library lets you record analytics data from your clojure code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
@@ -21,10 +22,10 @@ If you're using Maven add this repository definition to your `pom.xml`:
 </repository>
 ```
 
-Then, if you're using Leiningen
+Then, if you're using Leiningen:
 
-```clj
-[circleci/analytics-clj "0.4.0"]
+```
+[circleci/analytics-clj "0.8.0"]
 ```
 
 or with Maven
@@ -33,14 +34,14 @@ or with Maven
 <dependency>
   <groupId>circleci</groupId>
   <artifactId>analytics-clj</artifactId>
-  <version>0.4.0</version>
+  <version>0.8.0</version>
 </dependency>
 ```
 
 You only need to initialize once at the start of your program. You can then keep
 using the `Analytics` singleton anywhere in your code.
 
-```clj
+```
 (use '[circleci.analytics-clj.core])
 (def analytics (initialize "<writeKey>"))
 ```
@@ -55,7 +56,7 @@ We recommend calling `identify` a single time when the user's account is first c
 
 Example `identify` call:
 
-```clj
+```
 (identify analytics "user-id" {:email "bob@acme.com"})
 ```
 
@@ -86,14 +87,14 @@ To get started, we recommend tracking just a few important events. You can alway
 
 Example `track` call:
 
-```clj
+```
 (track analytics "user-id" "Signed Up" {:plan "trial"})
 ```
 
-```clj
+```
 (track analytics (:id user) "signup" {:company "Acme Inc."} {:context {:language "en-us"}
-                                                             :integrations {"AdRoll" false}
-                                                             :integration-options {"Amplitude" {:session-id (:id session)}}})
+   :integrations {"AdRoll" false}
+   :integration-options {"Amplitude" {:session-id (:id session)}}})
 ```
 
 This example `track` call tells us that your user just triggered the **Signed Up** event on a "trial" plan.
@@ -123,10 +124,10 @@ Find details on **best practices in event naming** as well as the **`track` meth
 
 `group` lets you associate an [identified user](/docs/sources/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/integrations/intercom/), [Preact](/docs/integrations/preact/) and [Totango](/docs/integrations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
 
 
-```clj
+```
 (group analytics "1234" "group-5678" {:name "Segment"})
 ```
 
@@ -153,11 +154,11 @@ Find more details about `group`, including the **`group` payload**, in our [Spec
 
 The [`screen`](/docs/spec/screen/) method lets you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
 
-You’ll want to record a screen event an event whenever the user opens a screen in your app.
+You'll want to record a screen event an event whenever the user opens a screen in your app.
 
-Not all services support screen, so when it’s not supported explicitly, the screen method tracks as an event with the same parameters.
+Not all services support screen, so when it's not supported explicitly, the screen method tracks as an event with the same parameters.
 
-```clj
+```
 (screen analytics "1234" "Login" {:path "/users/login"})
 ```
 
@@ -182,11 +183,11 @@ The `screen` call has the following fields:
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/integrations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/integrations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/destinations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/destinations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
-```clj
+```
 (alias analytics "user-id" "real-id")
 ```
 
@@ -198,17 +199,17 @@ For more details about `alias`, including the **`alias` call payload**, check ou
 
 If the above methods don't meet your needs, you can use the builder types directly.
 
-```clj
+```
 (enqueue analytics (doto (YourMessageType/builder)
-                     (.userId "user-id")
-                     (.properties {"company" "Acme Inc."})))
+ (.userId "user-id")
+ (.properties {"company" "Acme Inc."})))
 ```
 
 ## Logging
 
 You can set a custom logger on the client using:
 
-```clj
+```
 (defn logger []
   (reify com.segment.analytics.Log
     (print [this level format args]
@@ -222,3 +223,5 @@ You can set a custom logger on the client using:
 ## Troubleshooting
 
 {% include content/troubleshooting-intro.md %}
+{% include content/troubleshooting-server-debugger.md %}
+{% include content/troubleshooting-server-integration.md %}

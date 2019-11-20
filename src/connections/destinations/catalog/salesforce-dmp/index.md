@@ -1,7 +1,8 @@
 ---
-title: Salesforce DMP
+rewrite: true
 beta: true
 hidden: true
+title: Salesforce DMP Destination
 ---
 
 [Salesforce DMP](https://konsole.zendesk.com/hc/en-us) allows website operators
@@ -9,10 +10,10 @@ to create a holistic databank to organize, taxonomize and make their full range
 of audience information actionable. It allows them to model, define and manage
 audience segments to improve content delivery and advertising revenue.
 
-_**NOTE:** {{integration.name}} is currently in beta, and this doc was last
+_**NOTE:** Salesforce DMP is currently in beta, and this doc was last
 updated on November 6, 2018. This means that there may still be some bugs for
 us to iron out. If you are interested in joining or have any feedback to help
-us improve the {{integration.name}} Destination and its documentation, please
+us improve the Salesforce DMP Destination and its documentation, please
 [let us know](https://segment.com/help/contact)!_
 
 ## Getting Started
@@ -42,7 +43,7 @@ Next, configure the Destination in the Segment web app:
 6. Go back to the Segment App, and navigate to the Salesforce DMP destination you're setting up. Locate the ConfigID setting, and paste the value you found in that field.
 
 To send client-side events to SFDMP, you must include a SFDMP Config ID and
-SFDMP Namespace in your Segment settings. Segment’s UI enforces inclusion of a
+SFDMP Namespace in your Segment settings. Segment's UI enforces inclusion of a
 `configId` (meaning you can't enable the destination without it); however,
 Segment's UI does not enforce the inclusion of a `namespace`.
 
@@ -130,7 +131,7 @@ Say you map property `price` in your Segment settings to SFDMP page attribute
 `price`. If you have a whitelist set up in SFDMP and have not whitelisted the
 attribute `price` in SFDMP, the expected behavior is that Pixel.gif calls to
 SFDMP will not include the `price` attribute. Remember, mapping the property
-within Segment’s dashboard will not override your SFDMP’s internal account
+within Segment's dashboard will not override your SFDMP's internal account
 settings. If this is the case, adjust your SFDMP settings or contact your
 Salesforce representative for assistance.
 
@@ -159,7 +160,7 @@ collected client side will be associated with all following whitelisted events
 unless the attribute is explicitly overridden.
 
 For example, say one of your whitelisted Segment track events contains the
-property key-value pair `color: ‘red’`:
+property key-value pair `color: 'red'` :
 
 ```javascript
 analytics.track('Button Clicked',
@@ -167,9 +168,9 @@ analytics.track('Button Clicked',
 });
 ```
 
-The above Segment event pushes the key-value pair `color: ‘red’` to the SFDMP
+The above Segment event pushes the key-value pair `color: 'red'` to the SFDMP
 `kruxDataLayer`, then triggers a call to the Pixel.gif endpoint, which scrapes
-the `kruxDataLayer` and sends `color: ‘red’` as a page attribute.
+the `kruxDataLayer` and sends `color: 'red'` as a page attribute.
 
 Then you send another whitelisted event:
 
@@ -177,10 +178,10 @@ Then you send another whitelisted event:
 analytics.track('Picture Viewed');
 ```
 
-This event "Picture Viewed" will produce a call to SFDMP’s Pixel.gif endpoint
+This event "Picture Viewed" will produce a call to SFDMP's Pixel.gif endpoint
 with the page attribute `color: 'red'`, in spite of the fact that this
 attribute was not explicitly associated with this event. This is expected
-behavior and a result of SFDMP’s out-of-the-box client-side cacheing.
+behavior and a result of SFDMP's out-of-the-box client-side cacheing.
 
 Say, then, you send another whitelisted event:
 
@@ -190,14 +191,14 @@ analytics.track('Updated Preferences', {
 });
 ```
 
-This event would produce a call to SFDMP’s Pixel.gif endpoint with the page
+This event would produce a call to SFDMP's Pixel.gif endpoint with the page
 attribute `color: 'blue'`, as this event overrode the value of the previous
 color attribute.
 
 The ramification of this behavior is that SFDMP will continue to cache page
 attributes for whitelisted events on all single-page applications until a page
 reload. Please contact your Salesforce representative for additional questions
-about SFDMP’s attribute cacheing functionality.
+about SFDMP's attribute cacheing functionality.
 
 ### Page Scraping for Page Attributes
 
@@ -210,15 +211,15 @@ For example, say you have defined a global object:
 var appInfo = { app_name: 'test application' }
 ```
 
-You can set up SFDMP’s control tag to automatically scrape the key-value pair
-`app_name: 'test application'` from the global object "appInfo". This means that you don’t necessarily have to update your Segment
+You can set up SFDMP's control tag to automatically scrape the key-value pair
+`app_name: 'test application'` from the global object "appInfo". This means that you don't necessarily have to update your Segment
 implementation to send additional attributes downstream to SFDMP.
 
 If you see page attributes automatically appended to outbound Pixel.gif calls
 and you're not sure where the attributes came from, then you or someone on
 your team has likely set up page scraping in SFDMP.
 
-Warning: If you decide to rely on SFDMP’s page scraping to transmit attributes
+Warning: If you decide to rely on SFDMP's page scraping to transmit attributes
 to SFDMP rather than adding them as properties to Segment events, you won't
 see these properties in other Segment connections, including in a raw data
 warehouse.
@@ -279,7 +280,7 @@ The value of field `msg.context.device.advertisingId`.
 
 | Value Passed to Segment | Value Sent to SFDMP |
 |-|-|
-| Any String value (e.g. ‘123’) | _kpid: `123` |
+| Any String value (for example, `123`) | _kpid: `123` |
 
 **userId**
 
@@ -287,7 +288,7 @@ The value of field `msg.userId`.
 
 | Value Passed to Segment | Value Sent to SFDMP |
 |-|-|
-| Any String value (e.g. ‘123’) | _kua_segmentio_id: `123` |
+| Any String value (for example, `123`) | _kua_segmentio_id: `123` |
 
 **anonymousId**
 
@@ -295,7 +296,7 @@ The value of field `msg.anonymousId`.
 
 | Value Passed to Segment (Expected Data Type) | Value Sent to SFDMP |
 |-|-|
-| ‘123’ (String) | _kua_segmentio_anonymous_id: ‘123’ |
+| `123`(String) | _kua_segmentio_anonymous_id: `123`|
 
 **os.name and tech_browser**
 
@@ -303,14 +304,14 @@ Segment uses the value of field msg.context.os.name to derive the `tech_browser`
 
 | Value Passed to Segment (Expected Data Type) | Value Sent to SFDMP |
 |-|-|
-| ‘Android’ (String) | tech_browser: ‘android_app’ |
+| `Android`(String) | tech_browser: `android_app`|
 
 Segment derives `tech_browser` from `msg.context.os.name` by appending `_app`
 and calling the String method `.toLowercase()` on the concatenated value.
 
 | Value Passed to Segment (Expected Data Type) | Value Sent to SFDMP |
 |-|-|
-| ‘Roku’ (String) | tech_browser: ‘roku_app’ |
+| `Roku`(String) | tech_browser: `roku_app`|
 
 **tech_browser_lang and context.locale**
 
@@ -318,15 +319,15 @@ Segment uses the value of field msg.context.locale to derive the `tech_browser_l
 
 | Value Passed to Segment (Expected Data Type) | Value Sent to SFDMP |
 |-|-|
-| ‘en-US’ (String) | tech_browser_lang: ‘en’ |
+| `en-US`(String) | tech_browser_lang: `en`|
 
 Segment derives tech_browser_lang from `msg.context.device.locale` by
 extracting the first two characters of the String value of this field.
 
 | Value Passed to Segment (Expected Data Type) | Value Sent to SFDMP |
 |-|-|
-| ‘en-US’ (String) | tech_browser_lang: ‘en’ |
-| undefined or null | tech_browser_lang: ‘en’ |
+| `en-US`(String) | tech_browser_lang: `en`|
+| undefined or null | tech_browser_lang: `en`|
 
 **device information**
 
@@ -335,13 +336,13 @@ a user attribute for SFDMP.
 
 | Value Passed to Segment (Expected Data Type) | Value Sent to SFDMP |
 |-|-|
-| ‘iPhone7,2’ (String) | tech_device: ‘iPhone7,2’ |
+| `iPhone7,2`(String) | tech_device: `iPhone7,2`|
 
 device.manufacturer Segment passes the value of field msg.context.device.model as user attribute tech_manufacturer to SFDMP.
 
 | Value Passed to Segment (Expected Data Type) | Value Sent to SFDMP |
 |-|-|
-| ‘Apple’ (String) | tech_manufacturer: ‘Apple’ |
+| `Apple`(String) | tech_manufacturer: `Apple`|
 
 **os.version**
 
@@ -350,11 +351,11 @@ attribute `tech_version` to SFDMP.
 
 | Value Passed to Segment (Expected Data Type) | Value Sent to SFDMP |
 |-|-|
-| ‘8.1.3’ (String) | tech_os: ‘8.1.3’ |
+| `8.1.3`(String) | tech_os: `8.1.3`|
 
-If the value of `msg.context.os.name` is equal to ‘Android’, Segment prepends
-‘Android_’ to the value of the user attribute (e.g. ‘Android_8.1.3’) sent
-downstream. This behavior is at SFDMP’s request and does not apply to any
+If the value of `msg.context.os.name` is equal to `Android`, Segment prepends
+`Android_`to the value of the user attribute (for example, `Android_8.1.3`) sent
+downstream. This behavior is at SFDMP's request and does not apply to any
 other OS.
 
 **context.ip**
@@ -364,10 +365,10 @@ Segment sets the value of `msg.context.ip` in an
 
 | Value Passed to Segment (Expected Data Type) | Value Sent to SFDMP |
 |-|-|
-| ‘127.0.0.1’ (String) | -H ‘X-Forwarded-For: 127.0.0.1’ |
+| `127.0.0.1`(String) | -H `X-Forwarded-For: 127.0.0.1`|
 | undefined or null | The `X-Forwarded-For` header is not set in the outbound request to SFDMP. |
 
-Segment’s client-side libraries (Analytics.js, Android, iOS) collect IP address
+Segment's client-side libraries (Analytics.js, Android, iOS) collect IP address
 automatically. If using a server-side library or HTTP library, you must collect
 the IP address manually and pass it into your Segment event payload. Otherwise,
 an `X-Forwarded-For` header will not be set.
@@ -394,7 +395,7 @@ The value of field `msg.context.device.advertisingId`.
 
 | Value Passed to Segment | Value Sent to SFDMP |
 |-|-|
-| Any String value (e.g. '123') | _kpid: `123` |
+| Any String value (for example, '123') | _kpid: `123` |
 
 **track event name**
 
@@ -402,4 +403,4 @@ The value of field `msg.event`.
 
 | Value Passed to Segment | Value Sent to SFDMP |
 |-|-|
-| Any String value (e.g. 'Account Created') | event_id: <`id mapped in Event ID Map UI setting`> |
+| Any String value (for example, 'Account Created') | event_id: <`id mapped in Event ID Map UI setting`> |

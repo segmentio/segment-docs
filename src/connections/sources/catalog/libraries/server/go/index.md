@@ -150,7 +150,7 @@ Find details on the **`page` payload** in our [Spec](/docs/spec/page/).
 
 `group` lets you associate an [identified user](/docs/sources/server/node/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/integrations/intercom/), [Preact](/docs/integrations/preact/) and [Totango](/docs/integrations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
 
 Example `group` call:
 
@@ -184,7 +184,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](https://segment.com/docs/integrations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/integrations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/destinations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/destinations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -293,11 +293,11 @@ client.Enqueue(analytics.Track{
 
 In this case, we're specifying that we want this `Track` to only go to Vero. `All: false` says that no destination should be enabled unless otherwise specified. `Vero: true` turns on Vero, etc.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/integrations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:**
 
-- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it’s a much simpler way of managing your filters and can be updated with no code changes on your side.
+- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
 - If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard will still count towards your API usage.
 
@@ -305,7 +305,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
 
-Historical imports can only be done into destinations that can accept historical timestamp’ed data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
+Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
 **Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
 
@@ -513,5 +513,5 @@ client, _ := analytics.NewWithConfig("h97jamjwbh", analytics.Config{
 ## Troubleshooting
 
 {% include content/troubleshooting-intro.md %}
-
-
+{% include content/troubleshooting-server-debugger.md %}
+{% include content/troubleshooting-server-integration.md %}

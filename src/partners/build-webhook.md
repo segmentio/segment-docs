@@ -105,7 +105,7 @@ The spec is a critical component in preserving logical continuity between dispar
 
 *Important*: If any functional elements of your tool map to the spec, but do not adhere to it (for example, asking customers to send "Purchase" instead of "Order Completed" or "install" instead of "Application Installed"), we will reject your application.
 
-If something unique to your tool requires specific data that is not included in the spec, [get in touch](segment.com/help/contact/). We love partner suggestions for extensions to the spec!
+If something unique to your tool requires specific data that is not included in the spec, [get in touch](https://segment.com/help/contact/). We love partner suggestions for extensions to the spec!
 
 ## Responding to Segment
 

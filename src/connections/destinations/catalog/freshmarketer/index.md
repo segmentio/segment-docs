@@ -1,5 +1,6 @@
 ---
-title: Freshmarketer
+title: Freshmarketer Destination
+rewrite: true
 ---
 
 Segment makes it easy to send your data to [Freshmarketer](https://www.freshmarketer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to Freshmarketer in the format they understand. Learn more about how to use Freshmarketer with Segment.
@@ -13,14 +14,14 @@ _**NOTE:** The Freshmarketer Destination is currently in beta, which means that 
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click **Add Destination**.
-2. Search for "Freshmarketer" in the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click **Add Destination**.
+2. Search for "Freshmarketer" in the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Go to your Freshmarketer dashboard (Admin Settings > API Settings) and copy your API Key.
 4. In the Freshmarketer settings in the Segment UI, paste your API Key.
 
 ## Identify
 
-If you haven’t had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
 
 ```js
 // On server-side
@@ -44,7 +45,7 @@ analytics.identify({
 })
 ```
 
-You can use `identify` to create a contact when a website visitor fills a webform. When you identify a user, we’ll pass that user’s information to Freshmarketer.
+You can use `identify` to create a contact when a website visitor fills a webform. When you identify a user, we'll pass that user's information to Freshmarketer.
 
 By default, every new `identify` is created as a contact. If the `userId` is already present in the Freshmarketer contact list, it is treated as an update. To update existing user data, pass the corresponding `userId` with all the traits that have updated values. On updating, if any of the traits added during contact insertion is missed while updating, then that trait will be set as empty.
 

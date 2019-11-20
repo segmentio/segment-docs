@@ -1,5 +1,6 @@
 ---
-title: UserIQ
+rewrite: true
+title: UserIQ Destination
 ---
 
 [UserIQ](http://useriq.com) empowers companies to deliver what each user needs to be successful in every moment, starting with adoption. Our platform collects user engagement data from your product and allows you to communicate to your users when they are most engaged: within the product itself.

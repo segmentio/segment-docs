@@ -1,5 +1,6 @@
 ---
-title: Parse.ly
+rewrite: true
+title: Parse.ly Destination
 ---
 
 [Parse.ly](https://www.parse.ly) provides web analyses and content optimization for online publishers by partnering with them to provide clear audience insights through intuitive analytics.
@@ -16,17 +17,68 @@ This document was last updated on November 8th, 2018. If you notice any gaps, ou
 3. Enter your Domain and enable the destination in Segment. (To enable this destination, you use your Parsely website domain as your API key.)
 4. We'll automatically start recording data.
 
-When Parse.ly is enabled in Segment, our CDN updates within 5-10 minutes.  Parse.ly's javascript is asynchronously loaded onto your page, so remember to remove the Parse.ly snippet from your page.
+When Parse.ly is enabled in Segment, our CDN updates within 45 minutes.  Parse.ly's javascript is asynchronously loaded onto your page, so remember to remove the Parse.ly snippet from your page.
 
-Parsely is substantially more useful when you implement JSON-LD metadata across your website as described [here](http://www.parsely.com/docs/integration/metadata/jsonld.html).
+Parsely is substantially more useful when you implement JSON-LD metadata across your website as described [here](https://www.parse.ly/help/integration/basic).
 
 ## Page
 
-By default, unless you are using [Dynamic Tracking](https://www.parse.ly/help/integration/dynamic/), Parse.ly automatically tracks pageviews in the background so there is no need to worry about integrating with this functionality via Segment's `.page()` method.
+By default, unless you are using [Dynamic Tracking](https://www.parse.ly/help/integration/dynamic/), Parse.ly automatically tracks pageviews in the background, so you do not need to track them separately with Segment's `.page()` method.
 
 If you are using dynamic tracking, you must explicitly let us know in your [integration settings](/docs/destinations/parsely/#enable-dynamic-tracking). If this setting is enabled, we will disable Parse.ly's autotracking functionality and begin sending their API pageview events only in response to `analytics.page()` events.
 
-**Note:** tracking pageviews is only possible if you are using this integration via our Javascript SDK: analytics.js (not via our server side integration with Parse.ly).
+**Note:** You can only track pageviews if you are using the Parsely destination with our Javascript Analytics.js library, and not using our server side integration with Parse.ly.
+
+
+## Identify
+
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+
+```js
+analytics.identify('ze8rt1u89', {
+  name: 'Zaphod Beeblebrox',
+  gender: 'Male',
+  email: 'Zaphod@hotmail.com',
+  phone: '1-401-826-4421',
+  address: {
+    city: 'San Francisco',
+    state: 'Ca',
+    postalCode: '94107'
+  }
+});
+```
+
+
+## Track
+
+You must adhere to our [video tracking spec](/docs/spec/video/) (and have video tracking enabled in Parse.ly) in order to use this functionality.
+
+Video tracking is possible with either web or server sources.
+
+
+## Group
+
+If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. An example call would look like:
+
+```js
+analytics.group("0e8c78ea9d97a7b8185e8632", {
+  name: "Initech",
+  industry: "Technology",
+  employees: 329,
+  plan: "enterprise",
+  "total billed": 830
+});
+```
+
+
+## Alias
+
+If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/spec/alias/) does. An example call would look like:
+
+```js
+analytics.alias("507f191e81");
+```
+
 
 ### Mapping custom properties to semantic Parsely properties
 
@@ -44,11 +96,6 @@ We currently support mapping the following Parse.ly properties (make sure you sp
 
 **Note**: This feature only works if you also have enabled **Enable In-Pixel Metadata** and **Enable Dynamic Tracking**.
 
-## Track
-
-We integrate with Parse.ly's [video tracking capabilities](https://www.parse.ly/help/integration/video/).  via the use of our `.track()` method. You must adhere to our [video tracking spec](/docs/spec/video/) (and have video tracking enabled in Parse.ly) in order to use this functionality.
-
-Video tracking is possible with either web or server sources.
 
 ### Video Content Started
 
@@ -160,11 +207,11 @@ analytics.track('Video Playback Paused', {
 
 (Note: this event is only required for server side tracking)
 
-When using Parse.ly on the web via our Javascript SDK, video heartbeats are captured by their SDK automatically. If you are using this integration via a Server side source however, you will need to pass heartbeat events manually via the use of our [Video Content Playing](https://segment.com/docs/spec/video/#content-events) event.
+When using Parse.ly on the web using our Javascript SDK, video heartbeats are captured by their SDK automatically. However, if you are using this destination with a Server side source, you must pass heartbeat events manually using our [Video Content Playing](https://segment.com/docs/spec/video/#content-events) event.
 
-**Important:** please ensure you are sending these events in 10 second increments.
+**Important:** These events must be sent in 10 second increments.
 
-The only required property that we ask you pass is the video's `assetId`.
+The only required property is the video's `assetId`.
 
 **Example:**
 
@@ -196,7 +243,7 @@ analytics.track({
 
 ### Video Content Completed
 
-(Note: this event is only required for server side tracking)
+This event is only required for server side tracking.
 
 To track the completion of a video, please use our [Video Content Completed](https://segment.com/docs/spec/video/#content-events) event.
 

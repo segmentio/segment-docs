@@ -1,6 +1,7 @@
 ---
-title: Repeater
+title: Repeater Destination
 ---
+
 This destination is maintained by Segment.
 
 ## Getting Started
@@ -24,5 +25,3 @@ You can do this for as many sources as you need.
 ![](images/write-key-settings.png)
 
 Repeater will replay all events it gets to the sources you specified using the write key(s) you specified.
-
-{% include content/integration-foot.md %}

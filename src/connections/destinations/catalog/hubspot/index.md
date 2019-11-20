@@ -1,6 +1,8 @@
 ---
-title: HubSpot
+rewrite: true
+title: HubSpot Destination
 ---
+<!-- once we've added the instructions, add hide-personas-partial: true below the title line -->
 
 [HubSpot](https://www.hubspot.com/) is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-hubspot).
 
@@ -11,11 +13,11 @@ This document was last updated on March 30, 2018. If you notice any gaps, outdat
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "HubSpot" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "HubSpot" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. If you haven't already done so, add your API Key from [HubSpot](https://knowledge.hubspot.com/articles/kcs_article/integrations/how-do-i-get-my-hubspot-api-key) and drop into the "API Key" field within the Segment UI.
 4. Navigate to the "Settings" page within the HubSpot UI to find your Hub ID and drop into the "Hub ID" field within the Segment UI.
-5. When you activate the destination, our CDN will be updated in about 5-10 minutes and the HubSpot snippet will be initilized and begin recording data.
+5. When you activate the destination, our CDN will be updated in about 45 minutes and the HubSpot snippet will be initilized and begin recording data.
 
 
 ## Page
@@ -36,7 +38,7 @@ analytics.identify('user1234', {
   lastname: 'Gibbon'
 })
 ```
-**IMPORTANT:** HubSpot has two conditions for `identify` to successfully create or update a contact. A `traits.email` value must be included and either a `page` or `track` call must be called. You can read more from HubSpot's documentation [here](https://developers.hubspot.com/docs/methods/tracking_code_api/identify_visitor).
+**IMPORTANT:** HubSpot's device-mode integration has two conditions for `identify` to successfully create or update a contact. A `traits.email` value must be included and either a `page` or `track` call must be called. You can read more from HubSpot's documentation [here](https://developers.hubspot.com/docs/methods/tracking_code_api/identify_visitor). If you are using HubSpot's cloud-mode integration, an `identify` call will update records without a `page` or `track` call being needed.
 
 HubSpot does not accept any trait keys that contain uppercases or spaces. So for any custom traits you send we will lowercase them and replace any spaces with an underscore.
 
@@ -123,7 +125,7 @@ analytics.group({
   groupId: "some_group_id",
   userId: "some_user_id",
   traits: {
-    website: "example.com",
+    website: "https://www.example.com",
     name: "Example Inc."
   }
 });
@@ -158,10 +160,20 @@ The following group traits are supported as special properties within HubSpot:
 
 ### API Call Limits
 
-HubSpot limits the total amount of hourly and monthly requests we can make to their API on your behalf. Read more about these limits [here](https://developers.hubspot.com/apps/api_guidelines).
+HubSpot limits the total amount of hourly and daily requests we can make to their API on your behalf. Read more about these limits [here](https://developers.hubspot.com/apps/api_guidelines).
 
-* Maximum Number of API Calls per Second, per Key or Token: **10**
-* Maximum Number of API Calls per Day, per Key or Token: **40,000**
+HubSpot Plan: Free & Starter
+* Maximum Number of API Calls per 10 Seconds, per Key or Token: **100**
+* Maximum Number of API Calls per Day, per Key or Token: **250,000**
+
+HubSpot Plan: Professional and Enterprise
+* Maximum Number of API Calls per 10 Seconds, per Key or Token: **100**
+* Maximum Number of API Calls per Day, per Key or Token: **500,000**
+
+HubSpot Plan: API Add-On (Any Tier)
+* Maximum Number of API Calls per 10 Seconds, per Key or Token: **120**
+* Maximum Number of API Calls per Day, per Key or Token: **1,000,000**
+
 
 ### Sending Dates as Property Values
 
@@ -194,3 +206,7 @@ analytics.ready(function(){
   });
 })
 ```
+
+<!--
+## Activating Personas in HubSpot
+-->

@@ -1,8 +1,9 @@
 ---
-title: FoxMetrics
+title: FoxMetrics Destination
+rewrite: true
 ---
 
-[FoxMetrics](https://www.foxmetrics.com/) is a personalization platform that allows users to collect & analyze customer actions through computers, mobile, and web applications. The `analytics.js` {{integration.name}} destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-foxmetrics).
+[FoxMetrics](https://www.foxmetrics.com/) is a personalization platform that allows users to collect & analyze customer actions through computers, mobile, and web applications. The `analytics.js` FoxMetrics destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-foxmetrics).
 
 This document was last updated on October 15, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
@@ -10,10 +11,10 @@ This document was last updated on October 15, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "FoxMetrics" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "FoxMetrics" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Add your FoxMetrics `App ID`
-4. When FoxMetrics in enabled in Segment, our CDN will update within 5-10 minutes, and FoxMetrics's javascript will be loaded asynchronously onto your page. Please remember to remove FoxMetrics's snippet from your page.
+4. When FoxMetrics in enabled in Segment, our CDN will update within 45 minutes, and FoxMetrics's javascript will be loaded asynchronously onto your page. Please remember to remove FoxMetrics's snippet from your page.
 
 ## Page
 

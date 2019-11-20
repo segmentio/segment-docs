@@ -33,7 +33,7 @@ As soon as that snippet is running on your site, you can start turning on any de
 
 For more in depth `analytics.js` information, check out our [analytics.js docs](/docs/sources/website/analytics.js/).
 
-Lots of analytics and marketing tools want to know more information about your users, and what they’re doing on your app. In the next section, we’ll install the .NET library and start sending an event every time a new user registers on your site.
+Lots of analytics and marketing tools want to know more information about your users, and what they're doing on your app. In the next section, we'll install the .NET library and start sending an event every time a new user registers on your site.
 
 ### Step 2: Install our .NET Library
 
@@ -82,20 +82,7 @@ The default initialization settings are production-ready and queue messages on a
 
 ## Identify
 
-`identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
-
-We recommend calling `identify` after a user registers, every time a user logs in and upon loading any pages that are accessible by a logged in user. You can read more about our `identify` best practices [here](/docs/faqs/sources/identifying-users/#when-and-how-often-to-call-identify).
-
-Example `identify` call:
-
-```csharp
-Analytics.Client.Identify("019mr8mf4r", new Traits() {
-    { "name", "#{ user.name }" },
-    { "email", "#{ user.email }" },
-    { "friends", 29 }
-});
-```
-This call is identifying  the user by his unique User ID (the one you know him by in your database) and labeling him with `name`, `email`, and `friends` traits.
+If you haven't had a chance to review our spec, please take a look to understand what the [identify](/docs/spec/identify/) method does.
 
 The `identify` call has the following fields:
 
@@ -114,27 +101,19 @@ The `identify` call has the following fields:
   </tr>
 </table>
 
-Find details on the **identify method payload** in our [Spec](/docs/spec/identify/).
+An example call would look like:
+
+```csharp
+Analytics.Client.Identify("019mr8mf4r", new Traits() {
+    { "name", "#{ user.name }" },
+    { "email", "#{ user.email }" },
+    { "friends", 29 }
+});
+```
 
 ## Track
 
-`track` lets you record the actions your users perform. Every action triggers what we call an "event", which can also have associated properties.
-
-You'll want to track events that are indicators of success for your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
-
-To get started, we recommend tracking just a few important events. You can always add more later!
-
-Example `track` call:
-
-```csharp
-Analytics.Client.Track("019mr8mf4r", "Item Purchased", new Properties() {
-    { "revenue", 39.95 },
-    { "shipping", "2-day" }
-});
-```
-This example `track` call tells us that your user just triggered the **Item Purchased** event with a revenue of $39.95 and chose your hypothetical '2-day' shipping.
-
-`track` event properties can be anything you want to record. In this case, revenue and shipping.
+If you haven't had a chance to review our spec, please take a look to understand what the [track](/docs/spec/track/) method does.
 
 The `track` call has the following fields:
 
@@ -157,20 +136,18 @@ The `track` call has the following fields:
   </tr>
 </table>
 
-Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/spec/track/).
+An example call would look like:
+
+```csharp
+Analytics.Client.Track("019mr8mf4r", "Item Purchased", new Properties() {
+    { "revenue", 39.95 },
+    { "shipping", "2-day" }
+});
+```
 
 ## Page
 
-The [`page`](/docs/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
-
-Example `page` call:
-
-```csharp
-Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
-    { "path", "/login" },
-    { "title", "Initech Login" }
-});
-```
+If you haven't had a chance to review our spec, please take a look to understand what the [page](/docs/spec/page/) method does.
 
 The `page` call has the following fields:
 
@@ -197,19 +174,18 @@ The `page` call has the following fields:
   </tr>
 </table>
 
-Find details on the **`page` payload** in our [Spec](/docs/spec/page/).
+Example `page` call:
+
+```csharp
+Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
+    { "path", "/login" },
+    { "title", "Initech Login" }
+});
+```
 
 ## Screen
 
-`screen` lets you record mobile screen views from your web servers, along with optional extra information about the page being viewed.
-
-Example `screen` call:
-
-```csharp
-Analytics.Client.Screen("019mr8mf4r", "Register", new Properties() {
-    { "type", "facebook" }
-});
-```
+If you haven't had a chance to review our spec, please take a look to understand what the [screen](/docs/spec/screen/) method does.
 
 The `screen` call has the following fields:
 
@@ -236,22 +212,17 @@ The `screen` call has the following fields:
   </tr>
 </table>
 
-Find more details about `screen` including the **`screen` payload** in our [Spec](/docs/spec/screen/).
+Example `screen` call:
+
+```csharp
+Analytics.Client.Screen("019mr8mf4r", "Register", new Properties() {
+    { "type", "facebook" }
+});
+```
 
 ## Group
 
-`group` lets you associate an [identified user](/docs/sources/server/ruby/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
-
-This is useful for tools like [Intercom](/docs/integrations/intercom/), [Preact](/docs/integrations/preact/) and [Totango](/docs/integrations/totango/), as it ties the user to a **group** of other users.
-
-Example `group` call:
-
-```csharp
-Analytics.Client.Group("userId", "groupId", new Traits() {
-    { "name", "Initech, Inc." },
-    { "website", "http://www.initech.com" }
-});
-```
+If you haven't had a chance to review our spec, please take a look to understand what the [group](/docs/spec/group/) method does.
 
 The `group` call has the following fields:
 
@@ -274,13 +245,31 @@ The `group` call has the following fields:
   </tr>
 </table>
 
-Find more details about `group` including the **`group` payload** in our [Spec](/docs/spec/group/).
+Example `group` call:
+
+```csharp
+Analytics.Client.Group("userId", "groupId", new Traits() {
+    { "name", "Initech, Inc." },
+    { "website", "http://www.initech.com" }
+});
+```
 
 ## Alias
 
-`alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
+If you haven't had a chance to review our spec, please take a look to understand what the [alias](/docs/spec/alias/) method does.
 
-In [Mixpanel](/docs/integrations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/integrations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+The `alias` call has the following fields:
+
+<table class="api-table">
+  <tr>
+    <td>`previousId` _String_</td>
+    <td>The previousId for this user.</td>
+  </tr>
+  <tr>
+    <td>`userId` _String_</td>
+    <td>The ID for this user in your database.</td>
+  </tr>
+</table>
 
 Example `alias` call:
 
@@ -301,8 +290,6 @@ Analytics.Client.Identify("identified@gmail.com", new Traits() { plan: "Free" })
 Analytics.Client.Track("identified@gmail.com", "Identified Action");
 ```
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/spec/alias/).
-
 ---
 
 ## Development Settings
@@ -320,7 +307,7 @@ Don't forget to set async back to `true` for production, so that you can advanta
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
 
-Historical imports can only be done into destinations that can accept historical timestamp’ed data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
+Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
 **Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
 
@@ -351,11 +338,11 @@ Analytics.Client.Identify("hj2kf92ds212", new Traits() {
 
 In this case, we're specifying that we want this identify to only go to KISSmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "KISSmetrics", true }` turns on KISSmetrics, etc.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/integrations) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/destinations) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:**
 
-- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it’s a much simpler way of managing your filters and can be updated with no code changes on your side.
+- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
 - If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard will still count towards your API usage.
 
@@ -495,8 +482,8 @@ client.Track(...);
 ## Troubleshooting
 
 {% include content/troubleshooting-intro.md %}
-
-
+{% include content/troubleshooting-server-debugger.md %}
+{% include content/troubleshooting-server-integration.md %}
 
 ### Logging
 
@@ -505,19 +492,22 @@ client.Track(...);
 ```csharp
 using Segment;
 
-Segment.Logger.Handlers += Logging_Handler;
+Logger.Handlers += LoggingHandler;
 
-void Logging_Handler(Level level, string message, Dict args)
+static void LoggingHandler(Logger.Level level, string message, IDictionary<string, object> args)
 {
-    if (args != null)
-    {
-        foreach (string key in args.Keys) {
-            message += String.Format(" {0}: {1},", "" + key, "" + args[key]);
-        }
-    }
-    Console.WriteLine(String.Format("[Analytics] [{0}] {1}", level, message));
+      if (args != null)
+      {
+           foreach (string key in args.Keys)
+           {
+                 message += String.Format(" {0}: {1},", "" + key, "" + args[key]);
+           }
+      }
+      Console.WriteLine(String.Format("[Analytics] [{0}] {1}", level, message));
 }
 ```
+
+Please note: the logger requires a minimum version of .NET Core 2.1.
 
 ### Json.NET
 

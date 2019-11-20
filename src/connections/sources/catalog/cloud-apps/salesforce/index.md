@@ -3,13 +3,13 @@ title: Salesforce Source
 ---
 Salesforce is a leader in on-demand customer relationship management. [Visit Website](http://salesforce.com)
 
-Take your company’s analysis to the next level by **adding Salesforce as a Source to Segment.** We’ll automatically collect objects like `Accounts`, `Campaigns`, and `Tasks` and load them into your data warehouse. 
+Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** We'll automatically collect objects like `Accounts`, `Campaigns`, and `Tasks` and load them into your data warehouse. 
 
 This document was last updated on April 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
-1. From your workspace’s `/sources` page, click `add source`.
+1. From your workspace's `/sources` page, click `add source`.
 
 2. Choose Salesforce.
 
@@ -21,14 +21,14 @@ This document was last updated on April 26, 2018. If you notice any gaps, outdat
 
 6. In your Salesforce source settings you can customize the source  nickname and  schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. Both can be whatever you like, but we recommend sticking to something that reflects the source itself, like `Salesforce` for nickname and `sfdc`, `salesforce`, or `sfdc_prod` for the schema name.
 
-  **Note:** that you can add multiple instances if you have multiple SalesForce accounts. That’s why we allow you to customize the source’s nickname and schema name!
+  **Note:** that you can add multiple instances if you have multiple SalesForce accounts. That's why we allow you to customize the source's nickname and schema name!
 
 
 ## Components
 
 ### Sync
 
-The Salesforce source is built with a sync component, which means we’ll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we’ll grab all the Salesforce objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance’s schema name you designated upon creation. For example, if you went with `sfdc_prod`, the `leads` collection will be accessible at `sfdc_prod.leads` in SQL.
+The Salesforce source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Salesforce objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation. For example, if you went with `sfdc_prod`, the `leads` collection will be accessible at `sfdc_prod.leads` in SQL.
 
 Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Salesforce. For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
@@ -48,7 +48,7 @@ Collections are the groupings of resources we pull from your source. In your war
 |  campaign_members | object | The association between a Campaign and either a Lead or Contact. Corresponds to [CampaignMember](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_campaignmember.htm) resource in Salesforce |
 |  campaign_shares | object | Represents a list of access levels to a Campaign along with an explanation of the access level. For example, if you have access to a record because you own it, the Access Level value is Full and Reason for Access value is Owner. Corresponds to [CampaignShare](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_campaignshare.htm) resource in Salesforce |
 |  campaign_tags | object | Associates a word or short phrase with a Campaign. Corresponds to [CampaignTag](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_campaigntag.htm) resource in Salesforce |
-|  cases | object | A customer issue such as a customer’s feedback, problem, or question. Corresponds to [Case](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_case.htm) resource in Salesforce |
+|  cases | object | A customer issue such as a customer's feedback, problem, or question. Corresponds to [Case](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_case.htm) resource in Salesforce |
 |  case_comments | object | A comment that provides additional information about the associated Case. Corresponds to [CaseComment](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_casecomment.htm) resource in Salesforce |
 |  case_contact_role | object | The role that a given Contact plays on a Case. Corresponds to [CaseContactRole](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_casecontactrole.htm) resource in Salesforce |
 |  case_solution | object | The association between a particular Case and a particular Solution. Corresponds to [CaseSolution](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_casesolution.htm) resource in Salesforce |
@@ -87,7 +87,7 @@ Collections are the groupings of resources we pull from your source. In your war
 |  tasks | object | An activity or to-do item to perform or that has been performed. Corresponds to [Task](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_task.htm) resource in Salesforce |
 |  task_tags | object | Associates a word or short phrase with a Task. Corresponds to [TaskTag](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_tasktag.htm) resource in Salesforce |
 |  users | object | A user in your organization. Corresponds to [User](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_user.htm) resource in Salesforce |
-|  user_login | object | Represents the settings that affect a user’s ability to log into an organization. This object is available in API version 29.0 and later. Corresponds to [UserLogin](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_userlogin.htm) resource in Salesforce |
+|  user_login | object | Represents the settings that affect a user's ability to log into an organization. This object is available in API version 29.0 and later. Corresponds to [UserLogin](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_userlogin.htm) resource in Salesforce |
 |  role | object | A role in your organization. Corresponds to [UserRole](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_userrole.htm) resource in Salesforce |
 
 ### Custom Objects

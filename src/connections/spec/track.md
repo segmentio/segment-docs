@@ -1,11 +1,10 @@
 ---
 title: 'Spec: Track'
-sidebar: Track
 ---
 
 The `track` API call is how you record any actions your users perform, along with any properties that describe the action.
 
-Each action is known as an event. Each event has a name, like **Registered**, and properties, for example a **Registered** event might have properties like `plan` or `accountType`. Calling `track` in one of our [sources](/docs/sources/) is one of the first steps to getting started with Segment.
+Each action is known as an event. Each event has a name, like **Registered**, and properties, for example a **Registered** event might have properties like `plan` or `accountType`. Calling `track` in one of our [sources](docs/connections/sources/) is one of the first steps to getting started with Segment.
 
 Here's the payload of a typical `track` call with most [common fields](/docs/spec/common/) removed:
 
@@ -24,7 +23,7 @@ And here's the corresponding Javascript event that would generate the above payl
 
 ```js
 analytics.track("Registered", {
-  plan: "Pro Annual", 
+  plan: "Pro Annual",
   accountType: "Facebook"
 });
 ```
@@ -33,9 +32,9 @@ Beyond the common fields, the `track` call has the following fields:
 
 <table>
   <tr>
-    <th>**Field**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   {% include content/spec-field-event.md %}
   {% include content/spec-field-event-properties.md %}
@@ -105,9 +104,9 @@ The following is all the reserved properties we have standardized that apply to 
 
 <table>
   <tr>
-    <th>**Property**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>`revenue`</td>
@@ -129,4 +128,4 @@ The following is all the reserved properties we have standardized that apply to 
   </tr>
 </table>
 
-**Note:** You might be used to some destinations recognizing special properties differently. For example, Mixpanel has a special `track_charges` method for accepting revenue. Luckily, you don’t have to worry about those inconsistencies. Just pass us `revenue`.  **We’ll handle all of the destination-specific conversions for you automatically.** Same goes for the rest of the reserved properties.
+**Note:** You might be used to some destinations recognizing special properties differently. For example, Mixpanel has a special `track_charges` method for accepting revenue. Luckily, you don't have to worry about those inconsistencies. Just pass us `revenue`.  **We'll handle all of the destination-specific conversions for you automatically.** Same goes for the rest of the reserved properties.

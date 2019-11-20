@@ -1,5 +1,6 @@
 ---
-title: QuanticMind
+rewrite: true
+title: QuanticMind Destination
 ---
 [QuanticMind](https://quanticmind.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the performance leader in predictive advertising management software for paid search, social, display, and mobile. The `analytics.js` QuanticMind Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-quanticmind).
 
@@ -9,8 +10,8 @@ This document was last updated on January 09, 2019. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI’s Destinations page click on "Add Destination".
-  2. Search for "QuanticMind" within the Destinations Catalog and confirm the Source you’d like to connect to.
+  1. From your Segment UI's Destinations page click on "Add Destination".
+  2. Search for "QuanticMind" within the Destinations Catalog and confirm the Source you'd like to connect to.
   3. Drop in your `ClientID`, and `Domain` if provided, from QuanticMind account manager.
   4. Under `Events` you can then map any necessary 'track' event/s to QuanticMind numbered event/s. Please note that unless mapped in the settings, no 'track' calls will be sent to QuanticMind.
 

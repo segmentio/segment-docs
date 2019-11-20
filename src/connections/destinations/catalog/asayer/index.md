@@ -1,5 +1,6 @@
 ---
-title: Asayer
+rewrite: true
+title: Asayer Destination
 ---
 [Asayer](https://asayer.io) is a session replay tool for engineering teams. It lets you capture the full picture of each user session on your website so you can quickly solve issues and improve your customer experience.
 
@@ -14,11 +15,11 @@ _**NOTE:** The Asayer Destination is currently in beta, which means that they ar
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Asayer" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Set your Asayer Site ID - which you can find in your Asayer dashboard after clicking on Tracking Code in [Preferences -> Sites](https://app.asayer.io/client/sites) - into your Destination settings. Site ID is a whole number (e.g. 435).
-4. The CDN takes about 10 minutes to update. Right after that, Asayer's tracking code will automatically initialize onto your website. In the meantime, make sure to remove Asayer's snippet from your site, if there's any.
+4. The CDN takes about 45 minutes to update. Right after that, Asayer's tracking code will automatically initialize onto your website. In the meantime, make sure to remove Asayer's snippet from your site, if there's any.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to Asayer’s `asayer.vars` method.
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to Asayer's `asayer.vars` method.
 
 An example call which does not include a `userId` will transmit Asayer the value of the `anonymousId` and would look like:
 ```

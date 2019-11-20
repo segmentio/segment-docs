@@ -1,14 +1,22 @@
 ---
-title: Amazon S3
-redirect_from: '/integrations/amazon-kinesis-firehose'
+title: Amazon S3 Destination
 ---
+
 ## Getting Started
 
-The Amazon S3 destination puts the raw logs of the data Segment receives into your S3 bucket, encrypted, no matter what region the bucket is in.
+The Amazon S3 destination puts the raw logs of the data we're receiving into your S3 bucket, encrypted, no matter what region the bucket is in.
 
 **Note:** The data is copied into your bucket every hour around the :40 minute mark. You may see multiple files over a period of time depending on how much data is copied.
 
 Keep in mind that Amazon S3 works in a different way from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/spec/common/#integrations) does not affect events in the case of Amazon S3.
+
+Also keep in mind that Amazon S3 works in a different way from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/spec/common/#integrations) will not have any effect on events in the case of Amazon S3.
+
+The diagram below illustrates how the S3 destination works.
+
+Data from your sources is processed by the Segment Tracking API, which collects the Events in batches. When the batches reach a 100 MB, or once an hour, a process in the Segment backend uploads them to a secure Segment S3 bucket, from which they can be securely copied to your own S3 bucket.
+
+![](images/s3processdiagram.png)
 
 ## Required Steps
 

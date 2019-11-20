@@ -1,24 +1,23 @@
 ---
 title: 'Iterable Source'
 ---
-Iterable is an automated email tool. With Iterable, marketers can send the right message, to the right device, at the right time. Iterable supports blast, triggered and transactional campaigns, personalized templates, dynamic workflows, A/B testing and much more. [Visit Website](https://iterable.com/)
+Iterable is the growth marketing platform that enables brands to create, execute and optimize campaigns to power world-class customer engagement across email, push, SMS, in-app and more with unparalleled data flexibility. An integrated, cross-channel solution—built for marketers, trusted by engineers, designed with intelligence.
 
-Take your company’s email analysis to the next level by **adding Iterable as a Source to Segment.** We’ll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's marketing analysis to the next level by **adding Iterable as a Source to Segment**. Iterable will automatically collect cross-channel messaging events like `Email Delivered` and `Push Delivered`, forward them to your destinations and load them into your data warehouse.
 
-In your favorite BI or analytics tool, you’ll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you’ll be able to join your Iterable data with the event data you’re already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Iterable with Segment.](/sources/iterable)
-
+In your favorite BI or analytics tool, you'll be able to analyze all your cross-channel marketing campaigns in SQL or through drag-and-drop reports. And you'll be able to sync your Iterable data with event data you're already sending through Segment to analyze the down-funnel effects of your messaging. [Learn more about how you can use Iterable with Segment.](/sources/iterable) 
 
 ## Getting Started
 <span> </span>
 If you have previously enabled sending email events via the Iterable destination during our beta (using a project write key), you do not need to create new Iterable source. Your email data will continue to flow as normal.
 
-1. From your workspace’s `segment.com/<your-workspace>/sources page`, click `Add source`.
+1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
 
 2. Choose Iterable.
 
   ![](images/Iterable1.png)
 
-3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you’d like, but we recommend sticking to something that reflects the Source itself, like `Iterable` for nickname and `iterable` for the schema name.
+3. Give the Source a nickname and a schema name. The nickname is a label used in the Segment interface, and the schema name is the namespace you query against in your warehouse. You can name them however you'd like, but we recommend sticking to something that reflects the Source itself, like `Iterable` for nickname and `iterable` for the schema name.
 
   ![](images/Iterable2.png)
 
@@ -26,13 +25,13 @@ If you have previously enabled sending email events via the Iterable destination
 
   ![](images/Iterable3.png)
 
-5. To finish the setup, you’ll have to go into your Iterable account and enter this Segment write key in their integrations settings. Find the right place in Iterable by clicking Integrations > Third Party > Segment.
+5. To finish the setup, you'll have to go into your Iterable account and enter this Segment write key in their integrations settings. Find the right place in Iterable by clicking Integrations > Third Party > Segment.
 
 6. Click **Save**.
 
-7. In Segment, click into your Iterable Source in `segment.com/<your-workspace>/sources`. From there you’ll be able to add Destinations where you want to see email events.
+7. In Segment, click into your Iterable Source in `segment.com/<your-workspace>/sources`. From there you'll be able to add Destinations where you want to see email events.
 
-That’s it! As you send emails, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled. 
+That's it! As you send emails, events will now be sent to your destinations and automatically loaded into any warehouses you have enabled. 
 
 ## Components
 
@@ -48,9 +47,9 @@ Collections are the groupings of data we pull from your Source. In your warehous
 
 <table>
   <tr>
-    <th>**Collection**</th>
-    <th>**Type**</th>
-    <th>**Description**</th>
+    <th>Collection</th>
+    <th>Type</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td>Email Delivered</td>
@@ -80,7 +79,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
     <tr>
     <td>Email Unsubscribed</td>
     <td>Event</td>
-    <td>Recipient clicked on message’s subscription management link</td>
+    <td>Recipient clicked on message's subscription management link</td>
   </tr>
     <tr>
     <td>Email Marked as Spam</td>
@@ -124,7 +123,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
   </tr>
 </table>
 
-<!-- Example: To query the Email Delivered table, you’d write a query like this:
+<!-- Example: To query the Email Delivered table, you'd write a query like this:
 
 ```sql
 select *
@@ -137,4 +136,4 @@ from iterable.email_delivered
 
 ## Send data to Iterable
 
-The Iterable Source works better when you also connect Iterable as an destination. With the Iterable **Destination**, you can use Segment to send Iterable user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Iterable? Head on over to our [Iterable destination docs](/docs/integrations/iterable/).
+The Iterable Source works better when you also connect Iterable as an destination. With the Iterable **Destination**, you can use Segment to send Iterable user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Iterable? Head on over to our [Iterable destination docs](/docs/destinations/iterable/).

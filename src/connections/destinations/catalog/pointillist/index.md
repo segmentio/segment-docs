@@ -1,5 +1,5 @@
 ---
-title: Pointillist
+title: Pointillist Destination
 ---
 
 ## Getting Started
@@ -13,11 +13,11 @@ To set up your Pointillist account and receive your API key, please click on thi
 
 ## Identify
 
-When you call [identify](/docs/spec/identify), we’ll log an `identify` event with Pointillist and set `userId` and `anonymousId` as Actor Identifiers. Pointillist will then automatically associate all events tagged previously with the *anonymousId* to the provided *userId*. We will also associate any special traits that you provide such as name, email, and other custom traits with Labels and Numbers so that you can filter or create metrics.
+When you call [identify](/docs/spec/identify), we'll log an `identify` event with Pointillist and set `userId` and `anonymousId` as Actor Identifiers. Pointillist will then automatically associate all events tagged previously with the *anonymousId* to the provided *userId*. We will also associate any special traits that you provide such as name, email, and other custom traits with Labels and Numbers so that you can filter or create metrics.
 
 ## Track
 
-When you call [track](/docs/spec/track), we’ll log an event with Pointillist with `userId` and / or `anonymousId` as Actor Identifier and set `event` as Event Type. The table below shows mappings for other attributes. You’ll pass the key on the left into Segment and we will transform it to the key on the right in Pointillist.
+When you call [track](/docs/spec/track), we'll log an event with Pointillist with `userId` and / or `anonymousId` as Actor Identifier and set `event` as Event Type. The table below shows mappings for other attributes. You'll pass the key on the left into Segment and we will transform it to the key on the right in Pointillist.
 
 Segment Parameter | Pointillist Parameter
 ------------ | -------------
@@ -37,5 +37,3 @@ Below is an  example of how your track events will start appearing instantly in 
 ## API Key
 
 To get your API key please get in touch with a Pointillist customer representative via customer-success@pointillist.com
-
-{% include content/integration-foot.md %}

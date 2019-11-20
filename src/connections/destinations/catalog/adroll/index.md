@@ -1,9 +1,9 @@
 ---
-title: Adroll
-redirect_from: '/integrations/addroll/'
+rewrite: true
+title: AdRoll Destination
 ---
 
-[AdRoll](https://developers.adroll.com/) is a retargeting network that allows you to show ads to visitors who've landed on your site while browsing the web. The {{integration.name}} Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-adroll).
+[AdRoll](https://developers.adroll.com/) is a retargeting network that allows you to show ads to visitors who've landed on your site while browsing the web. The AdRoll Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-adroll).
 
 This document was last updated on January 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
@@ -17,8 +17,8 @@ This document was last updated on January 26, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Adroll" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Adroll" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Locate both your AdRoll Advertiser ID and Pixel ID in AdRoll's "Audience" tab, "AdRoll Pixel" section. Click on "View Pixel". Your Advertiser ID will be listed beside `adroll_adv_id` and your AdRoll Pixel will be listed beside `adroll_pix_id`.
 
     ![](images/adroll-pixel.png)

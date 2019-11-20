@@ -1,5 +1,5 @@
 ---
-title: Moosend
+title: Moosend Destination
 ---
 
 ## Getting Started
@@ -39,5 +39,3 @@ Please adhere to the specd property defintions outlined in the documentation lin
 A [Product Added](https://segment.com/docs/spec/ecommerce/v2/#product-added) event should be used to track when a user adds an item to their cart. These events can be then used to implement cart abandonment emails.
 
 Please adhere to the specd property defintions outlined in the documentation linked above.
-
-{% include content/integration-foot.md %}

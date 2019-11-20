@@ -1,10 +1,10 @@
 ---
-title: Appcues
-redirect_from: '/integrations/appcues'
+rewrite: true
+title: Appcues Destination
 ---
-Our Appcues destination code is [open-source on
-GitHub](https://github.com/appcues/analytics.js-integration-appcues)
-if you want to check it out.
+[Appcues](https://www.appcues.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) adds an experience layer to your product, so you can build user onboarding, NPS surveys, or feature announcements in minutes instead of in weeks. The Appcues JavaScript Destination is open-source. You can browse the code [on GitHub](https://github.com/appcues/analytics.js-integration-appcues).
+
+This document was last updated on November 08, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
@@ -13,109 +13,84 @@ if you want to check it out.
 
 ## Getting Started
 
-To install Appcues via Segment, add your Appcues ID and API key
-(found on your [Appcues account page](https://my.appcues.com/account))
-to your Segment destinations settings.
+{% include content/connection-modes.md %}
 
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Appcues" within the Destinations Catalog and confirm the Source you'd like to connect to.
+3. Drop in your `Appcues Id` (for client-side integration functionality) and/or your `API Key` (for server-side integration functionality) from the [Appcues account page](https://my.appcues.com/account).
 
-## JS and Server-side Destinations
+### Server
 
-Appcues provides two Segment destinations.
+Although our JavaScript destination is the traditional way to use Appcues as part of the Segment platform, Appcues also offers a server-side destination with Segment, which is useful if you'd like to send user profile or event data to Appcues from another Segment partner service. The server-side destination may be used simultaneously with the JS destination. In many cases, this is preferable to routing all data through the JS destination.
 
-The first, our JavaScript destination with Segment's `analytics.js`,
-is the traditional way to use Appcues as part of the Segment platform.
-Calls to `analytics.identify` are used to indicate user properties,
-and `analytics.page` or `analytics.track` will send events to the
-Appcues API.
+The user profile and event data received through Appcues' server-side Segment destination can be used to segment
+and target Appcues flows, just like data received from the JS destination.
 
-Separately, Appcues offers a server-side destination with Segment,
-which is useful if you'd like to send user profile or event data to
-Appcues from another Segment partner service.  (Note that this is
-different from [Segment Sources](/sources/), which
-allows you to bring multiple sources of Segment data together in your
-own data warehouse.)
-
-The server-side destination may be used simultaneously with the JS
-destination.  In many cases, this is preferable to routing all data
-through the JS destination.
-
-The user profile and event data received through Appcues'
-server-side Segment destination can be used to segment
-and target Appcues flows, just like data received from the JS
-destination.
-
-For example, using the server-side destination, customer profile and
-event data could be directed from a CRM tool into the Appcues platform.
-This data could then be used for content targeting and user
-segmentation in the Appcues content editor, alongside data from
-our `analytics.js` destination.
-
-## JavaScript API
-
-## Identify
-
-When you `identify` on `analytics.js`, we call `Appcues.identify`.  This
-is the preferred method of using and targeting on user properties.
-
-To get the most out of Appcues, you’ll want to send as much user data
-as possible in the identify call. Properties are used to target experiences
-to specific users and personalize content. Most Appcues customers send
-properties that fall into a few groups:
-
-* Properties to target based on broad classifications such as `role`
-  or `userType`
-* Properties to personalize Appcues content such as `name`, `firstName`
-  or `company`
-* Properties to target based on user lifecycle such as `createdAt` (date)
-  or usage metrics such as `numTasksComplete`
-
-## Track
-
-Calls to `analytics.track` invoke `Appcues.track` as well.  This will
-send event data to the Appcues platform, where it can be used for future
-content triggering.
+For example, using the server-side destination, customer profile and event data could be directed from a CRM tool into the Appcues platform. This data could then be used for content targeting and user segmentation in the Appcues content editor, alongside data from our `analytics.js` destination.
 
 ## Page
 
-Appcues will check to see if a user qualifies for an experience every time
-the page changes. When you first call `page` using `analytics.js`,
-`Appcues.start` checks if there are any current flows for the user and
-loads them if necessary.
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
 
-## Appcues Features
+```javascript
+analytics.page();
+```
 
-### Whitelisted Domains
+Appcues will check to see if a user qualifies for an experience every time the page changes. When you first call `page` using `analytics.js`, `Appcues.start` checks if there are any current flows for the user and loads them if necessary.
 
-By default, Appcues will target based on the path of the URL. So if we
-created an Appcues experience and targeted it to `/integrations`,
-it would appear wherever the embed script is installed with that URL path,
-like appcues.com/integrations and my.appcues.com/integrations. If your
-analytics.js script is installed on multiple domains (e.g. your marketing
-site and your web app), you’ll want to use Appcues whitelisted domains when
-targeting your experience.
+## Identify
+
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+
+```javascript
+analytics.identify('12091906-01011992', {
+  name: 'John Joe',
+  email: 'john.doe@example.com'
+});
+```
+
+When you `identify` on `analytics.js`, we call `Appcues.identify`. This is the preferred method of using and targeting on user properties.
+
+To get the most out of Appcues, you'll want to send as much user data as possible in the `identify` call. Properties are used to target experiences to specific users and personalize content. Most Appcues customers send properties that fall into a few groups:
+  * Properties to target based on broad classifications such as `role` or `userType`
+  * Properties to personalize Appcues content such as `name`, `firstName` or `company`
+  * Properties to target based on user lifecycle such as `createdAt` (date) or usage metrics such as `numTasksComplete`
+
+## Track
+
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+
+```javascript
+analytics.track("step_activated", {
+  property: "test"
+});
+```
+
+Calls to `analytics.track` invoke `Appcues.track` as well. This will send event data to the Appcues platform, where it can be used for future content triggering.
 
 ### Sending Appcues events to other Segment partner services
 
-Want to read Appcues events in your 3rd party analytics or marketing
-automation tool? Appcues supports sending events to other tools on the
-Segment platform. These events will be sent as track calls to the other
-destinations you’ve turned on.  A partial list of Appcues content
-lifecycle events that can be tracked:
+Want to read Appcues events in your 3rd party analytics or marketing automation tool? Appcues supports sending events to other tools on the Segment platform. These events will be sent as track calls to the other destinations you've turned on. A partial list of Appcues content lifecycle events that can be tracked:
+  * `flow_shown`
+  * `flow_skipped`
+  * `flow_finished`
+  * `flow_form_submission`
+  * `form_field_submission`
+  * `step_activated`
+  * `hotspots_shown`
+  * `hotspots_skipped`
+  * `hotspots_completed`
+  * `hotspot_activated`
+  * `coachmarks_shown`
+  * `coachmarks_completed`
 
-* `flow_shown`
-* `flow_skipped`
-* `flow_finished`
-* `flow_form_submission`
-* `form_field_submission`
-* `step_activated`
-* `hotspots_shown`
-* `hotspots_skipped`
-* `hotspots_completed`
-* `hotspot_activated`
-* `coachmarks_shown`
-* `coachmarks_completed`
+To enable this feature, go to the Integrations Settings in Appcues and click "Activate" under the Segment integration.
 
-To enable this feature, go to the Integrations Settings in Appcues and
-click "Activate" under the Segment integration.
+### Whitelisted Domains
 
-{% include content/integration-foot.md %}
+By default, Appcues will target based on the path of the URL. So if we created an Appcues experience and targeted it to `/integrations`, it would appear wherever the embed script is installed with that URL path, like appcues.com/integrations and my.appcues.com/integrations. If your `analytics.js` script is installed on multiple domains (e.g. your marketing site and your web app), you'll want to use Appcues whitelisted domains when targeting your experience.
+
+
+## Delete
+
+When you trigger a user deletion via our [Privacy features](https://segment.com/docs/privacy-portal/user-deletion-and-suppression/), we will forward a delete notification to Appcues, who will act on the notification. You can read more about how Appcues handles deletion requests [in their docs here.](https://docs.appcues.com/article/443-gdpr-deletion-api)

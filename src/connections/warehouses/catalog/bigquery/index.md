@@ -1,9 +1,10 @@
 ---
-title: BigQuery
+title: BigQuery Destination
+rewrite: true
 ---
 
 
-Segment’s [BigQuery](https://cloud.google.com/bigquery/) connector makes it easy
+Segment's [BigQuery](https://cloud.google.com/bigquery/) connector makes it easy
 to load web, mobile, and third-party source data like Salesforce, Zendesk, and
 Google AdWords into a BigQuery data warehouse.  This guide will explain how to
 set up BigQuery and start loading data into it.
@@ -11,7 +12,7 @@ set up BigQuery and start loading data into it.
 The Segment warehouse connector runs a periodic ETL (Extract - Transform - Load)
 process to pull raw events and objects and load them into your BigQuery cluster.
 
-Using BigQuery through Segment means you’ll get a fully managed data pipeline
+Using BigQuery through Segment means you'll get a fully managed data pipeline
 loaded into one of the most powerful and cost-effective data warehouses today.
 
 This document was last updated on March 12, 2019. If you notice any gaps,
@@ -28,7 +29,7 @@ warehouse in Segment.
 
 1. Navigate to the [Google Developers Console](https://console.developers.google.com/)
 2. Configure [Cloud Platform](https://console.cloud.google.com/):
-  - If you don’t have a project already, [create one](https://support.google.com/cloud/answer/6251787?hl=en&ref_topic=6158848).
+  - If you don't have a project already, [create one](https://support.google.com/cloud/answer/6251787?hl=en&ref_topic=6158848).
   - If you have an existing project, you will need to [enable the BigQuery API](https://cloud.google.com/bigquery/quickstart-web-ui).
     Once you've done so, you should see BigQuery in the ["Resources" section](https://cl.ly/0W2i2I2B2R0M) of Cloud Platform.
   - **Note:** make sure [billing is enabled](https://support.google.com/cloud/answer/6293499#enable-billing) on your project,
@@ -130,7 +131,7 @@ Then, head to your warehouse's connection settings and update with the
 BigQuery charges based on the amount of data scanned by your queries. Views are
 a derived view over your tables that we use for de-duplication of events.
 Therefore, we recommend you query a specific view whenever possible to avoid
-duplicate events and historical objects. It’s important to note that BigQuery
+duplicate events and historical objects. It's important to note that BigQuery
 views are not cached:
 
 > BigQuery's views are logical views, not materialized views, which means that
@@ -186,7 +187,7 @@ pricing [here](https://cloud.google.com/bigquery/pricing).
 BigQuery allows you to setup [Cost Controls and
 Alerts](https://cloud.google.com/bigquery/cost-controls) to help control and
 monitor costs. If you want to learn more about what BigQuery will cost you,
-they’ve provided [this
+they've provided [this
 calculator](https://cloud.google.com/products/calculator/) to estimate your
 costs.
 
@@ -201,23 +202,14 @@ functions.
 
 ### Does Segment support streaming inserts?
 
-Segment’s connector does not support streaming inserts at this time. If you have
+Segment's connector does not support streaming inserts at this time. If you have
 a need for streaming data into BigQuery, please [contact us](/contact/requests).
 
 ### Can I customize my sync schedule?
 
-Your data will be available in Warehouses within 24-48 hours after your first
-sync. Your warehouse will then be on a sync schedule based on your [Warehouse
-Plan](https://segment.com/pricing#warehouses).
+{% include content/warehouse-sync-sched.md %}
 
-Segment allows you to schedule the time and frequency of loading data into your
-data warehouse.
-
-You can schedule your warehouse syncs by going to `Warehouse > Settings > Sync
-Schedule`. You can schedule up to the number of syncs allowed on your billing
-plan.
-
-![sync schedule image](../images/syncsched.png)
+![sync schedule image](images/syncsched.png)
 
 ## Troubleshooting
 

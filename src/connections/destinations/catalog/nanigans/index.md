@@ -1,12 +1,12 @@
 ---
-title: Nanigans
+title: Nanigans Destination
 ---
 
 ## Getting Started
 
 When you toggle on Nanigans in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading Nanigans.js onto your page. This means you should remove Nanigans's snippet from your page.
++ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Nanigans.js onto your page. This means you should remove Nanigans's snippet from your page.
 + Nanigans will start automatically collecting data on your site.
 
 ## Track
@@ -34,5 +34,3 @@ By default, if you send any data with either the iOS or Android library, we will
 If you'd like to send any other server side event using a server side library, you can either enable the option "Send Events to Mobile Endpoint" in your Nanigans settings. However, this means that ALL server side events sent from your server side library will be sent to the mobile endpoint.
 
 If you are unsure which endpoint to send to, please contact Nanigans support!
-
-{% include content/integration-foot.md %}

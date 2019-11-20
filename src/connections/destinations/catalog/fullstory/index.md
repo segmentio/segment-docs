@@ -1,5 +1,6 @@
 ---
-title: FullStory
+title: FullStory Destination
+rewrite: true
 ---
 [FullStory](https://help.fullstory.com/11269-Develop) lets product and support teams easily understand everything about the customer experience. The Segment integration for FullStory helps accurately identify your customers within the FullStory dashboard.
 
@@ -9,10 +10,10 @@ This document was last updated on January 25, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "FullStory" within the Destinations Catalog and confirm the Source you’d like to connect to. Please note the source must be sending events via our Javascript library Analytics.js.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "FullStory" within the Destinations Catalog and confirm the Source you'd like to connect to. Please note the source must be sending events via our Javascript library Analytics.js.
 3. Add your `FS Org` in the destination settings. You can find this in FullStory by navigating to `Settings` > `General` > and copying the value found on the line `window['_fs_org'] = 'fullstory_org_here';`
-4. In about 5-10 minutes the CDN will be updated and FullStory's recording snippet will be initialized onto your page.
+4. In about 45 minutes the CDN will be updated and FullStory's recording snippet will be initialized onto your page.
 
 ## Identify
 

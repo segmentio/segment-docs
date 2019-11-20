@@ -1,11 +1,11 @@
 ---
-title: Insidevault
+title: QuanticMind Destination
 beta: true
 ---
 
 ## Server Side
 
-Because QuanticMind cannot implicitly alias multiple identifiers for a given user, in order to accomodate both logged out and logged in users across client and server it is *required* to pass the `anonymousId` from the client to the server and include it in your server-side calls.
+Because QuanticMind cannot implicitly alias multiple identifiers for a given user, in order to accommodate both logged out and logged in users across client and server it is *required* to pass the `anonymousId` from the client to the server and include it in your server-side calls.
 
 Here's how to grab the `anonymousId`:
 
@@ -28,5 +28,3 @@ analytics.enqueue(TrackMessage.builder("Purchased Item")
     )
 );
 ```
-
-{% include content/integration-foot.md %}

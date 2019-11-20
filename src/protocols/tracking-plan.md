@@ -1,6 +1,5 @@
 ---
-title: 'Protocols: Tracking Plan'
-sidebar: Tracking Plan
+title: 'Protocols: Tracking Plans'
 ---
 
 
@@ -10,7 +9,7 @@ A Tracking Plan is a data spec outlining the events and properties you intend to
 
 When building a Tracking Plan, we recommend starting with the key metrics that drive value for your business. Key metrics may include new user signups, top line revenue, product utilization and more. With key metrics defined, it becomes much easier to define which user actions help track or improve those key metrics. Each user action maps to a distinct event, or `.track()`  call, that you will track in Segment. `.identify()`, `.page()` and `.group()` calls can also be validated in the Tracking Plan.
 
-The Segment Tracking Plan feature allows you to validate your expected events against the live events being delivered to Segment. Violations are generated when an event does not match the spec’d event in the Tracking Plan.
+The Segment Tracking Plan feature allows you to validate your expected events against the live events being delivered to Segment. Violations are generated when an event does not match the spec'd event in the Tracking Plan.
 
 Tracking Plans are stored at workspace level, and can be connected to one or more Sources.
 
@@ -20,7 +19,7 @@ Tracking Plans are stored at workspace level, and can be connected to one or mor
 
 ## Create a Tracking Plan
 
-To create a new Tracking Plan, you will need to work with your Segment account team to enable the Protocols functionality within your workspace. Once enabled, you can click on Protocols in the left bar navigation to view your current Tracking Plans and create new ones.
+To create a new Tracking Plan, contact your Segment account team to enable the Protocols features in your workspace. Once enabled, you can click on Protocols in the left bar navigation to view your current Tracking Plans and create new ones.
 
 To get started, click on **New Tracking Plan** in the top right. This will open a Tracking Plan editor view where you can add events, properties, traits and corresponding filters.
 
@@ -48,7 +47,7 @@ Click on the **Add Event** button in the top right. A new row will be added. Cli
 Click on the **(+)** button next to the event name to add a new property. A new row will be added below the event name. Click into the row to add the property name. You can use your keyboard arrow and enter keys to navigate across the cells, or use your mouse. Remember to specify the description, status, data type and conditional values when applicable.
 
 ### Add a track call object or array property
-We support object and array data types within the Tracking Plan editor. These complex data structures have limited use cases and should be used sparingly as few Destinations are able to ingest the data structures. To add an object or array, create a new property row and set the Data Type to Object or Array. A **(+)** button will appear next to the property allowing you add key value pairs in the object, or objects to an array of objects.
+We support object and array data types in the Tracking Plan editor. These complex data structures have limited use cases and should be used sparingly as few Destinations are able to ingest the data structures. To add an object or array, create a new property row and set the Data Type to Object or Array. A **(+)** button will appear next to the property allowing you add key value pairs in the object, or objects to an array of objects.
 
 ### Add a label
 You can apply `key:value` labels to each event to help organize your tracking plan. These labels are helpful when multiple teams are managing a single Tracking Plan, or if you want to specify a priority, platform, product, or similar meta-data for each event. You can filter by label from the Tracking Plan, Schema, Data Validation and Violations Summary views.
@@ -71,29 +70,47 @@ Similar to how you would add `.track()` calls to the Tracking Plan, you can defi
 
 We recommend that you keep traits optional because `.identify()` and `.group()` should be called often, and pass only _new or changed_ traits, because our client-side libraries (analytics.js, iOS, Android) cache traits in local storage. [See the Identify Best Practices](/docs/guides/best-practices/what-are-best-practices-for-identifying-users/#when-and-how-often-to-call-identify) to learn more.
 
-### Tracking Plan Property Libraries
-Tracking Plan Property Libraries make it easy to pre-define property groups and easily add them to multiple events in a Tracking Plan. Libraries are especially helpful with you have many events in a Tracking Plan that share a common set of properties. For example, if you want to consistently include `order_id`, `currency`, `cart_id` and a `products` array of objects in your checkout flow events, you can create a Library with these properties including descriptions, data types and conditional filters.
+## Create a Tracking Plan Library
+
+Tracking Plan Libraries make it easy to scale the creation of multiple Tracking Plans within your workspace. You can create libraries for track events or track event properties (Note: we do not currently support identify/group traits libraries). Editing Tracking Plan Libraries is identical to [editing Tracking Plans](/docs/protocols/tracking-plan/#create-a-tracking-plan).
+
+Once created, you can import event or property Libraries into a Tracking Plan using a simple wizard flow.
 
 To create a new Library:
-1. In the left navigation, click **Protocols**.
-2. Click **Libraries** in the top navigation bar.
-3. Click **New Library** and follow the steps to name the library and add properties.
+1. In the left navigation, click **Protocols**
+2. Click **Libraries** in the top navigation bar
+3. Click **New Library** and follow the steps to create an event or property library
 
 ![](images/property_library_example.png)
 
-Property libraries can be easily imported into events in a Tracking Plan. Enter the Draft mode for a Tracking Plan and click the **Import from Property Library** dropdown. In the dialogs that appear, you can add property groups to events in the Tracking Plan. Always remember to merge your changes!
+### Tracking Plan Event Libraries
 
+Tracking Plan Event Libraries support Track events and associated properties. Event Libraries are helpful when you want to track a group of events consistently across tracking plans. For example, if you are an eCommerce company with multiple apps, you likely need to track [eCommerce Spec](/docs/spec/ecommerce/v2/) events consistently across those sources. Instead of having to re-create the eCommerce spec across multiple tracking plans, simply create a library and import the events to each Tracking Plan.
+
+### Tracking Plan Property Libraries
+
+Tracking Plan property Libraries support Track event property groups. Property Libraries are helpful when you have many events in a Tracking Plan that share a common set of properties. For example, if you want to consistently include `order_id`, `currency`, `cart_id` and a `products` array of objects in your checkout flow events, you can create a Library with these properties including descriptions, data types and conditional filters.
+
+### Importing Libraries into a Tracking Plan
+
+Event and property libraries can be easily imported into a Tracking Plan. Enter the Draft mode for a Tracking Plan and click the **Import from Event or Property Library** dropdown. A wizard will appear allowing you to either add the events to a tracking plan, or add properties to selected events already in the tracking plan. After adding your events or properties, remember to merge your changes!
+
+![](images/import_library_to_tracking_plan.gif)
+
+### Updating Libraries and Propagating Changes
+
+Tracking Plan Libraries do not currently support syncing changes made to the Library down to the associated Tracking Plans. You can re-import a Library into a Tracking Plan which will overwrite and upsert new events or properties. Re-importing will **not** however remove properties or events removed from the library.
 
 ## Connect a Tracking Plan
 
-With your Tracking Plan is complete, it’s time to apply the Tracking Plan to one or more Sources. Select **Connect Source** from the right hand menu for your specific Tracking Plan.
+With your Tracking Plan is complete, it's time to apply the Tracking Plan to one or more Sources. Select **Connect Source** from the right hand menu for your specific Tracking Plan.
 
 ![](images/5763308453_Screen+Shot+2018-08-31+at+5.54.18+PM.png)
 
 
 From this menu, you will be redirected to a workflow to select a Source from your workspace. Note that a Source can only have one tracking plan applied to it. You *can't* select a Source that already has a Tracking Plan connected to it, but you *can* apply a Tracking Plan to multiple sources.
 
-After selecting a Source, you will be shown the consequences of connecting your Tracking Plan. In many cases, there will be no consequences. However, if you’ve enabled Schema Defaults, events previously allowed will now be blocked if they are not included in the Tracking Plan. If you’ve blocked specific events, those events will now be allowed until you enable Blocking in the Tracking Plan settings.
+After selecting a Source, you will be shown the consequences of connecting your Tracking Plan. In many cases, there will be no consequences. However, if you've enabled Schema Defaults, events previously allowed will now be blocked if they are not included in the Tracking Plan. If you've blocked specific events, those events will now be allowed until you enable Blocking in the Tracking Plan settings.
 
 **IMPORTANT: Make sure to read through the consequences of connecting a source!**
 
@@ -114,7 +131,7 @@ To view detailed violations for an event, click on the specific event. Specific 
 - Invalid property value data types
 - Property values that do not pass applied conditional filtering
 
-In the event detail violations view, a filter can be applied to only show violations within the past 24 hrs, 7 days and 30 days.
+In the event detail violations view, a filter can be applied to only show violations in the past 24 hrs, 7 days and 30 days.
 
 
 ![](images/violations_detail.png)
@@ -125,13 +142,14 @@ To view a specific violation, simply click on the violation to view recent sampl
 If you want to analyze or build custom alerts based on inbound violations, you can [enable violation forwarding here](/docs/protocols/tracking-plan/#violation-forwarding).
 
 
-## Event Blocking
+## Schema Configuration
 
-With Unplanned Event blocking enabled, Segment will permanently drop events that are not included in your Tracking Plan. Segment can also block events with invalid properties and/or invalid property values. To enable blocking, go to the settings tab for your source and click on Schema Controls.
+The Schema Configuration settings for each source can be used to selectively block events, or omit properties and traits from `.track()`, `.identify()` and `.group()` calls. Segment can permanently drop events that are not included in your Tracking Plan, depending on the settings you select. Segment can also block events with invalid properties or invalid property values.
 
-**IMPORTANT: It’s critical that you feel confident about the quality of your data before enabling blocking. This is a serious step that often comes after customers have gone through and resolved violations surfaced when connecting a Tracking Plan to a Source.**
+To enable blocking, go to the **Settings** tab for your source, and click on **Schema Controls**. See below for detailed descriptions for each of the configuration settings.
 
-To edit your blocking settings, select from the drop downs pictured below to allow or block events. See below for detailed descriptions for each of the configuration settings.
+**IMPORTANT: It's critical that you feel confident about the quality of your data before you enable blocking. This is a serious step that you should only do after you have resolved any violations that appear when you first connect a Tracking Plan to a Source.**
+
 
 ![](images/event_blocking.png)
 
@@ -145,7 +163,7 @@ For example, if you include a `Subscription Cancelled` event in your Tracking Pl
     analytics.track('subscription_cancelled')
 ```
 
-**IMPORTANT: Unplanned event blocking is supported across all device mode and cloud mode Destinations.**
+**IMPORTANT: Unplanned event blocking is supported across all device-mode and cloud-mode Destinations.**
 
 ### Track Calls - Unplanned Properties
 
@@ -157,16 +175,18 @@ For example, if you include a single `subscription_id` property in the `Subscrip
     analytics.track('Subscription Cancelled', {subscription_id: '23r90jfs9ej', subscription_name: 'premium'})
 ```
 
-**IMPORTANT: Unplanned property omission is ONLY supported in cloud mode Destinations. Unplanned properties will not be omitted when sending to device mode Destinations.**
+**IMPORTANT: Unplanned property omission is ONLY supported in cloud-mode Destinations. Unplanned properties will not be omitted when sending to device-mode Destinations.**
 
 ### Track Calls - JSON Schema Violations
-Setting this dropdown to Block Event will ensure that all events with JSON schema violations (i.e. missing required properties, incorrect property value data types, or invalid regex patterns) will be blocked. This is a highly advanced feature that requires extensive testing and a squeaky clean data set + tracking plan to enable. To get a sense of which events will be blocked, go to the Violations view for a source and note all events with a violation. For example, if you added a a `subscription_id` required property to your `Subscription Cancelled` event in your Tracking Plan, the below track call would be blocked by Protocols.
+Setting this dropdown to Block Event will ensure that all events with JSON schema violations (i.e. missing required properties, incorrect property value data types, or invalid regex patterns) will be blocked. A less aggressive option is to select Omit from the dropdown which will simply remove the offending property from the event.
+
+This is an advanced feature that requires extensive testing and a squeaky clean data set + tracking plan to enable. To get a sense of which events will be blocked, or properties omitted, go to the Violations view for a source and note all events with a violation. For example, if you added a `subscription_id` required property to your `Subscription Cancelled` event in your Tracking Plan, the below track call would be blocked by Protocols, or property omitted, depending on your setting.
 
 ```js
     analytics.track('Subscription Cancelled', {customer_type: 'enterprise'})
 ```
 
-**IMPORTANT: JSON schema violation event blocking is ONLY supported in cloud mode Destinations. Events with invalid properties will not be blocked from sending to device mode Destinations.**
+**IMPORTANT: JSON schema violation event blocking is ONLY supported in cloud-mode Destinations. Events with invalid properties will not be blocked from sending to device-mode Destinations.**
 
 ### Identify Calls - Unplanned Traits
 Setting this dropdown to Omit Traits will ensure that traits not defined in your Tracking Plan are removed from the identify call. For example, if you specify three traits in your Tracking Plan (`name`, `email`, `join_date`), the below identify call would have the `first_name` property omitted by Protocols.
@@ -175,12 +195,12 @@ Setting this dropdown to Omit Traits will ensure that traits not defined in your
     analytics.identify('fe923fjid', {email: 'roger@example.com', first_name: 'Roger'})
 ```
 
-**IMPORTANT: Unplanned identify trait blocking is ONLY supported in cloud mode Destinations. Events with invalid traits will not be blocked from sending to device mode Destinations.**
+**IMPORTANT: Unplanned identify trait blocking is ONLY supported in cloud-mode Destinations. Events with invalid traits will not be blocked from sending to device-mode Destinations.**
 
 
 ## Blocked Event Forwarding
 
-If you’re concerned about permanently discarding blocked events, you can enable blocked event forwarding to a Segment Source. To set up forwarding, visit your Source settings tab and select which source you want to forward events to from the dropdown. We recommend creating a new Source for forwarded events to avoid contaminating production data. We recommend only enabling blocking when you feel confident about the quality of your data.
+If you're concerned about permanently discarding blocked events, you can enable blocked event forwarding to a Segment Source. To set up forwarding, visit your Source settings tab and select which source you want to forward events to from the dropdown. We recommend creating a new Source for forwarded events to avoid contaminating production data. We recommend only enabling blocking when you feel confident about the quality of your data.
 
 ![](images/blocked_event_forwarding.png)
 

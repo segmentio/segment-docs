@@ -1,5 +1,6 @@
 ---
-title: Moesif
+rewrite: true
+title: Moesif API Analytics Destination
 ---
 
 ## Moesif API Analytics Destination

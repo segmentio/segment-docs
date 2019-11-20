@@ -1,5 +1,5 @@
 ---
-title: Framed
+title: Framed.io Destination
 beta: true
 ---
 
@@ -30,5 +30,3 @@ When you `track` an event, we will send that event to Framed as a user event. Ev
 - `userID` (`userID`)
 - `event_name` (`event_name`)
 - Any properties of the event will be passed onto Framed as custom properties of the event itself.
-
-{% include content/integration-foot.md %}

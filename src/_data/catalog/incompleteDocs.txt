@@ -3,7 +3,8 @@ src/connections/sources/catalog/cloud-apps/airship
 src/connections/sources/catalog/cloud-apps/launchdarkly
 src/connections/sources/catalog/cloud-apps/pendo
 src/connections/sources/catalog/cloud-apps/project
-src/connections/sources/catalog/libraries/website/shopify-by-littledatasrc/connections/destinations/catalog/adlearn-open-platform
+src/connections/sources/catalog/libraries/website/shopify-by-littledata
+src/connections/destinations/catalog/adlearn-open-platform
 src/connections/destinations/catalog/adquick
 src/connections/destinations/catalog/airship
 src/connections/destinations/catalog/amazon-eventbridge

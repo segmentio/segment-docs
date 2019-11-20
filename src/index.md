@@ -2,16 +2,6 @@
 title: Segment Documentation
 layout: home
 landing: true
-redirect_from:
-- '/big-picture/'
-- '/big-picture/best-practices/'
-- '/big-picture/what-we-do/'
-- '/guides/mobile-spec-guides/'
-- '/guides/sources/add-my-own-source/'
-- '/pl/'
-- '/platforms/chrome-extension/When/'
-- '/plugins/woocommerce%20'
-- '/troubleshooting/data'
 ---
 
 Welcome to the Segment!

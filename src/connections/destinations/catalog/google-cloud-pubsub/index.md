@@ -1,5 +1,5 @@
 ---
-title: Google Cloud PubSub
+title: Google Cloud Pub/Sub Destination
 ---
 
 ## Getting Started
@@ -45,5 +45,3 @@ The structure of a Pub/Sub message follows this structure: [PubsubMessage](https
 Our integration will publish the entire Segment event payload as a Base64 encoded string and set it as the value of the `data` parameter in the Pub/Sub message payload. We will set the `publishTime` to be the `timestamp` of the Segment event.
 
 We do not currently integrate with the optional `attributes` parameter. If you use this functionality, please [contact us](https://segment.com/help/contact).
-
-{% include content/integration-foot.md %}

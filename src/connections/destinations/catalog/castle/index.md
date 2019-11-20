@@ -1,15 +1,11 @@
 ---
-title: Castle
+title: Castle Destination
 ---
 
-# Integrating through Segment
-This guide is also available from [Segment's documentation](https://segment.com/docs/integrations/castle/).
+Once you enable the Castle integration, the [Castle JavaScript snippet](https://castle.io/docs/tracking) is placed on your website, and user data starts appearing in the Castle dashboard.
+Client-side tracking works out of the box, however **your existing server-side calls need to be extended** with data from the incoming request.
 
-## Introduction
-Once you enable the Castle integration, the [Castle JavaScript snippet](https://castle.io/docs/tracking) will be placed on your website, and you will see user data start appearing in the Castle dashboard.
-Client-side tracking will work out of the box, whereas **your existing server-side calls will need to be extended** with data from the incoming request.
-
-Castle has support for calling `identify`, `page`, `screen`, and `group`. The `alias` call is **not** supported.
+Castle supports calling `identify`, `page`, `screen`, and `group`. Castle does *not* support the `alias` call.
 
 ## Integration steps
 1. Track successful and failed logins
@@ -19,9 +15,10 @@ Castle has support for calling `identify`, `page`, `screen`, and `group`. The `a
 1. _Recommended:_ Secure Mode
 
 ## Tracking successful and failed logins
-**A baseline integration of Castle includes tracking [successful and failed login attempts](https://castle.io/docs/events#recommended-order-of-integration).** If you are already tracking these events through your Segment integration, you can use [Event Mapping](https://dashboard.castle.io/settings/events) to indicate which of your events that correspond to Castle reserved events.
+**A baseline integration of Castle includes tracking [successful and failed login attempts](https://castle.io/docs/events#recommended-order-of-integration).** If you are already tracking these events using a Segment integration, you can use [Event Mapping](https://dashboard.castle.io/settings/events) to indicate which events correspond to Castle reserved events.
 
->**Note**: If you are going to request a Castle risk score for the "Logged in" event, you should **not** map that event to Castle's reserved `$login.succeeded`. Instead, you should [`authenticate`](https://castle.io/docs/authentication) that event through Castle. See next section on _Requesting a risk score_.
+>**Note**: If you request a Castle risk score for the "Logged in" event, you should **not** map that event to Castle's reserved `$login.succeeded`. Instead, [`authenticate`](https://castle.io/docs/authentication) that event through Castle. See next section on _Requesting a risk score_.
+
 Here are two Ruby examples on how to track successful and failed login attempts (`context` and `integration` have been omitted for brevity):
 
 ```ruby
@@ -31,7 +28,7 @@ analytics.track(
 )
 ```
 
-Tracking failed logins enables protection for account threats such as password guessing. If you don't know which user that generated the failed login, simply omit `user_id`. Instead, whenever you have access to the user-submitted email field, add this to the event properties as `email` or `username` depending on how you identify your users. It's OK to send both `user_id` and `email` at the same time.
+When you track failed logins, you can protect against account threats such as password guessing. If you don't know which user that generated the failed login, omit the `user_id`. Instead, whenever you have access to the user-submitted email field, add this to the event properties as `email` or `username` depending on how you identify your users. Sending both `user_id` and `email` at the same time does not cause any data problems.
 
 ```ruby
 # known user
@@ -54,15 +51,16 @@ analytics.track(
 ## Extending server-side tracking with request properties
 Tracking events from your server-side is crucial to prevent requests from getting blocked by malicious actors. This is recommended for all [Castle's reserved events](https://castle.io/docs/events), such as logins and password changes.
 
-> **Important:** Server-side `track` events will get dropped by Castle unless they contain the below properties. `identify` calls will still create or update a user, but will not create a device if these properties are missing:
+**Important:** Server-side `track` events are dropped by Castle unless they contain the properties listed below. `identify` calls still create or update a user, but do not create a device if these properties are missing:
 - `context.ip`. The user's IP address, i.e. not your server's internal IP
 - `context.user_agent`, alternatively `context.headers` containing at least the `user_agent` field.
 - `context.client_id`. The _Client ID_ forwarded by the web or mobile SDK.
 
-These properties are described more in detail in the next section.
+These properties are described in detail in the next section.
 
-If you aren't tracking the above properties, you can still make the event appear in the user timeline by configuring it to _Force Track_ in the [Castle dashboard](https://dashboard.castle.io/settings/events). However, it will not attach to a device or contribute to the risk score.
-Here’s a Ruby example of a server-side `track` call extended with request properties:
+If you aren't tracking the properties above, you can still make the event appear in the user timeline by configuring it to _Force Track_ in the [Castle dashboard](https://dashboard.castle.io/settings/events). However, it does not attach to a device or contribute to the risk score.
+
+Here's a Ruby example of a server-side `track` call extended with request properties:
 
 ```ruby
 analytics.track(
@@ -78,16 +76,17 @@ analytics.track(
     }
   })
 ```
+
 > **Note:** If you're concerned about sending `client_id` and `headers` to all of your active Segment integrations, instead include them in the `integrations.Castle` object to keep them private to your Castle integration.
 
 ### The `client_id` property
-By forwarding a client identifier from the client-side to the server-side, activity from the two sources can be linked together to form a strong protection against attacks where this link is not present.
+By forwarding a client identifier from the client-side to the server-side, you can link activity from the two sources to form a strong protection against attacks where this link is not present.
 
-The Castle JavaScript SDK (loaded by Analytics.js) will forward the client identifier as a browser cookie named `__cid`.
+The Castle JavaScript SDK (loaded by Analytics.js) forwards the client identifier as a browser cookie named `__cid`.
 
-The Castle [iOS](https://castle.io/docs/ios#forwarding-code-device_id-code-to-your-server) and [Android](https://castle.io/docs/android#forwarding-code-device_id-code-to-your-server) SDKs will forward it as the HTTP header `X-Castle-Client-Id`. See the respective documentation pages for instructions on how to configure the header forwarding.
+The Castle [iOS](https://castle.io/docs/ios#forwarding-code-device_id-code-to-your-server) and [Android](https://castle.io/docs/android#forwarding-code-device_id-code-to-your-server) SDKs forward it as the HTTP header `X-Castle-Client-Id`. See the respective documentation pages for instructions on how to configure the header forwarding.
 
-Here’s a Ruby example on how to extract the Client ID on your server-side:
+Here's a Ruby example on how to extract the Client ID on your server-side:
 
 ```ruby
 client_id =
@@ -169,7 +168,7 @@ Enable [Secure Mode](https://castle.io/docs/secure_mode) to prevent fraudsters f
 > **Note:** Secure Mode is highly encouraged for production deployments, but can wait until after a completed proof a concept.
 To enable Secure Mode in Analytics.js, you pass in the `secure` variable by rendering it in your server-side templates. The `secure` field should be a SHA256 hash of your Castle API Secret and the user ID.
 
-Here’s an JavaScript example of an `identify` call with Secure Mode being rendered with Ruby server-side templating language:
+Here's an JavaScript example of an `identify` call with Secure Mode being rendered with Ruby server-side templating language:
 
 ```javascript
 analytics.identify('1234', {
@@ -197,5 +196,3 @@ end
 Castle's adaptive authentication tells you whether to allow access, initiate a second factor of authentication, or log out the user.
 
 Since all Segment calls are called asynchronously, you will need to use Castle's native SDKs to perform [adaptive authentication](https://castle.io/docs/authentication).
-
-{% include content/integration-foot.md %}

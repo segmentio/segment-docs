@@ -1,7 +1,8 @@
 ---
-title: Userlist.io
+rewrite: true
+title: Userlist Destination
 ---
-[Userlist.io](https://userlist.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to send behavior-based messages to your SaaS users. It’s great for onboarding users as well as nurturing them throughout their journey.
+[Userlist.io](https://userlist.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to send behavior-based messages to your SaaS users. It's great for onboarding users as well as nurturing them throughout their journey.
 
 This destination is maintained by Userlist.io. For any issues with the destination, please [reach out to their team](mailto:support@userlist.io).
 
@@ -29,15 +30,15 @@ If you haven't had a chance to review our spec, please take a look to understand
 	  createdAt: '2019-03-21T12:12:54.735+01:00'
 	});
 
-Identify calls will be sent to Userlist.io as user records. If the `userId` is already known, it’ll update the user record, otherwise it’ll create a new one.
+Identify calls will be sent to Userlist.io as user records. If the `userId` is already known, it'll update the user record, otherwise it'll create a new one.
 
-Here’s how Segment fields map to Userlist users:
+Here's how Segment fields map to Userlist users:
 
 | Segment field | Userlist field | Description
 |-------------|---------------|-----------
 | `userId` | `identifier` | The unique identifier for this user. |
 | `traits` | `properties` | Additional properties describing the user. |
-| `traits.email` | `email` | The user’s email address. |
+| `traits.email` | `email` | The user's email address. |
 | `traits.createdAt` | `signed_up_at` | The time when the user was created. |
 
 

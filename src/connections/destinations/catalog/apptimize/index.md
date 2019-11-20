@@ -1,6 +1,6 @@
 ---
-title: Apptimize
-redirect_from: '/integrations/apptimize'
+rewrite: true
+title: Apptimize Destination
 ---
 [Apptimize](https://apptimize.com/) empowers product teams to efficiently run A/B tests, rollout and manage new features, and deliver personalized user experiences. Our Apptimize destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/Apptimize/analytics-ios-integration-apptimize) and [Android](https://github.com/Apptimize/analytics-android-integration-apptimize).
 
@@ -10,8 +10,8 @@ This document was last updated on April 27, 2018. If you notice any gaps, outdat
 
 {% include content/connection-modes.md %}
 
- 1. From your Segment UI’s Destinations page click on "Add Destination".
- 2. Search for "Apptimize" within the Destinations Catalog and confirm the Source you’d like to connect to.
+ 1. From your Segment UI's Destinations page click on "Add Destination".
+ 2. Search for "Apptimize" within the Destinations Catalog and confirm the Source you'd like to connect to.
  3. Drop in your Apptimize application key, the 31 character key which you can find in your [Apptimize app settings](https://apptimize.com/admin/settings/apps).
  4. Depending on the mobile library you've selected, follow the below instructions to complete your setup.
 
@@ -42,12 +42,12 @@ _**NOTE:** There is also an advanced setting to publish Apptimize experiment dat
     compile 'com.apptimize.segment:apptimize-segment-integration:+'
     ```
 3. Update code:
-    ```
-    Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY_HERE")
-      .use(ApptimizeIntegration.FACTORY)
-      ...
-      .build();
-    ```
+   ```
+   Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY_HERE")
+     .use(ApptimizeIntegration.FACTORY)
+     ...
+     .build();
+   ```
 
 ### Manually Initialize Apptimize
 
@@ -57,7 +57,7 @@ Since both iOS and Android destinations are initialized asynchronously by Segmen
 
 #### iOS
 
-Set the plist property ‘ApptimizeAppKey’ to the corresponding app key for the app.
+Set the plist property `ApptimizeAppKey` to the corresponding app key for the app.
 
 #### Android
 

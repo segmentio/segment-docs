@@ -1,5 +1,6 @@
 ---
-title: Adikteev
+rewrite: true
+title: Adikteev Destination
 ---
 
 This destination is maintained by Adikteev. For any issues with the destination, please [reach out to their team](mailto:contact@adikteev.com).

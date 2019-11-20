@@ -1,8 +1,9 @@
 ---
-title: Facebook App Events
+title: Facebook App Events Destination
+rewrite: true
 ---
 
-[Facebook App Events](https://developers.facebook.com/docs/app-events) collects required information from one of Segment's mobile SDKs ([iOS](https://segment.com/docs/sources/mobile/ios/) or [Android](https://segment.com/docs/sources/mobile/android/)) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The {{integration.name}} Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events).
+[Facebook App Events](https://developers.facebook.com/docs/app-events) collects required information from one of Segment's mobile SDKs ([iOS](https://segment.com/docs/sources/mobile/ios/) or [Android](https://segment.com/docs/sources/mobile/android/)) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The Facebook App Events Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events).
 
 This document was last updated on October 04, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
@@ -14,8 +15,8 @@ This document was last updated on October 04, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI’s Destinations page click on "Add Destination".
-2. Search for "Facebook App Events" within the Destinations Catalog and confirm the Source you’d like to connect to.
+1. From your Segment UI's Destinations page click on "Add Destination".
+2. Search for "Facebook App Events" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your Facebook App ID which can be retrieved from your [Facebook Apps dashboard](https://developers.facebook.com/apps/).
 4. Once you turn on the Facebook App Events integration in your app's Segment project, we'll start sending `track` data to Facebook's App Events endpoints.
 
@@ -23,7 +24,7 @@ This document was last updated on October 04, 2018. If you notice any gaps, outd
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/screen/) does. An example call would look like:
 
-```
+```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
                             properties:@{ @"Feed Type": @"public" }];
 ```
@@ -38,7 +39,7 @@ Please note, the integration will not automatically translate `screen` events to
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
 
-```
+```objc
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"
                            properties:@{ @"title": @"How to Create a Tracking Plan", @"course": @"Intro to Analytics" }];
 ```

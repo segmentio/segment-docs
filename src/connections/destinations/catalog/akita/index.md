@@ -1,6 +1,6 @@
 ---
-title: Akita
 beta: true
+title: Akita Destination
 ---
 
 *This destination is maintained by Akita*
@@ -23,7 +23,7 @@ Akita needs to know which of your users is being tracked. You provide this infor
 
 An example call would look like:
 
-```
+```js
 analytics.identify('user_unique_id', {
   email: 'first.last@example.com',
   name: 'John Doe',
@@ -37,7 +37,7 @@ When you call `group`, Segment will send the group's information to Akita with `
 
 An example call would look like:
 
-```
+```js
 analytics.identify('unique_group_id', {
   name: 'MegaCorp'
 });
@@ -50,6 +50,3 @@ When you call `page`, Segment will send that event to Akita as a `Page View`.
 ## Track
 
 When you call `track`, Segment will send that event to Akita as an `Event`.
-
-
-{% include content/integration-foot.md %}

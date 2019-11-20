@@ -1,5 +1,6 @@
 ---
-title: SlicingDice
+rewrite: true
+title: SlicingDice Destination
 ---
 [SlicingDice](https://slicingdice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an all-in-one data warehouse. It's a fully managed cloud data warehouse with optional built-in tools for data integration, exploration, visualization and machine learning.
 
@@ -12,7 +13,7 @@ _**NOTE:** The SlicingDice Destination is currently in beta, which means that th
 
 {% include content/connection-modes.md %}
 
-1. Login into your SlicingDice’s Control Panel account to create a connection between SlicingDice and Segment.
+1. Login into your SlicingDice's Control Panel account to create a connection between SlicingDice and Segment.
 2. Follow the [Connecting to Segment guide](https://docs.slicingdice.com/data_warehouse_module/connecting_external_tools/segment.html) available in SlicingDice documentation to create and allow this connection.
 
 
@@ -31,7 +32,7 @@ Page calls will save your data in SlicingDice using the following columns:
 
 ## Screen
 
-If you haven’t had a chance to review our spec, please take a look to understand what the Screen method does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the Screen method does. An example call would look like:
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
@@ -77,7 +78,7 @@ Track calls will be sent to SlicingDice using the following columns:
 
 ## Groups
 
-If you haven’t had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. An example call would look like:
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {
   name: "Initech",

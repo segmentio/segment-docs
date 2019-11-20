@@ -82,7 +82,7 @@ The `identify` call has the following fields:
   </tr>
   <tr>
     <td>`timestamp` _datetime, optional_</td>
-    <td>A `datetime` object representing when the `identify` took place. This is most useful if you’re importing historical data. If the `identify` just happened, leave it blank and we’ll use the server’s time.</td>
+    <td>A `datetime` object representing when the `identify` took place. This is most useful if you're importing historical data. If the `identify` just happened, leave it blank and we'll use the server's time.</td>
   </tr>
   <tr>
     <td>`anonymous_id` _string or int, optional_</td>
@@ -144,7 +144,7 @@ The `track` method has the following fields:
   </tr>
   <tr>
     <td>`timestamp` _datetime, optional_</td>
-    <td>A `datetime` object representing when the `track` took place. This is most useful if you’re importing historical data. If the `track` just happened, leave it blank and we’ll use the server’s time.</td>
+    <td>A `datetime` object representing when the `track` took place. This is most useful if you're importing historical data. If the `track` just happened, leave it blank and we'll use the server's time.</td>
   </tr>
   <tr>
     <td>`anonymous_id` _string or int, optional_</td>
@@ -188,7 +188,7 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`properties` _dict, optional_</td>
-    <td>A dictionary of properties of the page. A few properties specially recognized and automatically translated: `url`, `title`, `referrer` and `path`, but you can add your own too!</td>
+    <td>The page properties. To see a reference of reserved page properties that we've standardized, check out our spec [here](https://segment.com/docs/spec/page/#properties).</td>
   </tr>
   <tr>
     <td>`context` _dict, optional_</td>
@@ -196,7 +196,7 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`timestamp` _datetime, optional_</td>
-    <td>A `datetime` object representing when the `page` took place. This is most useful if you’re importing historical data. If the `page` just happened, leave it blank and we’ll use the server’s time.</td>
+    <td>A `datetime` object representing when the `page` took place. This is most useful if you're importing historical data. If the `page` just happened, leave it blank and we'll use the server's time.</td>
   </tr>
   <tr>
     <td>`anonymous_id` _string or int, optional_</td>
@@ -249,7 +249,7 @@ The `screen` call has the following fields:
   </tr>
   <tr>
     <td>`timestamp` _datetime, optional_</td>
-    <td>A `datetime` object representing when the `screen` took place. This is most useful if you’re importing historical data. If the `screen` just happened, leave it blank and we’ll use the server’s time.</td>
+    <td>A `datetime` object representing when the `screen` took place. This is most useful if you're importing historical data. If the `screen` just happened, leave it blank and we'll use the server's time.</td>
   </tr>
   <tr>
     <td>`anonymous_id` _string or int, optional_</td>
@@ -268,7 +268,7 @@ Find details on the **`screen` method payload** in our [Spec](/docs/spec/screen/
 
 `group` lets you associate an [identified user](/docs/sources/server/python/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/integrations/intercom/), [Preact](/docs/integrations/preact/) and [Totango](/docs/integrations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
 
 Example `group` call:
 
@@ -300,7 +300,7 @@ The `group` call has the following fields:
   </tr>
   <tr>
     <td>`timestamp` _datetime, optional_</td>
-    <td>A `datetime` object representing when the `group` took place. This is most useful if you’re importing historical data. If the `group` just happened, leave it blank and we’ll use the server’s time.
+    <td>A `datetime` object representing when the `group` took place. This is most useful if you're importing historical data. If the `group` just happened, leave it blank and we'll use the server's time.
     </td>
   </tr>
   <tr>
@@ -319,7 +319,7 @@ Find more details about `group` including the **`group` method payload** in our 
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/integrations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/integrations/kissmetrics/#alias) and [Trak.io](/docs/integrations/trak.io/#alias) if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/destinations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/destinations/kissmetrics/#alias) and [Trak.io](/docs/destinations/trak.io/#alias) if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -343,7 +343,7 @@ The `alias` call has the following fields:
   </tr>
   <tr>
     <td>`timestamp` _datetime, optional_</td>
-    <td>A `datetime` object representing when the `track` took place. This is most useful if you’re importing historical data. If the `track` just happened, leave it blank and we’ll use the server’s time.</td>
+    <td>A `datetime` object representing when the `track` took place. This is most useful if you're importing historical data. If the `track` just happened, leave it blank and we'll use the server's time.</td>
   </tr>
   <tr>
     <td>`integrations` _dict, optional_</td>
@@ -375,7 +375,7 @@ For more details about `alias` including the **`alias` call payload**, check out
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
 
-Historical imports can only be done into destinations that can accept historical timestamp’ed data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
+Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
 **Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
 
@@ -486,11 +486,11 @@ analytics.track('9742', 'Song Played', integrations={
 
 In this case, we're specifying that we want this identify to only go to KISSmetrics. `'all': False` says that no destination should be enabled unless otherwise specified. `'KISSmetrics': True` turns on KISSmetrics, etc.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/integrations) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/destinations) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:**
 
-- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it’s a much simpler way of managing your filters and can be updated with no code changes on your side.
+- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
 - If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard will still count towards your API usage.
 
@@ -589,6 +589,10 @@ Client('YOUR_WRITE_KEY', debug=True, on_error=on_error, send=True,
     <td>`gzip` _bool_</td>
     <td>`True` to compress data with gzip before sending, `False` by default.</td>
   </tr>
+  <tr>
+    <td>`sync_mode` _bool_</td>
+    <td>`True` to disable threading and send all request synchronously, `False` by default. Experimental, see [Background threads and synchronous mode](#background-threads-and-synchronous-mode).</td>
+  </tr>
 </table>
 
 ---
@@ -665,6 +669,7 @@ analytics.write_key = 'YOUR_WRITE_KEY'
 
 We have heard from our customers that Google App Engine does not resolve project dependencies, so you'll need to get [requests](https://github.com/kennethreitz/requests) and [python-dateutil](https://github.com/paxan/python-dateutil) and add it into your project so that analytics-python can find it.
 
+If you're having issues with threads outliving your request, please check [Background threads and synchronous mode](#background-threads-and-synchronous-mode)
 
 ## Troubleshooting
 
@@ -673,8 +678,8 @@ We have heard from our customers that Google App Engine does not resolve project
 Keep in mind that we have a size limit of `32KB` per request and `500KB` per batch request!
 
 {% include content/troubleshooting-intro.md %}
-
-
+{% include content/troubleshooting-server-debugger.md %}
+{% include content/troubleshooting-server-integration.md %}
 
 ### Overriding Context Value
 
@@ -709,4 +714,17 @@ or
 
 ```
 easy_install --upgrade analytics-python
+```
+
+### Background threads and synchronous mode
+
+*Experimental feature, available since `1.3.0b1`.*
+
+In some cases, you will want to disable threads and send each request synchronously. To do so, you can use the `sync_mode` option:
+
+```python
+import analytics
+
+analytics.write_key = 'YOUR_WRITE_KEY'
+analytics.sync_mode = True
 ```

@@ -1,12 +1,12 @@
 ---
-title: Olark
+title: Olark Destination
 ---
 
 ## Getting Started
 
 When you toggle on Olark in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading Olark's loader0.js onto your page. This means you should remove Olark's snippet from your page.
++ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Olark's loader0.js onto your page. This means you should remove Olark's snippet from your page.
 + Olark's chat box will appear on your page, as configured in your [Olark account](http://www.olark.com/?r=qhl4tltg), and you can start chatting with visitors.
 
 Olark is only supported on the client side.
@@ -59,7 +59,7 @@ analytics.ready(function(){
 
 ## Record Live Chat Events
 
-Using Olark through Segment gives you the ability to automatically record `track` events for live chat conversations. If you select this option, we’ll collect the following events:
+Using Olark through Segment gives you the ability to automatically record `track` events for live chat conversations. If you select this option, we'll collect the following events:
 
 * Live Chat Conversation Started
 * Live Chat Message Sent
@@ -70,5 +70,3 @@ These events will be sent to other tools in your stack that can accept track cal
 To learn more about the live chat events you can capture with this destination, head on over to our [Live Chat spec docs](/docs/spec/live-chat/).
 
 ![Turn on Olark](images/olarklivechat.png)
-
-{% include content/integration-foot.md %}

@@ -7,7 +7,7 @@ sourceCategory: 'Server'
 
 The Segment HTTP Tracking API lets you record analytics data from any website or application. The requests hit our servers, and we route your data to any destination you want!
 
-We have native [sources](/docs/sources/) for most use cases (Javascript, iOS, etc.) that are all built for high-performance and are open-source. But sometimes you may want to send to the HTTP API directly—that's what this reference is for.
+We have native [sources](docs/connections/sources/) for most use cases (Javascript, iOS, etc.) that are all built for high-performance and are open-source. But sometimes you may want to send to the HTTP API directly—that's what this reference is for.
 
 ## Headers
 
@@ -262,7 +262,7 @@ For more details on the `alias` call and payload, check out our [Spec](/docs/spe
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
 
-Historical imports can only be done into destinations that can accept historical timestamp’ed data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
+Historical imports can only be done into destinations that can accept historical timestamp'ed data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
 **Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
 
@@ -382,7 +382,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 **Note:**
 
-- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it’s a much simpler way of managing your filters and can be updated with no code changes on your side.
+- Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
 - If you are on a grandfathered plan, events sent server-side that are filtered through the Segment dashboard will still count towards your API usage.
 

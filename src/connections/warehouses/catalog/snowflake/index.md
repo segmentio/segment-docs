@@ -1,5 +1,6 @@
 ---
-title: Snowflake
+title: Snowflake Destination
+rewrite: true
 ---
 
 [Snowflake](https://docs.snowflake.net/manuals/index.html) is a data warehouse built for the cloud. Snowflake delivers performance, simplicity, concurrency and affordability.
@@ -8,7 +9,7 @@ This document was last updated on January 29, 2018. If you notice any gaps, out-
 
 ## Getting Started
 
-There are six steps to get started using Snowflake with Segment. Please make sure that you are running the commands in each step while logged in as an `ACCOUNTADMIN` or `SYSADMIN`. While we are using predefined user (`SEGMENT_USER`), role (`SEGMENT`), warehouse (`SEGMENT_WAREHOUSE`) and database (`SEGMENT_EVENTS`) names, you can use any names you like.
+There are six steps to get started using Snowflake with Segment. Please make sure that you are running the commands in each step while logged in as an `ACCOUNTADMIN`, or an account that has `MANAGE GRANTS`. While we are using predefined user (`SEGMENT_USER`), role (`SEGMENT`), warehouse (`SEGMENT_WAREHOUSE`) and database (`SEGMENT_EVENTS`) names, you can use any names you like.
 
 1. Create Virtual Warehouse
 2. Create Database
@@ -35,7 +36,7 @@ Make sure `AUTO_SUSPEND` is set to ~10 minutes in the UI (or 600 if using SQL) a
 
 ### Create Database
 
-The Segment Snowflake destination creates its own schemas and tables, so it’s recommended to create a new database for this purpose to avoid name conflicts with existing data.
+The Segment Snowflake destination creates its own schemas and tables, so it's recommended to create a new database for this purpose to avoid name conflicts with existing data.
 
 ![](images/create_database.png)
 
@@ -47,7 +48,7 @@ CREATE DATABASE "SEGMENT_EVENTS";
 
 You need to run these commands rather than creating a role with the "Create Role" dialog in the UI.
 
-This role will be attached to Segment’s user and it gives just enough permissions for loading data in your database. We recommend not reusing this role for other operations.
+This role will be attached to Segment's user and it gives just enough permissions for loading data in your database. We recommend not reusing this role for other operations.
 
 Create a new role:
 ```sql
@@ -147,7 +148,7 @@ If you create a network policy with Snowflake, add the following IP address to t
 
 ### Multi-Factor Authentication (MFA) & SSO
 
-At this time, the Segment Snowflake destination is not compatible with Snowflake’s MFA or SSO settings. If your connected user has MFA or SSO enabled, you will need to disable it for syncs to run correctly.
+At this time, the Segment Snowflake destination is not compatible with Snowflake's MFA or SSO settings. If your connected user has MFA or SSO enabled, you will need to disable it for syncs to run correctly.
 
 ## Best Practices
 
@@ -169,9 +170,9 @@ We strongly recommend creating a unique Warehouse, Database and Role for the Seg
 
 ### I get "Object does not exist" when running "USE DATABASE" or "USE WAREHOUSE", even if the warehouse or the database are created.
 
-Make sure you have created the role and assigned the proper permissions with the account `SYSADMIN` or `ACCOUNTADMIN`. Other non-system accounts don’t assign the right permissions.
+Make sure you have created the role and assigned the proper permissions with the account `SYSADMIN` or `ACCOUNTADMIN`. Other non-system accounts don't assign the right permissions.
 
-### I’ve consumed all the credits after the initial sync.
+### I've consumed all the credits after the initial sync.
 
 If you have used all your credits, you will need to contact Snowflake to purchase more.
 
@@ -194,8 +195,19 @@ Most customers have the best luck starting with a X-Small instance.
 A `rollback` is issued at the end of each session to make sure there's no "in-flight" processes hanging out that could block other processes later.
 
 ### Does Segment use transactions for loading data?
-We don't open transactions explicitly - that would lock resources. However, if autocommit is on, each statement functions as it's own transaction, and a silent commit is issued after each.
+We don't open transactions explicitly because that would lock resources. However, if autocommit is enabled, each statement functions as it's own transaction, and a silent commit is issued after each.
 
-###
-Indexes
-Queuing - can use a different WH for Segment or use the recommendations from the Snowflake docs.
+### What privileges do I need to grant?
+You shouldn't need to grant any additional privileges. However, you may need to confirm that the USAGE privilege on those schemas is granted to the same role granted to the user connecting to Snowflake through data bricks.
+
+Run these statements in Snowflake UI or CLI, and check the output to verify the permissions.
+
+1. `SHOW GRANTS ON SCHEMA <schema_name>;`
+   Look in the output to see if USAGE privilege is granted to the role you're using.
+2. `SHOW GRANTS TO USER <username>;`
+   Replace "username" with the login ID, and verify the correct role is assigned to that login.
+
+Also, if the user has more than one role, make sure the role you use when doing the data pull has `USAGE` for the schema - and not just the default role. If your organization uses role inheritance (for example, `role apples` is granted to `role gravensteins`), then make sure that the role is being assigned and inherited correctly.
+
+### Indexes
+Queuing - you can use a different Warehouse for Segment, or use the recommendations from the Snowflake docs.

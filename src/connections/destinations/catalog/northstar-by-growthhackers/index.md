@@ -1,5 +1,6 @@
 ---
-title: NorthStar by Growthhackers
+rewrite: true
+title: NorthStar by Growthhackers Destination
 ---
 [NorthStar by Growthhackers](http://growthhackers.com/software) provides a project management tool for growth teams, allowing companies to create and prioritize ideas, run experiments and gather data to learn upon!
 
