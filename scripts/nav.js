@@ -62,7 +62,7 @@ Object.keys(sections).filter(key => !key.includes('/')).forEach((key) => {
 
     switch (key) {
         case 'legal': legalSections[key] = value; break;
-        case 'api': apiSections[key] = value; break;
+        case 'config-api': apiSections[key] = value; break;
         case 'partners': partnerSections[key] = value; break;
         default: mainSections[key] = value; break;
     }
@@ -70,7 +70,7 @@ Object.keys(sections).filter(key => !key.includes('/')).forEach((key) => {
 
 [   ['main', mainSections],
     ['legal', legalSections],
-    ['api', apiSections],
+    ['config-api', apiSections],
     ['partners', partnerSections]
 ].forEach(([ name, sections ]) => {
     const options = { noArrayIndent: true };
