@@ -9,6 +9,15 @@ const typewriter = require('analytics')
 export default function () {
   const components = document.querySelectorAll(COMPONENT_SELECTOR)
 
+  const trackFeedback = (helpful, section) => {
+    typewriter.feedbackProvided({
+      title: `${document.title}`,
+      helpful,
+      url: document.url,
+      section
+    })
+  }
+
   for (let i = 0; i < components.length; i++) {
     const helpfulButton = components[i].querySelector(HELPFUL_BUTTON_SELECTOR)
     const unhelpfulButton = components[i].querySelector(UNHELPFUL_BUTTON_SELECTOR)
@@ -25,30 +34,22 @@ export default function () {
 
     helpfulButton.addEventListener('click', (event) => {
       event.preventDefault()
-
+      const section = event.hasAttribute('data-section') ? 'side-nav' : 'footer'
       const activeClass = helpfulButton.getAttribute(ACTIVE_CLASS)
       helpfulButton.classList.add(activeClass)
 
       clickHandler()
-      typewriter.docsRated({
-        title: `${document.title}`,
-        helpful: true,
-        url: document.url
-      })
+      trackFeedback(true, section)
     })
 
     unhelpfulButton.addEventListener('click', (event) => {
       event.preventDefault()
-
+      const section = event.hasAttribute('data-section') ? 'side-nav' : 'footer'
       const activeClass = unhelpfulButton.getAttribute(ACTIVE_CLASS)
       unhelpfulButton.classList.add(activeClass)
 
       clickHandler()
-      typewriter.docsRated({
-        title: `${document.title}`,
-        helpful: false,
-        url: document.url
-      })
+      trackFeedback(false, section)
     })
   }
 }

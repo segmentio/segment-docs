@@ -44,10 +44,7 @@
   {% endif %}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
-  <link rel="icon" sizes="192x192" href="https://segment.com/build/public/public/images/touch-icon.png">
-  <link rel="apple-touch-icon" href="https://segment.com/build/public/public/images/touch-icon.png">
-  <link rel="mask-icon" href="https://segment.com/build/public/public/images/favicon-mask.svg" color="#49B882">
-
+  <link rel="icon" href="https://segment.com/favicon.ico">
   <!-- Unclear if we need this, commenting out for now
   {% if path %}
     <link rel="canonical" href="https://segment.com/docs/{{path}}/" />
@@ -226,7 +223,8 @@
         window.analytics = null
         !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
           analytics.page();
-        }}();
+          analytics.identify();
+        }}(); 
       </script>
     <script>
       document.addEventListener('click', function (e) {
