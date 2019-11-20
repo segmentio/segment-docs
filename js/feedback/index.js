@@ -34,7 +34,7 @@ export default function () {
 
     helpfulButton.addEventListener('click', (event) => {
       event.preventDefault()
-      const section = event.hasAttribute('data-section') ? 'side-nav' : 'footer'
+      const section = helpfulButton.hasAttribute('data-section') ? 'right-nav' : 'footer'
       const activeClass = helpfulButton.getAttribute(ACTIVE_CLASS)
       helpfulButton.classList.add(activeClass)
 
@@ -44,7 +44,7 @@ export default function () {
 
     unhelpfulButton.addEventListener('click', (event) => {
       event.preventDefault()
-      const section = event.hasAttribute('data-section') ? 'side-nav' : 'footer'
+      const section = helpfulButton.hasAttribute('data-section') ? 'side-nav' : 'footer'
       const activeClass = unhelpfulButton.getAttribute(ACTIVE_CLASS)
       unhelpfulButton.classList.add(activeClass)
 

@@ -23,6 +23,6 @@ export default function () {
   }
 
   document.getElementsByClassName('st-search-input')[0].addEventListener('click', function () {
-    typewriter.docsSearchClicked()
+    typewriter.searchClicked()
   })
 }
