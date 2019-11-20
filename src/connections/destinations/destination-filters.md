@@ -1,5 +1,5 @@
 ---
-title: Destinations Filters
+title: Destination Filters
 rewrite: true
 ---
 

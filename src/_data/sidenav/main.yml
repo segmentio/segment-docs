@@ -68,38 +68,113 @@ sections:
       title: What is the Segment Startup Program?
 - section_title: Connections
   section:
-  - path: /connections/spec
-    title: Spec
+  - section_title: The Segment Specs
+    slug: connections/spec
+    section:
+    - path: /connections/spec
+      title: Spec
+    - path: /connections/spec/ab-testing
+      title: 'Spec: A/B Testing Events'
+    - path: /connections/spec/alias
+      title: 'Spec: Alias'
+    - path: /connections/spec/b2b-saas
+      title: 'Spec: B2B SaaS'
+    - path: /connections/spec/common
+      title: 'Spec: Common Fields'
+    - path: /connections/spec/ecommerce
+      title: 'Spec: V1 Ecommerce Events'
+    - path: /connections/spec/email
+      title: 'Spec: Email Events'
+    - path: /connections/spec/group
+      title: 'Spec: Group'
+    - path: /connections/spec/identify
+      title: 'Spec: Identify'
+    - path: /connections/spec/live-chat
+      title: 'Spec: Live Chat Events'
+    - path: /connections/spec/migration-guide
+      title: Migration Guide
+    - path: /connections/spec/mobile-packaging-sdks
+      title: Why must you package the SDK for some mobile destinations?
+    - path: /connections/spec/mobile
+      title: Native Mobile Spec
+    - path: /connections/spec/native-mobile-spec
+      title: What is the native mobile spec?
+    - path: /connections/spec/page
+      title: 'Spec: Page'
+    - path: /connections/spec/screen
+      title: 'Spec: Screen'
+    - path: /connections/spec/semantic
+      title: 'Spec: Semantic Events'
+    - path: /connections/spec/track
+      title: 'Spec: Track'
+    - path: /connections/spec/video
+      title: Video Spec
   - section_title: Sources
-    slug: connections/Sources
+    slug: connections/sources
     section:
     - path: /connections/sources
-      title: Overview
-    - path: /connections/sources/visual-tagger
-      title: Visual tagger
-    - path: /connections/sources/faq
-      title: FAQ
+      title: Sources Overview
     - path: /connections/sources/catalog
       title: Sources catalog
       menu_icon: read-more
+    - path: /connections/sources/cloud-source-data
+      title: What can you do with cloud source data?
+    - path: /connections/sources/cross-domain
+      title: Cross-Domain Analytics
+    - path: /connections/sources/custom-domains
+      title: Set up a custom domain proxy in Segment
+    - path: /connections/sources/custom-sources
+      title: Custom Sources
+    - path: /connections/sources/visual-tagger
+      title: Visual Tagger (Alpha) User Guide
+    - path: /connections/sources/what-are-cloud-sources
+      title: What are Cloud-App Sources?
   - section_title: Destinations
     slug: connections/destinations
     section:
     - path: /connections/destinations
-      title: Overview
-    - path: /connections/destinations/destination-filters
-      title: Destinations Filters
+      title: Destinations Overview
     - path: /connections/destinations/catalog
       title: Destinations catalog
       menu_icon: read-more
+    - path: /connections/destinations/destination-filters
+      title: Destination Filters
   - section_title: Warehouses
     slug: connections/warehouses
     section:
-      - path: /connections/warehouses
-        title: Overview
-      - path: /connections/warehouses/catalog
-        title: Warehouses catalog
-        menu_icon: read-more
+    - path: /connections/warehouses
+      title: Warehouses and Data Storage
+    - path: /connections/warehouses/catalog
+      title: Warehouses catalog
+      menu_icon: read-more
+    - path: /connections/warehouses/add-warehouse-users
+      title: How do you add users?
+    - path: /connections/warehouses/choose-warehouse
+      title: Choosing a Warehouse
+    - path: /connections/warehouses/faq
+      title: Warehouse FAQs
+    - path: /connections/warehouses/redshift-faq
+      title: Redshift cluster and Redshift connector limitations
+    - path: /connections/warehouses/redshift-tuning
+      title: How Do I Speed Up My Redshift Queries?
+    - path: /connections/warehouses/warehouse-errors
+      title: What does my warehouse error mean?
+  - path: /connections/test-connections
+    title: How do I test my connections?
+  - path: /connections/data-export-options
+    title: What are my data export options?
+  - path: /connections/destination-data-control
+    title: How do I use Schema Controls?
+  - path: /connections/event-delivery
+    title: How do I check if data is successfully being delivered to my destination?
+  - path: /connections/find-writekey
+    title: How do I find my write key?
+  - path: /connections/integration_error_codes
+    title: Integration Error Codes
+  - path: /connections/schema-unique-limits
+    title: Are there limits on my Segment Schema?
+
+
 - section_title: Personas
   section:
   - path: /personas
