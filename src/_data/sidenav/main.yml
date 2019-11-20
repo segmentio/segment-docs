@@ -68,47 +68,47 @@ sections:
       title: What is the Segment Startup Program?
 - section_title: Connections
   section:
-  - section_title: The Segment Specs
+  - section_title: Spec
     slug: connections/spec
     section:
     - path: /connections/spec
-      title: Spec
-    - path: /connections/spec/ab-testing
-      title: 'Spec: A/B Testing Events'
-    - path: /connections/spec/alias
-      title: 'Spec: Alias'
-    - path: /connections/spec/b2b-saas
-      title: 'Spec: B2B SaaS'
-    - path: /connections/spec/common
-      title: 'Spec: Common Fields'
-    - path: /connections/spec/ecommerce
-      title: 'Spec: V1 Ecommerce Events'
-    - path: /connections/spec/email
-      title: 'Spec: Email Events'
-    - path: /connections/spec/group
-      title: 'Spec: Group'
-    - path: /connections/spec/identify
-      title: 'Spec: Identify'
-    - path: /connections/spec/live-chat
-      title: 'Spec: Live Chat Events'
-    - path: /connections/spec/migration-guide
-      title: Migration Guide
-    - path: /connections/spec/mobile-packaging-sdks
-      title: Why must you package the SDK for some mobile destinations?
-    - path: /connections/spec/mobile
-      title: Native Mobile Spec
-    - path: /connections/spec/native-mobile-spec
-      title: What is the native mobile spec?
+      title: Spec Overview
     - path: /connections/spec/page
       title: 'Spec: Page'
     - path: /connections/spec/screen
       title: 'Spec: Screen'
-    - path: /connections/spec/semantic
-      title: 'Spec: Semantic Events'
     - path: /connections/spec/track
       title: 'Spec: Track'
+    - path: /connections/spec/alias
+      title: 'Spec: Alias'
+    - path: /connections/spec/group
+      title: 'Spec: Group'
+    - path: /connections/spec/identify
+      title: 'Spec: Identify'
+    - path: /connections/spec/common
+      title: 'Spec: Common Fields'
+    - path: /connections/spec/mobile
+      title: Native Mobile Spec
+    - path: /connections/spec/native-mobile-spec
+      title: What is the native mobile spec?
+    - path: /connections/spec/mobile-packaging-sdks
+      title: Packaging SDKs for mobile destinations
+    - path: /connections/spec/semantic
+      title: 'Spec: Semantic Events'
+    - path: /connections/spec/b2b-saas
+      title: 'Spec: B2B SaaS'
+    - path: /connections/spec/ab-testing
+      title: 'Spec: A/B Testing Events'
+    - path: /connections/spec/ecommerce
+      title: 'Spec: V1 Ecommerce Events'
+    - path: /connections/spec/email
+      title: 'Spec: Email Events'
+    - path: /connections/spec/live-chat
+      title: 'Spec: Live Chat Events'
     - path: /connections/spec/video
       title: Video Spec
+    - path: /connections/spec/migration-guide
+      title: Migration Guide
   - section_title: Sources
     slug: connections/sources
     section:
