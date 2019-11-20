@@ -5,27 +5,7 @@
 	"rules": {
 		"events": [
 			{
-				"name": "Docs Nav Clicked",
-				"rules": {
-					"$schema": "http://json-schema.org/draft-07/schema#",
-					"labels": {
-					},
-					"properties": {
-						"context": {
-						},
-						"properties": {
-							"type": "object"
-						},
-						"traits": {
-							"type": "object"
-						}
-					},
-					"type": "object"
-				},
-				"version": 1
-			},
-			{
-				"name": "Docs Rated",
+				"name": "Docs Searched",
 				"rules": {
 					"$schema": "http://json-schema.org/draft-07/schema#",
 					"labels": {
@@ -35,31 +15,29 @@
 						},
 						"properties": {
 							"properties": {
-								"": {
-									"description": "",
-									"type": "object"
-								},
-								"helpful": {
-									"description": "",
-									"type": "boolean"
-								},
-								"title": {
+								"query": {
 									"description": "",
 									"type": "string"
 								}
 							},
+							"required": [
+								"query"
+							],
 							"type": "object"
 						},
 						"traits": {
 							"type": "object"
 						}
 					},
+					"required": [
+						"properties"
+					],
 					"type": "object"
 				},
 				"version": 1
 			},
 			{
-				"name": "Docs Search Clicked",
+				"name": "Feedback Provided",
 				"rules": {
 					"$schema": "http://json-schema.org/draft-07/schema#",
 					"labels": {
@@ -68,12 +46,67 @@
 						"context": {
 						},
 						"properties": {
+							"properties": {
+								"helpful": {
+									"description": "",
+									"type": "boolean"
+								},
+								"section": {
+									"description": "Was the feedback form in the right-nav or footer clicked?",
+									"pattern": "right-nav|footer",
+									"type": "string"
+								},
+								"title": {
+									"description": "",
+									"type": "string"
+								}
+							},
+							"required": [
+								"helpful",
+								"title",
+								"section"
+							],
 							"type": "object"
 						},
 						"traits": {
 							"type": "object"
 						}
 					},
+					"required": [
+						"properties"
+					],
+					"type": "object"
+				},
+				"version": 1
+			},
+			{
+				"name": "Home Button Clicked",
+				"rules": {
+					"$schema": "http://json-schema.org/draft-07/schema#",
+					"labels": {
+					},
+					"properties": {
+						"context": {
+						},
+						"properties": {
+							"properties": {
+								"url": {
+									"description": "The url of the page the home button was clicked on",
+									"type": "string"
+								}
+							},
+							"required": [
+								"url"
+							],
+							"type": "object"
+						},
+						"traits": {
+							"type": "object"
+						}
+					},
+					"required": [
+						"properties"
+					],
 					"type": "object"
 				},
 				"version": 1
@@ -102,52 +135,20 @@
 									"type": "string"
 								}
 							},
+							"required": [
+								"email",
+								"location",
+								"url"
+							],
 							"type": "object"
 						},
 						"traits": {
 							"type": "object"
 						}
 					},
-					"type": "object"
-				},
-				"version": 1
-			},
-			{
-				"name": "Link Clicked",
-				"rules": {
-					"$schema": "http://json-schema.org/draft-07/schema#",
-					"labels": {
-					},
-					"properties": {
-						"context": {
-						},
-						"properties": {
-							"type": "object"
-						},
-						"traits": {
-							"type": "object"
-						}
-					},
-					"type": "object"
-				},
-				"version": 1
-			},
-			{
-				"name": "Page Viewed",
-				"rules": {
-					"$schema": "http://json-schema.org/draft-07/schema#",
-					"labels": {
-					},
-					"properties": {
-						"context": {
-						},
-						"properties": {
-							"type": "object"
-						},
-						"traits": {
-							"type": "object"
-						}
-					},
+					"required": [
+						"properties"
+					],
 					"type": "object"
 				},
 				"version": 1
@@ -173,7 +174,40 @@
 				"version": 1
 			},
 			{
-				"name": "Side Nav Clicked",
+				"description": "User scrolled to the bottom of the page",
+				"name": "Scrolled To Bottom",
+				"rules": {
+					"$schema": "http://json-schema.org/draft-07/schema#",
+					"labels": {
+					},
+					"properties": {
+						"context": {
+						},
+						"properties": {
+							"properties": {
+								"url": {
+									"description": "",
+									"type": "string"
+								}
+							},
+							"required": [
+								"url"
+							],
+							"type": "object"
+						},
+						"traits": {
+							"type": "object"
+						}
+					},
+					"required": [
+						"properties"
+					],
+					"type": "object"
+				},
+				"version": 1
+			},
+			{
+				"name": "Search Clicked",
 				"rules": {
 					"$schema": "http://json-schema.org/draft-07/schema#",
 					"labels": {
@@ -191,6 +225,49 @@
 					"type": "object"
 				},
 				"version": 1
+			},
+			{
+				"description": "Table of Contents Clicked",
+				"name": "TOC Clicked",
+				"rules": {
+					"$schema": "http://json-schema.org/draft-07/schema#",
+					"labels": {
+					},
+					"properties": {
+						"context": {
+						},
+						"properties": {
+							"properties": {
+								"link": {
+									"description": "link clicked",
+									"type": "string"
+								},
+								"name": {
+									"description": "name of the link clicked",
+									"type": "string"
+								},
+								"url": {
+									"description": "The url of the page (hostname + path)",
+									"type": "string"
+								}
+							},
+							"required": [
+								"name",
+								"url",
+								"link"
+							],
+							"type": "object"
+						},
+						"traits": {
+							"type": "object"
+						}
+					},
+					"required": [
+						"properties"
+					],
+					"type": "object"
+				},
+				"version": 1
 			}
 		],
 		"group_traits": [
@@ -198,5 +275,5 @@
 		"identify_traits": [
 		]
 	},
-	"update_time": "2019-11-14T18:43:24.000Z"
+	"update_time": "2019-11-20T23:36:54.000Z"
 }

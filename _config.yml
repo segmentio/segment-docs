@@ -6,7 +6,7 @@ source: ./src
 
 permalink: /:categories/:title/
 
-
+exclude: ['js', '_site']
 
 # Build settings
 markdown: kramdown
