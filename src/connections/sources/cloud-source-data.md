@@ -1,5 +1,5 @@
 ---
-title: "What can you do with cloud source data?"
+title: What can you do with cloud source data?
 ---
 
 ### What kind of data do you pull from each source?
