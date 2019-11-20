@@ -64,7 +64,7 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
 
    > You **must** specify `http://localhost:8888/auth/segment/callback` in the Developer Center list of redirect URLs. The redirect URLs serve as a whitelist. Without the whitelisted URL, the OAuth flow in the `partnerapp` won't work.
 4. Optionally set a new scope. The options, from most to least restrictive are:
-  * `destination/<SLUG>` (e.g. `destination/airship`) -- create or update a the single destination type on a single source a user consents to. This allows you to manage a secret like `apiKey` on your company's destination automatically but nothing else. Note that you may need to update the scope to the right destination slug if your app name differs.
+  * `destination/<SLUG>` (e.g. `destination/airship`) -- create or update a single destination type on a single source a user consents to. This allows you to manage a secret like `apiKey` on your company's destination automatically but nothing else. Note that you may need to update the scope to the right destination slug if your app name differs.
   * `workspace:read` -- read-only access to all the settings and metadata on a single workspace a user consents to. This allows you to build integrations like a dashboard that gets and displays a workspace event delivery metrics
   * `workspace` -- full acess to all the settings on a single workspace a user consents to. This allows you to build deep integrations that create sources, destinations and more.
 5. Finally, create a component of your choice in Developer Center.
