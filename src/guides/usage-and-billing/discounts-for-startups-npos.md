@@ -1,5 +1,5 @@
 ---
-title: "Do you offer coupons?"
+title: Do you offer discounts or coupons?
 ---
 
 We do! Segment currently offers coupons on an ongoing basis for:
