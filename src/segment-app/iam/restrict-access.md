@@ -2,8 +2,8 @@
 title: Restricting Workspace Access
 ---
 
-## What do team members have access to? Is there special permissioning to allow access to only certain sources?
-
+## What do team members have access to?
+Is there special permissioning to allow access to only certain sources?
 
 > warning "Deprecated"
 > **This section is being deprecated, please refer to [IAM](/docs/segment-app/iam/) going forward**

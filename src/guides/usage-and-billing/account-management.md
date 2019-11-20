@@ -1,5 +1,5 @@
 ---
-title: Account management
+title: Account Management
 ---
 
 ## What is the difference between an account and a workspace?
