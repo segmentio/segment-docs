@@ -1,5 +1,5 @@
 ---
-title: "How do you add users?"
+title: How do you add warehouse users?
 ---
 
 If you have more than one person working with your Segment Warehouse, you might want to create users for your team so that each person can have a discrete login. The three steps in this section will show you how to create a user, grant usage on a schema and then grant the privileges that the user will need to interact with that schema.
