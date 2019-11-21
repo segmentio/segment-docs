@@ -1,6 +1,4 @@
-<!--Thanks for helping! Remove these comments as you go.
-
-    Help us merge your changes more quickly by adding details and setting metadata such as labels, milestones, and reviewers) over at the right-hand side.-->
+<!--Thanks for helping! Remove these comments as you go.-->
 
 ### Proposed changes
 
