@@ -11,7 +11,7 @@
 {% endif %}
 
 
-{% if currentIntegration.components %}
+{% if currentIntegration.components.size > 0 %}
 
 ## Supported Sources and Connection Modes
 
