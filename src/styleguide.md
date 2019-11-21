@@ -4,18 +4,18 @@ description: The styleguide of front-end components
 hidden: true
 layout: page
 faq:
-  Source:
-    - title : "Should I track client or server-side?"
-      content : "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
+  - Source:
+    - title: "Should I track client or server-side?"
+      content: "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
       link: /sources/catalog
-    - title : "What are best practices in identifying users?"
-      content : "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
-  Cloud Sources:
-    - title : "What are cloud sources?"
-      content : "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
+    - title: "What are best practices in identifying users?"
+      content: "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
+  - Cloud Sources:
+    - title: "What are cloud sources?"
+      content: "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
       link: /sources
-    - title : "How do cloud sources work?"
-      content : "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
+    - title: "How do cloud sources work?"
+      content: "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
       link: /sources/catalog
 contributors:
   - name: Paul Mccall
