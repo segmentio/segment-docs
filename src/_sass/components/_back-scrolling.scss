@@ -11,8 +11,8 @@
   background-color: #e4ebee;
   border-radius: 4px;
   cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
+  // opacity: 0;
+  // visibility: hidden;
 
   @include breakpoint(medium up)  {
     bottom: 40px;

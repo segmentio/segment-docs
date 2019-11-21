@@ -1,24 +1,28 @@
-{% capture basehref %}{{ page.url }}{% endcapture %}
-{% assign sectionNames = basehref | split: "/" %}
-
+{% assign sectionNames = page.url | split: "/" %}
 {% assign sectionName = sectionNames[1] | capitalize %}
-{% assign currentSlug = page.url | split: "/" | last %}
+{% assign currentSlug = sectionNames | last %}
 {% assign priority = 2 %}
+{% assign basehref = "" %}
 {% if page.integration_type == "destination" %}
+  {% assign basehref = '/docs' | append: page.url %}
   {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
   {% assign description = currentIntegration.description %}
   {% assign priority = 4 %}
 {% elsif page.integration_type == "source" %}
+  {% assign basehref = '/docs' | append: page.url %}
   {% assign currentIntegration = site.data.catalog.sources.items | where: "slug", currentSlug | first %}
   {% assign description = currentIntegration.description %}
   {% assign priority = 4 %}
 {% else %}
+  {% assign basehref = '/docs/' | append: sectionNames[1] | append:  '/' %}
   {% assign description = "The technical documentation for Segment." %}
 {% endif %}
 
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
-  <base href="/docs{{ basehref }}" />
+
+  <base href="{{ basehref }}" />
+
   <title> {{page.title}} {{page.integration_type | capitalize }}| Segment Documentation</title>
 
   <meta property="og:type" content="website" />
