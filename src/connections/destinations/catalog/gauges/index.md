@@ -4,6 +4,8 @@ title: Gauges Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 When you toggle on Gauges in Segment, our snippet will start asynchronously loading Gauges' track.js onto your page. This means you should remove Gauges' snippet from your page.
 
 Gauges will start automatically collecting data on your site.

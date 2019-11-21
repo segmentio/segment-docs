@@ -16,7 +16,6 @@ _**NOTE:** The Mammoth Destination is currently in beta, which means that they a
 
 {% include content/connection-modes.md %}
 
-
 There are three steps to get started using Mammoth with Segment. You can register for an account with Mammoth by clicking [here](https://mammoth.io/register/choose/starter).
 
 1. Create a webhook dataset on Mammoth & copy the API KEY.

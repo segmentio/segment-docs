@@ -6,6 +6,8 @@ Our Vero destination code is all open-source on GitHub if you want to check it o
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Vero helps you send targeted emails to customers based on their behavior. When you toggle on Vero in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Vero's m.js onto your page. This means you should remove Vero's snippet from your page.

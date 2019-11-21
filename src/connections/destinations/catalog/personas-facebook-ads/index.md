@@ -14,7 +14,6 @@ This will allow you to run advertising campaigns in Facebook without having to b
 
 ## Getting Started
 
-
 ### 1. Authorize Facebook Custom Audiences
 ![](images/facebook_auth.gif)
 

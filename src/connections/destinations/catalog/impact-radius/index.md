@@ -4,6 +4,8 @@ title: Impact Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 To get started, you will need to ensure your account has access to the Impact API and obtain the following keys/tokens from your Impact account:
 
 For tracking on Web, you will need your...

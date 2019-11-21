@@ -2,7 +2,7 @@ sections:
 - section_title: Connections
   section:
   - path: /connections
-    title: Connections
+    title: Connections Overview
   - path: /connections/data-export-options
     title: What are my data export options?
   - path: /connections/destination-data-control
@@ -11,11 +11,11 @@ sections:
     slug: connections/destinations
     section:
     - path: /connections/destinations
-      title: Destinations
+      title: Destinations Overview
     - path: /connections/destinations/destination-filters
-      title: Destinations Filters
+      title: Destination Filters
   - path: /connections/event-delivery
-    title: How do I check if data is successfully being delivered to my destination?
+    title: How do I check if data is being delivered to a destination?
   - path: /connections/find-writekey
     title: How do I find my write key?
   - path: /connections/integration_error_codes
@@ -26,7 +26,7 @@ sections:
     slug: connections/sources
     section:
     - path: /connections/sources
-      title: Sources
+      title: Sources Overview
     - path: /connections/sources/cloud-source-data
       title: What can you do with cloud source data?
     - path: /connections/sources/cross-domain
@@ -46,42 +46,42 @@ sections:
     section:
     - path: /connections/spec
       title: Spec Overview
-    - path: /connections/spec/page
-      title: 'Spec: Page'
-    - path: /connections/spec/screen
-      title: 'Spec: Screen'
-    - path: /connections/spec/track
-      title: 'Spec: Track'
-    - path: /connections/spec/alias
-      title: 'Spec: Alias'
-    - path: /connections/spec/group
-      title: 'Spec: Group'
-    - path: /connections/spec/identify
-      title: 'Spec: Identify'
-    - path: /connections/spec/common
-      title: 'Spec: Common Fields'
-    - path: /connections/spec/mobile
-      title: Native Mobile Spec
-    - path: /connections/spec/native-mobile-spec
-      title: What is the native mobile spec?
-    - path: /connections/spec/mobile-packaging-sdks
-      title: Packaging SDKs for mobile destinations
-    - path: /connections/spec/semantic
-      title: 'Spec: Semantic Events'
-    - path: /connections/spec/b2b-saas
-      title: 'Spec: B2B SaaS'
     - path: /connections/spec/ab-testing
       title: 'Spec: A/B Testing Events'
+    - path: /connections/spec/alias
+      title: 'Spec: Alias'
+    - path: /connections/spec/b2b-saas
+      title: 'Spec: B2B SaaS'
+    - path: /connections/spec/common
+      title: 'Spec: Common Fields'
     - path: /connections/spec/ecommerce
       title: 'Spec: V1 Ecommerce Events'
     - path: /connections/spec/email
       title: 'Spec: Email Events'
+    - path: /connections/spec/group
+      title: 'Spec: Group'
+    - path: /connections/spec/identify
+      title: 'Spec: Identify'
     - path: /connections/spec/live-chat
       title: 'Spec: Live Chat Events'
-    - path: /connections/spec/video
-      title: Video Spec
     - path: /connections/spec/migration-guide
       title: Migration Guide
+    - path: /connections/spec/mobile-packaging-sdks
+      title: Packaging SDKs for mobile destinations
+    - path: /connections/spec/mobile
+      title: Native Mobile Spec
+    - path: /connections/spec/native-mobile-spec
+      title: What is the native mobile spec?
+    - path: /connections/spec/page
+      title: 'Spec: Page'
+    - path: /connections/spec/screen
+      title: 'Spec: Screen'
+    - path: /connections/spec/semantic
+      title: 'Spec: Semantic Events'
+    - path: /connections/spec/track
+      title: 'Spec: Track'
+    - path: /connections/spec/video
+      title: Video Spec
   - path: /connections/test-connections
     title: How do I test my connections?
   - section_title: Warehouses
@@ -90,7 +90,7 @@ sections:
     - path: /connections/warehouses
       title: Warehouses and Data Storage
     - path: /connections/warehouses/add-warehouse-users
-      title: How do you add users?
+      title: How do you add warehouse users?
     - path: /connections/warehouses/choose-warehouse
       title: Choosing a Warehouse
     - path: /connections/warehouses/faq
@@ -158,11 +158,11 @@ sections:
     slug: guides/usage-and-billing
     section:
     - path: /guides/usage-and-billing/account-management
-      title: Account management
+      title: Account Management
     - path: /guides/usage-and-billing/billing
       title: Billing and Account FAQs
     - path: /guides/usage-and-billing/discounts-for-startups-npos
-      title: Do you offer coupons?
+      title: Do you offer discounts or coupons?
     - path: /guides/usage-and-billing/mtus-and-throughput
       title: 'MTUs, Throughput and Billing'
     - path: /guides/usage-and-billing/startup-program
@@ -194,7 +194,7 @@ sections:
 - section_title: Privacy
   section:
   - path: /privacy
-    title: Privacy Portal Overview
+    title: Privacy Tools Overview
   - path: /privacy/portal
     title: Privacy Portal
   - path: /privacy/preparing-for-the-gdpr
@@ -232,8 +232,6 @@ sections:
 - section_title: Segment App
   section:
   - path: /segment-app
-    title: The Segment Web App
-  - path: /segment-app/app-intro
     title: The Segment Web App
   - section_title: Iam
     slug: segment-app/iam

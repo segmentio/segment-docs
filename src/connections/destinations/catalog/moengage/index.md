@@ -4,6 +4,8 @@ title: MoEngage Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Once the Segment library is integrated with your app, toggle MoEngage on in your Segment
 integrations. These new settings will take up to an hour to propagate to all of your existing
 users. For new users it'll be instantaneous!

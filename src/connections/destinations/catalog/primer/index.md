@@ -5,6 +5,8 @@ title: Primer Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 First you will need to register an account with [Primer](https://goprimer.com) to get a Primer token.
 
 Once the Segment iOS SDK and the Segment-Primer CocoaPod is integrated with your app, toggle Primer on in your Segment destinations, and add your Primer token, which you can find on the Primer Dashboard under Project Settings. Refer to the [Primer Documentation](http://docs.goprimer.com) for more details on how to setup Primer.

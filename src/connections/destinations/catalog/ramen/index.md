@@ -4,6 +4,8 @@ title: Ramen Destination
 
 ## Getting Started
 ​
+{% include content/connection-modes.md %}
+
 When you toggle on Ramen in Segment, this is what happens:
 ​
 + Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Ramen's JavaScript library onto your page. This means you should remove Ramen's snippet from your page if you already have it there.

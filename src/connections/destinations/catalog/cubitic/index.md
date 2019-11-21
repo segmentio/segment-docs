@@ -7,6 +7,8 @@ This destination is maintained by Cubitic.
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Once the Segment library is integrated with your mobile app, toggle Cubitic on in your Segment dashboard, and fill in your Cubitic application key.
 
 The Cubitic application key can be obtained by contacting signup@cubitic.io

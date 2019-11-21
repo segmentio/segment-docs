@@ -6,6 +6,8 @@ Our Woopra destination code is all open-source on GitHub if you want to check it
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 When you toggle on Woopra in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Woopra's javascript onto your page. This means you should remove Woopra's snippet from your page.

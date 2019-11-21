@@ -5,6 +5,9 @@ title: Taplytics Destination
 Our Taplytics destination code is open sourced on Github. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-taplytics), [Android](https://github.com/segment-integrations/analytics-android-integration-taplytics).
 
 ## Getting Started
+
+{% include content/connection-modes.md %}
+
 Once the Segment library is integrated with your app, add your API key and select your settings then toggle Taplytics on in your Segment destinations. These new settings will take up to an hour to propagate to your existing users. For new users it'll be instantaneous!
 
 Follow the below steps for destination

@@ -4,6 +4,8 @@ title: ShareASale Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 When you toggle on ShareASale in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading ShareASale tag onto your page. This means you should remove ShareASale's snippet from your page.

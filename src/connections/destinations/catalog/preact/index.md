@@ -2,6 +2,10 @@
 title: Preact Destination
 ---
 
+## Getting Started
+
+{% include content/connection-modes.md %}
+
 ## Identify
 
 To create users in in Preact you'll use our [`identify`](/docs/spec/identify) method. Users must be identified on the client side for events to appear in Preact.

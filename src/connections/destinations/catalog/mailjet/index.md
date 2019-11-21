@@ -6,6 +6,8 @@ This destination is maintained by Mailjet. For any issues with the destination, 
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Navigate to the "App Connections" page* (Account -> App Connections) and click on the "Segment" destination block to find your Segment Authentication key. * If you do not see the App Connections page for any reason, please contact us at plugins@mailjet.com. Select a Contact list from the drop down menu that you wish to have Segment send contact property data to.
 
 Be sure and note the contact list id inside the field below the chosen list because you will need to paste it into your Segment account so Segment knows where to send the data to.

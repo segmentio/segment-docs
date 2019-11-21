@@ -12,6 +12,8 @@ How do I know which experience I'm using? [Check this Google support KB article]
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 You can use this destination to map your `.page()` calls to **Page Load Conversions** or `.track()` calls to **Click Conversions**.
 
 Currently this is only supported on the browser.
