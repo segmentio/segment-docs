@@ -19,6 +19,11 @@
     padding: 24px 16px;
     background-color: color(gray-light);
     border-radius: 8px;
+
+    .header {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
   &.info,
@@ -89,15 +94,8 @@
     color: color(secondary);
 
     @include breakpoint(medium up) {
-      font-size: 20px;
-      line-height: 24px;
-    }
-  }
-
-  &.note {
-    .header {
-      font-size: 20px;
-      line-height: 24px;
+      font-size: 17px;
+      line-height: 20px;
     }
   }
 
