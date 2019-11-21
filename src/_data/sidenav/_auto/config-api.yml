@@ -1,8 +1,8 @@
 sections:
-- section_title: Config API
+- section_title: Config Api
   section:
   - path: /config-api
-    title: Config API
+    title: Config API Overview
   - path: /config-api/api-design
     title: API Design
   - path: /config-api/authentication
