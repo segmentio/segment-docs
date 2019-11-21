@@ -175,8 +175,6 @@ sections:
     title: Integration Error Codes
   - path: /connections/schema-unique-limits
     title: Are there limits on my Segment Schema?
-
-
 - section_title: Personas
   section:
   - path: /personas
@@ -240,8 +238,8 @@ sections:
 - section_title: Segment App
   section:
   - path: /segment-app
-    title: The Segment Web App
-  - section_title: Iam
+    title: Introducing the Segment Web App
+  - section_title: Access Management
     slug: segment-app/iam
     section:
     - path: /segment-app/iam
