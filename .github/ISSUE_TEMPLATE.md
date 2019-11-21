@@ -4,7 +4,7 @@
 
 ### Problem location
 
-<!-- Help us find the problem quickly by giving us a URL or screenshot. -->
+<!-- Help us find the problem quickly by giving us a URL and/or screenshot. -->
 
 
 ### Suggestions for a fix
