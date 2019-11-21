@@ -83,12 +83,19 @@
   }
 
   .header {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 500;
-    line-height: 24px;
+    line-height: 20px;
     color: color(secondary);
 
     @include breakpoint(medium up) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &.note {
+    .header {
       font-size: 20px;
       line-height: 24px;
     }
