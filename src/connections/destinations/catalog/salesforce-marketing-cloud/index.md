@@ -4,6 +4,8 @@ title: Salesforce Marketing Cloud Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Segment's Salesforce Marketing Cloud destination allows you to add contacts without using SOAP APIs.
 
 ### A Note About ExactTarget

@@ -4,6 +4,8 @@ title: Pinterest Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 When you toggle on the Pinterest Tag in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Pinterest Tag's tracking snippet onto your page. This means you should remove Pinterest Tag's snippet from your page.

@@ -4,6 +4,8 @@ title: GoSquared Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 When you toggle on GoSquared in Segment, this is what happens:
 
 - Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading GoSquared's Tracker onto your page. This means you should remove any manual integration of GoSquared.

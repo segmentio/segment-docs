@@ -11,6 +11,8 @@ This allows you to run email campaigns in Marketo without having to bug your dat
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 ### 1. Enter your Marketo Credentials into your Destination settings. You'll need your Client Secret, and Client ID, service endpoint, and folder name
 
 To get your Client Secret and Client ID, you must first create a role that can access the API and the Lead Database, and then create a Service in Marketo. Note that this access is different than the Marketo event destination, which only requires API access.

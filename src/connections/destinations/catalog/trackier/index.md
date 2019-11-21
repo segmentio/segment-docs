@@ -11,6 +11,8 @@ _**NOTE:** The Trackier Destination is currently in beta, which means that they 
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Trackier" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "API Key" into your Segment Settings UI which you can find from your Trackier dashboard Profile section -> Global Security Token

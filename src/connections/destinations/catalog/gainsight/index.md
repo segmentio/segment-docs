@@ -10,9 +10,7 @@ This document was last updated on October 18, 2018. If you notice any gaps, outd
 
 ## Getting Started
 
-
 {% include content/connection-modes.md %}
-
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for Gainsight within the Destinations Catalog and confirm the Source you'd like to connect to.

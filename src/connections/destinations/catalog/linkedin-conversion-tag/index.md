@@ -3,6 +3,8 @@ title: LinkedIn Conversion Tag Destination
 ---
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 When you toggle on the LinkedIn Insight Tag in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading LinkedIn Insight Tag's tracking snippet onto your page. This means you should remove LinkedIn Insight Tag's snippet from your page.

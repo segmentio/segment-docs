@@ -2,6 +2,10 @@
 title: Knowtify Destination
 ---
 
+## Getting Started
+
+{% include content/connection-modes.md %}
+
 ## Sending Data from Knowtify
 
 Knowtify supports sending [email events](/docs/spec/email/) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.

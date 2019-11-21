@@ -4,6 +4,10 @@ title: UrbanAirship Destination
 ---
 The Urban Airship destination code is open sourced on Github. Feel free to check it out: [Android](https://github.com/urbanairship/android-segment-integration), [iOS](https://github.com/urbanairship/ios-segment-integration)
 
+## Getting Started
+
+{% include content/connection-modes.md %}
+
 ## Screen
 
 Screen calls will generate Urban Airship screen tracking events. These events are exposed through Connect. Only the screen and category name will be used as the screen tracking event name.

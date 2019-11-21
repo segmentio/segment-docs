@@ -5,6 +5,8 @@ beta: true
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 ### Browser Tracking
 If you're using our client-side javascript library ([Analytics.js](/docs/sources/website/analytics.js/)), we will begin loading Frontleaf on your page through your Segment snippet within minutes after you enable it on your project destinations page.
 

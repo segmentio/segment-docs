@@ -4,6 +4,8 @@ title: Librato Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 When you toggle on Librato in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes with our custom Librato provider inside analytics.js.

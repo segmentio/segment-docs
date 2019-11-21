@@ -8,6 +8,8 @@ This destination is maintained by Smyte.
 
 # Getting Started
 
+{% include content/connection-modes.md %}
+
 Once you've integrated with Segment on your server or client, toggle Smyte on in your Segment destinations, and add your **Segment API key** that you received from us during registration.
 
 Smyte works with events from both your clients and your server, so you don't need to be using a particular Segment SDK, however, the more data you can provide Smyte from as many platforms as you can, the more effective our technology becomes.

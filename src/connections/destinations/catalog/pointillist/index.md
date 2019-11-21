@@ -4,6 +4,8 @@ title: Pointillist Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Once the Segment library is integrated with your server code, site or app, toggle Pointillist ON in the Segment dashboard, and add your Pointillist API key.
 
 To set up your Pointillist account and receive your API key, please click on this link and follow the instructions on the screen. For any additional questions, get in touch with a Pointillist customer representative at customer-success@pointillist.com.

@@ -6,6 +6,8 @@ This destination is built and supported by MadKudu. If you run into any issues w
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 ### How it works
 MadKudu receives your customer data from Segment, enriches it, and updates your CRM profiles.
 

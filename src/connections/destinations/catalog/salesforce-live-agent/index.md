@@ -4,6 +4,9 @@ title: Salesforce Live Agent Destination
 
 ## Getting Started
 
+
+{% include content/connection-modes.md %}
+
 To get started, please follow Salesforce's [instructions](https://help.salesforce.com/articleView?id=live_agent_create_deployments.htm&type=5) to create a live agent deployment. If you have already done this, please navigate to the "deployment code" of the Live Agent deployment you would like to have Segment integrate with. It will look something like this:
 
 ```html

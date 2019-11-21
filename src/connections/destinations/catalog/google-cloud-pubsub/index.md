@@ -4,6 +4,8 @@ title: Google Cloud Pub/Sub Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 When you toggle on Google Cloud Pub/Sub in Segment, we'll start sending your specified Segment events to Pub/Sub topics of your choice. Our Google Cloud Pub/Sub destination supports all of the Segment methods, and will send data from any one of our libraries.
 
 ## Authentication

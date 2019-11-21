@@ -241,8 +241,6 @@ sections:
   section:
   - path: /segment-app
     title: The Segment Web App
-  - path: /segment-app/app-intro
-    title: The Segment Web App
   - section_title: Iam
     slug: segment-app/iam
     section:

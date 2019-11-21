@@ -4,6 +4,8 @@ title: Iterable Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 When you switch on the Iterable destination in your Segment dashboard, your data will start flowing into Iterable, which will trigger workflows and be available for analytics. You can locate your Iterable API key by going to Destinations → API Keys inside the Iterable app.
 
 **Use Cases**
