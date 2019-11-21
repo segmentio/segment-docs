@@ -40,7 +40,7 @@ Impact recommends you cache this value in the users browser (using a cookie or l
 analytics.track('Some Conversion Event' { someProperty: true }, {
   context: {
     referrer: {
-      type: ' impactRadius ',
+      type: 'impactRadius',
       id: <CACHED_CLICK_ID>
     }
   }
