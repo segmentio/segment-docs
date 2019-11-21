@@ -74,6 +74,6 @@ If errors are present, they're sorted by type and include information about how 
 
 ## Privacy Portal
 
-The Privacy Portal allows you to inspect data coming into your Segment account, check it for Personally Identifying Information (PII), classify it based on how sensitive the information is, and then determine which categories of data to send to different destinations. Read more about these tools in the [Privacy Portal documentation](/docs/privacy-portal/portal/).
+The Privacy Portal allows you to inspect data coming into your Segment account, check it for Personally Identifying Information (PII), classify it based on how sensitive the information is, and then determine which categories of data to send to different destinations. Read more about these tools in the [Privacy Portal documentation](/docs/privacy/portal/).
 
-![](/docs/privacy-portal/images/privacy-add-new-matcher.gif)
+![](/docs/privacy/images/privacy-add-new-matcher.gif)
