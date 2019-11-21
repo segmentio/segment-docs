@@ -33,14 +33,14 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
 1. Go to the [Segment Developer Center](https://app.segment.com/developer/apps).
 2. Click **New App** to navigate to the App creation page:
    ![Step 1](images/enable-with-segment/step1.png)
-2. Name your App, and click **Create**.
+3. Name your App, and click **Create**.
    ![Step 2](images/enable-with-segment/step2.png)
-   You'll be redirected to your App's main page.
+   You'll be redirected to your App's main page. If you are implementing Enable with OAuth for an integration not built via the Developer Center and encounter an issue where your integration's name is already taken, you may choose another name (eg. TOOLNAME-enable). You will have the option to connect the two by selecting a scope in Step #2.
 4. Click the `App Info` tab.
    ![Step 3](images/enable-with-segment/step3.png)
-4. From the `App Info` tab, click `OAuth` in the left side navigation.
+5. From the `App Info` tab, click `OAuth` in the left side navigation.
    ![Step 4](images/enable-with-segment/step4.png)
-5. Keep your Developer Center browser window open – we'll need the OAuth credentials on this page to set up an OAuth consumer.
+6. Keep your Developer Center browser window open – we'll need the OAuth credentials on this page to set up an OAuth consumer.
    ![Step 5](images/enable-with-segment/step5.png)
 
 ### 2. Set up an OAuth consumer

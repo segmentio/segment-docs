@@ -1,12 +1,12 @@
 - name: Getting Started
   icon: icon-guides.svg
-  description: "Start here! Best practices, Setup steps, and other useful information."
+  description: "Start here! What is Segment? How does it work? and other useful information."
   path: /guides/
 
 - name: How-to Guides
   icon: icon-academy.svg
   description: "Learn more about the 'whys' and 'hows' of analytics. A great read if you're just getting started."
-  path: /guides/best-practices/
+  path: /guides/how-to-guides/
 
 - name: App
   icon: icon-app.svg

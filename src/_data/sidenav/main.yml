@@ -4,12 +4,12 @@ sections:
   section:
   - path: /guides
     title: Getting Started with Segment
-  - path: /guides/duplicate-data
-    title: How does Segment handle duplicate data?
-  - path: /guides/filtering-data
-    title: Filtering your Segment Data
   - path: /guides/how-does-segment-work
     title: How does Segment work?
+  - path: /guides/filtering-data
+    title: Filtering your Segment Data
+  - path: /guides/duplicate-data
+    title: How does Segment handle duplicate data?
   - path: /guides/ignore-bots
     title: How can I ignore internet bots?
   - path: /guides/intelligent-tracking-prevention
@@ -20,6 +20,7 @@ sections:
     title: Why can't I add the integration I want?
   - section_title: How To Guides
     slug: guides/how-to-guides
+    menu_icon: read-more
     section:
     - path: /guides/how-to-guides
       title: How-to Guides
@@ -175,8 +176,6 @@ sections:
     title: Integration Error Codes
   - path: /connections/schema-unique-limits
     title: Are there limits on my Segment Schema?
-
-
 - section_title: Personas
   section:
   - path: /personas
@@ -202,7 +201,7 @@ sections:
 - section_title: Privacy
   section:
   - path: /privacy
-    title: Privacy Portal Overview
+    title: Privacy Tools Overview
   - path: /privacy/portal
     title: Privacy Portal
   - path: /privacy/preparing-for-the-gdpr
@@ -240,8 +239,8 @@ sections:
 - section_title: Segment App
   section:
   - path: /segment-app
-    title: The Segment Web App
-  - section_title: Iam
+    title: Introducing the Segment Web App
+  - section_title: Access Management
     slug: segment-app/iam
     section:
     - path: /segment-app/iam
