@@ -53,7 +53,11 @@
 
                 <li class="menu-item {% if currentPage == currentPath %}menu-item--active menu-item--indicator{% endif %}" data-accordion data-class-active="menu-item--active">
                   {% if subsection.path %}
-                    <a class="menu-item__link menu-item__link--icon {% if currentPage == currentPath %}menu-item__link--indicator{% endif %} flex" href="{{ site.baseurl }}{{ subsection.path }}/">
+                    {% assign menuLink = site.baseurl | append: subsection.path | append: "/" %}
+                    {% if subsection.path contains "http://" or  subsection.path contains "https://"%}
+                      {% assign menuLink = subsection.path  %}
+                    {% endif %}
+                    <a class="menu-item__link menu-item__link--icon {% if currentPage == currentPath %}menu-item__link--indicator{% endif %} flex" href="{{menuLink}}">
                       {{ subsection.title }}
                       {% if subsection.menu_icon %}
                         <div class="menu-item__icon menu-item__icon--small menu-item__icon--right flex__column">

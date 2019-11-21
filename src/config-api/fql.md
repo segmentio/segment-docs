@@ -1,7 +1,9 @@
 ---
-title: Filter Query Language
+title: Destination Filter Query Language
 hidden: true
 ---
+
+Destination Filter Reference documentation can be found in the [main Config API reference docs](https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5).
 
 Filter Query Language ("FQL") is a simple language for filtering JSON objects
 used by the Transformations API to conditionally apply transformations. In the
@@ -178,4 +180,3 @@ PII to be incorrectly sent to Destinations.
 
 For this reason, we strongly recommend that you use the Destination Filters
 "Preview" API to test your filters without impacting your production data.
-
