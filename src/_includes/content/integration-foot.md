@@ -19,11 +19,8 @@ When the audience is first created an identify call is sent for every user in th
 {% endif %}
 
 
-
 ## Supported Sources and Connection Modes
-
-{% if currentIntegration.components %}
-
+{% if currentIntegration.components.size > 0 %}
 {% include content/connection-modes.md %}
 
 To learn more about about Connection Modes and what dictates which we support, [see here](https://segment.com/docs/destinations/#connection-modes).

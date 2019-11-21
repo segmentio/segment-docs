@@ -235,6 +235,10 @@ const updateDestinations = async () => {
         url: destination.logos.mark
       },
       categories: tempCategories,
+      components: destination.components,
+      platforms: destination.platforms,
+      browserUnbundlingSupported: destination.browserUnbundlingSupported,
+      browserUnbundlingPublic: destination.browserUnbundlingPublic,
       settings: destination.settings,
       connection_modes
     }
