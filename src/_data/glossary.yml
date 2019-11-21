@@ -5,7 +5,7 @@ Analytics.js: |
   The Segment wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
 
 App: |
-  The app is the main Segment web application, the part you have to log in to get to, where you turn on integrations, see events in the debugger, manage your tracking plan, and so on.
+  The app is what we call the main Segment web application, the part you have to log in to get to, where you turn on integrations, see events in the debugger, manage your tracking plan, and so on.
 
 Asynchronous: |
   Asynchronous means occurring without a specific order or sequence. In engineering, it's most often used for things like when you have to ask a server for a piece of information. If that was a synchronous task, while you were waiting for the server to respond you wouldn't be able to do anything else, you'd just be stuck waiting. But since it's asynchronous, you can request information from a server, continue to go do a bunch of other tasks, and then when the server responds you can get back to what you were doing to start. Basically it lets you work on multiple things at once (in parallel) instead of needing to finish everything in the order it comes in. Think of it like one of the ways computers are able to multi-task.
@@ -122,4 +122,4 @@ Tracking Plan: |
   A tracking plan is a tool that our customers use to keep track of their analytics setup. It contains all of the events, pages, traits and properties they want to record with information about how each is laid out. It's often in a spreadsheet or document, but we're actually building the functionality into the core product so that people can plan out their tracking setup right from inside Segment.
 
 Warehouses: |
-  Segment’s Data warehouse product.  All event data can be sent to one of several Warehouses, where your team can use it to perform more complex analysis of the data.
+  Segment’s Data warehouse product. All event data can be sent to one of several Warehouses, where your team can use it to perform more complex analysis of the data.
