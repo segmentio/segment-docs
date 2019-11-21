@@ -22,7 +22,7 @@ defaults:
       seo-changefreq: weekly
       hide-feedback: false
   - scope:
-      path: "connections/destinations"
+      path: "connections/destinations/catalog"
     values:
       integration_type: destination
       layout: integration

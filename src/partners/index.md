@@ -84,11 +84,11 @@ In a nutshell you need:
 
 2. Complete the fields under the _App Info_ tab with your App including both _Basic Info_ and _Launch Info_. This includes:
 
-    - **Segment Documentation:** Using these templates ([subscription](https://hackmd.io/t7amLXluS7-39rg7ARZgSA?both=)|[stream](https://hackmd.io/TV8cZR6tRnKwGtkvSexeag), document how our mutual customers can utilize your integration.
-    - **Your Documentation:** Similar to the above but hosted on your own website.
-    - **Catalog Details:** Details for our [catalog](https://segment.com/catalog) material including screenshots by making a copy of [this template](https://docs.google.com/document/d/1kvAvAHLyM3pOq-lBcZJhP_X_KivHlk1eiFy-5ERWDXc/copy).
-    - **Integrations / Partners Page:** Add your Segment integration to your integrations or partners page, like [this](https://success.clearbrain.com/connections/import-connections/connect-to-your-data-in-segment).
-    - **Blog Post:** Publish a launch blog post about your integration, like [this](https://www.kustomer.com/blog/kustomer-segment-integration/). Make sure you share it on Twitter and LinkedIn too! (If you don't have a blog, an email is okay)
+  - **Segment Documentation:** Using these templates ([subscription](https://hackmd.io/t7amLXluS7-39rg7ARZgSA?both=)/[stream](https://hackmd.io/TV8cZR6tRnKwGtkvSexeag), document how our mutual customers can utilize your integration.
+  - **Your Documentation:** Similar to the above but hosted on your own website.
+  - **Catalog Details:** Details for our [catalog](https://segment.com/catalog) material including screenshots by making a copy of [this template](https://docs.google.com/document/d/1kvAvAHLyM3pOq-lBcZJhP_X_KivHlk1eiFy-5ERWDXc/copy).
+  - **Integrations / Partners Page:** Add your Segment integration to your integrations or partners page, like [this](https://success.clearbrain.com/connections/import-connections/connect-to-your-data-in-segment).
+  - **Blog Post:** Publish a launch blog post about your integration, like [this](https://www.kustomer.com/blog/kustomer-segment-integration/). Make sure you share it on Twitter and LinkedIn too! (If you don't have a blog, an email is okay)
 
 Please be sure to use our [brand kit](https://brandfolder.com/segment/press-kit) for logos, and our [UTM guide](https://docs.google.com/document/d/1L0MHYdF2SYaMMiodQCYlZELF7pN0TXiZbD22nnlGhEk/copy) any time you link to a Segment page.
 
