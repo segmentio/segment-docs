@@ -8,15 +8,10 @@ sections:
     title: API Design
   - path: /config-api/authentication
     title: Authentication
-  - section_title: Destination Filters
-    slug: config-api/destination-filters
-    section:
-    - path: /config-api/destination-filters
-      title: Destination Filters API (Beta)
-    - path: /config-api/destination-filters/fql
-      title: Filter Query Language
-    - path: "https://reference.segmentapis.com/"
-      title: Reference
-      menu_icon: new-tab
+  - path: /config-api/fql
+    title: Destination Filter Query Language
+  - path: "https://reference.segmentapis.com/"
+    title: Reference
+    menu_icon: new-tab
   - path: /config-api/tutorial-javascript-google-analytics
     title: Creating a Javascript web source and Google Analytics destination
