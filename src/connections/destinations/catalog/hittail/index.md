@@ -4,6 +4,8 @@ title: HitTail Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 When you toggle on HitTail in Segment, this is what happens:
 
 - Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading hittail.js onto your page. This means you should remove HitTail's snippet from your page.

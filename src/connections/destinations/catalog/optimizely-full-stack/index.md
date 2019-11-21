@@ -6,6 +6,8 @@ hide-personas-partial: true
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Segment's **Optimizely Full Stack (previously Optimizely X)** destination supports the following Optimizely products:
 
 * [Optimizely Full Stack (server)](#server-side)

@@ -4,6 +4,8 @@ title: Millennial Media Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 You'll need to map from the Segment event name to the Millennial Media Pixel ID in your Segment source's Millennial Media Destination page.
 
 ### Getting your Pixel ID

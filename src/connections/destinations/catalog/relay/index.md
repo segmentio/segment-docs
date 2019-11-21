@@ -4,6 +4,8 @@ title: Relay Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Once the Segment library is integrated with your server, toggle Relay on in your Segment destinations.
 
 Relay supports the `identify` and `track` methods.

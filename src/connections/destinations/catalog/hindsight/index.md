@@ -4,6 +4,8 @@ title: Rockerbox Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 All you need in order to integrate with Rockerbox is your pixel code, which you can get by emailing **info@rockerbox.com**.
 
 ## Page

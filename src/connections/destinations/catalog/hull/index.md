@@ -8,6 +8,8 @@ It helps you creates a single actionable profile and uniform segments that sync 
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Hull receives data from Segment using the **Segment Ship**. Here's how to install it:
 
 Install the Segment Ship on your organization. If you just installed Hull, click on "Add a ship" on the overview page.

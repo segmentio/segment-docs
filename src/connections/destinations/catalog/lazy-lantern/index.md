@@ -14,7 +14,6 @@ _**NOTE:** The Lazy Lantern Destination is currently in beta, which means that t
 
 ## Getting Started
 
-
 {% include content/connection-modes.md %}
 
 ### Automated Setup

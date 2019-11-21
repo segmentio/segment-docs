@@ -4,6 +4,8 @@ title: Marketo V2 Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 To start sending data to Marketo, there are two things you must do. **Both of these steps require you to log in with the Admin Marketo Account.**
 
 ### 1. Enter your Marketo Credentials into your Destination settings.

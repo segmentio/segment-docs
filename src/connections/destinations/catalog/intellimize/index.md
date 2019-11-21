@@ -7,6 +7,8 @@ This destination is maintained by the Intellimize team. Please reach out to thei
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 You can enable Intellimize in your Segment Destinations dashboard. You will need to authorize the destination with your Intellimize API key. To retrieve your API key, reach out to your account representative at Intellimize.
 
 Intellimize supports the `identify`, `page`, `screen`, `track`, `group`, and `alias` methods. Please ensure that `identify` calls include a userID. The `identify` call is the most important method to drive improved performance for now. Segment will automatically send these calls to Intellimize's endpoint at https://api.intellimize.co/segment once enabled.

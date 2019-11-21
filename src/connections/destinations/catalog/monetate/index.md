@@ -4,6 +4,8 @@ title: Monetate Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Segment allows you to track events directly into Monetate, and create, test, deploy, and measure personalized marketing campaigns.
 
 ### Client-Side

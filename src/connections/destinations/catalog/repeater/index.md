@@ -6,6 +6,8 @@ This destination is maintained by Segment.
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 The Repeater destination forwards events from a source back into another source, as though that event occured in the second source.
 
 Events are not cached in the Repeater, so it only handles real-time events. You can specify multiple sources as Repeater destinatons.

@@ -4,6 +4,8 @@ title: Friendbuy Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Setting up Friendbuy is very simple! Just login to your Friendbuy account, go to **Integration Code** > and copy the **Site ID** above the snippet box. Then paste it into your Friendbuy Destiation setting back in the Segment UI as seen in the gif below:
 
 ![](images/f02339b0c4d567e1413c6f3891062c98.gif)

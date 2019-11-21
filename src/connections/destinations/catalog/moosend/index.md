@@ -4,6 +4,8 @@ title: Moosend Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 ### Creating a Website Id
 
 Integrating with Segment requires creating a Website Id. Once you login to your Moosend account, navigate to the tracked websites tab in the account submenu. There you will be able to fill in the field with the url of your website.

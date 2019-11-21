@@ -4,6 +4,8 @@ title: Optimizely Web Destination
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Segment's **Optimizely Web (previously Optimizely)** destination supports the following Optimizely products:
 
 * [Optimizely Classic](#optimizely-classic-web)

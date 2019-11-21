@@ -7,6 +7,8 @@ This destination is built and supported by Selligent. If you run into any issues
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 Once the Segment Connector is integrated with Message Studio,
 the Segment API shall support receiving Segment's &quot;Identify&quot; and
 &quot;Track&quot; event data. Message Studio translates these events as follows:</p>

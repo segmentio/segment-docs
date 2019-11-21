@@ -5,6 +5,8 @@ beta: true
 
 ## Getting Started
 
+{% include content/connection-modes.md %}
+
 When you toggle on the PerimeterX Destination in Segment, this is what happens:
 
 + Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading PerimeterX's snippet onto your page. This means you should remove PerimeterX's snippet from your page.
