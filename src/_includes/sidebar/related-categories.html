@@ -1,6 +1,6 @@
 {% if page.url contains 'destinations' %}
   {% assign items = site.data.catalog.destinations.items %}
-  {% assign catalog_url = site.url | append: "/docsv2/connections/destinations/catalog/" %}
+  {% assign catalog_url = site.url | append: "/docs/connections/destinations/catalog/" %}
   {% assign current_slug = page.url | split: "/" | last %}
   {% assign current_integration = items | where: "slug", current_slug | first %}
 
