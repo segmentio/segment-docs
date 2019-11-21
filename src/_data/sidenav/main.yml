@@ -4,12 +4,12 @@ sections:
   section:
   - path: /guides
     title: Getting Started with Segment
-  - path: /guides/duplicate-data
-    title: How does Segment handle duplicate data?
-  - path: /guides/filtering-data
-    title: Filtering your Segment Data
   - path: /guides/how-does-segment-work
     title: How does Segment work?
+  - path: /guides/filtering-data
+    title: Filtering your Segment Data
+  - path: /guides/duplicate-data
+    title: How does Segment handle duplicate data?
   - path: /guides/ignore-bots
     title: How can I ignore internet bots?
   - path: /guides/intelligent-tracking-prevention
@@ -20,6 +20,7 @@ sections:
     title: Why can't I add the integration I want?
   - section_title: How To Guides
     slug: guides/how-to-guides
+    menu_icon: read-more
     section:
     - path: /guides/how-to-guides
       title: How-to Guides
