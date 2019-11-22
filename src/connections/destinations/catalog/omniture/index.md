@@ -14,7 +14,7 @@ If you already host an Omniture instance on your page, we will hook into that. I
 
 ### Overview
 
-The Omniture destination on Segment works with [all of our tracking sources](docs/connections/sources/). When you send events via our mobile SDKs or server-side sources we translate that data into XML format and pass it to Omniture's XML Insertion API. Events tracked in client-side javascript are sent directly from the browser.
+The Omniture destination on Segment works with [all of our tracking sources](/docs/connections/sources/). When you send events via our mobile SDKs or server-side sources we translate that data into XML format and pass it to Omniture's XML Insertion API. Events tracked in client-side javascript are sent directly from the browser.
 
 - - -
 
