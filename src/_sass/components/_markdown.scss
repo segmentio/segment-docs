@@ -196,6 +196,11 @@
       color: color(secondary-dark);
       vertical-align: top;
       line-height: 26px;
+      word-wrap: break-word;
+
+      @include breakpoint(medium up) {
+        word-wrap: normal;
+      }
     }
 
     thead {
