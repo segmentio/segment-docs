@@ -37,11 +37,13 @@
 
           <ul class="menu-item__body" data-ref="accordion[body]">
             {% for integration in integrations %}
-              <li class="menu-item menu-item--compact {% if integration == currentIntegration %}menu-item--active menu-item--indicator{% endif %}">
-                <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link {% if integration == currentIntegration %}menu-item__link--indicator{% endif %}">
-                  {{ integration.display_name }}
-                </a>
-              </li>
+              {% if integration.hidden != true %}
+                <li class="menu-item menu-item--compact {% if integration == currentIntegration %}menu-item--active menu-item--indicator{% endif %}">
+                  <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link {% if integration == currentIntegration %}menu-item__link--indicator{% endif %}">
+                    {{ integration.display_name }}
+                  </a>
+                </li>
+              {% endif %}
             {% endfor %}
           </ul>
         </li>
