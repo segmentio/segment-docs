@@ -7,13 +7,6 @@ sections:
     title: API Design
   - path: /config-api/authentication
     title: Authentication
-  - section_title: Destination Filters
-    slug: config-api/destination-filters
-    section:
-    - path: /config-api/destination-filters
-      title: Destination Filters API (Beta)
-    - path: /config-api/destination-filters/fql
-      title: Filter Query Language
   - path: /config-api/reference
     title: Reference
   - path: /config-api/tutorial-javascript-google-analytics

@@ -219,8 +219,9 @@ const updateDestinations = async () => {
       browserUnbundlingSupported: destination.browserUnbundlingSupported,
       browserUnbundlingPublic: destination.browserUnbundlingPublic
     })
-
+    
     let url = `connections/destinations/catalog/${slug}`
+    
     let updatedDestination = {
       display_name: destination.display_name,
       slug,
@@ -244,6 +245,7 @@ const updateDestinations = async () => {
     }
     destinationsUpdated.push(updatedDestination)
     doesCatalogItemExist(updatedDestination)
+    
     // add unique destination categories to set
     tempCategories.reduce((s, e) => s.add(e), categories);
   })
