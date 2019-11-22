@@ -25,7 +25,7 @@ const getSection = (accum, paths) => {
 
     return subsection;
 };
-
+  
 const files = glob.sync('**/*.md', { ignore, cwd: path.resolve(__dirname, '../src') });
 
 const sections = files.reduce((accum, file) => {
@@ -40,15 +40,17 @@ const sections = files.reduce((accum, file) => {
     // read in the .md file, parse the frontmatter attributes
     const f = fm(fs.readFileSync(path.resolve(__dirname, '../src', file), 'utf8'));
 
-    const title = f.attributes.title || getTitle(paths[paths.length - 1].slice(0, -3));
-    const s = getSection(accum, paths.slice(0, -1));
+    // if file has hidden attribute don't add to nav
+    if (!f.attributes.hidden) {
+        const title = f.attributes.title || getTitle(paths[paths.length - 1].slice(0, -3));
+        const s = getSection(accum, paths.slice(0, -1));
 
-    if (paths[paths.length - 1] === 'index.md') {
-        s.section.unshift({ path: `/${paths.slice(0, -1).join('/')}`, title });
-    } else {
-        s.section.push({ path: `/${paths.join('/').slice(0, -3)}`, title });
+        if (paths[paths.length - 1] === 'index.md') {
+            s.section.unshift({ path: `/${paths.slice(0, -1).join('/')}`, title });
+        } else {
+            s.section.push({ path: `/${paths.join('/').slice(0, -3)}`, title });
+        }
     }
-
     return accum;
 }, {});
 

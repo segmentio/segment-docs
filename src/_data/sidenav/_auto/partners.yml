@@ -9,8 +9,6 @@ sections:
     title: Building a Subscription Webhook
   - path: /partners/checklist
     title: Public Beta Checklist
-  - path: /partners/co-marketing
-    title: Co-marketing
   - path: /partners/conceptual-model
     title: Conceptual Model
   - path: /partners/enable-with-segment

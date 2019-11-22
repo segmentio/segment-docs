@@ -29,8 +29,6 @@ sections:
       title: Sources Overview
     - path: /connections/sources/cloud-source-data
       title: What can you do with cloud source data?
-    - path: /connections/sources/cross-domain
-      title: Cross-Domain Analytics
     - path: /connections/sources/custom-domains
       title: Set up a custom domain proxy in Segment
     - path: /connections/sources/custom-sources
@@ -46,26 +44,16 @@ sections:
     section:
     - path: /connections/spec
       title: Spec Overview
-    - path: /connections/spec/ab-testing
-      title: 'Spec: A/B Testing Events'
     - path: /connections/spec/alias
       title: 'Spec: Alias'
     - path: /connections/spec/b2b-saas
       title: 'Spec: B2B SaaS'
     - path: /connections/spec/common
       title: 'Spec: Common Fields'
-    - path: /connections/spec/ecommerce
-      title: 'Spec: V1 Ecommerce Events'
-    - path: /connections/spec/email
-      title: 'Spec: Email Events'
     - path: /connections/spec/group
       title: 'Spec: Group'
     - path: /connections/spec/identify
       title: 'Spec: Identify'
-    - path: /connections/spec/live-chat
-      title: 'Spec: Live Chat Events'
-    - path: /connections/spec/migration-guide
-      title: Migration Guide
     - path: /connections/spec/mobile-packaging-sdks
       title: Packaging SDKs for mobile destinations
     - path: /connections/spec/mobile
