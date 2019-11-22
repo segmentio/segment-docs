@@ -12,6 +12,10 @@ You don't need to do anything if you change your domain – for example, if you 
 
 You may claim ownership of your domain for the purposes of Single Sign On login association, but it currently has no bearing on data collection.
 
+## I'm on a Legacy API plan, why can't I add the integration I want?
+
+Only users on our legacy API based plans will run into integration limits. Some of our older plans placed limitations on the integrations you could use. If you would like to add an integration that is not available on your current plan please move to a new Team plan where all integrations are included along with several other additional features.
+
 ## Will deleting my account cancel my subscription?
 
 No, deleting your account will only stop you from accessing workspaces through your login. The workspace is where the subscription is managed, and it will not be deleted. Data will still flow into Segment and your Destinations and you will still be charged if you delete your account but don't delete your workspace.
