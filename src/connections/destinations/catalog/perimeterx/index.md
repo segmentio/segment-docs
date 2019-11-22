@@ -41,7 +41,7 @@ use the policy that you just created)
 + In the Perimeterx console, Click "Admin".
 + Click "Applications".
 + Choose the Application you'd like to connect and copy the Application ID. It will be located under the name and description of your application.
-+ Paste the Application ID into your [Segment Perimeterx settings](https://segment.com/docs/destinations/perimeterx/#settings) and Activate the Destination.
++ Paste the Application ID into your [Segment Perimeterx settings](https://segment.com/docs/connections/destinations/catalog/perimeterx/#settings) and Activate the Destination.
 
 ## Identify
 

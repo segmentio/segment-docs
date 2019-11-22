@@ -6,7 +6,7 @@ Here at Segment we have made our own tracking plans available for download to he
 
 ## Tracking Plan Template
 
-This Tracking Plan template includes all of our specs including [eCommerce](/docs/spec/ecommerce/v2/), [B2B SaaS](/docs/spec/mobile/), [Mobile](/docs/spec/mobile/) and [Video](/docs/spec/video/).
+This Tracking Plan template includes all of our specs including [eCommerce](/docs/connections/spec/ecommerce/v2/), [B2B SaaS](/docs/connections/spec/mobile/), [Mobile](/docs/connections/spec/mobile/) and [Video](/docs/connections/spec/video/).
 
 [View the Plan in Google Sheets](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) and make a copy to edit the events.
 

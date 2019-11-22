@@ -22,7 +22,7 @@ For server-side and mobile libraries you must include `context.groupId` in every
 
 ## Group
 
-Totango also needs to know what "account" the user belongs to. To record this, you'd use our [`group`](/docs/spec/group/) method. Group also takes a unique ID (for the group this time!) and a dictionary of properties about the group. It looks like this:
+Totango also needs to know what "account" the user belongs to. To record this, you'd use our [`group`](/docs/connections/spec/group/) method. Group also takes a unique ID (for the group this time!) and a dictionary of properties about the group. It looks like this:
 
 A call to `group` is required before any `track` calls will be sent to Totango.
 
@@ -35,13 +35,13 @@ analytics.group('sjsj2hdj2', {
 
 Making a call like that will add the current user to the group, which maps directly to Totango's "accounts".
 
-You should always call [`group`](/docs/spec/group/) after your call to [`identify`](/docs/spec/identify/), so that we know which user you want to associate with the group. To learn more about how [`group`](/docs/spec/group/) works, check out our [Group docs](/docs/spec/group/).
+You should always call [`group`](/docs/connections/spec/group/) after your call to [`identify`](/docs/connections/spec/identify/), so that we know which user you want to associate with the group. To learn more about how [`group`](/docs/connections/spec/group/) works, check out our [Group docs](/docs/connections/spec/group/).
 
 ## Page
 
-Totango allows you to split your application into functional sections known as `modules`. By default, Totango pulls this module out of the users current URL. You can customize this behavior by using our [`page`](/docs/spec/page) method. You can pass `category` as a property to [`page`](/docs/spec/page) and we'll set that as the `module` in Totango.
+Totango allows you to split your application into functional sections known as `modules`. By default, Totango pulls this module out of the users current URL. You can customize this behavior by using our [`page`](/docs/connections/spec/page) method. You can pass `category` as a property to [`page`](/docs/connections/spec/page) and we'll set that as the `module` in Totango.
 
-[`page`](/docs/spec/page) takes the category of the page, the name of the page and any optional properties you want to associate with the pageview. The [`page`](/docs/spec/page) call is included by default in your snippet, since it's a required call. Modify the [`page`](/docs/spec/page) call inside the snippet or move it elsewhere, but don't delete it.
+[`page`](/docs/connections/spec/page) takes the category of the page, the name of the page and any optional properties you want to associate with the pageview. The [`page`](/docs/connections/spec/page) call is included by default in your snippet, since it's a required call. Modify the [`page`](/docs/connections/spec/page) call inside the snippet or move it elsewhere, but don't delete it.
 
 It looks like this:
 
@@ -55,7 +55,7 @@ You can label as many categories / modules as you need, but as a best practice y
 
 ## Identify
 
-The first thing Totango needs to know is "who is the user browsing your site?" You record this with our [`identify`](/docs/spec/identify/) method. Identify takes the unique ID of a user and any traits you know about them. It looks like this:
+The first thing Totango needs to know is "who is the user browsing your site?" You record this with our [`identify`](/docs/connections/spec/identify/) method. Identify takes the unique ID of a user and any traits you know about them. It looks like this:
 
 ```js
 analytics.identify('29ej29d', {
@@ -65,14 +65,14 @@ analytics.identify('29ej29d', {
 });
 ```
 
-To learn more about how [`identify`](/docs/spec/identify/) works, check out our [Identify docs](/docs/spec/identify/). For example, `email` and `name` are two of our [special traits](/docs/spec/identify/#special-traits) that we recognize semantically.
+To learn more about how [`identify`](/docs/connections/spec/identify/) works, check out our [Identify docs](/docs/connections/spec/identify/). For example, `email` and `name` are two of our [special traits](/docs/connections/spec/identify/#special-traits) that we recognize semantically.
 
 **If you're sending data via the server-side or mobile libraries**, you'll need to include `context.groupId`. Check out the [server-side](#server-side-methods-require-group-id) section to see how.
 
 
 ### Special Properties
 
-Totango recognizes a few special properties for accounts that mean very specific things. For example, an account's `plan` indicates whether they are paying you or not. Here are the special properties for the [`group`](/docs/spec/group/) method that Segment will recognize and translate for you automatically:
+Totango recognizes a few special properties for accounts that mean very specific things. For example, an account's `plan` indicates whether they are paying you or not. Here are the special properties for the [`group`](/docs/connections/spec/group/) method that Segment will recognize and translate for you automatically:
 
 <table>
   <tr>
@@ -90,9 +90,9 @@ To use the rest of the Totango's special properties, just pass them exactly like
 
 ## Track
 
-Totango also lets you record any events a user triggers in your interface. To do that with Segment you'd use our [`track`](/docs/spec/track/) method. If you're just starting out with events, we usually recommend recording 5-10 of your business's most important events. You can always add more later!
+Totango also lets you record any events a user triggers in your interface. To do that with Segment you'd use our [`track`](/docs/connections/spec/track/) method. If you're just starting out with events, we usually recommend recording 5-10 of your business's most important events. You can always add more later!
 
-[`track`](/docs/spec/track/) takes the name of the event and any optional properties you want to associate with the event. If you'd like to add a `category` to your `track` calls in addition to your `page` calls, you can add them as `properties`. It looks like this:
+[`track`](/docs/connections/spec/track/) takes the name of the event and any optional properties you want to associate with the event. If you'd like to add a `category` to your `track` calls in addition to your `page` calls, you can add them as `properties`. It looks like this:
 
 ```js
 analytics.track('Completed Purchase', {
@@ -102,7 +102,7 @@ analytics.track('Completed Purchase', {
 });
 ```
 
-To learn more about how [`track`](/docs/spec/track/) works check out our [Track docs](/docs/spec/identify/). For example, `revenue` is a special property that lets you semantically describe how much money you're making.
+To learn more about how [`track`](/docs/connections/spec/track/) works check out our [Track docs](/docs/connections/spec/identify/). For example, `revenue` is a special property that lets you semantically describe how much money you're making.
 
 **If you're sending data via the server-side or mobile libraries**, you'll need to include `context.groupId`. Check out the [troubleshooting](#troubleshooting) section to see how.
 

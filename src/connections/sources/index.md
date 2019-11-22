@@ -12,7 +12,7 @@ excerpt: Detailed information about each destination. Learn how our API methods 
 
 In Segment, you create a source (or more than one!) for each website or app you want to track. While it's not required that you have a single Source for each server, site or app, we **highly recommend** creating a Source for each unique source of data.
 
-You can create new sources using the button in the workspace view. Each source you create has a write key, which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/sources/website/analytics.js/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/sources/website/analytics.js/quickstart/) includes:
+You can create new sources using the button in the workspace view. Each source you create has a write key, which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/) includes:
 
 {% codeexample %}
 {% codeexampletab JavaScript %}
@@ -47,7 +47,7 @@ analytics.identify('025pikachu025', {
 
 ## Website libraries
 
-[Analytics.js](/docs/sources/website/analytics.js/), our Javascript library, is the most powerful way to track customer data from your website. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
+[Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/), our Javascript library, is the most powerful way to track customer data from your website. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
 
 {% include components/media-icon.html
   href="#"
@@ -62,12 +62,12 @@ analytics.identify('025pikachu025', {
 
 Our Mobile SDKs are the best way to simplify your iOS, Android, and Xamarin app tracking. We recommend them over server-side sources as the default installation for any mobile app.
 
-- [iOS SDK](/docs/sources/mobile/ios)
-- [Android SDK](/docs/sources/mobile/android)
-- [Android Wear SDK](/docs/sources/mobile/android/wear)
-- [Xamarin SDK](/docs/sources/mobile/xamarin)
-- [AMP](/docs/sources/mobile/amp)
-- [React Native](/docs/sources/mobile/react-native)
+- [iOS SDK](/docs/connections/sources/catalog/libraries/mobile/ios)
+- [Android SDK](/docs/connections/sources/catalog/libraries/mobile/android)
+- [Android Wear SDK](/docs/connections/sources/catalog/libraries/mobile/android/wear)
+- [Xamarin SDK](/docs/connections/sources/catalog/libraries/mobile/xamarin)
+- [AMP](/docs/connections/sources/catalog/libraries/mobile/amp)
+- [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native)
 
 ---
 
@@ -76,14 +76,14 @@ Our Mobile SDKs are the best way to simplify your iOS, Android, and Xamarin app 
 Our server-side sources let you send analytics data directly from your servers. We only recommend tracking from your servers when device-mode tracking (tracking on the client) won't work. Check out [our guide on server-side tracking](/docs/guides/sources/client-vs-server) if you're not sure whether it makes sense for your use case.
 
 {: .columns }
-- [Clojure](/docs/sources/server/clojure/)
-- [Go](/docs/sources/server/go/)
-- [Java](/docs/sources/server/java/)
-- [Node.js](/docs/sources/server/node/)
-- [PHP](/docs/sources/server/php/)
-- [Python](/docs/sources/server/python/)
-- [Ruby](/docs/sources/server/ruby/)
-- [.NET](/docs/sources/server/net/)
+- [Clojure](/docs/connections/sources/catalog/libraries/server/clojure/)
+- [Go](/docs/connections/sources/catalog/libraries/server/go/)
+- [Java](/docs/connections/sources/catalog/libraries/server/java/)
+- [Node.js](/docs/connections/sources/catalog/libraries/server/node/)
+- [PHP](/docs/connections/sources/catalog/libraries/server/php/)
+- [Python](/docs/connections/sources/catalog/libraries/server/python/)
+- [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/)
+- [.NET](/docs/connections/sources/catalog/libraries/server/net/)
 
 > note "Cloud-mode tracking"
 > Server-side data management is when tag sends data to the Segment servers, which then pass that data to the destination system.
@@ -99,19 +99,19 @@ Cloud app sources empower you to pull together data from all of your different t
 These Cloud App Sources can export data from its third party tool and import it directly into your Segment warehouse. Make sure you have a Segment warehouse enabled before you enable any of the following sources:
 
 {: .columns }
-- [Salesforce](/docs/sources/cloud-apps/salesforce/)
-- [Stripe](/docs/sources/cloud-apps/stripe/)
-- [Zendesk](/docs/sources/cloud-apps/zendesk/)
-- [Facebook Ads](/docs/sources/cloud-apps/facebook-ads/)
-- [Google Ads](/docs/sources/cloud-apps/google-ads/)
-- [SendGrid](/docs/sources/cloud-apps/sendgrid/)
-- [Mailchimp](/docs/sources/cloud-apps/mailchimp/)
-- [Mandrill](/docs/sources/cloud-apps/mandrill/)
-- [Marketo](/docs/sources/cloud-apps/marketo/)
-- [Twilio](/docs/sources/cloud-apps/twilio/)
-- [HubSpot](/docs/sources/cloud-apps/hubspot/)
-- [Intercom](/docs/sources/cloud-apps/intercom/)
-- [Salesforce Marketing Cloud](/docs/sources/cloud-apps/salesforce-marketing-cloud/)
+- [Salesforce](/docs/connections/sources/catalog/cloud-apps/salesforce/)
+- [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/)
+- [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/)
+- [Facebook Ads](/docs/connections/sources/catalog/cloud-apps/facebook-ads/)
+- [Google Ads](/docs/connections/sources/catalog/cloud-apps/google-ads/)
+- [SendGrid](/docs/connections/sources/catalog/cloud-apps/sendgrid/)
+- [Mailchimp](/docs/connections/sources/catalog/cloud-apps/mailchimp/)
+- [Mandrill](/docs/connections/sources/catalog/cloud-apps/mandrill/)
+- [Marketo](/docs/connections/sources/catalog/cloud-apps/marketo/)
+- [Twilio](/docs/connections/sources/catalog/cloud-apps/twilio/)
+- [HubSpot](/docs/connections/sources/catalog/cloud-apps/hubspot/)
+- [Intercom](/docs/connections/sources/catalog/cloud-apps/intercom/)
+- [Salesforce Marketing Cloud](/docs/connections/sources/catalog/cloud-apps/salesforce-marketing-cloud/)
 
 
 ### Event Cloud Sources
@@ -119,38 +119,38 @@ These Cloud App Sources can export data from its third party tool and import it 
 These Cloud App Sources can not only export data into your Segment warehouse, but they can **also** federate the exported data into your other enabled Segment integrations:
 
 {: .columns }
-- [Facebook Lead Ads](/docs/sources/cloud-apps/facebook-lead-ads/)
-- [Activecampaign](/docs/sources/cloud-apps/activecampaign/)
-- [Customer.io](/docs/sources/cloud-apps/customer.io/)
-- [Drip](/docs/sources/cloud-apps/drip/)
-- [Iterable](/docs/sources/cloud-apps/iterable/)
-- [Klaviyo](/docs/sources/cloud-apps/klaviyo/)
-- [Mailjet](/docs/sources/cloud-apps/mailjet/)
-- [Nudgespot](/docs/sources/cloud-apps/nudgespot/)
-- [Vero](/docs/sources/cloud-apps/vero/)
-- [Blueshift](/docs/sources/cloud-apps/blueshift/)
-- [Delighted](/docs/sources/cloud-apps/delighted/)
-- [Braze](/docs/sources/cloud-apps/braze/)
-- [Looker](/docs/sources/cloud-apps/looker/)
-- [Radar](/docs/sources/cloud-apps/radar/)
-- [Autopilot](/docs/sources/cloud-apps/autopilothq/)
-- [Friendbuy](/docs/sources/cloud-apps/friendbuy/)
-- [Amplitude Cohorts](/docs/sources/cloud-apps/amplitude-cohorts/)
-- [Klenty](/docs/sources/cloud-apps/klenty/)
-- [ProveSource](/docs/sources/cloud-apps/provesource/)
-- [Moesif API Analytics](/docs/sources/cloud-apps/moesif-api-analytics/)
+- [Facebook Lead Ads](/docs/connections/sources/catalog/cloud-apps/facebook-lead-ads/)
+- [Activecampaign](/docs/connections/sources/catalog/cloud-apps/activecampaign/)
+- [Customer.io](/docs/connections/sources/catalog/cloud-apps/customer.io/)
+- [Drip](/docs/connections/sources/catalog/cloud-apps/drip/)
+- [Iterable](/docs/connections/sources/catalog/cloud-apps/iterable/)
+- [Klaviyo](/docs/connections/sources/catalog/cloud-apps/klaviyo/)
+- [Mailjet](/docs/connections/sources/catalog/cloud-apps/mailjet/)
+- [Nudgespot](/docs/connections/sources/catalog/cloud-apps/nudgespot/)
+- [Vero](/docs/connections/sources/catalog/cloud-apps/vero/)
+- [Blueshift](/docs/connections/sources/catalog/cloud-apps/blueshift/)
+- [Delighted](/docs/connections/sources/catalog/cloud-apps/delighted/)
+- [Braze](/docs/connections/sources/catalog/cloud-apps/braze/)
+- [Looker](/docs/connections/sources/catalog/cloud-apps/looker/)
+- [Radar](/docs/connections/sources/catalog/cloud-apps/radar/)
+- [Autopilot](/docs/connections/sources/catalog/cloud-apps/autopilothq/)
+- [Friendbuy](/docs/connections/sources/catalog/cloud-apps/friendbuy/)
+- [Amplitude Cohorts](/docs/connections/sources/catalog/cloud-apps/amplitude-cohorts/)
+- [Klenty](/docs/connections/sources/catalog/cloud-apps/klenty/)
+- [ProveSource](/docs/connections/sources/catalog/cloud-apps/provesource/)
+- [Moesif API Analytics](/docs/connections/sources/catalog/cloud-apps/moesif-api-analytics/)
 
 To dig into some examples of how to pull this data together, check out our [sample queries](https://community.segment.com/category/warehouses) in the Segment Community.
 
 
 ### HTTP
 
-If we don't have a library for your environment yet, you can always send your data directly to our [HTTP Tracking API](/docs/sources/server/http/). All of our other sources and platforms use the HTTP API to work their magic behind the scenes.
+If we don't have a library for your environment yet, you can always send your data directly to our [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http/). All of our other sources and platforms use the HTTP API to work their magic behind the scenes.
 
 
 ### Pixel
 
-Our [Pixel Tracking API](/docs/sources/server/pixel-tracking-api/) lets you track events from environments where you can't execute code, like tracking email opens.
+Our [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/) lets you track events from environments where you can't execute code, like tracking email opens.
 
 | Event name              | Description       |
 | ---                     | ---               |
@@ -169,4 +169,4 @@ We'd love to know what other sources of data you'd like to analyze. Please [log 
 
 ## Visual Tagger (Beta)
 
-[Getting started with Segment Visual Tagger](/docs/sources/visual-tagger)
+[Getting started with Segment Visual Tagger](/docs/connections/sources/visual-tagger)

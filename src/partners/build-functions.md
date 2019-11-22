@@ -24,7 +24,7 @@ Next, you see the Code Editor page. Here, you can take full control of your Subs
 
 ## How Functions Work
 
-For every event you send to Segment, Segment invokes a function you provide for the event type. So you must define functions named after every type in the [Segment Spec](https://segment.com/docs/spec/) that you support:
+For every event you send to Segment, Segment invokes a function you provide for the event type. So you must define functions named after every type in the [Segment Spec](https://segment.com/docs/connections/spec/) that you support:
 
 * identify
 * track
@@ -36,7 +36,7 @@ For every event you send to Segment, Segment invokes a function you provide for 
 The two items passed into the functions are the **event payload** and the **settings**. All subscriptions have an **apiKey** setting by default. To add more custom settings, go to the `Settings Builder` page under `App Info`. Use your custom setting **key** (which is generated for you from your custom setting label) to access your custom setting from the **settings** argument.
 
 
-* The **Event** argument to the function is the [Segment Event Data](https://segment.com/docs/spec/common/#structure)
+* The **Event** argument to the function is the [Segment Event Data](https://segment.com/docs/connections/spec/common/#structure)
 * The **Settings** argument to the function contains user settings like **apiKey** and any custom settings you have added.
 
 The functions are ["async/await" style JavaScript](https://javascript.info/async-await), and should use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) via the pre-loaded `fetch` package.

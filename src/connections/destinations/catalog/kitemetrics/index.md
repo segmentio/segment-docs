@@ -22,7 +22,7 @@ _**NOTE:** The Kitemetrics Destination is currently in beta, which means that th
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 In order to track Apple Search Ads attribution events you will need to include the [Analytics-iAds-Attribution](https://github.com/segmentio/analytics-ios-iads-attribution) middleware library in your iOS source application.
 
@@ -33,7 +33,7 @@ pod "Analytics"
 pod "Analytics-iAds-Attribution"
 ```
 
-Segment and Kitemetrics can automatically record the following events: "Application Installed", "Application Opened", "Application Updated", "Install Attributed" and "In-App Purchases".  In order to capture those events you need to enable automatic tracking.  Ensure you setup [SEGAnalyticsConfiguration](https://segment.com/docs/sources/mobile/ios/) as shown below:
+Segment and Kitemetrics can automatically record the following events: "Application Installed", "Application Opened", "Application Updated", "Install Attributed" and "In-App Purchases".  In order to capture those events you need to enable automatic tracking.  Ensure you setup [SEGAnalyticsConfiguration](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) as shown below:
 
 Swift
 ```swift
@@ -60,7 +60,7 @@ Kitemetrics will show the device installs, sessions and purchases on the Analyti
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/screen/) does. You can turn on automatic screen tracking and/or call it manually. An example manual call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. You can turn on automatic screen tracking and/or call it manually. An example manual call would look like:
 
 Swift
 ```swift

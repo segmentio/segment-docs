@@ -33,7 +33,7 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 
-**Note:** Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional via initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/sources/mobile/ios/quickstart/#step-3-track-actions) for more info!
+**Note:** Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional via initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-3-track-actions) for more info!
 
 And of course, import the SDK in the files that you use it with:
 
@@ -45,7 +45,7 @@ And of course, import the SDK in the files that you use it with:
 
 In the interest of keeping our SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data is sent using Segment's servers to any tools you've enabled using the default Cloud-mode.
 
-[As described here](/docs/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/sources/mobile/ios#packaging-destinations-using-device-mode).
+[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/connections/sources/catalog/libraries/mobile/ios#packaging-destinations-using-device-mode).
 
 Now that the SDK is installed and setup, you're ready to...
 
@@ -145,11 +145,11 @@ The `identify` call has the following fields:
 <table class="api-table">
   <tr>
     <td>`userId` _NSString *, optional_</td>
-    <td>The database ID for this user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more in the [identify reference](/docs/spec/identify).</td>
+    <td>The database ID for this user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more in the [identify reference](/docs/connections/spec/identify).</td>
   </tr>
   <tr>
     <td>`traits` _NSDictionary *, optional_</td>
-    <td>A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [identify reference](/docs/spec/identify).</td>
+    <td>A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify).</td>
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
@@ -161,13 +161,13 @@ Analytics for iOS works on its own background thread, so it will never block the
 
 Calling `- identify:` with a `userId` will write that ID to disk to be used in subsequent calls. That ID can be removed either by uninstalling the app or by calling [`reset`](#reset).
 
-Find details on the **identify method payload** in our [Spec](/docs/spec/identify/).
+Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
 
 ### Track
 
 `track` lets you record the actions your users perform.  Every action triggers what we call an "event", which can also have associated properties.
 
-To get started, our SDK can automatically track a few key common events with our [Native Mobile Spec](/docs/spec/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. Simply enable this option during initialization.
+To get started, our SDK can automatically track a few key common events with our [Native Mobile Spec](/docs/connections/spec/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. Simply enable this option during initialization.
 
 You'll also want to track events that are indicators of success for your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. We recommend tracking just a few important events. You can always add more later!
 
@@ -202,7 +202,7 @@ The `track` call has the following fields:
 
 ### Screen
 
-The [`screen`](/docs/spec/screen/) method lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
+The [`screen`](/docs/connections/spec/screen/) method lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
 
 You'll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
 
@@ -230,13 +230,13 @@ The `screen` call has the following fields:
   </tr>
 </table>
 
-Find details on the **`screen` payload** in our [Spec](/docs/spec/screen/).
+Find details on the **`screen` payload** in our [Spec](/docs/connections/spec/screen/).
 
 ### Group
 
-`group` lets you associate an [identified user](/docs/sources/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
+`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
 Example `group` call:
 
@@ -266,13 +266,13 @@ The `group` call has the following fields:
   </tr>
 </table>
 
-Find more details about `group` including the **`group` payload** in our [Spec](/docs/spec/group/).
+Find more details about `group` including the **`group` payload** in our [Spec](/docs/connections/spec/group/).
 
 ### Alias
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/destinations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/destinations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -293,7 +293,7 @@ The `alias` call has the following fields:
   </tr>
 </table>
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/spec/alias/).
+For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
 
 ### AnonymousId
 
@@ -357,7 +357,7 @@ Here's an example showing an `- track:` call that is sent to all enabled destina
                               options:@{ @"integrations": @{ @"All": @YES, @"Mixpanel": @NO }}];
 ```
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:** Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
@@ -751,7 +751,7 @@ Here are the steps for installing manually:
 
 ![](images/embeddedbinaries.png)
 
-Once you've installed the framework, just import the header file and install as described above in [Install the SDK](https://segment.com/docs/sources/mobile/ios/install-the-sdk).
+Once you've installed the framework, just import the header file and install as described above in [Install the SDK](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/install-the-sdk).
 
 Please note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
 
@@ -845,7 +845,7 @@ The queue behavior may differ in packaged destinations.
 
 ### Can I set user traits without a User ID?
 
-Yes! Just pass a `nil` value for the `userId` into your [`identify`](/docs/spec/identify) call, like this:
+Yes! Just pass a `nil` value for the `userId` into your [`identify`](/docs/connections/spec/identify) call, like this:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] identify: nil
@@ -907,7 +907,7 @@ _Note_: While the network is deprecated, the relevant [framework](https://develo
 
 ### tvOS Support
 
-As of [Version 3.3.0](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md#version-330-08-05-2016) we now have support for tvOS through our `Analytics-iOS` sdk. You can follow the [iOS quickstart documentation](/docs/sources/mobile/ios/quickstart/) and you should be good to go! tvOS installation is only supported via Carthage and CocoaPods. The dynamic framework installation method is not supported for tvOS.
+As of [Version 3.3.0](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md#version-330-08-05-2016) we now have support for tvOS through our `Analytics-iOS` sdk. You can follow the [iOS quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) and you should be good to go! tvOS installation is only supported via Carthage and CocoaPods. The dynamic framework installation method is not supported for tvOS.
 
 ## Troubleshooting
 
@@ -929,11 +929,11 @@ This was due to an old [CocoaPods limitation](https://github.com/CocoaPods/Cocoa
    ```
 
 ### No events in my debugger
-1. Verify you have followed all [Getting Started](/docs/sources/mobile/ios/#getting-started) steps
+1. Verify you have followed all [Getting Started](/docs/connections/sources/catalog/libraries/mobile/ios/#getting-started) steps
 2. Verify you have entered the correct writeKey for your source
     - If the writeKey you have entered is something other than a string or an empty string your app may crash
     - If the writeKey you have entered is a valid form but not the correct writeKey for your specific source, you will not see an error response. Data will be accepted by Segment but not able to be correctly routed to your source (debugger).
-3. [Enable logging](/docs/sources/mobile/ios/#logging) to confirm if call is being sent to Segment
+3. [Enable logging](/docs/connections/sources/catalog/libraries/mobile/ios/#logging) to confirm if call is being sent to Segment
 
 
 ### No events in my destinations
@@ -949,13 +949,13 @@ This was due to an old [CocoaPods limitation](https://github.com/CocoaPods/Cocoa
 
 If you are using device-mode, you should see the value of that integration set to false in the `integrations` object. That means that the data is being sent from the device to the destination SDK, and not through Segment's servers. This is expected if you chose to use a device-mode destination's SDK with Segment's during installation.
 
-Enable verbose [logging](/docs/sources/mobile/ios/#logging) and trigger the call in question. You should see a call to Segment triggered as well as to the partner SDK.  It will show you exactly which partner method was invoked and the arguments it was invoked with!
+Enable verbose [logging](/docs/connections/sources/catalog/libraries/mobile/ios/#logging) and trigger the call in question. You should see a call to Segment triggered as well as to the partner SDK.  It will show you exactly which partner method was invoked and the arguments it was invoked with!
 
 ### Debugging Cloud-mode Destinations
 
 Look at the raw JSON in your debugger.  Does the call look like what is expected?
 
-Read through [the docs for that destination](docs/connections/destinations/) to see expected event format, behavior and caveats for that destination.
+Read through [the docs for that destination](/docs/connections/destinations/) to see expected event format, behavior and caveats for that destination.
 
 ### Migrating to v3 from earlier releases
 

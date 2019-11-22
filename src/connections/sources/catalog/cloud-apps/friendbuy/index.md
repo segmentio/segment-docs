@@ -24,7 +24,7 @@ These events can be passed to your Segment Destinations such as data warehouses 
 you're all set! Referral events such as shares, conversions, and reward evaluations will now be sent to Segment and any other destinations that you've enabled.
 
 ## Customer Data
-All referral events provided to Segment are in the context of specific customer (the advocate).  Below are the customer attributes that Friendbuy provides to Segment along with these events.  Wherever possible, customer data is mapped to Segment's reserved properties as defined in the [Segment Identify spec](https://segment.com/docs/spec/identify/).
+All referral events provided to Segment are in the context of specific customer (the advocate).  Below are the customer attributes that Friendbuy provides to Segment along with these events.  Wherever possible, customer data is mapped to Segment's reserved properties as defined in the [Segment Identify spec](https://segment.com/docs/connections/spec/identify/).
 
 |Trait Name	|	Description |
 |--|--|
@@ -66,7 +66,7 @@ Below are the properties that are included in the Referral Shared event payload.
 |	reminder_opt_in	|	Indicates if an advocate requested Friendbuy to send referred friend a reminder if they haven't converted within 3 days 	|
 
 ###  Referral Converted
-Below are the properties that are included in the Referral Converted event payload. Wherever possible, referral conversion data is mapped to Segment's reserved properties as defined in the [Segment Ecommerce spec](https://segment.com/docs/spec/ecommerce/v2/#core-ordering).
+Below are the properties that are included in the Referral Converted event payload. Wherever possible, referral conversion data is mapped to Segment's reserved properties as defined in the [Segment Ecommerce spec](https://segment.com/docs/connections/spec/ecommerce/v2/#core-ordering).
 
 | Property Name | Property Description |
 |--|--|
@@ -120,4 +120,4 @@ Below are the properties that are included in the Referral Reward Evaluated even
 In order to take advantage of this Source destination, you must be sending Friendbuy customer data either through  their ['track','order' JavaScript integration](https://developers.friendbuy.com/#tracking) or by POSTing shares and orders to the [REST API](https://developers.friendbuy.com/#rest-api).
 
 ## Send Data to Friendbuy
-The Friendbuy Source works better when you also connect Friendbuy as a downstream destination within Segment. With the Friendbuy Destination, you can use Segment's snippets to load Friendbuy's JavaScript integration used to power loading widgets and tracking of customers, orders, and products. Check out the [Friendbuy Destination documentation](https://segment.com/docs/destinations/friendbuy/) to get started.
+The Friendbuy Source works better when you also connect Friendbuy as a downstream destination within Segment. With the Friendbuy Destination, you can use Segment's snippets to load Friendbuy's JavaScript integration used to power loading widgets and tracking of customers, orders, and products. Check out the [Friendbuy Destination documentation](https://segment.com/docs/connections/destinations/catalog/friendbuy/) to get started.

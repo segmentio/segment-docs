@@ -12,7 +12,7 @@ Bronto works with our client-side javascript library: Analytics.js.
 
 ## Track
 
-You can use our [track](/docs/spec/track) method to send conversion events to Bronto. This event must be named `Order Completed`. We will forward Bronto the properties product SKU, description, quantity, name and price properties defined in the event.
+You can use our [track](/docs/connections/spec/track) method to send conversion events to Bronto. This event must be named `Order Completed`. We will forward Bronto the properties product SKU, description, quantity, name and price properties defined in the event.
 
 Here's an example:
 

@@ -3,6 +3,6 @@ _<tr>
   <td>*optional*</td>
   <td>String</td>
   <td>Name of the screen
-    <p>See the [Name field docs](/docs/spec/screen#name) for more detail</p>
+    <p>See the [Name field docs](/docs/connections/spec/screen#name) for more detail</p>
   </td>
 </tr>

@@ -29,7 +29,7 @@ Our How-to Guides give you an in-depth walk through and example of some of the t
 
 ## Quickstart Guides
 
-- [Analytics.js (Javascript) Quickstart Guide](/docs/connections/sources/catalog/website/analytics.js/quickstart/)
+- [Analytics.js (Javascript) Quickstart Guide](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/)
 - [.NET Quickstart Guide](/docs/connections/sources/catalog/server/net/quickstart/)
 - [Go Library Quickstart Guide](/docs/connections/sources/catalog/server/go/quickstart/)
 - [Python Library Quickstart Guide](/docs/connections/sources/catalog/server/python/quickstart/)

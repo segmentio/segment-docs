@@ -14,7 +14,7 @@ Currently this destination supports events originating from Mobile or Web source
 To get started with Criteo Events and Segment, you'll need:
 
 1. An existing account with [Criteo](http://www.criteo.com/).
-2. A data source integrated with either one of our mobile SDK's ([iOS](/docs/sources/mobile/ios/) or [Android](https://segment.com/docs/sources/mobile/android/)) or Javascript library ([Analytics.js](/docs/sources/website/analytics.js/))
+2. A data source integrated with either one of our mobile SDK's ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/)) or Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/))
 
 Assuming both of these criteria are met, you can add Criteo Events as a destination for your desired source in your Segment account.
 
@@ -26,13 +26,13 @@ Assuming both of these criteria are met, you can add Criteo Events as a destinat
 
 ## Track
 
-Criteo Events is built to help you track key purchase funnel events and details. To accomplish that, you'll want to [`track`](/docs/spec/track/) your user's actions using the following spec'd events to ensure you're following Criteo's best practices.
+Criteo Events is built to help you track key purchase funnel events and details. To accomplish that, you'll want to [`track`](/docs/connections/spec/track/) your user's actions using the following spec'd events to ensure you're following Criteo's best practices.
 
-We use the context fields that we capture with our SDKs automatically to populate Criteo Events' tag with the app's name, user's language, locale, userId, deviceType and deviceId so you just need to make sure that the event names and properties match up! Please refer to our [common fields guide](https://segment.com/docs/spec/common/#context-fields-automatically-collected) to identify which context fields we collect automatically for each of our client-side libraries (analytics.js, analytics-ios or analytics-android).
+We use the context fields that we capture with our SDKs automatically to populate Criteo Events' tag with the app's name, user's language, locale, userId, deviceType and deviceId so you just need to make sure that the event names and properties match up! Please refer to our [common fields guide](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected) to identify which context fields we collect automatically for each of our client-side libraries (analytics.js, analytics-ios or analytics-android).
 
 ### Product Viewed
 
-When a user views a particular product or offering inside your application, you should call our [Product Viewed](/docs/spec/ecommerce/v2/#product-viewed) event and we'll map that to Criteo Events' `viewProduct` tag. You'll need to make sure that the products on your `Product List Viewed` event have a `productId` property. As with all our integrations, casing does not matter! Your properties  can be camelCase or snake_case, both will work.
+When a user views a particular product or offering inside your application, you should call our [Product Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) event and we'll map that to Criteo Events' `viewProduct` tag. You'll need to make sure that the products on your `Product List Viewed` event have a `productId` property. As with all our integrations, casing does not matter! Your properties  can be camelCase or snake_case, both will work.
 
 {% comment %} api-example-client '{
     "action": "track",
@@ -84,7 +84,7 @@ window.criteo_q.push({ event: 'viewItem', item: '507f1f77bc' })
 
 ### Product List Viewed
 
-When a user views a list of products inside your application, you should call our [Product List Viewed](/docs/spec/ecommerce/v2/#product-list-viewed) event and we'll map that to Criteo Events' `viewListing` tag. Same as above, make sure you have your item's `productId` or `product_id` on the event!
+When a user views a list of products inside your application, you should call our [Product List Viewed](/docs/connections/spec/ecommerce/v2/#product-list-viewed) event and we'll map that to Criteo Events' `viewListing` tag. Same as above, make sure you have your item's `productId` or `product_id` on the event!
 
 {% comment %} api-example-client '{
     "action": "track",
@@ -153,9 +153,9 @@ window.criteo_q.push({ event: 'viewList', item: ['1', '2'] })
 
 ### Cart Viewed
 
-When a user views their Cart or Order details inside your application, you should call our [Cart Viewed](/docs/spec/ecommerce/v2/#cart-viewed) event and we'll map that to Criteo Events' `viewBasket` tag.
+When a user views their Cart or Order details inside your application, you should call our [Cart Viewed](/docs/connections/spec/ecommerce/v2/#cart-viewed) event and we'll map that to Criteo Events' `viewBasket` tag.
 
-You will need to have a products array of product objects in your Segment [Cart Viewed](/docs/spec/ecommerce/v2/#cart-viewed) event with at least `id`, `price` and `quantity` properties on each product object in that array.
+You will need to have a products array of product objects in your Segment [Cart Viewed](/docs/connections/spec/ecommerce/v2/#cart-viewed) event with at least `id`, `price` and `quantity` properties on each product object in that array.
 
 {% comment %} api-example-client '{
     "action": "track",
@@ -237,9 +237,9 @@ window.criteo_q.push({ event: 'viewBasket', item: [
 
 ### Order Completed
 
-When a user completes an order or purchase inside your application, you should call our [Order Completed](/docs/spec/ecommerce/v2/#order-completed) event and we'll map that to Criteo Events' `trackTransaction` tag.
+When a user completes an order or purchase inside your application, you should call our [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event and we'll map that to Criteo Events' `trackTransaction` tag.
 
-You will need to have a products array of product objects in your Segment [Order Completed](/docs/spec/ecommerce/v2/#order-completed) event with at least `id`, `price` and `quantity` properties on each product object in that array. You also must pass an `orderId`.
+You will need to have a products array of product objects in your Segment [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event with at least `id`, `price` and `quantity` properties on each product object in that array. You also must pass an `orderId`.
 
 {% comment %} api-example-client '{
     "action": "track",
@@ -336,7 +336,7 @@ window.criteo_q.push({ event: 'trackTransaction', id: '098dsf098f', item: [
 
 **This is only relevant if you are using this integration for mobile. For the equivalent on web, see below.**
 
-Our [Application Opened](/docs/spec/mobile/#application-opened) event will map to Criteo Events' `viewHome` tag. This event is automatically collected by the latest versions of our SDKs so update if you haven't already!
+Our [Application Opened](/docs/connections/spec/mobile/#application-opened) event will map to Criteo Events' `viewHome` tag. This event is automatically collected by the latest versions of our SDKs so update if you haven't already!
 
 ## Page
 
@@ -344,13 +344,13 @@ Criteo Events' `viewHome` tag tracks top of funnel visits to your site's home pa
 
 There are two ways of letting Segment know which `.page` event should trigger this tag:
 
-1. You can define the [`name`](/docs/sources/website/analytics.js/#page) argument in the `.page` method as 'Home':
+1. You can define the [`name`](/docs/connections/sources/catalog/libraries/website/analytics.js/#page) argument in the `.page` method as 'Home':
 
 ```js
 analytics.page('Home')
 ```
 
-2. You can give us the URL of your home page as an integration setting. Please reference the [settings](/docs/destinations/criteo/#settings) section for more info.
+2. You can give us the URL of your home page as an integration setting. Please reference the [settings](/docs/connections/destinations/catalog/criteo/#settings) section for more info.
 
 ## Other Features
 
@@ -382,7 +382,7 @@ For example, if you set the page event mappings defined above and triggered a pa
 analytics.page('Team Page', { team: 'New York Giants' })
 ```
 
-And then on that same page triggered one of the `.track` events documented above ([Product Viewed](/docs/destinations/criteo/#product-viewed) for example) the subsequent Criteo tag would look like this:
+And then on that same page triggered one of the `.track` events documented above ([Product Viewed](/docs/connections/destinations/catalog/criteo/#product-viewed) for example) the subsequent Criteo tag would look like this:
 
 ```js
 window.criteo_q.push({ event: 'viewItem', item: 'PRODUCT-ID', team_page: 'New York Giants' })
@@ -406,7 +406,7 @@ window.criteo_q.push({ event: 'viewItem', item: 'PRODUCT-ID', sub_status: 'trial
 
 ### Setting Emails
 
-It's easy to associate emails with a user, if there's an `email` property in a [`track`](/docs/spec/track/) call, we'll include the `setHashedEmail` event to Criteo along with your event. We'll take care of hashing it for you
+It's easy to associate emails with a user, if there's an `email` property in a [`track`](/docs/connections/spec/track/) call, we'll include the `setHashedEmail` event to Criteo along with your event. We'll take care of hashing it for you
 
 ### Criteo Data Centers
 
@@ -416,7 +416,7 @@ Criteo has multiple data centers to better serve global companies and we will au
 
 ### Sending Dates
 
-Criteo Events can receive dates in a specific format, in order for us to pass along dates to Criteo, make sure you follow the spec laid out in our [Spec](/docs/spec/)
+Criteo Events can receive dates in a specific format, in order for us to pass along dates to Criteo, make sure you follow the spec laid out in our [Spec](/docs/connections/spec/)
 
 ## FAQ
 

@@ -93,4 +93,4 @@ from drip.email_delivered
 
 ## Send data to Drip
 
-The Drip Source works better when you also connect Drip as an destination. With the Drip **Destination**, you can use Segment to send Drip user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Drip? Head on over to our [Drip destination docs](/docs/destinations/drip/).
+The Drip Source works better when you also connect Drip as an destination. With the Drip **Destination**, you can use Segment to send Drip user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Drip? Head on over to our [Drip destination docs](/docs/connections/destinations/catalog/drip/).

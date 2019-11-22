@@ -6,7 +6,7 @@ sourceCategory: 'Mobile'
 ---
 
 
-This tutorial will help you start sending analytics data from your iOS app to Segment. Once you're done you'll be able to turn on [any of our destinations](docs/connections/destinations/) with the flip of a switch! No more waiting for App Store approval.
+This tutorial will help you start sending analytics data from your iOS app to Segment. Once you're done you'll be able to turn on [any of our destinations](/docs/connections/destinations/) with the flip of a switch! No more waiting for App Store approval.
 
 If you want to dive deeper at any point, check out the [iOS Library Reference](/docs/libraries/ios/).
 
@@ -32,7 +32,7 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 
-**Note**: Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional via initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/sources/mobile/ios/#track) for more info!
+**Note**: Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional via initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/connections/sources/catalog/libraries/mobile/ios/#track) for more info!
 
 And of course, import the SDK in the files that you use it with:
 
@@ -46,13 +46,13 @@ In the interest of keeping our SDK lightweight, the `Analytics` pod only install
 
 You'll likely want to bundle some additional destinations client side. Many advanced marketing automation and analytics tools will offer the option of including their SDK or electing to send data server to server depending on the features you need. Most optimization, deep linking, error tracking, and survey tools must be included on the device to leverage their core feature set.
 
-In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/sources/mobile/ios#bundling-destinations).
+In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/connections/sources/catalog/libraries/mobile/ios#bundling-destinations).
 
 Now that the SDK is installed and setup, you're ready to...
 
 ## Step 2: Identify Users
 
-The `identify` method is how you tell Segment who the current user is. It takes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/sources/mobile/ios#identify).
+The `identify` method is how you tell Segment who the current user is. It takes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/mobile/ios#identify).
 
 Here's what a basic call to `identify` might look like:
 
@@ -71,7 +71,7 @@ Once you've added an `identify` call, you're ready to move on to...
 
 ## Step 3: Track Actions
 
-The `track` method is how you tell Segment about which actions your users are performing inside your app. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/sources/mobile/ios#track).
+The `track` method is how you tell Segment about which actions your users are performing inside your app. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/connections/sources/catalog/libraries/mobile/ios#track).
 
 To get started, our SDK can automatically track a few key common events, such as the **Application Installed**, **Application Updated** and **Application Opened**. Simply enable this option during initialization.
 
@@ -133,4 +133,4 @@ Note, you should *not* check the box labeled "Serve advertisements within the ap
 
 ## What's Next?
 
-We just walked through the quickest way to get started with Segment using Analytics for iOS. You might also want to check out our full [Analytics for iOS reference](/docs/sources/mobile/ios) to see what else is possible, or read about the [Tracking API methods](/docs/sources/website/tracking-api#api-methods) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Segment using Analytics for iOS. You might also want to check out our full [Analytics for iOS reference](/docs/connections/sources/catalog/libraries/mobile/ios) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/website/tracking-api#api-methods) to get a sense for the bigger picture.

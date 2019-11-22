@@ -85,7 +85,7 @@ To create a new Library:
 
 ### Tracking Plan Event Libraries
 
-Tracking Plan Event Libraries support Track events and associated properties. Event Libraries are helpful when you want to track a group of events consistently across tracking plans. For example, if you are an eCommerce company with multiple apps, you likely need to track [eCommerce Spec](/docs/spec/ecommerce/v2/) events consistently across those sources. Instead of having to re-create the eCommerce spec across multiple tracking plans, simply create a library and import the events to each Tracking Plan.
+Tracking Plan Event Libraries support Track events and associated properties. Event Libraries are helpful when you want to track a group of events consistently across tracking plans. For example, if you are an eCommerce company with multiple apps, you likely need to track [eCommerce Spec](/docs/connections/spec/ecommerce/v2/) events consistently across those sources. Instead of having to re-create the eCommerce spec across multiple tracking plans, simply create a library and import the events to each Tracking Plan.
 
 ### Tracking Plan Property Libraries
 
@@ -286,7 +286,7 @@ To ensure the Track events you send to a Segment source are validated against th
 
 ![](images/pull_event_version.png)
 
-Next, add the event version number to the context object. For [analytics.js](/docs/sources/website/analytics.js) track calls, you would instrument the event as in the example below. Note how the JSON objects for `context`, `protocols`, and `event_version` are nested.
+Next, add the event version number to the context object. For [analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js) track calls, you would instrument the event as in the example below. Note how the JSON objects for `context`, `protocols`, and `event_version` are nested.
 
 ```js
 analytics.track('Order Completed', {

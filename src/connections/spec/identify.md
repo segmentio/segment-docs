@@ -20,9 +20,9 @@ Let's imagine this scenario:
 
 I log into your app. Identify is called. For whatever reason, I close the browser and don't return until later. There's no way of knowing where I will reenter your app from. I could start my session from anywhere. And because there are many tools out there that require an initial identify call for certain features (e.g. Intercom chat widget) it's important to tell your end tools who the user is when they first start their session.
 
-Calling `identify` in one of our [libraries](docs/connections/sources/) is one of the first steps to getting started with Segment. Please refer to library-specific documentation for more details.
+Calling `identify` in one of our [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Please refer to library-specific documentation for more details.
 
-Here's the payload of a typical `identify` call with most [common fields](/docs/spec/common/) removed:
+Here's the payload of a typical `identify` call with most [common fields](/docs/connections/spec/common/) removed:
 
 ```json
 {
@@ -103,7 +103,7 @@ Here's a complete example of an `identify` call:
 
 ## Identities
 
-The `identify` call specifies a customer identity that you can reference across the customer's whole lifetime. **Every `identify` call must have a [User ID](/docs/spec/identify#user-id) or an [Anonymous ID](/docs/spec/identify#anonymous-id)**, depending on how much you know about the user in question.
+The `identify` call specifies a customer identity that you can reference across the customer's whole lifetime. **Every `identify` call must have a [User ID](/docs/connections/spec/identify#user-id) or an [Anonymous ID](/docs/connections/spec/identify#anonymous-id)**, depending on how much you know about the user in question.
 
 ### Anonymous ID
 
@@ -113,7 +113,7 @@ In these cases, you should use an Anonymous ID.
 
 The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don't have any readily available identifier, you can always generate a new random one—we recommend [UUIDs](http://en.wikipedia.org/wiki/Universally_unique_identifier).
 
-**Note:** Our [browser and mobile libraries](docs/connections/sources/) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
+**Note:** Our [browser and mobile libraries](/docs/connections/sources/) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
 
 Here's an example of a Javascript event for an anonymous user:
 
@@ -131,7 +131,7 @@ A User ID is usually the unique identifier that you recognize a user by in your 
 
 We recommend using database IDs instead of simple email addresses or usernames, because database IDs _never_ change. That guarantees that even if the user changes their email address, you can still recognize them as the same person in all of your analytics tools. And even better, you'll be able to correlate analytics data with your own internal database.
 
-**Instead of using an email address or a username as a User ID, send them along as [traits](/docs/spec/identify#traits).**
+**Instead of using an email address or a username as a User ID, send them along as [traits](/docs/connections/spec/identify#traits).**
 
 ## Traits
 

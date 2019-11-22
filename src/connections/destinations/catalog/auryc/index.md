@@ -19,7 +19,7 @@ _**NOTE:** The Auryc Destination is currently in beta, which means that they are
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. Identify calls will be sent to Auryc as an `identify` event and `addUserProperties` event.
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls will be sent to Auryc as an `identify` event and `addUserProperties` event.
 
 If the call only contains the user id and does not have the traits, the user id will be sent to Auryc as identity.
 
@@ -42,7 +42,7 @@ analytics.identify("userId123", {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Order Submitted', {price: 234.12})

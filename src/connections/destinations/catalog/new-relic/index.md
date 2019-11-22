@@ -17,7 +17,7 @@ This document was last updated on August 29, 2018. If you notice any gaps, outda
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 ```
 analytics.track('Article Completed', {
   title: 'How to Create a Tracking Plan',

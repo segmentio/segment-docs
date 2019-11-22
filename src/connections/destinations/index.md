@@ -4,11 +4,11 @@ title: Destinations Overview
 
 ## Sources vs Destinations
 
-Segment has [Sources](docs/connections/sources/) and [Destinations](docs/connections/destinations/). Sources send data _into_ Segment, while Destinations receive data _from_ Segment.
+Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/). Sources send data _into_ Segment, while Destinations receive data _from_ Segment.
 
 ## Types of Sources
 
-Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud App, plus a fifth type: User-created [Source Functions](/docs/sources/custom/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, for example a ticketing system such as [Zendesk](/docs/sources/cloud-apps/zendesk/), a payments system such as [Stripe](/docs/sources/cloud-apps/stripe/), or a marketing tool like [Braze](/docs/sources/cloud-apps/braze/).
+Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud App, plus a fifth type: User-created [Source Functions](/docs/connections/sources/custom/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, for example a ticketing system such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), a payments system such as [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), or a marketing tool like [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
 
 ## Catalog
 

@@ -13,7 +13,7 @@ If you notice any gaps, out-dated information or simply want to leave some feedb
 
 ## Getting Started
 
-The first step is to make sure Wigzo supports the source type and connection mode you've chosen to implement. You can learn more about what dictates the connection modes we support [here](https://segment.com/docs/destinations/#connection-modes).
+The first step is to make sure Wigzo supports the source type and connection mode you've chosen to implement. You can learn more about what dictates the connection modes we support [here](https://segment.com/docs/connections/destinations/#connection-modes).
 
 {% include content/connection-modes.md %}
 
@@ -24,7 +24,7 @@ The first step is to make sure Wigzo supports the source type and connection mod
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page();
@@ -34,7 +34,7 @@ When you call `.page()` in the browser, we will pass all the properties of the p
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123', {
@@ -46,14 +46,14 @@ When you call `.identify()`, user's data will be sent to Wigzo's server along wi
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Clicked Button');
 ```
 
 When you call `.track()`, user's data will be sent to Wigzo along with the unique `userId`.
-Product indexing related calls (mainly `Product Viewed` and `Product Clicked`) must pass couple of more Wigzo specific properties aside from what is listed in our [Ecommerce Spec](/docs/spec/ecommerce/v2/) as shown in the following example:
+Product indexing related calls (mainly `Product Viewed` and `Product Clicked`) must pass couple of more Wigzo specific properties aside from what is listed in our [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/) as shown in the following example:
 
 ```js
 var productData = {

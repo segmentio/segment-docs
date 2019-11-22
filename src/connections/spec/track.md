@@ -4,9 +4,9 @@ title: 'Spec: Track'
 
 The `track` API call is how you record any actions your users perform, along with any properties that describe the action.
 
-Each action is known as an event. Each event has a name, like **Registered**, and properties, for example a **Registered** event might have properties like `plan` or `accountType`. Calling `track` in one of our [sources](docs/connections/sources/) is one of the first steps to getting started with Segment.
+Each action is known as an event. Each event has a name, like **Registered**, and properties, for example a **Registered** event might have properties like `plan` or `accountType`. Calling `track` in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
-Here's the payload of a typical `track` call with most [common fields](/docs/spec/common/) removed:
+Here's the payload of a typical `track` call with most [common fields](/docs/connections/spec/common/) removed:
 
 ```js
 {
@@ -90,7 +90,7 @@ Do not use nondescript names like **Event 12** or **TMDropd**. Instead, use uniq
 **We recommend event names built from a noun and past-tense verb.**
 For more information about best practices in event naming, check out our [Analytics Academy lesson on best practices for naming conventions for clean data](/academy/collecting-data/naming-conventions-for-clean-data/).
 
-We have standardized a series of reserved event names that have special semantic meaning. We map these events to tools that support them whenever possible. See the [Semantic Events docs](/docs/spec/semantic/) for more detail.
+We have standardized a series of reserved event names that have special semantic meaning. We map these events to tools that support them whenever possible. See the [Semantic Events docs](/docs/connections/spec/semantic/) for more detail.
 
 ## Properties
 
@@ -100,7 +100,7 @@ We've reserved some properties that have semantic meanings, and we handle them i
 
 You should **only use reserved properties for their intended meaning**.
 
-The following is all the reserved properties we have standardized that apply to all events. Check out the [Semantic Events docs](/docs/spec/semantic/) for properties specific to individual reserved events.
+The following is all the reserved properties we have standardized that apply to all events. Check out the [Semantic Events docs](/docs/connections/spec/semantic/) for properties specific to individual reserved events.
 
 <table>
   <tr>

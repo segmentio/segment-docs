@@ -102,7 +102,7 @@ Lastly, we have a set of semantic campaign events that are automatically collect
 - Deep Link Opened
 
 
-[Check out the full list of e-commerce events you should track.](/docs/spec/ecommerce/v2)
+[Check out the full list of e-commerce events you should track.](/docs/connections/spec/ecommerce/v2)
 
 You may notice a pattern in the event names. We've selected the "Object Action" naming convention to ensure that all of our event data is clean and easily analyzable, while choosing "snake\_case" for the traits and properties. It doesn't matter what you choose, so long as it's consistent. Without a uniform and enforced naming framework to guide developers that add tracking code later, your data could get marred with conflicting naming structures. Learn more about the importance of naming conventions.
 
@@ -125,7 +125,7 @@ For e-commerce, since most events are customers choosing, browsing, and checking
 
 These traits must be included because many tools rely on them for analysis. If there was one of them missing, the call would be ignored.
 
-_Using a specific tool and want to see how Segment handles sending calls to it?_ [Check out the documentation.](https://segment.com/docs/destinations)
+_Using a specific tool and want to see how Segment handles sending calls to it?_ [Check out the documentation.](https://segment.com/docs/connections/destinations/)
 
 Here is an example `.track()` call:
 

@@ -24,7 +24,7 @@ _**Note:** You'll only be able to include one Tag ID per source so make sure to 
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 // name and properties are optional
@@ -35,7 +35,7 @@ Page events will be sent to Bing Ads as a `Page Load` event where name and prope
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 In order for us to map your track events to a Conversion Goal, you'll first need to create the goal on your Bing Ads account:
 

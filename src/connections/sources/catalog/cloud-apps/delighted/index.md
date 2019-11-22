@@ -4,7 +4,7 @@ rewrite: true
 ---
 [Delighted](https://delighted.com/) is the fastest and easiest way to gather actionable feedback from your customers. Use the feedback you gather from customers in all of your decision making processes. Send your feedback to your BI and data warehouses automatically.
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by Delighted. For any issues with the source, you may [contact their team](hello@delighted.com).
 
@@ -118,4 +118,4 @@ If there are any issues with how the events are arriving to Segment, please [con
 
 ## Sending Data To Delighted
 
-The Delighted Source works only when you also connect Delighted as a downstream destination within Segment. With the Delighted Destination, you can send Delighted user and event data, which you can use to trigger surveys. Head on over to our [Delighted destination docs](/docs/destinations/delighted/).
+The Delighted Source works only when you also connect Delighted as a downstream destination within Segment. With the Delighted Destination, you can send Delighted user and event data, which you can use to trigger surveys. Head on over to our [Delighted destination docs](/docs/connections/destinations/catalog/delighted/).

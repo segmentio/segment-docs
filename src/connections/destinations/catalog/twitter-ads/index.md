@@ -35,7 +35,7 @@ If you have both tags defined in your destination settings, we will load **both*
 
 ### Single Event Website Tags
 
-Each time you [`track`](/docs/spec/track) an event from the browser with our Twitter Ads destination enabled we compare the event name to the events you have mapped to **Twitter Conversion IDs** inside of Segment. If the event being tracked corresponds to a Twitter conversion, a Twitter conversion pixel will be loaded on that page with the ID that you mapped it to.
+Each time you [`track`](/docs/connections/spec/track) an event from the browser with our Twitter Ads destination enabled we compare the event name to the events you have mapped to **Twitter Conversion IDs** inside of Segment. If the event being tracked corresponds to a Twitter conversion, a Twitter conversion pixel will be loaded on that page with the ID that you mapped it to.
 
 You can find your conversion pixel IDs after you create the single conversion event inside Twitter:
 
@@ -45,7 +45,7 @@ For example, if your mapping in Segment looks like this:
 
 ![twitter conversion event mapping screenshot](images/event-mapping.png)
 
-Then everytime you make this [`track`](/docs/spec/track) call (from the browser):
+Then everytime you make this [`track`](/docs/connections/spec/track) call (from the browser):
 
 ```javascript
 analytics.track('Signed Up', {
@@ -68,7 +68,7 @@ Thus the example `.track()` event above would fire this tag:
 
 ### Advanced Conversion Tracking / Dynamic Ads
 
-Our Twitter destination supports [Advanced Conversion Tracking](https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites/advanced-conversion-tracking.html) which can be used to run **Dynamic Ads Campaigns**. Once you create your conversion events using **Universal Website Tag** inside Twitter's UI, just follow our [Ecommerce V2 Spec](https://segment.com/docs/spec/ecommerce/v2) and we will automatically map select events (listed below). Keep in mind that you **must** provide the **Universal Website Pixel ID** in your settings for this feature to work.
+Our Twitter destination supports [Advanced Conversion Tracking](https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites/advanced-conversion-tracking.html) which can be used to run **Dynamic Ads Campaigns**. Once you create your conversion events using **Universal Website Tag** inside Twitter's UI, just follow our [Ecommerce V2 Spec](https://segment.com/docs/connections/spec/ecommerce/v2) and we will automatically map select events (listed below). Keep in mind that you **must** provide the **Universal Website Pixel ID** in your settings for this feature to work.
 
 *NOTE*: *For each of these Segment events, we will still check if you had mapped any of them to a* **Single Event Website Tag** *in your Segment settings and fire those tags in addition to these advanced conversion tags.*
 

@@ -9,7 +9,7 @@ sourceCategory: 'Server'
 
 This tutorial will help you start sending data from your program to Segment and any of our destinations, using our analytics-java library. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
 
-If you want to dive deeper at any point, check out the [analytics-java reference](/docs/sources/server/java).
+If you want to dive deeper at any point, check out the [analytics-java reference](/docs/connections/sources/catalog/libraries/server/java).
 
 
 ## Step 1: Install the Library
@@ -54,7 +54,7 @@ The following examples use [Guava's](https://github.com/google/guava) immutable 
 
 ## Step 3: Identify Users
 
-The `identify` message is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/sources/server/java#identify).
+The `identify` message is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/server/java#identify).
 
 Here's what a basic call to `identify` a user might look like:
 
@@ -69,7 +69,7 @@ analytics.enqueue(IdentifyMessage.builder()
 );
 ```
 
-**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. Read more about it in the [transformer reference docs](/docs/sources/server/java#transformer).
+**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. Read more about it in the [transformer reference docs](/docs/connections/sources/catalog/libraries/server/java#transformer).
 
 That's identifying Michael by his unique User ID (the one you know him by in your database) and labeling him with `name` and `email` traits.
 
@@ -80,7 +80,7 @@ Of course, lots of analytics tools record more than just _identities_... they re
 
 ## Step 4: Track Actions
 
-The `track` method is how you tell Segment about which actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/sources/server/java#track).
+The `track` method is how you tell Segment about which actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/connections/sources/catalog/libraries/server/java#track).
 
 Here's what a call to `track` might look like when a user signs up:
 
@@ -108,6 +108,6 @@ Once you've added a few `track` calls, **you're done!** You successfully install
 
 ## What's Next?
 
-We just walked through the quickest way to get started with Segment using our Java library. You might also want to check out our full [reference](/docs/sources/server/java) to see what else is possible, or read about the [Tracking API methods](/docs/sources/server/http/) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Segment using our Java library. You might also want to check out our full [reference](/docs/connections/sources/catalog/libraries/server/java) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http/) to get a sense for the bigger picture.
 
-If you're running an **Ecommerce** site or app you should also check out our [Ecommerce API reference](/docs/spec/ecommerce/v2/) to make sure your products and checkout experience are instrumented properly!
+If you're running an **Ecommerce** site or app you should also check out our [Ecommerce API reference](/docs/connections/spec/ecommerce/v2/) to make sure your products and checkout experience are instrumented properly!

@@ -8,17 +8,17 @@ title: Preact Destination
 
 ## Identify
 
-To create users in in Preact you'll use our [`identify`](/docs/spec/identify) method. Users must be identified on the client side for events to appear in Preact.
+To create users in in Preact you'll use our [`identify`](/docs/connections/spec/identify) method. Users must be identified on the client side for events to appear in Preact.
 
 
 ## Group
 
-To group users into accounts in preact you'll use our [`group`](/docs/spec/group) method.
+To group users into accounts in preact you'll use our [`group`](/docs/connections/spec/group) method.
 
 
 ## Track
 
-Our [`track`](/docs/spec/track) method will record events in Preact. Users must be identified on the client side for events to appear in Preact.
+Our [`track`](/docs/connections/spec/track) method will record events in Preact. Users must be identified on the client side for events to appear in Preact.
 
 - - -
 

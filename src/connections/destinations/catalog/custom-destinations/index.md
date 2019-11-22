@@ -41,7 +41,7 @@ Segment provides templates that make it simple to send data to the API Endpoint.
 ![Functions Editor](images/editor.png)
 
 
-Segment invokes your function once for every event it receives from configured sources (unless altered by [Destination Filters](https://segment.com/docs/destinations/destination-filters/)). For each event, it invokes a handler corresponding to the Segment message type. You can define and export functions for every type in the [Segment Spec](https://segment.com/docs/spec/) that you want to handle:
+Segment invokes your function once for every event it receives from configured sources (unless altered by [Destination Filters](https://segment.com/docs/connections/destinations/destination-filters/)). For each event, it invokes a handler corresponding to the Segment message type. You can define and export functions for every type in the [Segment Spec](https://segment.com/docs/connections/spec/) that you want to handle:
 
 - `identify`
 - `track`
@@ -52,7 +52,7 @@ Segment invokes your function once for every event it receives from configured s
 
 Two arguments are provided to the function: the **event payload** and the **settings**. All subscriptions have an **apiKey** setting by default.
 
-- The **Event** argument to the function is the [Segment Event Data](https://segment.com/docs/spec/common/#structure).
+- The **Event** argument to the function is the [Segment Event Data](https://segment.com/docs/connections/spec/common/#structure).
    > **Note** Only Event Sources are supported at this time. Object Source data is not supported.
 - The **Settings** argument to the function contains user settings like **apiKey** and any custom settings and secrets that you added (coming soon!).
 
@@ -213,7 +213,7 @@ You can use [Destination Event Delivery](https://segment.com/docs/guides/destina
 
 ### Controlling what gets passed to your Custom Destination.
 
-You can use [Destination Filters](https://segment.com/docs/destinations/destination-filters/) or Privacy Controls to manage what events and, of those events, which event properties are sent to your Custom Destination.
+You can use [Destination Filters](https://segment.com/docs/connections/destinations/destination-filters/) or Privacy Controls to manage what events and, of those events, which event properties are sent to your Custom Destination.
 
 ## Delivery Guarantees
 Segment provides excellent data deliverability by employing API layer scalability and durability, data backup and replay, partner API monitoring, and library and cloud-mode destination retries. Segment's API processes 170B+ billion calls per month across over a billion of monthly tracked users, is rate performant (avg. load 100,000 msg/sec), fully automated and scalable, and can tolerate massive data spikes.

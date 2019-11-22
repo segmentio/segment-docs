@@ -14,7 +14,7 @@ We do this by setting the Segment ID in the cookie and local storage in the brow
 
 It's best practice to make sure you call [identify](https://segment.com/docs/connections/spec/identify/) upon loading any pages that are accessible by a logged in user. This will ensure the highest degree of accuracy for known users.
 
-You can read more about the Analytics.js persistence strategy [here](https://segment.com/docs/connections/sources/website/javascript/#segment-id-persistence).
+You can read more about the Analytics.js persistence strategy [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#segment-id-persistence).
 
 The Segment, server-side libraries are not impacted by ITP.
 

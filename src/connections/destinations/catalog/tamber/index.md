@@ -22,7 +22,7 @@ _**NOTE:** The Tamber Destination is currently in beta, which means that they ar
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -39,7 +39,7 @@ Identify calls will be sent to Tamber as a [`user-update`](https://tamber.com/do
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call to Segment would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call to Segment would look like:
 
 ```
 analytics.track("Watched", {
@@ -61,4 +61,4 @@ analytics.track("Watched", {
 
 Track calls will be sent to Tamber as [`event-track`](https://works.tamber.com/docs/api/#event-track) calls and increment both Event and Item counts within the Tamber UI. You can also [retrieve](https://tamber.com/docs/api/#event-retrieve) events, and [retrieve](https://tamber.com/docs/api/#item-retrieve) or [list](https://tamber.com/docs/api/#item-list) items from Tamber.
 
-**NOTE:** [`item`](https://works.tamber.com/docs/api/#item) is a required property but can be renamed within the Tamber UI under Custom Field Definition for Item. Make sure that the name passed into your Track call matches what you have set in the Tamber UI. If you are using Segment's [E-Commerce](https://segment.com/docs/spec/ecommerce/v2) or [Video](https://segment.com/docs/spec/video) APIs, you can configure Tamber to automatically handle item loading – either during setup or at any time in the Tamber Dashboard <strong>Sources</strong> > <strong>Segment</strong> section – and ignore this information.
+**NOTE:** [`item`](https://works.tamber.com/docs/api/#item) is a required property but can be renamed within the Tamber UI under Custom Field Definition for Item. Make sure that the name passed into your Track call matches what you have set in the Tamber UI. If you are using Segment's [E-Commerce](https://segment.com/docs/connections/spec/ecommerce/v2) or [Video](https://segment.com/docs/connections/spec/video) APIs, you can configure Tamber to automatically handle item loading – either during setup or at any time in the Tamber Dashboard <strong>Sources</strong> > <strong>Segment</strong> section – and ignore this information.

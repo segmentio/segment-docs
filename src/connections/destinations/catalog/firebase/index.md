@@ -52,7 +52,7 @@ Add these permissions to your AndroidManifest.xml:
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-Finally, register the dependency with the Segment SDK in your application subclass, as [seen here in our Android library documentation](https://segment.com/docs/sources/mobile/android/#packaging-sdks-for-device-mode-destinations):
+Finally, register the dependency with the Segment SDK in your application subclass, as [seen here in our Android library documentation](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#packaging-sdks-for-device-mode-destinations):
 
 Periodically, Firebase updates the Android configuration requirements for loading their SDK in your app. To validate that your Android configuration is sufficient for your version of Firebase, please consult [Google's Firebase release notes](https://firebase.google.com/support/release-notes/android#). You can find the corresponding verison of the Firebase SDK Segment requires in each of the Segment-Firebase SDK versions by consulting the [Segment-Firebase changelog](https://github.com/segment-integrations/analytics-android-integration-firebase/blob/master/CHANGELOG.md). For example, Segment-Firebase 1.3.1 includes Firebase Core 17.0.1 as a dependency.
 
@@ -124,7 +124,7 @@ When you call `track` Segment will log the event with Firebase. Firebase automat
 
 Firebase has a limit of 500 distinctly named events so it pays off to be [intentional in what you track](/docs/faqs/sources/what-to-track/).
 
-When you call `track`, Segment maps from the [Segment spec](/docs/spec/) to those that match Firebase's spec. For anything that does not match, Segment will pass the event to Firebase as a custom event. Custom parameters cannot be seen directly in the Firebase Analytics dashboard but they can be used as filters in **Audiences**.
+When you call `track`, Segment maps from the [Segment spec](/docs/connections/spec/) to those that match Firebase's spec. For anything that does not match, Segment will pass the event to Firebase as a custom event. Custom parameters cannot be seen directly in the Firebase Analytics dashboard but they can be used as filters in **Audiences**.
 
 Like with user properties, Segment will perform the following transformations on both your event names and event parameters. Unlike user properties, you do not need to pre-define event parameters in your Firebase dashboard.
 
@@ -140,18 +140,18 @@ Segment adheres to Firebase's semantic event specification and maps the followin
 
 | Segment Event     | Firebase Event    |
 |-------------------|-------------------|
-| [Products Searched](/docs/spec/ecommerce/v2/#product-searched) | search |
-| [Product List Viewed](/docs/spec/ecommerce/v2/#product-list-viewed)| view_item_list |
-| [Product Viewed](/docs/spec/ecommerce/v2/#product-viewed) | view_item |
-| [Product Clicked](/docs/spec/ecommerce/v2/#product-clicked) | select_content |
-| [Product Shared](/docs/spec/ecommerce/v2/#product-shared) | share |
-| [Product Added](/docs/spec/ecommerce/v2/#product-added) | add_to_cart |
-| [Product Added To Wishlist](/docs/spec/ecommerce/v2/#product-added-to-wishlist) | add_to_wishlist |
-| [Checkout Started](/docs/spec/ecommerce/v2/#checkout-started) | begin_checkout |
-| [Promotion Viewed](/docs/spec/ecommerce/v2/#promotion-viewed) | present_offer |
-| [Payment Info Entered](/docs/spec/ecommerce/v2/#payment-info-entered) | add_payment_info |
-| [Order Completed](/docs/spec/ecommerce/v2/#order-completed) | ecommerce_purchase |
-| [Order Refunded](/docs/spec/ecommerce/v2/#order-refunded) | purchase_refund |
+| [Products Searched](/docs/connections/spec/ecommerce/v2/#product-searched) | search |
+| [Product List Viewed](/docs/connections/spec/ecommerce/v2/#product-list-viewed)| view_item_list |
+| [Product Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) | view_item |
+| [Product Clicked](/docs/connections/spec/ecommerce/v2/#product-clicked) | select_content |
+| [Product Shared](/docs/connections/spec/ecommerce/v2/#product-shared) | share |
+| [Product Added](/docs/connections/spec/ecommerce/v2/#product-added) | add_to_cart |
+| [Product Added To Wishlist](/docs/connections/spec/ecommerce/v2/#product-added-to-wishlist) | add_to_wishlist |
+| [Checkout Started](/docs/connections/spec/ecommerce/v2/#checkout-started) | begin_checkout |
+| [Promotion Viewed](/docs/connections/spec/ecommerce/v2/#promotion-viewed) | present_offer |
+| [Payment Info Entered](/docs/connections/spec/ecommerce/v2/#payment-info-entered) | add_payment_info |
+| [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) | ecommerce_purchase |
+| [Order Refunded](/docs/connections/spec/ecommerce/v2/#order-refunded) | purchase_refund |
 
 ### Property Mappings
 
@@ -192,7 +192,7 @@ Segment doesn't map screen events to Firebase - that's because Firebase's SDK co
 
 For Android, Segment passes contextual screen information into each screen view on each activity's `onResume` callback. To ensure that screen names are labeled properly, Segment recommends adding a `label` value to each of your activities in your app's `AndroidManifest.xml` file. At the moment, Firebase does not allow disabling automatic screen tracking for Android.
 
-For iOS, you can configure `recordScreenViews` which will automatically track screen views, or pass in a screen manually via a [screen](/docs/spec/screen/) call. You should be able to disable the Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
+For iOS, you can configure `recordScreenViews` which will automatically track screen views, or pass in a screen manually via a [screen](/docs/connections/spec/screen/) call. You should be able to disable the Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
 
 Google Analytics for Firebase iOS does NOT support the case of manual-only screen reporting. Firebase only supports automatic + manual screen reporting or no screen reporting at all.
 
@@ -232,6 +232,6 @@ Even more exciting is that this new iOS SDK will have parity with the new Segmen
 
 As a current user of Segment-Firebase iOS, you will be able to pull in the latest version by pinning `pod 'Segment-Firebase', '~>2.0`. While we don't suggest this, if you are not ready to upgrade you can pin the old beta version at `pod 'Segment-Firebase', '~>1.0.0``'`
 
-For details on the new mapping, you can check out our documentation [here](https://segment.com/docs/destinations/firebase/#event-mappings).
+For details on the new mapping, you can check out our documentation [here](https://segment.com/docs/connections/destinations/catalog/firebase/#event-mappings).
 
 Please let us know if you have any questions. We recommend upgrading as soon as possible, and please [let us know](/contact) if you have any feedback about both the Firebase iOS and Android betas.

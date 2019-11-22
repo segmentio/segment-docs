@@ -9,11 +9,11 @@ This guide maps out the standard data Segment expects to see from ecommerce comp
 
 Segment now supports a fully **backwards compatible** V2 of our Ecommerce Spec. You can still use V1 but we recommend upgrading to V2 as it includes many more spec'd ecommerce events!
 
-Please refer to our V2 docs [here](/docs/spec/ecommerce/v2/).
+Please refer to our V2 docs [here](/docs/connections/spec/ecommerce/v2/).
 
 ## V1 Overview
 
-One of the core components of the Segment [Spec](/docs/spec/) is the [`track`](/docs/spec/track) method. It records any arbitrary event that the user has triggered. For Ecommerce tracking, you will be sending **specific event names** that we recognize semantically. That way we can transform them before sending them off to each different tool.
+One of the core components of the Segment [Spec](/docs/connections/spec/) is the [`track`](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Ecommerce tracking, you will be sending **specific event names** that we recognize semantically. That way we can transform them before sending them off to each different tool.
 
 The `properties` listed in the sections below are **required** for some destinations to function. You can always add your own custom properties (product color, size, etc.) in additon to the required ones.
 
@@ -271,4 +271,4 @@ Be sure to **include all items in the cart as event properties**, with the same 
 
 ## Google Analytics Enhanced Ecommerce
 
-If you're using Google Analytics enhanced ecommerce there are some special events you might also want to add. Details in [our GA docs](/docs/destinations/google-analytics/#enhanced-ecommerce).
+If you're using Google Analytics enhanced ecommerce there are some special events you might also want to add. Details in [our GA docs](/docs/connections/destinations/catalog/google-analytics/#enhanced-ecommerce).

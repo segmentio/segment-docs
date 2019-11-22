@@ -65,7 +65,7 @@ The `getAnalytics()` method is consulted for every call, so make sure you return
 
 The `track` method lets you record the actions your users perform, and record adiditonal properties the action.
 
-You'll want to track an event whenever the user clicks, taps or submits something in your app. You can read more about [how it works](/docs/spec/track).
+You'll want to track an event whenever the user clicks, taps or submits something in your app. You can read more about [how it works](/docs/connections/spec/track).
 
 ```java
 analytics.track("Viewed Product", new Properties().putValue("name", "Moto 360"));
@@ -87,7 +87,7 @@ analytics.track("Purchased Item", new Properties().putValue("sku", "13d31").putR
 
 The `screen` method lets you record the screens your users view.
 
-You'll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app. You can read more about [how it works](/docs/spec/screen).
+You'll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app. You can read more about [how it works](/docs/connections/spec/screen).
 
 Not all services support screen, so when it's not supported explicitly, the screen method tracks as an event with the same parameters.
 

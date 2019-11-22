@@ -140,4 +140,4 @@ Blueshift sends their `customer_id` associated with the message recipient as the
 
 ## Send Data to Blueshift
 
-The Blueshift Source works better when you also connect Blueshift as a downstream destination within Segment. With the Blueshift Destination, you can send Blueshift user and event data, which you can use to trigger email campaigns. Want to start sending website or mobile to Blueshift? Head on over to our [Blueshift destination docs](/docs/destinations/blueshift/).
+The Blueshift Source works better when you also connect Blueshift as a downstream destination within Segment. With the Blueshift Destination, you can send Blueshift user and event data, which you can use to trigger email campaigns. Want to start sending website or mobile to Blueshift? Head on over to our [Blueshift destination docs](/docs/connections/destinations/catalog/blueshift/).

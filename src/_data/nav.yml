@@ -20,7 +20,7 @@ sections:
   section:
   - path: "https://segment.com/docs/"
     title: Documentation
-  - path: "https://segment.com/docs/sources/"
+  - path: "https://segment.com/docs/connections/sources/"
     title: Segment API
   - path: "https://segment.com/partners/developer-center/"
     title: Build on Segment
@@ -32,7 +32,7 @@ sections:
   section:
   - path: "https://segment.com/docs/"
     title: Customer Stories
-  - path: "https://segment.com/docs/sources/"
+  - path: "https://segment.com/docs/connections/sources/"
     title: Enterprise
   - path: "https://segment.com/partners/developer-center/"
     title: Startups
@@ -48,7 +48,7 @@ sections:
   section:
   - path: "https://segment.com/docs/"
     title: Careers
-  - path: "https://segment.com/docs/sources/"
+  - path: "https://segment.com/docs/connections/sources/"
     title: Blog
   - path: "https://segment.com/partners/developer-center/"
     title: Press
@@ -60,7 +60,7 @@ sections:
   section:
   - path: "https://segment.com/docs/"
     title: Help Center
-  - path: "https://segment.com/docs/sources/"
+  - path: "https://segment.com/help/contact/"
     title: Contact us
   - path: "https://segment.com/partners/developer-center/"
     title: Resources

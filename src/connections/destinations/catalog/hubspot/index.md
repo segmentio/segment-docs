@@ -22,15 +22,15 @@ This document was last updated on March 30, 2018. If you notice any gaps, outdat
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```
 analytics.page()
 ```
-**IMPORTANT:** An initial `page` call is required for data to be sent to HubSpot via Analytics.js. This is included by default in your [Segment snippet](/docs/sources/website/analytics.js/quickstart/#step-1-copy-the-snippet).
+**IMPORTANT:** An initial `page` call is required for data to be sent to HubSpot via Analytics.js. This is included by default in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet).
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 ```
 analytics.identify('user1234', {
   email: 'petergibbon@email.com',
@@ -65,7 +65,7 @@ The following traits are tagged as special fields within HubSpot:
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 ```
 analytics.track("Clicked Buy Now button", {
   value: 20.5
@@ -95,7 +95,7 @@ In this case, your HubSpot `eventId` is 'Bought Item'. If you want to use an exi
 
 ### Setting Contact Properties on Track
 
-Although we recommend you send `traits` via [`identify`](/docs/spec/identify/), you can also set HubSpot properties on a track call, as allowed by their [events API](http://developers.hubspot.com/docs/methods/enterprise_events/http_api). You might want to use this method if you're running out of API calls on the Identify requests.
+Although we recommend you send `traits` via [`identify`](/docs/connections/spec/identify/), you can also set HubSpot properties on a track call, as allowed by their [events API](http://developers.hubspot.com/docs/methods/enterprise_events/http_api). You might want to use this method if you're running out of API calls on the Identify requests.
 
 Include HubSpot contact properties into the `context.traits` object:
 
@@ -118,7 +118,7 @@ analytics.track(
 
 __NOTE: Group calls are not compatible with our Analytics.js library.__
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```node
 analytics.group({
@@ -194,7 +194,7 @@ When using any of our server-side sources, our connector will infer `traits.life
 ### Loading Forms SDK
 Segment gives you the option to load the [HubSpot Forms SDK](https://developers.hubspot.com/docs/methods/forms/advanced_form_options) alongside their tracking library. This can be done by enabling the **Load Forms SDK** setting when configuring your HubSpot integration.
 
-**Please Note:** The Forms SDK expects to be loaded synchronously but analytics.js is loaded asynchronously. Therefore, in order to interact with the API, you need to run your code inside an [analytics.ready](https://segment.com/docs/sources/website/analytics.js/#ready) callback. Here's an example:
+**Please Note:** The Forms SDK expects to be loaded synchronously but analytics.js is loaded asynchronously. Therefore, in order to interact with the API, you need to run your code inside an [analytics.ready](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#ready) callback. Here's an example:
 
 ```js
 analytics.ready(function(){

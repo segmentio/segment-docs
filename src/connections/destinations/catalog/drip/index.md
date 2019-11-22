@@ -15,11 +15,11 @@ When you toggle on Drip in Segment, this is what happens:
 
 ## Identify
 
-When you call [`identify`](/docs/spec/identify/) on analytics.js, we call [`identify`](/docs/spec/identify/) on Drip and pass through all of the user traits that were included on that call. You must pass email as a trait to identify the user to Drip. Note that if you want to do cross-domain tracking, after you've enabled it in the Drip UI, you'll need to pass `email` as a trait on the identify call on both domains.
+When you call [`identify`](/docs/connections/spec/identify/) on analytics.js, we call [`identify`](/docs/connections/spec/identify/) on Drip and pass through all of the user traits that were included on that call. You must pass email as a trait to identify the user to Drip. Note that if you want to do cross-domain tracking, after you've enabled it in the Drip UI, you'll need to pass `email` as a trait on the identify call on both domains.
 
 ## Track
 
-When you call [`track`](/docs/spec/track/), we'll send the event to Drip with the event `name` and all `properties` that you specified. If you include `revenue` as a property, it will get passed to Drip as the conversion value of this event.
+When you call [`track`](/docs/connections/spec/track/), we'll send the event to Drip with the event `name` and all `properties` that you specified. If you include `revenue` as a property, it will get passed to Drip as the conversion value of this event.
 
 **Note:**
 - If you are sending custom server side events, you must include an `email` property of the user that the event belongs to.
@@ -28,4 +28,4 @@ When you call [`track`](/docs/spec/track/), we'll send the event to Drip with th
 
 ## Sending Data from Drip
 
-Drip supports sending [email events](/docs/spec/email/) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.
+Drip supports sending [email events](/docs/connections/spec/email/) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.

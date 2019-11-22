@@ -8,7 +8,7 @@ platforms -> what data do we recognize-->
 
 
 
-The first step is to make sure {{ currentIntegration.display_name }} supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](https://segment.com/docs/destinations/#connection-modes).
+The first step is to make sure {{ currentIntegration.display_name }} supports the source type and connection mode you've chosen to implement. You can learn more about what dictates [the connection modes we support here](https://segment.com/docs/connections/destinations/#connection-modes).
 
 <table>
   <tr>

@@ -4,7 +4,7 @@ rewrite: true
 ---
 <!-- LR note: Setting rewrite true to remove bad boilerplate, manually including the footer partial-->
 
-Once you enable Adobe Analytics (formerly known as Omniture/Sitecatalyst) in Segment, you can start sending data from any of our [libraries](docs/connections/sources/) to an Adobe report suite. When you send events from our mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics `Data Insertion API`.
+Once you enable Adobe Analytics (formerly known as Omniture/Sitecatalyst) in Segment, you can start sending data from any of our [libraries](/docs/connections/sources/) to an Adobe report suite. When you send events from our mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics `Data Insertion API`.
 
 The following documentation provides detailed explanation of how both destination the Device-mode and Cloud-mode components work. For FAQs about Device- vs Cloud-mode tracking, unique users, identifiers, and more, read the Best Practices at the bottom of this page!
 
@@ -28,7 +28,7 @@ Adobe Analytics uses a slightly different approach to tracking than Segment, and
 
 For example, a `Welcome Dialog Dismissed` event in Segment (where the action is "dismissed") with properties that contain the user ID (`user123`) and the dialog name `welcome-dialog`, could be modeled in Adobe Analytics as a pageView with variables for the dialog name, visitorID, and with the event name mapping the user action ("dismissed") to a variable.
 
-Both Segment and Adobe Analytics have recommended standard formats for tracking events. Segment has [the Spec](/docs/spec/), and Adobe uses [predefined events](https://marketing.adobe.com/resources/help/en_US/sc/implement/event_predefined.html). Segment automatically maps incoming data that's in the Ecommerce Spec format to Adobe's predefined events, and can also map data in the Ecommerce Spec format to some of Adobe's product level properties. Video calls using the format described in this document are also automatically mapped. If you're using the Mobile SDKs, mobile lifecycle events are also automatically mapped. If you will be creating Page and Track events that are outside the scope of the Ecommerce spec, you'll need to map those to your Adobe events.
+Both Segment and Adobe Analytics have recommended standard formats for tracking events. Segment has [the Spec](/docs/connections/spec/), and Adobe uses [predefined events](https://marketing.adobe.com/resources/help/en_US/sc/implement/event_predefined.html). Segment automatically maps incoming data that's in the Ecommerce Spec format to Adobe's predefined events, and can also map data in the Ecommerce Spec format to some of Adobe's product level properties. Video calls using the format described in this document are also automatically mapped. If you're using the Mobile SDKs, mobile lifecycle events are also automatically mapped. If you will be creating Page and Track events that are outside the scope of the Ecommerce spec, you'll need to map those to your Adobe events.
 
 We strongly recommend that you create a tracking plan for both your Segment and Adobe Analytics events before you send any events or properties to Adobe. This will help you map your Segment events to Adobe `events`, and Segment properties to Adobe variables. If you decide to set up Adobe Analytics for mobile, you'll have to do this mapping in both the Segment settings, and the Adobe Mobile Services dashboard - so it's good to keep your options open!
 
@@ -36,7 +36,7 @@ We strongly recommend that you create a tracking plan for both your Segment and 
 ### Choosing between Device-mode and Cloud-mode
 If you're using device-mode javascript, by default Segment "bundles" (mobile) or "wraps" (when using Analytics.js) the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics `Appmeasurement.js` library. Adobe's client-side libraries can provide services to other Adobe suites and products, however they can also increase the size of your page.
 
-If you prefer, you can enable [Cloud-mode](/docs/destinations/#connection-modes), and send data through the Segment servers where it is then mapped and sent on to Adobe Analytics. You enable Cloud-mode for Javascript or Legacy sources from the Adobe Analytics source settings in the Segment app.
+If you prefer, you can enable [Cloud-mode](/docs/connections/destinations/#connection-modes), and send data through the Segment servers where it is then mapped and sent on to Adobe Analytics. You enable Cloud-mode for Javascript or Legacy sources from the Adobe Analytics source settings in the Segment app.
 
 Our Cloud-mode Adobe Analytics destination also provides support for **Adobe Mobile Services** "states", "actions", and lifecycle events, metrics, and dimensions.
 
@@ -122,7 +122,7 @@ When we generate the XML to send to Adobe, there are a few things that happen:
 
  **Note**: For server side libraries, the `ip` is by default be the `ip` address of your company servers, NOT the customers' own. This means that for server side events, it is best practice to record the customer's `ip` from their requests, and manually send that to Segment as `context.ip`.
 
- We also set your `context.locale` (which is automatically collected if using a mobile library) to `<language>`. Since mobile libraries also send your `traits` from previous `.identify()` calls inside the `context.traits`, we try to send `<state>` and `<zip>` by looking up `context.traits.address.state` and `context.traits.postalCode` respectively, as noted in our [identify spec](/docs/spec/identify). If these lookups fail, we default to `properties.state` and `properties.zip`.
+ We also set your `context.locale` (which is automatically collected if using a mobile library) to `<language>`. Since mobile libraries also send your `traits` from previous `.identify()` calls inside the `context.traits`, we try to send `<state>` and `<zip>` by looking up `context.traits.address.state` and `context.traits.postalCode` respectively, as noted in our [identify spec](/docs/connections/spec/identify). If these lookups fail, we default to `properties.state` and `properties.zip`.
 
  For mobile libraries, since we can detect whether the event occurred while the user had a wifi connection, we also send the `<connectionType>` as `lan/wifi`. All other events are treated as `Mobile Carrier` inside Adobe's Mobile Web Reports.
 
@@ -207,7 +207,7 @@ This section contains information about how to implement Segment calls for Adobe
 
 ### Using default Ecommerce Spec Events
 
-The Adobe Analytics destination automatically works with our standard [Ecommerce API](/docs/spec/ecommerce/v2/), and automatically maps the follwing events between Segment and Adobe Analytics.
+The Adobe Analytics destination automatically works with our standard [Ecommerce API](/docs/connections/spec/ecommerce/v2/), and automatically maps the follwing events between Segment and Adobe Analytics.
 
 <table>
   <tr>
@@ -356,7 +356,7 @@ When you make a `page` call, here's what Segment does:
    });
    ```
 
-   For `campaign`, we use the [Segment spec](/docs/spec/common) and check `context.campaign.name` first before checking `properties.campaign`.
+   For `campaign`, we use the [Segment spec](/docs/connections/spec/common) and check `context.campaign.name` first before checking `properties.campaign`.
 
    Alternatively, if you already set any of these properties on your existing Adobe Analytics instance on the page (`window.s.channel`, `window.s.campaign`, etc.), we use that as the default value. This way you can easily set a default values for all your web pages, but can still programmatically change them for each page if needed.
 
@@ -440,13 +440,13 @@ Here's what happens:
 
 You can map your Segment properties in your settings to any of your three list variables.
 
-You can either send the property value as a comma delimited string (ie. `'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults joins it as a comma delimited string before sending it to Adobe. To set up a custom delimiter, see the [documentation section on custom delimiters](https://segment.com/docs/destinations/adobe-analytics/#custom-delimiter).
+You can either send the property value as a comma delimited string (ie. `'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults joins it as a comma delimited string before sending it to Adobe. To set up a custom delimiter, see the [documentation section on custom delimiters](https://segment.com/docs/connections/destinations/catalog/adobe-analytics/#custom-delimiter).
 
 ## Adobe Analytics Properties - props
 
 You can map your Segment properties in your settings to any of your Adobe props.
 
-You can either send the property value as a string (ie. `'brady'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it so that it is a pipe (`|`) delimited string before sending to Adobe (ie. `'brady|edelman|blount'`). If you would like to set up a custom delimiter please see our documentation [here](https://segment.com/docs/destinations/adobe-analytics/#custom-delimiter) for configuring custom delimiters.
+You can either send the property value as a string (ie. `'brady'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it so that it is a pipe (`|`) delimited string before sending to Adobe (ie. `'brady|edelman|blount'`). If you would like to set up a custom delimiter please see our documentation [here](https://segment.com/docs/connections/destinations/catalog/adobe-analytics/#custom-delimiter) for configuring custom delimiters.
 
 ## Settings
 
@@ -805,7 +805,7 @@ options:@{
 
 ### Supported Video Events
 
-Adobe Analytics supports many - but not all - of our [specced video events](/docs/spec/video/). Note, too, that **some events required for Adobe Analytics are not specced as part of Segment's standard video tracking**, so read the documentation closely. The list below includes supported events, as well as the corresponding Adobe method(s) triggered. In the next section, we go into more detail on the functionality of each event, as well as list any required properties:
+Adobe Analytics supports many - but not all - of our [specced video events](/docs/connections/spec/video/). Note, too, that **some events required for Adobe Analytics are not specced as part of Segment's standard video tracking**, so read the documentation closely. The list below includes supported events, as well as the corresponding Adobe method(s) triggered. In the next section, we go into more detail on the functionality of each event, as well as list any required properties:
 
 <table>
   <tr>

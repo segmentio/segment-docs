@@ -7,7 +7,7 @@ sourceCategory: Server
 
 This tutorial will help you start sending analytics data from your ASP.NET app to Segment and any of our destinations, using our .NET and analytics.js library. As soon as you're setup you'll be able to turn on analytics tools, ad conversion pixels, email tools and lots of other destinations with the flip of a switch!
 
-If you want to dive deeper at any point, check out the [.NET library reference](/docs/sources/server/net).
+If you want to dive deeper at any point, check out the [.NET library reference](/docs/connections/sources/catalog/libraries/server/net).
 
 
 ## Client-side vs Server-side
@@ -31,7 +31,7 @@ That snippet will load Analytics.js onto the page _asynchronously_, so it won't 
 
 **Fun fact:** if you only want the most basic Google Analytics setup you can stop reading right now. You're done! Just switch on Google Analytics in our interface.
 
-For a more in depth analytics.js tutorial, check out our [quick start](/docs/sources/website/analytics.js/quickstart).
+For a more in depth analytics.js tutorial, check out our [quick start](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart).
 
 Lots of analytics and marketing tools want to know more information about your users, and what they're doing on your app. In the next section, we'll install the .NET library and start sending an event every time a new user registers on your site.
 
@@ -93,6 +93,6 @@ Congratulations! You can now track any event from the browser and the backend. H
 
 ## What's Next?
 
-We just walked through the quickest way to get started with Segment using Analytics.js and the .NET library. You might also want to check out our full [Analytics.js reference](/docs/libraries/analytics.js) to see what else is possible, or read about the [Tracking API methods](/docs/spec/) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Segment using Analytics.js and the .NET library. You might also want to check out our full [Analytics.js reference](/docs/libraries/analytics.js) to see what else is possible, or read about the [Tracking API methods](/docs/connections/spec/) to get a sense for the bigger picture.
 
-If you're running an **Ecommerce** site or app you should also check out our [Ecommerce API reference](/docs/spec/ecommerce/v2/) to make sure your products and checkout experience is instrumented properly!
+If you're running an **Ecommerce** site or app you should also check out our [Ecommerce API reference](/docs/connections/spec/ecommerce/v2/) to make sure your products and checkout experience is instrumented properly!

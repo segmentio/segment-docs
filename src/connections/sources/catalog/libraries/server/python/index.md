@@ -45,7 +45,7 @@ analytics.debug = True
 analytics.on_error = on_error
 ```
 
-**Using Django?** Check out the [Django docs](/docs/sources/server/python/#django).
+**Using Django?** Check out the [Django docs](/docs/connections/sources/catalog/libraries/server/python/#django).
 
 ## Identify
 
@@ -78,7 +78,7 @@ The `identify` call has the following fields:
   </tr>
   <tr>
     <td>`context` _dict, optional_</td>
-    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/spec/common/#context)</td>
+    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)</td>
   </tr>
   <tr>
     <td>`timestamp` _datetime, optional_</td>
@@ -94,7 +94,7 @@ The `identify` call has the following fields:
   </tr>
 </table>
 
-Find details on the **identify method payload** in our [Spec](/docs/spec/identify/).
+Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
 
 ## Track
 
@@ -140,7 +140,7 @@ The `track` method has the following fields:
   </tr>
   <tr>
     <td>`context` _dict, optional_</td>
-    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/spec/common/#context)</td>
+    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)</td>
   </tr>
   <tr>
     <td>`timestamp` _datetime, optional_</td>
@@ -156,11 +156,11 @@ The `track` method has the following fields:
   </tr>
 </table>
 
-Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/spec/track/).
+Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/connections/spec/track/).
 
 ## Page
 
-The [`page`](/docs/spec/page) method lets you record page views on your website, along with optional extra information about the page being viewed.
+The [`page`](/docs/connections/spec/page) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
 If you're using our client-side setup in combination with the Python library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
@@ -188,11 +188,11 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`properties` _dict, optional_</td>
-    <td>The page properties. To see a reference of reserved page properties that we've standardized, check out our spec [here](https://segment.com/docs/spec/page/#properties).</td>
+    <td>The page properties. To see a reference of reserved page properties that we've standardized, check out our spec [here](https://segment.com/docs/connections/spec/page/#properties).</td>
   </tr>
   <tr>
     <td>`context` _dict, optional_</td>
-    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/spec/common/#context)</td>
+    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)</td>
   </tr>
   <tr>
     <td>`timestamp` _datetime, optional_</td>
@@ -208,11 +208,11 @@ The `page` call has the following fields:
   </tr>
 </table>
 
-Find details on the **`page` method payload** in our [Spec](/docs/spec/page/).
+Find details on the **`page` method payload** in our [Spec](/docs/connections/spec/page/).
 
 ## Screen
 
-The [`screen`](/docs/spec/screen) method lets you record screen views on your mobile app, along with optional extra information about the screen being viewed.
+The [`screen`](/docs/connections/spec/screen) method lets you record screen views on your mobile app, along with optional extra information about the screen being viewed.
 
 If you're using our mobile SDK in combination with the library, screen calls are **already tracked for you** by default. However, if you want to record your own screen views manually and aren't using our SDK library, read on!
 
@@ -245,7 +245,7 @@ The `screen` call has the following fields:
   </tr>
   <tr>
     <td>`context` _dict, optional_</td>
-    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/spec/common/#context)</td>
+    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)</td>
   </tr>
   <tr>
     <td>`timestamp` _datetime, optional_</td>
@@ -261,14 +261,14 @@ The `screen` call has the following fields:
   </tr>
 </table>
 
-Find details on the **`screen` method payload** in our [Spec](/docs/spec/screen/).
+Find details on the **`screen` method payload** in our [Spec](/docs/connections/spec/screen/).
 
 ---
 ## Group
 
-`group` lets you associate an [identified user](/docs/sources/server/python/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
+`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/python/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
 Example `group` call:
 
@@ -296,7 +296,7 @@ The `group` call has the following fields:
   </tr>
   <tr>
     <td>`context` _dict, optional_</td>
-    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/spec/common/#context)</td>
+    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)</td>
   </tr>
   <tr>
     <td>`timestamp` _datetime, optional_</td>
@@ -313,13 +313,13 @@ The `group` call has the following fields:
   </tr>
 </table>
 
-Find more details about `group` including the **`group` method payload** in our [Spec](/docs/spec/group/).
+Find more details about `group` including the **`group` method payload** in our [Spec](/docs/connections/spec/group/).
 
 ## Alias
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/destinations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/destinations/kissmetrics/#alias) and [Trak.io](/docs/destinations/trak.io/#alias) if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Trak.io](/docs/connections/destinations/catalog/trak.io/#alias) if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -339,7 +339,7 @@ The `alias` call has the following fields:
   </tr>
   <tr>
     <td>`context` _dict, optional_</td>
-    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/spec/common/#context)</td>
+    <td>A dict containing any context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)</td>
   </tr>
   <tr>
     <td>`timestamp` _datetime, optional_</td>
@@ -367,7 +367,7 @@ analytics.identify('1234', { plan: 'Free' })
 analytics.track('1234', 'Identified Action')
 ```
 
-For more details about `alias` including the **`alias` call payload**, check out our [Spec](/docs/spec/alias/).
+For more details about `alias` including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
 
 ---
 
@@ -486,7 +486,7 @@ analytics.track('9742', 'Song Played', integrations={
 
 In this case, we're specifying that we want this identify to only go to KISSmetrics. `'all': False` says that no destination should be enabled unless otherwise specified. `'KISSmetrics': True` turns on KISSmetrics, etc.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/destinations) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:**
 
@@ -692,7 +692,7 @@ analytics.track('9742', 'Song Played', context={
 })
 ```
 
-Be sure to see the full [reference of supported keys](/docs/spec/common/#context).
+Be sure to see the full [reference of supported keys](/docs/connections/spec/common/#context).
 
 ### Versioning
 

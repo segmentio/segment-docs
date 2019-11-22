@@ -19,7 +19,7 @@ Check out our [blog post](https://segment.com/blog/sql-traits) for more customer
 
 ### Example: Cloud Sources Sync
 
-SQL traits allow you to import data from [object cloud sources](/docs/sources/#object-cloud-sources) such as Salesforce, Stripe, Zendesk, Hubspot, Marketo, Intercom and more. For example, you could bring in Salesforce Leads or Accounts, syncing Zendesk ticket behavior, or Stripe LTV calculations.
+SQL traits allow you to import data from [object cloud sources](/docs/connections/sources/#object-cloud-sources) such as Salesforce, Stripe, Zendesk, Hubspot, Marketo, Intercom and more. For example, you could bring in Salesforce Leads or Accounts, syncing Zendesk ticket behavior, or Stripe LTV calculations.
 
 The two examples below show SQL queries you could use to get cloud-source information from your warehouse.
 
@@ -65,9 +65,9 @@ For any warehouse, we recommend that you create a separate read-only user for bu
 #### Redshift, Postgres, Snowflake Setup
 
 If you don't already have a data warehouse, follow one of the guides here first:
-- [Redshift Getting Started](/docs/destinations/redshift/#getting-started)
-- [Postgres Getting Started](/docs/destinations/postgres/#getting-started)
-- [Snowflake Getting Started](/docs/destinations/snowflake/#getting-started)
+- [Redshift Getting Started](/docs/connections/warehouses/catalog/redshift/#getting-started)
+- [Postgres Getting Started](/docs/connections/warehouses/catalog/postgres/#getting-started)
+- [Snowflake Getting Started](/docs/connections/warehouses/catalog/snowflake/#getting-started)
 
 Remember to create a read-only service user!
 
@@ -141,7 +141,7 @@ Before you create a SQL trait, you must first preview it to validate your query.
 
 From the Personas screen, go to the Computed Traits tab, and click create a new SQL trait. Select the data warehouse that contains the data you want to query.
 
-If you are sending data from [object cloud sources](https://segment.com/docs/sources/#cloud-apps) to your warehouse, the SQL traits UI has some pre-made templates you can try out.
+If you are sending data from [object cloud sources](https://segment.com/docs/connections/sources/#cloud-apps) to your warehouse, the SQL traits UI has some pre-made templates you can try out.
 
 ![Example template: preview all users with an open Zendesk ticket](images/sql_traits_preview1.png)
 

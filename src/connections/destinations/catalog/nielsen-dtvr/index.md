@@ -29,8 +29,8 @@ production.
 ## Mobile
 
 To get started with Nielsen-DTVR and Segment, you'll want to first integrate
-your mobile app with our [iOS](/docs/sources/mobile/ios/) or
-[Android](/docs/sources/mobile/android/) sources.
+your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or
+[Android](/docs/connections/sources/catalog/libraries/mobile/android/) sources.
 
 ### iOS
 
@@ -75,7 +75,7 @@ file called .netrc ``` cd ~/ vi .netrc ```
   You will need to fill out a license agreement form and have the contact
   information for your Nielsen representative in order to obtain the
   credentials
-  [here](https://engineeringportal.nielsen.com/docs/Special:Downloads)
+  [here](https://engineeringportal.nielsen.com/docs/connections/special:Downloads)
 
 2. Add the source to your Podfile:
 
@@ -98,7 +98,7 @@ The full instructions from Nielsen can be found
 ##### Manual
 
 Navigate to the [Nielsen
-Downloads](https://engineeringportal.nielsen.com/docs/Special:Downloads) page
+Downloads](https://engineeringportal.nielsen.com/docs/connections/special:Downloads) page
 to download the iOS SDK. You will need to fill out a license agreement form and
 have the contact information for your Nielsen representative ready.
 
@@ -121,7 +121,7 @@ adding their repository [here in their
 documentation](https://engineeringportal.nielsen.com/docs/Digital_Measurement_Android_Artifactory_Guide#Add_Nielsen_Maven_Repository).
 
 To retrieve Nielsen credentials, you will need to fill out a license agreement
-form [here](https://engineeringportal.nielsen.com/docs/Special:Downloads)
+form [here](https://engineeringportal.nielsen.com/docs/connections/special:Downloads)
 
 An easy way to configure your app with your Nielsen credentials is to set the
 Nielsen `user` and `authCode` as `ENV` variables, for example:
@@ -148,17 +148,17 @@ browser.
 ## Track
 
 Segment only supports sending `track` events as outlined in our [Video
-Spec](/docs/spec/video/). To get started tracking video content through
+Spec](/docs/connections/spec/video/). To get started tracking video content through
 Segment, make sure you are using a media player that has an API which allows
 you to detect the player state such as video or ad plays. For example, you
 would not be able to collect ad plays using YouTube since their YouTube SDK
 does not expose any hooks into player states during ad plays.
 
 **IMPORTANT**: If you do not implement the Segment [Video
-Spec](/docs/spec/video/) properly with key lifecycle events, this integration
+Spec](/docs/connections/spec/video/) properly with key lifecycle events, this integration
 will not behave properly.
 
-Again, please also refer to our [Video Spec](/docs/spec/video/) and implement
+Again, please also refer to our [Video Spec](/docs/connections/spec/video/) and implement
 video tracking as outlined there. We will map the semantic events and
 properties to Nielsen's relevant methods and metadata.
 

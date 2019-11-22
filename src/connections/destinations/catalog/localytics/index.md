@@ -29,8 +29,8 @@ is not yet supported.
 
 **Note:** Localytics does not accept server-side data, so you'll have to use one
 of our client-side libraries
-([Analytics.js](/docs/sources/website/analytics.js/),
-[iOS](/docs/sources/mobile/ios/)/[Android](/docs/sources/mobile/android/) SDKs
+([Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/),
+[iOS](/docs/connections/sources/catalog/libraries/mobile/ios/)/[Android](/docs/connections/sources/catalog/libraries/mobile/android/) SDKs
 with Localytics [bundled](/docs/faqs/sources/bundled-SDK-vs-server) to send data
 to Localytics.
 
@@ -42,14 +42,14 @@ publish it on Maven Central). You can see an example of how to add that
 
 ## Identify
 
-When you call [`identify`](/docs/spec/identify/), we'll set the Localytics
+When you call [`identify`](/docs/connections/spec/identify/), we'll set the Localytics
 customer Id, and set any special Localytics traits you provide, such as `name`,
 or `email`, and any custom traits as well.
 
 ## Track
 
-Whenever you call [`track`](/docs/spec/track/), we'll log an event with
-Localytics. [`track`](/docs/spec/track/) takes the name of the event and any
+Whenever you call [`track`](/docs/connections/spec/track/), we'll log an event with
+Localytics. [`track`](/docs/connections/spec/track/) takes the name of the event and any
 optional properties you want to associate with the event.
 
 - - -
@@ -60,7 +60,7 @@ Push notifications on Android require a bit of extra work to setup.
 
 * First, you need to make sure Localytics is being bundled. You can find out
   more information about bundled integrations in our [Android
-  documentation](/docs/sources/mobile/android/#bundled-integrations).
+  documentation](/docs/connections/sources/catalog/libraries/mobile/android/#bundled-integrations).
 
 * Follow Localytics' documentation to [setup the permission in your
   AndroidManifest.xml](http://docs.localytics.com/dev/android.html#modify-androidmanifest-push-android).

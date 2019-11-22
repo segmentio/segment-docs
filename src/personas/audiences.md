@@ -12,7 +12,7 @@ When building an audience you can leverage existing events, traits, computed tra
 
 ### Events
 
-You can build an audience from any of the events that are connected to Personas. This includes any [track](/docs/spec/track), [page](/docs/spec/page), or [screen](/docs/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties as well. Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point, but not completed the order.
+You can build an audience from any of the events that are connected to Personas. This includes any [track](/docs/connections/spec/track), [page](/docs/connections/spec/page), or [screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties as well. Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point, but not completed the order.
 
 ![](images/1526326688131.png)
 
@@ -20,7 +20,7 @@ You can also specify two different types of time-windows, `within` and `in betwe
 
 ### Custom Traits
 
-You can also build audiences based on custom traits. These can traits collected from your apps when a user completes a form, or signs up, via an (identify)[/docs/spec/identify] call. You can also check out the Personas user explorer to see examples of these traits.
+You can also build audiences based on custom traits. These can traits collected from your apps when a user completes a form, or signs up, via an (identify)[/docs/connections/spec/identify] call. You can also check out the Personas user explorer to see examples of these traits.
 
 ### Computed Traits
 
@@ -42,7 +42,7 @@ Dynamic Property references give you more flexibility over funnel audiences. Ins
 
 ### Account-Level audiences
 
-If you are a B2B business, you might want to build an audience of accounts. You can leverage both account-level traits that you've sent through the [group](/docs/spec/group) call, or user-level traits and events. For example, you might want to re-engage a list of at-risk accounts defined as companies which are on a business tier plan and where none of the users in that account have logged in recently. When incorporating user-level events or traits, you can specify `None of the users`, `Any users`, or `All users`.
+If you are a B2B business, you might want to build an audience of accounts. You can leverage both account-level traits that you've sent through the [group](/docs/connections/spec/group) call, or user-level traits and events. For example, you might want to re-engage a list of at-risk accounts defined as companies which are on a business tier plan and where none of the users in that account have logged in recently. When incorporating user-level events or traits, you can specify `None of the users`, `Any users`, or `All users`.
 
 ![](images/1542075123519.png)
 
@@ -54,7 +54,7 @@ Once you have previewed your audience, you can choose to connect a destination, 
 
 Once you have created your audience, we will start syncing your audience to the destinations you have selected. Audiences are either sent to destinations as a boolean user-property or a user-list, depending on what is supported by the destination. Learn more about supported destinations [here](/docs/personas/activation/#destinations).
 
-For account-level audiences, you have the option to send either a [group](/docs/spec/group) call and/or [identify](/docs/spec/identify) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
+For account-level audiences, you have the option to send either a [group](/docs/connections/spec/group) call and/or [identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
 
 
 ## Accessing your audiences via the Profiles API

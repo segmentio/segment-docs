@@ -78,7 +78,7 @@ analytics.identify('2', {
 
 ## Track / Order Completed
 
-This Destination accepts only `Order Completed` events as decribed in our [ecommerce spec](https://segment.com/docs/spec/ecommerce/v2/#order-completed).
+This Destination accepts only `Order Completed` events as decribed in our [ecommerce spec](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed).
 
 Friendbuy has a concept of [Order Tracking](http://developers.friendbuy.com/#order-tracking) and [Product Tracking](http://developers.friendbuy.com/#product-tracking) where the former describes how to send data about the top level order whereas the latter documents instructions on sending data about each of the product within that order.
 

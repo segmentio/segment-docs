@@ -15,7 +15,7 @@ When you toggle on comScore in Segment, this is what happens:
 
 ## Mobile
 
-To get started with comScore and Segment, you'll want to first integrate your mobile app with our [iOS](/docs/sources/mobile/ios/) or [Android](/docs/sources/mobile/android/) sources. comScore can only accept data sent directly from their iOS and Android SDKs. For that reason we can only send data directly from our iOS and Android SDKs to comScore. **Data recorded in our server-side sources cannot be sent to comScore.** Be sure to follow the additional setup steps to get started, which you can find [here for iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore#analytics-ios-integration-comscore) and [here for Android](https://github.com/segment-integrations/analytics-android-integration-comscore#analytics-android-integration-comscore).
+To get started with comScore and Segment, you'll want to first integrate your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/) sources. comScore can only accept data sent directly from their iOS and Android SDKs. For that reason we can only send data directly from our iOS and Android SDKs to comScore. **Data recorded in our server-side sources cannot be sent to comScore.** Be sure to follow the additional setup steps to get started, which you can find [here for iOS](https://github.com/segment-integrations/analytics-ios-integration-comscore#analytics-ios-integration-comscore) and [here for Android](https://github.com/segment-integrations/analytics-android-integration-comscore#analytics-android-integration-comscore).
 
 With the recent comScore update, there is an additional implementation step when getting started with comScore Android. Please be sure to add this to your gradle file:
 
@@ -79,7 +79,7 @@ Calling `flush` will clear the offline cache with comScore's `flushOfflineCache`
 
 **Note**: The video tracking functionality is in beta for **mobile only**, and requires version 3.0.0 of the `Segment-comScore` SDK. If you have feedback on or questions about this beta feature, [please contact us](https://segment.com/help/contact)!
 
-To get started tracking video content through Segment, make sure you are using a media player that has an API which allows you to detect the player state. Please also refer to our [Video Spec](https://segment.com/docs/spec/video/) and implement video tracking as outlined there. We will map the semantic events to comScore's relevant methods.
+To get started tracking video content through Segment, make sure you are using a media player that has an API which allows you to detect the player state. Please also refer to our [Video Spec](https://segment.com/docs/connections/spec/video/) and implement video tracking as outlined there. We will map the semantic events to comScore's relevant methods.
 
 ### Playback Events
 

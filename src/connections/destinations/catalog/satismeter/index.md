@@ -33,7 +33,7 @@ Users need to be identified in order to target surveys at the right time.
 
 ## Client-side destination
 
-Identifying of users is done by calling an `analytics.identify` method using the [analytics.js](/docs/sources/website/analytics.js/) library. The recommended traits are `name`, `email` and `createdAt`, however SatisMeter will collect any other traits you'd like to see next to feedback from your customers.
+Identifying of users is done by calling an `analytics.identify` method using the [analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/) library. The recommended traits are `name`, `email` and `createdAt`, however SatisMeter will collect any other traits you'd like to see next to feedback from your customers.
 
 Here's an example of the identify call:
 ```js
@@ -48,7 +48,7 @@ It is important to send the `createdAt` trait which tells us how long is the cus
 
 ## Server-side destination
 
-You can also send additional traits you don't have available on client-side using one of the [server libraries](/docs/sources/#server) provided by Segment. These traits will be added to the collected responses from your users.
+You can also send additional traits you don't have available on client-side using one of the [server libraries](/docs/connections/sources/#server) provided by Segment. These traits will be added to the collected responses from your users.
 
 ## Sending data from SatisMeter back to Segment (optional)
 We can send completed survey responses to Segment which will distribute it to all your other Segment destinations.

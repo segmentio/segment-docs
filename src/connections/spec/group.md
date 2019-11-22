@@ -6,7 +6,7 @@ The `group` API call is how you associate an individual user with a group—be i
 
 A user can be in more than one group; however, not all platforms support multiple groups. It also lets you record custom traits about the group, like industry or number of employees.  Calling `group` is a slightly more advanced feature, but it's helpful if you have accounts with multiple users.
 
-Here's the payload of a typical `group` call, with most [common fields](/docs/spec/common/) removed:
+Here's the payload of a typical `group` call, with most [common fields](/docs/connections/spec/common/) removed:
 
 ```js
 {

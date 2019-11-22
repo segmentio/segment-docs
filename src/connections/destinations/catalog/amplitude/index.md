@@ -58,7 +58,7 @@ will appear in your Amplitude project.
 
 ## Page and Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page](https://segment.com/docs/spec/page/) and [Screen](https://segment.com/docs/spec/screen/) method does. By default, Segment won't send these standard calls to Amplitude. However, you can enable them with the destination settings outlined below, which
+If you haven't had a chance to review our spec, please take a look to understand what the [Page](https://segment.com/docs/connections/spec/page/) and [Screen](https://segment.com/docs/connections/spec/screen/) method does. By default, Segment won't send these standard calls to Amplitude. However, you can enable them with the destination settings outlined below, which
 you can find under the "Optional Settings" tab. An example call would look like with a server-side call:
 
 ```js
@@ -116,12 +116,12 @@ These settings are available for Android sources, when you are using a Device-mo
 | Track All Pages | Always | If a `screen` *name* is provided: `Viewed (Name) Screen`. Otherwise `Loaded a Screen` | "Viewed Settings Screen" |
 | Track All Screens | Always | Loaded a Screen | "Loaded a Screen" |
 
-You can learn more about `page` calls from our [`page` spec](/docs/spec/page/)
-and `screen` calls from our [`screen` spec](/docs/spec/screen/).
+You can learn more about `page` calls from our [`page` spec](/docs/connections/spec/page/)
+and `screen` calls from our [`screen` spec](/docs/connections/spec/screen/).
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 // On server-side
@@ -206,7 +206,7 @@ Amplitude will create two users - one for each of the `deviceID`'s set per the f
 
 You can grab `deviceID` from Amplitude on the client-side to send server-side
 by calling this method within the
-[`ready`](https://segment.com/docs/sources/website/analytics.js/#ready)
+[`ready`](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#ready)
 function on the client-side to send server-side:
 
 ```js
@@ -224,7 +224,7 @@ with your `identify` call. Otherwise, Amplitude will create two separate users: 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. Amplitude supports a number of special properties, all of which are included in the example below:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. Amplitude supports a number of special properties, all of which are included in the example below:
 
 ```javascript
 // On server-side
@@ -268,9 +268,9 @@ analytics.track({
 ```
 
 Many of these properties will automatically be sent for you if you use one of Segment's browser or mobile libraries such as
-[Analytics.js](/docs/sources/website/analytics.js/), [iOS](/docs/sources/mobile/ios/), or [Android](/docs/sources/mobile/android/).
+[Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), or [Android](/docs/connections/sources/catalog/libraries/mobile/android/).
 
-For a complete list of special `context` keys see [our common fields spec](/docs/spec/common/).
+For a complete list of special `context` keys see [our common fields spec](/docs/connections/spec/common/).
 
 ### Log Revenue V2
 
@@ -312,13 +312,13 @@ In our client side, iOS, and Android components, if the preferred `logRevenueV2`
 | `eventProperties` | Any remaining properties (Server-side only) | A NSDictionary or Map of event properties to include in the revenue event. |
 ^ In our A.js, iOS and Android components, if `properties.price` is not present, Segment will fallback to `revenue` and send that as `price`. In addition, in our iOS and Android components, if `revenue` isn't present either,  we'll do an additional fallback to `total`.
 
-**Note:** If your site allows for users to perform a single transaction with multiple different products (such as a shopping cart checkout), we recommend using an [Order Completed](/docs/destinations/amplitude/#order-completed) event to track revenue with Amplitude.
+**Note:** If your site allows for users to perform a single transaction with multiple different products (such as a shopping cart checkout), we recommend using an [Order Completed](/docs/connections/destinations/catalog/amplitude/#order-completed) event to track revenue with Amplitude.
 
 
 
 ### Order Completed
 
-To track revenue with Amplitude, we recommend using our [Order Completed](/docs/spec/ecommerce/v2/#order-completed) event. This event allows you to define a list of products that a user purchased in a transaction. The need for this functionality is most applicable to sites that have a shopping cart experience.
+To track revenue with Amplitude, we recommend using our [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event. This event allows you to define a list of products that a user purchased in a transaction. The need for this functionality is most applicable to sites that have a shopping cart experience.
 
 This event's functionality is currently only available for data originating from a server or web [source](https://segment.com/docs/connections/sources/). An `Order Completed` event from mobile using our bundled Amplitude integration
 will work the same as our standard `track` event documented above.
@@ -385,7 +385,7 @@ product in the products list.
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. Note that groups are an enterprise-only feature in Amplitude,
+If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. Note that groups are an enterprise-only feature in Amplitude,
 and are only available if you've purchased the Accounts add-on. An example call would look like:
 
 ```js
@@ -469,7 +469,7 @@ after invoking a Segment `alias` event.
 
 For more
 information on Segment's `alias` method, see our [`alias`
-specification](https://segment.com/docs/spec/alias/). For more information on
+specification](https://segment.com/docs/connections/spec/alias/). For more information on
 Amplitude's `usermap` functionality, check out [their
 documentation](https://amplitude.zendesk.com/hc/en-us/articles/360002750712-Portfolio-Cross-Project-Analysis#user-mapping-aliasing).
 

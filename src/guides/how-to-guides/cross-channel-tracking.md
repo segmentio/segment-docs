@@ -75,7 +75,7 @@ Add the complete URL as the `src` in the image tag.
 <img src="https://api.segment.io/v1/pixel/track?data=eyJ3cml0ZUtleSI6ICJZT1VSX1dSSVRFX0tFWSIsICJ1c2VySWQiOiAiMDI1cGlrYWNodTAyNSIsICJldmVudCI6ICJFbWFpbCBPcGVuZWQiLCAicHJvcGVydGllcyI6IHsgICAic3ViamVjdCI6ICJUaGUgRWxlY3RyaWMgRGFpbHkiLCAgICJlbWFpbCI6ICJwZWVrQXRNZUBlbWFpbC5wb2tlIiB9fQ">
 ```
 
-[Learn more about our Pixel API.](https://segment.com/docs/sources/website/pixel/)
+[Learn more about our Pixel API.](https://segment.com/docs/connections/sources/catalog/libraries/website/pixel/)
 
 **Track earned traffic with UTM Parameters**
 
@@ -83,7 +83,7 @@ UTM parameters are types of query strings added to the end of a URL. When clicke
 
 ![](images/x-channel_GWqnp2I6.png)
 
-UTM parameters are only used when linking to your site from outside of your domain. When a visitor arrives to your site via a link containing UTM parameters, Segment's client-side analytics.js library will automatically parse the URL's query strings, and store them within the `context` object as outlined [here](https://segment.com/docs/spec/common/#context-fields-automatically-collected). These parameters do not persist to subsequent calls unless you pass them explicitly.
+UTM parameters are only used when linking to your site from outside of your domain. When a visitor arrives to your site via a link containing UTM parameters, Segment's client-side analytics.js library will automatically parse the URL's query strings, and store them within the `context` object as outlined [here](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected). These parameters do not persist to subsequent calls unless you pass them explicitly.
 
 UTM parameters contain three essential components:
 
@@ -163,7 +163,7 @@ If you do move key checkout events to the server side, you will have to manually
 *   **User Agent**: the User Agent will inform you of your customers' preferred device and shopping experience. Are they converting on a mobile web browser? Native app? Or on their laptop?
 
 
-[Learn how to use](https://segment.com/docs/spec/common/#context) [`context`](https://segment.com/docs/spec/common/#context) [to manually send this information on the server side.](https://segment.com/docs/spec/common/#context)
+[Learn how to use](https://segment.com/docs/connections/spec/common/#context) [`context`](https://segment.com/docs/connections/spec/common/#context) [to manually send this information on the server side.](https://segment.com/docs/connections/spec/common/#context)
 
 **Track the same user across devices**
 
@@ -185,7 +185,7 @@ For Facebook advertisers, [Facebook Offline Conversions](https://www.facebook.co
 
 *   uploading offline event data about actions that aren't captured with Facebook Pixel or App Events to Facebook for them to match actions to your Facebook ads
 
-*   enable and configure [Segment's Facebook Offline Conversions destination](/docs/destinations/facebook-offline-conversions/), which automates attributing offline events to your Facebook ads in real-time
+*   enable and configure [Segment's Facebook Offline Conversions destination](/docs/connections/destinations/catalog/facebook-offline-conversions/), which automates attributing offline events to your Facebook ads in real-time
 
 
 [Learn more about the benefits of Segment's Facebook Offline Conversions destination.](https://segment.com/blog/facebook-offline-conversions-integration/)

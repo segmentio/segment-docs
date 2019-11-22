@@ -4,7 +4,7 @@ title: Custom Sources
 
 Functions are currently in developer preview. If you are interested in joining the developer preview, navigate to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
 
-Custom Sources allow you to gather data from thousands of Cloud Applications without having to worry about setting up or maintaining any infrastructure. Custom Sources are small pieces of code that you upload to a Segment Source to translate webhook or POST events into events or objects that match the [Segment Spec](https://segment.com/docs/spec/).
+Custom Sources allow you to gather data from thousands of Cloud Applications without having to worry about setting up or maintaining any infrastructure. Custom Sources are small pieces of code that you upload to a Segment Source to translate webhook or POST events into events or objects that match the [Segment Spec](https://segment.com/docs/connections/spec/).
 
 Here are some example uses cases we've heard from customers that you can use Source Functions to implement in your organization:
 
@@ -18,9 +18,9 @@ Here is an example of what a Source Function could be used to do with a webhook 
 
 ## Quick Links
 
-* [Getting Started](/docs/sources/custom/#getting-started)
-* [Debugging and Troubleshooting](/docs/sources/custom/#debugging-and-troubleshooting)
-* [FAQ](/docs/sources/custom/#faq)
+* [Getting Started](/docs/connections/sources/custom/#getting-started)
+* [Debugging and Troubleshooting](/docs/connections/sources/custom/#debugging-and-troubleshooting)
+* [FAQ](/docs/connections/sources/custom/#faq)
 
 ## Getting Started
 
@@ -150,7 +150,7 @@ async function onRequest(request, settings) {
 
 The `Segment` module has `Segment.identify()`, `Segment.track()`, `Segment.group()`, `Segment.set()`, `Segment.page()`, `Segment.screen()` and `Segment.alias()` helper functions. These fill in defaults and validate the data you provide. You can call these functions anywhere in your function.
 
-Behind the scenes, the `Segment` module appends messages to an array and will send messages to the Segment [Tracking](https://segment.com/docs/sources/server/http/) and [Object](https://segment.com/docs/sources/server/object-api/) API provided your function returns without error.
+Behind the scenes, the `Segment` module appends messages to an array and will send messages to the Segment [Tracking](https://segment.com/docs/connections/sources/catalog/libraries/server/http/) and [Object](https://segment.com/docs/connections/sources/catalog/libraries/server/object-api/) API provided your function returns without error.
 
 **Events**
 
@@ -189,11 +189,11 @@ Events are used to trigger real-time workflows in downstream streaming destinati
   </tr>
 </table>
 
-For more details on the events that are supported, see the [HTTP](https://segment.com/docs/sources/server/http/) and [Object](https://segment.com/docs/sources/server/object-api/) API documentation.
+For more details on the events that are supported, see the [HTTP](https://segment.com/docs/connections/sources/catalog/libraries/server/http/) and [Object](https://segment.com/docs/connections/sources/catalog/libraries/server/object-api/) API documentation.
 
 **Objects**
 
-Objects are pieces of data that you can ETL (extract, transform, load) to your warehouse. Objects are not compatible with streaming destinations. For more details about what is supported with objects, review the [Objects API documentation](/docs/sources/server/object-api/).
+Objects are pieces of data that you can ETL (extract, transform, load) to your warehouse. Objects are not compatible with streaming destinations. For more details about what is supported with objects, review the [Objects API documentation](/docs/connections/sources/catalog/libraries/server/object-api/).
 
 <table class="api-table">
   <tr>

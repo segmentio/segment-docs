@@ -25,7 +25,7 @@ This destination is maintained by Singular. For any issues with the destination,
 
 ## Install Attribution
 
-Enable automatic tracking of lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) via initialization config parameters ([iOS](https://segment.com/docs/sources/mobile/ios/#application-lifecycle-tracking), [Android](https://segment.com/docs/sources/mobile/android/#step-2-initialize-the-client)) to track installs and sessions in Singular. The Singular "**session**" will be sent automatically by the integration as long as you are including the events above.
+Enable automatic tracking of lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) via initialization config parameters ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#application-lifecycle-tracking), [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#step-2-initialize-the-client)) to track installs and sessions in Singular. The Singular "**session**" will be sent automatically by the integration as long as you are including the events above.
 
 
 ## Apple Search Ads Attribution
@@ -77,7 +77,7 @@ Singular has explicitly mapped the `Application Installed` lifecycle event to pr
 
 ## Tracking Custom Events
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call (in Android) would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call (in Android) would look like:
 
 ```java
 Analytics.with(context).track("Signup")
@@ -98,4 +98,4 @@ Analytics.with(context).track("Order Completed", new Properties().putRevenue(1.9
 ```
 
 ## Custom User ID
-Singular has mapped the **Custom User ID** to the Segment [User ID](https://segment.com/docs/spec/identify/#user-id) value. Follow the steps here to configure for: [iOS](https://segment.com/docs/sources/mobile/ios/#identify), [Android](https://segment.com/docs/sources/mobile/android/#identify).
+Singular has mapped the **Custom User ID** to the Segment [User ID](https://segment.com/docs/connections/spec/identify/#user-id) value. Follow the steps here to configure for: [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#identify), [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#identify).

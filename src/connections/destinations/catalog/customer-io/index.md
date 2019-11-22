@@ -32,7 +32,7 @@ This document was last updated on January 26, 2018. If you notice any gaps, out-
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page();
@@ -42,7 +42,7 @@ Page events will be sent to Customer.io as a `Page View` event where name and pr
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/screen/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -53,7 +53,7 @@ Screen events will be sent to Customer.io as a custom event. In the Customer.io 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123', {
@@ -76,7 +76,7 @@ analytics.identify('userId123', {
 ```
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Clicked Button');
@@ -91,13 +91,13 @@ Before you can send the `Application Installed`, `Application Uninstalled`, or `
 For that, you need to make the following calls:
 
 - For Android, you need to make a call to `putDeviceToken` when Segment client is initialized.
-    - Read [more here](https://segment.com/docs/sources/mobile/android/#how-should-i-use-outbounds-push-notifications) for adding tokens for Android devices
+    - Read [more here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-should-i-use-outbounds-push-notifications) for adding tokens for Android devices
 - For iOS, you need to make a call to `segment.registeredForRemoteNotifications` when you receive the `didRegisterForRemoteNotificationsWithDeviceToken` event.
-    - Read [more here](https://segment.com/docs/sources/mobile/ios/#how-do-i-use-push-notifications) for adding tokens for iOS devices
+    - Read [more here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications) for adding tokens for iOS devices
 
 ## Application Installed
 
-[Application Installed](https://segment.com/docs/spec/mobile/#application-installed) events will add or update a device in the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_update) API endpoint. Please note, you must pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/spec/common/#context).
+[Application Installed](https://segment.com/docs/connections/spec/mobile/#application-installed) events will add or update a device in the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_update) API endpoint. Please note, you must pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
 
 {% comment %} api-example '{
 "action": "track",
@@ -134,7 +134,7 @@ For that, you need to make the following calls:
 ```
 
  ## Application Opened
-[Application Opened](https://segment.com/docs/spec/mobile/#application-opened) events will add or update a device device in the person's Customer.io profile using the same endpoint as above.  If a device already exists, Customer.io will update its `last_used_at` timestamp. Again, please ensure you pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/spec/common/#context).
+[Application Opened](https://segment.com/docs/connections/spec/mobile/#application-opened) events will add or update a device device in the person's Customer.io profile using the same endpoint as above.  If a device already exists, Customer.io will update its `last_used_at` timestamp. Again, please ensure you pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
 
 {% comment %} api-example '{
 "action": "track",
@@ -171,7 +171,7 @@ For that, you need to make the following calls:
 ```
 
  ## Application Uninstalled
-[Application Uninstalled](https://segment.com/docs/spec/mobile/#application-installed) events will remove the device from the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_delete) API endpoint. Please note, you must pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/spec/common/#context).
+[Application Uninstalled](https://segment.com/docs/connections/spec/mobile/#application-installed) events will remove the device from the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_delete) API endpoint. Please note, you must pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
 
 
 {% comment %} api-example '{
@@ -210,7 +210,7 @@ For that, you need to make the following calls:
 
 ### Sending Data from Customer.io
 
-Customer.io supports sending [email events](/docs/spec/email/) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.
+Customer.io supports sending [email events](/docs/connections/spec/email/) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.
 
 To enable this feature, go to the Account Settings in Customer.io and add your Segment write key:
 
@@ -220,7 +220,7 @@ To enable this feature, go to the Account Settings in Customer.io and add your S
 ## Best Practices
 
 ### Rate Limits
-Customer.io has limits on the data collected by their API. To ensure your events arrive in Customer.io, please ensure that you are respecting the limits placed on the [Customer.io API](https://learn.customer.io/api/#api-documentationlimits). If you are using our [HTTP API](/docs/sources/server/http/) to send a batch of events to Customer.io at once, make sure you throttle the `import` to 100-200 requests per second.
+Customer.io has limits on the data collected by their API. To ensure your events arrive in Customer.io, please ensure that you are respecting the limits placed on the [Customer.io API](https://learn.customer.io/api/#api-documentationlimits). If you are using our [HTTP API](/docs/connections/sources/catalog/libraries/server/http/) to send a batch of events to Customer.io at once, make sure you throttle the `import` to 100-200 requests per second.
 
 ## Troubleshooting
 

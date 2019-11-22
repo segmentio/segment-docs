@@ -48,7 +48,7 @@ Before you start: Make sure you have Workspace Owner or Source Admin privileges,
 1. Log in to your Segment Workspace and create a Javascript Source.
 2. Copy the Analytics.js script tag which appears.
 3. Paste this tag into your website's code within the `<head>` tag.
-   If you're having trouble with this step, follow the [Analytics.js Quickstart Guide](/docs/sources/website/analytics.js).
+   If you're having trouble with this step, follow the [Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/analytics.js).
    ![Install Segment snippet on your site](images/steps-3.png)
 
 ### Enable the Visual Tagger integration

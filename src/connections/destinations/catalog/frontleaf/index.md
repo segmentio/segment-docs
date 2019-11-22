@@ -8,7 +8,7 @@ beta: true
 {% include content/connection-modes.md %}
 
 ### Browser Tracking
-If you're using our client-side javascript library ([Analytics.js](/docs/sources/website/analytics.js/)), we will begin loading Frontleaf on your page through your Segment snippet within minutes after you enable it on your project destinations page.
+If you're using our client-side javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/)), we will begin loading Frontleaf on your page through your Segment snippet within minutes after you enable it on your project destinations page.
 
 Frontleaf uses our `page`, `identify`, `track`, and `group` methods.
 
@@ -18,13 +18,13 @@ For Frontleaf to work effectively with Segment page calls, you will need to spec
 
 Frontleaf supports three options for categorizing page calls by interaction type:
 
-* The optional `category` property. For more information on this property, see our [category docs](/docs/spec/page/#category). In the following example, "Product" is the category and "Shoe" is the page name. Segment will transform this category to "Viewed Product Page" before sending it to Frontleaf.
+* The optional `category` property. For more information on this property, see our [category docs](/docs/connections/spec/page/#category). In the following example, "Product" is the category and "Shoe" is the page name. Segment will transform this category to "Viewed Product Page" before sending it to Frontleaf.
 
 ```js
 analytics.page('Product', 'Shoe');
 ```
 
-* The optional `name` property. To get the maximium value out of using the name property, Frontleaf recommends that the name value maps to a type of interaction rather than a specific page, e.g. "Lesson" rather than "Lesson on Operating the Acme XT-1000". Segment will transform the name you pass in the same way it does for `category` above - "Lesson" will become "Viewed Lesson Page" before it gets sent on to Frontleaf. For more information on this property, see our [name docs](/docs/spec/page/#name).
+* The optional `name` property. To get the maximium value out of using the name property, Frontleaf recommends that the name value maps to a type of interaction rather than a specific page, e.g. "Lesson" rather than "Lesson on Operating the Acme XT-1000". Segment will transform the name you pass in the same way it does for `category` above - "Lesson" will become "Viewed Lesson Page" before it gets sent on to Frontleaf. For more information on this property, see our [name docs](/docs/connections/spec/page/#name).
 
 ```js
 analytics.page('Lesson');

@@ -23,7 +23,7 @@ Create a .NET server source in Segment.
 
 ![image](images/netcreatesource.png)
 
-You will then be presented with an [`analytics.js`](/docs/sources/website/analytics.js/) snippet.
+You will then be presented with an [`analytics.js`](/docs/connections/sources/catalog/libraries/website/analytics.js/) snippet.
 
 Copy the snippet directly into your ASP.NET [Site.master](https://github.com/segmentio/asp.net-example/blob/master/Site.master#L18-L21).
 
@@ -31,7 +31,7 @@ That snippet will load `analytics.js` onto the page _asynchronously_, so it won'
 
 As soon as that snippet is running on your site, you can start turning on any destinations on your Segment destinations page. In fact, if you reload, you can start seeing `page` calls in our debugger.
 
-For more in depth `analytics.js` information, check out our [analytics.js docs](/docs/sources/website/analytics.js/).
+For more in depth `analytics.js` information, check out our [analytics.js docs](/docs/connections/sources/catalog/libraries/website/analytics.js/).
 
 Lots of analytics and marketing tools want to know more information about your users, and what they're doing on your app. In the next section, we'll install the .NET library and start sending an event every time a new user registers on your site.
 
@@ -78,11 +78,11 @@ Analytics.Initialize("YOUR_WRITE_KEY");
 
 You only need to initialize once at the start of your program. You can then keep using the `Analytics` singleton anywhere in your code.
 
-The default initialization settings are production-ready and queue messages on another thread before sending any requests. In development you might want to use [development settings](/docs/sources/server/net/#development-settings).
+The default initialization settings are production-ready and queue messages on another thread before sending any requests. In development you might want to use [development settings](/docs/connections/sources/catalog/libraries/server/net/#development-settings).
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [identify](/docs/spec/identify/) method does.
+If you haven't had a chance to review our spec, please take a look to understand what the [identify](/docs/connections/spec/identify/) method does.
 
 The `identify` call has the following fields:
 
@@ -113,7 +113,7 @@ Analytics.Client.Identify("019mr8mf4r", new Traits() {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [track](/docs/spec/track/) method does.
+If you haven't had a chance to review our spec, please take a look to understand what the [track](/docs/connections/spec/track/) method does.
 
 The `track` call has the following fields:
 
@@ -147,7 +147,7 @@ Analytics.Client.Track("019mr8mf4r", "Item Purchased", new Properties() {
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [page](/docs/spec/page/) method does.
+If you haven't had a chance to review our spec, please take a look to understand what the [page](/docs/connections/spec/page/) method does.
 
 The `page` call has the following fields:
 
@@ -185,7 +185,7 @@ Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [screen](/docs/spec/screen/) method does.
+If you haven't had a chance to review our spec, please take a look to understand what the [screen](/docs/connections/spec/screen/) method does.
 
 The `screen` call has the following fields:
 
@@ -222,7 +222,7 @@ Analytics.Client.Screen("019mr8mf4r", "Register", new Properties() {
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [group](/docs/spec/group/) method does.
+If you haven't had a chance to review our spec, please take a look to understand what the [group](/docs/connections/spec/group/) method does.
 
 The `group` call has the following fields:
 
@@ -256,7 +256,7 @@ Analytics.Client.Group("userId", "groupId", new Traits() {
 
 ## Alias
 
-If you haven't had a chance to review our spec, please take a look to understand what the [alias](/docs/spec/alias/) method does.
+If you haven't had a chance to review our spec, please take a look to understand what the [alias](/docs/connections/spec/alias/) method does.
 
 The `alias` call has the following fields:
 
@@ -338,7 +338,7 @@ Analytics.Client.Identify("hj2kf92ds212", new Traits() {
 
 In this case, we're specifying that we want this identify to only go to KISSmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "KISSmetrics", true }` turns on KISSmetrics, etc.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/destinations) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:**
 
@@ -348,7 +348,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 ## Context
 
-If you're running a web server, you might want to send [context variables](https://segment.com/docs/spec/common/#context) such as `userAgent` or `ip` with your `page` or `screen` calls. You can do so by setting the `Context` in the `Options` object.
+If you're running a web server, you might want to send [context variables](https://segment.com/docs/connections/spec/common/#context) such as `userAgent` or `ip` with your `page` or `screen` calls. You can do so by setting the `Context` in the `Options` object.
 
 ```csharp
 Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
