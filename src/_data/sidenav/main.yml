@@ -16,12 +16,15 @@ sections:
     title: Is Segment impacted by Intelligent Tracking Prevention?
   - path: /guides/segment-vs-tag-managers
     title: What is the difference between Segment and tag managers?
+  - path: /guides/what-is-replay
+    title: What is Replay?
+
   - section_title: How To Guides
     slug: guides/how-to-guides
     menu_icon: read-more
     section:
     - path: /guides/how-to-guides
-      title: How-to Guides
+      title: How-to Guides Index
     - path: /guides/how-to-guides/automated-multichannel-reengagement
       title: How do I automate multi-channel re-engagement campaigns?
     - path: /guides/how-to-guides/best-practices-identify
@@ -56,11 +59,11 @@ sections:
     slug: guides/usage-and-billing
     section:
     - path: /guides/usage-and-billing/account-management
-      title: Account management
+      title: Account Management
     - path: /guides/usage-and-billing/billing
       title: Billing and Account FAQs
     - path: /guides/usage-and-billing/discounts-for-startups-npos
-      title: Do you offer coupons?
+      title: Do you offer discounts or coupons?
     - path: /guides/usage-and-billing/mtus-and-throughput
       title: 'MTUs, Throughput and Billing'
     - path: /guides/usage-and-billing/startup-program
@@ -98,18 +101,10 @@ sections:
       title: 'Spec: Semantic Events'
     - path: /connections/spec/b2b-saas
       title: 'Spec: B2B SaaS'
-    - path: /connections/spec/ab-testing
-      title: 'Spec: A/B Testing Events'
     - path: /connections/spec/ecommerce
-      title: 'Spec: V1 Ecommerce Events'
-    - path: /connections/spec/email
-      title: 'Spec: Email Events'
-    - path: /connections/spec/live-chat
-      title: 'Spec: Live Chat Events'
+      title: 'Spec: Ecommerce Events'
     - path: /connections/spec/video
       title: Video Spec
-    - path: /connections/spec/migration-guide
-      title: Migration Guide
   - section_title: Sources
     slug: connections/sources
     section:
@@ -120,8 +115,6 @@ sections:
       menu_icon: read-more
     - path: /connections/sources/cloud-source-data
       title: What can you do with cloud source data?
-    - path: /connections/sources/cross-domain
-      title: Cross-Domain Analytics
     - path: /connections/sources/custom-domains
       title: Set up a custom domain proxy in Segment
     - path: /connections/sources/custom-sources
@@ -167,7 +160,7 @@ sections:
   - path: /connections/destination-data-control
     title: How do I use Schema Controls?
   - path: /connections/event-delivery
-    title: How do I check if data is successfully being delivered to my destination?
+    title: How do I check if data is reaching a destination?
   - path: /connections/find-writekey
     title: How do I find my write key?
   - path: /connections/integration_error_codes
