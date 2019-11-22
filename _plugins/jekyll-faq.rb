@@ -22,7 +22,9 @@ module Jekyll
       <div class="accordion__body" data-ref="accordion[body]">
         <%= value %>
 
-        <a class="accordion__link" href="<%= key.split("|")[1] %>">Read more</a>
+        <% if key.split("|")[1] %>
+          <a class="accordion__link" href="<%= key.split("|")[1] %>">Read more</a>
+        <% end %>
       </div>
     </div>
   <% end %>
