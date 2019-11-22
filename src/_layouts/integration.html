@@ -53,12 +53,12 @@ layout: default
 
           <div class="integration__body page__body">
             <div class="markdown">
+              {{ content }}
+
               {% if integration_type == destination %}
               {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
                 {{ integration-foot | markdownify }}
               {% endif %}
-
-              {{ content }}
             </div>
 
             {% if page.contributors %}
