@@ -17,7 +17,7 @@ Librato supports our `track` method for both client-side and server-side.
 
 ## Track
 
-When you call [`track`](/docs/spec/track/), we add a gauge measurement to Librato. The gauge is named after your event.
+When you call [`track`](/docs/connections/spec/track/), we add a gauge measurement to Librato. The gauge is named after your event.
 
 Here's an example using Node.js
 

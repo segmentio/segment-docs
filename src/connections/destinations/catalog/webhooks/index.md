@@ -14,13 +14,13 @@ This document was last updated on January 28, 2018. If you notice any gaps, out-
 2. Search for "Webhooks" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Specify up to five different Webhook URLs, you would like to forward data to.
 4. Add in any header values you would like to add to the HTTP requests
-5. If you require authentication, add in a [shared secret](https://segment.com/docs/destinations/webhooks/#authentication).
+5. If you require authentication, add in a [shared secret](https://segment.com/docs/connections/destinations/catalog/webhooks/#authentication).
 6. Toggle on Webhooks and we will start sending all the requests received by Segment's API.
 
-**Note:** We'll send you HTTP(s) POST requests that look like the below for each type. Note with each call, you'll also receive a [`context`](/docs/spec/common/#context) object that provides information about the user's device, IP address, etc. As you start experimenting, we recommend trying the Webhooks destination with [RequestBin.com](https://requestbin.com/) and [ultrahook](http://www.ultrahook.com) to immediately start seeing requests coming through.
+**Note:** We'll send you HTTP(s) POST requests that look like the below for each type. Note with each call, you'll also receive a [`context`](/docs/connections/spec/common/#context) object that provides information about the user's device, IP address, etc. As you start experimenting, we recommend trying the Webhooks destination with [RequestBin.com](https://requestbin.com/) and [ultrahook](http://www.ultrahook.com) to immediately start seeing requests coming through.
 
 ## Page
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```
 POST https://your-webhook-url.com/x
 ```
@@ -44,7 +44,7 @@ Content-Type: application/json
 ```
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/screen/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 ```
 POST https://your-webhook-url.com/x
 ```
@@ -78,7 +78,7 @@ Content-Type: application/json
 ```
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 ```
 POST https://your-webhook-url.com/x
 ```
@@ -102,7 +102,7 @@ Content-Type: application/json
 ```
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 ```
 POST https://your-webhook-url.com/x
 ```
@@ -125,7 +125,7 @@ Content-Type: application/json
 ```
 ## Alias
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/spec/alias/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
 ```
 POST https://your-webhook-url.com/x
 ```
@@ -144,7 +144,7 @@ Content-Type: application/json
 ```
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```
 POST https://your-webhook-url.com/x
@@ -218,7 +218,7 @@ If your server is using HTTPS, please note that our webhooks destination does no
 
 Under 'Connection Settings', you can provide up to 5 webhooks.
 
-**Note:** If sending a message to any of the webhooks succeed, we consider the message to be successfully processed and won't retry the request to the other webhooks. If your webhooks aren't robust, you should consider using our [Iron.io](/docs/destinations/iron.io/) destination.
+**Note:** If sending a message to any of the webhooks succeed, we consider the message to be successfully processed and won't retry the request to the other webhooks. If your webhooks aren't robust, you should consider using our [Iron.io](/docs/connections/destinations/catalog/iron.io/) destination.
 
 ### Retries
 

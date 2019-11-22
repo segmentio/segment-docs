@@ -13,7 +13,7 @@ The Sailthru server-side destination will allow you to add users, send custom ev
 **Important**: In order for this destination to work, you must have a few prerequisite configurations.
 
 - You must have `extid` lookup enabled in Sailthru.
-- Use the [ecommerce v2](/docs/spec/ecommerce/v2/) events to track `Order Completed`, `Product Added`, and `Product Removed`.
+- Use the [ecommerce v2](/docs/connections/spec/ecommerce/v2/) events to track `Order Completed`, `Product Added`, and `Product Removed`.
   -  For `Product Added` and `Product Removed` events, whether there is an `email` or not, we need to make a request to grab the items in the user's cart. We rely on the `userId` value for this request. It is essential that you have a `userId` on these calls, otherwise they will not make it to Sailthru.
   - To trigger abandoned cart campaigns, you must pass in a `reminder_time` and `reminder_template` on the `Product Added`and `Product Removed` events.
   - The template passed through as `reminder_template` must match the public name configured in Sailthru's UI.
@@ -40,7 +40,7 @@ analytics.page('Page Name', {
 })
 ```
 
-Please see our [documentation](https://segment.com/docs/spec/page/#properties) for more info on the `keywords` property.
+Please see our [documentation](https://segment.com/docs/connections/spec/page/#properties) for more info on the `keywords` property.
 
 - - -
 
@@ -108,7 +108,7 @@ For instance, in the above example notice that the `Registered` event will add t
 
 ### Purchases
 
-When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/spec/ecommerce/v2/#order-completed), we will send the products you've listed to Sailthru's purchase log:
+When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/#order-completed), we will send the products you've listed to Sailthru's purchase log:
 
 ![](images/1488752018885.png)
 
@@ -123,7 +123,7 @@ Sailthru does not allow the `extid` to be the main lookup identifier for their P
 
 If the user and their email does not exist in Sailthru, the event will throw an error. If the user exists, the purchase will be added to their profile. Be sure to call `identify` with an `email` passed in the `traits` object prior to the `Order Completed` event. If you are sending events using one of Segment's server-side libraries and want to be sure, you can also send the email value in your `track` calls under `context.traits.email`.
 
-Once `Order Completed` is triggered, Segment will pass in `incomplete: 0` to signify that the order is now complete. Segment will map the following Sailthru [required fields](https://getstarted.sailthru.com/new-for-developers-overview/advanced-features/purchase/#Parameters_forPOST) from the [v2 Order Completed Spec](/docs/spec/ecommerce/v2/#order-completed):
+Once `Order Completed` is triggered, Segment will pass in `incomplete: 0` to signify that the order is now complete. Segment will map the following Sailthru [required fields](https://getstarted.sailthru.com/new-for-developers-overview/advanced-features/purchase/#Parameters_forPOST) from the [v2 Order Completed Spec](/docs/connections/spec/ecommerce/v2/#order-completed):
 
 | Sailthru Spec | Segment Spec |
 | --- | --- |

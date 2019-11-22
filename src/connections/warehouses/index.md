@@ -613,7 +613,7 @@ All four timestamps are passed through to your Warehouse for every ETL'd event. 
 
 However, `received_at` does not ensure chronology of events.  For queries based on event chronology, `timestamp` should be used.
 
-[Here's additional documentation](/docs/spec/common/#timestamps) on timestamps in the context of our spec.
+[Here's additional documentation](/docs/connections/spec/common/#timestamps) on timestamps in the context of our spec.
 
 ### id
 

@@ -41,7 +41,7 @@ You only need to call `init` once when your php file is requested. All of your f
 
 Of course, you'll want to replace `YOUR_WRITE_KEY` with your actual **Write Key** which you can find in Segment under your source settings.
 
-The default PHP consumer is the [libcurl consumer](/sources/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you may want to try one of our other consumers like the [fork-curl consumer](/docs/sources/server/php/#fork-curl-consumer).
+The default PHP consumer is the [libcurl consumer](/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you may want to try one of our other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
 
 ## Identify
 
@@ -85,11 +85,11 @@ The `identify` call has the following fields:
   </tr>
   <tr>
     <td>`context` _Array, optional_</td>
-    <td>An object containing any number of options or context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/spec/common/#context)</td>
+    <td>An object containing any number of options or context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)</td>
   </tr>
 </table>
 
-Find details on the **identify method payload** in our [Spec](/docs/spec/identify/).
+Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
 
 ## Track
 
@@ -151,15 +151,15 @@ The `track` call has the following fields:
   </tr>
   <tr>
     <td>`context` _Array, optional_</td>
-    <td>An object containing any number of options or context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/spec/common/#context)</td>
+    <td>An object containing any number of options or context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)</td>
   </tr>
 </table>
 
-Find details on **best practices in event naming as well as the `track` method payload** in our [Spec](/docs/spec/track/).
+Find details on **best practices in event naming as well as the `track` method payload** in our [Spec](/docs/connections/spec/track/).
 
 ## Page
 
-The [`page`](/docs/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
+The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
 If you're using our client-side setup in combination with the PHP library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
@@ -200,17 +200,17 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`context` _Array, optional_</td>
-    <td>An object containing any number of options or context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/spec/common/#context)</td>
+    <td>An object containing any number of options or context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)</td>
   </tr>
 </table>
 
-Find details on the **`page` payload** in our [Spec](/docs/spec/page/).
+Find details on the **`page` payload** in our [Spec](/docs/connections/spec/page/).
 
 ## Group
 
-`group` lets you associate an [identified user](/docs/sources/server/php/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
+`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/php/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
 Example `group` call:
 
@@ -245,17 +245,17 @@ The `group` call has the following fields:
   </tr>
   <tr>
     <td>`context` _Array, optional_</td>
-    <td>An object containing any number of options or context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/spec/common/#context)</td>
+    <td>An object containing any number of options or context about the request. To see the full reference of supported keys, check them out in the [context reference](/docs/connections/spec/common/#context)</td>
   </tr>
 </table>
 
-Find more details about `group` including the **`group` payload** in our [Spec](/docs/spec/group/).
+Find more details about `group` including the **`group` payload** in our [Spec](/docs/connections/spec/group/).
 
 ## Alias
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/destinations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/destinations/kissmetrics/#alias) and [Trak.io](/docs/destinations/trak.io/#alias) if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Trak.io](/docs/connections/destinations/catalog/trak.io/#alias) if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -278,7 +278,7 @@ The `alias` call has the following fields:
   </tr>
 </table>
 
-Here's a full example of how we might use the [`alias`](/docs/spec/alias/) call:
+Here's a full example of how we might use the [`alias`](/docs/connections/spec/alias/) call:
 
 ```php
 # the anonymous user does actions ...
@@ -308,7 +308,7 @@ Segment::track(array(
 ));
 ```
 
-For more details about `alias` including the **`alias` call payload**, check out our [Spec](/docs/spec/alias/).
+For more details about `alias` including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
 
 ## Historical Import
 

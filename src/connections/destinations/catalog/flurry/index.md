@@ -24,7 +24,7 @@ _Note: Flurry does not always display data in real time. We've seen that it can 
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/screen/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does.
 
 An example iOS call would look like:
 
@@ -42,7 +42,7 @@ _Note: When you toggle the Screen Tracks As Events option on in your Flurry Segm
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
 
 An example iOS call would look like:
 
@@ -59,12 +59,12 @@ An example Android call would look like:
 Analytics.with(context).identify("f4ca124298", new Traits().putAge("23").putGender("Male"));
 ```
 
-When you call [`identify`](/docs/spec/identify/), we'll set the user ID in Flurry, and set any special Flurry `traits` you provide, such as `gender`, or `age`.
+When you call [`identify`](/docs/connections/spec/identify/), we'll set the user ID in Flurry, and set any special Flurry `traits` you provide, such as `gender`, or `age`.
 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 An example iOS call would look like:
 

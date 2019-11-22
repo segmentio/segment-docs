@@ -36,7 +36,7 @@ Segment `identify` trait on the left to the Eloqua field on the right:
 | title | Title |
 
 Please adhere to our spec to ensure proper mapping of these fields from Segment
-`identify` traits: https://segment.com/docs/spec/identify/#traits.
+`identify` traits: https://segment.com/docs/connections/spec/identify/#traits.
 
 In addition, Segment supports mapping custom `identify` traits to Eloqua custom
 object fields. To do so, you can set up mappings in the settings for your
@@ -69,7 +69,7 @@ you set up a custom Account field called Company in Eloqua, Segment will
 automatically map the name of the Account to that field.
 
 Please adhere to our spec to ensure proper mapping of these fields from Segment
-`group` traits: https://segment.com/docs/spec/group/#traits.
+`group` traits: https://segment.com/docs/connections/spec/group/#traits.
 
 In addition, Segment supports mapping custom `group` traits to Eloqua custom
 object fields. To do so, you can set up mappings in the settings for your

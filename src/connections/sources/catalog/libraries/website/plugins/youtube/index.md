@@ -35,10 +35,10 @@ function onYouTubeIframeAPIReady() {
 }
 </pre>
 
-That's it! The plugin listens to the Youtube player for events, and fires the corresponding [Segment Video Spec](https://segment.com/docs/spec/video/) events on analytics.js.
+That's it! The plugin listens to the Youtube player for events, and fires the corresponding [Segment Video Spec](https://segment.com/docs/connections/spec/video/) events on analytics.js.
 
 ## Supported Events
-The following [Segment Video Spec](https://segment.com/docs/spec/video/) events are tracked by this plugin:
+The following [Segment Video Spec](https://segment.com/docs/connections/spec/video/) events are tracked by this plugin:
 - Video Playback Started
     - If playing a single video, this fires when the video starts
     - If playing a playlist, this fires when the first video in the playlist starts
@@ -52,7 +52,7 @@ The following [Segment Video Spec](https://segment.com/docs/spec/video/) events 
     - For playlists, these events get fired for each individual video
 
 ## Supported Properties
-The following [Segment Video Spec](https://segment.com/docs/spec/video/) properties are automatically attached to the above events:
+The following [Segment Video Spec](https://segment.com/docs/connections/spec/video/) properties are automatically attached to the above events:
 
 **'Playback' Events**
 - Total Length

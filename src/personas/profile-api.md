@@ -433,11 +433,11 @@ Get a single profile's events within a collection using an `external_id`.
                 "version": "3.2.5"
             },
             "page": {
-                "path": "/docs/spec/ecommerce/v2/",
+                "path": "/docs/connections/spec/ecommerce/v2/",
                 "referrer": "https://www.google.com/",
                 "search": "",
                 "title": "Spec: V2 Ecommerce Events Documentation - Segment",
-                "url": "https://segment.com/docs/spec/ecommerce/v2/"
+                "url": "https://segment.com/docs/connections/spec/ecommerce/v2/"
             },
             "traits": {
                 "crossDomainId": "1d1cd931-bc7d-4e39-a1a7-61563296fb15"
@@ -451,13 +451,13 @@ Get a single profile's events within a collection using an `external_id`.
           "properties": {
             "name": "Docs",
             "page_name": "Docs",
-            "path": "/docs/spec/ecommerce/v2/",
+            "path": "/docs/connections/spec/ecommerce/v2/",
             "referrer": "https://www.google.com/",
             "search": "",
             "section": "Spec",
             "title": "Spec: V2 Ecommerce Events Documentation - Segment",
             "topic": "Spec: V2 Ecommerce Events",
-            "url": "https://segment.com/docs/spec/ecommerce/v2/"
+            "url": "https://segment.com/docs/connections/spec/ecommerce/v2/"
           },
           "event": "Page Viewed",
           "related": {

@@ -18,6 +18,6 @@ Chartbeat is only supported on the client-side.
 
 ## Page
 
-The [`page`](/docs/spec/page/) method in Analytics.js will call Chartbeat's `virtualPage` function with either the Url you provide or the current window's pathname. Use the [`page`](/docs/spec/page/) method if you have a one-page app that doesn't reload the browser page between views.
+The [`page`](/docs/connections/spec/page/) method in Analytics.js will call Chartbeat's `virtualPage` function with either the Url you provide or the current window's pathname. Use the [`page`](/docs/connections/spec/page/) method if you have a one-page app that doesn't reload the browser page between views.
 
 You can also set a section and author for each page. For example, `analytics.page('putSectionHere', 'putNameOfPageHere', { author: 'putAuthorNameHere' }`.

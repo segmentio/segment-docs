@@ -3,7 +3,7 @@ rewrite: true
 title: Amazon Personalize Destination
 ---
 
-Segment makes it easy to send your data to Amazon Personalize (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to Amazon Personalize in the format they understand. [Learn more about how to use Amazon Personalize with Segment.](/docs/destinations/amazon-personalize)
+Segment makes it easy to send your data to Amazon Personalize (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to Amazon Personalize in the format they understand. [Learn more about how to use Amazon Personalize with Segment.](/docs/connections/destinations/catalog/amazon-personalize)
 
 [Amazon Personalize](https://aws.amazon.com/personalize/) is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications. AWS Personalize enables…
 
@@ -24,7 +24,7 @@ There are a few pre-requisites:
 2. Ability to deploy Lambda functions in Amazon Web Services
 3. Access to AWS Personalize
 
-don't have an S3, Redshift warehouse, or Snowflake warehouse set up? You can read more about setting up S3 [here](https://segment.com/docs/destinations/amazon-s3/), Redshift [here](https://segment.com/docs/destinations/redshift/), and Snowflake [here](https://segment.com/docs/destinations/snowflake/).
+don't have an S3, Redshift warehouse, or Snowflake warehouse set up? You can read more about setting up S3 [here](https://segment.com/docs/connections/warehouses/catalog/amazon-s3/), Redshift [here](https://segment.com/docs/connections/warehouses/catalog/redshift/), and Snowflake [here](https://segment.com/docs/connections/warehouses/catalog/snowflake/).
 
 ***If you're a Segment business tier customer, reach out to your Success contact to initiate a replay to S3 or your Warehouse.***
 
@@ -197,7 +197,7 @@ Segment's S3 destination will contain a copy of all of the source data you have 
 
 Note that this step is not required unless you plan to do batch data extraction from S3.
 
-Your Glue ETL job will need to crawl each source folder to extract the backup data that will form your training set.  Analysis of this data set is beyond the scope of this document.  It is strongly recommended you familiarize yourself with the types of events that can be sent through Segment.  Our event structure is described in detail here:  https://segment.com/docs/sources/server/http/.
+Your Glue ETL job will need to crawl each source folder to extract the backup data that will form your training set.  Analysis of this data set is beyond the scope of this document.  It is strongly recommended you familiarize yourself with the types of events that can be sent through Segment.  Our event structure is described in detail here:  https://segment.com/docs/connections/sources/catalog/libraries/server/http/.
 
 The following examples show how to configure an AWS Glue job to convert Segment historical data into the Apache Avro format that Personalize wants to consume for training data sets.
 

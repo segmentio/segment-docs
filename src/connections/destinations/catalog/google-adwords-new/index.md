@@ -6,7 +6,7 @@ title: Google Ads (Gtag) Destination
 
 If you're using the [new Google Ads (Gtag) experience](https://support.google.com/adwords/answer/6095821?hl=en&ref_topic=3165803), you can enable the **Google Ads (Gtag)** Destination (previously called "Google Adwords New") in the Segment catalog. The new Google Ads uses a Global Site Tag (Gtag) and event snippets.
 
-**IMPORTANT**: Only use this destination if your Google Ads account is using the _New_ (Gtag) Experience. If you are using Google Tag Manager (a separate product) as well, do not add the global site tag again in your GTM containers. You should also disable any [Google Ads (Classic)](https://segment.com/docs/destinations/adwords/) destinations within the same source, since **Google Ads (Classic)** cannot load at the same times as **Google Ads (Gtag)**.
+**IMPORTANT**: Only use this destination if your Google Ads account is using the _New_ (Gtag) Experience. If you are using Google Tag Manager (a separate product) as well, do not add the global site tag again in your GTM containers. You should also disable any [Google Ads (Classic)](https://segment.com/docs/connections/destinations/catalog/adwords/) destinations within the same source, since **Google Ads (Classic)** cannot load at the same times as **Google Ads (Gtag)**.
 
 How do I know which experience I'm using? [Check this Google support KB article](https://support.google.com/google-ads/answer/6398605?hl=en) is how to find out.
 
@@ -36,7 +36,7 @@ analytics.page({}, {
 });
 ```
 
-**NOTE**: The `'Google Ads (Gtag)'` is case sensitive. We ask for `order_id` rather than  `transaction_id` to stay more consistent with our own [ecommerce spec](https://segment.com/docs/spec/ecommerce/v2). However, we will send it as `transaction_id` in the request itself to satisfy Google's specifications.
+**NOTE**: The `'Google Ads (Gtag)'` is case sensitive. We ask for `order_id` rather than  `transaction_id` to stay more consistent with our own [ecommerce spec](https://segment.com/docs/connections/spec/ecommerce/v2). However, we will send it as `transaction_id` in the request itself to satisfy Google's specifications.
 
 ## Track
 

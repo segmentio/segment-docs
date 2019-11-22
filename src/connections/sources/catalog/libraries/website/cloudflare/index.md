@@ -29,18 +29,18 @@ That's it! As visitors come on to your site, events will now be sent to your des
 
 ## What Data Gets Sent
 
-If you turned on the `Automatically Track Page Views` option in your Cloudflare app, then [`page`](/docs/spec/page/) events should already be flowing into your Segment source. That data is being sent via [`analytics.js`](/docs/sources/website/analytics.js) which has been loaded onto your site; you can now use it to send custom data to Segment and downstream to other tools.
+If you turned on the `Automatically Track Page Views` option in your Cloudflare app, then [`page`](/docs/connections/spec/page/) events should already be flowing into your Segment source. That data is being sent via [`analytics.js`](/docs/connections/sources/catalog/libraries/website/analytics.js) which has been loaded onto your site; you can now use it to send custom data to Segment and downstream to other tools.
 
-Read more about [`page` calls here](/docs/spec/page/).
+Read more about [`page` calls here](/docs/connections/spec/page/).
 
 ## Custom Events and Properties
 
-In order to track information other than pageviews, you can use [`analytics.js`](/docs/sources/website/analytics.js) which is now loaded on your website. *Note: This will require editing code on your website.*
+In order to track information other than pageviews, you can use [`analytics.js`](/docs/connections/sources/catalog/libraries/website/analytics.js) which is now loaded on your website. *Note: This will require editing code on your website.*
 
-The two most common types of events are [`track`](/docs/sources/website/analytics.js/#track) and [`identify`](/docs/sources/website/analytics.js/#identify).
+The two most common types of events are [`track`](/docs/connections/sources/catalog/libraries/website/analytics.js/#track) and [`identify`](/docs/connections/sources/catalog/libraries/website/analytics.js/#identify).
 
 The `track` API call is how you record any actions your users perform, along with any properties that describe the action. Each action is known as an event. Each event has a name, like **Form Submitted**, and properties, for example a **Form Submitted** event might have properties like `plan` or `accountType`. Calling `track` in one of our sources is one of the first steps to getting started with Segment.
 
 The `identify` API call lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them like their email, name, etc...
 
-Learn more about how to use [`analytics.js` here](/docs/sources/website/analytics.js/).
+Learn more about how to use [`analytics.js` here](/docs/connections/sources/catalog/libraries/website/analytics.js/).

@@ -14,13 +14,13 @@ Segment's **Optimizely Full Stack (previously Optimizely X)** destination suppor
 * [Optimizely Full Stack Android (Cloud-mode)](#android-cloud-mode-implementation)
 * [Optimizely Full Stack iOS (Cloud-mode)](#ios-cloud-mode-implementation)
 
-If you're interested in implementing Optimizely Classic, Optimizely X Web, or Optimizely Full Stack (JavaScript), please see Segment's [**Optimizely Web** destination](https://segment.com/docs/destinations/optimizely-web/), which supports:
+If you're interested in implementing Optimizely Classic, Optimizely X Web, or Optimizely Full Stack (JavaScript), please see Segment's [**Optimizely Web** destination](https://segment.com/docs/connections/destinations/catalog/optimizely-web/), which supports:
 
-* [Optimizely Classic](https://segment.com/docs/destinations/optimizely/#optimizely-classic-web)
-* [Optimizely Classic Android 1.x](https://segment.com/docs/destinations/optimizely/#optimizely-classic-android) (NOTE: This has been deprecated by Optimizely as of September 30, 2018.)
-* [Optimizely Classic iOS 1.x](https://segment.com/docs/destinations/optimizely/#optimizely-classic-ios) (NOTE: This has been deprecated by Optimizely as of September 30, 2018.)
-* [Optimizely X Web](https://segment.com/docs/destinations/optimizely/#optimizely-x-web)
-* [Optimizely Full Stack (JavaScript)](https://segment.com/docs/destinations/optimizely/#optimizely-full-stack-javascript-)
+* [Optimizely Classic](https://segment.com/docs/connections/destinations/catalog/optimizely/#optimizely-classic-web)
+* [Optimizely Classic Android 1.x](https://segment.com/docs/connections/destinations/catalog/optimizely/#optimizely-classic-android) (NOTE: This has been deprecated by Optimizely as of September 30, 2018.)
+* [Optimizely Classic iOS 1.x](https://segment.com/docs/connections/destinations/catalog/optimizely/#optimizely-classic-ios) (NOTE: This has been deprecated by Optimizely as of September 30, 2018.)
+* [Optimizely X Web](https://segment.com/docs/connections/destinations/catalog/optimizely/#optimizely-x-web)
+* [Optimizely Full Stack (JavaScript)](https://segment.com/docs/connections/destinations/catalog/optimizely/#optimizely-full-stack-javascript-)
 
 ## Implementation Prerequisite
 

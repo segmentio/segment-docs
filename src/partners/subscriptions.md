@@ -4,7 +4,7 @@ title: Building a Subscription
 
 Subscriptions enable you to receive incoming data for our mutual customers to your service's HTTPS endpoint in realtime.
 
-A Subscription gives you complete control over how you want to store, transform and process the data. It means that our mutual customers can immediately start sending you data from any one of Segment's [sources](/docs/sources), including a web browser, mobile apps, or from our mutual customer's servers — with no added work. Segment Business Tier customers can also replay historical data, which means you can demonstrate the value of your tool rapidly.
+A Subscription gives you complete control over how you want to store, transform and process the data. It means that our mutual customers can immediately start sending you data from any one of Segment's [sources](/docs/connections/sources/), including a web browser, mobile apps, or from our mutual customer's servers — with no added work. Segment Business Tier customers can also replay historical data, which means you can demonstrate the value of your tool rapidly.
 
 ## Get Access to the Developer Center
 
@@ -64,13 +64,13 @@ Once you have submitted your Subscription for review, Segment will review it and
 
 ### How do customers collect data?
 
-A mutual customer will use `analytics.js` (our client-side javascript library), a server-side library, or one of our mobile SDK's to implement our [api methods](https://segment.com/docs/spec/). For more information on Segment libraries, you can refer to our [source documentation](https://segment.com/docs/sources/#website).
+A mutual customer will use `analytics.js` (our client-side javascript library), a server-side library, or one of our mobile SDK's to implement our [api methods](https://segment.com/docs/connections/spec/). For more information on Segment libraries, you can refer to our [source documentation](https://segment.com/docs/connections/sources/#website).
 
 ### Does Segment automatically collect any data?
 
 Only our `analytics.js` and mobile SDK's collect contextual information from the device. Our server-side libraries do not collect contextual information, and a user is responsible for sending additional context themselves.
 
-For more info on our automatically collected fields, please refer to [this document](https://segment.com/docs/spec/common/).
+For more info on our automatically collected fields, please refer to [this document](https://segment.com/docs/connections/spec/common/).
 
 ### How does Segment handle unique users?
 
@@ -86,7 +86,7 @@ Read more about our unique Id's [here](https://segment.com/blog/a-brief-history-
 
 Yes!
 
-To start, a Segment customer will track their user actions using our `track` method. Segment has [industry specs](https://segment.com/docs/spec/semantic/) to define semantic naming to follow, so when sending events in for a particular event flow, such as Ecommerce, Live Chat, Video and Email events, Segment can translate these semantic event names into other downstream tools.
+To start, a Segment customer will track their user actions using our `track` method. Segment has [industry specs](https://segment.com/docs/connections/spec/semantic/) to define semantic naming to follow, so when sending events in for a particular event flow, such as Ecommerce, Live Chat, Video and Email events, Segment can translate these semantic event names into other downstream tools.
 
 It is essential that the destination follows the relevant industry specs when translating a Segment event into how the destination tool understands the event. That way, customers can enable any new integration and specced events, such as "Order Completed", and it will automatically work with the new downstream destination.
 

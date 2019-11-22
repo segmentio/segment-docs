@@ -2,7 +2,7 @@
 title: 'Spec: Common Fields'
 ---
 
-In the Segment [Spec](/docs/spec/) all the [API calls](/docs/spec#api-calls) have a common structure, and a few common fields.
+In the Segment [Spec](/docs/connections/spec/) all the [API calls](/docs/connections/spec#api-calls) have a common structure, and a few common fields.
 
 However, not all destinations accept all fields included in the Spec. Not sure which fields an destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on Github](https://github.com/segment-integrations).
 
@@ -219,7 +219,7 @@ Context is a dictionary of extra information that provides useful context about 
     <td>`traits`</td>
     <td>Object</td>
     <td>Dictionary of `traits` of the current user
-      <p>This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call. You should fill this object the same way you would fill traits in an [identify call](/docs/spec/identify/#traits).</p></td>
+      <p>This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call. You should fill this object the same way you would fill traits in an [identify call](/docs/connections/spec/identify/#traits).</p></td>
   </tr>
   <tr>
     <td>`userAgent`</td>
@@ -277,7 +277,7 @@ Other libraries only collect `context.library`, any other context variables must
 | timezone                 |              |      √        |      √            |
 
 * IP Address is not collected by our libraries, but instead filled in by our servers when it receives a message for **client side events only**.
-* Our Android library collects `screen.density` with [this method](/docs/spec/common/#context-fields-automatically-collected).
+* Our Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 
 ## Integrations
 
@@ -292,7 +292,7 @@ Integrations defaults to the following:
 }
 ```
 
-This is because [Salesforce](/docs/destinations/salesforce/) has strict limits on API calls, and we don't want to run over your limits by accident.
+This is because [Salesforce](/docs/connections/destinations/catalog/salesforce/) has strict limits on API calls, and we don't want to run over your limits by accident.
 
 Sending data to the rest of our destinations is opt-out so if you don't specify the destination as false in this object, it will be sent to rest of the destinations that can accept it.
 

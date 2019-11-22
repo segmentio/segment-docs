@@ -69,7 +69,7 @@ If you are using version 4, the functionaly is the same as version 3 except you 
 
 #### FID or ID Properties
 
-If you are able to access either the **SalesforceFID** or **PardotID** for a given user, you can pass these properties to Segment as [integration specific options](https://segment.com/docs/sources/server/node/#selecting-integrations). The properties must be named either `id` to pass a PardotID, or `fid` to pass the Salesforce FID.
+If you are able to access either the **SalesforceFID** or **PardotID** for a given user, you can pass these properties to Segment as [integration specific options](https://segment.com/docs/connections/sources/catalog/libraries/server/node/#selecting-integrations). The properties must be named either `id` to pass a PardotID, or `fid` to pass the Salesforce FID.
 
 ```javascript
 analytics.identify({

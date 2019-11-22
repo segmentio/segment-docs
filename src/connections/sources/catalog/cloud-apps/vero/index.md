@@ -99,4 +99,4 @@ from activecampaign.email_delivered
 
 ## Send data to Vero
 
-The Vero Source works better when you also connect Vero as an destination. With the Vero **Destination**, you can use Segment to send Vero user and event data from which you trigger email campaigns. Want to start sending website or mobile data to Vero? Head on over to our [Vero destination docs](/docs/destinations/vero/).
+The Vero Source works better when you also connect Vero as an destination. With the Vero **Destination**, you can use Segment to send Vero user and event data from which you trigger email campaigns. Want to start sending website or mobile data to Vero? Head on over to our [Vero destination docs](/docs/connections/destinations/catalog/vero/).

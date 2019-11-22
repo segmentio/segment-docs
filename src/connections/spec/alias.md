@@ -7,11 +7,11 @@ The `alias` method is used to merge two user identities, effectively connecting 
 
 Since this is our most advanced method we have added sections to each docs page for destinations that use it:
 
-- [KISSmetrics](/docs/destinations/kissmetrics#alias)
-- [Mixpanel](/docs/destinations/mixpanel#alias)
-- [Vero](/docs/destinations/vero#alias)
+- [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics#alias)
+- [Mixpanel](/docs/connections/destinations/catalog/mixpanel#alias)
+- [Vero](/docs/connections/destinations/catalog/vero#alias)
 
-Here's the payload of a basic `alias` call that will associate this user's existing `id` (email address) with a new one (a database ID), with most [common fields](/docs/spec/common/) removed:
+Here's the payload of a basic `alias` call that will associate this user's existing `id` (email address) with a new one (a database ID), with most [common fields](/docs/connections/spec/common/) removed:
 
 ```js
 {
@@ -71,8 +71,8 @@ Here's a complete example of an `alias` call:
 
 ## Previous ID
 
-The `previousId` is the existing ID you've referred to the user by. It might be an Anonymous ID assigned to that user or a User ID you previously identified them with using our [`identify`](/docs/spec/identify/) call.
+The `previousId` is the existing ID you've referred to the user by. It might be an Anonymous ID assigned to that user or a User ID you previously identified them with using our [`identify`](/docs/connections/spec/identify/) call.
 
 ## User ID
 
-The `userId` is a string that will be the user's new identity, or an existing identity that you wish to merge with the `previousId`. See the [User ID docs](/docs/spec/identify#user-id) for more detail.
+The `userId` is a string that will be the user's new identity, or an existing identity that you wish to merge with the `previousId`. See the [User ID docs](/docs/connections/spec/identify#user-id) for more detail.

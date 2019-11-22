@@ -2,7 +2,7 @@
 title: "How do I use Schema Controls?"
 ---
 
-Once you have enabled Destinations for a given Source, all of the [data](https://segment.com/docs/spec/) you track will be routed to your connected tools and warehouses. If you no longer wish to send all data to a particular Destination, you can disable the Destination from the Source overview page. 
+Once you have enabled Destinations for a given Source, all of the [data](https://segment.com/docs/connections/spec/) you track will be routed to your connected tools and warehouses. If you no longer wish to send all data to a particular Destination, you can disable the Destination from the Source overview page. 
 
 But what happens when you want to send all of your data to a warehouse, and only two specific events to an analytics tool? And once you're satisfied with your spec, how do you make sure rogue events are blocked from all of your warehouses and end tools? Segment gives you the power to control exactly what data is allowed into your Destinations, so you can protect the integrity of your data, and the decisions you make with it.
 
@@ -84,7 +84,7 @@ No new identify traits will be allowed in Segment or sent to your Destinations.
 
 For example, if you set your Schema Defaults for New Events to "Block," and a new event, `Order Completed`, is tracked, Segment will automatically block the event and it will not be sent to your warehouse or downstream tools. The event will continue to be blocked until you actively choose to allow it.
 
-You will need to upgrade to the latest [iOS](https://segment.com/docs/sources/mobile/ios/#install-the-sdk) and/or [Android](https://segment.com/docs/sources/mobile/android/#step-1-install-the-library) SDKs for Schema Defaults to apply to events sent from mobile sources. 
+You will need to upgrade to the latest [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#install-the-sdk) and/or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#step-1-install-the-library) SDKs for Schema Defaults to apply to events sent from mobile sources. 
 
 ## **What is considered a "new" event?**
 

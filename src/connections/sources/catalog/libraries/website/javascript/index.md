@@ -8,11 +8,11 @@ Analytics.js makes it simple to send your data to any tool without having to lea
 
 ## Getting Started
 
-Head over to our [`analytics.js` QuickStart Guide](/docs/sources/website/analytics.js/quickstart/) which walks you through adding Analytics.js to your site in just a few minutes. Once you've installed the library, read on for the detailed API reference!
+Head over to our [`analytics.js` QuickStart Guide](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/) which walks you through adding Analytics.js to your site in just a few minutes. Once you've installed the library, read on for the detailed API reference!
 
 ## Identify
 
-The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the guide](/docs/tutorials/quickstart-analytics.js#step-2-identify-users) or [find details on the identify method payload](/docs/spec/identify/).
+The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the guide](/docs/tutorials/quickstart-analytics.js#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
 **Note:** We recommend against using `identify` for anonymous visitors to your site. `analytics.js` automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors. It is attached to all `page` and `track` events both before and after an `identify`.
 
@@ -29,13 +29,13 @@ The `identify` call has the following fields:
     <td>`userId`</td>
     <td>optional</td>
     <td>String</td>
-    <td>The database ID for the user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more about identities in the [identify reference](/docs/spec/identify).</td>
+    <td>The database ID for the user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more about identities in the [identify reference](/docs/connections/spec/identify).</td>
   </tr>
   <tr>
     <td>`traits`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [identify reference](/docs/spec/identify).</td>
+    <td>A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify).</td>
   </tr>
   <tr>
     <td>`options`</td>
@@ -85,7 +85,7 @@ analytics.identify('12091906-01011992', function(){
 
 ## Track
 
-The `track` method lets you record any actions your users perform. You can [see a track example in the guide](/docs/tutorials/quickstart-analytics.js#step-3-track-actions) or find details on [the track method payload](/docs/spec/track).
+The `track` method lets you record any actions your users perform. You can [see a track example in the guide](/docs/tutorials/quickstart-analytics.js#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track).
 
 `track` method definition:
 
@@ -100,13 +100,13 @@ The `track` call has the following fields:
     <td>`event`</td>
     <td></td>
     <td>String</td>
-    <td>The name of the event you're tracking. You can read more about the [track method](/docs/spec/track) and what event names we recommend.</td>
+    <td>The name of the event you're tracking. You can read more about the [track method](/docs/connections/spec/track) and what event names we recommend.</td>
   </tr>
   <tr>
     <td>`properties`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of [properties](/docs/spec/track#properties) for the event. If the event was `'Added to Cart'`, it might have properties like `price` and `productType`.</td>
+    <td>A dictionary of [properties](/docs/connections/spec/track#properties) for the event. If the event was `'Added to Cart'`, it might have properties like `price` and `productType`.</td>
   </tr>
   <tr>
     <td>`options`</td>
@@ -122,7 +122,7 @@ The `track` call has the following fields:
   </tr>
 </table>
 
-The only required argument to track in `analytics.js` is an event name string. You can read more about [how we recommend naming your events](/docs/spec/track#event).
+The only required argument to track in `analytics.js` is an event name string. You can read more about [how we recommend naming your events](/docs/connections/spec/track#event).
 
 Example `track` call:
 
@@ -135,16 +135,16 @@ analytics.track('Article Completed', {
 
 For more information about choosing which events to track, event naming and more, check out [Analytics Academy](https://segment.com/academy/)
 
-The only required argument to `track` in `analytics.js` is an `event` name string. Read more about how we recommend [naming your events](/docs/spec/track#event).
+The only required argument to `track` in `analytics.js` is an `event` name string. Read more about how we recommend [naming your events](/docs/connections/spec/track#event).
 
 
 ## Page
 
-The [`page`](/docs/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
+The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
 Because some destinations require a `page` call to instantiate their libraries, **you must call `page`** at least once per page load!  You may call it more than once if needed, (eg, on virtual page changes in a single page app).
 
-A `page` call is included by default as the final line in the `analytics.js` [snippet](/docs/sources/website/analytics.js/quickstart/#step-1-copy-the-snippet). You may modify this `page` call within the guidelines below.
+A `page` call is included by default as the final line in the `analytics.js` [snippet](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet). You may modify this `page` call within the guidelines below.
 
 `page` method definition:
 
@@ -228,9 +228,9 @@ analytics.page('Pricing', {
 
 ## Group
 
-The `group` method associates an [identified user](/docs/sources/website/analytics.js/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
+The `group` method associates an [identified user](/docs/connections/sources/catalog/libraries/website/analytics.js/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
 
-This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
 
 `group` method definition:
@@ -251,7 +251,7 @@ The `group` call has the following fields:
     <td>`traits`</td>
     <td>optional</td>
     <td> Object</td>
-    <td>A dictionary of [traits](/docs/spec/group#traits) for the group. Example traits for a group include `address`, `website` and `employees`.</td>
+    <td>A dictionary of [traits](/docs/connections/spec/group#traits) for the group. Example traits for a group include `address`, `website` and `employees`.</td>
   </tr>
   <tr>
     <td>`options`</td>
@@ -281,13 +281,13 @@ analytics.group('UNIVAC Working Group', {
 
 By default, group `traits` are cached in the browser's local storage and attached to each subsequent `group` call, similar to `identify` method behavior.
 
-Find more details about `group` including the **`group` payload** in our [Spec](/docs/spec/group/).
+Find more details about `group` including the **`group` payload** in our [Spec](/docs/connections/spec/group/).
 
 ## Alias
 
 The `alias` method combines two previously unassociated user identities. Aliasing is generally handled automatically when you `identify` a user. However, some tools require an explicit `alias` call.
 
-This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations. Most notably, alias is necessary for properly implementing [KISSmetrics](/docs/destinations/kissmetrics/#alias) and [Mixpanel](/docs/destinations/mixpanel/#alias).
+This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations. Most notably, alias is necessary for properly implementing [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias).
 
 `alias` method definition:
 
@@ -323,7 +323,7 @@ The `alias` call has the following fields:
   </tr>
 </table>
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/spec/alias/).
+For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
 
 ## Ready
 
@@ -429,7 +429,7 @@ analytics.identify('025pikachu025', {
 
 It is not necessary to include `'All': true` in this call, as that is the default behavior. Instead, only specify which destinations should be excluded with a `false` flag for each.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/destinations) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **NOTE:** Available at the business plan level, filtering `track` calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
@@ -437,7 +437,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 The `.load` method in analytics.js (the second line of the snippet) can also be modified to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations)), then we only load the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
-**IMPORTANT:** In order to leverage this feature, please ensure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/sources/website/analytics.js/quickstart/#step-1-copy-the-snippet)
+**IMPORTANT:** In order to leverage this feature, please ensure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet)
 
 An example:
 
@@ -536,7 +536,7 @@ Override the assigned `anonymousId` for the current user:
 analytics.user().anonymousId('ABC-123-XYZ');
 ```
 
-Or in the `options` object of [`identify`](/docs/spec/identify), [`page`](/docs/spec/page), or [`track`](/docs/spec/track) calls, like this:
+Or in the `options` object of [`identify`](/docs/connections/spec/identify), [`page`](/docs/connections/spec/page), or [`track`](/docs/connections/spec/track) calls, like this:
 
 ```js
 analytics.identify('025pikachu025', {
@@ -564,7 +564,7 @@ Keep in mind that setting the `anonymousId` in `analytics.js` does not overwrite
 A user's `anonymousId` refreshes on any of the following conditions:
 
 * A user clears their cache or cookies
-* [`analytics.reset()`](/docs/sources/website/analytics.js//#reset-logout) is called during in the user's browser session
+* [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/analytics.js//#reset-logout) is called during in the user's browser session
 * `analytics.identify()` is called with a userId that differs from the current userId
 
 
@@ -724,12 +724,12 @@ When enabled, analytics.js automatically retries network and server errors. With
 * Support offline tracking. analytics.js queues your events and delivers them when the user comes back online.
 * Better handle network issues. If there happens to be a time where your application can't connect to Segment's API, we'll continue to store the events on the browser to ensure you don't lose any data.
 
-Analytics.js stores events in localStorage (falling back to in-memory storage when localStorage is unavailable), and retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. You can see more details about the retry logic [here](/docs/destinations/#retries).
+Analytics.js stores events in localStorage (falling back to in-memory storage when localStorage is unavailable), and retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. You can see more details about the retry logic [here](/docs/connections/destinations/catalog/#retries).
 
 
 ## Cross-Domain Analytics
 
-[Cross-Domain Analytics](/docs/sources/website/cross-domain) allows businesses to measure customer activity across their digital properties, without exposing user data to third parties. For example, if you have multiple brands, content properties, or marketing mini-sites, you likely want to learn how cross-domain browsing impacts your revenue.
+[Cross-Domain Analytics](/docs/connections/sources/catalog/libraries/website/cross-domain) allows businesses to measure customer activity across their digital properties, without exposing user data to third parties. For example, if you have multiple brands, content properties, or marketing mini-sites, you likely want to learn how cross-domain browsing impacts your revenue.
 
 
 ## Cross-Subdomain Analytics
@@ -756,12 +756,12 @@ To use a proxy server with analytics.js, you'll first want to update the address
 
 Segment offers 'plugins' across multiple video players that can quickly get you started collecting video events via analytics.js. Check out the specific links below for more information:
 
-- [Youtube](/docs/sources/website/plugins/youtube)
-- [Vimeo](/docs/sources/website/plugins/vimeo)
+- [Youtube](/docs/connections/sources/catalog/libraries/website/plugins/youtube)
+- [Vimeo](/docs/connections/sources/catalog/libraries/website/plugins/vimeo)
 
 ## Context & Traits
 
-Within the `options` dictionary, a sub-dictionary, `context`, exists. The context dictionary captures various data automatically depending on the event type and what your source type is. You can read more about the context dictionary [here](https://segment.com/docs/spec/common/#context). Within context is an optional `traits` dictionary that contains traits about the current user. This is useful for associating information about a user from previous identify calls to a track or page event.
+Within the `options` dictionary, a sub-dictionary, `context`, exists. The context dictionary captures various data automatically depending on the event type and what your source type is. You can read more about the context dictionary [here](https://segment.com/docs/connections/spec/common/#context). Within context is an optional `traits` dictionary that contains traits about the current user. This is useful for associating information about a user from previous identify calls to a track or page event.
 
 Consider this identify event:
 
@@ -827,7 +827,7 @@ ENV === 'production' ? writeKey = 'A' : writeKey = 'B';
 
 ### Do you see events appear in your debugger?
 
-When you reload the page, does your debugger show a new [`page`](/docs/spec/page) and an [`identify`](/docs/spec/identify) call? You can also check the Javascript console in the browser and manually fire an `identify` call as such, which would show up in the debugger.
+When you reload the page, does your debugger show a new [`page`](/docs/connections/spec/page) and an [`identify`](/docs/connections/spec/identify) call? You can also check the Javascript console in the browser and manually fire an `identify` call as such, which would show up in the debugger.
 
 ![Making an identify call](images/7Ymnh2S.gif)
 
@@ -835,7 +835,7 @@ If the call doesn't appear in the debugger, open up the Javascript console and c
 
 ![Checking for calls in the network tab](images/d8CmIY2.png)
 
-In the above, the `p` is a [`page`](/docs/spec/page) call and the `i` is an [`identify`](/docs/spec/identify) call. If you don't at least see the `p`, then check if you are loading `analytics.js` correctly.
+In the above, the `p` is a [`page`](/docs/connections/spec/page) call and the `i` is an [`identify`](/docs/connections/spec/identify) call. If you don't at least see the `p`, then check if you are loading `analytics.js` correctly.
 
 
 ### Is data being transmitted to your third-party destinations?

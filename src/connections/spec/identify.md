@@ -22,7 +22,7 @@ I log into your app. Identify is called. For whatever reason, I close the browse
 
 Calling `identify` in one of our [libraries](docs/connections/sources/) is one of the first steps to getting started with Segment. Please refer to library-specific documentation for more details.
 
-Here's the payload of a typical `identify` call with most [common fields](/docs/spec/common/) removed:
+Here's the payload of a typical `identify` call with most [common fields](/docs/connections/spec/common/) removed:
 
 ```json
 {
@@ -103,7 +103,7 @@ Here's a complete example of an `identify` call:
 
 ## Identities
 
-The `identify` call specifies a customer identity that you can reference across the customer's whole lifetime. **Every `identify` call must have a [User ID](/docs/spec/identify#user-id) or an [Anonymous ID](/docs/spec/identify#anonymous-id)**, depending on how much you know about the user in question.
+The `identify` call specifies a customer identity that you can reference across the customer's whole lifetime. **Every `identify` call must have a [User ID](/docs/connections/spec/identify#user-id) or an [Anonymous ID](/docs/connections/spec/identify#anonymous-id)**, depending on how much you know about the user in question.
 
 ### Anonymous ID
 
@@ -131,7 +131,7 @@ A User ID is usually the unique identifier that you recognize a user by in your 
 
 We recommend using database IDs instead of simple email addresses or usernames, because database IDs _never_ change. That guarantees that even if the user changes their email address, you can still recognize them as the same person in all of your analytics tools. And even better, you'll be able to correlate analytics data with your own internal database.
 
-**Instead of using an email address or a username as a User ID, send them along as [traits](/docs/spec/identify#traits).**
+**Instead of using an email address or a username as a User ID, send them along as [traits](/docs/connections/spec/identify#traits).**
 
 ## Traits
 

@@ -97,7 +97,7 @@ analytics.track({
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('12091906-01011992', {
@@ -111,7 +111,7 @@ When you call `identify`, Segment will call Adjust's [addSessionPartnerParameter
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Article Completed', {
@@ -122,12 +122,12 @@ analytics.track('Article Completed', {
 
 When you call `track` Segment maps the event to your pre-defined Adjust custom event. You **must** map your `track` events to your custom Adjust Event Token in your Adjust destination settings.
 
-If you don't provide a mapping, Adjust cannot accept the event. We include all the event `properties` as callback parameters on the Adjust event, and automatically translate `revenue` and `currency` to the appropriate Adjust event properties based on our [spec'd properties](/docs/spec/track/#properties).
+If you don't provide a mapping, Adjust cannot accept the event. We include all the event `properties` as callback parameters on the Adjust event, and automatically translate `revenue` and `currency` to the appropriate Adjust event properties based on our [spec'd properties](/docs/connections/spec/track/#properties).
 
 
 ## Reset
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Reset method](https://segment.com/docs/spec/reset/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Reset method](https://segment.com/docs/connections/spec/reset/) does. An example call would look like:
 
 ```javascript
 analytics.reset();
@@ -154,7 +154,7 @@ Using Adjust's [Attribution callback](https://github.com/adjust/ios_sdk#attribut
 | campaign.adCreative | attribution.creative | the creative grouping level of the current install |
 | campaign.adGroup | attribution.adgroup | the click label of the current install |
 
-If any value is unavailable, it will default to nil.  This call will be sent to all enabled [device and cloud mode](https://segment.com/docs/destinations/#connection-modes) destinations.
+If any value is unavailable, it will default to nil.  This call will be sent to all enabled [device and cloud mode](https://segment.com/docs/connections/destinations/#connection-modes) destinations.
 
 #### Troubleshooting
 
@@ -195,7 +195,7 @@ The destination will automatically recognize the spec'd `orderId` property, and 
 
 ### Duplicate Purchase Events
 
-If you're using Adjust's iOS SDK, it will automatically takes care of duplicate purchase events. We use Adjust's default deduplication (using `transactionId`) when you send an `orderId` (see the [ecommerce spec](/docs/spec/ecommerce/v2/#order-completed)).
+If you're using Adjust's iOS SDK, it will automatically takes care of duplicate purchase events. We use Adjust's default deduplication (using `transactionId`) when you send an `orderId` (see the [ecommerce spec](/docs/connections/spec/ecommerce/v2/#order-completed)).
 
 ### In-App Purchase Receipts
 
@@ -211,4 +211,4 @@ By default, our destination enables event buffering for Adjust. This saves your 
 
 ### Deep Linking
 
-The destination does not automatically support deep linking out of the box (you'd need to write code here regardless). This means you can use [Adjust's deep-linking](https://github.com/adjust/ios_sdk#7-set-up-deep-link-reattributions) by accessing [the Adjust SDK directly](/docs/sources/mobile/ios/#faq).
+The destination does not automatically support deep linking out of the box (you'd need to write code here regardless). This means you can use [Adjust's deep-linking](https://github.com/adjust/ios_sdk#7-set-up-deep-link-reattributions) by accessing [the Adjust SDK directly](/docs/connections/sources/catalog/libraries/mobile/ios/#faq).

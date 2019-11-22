@@ -20,7 +20,7 @@ This document was last updated on 20th June, 2018. If you notice any gaps, out-d
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 ```
 analytics.page();
 ```
@@ -29,7 +29,7 @@ The Page method is required to load Inspectlet on each new page load. Calling th
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 ```
 analytics.identify("97980cfea0067", {
   name: "Peter Gibbons",
@@ -41,7 +41,7 @@ Calling `identify` tags the Inspectlet session with all the `traits` you include
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 ```
 analytics.track("Purchased Product", {
   product: "book",

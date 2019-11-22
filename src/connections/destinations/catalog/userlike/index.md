@@ -17,7 +17,7 @@ This document was last updated on October 22, 2018. If you notice any gaps, outd
 4. Once you enable the destination, our CDN is updated within 45 minutes. Analytics.js will start asynchronously loading Userlike's javascript onto your page. Please remember to remove Userlike's snippet from your page.
 
 ## Track
- If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
+ If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 ### Record Live Chat Events
 
@@ -28,4 +28,4 @@ With Userlike we _only support "Live Chat" `track` events_. If you enable "Recor
 
 These events will then flow out to your other tools, so you can do things like analyze if users who chat spend more money over time.
 
-To learn more about the live chat events you can capture with this destination, head on over to our [Live Chat spec docs](/docs/spec/live-chat/).
+To learn more about the live chat events you can capture with this destination, head on over to our [Live Chat spec docs](/docs/connections/spec/live-chat/).

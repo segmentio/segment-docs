@@ -217,7 +217,7 @@ If you created the app with any of these scopes, and then updated the scope in i
 There are references above for `destination/<slug>`, but what should the `<slug>` be? The "slug" is the destination that you want to manage for the user. To see the exact slug we are expecting for your destination:
 
  -  If you just submitted a destination in the Developer Center for approval, you can see the slug on the submission form, or in the URL once submitted.
- -  If your destination is already public, look at the Segment Catalog and find your destination. That exact slug should appear in the URL. So it would be `clearbrain` for this destination /docs/destinations/clearbrain/
+ -  If your destination is already public, look at the Segment Catalog and find your destination. That exact slug should appear in the URL. So it would be `clearbrain` for this destination /docs/connections/destinations/catalog/clearbrain/
 
 ### What should the exact `create` body be to enable my destination?
 

@@ -4,7 +4,7 @@ beta: true
 title: Azure Function Destination
 ---
 
-Segment makes it easy to send your data to Azure Function (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to Azure Function in the format they understand. [Learn more about how to use Azure Function with Segment.](/docs/destinations/azure-function)
+Segment makes it easy to send your data to Azure Function (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to Azure Function in the format they understand. [Learn more about how to use Azure Function with Segment.](/docs/connections/destinations/catalog/azure-function)
 
 [Azure Function](https://azure.microsoft.com/en-us/services/functions) is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events.
 

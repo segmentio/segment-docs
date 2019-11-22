@@ -23,7 +23,7 @@ Vero is supported on the client-side, server-side and mobile.
 
 ### Client Side
 
-When you call [`identify`](/docs/spec/identify/) on analytics.js, we augment `traits` to have `traits.id` set to the `userId`, and then call Vero's `user` with the augmented traits object. You should provide both a `traits.email` and a `userId` for Vero to work best.
+When you call [`identify`](/docs/connections/spec/identify/) on analytics.js, we augment `traits` to have `traits.id` set to the `userId`, and then call Vero's `user` with the augmented traits object. You should provide both a `traits.email` and a `userId` for Vero to work best.
 
 If no `email` is attached, the user is created in Vero but cannot be emailed. If you send omit the `userId`, Vero will use the email as the ID, which is is not recommended. Check out the [Vero docs](http://www.getvero.com/help/adding-data-to-vero/creating-and-matching-vero-user-ids/) for more information.
 
@@ -31,12 +31,12 @@ A `userId` is a required value for all types of calls. Be sure you call `identif
 
 ### Server Side
 
-When you call [`identify`](/docs/spec/identify/) from one of our server-side languages, we'll  call Vero's REST API and update the traits for the customer with that `userId`. If your `userId` is an email, we'll also set the trait `email` as your `userId` in the update call.
+When you call [`identify`](/docs/connections/spec/identify/) from one of our server-side languages, we'll  call Vero's REST API and update the traits for the customer with that `userId`. If your `userId` is an email, we'll also set the trait `email` as your `userId` in the update call.
 
 
 ## Track
 
-When you call [`track`](/docs/spec/track/), we'll send the event to Vero with the event `name` and `properties` you provide. Events will be matched to the current user.
+When you call [`track`](/docs/connections/spec/track/), we'll send the event to Vero with the event `name` and `properties` you provide. Events will be matched to the current user.
 
 You can also unsubscribe users by sending a `track` event, passing in the user's ID as a `property`, like so:
 
@@ -50,7 +50,7 @@ Note: If you'd like to explicitly specify a user's email with track events that 
 
 ## Sending Data from Vero
 
-Vero supports sending [email events](/docs/spec/email) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.
+Vero supports sending [email events](/docs/connections/spec/email) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.
 
 To enable this feature,
 
@@ -64,17 +64,17 @@ To enable this feature,
 
 ## Group
 
-When you call [`group`](/docs/spec/group/), the `traits` included in the call will be set to the current user's **Group** property in Vero.
+When you call [`group`](/docs/connections/spec/group/), the `traits` included in the call will be set to the current user's **Group** property in Vero.
 
 ## Alias
 
-Our [`alias`](/docs/spec/alias/) method can be used from your server to "re-identify" an existing user identity to a new one.
+Our [`alias`](/docs/connections/spec/alias/) method can be used from your server to "re-identify" an existing user identity to a new one.
 
 Most of the time this happens when you identify a visitor by their email address after they opt in, then later re-identify with a database ID when they become registered users.
 
-To connect the two identities you'll need to [`alias`](/docs/spec/alias/) their current identity to their new one.
+To connect the two identities you'll need to [`alias`](/docs/connections/spec/alias/) their current identity to their new one.
 
-Here's a python example of using [`alias`](/docs/spec/alias/) to update the identity from an email address to a database ID:
+Here's a python example of using [`alias`](/docs/connections/spec/alias/) to update the identity from an email address to a database ID:
 
 ```python
 analytics.alias('example@example.com', '8765309')
@@ -84,7 +84,7 @@ analytics.alias('example@example.com', '8765309')
 
 ### Tags
 
-The destination is capable of both adding and removing tags in Vero for a given user. Because `tags` is not a common property of events, this functionality is invoked via an [destination specific option](https://segment.com/docs/sources/website/analytics.js/#selecting-integrations).
+The destination is capable of both adding and removing tags in Vero for a given user. Because `tags` is not a common property of events, this functionality is invoked via an [destination specific option](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#selecting-integrations).
 
 To start using this feature, please pass an object called `tags` with the following properties:
 

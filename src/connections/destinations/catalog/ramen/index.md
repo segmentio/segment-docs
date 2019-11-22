@@ -16,7 +16,7 @@ When you toggle on Ramen in Segment, this is what happens:
 ​
 ## Identify
 ​
-When you call [`identify`](/docs/spec/identify) on Analytics.js, it identifies the logged-in user to Ramen.
+When you call [`identify`](/docs/connections/spec/identify) on Analytics.js, it identifies the logged-in user to Ramen.
 ​
 Here is a full example, which we will annotate below:
 ​
@@ -48,7 +48,7 @@ Here is a list of the attributes we process:
 ​
 ## Group
 ​
-Segment supports Ramen Companies in Analytics.js through the [`group`](/docs/spec/group) method. Users can be put into multiple groups, which will associate them to multiple companies in Ramen.
+Segment supports Ramen Companies in Analytics.js through the [`group`](/docs/connections/spec/group) method. Users can be put into multiple groups, which will associate them to multiple companies in Ramen.
 ​
 Here is a full example, which we will annotate below:
 ​
@@ -74,14 +74,14 @@ Here is a list of the attributes we process:
 ​
 ## Page
 ​
-When you call [`page`](/docs/spec/page) on Analytics.js, it registers a new pageview in Ramen and checks to see if any questions should be asked.
+When you call [`page`](/docs/connections/spec/page) on Analytics.js, it registers a new pageview in Ramen and checks to see if any questions should be asked.
 ​
 Ramen does not support passing in any attributes to `page`. You can call `page({ title: "Our page" })` but the attributes (ie. `title` in this example) will be ignored.
 ​
 ​
 ## Track
 ​
-When you call [`track`](/docs/spec/track) on Analytics.js, it registers a new event in Ramen and checks to see if any questions should be asked.
+When you call [`track`](/docs/connections/spec/track) on Analytics.js, it registers a new event in Ramen and checks to see if any questions should be asked.
 ​
 Ramen does not support passing in any attributes to `track` beyond the event name. You can call `track('Subscribed', { plan: "Startup" })` but the attributes (ie. `plan` in this example) will be ignored.
 ​

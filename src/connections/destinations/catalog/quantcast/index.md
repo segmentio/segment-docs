@@ -31,7 +31,7 @@ Our `.track()` method will append Quantcast labels automatically. [See below for
 When you call `.track()` and include a property labeled `orderId` and `revenue` according to our spec, we will pass that along to Quantcast in the format they expect.
 
 ### Order Completed
-For purchase events, you should send an event called `Order Completed` per our spec [seen here](/docs/spec/ecommerce/v2/#order-completed) that includes properties of `order_id` and `total` in dollars (eg `16.50`, representing the order total, including taxes and fees). If you don't use a `total` property, you can pass `revenue` - and note that if you pass both as properties, `total` takes precedence. If available, you should also include properties of `category` and `repeat` with a value of `true` or `false` indicating whether or not the visitor is new or returning. This will cause the appropriate Quantcast custom lables to be populated properly.
+For purchase events, you should send an event called `Order Completed` per our spec [seen here](/docs/connections/spec/ecommerce/v2/#order-completed) that includes properties of `order_id` and `total` in dollars (eg `16.50`, representing the order total, including taxes and fees). If you don't use a `total` property, you can pass `revenue` - and note that if you pass both as properties, `total` takes precedence. If available, you should also include properties of `category` and `repeat` with a value of `true` or `false` indicating whether or not the visitor is new or returning. This will cause the appropriate Quantcast custom lables to be populated properly.
 
 ### Features
 #### Labels

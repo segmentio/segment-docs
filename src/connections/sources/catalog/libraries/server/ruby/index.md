@@ -47,7 +47,7 @@ If you're using Rails, you can stick that initialization logic in `config/initia
 
 ## Identify
 
-The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can [find details on the identify method payload in our Spec](/docs/spec/identify/).
+The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can [find details on the identify method payload in our Spec](/docs/connections/spec/identify/).
 
 The `identify` call has the following fields:
 
@@ -106,7 +106,7 @@ This example call will identify your user by their unique User ID (the one you k
 
 ## Track
 
-The `track` method lets you record any actions your users perform. You can find details on [the track method payload](/docs/spec/track).
+The `track` method lets you record any actions your users perform. You can find details on [the track method payload](/docs/connections/spec/track).
 
 The `track` call has the following fields:
 
@@ -190,7 +190,7 @@ For more information about choosing which events to track, event naming and more
 
 ## Page
 
-The [`page`](/docs/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
+The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
 If you're using our client-side setup in combination with the Ruby library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
@@ -259,13 +259,13 @@ Analytics.page(
   properties: { url: 'https://segment.com/libraries/ruby/' })
 ```
 
-Find details on the **`page` payload** in our [Spec](/docs/spec/page/).
+Find details on the **`page` payload** in our [Spec](/docs/connections/spec/page/).
 
 ## Group
 
-The `group` method associates an [identified user](/docs/sources/website/analytics.js/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
+The `group` method associates an [identified user](/docs/connections/sources/catalog/libraries/website/analytics.js/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
 
-This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
 The `group` call has the following fields:
 
@@ -321,13 +321,13 @@ Analytics.group(
   traits: { name: 'Initech', description: 'Accounting Software'})
 ```
 
-Find more details about `group` including the **`group` payload** in our [Spec](/docs/spec/group/).
+Find more details about `group` including the **`group` payload** in our [Spec](/docs/connections/spec/group/).
 
 ## Alias
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/destinations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/destinations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
  `alias` method definition:
 
@@ -362,7 +362,7 @@ Analytics.identify(user_id: 'user id', traits: { plan: 'Free' })
 Analytics.track(user_id: 'user id', event: 'Identified Action')
 ```
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/spec/alias/).
+For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
 
 ---
 ## Historical Import
@@ -389,7 +389,7 @@ Analytics.track({
 
 In this case, we're specifying that we want this identify to only go to KISSmetrics. `all: false` says that no destination should be enabled unless otherwise specified. `KISSmetrics: true` turns on KISSmetrics, etc.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/destinations) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:**
 
@@ -465,7 +465,7 @@ Calling flush will block execution until all messages are processed, so it is no
 
 ## Turbolinks
 
-If you're using Ruby on Rails with the [Turbolinks](https://github.com/rails/turbolinks/) setting enabled, and you're adding [Analytics.js](/docs/sources/website/analytics.js) on your website, you'll need to tweak the default configuration.
+If you're using Ruby on Rails with the [Turbolinks](https://github.com/rails/turbolinks/) setting enabled, and you're adding [Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js) on your website, you'll need to tweak the default configuration.
 
 Instead of having the entire snippet in the `<head>` of your site, you need to move the `analytics.page()` call that is included in the snippet by default into the `<body>` so that it will get triggered on every new page load. But you **must** have the first part of the snippet in the `<head>` or the library will fail to load properly.
 

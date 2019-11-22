@@ -18,9 +18,9 @@ This document was last updated on January 29, 2018. If you notice any gaps, outd
 5. We recommend creating 2 Leanplum Destinations, 1 for production and 1 for development.
 6. Copy the "Production" or "Development" value into the corresponding Leanplum destination and add it to the Segment Settings UI under "Leanplum Client Key" depending on your chosen environment.
 
-If you have opted to utilize our [server-side sources](https://segment.com/docs/sources/#server), we will begin passing data through our servers or from your users' devices to Leanplum within minutes after you enable it on your source destinations page.
+If you have opted to utilize our [server-side sources](https://segment.com/docs/connections/sources/#server), we will begin passing data through our servers or from your users' devices to Leanplum within minutes after you enable it on your source destinations page.
 
-In order to utilize Leanplum's Push Notifications, Messaging channels or A/B testing in your mobile app, you will need to use our [iOS](https://segment.com/docs/sources/mobile/ios/) or [Android](https://segment.com/docs/sources/mobile/android/) SDKs. Read on to find out how to set this up.
+In order to utilize Leanplum's Push Notifications, Messaging channels or A/B testing in your mobile app, you will need to use our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/) SDKs. Read on to find out how to set this up.
 
 ### iOS
 
@@ -128,7 +128,7 @@ That's it! Now you can use the Segment SDK and also the [advanced features](http
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page()
@@ -139,7 +139,7 @@ When you call `page` as a user moves to a new area, you can advance your user's 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 ```javascript
 analytics.identify({
   userId: 'user123',
@@ -154,7 +154,7 @@ As soon as a user logs-in or signs-up, you'll want to make an `identify` call wh
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 ```javascript
 analytics.track({
   userId: 'user123',
@@ -168,7 +168,7 @@ analytics.track({
 Calling a `track` event will log a user event with Leanplum so that you can figure out how to increase engagement, virality, or whatever key action is critical to your business.
 
 ## Additional Features
-The features listed below are only supported if you have installed our [iOS](https://segment.com/docs/sources/mobile/ios/) or [Android](https://segment.com/docs/sources/mobile/android/) SDKs.
+The features listed below are only supported if you have installed our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/) SDKs.
 
 ### Push Notifications
 

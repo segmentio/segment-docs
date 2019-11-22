@@ -67,7 +67,7 @@ It is important to note that if the app keys in the plist/code and the Segment d
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/screen/) does. An example iOS call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example iOS call would look like:
 ```ios
 [[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
                             properties:@{ @"Feed Type": @"public" }];
@@ -77,7 +77,7 @@ When you record a `screen`, Apptimize will track an event of the form `Viewed [S
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example iOS call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:
 
 ```ios
 [[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
@@ -88,7 +88,7 @@ When you `identify` a user, Segment will pass that user's information to Apptimi
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example iOS call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example iOS call would look like:
 
 ```ios
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"
@@ -106,7 +106,7 @@ When you `track` an event, the event will be marked in Apptimize as an occurence
 
 ### Send Experiment Data from Apptimize
 
-If the advanced setting `Send experiment data to other tools (as a track call)` is checked, we will automatically collect the event [`Experiment Viewed`](/docs/spec/ab-testing/#experiment-viewed).
+If the advanced setting `Send experiment data to other tools (as a track call)` is checked, we will automatically collect the event [`Experiment Viewed`](/docs/connections/spec/ab-testing/#experiment-viewed).
 
 This event supports the following semantic properties:
 

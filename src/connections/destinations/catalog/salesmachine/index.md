@@ -15,7 +15,7 @@ Salemachine.io supports the `identify`, `track`, `page`, `group` and `alias` met
 ## Page
 
 When you call a `page` event, we send a pageview to Salesmachine.io which manages automatically new sessions.
-When your page is [named](/docs/spec/page/#name), we send a pageview to Salesmachine.io and an event with the name of this page.
+When your page is [named](/docs/connections/spec/page/#name), we send a pageview to Salesmachine.io and an event with the name of this page.
 _You must add `account_uid` in event parameters to automatically link this pageview to an account. However, if the contact that performed the pageview has only one account, Salesmachine.io will automatically link the event to his account._
 
 ## Identify

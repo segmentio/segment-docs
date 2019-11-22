@@ -132,32 +132,32 @@ exports.handler = function(event, context, callback) {
             //console.log(formattedResults);
             if(srcFileName.startsWith('identify_')){
               formattedResults.map(function(identifyObject){
-                // More in the docs here: https://segment.com/docs/spec/identify/
+                // More in the docs here: https://segment.com/docs/connections/spec/identify/
                 analytics.identify(identifyObject);
               });
             }else if(srcFileName.startsWith('track_')){
               formattedResults.map(function(trackObject){
-                // More in the docs here: https://segment.com/docs/spec/track/
+                // More in the docs here: https://segment.com/docs/connections/spec/track/
                 analytics.track(trackObject);
               });
             }else if(srcFileName.startsWith('page_')){
               formattedResults.map(function(pageObject){
-                // More in the docs here: https://segment.com/docs/spec/page/
+                // More in the docs here: https://segment.com/docs/connections/spec/page/
                 analytics.page(pageObject);
               });
             }else if(srcFileName.startsWith('screen_')){
               formattedResults.map(function(screenObject){
-                // More in the docs here: https://segment.com/docs/spec/screen/
+                // More in the docs here: https://segment.com/docs/connections/spec/screen/
                 analytics.screen(screenObject);
               });
             }else if(srcFileName.startsWith('group_')){
               formattedResults.map(function(groupObject){
-                // More in the docs here: https://segment.com/docs/spec/group/
+                // More in the docs here: https://segment.com/docs/connections/spec/group/
                 analytics.group(groupObject);
               });
             }else if(srcFileName.startsWith('alias_')){
               formattedResults.map(function(aliasObject){
-                // More in the docs here: https://segment.com/docs/spec/alias/
+                // More in the docs here: https://segment.com/docs/connections/spec/alias/
                 analytics.alias(aliasObject);
               });
             }else if(srcFileName.startsWith('object_')){

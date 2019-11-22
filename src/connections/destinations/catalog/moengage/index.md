@@ -74,7 +74,7 @@ User attributes are specific traits of a user, like email, username, mobile, gen
 
  ```[[SEGAnalytics sharedAnalytics] identify:@"a user's id" traits:@{ @"email": @"a user's email address" }];```
 
-For more info refer to this [link](https://segment.com/docs/sources/mobile/ios/#identify).
+For more info refer to this [link](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#identify).
 
 ### Tracking Events
 
@@ -82,7 +82,7 @@ Event tracking is used to track user behaviour in an app. **track** lets you rec
 
  ```[[SEGAnalytics sharedAnalytics] track:@"Item Purchased" properties:@{ @"item": @"Sword of Heracles"}];```
 
-That's all you need for tracking data. For more info refer this [link](https://segment.com/docs/sources/mobile/ios/#track).
+That's all you need for tracking data. For more info refer this [link](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#track).
 
 ### Reset Users
 
@@ -90,7 +90,7 @@ The *reset* method clears the SDK's internal stores for the current user. This i
 
  ```[[SEGAnalytics sharedAnalytics] reset];```
 
-For more info refer to this [link](https://segment.com/docs/sources/mobile/ios/#reset).
+For more info refer to this [link](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#reset).
 
 ### Install / Update Differentiation
 
@@ -157,7 +157,7 @@ In-App Messaging are custom views which you can send to a segment of users to sh
 MoEngage SDK is GDPR compliant, follow the doc in this [link](https://docs.moengage.com/docs/gdpr-compliance-1) to know how to use opt-outs for different features.
 
 ### Segment Docs:
-For more info on using **Segment for iOS** refer to [**Developer Docs**](https://segment.com/docs/sources/mobile/ios/) provided by Segment.
+For more info on using **Segment for iOS** refer to [**Developer Docs**](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) provided by Segment.
 
 
 ## Android
@@ -359,10 +359,10 @@ You are now all setup to receive push notifications from MoEngage. For more info
 
 
 #### Identify
-Use [Identify](https://segment.com/docs/sources/mobile/android/#identify) to track user specific attributes. It equivalent to tracking [user attributes](http://docs.moengage.com/docs/identifying-user) on MoEngage. MoEngage supports traits supported by Segment as well as custom traits. If you set traits.id, we set that as the Unique ID for that user.
+Use [Identify](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#identify) to track user specific attributes. It equivalent to tracking [user attributes](http://docs.moengage.com/docs/identifying-user) on MoEngage. MoEngage supports traits supported by Segment as well as custom traits. If you set traits.id, we set that as the Unique ID for that user.
 
 #### Track
-Use [track](https://segment.com/docs/sources/mobile/android/#track) to track events and user behaviour in your app.
+Use [track](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#track) to track events and user behaviour in your app.
 This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
 
 #### Reset
@@ -431,13 +431,13 @@ new Date().getUTCFullYear()+""+new Date().getUTCMonth()+""+new Date().getUTCDate
 ```
 
 ### Identify
-Use [Identify](https://segment.com/docs/sources/website/analytics.js/#identify) to track user specific attributes. It equivalent to [tracking user attributes](https://docs.moengage.com/docs/tracking-web-user-attributes) on MoEngage. MoEngage supports traits supported by Segment as well as custom traits.
+Use [Identify](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#identify) to track user specific attributes. It equivalent to [tracking user attributes](https://docs.moengage.com/docs/tracking-web-user-attributes) on MoEngage. MoEngage supports traits supported by Segment as well as custom traits.
 
 ### Track
-Use [track](https://segment.com/docs/sources/website/analytics.js/#track) to track events and user behaviour in your app. This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
+Use [track](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#track) to track events and user behaviour in your app. This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
 
 ### Reset
-If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](https://segment.com/docs/sources/website/analytics.js/#reset-logout) method in `analytics.js`.
+If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#reset-logout) method in `analytics.js`.
 
 ### Optional
 There are some further optional features you can read about here:

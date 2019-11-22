@@ -64,7 +64,7 @@ Subsequent `track` with `userId`
 
 ### Ecommerce
 
-Iterable also supports Segment's [ecommerce events](/docs/spec/ecommerce/v2/). This works just as you would expect, using the `track` method.
+Iterable also supports Segment's [ecommerce events](/docs/connections/spec/ecommerce/v2/). This works just as you would expect, using the `track` method.
 
 _Note: there is one important difference from the Segment documentation. If you are using the `Product Added` / `Product Removed` events, you will need to also pass along the "products" field with your cart info, just like Segment's example for the `Order Completed` event. You must include all required fields for the Purchase events in Iterable, which includes the total value of the purchase with the property: `total`. This value works best as a float, double, and possibly an integer. An example might look like this: _
 
@@ -88,7 +88,7 @@ Call `page` with `userId` and `email`; if with `email` and the `email` doesn't e
 
 ## Sending Email Data from Iterable
 
-Iterable supports sending [email events](/docs/spec/email/) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.
+Iterable supports sending [email events](/docs/connections/spec/email/) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.
 
 To enable this feature, go to Destinations, Third Party, and select Segment in the Add Destinations button. Then, enter your API key.
 
@@ -96,7 +96,7 @@ To enable this feature, go to Destinations, Third Party, and select Segment in t
 
 ## Sending Push Notification Data from Iterable
 
-Iterable supports sending push notification events to Segment. These events will be sent as `track` calls to the other destinations you've turned on. Push events will be automatically enabled once the [Email Source](/docs/sources/iterable/) is enabled.
+Iterable supports sending push notification events to Segment. These events will be sent as `track` calls to the other destinations you've turned on. Push events will be automatically enabled once the [Email Source](/docs/connections/sources/iterable/) is enabled.
 
 They support the following events:
 `Push Delivered`, `Push Bounced`, `Mobile App Uninstalled`, `Push Opened`

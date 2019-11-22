@@ -64,7 +64,7 @@ Header|Description|Example
 
 ## Request Body
 
-Segment's [spec](https://segment.com/docs/spec) standardizes the data that you can expect from Segment. You can choose to implement four types types of calls:
+Segment's [spec](https://segment.com/docs/connections/spec) standardizes the data that you can expect from Segment. You can choose to implement four types types of calls:
 
 - Who is this? `.identify(userId, traits)`
 - What are they doing? `.track(userId, event, properties)`
@@ -99,7 +99,7 @@ For example, you might implement the `.identify(userId, traits)` call to create 
 
 ## The Segment Spec
 
-To learn about the semantics of the five supported API calls, and the semantic event names and properties we recognize, read the Segment [spec](https://segment.com/docs/spec).
+To learn about the semantics of the five supported API calls, and the semantic event names and properties we recognize, read the Segment [spec](https://segment.com/docs/connections/spec).
 
 The spec is a critical component in preserving logical continuity between disparate writers and readers of data. If you encourage customers to break the spec, you are breaking the promise of Segment, and is grounds for removal from the catalog.
 
@@ -125,7 +125,7 @@ Code  | Reason
 `401` | The client's API key is malformed, has expired, or is otherwise no longer valid.
 `403` | The client's API key is valid, but has been rejected due to inadequate permissions.
 `500` | If you encounter an internal error when processing the message, reply with this code. (Hopefully you won't have to send too many of these.)
-`501` | If Segment sends you an [API call type](https://segment.com/docs/spec/#api-calls) (indicated by the `type` property included on all messages) you don't support, reply with this code. Read more about the API call types Segment supports [here](https://segment.com/docs/spec/#api-calls).
+`501` | If Segment sends you an [API call type](https://segment.com/docs/connections/spec/#api-calls) (indicated by the `type` property included on all messages) you don't support, reply with this code. Read more about the API call types Segment supports [here](https://segment.com/docs/connections/spec/#api-calls).
 `503` | Send Segment this code when your endpoint is temporarily down for maintenance or otherwise not accepting messages. This helps Segment avoid dropping users' messages during your downtime.
 
 ## Response Body

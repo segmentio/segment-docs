@@ -33,7 +33,7 @@ Enabling Vitally as a destination in Segment can be done in one click from your 
 
 ## Identify
 
-If you haven't had a chance to review the spec, please take a look to understand what the [Identify method](/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review the spec, please take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -53,7 +53,7 @@ Passing along the following traits will correspond to what is displayed in Vital
 
 ## Track
 
-If you haven't had a chance to review the spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review the spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('enabled-slack-integration', {
@@ -66,7 +66,7 @@ Track calls are used in Vitally to [track and analyze](http://docs.vitally.io/en
 
 ## Group
 
-If you haven't had a chance to review the spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. An example call would look like:
+If you haven't had a chance to review the spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```js
 analytics.group("accountId123", {

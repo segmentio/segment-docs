@@ -21,11 +21,11 @@ This document was last updated on October 15, 2018. If you notice any gaps, out-
 
 1. For mobile implementations additional settings are required. Navigate to your Wootric Settings > API to add in your "Client ID" and "Client Secret" to the respective parts of the Segment Settings UI.
 
-**IMPORTANT:**  The incoming responses and surveys will not be tied to a user until you [identify](https://segment.com/docs/destinations/wootric/#identify) your user.
+**IMPORTANT:**  The incoming responses and surveys will not be tied to a user until you [identify](https://segment.com/docs/connections/destinations/catalog/wootric/#identify) your user.
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page();
@@ -36,7 +36,7 @@ When you call `page` in the Javascript API, Wootric will log the page visit.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123', {

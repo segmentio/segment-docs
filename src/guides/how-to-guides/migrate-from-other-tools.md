@@ -29,11 +29,11 @@ ga('send', {
 });
 ```
 
-Since Event Category is required we'll populate it with `All` if you don't specify one. You can read more about this in [our Google Analytics docs](/docs/destinations/google-analytics/#track).
+Since Event Category is required we'll populate it with `All` if you don't specify one. You can read more about this in [our Google Analytics docs](/docs/connections/destinations/catalog/google-analytics/#track).
 
 ### Ecommerce
 
-Segment has full support for the Google Analytics E-Commere API and the [Enhanced E-Commerce API](/docs/destinations/google-analytics/#enhanced-ecommerce) as well. Make sure you follow [our e-commerce quickstart](https://help.segment.com/hc/en-us/articles/204812439-Ecommerce-Quickstart) to make sure you'll be able to use all e-commerce features in the tools we support.
+Segment has full support for the Google Analytics E-Commere API and the [Enhanced E-Commerce API](/docs/connections/destinations/catalog/google-analytics/#enhanced-ecommerce) as well. Make sure you follow [our e-commerce quickstart](https://help.segment.com/hc/en-us/articles/204812439-Ecommerce-Quickstart) to make sure you'll be able to use all e-commerce features in the tools we support.
 
 For an e-commerce transaction to appear in Google Analytics you'll need to enable e-commerce for your Google Analytics view and send a Completed Order event to Segment. This simplifies things a lot compared to the direct Google Analytics code.
 
@@ -104,7 +104,7 @@ At the very minimum you must include an orderId for each Order and for each prod
 
 Through Segment you can record user-scope custom dimensions via our identify, page, or track methods.
 
-A full explanation can be found in [our Google Analytics docs](/docs/destinations/google-analytics/#custom-dimensions) page, but here's a quick example:
+A full explanation can be found in [our Google Analytics docs](/docs/connections/destinations/catalog/google-analytics/#custom-dimensions) page, but here's a quick example:
 
 ```js
 ga('set', 'dimension5', 'Male');
@@ -124,7 +124,7 @@ analytics.page();
 
 ### Everything Else
 
-To see a full list of Google Analytics features and how they work through Segment read[our Google Analytics docs page](/docs/destinations/google-analytics/#features).
+To see a full list of Google Analytics features and how they work through Segment read[our Google Analytics docs page](/docs/connections/destinations/catalog/google-analytics/#features).
 
 ## Mixpanel
 
@@ -162,7 +162,7 @@ becomes;
 analytics.identify('123');
 ```
 
-Mixpanel has the idea of Super Properties, which are user traits that get attached to every event that the user does. In Segment you can set Mixpanel Super Properties using our identify method. Super properties are only supported in client-side libraries [Analytics.js](https://segment.com/docs/sources/website/analytics.js), [iOS](https://segment.com/docs/sources/mobile/ios), [Android](https://segment.com/docs/sources/mobile/android).
+Mixpanel has the idea of Super Properties, which are user traits that get attached to every event that the user does. In Segment you can set Mixpanel Super Properties using our identify method. Super properties are only supported in client-side libraries [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js), [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios), [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android).
 
 Here's an example:
 
@@ -202,7 +202,7 @@ analytics.alias('1234');
 
 ### Track Links
 
-If you are tracking links with Mixpanel's [track\_links](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.track_links)helper you can switch that code to the Segment [trackLink helper function](https://segment.com/docs/sources/website/analytics.js/#track-link) in [Analytics.js](https://segment.com/docs/sources/website/analytics.js).
+If you are tracking links with Mixpanel's [track\_links](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.track_links)helper you can switch that code to the Segment [trackLink helper function](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#track-link) in [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js).
 
 And here's an example:
 
@@ -224,7 +224,7 @@ analytics.trackLink(link, 'Clicked Free-Trial Link', {
 
 ### Track Forms
 
-If you are tracking forms with [Mixpanel's track\_forms helper](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.track_forms) you can switch that code to[the Segment trackForm helper function](https://segment.com/docs/sources/website/analytics.js/#track-form) in Analytics.js.
+If you are tracking forms with [Mixpanel's track\_forms helper](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.track_forms) you can switch that code to[the Segment trackForm helper function](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#track-form) in Analytics.js.
 
 And here's an example:
 
@@ -282,7 +282,7 @@ Read more in [our Mixpanel Increment Docs](/docs/connections/destinations/catalo
 
 ### Revenue
 
-Mixpanel's Revenue report requires the use of a special function called `track_charge`. In Segment that special function becomes a simple track call. By using the event name `Order Completed` we'll also use that event for any tools you use that recognize our [ecommerce spec](https://segment.com/docs/spec/ecommerce/v2/).
+Mixpanel's Revenue report requires the use of a special function called `track_charge`. In Segment that special function becomes a simple track call. By using the event name `Order Completed` we'll also use that event for any tools you use that recognize our [ecommerce spec](https://segment.com/docs/connections/spec/ecommerce/v2/).
 
 ```js
 mixpanel.people.track_charge(30.50,

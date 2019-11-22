@@ -4,7 +4,7 @@ rewrite: true
 beta: true
 ---
 
-Segment makes it easy to send your data to Google Cloud Function (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to Google Cloud Function in the format they understand. [Learn more about how to use Google Cloud Function with Segment.](/docs/destinations/google-cloud-function)
+Segment makes it easy to send your data to Google Cloud Function (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to Google Cloud Function in the format they understand. [Learn more about how to use Google Cloud Function with Segment.](/docs/connections/destinations/catalog/google-cloud-function)
 
 [Google Cloud Function](https://cloud.google.com/function) is a lightweight compute solution for developers to create single-purpose, stand-alone functions that respond to Cloud events without the need to manage a server or runtime environment.
 

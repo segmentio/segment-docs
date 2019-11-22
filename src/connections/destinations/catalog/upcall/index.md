@@ -21,7 +21,7 @@ _**NOTE:** Upcall is currently in beta, which means that there may still be some
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call in [Node](https://segment.com/docs/sources/server/node/) would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call in [Node](https://segment.com/docs/connections/sources/catalog/libraries/server/node/) would look like:
 ```
 analytics.identify({
   userId: 'userId12345',
@@ -41,4 +41,4 @@ When you call Identify, you must include a phone number (in US or E.164 format) 
 
 If they do not exist, the lead will be added to the campaign and immediately called (if the campaign is live). If they do exist in the campaign, no action will be taken.
 
-The `campaign_id` parameter is optional and is added to the [integrations object](https://segment.com/docs/sources/server/node/#selecting-destinations). If not provided, we will add the lead to the most recent campaign (in pending, live or paused state). It is recommended to specify it otherwise leads might get mixed up in multiple campaigns.
+The `campaign_id` parameter is optional and is added to the [integrations object](https://segment.com/docs/connections/sources/catalog/libraries/server/node/#selecting-destinations). If not provided, we will add the lead to the most recent campaign (in pending, live or paused state). It is recommended to specify it otherwise leads might get mixed up in multiple campaigns.

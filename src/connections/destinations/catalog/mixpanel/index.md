@@ -16,7 +16,7 @@ This document was last updated on April 30, 2018. If you notice any gaps, outdat
 4. Enable the destination to start sending your data to Mixpanel.
 
 ## Page
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```javascript
 analytics.page()
 ```
@@ -43,7 +43,7 @@ If you select "Track Named Pages to Mixpanel", we will send a `Viewed [name] Pag
 In short, Segment will only send 1 event to Mixpanel per `page` call.
 
 ## Identify
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 ```javascript
 analytics.identify('userId123', {
   firstName: 'James',
@@ -80,7 +80,7 @@ If the group call **does not** have a group trait that matches the Group Identif
 
 When you call the Identify method from the client in either a browser using Analytics.js or one of our mobile SDKs a bunch of things happen:
 
-We start by recognizing and translating our [special traits](/docs/spec/identify#special-traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. You'll pass the key on the left into Segment and we will transform it to the key on the right before sending to Mixpanel.
+We start by recognizing and translating our [special traits](/docs/connections/spec/identify#special-traits) so that they fit the expectations of Mixpanel's API. The table below shows the mappings. You'll pass the key on the left into Segment and we will transform it to the key on the right before sending to Mixpanel.
 
 <table>
   <tr>
@@ -117,7 +117,7 @@ We start by recognizing and translating our [special traits](/docs/spec/identify
 
 When you call the Identify method from any of our server libraries, we create or update the user in Mixpanel People with the traits you provide. Calling `identify` doesn't create any users in the standard Mixpanel reporting interface since that only supports `track` events.
 
-You won't see server-side `traits` appear as super-properties on any events you track. This is because Mixpanel [has no REST API](https://github.com/mixpanel/mixpanel-node/issues/48) for setting [super properties](https://mixpanel.com/docs/managing-users/managing-user_advanced/specific-properties) for a `distinct_id`, so [`identify`](/docs/spec/identify/) calls only affect Mixpanel People.
+You won't see server-side `traits` appear as super-properties on any events you track. This is because Mixpanel [has no REST API](https://github.com/mixpanel/mixpanel-node/issues/48) for setting [super properties](https://mixpanel.com/docs/managing-users/managing-user_advanced/specific-properties) for a `distinct_id`, so [`identify`](/docs/connections/spec/identify/) calls only affect Mixpanel People.
 
 For Mixpanel People, it's important to `identify` a user before you call `track`. A `track` without an `identify` won't create a user in Mixpanel People.
 
@@ -141,13 +141,13 @@ For array type traits passed to `identify` calls, we will use Mixpanel's `people
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 ```javascript
 analytics.track('Button Clicked')
 ```
-Because Mixpanel is an event tracking analytics tool, you'll want to [`track`](/docs/spec/track/) your user's actions. The more useful events you [`track`](/docs/spec/track/), the better Mixpanel becomes.
+Because Mixpanel is an event tracking analytics tool, you'll want to [`track`](/docs/connections/spec/track/) your user's actions. The more useful events you [`track`](/docs/connections/spec/track/), the better Mixpanel becomes.
 
-You should use the [`track`](/docs/spec/track/) method to accomplish this. The Segment [`track`](/docs/spec/track/) method maps events and event properties directly to Mixpanel events and event properties.
+You should use the [`track`](/docs/connections/spec/track/) method to accomplish this. The Segment [`track`](/docs/connections/spec/track/) method maps events and event properties directly to Mixpanel events and event properties.
 
 ### Track Charge
 
@@ -158,13 +158,13 @@ If Mixpanel People is enabled in your Segment settings and you include an event 
 There are two strings to avoid when naming event properties that will be sent to Mixpanel: `length` and `bucket`. `length` is interpreted as the JavaScript `.length` method, which causes the `mixpanel.track` call to fail silently. `bucket` is a reserved property that was used in the early days of Mixpanel. If you include a property called `bucket` in your events, it will not show up in the UI. However, it will not cause the `mixpanel.track` call to fail.
 
 ## Alias
-If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/spec/alias/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
 ```javascript
 analytics.alias('newUserId')
 ```
 **Important:** Calling `alias` is required for Mixpanel in all libraries in order to connect anonymous visitors to identified users.
 
-As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
+As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
 
 You'll also want to `track` the action that caused the user to be identified or created. Read our [guide on how to identify new users](/docs/faqs/sources/identifying-users) to learn why.
 
@@ -192,13 +192,13 @@ However, in cases when events are processed too quickly, before their correspond
 
 Mixpanel's client-side Javasript library fixes this issue by continuing to send `track` calls to the original mixpanel `distinct_id` while the records update. **To leverage that protection and avoid creating split profiles and broken funnels, we recommend doing all aliasing for Mixpanel on the client side through Analytics.js**
 
-However, in certain circumstances, despite the risk of duplicate profiles, you may still wish to send the calls server-side. In those cases, there are two options for calling [`alias`](/docs/spec/alias/) from your servers:
+However, in certain circumstances, despite the risk of duplicate profiles, you may still wish to send the calls server-side. In those cases, there are two options for calling [`alias`](/docs/connections/spec/alias/) from your servers:
 
 #### In Conjunction with Client-Side Tracking
 
-If you're tracking anonymous users on the client side either from a browser or one of our mobile SDK you'll need to pass the Mixpanel `distinct_id` from the browser to your servers in order to [`alias`](/docs/spec/alias/) it to the new `userId`.
+If you're tracking anonymous users on the client side either from a browser or one of our mobile SDK you'll need to pass the Mixpanel `distinct_id` from the browser to your servers in order to [`alias`](/docs/connections/spec/alias/) it to the new `userId`.
 
-First, use [`analytics.ready`](/docs/sources/website/analytics.js#ready) to grab the Mixpanel `distinct_id`:
+First, use [`analytics.ready`](/docs/connections/sources/catalog/libraries/website/analytics.js#ready) to grab the Mixpanel `distinct_id`:
 
 ```js
 analytics.ready(function(){
@@ -206,7 +206,7 @@ analytics.ready(function(){
 });
 ```
 
-Next, pass the `anonId` to your server and [`alias`](/docs/spec/alias/), [`identify`](/docs/spec/identify/), and [`track`](/docs/spec/track/) your new user.
+Next, pass the `anonId` to your server and [`alias`](/docs/connections/spec/alias/), [`identify`](/docs/connections/spec/identify/), and [`track`](/docs/connections/spec/track/) your new user.
 
 Here's a Node example where the new `userId` is `12345`:
 
@@ -220,13 +220,13 @@ analytics.track({
   event: 'Connected Facebook'
 });
 ```
-As you can see we recommend flushing the [`alias`](/docs/spec/alias) to give Mixpanel a bit of extra time to process it on their side before you [`identify`](/docs/spec/identify) and [`track`](/docs/spec/track).
+As you can see we recommend flushing the [`alias`](/docs/connections/spec/alias) to give Mixpanel a bit of extra time to process it on their side before you [`identify`](/docs/connections/spec/identify) and [`track`](/docs/connections/spec/track).
 
 #### Tracking Exclusively Server Side
 
-If you're tracking anonymous users in one of our server-side libraries that makes things a lot easier. All you have to do is [`alias`](/docs/spec/alias/) the anonymous `id` to the new `userId`.
+If you're tracking anonymous users in one of our server-side libraries that makes things a lot easier. All you have to do is [`alias`](/docs/connections/spec/alias/) the anonymous `id` to the new `userId`.
 
-Here's a Python example of the [`alias`](/docs/spec/alias/), [`identify`](/docs/spec/identify/), [`track`](/docs/spec/track/) sequence where the anonymous `id` was `92fh49fqh9849hf` and the new `userId` is `12345`:
+Here's a Python example of the [`alias`](/docs/connections/spec/alias/), [`identify`](/docs/connections/spec/identify/), [`track`](/docs/connections/spec/track/) sequence where the anonymous `id` was `92fh49fqh9849hf` and the new `userId` is `12345`:
 
 ```python
 analytics.alias('92fh49fqh9849hf', '12345')
@@ -235,7 +235,7 @@ analytics.flush() # flush the alias
 analytics.identify('12345')
 analytics.track('12345', 'Registered')
 ```
-As you can see we recommend flushing the [`alias`](/docs/spec/alias) to give Mixpanel a bit of extra time to process it on their side before you [`identify`](/docs/spec/identify) and [`track`](/docs/spec/track).
+As you can see we recommend flushing the [`alias`](/docs/connections/spec/alias) to give Mixpanel a bit of extra time to process it on their side before you [`identify`](/docs/connections/spec/identify) and [`track`](/docs/connections/spec/track).
 
 ## Best Practises
 
@@ -243,7 +243,7 @@ As you can see we recommend flushing the [`alias`](/docs/spec/alias) to give Mix
 
 If you are sending events server side, depending on your library (JS, mobile, or server), we will map as many [Mixpanel supported contextual properties](https://mixpanel.com/help/questions/articles/what-properties-do-mixpanels-libraries-store-by-default) as we can.
 
-You can check out which [context properties are being automatically collected by any Segment library](/docs/spec/common/). If you are using a library that does not support a certain contextual property, you can still send them manually with your events, as long as it is sent in accordance with our [spec](/docs/spec/common/).
+You can check out which [context properties are being automatically collected by any Segment library](/docs/connections/spec/common/). If you are using a library that does not support a certain contextual property, you can still send them manually with your events, as long as it is sent in accordance with our [spec](/docs/connections/spec/common/).
 
 For example, if you want to send `utm` parameters with your server side library, you can attach a `context.campaign` object like this:
 
@@ -277,7 +277,7 @@ We do not map `$library_version` since that is reserved for Mixpanel's library v
 
 ### Autotrack
 
-Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported via Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/sources/website/analytics.js/), [iOS](/docs/sources/mobile/ios/), [Android](/docs/sources/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed via Segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
+Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported via Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed via Segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
 
 ### People
 
@@ -374,7 +374,7 @@ analytics.track(user_id=user.id,
 })
 ```
 
-Please provide `context.ip` to all your [`identify`](/docs/spec/identify/), [`track`](/docs/spec/track/), and [`alias`](/docs/spec/alias/) calls to make sure Mixpanel doesn't geo-locate your users.
+Please provide `context.ip` to all your [`identify`](/docs/connections/spec/identify/), [`track`](/docs/connections/spec/track/), and [`alias`](/docs/connections/spec/alias/) calls to make sure Mixpanel doesn't geo-locate your users.
 
 ## Troubleshooting
 
@@ -390,15 +390,15 @@ If you are testing in Xcode remember you must first background the app, then the
 
 ### I'm seeing events come into Mixpanel but not people.
 
-1. You'll need to make sure you're using [`identify`](/docs/spec/identify/). A Mixpanel track does not create users in Mixpanel People.
-2. Make sure to turn on the "People" setting so that all of your [`identify`](/docs/spec/identify/) calls will be sent to Mixpanel's People feature.
+1. You'll need to make sure you're using [`identify`](/docs/connections/spec/identify/). A Mixpanel track does not create users in Mixpanel People.
+2. Make sure to turn on the "People" setting so that all of your [`identify`](/docs/connections/spec/identify/) calls will be sent to Mixpanel's People feature.
 3. Make sure you have disable the default filter in the Mixpanel People Explore tab.
 
 ## Appendices
 
 ### Autotrack
 
-Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported via Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/sources/website/analytics.js/), [iOS](/docs/sources/mobile/ios/), [Android](/docs/sources/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed via segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
+Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported via Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed via segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
 
 ### IP
 
@@ -427,29 +427,29 @@ analytics.identify(
 
 Push notifications are only available for projects bundling the Segment-Mixpanel SDK.
 
-**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](https://segment.com/docs/sources/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](https://segment.com/docs/sources/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) documentation._
+**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) documentation._
 
 ### In-App Notifications
 
 In-app notifications are only available for projects either bundling the Segment-Mixpanel SDK or using the client-side Web integration. You must set up your in-app notification handlers by calling into native Mixpanel methods.
 
-**Note**: You can read more about how to approach this in our [iOS](https://segment.com/docs/sources/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](https://segment.com/docs/sources/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) documentation.
+**Note**: You can read more about how to approach this in our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) documentation.
 
 ### A/B Testing
 
-**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](https://segment.com/docs/sources/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](https://segment.com/docs/sources/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) documentation.
+**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) documentation.
 
 #### Device Connection Mode (Bundled Mobile SDK)
 
 We support Mixpanel push notifications automatically via the [didRegisterForRemoteNotificationsWithDeviceToken method](/docs/libraries/ios/#how-do-i-use-push-notifications-).
 
-For *in-app* notifications and surveys, you can follow the Mixpanel documentation [here](https://mixpanel.com/help/reference/ios-inapp-messages). You can leverage the native functionality to control when to show an in-app message by following the instructions [here](https://segment.com/docs/sources/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and calling the native Mixpanel methods.
+For *in-app* notifications and surveys, you can follow the Mixpanel documentation [here](https://mixpanel.com/help/reference/ios-inapp-messages). You can leverage the native functionality to control when to show an in-app message by following the instructions [here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and calling the native Mixpanel methods.
 
 #### Cloud Connection Mode (Unbundled/ Serverside)
 
-If you are using Mixpanel server side and you have access to your users' device tokens, you can import into Mixpanel by sending the token via `context.device.token` as described in our [specs](/docs/spec/common/#context) with an `identify` call. We will send the token as Mixpanel's special trait `$ios_devices`. This only works on iOS. In order to use push on Android, you must bundle the Mixpanel SDK.
+If you are using Mixpanel server side and you have access to your users' device tokens, you can import into Mixpanel by sending the token via `context.device.token` as described in our [specs](/docs/connections/spec/common/#context) with an `identify` call. We will send the token as Mixpanel's special trait `$ios_devices`. This only works on iOS. In order to use push on Android, you must bundle the Mixpanel SDK.
 
-For example, using our [node library](/docs/sources/server/node/):
+For example, using our [node library](/docs/connections/sources/catalog/libraries/server/node/):
 
 ```javascript
 analytics.identify({

@@ -8,9 +8,9 @@ The Amazon S3 destination puts the raw logs of the data we're receiving into you
 
 **Note:** The data is copied into your bucket every hour around the :40 minute mark. You may see multiple files over a period of time depending on how much data is copied.
 
-Keep in mind that Amazon S3 works in a different way from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/spec/common/#integrations) does not affect events in the case of Amazon S3.
+Keep in mind that Amazon S3 works in a different way from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/connections/spec/common/#integrations) does not affect events in the case of Amazon S3.
 
-Also keep in mind that Amazon S3 works in a different way from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/spec/common/#integrations) will not have any effect on events in the case of Amazon S3.
+Also keep in mind that Amazon S3 works in a different way from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/connections/spec/common/#integrations) will not have any effect on events in the case of Amazon S3.
 
 The diagram below illustrates how the S3 destination works.
 
@@ -46,7 +46,7 @@ Data from your sources is processed by the Segment Tracking API, which collects 
 
 Specifically, this adds the ability to `s3:PutObject` for the Segment s3-copy user for your bucket.
 
-If you have server-side encryption enabled, please see [additional required setup](https://segment.com/docs/destinations/amazon-s3/#encryption).
+If you have server-side encryption enabled, please see [additional required setup](https://segment.com/docs/connections/warehouses/catalog/amazon-s3/#encryption).
 
 You can edit your bucket policy in the [AWS management console](https://console.aws.amazon.com) by right-clicking the bucket and then selecting the "edit policy" option.
 
@@ -54,7 +54,7 @@ Lastly, enable the Amazon S3 destination in your Segment destination catalog, an
 
 ## Data format
 
-Your logs will be stored as gzipped, newline-separated JSON containing the full call information. For a list of supported properties, you'll want to check out our [Spec](/docs/spec/) docs.
+Your logs will be stored as gzipped, newline-separated JSON containing the full call information. For a list of supported properties, you'll want to check out our [Spec](/docs/connections/spec/) docs.
 
 The logs themselves are binned by day, and named according to the following file format:
 

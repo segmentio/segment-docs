@@ -87,7 +87,7 @@ Once you've installed Node and NPM, run the `--version` commands again to verify
 
 Before you start, make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
 
-Next, install `analytics.js` in your app. For now, you just need to complete [`Step 1: Copy the Snippet`](/docs/sources/website/analytics.js/quickstart/#step-1-copy-the-snippet) from the [`analytics.js` Quickstart Guide](/docs/sources/website/analytics.js/quickstart/).
+Next, install `analytics.js` in your app. For now, you just need to complete [`Step 1: Copy the Snippet`](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet) from the [`analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/).
 
 Once you've got `analytics.js` installed, add Typewriter as a developer dependency in your project:
 
@@ -139,7 +139,7 @@ You're now good to go! To learn more about some of the advanced configuration op
 
 Before you start, make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
 
-Next, install `analytics-node` in your app. For now, you just need to complete [`Step 1: Install the Module`](/docs/sources/server/node/quickstart/#step-1-install-the-module) from the [`analytics-node` Quickstart Guide](/docs/sources/server/node/quickstart).
+Next, install `analytics-node` in your app. For now, you just need to complete [`Step 1: Install the Module`](/docs/connections/sources/catalog/libraries/server/node/quickstart/#step-1-install-the-module) from the [`analytics-node` Quickstart Guide](/docs/connections/sources/catalog/libraries/server/node/quickstart).
 
 Once you have `analytics-node` installed, add Typewriter as a developer dependency in your project:
 
@@ -187,7 +187,7 @@ You're now good to go! To learn more about some of the advanced configuration op
 
 Before you start, make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
 
-Next, install `analytics-ios` in your app. For now, you just need to complete [`Step 1: Install the SDK`](/docs/sources/mobile/ios/quickstart/#step-1-install-the-sdk) from the [`analytics-ios` Quickstart Guide](/docs/sources/mobile/ios/quickstart).
+Next, install `analytics-ios` in your app. For now, you just need to complete [`Step 1: Install the SDK`](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-1-install-the-sdk) from the [`analytics-ios` Quickstart Guide](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart).
 
 Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. To use this wizard, run:
 

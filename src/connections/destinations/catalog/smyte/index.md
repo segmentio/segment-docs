@@ -24,9 +24,9 @@ Smyte understands all of the reserved traits in this event, so send as many as y
 
 ## Track
 
-Smyte is preconfigured to fight fraud if you're using Segment's [e-commerce tracking API](/docs/spec/ecommerce/v2/) and spam, harassment and scams if you're using Segment's [live chat API](/docs/spec/live-chat/).
+Smyte is preconfigured to fight fraud if you're using Segment's [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/) and spam, harassment and scams if you're using Segment's [live chat API](/docs/connections/spec/live-chat/).
 
-As Segment adds more [semantic events](/docs/spec/semantic/), Smyte will be updated to work with them.
+As Segment adds more [semantic events](/docs/connections/spec/semantic/), Smyte will be updated to work with them.
 
 If you're sending custom events, it may take a day or two for Smyte to start working. Your account manager will email you if there are any questions, or feel free to email [support@smyte.com](mailto:support@smyte.com) if there are any issues.
 

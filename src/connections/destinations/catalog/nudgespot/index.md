@@ -17,26 +17,26 @@ Nudgespot is supported on mobile, web browsers and on the server side.
 
 ## Identify
 
-The first thing you'll want to do is to identify your users so Nudgespot knows who they are. You'll use the [`identify`](/docs/spec/identify/) method to accomplish this - identify takes the unique user Id of a user, first name, and any other traits you know about them.
+The first thing you'll want to do is to identify your users so Nudgespot knows who they are. You'll use the [`identify`](/docs/connections/spec/identify/) method to accomplish this - identify takes the unique user Id of a user, first name, and any other traits you know about them.
 
 ## Server Side
 
-When you call [`identify`](/docs/spec/identify/) from any of Nudgespot's server-side libraries, they'll create or update the users in Nudgespot with the traits provided.
+When you call [`identify`](/docs/connections/spec/identify/) from any of Nudgespot's server-side libraries, they'll create or update the users in Nudgespot with the traits provided.
 
 ## Track
 
 You will see the traits appear as properties on any events you track.
 
-When you use Nudgespot, it's important that you [`identify`](/docs/spec/identify/) a user before you call [`track`](/docs/spec/track/). A [`track`](/docs/spec/track/) without an [`identify`](/docs/spec/identify/) won't create a user.
+When you use Nudgespot, it's important that you [`identify`](/docs/connections/spec/identify/) a user before you call [`track`](/docs/connections/spec/track/). A [`track`](/docs/connections/spec/track/) without an [`identify`](/docs/connections/spec/identify/) won't create a user.
 
-Nudgespot is a communication tool you can use to communicate with your users after you [`track`](/docs/spec/track/) their action (or inaction). The more events you [`track`](/docs/spec/track/), the better Nudgespot will work for you.
+Nudgespot is a communication tool you can use to communicate with your users after you [`track`](/docs/connections/spec/track/) their action (or inaction). The more events you [`track`](/docs/connections/spec/track/), the better Nudgespot will work for you.
 
-The Segment [`track`](/docs/spec/track/) method maps events and event properties directly to Nudgespot events and event properties.
+The Segment [`track`](/docs/connections/spec/track/) method maps events and event properties directly to Nudgespot events and event properties.
 
 
 ## Sending Data from Nudgespot
 
-Nudgespot supports sending [email events](/docs/spec/email/) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on. To enable this feature, enter in your Write Key when setting up your account.
+Nudgespot supports sending [email events](/docs/connections/spec/email/) to other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on. To enable this feature, enter in your Write Key when setting up your account.
 
 ![Send email events from Nudgespot](images/h911sko8RG.png)
 

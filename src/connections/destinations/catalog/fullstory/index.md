@@ -17,7 +17,7 @@ This document was last updated on January 25, 2018. If you notice any gaps, outd
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [identify method](https://segment.com/docs/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to [FullStory's](https://help.fullstory.com/develop-js/identify) `FS.identify` method.
+If you haven't had a chance to review our spec, please take a look to understand what the [identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to [FullStory's](https://help.fullstory.com/develop-js/identify) `FS.identify` method.
 
 An example call which does not include a `userId` will send FullStory the value of the `anonymousId` and would look like:
 
@@ -53,7 +53,7 @@ analytics.identify("userId123", {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [track method](https://segment.com/docs/spec/track/) does. Track calls sent to Segment will be automatically passed directly to FullStory via [FullStory's](https://help.fullstory.com/develop-js/363565-fs-event-api-sending-custom-event-data-into-fullstory) `FS.event` method, including all the properties passed in the event.
+If you haven't had a chance to review our spec, please take a look to understand what the [track method](https://segment.com/docs/connections/spec/track/) does. Track calls sent to Segment will be automatically passed directly to FullStory via [FullStory's](https://help.fullstory.com/develop-js/363565-fs-event-api-sending-custom-event-data-into-fullstory) `FS.event` method, including all the properties passed in the event.
 
 An example call would look like:
 

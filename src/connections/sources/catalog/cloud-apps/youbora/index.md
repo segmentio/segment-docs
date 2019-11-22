@@ -5,7 +5,7 @@ private: true
 hidden: true
 ---
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by YOUBORA. For any issues with the source, you may [contact their team](https://nicepeopleatwork.com/contactus).
 

@@ -20,7 +20,7 @@ _**NOTE:** The Candu Destination is currently in beta, which means that they are
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does.
 
 An example call would look like:
 
@@ -33,7 +33,7 @@ Page calls will be sent to Candu as a `page` event. You will be able to use `pag
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/page/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/page/) does.
 
 An example call would look like:
 
@@ -46,7 +46,7 @@ Screen calls will be sent to Candu as a `screen` event.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
 
 An example call would look like:
 
@@ -63,7 +63,7 @@ Additionally, Identify calls will adapt how the customer is using the learning m
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 An example call would look like:
 

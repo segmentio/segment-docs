@@ -18,6 +18,6 @@ Confirm that the contact list id is the same, click save, and then Enable Destin
 
 ## Sending Data from Mailjet
 
-Mailjet supports sending [email events](/docs/spec/email/) to data warehouses and other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.
+Mailjet supports sending [email events](/docs/connections/spec/email/) to data warehouses and other tools on the Segment platform. These events will be sent as `track` calls to the other destinations you've turned on.
 
 You will have the option to enable this feature when you're on the App Connections page. Simply grab Segment's write-key and paste it in the box and save. You will see the Sources come in as `track` events in your debugger.

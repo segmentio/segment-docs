@@ -21,7 +21,7 @@ This document was last updated on March 27, 2018. If you notice any gaps, outdat
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page();
@@ -34,7 +34,7 @@ When you call `page`, we will send that event to ActiveCampaign as a `site track
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('ze8rt1u89', {
@@ -96,7 +96,7 @@ analytics.identify('ze8rt1u89', {
 ```
 In the example these traits are `shirt size`, `state`, and `multiChoice`. They will be shown as `%SHIRT_SIZE%`, `%STATE%`, and `%MULTI_CHOICE%` in ActiveCampaign, but you can record them in lower-case to identify and they will still be populated. The `multiChoice` field applies to listbox or checkbox custom fields in ActiveCampaign (where more than one option value is allowed).
 
-If your custom field has the same name as a [reserved trait](/docs/spec/identify/#traits), that custom field will not be updated.
+If your custom field has the same name as a [reserved trait](/docs/connections/spec/identify/#traits), that custom field will not be updated.
 
 ### Lists
 
@@ -120,7 +120,7 @@ analytics.identify('ze8rt1u89', {
 ```
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked a button', {

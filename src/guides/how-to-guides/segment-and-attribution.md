@@ -17,7 +17,7 @@ Here is a bit more information on what is happening at each of those stages. 
 
 ## **Customer installs your app**
 
-When [lifecycle events](https://segment.com/docs/spec/mobile/#lifecycle-events) are enabled, the **Application Installed** and **Application Opened** events are triggered on the first app open after the app is installed.  Note, if the app is deleted and then later reinstalled on the device, these events will be triggered again on first app open. 
+When [lifecycle events](https://segment.com/docs/connections/spec/mobile/#lifecycle-events) are enabled, the **Application Installed** and **Application Opened** events are triggered on the first app open after the app is installed.  Note, if the app is deleted and then later reinstalled on the device, these events will be triggered again on first app open. 
 
 **Situations where install counts look lower in Segment than in other tools. **
 

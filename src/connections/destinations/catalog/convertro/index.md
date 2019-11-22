@@ -59,4 +59,4 @@ When you call `.track()`, we will send that event to Convertro by setting the `e
 
 ## Application Installed
 
-We will send this automatically collected [`Application Installed` event](/docs/spec/mobile/) to Convertro's `Installs` endpoint.
+We will send this automatically collected [`Application Installed` event](/docs/connections/spec/mobile/) to Convertro's `Installs` endpoint.

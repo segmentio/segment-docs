@@ -91,4 +91,4 @@ from Mailjet.email_delivered
 
 <!--  ## Send data to Mailjet
 
-The Mailjet Source works better when you also connect Mailjet as an destination. With the Mailjet **Destination**, you can use Segment to send Mailjet user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Mailjet? Head on over to our [Mailjet destination docs](/docs/destinations/mailjet/). -->
+The Mailjet Source works better when you also connect Mailjet as an destination. With the Mailjet **Destination**, you can use Segment to send Mailjet user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Mailjet? Head on over to our [Mailjet destination docs](/docs/connections/destinations/catalog/mailjet/). -->

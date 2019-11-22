@@ -34,13 +34,13 @@ This document was last updated on August 14, 2019. If you notice any gaps, outda
   4. Create a new Kinesis Firehose Destination. In the Segment source that you want to connect to your Kinesis Firehose destination, click the "Add Destination" button. Search and select the Kinesis Firehose destination and enter the options: `Mapped Streams`, `Region`, and `Role Address` (important for the `Role Address` is that the role itself immediately follows "role/" e.g. `arn:aws:iam::874699288871:role/example-role`).
 
 ## Page
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```javascript
   analytics.page();
 ```
 
 ## Identify
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example identify call is shown below:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example identify call is shown below:
 ```javascript
 analytics.identify('97980cfea0085', {
   email: 'gibbons@initech.com',
@@ -49,7 +49,7 @@ analytics.identify('97980cfea0085', {
 ```
 
 ## Track
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example identify call is shown below:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example identify call is shown below:
 
 ```javascript
 analytics.track("User Registered", {
@@ -101,7 +101,7 @@ firehose.putRecord({
 Segment will append a newline character to each record to allow for easy downstream parsing.
 
 ## Group
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. An example group call is shown below:
+If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example group call is shown below:
 
 ```js
 analytics.group("0e8c78ea9d9dsasahjg", {

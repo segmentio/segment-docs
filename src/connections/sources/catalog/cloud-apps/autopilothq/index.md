@@ -5,7 +5,7 @@ title: Autopilot Source
 
 Take your company's email analysis to the next level by adding Autopilot as a Source to Segment. We'll automatically collect email events like Email Delivered and Email Opened, forward them to your destinations, and load them into your data warehouse.
 
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by Autopilot. For any issues with the source, you may [contact their team](mailto:support@autopilothq.com).
 
@@ -122,4 +122,4 @@ If there are any issues with how the events are arriving to Segment, please [con
 
 ## Sending data to AutopilotHQ
 
-The AutopilotHQ Source works better when you also connect AutopilotHQ as a Destination. With the AutopilotHQ Destination, you can use Segment to send Identify and Track calls to AutopilotHQ. Want to start sending website, mobile or server data TO AutopilotHQ? Head on over to our [AutopilotHQ destination](https://segment.com/docs/destinations/autopilothq/).
+The AutopilotHQ Source works better when you also connect AutopilotHQ as a Destination. With the AutopilotHQ Destination, you can use Segment to send Identify and Track calls to AutopilotHQ. Want to start sending website, mobile or server data TO AutopilotHQ? Head on over to our [AutopilotHQ destination](https://segment.com/docs/connections/destinations/catalog/autopilothq/).

@@ -9,7 +9,7 @@ It measures opens, clicks, revenue generated, breakdown of generated revenue bas
 
 Ultimately, Klaviyo lets you send personalized newsletters, automates triggered emails, product recommendations, welcome campaigns, order announcements, push notifications and sync your data to facebook custom audiences.
 
-Are you trying to setup Klaviyo as an Event Source to get data into your warehouse or other downstream tools? Go [here](https://segment.com/docs/sources/cloud-apps/klaviyo/).
+Are you trying to setup Klaviyo as an Event Source to get data into your warehouse or other downstream tools? Go [here](https://segment.com/docs/connections/sources/catalog/cloud-apps/klaviyo/).
 
 This document was last updated on September 6, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
@@ -25,7 +25,7 @@ This document was last updated on September 6, 2018. If you notice any gaps, out
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page();
@@ -35,7 +35,7 @@ analytics.page();
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify({
@@ -51,7 +51,7 @@ analytics.identify({
 
 When you call `identify` on analytics.js, we call Klaviyo's `identify` with the `traits` object. We augment the `traits` object to have `traits.$id` be the `userId` since Klaviyo takes the user ID on the `traits` object itself.
 
-**Note:** When sending data to Klaviyo via `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/sources/website/analytics.js/quickstart/#step-1-copy-the-snippet).
+**Note:** When sending data to Klaviyo via `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet).
 
 We will map the following Segment spec'd traits to Klaviyo [special people properties](http://www.klaviyo.com/docs):
 
@@ -131,7 +131,7 @@ You can also choose whether you want to force users to confirm the optin to your
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track({
@@ -173,13 +173,13 @@ The below table shows the parameter mappings in our integration between Order Co
 
 #### Completed Order
 
-Klaviyo supports the `Order Completed` event that is outlined in our [specs](/docs/spec/ecommerce/v2/#order-completed). If you send us a `Order Completed` event, we will send Klaviyo a `Placed Order` event and a `Ordered Product` event for each item listed in the `properties.products` array. We will also attach `customer_properties` with the `userId` set as `$id` for each of those Klaviyo events.
+Klaviyo supports the `Order Completed` event that is outlined in our [specs](/docs/connections/spec/ecommerce/v2/#order-completed). If you send us a `Order Completed` event, we will send Klaviyo a `Placed Order` event and a `Ordered Product` event for each item listed in the `properties.products` array. We will also attach `customer_properties` with the `userId` set as `$id` for each of those Klaviyo events.
 
 While it is not included in our spec for a `Order Completed` event, you can optionally include a `productUrl` and or `imageUrl` as a property of an item inside the `products` array. We will pass those along to Klaviyo as `Product URL` and `Image URL` respectively.
 
 Each auto-generated `Ordered Product` event requires a unique `$event_id`, which Segment automatically generates based on a combination of the `orderId` of the parent `Order Completed` event, and the `productId`, `id` or `sku` of the product itself (in this order). In other words, you must pass either a `productId`, `id` or `sku` to Segment, or Klaviyo will reject your `Ordered Product` events.
 
-An example `Order Completed` event may look like this using the [node.js library](/docs/sources/server/node/):
+An example `Order Completed` event may look like this using the [node.js library](/docs/connections/sources/catalog/libraries/server/node/):
 
 ```
 analytics.track({

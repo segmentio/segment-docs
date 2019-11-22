@@ -23,7 +23,7 @@ Customers can use this endpoint in testing suites or to test payloads against cu
 
 **Endpoint:** https://debug-api.segment.com/v1/<<Segment request type>>
 
-**Authentication:** This endpoint uses the same Authentication protocol outlined in our [HTTP docs](/docs/sources/server/http/#authentication).
+**Authentication:** This endpoint uses the same Authentication protocol outlined in our [HTTP docs](/docs/connections/sources/catalog/libraries/server/http/#authentication).
 
 ### Enable debug mode with Analytics.js
 
@@ -145,7 +145,7 @@ Example response:
 }
 ```
 
-For good measure, let's send a couple of events to our new Source. Note that `event` and `userID` are required. See the [Tracking API spec](https://segment.com/docs/sources/server/http/#track) for more details.
+For good measure, let's send a couple of events to our new Source. Note that `event` and `userID` are required. See the [Tracking API spec](https://segment.com/docs/connections/sources/catalog/libraries/server/http/#track) for more details.
 
 ```bash
 $ WRITE_KEY=LxKXARX9IuqR9v0gn7y2Fw1iHi0ephbF

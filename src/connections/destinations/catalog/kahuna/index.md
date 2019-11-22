@@ -40,7 +40,7 @@ compile ('com.kahuna.integration.android.segment:kahuna:+') {
 }
 ```
 
-Then, bundle Kahuna during your Segment Analytics initialization, with more details [here](https://segment.com/docs/sources/mobile/android/#bundling-integrations):
+Then, bundle Kahuna during your Segment Analytics initialization, with more details [here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#bundling-integrations):
 
 ```java
 Analytics analytics = new Analytics.Builder(this, "SEGMENT_KEY")
@@ -56,7 +56,7 @@ Add the Kahuna pod dependency:
 pod "Segment-Kahuna
 ```
 
-Then, bundle Kahuna during your Segment Analytics initialization, with more details [here](https://segment.com/docs/sources/mobile/ios/#bundling-integrations):
+Then, bundle Kahuna during your Segment Analytics initialization, with more details [here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#bundling-integrations):
 
 ```
 #import <Segment-Kahuna/SEGKahunaIntegrationFactory.h>
@@ -77,7 +77,7 @@ To leverage the Push Notifications and In-App functionality provided by Kahuna, 
 
 ## Reset
 
-If your app supports the ability for a user to logout and login with a new identity, then you'll need to call [`reset`](/docs/sources/mobile/ios/#reset) in your mobile app. Here we will call Kahuna's logout implementation to ensure the user information remains consistent.
+If your app supports the ability for a user to logout and login with a new identity, then you'll need to call [`reset`](/docs/connections/sources/catalog/libraries/mobile/ios/#reset) in your mobile app. Here we will call Kahuna's logout implementation to ensure the user information remains consistent.
 
 ## Server-Side
 
@@ -96,17 +96,17 @@ If you are using the server side destination for Kahuna, we recommend you set th
 
 Our server-side destination supports the ability to register user information with Kahuna through our identify calls. This will allow you to organize and segment your Kahuna campaigns according to the user information that you have sent.
 
-The first thing you'll want to do is to [`identify`](/docs/spec/identify/) a user with any relevant information as soon as they launch the app. You record this with our [`identify`](/docs/spec/identify/) method.
+The first thing you'll want to do is to [`identify`](/docs/connections/spec/identify/) a user with any relevant information as soon as they launch the app. You record this with our [`identify`](/docs/connections/spec/identify/) method.
 
 `Identify` takes the `userId` of a user and any `traits` you know about them.
 
-When you call [`identify`](/docs/spec/identify/), we'll set two **Kahuna Credentials**, `user_id` and `email`. Any other traits will instead be sent to Kahuna as `user_info`, which are **User Attributes** in Kahuna.
+When you call [`identify`](/docs/connections/spec/identify/), we'll set two **Kahuna Credentials**, `user_id` and `email`. Any other traits will instead be sent to Kahuna as `user_info`, which are **User Attributes** in Kahuna.
 
 We will also send any relevant device information such as device token, app name and version, OS and browser name, etc.
 
 ## Track
 
-You can also use [`track`](/docs/spec/track/) calls to send event data using Kahuna's `Intelligent Events`.
+You can also use [`track`](/docs/connections/spec/track/) calls to send event data using Kahuna's `Intelligent Events`.
 
 Whenever you call track, we'll send an event to Kahuna with the event name and a unix timestamp. We will also pass through any properties of the event. If `properties.quantity` and `properties.revenue` are set, then we will send the event name as well as count and value. For value, we will first multiply `properties.revenue` by `100` before sending to Kahuna since Kahuna tracks value in cents not dollars.
 
@@ -114,11 +114,11 @@ Whenever you call track, we'll send an event to Kahuna with the event name and a
 
 ## Screen
 
-When you call [`screen`](/docs/spec/screen/) in your mobile app, we send a screen view to Kahuna for mobile apps if trackAllPages is enabled for your Kahuna destination. If enabled, we track a Kahuna event with the format "Viewed `screen.name` Screen". If you want to enable sending `screen`events to Kahuna, simply check the box for: Track All Pages from your Segment Kahuna settings page.
+When you call [`screen`](/docs/connections/spec/screen/) in your mobile app, we send a screen view to Kahuna for mobile apps if trackAllPages is enabled for your Kahuna destination. If enabled, we track a Kahuna event with the format "Viewed `screen.name` Screen". If you want to enable sending `screen`events to Kahuna, simply check the box for: Track All Pages from your Segment Kahuna settings page.
 
 ## E-Commerce
 
-Segment supports a deeper Kahuna destination with e-commerce tracking in our **mobile** SDKs (NOT in server side). All you have to do is adhere to our [`e-commerce tracking API`](/docs/spec/ecommerce/v2/) and we'll track Kahuna e-commerce specific user attributes.
+Segment supports a deeper Kahuna destination with e-commerce tracking in our **mobile** SDKs (NOT in server side). All you have to do is adhere to our [`e-commerce tracking API`](/docs/connections/spec/ecommerce/v2/) and we'll track Kahuna e-commerce specific user attributes.
 
 #### Viewed Product Category
 

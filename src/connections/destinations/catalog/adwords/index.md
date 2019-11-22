@@ -9,13 +9,13 @@ Our Google Ads (Classic) destination code is open-source on GitHub if you want t
 
 ### Getting Started
 
-**Please note:** Google released a new version of Google Ads that uses [a Global Site Tag (or Gtag)](https://support.google.com/adwords/answer/7548399?hl=en). Segment supports this using a different version of the destination - see the documentation for [Google Ads (Gtag)](/docs/destinations/google-adwords-new/) for more details.
+**Please note:** Google released a new version of Google Ads that uses [a Global Site Tag (or Gtag)](https://support.google.com/adwords/answer/7548399?hl=en). Segment supports this using a different version of the destination - see the documentation for [Google Ads (Gtag)](/docs/connections/destinations/catalog/google-adwords-new/) for more details.
 
 With Segment your events can be used to fire a Google Ads conversion pixel from your website **in client-side javascript.**
 It can also be used to trigger Google Ads (Classic) conversion from your mobile app via **Server to Server** destination, so you don't have to include the SDK in your app. Our server to server connection requires mobile device specific details to forward the events to Google Ads (Classic). Google Ads (Classic) **does not work with any server-side libraries**. Make sure when you're setting up your Google Ads (Classic) conversions that you choose the appropriate tracking method.
 
 From your Segment Destinations Catalog click Google Ads (Classic).
-You'll need to enter your Conversion ID from your Google Ads (Classic) account first. Next, enter the name of the event exactly as it appears in your [`track`](/docs/spec/track) call on the left and map it to your Google Ads (Classic) conversion's `google_conversion_label` on the right.
+You'll need to enter your Conversion ID from your Google Ads (Classic) account first. Next, enter the name of the event exactly as it appears in your [`track`](/docs/connections/spec/track) call on the left and map it to your Google Ads (Classic) conversion's `google_conversion_label` on the right.
 
 
 ### Conversion ID
@@ -57,7 +57,7 @@ Keep in mind that the conversion data must be processed by Google before it show
 
 The most common reason for Google Ads (Classic) conversion pixels to fire inconsistently is that the page redirects or reloads before the pixel has time to be loaded on the page. Make sure your page does not redirect or reload for at least 300ms after the conversion event happens.
 
-We recommend using our `trackLink` or `trackForm` helpers to delay the page redirect. [Documentation here](/docs/sources/website/analytics.js#track-link).
+We recommend using our `trackLink` or `trackForm` helpers to delay the page redirect. [Documentation here](/docs/connections/sources/catalog/libraries/website/analytics.js#track-link).
 
 ## Mobile & Server
 
@@ -67,13 +67,13 @@ Our server-to-server integration with Google Ads (Classic) integrates with the [
 
 1) App Event Mappings
 
-Google has replaced the concept of associating conversion events with **conversion ids** and **conversion labels**. Instead, conversion events are simply associated with their event name. Once you've enabled the new integration in your settings, you can begin creating and tracking new conversion events in Google Ads (Classic) that are tied to your Segment `track` event names and ignore the legacy [Event Mappings](/docs/destinations/adwords/#event-mappings) configuration step.
+Google has replaced the concept of associating conversion events with **conversion ids** and **conversion labels**. Instead, conversion events are simply associated with their event name. Once you've enabled the new integration in your settings, you can begin creating and tracking new conversion events in Google Ads (Classic) that are tied to your Segment `track` event names and ignore the legacy [Event Mappings](/docs/connections/destinations/catalog/adwords/#event-mappings) configuration step.
 
 2) App Event Types
 
-The API has a new concept of **event types**. Each of these types are meant to be associated with common in-app actions that a user could take (app installs, product views, etc.). This is the same concept as our [Semantic Event Spec](https://segment.com/docs/spec/semantic/). The event type mappings we support are outlined in the sections below.
+The API has a new concept of **event types**. Each of these types are meant to be associated with common in-app actions that a user could take (app installs, product views, etc.). This is the same concept as our [Semantic Event Spec](https://segment.com/docs/connections/spec/semantic/). The event type mappings we support are outlined in the sections below.
 
-**Important:** if you have migrated from a legacy AdWords account to a new one, Google Ads (Classic) will automatically migrate your existing conversion events to your new account. We will continue to respect these event mappings even if they share the same event names as the new "spec'd" event mappings outlined below and ignore the new **event type** mapping. This is to ensure there is no disruption in your data. If you wish to bypass this, you simply need to delete the event mapping in your [settings](/docs/destinations/Google Ads (Classic)/#event-mappings).
+**Important:** if you have migrated from a legacy AdWords account to a new one, Google Ads (Classic) will automatically migrate your existing conversion events to your new account. We will continue to respect these event mappings even if they share the same event names as the new "spec'd" event mappings outlined below and ignore the new **event type** mapping. This is to ensure there is no disruption in your data. If you wish to bypass this, you simply need to delete the event mapping in your [settings](/docs/connections/destinations/catalog/google-ads-classic/#event-mappings).
 
 3) Authorization/Authentication
 
@@ -94,7 +94,7 @@ Once this step is complete, you should see a screen that looks like this showing
 
 #### Add your Link ID as an Integration Setting
 
-Once you have a Link ID, you need to add them to your Google Ads (Classic) [integration settings](/docs/destinations/adwords/#settings) in your Segment account. **Please also ensure the API version setting is set to 2.**
+Once you have a Link ID, you need to add them to your Google Ads (Classic) [integration settings](/docs/connections/destinations/catalog/adwords/#settings) in your Segment account. **Please also ensure the API version setting is set to 2.**
 
 ### Track
 All `track` events are by default sent to your Google Ads (Classic) account and from there, you can choose which ones you want to designate as **Conversion Events**. All events sent to Google Ads (Classic) require an **event type** specification. This is an enumerated list of nine potential values:
@@ -109,15 +109,15 @@ All `track` events are by default sent to your Google Ads (Classic) account and 
  8. ecommerce_purchase
  9. custom
 
- We integrate with these event types via the use of our [Semantic Event Spec](https://segment.com/docs/spec/semantic/). Each individual mapping we support is documented in the sections below. Any event we recieve that is not a mapped semantic event will be sent to Google Ads (Classic) as a `custom` event type.
+ We integrate with these event types via the use of our [Semantic Event Spec](https://segment.com/docs/connections/spec/semantic/). Each individual mapping we support is documented in the sections below. Any event we recieve that is not a mapped semantic event will be sent to Google Ads (Classic) as a `custom` event type.
 
 ### Application Installed
 
-Our [Application Installed](/docs/spec/mobile/#application-installed) event is sent to Google Ads (Classic) as a `first_open` event type. This event is used to attribute successful app installs.
+Our [Application Installed](/docs/connections/spec/mobile/#application-installed) event is sent to Google Ads (Classic) as a `first_open` event type. This event is used to attribute successful app installs.
 
 ### Order Completed
 
-Our [Order Completed](/docs/spec/ecommerce/v2/#order-completed) event is sent to Google Ads (Classic) as a `ecommerce_purchase` event type. This event is used to attribute successful revenue generating conversions.
+Our [Order Completed](/docs/connections/spec/ecommerce/v2/#order-completed) event is sent to Google Ads (Classic) as a `ecommerce_purchase` event type. This event is used to attribute successful revenue generating conversions.
 
 **Important:** if you are tracking a successful purchase from an App Store (either the iOS App Store or the Google Play Store) please be sure to set the `affiliation` property of the event to either `App Store` (for iOS) or `Google Store` (for Android). If these are present, we will properly map the event as an `in_app_purchase` event type. Here is an example for Android:
 
@@ -144,24 +144,24 @@ analytics.track('Order Completed', {
 
 ### Product List Viewed
 
-Our [Product List Viewed](/docs/spec/ecommerce/v2/#product-list-viewed) event is sent to Google Ads (Classic) as a `view_item_list` event type. This event is used to attribute views of a product list page.
+Our [Product List Viewed](/docs/connections/spec/ecommerce/v2/#product-list-viewed) event is sent to Google Ads (Classic) as a `view_item_list` event type. This event is used to attribute views of a product list page.
 
 ### Product Added
 
-Our [Product Added](/docs/spec/ecommerce/v2/#product-added) event is sent to Google Ads (Classic) as an `add_to_cart` event type. This event is used to attribute additions of a product to a user's shopping cart.
+Our [Product Added](/docs/connections/spec/ecommerce/v2/#product-added) event is sent to Google Ads (Classic) as an `add_to_cart` event type. This event is used to attribute additions of a product to a user's shopping cart.
 
 ### Products Searched
 
-Our [Products Searched](/docs/spec/ecommerce/v2/#products-searched) event is sent to Google Ads (Classic) as a `view_search_results` event type. This event is used to attribute product searches.
+Our [Products Searched](/docs/connections/spec/ecommerce/v2/#products-searched) event is sent to Google Ads (Classic) as a `view_search_results` event type. This event is used to attribute product searches.
 
 ### Product Viewed
 
-Our [Products Viewed](/docs/spec/ecommerce/v2/#product-viewed) event is sent to Google Ads (Classic) as a `view_item` event type. This event is used to attribute views of a specific product page.
+Our [Products Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) event is sent to Google Ads (Classic) as a `view_item` event type. This event is used to attribute views of a specific product page.
 
 ### Other Features
 
 #### Attribution Postbacks
-If a conversion event is successfully attributed to an active campaign, Google Ads (Classic) will respond with information about the campaign. If the conversion event was an `Application Installed` event (used to track successful app installs), we will map the attribution information to an [`Install Attributed`](/docs/spec/mobile/#install-attributed) event and send it back to your Segment source to get proliferated out to your other downstream integrations. You can enable this functionality in your integration settings.
+If a conversion event is successfully attributed to an active campaign, Google Ads (Classic) will respond with information about the campaign. If the conversion event was an `Application Installed` event (used to track successful app installs), we will map the attribution information to an [`Install Attributed`](/docs/connections/spec/mobile/#install-attributed) event and send it back to your Segment source to get proliferated out to your other downstream integrations. You can enable this functionality in your integration settings.
 
 #### Tracking Value and Currency
 To track the monetary value of a conversion, please ensure your event contains a `.revenue` property with a Number designating the total value of the conversion. You may also pass a three letter `currency` property (ex. USD, EUR, etc...).
