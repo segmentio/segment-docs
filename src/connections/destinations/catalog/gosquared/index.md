@@ -27,14 +27,14 @@ To track data via Segment's mobile and server-side sources, you will need to ent
 
 ## Page
 
-When you call [`page`](/docs/spec/page/), we call GoSquared's [`track`](https://www.gosquared.com/docs/tracking/api/js#pageviews) to track a pageview. By default the Segment JavaScript snippet includes a call to [`page`](/docs/spec/page/) so you don't need to add it manually.
+When you call [`page`](/docs/connections/spec/page/), we call GoSquared's [`track`](https://www.gosquared.com/docs/tracking/api/js#pageviews) to track a pageview. By default the Segment JavaScript snippet includes a call to [`page`](/docs/connections/spec/page/) so you don't need to add it manually.
 
 Page calls will be tracked from any Segment library, but GoSquared's real-time analytics will be most accurate using front-end website tracking.
 
 
 ## Identify
 
-When you call [`identify`](/docs/spec/identify/), we call GoSquared's [`identify`](https://www.gosquared.com/docs/tracking/api/js#identify). Once identified with a `userId`, that person (along with historical browsing information from before they were identified) will be visible and queryable in [GoSquared People Analytics](https://www.gosquared.com/software/people).
+When you call [`identify`](/docs/connections/spec/identify/), we call GoSquared's [`identify`](https://www.gosquared.com/docs/tracking/api/js#identify). Once identified with a `userId`, that person (along with historical browsing information from before they were identified) will be visible and queryable in [GoSquared People Analytics](https://www.gosquared.com/software/people).
 
 GoSquared expects a slightly different set of traits from us, so we start by transforming the traits to match their format.
 
@@ -50,17 +50,17 @@ GoSquared recognises certain traits as "special" and requires all other traits t
 
 ## Track
 
-When you call [`track`](/docs/spec/track/), we call GoSquared's [`event`](https://www.gosquared.com/docs/tracking/api/js#events) with the same arguments.
+When you call [`track`](/docs/connections/spec/track/), we call GoSquared's [`event`](https://www.gosquared.com/docs/tracking/api/js#events) with the same arguments.
 
 
 ## Screen
 
-GoSquared supports the [`screen`](/docs/spec/screen/) method by converting it into an event, with an event name of `"Screen: " + name`.
+GoSquared supports the [`screen`](/docs/connections/spec/screen/) method by converting it into an event, with an event name of `"Screen: " + name`.
 
 ## Group
 
-GoSquared converts the [`group`](/docs/spec/group/) method into an identify call, to set the company details for a user. Only one company/group is supported per user.
+GoSquared converts the [`group`](/docs/connections/spec/group/) method into an identify call, to set the company details for a user. Only one company/group is supported per user.
 
 ## Ecommerce
 
-GoSquared supports our [Ecommerce tracking API](/docs/spec/ecommerce/v2/#order-completed), so the `Order Completed` event will be tracked as a [GoSquared Transaction](https://www.gosquared.com/docs/tracking/api/js#transactions).
+GoSquared supports our [Ecommerce tracking API](/docs/connections/spec/ecommerce/v2/#order-completed), so the `Order Completed` event will be tracked as a [GoSquared Transaction](https://www.gosquared.com/docs/tracking/api/js#transactions).

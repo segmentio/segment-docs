@@ -119,7 +119,7 @@ $ curl \
 
 > Analytics.js
 >
-> The Javascript source requires that you add analytics.js to your website to collect data. See the [Quickstart: Analytics.js](https://segment.com/docs/sources/website/analytics.js/quickstart/) guide for full details.
+> The Javascript source requires that you add analytics.js to your website to collect data. See the [Quickstart: Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/) guide for full details.
 
 ## Create a Google Analytics Destination
 
@@ -173,7 +173,7 @@ $ curl \
 
 ## Update Google Analytics Settings
 
-Over time we may want to modify the Google Analytics destination settings. First, the destination was created as disabled by default, so we can use the API to enable it. We can also toggle other settings like "[server side identify](https://segment.com/docs/destinations/google-analytics/#server-side-identify)". Note the required `update_mask` field that explicitly specifies the fields you want to update.
+Over time we may want to modify the Google Analytics destination settings. First, the destination was created as disabled by default, so we can use the API to enable it. We can also toggle other settings like "[server side identify](https://segment.com/docs/connections/destinations/catalog/google-analytics/#server-side-identify)". Note the required `update_mask` field that explicitly specifies the fields you want to update.
 
 ```shell
 $ curl -i \
@@ -227,13 +227,13 @@ $ curl -i \
 }
 ```
 
-See the [Google Analytics Destination](https://segment.com/docs/destinations/google-analytics/) reference for all the settings.
+See the [Google Analytics Destination](https://segment.com/docs/connections/destinations/catalog/google-analytics/) reference for all the settings.
 
 ## Send Sample Events
 
 We can also test our source and destination by interacting with the Tracking API from the command line.
 
-Let's send an events to our new source. Note that `userID` is required and the `name` and `url` properties are expected by Google Analytics and other website tools. See the [Page API spec](https://segment.com/docs/sources/server/http/#page) for more details.
+Let's send an events to our new source. Note that `userID` is required and the `name` and `url` properties are expected by Google Analytics and other website tools. See the [Page API spec](https://segment.com/docs/connections/sources/catalog/libraries/server/http/#page) for more details.
 
 ```shell
 $ WRITE_KEY=LxKXARX9IuqR9v0gn7y2Fw1iHi0ephbF

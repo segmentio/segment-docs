@@ -25,7 +25,7 @@ This document was last updated on Aug 2, 2019. If you notice any gaps, outdated 
 Don't miss out the [The Configuration Checklist - Segment.com](https://www.gainsight.com/product-experience/) in Gainsight PX!
 
 ## Identify
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
 
 An example identify call is shown below:
 ```
@@ -44,7 +44,7 @@ Segment must be running on all of pages of your web application or site that you
 Your Segment integration must include use of the identify call (identifies the user & group/account).
 
 ## Track
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 An example track call is shown below:
 ```
@@ -57,7 +57,7 @@ analytics.track("Form submitted", {
 When you track an event, we will send the event name together with the properties included in the track call. In Gainsight PX you will be able to create new funnels based on the custom events and properties received from Segment. You can also add "custom events" in the features created in the "Product Mapper" view.
 
 ## Group
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
 
 An example group call is shown below:
 ```

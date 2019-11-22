@@ -19,7 +19,7 @@ For ecommerce events,(i.e. `purchase`) it is important that the `.track()` call 
 - `orderId`
 - `products` array, which contain objects that have `sku`, `quantity`, and `price`
 
-More information about the semantic naming of our [ecommerce events](/docs/spec/ecommerce/v2/).
+More information about the semantic naming of our [ecommerce events](/docs/connections/spec/ecommerce/v2/).
 
 If the folks at Nanigans ask you pass through any custom parameters, you can map the Segment event properties to arbitrary querystring parameters as well. **Note:** This is currently only supported via the server-side destination, which is used for our mobile and server-side libraries.
 

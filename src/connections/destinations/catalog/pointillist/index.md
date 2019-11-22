@@ -11,15 +11,15 @@ Once the Segment library is integrated with your server code, site or app, toggl
 To set up your Pointillist account and receive your API key, please click on this link and follow the instructions on the screen. For any additional questions, get in touch with a Pointillist customer representative at customer-success@pointillist.com.
 
 
-*Note: Pointillist accepts server-side, client-side as well as mobile app-data, so you can use either or all of our libraries ([browser](/docs/sources/website/analytics.js), [mobile](/docs/sources/mobile/android) and [server](/docs/sources/server/java/)) to send data to Pointillist.*
+*Note: Pointillist accepts server-side, client-side as well as mobile app-data, so you can use either or all of our libraries ([browser](/docs/connections/sources/catalog/libraries/website/analytics.js), [mobile](/docs/connections/sources/catalog/libraries/mobile/android) and [server](/docs/connections/sources/catalog/libraries/server/java/)) to send data to Pointillist.*
 
 ## Identify
 
-When you call [identify](/docs/spec/identify), we'll log an `identify` event with Pointillist and set `userId` and `anonymousId` as Actor Identifiers. Pointillist will then automatically associate all events tagged previously with the *anonymousId* to the provided *userId*. We will also associate any special traits that you provide such as name, email, and other custom traits with Labels and Numbers so that you can filter or create metrics.
+When you call [identify](/docs/connections/spec/identify), we'll log an `identify` event with Pointillist and set `userId` and `anonymousId` as Actor Identifiers. Pointillist will then automatically associate all events tagged previously with the *anonymousId* to the provided *userId*. We will also associate any special traits that you provide such as name, email, and other custom traits with Labels and Numbers so that you can filter or create metrics.
 
 ## Track
 
-When you call [track](/docs/spec/track), we'll log an event with Pointillist with `userId` and / or `anonymousId` as Actor Identifier and set `event` as Event Type. The table below shows mappings for other attributes. You'll pass the key on the left into Segment and we will transform it to the key on the right in Pointillist.
+When you call [track](/docs/connections/spec/track), we'll log an event with Pointillist with `userId` and / or `anonymousId` as Actor Identifier and set `event` as Event Type. The table below shows mappings for other attributes. You'll pass the key on the left into Segment and we will transform it to the key on the right in Pointillist.
 
 Segment Parameter | Pointillist Parameter
 ------------ | -------------

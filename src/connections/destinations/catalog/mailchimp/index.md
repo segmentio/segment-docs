@@ -2,7 +2,7 @@
 rewrite: true
 title: Mailchimp Destination
 ---
-[Mailchimp](https://mailchimp.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides email marketing automation for e-commerce businesses. With Segment you can add people to your MailChimp list with a single [`identify`](/docs/spec/identify/) call.
+[Mailchimp](https://mailchimp.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides email marketing automation for e-commerce businesses. With Segment you can add people to your MailChimp list with a single [`identify`](/docs/connections/spec/identify/) call.
 
 This document was last updated on May 08, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please let us know!
 
@@ -22,7 +22,7 @@ This document was last updated on May 08, 2018. If you notice any gaps, out-date
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId12345', {
@@ -32,7 +32,7 @@ analytics.identify('userId12345', {
 });
 ```
 
-Every time you call [identify](/docs/spec/identify/) with an email address included, we will:
+Every time you call [identify](/docs/connections/spec/identify/) with an email address included, we will:
 
 1. First ask Mailchimp if that email exists and what their subscriber status is for the `listId` you have provided in the destination settings.
 
@@ -42,7 +42,7 @@ Every time you call [identify](/docs/spec/identify/) with an email address inclu
 
 So you no longer have to worry about the `identify` call resubscribing users unintentionally!
 
-Segment recognizes `firstName`, `lastName` and `email` as [special traits](/docs/spec/identify#special-traits), so we will translate those for you to match the Mailchimp accepted field names. Mailchimp includes these fields by default when you create a list.
+Segment recognizes `firstName`, `lastName` and `email` as [special traits](/docs/connections/spec/identify#special-traits), so we will translate those for you to match the Mailchimp accepted field names. Mailchimp includes these fields by default when you create a list.
 
 ### Recording Custom User Traits
 

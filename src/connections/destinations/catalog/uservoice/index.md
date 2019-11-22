@@ -21,7 +21,7 @@ When UserVoice is enabled in Segment, our CDN will update within 45 minutes, and
 ## Identify
 
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('ze8rt1u89', {
@@ -41,7 +41,7 @@ When you call `identify` the `userId` and `traits` included in the call will be 
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {
@@ -57,7 +57,7 @@ When you call `group` the `traits` included in the call will be set to the curre
 
 ## Alias
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/spec/alias/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
 
 ```
 analytics.alias("507f191e81");

@@ -104,4 +104,4 @@ from activecampaign.email_delivered
 
 ## Send data to ActiveCampaign
 
-The ActiveCampaign Source works better when you also connect ActiveCampaign as an destination. With the ActiveCampaign **Destination**, you can use Segment to send ActiveCampaign user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** ActiveCampaign? Head on over to our [ActiveCampaign destination docs](/docs/destinations/activecampaign/).
+The ActiveCampaign Source works better when you also connect ActiveCampaign as an destination. With the ActiveCampaign **Destination**, you can use Segment to send ActiveCampaign user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** ActiveCampaign? Head on over to our [ActiveCampaign destination docs](/docs/connections/destinations/catalog/activecampaign/).

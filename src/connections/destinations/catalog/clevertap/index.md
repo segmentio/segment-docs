@@ -32,7 +32,7 @@ When you `track` an event, we will send that event to CleverTap as a custom even
 
 ### Order Completed
 
-When you `track` an event via the server-side destination with the name `Order Completed` using the [e-commerce tracking API](https://segment.com/docs/spec/ecommerce/v2/), we will map that event to CleverTap's [Charged](https://support.clevertap.com/docs/working-with-events.html#recording-customer-purchases) event.
+When you `track` an event via the server-side destination with the name `Order Completed` using the [e-commerce tracking API](https://segment.com/docs/connections/spec/ecommerce/v2/), we will map that event to CleverTap's [Charged](https://support.clevertap.com/docs/working-with-events.html#recording-customer-purchases) event.
 
 ## Page
 

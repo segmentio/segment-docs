@@ -3,7 +3,7 @@ title: 'Spec: Email Events'
 hidden: true
 ---
 
-This guide explains what data should be sent to Segment *from* Email tools and hence is targeted to partners who send Email data back into Segment rather than targeted to customers themselves. The [semantic events](/docs/spec/semantic) detailed below represent the ideal for Email events; not every Email tool supports all of these events or all of their properties.
+This guide explains what data should be sent to Segment *from* Email tools and hence is targeted to partners who send Email data back into Segment rather than targeted to customers themselves. The [semantic events](/docs/connections/spec/semantic) detailed below represent the ideal for Email events; not every Email tool supports all of these events or all of their properties.
 
 ## Overview
 

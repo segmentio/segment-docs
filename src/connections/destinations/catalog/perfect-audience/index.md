@@ -22,7 +22,7 @@ Perfect Audience is only supported on the client-side.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("My Custom Event", {
@@ -40,7 +40,7 @@ Perfect Audience requires that you define your goals ahead of time in their inte
 
 ### Completed Order
 
-If you're using our [ecommerce spec](/docs/spec/ecommerce/v2/) and passing the `Order Completed` event the `orderId` and `total` will be passsed along to Perfect Audience.
+If you're using our [ecommerce spec](/docs/connections/spec/ecommerce/v2/) and passing the `Order Completed` event the `orderId` and `total` will be passsed along to Perfect Audience.
 
 ## Troubleshooting
 

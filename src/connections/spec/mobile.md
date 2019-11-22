@@ -2,13 +2,13 @@
 title: 'Native Mobile Spec'
 ---
 
-One of the core components of the Segment [Spec](/docs/spec/) is the [`track`](/docs/spec/track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to `screen` calls, you'll want to send **specific event names** that we recognize semantically. That way, we can transform them correctly before sending them off to downstream destinations.
+One of the core components of the Segment [Spec](/docs/connections/spec/) is the [`track`](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to `screen` calls, you'll want to send **specific event names** that we recognize semantically. That way, we can transform them correctly before sending them off to downstream destinations.
 
 By standardizing the events that comprise the core **mobile application lifecycle** and associated **mobile campaign and referral events**, Segment and our partners can, wherever possible, automatically collect and forward these events on your behalf and build downstream destinations which take full advantage of the semantic meaning associated with these events and their properties.
 
 **Note:** If you're already collecting similar events, we recommend migrating to these event names so that you can take advantage of available features in our destinations which depend on the spec as they become available.
 
-These events pair nicely with our [ecommerce spec](/docs/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like Tune and Kochava.
+These events pair nicely with our [ecommerce spec](/docs/connections/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like Tune and Kochava.
 
 **Note** Per our [Privacy Policy](https://segment.com/docs/legal/privacy/#sensitive-personal-information) and applicable terms, please don't send us sensitive personal information about your users. Certain features from Segment and our partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
 
@@ -39,7 +39,7 @@ Additionally, though they're not formally part of the Native Mobile Spec, we als
 
 ## Lifecycle Events
 
-Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, many of which we can capture automatically in the latest versions of our SDKs, allow you to get a picture of top-line metrics like DAUs, MAUs, Screen Views per session, etc. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in our [iOS](https://segment.com/docs/sources/mobile/ios/#step-1-install-the-sdk) and [Android](https://segment.com/docs/sources/mobile/android/quickstart/#step-2-initialize-the-client) library docs.
+Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, many of which we can capture automatically in the latest versions of our SDKs, allow you to get a picture of top-line metrics like DAUs, MAUs, Screen Views per session, etc. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-1-install-the-sdk) and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-2-initialize-the-client) library docs.
 
 The following events will be tracked automatically when lifecycle events are enabled:
 
@@ -212,7 +212,7 @@ When Segment or an integrated partner can discern the source of an install, we'l
 
 ### Push Notification Received
 
-This event can be sent when a push notification is received in the app. It can be automatically enabled on [iOS](/sources/mobile/ios/#automatic-push-notification-tracking).
+This event can be sent when a push notification is received in the app. It can be automatically enabled on [iOS](/sources/catalog/libraries/mobile/ios/#automatic-push-notification-tracking).
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Push Notification Received", "properties": { "campaign": { "medium": "Push", "source": "Vendor Name", "name": "Referral Flow", "content": "Your friend invited you to play a match."}}}'}}} {% endcomment %}
 
@@ -241,7 +241,7 @@ This event can be sent when a push notification is received in the app. It can b
 
 ### Push Notification Tapped
 
-This event can be sent when a user taps on a push notification associated with your app. It can be automatically enabled on [iOS](/sources/mobile/ios/#automatic-push-notification-tracking).
+This event can be sent when a user taps on a push notification associated with your app. It can be automatically enabled on [iOS](/sources/catalog/libraries/mobile/ios/#automatic-push-notification-tracking).
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Push Notification Tapped", "properties": {"action": "Accept", "campaign": { "medium": "Push", "source": "Vendor Name", "name": "Referral Flow", "content": "Your friend invited you to play a match." }}}'}}} {% endcomment %}
 
@@ -308,7 +308,7 @@ When your application is opened via a referring link, Segment or your packaged d
 
 This event is fired *in addition* to the associated `Application Opened` event.
 
-Our [iOS](/docs/sources/mobile/ios/#automatic-deep-link-tracking) SDK can collect this event automatically if configured to do so.
+Our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#automatic-deep-link-tracking) SDK can collect this event automatically if configured to do so.
 
 {% comment %} api-example '{"userId": "019mr8mf4r", "action": "track", "event": "Deep Link Opened", "properties": {"provider": "Branch Metrics", "url": "app://landing" }}'}}} {% endcomment %}
 

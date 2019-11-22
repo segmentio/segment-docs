@@ -11,7 +11,7 @@ With the Segment Salesforce Marketing Cloud Source, you can extract data from Ma
 to a data warehouse such as Redshift or Big Query with ease, avoiding having to build your own expensive custom solutions.
 
 If you are trying to setup Salesforce Marketing Cloud as a destination to receive data from Segment, check out
-[Salesforce Marketing Cloud Destination](https://segment.com/docs/destinations/salesforce-marketing-cloud/).
+[Salesforce Marketing Cloud Destination](https://segment.com/docs/connections/destinations/catalog/salesforce-marketing-cloud/).
 
 _**NOTE:** The Salesforce Marketing Cloud Source is currently in beta. This means that component names and functionality
            may change. For all feedback, please [send us a note](https://segment.com/help/contact).

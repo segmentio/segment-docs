@@ -23,7 +23,7 @@ This document was last updated on May 8, 2018. If you notice any gaps, outdated 
 
 ### iOS
 
-When using our [iOS library](/docs/sources/mobile/ios/), make sure you are using the AdSupport Framework. You can verify this by checking if `context.device.advertisingId` (formerly `context.device.idfa`) is getting set in your source's debugger (check raw format).
+When using our [iOS library](/docs/connections/sources/catalog/libraries/mobile/ios/), make sure you are using the AdSupport Framework. You can verify this by checking if `context.device.advertisingId` (formerly `context.device.idfa`) is getting set in your source's debugger (check raw format).
 
 ### Xamarin
 
@@ -61,7 +61,7 @@ AdvertisingIdClient.Info adInfo = AdvertisingIdClient.GetAdvertisingIdInfo(this.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify({
@@ -79,7 +79,7 @@ If your app has user accounts, you may want to identify these users when they lo
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track({
@@ -122,11 +122,11 @@ You can track the effectiveness of a mobile ad campaign by tracking key conversi
 
 ### Server
 
-When sending your data [server-side](/docs/sources/#server), contextual fields `context.app.namespace` and `context.device.advertisingId` must be manually sent in all calls.
+When sending your data [server-side](/docs/connections/sources/#server), contextual fields `context.app.namespace` and `context.device.advertisingId` must be manually sent in all calls.
 
 ### Xamarin
 
-When sending your data using our [Xamarin library](/docs/sources/mobile/xamarin/), contextual fields `context.app.namespace` and the boolean `context.device.adTrackingEnabled` must be manually sent in all calls.
+When sending your data using our [Xamarin library](/docs/connections/sources/catalog/libraries/mobile/xamarin/), contextual fields `context.app.namespace` and the boolean `context.device.adTrackingEnabled` must be manually sent in all calls.
 
 ### Opened App
 
@@ -135,7 +135,7 @@ Install attribution is the most common use case for mobile attribution tools. To
 
 ### Special Events
 
-TUNE supports special events beyond install attribution which are mapped to the Segment [Ecommerce Spec](https://segment.com/docs/spec/ecommerce/v2/):
+TUNE supports special events beyond install attribution which are mapped to the Segment [Ecommerce Spec](https://segment.com/docs/connections/spec/ecommerce/v2/):
 
 | Segment Event             | TUNE Event         |
 |---------------------------|--------------------|

@@ -21,7 +21,7 @@ This document was last updated on October 16, 2018. If you notice any gaps, outd
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like this:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like this:
 
     analytics.identify({
       userId: '019mr8mf4r',
@@ -33,4 +33,4 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 You can use the Identify call to create or update customers in your Help Scout account.
 
-A `name` and an `email` are required by Help Scout to complete the request. You can set the userId as the `email`, although this is [not recommended](https://segment.com/docs/spec/identify/#user-id). You can also specify `firstName` and `lastName` traits instead of a single `name` trait. You can learn more about which properties Help Scout will accept [here](https://developer.helpscout.com/help-desk-api/customers/create/).
+A `name` and an `email` are required by Help Scout to complete the request. You can set the userId as the `email`, although this is [not recommended](https://segment.com/docs/connections/spec/identify/#user-id). You can also specify `firstName` and `lastName` traits instead of a single `name` trait. You can learn more about which properties Help Scout will accept [here](https://developer.helpscout.com/help-desk-api/customers/create/).

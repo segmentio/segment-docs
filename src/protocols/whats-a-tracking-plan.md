@@ -26,7 +26,7 @@ Get organized. Pick a convention for naming your events and properties. Your eye
 
 The `.identify()` call is important, because it updates all records of the user with a set of traits. But how do you choose which traits to include?
 
-Here is a sample `.identify()` call (with [analytics.js](https://segment.com/docs/sources/website/analytics.js/)) for Segment:
+Here is a sample `.identify()` call (with [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/)) for Segment:
 
 ```js
 analytics.identify({
@@ -72,7 +72,7 @@ For an ecommerce company, however, the main events might be something like:
 - **Order Completed**
 
 
-Note that Segment has a set of "reserved" event names specifically for ecommerce, called our [ecommerce spec](https://segment.com/docs/spec/ecommerce/v2). Check it out to see which events we cover and how they are used in our downstream destinations.
+Note that Segment has a set of "reserved" event names specifically for ecommerce, called our [ecommerce spec](https://segment.com/docs/connections/spec/ecommerce/v2). Check it out to see which events we cover and how they are used in our downstream destinations.
 
 For a community, on the other hand, there is an entirely different set of actions that indicate engagement, listed in the below pyramid. For example, [GrowthHacker's](https://growthhackers.com/) funnel of actions from least to most engaged are:
 - **Watching**

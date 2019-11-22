@@ -20,7 +20,7 @@ Customers can find their write key in the source settings and regenerate it as n
 
 ## The Segment Spec
 
-To learn about the semantics of the five supported API calls, and the semantic event names and properties we recognize, please read the Segment [Spec](https://segment.com/docs/spec).
+To learn about the semantics of the five supported API calls, and the semantic event names and properties we recognize, please read the Segment [Spec](https://segment.com/docs/connections/spec).
 
 The spec is a critical component of preserving semantics between sources and destinations. If you break the spec, you are breaking the promise of Segment, which is grounds for removal from the catalog.
 
@@ -94,7 +94,7 @@ All three of these steps should be completed before you begin testing:
 
 - Following the guidelines above, format your outbound webhook to Segment's HTTP API.
 - Add a field in your settings UI where customers can input their Segment write key.
-- Write docs for your source — you'll need to have separate docs for your source ([example](https://segment.com/docs/sources/cloud-apps/drip/)) and integration.
+- Write docs for your source — you'll need to have separate docs for your source ([example](https://segment.com/docs/connections/sources/catalog/cloud-apps/drip/)) and integration.
 
 ## Testing
 

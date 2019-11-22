@@ -29,7 +29,7 @@ Note: GoSquared also offers in-depth historical and user analysis. Chartbeat sti
 
 ### Webhook-based Alerts
 
-The last option we recommend is to use a monitoring tool like [PagerDuty](https://www.pagerduty.com/) or [Data Dog](https://www.datadoghq.com/) and point our [webhooks](/docs/destinations/webhooks) destination at them. That way you can setup custom alerts in their system.
+The last option we recommend is to use a monitoring tool like [PagerDuty](https://www.pagerduty.com/) or [Data Dog](https://www.datadoghq.com/) and point our [webhooks](/docs/connections/destinations/catalog/webhooks/) destination at them. That way you can setup custom alerts in their system.
 
 ### Event-Triggered Emails
 

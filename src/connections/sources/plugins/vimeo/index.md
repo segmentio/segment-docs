@@ -32,17 +32,17 @@ Initialize the plugin by giving it your Vimeo Access Token, and granting it acce
 &lt;/script&gt;
 </pre>
 
-That's it! The plugin listens to the Vimeo player for events, and responds by firing the corresponding [Segment Video Spec](https://segment.com/docs/spec/video/) events on Analytics.js.
+That's it! The plugin listens to the Vimeo player for events, and responds by firing the corresponding [Segment Video Spec](https://segment.com/docs/connections/spec/video/) events on Analytics.js.
 
 ## Supported Events
-The following [Segment Video Spec](https://segment.com/docs/spec/video/) events are tracked by this plugin:
+The following [Segment Video Spec](https://segment.com/docs/connections/spec/video/) events are tracked by this plugin:
 - Video Playback Started
 - Video Playback Completed
 - Video Playback Paused/Resumed
 - Video Content Started/Completed
 
 ## Supported Properties
-The following [Segment Video Spec](https://segment.com/docs/spec/video/) properties are automatically attached to the above events:
+The following [Segment Video Spec](https://segment.com/docs/connections/spec/video/) properties are automatically attached to the above events:
 
 **'Playback' Events**
 - Total Length

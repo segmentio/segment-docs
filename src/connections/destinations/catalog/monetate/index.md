@@ -35,8 +35,8 @@ Include this snippet on every page you want to run experiments on and track as a
 
 ## Page
 
-When you call the [`page`](/docs/spec/page/) method with a name and category, we call the 'setPageType' method in Monetate. This allows you to run your campaigns on different page types.
+When you call the [`page`](/docs/connections/spec/page/) method with a name and category, we call the 'setPageType' method in Monetate. This allows you to run your campaigns on different page types.
 
 ## Track
 
-When you call the [`track`](/docs/spec/track/) method with the event names `Viewed Product`, `Added Product`, `Order Completed` from our [e-commerce API](/docs/spec/ecommerce/v2/) we will call the corresponding `addItems`, `addReviewRows`, `addConversionRows` in Monetate if the Retail option is not checked in settings, and `addProducts`, `addCartRows`, `addPurchaseRows` if it is. Other event names will not be forwarded to Monetate.
+When you call the [`track`](/docs/connections/spec/track/) method with the event names `Viewed Product`, `Added Product`, `Order Completed` from our [e-commerce API](/docs/connections/spec/ecommerce/v2/) we will call the corresponding `addItems`, `addReviewRows`, `addConversionRows` in Monetate if the Retail option is not checked in settings, and `addProducts`, `addCartRows`, `addPurchaseRows` if it is. Other event names will not be forwarded to Monetate.

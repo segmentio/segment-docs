@@ -20,7 +20,7 @@ This document was last updated on January 18, 2019. If you notice any gaps, outd
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
 2.  Search for "Intercom" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3.  Authorize your Intercom account in Segment and select the Intercom Account you want to sync with Segment. You can choose which account to sync in the drop down menu in the top right. If you have opted to utilize our [server-side sources](https://segment.com/docs/sources/#server), we will begin passing data through our servers once you activate the Destination. For other libraries please continue reading below.
+3.  Authorize your Intercom account in Segment and select the Intercom Account you want to sync with Segment. You can choose which account to sync in the drop down menu in the top right. If you have opted to utilize our [server-side sources](https://segment.com/docs/connections/sources/#server), we will begin passing data through our servers once you activate the Destination. For other libraries please continue reading below.
 4. Find your "App ID" within the Intercom UI following [the instructions here](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-app-id) or by navigating to the Gear Menu and clicking on "App Settings" followed by "API Keys". It should look something like this: `9iefb489`.
 
 ### Client
@@ -57,7 +57,7 @@ Before reading the specific instructions for iOS or Android below, please ensure
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page();
@@ -67,14 +67,14 @@ The Page call only works client-side through Analytics.js by triggering the Inte
 
 ### Intercom Respond
 
-If you have [Intercom's Respond package](https://docs.intercom.com/responding-to-users-and-visitors/getting-started-with-intercom-respond), calling `page` will trigger the chat widget to appear. Otherwise, you would need to use the [Identify method](https://segment.com/docs/destinations/intercom/#identify) to make the chat widget appear.
+If you have [Intercom's Respond package](https://docs.intercom.com/responding-to-users-and-visitors/getting-started-with-intercom-respond), calling `page` will trigger the chat widget to appear. Otherwise, you would need to use the [Identify method](https://segment.com/docs/connections/destinations/catalog/intercom/#identify) to make the chat widget appear.
 
 If you have the Respond package and calling `page` still does not show your chat widget, be sure to check your "Visitors on your website" setting inside your Intercom account.
 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('su3r73', {
@@ -114,12 +114,12 @@ Here's how Segment parameters are mapped to those in the `intercomSettings` obje
 
 **NOTE:** Intercom does not accept trait values longer than 255 characters.
 
-If a user with `traits.company` is identified and the `company_id` does not match a known company, a new company will be created in Intercom. If company is a string, we will set the `company_id` as a hash of `company_name` as an id is required to [associate the user to the company](https://developers.intercom.io/reference#user-model). The [`group` call](/docs/destinations/intercom/#group) may be used to create/update company profiles explicitly.
+If a user with `traits.company` is identified and the `company_id` does not match a known company, a new company will be created in Intercom. If company is a string, we will set the `company_id` as a hash of `company_name` as an id is required to [associate the user to the company](https://developers.intercom.io/reference#user-model). The [`group` call](/docs/connections/destinations/catalog/intercom/#group) may be used to create/update company profiles explicitly.
 
 
 ### Server
 
-When you call Identify from any of the server-side libraries or mobile sources in Cloud-mode we'll map our [special traits](/docs/spec/identify/#traits) (`email`, `firstName`, `lastName`, `createdAt`, and `company`) to Intercom special properties.
+When you call Identify from any of the server-side libraries or mobile sources in Cloud-mode we'll map our [special traits](/docs/connections/spec/identify/#traits) (`email`, `firstName`, `lastName`, `createdAt`, and `company`) to Intercom special properties.
 
 If you want to use Intercom's `last_request_at`, you'll need to pass in `active: true` in the context object. Then, by default we will set `last_request_at` to the current time; however, if you pass in your own timestamp, pass it in as `lastRequestAt` (in camelCase), and we'll set `last_request_at` to that value in our server-side sources.
 
@@ -151,14 +151,14 @@ Segment maps the following Intercom standard attributes on `identify`.
 
 #### Collect Context
 
-With this option selected, `identify` calls will include contextual information collected by [Segment's mobile libraries](/docs/sources/#mobile) if it is available. This info will be set as Custom Attributes on the Intercom user.
+With this option selected, `identify` calls will include contextual information collected by [Segment's mobile libraries](/docs/connections/sources/#mobile) if it is available. This info will be set as Custom Attributes on the Intercom user.
 
-The fields collected from the [context object](/docs/spec/common/) are `device.type`, `device.manufacturer`, `device.model`, `os.name`, `os.version`, `app.name`, `app.version` and will populate in Intercom as `device_type`, `device_manufacturer`, `device_model`, `os_name`, `os_version`, `app_name` and `app_version`.
+The fields collected from the [context object](/docs/connections/spec/common/) are `device.type`, `device.manufacturer`, `device.model`, `os.name`, `os.version`, `app.name`, `app.version` and will populate in Intercom as `device_type`, `device_manufacturer`, `device_model`, `os_name`, `os_version`, `app_name` and `app_version`.
 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Product Purchased', {
@@ -198,13 +198,13 @@ Intercom only allows a total of 120 unique _active_ event names. If you are send
 
 Because our server-side libraries batch calls by default, it is possible for an `identify` call that would create a user record to arrive at the same time as a `track` event associated with this user. If the `track` event is processed before the user is created you get an error, and the event is not recorded.
 
-[Adding a Flush method](/docs/sources/server/node/#batching) immediately following the `identify`, and before any additional `track` events helps ensure that the `identify` call reaches Intercom first to create the user. Generally, this is enough to prevent the race condition, but you can add an extra timeout if necessary.
+[Adding a Flush method](/docs/connections/sources/catalog/libraries/server/node/#batching) immediately following the `identify`, and before any additional `track` events helps ensure that the `identify` call reaches Intercom first to create the user. Generally, this is enough to prevent the race condition, but you can add an extra timeout if necessary.
 
-If you still see issues, the `identify` call is most likely either either not reaching Intercom at all, or is arriving too late after a subsequent [retry](https://segment.com/docs/destinations/#retries). In cases like this you can use our [Event Delivery functionality](https://segment.com/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/) to check for recent errors, and get some insight into how to prevent errors in the future.
+If you still see issues, the `identify` call is most likely either either not reaching Intercom at all, or is arriving too late after a subsequent [retry](https://segment.com/docs/connections/destinations/#retries). In cases like this you can use our [Event Delivery functionality](https://segment.com/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/) to check for recent errors, and get some insight into how to prevent errors in the future.
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```javascript
 analytics.group('companyId123', {
@@ -254,7 +254,7 @@ On Android:
 
 Intercom does **not** support custom arrays or objects. Per Intercom's request, we removed support for this feature starting Aug 21st, 2017. This means that if you want a certain user `trait` or event `property` to be sent to Intercom, you must send them at the top level.
 
-This limitation does not apply, however, for mapping `company` objects on [`identify`](/docs/spec/identify/) calls. We will continue to handle that in the same way as before. This is only applicable for any custom traits or properties.
+This limitation does not apply, however, for mapping `company` objects on [`identify`](/docs/connections/spec/identify/) calls. We will continue to handle that in the same way as before. This is only applicable for any custom traits or properties.
 
 ### Disassociating Users from a Company (server-side only)
 
@@ -311,7 +311,7 @@ Analytics.with(context).identify("123", traits, options);
 
 #### Identity verification plus filtering via Destinations Object
 
-If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/sources/website/analytics.js/#selecting-integrations), the context object will look like this:
+If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#selecting-integrations), the context object will look like this:
 
 ```json
 {
@@ -437,7 +437,7 @@ analytics.onIntegrationReady("Intercom", new Callback() {
 }
 ```
 
-You can read more about tapping into destination-specific methods on [Android here](/docs/sources/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) and on [iOS here](/docs/sources/mobile/ios/#how-do-i-know-when-an-destination-is-initialized-).
+You can read more about tapping into destination-specific methods on [Android here](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) and on [iOS here](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-know-when-an-destination-is-initialized-).
 
 ### Push notification and deep linking
 

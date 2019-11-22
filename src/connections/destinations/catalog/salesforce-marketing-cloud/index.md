@@ -110,7 +110,7 @@ If the data extension you are mapping to has more than one primary key, please e
 
 ### Contextual Properties
 
-Our destination with SFMC supports passing in many of the contextual properties that our SDK's and libraries collect automatically as Data Extension attributes. Please reference our [documentation](https://segment.com/docs/spec/common/#context) for more information on contextual properties and the SDK's/libraries that collect them.
+Our destination with SFMC supports passing in many of the contextual properties that our SDK's and libraries collect automatically as Data Extension attributes. Please reference our [documentation](https://segment.com/docs/connections/spec/common/#context) for more information on contextual properties and the SDK's/libraries that collect them.
 
 In order to take advantage of this functionality, you will need to create attributes in your Data Extensions that adhere to specific naming conventions. The table below outlines the Segment contextual properties availble with this feature and the corresponding Data Extension attribute names they will map to.
 
@@ -212,7 +212,7 @@ In order to take advantage of this functionality, you will need to create attrib
 <!-- Links -->
 
 [app-center]: https://appcenter-auth.exacttargetapps.com/
-[app center - permissions]: /docs/destinations/salesforce-marketing-cloud/images/new_app-3_data_access.png
-[app center - summary]: /docs/destinations/salesforce-marketing-cloud/images/new_app-4_summary.png
+[app center - permissions]: /docs/connections/destinations/catalog/salesforce-marketing-cloud/images/new_app-3_data_access.png
+[app center - summary]: /docs/connections/destinations/catalog/salesforce-marketing-cloud/images/new_app-4_summary.png
 [eventing API]: https://code.exacttarget.com/apis-sdks/rest-api/v1/hub/data-events/putDataExtensionRowByKeyAsync.html
-[standard identify traits]: https://segment.com/docs/spec/identify/#traits
+[standard identify traits]: https://segment.com/docs/connections/spec/identify/#traits

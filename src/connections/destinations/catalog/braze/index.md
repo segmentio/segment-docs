@@ -7,7 +7,7 @@ rewrite: true
 
 The Braze Destination is open-source on GitHub. You can browse the code on Github: [iOS](https://github.com/Appboy/appboy-segment-ios), [Android](https://github.com/Appboy/appboy-segment-android) (Android and iOS maintained by Braze), [Web](https://github.com/segment-integrations/analytics.js-integration-appboy), [Server](https://github.com/segmentio/integration-appboy) (Web and Server maintained by Braze). If you find any issues for mobile platforms, please let Braze know, if the issues appear on web or server, let [us know](https://segment.com/help/contact).
 
-_**NOTE:** There are currently two major versions of the Braze SDK. Make sure you read [important notes](https://segment.com/docs/destinations/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2._
+_**NOTE:** There are currently two major versions of the Braze SDK. Make sure you read [important notes](https://segment.com/docs/connections/destinations/catalog/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2._
 
 This document was last updated on June 13, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
@@ -85,7 +85,7 @@ Braze has created a sample Android application that integrates Braze via Segment
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page();
@@ -95,7 +95,7 @@ Page calls are only sent to Braze if you have enabled either "Track All Pages" o
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('ze8rt1u89', {
@@ -122,7 +122,7 @@ All other traits (except their [reserved keys](https://www.braze.com/documentati
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Purchased Item', {
@@ -145,11 +145,11 @@ When you `track` an event, we will send that event to Braze as a custom event. N
 
 ### Order Completed
 
-When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/spec/ecommerce/v2/), we will send the products you've listed to Braze as purchases.
+When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), we will send the products you've listed to Braze as purchases.
 
 ### Purchases
 
-When you pass [ecommerce events](/docs/spec/ecommerce/v2/), the name of your event will be used as the `productId` in Braze. An example of a purchase event would look like:
+When you pass [ecommerce events](/docs/connections/spec/ecommerce/v2/), the name of your event will be used as the `productId` in Braze. An example of a purchase event would look like:
 
 ```
 analytics.track('Purchased Item', {
@@ -176,7 +176,7 @@ You can add more product details in the form of key-value pairs to the `properti
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/spec/group/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```
 analytics.group("1234", {
@@ -200,11 +200,11 @@ In-app messages will be registered for and requested by default. This functional
 
 #### Web
 
-Instructions on how to set this up within Braze can be found in their [docs](https://www.Braze.com/academy/Best_Practices/#in-app-message-behavior). Once setup, it allows you to trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, simply make an identify with the corresponding [userId](https://segment.com/docs/spec/identify/#user-id) for that user.
+Instructions on how to set this up within Braze can be found in their [docs](https://www.Braze.com/academy/Best_Practices/#in-app-message-behavior). Once setup, it allows you to trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, simply make an identify with the corresponding [userId](https://segment.com/docs/connections/spec/identify/#user-id) for that user.
 
 If you don't want your site to immediately display new In-App Messages when they're received, you can disable automatic display and register your own display subscribers. To do this:
 
-1. Disable your [Automatically Send In-App Messages Destinations setting](/docs/destinations/braze/#settings). By default, it is enabled when you enable the Braze destination.
+1. Disable your [Automatically Send In-App Messages Destinations setting](/docs/connections/destinations/catalog/braze/#settings). By default, it is enabled when you enable the Braze destination.
 
 2. Create your subscriber by calling:
 
@@ -294,7 +294,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
       window.appboy.registerAppboyPushMessages();
     });
     ```
-    **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/sources/website/analytics.js/quickstart/#step-1-copy-the-snippet) within your `script` tag.
+    **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet) within your `script` tag.
 
     **Note:** This will immediately request push permission from the user.
 
@@ -308,7 +308,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
      });
     ```
 
-    Braze recommends checking to see if this returns `true` since not all browsers can recieve push notifications. [See below](/docs/destinations/braze/#soft-push-prompts) for instructions on setting up a soft push prompt using Braze In-App Messages.
+    Braze recommends checking to see if this returns `true` since not all browsers can recieve push notifications. [See below](/docs/connections/destinations/catalog/braze/#soft-push-prompts) for instructions on setting up a soft push prompt using Braze In-App Messages.
 
     If you'd like to unsubscribe a user, you can do so by calling:
 
@@ -326,7 +326,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 1. Follow [step one](https://www.Braze.com/documentation/Web/#soft-push-prompts) to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
 
-2. Disable your [Automatically Send In-App Messages Destination setting](/docs/destinations/braze/#settings). By default, it is enabled when you enable the Braze destination.
+2. Disable your [Automatically Send In-App Messages Destination setting](/docs/connections/destinations/catalog/braze/#settings). By default, it is enabled when you enable the Braze destination.
 
 3. Add the following snippet to your site:
 
@@ -368,7 +368,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
     ```
 For more details on this snippet, check out the Braze's docs [here](https://www.Braze.com/documentation/Web/#soft-push-prompts).
 
-**Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/sources/website/analytics.js/quickstart/#step-1-copy-the-snippet) within your `script` tag.
+**Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet) within your `script` tag.
 
 4) When you'd like to display the Soft Push to a user, call:
 

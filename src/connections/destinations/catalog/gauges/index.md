@@ -15,7 +15,7 @@ Gauges will start automatically collecting data on your site.
 
 ## Page
 
-When you call [`page`](/docs/spec/page/), we call Gauges' `track` method with no arguments.
+When you call [`page`](/docs/connections/spec/page/), we call Gauges' `track` method with no arguments.
 
 - - -
 

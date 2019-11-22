@@ -29,9 +29,9 @@ For additional information, contact `support@indicative.com`.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
 
-When you call [`identify`](/docs/spec/identify/), we send the entire call as is to Indicative's server.
+When you call [`identify`](/docs/connections/spec/identify/), we send the entire call as is to Indicative's server.
 
 ```javascript
 analytics.identify('ze8rt1u89', {
@@ -50,9 +50,9 @@ analytics.identify('ze8rt1u89', {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
-When you call [`track`](/docs/spec/track/), we send the entire call as is to Indicative's server.
+When you call [`track`](/docs/connections/spec/track/), we send the entire call as is to Indicative's server.
 
 ```javascript
 analytics.track("Calculation Completed", {
@@ -64,9 +64,9 @@ analytics.track("Calculation Completed", {
 
 ## Page and Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) and [Screen method](https://segment.com/docs/spec/page/) does.
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) and [Screen method](https://segment.com/docs/connections/spec/page/) does.
 
-Both [`page`](/docs/spec/page/) and [`screen`](/docs/spec/screen/) calls will be sent to Indicative as events.
+Both [`page`](/docs/connections/spec/page/) and [`screen`](/docs/connections/spec/screen/) calls will be sent to Indicative as events.
 
 ```js
 analytics.page({

@@ -5,7 +5,7 @@ title: Analytics for AMP
 The [Segment AMP](https://www.ampproject.org/docs/reference/components/amp-analytics#segment) component makes it easy to send your data to lots of tools without having to learn, test or implement a new AMP component every time.
 The component automatically collects default properties and sends a page view.
 
-**NOTE:** Since our AMP source sends data directly to our servers, only destinations that support [cloud-mode](/docs/destinations/#connection-modes) are compatible with AMP.
+**NOTE:** Since our AMP source sends data directly to our servers, only destinations that support [cloud-mode](/docs/connections/destinations/#connection-modes) are compatible with AMP.
 
 
 ## Getting Started
@@ -38,12 +38,12 @@ Within you `<body>` tags, include the following Segment analytics snippet:
   ```
 Replace `WRITE_KEY` with the write key you obtain from the AMP Source you've set up within the Segment UI.
 
-By default, the snippet will automatically fire a page event which you can read more about [here](https://segment.com/docs/sources/mobile/amp/#page).
+By default, the snippet will automatically fire a page event which you can read more about [here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/amp/#page).
 
 
 ## Page
 
-The Page method lets you record page views on your website, along with your choice of [custom properties](https://segment.com/docs/sources/mobile/amp/#getting-started) about the page being viewed.
+The Page method lets you record page views on your website, along with your choice of [custom properties](https://segment.com/docs/connections/sources/catalog/libraries/mobile/amp/#getting-started) about the page being viewed.
 
 A `page` call is included by default when you include Segment Analytics into your code with the ability to customize the `name` of your page:
 

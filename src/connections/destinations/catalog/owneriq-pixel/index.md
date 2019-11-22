@@ -22,7 +22,7 @@ _**NOTE:** The OwnerIQ Destination is currently in beta, which means that they a
 
 ## Page
 
-If you haven't had a chance to review Segment's spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review Segment's spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -32,9 +32,9 @@ OwnerIQ have mapped `analytics.page()` to OwnerIQ's Website Analytics Tag method
 
 ## Track
 
-If you haven't had a chance to review Segment's spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
+If you haven't had a chance to review Segment's spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
-The following table shows how OwnerIQ map Segment's [semantic ecommerce](https://segment.com/docs/spec/ecommerce/v2/) or custom event names to OwnerIQ's tag event:
+The following table shows how OwnerIQ map Segment's [semantic ecommerce](https://segment.com/docs/connections/spec/ecommerce/v2/) or custom event names to OwnerIQ's tag event:
 
 | Segment Event Name | ownerIQ tag event |
 | -------- | -------- |

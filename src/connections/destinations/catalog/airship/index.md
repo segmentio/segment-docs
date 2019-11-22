@@ -32,7 +32,7 @@ See [Tags and Named Users](https://docs.airship.com/guides/audience/tags-named-u
 
 ## Identify
 
-If you haven't had a chance to review the Segment spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review the Segment spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('jill', {
@@ -54,7 +54,7 @@ Example Use cases:
 
 Use this Destination  to send `Track` events to Airship for message triggering and analytics.
 
-If you haven't had a chance to review the Segment spec, take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review the Segment spec, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Product Clicked', {

@@ -12,7 +12,7 @@ hide-personas-partial: true
 
 Existing users of the Branch SDKs are unaffected, however new installations must implement the Branch native SDK separately. They can then enable Branch's [data export integration](https://docs.branch.io/integrations/segment-export/) to push additional data to Segment, and [data import integration](https://docs.branch.io/integrations/segment-import/) to pull additional Segment data into the Branch dashboard.
 
-The legacy instructions for implementing the Branch mobile SDKs for Segment have been removed from this documentation. If you need access to the removed sections, you can view them [here](https://web.archive.org/web/20191113225102/https://segment.com/docs/destinations/branch-metrics/).
+The legacy instructions for implementing the Branch mobile SDKs for Segment have been removed from this documentation. If you need access to the removed sections, you can view them [here](https://web.archive.org/web/20191113225102/https://segment.com/docs/connections/destinations/catalog/branch-metrics/).
 
 ---
 
@@ -33,7 +33,7 @@ This document was last updated on November 13, 2019. If you notice any gaps, out
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example iOS call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:
 ```ios
 [[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
                                 traits:@{ @"email": @"john.doe@example.com" }];
@@ -41,7 +41,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example iOS call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example iOS call would look like:
 
 ```ios
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"

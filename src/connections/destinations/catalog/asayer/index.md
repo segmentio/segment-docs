@@ -19,7 +19,7 @@ _**NOTE:** The Asayer Destination is currently in beta, which means that they ar
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to Asayer's `asayer.vars` method.
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to Asayer's `asayer.vars` method.
 
 An example call which does not include a `userId` will transmit Asayer the value of the `anonymousId` and would look like:
 ```
@@ -44,7 +44,7 @@ analytics.identify("userId123", {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('New Order', {

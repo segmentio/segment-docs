@@ -17,12 +17,12 @@ Olark is only supported on the client side.
 
 ## Page
 
-When you call [`page`](/docs/spec/page/), we call Olark's `sendNotificationToOperator` function as `looking at *url*`. You must enable this option with the *pageview* flag, because it can sometimes be bothersome.
+When you call [`page`](/docs/connections/spec/page/), we call Olark's `sendNotificationToOperator` function as `looking at *url*`. You must enable this option with the *pageview* flag, because it can sometimes be bothersome.
 
 
 ## Identify
 
-When you call [`identify`](/docs/spec/identify/) on `analytics.js`, we send the following data to Olark:
+When you call [`identify`](/docs/connections/spec/identify/) on `analytics.js`, we send the following data to Olark:
 
 * We call `api.chat.updateVisitorNickname` with `traits.name` and `traits.email`, or just their `traits.name` or just their `traits.email` or their `userId`. In that order of preference.
 * We call `api.visitor.updateEmailAddress` with `traits.email` if you send it, or `userId` if that's an email.
@@ -34,7 +34,7 @@ More documentation on the Olark API can be found [in Olark's docs](https://www.o
 
 ## Track
 
-When you call [`track`](/docs/spec/track/) or one of its helpers on analytics.js, we call Olark's `sendNotificationToOperator` function as `visitor triggered *eventName*`. You must enable this option with the *track* flag, because it can sometimes be bothersome.
+When you call [`track`](/docs/connections/spec/track/) or one of its helpers on analytics.js, we call Olark's `sendNotificationToOperator` function as `visitor triggered *eventName*`. You must enable this option with the *track* flag, because it can sometimes be bothersome.
 
 - - -
 
@@ -54,7 +54,7 @@ analytics.ready(function(){
 });
 ```
 
-[Read the ready docs for more details](/docs/sources/website/analytics.js/#ready)
+[Read the ready docs for more details](/docs/connections/sources/catalog/libraries/website/analytics.js/#ready)
 
 - - -
 
@@ -69,6 +69,6 @@ Using Olark through Segment gives you the ability to automatically record `track
 
 These events will be sent to other tools in your stack that can accept track calls, so you can do things like analyze if users who chat spend more money over time.
 
-To learn more about the live chat events you can capture with this destination, head on over to our [Live Chat spec docs](/docs/spec/live-chat/).
+To learn more about the live chat events you can capture with this destination, head on over to our [Live Chat spec docs](/docs/connections/spec/live-chat/).
 
 ![Turn on Olark](images/olarklivechat.png)

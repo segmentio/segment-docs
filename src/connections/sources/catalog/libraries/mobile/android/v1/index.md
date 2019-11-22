@@ -21,7 +21,7 @@ To get started head over to our [Android QuickStart](/docs/libraries/android/v1/
 
 `identify` lets you tie a user to their actions and record traits about them.
 
-You'll want to `identify` a user with any relevant information as soon as they log-in or sign-up. Learn more on the [Identify page](/docs/spec/identify).
+You'll want to `identify` a user with any relevant information as soon as they log-in or sign-up. Learn more on the [Identify page](/docs/connections/spec/identify).
 
 ```java
 Traits traits = new Traits();
@@ -55,7 +55,7 @@ You can call `Analytics.identify(...)` from anywhere, including the UI thread. W
 
 `group` lets you associate a user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-You'll want to `group` a user after they have a joined a company or account in your database. Learn more on the [Group page](/docs/spec/group).
+You'll want to `group` a user after they have a joined a company or account in your database. Learn more on the [Group page](/docs/connections/spec/group).
 
 ```java
 Traits traits = new Traits();
@@ -88,7 +88,7 @@ Analytics.group("userId", "groupId", traits);
 
 `track` lets you record the actions your users perform.
 
-You'll want to `track` an event whenever the user clicks, taps or submits something in your app. Learn more on the [Track page](/docs/spec/track).
+You'll want to `track` an event whenever the user clicks, taps or submits something in your app. Learn more on the [Track page](/docs/connections/spec/track).
 
 If you're making an exercise app, you'll want to track whenever the user starts or ends a workout. If you can buy something in your app, make sure you record when a purchase is made. A simple game to play is to ask yourself: what do you want the user to do with your app? Whatever those actions are, make sure they're instrumented.
 
@@ -121,7 +121,7 @@ You can call `Analytics.track(...)` from anywhere, including the UI thread. We i
 
 `screen` lets you record the app screens that your users view.
 
-Many services let you analyze screens specially. But not all services support `screen`, so when it's not supported explicitly, the `screen` method `tracks` as an event with the same parameters. Learn more about [`screen`](/docs/spec/screen/).
+Many services let you analyze screens specially. But not all services support `screen`, so when it's not supported explicitly, the `screen` method `tracks` as an event with the same parameters. Learn more about [`screen`](/docs/connections/spec/screen/).
 
 ```java
 Props props = new Props();
@@ -216,7 +216,7 @@ Analytics.screen("019mr8mf4r", "Login", props,
     new Options().setContext(context)));
 ```
 
-Learn more on the [Context page](/docs/spec/common/#context).
+Learn more on the [Context page](/docs/connections/spec/common/#context).
 
 - - -
 

@@ -48,7 +48,7 @@ analytics.page(
 );
 ```
 
-Page calls will be sent to Modern Pricing as a `pageview`. If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does.
+Page calls will be sent to Modern Pricing as a `pageview`. If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does.
 
 **Optional Best Practices**
 

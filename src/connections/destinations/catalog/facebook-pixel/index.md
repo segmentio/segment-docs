@@ -25,7 +25,7 @@ We'll automatically initialize Facebook's pixel with your `pixelId` upon loading
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page();
@@ -35,7 +35,7 @@ We've mapped `analytics.page()` to [Facebook's `fbq('track', "PageView")`](https
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('ze8rt1u89', {
@@ -55,7 +55,7 @@ When you make an Identify call with Segment, it will update Facebook Pixel the n
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("My Custom Event", {
@@ -143,7 +143,7 @@ Facebook accepts the following properties:
 - State
 - Zip code
 
-If you follow Segment's [spec](/docs/spec/identify/#traits), these would automatically be sent correctly.
+If you follow Segment's [spec](/docs/connections/spec/identify/#traits), these would automatically be sent correctly.
 
 Facebook also accepts an External ID. This can be any unique ID from the advertiser, such as loyalty membership IDs, user IDs, and external cookie IDs. In order to send an `external_id` to Facebook you can indicate which user trait you would like Segment to map to `external_id` using the **Client-Side Only: Advanced Match Trait Key for External ID** setting.
 
@@ -180,7 +180,7 @@ If you have events that use any of those keys for non-PII properties, you can ma
 
 The most common reason for Facebook conversion pixels to fire inconsistently is that the page redirects or reloads before the pixel has time to be loaded on the page. Make sure your page does not redirect or reload for at least 300ms after the conversion event happens. In some cases a delay of 500ms is necessary.
 
-We recommend using our `trackLink` or `trackForm` helpers to delay the page redirect. [Documentation here](/docs/sources/website/analytics.js#track-link). You can extend the delay by [setting the timeout to 500ms](/docs/sources/website/analytics.js#extending-timeout).
+We recommend using our `trackLink` or `trackForm` helpers to delay the page redirect. [Documentation here](/docs/connections/sources/catalog/libraries/website/analytics.js#track-link). You can extend the delay by [setting the timeout to 500ms](/docs/connections/sources/catalog/libraries/website/analytics.js#extending-timeout).
 
 ### Extra or Duplicate Conversions
 
@@ -192,7 +192,7 @@ Facebook's conversion reports count view-through conversions as well as click-th
 
 ### Facebook Conversions Not Matching Google Analytics
 
-Facebook counts conversions per person, as opposed to Google Analytics which counts per browser cookie session (unless you're using [Google Analytics User-ID](/docs/destinations/google-analytics/#user-id)).
+Facebook counts conversions per person, as opposed to Google Analytics which counts per browser cookie session (unless you're using [Google Analytics User-ID](/docs/connections/destinations/catalog/google-analytics/#user-id)).
 
 If someone saw or clicked on your ad on a mobile phone then later came back directly to purchase on a desktop machine Google Analytics wouldn't know that this was the same person, but Facebook would. In that scenario Google Analytics counts 2 unique visits with a conversion last attributed to a direct visit on desktop. Facebook counts one conversion with the conversion properly attributed to the last ad click/view on mobile.
 

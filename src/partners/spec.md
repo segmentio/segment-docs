@@ -174,7 +174,7 @@ Below are highlights about these common fields for event data. Most of these are
 
 As you build your integration you should try to map as many of these common fields to the equivalent fields in your systems.
 
-See the [Common Fields](https://segment.com/docs/spec/common/) doc for full details.
+See the [Common Fields](https://segment.com/docs/connections/spec/common/) doc for full details.
 
 ### anonymousId / userId
 
@@ -216,7 +216,7 @@ There are a set of standardized traits for Identify events:
 * username
 * website
 
-See the [Identify traits](https://segment.com/docs/spec/identify/#traits) doc for full details.
+See the [Identify traits](https://segment.com/docs/connections/spec/identify/#traits) doc for full details.
 
 And a set for Group events:
 
@@ -233,7 +233,7 @@ And a set for Group events:
 * website
 * plan
 
-See the [Group traits](https://segment.com/docs/spec/group/#traits) doc for full details.
+See the [Group traits](https://segment.com/docs/connections/spec/group/#traits) doc for full details.
 
 ### properties
 
@@ -245,7 +245,7 @@ There are a set of standardized properties for Track events:
 * currency
 * value
 
-See the [Track properties](https://segment.com/docs/spec/track/#properties) doc for full details.
+See the [Track properties](https://segment.com/docs/connections/spec/track/#properties) doc for full details.
 
 And a set for Page events:
 
@@ -257,13 +257,13 @@ And a set for Page events:
 * url
 * keywords
 
-See the [Page properties](https://segment.com/docs/spec/page/#properties) doc for full details.
+See the [Page properties](https://segment.com/docs/connections/spec/page/#properties) doc for full details.
 
 And a set for Screen events:
 
 * name
 
-See the [Screen properties](https://segment.com/docs/spec/screen/#properties) doc for full details.
+See the [Screen properties](https://segment.com/docs/connections/spec/screen/#properties) doc for full details.
 
 ### context
 
@@ -287,7 +287,7 @@ Every call can add an optional `context` object for extra information about the 
 * traits
 * userAgent
 
-See the [Context](https://segment.com/docs/spec/common/#context) doc for full details.
+See the [Context](https://segment.com/docs/connections/spec/common/#context) doc for full details.
 
 ## Identify
 

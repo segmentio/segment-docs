@@ -14,7 +14,7 @@ If you'd like to send mobile data, this destination _requires_ you to send devic
 
 In order to send `track` events to DoubleClick Floodlight, you **must** first create the Floodlight tags (**Sales** or **Counter**) inside your DoubleClick Campaign Manager and then map the Segment events to those tags inside Segment settings.
 
-If you want to track custom properties, be sure to create [custom variables](https://segment.com/docs/destinations/doubleclick-floodlight/#setting-up-custom-variables) inside DoubleClick Campaign Manager.
+If you want to track custom properties, be sure to create [custom variables](https://segment.com/docs/connections/destinations/catalog/doubleclick-floodlight/#setting-up-custom-variables) inside DoubleClick Campaign Manager.
 
 Once all the configurations are finished, whenever we receive a mapped Segment event, we will map the following properties and settings:
 
@@ -55,7 +55,7 @@ https://ad.doubleclick.net/ddm/activity/src=1234567;cat=fghij456;type=abcde123;d
 
 ### Accessing Other Event Properties
 
-By default, the Segment event property you define for each custom variable mapping will be matched against the property values found in the `properties` object of a `track` event. You can, however, use JSON style dot-notation-accessors wrapped in double curly brackets to map to **any** property in the event's raw payload to your custom variables. For example, some acceptable values could be `context.campaign.name`, `context.userAgent`, or `anonymousId` (inside of the double curly brackets). You can find the complete structure of a standard Segment event payload [here](/docs/spec/common/#structure).
+By default, the Segment event property you define for each custom variable mapping will be matched against the property values found in the `properties` object of a `track` event. You can, however, use JSON style dot-notation-accessors wrapped in double curly brackets to map to **any** property in the event's raw payload to your custom variables. For example, some acceptable values could be `context.campaign.name`, `context.userAgent`, or `anonymousId` (inside of the double curly brackets). You can find the complete structure of a standard Segment event payload [here](/docs/connections/spec/common/#structure).
 
 **Note:** `dc_rdid` and `dc_lat` will be automatically collected by our mobile libraries and `ord` will be uniquely generated for each event.
 
@@ -71,7 +71,7 @@ Here's an example for tracking a `page` event with the name **Confirmation**:
 
 Please ensure you enter the name case sensitively.
 
-Reference our [docs](/docs/sources/website/analytics.js/#page) for more on the `name` parameter.
+Reference our [docs](/docs/connections/sources/catalog/libraries/website/analytics.js/#page) for more on the `name` parameter.
 
 ### Pages with categories
 
@@ -83,7 +83,7 @@ For example, if you had a `page` event with the name as **Confirmation** that wa
 
 **Viewed Checkout Confirmation Page**
 
-Reference our [docs](/docs/sources/website/analytics.js/#page) for more on the `category` paramter.
+Reference our [docs](/docs/connections/sources/catalog/libraries/website/analytics.js/#page) for more on the `category` paramter.
 
 ## Setting up Custom Variables
 

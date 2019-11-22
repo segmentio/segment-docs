@@ -8,7 +8,7 @@ sourceCategory: 'Server'
 
 This tutorial will help you start sending data from your website to Segment and any of our destinations, using our PHP library. As soon as you're set up you'll be able to turn on any new destinations with the flip of a switch!
 
-If you want to dive deeper at any point, check out the [PHP reference](/docs/sources/server/php).
+If you want to dive deeper at any point, check out the [PHP reference](/docs/connections/sources/catalog/libraries/server/php).
 
 
 ## Step 1: Download the library
@@ -38,15 +38,15 @@ You only need to call `init` once when your php file is requested. All of your f
 
 Of course, you'll want to replace `YOUR_WRITE_KEY` with your actual **Write Key** which you can find in Segment under your project settings. Otherwise all that useful data will be sent straight to `/dev/null`.
 
-The default PHP consumer is the [libcurl consumer](/docs/sources/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you may want to try one of our other consumers like the [fork-curl consumer](/docs/sources/server/php/#fork-curl-consumer).
+The default PHP consumer is the [libcurl consumer](/docs/connections/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you may want to try one of our other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
 
 All set? Nice, the library's fully installed! We're now primed and ready to start recording our first analytics calls about our users.
 
 ## Step 2: Identify Users
 
-The [`identify`](/docs/spec/identify) method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits that you might know about them.
+The [`identify`](/docs/connections/spec/identify) method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits that you might know about them.
 
-Here's what a basic call to [`identify`](/docs/spec/identify) might look like:
+Here's what a basic call to [`identify`](/docs/connections/spec/identify) might look like:
 
 ```php
 Segment::identify(array(
@@ -81,9 +81,9 @@ Of course, lots of analytics tools record more than just _identities_... they re
 
 ## Step 3: Track Actions
 
-The [`track`](/docs/spec/track) method is how you tell Segment about which actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated "properties".
+The [`track`](/docs/connections/spec/track) method is how you tell Segment about which actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated "properties".
 
-Here's what a call to [`track`](/docs/spec/track) might look like when a user signs up:
+Here's what a call to [`track`](/docs/connections/spec/track) might look like when a user signs up:
 
 ```php
 Segment::track(array(
@@ -113,7 +113,7 @@ You'll want to track events that are indicators of success for your site, like *
 
 To get started, we recommend tracking just a few important events. You can always add more later!
 
-Once you've added a few [`track`](/docs/spec/track) calls, you're almost done.
+Once you've added a few [`track`](/docs/connections/spec/track) calls, you're almost done.
 
 
 ## Step 4: Flush the data
@@ -131,4 +131,4 @@ And presto, **you're done!** You successfully installed PHP tracking. Now you're
 
 ## What's Next?
 
-We just walked through the quickest way to get started with Segment using PHP. You might also want to check out our full [PHP reference](/docs/sources/server/php) to see what else is possible, or read about the [Tracking API methods](/docs/sources/server/http) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Segment using PHP. You might also want to check out our full [PHP reference](/docs/connections/sources/catalog/libraries/server/php) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http) to get a sense for the bigger picture.

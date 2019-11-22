@@ -42,7 +42,7 @@ Please refer to the documentation and examples in these repositories to learn ho
 
 Note that for now, we will only support one setting for partner-contributed SDK plugins: a *write-scoped* key such as "Client ID" or "Property ID" that dictates where to write data inside your tool (if applicable). 
 
-As with all partner contributions, only those which follow the Segment [Spec](/docs/spec) will be approved.
+As with all partner contributions, only those which follow the Segment [Spec](/docs/connections/spec) will be approved.
 
 ## Test your Plugin
 

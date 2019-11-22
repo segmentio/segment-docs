@@ -24,7 +24,7 @@ This document was last updated on January 29, 2019. If you notice any gaps, out-
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -38,7 +38,7 @@ Identify calls will add to your list of People in Delighted. The only trait that
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Purchased Product');
@@ -58,4 +58,4 @@ You can optionally configure Delighted to send feedback from Delighted _email su
 
 Simply copy the `Write Key` of the Segment Source where you want to send data and paste into the [Delighted Segment Destination page](https://delighted.com/destinations/segment).
 
-Delighted will then send all _email survey_ feedback triggered via the Segment integration into back into Segment. Please refer to our [Delighted Source](/docs/sources/cloud-apps/delighted/) documentation for more information.
+Delighted will then send all _email survey_ feedback triggered via the Segment integration into back into Segment. Please refer to our [Delighted Source](/docs/connections/sources/catalog/cloud-apps/delighted/) documentation for more information.

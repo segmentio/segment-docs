@@ -46,4 +46,4 @@ If you're using node, you can use our [`segmentio/transform-legacy`][transform-l
 
 
 [transform-legacy]: https://github.com/segmentio/transform-legacy
-[format]: /docs/spec
+[format]: /docs/connections/spec

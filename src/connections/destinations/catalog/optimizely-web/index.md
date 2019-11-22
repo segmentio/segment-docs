@@ -14,11 +14,11 @@ Segment's **Optimizely Web (previously Optimizely)** destination supports the fo
 * [Optimizely X Web](#optimizely-x-web)
 * [Optimizely Full Stack (JavaScript)](#optimizely-full-stack-javascript)
 
-If you're interested in implementing Optimizely Full Stack server-side or on mobile, please see Segment's [**Optimizely Full Stack** destination](https://segment.com/docs/destinations/optimizelyx/), which supports:
+If you're interested in implementing Optimizely Full Stack server-side or on mobile, please see Segment's [**Optimizely Full Stack** destination](https://segment.com/docs/connections/destinations/catalog/optimizelyx/), which supports:
 
-* [Optimizely Full Stack (server)](https://segment.com/docs/destinations/optimizelyx/#server-side)
-* [Optimizely Full Stack Android (cloud-mode)](https://segment.com/docs/destinations/optimizelyx/#android-cloud-mode-implementation)
-* [Optimizely Full Stack iOS (cloud-mode)](https://segment.com/docs/destinations/optimizelyx/#ios-cloud-mode-implementation)
+* [Optimizely Full Stack (server)](https://segment.com/docs/connections/destinations/catalog/optimizelyx/#server-side)
+* [Optimizely Full Stack Android (cloud-mode)](https://segment.com/docs/connections/destinations/catalog/optimizelyx/#android-cloud-mode-implementation)
+* [Optimizely Full Stack iOS (cloud-mode)](https://segment.com/docs/connections/destinations/catalog/optimizelyx/#ios-cloud-mode-implementation)
 
 **Use Cases**
 

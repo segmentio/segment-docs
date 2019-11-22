@@ -3,7 +3,7 @@ title: Facebook App Events Destination
 rewrite: true
 ---
 
-[Facebook App Events](https://developers.facebook.com/docs/app-events) collects required information from one of Segment's mobile SDKs ([iOS](https://segment.com/docs/sources/mobile/ios/) or [Android](https://segment.com/docs/sources/mobile/android/)) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The Facebook App Events Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events).
+[Facebook App Events](https://developers.facebook.com/docs/app-events) collects required information from one of Segment's mobile SDKs ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/)) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The Facebook App Events Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events).
 
 This document was last updated on October 04, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
@@ -22,7 +22,7 @@ This document was last updated on October 04, 2018. If you notice any gaps, outd
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/screen/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
@@ -37,7 +37,7 @@ Please note, the integration will not automatically translate `screen` events to
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"
@@ -50,7 +50,7 @@ Facebook App Events doesn't like events with periods in the name so if you send 
 
 ### Facebook Parameters
 
-We automatically translate our [spec'd properties](/docs/spec/track/#properties) `revenue` and `currency` to the appropriate Facebook parameters (`valueToSum` and `FBSDKAppEventParameterNameCurrency`), and also send events with revenue to Facebook's purchase logging method (`logPurchase`).
+We automatically translate our [spec'd properties](/docs/connections/spec/track/#properties) `revenue` and `currency` to the appropriate Facebook parameters (`valueToSum` and `FBSDKAppEventParameterNameCurrency`), and also send events with revenue to Facebook's purchase logging method (`logPurchase`).
 
 If you don't provide a `currency` explicitly, we send `USD`. If any properties don't match the below, we'll pass them on as they were sent to us.
 
@@ -91,7 +91,7 @@ If you don't provide a `currency` explicitly, we send `USD`. If any properties d
 
 ### Facebook Events
 
-We'll automatically translate any of your events that match one of our [spec'd events](/docs/spec/) that map to Facebook's spec'd events. The below table shows the out of the box mappings in our integration:
+We'll automatically translate any of your events that match one of our [spec'd events](/docs/connections/spec/) that map to Facebook's spec'd events. The below table shows the out of the box mappings in our integration:
 
 <table>
   <tr>
@@ -143,7 +143,7 @@ In addition, there are special requirements for dynamic ads. These events are ma
 ## Other Features
 
 ### Facebook Login and Facebook Dialogs
-The integration does not automatically support Facebook Login and Facebook Dialogs out of the box (you'd need to write code here regardless!). To use these features you'll need to set up [Facebook's app delegate hooks](https://developers.facebook.com/docs/ios/getting-started#delegate) by accessing [the Facebook SDK directly](/docs/sources/mobile/ios/#faq).
+The integration does not automatically support Facebook Login and Facebook Dialogs out of the box (you'd need to write code here regardless!). To use these features you'll need to set up [Facebook's app delegate hooks](https://developers.facebook.com/docs/ios/getting-started#delegate) by accessing [the Facebook SDK directly](/docs/connections/sources/catalog/libraries/mobile/ios/#faq).
 
 ### Packaged Integration
 
@@ -158,9 +158,9 @@ The integration currently only supports the `FBSDKAppEventNameActivatedApp` pre-
 
 ### Not seeing events?
 
-You will have to be sure that the [IDFA](https://segment.com/docs/sources/mobile/ios/#idfa) is working within your app, which involves adding the [iAD framework](https://segment.com/docs/sources/mobile/ios/#idfa).
+You will have to be sure that the [IDFA](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa) is working within your app, which involves adding the [iAD framework](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa).
 
-Simiarly, on Android, you'll need to include the Play Services Ads library as [mentioned here](https://segment.com/docs/sources/mobile/android/#how-do-you-handle-unique-identifiers-) in order for the `advertisingId` to populate.
+Simiarly, on Android, you'll need to include the Play Services Ads library as [mentioned here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-do-you-handle-unique-identifiers-) in order for the `advertisingId` to populate.
 
 Once you have added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
 

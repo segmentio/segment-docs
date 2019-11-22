@@ -12,7 +12,7 @@ Sources belong to a workspace and the URL will look something like this:
 
 `https://segment.com/<my-workspace>/sources/<my-source-name>/`
 
-You can create new sources using the button in the workspace view. Each source you create will have a write key which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/sources/website/analytics.js/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/sources/website/analytics.js/quickstart/) includes:
+You can create new sources using the button in the workspace view. Each source you create will have a write key which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/) includes:
 
 ```js
 analytics.load("YOUR_WRITE_KEY");
@@ -27,7 +27,7 @@ All these tools run on the same data: who are your customers and what are they d
 
 We eliminate this process by introducing an abstraction layer. You just send your data to us. We understand it, translate it, and send it along to any destination you toggle on in the Segment destinations catalog. Immediately, your user data will start flowing into those tools' dashboards. No extra code required!
 
-We support many categories of destinations, from advertising to marketing, email to customer support, CRM to user testing, and even data warehouses. You can view a complete list of our [destinations](https://segment.com/docs/destinations) or check out our [Catalog page](https://segment.com/catalog) for a searchable list broken down by category.
+We support many categories of destinations, from advertising to marketing, email to customer support, CRM to user testing, and even data warehouses. You can view a complete list of our [destinations](https://segment.com/docs/connections/destinations/) or check out our [Catalog page](https://segment.com/catalog) for a searchable list broken down by category.
 
 
 ## What information can I see on Sources and Destinations pages?

@@ -25,7 +25,7 @@ we can keep track of which player to attribute events to.**
 ### Video Playback Started
 
 When a user starts playback of a video, you should use our [Video Playback
-Started](/docs/spec/video/#playback-events) event. We will map the properties
+Started](/docs/connections/spec/video/#playback-events) event. We will map the properties
 from the Video Playback Started event to the following Youbora video metadata
 fields:
 
@@ -50,7 +50,7 @@ fields:
 ### Video Content Started
 
 When the video content actully begins playing, you should use our [Video Content
-Started](/docs/spec/video/#content-events) event. We will map the properties
+Started](/docs/connections/spec/video/#content-events) event. We will map the properties
 from the Video Playback Started event to the following Youbora video metadata
 fields:
 
@@ -98,8 +98,8 @@ Content Started`, Youbora will calculate the join time for you.
 ### Video Playback Paused/Resumed
 
 When a user pauses/resumes playback of a video, you should use our [Video
-Playback Paused](/docs/spec/video/#playback-events) and [Video Playback
-Resumed](/docs/spec/video/#playback-events) events.
+Playback Paused](/docs/connections/spec/video/#playback-events) and [Video Playback
+Resumed](/docs/connections/spec/video/#playback-events) events.
 
 If the user pauses during an ad, please be sure to fill the
 `properties.ad_asset_id` field from our spec for **both** calls, as we use its
@@ -122,8 +122,8 @@ analytics.track('Video Playback Resumed', {
 ### Video Playback Seek Started/Completed
 
 When the video content actully begins playing, you should use our [Video
-Playback Seek Started](/docs/spec/video/#playback-events) and [Video Playback
-Seek Completed](/docs/spec/video/#playback-events) events. Youbora internally
+Playback Seek Started](/docs/connections/spec/video/#playback-events) and [Video Playback
+Seek Completed](/docs/connections/spec/video/#playback-events) events. Youbora internally
 calculates the duration of the seek but if you would prefer to provide this
 value yourself you can pass it as the integration-specific option `duration`.
 
@@ -138,8 +138,8 @@ analytics.track('Video Playback Seek Completed');
 ### Video Playback Buffer Started/Completed
 
 When the video content buffers during playback, you should use our [Video
-Playback Buffer Started](/docs/spec/video/#playback-events) and [Video Playback
-Buffer Completed](/docs/spec/video/#playback-events) events. We will map the
+Playback Buffer Started](/docs/connections/spec/video/#playback-events) and [Video Playback
+Buffer Completed](/docs/connections/spec/video/#playback-events) events. We will map the
 properties from these events to the following Youbora video metadata fields:
 
 If the buffer occurs during an ad, please be sure to fill the
@@ -157,12 +157,12 @@ analytics.track('Video Playback Buffer Completed', { session_id: 1 });
 ### Video Playback Interrupted
 
 When playback of a video is interrupted, you should use our [Video Playback
-Interrupted](/docs/spec/video/#playback-events) event.
+Interrupted](/docs/connections/spec/video/#playback-events) event.
 
 ### Video Playback Completed
 
 To track the completion of the video playback session, please use our [Video
-Playback Completed](https://segment.com/docs/spec/video/#playback-events) event.
+Playback Completed](https://segment.com/docs/connections/spec/video/#playback-events) event.
 
 **Example**
 
@@ -173,7 +173,7 @@ analytics.track('Video Playback Completed', { session_id: 1 });
 ### Video Ad Started
 
 When an ad begins to load, you should use our [Video Ad
-Started](/docs/spec/video/#ad-events) event. We will map the properties from
+Started](/docs/connections/spec/video/#ad-events) event. We will map the properties from
 these events to the following Youbora video metadata fields:
 
 <table>
@@ -198,7 +198,7 @@ analytics.track('Video Ad Started', { session_id: 1, title: 'Test Ad Title', ad_
 ### Video Ad Completed
 
 To track the completion of an ad, please use our [Video Ad
-Completed](https://segment.com/docs/spec/video/#ad-events) event.
+Completed](https://segment.com/docs/connections/spec/video/#ad-events) event.
 
 **Example**
 

@@ -65,7 +65,7 @@ Please note, if you are choosing to not use a dependency manager, you must keep 
 
 In the interest of keeping our SDK lightweight, Analytics only installs the Segment destination. This means that all your data is sent using Segment's servers to any tools you've enabled using the default Cloud-mode.
 
-[As described here](/docs/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/sources/mobile/react-native#packaging-integrations).
+[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/connections/sources/catalog/libraries/mobile/react-native#packaging-integrations).
 
 Now that the SDK is installed and setup, you're ready to...
 
@@ -92,11 +92,11 @@ The `identify` call has the following arguments:
 <table class="api-table">
   <tr>
     <td>`userId` _string_</td>
-    <td>The database ID for this user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more in the [identify reference](/docs/spec/identify).</td>
+    <td>The database ID for this user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more in the [identify reference](/docs/connections/spec/identify).</td>
   </tr>
   <tr>
     <td>`traits` _JSONMap, optional_</td>
-    <td>A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [identify reference](/docs/spec/identify).</td>
+    <td>A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify).</td>
   </tr>
 </table>
 
@@ -104,13 +104,13 @@ Analytics works on its own background thread, so it will never block the main th
 
 Calling `identify` with a `userId` will write that ID to disk to be used in subsequent calls. That ID can be removed either by uninstalling the app or by calling [`reset`](#reset).
 
-Find details on the **identify method payload** in our [Spec](/docs/spec/identify/).
+Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
 
 ## Track
 
 `track` lets you record the actions your users perform.  Every action triggers what we call an "event", which can also have associated properties.
 
-To get started, our SDK can automatically track a few key common events with our [Native Mobile Spec](/docs/spec/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. These events are required for attribution tracking in several commonly used Segment destinations. Simply enable this option during initialization.
+To get started, our SDK can automatically track a few key common events with our [Native Mobile Spec](/docs/connections/spec/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. These events are required for attribution tracking in several commonly used Segment destinations. Simply enable this option during initialization.
 
 You'll also want to track events that are indicators of success for your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. We recommend tracking just a few important events. You can always add more later!
 
@@ -143,7 +143,7 @@ The `track` call has the following fields:
 
 ## Screen
 
-The [`screen`](/docs/spec/screen/) method lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
+The [`screen`](/docs/connections/spec/screen/) method lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
 
 You'll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
 
@@ -168,13 +168,13 @@ The `screen` call has the following fields:
   </tr>
 </table>
 
-Find details on the **`screen` payload** in our [Spec](/docs/spec/screen/).
+Find details on the **`screen` payload** in our [Spec](/docs/connections/spec/screen/).
 
 ## Group
 
-`group` lets you associate an [identified user](/docs/sources/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
+`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/destinations/intercom/), [Preact](/docs/destinations/preact/) and [Totango](/docs/destinations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
 Example `group` call:
 
@@ -198,13 +198,13 @@ The `group` call has the following fields:
   </tr>
 </table>
 
-Find more details about `group` including the **`group` payload** in our [Spec](/docs/spec/group/).
+Find more details about `group` including the **`group` payload** in our [Spec](/docs/connections/spec/group/).
 
 ## Alias
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/destinations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/destinations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -221,7 +221,7 @@ The `alias` call has the following fields:
   </tr>
 </table>
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/spec/alias/)
+For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/)
 
 ## Reset
 
@@ -507,11 +507,11 @@ _Note_: While the network is deprecated, the relevant [framework](https://develo
 ## Troubleshooting
 
 ### No events in my debugger
-1. Verify you have followed all [Getting Started](/docs/sources/mobile/react-native/#getting-started) steps
+1. Verify you have followed all [Getting Started](/docs/connections/sources/catalog/libraries/mobile/react-native/#getting-started) steps
 2. Verify you have entered the correct writeKey for your source
     - If the writeKey you have entered is something other than a string or an empty string your app may crash
     - If the writeKey you have entered is a valid form but not the correct writeKey for your specific source, you will not see an error response. Data will be accepted by Segment but not able to be correctly routed to your source (debugger).
-3. [Enable logging](/docs/sources/mobile/react-native/#logging) to confirm if call is being sent to Segment
+3. [Enable logging](/docs/connections/sources/catalog/libraries/mobile/react-native/#logging) to confirm if call is being sent to Segment
 
 
 ### No events in my destinations
@@ -527,7 +527,7 @@ _Note_: While the network is deprecated, the relevant [framework](https://develo
 
 If you are using device-mode, you should see the value of that integration set to false in the `integrations` object. That means that the data is being sent from the device to the destination SDK, and not through Segment's servers. This is expected if you chose to use a device-mode destination's SDK with Segment's during installation.
 
-Enable verbose [logging](/docs/sources/mobile/react-native/#logging) and trigger the call in question. You should see a call to Segment triggered as well as to the partner SDK.  It will show you exactly which partner method was invoked and the arguments it was invoked with!
+Enable verbose [logging](/docs/connections/sources/catalog/libraries/mobile/react-native/#logging) and trigger the call in question. You should see a call to Segment triggered as well as to the partner SDK.  It will show you exactly which partner method was invoked and the arguments it was invoked with!
 
 ### Debugging Cloud-mode Destinations
 

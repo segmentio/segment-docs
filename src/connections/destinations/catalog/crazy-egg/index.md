@@ -20,7 +20,7 @@ This document was last updated on 18th January, 2018. If you notice any gaps, ou
 6. Navigate to the [Crazy Egg Dashboard](https://app.crazyegg.com/v2/dashboard) to track the data. It's worth noting that it may take up to 24-48 hours for initial data to show up.
 
 ## Page
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```javascript
 analytics.page();
 ```

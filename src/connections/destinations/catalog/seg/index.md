@@ -14,7 +14,7 @@ When you call identify on analytics.js, we pass all traits into Seg. You must pr
 
 ### Track
 
-When you call track, Seg looks for standard [Segment e-commerce event names](/docs/spec/ecommerce/v2/) and they get mapped to standard Seg ecommerce event names as follows:
+When you call track, Seg looks for standard [Segment e-commerce event names](/docs/connections/spec/ecommerce/v2/) and they get mapped to standard Seg ecommerce event names as follows:
 
 - `Viewed Product Category` is mapped to [`RangeView`](http://support.segapp.com/knowledge_base/topics/range-view-event)
 - `Viewed Product` is mapped to [`ProductView`](http://support.segapp.com/knowledge_base/topics/product-view-event)

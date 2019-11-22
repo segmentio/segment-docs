@@ -8,7 +8,7 @@ sourceCategory: 'Server'
 
 This tutorial will help you start sending data from your Go servers to Segment and any of our destinations, using our Go library. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
 
-If you want to dive deeper at any point, check out the [Go library reference](/docs/sources/server/go/).
+If you want to dive deeper at any point, check out the [Go library reference](/docs/connections/sources/catalog/libraries/server/go/).
 
 
 ## Step 1: Install the Package
@@ -36,7 +36,7 @@ That will create a `client` that you can use to send data to Segment for your so
 
 ## Step 2: Identify Users
 
-The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/sources/server/go#identify).
+The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/server/go#identify).
 
 Here's what a basic call to `identify` might look like:
 
@@ -60,7 +60,7 @@ Once you've added an identify call, you can move on to...
 
 ## Step 3: Track Actions
 
-The `track` method is how you tell Segment about which actions your users are performing. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/sources/server/go#track).
+The `track` method is how you tell Segment about which actions your users are performing. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/connections/sources/catalog/libraries/server/go#track).
 
 Here's what a call to `track` might look like when a user signs up:
 
@@ -98,6 +98,6 @@ Once you've added a few `track` calls, **you're done!** You successfully install
 
 ## What's Next?
 
-We just walked through the quickest way to get started with Segment using go. You might also want to check out our full [Go library reference](/docs/sources/server/go/) to see what else is possible, or read about the [Tracking API methods](/docs/sources/server/http/) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Segment using go. You might also want to check out our full [Go library reference](/docs/connections/sources/catalog/libraries/server/go/) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http/) to get a sense for the bigger picture.
 
-You might also want to consider installing [Analytics.js](/docs/sources/website/analytics.js/quickstart/) so that you can use destinations that require being loaded in the browser, like live chat tools or user feedback systems.
+You might also want to consider installing [Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/) so that you can use destinations that require being loaded in the browser, like live chat tools or user feedback systems.

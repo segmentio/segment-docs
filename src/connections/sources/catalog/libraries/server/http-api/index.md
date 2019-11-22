@@ -74,7 +74,7 @@ This call is identifying  the user by his unique User ID (the one you know him b
 </table>
 -->
 
-Find details on the **identify method payload** in our [Spec](/docs/spec/identify/).
+Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
 
 ## Track
 
@@ -119,11 +119,11 @@ The `track` call has the following fields:
 </table>
 -->
 
-Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/spec/track/).
+Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/connections/spec/track/).
 
 ## Page
 
-The [`page`](/docs/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
+The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
 Example `page` call:
 
@@ -150,11 +150,11 @@ The `page` call has the following fields:
 </table>
 -->
 
-Find details on the **`page` payload** in our [Spec](/docs/spec/page/).
+Find details on the **`page` payload** in our [Spec](/docs/connections/spec/page/).
 
 ## Screen
 
-The [screen](/docs/spec/screen/) method let you record whenever a user sees a screen of your mobile app.
+The [screen](/docs/connections/spec/screen/) method let you record whenever a user sees a screen of your mobile app.
 
 You'll want to send the `screen` message whenever a user requests a page of your app.
 
@@ -185,11 +185,11 @@ The `screen` call has the following fields:
 </table>
 -->
 
-Find details on the **`screen` payload** in our [Spec](/docs/spec/screen/).
+Find details on the **`screen` payload** in our [Spec](/docs/connections/spec/screen/).
 
 ## Group
 
-`group` lets you associate an [identified user](/docs/sources/server/node/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
+`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/node/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
 This is useful for tools like [Intercom](/docs/integrations/intercom/), [Preact](/docs/integrations/preact/) and [Totango](/docs/integrations/totango/), as it ties the user to a **group** of other users.
 
@@ -224,7 +224,7 @@ The `group` call has the following fields:
 </table>
 -->
 
-Find more details about `group` including the **`group` payload** in our [Spec](/docs/spec/group/).
+Find more details about `group` including the **`group` payload** in our [Spec](/docs/connections/spec/group/).
 
 ## Alias
 
@@ -256,7 +256,7 @@ The `alias` call has the following fields:
 </table>
 -->
 
-For more details on the `alias` call and payload, check out our [Spec](/docs/spec/alias/).
+For more details on the `alias` call and payload, check out our [Spec](/docs/connections/spec/alias/).
 
 ## Historical Import
 
@@ -268,7 +268,7 @@ Historical imports can only be done into destinations that can accept historical
 
 ## Batch
 
-The `batch` method lets you send a series of `identify`, `group`, `track`, `page` and `screen` requests in a single batch, saving on outbound requests. Our server-side and mobile [sources](/docs/sources) make use of this method automatically for higher performance.
+The `batch` method lets you send a series of `identify`, `group`, `track`, `page` and `screen` requests in a single batch, saving on outbound requests. Our server-side and mobile [sources](/docs/connections/sources/) make use of this method automatically for higher performance.
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
@@ -337,11 +337,11 @@ POST https://api.segment.io/v1/batch
   </tr>
   <tr>
     <td>`context` _Object, optional_</td>
-    <td>The same as [Context](/docs/spec/common#context) for other calls, but it will be merged with any context inside each of the items in the batch.</td>
+    <td>The same as [Context](/docs/connections/spec/common#context) for other calls, but it will be merged with any context inside each of the items in the batch.</td>
   </tr>
   <tr>
     <td>`integrations` _Object, optional_</td>
-    <td>The same as [Destinations](/docs/spec/common#integrations) for other calls, but it will be merged with any destinations inside each of the items in the batch.</td>
+    <td>The same as [Destinations](/docs/connections/spec/common#integrations) for other calls, but it will be merged with any destinations inside each of the items in the batch.</td>
   </tr>
 </table>
 

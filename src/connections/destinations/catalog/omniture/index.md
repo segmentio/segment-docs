@@ -20,7 +20,7 @@ The Omniture destination on Segment works with [all of our tracking sources](doc
 
 ## Page
 
-Pageviews can be tracked via Segment with [`page`](/docs/spec/page/) calls from the browser. You must call it at least once per page. The javascript snippet you copy-paste from the setup guide comes with a default, `analytics.page();` call.
+Pageviews can be tracked via Segment with [`page`](/docs/connections/spec/page/) calls from the browser. You must call it at least once per page. The javascript snippet you copy-paste from the setup guide comes with a default, `analytics.page();` call.
 
 *You can extend the basic call to include the page name:*
 
@@ -42,12 +42,12 @@ analytics.page('Product', {
 });
 ```
 
-This will set the `channel` and `campaign` automatically for the pageview sent to Sitecatalyst. This also works for track calls and for some other fields from our [spec](/docs/spec/common/#structure) including `state`, `zip`, `purchaseId`, and `transactionId`.
+This will set the `channel` and `campaign` automatically for the pageview sent to Sitecatalyst. This also works for track calls and for some other fields from our [spec](/docs/connections/spec/common/#structure) including `state`, `zip`, `purchaseId`, and `transactionId`.
 
 By default the `sku` property will not be sent to Omniture. First you have to map `sku` inside the Segment interface to a numbered `eVar` or `prop`:
 ![](images/omnitureprops.png)
 
-Check out the `page` method docs for more information about our [page tracking API](/docs/spec/page/)
+Check out the `page` method docs for more information about our [page tracking API](/docs/connections/spec/page/)
 
 ## Track
 
@@ -92,7 +92,7 @@ In this example Segment will automatically send the following data to Omniture:
 
 We _will not_ send any `event`, `prop` or `eVar` which isn't found in your mapping. Except for [Ecommerce events](#e-commerce), which are automatically aliased to Omniture events.
 
-With [`track`](/docs/spec/track) in place, you'll no longer need to write Omniture-specific code to send data to Omniture. Once you create the mapping we'll automatically set up all of the tracking code and send the data to the Omniture server.
+With [`track`](/docs/connections/spec/track) in place, you'll no longer need to write Omniture-specific code to send data to Omniture. Once you create the mapping we'll automatically set up all of the tracking code and send the data to the Omniture server.
 
 ### eVars
 
@@ -100,7 +100,7 @@ With Segment you can map an event name or property to an  `eVar` in Omniture. Th
 
 ## E-Commerce
 
-Our Omniture destination works with our standard [Ecommerce API](/docs/spec/ecommerce/v2/).
+Our Omniture destination works with our standard [Ecommerce API](/docs/connections/spec/ecommerce/v2/).
 
 Here's how we map our standard ecommerce events to Omniture events:
 
@@ -148,7 +148,7 @@ For [ecommerce events](#e-commerce), we'll automatically send standard propertie
 
 Segment supports Omniture mobile app analytics via the Omniture XML Insertion API. You'll no longer need to deal with the Omniture SDKs at all.
 
-For getting started with our mobile sources, check out the [iOS](/docs/sources/mobile/ios) and [Android](/docs/sources/mobile/android) technical docs.
+For getting started with our mobile sources, check out the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios) and [Android](/docs/connections/sources/catalog/libraries/mobile/android) technical docs.
 
 
 ### Add the Omniture Report Suite Id / Report Server Url

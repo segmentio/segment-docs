@@ -28,7 +28,7 @@ If you'd like to use AppsFlyer fully server-side, this can be done but it is a E
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example iOS call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:
 
 ```ios
 [[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
@@ -41,7 +41,7 @@ When you call `.identify()`, we will use AppsFlyer's `setCustomerUserID` to send
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example iOS call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example iOS call would look like:
 
 ```ios
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"
@@ -52,7 +52,7 @@ When you call `track`, we translate it automatically and send the event to App
 
 We include all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on our spec'd properties.
 
-Finally, we automatically use AppsFlyer's `transactionId` deduplication when you send an an `orderId` (see the [e-commerce spec](https://segment.com/docs/spec/ecommerce/v2/)).
+Finally, we automatically use AppsFlyer's `transactionId` deduplication when you send an an `orderId` (see the [e-commerce spec](https://segment.com/docs/connections/spec/ecommerce/v2/)).
 
 ### Server
 
@@ -91,12 +91,12 @@ analytics.track({
   }
 });
 ```
-> Check your specific [serverside library docs](https://segment.com/docs/sources/#server) for specifics on how to format the method properly.
+> Check your specific [serverside library docs](https://segment.com/docs/connections/sources/#server) for specifics on how to format the method properly.
 
 Finally, the serverside component will look for the following `properties` and handle them specially:
 
 - `ip` (this should be the `ip` of your customer--this is not collected by Segment's libraries out-of-the-box)
-- `timestamp` (refer to AppsFlyer's docs on [how they process timestamps](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-). Since our libraries generate a [timestamp](/docs/spec/common/#timestamps), we will always set this value)
+- `timestamp` (refer to AppsFlyer's docs on [how they process timestamps](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-). Since our libraries generate a [timestamp](/docs/connections/spec/common/#timestamps), we will always set this value)
 - `currency` (defaults to `"USD"`)
 - `revenue` (For `Order Completed / Completed Order` events, precedence is given to `total`, falling back to `properties.revenue`)
 
@@ -107,7 +107,7 @@ All other `properties` will be sent to AppsFlyer as custom properties inside `ev
 ## Install Attributed
 
 ### Client
-Segment will automatically trigger an `Install Attributed` event if you have **trackAttributionData** enabled in your settings, and the Segment-AppsFlyer integration installed in your app. The event payload will adhere to our `Install Attributed` event specification documented [here](/docs/spec/mobile/#install-attributed) and will propagate to your other downstream destinations.
+Segment will automatically trigger an `Install Attributed` event if you have **trackAttributionData** enabled in your settings, and the Segment-AppsFlyer integration installed in your app. The event payload will adhere to our `Install Attributed` event specification documented [here](/docs/connections/spec/mobile/#install-attributed) and will propagate to your other downstream destinations.
 
 ### Server
 If you are tracking events server-side, AppsFlyer can still send attribution postbacks but you will need to configure this functionality in your AppsFlyer account. To enable this, navigate to your AppsFlyer app and on the sidebar of the main screen click on **Integrated Partners** and search for Segment. You will be prompted with a couple of configuration options and asked to input your Segment Write Key. Once enabled, successfully attributed app installs will begin showing up as `Install Attributed` events similar to the client side behavior documented above.

@@ -27,7 +27,7 @@ Additionaly, to enable the destination please follow these instructions:
 
 ### Send Experiment Data from VWO
 
-When you enable the VWO destination, we set the option for "Send experiment data to other tools (as a track call)" to true by default and we will automatically collect the [`Experiment Viewed`](/docs/spec/ab-testing/) event as a track call.
+When you enable the VWO destination, we set the option for "Send experiment data to other tools (as a track call)" to true by default and we will automatically collect the [`Experiment Viewed`](/docs/connections/spec/ab-testing/) event as a track call.
 
 ![Turn on VWO](images/experiment-viewed-setting.png)
 
@@ -57,7 +57,7 @@ However, you can also send the Experiment data as traits of an identify call tha
 
 By default, we will take the variation data that is available in VWO and send that data to the other user-tracking destinations you have enabled in Segment automatically. That way, you can segment your analytics reports by the variations a user has seen.
 
-For example, if you have an experiment called Home CTA and a visitor sees a variation called **Create free account now**, we will send the `Create free account now` value as the `variation_name` property of the [`Experiment Viewed`](/docs/spec/ab-testing/) event and/or as a trait of the user in an identify call (depending on your delivery settings).
+For example, if you have an experiment called Home CTA and a visitor sees a variation called **Create free account now**, we will send the `Create free account now` value as the `variation_name` property of the [`Experiment Viewed`](/docs/connections/spec/ab-testing/) event and/or as a trait of the user in an identify call (depending on your delivery settings).
 
 
 ### Track Revenue Goals

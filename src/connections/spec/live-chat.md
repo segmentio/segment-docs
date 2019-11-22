@@ -3,7 +3,7 @@ title: 'Spec: Live Chat Events'
 hidden: true
 ---
 
-This guide explains what data should be sent to Segment *from* Live Chat tools and hence is targeted to partners who send Live Chat data back into Segment rather than targeted to customers themselves. The [semantic events](/docs/spec/semantic) detailed below represent the ideal for Live Chat events; not every Live Chat tool supports all of these events or all their properties.
+This guide explains what data should be sent to Segment *from* Live Chat tools and hence is targeted to partners who send Live Chat data back into Segment rather than targeted to customers themselves. The [semantic events](/docs/connections/spec/semantic) detailed below represent the ideal for Live Chat events; not every Live Chat tool supports all of these events or all their properties.
 
 ## Overview
 

@@ -45,20 +45,20 @@ These docs will only cover GA Universal features, since the [Classic tracking me
 
 ## Page & Screen
 
-When you call [`page`](/docs/spec/page), we send a pageview to Google Analytics. Pageviews can be sent from the browser or through any of our server-side libraries.
+When you call [`page`](/docs/connections/spec/page), we send a pageview to Google Analytics. Pageviews can be sent from the browser or through any of our server-side libraries.
 
 The resulting `page` event name in Google Analytics will correspond to the `fullName` of your page event. `fullName` consists of a combination of the `category` and `name` parameters. For example, `analytics.page('Home');` would produce a `Home` page event in GA's dashboard, whereas `analytics.page('Retail Page', 'Home');` would produce an event called `Retail Page Home`.
 
 Note that when sending `page` views from one of Segment's server-side libraries, a `url` property is required. Otherwise, Google Analytics will silently reject your `page` event.
 
-If you are sending a [`screen`](/docs/spec/screen) call server-side, you must pass in an [application name](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#appName) through Segment's `context.app.name` object or Google will reject your event.
+If you are sending a [`screen`](/docs/connections/spec/screen) call server-side, you must pass in an [application name](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#appName) through Segment's `context.app.name` object or Google will reject your event.
 
 If you've set an application name in your Android or iOS project, Segment will grab the name and pass `context.app.name` automatically. For iOS, Segment collects your project's `infoDictionary` and uses whatever name you've set there. You can see [Segment's iOS Library code in action](https://github.com/segmentio/analytics-ios/blob/760be85a5119c2e8bd31a745ce2ec30385a0ad69/Pod/Classes/Internal/SEGSegmentIntegration.m#L110), and you can read more about how to [set the display name for your iOS app](https://developer.apple.com/library/content/qa/qa1823/_index.html).
 
 
 ### Virtual Pageviews
 
-Virtual pageviews are when you send a pageview to Google Analytics when the page URL didn't actually change. You can do this through Segment by simply calling [`page`](/docs/spec/page) with optional properties, like this:
+Virtual pageviews are when you send a pageview to Google Analytics when the page URL didn't actually change. You can do this through Segment by simply calling [`page`](/docs/connections/spec/page) with optional properties, like this:
 
 ```javascript
 analytics.page({
@@ -89,7 +89,7 @@ In some cases, like using Google Analytics to track search queries, you may want
 
 ## Identify
 
-It is against Google's terms of service to pass Personally Identifiable Information (PII) to your Google Analytics reporting interface. For that reason Segment will never pass anything from an [`identify`](/docs/spec/identify) call to Google unless you specifically tell us to. You can read about Google's best practices for avoiding this [here](https://support.google.com/analytics/answer/6366371?hl=en).
+It is against Google's terms of service to pass Personally Identifiable Information (PII) to your Google Analytics reporting interface. For that reason Segment will never pass anything from an [`identify`](/docs/connections/spec/identify) call to Google unless you specifically tell us to. You can read about Google's best practices for avoiding this [here](https://support.google.com/analytics/answer/6366371?hl=en).
 
 
 ### User ID
@@ -98,7 +98,7 @@ Google Analytics Universal tracking method allows you to set a user ID for your 
 
 To use this feature you must enable User-ID in your Google Analytics property and create a User-ID view, [read more here](https://support.google.com/analytics/answer/3123666).
 
-If you want to pass the `id` from your [`identify`](/docs/spec/identify) calls to Google Analytics - enable **Send User-ID to GA** in your Advanced Google Analytics settings on the Segment destinations catalog.
+If you want to pass the `id` from your [`identify`](/docs/connections/spec/identify) calls to Google Analytics - enable **Send User-ID to GA** in your Advanced Google Analytics settings on the Segment destinations catalog.
 
 Here's an example:
 
@@ -111,7 +111,7 @@ analytics.identify('12345', {
 
 In this example we will set the `User-ID` to `12345` for Google Analytics, but we won't share the `email` or `name` traits with Google.
 
-If you are passing an **email**, **phone number**, **full name** or other PII as the `id` in [`identify`](/docs/spec/identify) do not use this feature. That is against the Google Analytics terms of service and your account could be suspended.
+If you are passing an **email**, **phone number**, **full name** or other PII as the `id` in [`identify`](/docs/connections/spec/identify) do not use this feature. That is against the Google Analytics terms of service and your account could be suspended.
 
 
 ### Custom Dimensions
@@ -133,11 +133,11 @@ On Google:
 
 **Note:** A particular trait or property may only be mapped to a single Custom Dimension at a time.
 
-Once all your dimensions have been mapped, we will check user traits and properties in [`identify`](/docs/spec/identify), [`track`](/docs/spec/track) and [`page`](/docs/spec/page) calls to see if they are defined as a dimension. If they are defined in your mapping, we will send that dimension to Google Analytics.
+Once all your dimensions have been mapped, we will check user traits and properties in [`identify`](/docs/connections/spec/identify), [`track`](/docs/connections/spec/track) and [`page`](/docs/connections/spec/page) calls to see if they are defined as a dimension. If they are defined in your mapping, we will send that dimension to Google Analytics.
 
-**Note:** Traits in [`Identify`](/docs/spec/identify) calls that map to Custom Dimensions will only be recorded to Google Analytics when the next [`track`](/docs/spec/track) or [`page`](/docs/spec/page) call is fired from the browser.
+**Note:** Traits in [`Identify`](/docs/connections/spec/identify) calls that map to Custom Dimensions will only be recorded to Google Analytics when the next [`track`](/docs/connections/spec/track) or [`page`](/docs/connections/spec/page) call is fired from the browser.
 
-Continuing the example above, we can set the **Gender** trait with the value of **Male**, which maps to `dimension9`, and it will be passed to Google Analytics **when we make the 'Viewed History' [`track`](/docs/spec/track) call**.
+Continuing the example above, we can set the **Gender** trait with the value of **Male**, which maps to `dimension9`, and it will be passed to Google Analytics **when we make the 'Viewed History' [`track`](/docs/connections/spec/track) call**.
 
 ```javascript
 analytics.identify({
@@ -181,9 +181,9 @@ If you want to record that property or trait as a custom dimension you'd map **E
 
 ## Track
 
-We'll record a Google Analytics event whenever you make a [`track`](/docs/spec/track) call. You can see your events inside Google Analytics under **Behavior** -> **Events** -> **Overview**. Keep reading for more details about the Google Analytics event category, action, label, value and how to populate them.
+We'll record a Google Analytics event whenever you make a [`track`](/docs/connections/spec/track) call. You can see your events inside Google Analytics under **Behavior** -> **Events** -> **Overview**. Keep reading for more details about the Google Analytics event category, action, label, value and how to populate them.
 
-Events can be sent from the browser or your server. Here's a basic [`track`](/docs/spec/track) example:
+Events can be sent from the browser or your server. Here's a basic [`track`](/docs/connections/spec/track) example:
 
 ```javascript
 analytics.track('Logged In');
@@ -202,7 +202,7 @@ For this example these event attributes are sent to Google Analytics:
   </tr>
 </table>
 
-And another [`track`](/docs/spec/track/) example, this time with all Google Analytics event parameters:
+And another [`track`](/docs/connections/spec/track/) example, this time with all Google Analytics event parameters:
 
 {% comment %} api-example '{
   "userId": "12345",
@@ -281,12 +281,12 @@ Here's an example:
 
 ## E-Commerce
 
-Segment supports Google Analytics basic e-commerce tracking across all our libraries. All you have to do is adhere to our [e-commerce tracking API](/docs/spec/ecommerce/v2/) and we'll record the appropriate data to Google Analytics.
+Segment supports Google Analytics basic e-commerce tracking across all our libraries. All you have to do is adhere to our [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/) and we'll record the appropriate data to Google Analytics.
 
 
 ### Required Steps
 
-All of our [e-commerce events](/docs/spec/ecommerce/v2/) are recommended, but not required. The only required event is `Order Completed`. For each order completed you must include an `orderId`, and for each product inside that order, you must include an `id` and `name` for each product. **All other properties are optional**.
+All of our [e-commerce events](/docs/connections/spec/ecommerce/v2/) are recommended, but not required. The only required event is `Order Completed`. For each order completed you must include an `orderId`, and for each product inside that order, you must include an `id` and `name` for each product. **All other properties are optional**.
 
 The most important thing to remember in Google's Universal Analytics is to enable e-commerce tracking for the view you want to track transactions to. This can be done inside of Google Analytics by clicking:
 
@@ -299,7 +299,7 @@ Without this step transactions will not show up in your reports.
 
 Segment supports Google Analytics Enhanced E-Commerce tracking across both our client-side (analytics.js, android-analytics, ios-analytics) and server-side destinations. Enhanced Ecommerce allows you to derive insights by combining impression data, product data, promotion data, and action data. This is required for product-scoped custom dimensions.
 
-To get started, you need only enable enhanced ecommerce and adhere to our standard [e-commerce tracking API](/docs/spec/ecommerce/v2/), and we'll record the data to Google Analytics with their enhanced ecommerce API.
+To get started, you need only enable enhanced ecommerce and adhere to our standard [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), and we'll record the data to Google Analytics with their enhanced ecommerce API.
 
 ### Required Steps (enhanced)
 
@@ -377,7 +377,7 @@ analytics.track('Completed Checkout Step', {
 
 *Note*: `shippingMethod` and `paymentMethod` are semantic properties so if you want to send that information, please do so in this exact spelling!
 
-You can have as many or as few steps in the checkout funnel as you'd like. The 4 steps above merely serve as an example. Note that you'll still need to track the `Order Completed` event per our standard [e-commerce tracking API](/docs/spec/ecommerce/v2/) after you've tracked the checkout steps.
+You can have as many or as few steps in the checkout funnel as you'd like. The 4 steps above merely serve as an example. Note that you'll still need to track the `Order Completed` event per our standard [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
 
 For client-side integrations, to leverage the ability to track Checkout Steps and Options, we use Google Analytics' ProductAction class. You can read their developer docs for information on specific methods:
 - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/ProductAction)
@@ -458,7 +458,7 @@ analytics.track({
 
 Enhanced Ecommerce also allows you to collect impression information from users who have viewed or filtered through lists containing products. This allows you to collect information about which products have been viewed in a list, which filters/sorts have been applied to a list of search results, and the positions that each product had within that list.
 
-Product impressions are mapped to our 'Product List Viewed' and 'Product List Filtered' analytics.js events. You can find more information about the parameters and requirements here in our [e-commerce tracking API](/docs/spec/ecommerce/v2/).
+Product impressions are mapped to our 'Product List Viewed' and 'Product List Filtered' analytics.js events. You can find more information about the parameters and requirements here in our [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/).
 
 Analytics.js allows you to easily collect this data and send it forward, like such:
 
@@ -537,7 +537,7 @@ analytics.track('Order Refunded', {
 
 ## Server Side
 
-When you track an event or pageview with one of our server-side libraries or [HTTP API](/docs/sources/server/http/) we will send it along to the Google Analytics REST API.
+When you track an event or pageview with one of our server-side libraries or [HTTP API](/docs/connections/sources/catalog/libraries/server/http/) we will send it along to the Google Analytics REST API.
 
 **You must include a server-side tracking ID in your Google Analytics destination settings or we won't pass server-side events to Google Analytics.** The tracking ID can be the same UA code as your regular property ID, or you can choose to send the server-side events to a separate Google Analytics property.
 
@@ -633,7 +633,7 @@ Analytics.track(
 
 ### UTM Parameters
 
-If you want to send UTM parameters to Google Analytics via one of the Segment server-side sources they need to be passed manually. The client-side Javascript library ([Analytics.js](/docs/sources/website/analytics.js)) is highly recommended for collecting this data since it all happens automatically.
+If you want to send UTM parameters to Google Analytics via one of the Segment server-side sources they need to be passed manually. The client-side Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js)) is highly recommended for collecting this data since it all happens automatically.
 
 Your UTM params need to be passed in the `context` object in `context.campaign`. For Google Analytics `campaign.name`, `campaign.source` and `campaign.medium` all need to be sent together for things to show up in reports. The other two params (`campaign.term` and `campaign.content`) are both optional, but will be forwarded to GA if you send them to Segment.
 
@@ -731,7 +731,7 @@ analytics.on('track', function(event, properties, options){
 
 To do this server side, you can create a separate [source](https://help.segment.com/hc/en-us/articles/204892239-What-are-sources-) in Segment, and within this source enter your GA credentials for the second tracker.
 
-This source can be your server-side source. From there, its easy to send data to multiple projects server-side, as you can see in this [Node example](/docs/sources/server/node/#multiple-clients) you can initialize multiple instances of our library.
+This source can be your server-side source. From there, its easy to send data to multiple projects server-side, as you can see in this [Node example](/docs/connections/sources/catalog/libraries/server/node/#multiple-clients) you can initialize multiple instances of our library.
 
 ### Cookie Domain Name
 
@@ -904,10 +904,10 @@ The Google Analytics mobile SDKs for Segment will not be removed from the catalo
 For more detailed information for each of the classes and methods in the Firebase SDK by platform visit the [Firebase Analytics SDK documentation](https://firebase.google.com/docs/reference).
 
 **Installing the iOS SDK**
-For information on how to add the Segment-Firebase SDK and register the dependency with the Segment SDK visit [Segment's Firebase for iOS](https://segment.com/docs/destinations/firebase/#ios) documentation.
+For information on how to add the Segment-Firebase SDK and register the dependency with the Segment SDK visit [Segment's Firebase for iOS](https://segment.com/docs/connections/destinations/catalog/firebase/#ios) documentation.
 
 **Installing the Android SDK**
-For information on how to add the Segment-Firebase SDK and apply the Google Services plugin visit [Segment's Firebase for Android](https://segment.com/docs/destinations/firebase/#android) documentation.
+For information on how to add the Segment-Firebase SDK and apply the Google Services plugin visit [Segment's Firebase for Android](https://segment.com/docs/connections/destinations/catalog/firebase/#android) documentation.
 
 
 ### Comparing Google Analytics and Firebase Functionality
@@ -926,7 +926,7 @@ The Firebase SDK collects screen information automatically, so when you migrate 
 
 For Android, Segment passes contextual screen information into each screen view on each activity's `onResume` callback. To ensure that this screen information is not lost now that we no longer perform a mapping step, we recommend that you add a `label` value to each activity in your app's `AndroidManifest.xml` file. At the moment, Firebase does not allow you to disable automatic screen tracking for Android.
 
-For iOS, you can configure `recordScreenViews` which will automatically track screen views, or pass in a screen manually using a [screen](https://segment.com/docs/spec/screen/) call. You can disable Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
+For iOS, you can configure `recordScreenViews` which will automatically track screen views, or pass in a screen manually using a [screen](https://segment.com/docs/connections/spec/screen/) call. You can disable Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
 
 To send product events in the Firebase SDK you must invoke a track call separately from the screen call.
 
@@ -1010,7 +1010,7 @@ If you received this deprecation notice, your property has already been flagged 
 
 ## Mobile Apps - DEPRECATED
 
-Segment supports Google Analytics mobile app analytics via our iOS and Android sources. For getting started with our mobile sources, check out the [iOS](/docs/sources/mobile/ios/) and [Android](/docs/sources/mobile/android/) technical docs.
+Segment supports Google Analytics mobile app analytics via our iOS and Android sources. For getting started with our mobile sources, check out the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/) technical docs.
 
 When including Segment-GoogleAnalytics in your project, we bundle IDFA support by default. You can choose to exclude IDFA Support by specifying `pod "Segment-GoogleAnalytics/Core"`. Doing this, we will only bundle the Segment and Core GA libraries, excluding GoogleIDFASupport.
 

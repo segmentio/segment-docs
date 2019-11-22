@@ -57,7 +57,7 @@ By default, every `identity` is created as a lead. If you'd like an identity to 
 `traits` are pieces of information you know about a user that are included in an `identify` method.
 
 ### Default Traits
-Segment has reserved some traits that have semantic meanings for users. You should only use reserved traits for their intended meaning. Check the [Segment Spec](/docs/spec/identify/#traits) to get a list of reserved traits.
+Segment has reserved some traits that have semantic meanings for users. You should only use reserved traits for their intended meaning. Check the [Segment Spec](/docs/connections/spec/identify/#traits) to get a list of reserved traits.
 
 ![Default Traits](images/lvbDssc2kP.png)
 
@@ -112,12 +112,12 @@ You can track activities of your website visitors. If a user is subscribing to a
 }
 ```
 
-Segment has standardized a series of reserved event names that have special semantic meaning. We map these events to tools that support them whenever possible. See the [Semantic Events docs](/docs/spec/semantic) for more detail. Also, custom events are supported.
+Segment has standardized a series of reserved event names that have special semantic meaning. We map these events to tools that support them whenever possible. See the [Semantic Events docs](/docs/connections/spec/semantic) for more detail. Also, custom events are supported.
 
 ## Page
 
 If a user is visiting your web pages and you want to track it, then use page method to do that.
-When you call a `page` event, we send a pageview to Freshsales. You can send extra pieces of information as part of properties. See the [reserved properties](/docs/spec/page/#properties) for more detail.
+When you call a `page` event, we send a pageview to Freshsales. You can send extra pieces of information as part of properties. See the [reserved properties](/docs/connections/spec/page/#properties) for more detail.
 
 ### Sample Page request payload
 

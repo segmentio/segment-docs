@@ -8,7 +8,7 @@ title: Freshdesk Destination
 
 ## Identify
 
-When you call [`identify`](/docs/spec/identify/) we will insert or update a user record in Freshdesk. We'll use the user email in `traits.email` to match users in Freshdesk.
+When you call [`identify`](/docs/connections/spec/identify/) we will insert or update a user record in Freshdesk. We'll use the user email in `traits.email` to match users in Freshdesk.
 
 **Note:** You must provide `traits.email` in order for the `identify` call to send to Freshdesk.
 
@@ -53,7 +53,7 @@ Here's an example:
 
 ## Group
 
-When you call [`group`](/docs/spec/group/) we will insert or update an organization in Freshdesk. If you want to update custom fields mapped with an organization, you must pass this as a trait without the `cf_` prefix. For e.g. if you have a custom field in Freshdesk with the API name `cf_plan`, you should send `plan`.
+When you call [`group`](/docs/connections/spec/group/) we will insert or update an organization in Freshdesk. If you want to update custom fields mapped with an organization, you must pass this as a trait without the `cf_` prefix. For e.g. if you have a custom field in Freshdesk with the API name `cf_plan`, you should send `plan`.
 
 Here's an example:
 

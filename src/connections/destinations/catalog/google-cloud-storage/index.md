@@ -11,7 +11,7 @@ The Google Cloud Storage destination puts the raw logs of the data Segment recei
 
 **Note:** The data is copied into your bucket at least every hour. You might see multiple files over a period of time depending on how much data is copied.
 
-Keep in mind that Google Cloud Storage works differently from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/spec/common/#integrations) does not affect events in the case of Google Cloud Storage.
+Keep in mind that Google Cloud Storage works differently from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/connections/spec/common/#integrations) does not affect events in the case of Google Cloud Storage.
 
 ## Required Steps
 
