@@ -1,8 +1,8 @@
 ---
-hidden: true
 title: Segment Premium Information Security Policy
 feedback: false
 hide-feedback: true
+hidden: true
 ---
 
 _Last Updated June 22nd, 2019_

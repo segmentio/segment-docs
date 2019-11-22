@@ -15,7 +15,7 @@ sections:
     - path: /connections/destinations/destination-filters
       title: Destination Filters
   - path: /connections/event-delivery
-    title: How do I check if data is being delivered to a destination?
+    title: How do I check if data is reaching a destination?
   - path: /connections/find-writekey
     title: How do I find my write key?
   - path: /connections/integration_error_codes
@@ -93,8 +93,6 @@ sections:
   section:
   - path: /guides
     title: Getting Started with Segment
-  - path: /guides/cant-add-integration
-    title: Why can't I add the integration I want?
   - path: /guides/duplicate-data
     title: How does Segment handle duplicate data?
   - path: /guides/filtering-data
@@ -105,7 +103,7 @@ sections:
     slug: guides/how-to-guides
     section:
     - path: /guides/how-to-guides
-      title: How-to Guides
+      title: How to Guides Index
     - path: /guides/how-to-guides/automated-multichannel-reengagement
       title: How do I automate multi-channel re-engagement campaigns?
     - path: /guides/how-to-guides/best-practices-identify
