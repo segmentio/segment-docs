@@ -6,8 +6,6 @@ This integration is maintained by [WebEngage Support](support@webengage.com).
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Steps to integrate Segment with WebEngage:
 
 You will be required to provide the API key if you intend on sending any via WebEngage's server-side component. The API key can be found in your WebEngage dashboard on the top right under **Integrations > REST API**. If you don't have a WebEngage account, you can create one [here](https://webengage.com/sign-up).

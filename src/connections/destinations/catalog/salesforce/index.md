@@ -4,8 +4,6 @@ title: Salesforce Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Segment's Salesforce destination allows you to identify leads without using SOAP APIs.
 
 **Use Cases**

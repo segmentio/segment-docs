@@ -5,8 +5,6 @@ This destination is maintained by [Freshsales](https://www.freshworks.com/freshs
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 You can create and update Freshsales Leads and Contacts through Segment. We support `identify`, `page`, and `track` methods.
 
 Once your Segment source starts receiving data, you can send them to Freshsales by enabling this destination. You can enable it from Freshsales Admin Settings for Third Party Integrations. Select the Segment source from which data has to be forwarded to Freshsales.

@@ -11,8 +11,6 @@ title: Twitter Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 From your Segment Destinations page click on Twitter Ads. Twitter Ads can track conversions in two ways. You can opt to use their newest **Universal Website Tag** or their **Single Event Website Tag**. You could also use both types of tags on the same page.
 
 If you want to use the universal tag, all you have to do is enter your **Universal Website Tag Pixel ID** in the settings and create your conversion events inside Twitter's UI. The **Universal Website Tag** will map to any Segment event listed in the table [Advanced Conversion Tracking/Dynamic Ads](#advanced-conversion-tracking-dynamic-ads). You can find this pixel ID in Twitter's snippet that is generated for you after making a new Universal Conversion Event:

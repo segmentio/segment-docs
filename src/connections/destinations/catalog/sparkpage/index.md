@@ -6,8 +6,6 @@ This destination is maintained by SparkPage.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Once the Segment library is integrated with your server, toggle SparkPage on in your Segment destinations, and add your API key which you can find in the SparkPage Dashboard under "Settings"
 
 The Segment SparkPage destination is 100% handled through our servers, so you don't need to bundle their iOS or Android SDKs. Your Segment SDK will be enough.
