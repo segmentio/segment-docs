@@ -1,6 +1,7 @@
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
 {% assign currentSlug = page.url | split: "/" | last %}
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
+{% if currentIntegration %}
 
 {% if currentIntegration.platforms.server == true %}
 {% unless page.hide-personas-parital%}
@@ -17,7 +18,7 @@ When the audience is first created an identify call is sent for every user in th
 
 {% endif %}
 
-
+{% unless page.rewrite %}
 ## Supported Sources and Connection Modes
 {% if currentIntegration.components.size > 0 %}
 {% include content/connection-modes.md %}
@@ -37,6 +38,7 @@ Segment offers an *optional* **Device-based** Connection Mode for **Mobile** dat
 This destination *requires* a **Device-based** Connection Mode for **Mobile** data. Follow the steps above to ensure you have packaged the {{ currentIntegration.display_name }} SDK with Segment's.
 {% endif %}
 {% endif %}
+{% endunless %}
 
 ## Settings
 
@@ -51,13 +53,15 @@ Segment lets you change these destination settings from your Segment dashboard w
   {% endunless %}
 {% endfor %}
 
-{% assign oldname = currentIntegration.slug | capitalize %}
+{% assign oldname = currentIntegration.name | split: "/" | last | capitalize %}
 {% if currentIntegration.display_name != oldname %}
 
 ## Adding {{ currentIntegration.display_name }} to the integrations object
 
-To add {{ currentIntegration.display_name }} to the `integrations` JSON object (for example, <a href="https://segment.com/docs/guides/general/filtering-data/#filtering-with-the-integrations-object">to filter data from a specific source</a>), use one of the {{ currentIntegration.previousNames.length }} valid names for this integration:
-{% for name in currentIntegration.previousNames %}
-        <li><code>{{name}}</code></li>
-    {% endfor %}
+To add {{ currentIntegration.display_name }} to the `integrations` JSON object (for example, <a href="https://segment.com/docs/guides/general/filtering-data/#filtering-with-the-integrations-object">to filter data from a specific source</a>), use one of the following valid names for this integration:
+
+- {{ currentIntegration.display_name }}
+- {{ oldname }}
+
+{% endif %}
 {% endif %}
