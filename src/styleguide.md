@@ -139,3 +139,36 @@ console.log('example');
 
 > error ""
 > This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+
+---
+
+## FAQ
+### Server
+{% faq %}
+{% faqitem Should I track client or server-side?|https://segment.com/ %}
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
+{% endfaqitem %}
+
+{% faqitem Should I track client or?|https://segment.com/ %}
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
+{% endfaqitem %}
+
+{% faqitem Should I track client?|https://segment.com/ %}
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
+{% endfaqitem %}
+{% endfaq %}
+
+### Cloud Sources
+{% faq %}
+{% faqitem What are cloud sources??|https://segment.com/ %}
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
+{% endfaqitem %}
+
+{% faqitem Should I track client?|https://segment.com/ %}
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
+{% endfaqitem %}
+
+{% faqitem Should I track client?|https://segment.com/ %}
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
+{% endfaqitem %}
+{% endfaq %}

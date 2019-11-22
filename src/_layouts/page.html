@@ -34,19 +34,13 @@ layout: main
           {{ content }}
         </div>
 
-        {% if page.faq %}
-          <hr>
-
-          {% include components/faq.html items=page.faq %}
-        {% endif %}
-
         {% if page.contributors %}
           {% include components/avatar.html contributors=page.contributors %}
         {% endif %}
 
         {% if page.related %}
           <hr>
-
+          
           {% include components/related.html items=page.related %}
         {% endif %}
 
@@ -81,5 +75,3 @@ layout: main
     {% endunless %}
   </div>
 </div>
-
-
