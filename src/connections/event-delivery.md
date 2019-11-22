@@ -1,5 +1,5 @@
 ---
-title: How do I check if data is being delivered to a destination?
+title: How do I check if data is reaching a destination?
 ---
 
 ## Overview
