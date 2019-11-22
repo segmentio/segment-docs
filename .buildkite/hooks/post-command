@@ -26,7 +26,7 @@ assume-role "${role_arn}"
 if [[ ${BUILDKITE_LABEL} = ':hammer: Build Dependencies' ]] && [[ ${BRANCH} = 'master' || ${BRANCH} = 'staging' ]]; 
 then
   echo "--- Uploading to s3://${S3_BUCKET_NAME}/docs"
-  aws s3 sync _site/ s3://${S3_BUCKET_NAME}/docs/
+  aws s3 sync _site/ s3://${S3_BUCKET_NAME}/docs/ --delete
 fi
 echo "--- Build Complete"
 # vim: ft=sh
