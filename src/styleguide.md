@@ -145,7 +145,7 @@ console.log('example');
 ## FAQ
 ### Server
 {% faq %}
-{% faqitem Should I track client or server-side?|https://segment.com/ %}
+{% faqitem Should I track client or server-side? %}
 One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
 {% endfaqitem %}
 
