@@ -2,26 +2,22 @@
 {% assign sectionName = sectionNames[1] | capitalize %}
 {% assign currentSlug = sectionNames | last %}
 {% assign priority = 2 %}
-{% assign basehref = "" %}
-{% if page.integration_type == "destination" %}
-  {% assign basehref = '/docs' | append: page.url %}
-  {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
-  {% assign description = currentIntegration.description %}
-  {% assign priority = 4 %}
-{% elsif page.integration_type == "source" %}
-  {% assign basehref = '/docs' | append: page.url %}
-  {% assign currentIntegration = site.data.catalog.sources.items | where: "slug", currentSlug | first %}
-  {% assign description = currentIntegration.description %}
-  {% assign priority = 4 %}
+{% assign basehref = "/docs" %}
+{% if page.path contains "index.md" %}
+	{% capture basehref %}{{basehref}}{{ page.url }}{% endcapture %}
 {% else %}
-  {% assign basehref = '/docs/' | append: sectionNames[1] | append:  '/' %}
-  {% assign description = "The technical documentation for Segment." %}
+  {% assign crumbs = page.url | split: '/' %}
+  {% assign stoppingpoint = crumbs | size | minus: 1 %}
+  {% for crumb in crumbs limit:stoppingpoint %}
+    {% capture basehref %}{{basehref}}{{ crumb }}/{% endcapture %}
+  {% endfor %}
 {% endif %}
+
 
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
 
-  <base href="{{ basehref }}" />
+  <base id="{{ page.url }}" href="{{ basehref }}" />
 
   <title> {{page.title}} {{page.integration_type | capitalize }}| Segment Documentation</title>
 

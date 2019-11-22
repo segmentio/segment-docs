@@ -1,14 +1,14 @@
 
 Context is extra information you can record about any call to our API. It can be anything you want, like `ip` address, `userAgent`, `location`, etc. For example, our iOS SDK will automatically send `os.version` as context with each request.
 
-You can record context by sending an extra `context` dictionary to any of the method calls in any of our [libraries](docs/connections/sources/). You aren't required to send context, but it can be useful if you want to access any extra information in your raw logs that isn't specific to a user, group or event.
+You can record context by sending an extra `context` dictionary to any of the method calls in any of our [libraries](/docs/connections/sources/). You aren't required to send context, but it can be useful if you want to access any extra information in your raw logs that isn't specific to a user, group or event.
 
 
 ## Special Context
 
 Some context key names have semantic meaning, and we handle them in special ways. For example, we always expect `ip` to be the current IP address of the user, and we'll use that to determine their location in certain cases.
 
-You should **only use** special context keys for their intended meaning. Many of them are automatically collected from our [libraries](docs/connections/sources/), like `app.version` is from our iOS SDK.
+You should **only use** special context keys for their intended meaning. Many of them are automatically collected from our [libraries](/docs/connections/sources/), like `app.version` is from our iOS SDK.
 
 Here's a list of the special context keys we recognize, case insensitive:
 
@@ -85,4 +85,4 @@ Here's a list of the special context keys we recognize, case insensitive:
   </tr>
 </table>
 
-If you wanted to record extra information about the device, for example its `color`, you could stick that information inside the same `device` dictionary, and that will be merged with the automatically collected device information by any of our [libraries](docs/connections/sources/).
+If you wanted to record extra information about the device, for example its `color`, you could stick that information inside the same `device` dictionary, and that will be merged with the automatically collected device information by any of our [libraries](/docs/connections/sources/).
