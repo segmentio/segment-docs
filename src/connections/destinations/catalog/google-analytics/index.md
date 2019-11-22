@@ -25,9 +25,6 @@ Using Segment's Google Analytics mobile SDKs you could previously measure and op
 
 ## Getting Started
 
-
-{% include content/connection-modes.md %}
-
 When you toggle on Google Analytics in Segment, this is what happens:
 
   - Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Google Analytics javascript library onto your web page. **This means you should remove Google's snippet from your page.**

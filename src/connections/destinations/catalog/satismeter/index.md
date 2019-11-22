@@ -21,8 +21,6 @@ With SatisMeter you can:
 
 ## Get Started
 
-{% include content/connection-modes.md %}
-
 To get started you need to sign up to SatisMeter, and click the green button "Enable with Segment". This will link your SatisMeter project with your Segment project and enable the destination.
 
 !["Enable with segment" button](https://cloud.githubusercontent.com/assets/12846380/9251740/edd579ca-41d4-11e5-9ebe-732156cbdb2f.png)

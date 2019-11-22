@@ -6,8 +6,6 @@ The Watsi destination gives you the ability to create a trigger which will send 
 
 # Getting Started
 
-{% include content/connection-modes.md %}
-
 First of all, make sure you have a [Watsi](https://watsi.org) account. Once you have an account, you must have access to this destination. To get access, please email Watsi at connect@watsi.org with your account information, and we'll turn on this feature on for you.
 
 Now we can go to the [Segment settings](https://watsi.org/donor/api) page - you need to be logged in to view it - where you will see a few tabs:

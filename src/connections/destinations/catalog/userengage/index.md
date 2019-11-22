@@ -7,8 +7,6 @@ This integration is maintained by contact@userengage.com.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 To enable sending data to User.com you need to provide API key. You can generate and revoke keys for your app by going to **App settings > Advanced > Segment API keys** at [app.user.com](https://user.com/en/).
 
 Note that **all available** methods will try to select user base on `userId`, falling back to `anonymousId` if `userId` is not provided. If user with given identifier does not exist in your app it will be **created automatically**. That means you do not have to worry about request that return `404` for unknown user.

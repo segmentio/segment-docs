@@ -6,8 +6,6 @@ title: SaaSquatch Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 All you need to get started is your SaaSquatch Tenant Alias. Enter that into your Segment Destinations settings for SaaSquatch and you're good to go!
 
 Here's a quick video on what you need to do:
