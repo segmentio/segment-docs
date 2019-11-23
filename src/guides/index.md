@@ -2,7 +2,7 @@
 title: Getting Started with Segment
 ---
 
-## What is Segment?"
+## What is Segment?
 
 Segment is a single platform that collects, stores, and routes your user data to hundreds of tools with the flick of a switch.
 
