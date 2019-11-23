@@ -533,7 +533,7 @@ Enable verbose [logging](/docs/connections/sources/catalog/libraries/mobile/reac
 
 Look at the raw JSON in your debugger.  Does the call look like what is expected?
 
-Read through [the docs for that destination](docs/connections/destinations/) to see expected event format, behavior and caveats for that destination.
+Read through [the docs for that destination](/docs/connections/destinations/) to see expected event format, behavior and caveats for that destination.
 
 
 ### Still having issues?

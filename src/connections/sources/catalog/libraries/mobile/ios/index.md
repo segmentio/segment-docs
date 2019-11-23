@@ -357,7 +357,7 @@ Here's an example showing an `- track:` call that is sent to all enabled destina
                               options:@{ @"integrations": @{ @"All": @YES, @"Mixpanel": @NO }}];
 ```
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:** Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
@@ -955,7 +955,7 @@ Enable verbose [logging](/docs/connections/sources/catalog/libraries/mobile/ios/
 
 Look at the raw JSON in your debugger.  Does the call look like what is expected?
 
-Read through [the docs for that destination](docs/connections/destinations/) to see expected event format, behavior and caveats for that destination.
+Read through [the docs for that destination](/docs/connections/destinations/) to see expected event format, behavior and caveats for that destination.
 
 ### Migrating to v3 from earlier releases
 

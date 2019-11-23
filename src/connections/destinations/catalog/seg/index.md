@@ -4,10 +4,6 @@ title: Seg Destination
 
 This destination is maintained by Seg.
 
-## Getting Started
-
-{% include content/connection-modes.md %}
-
 ### Identify
 
 When you call identify on analytics.js, we pass all traits into Seg. You must provide a `traits.email` for Seg to `identify` your customers, otherwise they are effectively anonymous until a `traits.email` is specified.

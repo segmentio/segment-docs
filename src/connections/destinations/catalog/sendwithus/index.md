@@ -4,10 +4,6 @@ title: SendwithUs Destination
 
 [Our SendwithUs destination code](https://github.com/segmentio/integration-sendwithus) is all open-source on GitHub if you want to check it out.
 
-## Getting Started
-
-{% include content/connection-modes.md %}
-
 ## Identify
 
 When you call [`identify`](/docs/connections/spec/identify) from one of our libraries, this will create a customer in Sendwithus. If you'd like to associate an email to a `userId`, you can send it via the [`identify`](/docs/connections/spec/identify) call by sending `traits.email`:

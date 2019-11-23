@@ -1,27 +1,31 @@
 {% assign sectionNames = page.url | split: "/" %}
 {% assign sectionName = sectionNames[1] | capitalize %}
 {% assign currentSlug = sectionNames | last %}
+{% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
+{% assign description = "The technical documentation for Segment." %}
 {% assign priority = 2 %}
-{% assign basehref = "" %}
+{% assign basehref = "/docs" %}
+{% if page.path contains "index.md" %}
+	{% capture basehref %}{{basehref}}{{ page.url }}{% endcapture %}
+{% else %}
+  {% assign crumbs = page.url | split: '/' %}
+  {% assign stoppingpoint = crumbs | size | minus: 1 %}
+  {% for crumb in crumbs limit:stoppingpoint %}
+    {% capture basehref %}{{basehref}}{{ crumb }}/{% endcapture %}
+  {% endfor %}
+{% endif %}
+
 {% if page.integration_type == "destination" %}
-  {% assign basehref = '/docs' | append: page.url %}
-  {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
   {% assign description = currentIntegration.description %}
   {% assign priority = 4 %}
 {% elsif page.integration_type == "source" %}
-  {% assign basehref = '/docs' | append: page.url %}
-  {% assign currentIntegration = site.data.catalog.sources.items | where: "slug", currentSlug | first %}
   {% assign description = currentIntegration.description %}
   {% assign priority = 4 %}
-{% else %}
-  {% assign basehref = '/docs/' | append: sectionNames[1] | append:  '/' %}
-  {% assign description = "The technical documentation for Segment." %}
 {% endif %}
-
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
 
-  <base href="{{ basehref }}" />
+  <base id="{{ page.url }}" href="{{ basehref }}" />
 
   <title> {{page.title}} {{page.integration_type | capitalize }}| Segment Documentation</title>
 
@@ -64,33 +68,26 @@
 
   <body>
     {{ content }}
-
     <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
       {% include icons/symbols/chevron-up.svg %}
     </a>
-
     <div id="consent-manager"></div>
-
     {% comment %}
      A.JS
-
      Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
      Everything else: https://app.segment.com/segment_prod/sources/segment_docs_v2
     {% endcomment %}
     {% if jekyll.environment == "production" %}
       {% assign write_key = "QAKKJEtNsXpsNfCCBeWCLNxkaaLO7pgp" %}
-      {% assign swiftype_key = "dsmQzTck4zz2vQNsXLJW" %}
-      
+      {% assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" %}
     {% else %}
       {% assign write_key = "czNFQFqlure7fgXq3JdzY0MrWNzF1wLX" %}
       {% assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" %}
     {% endif %}
-
     {% comment %}
       JS for site
     {% endcomment %}
     <script src="{{ "./assets/docs.bundle.js" | relative_url}}"></script>
-
     {% comment %}
       Swifttype
     {% endcomment %}
@@ -102,7 +99,6 @@
 
       _st('install','{{swiftype_key}}','2.0.0');
     </script>
-
     {% comment %}
       Google Search Results Metadata
     {% endcomment %}
@@ -126,8 +122,6 @@
       }
     ]
     </script>
-
-
     {% comment %}
       Consent Manager
     {% endcomment %}

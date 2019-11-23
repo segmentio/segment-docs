@@ -2,10 +2,6 @@
 title: Youbora Destination
 ---
 
-## Getting Started
-
-{% include content/connection-modes.md %}
-
 ### Web Destination
 
 When you toggle on Youbora for a website in Segment, this is what happens:

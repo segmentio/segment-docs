@@ -6,8 +6,6 @@ This destination is maintained by Aboardly.
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Once the Segment library is integrated with your server, toggle Aboardly on in your Segment Destinations tab, and add your API Key which you can find in the Aboardly Dashboard under Settings > API.
 
 Aboardly supports the `identify` and `track` methods.

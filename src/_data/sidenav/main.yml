@@ -70,7 +70,7 @@ sections:
       title: What is the Segment Startup Program?
 - section_title: Connections
   section:
-  - path: /connections/
+  - path: /connections
     title: Connections Overview
   - section_title: The Segment Spec
     slug: connections/spec

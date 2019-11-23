@@ -2,10 +2,6 @@
 title: Freshdesk Destination
 ---
 
-## Getting Started
-
-{% include content/connection-modes.md %}
-
 ## Identify
 
 When you call [`identify`](/docs/connections/spec/identify/) we will insert or update a user record in Freshdesk. We'll use the user email in `traits.email` to match users in Freshdesk.
