@@ -2,6 +2,7 @@
 {% assign sectionName = sectionNames[1] | capitalize %}
 {% assign currentSlug = sectionNames | last %}
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
+{% assign description = "The technical documentation for Segment." %}
 {% assign priority = 2 %}
 {% assign basehref = "/docs" %}
 {% if page.path contains "index.md" %}
