@@ -1,5 +1,6 @@
 ---
 title: Impact Destination
+hidden: true
 ---
 
 ## Getting Started
