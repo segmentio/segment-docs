@@ -150,10 +150,10 @@ Event: |
   TODO
 
 Device-mode: |
-  TODO
+  TODO (transfer client-side to here) Also known as [client-side](#client-side).
 
 Cloud-mode: |
-  TODO
+  TODO (transfer server-side to here) Also known as [Server-side](#server-side).
 
 SQL Trait: |
   TODO
