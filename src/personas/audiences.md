@@ -1,5 +1,5 @@
 ---
-title: 'Personas: Audiences'
+title: Personas Audiences
 ---
 
 Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be sycned to hundreds of destinations or available via the [Profile API](/docs/personas/profile-api).

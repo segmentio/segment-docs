@@ -1,5 +1,5 @@
 ---
-title: 'Personas and Warehouses'
+title: Personas and Warehouses
 ---
 
 ## How does Personas sync to my data warehouse?
