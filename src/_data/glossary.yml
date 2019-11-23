@@ -1,11 +1,11 @@
-Analytics: |
-  The field of data analysis. Analytics often involves studying past historical data to research trends, to analyze the effects of decisions or events, or to evaluate the performance of a given tool or scenario. The goal of analytics is to improve the business by gaining understanding which can be used to make improvements or changes.
-
 Analytics.js: |
-  The Segment wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
+  The Segment Javascript library wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
+
+API: |
+  Application Programming Interface. In software, this term describes a way of interacting with software in an automated fashion, without the use of a user-interface designed for humans. In Segment, we call the standard calls (`track`, `page` and `screen`, `identify` and `group`) our API. We also provide the [Config API](/docs/config-api/), which you can use to configure sources and destinations, and perform other functions in your workspace, without logging in using a web browser.
 
 App: |
-  The app is what we call the main Segment web application, the part you have to log in to get to, where you turn on integrations, see events in the debugger, manage your tracking plan, and so on.
+  The app is what we call the main Segment web application, the part you log in to, and where you configure sources and destinations, see events in the debugger, manage your tracking plan, and so on.
 
 Asynchronous: |
   Asynchronous means occurring without a specific order or sequence. In engineering, it's most often used for things like when you have to ask a server for a piece of information. If that was a synchronous task, while you were waiting for the server to respond you wouldn't be able to do anything else, you'd just be stuck waiting. But since it's asynchronous, you can request information from a server, continue to go do a bunch of other tasks, and then when the server responds you can get back to what you were doing to start. Basically it lets you work on multiple things at once (in parallel) instead of needing to finish everything in the order it comes in. Think of it like one of the ways computers are able to multi-task.
@@ -28,15 +28,15 @@ Cookies: |
   Every time you make a request to a website, you send along the cookies that you have stored. It's how the website figures out who you should be logged in as. You can think of it sort of like a passport as a form of ID. When you first enter your username and password, the website generates a secure cookie, and tells your browser to store it. From then on, your browser sends along the cookie as a way of identifying yourself to the website.
 
 Client Side: |
-  This refers to a group of libraries that can send data to Segment. Usually used in contrast to Server Side.
+  This refers to a group of libraries that can send data to Segment. Usually used in contrast to [Server Side](#server-side).
 
-  *Client-side libraries*  sit on the "client", which means they can collect contextual data about your users. The 3 main libraries that are considered "client side" are [Analytics.js](https://segment.com/docs/libraries/analytics.js/), which is used on websites and powers most of our [plugins and platform guides](https://segment.com/docs/platforms/), our [iOS SDK](https://segment.com/docs/libraries/ios/), and our [Android SDK](https://segment.com/docs/libraries/android/). Savvy end users can access the information you are sending when you use client-side libraries. These libraries are designed to track a single end user, in real time, as they use your site or app. Client-side libraries are able to maintain a cache of information about each user on that user's device (browser or phone) that way we know that device belongs to a consistent anonymousId or userId and a list of traits like name, email, etc.
+  *Client-side libraries*  sit on the "client", which means they can collect contextual data about your users. The three main libraries that are considered "client side" are [Analytics.js](https://segment.com/docs/libraries/analytics.js/), which is used on websites and powers most of our [plugins and platform guides](https://segment.com/docs/platforms/), our [iOS SDK](https://segment.com/docs/libraries/ios/), and our [Android SDK](https://segment.com/docs/libraries/android/). Client-side libraries are able to maintain a cache of information about each user on that user's device (browser or phone) so we know that device belongs to a consistent `anonymousId` or `userId`, and has a consistent list of traits like name, email, etc.
 
 Debugger: |
   This is the place in the app where you can see your events flowing through Segment
 
 Destination: |
-  a place you can send data
+  a place you can send data TODO
 
 DMP: |
   Data management platform
@@ -93,7 +93,7 @@ Server Side: |
   *Server-side libraries* run on a server and are completely invisible to end users. Find the full list of server-side languages Segment supports [in our docs](https://segment.com/docs/libraries/#server). These libraries can be used to track a user in realtime as they use your app, but are also able to run batches of calls to update many end users at once. Server-side libraries do not maintain "state" which means every API call you make must include every detail you want to see inside of Segment.
 
 SDK: |
-  Stands for software development kit. This is a combination of libraries and used mostly in the context of building mobile or native apps.
+  Software Development Kit. This is a combination of libraries and used mostly in the context of building mobile or native apps.
 
 SQL: |
   (pronounced 'sequel')
@@ -123,3 +123,43 @@ Tracking Plan: |
 
 Warehouses: |
   Segment’s Data warehouse product. All event data can be sent to one of several Warehouses, where your team can use it to perform more complex analysis of the data.
+
+
+ Federate: |
+  TODO
+
+Personas space: |
+  TODO
+
+Personas namespace: |
+  TODO
+
+Personas workspace: |
+   TODO
+
+Audience name: |
+  TODO
+
+Audience key: |
+  TODO
+
+Object: |
+  TODO
+
+Event: |
+  TODO
+
+Device-mode: |
+  TODO
+
+Cloud-mode: |
+  TODO
+
+SQL Trait: |
+  TODO
+
+Computed trait: |
+  TODO
+
+Custom trait: |
+  TODO
