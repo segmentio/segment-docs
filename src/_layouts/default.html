@@ -1,6 +1,8 @@
 {% assign sectionNames = page.url | split: "/" %}
 {% assign sectionName = sectionNames[1] | capitalize %}
 {% assign currentSlug = sectionNames | last %}
+{% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
+{% assign description = "The technical documentation for Segment." %}
 {% assign priority = 2 %}
 {% assign basehref = "/docs" %}
 {% if page.path contains "index.md" %}
@@ -13,7 +15,13 @@
   {% endfor %}
 {% endif %}
 
-
+{% if page.integration_type == "destination" %}
+  {% assign description = currentIntegration.description %}
+  {% assign priority = 4 %}
+{% elsif page.integration_type == "source" %}
+  {% assign description = currentIntegration.description %}
+  {% assign priority = 4 %}
+{% endif %}
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
 
@@ -60,33 +68,26 @@
 
   <body>
     {{ content }}
-
     <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
       {% include icons/symbols/chevron-up.svg %}
     </a>
-
     <div id="consent-manager"></div>
-
     {% comment %}
      A.JS
-
      Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
      Everything else: https://app.segment.com/segment_prod/sources/segment_docs_v2
     {% endcomment %}
     {% if jekyll.environment == "production" %}
       {% assign write_key = "QAKKJEtNsXpsNfCCBeWCLNxkaaLO7pgp" %}
-      {% assign swiftype_key = "dsmQzTck4zz2vQNsXLJW" %}
-      
+      {% assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" %}
     {% else %}
       {% assign write_key = "czNFQFqlure7fgXq3JdzY0MrWNzF1wLX" %}
       {% assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" %}
     {% endif %}
-
     {% comment %}
       JS for site
     {% endcomment %}
     <script src="{{ "./assets/docs.bundle.js" | relative_url}}"></script>
-
     {% comment %}
       Swifttype
     {% endcomment %}
@@ -98,7 +99,6 @@
 
       _st('install','{{swiftype_key}}','2.0.0');
     </script>
-
     {% comment %}
       Google Search Results Metadata
     {% endcomment %}
@@ -122,8 +122,6 @@
       }
     ]
     </script>
-
-
     {% comment %}
       Consent Manager
     {% endcomment %}
