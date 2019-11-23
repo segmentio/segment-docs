@@ -1,6 +1,7 @@
 {% assign sectionNames = page.url | split: "/" %}
 {% assign sectionName = sectionNames[1] | capitalize %}
 {% assign currentSlug = sectionNames | last %}
+{% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
 {% assign priority = 2 %}
 {% assign basehref = "/docs" %}
 {% if page.path contains "index.md" %}
