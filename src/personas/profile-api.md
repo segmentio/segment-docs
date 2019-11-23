@@ -1,5 +1,5 @@
 ---
-title: 'Personas: Profile API'
+title: Personas Profile API
 ---
 
 The Segment Profile API provides a single API to read user-level and account-level customer data. Segment now allows you to query the entire user or account object programmatically, including the `external_ids` , `traits` , and `events` that make up a user's journey through your product.

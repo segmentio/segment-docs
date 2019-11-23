@@ -1,5 +1,5 @@
 ---
-title: 'Personas: Identity Resolution'
+title: Personas Identity Resolution
 ---
 
 ## Identity Graph

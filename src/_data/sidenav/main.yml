@@ -171,24 +171,24 @@ sections:
   section:
   - path: /personas
     title: Personas Overview
-  - path: /personas/activation
-    title: 'Personas: Activation'
-  - path: /personas/audiences
-    title: 'Personas: Audiences'
-  - path: /personas/computed-traits
-    title: 'Personas: Computed Traits'
-  - path: /personas/faqs
-    title: Personas Frequently Asked Questions
   - path: /personas/identity-resolution
-    title: 'Personas: Identity Resolution'
+    title: Identity Resolution
+  - path: /personas/activation
+    title: Activation
+  - path: /personas/warehouses
+    title: Personas and Warehouses
   - path: /personas/personas-gdpr
     title: Personas and GDPR
   - path: /personas/profile-api
-    title: 'Personas: Profile API'
+    title: Profile API
+  - path: /personas/faqs
+    title: Personas Frequently Asked Questions
+  - path: /personas/audiences
+    title: Audiences
+  - path: /personas/computed-traits
+    title: Computed Traits
   - path: /personas/sql-traits
-    title: 'Personas: SQL Traits'
-  - path: /personas/warehouses
-    title: Personas and Warehouses
+    title: SQL Traits
 - section_title: Privacy
   section:
   - path: /privacy
