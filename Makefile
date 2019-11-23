@@ -3,7 +3,7 @@ BIN := ./node_modules/.bin
 # Core...
 
 JEKYLL_ENV = 'development'
-ifeq ($(BUILDKITE_PIPELINE_DEFAULT_BRANCH),'master')
+ifeq (${BUILDKITE_BRANCH},'master')
 JEKYLL_ENV := 'production'
 endif
 
