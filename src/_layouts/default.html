@@ -13,7 +13,13 @@
   {% endfor %}
 {% endif %}
 
-
+{% if page.integration_type == "destination" %}
+  {% assign description = currentIntegration.description %}
+  {% assign priority = 4 %}
+{% elsif page.integration_type == "source" %}
+  {% assign description = currentIntegration.description %}
+  {% assign priority = 4 %}
+{% endif %}
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
 
