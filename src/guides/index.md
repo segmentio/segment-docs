@@ -47,9 +47,9 @@ In addition to [Connections](/docs/connections/) (our core message routing produ
 We've generated different guides based on the main activities you'll do in Segment. If you wear many hats, you might use all of these guides!
 
 - I am a [Segment Developer](intro-impl/)
-- I am a [Segment Workspace administrator](intro-admin/)
-- I am a [Segment Privacy administrator](intro-privacy/)
-- I am a [Segment Data user](intro-user/)
+- I am a Segment Workspace administrator (coming soon!)
+- I am a Segment Privacy administrator (coming soon!)
+- I am a Segment Data user (coming soon!)
 
 
 ## What's a workspace?
