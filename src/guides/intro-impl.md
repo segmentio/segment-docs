@@ -21,9 +21,9 @@ There are six calls in the basic tracking API, which answer specific questions:
 - [Group](/docs/spec/group/): What account or organization are they part of?
 - [Alias](/docs/spec/alias/): What was their past identity?
 
-Among these calls, you can think of Identify, Group, and Alias as similar types of calls, all to do with updating our understanding of the user who is triggering Segment messages. You can think of these calls as adding information to, or updating an object record in a database. Objects are described using "traits", which can collect as part of your calls.
+Among these calls, you can think of Identify, Group, and Alias as similar types of calls, all to do with updating our understanding of the user who is triggering Segment messages. You can think of these calls as adding information to, or updating an object record in a database. **Objects** are described using "traits", which can collect as part of your calls.
 
-The other three, Track, Page, and Screen, can be considered as increasingly specific types of events. Events can occur multiple times, but generate separate records which appended to a list, instead of being updated over time.
+The other three, Track, Page, and Screen, can be considered as increasingly specific types of events. **Events** can occur multiple times, but generate separate records which appended to a list, instead of being updated over time.
 
 A Track call is the most basic type of call, and can represent any type of event. Page and Screen are similar and are triggered by a user viewing a page or screen, however Page calls can come from both web and mobile-web views, while Screen calls *only* occur on mobile devices. Because of the difference in platform, the context information collected is different between the two platforms.
 

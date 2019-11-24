@@ -18,10 +18,15 @@ In its very simplest form, Segment helps you generate messages about what's happ
 
 Segment's libraries generate and send messages to our tracking API in JSON format, and provide a standard structure for the basic API calls. We also provide recommended JSON structure (also known as the 'Spec', a type of schema) that helps keep the most important parts of your data consistent, while allowing great flexibility in what other information you collect and where.
 
+### Segment Messages
+
 When you implement Segment, you add our code to your website, app, or server, which generates messages based on specific triggers you define. At its very simplest, this code can be a snippet that you copy and paste into the HTML of a website to track page views. It can also be as complex as Segment calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example "ticket reservation expired" or "cart abandoned after 2 hours").
+
+### Segment Sources
 
 Segment provides several types of Sources which you can use to collect your data, and which you can choose among based on the needs of your app or site. For websites, you can embed a library which loads on the page to create the Segment messages. If you have a mobile app, you can embed one of our Mobile libraries, and if you'd like to create messages directly on a server (if you have, for example a dedicated .NET server that processes payments), we have several server-based libraries that you can embed directly into your backend code. (You can also use [cloud-sources](/docs/connections/sources/what-are-cloud-sources/) to import data about your app or site from other tools like Zendesk or Salesforce, to enrich the data sent through Segment.)
 
+### Destinations
 Once Segment generates the messages, it can send them directly to the Segment servers for translation and forwarding on to the Destinations you're using, or it can make calls directly from the app or site to the APIs of your Destination tools. Which of these methods you choose depends on which Destinations you're using and other factors. You can read more about these considerations in our [Connection Modes documentation](/docs/connections/destinations/#connection-modes)
 
 
