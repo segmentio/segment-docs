@@ -452,7 +452,7 @@ You can either send the property value as a string (ie. `'brady'`) or as an arra
 
 The Adobe Analytics destination offers a couple of different ways to configure behavior using destination specific options. These are options that are defined in your event payloads rather than in the Segment app. To use these options, you must define them as values of an object in the following property of your Segment event payloads:
 
-```
+```javascript
 integrations: {
   'Adobe Analytics': {
     // insert options here...
