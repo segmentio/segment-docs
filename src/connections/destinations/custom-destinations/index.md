@@ -255,12 +255,10 @@ If you are a Partner, looking to publish your destination and distribute your Ap
 
 **How many destination functions can I create in a workspace?**
 
-You can create up to 10 destination functions on your workspace. If you'd like to increase this limit, please reach out to us at beta@segment.com 
+You can create up to 10 destination functions on your workspace. If you'd like to increase this limit, please reach out to us at beta@segment.com
 
 **How do I see and configure custom destinations created by other members on my workspace?**
 
 This feature is coming soon. You can not yet view custom destinations created by other members of your workspace. However, you can configure any custom destination created by members of your workspace via the custom destinations overview page by sharing the direct URL.
 
 ![Sharing and Configuring Custom Destination](images/destination_functions_share.jpg)
-
-

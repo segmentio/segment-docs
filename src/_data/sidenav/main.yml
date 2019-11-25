@@ -131,6 +131,8 @@ sections:
       menu_icon: read-more
     - path: /connections/destinations/destination-filters
       title: Destination Filters
+    - path: /connections/destinations/custom-destinations
+      title: Custom Destinations: Functions
   - section_title: Warehouses
     slug: connections/warehouses
     section:
