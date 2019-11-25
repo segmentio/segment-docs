@@ -137,4 +137,4 @@ Reserved properties we have standardized:
   </tr>
 </table>
 
-**Note:** In [analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/), we automatically send the following properties: `title`, `path`, `url`, `referrer`, and `search`.
+**Note:** In [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), we automatically send the following properties: `title`, `path`, `url`, `referrer`, and `search`.

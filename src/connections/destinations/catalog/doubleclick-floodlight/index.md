@@ -71,7 +71,7 @@ Here's an example for tracking a `page` event with the name **Confirmation**:
 
 Please ensure you enter the name case sensitively.
 
-Reference our [docs](/docs/connections/sources/catalog/libraries/website/analytics.js/#page) for more on the `name` parameter.
+Reference our [docs](/docs/connections/sources/catalog/libraries/website/javascript/#page) for more on the `name` parameter.
 
 ### Pages with categories
 
@@ -83,7 +83,7 @@ For example, if you had a `page` event with the name as **Confirmation** that wa
 
 **Viewed Checkout Confirmation Page**
 
-Reference our [docs](/docs/connections/sources/catalog/libraries/website/analytics.js/#page) for more on the `category` paramter.
+Reference our [docs](/docs/connections/sources/catalog/libraries/website/javascript/#page) for more on the `category` paramter.
 
 ## Setting up Custom Variables
 

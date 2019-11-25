@@ -22,7 +22,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 ```
 analytics.page()
 ```
-An initial `page` call is required for data to be sent to Mouseflow via Analytics.js and sends a page view. This is included by default in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet).
+An initial `page` call is required for data to be sent to Mouseflow via Analytics.js and sends a page view. This is included by default in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet).
 
 ## Identify
 

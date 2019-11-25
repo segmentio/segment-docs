@@ -63,7 +63,7 @@ analytics.track('Email Opened', {
 ```
 
 ### Event Channels
-By default, all `track` events are sent to the default Slack channel configured in the Segment UI when [getting started](https://segment.com/docs/connections/destinations/catalog/slack/#getting-started). To prevent events from sending you will need to modify your track call to use [selective integrations](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#selecting-integrations). Business Tier customers also have the option to filter the events within the "Schema" section of the Segment UI.
+By default, all `track` events are sent to the default Slack channel configured in the Segment UI when [getting started](https://segment.com/docs/connections/destinations/catalog/slack/#getting-started). To prevent events from sending you will need to modify your track call to use [selective integrations](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-integrations). Business Tier customers also have the option to filter the events within the "Schema" section of the Segment UI.
 
 If you would like to have specific events be sent to a particular channel (#channel) or user (@user) via a direct message, you can specify this in the "Events Channels" settings within the Segment UI.
 
@@ -113,7 +113,7 @@ More information on regex can be found [here](http://www.zytrax.com/tech/web/reg
 ## Troubleshooting
 
 ### Page, Identify, Group calls are not showing up
-The Slack Destination does not support `page` or `group` calls. Only `track` events are supported by default. Remember that [`track.properties` object](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#track) is an open dictionary and may include any data you choose.
+The Slack Destination does not support `page` or `group` calls. Only `track` events are supported by default. Remember that [`track.properties` object](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track) is an open dictionary and may include any data you choose.
 
 In order for `identify` events to work, please make sure you [whitelist the traits](https://segment.com/docs/connections/destinations/catalog/slack/#whitelisted-traits).
 

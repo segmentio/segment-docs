@@ -286,7 +286,7 @@ To ensure the Track events you send to a Segment source are validated against th
 
 ![](images/pull_event_version.png)
 
-Next, add the event version number to the context object. For [analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js) track calls, you would instrument the event as in the example below. Note how the JSON objects for `context`, `protocols`, and `event_version` are nested.
+Next, add the event version number to the context object. For [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript) track calls, you would instrument the event as in the example below. Note how the JSON objects for `context`, `protocols`, and `event_version` are nested.
 
 ```js
 analytics.track('Order Completed', {

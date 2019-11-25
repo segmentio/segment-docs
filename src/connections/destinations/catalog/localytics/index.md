@@ -29,7 +29,7 @@ is not yet supported.
 
 **Note:** Localytics does not accept server-side data, so you'll have to use one
 of our client-side libraries
-([Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/),
+([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/),
 [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/)/[Android](/docs/connections/sources/catalog/libraries/mobile/android/) SDKs
 with Localytics [bundled](/docs/faqs/sources/bundled-SDK-vs-server) to send data
 to Localytics.
