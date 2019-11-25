@@ -448,6 +448,111 @@ You can map your Segment properties in your settings to any of your Adobe props.
 
 You can either send the property value as a string (ie. `'brady'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it so that it is a pipe (`|`) delimited string before sending to Adobe (ie. `'brady|edelman|blount'`). If you would like to set up a custom delimiter please see our documentation [here](https://segment.com/docs/connections/destinations/catalog/adobe-analytics/#custom-delimiter) for configuring custom delimiters.
 
+## Options
+
+The Adobe Analytics destination offers a couple of different ways to configure behavior using destination specific options. These are options that are defined in your event payloads rather than in the Segment app. To use these options, you must define them as values of an object in the following property of your Segment event payloads:
+
+```
+integrations: {
+  'Adobe Analytics': {
+    // insert options here...
+  }
+}
+```
+Here's an example of a `track` call using this:
+
+```javascript
+ analytics.track({
+    userId: '019mr8mf4r',
+    event: 'Gotta catch em all',
+    properties: {
+     caught: 1738
+    },
+    integrations: {
+      'Adobe Analytics': {
+        // Insert custom options here...
+      }
+    }
+ });
+ ```
+
+The section below outlines each of these options and what they do.
+
+### Events
+This option allows you to associate specific Adobe events with individual Segment events.
+
+```javascript
+ analytics.track({
+    userId: '019mr8mf4r',
+    event: 'Gotta catch em all',
+    properties: {
+     caught: 1738
+    },
+    integrations: {
+      'Adobe Analytics': {
+        events: ['scAdd', 'event2']
+      }
+    }
+ });
+ ```
+
+### IMS Region
+This option allows you to associate events with IMS Regions. **Please note. If you specify this you must also define a `Marketing Cloud Visitor Id`.**
+
+```javascript
+ analytics.track({
+    userId: '019mr8mf4r',
+    event: 'Gotta catch em all',
+    properties: {
+     caught: 1738
+    },
+    integrations: {
+      'Adobe Analytics': {
+        imsregion: 'aamlh'
+      }
+    }
+ });
+ ```
+
+### Marketing Cloud Visitor ID
+This option allows you to associate a specific Marketing Cloud Visitor ID (mcvid) with the event.
+
+```javascript
+ analytics.track({
+    userId: '019mr8mf4r',
+    event: 'Gotta catch em all',
+    properties: {
+     caught: 1738
+    },
+    integrations: {
+      'Adobe Analytics': {
+        marketingCloudVisitorId: 'user1234'
+      }
+    }
+ });
+ ```
+
+### Visitor ID
+This option allows you to associate a standard Visitor ID with the event.
+
+```javascript
+ analytics.track({
+    userId: '019mr8mf4r',
+    event: 'Gotta catch em all',
+    properties: {
+     caught: 1738
+    },
+    integrations: {
+      'Adobe Analytics': {
+        visitorId: 'user1234'
+      }
+    }
+ });
+ ```
+
+ ## Link Names, Link URLs, Link Types
+ Please see [this](#setting-custom-linktypes-linknames-and-linkurls) section for information about configuring these as options.
+
 ## Settings
 
 ### Merchandising Events
