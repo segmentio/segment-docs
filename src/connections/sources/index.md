@@ -65,7 +65,7 @@ analytics.identify('025pikachu025', {
 [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), our Javascript library, is the most powerful way to track customer data from your website. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
 
 {% include components/media-icon.html
-  href="#"
+  href="https://segment.com/academy/intro/"
   icon="symbols/connections.svg"
   title="The Analytic Quickstart Guide"
   content="Analytics and data collection is a very broad topic and it can be quite overwhelming. How do you get started?"
