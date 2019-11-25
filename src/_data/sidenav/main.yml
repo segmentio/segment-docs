@@ -4,8 +4,6 @@ sections:
   section:
   - path: /guides
     title: Getting Started with Segment
-  - path: /guides/how-does-segment-work
-    title: How does Segment work?
   - path: /guides/filtering-data
     title: Filtering your Segment Data
   - path: /guides/duplicate-data
