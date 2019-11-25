@@ -4,8 +4,6 @@ title: OneSignal Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 After destination Segment with your app, enable OneSignal in your segment destinations. Use your OneSignal App ID to enable the destination. This ID can be found on the settings page for your app on the OneSignal dashboard.
 
 OneSignal will only track new users. If you have existing push notification data in another service, please get in touch with us to transfer it over: support@onesignal.com

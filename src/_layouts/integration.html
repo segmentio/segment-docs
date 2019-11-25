@@ -55,7 +55,7 @@ layout: default
             <div class="markdown">
               {{ content }}
 
-              {% if integration_type == destination %}
+              {% if page.integration_type == 'destination' %}
                 {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
                 {{ integration-foot | markdownify }}
               {% endif %}
@@ -77,7 +77,7 @@ layout: default
 
       <div class="sidebar sidebar--sticky">
         {%- unless page.hide_toc -%}
-          {% if integration_type == destination %}
+          {% if page.integration_type == 'destination' %}
             {% assign toc_foot = integration-foot | markdownify %}
             {% assign toc_content = content | append: toc_foot %}
             <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
