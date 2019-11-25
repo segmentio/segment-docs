@@ -3,7 +3,7 @@ BIN := ./node_modules/.bin
 # Core...
 
 JEKYLL_ENV = 'development'
-ifeq (${BUILDKITE_BRANCH},'master')
+ifeq ('${BUILDKITE_BRANCH}','master')
 JEKYLL_ENV := 'production'
 endif
 
@@ -21,6 +21,7 @@ intialize-work-dir:
 
 .PHONY: build
 build: node_modules vendor/bundle
+	@echo "Jekyll env: ${JEKYLL_ENV}"
 	@chown -R jekyll /workdir
 	@echo "env: ${JEKYLL_ENV}"
 	@$(BIN)/webpack --mode=production
