@@ -1,5 +1,5 @@
 ---
-title: Sources catalog
+title: Sources Catalog
 hide_toc: true
 landing: true
 icon: symbols/connections.svg

@@ -99,7 +99,7 @@ sections:
       title: 'Spec: Semantic Events'
     - path: /connections/spec/b2b-saas
       title: 'Spec: B2B SaaS'
-    - path: /connections/spec/ecommerce
+    - path: /connections/spec/ecommerce/v2
       title: 'Spec: Ecommerce Events'
     - path: /connections/spec/video
       title: Video Spec
