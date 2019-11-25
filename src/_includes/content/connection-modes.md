@@ -3,7 +3,8 @@
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
 {% assign connectionModes = currentIntegration.connection_modes %}
 
-{% if currentIntegration.components.size > 0 %}
+{% unless currentIntegration.components.device.web == false and currentIntegration.components.device.mobile == false and currentIntegration.components.device.server == false and currentIntegration.components.cloud.web == false and currentIntegration.components.cloud.mobile == false and
+currentIntegration.components.cloud.server == false %}
 <!--don't show a blank table if we can't find any info about these. -->
 <!--
 components -> how do we send data
