@@ -56,7 +56,7 @@ layout: default
               {{ content }}
 
               {% if integration_type == destination %}
-              {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
+                {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
                 {{ integration-foot | markdownify }}
               {% endif %}
             </div>
@@ -77,9 +77,17 @@ layout: default
 
       <div class="sidebar sidebar--sticky">
         {%- unless page.hide_toc -%}
-          <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
-            {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
-          </div>
+          {% if integration_type == destination %}
+            {% assign toc_foot = integration-foot | markdownify %}
+            {% assign toc_content = content | append: toc_foot %}
+            <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+              {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=toc_content h_min=2 h_max=2 %}
+            </div>
+          {% else %}
+              <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+                {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
+              </div>
+          {% endif %}
         {%- endunless -%}
 
         {% if page.related %}
