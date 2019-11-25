@@ -14,13 +14,15 @@ You can also enrich the customer data you collect by connecting data from your o
 
 In its very simplest form, Segment helps you generate messages about what's happening in your site or app, then translates those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and transmits messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/warehouses) (such as databases, warehouses, or bulk-storage buckets).
 
-## How does it do that?
+## How does Segment work?
 
-Segment's libraries generate and send messages to our tracking API in JSON format, and provide a standard structure for the basic API calls. We also provide recommended JSON structure (also known as the 'Spec', a type of schema) that helps keep the most important parts of your data consistent, while allowing great flexibility in what other information you collect and where.
+Segment's libraries generate and send messages to our tracking API in JSON format. We provide a standard structure for the basic API calls, along with a recommended JSON structure (also known as the 'Spec', a type of schema) that helps keep the most important parts of your data consistent, while allowing great flexibility in what other information you collect and where.
 
 ### Segment Messages
 
 When you implement Segment, you add our code to your website, app, or server, which generates messages based on specific triggers you define. At its very simplest, this code can be a snippet that you copy and paste into the HTML of a website to track page views. It can also be as complex as Segment calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example "ticket reservation expired" or "cart abandoned after 2 hours").
+
+Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/). Sources send messages _into_ Segment (and other tools), while Destinations receive messages _from_ Segment.
 
 ### Segment Sources
 
