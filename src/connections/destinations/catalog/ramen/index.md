@@ -3,8 +3,6 @@ title: Ramen Destination
 ---
 
 ## Getting Started
-​
-{% include content/connection-modes.md %}
 
 When you toggle on Ramen in Segment, this is what happens:
 ​

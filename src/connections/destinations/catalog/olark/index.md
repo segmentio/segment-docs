@@ -4,8 +4,6 @@ title: Olark Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 When you toggle on Olark in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Olark's loader0.js onto your page. This means you should remove Olark's snippet from your page.
