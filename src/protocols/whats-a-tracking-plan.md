@@ -26,7 +26,7 @@ Get organized. Pick a convention for naming your events and properties. Your eye
 
 The `.identify()` call is important, because it updates all records of the user with a set of traits. But how do you choose which traits to include?
 
-Here is a sample `.identify()` call (with [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/)) for Segment:
+Here is a sample `.identify()` call (with [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) for Segment:
 
 ```js
 analytics.identify({

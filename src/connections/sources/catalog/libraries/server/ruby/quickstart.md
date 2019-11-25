@@ -108,4 +108,4 @@ Once you've added a few `track` calls, **you're done!** You successfully install
 
 We just walked through the quickest way to get started with Segment using Ruby. You might also want to check out our full [Ruby library reference](/docs/connections/sources/catalog/libraries/server/ruby) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http/) to get a sense for the bigger picture.
 
-You might also want to consider installing [Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart) so that you can use destinations that require being loaded in the browser, like live chat tools or user feedback systems.
+You might also want to consider installing [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/quickstart) so that you can use destinations that require being loaded in the browser, like live chat tools or user feedback systems.

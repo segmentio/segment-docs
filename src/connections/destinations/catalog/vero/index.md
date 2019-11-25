@@ -82,7 +82,7 @@ analytics.alias('example@example.com', '8765309')
 
 ### Tags
 
-The destination is capable of both adding and removing tags in Vero for a given user. Because `tags` is not a common property of events, this functionality is invoked via an [destination specific option](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#selecting-integrations).
+The destination is capable of both adding and removing tags in Vero for a given user. Because `tags` is not a common property of events, this functionality is invoked via an [destination specific option](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-integrations).
 
 To start using this feature, please pass an object called `tags` with the following properties:
 

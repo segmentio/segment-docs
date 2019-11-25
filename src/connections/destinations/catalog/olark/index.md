@@ -54,7 +54,7 @@ analytics.ready(function(){
 });
 ```
 
-[Read the ready docs for more details](/docs/connections/sources/catalog/libraries/website/analytics.js/#ready)
+[Read the ready docs for more details](/docs/connections/sources/catalog/libraries/website/javascript/#ready)
 
 - - -
 
