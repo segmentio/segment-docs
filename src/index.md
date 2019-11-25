@@ -22,7 +22,7 @@ Get familiar with our products, features, and integrations!
 {% endcapture %}
 
 {% capture step3 %}
-  Check out the [Connections](/docsv2/connections/) documentation to learn about our [Sources](/docsv2/connections/sources/) (what you can use to collect your data), [the Segment Spec](/docsv2/connections/spec/) (the formats you can build on to collect data), and our [Destinations](/docsv2/connections/destinations/) (the tools you can then send data to).
+  Check out our [Getting Started Guide](/docs/guides/) and the [Connections](/docs/connections/) documentation to learn about our [Sources](/docs/connections/sources/) (what you can use to collect your data), [the Segment Spec](/docs/connections/spec/) (the formats you can build on to collect data), and our [Destinations](/docs/connections/destinations/) (the tools you can then send data to).
 {% endcapture %}
 
 {% include components/list-steps.html number="1" heading="Totally new here?" content=step1 %}
@@ -31,4 +31,4 @@ Get familiar with our products, features, and integrations!
 
 <br>
 
-Be sure to check out the [Guides](/docsv2/guides/) for FAQs and Best Practices, and dig in to the [App](/docsv2/segment-app/) section to get to know the Segment web app.
+Be sure to check out the [Guides](/docs/guides/) for FAQs and Best Practices, and dig in to the [App](/docs/segment-app/) section to get to know the Segment web app.
