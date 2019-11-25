@@ -4,8 +4,6 @@ title: Connect Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 When you toggle on Connect in Segment, this is what happens:
 
   + Our CDN is updated within 5-10 minutes. Then our snippet will start sending all your analytics data to Segment's servers, where we'll send the data onwards to Connect.

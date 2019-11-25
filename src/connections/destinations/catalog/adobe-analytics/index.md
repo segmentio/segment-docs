@@ -1354,9 +1354,3 @@ We know this is daunting territory, so please don't hesitate to reach out direct
 ### Populating Custom Links report with server side data
 
 Since we cannot automatically track page data for **server side** calls, if you want to populate the **Custom Links** report in Adobe Analytics, you must manually pass `context.page.url`.
-
-
----
-
-
-{% include content/integration-foot.md %}

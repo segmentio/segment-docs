@@ -9,8 +9,6 @@ check it out:
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Once the Segment library is integrated with your site or app, toggle Localytics
 on in your Segment destinations, and add your application's **App Key** which
 you can find in your Localytics app settings. These new settings will take up to
