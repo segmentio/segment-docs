@@ -1,4 +1,4 @@
-BrazeBraze---
+---
 title: IBM Universal Behavior Exchange Destination
 rewrite: true
 beta: true
