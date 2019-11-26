@@ -61,6 +61,7 @@ Collections are the groupings of resources we pull from your source. In your war
 ## Collection Properties
 
 ### Users
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | The Intercom defined id representing the user |
