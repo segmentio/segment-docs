@@ -35,15 +35,15 @@ Once violation forwarding is enabled, you can build a custom anomaly detection s
 
 1. [Forward violations to a Slack channel](/docs/protocols/anomaly_detection/#forward-violations-to-a-slack-channel)
 2. [Create violation and event count Anomaly Detection dashboards in a BI tool](/docs/protocols/anomaly_detection/#create-customized-anomaly-detection-dashboards-in-a-bi-tool)
-3. [Utilize a tool like Lazy Lantern to automate anomaly detection](/docs/connections/destinations/catalog/lazy-lantern/)
+3. [Utilize a tool like Lazy Lantern to automate anomaly detection](/docs/protocols/apis-and-extensions/anomaly_detection/#utilize-a-tool-like-lazy-lantern-to-automate-anomaly-detection)
 
 ### Forward violations to a Slack Channel
-To get started, [enable the Slack destination](/docs/connections/destinations/catalog/slack/#getting-started) for your Protocols Audit Source. After you enable the destination, update your Incoming Webhook URL for the Slack channel you want to push notifications to. Next, add the `Violation Generated` event to the [Event Templates settings](/docs/connections/destinations/catalog/slack/#event-templates).
+After you've enabled [Violation Forwarding](/docs/protocols/tracking-plan/#violation-forwarding), you will need to [enable the Slack destination](/docs/connections/destinations/catalog/slack/#getting-started) for your Protocols Audit Source. Within the destination settings you will need to add an Incoming Webhook URL for the Slack channel you want to push notifications to. Next, add the `Violation Generated` event to the [Event Templates settings](/docs/connections/destinations/catalog/slack/#event-templates).
 
 You can copy and paste the example snippet below into the Event Template field to format the Slack message with the event name, violation description and source name. You can customize this message however you want, including adding @ mentions, and any of the [properties included in the Violation Generated event](/docs/protocols/tracking-plan/#violation-forwarding).
 
 ```
-Source: \{{properties.sourceName}} \nEvent: \{{properties.eventName}} \nViolation: \{{properties.violationDescription}}
+Source: {properties.sourceName}} \nEvent: \{\{properties.eventName\}\} \nViolation: \{\{properties.violationDescription\}\}
 ```
 When you're done, it'll look like the screenshot below.
 
@@ -51,7 +51,7 @@ When you're done, it'll look like the screenshot below.
 
 
 ### Create customized Anomaly Detection dashboards in a BI tool
-Custom dashboards are a great way to focus your teams around the metrics and events that matter most to your business. With a few simple queries you can build a dashboard to share with teams, so everyone can understand how well they're doing against your data quality objectives. Here's an example dashboard that can be built with the queries.
+Custom dashboards are a great way to focus your teams around the metrics and events that matter most to your business. With a few simple queries you can build a dashboard to share with teams, so everyone can understand how well they're doing against your data quality objectives. Here's an example dashboard that combines [forwarded Violations](/docs/protocols/tracking-plan/#violation-forwarding) with production event data to track data quality. See below for detailed SQL queries!
 
 ![](images/anomaly_detection_dashboard.png)
 
@@ -147,6 +147,6 @@ This query produces a table listing the top 10 events with the most violations. 
 
 ### Utilize a tool like Lazy Lantern to automate anomaly detection
 
-Lazy Lantern provides autonomous anomaly detection for all your product metrics. It only takes a minute to enable with Segment, no coding involved.
+After you've set up [Violation Forwarding](/docs/protocols/tracking-plan/#violation-forwarding), you can enable the Lazy Lantern destination for the your `Protocols Audit Source` to start automatically generating Slack notifications when an anomaly occurs. Lazy Lantern can also be connected to your Segment production sources to track if any events are experiencing volume anomalies.
 
 [Learn more about Lazy Lantern here](/docs/connections/destinations/catalog/lazy-lantern/)
