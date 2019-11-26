@@ -35,6 +35,7 @@ defaults:
       path: "connections/warehouses/catalog"
     values:
       integration_type: warehouse
+      landing: true
 
 plugins_dir: ./_plugins
 plugins:
