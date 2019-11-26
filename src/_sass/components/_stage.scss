@@ -7,6 +7,7 @@
   @include breakpoint(large up)  {
     padding-left: 20px;
     padding-right: 20px;
+    min-height: calc(100vh - 475px);
   }
 
   &__aside {
