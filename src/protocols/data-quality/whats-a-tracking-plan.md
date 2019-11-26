@@ -2,13 +2,11 @@
 title: What's a Tracking Plan?
 ---
 
-A [tracking plan](https://segment.com/blog/whats-a-tracking-plan) clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. Prior to Protocols, tracking plans typically lived in a spreadsheet. They served as both a project management tool to align an entire organization around data as the basis on which to make decisions. The tracking plan helps marketers, product managers, engineers, analysts, etc. get on the same page. It represents the single source of truth for what data to collect and why.
+A [tracking plan](https://segment.com/blog/whats-a-tracking-plan) clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. Prior to Protocols, tracking plans typically lived in a spreadsheet. The tracking plan served as a project management tool to align an entire organization around data as the basis on which to make decisions. The tracking plan helps marketers, product managers, engineers, analysts, etc. get on the same page. It represents the single source of truth for what data to collect and why.
 
 The tracking plan has been so instrumental in helping organizations reclaim their own data efforts that we invested years of product development to create [Protocols](/docs/protocols/). 
 
-In this tutorial, we'll share with you the underlying data philosophies that guide the creation of tracking plans (regardless of whether you're a Protocols customer), as well as a system for determining what events to include or exclude, and why.
-
-![](images/asset_Vz7CoQEs.png)
+In the following, we share how to build a tracking plan from the ground up using a Google Sheet template. Note that you can use any tool to create the tracking plan! 
 
 ## Tracking Plan Google Sheets Template
 
@@ -22,7 +20,7 @@ From there, we recommend you specify Track events in the **Track (Custom)** tab.
 
 Once completed, the Google Sheet tracking plan can be shared with your stakeholders to either review, comment, edit or simply reference for implementation. And if you decide to purchase Protocols in the future, you'll be able to upload the tracking plan into Segment [via the Config API](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader). 
 
-## Identifying your users
+## Identify your users
 
 The `.identify()` call is important, because it updates all records of the user with a set of traits. But how do you choose which traits to include?
 
