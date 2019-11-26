@@ -8,11 +8,11 @@ That being said, be prepared to invest time defining how you want to track data.
 
 ## Define Business Objectives
 
-While it may seem obvious, we recommend starting with your high level business objectives. More specifically, what are the measurable business outcomes you want to achieve this year. Are you looking to acquire new customers, activate new signups, drive incremental revenues among your current customer base, etc? Answering this question is best done by interviewing stakeholders who would consume the data in your organization. 
+While it may seem obvious, we recommend documenting your high level business objectives (see [Goals tab in Google Sheet Tracking Plan](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view){:target="_blank"} template). More specifically, what are the measurable business outcomes you want to achieve this year. Are you looking to acquire new customers, activate new signups, drive incremental revenues among your current customer base, etc? Answering this question is best done by interviewing stakeholders who would consume the data in your organization. 
 
-With these business goals in hand, you now need to map user actions to your business goals. For example, if one of your goals is to activate new signups, it's critical to understand the activities of your current customer base. What actions do people take before signing up? Are there specific actions that can predict a user signing up? 
+With your business goals documented, you now need to map user actions to those business goals. For example, if one of your goals is to activate new signups, you want to think about which activities are related to a signup. Ask yourself, what actions do people take before signing up? Are there specific actions that can predict a user signing up? 
 
-As an example, here are some user actions that would likely lead to a sign up:
+As an example, you may end up with a list like the following:
 
 * Ad Campaign Clicked
 * Link Clicked

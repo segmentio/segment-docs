@@ -2,7 +2,7 @@
 title: 'Anomaly Detection'
 ---
 
-If you're using Protocols, you might want to get notifications when an anomaly in event volumes or Protocols violation counts occurs. This document clarifies what we mean by anomaly detection, gives examples of anomalies that might be relevant to your business, and provides some example solutions of how to monitor and alert on anomalies using some standard tools available today.
+If you're using Protocols, you might want to get notifications when an anomaly in event volumes or [Protocols violation](/docs/protocols/tracking-plan/#tracking-plan-event-violations) counts occurs. This document clarifies what we mean by anomaly detection, gives examples of anomalies that might be relevant to your business, and provides some example solutions of how to monitor and alert on anomalies using some standard tools available today.
 
 ## What is anomaly detection?
 
