@@ -115,7 +115,7 @@ If you have Protocols in your workspace, **and** have a tracking plan associated
 
 ## Warehouse Selective Sync
 
-[Warehouse Selective Sync](https://segment.com/docs/guides/warehouses/can-i-control-what-data-is-sent-to-my-warehouse/) allows you to prevent specific data from getting into your warehouses. You can use this to stop syncing specific events or properties that aren't relevant, and which are just slowing down your warehouse syncs.
+[Warehouse Selective Sync](https://segment.com/docs/connections/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse/) allows you to prevent specific data from getting into your warehouses. You can use this to stop syncing specific events or properties that aren't relevant, and which are just slowing down your warehouse syncs.
 
 This feature stops specific data from being sent to *all* data warehouses at the same time, so don't use it if you only want to pick and choose which warehouses get the data. This setting only affects warehouses, and does not prevent data from going to any other destinations.
 
