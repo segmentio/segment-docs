@@ -146,7 +146,7 @@ You can sync data from your…
 - [Vero](https://segment.com/docs/connections/sources/catalog/cloud-apps/vero/)
 - [Blueshift](https://segment.com/docs/connections/sources/catalog/cloud-apps/blueshift/)
 - [Delighted](https://segment.com/docs/connections/sources/catalog/cloud-apps/delighted/)
-- [Appboy](https://segment.com/docs/connections/sources/catalog/cloud-apps/appboy/)
+- [Braze](https://segment.com/docs/connections/sources/catalog/cloud-apps/braze/)
 - [Looker](https://segment.com/docs/connections/sources/catalog/cloud-apps/looker/)
 - [Radar](https://segment.com/docs/connections/sources/catalog/cloud-apps/radar/)
 - [Autopilot](https://segment.com/docs/connections/sources/catalog/cloud-apps/autopilothq/)
