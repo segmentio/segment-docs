@@ -2,6 +2,7 @@
 title: Segment Documentation
 layout: home
 landing: true
+hide-toc: true
 ---
 
 Welcome to the Segment Documentation!
