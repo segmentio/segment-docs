@@ -12,7 +12,7 @@ We'll show you how to craft a tailored message, while using a combination of AdR
 
 *   Retargeting with [AdRoll](https://adroll.com/): _AdRoll is a retargeting and prospecting tool that allows you to show display ads to a behaviorally-defined cohort_
 
-*   Push notifications with [Braze](https://Braze.com/): _Braze is a multi-channel marketing campaign focused on the mobile experience_
+*   Push notifications with [Braze](https://braze.com/): _Braze is a multi-channel marketing campaign focused on the mobile experience_
 
 *   Emails with [Customer.io](https://customer.io/): _Customer.io is a flexible email provider that allows you to create cohorts based on customer actions. You can build complex onboarding emails, nurture email campaigns, as well as marketing automation workflows._
 
