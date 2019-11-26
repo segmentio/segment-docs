@@ -98,6 +98,7 @@ Here's an example of these common fields in raw JSON:
 ```
 
 In more detail these common fields for every API call are:
+
 <table>
   <tr>
     <th>Field</th>
