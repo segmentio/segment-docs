@@ -1,10 +1,14 @@
 ---
-title: Join the Segment Platform
+title: Overview
 ---
+
+> note ""
+> **NOTE:** Developer Center is currently in _Developer Preview_. If you are interested in joining the Developer Preview, request access [here](https://segment.com/partners/developer-center/). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
+
 
 ## Building on Segment
 
-Over 19,000 companies use Segment as their central hub for collecting and synthesizing first-party customer data. Customers use Segment Sources to collect all data across all their properties (web, mobile, CRMs, email etc.) and send this data into Destinations (SaaS tools, internal databases or queues, or a data warehouse) to perform analytics, run marketing campaigns and much more.
+Over 19,000 companies use Segment as their central hub for collecting and synthesizing first-party customer data. Customers use Segment [Sources](/docs/connections/sources/) to collect data across all their properties (web, mobile, CRMs, email etc.) and send this data into [Destinations](/docs/connections/destinations/) (SaaS tools, internal databases or queues, or a data warehouse) to perform analytics, run marketing campaigns and much more.
 
 Below is a sample screenshot of a customer's Segment dashboard, showing all their sources of data on the left, and destinations for their data on the right.
 
@@ -18,65 +22,59 @@ Customers discover your Sources and Destinations via the Connections Catalog and
 
 The development process is simple:
 
-1. Familiarize yourself with the [Conceptual Model](/docs/partners/conceptual-model) of building on Segment, specifically Apps and Components, and plan your integration.
-2. [Request access to the Segment Developer Center](https://segment.com/partners/developer-center/), including use cases and your high level plan.
+1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model).
+2. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
 3. Create an App that will represent your company within the Segment Catalog.
-4. Build, test and document your Component(s) by following development guides and checklists.
+4. Build, test and document your Component(s).
 5. Submit your App for review.
-5. Launch!
+6. Launch into _Public Beta_!
 
-## Get Access to the Developer Center
+### 1. Understand Segment's Conceptual Model
 
-First you will need a Segment account and access to Dev Center.
+It's important to understand Segment's [Conceptual Model](/docs/partners/conceptual-model) to begin planning your integration. This will help you understand how data will flow from or into your integration.
 
-Start on the [Developer Center Partner page](https://segment.com/partners/developer-center/) to request access during signup. If you already have an account you can log in and go to the [request access to developer center](https://app.segment.com/developer/request-access) page.
+### 2. Request Access 
 
-Make sure to use your company email address and to answer all the survey questions to expedite approval.
+During _Developer Preview_, you will need to [request access to Developer Center](https://segment.com/partners/developer-center/). A Segment account is required for this step.
 
-## Create your App
+We receive a large volume of requests so we encourage you to include a valid company website and email address, answer all questions with details about integration's use case as well as highlighting specific customer requests to expedite the approval process.
 
-Now you can create your App. Your App will ultimately represent you in the Segment Catalog, so you should name it after your company.
+### 3. Create your App
 
-## Build your Component
+Once approved, you can create your first [App](/docs/partners/conceptual-model/#apps). This represents a tile in the [Segment catalog](https://segment.com/catalog/) irrespective of which [Component](/docs/partners/conceptual-model/#components) type you choose to build so it should reflect your tool's name (eg. Zendesk Chat, Zendesk Sell).
 
-Now you can start building! Depending on your use case you can:
+> info ""
+> The Developer Center currently only supports new Partner integrations (ie. Currently does not exist on the [Segment catalog](https://segment.com/catalog/)) in _Developer Preview_. If you're an existing Partner looking to build a new Component or make changes to your existing integration, please fill in [your details here](https://airtable.com/shrSweuRx5jspwsw7) and we will reach out once this is made available!
 
-- [Build a Plugin to send data](/docs/partners/plugins)
-- [Build a Stream to send data](/docs/partners/streams)
-- [Build a Subscription to receive data](/docs/partners/subscriptions)
+### 4. Build, Test, Document
 
-We provide tooling for you to test your components before submitting, unique to each component type. You can find more information in each link above.
+Now you can start building! Depending on your use case you can build a:
 
-Typically this process will take 1 to 2 weeks of a developer's time.
+- [Subscription](/docs/partners/subscriptions)
+- [Plugin](/docs/partners/plugins)
+- [Stream](/docs/partners/streams)
 
-## Test your Component
+> info ""
+> The Developer Center currently only supports the [Subscription](/docs/partners/subscriptions) component in _Developer Preview_. If you're looking to build a [Web Plugin](https://airtable.com/shrT3b4C7agUEBKVS) or [Stream](https://airtable.com/shrj3BkHMhdeaPYWt) please fill out the respective form and we will reach out once this is made available!
 
-The ultimate goal is for Partners like yourself to create and publish high quality Components in [the Segment Catalog](https://segment.com/catalog/). Your Segment account doubles as a sandbox account to test your Component while you are still in a private "building" state.
+It's important that we provide a great experience for our mutual customers so we ask that you conduct thorough testing of your integration using the tooling provided to you through the Developer Center. We also encourage you to use your Segment sandbox in the shoes of a user to polish the experience of implementing and using your integration.
 
-During your build you can use private deep links to see your Component in the Segment App, and enable, configure and send data through it. We encourage you to do this to polish the experience on Segment and your service.
+Finally, make sure you prepare documentation and relevant marketing material for both discovery and reference.
 
-The Segment Developer Center team will test your components in this fashion before approving it for the Catalog.
+### 5. Submission
 
-## Document your Component
+You can submit your Component in the Developer Center for review. We strive to respond to your submission within 2 business days to kickstart the review process.
 
-To provide a great experience for users, and to help us test your integration, you need to document your integration. Segment expects docs both on your site about Segment, and on Segment's site about your integration. We provide templates for our docs to help you get started.
+Our team will test your integration and review your documentation and marketing material. In order to keep this review feedback loop short, please make sure that your integration:
 
-## Submitting for Review
-
-You can submit your components in the Developer Center for review. We strive to review all submissions within 2 business days so that you can keep your feedback loops tight!
-
-### Tips for Review
-
-In general, the most important things are to:
-
-- Adhere to the Segment Spec in your component(s).
-- Share your documentation ahead of or with the submission, and follow it.
-- Be ready to stand up to high data volumes.
-- Be ready to go with your launch requirements.
+- Adheres to the [Segment Spec](/docs/partners/spec/)
+- Adheres to your published documentation
+- Supports high data volumes
+- Meets all [launch requirements](/docs/partners/#launch-requirements)
 
 ## Launch Requirements
 
-See the [Public Beta Checklist](/docs/partners/checklist) for full details about how Segment approves your app for listing in the public integrations catalog.
+See the [Public Beta Checklist](/docs/partners/checklist) for a detailed checklist used by the Segment team to review and approve the launch of your integration.
 
 In a nutshell you need:
 
@@ -92,21 +90,21 @@ In a nutshell you need:
 
 Please be sure to use our [brand kit](https://brandfolder.com/segment/press-kit) for logos, and our [UTM guide](https://docs.google.com/document/d/1L0MHYdF2SYaMMiodQCYlZELF7pN0TXiZbD22nnlGhEk/copy) any time you link to a Segment page.
 
-You can reach out to us at partner-support@segment.com once you have all these elements ready for review. Once we approve them, your Destination goes live on Catalog in Public Beta 🎉
+You can reach out to us at [partner-support@segment.com](mailto:partner-support@segment.com) once you have all these elements ready for review. Once we approve them, your Destination goes live on Catalog in Public Beta 🎉
 
 ## Post Launch
 
-Congratulations on launching your integration in Public Beta - welcome aboard! Here are the next steps to move out from Public Beta to fully Public:
+Congratulations on launching your integration in Public Beta - welcome aboard! Here are the next steps to move out from Public Beta to Public:
 
 1. Implement the [Enable with Segment OAuth](/docs/partners/enable-with-segment) button - this makes it much easier for our mutual customers to get started with your integration!
 2. Onboard at least 3 customers to actively utilize your integration
 
-Bonus points if you join the [Segment Select Partner Program](/docs/partners/#segment-promotion-via-the-segment-select-partner-program)!
+Bonus points if you join the [Segment Select](/docs/partners/#segment-select) Partner Program!
 
-## Segment Promotion via The Segment Select Partner Program
+## Segment Select
 
 Our focus when working with partners is to ensure we are always providing an exceptional experience to our joint customers.
 
-From there, you can start taking advantage of our available partner opportunities by [joining the Segment Select Partner Program.](https://segment.com/partners/integration/#module-5-benefits)
+From there, you can start taking advantage of our available partner opportunities by [joining the Segment Select Partner Program](https://segment.com/partners/integration/#module-5-benefits).
 
 By becoming a Segment Select partner, you have access to sales support, technical training, and personalized co-marketing opportunities. [Learn more about the program details here.](https://assets.ctfassets.net/9u2t3ap6pctb/3NPVQDweiX0l8Z2edugwIr/d09ea71f04913f3189514b7d2df57d36/Segment_Select_Partner_Program_One_Pager.pdf)
