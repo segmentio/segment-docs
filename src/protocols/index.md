@@ -10,7 +10,7 @@ Protocols was built to automate and scale the [data quality best practices](/doc
 
 We highly recommend spending time reviewing the [data quality best practices docs](/docs/protocols/data-quality/)!
 
-Protocols is centered around four pillars:
+Protocols has four main themes:
 
 * [**Align:**](/docs/protocols/tracking-plan/#create-a-tracking-plan) Good data quality starts with a well thought out Tracking Plan. With Protocols, you can define your events and corresponding properties in a Tracking Plan. This tracking plan becomes a central source of truth for product, engineering, analytics, and business teams.
 * [**Validate:**](/docs/protocols/tracking-plan/#tracking-plan-event-violations) With your tracking plan living in Segment, you can apply it to 1 or more data sources. Any event or property that does not match the tracking plan will generate a violation. Violations are displayed in aggregated form to spot trends, and detailed form to help you quickly find and resolve discrepancies.
