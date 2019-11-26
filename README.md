@@ -313,5 +313,3 @@ The current breadcrumb is currently determined based on the `page.path` and the 
 
 ### Searching
 Swiftype is set up as a script in `_layouts/default.html`
-
-test
