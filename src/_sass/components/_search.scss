@@ -1,5 +1,5 @@
 .search {
-  display: none !important;
+  display: none;
 
   @include breakpoint(large up)  {
     display: block;
