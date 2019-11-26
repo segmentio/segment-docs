@@ -20,7 +20,3 @@ Get familiar with our products, features, and integrations.
 
 ### Want more hands-on guidance?
   For a more hands-on tutorial of Segment, check out [Segment University](https://university.segment.com/). It offers step-by-step instructions, from first steps up through some of our more advanced features.
-
-<br>
-
-Be sure to check out the [Guides](/docs/guides/) for FAQs and Best Practices, and dig in to the [App](/docs/segment-app/) section to get to know the Segment web app.
