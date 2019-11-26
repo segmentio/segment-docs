@@ -4,10 +4,6 @@ title: MadKudu Destination
 
 This destination is built and supported by MadKudu. If you run into any issues with the destination, please reach out to their support team.
 
-## Getting Started
-
-{% include content/connection-modes.md %}
-
 ### How it works
 MadKudu receives your customer data from Segment, enriches it, and updates your CRM profiles.
 

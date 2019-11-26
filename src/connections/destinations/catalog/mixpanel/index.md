@@ -198,7 +198,7 @@ However, in certain circumstances, despite the risk of duplicate profiles, you m
 
 If you're tracking anonymous users on the client side either from a browser or one of our mobile SDK you'll need to pass the Mixpanel `distinct_id` from the browser to your servers in order to [`alias`](/docs/connections/spec/alias/) it to the new `userId`.
 
-First, use [`analytics.ready`](/docs/connections/sources/catalog/libraries/website/analytics.js#ready) to grab the Mixpanel `distinct_id`:
+First, use [`analytics.ready`](/docs/connections/sources/catalog/libraries/website/javascript#ready) to grab the Mixpanel `distinct_id`:
 
 ```js
 analytics.ready(function(){
@@ -277,7 +277,7 @@ We do not map `$library_version` since that is reserved for Mixpanel's library v
 
 ### Autotrack
 
-Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported via Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed via Segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
+Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported via Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed via Segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
 
 ### People
 
@@ -398,7 +398,7 @@ If you are testing in Xcode remember you must first background the app, then the
 
 ### Autotrack
 
-Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported via Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed via segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
+Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported via Segment as long as you are using one of our client-side libraries ([analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), [Android](/docs/connections/sources/catalog/libraries/mobile/android/)). Additionally, if you're using analytics for Android or iOS, make sure your Mixpanel destination is bundled - otherwise Autotrack will not work. Once Mixpanel is installed via segment, all you have to do is [enable the Autotrack feature for your Mixpanel account](https://mixpanel.com/help/questions/articles/what-is-autotrack-and-how-do-i-get-started-using-it) and it will start working.
 
 ### IP
 

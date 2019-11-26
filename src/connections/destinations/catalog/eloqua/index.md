@@ -2,10 +2,6 @@
 title: Eloqua Destination
 ---
 
-## Getting Started
-
-{% include content/connection-modes.md %}
-
 ## Page
 
 Client-side page-view tracking is achieved via an integration with the [Eloqua

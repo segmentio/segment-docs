@@ -2,10 +2,6 @@
 title: Kenshoo Infinity Destination
 ---
 
-## Getting Started
-
-{% include content/connection-modes.md %}
-
 Kenshoo conversion tracking is an open, flexible system for collecting and utilizing information on conversions. This destination will map your Segment `.track()` events into Kenshoo Infinity Pixels!
 
 ## Track

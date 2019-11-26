@@ -132,7 +132,7 @@ For Destinations that support an `alias` call (for example, Mixpanel), we have t
 ## What Sources can I sync to Personas?
 
 You can sync data from your…
-- Website ([analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/))
+- Website ([analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/))
 - Mobile SDKs ([ios](/docs/connections/sources/catalog/libraries/mobile/ios), [android](/docs/connections/sources/catalog/libraries/mobile/android), [amp](/docs/connections/sources/catalog/libraries/mobile/amp))
 - Serverside libraries ([go](/docs/connections/sources/catalog/libraries/server/go), [node](/docs/connections/sources/catalog/libraries/server/), [java](/docs/connections/sources/catalog/libraries/server/java), [PHP](/docs/server/php), [python](/docs/connections/sources/catalog/libraries/server/python), [ruby](/docs/connections/sources/catalog/libraries/server/ruby), [.NET](/docs/connections/sources/catalog/libraries/server/net))
 - [Facebook Lead Ads](https://segment.com/docs/connections/sources/catalog/cloud-apps/facebook-lead-ads/)

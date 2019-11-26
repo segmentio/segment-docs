@@ -18,18 +18,11 @@ For detailed information about each destination, select one from the list to lea
 
 ## Source Compatibility
 
-Many destinations can accept data from all four types of sources, but some are only compatible with specific source types (for example, web only, or server only). To find out which source types a specific destination can accept data from, check the documentation for that destination for a "Supported Sources and Connection Modes" section.
+Many destinations can accept data from all types of sources, but some are only compatible with specific source types (for example, web only, or server only). To find out which source types a specific destination can accept data from, check the documentation for that destination for a "Supported Sources and Connection Modes" section.
 
 ## Connection Modes
 
-Our Web source (Analytics.js), and our native client-side libraries (iOs, Android, react-native) allow you to choose how you send data to Segment from your website or app. Two ways are available:
-
-- **Cloud-mode**: in this mode, the sources send data directly to the Segment servers, which then translate it for each connected downstream destination, and send it on. Translation is done on the Segment servers, keeping your page size, method count, and load time small.
-
-
-- **Device-mode**: in this mode, you include additional code on your website or mobile app, which allows Segment to translate the data you collected on the device, and then send it directly to your destinations without sending it to the Segment servers first. (You still send your data to the Segment servers, but this occurs asynchronously.) This is also called "wrapping" or "bundling", and it might be required when the source has to be loaded on the page to work, or loaded directly on the device to function correctly.
-
-> **Note:** If you use Server source libraries, they only send data directly to Segment in Cloud-mode. (Server library implementations operate in the server backend, and can't load additional destination SDKs.)
+{% include content/connection-modes-intro.md %}
 
 
 ### When should I use Device-mode? When should I use Cloud-mode?
@@ -59,7 +52,9 @@ Some features that usually require a Device-mode include automatic A/B testing; 
 
 ### Choosing a Connection Mode
 
-There are tradeoffs between using cloud-mode (sending through Segment) and device-mode (sending in parallel to Segment). In general, Cloud-mode is preferred because you then benefit from the Segment systems' features, like retries, Replay, Warehouses, Privacy blocking, filtering, and more. However, you should consider using device-mode if you use destinations which record information directly on the user's device. These types of tools might lose functionality if they aren't loaded directly on the
+There are tradeoffs between using cloud-mode (sending through Segment) and device-mode (sending in parallel to Segment). In general, Cloud-mode is preferred because you then benefit from the Segment systems' features, like retries, Replay, Warehouses, Privacy blocking, filtering, and more.
+
+However, you should consider using device-mode if you use destinations which record information directly on the user's device. These types of tools might lose functionality if they aren't loaded directly on the device.
 
 #### Website source connection modes
 
@@ -76,9 +71,9 @@ Before you turn on or opt-in for Cloud-mode for a mobile source, consider if you
 
 ### How can I tell which Connection Modes and Platforms are supported for a Destination?
 
-The first place to look is the individual destination doc. Each one will have a matrix of supported Sources and Connection Modes.
+The first place to look is the individual destination documentation. Each one includes a matrix of supported Sources and Connection Modes.
 
-In order to override the default, check the destination settings pane in the app either for a **Connection Mode** toggle or instructions on bundling any additional mobile components required.
+In order to override the default, check the destination settings pane in the Segment web App either for a **Connection Mode** toggle or instructions on bundling any additional mobile components required.
 
 ## Data Deliverability
 

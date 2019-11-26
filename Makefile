@@ -3,7 +3,7 @@ BIN := ./node_modules/.bin
 # Core...
 
 JEKYLL_ENV = 'development'
-ifeq ($(BUILDKITE_PIPELINE_DEFAULT_BRANCH),'master')
+ifeq ('${BUILDKITE_BRANCH}','master')
 JEKYLL_ENV := 'production'
 endif
 
@@ -21,10 +21,11 @@ intialize-work-dir:
 
 .PHONY: build
 build: node_modules vendor/bundle
+	@echo "Jekyll env: ${JEKYLL_ENV}"
 	@chown -R jekyll /workdir
 	@echo "env: ${JEKYLL_ENV}"
 	@$(BIN)/webpack --mode=production
-	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build
+	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
 
 .PHONY: package
 package: build
@@ -89,7 +90,7 @@ docker-build:
 #	make seed && \
 #	make build && \
 #	docker build . -t segment-docs:latest && \
-#	echo "Running segment docs at http://localhost:4000/docsv2/" && \
+#	echo "Running segment docs at http://localhost:4000/docs/" && \
 #	docker run -p 4000:80 segment-docs:latest
 #
 #.PHONY: build

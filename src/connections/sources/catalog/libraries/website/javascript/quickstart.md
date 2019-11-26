@@ -8,7 +8,7 @@ sourceCategory: 'Website'
 
 This tutorial will help you start sending data from your website to Segment and any of our destinations, using our Analytics.js library. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
 
-If you want to dive deeper at any point, check out the [Analytics.js reference](/docs/connections/sources/catalog/libraries/website/analytics.js).
+If you want to dive deeper at any point, check out the [Analytics.js reference](/docs/connections/sources/catalog/libraries/website/javascript).
 
 
 ## Step 1: Copy the Snippet
@@ -30,7 +30,7 @@ However, lots of analytics and marketing tools will need to record _who_ each us
 
 ## Step 2: Identify Users
 
-The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/website/analytics.js#identify).
+The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/website/javascript#identify).
 
 **Note:** You won't need to call `identify` for anonymous visitors to your site. We'll automatically assign them an `anonymousId`, so just calling `page` and `track` will still work just fine without `identify`.
 
@@ -67,7 +67,7 @@ Of course, lots of analytics tools record more than just _identities_... they re
 
 ## Step 3: Track Actions
 
-The `track` method is how you tell Segment about which actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/connections/sources/catalog/libraries/website/analytics.js#track).
+The `track` method is how you tell Segment about which actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/connections/sources/catalog/libraries/website/javascript#track).
 
 Here's what a call to `track` might look like when a user signs up:
 
@@ -99,6 +99,6 @@ Once you've added a few `track` calls, **you're done!** You successfully install
 
 ## What's Next?
 
-We just walked through the quickest way to get started with Segment using Analytics.js. You might also want to check out our full [Analytics.js reference](/docs/connections/sources/catalog/libraries/website/analytics.js) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Segment using Analytics.js. You might also want to check out our full [Analytics.js reference](/docs/connections/sources/catalog/libraries/website/javascript) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http) to get a sense for the bigger picture.
 
 If you're running an **Ecommerce** site or app you should also check out our [Ecommerce API reference](/docs/connections/spec/ecommerce/v2/) to make sure your products and checkout experience are instrumented properly!

@@ -1,5 +1,6 @@
 ---
 title: Impact Destination
+hidden: true
 ---
 
 ## Getting Started
@@ -34,7 +35,7 @@ To track events from web / server locations, you will need to choose the Action 
 
 #### Click Id
 
-Impact passes a query parameter named `CLICKID` as a part of their tracking urls. The value associated with this parameter is used to perform attribution analysis on their end. By default, if you are using our [Javascript source](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/), we will automatically look for this parameter and if it exists, pass it as a contextual property of any events that happen **on the same pageview**. However, we do not cache this id anywhere so any subsequent events the user takes outside of that initial pageview will not have the ClickId as part of the event.
+Impact passes a query parameter named `CLICKID` as a part of their tracking urls. The value associated with this parameter is used to perform attribution analysis on their end. By default, if you are using our [Javascript source](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/), we will automatically look for this parameter and if it exists, pass it as a contextual property of any events that happen **on the same pageview**. However, we do not cache this id anywhere so any subsequent events the user takes outside of that initial pageview will not have the ClickId as part of the event.
 
 Impact recommends you cache this value in the users browser (using a cookie or local storage) if you want to attribute any subsequent user interactions to the initial ad source. We ask that you continue doing this if you are using this integration to track web conversions and pass the cached id as part of the `context.referrer` object. It should look like this:
 

@@ -5,8 +5,6 @@ name: Pardot
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 When you toggle on Pardot in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page.

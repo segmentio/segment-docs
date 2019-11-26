@@ -4,8 +4,6 @@ title: Nielsen DCR Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Nielsen-DCR is supported on mobile apps and web browsers.
 
 Digital Content Ratings (DCR) responds to the shifting, complex multi-platform, multi-device and multi-distribution landscape by providing comprehensive measurement of digital content consumption—including streaming video, static web pages and mobile apps—across all major devices and platforms.
