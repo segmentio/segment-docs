@@ -120,6 +120,21 @@ To add images to a docs page, create an `images` folder for the docs path, save 
 
 There are no naming conventions at this time. Anything you see with `asset` was dowloaded by a script to save it from Contents.io. :)
 
+### Adding links
+
+Use the standard markdown format for links (ex: `[text](https://example.com)`).
+To make a link open in a new tab append `[text](https://example.com){:target="_blank"}` to the end.
+
+### Escaping code snippets
+
+Certain code syntax will be interpreted by Jekyll/Liquid as site code. If you're having trouble showing code snippets in the docs, you can wrap the snippet in a `{% raw %}` tag. In the example below, the curly brackets would not render in the docs. The raw tags ensure the code renders properly.
+
+```
+{% raw %}
+To pass source name in the slack message, format it like so: `{{properties.sourceName}}`
+{% endraw %}
+```
+
 ## Frontmatter
 
 Each Markdown file in the docs can have frontmatter (also and formerly known as "metadata") associated with it at the top of the file. (For clarity, we call it "Frontmatter" to prevent confusion with the Segment "Metadata service".
