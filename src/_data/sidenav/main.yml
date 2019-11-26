@@ -157,8 +157,6 @@ sections:
     title: How do I test my connections?
   - path: /connections/data-export-options
     title: What are my data export options?
-  - path: /connections/destination-data-control
-    title: How do I use Schema Controls?
   - path: /connections/event-delivery
     title: How do I check if data is reaching a destination?
   - path: /connections/find-writekey
@@ -211,8 +209,6 @@ sections:
     title: Example Tracking Plans
   - path: /protocols/ecommerce-tracking-plan
     title: Ecommerce Tracking Plans
-  - path: /protocols/schema
-    title: Schema Controls
   - path: /protocols/typewriter
     title: 'Typewriter'
   - path: /protocols/tracking-plan
@@ -230,6 +226,8 @@ sections:
   section:
   - path: /segment-app
     title: Introducing the Segment Web App
+  - path: /segment-app/schema
+    title: Schema
   - section_title: Access Management
     slug: segment-app/iam
     section:
