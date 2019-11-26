@@ -12,7 +12,7 @@ We'll show you how to craft a tailored message, while using a combination of AdR
 
 *   Retargeting with [AdRoll](https://adroll.com/): _AdRoll is a retargeting and prospecting tool that allows you to show display ads to a behaviorally-defined cohort_
 
-*   Push notifications with [AppBoy](https://appboy.com/): _AppBoy is a multi-channel marketing campaign focused on the mobile experience_
+*   Push notifications with [Braze](https://Braze.com/): _Braze is a multi-channel marketing campaign focused on the mobile experience_
 
 *   Emails with [Customer.io](https://customer.io/): _Customer.io is a flexible email provider that allows you to create cohorts based on customer actions. You can build complex onboarding emails, nurture email campaigns, as well as marketing automation workflows._
 
@@ -21,25 +21,25 @@ We'll show you how to craft a tailored message, while using a combination of AdR
 
 _There are other email tools on Segment's platform, such as_ [Bronto](https://bronto.com/), [SendGrid](https://sendgrid.com/), _and_[Mailchimp](https://mailchimp.com/). _Check out the_ [full list of email tools](https://segment.com/catalog#integrations/email).
 
-Before we proceed, it's important to register for these tools and enable them on your Segment source project. When Segment collects tracking data, it'll all also route it to all of your enabled tools. Then your tools, especially ones like Customer.io, AppBoy, and AdRoll, where you can define cohorts of your users, will be working off a dynamic, yet consistent data set. This is paramount in getting the dynamic messaging to update accordingly.
+Before we proceed, it's important to register for these tools and enable them on your Segment source project. When Segment collects tracking data, it'll all also route it to all of your enabled tools. Then your tools, especially ones like Customer.io, Braze, and AdRoll, where you can define cohorts of your users, will be working off a dynamic, yet consistent data set. This is paramount in getting the dynamic messaging to update accordingly.
 
 ## Set it up
 
 ![](images/auto-multi_aXa02yaL.png)
 
-When you send tracking data from your app or website to Segment, Segment will send the same data to all of your tools. Segment also collects key messaging events like Push Notification Opened and Email Opened from AppBoy and Customer.io, respectively, and sends that to other tools. By defining cohorts based on these events, you can create dynamic campaign audiences, to which customers can add and remove themselves.
+When you send tracking data from your app or website to Segment, Segment will send the same data to all of your tools. Segment also collects key messaging events like Push Notification Opened and Email Opened from Braze and Customer.io, respectively, and sends that to other tools. By defining cohorts based on these events, you can create dynamic campaign audiences, to which customers can add and remove themselves.
 
-In each of your destinations—Appboy, Facebook, Customer.io, AdRoll—you can create custom campaigns to show display ads or send emails to a specific segment of users who have performed (or not performed) a given action, or "event." In this cross-channel re-engagement example, we'll start with push notifications.
+In each of your destinations—Braze, Facebook, Customer.io, AdRoll—you can create custom campaigns to show display ads or send emails to a specific segment of users who have performed (or not performed) a given action, or "event." In this cross-channel re-engagement example, we'll start with push notifications.
 
 ## 1st Line of Defense: The Push Notification
 
-In Appboy, create a segment of customers who added a product to their cart, but did not check out. The segment definition, in this case, should be people who have performed `Product Added`, but have not performed `Order Completed` . Send a push notification to these customers with a message that the cart was abandoned and that they can complete the transaction with a 10% coupon (or up to you).
+In Braze, create a segment of customers who added a product to their cart, but did not check out. The segment definition, in this case, should be people who have performed `Product Added`, but have not performed `Order Completed` . Send a push notification to these customers with a message that the cart was abandoned and that they can complete the transaction with a 10% coupon (or up to you).
 
 ![](images/auto-multi_DDMDnUuY.png)
 
 ## 2nd Line of Defense: The Email Reminder
 
-Because Segment automatically collects second-party data from AppBoy, you now also have push notification event data, like `Push Notification Opened` and `Push Notification Received` in Segment. You can use the `properties` on each of these events to define a property called `campaign_name` so you can tie these activities to a given campaign.
+Because Segment automatically collects second-party data from Braze, you now also have push notification event data, like `Push Notification Opened` and `Push Notification Received` in Segment. You can use the `properties` on each of these events to define a property called `campaign_name` so you can tie these activities to a given campaign.
 
 ![](images/auto-multi_262jquPl.png)
 
