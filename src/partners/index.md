@@ -24,10 +24,11 @@ The development process is simple:
 
 1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model).
 2. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
-3. Create an App that will represent your company within the Segment Catalog.
-4. Build, test and document your Component(s).
-5. Submit your App for review.
-6. Launch into _Public Beta_!
+3. Create an App.
+4. Build and test your Component(s).
+5. Publish documentation.
+6. Submit your App for review.
+7. Launch into _Public Beta_!
 
 ### 1. Understand Segment's Conceptual Model
 
@@ -46,7 +47,7 @@ Once approved, you can create your first [App](/docs/partners/conceptual-model/#
 > info ""
 > The Developer Center currently only supports new Partner integrations (ie. Currently does not exist on the [Segment catalog](https://segment.com/catalog/)) in _Developer Preview_. If you're an existing Partner looking to build a new Component or make changes to your existing integration, please fill in [your details here](https://airtable.com/shrSweuRx5jspwsw7) and we will reach out once this is made available!
 
-### 4. Build, Test, Document
+### 4. Build & Test
 
 Now you can start building! Depending on your use case you can build a:
 
@@ -59,9 +60,17 @@ Now you can start building! Depending on your use case you can build a:
 
 It's important that we provide a great experience for our mutual customers so we ask that you conduct thorough testing of your integration using the tooling provided to you through the Developer Center. We also encourage you to use your Segment sandbox in the shoes of a user to polish the experience of implementing and using your integration.
 
-Finally, make sure you prepare documentation and relevant marketing material for both discovery and reference.
+### 5. Document
 
-### 5. Submission
+Finally, make sure you prepare documentation and relevant marketing material for easy discovery and reference. We ask that you provide the following documentation about your integration by making a copy of the below templates:
+
+1. Documentation [hosted by Segment](https://segment.com/docs/) for [Subscription / Plugin](https://hackmd.io/t7amLXluS7-39rg7ARZgSA) or [Stream](https://hackmd.io/TV8cZR6tRnKwGtkvSexeag)
+2. Documentation for [the Segment catalog](https://segment.com/catalog/) using [this template](https://docs.google.com/document/d/1kvAvAHLyM3pOq-lBcZJhP_X_KivHlk1eiFy-5ERWDXc/edit))
+3. Documentation hosted on your own website about your new Segment integration
+4. Draft blog post announcing your new integration
+
+
+### 6. Submission
 
 You can submit your Component in the Developer Center for review. We strive to respond to your submission within 2 business days to kickstart the review process.
 
