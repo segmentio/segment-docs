@@ -3,7 +3,7 @@ title: Overview
 ---
 
 > note ""
-> **NOTE:** Developer Center is currently in _Developer Preview_. If you are interested in joining the Developer Preview, request access [here](https://segment.com/partners/developer-center/). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
+> **NOTE:** Developer Center is currently in _Developer Preview_. If you are interested in joining the Developer Preview, request access [here](https://segment.com/partners/developer-center/). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/). By starting or continuing this process, you also agree to the [Segment Platform Partners Agreement](https://segment.com/docs/legal/partnersagreement/).
 
 
 ## Building on Segment
