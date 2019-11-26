@@ -202,31 +202,35 @@ sections:
 - section_title: Protocols
   section:
   - path: /protocols
-    title: Protocols and Schema Controls
-  - path: /protocols/anomaly_detection
-    title: 'Protocols: Anomaly Detection'
-  - path: /protocols/apis-and-extensions
-    title: 'Protocols: APIs and Extensions'
-  - path: /protocols/ecommerce-tracking-plan
-    title: Ecommerce Tracking Plans
-  - path: /protocols/example-tracking-plan
-    title: Example Tracking Plans
-  - path: /protocols/faq
-    title: Protocols FAQ
+    title: Data Quality with Protocols and Schema
+  - section_title: Data Collection Best Practices 
+    slug: protocols/data-quality
+    section:
+    - path: /protocols/data-quality
+      title: Data Collection Best Practices
+    - path: /protocols/data-quality/whats-a-tracking-plan
+      title: What is a Tracking Plan?
+    - path: /protocols/data-quality/example-tracking-plan
+      title: Example Tracking Plans
+    - path: /protocols/data-quality/ecommerce-tracking-plan
+      title: Ecommerce Tracking Plans
   - path: /protocols/schema
     title: Schema Controls
-  - path: /protocols/tracking-plan-events
-    title: What events should I track?
   - path: /protocols/tracking-plan
     title: 'Protocols: Tracking Plans'
   - path: /protocols/transformations
     title: 'Protocols: Transformations'
-  - path: /protocols/typewriter
-    title: 'Protocols: Typewriter'
-  - path: /protocols/what-to-track
-    title: What Should I track?
-  - path: /protocols/whats-a-tracking-plan
-    title: What's a Tracking Plan?
+  - section_title: 'Protocols: APIs and Extensions'
+    slug: protocols/apis-and-extensions
+    section:
+    - path: /protocols/apis-and-extensions
+      title: 'Protocols: APIs and Extensions'
+    - path: /protocols/apis-and-extensions/typewriter
+      title: Typewriter
+    - path: /protocols/apis-and-extensions/anomaly_detection
+      title: Anomaly Detection
+  - path: /protocols/faq
+    title: 'Protocols: FAQ'
 - section_title: Segment App
   section:
   - path: /segment-app

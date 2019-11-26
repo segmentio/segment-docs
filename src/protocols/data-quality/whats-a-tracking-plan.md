@@ -2,15 +2,20 @@
 title: What's a Tracking Plan?
 ---
 
-We've helped thousands of companies implement customer data tracking, and in that time we've observed that the companies that have the most success leveraging data have one thing in common: they use a tracking plan.
-
-A [tracking plan](https://segment.com/blog/what-is-a-tracking-plan) clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. Typically a spreadsheet, this serves as both as a project management tool and as collateral to align the entire organization behind data as the basis on which to make decisions or deem a launch to be a success. This tool helps everyone—marketers, product managers, engineers, analysts—get on the same page. It represents the single source of truth for what data to collect and why.
+A [tracking plan](https://segment.com/blog/whats-a-tracking-plan) clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. Typically a spreadsheet, this serves as both as a project management tool and as collateral to align the entire organization behind data as the basis on which to make decisions or deem a launch to be a success. This tool helps everyone—marketers, product managers, engineers, analysts—get on the same page. It represents the single source of truth for what data to collect and why.
 
 The tracking plan has been such an instrumental document for helping organizations reclaim their own data efforts that our Customer Success Managers enforce creating one before writing a single line of tracking code. Having customers go through this invaluable exercise encourages them to think critically about what they want to learn, why they want to learn it, and how they want to use that data in their downstream tools. Afterwards, they track events with intent and are far more confident about making decisions and acting on the collected data.
 
 In this tutorial, we'll share with you the underlying data philosophies that guide the creation of tracking plans, as well as a system for determining what events to include or exclude, and why.
 
 ![](images/asset_Vz7CoQEs.png)
+
+## Tracking Plan Templates
+
+This Tracking Plan template includes all of our specs including [eCommerce](/docs/connections/spec/ecommerce/v2/), [B2B SaaS](/docs/connections/spec/mobile/), [Mobile](/docs/connections/spec/mobile/) and [Video](/docs/connections/spec/video/).
+
+[View the Plan in Google Sheets](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) and make a copy to edit the events.
+
 
 ## Data philosophies
 

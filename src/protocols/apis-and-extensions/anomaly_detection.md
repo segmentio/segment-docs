@@ -1,10 +1,10 @@
 ---
-title: 'Protocols: Anomaly Detection'
+title: 'Anomaly Detection'
 ---
 
 If you're using Protocols, you might want to get notifications when an anomaly in event volumes or Protocols violation counts occurs. This document clarifies what we mean by anomaly detection, gives examples of anomalies that might be relevant to your business, and provides some example solutions of how to monitor and alert on anomalies using some standard tools available today.
 
-### What is anomaly detection?
+## What is anomaly detection?
 
 Anomaly detection means finding out when your data collection is broken, missing, or incorrect. This covers a huge range of functionality!
 
@@ -35,6 +35,7 @@ Once violation forwarding is enabled, you can build a custom anomaly detection s
 
 1. [Forward violations to a Slack channel](/docs/protocols/anomaly_detection/#forward-violations-to-a-slack-channel)
 2. [Create violation and event count Anomaly Detection dashboards in a BI tool](/docs/protocols/anomaly_detection/#create-customized-anomaly-detection-dashboards-in-a-bi-tool)
+3. [Utilize a tool like Lazy Lantern to automate anomaly detection](/docs/connections/destinations/catalog/lazy-lantern/)
 
 ### Forward violations to a Slack Channel
 To get started, [enable the Slack destination](/docs/connections/destinations/catalog/slack/#getting-started) for your Protocols Audit Source. After you enable the destination, update your Incoming Webhook URL for the Slack channel you want to push notifications to. Next, add the `Violation Generated` event to the [Event Templates settings](/docs/connections/destinations/catalog/slack/#event-templates).
@@ -143,3 +144,9 @@ This query produces a table listing the top 10 events with the most violations. 
     order by  total_violations desc
        limit  10
 ```
+
+### Utilize a tool like Lazy Lantern to automate anomaly detection
+
+Lazy Lantern provides autonomous anomaly detection for all your product metrics. It only takes a minute to enable with Segment, no coding involved.
+
+[Learn more about Lazy Lantern here](/docs/connections/destinations/catalog/lazy-lantern/)
