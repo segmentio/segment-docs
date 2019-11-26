@@ -8442,7 +8442,7 @@ items:
       page **synchronously** but analytics.js is loaded **asynchronously**. To
       prevent errors, please ensure you are interacting with the Forms API
       inside an
-      [analytics.ready](https://segment.com/docs/sources/website/analytics.js/#ready)
+      [analytics.ready](https://segment.com/docs/sources/website/javascript/#ready)
       callback.
     settings: []
   - name: portalId

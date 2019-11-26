@@ -38,7 +38,7 @@ export default () => {
         }
 
         if (currentID) {
-          currentItem = component.querySelector(`a[href='#${currentID}']`)
+          currentItem = component.querySelector(`a[href='${document.location.pathname}#${currentID}']`)
         }
 
         if (window.innerWidth >= 768) {

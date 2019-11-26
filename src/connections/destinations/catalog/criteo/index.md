@@ -14,7 +14,7 @@ Currently this destination supports events originating from Mobile or Web source
 To get started with Criteo Events and Segment, you'll need:
 
 1. An existing account with [Criteo](http://www.criteo.com/).
-2. A data source integrated with either one of our mobile SDK's ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/)) or Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/))
+2. A data source integrated with either one of our mobile SDK's ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/)) or Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/))
 
 Assuming both of these criteria are met, you can add Criteo Events as a destination for your desired source in your Segment account.
 
@@ -344,7 +344,7 @@ Criteo Events' `viewHome` tag tracks top of funnel visits to your site's home pa
 
 There are two ways of letting Segment know which `.page` event should trigger this tag:
 
-1. You can define the [`name`](/docs/connections/sources/catalog/libraries/website/analytics.js/#page) argument in the `.page` method as 'Home':
+1. You can define the [`name`](/docs/connections/sources/catalog/libraries/website/javascript/#page) argument in the `.page` method as 'Home':
 
 ```js
 analytics.page('Home')

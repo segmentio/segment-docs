@@ -263,7 +263,7 @@ Find details on the **`page` payload** in our [Spec](/docs/connections/spec/page
 
 ## Group
 
-The `group` method associates an [identified user](/docs/connections/sources/catalog/libraries/website/analytics.js/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
+The `group` method associates an [identified user](/docs/connections/sources/catalog/libraries/website/javascript/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
 
 This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
@@ -465,7 +465,7 @@ Calling flush will block execution until all messages are processed, so it is no
 
 ## Turbolinks
 
-If you're using Ruby on Rails with the [Turbolinks](https://github.com/rails/turbolinks/) setting enabled, and you're adding [Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js) on your website, you'll need to tweak the default configuration.
+If you're using Ruby on Rails with the [Turbolinks](https://github.com/rails/turbolinks/) setting enabled, and you're adding [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript) on your website, you'll need to tweak the default configuration.
 
 Instead of having the entire snippet in the `<head>` of your site, you need to move the `analytics.page()` call that is included in the snippet by default into the `<body>` so that it will get triggered on every new page load. But you **must** have the first part of the snippet in the `<head>` or the library will fail to load properly.
 

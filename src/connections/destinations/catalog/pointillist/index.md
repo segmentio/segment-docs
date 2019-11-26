@@ -4,14 +4,12 @@ title: Pointillist Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Once the Segment library is integrated with your server code, site or app, toggle Pointillist ON in the Segment dashboard, and add your Pointillist API key.
 
 To set up your Pointillist account and receive your API key, please click on this link and follow the instructions on the screen. For any additional questions, get in touch with a Pointillist customer representative at customer-success@pointillist.com.
 
 
-*Note: Pointillist accepts server-side, client-side as well as mobile app-data, so you can use either or all of our libraries ([browser](/docs/connections/sources/catalog/libraries/website/analytics.js), [mobile](/docs/connections/sources/catalog/libraries/mobile/android) and [server](/docs/connections/sources/catalog/libraries/server/java/)) to send data to Pointillist.*
+*Note: Pointillist accepts server-side, client-side as well as mobile app-data, so you can use either or all of our libraries ([browser](/docs/connections/sources/catalog/libraries/website/javascript), [mobile](/docs/connections/sources/catalog/libraries/mobile/android) and [server](/docs/connections/sources/catalog/libraries/server/java/)) to send data to Pointillist.*
 
 ## Identify
 

@@ -90,7 +90,7 @@ docker-build:
 #	make seed && \
 #	make build && \
 #	docker build . -t segment-docs:latest && \
-#	echo "Running segment docs at http://localhost:4000/docsv2/" && \
+#	echo "Running segment docs at http://localhost:4000/docs/" && \
 #	docker run -p 4000:80 segment-docs:latest
 #
 #.PHONY: build

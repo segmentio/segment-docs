@@ -8,7 +8,7 @@ Analytics.js makes it simple to send your data to any tool without having to lea
 
 ## Getting Started
 
-Head over to our [`analytics.js` QuickStart Guide](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/) which walks you through adding Analytics.js to your site in just a few minutes. Once you've installed the library, read on for the detailed API reference!
+Head over to our [`analytics.js` QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) which walks you through adding Analytics.js to your site in just a few minutes. Once you've installed the library, read on for the detailed API reference!
 
 ## Identify
 
@@ -144,7 +144,7 @@ The [`page`](/docs/connections/spec/page/) method lets you record page views on 
 
 Because some destinations require a `page` call to instantiate their libraries, **you must call `page`** at least once per page load!  You may call it more than once if needed, (eg, on virtual page changes in a single page app).
 
-A `page` call is included by default as the final line in the `analytics.js` [snippet](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet). You may modify this `page` call within the guidelines below.
+A `page` call is included by default as the final line in the `analytics.js` [snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet). You may modify this `page` call within the guidelines below.
 
 `page` method definition:
 
@@ -228,7 +228,7 @@ analytics.page('Pricing', {
 
 ## Group
 
-The `group` method associates an [identified user](/docs/connections/sources/catalog/libraries/website/analytics.js/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
+The `group` method associates an [identified user](/docs/connections/sources/catalog/libraries/website/javascript/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
 
 This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
@@ -437,7 +437,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 The `.load` method in analytics.js (the second line of the snippet) can also be modified to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations)), then we only load the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
-**IMPORTANT:** In order to leverage this feature, please ensure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet)
+**IMPORTANT:** In order to leverage this feature, please ensure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
 
 An example:
 
@@ -564,7 +564,7 @@ Keep in mind that setting the `anonymousId` in `analytics.js` does not overwrite
 A user's `anonymousId` refreshes on any of the following conditions:
 
 * A user clears their cache or cookies
-* [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/analytics.js//#reset-logout) is called during in the user's browser session
+* [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript//#reset-logout) is called during in the user's browser session
 * `analytics.identify()` is called with a userId that differs from the current userId
 
 
