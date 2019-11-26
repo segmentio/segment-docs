@@ -4,8 +4,9 @@ layout: home
 landing: true
 ---
 
-Welcome to the Segment Documentation!
-Get familiar with our products, features, and integrations.
+Learn how to use Segment to collect and responsibly manage your customer data, and integrate it with hundreds of tools, so that you can delight your customers and grow your business.
+
+## Documentation Highlights
 
 {% include components/callout-mobile.html heading="Segment Platform" content="Integrate once. Connect your entire stack." buttonText="Learn more about Segment" buttonHref="segment.com" %}
 
