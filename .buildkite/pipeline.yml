@@ -4,7 +4,7 @@ steps:
       # - make build
       # - mkdir test && touch test/test.txt
       - yarn install
-      - bundle install
+      # - bundle install
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
     plugins:
