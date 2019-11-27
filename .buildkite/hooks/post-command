@@ -23,12 +23,10 @@ s3-sync() {
   aws s3 sync test s3://${S3_BUCKET_NAME}/docs/
 }
 
-
 # Only Sync to S3 on Build step and for prod/staging environments
 # if [[ ${BUILDKITE_LABEL} = ':hammer: Build Dependencies' ]] && [[ ${BRANCH} = 'master' || ${BRANCH} = 'staging' ]]; 
 if [[ ${BUILDKITE_LABEL} = ':hammer: Build Dependencies' ]]; 
 then
-  echo "--- Uploading to s3://${S3_BUCKET_NAME}/docs"
   run-with-role "${role_arn}" s3-sync
 fi
 
