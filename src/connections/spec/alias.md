@@ -33,9 +33,9 @@ Beyond the common fields, the `alias` call takes the following fields:
 
 <table>
   <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Field**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   {% include content/spec-field-previous-id.md %}
   {% include content/spec-field-user-id.md %}

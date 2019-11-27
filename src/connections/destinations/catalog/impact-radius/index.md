@@ -67,9 +67,9 @@ These mappings will occur for data originating from mobile devices.
 
 <table>
     <tr>
-      <th>Segment Property</th>
-      <th>Impact Parameter</th>
-      <th>Required</th>
+      <td>**Segment Property**</td>
+      <td>**Impact Parameter**</td>
+      <td>**Required**</td>
     </tr>
   <tr>
     <td>`context.app.namespace`</td>
@@ -149,9 +149,9 @@ These mappings will occur for events originating from any data source (Web, Mobi
 
 <table>
     <tr>
-      <th>Segment Property</th>
-      <th>Impact Parameter</th>
-      <th>Required</th>
+      <td>**Segment Property**</td>
+      <td>**Impact Parameter**</td>
+      <td>**Required**</td>
     </tr>
   <tr>
     <td>`context.traits.status`</td>
@@ -271,8 +271,8 @@ We integrate with Impact mobile attribution capabilities via our [Deep Link Open
 
 <table>
   <tr>
-    <th>Segment Property</th>
-    <th>Impact Parameter</th>
+    <td>**Segment Property**</td>
+    <td>**Impact Parameter**</td>
   </tr>
   <tr>
     <td>`context.ip`</td>

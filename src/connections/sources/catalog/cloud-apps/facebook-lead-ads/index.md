@@ -41,8 +41,8 @@ Below is a table of events that Facebook Lead Ads sends to Segment. These events
 
 <table>
   <tr>
-    <th>Event Name</th>
-    <th>Description</th>
+    <td>**Event Name**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>Identify</td>

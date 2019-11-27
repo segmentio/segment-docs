@@ -53,9 +53,9 @@ The `identify` call has the following fields:
 
 <table class="api-table">
   <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Field**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
    <td>`user_id`</td>
@@ -112,9 +112,9 @@ The `track` call has the following fields:
 
 <table class="api-table">
   <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Field**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
    <td>`user_id`</td>
@@ -198,9 +198,9 @@ The `page` call has the following fields:
 
 <table class="api-table">
   <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Field**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
    <td>`user_id`</td>

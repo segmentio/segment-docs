@@ -32,9 +32,9 @@ Beyond the common fields, the `track` call has the following fields:
 
 <table>
   <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Field**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   {% include content/spec-field-event.md %}
   {% include content/spec-field-event-properties.md %}
@@ -104,9 +104,9 @@ The following is all the reserved properties we have standardized that apply to 
 
 <table>
   <tr>
-    <th>Property</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Property**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>`revenue`</td>
