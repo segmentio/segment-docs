@@ -23,7 +23,7 @@ To create a role with full API access:
 2. Click Users & Roles on the left side bar.
 3. Click on the Roles tab.
 4. Click New Role. Name your role and check the API Access & Lead Database boxes. Click Create.
-![](../marketo-v2/images/edit-role.png)
+![](/docs/connections/destinations/catalog/marketo-v2/images/edit-role.png)
 
 
 Now that you've created an API role, you have to assign that role to an API only user.
@@ -39,7 +39,7 @@ Next, create a Service and get Client Secret and Client ID from that Service.
 3. Select Custom for the Service from the drop down.
 4. Select the new user you invited.
 5. Click View Details on the new service that you've created and a small window will display with your Client Secret and Client ID. Copy and paste them into your Destination's Settings.
-![](../marketo-v2/images/c3s0qJ-dDSO+.png)
+![](/docs/connections/destinations/catalog/marketo-v2/images/c3s0qJ-dDSO+.png)
 6. Finally, go to your Lead Database and create a folder under Group Lists. Copy the name of this folder into your Destination Settings in Personas.
 
 
