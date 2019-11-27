@@ -20,7 +20,7 @@ _**NOTE:** The TrafficGuard Destination is currently in beta, which means that t
 2. Search for "TrafficGuard" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "API Key" into your Segment Settings UI which you can find in your property in the [TrafficGuard dashboard](https://dash.trafficguard.ai/dashboard).
 
-![](./images/trafficguard.png)
+![](images/trafficguard.png)
 
 4. Calls will now be visible in TrafficGuard dashboards in real-time.
 
