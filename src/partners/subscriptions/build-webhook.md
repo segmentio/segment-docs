@@ -2,21 +2,27 @@
 title: Building a Subscription Webhook
 ---
 
-**Webhook Subscriptions** allow Segment Partners to ingest Segment Event Data using a Webhook. This guide explains how to set up your Webhook with Segment.
+Subscription Webhooks allow Segment Partners to ingest Segment Event Data using a webhook. This guide explains how to set up your webhook with Segment.
 
-To start, you need [access to the Segment Developer Center](https://segment.com/partners/integration).
+## Getting Started
 
-## Creating a Webhook Subscription
+Please review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a Subscription Webhook. 
 
-First, [navigate to the Segment Developer center](https://app.segment.com/developer/apps), and create a new App.
+1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](https://segment.com/docs/connections/spec).
+2. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
+3. Create an App.
+4. Build and test your Component(s).
+5. Publish documentation.
+6. Submit your App for review.
+7. Launch into _Public Beta_!
 
-### Create a new Subscription
+## Build
 
-Next click the **subscription** card, and select  **I want to host my endpoint via Webhook**:
+Begin by selecting the _Subscription_ card in your Developer Center UI after creating an App and selecting _I want to build my own HTTP Endpoint_. Next, you will see a field to input your API endpoint and an interface to test events against this.
 
-![](images/subscription-webhook.png)
+Continue reading below to understand what is expected when accepting and responding to Segment data.
 
-## Accepting Segment Data
+### Accepting Segment Data
 
 To receive data from Segment, you must provide a server with a static endpoint that can accept HTTPS requests.
 
@@ -25,7 +31,7 @@ The endpoint must:
 - *Accept JSON data.* Segment sends data in JSON.
 - *Use HTTPS.* Segment transmits potentially sensitive data on behalf of customers, and HTTPS is the first step in making sure their data stays safe.
 
-## Authorization
+#### Authorization
 
 Segment sends your user's API key with requests, and you can use it to authenticate requests. **Note**: This is the API key _you_ give to your users; it is not a Segment API key.
 
@@ -39,15 +45,15 @@ This would result in a final string of `'Basic c2VnbWVudDo='`. This is what is c
 
 See the [headers](#headers) section for more details.
 
-## Custom Settings
+#### Custom Settings
 All subscriptions have an API key setting by default, which Segment will send in the Authorization Header. To add more custom settings, go to the `Settings Builder` page under `App Info`.
 
-![](images/developer_center_settings_builder.png)
+![](/docs/partners/images/developer_center_settings_builder.png)
 
 Any custom settings you add will be sent in the custom header `X-Segment-Settings` (See the [headers](#headers) section for more details.)
 
 
-## Headers
+#### Headers
 
 Segment sends you the following HTTP headers with all requests:
 
@@ -62,9 +68,11 @@ Header|Description|Example
 `User-Agent`     | Segment sends you this field every time. You can count on us!| `User-Agent: Segment`
 `X-Segment-Settings` | Except for the API key (which is sent in the Authorization header), Segment will send the base 64 encoding of the rest of your custom settings encoded in this header. | `X-Segment-Settings: eyJjdXN0b21TZXR0aW5nT25lIjoiY3VzdG9tIHNldHRpbmcgdmFsdWUifQ==`
 
-## Request Body
+### Responding to Segment Data
 
-Segment's [spec](https://segment.com/docs/connections/spec) standardizes the data that you can expect from Segment. You can choose to implement four types types of calls:
+#### Request Body
+
+Segment's [Spec](https://segment.com/docs/connections/spec) standardizes the data that you can expect from Segment. You can choose to implement four types types of calls:
 
 - Who is this? `.identify(userId, traits)`
 - What are they doing? `.track(userId, event, properties)`
@@ -97,21 +105,8 @@ For example, you might implement the `.identify(userId, traits)` call to create 
 
 *Important*: The casing on these fields will vary by customer, so be ready to accept any casing.
 
-## The Segment Spec
 
-To learn about the semantics of the five supported API calls, and the semantic event names and properties we recognize, read the Segment [spec](https://segment.com/docs/connections/spec).
-
-The spec is a critical component in preserving logical continuity between disparate writers and readers of data. If you encourage customers to break the spec, you are breaking the promise of Segment, and is grounds for removal from the catalog.
-
-*Important*: If any functional elements of your tool map to the spec, but do not adhere to it (for example, asking customers to send "Purchase" instead of "Order Completed" or "install" instead of "Application Installed"), we will reject your application.
-
-If something unique to your tool requires specific data that is not included in the spec, [get in touch](https://segment.com/help/contact/). We love partner suggestions for extensions to the spec!
-
-## Responding to Segment
-
-This section defines how to respond to Segment requests.
-
-## Status Code
+#### Status Code
 
 Segment uses standard HTTP status code conventions to help diagnose problems quickly and give better insight into how the destination is working.
 
@@ -128,7 +123,7 @@ Code  | Reason
 `501` | If Segment sends you an [API call type](https://segment.com/docs/connections/spec/#api-calls) (indicated by the `type` property included on all messages) you don't support, reply with this code. Read more about the API call types Segment supports [here](https://segment.com/docs/connections/spec/#api-calls).
 `503` | Send Segment this code when your endpoint is temporarily down for maintenance or otherwise not accepting messages. This helps Segment avoid dropping users' messages during your downtime.
 
-## Response Body
+#### Response Body
 
 You can normally send back an empty body, but when sending back a `4xx`- or `5xx`-class error, you can optionally send Segment a diagnostic message that explains the error. This message is displayed to the user in the Segment debugger, and is be used in our Event Delivery summaries.
 
@@ -150,43 +145,41 @@ Or, if your tool requires an email address in order to accept calls, use this ex
 }
 ```
 
-## Testing your Webhook
+## Test
 
-Test your webhook directly from the Developer Center UI. Use the `Send Test Event` button and review the test event to make sure your function works as expected. You will be able to enter a test `apiKey` value as well as any custom settings you added for your subscription.
+When testing your integration, we suggest going through two separate flows - testing that your endpoint successfully ingests data in the way you would expect, and also mimicking a user implementing your integration within their Segment workspace.
 
-![](images/developer_center_webhook_test.png)
+### Your Endpoint
 
-In the debugger panel, check the two outputs:
+Test your code directly from the Developer Center UI. Use the `Send Test Event` button and review the test event to make sure your function works as expected.
 
-* **Request from Segment** - What request Segment sent to your webhook
-* **Response from Endpoint** - What response your endpoint returned
+![](/docs/partners/images/developer_center_customcode_test.png)
+
+In the debugger panel, check the two outputs. The **Callback Return** and the **Log Output**.
+
+* **Callback Return** - What data your function returned or error it threw.
+* **Log Output** - The raw log. Any messages to `console.log()` from your function appear here.
 
 When your code is working with one event you can test it with a suite of more Segment events. Click `Save and Next: Test`, fill in an `API Key` and click `Test`. You will see the results of additional types of Segment data.
 
-![](images/developer_center_test_suite.png)
+![](/docs/partners/images/developer_center_test_suite.png)
 
-## Handling deletions
+### The User Flow
 
-In addition to the five primary spec methods, Segment forwards partners a sixth message type for customer-requested deletions. Destination Partners with access to the Developer Center are *required* to implement and document support for this federated user deletion.
+The ultimate goal is for Partners like yourself to create and publish high quality Destinations in [the Segment Catalog](https://segment.com/catalog/). Your Segment account doubles as a sandbox account to test your destination while you are still in a private "building" state.
 
-Here's what a payload for deletion request looks like.
+To test your Destination in the Catalog, click the "Test" tab in the Developer Center Component builder. In the "Test in your workspace" section, select your personal workspace and click "view". This redirects to you a URL like https://app.segment.com/WORKSPACE-SLUG/destinations/catalog/APP-SLUG, which is your catalog entry.
 
-```json
-{
-	"type": "delete",
-	"channel": "server",
-	"messageId": "delete-022bb90c-bbac-11e4-8dfc-aa07a5b093db",
-	"projectId": "abcd123",
-	"userId": "5678",
-	"context": [],
-	"integrations": [],
-	"receivedAt": "2019-02-19T23:58:54.387Z",
-	"sentAt": "2019-02-19T21:58:54.387Z",
-	"originalTimestamp": "2019-02-19T23:58:54.387Z",
-	"timestamp": "2019-02-19T23:58:54.387Z"
-}
-```
+From here, click "Configure App", select a Source, and click "Confirm Source". You can now configure your destination by setting the "API Key", then clicking the toggle to enable the destination.
 
-## Submitting your App For Review
+Next you can click the "Event Tester" tab to send data to your destination. Here you can see what requests Segment sends to your destination and introspect the response you are returning. Learn more about the event tester [here](https://segment.com/docs/guides/best-practices/how-do-I-test-my-connections/).
 
-Please make sure you complete the other [launch requirements](/docs/partners/subscription/#5-launch-requirements) and submit your Subscription for review. If you have any questions in the interim, feel free to reach out to partner-support@segment.com!
+Now you can use the JavaScript SDK in a browser to generate real analytics events.
+
+Finally you should verify the data in your service.
+
+![](/docs/partners/images/test-destination.gif)
+
+## Next Steps
+
+Complete the remaining steps as outlined in the [Developer Center Overview](/docs/partners/#5-document)

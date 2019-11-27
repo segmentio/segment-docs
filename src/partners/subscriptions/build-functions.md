@@ -8,7 +8,7 @@ Subscription Functions allow you to write custom JavaScript code that sends Segm
 
 Please review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a Subscription Function. 
 
-1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model).
+1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](https://segment.com/docs/connections/spec).
 2. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
 3. Create an App.
 4. Build and test your Component(s).
@@ -21,7 +21,7 @@ Please review the steps outlined in the [Developer Center Overview](/docs/partne
 
 Begin by selecting the _Subscription_ card in your Developer Center UI after creating an App and selecting _I want Segment to run functions I write_. Next, you will see the code editor where you can take full control of your Subscriptions's logic. Segment provides boilerplate functions that make it simple to send data to your API Endpoint. You can delete the example code and implement your own functions.
 
-![](images/developer_center_customcode_page.png)
+![](/docs/partners/images/developer_center_customcode_page.png)
 
 For every event you send to Segment, Segment invokes a function you provide for the event type. So you must define functions named after every type in the [Segment Spec](https://segment.com/docs/connections/spec/) that you support:
 
@@ -171,9 +171,13 @@ The `btoa()` method creates a base-64 encoded ASCII string from a binary string.
 
 ## Test
 
+When testing your integration, we suggest going through two separate flows - testing that your endpoint successfully ingests data in the way you would expect, and also mimicking a user implementing your integration within their Segment workspace.
+
+### Your Endpoint
+
 Test your code directly from the Developer Center UI. Use the `Send Test Event` button and review the test event to make sure your function works as expected.
 
-![](images/developer_center_customcode_test.png)
+![](/docs/partners/images/developer_center_customcode_test.png)
 
 In the debugger panel, check the two outputs. The **Callback Return** and the **Log Output**.
 
@@ -182,7 +186,47 @@ In the debugger panel, check the two outputs. The **Callback Return** and the **
 
 When your code is working with one event you can test it with a suite of more Segment events. Click `Save and Next: Test`, fill in an `API Key` and click `Test`. You will see the results of additional types of Segment data.
 
-![](images/developer_center_test_suite.png)
+![](/docs/partners/images/developer_center_test_suite.png)
+
+### The User Flow
+
+The ultimate goal is for Partners like yourself to create and publish high quality Destinations in [the Segment Catalog](https://segment.com/catalog/). Your Segment account doubles as a sandbox account to test your destination while you are still in a private "building" state.
+
+To test your Destination in the Catalog, click the "Test" tab in the Developer Center Component builder. In the "Test in your workspace" section, select your personal workspace and click "view". This redirects to you a URL like https://app.segment.com/WORKSPACE-SLUG/destinations/catalog/APP-SLUG, which is your catalog entry.
+
+From here, click "Configure App", select a Source, and click "Confirm Source". You can now configure your destination by setting the "API Key", then clicking the toggle to enable the destination.
+
+Next you can click the "Event Tester" tab to send data to your destination. Here you can see what requests Segment sends to your destination and introspect the response you are returning. Learn more about the event tester [here](https://segment.com/docs/guides/best-practices/how-do-I-test-my-connections/).
+
+Now you can use the JavaScript SDK in a browser to generate real analytics events.
+
+Finally you should verify the data in your service.
+
+![](/docs/partners/images/test-destination.gif)
+
+
+## Handling deletions
+
+In addition to the five primary spec methods, Segment forwards partners a sixth message type for customer-requested deletions. Destination Partners with access to the Developer Center are *required* to implement and document support for this federated user deletion.
+
+Here's what a payload for deletion request looks like.
+
+```json
+{
+  "type": "delete",
+  "channel": "server",
+  "messageId": "delete-022bb90c-bbac-11e4-8dfc-aa07a5b093db",
+  "projectId": "abcd123",
+  "userId": "5678",
+  "context": [],
+  "integrations": [],
+  "receivedAt": "2019-02-19T23:58:54.387Z",
+  "sentAt": "2019-02-19T21:58:54.387Z",
+  "originalTimestamp": "2019-02-19T23:58:54.387Z",
+  "timestamp": "2019-02-19T23:58:54.387Z"
+}
+```
+
 
 ## Next Steps
 
