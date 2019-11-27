@@ -2,9 +2,8 @@ steps:
   - label: ":hammer: Build Dependencies"
     command:
       # - make build
-      - yarn install
       - mkdir test && touch test/test.txt
-      - run-with-role "arn:aws:iam::355207333203:role/buildkite-agent" aws s3 sync test/ s3://segment-docs-stage/
+      - yarn install
       # - bundle install
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
