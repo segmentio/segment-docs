@@ -6,11 +6,11 @@ sections:
     title: Overview
   - path: /partners/conceptual-model
     title: Conceptual Model
-  - section_title: Building a Subscription section
+  - section_title: Building a Subscription
     slug: partners/subscriptions
     section:
     - path: /partners/subscriptions
-      title: Subscription Overview page
+      title: Subscription Overview
     - path: /partners/subscriptions/build-functions
       title: Building a Subscription Function
     - path: /partners/subscriptions/build-webhook
