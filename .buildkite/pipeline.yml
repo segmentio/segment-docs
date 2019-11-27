@@ -5,7 +5,7 @@ steps:
       - yarn install
       # - bundle install
     env:
-      SEGMENT_CONTEXTS: "snyk"
+      SEGMENT_CONTEXTS: "snyk, aws-credentials"
     plugins:
       - docker#v3.3.0:
           image: jekyll/jekyll
