@@ -22,7 +22,7 @@ Customers discover your Sources and Destinations via the Connections Catalog and
 
 The development process is simple:
 
-1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model).
+1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](https://segment.com/docs/connections/spec).
 2. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
 3. Create an App.
 4. Build and test your Component(s).
@@ -58,7 +58,9 @@ Now you can start building! Depending on your use case you can build a:
 > info ""
 > The Developer Center currently only supports the [Subscription](/docs/partners/subscriptions) component in _Developer Preview_. If you're looking to build a [Web Plugin](https://airtable.com/shrT3b4C7agUEBKVS) or [Stream](https://airtable.com/shrj3BkHMhdeaPYWt) please fill out the respective form and we will reach out once this is made available!
 
-It's important that we provide a great experience for our mutual customers so we ask that you conduct thorough testing of your integration using the tooling provided to you through the Developer Center. We also encourage you to use your Segment sandbox in the shoes of a user to polish the experience of implementing and using your integration.
+No matter which Component you decide to build, make it aligns with the [Segment Spec](https://segment.com/docs/connections/spec). This is a critical component in preserving logical continuity between disparate writers and readers of data. If you encourage customers to break the spec, you are breaking the promise of Segment, and is grounds for removal from the catalog.
+
+It's important that we provide a great experience for our mutual customers so we ask that you also conduct thorough testing of your integration using the tooling provided to you through the Developer Center. We also encourage you to use your Segment sandbox in the shoes of a user to polish the experience of implementing and using your integration.
 
 ### 5. Document
 
