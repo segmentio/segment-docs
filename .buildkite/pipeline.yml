@@ -3,8 +3,8 @@ steps:
     command:
       # - make build
       - mkdir test && touch test/test.txt
-      - yarn install
-      - bundle install
+      # - yarn install
+      # - bundle install
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
     plugins:
@@ -18,3 +18,7 @@ steps:
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
           paths: [ "vendor/" ]
+
+  - label: ":hammer: Build Dependencies"
+    command:
+      - ls -a
