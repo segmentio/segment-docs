@@ -29,6 +29,5 @@ then
   aws s3 sync _site/ s3://${S3_BUCKET_NAME}/docs/
 fi
 
-export S3_BUCKET_NAME
 echo "--- Build Complete"
 # vim: ft=sh
