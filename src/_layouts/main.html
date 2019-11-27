@@ -3,23 +3,25 @@ layout: default
 ---
 
 <div class="docs">
-  <div class="docs__inner stage">
-    <div class="docs__aside stage__aside">
-      {% include_cached navbar/logo.html %}
+  <div class="docs__inner">
+    <div class="stage">
+      <div class="docs__aside stage__aside">
+        {% include_cached navbar/logo.html %}
 
-      {% assign currentPage = page.url | downcase | split: "/" %}
-      {% if currentPage[1] == 'glossary' %}
-        {% include menu/menu-glossary.html %}
-      {% elsif currentPage[1] == 'partners' %}
-        {% include menu/menu-partners.html %}
-      {% elsif currentPage[1] == 'legal' %}
-        {% include menu/menu-legal.html %}
-      {% else %}
-        {% include menu/menu.html %}
-      {% endif %}
+        {% assign currentPage = page.url | downcase | split: "/" %}
+        {% if currentPage[1] == 'glossary' %}
+          {% include menu/menu-glossary.html %}
+        {% elsif currentPage[1] == 'partners' %}
+          {% include menu/menu-partners.html %}
+        {% elsif currentPage[1] == 'legal' %}
+          {% include menu/menu-legal.html %}
+        {% else %}
+          {% include menu/menu.html %}
+        {% endif %}
+      </div>
+
+      {{ content }}
     </div>
-
-    {{ content }}
   </div>
 
   <footer class="docs__footer">
