@@ -14,6 +14,5 @@ steps:
           key: "v1-npm-cache-{{ checksum 'yarn.lock' }}"
           paths: [ "node_modules/" ]
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
-          key: "v1-gem-cache-{{ checksum 'gem.lock' }}"
+          key: "v1-gem-cache-{{ checksum 'Gemfile.lock' }}"
           paths: [ "vendor/" ]
-  
