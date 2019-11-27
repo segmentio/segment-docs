@@ -6,7 +6,7 @@ When tracking your data, it's important to set yourself up for success. E-commer
 
 That's where a tracking plan comes in. A tracking plan is a living document that can be used across your organization to record what events and properties to track, where you'll be tracking them in your code base, and why you're tracking them.
 
-[Learn more about the value and function of a tracking plan.](whats-a-tracking-plan/)
+[Learn more about the value and function of a tracking plan.](/docs/protocols/whats-a-tracking-plan/)
 
 In this guide, we'll share with you the core events most relevant to e-commerce companies that can get you started immediately in understanding your customers and driving sales.
 
@@ -75,7 +75,7 @@ Given the power you have in your downstream tools to create cohorts based on the
 
 Now that you are tracking who your users are, you can work on what they're doing on your website or in your app with a `.track()` call. Tracking customer events lets you learn about your customers, measure the impact of your marketing efforts and product decisions, and proactively engage your customers in a meaningful way that drives sales.
 
-[Read our event tracking guide to learn more about tracking the right events.](../what-to-track/)
+[Read our event tracking guide to learn more about tracking the right events.](/docs/protocols/what-to-track/)
 
 E-commerce businesses, unlike SaaS or consumer apps that optimize for product engagement, focus on directing users down their funnels to a conversion goal, like purchasing a product. To best understand why customers convert, it's important to track and measure all key funnel events.
 
