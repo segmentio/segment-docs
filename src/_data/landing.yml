@@ -1,6 +1,6 @@
 - name: Getting Started
   icon: icon-guides.svg
-  description: "An overview of Segment, including the problems it solves, how it works, and its various key features."
+  description: "An overview of Segment, including the problems it solves, how it works, and its important features."
   path: /guides/
 
 - name: How-To Guides
@@ -10,12 +10,12 @@
 
 - name: App
   icon: icon-app.svg
-  description: "The 'App' is the web-based administrative interface for configuring Segment."
+  description: "Learn about the Sement Web App, where you configure your Segment workspace."
   path: /segment-app/
 
 - name: Connections
   icon: icon-connections.svg
-  description: "Get into the details of how Segment's integrations between sources and destinations work."
+  description: "Get the details on how Segment sends data between sources and destinations."
   path: /connections/
 
 - name: Protocols
@@ -25,7 +25,7 @@
 
 - name: Personas
   icon: icon-personas.svg
-  description: "Improve your customer interactions by building audiences to power your personalized experiences."
+  description: "Improve customer interactions by building audiences to power personalized experiences."
   path: /personas/
 
 - name: Privacy
