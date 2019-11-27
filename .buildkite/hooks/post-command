@@ -28,7 +28,7 @@ then
   echo "--- Uploading to s3://${S3_BUCKET_NAME}/docs"
   # - mkdir test && touch test/test.txt
       # - run-with-role "arn:aws:iam::355207333203:role/buildkite-agent" aws s3 sync test/ s3://segment-docs-stage/
-  run-with-role ${role_arn} aws s3 sync _site/ s3://${S3_BUCKET_NAME}/docs/
+  run-with-role "${role_arn}" aws s3 sync _site/ s3://${S3_BUCKET_NAME}/docs/
 fi
 
 echo "--- Build Complete"
