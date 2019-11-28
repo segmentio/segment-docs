@@ -17,15 +17,18 @@ dev: node_modules vendor/bundle
 intialize-work-dir:
 	@mkdir -p _site
 	@chmod -R 777 _site/
-	@bundle install
+	@mkdir vendor
+	@chmod -R 777 vendor/
+	@bundle install --path=vendor
 
 .PHONY: build
 build: node_modules vendor/bundle
 	@echo "Jekyll env: ${JEKYLL_ENV}"
-	@chown -R jekyll /workdir
+	@chmod -R 755 .
+	# @chown -R jekyll /workdir
 	@echo "env: ${JEKYLL_ENV}"
 	@$(BIN)/webpack --mode=production
-	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
+	# @JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
 
 .PHONY: package
 package: build
@@ -72,13 +75,17 @@ node_modules: package.json yarn.lock
 	yarn --frozen-lockfile
 
 .PHONY: vendor/bundle
-vendor/bundle: Gemfile Gemfile.lock
-	bundle install
+vendor/bundle: 
+	@unset BUNDLE_PATH
+	@unset BUNDLE_BIN
+	# @mkdir -p vendor && mkdir -p vendor/bundle
+	# @chmod -R 777 vendor/
+	bundle install --path=vendor/bundle
 
 .PHONY: upload-assets
 upload-assets:
 	scripts/upload-assets
-	
+
 .PHONY: docker-dev
 docker-dev:
 	$(DOCKER_TTY) make dev
@@ -86,7 +93,7 @@ docker-dev:
 .PHONY: docker-build
 docker-build:
 	@$(DOCKER_TTY) make build
-	bundle install
+	bundle install --path=vevendor
 
 #.PHONY: docs
 #docs: node_modules

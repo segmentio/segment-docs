@@ -1,12 +1,10 @@
 steps:
   - label: ":hammer: Build Dependencies"
     command:
-      # - make build
-      - mkdir test && touch test/test.txt
-      # - ls
-      # - ls vendor
-      - yarn install
-      - bundle install
+      - make build
+      # - mkdir vendor && chmod a+w vendor
+      # - yarn install
+      # - make vendor/bundle
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
     plugins:
@@ -15,16 +13,20 @@ steps:
           environment:
             - BUILDKITE_BRANCH
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
+          key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
+          paths: [ "vendor/" ]
+      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
           paths: [ "node_modules/" ]
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
-          key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
-          paths: [ "vendor/" ]
-
+          key: "v1-cache-test-{{ checksum 'yarn.lock' }}"
+          paths: [ "cache_test/" ]
+     
   - wait
 
   - label: ":hammer: Deploy to S3"
     command:
+      - ls vendor
       - make upload-assets 
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
