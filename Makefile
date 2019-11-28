@@ -73,7 +73,7 @@ node_modules: package.json yarn.lock
 
 .PHONY: vendor/bundle
 vendor/bundle: Gemfile Gemfile.lock
-	bundle install --path=vendor
+	bundle install --path=vendor/bundle
 
 .PHONY: upload-assets
 upload-assets:
@@ -86,7 +86,7 @@ docker-dev:
 .PHONY: docker-build
 docker-build:
 	@$(DOCKER_TTY) make build
-	bundle install --path=vendor
+	bundle install --path=vevendor/bundlendor
 
 #.PHONY: docs
 #docs: node_modules
