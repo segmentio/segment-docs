@@ -5,9 +5,10 @@
   max-width: 1230px;
   margin: 0 auto;
 
-  @include breakpoint(large up)  {
+  @include breakpoint(large up) {
     padding-left: 20px;
     padding-right: 20px;
+    min-height: calc(100vh - 475px); /* height of footer */
   }
 
   &__aside {
@@ -16,7 +17,7 @@
     max-width: 230px;
     padding-right: 25px;
 
-    @include breakpoint(large up)  {
+    @include breakpoint(large up) {
       display: block;
     }
   }
@@ -25,7 +26,7 @@
     flex: 1;
     max-width: 100%;
 
-    @include breakpoint(large up)  {
+    @include breakpoint(large up) {
       padding-left: 72px;
       padding-right: 62px;
     }
@@ -36,7 +37,7 @@
     flex: 0 0 144px;
     max-width: 144px;
 
-    @include breakpoint(large up)  {
+    @include breakpoint(large up) {
       display: block;
     }
   }
@@ -46,7 +47,7 @@
     padding-right: 20px;
     position: relative;
 
-    @include breakpoint(large up)  {
+    @include breakpoint(large up) {
       padding-left: 0;
       padding-right: 0;
     }

@@ -5,49 +5,47 @@ permalink: /404.html
 ---
 
 <div class="docs">
-  <div class="docs__inner">
-    <div class="stage">
-      <div class="docs__aside stage__aside">
-        {% include_cached navbar/logo.html %}
-        {% include_cached menu/menu.html %}
+  <div class="stage">
+    <div class="docs__aside stage__aside">
+      {% include_cached navbar/logo.html %}
+      {% include_cached menu/menu.html %}
+    </div>
+
+    <main class="docs__body stage__body">
+      <div>
+        {% include_cached navbar/navbar-mobile.html %}
       </div>
 
-      <main class="docs__body stage__body">
-        <div>
-          {% include_cached navbar/navbar-mobile.html %}
-        </div>
+      <div class="stage__content">
+        <div class="page-404">
+          <div class="flex">
+            <div class="flex__column--12 flex__column--9@xlarge">
+              <h1 class="page-404__heading">The page you were looking for doesn't exist.</h1>
+              <div class="flex">
+                <div class="flex__column--12 flex__column--10@xlarge markdown">
+                  <p>You may have mistyped the address or the page may have moved. Double-check the URL and try again or search the term.</p>
 
-        <div class="stage__content">
-          <div class="page-404">
-            <div class="flex">
-              <div class="flex__column--12 flex__column--9@xlarge">
-                <h1 class="page-404__heading">The page you were looking for doesn't exist.</h1>
-                <div class="flex">
-                  <div class="flex__column--12 flex__column--10@xlarge markdown">
-                    <p>You may have mistyped the address or the page may have moved. Double-check the URL and try again or search the term.</p>
-
-                    <div class="search search--mobile" data-search>
-                      {% include_cached navbar/search.html placeholder="Enter a search term" mobile="true" %}
-                    </div>
+                  <div class="search search--mobile" data-search>
+                    {% include_cached navbar/search.html placeholder="Enter a search term" mobile="true" %}
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="page-404__numeric-heading__wrapper markdown flex__column--3 flex--middle">
-                <span class="page-404__numeric-heading">404</span>
-              </div>
+            <div class="page-404__numeric-heading__wrapper markdown flex__column--3 flex--middle">
+              <span class="page-404__numeric-heading">404</span>
             </div>
           </div>
         </div>
-      </main>
-
-      <div class="docs__sidebar stage__sidebar">
-        {% include_cached navbar/nav.html %}
       </div>
+    </main>
+
+    <div class="docs__sidebar stage__sidebar">
+      {% include_cached navbar/nav.html %}
     </div>
   </div>
 
-  <footer class="docs__footer">
+  <footer>
     {% include_cached components/footer.html %}
   </footer>
 </div>
