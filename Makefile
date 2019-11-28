@@ -27,7 +27,7 @@ build: node_modules vendor/bundle
 	@chown -R jekyll /workdir
 	@echo "env: ${JEKYLL_ENV}"
 	@$(BIN)/webpack --mode=production
-	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
+	# @JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
 
 .PHONY: package
 package: build
