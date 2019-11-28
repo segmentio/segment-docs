@@ -17,6 +17,8 @@ dev: node_modules vendor/bundle
 intialize-work-dir:
 	@mkdir -p _site
 	@chmod -R 777 _site/
+	@mkdir vendor
+	@chmod -R 777 vendor/
 	@bundle install --path=vendor
 
 .PHONY: build
@@ -24,7 +26,6 @@ build: node_modules vendor/bundle
 	@echo "Jekyll env: ${JEKYLL_ENV}"
 	@chown -R jekyll /workdir
 	@echo "env: ${JEKYLL_ENV}"
-	@mkdir vendor && mkdir vendor/bundle && chmod a+w vendor/bundle
 	@$(BIN)/webpack --mode=production
 	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
 
