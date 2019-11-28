@@ -24,11 +24,11 @@ intialize-work-dir:
 .PHONY: build
 build: node_modules vendor/bundle
 	@echo "Jekyll env: ${JEKYLL_ENV}"
-	@chmod -R 755 .
-	# @chown -R jekyll /workdir
+	@chown -R jekyll /workdir
+	@chmod -R 777 /workdir
 	@echo "env: ${JEKYLL_ENV}"
 	@$(BIN)/webpack --mode=production
-	# @JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
+	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
 
 .PHONY: package
 package: build
@@ -78,9 +78,10 @@ node_modules: package.json yarn.lock
 vendor/bundle: 
 	@unset BUNDLE_PATH
 	@unset BUNDLE_BIN
+	@export BUNDLE_PATH="vendor/bundle"
 	@mkdir -p vendor && mkdir -p vendor/bundle
 	@chmod -R 777 vendor/
-	bundle install --path=vendor/bundle
+	@bundle install --path=vendor/bundle
 
 .PHONY: upload-assets
 upload-assets:
