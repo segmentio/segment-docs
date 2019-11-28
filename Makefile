@@ -17,7 +17,7 @@ dev: node_modules vendor/bundle
 intialize-work-dir:
 	@mkdir -p _site
 	@chmod -R 777 _site/
-	@bundle install
+	@bundle install --path=vendor
 
 .PHONY: build
 build: node_modules vendor/bundle
@@ -73,12 +73,12 @@ node_modules: package.json yarn.lock
 
 .PHONY: vendor/bundle
 vendor/bundle: Gemfile Gemfile.lock
-	bundle install
+	bundle install --path=vendor
 
 .PHONY: upload-assets
 upload-assets:
 	scripts/upload-assets
-	
+
 .PHONY: docker-dev
 docker-dev:
 	$(DOCKER_TTY) make dev
@@ -86,7 +86,7 @@ docker-dev:
 .PHONY: docker-build
 docker-build:
 	@$(DOCKER_TTY) make build
-	bundle install
+	bundle install --path=vendor
 
 #.PHONY: docs
 #docs: node_modules
