@@ -25,7 +25,7 @@ steps:
 
   - label: ":hammer: Deploy to S3"
     command:
-      - ls 
+      - make upload-assets 
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
     plugins:
