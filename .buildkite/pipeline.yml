@@ -3,11 +3,9 @@ steps:
     command:
       # - make build
       - mkdir test && touch test/test.txt
-      # - ls
-      # - ls vendor
       - yarn install
       - bundle install
-      - ls ./vendor
+      - ls vendor
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
     plugins:
@@ -21,11 +19,10 @@ steps:
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
           paths: [ "node_modules/" ]
-       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
+      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-test-{{ checksum 'yarn.lock' }}"
           paths: [ "analytics/" ]
      
-
   - wait
 
   - label: ":hammer: Deploy to S3"
