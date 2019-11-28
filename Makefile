@@ -24,11 +24,11 @@ intialize-work-dir:
 .PHONY: build
 build: node_modules vendor/bundle
 	@echo "Jekyll env: ${JEKYLL_ENV}"
-	# @chown -R jekyll /workdir
+	@chown -R jekyll /workdir
 	@chmod -R 755 /workdir
 	@echo "env: ${JEKYLL_ENV}"
 	@$(BIN)/webpack --mode=production
-	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
+	# @JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
 
 .PHONY: package
 package: build
