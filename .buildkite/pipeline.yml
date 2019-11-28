@@ -2,7 +2,7 @@ steps:
   - label: ":hammer: Build Dependencies"
     command:
       # - make build
-      - mkdir vendor && mkdir vendor/bundle
+      - mkdir vendor && chmod a+w vendor
       - yarn install
       - make vendor/bundle
     env:
