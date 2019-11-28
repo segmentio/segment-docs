@@ -78,9 +78,11 @@ node_modules: package.json yarn.lock
 vendor/bundle: 
 	@unset BUNDLE_PATH
 	@unset BUNDLE_BIN
+	@export BUNDLE_PATH="vendor/bundle"
 	@mkdir -p vendor && mkdir -p vendor/bundle
 	@chmod -R 777 vendor/
-	bundle install --path=vendor/bundle
+	@ls -a
+	@bundle install --path=vendor/bundle
 
 .PHONY: upload-assets
 upload-assets:
