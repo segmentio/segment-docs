@@ -16,11 +16,3 @@ steps:
           key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
           paths: [ "node_modules/" ]
      
-  - wait
-
-  - label: ":shipit: Deploy to S3"
-    command:
-      - make upload-assets 
-    env:
-      SEGMENT_CONTEXTS: "snyk, aws-credentials"
-    branches: master staging

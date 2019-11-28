@@ -25,7 +25,7 @@ s3-sync() {
 }
 
 # Only Sync to S3 on Build step and for prod/staging environments
-if [[ ${BRANCH} = 'master' || ${BRANCH} = 'staging' ]]; 
+if [[ ${BUILDKITE_LABEL} = ':hammer: Build Dependencies' ]] && [[ ${BRANCH} = 'master' || ${BRANCH} = 'staging' ]]; 
 then
   run-with-role "${role_arn}" s3-sync
 fi

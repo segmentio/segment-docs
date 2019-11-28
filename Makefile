@@ -83,10 +83,6 @@ vendor/bundle:
 	@chmod -R 777 vendor/
 	@bundle install --path=vendor/bundle
 
-.PHONY: upload-assets
-upload-assets:
-	scripts/upload-assets
-
 .PHONY: docker-dev
 docker-dev:
 	$(DOCKER_TTY) make dev
