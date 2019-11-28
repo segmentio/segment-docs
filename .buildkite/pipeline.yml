@@ -9,7 +9,7 @@ steps:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
     plugins:
       - docker#v3.3.0:
-          image: ruby-node:2-6-slim
+          image: starefossen/ruby-node:2-6-slim
           environment:
             - BUILDKITE_BRANCH
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
