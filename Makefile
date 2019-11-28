@@ -75,8 +75,8 @@ node_modules: package.json yarn.lock
 
 .PHONY: vendor/bundle
 vendor/bundle: Gemfile Gemfile.lock
-	@mkdir vendor && mkdir vendor/bundle
-	@chmod -R 777 vendor/bundle
+	# @mkdir vendor && mkdir vendor/bundle
+	@chmod -R 777 vendor
 	bundle install --path=vendor/bundle
 
 .PHONY: upload-assets
