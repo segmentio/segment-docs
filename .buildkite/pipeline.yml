@@ -5,7 +5,6 @@ steps:
       - mkdir test && touch test/test.txt
       - yarn install
       - make vendor/bundle
-      - ls vendor
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
     plugins:
@@ -15,7 +14,7 @@ steps:
             - BUILDKITE_BRANCH
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
-          paths: [ "bundle" ]
+          paths: [ "/usr/local/bundle" ]
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
           paths: [ "node_modules/" ]
