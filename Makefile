@@ -75,6 +75,8 @@ node_modules: package.json yarn.lock
 
 .PHONY: vendor/bundle
 vendor/bundle: Gemfile Gemfile.lock
+	@mkdir vendor && mkdir vendor/bundle
+	@chmod -R 777 vendor/bundle
 	bundle install --path=vendor/bundle
 
 .PHONY: upload-assets
@@ -88,7 +90,7 @@ docker-dev:
 .PHONY: docker-build
 docker-build:
 	@$(DOCKER_TTY) make build
-	bundle install --path=vevendor/bundlendor
+	bundle install --path=vevendor
 
 #.PHONY: docs
 #docs: node_modules
