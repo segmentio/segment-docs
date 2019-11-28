@@ -15,7 +15,7 @@ steps:
             - BUILDKITE_BRANCH
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
-          paths: [ "vendor/" ]
+          paths: [ "vendor/bundle/ruby" ]
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
           paths: [ "node_modules/" ]
@@ -27,6 +27,7 @@ steps:
 
   - label: ":hammer: Deploy to S3"
     command:
+      - ls vendor
       - make upload-assets 
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
