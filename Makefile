@@ -25,7 +25,7 @@ intialize-work-dir:
 build: node_modules vendor/bundle
 	@echo "Jekyll env: ${JEKYLL_ENV}"
 	@chmod -R 755 .
-	@chown -R jekyll /workdir
+	# @chown -R jekyll /workdir
 	@echo "env: ${JEKYLL_ENV}"
 	@$(BIN)/webpack --mode=production
 	# @JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
