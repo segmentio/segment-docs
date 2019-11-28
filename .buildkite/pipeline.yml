@@ -7,6 +7,7 @@ steps:
       # - ls vendor
       - yarn install
       - bundle install
+      - ls ./vendor
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
     plugins:
@@ -15,11 +16,15 @@ steps:
           environment:
             - BUILDKITE_BRANCH
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
+          key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
+          paths: [ "vendor/**/*" ]
+      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
           paths: [ "node_modules/" ]
-      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
-          key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
-          paths: [ "vendor/" ]
+       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
+          key: "v1-cache-test-{{ checksum 'yarn.lock' }}"
+          paths: [ "analytics/" ]
+     
 
   - wait
 
@@ -34,4 +39,4 @@ steps:
           paths: [ "node_modules/" ]
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
-          paths: [ "vendor/" ]
+          paths: [ "vendor/**/*" ]
