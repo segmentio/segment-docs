@@ -21,7 +21,7 @@ steps:
           paths: [ "node_modules/" ]
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-test-{{ checksum 'yarn.lock' }}"
-          paths: [ "analytics/" ]
+          paths: [ "cache_test/" ]
      
   - wait
 
