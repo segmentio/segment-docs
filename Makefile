@@ -75,6 +75,10 @@ node_modules: package.json yarn.lock
 vendor/bundle: Gemfile Gemfile.lock
 	bundle install
 
+.PHONY: upload-assets
+upload-assets:
+	scripts/upload-assets
+	
 .PHONY: docker-dev
 docker-dev:
 	$(DOCKER_TTY) make dev
