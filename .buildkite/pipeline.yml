@@ -2,7 +2,7 @@ steps:
   - label: ":hammer: Build Dependencies"
     command:
       # - make build
-      - mkdir test && touch test/test.txt
+      - mkdir vendor && mkdir vendor/bundle
       - yarn install
       - make vendor/bundle
     env:
