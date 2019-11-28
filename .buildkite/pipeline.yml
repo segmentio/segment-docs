@@ -1,10 +1,10 @@
 steps:
   - label: ":hammer: Build Dependencies"
     command:
-      # - make build
-      - mkdir vendor && chmod a+w vendor
-      - yarn install
-      - make vendor/bundle
+      - make build
+      # - mkdir vendor && chmod a+w vendor
+      # - yarn install
+      # - make vendor/bundle
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
     plugins:
