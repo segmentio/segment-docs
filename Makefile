@@ -24,6 +24,7 @@ build: node_modules vendor/bundle
 	@echo "Jekyll env: ${JEKYLL_ENV}"
 	@chown -R jekyll /workdir
 	@echo "env: ${JEKYLL_ENV}"
+	@mkdir vendor && chmod a+w vendor
 	@$(BIN)/webpack --mode=production
 	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
 
