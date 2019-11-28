@@ -75,7 +75,10 @@ node_modules: package.json yarn.lock
 	yarn --frozen-lockfile
 
 .PHONY: vendor/bundle
-vendor/bundle: Gemfile Gemfile.lock
+vendor/bundle: 
+	@unset BUNDLE_PATH
+	@unset BUNDLE_BIN
+	@Gemfile Gemfile.lock
 	@mkdir -p vendor && mkdir -p vendor/bundle
 	@chmod -R 777 vendor/
 	bundle install --path=vendor/bundle
