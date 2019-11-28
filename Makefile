@@ -78,7 +78,6 @@ node_modules: package.json yarn.lock
 vendor/bundle: 
 	@unset BUNDLE_PATH
 	@unset BUNDLE_BIN
-	@Gemfile Gemfile.lock
 	@mkdir -p vendor && mkdir -p vendor/bundle
 	@chmod -R 777 vendor/
 	bundle install --path=vendor/bundle
