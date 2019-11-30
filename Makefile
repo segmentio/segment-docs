@@ -11,7 +11,7 @@ endif
 dev: node_modules vendor/bundle
 	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
 		"$(BIN)/webpack --mode=development --watch" \
-		"bundle exec jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
+		"bundle exec jekyll clean && jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
 
 .PHONY: intialize-work-dir
 intialize-work-dir:
