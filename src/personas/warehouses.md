@@ -37,7 +37,7 @@ Using this table, you can reconstruct the historical state of a user or an audie
 
 ### Can I disable a table, computed trait, or audience from syncing from my warehouse?
 
-Yes! You can use [Warehouses Selective Sync](https://segment.com/docs/guides/warehouses/can-i-control-what-data-is-sent-to-my-warehouse/) to manage which traits, audiences, and tables get synced from Personas.
+Yes! You can use [Warehouses Selective Sync](https://segment.com/docs/connections/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse/) to manage which traits, audiences, and tables get synced from Personas.
 
 ### How frequently will my traits/audiences update in my warehouse?
 

@@ -103,9 +103,9 @@ When a user starts playback of a video, you should use our [Video Content Starte
 
 <table>
     <tr>
-      <th>Parsely Parameter</th>
-      <th>Segment Property</th>
-      <th>Data Type</th>
+      <td>**Parsely Parameter**</td>
+      <td>**Segment Property**</td>
+      <td>**Data Type**</td>
     </tr>
   <tr>
     <td>videoId</td>
@@ -182,9 +182,9 @@ When a playback of a video is interrupted, you should use our [Video Playback In
 
 <table>
     <tr>
-      <th>Parsely Parameter</th>
-      <th>Segment Property</th>
-      <th>Data Type</th>
+      <td>**Parsely Parameter**</td>
+      <td>**Segment Property**</td>
+      <td>**Data Type**</td>
     </tr>
   <tr>
     <td>videoId</td>

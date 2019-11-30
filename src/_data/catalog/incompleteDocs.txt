@@ -100,3 +100,4 @@ src/connections/destinations/catalog/yellowhammer
 src/connections/destinations/catalog/zendesk-connect
 src/connections/destinations/catalog/goedle-io
 src/connections/destinations/catalog/tray-io
+src/connections/sources/catalog/cloud-apps/desk-com
