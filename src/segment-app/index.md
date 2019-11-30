@@ -5,7 +5,7 @@ title: The Segment Web App
 When you first log in, you go to your workspace. (If you're a member of several workspaces, you get to choose which one to go to.) Workspaces organize sets of sources and destinations
 
 
-### Whats a Workspace?
+### What's a Workspace?
 
 {% include content/whats-a-workspace.md %}
 
