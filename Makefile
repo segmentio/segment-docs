@@ -11,21 +11,29 @@ endif
 dev: node_modules vendor/bundle
 	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
 		"$(BIN)/webpack --mode=development --watch" \
-		"bundle exec jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
+		"bundle exec jekyll clean && jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
 
 .PHONY: intialize-work-dir
 intialize-work-dir:
 	@mkdir -p _site
 	@chmod -R 777 _site/
-	@bundle install
+	@mkdir vendor
+	@chmod -R 777 vendor/
+	@bundle install --path=vendor
+
 
 .PHONY: build
 build: node_modules vendor/bundle
 	@echo "Jekyll env: ${JEKYLL_ENV}"
 	@chown -R jekyll /workdir
+	@chmod -R 777 /workdir
 	@echo "env: ${JEKYLL_ENV}"
 	@$(BIN)/webpack --mode=production
 	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
+
+.PHONY: upload-docs
+upload-docs:
+	@scripts/upload-docs
 
 .PHONY: package
 package: build
@@ -42,6 +50,14 @@ catalog: vendor/bundle
 .PHONY: sidenav
 sidenav: vendor/bundle
 	@node scripts/nav.js
+
+.PHONY: zip-artifacts
+zip-artifacts:
+	@tar czf build_package.tar.gz _site
+
+.PHONY: unzip-artifacts
+unzip-artifacts:
+	@tar -xzf build_package.tar.gz _site
 
 .PHONY: typewriter
 typewriter: npx typewriter
@@ -72,8 +88,13 @@ node_modules: package.json yarn.lock
 	yarn --frozen-lockfile
 
 .PHONY: vendor/bundle
-vendor/bundle: Gemfile Gemfile.lock
-	bundle install
+vendor/bundle: 
+	@unset BUNDLE_PATH
+	@unset BUNDLE_BIN
+	@export BUNDLE_PATH="vendor/bundle"
+	@mkdir -p vendor && mkdir -p vendor/bundle
+	@chmod -R 777 vendor/
+	@bundle install --path=vendor/bundle
 
 .PHONY: docker-dev
 docker-dev:
@@ -82,7 +103,7 @@ docker-dev:
 .PHONY: docker-build
 docker-build:
 	@$(DOCKER_TTY) make build
-	bundle install
+	bundle install --path=vevendor
 
 #.PHONY: docs
 #docs: node_modules
