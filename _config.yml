@@ -36,6 +36,7 @@ defaults:
     values:
       integration_type: warehouse
       landing: true
+      layout: integration
 
 plugins_dir: ./_plugins
 plugins:
