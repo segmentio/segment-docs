@@ -10,7 +10,7 @@
 
 - name: App
   icon: icon-app.svg
-  description: "Learn about the Sement Web App, where you configure your Segment workspace."
+  description: "Learn about the Segment Web App, where you configure your Segment workspace."
   path: /segment-app/
 
 - name: Connections
