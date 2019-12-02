@@ -1,7 +1,7 @@
 export default function () {
 
   // highlight active integration on the source/destinatino catalog pages
-  const re = /^\/docs\/connections\/(destinations|sources)\/catalog\/(.*)\/$/
+  const re = /^\/docs\/connections\/(destinations|sources|warehouses)\/catalog\/(.*)\/$/
   const pathname = document.location.pathname
   if (re.test(pathname)) {
     // find all links associated with active catalog page
