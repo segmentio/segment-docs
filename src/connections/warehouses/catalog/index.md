@@ -2,13 +2,13 @@
 title: Warehouses catalog
 hide_toc: true
 menu_icon: "read-more"
+layout: catalog
 ---
 
 <div class="destinations-catalog">
   <div class="destinations-catalog__section">
     <div class="flex flex--wrap waffle waffle--large">
       {% assign warehouses = site.data.catalog.warehouse.items | sort: "display_name" %}
-
       {% for warehouse in warehouses %}
         {% if warehouse.status contains "PUBLIC" or warehouse.status contains "BETA" %}
           <div class="flex__column flex__column--6 flex__column--4@medium">
