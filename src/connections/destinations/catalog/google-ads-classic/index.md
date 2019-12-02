@@ -57,7 +57,7 @@ Keep in mind that the conversion data must be processed by Google before it show
 
 The most common reason for Google Ads (Classic) conversion pixels to fire inconsistently is that the page redirects or reloads before the pixel has time to be loaded on the page. Make sure your page does not redirect or reload for at least 300ms after the conversion event happens.
 
-We recommend using our `trackLink` or `trackForm` helpers to delay the page redirect. [Documentation here](/docs/connections/sources/catalog/libraries/website/analytics.js#track-link).
+We recommend using our `trackLink` or `trackForm` helpers to delay the page redirect. [Documentation here](/docs/connections/sources/catalog/libraries/website/javascript#track-link).
 
 ## Mobile & Server
 

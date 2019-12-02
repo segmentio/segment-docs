@@ -59,7 +59,7 @@ Header|Description|Example
 `Connection` | Segment uses HTTP/1.1's keep-alive functionality whenever possible, however this is optional.| `Connection: Keep-Alive`
 `Content-Length` | Segment always sends you the length of the request in bytes.| `Content-Length: 348`
 `Content-Type`   | Segment indicates the type of data it sent you (this will always be JSON), along with Segment's vendor type. | `Content-Type: application/json`
-`User-Agent`     | Segment sends you this field every time. You can count on us!| `User-Agent: Segment`
+`User-Agent`     | Segment sends you this field every time. You can count on us!| `User-Agent: Segment.io/1.0`
 `X-Segment-Settings` | Except for the API key (which is sent in the Authorization header), Segment will send the base 64 encoding of the rest of your custom settings encoded in this header. | `X-Segment-Settings: eyJjdXN0b21TZXR0aW5nT25lIjoiY3VzdG9tIHNldHRpbmcgdmFsdWUifQ==`
 
 ## Request Body

@@ -58,6 +58,7 @@ Collections are the groupings of resources we pull from your source. In your war
 Below are tables outlining the properties included in the collections listed above.
 
 ### accounts
+
 |  Property Name | Description |
 |  ------ | ------ |
 | email | The primary user's email address |
@@ -78,6 +79,7 @@ Below are tables outlining the properties included in the collections listed abo
 | debit_negative_balances | A Boolean indicating if Stripe should try to reclaim negative balances from an attached bank account |
 
 ### application_fee_refunds
+
 |  Property Name | Description |
 |  ------ | ------ |
 | amount | Amount, in cents |
@@ -85,6 +87,7 @@ Below are tables outlining the properties included in the collections listed abo
 | fee_id | ID of the application fee that was refunded |
 
 ### application_fees
+
 |  Property Name | Description |
 |  ------ | ------ |
 | account_id | ID of the Stripe account this fee was taken from |
@@ -98,6 +101,7 @@ Below are tables outlining the properties included in the collections listed abo
 | refunded | Whether the fee has been fully refunded |
 
 ### balance_transactions
+
 |  Property Name | Description |
 |  ------ | ------ |
 | amount | Gross amount of the transaction, in cents |
@@ -110,6 +114,7 @@ Below are tables outlining the properties included in the collections listed abo
 | source | The Stripe object to which this transaction is related |
 
 ### balance_transaction_fee_details
+
 |  Property Name | Description |
 |  ------ | ------ |
 | balance_transaction_id | Unique identifier for the object |
@@ -119,6 +124,7 @@ Below are tables outlining the properties included in the collections listed abo
 | type | Transaction type |
 
 ### bank_accounts
+
 |  Property Name | Description |
 |  ------ | ------ |
 | bank_name | Name of the bank associated with the routing number |
@@ -128,6 +134,7 @@ Below are tables outlining the properties included in the collections listed abo
 | status | Status of account |
 
 ### cards
+
 |  Property Name | Description |
 |  ------ | ------ |
 | address_city | City/District/Suburb/Town/Village |
@@ -151,6 +158,7 @@ Below are tables outlining the properties included in the collections listed abo
 | tokenization_method | If the card number is tokenized, this is the method that was used |
 
 ### charges
+
 |  Property Name | Description |
 |  ------ | ------ |
 | amount | A positive integer in the smallest currency unit representing how much to charge |
@@ -175,6 +183,7 @@ Below are tables outlining the properties included in the collections listed abo
 | status | The status of the payment |
 
 ### coupons
+
 |  Property Name | Description |
 |  ------ | ------ |
 | percent_off | Percent that will be taken off the subtotal of any invoices for this customer for the duration of the coupon |
@@ -187,6 +196,7 @@ Below are tables outlining the properties included in the collections listed abo
 | duration_in_months | If duration is repeating, the number of months the coupon applies |
 
 ### customers
+
 |  Property Name | Description |
 |  ------ | ------ |
 | account_balance | Current balance, if any, being stored on the customer's account |
@@ -196,12 +206,14 @@ Below are tables outlining the properties included in the collections listed abo
 | email | The customer's email address |
 
 ### discounts
+
 |  Property Name | Description |
 |  ------ | ------ |
 | customer_id | ID of the customer |
 | subscription | The subscription that this coupon is applied to, if it is applied to a particular subscription |
 
 ### disputes
+
 |  Property Name | Description |
 |  ------ | ------ |
 | charge_id | ID of the charge that was disputed |
@@ -212,6 +224,7 @@ Below are tables outlining the properties included in the collections listed abo
 | is_charge_refundable | If true, it is still possible to refund the disputed payment |
 
 ### invoice_items
+
 |  Property Name | Description |
 |  ------ | ------ |
 | amount | Amount (in the currency specified) of the invoice item |
@@ -225,6 +238,7 @@ Below are tables outlining the properties included in the collections listed abo
 | subscription_id | The subscription that this invoice item has been created for, if any |
 
 ### invoices
+
 |  Property Name | Description |
 |  ------ | ------ |
 | amount_due | Final amount due at this time for this invoice |
@@ -248,6 +262,7 @@ Below are tables outlining the properties included in the collections listed abo
 | total | Total after discount |
 
 ### invoice_lines
+
 |  Property Name | Description |
 |  ------ | ------ |
 | amount | The amount, in cents |
@@ -265,6 +280,7 @@ Below are tables outlining the properties included in the collections listed abo
 | item_id | If id is prefixed with `ii_` then this is the line item's UUID, if any |
 
 ### payment_intents
+
 | Property Name             | Description                                                  |
 | ------------------------- | ------------------------------------------------------------ |
 | amount                    | Amount intended to be collected by this PaymentIntent.       |
@@ -292,6 +308,7 @@ Below are tables outlining the properties included in the collections listed abo
 | transfer_group            | A string that identifies the resulting payment as part of a group. See the PaymentIntents [use case for connected accounts](https://stripe.com/docs/payments/payment-intents/use-cases#connected-accounts) for details. |
 
 ### payment_methods
+
 | Property Name     | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
 | billing_details_address_city | City tied to the PaymentMethod's billing details |
@@ -310,6 +327,7 @@ Below are tables outlining the properties included in the collections listed abo
 | custom object | The additional details of the PaymentMethod as specified by the `type` property. (Please note this is a Dynamic Object, and may have multiple properties prefixed with the same key) |
 
 ### plans
+
 |  Property Name | Description |
 |  ------ | ------ |
 | interval | One of day, week, month or year. The frequency with which a subscription should be billed |
@@ -320,6 +338,7 @@ Below are tables outlining the properties included in the collections listed abo
 | trial_period_days | Default number of trial days when subscribing a customer to this plan using trial_from_plan=true |
 
 ### refunds
+
 |  Property Name | Description |
 |  ------ | ------ |
 | amount | Amount, in cents |
@@ -330,6 +349,7 @@ Below are tables outlining the properties included in the collections listed abo
 | reason | Reason for the refund |
 
 ### subscriptions
+
 |  Property Name | Description |
 |  ------ | ------ |
 | application_fee_percent | This represents the percentage of the subscription invoice subtotal that will be transferred to the application owner's Stripe account |
@@ -340,6 +360,7 @@ Below are tables outlining the properties included in the collections listed abo
 | tax_percent | If provided, each invoice created by this subscription will apply the tax rate, increasing the amount billed to the customer |
 
 ### transfer_reversals
+
 |  Property Name | Description |
 |  ------ | ------ |
 | amount | Amount, in cents |
@@ -348,6 +369,7 @@ Below are tables outlining the properties included in the collections listed abo
 | transfer_id | ID of the transfer that was reversed |
 
 ### transfers
+
 |  Property Name | Description |
 |  ------ | ------ |
 | amount | Amount in cents to be transferred |

@@ -184,6 +184,19 @@ items:
     url: 'https://cdn.filepicker.io/api/file/rDx5SqqTjyMB2KtZJUYx'
   categories:
   - Surveys
+- display_name: Desk.com
+  slug: desk-com
+  name: catalog/sources/desk-com
+  description: >-
+    Desk.com source will load your Desk.com data into a Postgres, Redshift, or
+    BigQuery warehouse.
+  url: connections/sources/catalog/cloud-apps/desk-com
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/PsYR3untRVGZVoHUYSpU'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/kXfnDxpSSrSp36khgjkM'
+  categories:
+  - Helpdesk
 - display_name: Drip
   slug: drip
   name: catalog/sources/drip
@@ -195,6 +208,19 @@ items:
     url: 'https://cdn.filepicker.io/api/file/n2OsnFO5SX2H4dZjkBGC'
   categories:
   - Email Marketing
+- display_name: Facebook Ads
+  slug: facebook-ads
+  name: catalog/sources/facebook-ads
+  description: >-
+    The Facebook Ads source pulls impressions, spend, campaign, and click data
+    from your Facebook account into your data warehouse.
+  url: connections/sources/catalog/cloud-apps/facebook-ads
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/N0wYsVjjQIWoNFPrLyUJ'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/Pf1GvLowQD6A5fqJDT51'
+  categories:
+  - Advertising
 - display_name: Facebook Lead Ads
   slug: facebook-lead-ads
   name: catalog/sources/facebook-lead-ads
@@ -233,6 +259,19 @@ items:
     url: ''
   categories:
   - Server
+- display_name: Google Ads
+  slug: google-ads
+  name: catalog/sources/adwords
+  description: >-
+    The Google Ads source pulls impressions, spend, campaign, and click data
+    from your Google Ads account into your data warehouse.
+  url: connections/sources/catalog/cloud-apps/google-ads
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/KEnErmDUQKiOWgkvzofp'
+  mark:
+    url: ''
+  categories:
+  - Advertising
 - display_name: HTTP API
   slug: http-api
   name: catalog/sources/http-api
@@ -244,6 +283,35 @@ items:
     url: ''
   categories:
   - Server
+- display_name: HubSpot
+  slug: hubspot
+  name: catalog/sources/hubspot
+  description: >-
+    When you authenticate with your Hubspot account, we'll pull their core
+    resources to any warehouse you have enabled in your Segment account.
+  url: connections/sources/catalog/cloud-apps/hubspot
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/618XEphQoWXwBKQGOWNw'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/KBNTuJHwTnOUIjvG70ad'
+  categories:
+  - CRM
+- display_name: Intercom
+  slug: intercom
+  name: catalog/sources/intercom
+  description: >-
+    Once you have successfully added your credentials we start syncing your
+    Intercom objects to your warehouse. 
+
+
+    We will update Intercom data every ~3 hours.
+  url: connections/sources/catalog/cloud-apps/intercom
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/Qokc1wcbQBe1Z0CNcQ8F'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/KaaNEw3oQRuOV6VVXnn2'
+  categories:
+  - Email Marketing
 - display_name: Iterable
   slug: iterable
   name: catalog/sources/iterable
@@ -343,6 +411,22 @@ items:
     url: 'https://cdn.filepicker.io/api/file/LxVdiFRKTKq2c7bQLa5h'
   categories:
   - Analytics
+- display_name: Mailchimp
+  slug: mailchimp
+  name: catalog/sources/mailchimp
+  description: >-
+    Once you have successfully added your credentials we start syncing your
+    Mailchimp objects to your warehouse. 
+
+
+    We will update Mailchimp data every ~3 hours.
+  url: connections/sources/catalog/cloud-apps/mailchimp
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/kDUn2hJRWm7lESgxvkg3'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/xTMOZrHVRB6MYYjyNIcj'
+  categories:
+  - Email Marketing
 - display_name: Mailjet
   slug: mailjet
   name: catalog/sources/mailjet
@@ -355,6 +439,17 @@ items:
     url: 'https://cdn.filepicker.io/api/file/nKWtaPBWT6KMRZ1i0RK7'
   mark:
     url: 'https://cdn.filepicker.io/api/file/MO3g8dPLT0aTjOSb0SkO'
+  categories:
+  - Email Marketing
+- display_name: Mandrill
+  slug: mandrill
+  name: catalog/sources/mandrill
+  description: ''
+  url: connections/sources/catalog/cloud-apps/mandrill
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/xFrM7wotRAWijOcUoQcn'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/SBd4NRhHRVuXBZJy1f1f'
   categories:
   - Email Marketing
 - display_name: Moesif API Analytics
@@ -524,6 +619,43 @@ items:
     url: ''
   categories:
   - Server
+- display_name: Salesforce
+  slug: salesforce
+  name: catalog/sources/salesforce
+  description: >-
+    When you enter your Salesforce credentials and hit save, we will sync
+    Salesforce standard objects (and their corresponding properties) to any
+    databases you have turned on. 
+
+
+    Salesforce data will reflect the state of the object at the time of the
+    sync.
+
+
+    We will run an update every ~3 hours.
+  url: connections/sources/catalog/cloud-apps/salesforce
+  logo:
+    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/salesforce-default.svg'
+  mark:
+    url: ''
+  categories:
+  - CRM
+- display_name: SendGrid
+  slug: sendgrid
+  name: catalog/sources/sendgrid
+  description: >-
+    Once you have successfully added your credentials we start syncing your
+    SendGrid objects to your warehouse.
+
+
+    We will update SendGrid data every ~3 hours.
+  url: connections/sources/catalog/cloud-apps/sendgrid
+  logo:
+    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/sendgrid-default.svg'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/v23t5ZESCSMeDB0JMvH7'
+  categories:
+  - Email Marketing
 - display_name: Shopify (by Littledata)
   slug: shopify-by-littledata
   name: catalog/sources/shopify-littledata
@@ -537,6 +669,37 @@ items:
     url: 'https://cdn.filepicker.io/api/file/BgoN870bR6ipfJHHfItU'
   categories:
   - Website
+- display_name: Stripe
+  slug: stripe
+  name: catalog/sources/stripe
+  description: >-
+    Once you have successfully OAuth’d into Stripe, we will begin syncing Stripe
+    objects (and their corresponding properties) to any databases you have
+    turned on (to turn on a database, navigate to the database tab in the
+    navigation pane on the left).
+  url: connections/sources/catalog/cloud-apps/stripe
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/jp2UV0RtRU2FZaGxX4qF'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/oVSkzKHQ96hIQkbK18ib'
+  categories:
+  - Payments
+- display_name: Twilio
+  slug: twilio
+  name: catalog/sources/twilio
+  description: >-
+    Once you have successfully added your credentials we start syncing your
+    Twilio objects to your warehouse. 
+
+
+    We will update Twilio data every ~3 hours.
+  url: connections/sources/catalog/cloud-apps/twilio
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/pn1r8UNcTiyFw4m4lqy3'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/FBoLevGrQECujcvAjU9g'
+  categories:
+  - SMS & Push Notifications
 - display_name: Vero
   slug: vero
   name: catalog/sources/vero
@@ -576,6 +739,33 @@ items:
     url: 'https://cdn.filepicker.io/api/file/lIl1q5XSRriNiYAodvnC'
   categories:
   - Analytics
+- display_name: Zendesk
+  slug: zendesk
+  name: catalog/sources/zendesk
+  description: >-
+    When you enter your Zendesk credentials and hit save, we will sync standard
+    Zendesk objects (and their corresponding properties) to any databases you
+    have turned on (to turn on a database, navigate to the database tab in the
+    navigation pane on the left).
+
+
+    These objects will be written into a separate schema, corresponding to your
+    project’s name.
+
+
+    Zendesk data will reflect the state of the object at the time of the sync:
+    so if a ticket status goes from `unassigned` to `assigned` between syncs, on
+    its next sync that tickets status will be `assigned`. 
+
+
+    We will update Zendesk data every ~3 hours.
+  url: connections/sources/catalog/cloud-apps/zendesk
+  logo:
+    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/zendesk-default.svg'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/32YThZzWRDmZhbO9AqjE'
+  categories:
+  - Helpdesk
 - display_name: iOS
   slug: ios
   name: catalog/sources/ios

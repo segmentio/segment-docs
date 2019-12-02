@@ -4,8 +4,6 @@ title: LiveChat Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 When you toggle on LiveChat in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading LiveChat's javascript onto your page. This means you should remove LiveChat's snippet from your page.

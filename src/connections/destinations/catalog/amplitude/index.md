@@ -206,7 +206,7 @@ Amplitude will create two users - one for each of the `deviceID`'s set per the f
 
 You can grab `deviceID` from Amplitude on the client-side to send server-side
 by calling this method within the
-[`ready`](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#ready)
+[`ready`](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#ready)
 function on the client-side to send server-side:
 
 ```js
@@ -268,7 +268,7 @@ analytics.track({
 ```
 
 Many of these properties will automatically be sent for you if you use one of Segment's browser or mobile libraries such as
-[Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), or [Android](/docs/connections/sources/catalog/libraries/mobile/android/).
+[Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/), or [Android](/docs/connections/sources/catalog/libraries/mobile/android/).
 
 For a complete list of special `context` keys see [our common fields spec](/docs/connections/spec/common/).
 

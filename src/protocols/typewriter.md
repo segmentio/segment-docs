@@ -87,7 +87,7 @@ Once you've installed Node and NPM, run the `--version` commands again to verify
 
 Before you start, make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
 
-Next, install `analytics.js` in your app. For now, you just need to complete [`Step 1: Copy the Snippet`](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet) from the [`analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/).
+Next, install `analytics.js` in your app. For now, you just need to complete [`Step 1: Copy the Snippet`](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet) from the [`analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
 
 Once you've got `analytics.js` installed, add Typewriter as a developer dependency in your project:
 
@@ -255,7 +255,7 @@ Typewriter requires a Segment API token to fetch Tracking Plans from the [Segmen
 Only workspace owners can create Segment API tokens. To create an API token, open the `Tokens` tab on the [Access Management](https://app.segment.com/goto-my-workspace/settings/access-management) page and click `Create Token`. Typewriter only needs the `Protocols Read-only` role.
 
 <!-- This is a pretty tall image with an off-gray background. Just formatting it slightly to reduce its size and add a border. -->
-<img src="images/typewriter-token.png" alt="Example Typewriter Token" style="height: 800px; margin: auto; border: 1px solid lightgray"></img>
+<img src="images/typewriter-token.png" alt="Example Typewriter Token" style="height: 800px; margin: auto; border: 1px solid lightgray">
 
 Typewriter looks for an API token in three ways, in the following order:
 1. Looks for an environment variable called `TYPEWRITER_TOKEN`.

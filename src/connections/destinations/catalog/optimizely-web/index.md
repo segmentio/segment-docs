@@ -4,8 +4,6 @@ title: Optimizely Web Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Segment's **Optimizely Web (previously Optimizely)** destination supports the following Optimizely products:
 
 * [Optimizely Classic](#optimizely-classic-web)
@@ -154,7 +152,7 @@ The `nonInteraction` property is set if you have enabled "Send Experiment Viewed
 
 **Example call automatically invoked upon page load:**
 
-```
+```js
 analytics.identify({
   'Experiment: Most Popular LoL Champion': 'Variation Teemo, Variation Corki'
 });
@@ -166,7 +164,7 @@ If you run multiple experiments during a user session, since `traits` are cached
 
 **NOTE: Optimizely Mobile Classic has been officially deprecated as of September 30, 2018. You won't be able to start new experiments in Classic.**
 
-For Segment's Optimizely Full Stack Android destination, see Segment's [Optimizely Full Stack](./../optimizely-full-stack/index.md) documentation.
+For Segment's Optimizely Full Stack Android destination, see Segment's [Optimizely Full Stack](/docs/connections/destinations/catalog/optimizely-full-stack/) documentation.
 
 ### Getting Started
 1. In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*).
@@ -213,7 +211,7 @@ Upon an Optimizely experiment activation, Segment's Optimizely Classic<>Android 
 
 **NOTE: Optimizely Mobile Classic has been officially deprecated as of September 30, 2018. You won't be able to start new experiments in Classic.**
 
-For Segment's Optimizely Full Stack iOS destination, see Segment's [Optimizely Full Stack documentation](./../optimizelyx/index.md).
+For Segment's Optimizely Full Stack iOS destination, see Segment's [Optimizely Full Stack documentation](/docs/connections/destinations/catalog/optimizelyx/).
 
 ### Getting Started
 1. In your Segment source dashboard, enable the "Optimizely Web" destination (*not the "Optimizely Full Stack" destination*).

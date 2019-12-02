@@ -7,7 +7,7 @@ layout: default
     <div class="docs__aside stage__aside">
       {% include_cached navbar/logo.html %}
 
-      {% include_cached menu/menu.html %}
+      {% include menu/menu.html %}
     </div>
 
     <main class="docs__body stage__body">
@@ -29,8 +29,9 @@ layout: default
             </h1>
           {%- endif -%}
 
-          {% include_cached sidebar/{{ page.integration_type }}-menu-mobile.html %}
-
+          {% unless page.integration_type  %}
+            {% include_cached sidebar/{{ page.integration_type }}-menu-mobile.html %}
+          {% endunless %}
           <div class="destinations__body" data-headings-anchors>
             {{ content }}
           </div>
@@ -42,9 +43,11 @@ layout: default
       {% include_cached navbar/nav.html %}
 
       <div class="sidebar sidebar--sticky">
-        {% include sidebar/{{ page.integration_type }}-menu.html %}
+        {% unless page.integration_type  %}
+          {% include sidebar/{{ page.integration_type }}-menu.html %}
+        {% endunless %}
         {% unless page.hide-feedback %}
-        {% include sidebar/feedback.html %}
+          {% include sidebar/feedback.html %}
         {% endunless %}
       </div>
     </div>

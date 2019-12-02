@@ -119,7 +119,7 @@ $ curl \
 
 > Analytics.js
 >
-> The Javascript source requires that you add analytics.js to your website to collect data. See the [Quickstart: Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/) guide for full details.
+> The Javascript source requires that you add analytics.js to your website to collect data. See the [Quickstart: Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) guide for full details.
 
 ## Create a Google Analytics Destination
 

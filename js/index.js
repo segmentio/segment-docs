@@ -14,6 +14,7 @@ import searchBar404 from './search-bar-404'
 import backScrolling from './back-scrolling'
 import navigation from './navigation'
 import relativeLinks from './relative-links'
+import sideMenu from './side-menu'
 import tracking from './tracking'
 feedback()
 accordion()
@@ -31,4 +32,5 @@ searchBar404()
 backScrolling()
 navigation()
 relativeLinks()
+sideMenu()
 tracking()

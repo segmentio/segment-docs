@@ -4,8 +4,6 @@ title: Nudgespot Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 When you toggle on Nudgespot in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes.

@@ -4,8 +4,6 @@ beta: true
 ---
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 1. Create a free account and project at https://cloud.infinario.com/ if you haven't done so already
 1. Find your Infinario `Project Token` in the Project overview screen visible after choosing your project
 1. Toggle Infinario on in your Segment destinations, using the Project Token from the previous step

@@ -9,7 +9,6 @@ The Boomtrain destination with Segment supports the `identify`, `track` and `pag
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
 
 Steps to connect:
  - Turn on Boomtrain via the destinations catalog.
