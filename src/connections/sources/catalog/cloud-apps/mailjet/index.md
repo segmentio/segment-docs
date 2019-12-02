@@ -41,9 +41,9 @@ Collections are the groupings of data we pull from your Source. In your warehous
 
 <table>
   <tr>
-    <th>Collection</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Collection**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>Email Delivered</td>

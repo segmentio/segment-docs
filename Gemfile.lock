@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jekyll/jekyll.git
-  revision: 14299310a4f3a9e15a236d7df0c12d287f6aba44
+  revision: 1d7d11be61196b45b4645fd8cd73776e8fe8d184
   specs:
     jekyll (4.0.0)
       addressable (~> 2.4)
@@ -32,9 +32,9 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
-    faraday (0.15.4)
+    faraday (0.17.1)
       multipart-post (>= 1.2, < 3)
-    ffi (1.11.2)
+    ffi (1.11.3)
     forwardable-extended (2.6.0)
     http_parser.rb (0.6.0)
     i18n (1.7.0)
@@ -48,7 +48,7 @@ GEM
       jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (2.0.1)
       sassc (> 2.0.1, < 3.0)
-    jekyll-sitemap (1.3.1)
+    jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
@@ -67,7 +67,7 @@ GEM
       forwardable-extended (~> 2.6)
     premonition (2.0.0)
     public_suffix (4.0.1)
-    rake (12.3.3)
+    rake (13.0.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
