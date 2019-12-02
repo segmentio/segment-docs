@@ -89,8 +89,6 @@ node_modules: package.json yarn.lock
 
 .PHONY: vendor/bundle
 vendor/bundle: 
-	@unset BUNDLE_PATH
-	@unset BUNDLE_BIN
 	@export BUNDLE_PATH="vendor/bundle"
 	@mkdir -p vendor && mkdir -p vendor/bundle
 	@chmod -R 777 vendor/
