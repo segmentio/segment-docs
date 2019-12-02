@@ -22,8 +22,8 @@
     <ul class="menu__list list list--unstyle" data-ref="accordion[body]">
       {% for integration in integrations %}
         {% if integration.hidden != true %}
-          <li class="menu-item menu-item--left-aligned menu-item--compact {% if integration == currentIntegration %}menu-item--active menu-item--indicator{% endif %}">
-            <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link {% if integration == currentIntegration %}menu-item__link--indicator{% endif %}">
+          <li class="menu-item menu-item--left-aligned menu-item--compact">
+            <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link">
               {{ integration.display_name }}
             </a>
           </li>
