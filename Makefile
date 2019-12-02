@@ -51,6 +51,14 @@ catalog: vendor/bundle
 sidenav: vendor/bundle
 	@node scripts/nav.js
 
+.PHONY: zip-artifacts
+zip-artifacts:
+	@tar czf build_package.tar.gz _site
+
+.PHONY: unzip-artifacts
+unzip-artifacts:
+	@tar -xzf build_package.tar.gz _site
+
 .PHONY: typewriter
 typewriter: npx typewriter
 

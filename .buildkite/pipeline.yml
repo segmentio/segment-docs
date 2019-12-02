@@ -4,6 +4,8 @@ steps:
       - make build
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
+    artifact_paths:
+        - build_package.tar.gz
     plugins:
       - docker#v3.3.0:
           image: jekyll/jekyll
@@ -23,4 +25,5 @@ steps:
       SEGMENT_CONTEXTS: "aws-credentials"
     branches: master staging
     command:
+      - buildkite-agent artifact download build_package.tar.gz .
       - make upload-docs
