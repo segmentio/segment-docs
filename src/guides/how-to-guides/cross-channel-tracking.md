@@ -137,7 +137,7 @@ An example would be a National Toast Day campaign. This campaign would include e
 
 Having the consistent UTM parameters naming convention simplifies the downstream analysis and the ease of querying across dimensions, such as within the campaign, which medium or source was the best. Or which placement of the display ad led to the most conversions.
 
-[Learn more about measuring ROI of marketing campaigns with SQL and UTM parameters.](https://segment.com/docs/guides/warehouses/how-to-measure-roi-of-marketing-campaigns)
+[Learn more about measuring ROI of marketing campaigns with SQL and UTM parameters.](https://segment.com/docs/guides/how-to-guides/measure-marketing-roi/)
 
 ## What device are they using? Cross-device tracking
 

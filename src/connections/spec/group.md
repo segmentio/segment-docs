@@ -38,9 +38,9 @@ Beyond the common fields, the `group` call takes the following fields:
 
 <table>
   <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Field**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   {% include content/spec-field-group-id.md %}
   {% include content/spec-field-group-traits.md %}
@@ -101,9 +101,9 @@ The following are the reserved traits we have standardized:
 
 <table>
   <tr>
-    <th>Trait</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Trait**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>`address`</td>
