@@ -5,7 +5,7 @@ title: Identity Resolution ExternalIDs
 
 Let's say a new anonymous user visits your Pricing page:
 
-```
+``` js
 analytics.page('Pricing', {
   anonymousId: 'anon_123'
   title: 'Acme Pricing',
@@ -22,7 +22,7 @@ Any new events received with the same external id (anonymous_id: `anon_123`) wil
 
 Next, the user goes to a signup form and signs up:
 
-```
+``` js
 analytics.track('User Signup', {
   userId: 'use_123',
   anonymousId: 'anon_123'
@@ -34,7 +34,7 @@ At this point, the Identity Graph associates external ID (user_id: `use_123`) wi
 
 And if you're going beyond customer data (the users collection), Personas will automatically resolve identity for any other external ID's that you bind to users - such as a phone number or any custom identifier that you support. As seen in the below example, you can send custom `externalIds` in the `context` object of any call to our API.
 
-```
+``` js
 analytics.track('Subscription Upgraded', {
    plan: 'Pro',
    mrr: 99.99
