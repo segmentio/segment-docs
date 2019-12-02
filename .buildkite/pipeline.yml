@@ -1,19 +1,31 @@
-
 steps:
-  - label: ":hammer: Build Dependencies"
+  - label: ":hammer: Build Dependencies and Docs"
     command:
       - make build
+      - make zip-artifacts
     env:
-      SEGMENT_CONTEXTS: "snyk,npm"
+      SEGMENT_CONTEXTS: "snyk, aws-credentials"
+    artifact_paths:
+        - build_package.tar.gz
     plugins:
       - docker#v3.3.0:
           image: jekyll/jekyll
           environment:
-            - NPM_TOKEN
-            - AWS_REGION
-            - AWS_DEFAULT_REGION
-            - AWS_ACCESS_KEY_ID
-            - AWS_SECRET_ACCESS_KEY
-            - AWS_SESSION_TOKEN
             - BUILDKITE_BRANCH
-  
+      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
+          key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
+          paths: [ "vendor/" ]
+      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
+          key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
+          paths: [ "node_modules/" ]
+     
+  - wait
+
+  - label: ":shipit: Deploy Docs to S3"
+    env:
+      SEGMENT_CONTEXTS: "aws-credentials"
+    branches: master staging
+    command:
+      - buildkite-agent artifact download build_package.tar.gz .
+      - make unzip-artifacts
+      - make upload-docs
