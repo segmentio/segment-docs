@@ -21,6 +21,7 @@ intialize-work-dir:
 	@chmod -R 777 vendor/
 	@bundle install --path=vendor
 
+
 .PHONY: build
 build: node_modules vendor/bundle
 	@echo "Jekyll env: ${JEKYLL_ENV}"
@@ -29,6 +30,10 @@ build: node_modules vendor/bundle
 	@echo "env: ${JEKYLL_ENV}"
 	@$(BIN)/webpack --mode=production
 	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
+
+.PHONY: upload-docs
+upload-docs:
+	@scripts/upload-docs
 
 .PHONY: package
 package: build

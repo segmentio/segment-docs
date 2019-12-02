@@ -1,6 +1,25 @@
 steps:
   - label: ":hammer: Build Dependencies"
     command:
+      - make deps
+    env:
+      SEGMENT_CONTEXTS: "snyk, aws-credentials"
+    plugins:
+      - docker#v3.3.0:
+          image: jekyll/jekyll
+          environment:
+            - BUILDKITE_BRANCH
+      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
+          key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
+          paths: [ "vendor/" ]
+      - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
+          key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
+          paths: [ "node_modules/" ]
+  
+  - wait
+
+  - label: ":hammer: Build Docs"
+    command:
       - make build
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
@@ -16,3 +35,8 @@ steps:
           key: "v1-cache-npm-{{ checksum 'yarn.lock' }}"
           paths: [ "node_modules/" ]
      
+  - wait
+
+  - label: ":shipit: Deploy Docs to S3"
+    command:
+      - make upload-docs
