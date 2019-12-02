@@ -91,77 +91,77 @@ If the delivery of the payload is not successfully sent due to connection issues
 
 <table>
   <tr>
-    <th>Platform</th>
-    <th><p><b>Initial Wait</b></p><p>Sleep duration before the first retry</p></th>
-    <th><p><b>Wait Growth</b></p><p>Rate of growth of the sleep duration between each retry</p></th>
-    <th><p><b>Max Wait</b></p><p>Maximum sleep duration between retries</p></th>
-    <th><p><b>Max Attempts</b></p><p>Maximum number of individual retries</p></th>
+    <td>Platform</td>
+    <td><p><b>Initial Wait</b></p><p>Sleep duration before the first retry</p></td>
+    <td><p><b>Wait Growth</b></p><p>Rate of growth of the sleep duration between each retry</p></td>
+    <td><p><b>Max Wait</b></p><p>Maximum sleep duration between retries</p></td>
+    <td><p><b>Max Attempts</b></p><p>Maximum number of individual retries</p></td>
   </tr>
   <tr>
-    <th>C++</th>
+    <td>**C++**</td>
     <td>1s</td>
     <td>None</td>
     <td>1s</td>
     <td>5</td>
   </tr>
   <tr>
-    <th>Clojure</th>
+    <td>**Clojure**</td>
     <td>15s</td>
     <td>Exponential</td>
     <td>1h</td>
     <td>50</td>
   </tr>
   <tr>
-    <th>Go</th>
+    <td>**Go**</td>
     <td>100ms</td>
     <td>Exponential</td>
     <td>10s</td>
     <td>10</td>
   </tr>
   <tr>
-    <th>Java</th>
+    <td>**Java**</td>
     <td>15s</td>
     <td>Exponential</td>
     <td>1h</td>
     <td>50</td>
   </tr>
   <tr>
-    <th>JavaScript</th>
+    <td>**JavaScript**</td>
     <td>1s</td>
     <td>Exponential</td>
     <td>1h</td>
     <td>10</td>
   </tr>
   <tr>
-    <th>.Net</th>
+    <td>**.Net**</td>
     <td>100ms</td>
     <td>Exponential</td>
     <td>6.4s</td>
     <td>7</td>
   </tr>
   <tr>
-    <th>Node.js</th>
+    <td>**Node.js**</td>
     <td>100ms</td>
     <td>Exponential</td>
     <td>400ms</td>
     <td>3</td>
   </tr>
   <tr>
-    <th>PHP</th>
+    <td>**PHP**</td>
     <td>100ms</td>
     <td>Exponential</td>
     <td>6.4s</td>
     <td>7</td>
   </tr>
   <tr>
-    <th>Python</th>
+    <td>**Python**</td>
     <td>1s</td>
     <td>Exponential</td>
     <td>34m</td>
     <td>10</td>
   </tr>
   <tr>
-    <th>Ruby</th>
+    <td>**Ruby**</td>
     <td>100ms</td>
     <td>Exponential</td>
     <td>10s</td>

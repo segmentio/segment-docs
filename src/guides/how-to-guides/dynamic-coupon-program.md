@@ -30,7 +30,7 @@ Through a combination of SQL and statistical analysis on a set of historical dat
 *   pays over $20 per order
 
 
-_Learn how we defined these conditions in_ [How to Forecast LTV for e-commerce with Excel and SQL.](https://segment.com/docs/guides/warehouses/how-to-forecast-ltv-with-sql-and-excel)
+_Learn how we defined these conditions in_ [How to Forecast LTV for e-commerce with Excel and SQL.](https://segment.com/docs/guides/how-to-guides/forecast-with-sql/)
 
 Will rewarding a $5 coupon to this cohort after they make the second purchase a month lead to higher engagement and LTV? We'll setup this program using Customer.io as the email provider and measure it's performance on engagement and LTV with Amplitude.
 

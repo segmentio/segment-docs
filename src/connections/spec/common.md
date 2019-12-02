@@ -98,12 +98,13 @@ Here's an example of these common fields in raw JSON:
 ```
 
 In more detail these common fields for every API call are:
+
 <table>
   <tr>
-    <th>Field</th>
-    <th>Optional?</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Field**</td>
+    <td>**Optional?**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   {% include content/spec-field-anonymous-id.md %}
   {% include content/spec-field-context.md %}
@@ -125,9 +126,9 @@ Context is a dictionary of extra information that provides useful context about 
 
 <table>
   <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Field**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>`active`</td>
@@ -310,9 +311,9 @@ Every API call has four timestamps, `originalTimestamp`, `timestamp`, `sentAt` a
 <col width="40%">
 <col width="40%">
   <tr>
-    <th>Timestamp</th>
-    <th>Calculated</th>
-    <th>Description</th>
+    <td>**Timestamp**</td>
+    <td>**Calculated**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>originalTimestamp</td>
