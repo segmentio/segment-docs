@@ -97,7 +97,7 @@ The Segment user must have the permission to `GenerateDataKey` from your AWS Key
 
 ![creating customer managed key screenshot](images/customer-managed-key.png)
 
-#### Update S3 bucket default encryption propery
+#### Update S3 bucket default encryption property
 The target S3 bucket should have the "Default encryption" property enabled and set to `AWS-KMS`. Choose the customer-managed key generated in the above step for encryption.
 
 ![update default encryption property](images/bucket-property.png)

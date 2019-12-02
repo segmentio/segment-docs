@@ -4,8 +4,6 @@ title: MoEngage Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Once the Segment library is integrated with your app, toggle MoEngage on in your Segment
 integrations. These new settings will take up to an hour to propagate to all of your existing
 users. For new users it'll be instantaneous!
@@ -431,13 +429,13 @@ new Date().getUTCFullYear()+""+new Date().getUTCMonth()+""+new Date().getUTCDate
 ```
 
 ### Identify
-Use [Identify](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#identify) to track user specific attributes. It equivalent to [tracking user attributes](https://docs.moengage.com/docs/tracking-web-user-attributes) on MoEngage. MoEngage supports traits supported by Segment as well as custom traits.
+Use [Identify](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#identify) to track user specific attributes. It equivalent to [tracking user attributes](https://docs.moengage.com/docs/tracking-web-user-attributes) on MoEngage. MoEngage supports traits supported by Segment as well as custom traits.
 
 ### Track
-Use [track](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#track) to track events and user behaviour in your app. This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
+Use [track](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track) to track events and user behaviour in your app. This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
 
 ### Reset
-If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#reset-logout) method in `analytics.js`.
+If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) method in `analytics.js`.
 
 ### Optional
 There are some further optional features you can read about here:

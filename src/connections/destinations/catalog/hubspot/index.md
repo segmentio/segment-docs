@@ -26,7 +26,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 ```
 analytics.page()
 ```
-**IMPORTANT:** An initial `page` call is required for data to be sent to HubSpot via Analytics.js. This is included by default in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet).
+**IMPORTANT:** An initial `page` call is required for data to be sent to HubSpot via Analytics.js. This is included by default in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet).
 
 ## Identify
 
@@ -194,7 +194,7 @@ When using any of our server-side sources, our connector will infer `traits.life
 ### Loading Forms SDK
 Segment gives you the option to load the [HubSpot Forms SDK](https://developers.hubspot.com/docs/methods/forms/advanced_form_options) alongside their tracking library. This can be done by enabling the **Load Forms SDK** setting when configuring your HubSpot integration.
 
-**Please Note:** The Forms SDK expects to be loaded synchronously but analytics.js is loaded asynchronously. Therefore, in order to interact with the API, you need to run your code inside an [analytics.ready](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#ready) callback. Here's an example:
+**Please Note:** The Forms SDK expects to be loaded synchronously but analytics.js is loaded asynchronously. Therefore, in order to interact with the API, you need to run your code inside an [analytics.ready](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#ready) callback. Here's an example:
 
 ```js
 analytics.ready(function(){

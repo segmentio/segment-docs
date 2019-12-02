@@ -200,7 +200,7 @@ In-app messages will be registered for and requested by default. This functional
 
 #### Web
 
-Instructions on how to set this up within Braze can be found in their [docs](https://www.Braze.com/academy/Best_Practices/#in-app-message-behavior). Once setup, it allows you to trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, simply make an identify with the corresponding [userId](https://segment.com/docs/connections/spec/identify/#user-id) for that user.
+Instructions on how to set this up within Braze can be found in their [docs](https://www.braze.com/academy/Best_Practices/#in-app-message-behavior). Once setup, it allows you to trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, simply make an identify with the corresponding [userId](https://segment.com/docs/connections/spec/identify/#user-id) for that user.
 
 If you don't want your site to immediately display new In-App Messages when they're received, you can disable automatic display and register your own display subscribers. To do this:
 
@@ -254,7 +254,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 #### Android
 
-1. Follow the directions in Braze's [push notification docs](https://www.Braze.com/documentation/Android/#push-notifications).
+1. Follow the directions in Braze's [push notification docs](https://www.braze.com/documentation/Android/#push-notifications).
 2. If you don't have Braze automatically register for push (i.e. you pass the push token from an FCM or manual GCM registration) you need to ensure you call `registerAppboyPushMessages` after Braze is initialized. You can do this by checking if Braze is initialized before trying to pass the push token, and waiting for initializing to set if not.
 
     You can do this in an `onIntegrationReady` method:
@@ -285,7 +285,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 #### Client
 
-1. To support push notifications on Chrome, you'll need to enable FCM/GCM as well as configure your site. Check out steps [one and two here, for detailed instructions on both](https://www.Braze.com/documentation/Web/#step-1-to-support-chrome-enable-fcmgcm).
+1. To support push notifications on Chrome, you'll need to enable FCM/GCM as well as configure your site. Check out steps [one and two here, for detailed instructions on both](https://www.braze.com/documentation/Web/#step-1-to-support-chrome-enable-fcmgcm).
 
 2. Browser Registration. In order for a browser to receive push notifications, you must register it for push by calling:
 
@@ -294,7 +294,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
       window.appboy.registerAppboyPushMessages();
     });
     ```
-    **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet) within your `script` tag.
+    **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet) within your `script` tag.
 
     **Note:** This will immediately request push permission from the user.
 
@@ -318,13 +318,13 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
     });
     ```
 
-3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.Braze.com/documentation/Web/#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard).
+3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/documentation/Web/#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard).
 
 4. To support push notifications on Safari, add your Website Push ID into your Segment Settings UI and we'll send it for you when we initialize the Braze Web SDK. To get your Website Push ID, follow the first two bullet points in [these instructions](https://www.braze.com/documentation/Web/#step-5-configure-safari-push).
 
 ### Soft Push Prompts
 
-1. Follow [step one](https://www.Braze.com/documentation/Web/#soft-push-prompts) to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
+1. Follow [step one](https://www.braze.com/documentation/Web/#soft-push-prompts) to create a "Prime for Push" in-app messaging Campaign on the Braze dashboard.
 
 2. Disable your [Automatically Send In-App Messages Destination setting](/docs/connections/destinations/catalog/braze/#settings). By default, it is enabled when you enable the Braze destination.
 
@@ -366,9 +366,9 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
        });
      });
     ```
-For more details on this snippet, check out the Braze's docs [here](https://www.Braze.com/documentation/Web/#soft-push-prompts).
+For more details on this snippet, check out the Braze's docs [here](https://www.braze.com/documentation/Web/#soft-push-prompts).
 
-**Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet) within your `script` tag.
+**Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet) within your `script` tag.
 
 4) When you'd like to display the Soft Push to a user, call:
 

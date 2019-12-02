@@ -4,8 +4,6 @@ title: Nanigans Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 When you toggle on Nanigans in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Nanigans.js onto your page. This means you should remove Nanigans's snippet from your page.

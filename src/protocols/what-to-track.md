@@ -1,5 +1,5 @@
 ---
-title: "What Should I track?"
+title: What Should I track?
 ---
 
 As the central hub for your customer data, we think it's important to give you the benefit of some hard-won best practices from our happiest and most successful customers.
