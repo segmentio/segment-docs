@@ -2,6 +2,7 @@ steps:
   - label: ":hammer: Build Dependencies and Docs"
     command:
       - make build
+      - make zip-artificacts
     env:
       SEGMENT_CONTEXTS: "snyk, aws-credentials"
     artifact_paths:
@@ -26,4 +27,5 @@ steps:
     branches: master staging
     command:
       - buildkite-agent artifact download build_package.tar.gz .
+      - make unzip-artifacts
       - make upload-docs
