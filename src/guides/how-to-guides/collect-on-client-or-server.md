@@ -4,7 +4,8 @@ title: Should I collect data on the client or server?
 
 One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?"
 
-This is such an important topic that we've written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](https://segment.com/academy/collecting-data/when-to-track-on-the-client-vs-server/). It's worth a read!
+
+This is such an important topic that we’ve written up an in-depth article in our Analytics Academy:  [When to Track on the Client vs Server](https://segment.com/academy/collecting-data/when-to-track-on-the-client-vs-server/). It’s worth a read! Below, you can also read some quick logic around why you may want to choose either option.
 
 ### Client-side
 
