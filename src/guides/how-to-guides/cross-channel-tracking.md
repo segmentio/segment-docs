@@ -45,7 +45,7 @@ Here are some of the most commonly used and popular events tracked through email
 
 If your email tool is not supported on Segment, you can still track email opens with Segment's tracking pixel. This pixel functions like an advertising pixel in that it embeds an image onto pages where JavaScript and POST requests are disabled.
 
-[A list of supported email tools on Segment.](https://segment.com/catalog#integrations/email)
+[A list of supported tools on Segment.](https://segment.com/catalog/)
 
 In your email template HTML, include an image tag where the `src` is a URL that is carefully constructed to hit Segment's appropriate endpoint with a JSON payload that is base64 encoded.
 
