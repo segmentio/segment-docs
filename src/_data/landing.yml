@@ -15,7 +15,7 @@
 
 - name: Connections
   icon: icon-connections.svg
-  description: "Get the details on how Segment sends data between sources and destinations."
+  description: "Get the details on how Segment sends data between Sources and Destinations."
   path: /connections/
 
 - name: Protocols
