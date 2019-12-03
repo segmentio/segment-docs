@@ -19,7 +19,7 @@ const slugify = (displayName) => {
 
   if (slug === '-net') slug = 'net'
   if (slug === 'roku-alpha') slug = 'roku'
-
+  if (slug === 'shopify-by-littledata') slug = 'shopify-littledata'
   return slug
 }
 
@@ -249,7 +249,8 @@ const updateDestinations = async () => {
       browserUnbundlingSupported: destination.browserUnbundlingSupported,
       browserUnbundlingPublic: destination.browserUnbundlingPublic,
       settings: destination.settings,
-      connection_modes
+      connection_modes,
+      previous_names: destination.previous_names
     }
 
     destinationsUpdated.push(updatedDestination)

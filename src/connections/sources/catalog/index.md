@@ -77,17 +77,6 @@ menu_icon: "read-more"
 <br/>
 ## Object Cloud Sources
 
-- [Desk.com](/docs/connections/sources/catalog/cloud-apps/desk/)
-- [Facebook Ads](/docs/connections/sources/catalog/cloud-apps/facebook-ads/)
-- [Google Ads](/docs/connections/sources/catalog/cloud-apps/google-ads/)
-- [HubSpot](/docs/connections/sources/catalog/cloud-apps/hubspot/)
-- [Intercom](/docs/connections/sources/catalog/cloud-apps/intercom/)
-- [Mailchimp](/docs/connections/sources/catalog/cloud-apps/mailchimp/)
-- [Mandrill](/docs/connections/sources/catalog/cloud-apps/mandrill/)
+
 - [Marketo](/docs/connections/sources/catalog/cloud-apps/marketo/)
 - [Salesforce Marketing Cloud](/docs/connections/sources/catalog/cloud-apps/salesforce-marketing-cloud/)
-- [Salesforce](/docs/connections/sources/catalog/cloud-apps/salesforce/)
-- [SendGrid](/docs/connections/sources/catalog/cloud-apps/sendgrid/)
-- [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/)
-- [Twilio](/docs/connections/sources/catalog/cloud-apps/twilio/)
-- [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/)

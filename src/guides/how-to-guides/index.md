@@ -2,7 +2,7 @@
 title: How to Guides Index
 ---
 
-Our How-to Guides give you an in-depth walk through and example of some of the things you can do with Segment, some examples of analytic paths, and some best practices in implementation. We've also got a series of [Quickstart Guides](#quickstart-guides) for each of our library Sources.
+Segment’s How-to Guides provide an in-depth walk through and examples of the many things you can do to implement, automate, engage with, and begin analyzing your data. We’ve also got a series of [Quickstart Guides](#quickstart-guides) for each of our Source libraries.
 
 ## Implementation
 - [What are best practices for identifying users?](best-practices-identify)

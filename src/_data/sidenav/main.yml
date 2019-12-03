@@ -171,8 +171,15 @@ sections:
   section:
   - path: /personas
     title: Personas Overview
-  - path: /personas/identity-resolution
-    title: Identity Resolution
+  - section_title: Personas Identity Resolution
+    slug: /personas/personas-identity-resolution
+    section:
+    - path: /personas/identity-resolution
+      title: Identity Resolution Overview
+    - path: /personas/identity-resolution-use-cases
+      title: Identity Resolution Use Cases
+    - path: /personas/identity-resolution-externalids
+      title: Identity Resolution External IDs
   - path: /personas/activation
     title: Activation
   - path: /personas/warehouses

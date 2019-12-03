@@ -72,8 +72,8 @@ The following table shows how we map Segment's [semantic ecommerce](https://segm
 
 <table>
   <tr>
-    <th>Segment Event Name</th>
-    <th>Facebook Semantic Conversion Event Name</th>
+    <td>**Segment Event Name**</td>
+    <td>**Facebook Semantic Conversion Event Name**</td>
   </tr>
   <tr>
     <td>Products Searched</td>
@@ -115,8 +115,8 @@ The following table shows how we map Segment raw message fields or `properties` 
 
 <table>
   <tr>
-    <th>Segment Property</th>
-    <th>Facebook Semantic Conversion Parameters</th>
+    <td>**Segment Property**</td>
+    <td>**Facebook Semantic Conversion Parameters**</td>
   </tr>
   <tr>
     <td>Hardcoded as `"Segment"`</td>
@@ -163,8 +163,8 @@ Since `track` events by default do not require you to send user metadata, it is 
 
 <table>
   <tr>
-    <th>Segment `context.traits` Properties</th>
-    <th>Facebook Match Key Parameters</th>
+    <td>**Segment `context.traits` Properties**</td>
+    <td>**Facebook Match Key Parameters**</td>
   </tr>
   <tr>
     <td>`email`</td>
