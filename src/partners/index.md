@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Join the Segment Platform
 ---
 
 > note ""
