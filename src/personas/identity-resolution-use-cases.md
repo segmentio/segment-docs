@@ -25,3 +25,8 @@ If, however, each app should maintain its own identity graph, regardless of the 
   _Note: Each workspace has two spaces by default. Please contact your CSM to enable additional spaces._
 
 For an eCommerce example, see [here](/docs/personas/identity-resolution-ecommerce-example.md)
+
+## Cross-Department Identification
+A user can interact with a brand through multiple channels and departments. A user might have touch points with a sales team, a marketing team and a customer support team throughout her customer journey. It's important for companies to have insights into these cross-functional activities to ensure they understand the complete customer experience.
+
+For example, if a user has logged a complaint with a customer support team, the marketing team should exclude this user from an automatic follow-up email asking for her to leave a public product review on their site.

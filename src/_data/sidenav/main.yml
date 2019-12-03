@@ -182,6 +182,8 @@ sections:
       title: Identity Resolution eCommerce Example
     - path: /personas/identity-resolution-externalids
       title: Identity Resolution External IDs
+    - path: /personas/identity-graph-rules
+      title: Identity Graph Rules
   - path: /personas/activation
     title: Activation
   - path: /personas/warehouses
@@ -254,8 +256,6 @@ sections:
       title: Manage members
     - path: /segment-app/iam/labels
       title: Label-Based Access Control
-    - path: /segment-app/iam/groups
-      title: Groups
     - path: /segment-app/iam/audit-trail
       title: Audit Trail
     - path: /segment-app/iam/sso
