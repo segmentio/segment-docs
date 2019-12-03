@@ -1,5 +1,5 @@
 ---
-title: FAQs
+title: Partner FAQs
 ---
 
 If you cannot find the answer to your question within the documentation or the below FAQs, please reach out to our team at [partner-support@segment.com](mailto:partner-support@segment.com).
