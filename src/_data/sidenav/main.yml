@@ -172,7 +172,7 @@ sections:
   - path: /personas
     title: Personas Overview
   - section_title: Personas Identity Resolution
-    slug: /personas/personas-identity-resolution
+    slug: personas/personas-identity-resolution
     section:
     - path: /personas/identity-resolution
       title: Identity Resolution Overview
