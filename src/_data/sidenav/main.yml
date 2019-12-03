@@ -179,7 +179,7 @@ sections:
     - path: /personas/identity-resolution-use-cases
       title: Identity Resolution Use Cases
     - path: /personas/identity-resolution-ecommerce-example
-      title: Identity Resolution eCommerce Example
+      title: Identity Resolution E-Commerce Example
     - path: /personas/identity-resolution-externalids
       title: Identity Resolution External IDs
     - path: /personas/identity-graph-rules
