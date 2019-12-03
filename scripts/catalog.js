@@ -19,7 +19,7 @@ const slugify = (displayName) => {
 
   if (slug === '-net') slug = 'net'
   if (slug === 'roku-alpha') slug = 'roku'
-
+  if (slug === 'shopify-by-littledata') slug = 'shopify-littledata'
   return slug
 }
 
