@@ -4,7 +4,7 @@ export default function () {
   const re_integrations = /^\/docs\/connections\/(destinations|sources)\/catalog\/(.*)\/$/
   const re_warehouses = /^\/docs\/connections\/(warehouses)\/catalog\/(.*)\/$/
   const pathname = document.location.pathname
-  console.log(pathname)
+
   if (re_integrations.test(pathname)) {
     // find all links associated with active catalog page
     const links = document.querySelectorAll(`[data-class-active="menu-item--active"] > ul > li > a[href="${pathname}"]`)
