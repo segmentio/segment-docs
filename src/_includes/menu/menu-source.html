@@ -38,8 +38,8 @@
             {% assign integrations = site.data.catalog.sources.items | where: "categories", category %}
 
             {% for integration in integrations %}
-              <li class="menu-item menu-item--compact {% if integration == currentIntegration %}menu-item--active menu-item--indicator{% endif %}">
-                <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link {% if integration == currentIntegration %}menu-item__link--indicator{% endif %}">
+              <li class="menu-item menu-item--compact">
+                <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link">
                   {{ integration.display_name }}
                 </a>
               </li>
@@ -64,8 +64,8 @@
 
           {% for integration in integrations %}
             {% unless integration.categories contains promoted_categories[0] or integration.categories contains promoted_categories[1] or integration.categories contains promoted_categories[2] or integration.categories contains promoted_categories[3] %}
-              <li class="menu-item menu-item--compact {% if integration == currentIntegration %}menu-item--active menu-item--indicator{% endif %}">
-                <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link {% if integration == currentIntegration %}menu-item__link--indicator{% endif %}">
+              <li class="menu-item menu-item--compact">
+                <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link">
                   {{ integration.display_name }}
                 </a>
               </li>

@@ -2,9 +2,9 @@
 title: How do I automate multi-channel re-engagement campaigns?
 ---
 
-Compelling and engaging brands delights their customers at every interaction. As customers move seamlessly across channels—such as email, push notifications, display ads—brands must similarly meet them with tailored and consistent messages.
+Compelling and engaging brands delight their customers at every interaction. As customers move seamlessly across channels—such as email, push notifications, display ads—brands must similarly meet them with tailored and consistent messages.
 
-We'll show you how to craft a tailored message, while using a combination of AdRoll, Customer.IO, and other tools to dynamically switch between channels.
+We'll show you how to craft a tailored message while using a combination of AdRoll, Customer.IO, and other tools to dynamically switch between channels.
 
 [Talk to a product specialist today](https://segment.com/contact/sales) about using data to tailor your brand experience.
 
@@ -16,12 +16,10 @@ We'll show you how to craft a tailored message, while using a combination of AdR
 
 *   Emails with [Customer.io](https://customer.io/): _Customer.io is a flexible email provider that allows you to create cohorts based on customer actions. You can build complex onboarding emails, nurture email campaigns, as well as marketing automation workflows._
 
-*   Customer data platform with Segment
 
+_There are other email tools on Segment's platform, such as_ [Bronto](https://bronto.com/), [SendGrid](https://sendgrid.com/), _and_ [Mailchimp](https://mailchimp.com/). _Check out the_ [full list of email tools](https://segment.com/catalog#integrations/email).
 
-_There are other email tools on Segment's platform, such as_ [Bronto](https://bronto.com/), [SendGrid](https://sendgrid.com/), _and_[Mailchimp](https://mailchimp.com/). _Check out the_ [full list of email tools](https://segment.com/catalog#integrations/email).
-
-Before we proceed, it's important to register for these tools and enable them on your Segment source project. When Segment collects tracking data, it'll all also route it to all of your enabled tools. Then your tools, especially ones like Customer.io, Braze, and AdRoll, where you can define cohorts of your users, will be working off a dynamic, yet consistent data set. This is paramount in getting the dynamic messaging to update accordingly.
+Before we proceed, it's important to register for these tools and enable them on your Segment source project. When Segment collects tracking data, it'll also route it to all of your enabled tools. Then your tools, especially ones like Customer.io, Braze, and AdRoll, where you can define cohorts of your users, will be working off a dynamic, yet consistent data set. This is paramount in getting the dynamic messaging to update accordingly.
 
 ## Set it up
 

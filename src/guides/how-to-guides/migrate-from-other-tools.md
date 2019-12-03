@@ -124,7 +124,7 @@ analytics.page();
 
 ### Everything Else
 
-To see a full list of Google Analytics features and how they work through Segment read[our Google Analytics docs page](/docs/connections/destinations/catalog/google-analytics/#features).
+To see a full list of Google Analytics features and how they work through Segment read [our Google Analytics docs page](/docs/connections/destinations/catalog/google-analytics/#features).
 
 ## Mixpanel
 
