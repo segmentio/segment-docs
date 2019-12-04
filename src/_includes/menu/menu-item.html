@@ -32,7 +32,11 @@
 
         <li class="menu-item menu-item--gray {% if currentPage == currentPath or currentSectionSlug == currentSectionPath %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
           {% if item.path %}
-            <a class="menu-item__link {% if currentPage == currentPath or currentSectionSlug == currentSectionPath %}menu-item__link--indicator-large{% endif %} flex" href="{{ site.baseurl }}{{ item.path }}/">{{ item.title }}</a>
+            {% assign menuLink = site.baseurl | append: item.path  | append: "/" %}
+            {% if item.path contains "http://" or  item.path contains "https://"%}
+              {% assign menuLink = item.path %}
+            {% endif %}
+            <a class="menu-item__link {% if currentPage == currentPath or currentSectionSlug == currentSectionPath %}menu-item__link--indicator-large{% endif %} flex" href="{{ menuLink }}">{{ item.title }}</a>
           {% endif %}
 
           {% if item.section_title %}
