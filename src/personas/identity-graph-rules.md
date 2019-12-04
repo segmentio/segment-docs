@@ -14,4 +14,4 @@ When there are no pre-existing profiles that have matching identifiers to the ev
 When there is only one profile that matches all identifiers in an event, we add the event to that existing profile.
 
 **Case Three: Merge Existing Profiles**
-When there are multiple profiles that match the identifiers in an event, we have three merge protection rules to protect from multiple users sharing a device. 
+When there are multiple profiles that match the identifiers in an event, we have three merge protection rules to protect from multiple users sharing a device.

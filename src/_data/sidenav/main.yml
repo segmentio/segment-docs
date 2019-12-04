@@ -182,8 +182,6 @@ sections:
       title: Identity Resolution E-Commerce Example
     - path: /personas/identity-resolution-externalids
       title: Identity Resolution External IDs
-    - path: /personas/identity-graph-rules
-      title: Identity Graph Rules
   - path: /personas/activation
     title: Activation
   - path: /personas/warehouses
