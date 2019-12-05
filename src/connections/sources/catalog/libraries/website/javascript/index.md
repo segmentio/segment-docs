@@ -724,12 +724,12 @@ When enabled, analytics.js automatically retries network and server errors. With
 * Support offline tracking. analytics.js queues your events and delivers them when the user comes back online.
 * Better handle network issues. If there happens to be a time where your application can't connect to Segment's API, we'll continue to store the events on the browser to ensure you don't lose any data.
 
-Analytics.js stores events in localStorage (falling back to in-memory storage when localStorage is unavailable), and retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. You can see more details about the retry logic [here](/docs/connections/destinations/catalog/#retries).
+Analytics.js stores events in localStorage (falling back to in-memory storage when localStorage is unavailable), and retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. You can see more details about the retry logic [here](/docs/connections/destinations/#retries).
 
 
 ## Cross-Domain Analytics
 
-[Cross-Domain Analytics](/docs/connections/sources/catalog/libraries/website/cross-domain) allows businesses to measure customer activity across their digital properties, without exposing user data to third parties. For example, if you have multiple brands, content properties, or marketing mini-sites, you likely want to learn how cross-domain browsing impacts your revenue.
+[Cross-Domain Analytics](/docs/connections/sources/cross-domain/) allows businesses to measure customer activity across their digital properties, without exposing user data to third parties. For example, if you have multiple brands, content properties, or marketing mini-sites, you likely want to learn how cross-domain browsing impacts your revenue.
 
 
 ## Cross-Subdomain Analytics
