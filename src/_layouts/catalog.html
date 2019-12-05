@@ -43,9 +43,9 @@ layout: default
       {% include_cached navbar/nav.html %}
 
       <div class="sidebar sidebar--sticky">
-        {% unless page.integration_type  %}
+        {% if page.integration_type and page.integration_type != 'warehouse' %}
           {% include sidebar/{{ page.integration_type }}-menu.html %}
-        {% endunless %}
+        {% endif %}
         {% unless page.hide-feedback %}
           {% include sidebar/feedback.html %}
         {% endunless %}

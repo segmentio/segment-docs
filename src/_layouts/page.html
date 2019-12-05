@@ -15,7 +15,7 @@ layout: main
       <div class="page__body" data-headings-anchors>
         {%- if page.title -%}
           <h1 id="{{ page.title | downcase }}" class="page__heading">
-            {{ page.title }} {% unless page.landing %}{{ page.integration_type | capitalize }}{% endunless %}
+            {{ page.title }}
           </h1>
         {%- endif -%}
         {%- if page.beta -%}
