@@ -96,7 +96,7 @@ When you call `identify` Segment will map to the corresponding Firebase Analytic
 
 You can use these traits to create audiences and views to analyze your users' behavior.
 
-**Note**: Google prohibits sending PII to Firebase unless ["robust notice" is given to your app users](https://firebase.google.com/policies/analytics/). For iOS apps, you must include the iAD Framework to automatically collect the Age, Gender, and Interests Firebase properties.
+**Note**: Google prohibits sending PII to Firebase unless ["robust notice" is given to your app users](https://firebase.google.com/policies/analytics/). For iOS apps, some Analytics features, such as audiences and campaign attribution, and some user properties, such as Age and Interests, require the [AdSupport framework](https://developer.apple.com/reference/adsupport) to be enabled.
 
 Learn more about [Firebase's reporting dashboard here](https://support.google.com/firebase/answer/6317517?hl=en&ref_topic=6317489).
 
