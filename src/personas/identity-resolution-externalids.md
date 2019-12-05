@@ -22,7 +22,7 @@ We automatically promote the following traits and IDs in track and identify call
 | ios.push_token       | context.device.token when context.device.type = 'ios'                 |   
 | android.idfa       | context.device.advertisingId when context.device.type = 'android' AND context.device.adTrackingEnabled = true                    |   
 | ios.idfa       | context.device.advertisingId when context.device.type = 'ios' AND context.device.adTrackingEnabled = true
-| ga_client_id       | context.integrations['Google Analytics'].clientId                     |   
+| ga_client_id       | context.integrations['Google Analytics'].clientId when explicitly captured by users                    |   
 
 ## Custom ExternalIDs
 
