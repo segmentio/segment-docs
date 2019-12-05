@@ -75,7 +75,7 @@ Add the complete URL as the `src` in the image tag.
 <img src="https://api.segment.io/v1/pixel/track?data=eyJ3cml0ZUtleSI6ICJZT1VSX1dSSVRFX0tFWSIsICJ1c2VySWQiOiAiMDI1cGlrYWNodTAyNSIsICJldmVudCI6ICJFbWFpbCBPcGVuZWQiLCAicHJvcGVydGllcyI6IHsgICAic3ViamVjdCI6ICJUaGUgRWxlY3RyaWMgRGFpbHkiLCAgICJlbWFpbCI6ICJwZWVrQXRNZUBlbWFpbC5wb2tlIiB9fQ">
 ```
 
-[Learn more about our Pixel API.](https://segment.com/docs/connections/sources/catalog/libraries/website/pixel/)
+[Learn more about our Pixel API.](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/)
 
 **Track earned traffic with UTM Parameters**
 
