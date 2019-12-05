@@ -1,7 +1,6 @@
 BIN := ./node_modules/.bin
 
 # Core...
-
 JEKYLL_ENV = 'development'
 ifeq ('${BUILDKITE_BRANCH}','master')
 JEKYLL_ENV := 'production'
@@ -21,7 +20,6 @@ intialize-work-dir:
 	@chmod -R 777 vendor/
 	@bundle install --path=vendor
 
-
 .PHONY: build
 build: node_modules vendor/bundle
 	@echo "Jekyll env: ${JEKYLL_ENV}"
@@ -30,6 +28,7 @@ build: node_modules vendor/bundle
 	@echo "env: ${JEKYLL_ENV}"
 	@$(BIN)/webpack --mode=production
 	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
+	@if [ '${BUILDKITE_BRANCH}' == 'staging' ]; then echo "updating sitemap.xml..." && sed -i -r 's/segment.com/segment.build/g' ./_site/sitemap.xml; fi;
 
 .PHONY: upload-docs
 upload-docs:
