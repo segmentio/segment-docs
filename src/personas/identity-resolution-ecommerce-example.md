@@ -20,7 +20,7 @@ Let's take the following example using the eCommerce app, SegKicks:
       "type": "ios"
     },
   },
-  "event": "Opened App",
+  "event": "App Opened",
   "type": "track"
 }
 ```
@@ -36,7 +36,7 @@ Let's take the following example using the eCommerce app, SegKicks:
       "type": "ios"
     },
   },
-  "event": "Clicked ShoeA",
+  "event": "ShoeA Clicked",
   "type": "track"
 }
 ```
@@ -61,9 +61,6 @@ By linking the original anonymous events to the her logged-in activity, the app'
 
 Her identifiers will now contain the original anonymous_id, her email and her user_id:
 ![](images/jane_doe_new_identities.png)
-
-Her final events will look like:
-![](images/jane_doe_new_events.png)
 
 ## Cross-Device Identification
 Users can have multiple touch points with an app ecosystem through more than one device. For example, users might interact with an eCommerce app through both a native app, a mobile browser and a web browser.
@@ -112,6 +109,3 @@ Now let’s view what happens when Jane Doe downloads the Android app SegRuns an
 
 Her final identifiers now have a new anonymous_id from the SegRuns app:
 ![](images/jane_doe_final_new_identities.png)
-
-Her final events now will look like:
-![](images/jane_doe_final_events.png)
