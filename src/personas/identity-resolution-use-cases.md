@@ -18,15 +18,17 @@ By tracking a user's activity across all platforms, brands will be able to more 
 For example, a user who adds a product to a cart on the iPhone app but completes the checkout on the Android app should not be targeted with abandoned cart push notifications on the iPhone app.   
 
 ## Cross-App Identification
-A company’s product ecosystem may also spread out across multiple apps. If a company needs to understand a user's activity across all apps, we recommend connecting all sources to the same Personas space. This will give a comprehensive view of a user's activity across the entire app ecosystem.
+A company’s product ecosystem may also spread out across multiple apps.
 
-If, however, each app should maintain its own identity graph, regardless of the overlap of users, we recommend creating a separate Personas space per app and only connecting sources related to each app to its space. This will give a siloed view of how users interact with each individual app.
+If a company needs to understand a user's activity across all apps, we recommend connecting all sources to the same Personas space. This will give a comprehensive view of a user's activity across the entire app ecosystem.
+
+If, however, each app should maintain its own metrics and LTV analysis, regardless of the overlap of users between apps, we recommend creating a separate Personas space per app and only connecting sources related to each app to its space. This will give a siloed view of how users interact with each individual app.
 
   _Note: Each workspace has two spaces by default. Please contact your CSM to enable additional spaces._
 
 For an eCommerce example, see [here](/docs/personas/identity-resolution-ecommerce-example.md)
 
-## Cross-Department Identification
+## Cross-Channel Identification
 A user can interact with a brand through multiple channels and departments. A user might have touch points with a sales team, a marketing team and a customer support team throughout her customer journey. It's important for companies to have insights into these cross-functional activities to ensure they understand the complete customer experience.
 
 For example, if a user has logged a complaint with a customer support team, the marketing team should exclude this user from an automatic follow-up email asking for her to leave a public product review on their site.
