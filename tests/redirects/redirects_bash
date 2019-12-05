@@ -1,0 +1,13 @@
+#!/bin/bash
+# used for validating a list of docs paths
+## add --cookie $oauth2_proxy_segment for staging
+# grab okta oauth token from browser cookie for that
+# output=`curl --cookie $oauth2_proxy_segment -sS -H -v -o /dev/null -IL -w "%{http_code}" ${url}`
+
+while read p; do
+  url="https://segment.build${p}"
+  output=`curl -sS -H -v -o /dev/null -IL -w "%{http_code}" ${url}`
+  if [ "$output" != "200" ]; then
+    echo $p $output
+  fi
+done < tests/redirects/testPaths.txt
