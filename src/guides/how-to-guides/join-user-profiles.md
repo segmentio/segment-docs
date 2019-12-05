@@ -4,11 +4,11 @@ title: How do I join user profiles?
 
 One of the first questions we get when our customers start querying all of their data is, how do I join all this data together? For example, let's say you'd like to know if support interactions in Zendesk increase revenue in Stripe, or which percentage of users opened your email campaign and visited your website or mobile app? The key to answering these advanced questions is tying your data together across these sources. To do that, you need a common user identifier.
 
-**What is the user ID problem?**
+## What is the user ID problem?
 
 Each SaaS tool you use has its own way of identifying users with a unique primary key. And, you will find each of these different IDs across different collections of tables in your database. So, when you want to start matching Joe Shmo who entered a ticket in Zendesk and also clicked through a campaign in Mailchimp, it starts to get tricky.
 
-![](images/asset_qpY6bhaY.png)
+![](images/funnel_qpY6bhaY.png)
 
 For example, Stripe keeps track of users with a `customer_id`, Segment requires a`user_id`, and Marketo uses `email` to uniquely identify each person.
 
@@ -29,7 +29,7 @@ analytics.identify('1e810c197e', { // that's the user ID from the database
 
 Though we wish you could use a database ID for everything, some tools force you to identify users with an email. Therefore, you should make sure to send email along to all of your other tools, so you can join on that trait as a fallback.
 
-For Segment Destination Users
+## For Segment Destination Users
 
 Integrating as many tools as possible through Segment will make your joins down the road a little easier. When you use Segment to [`identify`](https://segment.com/docs/connections/spec/identify) users, we'll send the same ID and traits out to all the destinations you turn on in our interface. (More about [Segment destinations](https://segment.com/docs/connections/destinations/catalog.)
 
@@ -44,31 +44,14 @@ ON zendesk.tickets.external_id = segment.user_id
 
 Here's a look at the Segment destinations that store the Segment User ID:
 
-**Tool**
+| **Tool**  | **Corresponding Trait** | **Corresponding Sources Table**   |
+| --------- | ----------------------- | --------------------------------- |
+| Zendesk   | external\_id            | zendesk.tickets.external\_id      |
+| Mailchimp | unique\_email\_id       | mailchimp.lists.unique\_email\_id |
+| Intercom  | user\_id                | intercom.users.user\_id           |
 
-**Corresponding Trait**
 
-**Corresponding Sources Table**
-
-Zendesk
-
-external\_id
-
-zendesk.tickets.external\_id
-
-Mailchimp
-
-unique\_email\_id
-
-mailchimp.lists.unique\_email\_id
-
-Intercom
-
-user\_id
-
-intercom.users.user\_id
-
-**How to merge identities**
+## How to merge identities
 
 Whether you're using Segment or not, we suggest creating a master user identities table that maps IDs for each of your sources.
 
@@ -113,65 +96,12 @@ group by 1,2,3,4,5,6
 
 You'll spit out a user table that looks something like this:
 
-**segment\_id**
-
-**email**
-
-**zendesk\_id**
-
-**stripe\_id**
-
-**salesforce\_id**
-
-**intercom\_id**
-
-mYhgYcRBC7
-
-ziggy@stardust.com
-
-1303028105
-
-cus\_6ll4iGAO7X8u7L
-
-00Q31000014XGRcEAO
-
-55c8923f67b8d6524600037f
-
-mYhgYcRBC7
-
-justin@biebs.com
-
-1303028105
-
-cus\_6ll3xVVSLIZomI
-
-00Q31000014XGRcEAO
-
-55c8923f67b8d6524600037f
-
-7adt7XG27c
-
-queen@beyonce.com
-
-1472230319
-
-cus\_6u2ZcW3uC8VwZa
-
-00Q31000014sKCqEAM
-
-5626dfed2e028608710000ce
-
-QZnP7cViH1
-
-kanye@kimye.com
-
-1486907299
-
-cus\_6yrv9bwLgXN78s
-
-00Q31000015G7kIEAS
-
-55f6a142bd531ec6930005fa
+| **segment\_id** | **email**          | **zendesk\_id** | **stripe\_id**      | **salesforce\_id** | **intercom\_id**         |
+| --------------- | ------------------ | --------------- | ------------------- | ------------------ | ------------------------ |
+| mYhgYcRBC7      | ziggy@stardust.com | 1303028105      | cus\_6ll4iGAO7X8u7L | 00Q31000014XGRcEAO | 55c8923f67b8d6524600037f |
+| mYhgYcRBC7      | justin@biebs.com   | 1303028105      | cus\_6ll3xVVSLIZomI | 00Q31000014XGRcEAO | 55c8923f67b8d6524600037f |
+| 7adt7XG27c      | queen@beyonce.com  | 1472230319      | cus\_6u2ZcW3uC8VwZa | 00Q31000014sKCqEAM | 5626dfed2e028608710000ce |
+| QZnP7cViH1      | kanye@kimye.com    | 1486907299      | cus\_6yrv9bwLgXN78s | 00Q31000015G7kIEAS | 55f6a142bd531ec6930005fa |
 
 While creating this table in SQL is a good strategy, we'd be remiss not to point out a few drawbacks to this approach. First, you need to run this nightly or at some regular interval. And, if you have a large user base, it might take a while to run. That said, it's probably still worth it.
 
@@ -194,8 +124,9 @@ ORDER BY 2 desc
 
 **Stripe + Zendesk**
 
-```
+```sql
 -- How many tickets do we receive across each pricing tier?
+
 SELECT stripe.plan_name AS plan_name,
 COUNT(zendesk.ticket_id) AS count_of_tickets
 
@@ -215,7 +146,7 @@ GROUPBY1
 ORDERBY2desc
 ```
 
-**Advanced Tips**
+## Advanced Tips
 
 An alternative to the lookup user table in SQL would be writing a script to grab user IDs across your third-party tools and dump them into your database.
 

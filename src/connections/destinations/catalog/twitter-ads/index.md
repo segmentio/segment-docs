@@ -74,8 +74,8 @@ The following table shows which Segment events map to which type of Twitter tags
 
 <table>
   <tr>
-    <th>Segment Event Name</th>
-    <th>Twitter Tag Type</th>
+    <td>**Segment Event Name**</td>
+    <td>**Twitter Tag Type**</td>
   </tr>
   <tr>
     <td>Order Completed</td>
@@ -111,8 +111,8 @@ The following table show how the properties of Segment events would map to Twitt
 
 <table>
   <tr>
-    <th>Segment Property Name</th>
-    <th>Twitter Parameter</th>
+    <td>**Segment Property Name**</td>
+    <td>**Twitter Parameter**</td>
   </tr>
   <tr>
     <td>value / revenue / (price * quantity)</td>

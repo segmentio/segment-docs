@@ -1,4 +1,4 @@
----
+/docs/connections/warehouses/---
 title: Warehouses and Data Storage
 ---
 
@@ -631,9 +631,9 @@ All tables use `received_at` for the sort key. Amazon Redshift stores your data 
 
 ### More Help
 
-[How do I send custom data to my warehouse?](/docs/faqs/warehouses/custom-data)
+[How do I send custom data to my warehouse?](/docs/connections/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse/)
 
-[How do I give users permissions to my warehouse?](/docs/faqs/warehouses/add-users)
+[How do I give users permissions to my warehouse?](/docs/connections/warehouses/add-warehouse-users/)
 
 Check out our [Frequently Asked Questions about Warehouses](/docs/connections/warehouses/faq/) and [a list of helpful queries to get you started](https://help.segment.com/hc/en-us/articles/205577035-Common-Segment-SQL-Queries).
 
@@ -641,43 +641,43 @@ Check out our [Frequently Asked Questions about Warehouses](/docs/connections/wa
 
 ## FAQs
 
-[How do I decide between Redshift, Postgres, and BigQuery?](/docs/guides/warehouses/redshift-v-postgres-v-bigquery)
+[How do I decide between Redshift, Postgres, and BigQuery?](/docs/connections/warehouses/choose-warehouse/)
 
-[What do you recommend for Postgres: Amazon or Heroku?](/docs/guides/warehouses/postgres-amazon-v-heroku)
+[What do you recommend for Postgres: Amazon or Heroku?](/docs/connections/warehouses/choose-warehouse/)
 
-[How do I give users permissions?](/docs/guides/warehouses/add-users)
+[How do I give users permissions?](/docs/connections/warehouses/add-warehouse-users/)
 
-[What are the limitations of Redshift clusters and our warehouses connector?](/docs/guides/warehouses/redshift-limitations)
+[What are the limitations of Redshift clusters and our warehouses connector?](/docs/connections/warehouses/redshift-faq/)
 
-[Where do I find my source slug?](/docs/guides/warehouses/source-slug)
+[Where do I find my source slug?](/docs/connections/warehouses/faq/#how-do-i-find-my-source-slug)
 
 ### Setting up a warehouse
 
 
-[How do I create a user, grant usage on a schema and then grant the privileges that the user will need to interact with that schema?](/docs/guides/warehouses/add-users)
+[How do I create a user, grant usage on a schema and then grant the privileges that the user will need to interact with that schema?](/docs/connections/warehouses/add-warehouse-users/)
 
-[Which IPs should I whitelist?](/docs/guides/warehouses/whitelist-ip-addresses)
+[Which IPs should I whitelist?](/docs/connections/warehouses/faq/#which-ips-should-i-whitelist)
 
-[Will Segment sync my historical data?](/docs/guides/warehouses/replay)
+[Will Segment sync my historical data?](/docs/connections/warehouses/faq/#will-segment-sync-my-historical-data)
 
-[Can I load in my own data into my warehouse?](/docs/guides/warehouses/custom-data)
+[Can I load in my own data into my warehouse?](/docs/connections/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse)
 
-[Can I control what data is sent to my warehouse?](/docs/guides/warehouses/data-to-warehouses)
+[Can I control what data is sent to my warehouse?](/docs/connections/warehouses/faq/)
 
 ### Managing a warehouse
 
-[How fresh is the data in my warehouse?](/docs/guides/warehouses/fresh-data)
+[How fresh is the data in my warehouse?](/docs/connections/warehouses/faq/)
 
-[Can I add, tweak, or delete some of the tables?](/docs/guides/warehouses/changing-tables)
+[Can I add, tweak, or delete some of the tables?](/docs/connections/warehouses/faq/)
 
-[Can I transform or clean up old data to new formats or specs?](/docs/guides/warehouses/can-we-clean-up-old-data)
+[Can I transform or clean up old data to new formats or specs?](/docs/connections/warehouses/faq/)
 
-[What are common errors and how do I debug them?](/docs/guides/warehouses/errors-and-debugging)
+[What are common errors and how do I debug them?](/docs/connections/warehouses/warehouse-errors/)
 
-[How do I speed up my queries?](/docs/guides/warehouses/improve-query-speeds)
+[How do I speed up my queries?](/docs/connections/warehouses/redshift-tuning/)
 
 ### Analyzing with SQL
 
-[How do I forecast LTV with SQL and Excel for e-commerce businesses?](/docs/guides/warehouses/how-to-forecast-ltv-with-sql-and-excel)
+[How do I forecast LTV with SQL and Excel for e-commerce businesses?](/docs/guides/how-to-guides/forecast-with-sql/)
 
-[How do I measure the ROI of my Marketing Campaigns?](/docs/guides/warehouses/how-to-measure-roi-of-marketing-campaigns)
+[How do I measure the ROI of my Marketing Campaigns?](/docs/guides/how-to-guides/measure-marketing-roi/)

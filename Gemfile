@@ -16,7 +16,6 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'jekyll-redirect-from'
   gem "premonition", "~> 2.0.0"
-  gem "jekyll-commonmark"
   gem "jekyll-include-cache"
 end
 

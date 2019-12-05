@@ -3,6 +3,10 @@
 
   display: block;
 
+  &--left-aligned {
+    padding-left: 25px;
+  }
+
   &__body {
     position: relative;
     list-style-type: none;
