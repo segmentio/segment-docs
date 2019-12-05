@@ -8,11 +8,11 @@ Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/conne
 
 ## Types of Sources
 
-Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud App, plus a fifth type: User-created [Source Functions](/docs/connections/sources/custom/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, for example a ticketing system such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), a payments system such as [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), or a marketing tool like [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
+Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud App, plus a fifth type: User-created [Source Functions](/docs/connections/sources/custom-sources/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, for example a ticketing system such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), a payments system such as [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), or a marketing tool like [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
 
 ## Catalog
 
-If you're just looking to explore all of our destinations check out the [destinations catalog](/catalog).
+If you're just looking to explore all of our destinations check out the [destinations catalog](/docs/connections/destinations/catalog/).
 
 For detailed information about each destination, select one from the list to learn how our API methods are implemented for that destination, and how you can use it through Segment.
 
@@ -77,7 +77,7 @@ In order to override the default, check the destination settings pane in the Seg
 
 ## Data Deliverability
 
-Segment increases deliverability to destinations in two ways: [retries](#retries) and [replays](/docs/guides/general/what-is-replay/). Retries happen automatically for all customers, while replays are available on request for [Business](https://segment.com/pricing) customers.
+Segment increases deliverability to destinations in two ways: [retries](#retries) and [replays](docs/guides/what-is-replay/). Retries happen automatically for all customers, while replays are available on request for [Business](https://segment.com/pricing/) customers.
 
 ### Retries
 
