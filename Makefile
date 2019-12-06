@@ -6,6 +6,10 @@ ifeq ('${BUILDKITE_BRANCH}','master')
 JEKYLL_ENV := 'production'
 endif
 
+ifeq ('${BUILDKITE_BRANCH}','staging')
+JEKYLL_ENV := 'staging'
+endif
+
 .PHONY: dev
 dev: node_modules vendor/bundle
 	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
