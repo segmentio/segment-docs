@@ -93,6 +93,22 @@ vendor/bundle:
 	@chmod -R 777 vendor/
 	@bundle install --path=vendor/bundle
 
+
+.PHONY: lint
+lint: node_modules
+	@echo "Checking yml files..."
+	@npx yamllint src/_data/**/*.yml
+	# @echo "Checking markdown files..."
+	# @npx remark ./src --use preset-lint-markdown-style-guide
+
+.PHONY: test
+test: lint
+
+.PHONY: check-spelling
+check-spelling:
+	@echo 'Check spelling in markdown files..."
+	@npx mdspell 'src/**/*.md' -r --en-us -h
+
 .PHONY: docker-dev
 docker-dev:
 	$(DOCKER_TTY) make dev

@@ -314,4 +314,22 @@ The current breadcrumb is currently determined based on the `page.path` and the 
 ### Searching
 Swiftype is set up as a script in `_layouts/default.html`
 
-Test
+
+## Testing
+
+### Build Testing
+Currently the only automatic testing we perform is linting on the configuration yaml files to ensure proper the project will build.
+
+TODO: define rules for markdown linting and clean up linting errors
+`npx remark ./src --use preset-lint-markdown-style-guide`
+
+### Manual Testing
+There is as also some manual testing scripts that can be run to validate the build.
+
+1. `tests/redirects/redirects_bash`: used for validating a list of paths that we have nginx redirects for
+
+2. `tests/externalLinks/linkTester_bash`: used to validate that external links referenced in docs point to a validate endpoint
+
+3. `tests/imageSizes/getImageSizes.js`: used to get the 10 largest images in the repo.
+
+4. `npx mdspell 'src/**/*.md' -r --en-us`: used to validate spelling in docs, needs to be configured to add Segment terms.
