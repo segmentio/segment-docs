@@ -53,11 +53,7 @@
   {%- else -%}
     {%- assign hostname = "" -%}
   {%- endif -%}
-  {%- if path -%}
-    <link rel="canonical" href="{{hostname}}/docs/{{path}}/" />
-  {%- else -%}
-    <link rel="canonical" href="{{hostname}}/docs/" />
-  {%- endif -%}
+  <link rel="canonical" href="{{hostname}}/docs{{page.url}}" />
   <meta name="application-name" content="Segment">
   <meta name="theme-color" content="#00386C">
   <meta charset="utf-8">
