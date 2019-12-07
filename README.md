@@ -29,6 +29,7 @@ Here's what's here!
 You will need to have Docker installed https://docs.docker.com/install/
 
 * If using Linux, run `docker-compose up`
+* Visit http://localhost:4000/docs/
 
 ### Local development with `ruby` and `node`, without platform-api
 
@@ -39,7 +40,7 @@ If using OSX:
   * Install `Yarn` https://yarnpkg.com/en/docs/install
   * Install `Bundler` `gem install bundler`
   * Run server, `make dev`
-* Visit http://localhost:4000/docsv2/
+  * Visit http://localhost:4000/docs/
 
 ### JUST Editing content?
 
