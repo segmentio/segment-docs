@@ -38,7 +38,7 @@ Once violation forwarding is enabled, you can build a custom anomaly detection s
 3. [Use a tool like Lazy Lantern to automate anomaly detection](/docs/protocols/apis-and-extensions/anomaly_detection/#utilize-a-tool-like-lazy-lantern-to-automate-anomaly-detection)
 
 ### Forward violations to a Slack Channel
-After you've enabled [Violation Forwarding](/docs/protocols/tracking-plan/#violation-forwarding), you will need to [enable the Slack destination](/docs/connections/destinations/catalog/slack/#getting-started) for your Protocols Audit Source. Within the destination settings you will need to add an Incoming Webhook URL for the Slack channel you want to push notifications to. Next, add the `Violation Generated` event to the [Event Templates settings](/docs/connections/destinations/catalog/slack/#event-templates).
+After you've enabled [Violation Forwarding](/docs/protocols/tracking-plan/#violation-forwarding), [enable the Slack destination](/docs/connections/destinations/catalog/slack/#getting-started) for your Protocols Audit Source. In the destination's settings, add an Incoming Webhook URL for the Slack channel you want to push notifications to. Next, add the `Violation Generated` event to the [Event Templates settings](/docs/connections/destinations/catalog/slack/#event-templates).
 
 You can copy and paste the example snippet below into the Event Template field to format the Slack message with the event name, violation description and source name. You can customize this message however you want, including adding @ mentions, and any of the [properties included in the Violation Generated event](/docs/protocols/tracking-plan/#violation-forwarding).
 
