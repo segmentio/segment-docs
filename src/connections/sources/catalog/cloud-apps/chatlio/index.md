@@ -24,8 +24,8 @@ Chatlio automatically ties these events together with other activity on your sit
 
 <table>
   <tr>
-    <th>Event Name</th>
-    <th>Description</th>
+    <td>**Event Name**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>Live Chat Conversation Started</td>

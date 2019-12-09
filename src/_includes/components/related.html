@@ -4,6 +4,8 @@
   {% for related_url in include.items %}
     {% assign subpage = site.pages | where: 'url', related_url | first %}
 
-    {% include components/media-icon.html variant="related" href=subpage.url icon=subpage.icon title=subpage.title content=subpage.excerpt %}
+    {% if subpage.title %}
+      {% include components/media-icon.html variant="related" href=subpage.url icon=subpage.icon title=subpage.title content=subpage.excerpt %}
+    {% endif %}
   {% endfor %}
 </div>

@@ -171,8 +171,19 @@ sections:
   section:
   - path: /personas
     title: Personas Overview
-  - path: /personas/identity-resolution
-    title: Identity Resolution
+  - section_title: Personas Identity Resolution
+    slug: personas/personas-identity-resolution
+    section:
+    - path: /personas/identity-resolution
+      title: Identity Resolution Overview
+    - path: /personas/identity-resolution-use-cases
+      title: Identity Resolution Use Cases
+    - path: /personas/identity-resolution-externalids
+      title: Identity Resolution External IDs
+    - path: /personas/identity-graph-rules
+      title: Identity Graph Rules
+    - path: /personas/identity-resolution-ecommerce-example
+      title: Identity Resolution E-Commerce Example
   - path: /personas/activation
     title: Activation
   - path: /personas/warehouses
@@ -245,8 +256,6 @@ sections:
       title: Manage members
     - path: /segment-app/iam/labels
       title: Label-Based Access Control
-    - path: /segment-app/iam/groups
-      title: Groups
     - path: /segment-app/iam/audit-trail
       title: Audit Trail
     - path: /segment-app/iam/sso

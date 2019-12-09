@@ -2,11 +2,11 @@
 title: How do I measure my advertising funnel?
 ---
 
-However, it's surprisingly hard to answer questions about the ROI of your ad campaigns, and many technical marketers aren't able to dig into the numbers with today's tools. What does a click actually result in? How much should I pay for it? We built our sources for Facebook Ads and Google Adwords to help you understand the true performance and cost of your campaigns.
+It’s surprisingly hard to answer questions about the ROI of your ad campaigns. What does a click actually result in? How much should I pay for it? We built our Sources for Facebook Ads and Google Adwords to help you understand the true performance and cost of your campaigns.
 
-In this article, we dig into the nuances of data collection and potential gotchas around measuring clicks, pageviews, and ultimately conversions.
+In this article, we dig into the nuances of data collection and potential gotchas around measuring clicks, pageviews, and ultimately, conversions.
 
-**Measuring Campaign Performance**
+## Measuring Campaign Performance
 
 Today, most marketing teams think about their paid acquisition funnel as three major steps…
 
@@ -20,17 +20,17 @@ Because page optimization and ad blockers can impact measurement of your funnel,
 
 Let's go through each true funnel step in a little more detail.
 
-**A. Impressions & Clicks:** When a user views an ad, the ad platform increments the count of impressions for that ad. When an ad is clicked, the ad platform logs a click. This is all handled by the ad platform's servers. Facebook and Google work hard to filter invalid and fraudulent traffic, whether that's a mistaken click, a bot, or a competitor looking to drain your advertising budget. Any bad traffic is removed from both your reporting and your monthly bill.
+- **Impressions & Clicks:** When a user views an ad, the ad platform increments the count of impressions for that ad. When an ad is clicked, the ad platform logs a click. This is all handled by the ad platform's servers. Facebook and Google work hard to filter invalid and fraudulent traffic, whether that's a mistaken click, a bot, or a competitor looking to drain your advertising budget. Any bad traffic is removed from both your reporting and your monthly bill.
 
-**B. Page Request Initiated:** After an ad is clicked, a user's browser attempts to load your landing page. This request is the first contact your application has with the user, and the server responds with the content to render the landing page.
+- **Page Request Initiated:** After an ad is clicked, a user's browser attempts to load your landing page. This request is the first contact your application has with the user, and the server responds with the content to render the landing page.
 
-**D. First Javascript Loaded:** The user's browser starts to download the landing page content, which includes the HTML, javascript, and CSS. The browser parses and renders this content, loading the javascript sequentially as it parses the page. By default, analytics.js uses the [`async`](http://www.w3schools.com/tags/att_script_async.asp) [tag](http://www.w3schools.com/tags/att_script_async.asp), which means that the browser won't block the page and will load analytics.js once everything else is ready. Analytics.js wants to get out of the way where possible so you can create the best experience for your customers.
+- **First Javascript Loaded:** The user's browser starts to download the landing page content, which includes the HTML, javascript, and CSS. The browser parses and renders this content, loading the javascript sequentially as it parses the page. By default, analytics.js uses the [`async`](http://www.w3schools.com/tags/att_script_async.asp) [tag](http://www.w3schools.com/tags/att_script_async.asp), which means that the browser won't block the page and will load analytics.js once everything else is ready. Analytics.js wants to get out of the way where possible so you can create the best experience for your customers.
 
-**E. Page Fully Rendered:** The page is fully rendered once all the html, css and scripts have been loaded on the page. This time can vary a lot based on the speed of the internet connection (how fast all the assets download) and the device itself (how fast the local computer can run all of the scripts).
+- **Page Fully Rendered:** The page is fully rendered once all the html, css and scripts have been loaded on the page. This time can vary a lot based on the speed of the internet connection (how fast all the assets download) and the device itself (how fast the local computer can run all of the scripts).
 
-**F. Third-Party Scripts Loaded:** Finally, third-party scripts are asynchronously loaded onto the page. The speed at which these scripts are loaded depends on a variety of factors, like the page size, network speed, and the size and number of the third-party scripts. Once these scripts are loaded, analytics.js triggers a `page` call to our API.
+- **Third-Party Scripts Loaded:** Finally, third-party scripts are asynchronously loaded onto the page. The speed at which these scripts are loaded depends on a variety of factors, like the page size, network speed, and the size and number of the third-party scripts. Once these scripts are loaded, analytics.js triggers a `page` call to our API.
 
-**G. Conversion Event:** From there, a user might fill out a form, signup, or buy your product!
+- **Conversion Event:** From there, a user might fill out a form, signup, or buy your product!
 
 ## How does this impact my ad reporting?
 
@@ -97,11 +97,9 @@ Here's how it works…
 2.  Add the shortened link to your ad.
 
 3.  Measure total clicks from the bit.ly stats page.
+    ![](images/funnel_vMpEZBVz.png)
 
-
-![](images/funnel_vMpEZBVz.png)
-
-1.  In your warehouse, count the number of pages with that unique url parameter from step 1 (make sure you're looking at the same timeframe).
+4.  In your warehouse, count the number of pages with that unique url parameter from step 1 (make sure you're looking at the same timeframe).
 
 
 ```sql

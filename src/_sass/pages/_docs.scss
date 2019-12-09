@@ -1,16 +1,4 @@
 .docs {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
-  &__inner {
-    flex: 1;
-  }
-
-  &__footer {
-    flex: 0 1 auto;
-  }
-
   &__aside {
     position: relative;
     z-index: 0;

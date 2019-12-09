@@ -24,7 +24,7 @@
       {% for category in categories %}
         {% assign integrations = site.data.catalog.destinations.items | where: "categories", category.display_name %}
 
-        <li class="menu-item menu-item--gray menu-item--compact {% if currentIntegration.categories contains category.display_name and activeState != true %}{% assign activeState = true %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
+        <li class="menu-item menu-item--gray menu-item--compact" data-accordion data-class-active="menu-item--active">
           <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
             <span class="flex__column">
               {{ category.display_name }}
@@ -38,8 +38,8 @@
           <ul class="menu-item__body" data-ref="accordion[body]">
             {% for integration in integrations %}
               {% if integration.hidden != true %}
-                <li class="menu-item menu-item--compact {% if integration == currentIntegration %}menu-item--active menu-item--indicator{% endif %}">
-                  <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link {% if integration == currentIntegration %}menu-item__link--indicator{% endif %}">
+                <li class="menu-item menu-item--compact">
+                  <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link">
                     {{ integration.display_name }}
                   </a>
                 </li>
