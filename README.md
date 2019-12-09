@@ -83,6 +83,7 @@ The docs repo works on the honor system right now. The only rule is you can't me
     - push the new commits to the branch
 5. Once you get a review, and the checks pass, merge your PR.
 6. Once you've merged the branch, delete it!
+7. Once merged, you can track build and deploy process in [buildkite/segment-docs](https://buildkite.com/segment/segment-docs).
 
 ### Long running projects
 
