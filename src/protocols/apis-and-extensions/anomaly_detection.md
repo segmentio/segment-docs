@@ -145,7 +145,7 @@ This query produces a table listing the top 10 events with the most violations. 
        limit  10
 ```
 
-### Utilize a tool like Lazy Lantern to automate anomaly detection
+### Use a tool like Lazy Lantern to automate anomaly detection
 
 After you've set up [Violation Forwarding](/docs/protocols/tracking-plan/#violation-forwarding), you can enable the Lazy Lantern destination for the your `Protocols Audit Source` to start automatically generating Slack notifications when an anomaly occurs. Lazy Lantern can also be connected to your Segment production sources to track if any events are experiencing volume anomalies.
 
