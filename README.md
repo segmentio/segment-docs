@@ -29,6 +29,7 @@ Here's what's here!
 You will need to have Docker installed https://docs.docker.com/install/
 
 * If using Linux, run `docker-compose up`
+* Visit http://localhost:4000/docs/
 
 ### Local development with `ruby` and `node`, without platform-api
 
@@ -39,7 +40,7 @@ If using OSX:
   * Install `Yarn` https://yarnpkg.com/en/docs/install
   * Install `Bundler` `gem install bundler`
   * Run server, `make dev`
-* Visit http://localhost:4000/docsv2/
+  * Visit http://localhost:4000/docs/
 
 ### JUST Editing content?
 
@@ -120,6 +121,21 @@ To add images to a docs page, create an `images` folder for the docs path, save 
 
 There are no naming conventions at this time. Anything you see with `asset` was dowloaded by a script to save it from Contents.io. :)
 
+### Adding links
+
+Use the standard markdown format for links (ex: `[text](https://example.com)`).
+To make a link open in a new tab append `[text](https://example.com){:target="_blank"}` to the end.
+
+### Escaping code snippets
+
+Certain code syntax will be interpreted by Jekyll/Liquid as site code. If you're having trouble showing code snippets in the docs, you can wrap the snippet in a `{% raw %}` tag. In the example below, the curly brackets would not render in the docs. The raw tags ensure the code renders properly.
+
+```
+{% raw %}
+To pass source name in the slack message, format it like so: `{{properties.sourceName}}`
+{% endraw %}
+```
+
 ## Frontmatter
 
 Each Markdown file in the docs can have frontmatter (also and formerly known as "metadata") associated with it at the top of the file. (For clarity, we call it "Frontmatter" to prevent confusion with the Segment "Metadata service".
@@ -142,7 +158,7 @@ Each piece of frontmatter does something special:
 - `hide_toc`: hides the right-nav TOC that's generated from H2s
 - `integration_type`: This is set in the `_config.yml` on three paths to add a noun (Source, Destination, or Warehouse) to the end of the title, and the end of the title tag in the html layout. It also controls the layout and icon for some of these.
 - `landing`: defaults to false. Use this to drop the noun set by `integration_type` from the tab title.
-- `redirect_from`: **Note** We aren't using this right now. Defaults to null. Takes an array of URLs from the frontmatter in a file, and generates a "stub" page at each URL. Each stub file redirects to the original file.
+- `redirect_from`: **Note** We are mostly using NGINX redirects. Defaults to null. Takes an array of URLs from the frontmatter in a file, and generates a "stub" page at each URL at build-time. Each stub file redirects to the original file.
 - `seo-changefreq`: default: `weekly `. Use the values [in the sitemap spec](https://www.sitemaps.org/protocol.html#xmlTagDefinitions). - sets the `changefreq` tag in the sitemap.xml generator, which tells search crawlers how often to check back.
 - `seo-priority`: values from `1.0` to `0.1`, default: `0.5 `. Sets the `Priority` tag in the sitemap
 
@@ -298,3 +314,23 @@ The current breadcrumb is currently determined based on the `page.path` and the 
 
 ### Searching
 Swiftype is set up as a script in `_layouts/default.html`
+
+
+## Testing
+
+### Build Testing
+Currently the only automatic testing we perform is linting on the configuration yaml files to ensure proper the project will build.
+
+TODO: define rules for markdown linting and clean up linting errors
+`npx remark ./src --use preset-lint-markdown-style-guide`
+
+### Manual Testing
+There is as also some manual testing scripts that can be run to validate the build.
+
+1. `tests/redirects/redirects_bash`: used for validating a list of paths that we have nginx redirects for
+
+2. `tests/externalLinks/linkTester_bash`: used to validate that external links referenced in docs point to a validate endpoint
+
+3. `tests/imageSizes/getImageSizes.js`: used to get the 10 largest images in the repo.
+
+4. `npx mdspell 'src/**/*.md' -r --en-us`: used to validate spelling in docs, needs to be configured to add Segment terms.

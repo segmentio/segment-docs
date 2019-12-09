@@ -14,7 +14,7 @@ This document was last updated on August 13, 2018. If you notice any gaps, outda
 1. From your workspace's `/sources` page, click `Add Source`.
 
 2. Choose Google Ads and click `Connect`.
-  
+
   ![](images/connect.png)
 
 3. Click `Authenticate Google Ads` and go through the authentication flow.
@@ -80,6 +80,7 @@ Below are tables outlining the properties included in the collections listed abo
 Currency values in Google Ads are in micros, or one millionth of the smallest unit. For example, in USD, the value for `campaign.budget` would be in one millionth of a cent.
 
 ### Ad Groups
+
 |  Property Name | Description |
 |  ------ | ------ |
 | adwords_customer_id | The 10-digit Google Ads Customer ID. |
@@ -89,6 +90,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | status | [Status](https://developers.google.com/adwords/api/docs/reference/v201802/AdGroupService.AdGroup.Status) of this ad group. |
 
 ### Ad Performance Report
+
 |  Property Name | Description |
 |  ------ | ------ |
 | account_currency_code | The currency of the Customer account. |
@@ -135,6 +137,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | view_through_conversions | The total number of view-through conversions. |
 
 ### Ads
+
 |  Property Name | Description |
 |  ------ | ------ |
 | ad_group_id | The id of the adgroup containing this ad. |
@@ -147,6 +150,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | url | Unique identifier for this instance of UrlData. |
 
 ### Campaigns
+
 |  Property Name | Description |
 |  ------ | ------ |
 | adwords_customer_id | The 10-digit Google Ads Customer ID. |
@@ -158,6 +162,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | status | [Status](https://developers.google.com/adwords/api/docs/reference/v201802/CampaignService.CampaignStatus) of the campaign. |
 
 ### Campaign Performance Report
+
 |  Property Name | Description |
 |  ------ | ------ |
 | active_view_impressions | How often your ad has become viewable on a Display Network site. |
@@ -211,6 +216,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | view_through_conversions | The total number of view-through conversions. |
 
 ### Click Performance Report
+
 |  Property Name | Description |
 |  ------ | ------ |
 | ad_format | The underlying media format of the ad. |
@@ -232,6 +238,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | user_list_id | The ID of the UserList (audience). |
 
 ### Search Performance Report
+
 |  Property Name | Description |
 |  ------ | ------ |
 | ad_group_id | The ID of the AdGroup. |
@@ -292,6 +299,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | year | The year, formatted as yyyy. |
 
 ### Keyword Performance Report
+
 |  Property Name | Description |
 |  ------ | ------ |
 | ad_group_id | The ID of the AdGroup. |

@@ -2,7 +2,7 @@
 title: How do I measure the ROI of my Marketing Campaigns?
 ---
 
-The purpose of marketing campaigns is to drive traffic to your store front. But how do you know which campaigns yield the most conversions or what channel across the campaigns were most effective?
+The purpose of marketing campaigns is to drive traffic (and sales). But how do you know which campaigns yield the most conversions or what channel across the campaigns was most effective?
 
 This guide provides you with the tools to answer these questions with SQL so that your marketing team can reproduce the hit campaigns and consistently generate loyal customers.
 

@@ -160,7 +160,7 @@ The integration currently only supports the `FBSDKAppEventNameActivatedApp` pre-
 
 You will have to be sure that the [IDFA](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa) is working within your app, which involves adding the [iAD framework](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa).
 
-Simiarly, on Android, you'll need to include the Play Services Ads library as [mentioned here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-do-you-handle-unique-identifiers-) in order for the `advertisingId` to populate.
+Similarly, on Android, you'll need to include the Play Services Ads library as [mentioned here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-do-you-handle-unique-identifiers-) in order for the `advertisingId` to populate.
 
 Once you have added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
 
