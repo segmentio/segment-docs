@@ -47,11 +47,6 @@ We allow for each workspace to send up to 250 API calls + objects per MTU. This 
 *   The vast majority of Segment customers use well under these limits.
 
 
-## How does my event and object volume impact my pricing?
-
-We allow for each workspace to send up to 250 API calls + objects per MTU. This means that on a plan with a 10,000 MTU limit you can send up to 2.5M API calls + objects per month. Most customers will never hit this limit; business plans are eligible for custom limits.
-
-
 ## Why is my MTU count different from what I see in my destinations/other tools?
 
 Comparing numbers between any two end-tools (or between Segment and an end tool) is rarely going to produce identical numbers. Each tool accepts and defines incoming data slightly differently, and they will not always match 100% depending on what types of data the tool accepts.
