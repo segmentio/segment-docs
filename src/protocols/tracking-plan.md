@@ -2,10 +2,9 @@
 title: 'Protocols: Tracking Plans'
 ---
 
+## What is a Protocols Tracking Plan?
 
-## What is a Tracking Plan?
-
-A Tracking Plan is a data spec outlining the events and properties you intend to collect across your Segment Sources. Crafting a comprehensive Tracking Plan takes time and effort across a range of teams within your organization. It also requires a deep understanding of your business objectives. Once created, it becomes a highly valuable resource for both the instrumenting engineers and all consumers of the data flowing through Segment.
+A Tracking Plan is a data spec outlining the events and properties you intend to collect across your Segment Sources. Crafting a comprehensive Tracking Plan takes time and effort across a range of teams within your organization, and a deep understanding of your business objectives. [Learn more about data quality best practices here](/docs/protocols/data-quality/). Once created though, the Tracking Plan becomes a highly valuable resource for both the engineers instrumenting Segment and all consumers of the data flowing through Segment.
 
 When building a Tracking Plan, we recommend starting with the key metrics that drive value for your business. Key metrics may include new user signups, top line revenue, product utilization and more. With key metrics defined, it becomes much easier to define which user actions help track or improve those key metrics. Each user action maps to a distinct event, or `.track()`  call, that you will track in Segment. `.identify()`, `.page()` and `.group()` calls can also be validated in the Tracking Plan.
 
@@ -14,7 +13,6 @@ The Segment Tracking Plan feature allows you to validate your expected events ag
 Tracking Plans are stored at workspace level, and can be connected to one or more Sources.
 
 ![](images/25563111_Screen+Shot+2018-08-28+at+11.52.29+PM.png)
-
 
 
 ## Create a Tracking Plan
