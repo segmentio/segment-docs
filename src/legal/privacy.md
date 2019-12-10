@@ -27,7 +27,7 @@ Users in the European Economic Area should be sure to read the important informa
 * [Third Party Sites and Services](#Third-Party-Sites-and-Services)
 * [User Generated Content](#User-Generated-Content)
 * [Children](#Children)
-* [Organiation-Administered Accounts](#Organization-Administered-Accounts)
+* [Organization-Administered Accounts](#Organization-Administered-Accounts)
 * [Changes to this Privacy Policy](#Changes-to-This-Privacy-Policy)
 * [Contact Us](#Contact-Us)
 * [Additional Information for European Union.](#Additional-Information-for-European-Union)
