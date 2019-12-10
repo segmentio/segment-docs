@@ -34,11 +34,12 @@ You will need to have Docker installed https://docs.docker.com/install/
 ### Local development with `ruby` and `node`, without platform-api
 
 If using OSX:
-  * install command line tools, `xcode-select --install`
-  * Install `Ruby` https://www.ruby-lang.org/en/documentation/installation/
+  * Install command line tools, `xcode-select --install`
+  * Install `Ruby` >= 2.3.0 https://www.ruby-lang.org/en/documentation/installation/
+  * Ensure you're running `RubyGems` >= 2.5.0 by running `gem update --system` followed by `gem --version`
+  * Install `Bundler 2` with `gem install bundler`
   * Install `Node` https://nodejs.org/en/download/
   * Install `Yarn` https://yarnpkg.com/en/docs/install
-  * Install `Bundler` `gem install bundler`
   * Run server, `make dev`
   * Visit http://localhost:4000/docs/
 
