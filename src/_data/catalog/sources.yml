@@ -166,9 +166,9 @@ items:
     drip email campaigns really easy.
   url: connections/sources/catalog/cloud-apps/customer-io
   logo:
-    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/customerio-default.svg'
+    url: 'https://cdn.filepicker.io/api/file/GyZ581zaSTmv9T1ivLE0'
   mark:
-    url: 'https://cdn.filepicker.io/api/file/OQIACYRJSrGSP4pBkeTY'
+    url: 'https://cdn.filepicker.io/api/file/w8zEnnazRwaPhGG4lLux'
   categories:
   - Email Marketing
 - display_name: Delighted
@@ -585,7 +585,6 @@ items:
     url: 'https://cdn.filepicker.io/api/file/e2cgQ6vTUa8zVqJgsr4Q'
   categories:
   - Enrichment
-  - Mobile
 - display_name: React Native
   slug: react-native
   name: catalog/sources/react-native
@@ -657,12 +656,12 @@ items:
   categories:
   - Email Marketing
 - display_name: Shopify (by Littledata)
-  slug: shopify-by-littledata
+  slug: shopify-littledata
   name: catalog/sources/shopify-littledata
   description: >-
     Littledata is a third-party plugin for installing Segment and collecting
     robust ecommerce data on your Shopify store
-  url: connections/sources/catalog/libraries/website/shopify-by-littledata
+  url: connections/sources/catalog/libraries/website/shopify-littledata
   logo:
     url: 'https://cdn.filepicker.io/api/file/o871amWREKVzwCH3GNXN'
   mark:

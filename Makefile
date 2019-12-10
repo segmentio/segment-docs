@@ -1,17 +1,20 @@
 BIN := ./node_modules/.bin
 
 # Core...
-
 JEKYLL_ENV = 'development'
 ifeq ('${BUILDKITE_BRANCH}','master')
 JEKYLL_ENV := 'production'
+endif
+
+ifeq ('${BUILDKITE_BRANCH}','staging')
+JEKYLL_ENV := 'staging'
 endif
 
 .PHONY: dev
 dev: node_modules vendor/bundle
 	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
 		"$(BIN)/webpack --mode=development --watch" \
-		"bundle exec jekyll clean && jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
+		"bundle exec jekyll clean && bundle exec jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
 
 .PHONY: intialize-work-dir
 intialize-work-dir:
@@ -21,7 +24,6 @@ intialize-work-dir:
 	@chmod -R 777 vendor/
 	@bundle install --path=vendor
 
-
 .PHONY: build
 build: node_modules vendor/bundle
 	@echo "Jekyll env: ${JEKYLL_ENV}"
@@ -30,6 +32,7 @@ build: node_modules vendor/bundle
 	@echo "env: ${JEKYLL_ENV}"
 	@$(BIN)/webpack --mode=production
 	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
+	@if [ '${BUILDKITE_BRANCH}' == 'staging' ]; then echo "updating sitemap.xml..." && sed -i -r 's/segment.com/segment.build/g' ./_site/sitemap.xml; fi;
 
 .PHONY: upload-docs
 upload-docs:
@@ -93,6 +96,22 @@ vendor/bundle:
 	@mkdir -p vendor && mkdir -p vendor/bundle
 	@chmod -R 777 vendor/
 	@bundle install --path=vendor/bundle
+
+
+.PHONY: lint
+lint: node_modules
+	@echo "Checking yml files..."
+	@npx yamllint src/_data/**/*.yml
+	# @echo "Checking markdown files..."
+	# @npx remark ./src --use preset-lint-markdown-style-guide
+
+.PHONY: test
+test: lint
+
+.PHONY: check-spelling
+check-spelling:
+	@echo 'Check spelling in markdown files..."
+	@npx mdspell 'src/**/*.md' -r --en-us -h
 
 .PHONY: docker-dev
 docker-dev:

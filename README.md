@@ -29,17 +29,19 @@ Here's what's here!
 You will need to have Docker installed https://docs.docker.com/install/
 
 * If using Linux, run `docker-compose up`
+* Visit http://localhost:4000/docs/
 
 ### Local development with `ruby` and `node`, without platform-api
 
 If using OSX:
-  * install command line tools, `xcode-select --install`
-  * Install `Ruby` https://www.ruby-lang.org/en/documentation/installation/
+  * Install command line tools, `xcode-select --install`
+  * Install `Ruby` >= 2.3.0 https://www.ruby-lang.org/en/documentation/installation/
+  * Ensure you're running `RubyGems` >= 2.5.0 by running `gem update --system` followed by `gem --version`
+  * Install `Bundler 2` with `gem install bundler`
   * Install `Node` https://nodejs.org/en/download/
   * Install `Yarn` https://yarnpkg.com/en/docs/install
-  * Install `Bundler` `gem install bundler`
   * Run server, `make dev`
-* Visit http://localhost:4000/docsv2/
+  * Visit http://localhost:4000/docs/
 
 ### JUST Editing content?
 
@@ -82,6 +84,7 @@ The docs repo works on the honor system right now. The only rule is you can't me
     - push the new commits to the branch
 5. Once you get a review, and the checks pass, merge your PR.
 6. Once you've merged the branch, delete it!
+7. Once merged, you can track build and deploy process in [buildkite/segment-docs](https://buildkite.com/segment/segment-docs).
 
 ### Long running projects
 
@@ -314,4 +317,22 @@ The current breadcrumb is currently determined based on the `page.path` and the 
 ### Searching
 Swiftype is set up as a script in `_layouts/default.html`
 
-Test
+
+## Testing
+
+### Build Testing
+Currently the only automatic testing we perform is linting on the configuration yaml files to ensure proper the project will build.
+
+TODO: define rules for markdown linting and clean up linting errors
+`npx remark ./src --use preset-lint-markdown-style-guide`
+
+### Manual Testing
+There is as also some manual testing scripts that can be run to validate the build.
+
+1. `tests/redirects/redirects_bash`: used for validating a list of paths that we have nginx redirects for
+
+2. `tests/externalLinks/linkTester_bash`: used to validate that external links referenced in docs point to a validate endpoint
+
+3. `tests/imageSizes/getImageSizes.js`: used to get the 10 largest images in the repo.
+
+4. `npx mdspell 'src/**/*.md' -r --en-us`: used to validate spelling in docs, needs to be configured to add Segment terms.

@@ -2,9 +2,10 @@
 title: Segment Documentation
 layout: home
 landing: true
+hide-toc: true
 ---
 
-Learn how to use Segment to collect and responsibly manage your customer data, and integrate it with hundreds of tools, so that you can delight your customers and grow your business.
+Learn how to use Segment to collect, responsibly manage, and integrate your customer data with hundreds of tools.
 
 ## Documentation Highlights
 
@@ -20,4 +21,4 @@ Learn how to use Segment to collect and responsibly manage your customer data, a
   how other developers have achieved success.
 
 ### Want more hands-on guidance?
-  For a more hands-on tutorial of Segment, check out [Segment University](https://university.segment.com/). It offers step-by-step instructions, from first steps up through some of our more advanced features.
+  For a more hands-on tutorial of Segment, check out [Segment University](https://university.segment.com/). It offers step-by-step instructions, starting with first steps and going through some of our more advanced features.

@@ -2,7 +2,7 @@
 title: How to Guides Index
 ---
 
-Our How-to Guides give you an in-depth walk through and example of some of the things you can do with Segment, some examples of analytic paths, and some best practices in implementation. We've also got a series of [Quickstart Guides](#quickstart-guides) for each of our library Sources.
+Segment’s How-to Guides provide an in-depth walk through and examples of the many things you can do to implement, automate, engage with, and begin analyzing your data. We’ve also got a series of [Quickstart Guides](#quickstart-guides) for each of our Source libraries.
 
 ## Implementation
 - [What are best practices for identifying users?](best-practices-identify)
@@ -30,13 +30,13 @@ Our How-to Guides give you an in-depth walk through and example of some of the t
 ## Quickstart Guides
 
 - [Analytics.js (Javascript) Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
-- [.NET Quickstart Guide](/docs/connections/sources/catalog/server/net/quickstart/)
-- [Go Library Quickstart Guide](/docs/connections/sources/catalog/server/go/quickstart/)
-- [Python Library Quickstart Guide](/docs/connections/sources/catalog/server/python/quickstart/)
-- [Rust Quickstart Guide](/docs/connections/sources/catalog/server/rust/quickstart/)
-- [Java Library Quickstart Guide](/docs/connections/sources/catalog/server/java/quickstart/)
-- [PHP Library Quickstart Guide](/docs/connections/sources/catalog/server/php/quickstart/)
-- [Node.js Library Quickstart Guide](/docs/connections/sources/catalog/server/node/quickstart/)
-- [Ruby Library Quickstart Guide](/docs/connections/sources/catalog/server/ruby/quickstart/)
-- [iOS Quickstart Guide](/docs/connections/sources/catalog/mobile/ios/quickstart/)
-- [Android Quickstart Guide](/docs/connections/sources/catalog/mobile/android/quickstart/)
+- [.NET Quickstart Guide](/docs/connections/sources/catalog/libraries/server/net/quickstart/)
+- [Go Library Quickstart Guide](/docs/connections/sources/catalog/libraries/server/go/quickstart/)
+- [Python Library Quickstart Guide](/docs/connections/sources/catalog/libraries/server/python/quickstart/)
+- [Rust Quickstart Guide](/docs/connections/sources/catalog/libraries/server/rust/quickstart/)
+- [Java Library Quickstart Guide](/docs/connections/sources/catalog/libraries/server/java/quickstart/)
+- [PHP Library Quickstart Guide](/docs/connections/sources/catalog/libraries/server/php/quickstart/)
+- [Node.js Library Quickstart Guide](/docs/connections/sources/catalog/libraries/server/node/quickstart/)
+- [Ruby Library Quickstart Guide](/docs/connections/sources/catalog/libraries/server/ruby/quickstart/)
+- [iOS Quickstart Guide](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/)
+- [Android Quickstart Guide](/docs/connections/sources/catalog/libraries/mobile/android/quickstart/)
