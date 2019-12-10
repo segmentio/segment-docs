@@ -631,9 +631,9 @@ All tables use `received_at` for the sort key. Amazon Redshift stores your data 
 
 ### More Help
 
-[How do I send custom data to my warehouse?](/docs/faqs/warehouses/custom-data)
+[How do I send custom data to my warehouse?](/docs/connections/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse/)
 
-[How do I give users permissions to my warehouse?](/docs/faqs/warehouses/add-users)
+[How do I give users permissions to my warehouse?](/docs/connections/warehouses/add-warehouse-users/)
 
 Check out our [Frequently Asked Questions about Warehouses](/docs/connections/warehouses/faq/) and [a list of helpful queries to get you started](https://help.segment.com/hc/en-us/articles/205577035-Common-Segment-SQL-Queries).
 

@@ -2,7 +2,7 @@
 title: WebEngage Destination
 ---
 
-This integration is maintained by [WebEngage Support](support@webengage.com).
+This integration is maintained by [WebEngage Support](mailto:support@webengage.com).
 
 ## Getting Started
 
