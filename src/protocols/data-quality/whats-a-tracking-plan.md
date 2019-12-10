@@ -93,7 +93,7 @@ There also shouldn't be any dynamically generated `key`'s in the `properties` di
 
 Here is Segment's `Lead Captured` `.track()` call:
 
-```
+```js
 analytics.track(userId, 'Lead Captured', {
   email: 'email',
   location: 'header navbar'

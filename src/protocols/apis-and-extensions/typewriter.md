@@ -10,7 +10,7 @@ At a high-level, Typewriter can take an event from your Tracking Plan like this 
 
 And use it to generate a typed analytics call in different languages:
 
-```javascript
+```js
 // Example client in your web app
 const typewriter = require('./analytics')
 

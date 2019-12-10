@@ -51,7 +51,7 @@ Customers can use this endpoint in testing suites or to test payloads against cu
 
 The following snippet can be added to your dev environment or executed in a web console to use the debug endpoint. When enabled, all outbound Segment events will hit the debug endpoint. Events will not be delivered to Segment Destinations, so make sure to disable this when deploying your code to production.
 
-```
+```js
 analytics.Integrations["Segment.io"].prototype._enqueue = analytics.Integrations["Segment.io"].prototype.enqueue;
 analytics.Integrations["Segment.io"].prototype.enqueue = function(path, msg, fn) {
   this.options.apiHost = 'debug-api.segment.com/v1'
@@ -62,7 +62,7 @@ analytics.Integrations["Segment.io"].prototype.enqueue = function(path, msg, fn)
 ### Enable debug mode with querystring flag
 
 Analytics.js does not have a built-in 'debug mode' flag yet. You can add a querystring flag to your Segment instrumentation with the following snippet:
-```
+```js
 // Point to the debug-api when the URL contains the query param "?segment_debug=true"
 
 var apiHost;
