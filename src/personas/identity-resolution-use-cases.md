@@ -8,7 +8,7 @@ Identity Resolution allows a company to link a customer's journey from pre-accou
 
 By linking any anonymous events a user had before creating an account to a user's logged-in activity, a marketing team can now have a complete understanding of a user's past interactions with your app.
 
-This can lead to invaluable insights around the behaviors and triggers in an app that a motivate a user to register for an account.
+This can lead to invaluable insights around the behaviors and triggers in an app that motivate a user to register for an account.
 
 ## Cross-Device Identification
 Users can have multiple touch points with an app ecosystem through more than one device. For example, users might view an eCommerce site through a mobile native app, a mobile web browser or a desktop web browser.
