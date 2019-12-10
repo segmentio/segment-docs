@@ -109,3 +109,10 @@ Now let’s view what happens when Jane Doe downloads the Android app SegRuns an
 
 Her final identifiers now have a new anonymous_id from the SegRuns app:
 ![](images/jane_doe_final_new_identities.png)
+
+## Conclusion
+By combining the events throughout Jane's entire customer journey from anonymous to known user, cross-device and cross-app identification, SegKicks and SegRuns can now work together to understand how to give Jane the best customer experience possible while increasing her LTV across the entire SegmentKicks ecosystem.
+
+For example, if Jane looked at ShoeC on her iPhone and completed checkout for ShoeC on her Android, SegKicks will now know to exclude her from a cart abandonment email for ShoeC. This wouldn't be possible if SegKicks had only looked at her activity on the iPhone.  
+
+Additionally, most shoes need to be replaced every 300 to 400 miles. By understanding her activity on SegRuns, SegKicks will now be able to more effectively remind Jane to repurchase ShoeC or ShoeD once she's reached that mileage.  
