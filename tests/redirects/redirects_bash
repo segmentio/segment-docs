@@ -3,11 +3,19 @@
 ## add --cookie $oauth2_proxy_segment for staging
 # grab okta oauth token from browser cookie for that
 # output=`curl --cookie $oauth2_proxy_segment -sS -H -v -o /dev/null -IL -w "%{http_code}" ${url}`
+echo "Testing redirects..."
 
-while read p; do
-  url="https://segment.build${p}"
+check_link () {
+  url="https://segment.com$1"
   output=`curl -sS -H -v -o /dev/null -IL -w "%{http_code}" ${url}`
   if [ "$output" != "200" ]; then
-    echo $p $output
+    echo $1 $output
   fi
+}
+
+while read p; do
+ check_link $p &
 done < tests/redirects/testPaths.txt
+
+wait
+exit 1
