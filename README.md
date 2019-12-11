@@ -151,18 +151,27 @@ It'll look something like this:
     ---
 ```
 
-Each piece of frontmatter does something special:
-- `published`: defaults to true. Set this to "false" to prevent Jekyll from rendering an HTML page for this file. Good for when you're working on something in the repo but aren't ready to release it yet, and don't want to use a Draft PR.
+Each piece of frontmatter does something special!
+
+#### Content-related frontmatter
 - `beta`: default false. When true, show an "in beta" warning in the page layout (see the warning in `_includes/content/beta.md`)
-- `hide-feedback`: defaults to false. When true, hide the feedback footer. Good for legal and landing pages.
-- `hidden`: omits the file from the `sitemap.xml`, adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file, and drops it from the convenience script for regenerating the nav.
 - `rewrite`: defaults to false. This is a legacy frontmatter flag that comes from the old `site-docs` repo, and which labels any destination that was rewritten in ~2018 to a standardized template.
-- `hide_toc`: hides the right-nav TOC that's generated from H2s
 - `integration_type`: This is set in the `_config.yml` on three paths to add a noun (Source, Destination, or Warehouse) to the end of the title, and the end of the title tag in the html layout. It also controls the layout and icon for some of these.
+- `source-type`: This is set only on the sources path, and runs some logic in the `integration.html` template to explain which cloud-apps are object vs event sources.
+
+#### Utility frontmatter
+- `published`: defaults to true. Set this to "false" to prevent Jekyll from rendering an HTML page for this file. Good for when you're working on something in the repo but aren't ready to release it yet, and don't want to use a Draft PR.
+- `hidden`: omits the file from the `sitemap.xml`, adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file, and drops it from the convenience script for regenerating the nav.
+- `hide-feedback`: defaults to false. When true, hide the feedback footer. Good for legal and landing pages.
+- `hide_toc`: hides the right-nav TOC that's generated from H2s
 - `landing`: defaults to false. Use this to drop the noun set by `integration_type` from the tab title.
 - `redirect_from`: **Note** We are mostly using NGINX redirects. Defaults to null. Takes an array of URLs from the frontmatter in a file, and generates a "stub" page at each URL at build-time. Each stub file redirects to the original file.
 - `seo-changefreq`: default: `weekly `. Use the values [in the sitemap spec](https://www.sitemaps.org/protocol.html#xmlTagDefinitions). - sets the `changefreq` tag in the sitemap.xml generator, which tells search crawlers how often to check back.
 - `seo-priority`: values from `1.0` to `0.1`, default: `0.5 `. Sets the `Priority` tag in the sitemap
+
+
+
+
 
 ### Sidenav Icons
 We have two neat icons that you can add to a bottom-level menu item to mark it with an icon. (If it's a folder/directory, the "expand" carat blocks this icon from appearing.)
