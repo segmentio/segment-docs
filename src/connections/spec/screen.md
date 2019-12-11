@@ -26,11 +26,7 @@ And here's the corresponding Objective-C event that would generate the above pay
 Beyond the common fields, the `screen` call takes the following fields:
 
 <table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-screen-name.md %}
   {% include content/spec-field-screen-properties.md %}
 </table>

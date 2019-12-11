@@ -31,11 +31,7 @@ analytics.track("Registered", {
 Beyond the common fields, the `track` call has the following fields:
 
 <table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-event.md %}
   {% include content/spec-field-event-properties.md %}
 </table>
@@ -111,8 +107,7 @@ The following is all the reserved properties we have standardized that apply to 
   <tr>
     <td>`revenue`</td>
     <td>Number</td>
-    <td>Amount of revenue an event resulted in
-      <p>This should be a decimal value, so a shirt worth $19.99 would result in a `revenue` of `19.99`.</p></td>
+    <td>Amount of revenue an event resulted in. This should be a decimal value, so a shirt worth $19.99 would result in a `revenue` of `19.99`.</td>
   </tr>
   <tr>
     <td>`currency`</td>
@@ -123,8 +118,8 @@ The following is all the reserved properties we have standardized that apply to 
   <tr>
     <td>`value`</td>
     <td>Number</td>
-    <td>An abstract "value" to associate with an event
-      <p>This is typically used in situations where the event doesn't generate real-dollar revenue, but has an intrinsic value to a marketing team, like newsletter signups.</p></td>
+    <td>An abstract "value" to associate with an event.
+      This is typically used in situations where the event doesn't generate real-dollar revenue, but has an intrinsic value to a marketing team, like newsletter signups.</td>
   </tr>
 </table>
 

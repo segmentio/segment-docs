@@ -37,11 +37,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 Beyond the common fields, the `group` call takes the following fields:
 
 <table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-group-id.md %}
   {% include content/spec-field-group-traits.md %}
 </table>

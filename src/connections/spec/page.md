@@ -28,11 +28,7 @@ analytics.page("Home");
 Beyond the common fields, the `page` call takes the following fields:
 
 <table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-page-name.md %}
   {% include content/spec-field-page-properties.md %}
 </table>
