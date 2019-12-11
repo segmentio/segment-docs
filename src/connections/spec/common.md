@@ -4,7 +4,7 @@ title: 'Spec: Common Fields'
 
 In the Segment [Spec](/docs/connections/spec/) all the [API calls](/docs/connections/spec#api-calls) have a common structure, and a few common fields.
 
-However, not all destinations accept all fields included in the Spec. Not sure which fields an destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on Github](https://github.com/segment-integrations).
+However, not all destinations accept all fields included in the Spec. Not sure which fields a destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on Github](https://github.com/segment-integrations).
 
 ## Structure
 Every API call has the same core structure and fields. These fields describe user identity, timestamping and mechanical aides like API version.
@@ -129,7 +129,7 @@ Context is a dictionary of extra information that provides useful context about 
     <td>`active`</td>
     <td>Boolean</td>
     <td>Whether a user is active
-
+      <br><br>
       This is usually used to flag an `.identify()` call to just update the traits but not "last seen."
     </td>
   </tr>
@@ -137,7 +137,7 @@ Context is a dictionary of extra information that provides useful context about 
     <td>`app`</td>
     <td>Object</td>
     <td>dictionary of information about the current application, containing `name`, `version` and `build`.
-
+    <br><br>
     This is collected automatically from our mobile libraries when possible.
     </td>
   </tr>
@@ -145,7 +145,7 @@ Context is a dictionary of extra information that provides useful context about 
     <td>`campaign`</td>
     <td>Object</td>
     <td>Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term` and `content`.
-
+    <br><br>
     This maps directly to the common UTM campaign parameters.
     </td>
   </tr>
@@ -187,9 +187,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`page`</td>
     <td>Object</td>
-    <td>Dictionary of information about the current page in the browser, containing `hash`, `path`, `referrer`, `search`, `title` and `url`
-
-    Automatically collected by Analytics.js.
+    <td>Dictionary of information about the current page in the browser, containing `hash`, `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by Analytics.js.
     </td>
   </tr>
   <tr>
@@ -212,14 +210,14 @@ Context is a dictionary of extra information that provides useful context about 
     <td>`groupId`</td>
     <td>String</td>
     <td>Group / Account ID.
-
+    <br><br>
     This is useful in B2B use cases where you need to attribute your non-group calls to a company or account. It is relied on by several Customer Success and CRM tools.</td>
   </tr>
   <tr>
     <td>`traits`</td>
     <td>Object</td>
     <td>Dictionary of `traits` of the current user
-
+    <br><br>
     This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call. You should fill this object the same way you would fill traits in an [identify call](/docs/connections/spec/identify/#traits).</td>
   </tr>
   <tr>
@@ -307,63 +305,59 @@ Every API call has four timestamps, `originalTimestamp`, `timestamp`, `sentAt` a
 ### Timestamp Overview
 
 <table>
-<col width="20%">
-<col width="40%">
-<col width="40%">
   <tr>
     <td>**Timestamp**</td>
     <td>**Calculated**</td>
     <td>**Description**</td>
   </tr>
   <tr>
-    <td>originalTimestamp</td>
+    <td>`originalTimestamp`</td>
     <td>
       Time on the client device when call was invoked
-
+      <br>
       **OR**
-
+      <br>
       The `timestamp` value manually passed in through server-side libraries.
     </td>
     <td>
       Used by Segment to calculate `timestamp`.
-
-      **Note:** `originalTimestamp` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.
-    </td>
+      <br><br>
+      **Note:** `originalTimestamp` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.</td>
   </tr>
   <tr>
-    <td>sentAt</td>
+    <td>`sentAt`</td>
     <td>
       Time on client device when call was sent
-
+      <br>
       **OR**
-
-     `sentAt` value manually passed in.
+      <br>
+      `sentAt` value manually passed in.
     </td>
     <td>
       Used by Segment to calculate `timestamp`.
-
-      **Note:** `sentAt` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew</p>
+      <br><br>
+      **Note:** `sentAt` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.
     </td>
   </tr>
   <tr>
-    <td>receivedAt</td>
+    <td>`receivedAt`</td>
     <td>time on Segment server clock when call was received</td>
     <td>
       Used by Segment to calculate `timestamp`, and used as sort key in Warehouses.
-
+      <br><br>
       **Note:** For max query speed, `receivedAt` is the recommended timestamp for analysis when chronology does not matter as chronology is not ensured.
     </td>
   </tr>
   <tr>
-    <td>timestamp</td>
+    <td>`timestamp`</td>
     <td>
       Calculated by Segment to correct client-device clock skew using the following formula:
-
+      <br>
       `receivedAt` - (`sentAt` - `originalTimestamp`)
     </td>
     <td>
       Used by Segment to send to downstream destinations, and used for historical replays.
-
+      <br><br>
       **Note:** Recommended timestamp for analysis when chronology does matter.
     </td>
   </tr>
@@ -377,7 +371,7 @@ The `originalTimestamp` tells you when call was invoked on the client device or 
 **Note:** The `originalTimestamp` timestamp is not useful for any analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.
 
 
-### `sentAt`
+### sentAt
 
 The `sentAt` timestamp specifies the clock time for the client's device when the network request was made to the Segment API. For libraries and systems that send batched requests, there can be a long gap between a datapoint's `timestamp` and `sentAt`. Combined with `receivedAt`, we can use `sentAt` to correct the original `timestamp` in situations where a user's device clock cannot be trusted (mobile phones and browsers). The `sentAt` and `receivedAt` timestamps are assumed to occur at the same time (maximum a few hundred milliseconds), and therefore the difference is the user's device clock skew, which can be applied back to correct the `timestamp`.
 
