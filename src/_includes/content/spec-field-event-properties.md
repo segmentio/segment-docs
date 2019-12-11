@@ -3,6 +3,7 @@
   <td markdown="span">*optional*</td>
   <td markdown="span">Object</td>
   <td markdown="span">Free-form dictionary of properties of the event, like `revenue`
-    <p>See the [Properties docs](/docs/connections/spec/track#properties) for a list of reserved property names</p>
+
+    See the [Properties docs](/docs/connections/spec/track#properties) for a list of reserved property names.
   </td>
 </tr>

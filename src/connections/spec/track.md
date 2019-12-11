@@ -31,11 +31,7 @@ analytics.track("Registered", {
 Beyond the common fields, the `track` call has the following fields:
 
 <table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-event.md %}
   {% include content/spec-field-event-properties.md %}
 </table>
