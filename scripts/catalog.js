@@ -82,7 +82,7 @@ const getConnectionModes = (destination) => {
         if (destination.platforms.server) {
           connectionModes.cloud.server = true
         }
-        if (destination.platforms.browser) {
+        if (destination.platforms.browser && destination.browserUnbundlingSupported && destination.browserUnbundlingPublic) {
           connectionModes.cloud.web = true
         }
         break
