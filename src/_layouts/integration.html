@@ -16,6 +16,7 @@ layout: default
           {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
         </div>
 
+
         {% include_cached navbar/navbar-mobile.html %}
       </div>
 
@@ -53,8 +54,17 @@ layout: default
 
           <div class="integration__body page__body">
             <div class="markdown">
+              {% if page.beta %}
+                {% capture beta-note %}{% include content/beta.md %}{% endcapture %}
+                {{ beta-note | markdownify }}
+              {% endif %}
+              {% if page.integration_type == 'source' %}
+                {% if page.source-type %}
+                  {% capture cloud-source-note %}{% include content/cloud-app-{{ page.source-type }}.md %}{% endcapture %}
+                  {{ cloud-source-note | markdownify }}
+                {% endif %}
+              {% endif %}
               {{ content }}
-
               {% if page.integration_type == 'destination' %}
                 {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
                 {{ integration-foot | markdownify }}
