@@ -1,6 +1,7 @@
 ---
 title: Facebook Lead Ads Source
 rewrite: true
+source-type: event
 ---
 Facebook Lead Ads help you capture contact information from people who have expressed interest in your product. Without leaving Facebook's interface, your prospects can now share helpful information with you including work email, name, phone number, and more. Learn more about Facebook Lead Ads [here](https://www.facebook.com/business/news/lead-ads-launch). 
 

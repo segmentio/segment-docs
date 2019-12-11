@@ -1,6 +1,7 @@
 ---
 title: Salesforce Marketing Cloud Source
 beta: true
+source-type: object
 ---
 
 [Salesforce Marketing Cloud](https://www.salesforce.com/ca/products/marketing-cloud/overview/), formerly known as
