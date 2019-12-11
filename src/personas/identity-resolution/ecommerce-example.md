@@ -3,7 +3,7 @@ title: Identity Resolution eCommerce Example
 ---
 The Personas Identity Resolution feature helps to create a unified view of the user across devices, apps, and unique identifiers.
 
-Let's take the example of a sneaker company called SegmentKicks which has an eCommerce app called SegKicks as well as a running app called SegRuns. We'll follow Jane Doe throughout her entire customer journey from an anonymous user to a registered buyer on one app, SegKicks, to her use of the same app on a different device, and finally to her use of a different app belonging to the same company, SegRuns.  
+Let's take the example of a sneaker company called SegmentKicks which has an eCommerce app called SegKicks as well as a running app called SegRuns. We'll follow Jane Doe throughout her entire customer journey from an anonymous user to a registered buyer on one app, SegKicks, to her use of the same app on a different device, and finally to her use of a different app belonging to the same company, SegRuns.
 
 ## Anonymous to Known Identification
 Identity Resolution can connect a user's anonymous behaviors to a user's post-account registration activity.
@@ -25,7 +25,7 @@ Let's take the following example using the eCommerce app, SegKicks:
 }
 ```
 
-2. She then clicks on a few different types of shoes, ShoeA, ShoeB and ShoeC but does not add to them cart. Because she has not yet registered for an account, all of these events will be sent through with an anonymousID and an ios deviceID.  
+2. She then clicks on a few different types of shoes, ShoeA, ShoeB and ShoeC but does not add to them cart. Because she has not yet registered for an account, all of these events will be sent through with an anonymousID and an ios deviceID.
 ``` js
 {
   "anonymousId": "anon_123",
@@ -52,7 +52,7 @@ Let's take the following example using the eCommerce app, SegKicks:
       "id": "ios_abc123",
       "type": "ios"
     },
-  },  
+  },
   "userId": "abc123def",
   "type": "identify"
 }
@@ -113,6 +113,6 @@ Her final identifiers now have a new anonymous_id from the SegRuns app:
 ## Conclusion
 By combining the events throughout Jane's entire customer journey from anonymous to known user, cross-device and cross-app identification, SegKicks and SegRuns can now work together to understand how to give Jane the best customer experience possible while increasing her LTV across the entire SegmentKicks ecosystem.
 
-For example, if Jane looked at ShoeC on her iPhone and completed checkout for ShoeC on her Android, SegKicks will now know to exclude her from a cart abandonment email for ShoeC. This wouldn't be possible if SegKicks had only looked at her activity on the iPhone.  
+For example, if Jane looked at ShoeC on her iPhone and completed checkout for ShoeC on her Android, SegKicks will now know to exclude her from a cart abandonment email for ShoeC. This wouldn't be possible if SegKicks had only looked at her activity on the iPhone.
 
-Additionally, most shoes need to be replaced every 300 to 400 miles. By understanding her activity on SegRuns, SegKicks will now be able to more effectively remind Jane to repurchase ShoeC or ShoeD once she's reached that mileage.  
+Additionally, most shoes need to be replaced every 300 to 400 miles. By understanding her activity on SegRuns, SegKicks will now be able to more effectively remind Jane to repurchase ShoeC or ShoeD once she's reached that mileage.
