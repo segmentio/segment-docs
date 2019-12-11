@@ -100,12 +100,7 @@ Here's an example of these common fields in raw JSON:
 In more detail these common fields for every API call are:
 
 <table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Optional?**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-anonymous-id.md %}
   {% include content/spec-field-context.md %}
   {% include content/spec-field-integrations.md %}
@@ -125,11 +120,7 @@ Beyond this common structure, each API call adds a few specialized top-level fie
 Context is a dictionary of extra information that provides useful context about a datapoint, for example the user's `ip` address or `locale`. Context is a complete and explicit specification, so properties outside the spec are ignored. You should **only use** Context fields for their intended meaning.
 
 <table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
+  {% include content/spec-table-header.md %}
   <tr>
     <td>`active`</td>
     <td>Boolean</td>
@@ -286,7 +277,7 @@ A dictionary of destination names that the message should be sent to. `'All'` is
 
 Integrations defaults to the following:
 
-```
+```js
 {
   All: true,
   Salesforce: false,
