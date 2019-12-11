@@ -2,7 +2,7 @@
 title: Vero Destination
 ---
 
-Our Vero destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-vero), [Server](https://github.com/segmentio/integration-vero).
+Our Vero destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/vero), [Server](https://github.com/segmentio/integration-vero).
 
 ## Getting Started
 
