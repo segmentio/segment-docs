@@ -8,14 +8,14 @@ Identity Resolution allows a company to link a customer's journey from pre-accou
 
 By linking any anonymous events a user had before creating an account to a user's logged-in activity, a marketing team can now have a complete understanding of a user's past interactions with your app.
 
-This can lead to invaluable insights around the behaviors and triggers in an app that a motivate a user to register for an account.
+This can lead to invaluable insights around the behaviors and triggers in an app that motivate a user to register for an account.
 
 ## Cross-Device Identification
 Users can have multiple touch points with an app ecosystem through more than one device. For example, users might view an eCommerce site through a mobile native app, a mobile web browser or a desktop web browser.
 
 By tracking a user's activity across all platforms, brands will be able to more efficiently target campaigns to users as they'll have the knowledge of funnels that complete across devices.
 
-For example, a user who adds a product to a cart on the iPhone app but completes the checkout on the Android app should not be targeted with abandoned cart push notifications on the iPhone app.   
+For example, a user who adds a product to a cart on the iPhone app but completes the checkout on the Android app should not be targeted with abandoned cart push notifications on the iPhone app.
 
 ## Cross-App Identification
 A company’s product ecosystem may also spread out across multiple apps.
@@ -26,7 +26,7 @@ If, however, each app should maintain its own metrics and LTV analysis, regardle
 
   _Note: Each workspace has two spaces by default. Please contact your CSM to enable additional spaces._
 
-For an eCommerce example, see [here](/docs/personas/identity-resolution-ecommerce-example.md)
+For an eCommerce example, see [here](/docs/personas/identity-resolution/ecommerce-example.md)
 
 ## Cross-Channel Identification
 A user can interact with a brand through multiple channels and departments. A user might have touch points with a sales team, a marketing team and a customer support team throughout her customer journey. It's important for companies to have insights into these cross-functional activities to ensure they understand the complete customer experience.

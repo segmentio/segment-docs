@@ -1,5 +1,5 @@
 ---
-title: 'Protocols: Typewriter'
+title: 'Typewriter'
 ---
 
 [Typewriter](https://github.com/segmentio/typewriter) is a tool for generating strongly-typed Segment analytics libraries based on your pre-defined [Tracking Plan](/docs/protocols/tracking-plan) spec.
@@ -10,7 +10,7 @@ At a high-level, Typewriter can take an event from your Tracking Plan like this 
 
 And use it to generate a typed analytics call in different languages:
 
-```javascript
+```js
 // Example client in your web app
 const typewriter = require('./analytics')
 
