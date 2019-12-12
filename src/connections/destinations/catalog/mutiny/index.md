@@ -8,7 +8,7 @@ title: Mutiny Destination
 
 This destination is maintained by [Mutiny](https://mutinyhq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, please [reach out to their team](mailto:mutinylovesyou@mutinyhq.com).
 
-_**NOTE:** Mutiny is currently in beta, which means that they are still actively developing the product. This doc was last updated February 21, 2019. If you are interested in joining their beta program or have any feedback to help improve the Mutiny Destination and its documentation, please [let the Mutiny team know](mailto:mutinylovesyou@mutinyhq.com)!_
+_**NOTE:** This doc was last updated December 12, 2019. If you have any feedback to help improve the Mutiny Destination and its documentation, please [let the Mutiny team know](mailto:mutinylovesyou@mutinyhq.com)!_
 
 
 ## Getting Started
