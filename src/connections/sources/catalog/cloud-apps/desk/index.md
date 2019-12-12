@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Desk.com Source
+source-type: object
 ---
 
 [Desk.com](http://www.desk.com/), previously known as Assistly, is a SaaS help desk and customer support product owned by Salesforce.com and accessible through the cloud. 
