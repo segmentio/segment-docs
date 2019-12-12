@@ -1,5 +1,6 @@
 ---
 title: 'Selligent Source'
+source-type: event
 ---
 Selligent is a cross-channel marketing platform that allows brands to effectively engage with their customers across email, mobile, social, display and web channels. 
 

@@ -1,5 +1,6 @@
 ---
 title: Sendgrid Source
+source-type: object
 ---
 SendGrid is a trusted platform for transactional email and email marketing. [Visit Website](http://sendgrid.com)
 
