@@ -1,5 +1,6 @@
 ---
 title: 'Nudgespot Source'
+source-type: event
 ---
 Nudgespot is the easiest way to trigger emails, SMS, push notifications or in-app messages to your customers, at the right time.  [Visit Website](http://www.nudgespot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
