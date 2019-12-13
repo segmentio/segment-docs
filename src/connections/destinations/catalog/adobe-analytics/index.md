@@ -839,7 +839,7 @@ And on iOS:
 - [Custom Video Metadata](#custom-video-metadata)
 - [Troubleshooting and Logging Heartbeat](#troubleshooting-and-logging-heartbeat)
 
-Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and Javascript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
+Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and Javascript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/). At this time, Adobe Heartbeat is only available client side.
 
 Before you start, complete these required steps.
 
