@@ -1,6 +1,7 @@
 ---
 title: HubSpot Source
 rewrite: true
+source-type: object
 ---
 
 [HubSpot](http://www.hubspot.com) is an all-in-one marketing tool that helps attract new leads and convert them into paying customers, with features like landing page creation and email automation.

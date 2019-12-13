@@ -1,5 +1,6 @@
 ---
 title: ActiveCampaign Source
+source-type: event
 ---
 Active Campagin is an email marketing & marketing automation solution for small businesses. [Visit Website](http://www.activecampaign.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
