@@ -8,8 +8,13 @@ require('dotenv').config();
 
 PLATFORM_API_URL = "https://platform.segmentapis.com"
 
-const slugify = (displayName) => {
-  let slug = displayName
+const getIntegrationName = (name) => {
+  let temp = name.split('/')
+  return temp[temp.length - 1]
+}
+
+const slugify = (name) => {
+  let slug = name
     .toLowerCase()
     .replace(/\s+/g, '-')
     .replace('-&-', '-')
@@ -17,6 +22,10 @@ const slugify = (displayName) => {
     .replace(/[\(\)]/g, '')
     .replace('.','-')
 
+  
+  if (slug === 'active-campaign') slug = 'activecampaign'
+  if (slug === 'adwords') slug = 'google-ads'
+  if (slug === 'customerio') slug = 'customer-io'
   if (slug === '-net') slug = 'net'
   if (slug === 'roku-alpha') slug = 'roku'
   if (slug === 'shopify-by-littledata') slug = 'shopify-littledata'
@@ -97,7 +106,6 @@ const getConnectionModes = (destination) => {
  */
 const doesCatalogItemExist = (item) => {
   const docsPath = `src/${item.url}`
-
   if (!fs.existsSync(docsPath)) {
     console.log(`${item.slug} does not exist: ${docsPath}`)
     let content =`---\ntitle: '${item.display_name} Source'\nhidden: true\n---`
@@ -115,8 +123,11 @@ const doesCatalogItemExist = (item) => {
 }
 
 const isCatalogItemHidden = (itemURL) => {
-  const f = fm(fs.readFileSync(path.resolve('src', itemURL, 'index.md'), 'utf8'));
-  if (f.attributes.hidden) return true
+  let itemPath = path.resolve('src', itemURL, 'index.md')
+  if (fs.existsSync(itemPath)) {
+    const f = fm(fs.readFileSync(itemPath, 'utf8'));
+    if (f.attributes.hidden) return true
+  }
   return false
 }
 
@@ -148,7 +159,8 @@ const updateSources = async () => {
   ]
 
   sources.forEach(source => {
-    let slug = slugify(source.display_name)
+    
+    let slug = slugify(getIntegrationName(source.name))
     let url = ''
     let mainCategory = source.categories[0] ? source.categories[0].toLowerCase() : ''
 
@@ -215,7 +227,7 @@ const updateDestinations = async () => {
     return 0;
   })
   destinations.forEach(destination => {
-    let slug = slugify(destination.display_name)
+    let slug = slugify(getIntegrationName(destination.name))
 
     let tempCategories = [destination.categories.primary, destination.categories.secondary, ...destination.categories.additional]
     tempCategories = tempCategories.filter(category => category != '')
@@ -228,7 +240,7 @@ const updateDestinations = async () => {
     })
     
     let url = `connections/destinations/catalog/${slug}`
-    
+
     let updatedDestination = {
       display_name: destination.display_name,
       slug,
@@ -279,5 +291,5 @@ const updateDestinations = async () => {
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destination_categories.yml`), output);
 }
 
-updateSources()
+// updateSources()
 updateDestinations()
