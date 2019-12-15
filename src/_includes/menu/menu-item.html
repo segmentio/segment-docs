@@ -87,8 +87,8 @@
                         {% assign currentPage = page.path | downcase | replace: "/index.md" "" | replace: ".md" "" %}
                         {% assign currentPath = subsubsection.path | downcase | replace_first: "/" "" %}
 
-                        <li class="menu-item {% if currentPage == currentPath %}menu-item--active menu-item--indicator{% endif %}">
-                          <a class="menu-item__link {% if currentPage == currentPath %}menu-item__link--indicator{% endif %} flex" href="{{ site.baseurl }}{{ subsubsection.path }}/">{{ subsubsection.title }}</a>
+                        <li class="menu-item">
+                          <a class="menu-item__link flex" href="{{ site.baseurl }}{{ subsubsection.path }}/">{{ subsubsection.title }}</a>
                         </li>
                       {% endfor %}
                     </ul>
