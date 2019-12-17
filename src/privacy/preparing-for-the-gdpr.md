@@ -1,8 +1,8 @@
 ---
-title: "Preparing for the GDPR"
+title: "Preparing for the GDPR and CCPA"
 ---
 
-On May 25, 2018 your business will face the greatest regulatory change in data privacy policy since the 1995 EU Data Protection Directive was enacted: the [EU General Data Protection Regulation](https://ec.europa.eu/info/law/law-topic/data-protection_en) (GDPR). The European Union will begin enforcing the GDPR from May 25, 2018 in an effort to strengthen the security and protection of personal data of EU residents.
+On May 25, 2018 businesses faced the greatest regulatory change in data privacy policy since the 1995 EU Data Protection Directive was enacted: the [EU General Data Protection Regulation](https://ec.europa.eu/info/law/law-topic/data-protection_en) (GDPR). The European Union began enforcing the GDPR on May 25, 2018 in an effort to strengthen the security and protection of personal data of EU residents.
 
 In keeping with our ongoing commitment to privacy and security, Segment will be ready for the GDPR before May 25, 2018, when the law goes into effect. But that's not all. As the central record for your customer data, we are also committed to making it easier for you to comply with the GDPR.
 
@@ -76,18 +76,13 @@ In preparation for the GDPR, we have updated these terms to reflect the Regulati
 To opt into the Data Processing Agreement and EU Model Contract Clauses:
 
 1.  Go to your [Workspace](https://app.segment.com).
-
 2.  Open the left side menu and select **Settings**.
-
 3.  Below **End User Privacy**, click **Privacy & Security.**
-
 4.  Below **Data Processing Agreement**, click **Review**.
-
-5.  Read the agreement and then click **I Accept**.
+5.  Read the agreement and then click **Sign the Agreement**.
 
 
 If you also wish to opt into the EU Model Contract Clauses:
 
 1.  Below **EU Model Contract Clauses**, click **Review**.
-
 2.  Read the agreement and then click **I Accept**.

@@ -207,14 +207,14 @@ sections:
   - path: /privacy/portal
     title: Privacy Portal
   - path: /privacy/preparing-for-the-gdpr
-    title: Preparing for the GDPR
+    title: Preparing for the GDPR & CCPA
   - path: /privacy/user-deletion-and-suppression
     title: User Deletion and Suppression
 - section_title: Protocols
   section:
   - path: /protocols
     title: Protocols Overview
-  - section_title: Data Quality Best Practices 
+  - section_title: Data Quality Best Practices
     slug: protocols/data-quality
     section:
     - path: /protocols/data-quality
