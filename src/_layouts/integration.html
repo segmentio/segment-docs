@@ -53,6 +53,10 @@ layout: default
 
           <div class="integration__body page__body">
             <div class="markdown">
+              {% if page.beta %}
+                {% capture beta-note %}{% include content/beta.md %}{% endcapture %}
+                {{ beta-note | markdownify }}
+                {% endif %}
               {{ content }}
 
               {% if page.integration_type == 'destination' %}
