@@ -1,10 +1,11 @@
 ---
 title: Data Protection Addendum
 hide-feedback: true
-toc_min: 1
+published: false
 ---
+## Data Protection Addendum
 
-## 1.  Introduction
+### 1.  Introduction
 
 This Data Protection Addendum ("**Addendum**") is entered into by and
 between Segment.io, Inc., a Delaware corporation ("**Segment**"), and
@@ -13,11 +14,12 @@ This Addendum applies to Segment's Processing of Customer Personal Data
 under the agreement executed between Segment and Customer for Segment's
 provision of the Services (the "**Agreement**").
 
-## 2.  Definitions
+### 2.  Definitions
 
 For purposes of this Addendum, the terms below have the meanings set
 forth below. Capitalized terms that are used but not defined in this
 Addendum have the meanings given in the Agreement.
+
 
 2.1.  "**Affiliate**" means any entity that directly or indirectly controls,
       is controlled by or is under common control with the subject entity,
@@ -25,7 +27,7 @@ Addendum have the meanings given in the Agreement.
       of the subject entity, whether through ownership of voting
       securities, by contract or otherwise.
 
-2.2.  "**CCPA**" means the California Consumer Privacy Act of 2018, as amended
+2.2. "**CCPA**" means the California Consumer Privacy Act of 2018, as amended
       from time to time.
 
 2.3.  "**Customer Personal Data**" means any Customer Data (as defined in the
@@ -73,7 +75,7 @@ Addendum have the meanings given in the Agreement.
 2.11. "**Third Party Subprocessor**" means any Subprocessor who is not an
       Affiliate of Segment.
 
-## 3. General; Termination
+### 3. General; Termination
 
 3.1. This Addendum forms part of the Agreement and except as expressly
      set forth in this Addendum, the Agreement remains unchanged and in
@@ -90,7 +92,7 @@ Addendum have the meanings given in the Agreement.
 3.4. This Addendum will automatically terminate upon expiration or
      termination of the Agreement.
 
-## 4. Scope of this Addendum
+### 4. Scope of this Addendum
 
 This Addendum applies to Segment's Processing of Customer Personal
 Data under the Agreement, except that [Annex A](#annex-a-eu-annex) (EU
@@ -98,7 +100,7 @@ Annex) to this Addendum applies only to such Processing of Customer
 Personal Data governed by EU Data Protection Law and [Annex B](#annex-b-california-annex) (California Annex) to this Addendum applies only to
 such Processing of Customer Personal Data governed by the CCPA.
 
-## 5. Role and Scope of the Processing
+### 5. Role and Scope of the Processing
 
 5.1.  Segment will Process Customer Data only in accordance with
       Customer's instructions. By entering into the Agreement, Customer
@@ -120,7 +122,7 @@ such Processing of Customer Personal Data governed by the CCPA.
       omissions of, Sources and Destinations or parties associated
       therewith.
 
-## 6. Subprocessing
+### 6. Subprocessing
 
 6.1.  Customer specifically authorizes Segment to use its Affiliates as
       Subprocessors, and generally authorizes Segment to engage Third
@@ -159,7 +161,7 @@ such Processing of Customer Personal Data governed by the CCPA.
       sole and exclusive remedy, may terminate the Agreement for
       convenience.
 
-## 7. Security
+### 7. Security
 
 7.1.  Segment shall implement and maintain technical and organizational
       security measures designed to protect Customer Personal Data from
@@ -204,7 +206,7 @@ such Processing of Customer Personal Data governed by the CCPA.
       with the Services; and (d) maintaining its own backups of Customer
       Data.
 
-## 8. Data Subject Requests
+### 8. Data Subject Requests
 
 Segment shall upon Customer's request (and at Customer's expense)
 provide Customer with such assistance as it may reasonably require
@@ -219,7 +221,7 @@ Personal Data, Segment will advise the Data Subject to submit their
 request to Customer, and Customer will be responsible for responding
 to any such request.
 
-## 9. Return or Deletion of Data
+### 9. Return or Deletion of Data
 
 9.1.  Segment shall, within sixty (60) days after request by Customer
       following the termination or expiration of the Agreement, delete all
@@ -229,9 +231,9 @@ to any such request.
       retain Customer Personal Data if required by law, which data will
       remain subject to the requirements of this Addendum.
 
-# Annex A - EU Annex
+## Annex A - EU Annex
 
-## 1.  Definitions; Processing of Data
+### 1.  Definitions; Processing of Data
 
 
 1.1.  **Definitions**. For purposes of this [Annex A](#annex-a-eu-annex), the terms
@@ -272,7 +274,7 @@ to any such request.
       which case Segment will notify Customer (unless that law prohibits
       Segment from doing so).
 
-## 2. Data Security
+### 2. Data Security
 
 2.1.  **Segment Security Measures, Controls and Assistance**
 
@@ -425,7 +427,7 @@ contained in the Agreement, including this Addendum.
           under Chapter V of the GDPR in the absence of such Standard
           Contractual Clauses on any other basis.
 
-# Annex B - California Annex
+## Annex B - California Annex
 
 1.  For purposes of this Annex B, the terms
     "**business**", "**commercial purpose**", "**service provider**",
