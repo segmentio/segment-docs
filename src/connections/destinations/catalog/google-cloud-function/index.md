@@ -8,7 +8,7 @@ Segment makes it easy to send your data to Google Cloud Function (and lots of ot
 
 [Google Cloud Function](https://cloud.google.com/function) is a lightweight compute solution for developers to create single-purpose, stand-alone functions that respond to Cloud events without the need to manage a server or runtime environment.
 
-_**NOTE:** Google Cloud Function is currently in beta, and this doc was last updated on May 6, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Google Cloud Function Destination and its documentation, please [let us know](https://segment.com/help/contact)!_
+_**NOTE:** Google Cloud Function is currently in beta, and this doc was last updated on May 6, 2019._
 
 # Getting Started
 

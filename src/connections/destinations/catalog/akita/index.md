@@ -3,7 +3,7 @@ beta: true
 title: Akita Destination
 ---
 
-*This destination is maintained by Akita*
+### This destination is maintained by Akita*
 
 ## Getting Started
 

@@ -19,7 +19,7 @@ When you `identify` a user we pass that user's information to All Aboard. You ca
 
 All Identify calls must include a user's `email` trait. You must also include a `createdAt` trait to add new customers to All Aboard!. For example:
 
-```
+```js
 {
   "type": "identify",
   "userId": "43",

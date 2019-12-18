@@ -154,6 +154,7 @@ It'll look something like this:
 Each piece of frontmatter does something special:
 - `published`: defaults to true. Set this to "false" to prevent Jekyll from rendering an HTML page for this file. Good for when you're working on something in the repo but aren't ready to release it yet, and don't want to use a Draft PR.
 - `beta`: default false. When true, show an "in beta" warning in the page layout (see the warning in `_includes/content/beta.md`)
+- `partner-contact`: defaults to null. Used to change the beta notice to include a partner/owner email address as a mailto link for integrations that aren't Segment-owned.
 - `hide-feedback`: defaults to false. When true, hide the feedback footer. Good for legal and landing pages.
 - `hidden`: omits the file from the `sitemap.xml`, adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file, and drops it from the convenience script for regenerating the nav.
 - `rewrite`: defaults to false. This is a legacy frontmatter flag that comes from the old `site-docs` repo, and which labels any destination that was rewritten in ~2018 to a standardized template.

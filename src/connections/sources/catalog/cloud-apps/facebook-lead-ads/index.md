@@ -11,7 +11,7 @@ This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#ev
 
 This source is maintained by Facebook. For any issues with the source, you may [contact their team](mailto:supportemail@email.com).
 
-_**NOTE:** Facebook Lead Ads is currently in beta and this doc was last updated on January 07, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Facebook Lead Ads Destination and its documentation, and please [let us know](https://segment.com/help/contact)!_
+_**NOTE:** Facebook Lead Ads is currently in beta and this doc was last updated on January 07, 2019._
 
 ## Getting Started
 

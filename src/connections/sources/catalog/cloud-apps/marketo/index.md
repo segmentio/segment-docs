@@ -2,6 +2,7 @@
 title: Marketo Source
 rewrite: true
 source-type: object
+beta: true
 ---
 
 [Marketo](https://www.marketo.com/) is a leader in marketing automation. Using our Marketo source, we will load your campaigns, emails, leads and other collections into your data warehouse.
@@ -10,7 +11,7 @@ This will allow you to write SQL to analyze your analyze your email marketing ca
 
 This is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
 
-_**NOTE:** Marketo is currently in beta and this doc was last updated on April 30, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you have any feedback to help us improve the Marketo Source and its documentation, and please [let us know](https://segment.com/help/contact)!_
+_**NOTE:** Marketo is currently in beta and this doc was last updated on April 30, 2018._
 
 ## Getting Started
 

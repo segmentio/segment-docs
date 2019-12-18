@@ -1,13 +1,15 @@
 ---
-rewrite: true
 title: Movable Ink Destination
+beta: true
+rewrite: true
+partner-contact: support@movableink.com
 ---
 
 [Movable Ink](https://movableink.com/) lets email marketers deliver jaw-dropping customer experiences. Our cloud-based software activates any data to generate intelligent content at the moment of open.
 
 This destination is maintained by [Movable Ink](https://movableink.com/). If you have any issues, please contact Movable Ink at support@movableink.com.
 
-_**NOTE:** Movable Ink is currently in beta and this doc was last updated on March 14, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Movable Ink Destination and its documentation, and please [let us know](https://segment.com/help/contact)!_
+_**NOTE:** Movable Ink is currently in beta and this doc was last updated on March 14, 2018._
 
 ## Getting Started
 
