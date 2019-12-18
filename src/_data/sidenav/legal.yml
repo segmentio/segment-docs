@@ -24,3 +24,5 @@ sections:
     title: Updates - Terms of Service
   - path: /legal/website-data-collection-policy
     title: Website Data Collection Policy
+  - path: /legal/data-protection-addendum
+    title: Data Protection Addendum
