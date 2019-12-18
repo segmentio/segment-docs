@@ -191,6 +191,13 @@
   table {
     border-collapse: collapse;
     text-align: left;
+    overflow-x: scroll;
+    display: block;
+
+    @include breakpoint(medium up) {
+      overflow: auto;
+      display: table;
+    }
 
     td {
       color: color(secondary-dark);

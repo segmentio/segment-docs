@@ -26,11 +26,7 @@ And here's the corresponding Objective-C event that would generate the above pay
 Beyond the common fields, the `screen` call takes the following fields:
 
 <table>
-  <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-screen-name.md %}
   {% include content/spec-field-screen-properties.md %}
 </table>
@@ -86,9 +82,9 @@ Reserved properties we have standardized:
 
 <table>
   <tr>
-    <th>Property</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Property**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>`name`</td>

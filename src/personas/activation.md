@@ -33,7 +33,7 @@ The following event destinations below are supported. Note that some destination
 - [Blendo](https://segment.com/docs/connections/destinations/catalog/blendo/)
 - [Blueshift](https://segment.com/docs/connections/destinations/catalog/blueshift/)
 - [Branch Metrics](https://segment.com/docs/connections/destinations/catalog/branch-metrics/)
-- [Braze](https://segment.com/docs/connections/destinations/catalog/appboy/)
+- [Braze](https://segment.com/docs/connections/destinations/catalog/braze/)
 - [ByteGain](https://segment.com/docs/connections/destinations/catalog/bytegain/)
 - [Callingly](https://segment.com/docs/connections/destinations/catalog/callingly/)
 - [Calq](https://segment.com/docs/connections/destinations/catalog/calq/)

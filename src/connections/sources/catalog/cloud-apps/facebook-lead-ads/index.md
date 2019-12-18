@@ -1,6 +1,7 @@
 ---
 title: Facebook Lead Ads Source
 rewrite: true
+source-type: event
 ---
 Facebook Lead Ads help you capture contact information from people who have expressed interest in your product. Without leaving Facebook's interface, your prospects can now share helpful information with you including work email, name, phone number, and more. Learn more about Facebook Lead Ads [here](https://www.facebook.com/business/news/lead-ads-launch). 
 
@@ -41,8 +42,8 @@ Below is a table of events that Facebook Lead Ads sends to Segment. These events
 
 <table>
   <tr>
-    <th>Event Name</th>
-    <th>Description</th>
+    <td>**Event Name**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>Identify</td>

@@ -4,8 +4,6 @@ title: Keen Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 When you toggle on Keen in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading keen.js onto your page. This means you should remove Keen's snippet from your page.

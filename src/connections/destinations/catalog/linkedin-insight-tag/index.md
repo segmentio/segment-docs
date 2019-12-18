@@ -4,8 +4,6 @@ title: LinkedIn Insight Tag Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 When you enable the LinkedIn Insight Tag destination in Segment, this is what happens:
 
 - The Segment CDN updates within 45 minutes. After that, the Segment snippet asynchronously loads LinkedIn Insight Tag's tracking snippet on your page. (If you already had the LinkedIn Insight Tag's snippet installed on your page, you should remove it.)

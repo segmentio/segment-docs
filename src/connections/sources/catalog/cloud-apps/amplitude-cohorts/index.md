@@ -1,5 +1,6 @@
 ---
 title: 'Amplitude Engage Event Source'
+source-type: event
 ---
 
 This source combines Amplitude's analytics with Segment's rich connections
@@ -24,11 +25,11 @@ Segment `identify` events.
     will need to refresh your page in order to see it
     in the list.
 
-![Enable syncing to Segment](./images/amplitude-add-integration.png)
+![Enable syncing to Segment](images/amplitude-add-integration.png)
 
-![Select Segment](./images/amplitude-connect-segment.png)
+![Select Segment](images/amplitude-connect-segment.png)
 
-![Add your Segment writeKey](./images/amplitude-segment-writekey.png)
+![Add your Segment writeKey](images/amplitude-segment-writekey.png)
 
  7. If you would like to set up automated export on an hourly or daily basis,
     you can use Amplitude's Cohort Sync feature. Click "Advanced Preferences"

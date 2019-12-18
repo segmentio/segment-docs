@@ -31,7 +31,7 @@ That snippet will load Analytics.js onto the page _asynchronously_, so it won't 
 
 **Fun fact:** if you only want the most basic Google Analytics setup you can stop reading right now. You're done! Just switch on Google Analytics in our interface.
 
-For a more in depth analytics.js tutorial, check out our [quick start](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart).
+For a more in depth analytics.js tutorial, check out our [quick start](/docs/connections/sources/catalog/libraries/website/javascript/quickstart).
 
 Lots of analytics and marketing tools want to know more information about your users, and what they're doing on your app. In the next section, we'll install the .NET library and start sending an event every time a new user registers on your site.
 

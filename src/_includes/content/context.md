@@ -14,74 +14,74 @@ Here's a list of the special context keys we recognize, case insensitive:
 
 <table>
   <tr>
-    <td>`app`</td>
-    <td>Object</td>
-    <td>A dictionary of information about the current application, containing `name`, `version` and `build`. This is collected automatically from our mobile libraries when possible.</td>
+    <td markdown="span">`app`</td>
+    <td markdown="span">Object</td>
+    <td markdown="span">A dictionary of information about the current application, containing `name`, `version` and `build`. This is collected automatically from our mobile libraries when possible.</td>
   </tr>
   <tr>
-    <td>`campaign`</td>
-    <td>Object</td>
-    <td>A dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term` and `content`. This maps directly to the common UTM campaign parameters.</td>
+    <td markdown="span">`campaign`</td>
+    <td markdown="span">Object</td>
+    <td markdown="span">A dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term` and `content`. This maps directly to the common UTM campaign parameters.</td>
   </tr>
   <tr>
-    <td>`device`</td>
-    <td>Object</td>
-    <td>A dictionary of information about the device, containing `id`, `manufacturer`, `model`, `name`, `type` and `version`.</td>
+    <td markdown="span">`device`</td>
+    <td markdown="span">Object</td>
+    <td markdown="span">A dictionary of information about the device, containing `id`, `manufacturer`, `model`, `name`, `type` and `version`.</td>
   </tr>
   <tr>
-    <td>`ip`</td>
-    <td>String</td>
-    <td>The current user's IP address.</td>
+    <td markdown="span">`ip`</td>
+    <td markdown="span">String</td>
+    <td markdown="span">The current user's IP address.</td>
   </tr>
   <tr>
-    <td>`library`</td>
-    <td>Object</td>
-    <td>A dictionary of information about the library making the requests to the API, containing `name` and `version`.</td>
+    <td markdown="span">`library`</td>
+    <td markdown="span">Object</td>
+    <td markdown="span">A dictionary of information about the library making the requests to the API, containing `name` and `version`.</td>
   </tr>
   <tr>
-    <td>`locale`</td>
-    <td>String</td>
-    <td>The locale string for the current user, for example `en-US`.</td>
+    <td markdown="span">`locale`</td>
+    <td markdown="span">String</td>
+    <td markdown="span">The locale string for the current user, for example `en-US`.</td>
   </tr>
   <tr>
-    <td>`location`</td>
-    <td>Object</td>
-    <td>A dictionary of information about the user's current location, containing `city`, `country`, `latitude`, `longitude`, `region` and `speed`.</td>
+    <td markdown="span">`location`</td>
+    <td markdown="span">Object</td>
+    <td markdown="span">A dictionary of information about the user's current location, containing `city`, `country`, `latitude`, `longitude`, `region` and `speed`.</td>
   </tr>
   <tr>
-    <td>`network`</td>
-    <td>Object</td>
-    <td>A dictionary of information about the current network connection, containing `bluetooth`, `carrier`, `cellular` and `wifi`.</td>
+    <td markdown="span">`network`</td>
+    <td markdown="span">Object</td>
+    <td markdown="span">A dictionary of information about the current network connection, containing `bluetooth`, `carrier`, `cellular` and `wifi`.</td>
   </tr>
   <tr>
-    <td>`os`</td>
-    <td>Object</td>
-    <td>A dictionary of information about the operating system, containing `name` and `version`.</td>
+    <td markdown="span">`os`</td>
+    <td markdown="span">Object</td>
+    <td markdown="span">A dictionary of information about the operating system, containing `name` and `version`.</td>
   </tr>
   <tr>
-    <td>`referrer`</td>
-    <td>Object</td>
-    <td>A dictionary of information about the way the user was referred to the website or app, containing `type`, `name`, `url` and `link`.</td>
+    <td markdown="span">`referrer`</td>
+    <td markdown="span">Object</td>
+    <td markdown="span">A dictionary of information about the way the user was referred to the website or app, containing `type`, `name`, `url` and `link`.</td>
   </tr>
   <tr>
-    <td>`screen`</td>
-    <td>Object</td>
-    <td>A dictionary of information about the device's screen, containing `density`, `height` and `width`.</td>
+    <td markdown="span">`screen`</td>
+    <td markdown="span">Object</td>
+    <td markdown="span">A dictionary of information about the device's screen, containing `density`, `height` and `width`.</td>
   </tr>
   <tr>
-    <td>`timezone`</td>
-    <td>String</td>
-    <td>Timezones are sent as tzdata strings to add user timezone information which might be stripped from the timestamp, for e.g. `America/New_York`</td>
+    <td markdown="span">`timezone`</td>
+    <td markdown="span">String</td>
+    <td markdown="span">Timezones are sent as tzdata strings to add user timezone information which might be stripped from the timestamp, for e.g. `America/New_York`</td>
   </tr>
   <tr>
-    <td>`traits`</td>
-    <td>Object</td>
-    <td>A dictionary of `traits` of the current user. This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call.</td>
+    <td markdown="span">`traits`</td>
+    <td markdown="span">Object</td>
+    <td markdown="span">A dictionary of `traits` of the current user. This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call.</td>
   </tr>
   <tr>
-    <td>`userAgent`</td>
-    <td>String</td>
-    <td>The user agent of the device making the request.</td>
+    <td markdown="span">`userAgent`</td>
+    <td markdown="span">String</td>
+    <td markdown="span">The user agent of the device making the request.</td>
   </tr>
 </table>
 

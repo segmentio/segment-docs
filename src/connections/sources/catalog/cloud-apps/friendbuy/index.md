@@ -1,5 +1,6 @@
 ---
 title: 'Friendbuy Source'
+source-type: event
 ---
 Friendbuy is a referral marketing platform that powers modern day word of mouth. Designed for growth marketers, Friendbuy allows companies to acquire new customers at scale through seamlessly integrated referral and influencer campaigns.
 
@@ -8,7 +9,7 @@ Adding Friendbuy as a Source to Segment is a surefire way to elevate analysis of
 These events can be passed to your Segment Destinations such as data warehouses and analytics tools. Joined with data from other marketing programs, you can start telling a unified story of each customer's journey and tailor your reporting to the KPIs that matter most.
 
 ## Getting Started
- 1. From your Sources page in Segment, click **Add source**.  
+ 1. From your Sources page in Segment, click **Add source**.
  2. Choose Friendbuy.
  3. Click Connect.
  4. Give the Source a nickname.  The nickname will be used to designate
@@ -17,7 +18,7 @@ These events can be passed to your Segment Destinations such as data warehouses 
  6. Login to your Friendbuy account and enter this Segment write key at this location: [Settings>Configurations>Integrations](https://retailer.friendbuy.com/app).
  7. Click Save.
 
-![Segment write key](./images/segment-write-key.png)
+![Segment write key](images/segment-write-key.png)
 
  8. From your Segment account, click into your Friendbuy Source and you'll be able to add other downstream Destinations where you want to see referral events.
 

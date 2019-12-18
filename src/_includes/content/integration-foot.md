@@ -4,7 +4,7 @@
 {% if currentIntegration %}
 
 {% if currentIntegration.platforms.server == true %}
-{% unless page.hide-personas-parital%}
+{% unless page.hide-personas-partial == true %}
 
 ## Personas
 
@@ -18,7 +18,7 @@ When the audience is first created an identify call is sent for every user in th
 
 {% endif %}
 
-{% unless page.rewrite %}
+{% unless page.rewrite == true %}
 ## Supported Sources and Connection Modes
 {% if currentIntegration.components.size > 0 %}
 {% include content/connection-modes.md %}
@@ -53,15 +53,15 @@ Segment lets you change these destination settings from your Segment dashboard w
   {% endunless %}
 {% endfor %}
 
-{% assign oldname = currentIntegration.name | split: "/" | last | capitalize %}
-{% if currentIntegration.display_name != oldname %}
+{% if currentIntegration.previous_names.size > 1 %}
 
 ## Adding {{ currentIntegration.display_name }} to the integrations object
 
-To add {{ currentIntegration.display_name }} to the `integrations` JSON object (for example, <a href="https://segment.com/docs/guides/general/filtering-data/#filtering-with-the-integrations-object">to filter data from a specific source</a>), use one of the following valid names for this integration:
+To add {{ currentIntegration.display_name }} to the `integrations` JSON object (for example, [to filter data from a specific source](/docs/guides/filtering-data/#filtering-with-the-integrations-object)), use one of the following valid names for this integration:
 
-- {{ currentIntegration.display_name }}
-- {{ oldname }}
-
+{% for valid_name in currentIntegration.previous_names %}
+- {{ valid_name }}
+{% endfor %}
 {% endif %}
+
 {% endif %}

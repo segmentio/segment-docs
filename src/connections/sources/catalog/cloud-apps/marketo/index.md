@@ -1,6 +1,7 @@
 ---
 title: Marketo Source
 rewrite: true
+source-type: object
 ---
 
 [Marketo](https://www.marketo.com/) is a leader in marketing automation. Using our Marketo source, we will load your campaigns, emails, leads and other collections into your data warehouse.
@@ -74,6 +75,7 @@ Collections are the groupings of resources we pull from your source. In your war
 ## Collection Properties
 
 ### Leads
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Lead id |
@@ -87,6 +89,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Campaigns
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Campaign id |
@@ -99,6 +102,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Email
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Email id |
@@ -124,6 +128,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Landing Pages
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Landing Page id |
@@ -149,6 +154,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Lists
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | List id |
@@ -161,6 +167,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Lead Activities
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Lead Activity id |
@@ -174,6 +181,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Lead Activity Attributes
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Combination of Lead Activity id, Lead Activity Type id and Lead Activity Attribute name |
@@ -185,6 +193,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Lead Activity Types
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Lead Activity Type id |
@@ -195,6 +204,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Lead Activity Type Attributes
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Combination of Lead Activity Type id and attribute name |
@@ -204,6 +214,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Programs
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Program id |
@@ -224,6 +235,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Segmentations
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Segmentation id |
@@ -240,6 +252,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Segments
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Segment id |

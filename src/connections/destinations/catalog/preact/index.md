@@ -2,9 +2,6 @@
 title: Preact Destination
 ---
 
-## Getting Started
-
-{% include content/connection-modes.md %}
 
 ## Identify
 

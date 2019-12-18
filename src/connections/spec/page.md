@@ -28,11 +28,7 @@ analytics.page("Home");
 Beyond the common fields, the `page` call takes the following fields:
 
 <table>
-  <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-page-name.md %}
   {% include content/spec-field-page-properties.md %}
 </table>
@@ -86,9 +82,9 @@ Reserved properties we have standardized:
 
 <table>
   <tr>
-    <th>Property</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Property**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>`name`</td>
@@ -137,4 +133,4 @@ Reserved properties we have standardized:
   </tr>
 </table>
 
-**Note:** In [analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/), we automatically send the following properties: `title`, `path`, `url`, `referrer`, and `search`.
+**Note:** In [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), we automatically send the following properties: `title`, `path`, `url`, `referrer`, and `search`.

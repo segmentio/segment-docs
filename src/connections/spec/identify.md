@@ -51,11 +51,7 @@ analytics.identify("97980cfea0067", {
 Beyond the common fields, an `identify` call has the following fields:
 
 <table>
-  <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-identify-traits.md %}
   {% include content/spec-field-user-id.md %}
 </table>
@@ -145,9 +141,9 @@ Reserved traits we've standardized:
 
 <table>
   <tr>
-    <th>Trait</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Trait**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>`address`</td>

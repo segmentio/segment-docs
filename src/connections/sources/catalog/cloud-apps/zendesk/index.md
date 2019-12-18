@@ -1,5 +1,6 @@
 ---
 title: Zendesk Source
+source-type: object
 ---
 
 Zendesk is a customer service platform for enterprises, which provides a customer support platform that allows quicker and easier interaction between businesses and customers. [Visit website](https://www.zendesk.com/)

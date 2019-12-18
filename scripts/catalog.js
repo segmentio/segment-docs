@@ -19,7 +19,7 @@ const slugify = (displayName) => {
 
   if (slug === '-net') slug = 'net'
   if (slug === 'roku-alpha') slug = 'roku'
-
+  if (slug === 'shopify-by-littledata') slug = 'shopify-littledata'
   return slug
 }
 
@@ -82,7 +82,7 @@ const getConnectionModes = (destination) => {
         if (destination.platforms.server) {
           connectionModes.cloud.server = true
         }
-        if (destination.platforms.browser) {
+        if (destination.platforms.browser && destination.browserUnbundlingSupported && destination.browserUnbundlingPublic) {
           connectionModes.cloud.web = true
         }
         break
@@ -106,7 +106,7 @@ const doesCatalogItemExist = (item) => {
       if (item.status === 'PUBLIC_BETA') {
         betaFlag = 'beta: true\n'
       }
-      content =`---\ntitle: '${item.display_name} Destination'\nhidden: true\n${betaFlag}---\n{% include content/integration-foot.md %}`
+      content =`---\ntitle: '${item.display_name} Destination'\nhidden: true\n${betaFlag}--- %}`
     }
     fs.mkdirSync(docsPath)
     fs.writeFileSync(`${docsPath}/index.md`, content)
@@ -249,7 +249,8 @@ const updateDestinations = async () => {
       browserUnbundlingSupported: destination.browserUnbundlingSupported,
       browserUnbundlingPublic: destination.browserUnbundlingPublic,
       settings: destination.settings,
-      connection_modes
+      connection_modes,
+      previous_names: destination.previous_names
     }
 
     destinationsUpdated.push(updatedDestination)
