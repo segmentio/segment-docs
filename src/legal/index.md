@@ -5,7 +5,7 @@ hide-feedback: true
 
 [email](mailto:legal@segment.com)
 
-> Effective as of January 1st, 2020.
+_Effective Dec 19th, 2019_
 
 [Prior versions available here](/docs/legal/terms-updates/)
 
