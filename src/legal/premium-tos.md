@@ -440,9 +440,9 @@ PARTY EXPRESSLY AGREES THAT THIS AGREEMENT IS LEGALLY BINDING UPON IT.**
 
 8.  **Service Levels and support**. During the Subscription Term, the
     Services will be subject to the standard service level and standard
-    support terms at \[URL\] ("**Service Level and Support Policy**").
+    support terms at [https://segment.com/docs/legal/premium-tos-sla/](/docs/legal/premium-tos-sla/) ("**Service Level and Support Policy**").
 
-9.  **tECHNICAL Services**. Any purchased Technical Services will be as
+9.  **Technical Services**. Any purchased Technical Services will be as
     described in the relevant Order Form, subject to the fees and any
     additional terms in the Order Form. Customer will reimburse Segment
     for reasonable, pre-approved travel and lodging expenses incurred in
