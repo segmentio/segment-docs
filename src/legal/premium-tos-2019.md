@@ -1,7 +1,6 @@
 ---
+title: Segment Premium Online Terms of Service - 2019
 hidden: true
-title: Segment Premium Online Terms of Service
-feedback: false
 hide-feedback: true
 ---
 
