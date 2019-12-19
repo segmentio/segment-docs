@@ -1,9 +1,10 @@
 ---
 title: Updates - Terms of Service
 hide-feedback: true
+hidden: true
 ---
 
-[email](mailto:legal@segment.com)
+This page provides an archive of previous versions of the Segment Terms of Service. If you have any questions, please contact the [Segment Legal team](mailto:legal@segment.com).
 
 * [January 1, 2020](/docs/legal/)
 * [April 30, 2018](/docs/legal/terms-2018)
