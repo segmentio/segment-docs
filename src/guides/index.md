@@ -10,6 +10,8 @@ Segment is a Customer Data Infrastructure (CDI) service provider, which means th
 
 You can also enrich the customer data you collect by connecting data from your other tools, and then aggregate it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use Personas, our identity resolution tool, to unify data from individual users to gain a wholistic understanding of their actions.
 
+{% include components/media-icon.html href="https://university.segment.com/series/segment-101" icon="media/icon-academy.svg" title="Segment 101: What is Segment?" content="Check out Segment University, our interactive overview of Segment. (placeholder text <3 )" %}
+
 ## What does it do?
 
 In its very simplest form, Segment helps you generate messages about what's happening in your site or app, then translates those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and transmits messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/warehouses) (such as databases, warehouses, or bulk-storage buckets).
