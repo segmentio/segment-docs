@@ -5,10 +5,14 @@ feedback: false
 hide-feedback: true
 ---
 
-[email]: mailto:legal@segment.com
-[pricing]: https://segment.com/pricing
+This page provides an archive of a previous version of the Segment Terms of Service. If you have any questions, please contact the [Segment Legal team](mailto:legal@segment.com).
 
 > Archived version: Last modified on October 20, 2016
+> Effective October 20, 2016 to October 24, 2017.
+
+[Prior versions available here](/docs/legal/terms-updates/)
+
+---
 
 <small>
 PLEASE READ THESE TERMS OF SERVICE CAREFULLY. THESE TERMS OF SERVICE CONTAIN IMPORTANT INFORMATION REGARDING YOUR LEGAL RIGHTS, REMEDIES AND OBLIGATIONS. THESE INCLUDE LIMITATIONS ON LIABILITY AND A DISCLAIMER OF ALL WARRANTIES.

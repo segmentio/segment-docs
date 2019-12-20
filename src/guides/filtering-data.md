@@ -70,7 +70,7 @@ Schema defaults allow you to prevent unexpected or malformed data from a Source 
 
 Data blocked using schema defaults is permanently discarded, and cannot be recovered or replayed through Segment. You can forward blocked data to a new Source, but these events count toward your account MTU limits, and may not be worth saving.
 
-Schema Defaults are available to all customers, regardless of Segment plan.
+Schema Defaults are only available to Business Tier customers.
 
 You can find the Schema Defaults in the **Settings** tab for each Source, in **Schema Configuration** section.
 
