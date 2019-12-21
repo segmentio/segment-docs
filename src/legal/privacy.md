@@ -189,7 +189,10 @@ let us know if your personal information changes during your relationship with u
 We use your personal information for the following purposes or as
 otherwise described to you at the time of collection:
 
-**Service delivery.** We use your personal information to:
+<a id="service-delivery"></a>
+
+### Service delivery. 
+We use your personal information to:
 
 -   provide, operate, maintain, and improve the Service;
 
@@ -206,7 +209,11 @@ otherwise described to you at the time of collection:
 -   provide support for the Service and respond to your requests,
     questions and feedback.
 
-**Site operation.** We use your personal information to:
+<a id="site-operation"></a>
+
+### Site operation.
+
+We use your personal information to:
 
 -   provide, operate, maintain and improve the Site;
 
@@ -215,8 +222,11 @@ otherwise described to you at the time of collection:
 
 -   provide support for the Site and respond to your requests, questions
     and feedback.
+    
+<a id="research-and-development"></a>
 
-**Research and development.** We may use your personal information for
+### Research and development.
+We may use your personal information for
 research and development purposes, including to analyze and improve the
 Service and our business and develop other products and services. As
 part of these activities, we may create aggregated, de-identified or
@@ -226,7 +236,10 @@ makes the data personally identifiable to you. We may use this anonymous
 data and share it with third parties for our lawful business purposes,
 including to analyze and improve the Service and promote our business.
 
-**Marketing.** We and our third party advertising partners may collect and
+<a id="marketing"></a>
+
+### Marketing.
+We and our third party advertising partners may collect and
 use your personal information for marketing and advertising purposes:
 
 -   **Direct marketing.** If you request information from us, use the
@@ -246,7 +259,10 @@ use your personal information for marketing and advertising purposes:
     interest-based advertising, in the [Advertising choices](#advertising-choices) section
     below.
 
-**Compliance and protection.** We may use your personal information to:
+<a id="compliance-and-protection"></a>
+
+### Compliance and protection.
+We may use your personal information to:
 
 -   protect our, your or others' rights, privacy, safety or property
     (including by making and defending legal claims);
@@ -263,7 +279,10 @@ use your personal information for marketing and advertising purposes:
 -   comply with applicable laws, lawful requests and legal process, such
     as to respond to subpoenas or requests from government authorities.
 
-**Other purposes with your consent.** In some cases we will ask for your
+<a id="other-purposes"></a>
+
+### Other purposes with your consent.
+In some cases we will ask for your
 consent to collect, use or share your personal information for other
 purposes. For example, we may ask for your consent to send you marketing
 emails where required by law or to post your testimonial or endorsement.
@@ -649,11 +668,11 @@ process your personal information, contact us at [privacy@segment.com](mailto:pr
 
 | **Processing purpose**  | **Legal Basis**   |
 |-------------------------|-------------------|
-| Service delivery  <br/> Site operation  | Processing is necessary to perform the contract governing our operation of the Site or the provision of the Services, or to take steps that you request prior to engaging our Services.  Where we cannot process your personal data as required to operate the Site or Services on the grounds of contractual necessity, we process your personal information for this purpose based on our legitimate interest in providing you with the Services you access and request.    |
-| Marketing  |  Processing is based on your consent where that consent is required by applicable law.  Where we rely on your consent you have the right to withdraw it any time in the manner indicated when you consent or in the Service. Where such consent is not required by applicable law, we process your personal information for these purposes based on our legitimate interests in promoting our business. |
-| Research & Development  | Processing is based on our legitimate interests in performing research and development to improve our services and develop new services.   |
-| Compliance & Protection | Processing is necessary to comply with our legal obligations or based on our legitimate interests in protecting our or others’ rights, privacy, safety or property. |
-| Other purposes with your consent | Processing is based on your consent. Where we rely on your consent you have the right to withdraw it anytime in the manner indicated when you consent or in the Service. |
+| [Service delivery](#service-delivery) <br/> [Site operation](#site-operation)  | Processing is necessary to perform the contract governing our operation of the Site or the provision of the Services, or to take steps that you request prior to engaging our Services.  Where we cannot process your personal data as required to operate the Site or Services on the grounds of contractual necessity, we process your personal information for this purpose based on our legitimate interest in providing you with the Services you access and request.    |
+| [Marketing](#marketing)  |  Processing is based on your consent where that consent is required by applicable law.  Where we rely on your consent you have the right to withdraw it any time in the manner indicated when you consent or in the Service. Where such consent is not required by applicable law, we process your personal information for these purposes based on our legitimate interests in promoting our business. |
+| [Research & Development](#research-and-development)  | Processing is based on our legitimate interests in performing research and development to improve our services and develop new services.   |
+| [Compliance & Protection](#compliance-and-protection) | Processing is necessary to comply with our legal obligations or based on our legitimate interests in protecting our or others’ rights, privacy, safety or property. |
+| [Other purposes with your consent](#other-purposes) | Processing is based on your consent. Where we rely on your consent you have the right to withdraw it anytime in the manner indicated when you consent or in the Service. |
 
 
 ### Use for new purposes.
