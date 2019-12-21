@@ -243,7 +243,7 @@ use your personal information for marketing and advertising purposes:
     emails, and use that information to serve ads that they think will
     interest you. These ads are known as "interest-based
     advertisements." You can learn more about your choices for limiting
-    interest-based advertising, in the Advertising choices section
+    interest-based advertising, in the [Advertising choices](#advertising-choices) section
     below.
 
 **Compliance and protection.** We may use your personal information to:
@@ -304,7 +304,7 @@ at the time of collection:
 
 -   **Customers.** When you have an organization-administered account
     your organization can access your information as described in the
-    Organization-Administered Accounts section below.
+    [Organization-Administered Accounts](#Organization-Administered-Accounts) section below.
 
 -   **Affiliates.** We may disclose your personal information to our
     subsidiaries and corporate affiliates for use consistent with this
@@ -357,6 +357,8 @@ site, but wish to update or delete it, please [contact us](mailto:privacy@segme
 
 ### Cookies.
 You may opt-out of certain cookie-based tracking activities on our Site in our [Website Data Collection Preferences](https://segment.com/docs/legal/website-data-collection-policy/#how-do-we-collect-data-on-our-website-) center. Additionally, most browsers let you remove and/or stop accepting cookies from the websites you visit. To do this, follow the instructions in your browser's settings. Many browsers accept cookies by default until you change your settings. If you do not accept cookies, however, you may not be able to use all functionality of the Service and our Site may not work properly. For more information about cookies, including how to see what cookies have been set on your browser and how to manage and delete them, visit www.allaboutcookies.org.
+
+<a id="advertising-choices"></a>
 
 ### Advertising choices.
 You can opt-out of data collection through our Site for interest-based advertising purposes in our [Website Data Collection Preferences](https://segment.com/docs/legal/website-data-collection-policy/#how-do-we-collect-data-on-our-website-) center. You can also limit use of your information for interest-based advertising by:
@@ -589,8 +591,8 @@ entitled Interest-based advertising. Use of these services may
 constitute a "sale" of Personal Information under the CCPA where the
 user has not opted into the tracking. We no longer permit these services
 to track your use of the Site for interest-based advertising unless you
-opt-in, and you can always opt-out in our Website Data Collection
-Preferences center. However, our past practice of allowing this tracking
+opt-in, and you can always opt-out in our [Website Data Collection
+Preferences center](https://segment.com/docs/legal/website-data-collection-policy/). However, our past practice of allowing this tracking
 on an opt-out basis may have resulted in the "sale" of your Personal
 Information prior to January 1, 2020.
 
