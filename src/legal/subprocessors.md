@@ -37,6 +37,6 @@ These Data Subprocessors apply to customers who use specific product functionali
 | Entity | Related Segment functionality | Entity Type | Entity Location |
 | ------------ | ---------- | ---------------------- | --------------- |
 | Google LLC.| BigQuery Data Warehouse Destination, Personas | Cloud Service Provider | USA|
-| IBM LLC.| Db2 Data Warehouse Destination Data Warehousing | USA |
+| IBM LLC.| Db2 Data Warehouse Destination | Data Warehousing | USA |
 | Microsoft Azure | Azure SQL Data Warehouse Destination | Data Warehousing | USA|
 | Snowflake, Inc. | Snowflake Data Warehouse Destination | Data Warehousing | USA |
