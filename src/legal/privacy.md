@@ -59,13 +59,13 @@ Policy, email us at [privacy@segment.com](mailto:privacy@segment.com).
 
 -   [Contact Us](#Contact-Us)
 
--   [Information for California residents](#Additional-Information-for-California-Residents)
+-   [Information for California Residents](#Additional-Information-for-California-Residents)
 
 -   [Information for individuals in Europe](#Additional-Information-for-European-Union)
 
 <a id="Segments-Service-and-Client-User-Data"></a>
 
-##Segment's Service and Customer Data
+## Segment's Service and Customer Data
 
 Registered users of the Service ("**Customers**") are businesses that
 use it to collect and manage information about their own users
@@ -91,7 +91,8 @@ with our Service is subject to the written agreement between Segment and
 Customer.
 
 <a id="Personal-Information-We-Collect"></a>
-##Personal Information We Collect
+
+## Personal Information We Collect
 
 ### Information you give us.
 Personal information that you may provide through the Service or otherwise includes:
@@ -122,14 +123,14 @@ Personal information that you may provide through the Service or otherwise inclu
     specifically listed here, which we will use as described in this
     Privacy Policy or as otherwise disclosed at the time of collection.
 
-###Information from third party sources.
+### Information from third party sources.
 We may combine personal information we receive from you with personal information we obtain from
 other sources, such as our Customers; data providers; affiliates within
 our corporate group of companies; business partners, such as joint
 marketing partners and event co-sponsors; and publicly accessible
 sources, such as social media platforms.
 
-###Data collected automatically. 
+### Data collected automatically. 
 We, our service providers, and our
 business partners may automatically log the following information about
 you, your computer or mobile device, and your activity over time on the
@@ -169,9 +170,8 @@ For more information about the use of these technologies on the Site,
 see our [Website Data Collection
 Policy](https://segment.com/docs/legal/website-data-collection-policy/).
 
-###Sensitive personal information.
-We ask that you not share with us any sensitive personal information (e.g., social security numbers,
-information related to racial or ethnic origin, political opinions,
+### Sensitive personal information.
+We ask that you not share with us any sensitive personal information (e.g., social security numbers,information related to racial or ethnic origin, political opinions,
 religion or other beliefs, health, biometrics or genetic
 characteristics, criminal background or union membership) on or through
 the Service or otherwise. If you do anyway, you must consent to our
@@ -183,7 +183,8 @@ It is important that the personal information we hold about you is accurate and 
 let us know if your personal information changes during your relationship with us by updating your registration profile or emailing us at [privacy@segment.com](mailto:privacy@segment.com).
 
 <a id="How-We-Use-Your-Personal-Information"></a>
-##How We Use Your Personal Information
+
+## How We Use Your Personal Information
 
 We use your personal information for the following purposes or as
 otherwise described to you at the time of collection:
@@ -268,7 +269,8 @@ purposes. For example, we may ask for your consent to send you marketing
 emails where required by law or to post your testimonial or endorsement.
 
 <a id="How-We-Share-Your-Personal-Information"></a>
-##How We Share your Personal Information
+
+## How We Share your Personal Information
 
 We do not share the personal information that you provide us with other
 organizations without your express consent, except as described in this
@@ -331,31 +333,33 @@ at the time of collection:
     to honor this Privacy Policy.
 
 <a id="your-choices"></a>
-##Your Choices
 
-**Access, Update, Correct or Delete Your Information.** Customers may
-review, update, correct or delete the personal information in their
+## Your Choices
+
+### Access, Update, Correct or Delete Your Information.
+Customers may review, update, correct or delete the personal information in their
 registration profile by logging into their account or emailing us
-at <privacy@segment.com>.
+at [privacy@segment.com](mailto:privacy@segment.com).
 
-**Access to Data Controlled by our Customers.** Segment has no direct
-relationship with the individuals whose personal information is
+### Access to Data Controlled by our Customers.
+Segment has no direct relationship with the individuals whose personal information is
 contained within the Customer Data processed by the Service. An
 individual who seeks to access, correct or delete this information
 should direct their request the Customer.
 
-**Marketing communications.** You may opt out of marketing-related
-emails by logging in and changing your account settings or by following
-the opt-out prompt in the email. You may continue to receive
+### Marketing communications.
+You may opt out of marketing-related emails by logging in and changing your account settings or by following the opt-out prompt in the email. You may continue to receive
 Service-related and other non-marketing emails.
 
-**Testimonials.** If you gave us consent to post a testimonial to our
-site, but wish to update or delete it, please [contact
-us](mailto:privacy@segment.com).
+### Testimonials.
+If you gave us consent to post a testimonial to our
+site, but wish to update or delete it, please [contact us](mailto:privacy@segment.com).
 
-**Cookies.** You may opt-out of certain cookie-based tracking activities on our Site in our [Website Data Collection Preferences](https://segment.com/docs/legal/website-data-collection-policy/#how-do-we-collect-data-on-our-website-) center. Additionally, most browsers let you remove and/or stop accepting cookies from the websites you visit. To do this, follow the instructions in your browser's settings. Many browsers accept cookies by default until you change your settings. If you do not accept cookies, however, you may not be able to use all functionality of the Service and our Site may not work properly. For more information about cookies, including how to see what cookies have been set on your browser and how to manage and delete them, visit www.allaboutcookies.org.
+### Cookies.
+You may opt-out of certain cookie-based tracking activities on our Site in our [Website Data Collection Preferences](https://segment.com/docs/legal/website-data-collection-policy/#how-do-we-collect-data-on-our-website-) center. Additionally, most browsers let you remove and/or stop accepting cookies from the websites you visit. To do this, follow the instructions in your browser's settings. Many browsers accept cookies by default until you change your settings. If you do not accept cookies, however, you may not be able to use all functionality of the Service and our Site may not work properly. For more information about cookies, including how to see what cookies have been set on your browser and how to manage and delete them, visit www.allaboutcookies.org.
 
-**Advertising choices.** You can opt-out of data collection through our Site for interest-based advertising purposes in our [Website Data Collection Preferences](https://segment.com/docs/legal/website-data-collection-policy/#how-do-we-collect-data-on-our-website-) center. You can also limit use of your information for interest-based advertising by:
+### Advertising choices.
+You can opt-out of data collection through our Site for interest-based advertising purposes in our [Website Data Collection Preferences](https://segment.com/docs/legal/website-data-collection-policy/#how-do-we-collect-data-on-our-website-) center. You can also limit use of your information for interest-based advertising by:
 
 -   **Browser settings.** Blocking third party cookies in your browser
     settings using or ad-blocking browser plug-ins/extensions.
@@ -397,19 +401,18 @@ cookies and interest-based ads from other companies. If you opt-out of
 interest-based advertisements, you will still see advertisements online
 but they may be less relevant to you.
 
-**Do Not Track.** Some Internet browsers may be configured to send "Do
-Not Track" signals to the online services that you visit. We currently
-do not respond to "Do Not Track" or similar signals. To find out more
-about "Do Not Track," please visit http://www.allaboutdnt.com.
+### Do Not Track.
+Some Internet browsers may be configured to send "Do Not Track" signals to the online services that you visit. We currently do not respond to "Do Not Track" or similar signals. To find out more about "Do Not Track," please visit http://www.allaboutdnt.com.
 
-**Declining to provide your personal information.** If you do not
-provide information indicated as required or mandatory within the
+### Declining to provide your personal information.
+If you do not provide information indicated as required or mandatory within the
 Service, or that is otherwise necessary to provide a requested service
 or feature within the Service, that portion or all of the Service may be
 unavailable to you and we may deactivate your account.
 
 <a id="security"></a>
-##Security
+
+## Security
 
 The security of your personal information important to us. We take a
 number of organizational, technical and physical measures designed to
@@ -418,7 +421,8 @@ and once we receive it. However, no security safeguards are 100% secure
 and we cannot guarantee the security of your information.
 
 <a id="international-data-use"></a>
-##International Data Use
+
+## International Data Use
 
 Segment is headquartered in the United States and has affiliates and
 service providers in other countries, and your personal information may
@@ -428,12 +432,12 @@ handle your personal information may not be as protective as the privacy
 laws in your home country.
 
 Individuals in the European Economic Area should read the important
-information
-provided [here](https://segment.com/docs/legal/privacy/#Cross-Border-Data-Transfer) about
+information provided [here](https://segment.com/docs/legal/privacy/#Cross-Border-Data-Transfer) about
 transfer of personal information outside of the European Economic Area.
 
 <a id="Third-Party-Sites-and-Services"></a>
-##Third Party Sites and Services*
+
+## Third Party Sites and Services*
 
 The Service may contain links to other websites and services operated by
 third parties, such as social media platforms, advertising services and
@@ -446,7 +450,8 @@ personal information. We encourage you to read their privacy policies to
 learn more.
 
 <a id="children"></a>
-##Children
+
+## Children
 
 The Service is not directed at, and Segment does not knowingly acquire
 or receive personal information from, children under the age of 16. If
@@ -455,7 +460,8 @@ take appropriate steps to delete that individual's personal information
 and restrict that individual from future access to the Service.
 
 <a id="Organization-Administered-Accounts"></a>
-##Organization-Administered Accounts
+
+## Organization-Administered Accounts
 
 Where the Service is provided to you through your employer or another
 organization, please note that your organization's administrator may be
@@ -480,7 +486,8 @@ Please contact your organization or refer to your administrator's
 organizational policies for more information.
 
 <a id="Changes-to-This-Privacy-Policy"></a>
-##Changes to this Privacy Policy
+
+## Changes to this Privacy Policy
 
 We reserve the right to modify this Privacy Policy at any time. We
 encourage you to periodically review this page for the latest
@@ -496,7 +503,8 @@ all cases, your continued use of the Service after the posting of any
 updated Privacy Policy indicates your acceptance of the update.
 
 <a id="Contact-Us"></a>
-##Contact Us
+
+## Contact Us
 
 If you have any questions or concerns about our Privacy Policy, please
 contact us.
@@ -504,10 +512,11 @@ contact us.
 Segment.io, Inc. 100 California Street, Suite 700 San Francisco, CA
 94111 USA Attention: Data Protection Officer
 
-Email: <privacy@segment.com>
+Email:[privacy@segment.com](mailto:privacy@segment.com)
 
 <a id="Additional-Information-for-California-Residents"></a>
-##Important Information for California Residents
+
+## Important Information for California Residents
 
 This section applies only to California residents. It describes how we
 collect, use and share Personal Information of California residents in
@@ -517,7 +526,8 @@ has the meaning given in the California Consumer Privacy Act of 2018
 ("**CCPA**") but does not include information exempted from the scope of
 the CCPA.
 
-**Your California privacy rights.** You have the rights listed below. However, these rights are not absolute, and in certain cases we may decline your request as permitted by law. 
+### Your California privacy rights.
+You have the rights listed below. However, these rights are not absolute, and in certain cases we may decline your request as permitted by law. 
 
 -   **Information.** You can request the following information about how
     we have collected and used your Personal Information during the past
@@ -555,11 +565,9 @@ the CCPA.
     decreasing service quality; or suggesting that we may penalize you
     as described above for exercising your rights.
 
-**How to exercise your information, access and deletion rights.** You
-may submit a request to exercise your information, access or deletion
-rights by visiting emailing privacy@segment.com or emailing us
-toll-free at . We will need to
-verify your identity to process your information, access and deletion
+### How to exercise your information, access and deletion rights.
+You may submit a request to exercise your information, access or deletion
+rights by visiting emailing [privacy@segment.com](mailto:privacy@segment.com) or emailing us toll-free at (866) 538-5962. We will need to verify your identity to process your information, access and deletion
 requests and we reserve the right to confirm your California residency.
 Government identification may be required. If you wish to designate an
 authorized agent to make a request on your behalf, we will need to
@@ -570,7 +578,8 @@ provide us with sufficient detail to allow us to understand and respond
 to it. In certain cases, we may be required or permitted by law to deny
 your request.
 
-**We do not sell your personal information.** Based on our current
+### We do not sell your personal information.
+Based on our current
 understanding of the CCPA, we do not "sell" your personal information as
 defined in the CCPA. However, like many companies online, Segment uses
 services provided by Google, Facebook and other advertising companies
@@ -585,7 +594,8 @@ Preferences center. However, our past practice of allowing this tracking
 on an opt-out basis may have resulted in the "sale" of your Personal
 Information prior to January 1, 2020.
 
-**Personal information we collect, use and disclose.** The chart below
+### Personal information we collect, use and disclose.
+The chart below
 describes the categories of Personal Information we collect by reference
 to the categories specified by the CCPA (California Civil Code §
 1798.140(o)).
@@ -808,7 +818,8 @@ to the categories specified by the CCPA (California Civil Code §
 +-------------+-------------+-------------+-------------+-------------+
 
 <a id="Additional-Information-for-European-Union"></a>
-##Additional Information for European Union Users
+
+## Additional Information for European Union Users
 
 **Personal information.** References to "personal information" in this
 Privacy Policy are equivalent to "personal data" governed by European
@@ -824,9 +835,10 @@ representative is:
 Segment Technologies Ireland, Limited c/o Segment.io, Inc. 100
 California Street, Suite 700 San Francisco, CA 94111 USA
 
-Email: <privacy@segment.com>
+Email: [privacy@segment.com](mailto:privacy@segment.com)
 
-**Legal bases for processing.** The legal bases on which we process your
+### Legal bases for processing.
+The legal bases on which we process your
 personal information as described in this Privacy Policy will depend on
 the type of personal information and the specific context in which we
 process it. However, the legal bases we typically rely on are set out in
@@ -834,7 +846,7 @@ the table below. We rely on our legitimate interests as our legal basis
 only where those interests are not overridden by the impact on you
 (unless we have your consent or our processing is otherwise required or
 permitted by law). If you have questions about the legal basis of how we
-process your personal information, contact us at <privacy@segment.com>.
+process your personal information, contact us at [privacy@segment.com](mailto:privacy@segment.com).
 
 +----------------------------------+----------------------------------+
 | **Processing purpose**           | **Legal Basis**                  |
@@ -894,13 +906,15 @@ process your personal information, contact us at <privacy@segment.com>.
 |                                  | consent or in the Service.       |
 +----------------------------------+----------------------------------+
 
-**Use for new purposes.** We may use your personal information for
+### Use for new purposes.
+We may use your personal information for
 reasons not described in this Privacy Policy where permitted by law and
 the reason is compatible with the purpose for which we collected it. If
 we need to use your personal information for an unrelated purpose, we
 will notify you and explain the applicable legal basis.
 
-**Retention.** We will only retain your personal information for as long
+### Retention.
+We will only retain your personal information for as long
 as necessary to fulfill the purposes we collected it for, including for
 the purposes of satisfying any legal, accounting, or reporting
 requirements.
@@ -913,6 +927,7 @@ process your personal information and whether we can achieve those
 purposes through other means, and the applicable legal requirements.
 
 <a id="Your-Rights"></a>
+
 ## Your rights.
  
 European data protection laws give you certain rights
@@ -941,9 +956,9 @@ following actions in relation to your personal information that we hold:
     the basis of our processing of your personal information that
     impacts your rights.
 
-You can submit these requests by email to <privacy@segment.com> or our
+You can submit these requests by email to [privacy@segment.com](mailto:privacy@segment.com) or our
 postal address
-provided [above](https://segment.com/docs/legal/privacy/#Contact-Us). We
+provided [above](#Contact-Us). We
 may request specific information from you to help us confirm your
 identity and process your request. Applicable law may require or permit
 us to decline your request. If we decline your request, we will tell you
@@ -954,7 +969,7 @@ submit a complaint to the data protection regulator in your
 jurisdiction. You can find your data protection
 regulator [here](http://ec.europa.eu/justice/article-29/structure/data-protection-authorities/index_en.htm).
 
-###Cross-Border Data Transfer
+### Cross-Border Data Transfer
 
 If we transfer your personal information out of the European Economic
 Area or Switzerland and are required to apply additional safeguards to
@@ -971,7 +986,7 @@ transfers or the specific safeguards applied.
 Segment itself has self-certified to the EU-U.S. and Swiss-U.S. Privacy
 Shield. For more information, see our Privacy Shield Notice.
 
-###Privacy Shield Notice
+### Privacy Shield Notice
 
 *Effective as of July 18, 2018.*
 
@@ -1008,23 +1023,24 @@ services, to correct and address technical or service problems, to
 follow instructions of the customer who submitted the data, or in
 response to contractual requirements.
 
-**Inquiries and complaints**. If you believe Segment maintains your
+### Inquiries and complaints. 
+If you believe Segment maintains your
 personal data within the scope of our Privacy Shield certification, you
 may direct any inquiries or complaints concerning our Privacy Shield
-compliance to <privacy@segment.com>. If you are located in the EEA or
-Switzerland and have an unresolved privacy or data use concern that we
+compliance to [privacy@segment.com](mailto:privacy@segment.com). If you are located in the EEA or Switzerland and have an unresolved privacy or data use concern that we
 have not addressed satisfactorily, please contact our U.S.-based third
 party dispute resolution provider (free of charge)
 at <https://feedback-form.truste.com/watchdog/request>.
 
-**Arbitration**. If you are located in the EEA or Switzerland and
+### Arbitration. 
+If you are located in the EEA or Switzerland and
 neither Segment nor our dispute resolution provider resolves your
 complaint, you may be entitled to invoke binding arbitration under
 certain conditions more fully described on the [Privacy Shield
 website](https://www.privacyshield.gov/article?id=How-to-Submit-a-Complaint).
 
-**Third parties who may receive personal data.** We share Segment User
-Data with third parties as described in our Privacy Policy. We may share
+### Third parties who may receive personal data. 
+We share Segment User Data with third parties as described in our Privacy Policy. We may share
 Services Data with third parties under the following circumstances and
 only in accordance with the applicable customer agreements:
 
@@ -1062,7 +1078,7 @@ In addition, we may be required to disclose any personal data that we
 process in response to lawful requests by public authorities, including
 to meet national security or law enforcement requirements.
 
-###Your rights to access, to limit use, and to limit disclosure.
+### Your rights to access, to limit use, and to limit disclosure.
 Individuals in the EEA and Switzerland have rights to
 access personal data about them, and to limit use and disclosure of
 their personal data. With our Privacy Shield self-certification, we have
@@ -1083,7 +1099,7 @@ request. Applicable law may require or permit us to decline your
 request. If we decline your request, we will tell you why, subject to
 legal restrictions.
 
-###U.S. Federal Trade Commission Enforcement.
+### U.S. Federal Trade Commission Enforcement.
 Segment's commitments under the Privacy Shield are subject to the regulatory enforcement
 powers of the U.S. Federal Trade Commission.   If there is any conflict
 between the terms in this Privacy Shield Notice and the Privacy Shield
