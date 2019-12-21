@@ -439,7 +439,7 @@ transfer of personal information outside of the European Economic Area.
 
 <a id="Third-Party-Sites-and-Services"></a>
 
-## Third Party Sites and Services*
+## Third Party Sites and Services
 
 The Service may contain links to other websites and services operated by
 third parties, such as social media platforms, advertising services and
