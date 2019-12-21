@@ -597,227 +597,24 @@ on an opt-out basis may have resulted in the "sale" of your Personal
 Information prior to January 1, 2020.
 
 ### Personal information we collect, use and disclose.
-The chart below
-describes the categories of Personal Information we collect by reference
+The chart below describes the categories of Personal Information we collect by reference
 to the categories specified by the CCPA (California Civil Code §
 1798.140(o)).
 
-+-------------+-------------+-------------+-------------+-------------+
-| **Statutory | **PI we     | **Sources   | *           | **Parties   |
-| category of | collect\    | of the PI\  | *Business/\ | to whom we  |
-| personal    | **(click    | **(click    | commercial  | disclose PI |
-| information | for         | for         | purpose for | for a       |
-| (PI)**      | details)    | details)    | PI          | business    |
-|             |             |             | collection\ | purpose\    |
-|             |             |             | **(click    | **(click    |
-|             |             |             | for         | for         |
-|             |             |             | details)**\ | details)    |
-|             |             |             | **          |             |
-+=============+=============+=============+=============+=============+
-| *           | -           | -   *You*   | -           | -   *       |
-| Identifiers |    *Contact |             |    *Service | Advertising |
-| (general)*  |     i       | -   *Third  |             |             |
-|             | nformation* |     party   |   delivery* |   partners* |
-|             |             |             |             |             |
-|             | -           |    sources* | -           | -           |
-|             |    *Profile |             |   *Research |    *Service |
-|             |     i       |             |     &       |             |
-|             | nformation* |             |     d       |  providers* |
-|             |             |             | evelopment* |             |
-|             |             |             |             |             |
-|             |             |             | -           |             |
-|             |             |             | *Marketing* |             |
-|             |             |             |             |             |
-|             |             |             | -           |             |
-|             |             |             | *Compliance |             |
-|             |             |             |     &       |             |
-|             |             |             |             |             |
-|             |             |             | Protection* |             |
-+-------------+-------------+-------------+-------------+-------------+
-| *Commercial | -   *Comm   | -   *You*   | -           | -           |
-| I           | unications* |             |    *Service |    *Service |
-| nformation* |             | -   *Third  |             |             |
-|             | -           |     party   |   delivery* |  providers* |
-|             |  *Marketing |             |             |             |
-|             |     I       |    sources* | -           |             |
-|             | nformation* |             |   *Research |             |
-|             |             |             |     &       |             |
-|             |             |             |     d       |             |
-|             |             |             | evelopment* |             |
-|             |             |             |             |             |
-|             |             |             | -           |             |
-|             |             |             | *Marketing* |             |
-|             |             |             |             |             |
-|             |             |             | -           |             |
-|             |             |             | *Compliance |             |
-|             |             |             |     &       |             |
-|             |             |             |             |             |
-|             |             |             | Protection* |             |
-+-------------+-------------+-------------+-------------+-------------+
-| *Financial  | -   *       | -   *Our    | -           | -           |
-| I           | Transaction |             |    *Service |    *Payment |
-| nformation* |     i       |  Customers* |             |             |
-|             | nformation* |             |   delivery* | processors* |
-|             |             |             |             |             |
-|             |             |             | -           | -           |
-|             |             |             | *Compliance |    *Service |
-|             |             |             |     &       |             |
-|             |             |             |             |  providers* |
-|             |             |             | Protection* |             |
-+-------------+-------------+-------------+-------------+-------------+
-| *           | -   *Device | -   *You*   | -           | -           |
-| Identifiers |     data*   |             |    *Service |    *Service |
-| (online)*   |             | -           |             |             |
-|             |             |  *Automatic |   delivery* |  providers* |
-|             |             |             |             |             |
-|             |             | collection* | -   *Site   | -   *       |
-|             |             |             |             | Advertising |
-|             |             |             |  operation* |             |
-|             |             |             |             |   partners* |
-|             |             |             | -           |             |
-|             |             |             |   *Research |             |
-|             |             |             |     &       |             |
-|             |             |             |     d       |             |
-|             |             |             | evelopment* |             |
-|             |             |             |             |             |
-|             |             |             | -           |             |
-|             |             |             | *Marketing* |             |
-|             |             |             |             |             |
-|             |             |             | -           |             |
-|             |             |             | *Compliance |             |
-|             |             |             |     &       |             |
-|             |             |             |             |             |
-|             |             |             | Protection* |             |
-+-------------+-------------+-------------+-------------+-------------+
-| *Internet   | -   *Online | -           | -           | -   *       |
-| or Network  |             |  *Automatic |    *Service | Advertising |
-| I           |    activity |             |             |             |
-| nformation* |     data*   | collection* |   delivery* |   partners* |
-|             |             |             |             |             |
-|             |             |             | -   *Site   | -           |
-|             |             |             |             |    *Service |
-|             |             |             |  operation* |             |
-|             |             |             |             |  providers* |
-|             |             |             | -           |             |
-|             |             |             |   *Research |             |
-|             |             |             |     &       |             |
-|             |             |             |     d       |             |
-|             |             |             | evelopment* |             |
-|             |             |             |             |             |
-|             |             |             | -           |             |
-|             |             |             | *Marketing* |             |
-|             |             |             |             |             |
-|             |             |             | -           |             |
-|             |             |             | *Compliance |             |
-|             |             |             |     &       |             |
-|             |             |             |             |             |
-|             |             |             | Protection* |             |
-+-------------+-------------+-------------+-------------+-------------+
-| *P          | -           | -   *You*   | -           | -           |
-| rofessional |    *Contact |             |    *Service |    *Service |
-| or          |     i       | -   *Third  |             |             |
-| Employment  | nformation* |     party   |   delivery* |  providers* |
-| I           |             |             |             |             |
-| nformation* | -           |    sources* | -           |             |
-|             |    *Profile |             |   *Research |             |
-|             |     i       |             |     &       |             |
-|             | nformation* |             |     d       |             |
-|             |             |             | evelopment* |             |
-|             |             |             |             |             |
-|             |             |             | -           |             |
-|             |             |             | *Marketing* |             |
-|             |             |             |             |             |
-|             |             |             | -           |             |
-|             |             |             | *Compliance |             |
-|             |             |             |     &       |             |
-|             |             |             |             |             |
-|             |             |             | Protection* |             |
-+-------------+-------------+-------------+-------------+-------------+
-| *Sensory    | -   *Comm   | -   *You*   | -           | -           |
-| I           | unications* |             | *Marketing* |    *Service |
-| nformation* |             |             |             |             |
-|             |             |             | -           |  providers* |
-|             |             |             | *Compliance |             |
-|             |             |             |     &       |             |
-|             |             |             |             |             |
-|             |             |             | Protection* |             |
-+-------------+-------------+-------------+-------------+-------------+
-| *           | *User       | -   *Us*    | -           | -           |
-| Inferences* | preferences |             |    *Service |    *Service |
-|             | derived     |             |             |             |
-|             | from any of |             |   delivery* |  providers* |
-|             | the         |             |             |             |
-|             | information |             | -   *Site   |             |
-|             | listed      |             |             |             |
-|             | above that  |             |  Operation* |             |
-|             | we collect  |             |             |             |
-|             | from        |             | -           |             |
-|             | Customers*  |             |   *Research |             |
-|             |             |             |     &       |             |
-|             |             |             |     d       |             |
-|             |             |             | evelopment* |             |
-|             |             |             |             |             |
-|             |             |             | -           |             |
-|             |             |             | *Marketing* |             |
-|             |             |             |             |             |
-|             |             |             | -           |             |
-|             |             |             | *Compliance |             |
-|             |             |             |     &       |             |
-|             |             |             |             |             |
-|             |             |             | Protection* |             |
-+-------------+-------------+-------------+-------------+-------------+
-| We may      |             |             |             |             |
-| further     |             |             |             |             |
-| disclose    |             |             |             |             |
-| each        |             |             |             |             |
-| category of |             |             |             |             |
-| Personal    |             |             |             |             |
-| Information |             |             |             |             |
-| to our      |             |             |             |             |
-| affiliates, |             |             |             |             |
-| to our      |             |             |             |             |
-| p           |             |             |             |             |
-| rofessional |             |             |             |             |
-| advisors,   |             |             |             |             |
-| in          |             |             |             |             |
-| connection  |             |             |             |             |
-| with our    |             |             |             |             |
-| compliance  |             |             |             |             |
-| and         |             |             |             |             |
-| protection  |             |             |             |             |
-| activities  |             |             |             |             |
-| and in      |             |             |             |             |
-| connection  |             |             |             |             |
-| with        |             |             |             |             |
-| business    |             |             |             |             |
-| transfers   |             |             |             |             |
-| as          |             |             |             |             |
-| described   |             |             |             |             |
-| in the      |             |             |             |             |
-| section     |             |             |             |             |
-| above       |             |             |             |             |
-| entitled    |             |             |             |             |
-| How We      |             |             |             |             |
-| Share Your  |             |             |             |             |
-| Personal    |             |             |             |             |
-| I           |             |             |             |             |
-| nformation. |             |             |             |             |
-|             |             |             |             |             |
-| This chart  |             |             |             |             |
-| describes   |             |             |             |             |
-| our         |             |             |             |             |
-| practices   |             |             |             |             |
-| as of, and  |             |             |             |             |
-| during the  |             |             |             |             |
-| 12 months   |             |             |             |             |
-| preceding,  |             |             |             |             |
-| the         |             |             |             |             |
-| effective   |             |             |             |             |
-| date of     |             |             |             |             |
-| this        |             |             |             |             |
-| Privacy     |             |             |             |             |
-| Policy.     |             |             |             |             |
-+-------------+-------------+-------------+-------------+-------------+
+| Statutory category of personal information (PI)  |  PI we collect ([click for details](#Personal-Information-We-Collect)) | Sources of the PI([click for details](#Personal-Information-We-Collect)) | Business/commercial purpose for PI collection ([click for details]((#How-We-Use-Your-Personal-Information))) | Parties to whom we disclose PI for a business purpose ([click for details]((#How-We-Share-Your-Personal-Information)) |
+|---|---|---|---|---|
+|  Identifiers (general) | - Contact information <br/> - Profile information  |  - You <br/> - Third party sources | - Service delivery <br/> - Research & development <br/> - Marketing <br/> - Compliance & Protection  |  - Advertising partners <br/> - Service providers |
+|  Commercial Information |  - Communications <br/> - Marketing Information | - You <br/> - Third party sources  |  - Service delivery <br/> - Research & development <br/> - Marketing <br/> - Compliance & Protection |  - Service providers |
+|  Financial Information |  - Transaction information | - Our Customers | - Service delivery <br/> - Compliance & Protection  |  - Payment processors <br/> - Service providers |
+| Identifiers (online)  |  - Device data | - You <br/> - Automatic collection  | - Service delivery <br/> - Site operation <br/> - Research & development <br/> - Marketing <br/> - Compliance & Protection  | - Advertising partners <br/> - Service providers |
+| Internet or Network Information  | Online activity data  |  Automatic collection |  - Service delivery <br/> - Site operation <br/> - Research & development <br/> - Marketing <br/> - Compliance & Protection | - Advertising partners <br/> - Service providers |
+|  Professional or Employment Information | - Contact information <br/> - Profile information  | - You <br/> - Third party sources |  - Service delivery <br/> - Research & development <br/> - Marketing <br/> - Compliance & Protection |  - Service providers |
+|  Sensory Information | -Communications  | - You  |  - Marketing <br/> - Compliance & Protection |  - Service providers |
+|  Inferences | User preferences derived from any of the information listed above that we collect from Customers  |  - Us | - Service delivery <br/> - Site Operation <br/> - Research & development <br/> - Marketing <br/> - Compliance & Protection  |  - Service providers |
+
+We may further disclose each category of Personal Information to our affiliates, to our professional advisors, in connection with our compliance and protection activities and in connection with business transfers as described in the section above entitled How We Share Your Personal Information.  
+
+This chart describes our practices as of, and during the 12 months preceding, the effective date of this Privacy Policy.
 
 <a id="Additional-Information-for-European-Union"></a>
 
@@ -850,63 +647,14 @@ only where those interests are not overridden by the impact on you
 permitted by law). If you have questions about the legal basis of how we
 process your personal information, contact us at [privacy@segment.com](mailto:privacy@segment.com).
 
-+----------------------------------+----------------------------------+
-| **Processing purpose**           | **Legal Basis**                  |
-+==================================+==================================+
-| Service delivery                 | Processing is necessary to       |
-|                                  | perform the contract governing   |
-| Site operation                   | our operation of the Site or the |
-|                                  | provision of the Services, or to |
-|                                  | take steps that you request      |
-|                                  | prior to engaging our Services.  |
-|                                  | Where we cannot process your     |
-|                                  | personal data as required to     |
-|                                  | operate the Site or Services on  |
-|                                  | the grounds of contractual       |
-|                                  | necessity, we process your       |
-|                                  | personal information for this    |
-|                                  | purpose based on our legitimate  |
-|                                  | interest in providing you with   |
-|                                  | the Services you access and      |
-|                                  | request.                         |
-+----------------------------------+----------------------------------+
-| Marketing                        | Processing is based on your      |
-|                                  | consent where that consent is    |
-|                                  | required by applicable law.      |
-|                                  | Where we rely on your consent    |
-|                                  | you have the right to withdraw   |
-|                                  | it any time in the manner        |
-|                                  | indicated when you consent or in |
-|                                  | the Service. Where such consent  |
-|                                  | is not required by applicable    |
-|                                  | law, we process your personal    |
-|                                  | information for these purposes   |
-|                                  | based on our legitimate          |
-|                                  | interests in promoting our       |
-|                                  | business.                        |
-+----------------------------------+----------------------------------+
-| Research & Development           | Processing is based on our       |
-|                                  | legitimate interests in          |
-|                                  | performing research and          |
-|                                  | development to improve our       |
-|                                  | services and develop new         |
-|                                  | services.                        |
-+----------------------------------+----------------------------------+
-| Compliance & Protection          | Processing is necessary to       |
-|                                  | comply with our legal            |
-|                                  | obligations or based on our      |
-|                                  | legitimate interests in          |
-|                                  | protecting our or others'        |
-|                                  | rights, privacy, safety or       |
-|                                  | property.                        |
-+----------------------------------+----------------------------------+
-| Other purposes with your consent | Processing is based on your      |
-|                                  | consent. Where we rely on your   |
-|                                  | consent you have the right to    |
-|                                  | withdraw it anytime in the       |
-|                                  | manner indicated when you        |
-|                                  | consent or in the Service.       |
-+----------------------------------+----------------------------------+
+| **Processing purpose**  | **Legal Basis**   |
+|-------------------------|-------------------|
+| Service delivery  <br/> Site operation  | Processing is necessary to perform the contract governing our operation of the Site or the provision of the Services, or to take steps that you request prior to engaging our Services.  Where we cannot process your personal data as required to operate the Site or Services on the grounds of contractual necessity, we process your personal information for this purpose based on our legitimate interest in providing you with the Services you access and request.    |
+| Marketing  |  Processing is based on your consent where that consent is required by applicable law.  Where we rely on your consent you have the right to withdraw it any time in the manner indicated when you consent or in the Service. Where such consent is not required by applicable law, we process your personal information for these purposes based on our legitimate interests in promoting our business. |
+| Research & Development  | Processing is based on our legitimate interests in performing research and development to improve our services and develop new services.   |
+| Compliance & Protection | Processing is necessary to comply with our legal obligations or based on our legitimate interests in protecting our or others’ rights, privacy, safety or property. |
+| Other purposes with your consent | Processing is based on your consent. Where we rely on your consent you have the right to withdraw it anytime in the manner indicated when you consent or in the Service. |
+
 
 ### Use for new purposes.
 We may use your personal information for
