@@ -167,6 +167,22 @@
     counter-reset: list-items;
     padding-left: 25px;
 
+    &.lower-roman {
+      list-style-type: lower-roman;
+    }
+
+    &.lower-alpha {
+      list-style-type: lower-alpha;
+    }
+
+    &.lower-roman, &.lower-alpha {
+      & > li {
+        &::before {
+          content: "";
+        }
+      }
+    }
+
     & > li {
       counter-increment: list-items;
       line-height: 30px;
