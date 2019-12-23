@@ -4,9 +4,6 @@ title: Desk.com Source
 source-type: object
 ---
 
-> info ""
-> If you're a customer who just wants to build a simple script or app against a single workspace, you may want to use [Workspace Access Tokens](/docs/config-api/authentication).
-
 [Desk.com](http://www.desk.com/), previously known as Assistly, is a SaaS help desk and customer support product owned by Salesforce.com and accessible through the cloud.
 
 Desk.com is specifically implemented to targets small businesses with its features and functions. This tool can help you combining your support data with website activity and product usage data, as well as analyzing it using your favorite business intelligence and SQL querying tools.
