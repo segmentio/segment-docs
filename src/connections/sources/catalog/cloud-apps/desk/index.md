@@ -4,7 +4,10 @@ title: Desk.com Source
 source-type: object
 ---
 
-[Desk.com](http://www.desk.com/), previously known as Assistly, is a SaaS help desk and customer support product owned by Salesforce.com and accessible through the cloud. 
+> info ""
+> If you're a customer who just wants to build a simple script or app against a single workspace, you may want to use [Workspace Access Tokens](/docs/config-api/authentication).
+
+[Desk.com](http://www.desk.com/), previously known as Assistly, is a SaaS help desk and customer support product owned by Salesforce.com and accessible through the cloud.
 
 Desk.com is specifically implemented to targets small businesses with its features and functions. This tool can help you combining your support data with website activity and product usage data, as well as analyzing it using your favorite business intelligence and SQL querying tools.
 
@@ -28,7 +31,7 @@ You will need a Desk.com account with administrator privileges.
 
 6. Add a warehouse or connect Intercom to an already existing warehouse in your workspace
 
-## Components 
+## Components
 
 The Desk.com source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Desk.com objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. `desk_com.cases`).
 
@@ -54,7 +57,7 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 ### Articles
 
 |  Property Name | Description |
-|  ------ | ------- | 
+|  ------ | ------- |
 | subject |	The subject of the article |
 | position | The position of the article as displayed in the support center |
 | quickcode	| Code used in the agent to quickly add article content to a case |
@@ -89,7 +92,7 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 ### Brands
 
 |  Property Name | Description |
-|  ------ | ------- | 
+|  ------ | ------- |
 | name | Name of the brand |
 | created_at | When the brand was created |
 | updated_at | When the brand was last updated |
@@ -97,14 +100,14 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 ### Cases
 
 |  Property Name | Description |
-|  ------ | ------- | 
+|  ------ | ------- |
 | id | integer identifier for this object
 | external_id | unique external identifier to reference this case to an external system
 | blurb	| Short summary of, or excerpt from, the case |
-| subject | Subject of the case | 
+| subject | Subject of the case |
 | priority | Number between 1 and 10, 1 being lowest priority |
 | Description | Description or background information
-| status | Current state of the case, one of: `new`, `open`, `pending`, `resolved`, `closed`, `deleted` | 
+| status | Current state of the case, one of: `new`, `open`, `pending`, `resolved`, `closed`, `deleted` |
 | type | Channel of the case, one of: chat, twitter, email, qna, facebook, phone |
 | labels | Array of labels associated with this case |
 | label_ids	| Array of label ids associated with this case |
@@ -126,7 +129,7 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 ### Companies
 
 |  Property Name | Description |
-|  ------ | ------- | 
+|  ------ | ------- |
 | name | Name of the company |
 | domains | Array of top level domain names (ie. desk.com, british.co.uk). Pass an array of domains to replace the set of domains for the company. An empty array will clear all domains from the company |
 | created_at | When the company was created |
@@ -136,7 +139,7 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 ### Customers
 
 |  Property Name | Description |
-|  ------ | ------- | 
+|  ------ | ------- |
 | first_name | Customer's first name |
 | last_name | Customer's last name |
 | company | Customer's company |
@@ -160,7 +163,7 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 ### Users
 
 |  Property Name | Description |
-|  ------ | ------- | 
+|  ------ | ------- |
 | name | Name of the user |
 | public_name | Public facing name of the user |
 | email	| User's email |
@@ -176,7 +179,7 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 ### Feedbacks
 
 |  Property Name | Description |
-|  ------ | ------- | 
+|  ------ | ------- |
 | rating |	Numeric rating left by customer |
 | rating_type |	Rating type used to generate this feedback, either yes_no or four_star  |
 | additonal_feedback |	An optional additional feedback text field |
@@ -186,6 +189,6 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 | case | The case to which this feedback is assigned |
 
 
-## Adding Destinations 
+## Adding Destinations
 
 Currently, Warehouses are the only supported destination for object-cloud sources.
