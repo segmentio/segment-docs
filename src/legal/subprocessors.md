@@ -6,7 +6,7 @@ hide-feedback: true
 
 [email]: mailto:legal@segment.com
 
-> Current as of: December 19, 2019
+> Current as of: January 1, 2020
 
 Welcome to Segment’s Subprocessor repository page where we maintain a current list of Subprocessors authorized to process customer data for Segment’s services. Segment imposes data protection terms with each Subprocessor regarding their security controls and applicable regulations for the protection of personal data.
 
@@ -23,7 +23,7 @@ These Data Subprocessors apply to all customers who utilize the Segment platform
 
 ## Support Data Subprocessors
 
-These Data Subprocessors may be utilized to support customers which who may elect to share personal data with Segment support personnel.
+These Data Subprocessors may be utilized to support customers who may elect to share personal data with Segment support personnel.
 
 | Entity        | Entity Type      | Entity Location |
 | ------------- | ---------------- | --------------- |
