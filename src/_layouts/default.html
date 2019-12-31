@@ -62,11 +62,11 @@
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
 </head>
 <body>
+  <div id="consent-manager"></div>
   {{ content }}
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
     {%- include icons/symbols/chevron-up.svg -%}
-  </a>
-  <div id="consent-manager"></div>
+  </a> 
   {%- comment -%}
     A.JS
     Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
@@ -120,97 +120,117 @@
   {%- comment -%}
     Consent Manager
   {%- endcomment -%}
-  <script>
-    window.consentManagerConfig = function (exports) {
-      var React = exports.React
-      var inEU = exports.inEU
-      var openConsentManager = exports.openConsentManager
-      var openButton = document.getElementById('open-consent-manager')
-
-      function buttonClick (e) {
-        // Prevent the implicit consent from kicking in
-        e.stopPropagation()
-        e.preventDefault()
-        openConsentManager()
+ 
+<script>
+  window.consentManagerConfig = function (exports) {
+      console.log(exports)
+    var React = exports.React
+    var inCA = exports.inRegions(['CA'])
+    var inEU = exports.inRegions(['EU'])
+    var shouldRequireConsent = exports.inRegions(['CA', 'EU'])
+    var caDefaultPreferences = {
+        advertising: false,
+        marketingAndAnalytics: true,
+        functional: true
       }
-      openButton.addEventListener('click', buttonClick, false)
-
-      var bannerContent = (
-        React.createElement(
-          'span',
-          null,
-          'We use cookies (and other similar technologies) to collect data to improve your experience on our site. By using our website, you\u2019re agreeing to the collection of data as described in our',
-          ' ',
-          React.createElement(
-            'a',
-            { href: '/docs/legal/website-data-collection-policy/', target: '_blank' },
-            'Website Data Collection Policy'
-          ),
-          '.'
-        )
-      )
-      var preferencesDialogTitle = 'Website Data Collection Preferences'
-      var preferencesDialogContent = (
-        React.createElement(
-          'div',
-          null,
-          React.createElement(
-            'p',
-            null,
-            'Segment uses data collected by cookies and JavaScript libraries to improve your browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site.'
-          ),
-          React.createElement(
-            'p',
-            null,
-            'By using our website, you\u2019re agreeing to our',
-            ' ',
-            React.createElement(
-              'a',
-              { href: '/docs/legal/website-data-collection-policy/', target: '_blank' },
-              'Website Data Collection Policy'
-            ),
-            '.'
-          ),
-          React.createElement(
-            'p',
-            null,
-            'The table below outlines how we use this data by category. To opt out of a category of data collection, select \u201CNo\u201D and save your preferences.'
-          )
-        )
-      )
-      var cancelDialogTitle = 'Are you sure you want to cancel?'
-      var cancelDialogContent = (
-        React.createElement(
-          'div',
-          null,
-          'Your preferences have not been saved. By continuing to use our website, you\u2019re agreeing to our',
-          ' ',
-          React.createElement(
-            'a',
-            { href: '/docs/legal/website-data-collection-policy/', target: '_blank' },
-            'Website Data Collection Policy'
-          ),
-          '.'
-        )
-      )
-
-      return {
-        container: '#consent-manager',
-        writeKey: '{{write_key}}',
-        shouldRequireConsent: inEU,
-        bannerContent: bannerContent,
-        preferencesDialogTitle: preferencesDialogTitle,
-        preferencesDialogContent: preferencesDialogContent,
-        cancelDialogTitle: cancelDialogTitle,
-        cancelDialogContent: cancelDialogContent
-      }
+   var euDefaultPreferences = {
+      advertising: false,
+      marketingAndAnalytics: false,
+      functional: false
     }
-  </script>
-  <script
-    src="https://unpkg.com/@segment/consent-manager@1.0.0/standalone/consent-manager.js"
-    defer
-  >
-  </script>
+
+    var closeBehavior = inCA()
+      ? function (_categories) { return caDefaultPreferences }
+      : inEU()
+        ? 'deny'
+        : 'accept'
+    var initialPreferences = inCA()
+      ? caDefaultPreferences
+      : inEU()
+        ? euDefaultPreferences
+        : undefined
+
+    var openConsentManager = exports.openConsentManager
+    var openButton = document.getElementById('open-consent-manager')
+    function buttonClick (e) {
+      // Prevent the implicit consent from kicking in
+      e.stopPropagation()
+      e.preventDefault()
+      openConsentManager()
+    }
+    openButton.addEventListener('click', buttonClick, false)
+    var bannerContent = (
+      React.createElement(
+        'span',
+        null,
+        'We use cookies (and other similar technologies) to collect data in order to improve our site. You have the option to opt-in or opt-out of certain cookie tracking technologies.'
+      )
+    )
+    var bannerSubContent = 'To do so, click here.'
+    var preferencesDialogTitle = 'Website Data Collection Preferences'
+    var preferencesDialogContent = (
+      React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'p',
+          null,
+          'Segment uses data collected by cookies and JavaScript libraries to improve your browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site.'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'By using our website, you\u2019re agreeing to our',
+          ' ',
+          React.createElement(
+            'a',
+            { href: '/docs/legal/website-data-collection-policy/', target: '_blank' },
+            'Website Data Collection Policy'
+          ),
+          '.'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'The table below outlines how we use this data by category. To opt out of a category of data collection, select \u201CNo\u201D and save your preferences.'
+        )
+      )
+    )
+    var cancelDialogTitle = 'Are you sure you want to cancel?'
+    var cancelDialogContent = (
+      React.createElement(
+        'div',
+        null,
+        'Your preferences have not been saved. By continuing to use our website, you\u2019re agreeing to our',
+        ' ',
+        React.createElement(
+          'a',
+          { href: '/docs/legal/website-data-collection-policy/', target: '_blank' },
+          'Website Data Collection Policy'
+        ),
+        '.'
+      )
+    )
+    return {
+      container: '#consent-manager',
+      writeKey: '{{write_key}}',
+      bannerContent: bannerContent,
+      bannerSubContent: bannerSubContent,
+      preferencesDialogTitle: preferencesDialogTitle,
+      preferencesDialogContent: preferencesDialogContent,
+      cancelDialogTitle: cancelDialogTitle,
+      cancelDialogContent: cancelDialogContent,
+      closeBehavior: closeBehavior,
+      shouldRequireConsent: shouldRequireConsent,
+      initialPreferences: initialPreferences,
+    }
+  }
+</script>
+<script
+  src="https://unpkg.com/@segment/consent-manager@4.2.2/standalone/consent-manager.js"
+  defer
+>
+</script>
   <script>
       window.analytics = null
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
