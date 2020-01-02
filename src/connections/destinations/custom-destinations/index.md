@@ -43,12 +43,13 @@ Segment provides templates that make it simple to send data to the API Endpoint.
 
 Segment invokes your function once for every event it receives from configured sources (unless altered by [Destination Filters](https://segment.com/docs/connections/destinations/destination-filters/)). For each event, it invokes a handler corresponding to the Segment message type. You can define and export functions for every type in the [Segment Spec](https://segment.com/docs/connections/spec/) that you want to handle:
 
-- `identify`
-- `track`
-- `page`
-- `screen`
-- `group`
-- `alias`
+- `onIdentify`
+- `onTrack`
+- `onPage`
+- `onScreen`
+- `onGroup`
+- `onAlias`
+- `onDelete`
 
 Two arguments are provided to the function: the **event payload** and the **settings**. All subscriptions have an **apiKey** setting by default.
 
@@ -65,7 +66,7 @@ The JavaScript below builds a query string for the URL, sets a basic auth header
 ```js
 const endpoint = "https://REDACTED.x.pipedream.net"
 
-async function track(event, settings) {
+async function onTrack(event, settings) {
   const url = new URL(endpoint);
   url.searchParams.set("ts", event.timestamp);
 
@@ -95,19 +96,19 @@ There are three pre-defined error types that you can `throw` to indicate that th
 Here are basic examples using these error types:
 
 ```js
-async function group(event, settings) {
+async function onGroup(event, settings) {
   if (!event.company) {
     throw new InvalidEventPayload("company is required")
   }
 }
 
-async function page(event, settings) {
+async function onPage(event, settings) {
   if (!settings.accountId) {
     throw new ValidationError("Account ID is required")
   }
 }
 
-async function alias(event, settings) {
+async function onAlias(event, settings) {
   throw new EventNotSupported("alias is not supported")
 }
 ```
