@@ -10,7 +10,7 @@ This destination is maintained by Canny. For any issues with the destination, pl
 NOTE: The Canny Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on December 15, 2019. If you are interested in joining their beta program or have any feedback to help improve the Canny Destination and its documentation, please [let their team know](segment-help@canny.io)!
 
 ## Getting Started
-{{>connection-modes}}
+{% include content/connection-modes.md %}
 
 1. Go to your [Canny Admin Segment Settings](https://canny.io/redirect?to=%2Fadmin%2Fsettings%2Fsegment).
 2. You will then be routed to Segment where you will be prompted to login and authorize the Canny Destination. Select the workspace and source you would like to integrate and click allow.
@@ -20,7 +20,7 @@ NOTE: The Canny Destination is currently in beta, which means that they are stil
 ## Identify
 If you haven’t had a chance to review our spec, please take a look to understand what the Identify method does. An example call would look like:
 
-```
+```js
 analytics.identify('userId123', {
   email: 'john.doe@segment.com',
   name: 'John Doe',
