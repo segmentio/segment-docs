@@ -44,9 +44,9 @@ Your access secret allows you to call the Segment API and access customer data. 
 4.  Profile API request URLs require your space ID. For example:
     `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/events`
 
-      Your namespace ID can be found here: [https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access](https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access)
+    Your namespace ID can be found here: [https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access](https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access)
 
-        ![](images/space_ID_location.png)
+      ![](images/space_ID_location.png)
 
 
 **B. Find a user's external id**
