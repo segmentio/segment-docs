@@ -10,6 +10,7 @@ Transformations allow you to change data as it flows through Segment to either c
 
 Transformations _irrevocably_ change the event payloads flowing through Segment and immediately affect either all destinations, or a single downstream destination, depending on your settings.
 
+
 > **Warning**: Once you apply Transformations, the original tracking payloads are not easily recoverable.
 
 Our goal is to make Transformations a powerful tool that complements a well structured Tracking Plan. Together, these features help your organization scale and achieve high data quality. For that reason we HIGHLY recommend that you start your data quality strategy with a clearly defined Tracking Plan. Without this critical component, the risk of creating conflicting or detrimental transformations increases.
@@ -19,7 +20,7 @@ Our goal is to make Transformations a powerful tool that complements a well stru
 - **Transformations cannot be applied retroactively:** They only apply to data moving forward. However, you can manually extract and re-send (or even [Replay](/docs/guides/general/what-is-replay)) events through a source with an active Transformation, which will send the transformed events to your destinations.
 - **Transformations are only available to Protocols customers:** If you are interested in this feature, contact your Account Executive or CSM to learn more about the Protocols package.
 - **Source-level transformations are irrevocable:** When applied at the source, a transformation permanently changes the structure of the event. The original events are not easily recoverable or [Replayable](/docs/guides/general/what-is-replay). Assume that transformed data cannot be recovered.
-
+- **Device-mode destinations are NOT supported:** Source scoped transformations will **only** apply to cloud-mode destinations, warehouses, and S3 destinations. Destination scoped transformations will **only** apply to cloud-mode destinations.  
 
 ## View all Transformations
 
