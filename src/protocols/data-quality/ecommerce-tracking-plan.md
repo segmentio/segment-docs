@@ -6,7 +6,7 @@ When tracking your data, it's important to set yourself up for success. E-commer
 
 That's where a tracking plan comes in. A tracking plan is a living document that can be used across your organization to record what events and properties to track, where you'll be tracking them in your code base, and why you're tracking them.
 
-[Learn more about the value and function of a tracking plan.](/docs/protocols/whats-a-tracking-plan/)
+[Learn more about the value and function of a tracking plan.](/docs/protocols/data-quality/whats-a-tracking-plan/)
 
 In this guide, we'll share with you the core events most relevant to e-commerce companies that can get you started immediately in understanding your customers and driving sales.
 

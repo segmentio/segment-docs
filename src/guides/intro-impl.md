@@ -64,7 +64,7 @@ To learn more about connection modes and when you should use each, see the [deta
 
 ## Planning your Segment implementation
 
-The journey of a thousand miles begins, ideally, with a plan. Regardless of if you're a new company just implementing analytics for the first time, or a multi--national corporation modernizing your analytics stack, it's a great idea to [start with a Tracking Plan](/docs/protocols/whats-a-tracking-plan/). For new implementations, this can be as simple as a document where you write down these four things for each item you track:
+The journey of a thousand miles begins, ideally, with a plan. Regardless of if you're a new company just implementing analytics for the first time, or a multi--national corporation modernizing your analytics stack, it's a great idea to [start with a Tracking Plan](/docs/protocols/data-quality/whats-a-tracking-plan/). For new implementations, this can be as simple as a document where you write down these four things for each item you track:
 
 - What am I tracking? (What is the event name or type?)
 - Why am I tracking it? (What questions does this data answer?)
