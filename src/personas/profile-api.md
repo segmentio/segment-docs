@@ -33,21 +33,20 @@ This document has four parts…
 Your access secret allows you to call the Segment API and access customer data.  We do not recommend exposing this key in client applications (see the end of this section for more details).
 
 
-1. Head over to _Personas > Settings > Access Secrets_: `https://app.segment.com/<your-workspace>/personas/settings` (replace <your-workspace> with your own workspace).
-2. Create your **Access Secret** with name, for e.g. `testing/development`
+1.  Go to _Personas > Settings > Access Secrets_: `https://app.segment.com/<your-workspace>/personas/settings` (replace <your-workspace> with your own workspace).
+2.  Create your **Access Secret** with name, for e.g. `testing/development`
 
-![](images/1516309197043.png)
+    ![](images/1516309197043.png)
 
-3. Press Generate. Copy the resulting **Access Secret** and store it in a file on your computer as it's only shown once. You'll pass in the **Access Secret** into the Profile API for authorization (via the HTTP basic auth username).
-![](images/1526362840437.png)
+3.  Press Generate. Copy the resulting **Access Secret** and store it in a file on your computer as it's only shown once. You'll pass in the **Access Secret** into the Profile API for authorization (via the HTTP basic auth username).
+    ![](images/1526362840437.png)
 
-4. Profile API request URLs require your space ID. For example:
+4.  Profile API request URLs require your space ID. For example:
+    `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/events`
 
-    https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/events
+      Your namespace ID can be found here: [https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access](https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access)
 
-Your namespace ID can be found here: [https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access](https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access)
-
-![](images/space_ID_location.png)
+        ![](images/space_ID_location.png)
 
 
 **B. Find a user's external id**
@@ -60,26 +59,25 @@ Your namespace ID can be found here: [https://app.segment.com/goto-my-workspace/
 
 **C. Query the user's event history**
 
-1. Download and open [Postman](https://www.getpostman.com/), a nice app for exploring HTTP APIs
-2. Create your Postman GET request to query the user's event's history:
-  i. The URL is:
-
-     `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/events`
-
-
-  ii. Replace `<your-namespace-id>` with your own namespace id found here:
-      [https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access](https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access)
+1.  Download and open [Postman](https://www.getpostman.com/), a nice app for exploring HTTP APIs
+2.  Create your Postman GET request to query the user's event's history:
+    i. The URL is:
+       `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/events`
 
 
-  iii. Replace `<id_type:ext_id>` with your external id type and id pair from step B
+     ii. Replace `<your-namespace-id>` with your own namespace id found here:
+         [https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access](https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access)
 
 
-  iv. Copy your **Access Secret** from step (A) into the _Basic Auth > Username field_. Leave Password empty.
+      iii. Replace `<id_type:ext_id>` with your external id type and id pair from step B
 
 
-![](images/postman_basic_auth.png)
+      iv. Copy your **Access Secret** from step (A) into the _Basic Auth > Username field_. Leave Password empty.
 
-3. Press the Send button in Postman.
+
+      ![](images/postman_basic_auth.png)
+
+3.  Press the Send button in Postman.
 
 **D. Explore the user's event history in the response**
 
@@ -90,7 +88,6 @@ Your namespace ID can be found here: [https://app.segment.com/goto-my-workspace/
 
 **Search by an External ID**
 You can query directly by a user's email or user_id:
-
 
 `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/email:user@gmail.com/events`
 
@@ -139,7 +136,6 @@ curl https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/user
 
 
 ## API Reference
-### Introduction
 
 The Segment API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer). Our API has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients.  [JSON](http://www.json.org/) is returned by all API responses, including errors.
 
@@ -184,12 +180,12 @@ Segment  uses conventional HTTP response codes to indicate the success or failur
 **Error Body**
 
 ```js
-    {
-      "error": {
-        "code": "validation_error",
-        "message": "The parameter `collection` has invalid character(s) `!`"
-      }
-    }
+{
+  "error": {
+    "code": "validation_error",
+    "message": "The parameter `collection` has invalid character(s) `!`"
+  }
+}
 ```
 
 | **Code**                  | **Message**  |
@@ -236,6 +232,7 @@ Request-Id: 1111-2222-3333-4444
 ```
 
 ### Routes
+
 | **Name**                     | **Route** https://profiles.segment.com/v1/spaces/:space_id:/ ... |
 | ---------------------------- | -------------------------------------------------------------------- |
 | Get a Profile's Traits       | collections/users/profiles/email:amir@segment.com/traits             |
@@ -276,53 +273,52 @@ GET /v1/spaces/lg8283283/collections/users/profiles/user_id:u1234/traits
 **404 Not Found**
 
 ```js
-    {
-      "error": {
-        "code": "not_found",
-        "message": "Profile was not found."
-      }
-    }
+{
+  "error": {
+    "code": "not_found",
+    "message": "Profile was not found."
+  }
+}
 ```
 
 **200 OK**
 
 ```js
-    {
-      "traits": {
-        "first_name": "Bob",
-        "emails_opened_last_30_days": 33,
-      },
-      "cursor": {
-        "url": "/v1/spaces/lgJ4AAjFN4/collections/users/profiles/use_RkjG0kW53igMijEISMH0vKBF4sL/traits",
-        "has_more": false,
-        "next": ""
-      }
-    }
-
+{
+  "traits": {
+    "first_name": "Bob",
+    "emails_opened_last_30_days": 33,
+  },
+  "cursor": {
+    "url": "/v1/spaces/lgJ4AAjFN4/collections/users/profiles/use_RkjG0kW53igMijEISMH0vKBF4sL/traits",
+    "has_more": false,
+    "next": ""
+  }
+}
 ```
 
 And when ?**verbose=true** mode on:
 
 ```js
-    {
-      "traits": {
-        "first_name": {
-          "value": "Bob",
-          "source_id": "..",
-          "updated_at": ".."
-        }
-        "emails_opened_last_30_days": {
-          "value": 33,
-          "source_id": "..",
-          "updated_at": ".."
-        }
-      },
-      "cursor": {
-        "url": "/v1/spaces/lgJ4AAjFN4/collections/users/profiles/use_RkjG0kW53igMijEISMH0vKBF4sL/traits",
-        "has_more": false,
-        "next": ""
-      }
+{
+  "traits": {
+    "first_name": {
+      "value": "Bob",
+      "source_id": "..",
+      "updated_at": ".."
     }
+    "emails_opened_last_30_days": {
+      "value": 33,
+      "source_id": "..",
+      "updated_at": ".."
+    }
+  },
+  "cursor": {
+    "url": "/v1/spaces/lgJ4AAjFN4/collections/users/profiles/use_RkjG0kW53igMijEISMH0vKBF4sL/traits",
+    "has_more": false,
+    "next": ""
+  }
+}
 ```
 
 **Query Parameters**
@@ -354,12 +350,12 @@ curl https://profiles.segment.com/v1/spaces/:namespace_id:/collections/users/pro
 **404 Not Found**
 
 ```js
-    {
-      "error": {
-        "code": "not_found",
-        "message": "Profile was not found."
-      }
-    }
+{
+  "error": {
+    "code": "not_found",
+    "message": "Profile was not found."
+  }
+}
 ```
 
 **200 OK**
@@ -627,13 +623,13 @@ Since this API has access to all of a customer's data, we do not support CORS an
 If you want to display the most relevant blog posts given a reader's favorite blog category:
 
 
-1. **Create a computed trait** `favorite_blog_category` **in Segment UI** [Marketer or Engineer]
-2. **Create** `/api/recommended-posts` **in customer-built personalization service** [Engineer]
-  - Accept `user_id`, `email` or `anonymous_id` to fetch `favorite_blog_category` via API
-  - Return array of most recent posts of that category to render in recommended section
-3. **Add recommended section to the blog** [Engineer]
-  - Client-side by making a request to `/recommended-posts` if it accepts CORS (recommended for static blogs, WordPress plugin, or other CMS solutions)
-  - Server-side by collecting all the personalizations you want to make on the blog in a single request to increase the total time to load (recommended for custom blog setup)
+1.  **Create a computed trait** `favorite_blog_category` **in Segment UI** [Marketer or Engineer]
+2.  **Create** `/api/recommended-posts` **in customer-built personalization service** [Engineer]
+    - Accept `user_id`, `email` or `anonymous_id` to fetch `favorite_blog_category` via API
+    - Return array of most recent posts of that category to render in recommended section
+3.  **Add recommended section to the blog** [Engineer]
+    - Client-side by making a request to `/recommended-posts` if it accepts CORS (recommended for static blogs, WordPress plugin, or other CMS solutions)
+    - Server-side by collecting all the personalizations you want to make on the blog in a single request to increase the total time to load (recommended for custom blog setup)
 
 Now, users who take a few minutes to read through an article on the blog will find posts recommended using their historical reading pattern including the post they just read.
 
