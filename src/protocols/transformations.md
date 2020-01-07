@@ -10,7 +10,8 @@ Transformations allow you to change data as it flows through Segment to either c
 
 Transformations _irrevocably_ change the event payloads flowing through Segment and immediately affect either all destinations, or a single downstream destination, depending on your settings.
 
-> **Warning**: Once you apply Transformations, the original tracking payloads are not easily recoverable.
+> warning ""
+> As soon as you apply a Transformation, the original tracking payloads are not easily recoverable.
 
 Our goal is to make Transformations a powerful tool that complements a well structured Tracking Plan. Together, these features help your organization scale and achieve high data quality. For that reason we HIGHLY recommend that you start your data quality strategy with a clearly defined Tracking Plan. Without this critical component, the risk of creating conflicting or detrimental transformations increases.
 
@@ -19,7 +20,7 @@ Our goal is to make Transformations a powerful tool that complements a well stru
 - **Transformations cannot be applied retroactively:** They only apply to data moving forward. However, you can manually extract and re-send (or even [Replay](/docs/guides/general/what-is-replay)) events through a source with an active Transformation, which will send the transformed events to your destinations.
 - **Transformations are only available to Protocols customers:** If you are interested in this feature, contact your Account Executive or CSM to learn more about the Protocols package.
 - **Source-level transformations are irrevocable:** When applied at the source, a transformation permanently changes the structure of the event. The original events are not easily recoverable or [Replayable](/docs/guides/general/what-is-replay). Assume that transformed data cannot be recovered.
-
+- **Device-mode destinations are NOT supported:** Source scoped transformations will **only** apply to cloud-mode destinations, warehouses, and S3 destinations. Destination scoped transformations will **only** apply to cloud-mode destinations.  
 
 ## View all Transformations
 
@@ -35,7 +36,8 @@ Transformations can be deleted and edited by clicking on the overflow menu. When
 
 To create a Transformation, navigate to the Transformations tab in Protocols and click **New Transformation** in the top right. A three-step wizard guides you through creating a transformation.
 
-**Note: Only workspace owners can currently create and edit transformations!**
+> info ""
+> Only workspace owners can currently create and edit transformations!
 
 ![](images/transformation_wizard.png)
 
@@ -56,14 +58,15 @@ To create a Transformation, you first need to select which type of transformatio
 
 Depending on the transformation type you selected, relevant drop-down selectors and fields are presented to define how you want to transform the data.
 
-**Note: Multiple transformations cannot be created for the same source + type + event + destination combo. This restriction blocks circular transformations (for example, `order_updated` to `orderUpdated` to `order_updated`), minimizes unexpected transformations, and enables easy filtering across each dimension.**
+> info ""
+> Multiple transformations cannot be created for the same source + type + event + destination combo. This restriction blocks circular transformations (for example, `order_updated` to `orderUpdated` to `order_updated`), minimizes unexpected transformations, and enables easy filtering across each dimension.
 
 Regardless of the type of transformation selected, first select a source. Each Transformation can only apply to a single source. While this makes it more difficult to apply transformations broadly, it ensures you are only transforming data relevant to the selected source.
 
-
 After selecting the source, you will need to select a scope. Scope determines where the transformation will be applied.
 
-**Note: Source-scoped Transformations only apply to cloud-mode, S3, and data warehouse destinations.**
+> warning ""
+> Source-scoped Transformations only apply to cloud-mode, S3, and data warehouse destinations.
 
 ![](images/transformation_scope.png)
 

@@ -7,9 +7,10 @@ rewrite: true
 
 This destination is maintained by Canny. For any issues with the destination, please [reach out to their team](segment-help@canny.io).
 
-NOTE: The Canny Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on December 15, 2019. If you are interested in joining their beta program or have any feedback to help improve the Canny Destination and its documentation, please [let their team know](segment-help@canny.io)!
+NOTE: The Canny Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 7, 2020. If you are interested in joining their beta program or have any feedback to help improve the Canny Destination and its documentation, please [let their team know](segment-help@canny.io)!
 
 ## Getting Started
+
 {% include content/connection-modes.md %}
 
 1. Go to your [Canny Admin Segment Settings](https://canny.io/redirect?to=%2Fadmin%2Fsettings%2Fsegment).
@@ -27,8 +28,6 @@ analytics.identify('userId123', {
 });
 ```
 Identify calls will be sent to Canny as an identify event. Once identified, users will appear in Canny and will appear in your vote-on-behalf feature. The `name` and `email` traits are **required** fields.
-
-## Settings
 
 ### Custom Fields
 Custom Fields is a list of [traits](https://segment.com/docs/connections/spec/identify/#traits) to be imported as custom fields.
