@@ -64,18 +64,16 @@ Your access secret allows you to call the Segment API and access customer data. 
     i. The URL is:
        `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/<external_id>/events`
 
-
-     ii. Replace `<your-namespace-id>` with your own namespace id found here:
+    ii. Replace `<your-namespace-id>` with your own namespace id found here:
          [https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access](https://app.segment.com/goto-my-workspace/personas/spaces/default/settings/api-access)
 
 
-      iii. Replace `<id_type:ext_id>` with your external id type and id pair from step B
+    iii. Replace `<id_type:ext_id>` with your external id type and id pair from step B
+
+    iv. Copy your **Access Secret** from step (A) into the _Basic Auth > Username field_. Leave Password empty.
 
 
-      iv. Copy your **Access Secret** from step (A) into the _Basic Auth > Username field_. Leave Password empty.
-
-
-      ![](images/postman_basic_auth.png)
+    ![](images/postman_basic_auth.png)
 
 3.  Press the Send button in Postman.
 
@@ -295,6 +293,7 @@ GET /v1/spaces/lg8283283/collections/users/profiles/user_id:u1234/traits
     "next": ""
   }
 }
+
 ```
 
 And when ?**verbose=true** mode on:
