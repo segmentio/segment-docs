@@ -1,18 +1,17 @@
 ---
-title: Terms of Service - 2017
-hidden: true
-feedback: false
+title: Terms of Service
 hide-feedback: true
 ---
 
 This page provides an archive of a previous version of the Segment Terms of Service. If you have any questions, please contact the [Segment Legal team](mailto:legal@segment.com).
 
-> Archived version: Last modified on October 25, 2017
-> Effective October 25, 2017 to April 29, 2018.
+> Last modified April 30th, 2018.
+> Effective April 30th, 2018 to December 18, 2019.
 
 [Prior versions available here](/docs/legal/terms-updates/)
-
 ---
+
+<br />
 
 This Segment Online Customer Agreement ("**Agreement**") is entered into by and between Segment.io, Inc. ("**Segment**") and the entity or person placing an order for or accessing the Service ("**Customer**" or "**you**"). This Agreement consists of the terms and conditions set forth below and any Segment ordering documents, online registration, order descriptions or order confirmations referencing this Agreement ("**Order Forms**"). If you are accessing or using the Service on behalf of your company, you represent that you are authorized to accept this Agreement on behalf of your company, and all references to "you" or "Customer" reference your company.
 
@@ -44,13 +43,13 @@ For Sources owned or controlled by Customer ("**Customer Properties**"), Custome
 
 "**Order Form**" is defined above.
 
-"**Sensitive Personal Information**" means any of the following: (i) credit, debit or other payment card data subject to the Payment Card Industry Data Security Standards ("**PCI DSS**"); (ii) patient, medical or other protected health information regulated by the Health Insurance Portability and Accountability Act ("**HIPAA**"); (iii) any information deemed to be "sensitive personal data" of an EU citizen (as such term is defined in EU Data Protection Directive 95/46/EC) or (iv) any other personal or sensitive information subject to regulation or protection under the Gramm-Leach-Bliley Act, Children's Online Privacy Protection Act or other Laws.
+"**Sensitive Personal Information**" means any of the following: (i) credit, debit or other payment card data subject to the Payment Card Industry Data Security Standards ("**PCI DSS**"); (ii) patient, medical or other protected health information regulated by the Health Insurance Portability and Accountability Act ("**HIPAA**"); (iii) any information deemed to be "special categories of data" of an EU resident (prior to May 25, 2018, as such term is defined in EU Data Protection Directive 95/46/EC; and on and after May 25, 2018, as defined in European Union Regulation 2016/679) or (iv) any other personal or sensitive information subject to regulation or protection under the Gramm-Leach-Bliley Act, Children's Online Privacy Protection Act or other Laws.
 
 "**Service**" means the specific Segment proprietary hosted service solution(s) specified on an Order Form, including the Segment dashboard and any related Segment Code and API(s).
 
 ### 1.4. Access to the Service
 
-Customer may access and use the Service for its internal business operations, subject to this Agreement (including Section 2 (Service Plans and Beta Releases)), the Documentation, and any scope of use restrictions on the applicable Order Form. This includes the right to implement Segment Code on Customer Properties in order to collect Customer Data for use with the Service. Access to the Service is limited to Customer's employees and contractors acting for the sole benefit of Customer ("**Permitted Users**"). Customer and its Permitted Users may need to register for a Segment account in order to access or use the Service. Account registration information must be accurate, current and complete, and will be governed by Segment's Privacy Policy (currently available at [https://segment.com/docs/legal/privacy/](https://segment.com/docs/legal/privacy/)). Customer is responsible for any use of the Service by its Permitted Users and their compliance with this Agreement. Customer shall keep confidential its user IDs and passwords for the Service and remain responsible for any actions taken through its accounts.
+Customer may access and use the Service for its internal business operations, subject to this Agreement (including Section 2 (Service Plans and Beta Releases)), the Documentation, and any scope of use restrictions on the applicable Order Form.  This includes the right to implement Segment Code on Customer Properties in order to collect Customer Data for use with the Service. Access to the Service is limited to Customer's employees and contractors acting for the sole benefit of Customer ("**Permitted Users**"). Customer and its Permitted Users may need to register for a Segment account in order to access or use the Service. Account registration information must be accurate, current and complete, and will be governed by Segment's Privacy Policy (currently available at [https://segment.com/docs/legal/privacy/](https://segment.com/docs/legal/privacy/)). Customer is responsible for any use of the Service by its Permitted Users and their compliance with this Agreement.  Customer shall keep confidential its user IDs and passwords for the Service and remain responsible for any actions taken through its accounts.
 
 ### 1.5. Use Restrictions
 
@@ -64,7 +63,7 @@ Segment may store certain Customer Data submitted from Sources to enable various
 
 ### 2.1. Service Plans
 
-Segment makes available the Service through a free "Developer" plan ("**Developer Plan**"), trial plans ("**Trial Plans**") and paid plans ("**Paid Plans**"). Current plans are described at [https://segment.com/pricing](https://segment.com/pricing) and Customer's specific plan will be identified in the Order Form presented when Customer registers, orders or pays for the Service. Customer's permitted scope of use – such as features available, permitted number of monthly tracked users (MTUs) and other usage limits – depends on the plan that Customer selects and will be specified on the applicable Order Form.
+Segment makes available the Service through a free "Developer" plan ("**Developer Plan**"), trial plans ("**Trial Plans**") and paid plans ("**Paid Plans**"). Current plans are described at [https://segment.com/pricing](https://segment.com/pricing)\*\* \*\*and Customer's specific plan will be identified in the Order Form presented when Customer registers, orders or pays for the Service. Customer's permitted scope of use – such as features available, permitted number of monthly tracked users (MTUs) and other usage limits – depends on the plan that Customer selects and will be specified on the applicable Order Form.
 
 ### 2.2. Paid Plans
 
@@ -72,13 +71,17 @@ Paid Plans are provided on a subscription basis for a set term designated on the
 
 ### 2.3. Developer Plans and Trial Plans
 
-(a) <u>Developer Plans</u>. If Customer receives access to the Service through a Developer Plan, then Customer may use the Service in accordance with the terms and conditions of this Agreement for so long as Segment chooses to offer the Developer Plan.
+* (a) _Developer Plans_. If Customer receives access to the Service through a Developer Plan, then Customer may use the Service in accordance with the terms and conditions of this Agreement for so long as Segment chooses to offer the Developer Plan.
 
-(b) <u>Trial Plans</u>. For Trial Plans, Customer may use the Service in accordance with this Agreement for the limited trial period designated on the Order Form (the " **Trial Period**"). Trial Plans are permitted solely for Customer's use to determine whether to purchase a Paid Plan. If Customer does not upgrade from a Trial Plan to a Paid Plan at the end of the Trial Period, then Customer's access to the Service may be limited or suspended (to be determined at Segment's sole discretion) until such time as Customer terminates this Agreement or converts to a Paid Plan.
+* (b) _Trial Plans_. For Trial Plans, Customer may use the Service in accordance with this Agreement for the limited trial period designated on the Order Form or such other period as may be specified by Segment (the "**Trial Period**"). Trial Plans are permitted solely for Customer's use to determine whether to purchase a Paid Plan. If Customer does not upgrade from a Trial Plan to a Paid Plan at the end of the Trial Period, then Customer's access to the Service may be limited or suspended (to be determined at Segment's sole discretion) until such time as Customer terminates this Agreement or converts to a Paid Plan.
 
-(c) <u>Special Terms</u>. Developer Plans and Trial Plans may not include all features or functionality offered as part of Paid Plans, and Segment reserves the right to add or subtract any features or functionality at any time for such plans. Segment has the right to suspend or terminate a Developer Plan or Trial Plan at any time for any reason.
+* (c) _Special Terms_. Developer Plans and Trial Plans may not include all features or functionality offered as part of Paid Plans, and Segment reserves the right to add or subtract any features or functionality at any time for such plans. Segment has the right to suspend or terminate a Developer Plan or Trial Plan at any time for any reason.
 
-### 2.4. Beta Releases
+### 2.4. Additional Personas Terms
+
+If Customer receives access to Segment's "Personas" service ("**Personas**"), then the additional terms and conditions at [https://segment.com/docs/legal/personas-terms/](https://segment.com/docs/legal/personas-terms/) (Segment Personas Terms) will apply to Customer's use of Personas.
+
+### 2.5. Beta Releases
 
 From time to time, Segment may grant Customer access to "alpha", "beta", or other early-stage products ("**Beta Releases**"). While Segment may provide assistance with Beta Releases in its discretion, notwithstanding anything to the contrary in this Agreement, CUSTOMER AGREES THAT ANY BETA RELEASE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. CUSTOMER FURTHER ACKNOWLEDGES AND AGREES THAT BETA RELEASES MAY NOT BE COMPLETE OR FULLY FUNCTIONAL AND MAY CONTAIN BUGS, ERRORS, OMISSIONS, AND OTHER PROBLEMS FOR WHICH SEGMENT WILL NOT BE RESPONSIBLE. ACCORDINGLY, ANY USE OF A BETA RELEASE IS AT CUSTOMER'S SOLE RISK. Segment makes no promises that future versions of a Beta Release will be released. Segment may terminate Customer's right to use any Beta Release at any time for any reason or no reason in Segment's sole discretion, without liability.
 
@@ -152,11 +155,11 @@ In addition to Segment's termination and other rights under this Agreement, Segm
 
 ### 7.5. Survival
 
-The following Sections shall survive any expiration or termination of this Agreement: 1.5 (Use Restrictions), the disclaimers in Section 2.4 (Beta Releases), 3 (Fees and Payment), 4.4 (Indemnification by Customer), 6 (Ownership), 7 (Term and Termination; Suspension), 8 (Warranty Disclaimer), 9 (Limitation of Remedies and Damages), 10 (Confidential Information), 12 (Modifications to Agreement) and 13 (General Terms).
+The following Sections shall survive any expiration or termination of this Agreement: 1.5 (Use Restrictions), the disclaimers in Section 2.5 (Beta Releases), 3 (Fees and Payment), 4.4 (Indemnification by Customer), 6 (Ownership), 7 (Term and Termination; Suspension), 8 (Warranty Disclaimer), 9 (Limitation of Remedies and Damages), 10 (Confidential Information), 12 (Modifications to Agreement) and 13 (General Terms).
 
 ## **8. WARRANTY DISCLAIMER**
 
-THE SERVICE AND ALL RELATED SERVICES ARE PROVIDED "AS IS". NEITHER SEGMENT NOR ITS SUPPLIERS MAKES ANY OTHER WARRANTIES, EXPRESS OR IMPLIED, STATUTORY OR OTHERWISE, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT. SEGMENT DOES NOT WARRANT THAT CUSTOMER's USE OF THE SERVICE WILL BE UNINTERRUPTED OR ERROR-FREE, NOR DOES SEGMENT WARRANT THAT IT WILL REVIEW THE CUSTOMER DATA FOR ACCURACY OR THAT IT WILL PRESERVE OR MAINTAIN THE CUSTOMER DATA WITHOUT LOSS. CUSTOMER UNDERSTANDS THAT CUSTOMER DATA IS SHARED WITH DESTINATIONS AT CUSTOMER'S ELECTION AND SEGMENT TAKES NO RESPONSIBILITY FOR ANY DESTINATION'S USE OR PROTECTION OF CUSTOMER DATA ONCE IT HAS BEEN SHARED. SEGMENT SHALL NOT BE LIABLE FOR DELAYS, INTERRUPTIONS, SERVICE FAILURES OR OTHER PROBLEMS INHERENT IN USE OF THE INTERNET AND ELECTRONIC COMMUNICATIONS OR OTHER SYSTEMS OUTSIDE THE REASONABLE CONTROL OF SEGMENT. CUSTOMER MAY HAVE OTHER STATUTORY RIGHTS, BUT THE DURATION OF STATUTORILY REQUIRED WARRANTIES, IF ANY, SHALL BE LIMITED TO THE SHORTEST PERIOD PERMITTED BY LAW.
+THE SERVICE AND ALL RELATED SERVICES ARE PROVIDED "AS IS". NEITHER SEGMENT NOR ITS SUPPLIERS MAKES ANY OTHER WARRANTIES, EXPRESS OR IMPLIED, STATUTORY OR OTHERWISE, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT. SEGMENT DOES NOT WARRANT THAT CUSTOMER'S USE OF THE SERVICE WILL BE UNINTERRUPTED OR ERROR-FREE, NOR DOES SEGMENT WARRANT THAT IT WILL REVIEW THE CUSTOMER DATA FOR ACCURACY OR THAT IT WILL PRESERVE OR MAINTAIN THE CUSTOMER DATA WITHOUT LOSS. CUSTOMER UNDERSTANDS THAT CUSTOMER DATA IS SHARED WITH DESTINATIONS AT CUSTOMER'S ELECTION AND SEGMENT TAKES NO RESPONSIBILITY FOR ANY DESTINATION'S USE OR PROTECTION OF CUSTOMER DATA ONCE IT HAS BEEN SHARED. SEGMENT SHALL NOT BE LIABLE FOR DELAYS, INTERRUPTIONS, SERVICE FAILURES OR OTHER PROBLEMS INHERENT IN USE OF THE INTERNET AND ELECTRONIC COMMUNICATIONS OR OTHER SYSTEMS OUTSIDE THE REASONABLE CONTROL OF SEGMENT. CUSTOMER MAY HAVE OTHER STATUTORY RIGHTS, BUT THE DURATION OF STATUTORILY REQUIRED WARRANTIES, IF ANY, SHALL BE LIMITED TO THE SHORTEST PERIOD PERMITTED BY LAW.
 
 ## **9. LIMITATION OF REMEDIES AND DAMAGES**
 
@@ -170,7 +173,7 @@ SEGMENT'S (AND ITS SUPPLIERS') ENTIRE LIABILITY TO CUSTOMER ARISING OUT OF OR RE
 
 ### 9.3. Excluded Claims
 
-"** Excluded Claims**" means (a) any claim arising from Customer's breach of Section 1.5 (Use Restrictions); or (b) any claim arising under Section 4 (Customer Obligations).
+"**Excluded Claims**" means (a) any claim arising from Customer's breach of Section 1.5 (Use Restrictions); or (b) any claim arising under Section 4 (Customer Obligations).
 
 ### 9.4. Nature of Claims and Failure of Essential Purpose
 
@@ -178,11 +181,11 @@ The parties agree that the waivers and limitations specified in this Section 9 a
 
 ## **10. CONFIDENTIAL INFORMATION**
 
-Each party (as " **Receiving Party**") agrees that all code, inventions, know-how, business, technical and financial information it obtains from the disclosing party (" **Disclosing Party**") constitute the confidential property of the Disclosing Party (" **Confidential Information**"), provided that it is identified as confidential at the time of disclosure or should be reasonably known by the Receiving Party to be confidential or proprietary due to the nature of the information disclosed and the circumstances surrounding the disclosure. Any Segment technology, performance information relating to the Service, and the terms and conditions of this Agreement shall be deemed Confidential Information of Segment without any marking or further designation. Except as expressly authorized herein, the Receiving Party shall (1) hold in confidence and not disclose any Confidential Information to third parties and (2) not use Confidential Information for any purpose other than fulfilling its obligations and exercising its rights under this Agreement. The Receiving Party may disclose Confidential Information to its employees, agents, contractors and other representatives having a legitimate need to know (including, for Segment, the subcontractors referenced in Section 13.10), provided that such representatives are bound to confidentiality obligations no less protective of the Disclosing Party than this Section 10 and that the Receiving Party remains responsible for compliance by any such representative with the terms of this Section 10. The Receiving Party's confidentiality obligations shall not apply to information that the Receiving Party can document: (i) was rightfully in its possession or known to it prior to receipt of the Confidential Information; (ii) is or has become public knowledge through no fault of the Receiving Party; (iii) is rightfully obtained by the Receiving Party from a third party without breach of any confidentiality obligation; or (iv) is independently developed by employees of the Receiving Party who had no access to such information. The Receiving Party may make disclosures to the extent required by law or court order, provided the Receiving Party notifies the Disclosing Party in advance and cooperates in any effort to obtain confidential treatment. The Receiving Party acknowledges that disclosure of Confidential Information would cause substantial harm for which damages alone would not be a sufficient remedy, and therefore that upon any such disclosure by the Receiving Party the Disclosing Party shall be entitled to seek appropriate equitable relief in addition to whatever other remedies it might have at law.
+Each party (as "**Receiving Party**") agrees that all code, inventions, know-how, business, technical and financial information it obtains from the disclosing party ("**Disclosing Party**") constitute the confidential property of the Disclosing Party ("**Confidential Information**"), provided that it is identified as confidential at the time of disclosure or should be reasonably known by the Receiving Party to be confidential or proprietary due to the nature of the information disclosed and the circumstances surrounding the disclosure. Any Segment technology, performance information relating to the Service, and the terms and conditions of this Agreement shall be deemed Confidential Information of Segment without any marking or further designation. Except as expressly authorized herein, the Receiving Party shall (1) hold in confidence and not disclose any Confidential Information to third parties and (2) not use Confidential Information for any purpose other than fulfilling its obligations and exercising its rights under this Agreement. The Receiving Party may disclose Confidential Information to its employees, agents, contractors and other representatives having a legitimate need to know (including, for Segment, the subcontractors referenced in Section 13.10), provided that such representatives are bound to confidentiality obligations no less protective of the Disclosing Party than this Section 10 and that the Receiving Party remains responsible for compliance by any such representative with the terms of this Section 10. The Receiving Party's confidentiality obligations shall not apply to information that the Receiving Party can document: (i) was rightfully in its possession or known to it prior to receipt of the Confidential Information; (ii) is or has become public knowledge through no fault of the Receiving Party; (iii) is rightfully obtained by the Receiving Party from a third party without breach of any confidentiality obligation; or (iv) is independently developed by employees of the Receiving Party who had no access to such information. The Receiving Party may make disclosures to the extent required by law or court order, provided the Receiving Party notifies the Disclosing Party in advance and cooperates in any effort to obtain confidential treatment. The Receiving Party acknowledges that disclosure of Confidential Information would cause substantial harm for which damages alone would not be a sufficient remedy, and therefore that upon any such disclosure by the Receiving Party the Disclosing Party shall be entitled to seek appropriate equitable relief in addition to whatever other remedies it might have at law.
 
 ## **11. CO-MARKETING**
 
-Customer agrees to participate in reasonable marketing activities that promote the benefits of the Service to other potential customers and to use of Customer's name and logo on Segment's web site and in Segment promotional materials.Customer agrees that Segment may disclose Customer as a customer of Segment.
+Customer agrees to participate in reasonable marketing activities that promote the benefits of the Service to other potential customers and to use of Customer's name and logo on Segment's web site and in Segment promotional materials.\*\* \*\*Customer agrees that Segment may disclose Customer as a customer of Segment.
 
 ## **12. MODIFICATIONS TO AGREEMENT**
 
@@ -208,15 +211,17 @@ The prevailing party in any action to enforce this Agreement will be entitled to
 
 ### 13.5. Notice
 
-Any notice or communication to Segment that is required or permitted under this Agreement shall be in writing to Segment at the address set forth in Section 13.6 (Segment Contact Information) below or at such other address as directed by Segment, and shall be deemed to have been received by Segment (i) if given by hand, immediately upon receipt; (ii) if given by overnight courier service, the first business day following dispatch or (iii) if given by registered or certified mail, postage prepaid and return receipt requested, the second business day after such notice is deposited in the mail. Segment may send notices to Customer through Customer's email on file or through the Service. All notices given to Customer shall be deemed to have been received by Customer upon delivery.
+Any notice or communication to Segment that is required or permitted under this Agreement shall be in writing to Segment at the address set forth in Section 13.6 (Segment Contact Information) below or at such other address as directed by Segment, and shall be deemed to have been received by Segment (i) if given by hand, immediately upon receipt; (ii) if given by overnight courier service, the first business day following dispatch or (iii) if given by registered or certified mail, postage prepaid and return receipt requested, the second business day after such notice is deposited in the mail. Segment may send notices to Customer through Customer's email on file or through the Service. All notices given to Customer shall be deemed to have been received by Customer upon delivery.
 
 ### 13.6. Segment Contact Information
 
 Any Customer questions, complaints or claims regarding the Service should be sent to the following address:
 
-**Segment.io, Inc**. <br>
-100 California Street, Suite 700 <br>
-San Francisco, CA 94111
+> **Segment.io, Inc**.
+>
+> 100 California Street, Suite 700
+>
+> San Francisco, CA 94111
 
 ### 13.7. Waivers
 
