@@ -1,13 +1,17 @@
 ---
 title: Privacy Policy
 hidden: true
-feedback: false
 hide-feedback: true
 ---
 
-[email]: mailto:legal@segment.com
+This page provides an archive of a previous version of the Segment Privacy Policy. If you have any questions, please contact the [Segment Legal team](mailto:legal@segment.com).
 
 > Archived version: Last modified April 30th, 2018.
+> Effective April 30th, 2018 to July 17th, 2018.
+
+[Prior versions available here](/docs/legal/privacy-updates/)
+
+---
 
 <br />
 
