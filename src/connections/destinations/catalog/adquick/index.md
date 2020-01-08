@@ -7,7 +7,7 @@ rewrite: true
 
 This destination is maintained by AdQuick. For any issues with the destination, please [reach out to their team](mailto:segment@adquick.com).
 
-_**NOTE:** The AdQuick Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on October 2, 2019. If you are interested in joining their beta program or have any feedback to help improve the AdQuick Destination and its documentation, please [let  their team know](mailto:segment@adquick.com)!_
+This document was last updated on January 8, 2020. If you notice any gaps, out-dated information, or simply want to leave some feedback to help us improve our documentation, please [let  their team know](mailto:segment@adquick.com)!
 
 
 ## Getting Started
