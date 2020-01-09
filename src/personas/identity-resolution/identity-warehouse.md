@@ -1,12 +1,19 @@
 ---
 title: Identity Warehouse (Limited Availability)
 ---
+
+
+> note ""
+> **NOTE:** The Identity warehouse currently has limited availability. Please contact your Segment customer success manager to enable this feature.
+
 The Personas Identity Warehouse allows customers to export all the identifiers associated with any one user.
 
-When enabled, customers will see a source called Personas Identities <space_name>. This will automatically begin syncing to warehouses in a customer’s workspace. To disable, use Selective Sync.
+When enabled, customers see a source called Personas Identities `<space_name>`. This automatically synchronizes to warehouses in a customer’s workspace. To disable, use Selective Sync.
 
 To query the underlying data, customers can query:
-``SELECT * FROM personas_<space_name>_identities.users_identities```
+```sql
+SELECT * FROM personas_<space_name>_identities.users_identities
+```
 
 The columns in the tables are:
 
@@ -22,20 +29,22 @@ The columns in the tables are:
 | created_at        | when the mapping or merging was created                                    |
 
 ## Example Queries
-To see all the identifiers associated with a certain user, first look up the segment_id associated with the external_id_value. Then, query all external_id_value's associated with the segment_id.
+To see all the identifiers associated with a certain user, first look up the `segment_id` associated with the `external_id_value`. Then, query all `external_id_value`'s associated with the `segment_id`.
 
-`` with t1 AS
+```sql
+ with t1 AS
   (SELECT segment_id
    FROM personas_identities.users_identities
    WHERE external_id_value = 'jane.doe@gmail.com')
 SELECT u.segment_id, created_source, external_id_type, external_id_value
 FROM personas_identities.users_identities u
-JOIN t1 on u.segment_id = t1.segment_id ```
+JOIN t1 on u.segment_id = t1.segment_id
+```
 
 | segment_id         | created_source    | external_id_type|   external_id_value |
 | ----------------- | -------------------------------------------------------------------------- |
-| use_abc123         | 640YebQ2Ri    | email|   jane.doe@gmail.com |
-| use_abc123         | fHz4PsaUf8    | email|   jane.doe@yahoo.com |
+| use_abc123         | 640YebQ2Ri    | email|   jane.doe@example1.com |
+| use_abc123         | fHz4PsaUf8    | email|   jane.doe@example2.com |
 | use_abc123         | fHz4PsaUf8    | anonymous_id|   feaa68e5-1057-4e32-8702-a2462b454474 |
 | use_abc123         | fHz4PsaUf8    | user_id|   0P1Qls5jrj |
 | use_abc123         | 640YebQ2Ri    | android.id |   4f0bf0e9-44db-4127-8c0c-90f8b261b08e|
