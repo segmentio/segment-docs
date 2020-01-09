@@ -9,6 +9,8 @@ Segment makes it easy to send your data to AWS Lambda (and lots of other destina
 
 With Lambda, you can run code for virtually any type of application or backend service - all with zero administration. Just upload your code and Lambda takes care of everything required to run and scale your code with high availability. You can set up your code to automatically trigger from other AWS services or call it directly from any web or mobile app.
 
+[Read more about AWS Lambda on the Segment blog](https://segment.com/blog/unleashing-the-power-of-raw-data-with-amazon-lambda/).
+
 ## Getting Started
 
 {% include content/connection-modes.md %}
