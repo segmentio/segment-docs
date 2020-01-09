@@ -381,7 +381,7 @@ Please provide `context.ip` to all your [`identify`](/docs/connections/spec/iden
 If you'd like to implement Mixpanel in the European Union you will need to enable the setting "Enable European Union Enpoint" within the Mixpanel settings in the app. When this setting is enabled, Segment will automatically update the endpoint for any data sent from one of our server-side libraries or from a browser using Analytics.js or the iOS SDK.
 
 If you are sending data using our Android SDK, you will need to specify the different endpoints using meta-data tags. On your app's `AndroidManifest.xml` file, you need to add the following tags under your `<application>` tags to override the track, engage, and group endpoints:
-```
+```xml
 <meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
            android:value="https://api-eu.mixpanel.com/track?ip=" />
 <meta-data android:name="com.mixpanel.android.MPConfig.PeopleEndpoint"
