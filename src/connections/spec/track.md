@@ -81,7 +81,7 @@ Here's a complete example of a `track` call:
 
 Every `track` call records a single user action. We call these "events". We recommend that you make your event names human-readable, so that everyone on your team (even you, after all that caffeine) can know what they mean instantly.
 
-Do not use nondescript names like **Event 12** or **TMDropd**. Instead, use unique but recognizable names like **Video Recorded ** and **Order Completed**.
+Do not use nondescript names like **Event 12** or **TMDropd**. Instead, use unique but recognizable names like **Video Recorded** and **Order Completed**.
 
 **We recommend event names built from a noun and past-tense verb.**
 For more information about best practices in event naming, check out our [Analytics Academy lesson on best practices for naming conventions for clean data](/academy/collecting-data/naming-conventions-for-clean-data/).
