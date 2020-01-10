@@ -6,7 +6,7 @@ NOTE: The Objects API is in beta, and so features and names may change without n
 
 The Segment Objects API allows you to send business objects relevant to your business right to Redshift and other Segment supported data warehouses.
 
-NOTE: We haven't yet added support for set to our core analytics-<language> libraries so you'll need to use our HTTP API directly or our independent Go(lang) client for now.
+NOTE: We haven't yet added support for set to our core `analytics-<language>` libraries so you'll need to use our HTTP API directly or our independent Go(lang) client for now.
 
 ### Authentication
 
