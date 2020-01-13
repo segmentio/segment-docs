@@ -132,16 +132,16 @@ console.log('example');
 ## Alerts
 
 > info ""
-> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+> This is a paragraph showing an information box with a blue information icon. Use this when providing useful details that help a reader understand what's going on, but don't require any immediate action.
 
 > success ""
-> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+> This is a paragraph showing an information box with a green checkmark icon. Use this when providing helpful information to a reader that could make their lives better, but that isn't required.
 
 > warning ""
-> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+> This is a paragraph showing an information box with an orange warning icon. Use these when you want to caution a reader about something that could have unintended, but not destructive, consequences.
 
 > error ""
-> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+> This is a paragraph showing an information box with a red hazard icon. Use this when warning a reader about destructive or non-reversible actions, like deleting a workspace or overwriting data. Don't use this too frequently, or else it makes the readers worry!
 
 ---
 

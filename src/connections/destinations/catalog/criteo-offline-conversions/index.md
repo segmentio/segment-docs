@@ -8,7 +8,7 @@ hide-personas-partial: true
 
 The Criteo Offline Conversions Destination and this document are maintained by Criteo. For any issues with the destination, please [let us know!](mailto:support@criteo.com).
 
-_**NOTE:** The Criteo Offline Conversions Destination is currently in beta, which means that we are still actively developing the destination. This doc was last updated on October 8, 2019. If you are interested in joining our beta program or have any feedback to help improve the Criteo Offline Conversions Destination and its documentation, please [let  us know](mailto:support@criteo.com)!_
+This document was last updated on January 8, 2020. If you notice any gaps, out-dated information, or simply want to leave some feedback to help us improve our documentation, please [let  us know](mailto:support@criteo.com)!
 
 
 ## Getting Started

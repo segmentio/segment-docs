@@ -195,7 +195,7 @@ You can see how to write them in the `styleguide.md`, and see how they render at
 
 - `dev`: runs `jekyll serve` locally with incremental builds. Useful when updating CSS, JS, or content and you don't want to rebuild everytime.
 - `build`: Builds the site docs. Used by CI to publish the docs to staging and production
-- `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key to be passed in env via PLATFORM_API_TOKEN
+- `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key to be passed in env via PLATFORM_API_TOKEN. [Instructions here](#bring-your-own-token).
 - `sidenav`: Builds the side navs for 'main', 'legal', 'api', 'partners' and stores the output in `/src/_data/sidenav-auto/`. This output isn't used for the actual build.
 - `typewriter`: pulls in the current state of the Docs tracking plan for implementing Segment tracking
 - `seed`: copies all example data files out of the `_templates` directory and puts them in the `_data` directory. Useful if you don't have a way to set up an API key.
@@ -299,11 +299,19 @@ $ make catalog
 
 ##### Bring your own token
 
-You create your own token via the Access Management Page. Feel free to use [`segment-engineering`](https://app.segment.com/segment-engineering/settings/access-management) or [`segment_prod`](https://app.segment.com/segment_prod/settings/access-management). Once you have the token, set the value in the `.env` file.
+You create your own token in the Segment App. You can use your own personal workspace, or if you have access to them, use [`segment-engineering`](https://app.segment.com/segment-engineering/settings/access-management) or [`segment_prod`](https://app.segment.com/segment_prod/settings/access-management). Go to **Settings > Access Management > Tokens**.
+Any type of token will work, but you might want to limit it to a read-only token. Make sure you label it so folks know what it's for!
+
+Once you make a new token, paste the token value in the `.env` file like so:
+
+```text
+PLATFORM_API_TOKEN=(token value here)
+```
+You can now run `make catalog`!
 
 
 #### Catalog Data + Doc Links
-By default, the links on the catalog page and respective sidenavs will attempt to automagically set hyperlinks, for actual doc file, at the path `connections/:type/:slug`. However, given the transitory state of Docs V2, these links might 404 since the respective doc might be in a different directory.
+By default, the links on the catalog page and respective sidenavs attempt to automagically set hyperlinks, for actual doc file, at the path `connections/:type/:slug`. However, given the transitory state of Docs V2, these links might 404 since the respective doc might be in a different directory.
 
 #### Object Sources and Warehouses
 These two catalogs are hardcoded in the `_data` directory since the Config API does not expose these resources.
