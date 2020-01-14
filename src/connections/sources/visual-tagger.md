@@ -136,13 +136,13 @@ The Visual Tagger integration has negligible impact to your site's performance, 
 
 However, adding a large number of tags to your site could potentially impact your site's performance. To guard against this we limit the number of tags you can add using Visual Tagger to a maximum of 99.
 
-### Are events applicable to specific URLs? Or are we able to match on URL patterns?
+### Are Visual Tagger events applicable to specific URLs? Or are we able to match on URL patterns?
 
 Currently, Visual Tagger will associate events to CSS selectors only. If a unique CSS selector appears multiple times on your website on different pages, when you add an event to that CSS selector, users that interact with that element on *any* of the pages that the CSS selector appears on will fire that event.
 
 In Spring 2020, we will be launching a feature that will allow you to specify which URLs that you want an event to fire from in a flexible way, like regex matching. 
 
-### Does the Visual Tagger work with dynamically generated elements or Single Page Applications?
+### Does Visual Tagger work with dynamically generated elements or Single Page Applications?
 
 Yes. You can track dynamically generated elements like modals (for example) using the Visual Tagger.
 
@@ -150,7 +150,7 @@ Yes. You can track dynamically generated elements like modals (for example) usin
 
 Currently,  only information that is visually present on the page will be available for use in the Visual Tagger.
 
-### How can I tell which events were created using the Visual Tagger, versus those which were implemented using code?
+### How can I tell which events were created using Visual Tagger versus which were implemented using code?
 
 Events that were added using the Visual Tagger (as opposed to in code) have a `context` property in the event payload that says `"visual_tagger": true`. Events _not_ implemented using the Visual Tagger do not have this property.
 
@@ -158,6 +158,6 @@ Events that were added using the Visual Tagger (as opposed to in code) have a `c
 
 Because the new version of Visual Tagger is available in the Segment app, Workspaces that have MFA or SSO enabled are able to access it.
 
-### When will the Visual Tagger be Generally Available?
+### When will Visual Tagger be Generally Available?
 
 General Availability launch is planned for Spring of 2020.
