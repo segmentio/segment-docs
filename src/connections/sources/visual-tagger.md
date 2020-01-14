@@ -119,26 +119,31 @@ Once you publish your events, you’ll see them in the **All Published Events** 
 
 If your events are not working as expected, try the following steps to troubleshoot the issue.
 
-- If you use the same name for multiple events (whether in code or using Visual Tagger), duplicate events will not get created downstream. Those multiple events will get joined into the same event.
-- We currently do not have the ability to alert you if any events that you have created using Visual Tagger begin to fail. 
-- Using Visual Tagger won't slow down your website or impact performance in any perceptible way, as long as you add less than 100 events via Visual Tagger.
-- If your website uses dynamically generated CSS selectors, Visual Tagger is currently not compatible for use on your website. Reach out to beta@segment.com and let us know if this is the case for you.
-- If your website has any iframed components (for example, if you embed Typeforms into your site), Visual Tagger cannot create events for that iframed content. We recommend that you install Segment on the iframed-in site and use Visual Tagger directly on that site.
+1. Ensure that the Visual Tagger integration is toggled on. You find it in the Settings for your Source.
+2. Ensure that analytics.js is implemented on your website. You can confirm this by visiting your website and watching the Segment Debugger. A `page` call should flow into your Debugger whenever someone visits a page on your website if you have implemented analytics.js. Please note that if you have an adblocker enabled when you visit your website, data will not get fired into Segment when you interact with your website.
+3. Confirm that the CSS selector for any events that you previously created using Visual Tagger has not changed in any way (for example, a button moved locations or disappeared entirely). Because Visual Tagger relies on the CSS selector to tie events to user actions, if the CSS selector changes, the event will stop sending. If this occurs, edit your event and re-select the CSS selector. Please note that we currently do not have the ability to alert you if any events that you have created using Visual Tagger begin to fail. 
+4. Because Visual Tagger relies on stable CSS selectors to fire events from, it is currently not compatible with websites that have CSS selectors that are dynamically generated on every page load. Reach out to beta@segment.com and let us know if this is the case for you.
+5. If your website has any iframed components (for example, if you embed Typeforms into your site), Visual Tagger cannot create events for that iframed content. We recommend that you install Segment on the iframed-in site and use Visual Tagger directly on that site.
+6. If you use the same name for multiple events (whether in code or using Visual Tagger), duplicate events will *not* get created downstream. Those multiple events will get joined into the same event.
+
+If your events are still not working as expected, please reach out to [Customer Support](https://segment.com/help/contact/) for help.
 
 ## FAQs
 
 //### How does Visual Tagger work?
 //TODO
 
-### Does the Visual Tagger impact my site or app's performance?
+### Will using Visual Tagger impact my site or app's performance?
 
 The Visual Tagger integration has negligible impact to your site's performance, because it installs a single event handler that makes an asynchronous call to Segment when a tag's event is invoked.
 
 However, adding a large number of tags to your site could potentially impact your site's performance. To guard against this we limit the number of tags you can add using Visual Tagger to a maximum of 99.
 
-//### Are events applicable to specific URLs? Or are we able to match on URL patterns?
+### Are events applicable to specific URLs? Or are we able to match on URL patterns?
 
-//Currently, Visual Tagger only supports direct string matching on URLs. More flexibility, including matching on URL patterns, is on our roadmap.
+Currently, Visual Tagger will associate events to CSS selectors only. If a unique CSS selector appears multiple times on your website on different pages, when you add an event to that CSS selector, users that interact with that element on *any* of the pages that the CSS selector appears on will fire that event.
+
+In Spring 2020, we will be launching a feature that will allow you to specify which URLs that you want an event to fire from in a flexible way, like regex matching. 
 
 ### Does the Visual Tagger work with dynamically generated elements or Single Page Applications?
 
