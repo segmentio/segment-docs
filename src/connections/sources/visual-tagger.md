@@ -4,7 +4,7 @@ sourceTitle: 'Visual Tagger'
 sourceCategory: 'Tools'
 ---
 
-Visual Tagger is currently in **public preview**. Use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/). If you are interested in using Visual Tagger or if you are currently using Visual Tagger and have feedback for us, please email beta@segment.com.
+Visual Tagger is currently in **public preview**. Use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/). If you are interested in using Visual Tagger or if you are currently using Visual Tagger and have feedback for us, please email [beta@segment.com](beta@segment.com).
 
 ## What is Visual Tagger?
 
@@ -24,7 +24,7 @@ Visual Tagger is a tool that helps you easily collect data about what your custo
 Here's what you need before you can use Visual Tagger:
 1. **A Segment account and Workspace**. You'll need to have either Workspace Owner or Source Admin-level permissions in order to create events using Visual Tagger.
 2. **A website**. Visual Tagger currently works best with simple marketing websites, like landing pages or content sites. There is no support for mobile apps at this time. You will, however, be able to tag the mobile version of your websites using Visual Tagger.
-3. **A [Javascript (Website) Source](docs/connections/sources/catalog/libraries/website/javascript/) in Segment**. Once you have created your Javascript Source, you'll need to install the analytics.js snippet on your website in order for Visual Tagger to work. If you're having trouble with this step, follow the [Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript).
+3. **A [Javascript (Website) Source](/docs/connections/sources/catalog/libraries/website/javascript/) in Segment**. Once you have created your Javascript Source, you'll need to install the analytics.js snippet on your website in order for Visual Tagger to work. If you're having trouble with this step, follow the [Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart).
 4. **Chrome browser**. Visual Tagger is only supported for Chrome browser at this time.
 
 ### Getting Started
@@ -93,7 +93,7 @@ You can test your events by clicking around on your website, taking the actions 
 
   ![Test Your Event](images/vt-docs-6.gif)
 
-If you’re having trouble validating your events, check out our Troubleshooting tips.
+If you’re having trouble validating your events, check out our [Troubleshooting Tips](#troubleshooting-your-events).
 
 ### Step 4: Publish Your Event(s)
 
