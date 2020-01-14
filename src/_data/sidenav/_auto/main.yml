@@ -36,7 +36,7 @@ sections:
     - path: /connections/sources/index-tonik
       title: Sources
     - path: /connections/sources/visual-tagger
-      title: Visual Tagger (Alpha) User Guide
+      title: Visual Tagger
     - path: /connections/sources/what-are-cloud-sources
       title: What are Cloud-App Sources?
   - section_title: Spec

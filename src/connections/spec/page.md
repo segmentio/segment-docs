@@ -89,46 +89,60 @@ Reserved properties we have standardized:
   <tr>
     <td>`name`</td>
     <td>String</td>
-    <td>Name of the page
-      <p> This is reserved for future use.</p>
+    <td>Name of the page.
+
+This is reserved for future use.
+
     </td>
   </tr>
   <tr>
     <td>`path`</td>
     <td>String</td>
-    <td>Path portion of the URL of the page
-      <p> Equivalent to [`canonical path`](https://github.com/segmentio/analytics.js/blob/master/analytics.js#L6499-L6503) which defaults to [`location.pathname`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.</p>
+    <td>Path portion of the URL of the page.
+
+
+ Equivalent to [`canonical path`](https://github.com/segmentio/analytics.js/blob/master/analytics.js#L6499-L6503) which defaults to [`location.pathname`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.
     </td>
   </tr>
   <tr>
     <td>`referrer` </td>
     <td>String</td>
-    <td>Full URL of the previous page
-      <p> Equivalent to [`document.referrer`](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer) from the DOM API.</p></td>
+    <td>Full URL of the previous page.
+
+
+ Equivalent to [`document.referrer`](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer) from the DOM API.</td>
   </tr>
   <tr>
     <td>`search`</td>
     <td>String</td>
-    <td>Query string portion of the URL of the page
-      <p> Equivalent to [`location.search`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.</p></td>
+    <td>Query string portion of the URL of the page.
+
+
+ Equivalent to [`location.search`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.</td>
   </tr>
   <tr>
     <td>`title`</td>
     <td>String</td>
-    <td>Title of the page
-      <p> Equivalent to [`document.title`](https://developer.mozilla.org/en-US/docs/Web/API/Document/title) from the DOM API.</p></td>
+    <td>Title of the page.
+
+
+ Equivalent to [`document.title`](https://developer.mozilla.org/en-US/docs/Web/API/Document/title) from the DOM API.</td>
   </tr>
   <tr>
     <td>`url`</td>
     <td>String</td>
-    <td>Full URL of the page
-      <p> First we look for the canonical url. If the canonical url is not provided, we use [`location.href`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.</p></td>
+    <td>Full URL of the page.
+
+
+First we look for the canonical url. If the canonical url is not provided, we use [`location.href`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API.</td>
   </tr>
     <tr>
     <td>`keywords`</td>
     <td>Array[String]</td>
-    <td>A list/array of kewords describing the content of the page.
-      <p> The keywords would most likely be the same as, or similar to, the keywords you would find in an html [meta](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes) tag for SEO purposes. This property is mainly used by content publishers that rely heavily on pageview tracking. This is not automatically collected.</p>
+    <td>A list/array of keywords describing the content of the page.
+
+
+The keywords would most likely be the same as, or similar to, the keywords you would find in an html [meta](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes) tag for SEO purposes. This property is mainly used by content publishers that rely heavily on pageview tracking. This is not automatically collected.
     </td>
   </tr>
 </table>
