@@ -130,9 +130,6 @@ If your events are still not working as expected, please reach out to [Customer 
 
 ## FAQs
 
-//### How does Visual Tagger work?
-//TODO
-
 ### Will using Visual Tagger impact my site or app's performance?
 
 The Visual Tagger integration has negligible impact to your site's performance, because it installs a single event handler that makes an asynchronous call to Segment when a tag's event is invoked.
