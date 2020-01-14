@@ -161,6 +161,6 @@ Events that were added using the Visual Tagger (as opposed to in code) have a `c
 
 Because the new version of Visual Tagger is available in the Segment app, Workspaces that have MFA or SSO enabled are able to access it.
 
-### When will the Visual Tagger be Generally Availabile?
+### When will the Visual Tagger be Generally Available?
 
 General Availability launch is planned for Spring of 2020.
