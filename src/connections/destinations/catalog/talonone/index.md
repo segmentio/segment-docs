@@ -77,7 +77,7 @@ is amended to `address_city`
 ## Audience & Computed Traits
 `Computed traits` and `audiences` data can be communicated to the Talon.One destination as a customer's `custom attribute`. To learn more about Personas, reach out for a demo.
 
-An **identify** call ise sent to the destination for each user being added and removed to an Audience. The trait name is the snake_cased version of the audience name you provide with a true/false value. For example, when a user first completes an order in the last 30 days, an identify call is sent to Talon.One with the trait order_completed_last_30days: true. When this user no longer satisfies the value is updated to false and automatically transmitted to Talon.One.
+An **identify** call is sent to the destination for each user being added and removed to an Audience. The trait name is the snake_cased version of the audience name you provide with a true/false value. For example, when a user first completes an order in the last 30 days, an identify call is sent to Talon.One with the trait order_completed_last_30days: true. When this user no longer satisfies the value is updated to false and automatically transmitted to Talon.One.
 
 **Note:** Similar to `traits/custom traits`, `audiences` and `computed traits` need to be added as `custom attributes` on the Talon.One Campaign Manager. Although unlike `traits/custom traits`, they do not have to be added to the `custom attributes` of this destination application.
 
