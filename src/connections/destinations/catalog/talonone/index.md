@@ -39,7 +39,7 @@ _**NOTE:** The Talon.One Destination is currently in beta, which means that they
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
 
-```
+```js
 analytics.identify('userId123', {
   email: 'john.doe@segment.com',
   name: 'John Doe',
