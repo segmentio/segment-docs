@@ -396,7 +396,7 @@ The [lib-curl consumer](https://github.com/segmentio/analytics-php/blob/master/l
 
 If your servers are handling more than 20 requests per second, you may want to look at the [file consumer](#file-consumer) to optimize performance.
 
-There is a maximum of `500KB` per batch request and `132KB` per call.
+There is a maximum of `500KB` per batch request and `32KB` per call.
 
 The lib-curl consumer is Segment's default PHP library, although you may still initialize it explicitly and set queue and batch sizes in the library's initialization settings.
 

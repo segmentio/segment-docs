@@ -10,8 +10,6 @@ The Amazon S3 destination puts the raw logs of the data we're receiving into you
 
 Keep in mind that Amazon S3 works in a different way from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/connections/spec/common/#integrations) does not affect events in the case of Amazon S3.
 
-Also keep in mind that Amazon S3 works in a different way from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/connections/spec/common/#integrations) will not have any effect on events in the case of Amazon S3.
-
 The diagram below illustrates how the S3 destination works.
 
 Data from your sources is processed by the Segment Tracking API, which collects the Events in batches. When the batches reach a 100 MB, or once an hour, a process in the Segment backend uploads them to a secure Segment S3 bucket, from which they can be securely copied to your own S3 bucket.
@@ -97,7 +95,7 @@ The Segment user must have the permission to `GenerateDataKey` from your AWS Key
 
 ![creating customer managed key screenshot](images/customer-managed-key.png)
 
-#### Update S3 bucket default encryption propery
+#### Update S3 bucket default encryption property
 The target S3 bucket should have the "Default encryption" property enabled and set to `AWS-KMS`. Choose the customer-managed key generated in the above step for encryption.
 
 ![update default encryption property](images/bucket-property.png)

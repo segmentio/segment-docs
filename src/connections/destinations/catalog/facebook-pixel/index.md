@@ -180,7 +180,7 @@ If you have events that use any of those keys for non-PII properties, you can ma
 
 The most common reason for Facebook conversion pixels to fire inconsistently is that the page redirects or reloads before the pixel has time to be loaded on the page. Make sure your page does not redirect or reload for at least 300ms after the conversion event happens. In some cases a delay of 500ms is necessary.
 
-We recommend using our `trackLink` or `trackForm` helpers to delay the page redirect. [Documentation here](/docs/connections/sources/catalog/libraries/website/analytics.js#track-link). You can extend the delay by [setting the timeout to 500ms](/docs/connections/sources/catalog/libraries/website/analytics.js#extending-timeout).
+We recommend using our `trackLink` or `trackForm` helpers to delay the page redirect. [Documentation here](/docs/connections/sources/catalog/libraries/website/javascript#track-link). You can extend the delay by [setting the timeout to 500ms](/docs/connections/sources/catalog/libraries/website/javascript#extending-timeout).
 
 ### Extra or Duplicate Conversions
 

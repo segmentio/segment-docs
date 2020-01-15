@@ -8,11 +8,11 @@ Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/conne
 
 ## Types of Sources
 
-Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud App, plus a fifth type: User-created [Source Functions](/docs/connections/sources/custom/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, for example a ticketing system such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), a payments system such as [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), or a marketing tool like [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
+Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud App, plus a fifth type: User-created [Source Functions](/docs/connections/sources/custom-sources/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, for example a ticketing system such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), a payments system such as [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), or a marketing tool like [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
 
 ## Catalog
 
-If you're just looking to explore all of our destinations check out the [destinations catalog](/catalog).
+If you're just looking to explore all of our destinations check out the [destinations catalog](/docs/connections/destinations/catalog/).
 
 For detailed information about each destination, select one from the list to learn how our API methods are implemented for that destination, and how you can use it through Segment.
 
@@ -77,7 +77,7 @@ In order to override the default, check the destination settings pane in the Seg
 
 ## Data Deliverability
 
-Segment increases deliverability to destinations in two ways: [retries](#retries) and [replays](/docs/guides/general/what-is-replay/). Retries happen automatically for all customers, while replays are available on request for [Business](https://segment.com/pricing) customers.
+Segment increases deliverability to destinations in two ways: [retries](#retries) and [replays](docs/guides/what-is-replay/). Retries happen automatically for all customers, while replays are available on request for [Business](https://segment.com/pricing/) customers.
 
 ### Retries
 
@@ -91,77 +91,77 @@ If the delivery of the payload is not successfully sent due to connection issues
 
 <table>
   <tr>
-    <th>Platform</th>
-    <th><p><b>Initial Wait</b></p><p>Sleep duration before the first retry</p></th>
-    <th><p><b>Wait Growth</b></p><p>Rate of growth of the sleep duration between each retry</p></th>
-    <th><p><b>Max Wait</b></p><p>Maximum sleep duration between retries</p></th>
-    <th><p><b>Max Attempts</b></p><p>Maximum number of individual retries</p></th>
+    <td>Platform</td>
+    <td><p><b>Initial Wait</b></p><p>Sleep duration before the first retry</p></td>
+    <td><p><b>Wait Growth</b></p><p>Rate of growth of the sleep duration between each retry</p></td>
+    <td><p><b>Max Wait</b></p><p>Maximum sleep duration between retries</p></td>
+    <td><p><b>Max Attempts</b></p><p>Maximum number of individual retries</p></td>
   </tr>
   <tr>
-    <th>C++</th>
+    <td>**C++**</td>
     <td>1s</td>
     <td>None</td>
     <td>1s</td>
     <td>5</td>
   </tr>
   <tr>
-    <th>Clojure</th>
+    <td>**Clojure**</td>
     <td>15s</td>
     <td>Exponential</td>
     <td>1h</td>
     <td>50</td>
   </tr>
   <tr>
-    <th>Go</th>
+    <td>**Go**</td>
     <td>100ms</td>
     <td>Exponential</td>
     <td>10s</td>
     <td>10</td>
   </tr>
   <tr>
-    <th>Java</th>
+    <td>**Java**</td>
     <td>15s</td>
     <td>Exponential</td>
     <td>1h</td>
     <td>50</td>
   </tr>
   <tr>
-    <th>JavaScript</th>
+    <td>**JavaScript**</td>
     <td>1s</td>
     <td>Exponential</td>
     <td>1h</td>
     <td>10</td>
   </tr>
   <tr>
-    <th>.Net</th>
+    <td>**.Net**</td>
     <td>100ms</td>
     <td>Exponential</td>
     <td>6.4s</td>
     <td>7</td>
   </tr>
   <tr>
-    <th>Node.js</th>
+    <td>**Node.js**</td>
     <td>100ms</td>
     <td>Exponential</td>
     <td>400ms</td>
     <td>3</td>
   </tr>
   <tr>
-    <th>PHP</th>
+    <td>**PHP**</td>
     <td>100ms</td>
     <td>Exponential</td>
     <td>6.4s</td>
     <td>7</td>
   </tr>
   <tr>
-    <th>Python</th>
+    <td>**Python**</td>
     <td>1s</td>
     <td>Exponential</td>
     <td>34m</td>
     <td>10</td>
   </tr>
   <tr>
-    <th>Ruby</th>
+    <td>**Ruby**</td>
     <td>100ms</td>
     <td>Exponential</td>
     <td>10s</td>

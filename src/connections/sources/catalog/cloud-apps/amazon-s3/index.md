@@ -1,6 +1,7 @@
 ---
 title: Amazon S3 from Lambda
 rewrite: true
+source-type: event
 ---
 
 This document contains a procedure that enables you to upload a CSV file containing data to Amazon S3, where it uses Lambda to automatically parse, format, and upload the data to Segment.

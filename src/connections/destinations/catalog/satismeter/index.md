@@ -31,7 +31,7 @@ Users need to be identified in order to target surveys at the right time.
 
 ## Client-side destination
 
-Identifying of users is done by calling an `analytics.identify` method using the [analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/) library. The recommended traits are `name`, `email` and `createdAt`, however SatisMeter will collect any other traits you'd like to see next to feedback from your customers.
+Identifying of users is done by calling an `analytics.identify` method using the [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) library. The recommended traits are `name`, `email` and `createdAt`, however SatisMeter will collect any other traits you'd like to see next to feedback from your customers.
 
 Here's an example of the identify call:
 ```js

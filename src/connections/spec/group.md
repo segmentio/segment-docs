@@ -37,11 +37,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 Beyond the common fields, the `group` call takes the following fields:
 
 <table>
-  <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-group-id.md %}
   {% include content/spec-field-group-traits.md %}
 </table>
@@ -101,9 +97,9 @@ The following are the reserved traits we have standardized:
 
 <table>
   <tr>
-    <th>Trait</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Trait**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>`address`</td>

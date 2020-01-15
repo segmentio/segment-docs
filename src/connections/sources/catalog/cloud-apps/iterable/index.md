@@ -1,5 +1,6 @@
 ---
 title: 'Iterable Source'
+source-type: event
 ---
 Iterable is the growth marketing platform that enables brands to create, execute and optimize campaigns to power world-class customer engagement across email, push, SMS, in-app and more with unparalleled data flexibility. An integrated, cross-channel solution—built for marketers, trusted by engineers, designed with intelligence.
 
@@ -47,9 +48,9 @@ Collections are the groupings of data we pull from your Source. In your warehous
 
 <table>
   <tr>
-    <th>Collection</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Collection**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>Email Delivered</td>

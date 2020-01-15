@@ -28,15 +28,15 @@ To learn more about about Connection Modes and what dictates which we support, [
 {% endif %}
 
 {% if currentIntegration.browserUnbundlingSupported == true and currentIntegration.browserUnbundlingPublic == true %}
-We offer an optional **Cloud-based** Connection Mode for **Web** data with {{ currentIntegration.display_name }}. As a reminder, this removes the {{ currentIntegration.display_name }} javascript library from your site, improving performance.
+  We offer an optional **Cloud-based** Connection Mode for **Web** data with {{ currentIntegration.display_name }}. As a reminder, this removes the {{ currentIntegration.display_name }} javascript library from your site, improving performance.
 {% endif %}
 
 {% if currentIntegration.platforms.mobile == true %}
-{% if destination.platforms.server == true %}}
-Segment offers an *optional* **Device-based** Connection Mode for **Mobile** data with {{ currentIntegration.display_name }}. If you'd like to use those features that require client-based functionality, follow the steps above to ensure you have packaged the {{ currentIntegration.display_name }} SDK with Segment's.
-{% else %}
-This destination *requires* a **Device-based** Connection Mode for **Mobile** data. Follow the steps above to ensure you have packaged the {{ currentIntegration.display_name }} SDK with Segment's.
-{% endif %}
+  {% if currentIntegration.platforms.server == true %}
+  Segment offers an *optional* **Device-based** Connection Mode for **Mobile** data with {{ currentIntegration.display_name }}. If you'd like to use those features that require client-based functionality, follow the steps above to ensure you have packaged the {{ currentIntegration.display_name }} SDK with Segment's.
+  {% else %}
+  This destination *requires* a **Device-based** Connection Mode for **Mobile** data. Follow the steps above to ensure you have packaged the {{ currentIntegration.display_name }} SDK with Segment's.
+  {% endif %}
 {% endif %}
 {% endunless %}
 
@@ -53,15 +53,15 @@ Segment lets you change these destination settings from your Segment dashboard w
   {% endunless %}
 {% endfor %}
 
-{% assign oldname = currentIntegration.name | split: "/" | last | capitalize %}
-{% if currentIntegration.display_name != oldname %}
+{% if currentIntegration.previous_names.size > 1 %}
 
 ## Adding {{ currentIntegration.display_name }} to the integrations object
 
-To add {{ currentIntegration.display_name }} to the `integrations` JSON object (for example, <a href="https://segment.com/docs/guides/general/filtering-data/#filtering-with-the-integrations-object">to filter data from a specific source</a>), use one of the following valid names for this integration:
+To add {{ currentIntegration.display_name }} to the `integrations` JSON object (for example, [to filter data from a specific source](/docs/guides/filtering-data/#filtering-with-the-integrations-object)), use one of the following valid names for this integration:
 
-- {{ currentIntegration.display_name }}
-- {{ oldname }}
-
+{% for valid_name in currentIntegration.previous_names %}
+- {{ valid_name }}
+{% endfor %}
 {% endif %}
+
 {% endif %}

@@ -1,5 +1,6 @@
 ---
 title: 'Mailjet Source'
+source-type: event
 ---
 Mailjet is a powerful email service provider that enables you to send, deliver and track transactional and marketing emails all from one single account. With Mailjet, Marketers and Developers can send and track emails via API, User Interface or SMTP Relay. <!-- [Visit Website]() -->
 
@@ -41,9 +42,9 @@ Collections are the groupings of data we pull from your Source. In your warehous
 
 <table>
   <tr>
-    <th>Collection</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Collection**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>Email Delivered</td>

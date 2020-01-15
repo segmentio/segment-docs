@@ -1,12 +1,15 @@
 ---
-title: Use OAuth to Build a Two-Click Enable Flow
+title: Enable with OAuth
 ---
 
+> info ""
 > If you're a customer who just wants to build a simple script or app against a single workspace, you may want to use [Workspace Access Tokens](/docs/config-api/authentication).
+
+Enable with OAuth, supported with our [Config API](/docs/config-api), allows partners to build seamless flows for customers to implement and enable integrations within their workspace. This is a [post-launch requirement](/docs/partners/#post-launch) for a partner to graduate from public beta to public.
 
 ## Concepts
 
-Segment supports OAuth with our [Config API](/docs/config-api) to enable partners to build seamless flows for enabling and monitoring instances of their integration on mutual customers' workspaces.
+Before getting started with your implementation, it's important to understand the below concepts.
 
 ### Apps
 
@@ -210,7 +213,7 @@ $ curl \
 
 If you created the app with any of these scopes, and then updated the scope in index.js at the top to match it, you can uncomment the lines around sourceList in index.js to see an example of how you could list all sources on the users workspace.
 
-## FAQ and Troubleshooting
+## FAQs
 
 ### What should the exact destination slug word be?
 

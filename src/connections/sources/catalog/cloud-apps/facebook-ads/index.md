@@ -1,6 +1,7 @@
 ---
 title: Facebook Ads Source
 rewrite: true
+source-type: object
 ---
 
 Facebook is one of the most efficient ways to advertise online. Take your company's analysis to the next level by adding [Facebook Ads](https://www.facebook.com/business/products/ads) as a Source to Segment.
@@ -61,6 +62,7 @@ Collections are the groupings of resources we pull from your source. In your war
 Below are tables outlining the properties included in the collections listed above.
 
 ### Ad Accounts
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Ad Account ID. |
@@ -70,6 +72,7 @@ Below are tables outlining the properties included in the collections listed abo
 | spend_cap | The maximum that can be spent by this account after which campaigns will be paused. A value of 0 signifies no spending-cap and setting a new spend cap only applies to spend AFTER the time at which you set it. Value specified in basic unit of the currency, e.g. cents for USD. |
 
 ### Ad Sets
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Ad set ID. |
@@ -82,6 +85,7 @@ Below are tables outlining the properties included in the collections listed abo
 | name | Name of ad set. |
 
 ### Ads
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | The ID of this ad. |
@@ -100,6 +104,7 @@ Below are tables outlining the properties included in the collections listed abo
 | utm_content | UTM content. |
 
 ### Campaigns
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Campaign's ID. |
@@ -112,6 +117,7 @@ Below are tables outlining the properties included in the collections listed abo
 | stop_time | Stop time. |
 
 ### Insights
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Segment internal ID. |

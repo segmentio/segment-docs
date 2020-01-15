@@ -12,6 +12,7 @@ layout: page
 redirect_from:
 - /test/test
 - /guides/testing
+published: false
 ---
 
 > note "This is a note"

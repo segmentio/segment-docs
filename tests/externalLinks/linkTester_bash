@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# used for validating external links from docs
+
+list=$(node tests/externalLinks/getExternalLinks.js)
+
+check_link () {
+  output=`curl -sS -H -v -o /dev/null -IL -w "%{http_code}" $1`
+  if [ "$output" != "200" ]; then
+    echo $1 $output
+  fi
+}
+
+echo "Testing redirects..."
+while read -r p; do
+  check_link $p &
+done <<< "$list"
+
+wait
+exit 1

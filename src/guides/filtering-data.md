@@ -70,7 +70,7 @@ Schema defaults allow you to prevent unexpected or malformed data from a Source 
 
 Data blocked using schema defaults is permanently discarded, and cannot be recovered or replayed through Segment. You can forward blocked data to a new Source, but these events count toward your account MTU limits, and may not be worth saving.
 
-Schema Defaults are available to all customers, regardless of Segment plan.
+Schema Defaults are only available to Business Tier customers.
 
 You can find the Schema Defaults in the **Settings** tab for each Source, in **Schema Configuration** section.
 
@@ -115,7 +115,7 @@ If you have Protocols in your workspace, **and** have a tracking plan associated
 
 ## Warehouse Selective Sync
 
-[Warehouse Selective Sync](https://segment.com/docs/guides/warehouses/can-i-control-what-data-is-sent-to-my-warehouse/) allows you to prevent specific data from getting into your warehouses. You can use this to stop syncing specific events or properties that aren't relevant, and which are just slowing down your warehouse syncs.
+[Warehouse Selective Sync](https://segment.com/docs/connections/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse/) allows you to prevent specific data from getting into your warehouses. You can use this to stop syncing specific events or properties that aren't relevant, and which are just slowing down your warehouse syncs.
 
 This feature stops specific data from being sent to *all* data warehouses at the same time, so don't use it if you only want to pick and choose which warehouses get the data. This setting only affects warehouses, and does not prevent data from going to any other destinations.
 

@@ -1,6 +1,7 @@
 ---
 title: Chatlio Source
 beta: true
+source-type: event
 ---
 
 Chatlio is a live chat tool that allows you to talk to your customers through your existing Slack service. Chatlio provides built in support for sending [chat related events](https://segment.com/docs/connections/spec/live-chat/) to Segment to give you a full picture of activity on your site including live chat. Visit [Chatlio for more info](https://chatlio.com/).
@@ -24,8 +25,8 @@ Chatlio automatically ties these events together with other activity on your sit
 
 <table>
   <tr>
-    <th>Event Name</th>
-    <th>Description</th>
+    <td>**Event Name**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>Live Chat Conversation Started</td>

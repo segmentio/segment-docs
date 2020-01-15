@@ -32,11 +32,7 @@ analytics.alias("507f191e81");
 Beyond the common fields, the `alias` call takes the following fields:
 
 <table>
-  <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-previous-id.md %}
   {% include content/spec-field-user-id.md %}
 </table>
