@@ -47,7 +47,8 @@ analytics.identify('userId123', {
 ```
 
 Identify calls will be sent to Talon.One as an identify event. The `userId` will have a 1-1 mapping to Talon.One's `integrationId`. The `traits` in Segment are mapped with Talon.One's Customer's `custom attributes`.
-*Note, this app only supports logged in users*
+
+**Note**: this app only supports logged-in users.
 
 
 **Important**: `Custom Attributes` must be first set up on the Talon.One Campaign Manager before Identify calls are made:
