@@ -62,7 +62,7 @@ Identify calls will be sent to Talon.One as an identify event. The `userId` will
  *The naming convention is case sensitive.*
  *Parent/child objects are supported by flattening the data using an underscore.*
  e.g.
-```
+```js
  {
      address:{
          city: 'Berlin'
