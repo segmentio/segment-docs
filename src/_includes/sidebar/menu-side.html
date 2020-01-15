@@ -103,3 +103,9 @@
   <p class="destination-menu__title">On this page</p>
   {{ my_toc | markdownify | strip }}
 {% endif %}
+
+{% assign edit_url = "https://github.com/segmentio/segment-docs/edit/master/src/" | append: page.path %}
+
+ <p><a href="{{ edit_url }}">Edit this page</a></p>
+
+<p><a href="https://github.com/segmentio/segment-docs/issues/new?body=File in need of changes: [{{ page.path }}](https://segment.com{{ page.url }})">Request docs changes</a></p>
