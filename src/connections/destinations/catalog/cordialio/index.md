@@ -31,10 +31,10 @@ If the `user_id` passed is _invalid_, an error will be returned.
 
 ### Supported data parameters
 
-| Segment key        | Type           | Cordial mapping  |
-| ------------- |:-------------:| -----|
-| `user_id`     | string | email address or custom primary key |
-| `group_id`      | string      |   list ID |
+| Segment key |  Type  | Cordial mapping                     |
+| ----------- |:------:| ----------------------------------- |
+| `user_id`   | string | email address or custom primary key |
+| `group_id`  | string | list ID                             |
 
 ## Track
 If the `user_id` passed is _valid and known_, the event and its properties will be attributed to the contact in Cordial.
@@ -43,11 +43,11 @@ If the `user_id` passed is _invalid_, an error will be returned.
 
 ### Supported data parameters
 
-| Segment key        | Type           | Cordial mapping  |
-| ------------- |:-------------:| -----|
-| `user_id`     | string | email address or custom primary key |
-| `event`      | string | event name |
-| `properties` | object | event properties (optional) |
+| Segment key  |  Type  | Cordial mapping                     |
+| ------------ |:------:| ----------------------------------- |
+| `user_id`    | string | email address or custom primary key |
+| `event`      | string | event name                          |
+| `properties` | object | event properties (optional)         |
 
 ## Page
 If the `user_id` passed is _valid and known_, a page view event will be  attributed to the contact in Cordial.
@@ -56,9 +56,9 @@ If the `user_id` passed is _invalid_, an error will be returned.
 
 ### Supported data parameters:
 
-| Segment key        | Type           | Cordial mapping  |
-| ------------- |:-------------:| -----|
-| `user_id`     | string | email address or custom primary key |
+| Segment key |  Type  | Cordial mapping                     |
+| ----------- |:------:| ----------------------------------- |
+| `user_id`   | string | email address or custom primary key |
 
 ## Optional advanced configuration
 
