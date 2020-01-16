@@ -15,7 +15,8 @@ If you haven't already, we highly recommend labeling all your sources with *Dev*
 
 [](images/connection-policy.png)
 
-  _Note: Only workspace owners have access to edit connection policies._
+> note ""
+> **Note:** The Identity Resolution table can only be edited by workspace owners and users with the Identity Admin role.
 
 ## Step Four: Connect Sources and Create Test Audiences
 
