@@ -29,7 +29,8 @@ If the `user_id` passed is _valid and known_, and the `group_id` passed is _vali
 
 If the `user_id` passed is _invalid_, an error will be returned.
 
-### Supported data parameters:
+### Supported data parameters
+
 | Segment key        | Type           | Cordial mapping  |
 | ------------- |:-------------:| -----|
 | `user_id`     | string | email address or custom primary key |
@@ -40,7 +41,8 @@ If the `user_id` passed is _valid and known_, the event and its properties will 
 
 If the `user_id` passed is _invalid_, an error will be returned.
 
-### Supported data parameters:
+### Supported data parameters
+
 | Segment key        | Type           | Cordial mapping  |
 | ------------- |:-------------:| -----|
 | `user_id`     | string | email address or custom primary key |
@@ -51,17 +53,19 @@ If the `user_id` passed is _invalid_, an error will be returned.
 If the `user_id` passed is _valid and known_, a page view event will be  attributed to the contact in Cordial.
 
 If the `user_id` passed is _invalid_, an error will be returned.
+
 ### Supported data parameters:
+
 | Segment key        | Type           | Cordial mapping  |
 | ------------- |:-------------:| -----|
 | `user_id`     | string | email address or custom primary key |
 
 ## Optional advanced configuration
 
-### POST https://admin.cordial.io/api/integrations/segment
+`POST https://admin.cordial.io/api/integrations/segment`
 This endpoint can be used to configure custom mappings for your Segment destination.
 
-```
+```js
 {   "name":"segment",
     "enabled":true,
     "attributeMapping":[
@@ -73,10 +77,11 @@ This endpoint can be used to configure custom mappings for your Segment destinat
     "ignoreFields":["website"],
     "contactsErrorHandling":"ignoreMissingAttributes"   }
 ```
+
 You will be asked to authenticate. Use your Cordial API key as the username and proceed with the password blank. (To do this, log in to your Cordial account and open the dropdown menu in the top right corner. Navigate to Administration > API Keys. Here you will create a new key by whitelisting your IP with us.)
 
-### PUT https://admin.cordial.io/api/integrations/segment
+`PUT https://admin.cordial.io/api/integrations/segment`
 Update your Cordial/Segment field mapping using the same JSON format as in the POST call.
 
-### GET https://admin.cordial.io/api/integrations
+`GET https://admin.cordial.io/api/integrations`
 Retrieve a JSON list of integrations you have set up with Cordial.
