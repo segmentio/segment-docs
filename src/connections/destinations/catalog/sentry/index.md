@@ -5,7 +5,7 @@ title: Sentry Destination
 
 [Sentry](https://sentry.io) is open-source error tracking that helps developers monitor and fix crashes in real time. Iterate continuously. Boost efficiency. Improve user experience. The `analytics.js` Sentry Destination is open-source. You can browse the code [on GitHub](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/sentry).
 
-This document was last updated on October 16, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on January 16, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -25,4 +25,4 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.identify('userId123');
 ```
 
-When you call `identify` we call `Raven.setUserContext` by passing in the `traits` you provided. We will map the `userId` you provide as `traits.id`.
+When you call `identify` we call `Sentry.setUser` by passing in the `traits` you provided. We will map the `userId` you provide as `traits.id`.
