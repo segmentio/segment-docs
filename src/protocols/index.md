@@ -23,7 +23,7 @@ Protocols has four main themes:
 {% include components/button-fill.html size="large" text="Get Started: Learn more about Tracking Plans ->" href="https://segment.com/docs/protocols/tracking-plan/" %}
 
 **Related Info:**
-* [Data Qaulity Best Practices](/docs/protocols/data-quality/) - Learn more about tracking plans and why you need them
+* [Data Quality Best Practices](/docs/protocols/data-quality/) - Learn more about tracking plans and why you need them
 * [Protocols Tracking Plan](/docs/protocols/tracking-plan/) - Create a Protocols Tracking Plan to standardize your collected data
 * [Protocols Transformations](/docs/protocols/transformations/) - Fix data quality issues without writing code
 * [Protocols FAQ](/docs/protocols/faq/)
