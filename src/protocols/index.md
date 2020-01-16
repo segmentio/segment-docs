@@ -7,7 +7,7 @@ Segment helps customers collect and integrate customer data across a wide range 
 > info ""
 > Protocols is a premium add-on feature available to Business Tier customers. If your plan includes Protocols, you can access it [from the `protocols` path in your workspace](https://app.segment.com/goto-my-workspace/protocols). If your plan doesn't include Protocols, contact your Segment account executive.
 
-Many customers today use our [Google Sheets templates](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view){:target="_blank"}, [schema controls](/docs/connections/destination-data-control/) and internal processes to maintain data quality. However, these solutions have shortcomings which make them hard to scale as your team grows. 
+Many customers today use our [Google Sheets templates](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view){:target="_blank"}, [schema controls](/docs/connections/destination-data-control/) and internal processes to maintain data quality. However, these solutions have shortcomings which make them hard to scale as your team grows.
 
 Protocols was built to automate and scale the [data quality best practices](/docs/protocols/data-quality) developed over years of helping customers implement Segment. Investing in data quality will improve trust in your data, reduce time spent by your engineering and business teams navigating and validating data, and ultimately allow your business to grow faster.
 
@@ -20,7 +20,7 @@ Protocols has four main themes:
 * [**Enforce:**](/docs/protocols/tracking-plan/#schema-configuration) To maintain a high degree of quality over time, we offer strict controls to block non-conforming events. Blocked events can be forwarded to a separate quarantined Segment source for analysis and review.
 * [**Transform:**](/docs/protocols/transformations/) Even the most exacting data collection processes are subject to human error and organizational complexity. Transformations can be applied from within Protocols to change event and property names without touching code.
 
-{% include components/button.html size="large" text="Get Started with a Tracking Plan" href="https://segment.com/docs/protocols/tracking-plan/" %}
+{% include components/button-fill.html size="large" text="Get Started: Learn more about Tracking Plans ->" href="https://segment.com/docs/protocols/tracking-plan/" %}
 
 **Related Info:**
 * [Data Qaulity Best Practices](/docs/protocols/data-quality/) - Learn more about tracking plans and why you need them
