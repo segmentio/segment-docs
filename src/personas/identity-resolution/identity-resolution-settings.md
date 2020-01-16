@@ -117,7 +117,7 @@ There are specific cases that will deviate from this default. For example, a cas
 | user_id               | 2     |
 | all other identifiers | 5     |
 
-We are currently offering Limited Availability of a new type of limit called "Time-Based Limits" that will allow for any profile to have a specified limit of values within a certain time range. This is particularly useful for externalIDs such as anonymousID and ga_client_id which are constantly renewed and will be increasingly accrued over a lifetime. We know that customers can easily accrue over 100 anonymous_ids over a few years of app usage. However, rather than setting the absolute limit of anonymous_ids to 100, we can now create a sliding range that intelligently gates how many anonymous_ids any user should reasonably accrue within a specific time period.
+We offer a Limited Availability release of a new type of limit called "Time-Based Limits". These limits allow any profile to have a specified limit of values within a certain time range. This is particularly useful for `externalIDs` such as `anonymousID` and `ga_client_id` which are constantly renewed and collected over a lifetime. We know that customers can easily collect over 100 `anonymous_ids` over a few years of app usage. However, rather than setting the absolute limit of `anonymous_ids` to 100, we can now create a sliding range that intelligently gates how many `anonymous_ids` any user should reasonably collect within a specific time period.
 
 ### Priority
 
