@@ -59,7 +59,7 @@ We've generated different guides based on the main activities you'll do in Segme
 - I am a Segment Data user (coming soon!)
 
 
-## What's a workspace?
+## What's a Workspace?
 
 {% include content/whats-a-workspace.md %}
 

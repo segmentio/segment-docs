@@ -4,6 +4,59 @@ sourceTitle: 'JavaScript'
 sourceCategory: 'Website'
 ---
 
+
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+	- [Getting Started](#getting-started)
+	- [Identify](#identify)
+	- [Track](#track)
+	- [Page](#page)
+		- [Default Page Properties](#default-page-properties)
+	- [Group](#group)
+	- [Alias](#alias)
+	- [Ready](#ready)
+	- [Querystring API](#querystring-api)
+	- [Selecting Destinations](#selecting-destinations)
+	- [Load Options](#load-options)
+	- [User & Group Information](#user-group-information)
+		- [Clearing Traits](#clearing-traits)
+		- [Reset / Logout](#reset-logout)
+	- [Anonymous ID](#anonymous-id)
+		- [Retrieving the Anonymous ID](#retrieving-the-anonymous-id)
+		- [Setting the Anonymous ID](#setting-the-anonymous-id)
+		- [Refreshing the Anonymous ID](#refreshing-the-anonymous-id)
+	- [Debug](#debug)
+	- [Emitter](#emitter)
+		- [Track Link](#track-link)
+		- [Track Form](#track-form)
+	- [Extending Timeout](#extending-timeout)
+	- [Performance](#performance)
+	- [Retries](#retries)
+	- [Cross-Domain Analytics](#cross-domain-analytics)
+	- [Cross-Subdomain Analytics](#cross-subdomain-analytics)
+	- [Anonymizing IP](#anonymizing-ip)
+	- [Proxy](#proxy)
+	- [Plugins](#plugins)
+	- [Context & Traits](#context-traits)
+	- [Segment ID Persistence](#segment-id-persistence)
+		- [Using only the cookie as the Segment ID store](#using-only-the-cookie-as-the-segment-id-store)
+	- [Troubleshooting](#troubleshooting)
+		- [Are you loading `analytics.js`?](#are-you-loading-analyticsjs)
+		- [Are you loading two instances of `analytics.js`?](#are-you-loading-two-instances-of-analyticsjs)
+		- [Do you see events appear in your debugger?](#do-you-see-events-appear-in-your-debugger)
+		- [Is data being transmitted to your third-party destinations?](#is-data-being-transmitted-to-your-third-party-destinations)
+		- [Do you have any ad blockers enabled in your browser?](#do-you-have-any-ad-blockers-enabled-in-your-browser)
+		- [Internet Explorer Support](#internet-explorer-support)
+		- [Is your web site deployed under a domain on the Public Suffix List?](#is-your-web-site-deployed-under-a-domain-on-the-public-suffix-list)
+		- [How do I open the Javascript console in your debugger?](#how-do-i-open-the-javascript-console-in-your-debugger)
+		- [Is there a size limit on requests?](#is-there-a-size-limit-on-requests)
+		- [If `analytics.js` fails to load, are callbacks not fired?](#if-analyticsjs-fails-to-load-are-callbacks-not-fired)
+		- [Why do I see a network request to `/m`?](#why-do-i-see-a-network-request-to-m)
+		- [How are properties with `null` and `undefined` values treated?](#how-are-properties-with-null-and-undefined-values-treated)
+		- [Known Issues:](#known-issues)
+
+<!-- /TOC -->
+
 Analytics.js makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
 ## Getting Started
@@ -188,7 +241,7 @@ The `page` call has the following fields:
 </table>
 
 
-### Default Properties
+### Default Page Properties
 
 A few properties are automatically added to each `page` call.
 
@@ -291,9 +344,10 @@ This is an advanced method, but it is required to manage user identities success
 
 `alias` method definition:
 
-```
+```js
 analytics.alias(userId, [previousId], [options], [callback]);
 ```
+
 The `alias` call has the following fields:
 
 <table>
@@ -327,7 +381,7 @@ For more details about `alias`, including the **`alias` call payload**, check ou
 
 ## Ready
 
-The `ready` method allows you to pass in a callback that is called once all  enabled destinations load, and once `analytics.js` finishes initializing. It's like jQuery's `ready` method, except for destinations.
+The `ready` method allows you to pass in a callback that is called once all enabled destinations load, and once `analytics.js` finishes initializing. It's like jQuery's `ready` method, except for destinations.
 
 `ready` is still invoked if a destination throws an error during initialization, such as due to an expired API key or incorrect settings configuration. Doing so prevents blocking code listening for the `ready` callback.
 
@@ -365,21 +419,22 @@ The `ready` method has the following fields:
 Here are the query parameters to use:
 
 | param | description | triggers |
-|---|----|----|
-|`ajs_uid` |  The userId to pass to an identify call. | This triggers an `identify` call. |
-|`ajs_event` |The event name to pass to a track call. | This triggers a `track` call.  |
-|`ajs_aid` |The anonymousId to set for the user.|This triggers an `analytics.user().anonymousId()` call.|
-|`ajs_prop_<property>` | A property to pass to the track call | This won't implicitly trigger an event and is dependent on you also passing `ajs_event` - this property  be included in the resulting `track` call |
-|`ajs_trait_<trait>` | A trait to pass to the identify call | This won't implicitly trigger any call and is dependent on you also passing `ajs_uid` - this trait is included in the resulting `identify` call |
+| ----- | ----------- | -------- |
+|       |             |          |
+| `ajs_uid` |  The userId to pass to an identify call. | This triggers an `identify` call. |
+| `ajs_event` |The event name to pass to a track call. | This triggers a `track` call.  |
+| `ajs_aid` |The anonymousId to set for the user.|This triggers an `analytics.user().anonymousId()` call.|
+| `ajs_prop_<property>` | A property to pass to the track call | This won't implicitly trigger an event and is dependent on you also passing `ajs_event` - this property  be included in the resulting `track` call |
+| `ajs_trait_<trait>` | A trait to pass to the identify call | This won't implicitly trigger any call and is dependent on you also passing `ajs_uid` - this trait is included in the resulting `identify` call |
 
 So for example, this URL:
 
-```
+```text
 http://segment.com/?ajs_uid=123456789abcd&ajs_event=Clicked%20Email&ajs_aid=abc123&ajs_prop_emailCampaign=First+Touch&ajs_trait_name=Karl+Jr.
 
 ```
 
-it would trigger the following events on the page:
+would trigger the following events on the page:
 
 ```js
 analytics.identify('123456789abcd', { name: 'Karl Jr.' });
@@ -410,7 +465,7 @@ analytics.identify('025pikachu025', {
 });
 ```
 
-`'All': false` flags that no destinations should receive data by default. This flag is superseded by any destination specific options in the integrations object.
+`'All': false` tells Segment not to send data to _any_ destinations by default, unless they're explicitly listed as `true` in the next lines.
 
 Conversely, an example how to send a single message to all integrations **except** Intercom and Google Analytics:
 
