@@ -118,7 +118,7 @@ sections:
     - path: /connections/sources/custom-sources
       title: Custom Sources
     - path: /connections/sources/visual-tagger
-      title: Visual Tagger (Alpha) User Guide
+      title: Visual Tagger
     - path: /connections/sources/what-are-cloud-sources
       title: What are Cloud-App Sources?
   - section_title: Destinations
@@ -180,10 +180,12 @@ sections:
       title: Identity Resolution Use Cases
     - path: /personas/identity-resolution/externalids
       title: Identity Resolution External IDs
-    - path: /personas/identity-resolution/identity-graph-rules
-      title: Identity Graph Rules
+    - path: /personas/identity-resolution/identity-resolution-settings
+      title: Identity Resolution Settings
     - path: /personas/identity-resolution/ecommerce-example
       title: Identity Resolution E-Commerce Example
+    - path: /personas/identity-resolution/personas-space-set-up
+      title: Personas Space Set Up
   - path: /personas/activation
     title: Activation
   - path: /personas/warehouses
