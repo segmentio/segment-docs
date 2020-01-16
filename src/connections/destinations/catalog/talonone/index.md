@@ -6,18 +6,7 @@ beta: true
 Create flexible and targeted promotional & loyalty campaigns with [Talon.One](https://Talon.One/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
 Campaigns can be created and managed by non-technical users such as Marketeers. There is no need to get your development team involved.
 
-Promotions include:
-1. Coupons
-2. Discounts
-3. Loyalty
-4. Referrals
-5. Geo-fencing
-6. Bundling
-
 This destination is maintained by Talon.One. For any issues with the destination, please [reach out to their team](mailto:support@talon.one).
-
-If you do not have a Talon.One account, you can [request a personalised demo](https://www.talon.one/book-a-demo/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
-
 
 _**NOTE:** The Talon.One Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 15, 2020. If you are interested in joining their beta program or have any feedback to help improve the Talon.One Destination and its documentation, please [let  their team know](mailto:support@talon.one)!_
 
@@ -34,7 +23,6 @@ _**NOTE:** The Talon.One Destination is currently in beta, which means that they
 4. Add your Talon.One Application Domain Name e.g. https://demo.talon.one.
 5. Add at least one Custom Attribute. These are the Segment `Custom Traits` that link to Talon.One's Customer Profile `Custom Attributes`. More Information below.
 
-
 ## Identify
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
@@ -47,6 +35,14 @@ analytics.identify('userId123', {
 ```
 
 Identify calls are sent to Talon.One as an identify event. The `userId` has a 1-1 mapping to Talon.One's `integrationId`. The `traits` in Segment are mapped with Talon.One's Customer's `custom attributes`. Note that this app only supports logged in users.
+
+Promotions include:
+1. Coupons
+2. Discounts
+3. Loyalty
+4. Referrals
+5. Geo-fencing
+6. Bundling
 
 ## Custom Attributes
 
