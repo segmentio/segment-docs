@@ -180,10 +180,12 @@ sections:
       title: Identity Resolution Use Cases
     - path: /personas/identity-resolution/externalids
       title: Identity Resolution External IDs
-    - path: /personas/identity-resolution/identity-graph-rules
-      title: Identity Graph Rules
+    - path: /personas/identity-resolution/identity-resolution-settings
+      title: Identity Resolution Settings
     - path: /personas/identity-resolution/ecommerce-example
       title: Identity Resolution E-Commerce Example
+    - path: /personas/identity-resolution/personas-space-set-up
+      title: Personas Space Set Up
   - path: /personas/activation
     title: Activation
   - path: /personas/warehouses
