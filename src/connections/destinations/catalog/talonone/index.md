@@ -16,10 +16,10 @@ Promotions include:
 
 This destination is maintained by Talon.One. For any issues with the destination, please [reach out to their team](mailto:support@talon.one).
 
-If you do not have a Talon.One account, you can [organise a personalised demo](https://www.talon.one/book-a-demo/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
+If you do not have a Talon.One account, you can [request a personalised demo](https://www.talon.one/book-a-demo/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
 
 
-_**NOTE:** The Talon.One Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on December 18, 2019. If you are interested in joining their beta program or have any feedback to help improve the Talon.One Destination and its documentation, please [let  our team know](mailto:support@talon.one)!_
+_**NOTE:** The Talon.One Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 15, 2020. If you are interested in joining their beta program or have any feedback to help improve the Talon.One Destination and its documentation, please [let  their team know](mailto:support@talon.one)!_
 
 > warning ""
 > Data collection that effects promotions should be collected based on a Segment **server-side** implementation. Client-side implementations exposes you to risks of fraud. (e.g. a user changing a custom trait relating to their profile via JS modification tools, which triggers them to receive a higher discount than they are entitled to) For more information please [read this](https://segment.com/docs/guides/how-to-guides/collect-on-client-or-server/).
