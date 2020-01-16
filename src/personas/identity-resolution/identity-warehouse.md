@@ -35,7 +35,7 @@ To see all the identifiers associated with a certain user, first look up the `se
  with t1 AS
   (SELECT segment_id
    FROM personas_identities.users_identities
-   WHERE external_id_value = 'jane.doe@gmail.com')
+   WHERE external_id_value = 'jane.doe@example1.com')
 SELECT u.segment_id, created_source, external_id_type, external_id_value
 FROM personas_identities.users_identities u
 JOIN t1 on u.segment_id = t1.segment_id
