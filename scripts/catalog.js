@@ -291,5 +291,5 @@ const updateDestinations = async () => {
   fs.writeFileSync(path.resolve(__dirname, `../src/_data/catalog/destination_categories.yml`), output);
 }
 
-// updateSources()
+updateSources()
 updateDestinations()

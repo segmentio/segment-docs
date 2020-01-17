@@ -3,10 +3,16 @@ title: Segment Premium Online Terms of Service - 2019
 hidden: true
 hide-feedback: true
 ---
+This page provides an archive of previous versions of the Segment Premium Online Terms of Service. If you have any questions, please contact the [Segment Legal team](mailto:legal@segment.com).
+
+> Last Updated June 22nd, 2019
+> Effective June 22nd, 2019 to December 18, 2019.
+
+[Prior versions available here](/docs/legal/premium-tos-updates/)
+
+---
 
 **SEGMENT PREMIUM ONLINE CUSTOMER AGREEMENT**
-
-_Last Updated June 22nd, 2019_
 
 This Segment Premium Online Customer Agreement ("**Agreement**") is entered into
 by and between Segment.io, Inc. ("**Segment**") and the entity or person placing
