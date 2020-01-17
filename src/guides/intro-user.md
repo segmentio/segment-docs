@@ -20,7 +20,18 @@ Depending on the access level you have in your organization's Segment workspace,
 
 To add a new Destination, you'll usually need some information from the destination tool, which you enter into the Segment App so Segment can send data to that tool.
 
+
+- naming conventions
+- can't build functions (admins only whew)
+- what can they do?
+- labels - you might or might not be able to see this
+- some might need more mapping work (Adobe, FB, etc) - keep an eye out
+- For cloud-mode dests, you can use the event tester and event delivery to check that things are being sent correctly
+- intro to protocols (what is it, what's it do, do you need to mess with it? who do you contact?)
+
+
 ## Intro to personas
+
 
 
 
