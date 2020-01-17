@@ -16,7 +16,7 @@ Segment is a system for sending messages from your websites, mobile apps, and se
 
 
 
-# The Workspace Administrator Role
+## The Workspace Administrator's Role
 
 You don't have to be a developer to be a Workspace administrator for an organization, and this guide only covers tasks specifically related to managing a Workspace in the [Segment App](/docs/segment-app/).
 

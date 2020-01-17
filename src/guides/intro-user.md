@@ -18,7 +18,7 @@ Once you (or your organizations' developer teams) have your Segment Sources set 
 
 Depending on the access level you have in your organization's Segment workspace, you might be able to create new Destinations, or you might only be able to edit existing ones.
 
-To add a new Destination, you need a few pieces of information which you enter into the Segment App, so that it can connect with the destination tool.
+To add a new Destination, you'll usually need some information from the destination tool, which you enter into the Segment App so Segment can send data to that tool.
 
 ## Intro to personas
 
