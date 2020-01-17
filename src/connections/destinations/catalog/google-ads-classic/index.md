@@ -2,8 +2,7 @@
 title: Google Ads (Classic) Destination
 ---
 
-Our Google Ads (Classic) destination code is open-source on GitHub if you want to check it out.
-[Our clientside javascript destination.](https://github.com/segment-integrations/analytics.js-integration-adwords).
+Our Google Ads (Classic) destination code is open-source on GitHub if you want to check [our device-mode javascript destination.](https://github.com/segment-integrations/analytics.js-integration-adwords).
 
 ## Web
 
