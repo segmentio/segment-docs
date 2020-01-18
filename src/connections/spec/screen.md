@@ -89,7 +89,8 @@ Reserved properties we have standardized:
   <tr>
     <td>`name`</td>
     <td>String</td>
-    <td>Name of the screen
-      <p>This is reserved for future use.</p></td>
+    <td>Name of the screen.  
+
+      This is reserved for future use.</td>
   </tr>
 </table>

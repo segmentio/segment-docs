@@ -118,7 +118,7 @@ sections:
     - path: /connections/sources/custom-sources
       title: Custom Sources
     - path: /connections/sources/visual-tagger
-      title: Visual Tagger (Alpha) User Guide
+      title: Visual Tagger
     - path: /connections/sources/what-are-cloud-sources
       title: What are Cloud-App Sources?
   - section_title: Destinations
@@ -180,10 +180,12 @@ sections:
       title: Identity Resolution Use Cases
     - path: /personas/identity-resolution/externalids
       title: Identity Resolution External IDs
-    - path: /personas/identity-resolution/identity-graph-rules
-      title: Identity Graph Rules
+    - path: /personas/identity-resolution/identity-resolution-settings
+      title: Identity Resolution Settings
     - path: /personas/identity-resolution/ecommerce-example
       title: Identity Resolution E-Commerce Example
+    - path: /personas/identity-resolution/personas-space-set-up
+      title: Personas Space Set Up
   - path: /personas/activation
     title: Activation
   - path: /personas/warehouses
@@ -207,36 +209,37 @@ sections:
   - path: /privacy/portal
     title: Privacy Portal
   - path: /privacy/preparing-for-the-gdpr
-    title: Preparing for the GDPR
+    title: Preparing for the GDPR & CCPA
   - path: /privacy/user-deletion-and-suppression
     title: User Deletion and Suppression
 - section_title: Protocols
   section:
   - path: /protocols
-    title: Protocols and Schema Controls
-  - path: /protocols/whats-a-tracking-plan
-    title: What's a Tracking Plan?
-  - path: /protocols/what-to-track
-    title: What Should I track?
-  - path: /protocols/example-tracking-plan
-    title: Example Tracking Plans
-  - path: /protocols/ecommerce-tracking-plan
-    title: Ecommerce Tracking Plans
-  - path: /protocols/schema
-    title: Schema Controls
-  - path: /protocols/typewriter
-    title: 'Typewriter'
+    title: Protocols Overview
+  - section_title: Data Quality Best Practices
+    slug: protocols/data-quality
+    section:
+    - path: /protocols/data-quality
+      title: Data Collection Best Practices
+    - path: /protocols/data-quality/whats-a-tracking-plan
+      title: What is a Tracking Plan?
+    - path: /protocols/data-quality/ecommerce-tracking-plan
+      title: Ecommerce Tracking Plans
   - path: /protocols/tracking-plan
-    title: 'Protocols Tracking Plans'
-  - path: /protocols/anomaly_detection
-    title: 'Protocols Anomaly Detection'
-  - path: /protocols/apis-and-extensions
-    title: 'Protocols APIs and Extensions'
-  - path: /protocols/faq
-    title: Protocols FAQ
+    title: Protocols Tracking Plans
   - path: /protocols/transformations
     title: 'Protocols Transformations'
-
+  - section_title: 'Protocols APIs and Extensions'
+    slug: protocols/apis-and-extensions
+    section:
+    - path: /protocols/apis-and-extensions
+      title: 'Protocols APIs and Extensions'
+    - path: /protocols/apis-and-extensions/typewriter
+      title: Typewriter
+    - path: /protocols/apis-and-extensions/anomaly_detection
+      title: Anomaly Detection
+  - path: /protocols/faq
+    title: 'Protocols FAQ'
 - section_title: Segment App
   section:
   - path: /segment-app
@@ -248,8 +251,6 @@ sections:
       title: Identity & Access Management Overview
     - path: /segment-app/iam/concepts
       title: Concepts
-    - path: /segment-app/iam/add-a-team-member
-      title: How do I add a team member?
     - path: /segment-app/iam/roles
       title: Roles
     - path: /segment-app/iam/membership
@@ -262,10 +263,8 @@ sections:
       title: Single Sign On
     - path: /segment-app/iam/mfa
       title: Multi-Factor Authentication (MFA)
-    - path: /segment-app/iam/secure-password
-      title: Picking a secure password
-    - path: /segment-app/iam/restrict-access
-      title: Restricting Workspace Access
+  - path: /segment-app/iam/secure-password
+    title: Picking a secure password
   - path: /segment-app/set-up-envs
     title: Prod and Testing Environments in Segment
   - path: /segment-app/verify-email-address
