@@ -20,86 +20,36 @@ All Segment workspaces have the following roles, regardless of account type.
 The following roles are only available to Segment Business Tier accounts.
 
 ### Connections
-<table>
-  <tr>
-    <td>Role</td>
-    <td>Description</td>
-    <td>Scope</td>
-  </tr>
-  <tr>
-    <td>Source read-only</td>
-    <td>Read-only access to assigned source(s), source settings, connected streaming destinations, schema, live data in the debugger, and connected tracking plan(s).</td>
-    <td>Can be granted admin access to either:
-<ul><li>All current and future sources, or
-<li>Specific sources</li></ul></td>
-  </tr>
-  <tr>
-    <td>Warehouse admin</td>
-    <td>Edit access to assigned warehouse(s) and warehouse settings.</td>
-    <td>Can be granted to all current and future warehouses (including the ability to create new sources</td>
-  </tr>
-  <tr>
-    <td>Warehouse read-only</td>
-    <td>Read-only access to assigned warehouse(s) and warehouse settings.</td>
-    <td>Can be granted to all current and future warehouses</td>
-  </tr>
-</table>
+
+| Role                | Description                                                                                                                                                   | Scope                                                                                            |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Source read-only    | Read-only access to assigned source(s), source settings, connected streaming destinations, schema, live data in the debugger, and connected tracking plan(s). | Can be granted admin access to either 1) All current and future sources, or 2) Specific sources  |
+| Warehouse admin     | Edit access to assigned warehouse(s) and warehouse settings.                                                                                                  | Can be granted to all current and future warehouses (including the ability to create new sources |
+| Warehouse read-only | Read-only access to assigned warehouse(s) and warehouse settings.                                                                                             | Can be granted to all current and future warehouses                                              |
+
 
 ### Protocols
 
-<table>
-  <tr>
-    <td>Role</td>
-    <td>Description</td>
-    <td>Scope</td>
-  </tr>
-  <tr>
-    <td>Protocols admin</td>
-    <td>Edit access to tracking plans in Protocols.</td>
-    <td>Can be granted to either all current and future tracking plans (including the ability to create new sources</td>
-  </tr>
-  <tr>
-    <td>Protocols read-only</td>
-    <td>Read-only access to tracking plans in Protocols.</td>
-    <td>Can be granted to all current and future tracking plans</td>
-  </tr>
-</table>
+
+| Role                | Description                                      | Scope                                                                                                       |
+| ------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| Protocols admin     | Edit access to tracking plans in Protocols.      | Can be granted to either all current and future tracking plans (including the ability to create new sources |
+| Protocols read-only | Read-only access to tracking plans in Protocols. | Can be granted to all current and future tracking plans                                                     |
 
 ### Personas
-<table>
-  <tr>
-    <td>Role</td>
-    <td>Description</td>
-    <td>Scope</td>
-  </tr>
-  <tr>
-    <td>Personas admin</td>
-    <td>Edit access to Personas, including all audiences and computed traits. Personas admin can also view PII and change settings.</td>
-    <td>All audiences, computed traits,</td>
-  </tr>
-  <tr>
-    <td>Personas user</td>
-    <td>Edit access to traits and audiences. Cannot view PII or change settings in Personas.</td>
-    <td>The entire workspace</td>
-  </tr>
-  <tr>
-    <td>Personas read-only</td>
-    <td>Read-only access to Personas,  including all audiences and computed traits.</td>
-    <td>The entire workspace</td>
-  </tr>
-</table>
 
-### Workspace
-<table>
-  <tr>
-    <td>Role</td>
-    <td>Description</td>
-    <td>Scope</td>
-  </tr>
-  <tr>
-    <td>Minimal workspace access</td>
-    <td>Users with minimal workspace access can only view the workspace, without access to any sub-resources or ability to edit the workspace.</td>
----
+| Role               | Description                                                                                                                 | Scope                          |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| Personas admin     | Edit access to Personas, including all audiences and computed traits. Personas admin can also view PII and change settings. | All audiences, computed traits |
+| Personas user      | Edit access to traits and audiences. Cannot view PII or change settings in Personas.                                        | The entire workspace           |
+| Personas read-only | Read-only access to Personas,  including all audiences and computed traits.                                                 | The entire workspace           |
+
+
+
+### Minimal Workspace Access
+
+Administrators can grant users "Minimal Workspace Access". Users with minimal workspace access can only view the workspace. They do not have access to any sub-resources and cannot edit the workspace.
+
 
 ## Connecting resources
 
@@ -116,7 +66,6 @@ Connecting two resource instances requires access to both:
   </tr>
 </table>
 
----
 
 ## Personas Destinations
 
