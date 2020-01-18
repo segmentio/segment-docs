@@ -260,12 +260,12 @@ items:
   categories:
   - Server
 - display_name: Google Ads
-  slug: google-ads
+  slug: google-ads-classic
   name: catalog/sources/adwords
   description: >-
     The Google Ads source pulls impressions, spend, campaign, and click data
     from your Google Ads account into your data warehouse.
-  url: connections/sources/catalog/cloud-apps/google-ads
+  url: connections/sources/catalog/cloud-apps/google-ads-classic
   logo:
     url: 'https://cdn.filepicker.io/api/file/KEnErmDUQKiOWgkvzofp'
   mark:

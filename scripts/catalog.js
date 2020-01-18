@@ -25,6 +25,7 @@ const slugify = (name) => {
 
   if (slug === 'active-campaign') slug = 'activecampaign'
   if (slug === 'adwords') slug = 'google-ads-classic'
+  if (slug === 'google-ads-gtag') slug = 'google-adwords-new'
   if (slug === 'customerio') slug = 'customer-io'
   if (slug === '-net') slug = 'net'
   if (slug === 'roku-alpha') slug = 'roku'
