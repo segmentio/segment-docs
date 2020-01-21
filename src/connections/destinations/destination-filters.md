@@ -17,7 +17,8 @@ With Destination Filters, you can:
 
  - Prevent test or internally-generated events from reaching your production tools.
 
- **Note**: Destination Filters are currently available to Business Tier customers only
+ > note ""
+ > **Note**: Destination Filters are currently available to Business Tier customers only.
 
 ### Destination Filtering Limitations
 
