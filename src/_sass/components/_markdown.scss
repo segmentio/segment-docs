@@ -158,74 +158,34 @@
       & > ul, ol {
         margin-top: 0;
       }
-    }
-  }
 
-  @for $i from 1 through 10 {
-    ol[start="#{$i}"] {
-      @if $i > 1 {
-        counter-reset: section #{$i - 1};
-      } @else {
-        counter-reset: section #{$i};
-      }
     }
   }
 
   ol {
     list-style-type: none;
-    counter-reset: section;
+    counter-reset: list-items;
     padding-left: 25px;
 
-    &.lower-roman {
-      li {
-        &::before {
-          content: counters(section, ".", lower-roman) ". ";
-        }
-      }
-    }
-
-    &.upper-roman {
-      li {
-        &::before {
-          content: counters(section, ".", upper-roman) ". ";
-        }
-      }
-    }
-
-    &.lower-alpha {
-      li {
-        &::before {
-          content: counters(section, ".", lower-alpha) ". ";
-        }
-      }
-    }
-
-    &.upper-alpha {
-      li {
-        &::before {
-          content: counters(section, ".", upper-alpha) ". ";
-        }
-      }
-    }
-    
-    li {
+    & > li {
+      counter-increment: list-items;
       line-height: 30px;
+      position: relative;
 
       &::before {
-        counter-increment: section;
-        content: counters(section, ".") ". ";
+        content: counter(list-items) ". ";
+        display: block;
+        top: 0;
         color: color(primary-dark);
         font-weight: 500;
+        position: absolute;
+        left: -20px;
       }
 
       & > ul, ol {
         margin-top: 0;
       }
     }
-  }
-
-  & > ol {
-    padding-left: 0;
   }
 
   table {
