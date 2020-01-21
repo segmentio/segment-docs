@@ -20,6 +20,7 @@ const slugify = (displayName) => {
   if (slug === '-net') slug = 'net'
   if (slug === 'roku-alpha') slug = 'roku'
   if (slug === 'shopify-by-littledata') slug = 'shopify-littledata'
+  if (slug === 'talon-one') slug = 'talonone'
   return slug
 }
 
@@ -82,7 +83,7 @@ const getConnectionModes = (destination) => {
         if (destination.platforms.server) {
           connectionModes.cloud.server = true
         }
-        if (destination.platforms.browser && destination.browserUnbundlingSupported && destination.browserUnbundlingPublic) {
+        if (destination.platforms.browser && destination.browserUnbundlingPublic) {
           connectionModes.cloud.web = true
         }
         break
