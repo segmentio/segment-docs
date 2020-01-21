@@ -1,5 +1,5 @@
 ---
-title: You may be eaten by a grue
+title: Destination comparison
 hidden: true
 ---
 
