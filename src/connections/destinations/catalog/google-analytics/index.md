@@ -571,7 +571,7 @@ ga(function (tracker) {
 });
 ```
 
-If you want our server-side destination to use your user's `clientId`, pass it to us in the `context.integrations['Google Analytics'].clientId` object. You must pass this value manually on every call as we do not store this value for you. If you do not pass this through, we look for the `userId` or `anonymousId` value and set the hashed value of either `userId` or `anonymousId` as the `cid`.
+If you want our server-side destination to use your user's `clientId`, pass it to us in the `integrations['Google Analytics'].clientId` object. You must pass this value manually on every call as we do not store this value for you. If you do not pass this through, we look for the `userId` or `anonymousId` value and set the hashed value of either `userId` or `anonymousId` as the `cid`.
 
 *Here's a Ruby example:*
 ```ruby
@@ -581,11 +581,9 @@ Analytics.track(
   properties: {
     linkText     : 'Next'
   },
-  context: {
-    integrations: {
-     'Google Analytics' => {
-       clientId: '1033501218.1368477899'
-     }
+  integrations: {
+    'Google Analytics' => {
+      clientId: '1033501218.1368477899'
     }
   }
 )
