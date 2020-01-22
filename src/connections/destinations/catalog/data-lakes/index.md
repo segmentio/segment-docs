@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Data Lakes (Beta)
 ---
 
