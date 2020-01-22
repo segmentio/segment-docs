@@ -2,7 +2,8 @@
 title: Data Lakes (Beta)
 ---
 
-_Note: Data Lakes is currently in private beta._
+> note ""
+> **Note**: Data Lakes is currently in private beta.
 
 Segment Data Lakes helps you stream the data you send to Segment to Cloud Object Stores (AWS S3 to start) in a manner that is optimized for Data Analytics and Data Science workloads.
 
