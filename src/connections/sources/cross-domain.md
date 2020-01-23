@@ -5,7 +5,8 @@ sourceTitle: 'Cross-Domain Analytics'
 sourceCategory: 'Website'
 ---
 
-*NOTE*: Cross-domain analytics is no longer being offered as a product for new customers. If you have any questions, please contact [Segment support](https://www.segment.com/help/contact).
+> warning ""
+> **Note**: Cross-domain analytics is no longer being offered as a product for new customers. If you have any questions, please contact [Segment support](https://www.segment.com/help/contact).
 
 Cross-Domain Analytics allows businesses to measure customer activity across their digital properties, without exposing user data to third parties. For example, if you have multiple brands, content properties, or marketing mini-sites, you likely want to learn how cross-domain browsing impacts your revenue.
 
