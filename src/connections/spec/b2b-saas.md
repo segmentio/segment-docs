@@ -210,7 +210,7 @@ Property                | Type   | Description
 
 ### Signed Out
 
-This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](docs/connections/sources/catalog/libraries/website/analytics.js/#reset-logout) to refresh the cookie when a Signed Out event occurs.
+This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) to refresh the cookie when a Signed Out event occurs.
 
 #### Properties
 

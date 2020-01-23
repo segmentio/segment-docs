@@ -25,9 +25,6 @@ Using Segment's Google Analytics mobile SDKs you could previously measure and op
 
 ## Getting Started
 
-
-{% include content/connection-modes.md %}
-
 When you toggle on Google Analytics in Segment, this is what happens:
 
   - Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Google Analytics javascript library onto your web page. **This means you should remove Google's snippet from your page.**
@@ -574,7 +571,7 @@ ga(function (tracker) {
 });
 ```
 
-If you want our server-side destination to use your user's `clientId`, pass it to us in the `context.integrations['Google Analytics'].clientId` object. You must pass this value manually on every call as we do not store this value for you. If you do not pass this through, we look for the `userId` or `anonymousId` value and set the hashed value of either `userId` or `anonymousId` as the `cid`.
+If you want our server-side destination to use your user's `clientId`, pass it to us in the `integrations['Google Analytics'].clientId` object. You must pass this value manually on every call as we do not store this value for you. If you do not pass this through, we look for the `userId` or `anonymousId` value and set the hashed value of either `userId` or `anonymousId` as the `cid`.
 
 *Here's a Ruby example:*
 ```ruby
@@ -584,11 +581,9 @@ Analytics.track(
   properties: {
     linkText     : 'Next'
   },
-  context: {
-    integrations: {
-     'Google Analytics' => {
-       clientId: '1033501218.1368477899'
-     }
+  integrations: {
+    'Google Analytics' => {
+      clientId: '1033501218.1368477899'
     }
   }
 )
@@ -633,7 +628,7 @@ Analytics.track(
 
 ### UTM Parameters
 
-If you want to send UTM parameters to Google Analytics via one of the Segment server-side sources they need to be passed manually. The client-side Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js)) is highly recommended for collecting this data since it all happens automatically.
+If you want to send UTM parameters to Google Analytics via one of the Segment server-side sources they need to be passed manually. The client-side Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript)) is highly recommended for collecting this data since it all happens automatically.
 
 Your UTM params need to be passed in the `context` object in `context.campaign`. For Google Analytics `campaign.name`, `campaign.source` and `campaign.medium` all need to be sent together for things to show up in reports. The other two params (`campaign.term` and `campaign.content`) are both optional, but will be forwarded to GA if you send them to Segment.
 

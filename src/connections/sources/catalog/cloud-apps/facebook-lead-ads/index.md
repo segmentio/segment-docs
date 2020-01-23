@@ -1,7 +1,9 @@
 ---
 title: Facebook Lead Ads Source
 rewrite: true
+source-type: event
 ---
+
 Facebook Lead Ads help you capture contact information from people who have expressed interest in your product. Without leaving Facebook's interface, your prospects can now share helpful information with you including work email, name, phone number, and more. Learn more about Facebook Lead Ads [here](https://www.facebook.com/business/news/lead-ads-launch). 
 
 Segment lets you make the most of your leads by automatically sending them to your business tools like CRM and email. Importantly, these destinations allow you to reach out to customers in real-time using your communication platform of choice, whether you've promised them a demo, a newsletter, a piece of content, or a call from a salesperson. [Learn more about how you can use Facebook Lead Ads with Segment.](/sources/facebook-lead-ads)
@@ -41,8 +43,8 @@ Below is a table of events that Facebook Lead Ads sends to Segment. These events
 
 <table>
   <tr>
-    <th>Event Name</th>
-    <th>Description</th>
+    <td>**Event Name**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>Identify</td>
@@ -56,7 +58,7 @@ The event properties included in the identify calls are dependent on the fields 
 
 See the example below:
 
-```
+```js
 {
  "anonymousId":"254875448264245",
  "messageId":"fb_leadads-MND7ItD0c2-254875448264245",

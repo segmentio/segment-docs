@@ -23,7 +23,7 @@ Create a .NET server source in Segment.
 
 ![image](images/netcreatesource.png)
 
-You will then be presented with an [`analytics.js`](/docs/connections/sources/catalog/libraries/website/analytics.js/) snippet.
+You will then be presented with an [`analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript/) snippet.
 
 Copy the snippet directly into your ASP.NET [Site.master](https://github.com/segmentio/asp.net-example/blob/master/Site.master#L18-L21).
 
@@ -31,7 +31,7 @@ That snippet will load `analytics.js` onto the page _asynchronously_, so it won'
 
 As soon as that snippet is running on your site, you can start turning on any destinations on your Segment destinations page. In fact, if you reload, you can start seeing `page` calls in our debugger.
 
-For more in depth `analytics.js` information, check out our [analytics.js docs](/docs/connections/sources/catalog/libraries/website/analytics.js/).
+For more in depth `analytics.js` information, check out our [analytics.js docs](/docs/connections/sources/catalog/libraries/website/javascript/).
 
 Lots of analytics and marketing tools want to know more information about your users, and what they're doing on your app. In the next section, we'll install the .NET library and start sending an event every time a new user registers on your site.
 

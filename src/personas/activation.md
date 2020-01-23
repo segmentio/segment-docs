@@ -1,8 +1,6 @@
 ---
-title: 'Personas: Activation'
+title: Personas Activation
 ---
-
-## Activation
 
 Computed Traits are always sent to **Event Destinations** destinations through the identify call as a user trait, or additionally as a group call for account-level computed traits. With Audiences, we can send the audience either as a boolean user property to **Event Destinations**, or as a user list to **List Destinations**. Note that for account-level audiences syncing to list destinations, we will send the list of all users within an account that satisfies your audience criteria.
 
@@ -35,7 +33,7 @@ The following event destinations below are supported. Note that some destination
 - [Blendo](https://segment.com/docs/connections/destinations/catalog/blendo/)
 - [Blueshift](https://segment.com/docs/connections/destinations/catalog/blueshift/)
 - [Branch Metrics](https://segment.com/docs/connections/destinations/catalog/branch-metrics/)
-- [Braze](https://segment.com/docs/connections/destinations/catalog/appboy/)
+- [Braze](https://segment.com/docs/connections/destinations/catalog/braze/)
 - [ByteGain](https://segment.com/docs/connections/destinations/catalog/bytegain/)
 - [Callingly](https://segment.com/docs/connections/destinations/catalog/callingly/)
 - [Calq](https://segment.com/docs/connections/destinations/catalog/calq/)

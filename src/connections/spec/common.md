@@ -4,7 +4,7 @@ title: 'Spec: Common Fields'
 
 In the Segment [Spec](/docs/connections/spec/) all the [API calls](/docs/connections/spec#api-calls) have a common structure, and a few common fields.
 
-However, not all destinations accept all fields included in the Spec. Not sure which fields an destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on Github](https://github.com/segment-integrations).
+However, not all destinations accept all fields included in the Spec. Not sure which fields a destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on Github](https://github.com/segment-integrations).
 
 ## Structure
 Every API call has the same core structure and fields. These fields describe user identity, timestamping and mechanical aides like API version.
@@ -98,13 +98,9 @@ Here's an example of these common fields in raw JSON:
 ```
 
 In more detail these common fields for every API call are:
+
 <table>
-  <tr>
-    <th>Field</th>
-    <th>Optional?</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-anonymous-id.md %}
   {% include content/spec-field-context.md %}
   {% include content/spec-field-integrations.md %}
@@ -125,55 +121,58 @@ Context is a dictionary of extra information that provides useful context about 
 
 <table>
   <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Field**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>`active`</td>
     <td>Boolean</td>
     <td>Whether a user is active
-      <p>This is usually used to flag an `.identify()` call to just update the traits but not "last seen."</p>
+      <br><br>
+      This is usually used to flag an `.identify()` call to just update the traits but not "last seen."
     </td>
   </tr>
   <tr>
-    <td>`app` </td>
+    <td>`app`</td>
     <td>Object</td>
     <td>dictionary of information about the current application, containing `name`, `version` and `build`.
-      <p>This is collected automatically from our mobile libraries when possible.</p>
+    <br><br>
+    This is collected automatically from our mobile libraries when possible.
     </td>
   </tr>
   <tr>
     <td>`campaign`</td>
     <td>Object</td>
-    <td>Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term` and `content`
-      <p>This maps directly to the common UTM campaign parameters.</p>
+    <td>Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term` and `content`.
+    <br><br>
+    This maps directly to the common UTM campaign parameters.
     </td>
   </tr>
   <tr>
     <td>`device` </td>
     <td>Object</td>
-    <td>Dictionary of information about the device, containing `id`, `manufacturer`, `model`, `name`, `type` and `version`</td>
+    <td>Dictionary of information about the device, containing `id`, `manufacturer`, `model`, `name`, `type` and `version`.</td>
   </tr>
   <tr>
     <td>`ip`</td>
     <td>String</td>
-    <td>Current user's IP address</td>
+    <td>Current user's IP address.</td>
   </tr>
   <tr>
     <td>`library` </td>
     <td>Object</td>
-    <td>Dictionary of information about the library making the requests to the API, containing `name` and `version`</td>
+    <td>Dictionary of information about the library making the requests to the API, containing `name` and `version`.</td>
   </tr>
   <tr>
     <td>`locale` </td>
     <td>String</td>
-    <td>Locale string for the current user, for example `en-US`</td>
+    <td>Locale string for the current user, for example `en-US`.</td>
   </tr>
   <tr>
     <td>`location`</td>
     <td>Object</td>
-    <td>Dictionary of information about the user's current location, containing `city`, `country`, `latitude`, `longitude`, `region` and `speed`</td>
+    <td>Dictionary of information about the user's current location, containing `city`, `country`, `latitude`, `longitude`, `region` and `speed`.</td>
   </tr>
   <tr>
     <td>`network`</td>
@@ -188,8 +187,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`page`</td>
     <td>Object</td>
-    <td>Dictionary of information about the current page in the browser, containing `hash`, `path`, `referrer`, `search`, `title` and `url`
-      <p>Automatically collected by Analytics.js.</p>
+    <td>Dictionary of information about the current page in the browser, containing `hash`, `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by Analytics.js.
     </td>
   </tr>
   <tr>
@@ -205,21 +203,22 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`timezone`</td>
     <td>String</td>
-    <td>Timezones are sent as tzdata strings to add user timezone information which might be stripped from the timestamp
-      <p>Ex: `America/New_York`</p>
+    <td>Timezones are sent as tzdata strings to add user timezone information which might be stripped from the timestamp, for example `America/New_York`
     </td>
   </tr>
   <tr>
     <td>`groupId`</td>
     <td>String</td>
     <td>Group / Account ID.
-      <p>This is useful in B2B use cases where you need to attribute your non-group calls to a company or account. It is relied on by several Customer Success and CRM tools.</p></td>
+    <br><br>
+    This is useful in B2B use cases where you need to attribute your non-group calls to a company or account. It is relied on by several Customer Success and CRM tools.</td>
   </tr>
   <tr>
     <td>`traits`</td>
     <td>Object</td>
     <td>Dictionary of `traits` of the current user
-      <p>This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call. You should fill this object the same way you would fill traits in an [identify call](/docs/connections/spec/identify/#traits).</p></td>
+    <br><br>
+    This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call. You should fill this object the same way you would fill traits in an [identify call](/docs/connections/spec/identify/#traits).</td>
   </tr>
   <tr>
     <td>`userAgent`</td>
@@ -285,7 +284,7 @@ A dictionary of destination names that the message should be sent to. `'All'` is
 
 Integrations defaults to the following:
 
-```
+```js
 {
   All: true,
   Salesforce: false,
@@ -306,77 +305,80 @@ Every API call has four timestamps, `originalTimestamp`, `timestamp`, `sentAt` a
 ### Timestamp Overview
 
 <table>
-<col width="20%">
-<col width="40%">
-<col width="40%">
   <tr>
-    <th>Timestamp</th>
-    <th>Calculated</th>
-    <th>Description</th>
+    <td>**Timestamp**</td>
+    <td>**Calculated**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
-    <td>originalTimestamp</td>
+    <td>`originalTimestamp`</td>
     <td>
-      <p>Time on the client device when call was invoked</p>
-      <p>**OR**</p>
-      <p>`timestamp` value manually passed in through server-side libraries</p>
+      Time on the client device when call was invoked
+      <br>
+      **OR**
+      <br>
+      The `timestamp` value manually passed in through server-side libraries.
     </td>
     <td>
-      <p>Used by Segment to calculate `timestamp`</p>
-      <p>**Note:** `originalTimestamp` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew</p>
+      Used by Segment to calculate `timestamp`.
+      <br><br>
+      **Note:** `originalTimestamp` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.</td>
+  </tr>
+  <tr>
+    <td>`sentAt`</td>
+    <td>
+      Time on client device when call was sent
+      <br>
+      **OR**
+      <br>
+      `sentAt` value manually passed in.
+    </td>
+    <td>
+      Used by Segment to calculate `timestamp`.
+      <br><br>
+      **Note:** `sentAt` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.
     </td>
   </tr>
   <tr>
-    <td>sentAt</td>
-    <td>
-      <p>Time on client device when call was sent</p>
-      <p>**OR**</p>
-     <p>`sentAt` value manually passed in</p>
-    </td>
-    <td>
-      <p>Used by Segment to calculate `timestamp`</p>
-      <p>**Note:** `sentAt` is not useful for analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew</p>
-    </td>
-  </tr>
-  <tr>
-    <td>receivedAt</td>
+    <td>`receivedAt`</td>
     <td>time on Segment server clock when call was received</td>
     <td>
-      <p>Used by Segment to calculate `timestamp`</p>
-      <p>Used as sort key in Warehouses</p>
-      <p>**Note:** For max query speed, `receivedAt` is the recommended timestamp for analysis when chronology does not matter as chronology is not ensured</p>
+      Used by Segment to calculate `timestamp`, and used as sort key in Warehouses.
+      <br><br>
+      **Note:** For max query speed, `receivedAt` is the recommended timestamp for analysis when chronology does not matter as chronology is not ensured.
     </td>
   </tr>
   <tr>
-    <td>timestamp</td>
+    <td>`timestamp`</td>
     <td>
-      <p>Calculated by Segment to correct client-device clock skew using the following formula:</p>
-      <p>`receivedAt` - (`sentAt` - `originalTimestamp`)</p>
+      Calculated by Segment to correct client-device clock skew using the following formula:
+      <br>
+      `receivedAt` - (`sentAt` - `originalTimestamp`)
     </td>
     <td>
-      <p>Used by Segment to send to downstream destinations</p>
-      <p>Used for historical replays</p>
-      <p>**Note:** Recommended timestamp for analysis when chronology does matter</p>
+      Used by Segment to send to downstream destinations, and used for historical replays.
+      <br><br>
+      **Note:** Recommended timestamp for analysis when chronology does matter.
     </td>
   </tr>
 </table>
 
 
-### `originalTimestamp`
+### originalTimestamp
 
 The `originalTimestamp` tells you when call was invoked on the client device or the value of `timestamp` that you manually passed in.
 
 **Note:** The `originalTimestamp` timestamp is not useful for any analysis since it's not always trustworthy as it can be easily adjusted and affected by clock skew.
 
 
-### `sentAt`
+### sentAt
 
 The `sentAt` timestamp specifies the clock time for the client's device when the network request was made to the Segment API. For libraries and systems that send batched requests, there can be a long gap between a datapoint's `timestamp` and `sentAt`. Combined with `receivedAt`, we can use `sentAt` to correct the original `timestamp` in situations where a user's device clock cannot be trusted (mobile phones and browsers). The `sentAt` and `receivedAt` timestamps are assumed to occur at the same time (maximum a few hundred milliseconds), and therefore the difference is the user's device clock skew, which can be applied back to correct the `timestamp`.
 
 **Note:** The `sentAt` timestamp is not useful for any analysis since it's tainted by user's clock skew.
 
 
-### `receivedAt`
+### receivedAt
 
 The `receivedAt` timestamp is added to incoming messages as soon as they hit our API. It's used in combination with `sentAt` to correct clock skew, and also to aid with debugging libraries and systems that deliver events in batches.
 
@@ -384,7 +386,7 @@ The `receivedAt` timestamp is most important as the sort key in our Warehouses p
 
 **Note:** Chronological order of events is not ensured with `receivedAt`.
 
-### `timestamp`
+### timestamp
 
 The `timestamp` timestamp specifies when the datapoint occurred, corrected for client-device clock skew. This is the timestamp that is passed to downstream destinations and used for historical replays. It is important to use this timestamp for importing historical data to the API.
 

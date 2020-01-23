@@ -29,17 +29,19 @@ Here's what's here!
 You will need to have Docker installed https://docs.docker.com/install/
 
 * If using Linux, run `docker-compose up`
+* Visit http://localhost:4000/docs/
 
 ### Local development with `ruby` and `node`, without platform-api
 
 If using OSX:
-  * install command line tools, `xcode-select --install`
-  * Install `Ruby` https://www.ruby-lang.org/en/documentation/installation/
+  * Install command line tools, `xcode-select --install`
+  * Install `Ruby` >= 2.3.0 https://www.ruby-lang.org/en/documentation/installation/
+  * Ensure you're running `RubyGems` >= 2.5.0 by running `gem update --system` followed by `gem --version`
+  * Install `Bundler 2` with `gem install bundler`
   * Install `Node` https://nodejs.org/en/download/
   * Install `Yarn` https://yarnpkg.com/en/docs/install
-  * Install `Bundler` `gem install bundler`
   * Run server, `make dev`
-* Visit http://localhost:4000/docsv2/
+  * Visit http://localhost:4000/docs/
 
 ### JUST Editing content?
 
@@ -82,6 +84,7 @@ The docs repo works on the honor system right now. The only rule is you can't me
     - push the new commits to the branch
 5. Once you get a review, and the checks pass, merge your PR.
 6. Once you've merged the branch, delete it!
+7. Once merged, you can track build and deploy process in [buildkite/segment-docs](https://buildkite.com/segment/segment-docs).
 
 ### Long running projects
 
@@ -120,6 +123,21 @@ To add images to a docs page, create an `images` folder for the docs path, save 
 
 There are no naming conventions at this time. Anything you see with `asset` was dowloaded by a script to save it from Contents.io. :)
 
+### Adding links
+
+Use the standard markdown format for links (ex: `[text](https://example.com)`).
+To make a link open in a new tab append `[text](https://example.com){:target="_blank"}` to the end.
+
+### Escaping code snippets
+
+Certain code syntax will be interpreted by Jekyll/Liquid as site code. If you're having trouble showing code snippets in the docs, you can wrap the snippet in a `{% raw %}` tag. In the example below, the curly brackets would not render in the docs. The raw tags ensure the code renders properly.
+
+```
+{% raw %}
+To pass source name in the slack message, format it like so: `{{properties.sourceName}}`
+{% endraw %}
+```
+
 ## Frontmatter
 
 Each Markdown file in the docs can have frontmatter (also and formerly known as "metadata") associated with it at the top of the file. (For clarity, we call it "Frontmatter" to prevent confusion with the Segment "Metadata service".
@@ -134,7 +152,7 @@ It'll look something like this:
 ```
 
 Each piece of frontmatter does something special:
-
+- `published`: defaults to true. Set this to "false" to prevent Jekyll from rendering an HTML page for this file. Good for when you're working on something in the repo but aren't ready to release it yet, and don't want to use a Draft PR.
 - `beta`: default false. When true, show an "in beta" warning in the page layout (see the warning in `_includes/content/beta.md`)
 - `hide-feedback`: defaults to false. When true, hide the feedback footer. Good for legal and landing pages.
 - `hidden`: omits the file from the `sitemap.xml`, adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file, and drops it from the convenience script for regenerating the nav.
@@ -142,7 +160,7 @@ Each piece of frontmatter does something special:
 - `hide_toc`: hides the right-nav TOC that's generated from H2s
 - `integration_type`: This is set in the `_config.yml` on three paths to add a noun (Source, Destination, or Warehouse) to the end of the title, and the end of the title tag in the html layout. It also controls the layout and icon for some of these.
 - `landing`: defaults to false. Use this to drop the noun set by `integration_type` from the tab title.
-- `redirect_from`: **Note** We aren't using this right now. Defaults to null. Takes an array of URLs from the frontmatter in a file, and generates a "stub" page at each URL. Each stub file redirects to the original file.
+- `redirect_from`: **Note** We are mostly using NGINX redirects. Defaults to null. Takes an array of URLs from the frontmatter in a file, and generates a "stub" page at each URL at build-time. Each stub file redirects to the original file.
 - `seo-changefreq`: default: `weekly `. Use the values [in the sitemap spec](https://www.sitemaps.org/protocol.html#xmlTagDefinitions). - sets the `changefreq` tag in the sitemap.xml generator, which tells search crawlers how often to check back.
 - `seo-priority`: values from `1.0` to `0.1`, default: `0.5 `. Sets the `Priority` tag in the sitemap
 
@@ -177,7 +195,7 @@ You can see how to write them in the `styleguide.md`, and see how they render at
 
 - `dev`: runs `jekyll serve` locally with incremental builds. Useful when updating CSS, JS, or content and you don't want to rebuild everytime.
 - `build`: Builds the site docs. Used by CI to publish the docs to staging and production
-- `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key to be passed in env via PLATFORM_API_TOKEN
+- `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key to be passed in env via PLATFORM_API_TOKEN. [Instructions here](#bring-your-own-token).
 - `sidenav`: Builds the side navs for 'main', 'legal', 'api', 'partners' and stores the output in `/src/_data/sidenav-auto/`. This output isn't used for the actual build.
 - `typewriter`: pulls in the current state of the Docs tracking plan for implementing Segment tracking
 - `seed`: copies all example data files out of the `_templates` directory and puts them in the `_data` directory. Useful if you don't have a way to set up an API key.
@@ -281,11 +299,19 @@ $ make catalog
 
 ##### Bring your own token
 
-You create your own token via the Access Management Page. Feel free to use [`segment-engineering`](https://app.segment.com/segment-engineering/settings/access-management) or [`segment_prod`](https://app.segment.com/segment_prod/settings/access-management). Once you have the token, set the value in the `.env` file.
+You create your own token in the Segment App. You can use your own personal workspace, or if you have access to them, use [`segment-engineering`](https://app.segment.com/segment-engineering/settings/access-management) or [`segment_prod`](https://app.segment.com/segment_prod/settings/access-management). Go to **Settings > Access Management > Tokens**.
+Any type of token will work, but you might want to limit it to a read-only token. Make sure you label it so folks know what it's for!
+
+Once you make a new token, paste the token value in the `.env` file like so:
+
+```text
+PLATFORM_API_TOKEN=(token value here)
+```
+You can now run `make catalog`!
 
 
 #### Catalog Data + Doc Links
-By default, the links on the catalog page and respective sidenavs will attempt to automagically set hyperlinks, for actual doc file, at the path `connections/:type/:slug`. However, given the transitory state of Docs V2, these links might 404 since the respective doc might be in a different directory.
+By default, the links on the catalog page and respective sidenavs attempt to automagically set hyperlinks, for actual doc file, at the path `connections/:type/:slug`. However, given the transitory state of Docs V2, these links might 404 since the respective doc might be in a different directory.
 
 #### Object Sources and Warehouses
 These two catalogs are hardcoded in the `_data` directory since the Config API does not expose these resources.
@@ -298,3 +324,23 @@ The current breadcrumb is currently determined based on the `page.path` and the 
 
 ### Searching
 Swiftype is set up as a script in `_layouts/default.html`
+
+
+## Testing
+
+### Build Testing
+Currently the only automatic testing we perform is linting on the configuration yaml files to ensure proper the project will build.
+
+TODO: define rules for markdown linting and clean up linting errors
+`npx remark ./src --use preset-lint-markdown-style-guide`
+
+### Manual Testing
+There is as also some manual testing scripts that can be run to validate the build.
+
+1. `tests/redirects/redirects_bash`: used for validating a list of paths that we have nginx redirects for
+
+2. `tests/externalLinks/linkTester_bash`: used to validate that external links referenced in docs point to a validate endpoint
+
+3. `tests/imageSizes/getImageSizes.js`: used to get the 10 largest images in the repo.
+
+4. `npx mdspell 'src/**/*.md' -r --en-us`: used to validate spelling in docs, needs to be configured to add Segment terms.

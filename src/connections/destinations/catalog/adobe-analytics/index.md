@@ -4,7 +4,7 @@ rewrite: true
 ---
 <!-- LR note: Setting rewrite true to remove bad boilerplate, manually including the footer partial-->
 
-Once you enable Adobe Analytics (formerly known as Omniture/Sitecatalyst) in Segment, you can start sending data from any of our [libraries](docs/connections/sources/) to an Adobe report suite. When you send events from our mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics `Data Insertion API`.
+Once you enable Adobe Analytics (formerly known as Omniture/Sitecatalyst) in Segment, you can start sending data from any of our [libraries](/docs/connections/sources/) to an Adobe report suite. When you send events from our mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics `Data Insertion API`.
 
 The following documentation provides detailed explanation of how both destination the Device-mode and Cloud-mode components work. For FAQs about Device- vs Cloud-mode tracking, unique users, identifiers, and more, read the Best Practices at the bottom of this page!
 
@@ -448,6 +448,111 @@ You can map your Segment properties in your settings to any of your Adobe props.
 
 You can either send the property value as a string (ie. `'brady'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it so that it is a pipe (`|`) delimited string before sending to Adobe (ie. `'brady|edelman|blount'`). If you would like to set up a custom delimiter please see our documentation [here](https://segment.com/docs/connections/destinations/catalog/adobe-analytics/#custom-delimiter) for configuring custom delimiters.
 
+## Options
+
+The Adobe Analytics destination offers a couple of different ways to configure behavior using destination specific options. These are options that are defined in your event payloads rather than in the Segment app. To use these options, you must define them as values of an object in the following property of your Segment event payloads:
+
+```javascript
+integrations: {
+  'Adobe Analytics': {
+    // insert options here...
+  }
+}
+```
+Here's an example of a `track` call using this:
+
+```javascript
+ analytics.track({
+    userId: '019mr8mf4r',
+    event: 'Gotta catch em all',
+    properties: {
+     caught: 1738
+    },
+    integrations: {
+      'Adobe Analytics': {
+        // Insert custom options here...
+      }
+    }
+ });
+ ```
+
+The section below outlines each of these options and what they do.
+
+### Events
+This option allows you to associate specific Adobe events with individual Segment events.
+
+```javascript
+ analytics.track({
+    userId: '019mr8mf4r',
+    event: 'Gotta catch em all',
+    properties: {
+     caught: 1738
+    },
+    integrations: {
+      'Adobe Analytics': {
+        events: ['scAdd', 'event2']
+      }
+    }
+ });
+ ```
+
+### IMS Region
+This option allows you to associate events with IMS Regions. **Please note. If you specify this you must also define a `Marketing Cloud Visitor Id`.**
+
+```javascript
+ analytics.track({
+    userId: '019mr8mf4r',
+    event: 'Gotta catch em all',
+    properties: {
+     caught: 1738
+    },
+    integrations: {
+      'Adobe Analytics': {
+        imsregion: 'aamlh'
+      }
+    }
+ });
+ ```
+
+### Marketing Cloud Visitor ID
+This option allows you to associate a specific Marketing Cloud Visitor ID (mcvid) with the event.
+
+```javascript
+ analytics.track({
+    userId: '019mr8mf4r',
+    event: 'Gotta catch em all',
+    properties: {
+     caught: 1738
+    },
+    integrations: {
+      'Adobe Analytics': {
+        marketingCloudVisitorId: 'user1234'
+      }
+    }
+ });
+ ```
+
+### Visitor ID
+This option allows you to associate a standard Visitor ID with the event.
+
+```javascript
+ analytics.track({
+    userId: '019mr8mf4r',
+    event: 'Gotta catch em all',
+    properties: {
+     caught: 1738
+    },
+    integrations: {
+      'Adobe Analytics': {
+        visitorId: 'user1234'
+      }
+    }
+ });
+ ```
+
+ ## Link Names, Link URLs, Link Types
+ Please see [this](#setting-custom-linktypes-linknames-and-linkurls) section for information about configuring these as options.
+
 ## Settings
 
 ### Merchandising Events
@@ -734,7 +839,7 @@ And on iOS:
 - [Custom Video Metadata](#custom-video-metadata)
 - [Troubleshooting and Logging Heartbeat](#troubleshooting-and-logging-heartbeat)
 
-Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and Javascript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
+Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and Javascript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/). At this time, Adobe Heartbeat is only available for events sent device mode.
 
 Before you start, complete these required steps.
 
@@ -1249,9 +1354,3 @@ We know this is daunting territory, so please don't hesitate to reach out direct
 ### Populating Custom Links report with server side data
 
 Since we cannot automatically track page data for **server side** calls, if you want to populate the **Custom Links** report in Adobe Analytics, you must manually pass `context.page.url`.
-
-
----
-
-
-{% include content/integration-foot.md %}

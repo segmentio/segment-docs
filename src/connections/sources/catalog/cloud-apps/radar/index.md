@@ -1,16 +1,17 @@
 ---
 title: Radar Source
+source-type: event
 ---
 
 Radar is the location platform for mobile apps. You can use Radar to add location context and tracking to your apps in less than ten lines of code. The Radar Segment Source is a Cloud-mode event source. Instead of packaging Radar's SDK using Segment as a wrapper, you include, configure, and initialize their SDK separately. Radar then sends all events that it detects and infers to Segment via its servers. As a result, only destinations that allow Cloud-mode are compatible with the Radar source.
 
 The Radar platform has three products: *Geofences*, *Insights*, and *Places*.
 
-* **[Geofences](https://www.onradar.com/documentation/geofences)**:  Radar geofencing is more powerful than native iOS or Android geofencing, with cross-platform support for unlimited geofences, polygon geofences, stop detection, and accuracy down to 30 meters. Create geofences to receive the following events: Geofence Entered, Geofence Exited
+- **[Geofences](https://www.onradar.com/documentation/geofences)**:  Radar geofencing is more powerful than native iOS or Android geofencing, with cross-platform support for unlimited geofences, polygon geofences, stop detection, and accuracy down to 30 meters. Create geofences to receive the following events: Geofence Entered, Geofence Exited
 
-* **[Insights](https://www.onradar.com/documentation/insights)**: Radar can learn a user's approximate home and work locations and tell you when a user is at home, at work, or traveling. Turn on Insights to receive the following events: Home Entered, Home Exited, Office Entered, Office Exited, Traveling Started, Traveling Stopped
+- **[Insights](https://www.onradar.com/documentation/insights)**: Radar can learn a user's approximate home and work locations and tell you when a user is at home, at work, or traveling. Turn on Insights to receive the following events: Home Entered, Home Exited, Office Entered, Office Exited, Traveling Started, Traveling Stopped
 
-* **[Places](https://www.onradar.com/documentation/places)**: Radar can tell you when a user visits a place, even if you haven't set up a geofence for that place. Places have category and chain information. Radar is integrated with Facebook Places, the same place database that powers Facebook and Instagram, with over 140M places worldwide. Turn on Places to receive the following events: Place Entered, Place Exited
+- **[Places](https://www.onradar.com/documentation/places)**: Radar can tell you when a user visits a place, even if you haven't set up a geofence for that place. Places have category and chain information. Radar is integrated with Facebook Places, the same place database that powers Facebook and Instagram, with over 140M places worldwide. Turn on Places to receive the following events: Place Entered, Place Exited
 
 When you enable Radar as a Segment Source, you can forward Geofences, Insights, and Places data to your warehouse or destinations.
 
@@ -22,25 +23,16 @@ The Radar source is currently in beta. Contact Radar to configure this source.
 
 Radar will send the following events to your Segment warehouses and destinations, depending on what products you enable in Radar.
 
-* Geofence Entered
-
-* Geofence Exited
-
-* Home Entered
-
-* Home Exited
-
-* Office Entered
-
-* Office Exited
-
-* Traveling Started
-
-* Traveling Stopped
-
-* Place Entered
-
-* Place Exited
+- Geofence Entered
+- Geofence Exited
+- Home Entered
+- Home Exited
+- Office Entered
+- Office Exited
+- Traveling Started
+- Traveling Stopped
+- Place Entered
+- Place Exited
 
 ## Radar Event Properties
 
@@ -378,17 +370,17 @@ Radar will send the following events to your Segment warehouses and destinations
   <tr>
     <td>place_categories</td>
     <td>array <string></td>
-    <td>List of the categories of the place. See https://www.onradar.com/documentation/places/categories.</td>
+    <td>List of the [categories of the place](https://www.onradar.com/documentation/places/categories). </td>
   </tr>
   <tr>
     <td>place_chain_name</td>
     <td>string</td>
-    <td>The name of the chain of the place. See https://www.onradar.com/documentation/places/chains.</td>
+    <td>The name of the [chain of the place](https://www.onradar.com/documentation/places/chains).</td>
   </tr>
   <tr>
     <td>place_chain_slug</td>
     <td>string</td>
-    <td>A human-readable unique ID for the chain of the place. See https://www.onradar.com/documentation/places/chains.</td>
+    <td>A human-readable unique ID for the [chain of the place](https://www.onradar.com/documentation/places/chains).</td>
   </tr>
   <tr>
     <td>confidence</td>
@@ -439,17 +431,17 @@ Radar will send the following events to your Segment warehouses and destinations
   <tr>
     <td>place_categories</td>
     <td>array <string></td>
-    <td>List of the categories of the place. See https://www.onradar.com/documentation/places/categories.</td>
+    <td>List of the [categories of the place](https://www.onradar.com/documentation/places/categories).</td>
   </tr>
   <tr>
     <td>place_chain_name</td>
     <td>string</td>
-    <td>The name of the chain of the place. See https://www.onradar.com/documentation/places/chains.</td>
+    <td>The name of the [chain of the place](https://www.onradar.com/documentation/places/chains).</td>
   </tr>
   <tr>
     <td>place_chain_slug</td>
     <td>string</td>
-    <td>A human-readable unique ID for the chain of the place. See https://www.onradar.com/documentation/places/chains.</td>
+    <td>A human-readable unique ID for the [chain of the place](https://www.onradar.com/documentation/places/chains).</td>
   </tr>
   <tr>
     <td>confidence</td>
@@ -532,17 +524,17 @@ Radar will also send the following user traits to Segment, depending on Radar us
   <tr>
     <td>radar_place_categories</td>
     <td>array <string></td>
-    <td>List of the categories of the place. See https://www.onradar.com/documentation/places/categories.</td>
+    <td>List of the [categories of the place](https://www.onradar.com/documentation/places/categories).</td>
   </tr>
   <tr>
     <td>radar_place_chain_name</td>
     <td>string</td>
-    <td>The name of the chain of the user's last known place. See https://www.onradar.com/documentation/places/chains.</td>
+    <td>The name of the [chain of the user's last known place](https://www.onradar.com/documentation/places/chains).</td>
   </tr>
   <tr>
     <td>radar_place_chain_slug</td>
     <td>string</td>
-    <td>A human-readable unique ID for the chain of the user's last known place. See https://www.onradar.com/documentation/places/chains.</td>
+    <td>A human-readable unique ID for the [chain of the user's last known place](https://www.onradar.com/documentation/places/chains).</td>
   </tr>
   <tr>
     <td>radar_insights_state_home</td>

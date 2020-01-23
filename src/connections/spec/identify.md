@@ -20,7 +20,7 @@ Let's imagine this scenario:
 
 I log into your app. Identify is called. For whatever reason, I close the browser and don't return until later. There's no way of knowing where I will reenter your app from. I could start my session from anywhere. And because there are many tools out there that require an initial identify call for certain features (e.g. Intercom chat widget) it's important to tell your end tools who the user is when they first start their session.
 
-Calling `identify` in one of our [libraries](docs/connections/sources/) is one of the first steps to getting started with Segment. Please refer to library-specific documentation for more details.
+Calling `identify` in one of our [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Please refer to library-specific documentation for more details.
 
 Here's the payload of a typical `identify` call with most [common fields](/docs/connections/spec/common/) removed:
 
@@ -51,11 +51,7 @@ analytics.identify("97980cfea0067", {
 Beyond the common fields, an `identify` call has the following fields:
 
 <table>
-  <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-identify-traits.md %}
   {% include content/spec-field-user-id.md %}
 </table>
@@ -113,7 +109,7 @@ In these cases, you should use an Anonymous ID.
 
 The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don't have any readily available identifier, you can always generate a new random one—we recommend [UUIDs](http://en.wikipedia.org/wiki/Universally_unique_identifier).
 
-**Note:** Our [browser and mobile libraries](docs/connections/sources/) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
+**Note:** Our [browser and mobile libraries](/docs/connections/sources/) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don't need to worry about them when using those libraries.
 
 Here's an example of a Javascript event for an anonymous user:
 
@@ -145,9 +141,9 @@ Reserved traits we've standardized:
 
 <table>
   <tr>
-    <th>Trait</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Trait**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>`address`</td>

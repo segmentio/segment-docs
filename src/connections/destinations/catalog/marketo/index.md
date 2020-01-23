@@ -4,8 +4,6 @@ title: Marketo Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 When you toggle on Marketo in Segment, this is what happens:
 
 + Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading Marketo's Munchkin onto your page. This means you should remove Marketo's snippet from your page.

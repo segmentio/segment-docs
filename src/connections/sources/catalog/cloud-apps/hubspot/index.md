@@ -1,6 +1,7 @@
 ---
 title: HubSpot Source
 rewrite: true
+source-type: object
 ---
 
 [HubSpot](http://www.hubspot.com) is an all-in-one marketing tool that helps attract new leads and convert them into paying customers, with features like landing page creation and email automation.
@@ -67,6 +68,7 @@ Below are tables outlining the properties included in the collections listed abo
 If you have Custom Properties on any of these collections that you would like to sync, submit a ticket detailing the custom properties [here](http://segment.com/help/contact) and we can enable it for you.
 
 ### Contacts
+
 |  Property Name | Description |
 |  ------ | ------ |
 |  added_at | This is a timestamp for when the email address was added. |
@@ -88,6 +90,7 @@ If you have Custom Properties on any of these collections that you would like to
 
 
 ### Contact Identity Profiles
+
 |  Property Name | Description |
 |  ------ | ------ |
 |  contact_id | The original id for this identity. |
@@ -98,6 +101,7 @@ If you have Custom Properties on any of these collections that you would like to
 
 
 ### Contact Identities
+
 |  Property Name | Description |
 |  ------ | ------ |
 |  contact_id | The original id for this identity. |
@@ -109,6 +113,7 @@ If you have Custom Properties on any of these collections that you would like to
 
 
 ### Form Submissions
+
 |  Property Name | Description |
 |  ------ | ------ |
 |  form_id | The Hub ID that the form belongs to. |
@@ -123,6 +128,7 @@ If you have Custom Properties on any of these collections that you would like to
 
 
 ### Deals
+
 |  Property Name | Description |
 |  ------ | ------ |
 |  amount | The amount of the deal. |
@@ -142,6 +148,7 @@ If you have Custom Properties on any of these collections that you would like to
 
 
 ### Contact Lists
+
 |  Property Name | Description |
 |  ------ | ------ |
 |  archived | Whether or not the list is archived. |
@@ -163,6 +170,7 @@ If you have Custom Properties on any of these collections that you would like to
 
 
 ### Companies
+
 |  Property Name | Description |
 |  ------ | ------ |
 |  country | The internal name of the property. |
@@ -177,6 +185,7 @@ If you have Custom Properties on any of these collections that you would like to
 
 
 ### Email Campaigns
+
 |  Property Name | Description |
 |  ------ | ------ |
 |  app_id | An ID referencing the app. |
@@ -190,6 +199,7 @@ If you have Custom Properties on any of these collections that you would like to
 
 
 ### Email Subscriptions
+
 |  Property Name | Description |
 |  ------ | ------ |
 |  bounced | A HubSpot employee explicitly initiated the status change to block messages to the recipient. (Note this usage has been deprecated in favor of dropping messages with a 'dropReason' of BLOCKED_ADDRESS.) |
@@ -203,6 +213,7 @@ If you have Custom Properties on any of these collections that you would like to
 
 
 ### Email Subscription Event Changes
+
 |  Property Name | Description |
 |  ------ | ------ |
 |  caused_by_event_created | A timestamp for when the event was created. |

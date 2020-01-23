@@ -1,5 +1,6 @@
 ---
 title: Mandrill Source
+source-type: object
 ---
 
 Mandrill is a transactional email API for MailChimp users.. [Visit Website](http://www.mandrill.com/)

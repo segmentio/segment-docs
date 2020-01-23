@@ -3,37 +3,18 @@ title: Styleguide
 description: The styleguide of front-end components
 hidden: true
 layout: page
-faq:
-  - Source:
-    - title: "Should I track client or server-side?"
-      content: "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
-      link: /sources/catalog
-    - title: "What are best practices in identifying users?"
-      content: "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
-  - Cloud Sources:
-    - title: "What are cloud sources?"
-      content: "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
-      link: /sources
-    - title: "How do cloud sources work?"
-      content: "One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!"
-      link: /sources/catalog
 contributors:
   - name: Paul Mccall
-    position: Lead Developer
-    image_path: paul-mccall.png
     date: 23.08.2019
   - name: Jane Doe
-    position: Lead Developer
-    image_path: jane-doe.png
     date: 23.08.2019
   - name: Porter Braun
-    position: Lead Developer
-    image_path: porter-braun.png
     date: 23.08.2019
   - name: Monica Buck
-    position: Lead Developer
-    image_path: monica-buck.png
     date: 23.08.2019
+related:
+  - "/connections/sources/catalog/"
+  - "/connections/sources/faq/"
 ---
 
 ---
@@ -45,6 +26,16 @@ contributors:
 ### Heading 3
 #### Heading 4
 ##### Heading 5
+
+---
+
+## Text underline
+
+{:.underline}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+{:.underline}
+#### Heading with underline
 
 ---
 
@@ -151,13 +142,46 @@ console.log('example');
 ## Alerts
 
 > info ""
-> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+> This is a paragraph showing an information box with a blue information icon. Use this when providing useful details that help a reader understand what's going on, but don't require any immediate action.
 
 > success ""
-> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+> This is a paragraph showing an information box with a green checkmark icon. Use this when providing helpful information to a reader that could make their lives better, but that isn't required.
 
 > warning ""
-> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+> This is a paragraph showing an information box with an orange warning icon. Use these when you want to caution a reader about something that could have unintended, but not destructive, consequences.
 
 > error ""
-> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+> This is a paragraph showing an information box with a red hazard icon. Use this when warning a reader about destructive or non-reversible actions, like deleting a workspace or overwriting data. Don't use this too frequently, or else it makes the readers worry!
+
+---
+
+## FAQ
+### Server
+{% faq %}
+{% faqitem Should I track client or server-side? %}
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
+{% endfaqitem %}
+
+{% faqitem Should I track client or?|https://segment.com/ %}
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
+{% endfaqitem %}
+
+{% faqitem Should I track client?|https://segment.com/ %}
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
+{% endfaqitem %}
+{% endfaq %}
+
+### Cloud Sources
+{% faq %}
+{% faqitem What are cloud sources??|https://segment.com/ %}
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
+{% endfaqitem %}
+
+{% faqitem Should I track client?|https://segment.com/ %}
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
+{% endfaqitem %}
+
+{% faqitem Should I track client?|https://segment.com/ %}
+One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?" This is such an important topic that we've written up an in-depth article in our Analytics Academy: When to Track on the Client vs Server. It's worth a read!
+{% endfaqitem %}
+{% endfaq %}

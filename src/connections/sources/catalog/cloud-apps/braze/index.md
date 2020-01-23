@@ -1,5 +1,6 @@
 ---
 title: Braze Source
+source-type: event
 ---
 
 [Braze](https://www.braze.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a marketing automation and customer engagement platform. Growth, Engagement, and Marketing teams use Braze to build great long term relationships with their customers across key digital channels.
@@ -65,7 +66,6 @@ Below is a table of events that Braze sends to Segment. These events show up as 
    <td>Email Bounced</td>
    <td>Braze attempted to send an email, but the User's receiving mail server did not accept it.</td>
   </tr>
-  <tr>
   <tr>
    <td>Email Soft Bounced</td>
    <td>Braze attempted to send an email, but the User's receiving mail server temporarily bounced it. (Reasons may include: inbox full, server down, etc.)</td>

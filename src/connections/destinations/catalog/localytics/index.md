@@ -9,8 +9,6 @@ check it out:
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Once the Segment library is integrated with your site or app, toggle Localytics
 on in your Segment destinations, and add your application's **App Key** which
 you can find in your Localytics app settings. These new settings will take up to
@@ -29,7 +27,7 @@ is not yet supported.
 
 **Note:** Localytics does not accept server-side data, so you'll have to use one
 of our client-side libraries
-([Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/),
+([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/),
 [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/)/[Android](/docs/connections/sources/catalog/libraries/mobile/android/) SDKs
 with Localytics [bundled](/docs/faqs/sources/bundled-SDK-vs-server) to send data
 to Localytics.

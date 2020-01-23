@@ -5,8 +5,6 @@ title: Omniture Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 When you toggle on Omniture in Segment, our CDN is updated within 45 minutes. Then our javascript will start sending all mapped `track` calls to your Omniture installation.
 
 If you already host an Omniture instance on your page, we will hook into that. In the absence of an existing client-side instance we will create one that points to the **Tracking Server URL** you entered in your Omniture settings on Segment.
@@ -14,7 +12,7 @@ If you already host an Omniture instance on your page, we will hook into that. I
 
 ### Overview
 
-The Omniture destination on Segment works with [all of our tracking sources](docs/connections/sources/). When you send events via our mobile SDKs or server-side sources we translate that data into XML format and pass it to Omniture's XML Insertion API. Events tracked in client-side javascript are sent directly from the browser.
+The Omniture destination on Segment works with [all of our tracking sources](/docs/connections/sources/). When you send events via our mobile SDKs or server-side sources we translate that data into XML format and pass it to Omniture's XML Insertion API. Events tracked in client-side javascript are sent directly from the browser.
 
 - - -
 

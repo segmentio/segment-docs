@@ -34,7 +34,7 @@
             {% capture currentSectionSlug %}{{ currentSectionPage[0] | downcase }}/{{ currentSectionPage[1] | downcase }}{% endcapture %}
 
             <li class="menu-item menu-item--gray">
-              <a class="menu-item__link {% if currentPage == currentPath or currentSectionSlug == currentSectionPath %}menu-item__link--indicator-large{% endif %} flex" href="{{ site.baseurl }}{{ item.path }}/">{{ item.title }}</a>
+              <a class="menu-item__link flex" href="{{ site.baseurl }}{{ item.path }}/">{{ item.title }}</a>
             </li>
           {% endfor %}
         </ul>

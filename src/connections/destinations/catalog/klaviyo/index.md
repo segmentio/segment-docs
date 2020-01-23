@@ -51,7 +51,7 @@ analytics.identify({
 
 When you call `identify` on analytics.js, we call Klaviyo's `identify` with the `traits` object. We augment the `traits` object to have `traits.$id` be the `userId` since Klaviyo takes the user ID on the `traits` object itself.
 
-**Note:** When sending data to Klaviyo via `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet).
+**Note:** When sending data to Klaviyo via `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet).
 
 We will map the following Segment spec'd traits to Klaviyo [special people properties](http://www.klaviyo.com/docs):
 

@@ -2,6 +2,9 @@
 {% assign currentSlug = page.url | split: "/" | last %}
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
 {% assign connectionModes = currentIntegration.connection_modes %}
+
+{% if currentIntegration.components.size > 0 %}
+<!--don't show a blank table if we can't find any info about these. -->
 <!--
 components -> how do we send data
 platforms -> what data do we recognize-->
@@ -30,3 +33,4 @@ The first step is to make sure {{ currentIntegration.display_name }} supports th
     <td>{% if connectionModes.cloud.server == true %} ✅ {% endif %}</td>
   </tr>
 </table>
+{% endif %}
