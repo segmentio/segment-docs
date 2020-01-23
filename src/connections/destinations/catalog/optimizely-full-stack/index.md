@@ -135,3 +135,6 @@ Notification listeners are not available when implementing Optimizely via Segmen
 Please follow these instructions on how to setup Personas and Optimizely:
 
 * [Using Segment Personas and Optimizely Full Stack for Omnichannel Experiments](https://blog.optimizely.com/tag/segment-personas/)
+
+## GDPR Support
+Segment supports deleting/suppressing users in Optimizely via the [Segment app](https://segment.com/docs/privacy/user-deletion-and-suppression/). In order to do this however, you will need to create a [Personal Access Token](https://developers.optimizely.com/x/authentication/personal-token/) in Optimizely and provide it as the value of the [Access Token](#access-token) setting.
