@@ -7,7 +7,7 @@ source: ./src
 
 permalink: /:categories/:title/
 
-exclude: ['js', '_site' '*.sketch']
+exclude: ['js', '_site', '*.sketch']
 # Build settings
 markdown: kramdown
 highlighter: rouge
