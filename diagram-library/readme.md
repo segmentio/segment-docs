@@ -24,4 +24,9 @@ You can also export the file, or diagrams you make with it, to `.svg` format for
 
 That's it!
 
-When you need to update it, you can reopen the sketch file, make your changes, and re-export.
+When you need to update the images, you can reopen the Sketch file, make your changes, and re-export.
+
+
+## Adding new items to the Library
+
+Contact @sanscontext for instructions. :)
