@@ -4,6 +4,8 @@ The library file was built by Tonik, and is in Sketch. You'll need a Sketch lice
 
 You can also export the file, or diagrams you make with it, to `.svg` format for storage.
 
+![](sample-diagram.png)
+
 ## Using the Library
 
 1. To create a new diagram, open the library file in Sketch and **make a copy**.
