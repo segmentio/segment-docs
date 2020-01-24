@@ -81,8 +81,6 @@ sections:
       title: 'Spec: Screen'
     - path: /connections/spec/track
       title: 'Spec: Track'
-    - path: /connections/spec/alias
-      title: 'Spec: Alias'
     - path: /connections/spec/group
       title: 'Spec: Group'
     - path: /connections/spec/identify
