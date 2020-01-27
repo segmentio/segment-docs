@@ -1,14 +1,13 @@
-<h1>HEROW</h1>
+# HEROW
 
 
 [HEROW](https://www.herow.io) is a contextual platform for mobile application. Built around everyday behaviors and powered by location intelligence, its one-stop solution allows apps to maximize mobile engagement with their users.
 
 With HEROW simple, straightforward SaaS platform, mobile marketers and developers can:
-<ul>
-    <li> better understand how, when and where their app is         being used</li>
-    <li>create user segments based on real-world behaviors and     moments</li>
-    <li>significantly improve engagement through contextual         notifications and in-app actions</li>
-</ul>
+
++ Better understand how, when and where their app is         being used
++ Create user segments based on real-world behaviors and     moments
++ Significantly improve engagement through contextual         notifications and in-app actions
 
 Its SaaS platform uses hyper-precise location technology and machine-learning algorithms to provide mobile applications with true user context - a combination of location, behavior, and surroundings. 
 
@@ -18,7 +17,7 @@ This is an [Enrichment Source](https://segment.com/docs/sources/#event-cloud-sou
 
 This source is maintained by HEROW. For any issues with the source, please [reach out to their team](mailto:support@herow.io).
 
-_**NOTE:** The HEROW Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 24, 2020. If you are interested in joining their beta program or have any feedback to help improve the YOURINTEGRATION Source and its documentation, please [let  their team know](mailto:support@HEROW.io)!_
+_**NOTE:** The HEROW Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 15, 2020. If you are interested in joining their beta program or have any feedback to help improve the YOURINTEGRATION Source and its documentation, please [let  their team know](mailto:support@HEROW.io)!_
 
 
 ## Getting Started
@@ -32,350 +31,110 @@ _**NOTE:** The HEROW Source is currently in beta, which means that they are stil
 
 Below is a table of events that HEROW sends to Segment. These events will show up as tables in your warehouse, and as regular events in your other Destinations.
 
-<table>
-  <tr>
-   <td>Event Name</td>
-   <td>Description</td>
-   <td>Details</td>
-  </tr>
-  <tr>
-   <td>Zone Entered</td>
-   <td>User enters a geofence zone</td>
-   <td>A zone is a geofence monitored by our HEROW SDK. Geofence zones are created and activated in HEROW platform.</td>
-  </tr>
-  <tr>
-   <td>Zone Exited</td>
-  <td>User leaves a geofence zone</td>
-  <td>A zone is a geofence monitored by our HEROW SDK. Geofence zones are created and activated in HEROW platform.</td>
-  </tr>
-  <tr>
-   <td>Home Entered</td>
-   <td>User enters "Home" location</td>
-   <td>HEROW's proprietary algorithms can automatically detect a users home location after a few days.</td>
-  </tr>
-  <tr>
-   <td>Home Exited</td>
-   <td>User leaves "Home" location</td>
-   <td>HEROW's proprietary algorithms can automatically detect a users home location after a few days.</td>
-  </tr>
-  <tr>
-   <td>Office Entered</td>
-   <td>User enters "Office" location</td>
-   <td>HEROW's proprietary algorithms can automatically detect a users work/office location after a few days.</td>
-  </tr>
-  <tr>
-   <td>Office Exited</td>
-   <td>User exits "Office" location</td>
-   <td>HEROW's proprietary algorithms can automatically detect a users work/office location after a few days.</td>
-  </tr>
-   <tr>
-   <td>Commute Started (Coming soon)</td>
-   <td>User Starts Commute</td>
-   <td>Once the HEROW platform has defined "Home" and "Work" locations for a user, our SDK will be able to track their commute.</td>
-  </tr>
-  <tr>
-   <td>Commute Stopped (Coming soon)</td>
-   <td>User ends his commute</td>
-   <td>Once the HEROW platform has defined "Home" and "Work" locations for a user, our SDK will be able to track their commute.</td>
-  </tr>
-</table>
+| Event Name | Description | Details|
+| -------- | -------- | -------- |
+| Text     | Text     | Text     |
+|Zone Entered| User enters a geofence zone| A zone is a geofence monitored by our HEROW SDK. Geofence zones are created and activated in HEROW platform.|
+|Zone Exited|User leaves a geofence zone|A zone is a geofence monitored by our HEROW SDK. Geofence zones are created and activated in HEROW platform.|
+|Home Entered|User enters "Home" location|HEROW's proprietary algorithms can automatically detect a users home location after a few days.|
+|Home Exited|User leaves "Home" location|HEROW's proprietary algorithms can automatically detect a users home location after a few days.|
+|Office Entered|User enters "Office" location|HEROW's proprietary algorithms can automatically detect a users work/office location after a few days.|
+|Office Exited|User exits "Office" location|HEROW's proprietary algorithms can automatically detect a users work/office location after a few days.|
+|Commute Started (Coming soon)|User Starts Commute|Once the HEROW platform has defined "Home" and "Work" locations for a user, our SDK will be able to track their commute.|
+|Commute Stopped (Coming soon)|User ends his commute|Once the HEROW platform has defined "Home" and "Work" locations for a user, our SDK will be able to track their commute.|
 
+## Event Properties
 
-<h2>
-Event Properties
-</h2>
-
-<p>
 Below is a table of events that HEROW sends to Segment. These events will show up as tables in your warehouse, and as regular events in your other Destinations.
-</p>
-<p>
-<b>Important note on the user id:</b> for each of the following events, the user id will be the custom user id integrated with our HEROW SDK if applicable, or the device’s id. We recommend using the Custom user Id to match with your own user database.
-</p>
 
-<h3>
-Zone Entered (Geofence) Events
-</h3>
-<table>
-    <tr>
-       <td>Property Name</td>
-       <td>Type</td>
-       <td>Description</td>
-    </tr>
-    <tr>
-        <td>latitude</td>
-        <td>float</td>
-        <td>The latitude of the user’s location at the time of the event.</td>
-    <tr>
-      <td>longitude</td>
-      <td>float</td>
-      <td>The longitude of the user’s location at the time of the event.</td>
-    </tr>
-    <tr>
-        <td>accuracy</td>
-        <td>float</td>
-        <td>The accuracy of the user’s location at the time of the event in meters.</td>
-    </tr>
-    <tr>
-        <td>geofence_id</td>
-        <td>string</td>
-        <td>The ID of the geofence, provided by HEROW.</td>
-    </tr>
-    <tr>
-        <td>geofence_name</td>
-        <td>string</td>
-        <td>The description of the geofence.</td>
-    </tr>
-    <tr>
-        <td>geofence_categories</td>
-        <td>array of strings (comma separated)</td>
-        <td>The category of the geofence.</td>
-    </tr>
-    <tr>
-        <td>geofence_external_id</td>
-        <td>string</td>
-        <td>The external ID of the geofence.</td>
-    </tr>
-</table>
-<h3>
-Zone Exited (Geofence)
-</h3>
-<table>
-    <tr>
-       <td>Property Name</td>
-       <td>Type</td>
-       <td>Description</td>
-    </tr>
-    <tr>
-        <td>latitude</td>
-        <td>float</td>
-        <td>The latitude of the user’s location at the time of the event.</td>
-    <tr>
-      <td>longitude</td>
-      <td>float</td>
-      <td>The longitude of the user’s location at the time of the event.</td>
-    </tr>
-    <tr>
-        <td>accuracy</td>
-        <td>float</td>
-        <td>The accuracy of the user’s location at the time of the event in meters.</td>
-    </tr>
-    <tr>
-        <td>geofence_id</td>
-        <td>string</td>
-        <td>The ID of the geofence, provided by HEROW.</td>
-    </tr>
-    <tr>
-        <td>geofence_name</td>
-        <td>string</td>
-        <td>The description of the geofence.</td>
-    </tr>
-    <tr>
-        <td>geofence_categories</td>
-        <td>array of strings (comma separated)</td>
-        <td>The category of the geofence.</td>
-    </tr>
-    <tr>
-        <td>geofence_external_id</td>
-        <td>string</td>
-        <td>The external ID of the geofence.</td>
-    </tr>
-    <tr>
-        <td>duration</td>
-        <td>long</td>
-        <td>The duration between Geofence Entered and Geofence Exited events, in minutes.</td>
-    </tr>
-</table>
+**Important note on the user id:** for each of the following events, the user id will be the custom user id integrated with our HEROW SDK if applicable, or the device’s id. We recommend using the Custom user Id to match with your own user database.
 
-<h3>
-Home Entered
-</h3>
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Type</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>latitude</td>
-   <td>float</td>
-   <td>The latitude of the user’s location at the time of the event.</td>
-  </tr>
-  <tr>
-   <td>longitude</td>
-   <td>float</td>
-   <td>The longitude of the user at the time of the event.</td>
-  </tr>
-  <tr>
-   <td>accuracy</td>
-   <td>float</td>
-   <td>The accuracy of the user’s location at the time of the event in meters.</td>
-  </tr>
-</table>
-<h3>
-Home Exited
-</h3>
+### Zone Entered (Geofence) Events
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Type</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>latitude</td>
-   <td>float</td>
-   <td>The latitude of the user’s location at the time of the event.</td>
-  </tr>
-  <tr>
-   <td>longitude</td>
-   <td>float</td>
-   <td>The longitude of the user at the time of the event.</td>
-  </tr>
-  <tr>
-   <td>accuracy</td>
-   <td>float</td>
-   <td>The accuracy of the user’s location at the time of the event in meters.</td>
-  </tr>
-</table>
-<h3>
-Office Entered
-</h3>
+|Property Name|Type|Description|
+| -------- | -------- | -------- |
+|latitude|float|The latitude of the user’s location at the time of the event.|
+|longitude|float|The longitude of the user’s location at the time of the event.|
+|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+|geofence_id|string|The ID of the geofence, provided by HEROW.|
+|geofence_name|string|The description of the geofence.|
+|geofence_categories|array of strings (comma separated)| The category of the geofence.|
+|geofence_external_id|string|The external ID of the geofence.|
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Type</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>latitude</td>
-   <td>float</td>
-   <td>The latitude of the user’s location at the time of the event.</td>
-  </tr>
-  <tr>
-   <td>longitude</td>
-   <td>float</td>
-   <td>The longitude of the user at the time of the event.</td>
-  </tr>
-  <tr>
-   <td>accuracy</td>
-   <td>float</td>
-   <td>The accuracy of the user’s location at the time of the event in meters.</td>
-  </tr>
-</table>
-<h3>
-Office Exited
-</h3>
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Type</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>latitude</td>
-   <td>float</td>
-   <td>The latitude of the user’s location at the time of the event.</td>
-  </tr>
-  <tr>
-   <td>longitude</td>
-   <td>float</td>
-   <td>The longitude of the user at the time of the event.</td>
-  </tr>
-  <tr>
-   <td>accuracy</td>
-   <td>float</td>
-   <td>The accuracy of the user’s location at the time of the event in meters.</td>
-  </tr>
-</table>
 
-<h3>
-Commute Started (Coming soon)
-</h3>
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Type</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>latitude</td>
-   <td>float</td>
-   <td>The latitude of the user’s location at the time of the event.</td>
-  </tr>
-  <tr>
-   <td>longitude</td>
-   <td>float</td>
-   <td>The longitude of the user at the time of the event.</td>
-  </tr>
-  <tr>
-   <td>accuracy</td>
-   <td>float</td>
-   <td>The accuracy of the user’s location at the time of the event in meters.</td>
-  </tr>
-</table>
+### Zone Exited (Geofence)
 
-<h3>
-Commute Ended (Coming soon)
-</h3>
+|Property Name|Type|Description|
+| -------- | -------- | -------- |
+|latitude|float|The latitude of the user’s location at the time of the event.|
+|longitude|float|The longitude of the user’s location at the time of the event.|
+|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+|geofence_id|string|The ID of the geofence, provided by HEROW.|
+|geofence_name|string|The description of the geofence.|
+|geofence_categories|array of strings (comma separated)|The category of the geofence.|
+|geofence_external_id|string|The external ID of the geofence.|
+|duration|long|The duration between Geofence Entered and Geofence Exited events, in minutes.|
 
-<table>
-  <tr>
-   <td>Property Name</td>
-   <td>Type</td>
-   <td>Description</td>
-  </tr>
-  <tr>
-   <td>latitude</td>
-   <td>float</td>
-   <td>The latitude of the user’s location at the time of the event.</td>
-  </tr>
-  <tr>
-   <td>longitude</td>
-   <td>float</td>
-   <td>The longitude of the user at the time of the event.</td>
-  </tr>
-  <tr>
-   <td>accuracy</td>
-   <td>float</td>
-   <td>The accuracy of the user’s location at the time of the event in meters.</td>
-  </tr>
-</table>
 
-<h3>
-User Traits
-</h3>
+### Home Entered
+|Property Name|Type|Description|
+| -------- | -------- | -------- |
+|latitude|float|The latitude of the user’s location at the time of the event.|
+|longitude|float|The longitude of the user at the time of the event.|
+|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
 
-<table>
-    <tr>
-        <td>Attribute Name</td>
-        <td>Type</td>
-        <td>Description</td>
-    </tr>
-    <tr>
-        <td>herow_home_postal_code</td>
-        <td>string</td>
-        <td>The postal code of the user's "Home" location</td>
-    </tr>
-    <tr>
-        <td>herow_home_country</td>
-        <td>string</td>
-        <td>The country of the user's "Home" location</td>
-    </tr>
-    <tr>
-        <td>herow_work_postal_code</td>
-        <td>string</td>
-        <td>The postal code of the user's "Office" location</td>
-    </tr>
-    <tr>
-        <td>herow_work_country</td>
-        <td>string</td>
-        <td>The country of the user's "Office" location</td>
-    </tr>
-</table>
+
+
+
+### Home Exited
+|Property Name|Type|Description|
+| -------- | -------- | -------- |
+|latitude|float|The latitude of the user’s location at the time of the event.|
+|longitude|float|The longitude of the user at the time of the event.|
+|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+
+
+### Office Entered
+|Property Name|Type|Description|
+| -------- | -------- | -------- |
+|latitude|float|The latitude of the user’s location at the time of the event.|
+|longitude|float|The longitude of the user at the time of the event.|
+|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+
+### Office Exited
+|Property Name|Type|Description|
+| -------- | -------- | -------- |
+|latitude|float|The latitude of the user’s location at the time of the event.|
+|longitude|float|The longitude of the user at the time of the event.|
+|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+
+
+### Commute Started (Coming soon)
+|Property Name|Type|Description|
+| -------- | -------- | -------- |
+|latitude|float|The latitude of the user’s location at the time of the event.|
+|longitude|float|The longitude of the user at the time of the event.|
+|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+
+### Commute Ended (Coming soon)
+|Property Name|Type|Description|
+| -------- | -------- | -------- |
+|latitude|float|The latitude of the user’s location at the time of the event.|
+|longitude|float|The longitude of the user at the time of the event.|
+|accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
+
+### User Traits
+|Attribute Name|Type|Description|
+| -------- | -------- | -------- |
+|herow_home_postal_code|string|The postal code of the user's "Home" location|
+|herow_home_country|string|The country of the user's "Home" location|
+|herow_work_postal_code|string|The postal code of the user's "Office" location|
+|herow_work_country|string|The country of the user's "Office" location|
+
+
 
 ## Adding Destinations
 
