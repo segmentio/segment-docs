@@ -92,10 +92,10 @@ If the delivery of the payload is not successfully sent due to connection issues
 <table>
   <tr>
     <td>Platform</td>
-    <td><p><b>Initial Wait</b></p><p>Sleep duration before the first retry</p></td>
-    <td><p><b>Wait Growth</b></p><p>Rate of growth of the sleep duration between each retry</p></td>
-    <td><p><b>Max Wait</b></p><p>Maximum sleep duration between retries</p></td>
-    <td><p><b>Max Attempts</b></p><p>Maximum number of individual retries</p></td>
+    <td><b>Initial Wait</b>Sleep duration before the first retry</td>
+    <td><b>Wait Growth</b>Rate of growth of the sleep duration between each retry</td>
+    <td><b>Max Wait</b>Maximum sleep duration between retries</td>
+    <td><b>Max Attempts</b>Maximum number of individual retries</td>
   </tr>
   <tr>
     <td>**C++**</td>
