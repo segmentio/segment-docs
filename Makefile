@@ -10,6 +10,9 @@ ifeq ('${BUILDKITE_BRANCH}','staging')
 JEKYLL_ENV := 'staging'
 endif
 
+# Laura's convenience command because Reasons
+docs: dev
+
 .PHONY: dev
 dev: node_modules vendor/bundle
 	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
@@ -91,7 +94,7 @@ node_modules: package.json yarn.lock
 	yarn --frozen-lockfile
 
 .PHONY: vendor/bundle
-vendor/bundle: 
+vendor/bundle:
 	@export BUNDLE_PATH="vendor/bundle"
 	@mkdir -p vendor && mkdir -p vendor/bundle
 	@chmod -R 777 vendor/
