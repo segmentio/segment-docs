@@ -2137,6 +2137,16 @@ items:
         ticked we will track a `conversion` otherwise we will track a `segment`
         otherwise we will track a conversion.
       settings: []
+    - name: parameters
+      display_name: Query Parameters
+      type: MAP
+      deprecated: false
+      required: false
+      description: >-
+        Enter any event properties you want to map to query parameters in the
+        AppNexus url. Two parameters are sent automatically: `order_id` and the
+        monetary `value`.
+      settings: []
     - name: pixelId
       display_name: Pixel ID
       type: STRING
@@ -2154,16 +2164,6 @@ items:
       string_validators:
         regexp: ''
       description: Enter a Segment ID that you want us to map to the custom event
-      settings: []
-    - name: parameters
-      display_name: Query Parameters
-      type: MAP
-      deprecated: false
-      required: false
-      description: >-
-        Enter any event properties you want to map to query parameters in the
-        AppNexus url. Two parameters are sent automatically: `order_id` and the
-        monetary `value`.
       settings: []
   connection_modes:
     device:
@@ -5186,6 +5186,19 @@ items:
       Use these fields to map your Segment event names to Floodlight tags. We'll
       only send Floodlight the conversion events you specify.
     settings:
+    - name: cat
+      display_name: Floodlight Activity Tag
+      type: STRING
+      deprecated: false
+      required: true
+      string_validators:
+        regexp: ''
+      description: >-
+        This should be the `cat` of your tag string, which Floodlight servers
+        use to identify the activity group to which the activity belongs. If you
+        leave this option blank, we will fall back to whatever you define in the
+        top level Activity Tag setting.
+      settings: []
     - name: customVariable
       display_name: Custom Variables
       type: MAP
@@ -5218,32 +5231,6 @@ items:
         Our Floodlight integration allows you to map the event names you track
         in Segment to Floodlight tags.
       settings: []
-    - name: cat
-      display_name: Floodlight Activity Tag
-      type: STRING
-      deprecated: false
-      required: true
-      string_validators:
-        regexp: ''
-      description: >-
-        This should be the `cat` of your tag string, which Floodlight servers
-        use to identify the activity group to which the activity belongs. If you
-        leave this option blank, we will fall back to whatever you define in the
-        top level Activity Tag setting.
-      settings: []
-    - name: type
-      display_name: Floodlight Group Tag
-      type: STRING
-      deprecated: false
-      required: true
-      string_validators:
-        regexp: ''
-      description: >-
-        This should be the `type` of your tag string, which identifies the
-        activity group with which the Floodlight activity is associated. If you
-        leave this option blank, we will fall back to whatever you define in the
-        top level Group Tag setting.
-      settings: []
     - name: isSalesTag
       display_name: Fire as Sales Tag
       type: BOOLEAN
@@ -5267,6 +5254,19 @@ items:
         key would be something like `properties.order_id`. Please include the
         `properties.` prefix to the key to ensure we can find the associated
         value in your properties object. 
+      settings: []
+    - name: type
+      display_name: Floodlight Group Tag
+      type: STRING
+      deprecated: false
+      required: true
+      string_validators:
+        regexp: ''
+      description: >-
+        This should be the `type` of your tag string, which identifies the
+        activity group with which the Floodlight activity is associated. If you
+        leave this option blank, we will fall back to whatever you define in the
+        top level Group Tag setting.
       settings: []
   - name: getDoubleClickId
     display_name: Get DoubleClick Id
@@ -6882,28 +6882,6 @@ items:
     required: false
     description: Map your page calls to specific FriendBuy Widgets.
     settings:
-    - name: name
-      display_name: Page Name
-      type: STRING
-      deprecated: false
-      required: true
-      string_validators:
-        regexp: ''
-      description: >-
-        Enter the `name` of your `.page()` calls. ie. `'Home'` if you are
-        calling `.page('Home')`.
-      settings: []
-    - name: id
-      display_name: Widget ID
-      type: STRING
-      deprecated: false
-      required: true
-      string_validators:
-        regexp: ''
-      description: >-
-        If you created a FriendBuy widget, you can enter your **Widget ID** here
-        to load it onto your webpages.
-      settings: []
     - name: autoDelay
       display_name: Widget Auto Delay
       type: STRING
@@ -6917,16 +6895,27 @@ items:
         milliseconds to wait before the widget appears automatically. A value of
         0 indicates manual widget invocation.
       settings: []
-    - name: selector
-      display_name: Widget Selector
+    - name: id
+      display_name: Widget ID
       type: STRING
       deprecated: false
-      required: false
+      required: true
       string_validators:
         regexp: ''
       description: >-
-        The optional selector is an optional string identifying the HTML element
-        where the widget is to be placed. For example, `'div.my-widget'`
+        If you created a FriendBuy widget, you can enter your **Widget ID** here
+        to load it onto your webpages.
+      settings: []
+    - name: name
+      display_name: Page Name
+      type: STRING
+      deprecated: false
+      required: true
+      string_validators:
+        regexp: ''
+      description: >-
+        Enter the `name` of your `.page()` calls. ie. `'Home'` if you are
+        calling `.page('Home')`.
       settings: []
     - name: parameters
       display_name: Widget Parameters
@@ -6941,6 +6930,17 @@ items:
         For example, if you wanted your widget to append `survey=true` or
         `survey=false` dynamically, you can enter `'isSurvey': 'survey'`
         assuming `isSurvey` is a valid property on your `.page()` calls.
+      settings: []
+    - name: selector
+      display_name: Widget Selector
+      type: STRING
+      deprecated: false
+      required: false
+      string_validators:
+        regexp: ''
+      description: >-
+        The optional selector is an optional string identifying the HTML element
+        where the widget is to be placed. For example, `'div.my-widget'`
       settings: []
   connection_modes:
     device:
@@ -7481,15 +7481,6 @@ items:
         regexp: ''
       description: You can opt to override the default conversion ID by setting one here
       settings: []
-    - name: remarketing
-      display_name: Send Remarketing Tag
-      type: BOOLEAN
-      deprecated: false
-      required: false
-      description: >-
-        Enable this to send a remarketing tag in addition to the conversion tag
-        (if you leave the label field blank only a remarketing tag will be sent)
-      settings: []
     - name: eventName
       display_name: Event Name
       type: STRING
@@ -7511,6 +7502,15 @@ items:
         analytics.track(event, properties) an event that represents an AdWords
         conversion, you'll need to map the event name to its corresponding label
         here.
+      settings: []
+    - name: remarketing
+      display_name: Send Remarketing Tag
+      type: BOOLEAN
+      deprecated: false
+      required: false
+      description: >-
+        Enable this to send a remarketing tag in addition to the conversion tag
+        (if you leave the label field blank only a remarketing tag will be sent)
       settings: []
   - name: linkId
     display_name: Link Id
@@ -11139,26 +11139,6 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
-      - name: marketoAttributeType
-        display_name: Marketo Field Type
-        type: SELECT
-        deprecated: false
-        required: true
-        select_validators:
-          select_options:
-          - string
-          - boolean
-          - number
-          - date
-        description: Enter the Marketo Field type.
-        settings: []
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as the Primary field in Marketo.
-        settings: []
       - name: segmentProperty
         display_name: Segment Property Name
         type: STRING
@@ -11181,6 +11161,26 @@ items:
           Enter the Marketo Field name. Make sure to copy and paste the exact
           API Name for your field as it appears in Marketo.
         settings: []
+      - name: marketoAttributeType
+        display_name: Marketo Field Type
+        type: SELECT
+        deprecated: false
+        required: true
+        select_validators:
+          select_options:
+          - string
+          - boolean
+          - number
+          - date
+        description: Enter the Marketo Field type.
+        settings: []
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as the Primary field in Marketo.
+        settings: []
   - name: privateKey
     display_name: API Private Key
     type: STRING
@@ -11202,18 +11202,6 @@ items:
       Use these fields for Marketo Lead fields that you'd like mapped to your
       Segment Identify Traits.
     settings:
-    - name: segmentTrait
-      display_name: Segment Trait Name
-      type: STRING
-      deprecated: false
-      required: true
-      string_validators:
-        regexp: ''
-      description: >-
-        Our Marketo integration allows you to map your Identify traits to Lead
-        fields in Marketo. This is case sensitive so make sure the name matches
-        exactly how you are passing it in your .identify() call.
-      settings: []
     - name: marketoFieldName
       display_name: Marketo Field Name
       type: STRING
@@ -11237,6 +11225,18 @@ items:
         - date
         - string
       description: The Marketo Field type for this trait.
+      settings: []
+    - name: segmentTrait
+      display_name: Segment Trait Name
+      type: STRING
+      deprecated: false
+      required: true
+      string_validators:
+        regexp: ''
+      description: >-
+        Our Marketo integration allows you to map your Identify traits to Lead
+        fields in Marketo. This is case sensitive so make sure the name matches
+        exactly how you are passing it in your .identify() call.
       settings: []
   connection_modes:
     device:
@@ -11304,21 +11304,40 @@ items:
     required: false
     description: Configure a conversion pixel
     settings:
-    - name: vParameters
-      display_name: V-Parameters
-      type: MAP
+    - name: event
+      display_name: Event Name
+      type: STRING
+      deprecated: false
+      required: true
+      string_validators:
+        regexp: ''
+      description: >-
+        Mediamath allows you to track conversions. When you `analytics.track('my
+        event')` we will map that event to the `mt_id` and `mt_adid` that you
+        provide. We'll map other data like properties to s and v parameters
+        below.
+      settings: []
+    - name: mtAdId
+      display_name: mt_adid
+      type: STRING
       deprecated: false
       required: false
-      map_validators:
+      string_validators:
         regexp: ''
-        min: 0
-        max: 10
-        map_prefix: v
-        select_options: []
       description: >-
-        Map event properties to vParameters and we'll insert the value of that
-        property in the corresponding query parameter of the MediaMath Pixel.
-        Email [friends@segment.io](mailto:friends@segment.io) if you need help!
+        Enter the `mt_adid` that you want us to send when this conversion event
+        is triggered.
+      settings: []
+    - name: mtId
+      display_name: mt_id
+      type: STRING
+      deprecated: false
+      required: false
+      string_validators:
+        regexp: ''
+      description: >-
+        Enter the `mt_id` that you want us to send when this conversion event is
+        triggered.
       settings: []
     - name: sParameters
       display_name: S-Parameters
@@ -11336,40 +11355,21 @@ items:
         property in the corresponding query parameter of the MediaMath Pixel.
         Email [friends@segment.io](mailto:friends@segment.io) if you need help!
       settings: []
-    - name: event
-      display_name: Event Name
-      type: STRING
-      deprecated: false
-      required: true
-      string_validators:
-        regexp: ''
-      description: >-
-        Mediamath allows you to track conversions. When you `analytics.track('my
-        event')` we will map that event to the `mt_id` and `mt_adid` that you
-        provide. We'll map other data like properties to s and v parameters
-        below.
-      settings: []
-    - name: mtId
-      display_name: mt_id
-      type: STRING
+    - name: vParameters
+      display_name: V-Parameters
+      type: MAP
       deprecated: false
       required: false
-      string_validators:
+      map_validators:
         regexp: ''
+        min: 0
+        max: 10
+        map_prefix: v
+        select_options: []
       description: >-
-        Enter the `mt_id` that you want us to send when this conversion event is
-        triggered.
-      settings: []
-    - name: mtAdId
-      display_name: mt_adid
-      type: STRING
-      deprecated: false
-      required: false
-      string_validators:
-        regexp: ''
-      description: >-
-        Enter the `mt_adid` that you want us to send when this conversion event
-        is triggered.
+        Map event properties to vParameters and we'll insert the value of that
+        property in the corresponding query parameter of the MediaMath Pixel.
+        Email [friends@segment.io](mailto:friends@segment.io) if you need help!
       settings: []
   connection_modes:
     device:
@@ -12168,6 +12168,18 @@ items:
       Use these fields to map your Segment event names to Nanigans event names.
       We'll only send Nanigans the conversion events you specify.
     settings:
+    - name: customParameters
+      display_name: Custom Parameters
+      type: MAP
+      deprecated: false
+      required: false
+      description: >-
+        Map event properties (on the *left*) to additional query string
+        parameters and we'll insert the value of that property in the
+        corresponding query parameter (on the *right*) of the request to
+        Nanigans. Email [friends@segment.com](mailto:friends@segment.com) if you
+        need help!
+      settings: []
     - name: event
       display_name: Segment Event Name
       type: STRING
@@ -12200,18 +12212,6 @@ items:
         - purchase
         - install
       description: The Nanigans event type for this event.
-      settings: []
-    - name: customParameters
-      display_name: Custom Parameters
-      type: MAP
-      deprecated: false
-      required: false
-      description: >-
-        Map event properties (on the *left*) to additional query string
-        parameters and we'll insert the value of that property in the
-        corresponding query parameter (on the *right*) of the request to
-        Nanigans. Email [friends@segment.com](mailto:friends@segment.com) if you
-        need help!
       settings: []
   - name: fbAppId
     display_name: Facebook App ID
@@ -14782,39 +14782,6 @@ items:
         required: false
         description: Mark this property as a Primary Key in Responsys.
         settings: []
-    - name: useSegmentMsgId
-      display_name: Use Segment Message ID
-      type: BOOLEAN
-      deprecated: false
-      required: false
-      description: >-
-        Use Segment's `messageId` as one of the four Primary Keys to easily
-        ensure that you do not overwrite historical records in your Supplemental
-        Tables.
-      settings: []
-    - name: mapUserId
-      display_name: Map Segment UserId
-      type: BOOLEAN
-      deprecated: false
-      required: false
-      description: >-
-        Check this box if you want to automatically create and or map Segment's
-        `userId` field as a column in Responsys. Highly **recommended** if you
-        want to connect records in your Profile Lists/Extension Tables with
-        records in this Supplemental Table.
-      settings: []
-    - name: mapEmail
-      display_name: Map Email
-      type: BOOLEAN
-      deprecated: false
-      required: false
-      description: >-
-        Check this box if you want to automatically create and or map Segment's
-        `email` property (in `context.traits.email` or `properties.email`) as a
-        column in Responsys. Highly **recommended** if you are calling
-        `.identify()` with an `email` trait for anonymous users without
-        `userId`s.
-      settings: []
     - name: event
       display_name: Segment Event Name
       type: STRING
@@ -14823,15 +14790,6 @@ items:
       string_validators:
         regexp: ''
       description: Enter the Segment Event Name.
-      settings: []
-    - name: suppName
-      display_name: Responsys Supplemental Table Name
-      type: STRING
-      deprecated: false
-      required: true
-      string_validators:
-        regexp: ''
-      description: Enter a Responsys Supplemental Table Name.
       settings: []
     - name: folderName
       display_name: Responsys Folder Name
@@ -14845,6 +14803,48 @@ items:
         or where you'd like one to be created. If this input is left blank, we
         will fallback on the default Folder Name you've provided at the top
         level settings.
+      settings: []
+    - name: mapEmail
+      display_name: Map Email
+      type: BOOLEAN
+      deprecated: false
+      required: false
+      description: >-
+        Check this box if you want to automatically create and or map Segment's
+        `email` property (in `context.traits.email` or `properties.email`) as a
+        column in Responsys. Highly **recommended** if you are calling
+        `.identify()` with an `email` trait for anonymous users without
+        `userId`s.
+      settings: []
+    - name: mapUserId
+      display_name: Map Segment UserId
+      type: BOOLEAN
+      deprecated: false
+      required: false
+      description: >-
+        Check this box if you want to automatically create and or map Segment's
+        `userId` field as a column in Responsys. Highly **recommended** if you
+        want to connect records in your Profile Lists/Extension Tables with
+        records in this Supplemental Table.
+      settings: []
+    - name: suppName
+      display_name: Responsys Supplemental Table Name
+      type: STRING
+      deprecated: false
+      required: true
+      string_validators:
+        regexp: ''
+      description: Enter a Responsys Supplemental Table Name.
+      settings: []
+    - name: useSegmentMsgId
+      display_name: Use Segment Message ID
+      type: BOOLEAN
+      deprecated: false
+      required: false
+      description: >-
+        Use Segment's `messageId` as one of the four Primary Keys to easily
+        ensure that you do not overwrite historical records in your Supplemental
+        Tables.
       settings: []
   - name: folderName
     display_name: Folder Name
@@ -15650,16 +15650,6 @@ items:
       Cloud Data Extensions. We'll only send SMC the conversion events you
       specify.
     settings:
-    - name: uuidPrimaryKey
-      display_name: UUID Primary Key
-      type: BOOLEAN
-      deprecated: false
-      required: false
-      description: >-
-        If this is checked then we will generate a UUID and pass it through to
-        SMC as the value for  *Primary Key* for this event called 'Uuid'. *This
-        will override the above Primary Key field.*
-      settings: []
     - name: event
       display_name: Event Name
       type: STRING
@@ -15692,6 +15682,16 @@ items:
       description: >-
         The target Data Extension's *Primary Key*. If a value is not provided,
         defaults to "Contact Key".
+      settings: []
+    - name: uuidPrimaryKey
+      display_name: UUID Primary Key
+      type: BOOLEAN
+      deprecated: false
+      required: false
+      description: >-
+        If this is checked then we will generate a UUID and pass it through to
+        SMC as the value for  *Primary Key* for this event called 'Uuid'. *This
+        will override the above Primary Key field.*
       settings: []
   - name: identifyExtensionExternalKey
     display_name: Identify Data Extension External Key
@@ -16448,18 +16448,6 @@ items:
     required: false
     description: Use these fields to map your Segment event names to Slack channels.
     settings:
-    - name: eventName
-      display_name: Segment Event Name
-      type: STRING
-      deprecated: false
-      required: false
-      string_validators:
-        regexp: ''
-      description: >-
-        Enter the event name here. You can also enter a regular expression
-        pattern and check the box below if you want to map multiple event names
-        to your channel.
-      settings: []
     - name: channel
       display_name: Event Channels
       type: STRING
@@ -16475,6 +16463,18 @@ items:
         #orders as channel will send `Completed Order` events to the #orders
         Slack channel. To disable sending an event to Slack completely, use the
         filters in your Schema.
+      settings: []
+    - name: eventName
+      display_name: Segment Event Name
+      type: STRING
+      deprecated: false
+      required: false
+      string_validators:
+        regexp: ''
+      description: >-
+        Enter the event name here. You can also enter a regular expression
+        pattern and check the box below if you want to map multiple event names
+        to your channel.
       settings: []
     - name: regex
       display_name: Regex Matching
@@ -16508,6 +16508,27 @@ items:
     required: false
     description: Use these fields to map your Segment event names to Slack event names.
     settings:
+    - name: eventName
+      display_name: Segment Event Name
+      type: STRING
+      deprecated: false
+      required: false
+      string_validators:
+        regexp: ''
+      description: >-
+        Enter the event name here. You can also enter a regular expression
+        pattern and check the box below if you want to map multiple event names
+        to your template.
+      settings: []
+    - name: regex
+      display_name: Regex Matching
+      type: BOOLEAN
+      deprecated: false
+      required: false
+      description: >-
+        If you entered a regex pattern instead of a specific event name, please
+        check this box.
+      settings: []
     - name: template
       display_name: Event Template
       type: STRING
@@ -16521,27 +16542,6 @@ items:
         example, consider an event Adopted Dog, with '{{properties.owner}}
         adopted a {{properties.type}}' as the template. For every 'Adopted Dog'
         event, this would send a message like 'Han adopted a Husky'.
-      settings: []
-    - name: regex
-      display_name: Regex Matching
-      type: BOOLEAN
-      deprecated: false
-      required: false
-      description: >-
-        If you entered a regex pattern instead of a specific event name, please
-        check this box.
-      settings: []
-    - name: eventName
-      display_name: Segment Event Name
-      type: STRING
-      deprecated: false
-      required: false
-      string_validators:
-        regexp: ''
-      description: >-
-        Enter the event name here. You can also enter a regular expression
-        pattern and check the box below if you want to map multiple event names
-        to your template.
       settings: []
   - name: webhookUrl
     display_name: Incoming Webhook URL

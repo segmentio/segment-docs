@@ -242,7 +242,16 @@ const updateDestinations = async () => {
       if(a.name > b.name) { return 1; }
       return 0;
     })
-
+    settings.forEach(setting => {
+      if (setting.settings.length > 0) {
+        setting.settings.sort((a, b) => {
+          if(a.name < b.name) { return -1; }
+          if(a.name > b.name) { return 1; }
+          return 0;
+        })
+      }
+    })
+    
     let updatedDestination = {
       display_name: destination.display_name,
       slug,
