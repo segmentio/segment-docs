@@ -114,7 +114,7 @@ sections:
     - path: /connections/sources/custom-domains
       title: Set up a custom domain proxy in Segment
     - path: /connections/sources/custom-sources
-      title: Custom Sources
+      title: Source Functions
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
     - path: /connections/sources/what-are-cloud-sources
@@ -129,8 +129,8 @@ sections:
       menu_icon: read-more
     - path: /connections/destinations/destination-filters
       title: Destination Filters
-    - path: /connections/destinations/custom-destinations
-      title: 'Custom Destinations: Functions'
+    - path: /connections/destinations/destination-functions
+      title: 'Destinations Functions'
   - section_title: Warehouses
     slug: connections/warehouses
     section:

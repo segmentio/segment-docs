@@ -1,18 +1,18 @@
 ---
-title: 'Custom Destinations: Functions'
+title: 'Destination Functions'
 ---
 
 Functions are currently in developer preview. If you are interested in joining the developer preview, navigate to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
 
-Segment Custom Functions allows you to build and deploy custom destinations on your workspace. By writing just a few lines of (serverless) code, you can transform your Segment events and send them to other APIs. Functions allow you to send your data into tools outside the Segment catalog, or to your own internal services.
+Segment Custom Functions allows you to build and deploy Destination Functions on your workspace. By writing just a few lines of (serverless) code, you can transform your Segment events and send them to other APIs. Functions allow you to send your data into tools outside the Segment catalog, or to your own internal services.
 
-Here are some examples of how early adopters are building custom destinations:
+Here are some examples of how early adopters are building Destination Functions:
 
 - **Microsoft Teams Destination** : trigger notifications/messages on a Teams workspace on important events like `Signed Up` or `Order Placed`.
 - **ChargeBee Integration** : sync subscription information by sending events like `Subscription Started`, `Subscription Updated`, `Subscription Removed` etc.
 - **Typeform Surveys** : trigger a user dissatisfaction survey on Typeform when a user uninstalls your app, for example when an `App Uninstalled` event is fired.
 
-The illustration below explains how Functions can be used to build custom destinations.
+The illustration below explains how Functions can be used to build Destination Functions.
 
 ![When a page call is sent to Segment, Destination Functions transform the Segment event payload to match the destination's spec. The transformed Event is sent to the destination tool.](images/visual.png)
 
@@ -22,15 +22,15 @@ To request access to Functions, navigate to the Build page of the catalog [here]
 
 ![Request Access](images/build_page.png)
 
-## Creating your custom destination
+## Creating your Destination Function
 
-To create a custom destination:
+To create a Destination Function:
 1. [Go to the Segment Catalog](https://app.segment.com/goto-my-workspace/destinations/catalog) in the Segment App.
 2. Click the **Custom** category.
-3. Click the `+` button to create a Custom Destination.
+3. Click the `+` button to create a Destination Function.
 4. Give the new destination a name, and click **Create**.
 
-![Create a Custom Destination](images/create.png)
+![Create a Destination Function](images/create.png)
 
 ## Writing your Function
 
@@ -174,7 +174,7 @@ Today, you're allocated a single secret setting when you create a function: `api
 
 **🚧 Coming Soon:** In the future, we plan to support multiple settings and additional settings types so you can further parameterize your function:
 
-- Configuration and dynamic mappings for user-configurable flow control in your function. This will allow developers to empower business stakeholders to configure their custom destinations on a per-source basis.
+- Configuration and dynamic mappings for user-configurable flow control in your function. This will allow developers to empower business stakeholders to configure their Destination Functions on a per-source basis.
 
 - Additional secrets. This is for use cases like client credentials authentication models, or for when calling multiple external APIs, for example in enrichment workflows or when looking up stored user traits and identifiers by any `externalId` from Segment's Personas [Profile API](/docs/personas/profile-api).
 
@@ -188,33 +188,33 @@ Segment captures and displays logs emitted by the `console.log()` method. You ca
 
 **Golden Rule: never leave log statements that print entire events or settings payloads.**
 
-## Testing your Custom Destination
+## Testing your Destination Function
 
 Test your code directly from the Functions editor. Use the `Send Test Event` button and review the test event to make sure the function works as expected.
 
 In the debugger panel, check the two outputs. The **Callback Return** and the **Log Output**.
 
-![Testing your Custom Destination](images/save-and-test.png)
+![Testing your Destination Function](images/save-and-test.png)
 
 - **Callback Return** - This shows what data the function returned, or the error it threw.
 - **Log Output** - The raw log. Any messages to `console.log()` from the function appear here.
 
 
-## Saving and enabling your Custom Destination
+## Saving and enabling your Destination Function
 
 Once you have tested your Function, you can click `Save`. You can then click the tile to edit or configure the destination by connecting a source.
 
-![Saving and enabling Custom Destination](images/workflow.gif)
+![Saving and enabling Destination Function](images/workflow.gif)
 
 When you enable the destination, you get all of Segment's destinations infrastructure and features: reliable retries, transparency and visibility into delivery metrics, and the ability to filter and control what data is passed to the Function destination.
 
-### Monitoring your Custom Destination.
+### Monitoring your Destination Function.
 
 You can use [Destination Event Delivery](https://segment.com/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/) to understand if Segment encounters any issues delivering your source data to destinations. Errors that the Function throws appear here.
 
-### Controlling what gets passed to your Custom Destination.
+### Controlling what gets passed to your Destination Function.
 
-You can use [Destination Filters](https://segment.com/docs/connections/destinations/destination-filters/) or Privacy Controls to manage what events and, of those events, which event properties are sent to your Custom Destination.
+You can use [Destination Filters](https://segment.com/docs/connections/destinations/destination-filters/) or Privacy Controls to manage what events and, of those events, which event properties are sent to your Destination Function.
 
 ## Delivery Guarantees
 Segment provides excellent data deliverability by employing API layer scalability and durability, data backup and replay, partner API monitoring, and library and cloud-mode destination retries. Segment's API processes 170B+ billion calls per month across over a billion of monthly tracked users, is rate performant (avg. load 100,000 msg/sec), fully automated and scalable, and can tolerate massive data spikes.
@@ -234,17 +234,17 @@ No. Segment cannot guarantee the order in which the events are delivered to an e
 
 ## Permissions
 
-The permissions required to create a Custom Destination are separate from those required to enable it on a source.
+The permissions required to create a Destination Function are separate from those required to enable it on a source.
 
-#### Creating a Custom Destination
+#### Creating a Destination Function
 
-Any `Workspace Member` can create or edit Destination Functions. However you need separate permissions to enable a custom destination (meaning to get data flowing to the destination).
+Any `Workspace Member` can create or edit Destination Functions. However you need separate permissions to enable a Destination Function (meaning to get data flowing to the destination).
 
-#### Enabling a Custom Destination on a source
+#### Enabling a Destination Function on a source
 
-You need to be a `Workspace Owner` OR `Source Admin` in order to connect any destination (including custom destinations) to a source.
+You need to be a `Workspace Owner` OR `Source Admin` in order to connect any destination (including Destination Functions) to a source.
 
-## Custom Destinations FAQs
+## Destination Functions FAQs
 
 **Can I create a Device-mode Destination?**
 
@@ -258,8 +258,8 @@ If you are a Partner, looking to publish your destination and distribute your Ap
 
 You can create up to 10 destination functions on your workspace. If you'd like to increase this limit, please reach out to us at beta@segment.com
 
-**How do I see and configure custom destinations created by other members on my workspace?**
+**How do I see and configure Destination Functions created by other members on my workspace?**
 
-This feature is coming soon. You can not yet view custom destinations created by other members of your workspace. However, you can configure any custom destination created by members of your workspace via the custom destinations overview page by sharing the direct URL.
+This feature is coming soon. You can not yet view Destination Functions created by other members of your workspace. However, you can configure any Destination Function created by members of your workspace via the Destination Functions overview page by sharing the direct URL.
 
-![Sharing and Configuring Custom Destination](images/destination_functions_share.jpg)
+![Sharing and Configuring Destination Function](images/destination_functions_share.jpg)

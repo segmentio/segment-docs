@@ -1,10 +1,10 @@
 ---
-title: Custom Sources
+title: Source Functions
 ---
 
 Functions are currently in developer preview. If you are interested in joining the developer preview, navigate to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
 
-Custom Sources allow you to gather data from thousands of Cloud Applications without having to worry about setting up or maintaining any infrastructure. Custom Sources are small pieces of code that you upload to a Segment Source to translate webhook or POST events into events or objects that match the [Segment Spec](https://segment.com/docs/connections/spec/).
+Source Functions allow you to gather data from thousands of Cloud Applications without having to worry about setting up or maintaining any infrastructure. Source Functions are small pieces of code that you upload to a Segment Source to translate webhook or POST events into events or objects that match the [Segment Spec](https://segment.com/docs/connections/spec/).
 
 Here are some example uses cases we've heard from customers that you can use Source Functions to implement in your organization:
 
@@ -30,7 +30,7 @@ To request access to Functions, navigate to the Build page of the catalog [here]
 
 ![Request Access](images/build_page.png)
 
-### Creating your custom source
+### Creating your Source Function
 Navigate to the Build page in the Catalog [here](https://app.segment.com/goto-my-workspace/build/catalog) and click on "Create Source".
 
 ![Embed Analytics.framework](images/create_flow.png)
