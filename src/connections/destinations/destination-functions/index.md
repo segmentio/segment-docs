@@ -2,9 +2,10 @@
 title: 'Destination Functions'
 ---
 
-Functions are currently in developer preview. If you are interested in joining the developer preview, navigate to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
+> note ""
+> **NOTE:** Functions are currently in developer preview. If you are interested in joining the developer preview, navigate to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
 
-Segment Custom Functions allows you to build and deploy Destination Functions on your workspace. By writing just a few lines of (serverless) code, you can transform your Segment events and send them to other APIs. Functions allow you to send your data into tools outside the Segment catalog, or to your own internal services.
+Destination Functions allows you to transform your Segment events and send them to other APIs by just writing a few lines of (serverless) code. Send your data into tools outside the Segment catalog, or to your own internal services.
 
 Here are some examples of how early adopters are building Destination Functions:
 
@@ -12,34 +13,28 @@ Here are some examples of how early adopters are building Destination Functions:
 - **ChargeBee Integration** : sync subscription information by sending events like `Subscription Started`, `Subscription Updated`, `Subscription Removed` etc.
 - **Typeform Surveys** : trigger a user dissatisfaction survey on Typeform when a user uninstalls your app, for example when an `App Uninstalled` event is fired.
 
-The illustration below explains how Functions can be used to build Destination Functions.
+The illustration below explains how you might utilize a Destination Function.
 
 ![When a page call is sent to Segment, Destination Functions transform the Segment event payload to match the destination's spec. The transformed Event is sent to the destination tool.](images/visual.png)
 
-## Requesting Access
+## Getting Started
 
-To request access to Functions, navigate to the Build page of the catalog [here](https://app.segment.com/goto-my-workspace/build/catalog).
-
-![Request Access](images/build_page.png)
-
-## Creating your Destination Function
+### Creating your Destination Function
 
 To create a Destination Function:
-1. [Go to the Segment Catalog](https://app.segment.com/goto-my-workspace/destinations/catalog) in the Segment App.
-2. Click the **Custom** category.
-3. Click the `+` button to create a Destination Function.
-4. Give the new destination a name, and click **Create**.
+1. Go to [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog) in the Segment App Catalog.
+2. Click the `+ New Function` button.
+3. Select `Destination Function` and click the `Build` button.
 
 ![Create a Destination Function](images/create.png)
 
-## Writing your Function
+### Writing your Function
 
-The Code Editor page appears after you click **Create**. Here, you can take full control of your destination logic. Start by replacing the generic endpoint provided with the API Endpoint for your tool or internal service.
+The Code Editor page appears after you click `Build` button. Here, you can take full control of your destination logic. Start by replacing the generic endpoint provided with the API Endpoint for your tool or internal service.
 
 Segment provides templates that make it simple to send data to the API Endpoint. You can delete the example code and implement your own Functions.
 
 ![Functions Editor](images/editor.png)
-
 
 Segment invokes your function once for every event it receives from configured sources (unless altered by [Destination Filters](https://segment.com/docs/connections/destinations/destination-filters/)). For each event, it invokes a handler corresponding to the Segment message type. You can define and export functions for every type in the [Segment Spec](https://segment.com/docs/connections/spec/) that you want to handle:
 
@@ -116,79 +111,77 @@ async function onAlias(event, settings) {
 If you do not supply a function for an event type, Segment throws an implicit `EventNotSupported` error.
 
 
-## Built-in Dependencies
+### Built-in Dependencies
 
-### lodash
+#### lodash
 
 A modern JavaScript utility library delivering modularity, performance & extras. [See the lodash docs](https://lodash.com/docs/4.17.11).
 
-### AWS
+#### AWS
 
 The official Amazon Web Services SDK. [See the AWS docs](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/).
 
-### Crypto
+#### Crypto
 
 The crypto module provides cryptographic functionality that includes a set of wrappers for OpenSSL's hash, HMAC, cipher, decipher, sign, and verify Functions. [See Crypto docs](https://nodejs.org/dist/latest-v10.x/docs/api/crypto.html).
 
-### Fetch API
+#### Fetch API
 
 The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. It also provides a global `fetch()` method that provides an easy, logical way to fetch resources asynchronously across the network. [See the Fetch API docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
 
-#### `fetch()`
+##### `fetch()`
 
 The `fetch()` method starts the process of fetching a resource from the network, returning a promise which is fulfilled once the response is available. [See docs](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch).
 
-#### `Request`
+##### `Request`
 
 The [`Request` interface](https://developer.mozilla.org/en-US/docs/Web/API/Request) of the Fetch API represents a resource request.
 
-#### `Response`
+##### `Response`
 
 The [`Response` interface](https://developer.mozilla.org/en-US/docs/Web/API/Response) of the Fetch API represents the response to a request.
 
-#### `Headers`
+##### `Headers`
 
 The [`Headers` interface](https://developer.mozilla.org/en-US/docs/Web/API/Headers) of the Fetch API allows you to perform various actions on HTTP request and response headers. These actions include retrieving, setting, adding to, and removing. A Headers object has an associated header list, which is initially empty and consists of zero or more name and value pairs.
 
-#### `URL`
+##### `URL`
 
 The [`URL` interface](https://developer.mozilla.org/en-US/docs/Web/API/URL) is used to parse, construct, normalize, and encode URLs. It works by providing properties which allow you to easily read and modify the components of a URL.
 
-#### `URLSearchParams`
+##### `URLSearchParams`
 
 The [`URLSearchParams` interface](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) defines utility methods to work with the query string of a URL.
 
-#### `atob()`
+##### `atob()`
 
 The [`atob()` function](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/atob) decodes a string of data which has been encoded using base-64 encoding.
 
-#### `btoa()`
+##### `btoa()`
 
 The [`btoa()` method](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa) creates a base-64 encoded ASCII string from a binary string.
 
-## ️Settings and Secrets
+### ️Settings and Secrets
 
-Settings allow you to parameterize the function so that you can use it across multiple sources which may have different configurations.
+Settings allow you to parameterize the Destination Function so that you can use it across multiple sources which may have different configurations.
 
-Today, you're allocated a single secret setting when you create a function: `apiKey`. You can access this at `settings.apiKey`. You should **always** use this field for storing the destination API Key instead of putting the key in your function code.
+By default, we include an `apiKey` string setting which can be accessed in your code as `settings.apiKey` as an example. You can replace this with any number of multiple setting types including string, boolean, array and text maps to support your use case. As needed, you also have the ability to mark a particular setting as required or encrypted. 
 
-**🚧 Coming Soon:** In the future, we plan to support multiple settings and additional settings types so you can further parameterize your function:
-
-- Configuration and dynamic mappings for user-configurable flow control in your function. This will allow developers to empower business stakeholders to configure their Destination Functions on a per-source basis.
+Common use cases for leveraging multiple settings include:
+- Configuration and dynamic mappings for user-configurable flow control in your Destination Function. Create a Destination Function once and allow your users to configure instances of that function multiple times with custom settings.
 
 - Additional secrets. This is for use cases like client credentials authentication models, or for when calling multiple external APIs, for example in enrichment workflows or when looking up stored user traits and identifiers by any `externalId` from Segment's Personas [Profile API](/docs/personas/profile-api).
 
-**⚠️ Note:** Until we provide a settings builder experience, do not store any secrets in source code for third party APIs.
+## Logging & Testing
 
-## ️Logging
+### ️Logging
 
 Segment captures and displays logs emitted by the `console.log()` method. You can use this for debugging, and to get an understanding of flow control during the function's execution.
 
-**⚠️ Note:** Do _not_ log sensitive data, such as personally-identifying information (PII), authentication tokens, HTTP headers, and similar data. Segment stores these logs, and they may be available to workspace members in the Segment dashboard. Be especially careful about logging PII and Secrets.
+> warning ""
+> **NOTE:** Do _not_ log sensitive data, such as personally-identifying information (PII), authentication tokens, HTTP headers, and similar data. Segment stores these logs, and they may be available to workspace members in the Segment dashboard. Be especially careful about logging PII and Secrets. Never leave log statements that print entire events or settings payloads.
 
-**Golden Rule: never leave log statements that print entire events or settings payloads.**
-
-## Testing your Destination Function
+### Testing
 
 Test your code directly from the Functions editor. Use the `Send Test Event` button and review the test event to make sure the function works as expected.
 
@@ -199,14 +192,25 @@ In the debugger panel, check the two outputs. The **Callback Return** and the **
 - **Callback Return** - This shows what data the function returned, or the error it threw.
 - **Log Output** - The raw log. Any messages to `console.log()` from the function appear here.
 
+## Management
 
-## Saving and enabling your Destination Function
+### Permissions
 
-Once you have tested your Function, you can click `Save`. You can then click the tile to edit or configure the destination by connecting a source.
+The permissions required to create and manage a Destination Function are separate from those required to enable it on a source.
 
-![Saving and enabling Destination Function](images/workflow.gif)
+Currently, permissions required for creation and editing of Destination Functions are strict.
 
-When you enable the destination, you get all of Segment's destinations infrastructure and features: reliable retries, transparency and visibility into delivery metrics, and the ability to filter and control what data is passed to the Function destination.
+1. You must be a **Workspace Owner** in order to create a function.
+2. You must be a **Workspace Owner** in order to edit/delete a function.
+
+Once the Destination Function has been created, the ability to enable it on a source is the same as a normal destination. You need to be a `Workspace Owner` OR `Source Admin`.
+
+### Editing & Deleting
+
+If you are a **Workspace Owner**, you can manage your Destination Function under the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click on the function you wish to manage and the sidesheet menu will allow you to _Connect, Edit or Delete_ your function.
+
+![Editing or deleting your Destination Function](images/edit-or-delete.gif)
+
 
 ### Monitoring your Destination Function.
 
@@ -232,34 +236,12 @@ We don't retry where there are signs of an expired API key or failed payment. Ho
 
 No. Segment cannot guarantee the order in which the events are delivered to an endpoint.
 
-## Permissions
+## FAQs
 
-The permissions required to create a Destination Function are separate from those required to enable it on a source.
-
-#### Creating a Destination Function
-
-Any `Workspace Member` can create or edit Destination Functions. However you need separate permissions to enable a Destination Function (meaning to get data flowing to the destination).
-
-#### Enabling a Destination Function on a source
-
-You need to be a `Workspace Owner` OR `Source Admin` in order to connect any destination (including Destination Functions) to a source.
-
-## Destination Functions FAQs
-
-**Can I create a Device-mode Destination?**
+**Can I create a device-mode Destination?**
 
 Functions enable you to write and deploy Cloud-mode Destinations. We're in the early phases of exploration and discovery for supporting customer "web plugins" for custom device-mode destinations and other use cases, but this is unsupported today.
 
 **How do I publish a destination to the Segment catalog instead of my own workspace?**
 
 If you are a Partner, looking to publish your destination and distribute your App through Segment Catalog, visit the [Developer Center](https://segment.com/partners/developer-center/) and check out our [partner docs](/docs/partners).
-
-**How many destination functions can I create in a workspace?**
-
-You can create up to 10 destination functions on your workspace. If you'd like to increase this limit, please reach out to us at beta@segment.com
-
-**How do I see and configure Destination Functions created by other members on my workspace?**
-
-This feature is coming soon. You can not yet view Destination Functions created by other members of your workspace. However, you can configure any Destination Function created by members of your workspace via the Destination Functions overview page by sharing the direct URL.
-
-![Sharing and Configuring Destination Function](images/destination_functions_share.jpg)
