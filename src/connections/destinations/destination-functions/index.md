@@ -30,9 +30,9 @@ To create a Destination Function:
 
 ### Writing your Function
 
-The Code Editor page appears after you click `Build` button. Here, you can take full control of your destination logic. Start by replacing the generic endpoint provided with the API Endpoint for your tool or internal service.
+The Code Editor page appears after you click `Build` button. Here, you can take full control of your destination logic. Segment provides templates that make it simple to send data to the API Endpoint and offer example code to help you get started.
 
-Segment provides templates that make it simple to send data to the API Endpoint. You can delete the example code and implement your own Functions.
+Start by replacing the generic endpoint provided with the API Endpoint for your tool or internal service.
 
 ![Functions Editor](images/editor.png)
 
