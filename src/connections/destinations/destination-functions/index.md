@@ -174,7 +174,7 @@ async function onRequest(request, settings) {
 }
 ```
 
-You can include multiple setting types including string, boolean, array and text maps to support your use case. As needed, you also have the ability to mark a particular setting as required or encrypted. 
+You can include multiple setting types including string, boolean, array and text maps to support your use case. As needed, you also have the ability to mark a particular setting as required and/or encrypted. 
 
 Common use cases for leveraging multiple settings include:
 - Configuration and dynamic mappings for user-configurable flow control in your Destination Function. Create a Destination Function once and allow your users to configure instances of that function multiple times with custom settings.
@@ -192,7 +192,7 @@ Segment captures and displays logs emitted by the `console.log()` method. You ca
 
 ### Testing
 
-Test your code directly from the Functions editor. Use the `Run` button and review the test event to make sure the function works as expected.
+Test your code directly from the Functions editor. You can construct any type of test event within the UI and hit the `Run` button to make sure the function works as expected.
 
 In the debugger panel, check the two outputs. The **Callback Return** and the **Log Output**.
 
@@ -203,7 +203,7 @@ In the debugger panel, check the two outputs. The **Callback Return** and the **
 
 ## Creation & Deployment
 
-Once you're satisfied with your Destination Function, you can create your function by clicking the `Configure` button on the bottom right of the editor. This brings you to a screen to name your function and optionally add additional details that will be displayed in your workspace. Hit `Create Function` and your Destination Function will be ready to be used within your workspace.
+Once you've completed writing your Destination Function, you can create your function by clicking the `Configure` button on the bottom right of the editor. This brings you to a screen to name your function and optionally add additional details that will be displayed in your workspace. Hit `Create Function` and your Destination Function will be ready to be used within your workspace.
 
 If you're editing an existing function, you will have the option to `Save` changes without impacting your deployed function. Alternatively, you can choose to `Save & Deploy` to push changes to your existing function.
 

@@ -193,6 +193,8 @@ async function onRequest(request, settings) {
 }
 ```
 
+You can include multiple setting types including string, boolean, array and text maps to support your use case. As needed, you also have the ability to mark a particular setting as required and/or encrypted. 
+
 Settings can be very useful to help build a function that can be re-used without having to modify any code in the Function itself. For example, customers can use settings to:
 * Build a function that can be rolled out without code changes to various Shopify stores
 * Source payment data from a payment process and have a setting to denote the region for that function
@@ -238,7 +240,7 @@ Test your code directly from the Functions Editor with two options:
 
 Start by copying the webhook URL from the sidebar or "Auto-fill via webhook" dialog to your upstream tool or service to receive payloads with which you can use to test your function code.
 
-We begin automatically listening to your webhook URL for any events which are triggered.
+We begin automatically listening to your webhook URL for any JSON events (ie. `Content-Type: application/json`) which are triggered. 
 
 Click `Run` to test the event against your function code.
 
@@ -248,7 +250,7 @@ Alternatively, you can manually include your own JSON payload with relevant head
 
 ## Creation & Deployment
 
-Once you're satisfied with your Source Function, you can deploy your code by clicking the `Configure` button on the bottom right of the editor. This brings you to a screen to name your function and optionally add additional details that will be displayed in your workspace. Hit `Create Function` and your Source Function will be ready to be used within your workspace.
+Once you've completed writing your Source Function, you can create your function by clicking the `Configure` button on the bottom right of the editor. This brings you to a screen to name your function and optionally add additional details that will be displayed in your workspace. Hit `Create Function` and your Source Function will be ready to be used within your workspace.
 
 If you're editing an existing function, you will have the option to `Save` changes without impacting your deployed function. Alternatively, you can choose to `Save & Deploy` to push changes to your existing function.
 
@@ -256,7 +258,7 @@ If you're editing an existing function, you will have the option to `Save` chang
 
 ### Permissions
 
-The permissions required to create and manage a Destination Function are separate from those required to enable it on a source.
+The permissions required to create and manage a Source Function are separate from those required to enable it on a source.
 
 Currently, you must be a **Workspace Owner** in order to create, edit or delete a function.
 
@@ -335,7 +337,7 @@ Finally send data with calls to `Segment.track()`, `Segment.identify()`, `Segmen
 
 Source Functions created before January 28, 2020 were created as one-off _instances_. This means that you create it once and it can be used within your workspace a single time. Any changes you make to the code of this Source Function will automatically update for this single instance. 
 
-This behavior has now been deprecated and all existing Source Functions have been moved to the new model. This means that when you create a Source Function, you're creating a _class_ which can be deployed once, and _instances_ of this class can be configured in your workspace multiple times.
+This behavior has now been deprecated and all existing Source Functions have been moved to the new model. This means that when you create a Source Function, you're creating a _class_ which can be deployed once, and _instances_ of this class can be configured in your workspace multiple times. The _class_ is parameterized by the function settings.
 
 > note ""
 > **NOTE:** Updates made to your Source Function code, will not automatically be deployed to configured _instances_ within your workspace. We are working to make this experience more seamless but currently, you will need to delete the configured _instance_ and re-configured in your workspace to have those updates included.
