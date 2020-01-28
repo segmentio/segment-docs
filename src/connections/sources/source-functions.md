@@ -236,7 +236,7 @@ Test your code directly from the Functions Editor with two options:
 
 #### Webhook Catcher
 
-Start by copying the webhook URL from the right hand screen to your upstream tool or service to receive sample payloads with which you can use to test your function code.
+Start by copying the webhook URL from the sidebar or "Auto-fill via webhook" dialog to your upstream tool or service to receive payloads with which you can use to test your function code.
 
 We begin automatically listening to your webhook URL for any events which are triggered.
 
