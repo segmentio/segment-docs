@@ -113,7 +113,7 @@ sections:
       title: What can you do with cloud source data?
     - path: /connections/sources/custom-domains
       title: Set up a custom domain proxy in Segment
-    - path: /connections/sources/custom-sources
+    - path: /connections/sources/source-functions
       title: Source Functions
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
