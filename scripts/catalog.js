@@ -235,6 +235,13 @@ const updateDestinations = async () => {
     })
 
     let url = `connections/destinations/catalog/${slug}`
+    
+    let settings = destination.settings
+    settings.sort((a, b) => {
+      if(a.name < b.name) { return -1; }
+      if(a.name > b.name) { return 1; }
+      return 0;
+    })
 
     let updatedDestination = {
       display_name: destination.display_name,
@@ -255,7 +262,7 @@ const updateDestinations = async () => {
       platforms: destination.platforms,
       browserUnbundlingSupported: destination.browserUnbundlingSupported,
       browserUnbundlingPublic: destination.browserUnbundlingPublic,
-      settings: destination.settings,
+      settings,
       connection_modes,
       previous_names: destination.previous_names
     }
