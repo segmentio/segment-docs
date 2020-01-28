@@ -336,7 +336,7 @@ Next:
 
 Finally send data with calls to `Segment.track()`, `Segment.identify()`, `Segment.group()` and `Segment.set()` instead of returning an object with `events` and `objects` arrays.
 
-### Legacy Sources 
+### Legacy Source Function Model 
 
 Source Functions created before January 28, 2020 were created as one-off _instances_. This means that you create it once and it can be used within your workspace a single time. Any changes you make to the code of this Source Function will automatically update for this single instance. 
 
