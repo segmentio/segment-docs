@@ -29,7 +29,7 @@ To create a Destination Function:
 
 ![Create a Destination Function](images/create.png)
 
-### Writing your Function
+### Writing your function
 
 The Code Editor page appears after you click `Build` button. Here, you can take full control of your destination logic. Segment provides templates that make it simple to send data to the API Endpoint and offer example code to help you get started.
 
