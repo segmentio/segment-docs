@@ -183,7 +183,7 @@ Segment captures and displays logs emitted by the `console.log()` method. You ca
 
 ### Testing
 
-Test your code directly from the Functions editor. Use the `Send Test Event` button and review the test event to make sure the function works as expected.
+Test your code directly from the Functions editor. Use the `Run` button and review the test event to make sure the function works as expected.
 
 In the debugger panel, check the two outputs. The **Callback Return** and the **Log Output**.
 
@@ -191,6 +191,13 @@ In the debugger panel, check the two outputs. The **Callback Return** and the **
 
 - **Callback Return** - This shows what data the function returned, or the error it threw.
 - **Log Output** - The raw log. Any messages to `console.log()` from the function appear here.
+
+## Creation & Deployment
+
+Once you're satisfied with your Destination Function, you can deploy your code by clicking the `Configure` button on the bottom right of the editor. This brings you to a screen to name your function and optionally add additional details that will be displayed in your workspace. Hit `Create Function` and your Destination Function will be ready to be used within your workspace.
+
+If you're editing an existing function, you will have the option to `Save` changes without impacting your deployed function. Alternatively, you can choose to `Save & Deploy` to push changes to your existing function.
+
 
 ## Management
 
