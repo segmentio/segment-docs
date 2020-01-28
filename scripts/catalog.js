@@ -238,15 +238,15 @@ const updateDestinations = async () => {
     
     let settings = destination.settings
     settings.sort((a, b) => {
-      if(a.name < b.name) { return -1; }
-      if(a.name > b.name) { return 1; }
+      if(a.display_name < b.display_name) { return -1; }
+      if(a.display_name > b.display_name) { return 1; }
       return 0;
     })
     settings.forEach(setting => {
       if (setting.settings.length > 0) {
         setting.settings.sort((a, b) => {
-          if(a.name < b.name) { return -1; }
-          if(a.name > b.name) { return 1; }
+          if(a.display_name < b.display_name) { return -1; }
+          if(a.display_name > b.display_name) { return 1; }
           return 0;
         })
       }
