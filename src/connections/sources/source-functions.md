@@ -6,7 +6,7 @@ redirect_from: '/docs/connections/sources/custom-sources/'
 > note ""
 > **NOTE:** Functions are currently in developer preview. If you are interested in joining the developer preview, navigate to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
 
-Source Functions allow you to gather data from thousands of Cloud Applications without having to worry about setting up or maintaining any infrastructure. Source Functions are small pieces of code that you upload to a Segment Source to translate webhook or POST events into events or objects that match the [Segment Spec](https://segment.com/docs/connections/spec/).
+Source Functions allow you to gather data from thousands of 3rd-party applications without having to worry about setting up or maintaining any infrastructure. Source Functions are small pieces of code that you create, edit and deploy in Segment to receive any webhooks and generate Segment events or objects that match the [Segment Spec](https://segment.com/docs/connections/spec/).
 
 Here are some example uses cases we've heard from customers that you can use Source Functions to implement in your organization:
 
@@ -23,15 +23,15 @@ Here is an example of what a Source Function could be used to do with a webhook 
 ### Creating your Source Function
 
 To create a Source Function:
-1. Go to [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog) in the Segment App Catalog.
-2. Click the `+ New Function` button.
+1. Go to [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog) in the Segment Catalog within your workspace.
+2. Click the `New Function` button.
 3. Select `Source Function` and click the `Build` button.
 
 ![Create a Source Function](images/create.png)
 
 ### Writing your Function
 
-The Code Editor page appears after you click `Build` button. Here, you can take full control of your source logic to transform a webhook payload into events or objects to be sent downstream. Segment provides templates that make it simple to ingest data from your upstream webhook and offer example code to help you get started.
+After you click `Build` button, you will be redirected to the code editor. Here, you can take full control of your source logic to transform a webhook payload into events or objects to be sent downstream. Segment provides templates that make it simple to ingest data from your upstream webhook and offer example code to help you get started.
 
 ![Functions Editor](images/editor.png)
 
@@ -182,12 +182,10 @@ The following dependencies are pre-installed in the function environment:
 Additional dependences are not currently supported using the web based IDE, but we're looking to add them in the near future. Until then [contact us](https://segment.com/help/contact/) to request additional dependencies.
 
 ### Settings and Secrets
-Settings allow you to paramaterize your Source Function. A common pattern is to configure settings for an API url and secret API key, so you can use the same code with different settings for different workspaces.
 
-*Encrypted Settings* <br />
-Choosing the encrypted option will mean your settings will be encrypted end to end. This setting should be used for any API keys or sensitive information.
+Settings allow you to pass different variables to your function. A common pattern is to configure settings for an API url and secret API key, so you can use the same code with different settings for different workspaces.
 
-To access a settings in your code, simply use the dot notation on the settings object:
+For example, if we include an `settingKey` string setting you will be able to access this in your code using dot notation on the settings object as follows:
 
 ```js
 async function onRequest(request, settings) {
@@ -234,19 +232,19 @@ The source slug is the name of the source as it appears in the URL.
 
 ### Testing
 
-Test your code directly from the Functions Editor. 
+Test your code directly from the Functions Editor with two options: 
 
 #### Webhook Catcher
 
 Start by copying the webhook URL from the right hand screen to your upstream tool or service to receive sample payloads with which you can use to test your function code.
 
-We begin automatically listening to your webhook URL for any events which are triggered. You can store up to XX events to test with. If you exceed this limit, we will override your events starting with the oldest.
+We begin automatically listening to your webhook URL for any events which are triggered.
 
 Click `Run` to test the event against your function code.
 
 #### Manual Input
 
-Alternatively, you can manually include your own JSON payload with relevant headers. In this view, you also have the option to switch back to the webhook catcher by clicking on `Auto-fill via Webhook`.
+Alternatively, you can manually include your own JSON payload with relevant headers before hitting the `Run` button. In this view, you also have the option to switch back to the webhook catcher by clicking on `Auto-fill via Webhook`.
 
 ## Creation & Deployment
 
@@ -258,18 +256,15 @@ If you're editing an existing function, you will have the option to `Save` chang
 
 ### Permissions
 
-The permissions required to create and manage a Source Function are separate from those required to enable it on a source.
+The permissions required to create and manage a Destination Function are separate from those required to enable it on a source.
 
-Currently, permissions required for creation and editing of Source Functions are strict.
+Currently, you must be a **Workspace Owner** in order to create, edit or delete a function.
 
-1. You must be a **Workspace Owner** in order to create a function.
-2. You must be a **Workspace Owner** in order to edit/delete a function.
-
-Once the Source Function has been created, the ability to enable it on a source is the same as a normal Source. You need to be a `Workspace Owner` OR `Source Admin`.
+Once the Source Function has been created, you can enable it as you would a normal source. You need to be a `Workspace Owner` or `Source Admin`.
 
 ### Editing & Deleting
 
-If you are a **Workspace Owner**, you can manage your Source Function under the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click on the function you wish to manage and the sidesheet menu will allow you to _Connect, Edit or Delete_ your function.
+If you are a **Workspace Owner**, you can manage your Source Function under the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click on the function you wish to manage and the sidesheet menu will allow you to connect, edit or delete your function.
 
 ![Editing or deleting your Source Function](images/edit-or-delete.gif)
 
@@ -357,7 +352,7 @@ The maxium payload size for an incoming webhook payload is 2MB.
 
 **What is the timeout for a function to execute?**
 
-The lambda execution limit is to 1 second.
+The lambda execution limit is 1 second.
 
 **What does "ReferenceError: exports is not defined" mean?**
 

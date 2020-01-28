@@ -6,9 +6,9 @@ redirect_from: '/docs/connections/destinations/custom-destinations/'
 > note ""
 > **NOTE:** Functions are currently in developer preview. If you are interested in joining the developer preview, navigate to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
 
-Destination Functions allows you to transform your Segment events and send them to other APIs by just writing a few lines of (serverless) code. Send your data into tools outside the Segment catalog, or to your own internal services.
+Destination Functions allow you to transform your Segment events and send them to other APIs by just writing a few lines of code. Send your data into tools outside the Segment catalog, or to your own internal services.
 
-Here are some examples of how early adopters are building Destination Functions:
+Here are some examples of Destination Functions are being used by early adopters:
 
 - **Microsoft Teams Destination** : trigger notifications/messages on a Teams workspace on important events like `Signed Up` or `Order Placed`.
 - **ChargeBee Integration** : sync subscription information by sending events like `Subscription Started`, `Subscription Updated`, `Subscription Removed` etc.
@@ -23,15 +23,15 @@ The illustration below explains how you might utilize a Destination Function.
 ### Creating your Destination Function
 
 To create a Destination Function:
-1. Go to [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog) in the Segment App Catalog.
-2. Click the `+ New Function` button.
+1. Go to [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog) in the Segment Catalog within your workspace.
+2. Click the `New Function` button.
 3. Select `Destination Function` and click the `Build` button.
 
 ![Create a Destination Function](images/create.png)
 
 ### Writing your Function
 
-The Code Editor page appears after you click `Build` button. Here, you can take full control of your destination logic. Segment provides templates that make it simple to send data to the API Endpoint and offer example code to help you get started.
+After you click `Build` button, you will be redirected to the code editor. Here, you can take full control of your destination logic. Segment provides templates that make it simple to send data to the API Endpoint and offer example code to help you get started.
 
 Start by replacing the generic endpoint provided with the API Endpoint for your tool or internal service.
 
@@ -164,9 +164,17 @@ The [`btoa()` method](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrW
 
 ### ️Settings and Secrets
 
-Settings allow you to parameterize the Destination Function so that you can use it across multiple sources which may have different configurations.
+Settings allow you to pass different variables to your function so that you can use it across multiple sources which may have different configurations.
 
-By default, we include an `apiKey` string setting which can be accessed in your code as `settings.apiKey` as an example. You can replace this with any number of multiple setting types including string, boolean, array and text maps to support your use case. As needed, you also have the ability to mark a particular setting as required or encrypted. 
+For example, if we include an `settingKey` string setting you will be able to access this in your code using dot notation on the settings object as follows:
+
+```js
+async function onRequest(request, settings) {
+  let settingValue = settings.settingKey;
+}
+```
+
+You can include multiple setting types including string, boolean, array and text maps to support your use case. As needed, you also have the ability to mark a particular setting as required or encrypted. 
 
 Common use cases for leveraging multiple settings include:
 - Configuration and dynamic mappings for user-configurable flow control in your Destination Function. Create a Destination Function once and allow your users to configure instances of that function multiple times with custom settings.
@@ -177,7 +185,7 @@ Common use cases for leveraging multiple settings include:
 
 ### ️Logging
 
-Segment captures and displays logs emitted by the `console.log()` method. You can use this for debugging, and to get an understanding of flow control during the function's execution.
+Segment captures and displays logs emitted by the `console.log()` method. You can use this for debugging, and to get an understanding of a function's execution flow.
 
 > warning ""
 > **NOTE:** Do _not_ log sensitive data, such as personally-identifying information (PII), authentication tokens, HTTP headers, and similar data. Segment stores these logs, and they may be available to workspace members in the Segment dashboard. Be especially careful about logging PII and Secrets. Never leave log statements that print entire events or settings payloads.
@@ -195,7 +203,7 @@ In the debugger panel, check the two outputs. The **Callback Return** and the **
 
 ## Creation & Deployment
 
-Once you're satisfied with your Destination Function, you can deploy your code by clicking the `Configure` button on the bottom right of the editor. This brings you to a screen to name your function and optionally add additional details that will be displayed in your workspace. Hit `Create Function` and your Destination Function will be ready to be used within your workspace.
+Once you're satisfied with your Destination Function, you can create your function by clicking the `Configure` button on the bottom right of the editor. This brings you to a screen to name your function and optionally add additional details that will be displayed in your workspace. Hit `Create Function` and your Destination Function will be ready to be used within your workspace.
 
 If you're editing an existing function, you will have the option to `Save` changes without impacting your deployed function. Alternatively, you can choose to `Save & Deploy` to push changes to your existing function.
 
@@ -206,16 +214,13 @@ If you're editing an existing function, you will have the option to `Save` chang
 
 The permissions required to create and manage a Destination Function are separate from those required to enable it on a source.
 
-Currently, permissions required for creation and editing of Destination Functions are strict.
+Currently, you must be a **Workspace Owner** in order to create, edit or delete a function.
 
-1. You must be a **Workspace Owner** in order to create a function.
-2. You must be a **Workspace Owner** in order to edit/delete a function.
-
-Once the Destination Function has been created, the ability to enable it on a source is the same as a normal destination. You need to be a `Workspace Owner` OR `Source Admin`.
+Once the Destination Function has been created, you can connect it to any source within your workspace. You need to be a `Workspace Owner` or `Source Admin`.
 
 ### Editing & Deleting
 
-If you are a **Workspace Owner**, you can manage your Destination Function under the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click on the function you wish to manage and the sidesheet menu will allow you to _Connect, Edit or Delete_ your function.
+If you are a **Workspace Owner**, you can manage your Destination Function under the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click on the function you wish to manage and the sidesheet menu will allow you to connect, edit or delete your function.
 
 ![Editing or deleting your Destination Function](images/edit-or-delete.gif)
 
