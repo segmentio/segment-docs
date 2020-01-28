@@ -339,9 +339,6 @@ Source Functions created before January 28, 2020 were created as one-off _instan
 
 This behavior has now been deprecated and all existing Source Functions have been moved to the new model. This means that when you create a Source Function, you're creating a _class_ which can be deployed once, and _instances_ of this class can be configured in your workspace multiple times. The _class_ is parameterized by the function settings.
 
-> note ""
-> **NOTE:** Updates made to your Source Function code, will not automatically be deployed to configured _instances_ within your workspace. We are working to make this experience more seamless but currently, you will need to delete the configured _instance_ and re-configured in your workspace to have those updates included.
-
 ## FAQs
 
 **What is the retry policy for a webhook payload?**
