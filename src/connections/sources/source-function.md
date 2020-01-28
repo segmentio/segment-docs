@@ -2,7 +2,8 @@
 title: Source Functions
 ---
 
-Functions are currently in developer preview. If you are interested in joining the developer preview, navigate to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
+> note ""
+> **NOTE:** Functions are currently in developer preview. If you are interested in joining the developer preview, navigate to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
 
 Source Functions allow you to gather data from thousands of Cloud Applications without having to worry about setting up or maintaining any infrastructure. Source Functions are small pieces of code that you upload to a Segment Source to translate webhook or POST events into events or objects that match the [Segment Spec](https://segment.com/docs/connections/spec/).
 
@@ -16,43 +17,23 @@ Here is an example of what a Source Function could be used to do with a webhook 
 
 ![Embed Analytics.framework](images/drift_example.png)
 
-## Quick Links
-
-* [Getting Started](/docs/connections/sources/custom/#getting-started)
-* [Debugging and Troubleshooting](/docs/connections/sources/custom/#debugging-and-troubleshooting)
-* [FAQ](/docs/connections/sources/custom/#faq)
-
 ## Getting Started
 
-### Requesting Access
-
-To request access to Functions, navigate to the Build page of the catalog [here](https://app.segment.com/goto-my-workspace/build/catalog).
-
-![Request Access](images/build_page.png)
-
 ### Creating your Source Function
-Navigate to the Build page in the Catalog [here](https://app.segment.com/goto-my-workspace/build/catalog) and click on "Create Source".
 
-![Embed Analytics.framework](images/create_flow.png)
+To create a Source Function:
+1. Go to [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog) in the Segment App Catalog.
+2. Click the `+ New Function` button.
+3. Select `Source Function` and click the `Build` button.
 
-### Copy your webhook URL to the upstream source or tool
+![Create a Source Function](images/create.png)
 
-Back on the Source Overview page, copy the source function URL and paste it into your upstream webhook settings. Once you've added the event, then trigger an event in that source. You should now see events appearing in the debugger.
+### Writing your Function
 
-### Write your source
-Next step is to write the source to transform the webhook payload so that it can send events or objects downstream.
+The Code Editor page appears after you click `Build` button. Here, you can take full control of your source logic to transform a webhook payload into events or objects to be sent downstream. Segment provides templates that make it simple to ingest data from your upstream webhook and offer example code to help you get started.
 
-**Building your function**
+![Functions Editor](images/editor.png)
 
-From the source overview page, click **Write New Function** to open the web editor.
-
-![Embed Analytics.framework](images/write_new_function.png)
-
-A new tab containing the development environment opens. The editor first appears with a template that you can use to get started. There are three key areas to help you get started: Editor, Testing Environment and Deploy.
-
-![Main Editor](images/templates.png)
-
-**Accessing the payload** <br />
 You can access the payload from the `request` variable like this:
 
 ```js
@@ -67,49 +48,7 @@ Note that your handler function is `async`.
 
 The first `request` argument contains everything about the incoming webhook request. You access the request body through a `json()` or `text()` helper function, the request headers with the [Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers) interface, and the request URL and query parameters with the [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) interface.
 
-**Templates**
-
-To help you get started, we've written some templates that are accesible within the app. These templates are available under the "templates" tab inside of the Function editor.
-
-You can view the full list of templates available [here](https://github.com/segmentio/functions-library/tree/master/sources).
-
-### Testing your Function
-
-**Using the webhook catcher**
-
-You can test out your function using the webhook catcher. The webhook catcher allows you to "catch" the sample set of data from your upstream tool using the webhook URL. You can then use this to test your function to ensure it's performing how you would expect.
-
-**Press Capture Events**<br />
-
-![Capture Events](images/capture_event.png)
-
-Once you press the "Capture Events" button, we will listen to your webhook URL for 5 minutes. During this time, you should trigger an event from the upstream source. If there are already events going through your webhook URL, then it will grab the first event it can. These events will persist for you until you overwrite them.
-
-_Note_: You can have up to 10 captured events to test with. If you capture more than 10, then it will start to override your events starting with the oldest.
-
-**Save and Test**<br/>
-Press the "Save and Test" button above the payload editor and you will execute your Function with the given payload.
-
-![Save and Test](images/successful_event.png)
-
-**Accessing settings**
-
-You can access custom settings values through the following:
-
-```js
-async function onRequest(request, settings) {
-  const apiURL, apiKey = { settings }
-
-  // or directly
-  settings.apiKey
-}
-```
-
-You access all the setting values by a key on the `settings` object.
-
-A common pattern is to configure settings for an API url and secret API key, so you can use the same code with different settings for different workspaces.
-
-**Sending messages**
+#### Sending Messages
 
 You can send messages to the Segment API through the following:
 
@@ -152,7 +91,15 @@ The `Segment` module has `Segment.identify()`, `Segment.track()`, `Segment.group
 
 Behind the scenes, the `Segment` module appends messages to an array and will send messages to the Segment [Tracking](https://segment.com/docs/connections/sources/catalog/libraries/server/http/) and [Object](https://segment.com/docs/connections/sources/catalog/libraries/server/object-api/) API provided your function returns without error.
 
-**Events**
+You can access header data via the `request.headers` property and the [Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers) interface. For example:"
+
+```js
+async function onRequest(request, settings) {
+  const requestHeader = request.headers.get('Content-Type')
+}
+```
+
+##### Events
 
 Events are used to trigger real-time workflows in downstream streaming destinations. These events are compatible with both streaming destinations and warehouses. Events should match the following return format from the function:
 
@@ -191,7 +138,7 @@ Events are used to trigger real-time workflows in downstream streaming destinati
 
 For more details on the events that are supported, see the [HTTP](https://segment.com/docs/connections/sources/catalog/libraries/server/http/) and [Object](https://segment.com/docs/connections/sources/catalog/libraries/server/object-api/) API documentation.
 
-**Objects**
+##### Objects
 
 Objects are pieces of data that you can ETL (extract, transform, load) to your warehouse. Objects are not compatible with streaming destinations. For more details about what is supported with objects, review the [Objects API documentation](/docs/connections/sources/catalog/libraries/server/object-api/).
 
@@ -218,7 +165,7 @@ Objects are pieces of data that you can ETL (extract, transform, load) to your w
   </tr>
 </table>
 
-**Dependencies**
+### Built-in Dependencies
 
 The following dependencies are pre-installed in the function environment:
 
@@ -233,51 +180,8 @@ The following dependencies are pre-installed in the function environment:
 
 Additional dependences are not currently supported using the web based IDE, but we're looking to add them in the near future. Until then [contact us](https://segment.com/help/contact/) to request additional dependencies.
 
-### Deploy your source
-
-Click **Save and Deploy** to deploy your function. This deploys your function and overrides any currently deployed function for that source. You can refresh the source overview, and when you see "Function uploaded", you know that the function has been deployed successfully.
-
-## Debugging and Troubleshooting
-
-To debug your function in the web IDE, you can use the built in testing environment on the right hand side of the development centre. When an error occurs in the payload, you can see the error in the output view:
-
-![Debugging](images/Debugging.png)
-
-**Accessing Header data**
-
-You can access header data via the `request.headers` property and the [Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers) interface. For example:"
-
-```js
-async function onRequest(request, settings) {
-  const requestHeader = request.headers.get('Content-Type')
-}
-```
-
-**Manually triggering a function**
-
-Manually send a payload to source function with curl:
-
-```bash
-curl -X POST \
-  'https://fn.segmentapis.com/?b=your-key-here' \
-  -H 'Content-Type: application/json' \
-  -d '{"key": "value"}'
-```
-
-Alternatively the key can be in an HTTP header
-
-```bash
-curl -X POST \
-  'https://fn.segmentapis.com/' \
-  -H 'X-Segment-Source-Function-Token: your-key-here' \
-  -H 'Content-Type: application/json' \
-  -d '{"key": "value"}'
-```
-
-## Settings and Secrets
-Settings allow you to paramaterize your function so that you can use it across multiple source functions which may have different configuration.
-
-![Source Function.Settings](images/source_function_settings.png)
+### Settings and Secrets
+Settings allow you to paramaterize your Source Function. A common pattern is to configure settings for an API url and secret API key, so you can use the same code with different settings for different workspaces.
 
 *Encrypted Settings* <br />
 Choosing the encrypted option will mean your settings will be encrypted end to end. This setting should be used for any API keys or sensitive information.
@@ -294,11 +198,10 @@ Settings can be very useful to help build a function that can be re-used without
 * Build a function that can be rolled out without code changes to various Shopify stores
 * Source payment data from a payment process and have a setting to denote the region for that function
 
-🚧 Coming Soon: Network Access in Source Functions will allow you to send network calls to Segment and external APIs within the function.
 
-**⚠️ Note:** Do not use your function to log sensitive data such as personally-identifying information (PII), authentication tokens, HTTP headers, and similar data. Segment stores these logs, and they may be available to workspace members in the Segment dashboard. Be especially careful about sending sensitive data when making external network requests to services that you do not control.
+## Logging & Testing
 
-## Accessing Logs
+### Logging
 
 The command line client allows you to access runtime logs of your Functions. These can be useful in seeing errors and help you debug your functions on an ongoing basis.
 
@@ -328,27 +231,53 @@ source-functions-cli logs --source <source slug>
 
 The source slug is the name of the source as it appears in the URL.
 
-## FAQ
+### Testing
 
-**What is the retry policy for a webhook payload?**
+Test your code directly from the Functions Editor. 
 
-The webhook payload retries up to 5 times with an exponential backoff for the function in the event that there is a failure with the function. After 5 attempts, the message is dropped.
+#### Webhook Catcher
 
-**What is the maxium payload size for the incoming webhook?**
+Start by copying the webhook URL from the right hand screen to your upstream tool or service to receive sample payloads with which you can use to test your function code.
 
-The maxium payload size for an incoming webhook payload is 2MB.
+We begin automatically listening to your webhook URL for any events which are triggered. You can store up to XX events to test with. If you exceed this limit, we will override your events starting with the oldest.
 
-**What is the timeout for a function to execute?**
+Click `Run` to test the event against your function code.
 
-The lambda execution limit is to 1 second.
+#### Manual Input
 
-**What does "ReferenceError: exports is not defined" mean?**
+Alternatively, you can manually include your own JSON payload with relevant headers. In this view, you also have the option to switch back to the webhook catcher by clicking on `Auto-fill via Webhook`.
 
-You are using a deprecated style of writing functions. See the "Migrating Function Code (Legacy)" section.
+## Creation & Deployment
 
-## Legacy Source Functions
+Once you're satisfied with your Source Function, you can deploy your code by clicking the `Configure` button on the bottom right of the editor. This brings you to a screen to name your function and optionally add additional details that will be displayed in your workspace. Hit `Create Function` and your Source Function will be ready to be used within your workspace.
 
-Functions created before Sept. 11, 2019 were written with a different JavaScript interface than documented above, and were optionally managed with an experiment API and CLI tool.
+If you're editing an existing function, you will have the option to `Save` changes without impacting your deployed function. Alternatively, you can choose to `Save & Deploy` to push changes to your existing function.
+
+## Management
+
+### Permissions
+
+The permissions required to create and manage a Source Function are separate from those required to enable it on a source.
+
+Currently, permissions required for creation and editing of Source Functions are strict.
+
+1. You must be a **Workspace Owner** in order to create a function.
+2. You must be a **Workspace Owner** in order to edit/delete a function.
+
+Once the Source Function has been created, the ability to enable it on a source is the same as a normal Source. You need to be a `Workspace Owner` OR `Source Admin`.
+
+### Editing & Deleting
+
+If you are a **Workspace Owner**, you can manage your Source Function under the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click on the function you wish to manage and the sidesheet menu will allow you to _Connect, Edit or Delete_ your function.
+
+![Editing or deleting your Source Function](images/edit-or-delete.gif)
+
+
+## Legacy Functionality
+
+### Legacy Source Functions
+
+Source Functions created before September 11, 2019 were written with a different JavaScript interface than documented above, and were optionally managed with an experiment API and CLI tool.
 
 These interfaces are now deprecated, so we recommend re-creating and managing your functions with the latest interfaces.
 
@@ -405,3 +334,30 @@ Next:
 * access the request query parameters as `request.url.searchParams.get(PARAMNAME)` instead of `event.payload.queryParameters[PARAMNAME]`
 
 Finally send data with calls to `Segment.track()`, `Segment.identify()`, `Segment.group()` and `Segment.set()` instead of returning an object with `events` and `objects` arrays.
+
+### Legacy Sources 
+
+Source Functions created before January 28, 2020 were created as one-off _instances_. This means that you create it once and it can be used within your workspace a single time. Any changes you make to the code of this Source Function will automatically update for this single instance. 
+
+This behavior has now been deprecated and all existing Source Functions have been moved to the new model. This means that when you create a Source Function, you're creating a _class_ which can be deployed once, and _instances_ of this class can be configured in your workspace multiple times.
+
+> note ""
+> **NOTE:** Updates made to your Source Function code, will not automatically be deployed to configured _instances_ within your workspace. We are working to make this experience more seamless but currently, you will need to delete the configured _instance_ and re-configured in your workspace to have those updates included.
+
+## FAQs
+
+**What is the retry policy for a webhook payload?**
+
+The webhook payload retries up to 5 times with an exponential backoff for the function in the event that there is a failure with the function. After 5 attempts, the message is dropped.
+
+**What is the maxium payload size for the incoming webhook?**
+
+The maxium payload size for an incoming webhook payload is 2MB.
+
+**What is the timeout for a function to execute?**
+
+The lambda execution limit is to 1 second.
+
+**What does "ReferenceError: exports is not defined" mean?**
+
+You are using a deprecated style of writing functions. See the "Migrating Function Code (Legacy)" section.
