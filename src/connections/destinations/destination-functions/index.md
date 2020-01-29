@@ -10,15 +10,9 @@ Destination Functions allow you to transform your Segment events and send them t
 
 Here are some examples of Destination Functions are being used by early adopters:
 
-<<<<<<< HEAD
 - **Microsoft Teams** : trigger notifications/messages on a Teams workspace on important events like `Signed Up` or `Order Placed`.
 - **ChargeBee** : sync subscription information by sending events like `Subscription Started`, `Subscription Updated`, `Subscription Removed` etc.
 - **Typeform Surveys** : trigger a user dissatisfaction survey on Typeform when a user uninstalls your app, for example when an `App Uninstalled` event is fired.
-=======
-- **Microsoft Teams Destination**: trigger notifications/messages on a Teams workspace on important events like `Signed Up` or `Order Placed`.
-- **ChargeBee Integration**: sync subscription information by sending events like `Subscription Started`, `Subscription Updated`, `Subscription Removed` etc.
-- **Typeform Surveys**: trigger a user dissatisfaction survey on Typeform when a user uninstalls your app, for example when an `App Uninstalled` event is fired.
->>>>>>> e25043ec1441047a04888a4d351110bb214d0f10
 
 The illustration below explains how you might use a Destination Function.
 
@@ -201,13 +195,7 @@ Segment captures and displays logs emitted by the `console.log()` method. You ca
 
 Test your code directly from the Functions editor. You can construct any type of test event from in the UI, then click **Run** to make sure the function works as expected.
 
-<<<<<<< HEAD
 In the debugger panel, check the two outputs. The **Error Message** and the **Logs**.
-=======
-In the debugger panel, check the two outputs: the **Callback Return** and the **Log Output**.
-
-![Testing your Destination Function](images/save-and-test.png)
->>>>>>> e25043ec1441047a04888a4d351110bb214d0f10
 
 - **Error Message** - This shows the error surfaced from your function.
 - **Logs** - The raw log. Any messages to `console.log()` from the function appear here.

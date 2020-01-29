@@ -239,13 +239,9 @@ Test your code directly from the Functions Editor with two options:
 
 Start by copying the webhook URL from the sidebar or "Auto-fill via webhook" dialog to your upstream tool or service. This allows you to receive payloads which you can use to test your function code.
 
-<<<<<<< HEAD:src/connections/sources/source-functions/index.md
 ![Capture events to test your function](images/webhook-capture.gif)
 
-We begin automatically listening to your webhook URL for any JSON events (ie. `Content-Type: application/json`) which are triggered. 
-=======
 Segment automatically listens to your webhook URL for any JSON events (for example `Content-Type: application/json`) which are triggered.
->>>>>>> e25043ec1441047a04888a4d351110bb214d0f10:src/connections/sources/source-functions.md
 
 Click **Run** to test the event against your function code.
 
@@ -345,12 +341,6 @@ Source Functions created before January 28, 2020 were created as one-off _instan
 
 This behavior has now been deprecated and all existing Source Functions have been moved to the new model. This means that when you create a Source Function, you're creating a _class_ which can be deployed once, and _instances_ of this class can be configured in your workspace multiple times. The _class_ is parameterized by the function settings.
 
-<<<<<<< HEAD:src/connections/sources/source-functions/index.md
-=======
-> note ""
-> **Note:** Updates made to your Source Function code are not automatically deployed to configured _instances_ within your workspace. We are working to make this experience seamless but currently you must delete the configured _instance_ and re-configure in your workspace to have those updates included.
-
->>>>>>> e25043ec1441047a04888a4d351110bb214d0f10:src/connections/sources/source-functions.md
 ## FAQs
 
 **What is the retry policy for a webhook payload?**
