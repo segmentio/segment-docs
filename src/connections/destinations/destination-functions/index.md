@@ -24,6 +24,7 @@ _When a page call is sent to Segment, Destination Functions transform the Segmen
 ### Creating your Destination Function
 
 To create a Destination Function:
+
 1. In your Segment Workspace, go to the Catalog, and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog).
 2. Click **New Function**.
 3. Select **Destination Function** and click **Build**.
