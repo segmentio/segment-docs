@@ -6,30 +6,31 @@ redirect_from: '/docs/connections/sources/custom-sources/'
 > note ""
 > **Note:** Functions are currently in developer preview. If you are interested in joining the developer preview, go to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
 
-Source Functions allow you to gather data from thousands of third-party applications without having to worry about setting up or maintaining any infrastructure. Source Functions are small pieces of code that you create, edit, and deploy in Segment to receive webhooks and generate Segment events or objects using the [Segment Spec](https://segment.com/docs/connections/spec/).
+Source Functions allow you to gather data from any third-party applications without worrying about setting up or maintaining any infrastructure. Source Functions are small pieces of JavaScript code that you create, edit, and deploy in Segment to receive webhooks and generate Segment events or objects using the [Segment Spec](https://segment.com/docs/connections/spec/).
 
-Here are some example uses cases we've heard from customers that you can use Source Functions to implement in your organization:
+Here are some ways that Segment customers are using Source Functions:
 
 - **Create a long-term-value (LTV) computed trait using Zuora subscription data**: A customer connected Zuora webhooks to a webhook source and sent that data into Personas, where they created a computed trait to calculate the LTV for the customer in real-time.
-- **Start an onboarding campaign when a customer is marked "Closed Won" in Pipedrive**: Another customer set up an automated onboarding email campaign in Iterable that triggered when the sales lead closed in Pipedrive.
+- **Start an on-boarding campaign when a customer is marked "Closed Won" in Pipedrive**: Another customer set up an automated on-boarding email campaign in Iterable that triggered when the sales lead closed in Pipedrive.
 - **Combine mobile subscription revenue with web revenues**: A major media company connected mobile and web revenue data for the first time, which allowed them to analyze it together in Amplitude.
 
-Here is an example of what a Source Function could be used to do with a webhook from Drift.
+Here is an example of how a Source Function could be used to handle a webhook from Drift.
 
-![Embed Analytics.framework](images/drift_example.png)
+![Drift Source Function](images/drift_example.png)
 
 ## Getting Started
 
 ### Creating your Source Function
 
 To create a Source Function:
+
 1. From your Segement Workspace, to go the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog).
 2. Click **New Function**.
 3. Select **Source Function** and click **Build**.
 
 ### Writing your Function
 
-When you click **Build** button, a code editor opens so you can configure your source logic to transform a webhook payload into events or objects to be sent downstream. Segment provides templates that make it simple to ingest data from your upstream webhook and offer example code to help you get started.
+When you click **Build** button, a JavaScript code editor opens so you can configure your source logic to transform a webhook payload into events or objects to be sent downstream. Segment provides templates that make it simple to ingest data from your upstream webhook and offer example code to help you get started.
 
 ![Functions Editor](images/editor.png)
 
@@ -40,16 +41,18 @@ async function onRequest(request, settings) {
   const requestBody = request.json()
   const requestHeader = request.headers.get('Content-Type')
   const requestParam = request.url.searchParams.get("timestamp")
+
+  // ...
 }
 ```
 
-Note that your handler function is `async`.
+Note that your handler function must be `async`.
 
-The first `request` argument contains everything about the incoming webhook request. You access the request body through a `json()` or `text()` helper function, the request headers with the [Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers) interface, and the request URL and query parameters with the [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) interface.
+The first `request` argument contains the incoming webhook request including headers and body. You access the request body through a `json()` or `text()` helper function, the request headers with the [Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers) interface, and the request URL and query parameters with the [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) interface.
 
 #### Sending Messages
 
-You can send messages to the Segment API through the following:
+You can send messages to the Segment API using the `Segment` object:
 
 ```js
 async function onRequest(request, settings) {
@@ -86,17 +89,9 @@ async function onRequest(request, settings) {
 }
 ```
 
-The `Segment` module has `Segment.identify()`, `Segment.track()`, `Segment.group()`, `Segment.set()`, `Segment.page()`, `Segment.screen()` and `Segment.alias()` helper functions. These fill in defaults and validate the data you provide. You can call these functions anywhere in your function.
+The `Segment` module has `Segment.identify()`, `Segment.track()`, `Segment.group()`, `Segment.set()`, `Segment.page()`, `Segment.screen()` and `Segment.alias()` functions. These fill in defaults and validate the data you provide. You can call these functions anywhere in your function.
 
-Behind the scenes, the `Segment` module appends messages to an array and sends messages to the Segment [Tracking](https://segment.com/docs/connections/sources/catalog/libraries/server/http/) and [Object](https://segment.com/docs/connections/sources/catalog/libraries/server/object-api/) API as long as your function returns without error.
-
-You can access header data using the `request.headers` property and the [Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers) interface. For example:"
-
-```js
-async function onRequest(request, settings) {
-  const requestHeader = request.headers.get('Content-Type')
-}
-```
+Behind the scenes, the `Segment` module appends messages to an array and sends messages to the Segment [Tracking API](https://segment.com/docs/connections/sources/catalog/libraries/server/http/) and [Object API](https://segment.com/docs/connections/sources/catalog/libraries/server/object-api/), as long as your function returns without error.
 
 ##### Events
 
@@ -104,8 +99,8 @@ Events are used to trigger real-time workflows in downstream streaming destinati
 
 <table class="api-table">
   <tr>
-    <td>Property Key</td>
-    <td>Values</td>
+    <td>Key</td>
+    <td>Value Type</td>
     <td>Description</td>
   </tr>
   <tr>
@@ -143,8 +138,8 @@ Objects are pieces of data that you can ETL (extract, transform, load) to your w
 
 <table class="api-table">
   <tr>
-    <td>Property Key</td>
-    <td>Values</td>
+    <td>Key</td>
+    <td>Value Type</td>
     <td>Description</td>
   </tr>
   <tr>
@@ -164,9 +159,9 @@ Objects are pieces of data that you can ETL (extract, transform, load) to your w
   </tr>
 </table>
 
-### Built-in Dependencies
+### Runtime and Dependencies
 
-The following dependencies are pre-installed in the function environment:
+Source Functions are run using Node.js 10.x. The following dependencies are pre-installed in the function environment:
 
 - atob v2.1.2
 - aws-sdk v2.488.0
@@ -181,7 +176,7 @@ Additional dependences are not currently supported using the web based IDE, but 
 
 ### Settings and Secrets
 
-Settings allow you to pass different variables to your function. A common pattern is to configure settings for an API url and secret API key, so you can use the same code with different settings for different workspaces.
+Settings allow you to pass configurable variables to your function. A common pattern is to configure settings for an API URL endpoint and secret API key, so that you can use the same code with different settings for different workspaces.
 
 For example, if we include an `settingKey` string setting you will be able to access this in your code using dot notation on the settings object as follows:
 
@@ -191,9 +186,10 @@ async function onRequest(request, settings) {
 }
 ```
 
-You can include multiple setting types including `string`, `boolean`, `array` and `text maps` to support your use case. You can also mark a particular setting as required and/or encrypted, if needed.
+You can include multiple setting types including strings, booleans, string arrays and string objects to support your use case. You can also mark a particular setting as being required and/or sensitive (encrypted), if needed.
 
 Settings can help you build a function that can be reused without having to modify any code in the Function itself. For example, customers can use settings to:
+
 - Build a function that can be rolled out without code changes to various Shopify stores
 - Source payment data from a payment process and have a setting to denote the region for that function
 
@@ -218,7 +214,7 @@ You can also manually include your own JSON payload with relevant headers before
 
 ## Creation & Deployment
 
-Once you finish writing your Source Function code, save the code and create the Function by clicking **Configure**. On the screen that appears, give the function a name, and optionally add useful details (these are displayed in your workspace). Click **Create Function** to finish and make your Destination Function available in your workspace
+Once you finish writing your Source Function code, save the code and create the Function by clicking **Configure**. On the screen that appears, give the function a name, and optionally add useful details (these are displayed in your workspace). Click **Create Function** to finish and make your Destination Function available in your workspace.
 
 If you're editing an existing function, you can **Save** changes without changing the behavior of your deployed function. Alternatively, you can also choose to **Save & Deploy** to push changes to an existing function.
 
@@ -250,32 +246,6 @@ async function onRequest(request, settings) {
 > warning ""
 > **Warning:** Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. You should especially avoid logging entire request/response payloads. We only retain the 100 most recent errors and logs for up to 30 days but the "Errors" tab may be visible to other workspace members if they have the necessary permissions.
 
-Requests to Source Functions that raise an error are not automatically retried. You can use this to your advantage to only partially fail a request. For example:
-
-```js
-async function onRequest(request, settings) {
-  const requestBody = request.json()
-  var err = null
-
-  for (const obj of requestBody) {
-    if (!obj.userId) {
-      console.error("object " + obj.id + " is missing userId")
-      err = "at least one object is missing userId field"
-      continue
-    }
-
-    Segment.identify({
-      userId: obj.userId,
-      traits: obj.traits
-    })
-  }
-
-  if (err) {
-    throw new Error(err)
-  }
-}
-```
-
 ## Management
 
 ### Permissions
@@ -284,11 +254,11 @@ The permissions required to create and manage a Source Function are separate fro
 
 Currently, you must be a **Workspace Owner** in order to create, edit or delete a function.
 
-Once the Source Function has been created, you can enable it as you would a normal source. You need to be a `Workspace Owner` or `Source Admin`.
+Once the Source Function has been created, you can enable it as you would a normal source. You need to be a `Workspace Owner` or `Source Admin` to enable a Source Function.
 
 ### Editing & Deleting
 
-If you are a **Workspace Owner**, you can manage your Source Function from the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click the function to change, and the panel that appears allows you to connect, edit or delete your function.
+If you are a **Workspace Owner**, you can manage your Source Function from the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click the function tile and the panel that appears will allow you to connect, edit or delete your function.
 
 ![Editing or deleting your Source Function](images/function-sidesheet.gif)
 
@@ -374,8 +344,9 @@ The maximum payload size for an incoming webhook payload is 2MB.
 
 **What is the timeout for a function to execute?**
 
-The lambda execution limit is 1 second.
+The execution time limit is 1 second.
 
 **What does "ReferenceError: exports is not defined" mean?**
 
 You are using a deprecated style of writing functions. See the "Migrating Function Code (Legacy)" section.
+
