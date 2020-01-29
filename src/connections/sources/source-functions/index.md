@@ -181,7 +181,7 @@ Settings allow you to pass configurable variables to your function. A common pat
 For example, if we include an `settingKey` string setting you will be able to access this in your code using dot notation on the settings object as follows:
 
 ```js
-async function onRequest(request, settings) {
+function onRequest(request, settings) {
   let settingValue = settings.settingKey;
 }
 ```
@@ -349,4 +349,3 @@ The execution time limit is 1 second.
 **What does "ReferenceError: exports is not defined" mean?**
 
 You are using a deprecated style of writing functions. See the "Migrating Function Code (Legacy)" section.
-
