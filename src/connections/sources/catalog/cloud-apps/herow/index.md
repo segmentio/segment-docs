@@ -1,15 +1,16 @@
 ---
 title: Herow
 source-type: event
+beta: true
 ---
 
 [HEROW](https://www.herow.io) is a contextual platform for mobile application. Built around everyday behaviors and powered by location intelligence, its one-stop solution allows apps to maximize mobile engagement with their users.
 
 With HEROW simple, straightforward SaaS platform, mobile marketers and developers can:
 
-+ Better understand how, when and where their app is         being used
-+ Create user segments based on real-world behaviors and     moments
-+ Significantly improve engagement through contextual         notifications and in-app actions
++ Better understand how, when and where their app is being used
++ Create user segments based on real-world behaviors and moments
++ Significantly improve engagement through contextual notifications and in-app actions
 
 Its SaaS platform uses hyper-precise location technology and machine-learning algorithms to provide mobile applications with true user context - a combination of location, behavior, and surroundings. 
 
@@ -82,6 +83,7 @@ Below is a table of events that HEROW sends to Segment. These events will show u
 
 
 ### Home Entered
+
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
 |latitude|float|The latitude of the user’s location at the time of the event.|
@@ -92,6 +94,7 @@ Below is a table of events that HEROW sends to Segment. These events will show u
 
 
 ### Home Exited
+
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
 |latitude|float|The latitude of the user’s location at the time of the event.|
@@ -100,6 +103,7 @@ Below is a table of events that HEROW sends to Segment. These events will show u
 
 
 ### Office Entered
+
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
 |latitude|float|The latitude of the user’s location at the time of the event.|
@@ -107,6 +111,7 @@ Below is a table of events that HEROW sends to Segment. These events will show u
 |accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
 
 ### Office Exited
+
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
 |latitude|float|The latitude of the user’s location at the time of the event.|
@@ -115,6 +120,7 @@ Below is a table of events that HEROW sends to Segment. These events will show u
 
 
 ### Commute Started (Coming soon)
+
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
 |latitude|float|The latitude of the user’s location at the time of the event.|
@@ -122,6 +128,7 @@ Below is a table of events that HEROW sends to Segment. These events will show u
 |accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
 
 ### Commute Ended (Coming soon)
+
 |Property Name|Type|Description|
 | -------- | -------- | -------- |
 |latitude|float|The latitude of the user’s location at the time of the event.|
@@ -129,6 +136,7 @@ Below is a table of events that HEROW sends to Segment. These events will show u
 |accuracy|float|The accuracy of the user’s location at the time of the event in meters.|
 
 ### User Traits
+
 |Attribute Name|Type|Description|
 | -------- | -------- | -------- |
 |herow_home_postal_code|string|The postal code of the user's "Home" location|
