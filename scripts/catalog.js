@@ -93,36 +93,6 @@ const getConnectionModes = (destination) => {
   return connectionModes
 }
 
-const getMethods = (destination) => {
-  let methods = {
-    track: false,
-    identify: false,
-    page: false,
-    group: false,
-    alias: false
-    }
-  destination.methods.forEach(methods => {
-    switch (methods.type) {
-      case 'track':
-        methods.track = true
-        break
-      case 'identify':
-        methods.identify = true
-        break
-      case 'page':
-        methods.page = true
-        break
-      case 'group':
-        methods.group = true
-        break
-      case 'alias':
-        methods.alias = true
-        break
-    }
-  })
-  return getMethods
-}
-
 /**
  *
  * If catalog item does not exist, create folder and index.md file for it, and record it as incomplete for later fill in
@@ -261,7 +231,8 @@ const updateDestinations = async () => {
       components: destination.components,
       platforms: destination.platforms,
       browserUnbundlingSupported: destination.browserUnbundlingSupported,
-      browserUnbundlingPublic: destination.browserUnbundlingPublic
+      browserUnbundlingPublic: destination.browserUnbundlingPublic,
+      methods: destination.methods
     })
 
     let connection_methods = getMethods({
@@ -308,7 +279,6 @@ const updateDestinations = async () => {
       methods: destination.methods,
       settings,
       connection_modes,
-      connection_methods,
       previous_names: destination.previous_names
     }
 
