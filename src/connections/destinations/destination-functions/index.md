@@ -77,7 +77,7 @@ async function onTrack(event, settings) {
     method: "post",
   })
 
-  return await res.text() // or res.json() for JSON APIs
+  return await res.json() // or res.text() to avoid parsing response as JSON
 }
 ```
 
