@@ -1,12 +1,14 @@
 ---
 title: Foursquare-Pilgrim
 source-type: event
+beta: true
 ---
 
 [Foursquare's Pilgrim SDK](https://developer.foursquare.com/pilgrimsdk) provides real-time event triggering based upon your users’ location in the physical world, allowing you to harness our powerful geotargeting capabilities to send those events to other services via Segment.
 
 This destination is maintained by Foursquare. For any issues with the destination, please [reach out to their team](mailto:developers@foursquare.com).
 
+_**NOTE:** The Foursquare-Pilgrim Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 29, 2020. If you are interested in joining their beta program or have any feedback to help improve the Foursquare-Pilgrim Source and its documentation, please [let  their team know](mailto:developers@foursquare.com)!_
 
 ## Getting Started
 
@@ -39,22 +41,22 @@ Note: all fields are presented as strings.
 
 | Property Name         | Description                                                                                 | Values                         |
 | --------------------- | ------------------------------------------------------------------------------------------- | ------------------------------ |
-| `address`             | Address of visit venue                                                                      | String                         |
-| `city`                | City of visit venue                                                                         | String                         |
-| `confidence`          | How likely Foursquare thinks it's correct                                                   | low, medium, high              |
-| `country`             | Country of visit venue                                                                      | String                         |
-| `crossStreet`         | Cross street of visit venue                                                                 | String                         |
-| `lat`                 | Latitude of event                                                                           | Double                         |
-| `lng`                 | Longitude of event                                                                          | Double                         |
-| `locationType`        | Indicates if Foursquare thinks this location is device's home or work, otherwise uses venue | work, home, venue              |
-| `primaryCategoryId`   | Foursquare Category ID of visit venue                                                       | String                         |
-| `primaryCategoryName` | Human readable category name of visit venue                                                 | String                         |
-| `state`               | Abbreviation of state or province of visit venue                                            | String                         |
-| `timestamp`           | ISO 8601 timestamp of when event happened                                                   | Timestamp                      |
-| `venueId`             | Foursquare ID of visit venue                                                                | String                |
-| `venueName`           | Name of visit venue                                                                         | String                         |
-| `visitType`           | Visit type                                                                                  | arrival, departure, historical |
-| `zipCode`             | Zip or postal code for visit venue                                                          | String                         |
+| address             | Address of visit venue                                                                      | String                         |
+| city                | City of visit venue                                                                         | String                         |
+| confidence          | How likely Foursquare thinks it's correct                                                   | low, medium, high              |
+| country             | Country of visit venue                                                                      | String                         |
+| crossStreet         | Cross street of visit venue                                                                 | String                         |
+| lat                 | Latitude of event                                                                           | Double                         |
+| lng                 | Longitude of event                                                                          | Double                         |
+| locationType        | Indicates if Foursquare thinks this location is device's home or work, otherwise uses venue | work, home, venue              |
+| primaryCategoryId   | Foursquare Category ID of visit venue                                                       | String                         |
+| primaryCategoryName | Human readable category name of visit venue                                                 | String                         |
+| state               | Abbreviation of state or province of visit venue                                            | String                         |
+| timestamp           | ISO 8601 timestamp of when event happened                                                   | Timestamp                      |
+| venueId             | Foursquare ID of visit venue                                                                | String                |
+| venueName           | Name of visit venue                                                                         | String                         |
+| visitType           | Visit type                                                                                  | arrival, departure, historical |
+| zipCode             | Zip or postal code for visit venue                                                          | String                         |
 
 Example:
 ```
@@ -115,5 +117,3 @@ Now that your Source is set up, you can connect it with Destinations.
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, please [contact the Foursquare team](mailto:developers@foursquare.com).
-
-> Congratulations! 🎉 You’ve finished the documentation for your Segment integration. If there’s any additional information or nuance which did not fit in the above template and that you want to share with our mutual customers, feel free to include these as a separate section for us to review. If not, you may now submit this doc to our team via your designated Slack Channel and we’ll respond with updates when  we publish it and your integration!
