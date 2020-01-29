@@ -235,10 +235,6 @@ const updateDestinations = async () => {
       methods: destination.methods
     })
 
-    let connection_methods = getMethods({
-      methods: destination.methods
-    })
-
     let url = `connections/destinations/catalog/${slug}`
 
     let settings = destination.settings
