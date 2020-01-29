@@ -198,42 +198,9 @@ Settings can help you build a function that can be reused without having to modi
 - Source payment data from a payment process and have a setting to denote the region for that function
 
 
-## Logging & Testing
+## Testing Your Function
 
-### Logging
-
-The command-line client allows you to access runtime logs of your Functions. These can help you see errors and help you debug functions on an ongoing basis.
-
-**Download the CLI Client**
-
-```bash
-curl https://raw.githubusercontent.com/segmentio/functions-cli-bin/master/install.sh | sh
-```
-
-**Authenticate and upload your Function**
-
-First create an access token by following these directions: https://segment.com/docs/config-api/authentication/#create-an-access-token. Then, create a file in your home directory:  `~/.source-fn-config.json`
-
-```js
-{
-   "token": "<token created in the workspace>",
-   "user": "<Email of token user>",
-   "workspace": "<workspace name>"
-}
-```
-
-**Accessing Logs**
-When you have real events flowing through the function and you're still not seeing the events in the debugger appear, you can see logs from your source function locally to debug and understand what's going on. Use the following command to get the last 100 lines of output from the function:
-
-```bash
-source-functions-cli logs --source <source slug>
-```
-
-The source slug is the name of the source as it appears in the URL.
-
-### Testing
-
-Test your code directly from the Functions Editor with two options:
+You can test your code directly from the Functions Editor in two ways:
 
 #### Webhook Catcher
 
@@ -254,6 +221,60 @@ You can also manually include your own JSON payload with relevant headers before
 Once you finish writing your Source Function code, save the code and create the Function by clicking **Configure**. On the screen that appears, give the function a name, and optionally add useful details (these are displayed in your workspace). Click **Create Function** to finish and make your Destination Function available in your workspace
 
 If you're editing an existing function, you can **Save** changes without changing the behavior of your deployed function. Alternatively, you can also choose to **Save & Deploy** to push changes to an existing function.
+
+## Logs and Errors
+
+Your function may encounter errors that you missed during manual testing or you may intentionally throw your own errors in your code if, for example, the incoming request is missing required fields. If your function throws an error, execution is halted immediately and Segment captures the incoming request, any console logs you may have printed, as well as the error itself. Segment then displays the captured error information in the "Errors" tab of your Source in the Segment dashboard. You can use this tab to find and fix unexpected errors.
+
+<!-- TODO ADD SCREENSHOT -->
+
+You can throw [an Error or custom Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) and you can also add additional helpful context in logs using the [`console` API](https://developer.mozilla.org/en-US/docs/Web/API/console). For example:
+
+```js
+async function onRequest(request, settings) {
+  const requestBody = request.json()
+  const userId = requestBody.userId
+
+  console.log("userId:", userId)
+
+  if (typeof userId != 'string' || userId.length < 8) {
+    throw new Error("input user ID is invalid")
+  }
+
+  console.log("valid userId:", userId)
+
+  // ...
+}
+```
+
+> warning ""
+> **Warning:** Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. You should especially avoid logging entire request/response payloads. We only retain the 100 most recent errors and logs for up to 30 days but the "Errors" tab may be visible to other workspace members if they have the necessary permissions.
+
+Requests to Source Functions that raise an error are not automatically retried. You can use this to your advantage to only partially fail a request. For example:
+
+```js
+async function onRequest(request, settings) {
+  const requestBody = request.json()
+  var err = null
+
+  for (const obj of requestBody) {
+    if (!obj.userId) {
+      console.error("object " + obj.id + " is missing userId")
+      err = "at least one object is missing userId field"
+      continue
+    }
+
+    Segment.identify({
+      userId: obj.userId,
+      traits: obj.traits
+    })
+  }
+
+  if (err) {
+    throw new Error(err)
+  }
+}
+```
 
 ## Management
 

@@ -207,6 +207,35 @@ Once you've finished writing your Destination Function, click **Configure** to s
 If you're editing an existing function, you can **Save** changes without changing the behavior of your deployed function. Alternatively, you can also choose to **Save & Deploy** to push changes to an existing function.
 
 
+## Logs and Errors
+
+Your function may encounter errors that you missed during manual testing or you may intentionally throw your own errors in your code if, for example, the incoming event is missing required fields. If your function throws an error, execution is halted immediately and Segment captures the event, any outgoing requests/responses, any console logs you may have printed, as well as the error itself. Segment then displays the captured error information in the "Event Delivery" tab of your Destination in the Segment dashboard as a "Bad Request". You can use this tab to find and fix unexpected errors.
+
+<!-- TODO ADD SCREENSHOT -->
+
+You can throw [an Error or custom Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) and you can also add additional helpful context in logs using the [`console` API](https://developer.mozilla.org/en-US/docs/Web/API/console). For example:
+
+```js
+async function onTrack(event, settings) {
+  const userId = event.userId
+
+  console.log("userId:", userId)
+
+  if (typeof userId != 'string' || userId.length < 8) {
+    throw new Error("input user ID is invalid")
+  }
+
+  console.log("valid userId:", userId)
+
+  // ...
+}
+```
+
+> warning ""
+> **Warning:** Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. You should especially avoid logging entire request/response payloads. The "Function Logs" tab may be visible to other workspace members if they have the necessary permissions.
+
+Requests to Destinations Functions that raise an error are not automatically retried.
+
 ## Management
 
 ### Permissions
