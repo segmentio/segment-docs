@@ -33,7 +33,7 @@ This document has four parts…
 Your access secret allows you to call the Segment API and access customer data.  We do not recommend exposing this key in client applications (see the end of this section for more details).
 
 
-1.  Go to _Personas > Settings > Access Secrets_: `https://app.segment.com/<your-workspace>/personas/settings` (replace <your-workspace> with your own workspace).
+1.  Go to _Personas > Settings > API Access_: `https://app.segment.com/<your-workspace>/personas/settings` (replace <your-workspace> with your own workspace).
 2.  Create your **Access Secret** with name, for e.g. `testing/development`
 
     ![](images/1516309197043.png)
