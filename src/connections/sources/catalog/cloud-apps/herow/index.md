@@ -20,7 +20,7 @@ This is an [Enrichment Source](https://segment.com/docs/sources/#event-cloud-sou
 
 This source is maintained by HEROW. For any issues with the source, please [reach out to their team](mailto:support@herow.io).
 
-_**NOTE:** The HEROW Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 15, 2020. If you are interested in joining their beta program or have any feedback to help improve the YOURINTEGRATION Source and its documentation, please [let  their team know](mailto:support@HEROW.io)!_
+_**NOTE:** The HEROW Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 29, 2020. If you are interested in joining their beta program or have any feedback to help improve the HEROW Source and its documentation, please [let  their team know](mailto:support@HEROW.io)!_
 
 
 ## Getting Started
