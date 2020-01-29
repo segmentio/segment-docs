@@ -22,7 +22,7 @@ hidden: true
   <td>{% if destination.connection_modes.cloud.mobile %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.device.web %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.device.mobile %}✅{% else %}⬜️{% endif %} </td>
-  <td>{% if destination.connection_modes.cloud.server or destination.connection_modes.device.server %}✅{% else %}⬜️{% endif %} </td>
+  <td>{% if destination.connection_modes.cloud.server %}✅{% else %}⬜️{% endif %} </td>
 </tr>
 {% endfor %}
 </table>
