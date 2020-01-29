@@ -8,7 +8,7 @@ beta: true
 
 This destination is maintained by Beamer. For any issues with the destination, please [reach out to their team](mailto:info@getbeamer.com).
 
-_**NOTE:** The Beamer Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 14, 2020. If you are interested in joining their beta program or have any feedback to help improve the Beamer Destination and its documentation, please [let  their team know](mailto:info@getbeamer.com)!_
+_**NOTE:** The Beamer Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 29, 2020. If you are interested in joining their beta program or have any feedback to help improve the Beamer Destination and its documentation, please [let  their team know](mailto:info@getbeamer.com)!_
 
 ## Getting Started
 
