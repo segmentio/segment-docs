@@ -28,6 +28,7 @@ In addition, Workspace administrators set up and maintain the organization's [wo
 - Billing information and billing contacts
 - Incident contacts - the people who get notified in the event of an outage or incident
 - the Workspace name and slug - the display name and namespace of the workspace in the Segment system
+
   > info ""
   > Changing the workspace name and slug do not have any effect on any sources or destinations already set up and configured. (These use a combination of an internal ID, and `writeKey` to connect.)
 
