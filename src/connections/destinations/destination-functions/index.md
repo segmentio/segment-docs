@@ -62,7 +62,7 @@ Here's a basic example of a function that POSTs the event to a "request bin" for
 The JavaScript below builds a query string for the URL, sets a basic authentication header, and sends a JSON body:
 
 ```js
-const endpoint = "https://REDACTED.x.example.com"
+const endpoint = "https://mywebsite.com/api"
 
 async function onTrack(event, settings) {
   const url = new URL(endpoint);
