@@ -235,7 +235,23 @@ const updateDestinations = async () => {
     })
 
     let url = `connections/destinations/catalog/${slug}`
-
+    
+    let settings = destination.settings
+    settings.sort((a, b) => {
+      if(a.display_name < b.display_name) { return -1; }
+      if(a.display_name > b.display_name) { return 1; }
+      return 0;
+    })
+    settings.forEach(setting => {
+      if (setting.settings.length > 0) {
+        setting.settings.sort((a, b) => {
+          if(a.display_name < b.display_name) { return -1; }
+          if(a.display_name > b.display_name) { return 1; }
+          return 0;
+        })
+      }
+    })
+    
     let updatedDestination = {
       display_name: destination.display_name,
       slug,
@@ -255,7 +271,7 @@ const updateDestinations = async () => {
       platforms: destination.platforms,
       browserUnbundlingSupported: destination.browserUnbundlingSupported,
       browserUnbundlingPublic: destination.browserUnbundlingPublic,
-      settings: destination.settings,
+      settings,
       connection_modes,
       previous_names: destination.previous_names
     }
