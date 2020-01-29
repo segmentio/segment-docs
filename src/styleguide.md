@@ -13,8 +13,8 @@ contributors:
   - name: Monica Buck
     date: 23.08.2019
 related:
-  - "/connections/sources/catalog/"
-  - "/connections/sources/faq/"
+  - "/docs/connections/sources/catalog/"
+  - "/docs/connections/sources/faq/"
 ---
 
 ---

@@ -1,6 +1,5 @@
 ---
-title: You may be eaten by a grue
-hidden: true
+title: Destinations Connection Modes comparison
 ---
 
 > info ""
@@ -9,27 +8,20 @@ hidden: true
 <table>
 <tr>
   <th> Destination </th>
-  <th> Track 🛤 </th>
-  <th> Page 📄 </th>
-  <th>  </th>
+  <th> Cloud - Web </th>
+  <th> Cloud - Mobile </th>
+  <th> Device - Web </th>
   <th> Device - Mobile </th>
-  <th> Server </th>
+  <th> Server to Server </th>
 </tr>
 {% for destination in site.data.catalog.destinations.items %}
 <tr>
   <td>{% if destination.status == "PUBLIC_BETA" %}ℹ️{% endif %}[{{ destination.display_name }}](/docs/{{ destination.url }})</td>
-  <td>{% if destination.methods.track %}✅{% else %}⬜️{% endif %} </td>
+  <td>{% if destination.connection_modes.cloud.web %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.cloud.mobile %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.device.web %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.device.mobile %}✅{% else %}⬜️{% endif %} </td>
   <td>{% if destination.connection_modes.cloud.server %}✅{% else %}⬜️{% endif %} </td>
-</tr>
-<tr>
-  <td> </td>
-  <td colspan=2> Personas: </td>
-  <td>  </td>
-  <td> 🛤 </td>
-  <td> 🎪 </td>
 </tr>
 {% endfor %}
 </table>
