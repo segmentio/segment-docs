@@ -10,8 +10,8 @@ Destination Functions allow you to transform your Segment events and send them t
 
 Here are some examples of Destination Functions are being used by early adopters:
 
-- **Microsoft Teams Destination** : trigger notifications/messages on a Teams workspace on important events like `Signed Up` or `Order Placed`.
-- **ChargeBee Integration** : sync subscription information by sending events like `Subscription Started`, `Subscription Updated`, `Subscription Removed` etc.
+- **Microsoft Teams** : trigger notifications/messages on a Teams workspace on important events like `Signed Up` or `Order Placed`.
+- **ChargeBee** : sync subscription information by sending events like `Subscription Started`, `Subscription Updated`, `Subscription Removed` etc.
 - **Typeform Surveys** : trigger a user dissatisfaction survey on Typeform when a user uninstalls your app, for example when an `App Uninstalled` event is fired.
 
 The illustration below explains how you might utilize a Destination Function.
@@ -26,8 +26,6 @@ To create a Destination Function:
 1. Go to [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog) in the Segment Catalog within your workspace.
 2. Click the `New Function` button.
 3. Select `Destination Function` and click the `Build` button.
-
-![Create a Destination Function](images/create.png)
 
 ### Writing your function
 
@@ -194,12 +192,10 @@ Segment captures and displays logs emitted by the `console.log()` method. You ca
 
 Test your code directly from the Functions editor. You can construct any type of test event within the UI and hit the `Run` button to make sure the function works as expected.
 
-In the debugger panel, check the two outputs. The **Callback Return** and the **Log Output**.
+In the debugger panel, check the two outputs. The **Error Message** and the **Logs**.
 
-![Testing your Destination Function](images/save-and-test.png)
-
-- **Callback Return** - This shows what data the function returned, or the error it threw.
-- **Log Output** - The raw log. Any messages to `console.log()` from the function appear here.
+- **Error Message** - This shows the error surfaced from your function.
+- **Logs** - The raw log. Any messages to `console.log()` from the function appear here.
 
 ## Creation & Deployment
 
@@ -222,7 +218,7 @@ Once the Destination Function has been created, you can connect it to any source
 
 If you are a **Workspace Owner**, you can manage your Destination Function under the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click on the function you wish to manage and the sidesheet menu will allow you to connect, edit or delete your function.
 
-![Editing or deleting your Destination Function](images/edit-or-delete.gif)
+![Editing or deleting your Source Function](images/function-sidesheet.gif)
 
 
 ### Monitoring your Destination Function.
