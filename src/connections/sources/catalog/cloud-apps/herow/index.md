@@ -6,12 +6,6 @@ beta: true
 
 [HEROW](https://www.herow.io) is a contextual platform for mobile application. Built around everyday behaviors and powered by location intelligence, its one-stop solution allows apps to maximize mobile engagement with their users.
 
-With HEROW's simple and straightforward SaaS platform, mobile marketers and developers can:
-
-+ Better understand how, when and where their app is being used
-+ Create user segments based on real-world behaviors and moments
-+ Significantly improve engagement through contextual notifications and in-app actions
-
 This is an [Enrichment Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by HEROW. For any issues with the source, please [contact their team](mailto:support@herow.io).
