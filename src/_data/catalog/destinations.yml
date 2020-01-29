@@ -554,29 +554,12 @@ items:
       If you do not want to attach `pageName` for your `.track()` calls, you can
       disable this option.
     settings: []
-  - name: customDelimiter
-    display_name: 'List Variable and Prop Custom Delimiter: Server-Side Only '
-    type: MAP
+  - name: events
+    display_name: Events
+    type: MIXED
     deprecated: false
     required: false
-    map_validators:
-      regexp: ''
-      min: 0
-      max: 0
-      map_prefix: ''
-      select_options:
-      - '|'
-      - ','
-      - ':'
-      - ;
-      - /
-    description: >-
-      Add a custom delimiter to concatenate Adobe Analytics lVars or props sent
-      as an array. Note, if you do not specify a custom delimiter, arrays will
-      be concatenated with a comma. Please add the Adobe Analytics lVar or prop
-      on the left and select a custom delimiter on the right. lVars must be in
-      format 'list1', 'list2', etc. and props in format 'prop1', 'prop2', etc.
-      Must be all lowercase with no whitespace.
+    description: Map your Segment events to custom Adobe events.
     settings: []
   - name: eventsV2
     display_name: Events V2 (Bundled Mobile Only)
@@ -695,8 +678,6 @@ items:
     type: BOOLEAN
     deprecated: false
     required: false
-    string_validators:
-      regexp: ''
     description: >-
       Note: This setting is for Server-Side only, and only applies when the Drop
       Visitor ID setting is disabled and you send a marketingCloudId in the
@@ -759,10 +740,6 @@ items:
     required: true
     string_validators:
       regexp: ''
-      min: 0
-      max: 150
-      map_prefix: prop
-      select_options: []
     description: >-
       You can find your Report Suite ID in your Adobe Analytics Settings page.
       Multiple report suite ids can be separated by commas:
@@ -828,13 +805,23 @@ items:
     display_name: Tracking Server URL
     type: STRING
     deprecated: false
-    required: true
+    required: false
     string_validators:
       regexp: ''
+    description: This is the URL of your Adobe Analytics server.
+    settings: []
+  - name: useLegacyLinkName
+    display_name: Use Legacy LinkName
+    type: BOOLEAN
+    deprecated: false
+    required: false
     description: >-
-      You can find your Report Suite ID in your Adobe Analytics Settings page.
-      Multiple report suite ids can be separated by commas:
-      `suite1,suite2,suite3`.
+      Before sending LinkName to Adobe Analytics, prepend the URL with `Link
+      Name - `.
+
+
+      This setting enables a legacy behavior for backwards compatibility. You
+      probably want to keep this setting turned off.
     settings: []
   - name: useSecureServerUrl
     display_name: Use Secure URL for Server-side
@@ -855,9 +842,9 @@ items:
       we will send the payload to Adobe Analytics with UTF-8 charset. Useful
       when your events contains accents or other special characters.
     settings: []
-  - name: merchEvents
-    display_name: 'Merchandising Events '
-    type: MIXED
+  - name: eVars
+    display_name: eVars
+    type: MAP
     deprecated: false
     required: false
     map_validators:
@@ -1332,17 +1319,6 @@ items:
       documentation](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax)
       for more information.
     settings: []
-  - name: roleAddress
-    display_name: Role Address
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: >-
-      The address of the AWS role that will be invoking Lambda (ex:
-      `arn:aws:iam::874699288871:role/example-role`).
-    settings: []
   - name: externalId
     display_name: External ID
     type: STRING
@@ -1356,15 +1332,6 @@ items:
       Source ID. For more information about external IDs while assuming AWS
       roles, check
       [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html).
-    settings: []
-  - name: region
-    display_name: Region
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: 'AWS Region where the lambda lives. E.G. `us-west-2`, `eu-west-3`'
     settings: []
   - name: function
     display_name: Lambda
@@ -1754,14 +1721,6 @@ items:
     type: BOOLEAN
     deprecated: false
     required: false
-    map_validators:
-      regexp: ''
-      min: 0
-      max: 0
-      map_prefix: ''
-      select_options:
-      - user_properties
-      - event_properties
     description: >-
       Server-Side Only. Enabling this setting allows your Amplitude destination
       instance to send `alias` events to Amplitude's `usermap` endpoint. By
@@ -1792,9 +1751,9 @@ items:
       Amount of time in milliseconds that the SDK waits before uploading events
       if `batchEvents` is `true`.
     settings: []
-  - name: apiKey
-    display_name: API Key
-    type: STRING
+  - name: eventUploadThreshold
+    display_name: Event Upload Threshold (for batching events)
+    type: NUMBER
     deprecated: false
     required: false
     number_validators:
@@ -1819,10 +1778,11 @@ items:
     deprecated: false
     required: false
     string_validators:
-      regexp: '^[a-z0-9]{32}$'
+      regexp: ''
     description: >-
-      You can find your API Key on your Amplitude [Settings
-      page](https://amplitude.com/settings).
+      What trait Segment should use as your Amplitude "group type" in group
+      calls. If, for example, you set this to be `industry`, then
+      `traits["industry"]` will be sent as `groupType` to Amplitude.
     settings: []
   - name: groupValueTrait
     display_name: Group Value Trait
@@ -1977,16 +1937,18 @@ items:
       If true, captures the gclid url parameter as well as the user's
       initial_gclid via a set once operation.
     settings: []
-  - name: saveParamsReferrerOncePerSession
-    display_name: 'Save Referrer, URL Params, GCLID Once Per Session'
+  - name: trackNamedPages
+    display_name: Track Named Pages to Amplitude
     type: BOOLEAN
     deprecated: false
     required: false
     description: >-
-      If true then includeGclid, includeReferrer, and includeUtm will only track
-      their respective properties once per session. New values that come in
-      during the middle of the user's session will be ignored. Set to false to
-      always capture new values.
+      This will track events to Amplitude for [`page`
+      method](https://segment.io/libraries/analytics.js#page) calls that have a
+      `name` associated with them. For example `page('Signup')` would translate
+      to **Viewed Signup Page**. Remember that `name` includes `category`, so
+      `page('Conversion', 'Signup')` would translate to a **Viewed Conversion
+      Signup Page** event in Amplitude.
     settings: []
   - name: trackReferrer
     display_name: Track Referrer to Amplitude
@@ -2829,19 +2791,6 @@ items:
       Note that you shouldn't change this value once you've set it: doing so
       will end up in push delivery issues.
     settings: []
-  - name: gcmSenderID
-    display_name: GCM Sender ID
-    type: STRING
-    deprecated: false
-    required: false
-    string_validators:
-      regexp: ''
-    description: >-
-      Android only. You can find out how to get your GCM sender ID
-      [here](https://batch.com/doc/android/prerequisites.html#_getting-your-sender-id-and-server-api-key).
-      Note that you shouldn't change this value once you've set it: doing so
-      will end up in push delivery issues.
-    settings: []
   connection_modes:
     device:
       web: false
@@ -3103,6 +3052,8 @@ items:
     type: STRING
     deprecated: false
     required: false
+    string_validators:
+      regexp: ''
     description: >-
       The API key found in your Braze dashboard, used to identify your
       application as the app identifier. (Formerly 'API Key')
@@ -3137,12 +3088,17 @@ items:
     type: SELECT
     deprecated: false
     required: false
-    string_validators:
-      regexp: ''
+    select_validators:
+      select_options:
+      - '1'
+      - '2'
     description: >-
-      If you've been assigned an API endpoint by the Braze team specifically for
-      use with their REST API, please input that here. It should look something
-      like "https://foo.bar.braze.com". Otherwise, leave this blank.
+      **Web Only:** The [major](https://semver.org/) version of the Braze web
+      SDK you would like to use. Please reference their
+      [changelog](https://github.com/Appboy/appboy-web-sdk/blob/master/CHANGELOG.md)
+      for more info. **Please ensure you read
+      [this](https://segment.com/docs/destinations/braze/#migrating-to-v2-of-the-braze-web-sdk)
+      section of our documentation carefully before changing this setting.**
     settings: []
   - name: customEndpoint
     display_name: Custom API Endpoint
@@ -3210,29 +3166,27 @@ items:
       for more information on this setting. **This setting is only applicable if
       you are using version 2 of the Braze Web SDK.**
     settings: []
-  - name: enableHtmlInAppMessages
-    display_name: Enable HTML In-App Messages
+  - name: enableLogging
+    display_name: Enable Logging
     type: BOOLEAN
     deprecated: false
     required: false
     description: >-
-      **Web only**: Enabling this option will allow Braze dashboard users to
-      write HTML In-App messages. Check out [Braze
-      Documentation](https://js.appboycdn.com/web-sdk/latest/doc/module-appboy.html#.initialize)
-      for more information on this setting. **This setting is only applicable if
-      you are using version 2 of the Braze Web SDK.**
+      **Web Only:** Set to true to enable logging by default. Note that this
+      will cause Braze to log to the javascript console, which is visible to all
+      users! You should probably remove this or provide an alternate logger with
+      [appboy.setLogger()](https://js.appboycdn.com/web-sdk/2.0/doc/module-appboy.html#.setLogger)
+      before you release your page to production. **This setting is only
+      applicable if you are using version 2 of the Braze Web SDK.**
     settings: []
-  - name: serviceWorkerLocation
-    display_name: Service Worker Location
-    type: STRING
+  - name: logPurchaseWhenRevenuePresent
+    display_name: Log Purchase when Revenue is present
+    type: BOOLEAN
     deprecated: false
     required: false
-    string_validators:
-      regexp: ''
     description: >-
-      Specify your `serviceWorkerLocation` as defined in the Braze Web SDK
-      documentation:
-      https://js.appboycdn.com/web-sdk/latest/doc/module-appboy.html
+      When this option is enabled, all Track calls with a property called
+      `revenue` will trigger Braze's LogRevenue event.
     settings: []
   - name: minimumIntervalBetweenTriggerActionsInSeconds
     display_name: Minimum Interval Between Trigger Actions In Seconds
@@ -3284,28 +3238,30 @@ items:
       This can be found in your Braze dashboard under App Settings > Developer
       Console. (Formerly 'App Group Identifier')
     settings: []
-  - name: trackNamedPages
-    display_name: Track Only Named Pages
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: >-
-      This will send only [`page` calls](https://segment.com/docs/spec/page/) to
-      Braze that have a `name` associated with them. For example,
-      `page('Signup')` would translate to **Viewed Signup Page** in Braze.
-    settings: []
-  - name: customEndpoint
-    display_name: Custom API Endpoint
+  - name: safariWebsitePushId
+    display_name: Safari Website Push ID
     type: STRING
     deprecated: false
     required: false
     string_validators:
       regexp: ''
     description: >-
-      If you've been assigned an API endpoint by the Braze team specifically for
-      use with their Mobile or Javascript SDKs, please input that here. It
-      should look something like: sdk.api.appboy.eu. Otherwise, leave this
-      blank.
+      **Web Only**: To send push notifications on Safari, Braze needs your
+      Website Push Id. To get your Webite Push ID, check out the first two
+      bullet points
+      [here](https://www.braze.com/documentation/Web/#step-5-configure-safari-push).
+    settings: []
+  - name: serviceWorkerLocation
+    display_name: Service Worker Location
+    type: STRING
+    deprecated: false
+    required: false
+    string_validators:
+      regexp: ''
+    description: >-
+      Specify your `serviceWorkerLocation` as defined in the Braze Web SDK
+      documentation:
+      https://js.appboycdn.com/web-sdk/latest/doc/module-appboy.html
     settings: []
   - name: sessionTimeoutInSeconds
     display_name: Session Timeout In Seconds
@@ -3321,16 +3277,15 @@ items:
       default with a value of your own. **This setting is only applicable if you
       are using version 2 of the Braze Web SDK.**
     settings: []
-  - name: apiKey
-    display_name: App Identifier
-    type: STRING
+  - name: trackAllPages
+    display_name: Track All Pages
+    type: BOOLEAN
     deprecated: false
     required: false
-    string_validators:
-      regexp: ''
     description: >-
-      The API key found in your Braze dashboard, used to identify your
-      application as the app identifier. (Formerly 'API Key')
+      This will send all [`page` calls](https://segment.com/docs/spec/page/) to
+      Braze as a Loaded/Viewed a Page event. This option is disabled by default
+      since Braze isn't generally used for page view tracking.
     settings: []
   - name: trackNamedPages
     display_name: Track Only Named Pages
@@ -3385,6 +3340,15 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
+  - name: host
+    display_name: Domain
+    type: STRING
+    deprecated: false
+    required: false
+    string_validators:
+      regexp: ''
+    description: You can use your own domain with Bronto
+    settings: []
   - name: siteId
     display_name: Site ID
     type: STRING
@@ -3395,15 +3359,6 @@ items:
     description: >-
       You can find your Site ID in your Bronto [Account
       Page](https://app.bronto.com/login/index/login/)
-    settings: []
-  - name: host
-    display_name: Domain
-    type: STRING
-    deprecated: false
-    required: false
-    string_validators:
-      regexp: ''
-    description: You can use your own domain with Bronto
     settings: []
   connection_modes:
     device:
@@ -4186,18 +4141,6 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
-  - name: region
-    display_name: Region
-    type: SELECT
-    deprecated: false
-    required: false
-    select_validators:
-      select_options:
-      - ' '
-      - in.
-      - sg.
-    description: '**Server Only**: Your dedicated Clevertap region.'
-    settings: []
   - name: clevertap_account_id
     display_name: Account ID
     type: STRING
@@ -4219,6 +4162,18 @@ items:
     description: >-
       **Mobile Only:**Add your CleverTap Account Token which you can find in the
       CleverTap Dashboard under Settings.
+    settings: []
+  - name: region
+    display_name: Region
+    type: SELECT
+    deprecated: false
+    required: false
+    select_validators:
+      select_options:
+      - ' '
+      - in.
+      - sg.
+    description: '**Server Only**: Your dedicated Clevertap region.'
     settings: []
   connection_modes:
     device:
@@ -5209,28 +5164,18 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
-  - name: groupTag
-    display_name: Group Tag
+  - name: activityTag
+    display_name: Activity Tag
     type: STRING
     deprecated: false
     required: false
     string_validators:
       regexp: ''
     description: >-
-      This setting maps to the Doubleclick Floodlight container group tag (the
-      `type` parameter) string. You can choose to use this setting to define the
-      same value for this parameter across all conversion events or you can
-      define this value for each of your conversion event mappings below.
-    settings: []
-  - name: getDoubleClickId
-    display_name: Get DoubleClick Id
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: >-
-      Enable this setting if you would like to use Google's cookie matching
-      functionality. Please also ensure you provide a value in the Google
-      Network Id setting.
+      This setting maps to the Doubleclick Floodlight container activity tag (or
+      `cat`) string. You can choose to use this setting to define the same value
+      for this parameter across all conversion events or you can define this
+      value for each of your conversion event mappings below.
     settings: []
   - name: token
     display_name: Authorization Token for server-to-server requests
@@ -5338,12 +5283,12 @@ items:
     display_name: DoubleClick Advertiser ID
     type: STRING
     deprecated: false
-    required: false
+    required: true
     string_validators:
       regexp: ''
     description: >-
-      Provide your Google Network Id here if you have enabled cookie matching
-      (Get DoubleClick Id setting).
+      Your advertiser ID that is the source of the Floodlight activity. This
+      should be the `src` of your tag string.
     settings: []
   - name: getDoubleClickId
     display_name: Get DoubleClick Id
@@ -5749,21 +5694,14 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
-  - name: mappedGroupTraits
-    display_name: Map Custom Traits to Accounts
-    type: MAP
+  - name: companyName
+    display_name: Company Name
+    type: STRING
     deprecated: false
-    required: false
-    description: >-
-      Please input the Segment trait names on the left and their corresponding
-      Eloqua Custom Account Field names on the right. The traits must be set up
-      in the Eloqua dashboard prior to instantiating this mapping. 
-
-
-      **Note:** If you have set up Custom Account Fields in Eloqua, please
-      ensure the corresponding Segment payload property values are of the same
-      data type specified in Eloqua's dashboard. Eloqua will reject any event
-      containing a Custom Account Field with an incorrect data type. 
+    required: true
+    string_validators:
+      regexp: ''
+    description: Enter your login company name
     settings: []
   - name: sendGroup
     display_name: Create or Update Account on Group
@@ -6293,9 +6231,8 @@ items:
     required: false
     description: >-
       Enter your Segment `.track()` event names on the left that you want to
-      send as `CompleteRegistration` conversions. On the right hand side, put
-      the ID of the Facebook Offline Event Set where you want to send these
-      conversions.
+      send as `Lead` conversions. On the right hand side, put the ID of the
+      Facebook Offline Event Set where you want to send these conversions.
     settings: []
   - name: events
     display_name: Map Track Events to Event Set IDs
@@ -6554,15 +6491,6 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
-  - name: publishableApiKey
-    display_name: Publishable API Key
-    type: STRING
-    deprecated: false
-    required: false
-    string_validators:
-      regexp: ''
-    description: Enter a description.
-    settings: []
   - name: apiKey
     display_name: API Key
     type: STRING
@@ -6573,6 +6501,15 @@ items:
     description: >-
       Go to https://app.factors.ai/#/settings/segment. Choose your Project on
       the top dropdown. Enable Segment and Copy the API Key.
+    settings: []
+  - name: publishableApiKey
+    display_name: Publishable API Key
+    type: STRING
+    deprecated: false
+    required: false
+    string_validators:
+      regexp: ''
+    description: Enter a description.
     settings: []
   connection_modes:
     device:
@@ -7406,11 +7343,9 @@ items:
     type: BOOLEAN
     deprecated: false
     required: false
-    string_validators:
-      regexp: ''
     description: >-
-      Generate your server-side API key here:
-      https://www.gosquared.com/settings/api
+      Enable if you need to anonymize the IP address of visitors to your
+      website.
     settings: []
   - name: cookieDomain
     display_name: Cookie Domain
@@ -7631,57 +7566,6 @@ items:
       AdWords account to the **new** AdWords interface at any point, you are
       using version 2. Otherwise, please select version 1.
     settings: []
-  - name: trackAttributionData
-    display_name: Track Attribution Data
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: >-
-      If this setting is enabled, Segment will send successfully attributed
-      `Application Installed` events from AdWords as `Install Attributed` events
-      back into this source. These events will contain data about the AdWords
-      campaign that lead to the conversion. You can learn more about these
-      events [here](https://segment.com/docs/spec/mobile/#install-attributed).
-
-
-      **Important:** this feature is only available if you are using the new
-      AdWords version.
-    settings: []
-  - name: version
-    display_name: Version
-    type: SELECT
-    deprecated: false
-    required: false
-    select_validators:
-      select_options:
-      - '1'
-      - '2'
-    description: >-
-      The current version of your AdWords account. If you have migrated your
-      AdWords account to the **new** AdWords interface at any point, you are
-      using version 2. Otherwise, please select version 1.
-    settings: []
-  - name: conversionId
-    display_name: Conversion ID
-    type: STRING
-    deprecated: false
-    required: false
-    string_validators:
-      regexp: ''
-    description: >-
-      Your AdWords conversion identifier. It looks like `983265867`. You can opt
-      to override this on a per-event basis but at the very least this
-      conversion ID will serve as the ID used in page calls.
-    settings: []
-  - name: correctLat
-    display_name: Correct LAT Behavior
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: >-
-      Enable this to set Limit Ad Tracking to `true` when
-      context.device.adTrackingEnabled is `false`.
-    settings: []
   connection_modes:
     device:
       web: true
@@ -7861,8 +7745,8 @@ items:
       value of the property you designate as the value of the specified content
       grouping.
     settings: []
-  - name: identifyCategory
-    display_name: Server Side Identify Event Category
+  - name: domain
+    display_name: Cookie Domain Name
     type: STRING
     deprecated: false
     required: false
@@ -7946,22 +7830,27 @@ items:
       more about it in the [Google support
       documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-link-attribution).
     settings: []
-  - name: sendUserId
-    display_name: Send User-ID to GA
+  - name: enableServerIdentify
+    display_name: Enable Server Side Identify
     type: BOOLEAN
     deprecated: false
     required: false
     description: >-
-      User-ID enables the analysis of groups of sessions across devices, using a
-      unique and persistent ID. This only works with Google Analytics Universal.
-      IMPORTANT: Sending email or other personally identifiable information
-      (PII) violates Google Analytics Terms of Service.
+      If you are sending `.identify()` calls from your server side libraries or
+      have Segment Cloud Apps that send back `.identify()` calls with enriched
+      user traits, you can send that data to your GA account via custom
+      dimensions and metrics. Unlike the client side integration which has the
+      luxury of browsers and the global window `ga` tracker, for server side we
+      will check your `traits` and your settings for custom dimension/metric
+      mappings and send it with an explicit event. 
     settings: []
   - name: ignoredReferrers
     display_name: Ignored Referrers
     type: MULTI_LINE_STRING
     deprecated: false
     required: false
+    string_validators:
+      regexp: ''
     description: >-
       Add any domains you want to ignore, separated by line breaks. You might
       use this if you want Google Analytics to ignore certain referral domains
@@ -8093,15 +7982,11 @@ items:
     type: BOOLEAN
     deprecated: false
     required: false
-    number_validators:
-      min: 1
-      max: 100
     description: >-
-      Specifies what percentage of users should be tracked. This defaults to 100
-      (no users are sampled out) but large sites may need to use a lower sample
-      rate to stay within Google Analytics processing limits as [seen
-      here](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#sampleRate).
-      Currently only available in the browser - mobile coming soon.
+      User-ID enables the analysis of groups of sessions across devices, using a
+      unique and persistent ID. This only works with Google Analytics Universal.
+      IMPORTANT: Sending email or other personally identifiable information
+      (PII) violates Google Analytics Terms of Service.
     settings: []
   - name: identifyEventName
     display_name: Server Side Identify Event Action
@@ -8131,32 +8016,20 @@ items:
       you are sending `traits.category`, you can put 'category' in the setting
       above and we will send the value of this trait as the event category.
     settings: []
-  - name: identifyEventName
-    display_name: Server Side Identify Event Action
-    type: STRING
-    deprecated: false
-    required: false
-    string_validators:
-      regexp: ''
-    description: >-
-      If you have **Enabled Server Side Identify**, you can specify what the
-      event action will be since all custom metrics/dimensions for server side
-      `.identify()` calls will be sent via an event hit to GA. The default value
-      will be `'User Enriched'`
-    settings: []
-  - name: mobileTrackingId
-    display_name: Mobile Tracking ID
+  - name: serversideTrackingId
+    display_name: Serverside Tracking ID
     type: STRING
     deprecated: false
     required: false
     string_validators:
       regexp: ^UA-\d+-\d+$
     description: >-
-      Google Analytics tracks mobile apps separately, so you'll want to create a
-      separate Google Analytics mobile app property. Remember to only add a
-      mobile tracking ID if you're tracking from a mobile library. If you're
-      tracking from a hybrid app, fill in your website tracking ID instead.
-      Leave it blank if you don't have a mobile app property.
+      Your Serverside Tracking ID is the UA code for the Google Analytics
+      property you want to send server-side calls to. Leave it blank if you
+      don't have a server-side client library that you want to send data from.
+      Remember that data tracked from mobile integrations that are not bundled
+      in your app send data to Google Analytics server side, since Segment sends
+      data to them via our own servers.
     settings: []
   - name: setAllMappedProps
     display_name: Set Custom Dimensions & Metrics to the Page
@@ -8217,8 +8090,6 @@ items:
     type: BOOLEAN
     deprecated: false
     required: false
-    string_validators:
-      regexp: ^UA-\d+-\d+$
     description: >-
       **Important:** When creating your Google Analytics profile, you can choose
       between **Classic** and **Universal** Analytics. After March 2013, new
@@ -8540,15 +8411,6 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: false
   settings:
-  - name: workspace
-    display_name: Workspace
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: The name of your workspace
-    settings: []
   - name: apiKey
     display_name: API Key
     type: STRING
@@ -8566,6 +8428,15 @@ items:
     string_validators:
       regexp: ''
     description: The name of your environment
+    settings: []
+  - name: workspace
+    display_name: Workspace
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: The name of your workspace
     settings: []
   connection_modes:
     device:
@@ -9866,20 +9737,8 @@ items:
     deprecated: false
     required: false
     description: >-
-      Enable this to use the Keen's data enrichment feature for parsing URLs
-      into its components for easier filtering. Note that `userAgent` is only
-      collected on Android, not on iOS. 
-    settings: []
-  - name: initialPageview
-    display_name: Track an Initial Pageview
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: >-
-      This will send an intial 'Loaded a Page' event to Keen when the page is
-      loaded. We disable this by default since Keen is generally used for custom
-      event tracking, not pageviews. _Note: you must also have the **Send
-      Pageview Events** setting enabled for this to work._
+      Enable this to use Keen's data enrichment feature to add geographic
+      information based on IP.
     settings: []
   - name: projectId
     display_name: Project ID
@@ -9950,8 +9809,10 @@ items:
     deprecated: false
     required: false
     description: >-
-      Enable this to use Keen's data enrichment feature to add geographic
-      information based on IP.
+      This will send an intial 'Loaded a Page' event to Keen when the page is
+      loaded. We disable this by default since Keen is generally used for custom
+      event tracking, not pageviews. _Note: you must also have the **Send
+      Pageview Events** setting enabled for this to work._
     settings: []
   - name: urlAddon
     display_name: URL Parsing Addon
@@ -10142,34 +10003,6 @@ items:
     description: >-
       Insert the ID of the default list that you'd like to subscribe users to
       when you call `.identify()`.
-    settings: []
-  - name: useSegmentSpec
-    display_name: Send Placed Order Events as Order Completed
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: >-
-      Enable this setting if you'd like to send `Order Completed` events as is
-      rather than changing the event name to `Placed Order` on the server side
-      (client side always sends Order Completed). It is recommended that you
-      keep this setting enabled so that both client and server side Klaviyo
-      integration sends the same event for `Order Completed`. Klaviyo does not
-      treat the event names differently in their backend feature wise. This
-      option was introduced to bridge the existing disparity between our client
-      and server side integration regarding how this event name is sent without
-      forcibly breaking the current behavior.
-    settings: []
-  - name: sendAnonymous
-    display_name: Fallback on Anonymous ID
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: >-
-      Enable this option to fallback on `anonymousId` if `userId` is not
-      available when sending server side events. Note that this option may
-      result in superfluous user profiles in Klaviyo and is generally not
-      recommend. If this option is unchecked, we will only accept server side
-      events that includes the `userId`. 
     settings: []
   - name: useSegmentSpec
     display_name: Send Placed Order Events as Order Completed
@@ -10426,15 +10259,6 @@ items:
       To use development mode, you must also input your Development key as the
       client key.
     settings: []
-  - name: gcmSenderId
-    display_name: GCM Sender ID
-    type: STRING
-    deprecated: false
-    required: false
-    string_validators:
-      regexp: ''
-    description: The GCM sender ID that should be used for Push Notifications.
-    settings: []
   connection_modes:
     device:
       web: false
@@ -10619,15 +10443,6 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
-  - name: listen
-    display_name: Record live chat events.
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: >-
-      Automatically send Live Chat message events, conversation starts and ends
-      to other tools you have enabled.
-    settings: []
   - name: group
     display_name: Group
     type: STRING
@@ -10650,6 +10465,15 @@ items:
       You can find your License key in your LiveChat Javascript snippet on the
       **Settings > Installation** page. Or, if you're just signing up, it's
       right in the setup guide!
+    settings: []
+  - name: listen
+    display_name: Record live chat events.
+    type: BOOLEAN
+    deprecated: false
+    required: false
+    description: >-
+      Automatically send Live Chat message events, conversation starts and ends
+      to other tools you have enabled.
     settings: []
   connection_modes:
     device:
@@ -11157,15 +10981,6 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
-  - name: folder
-    display_name: Folder
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: Name of the folder in which to create static lists.
-    settings: []
   - name: clientId
     display_name: Client ID
     type: STRING
@@ -11192,6 +11007,15 @@ items:
     string_validators:
       regexp: ''
     description: Your Marketo REST API Endpoint.
+    settings: []
+  - name: folder
+    display_name: Folder
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: Name of the folder in which to create static lists.
     settings: []
   connection_modes:
     device:
@@ -11286,13 +11110,6 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as the Primary field in Marketo.
-        settings: []
       - name: segmentProperty
         display_name: Segment Property Name
         type: STRING
@@ -11359,8 +11176,23 @@ items:
       deprecated: false
       required: true
       string_validators:
-        regexp: '^[0-9]+$'
-      description: Enter the Marketo Custom Activity ID. This must be an Integer.
+        regexp: ''
+      description: >-
+        Enter a Marketo Field name. Make sure to copy and paste the REST API
+        name exactly.
+      settings: []
+    - name: marketoFieldType
+      display_name: Marketo Field Type
+      type: SELECT
+      deprecated: false
+      required: true
+      select_validators:
+        select_options:
+        - boolean
+        - number
+        - date
+        - string
+      description: The Marketo Field type for this trait.
       settings: []
     - name: segmentTrait
       display_name: Segment Trait Name
@@ -11378,7 +11210,7 @@ items:
     display_name: Munchkin Account ID
     type: STRING
     deprecated: false
-    required: false
+    required: true
     string_validators:
       regexp: ''
     description: >-
@@ -11642,9 +11474,9 @@ items:
     deprecated: false
     required: false
     description: >-
-      If you want to see and segment by event counts and last event date in
-      Mixpanel people, enable people, and then list the events you want to see
-      in People here.
+      While this is checked, our integration automatically sets all traits on
+      identify calls as super properties and people properties if Mixpanel
+      People is checked as well.
     settings: []
   - name: crossSubdomainCookie
     display_name: Cross Subdomain Cookie
@@ -11709,6 +11541,10 @@ items:
     type: SELECT
     deprecated: false
     required: false
+    select_validators:
+      select_options:
+      - cookie
+      - localStorage
     description: >-
       This will allow the Mixpanel cookie to persist between different pages of
       your application.
@@ -11756,11 +11592,12 @@ items:
     display_name: Token
     type: STRING
     deprecated: false
-    required: false
+    required: true
+    string_validators:
+      regexp: '^[a-f0-9]{32}$'
     description: >-
-      This will send all of your
-      [identify](https://segment.io/docs/methods/identify) calls to Mixpanel's
-      People feature.
+      You can find your token under **Account** in the upper-right of the
+      [Mixpanel interface](https://mixpanel.com).
     settings: []
   - name: trackAllPages
     display_name: Track All Pages to Mixpanel
@@ -11774,13 +11611,6 @@ items:
     settings: []
   - name: consolidatedPageCalls
     display_name: Track All Pages to Mixpanel with a Consolidated Event Name
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: Group traits to be set only once using Mixpanel's `$set_once` operator.
-    settings: []
-  - name: secureCookie
-    display_name: Secure Cookie
     type: BOOLEAN
     deprecated: false
     required: false
@@ -12166,15 +11996,6 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
-  - name: apiKey
-    display_name: Site ID
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: Your Mouseflow site ID.
-    settings: []
   - name: mouseflowHtmlDelay
     display_name: Mouseflow HTML Delay
     type: NUMBER
@@ -12184,6 +12005,15 @@ items:
       min: 0
       max: 0
     description: HTML Delay
+    settings: []
+  - name: apiKey
+    display_name: Site ID
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: Your Mouseflow site ID.
     settings: []
   connection_modes:
     device:
@@ -13170,17 +13000,14 @@ items:
       documentation:
       https://docs.developers.optimizely.com/full-stack/docs/changelog#section-may-2019
     settings: []
-  - name: accountId
-    display_name: Account ID
-    type: STRING
+  - name: useOptimizelyUserId
+    display_name: Use Optimizely User ID
+    type: BOOLEAN
     deprecated: false
     required: false
-    string_validators:
-      regexp: ''
     description: >-
-      In order to use Optimizely X via _server side_, you must enter your
-      **Account ID** from your Optimizely account. You can find this ID by
-      visiting https://app.optimizely.com/v2/accountsettings/account/plan
+      Enable this if you want the server side integration to use Optimizely User
+      ID instead of User ID or anonymous ID in your calls
     settings: []
   - name: useUserId
     display_name: Use User ID
@@ -13559,25 +13386,6 @@ items:
       here](https://www.parsely.com/help/integration/dynamic/) for more
       information.
     settings: []
-  - name: inPixelMetadata
-    display_name: Enable In-Pixel Metadata
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: "If you enable In-Pixel Metadata, Segment will map page properties to Parsely's `metadata` format, allowing you to eschew their out-of-band metadata crawling. This has tradeoffs and is not the recommended approach—\_please be sure to check with your Parsely rep prior to enabling this setting. Requires Dynamic Tracking to be set to `true`."
-    settings: []
-  - name: trackEvents
-    display_name: Track Events
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: >-
-      Parsely can track custom events, but does not surface these events in
-      their Dashboard or UI. If you'd like your Segment `track()` calls to flow
-      to Parsely's Raw Data Pipeline product, enable this setting. [See
-      here](https://www.parsely.com/help/integration/dynamic/) for more
-      information.
-    settings: []
   connection_modes:
     device:
       web: true
@@ -13913,28 +13721,6 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
-  - name: tid
-    display_name: Tag ID
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: >-
-      Enter your Pinterest Tag ID. It should be a series of numbers, like
-      `123456789`.
-    settings: []
-  - name: useEnhancedMatchLoad
-    display_name: Enable Enhanced Match to on Page Load
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: >-
-      If this setting is enabled, the Pinterest tag will be loaded with the
-      existing traits of the logged user (if available). See [the official
-      documentation](https://developers.pinterest.com/docs/ad-tools/enhanced-match/?)
-      for more information.
-    settings: []
   - name: pinterestCustomProperties
     display_name: Custom Properties
     type: LIST
@@ -14070,16 +13856,6 @@ items:
     string_validators:
       regexp: ''
     description: You can find your Site ID in your piwik snippet.
-    settings: []
-  - name: goals
-    display_name: Goals
-    type: MAP
-    deprecated: false
-    required: false
-    description: >-
-      Piwik only allows for goal ID's, when you `track('event')` we need to map
-      `event` to a goal ID, enter event names on the left and goal ID's on the
-      right.
     settings: []
   connection_modes:
     device:
@@ -14970,37 +14746,6 @@ items:
       Use these fields to map your Segment event names to Responsys Supplemental
       Tables. We'll only send events and properties that you specify.
     settings:
-    - name: event
-      display_name: Segment Event Name
-      type: STRING
-      deprecated: false
-      required: true
-      string_validators:
-        regexp: ''
-      description: Enter the Segment Event Name.
-      settings: []
-    - name: suppName
-      display_name: Responsys Supplemental Table Name
-      type: STRING
-      deprecated: false
-      required: true
-      string_validators:
-        regexp: ''
-      description: Enter a Responsys Supplemental Table Name.
-      settings: []
-    - name: folderName
-      display_name: Responsys Folder Name
-      type: STRING
-      deprecated: false
-      required: true
-      string_validators:
-        regexp: ''
-      description: >-
-        Optional. Enter a Responsys Folder Name where this Supplemental exists
-        or where you'd like one to be created. If this input is left blank, we
-        will fallback on the default Folder Name you've provided at the top
-        level settings.
-      settings: []
     - name: columns
       display_name: Columns
       type: MIXED
@@ -15008,6 +14753,15 @@ items:
       required: false
       description: Map your Segment properties to Responsys Columns
       settings:
+      - name: columns
+        display_name: Segment Property Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: Enter the Segment Property Name.
+        settings: []
       - name: fieldName
         display_name: Responsys Column Name
         type: STRING
@@ -15171,43 +14925,17 @@ items:
     string_validators:
       regexp: ''
     description: >-
-      Please enter the default Folder Name that holds the provided Profile List
-      and Profile Extension Table.
+      Please enter the default Profile List. Make sure that the Profile List is
+      inside the provided Folder Name.
     settings: []
-  - name: optOutEmailTrait
-    display_name: Email Permission Status Trait Mapping
-    type: STRING
+  - name: optin
+    display_name: Set Default Permission Setting to OPTIN
+    type: BOOLEAN
     deprecated: false
     required: false
-    string_validators:
-      regexp: ''
     description: >-
-      Please enter the trait you would like to be mapped to
-      `EMAIL_PEERMISSION_STATUS_`. This will allow you to track users who opt in
-      and out of marketing communications in your apps and websites. The value
-      of this trait MUST be a boolean. 
-    settings: []
-  - name: optOutMobileTrait
-    display_name: Mobile Permission Status Trait Mapping
-    type: STRING
-    deprecated: false
-    required: false
-    string_validators:
-      regexp: ''
-    description: >-
-      Please enter the trait youw would like to be mapped to
-      MOBILE_PERMISSION_STATUS_. This will allow you to track users who opt in
-      and out of marketing communications in your apps and websites. The value
-      of this trait MUST be a boolean. 
-    settings: []
-  - name: password
-    display_name: Password
-    type: PASSWORD
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: Please enter your account's password.
+      Choose whether records added to Profile Lists should be `'OPTIN'` rather
+      than the default `'OPTOUT'`
     settings: []
   - name: username
     display_name: Username
@@ -15703,47 +15431,6 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
-  - name: leadLookupFields
-    display_name: Custom Lead Lookup Fields
-    type: MAP
-    deprecated: false
-    required: false
-    description: >-
-      This setting allows you to provide mappings between traits in Segment
-      identify events and the SFDC fields you would like us to lookup a Lead
-      with. By default, the integration will look for an email trait in the
-      identify event and will either create or update a lead in Salesforce based
-      on whether one already exists with that given email address. You can use
-      this setting to override that behavior or to use multiple lookup fields.
-      Simply input the name of the Segment trait on the left and the
-      corresponding SFDC Field name on the right. If it is a custom field, be
-      sure to append it with __c. If you would like to use email in conjuction
-      with another field **you need to explicitly define that as a row in this
-      setting**.
-    settings: []
-  - name: password
-    display_name: Account Password
-    type: PASSWORD
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: >-
-      Salesforce requires we store a Salesforce user's password to access their
-      SOAP API. We recommend you add a new System Administrator user profile to
-      your Salesforce account, so that you don't have to tell us your actual
-      password. You can do that under **Setup > Administration Setup > Users >
-      New User**.
-    settings: []
-  - name: shipping
-    display_name: Send Address as Shipping Address
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: >-
-      This will map address traits in your group calls as Shipping Address for
-      your Account Objects.
-    settings: []
   - name: username
     display_name: Account Email
     type: STRING
@@ -15798,14 +15485,23 @@ items:
       Enable this to send *every* event to Salesforce, bypassing the need to set
       `'Salesforce': true` in your track calls.
     settings: []
-  - name: billing
-    display_name: Send Address as Billing Address
-    type: BOOLEAN
+  - name: leadLookupFields
+    display_name: Custom Lead Lookup Fields
+    type: MAP
     deprecated: false
     required: false
     description: >-
-      This will map address traits in your group calls as Billing Address for
-      your Account Objects.
+      This setting allows you to provide mappings between traits in Segment
+      identify events and the SFDC fields you would like us to lookup a Lead
+      with. By default, the integration will look for an email trait in the
+      identify event and will either create or update a lead in Salesforce based
+      on whether one already exists with that given email address. You can use
+      this setting to override that behavior or to use multiple lookup fields.
+      Simply input the name of the Segment trait on the left and the
+      corresponding SFDC Field name on the right. If it is a custom field, be
+      sure to append it with __c. If you would like to use email in conjuction
+      with another field **you need to explicitly define that as a row in this
+      setting**.
     settings: []
   - name: sandbox
     display_name: Sandbox
@@ -16404,47 +16100,17 @@ items:
       regexp: ''
     description: Track the version of your application in Sentry.
     settings: []
-  - name: config
-    display_name: Public DSN
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: >-
-      You can find your Public DSN by going to Sentry and clicking Projects &
-      Teams > Any Project > Settings > Client Keys (DSN). This should be the
-      PUBLIC DSN since it does not contain a secret.
-    settings: []
-  - name: ignoreErrors
-    display_name: Ignore Errors
-    type: LIST
-    deprecated: false
-    required: false
-    description: >-
-      A list of these messages to be filtered out before being sent to Sentry as
-      either regular expressions or strings.
-    settings: []
-  - name: includePaths
-    display_name: Include Paths
-    type: LIST
-    deprecated: false
-    required: false
-    description: >-
-      An array of regex patterns to indicate which urls are a part of your app
-      in the stack trace. All other frames will appear collapsed inside Sentry
-      to make it easier to discern between frames that happened in your code vs
-      other code. It’d be suggested to add the current page url, and the host
-      for your CDN.
-    settings: []
-  - name: logger
-    display_name: Logger
+  - name: serverName
+    display_name: Server Name
     type: STRING
     deprecated: false
     required: false
     string_validators:
       regexp: ''
-    description: The name of the logger used by Sentry.
+    description: >-
+      Typically this would be the server name, but that doesn’t exist on all
+      platforms. Instead you may use something like the device ID, as it
+      indicates the host which the client is running on.
     settings: []
   - name: customVersionProperty
     display_name: Set Release by Property
@@ -17581,6 +17247,15 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
+  - name: brandId
+    display_name: Brand Id
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: Enter your TV Squared brand id
+    settings: []
   - name: clientId
     display_name: Client ID
     type: NUMBER
@@ -17613,15 +17288,6 @@ items:
       example, if you want analytics.track('Order Completed') and
       analytics.track('Sale') events to be sent, then add Order Completed and
       Sale to this list.
-    settings: []
-  - name: brandId
-    display_name: Brand Id
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: Enter your TV Squared brand id
     settings: []
   connection_modes:
     device:
@@ -18020,44 +17686,6 @@ items:
       Configures whether the push token for the device is a production token or
       if it is a development token.
     settings: []
-  - name: turnMenu_v2
-    display_name: Enable Turn Menu (Android)
-    type: SELECT
-    deprecated: false
-    required: false
-    select_validators:
-      select_options:
-      - 'false'
-      - 'true'
-      - default
-    description: >-
-      This is an alternative method of accessing the shake menu, useful for
-      emulators that do not have such a capability. When enabled, turning the
-      device three times will bring up the menu.
-    settings: []
-  - name: apiKey
-    display_name: API Key
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: >-
-      You can find your API Key under **Project Settings** in the upper-left of
-      the [Taplytics interface](https://taplytics.com).
-    settings: []
-  - name: delayLoad
-    display_name: Delay Load (iOS)
-    type: NUMBER
-    deprecated: false
-    required: false
-    number_validators:
-      min: 0
-      max: 0
-    description: >-
-      Seconds to keep showing the splash screen until the experiments are
-      loaded. Used for when running an experiment on the first page of the app.
-    settings: []
   connection_modes:
     device:
       web: true
@@ -18096,6 +17724,26 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
+  - name: accountName
+    display_name: Account Name
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: Your Tapstream account name
+    settings: []
+  - name: sdkSecret
+    display_name: SDK Secret
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: >-
+      This is a required property if you want to send Tapstream data from our
+      mobile SDKs.
+    settings: []
   - name: trackAllPages
     display_name: Track All Pages to Tapstream
     type: BOOLEAN
@@ -18126,26 +17774,6 @@ items:
       method](https://segment.io/libraries/analytics.js#page) calls that have a
       `name` associated with them. For example `page('Signup')` would translate
       to **Viewed Signup Page**.
-    settings: []
-  - name: accountName
-    display_name: Account Name
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: Your Tapstream account name
-    settings: []
-  - name: sdkSecret
-    display_name: SDK Secret
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: >-
-      This is a required property if you want to send Tapstream data from our
-      mobile SDKs.
     settings: []
   connection_modes:
     device:
@@ -18184,17 +17812,6 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
-  - name: trackNamedPages
-    display_name: Track Named Pages to Totango
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: >-
-      This will track events to Totango for [`page`
-      method](https://segment.io/libraries/analytics.js#page) calls that have a
-      `name` associated with them. For example `page('Signup')` would translate
-      to **Viewed Signup Page**.
-    settings: []
   - name: disableHeartbeat
     display_name: Disable the Totango Heartbeat
     type: BOOLEAN
@@ -18226,6 +17843,17 @@ items:
       method](https://segment.io/libraries/analytics.js#page) calls that have a
       `category` associated with them. For example `page('Docs', 'Index')` would
       translate to **Viewed Docs Index Page**.
+    settings: []
+  - name: trackNamedPages
+    display_name: Track Named Pages to Totango
+    type: BOOLEAN
+    deprecated: false
+    required: false
+    description: >-
+      This will track events to Totango for [`page`
+      method](https://segment.io/libraries/analytics.js#page) calls that have a
+      `name` associated with them. For example `page('Signup')` would translate
+      to **Viewed Signup Page**.
     settings: []
   connection_modes:
     device:
@@ -18989,12 +18617,14 @@ items:
       If you want to have your own custom UserVoice trigger, add the CSS
       selector for the trigger here. It might look like: `#uservoice-trigger`.
     settings: []
-  - name: smartvote
-    display_name: Enable SmartVote
+  - name: screenshotEnabled
+    display_name: Enable Screenshots
     type: BOOLEAN
     deprecated: false
     required: false
-    description: Enable SmartVote
+    description: >-
+      This will allow users to submit a screenshot of the current window when
+      submitting a message with the contact form.
     settings: []
   - name: smartvote
     display_name: Enable SmartVote
@@ -19081,14 +18711,14 @@ items:
       regexp: ''
     description: 'The `tabColor` setting defaults to "#cc6d00".'
     settings: []
-  - name: tabColor
-    display_name: Tab Color (Classic)
-    type: COLOR
+  - name: tabLabel
+    display_name: Tab Label (Classic)
+    type: STRING
     deprecated: false
     required: false
     string_validators:
       regexp: ''
-    description: 'The `tabColor` setting defaults to "#cc6d00".'
+    description: The `tabLabel` setting defaults to "Feedback & Support".
     settings: []
   - name: tabPosition
     display_name: Tab Position (Classic)
@@ -19110,9 +18740,11 @@ items:
     type: COLOR
     deprecated: false
     required: false
+    string_validators:
+      regexp: ''
     description: >-
-      This will allow you to set field value pairs for ticket custom fields (set
-      via your admin console).
+      This will change the background color of the trigger. It defaults to a
+      translucent gray.
     settings: []
   - name: triggerColor
     display_name: Trigger Foreground Color
@@ -19407,6 +19039,9 @@ items:
     type: NUMBER
     deprecated: false
     required: false
+    number_validators:
+      min: 0
+      max: 0
     description: >-
       The maximum amount of time (in milliseconds) to wait for test settings
       before VWO will simply display your original page.
@@ -19544,24 +19179,6 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: false
   settings:
-  - name: trackWalkMeEvents
-    display_name: Track WalkMe Events
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: 'If enable, WalkMe events will be tracked by Segment'
-    settings: []
-  - name: walkMeSystemId
-    display_name: WalkMe system ID
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: >-
-      WalkMe system ID - you can find it in the Editor's Snippet area (GUID
-      parameter) 
-    settings: []
   - name: apiKey
     display_name: API Key
     type: STRING
@@ -19581,6 +19198,24 @@ items:
     description: >-
       WalkMe environment that should be loaded (e.g. Test, Production), you can
       find it in the Editor's Snippet area 
+    settings: []
+  - name: trackWalkMeEvents
+    display_name: Track WalkMe Events
+    type: BOOLEAN
+    deprecated: false
+    required: false
+    description: 'If enable, WalkMe events will be tracked by Segment'
+    settings: []
+  - name: walkMeSystemId
+    display_name: WalkMe system ID
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: >-
+      WalkMe system ID - you can find it in the Editor's Snippet area (GUID
+      parameter) 
     settings: []
   connection_modes:
     device:
@@ -20410,15 +20045,6 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
-  - name: segmentId
-    display_name: Exclusion Pixel ID
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: ''
-    description: 'Exclusion pixel called by for every customer, on every page.'
-    settings: []
   - name: events
     display_name: Events
     type: MIXED
@@ -20614,6 +20240,15 @@ items:
     description: >-
       Enter the Zaps you want page/screen events to go to. Enter an page/screen
       name on the left, and a Zap URL on the right.
+    settings: []
+  - name: defaultZap
+    display_name: Zap
+    type: STRING
+    deprecated: false
+    required: false
+    string_validators:
+      regexp: ''
+    description: The default Zap URL events and page/screen should be sent to.
     settings: []
   connection_modes:
     device:
@@ -20931,19 +20566,16 @@ items:
     string_validators:
       regexp: ''
     description: >-
-      (Web/A.js Only) Add your Comscore Keyword value. This will be added to the
-      query string as `comscorekw={value}`. 
+      You can find your `Publisher Secret` option when you enter your domain and
+      press **Get Tag** at [comScore
+      Direct](http://direct.comscore.com/clients/Default.aspx).
     settings: []
-  - name: foregroundOnly
-    display_name: Only Auto Update when app in foreground.
+  - name: useHTTPS
+    display_name: Use HTTPS
     type: BOOLEAN
     deprecated: false
     required: false
-    description: >-
-      When Auto Update is Enabled, this setting determines whether usage date
-      will be sent only when the app is in the foreground. If your app can
-      provide a user experience from the background, like Push Notifications,
-      then you'll want to set this to false.
+    description: 'If true, this will ensure all data is sent to comScore via HTTPS.'
     settings: []
   - name: c2
     display_name: c2 ID
@@ -21138,16 +20770,6 @@ items:
   browserUnbundlingSupported: false
   browserUnbundlingPublic: true
   settings:
-  - name: workflows
-    display_name: Workflow Urls (max 10)
-    type: LIST
-    deprecated: false
-    required: false
-    description: >-
-      List of the full URL (with http/https protocol) that we can send data to.
-      eg. https://507f1352-cbc7-4abb-8dd2-538d3c09787d.trayapp.io. Limited to
-      10.
-    settings: []
   - name: sharedSecret
     display_name: Shared Secret
     type: STRING
@@ -21159,6 +20781,16 @@ items:
       A optional key used when sending events to tray, to keep data flowing
       securely. You'll need to also enter this secret in the Segment connector
       settings in the tray dashboard.
+    settings: []
+  - name: workflows
+    display_name: Workflow Urls (max 10)
+    type: LIST
+    deprecated: false
+    required: false
+    description: >-
+      List of the full URL (with http/https protocol) that we can send data to.
+      eg. https://507f1352-cbc7-4abb-8dd2-538d3c09787d.trayapp.io. Limited to
+      10.
     settings: []
   connection_modes:
     device:
