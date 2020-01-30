@@ -5,4 +5,4 @@ hidden: true
 
 - [Destinations Connection Modes comparison](cmodes-compare/)
 - [Destinations Methods comparisons](methods-compare/)
-- [Destinations Methods comparisons](category-compare/)
+- [Destinations by category comparisons](category-compare/)
