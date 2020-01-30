@@ -1,4 +1,0 @@
----
-title: Beamer Destination
----
-  
