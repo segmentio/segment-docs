@@ -7,7 +7,8 @@ if [[ $? != 0 ]] ; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
     echo " ✔ Brew already installed"
-    brew update -s
+    echo " Updating Brew"
+    brew update
 fi
 
 # install the stuff you need to edit the docs
@@ -65,25 +66,30 @@ else
     echo " ✔ Yarn already installed"
 fi
 
-which -s gem
-if [[ $? != 0 ]] ; then # check if gem is installed
-  version=$(gem --version) # version check
-  echo "Found a version of Gem installed. Checking version."
-  if [[ $version < 2.5.0 ]] ; then
-      echo "Gem version outdated, please install using \`sudo gem update --system\`"
-    else
-    " ✔ Gem version $version already installed"
-  fi
-else
-  gem update --system # try updating, without sudo
-  echo "Attempting to install Gem."
-  version=$(gem --version)  # version check
-  if [[ $version < 2.5.0 ]] ; then
-      echo "Gem version outdated, please install using \`sudo gem update --system\`"
-    else
-      " ✔ Gem version $version already installed"
-  fi
-fi
+echo " Updating your Gem installation. Please enter your password to sudo."
+# sudo gem update --system
+echo "Gem version " $(gem --version) "installed"
+
+# can't get this working because comparing version strings is complicated.
+# which -s gem
+# if [[ $? != 0 ]] ; then # check if gem is installed
+#   version=$(gem --version) # version check
+#   echo "Found a version of Gem installed. Checking version."
+#   if [[ $version < 2.5.0 ]] ; then
+#       echo "Gem version outdated, please install using \`sudo gem update --system\`"
+#     else
+#     " ✔ Gem version $version already installed"
+#   fi
+# else
+#   gem update --system # try updating, without sudo
+#   echo "Attempting to install Gem."
+#   version=$(gem --version)  # version check
+#   if [[ $version < 2.5.0 ]] ; then
+#       echo "Gem version outdated, please install using \`sudo gem update --system\`"
+#     else
+#       " ✔ Gem version $version already installed"
+#   fi
+# fi
 
 which -s bundler
 if [[ $? != 0 ]] ; then
