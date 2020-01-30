@@ -12,8 +12,6 @@ This document was last updated on January 23, 2020. If you notice any gaps, out-
 
 ## Getting Started
 
-The first step is to make sure Wootric supports the source type and connection mode you’ve chosen to implement. You can learn more about what dictates the connection modes we support [here](https://segment.com/docs/connections/destinations/#connection-modes).
-
 {% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
