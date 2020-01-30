@@ -289,34 +289,35 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 2. Browser Registration. In order for a browser to receive push notifications, you must register it for push by calling:
 
-    ```
+    ```js
     analytics.ready(function() {
       window.appboy.registerAppboyPushMessages();
     });
     ```
+
     **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet) within your `script` tag.
 
     **Note:** This will immediately request push permission from the user.
 
-    If you wish to show your own push-related UI to the user before requesting push permission (known as a soft push prompt), you can test to see if push is supported in the user's browser by calling:
+To show your own push-related UI to the user before requesting push permission (known as a soft push prompt), you can test to see if push is supported in the user's browser by calling:
 
-    ```
-    analytics.ready(function() {
-      if (window.appboy.isPushSupported()) {
-        // Add your push logic
-      }
-     });
-    ```
+```js
+analytics.ready(function() {
+  if (window.appboy.isPushSupported()) {
+    // Add your push logic
+  }
+ });
+```
 
-    Braze recommends checking to see if this returns `true` since not all browsers can recieve push notifications. [See below](/docs/connections/destinations/catalog/braze/#soft-push-prompts) for instructions on setting up a soft push prompt using Braze In-App Messages.
+Braze recommends checking to see if this returns `true` since not all browsers can recieve push notifications. [See below](/docs/connections/destinations/catalog/braze/#soft-push-prompts) for instructions on setting up a soft push prompt using Braze In-App Messages.
 
-    If you'd like to unsubscribe a user, you can do so by calling:
+To unsubscribe a user, call:
 
-    ```
-    analytics.ready(function() {
-      window.appboy.unregisterAppboyPushMessages();
-    });
-    ```
+```js
+analytics.ready(function() {
+  window.appboy.unregisterAppboyPushMessages();
+});
+```
 
 3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/documentation/Web/#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard).
 
@@ -330,58 +331,60 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 3. Add the following snippet to your site:
 
-    ```
-    analytics.ready(function() {
-      window.appboy.subscribeToNewInAppMessages(function(inAppMessages) {
-        var message = inAppMessages[0];
-        if (message != null) {
-          var shouldDisplay = true;
+```js
+analytics.ready(function() {
+  window.appboy.subscribeToNewInAppMessages(function(inAppMessages) {
+    var message = inAppMessages[0];
+    if (message != null) {
+      var shouldDisplay = true;
 
-          if (message instanceof appboy.ab.inAppMessage) {
-            // Read the key/value pair for msg-id
-            var msgId = message.extras["msg-id"];
+      if (message instanceof appboy.ab.inAppMessage) {
+        // Read the key/value pair for msg-id
+        var msgId = message.extras["msg-id"];
 
-            // If this is our push primer message
-            if (msgId == "push-primer") {
-              // We don't want to display the soft push prompt to users on browsers that don't support push, or if the user
-              // has already granted/blocked permission
-              if (!appboy.isPushSupported() || appboy.isPushPermissionGranted() || appboy.isPushBlocked())     {
-                shouldDisplay = false;
-              }
-              // Prompt the user when the first button is clicked
-              message.buttons[0].subscribeToClickedEvent(function() {
-                appboy.registerAppboyPushMessages();
-              });
-            }
+        // If this is our push primer message
+        if (msgId == "push-primer") {
+          // We don't want to display the soft push prompt to users on browsers that don't support push, or if the user
+          // has already granted/blocked permission
+          if (!appboy.isPushSupported() || appboy.isPushPermissionGranted() || appboy.isPushBlocked())     {
+            shouldDisplay = false;
           }
+          // Prompt the user when the first button is clicked
+          message.buttons[0].subscribeToClickedEvent(function() {
+            appboy.registerAppboyPushMessages();
+          });
+        }
+      }
 
-          // Display the message
-          if (shouldDisplay) {
-            appboy.display.showInAppMessage(message);
-          }
-         }
+      // Display the message
+      if (shouldDisplay) {
+        appboy.display.showInAppMessage(message);
+      }
+     }
 
-        // Remove this message from the array of IAMs and return whatever's left
-        return inAppMessages.slice(1);
-       });
-     });
-    ```
+    // Remove this message from the array of IAMs and return whatever's left
+    return inAppMessages.slice(1);
+   });
+ });
+```
+
 For more details on this snippet, check out the Braze's docs [here](https://www.braze.com/documentation/Web/#soft-push-prompts).
 
 **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet) within your `script` tag.
 
-4) When you'd like to display the Soft Push to a user, call:
+4. When you'd like to display the Soft Push to a user, call:
 
-    ```
-     analytics.ready(function() {
-      window.appboy.logCustomEvent("prime-for-push")
-     });
-    ```
+```js
+ analytics.ready(function() {
+  window.appboy.logCustomEvent("prime-for-push")
+ });
+```
 
 ### Enable IDFA collection
 
 To enable IDFA collection in Braze, please add following lines to your `Podfile`:
-```
+
+```objc
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|

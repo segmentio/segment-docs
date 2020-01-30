@@ -13,8 +13,8 @@ contributors:
   - name: Monica Buck
     date: 23.08.2019
 related:
-  - "/connections/sources/catalog/"
-  - "/connections/sources/faq/"
+  - "/docs/connections/sources/catalog/"
+  - "/docs/connections/sources/faq/"
 ---
 
 ---
@@ -26,6 +26,16 @@ related:
 ### Heading 3
 #### Heading 4
 ##### Heading 5
+
+---
+
+## Text underline
+
+{:.underline}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+{:.underline}
+#### Heading with underline
 
 ---
 
