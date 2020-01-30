@@ -8,8 +8,6 @@ If you're using the [new Google Ads (Gtag) experience](https://support.google.co
 
 **IMPORTANT**: Only use this destination if your Google Ads account is using the _New_ (Gtag) Experience. If you are using Google Tag Manager (a separate product) as well, do not add the global site tag again in your GTM containers. You should also disable any [Google Ads (Classic)](https://segment.com/docs/connections/destinations/catalog/adwords/) destinations within the same source, since **Google Ads (Classic)** cannot load at the same times as **Google Ads (Gtag)**.
 
-How do I know which experience I'm using? [Check this Google support KB article](https://support.google.com/google-ads/answer/6398605?hl=en) is how to find out.
-
 ## Getting Started
 
 You can use this destination to map your `.page()` calls to **Page Load Conversions** or `.track()` calls to **Click Conversions**.
