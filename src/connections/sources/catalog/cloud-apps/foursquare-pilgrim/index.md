@@ -59,7 +59,7 @@ Note: all fields are presented as strings.
 | zipCode             | Zip or postal code for visit venue                                                          | String                         |
 
 Example:
-```
+```js
 "address": "225 W Ohio St",
 "city": "Chicago",
 "confidence": "high",
@@ -97,7 +97,7 @@ Example:
 
 
 Example:
-```
+```js
 "categoryIds": "",
 "geofenceEventType": "venueEnter",
 "geofenceId": "5dae122e0444bf0008d7f550",
