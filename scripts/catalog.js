@@ -231,11 +231,12 @@ const updateDestinations = async () => {
       components: destination.components,
       platforms: destination.platforms,
       browserUnbundlingSupported: destination.browserUnbundlingSupported,
-      browserUnbundlingPublic: destination.browserUnbundlingPublic
+      browserUnbundlingPublic: destination.browserUnbundlingPublic,
+      methods: destination.methods
     })
 
     let url = `connections/destinations/catalog/${slug}`
-    
+
     let settings = destination.settings
     settings.sort((a, b) => {
       if(a.display_name < b.display_name) { return -1; }
@@ -251,7 +252,7 @@ const updateDestinations = async () => {
         })
       }
     })
-    
+
     let updatedDestination = {
       display_name: destination.display_name,
       slug,
@@ -271,6 +272,7 @@ const updateDestinations = async () => {
       platforms: destination.platforms,
       browserUnbundlingSupported: destination.browserUnbundlingSupported,
       browserUnbundlingPublic: destination.browserUnbundlingPublic,
+      methods: destination.methods,
       settings,
       connection_modes,
       previous_names: destination.previous_names
