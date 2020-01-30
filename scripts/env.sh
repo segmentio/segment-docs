@@ -12,9 +12,11 @@ else
 fi
 
 # install the stuff you need to edit the docs
+# yes, I realize you have to have git to get this usually,
+# but there's a possible world in which we send someone this script
+# to configure their env before they get the repo set up
 which -s git
 if [[ $? != 0 ]] ; then
-    # Install Homebrew
     brew install git
     echo " ✔ Git installed"
 else
