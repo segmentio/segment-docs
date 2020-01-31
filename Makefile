@@ -68,6 +68,10 @@ typewriter: npx typewriter
 .PHONY: deps
 deps: node_modules vendor/bundle
 
+.PHONY: env
+env:
+	@sh scripts/env.sh
+
 .PHONY: clean
 clean:
 	@rm -Rf _site
@@ -91,7 +95,7 @@ node_modules: package.json yarn.lock
 	yarn --frozen-lockfile
 
 .PHONY: vendor/bundle
-vendor/bundle: 
+vendor/bundle:
 	@export BUNDLE_PATH="vendor/bundle"
 	@mkdir -p vendor && mkdir -p vendor/bundle
 	@chmod -R 777 vendor/
@@ -152,6 +156,7 @@ docker-build:
 #catalog:
 #	bundle exec rake catalog:update
 #
+# old env command
 #.PHONY: env
 #env:
 #	gem install bundler
