@@ -71,6 +71,10 @@ typewriter: npx typewriter
 .PHONY: deps
 deps: node_modules vendor/bundle
 
+.PHONY: env
+env:
+	@sh scripts/env.sh
+
 .PHONY: clean
 clean:
 	@rm -Rf _site
@@ -155,6 +159,7 @@ docker-build:
 #catalog:
 #	bundle exec rake catalog:update
 #
+# old env command
 #.PHONY: env
 #env:
 #	gem install bundler
