@@ -114,6 +114,6 @@ Example:
 
 Now that your Source is set up, you can connect it with Destinations.
 
-Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
+Log into your downstream tools and check that your events appear and contain all the expected properties. If events and properties do not appear, refer to the Destination docs for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, please [contact the Foursquare team](mailto:developers@foursquare.com).
