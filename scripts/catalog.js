@@ -99,7 +99,6 @@ const getConnectionModes = (destination) => {
  */
 const doesCatalogItemExist = (item) => {
   const docsPath = `src/${item.url}`
-  console.log("Checking if " + item.slug + " exists")
   if (!fs.existsSync(docsPath)) {
     console.log(`${item.slug} does not exist: ${docsPath}`)
     let content =`---\ntitle: '${item.display_name} Source'\nhidden: true\n---`
