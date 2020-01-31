@@ -1,5 +1,5 @@
 ---
-title: Foursquare-Pilgrim
+title: Foursquare Pilgrim
 source-type: event
 beta: true
 ---
