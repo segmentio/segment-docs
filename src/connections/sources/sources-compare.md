@@ -1,6 +1,5 @@
 ---
-title: Sources Comparison Laura's Version
-hidden: true
+title: Sources Comparison
 ---
 
 This page collates information about each source, organized by category for better comparison shopping.
