@@ -291,7 +291,7 @@ This is an advanced method, but it is required to manage user identities success
 
 `alias` method definition:
 
-```
+```js
 analytics.alias(userId, [previousId], [options], [callback]);
 ```
 The `alias` call has the following fields:
@@ -374,9 +374,8 @@ Here are the query parameters to use:
 
 So for example, this URL:
 
-```
+```text
 http://segment.com/?ajs_uid=123456789abcd&ajs_event=Clicked%20Email&ajs_aid=abc123&ajs_prop_emailCampaign=First+Touch&ajs_trait_name=Karl+Jr.
-
 ```
 
 it would trigger the following events on the page:
@@ -397,10 +396,9 @@ An `integrations` object may be passed in the `options` of `alias`, `group`, `id
 An example showing how to send a single message only to Intercom and Google Analytics:
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu',
-  type: 'electric'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
 }, {
   integrations: {
     'All': false,
@@ -415,10 +413,9 @@ analytics.identify('025pikachu025', {
 Conversely, an example how to send a single message to all integrations **except** Intercom and Google Analytics:
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu',
-  type: 'electric'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
 }, {
   integrations: {
     'Intercom': false,
@@ -449,7 +446,7 @@ This way, you can conditionally load integrations based on what customers opt in
 
 A pseudocode example:
 
-```
+```js
 onConsentDialogClosed(function(consentedTools){
   analytics.load('writekey', { integrations: consentedTools })
 })
@@ -539,8 +536,8 @@ analytics.user().anonymousId('ABC-123-XYZ');
 Or in the `options` object of [`identify`](/docs/connections/spec/identify), [`page`](/docs/connections/spec/page), or [`track`](/docs/connections/spec/track) calls, like this:
 
 ```js
-analytics.identify('025pikachu025', {
-  name: 'Pikachu'
+analytics.identify('user_123', {
+  name: 'Jane Kim'
 }, {
   anonymousId: 'ABC-123-XYZ'
 });
@@ -765,7 +762,7 @@ Within the `options` dictionary, a sub-dictionary, `context`, exists. The contex
 
 Consider this identify event:
 
-```
+```js
 analytics.identify('12091906-01011992', {
     plan_id: 'Paid, Tier 2'
     email: 'grace@usnavy.gov'
@@ -774,7 +771,7 @@ analytics.identify('12091906-01011992', {
 
 The traits on this event are `plan_id`. If you want these traits to appear on a subsequent track or page event that this user triggers, you can get this association by passing those traits into `context.traits` as follows:
 
-```
+```js
 analytics.track('Clicked Email', {
   	emailCampaign: 'First Touch'
   },
@@ -901,7 +898,7 @@ There should be no noticeable impact to your data flow. You may notice analytics
 ### How are properties with `null` and `undefined` values treated?
 We use the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:
 
-```
+```js
 console.log(JSON.stringify({ x: null, y: 6 }));
 // expected output: "{"x":null,"y":6}"
 
