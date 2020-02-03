@@ -1,6 +1,6 @@
 ---
-rewrite: true
 title: Exponea Destination
+rewrite: true
 beta: true
 ---
 
