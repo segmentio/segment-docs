@@ -79,6 +79,30 @@ Here are the Zendesk User Attributes Segment maps to and their syntax.
 
 **Note on Name:** If `name` is provided, Segment will parse `firstName` and `lastName` from this, or you can send `firstName` and `lastName`separately and they will be concatenated to `name`.
 
+### Removing Users from a Zendesk Organization Membership on Segment Identify
+
+To remove a user from an organization you must navigate to you Zendesk destination settings an enable the **"Enable Removing Users from Organizations"** option. Once that settings is enabled, when you pass an identify event with `traits.company.id` where `traits.company.remove: true`, Segment will send a request to the Zenedesk API to remove the user from the organization. If you enable the appropriate setting in your Zendesk destination settings but do not pass the proper trait values, Segment will default to the standard `identify` behavior, which will create or update a user.
+
+Here's an example:
+```js
+{
+  "action": "identify",
+  "userId": "12345",
+  "traits": {
+    "name": "Kobe Bryant",
+    "email": "kobe@lakers.com",
+    "timezone": "America/Los_Angeles",
+    "organizationId": 6789,
+    "phone": "763-555-2342",
+    "company": {
+      "id": "6789",
+      "remove": true
+    }
+  }
+}
+```
+
+**Note**: Once this request is made, Zendesk will schedule a job to unassign all working tickets currently assigned to the user and organization combination. The `organization_id` of the unassigned tickets is set to `"null"`.
 
 ### Zendesk Verification Email at User Creation
 
