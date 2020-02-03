@@ -54,8 +54,8 @@ Here's an example:
   "action": "identify",
   "userId": "12345",
   "traits": {
-    "name": "Kobe Bryant",
-    "email": "kobe@lakers.com",
+    "name": "Pikachu",
+    "email": "pikachu@pakemon.com",
     "timezone": "America/Los_Angeles",
     "organizationId": 6789,
     "phone": "763-555-2342"
@@ -89,8 +89,8 @@ Here's an example:
   "action": "identify",
   "userId": "12345",
   "traits": {
-    "name": "Peter Gibbons",
-    "email": "peter@segment.com",
+    "name": "Pikachu",
+    "email": "pikachu@pokemon.com",
     "timezone": "America/Los_Angeles",
     "organizationId": 6789,
     "phone": "763-555-2342",
