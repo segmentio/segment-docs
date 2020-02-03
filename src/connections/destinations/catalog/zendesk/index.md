@@ -81,7 +81,7 @@ Here are the Zendesk User Attributes Segment maps to and their syntax.
 
 ### Removing Users from a Zendesk Organization Membership on Segment Identify
 
-To remove a user from an organization you must navigate to you Zendesk destination settings an enable the **"Enable Removing Users from Organizations"** option. Once that settings is enabled, when you pass an identify event with `traits.company.id` where `traits.company.remove: true`, Segment will send a request to the Zenedesk API to remove the user from the organization. If you enable the appropriate setting in your Zendesk destination settings but do not pass the proper trait values, Segment will default to the standard `identify` behavior, which will create or update a user.
+To remove a user from an organization, navigate to your Zendesk destination settings and click **Enable Removing Users from Organizations** . When this setting is enabled, Segment detects when you pass an identify events with `traits.company.id` where `traits.company.remove: true`, and then sends a request to the Zenedesk API to remove the user from the organization. If you enable the setting in your Zendesk destination settings but do not pass the correct trait values, Segment defaults to the standard `identify` behavior, which creates or updates a user.
 
 Here's an example:
 ```js
@@ -102,7 +102,8 @@ Here's an example:
 }
 ```
 
-**Note**: Once this request is made, Zendesk will schedule a job to unassign all working tickets currently assigned to the user and organization combination. The `organization_id` of the unassigned tickets is set to `"null"`.
+> note ""
+> **Note**: When a request is made, Zendesk schedules a job to unassign all working tickets currently assigned to the user and organization combination. The `organization_id` of the unassigned tickets is set to `null`.
 
 ### Zendesk Verification Email at User Creation
 
