@@ -148,7 +148,7 @@ This identify call is translated into a customer update for user with Exponea ha
 
 If you have not had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does.
 
-The alias call can be used to merge two user identities and their data to one. The previousId field should always contain a previously used anonymousId, as merging users by specifying two userIds is not supported. Sending an alias event with previousId and no userId will cause the event to be ignored. Note that users are also merged when any call specifies both a userId and an anonymousId, which previously belonged to two separate users.
+The alias call can be used to merge two user identities and their data to one. The `previousId` field should always contain a previously used `anonymousId`, as merging users by specifying two `userIds` is not supported. Sending an alias event with `previousId` and no `userId` will cause the event to be ignored. Note that users are also merged when any call specifies both a userId and an anonymousId, which previously belonged to two separate users.
 
 Example of alias call:
 
@@ -197,26 +197,3 @@ The properties would be sent as:
 "address_city": "New York",
 "address_country": "USA",
 ```
-
-## Settings
-Segment lets you change these destination settings from your Segment dashboard without the need to handle any code.
-
-### API Base URL
-You can find your API base URL under Project Settings > Access Management > API in your Exponea project (default https://api.exponea.com/)
-
-### API key
-Follow [this guide](https://docs.exponea.com/reference#section-setting-up-public-key-in-exponea-app) on how to generate a public API key.
-
-### Project token
-You can find your project token under Project Settings > Access Management > API in your Exponea project.
-
-### Exponea hard ID
-Specify the name of Exponea's hard ID to which the Segment's user_id will be mapped, typical example is `registered`.
-
-### Exponea soft ID
-Specify the name of Exponea's soft ID to which the Segment's anonymous_id will be mapped, typical example is `cookie`.
-
-### Track session ping
-Select this option if you would like to track an additional `session_ping` event with each page and screen events. This will enable [automatic session tracking](https://docs.exponea.com/docs/system-events#section-first-session-session-start-session-end) of events `first_session`, `session_start` and `session_end` in Exponea. The Exponea soft ID must be set to `cookie` and Segment's `anonymousId` field must be available in the call for session events to work.
-
----
