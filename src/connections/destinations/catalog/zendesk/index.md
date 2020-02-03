@@ -102,7 +102,8 @@ Here's an example:
 }
 ```
 
-**Note**: Once this request is made, Zendesk will schedule a job to unassign all working tickets currently assigned to the user and organization combination. The `organization_id` of the unassigned tickets is set to `"null"`.
+> note ""
+> **Note**: When a request is made, Zendesk schedules a job to unassign all working tickets currently assigned to the user and organization combination. The `organization_id` of the unassigned tickets is set to `null`.
 
 ### Zendesk Verification Email at User Creation
 
