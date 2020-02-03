@@ -236,7 +236,7 @@ This event can be sent when a push notification is received in the app. It can b
 -------             | -----    | -----
 `campaign[name]`    | String   | Campaign Name.
 `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification).
-`campaign[content]` | String   | Push notification content content
+`campaign[content]` | String   | Push notification content.
 `campaign[source]`  | String   | Designates the push provider. (Optional)
 
 ### Push Notification Tapped
