@@ -137,12 +137,12 @@ To utilize Selective Sync, go to the Overview page in the Segment app and select
 
 (1) **To manage multiple sources for an individual warehouse**: Click **Settings**, and click **Selective Sync** in the left menu. This may be valuable if you’re looking to make changes in bulk, such as when setting up a new warehouse.
 
-![](/images/WH_SS_WH.png)
+![](/docs/connections/warehouses/images/WH_SS_WH.png)
 
 
 (2) **To manage data from one source to an individual warehouse**: From the Warehouse Overview page, click the Schema (source) you want to manage, and then click **Settings**. This can be valuable when are making smaller changes (e.g., disabling all properties from one unnecessary collection).
 
-![](/images/WH_SS_Source.png)
+![](/docs/connections/warehouses/images/WH_SS_Source.png)
 
 
 All changes made through Selective Sync only impact an individual warehouse - they do **not** propagate to multiple warehouses at once. To make changes to multiple warehouses, you need to enable/disable data for each individual warehouse.
