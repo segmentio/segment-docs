@@ -283,11 +283,11 @@ Here's a full example of how we might use the `alias` call:
 // the anonymous user does actions ...
 Analytics.Client.Track("anonymous_user", "Anonymous Event");
 // the anonymous user signs up and is aliased
-Analytics.Client.Alias("anonymous_user", "identified@gmail.com");
+Analytics.Client.Alias("anonymous_user", "identified@example.com");
 // the identified user is identified
-Analytics.Client.Identify("identified@gmail.com", new Traits() { plan: "Free" });
+Analytics.Client.Identify("identified@example.com", new Traits() { plan: "Free" });
 // the identified user does actions ...
-Analytics.Client.Track("identified@gmail.com", "Identified Action");
+Analytics.Client.Track("identified@example.com", "Identified Action");
 ```
 
 ---
