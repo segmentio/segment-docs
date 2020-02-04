@@ -4,13 +4,13 @@ source-type: event
 beta: true
 ---
 
-[Wootric](https://wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a modern customer feedback management software. Easily incorporate Voice of Customer data in your decision-making processes and marketing campaigns, and trigger customer follow-up when you send survey responses to your CRM, marketing platform or data warehouses automatically.
+[Wootric](https://wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is modern customer feedback management software. Easily incorporate Voice of Customer data in your decision-making processes and marketing campaigns, and trigger customer follow-up when you send survey responses to your CRM, marketing platform or data warehouses automatically.
 
 This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by Wootric. For any issues with the source, please [reach out to the Wootric support team](mailto:support@wootric.com).
 
-_**NOTE:** The Wootric Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on July 31, 2019. If you are interested in joining their beta program or have any feedback to help improve the Wootric Source and its documentation, please [let the Wootric support team know](mailto:support@wootric.com)!_
+_**NOTE:** The Wootric Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on February 4, 2020. If you are interested in joining their beta program or have any feedback to help improve the Wootric Source and its documentation, please [let the Wootric support team know](mailto:support@wootric.com)!_
 
 
 ## Getting Started
