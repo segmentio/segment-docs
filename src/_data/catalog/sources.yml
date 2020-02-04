@@ -859,7 +859,7 @@ items:
 
     Zendesk data will reflect the state of the object at the time of the sync:
     so if a ticket status goes from `unassigned` to `assigned` between syncs, on
-    its next sync that tickets status will be `assigned`. 
+    its next sync that tickets status will be `assigned`.
 
 
     We will update Zendesk data every ~3 hours.
