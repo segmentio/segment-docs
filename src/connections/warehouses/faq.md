@@ -4,13 +4,14 @@ title: Warehouse FAQs
 
 ## Can I control what data is sent to my warehouse?
 
-Yes! For those of you who are on our [business-tier](/pricing), you can choose which data sources, collections, and properties write into your data warehouse. Once a source or property is disabled, we no longer sync data from that source. We will not, however, delete any data from your warehouse.
+Yes! For those of you who are on our [Business plan](https://segment.com/pricing), you can choose which sources, collections, and properties sync to your data warehouse.
 
-When a source is re-enabled, we will sync all events since the last sync.  You can adjust your schema in the Selective Sync menu in your Warehouse Settings. 
+You can use Selective Sync to manage what data is sent to each individual warehouse, allowing you to sync different sets of data from the same source to different warehouses. Check out more information on how to use Selective Sync [here](https://segment.com/docs/guides/filtering-data/#warehouse-selective-sync).
 
-![](images/asset_ECf8ov8K.png)
+Once a source, collection or property is disabled, we no longer sync data from that source. We will not, however, delete any historical data from your warehouse. When a source is re-enabled, we will sync all events since the last sync. Please note that this does not happen when a collection or property is re-enabled - only new data generated after re-enabling will be synced to your warehouse.
 
-For self-serve and free customers, we do not currently support the ability to select which events — or properties of events — get synced into your warehouse.
+
+For Self-Serve and free customers, we do not currently support the ability to select which collections — or properties of collections — get synced into your warehouse.
 
 
 ## Can we add, tweak, or delete some of the tables?
