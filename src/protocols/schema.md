@@ -33,16 +33,16 @@ If you no longer want to capture specific traits within `.identify()` and `.grou
 All customers can filter specific events from being sent to specific Destinations (except for warehouses) by updating their tracking code. Here is an example showing how to send a single message only to Intercom and Google Analytics:
 
 ```js
-    analytics.identify('025pikachu025', {
-      email: 'peekAtMe@email.poke',
-      name: 'Pikachu'
-    }, {
-      integrations: {
-        'All': false,
-        'Intercom': true,
-        'Google Analytics': true
-      }
-    });
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
+}, {
+  integrations: {
+    'All': false,
+    'Intercom': true,
+    'Google Analytics': true
+  }
+});
 ```
 
 Destination flags are case sensitive and match the [Destination's name in the docs](https://segment.com/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
