@@ -69,7 +69,7 @@ else
 fi
 
 echo " Updating your Gem installation. Please enter your password to sudo."
-# sudo gem update --system
+sudo gem update --system -n /usr/local/bin
 echo "Gem version " $(gem --version) "installed"
 
 # can't get this working because comparing version strings is complicated.
