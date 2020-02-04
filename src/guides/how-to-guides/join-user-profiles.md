@@ -22,8 +22,8 @@ However, we suggest using the same ID you generate from your production database
 
 ```js
 analytics.identify('1e810c197e', { // that's the user ID from the database
-  name: 'Bill Lumbergh',
-  email: 'bill@initech.com'// also includes email
+  name: 'Jane Kim',
+  email: 'jane.kim@example.com'// also includes email
   });
 ```
 

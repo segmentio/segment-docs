@@ -294,7 +294,7 @@ POST https://api.segment.io/v1/batch
       "type": "identify",
       "userId": "971mj8mk7p",
       "traits": {
-        "email": "cindy@gmail.com",
+        "email": "cindy@example.com",
         "name": "Cindy Gonzalez",
         "age": 23
       },
