@@ -2,8 +2,8 @@
 title: Sources Overview
 landing: true
 related:
-  - "/docs/connections/sources/catalog/"
-  - "/docs/connections/sources/faq/"
+  - "/connections/sources/catalog/"
+  - "/connections/sources/faq/"
 icon: media/icon-academy.svg
 excerpt: Detailed information about each Source. Learn how our API methods are implemented for that destination.
 ---
