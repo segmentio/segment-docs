@@ -31,13 +31,13 @@ From here, you can access the Selective Sync feature from two places within the 
 
 Click **Settings**, and click **Selective Sync** in the left menu. This may be valuable if you’re looking to make changes in bulk, such as when setting up a new warehouse.
 
-![](/images/WH_SS_WH.png)
+![](images/WH_SS_WH.png)
 
 ### Change sync settings on a specific Warehouse to Source connection
 
 To manage data from one specific source to an individual warehouse, go to the Warehouse Overview page. Click the Schema (source) you want to manage, and click **Settings**. This can be valuable when are making smaller changes (for example, disabling all properties from one unnecessary collection).
 
-![](/images/WH_SS_Source.png)
+![](images/WH_SS_Source.png)
 
 
 All changes made through Selective Sync only impact an individual warehouse - they do **not** propagate to multiple warehouses at once. To make changes to multiple warehouses, you need to enable/disable data for each individual warehouse.
