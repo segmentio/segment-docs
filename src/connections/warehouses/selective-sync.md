@@ -5,7 +5,7 @@ title: Warehouse Selective sync
 [Warehouse Selective Sync](https://segment.com/docs/connections/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse/) allows you to manage the data that you send to your warehouses. You can use this feature to stop syncing specific events (also known as collections) or properties that aren’t relevant, and could be slowing down your warehouse syncs.
 
 > info ""
-> This feature is available to Business Tier customers only.**
+> This feature is available to Business Tier customers only.
 
 With Selective Sync, you can customize which collections and properties from a source are sent to each warehouse. Previously, changes made using this feature were applied to all warehouses within a workspace. Now, instead of all changes affecting every warehouse in a workspace, you can use Selective Sync to decide which data should go to each individual warehouse. This allows you to send different data to each warehouse.
 
