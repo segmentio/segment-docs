@@ -9,7 +9,10 @@ title: Warehouse Selective sync
 
 With Selective Sync, you can customize which collections and properties from a source are sent to each warehouse. Previously, changes made using this feature were applied to all warehouses within a workspace. Now, instead of all changes affecting every warehouse in a workspace, you can use Selective Sync to decide which data should go to each individual warehouse. This allows you to send different data to each warehouse.
 
-Note: This feature only affects warehouses, and does not prevent data from going to any other destinations.
+This feature only affects [warehouses](/docs/connections/warehouses/), and does not prevent data from going to any other [destinations](/docs/connections/destinations/).
+
+When you use Selective Sync to prevent data from syncing to a specific warehouse, Segment stops sending new data that meets the selection criteria to that warehouse, however it doesn't delete any existing data in the warehouses. If you use Selective Sync to re-enable a source after disabling it, Segment loads all data that arrived since the last sync into the warehouse, but doesn't backfill data that was omitted while the source was not syncing.
+
 
 ## When to use Selective Sync
 
@@ -17,9 +20,9 @@ By default, all sources and their collections and properties are sent, and no da
 
 When you disable sources, collections or properties using Selective Sync, Segment stops sending new data for these sources/collections/properties to your warehouse, however it doesn’t delete any existing data in the warehouse. If you later re-enable a source to begin syncing again, Segment loads all data that arrived since the last sync into the warehouse, but doesn’t backfill data that was omitted while these were disabled. Note: When a collection or property is re-enabled, data will only sync going forward, it will not be loaded from the last sync.
 
-## How to use Selective Sync
+## Enabling Selective Sync
 
-To use Selective Sync, go to the Overview page in the Segment App and select the warehouse you want to manage from the list of Destinations.
+To use Selective Sync, go to the **Overview** page in the Segment App and select the warehouse you want to manage from the list of Destinations.
 
 From here, you can access the Selective Sync feature from two places within the app - from the warehouse level (which makes it quicker to manage multiple sources at once), or from the warehouse-to-source connection page, which is quicker if you only want to manage data from one source.
 
