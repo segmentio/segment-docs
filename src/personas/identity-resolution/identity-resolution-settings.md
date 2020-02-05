@@ -7,7 +7,7 @@ Before connecting a source to a Personas space, we recommend first reviewing our
 > note ""
 > **NOTE:** The Identity Resolution table can only be edited by workspace owners and users with the Identity Admin role.
 
-[](images/identity-resolution-page-1.png)
+![](images/identity-resolution-page-1.png)
 
 ## ExternalIDs
 Segment creates and merges user profiles based on externalIDs we use as identifiers. You can view these externalIDs in the Identities tab of a User Profile in the User Explorer:
@@ -101,7 +101,7 @@ In the past, we've seen certain default values across many different customers c
 | null                          | Exact Match     |
 | anonymous                     | Exact Match     |
 
-[](images/blocked-values.png)
+![](images/blocked-values.png)
 
 Before sending data through, we also recommend adding any default hard-coded values that your team uses during the development process, such as `void` or `abc123`.
 
@@ -114,7 +114,7 @@ Identity Admins can specify the total number of values allowed per externalID ty
 | user_id               | 1     |
 | all other identifiers | 5     |
 
-[](images/user-id.png)
+![](images/user-id.png)
 
 There are specific cases that will deviate from this default. For example, a case where a user can have more than one user_id but only one email, like when a user is defined by both their shopify_id and an internal UUID. In this case, an example setup may be:
 
@@ -130,7 +130,7 @@ When choosing the limit on your identifier, ask the following questions about ea
 2. Is it a constantly changing ID? A constantly changing ID, such as anonymous_id or ga_client_id, should be given a short sliding window, such as `5 weekly` or `5 monthly`, depending on how often your application automatically logs out the user.
 3. Is it an ID that can be updated on a yearly basis? Most customers will have around 5 emails or devices at any one time, but can update these over time. For identifiers like email, android.id or ios.id, we might recommend using something like `5 annually`.
 
-[](images/anonymous-id.png)
+![](images/anonymous-id.png)
 
 ### Priority
 
@@ -169,7 +169,7 @@ If a new android.id identifier appeared without first giving it explicit order, 
 
 Thus, if you require an explicit order for all identifiers, configure this in the Identity Resolution settings page before sending in events.
 
-[](images/edit-priority.png)
+![](images/edit-priority.png)
 
 When choosing the priority of your identifier, ask the following questions about each of the identifiers you will send through to Segment:
 
