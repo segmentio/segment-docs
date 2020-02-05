@@ -56,13 +56,13 @@ Braze has created a sample iOS application that integrates Braze via Segment.  C
 
 1. In your top-level project `build.gradle` add the following as a repository under allprojects > repositories.
 
-    ```
+    ```js
     maven { url "http://appboy.github.io/appboy-android-sdk/sdk" }
     ```
 
 2. Add the Braze Segment destination dependency to your app `build.gradle`:
 
-    ```
+    ```js
    compile 'com.appboy:appboy-segment-integration:+'
    ```
 
@@ -72,12 +72,12 @@ Braze has created a sample iOS application that integrates Braze via Segment.  C
 
 3. Next, declare Braze's destination in your `Analytics` instance:
 
-   ```
-    Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY_HERE")
-      .use(AppboyIntegration.FACTORY)
-      ...
-     .build();
-    ```
+  ```js
+  Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY_HERE")
+    .use(AppboyIntegration.FACTORY)
+    ...
+   .build();
+  ```
 
 #### Sample App
 
@@ -87,7 +87,7 @@ Braze has created a sample Android application that integrates Braze via Segment
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
-```
+```js
 analytics.page();
 ```
 
@@ -97,11 +97,11 @@ Page calls are only sent to Braze if you have enabled either "Track All Pages" o
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
-```
+```js
 analytics.identify('ze8rt1u89', {
-  firstName: 'Zaphod',
-  lastName: 'Beeblebrox',
-  email: 'Zaphod@hotmail.com'
+  firstName: 'Jane',
+  lastName: 'Kim',
+  email: 'jane.kim@example.com'
 });
 ```
 
@@ -178,7 +178,7 @@ You can add more product details in the form of key-value pairs to the `properti
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
-```
+```js
 analytics.group("1234", {
   name: "Initech",
   industry: "Technology",
@@ -259,7 +259,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
     You can do this in an `onIntegrationReady` method:
 
-    ```
+    ```js
     String appboyPushToken;
     bool appboyInitialized = false;
     …

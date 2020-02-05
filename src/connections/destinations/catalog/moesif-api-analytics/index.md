@@ -31,7 +31,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.identify('userId123', {
       first_name: 'John',
       last_name: 'Doe',
-      email: 'john@gmail.com',
+      email: 'john@example.com',
       phone: '123-456-7890',
       custom_string_field: 'some_value',
       custom_int_field: 55,
