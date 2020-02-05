@@ -5,7 +5,9 @@ title: Identity Resolution Settings
 Before connecting a source to a Personas space, we recommend first reviewing our default Identity settings and configuring custom rules as needed. Updates to configurations will only be applied to all new data flowing through the space after the changes have been saved. Thus, if this is your first time setting up your Identity Graph, we recommend getting started with a *Dev* space [here](/docs/src/personas/identity-resolution/personas-space-set-up.md).
 
 > note ""
-> **Note:** The Identity Resolution table can only be edited by workspace owners and users with the Identity Admin role.
+> **NOTE:** The Identity Resolution table can only be edited by workspace owners and users with the Identity Admin role.
+
+[](images/identity-resolution-page-1.png)
 
 ## ExternalIDs
 Segment creates and merges user profiles based on externalIDs we use as identifiers. You can view these externalIDs in the Identities tab of a User Profile in the User Explorer:
@@ -22,16 +24,19 @@ By default, Segment promotes the following traits and IDs in track and identify 
 | android.idfa       | context.device.advertisingId when context.device.type = 'android' AND context.device.adTrackingEnabled = true |
 | android.push_token | context.device.token when context.device.type = 'android'                                                     |
 | anonymous_id       | anonymousId                                                                                                   |
-| cross_domain_id    | cross_domain_id                                                                                               |
+| braze_id           | context.Braze.braze_id or context.Braze.braze_id when Braze is connected as a destination                     |
+| cross_domain_id    | cross_domain_id when XID has been enabled for the workspace                                                   |
 | ga_client_id       | context.integrations['Google Analytics'].clientId when explicitly captured by users                           |
 | group_id           | groupId                                                                                                       |
 | ios.id             | context.device.id when context.device.type = 'ios'                                                            |
 | ios.idfa           | context.device.advertisingId when context.device.type = 'ios' AND context.device.adTrackingEnabled = true     |
 | ios.push_token     | context.device.token when context.device.type = 'ios'                                                         |
 
-You'll notice that these identifiers have the *Provided by Segment* label next to it under *Identifier Type*.
+You'll notice that these identifiers have the *Default* label next to it under *Identifier Type*.
 
 To create your own custom externalID, click on *Add Identifier*.
+
+![](images/add-new-identifier.png)
 
 These custom identifiers must be sent in the custom `externalIds` in the `context` object of any call to our API. The four fields below (id, type, collection, encoding) are all required:
 
@@ -96,18 +101,20 @@ In the past, we've seen certain default values across many different customers c
 | null                          | Exact Match     |
 | anonymous                     | Exact Match     |
 
-Before sending data through, we also recommend adding any default hard-coded values that your team uses during the development process. In the UI today, the Identity Admin can add blocks against only exact matches to the inputted value.
+[](images/blocked-values.png)
 
-However, we currently have Limited Availability for a feature that allows customers to create custom REGEX blockers as well. This can be useful for cases where an externalID was incorrectly implemented. To enable this, please reach out to your customer success manager.
+Before sending data through, we also recommend adding any default hard-coded values that your team uses during the development process, such as `void` or `abc123`.
 
 ### Limit
 
-Identity Admins can specify the total number of values allowed per externalID type on a profile. This will vary depending on how companies define a user today. In most cases, companies rely on `user_id` to distinguish user profiles and Segment recommends the following default configurations:
+Identity Admins can specify the total number of values allowed per externalID type on a profile during a certain period. This will vary depending on how companies define a user today. In most cases, companies rely on `user_id` to distinguish user profiles and Segment defaults to the following configurations:
 
 | ExternalID            | Limit |
 | --------------------- | ----- |
 | user_id               | 1     |
 | all other identifiers | 5     |
+
+[](images/user-id.png)
 
 There are specific cases that will deviate from this default. For example, a case where a user can have more than one user_id but only one email, like when a user is defined by both their shopify_id and an internal UUID. In this case, an example setup may be:
 
@@ -117,7 +124,13 @@ There are specific cases that will deviate from this default. For example, a cas
 | user_id               | 2     |
 | all other identifiers | 5     |
 
-We offer a Limited Availability release of a new type of limit called "Time-Based Limits". These limits allow any profile to have a specified limit of values within a certain time range. This is particularly useful for `externalIDs` such as `anonymousID` and `ga_client_id` which are constantly renewed and collected over a lifetime. We know that customers can easily collect over 100 `anonymous_ids` over a few years of app usage. However, rather than setting the absolute limit of `anonymous_ids` to 100, we can now create a sliding range that intelligently gates how many `anonymous_ids` any user should reasonably collect within a specific time period.
+When choosing the limit on your identifier, ask the following questions about each of the identifiers you will send through to Segment:
+
+1. Is it an immutable ID? An immutable ID, such as user_id, should only have `1 ever` per user profile.
+2. Is it a constantly changing ID? A constantly changing ID, such as anonymous_id or ga_client_id, should be given a short sliding window, such as `5 weekly` or `5 monthly`, depending on how often your application automatically logs out the user.
+3. Is it an ID that can be updated on a yearly basis? Most customers will have around 5 emails or devices at any one time, but can update these over time. For identifiers like email, android.id or ios.id, we might recommend using something like `5 annually`.
+
+[](images/anonymous-id.png)
 
 ### Priority
 
@@ -155,3 +168,11 @@ If a new android.id identifier appeared without first giving it explicit order, 
 | ga_client_id | 5        |
 
 Thus, if you require an explicit order for all identifiers, configure this in the Identity Resolution settings page before sending in events.
+
+[](images/edit-priority.png)
+
+When choosing the priority of your identifier, ask the following questions about each of the identifiers you will send through to Segment:
+
+1. Is it an immutable ID? An immutable ID, such as user_id, should be prioritized highest.
+2. Are they unique IDs? Unique IDs such as email should be prioritized higher over possibly shared identifiers like android.id or ios.id.
+3. Does it temporarily identify a user? Identifiers such as anonymous_id, ios.idfa, ga_client_id are constantly updated or expired for a user. Generally speaking, these should rank lower than identifiers that permanently identify a user.
