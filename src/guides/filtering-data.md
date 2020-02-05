@@ -125,7 +125,7 @@ By default, a warehouse receives all sources and their collections and propertie
 
 This feature only affects [warehouses](/docs/connections/warehouses/), and does not prevent data from going to any other [destinations](/docs/connections/destinations/).
 
-When you use Selective Sync to prevent data from syncing to a specific warehouse, Segment stops sending new data that meets the selection criteria to that warehouse, however it doesn't delete any existing data in the warehouses. If you use Selective Sync to re-enable a source after disabling it, Segment loads all data that arrived since the last sync into the warehouse, but doesn't backfill data that was omitted while the source was not syncing.
+When you use Selective Sync to prevent data from syncing to a specific warehouse, Segment stops sending new data that meets the selection criteria to that warehouse, however it doesn't delete any existing data in the warehouses. If you use Selective Sync to re-enable a source after disabling it, Segment loads all data that arrived since the last sync into the warehouse, but doesn't backfill data that was omitted while the source was not syncing. Re-enabling a collection or property does **not** backfill any historical data -- only new data generated after re-enabling will be synced to your warehouse. 
 
 To enable selective sync, in the Segment app go to the Destinations page, select the warehouse, click **Settings**, and click **Selective sync** in the left menu.
 See the documentation on [Warehouse Selective Sync](/docs/connections/warehouses/selective-sync/) for more details.
