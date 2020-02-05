@@ -6,12 +6,11 @@ title: Warehouse FAQs
 
 Yes! For those of you who are on our [Business plan](https://segment.com/pricing), you can choose which sources, collections, and properties sync to your data warehouse.
 
-You can use Selective Sync to manage what data is sent to each individual warehouse, allowing you to sync different sets of data from the same source to different warehouses. Check out more information on how to use Selective Sync [here](https://segment.com/docs/guides/filtering-data/#warehouse-selective-sync).
+Selective Sync will help manage what data is sent to each individual warehouse, allowing you to sync different sets of data from the same source to different warehouses. Check out more information on how to use Selective Sync [here](https://segment.com/docs/guides/filtering-data/#warehouse-selective-sync).
 
-Once a source, collection or property is disabled, we no longer sync data from that source. We will not, however, delete any historical data from your warehouse. When a source is re-enabled, we will sync all events since the last sync. Please note that this does not happen when a collection or property is re-enabled - only new data generated after re-enabling will be synced to your warehouse.
+Once a source, collection or property is disabled, we no longer sync data from that source. We will not, however, delete any historical data from your warehouse. When a source is re-enabled, we will sync all events since the last sync. Note: This does not apply when a collection or property is re-enabled - Only new data generated after re-enabling a collection or property will sync to your warehouse.
 
-
-For Self-Serve and free customers, we do not currently support the ability to select which collections — or properties of collections — get synced into your warehouse.
+For Self-Serve and free customers, we do not currently support the ability to select which collections or properties sync to your warehouse.
 
 
 ## Can we add, tweak, or delete some of the tables?
