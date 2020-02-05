@@ -2,8 +2,8 @@
 title: Sources Overview
 landing: true
 related:
-  - "/docs/connections/sources/catalog/"
-  - "/docs/connections/sources/faq/"
+  - "/connections/sources/catalog/"
+  - "/connections/sources/faq/"
 icon: media/icon-academy.svg
 excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
 ---
@@ -16,31 +16,20 @@ You can create new sources using the button in the workspace view. Each source y
 
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu'
-  }, {
-  integrations: {
-    'All': false,
-    'Intercom': true,
-    'Google Analytics': true,
-  }
-});
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
+  });
 ```
 
 {% comment %}
 {% codeexample %}
 {% codeexampletab JavaScript %}
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu'
-  }, {
-  integrations: {
-    'All': false,
-    'Intercom': true,
-    'Google Analytics': true,
-  }
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
+  },
 });
 ```
 {% endcodeexampletab %}

@@ -24,14 +24,14 @@ All Identify calls must include a user's `email` trait. You must also include a 
   "type": "identify",
   "userId": "43",
   "traits": {
-    "email": "jack@gmail.com ",
+    "email": "jack@example.com ",
     "createdAt": "2015-08-04T01:04:24+00:00",
     "finished_registration": "true"
   }
 }
 ```
 
-Upon receiving this `identify` call All Aboard! will search for a customer with email address `jack@gmail.com`, create one of none exists, and append the `finished_registration: TRUE` trait to the customer.
+Upon receiving this `identify` call All Aboard! will search for a customer with email address `jack@example.com`, create one of none exists, and append the `finished_registration: TRUE` trait to the customer.
 
 ## Best concierge onboarding practices
 

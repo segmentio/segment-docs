@@ -1,7 +1,7 @@
 ---
 title: Criteo App & Web Events Destination
 rewrite: true
-redirect_from: '/docs/connections/destinations/catalog/criteo'
+redirect_from: '/connections/destinations/catalog/criteo/'
 ---
 
 ## Getting Started

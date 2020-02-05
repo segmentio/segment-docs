@@ -32,7 +32,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```javascript
 analytics.identify('userId123', {
-  email: 'hello@gmail.com',
+  email: 'hello@example.com',
   createdAt: '2018-08-03T15:28:46.493Z',
   language: 'EN'
 });
