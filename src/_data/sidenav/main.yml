@@ -136,6 +136,8 @@ sections:
     section:
     - path: /connections/warehouses
       title: Warehouses and Data Storage
+    - path: /connections/warehouses/selective-sync
+      title: Warehouse Selective Sync
     - path: /connections/warehouses/catalog
       title: Warehouses catalog
       menu_icon: read-more
