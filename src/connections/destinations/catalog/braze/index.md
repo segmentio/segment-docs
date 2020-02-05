@@ -56,13 +56,13 @@ Braze has created a sample iOS application that integrates Braze via Segment.  C
 
 1. In your top-level project `build.gradle` add the following as a repository under allprojects > repositories.
 
-    ```
+    ```js
     maven { url "http://appboy.github.io/appboy-android-sdk/sdk" }
     ```
 
 2. Add the Braze Segment destination dependency to your app `build.gradle`:
 
-    ```
+    ```js
    compile 'com.appboy:appboy-segment-integration:+'
    ```
 
@@ -72,12 +72,12 @@ Braze has created a sample iOS application that integrates Braze via Segment.  C
 
 3. Next, declare Braze's destination in your `Analytics` instance:
 
-   ```
-    Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY_HERE")
-      .use(AppboyIntegration.FACTORY)
-      ...
-     .build();
-    ```
+  ```js
+  Analytics analytics = new Analytics.Builder(context, "YOUR_WRITE_KEY_HERE")
+    .use(AppboyIntegration.FACTORY)
+    ...
+   .build();
+  ```
 
 #### Sample App
 
@@ -87,7 +87,7 @@ Braze has created a sample Android application that integrates Braze via Segment
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
-```
+```js
 analytics.page();
 ```
 
@@ -97,11 +97,11 @@ Page calls are only sent to Braze if you have enabled either "Track All Pages" o
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
-```
+```js
 analytics.identify('ze8rt1u89', {
-  firstName: 'Zaphod',
-  lastName: 'Beeblebrox',
-  email: 'Zaphod@hotmail.com'
+  firstName: 'Jane',
+  lastName: 'Kim',
+  email: 'jane.kim@example.com'
 });
 ```
 
@@ -178,7 +178,7 @@ You can add more product details in the form of key-value pairs to the `properti
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
-```
+```js
 analytics.group("1234", {
   name: "Initech",
   industry: "Technology",
@@ -259,7 +259,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
     You can do this in an `onIntegrationReady` method:
 
-    ```
+    ```js
     String appboyPushToken;
     bool appboyInitialized = false;
     …
@@ -289,34 +289,35 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 2. Browser Registration. In order for a browser to receive push notifications, you must register it for push by calling:
 
-    ```
+    ```js
     analytics.ready(function() {
       window.appboy.registerAppboyPushMessages();
     });
     ```
+
     **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet) within your `script` tag.
 
     **Note:** This will immediately request push permission from the user.
 
-    If you wish to show your own push-related UI to the user before requesting push permission (known as a soft push prompt), you can test to see if push is supported in the user's browser by calling:
+To show your own push-related UI to the user before requesting push permission (known as a soft push prompt), you can test to see if push is supported in the user's browser by calling:
 
-    ```
-    analytics.ready(function() {
-      if (window.appboy.isPushSupported()) {
-        // Add your push logic
-      }
-     });
-    ```
+```js
+analytics.ready(function() {
+  if (window.appboy.isPushSupported()) {
+    // Add your push logic
+  }
+ });
+```
 
-    Braze recommends checking to see if this returns `true` since not all browsers can recieve push notifications. [See below](/docs/connections/destinations/catalog/braze/#soft-push-prompts) for instructions on setting up a soft push prompt using Braze In-App Messages.
+Braze recommends checking to see if this returns `true` since not all browsers can recieve push notifications. [See below](/docs/connections/destinations/catalog/braze/#soft-push-prompts) for instructions on setting up a soft push prompt using Braze In-App Messages.
 
-    If you'd like to unsubscribe a user, you can do so by calling:
+To unsubscribe a user, call:
 
-    ```
-    analytics.ready(function() {
-      window.appboy.unregisterAppboyPushMessages();
-    });
-    ```
+```js
+analytics.ready(function() {
+  window.appboy.unregisterAppboyPushMessages();
+});
+```
 
 3. Set your GCM/FCM server API key and SenderID on the Braze dashboard. You can find more details for this [here](https://www.braze.com/documentation/Web/#step-4-set-your-gcmfcm-server-api-key-and-senderid-on-the-Braze-dashboard).
 
@@ -330,58 +331,60 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 3. Add the following snippet to your site:
 
-    ```
-    analytics.ready(function() {
-      window.appboy.subscribeToNewInAppMessages(function(inAppMessages) {
-        var message = inAppMessages[0];
-        if (message != null) {
-          var shouldDisplay = true;
+```js
+analytics.ready(function() {
+  window.appboy.subscribeToNewInAppMessages(function(inAppMessages) {
+    var message = inAppMessages[0];
+    if (message != null) {
+      var shouldDisplay = true;
 
-          if (message instanceof appboy.ab.inAppMessage) {
-            // Read the key/value pair for msg-id
-            var msgId = message.extras["msg-id"];
+      if (message instanceof appboy.ab.inAppMessage) {
+        // Read the key/value pair for msg-id
+        var msgId = message.extras["msg-id"];
 
-            // If this is our push primer message
-            if (msgId == "push-primer") {
-              // We don't want to display the soft push prompt to users on browsers that don't support push, or if the user
-              // has already granted/blocked permission
-              if (!appboy.isPushSupported() || appboy.isPushPermissionGranted() || appboy.isPushBlocked())     {
-                shouldDisplay = false;
-              }
-              // Prompt the user when the first button is clicked
-              message.buttons[0].subscribeToClickedEvent(function() {
-                appboy.registerAppboyPushMessages();
-              });
-            }
+        // If this is our push primer message
+        if (msgId == "push-primer") {
+          // We don't want to display the soft push prompt to users on browsers that don't support push, or if the user
+          // has already granted/blocked permission
+          if (!appboy.isPushSupported() || appboy.isPushPermissionGranted() || appboy.isPushBlocked())     {
+            shouldDisplay = false;
           }
+          // Prompt the user when the first button is clicked
+          message.buttons[0].subscribeToClickedEvent(function() {
+            appboy.registerAppboyPushMessages();
+          });
+        }
+      }
 
-          // Display the message
-          if (shouldDisplay) {
-            appboy.display.showInAppMessage(message);
-          }
-         }
+      // Display the message
+      if (shouldDisplay) {
+        appboy.display.showInAppMessage(message);
+      }
+     }
 
-        // Remove this message from the array of IAMs and return whatever's left
-        return inAppMessages.slice(1);
-       });
-     });
-    ```
+    // Remove this message from the array of IAMs and return whatever's left
+    return inAppMessages.slice(1);
+   });
+ });
+```
+
 For more details on this snippet, check out the Braze's docs [here](https://www.braze.com/documentation/Web/#soft-push-prompts).
 
 **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet) within your `script` tag.
 
-4) When you'd like to display the Soft Push to a user, call:
+4. When you'd like to display the Soft Push to a user, call:
 
-    ```
-     analytics.ready(function() {
-      window.appboy.logCustomEvent("prime-for-push")
-     });
-    ```
+```js
+ analytics.ready(function() {
+  window.appboy.logCustomEvent("prime-for-push")
+ });
+```
 
 ### Enable IDFA collection
 
 To enable IDFA collection in Braze, please add following lines to your `Podfile`:
-```
+
+```objc
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|

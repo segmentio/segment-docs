@@ -4,7 +4,7 @@ title: Amazon Kinesis Firehose Destination
 ---
 [Amazon Kinesis Firehose](https://aws.amazon.com/kinesis/data-firehose/) is the easiest way to load streaming data into AWS. It can capture, transform, and load streaming data into Amazon Kinesis Analytics, Amazon S3, Amazon Redshift, and Amazon Elasticsearch Service, enabling near real-time analytics with existing business intelligence tools and dashboards you're already using today. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security.
 
-This document was last updated on August 14, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on February 05, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -113,24 +113,6 @@ analytics.group("0e8c78ea9d9dsasahjg", {
 ```
 
 ## Best Practices
-
-### Updating IAM role permissions for encryption
-Extra permissions need to be added to IAM role if using at-rest encryption on the Kinesis stream. An updated role policy like below should resolve issues when submitting PutRecords into Kinesis stream using encryption:
-
-```json
-{
-	"Version": "2012-10-17",
-	"Statement": [{
-		"Effect": "Allow",
-		"Action": ["kms:GenerateDataKey"],
-		"Resource": "${aws_kms_key.kinesis_key.arn}"
-	}, {
-		"Effect": "Allow",
-		"Action": ["kinesis:PutRecord", "kinesis:PutRecords"],
-		"Resource": ["${aws_kinesis_stream.kinesis1.arn}"]
-	}]
-}
-```
 
 ### Multiple Sources
 If you have multiple sources using Kinesis/Firehose, you have two options:

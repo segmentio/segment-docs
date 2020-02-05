@@ -62,9 +62,9 @@ You can create new sources using the button in the workspace view. Each source y
 {% codeexample %}
 {% codeexampletab JavaScript %}
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
   }, {
   integrations: {
     'All': false,

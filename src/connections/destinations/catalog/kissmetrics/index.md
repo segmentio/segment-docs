@@ -119,7 +119,7 @@ For example, if you're identifying people by their email address and they change
 ```javascript
 analytics.alias({
   previousId: 'old_email@aol.com',
-  userId: 'new_email@gmail.com'
+  userId: 'new_email@example.com'
 });
 ```
 
