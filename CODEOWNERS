@@ -1,0 +1,32 @@
+# The default owners for everything in
+# the repo. Unless a later match takes precedence.
+*   @sanscontext
+
+# Content owners should be in the order of PM, TL (team-lead), and EM (in a crisis) for a given team.
+# This team will receive review requests automatically when a PR is submitted modifying the files in
+# a given directory+subtree, or file type, etc. that matches below.  While Github won't enforce the
+# order names are listed in for the PR review, this file can provide insight on who should be contacted
+# if anything becomes time sensitive.  Names other than the PM can mostly ignore these review notifications
+# but are listed here as backup.
+
+# Libraries owners
+/src/connections/catalog/libraries  @osamakhn @bsneed @lubird
+
+# Destination owners
+/src/connections/destinations   @n2parko @danielstjules @carlosmecha @benhorowitz
+
+# Privacy owners
+/src/privacy    @notfelineit @aliya-dossa
+
+# Protocols owners
+/src/protocols  @francisco @rarchana2001asu
+
+# Personas owners
+
+# Legal
+
+# Usage & Billing
+
+
+
+
