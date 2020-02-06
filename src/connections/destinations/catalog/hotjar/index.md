@@ -12,7 +12,7 @@ The Segment Hotjar Destination allows you to both easily install Hotjar on your 
 
 In time, most or all Hotjar features will use User Attributes in some way, with filtering Recordings planned in the first half of 2020.
 
-This document was last updated on February 5, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on February 6, 2020. This destination is maintained by Segment. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
@@ -29,7 +29,11 @@ This document was last updated on February 5, 2020. If you notice any gaps, outd
 
 5. Once our CDN updates in 45 minutes, Hotjar will automatically start tracking visitors based on the tools you have enabled in your Hotjar dashboard.
 
-## Nested values or lists
+## Identify
+
+The Hotjar destination will automatically ingest a User ID, as well as values sent over your Identify spec as [traits](https://segment.com/docs/connections/spec/identify/#traits), as long as [User Attributes are enabled in Hotjar](https://help.hotjar.com/hc/en-us/articles/360038394053-How-to-Setup-User-Attributes-in-4-Steps#step-2-review-your-privacy-requirements-and-enable-user-attributes). 
+
+### Nested values or lists
 
 The Hotjar Identify API is unable to ingest values passed as nested objects or lists over your `identify` Spec:
 
