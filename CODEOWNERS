@@ -1,7 +1,7 @@
 # The default owners for everything in
 # the repo. Unless a later match takes precedence.
 CODEOWNERS  @bsneed
-*   @sanscontext
+CODEOWNERS  @sanscontext
 
 # Content owners should be in the order of PM, TL (team-lead), and EM (in a crisis) for a given team.
 # This team will receive review requests automatically when a PR is submitted modifying the files in
@@ -17,7 +17,7 @@ CODEOWNERS  @bsneed
 
 # Destination owners
 /src/connections/destinations   @n2parko @danielstjules @benhorowitz
-# temporary removal: @carlosmecha 
+# temporary removal: @carlosmecha
 
 
 # Privacy owners
@@ -33,7 +33,3 @@ CODEOWNERS  @bsneed
 # Legal
 
 # Usage & Billing
-
-
-
-
