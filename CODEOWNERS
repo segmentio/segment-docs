@@ -1,5 +1,6 @@
 # The default owners for everything in
 # the repo. Unless a later match takes precedence.
+CODEOWNERS  @bsneed
 *   @sanscontext
 
 # Content owners should be in the order of PM, TL (team-lead), and EM (in a crisis) for a given team.
@@ -9,17 +10,23 @@
 # if anything becomes time sensitive.  Names other than the PM can mostly ignore these review notifications
 # but are listed here as backup.
 
+
 # Libraries owners
 /src/connections/catalog/libraries  @osamakhn @bsneed @lubird
 
+
 # Destination owners
-/src/connections/destinations   @n2parko @danielstjules @carlosmecha @benhorowitz
+/src/connections/destinations   @n2parko @danielstjules @benhorowitz
+# temporary removal: @carlosmecha 
+
 
 # Privacy owners
 /src/privacy    @notfelineit @aliya-dossa
 
+
 # Protocols owners
 /src/protocols  @francisco @rarchana2001asu
+
 
 # Personas owners
 
