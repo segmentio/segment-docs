@@ -33,7 +33,7 @@ This document was last updated on February 5, 2020. If you notice any gaps, outd
 
 The Hotjar Identify API is unable to ingest values passed as nested objects or lists over your `identify` Spec:
 
-```
+```js
 "traits": {
     "name": "Peter Gibbons",
     "email": "peter@initech.com",
