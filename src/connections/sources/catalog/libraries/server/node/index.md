@@ -284,11 +284,11 @@ Here's a full example of how we might use the `alias` call:
 // the anonymous user does actions ...
 analytics.track({ userId: 'anonymous_user', event: 'Anonymous Event' })
 // the anonymous user signs up and is aliased
-analytics.alias({ previousId: 'anonymous_user', userId: 'identified@gmail.com' })
+analytics.alias({ previousId: 'anonymous_user', userId: 'identified@example.com' })
 // the identified user is identified
-analytics.identify({ userId: 'identified@gmail.com', traits: { plan: 'Free' } })
+analytics.identify({ userId: 'identified@example.com', traits: { plan: 'Free' } })
 // the identified user does actions ...
-analytics.track({ userId: 'identified@gmail.com', event: 'Identified Action' })
+analytics.track({ userId: 'identified@example.com', event: 'Identified Action' })
 ```
 
 For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).

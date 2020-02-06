@@ -65,12 +65,12 @@ See the example below:
  "timestamp":"2016-12-08T16:39:58.000Z",
  "traits": {
    "adId": 6052204319312,
-   "email":"-----------@gmail.com",
+   "email":"-----------@example.com",
    "formId": 225571381194652,
    "First_Name":"------------",
    "Last_Name":"------------",
    "job_title":"warehouse",
-   "work_email":"----------@gmail.com"
+   "work_email":"----------@example.com"
   },
  "type":"identify",
  "writeKey":"-------------------",
