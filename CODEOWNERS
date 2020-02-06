@@ -1,6 +1,5 @@
 # The default owners for everything in
 # the repo. Unless a later match takes precedence.
-CODEOWNERS  @bsneed
 CODEOWNERS  @sanscontext
 
 # Content owners should be in the order of PM, TL (team-lead), and EM (in a crisis) for a given team.
