@@ -1,10 +1,10 @@
 - name: Getting Started
-  icon: icon-guides.svg
+  icon: icon-getting-started.svg
   description: "An overview of Segment, including the problems it solves, how it works, and its important features."
   path: /guides/
 
 - name: How-To Guides
-  icon: icon-academy.svg
+  icon: icon-guides.svg
   description: "Over a dozen how-to guides to help you accomplish common tasks."
   path: /guides/how-to-guides/
 
