@@ -130,7 +130,7 @@ our corporate group of companies; business partners, such as joint
 marketing partners and event co-sponsors; and publicly accessible
 sources, such as social media platforms.
 
-### Data collected automatically. 
+### Data collected automatically.
 We, our service providers, and our
 business partners may automatically log the following information about
 you, your computer or mobile device, and your activity over time on the
@@ -191,7 +191,7 @@ otherwise described to you at the time of collection:
 
 <a id="service-delivery"></a>
 
-### Service delivery. 
+### Service delivery.
 We use your personal information to:
 
 -   provide, operate, maintain, and improve the Service;
@@ -222,7 +222,7 @@ We use your personal information to:
 
 -   provide support for the Site and respond to your requests, questions
     and feedback.
-    
+
 <a id="research-and-development"></a>
 
 ### Research and development.
@@ -548,7 +548,7 @@ has the meaning given in the California Consumer Privacy Act of 2018
 the CCPA.
 
 ### Your California privacy rights.
-You have the rights listed below. However, these rights are not absolute, and in certain cases we may decline your request as permitted by law. 
+You have the rights listed below. However, these rights are not absolute, and in certain cases we may decline your request as permitted by law.
 
 -   **Information.** You can request the following information about how
     we have collected and used your Personal Information during the past
@@ -698,7 +698,7 @@ purposes through other means, and the applicable legal requirements.
 <a id="Your-Rights"></a>
 
 ## Your rights.
- 
+
 European data protection laws give you certain rights
 regarding your personal information. You may ask us to take the
 following actions in relation to your personal information that we hold:
@@ -873,3 +873,5 @@ Segment's commitments under the Privacy Shield are subject to the regulatory enf
 powers of the U.S. Federal Trade Commission.   If there is any conflict
 between the terms in this Privacy Shield Notice and the Privacy Shield
 Principles, the Privacy Shield Principles shall take precedence.
+
+<div><a href="//privacy.truste.com/privacy-seal/validation?rid=8d23a1fb-1dba-4e31-a6d3-3bdeb67182d1" target="_blank"><img style="border: none" src="//privacy-policy.truste.com/privacy-seal/seal?rid=8d23a1fb-1dba-4e31-a6d3-3bdeb67182d1" alt="TRUSTe"/></a></div>
