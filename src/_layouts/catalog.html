@@ -42,7 +42,7 @@ layout: default
     <div class="docs__sidebar stage__sidebar">
       {% include_cached navbar/nav.html %}
 
-      <div class="sidebar sidebar--sticky">
+      <div class="sidebar sidebar--sticky sidebar--scroll">
         {% if page.integration_type and page.integration_type != 'warehouse' %}
           {% include sidebar/{{ page.integration_type }}-menu.html %}
         {% endif %}
