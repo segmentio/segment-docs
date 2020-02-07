@@ -79,7 +79,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 ```javascript
 analytics.identify('su3r73', {
   name: 'Iñigo Montoya',
-  email: 'avenger@gmail.com',
+  email: 'avenger@example.com',
   company: {
     id: '123',
     name: 'Iñigo & Friends Holding Company'

@@ -13,10 +13,9 @@ An `integrations object` may be passed in the `options` of  `group`, `identify`
 All customers can filter specific events from being sent to specific Destinations (except for warehouses) by updating their tracking code. Here is an example showing how to send a single message only to Intercom and Google Analytics:
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu',
-  type: 'electric'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
 }, {
   integrations: {
     'All': false,

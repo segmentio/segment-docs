@@ -45,9 +45,9 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```
 analytics.identify('ze8rt1u89', {
-  firstName: 'Zaphod',
-  lastName: 'Beeblebrox',
-  email: 'Zaphod@hotmail.com'
+  firstName: 'Jane',
+  lastName: 'Kim',
+  email: 'jane.kim@example.com'
 });
 ```
 

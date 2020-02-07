@@ -41,7 +41,7 @@ analytics.track(
   anonymous_id: UUID.generate,
   event: 'Failed to log in',
   properties: {
-    email: 'johan@castle.io'
+    email: 'johan@example.com'
   }
 )
 ```
@@ -144,7 +144,7 @@ Here's a complete JavaScript example of an `identify` call:
 
 ```javascript
 analytics.identify('1234', {
-  email: 'johan@castle.io', // recommended
+  email: 'johan@example.com', // recommended
   createdAt: '2015-02-23T22:28:55.387Z', // recommended
   name: 'Johan Brissmyr', // for display
   username: 'brissmyr', // for display
@@ -172,7 +172,7 @@ Here's an JavaScript example of an `identify` call with Secure Mode being render
 
 ```javascript
 analytics.identify('1234', {
-  email: 'johan@castle.io',
+  email: 'johan@example.com',
   createdAt: '2015-02-23T22:28:55.387Z',
 }, {
   integrations: {
