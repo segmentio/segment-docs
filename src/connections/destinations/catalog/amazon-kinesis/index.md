@@ -4,7 +4,7 @@ title: Amazon Kinesis Destination
 ---
 [Amazon Kinesis](https://aws.amazon.com/kinesis/) enables you to build custom applications that process or analyze streaming data for specialized needs. Amazon Kinesis Streams can continuously capture and store terabytes of data per hour from hundreds of thousands of sources such as website clickstreams, financial transactions, social media feeds, IT logs, and location-tracking events.
 
-This document was last updated on July 17, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on February 05, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -109,6 +109,24 @@ analytics.group("0e8c78ea9d9dsasahjg", {
 When you get started, we recommend using any of the open source [Kinesis tailing utility](https://github.com/search?utf8=%E2%9C%93&q=kinesis-tail) to validate that data is flowing correctly!
 
 ## Best Practices
+
+### Updating IAM role permissions for encryption
+Extra permissions need to be added to IAM role if using at-rest encryption on the Kinesis stream. An updated role policy like below should resolve issues when submitting PutRecords into Kinesis stream using encryption:
+
+```json
+{
+	"Version": "2012-10-17",
+	"Statement": [{
+		"Effect": "Allow",
+		"Action": ["kms:GenerateDataKey"],
+		"Resource": "${aws_kms_key.kinesis_key.arn}"
+	}, {
+		"Effect": "Allow",
+		"Action": ["kinesis:PutRecord", "kinesis:PutRecords"],
+		"Resource": ["${aws_kinesis_stream.kinesis1.arn}"]
+	}]
+}
+```
 
 ### Multiple Sources
 If you have multiple sources using Kinesis/Firehose, you have two options:

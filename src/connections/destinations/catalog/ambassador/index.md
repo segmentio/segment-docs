@@ -29,7 +29,7 @@ analytics.identify('user1234', {
   firstName: 'Anne',
   lastName: 'Stein',
   company: 'Ambassador',
-  phone: '123-123-1234',
+  phone: '123-555-1234',
   address: {
     street: '1234 Test Rd.',
     city: 'Wooster',

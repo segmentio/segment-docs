@@ -279,11 +279,11 @@ Here's a full example of how we might use the `alias` call:
 // the anonymous user does actions ...
 track("anonymous_user", "Anonymous Event");
 // the anonymous user signs up and is aliased
-alias("anonymous_user", "identified@gmail.com");
+alias("anonymous_user", "identified@example.com");
 // the signed up user is identified
-identify("identified@gmail.com", new Traits("plan", "Free"));
+identify("identified@example.com", new Traits("plan", "Free"));
 // the identified user does actions ...
-track("identified@gmail.com", "Identified Action");
+track("identified@example.com", "Identified Action");
 ```
 
 For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).

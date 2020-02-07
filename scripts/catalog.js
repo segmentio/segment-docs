@@ -172,7 +172,8 @@ const updateSources = async () => {
       mark: {
         url: source.logos.mark
       },
-      categories: source.categories
+      categories: source.categories,
+      type: source.type
     }
     sourcesUpdated.push(updatedSource)
     doesCatalogItemExist(updatedSource)

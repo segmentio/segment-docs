@@ -48,9 +48,9 @@ Each Segment library allows an `integrations` object either as a top level obj
 This flag may be especially useful in Legacy source types, where an event might be triggered on both the client & server for various reasons. The following will cause the payload to be sent to all enabled tools EXCEPT Facebook Pixel:
 
 ```js
-    analytics.identify('025pikachu025', {
-      email: 'peekAtMe@email.poke',
-      name: 'Pikachu'
+    analytics.identify('user_123', {
+      email: 'jane.kim@example.com',
+      name: 'Jane Kim'
       }, {
         integrations: {
           'Facebook Pixel': false
