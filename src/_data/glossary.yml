@@ -20,7 +20,7 @@ CDN: |
   Content Delivery Network. CDNs are a network of servers which make downloading files faster for the user, by placing them all around the world to reduce data transit time. When you have servers in a CDN, they're much closer on average to the end user. If someone is using Segment in Asia, they don't have to download our files all the way from California, they can get them from a server much closer to them in the network.
 
 CDP: |
-  Customer Data Platform
+  Customer Data Platform: a central platform that brokers the flow of customer data through their application infrastructure so that they can build a central understanding of each customer’s interactions, comply with regulations that require them to carefully manage customer data, and ensure that their interactions with the customer are optimized.
 
 Cookies: |
   Cookies are small pieces of text that are stored by the browser on a website. Cookies have a **name** and a **value**. They may also be set from Javascript using `document.cookie`. Our analytics.js script sets up a cookie called `ajs_uid` to store the user's id.
