@@ -70,13 +70,13 @@ JSON: |
 Library: |
   A library is a reusable piece of code which acts as a building block for higher level pieces of code. It's the software equivalent of a 'tool'. For instance, take Instagram filters. In the good old days, to take a picture with an interesting filter, you had to adjust the aperture length, the focal length, the exposure and film speed to get the desired effect. But now, you can just use Instagram, and press a button to get the pre-tuned filter that you want. They've packaged those effects in software and made them re-usable.
 
-  The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](https://segment.com/docs/libraries/). Libraries are either "[Client Side](#Client-Side)" or "[Server Side](#Server-Side)".
+  The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](https://segment.com/docs/libraries/). Libraries can collect either in "[Device mode](#device-mode)" or "[Cloud mode](#cloud-mode)".
 
 Method: |
-  A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, etc. are methods you can invoke on those objects.
+  A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, [etc](/docs/conncetions/spec/) are methods you can invoke on those objects.
 
 MTU: |
-  Monthly Tracked Users.  You can find more about how they are calculated [here](https://segment.com/docs/guides/usage-and-billing/how-are-mtus-calculated-by-segment/) but in short, they are calculated by adding the number unique userIds and number of unique anonymousIds that a customer tracks with Segment.
+  Monthly Tracked Users. You can find more about how they are calculated [here](https://segment.com/docs/guides/usage-and-billing/how-are-mtus-calculated-by-segment/) but in short, they are calculated by adding the number unique userIds and number of unique anonymousIds that a customer tracks with Segment.
 
 Object: |
   An object is a type of data that persists over time and can be updated, for example a Business or User record. Objects have "traits" which record information about that object, and which can be updated over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a [computed trait](#computed-trait) like `logged_in_last_7_days`.
@@ -85,10 +85,10 @@ OTT (Over the Top): |
   Over the top (OTT) refers to content providers that distribute streaming media as a standalone product directly to viewers over the Internet, bypassing telecommunications, multichannel television, and broadcast television platforms that traditionally act as a controller or distributor of such content.
 
 Page: |
-  The Segment API call records that a user 'viewed a page'. It's recorded by calling `analytics.page()`. You can optionally pass in a `name` and a `category`.
+  The Segment API call records that a user "viewed a page". It's recorded by calling `analytics.page()`. You can optionally pass in a `name` and a `category`.
 
 Postgres: |
-  Opensource SQL server
+  An open-source [SQL](#sql) server
 
 Redshift: |
   An analytics data warehouse from Amazon Web Services. Made for loading in tons of event data, and then analyzing it with complex queries. It's designed to be fast and cheap.
@@ -105,7 +105,7 @@ Schema: |
   In Segment, you can send data to a Warehouse which has a schema based on the types of data you collect and route through Segment, and which updates as the data you collect changes.
 
 Server Side: |
-  Refers to a group of libraries that can send data to Segment, in [Cloud mode](#cloud-mode), meaning through the Segment cloud. "Server side" can could refer to people sending data directly to [our HTTP API](https://segment.com/docs/connections/sources/catalog/libraries/http/) without using a "library". Usually used in contrast to [Client Side](#Client-Side).
+  Refers to a group of libraries that can send data to Segment, in [Cloud mode](#cloud-mode), meaning through the Segment cloud. "Server side" can could refer to people sending data directly to [our HTTP API](https://segment.com/docs/connections/sources/catalog/libraries/http/) without using a "library". Usually used in contrast to [Client Side](#client-side).
 
 
 SDK: |
@@ -113,7 +113,7 @@ SDK: |
 
 SQL: |
   (pronounced 'sequel')
-  Structured Query Language. The standard language for retrieving information from a database.  It's often called "relational" because all the queries are related to relations between the data. For instance, find me all users who are named "Alice" would translate to...
+  Structured Query Language. The standard language for retrieving information from a database. It's often called "relational" because all the queries are related to relations between the data. For instance, find me all users who are named "Alice" would translate to...
 
   ```SQL
   select * from users where first_name equals "Alice"
