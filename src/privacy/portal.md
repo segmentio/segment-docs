@@ -189,10 +189,10 @@ that we're looking for, using a series of special symbols. For example, if we
 want to match all Gmail emails, we'd write the following regex:
 
 ```text
-@gmail.com
+@example.com
 ```
 
-This pattern matches `jane@gmail.com`, `mike@gmail.com` and so on. Regular
+This pattern matches `jane@example.com`, `mike@example.com` and so on. Regular
 expressions can also contain special symbols. One of them is `\d` and it tells
 the computer to match a single-digit number. In that case, regular expression
 `Number \d` would match `Number 1`, `Number 2` and so on. You can match multiple

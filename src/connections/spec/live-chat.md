@@ -29,14 +29,15 @@ This event should be sent when a customer sends their first message.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`agent_id`              | String | The agent's ID.
-`agent_name`            | String | The agent's real name.
-`agent_username`        | String | The agent's username.
-`conversation_id`       | String | The conversation's ID.
-`conversation_duration` | Number | The conversation duration in seconds.
-`message_id`            | String | The message's ID.
+| Property                | Type   | Description                           |
+| ----------------------- | ------ | ------------------------------------- |
+| `agent_id`              | String | The agent's ID.                       |
+| `agent_name`            | String | The agent's real name.                |
+| `agent_username`        | String | The agent's username.                 |
+| `conversation_id`       | String | The conversation's ID.                |
+| `conversation_duration` | Number | The conversation duration in seconds. |
+| `message_id`            | String | The message's ID.                     |
+
 
 #### Example
 
@@ -81,14 +82,16 @@ This event should be sent when customer or agent explicitly indicates the conver
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`agent_id`              | String | The agent's ID.
-`agent_name`            | String | The agent's real name.
-`agent_username`        | String | The agent's username.
-`conversation_id`       | String | The conversation's ID.
-`conversation_duration` | Number | The conversation duration in seconds.
-`message_id`            | String | The message's ID.
+| Property                | Type   | Description                          |
+| ----------------------- | ------ | ------------------------------------ |
+| `agent_id`              | String | The agent's ID.                      |
+| `agent_name`            | String | The agent's real name.               |
+| `agent_username`        | String | The agent's username.                |
+| `conversation_id`       | String | The conversation's ID.               |
+| `conversation_duration` | Number | The conversation duration in seconds |
+| `message_id`            | String | The message's ID.                    |
+
+
 
 #### Example
 
@@ -133,14 +136,14 @@ This event should be sent when customer sends a message to the agent.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`agent_id`              | String | The agent's ID.
-`agent_name`            | String | The agent's real name.
-`agent_username`        | String | The agent's username.
-`conversation_id`       | String | The conversation's ID.
-`conversation_duration` | Number | The conversation duration in seconds.
-`message_id`            | String | The message's ID.
+| Property                | Type   | Description                           |
+| ----------------------- | ------ | ------------------------------------- |
+| `agent_id`              | String | The agent's ID.                       |
+| `agent_name`            | String | The agent's real name.                |
+| `agent_username`        | String | The agent's username.                 |
+| `conversation_id`       | String | The conversation's ID.                |
+| `conversation_duration` | Number | The conversation duration in seconds. |
+| `message_id`            | String | The message's ID.                     |
 
 #### Example
 
@@ -185,14 +188,15 @@ This event should be sent when the customer receives a message from the agent.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`agent_id`              | String | The agent's ID.
-`agent_name`            | String | The agent's real name.
-`agent_username`        | String | The agent's username.
-`conversation_id`       | String | The conversation's ID.
-`conversation_duration` | Number | The conversation duration in seconds.
-`message_id`            | String | The message's ID.
+| Property                | Type   | Description                           |
+| ----------------------- | ------ | ------------------------------------- |
+| `agent_id`              | String | The agent's ID.                       |
+| `agent_name`            | String | The agent's real name.                |
+| `agent_username`        | String | The agent's username.                 |
+| `conversation_id`       | String | The conversation's ID.                |
+| `conversation_duration` | Number | The conversation duration in seconds. |
+| `message_id`            | String | The message's ID.                     |
+
 
 #### Example
 

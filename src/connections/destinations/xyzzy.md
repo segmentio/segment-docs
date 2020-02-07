@@ -6,3 +6,5 @@ hidden: true
 - [Destinations Connection Modes comparison](cmodes-compare/)
 - [Destinations Methods comparisons](methods-compare/)
 - [Destinations by category comparisons](category-compare/)
+
+- [Sources by category comparison](/docs/connections/sources/sources-compare/)
