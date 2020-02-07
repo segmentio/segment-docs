@@ -1,5 +1,6 @@
-# Beamer Source
-
+---
+title: Beamer Source
+source-type: event
 ---
 
 [Beamer](https://www.getbeamer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a changelog and notification center that lets you announce new features, product updates, special offers and more.
