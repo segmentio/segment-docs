@@ -95,9 +95,20 @@ Event and property libraries can be easily imported into a Tracking Plan. Enter 
 
 ![](images/import_library_to_tracking_plan.gif)
 
-### Updating Libraries and Propagating Changes
+### Enabling Library Syncing
 
-Tracking Plan Libraries do not currently support syncing changes made to the Library down to the associated Tracking Plans. You can re-import a Library into a Tracking Plan which will overwrite and upsert new events or properties. Re-importing will **not** however remove properties or events removed from the library.
+When importing events from a Library, you can enable syncing to ensure that changes made to the Library are passed down to all "synced" Tracking Plans. Syncing is especially important when you want to make sure all your Tracking Plans define events consistently. For example, it's best practice to create separate tracking plans for mobile and web sources as these two sources share some but not all events. Library syncing is the best way to ensure that the shared events are consistently tracked across Tracking Plans, even as changes are made to the Library.
+
+To enable syncing, simply select the desired Library from the Tracking Plan import flow, and toggle the syncing option. Doing so will automatically select all events in the Library to be imported. Partial syncs are not supported as it would make it impossible to ensure complete compliance with the Library. 
+
+![](images/sync_library_flow.gif)
+
+When synced, events and properties from the synced Library cannot be edited, but properties can be added to synced events. Synced events cannot be removed unless the Library sync is removed. To unsync a library, click View Synced Libraries from the Tracking Plan and click the overflow menu to unsync the Library.
+
+![](images/unsync_library.png) 
+
+> warning ""
+> Property Library is **not** currently supported.
 
 ## Connect a Tracking Plan
 
