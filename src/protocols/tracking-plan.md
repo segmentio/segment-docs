@@ -103,12 +103,15 @@ To enable syncing, simply select the desired Library from the Tracking Plan impo
 
 ![](images/sync_library_flow.gif)
 
-When synced, events and properties from the synced Library cannot be edited, but properties can be added to synced events. Synced events cannot be removed unless the Library sync is removed. To unsync a library, click View Synced Libraries from the Tracking Plan and click the overflow menu to unsync the Library.
+When synced, events and properties from the synced Library cannot be edited and the Tracking Plan merge step is bypassed. Properties can however be added to synced events. Synced events cannot be removed unless the Library sync is removed. To unsync a library, click View Synced Libraries from the Tracking Plan and click the overflow menu to unsync the Library.
+
+> warning ""
+> All changes made to a synced library will immediately pass through to the Tracking Plans and may impact data deliverability
 
 ![](images/unsync_library.png) 
 
 > warning ""
-> Property Library is **not** currently supported.
+> [Property Library](/docs/protocols/tracking-plan/#tracking-plan-property-libraries) syncing is **not** currently supported.
 
 ## Connect a Tracking Plan
 
