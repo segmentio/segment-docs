@@ -112,5 +112,7 @@ This event supports the following semantic properties:
 
 | Property        | Type   |
 |-----------------|--------|
-| experiment_name | String |
-| variation_name  | String |
+| experimentId | String |
+| experimentName  | String |
+| variationId  | String |
+| variationName  | String |

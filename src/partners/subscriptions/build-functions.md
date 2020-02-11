@@ -25,12 +25,13 @@ Begin by selecting the _Subscription_ card in your Developer Center UI after cre
 
 For every event you send to Segment, Segment invokes a function you provide for the event type. So you must define functions named after every type in the [Segment Spec](https://segment.com/docs/connections/spec/) that you support:
 
-* identify
-* track
-* page
-* screen
-* group
-* alias
+- `onIdentify`
+- `onTrack`
+- `onPage`
+- `onScreen`
+- `onGroup`
+- `onAlias`
+- `onDelete`
 
 The two items passed into the functions are the _event payload_ and the _settings_. All subscriptions have an _apiKey_ setting by default. To add more custom settings, go to the `Settings Builder` page under `App Info`. Use your custom setting _key_ (which is generated for you from your custom setting label) to access your custom setting from the _settings_ argument.
 
@@ -44,7 +45,7 @@ Here's a basic example of a function that POSTs the event to a "request bin" for
 ```js
 const endpoint = "https://REDACTED.x.pipedream.net"
 
-async function track(event, settings) {
+async function onTrack(event, settings) {
   const url = new URL(endpoint);
   url.searchParams.set("ts", event.timestamp);
 
@@ -76,19 +77,19 @@ There are 3 pre-defined error types that you can `throw` to indicate the functio
 Here are basic examples using these error types:
 
 ```js
-async function group(event, settings) {
+async function onGroup(event, settings) {
   if (!event.company) {
     throw new InvalidEventPayload("company is required")
   }
 }
 
-async function page(event, settings) {
+async function onPage(event, settings) {
   if (!settings.accountId) {
     throw new ValidationError("Account ID is required")
   }
 }
 
-async function alias(event, settings) {
+async function onAlias(event, settings) {
   throw new EventNotSupported("alias is not supported")
 }
 ```

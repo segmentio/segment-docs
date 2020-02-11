@@ -2,7 +2,6 @@
 title: 'Spec: Identify'
 related:
   - "/connections/sources/catalog/"
-  - "/connections/sources/faq/"
 ---
 
 `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them like their email, name, etc.

@@ -54,8 +54,8 @@ Here's an example:
   "action": "identify",
   "userId": "12345",
   "traits": {
-    "name": "Kobe Bryant",
-    "email": "kobe@lakers.com",
+    "name": "Pikachu",
+    "email": "pikachu@pakemon.com",
     "timezone": "America/Los_Angeles",
     "organizationId": 6789,
     "phone": "763-555-2342"
@@ -79,6 +79,31 @@ Here are the Zendesk User Attributes Segment maps to and their syntax.
 
 **Note on Name:** If `name` is provided, Segment will parse `firstName` and `lastName` from this, or you can send `firstName` and `lastName`separately and they will be concatenated to `name`.
 
+### Removing Users from a Zendesk Organization Membership on Segment Identify
+
+To remove a user from an organization, navigate to your Zendesk destination settings and click **Enable Removing Users from Organizations** . When this setting is enabled, Segment detects when you pass an identify events with `traits.company.id` where `traits.company.remove: true`, and then sends a request to the Zenedesk API to remove the user from the organization. If you enable the setting in your Zendesk destination settings but do not pass the correct trait values, Segment defaults to the standard `identify` behavior, which creates or updates a user.
+
+Here's an example:
+```js
+{
+  "action": "identify",
+  "userId": "12345",
+  "traits": {
+    "name": "Pikachu",
+    "email": "pikachu@pokemon.com",
+    "timezone": "America/Los_Angeles",
+    "organizationId": 6789,
+    "phone": "763-555-2342",
+    "company": {
+      "id": "6789",
+      "remove": true
+    }
+  }
+}
+```
+
+> note ""
+> **Note**: When a request is made, Zendesk schedules a job to unassign all working tickets currently assigned to the user and organization combination. The `organization_id` of the unassigned tickets is set to `null`.
 
 ### Zendesk Verification Email at User Creation
 

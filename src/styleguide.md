@@ -13,8 +13,8 @@ contributors:
   - name: Monica Buck
     date: 23.08.2019
 related:
-  - "/connections/sources/catalog/"
-  - "/connections/sources/faq/"
+  - "/docs/connections/sources/catalog/"
+  - "/docs/connections/sources/faq/"
 ---
 
 ---
@@ -26,6 +26,16 @@ related:
 ### Heading 3
 #### Heading 4
 ##### Heading 5
+
+---
+
+## Text underline
+
+{:.underline}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+{:.underline}
+#### Heading with underline
 
 ---
 
@@ -78,9 +88,9 @@ related:
 Analytics.js, our Javascript `library`, is the most powerful way to track customer data from your `website`. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
   }, {
   integrations: {
     'All': false,
@@ -132,16 +142,16 @@ console.log('example');
 ## Alerts
 
 > info ""
-> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+> This is a paragraph showing an information box with a blue information icon. Use this when providing useful details that help a reader understand what's going on, but don't require any immediate action.
 
 > success ""
-> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+> This is a paragraph showing an information box with a green checkmark icon. Use this when providing helpful information to a reader that could make their lives better, but that isn't required.
 
 > warning ""
-> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+> This is a paragraph showing an information box with an orange warning icon. Use these when you want to caution a reader about something that could have unintended, but not destructive, consequences.
 
 > error ""
-> This is a paragraph showing information box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum dapibus imperdiet.
+> This is a paragraph showing an information box with a red hazard icon. Use this when warning a reader about destructive or non-reversible actions, like deleting a workspace or overwriting data. Don't use this too frequently, or else it makes the readers worry!
 
 ---
 

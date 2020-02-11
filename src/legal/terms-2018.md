@@ -3,11 +3,13 @@ title: Terms of Service
 hide-feedback: true
 ---
 
-[email](mailto:legal@segment.com)
+This page provides an archive of a previous version of the Segment Terms of Service. If you have any questions, please contact the [Segment Legal team](mailto:legal@segment.com).
 
-> Effective as of April 30th, 2018.
+> Last modified April 30th, 2018.
+> Effective April 30th, 2018 to December 18, 2019.
 
 [Prior versions available here](/docs/legal/terms-updates/)
+---
 
 <br />
 
