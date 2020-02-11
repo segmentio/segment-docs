@@ -1,6 +1,5 @@
 ---
 title: Segment for Data users
-draft: true
 ---
 
 If you aren't involved in setting up your Segment implementation, or are just starting to set up Destinations for your organization's workspace, this guide is for you.

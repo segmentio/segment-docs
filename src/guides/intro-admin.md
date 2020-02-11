@@ -1,5 +1,6 @@
 ---
 title: Segment for Workspace Administrators
+published: false
 ---
 
 
@@ -29,8 +30,8 @@ In addition, Workspace administrators set up and maintain the organization's [wo
 - Incident contacts - the people who get notified in the event of an outage or incident
 - the Workspace name and slug - the display name and namespace of the workspace in the Segment system
 
-  > info ""
-  > Changing the workspace name and slug do not have any effect on any sources or destinations already set up and configured. (These use a combination of an internal ID, and `writeKey` to connect.)
+> info ""
+> Changing the workspace name and slug do not have any effect on any sources or destinations already set up and configured. (These use a combination of an internal ID, and `writeKey` to connect.)
 
 Workspace administrators might also maintain:
 - The organization authentication settings: login settings, multi-factor authentication enforcement, Identity provider (IDP) settings (including SAML and OAuth), and other related settings.

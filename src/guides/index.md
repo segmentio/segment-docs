@@ -58,9 +58,9 @@ In addition to [Connections](/docs/connections/) (our core message routing produ
 We've generated different guides based on the main activities you'll do in Segment. If you wear many hats, you might use all of these guides!
 
 - {% include components/button.html size="small" variant="bordered" text="I'm a Segment Developer" href="/docs/guides/intro-impl/" %}
+- {% include components/button.html size="small" variant="bordered" text="I'm a Segment data user" href="/docs/guides/intro-user/" %}
 - I am a Segment Workspace administrator (coming soon!)
 - I am a Segment Privacy administrator (coming soon!)
-- I am a Segment Data user (coming soon!)
 
 
 ## What's a Workspace?
