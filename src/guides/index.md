@@ -2,7 +2,7 @@
 title: Getting Started with Segment
 ---
 
-Welcome! This page is a high-level introduction to the Segment Platform, including what it does and how. (If you're looking for detailed information about architecture, setup, or maintenance, you can [skip ahead](#where-can-i-learn-more).)
+Welcome! This page is a high-level introduction to the Segment Platform, including what it does and how. (If you're looking for detailed information about architecture, setup, or maintenance, you can **[skip ahead](#where-can-i-learn-more).**)
 
 {% include components/media-icon.html href="
 https://university.segment.com/introduction-to-segment/299955?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: How Segment Works" content="Check out how Segment works in Segment University and how to get started with Segment in Segment University! (Must be logged in to access.)" %}
