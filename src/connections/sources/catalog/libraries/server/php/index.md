@@ -290,12 +290,12 @@ Segment::track(array(
 # the anonymous user signs up and is aliased
 Segment::alias(array(
   "previousId" => "anonymous_user",
-  "userId" => "identified@gmail.com"
+  "userId" => "identified@example.com"
 ));
 
 # the identified user is identified
 Segment::identify(array(
-  "userId" => "identified@gmail.com",
+  "userId" => "identified@example.com",
   "traits" => array(
     "plan" => "Free"
   )
@@ -303,7 +303,7 @@ Segment::identify(array(
 
 # the identified user does actions ...
 Segment::track(array(
-  "userId" => "identified@gmail.com",
+  "userId" => "identified@example.com",
   "event" => "Identified Action"
 ));
 ```

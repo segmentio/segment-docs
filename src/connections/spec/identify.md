@@ -1,10 +1,12 @@
 ---
 title: 'Spec: Identify'
 related:
-  - "/docs/connections/sources/catalog/"
+  - "/connections/sources/catalog/"
 ---
 
 `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them like their email, name, etc.
+
+{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299968?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Identify Method" content="Check out our high-level overview of the Identify method in Segment University. (Must be logged in to access.)" %}
 
 Our recommendation for when and how often you should call identify is as follows:
 

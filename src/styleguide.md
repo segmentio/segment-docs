@@ -99,9 +99,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 Analytics.js, our Javascript `library`, is the most powerful way to track customer data from your `website`. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
   }, {
   integrations: {
     'All': false,

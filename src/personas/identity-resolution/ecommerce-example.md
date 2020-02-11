@@ -67,7 +67,7 @@ Users can have multiple touch points with an app ecosystem through more than one
 
 Let’s continue with the example of Jane Doe. She now views the same mobile app SegKicks on her Android phone as well.
 
-Jane Doe logs into the Android phone with the same email janedoe@gmail.com.
+Jane Doe logs into the Android phone with the same email janedoe@example.com.
 
 ```js
 {

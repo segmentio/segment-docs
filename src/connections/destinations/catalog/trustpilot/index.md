@@ -25,7 +25,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.track('Order Completed', {
   checkout_id: 'fksdjfsdjfisjf9sdfjsd9f',
   order_id: '50314b8e9bcf000000000000',
-  email: 'test@gmail.com',
+  email: 'test@example.com',
   name: 'John',
   surname: 'Johnson',
   affiliation: 'Google Store',

@@ -271,7 +271,7 @@ Property                | Type   | Description
   "action": "track",
   "event": "Invite Sent",
   "properties": {
-    "invitee_email": "pgibbons@gmail.com",
+    "invitee_email": "pgibbons@example.com",
     "invitee_first_name": "Peter",
     "invitee_last_name": "Gibbons",
     "invitee_role": "Owner"
@@ -287,7 +287,7 @@ Property                | Type   | Description
   "action": "track",
   "event": "Invite Sent",
   "properties": {
-    "invitee_email": "pgibbons@gmail.com",
+    "invitee_email": "pgibbons@example.com",
     "invitee_first_name": "Peter",
     "invitee_last_name": "Gibbons",
     "invitee_role": "Owner"
