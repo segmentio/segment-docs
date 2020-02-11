@@ -1,6 +1,6 @@
 ---
-rewrite: true
 title: Stories Destination
+rewrite: true
 beta: true
 ---
 
@@ -28,7 +28,7 @@ Only `identify` calls update the Profile traits and Attributes on the left-hand 
 `userId` is a **required** property to assign the call to a specific user. Stories does not support anonymous user tracking.
 An example call would look like with a server-side call:
 
-```json
+```text
 POST api.getstories.io/v1/events/
 Params: {
   user_id: "some_user_id", //Segment’s userId
@@ -47,7 +47,7 @@ A [`page`](https://segment.com/docs/spec/page/) and/or a [`screen`](https://segm
 `userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but not required.
 An example server-side call:
 
-```json
+```text
 POST api.getstories.io/v1/events/
 Params: {
   user_id: "some_user_id", //Segment’s userId
@@ -73,7 +73,7 @@ A [`track`](https://segment.com/docs/spec/track/) call will be sent to Stories a
 `userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but not required.
 An example server-side call:
 
-```json
+```text
 POST api.getstories.io/v1/events/
 Params: {
   user_id: "some_user_id", //Segment’s userId
@@ -96,7 +96,7 @@ When this option is enabled, Stories will automatically merge an identified User
 
 An example server-side call:
 
-```json
+```text
 POST api.getstories.io/v1/users
 Params: {
     "user_id": "some_user_id", //Segment’s userId
