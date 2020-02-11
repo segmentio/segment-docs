@@ -287,4 +287,4 @@ If you are using `minifyEnabled` in your build, you would need to add the follow
 -dontwarn com.comscore.**
 ```
 
-The Comscore library uses static classes and the code is already optimized. These setting inform ProGuard to add the library as-is.
+The comScore library uses static classes and the code is already optimized. These setting inform ProGuard to add the library as-is.
