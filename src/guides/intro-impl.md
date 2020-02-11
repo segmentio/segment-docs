@@ -4,6 +4,8 @@ title: Segment for Developers
 
 This guide explains all you need to know to get started with your Segment implementation, and directs you to more resources depending on your specific needs.
 
+{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/324262?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: Segment in Action" content="See a quick example of Segment working on an ecommerce website. (Must be logged in to access.)" %}
+
 ## What does Segment do?
 
 Segment sends messages about activities in your mobile apps, websites or servers, receives messages those messages, and translates and forwards the message contents to Destination tools. It also can send the contents of those messages to a bulk storage destination for archiving. In more complicated implementations, Segment can serve as a wrapper to trigger messages directly to other APIs, and can inspect, correct, classify and block the message contents.
