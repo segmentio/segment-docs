@@ -2,7 +2,7 @@
 title: Getting Started with Segment
 ---
 
-Welcome! This page is a high-level introduction to the Segment Platform, including what it does and how. (If you're looking for detailed information about architecture, setup, or maintenance, you can [skip ahead](#where-can-i-learn-more).)
+Welcome! This page is a high-level introduction to the Segment Platform, including what it does and how. (If you're looking for detailed information about architecture, setup, or maintenance, you can **[skip ahead](#where-can-i-learn-more).**)
 
 ## What is Segment?
 
@@ -56,13 +56,12 @@ In addition to [Connections](/docs/connections/) (our core message routing produ
 
 We've generated different guides based on the main activities you'll do in Segment. If you wear many hats, you might use all of these guides!
 
-- I am a [Segment Developer](intro-impl/)
-- I am a Segment Workspace administrator (coming soon!)
-- I am a Segment Privacy administrator (coming soon!)
-- I am a Segment Data user (coming soon!)
+- {% include components/button.html size="small" variant="bordered" text="I'm a Segment Developer" href="/docs/guides/intro-impl/" %}
+- {% include components/button.html size="small" variant="bordered" text="I'm a Segment Data user" href="/docs/guides/intro-user/" %}
+- {% include components/button.html size="small" variant="bordered" text="I'm a Segment Workspace administrator" href="/docs/guides/intro-admin/" %}
 
 
-## What's a workspace?
+## What's a Workspace?
 
 {% include content/whats-a-workspace.md %}
 
