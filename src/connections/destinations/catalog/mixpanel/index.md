@@ -283,7 +283,10 @@ Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported via
 
 By default we don't send data to Mixpanel People since it usually requires upgrading your Mixpanel account. If you want to enable Mixpanel People simply check the box for: **Use Mixpanel People** from your source destinations page in the Mixpanel sheet.
 
-If you want to add people properties in Mixpanel before you know the user's unique databse `userId` you can identify `traits` without the `userId`. **Note:** this only works in Analytics.js and our mobile SDKs.
+If you want to add people properties in Mixpanel before you know the user's unique databse `userId` you can identify `traits` without the `userId`. 
+
+<!-- Removing this note as this has been tested with our server libraries and works (Feb 2020) -->
+<!--**Note:** this only works in Analytics.js and our mobile SDKs.-->
 
 Your `identify` call would look like this in Analytics.js if you only want to set people properties without a `userId`:
 
