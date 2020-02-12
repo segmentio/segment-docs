@@ -10,6 +10,9 @@ ifeq ('${BUILDKITE_BRANCH}','staging')
 JEKYLL_ENV := 'staging'
 endif
 
+# Laura's convenience command because Reasons
+docs: dev
+
 .PHONY: dev
 dev: node_modules vendor/bundle
 	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
