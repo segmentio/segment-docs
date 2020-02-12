@@ -98,6 +98,8 @@ Our server-side sources let you send analytics data directly from your servers. 
 
 Cloud app sources empower you to pull together data from all of your different third-party tools into a Segment warehouse or to your other enabled integrated tools. There are two types of Cloud Apps: **Object** and **Event** sources.
 
+{% include components/media-icon.html href="/docs/connections/sources/sources-compare/" icon="media/icon-guides.svg" title="Comparing Cloud Sources" content="Wondering which cloud-apps send which types of data? Check out the Cloud Sources comparison!" %}
+
 ### Object Cloud Sources
 
 These Cloud App Sources can export data from its third party tool and import it directly into your Segment warehouse. Make sure you have a Segment warehouse enabled before you enable any of the following sources:
