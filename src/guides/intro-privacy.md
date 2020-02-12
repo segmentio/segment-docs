@@ -1,6 +1,6 @@
 ---
 title: Segment for Privacy administrators
-draft: true
+published: false
 ---
 
 GDPR tools, ccpa, our specific agreements
