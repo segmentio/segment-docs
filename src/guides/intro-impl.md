@@ -4,6 +4,9 @@ title: Segment for Developers
 
 This guide explains all you need to know to get started with your Segment implementation, and directs you to more resources depending on your specific needs.
 
+> info ""
+> If you haven't already, you should read the [detailed explanation of Segment](/docs/guides/) on the previous page!
+
 {% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/324262?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: Segment in Action" content="See a quick example of Segment working on an ecommerce website. (Must be logged in to access.)" %}
 
 ## What does Segment do?
@@ -95,3 +98,7 @@ There are several different ways to ensure that you can collect your data once, 
 ## Troubleshooting
 
 If you're seeing errors thrown by your destinations, you might have an implementation issue. See the [Integration Error Codes list](/docs/connections/integration_error_codes/) or [contact our Success engineering team](https://segment.com/help/contact/) for help.
+
+
+> success ""
+> Have suggestions for things to add to this guide? [Drop us a line](mailto:docs-feedback@segment.com?subject=Segment%20Dev%20guide%20Suggestion)!

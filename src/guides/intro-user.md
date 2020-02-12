@@ -1,5 +1,5 @@
 ---
-title: Segment for Data users
+title: Segment for Data Users
 ---
 
 If you aren't involved in setting up your Segment implementation, or are just starting to set up Destinations for your organization's workspace, this guide is for you.
@@ -53,3 +53,6 @@ To set up a destination:
 ## Troubleshooting
 
 If you're setting up a destination to use [cloud-mode data](docs/connections/destinations/#connection-modes) (data that's sent through Segment, rather than directly from a user's device), you can use the [Event Tester] and [Event Delivery] tools to check that data is arriving, and being correctly delivered to the destination.
+
+> success ""
+> Have suggestions for things to add to this guide? [Drop us a line](mailto:docs-feedback@segment.com?subject=Segment%20Data%20User%20guide%20Suggestion)!
