@@ -1,63 +1,11 @@
 ---
-title: Analytics.js Source
+title: Analytics.js (Javascript) Source
 sourceTitle: 'JavaScript'
 sourceCategory: 'Website'
+redirect_from: '/connections/sources/catalog/libraries/website/analytics.js/'
 ---
 
-
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-	- [Getting Started](#getting-started)
-	- [Identify](#identify)
-	- [Track](#track)
-	- [Page](#page)
-		- [Default Page Properties](#default-page-properties)
-	- [Group](#group)
-	- [Alias](#alias)
-	- [Ready](#ready)
-	- [Querystring API](#querystring-api)
-	- [Selecting Destinations](#selecting-destinations)
-	- [Load Options](#load-options)
-	- [User & Group Information](#user-group-information)
-		- [Clearing Traits](#clearing-traits)
-		- [Reset / Logout](#reset-logout)
-	- [Anonymous ID](#anonymous-id)
-		- [Retrieving the Anonymous ID](#retrieving-the-anonymous-id)
-		- [Setting the Anonymous ID](#setting-the-anonymous-id)
-		- [Refreshing the Anonymous ID](#refreshing-the-anonymous-id)
-	- [Debug](#debug)
-	- [Emitter](#emitter)
-		- [Track Link](#track-link)
-		- [Track Form](#track-form)
-	- [Extending Timeout](#extending-timeout)
-	- [Performance](#performance)
-	- [Retries](#retries)
-	- [Cross-Domain Analytics](#cross-domain-analytics)
-	- [Cross-Subdomain Analytics](#cross-subdomain-analytics)
-	- [Anonymizing IP](#anonymizing-ip)
-	- [Proxy](#proxy)
-	- [Plugins](#plugins)
-	- [Context & Traits](#context-traits)
-	- [Segment ID Persistence](#segment-id-persistence)
-		- [Using only the cookie as the Segment ID store](#using-only-the-cookie-as-the-segment-id-store)
-	- [Troubleshooting](#troubleshooting)
-		- [Are you loading `analytics.js`?](#are-you-loading-analyticsjs)
-		- [Are you loading two instances of `analytics.js`?](#are-you-loading-two-instances-of-analyticsjs)
-		- [Do you see events appear in your debugger?](#do-you-see-events-appear-in-your-debugger)
-		- [Is data being transmitted to your third-party destinations?](#is-data-being-transmitted-to-your-third-party-destinations)
-		- [Do you have any ad blockers enabled in your browser?](#do-you-have-any-ad-blockers-enabled-in-your-browser)
-		- [Internet Explorer Support](#internet-explorer-support)
-		- [Is your web site deployed under a domain on the Public Suffix List?](#is-your-web-site-deployed-under-a-domain-on-the-public-suffix-list)
-		- [How do I open the Javascript console in your debugger?](#how-do-i-open-the-javascript-console-in-your-debugger)
-		- [Is there a size limit on requests?](#is-there-a-size-limit-on-requests)
-		- [If `analytics.js` fails to load, are callbacks not fired?](#if-analyticsjs-fails-to-load-are-callbacks-not-fired)
-		- [Why do I see a network request to `/m`?](#why-do-i-see-a-network-request-to-m)
-		- [How are properties with `null` and `undefined` values treated?](#how-are-properties-with-null-and-undefined-values-treated)
-		- [Known Issues:](#known-issues)
-
-<!-- /TOC -->
-
-Analytics.js makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
+Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
 ## Getting Started
 
