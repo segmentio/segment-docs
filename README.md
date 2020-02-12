@@ -189,7 +189,9 @@ You'd write a block like this:
 Notes *must* include a `[]` in the heading/title, even if it's empty.
 You can see how to write them in the `styleguide.md`, and see how they render at [https://segment.build/docs/styleguide](https://segment.build/docs/styleguide)
 
-
+### Redirect to a workspace
+Occasionally, you'll want to deep-link into the Segment app to link a reader to a specific page or screen. Previously we'd throw them an URL and say "replace {MY SLUG} with your actual workspace slug", but now you can use the slug of `goto-my-workspace` and the Segment app will redirect them.
+https://app.segment.com/goto-my-workspace/destinations/catalog
 
 ## Makefile commands
 

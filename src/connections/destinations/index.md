@@ -16,9 +16,15 @@ If you're just looking to explore all of our destinations check out the [destina
 
 For detailed information about each destination, select one from the list to learn how our API methods are implemented for that destination, and how you can use it through Segment.
 
+## Method Compatibility
+
+Not all destinations can accept data from specific method types. Wondering which ones are which? Check out the [Destinations Methods matrix](/docs/connections/destinations/methods-compare/).
+
 ## Source Compatibility
 
 Many destinations can accept data from all types of sources, but some are only compatible with specific source types (for example, web only, or server only). To find out which source types a specific destination can accept data from, check the documentation for that destination for a "Supported Sources and Connection Modes" section.
+
+{% include components/media-icon.html href="/docs/connections/destinations/category-compare/" icon="media/icon-guides.svg" title="Destinations Compatibility Matrix" content="Wondering which destinations take which data? Check out the Destination connection modes list by category." %}
 
 ## Connection Modes
 
