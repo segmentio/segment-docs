@@ -4,6 +4,12 @@ sections:
   section:
   - path: /guides
     title: Getting Started with Segment
+  - path: /guides/intro-impl
+    title: Segment Developer overview
+  - path: /guides/intro-user
+    title: Segment Data User overview
+  - path: /guides/intro-admin
+    title: Segment Workspace Admin overview  
   - path: /guides/filtering-data
     title: Filtering your Segment Data
   - path: /guides/duplicate-data

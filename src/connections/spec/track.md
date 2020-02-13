@@ -4,6 +4,8 @@ title: 'Spec: Track'
 
 The `track` API call is how you record any actions your users perform, along with any properties that describe the action.
 
+{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299975?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Track Method" content="Check out our high-level overview of the Track method in Segment University. (Must be logged in to access.)" %}
+
 Each action is known as an event. Each event has a name, like **Registered**, and properties, for example a **Registered** event might have properties like `plan` or `accountType`. Calling `track` in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
 Here's the payload of a typical `track` call with most [common fields](/docs/connections/spec/common/) removed:
