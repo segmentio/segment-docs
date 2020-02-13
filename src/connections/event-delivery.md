@@ -2,8 +2,6 @@
 title: How do I check if data is reaching a destination?
 ---
 
-## Overview
-
 The Event Delivery tool exists to help customers understand if Segment has encountered any issues delivering your source data to destinations. 
 
 Segment sends billions of events to destinations every week. If we encounter any errors when attempting to deliver your data, we report them in the Event Delivery tool.
