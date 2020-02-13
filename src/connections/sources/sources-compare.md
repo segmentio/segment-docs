@@ -31,7 +31,7 @@ This page collates information about each source, organized by category for bett
 
 Cloud-App Sources allow you to pull in data from third-party tools so you can use it in Segment. There are two types of Cloud Apps: **Object** and **Event** sources. As in the basic tracking API, **objects** usually contain information about a person or group which is updated over time, while **event** data happens once, and is appended to a list.
 
-- **Event Cloud-App Sources** can export their data both into Segment warehouses, and into other enabled Segment integrations that work with event data.
+- **Event Cloud-App Sources** can export their data both into Segment warehouses, and into other enabled Segment integrations that work with event data. Data from Event sources can include userIds and anonymousIds, and can affect your MTU usage.
 
 - **Object Cloud-App Sources** export data and import it directly into a Segment warehouse. From the warehouse, you can analyze your data with SQL, or use Personas's SQL Traits to build audiences. Some examples of Object Cloud sources are Salesforce (account information), Zendesk (support cases), and Stripe (payments information).
 
