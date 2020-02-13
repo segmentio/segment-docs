@@ -20,7 +20,7 @@ export default function () {
   tippy.setDefaultProps({
     interactive: true,
     placement: 'bottom',
-    boundary: document.querySelector('.stage'),
+    boundary: 'viewport',
     trigger: 'manual',
     onMount: (tooltip) => {
       const sendButton = document.querySelector(SEND_SELECTOR)

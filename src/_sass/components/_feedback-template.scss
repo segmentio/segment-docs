@@ -9,7 +9,11 @@
     width: 260px;
     border: none;
     resize: none;
-    color: color(gray);
+    color: color(gray-dark);
     outline: none;
+
+    &::placeholder {
+      color: #8ea5a9;
+    }
   }
 }
