@@ -1,6 +1,29 @@
----
+-
 title: Troubleshooting Segment Events
----
+-
+
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+	- [Segment Data Flow](#segment-data-flow)
+		- [Analytics.js](#analyticsjs)
+		- [Expanding on the Tracking API**](#expanding-on-the-tracking-api)
+			- [Integrations-consumer**](#integrations-consumer)
+		- [Connection modes](#connection-modes)
+			- [Client-native Destination Features](#client-native-destination-features)
+			- [Choosing a Connection Mode](#choosing-a-connection-mode)
+	- [Dev, QA, & Prod Sources](#dev-qa-prod-sources)
+	- [Debugging Best Practices](#debugging-best-practices)
+		- [Is Data reaching your debugger?](#is-data-reaching-your-debugger)
+		- [Is *ANY* data reaching your Destination?](#is-any-data-reaching-your-destination)
+		- [Is your Destination set up correctly?](#is-your-destination-set-up-correctly)
+		- [Is your implementation server-side (i.e. Cloud Mode)?](#is-your-implementation-server-side-ie-cloud-mode)
+			- [Device-Mode vs Cloud-mode troubleshooting](#device-mode-vs-cloud-mode-troubleshooting)
+		- [Event Delivery Dashboard](#event-delivery-dashboard)
+		- [Using the Event Tester](#using-the-event-tester)
+		- [Additional troubleshooting tips](#additional-troubleshooting-tips)
+	- [Further Reading](#further-reading)
+
+<!-- /TOC -->
 
 This documentation provides guidance on how to:
 
@@ -95,7 +118,7 @@ makes it through those endpoints, it has channel set to client.
 Each destination defines which channels it supports. If the event coming
 in does not belong to any of the supported channel, it is dropped.
 
-## Connection modes
+### Connection modes
 
 A [connection mode](https://segment.com/blog/connection-modes/) is an
 attribute of a destination. It defines how events sent from our
@@ -114,7 +137,7 @@ Not all destinations support both connection modes. Some destinations
 are device mode only, and some cloud mode only. When a destination
 supports both connection modes, it defaults to using device mode.
 
-### Client-native Destination Features
+#### Client-native Destination Features
 
 Many of our destination partners offer device-based features beyond data
 collection in their SDKs and libraries, for both mobile and web. In
@@ -128,7 +151,7 @@ include automatic A/B testing; displaying user surveys, live chat or
 in-app notifications; touch/hover heatmapping; and accessing rich device
 data such as CPU usage, network data, or raised exceptions.
 
-### Choosing a Connection Mode
+#### Choosing a Connection Mode
 
 By default, mobile destinations use a Cloud-based connection mode, which
 forwards data to other destinations so you don't need to package their
@@ -297,7 +320,7 @@ offer a few tools that can serve as guidance of potential issues:
     that we are updating or creating in order to understand if the
     data is flowing as expected. You can find the Github repo of this
     tool
-    [[here]{.underline}](https://github.com/segmentio/analytics.js-integrations/tree/master/compiler).
+    [[here](https://github.com/segmentio/analytics.js-integrations/tree/master/compiler).
 
 2.  **Debugging methods in our libraries**
 
@@ -317,14 +340,14 @@ offer a few tools that can serve as guidance of potential issues:
     option serves a similar purpose to our Debugger but ensures that
     you are seeing every event we receive vs just a specific sample.
     You can use
-    [[https://requestbin.com/]{.underline}](https://requestbin.com/).
+    [[https://requestbin.com/](https://requestbin.com/).
 
 5.  **Destination device-mode code:** Always look at the source code for
     each Destination when you\'re trying to debug. The docs attempt to
     stay up to date with the code, but that\'s not always the case.
     You can find the source code of all our analytics.js to
     Destination libraries in [[this Github
-    repo]{.underline}](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations).
+    repo](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations).
 
 For server-side troubleshooting, we offer two features that should
 provide visibility into what is reaching the Destination and a testing
@@ -332,10 +355,9 @@ tool to replicate the exact behavior that our pipeline would go through
 (including the Request to and the Response from the partner Destination
 API).
 
-## Event Delivery
+### Event Delivery Dashboard
 
-Event Delivery enables customers to go beyond our platform-wide [[status
-page]{.underline}](https://status.segment.com/) to view the specific
+Event Delivery enables customers to go beyond our platform-wide [status page](https://status.segment.com/) to view the specific
 deliverability rates for your Sources to your Destinations directly in
 the Segment app. Event Delivery gives you:
 
@@ -348,13 +370,13 @@ the Segment app. Event Delivery gives you:
 -   Visibility into Segment's event retry-logic
 
 Should Segment encounter any issues when attempting to deliver your data
---- whether from a network timeout, a Partner API rejecting the call,
-rate limiting, or anything else --- we will report them in real-time.
+- whether from a network timeout, a Partner API rejecting the call,
+rate limiting, or anything else - we will report them in real-time.
 You can also see the latency of your data and specific details for each
 error that has occurred.
 
 With Event Delivery, you can see firsthand which errors are occurring,
-why they're occurring, and what you can do about it --- even if they are
+why they're occurring, and what you can do about it - even if they are
 not Segment-related errors. This gives you more visibility into data
 deliverability than you'd get within most partner applications.
 
@@ -363,23 +385,20 @@ Segment retries your events up to 9 times to increase the chances of
 your customer data making it to its end Destination. With Segment, more
 of your data will be delivered than without because of our retry
 algorithm. If your data isn't successfully delivered the first time due
-to temporary issues with the data---for instance, you're being rate
-limited or the Partner API is down---we will retry it for you up to 9
+to temporary issues with the data-for instance, you're being rate
+limited or the Partner API is down-we will retry it for you up to 9
 times to maximize the chances that your data is successfully received.
 
 When we report on Event Delivery, we break out the events that were
 successfully delivered on the first attempt versus on a retry, so you
 know when your data arrived.
 
-**IMPORTANT: Event Delivery only displays data that was sent server-side
-or in cloud-mode which gets assigned the "server" channel value. Events
-sent device-mode or with analytics.js will not show up in the
-Destination Event Delivery feature.**
+> warning "IMPORTANT"
+>Event Delivery only displays data that was sent server-side or in cloud-mode which gets assigned the "server" channel value. Events sent device-mode or with analytics.js will not show up in the Destination Event Delivery feature.**
 
-**More on how to use this feature here**:
-[[https://segment.com/docs/connections/event-delivery/]{.underline}](https://segment.com/docs/connections/event-delivery/)
+[Read more about the Event Delivery dashboard](https://segment.com/docs/connections/event-delivery/).
 
-## Event Tester
+### Using the Event Tester
 
 If you want to prevent errors from happening to begin with, you can use
 Segment's Event Tester. With the Event Tester, you can test specific
@@ -394,6 +413,7 @@ tools. The Event Tester catches these missing fields on the fly, letting
 you know that you need to add these fields to the API call in order for
 the Destination to successfully receive it.
 
+<!-- TODO: remove refs to Centrifuge -->
 Event Tester actually leverages the same preprocessing pipeline that we
 use for real-time events before it is managed by our Centrifuge service.
 The only differences between how events are delivered in Event Tester vs
@@ -424,26 +444,22 @@ or cloud-mode events (channel = server), we will use our server-side
 libraries which are not open source. If you are curious on how the code
 is set up for a particular server-side Destination library, please reach
 out to our Success Engineering team via [[this
-form]{.underline}](https://segment.com/help/contact).
+form](https://segment.com/help/contact).
 
-**More on how to use this feature here**:
-[[https://segment.com/docs/connections/test-connections/]{.underline}](https://segment.com/docs/connections/test-connections/)
+[Read more about the Event Tester](https://segment.com/docs/connections/test-connections/).
 
 
-## Additional troubleshooting tips
+### Additional troubleshooting tips
 
-1.  Set-up
-    [[notifications]{.underline}](https://app.segment.com/nike/settings/notifications)
+1.  Set up
+    [notifications](https://app.segment.com/nike/settings/notifications)
     for your Sources and Destinations so you keep up to date with any
-    issues and/or changes in the data flow
+    issues and/or changes in the data flow.
 
-2.  Leverage the [[Health
-    tab]{.underline}](https://app.segment.com/nike/integration-health)
-    for a comprehensive report of the issues we are encountering for
-    each Source and Destination
+2.  Leverage the [[Health tab](https://app.segment.com/nike/integration-health) for a comprehensive report of the issues we are encountering for each Source and Destination
 
-### Additional Resources
+## Further Reading
 
--   [Segment University: Debugging and Troubleshooting](https://university.segment.com/debugging-and-troubleshooting)
+{% include components/media-icon.html href="https://university.segment.com/debugging-and-troubleshooting" icon="media/icon-academy.svg" title="Segment University: Debugging and Troubleshooting" content="" variant="related" %}
 
--   [Blog post on how Segment tests Segment](https://segment.com/blog/we-test-in-production-you-should-too/)
+{% include components/media-icon.html href="https://segment.com/blog/we-test-in-production-you-should-too/" icon="media/icon-academy.svg" title="Blog post on how Segment tests Segment" content="" variant="related" %}
