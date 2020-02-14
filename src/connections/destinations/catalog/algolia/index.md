@@ -1,6 +1,6 @@
 ---
-rewrite: true
 title: Algolia
+rewrite: true
 beta: true
 ---
 
@@ -114,8 +114,8 @@ If you are already sending events of which the names are out of the spec, you ne
 
 Go to the destination settings and click "Rename Events".
 
-![Destination Settings](https://i.imgur.com/0GP5Q7D.png)
+![Destination Settings](images/destination_settings.png)
 
 You can put your current event names on the left and the event names following the spec on the right.
 
-![Rename Events](https://i.imgur.com/sRBMrpU.png)
+![Rename Events](images/rename_events.png)
