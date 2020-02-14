@@ -415,7 +415,7 @@ the Destination to successfully receive it.
 
 <!-- TODO: remove refs to Centrifuge -->
 Event Tester actually leverages the same preprocessing pipeline that we
-use for real-time events before it is managed by our Centrifuge service.
+use for real-time events before it is managed by our Destination processing service.
 The only differences between how events are delivered in Event Tester vs
 our regular pipeline are:
 
