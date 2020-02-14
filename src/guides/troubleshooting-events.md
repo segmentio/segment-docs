@@ -336,7 +336,7 @@ offer a few tools that can serve as guidance of potential issues:
     received. You can then query with Athena to get more granularity.
 
 4.  **Webhooks:** You can also connect a webhook to each source in order
-    to receive every event that we are processing in real-time. This
+    to receive every event that we are processing near real-time. This
     option serves a similar purpose to our Debugger but ensures that
     you are seeing every event we receive vs just a specific sample.
     You can use
