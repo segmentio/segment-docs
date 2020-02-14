@@ -316,7 +316,7 @@ validate the data flow based on what each Destination supports. We do
 offer a few tools that can serve as guidance of potential issues:
 
 1.  **Analytics.js-Integrations Tester:** This is the tool that our
-    Destinations engineer team leverages to test any client-side code
+    Destinations engineering team leverages to test any client-side code
     that we are updating or creating in order to understand if the
     data is flowing as expected. You can find the Github repo of this
     tool
