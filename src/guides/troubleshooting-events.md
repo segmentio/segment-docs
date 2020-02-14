@@ -428,7 +428,7 @@ exact behavior that you'd expect to see in our regular pipeline.
 **IMPORTANT**: If we receive an event from a client-side source that
 gets assigned a "client" channel and then you process that event via
 Event Tester, we will re-process that event and set the channel to
-"server". This may cause unwanted behavior since some Destinations are
+"server". This may cause unwanted behavior since some Destinations are only
 supported client-side, server-side or both. And, considering some tools
 have different behavior client-side vs server-side, you might be seeing
 success or errors that might not apply to the scenario you're trying to
