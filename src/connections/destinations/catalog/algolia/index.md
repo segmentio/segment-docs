@@ -62,7 +62,7 @@ Algolia supports the following five events from Segment's [Ecommerce Spec](https
   </tr>
 </table>
 
-```
+```js
 analytics.track('Product List Viewed', {
     products: [{
         product_id: "hit objectID",
