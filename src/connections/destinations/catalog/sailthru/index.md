@@ -57,7 +57,7 @@ Or within the **Users > Lists** feature, based on the default list you configure
 ```js
 analytics.identify("38472034892",{
     "name": "Hamurai",
-    "email": "Hamurai@gmail.com",
+    "email": "Hamurai@example.com",
     "quote": "Rick, you love those BBQs, Rick"
   },{
     Sailthru:{
@@ -73,7 +73,7 @@ You can also configure an `optout_email` value in the Segment UI, or pass in a v
 ```
 analytics.identify("3242351231",{
     "name": "Duck With Muscles",
-    "email": "MusclesQuack@gmail.com",
+    "email": "MusclesQuack@example.com",
     "quote":  "Oh, wow...Baby Wizard was a Parasite?!"
   },{
     Sailthru:{

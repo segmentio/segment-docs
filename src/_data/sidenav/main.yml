@@ -4,6 +4,12 @@ sections:
   section:
   - path: /guides
     title: Getting Started with Segment
+  - path: /guides/intro-impl
+    title: Segment Developer overview
+  - path: /guides/intro-user
+    title: Segment Data User overview
+  - path: /guides/intro-admin
+    title: Segment Workspace Admin overview  
   - path: /guides/filtering-data
     title: Filtering your Segment Data
   - path: /guides/duplicate-data
@@ -81,8 +87,6 @@ sections:
       title: 'Spec: Screen'
     - path: /connections/spec/track
       title: 'Spec: Track'
-    - path: /connections/spec/alias
-      title: 'Spec: Alias'
     - path: /connections/spec/group
       title: 'Spec: Group'
     - path: /connections/spec/identify
@@ -115,8 +119,8 @@ sections:
       title: What can you do with cloud source data?
     - path: /connections/sources/custom-domains
       title: Set up a custom domain proxy in Segment
-    - path: /connections/sources/custom-sources
-      title: Custom Sources
+    - path: /connections/sources/source-functions
+      title: Source Functions
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
     - path: /connections/sources/what-are-cloud-sources
@@ -131,8 +135,8 @@ sections:
       menu_icon: read-more
     - path: /connections/destinations/destination-filters
       title: Destination Filters
-    - path: /connections/destinations/custom-destinations
-      title: 'Custom Destinations: Functions'
+    - path: /connections/destinations/destination-functions
+      title: Destination Functions
   - section_title: Warehouses
     slug: connections/warehouses
     section:
@@ -140,6 +144,8 @@ sections:
       title: Warehouses and Data Storage
     - path: /connections/warehouses/catalog
       title: Warehouses catalog
+    - path: /connections/warehouses/selective-sync
+      title: Warehouse Selective Sync
       menu_icon: read-more
     - path: /connections/warehouses/choose-warehouse
       title: Choosing a Warehouse

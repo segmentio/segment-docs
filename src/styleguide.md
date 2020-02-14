@@ -13,8 +13,8 @@ contributors:
   - name: Monica Buck
     date: 23.08.2019
 related:
-  - "/connections/sources/catalog/"
-  - "/connections/sources/faq/"
+  - "/docs/connections/sources/catalog/"
+  - "/docs/connections/sources/faq/"
 ---
 
 ---
@@ -73,13 +73,24 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ## Buttons
 
-{% include components/button.html text="Sign up" href="https://segment.com" %}
-{% include components/button-fill.html size="large" text="Yes" href="https://segment.com" %}
-{% include components/button.html size="large" text="Yes" href="https://segment.com" %}
-{% include components/button-fill.html size="small" text="Sign up" href="https://segment.com" %}
-{% include components/button-fill.html size="small" variant="white" text="Yes" href="https://segment.com" %}
-{% include components/button-hollow.html size="small" text="Log in" href="https://segment.com" %}
-{% include components/button-link.html text="Find out more" href="https://segment.com" %}
+{% include components/button.html text="Button" href="https://segment.com" %}
+{% include components/button.html variant="bordered" text="Bordered button" href="https://segment.com" %}
+{% include components/button.html size="small" variant="bordered" text="Small bordered button" href="https://segment.com" %}
+{% include components/button.html size="large" text="Large button" href="https://segment.com" %}
+
+
+{% include components/button-fill.html size="large" text="Large filled button" href="https://segment.com" %}
+{% include components/button-fill.html size="half" text="Half filled button" href="https://segment.com" %}
+{% include components/button-fill.html size="expand" text="Expanded filled button" href="https://segment.com" %}
+
+{% include components/button-fill.html size="small" text="Small filled button" href="https://segment.com" %}
+{% include components/button-fill.html size="small" variant="white" text="Small white-filled button" href="https://segment.com" %}
+{% include components/button-fill.html size="small" variant="gray" text="Small gray-filled button" href="https://segment.com" %}
+
+{% include components/button-hollow.html size="small" text="Small hollow button" href="https://segment.com" %}
+{% include components/button-link.html text="Link button" href="https://segment.com" %}
+
+
 
 ---
 
@@ -88,9 +99,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 Analytics.js, our Javascript `library`, is the most powerful way to track customer data from your `website`. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
   }, {
   integrations: {
     'All': false,

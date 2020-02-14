@@ -2,8 +2,12 @@
 title: 'Spec: Alias'
 ---
 
+> note "Alias is an advanced method"
+> The Alias method allows you to explicitly change the ID of a tracked user, however this should only be done when it's required for downstream destination compatibility. See our [Best Practices for Identifying Users](/docs/guides/how-to-guides/best-practices-identify/) for more information.
 
 The `alias` method is used to merge two user identities, effectively connecting two sets of user data as one. This is an advanced method, but it is required to manage user identities successfully in some of our destinations.
+
+{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Segment Methods" content="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
 Since this is our most advanced method we have added sections to each docs page for destinations that use it:
 

@@ -33,11 +33,11 @@ Each endpoint *always* responds with a `200 <empty-gif>`, even if an error occur
 ```json
 {
   "writeKey": "YOUR_WRITE_KEY",
-  "userId": "025pikachu025",
+  "userId": "user_123",
   "event": "Email Opened",
   "properties": {
     "subject": "The Electric Daily",
-    "email": "peekAtMe@email.poke"
+    "email": "jane.kim@example.com"
   }
 }
 ```
