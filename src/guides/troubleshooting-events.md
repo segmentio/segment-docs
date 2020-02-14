@@ -88,7 +88,7 @@ Although this is only tangential to how events get into Segment, this
 system performs multiple verifications based on channel and connection
 mode to decide whether to process or drop events. For each event, it
 prepares an "action plan" describing what needs to happen to that event
-based on many settings, then forwards that plan to Centrifuge to execute
+based on many settings, then forwards that plan to our processing service to execute
 it. These validations include:
 
 1.  **server-side integration exists?**
