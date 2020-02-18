@@ -1,6 +1,6 @@
 ---
 title: Styleguide
-description: The styleguide of front-end components
+description: The Tonik-built list of front-end components
 hidden: true
 layout: page
 contributors:

@@ -111,32 +111,7 @@ For the Connections product, the section is divided into Sources, Destinations, 
 Destinations: These files also include "intelligent partials", which are sections of doc that are built conditionally, or using/based on information from the metadata service. This is *awesome* and like the holy grail of docs systems, so please keep the metadata up to date. Check out the `_includes/content/integration-foot.md` to see this in action. This uses Liquid scripting and pulls from the catalog metadata.
 
 
-## Formatting and Prettifying
-Some important tips! We also have a Styleguide available so you can see how different formatting looks when rendered.
 
-### Adding Images
-
-**All images should be saved locally! No linking to 3rd party-hosted images!**
-As CDN hosting is from the publish side, we shouldn't be worrying about that at the file level.
-
-To add images to a docs page, create an `images` folder for the docs path, save the image to the folder and then reference it in your markdown file. The [Google Analytics destination](/src/connections/destinations/catalog/google-analytics) is a good example.
-
-There are no naming conventions at this time. Anything you see with `asset` was dowloaded by a script to save it from Contents.io. :)
-
-### Adding links
-
-Use the standard markdown format for links (ex: `[text](https://example.com)`).
-To make a link open in a new tab append `[text](https://example.com){:target="_blank"}` to the end.
-
-### Escaping code snippets
-
-Certain code syntax will be interpreted by Jekyll/Liquid as site code. If you're having trouble showing code snippets in the docs, you can wrap the snippet in a `{% raw %}` tag. In the example below, the curly brackets would not render in the docs. The raw tags ensure the code renders properly.
-
-```
-{% raw %}
-To pass source name in the slack message, format it like so: `{{properties.sourceName}}`
-{% endraw %}
-```
 
 ## Frontmatter
 
@@ -172,26 +147,6 @@ We have two neat icons that you can add to a bottom-level menu item to mark it w
 
 
 
-### Syntax highlighting
-
-We're using Rouge, set in the `_config.yml`. It's now default for Jekyll 3 and later, so 🎉.
-A list of the cues Rouge accepts can be found [here](https://github.com/rouge-ruby/rouge/wiki/list-of-supported-languages-and-lexers).
-
-### Note Blocks
-We're using [Premonition](https://github.com/lazee/premonition) for our Note blocks. This is stock right now, with four styles: `note`, `info`, `success`, `warning`, and `error`.
-
-You'd write a block like this:
-```md
-> warning "I am a warning"
-> The body of the warning goes here. Premonition allows you to write any `Markdown` inside the block.
-```
-
-Notes *must* include a `[]` in the heading/title, even if it's empty.
-You can see how to write them in the `styleguide.md`, and see how they render at [https://segment.build/docs/styleguide](https://segment.build/docs/styleguide)
-
-### Redirect to a workspace
-Occasionally, you'll want to deep-link into the Segment app to link a reader to a specific page or screen. Previously we'd throw them an URL and say "replace {MY SLUG} with your actual workspace slug", but now you can use the slug of `goto-my-workspace` and the Segment app will redirect them.
-https://app.segment.com/goto-my-workspace/destinations/catalog
 
 ## Makefile commands
 
@@ -209,42 +164,6 @@ https://app.segment.com/goto-my-workspace/destinations/catalog
 - docker-build: runs `make build` on a docker host.
 - docker-dev: runs `make dev` on a docker host.
 
-
-## Troubleshooting Paper Exports
-
-Many of these docs were exported from Paper, which means that they'll have some quirks to sort out.
-
-### Endumben-ing
-Paper uses smart-quotes and smart apostrophes, which often can break syntax-sensitive formatting. You can replace them with "dumb" or straight quotes. The characters you're going to want to look for are...
-
-’ ‘ “ ”  If you "change all" in Atom, you'll remove these examples so please revert changes to this file. ;)
-
-Note that these won't always render in Github, so you'll have to make this change using Atom or another text editor.
-
-If the examples get removed you can also type these on a Mac by typing
-- Option + [
-- Option + Shift + [
-- Option + ]
-- Option + Shift + ]
-
-### Headings vs Titles
-
-Our titles are our H1s, so you can remove a top-line H1 if if shows up, and demote all following ones. (This assumes you're using heading formats semantically and not just for formatting. :P )
-
-### Image captions
-
-What Paper uses as the "caption" is actually what's specified as the "alt text", meaning what a screen-reader would vocalize. It ends up inside the "image" declaration tags.
-
-```md
-![alt text goes here](resource path goes here)
- ```
-### Code-block cleanup
-
-By default, Paper uses an old style of markdown that allows you to start a code block by indenting the block. This is rendered okay on our end, but can screw up your code's indentation.
-
-Instead, de-indent your code (shift-tab), and add a code-fence of three backticks at the top and bottom.
-
-If you know what language it's in, you can also add a "cue" to the first codeblock, which improves how the syntax highlighter renders it (assuming it knows how to format that specific language).
 
 
 ## Developer information

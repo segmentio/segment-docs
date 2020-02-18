@@ -95,7 +95,7 @@ echo "Gem version " $(gem --version) "installed"
 
 which -s bundler
 if [[ $? != 0 ]] ; then
-  gem install bundler:2.1.2 --user-install
+  gem install -n /usr/local/bin bundler:2.1.2
   echo " ✔ Bundler installed"
 else
     echo " ✔ Bundler already installed"
