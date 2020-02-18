@@ -8,7 +8,7 @@ beta: true
 
 This destination is maintained by Candu Labs. For any issues with the destination, please [reach out to their team](mailto:support@candu.ai).
 
-_**NOTE:** The Candu Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 18th, 2020. If you are interested in joining their beta program or have any feedback to help improve the YOURINTEGRATION Destination and its documentation, please [let  their team know](mailto:support@candu.ai)!_
+_**NOTE:** The Candu Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 18th, 2020. If you are interested in joining their beta program or have any feedback to help improve the Candu Destination and its documentation, please [let  their team know](mailto:support@candu.ai)!_
 
 ## Getting Started
 
