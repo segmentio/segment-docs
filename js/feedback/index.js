@@ -13,9 +13,12 @@ export default function () {
   const templates = document.querySelectorAll(TEMPLATE_SELECTOR)
   const helpfulTemplate = [...templates].filter(template => template.dataset.feedbackTemplate === 'helpful')
   const unhelpfulTemplate = [...templates].filter(template => template.dataset.feedbackTemplate === 'unhelpful')
+  const alternateTemplate = [...templates].filter(template => template.dataset.feedbackTemplate === 'alternate')
   const helpfulButtons = [...buttons].filter(button => button.dataset.feedbackButton === 'helpful')
   const unhelpfulButtons = [...buttons].filter(button => button.dataset.feedbackButton === 'unhelpful')
   const contents = document.querySelectorAll(CONTENT_SELECTOR)
+
+  let sent = false
 
   tippy.setDefaultProps({
     interactive: true,
@@ -33,14 +36,23 @@ export default function () {
           // TODO: track feedback
 
           tooltip.hide()
+          sent = true
 
-          if (contents.length) {
-            for (let i = 0; i < contents.length; i++) {
-              contents[i].hidden = false
-            }
+          for (let i = 0; i < contents.length; i++) {
+            contents[i].hidden = false
+            contents[i].children[0].hidden = false
+            contents[i].children[1].hidden = true
           }
         }
       })
+    },
+    onHidden: (tooltip) => {
+      if (!sent) {
+        for (let i = 0; i < contents.length; i += 1) {
+          contents[i].hidden = false
+          contents[i].children[0].hidden = true
+        }
+      }
     }
   })
 
@@ -74,13 +86,18 @@ export default function () {
 
       const section = buttons[i].hasAttribute('data-section') ? 'right-nav' : 'footer'
       const helpful = buttons[i].dataset.feedbackButton === 'helpful'
+      const alternate = buttons[i].dataset.feedbackButton === 'alternate'
 
-      if (helpful) {
+      if (alternate) {
+        tooltips[i].setContent(alternateTemplate[0].innerHTML)
+      }
+
+      if (helpful & !alternate) {
         addActiveClasses(helpfulButtons)
         trackFeedback(true, section)
 
         tooltips[i].setContent(helpfulTemplate[0].innerHTML)
-      } else {
+      } else if (!helpful & !alternate) {
         addActiveClasses(unhelpfulButtons)
         trackFeedback(false, section)
 
@@ -88,7 +105,6 @@ export default function () {
       }
 
       tooltips[i].show()
-
       clickHandler()
     })
   }

@@ -23,7 +23,11 @@
     </div>
   </div>
 
-  <p class="widget__content" data-feedback-content hidden>Thanks for your feedback!</p>
+  <div class="widget__content" data-feedback-content hidden>
+    <p>Thanks for your feedback!</p>
+
+    <p>Can we improve<br> this doc? <br><a href="#" data-feedback-button="alternate">Send us feedback!</a></p>
+  </div>
 
   <div style="display: none;" data-feedback-template="helpful">
     <div class="feedback-template">
@@ -50,6 +54,25 @@
         class="feedback-template__textarea"
         name="name"
         placeholder="Sorry to hear that. What can we do better?"
+        data-feedback-text
+      ></textarea>
+
+      <button
+        class="button button--small button-fill button-fill--primary"
+        data-section="right-bar"
+        data-send-button
+      >
+        Send
+      </button>
+    </div>
+  </div>
+
+  <div style="display: none;" data-feedback-template="alternate">
+    <div class="feedback-template">
+      <textarea
+        class="feedback-template__textarea"
+        name="name"
+        placeholder="Do you have any suggestions?"
         data-feedback-text
       ></textarea>
 
