@@ -1,8 +1,7 @@
 ---
 title: ActiveCampaign Source
-source-type: event
 ---
-Active Campagin is an email marketing & marketing automation solution for small businesses. [Visit Website](http://www.activecampaign.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
+Active Campaign is an email marketing & marketing automation solution for small businesses. [Visit Website](http://www.activecampaign.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
 Take your company's email analysis to the next level by **adding ActiveCampagin as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
