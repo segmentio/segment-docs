@@ -7,7 +7,6 @@ rewrite: true
 
 Take your company's email analysis to the next level by **adding Intercom as a Source to Segment.** We'll automatically collect objects like `Users` and `Conversations` and load them into your data warehouse. 
 
-This is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
 
 ## Getting Started
 
