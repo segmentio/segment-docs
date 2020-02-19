@@ -1,6 +1,5 @@
 ---
 title: Beamer Source
-source-type: event
 beta: true
 ---
 

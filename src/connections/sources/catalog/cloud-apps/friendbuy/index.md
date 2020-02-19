@@ -1,6 +1,5 @@
 ---
 title: 'Friendbuy Source'
-source-type: event
 ---
 Friendbuy is a referral marketing platform that powers modern day word of mouth. Designed for growth marketers, Friendbuy allows companies to acquire new customers at scale through seamlessly integrated referral and influencer campaigns.
 

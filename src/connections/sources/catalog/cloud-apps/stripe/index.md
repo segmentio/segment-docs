@@ -1,7 +1,6 @@
 ---
 title: Stripe Source
 rewrite: true
-source-type: object
 ---
 [Stripe](https://stripe.com/about) builds economic infrastructure for the internet, that enables businesses of every size to accept payments and manage their businesses online.
 

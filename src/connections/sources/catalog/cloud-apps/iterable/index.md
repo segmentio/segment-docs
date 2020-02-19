@@ -1,6 +1,5 @@
 ---
 title: 'Iterable Source'
-source-type: event
 ---
 Iterable is the growth marketing platform that enables brands to create, execute and optimize campaigns to power world-class customer engagement across email, push, SMS, in-app and more with unparalleled data flexibility. An integrated, cross-channel solution—built for marketers, trusted by engineers, designed with intelligence.
 

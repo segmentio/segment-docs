@@ -1,9 +1,7 @@
 ---
 title: Youbora Source
 beta: true
-private: true
 hidden: true
-source-type: event
 ---
 
 This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.

@@ -1,6 +1,5 @@
 ---
 title: 'Mailjet Source'
-source-type: event
 ---
 Mailjet is a powerful email service provider that enables you to send, deliver and track transactional and marketing emails all from one single account. With Mailjet, Marketers and Developers can send and track emails via API, User Interface or SMTP Relay. <!-- [Visit Website]() -->
 

@@ -1,6 +1,6 @@
 ---
-rewrite: true
 title: Desk.com Source
+rewrite: true
 redirect_from: '/connections/sources/catalog/cloud-apps/desk/'
 ---
 

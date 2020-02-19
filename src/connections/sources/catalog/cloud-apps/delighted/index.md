@@ -1,7 +1,6 @@
 ---
 title: Delighted Source
 rewrite: true
-source-type: event
 ---
 [Delighted](https://delighted.com/) is the fastest and easiest way to gather actionable feedback from your customers. Use the feedback you gather from customers in all of your decision making processes. Send your feedback to your BI and data warehouses automatically.
 

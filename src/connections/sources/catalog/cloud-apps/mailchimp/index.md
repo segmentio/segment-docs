@@ -1,6 +1,5 @@
 ---
 title: Mailchimp Source
-source-type: object
 ---
 
 ## Getting Started

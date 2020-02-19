@@ -1,6 +1,5 @@
 ---
 title: Autopilot Source
-source-type: event
 ---
 [Autopilot](https://autopilothq.com/) makes automating customer journeys as simple as drawing on a whiteboard. Engage at just the right time with personalized emails, in-app messages, SMS, and postcards.
 

@@ -1,6 +1,5 @@
 ---
 title: Moesif API Analytics Source
-source-type: event
 ---
 
 [Moesif API Analytics](https://www.moesif.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps you make data-driven product decisions that grows your API platform. Using API analytics, understand how your customers and partners use your APIs and what drives long term engagement and retention.

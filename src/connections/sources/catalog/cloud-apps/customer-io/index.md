@@ -1,6 +1,5 @@
 ---
 title: Customer.io Source
-source-type: event
 ---
 Customer.io is an automated email tool. It lets you set up rules to automatically send emails to your users after they perform actions, making drip email campaigns really easy. [Visit Website](https://customer.io/)
 

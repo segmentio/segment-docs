@@ -1,6 +1,5 @@
 ---
 title: Looker Source
-source-type: event
 ---
 Looker is a business intelligence software platform that helps you explore, analyze and share real-time business insights easily. Create custom cohorts of customers in Looker's powerful and flexible exploration tool and pass your analysis into your marketing tools for activation and engagement using the Looker Source in Segment.
 
