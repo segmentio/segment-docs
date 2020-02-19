@@ -1,5 +1,5 @@
 ---
-title: Algolia
+title: Algolia Insights Destination
 rewrite: true
 beta: true
 ---

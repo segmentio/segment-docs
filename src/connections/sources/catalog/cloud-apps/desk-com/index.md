@@ -1,7 +1,6 @@
 ---
 rewrite: true
 title: Desk.com Source
-source-type: object
 redirect_from: '/connections/sources/catalog/cloud-apps/desk/'
 ---
 

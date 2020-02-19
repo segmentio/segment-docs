@@ -3,6 +3,7 @@ title: Marketo Source
 rewrite: true
 source-type: object
 ---
+<!-- Marketo is listed as an object source, but doesn't appear in our configapi source catalog -->
 
 [Marketo](https://www.marketo.com/) is a leader in marketing automation. Using our Marketo source, we will load your campaigns, emails, leads and other collections into your data warehouse.
 
