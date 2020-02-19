@@ -59,10 +59,8 @@ layout: default
                 {{ beta-note | markdownify }}
               {% endif %}
               {% if page.integration_type == 'source' %}
-                {% if page.source-type %}
-                  {% capture cloud-source-note %}{% include content/cloud-app-{{ page.source-type }}.md %}{% endcapture %}
-                  {{ cloud-source-note | markdownify }}
-                {% endif %}
+                {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
+                {{ cloud-app-note | markdownify }}
               {% endif %}
               {{ content }}
               {% if page.integration_type == 'destination' %}
