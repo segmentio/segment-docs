@@ -143,9 +143,10 @@ Select the "Trust Relationships" tab, then click the "Edit trust relationship" b
 Copy and paste the following into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or whatever custom external id you set in your AWS Lambda destination settings.
 `arn:aws:iam::595280932656:root` refers to Segment's AWS Account, and is what allows our Destination to access the role to invoke your Lambda.
 
-  Note: Source ID *can be found by navigating to Settings > API Keys from your Segment source homepage.*
+> note ""
+> **Note**: Source ID can be found by navigating to Settings > API Keys from your Segment source homepage.
 
-```
+```js
 {
   "Version": "2012-10-17",
   "Statement": [

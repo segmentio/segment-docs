@@ -85,7 +85,7 @@ layout: default
     <div class="docs__sidebar stage__sidebar">
       {% include_cached navbar/nav.html %}
 
-      <div class="sidebar sidebar--sticky">
+      <div class="sidebar sidebar--sticky sidebar--scroll">
         {%- unless page.hide_toc -%}
           {% if page.integration_type == 'destination' %}
             {% assign toc_foot = integration-foot | markdownify %}

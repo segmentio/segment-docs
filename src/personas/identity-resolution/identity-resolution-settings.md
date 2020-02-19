@@ -2,7 +2,7 @@
 title: Identity Resolution Settings
 ---
 # Setting Up Identity Graph Rules
-Before connecting a source to a Personas space, we recommend first reviewing our default Identity settings and configuring custom rules as needed. Updates to configurations will only be applied to all new data flowing through the space after the changes have been saved. Thus, if this is your first time setting up your Identity Graph, we recommend getting started with a *Dev* space [here](/docs/src/personas/identity-resolution/personas-space-set-up.md).
+Before connecting a source to a Personas space, we recommend first reviewing our default Identity settings and configuring custom rules as needed. Updates to configurations will only be applied to all new data flowing through the space after the changes have been saved. Thus, if this is your first time setting up your Identity Graph, we recommend getting started with a *Dev* space [here](/docs/personas/identity-resolution/personas-space-set-up/).
 
 > note ""
 > **NOTE:** The Identity Resolution table can only be edited by workspace owners and users with the Identity Admin role.
