@@ -9,7 +9,8 @@ In your favorite BI or analytics tool, you'll be able to analyze your email camp
 
 
 ## Getting Started
-<span> </span>
+
+
 If you have previously enabled sending email events via the Drip destination during our beta (using a project write key), you do not need to create new Drip source. Your email data will continue to flow as normal.
 
 1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
@@ -86,7 +87,8 @@ Collections are the groupings of data we pull from your Source. In your warehous
 select *
 from drip.email_delivered
 ```
-<span> </span>
+
+
 
 <table>
 </table> -->

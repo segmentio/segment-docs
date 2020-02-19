@@ -92,7 +92,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
 select *
 from activecampaign.email_delivered
 ```
-<span> </span>
+
 
 <table>
 </table> -->
