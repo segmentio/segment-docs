@@ -3,8 +3,6 @@ title: Pendo Source
 ---
 [Pendo](https://pendo.io) is a product cloud that helps product teams deliver software users love. With Pendo, product teams can understand product usage, collect feedback, measure NPS, onboard users, and announce new features in app—all without requiring engineering resources.
 
-This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into your other Segment Destinations.
-
 This source is maintained by Pendo. For any issues with the source, please [reach out to their team](mailto:integrations@pendo.io).
 
 *NOTE: The Pendo Source will continue to be adding new events sources as it is still in active development. This doc was last updated on September 13, 2019. If you have any feedback to help improve the Pendo Source and its documentation, please [let their team know](mailto:integrations@pendo.io)!*

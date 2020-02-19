@@ -8,8 +8,6 @@ Take your company's marketing and customer engagement to the next level by addin
 
 In your favorite BI or analytics tool, you'll be able to analyze your mobile, email, and web marketing campaign data in SQL or using drag-and-drop reports. You'll be able to join your Braze data with the event data you're already sending through Segment to analyze the impacts of your marketing and engagement programs.
 
-This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into other enabled Segment Destinations.
-
 This source is maintained by Braze. For any issues with the source, you may [contact their team](https://www.braze.com/docs/support_contact/).
 
 This document was last updated on October 03, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!

@@ -8,7 +8,6 @@ redirect_from: '/connections/sources/catalog/cloud-apps/desk/'
 
 Desk.com is specifically implemented to targets small businesses with its features and functions. This tool can help you combining your support data with website activity and product usage data, as well as analyzing it using your favorite business intelligence and SQL querying tools.
 
-This is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
 
 ## Getting Started
 

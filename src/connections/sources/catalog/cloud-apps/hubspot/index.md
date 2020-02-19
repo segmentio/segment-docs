@@ -5,9 +5,7 @@ rewrite: true
 
 [HubSpot](http://www.hubspot.com) is an all-in-one marketing tool that helps attract new leads and convert them into paying customers, with features like landing page creation and email automation.
 
-Hubspot is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
-
-Are you trying to setup HubSpot as a destination to receive data from Segment? Go here [HubSpot Destination](https://segment.com/docs/connections/destinations/catalog/hubspot/).
+Are you trying to set up HubSpot as a destination to receive data from Segment? Go here [HubSpot Destination](https://segment.com/docs/connections/destinations/catalog/hubspot/).
 
 This document was last updated on July 10, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 

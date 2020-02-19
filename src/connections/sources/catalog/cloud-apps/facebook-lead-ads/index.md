@@ -7,8 +7,6 @@ Facebook Lead Ads help you capture contact information from people who have expr
 
 Segment lets you make the most of your leads by automatically sending them to your business tools like CRM and email. Importantly, these destinations allow you to reach out to customers in real-time using your communication platform of choice, whether you've promised them a demo, a newsletter, a piece of content, or a call from a salesperson. [Learn more about how you can use Facebook Lead Ads with Segment.](/sources/facebook-lead-ads)
 
-This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
-
 This source is maintained by Facebook. For any issues with the source, you may [contact their team](mailto:supportemail@email.com).
 
 _**NOTE:** Facebook Lead Ads is currently in beta and this doc was last updated on January 07, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Facebook Lead Ads Destination and its documentation, and please [let us know](https://segment.com/help/contact)!_
