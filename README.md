@@ -154,10 +154,10 @@ It'll look something like this:
 Each piece of frontmatter does something special!
 
 #### Content-related frontmatter
-- `beta`: default false. When true, show an "in beta" warning in the page layout (see the warning in `_includes/content/beta.md`)
+- `beta`: default false. When true, show an "in beta" warning in the page layout (see the warning in `_includes/content/beta-note.md`)
 - `rewrite`: defaults to false. This is a legacy frontmatter flag that comes from the old `site-docs` repo, and which labels any destination that was rewritten in ~2018 to a standardized template.
 - `integration_type`: This is set in the `_config.yml` on three paths to add a noun (Source, Destination, or Warehouse) to the end of the title, and the end of the title tag in the html layout. It also controls the layout and icon for some of these.
-- `source-type`: This is set only on the sources path, and runs some logic in the `integration.html` template to explain which cloud-apps are object vs event sources.
+- `source-type`: These are only used to supplement when a Cloud App in the sources path doesn't appear in the Config API list, and needs its type explicitly set. It runs some logic in the `cloud-app-note.md` to explain which cloud-apps are object vs event sources.
 
 #### Utility frontmatter
 - `published`: defaults to true. Set this to "false" to prevent Jekyll from rendering an HTML page for this file. Good for when you're working on something in the repo but aren't ready to release it yet, and don't want to use a Draft PR.
@@ -169,16 +169,11 @@ Each piece of frontmatter does something special!
 - `seo-changefreq`: default: `weekly `. Use the values [in the sitemap spec](https://www.sitemaps.org/protocol.html#xmlTagDefinitions). - sets the `changefreq` tag in the sitemap.xml generator, which tells search crawlers how often to check back.
 - `seo-priority`: values from `1.0` to `0.1`, default: `0.5 `. Sets the `Priority` tag in the sitemap
 
-
-
-
-
 ### Sidenav Icons
 We have two neat icons that you can add to a bottom-level menu item to mark it with an icon. (If it's a folder/directory, the "expand" carat blocks this icon from appearing.)
 
 - `menu_icon: read-more` to show a book icon - use this to indicate that there's a lot more in this page than meets the eye
 - `menu_icon: new-tab` to show an "external link" icon. Use this to indicate that the link in the sidenav is taking out outside the segment.com domain (for example to our API references hosted on Postman)
-
 
 
 ### Syntax highlighting
