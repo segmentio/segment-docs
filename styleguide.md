@@ -8,7 +8,7 @@ This doc is for keeping track of [style decisions](#style-decisions), [structure
 
 Capitalize Segment (obviously ;) ) and Segment product names. For example, "privacy" by itself isn't capitalized, but "Segment Privacy Portal" is. Page titles Other UI text should be in lower case.
 
-Capitalize Sources, Destinations, and Warehouses when referring them as product names (for example: “You can use Sources to…”) but decap them when referring to them generically (“You can connect your warehouse to…”)
+Capitalize the words "Sources", "Destinations", and "Warehouses" when referring them as product names (for example: “You can use Sources to…”) but decap them when referring to them generically (“You can connect your warehouse to…”)
 
 
 ### Connection modes
@@ -20,6 +20,13 @@ There are legitimate uses of both the terms client-side and server-side when ref
 
 Device-mode and Cloud-mode are always hyphenated. They should be capitalized when referring to the mode in abstract (as a product name), but can be decapped when used in running text about a specific destination.
 
+### Use this not that
+
+- Don't use characters like ampersand (`&`) -> Use the word "and".
+- Don't use "ie", write out "for example".
+- Don't use the word "via". Instead use the words "using", "with", or sometimes "through" as appropriate.
+- Setup is one word describing a noun ("your recording studio setup") which we should more properly call "configuration."  "Set up" is an action, and requires a space.
+- "Login" is a noun, and we should use "credentials", "account", or similar. "Log in" is an action and requires a space. 
 
 ## Doc structure
 
@@ -35,8 +42,6 @@ There are no naming conventions at this time. Anything you see with `asset` was 
 ### Signposting
 
 The Segment-App section should contain roughly a page for each page within the web app. If there are in-depth docs about that feature elsewhere, the page should describe what it does at a high-level, and link out to those docs. This gives us a comprehensive UI reference for novice readers that serves as a signpost to the details they may or may not need, and prevents us pulling all of the docs into the Segment-app section.
-
-
 
 
 ## Formatting
@@ -57,7 +62,9 @@ When you create a code fence, add a syntax highlighter cue after the first set o
 
 Tables can be a mix of markdown and HTML, but only they can't be both markdown and HTML on the same line.
 
+Markdown tables are built on a single line per table row, and so have to be pretty much 100% markdown. Markdown tables aren't fun, but you can install the Atom `markdown-table-editor` package which makes them easier to work with.
 
+Tables in HTML can include html formatting, OR markdown formatting, but not both in the same cell. We built a ruby hook that adds a `markdown=1` cue to all `<td>` elements at build time, which allows Kramdown to interpret and render their content normally. This doesn't apply to `<th>` tags, and it also means that you can have (for example) `<p>` paragraph markers inside a table cell.
 
 ## Troubleshooting Paper Exports
 
@@ -86,11 +93,14 @@ What Paper uses as the "caption" is actually what's specified as the "alt text",
 
 ```md
 ![alt text goes here](resource path goes here)
- ```
+```
+
+If you want to preserve this as alt-text, awesome. However, if you want to use this as a "caption", you'll have to copy and paste that text below the image. You can put it in italic format if you'd like.
+
 ### Code-block cleanup
 
 By default, Paper uses an old style of markdown that allows you to start a code block by indenting the block. This is rendered okay on our end, but can screw up your code's indentation.
 
 Instead, de-indent your code (shift-tab), and add a code-fence of three backticks at the top and bottom.
 
-If you know what language it's in, you can also add a "cue" to the first codeblock, which improves how the syntax highlighter renders it (assuming it knows how to format that specific language).
+If you know what language it's in, you can also add a "cue" to the first codeblock, which improves how the syntax highlighter renders it (assuming it knows how to format that specific language). See the [section on code fences](#code-fences-and-syntax-highligher-cues) above for more details.

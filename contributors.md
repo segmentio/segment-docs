@@ -19,7 +19,7 @@ We've written a bash script to set up the environment for you on a Mac computer.
 
 
 
-## Contributor workflow
+## Contributor workflow 
 
 TODO;
 
