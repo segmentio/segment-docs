@@ -1,5 +1,5 @@
 ---
-title: Algolia
+title: Algolia Insights Destination
 rewrite: true
 beta: true
 ---
@@ -17,7 +17,7 @@ _**NOTE:** The Algolia Insights Destination is currently in beta, which means th
 
 ## Getting Started
 
-{{>connection-modes}} 
+{% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Algolia" within the Destinations Catalog and confirm the Source you'd like to connect to.
@@ -31,7 +31,7 @@ You can read more about how to send Algolia-related data to Segment from [the do
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. 
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
 
 Algolia supports the following five events from Segment's [Ecommerce Spec](https://segment.com/docs/connections/spec/ecommerce/v2/).
 
@@ -76,7 +76,7 @@ analytics.track('Product List Filtered', {
     index: "my-index-name",
     filters: [
         { type : "free_delivery", value: "true" }
-    ]    
+    ]
 })
 
 analytics.track('Product Viewed', {

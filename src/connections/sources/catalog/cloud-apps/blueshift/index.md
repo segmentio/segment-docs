@@ -1,6 +1,5 @@
 ---
 title: Blueshift Source
-source-type: event
 ---
 
 Blueshift is an AI powered customer engagement platform for growth marketers. With Blueshift, you can setup programmatic cross-channel marketing campaigns across Email, Mobile, Website and other channels.

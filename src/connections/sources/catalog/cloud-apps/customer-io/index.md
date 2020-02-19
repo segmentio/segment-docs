@@ -1,6 +1,5 @@
 ---
 title: Customer.io Source
-source-type: event
 ---
 Customer.io is an automated email tool. It lets you set up rules to automatically send emails to your users after they perform actions, making drip email campaigns really easy. [Visit Website](https://customer.io/)
 
@@ -9,7 +8,7 @@ Take your company's email analysis to the next level by **adding Customer.io as 
 In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Customer.io data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Customer.io with Segment.](/sources/customerio)
 
 ## Getting Started
-<span> </span>
+
 If you have previously enabled sending email events via the Customer.io destination during our beta (using a project write key), you do not need to create new Customer.io source. Your email data will continue to flow as normal.
 
 
@@ -92,7 +91,8 @@ select *
 from customerio.email_delivered
 ```
 
-<span> </span>
+
+
 
 <table>
 </table> -->

@@ -1,12 +1,9 @@
 ---
 title: Wootric
-source-type: event
 beta: true
 ---
 
 [Wootric](https://wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is modern customer feedback management software. Easily incorporate Voice of Customer data in your decision-making processes and marketing campaigns, and trigger customer follow-up when you send survey responses to your CRM, marketing platform or data warehouses automatically.
-
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by Wootric. For any issues with the source, please [reach out to the Wootric support team](mailto:support@wootric.com).
 
@@ -18,7 +15,7 @@ _**NOTE:** The Wootric Source is currently in beta, which means that they are st
 1. From your Segment UI’s Sources page click on “Add Source”.
 2. Search for "Wootric" within the Sources Catalog and confirm by clicking "Connect".
 3. Give the Source a nickname and follow the setup flow to "Add Source". The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
-4. Copy the Write key from the Segment UI and log in to your Wootric account - navigate to Settings > Integrations > Send Wootric Data > Send survey responses back to Segment and paste the key to connect. 
+4. Copy the Write key from the Segment UI and log in to your Wootric account - navigate to Settings > Integrations > Send Wootric Data > Send survey responses back to Segment and paste the key to connect.
 
 ## Events
 
