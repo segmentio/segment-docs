@@ -1,6 +1,5 @@
 ---
 title: Drip Source
-source-type: event
 ---
 Drip is an automated email tool that lets you set up a drip campaign on your site in a few minutes. After a user signs up, it'll send them the next email in your series every few days. [Visit Website](http://mbsy.co/lqb7?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
@@ -10,7 +9,8 @@ In your favorite BI or analytics tool, you'll be able to analyze your email camp
 
 
 ## Getting Started
-<span> </span>
+
+
 If you have previously enabled sending email events via the Drip destination during our beta (using a project write key), you do not need to create new Drip source. Your email data will continue to flow as normal.
 
 1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
@@ -87,7 +87,8 @@ Collections are the groupings of data we pull from your Source. In your warehous
 select *
 from drip.email_delivered
 ```
-<span> </span>
+
+
 
 <table>
 </table> -->

@@ -1,12 +1,9 @@
 ---
 title: Facebook Ads Source
 rewrite: true
-source-type: object
 ---
 
 Facebook is one of the most efficient ways to advertise online. Take your company's analysis to the next level by adding [Facebook Ads](https://www.facebook.com/business/products/ads) as a Source to Segment.
-
-This is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
 
 This document was last updated on July 6, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 

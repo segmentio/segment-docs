@@ -3,6 +3,7 @@ title: Salesforce Marketing Cloud Source
 beta: true
 source-type: object
 ---
+<!-- SFMC is listed as an object source, but doesn't appear in our configapi source catalog, so leave the "source-type" set here-->
 
 [Salesforce Marketing Cloud](https://www.salesforce.com/ca/products/marketing-cloud/overview/), formerly known as
 ExactTarget, is a marketing automation suite with the ability to build complete customer journeys as well as creating,
