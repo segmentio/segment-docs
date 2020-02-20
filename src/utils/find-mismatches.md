@@ -1,10 +1,11 @@
 ---
 title: Mismatch finder
+hidden: true
 ---
 
 <table>
 <tr>
-  <th> Destination</th>
+  <th> Destination (display name)</th>
   <th> Mismatch: "name" vs slug </th>
 </tr>
 {% for destination in site.data.catalog.destinations.items %}

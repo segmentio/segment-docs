@@ -1,5 +1,6 @@
 ---
 title: Beta finder
+hidden: true
 ---
 
 <table>
