@@ -34,7 +34,7 @@ CODEOWNERS  @sanscontext @XavierAgostini @danielstjules @stephment
 /src/protocols  @francisco @rarchana2001asu
 
 # Partner Program owners
-/src/connections/destinations  @misteryeo @n2parko @benhorowitz
+/src/partners  @misteryeo @n2parko @benhorowitz
 
 # Personas owners TODO
 
