@@ -7,8 +7,6 @@ rewrite: true
 
 This destination is maintained by Canny. For any issues with the destination, please [reach out to their team](segment-help@canny.io).
 
-NOTE: The Canny Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 7, 2020. If you are interested in joining their beta program or have any feedback to help improve the Canny Destination and its documentation, please [let their team know](segment-help@canny.io)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

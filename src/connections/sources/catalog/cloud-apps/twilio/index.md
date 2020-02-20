@@ -1,11 +1,8 @@
 ---
 title: Twilio Source
 rewrite: true
-source-type: object
 ---
 [Twilio](http://twilio.com) is a developer platform for communications. Software teams use Twilio APIs to add capabilities like voice, video, and messaging to their applications. This enables businesses to provide the right communications experience for their customers. Behind Twilio APIs is a Super Network, a software layer that connects and optimizes communications networks around the world. This is what allows users to reliably call and message anyone anywhere.
-
-Twilio is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
 
 This document was last updated on September 7, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 

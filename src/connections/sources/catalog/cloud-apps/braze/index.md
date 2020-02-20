@@ -1,6 +1,5 @@
 ---
 title: Braze Source
-source-type: event
 ---
 
 [Braze](https://www.braze.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a marketing automation and customer engagement platform. Growth, Engagement, and Marketing teams use Braze to build great long term relationships with their customers across key digital channels.
@@ -8,8 +7,6 @@ source-type: event
 Take your company's marketing and customer engagement to the next level by adding Braze as a Segment Source, via Braze's Currents product. We'll automatically collect marketing and analytics events, forward them to your destinations, and load them into your data warehouse.
 
 In your favorite BI or analytics tool, you'll be able to analyze your mobile, email, and web marketing campaign data in SQL or using drag-and-drop reports. You'll be able to join your Braze data with the event data you're already sending through Segment to analyze the impacts of your marketing and engagement programs.
-
-This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but can also federate the exported data into other enabled Segment Destinations.
 
 This source is maintained by Braze. For any issues with the source, you may [contact their team](https://www.braze.com/docs/support_contact/).
 
