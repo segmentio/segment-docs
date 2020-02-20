@@ -8,7 +8,7 @@ beta: true
 
 This destination is maintained by ProfitWell. For any issues with the destination, please [reach out to their team](mailto:product@profitwell.com).
 
-_**NOTE:** The ProfitWell Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 14, 2020. If you are interested in joining their beta program or have any feedback to help improve the ProfitWell Destination and its documentation, please [let  their team know](mailto:product@profitwell.com)!_
+**NOTE:** The ProfitWell Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 19, 2020. If you are interested in joining their beta program or have any feedback to help improve the ProfitWell Destination and its documentation, please [let  their team know](mailto:product@profitwell.com)!_
 
 ## Getting Started
 
@@ -34,4 +34,4 @@ Identify calls will start the ProfitWell service using the customer's email to t
 
 [Customers](https://www2.profitwell.com/app/customers) need to be created first within ProfitWell in order for the indentify calls to trigger their engagements.
 
-*Note that the data doesn't sync into the ProfitWell UI in real time. It can take up to 24 hours to reflect.
+**NOTE:** The data doesn't sync into the ProfitWell UI in real time. It can take up to 24 hours to reflect.
