@@ -34,4 +34,5 @@ Identify calls will start the ProfitWell service using the customer's email to t
 
 [Customers](https://www2.profitwell.com/app/customers) need to be created first within ProfitWell in order for the indentify calls to trigger their engagements.
 
-**NOTE:** The data doesn't sync into the ProfitWell UI in real time. It can take up to 24 hours to reflect.
+> note ""
+> **Note**: The data doesn't sync into the ProfitWell UI in real time. It can take up to 24 hours to reflect.
