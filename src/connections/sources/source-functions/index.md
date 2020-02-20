@@ -3,7 +3,7 @@ title: Source Functions
 ---
 
 > note ""
-> **Note:** Functions are currently in developer preview. If you are interested in joining the developer preview, go to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
+> **Note:** Functions are currently in developer preview. If you are interested in joining the developer preview, go to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
 
 Source Functions allow you to gather data from any third-party applications without worrying about setting up or maintaining any infrastructure. Source Functions are small pieces of JavaScript code that you create, edit, and deploy in Segment to receive webhooks and generate Segment events or objects using the [Segment Spec](https://segment.com/docs/connections/spec/).
 
@@ -261,6 +261,11 @@ If you are a **Workspace Owner**, you can manage your Source Function from the [
 
 ![Editing or deleting your Source Function](images/function-sidesheet.gif)
 
+### Connecting
+
+As with [editing and deleting](/docs/connections/sources/source-functions/#editing--deleting), you must be a **Workspace Owner** in order to connect an instance of your function within your workspace. From the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog), click on "Connect Source" and follow the flow to name and set it up in you workspace.
+
+Next, you will see a webhook URL either under the "Overview" tab or under the "Settings" tab within "Endpoint". Copy and paste this URL into your upstream tool or service in order to receive data in this source.
 
 ## Legacy Functionality
 

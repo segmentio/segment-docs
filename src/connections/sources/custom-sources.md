@@ -2,7 +2,7 @@
 title: Custom Sources
 ---
 
-Functions are currently in developer preview. If you are interested in joining the developer preview, navigate to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
+Functions are currently in developer preview. If you are interested in joining the developer preview, navigate to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
 
 Custom Sources allow you to gather data from thousands of Cloud Applications without having to worry about setting up or maintaining any infrastructure. Custom Sources are small pieces of code that you upload to a Segment Source to translate webhook or POST events into events or objects that match the [Segment Spec](https://segment.com/docs/connections/spec/).
 
@@ -16,11 +16,7 @@ Here is an example of what a Source Function could be used to do with a webhook 
 
 ![Embed Analytics.framework](images/drift_example.png)
 
-## Quick Links
 
-* [Getting Started](/docs/connections/sources/custom/#getting-started)
-* [Debugging and Troubleshooting](/docs/connections/sources/custom/#debugging-and-troubleshooting)
-* [FAQ](/docs/connections/sources/custom/#faq)
 
 ## Getting Started
 
@@ -52,7 +48,7 @@ A new tab containing the development environment opens. The editor first appears
 
 ![Main Editor](images/templates.png)
 
-**Accessing the payload** <br />
+**Accessing the payload**
 You can access the payload from the `request` variable like this:
 
 ```js
@@ -79,15 +75,16 @@ You can view the full list of templates available [here](https://github.com/segm
 
 You can test out your function using the webhook catcher. The webhook catcher allows you to "catch" the sample set of data from your upstream tool using the webhook URL. You can then use this to test your function to ensure it's performing how you would expect.
 
-**Press Capture Events**<br />
+**Press Capture Events**
 
 ![Capture Events](images/capture_event.png)
 
 Once you press the "Capture Events" button, we will listen to your webhook URL for 5 minutes. During this time, you should trigger an event from the upstream source. If there are already events going through your webhook URL, then it will grab the first event it can. These events will persist for you until you overwrite them.
 
-_Note_: You can have up to 10 captured events to test with. If you capture more than 10, then it will start to override your events starting with the oldest.
+> note ""
+> You can have up to 10 captured events to test with. If you capture more than 10, then it will start to override your events starting with the oldest.
 
-**Save and Test**<br/>
+**Save and Test**
 Press the "Save and Test" button above the payload editor and you will execute your Function with the given payload.
 
 ![Save and Test](images/successful_event.png)
@@ -189,7 +186,7 @@ Events are used to trigger real-time workflows in downstream streaming destinati
   </tr>
 </table>
 
-For more details on the events that are supported, see the [HTTP](https://segment.com/docs/connections/sources/catalog/libraries/server/http/) and [Object](https://segment.com/docs/connections/sources/catalog/libraries/server/object-api/) API documentation.
+For more details on the events that are supported, see the [HTTP](/docs/connections/sources/catalog/libraries/server/http/) and [Object](/docs/connections/sources/catalog/libraries/server/object-api/) API documentation.
 
 **Objects**
 
@@ -296,14 +293,16 @@ Settings can be very useful to help build a function that can be re-used without
 
 🚧 Coming Soon: Network Access in Source Functions will allow you to send network calls to Segment and external APIs within the function.
 
-**⚠️ Note:** Do not use your function to log sensitive data such as personally-identifying information (PII), authentication tokens, HTTP headers, and similar data. Segment stores these logs, and they may be available to workspace members in the Segment dashboard. Be especially careful about sending sensitive data when making external network requests to services that you do not control.
+> warning ""
+> Do not use your function to log sensitive data such as personally-identifying information (PII), authentication tokens, HTTP headers, and similar data. Segment stores these logs, and they may be available to workspace members in the Segment dashboard. Be especially careful about sending sensitive data when making external network requests to services that you do not control.
 
 ## Accessing Logs
 
 The command line client allows you to access runtime logs of your Functions. These can be useful in seeing errors and help you debug your functions on an ongoing basis.
 
-**Download the CLI Client**<br />
-```
+**Download the CLI Client**
+
+```bash
 curl https://raw.githubusercontent.com/segmentio/functions-cli-bin/master/install.sh | sh
 ```
 
@@ -311,7 +310,7 @@ curl https://raw.githubusercontent.com/segmentio/functions-cli-bin/master/instal
 
 First create an access token by following these directions: https://segment.com/docs/config-api/authentication/#create-an-access-token. Then, create a file in your home directory:  `~/.source-fn-config.json`
 
-```
+```json
 {
    "token": "<token created in the workspace>",
    "user": "<Email of token user>",
@@ -322,7 +321,7 @@ First create an access token by following these directions: https://segment.com/
 **Accessing Logs**
 When you have real events flowing through the function and you're still not seeing the events in the debugger appear, you can see logs from your source function locally to debug and understand what's going on. Use the following command to get the last 100 lines of output from the function:
 
-```
+```bash
 source-functions-cli logs --source <source slug>
 ```
 
@@ -362,7 +361,7 @@ You can access the body, headers and query parameters of the function through th
 exports.processEvents = async (event) => {
   event.payload.body;
   event.payload.headers;
-  event.payload.queryParameters;
+  event.payload.queryParameters;}
 ```
 
 **Returning messages (Legacy)**
