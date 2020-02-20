@@ -87,7 +87,7 @@
 /docs/integrations/knowtify/
 /docs/integrations/marketo/
 /docs/integrations/tableau/
-/docs/legal/privacy@segment.com
+/https://segment.com/legal/privacy@segment.com
 /docs/personas/trait-and-audience-building/
 /docs/asdfasdfasdf/asdf
 /docs/protcols/ecommerce-tracking-plan/

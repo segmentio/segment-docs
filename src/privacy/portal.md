@@ -219,7 +219,7 @@ The Privacy Portal gives you control over whether specific data is allowed to
 enter Segment ([Standard Controls](#standard-controls)), or be sent to specific
 Destinations at all ([Advanced Controls](#advanced-controls)).
 
-> **Note**: All Privacy Controls are in Public Beta, meaning their use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/)).
+> **Note**: All Privacy Controls are in Public Beta, meaning their use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/)).
 
 
 ### Standard Controls
