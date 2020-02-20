@@ -44,6 +44,20 @@ Real-time loading of the data into Segment Warehouses would cause significant pe
 
 As we improve and update our ETL processes and optimize for SQL query performance downstream, the actual load time will vary, but we'll ensure it's always within 24 hours.
 
+To understand how successfully each Warehouse sync run is updating the data in your warehouse, you can visit the Sync History page which is available for every source connected to each warehouse. This page will help you answer questions such as, is the data for a specific source fresh because the most recent sync was successful? Did a sync completely fail, or only partially fail? Why was a particular sync not successful?
+
+Sync History will provide the following insights: 
+- Sync Status: Performance of each sync is based on notices (errors or warnings) from sync run as well as the number of rows synced to the warehouse. The possible values are:
+    - Success: Sync run complete without any notices and all rows synced, OR no rows synced because no data found.
+    - Partial: Sync run with some notices and some rows synced.
+    - Failure: Sync run with some notices and no rows synced.
+- Start Time: Time which the sync began. Shown in a user’s local timezone. 
+- Duration: Length of sync.
+- Synced Rows: Number of rows successfully synced from the sync run.
+- Notices: Errors or warnings found which are likely impacting the success of the sync run. Clicking on the notice message will show details about the results and any errors or warnings found for each of the collections within the sync run.
+
+This page can be accessed from the Warehouse > Overview > Schema > Sync History.
+
 
 ## What if I want to add custom data to my warehouse?
 
