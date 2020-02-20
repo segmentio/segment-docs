@@ -3,6 +3,10 @@ title: Mismatch finder
 hidden: true
 ---
 
+
+> note ""
+> This page is limited to Destinations only so far. We haven't had a lot of renames for Sources... yet.
+
 <table>
 <tr>
   <th> Destination (display name)</th>

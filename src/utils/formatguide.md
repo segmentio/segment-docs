@@ -1,5 +1,5 @@
 ---
-title: Styleguide
+title: Formatting guide
 description: The styleguide of front-end components
 hidden: true
 layout: page
@@ -15,6 +15,7 @@ contributors:
 related:
   - "/docs/connections/sources/catalog/"
   - "/docs/connections/sources/faq/"
+redirect_from: '/styleguide/'
 ---
 
 ---
