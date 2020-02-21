@@ -20,11 +20,9 @@ When you switch on the Iterable destination in your Segment dashboard, your data
 
 When you call `identify` with one of Segment's sources, we'll call Iterable's [update user endpoint](https://api.iterable.com/api/docs#users_updateUser), to add data for that particular user. You can also call `identify` to update user fields.
 
-Iterable keys users by `email` or a user ID. This user ID will be the Segment `userId` if sent.
+Iterable keys users by `email` or a user ID. This user ID will be the Segment `userId` if sent. To use a Segment `userId` for identify calls, first call identify with both a `userId` and `email`. Iterable won't accept the request and throws an error if you fail to send one of either the `userId` or `email`.
 
-To use a Segment `userId` for identify calls, first call identify with both a `userId` and `email`. Iterable won't accept the request and throws an error if you fail to send one of either the `userId` or `email`.
-
-<!--
+<!-- commented out because this functionality isn't currently working ZD#355518
 ### Merge Nested Objects
 
 
