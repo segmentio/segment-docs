@@ -27,6 +27,7 @@ layout: main
         <div class="markdown">
           {{ content }}
         </div>
+        <p><i style="color: #a5b0ba;font-size: small;">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>
         {% if page.contributors %}
           {% include components/avatar.html contributors=page.contributors %}
         {% endif %}
