@@ -26,7 +26,7 @@ Device-mode and Cloud-mode are always hyphenated. They should be capitalized whe
 - Don't use "ie", write out "for example".
 - Don't use the word "via". Instead use the words "using", "with", or sometimes "through" as appropriate.
 - Setup is one word describing a noun ("your recording studio setup") which we should more properly call "configuration."  "Set up" is an action, and requires a space.
-- "Login" is a noun, and we should use "credentials", "account", or similar. "Log in" is an action and requires a space. 
+- "Login" is a noun, and we should use "credentials", "account", or similar. "Log in" is an action and requires a space.
 
 ## Doc structure
 

@@ -9,7 +9,7 @@ Here's what's here!
 We are now spilitting out the Readme into three parts:
 - [Contributor Guide](contributors.md)
 - [Style Guide](styleguide.md)
-- [Technical Details](devguide.md)
+- [Technical Details](devguide.md) 
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
