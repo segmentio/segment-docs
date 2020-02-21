@@ -44,3 +44,4 @@ plugins:
   - jekyll-redirect-from
   - premonition
   - jekyll-commonmark
+  - jekyll-last-modified-at
