@@ -22,6 +22,7 @@ When you call `identify` with one of Segment's sources, we'll call Iterable's [u
 
 Iterable keys users by `email` or a user ID. This user ID will be the Segment `userId` if sent. Note that if you fail to send either of `userId` or `email`, Iterable won't accept the request and throws an error.
 
+<!--
 ### Merge Nested Objects
 
 
@@ -45,7 +46,8 @@ analytics.identify({
 });
 ```
 
-This `identify` event would merge the `mobile` property for this user with any other settings that were previously a part of that users settings field.
+This `identify` event would merge the `mobile` property for this user with any other settings that were previously a part of that users settings field. 
+-->
 
 
 ## Track
