@@ -2,6 +2,7 @@
 title: Algolia Insights Destination
 rewrite: true
 beta: true
+redirect_from: '/connections/destinations/catalog/algolia-insights/'
 ---
 
 [Algolia Insights](https://www.algolia.com/products/analytics/) lets you push events related to how your product is being used. Sending those events is a required step for using several Algolia features:
