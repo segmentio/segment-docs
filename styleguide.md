@@ -4,12 +4,18 @@ This doc is for keeping track of [style decisions](#style-decisions), [structure
 
 ## Style decisions
 
+## General text style
+
+- UI items are described by their text label in **Bold**. We don't add an explicit reference to what type of affordance it is (button, toggle, etc) unless needed for clarity.  "Click **Send**." rather than "Click the **Send**  button."
+- Use single-backtick `code format` for variables, for commands or values that need to be entered by the user, and the names of methods or calls when referring to them in context of an impementation (for example: "You'll make an identify call to capture this information" vs "In your code, edit the `identify` call...").
+- One-line or less of code can be formatted using single-backtick "code format". For more than one line of code, use a code block.
+- Code blocks must use the triple-backtick format, and must include a syntax highlighter cue (even if that cue is "text" or "none".)
+
 ### When to capitalize
 
 Capitalize Segment (obviously ;) ) and Segment product names. For example, "privacy" by itself isn't capitalized, but "Segment Privacy Portal" is. Page titles Other UI text should be in lower case.
 
 Capitalize the words "Sources", "Destinations", and "Warehouses" when referring them as product names (for example: “You can use Sources to…”) but decap them when referring to them generically (“You can connect your warehouse to…”)
-
 
 ### Connection modes
 Device-mode, Client Side, Cloud-mode, Server side
@@ -44,7 +50,8 @@ There are no naming conventions at this time. Anything you see with `asset` was 
 The Segment-App section should contain roughly a page for each page within the web app. If there are in-depth docs about that feature elsewhere, the page should describe what it does at a high-level, and link out to those docs. This gives us a comprehensive UI reference for novice readers that serves as a signpost to the details they may or may not need, and prevents us pulling all of the docs into the Segment-app section.
 
 
-## Formatting
+## Troubleshooting Formatting
+
 
 ### Mixed markdown and HTML
 
