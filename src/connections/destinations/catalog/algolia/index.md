@@ -13,7 +13,7 @@ redirect_from: '/connections/destinations/catalog/algolia-insights/'
 
 This destination is maintained by [Algolia](https://www.algolia.com/). For any issues with the destination, please [reach out to their team](mailto:hey@algolia.com).
 
-_**NOTE:** The Algolia Insights Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 13, 2020. If you are interested in joining their beta program or have any feedback to help improve the Algolia Insights Destination and its documentation, please [let their team know](mailto:hey@algolia.com)!_
+_**NOTE:** The Algolia Insights Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 20, 2020. If you are interested in joining their beta program or have any feedback to help improve the Algolia Insights Destination and its documentation, please [let their team know](mailto:hey@algolia.com)!_
 
 
 ## Getting Started
@@ -34,7 +34,7 @@ You can read more about how to send Algolia-related data to Segment from [the do
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
 
-Algolia supports the following five events from Segment's [Ecommerce Spec](https://segment.com/docs/connections/spec/ecommerce/v2/).
+Algolia supports the following six events from Segment's [Ecommerce Spec](https://segment.com/docs/connections/spec/ecommerce/v2/).
 
 <table>
   <tr>
@@ -58,6 +58,10 @@ Algolia supports the following five events from Segment's [Ecommerce Spec](https
    <td>Fire this event when a visitor clicks a product.</td>
   </tr>
   <tr>
+   <td><code>Product Added</code></td>
+   <td>Fire this event when a visitor adds a product to their shopping cart.</td>
+  </tr>
+  <tr>
    <td><code>Order Completed</code></td>
    <td>Fire this event whenever an order/transaction was successfully completed by the customer.</td>
   </tr>
@@ -66,7 +70,7 @@ Algolia supports the following five events from Segment's [Ecommerce Spec](https
 ```js
 analytics.track('Product List Viewed', {
     products: [{
-        product_id: "hit objectID",
+        objectID: "hit objectID",
         position: "hit position on index",
         index: "my-index-name",
         queryID: "Algolia queryID" // required only for Click Analytics,
@@ -81,7 +85,7 @@ analytics.track('Product List Filtered', {
 })
 
 analytics.track('Product Viewed', {
-    product_id: "hit objectID",
+    objectID: "hit objectID",
     position: "hit position on index",
     index: "my-index-name",
     queryID: "Algolia queryID" // required only for Click Analytics,
@@ -89,14 +93,20 @@ analytics.track('Product Viewed', {
 
 
 analytics.track('Product Clicked', {
-    product_id: "hit objectID",
+    objectID: "hit objectID",
     position: "hit position on index",
     index: "my-index-name",
     queryID: "Algolia queryID" // required only for Click Analytics,
 })
 
+analytics.track('Product Added, {
+    objectID: "hit objectID",
+    index: "my-index-name",
+    queryID: "Algolia queryID" // required only for Click Analytics,
+})
+
 analytics.track('Order Completed', {
-    product_id: "hit objectID",
+    objectID: "hit objectID",
     index: "my-index-name",
     queryID: "Algolia queryID" // required only for Click Analytics,
 })
