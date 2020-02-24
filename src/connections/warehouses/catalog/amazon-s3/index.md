@@ -1,5 +1,6 @@
 ---
 title: Amazon S3 Destination
+redirect_from: '/connections/destinations/catalog/amazon-s3/'
 ---
 
 ## Getting Started
@@ -199,3 +200,5 @@ $ aws s3 sync s3://{bucket}/segment-logs/{source-id} .
 ```
 
 To put the files in a specific folder replace the `.` at the end ("current directory") with the desired directory like `~/Downloads/logs`.
+
+{% include content/integration-foot.md  %}
