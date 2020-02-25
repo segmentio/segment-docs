@@ -60,7 +60,7 @@ items:
     url: ''
   categories:
     - Warehouses
-- display_name: Azure SQL Data Warehouse
+- display_name: Azure Synapse Analytics Warehouse
   slug: azuresqldw
   name: catalog/warehouses/azuresqldw
   description: ''
@@ -72,3 +72,39 @@ items:
     url: 'https://cdn.filepicker.io/api/file/EUJvt69Q7qMqCvGrVtiu'
   categories:
     - Warehouses
+- display_name: Amazon S3
+  slug: amazon-s3
+  name: catalog/warehouses/amazon-s3
+  description: >-
+    Our Amazon S3 copies our log files of your raw API calls from our S3 bucket
+    to yours, where you can then perform custom analysis on them.
+  url: connections/warehouses/catalog/amazon-s3
+  status: PUBLIC
+  logo:
+    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/amazon-s3-default.svg'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/R1EKddJ1SnGECiHtdUlY'
+
+  settings:
+  - name: bucket
+    display_name: Bucket Name
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: Your S3 bucket name.
+    settings: []
+  - name: useServerSideEncryption
+    display_name: Use Server Side Encryption?
+    type: BOOLEAN
+    deprecated: false
+    required: false
+    description: >-
+      If you enable this setting, the data we copy to your bucket will be
+      encrypted at rest using S3-Managed  encryption keys. For more information,
+      see
+      [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html).
+    settings: []
+  previous_names:
+  - Amazon S3
