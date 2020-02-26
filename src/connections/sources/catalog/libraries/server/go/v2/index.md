@@ -146,8 +146,7 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`Context` _map[string]interface{}, optional_</td>
-    <td>Extra [context]() to attach to the call.
-      <p>**Note:** `context` differs from `traits` because it is not attributes of the user itself.</p></td>
+    <td>Extra [context]() to attach to the call. **Note:** `context` differs from `traits` because it is not attributes of the user itself.</td>
   </tr>
   <tr>
     <td>`AnonymousId` _string, optional_</td>
