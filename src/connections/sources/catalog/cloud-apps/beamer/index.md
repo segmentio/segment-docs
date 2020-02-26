@@ -1,12 +1,9 @@
 ---
 title: Beamer Source
-source-type: event
 beta: true
 ---
 
 [Beamer](https://www.getbeamer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a changelog and notification center that lets you announce new features, product updates, special offers and more.
-
-This is an [Event Cloud Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by Beamer. For any issues with the source, please [reach out to their team](mailto:info@getbeamer.com).
 

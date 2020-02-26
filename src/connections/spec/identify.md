@@ -174,8 +174,7 @@ Reserved traits we've standardized:
   <tr>
     <td>`createdAt`</td>
     <td>Date</td>
-    <td>Date the user's account was first created
-      <p>We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.</p></td>
+    <td>Date the user's account was first created. We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.</td>
   </tr>
   <tr>
     <td>`description`</td>
@@ -210,8 +209,7 @@ Reserved traits we've standardized:
   <tr>
     <td>`name`</td>
     <td>String</td>
-    <td>Full name of a user
-      <p> If you only pass a first and last name we'll automatically fill in the full name for you.</p>
+    <td>Full name of a user. If you only pass a first and last name we'll automatically fill in the full name for you.
     </td>
   </tr>
   <tr>
@@ -222,15 +220,13 @@ Reserved traits we've standardized:
   <tr>
     <td>`title`</td>
     <td>String</td>
-    <td>Title of a user, usually related to their position at a specific company
-      <p>Example: "VP of Engineering"</p>
+    <td>Title of a user, usually related to their position at a specific company. Example: "VP of Engineering"
     </td>
   </tr>
   <tr>
     <td>`username`</td>
     <td>String</td>
-    <td>User's username
-      <p> This should be unique to each user, like the usernames of Twitter or GitHub.</p></td>
+    <td>User's username. This should be unique to each user, like the usernames of Twitter or GitHub.</td>
   </tr>
   <tr>
     <td>`website`</td>

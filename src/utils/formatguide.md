@@ -1,6 +1,6 @@
 ---
-title: Styleguide
-description: The Tonik-built list of front-end components
+title: Formatting guide
+description: The styleguide of front-end components
 hidden: true
 layout: page
 contributors:
@@ -15,6 +15,7 @@ contributors:
 related:
   - "/docs/connections/sources/catalog/"
   - "/docs/connections/sources/faq/"
+redirect_from: '/styleguide/'
 ---
 
 ---

@@ -1,14 +1,12 @@
 ---
 title: Intercom Source
 rewrite: true
-source-type: object
 ---
 
 [Intercom](http://intercom.com) is a customer platform with a suite of products for live chat, marketing, feedback, and support. With Intercom you will be able to send targeted messages to the right people at the right time, manage conversations with leads and customers at scale and create, organize, and publish articles to help people get answers to their questions and get started with your app.
 
 Take your company's email analysis to the next level by **adding Intercom as a Source to Segment.** We'll automatically collect objects like `Users` and `Conversations` and load them into your data warehouse. 
 
-This is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
 
 ## Getting Started
 

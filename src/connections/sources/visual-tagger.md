@@ -4,7 +4,7 @@ sourceTitle: 'Visual Tagger'
 sourceCategory: 'Tools'
 ---
 
-Visual Tagger is currently in **public preview**. Use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/). If you are interested in using Visual Tagger or if you are currently using Visual Tagger and have feedback for us, please email [beta@segment.com](beta@segment.com).
+Visual Tagger is currently in **public preview**. Use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/). If you are interested in using Visual Tagger or if you are currently using Visual Tagger and have feedback for us, please email [beta@segment.com](beta@segment.com).
 
 ## What is Visual Tagger?
 
@@ -33,7 +33,7 @@ Once you have met the Setup Requirements, you're ready to get started:
 1. Go to your Segment Workspace and navigate to a Website Source.
 2. Click on the Visual Tagger link. You'll see an introductory page where you can learn about Visual Tagger and watch a short video with an overview of Visual Tagger.
 3. Once you proceed, you will be prompted to do three things: 
-   - Consent to the [(1) Segment First Access and Beta Terms and Conditions](https://segment.com/docs/legal/first-access-beta-preview/) and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/) and allow usage of Fullstory on Visual Tagger (To help improve this product, Segment uses Fullstory to record your screen as a video while you are using this product. For Visual Tagger, you will load your website in an iframe in the Segment app, which means that the content of your website will also get recorded. We never share this data outside of Segment.). 
+   - Consent to the [(1) Segment First Access and Beta Terms and Conditions](https://segment.com/legal/first-access-beta-preview/) and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/) and allow usage of Fullstory on Visual Tagger (To help improve this product, Segment uses Fullstory to record your screen as a video while you are using this product. For Visual Tagger, you will load your website in an iframe in the Segment app, which means that the content of your website will also get recorded. We never share this data outside of Segment.). 
    - Install the Segment Visual Tagger Chrome Extension.
    - Enable the Visual Tagger integration.
    
