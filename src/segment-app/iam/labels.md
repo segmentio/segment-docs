@@ -3,7 +3,7 @@ title: Label-Based Access Control
 ---
 Labels allow workspace owners to assign permissions to users to grant them access to groups which represent collections of Sources or collections of Personas spaces.
 
-To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can edit labels.
+To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels at the workspace scale.
 
 ## Custom Environments
 By default, all workspaces include labels for Dev (development) and Prod (production) environments. Workspace owners can configure what these labels are applied to, and can create up to five custom environments.
@@ -16,7 +16,7 @@ To apply labels to Sources and Personas spaces, click the **Assign Labels** tab 
 
 Once a label is in use (either assigned to a resource or used to restrict permissions on a user), the label cannot be deleted. You must first manually remove the label from any resources and permissions before you can delete it.
 
-> **Note**: While only Workspace Owners can bulk-edit labels, Source and Space admins can edit the labels on sources and spaces they have access to from. To do this, go to the **Settings** tab for each item.
+> **Note**: While only Workspace Owners can bulk-edit labels, Source and Space admins can edit the labels on the sources and spaces they have access to. To do this, go to the **Settings** tab for each item.
 
 Workspace owners can also grant specific [Roles](roles/) access to specific labels. For example, you might give a Source Admin access to only Sources that have the `Prod` label.
 
