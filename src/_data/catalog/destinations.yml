@@ -12279,6 +12279,17 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
+      - name: segmentProperty
+        display_name: Segment Property Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: >-
+          Enter the Segment Property Name. This is case sensitive so make sure
+          the name matches exactly how you are passing it in your .track() call.
+        settings: []
       - name: marketoAttributeName
         display_name: Marketo Field Name
         type: STRING
@@ -12309,17 +12320,6 @@ items:
         deprecated: false
         required: false
         description: Mark this property as the Primary field in Marketo.
-        settings: []
-      - name: segmentProperty
-        display_name: Segment Property Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: >-
-          Enter the Segment Property Name. This is case sensitive so make sure
-          the name matches exactly how you are passing it in your .track() call.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -15437,7 +15437,9 @@ items:
     required: true
     string_validators:
       regexp: ''
-    description: You can retrieve your API token from...
+    description: >-
+      You can retrieve your API token from the Retain control center under the
+      preview snippet.
     settings: []
   - name: siteType
     display_name: Site Type
@@ -17558,6 +17560,135 @@ items:
       server: true
   previous_names:
   - Seg
+- display_name: Selligent Marketing Cloud
+  slug: selligent-marketing-cloud
+  name: catalog/destinations/selligent-marketing-cloud
+  description: >-
+    Selligent Marketing Cloud is a highly integrated, AI-powered omni-channel
+    marketing automation platform which enables ambitious B2C marketers to
+    maximize every moment of interaction with today’s connected consumers.
+  hidden: false
+  url: connections/destinations/catalog/selligent-marketing-cloud
+  status: PUBLIC_BETA
+  logo:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/6ce73a60-f202-4e7e-a386-c6f6e8254ad5.svg
+  mark:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/5b7731ad-96c1-4f4a-abce-ca6cb2cd786e.svg
+  categories:
+  - Email Marketing
+  - Personalization
+  - SMS & Push Notifications
+  components: []
+  platforms:
+    browser: true
+    server: true
+    mobile: true
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  methods:
+    alias: true
+    group: true
+    identify: true
+    page_view: true
+    track: true
+  settings:
+  - name: apiKey
+    display_name: API Key
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: '^.{8,}$'
+    description: Your API Key can be found in the admin configuration settings under apps
+    settings: []
+  - name: apiSecret
+    display_name: API Secret
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: >-
+      Your API Secret can be found in the admin configuration settings under
+      apps
+    settings: []
+  - name: allowedEvents
+    display_name: Allowed Events
+    type: LIST
+    deprecated: false
+    required: true
+    description: Add the track event names that you would like sent to SMC (or whitelisted)
+    settings: []
+  - name: eventsDataListApiName
+    display_name: Events Data List API name
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: Enter a description.
+    settings: []
+  - name: organization
+    display_name: Organization
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: Enter a description.
+    settings: []
+  - name: smcAdminUrl
+    display_name: SMC Admin URL
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: ''
+    description: >-
+      Just copy the link you use to log into the SMC admin should look like
+      https://{you company}.slgnt.us
+    settings: []
+  - name: sendAliasEvents
+    display_name: Send Alias Events
+    type: BOOLEAN
+    deprecated: false
+    required: false
+    description: Track Alias Events
+    settings: []
+  - name: sendGroupEvents
+    display_name: Send Group Events
+    type: BOOLEAN
+    deprecated: false
+    required: false
+    description: Track Group Events
+    settings: []
+  - name: sendPageEvents
+    display_name: Send Page Events
+    type: BOOLEAN
+    deprecated: false
+    required: false
+    description: Track Page Events
+    settings: []
+  - name: sendScreenEvents
+    display_name: Send Screen Events
+    type: BOOLEAN
+    deprecated: false
+    required: false
+    description: Track Screen Events
+    settings: []
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+  previous_names:
+  - Selligent Marketing Cloud
 - display_name: Sentry
   slug: sentry
   name: catalog/destinations/sentry
@@ -21036,9 +21167,9 @@ items:
     url: >-
       https://public-segment-devcenter-production.s3.amazonaws.com/2ca6b9ea-ecbc-4dec-b166-113d6bc51774.svg
   categories:
+  - Marketing Automation
   - Customer Success
   - Email Marketing
-  - Marketing Automation
   - Referrals
   components: []
   platforms:
