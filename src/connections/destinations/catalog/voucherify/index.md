@@ -31,7 +31,7 @@ On the Voucherify Dashboard page:
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
 
-```
+```js
 analytics.identify('cust_9032_re_3234', {
   email: 'john.doe@segment.com'
 });
@@ -43,9 +43,8 @@ The Customer is created, with a *source_id* equal to the event *userId* or *anon
 
 With setting _Identify Mapping_ you can customize the conversion from the event payload to Voucherify `Customer` payload.
 
-```
+```js
 # Default identify event mapping (src : dest)
-#
 {
   "traits.name"              : "customer.name",
   "traits.firstName"         : "customer.firstName",
@@ -66,7 +65,7 @@ With setting _Identify Mapping_ you can customize the conversion from the event 
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
 
-```
+```js
 analytics.track('Registration Completed', {
   name: 'Customer Name'
 });
@@ -80,7 +79,7 @@ With setting _Track Events Filter_ you can define the list of allowed events tha
 
 With setting _Track Mapping_ you can customize the conversion from the event payload to Voucherify `Custom Event` payload.
 
-```
+```js
 # Default track event mapping (src : dest)
 {
   "properties.name"              : "customer.name",
