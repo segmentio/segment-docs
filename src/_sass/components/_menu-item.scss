@@ -101,9 +101,9 @@
         content: "";
         display: block;
         position: absolute;
-        top: 0;
-        left: -18px;
-        height: 100%;
+        top: -8px;
+        left: -19px;
+        height: calc(100% + 16px);
         width: 2px;
         background-color: color(primary);
       }
@@ -116,9 +116,9 @@
         content: "";
         display: block;
         position: absolute;
-        top: 0;
-        left: -26px;
-        height: 100%;
+        top: -8px;
+        left: -25px;
+        height: calc(100% + 16px);
         width: 2px;
         background-color: color(primary);
       }
@@ -149,7 +149,14 @@
 
     &#{$this}--gray {
       & > #{$this}__link {
-        color: rgba(color(gray-dark), 0.8);
+        color: #435A6F;
+        font-weight: 500;
+      }
+    }
+
+    &#{$this}--green {
+      & > #{$this}__link {
+        color: color(primary);
         font-weight: 500;
       }
     }
