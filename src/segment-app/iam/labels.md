@@ -3,7 +3,7 @@ title: Label-Based Access Control
 ---
 Labels allow workspace owners to assign permissions to users to grant them access to groups which represent collections of Sources or collections of Personas spaces.
 
-To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels at the workspace scale.
+To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels for the entire workspace.
 
 ## Custom Environments
 By default, all workspaces include labels for Dev (development) and Prod (production) environments. Workspace owners can configure what these labels are applied to, and can create up to five custom environments.
