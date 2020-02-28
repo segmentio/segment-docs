@@ -5,7 +5,7 @@ related:
   - "/connections/sources/catalog/"
   - "/connections/sources/faq/"
 icon: media/icon-academy.svg
-excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
+excerpt: Detailed information about each Source. Learn how our API methods are implemented for that destination.
 ---
 
 ## What is a source?
@@ -97,6 +97,8 @@ Our server-side sources let you send analytics data directly from your servers. 
 ## Cloud Apps
 
 Cloud app sources empower you to pull together data from all of your different third-party tools into a Segment warehouse or to your other enabled integrated tools. There are two types of Cloud Apps: **Object** and **Event** sources.
+
+{% include components/media-icon.html href="/docs/connections/sources/sources-compare/" icon="media/icon-guides.svg" title="Comparing Cloud Sources" content="Wondering which cloud-apps send which types of data? Check out the Cloud Sources comparison!" %}
 
 ### Object Cloud Sources
 

@@ -150,9 +150,9 @@ Using Adjust's [Attribution callback](https://github.com/adjust/ios_sdk#attribut
 | trackerName | attribution.trackerName | the tracker name of the current install |
 | campaign.source |  attribution.network | the network grouping level of the current install |
 | campaign.name | attribution.campaign | the campaign grouping level of the current install |
-| campaign.content | attribution.clickLabel | the ad group grouping level of the current install |
+| campaign.content | attribution.clickLabel | the click label of the current install |
 | campaign.adCreative | attribution.creative | the creative grouping level of the current install |
-| campaign.adGroup | attribution.adgroup | the click label of the current install |
+| campaign.adGroup | attribution.adgroup | the ad group grouping level of the current install |
 
 If any value is unavailable, it will default to nil.  This call will be sent to all enabled [device and cloud mode](https://segment.com/docs/connections/destinations/#connection-modes) destinations.
 

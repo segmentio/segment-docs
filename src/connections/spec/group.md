@@ -107,7 +107,7 @@ The following are the reserved traits we have standardized:
     <td>`address`</td>
     <td>Object</td>
     <td>Street address of a group
-      <p>This should be a dictionary containing optional `city`, `country`, `postalCode`, `state` or `street`.</p></td>
+      This should be a dictionary containing optional `city`, `country`, `postalCode`, `state` or `street`.</td>
   </tr>
   <tr>
     <td>`avatar`</td>
@@ -118,7 +118,7 @@ The following are the reserved traits we have standardized:
     <td>`createdAt`</td>
     <td>Date</td>
     <td>Date the group's account was first created
-    <p>We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.</p></td>
+    We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.</td>
   </tr>
   <tr>
     <td>`description`</td>

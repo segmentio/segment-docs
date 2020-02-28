@@ -1,14 +1,9 @@
 ---
 title: LaunchDarkly Source
-source-type: event
 ---
 [LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver and control software through feature flags.
 
-This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
-
-
 This source is maintained by LaunchDarkly. For any issues with the source, please [reach out to their team](mailto:support@launchdarkly.com).
-
 
 _**NOTE:** The LaunchDarkly Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on November 8, 2019. If you are interested in joining their beta program or have any feedback to help improve the LaunchDarkly Source and its documentation, please [let  their team know](mailto:support@launchdarkly.com)!_
 

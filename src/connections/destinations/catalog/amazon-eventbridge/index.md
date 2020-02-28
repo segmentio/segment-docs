@@ -43,3 +43,10 @@ analytics.track("User Registered", {
   myCoolProperty: "foobar",
 });
 ```
+
+## FAQ
+
+### Can I change my Account ID?
+Currently you can only set up one Account ID per source, and once it is set it cannot be changed. 
+
+We recommend that you create a separate Segment source for testing if you use a test Account ID, because you cannot change it to a production Account ID at a later date. 
