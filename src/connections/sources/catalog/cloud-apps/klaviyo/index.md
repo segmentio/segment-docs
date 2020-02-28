@@ -1,6 +1,7 @@
 ---
 title: 'Klaviyo Source'
 ---
+
 Klaviyo is an email marketing platform that helps companies make more money. It lets you send personalized newsletters, triggered emails, product recommendations, push notifications and sync your data to facebook custom audiences. [Visit Website](https://www.klaviyo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
 Take your company's email analysis to the next level by **adding Klaviyo as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
@@ -9,7 +10,7 @@ In your favorite BI or analytics tool, you'll be able to analyze your email camp
 
 
 ## Getting Started
-<span> </span>
+
 If you have previously enabled sending email events via the Klaviyo destination during our beta (using a project write key), you do not need to create new Klaviyo source. Your email data will continue to flow as normal.
 
 1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
@@ -42,9 +43,9 @@ Collections are the groupings of data we pull from your Source. In your warehous
 
 <table>
   <tr>
-    <th>Collection</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Collection**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>Email Delivered</td>
@@ -84,7 +85,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
 select *
 from klaviyo.email_delivered
 ```
-<span> </span>
+
 
 <table>
 </table> -->

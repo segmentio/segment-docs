@@ -1,233 +1,242 @@
-{% assign sectionNames = page.url | split: "/" %}
-{% assign sectionName = sectionNames[1] | capitalize %}
-{% assign currentSlug = sectionNames | last %}
-{% assign priority = 2 %}
-{% assign basehref = "" %}
-{% if page.integration_type == "destination" %}
-  {% assign basehref = '/docs' | append: page.url %}
-  {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
-  {% assign description = currentIntegration.description %}
-  {% assign priority = 4 %}
-{% elsif page.integration_type == "source" %}
-  {% assign basehref = '/docs' | append: page.url %}
-  {% assign currentIntegration = site.data.catalog.sources.items | where: "slug", currentSlug | first %}
-  {% assign description = currentIntegration.description %}
-  {% assign priority = 4 %}
-{% else %}
-  {% assign basehref = '/docs/' | append: sectionNames[1] | append:  '/' %}
-  {% assign description = "The technical documentation for Segment." %}
-{% endif %}
+{%- assign sectionNames = page.url | split: "/" -%}
+{%- assign sectionName = sectionNames[1] | capitalize -%}
+{%- assign currentSlug = sectionNames | last -%}
+{%- assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first -%}
+{%- assign description = "The technical documentation for Segment." -%}
+{%- assign priority = 2 -%}
+{%- assign basehref = "/docs" -%}
+{%- if page.path contains "index.md" -%}
+	{%- capture basehref -%}{{basehref}}{{ page.url }}{%- endcapture -%}
+{%- else -%}
+  {%- assign crumbs = page.url | split: '/' -%}
+  {%- assign stoppingpoint = crumbs | size | minus: 1 -%}
+  {%- for crumb in crumbs limit:stoppingpoint -%}
+    {%- capture basehref -%}{{basehref}}{{ crumb }}/{%- endcapture -%}
+  {%- endfor -%}
+{%- endif -%}
 
+{%- if page.integration_type == "destination" -%}
+  {%- assign description = currentIntegration.description -%}
+  {%- assign priority = 4 -%}
+{%- elsif page.integration_type == "source" -%}
+  {%- assign description = currentIntegration.description -%}
+  {%- assign priority = 4 -%}
+{%- endif -%}
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
-
   <base href="{{ basehref }}" />
-
-  <title> {{page.title}} {{page.integration_type | capitalize }}| Segment Documentation</title>
-
+  <title> {{page.title}} | Segment Documentation</title>
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Segment" />
-  <meta property="og:title" content="{{page.title}} {% unless landing %}Documentation{% endunless %} - Segment" />
+  <meta property="og:title" content="{{page.title}} {%- unless landing -%}Documentation{%- endunless -%} - Segment" />
   <meta property="og:image" content="https://images.ctfassets.net/9u2t3ap6pctb/4s5A4gsq5NsG9Zeil5BBoL/537f85b510477c440d07b3017e000319/190305_OGimage_Templates_Universal03.png" />
-
   <meta name="twitter:site" content="@segment" />
   <meta name="twitter:card" content="summary_large_image" />
-
-
   <meta name="description" content="{{description}}">
   <meta property="og:description" content="{{description}}" />
 
-  {% if page.hidden %}
-    <meta name="robots" content="noindex" />
-  {% else %}
-    <meta class="swiftype" name="section" data-type="enum" content="{{ sectionName }}" />
-    <meta class="swiftype" name="info" data-type="enum" content="{{description}}" />
-    <meta class="swiftype" name="description" data-type="enum" content="{{description}}" />
-    <meta class="swiftype" name="title" data-type="string" content="{{page.title}}" />
-    <meta class="swiftype" name="priority" data-type="integer" content="{{priority}}" />
-  {% endif %}
+  {%- if page.hidden -%}
+  <meta name="robots" content="noindex" />
+  {%- else -%}
+  <meta class="swiftype" name="section" data-type="enum" content="{{ sectionName }}" />
+  <meta class="swiftype" name="info" data-type="enum" content="{{description}}" />
+  <meta class="swiftype" name="description" data-type="enum" content="{{description}}" />
+  <meta class="swiftype" name="title" data-type="string" content="{{page.title}}" />
+  <meta class="swiftype" name="priority" data-type="integer" content="{{priority}}" />
+  {%- endif -%}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
   <link rel="icon" href="https://segment.com/favicon.ico">
-  <!-- Unclear if we need this, commenting out for now
-  {% if path %}
-    <link rel="canonical" href="https://segment.com/docs/{{path}}/" />
-  {% else %}
-    <link rel="canonical" href="https://segment.com/docs/" />
-  {% endif %}-->
+  {%- if jekyll.environment == "production" -%}
+    {%- assign hostname = "https://segment.com" -%}
+  {%- elsif jekyll.environment == "staging" -%}
+    {%- assign hostname = "https://segment.build" -%}
+  {%- else -%}
+    {%- assign hostname = "" -%}
+  {%- endif -%}
+  <link rel="canonical" href="{{hostname}}/docs{{page.url}}" />
   <meta name="application-name" content="Segment">
   <meta name="theme-color" content="#00386C">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+</head>
+<body>
+  <div id="consent-manager"></div>
+  {{ content }}
+  <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
+    {%- include icons/symbols/chevron-up.svg -%}
+  </a>
+  {%- comment -%}
+    A.JS
+    Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
+    Everything else: https://app.segment.com/segment_prod/sources/segment_docs_v2
+  {%- endcomment -%}
+  {%- if jekyll.environment == "production" -%}
+    {%- assign write_key = "QAKKJEtNsXpsNfCCBeWCLNxkaaLO7pgp" -%}
+    {%- assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" -%}
+  {%- else -%}
+    {%- assign write_key = "czNFQFqlure7fgXq3JdzY0MrWNzF1wLX" -%}
+    {%- assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" -%}
+  {%- endif -%}
+  {%- comment -%}
+    JS for site
+  {%- endcomment -%}
+  <script src="{{ "./assets/docs.bundle.js" | relative_url}}"></script>
+  {%- comment -%}
+    Swifttype
+  {%- endcomment -%}
+  <script type="text/javascript">
+    (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+    })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  <body>
-    {{ content }}
+    _st('install','{{swiftype_key}}','2.0.0');
+  </script>
+  {%- comment -%}
+    Google Search Results Metadata
+  {%- endcomment -%}
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Segment",
+      "url": "https://segment.com"
+    }, {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Segment",
+      "url": "https://segment.com",
+      "logo": "https://segment.com/build/public/public/images/touch-icon.png",
+      "sameAs": [
+        "https://twitter.com/segment",
+        "https://www.linkedin.com/company/segment-io"
+      ]
+    }
+  ]
+  </script>
+  {%- comment -%}
+    Consent Manager
+  {%- endcomment -%}
 
-    <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
-      {% include icons/symbols/chevron-up.svg %}
-    </a>
-
-    <div id="consent-manager"></div>
-
-    {% comment %}
-     A.JS
-
-     Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
-     Everything else: https://app.segment.com/segment_prod/sources/segment_docs_v2
-    {% endcomment %}
-    {% if jekyll.environment == "production" %}
-      {% assign write_key = "QAKKJEtNsXpsNfCCBeWCLNxkaaLO7pgp" %}
-      {% assign swiftype_key = "dsmQzTck4zz2vQNsXLJW" %}
-      
-    {% else %}
-      {% assign write_key = "czNFQFqlure7fgXq3JdzY0MrWNzF1wLX" %}
-      {% assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" %}
-    {% endif %}
-
-    {% comment %}
-      JS for site
-    {% endcomment %}
-    <script src="{{ "./assets/docs.bundle.js" | relative_url}}"></script>
-
-    {% comment %}
-      Swifttype
-    {% endcomment %}
-    <script type="text/javascript">
-      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-      _st('install','{{swiftype_key}}','2.0.0');
-    </script>
-
-    {% comment %}
-      Google Search Results Metadata
-    {% endcomment %}
-    <script type="application/ld+json">
-    [
-      {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "name": "Segment",
-        "url": "https://segment.com"
-      }, {
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "name": "Segment",
-        "url": "https://segment.com",
-        "logo": "https://segment.com/build/public/public/images/touch-icon.png",
-        "sameAs": [
-          "https://twitter.com/segment",
-          "https://www.linkedin.com/company/segment-io"
-        ]
+<script>
+  window.consentManagerConfig = function (exports) {
+      console.log(exports)
+    var React = exports.React
+    var inCA = exports.inRegions(['CA'])
+    var inEU = exports.inRegions(['EU'])
+    var shouldRequireConsent = exports.inRegions(['CA', 'EU'])
+    var caDefaultPreferences = {
+        advertising: false,
+        marketingAndAnalytics: true,
+        functional: true
       }
-    ]
-    </script>
+   var euDefaultPreferences = {
+      advertising: false,
+      marketingAndAnalytics: false,
+      functional: false
+    }
 
+    var closeBehavior = inCA()
+      ? function (_categories) { return caDefaultPreferences }
+      : inEU()
+        ? 'deny'
+        : 'accept'
+    var initialPreferences = inCA()
+      ? caDefaultPreferences
+      : inEU()
+        ? euDefaultPreferences
+        : undefined
 
-    {% comment %}
-      Consent Manager
-    {% endcomment %}
-    <script>
-      window.consentManagerConfig = function (exports) {
-        var React = exports.React
-        var inEU = exports.inEU
-        var openConsentManager = exports.openConsentManager
-        var openButton = document.getElementById('open-consent-manager')
-
-        function buttonClick (e) {
-          // Prevent the implicit consent from kicking in
-          e.stopPropagation()
-          e.preventDefault()
-          openConsentManager()
-        }
-        openButton.addEventListener('click', buttonClick, false)
-
-        var bannerContent = (
+    var openConsentManager = exports.openConsentManager
+    var openButton = document.getElementById('open-consent-manager')
+    function buttonClick (e) {
+      // Prevent the implicit consent from kicking in
+      e.stopPropagation()
+      e.preventDefault()
+      openConsentManager()
+    }
+    openButton.addEventListener('click', buttonClick, false)
+    var bannerContent = (
+      React.createElement(
+        'span',
+        null,
+        'We use cookies (and other similar technologies) to collect data in order to improve our site. You have the option to opt-in or opt-out of certain cookie tracking technologies.'
+      )
+    )
+    var bannerSubContent = 'To do so, click here.'
+    var preferencesDialogTitle = 'Website Data Collection Preferences'
+    var preferencesDialogContent = (
+      React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'p',
+          null,
+          'Segment uses data collected by cookies and JavaScript libraries to improve your browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site.'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'By using our website, you\u2019re agreeing to our',
+          ' ',
           React.createElement(
-            'span',
-            null,
-            'We use cookies (and other similar technologies) to collect data to improve your experience on our site. By using our website, you\u2019re agreeing to the collection of data as described in our',
-            ' ',
-            React.createElement(
-              'a',
-              { href: '/docs/legal/website-data-collection-policy/', target: '_blank' },
-              'Website Data Collection Policy'
-            ),
-            '.'
-          )
+            'a',
+            { href: '/https://segment.com/legal/website-data-collection-policy/', target: '_blank' },
+            'Website Data Collection Policy'
+          ),
+          '.'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'The table below outlines how we use this data by category. To opt out of a category of data collection, select \u201CNo\u201D and save your preferences.'
         )
-        var preferencesDialogTitle = 'Website Data Collection Preferences'
-        var preferencesDialogContent = (
-          React.createElement(
-            'div',
-            null,
-            React.createElement(
-              'p',
-              null,
-              'Segment uses data collected by cookies and JavaScript libraries to improve your browsing experience, analyze site traffic, deliver personalized advertisements, and increase the overall performance of our site.'
-            ),
-            React.createElement(
-              'p',
-              null,
-              'By using our website, you\u2019re agreeing to our',
-              ' ',
-              React.createElement(
-                'a',
-                { href: '/docs/legal/website-data-collection-policy/', target: '_blank' },
-                'Website Data Collection Policy'
-              ),
-              '.'
-            ),
-            React.createElement(
-              'p',
-              null,
-              'The table below outlines how we use this data by category. To opt out of a category of data collection, select \u201CNo\u201D and save your preferences.'
-            )
-          )
-        )
-        var cancelDialogTitle = 'Are you sure you want to cancel?'
-        var cancelDialogContent = (
-          React.createElement(
-            'div',
-            null,
-            'Your preferences have not been saved. By continuing to use our website, you\u2019re agreeing to our',
-            ' ',
-            React.createElement(
-              'a',
-              { href: '/docs/legal/website-data-collection-policy/', target: '_blank' },
-              'Website Data Collection Policy'
-            ),
-            '.'
-          )
-        )
-
-        return {
-          container: '#consent-manager',
-          writeKey: '{{write_key}}',
-          shouldRequireConsent: inEU,
-          bannerContent: bannerContent,
-          preferencesDialogTitle: preferencesDialogTitle,
-          preferencesDialogContent: preferencesDialogContent,
-          cancelDialogTitle: cancelDialogTitle,
-          cancelDialogContent: cancelDialogContent
-        }
-      }
+      )
+    )
+    var cancelDialogTitle = 'Are you sure you want to cancel?'
+    var cancelDialogContent = (
+      React.createElement(
+        'div',
+        null,
+        'Your preferences have not been saved. By continuing to use our website, you\u2019re agreeing to our',
+        ' ',
+        React.createElement(
+          'a',
+          { href: '/https://segment.com/legal/website-data-collection-policy/', target: '_blank' },
+          'Website Data Collection Policy'
+        ),
+        '.'
+      )
+    )
+    return {
+      container: '#consent-manager',
+      writeKey: '{{write_key}}',
+      bannerContent: bannerContent,
+      bannerSubContent: bannerSubContent,
+      preferencesDialogTitle: preferencesDialogTitle,
+      preferencesDialogContent: preferencesDialogContent,
+      cancelDialogTitle: cancelDialogTitle,
+      cancelDialogContent: cancelDialogContent,
+      closeBehavior: closeBehavior,
+      shouldRequireConsent: shouldRequireConsent,
+      initialPreferences: initialPreferences,
+    }
+  }
+</script>
+<script
+  src="https://unpkg.com/@segment/consent-manager@4.2.2/standalone/consent-manager.js"
+  defer
+>
+</script>
+  <script>
+      window.analytics = null
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+        analytics.page('{{page.title}}');
+        // analytics.identify();
+      }}();
     </script>
-    <script
-      src="https://unpkg.com/@segment/consent-manager@1.0.0/standalone/consent-manager.js"
-      defer
-    >
-    </script>
-    <script>
-        window.analytics = null
-        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
-          analytics.page();
-          // analytics.identify();
-        }}(); 
-      </script>
-  </body>
+</body>
 </html>

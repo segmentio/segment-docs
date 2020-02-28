@@ -1,11 +1,11 @@
-Analytics: |
-  The field of data analysis. Analytics often involves studying past historical data to research trends, to analyze the effects of decisions or events, or to evaluate the performance of a given tool or scenario. The goal of analytics is to improve the business by gaining understanding which can be used to make improvements or changes.
-
 Analytics.js: |
-  The Segment wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
+  The Segment Javascript library wrapper, which makes it simple to send your data to any tool without having to learn, test or implement the new API for each tool every time.
+
+API: |
+  Application Programming Interface. In software, this term describes a way of interacting with software in an automated fashion, without the use of a user-interface designed for humans. In Segment, we call the standard calls (`track`, `page` and `screen`, `identify` and `group`) our API. We also provide the [Config API](/docs/config-api/), which you can use to configure sources and destinations, and perform other functions in your workspace, without logging in using a web browser.
 
 App: |
-  The app is what we call the main Segment web application, the part you have to log in to get to, where you turn on integrations, see events in the debugger, manage your tracking plan, and so on.
+  The app is what we call the main Segment web application, the part you log in to, and where you configure sources and destinations, see events in the debugger, manage your tracking plan, and so on.
 
 Asynchronous: |
   Asynchronous means occurring without a specific order or sequence. In engineering, it's most often used for things like when you have to ask a server for a piece of information. If that was a synchronous task, while you were waiting for the server to respond you wouldn't be able to do anything else, you'd just be stuck waiting. But since it's asynchronous, you can request information from a server, continue to go do a bunch of other tasks, and then when the server responds you can get back to what you were doing to start. Basically it lets you work on multiple things at once (in parallel) instead of needing to finish everything in the order it comes in. Think of it like one of the ways computers are able to multi-task.
@@ -20,7 +20,7 @@ CDN: |
   Content Delivery Network. CDNs are a network of servers which make downloading files faster for the user, by placing them all around the world to reduce data transit time. When you have servers in a CDN, they're much closer on average to the end user. If someone is using Segment in Asia, they don't have to download our files all the way from California, they can get them from a server much closer to them in the network.
 
 CDP: |
-  Customer Data Pipeline
+  Customer Data Platform: a central platform that brokers the flow of customer data through their application infrastructure so that they can build a central understanding of each customer’s interactions, comply with regulations that require them to carefully manage customer data, and ensure that their interactions with the customer are optimized.
 
 Cookies: |
   Cookies are small pieces of text that are stored by the browser on a website. Cookies have a **name** and a **value**. They may also be set from Javascript using `document.cookie`. Our analytics.js script sets up a cookie called `ajs_uid` to store the user's id.
@@ -28,15 +28,26 @@ Cookies: |
   Every time you make a request to a website, you send along the cookies that you have stored. It's how the website figures out who you should be logged in as. You can think of it sort of like a passport as a form of ID. When you first enter your username and password, the website generates a secure cookie, and tells your browser to store it. From then on, your browser sends along the cookie as a way of identifying yourself to the website.
 
 Client Side: |
-  This refers to a group of libraries that can send data to Segment. Usually used in contrast to Server Side.
+  This refers to a group of libraries that can send data to Segment and which send [Device-mode](#device-mode) data. The term "client side" is usually used in contrast to [Server Side](#server-side).
 
-  *Client-side libraries*  sit on the "client", which means they can collect contextual data about your users. The 3 main libraries that are considered "client side" are [Analytics.js](https://segment.com/docs/libraries/analytics.js/), which is used on websites and powers most of our [plugins and platform guides](https://segment.com/docs/platforms/), our [iOS SDK](https://segment.com/docs/libraries/ios/), and our [Android SDK](https://segment.com/docs/libraries/android/). Savvy end users can access the information you are sending when you use client-side libraries. These libraries are designed to track a single end user, in real time, as they use your site or app. Client-side libraries are able to maintain a cache of information about each user on that user's device (browser or phone) that way we know that device belongs to a consistent anonymousId or userId and a list of traits like name, email, etc.
+Cloud mode: |
+  *Cloud mode*, (or [Server-side](#server-side)) libraries send data to Segment, where it's then sent on to destinations. Usually used in contrast to [Device mode](#device-mode) libraries, which send the data directly to the destination's API endpoints.
+
+  *Cloud mode libraries* run on a server and are completely invisible to end users. You can find the full list of server-side languages Segment supports [in the Sources catalog](/docs/connections/sources/catalog/#server). These libraries can be used to track a user in realtime as they use your app, but are also able to run batches of calls to update many end users at once. Cloud-mode libraries do not maintain "state" which means every API call you make must include every detail you want to see inside of Segment.
+
+Computed trait: |
+  A calculated field in your Personas data, for example `docs_pageviews_last_7_days`.
+
 
 Debugger: |
   This is the place in the app where you can see your events flowing through Segment
 
 Destination: |
-  a place you can send data
+  A destination is a target for Segment to forward data to, and represents a tool or storage destination.
+
+Device mode: |
+  *Device mode*, (or [client-side](#client-side)) libraries are loaded on the on the user's client (for example their web browser, or mobile device), which means they can collect contextual data about the user. The three main libraries that are considered "device mode" are [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/javascript/), which is used on websites, our [iOS SDK](https://segment.com/docs/connections/sources/catalog/libraries/ios/), and our [Android SDK](https://segment.com/docs/connections/sources/catalog/libraries/android/). Device mode libraries can maintain a cache of information about each user on the device so we know that device belongs to a consistent `anonymousId` or `userId`, and has a consistent list of traits like name, email, etc.
+
 
 DMP: |
   Data management platform
@@ -47,6 +58,9 @@ DSP: |
 ETL: |
   Extract, Transform and Load. Referring to the process of extracting data from a production system, transforming it with enriching data into a new format, and then loading it into a data warehouse for analysis (a separate database from production).
 
+Event: |
+  An event can refer to either an action by a user, or something a user does which triggers a [track call](/docs/connections/spec/track/). Events have a name (for example "Product viewed") and properties (for example the product name, price, and category), and take place in a single moment in time. We use the term "event" in contrast to "object" when talking about
+
 Identify: |
   a call that gathers information about who the user is.
 
@@ -56,22 +70,25 @@ JSON: |
 Library: |
   A library is a reusable piece of code which acts as a building block for higher level pieces of code. It's the software equivalent of a 'tool'. For instance, take Instagram filters. In the good old days, to take a picture with an interesting filter, you had to adjust the aperture length, the focal length, the exposure and film speed to get the desired effect. But now, you can just use Instagram, and press a button to get the pre-tuned filter that you want. They've packaged those effects in software and made them re-usable.
 
-  The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](https://segment.com/docs/libraries/). Libraries are either "[Client Side](#Client-Side)" or "[Server Side](#Server-Side)".
+  The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](https://segment.com/docs/libraries/). Libraries can collect either in "[Device mode](#device-mode)" or "[Cloud mode](#cloud-mode)".
 
 Method: |
-  A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, etc. are methods you can invoke on those objects.
+  A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, [etc](/docs/conncetions/spec/) are methods you can invoke on those objects.
 
 MTU: |
-  Monthly Tracked Users.  You can find more about how they are calculated [here](https://segment.com/docs/guides/usage-and-billing/how-are-mtus-calculated-by-segment/) but in short, they are calculated by adding the number unique userIds and number of unique anonymousIds that a customer tracks with Segment.
+  Monthly Tracked Users. You can find more about how they are calculated [here](https://segment.com/docs/guides/usage-and-billing/how-are-mtus-calculated-by-segment/) but in short, they are calculated by adding the number unique userIds and number of unique anonymousIds that a customer tracks with Segment.
+
+Object: |
+  An object is a type of data that persists over time and can be updated, for example a Business or User record. Objects have "traits" which record information about that object, and which can be updated over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a [computed trait](#computed-trait) like `logged_in_last_7_days`.
 
 OTT (Over the Top): |
   Over the top (OTT) refers to content providers that distribute streaming media as a standalone product directly to viewers over the Internet, bypassing telecommunications, multichannel television, and broadcast television platforms that traditionally act as a controller or distributor of such content.
 
 Page: |
-  The Segment API call records that a user 'viewed a page'. It's recorded by calling `analytics.page()`. You can optionally pass in a `name` and a `category`.
+  The Segment API call records that a user "viewed a page". It's recorded by calling `analytics.page()`. You can optionally pass in a `name` and a `category`.
 
 Postgres: |
-  Opensource SQL server
+  An open-source [SQL](#sql) server
 
 Redshift: |
   An analytics data warehouse from Amazon Web Services. Made for loading in tons of event data, and then analyzing it with complex queries. It's designed to be fast and cheap.
@@ -88,26 +105,27 @@ Schema: |
   In Segment, you can send data to a Warehouse which has a schema based on the types of data you collect and route through Segment, and which updates as the data you collect changes.
 
 Server Side: |
-  Refers to a group of libraries that can send data to Segment.  This could also could refer to people sending data directly to [our API](https://segment.com/docs/libraries/http/) without using a "library". Usually used in contrast to [Client Side](#Client-Side).
+  Refers to a group of libraries that can send data to Segment, in [Cloud mode](#cloud-mode), meaning through the Segment cloud. "Server side" can could refer to people sending data directly to [our HTTP API](https://segment.com/docs/connections/sources/catalog/libraries/http/) without using a "library". Usually used in contrast to [Client Side](#client-side).
 
-  *Server-side libraries* run on a server and are completely invisible to end users. Find the full list of server-side languages Segment supports [in our docs](https://segment.com/docs/libraries/#server). These libraries can be used to track a user in realtime as they use your app, but are also able to run batches of calls to update many end users at once. Server-side libraries do not maintain "state" which means every API call you make must include every detail you want to see inside of Segment.
 
 SDK: |
-  Stands for software development kit. This is a combination of libraries and used mostly in the context of building mobile or native apps.
+  Software Development Kit. This is a combination of libraries and used mostly in the context of building mobile or native apps.
 
 SQL: |
   (pronounced 'sequel')
-  Structured Query Language. The standard language for retrieving information from a database.  It's often called "relational" because all the queries are related to relations between the data. For instance, find me all users who are named "Alice" would translate to...
+  Structured Query Language. The standard language for retrieving information from a database. It's often called "relational" because all the queries are related to relations between the data. For instance, find me all users who are named "Alice" would translate to...
 
   ```SQL
   select * from users where first_name equals "Alice"
   ```
+SQL Trait: |
+  A Personas trait generated from queries on your data warehouse.
 
 Source: |
   A website, server library, mobile SDK, or cloud application which can send data into Segment.
 
 Spec: |
-  Short for "Specification"
+  Short for "Specification", the Segment Spec is our set of recommendations for what data to collect, and how to format it, for best
 
 SSP: |
   Supply-side Platform

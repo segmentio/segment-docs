@@ -1,5 +1,5 @@
 ---
-title: Sources catalog
+title: Sources Catalog
 hide_toc: true
 landing: true
 icon: symbols/connections.svg
@@ -73,3 +73,10 @@ menu_icon: "read-more"
     </div>
   </div>
 </div>
+
+<br/>
+## Object Cloud Sources
+
+
+- [Marketo](/docs/connections/sources/catalog/cloud-apps/marketo/)
+- [Salesforce Marketing Cloud](/docs/connections/sources/catalog/cloud-apps/salesforce-marketing-cloud/)

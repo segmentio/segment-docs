@@ -9,8 +9,6 @@ Our Wishpond destination code is open sourced on Github. Feel free to check it o
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Wishpond works with our client-side javascript library: Analytics.js.
 
 From your Segment Destinations page click on Wishpond. Drop in your Merchant ID and Trackey Key from Wishpond's ["API Keys" dialog](https://www.wishpond.com/central/welcome?api_keys=true). These are also found in your Wishpond Account in the "API Keys" dropdown under your account name in the top right corner.
@@ -25,23 +23,23 @@ When you `identify` a user, we'll pass that user's information to Wishpond. Wish
 
 For instance, when Segment `identify` is called:
 
-```
+```js
 analytics.identify('1e810c197e', {
-  name: 'Bill Lumbergh',
-  email: 'bill@initech.com'
+  name: 'Jane Kim',
+  email: 'jane.kim@example.com'
 });
 ```
 
 Wishpond Tracker will be called with the following parameters:
 
-```
+```js
 Wishpond.Tracker.identify('1e810c197e', {
-  name: 'Bill Lumbergh',
-  email: 'bill@initech.com'
+  name: 'Jane Kim',
+  email: 'jane.kim@example.com'
 });
  ```
 
-A new lead will be created be in your 'Wishpond Leads Database'. The lead will have the attributes: name 'Bill Lumbergh', email 'bill@initech.com'.
+A new lead will be created be in your 'Wishpond Leads Database'. The lead will have the attributes: name 'Jane Kim', email 'jane.kim@example.com'.
 To more details how Wishpond's identify works please visit [Wishpond API Docs: #identify](http://developers.wishpond.com/#identify).
 
 ## Track
@@ -50,7 +48,7 @@ When you `track` an event, we will send that event to Wishpond. Wishpond Trackin
 
 For instance, when Segment `track` is called:
 
-```
+```js
 analytics.track('Signed Up', {
   plan: 'Startup',
   source: 'Analytics Academy'
@@ -59,7 +57,7 @@ analytics.track('Signed Up', {
 
 Wishpond Tracker will be called with the following parameters:
 
-```
+```js
 Wishpond.Tracker.track('Signed Up', {
   plan: 'Startup',
   source: 'Analytics Academy'

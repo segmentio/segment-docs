@@ -6,8 +6,6 @@ title: Route Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Once the Segment library is integrated with your server, toggle Route `on` in your Segment destinations setting the `organizationId`.
 
 Route supports the `identify` and `track` methods.

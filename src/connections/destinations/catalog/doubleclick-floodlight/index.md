@@ -4,8 +4,6 @@ title: DoubleClick Floodlight Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 The DoubleClick Floodlight destination allows you to make calls directly to Floodlight based on your mapped events. All you have to do is drop in your **DoubleClick Advertiser ID** into your settings and map the Segment `track` events to their corresponding Floodlight tags.
 
 If you'd like to send mobile data, this destination _requires_ you to send device specific information such as the `IDFA` or the `AdvertisingId` and thus you should send events via our **mobile** libraries. You can also send data from `analytics.js` and we will make direct HTTP requests to Doubleclick Floodlight from your browser.
@@ -71,7 +69,7 @@ Here's an example for tracking a `page` event with the name **Confirmation**:
 
 Please ensure you enter the name case sensitively.
 
-Reference our [docs](/docs/connections/sources/catalog/libraries/website/analytics.js/#page) for more on the `name` parameter.
+Reference our [docs](/docs/connections/sources/catalog/libraries/website/javascript/#page) for more on the `name` parameter.
 
 ### Pages with categories
 
@@ -83,7 +81,7 @@ For example, if you had a `page` event with the name as **Confirmation** that wa
 
 **Viewed Checkout Confirmation Page**
 
-Reference our [docs](/docs/connections/sources/catalog/libraries/website/analytics.js/#page) for more on the `category` paramter.
+Reference our [docs](/docs/connections/sources/catalog/libraries/website/javascript/#page) for more on the `category` paramter.
 
 ## Setting up Custom Variables
 

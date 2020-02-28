@@ -29,7 +29,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```js
 analytics.identify('pixar123', {
-  email: "carl.fredricksen@gmail.com"
+  email: "carl.fredricksen@example.com"
 });
 ```
 

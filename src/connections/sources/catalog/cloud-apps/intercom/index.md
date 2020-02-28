@@ -7,7 +7,6 @@ rewrite: true
 
 Take your company's email analysis to the next level by **adding Intercom as a Source to Segment.** We'll automatically collect objects like `Users` and `Conversations` and load them into your data warehouse. 
 
-This is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
 
 ## Getting Started
 
@@ -61,6 +60,7 @@ Collections are the groupings of resources we pull from your source. In your war
 ## Collection Properties
 
 ### Users
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | The Intercom defined id representing the user |
@@ -167,12 +167,6 @@ Collections are the groupings of resources we pull from your source. In your war
 | id | The id of the admin or team |
 | name | The name of the admin or team |
 | email | The email address of the admin. This attribute is null for teams |
-| job_title | The job title of the admin |
-| away_mode_enabled | Identifies if this admin is currently set in away mode to automatically reassign new conversations to your app's default inbox |
-| away_mode_reassign | When in away mode you can still reply to conversations. If this is set to true then any replies will automatically go into your app's default inbox |
-| team_ids | This is a list of teams id's that you are part of. Only set if the type is 'admin' |
-| admin_ids  This is the list of admins on the team. Only set if the type is 'team' |
-| avatar | Image for the associated team or teammate |
 
 
 ## Social Profiles

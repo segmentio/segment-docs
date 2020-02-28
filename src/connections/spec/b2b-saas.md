@@ -210,7 +210,7 @@ Property                | Type   | Description
 
 ### Signed Out
 
-This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](docs/connections/sources/catalog/libraries/website/analytics.js/#reset-logout) to refresh the cookie when a Signed Out event occurs.
+This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) to refresh the cookie when a Signed Out event occurs.
 
 #### Properties
 
@@ -271,7 +271,7 @@ Property                | Type   | Description
   "action": "track",
   "event": "Invite Sent",
   "properties": {
-    "invitee_email": "pgibbons@gmail.com",
+    "invitee_email": "pgibbons@example.com",
     "invitee_first_name": "Peter",
     "invitee_last_name": "Gibbons",
     "invitee_role": "Owner"
@@ -287,7 +287,7 @@ Property                | Type   | Description
   "action": "track",
   "event": "Invite Sent",
   "properties": {
-    "invitee_email": "pgibbons@gmail.com",
+    "invitee_email": "pgibbons@example.com",
     "invitee_first_name": "Peter",
     "invitee_last_name": "Gibbons",
     "invitee_role": "Owner"

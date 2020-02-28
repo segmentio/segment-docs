@@ -1,13 +1,6 @@
 ---
 title: Sources
-sidebar: Overview
-redirect_from:
-- '/guides/sources/what-can-I-do-with-sources-data'
-- '/sources/etl-billing/'
-- '/sources/etl-usage/'
-- '/sources/5/'
-- '/sources/cloud-app/'
-landing: true
+hidden: true
 contributors:
   - name: Paul Mccall
     date: 23.08.2019
@@ -64,14 +57,14 @@ related:
 
 In Segment, you create a source (or more than one!) for each website or app you want to track. While it's not required that you have a single Source for each server, site or app, we **highly recommend** creating a Source for each unique source of data.
 
-You can create new sources using the button in the workspace view. Each source you create has a write key, which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/) includes:
+You can create new sources using the button in the workspace view. Each source you create has a write key, which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) includes:
 
 {% codeexample %}
 {% codeexampletab JavaScript %}
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
   }, {
   integrations: {
     'All': false,
@@ -99,7 +92,7 @@ analytics.identify('025pikachu025', {
 
 ## Website libraries
 
-[Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/), our Javascript library, is the most powerful way to track customer data from your website. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
+[Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), our Javascript library, is the most powerful way to track customer data from your website. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
 
 {% include components/media-icon.html
   href="#"

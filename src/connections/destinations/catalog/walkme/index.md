@@ -30,17 +30,6 @@ analytics.page()
 Page calls will be sent to WalkMe as a `pageview`.
 
 
-## Screen
-
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
-
-```
-[[SEGAnalytics sharedAnalytics] screen:@"Home"];
-```
-
-Screen calls will be sent to WalkMe as a `screenview`.
-
-
 ## Identify
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:

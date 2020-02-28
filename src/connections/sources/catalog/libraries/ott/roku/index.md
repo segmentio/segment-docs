@@ -110,7 +110,7 @@ An example of the method call would be as follows:
 userId = "1sdf1fw4xgafs"
  
 traits = {
-  "email": testEmail@gmail.com
+  "email": testEmail@example.com
   "name": "John Doe"
   "accountType" : "tier-1"
 }

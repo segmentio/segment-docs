@@ -16,18 +16,6 @@
     }
   }
 
-  &__pattern {
-    display: none;
-    position: absolute;
-    bottom: 10px;
-    right: 0;
-    z-index: -1;
-
-    @include breakpoint(medium up) {
-      display: block;
-    }
-  }
-
   &--primary {
     background-color: color(primary);
     color: color(white);

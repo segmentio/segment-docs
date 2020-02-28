@@ -5,27 +5,31 @@ related:
   - "/connections/sources/catalog/"
   - "/connections/sources/faq/"
 icon: media/icon-academy.svg
-excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
+excerpt: Detailed information about each Source. Learn how our API methods are implemented for that destination.
 ---
 
 ## What is a source?
 
 In Segment, you create a source (or more than one!) for each website or app you want to track. While it's not required that you have a single Source for each server, site or app, we **highly recommend** creating a Source for each unique source of data.
 
-You can create new sources using the button in the workspace view. Each source you create has a write key, which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/) includes:
+You can create new sources using the button in the workspace view. Each source you create has a write key, which is used to send data to that source. For example, to load [`analytics.js`, the Segment JavaScript library](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) on your page, the snippet on the [Quickstart Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) includes:
 
+
+```js
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
+  });
+```
+
+{% comment %}
 {% codeexample %}
 {% codeexampletab JavaScript %}
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu'
-  }, {
-  integrations: {
-    'All': false,
-    'Intercom': true,
-    'Google Analytics': true,
-  }
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
+  },
 });
 ```
 {% endcodeexampletab %}
@@ -42,15 +46,15 @@ analytics.identify('025pikachu025', {
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
-
+{% endcomment %}
 ---
 
 ## Website libraries
 
-[Analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/), our Javascript library, is the most powerful way to track customer data from your website. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
+[Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/), our Javascript library, is the most powerful way to track customer data from your website. If you're just starting out, we recommend it over server-side libraries as the simplest installation for any website.
 
 {% include components/media-icon.html
-  href="#"
+  href="https://segment.com/academy/intro/"
   icon="symbols/connections.svg"
   title="The Analytic Quickstart Guide"
   content="Analytics and data collection is a very broad topic and it can be quite overwhelming. How do you get started?"
@@ -93,6 +97,8 @@ Our server-side sources let you send analytics data directly from your servers. 
 ## Cloud Apps
 
 Cloud app sources empower you to pull together data from all of your different third-party tools into a Segment warehouse or to your other enabled integrated tools. There are two types of Cloud Apps: **Object** and **Event** sources.
+
+{% include components/media-icon.html href="/docs/connections/sources/sources-compare/" icon="media/icon-guides.svg" title="Comparing Cloud Sources" content="Wondering which cloud-apps send which types of data? Check out the Cloud Sources comparison!" %}
 
 ### Object Cloud Sources
 

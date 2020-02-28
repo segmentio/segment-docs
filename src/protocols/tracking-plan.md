@@ -2,10 +2,9 @@
 title: 'Protocols: Tracking Plans'
 ---
 
+## What is a Protocols Tracking Plan?
 
-## What is a Tracking Plan?
-
-A Tracking Plan is a data spec outlining the events and properties you intend to collect across your Segment Sources. Crafting a comprehensive Tracking Plan takes time and effort across a range of teams within your organization. It also requires a deep understanding of your business objectives. Once created, it becomes a highly valuable resource for both the instrumenting engineers and all consumers of the data flowing through Segment.
+A Tracking Plan is a data spec outlining the events and properties you intend to collect across your Segment Sources. Crafting a comprehensive Tracking Plan takes time and effort across a range of teams within your organization, and a deep understanding of your business objectives. [Learn more about data quality best practices here](/docs/protocols/data-quality/). Once created though, the Tracking Plan becomes a highly valuable resource for both the engineers instrumenting Segment and all consumers of the data flowing through Segment.
 
 When building a Tracking Plan, we recommend starting with the key metrics that drive value for your business. Key metrics may include new user signups, top line revenue, product utilization and more. With key metrics defined, it becomes much easier to define which user actions help track or improve those key metrics. Each user action maps to a distinct event, or `.track()`  call, that you will track in Segment. `.identify()`, `.page()` and `.group()` calls can also be validated in the Tracking Plan.
 
@@ -14,7 +13,6 @@ The Segment Tracking Plan feature allows you to validate your expected events ag
 Tracking Plans are stored at workspace level, and can be connected to one or more Sources.
 
 ![](images/25563111_Screen+Shot+2018-08-28+at+11.52.29+PM.png)
-
 
 
 ## Create a Tracking Plan
@@ -97,9 +95,23 @@ Event and property libraries can be easily imported into a Tracking Plan. Enter 
 
 ![](images/import_library_to_tracking_plan.gif)
 
-### Updating Libraries and Propagating Changes
+### Enabling Library Syncing
 
-Tracking Plan Libraries do not currently support syncing changes made to the Library down to the associated Tracking Plans. You can re-import a Library into a Tracking Plan which will overwrite and upsert new events or properties. Re-importing will **not** however remove properties or events removed from the library.
+When importing events from a Library, you can enable syncing to ensure that changes made to the Library are passed down to all "synced" Tracking Plans. Syncing is especially important when you want to make sure all your Tracking Plans define events consistently. For example, it's best practice to create separate tracking plans for mobile and web sources as these two sources share some but not all events. Library syncing is the best way to ensure that the shared events are consistently tracked across Tracking Plans, even as changes are made to the Library.
+
+To enable syncing, simply select the desired Library from the Tracking Plan import flow, and toggle the syncing option. Doing so will automatically select all events in the Library to be imported. Partial syncs are not supported as it would make it impossible to ensure complete compliance with the Library. 
+
+![](images/sync_library_flow.gif)
+
+When synced, events and properties from the synced Library cannot be edited and the Tracking Plan merge step is bypassed. Properties can however be added to synced events. Synced events cannot be removed unless the Library sync is removed. To unsync a library, click View Synced Libraries from the Tracking Plan and click the overflow menu to unsync the Library.
+
+> warning ""
+> All changes made to a synced library will immediately pass through to the Tracking Plans and may impact data deliverability
+
+![](images/unsync_library.png) 
+
+> warning ""
+> [Property Library](/docs/protocols/tracking-plan/#tracking-plan-property-libraries) syncing is **not** currently supported.
 
 ## Connect a Tracking Plan
 
@@ -286,7 +298,7 @@ To ensure the Track events you send to a Segment source are validated against th
 
 ![](images/pull_event_version.png)
 
-Next, add the event version number to the context object. For [analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js) track calls, you would instrument the event as in the example below. Note how the JSON objects for `context`, `protocols`, and `event_version` are nested.
+Next, add the event version number to the context object. For [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript) track calls, you would instrument the event as in the example below. Note how the JSON objects for `context`, `protocols`, and `event_version` are nested.
 
 ```js
 analytics.track('Order Completed', {

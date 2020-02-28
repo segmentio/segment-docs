@@ -60,7 +60,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.track('Clicked Button');
 ```
 
-When you call [`track`](/docs/connections/spec/track/) or one of its helper functions ([`trackLink`](/docs/connections/sources/catalog/libraries/website/analytics.js/#track-link,[`trackForm`](/docs/connections/sources/catalog/libraries/website/analytics.js/#track-form), we will call KISSmetrics' `record` with the exact same parameters.
+When you call [`track`](/docs/connections/spec/track/) or one of its helper functions ([`trackLink`](/docs/connections/sources/catalog/libraries/website/javascript/#track-link,[`trackForm`](/docs/connections/sources/catalog/libraries/website/javascript/#track-form), we will call KISSmetrics' `record` with the exact same parameters.
 
 The KISSmetrics javascript library automatically tracks a bunch of events (Visited Site, Ad Campaign Hit, Search Engine Hit, Form Submit, Pageview, etc.) These will all still work when you use KISSmetrics through Segment.
 
@@ -119,7 +119,7 @@ For example, if you're identifying people by their email address and they change
 ```javascript
 analytics.alias({
   previousId: 'old_email@aol.com',
-  userId: 'new_email@gmail.com'
+  userId: 'new_email@example.com'
 });
 ```
 
@@ -135,7 +135,7 @@ We don't recommend handling [`alias`](/docs/connections/spec/alias/) server side
 
 If you're already tracking anonymous users on the client side you'll need to pass the KISSmetrics identity from the browser to your servers in order to [`alias`](/docs/connections/spec/alias/) it to the new `userId`.
 
-First, use [`analytics.ready`](/docs/connections/sources/catalog/libraries/website/analytics.js#ready) to grab the KISSmetrics identity:
+First, use [`analytics.ready`](/docs/connections/sources/catalog/libraries/website/javascript#ready) to grab the KISSmetrics identity:
 
 ```javascript
 analytics.ready(function(){

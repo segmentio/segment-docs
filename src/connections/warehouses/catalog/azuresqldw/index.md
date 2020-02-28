@@ -1,13 +1,13 @@
 ---
-title: Azure SQL Data Warehouse Destination
+title: Azure Synapse Analytics Destination
 rewrite: true
 ---
 
-Azure's [SQL Data Warehouse](https://azure.microsoft.com/en-us/services/sql-data-warehouse/) is a fast, flexible, and secure analytics platform for the enterprise.
+Azure's [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/), previously known as Azure SQL Data Warehouse, is a limitless analytics service that brings together enterprise data warehousing and Big Data analytics.
 
 ## Getting Started
 
-There are four main steps to get started with Azure SQL Data Warehouse and Segment:
+There are four main steps to get started with Segment:
 
 1. Have an [Azure subscription](https://azure.microsoft.com/en-us/free/)
 2. Provision [SQL Data Warehouse](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal)
@@ -24,15 +24,15 @@ First, create a server login for Segment to use. This can be accomplished by run
 CREATE LOGIN Segment WITH PASSWORD = '<strong password>';
 ```
 
-Once this is done, no more action is needed for the `master` database. Next, connect to your SQL Data Warehouse's database in order to do some further configuration.
+Once this is done, no more action is needed for the `master` database. Next, connect to your Azure database in order to do some further configuration.
 
-Segment uses Azure Blob Storage to hold data that is being loaded into Azure SQL Data Warehouse. In order to facilitate this, a `MASTER KEY` is needed in order for credentials that Segment saves to the database to be encrypted.
+Segment uses Azure Blob Storage to hold data that is being loaded into Azure Synapse Analytics. In order to facilitate this, a `MASTER KEY` is needed in order for credentials that Segment saves to the database to be encrypted.
 
 ```sql
 CREATE MASTER KEY;
 ```
 
-**NOTE:** If you are using your SQL Data Warehouse for things besides Segment, it is possible this is already done. Either way, running the command another time will not hurt anything.
+**NOTE:** If you are using your Azure Synapse Analytics for things besides Segment, it is possible this is already done. Either way, running the command another time will not hurt anything.
 
 Next, create a new database user using the server login that was created previously:
 
@@ -52,7 +52,7 @@ Lastly, assign this new user a [resource allocation class](https://docs.microsof
 EXEC sp_addrolemember 'largerc', 'Segment';
 ```
 
-By default, Azure SQL Data Warehouse cannot be connected to from the public internet. In order for Segment to connect, a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/guides/warehouses/which-ips-should-i-whitelist/) is needed.
+By default, Azure Synapse Analytics cannot be connected to from the public internet. In order for Segment to connect, a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/connections/warehouses/faq/#which-ips-should-i-whitelist) is needed.
 
 ### Configure an Azure SQL Data Warehouse Destination in Segment
 
@@ -73,6 +73,6 @@ The default [resource allocation class](https://docs.microsoft.com/en-us/azure/s
 
 ## Troubleshooting
 
-### Segment is not able to connect to my Azure SQL Data Warehouse
+### Segment is not able to connect to Azure Synapse Analytics
 
-Make sure a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/guides/warehouses/which-ips-should-i-whitelist/) is configured.
+Make sure a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/connections/warehouses/faq/#which-ips-should-i-whitelist) is configured.

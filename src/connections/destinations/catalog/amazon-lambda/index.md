@@ -1,13 +1,15 @@
 ---
-rewrite: true
 title: Amazon Lambda Destination
+rewrite: true
 ---
 
-Segment makes it easy to send your data to AWS Lambda (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to AWS Lambda in the format they understand. [Learn more about how to use AWS Lambda with Segment.](/docs/connections/destinations/catalog/amazon-lambda)
+Segment makes it easy to send your data to AWS Lambda (and lots of other destinations). Once you've tracked your data using our open source [libraries](https://segment.com/libraries) we'll translate and route your data to AWS Lambda in the format they understand.
 
 [AWS Lambda](https://aws.amazon.com/lambda/) lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
 
 With Lambda, you can run code for virtually any type of application or backend service - all with zero administration. Just upload your code and Lambda takes care of everything required to run and scale your code with high availability. You can set up your code to automatically trigger from other AWS services or call it directly from any web or mobile app.
+
+[Read more about AWS Lambda on the Segment blog](https://segment.com/blog/unleashing-the-power-of-raw-data-with-amazon-lambda/).
 
 ## Getting Started
 
@@ -141,9 +143,10 @@ Select the "Trust Relationships" tab, then click the "Edit trust relationship" b
 Copy and paste the following into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or whatever custom external id you set in your AWS Lambda destination settings.
 `arn:aws:iam::595280932656:root` refers to Segment's AWS Account, and is what allows our Destination to access the role to invoke your Lambda.
 
-  Note: Source ID *can be found by navigating to Settings > API Keys from your Segment source homepage.*
+> note ""
+> **Note**: Source ID can be found by navigating to Settings > API Keys from your Segment source homepage.
 
-```
+```js
 {
   "Version": "2012-10-17",
   "Statement": [

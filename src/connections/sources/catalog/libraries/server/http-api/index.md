@@ -7,7 +7,7 @@ sourceCategory: 'Server'
 
 The Segment HTTP Tracking API lets you record analytics data from any website or application. The requests hit our servers, and we route your data to any destination you want!
 
-We have native [sources](docs/connections/sources/) for most use cases (Javascript, iOS, etc.) that are all built for high-performance and are open-source. But sometimes you may want to send to the HTTP API directly—that's what this reference is for.
+We have native [sources](/docs/connections/sources/) for most use cases (Javascript, iOS, etc.) that are all built for high-performance and are open-source. But sometimes you may want to send to the HTTP API directly—that's what this reference is for.
 
 ## Headers
 
@@ -63,8 +63,8 @@ POST https://api.segment.io/v1/identify
 }
 ```
 This call is identifying  the user by his unique User ID (the one you know him by in your database) and labeling him with `email`, `name`, and `industry` traits.
-<!--
 <table>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-anonymous-id.md %}
   {% include content/spec-field-context.md %}
   {% include content/spec-field-integrations.md %}
@@ -72,7 +72,6 @@ This call is identifying  the user by his unique User ID (the one you know him b
   {% include content/spec-field-identify-traits.md %}
   {% include content/spec-field-user-id.md %}
 </table>
--->
 
 Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
 
@@ -107,8 +106,8 @@ POST https://api.segment.io/v1/track
 `track` event properties can be anything you want to record. In this case, `name` and `revenue`.
 
 The `track` call has the following fields:
-<!--
 <table>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-anonymous-id.md %}
   {% include content/spec-field-context.md %}
   {% include content/spec-field-event.md %}
@@ -117,7 +116,6 @@ The `track` call has the following fields:
   {% include content/spec-field-timestamp.md %}
   {% include content/spec-field-user-id.md %}
 </table>
--->
 
 Find details on **best practices in event naming** as well as the **`track` method payload** in our [Spec](/docs/connections/spec/track/).
 
@@ -138,8 +136,8 @@ POST https://api.segment.io/v1/page
 }
 ```
 The `page` call has the following fields:
-<!--
 <table>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-anonymous-id.md %}
   {% include content/spec-field-context.md %}
   {% include content/spec-field-integrations.md %}
@@ -148,7 +146,6 @@ The `page` call has the following fields:
   {% include content/spec-field-timestamp.md %}
   {% include content/spec-field-user-id.md %}
 </table>
--->
 
 Find details on the **`page` payload** in our [Spec](/docs/connections/spec/page/).
 
@@ -173,8 +170,8 @@ POST https://api.segment.io/v1/screen
 
 The `screen` call has the following fields:
 
-<!--
 <table>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-anonymous-id.md %}
   {% include content/spec-field-context.md %}
   {% include content/spec-field-integrations.md %}
@@ -183,7 +180,6 @@ The `screen` call has the following fields:
   {% include content/spec-field-timestamp.md %}
   {% include content/spec-field-user-id.md %}
 </table>
--->
 
 Find details on the **`screen` payload** in our [Spec](/docs/connections/spec/screen/).
 
@@ -212,17 +208,16 @@ POST https://api.segment.io/v1/group
 ```
 The `group` call has the following fields:
 
-<!--
 <table>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-anonymous-id.md %}
   {% include content/spec-field-context.md %}
-  {% include content/spec-field-group-id.md %}}
+  {% include content/spec-field-group-id.md %}
   {% include content/spec-field-integrations.md %}
   {% include content/spec-field-timestamp.md %}
-  {% include content/spec-field-group-traits.md %}}
+  {% include content/spec-field-group-traits.md %}
   {% include content/spec-field-user-id.md %}
 </table>
--->
 
 Find more details about `group` including the **`group` payload** in our [Spec](/docs/connections/spec/group/).
 
@@ -246,15 +241,14 @@ POST https://api.segment.io/v1/alias
 ```
 The `alias` call has the following fields:
 
-<!--
 <table>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-context.md %}
   {% include content/spec-field-integrations.md %}
   {% include content/spec-field-previous-id.md %}
   {% include content/spec-field-timestamp.md %}
   {% include content/spec-field-user-id.md %}
 </table>
--->
 
 For more details on the `alias` call and payload, check out our [Spec](/docs/connections/spec/alias/).
 
@@ -304,7 +298,7 @@ POST https://api.segment.io/v1/batch
       "type": "identify",
       "userId": "971mj8mk7p",
       "traits": {
-        "email": "cindy@gmail.com",
+        "email": "cindy@example.com",
         "name": "Cindy Gonzalez",
         "age": 23
       },
@@ -331,6 +325,12 @@ POST https://api.segment.io/v1/batch
 ```
 
 <table>
+<tr>
+  <th>Field</th>
+  <th></th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
   <tr>
     <td>`batch` _Array_</td>
     <td>An array of `identify`, `group`, `track`, `page` and `screen` method calls. Each call **must** have an `type` property with a valid method name.</td>
@@ -393,5 +393,3 @@ When sending a HTTP call from a user's device, you can collect the IP address by
 ## Troubleshooting
 
 {% include content/troubleshooting-intro.md %}
-
-

@@ -4,8 +4,9 @@ title: The Segment Web App
 
 When you first log in, you go to your workspace. (If you're a member of several workspaces, you get to choose which one to go to.) Workspaces organize sets of sources and destinations
 
+{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299965?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: Segment App Overview" content="Want a video tour of the Segment workpsace? Head over to Segment University! (Must be logged in to access.)" %}
 
-### Whats a Workspace?
+### What's a Workspace?
 
 {% include content/whats-a-workspace.md %}
 
@@ -20,7 +21,7 @@ The first thing you see is a graph of the Sources and Destinations you have conn
 
 The graph on this overview page includes lines which can show you which Sources send data to which Destinations. If this is the first time you're looking at your workspace and you haven't set it up yet, it won't look quite like this.
 
-In the left navigation bar, you see the main parts of the Segment application: [Sources](docs/connections/sources/), [Destinations](docs/connections/destinations/), [Privacy](/docs/privacy-portal/), and [Personas](/docs/personas/) and [Protocols](/docs/protocols/) if your subscription includes them.
+In the left navigation bar, you see the main parts of the Segment application: [Sources](/docs/connections/sources/), [Destinations](/docs/connections/destinations/), [Privacy](/docs/privacy-portal/), and [Personas](/docs/personas/) and [Protocols](/docs/protocols/) if your subscription includes them.
 
 You can also find the Catalog in the left navigation, which lists the sources you can collect data from, and the destinations you can send data to.
 
@@ -44,7 +45,7 @@ The Destination tab lists all of the Destinations connected to your workspace. T
 
 ![](images/catalog.png)
 
-Next up we have the Catalog. The catalog includes a list of all [sources](docs/connections/sources/) and [destinations](docs/connections/destinations/) available in Segment. You can search either by category, or name. When you click on a catalog tile, the tile shows instructions on how to connect the tool to your Segment workspace.
+Next up we have the Catalog. The catalog includes a list of all [sources](/docs/connections/sources/) and [destinations](/docs/connections/destinations/) available in Segment. You can search either by category, or name. When you click on a catalog tile, the tile shows instructions on how to connect the tool to your Segment workspace.
 
 The Catalog is always growing, so check out the "New and Noteworthy" section from time to time to see what's new!
 

@@ -1,21 +1,21 @@
 - name: Getting Started
-  icon: icon-guides.svg
-  description: "Start here! What is Segment? How does it work? and other useful information."
+  icon: icon-getting-started.svg
+  description: "An overview of Segment, including the problems it solves, how it works, and its important features."
   path: /guides/
 
-- name: How-to Guides
-  icon: icon-academy.svg
-  description: "Learn more about the 'whys' and 'hows' of analytics. A great read if you're just getting started."
+- name: How-To Guides
+  icon: icon-guides.svg
+  description: "Over a dozen how-to guides to help you accomplish common tasks."
   path: /guides/how-to-guides/
 
 - name: App
   icon: icon-app.svg
-  description: "Learn your way around the app. Hook up data sources to tools, set up filtering, and more."
+  description: "Learn about the Segment Web App, where you configure your Segment workspace."
   path: /segment-app/
 
 - name: Connections
   icon: icon-connections.svg
-  description: "Collect data once, and integrate tools for analytics, growth, marketing and more."
+  description: "Get the details on how Segment sends data between Sources and Destinations."
   path: /connections/
 
 - name: Protocols
@@ -25,7 +25,7 @@
 
 - name: Personas
   icon: icon-personas.svg
-  description: "Improve your interactions by building audiences to personalize experiences."
+  description: "Improve customer interactions by building audiences to power personalized experiences."
   path: /personas/
 
 - name: Privacy

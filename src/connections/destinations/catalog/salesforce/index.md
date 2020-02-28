@@ -4,8 +4,6 @@ title: Salesforce Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 Segment's Salesforce destination allows you to identify leads without using SOAP APIs.
 
 **Use Cases**
@@ -157,16 +155,16 @@ In order to send custom traits, you must do the same steps as you had done for t
 Salesforce has documented strict validations on their semantic traits. We will trim all of those traits if they go over the limit. Please refer to their docs for [Account Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_account.htm#topic-title) and [Lead Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_lead.htm) to make sure you are sending the trait values under these limits if you do not want to see them trimmed off.
 
 ## Custom Actions
-If you need to manually configure how your Segment events interact with SFDC resources, you can do so using the [Actions](#actions) setting. This setting allows you to trigger standard CRUD operation (Create, Read, Update/Upsert, Delete) on your internal SFDC resources in response to your Segment events. You can configure as many of these actions as you would like. Each action must be associated with either a specific `track` event or **all** `identify` events. Actions can be further configured to map event properties to SFDC fields. Here's an example action configuration that will create a new Case in Salesforce in response to an **Issue Submitted** `track` event:
+If you need to manually configure how your Segment events interact with Salesforce resources, you can do so using the [Actions](#actions) setting. This setting allows you to trigger standard CRUD operation (Create, Read, Update/Upsert, Delete) on your internal SFDC resources in response to your Segment events. You can configure as many of these actions as you would like. Each action must be associated with either a specific `track` event or **all** `identify` events. Actions can be further configured to map event properties to SFDC fields. Here's an example action configuration that will create a new Case in Salesforce in response to an **Issue Submitted** `track` event:
 
 ![action example](images/action-example.png)
 
 ### Upsert Actions
-Upsert actions will either create or update a resource in SFDC. In order for these to work, you must provide an External Id Field in in your action configuration that we can use to determine if the resource exists or not. You must also map an event property to this field as a Field Mapping. Here's an example:
+Upsert actions will either create or update a resource in Salesforce. In order for these to work, you must provide Upsert Rules in in your action configuration that we can use to determine if there is an existing object to update. If an object is not found, a new object in SFDC is created. For a successful upsert Action, you must also map an event property to this field as a Field Mapping. Here's an example:
 
 ![upsert action example](images/upsert-action-example.png)
 
-In this example, we are creating or updating a Contact in SFDC based on whether or not the `userId` property in `identify` events maps to a Contact with a custom `UserId__c` field value in SFDC.
+In this example, we are creating or updating a Contact in Salesforce based on whether or not the `userId` property in `identify` events maps to a Contact with a custom `UserId__c` field value in SFDC.
 
 ## Troubleshooting
 

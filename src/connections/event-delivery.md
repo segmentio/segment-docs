@@ -2,21 +2,19 @@
 title: How do I check if data is reaching a destination?
 ---
 
-## Overview
-
 The Event Delivery tool exists to help customers understand if Segment has encountered any issues delivering your source data to destinations. 
 
-Segment sends billions of events to destinations every week. If we encounter any errors when attempting to deliver your data, we will report them in the Event Delivery tool.
+Segment sends billions of events to destinations every week. If we encounter any errors when attempting to deliver your data, we report them in the Event Delivery tool.
 
 Here is an example of what the Event Delivery tool looks like:
 
 ![](images/edelivery_jXaoBuF6.png)
 
-## When to use Event Delivery?
+## When to use Event Delivery
 
 Scenarios when this tool will be useful: 
 
-*   Data appears to be missing in your destination
+*   Data seems to be missing in your destination
     *   For example, you have Google Analytics set up as a destination and your recent data looks incomplete
 *   Setting up a destination for the first time 
     *   For example, you are connecting Google Analytics to your Node Source. Once you've entered your credentials and turned the destination on, you can use this feature to see whether events are successfully making it to GA in near realtime. 
@@ -29,7 +27,7 @@ Scenarios when this tool will be useful: 
 *   **Not available for Warehouses or Amazon S3** - These destinations work slightly differently to our other destinations, and aren't supported at this time.
 
 
-## Where to find it? 
+## Where do I find it? 
 
 Event Delivery can be accessed within any supported destination in the App. It's located on the tab under "Settings" for each destination. 
 
@@ -39,7 +37,7 @@ To get to any individuals destination view, you should navigate to the destinati
 
 ![](images/edelivery_feyzNqcy.png)
 
-## How to use Event Delivery?
+## How do I use Event Delivery?
 
 The UI consists of 3 key parts that report on Segment's ability to deliver your source data - Key Metrics, Error Details and Delivery Trends. Reporting on core functionality from top to bottom: 
 

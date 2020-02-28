@@ -23,7 +23,7 @@
 
           <div class="flex gutter gutter--large">
             <div class="flex__column flex__column--shrink">
-              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-ref="feedback[helpful]" data-active-class="button-fill--primary">
+              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-ref-button="helpful" data-active-class="button-fill--primary">
                 <span class="button__icon">
                   {% include icons/symbols/thumb-up.svg %}
                 </span>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="flex__column flex__column--shrink">
-              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-ref="feedback[unhelpful]" data-active-class="button-fill--gray">
+              <button class="button button--small button-fill button-fill--white button-fill--borderable" data-ref-button="unhelpful" data-active-class="button-fill--gray">
                 <span class="button__icon">
                   {% include icons/symbols/thumb-down.svg %}
                 </span>
@@ -50,7 +50,7 @@
       </div>
 
       <div class="flex__column flex__column--shrink">
-        {% include components/button-link.html text="Can we improve this doc? Send us feedback" href="https://segment.com/contact/website/" %}
+        {% include components/button-link.html text="Can we improve this doc? Send us feedback" href="mailto:docs-feedback@segment.com" %}
       </div>
     </div>
   </div>

@@ -46,7 +46,7 @@ Plugins are the basis for [Device-mode Destinations](/docs/connections/destinati
 
 Client SDK Plugins are used to augment Subscriptions and Streams by shipping code to the End User's Device via Segment's SDKs:
 
-- [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/)
+- [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)
 - [analytics-ios](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-destinations-using-device-mode)
 - [analytics-android](/docs/connections/sources/catalog/libraries/mobile/android/#sending-data-to-destinations)
 
@@ -56,7 +56,7 @@ Client SDK Plugins are an appropriate component if your source or destination re
 
 ### Web Plugins
 
-Web plugins are loaded into [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/).
+Web plugins are loaded into [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/).
 
 ### Mobile Plugins
 

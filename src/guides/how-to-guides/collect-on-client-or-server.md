@@ -4,7 +4,8 @@ title: Should I collect data on the client or server?
 
 One of the most common questions we receive is: "Should I use one of your client-side libraries or one of your server-side libraries?"
 
-This is such an important topic that we've written up an in-depth article in our Analytics Academy: [When to Track on the Client vs Server](https://segment.com/academy/collecting-data/when-to-track-on-the-client-vs-server/). It's worth a read!
+
+This is such an important topic that we’ve written up an in-depth article in our Analytics Academy:  [When to Track on the Client vs Server](https://segment.com/academy/collecting-data/when-to-track-on-the-client-vs-server/). It’s worth a read! Below, you can also read some quick logic around why you may want to choose either option.
 
 ### Client-side
 
@@ -42,14 +43,14 @@ Sensitive information is also best kept out of browsers. Any data you don't want
 
 ### Selecting Destinations
 
-Each Segment library allows an `integrations` object either as a top level object or nested in options object. [Check your library docs](https://segment.com/docs/connections/sources/) for details; look for the section titled ["Selecting Destinations"](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#selecting-integrations).
+Each Segment library allows an `integrations` object either as a top level object or nested in options object. [Check your library docs](https://segment.com/docs/connections/sources/) for details; look for the section titled ["Selecting Destinations"](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-integrations).
 
 This flag may be especially useful in Legacy source types, where an event might be triggered on both the client & server for various reasons. The following will cause the payload to be sent to all enabled tools EXCEPT Facebook Pixel:
 
 ```js
-    analytics.identify('025pikachu025', {
-      email: 'peekAtMe@email.poke',
-      name: 'Pikachu'
+    analytics.identify('user_123', {
+      email: 'jane.kim@example.com',
+      name: 'Jane Kim'
       }, {
         integrations: {
           'Facebook Pixel': false

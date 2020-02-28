@@ -16,7 +16,7 @@ To begin, you'll need to generate an API Key for the Segment Youtube plugin, whi
 
 Enable a new plugin by navigating to the settings for your Source, and clicking  **Plugins**. You can enable the YouTube plugin from this menu.
 
-![the plugins setting screen](../plugins-enable.png)
+![the plugins setting screen](docs/connections/sources/plugins-enable.png)
 
 **Note: At this time, only Javascript sources support plugins.**
 

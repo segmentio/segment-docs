@@ -6,7 +6,7 @@ sourceCategory: 'Mobile'
 ---
 
 
-This tutorial will help you start sending analytics data from your iOS app to Segment. Once you're done you'll be able to turn on [any of our destinations](docs/connections/destinations/) with the flip of a switch! No more waiting for App Store approval.
+This tutorial will help you start sending analytics data from your iOS app to Segment. Once you're done you'll be able to turn on [any of our destinations](/docs/connections/destinations/) with the flip of a switch! No more waiting for App Store approval.
 
 If you want to dive deeper at any point, check out the [iOS Library Reference](/docs/libraries/ios/).
 
@@ -133,4 +133,4 @@ Note, you should *not* check the box labeled "Serve advertisements within the ap
 
 ## What's Next?
 
-We just walked through the quickest way to get started with Segment using Analytics for iOS. You might also want to check out our full [Analytics for iOS reference](/docs/connections/sources/catalog/libraries/mobile/ios) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/website/tracking-api#api-methods) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Segment using Analytics for iOS. You might also want to check out our full [Analytics for iOS reference](/docs/connections/sources/catalog/libraries/mobile/ios) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http-api/) to get a sense for the bigger picture.

@@ -36,9 +36,9 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```js
 analytics.identify('ze8rt1u89', {
-  name: 'Zaphod Beeblebrox',
+  name: 'Zaphod Kim',
   gender: 'Male',
-  email: 'Zaphod@hotmail.com',
+  email: 'jane.kim@example.com',
   phone: '1-401-826-4421',
   address: {
     city: 'San Francisco',
@@ -103,9 +103,9 @@ When a user starts playback of a video, you should use our [Video Content Starte
 
 <table>
     <tr>
-      <th>Parsely Parameter</th>
-      <th>Segment Property</th>
-      <th>Data Type</th>
+      <td>**Parsely Parameter**</td>
+      <td>**Segment Property**</td>
+      <td>**Data Type**</td>
     </tr>
   <tr>
     <td>videoId</td>
@@ -182,9 +182,9 @@ When a playback of a video is interrupted, you should use our [Video Playback In
 
 <table>
     <tr>
-      <th>Parsely Parameter</th>
-      <th>Segment Property</th>
-      <th>Data Type</th>
+      <td>**Parsely Parameter**</td>
+      <td>**Segment Property**</td>
+      <td>**Data Type**</td>
     </tr>
   <tr>
     <td>videoId</td>

@@ -1,17 +1,14 @@
 ---
 title: Youbora Source
 beta: true
-private: true
 hidden: true
 ---
 
-This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+YOUBORA is the most advanced and holistic suite of integrated video analytics and business intelligence for broadcasters, OTTs, telcos and media companies to help you make data-driven, business, operational and technical decisions to drive performance and maximize revenue across your entire video service. The latest version of YOUBORA has been thought through from the ground up to deliver the most detailed intelligence for your service.
 
 This source is maintained by YOUBORA. For any issues with the source, you may [contact their team](https://nicepeopleatwork.com/contactus).
 
 _**NOTE:** Youbora is currently in private beta and this doc was last updated on July 2nd, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Youbora Destination and its documentation, and please [let us know](https://segment.com/help/contact) and your YOUBORA representative know!_
-
-YOUBORA is the most advanced and holistic suite of integrated video analytics and business intelligence for broadcasters, OTTs, telcos and media companies to help you make data-driven, business, operational and technical decisions to drive performance and maximize revenue across your entire video service. The latest version of YOUBORA has been thought through from the ground up to deliver the most detailed intelligence for your service.
 
 Adding YOUBORA as a Source to Segment will allow you to leverage YOUBORA data with other Segment collected data.
 

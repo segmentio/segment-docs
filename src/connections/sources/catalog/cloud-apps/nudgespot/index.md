@@ -8,7 +8,7 @@ Take your company's email analysis to the next level by **adding Nudgespot as a 
 In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Nudgespot data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Nudgespot with Segment.](/sources/nudgespot)
 
 ## Getting Started
-<span> </span>
+
 If you have previously enabled sending email events via the Nudgespot destination during our beta (using a project write key), you do not need to create new Nudgespot source. Your email data will continue to flow as normal.
 
 1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
@@ -41,9 +41,9 @@ Collections are the groupings of data we pull from your Source. In your warehous
 
 <table>
   <tr>
-    <th>Collection</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Collection**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>Email Delivered</td>
@@ -83,7 +83,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
 select *
 from nudgespot.email_delivered
 ```
-<span> </span>
+
 
 <table>
 </table> -->

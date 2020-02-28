@@ -2,7 +2,9 @@
 title: 'Spec: Screen'
 ---
 
-The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of `page`, in your mobile app, along with any properties about the screen. Calling `page` or [`screen`](/docs/connections/spec/screen/) in one of our [sources](docs/connections/sources/) is one of the first steps to getting started with Segment.
+The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of `page`, in your mobile app, along with any properties about the screen. Calling `page` or [`screen`](/docs/connections/spec/screen/) in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
+
+{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299973?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Screen Method" content="Check out our high-level overview of the Screen method in Segment University. (Must be logged in to access.)" %}
 
 Here's the payload of a typical `screen` call, with most [common fields](/docs/connections/spec/common/) removed:
 
@@ -26,11 +28,7 @@ And here's the corresponding Objective-C event that would generate the above pay
 Beyond the common fields, the `screen` call takes the following fields:
 
 <table>
-  <tr>
-    <th>Field</th>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-screen-name.md %}
   {% include content/spec-field-screen-properties.md %}
 </table>
@@ -86,14 +84,15 @@ Reserved properties we have standardized:
 
 <table>
   <tr>
-    <th>Property</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Property**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>`name`</td>
     <td>String</td>
-    <td>Name of the screen
-      <p>This is reserved for future use.</p></td>
+    <td>Name of the screen.
+
+      This is reserved for future use.</td>
   </tr>
 </table>

@@ -8,7 +8,7 @@ Take your company's marketing analysis to the next level by **adding Iterable as
 In your favorite BI or analytics tool, you'll be able to analyze all your cross-channel marketing campaigns in SQL or through drag-and-drop reports. And you'll be able to sync your Iterable data with event data you're already sending through Segment to analyze the down-funnel effects of your messaging. [Learn more about how you can use Iterable with Segment.](/sources/iterable) 
 
 ## Getting Started
-<span> </span>
+
 If you have previously enabled sending email events via the Iterable destination during our beta (using a project write key), you do not need to create new Iterable source. Your email data will continue to flow as normal.
 
 1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
@@ -47,9 +47,9 @@ Collections are the groupings of data we pull from your Source. In your warehous
 
 <table>
   <tr>
-    <th>Collection</th>
-    <th>Type</th>
-    <th>Description</th>
+    <td>**Collection**</td>
+    <td>**Type**</td>
+    <td>**Description**</td>
   </tr>
   <tr>
     <td>Email Delivered</td>
@@ -129,7 +129,7 @@ Collections are the groupings of data we pull from your Source. In your warehous
 select *
 from iterable.email_delivered
 ```
-<span> </span>
+
 
 <table>
 </table> -->

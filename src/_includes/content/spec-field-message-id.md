@@ -1,6 +1,6 @@
 <tr>
-  <td>`messageId`</td>
-  <td>*implicit*</td>
-  <td>String</td>
-  <td>Automatically collected by Segment, a unique identifier for each message that lets you find an individual message across the API</td>
+  <td markdown="span">`messageId`</td>
+  <td markdown="span">*implicit*</td>
+  <td markdown="span">String</td>
+  <td markdown="span">Automatically collected by Segment, a unique identifier for each message that lets you find an individual message across the API.</td>
 </tr>

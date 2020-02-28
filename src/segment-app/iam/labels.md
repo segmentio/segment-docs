@@ -3,7 +3,7 @@ title: Label-Based Access Control
 ---
 Labels allow workspace owners to assign permissions to users to grant them access to groups which represent collections of Sources or collections of Personas spaces.
 
-To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can edit labels.
+To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels for the entire workspace.
 
 ## Custom Environments
 By default, all workspaces include labels for Dev (development) and Prod (production) environments. Workspace owners can configure what these labels are applied to, and can create up to five custom environments.
@@ -16,7 +16,7 @@ To apply labels to Sources and Personas spaces, click the **Assign Labels** tab 
 
 Once a label is in use (either assigned to a resource or used to restrict permissions on a user), the label cannot be deleted. You must first manually remove the label from any resources and permissions before you can delete it.
 
-> **Note**: While only Workspace Owners can bulk-edit labels, Source and Space admins can edit the labels on sources and spaces they have access to from. To do this, go to the **Settings** tab for each item.
+> **Note**: While only Workspace Owners can bulk-edit labels, Source and Space admins can edit the labels on the sources and spaces they have access to. To do this, go to the **Settings** tab for each item.
 
 Workspace owners can also grant specific [Roles](roles/) access to specific labels. For example, you might give a Source Admin access to only Sources that have the `Prod` label.
 
@@ -24,6 +24,7 @@ Permissions can then be assigned to users in Access Management by label, on the 
 ![](images/labels-access-mgmt.png)
 
 ## Custom Labels
+
 > **Note**: All Segment workspaces can create up to five custom environment labels. Additional label types (in addition to environment labels) are available to Segment Enterprise Tier accounts.
 
 To create additional custom labels, a workspace owner can create new key types in the Labels screen. The workspace owner can customize any combination of labels to mirror how resources should be partitioned in their organization. For example, some organizations may prefer to restrict access on their Sources and Personas Spaces by brand or product area while other organizations may find it more useful to restrict their resources by tech stack or engineering department.
@@ -75,5 +76,5 @@ Then the following through users with Source Admin restricted with Labels will o
 | Bob                 | `environment:prod`, `product:truck`     | B                   |
 | Jane                | `product: car`                        | A, C                |
 
-9. *Can I grant a user permissions with OR statements?*
+10. *Can I grant a user permissions with OR statements?*
 You can only assign one set of additive labels on a per-user basis. However, to give a user who needs access to all sources labeled `brand:a` or `brand:b`, we recommend that you use Group permissions and assign this user to two separate groups, where one group has Source Admin access to `brand:a` and the other has Source Admin access to `brand:b`.

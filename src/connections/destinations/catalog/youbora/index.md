@@ -2,10 +2,6 @@
 title: Youbora Destination
 ---
 
-## Getting Started
-
-{% include content/connection-modes.md %}
-
 ### Web Destination
 
 When you toggle on Youbora for a website in Segment, this is what happens:
@@ -31,9 +27,9 @@ fields:
 
 <table>
     <tr>
-      <th>Youbora Parameter</th>
-      <th>Segment Property</th>
-      <th>Data Type</th>
+      <td>**Youbora Parameter**</td>
+      <td>**Segment Property**</td>
+      <td>**Data Type**</td>
     </tr>
   <tr>
     <td>'content.isLive'</td>
@@ -56,9 +52,9 @@ fields:
 
 <table>
     <tr>
-      <th>Youbora Parameter</th>
-      <th>Segment Property</th>
-      <th>Data Type</th>
+      <td>**Youbora Parameter**</td>
+      <td>**Segment Property**</td>
+      <td>**Data Type**</td>
     </tr>
   <tr>
     <td>'content.title'</td>
@@ -178,9 +174,9 @@ these events to the following Youbora video metadata fields:
 
 <table>
     <tr>
-        <th>Youbora Parameter</th>
-        <th>Segment Property</th>
-        <th>Data Type</th>
+        <td>**Youbora Parameter**</td>
+        <td>**Segment Property**</td>
+        <td>**Data Type**</td>
     </tr>
     <tr>
         <td>'ad.title'</td>

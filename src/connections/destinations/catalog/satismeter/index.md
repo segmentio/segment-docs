@@ -21,8 +21,6 @@ With SatisMeter you can:
 
 ## Get Started
 
-{% include content/connection-modes.md %}
-
 To get started you need to sign up to SatisMeter, and click the green button "Enable with Segment". This will link your SatisMeter project with your Segment project and enable the destination.
 
 !["Enable with segment" button](https://cloud.githubusercontent.com/assets/12846380/9251740/edd579ca-41d4-11e5-9ebe-732156cbdb2f.png)
@@ -33,7 +31,7 @@ Users need to be identified in order to target surveys at the right time.
 
 ## Client-side destination
 
-Identifying of users is done by calling an `analytics.identify` method using the [analytics.js](/docs/connections/sources/catalog/libraries/website/analytics.js/) library. The recommended traits are `name`, `email` and `createdAt`, however SatisMeter will collect any other traits you'd like to see next to feedback from your customers.
+Identifying of users is done by calling an `analytics.identify` method using the [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) library. The recommended traits are `name`, `email` and `createdAt`, however SatisMeter will collect any other traits you'd like to see next to feedback from your customers.
 
 Here's an example of the identify call:
 ```js

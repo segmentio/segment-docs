@@ -191,11 +191,23 @@
   table {
     border-collapse: collapse;
     text-align: left;
+    overflow-x: scroll;
+    display: block;
+
+    @include breakpoint(medium up) {
+      overflow: auto;
+      display: table;
+    }
 
     td {
       color: color(secondary-dark);
       vertical-align: top;
       line-height: 26px;
+      word-wrap: break-word;
+
+      @include breakpoint(medium up) {
+        word-wrap: normal;
+      }
     }
 
     thead {
@@ -256,5 +268,9 @@
 
   & > *:first-child {
     margin-top: 0;
+  }
+
+  .underline {
+    text-decoration: underline;
   }
 }

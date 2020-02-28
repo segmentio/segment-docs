@@ -4,8 +4,6 @@ title: Iterable Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 When you switch on the Iterable destination in your Segment dashboard, your data will start flowing into Iterable, which will trigger workflows and be available for analytics. You can locate your Iterable API key by going to Destinations → API Keys inside the Iterable app.
 
 **Use Cases**
@@ -20,10 +18,11 @@ When you switch on the Iterable destination in your Segment dashboard, your data
 
 ## Identify
 
-When you call `identify` with one of Segment's sources, we'll call Iterable's [update user endpoint](https://api.iterable.com/api/docs#!/users/updateUser_post_7), to add data for that particular user. You can also call `identify` to update user fields.
+When you call `identify` with one of Segment's sources, we'll call Iterable's [update user endpoint](https://api.iterable.com/api/docs#users_updateUser), to add data for that particular user. You can also call `identify` to update user fields.
 
-Iterable keys users by `email` or a user ID. This user ID will be the Segment `userId` if sent. Note that if you fail to send either of `userId` or `email`, Iterable won't accept the request and throws an error.
+Iterable keys users by `email` or a user ID. This user ID will be the Segment `userId` if sent. To use a Segment `userId` for identify calls, first call identify with both a `userId` and `email`. Iterable won't accept the request and throws an error if you fail to send one of either the `userId` or `email`.
 
+<!-- commented out because this functionality isn't currently working ZD#355518
 ### Merge Nested Objects
 
 
@@ -48,6 +47,7 @@ analytics.identify({
 ```
 
 This `identify` event would merge the `mobile` property for this user with any other settings that were previously a part of that users settings field.
+-->
 
 
 ## Track

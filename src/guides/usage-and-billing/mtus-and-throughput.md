@@ -25,12 +25,10 @@ Event based (mostly email sources like Klaviyo, Vero, Drip, etc.) _do create MTU
 
 ## How do I see my usage data?
 
-If you have questions about your data usage or how it relates to your bill, we recommend logging into your Segment workspace, clicking on the top left arrow in the navigation bar, and going to the Usage page within the Usage & Billing category.
+If you have questions about your data usage or how it relates to your bill, we recommend logging into your Segment workspace, navigating to the “Usage” page in the “Usage and Billing” section under “Settings”.
+On the “Usage” page, you will see what plan you’re on, what data volumes your plan includes, and how much data you’ve used during a billing period. If you have used data volumes past what your bill includes, the page will provide information about what volume of data was in overage and what your overage rate is.
 
-![](images/asset_ZvCX7wXJ.png)
-
-On that page you will see what plan you're on, what data volumes your plan includes, and how much data you used during a billing period. If you have used data volumes past what your bill includes, the page will provide information about what volume of data was in overage and what your overage rate is.
-
+You’ll also be able to see a cumulative, daily breakdown of data volumes by source for that billing period. You can access the cumulative, daily breakdown from the previous five billing periods or an overview of the last 12 months of data volumes by adjusting the billing period dropdown at the top of the page.
 
 ## What is the difference between an event and an object?
 
@@ -48,11 +46,6 @@ We allow for each workspace to send up to 250 API calls + objects per MTU. This 
 *   **Business plans** are eligible for custom limits.
 
 *   The vast majority of Segment customers use well under these limits.
-
-
-## How does my event and object volume impact my pricing?
-
-We allow for each workspace to send up to 250 API calls + objects per MTU. This means that on a plan with a 10,000 MTU limit you can send up to 2.5M API calls + objects per month. Most customers will never hit this limit; business plans are eligible for custom limits.
 
 
 ## Why is my MTU count different from what I see in my destinations/other tools?

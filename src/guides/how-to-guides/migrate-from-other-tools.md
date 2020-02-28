@@ -4,8 +4,8 @@ title: How do I migrate code from other analytics tools?
 
 Switching from your current client-side javascript event tracking to Segment is easy. Below you can find migration guides for the following tools:
 
- - Google Analytics
- - Mixpanel
+- Google Analytics
+- Mixpanel
 
 If you'd like us to add more tools or mobile/server-side examples to this guide [let us know](https://segment.com/help/contact/)!
 
@@ -124,7 +124,7 @@ analytics.page();
 
 ### Everything Else
 
-To see a full list of Google Analytics features and how they work through Segment read[our Google Analytics docs page](/docs/connections/destinations/catalog/google-analytics/#features).
+To see a full list of Google Analytics features and how they work through Segment read [our Google Analytics docs page](/docs/connections/destinations/catalog/google-analytics/#features).
 
 ## Mixpanel
 
@@ -162,7 +162,7 @@ becomes;
 analytics.identify('123');
 ```
 
-Mixpanel has the idea of Super Properties, which are user traits that get attached to every event that the user does. In Segment you can set Mixpanel Super Properties using our identify method. Super properties are only supported in client-side libraries [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js), [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios), [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android).
+Mixpanel has the idea of Super Properties, which are user traits that get attached to every event that the user does. In Segment you can set Mixpanel Super Properties using our identify method. Super properties are only supported in client-side libraries [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript), [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios), [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android).
 
 Here's an example:
 
@@ -202,7 +202,7 @@ analytics.alias('1234');
 
 ### Track Links
 
-If you are tracking links with Mixpanel's [track\_links](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.track_links)helper you can switch that code to the Segment [trackLink helper function](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#track-link) in [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js).
+If you are tracking links with Mixpanel's [track\_links](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.track_links)helper you can switch that code to the Segment [trackLink helper function](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track-link) in [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript).
 
 And here's an example:
 
@@ -224,7 +224,7 @@ analytics.trackLink(link, 'Clicked Free-Trial Link', {
 
 ### Track Forms
 
-If you are tracking forms with [Mixpanel's track\_forms helper](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.track_forms) you can switch that code to[the Segment trackForm helper function](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#track-form) in Analytics.js.
+If you are tracking forms with [Mixpanel's track\_forms helper](https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.track_forms) you can switch that code to[the Segment trackForm helper function](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track-form) in Analytics.js.
 
 And here's an example:
 

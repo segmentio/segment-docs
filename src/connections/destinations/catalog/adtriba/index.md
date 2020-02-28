@@ -1,4 +1,5 @@
 ---
+rewrite: true
 title: Adriba Destination
 ---
 

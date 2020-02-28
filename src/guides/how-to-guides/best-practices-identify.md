@@ -2,21 +2,19 @@
 title: What are best practices for identifying users?
 ---
 
-This tutorial will help you track newly registered users the right way. The process of shifting from an anonymous visitor to an identified user requires some special tracking.
+Tracking signups correctly is a key step in your marketing funnels. The process of shifting from an anonymous visitor to an identified user requires some special tracking. This tutorial will help you track newly registered users the right way.
 
-Tracking signups correctly is a key step in your marketing funnels and identifying those new users is important so their information can be sent to your sales, support and email tools.
-
-The best way to track new users is in client-side javascript on the welcome page after they signup, below we'll explain why.
+The best way to track new users is in client-side javascript on the welcome page after they signup. Below, we’ll explain why.
 
 ### Choosing a userId
 
-Every identified user must be assigned a unique userId so they can be tracked consistently across different browsers or devices. When a new user registers, they should be assigned a userId at that point. Usually this userId is the same as the id that identifies them in your database.
+Every identified user must be assigned a unique userId so they can be tracked consistently across different browsers or devices. When a new user registers, they should be assigned a userId at that point. Usually this userId is the same as the Id that identifies them in your database.
 
 Read [our identify docs](https://segment.com/docs/connections/spec/identify/#user-id) for more information on choosing the best userId.
 
 ### Identify the new user
 
-Once the userId exists for a new user two calls need to be made: [identify](/docs/connections/spec/identify) and [track](/docs/connections/spec/track). The calls must be made in that order, but you have some flexibility about when and where that happens.
+Once the userId exists for a new user, two calls need to be made: [identify](/docs/connections/spec/identify) and [track](/docs/connections/spec/track). The calls must be made in that order, but you have some flexibility about when and where that happens.
 
 ### Identify
 
@@ -94,13 +92,13 @@ Remember that [alias](/docs/connections/spec/alias) must be called before [id
 
 #### When and how often to call identify
 
-One of the most important things when it comes to tracking analytics is to identify the user. This is because when you call [identify](/docs/connections/spec/identify) with analytics.js, we will cache the `userId` in the browser cookie and store all the user traits in local storage. We do this so that all your subsequent [page](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#page) or [track](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#track) calls will have the user data appended and properly attributed.
+One of the most important things when it comes to tracking analytics is to identify the user. This is because when you call [identify](/docs/connections/spec/identify) with analytics.js, we will cache the `userId` in the browser cookie and store all the user traits in local storage. We do this so that all your subsequent [page](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) or [track](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track) calls will have the user data appended and properly attributed.
 
 Since `analytics.js` puts the `userId`, `anonymousId`, and traits in localStorage, you will want to be sure to call `identify` on the client if you are passing in the UUID value for the `userId` on the server. This way, subsequent `track` and `page` calls will stamp the `userId` value passed through the client-side `identify` call.
 
-**Note**: The user data will remain cached until you explicitly clear the browser cache or call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#reset-logout).
+**Note**: The user data will remain cached until you explicitly clear the browser cache or call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout).
 
-So don't forget to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#reset-logout) upon user log out!
+So don't forget to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) upon user log out!
 
 Our recommendation for when and how often you should call [identify](/docs/connections/spec/identify) is as follows:
 

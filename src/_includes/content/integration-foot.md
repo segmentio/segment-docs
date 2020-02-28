@@ -1,10 +1,10 @@
-<hr/>
 <!-- in the file we're pulling from the API, "name" corresponds with the path to the yml blob for a specific destination.-->
 {% assign currentSlug = page.url | split: "/" | last %}
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
+{% if currentIntegration %}
 
 {% if currentIntegration.platforms.server == true %}
-{% unless page.hide-personas-parital%}
+{% unless page.hide-personas-partial == true %}
 
 ## Personas
 
@@ -18,7 +18,7 @@ When the audience is first created an identify call is sent for every user in th
 
 {% endif %}
 
-
+{% unless page.rewrite == true %}
 ## Supported Sources and Connection Modes
 {% if currentIntegration.components.size > 0 %}
 {% include content/connection-modes.md %}
@@ -28,14 +28,17 @@ To learn more about about Connection Modes and what dictates which we support, [
 {% endif %}
 
 {% if currentIntegration.browserUnbundlingSupported == true and currentIntegration.browserUnbundlingPublic == true %}
-We offer an optional **Cloud-based** Connection Mode for **Web** data with {{ currentIntegration.display_name }}. As a reminder, this removes the {{ currentIntegration.display_name }} javascript library from your site, improving performance.
+  We offer an optional **Cloud-based** Connection Mode for **Web** data with {{ currentIntegration.display_name }}. As a reminder, this removes the {{ currentIntegration.display_name }} javascript library from your site, improving performance.
 {% endif %}
 
-{% if currentIntegration.platforms.mobile == true and destination.platforms.server == true %}}
-Segment offers an *optional* **Device-based** Connection Mode for **Mobile** data with {{ currentIntegration.display_name }}. If you'd like to use those features that require client-based functionality, follow the steps above to ensure you have packaged the {{ currentIntegration.display_name }} SDK with Segment's.
-{% else %}
-This destination *requires* a **Device-based** Connection Mode for **Mobile** data. Follow the steps above to ensure you have packaged the {{ currentIntegration.display_name }} SDK with Segment's.
+{% if currentIntegration.platforms.mobile == true %}
+  {% if currentIntegration.platforms.server == true %}
+  Segment offers an *optional* **Device-based** Connection Mode for **Mobile** data with {{ currentIntegration.display_name }}. If you'd like to use those features that require client-based functionality, follow the steps above to ensure you have packaged the {{ currentIntegration.display_name }} SDK with Segment's.
+  {% else %}
+  This destination *requires* a **Device-based** Connection Mode for **Mobile** data. Follow the steps above to ensure you have packaged the {{ currentIntegration.display_name }} SDK with Segment's.
+  {% endif %}
 {% endif %}
+{% endunless %}
 
 ## Settings
 
@@ -50,13 +53,15 @@ Segment lets you change these destination settings from your Segment dashboard w
   {% endunless %}
 {% endfor %}
 
-{% assign oldname = currentIntegration.slug | capitalize %}
-{% if currentIntegration.display_name != oldname %}
+{% if currentIntegration.previous_names.size > 1 %}
 
 ## Adding {{ currentIntegration.display_name }} to the integrations object
 
-To add {{ currentIntegration.display_name }} to the `integrations` JSON object (for example, <a href="https://segment.com/docs/guides/general/filtering-data/#filtering-with-the-integrations-object">to filter data from a specific source</a>), use one of the {{ currentIntegration.previousNames.length }} valid names for this integration:
-{% for name in currentIntegration.previousNames %}
-        <li><code>{{name}}</code></li>
-    {% endfor %}
+To add {{ currentIntegration.display_name }} to the `integrations` JSON object (for example, [to filter data from a specific source](/docs/guides/filtering-data/#filtering-with-the-integrations-object)), use one of the following valid names for this integration:
+
+{% for valid_name in currentIntegration.previous_names %}
+- {{ valid_name }}
+{% endfor %}
+{% endif %}
+
 {% endif %}

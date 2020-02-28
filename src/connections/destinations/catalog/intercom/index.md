@@ -79,7 +79,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 ```javascript
 analytics.identify('su3r73', {
   name: 'Iñigo Montoya',
-  email: 'avenger@gmail.com',
+  email: 'avenger@example.com',
   company: {
     id: '123',
     name: 'Iñigo & Friends Holding Company'
@@ -311,7 +311,7 @@ Analytics.with(context).identify("123", traits, options);
 
 #### Identity verification plus filtering via Destinations Object
 
-If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/#selecting-integrations), the context object will look like this:
+If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-integrations), the context object will look like this:
 
 ```json
 {
@@ -469,5 +469,3 @@ Make sure those projects are the same.
 Intercom only allows a total of [120 unique event names](http://docs.intercom.io/Intercom-for-user-analysis/Tracking-User-Events-in-Intercom#events-faqs). That means if you are sending Segment more than 120 unique event names, Intercom will only accept the first 120 events that hit their servers and the rest will throw an error.
 
 If you want to prevent some of your events from being passed to Intercom and thus prevent the error, you can filter out Intercom in those events using the [Selecting Destinations](https://segment.com/docs/guides/best-practices/should-i-instrument-data-collection-on-the-client-or-server/#selecting-destinations) feature available on all of our libraries.
-
-{% include content/personas.md %}

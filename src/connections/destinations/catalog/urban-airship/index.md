@@ -4,9 +4,6 @@ title: UrbanAirship Destination
 ---
 The Urban Airship destination code is open sourced on Github. Feel free to check it out: [Android](https://github.com/urbanairship/android-segment-integration), [iOS](https://github.com/urbanairship/ios-segment-integration)
 
-## Getting Started
-
-{% include content/connection-modes.md %}
 
 ## Screen
 

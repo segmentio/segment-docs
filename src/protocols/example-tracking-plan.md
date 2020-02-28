@@ -20,7 +20,7 @@ Our core user lifecycle is:
 4.  Destination Enabled
 5.  Subscription Started
 6.  Subscription Upgraded
-7.  Subscription Upgraded
+7.  Subscription Downgraded
 
 ### User Signed Up
 

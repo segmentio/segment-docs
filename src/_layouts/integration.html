@@ -7,7 +7,7 @@ layout: default
     <div class="docs__aside stage__aside">
       {% include_cached navbar/logo.html %}
 
-      {% include menu/menu-{{ page.integration_type }}.html %}
+      {% include_cached menu/menu-{{ page.integration_type }}.html %}
     </div>
 
     <main class="docs__body stage__body">
@@ -15,6 +15,7 @@ layout: default
         <div class="search">
           {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
         </div>
+
 
         {% include_cached navbar/navbar-mobile.html %}
       </div>
@@ -53,8 +54,18 @@ layout: default
 
           <div class="integration__body page__body">
             <div class="markdown">
+
+              {% if page.integration_type == 'source' %}
+                {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
+                {{ cloud-app-note | markdownify }}
+              {% endif %}
               {{ content }}
+              {% if page.integration_type == 'destination' %}
+                {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
+                {{ integration-foot | markdownify }}
+              {% endif %}
             </div>
+            <p><i style="color: #a5b0ba;font-size: small;">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>
 
             {% if page.contributors %}
               {% include components/avatar.html contributors=page.contributors %}
@@ -70,11 +81,19 @@ layout: default
     <div class="docs__sidebar stage__sidebar">
       {% include_cached navbar/nav.html %}
 
-      <div class="sidebar sidebar--sticky">
+      <div class="sidebar sidebar--sticky sidebar--scroll">
         {%- unless page.hide_toc -%}
-          <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
-            {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
-          </div>
+          {% if page.integration_type == 'destination' %}
+            {% assign toc_foot = integration-foot | markdownify %}
+            {% assign toc_content = content | append: toc_foot %}
+            <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+              {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=toc_content h_min=2 h_max=2 %}
+            </div>
+          {% else %}
+              <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+                {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
+              </div>
+          {% endif %}
         {%- endunless -%}
 
         {% if page.related %}

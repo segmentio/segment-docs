@@ -4,8 +4,6 @@ title: Keen Destination
 
 ## Getting Started
 
-{% include content/connection-modes.md %}
-
 When you toggle on Keen in Segment, this is what happens:
 
 + Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading keen.js onto your page. This means you should remove Keen's snippet from your page.
@@ -40,7 +38,7 @@ When you call `track` on on the server-side, we route the event to Keen.
 
 If you make the following Segment call using any of the server-side sources,
 ```javascript
-analytics.track('user@gmail.com', 'Purchased', {
+analytics.track('user@example.com', 'Purchased', {
     item: 'T-Shirt',
     revenue: 19.99
 });
@@ -52,7 +50,7 @@ We will forward the following to Keen:
 * Event Properties:
 ```javascript
 {
-    userId: 'user@gmail.com'
+    userId: 'user@example.com'
     item: 'T-Shirt',
     revenue: 19.99
 }

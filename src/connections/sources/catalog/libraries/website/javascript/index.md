@@ -1,14 +1,15 @@
 ---
-title: Analytics.js Source
+title: Analytics.js (Javascript) Source
 sourceTitle: 'JavaScript'
 sourceCategory: 'Website'
+redirect_from: '/connections/sources/catalog/libraries/website/analytics.js/'
 ---
 
-Analytics.js makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
+Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
 ## Getting Started
 
-Head over to our [`analytics.js` QuickStart Guide](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/) which walks you through adding Analytics.js to your site in just a few minutes. Once you've installed the library, read on for the detailed API reference!
+Head over to our [`analytics.js` QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) which walks you through adding Analytics.js to your site in just a few minutes. Once you've installed the library, read on for the detailed API reference!
 
 ## Identify
 
@@ -144,7 +145,7 @@ The [`page`](/docs/connections/spec/page/) method lets you record page views on 
 
 Because some destinations require a `page` call to instantiate their libraries, **you must call `page`** at least once per page load!  You may call it more than once if needed, (eg, on virtual page changes in a single page app).
 
-A `page` call is included by default as the final line in the `analytics.js` [snippet](/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet). You may modify this `page` call within the guidelines below.
+A `page` call is included by default as the final line in the `analytics.js` [snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet). You may modify this `page` call within the guidelines below.
 
 `page` method definition:
 
@@ -188,7 +189,7 @@ The `page` call has the following fields:
 </table>
 
 
-### Default Properties
+### Default Page Properties
 
 A few properties are automatically added to each `page` call.
 
@@ -228,7 +229,7 @@ analytics.page('Pricing', {
 
 ## Group
 
-The `group` method associates an [identified user](/docs/connections/sources/catalog/libraries/website/analytics.js/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
+The `group` method associates an [identified user](/docs/connections/sources/catalog/libraries/website/javascript/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
 
 This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
@@ -291,9 +292,10 @@ This is an advanced method, but it is required to manage user identities success
 
 `alias` method definition:
 
-```
+```js
 analytics.alias(userId, [previousId], [options], [callback]);
 ```
+
 The `alias` call has the following fields:
 
 <table>
@@ -327,7 +329,7 @@ For more details about `alias`, including the **`alias` call payload**, check ou
 
 ## Ready
 
-The `ready` method allows you to pass in a callback that is called once all  enabled destinations load, and once `analytics.js` finishes initializing. It's like jQuery's `ready` method, except for destinations.
+The `ready` method allows you to pass in a callback that is called once all enabled destinations load, and once `analytics.js` finishes initializing. It's like jQuery's `ready` method, except for destinations.
 
 `ready` is still invoked if a destination throws an error during initialization, such as due to an expired API key or incorrect settings configuration. Doing so prevents blocking code listening for the `ready` callback.
 
@@ -365,21 +367,21 @@ The `ready` method has the following fields:
 Here are the query parameters to use:
 
 | param | description | triggers |
-|---|----|----|
-|`ajs_uid` |  The userId to pass to an identify call. | This triggers an `identify` call. |
-|`ajs_event` |The event name to pass to a track call. | This triggers a `track` call.  |
-|`ajs_aid` |The anonymousId to set for the user.|This triggers an `analytics.user().anonymousId()` call.|
-|`ajs_prop_<property>` | A property to pass to the track call | This won't implicitly trigger an event and is dependent on you also passing `ajs_event` - this property  be included in the resulting `track` call |
-|`ajs_trait_<trait>` | A trait to pass to the identify call | This won't implicitly trigger any call and is dependent on you also passing `ajs_uid` - this trait is included in the resulting `identify` call |
+| ----- | ----------- | -------- |
+|       |             |          |
+| `ajs_uid` |  The userId to pass to an identify call. | This triggers an `identify` call. |
+| `ajs_event` |The event name to pass to a track call. | This triggers a `track` call.  |
+| `ajs_aid` |The anonymousId to set for the user.|This triggers an `analytics.user().anonymousId()` call.|
+| `ajs_prop_<property>` | A property to pass to the track call | This won't implicitly trigger an event and is dependent on you also passing `ajs_event` - this property  be included in the resulting `track` call |
+| `ajs_trait_<trait>` | A trait to pass to the identify call | This won't implicitly trigger any call and is dependent on you also passing `ajs_uid` - this trait is included in the resulting `identify` call |
 
 So for example, this URL:
 
-```
+```text
 http://segment.com/?ajs_uid=123456789abcd&ajs_event=Clicked%20Email&ajs_aid=abc123&ajs_prop_emailCampaign=First+Touch&ajs_trait_name=Karl+Jr.
-
 ```
 
-it would trigger the following events on the page:
+would trigger the following events on the page:
 
 ```js
 analytics.identify('123456789abcd', { name: 'Karl Jr.' });
@@ -397,10 +399,9 @@ An `integrations` object may be passed in the `options` of `alias`, `group`, `id
 An example showing how to send a single message only to Intercom and Google Analytics:
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu',
-  type: 'electric'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
 }, {
   integrations: {
     'All': false,
@@ -410,15 +411,14 @@ analytics.identify('025pikachu025', {
 });
 ```
 
-`'All': false` flags that no destinations should receive data by default. This flag is superseded by any destination specific options in the integrations object.
+`'All': false` tells Segment not to send data to _any_ destinations by default, unless they're explicitly listed as `true` in the next lines.
 
 Conversely, an example how to send a single message to all integrations **except** Intercom and Google Analytics:
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu',
-  type: 'electric'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
 }, {
   integrations: {
     'Intercom': false,
@@ -437,7 +437,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 The `.load` method in analytics.js (the second line of the snippet) can also be modified to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations)), then we only load the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
-**IMPORTANT:** In order to leverage this feature, please ensure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/analytics.js/quickstart/#step-1-copy-the-snippet)
+**IMPORTANT:** In order to leverage this feature, please ensure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
 
 An example:
 
@@ -449,7 +449,7 @@ This way, you can conditionally load integrations based on what customers opt in
 
 A pseudocode example:
 
-```
+```js
 onConsentDialogClosed(function(consentedTools){
   analytics.load('writekey', { integrations: consentedTools })
 })
@@ -539,8 +539,8 @@ analytics.user().anonymousId('ABC-123-XYZ');
 Or in the `options` object of [`identify`](/docs/connections/spec/identify), [`page`](/docs/connections/spec/page), or [`track`](/docs/connections/spec/track) calls, like this:
 
 ```js
-analytics.identify('025pikachu025', {
-  name: 'Pikachu'
+analytics.identify('user_123', {
+  name: 'Jane Kim'
 }, {
   anonymousId: 'ABC-123-XYZ'
 });
@@ -564,7 +564,7 @@ Keep in mind that setting the `anonymousId` in `analytics.js` does not overwrite
 A user's `anonymousId` refreshes on any of the following conditions:
 
 * A user clears their cache or cookies
-* [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/analytics.js//#reset-logout) is called during in the user's browser session
+* [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript//#reset-logout) is called during in the user's browser session
 * `analytics.identify()` is called with a userId that differs from the current userId
 
 
@@ -724,12 +724,12 @@ When enabled, analytics.js automatically retries network and server errors. With
 * Support offline tracking. analytics.js queues your events and delivers them when the user comes back online.
 * Better handle network issues. If there happens to be a time where your application can't connect to Segment's API, we'll continue to store the events on the browser to ensure you don't lose any data.
 
-Analytics.js stores events in localStorage (falling back to in-memory storage when localStorage is unavailable), and retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. You can see more details about the retry logic [here](/docs/connections/destinations/catalog/#retries).
+Analytics.js stores events in localStorage (falling back to in-memory storage when localStorage is unavailable), and retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. You can see more details about the retry logic [here](/docs/connections/destinations/#retries).
 
 
 ## Cross-Domain Analytics
 
-[Cross-Domain Analytics](/docs/connections/sources/catalog/libraries/website/cross-domain) allows businesses to measure customer activity across their digital properties, without exposing user data to third parties. For example, if you have multiple brands, content properties, or marketing mini-sites, you likely want to learn how cross-domain browsing impacts your revenue.
+[Cross-Domain Analytics](/docs/connections/sources/cross-domain/) allows businesses to measure customer activity across their digital properties, without exposing user data to third parties. For example, if you have multiple brands, content properties, or marketing mini-sites, you likely want to learn how cross-domain browsing impacts your revenue.
 
 
 ## Cross-Subdomain Analytics
@@ -765,7 +765,7 @@ Within the `options` dictionary, a sub-dictionary, `context`, exists. The contex
 
 Consider this identify event:
 
-```
+```js
 analytics.identify('12091906-01011992', {
     plan_id: 'Paid, Tier 2'
     email: 'grace@usnavy.gov'
@@ -774,7 +774,7 @@ analytics.identify('12091906-01011992', {
 
 The traits on this event are `plan_id`. If you want these traits to appear on a subsequent track or page event that this user triggers, you can get this association by passing those traits into `context.traits` as follows:
 
-```
+```js
 analytics.track('Clicked Email', {
   	emailCampaign: 'First Touch'
   },
@@ -901,7 +901,7 @@ There should be no noticeable impact to your data flow. You may notice analytics
 ### How are properties with `null` and `undefined` values treated?
 We use the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:
 
-```
+```js
 console.log(JSON.stringify({ x: null, y: 6 }));
 // expected output: "{"x":null,"y":6}"
 

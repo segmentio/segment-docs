@@ -2,14 +2,11 @@
 title: Aircall Source
 ---
 
-
 Connect [Aircall](https://aircall.io) with Segment to bring Aircall events and phone call data to your data warehouse. Improve your knowledge of customer touchpoints by leveraging call activity.
 
-This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This source is maintained by Aircall. For any issues with the source, please [reach out to their team](mailto:support@aircall.io).
 
-This source is maintained by Aircall. For any issues with the source, please [reach out to their team](support@aircall.io).
-
-_**NOTE:** The Aircall Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on October 4, 2019. If you are interested in joining their beta program or have any feedback to help improve the Aircall Source and its documentation, please [let  their team know](support@aircall.io)!_
+_**NOTE:** The Aircall Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on October 4, 2019. If you are interested in joining their beta program or have any feedback to help improve the Aircall Source and its documentation, please [let  their team know](mailto:support@aircall.io)!_
 
 ## Getting Started
 
@@ -73,7 +70,7 @@ If the integration is successful, you will see a message that says "Authenticati
 
 Your integration is active! Now just connect the Aircall number(s) that you would like to be active for this integration and, that's it! You're all set and ready to get the most out of your Aircall-Help Segment integration.
 
-Need a little more help? No problem! Just contact our [Support Team](support@aircall.io), we would be happy to help!
+Need a little more help? No problem! Just contact our [Support Team](mailto:support@aircall.io), we would be happy to help!
 
 ## Events
 

@@ -25,7 +25,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -49,7 +49,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -83,7 +83,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -107,7 +107,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -130,7 +130,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -150,7 +150,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -178,7 +178,7 @@ When you create a deletion request, for each affected source that has webhooks e
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json

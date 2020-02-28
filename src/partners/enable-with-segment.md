@@ -1,12 +1,15 @@
 ---
-title: Use OAuth to Build a Two-Click Enable Flow
+title: Enable with OAuth
 ---
 
+> info ""
 > If you're a customer who just wants to build a simple script or app against a single workspace, you may want to use [Workspace Access Tokens](/docs/config-api/authentication).
+
+Enable with OAuth, supported with our [Config API](/docs/config-api), allows partners to build seamless flows for customers to implement and enable integrations within their workspace. This is a [post-launch requirement](/docs/partners/#post-launch) for a partner to graduate from public beta to public.
 
 ## Concepts
 
-Segment supports OAuth with our [Config API](/docs/config-api) to enable partners to build seamless flows for enabling and monitoring instances of their integration on mutual customers' workspaces.
+Before getting started with your implementation, it's important to understand the below concepts.
 
 ### Apps
 
@@ -108,7 +111,7 @@ If you use a standard OAuth library in your programming language, all of this is
 2. If the user is logged out, Segment redirects to `https://app.segment.com/login`
 3. If the user is logged in, Segment redirects to `https://app.segment.com/authorize`
 4. If user consents, Segment redirects with a code to your redirect_uri `http://localhost:8888/auth/segment/callback`. This app listens for this request and runs step #5 below.
-5. You exchange the code with for an install token from `https://id.segmentapis.com/oauth2/token`
+5. You exchange the code with for an install token from `https://id.segmentapis.com/oauth2/token`. The body of this POST request should include the code you received and your `redirect_uri`. Include your client secret and client id in a basic authorization header.
 6. You save the access token, install name, workspace name and source name for the user.
 
 At the end of a successful flow you get an "Install Token". If you passed in the scope as `destination/clearbrain` the user is prompted to select a source on which to install your Enable With Segment App, and that source is returned to you as well.
@@ -210,7 +213,7 @@ $ curl \
 
 If you created the app with any of these scopes, and then updated the scope in index.js at the top to match it, you can uncomment the lines around sourceList in index.js to see an example of how you could list all sources on the users workspace.
 
-## FAQ and Troubleshooting
+## FAQs
 
 ### What should the exact destination slug word be?
 

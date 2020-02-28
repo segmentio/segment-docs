@@ -7668,7 +7668,7 @@ destinations:
     description: |-
       Select this option if you would like Segment to automatically load the [Hubspot Forms SDK](https://knowledge.hubspot.com/articles/KCS_Article/Forms/Where-can-I-find-the-embed-code-for-my-forms) onto your site. This will offload the manual work required to add the embed code to your site's header.
 
-      **Important:** The Forms API expects that the script is loaded onto your page **synchronously** but analytics.js is loaded **asynchronously**. To prevent errors, please ensure you are interacting with the Forms API inside an [analytics.ready](https://segment.com/docs/sources/website/analytics.js/#ready) callback.
+      **Important:** The Forms API expects that the script is loaded onto your page **synchronously** but analytics.js is loaded **asynchronously**. To prevent errors, please ensure you are interacting with the Forms API inside an [analytics.ready](https://segment.com/docs/sources/website/javascript/#ready) callback.
     settings: []
   - name: portalId
     display_name: Hub ID

@@ -1,27 +1,45 @@
 BIN := ./node_modules/.bin
 
 # Core...
-JEKYLL_ENV ?= development
+JEKYLL_ENV = 'development'
+ifeq ('${BUILDKITE_BRANCH}','master')
+JEKYLL_ENV := 'production'
+endif
+
+ifeq ('${BUILDKITE_BRANCH}','staging')
+JEKYLL_ENV := 'staging'
+endif
+
+# Laura's convenience command because Reasons
+docs: dev
 
 .PHONY: dev
 dev: node_modules vendor/bundle
-	@npx typewriter
 	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
 		"$(BIN)/webpack --mode=development --watch" \
-		"bundle exec jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
+		"bundle exec jekyll clean && bundle exec jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
 
 .PHONY: intialize-work-dir
 intialize-work-dir:
 	@mkdir -p _site
 	@chmod -R 777 _site/
-	@bundle install
+	@mkdir vendor
+	@chmod -R 777 vendor/
+	@bundle install --path=vendor
 
 .PHONY: build
 build: node_modules vendor/bundle
-	@npx typewriter
+	@echo "Jekyll env: ${JEKYLL_ENV}"
 	@chown -R jekyll /workdir
+	@chmod -R 777 /workdir
+	@echo "env: ${JEKYLL_ENV}"
 	@$(BIN)/webpack --mode=production
-	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build
+	@JEKYLL_ENV=${JEKYLL_ENV} bundle exec jekyll build --trace
+	@if [ '${BUILDKITE_BRANCH}' == 'staging' ]; then echo "updating sitemap.xml..." && sed -i -r 's/segment.com/segment.build/g' ./_site/sitemap.xml; fi;
+
+.PHONY: upload-docs
+upload-docs:
+	@scripts/upload-docs
 
 .PHONY: package
 package: build
@@ -39,11 +57,23 @@ catalog: vendor/bundle
 sidenav: vendor/bundle
 	@node scripts/nav.js
 
+.PHONY: zip-artifacts
+zip-artifacts:
+	@tar czf build_package.tar.gz _site
+
+.PHONY: unzip-artifacts
+unzip-artifacts:
+	@tar -xzf build_package.tar.gz _site
+
 .PHONY: typewriter
 typewriter: npx typewriter
 
 .PHONY: deps
 deps: node_modules vendor/bundle
+
+.PHONY: env
+env:
+	@sh scripts/env.sh
 
 .PHONY: clean
 clean:
@@ -68,8 +98,27 @@ node_modules: package.json yarn.lock
 	yarn --frozen-lockfile
 
 .PHONY: vendor/bundle
-vendor/bundle: Gemfile Gemfile.lock
-	bundle install
+vendor/bundle:
+	@export BUNDLE_PATH="vendor/bundle"
+	@mkdir -p vendor && mkdir -p vendor/bundle
+	@chmod -R 777 vendor/
+	@bundle install --path=vendor/bundle
+
+
+.PHONY: lint
+lint: node_modules
+	@echo "Checking yml files..."
+	@npx yamllint src/_data/**/*.yml
+	# @echo "Checking markdown files..."
+	# @npx remark ./src --use preset-lint-markdown-style-guide
+
+.PHONY: test
+test: lint
+
+.PHONY: check-spelling
+check-spelling:
+	@echo 'Check spelling in markdown files..."
+	@npx mdspell 'src/**/*.md' -r --en-us -h
 
 .PHONY: docker-dev
 docker-dev:
@@ -78,7 +127,7 @@ docker-dev:
 .PHONY: docker-build
 docker-build:
 	@$(DOCKER_TTY) make build
-	bundle install
+	bundle install --path=vevendor
 
 #.PHONY: docs
 #docs: node_modules
@@ -86,7 +135,7 @@ docker-build:
 #	make seed && \
 #	make build && \
 #	docker build . -t segment-docs:latest && \
-#	echo "Running segment docs at http://localhost:4000/docsv2/" && \
+#	echo "Running segment docs at http://localhost:4000/docs/" && \
 #	docker run -p 4000:80 segment-docs:latest
 #
 #.PHONY: build
@@ -110,6 +159,7 @@ docker-build:
 #catalog:
 #	bundle exec rake catalog:update
 #
+# old env command
 #.PHONY: env
 #env:
 #	gem install bundler

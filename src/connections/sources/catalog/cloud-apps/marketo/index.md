@@ -1,13 +1,13 @@
 ---
 title: Marketo Source
 rewrite: true
+source-type: object
 ---
+<!-- Marketo is listed as an object source, but doesn't appear in our configapi source catalog, so leave the "source-type" set here -->
 
 [Marketo](https://www.marketo.com/) is a leader in marketing automation. Using our Marketo source, we will load your campaigns, emails, leads and other collections into your data warehouse.
 
 This will allow you to write SQL to analyze your analyze your email marketing campaigns ROI, or join your email data to other data sources like web and mobile events, Salesforce, and Zendesk to tie nurture emails to re-activation rates in your app.
-
-This is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
 
 _**NOTE:** Marketo is currently in beta and this doc was last updated on April 30, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you have any feedback to help us improve the Marketo Source and its documentation, and please [let us know](https://segment.com/help/contact)!_
 
@@ -74,6 +74,7 @@ Collections are the groupings of resources we pull from your source. In your war
 ## Collection Properties
 
 ### Leads
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Lead id |
@@ -87,6 +88,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Campaigns
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Campaign id |
@@ -99,6 +101,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Email
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Email id |
@@ -124,6 +127,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Landing Pages
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Landing Page id |
@@ -149,6 +153,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Lists
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | List id |
@@ -161,6 +166,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Lead Activities
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Lead Activity id |
@@ -174,6 +180,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Lead Activity Attributes
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Combination of Lead Activity id, Lead Activity Type id and Lead Activity Attribute name |
@@ -185,6 +192,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Lead Activity Types
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Lead Activity Type id |
@@ -195,6 +203,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Lead Activity Type Attributes
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Combination of Lead Activity Type id and attribute name |
@@ -204,6 +213,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Programs
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Program id |
@@ -224,6 +234,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Segmentations
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Segmentation id |
@@ -240,6 +251,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 
 ### Segments
+
 |  Property Name | Description |
 |  ------ | ------ |
 | id | Segment id |

@@ -10,7 +10,7 @@ By standardizing the events that comprise the core **mobile application lifecycl
 
 These events pair nicely with our [ecommerce spec](/docs/connections/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like Tune and Kochava.
 
-**Note** Per our [Privacy Policy](https://segment.com/docs/legal/privacy/#sensitive-personal-information) and applicable terms, please don't send us sensitive personal information about your users. Certain features from Segment and our partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
+**Note** Per our [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information) and applicable terms, please don't send us sensitive personal information about your users. Certain features from Segment and our partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
 
 ## Overview of Events
 
@@ -236,7 +236,7 @@ This event can be sent when a push notification is received in the app. It can b
 -------             | -----    | -----
 `campaign[name]`    | String   | Campaign Name.
 `campaign[medium]`  | String   | Identifies what type of link was used (Push Notification).
-`campaign[content]` | String   | Push notification content content
+`campaign[content]` | String   | Push notification content.
 `campaign[source]`  | String   | Designates the push provider. (Optional)
 
 ### Push Notification Tapped

@@ -13,10 +13,9 @@ An `integrations object` may be passed in the `options` of  `group`, `identify`
 All customers can filter specific events from being sent to specific Destinations (except for warehouses) by updating their tracking code. Here is an example showing how to send a single message only to Intercom and Google Analytics:
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu',
-  type: 'electric'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
 }, {
   integrations: {
     'All': false,
@@ -36,7 +35,7 @@ If you're on Segment's Business plan, you can filter track calls right from the 
 
 If you no longer want to track an event, you can either remove it from your code or, if you're on the Business plan, you can block track calls right from the Segment UI on your Source Schema page by adjusting the toggle for each event.
 
-![](../protocols/images/asset_ZCRZqdO9.gif)
+![](images/asset_ZCRZqdO9.gif)
 
 Once you block an event in Segment, we'll stop forwarding it to all of your Destinations, including your warehouses. You can remove it from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties. 
 

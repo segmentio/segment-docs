@@ -1,5 +1,6 @@
 ---
 title: Amazon S3 Destination
+redirect_from: '/connections/destinations/catalog/amazon-s3/'
 ---
 
 ## Getting Started
@@ -9,8 +10,6 @@ The Amazon S3 destination puts the raw logs of the data we're receiving into you
 **Note:** The data is copied into your bucket every hour around the :40 minute mark. You may see multiple files over a period of time depending on how much data is copied.
 
 Keep in mind that Amazon S3 works in a different way from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/connections/spec/common/#integrations) does not affect events in the case of Amazon S3.
-
-Also keep in mind that Amazon S3 works in a different way from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/connections/spec/common/#integrations) will not have any effect on events in the case of Amazon S3.
 
 The diagram below illustrates how the S3 destination works.
 
@@ -97,7 +96,7 @@ The Segment user must have the permission to `GenerateDataKey` from your AWS Key
 
 ![creating customer managed key screenshot](images/customer-managed-key.png)
 
-#### Update S3 bucket default encryption propery
+#### Update S3 bucket default encryption property
 The target S3 bucket should have the "Default encryption" property enabled and set to `AWS-KMS`. Choose the customer-managed key generated in the above step for encryption.
 
 ![update default encryption property](images/bucket-property.png)
@@ -201,3 +200,5 @@ $ aws s3 sync s3://{bucket}/segment-logs/{source-id} .
 ```
 
 To put the files in a specific folder replace the `.` at the end ("current directory") with the desired directory like `~/Downloads/logs`.
+
+{% include content/integration-foot.md  %}
