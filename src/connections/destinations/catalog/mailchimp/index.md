@@ -86,7 +86,7 @@ Once Mailchimp has processed the new subscriber you'll see it show up in your li
 
 ### Recording userId
 
-To record a userId in Mailchimp, you must pass the userID as a trait on your `identify()` calls. We do not automatically map userId as a property.  
+To record a Segment `userId` in Mailchimp, you must pass the userID as a trait on your `identify()` calls. We do not automatically map the Segment userID to any Mailchimp properties.  
 
 ### Overriding List ID (Also now referred to as Audience ID)
 
