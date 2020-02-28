@@ -17,8 +17,7 @@ We automatically promote the following traits and IDs in track and identify call
 | android.idfa       | context.device.advertisingId when context.device.type = 'android' AND context.device.adTrackingEnabled = true |
 | android.push_token | context.device.token when context.device.type = 'android'                                                     |
 | anonymous_id       | anonymousId                                                                                                   |
-| braze_id           | context.integrations.Braze.braze_id when Braze is connected as a destination                     
-      |
+| braze_id           | context.integrations.Braze.braze_id when Braze is connected as a destination                                 |
 | cross_domain_id    | cross_domain_id when XID has been enabled for the workspace                                                   |
 | ga_client_id       | context.integrations['Google Analytics'].clientId when explicitly captured by users                           |
 | group_id           | groupId                                                                                                       |
