@@ -86,7 +86,7 @@ Once Mailchimp has processed the new subscriber you'll see it show up in your li
 
 ### Recording userId
 
-If you send a `userId` in your `.identify()` call, we will attach it as Mailchimp's semantic `unique_email_id` for that user. This is a read-only unique identifier for that email across all of Mailchimp.
+To record a userId in Mailchimp, you must pass the userID as a trait on your `identify()` calls. We do not automatically map userId as a property.  
 
 ### Overriding List ID (Also now referred to as Audience ID)
 
