@@ -38,9 +38,13 @@ This will install everything you need to edit the docs, and run the docs build l
 
 Edit the content files, check them in on a new branch, PR to the main repo, and when your PR is merged to `master`, the site automatically rebuilds.
 
+For more details, see the [Contributor Guide](contributors.md)!
+
 ### JUST Editing content?
 
-You can make a limited range of edits from the Github site! Hooray! But this system works best if you clone it locally so you can run test builds.
+You can make a limited range of edits [from the Github site](contributors.md/#contribute-from-the-github-web-ui)! Hooray! But this system works best if you clone it locally so you can run test builds.
+
+See the [Contributor Guide](contributors.md) for more info.
 
 ## Most frequently asked question: Do I need a review?
 
@@ -74,8 +78,6 @@ The docs repo works on the honor system right now. The only rule is you can't me
 If you're doing a substantial change and you're going to want to spend a few weeks on it, use [Github's Draft PRs feature](https://help.github.com/en/articles/about-pull-requests#draft-pull-requests), or add `WIP` to the title of your PR. This lets us know to ignore the PR until you're ready.
 
 
-
-
 ## How the docs build works
 
 The actual content that you see on segment.com/docs lives in this repository, most of it in the `/src/` folder and its subdirectories. Everything outside of that folder is related to the build, styling, tracking, and process for this repo.
@@ -104,7 +106,7 @@ The most interesting ones are:
 
 ### Diagram Library
 
-We have a diagram library available using Sketch! Use this to create new process diagrams, charts, and other visuals.
+We have a [diagram library](diagram-library/readme.md) available using Sketch! Use this to create new process diagrams, charts, and other visuals.
 
 ### Content structure
 
