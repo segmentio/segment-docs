@@ -30,3 +30,7 @@ When you need to update the images, you can reopen the Sketch file, make your ch
 ## Adding new items to the Library
 
 Contact @sanscontext for instructions. :)
+
+## More reading on diagrams and diagram best practices
+
+https://blog.ilograph.com/posts/diagram-mistakes/
