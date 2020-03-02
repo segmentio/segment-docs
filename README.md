@@ -112,16 +112,21 @@ Destinations: These files also include "intelligent partials", which are section
 
 
 ## Formatting and Prettifying
-Some important tips! We also have a Styleguide available so you can see how different formatting looks when rendered.
+Some important tips! We also have a (rendering)[Formatting guide](/src/utils/formatguide.md) available so you can see how different formatting looks when rendered.
+
+### Diagrams
+
+We have a diagram library in sketch, which you can use to build pretty, on-brand architecture diagrams, etc. There's a [readme file in that directory](diagram-library/readme.md) with instructions on how to use it.
 
 ### Adding Images
 
 **All images should be saved locally! No linking to 3rd party-hosted images!**
+
 As CDN hosting is from the publish side, we shouldn't be worrying about that at the file level.
 
 To add images to a docs page, create an `images` folder for the docs path, save the image to the folder and then reference it in your markdown file. The [Google Analytics destination](/src/connections/destinations/catalog/google-analytics) is a good example.
 
-There are no naming conventions at this time. Anything you see with `asset` was dowloaded by a script to save it from Contents.io. :)
+There are no naming conventions at this time. Files that start with an underscore are Anything you see with `asset` was dowloaded by a script to save it from Contents.io. :)
 
 ### Adding links
 
