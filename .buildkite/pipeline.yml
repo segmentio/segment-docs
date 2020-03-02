@@ -2,6 +2,7 @@ steps:
   - label: ":hammer: Build Dependencies and Docs"
     command:
       - make test
+      - make catalog
       - make build
       - make zip-artifacts
     env:

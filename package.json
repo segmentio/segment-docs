@@ -10,11 +10,6 @@
       "remark-preset-lint-recommended"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "make catalog"
-    }
-  },
   "devDependencies": {
     "@babel/cli": "7.6.0",
     "@babel/core": "7.6.0",
