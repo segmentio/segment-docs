@@ -1,4 +1,12 @@
 .button-hollow {
   color: color(secondary);
   padding: 12px 0;
+
+  &--gray {
+    color: color(gray-dark);
+  }
+
+  &--small {
+    padding: 8px 0;
+  }
 }

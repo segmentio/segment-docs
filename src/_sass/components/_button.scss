@@ -21,12 +21,17 @@
     vertical-align: middle;
   }
 
+  &--xsmall {
+    font-size: 12px;
+  }
+
   &--small {
     font-size: 14px;
     font-weight: 500;
     line-height: 1.14;
     padding: 9px 8px;
   }
+
   &--small-bordered {
     font-size: 14px;
     font-weight: 500;
@@ -48,6 +53,7 @@
   &--expand {
     width: 100%;
   }
+
   &--half {
     width: 50%;
   }
