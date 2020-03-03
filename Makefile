@@ -10,6 +10,8 @@ ifeq ('${BUILDKITE_BRANCH}','staging')
 JEKYLL_ENV := 'staging'
 endif
 
+export PLATFORM_API_TOKEN=$(shell aws-okta exec stage-privileged -- chamber read segment-docs -q PLATFORM_API_KEY)
+
 # Laura's convenience command because Reasons
 docs: dev
 

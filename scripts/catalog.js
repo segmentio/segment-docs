@@ -1,3 +1,4 @@
+// console.log('${process.env.PLATFORM_API_TOKEN}', `${process.env.PLATFORM_API_TOKEN}`)
 const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
