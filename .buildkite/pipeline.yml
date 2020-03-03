@@ -14,7 +14,11 @@ steps:
           image: jekyll/jekyll
           environment:
             - BUILDKITE_BRANCH
+            - NODE_ENV
+            - S3_DIRECTORY
             - PLATFORM_API_TOKEN
+            - platform_api_token
+            - TEST_SECRET
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
           paths: [ "vendor/" ]
