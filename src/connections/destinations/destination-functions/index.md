@@ -118,7 +118,7 @@ You can [read more about error handling below](#errors).
 
 Destinations Functions are run using Node.js 10.x. The following dependencies are pre-installed in the function environment:
 
-#### `lodash`
+#### lodash
 
 A modern JavaScript utility library delivering modularity, performance & extras. [See the lodash docs](https://lodash.com/docs/4.17.11).
 
