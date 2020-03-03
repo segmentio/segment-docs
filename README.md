@@ -11,6 +11,9 @@ We are now splitting out the Readme into three parts:
 - [Style Guide](styleguide.md)
 - [Technical Details](devguide.md)
 
+---
+Here's what's on this main page:
+
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Contributing to the Segment Docs](#contributing-to-the-segment-docs)
