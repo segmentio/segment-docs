@@ -20,7 +20,7 @@ _When a page call is sent to Segment, Destination Functions transform the Segmen
 
 ## Getting Started
 
-### Creating your Destination Function
+### Creating Your Destination Function
 
 To create a Destination Function:
 
@@ -28,7 +28,7 @@ To create a Destination Function:
 2. Click **New Function**.
 3. Select **Destination Function** and click **Build**.
 
-### Writing your function
+### Writing Your Function
 
 When you click **Build** button, a code editor opens so you can configure your destination logic. Segment provides templates that make it simple to send data to a JSON API or other common use cases.
 
@@ -117,7 +117,7 @@ If you do not supply a function for an event type, Segment throws an implicit `E
 
 Destinations Functions are run using Node.js 10.x. The following dependencies are pre-installed in the function environment:
 
-#### lodash
+#### `lodash`
 
 A modern JavaScript utility library delivering modularity, performance & extras. [See the lodash docs](https://lodash.com/docs/4.17.11).
 
@@ -193,7 +193,7 @@ In the debugger panel, check the two outputs. The **Error Message** and the **Lo
 - **Error Message** - This shows the error surfaced from your function.
 - **Logs** - The raw log. Any messages to `console.log()` from the function appear here.
 
-## Creation & Deployment
+## Creation and Deployment
 
 Once you've finished writing your Destination Function, click **Configure** to save and use the function. On the screen that appears, give the function a name, and optionally add useful details (these are displayed in your workspace). Click **Create Function** to finish and make your Destination Function available in your workspace.
 
@@ -237,18 +237,18 @@ Currently, you must be a **Workspace Owner** to create, edit or delete a functio
 
 Once you create a Destination Function, you can connect it to any source in your workspace. You need to be a `Workspace Owner` or `Source Admin`.
 
-### Editing & Deleting
+### Editing and Deleting
 
 If you are a **Workspace Owner**, you can manage your Destination Function from the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click the function to change, and the panel that appears allows you to connect, edit or delete your function.
 
 ![Editing or deleting your Destination Function](images/function-sidesheet.gif)
 
 
-### Monitoring your Destination Function.
+### Monitoring Your Destination Function
 
 You can use [Destination Event Delivery](https://segment.com/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/) to understand if Segment encounters any issues delivering your source data to destinations. Errors that the Function throws appear here.
 
-### Controlling what gets passed to your Destination Function.
+### Controlling What Gets Passed to Your Destination Function
 
 You can use [Destination Filters](https://segment.com/docs/connections/destinations/destination-filters/) or Privacy Controls to manage what events and, of those events, which event properties are sent to your Destination Function.
 
