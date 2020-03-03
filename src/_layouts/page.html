@@ -50,15 +50,15 @@ layout: main
     {% unless page.hide-feedback %}
       <div>
         <a href="https://github.com/segmentio/segment-docs/edit/master/src/{{ page.path }}" class="button button-hollow button-hollow--small button-hollow--gray button--xsmall flex" target="_blank">
-          {% include icons/symbols/edit.svg %}
+          <span class="button__icon">{% include icons/symbols/edit.svg %}</span>
 
-          <span>Edit this page</span>
+          <span class="button__text">Edit this page</span>
         </a>
 
         <a href="https://github.com/segmentio/segment-docs/issues/new?body=File:%20[{{ page.path }}](https://segment.com/docs{{ page.url }})" class="button button-hollow button-hollow--small button-hollow--gray button--xsmall" target="_blank">
-          {% include icons/symbols/plus.svg %}
+          <span class="button__icon">{% include icons/symbols/plus.svg %}</span>
 
-          <span>Request docs change</span>
+          <span class="button__text">Request docs change</span>
         </a>
       </div>
 

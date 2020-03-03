@@ -18,7 +18,11 @@
 
   &__icon {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: text-bottom;
+  }
+
+  &__text {
+    padding-left: 3px;
   }
 
   &--xsmall {
