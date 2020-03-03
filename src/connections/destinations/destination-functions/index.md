@@ -217,7 +217,7 @@ Errors are handled by Segment as follows:
 ### Errors That Are Not Retried
 
 * "Bad Request" is any error thrown by your code not covered by the other errors.
-* "Invalid Settings": A configuration error prevented Segment from executing your code. If this error persists for more than an hour, please email us at [friends@segment.com](mailto:friends@segment.com) for help.
+* "Invalid Settings": A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact us for help](https://segment.com/help/contact/).
 * "Message Rejected": Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
 * "Unsupported Event Type": Your code does not implement a specific event type (`onTrack()`, etc.) or threw a `EventNotSupported` error.
 
