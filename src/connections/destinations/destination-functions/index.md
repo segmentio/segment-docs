@@ -212,7 +212,7 @@ Errors are handled by Segment as follows:
 ### Errors That Are Retried
 
 * "Internal": An error not thrown by your function code and not covered by any other error classification. This is most commonly caused by your function exceeding its time limit, which is 5 seconds by default.
-* "Too Many Requests": Your Function is receiving too many events and is being throttled. If this error persists for more than an hour, please email us at [friends@segment.com](mailto:friends@segment.com) for help.
+* "Too Many Requests": Your Function is receiving too many events and is being throttled. If this error persists for more than an hour, [contact us for help](https://segment.com/help/contact/).
 
 ### Errors That Are Not Retried
 
