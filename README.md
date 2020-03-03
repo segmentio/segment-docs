@@ -14,16 +14,18 @@ We are now splitting out the Readme into three parts:
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Contributing to the Segment Docs](#contributing-to-the-segment-docs)
+- [Quickstart](#quickstart)
 - [Most frequently asked question: Do I need a review?](#most-frequently-asked-question-do-i-need-a-review)
 - [How to docs (The Docs Process)](#how-to-docs-the-docs-process)
-- [Repo structure](#repo-structure)
+- [How the docs build works](#how-the-docs-build-works)
 - [Formatting and Prettifying](#formatting-and-prettifying)
+- [Repo structure](#repo-structure)
 - [Frontmatter](#frontmatter)
+- [Navigation](#navigation)
 - [Makefile commands](#makefile-commands)
-- [Troubleshooting Paper Exports](#troubleshooting-paper-exports)
-- [Developer information](#developer-information)
 
 <!-- /TOC -->
+
 
 <!-- This TOC automatically generated using the slightly-finicky markdown-toc plugin in Atom. -->
 
@@ -88,6 +90,8 @@ When you run `make dev` (or `make docs`) on your laptop, Jekyll runs the same pr
 
 When you merge a PR to master, our build system runs the Jekyll program, and automatically publishes the rebuilt HTML files to our web server. (Which is why we *require* that the Buildkite build passes before you merge!)
 
+## Formatting and Prettifying
+Some important tips are in the [styleguide](styleguide.md). We also have a (rendering)[Formatting guide](/src/utils/formatguide.md) available so you can see how different formatting looks when rendered.
 
 ## Repo structure
 
@@ -104,15 +108,25 @@ The most interesting ones are:
 - `/src/_data/catalog/` This is where we keep the data we've pulled from the ConfigAPI in structured `yml` files that are used by the build.
 - `/src/_data/sidenav/` This is where the navigation structures are. (Several sections in the doc have their own left-nav, making them "microsites".) They're just YML files that we manually update so we have maximum control over what's shown and what's not.
 
+
+### Images
+
+**All images should be saved locally! No linking to 3rd party-hosted images!** Images are published to our CDN from the build step.
+
+There are no _enforced_ naming conventions at this time. Files that start with an underscore are ignored by jekyll. Anything you see with `asset` was dowloaded by a script to save it from Contents.io. :)
+
+In general, it's a good practice to name images with a description that helps you figure out where they should go within a page, or within a larger folder of images. Naming with a prefix of what application the screenshot contains can be helpful (for example `atom-new-file.png`, `atom-commit-changes.png` etc), or you can name images to describe a process flow (for example `checkout-1-add-to-cart.png`, `checkout-2-est-shipping.png` and so on).
+
 ### Diagram Library
 
-We have a [diagram library](diagram-library/readme.md) available using Sketch! Use this to create new process diagrams, charts, and other visuals.
+We have a diagram library in sketch, which you can use to build pretty, on-brand architecture diagrams, etc. There's a [readme file in that directory](diagram-library/readme.md) with instructions on how to use it.
 
 ### Content structure
 
 There are folders for each of the top level products, and those folders might also contain topics that are related to that product area (for example the Privacy Portal section also contains GDPR/CCPA docs).
 
 For the Connections product, the section is divided into the Spec, then Sources, Destinations, and Warehouses, with general accessory topics at the folder root. (More specific accessory topics are in each sub directory.) Each also contains a `catalog` directory, which contains all the directories with information about specific integrations. The top-level of this folder (the `index.md`) is a pretty "catalog" page which gives a tile-like view by category, suitable for browsing. It pulls the logo for these tiles from the path for the integration in the metadata service.
+
 
 ### Programmatic content
 
