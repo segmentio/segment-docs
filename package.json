@@ -39,7 +39,6 @@
     "@babel/runtime": "7.7.2",
     "ajv": "6.10.2",
     "dotenv": "8.2.0",
-    "husky": "^4.2.3",
     "typewriter": "7.0.0"
   }
 }
