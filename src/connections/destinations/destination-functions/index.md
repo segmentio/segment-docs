@@ -18,7 +18,7 @@ The illustration below explains how you might use a Destination Function:
 ![](images/visual.png)
 _When a page call is sent to Segment, Destination Functions transform the Segment event payload to match the destination's spec. The transformed Event is sent to the destination tool._
 
-## Getting Started
+## Getting started
 
 ### Creating your Destination Function
 
@@ -112,8 +112,9 @@ async function onAlias(event, settings) {
 
 If you do not supply a function for an event type, Segment throws an implicit `EventNotSupported` error.
 
+You can [read more about error handling below](#errors).
 
-### Runtime and Dependencies
+### Runtime and dependencies
 
 Destinations Functions are run using Node.js 10.x. The following dependencies are pre-installed in the function environment:
 
@@ -165,7 +166,7 @@ The [`atob()` function](https://developer.mozilla.org/en-US/docs/Web/API/WindowO
 
 The [`btoa()` method](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa) creates a base-64 encoded ASCII string from a binary string.
 
-### ️Settings and Secrets
+### ️Settings and secrets
 
 Settings allow you to pass different variables to your function so that you can use it across multiple sources which might have different configurations.
 
@@ -193,16 +194,37 @@ In the debugger panel, check the two outputs. The **Error Message** and the **Lo
 - **Error Message** - This shows the error surfaced from your function.
 - **Logs** - The raw log. Any messages to `console.log()` from the function appear here.
 
-## Creation & Deployment
+## Creation and deployment
 
 Once you've finished writing your Destination Function, click **Configure** to save and use the function. On the screen that appears, give the function a name, and optionally add useful details (these are displayed in your workspace). Click **Create Function** to finish and make your Destination Function available in your workspace.
 
 If you're editing an existing function, you can **Save** changes without changing the behavior of your deployed function. Alternatively, you can also choose to **Save & Deploy** to push changes to an existing function.
 
 
-## Logs and Errors
+## Errors
 
-Your function may encounter errors that you missed during manual testing or you may intentionally throw your own errors in your code if, for example, the incoming event is missing required fields. If your function throws an error, execution is halted immediately and Segment captures the event, any outgoing requests/responses, any console logs you may have printed, as well as the error itself. Segment then displays the captured error information in the "Event Delivery" tab of your Destination in the Segment dashboard as a "Bad Request". You can use this tab to find and fix unexpected errors.
+Your function can throw errors or Segment may encounter errors while attempting to invoke your function. You can view these errors in the "Event Delivery" tab for your Destination:
+
+![Destination Function Event Delivery tab](images/event-delivery.png)
+
+Errors are handled by Segment as follows:
+
+### Errors that are retried
+
+* "Internal": An error not thrown by your function code and not covered by any other error classification. This is most commonly caused by your function exceeding its time limit, which is 5 seconds by default.
+* "Too Many Requests": Your Function is receiving too many events and is being throttled. If this error persists for more than an hour, [contact us for help](https://segment.com/help/contact/).
+
+### Errors that are not retried
+
+* "Bad Request" is any error thrown by your code not covered by the other errors.
+* "Invalid Settings": A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact us for help](https://segment.com/help/contact/).
+* "Message Rejected": Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
+* "Unsupported Event Type": Your code does not implement a specific event type (`onTrack()`, etc.) or threw a `EventNotSupported` error.
+
+
+## Error logs
+
+If your function throws an error, Segment captures the event, any outgoing requests/responses, any console logs you may have printed, as well as the error itself. Segment then displays the captured error information in the "Event Delivery" tab of your Destination. You can use this tab to find and fix unexpected errors.
 
 ![Destination Function error logs](images/error-logs.png)
 
@@ -227,6 +249,7 @@ async function onTrack(event, settings) {
 > warning ""
 > **Warning:** Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. You should especially avoid logging entire request/response payloads. The "Function Logs" tab may be visible to other workspace members if they have the necessary permissions.
 
+
 ## Management
 
 ### Permissions
@@ -237,22 +260,22 @@ Currently, you must be a **Workspace Owner** to create, edit or delete a functio
 
 Once you create a Destination Function, you can connect it to any source in your workspace. You need to be a `Workspace Owner` or `Source Admin`.
 
-### Editing & Deleting
+### Editing and deleting
 
 If you are a **Workspace Owner**, you can manage your Destination Function from the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click the function to change, and the panel that appears allows you to connect, edit or delete your function.
 
 ![Editing or deleting your Destination Function](images/function-sidesheet.gif)
 
 
-### Monitoring your Destination Function.
+### Monitoring your destination function
 
 You can use [Destination Event Delivery](https://segment.com/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/) to understand if Segment encounters any issues delivering your source data to destinations. Errors that the Function throws appear here.
 
-### Controlling what gets passed to your Destination Function.
+### Controlling what gets passed to your Destination Function
 
 You can use [Destination Filters](https://segment.com/docs/connections/destinations/destination-filters/) or Privacy Controls to manage what events and, of those events, which event properties are sent to your Destination Function.
 
-## FAQs
+## Frequently asked questions
 
 **Does Segment retry events?**
 
