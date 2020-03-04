@@ -7,9 +7,7 @@ const yaml = require('js-yaml');
 require('dotenv').config();
 
 PLATFORM_API_URL = "https://platform.segmentapis.com"
-console.log('bk commit',`${process.env.BUILDKITE_BRANCH}`)
-console.log('token', `${process.env.platform_api_token}`, `${process.env.PLATFORM_API_TOKEN}`)
-console.log('test secret', process.env.TEST_SECRET)
+
 const slugify = (displayName) => {
   let slug = displayName
     .toLowerCase()
