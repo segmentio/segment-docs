@@ -1123,11 +1123,11 @@ items:
   previous_names:
   - Alexa
 - display_name: Algolia Insights
-  slug: algolia
+  slug: algolia-insights
   name: catalog/destinations/algolia
   description: Send events to Algolia Insights API
   hidden: false
-  url: connections/destinations/catalog/algolia
+  url: connections/destinations/catalog/algolia-insights
   status: PUBLIC_BETA
   logo:
     url: >-
@@ -1139,7 +1139,8 @@ items:
   - A/B Testing
   - Analytics
   - Personalization
-  components: []
+  components:
+  - type: CLOUD
   platforms:
     browser: true
     server: true
@@ -1188,8 +1189,8 @@ items:
       server: false
     cloud:
       web: false
-      mobile: false
-      server: false
+      mobile: true
+      server: true
   previous_names:
   - Algolia
   - Algolia Insights
@@ -16231,6 +16232,13 @@ items:
       required: false
       description: Map your Segment properties to Responsys Columns
       settings:
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as a Primary Key in Responsys.
+        settings: []
       - name: columns
         display_name: Segment Property Name
         type: STRING
@@ -16265,13 +16273,6 @@ items:
           - INTEGER
           - TIMESTAMP
         description: Enter the Responsys column type.
-        settings: []
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as a Primary Key in Responsys.
         settings: []
     - name: mapEmail
       display_name: Map Email
