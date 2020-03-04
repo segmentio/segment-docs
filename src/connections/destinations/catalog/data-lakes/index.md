@@ -146,4 +146,4 @@ Once the Data Lakes destination is enabled, the first sync will begin ~2 hours l
 
 ### (Optional) Step 4 - Replay Historical Data
 
-If you’re a Business plan customer and would like to replay historical data into your Data Lake to have a more valuable data set, please reach out to the Segment team to request a replay.
+If you’re a Business plan customer and would like to [replay historical data](/docs/guides/what-is-replay/) into your Data Lake to have a more valuable data set, please reach out to the Segment team to request a replay.
