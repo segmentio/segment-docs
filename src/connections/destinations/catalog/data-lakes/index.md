@@ -113,7 +113,7 @@ Before you set up Segment Data Lakes, you’ll need the following resources:
 
 ### Step 2 - Set Up AWS Resources
 
-You can use this [open source Terraform repo](https://github.com/segmentio/terraform-aws-data-lake) to automate a lot of the set up work to get Segment Data Lakes up and running. We also have [UI based setup docs]2(https://docs.google.com/document/d/1GlWzS5KO4QaiVZx9pwfpgF-N-Xy2e_QQcdYSX-nLMDU/edit?usp=sharing) if you prefer to use these instead.
+You can use this [open source Terraform repo](https://github.com/segmentio/terraform-aws-data-lake) to automate a lot of the set up work to get Segment Data Lakes up and running. We also have [UI based setup docs](https://docs.google.com/document/d/1GlWzS5KO4QaiVZx9pwfpgF-N-Xy2e_QQcdYSX-nLMDU/edit?usp=sharing) if you prefer to use these instead.
 
 The Terraform module and UI instructions provide a base level of permissions to Segment (for example, the correct IAM role to allow Segment to create Glue databases on your behalf). If you want stricter permissions, or other custom configurations, you can customize these manually.
 
