@@ -1,13 +1,6 @@
 ---
 title: Sources
-sidebar: Overview
-redirect_from:
-- '/guides/sources/what-can-I-do-with-sources-data'
-- '/sources/etl-billing/'
-- '/sources/etl-usage/'
-- '/sources/5/'
-- '/sources/cloud-app/'
-landing: true
+hidden: true
 contributors:
   - name: Paul Mccall
     date: 23.08.2019
@@ -69,9 +62,9 @@ You can create new sources using the button in the workspace view. Each source y
 {% codeexample %}
 {% codeexampletab JavaScript %}
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
   }, {
   integrations: {
     'All': false,

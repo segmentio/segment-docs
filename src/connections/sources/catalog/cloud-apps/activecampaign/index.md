@@ -1,15 +1,15 @@
 ---
 title: ActiveCampaign Source
-source-type: event
 ---
-Active Campagin is an email marketing & marketing automation solution for small businesses. [Visit Website](http://www.activecampaign.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
+Active Campaign is an email marketing & marketing automation solution for small businesses. [Visit Website](http://www.activecampaign.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
-Take your company's email analysis to the next level by **adding ActiveCampagin as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding ActiveCampaign as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your ActiveCampagin data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use ActiveCampaign with Segment.](/sources/active-campaign)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your ActiveCampaign data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use ActiveCampaign with Segment.](/sources/active-campaign)
 
 ## Getting Started
-<span> </span>
+
+
 If you have previously enabled sending email events via the ActiveCampaign destination during our beta (using a project write key), you do not need to create new ActiveCampaign source. Your email data will continue to flow as normal.
 
 1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
@@ -98,7 +98,8 @@ Collections are the groupings of data we pull from your Source. In your warehous
 select *
 from activecampaign.email_delivered
 ```
-<span> </span>
+
+
 
 <table>
 </table> -->

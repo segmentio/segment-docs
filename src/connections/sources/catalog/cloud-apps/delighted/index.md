@@ -1,11 +1,8 @@
 ---
 title: Delighted Source
 rewrite: true
-source-type: event
 ---
 [Delighted](https://delighted.com/) is the fastest and easiest way to gather actionable feedback from your customers. Use the feedback you gather from customers in all of your decision making processes. Send your feedback to your BI and data warehouses automatically.
-
-This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
 This source is maintained by Delighted. For any issues with the source, you may [contact their team](mailto:hello@delighted.com).
 

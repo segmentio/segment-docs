@@ -1,4 +1,4 @@
-/docs/connections/warehouses/---
+---
 title: Warehouses and Data Storage
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Destination comparison by category
-hidden: true
 ---
 
 This page collates information about each destination, organized by category for better comparison shopping.

@@ -1,10 +1,11 @@
 ---
-title: Analytics.js Source
+title: Analytics.js (Javascript) Source
 sourceTitle: 'JavaScript'
 sourceCategory: 'Website'
+redirect_from: '/connections/sources/catalog/libraries/website/analytics.js/'
 ---
 
-Analytics.js makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
+Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
 ## Getting Started
 
@@ -188,7 +189,7 @@ The `page` call has the following fields:
 </table>
 
 
-### Default Properties
+### Default Page Properties
 
 A few properties are automatically added to each `page` call.
 
@@ -291,9 +292,10 @@ This is an advanced method, but it is required to manage user identities success
 
 `alias` method definition:
 
-```
+```js
 analytics.alias(userId, [previousId], [options], [callback]);
 ```
+
 The `alias` call has the following fields:
 
 <table>
@@ -327,7 +329,7 @@ For more details about `alias`, including the **`alias` call payload**, check ou
 
 ## Ready
 
-The `ready` method allows you to pass in a callback that is called once all  enabled destinations load, and once `analytics.js` finishes initializing. It's like jQuery's `ready` method, except for destinations.
+The `ready` method allows you to pass in a callback that is called once all enabled destinations load, and once `analytics.js` finishes initializing. It's like jQuery's `ready` method, except for destinations.
 
 `ready` is still invoked if a destination throws an error during initialization, such as due to an expired API key or incorrect settings configuration. Doing so prevents blocking code listening for the `ready` callback.
 
@@ -365,21 +367,21 @@ The `ready` method has the following fields:
 Here are the query parameters to use:
 
 | param | description | triggers |
-|---|----|----|
-|`ajs_uid` |  The userId to pass to an identify call. | This triggers an `identify` call. |
-|`ajs_event` |The event name to pass to a track call. | This triggers a `track` call.  |
-|`ajs_aid` |The anonymousId to set for the user.|This triggers an `analytics.user().anonymousId()` call.|
-|`ajs_prop_<property>` | A property to pass to the track call | This won't implicitly trigger an event and is dependent on you also passing `ajs_event` - this property  be included in the resulting `track` call |
-|`ajs_trait_<trait>` | A trait to pass to the identify call | This won't implicitly trigger any call and is dependent on you also passing `ajs_uid` - this trait is included in the resulting `identify` call |
+| ----- | ----------- | -------- |
+|       |             |          |
+| `ajs_uid` |  The userId to pass to an identify call. | This triggers an `identify` call. |
+| `ajs_event` |The event name to pass to a track call. | This triggers a `track` call.  |
+| `ajs_aid` |The anonymousId to set for the user.|This triggers an `analytics.user().anonymousId()` call.|
+| `ajs_prop_<property>` | A property to pass to the track call | This won't implicitly trigger an event and is dependent on you also passing `ajs_event` - this property  be included in the resulting `track` call |
+| `ajs_trait_<trait>` | A trait to pass to the identify call | This won't implicitly trigger any call and is dependent on you also passing `ajs_uid` - this trait is included in the resulting `identify` call |
 
 So for example, this URL:
 
-```
+```text
 http://segment.com/?ajs_uid=123456789abcd&ajs_event=Clicked%20Email&ajs_aid=abc123&ajs_prop_emailCampaign=First+Touch&ajs_trait_name=Karl+Jr.
-
 ```
 
-it would trigger the following events on the page:
+would trigger the following events on the page:
 
 ```js
 analytics.identify('123456789abcd', { name: 'Karl Jr.' });
@@ -397,10 +399,9 @@ An `integrations` object may be passed in the `options` of `alias`, `group`, `id
 An example showing how to send a single message only to Intercom and Google Analytics:
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu',
-  type: 'electric'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
 }, {
   integrations: {
     'All': false,
@@ -410,15 +411,14 @@ analytics.identify('025pikachu025', {
 });
 ```
 
-`'All': false` flags that no destinations should receive data by default. This flag is superseded by any destination specific options in the integrations object.
+`'All': false` tells Segment not to send data to _any_ destinations by default, unless they're explicitly listed as `true` in the next lines.
 
 Conversely, an example how to send a single message to all integrations **except** Intercom and Google Analytics:
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu',
-  type: 'electric'
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
 }, {
   integrations: {
     'Intercom': false,
@@ -449,7 +449,7 @@ This way, you can conditionally load integrations based on what customers opt in
 
 A pseudocode example:
 
-```
+```js
 onConsentDialogClosed(function(consentedTools){
   analytics.load('writekey', { integrations: consentedTools })
 })
@@ -539,8 +539,8 @@ analytics.user().anonymousId('ABC-123-XYZ');
 Or in the `options` object of [`identify`](/docs/connections/spec/identify), [`page`](/docs/connections/spec/page), or [`track`](/docs/connections/spec/track) calls, like this:
 
 ```js
-analytics.identify('025pikachu025', {
-  name: 'Pikachu'
+analytics.identify('user_123', {
+  name: 'Jane Kim'
 }, {
   anonymousId: 'ABC-123-XYZ'
 });
@@ -765,7 +765,7 @@ Within the `options` dictionary, a sub-dictionary, `context`, exists. The contex
 
 Consider this identify event:
 
-```
+```js
 analytics.identify('12091906-01011992', {
     plan_id: 'Paid, Tier 2'
     email: 'grace@usnavy.gov'
@@ -774,7 +774,7 @@ analytics.identify('12091906-01011992', {
 
 The traits on this event are `plan_id`. If you want these traits to appear on a subsequent track or page event that this user triggers, you can get this association by passing those traits into `context.traits` as follows:
 
-```
+```js
 analytics.track('Clicked Email', {
   	emailCampaign: 'First Touch'
   },
@@ -901,7 +901,7 @@ There should be no noticeable impact to your data flow. You may notice analytics
 ### How are properties with `null` and `undefined` values treated?
 We use the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:
 
-```
+```js
 console.log(JSON.stringify({ x: null, y: 6 }));
 // expected output: "{"x":null,"y":6}"
 

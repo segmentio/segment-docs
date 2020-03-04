@@ -99,7 +99,7 @@ and create the following template:
 ```
 Which would result in the following message within your Slack channel depending on how "name" was set:
 ```
-Jane opened an email from John Doe (john.doe@gmail.com)
+Jane opened an email from John Doe (john.doe@example.com)
 ```
 
 ### Regex Matching

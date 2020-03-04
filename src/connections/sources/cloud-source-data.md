@@ -4,7 +4,7 @@ title: What can you do with cloud source data?
 
 ### What kind of data do you pull from each source?
 
-In general, we've focused on pulling all of the collections directly related to the customer experience. We do not automatically pull all collections available from a partner API, since many of them aren't relevant to the customer journey. You can see a list the collections we pull in the docs [for each cloud source](/docs/connections/sources/#cloud-app). Each collection reflects a table in your database.
+In general, we've focused on pulling all of the collections directly related to the customer experience. We do not automatically pull all collections available from a partner API, since many of them aren't relevant to the customer journey. You can see a list of the collections we pull in the docs [for each cloud source](/docs/connections/sources/catalog/#cloud-apps). Each collection reflects a table in your database.
 
 Please [let us know](/contact) if you need additional data collected or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
 

@@ -1,6 +1,5 @@
 ---
 title: Looker Source
-source-type: event
 ---
 Looker is a business intelligence software platform that helps you explore, analyze and share real-time business insights easily. Create custom cohorts of customers in Looker's powerful and flexible exploration tool and pass your analysis into your marketing tools for activation and engagement using the Looker Source in Segment.
 
@@ -19,7 +18,7 @@ Note: When you set up your Look and generate new user traits (column names), avo
 
 Below is an example of a cohort of users in Looker who have been active on toastmates.com (example website) at least once  in the last 30 days.
 
-![looker-screenshot](https://i.gyazo.com/9c12ebdd99f19383111aceabc0ab5de9.png)
+![looker-screenshot](images/9c12ebdd99f19383111aceabc0ab5de9.png)
 
 Below is an example of the `identify()` call Looker will send to Segment for the first user in the Look shown above:
 
@@ -30,7 +29,7 @@ Below is an example of the `identify()` call Looker will send to Segment for the
     "name": "Ty Arthur",
     "email": "ty.arthur@segment.com",
     "sessions count": 2
-  }
+  },
   "userId": "00MWWFOLRcETcTCf"
   }
 ```

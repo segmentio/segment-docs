@@ -46,8 +46,9 @@ pod 'Analytics' '~> 3.0'
 pod 'Segment-Nielsen-DTVR'
 ```
 
-#### Add the Nielsen App SDK Framework The integration relies on the Nielsen
-App SDK framework, which can either be installed via CocoaPods or by manually
+#### Add the Nielsen App SDK Framework 
+
+The integration relies on the NielsenApp SDK framework, which can either be installed via CocoaPods or by manually
 adding the framework. You will need to have a Nielsen representative before
 getting started.
 
@@ -164,7 +165,8 @@ properties to Nielsen's relevant methods and metadata.
 
 ## Settings
 
-#### App ID Once the Segment source is integrated with your app, toggle
+#### App ID 
+Once the Segment source is integrated with your app, toggle
 Nielsen-DTVR on in your Segment destinations catalog, and add your `appId`,
 which you can retrieve from your Nielsen representative.
 
@@ -176,20 +178,24 @@ store, after receiving Nielsen certification.
 These new settings will take up to an hour to propagate to all of your existing
 users. For new users it will be instantaneous.
 
-#### Enable Debug Mode Check this setting if you would like to activate the
+#### Enable Debug Mode 
+Check this setting if you would like to activate the
 Debug flag. Once the flag is active, it logs each API call made and the data
 passed. DO NOT activate the Debug flag in a production environment.
 
-#### id3Property Indicate the key in your payload associated with the id3 tag.
+#### id3Property 
+Indicate the key in your payload associated with the id3 tag.
 If one is not provided we will default to `id3`.
 
-#### Instance Name Required for Web only: A user-defined string value for
+#### Instance Name 
+Required for Web only: A user-defined string value for
 describing the player/site.
 
 #### Events to Send Id3 Tags
 Add the event names you would like to trigger Segment to `sendId3` tags.
 
-#### sfcode Required for mobile only: Add the unique identifier for the
+#### sfcode 
+Required for mobile only: Add the unique identifier for the
 environment that the Nielsen SDK should point to. If not specified the default
 value will be `us`.
 

@@ -4,18 +4,18 @@ title: Warehouse FAQs
 
 ## Can I control what data is sent to my warehouse?
 
-Yes! For those of you who are on our [business-tier](/pricing), you can choose which data sources, collections, and properties write into your data warehouse. Once a source or property is disabled, we no longer sync data from that source. We will not, however, delete any data from your warehouse.
+Yes! For those of you who are on our [Business plan](https://segment.com/pricing), you can choose which sources, collections, and properties sync to your data warehouse.
 
-When a source is re-enabled, we will sync all events since the last sync.  You can adjust your schema in the Selective Sync menu in your Warehouse Settings. 
+Selective Sync will help manage what data is sent to each individual warehouse, allowing you to sync different sets of data from the same source to different warehouses. Check out more information on how to use Selective Sync [here](https://segment.com/docs/guides/filtering-data/#warehouse-selective-sync).
 
-![](images/asset_ECf8ov8K.png)
+Once a source, collection or property is disabled, we no longer sync data from that source. We will not, however, delete any historical data from your warehouse. When a source is re-enabled, we will sync all events since the last sync. Note: This does not apply when a collection or property is re-enabled - Only new data generated after re-enabling a collection or property will sync to your warehouse.
 
-For self-serve and free customers, we do not currently support the ability to select which events — or properties of events — get synced into your warehouse.
+For Self-Serve and free customers, we do not currently support the ability to select which collections or properties sync to your warehouse.
 
 
 ## Can we add, tweak, or delete some of the tables?
 
-You have full admin access to your Segment Warehouse. However, please don't tweak or delete tables Segment generated tables, as this may cause problems for our systems that upload new data.
+You have full admin access to your Segment Warehouse. However, please don't tweak or delete Segment generated tables, as this may cause problems for our systems that upload new data.
 
 If you want to join across additional datasets, feel free to create and upload additional tables.
 
@@ -43,6 +43,21 @@ Your data will be available in Warehouses within 24-48 hours. The underlying Red
 Real-time loading of the data into Segment Warehouses would cause significant performance degradation at query time because of the way Redshift uses large batches to optimize and compress columns. To optimize for your query speed, reliability, and robustness, our guarantee is that your data will be available in Redshift within 24 hours.
 
 As we improve and update our ETL processes and optimize for SQL query performance downstream, the actual load time will vary, but we'll ensure it's always within 24 hours.
+
+You can use the Sync History page to see the status and history of data updates in your warehouse. The Sync History page is available for every source connected to each warehouse. This page helps you answer questions like, "has the data from a specific source been updated recently?" "Did a sync completely fail, or only partially fail?" and "Why wasn't this sync successful?"
+
+The Sync History includes the following information:
+- **Sync Status**: The possible statuses are:
+  - _Success_: Sync run completed without any notices and all rows synced, OR no rows synced because no data was found.
+  - _Partial_: Sync run completed with some notices and some rows synced.
+  - _Failure_: Sync run with some notices and no rows synced.
+- **Start Time**: The time at which the sync began. Shown in your local timezone.
+- **Duration**: Length of time this sync took.
+- **Synced Rows**: Number of rows successfully synced from the sync run.
+- **Notices**: A list of errors or warnings found, which could indicate problems with the sync run. Click a notice message to show details about the result, and any errors or warnings for each collection included in the sync run.
+
+> info ""
+> If a sync run shows a partial success or failure, the next sync attempts to syncing any data which was not successfully synced in the prior run.
 
 
 ## What if I want to add custom data to my warehouse?

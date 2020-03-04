@@ -4,6 +4,8 @@ title: 'Spec: Track'
 
 The `track` API call is how you record any actions your users perform, along with any properties that describe the action.
 
+{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299975?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Track Method" content="Check out our high-level overview of the Track method in Segment University. (Must be logged in to access.)" %}
+
 Each action is known as an event. Each event has a name, like **Registered**, and properties, for example a **Registered** event might have properties like `plan` or `accountType`. Calling `track` in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
 Here's the payload of a typical `track` call with most [common fields](/docs/connections/spec/common/) removed:
@@ -113,7 +115,7 @@ The following is all the reserved properties we have standardized that apply to 
     <td>`currency`</td>
     <td>String</td>
     <td>Currency of the revenue an event resulted in
-      <p>This should be sent in the [ISO 4127 format](http://en.wikipedia.org/wiki/ISO_4217). If this is not set, we assume the revenue to be in US dollars.</p></td>
+      This should be sent in the [ISO 4127 format](http://en.wikipedia.org/wiki/ISO_4217). If this is not set, we assume the revenue to be in US dollars.</td>
   </tr>
   <tr>
     <td>`value`</td>

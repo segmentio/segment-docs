@@ -38,9 +38,9 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```js
 analytics.identify('ze8rt1u89', {
-  firstName: 'Zaphod',
-  lastName: 'Beeblebrox',
-  email: 'Zaphod@hotmail.com'
+  firstName: 'Jane',
+  lastName: 'Kim',
+  email: 'jane.kim@example.com'
 });
 ```
 
@@ -61,11 +61,11 @@ When you `identify` a contact, we'll pass that contact's information to ActiveCa
 
 You can add tags to a contact by passing in a trait called `tags`. If you would like to delete all tags currently on a contact, you can pass in a trait called `tagsReset` with a value of `1`. You can pass both `tags` and `tagsReset` if you wish, or just one of the two. If you pass both, all tags will be deleted and then any new tags will be added.
 
-```
+```js
 analytics.identify('ze8rt1u89', {
-  firstName: 'Zaphod',
-  lastName: 'Beeblebrox',
-  email: 'Zaphod@hotmail.com',
+  firstName: 'Jane',
+  lastName: 'Kim',
+  email: 'jane.kim@example.com',
   tags: [
       'checkout',
       'abandoned'
@@ -84,11 +84,11 @@ For example, if you have a contact in ActiveCampaign with these custom fields:
 
 You can update those fields using this identify call:
 
-```
+```js
 analytics.identify('ze8rt1u89', {
-  firstName: 'Zaphod',
-  lastName: 'Beeblebrox',
-  email: 'Zaphod@hotmail.com',
+  firstName: 'Jane',
+  lastName: 'Kim',
+  email: 'jane.kim@example.com',
   shirtSize: 'medium',
   state: 'California',
   multiChoice: [Value1,Value2]
@@ -101,11 +101,12 @@ If your custom field has the same name as a [reserved trait](/docs/connections/s
 ### Lists
 
 You can add a contact to or unsubscribe a contact from any number of lists by passing in a trait called `lists`. As shown in the example below, this trait should be an array, with each element having an `id` and a `status`. The value of `status` must be either `active` or `unsubscribed`.
-```
+
+```js
 analytics.identify('ze8rt1u89', {
-  firstName: 'Zaphod',
-  lastName: 'Beeblebrox',
-  email: 'Zaphod@hotmail.com',
+  firstName: 'Jane',
+  lastName: 'Kim',
+  email: 'jane.kim@example.com',
   lists: [
      {
        id: 1,

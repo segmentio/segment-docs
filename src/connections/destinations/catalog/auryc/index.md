@@ -25,7 +25,7 @@ If the call only contains the user id and does not have the traits, the user id 
 
 An example call would look like:
 
-```
+```js
 analytics.identify('userId123');
 ```
 
@@ -33,9 +33,9 @@ If the call contains both user id and traits, the user id will be sent to Auryc 
 
 An example call would look like:
 
-```
+```js
 analytics.identify("userId123", {
-  email: "test@abc.com"
+  email: "jane.kim@example.com"
 });
 ```
 
@@ -44,7 +44,7 @@ analytics.identify("userId123", {
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
-```
+```js
 analytics.track('Order Submitted', {price: 234.12})
 ```
 
