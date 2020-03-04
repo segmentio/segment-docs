@@ -127,8 +127,7 @@ Once you’ve set up the necessary AWS resources:
 
 3. Select the source to connect to the Data Lakes destination. Each source must be individually connected to the Data Lakes destination, however you can copy the settings from another source by clicking the “…” button (next to the button for “Setup Guide”).
 
-   > note ""
-   > Note: All sources must be included in the external ID list or else the source data cannot be synced to S3.
+   > **Note**: All sources must be included in the external ID list or else the source data cannot be synced to S3.
 
 4. In the Settings tab, enter and save the following connection settings:
    - **AWS Region**: The AWS Region where your EMR cluster, S3 Bucket and Glue DB reside.
@@ -139,12 +138,14 @@ Once you’ve set up the necessary AWS resources:
    - **S3 Bucket**: Name of the S3 bucket used by the Data Lake. The EMR cluster will be configured to store logs in this bucket.
    - _(Optional)_ **Table Prefix**: Optional prefix to use for the tables created in Glue. This configuration is useful if you prefer to use the same Glue Database for all your sources where the prefix can help separate out event tables for each source. Refer to the Glue Database section above to learn the recommended way to use the table prefix.
 
-   > warning ""
-   > Warning: Changing the table prefix will modify the table names created in Glue and will require a backfill for the older data.
-
 5. Enable the Data Lakes destination by toggling the switch next to the “Setup Guide” button to on.
 
 Once the Data Lakes destination is enabled, the first sync will begin ~2 hours later.
+
+
+> warning ""
+> Warning: Changing the table prefix will modify the table names created in Glue and will require a backfill for the older data.
+
 
 ### (Optional) Step 4 - Replay Historical Data
 
