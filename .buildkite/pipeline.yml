@@ -2,7 +2,6 @@ steps:
   - label: ":hammer: Build Dependencies and Docs"
     command:
       - make test
-      - make catalog
       - make build
       - make zip-artifacts
     env:
@@ -14,7 +13,6 @@ steps:
           image: jekyll/jekyll
           environment:
             - BUILDKITE_BRANCH
-            - PLATFORM_API_TOKEN
 
       - ssh://git@github.com/segmentio/cache-buildkite-plugin#v1.0.0:
           key: "v1-cache-gem-{{ checksum 'Gemfile.lock' }}"
