@@ -117,9 +117,17 @@ const doesCatalogItemExist = (item) => {
 }
 
 const isCatalogItemHidden = (itemURL) => {
-  const f = fm(fs.readFileSync(path.resolve('src', itemURL, 'index.md'), 'utf8'));
-  if (f.attributes.hidden) return true
-  return false
+  try {
+    const catalogPath = path.resolve('src', itemURL, 'index.md')
+    if (fs.existsSync(catalogPath)) {
+      const f = fm(fs.readFileSync(catalogPath, 'utf8'));
+      if (f.attributes.hidden) return true
+    }
+    return false
+  } catch (e) {
+    console.log(error)
+    return false
+  }
 }
 
 const updateSources = async () => {
