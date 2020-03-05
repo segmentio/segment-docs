@@ -4,7 +4,7 @@ title: "How do I add a team member?"
 
 **This section is being deprecated, please refer to [IAM](/docs/iam) going forward**
 
-If you are on our Team or Business plan you can add a Team member in your workspace team page and inviting any team members by email. If you are on a Developer plan you will need to upgrade to invite more than one Team member to the account. 
+If you are on our Team or Business plan you can add a Team member in your workspace team page and inviting any team members by email. If you are on a Free plan you will need to upgrade to invite more than one Team member to the account. 
 
 ### Workspace Owners
 
@@ -12,7 +12,7 @@ A workspace owner has read/write access to all settings and Sources inside of a 
 
 Owners must sign up for a personal account before gaining access to the workspace they were added to. They'll get an invite email if they don't have a Segment account yet.
 
-To add new owners to a workspace, go to your workspace settings at [https://segment.com/YOUR\_WORKSPACE/settings/team](https://segment.com/YOUR_WORKSPACE/settings/team). You can also access this from the account dropdown in the menu when you are logged into your account.
+To add new owners to a workspace, go to your [workspace settings](https://segment.com/goto-my-workspace/settings/team). You can also access this from the account dropdown in the menu when you are logged into your account.
 
 ![](images/add_vCFbkibE.png)
 
