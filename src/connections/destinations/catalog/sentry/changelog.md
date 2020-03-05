@@ -5,5 +5,5 @@ hidden: true
 
 ### 05 March 2020
 
-Updated to use Sentry v (?? Brennan fill in here)
+Updated to use Sentry v5.12.1
 `Raven.setUserContext` method is now `Sentry.setUser`.
