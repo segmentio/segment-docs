@@ -211,7 +211,8 @@ Errors are handled by Segment as follows:
 
 ### Errors that are retried
 
-* "Internal": An error not thrown by your function code and not covered by any other error classification. This is most commonly caused by your function exceeding its time limit, which is 5 seconds by default.
+* "Gateway Timeout": Your Function took too long to complete and was canceled. By default, this timeout is 5 seconds.
+* "Internal": An error not thrown by your function code and not covered by any other error classification.
 * "Too Many Requests": Your Function is receiving too many events and is being throttled. If this error persists for more than an hour, [contact us for help](https://segment.com/help/contact/).
 
 ### Errors that are not retried
