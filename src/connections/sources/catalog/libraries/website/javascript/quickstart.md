@@ -51,12 +51,16 @@ To do that, we recommend using a backend template to inject an `identify` call s
 
 Depending on your templating language, that would look something like this:
 
+
 ```js
-analytics.identify('{{ user.id }\}', {
-  name: '{{ user.fullname }\}',
-  email: '{{ user.email }\}'
+{% raw %}
+analytics.identify(' {{ user.id }} ', {
+  name: '{{ user.fullname }}',
+  email: '{{ user.email }}'
 });
+{% endraw %}
 ```
+
 
 With that call on your page, you're now successfully identifying every user that visits your site.
 
