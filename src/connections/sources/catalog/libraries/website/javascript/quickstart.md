@@ -52,9 +52,9 @@ To do that, we recommend using a backend template to inject an `identify` call s
 Depending on your templating language, that would look something like this:
 
 ```js
-analytics.identify('\{{ user.id }}', {
-  name: '\{{ user.fullname }}',
-  email: '\{{ user.email }}'
+analytics.identify('{{ user.id }\}', {
+  name: '{{ user.fullname }\}',
+  email: '{{ user.email }\}'
 });
 ```
 
