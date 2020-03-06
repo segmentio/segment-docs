@@ -20,7 +20,7 @@ You can also specify two different types of time-windows, `within` and `in betwe
 
 ### Custom Traits
 
-You can also build audiences based on custom traits. These can traits collected from your apps when a user completes a form, or signs up, via an (identify)[/docs/connections/spec/identify] call. You can also check out the Personas user explorer to see examples of these traits.
+You can also build audiences based on custom traits. These traits can be collected from your apps when a user completes a form, or signs up, via an [identify](/docs/connections/spec/identify) call. You can also check out the Personas user explorer to see examples of these traits.
 
 ### Computed Traits
 
