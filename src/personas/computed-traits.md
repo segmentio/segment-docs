@@ -187,7 +187,7 @@ You can also specify two different types of time-windows, `within` and `in betwe
 
 **Traits**
 
-You can also build audiences based on traits. These can traits collected from your apps via an (identify)[/docs/connections/spec/identify] call, or any of the computed traits you have generated through the Personas UI. For example, if you have created a `total_revenue` computed trait, you can use this to generate an audience of `big_spender` customers that exceed a certain threshold.
+You can also build audiences based on traits. These can traits collected from your apps via an [identify](/docs/connections/spec/identify) call, or any of the computed traits you have generated through the Personas UI. For example, if you have created a `total_revenue` computed trait, you can use this to generate an audience of `big_spender` customers that exceed a certain threshold.
 
 ![](images/1526327264494.png)
 
