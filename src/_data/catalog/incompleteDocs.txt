@@ -16,7 +16,6 @@ src/connections/destinations/catalog/blueshift
 src/connections/destinations/catalog/calq
 src/connections/destinations/catalog/criteo-app-web-events
 src/connections/destinations/catalog/criteo-offline-conversions
-src/connections/destinations/catalog/crittercism
 src/connections/destinations/catalog/customfit-ai
 src/connections/destinations/catalog/email-aptitude
 src/connections/destinations/catalog/funnelenvy
@@ -68,7 +67,6 @@ src/connections/destinations/catalog/attribution
 src/connections/destinations/catalog/blueshift
 src/connections/destinations/catalog/calq
 src/connections/destinations/catalog/criteo-app-web-events
-src/connections/destinations/catalog/crittercism
 src/connections/destinations/catalog/email-aptitude
 src/connections/destinations/catalog/gainsight-px
 src/connections/destinations/catalog/google-ads-classic
