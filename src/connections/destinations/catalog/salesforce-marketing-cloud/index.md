@@ -8,7 +8,7 @@ Segment's Salesforce Marketing Cloud destination allows you to add contacts with
 
 ### A Note About ExactTarget
 
-ExactTarget was recently acquired by Salesforce and renamed "Salesforce Marketing Cloud." Throughout Segment, we'll stick to the name Salesforce Marketing Cloud, but know that the names "Salesforce Marketing Cloud" and "ExactTarget" refer to the same product.
+ExactTarget was acquired by Salesforce in 2013 and renamed "Salesforce Marketing Cloud." Throughout Segment, we'll stick to the name Salesforce Marketing Cloud, but know that the names "Salesforce Marketing Cloud" and "ExactTarget" refer to the same product.
 
 ### API Access
 
