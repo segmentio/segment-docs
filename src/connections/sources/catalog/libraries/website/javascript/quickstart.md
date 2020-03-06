@@ -54,9 +54,9 @@ Depending on your templating language, that would look something like this:
 
 ```js
 {% raw %}
-analytics.identify(' {{ user.id }} ', {
-  name: '{{ user.fullname }}',
-  email: '{{ user.email }}'
+analytics.identify(' {{user.id}} ', {
+  name: '{{user.fullname}}',
+  email: '{{user.email}}'
 });
 {% endraw %}
 ```
