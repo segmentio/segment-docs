@@ -50,21 +50,49 @@ If you are a B2B business, you might want to build an audience of accounts. You 
 
 Once you have previewed your audience, you can choose to connect a destination, or simply keep the audience in Segment and download a csv. If you already have destinations setup in Segment, you can import the configuration from one of your existing sources to Personas. Note that you can only connect one destination configuration per destination type.
 
-![](images/1542075497746.png)
+![](images/audience_select_destination_card.png)
 
 Once you have created your audience, we will start syncing your audience to the destinations you have selected. Audiences are either sent to destinations as a boolean user-property or a user-list, depending on what is supported by the destination. Learn more about supported destinations [here](/docs/personas/activation/#destinations).
 
 For account-level audiences, you have the option to send either a [group](/docs/connections/spec/group) call and/or [identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
 
+## Realtime Compute vs. Batch
+
+Realtime Compute allows you to update traits and audiences as Segment receives new events. Realtime Compute unlocks exciting use cases:
+
+  - **Intra-Session App Personalization:** change your app experience with personalized onboarding, product recommendations, and faster funnels based on a user entering and exiting an audience.
+  - **Instant Messaging:** Trigger messages in email, livechat, and push notifications instantly, to deliver immediate experiences across channels.
+  - **Operational Workflows:** Supercharge your sales and support teams by responding to customer needs faster, based on the latest understanding of a user
+
+1. **Go to your Computed Traits or Audiences tab in Personas > New**
+![](images/1538693216424_image.png)
+
+
+2. **Create your computed trait or audience.**
+
+*You will see a Lightning bolt indicating that the computation will be updated in realtime.*
+
+![](images/1538693443980_image.png)
+
+3. **Preview your audience > Select Destinations > Review & Create**
+
+*By default, Segment queries all historical data to set the current value of the computed trait and audience. If you want to compute values only using data from the time you activate the feature on, uncheck Historical Backfill.*
+
+![](images/1538693602203_image.png)
+
+
+Note that Facebook Custom Audiences, Marketo Lists, and Adwords have rate limits on how quickly we can update an audience. We will sync at the fastest frequency allowed by the tool. This is between 1 hour and 6 hours.
 
 ## Accessing your audiences via the Profiles API
 
 You can access your audiences via the Profile API by querying the `/traits` endpoint. For example, if you can query for the `high_value_user` with the following GET request:
 
+```
 https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:alex@segment.com/traits?limit=100&include=high_value_user
+```
 
 returns:
-
+```json
     {
         "traits": {
             "high_value_user": true
@@ -76,5 +104,5 @@ returns:
             "limit": 100
         }
     }
-
+```
 View the full Profile API docs [here](/docs/personas/profile-api/)
