@@ -134,7 +134,7 @@ After creating a Snowflake warehouse, the next step is to connect Segment.
 3. Add your credentials as follows:
 - User - The user name (as created above).
 - Password - The password for the user.
-- Account - The account id of your cluster, not the url (e.g. url: my-business.snowflakecomputing.com, account-id: my-business)
+- Account - The account id of your cluster, not the url (e.g. url: my-business.snowflakecomputing.com, account-id: `my-business`. **NOTE:** If you are using AWS, the account-id includes the region. e.g. url: my-business.us-east-1.snowflakecomputing.com/ accound-id: `my-business.us-east-1`)
 - Database - The database name (as created above).
 - Warehouse - The warehouse name (as created above).
 
