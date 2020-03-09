@@ -21,7 +21,7 @@ Before you enable Selligent Marketing Cloud in your Destination page, please val
 ![new secret](images/secretplus.png)
 6. Provide an API name and confirm clicking the plus icon:
 7. Copy the Key and Secret provided and click the save button:
-![key and secret](images/keysecret.png)
+![key and secret](images/keysecret.jpeg)
 
 You can then proceed to configure your destination.
 
