@@ -8,7 +8,6 @@ This destination is maintained by Attribution. For any issues with the destinati
 
 This document was last updated on March 9, 2020. If you notice any gaps, out-dated information, or simply want to leave some feedback to help us improve our documentation, please [let us know](Support@attribtutionapp.com)!
 
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
@@ -17,6 +16,8 @@ This document was last updated on March 9, 2020. If you notice any gaps, out-dat
 2. Search for "Attribution" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "Project ID" into your Segment Settings UI which you can find from your [Attribution settings](https://dashboard.attributionapp.com/v1/#!/settings).
 4. It will take 15 - 30 minutes for data to begin populating on your Attribution dashboard.
+
+![gettingstarted](images/att1.png)
 
 ## Page
 
@@ -27,6 +28,8 @@ analytics.page("pageLoaded");
 ```
 
 Page calls are sent to Attribution to record visits on your dashboard.
+
+![page](images/att3.png)
 
 ## Identify
 
@@ -40,6 +43,8 @@ analytics.identify("userId123", {
 
 Identify calls are sent to Attribution as an `identify` event and are used to assign traits like `userid`, `name`, and `email` to anonymous visitors.
 
+![identify](images/att4.png)
+
 ## Track
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
@@ -49,6 +54,8 @@ analytics.track("Clicked Login Button")
 ```
 
 Track calls are sent to Attribution as a `conversion event`. You should add a `conversion event` anywhere a customer takes an action that you'd like to measure the return on ad spend & attribution for. Examples include `sign up`, `demo scheduled`, `deal won`, etc.
+
+![page](images/att5.png)
 
 ## Alias
 If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
