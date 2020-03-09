@@ -265,7 +265,7 @@ analytics.identify({
   userId: '019mr8mf4r',
   traits: {
     name: 'Michael Bolton',
-    email: 'mbolton@initech.com',
+    email: 'mbolton@example.com',
     plan: 'Enterprise',
     company: {
       id: 12345,

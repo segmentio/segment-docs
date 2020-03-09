@@ -23,7 +23,7 @@ analytics.identify({
   userId: '019mr8mf4r',
   traits: {
     name: 'Michael Bolton',
-    email: 'mbolton@initech.com',
+    email: 'mbolton@example.com',
     phone: '1234567890',
   },
   context: {

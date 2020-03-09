@@ -30,7 +30,7 @@ Let's go through a quick javascript example of identifying a lead:
 analytics.identify('YOUR_USERS_ID', {
   name: 'Peter Gibbons',
   title: 'VP of Derp',
-  email: 'peter.gibbons@initech.com',
+  email: 'peter.gibbons@example.com',
   company: 'Initech',
   phone: '570-690-4150',
   state: 'California',
@@ -55,7 +55,7 @@ Also, you can send the address data in a object as well.
 analytics.identify('YOUR_USERS_ID', {
   name: 'Peter Gibbons',
   title: 'VP of Derp',
-  email: 'peter.gibbons@initech.com',
+  email: 'peter.gibbons@example.com',
   company: {id: 666, name: 'Initech'},
   phone: '570-690-4150',
   state: 'California',

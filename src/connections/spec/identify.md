@@ -30,7 +30,7 @@ Here's the payload of a typical `identify` call with most [common fields](/docs/
   "type": "identify",
   "traits": {
     "name": "Peter Gibbons",
-    "email": "peter@initech.com",
+    "email": "peter@example.com",
     "plan": "premium",
     "logins": 5
   },
@@ -43,7 +43,7 @@ And here's the corresponding Javascript event that would generate the above payl
 ```js
 analytics.identify("97980cfea0067", {
   name: "Peter Gibbons",
-  email: "peter@initech.com",
+  email: "peter@example.com",
   plan: "premium",
   logins: 5
 });
@@ -81,7 +81,7 @@ Here's a complete example of an `identify` call:
   "timestamp": "2015-02-23T22:28:55.111Z",
   "traits": {
     "name": "Peter Gibbons",
-    "email": "peter@initech.com",
+    "email": "peter@example.com",
     "plan": "premium",
     "logins": 5,
     "address": {

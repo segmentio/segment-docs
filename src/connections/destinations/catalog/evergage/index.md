@@ -22,7 +22,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 ```javascript
 analytics.identify('userId123', {
   name: 'John Doe',
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -45,7 +45,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 ```javascript
 analytics.track('Email Opened', {
   name: 'John Doe',
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 

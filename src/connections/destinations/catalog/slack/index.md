@@ -22,7 +22,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 ```javascript
 analytics.identify('userId123', {
   name: 'John Doe',
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -44,12 +44,17 @@ where "name" is the first found of the following:
 * `Anonymous user + anonymousId`
 
 Using the above code example, you can create the following template:
+
 ```
-The user \{{name}} has an email of \{{email}}
+{% raw %}
+The user {{name}} has an email of {{email}}
+{% endraw %}
 ```
+
 Which would result in the following message within your Slack channel:
+
 ```
-The user John Doe has an email of john.doe@segment.com
+The user John Doe has an email of john.doe@example.com
 ```
 
 ## Track
@@ -58,7 +63,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 ```javascript
 analytics.track('Email Opened', {
   name: 'John Doe',
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -89,24 +94,28 @@ The basic Track structure:
 }
 ```
 
-Using the above code example, you can enter the event name:
-```
-Email Opened
-```
+Using the above code example, you can enter the event name `Email Opened`
 and create the following template:
+
+```js
+{% raw %}
+{{name}} opened an email from {{properties.name}} ({{properties.email}})
+{% endraw %}
 ```
-\{{name}} opened an email from \{{properties.name}} (\{{properties.email}})
-```
+
 Which would result in the following message within your Slack channel depending on how "name" was set:
+
 ```
 Jane opened an email from John Doe (john.doe@example.com)
 ```
 
 ### Regex Matching
 In addition to exact event names, you can also enter regex patterns for channels and templates to map multiple events to a single channel or template rather than creating a mapping for each individual event. An example which captures all event names in both lower and upper case ending in "-ing" would look like:
-```
+
+```regex
 /[a-zA-Z]+ing$/g
 ```
+
 More information on regex can be found [here](http://www.zytrax.com/tech/web/regex.htm).
 
 

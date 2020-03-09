@@ -39,7 +39,7 @@ Here's what a basic call to `identify` might look like:
 ```js
 analytics.identify('f4ca124298', {
   name: 'Michael Bolton',
-  email: 'mbolton@initech.com'
+  email: 'mbolton@example.com'
 });
 ```
 
