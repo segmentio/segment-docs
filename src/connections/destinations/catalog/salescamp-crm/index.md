@@ -33,7 +33,7 @@ analytics.identify('YOUR_USERS_ID', {
   firstname: 'Pete',
   lastname: 'Gibbons',
   title: 'VP of Derp',
-  email: 'peter.gibbons@initech.com',
+  email: 'peter.gibbons@example.com',
   company: 'Initech',
   phone: '570-690-4150',
   state: 'California',

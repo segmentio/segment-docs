@@ -152,21 +152,25 @@ For account-level computed traits, you have the option to send either a [group](
 
 You can access your computed traits via the Profile API by querying the `/traits` endpoint. For example, if you can query for the `emails_opened_last_30_days` with the following GET request:
 
-    https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:john.doe@segment.com/traits?include=emails_opened_last_30_days
+```text
+    https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:john.doe@example.com/traits?include=emails_opened_last_30_days
+```
 
 returns:
 
-    {
-        "traits": {
-            "emails_opened_last_30_days": 255
-        },
-        "cursor": {
-            "url": "",
-            "has_more": false,
-            "next": "",
-            "limit": 100
-        }
+```json
+{
+    "traits": {
+        "emails_opened_last_30_days": 255
+    },
+    "cursor": {
+        "url": "",
+        "has_more": false,
+        "next": "",
+        "limit": 100
     }
+}
+```
 
 View the full Profile API docs [here](/docs/personas/profile-api/)
 

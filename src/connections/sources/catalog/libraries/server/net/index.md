@@ -250,7 +250,7 @@ Example `group` call:
 ```csharp
 Analytics.Client.Group("userId", "groupId", new Traits() {
     { "name", "Initech, Inc." },
-    { "website", "http://www.initech.com" }
+    { "website", "http://www.example.com" }
 });
 ```
 
@@ -328,7 +328,7 @@ You can specify which analytics destinations you want each action to go to.
 
 ```csharp
 Analytics.Client.Identify("hj2kf92ds212", new Traits() {
-    { "email", "tom@initech.com" },
+    { "email", "tom@example.com" },
     { "name", "Tom Smykowski" },
 }, new Options()
     .SetIntegration("all", false)
@@ -381,7 +381,7 @@ You can provide nested properties, like so:
 
 ```csharp
 Analytics.Client.Identify("hj2kf92ds212", new Traits() {
-    { "email", "tom@initech.com" },
+    { "email", "tom@example.com" },
     { "name", "Tom Smykowski" },
     { "address", new Dict() {
         { "street", "123 Fake Street" },

@@ -59,7 +59,7 @@ Here's what a basic call to `identify` might look like:
 ```objc
 [[SEGAnalytics sharedAnalytics] identify:@"f4ca124298"
                                   traits:@{ @"name": @"Michael Bolton",
-                                    @"email": @"mbolton@initech.com" }];
+                                    @"email": @"mbolton@example.com" }];
 ```
 
 That's identifying Michael by his unique User ID (the one you know him by in your database) and labeling him with `name` and `email` traits.

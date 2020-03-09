@@ -118,7 +118,7 @@ We recommend calling `identify` a single time when the user's account is first c
 Analytics.with(context).identify(new Traits().putName("Michael Bolton"));
 
 // Sometime later in your app when the user gives you their email
-Analytics.with(context).identify(new Traits().putEmail("mbolton@initech.com"));
+Analytics.with(context).identify(new Traits().putEmail("mbolton@example.com"));
 ```
 Hold up though! When you actually put that code in your Android app, you'll need to replace all those hard-coded strings with details about the currently logged-in user.
 
