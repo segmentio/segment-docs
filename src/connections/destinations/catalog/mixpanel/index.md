@@ -65,7 +65,7 @@ The first thing you'll want to do is to identify your users so Mixpanel knows wh
 
 Segment doesn't send data to Mixpanel People by default, since this usually requires upgrading your Mixpanel account. To enable Mixpanel People, change the "Use Mixpanel People" setting in your Segment Settings UI.
 
-To add people properties in Mixpanel before you know the user's unique databse `userId`, you can identify `traits` without the `userId`.
+To add people properties in Mixpanel before you know the user's unique database `userId`, you can identify `traits` without the `userId`.
 
 **Note:** this only works in Analytics.js and our mobile SDKs.
 
