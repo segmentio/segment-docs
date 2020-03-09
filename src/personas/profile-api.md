@@ -21,7 +21,7 @@ This document has four parts…
 4. [**Personalization**](/docs/personas/profile-api/#recommended-implementation): Example personalization solution built on Personas via server-side personalization
 
 ## Product Highlights
-1. **Realtime Access** - fetch your entire user profile in under 200ms
+1. **Realtime Access** - fetch your entire user profile
 2. **Realtime Data** — query streaming data on the user profile that happened seconds ago
 3. **One Identity** — query an end user's interactions across web, mobile, server, and third party touch-points
 4. **Rich Data** — query any amount of custom events or user traits
