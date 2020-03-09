@@ -78,7 +78,7 @@ Identify{
   user: User::UserId { user_id: format!("user-{}", i) },
   traits: json!({
     "name":"Michael Bolton",
-    "email":"mbolton@initech.com",
+    "email":"mbolton@example.com",
     "plan":"Enterprise",
     "friends":"42"
   }),

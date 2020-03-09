@@ -37,7 +37,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 ```javascript
 analytics.identify("userId1", {
   name: "Peter Gibbons",
-  email: "peter@initech.com",
+  email: "peter@example.com",
   plan: "premium",
   logins: 5
 });

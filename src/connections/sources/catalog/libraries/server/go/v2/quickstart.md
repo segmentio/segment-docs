@@ -43,7 +43,7 @@ client.Identify(&Identify{
   UserId: "019mr8mf4r",
   Traits: map[string]interface{}{
     "name": "Michael Bolton",
-    "email": "mbolton@initech.com",
+    "email": "mbolton@example.com",
     "plan": "Enterprise",
     "friends": 42,
   },
