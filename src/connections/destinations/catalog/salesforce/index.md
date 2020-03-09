@@ -6,10 +6,6 @@ title: Salesforce Destination
 
 Segment's Salesforce destination allows you to identify leads without using SOAP APIs.
 
-**Use Cases**
-
-* [https://segment.com/recipes/product-summary-emails-salesforce/](https://segment.com/recipes/product-summary-emails-salesforce/)
-
 ### API Access
 
 You'll need to provide API access to Segment via a Salesforce user credentials. Since we use Salesforce's SOAP API, you'll need to provide an email, password, and security token to get access to their API.
