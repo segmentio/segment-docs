@@ -18,7 +18,7 @@ Here's an example:
   "action": "identify",
   "traits": {
     "name": "Peter Gibbons",
-    "email": "pgibbons@initech.com",
+    "email": "pgibbons@example.com",
     "plan": "developer",
     "department": "Marketing",
     "created_at": "2013-01-07"
@@ -35,7 +35,7 @@ Here's an example:
   "action": "identify",
   "traits": {
     "name": "Peter Gibbons",
-    "email": "pgibbons@initech.com",
+    "email": "pgibbons@example.com",
     "plan": "developer",
     "department": "Marketing",
     "created_at": "2013-01-07"

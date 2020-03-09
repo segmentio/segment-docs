@@ -85,7 +85,7 @@ analytics.track(
   user_id='YOUR_USER_ID',
   event='Bought Item',
   properties={
-    'email' : 'peter@initech.com',
+    'email' : 'peter@example.com',
   }
 )
 ```
@@ -104,7 +104,7 @@ analytics.track(
   user_id='YOUR_USER_ID',
   event='Bought Item',
   properties={
-    'email': 'peter@initech.com',
+    'email': 'peter@example.com',
   },
   context={
     'traits': {

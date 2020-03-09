@@ -28,7 +28,7 @@ analytics.identify('userId123', {
   firstName: 'John',
   lastName: 'Doe',
   phone: '555-555-5555',
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 

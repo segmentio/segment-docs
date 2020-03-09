@@ -30,7 +30,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 An example identify call is shown below:
 ```
 analytics.identify('97980cfea0085', {
-  email: 'gibbons@initech.com',
+  email: 'gibbons@example.com',
   name: 'Monica Gibbons'
 });
 ```

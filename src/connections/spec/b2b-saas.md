@@ -137,7 +137,7 @@ Property                | Type   | Description
     "type": "organic",
     "first_name": "Peter",
     "last_name": "Gibbons",
-    "email": "pgibbons@initech.com",
+    "email": "pgibbons@example.com",
     "phone": "410-555-9412",
     "username": "pgibbons",
     "title": "Mr"
@@ -156,7 +156,7 @@ Property                | Type   | Description
     "type": "organic",
     "first_name": "Peter",
     "last_name": "Gibbons",
-    "email": "pgibbons@initech.com",
+    "email": "pgibbons@example.com",
     "phone": "410-555-9412",
     "username": "pgibbons",
     "title": "Mr"
