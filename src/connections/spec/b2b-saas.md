@@ -33,10 +33,11 @@ This event should be sent when a new account is created.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`account_name`          | String | The name of the account being created.
-`context.groupId`       | String | The id of the account being created.
+| Property          | Type   | Description                            |
+| ----------------- | ------ | -------------------------------------- |
+| `account_name`    | String | The name of the account being created. |
+| `context.groupId` | String | The id of the account being created.   |
+
 
 
 #### Example
@@ -75,10 +76,10 @@ This event should be sent when an account is deleted.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`account_name`          | String | The name of the account being deleted.
-`context.groupId`       | String | The id of the account being deleted.
+| Property          | Type   | Description                            |
+| ----------------- | ------ | -------------------------------------- |
+| `account_name`    | String | The name of the account being deleted. |
+| `context.groupId` | String | The id of the account being deleted.   |
 
 #### Example
 
@@ -108,7 +109,7 @@ Property                | Type   | Description
 }
 ```
 
-### Signed Up
+### User Signed Up
 
 This event should be sent when a user signs up for your service.
 
@@ -116,16 +117,16 @@ This event should be sent when a user signs up for your service.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`type`                  | String | The type of signup, e.g. invited, organic.
-`first_name`            | String | The first name of the user.
-`last_name`             | String | The last name of the user.
-`email`                 | String | The email of the user.
-`phone`                 | String | The phone number of the user.
-`username`              | String | The username of the user.
-`title`                 | String | The title of the user.
-`context.groupId`       | String | The id of the account the user is joining.
+| Property          | Type   | Description                                |
+| ----------------- | ------ | ------------------------------------------ |
+| `type`            | String | The type of signup, e.g. invited, organic. |
+| `first_name`      | String | The first name of the user.                |
+| `last_name`       | String | The last name of the user.                 |
+| `email`           | String | The email of the user.                     |
+| `phone`           | String | The phone number of the user.              |
+| `username`        | String | The username of the user.                  |
+| `title`           | String | The title of the user.                     |
+| `context.groupId` | String | The id of the account the user is joining. |
 
 #### Example
 
@@ -151,7 +152,7 @@ Property                | Type   | Description
 {
   "userId": "019mr8mf4r",
   "action": "track",
-  "event": "Signed Up",
+  "event": "User Signed Up",
   "properties": {
     "type": "organic",
     "first_name": "Peter",
@@ -167,7 +168,7 @@ Property                | Type   | Description
 }
 ```
 
-### Signed In
+### User Signed In
 
 This event should be sent when a user signs in to your service.
 
@@ -175,10 +176,10 @@ This event should be sent when a user signs in to your service.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`username`              | String | The username of the user logging in.
-`context.groupId`       | String | The id of the account being created.
+| Property                | Type   | Description |
+| --------                | ----   | -----------
+| `username`              | String | The username of the user logging in. |
+| `context.groupId`       | String | The id of the account being created. |
 
 #### Example
 
@@ -198,7 +199,7 @@ Property                | Type   | Description
 {
   "userId": "019mr8mf4r",
   "action": "track",
-  "event": "Signed In",
+  "event": "User Signed In",
   "properties": {
     "username": "pgibbons"
   },
@@ -208,7 +209,7 @@ Property                | Type   | Description
 }
 ```
 
-### Signed Out
+### User Signed Out
 
 This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) to refresh the cookie when a Signed Out event occurs.
 
@@ -216,10 +217,10 @@ This event should be sent when a user signs out for your service. You should als
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`username`              | String | The username of the user logging in.
-`context.groupId`       | String | The id of the account being created.
+| Property          | Type   | Description                          |
+| ----------------- | ------ | ------------------------------------ |
+| `username`        | String | The username of the user logging in. |
+| `context.groupId` | String | The id of the account being created. |
 
 #### Example
 
@@ -239,7 +240,7 @@ Property                | Type   | Description
 {
   "userId": "019mr8mf4r",
   "action": "track",
-  "event": "Signed Out",
+  "event": "User Signed Out",
   "properties": {
     "username": "pgibbons"
   },
@@ -257,12 +258,12 @@ This event should be sent when a user invites another user.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`invitee_email`         | String | The email address of the person receiving the invite.
-`invitee_first_name`    | String | The first name of the person receiving the invite.
-`invitee_last_name`     | String | The last name of the person receiving the invite.
-`invitee_role`          | String | The permission group for the person receiving the invite.
+| Property             | Type   | Description                                               |
+| -------------------- | ------ | --------------------------------------------------------- |
+| `invitee_email`      | String | The email address of the person receiving the invite.     |
+| `invitee_first_name` | String | The first name of the person receiving the invite.        |
+| `invitee_last_name`  | String | The last name of the person receiving the invite.         |
+| `invitee_role`       | String | The permission group for the person receiving the invite. |
 
 #### Example
 
@@ -306,10 +307,10 @@ This event should be sent when a user is added to a group.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`role`                  | String | The permission group for this user in this account.
-`context.groupId`       | String | The id of the account being created.
+| Property          | Type   | Description                                         |
+| ----------------- | ------ | --------------------------------------------------- |
+| `role`            | String | The permission group for this user in this account. |
+| `context.groupId` | String | The id of the account being created.                |
 
 #### Example
 
@@ -347,9 +348,9 @@ This event should be sent when a user is removed from a group or account.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`context.groupId`       | String | The id of the account being created.
+| Property                | Type   | Description |
+| --------                | ----   | ----------- |
+| `context.groupId`       | String | The id of the account being created. |
 
 #### Example
 
@@ -383,12 +384,12 @@ This event should be sent when a trial is started.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`trial_start_date`      | Date   | The date when the trial starts. It is an ISO-8601 date string.
-`trial_end_date`        | Date   | The date when the trial ends. It is an ISO-8601 date string.
-`trial_plan_name`       | String | The name of the plan being trialed.
-`context.groupId`       | String | The id of the account being created.
+| Property           | Type   | Description                                                    |
+| ------------------ | ------ | -------------------------------------------------------------- |
+| `trial_start_date` | Date   | The date when the trial starts. It is an ISO-8601 date string. |
+| `trial_end_date`   | Date   | The date when the trial ends. It is an ISO-8601 date string.   |
+| `trial_plan_name`  | String | The name of the plan being trialed.                            |
+| `context.groupId`  | String | The id of the account being created.                           |
 
 #### Example
 
@@ -430,12 +431,12 @@ This event should be sent when a trial ends.
 
 This event supports the following semantic properties:
 
-Property                | Type   | Description
---------                | ----   | -----------
-`trial_start_date`      | Date   | The date when the trial starts. It is an ISO-8601 date string.
-`trial_end_date`        | Date   | The date when the trial ends. It is an ISO-8601 date string.
-`trial_plan_name`       | String | The name of the plan being trialed.
-`context.groupId`       | String | The id of the account being created.
+| Property                | Type   | Description |
+| --------                | ----   | ----------- |
+| `trial_start_date`      | Date   | The date when the trial starts. It is an ISO-8601 date string. |
+| `trial_end_date`        | Date   | The date when the trial ends. It is an ISO-8601 date string. |
+| `trial_plan_name`       | String | The name of the plan being trialed. |
+| `context.groupId`       | String | The id of the account being created. |
 
 #### Example
 
