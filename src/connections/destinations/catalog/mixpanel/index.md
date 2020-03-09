@@ -84,7 +84,7 @@ Group calls are sent to Mixpanel if, **and only if**,
 
 1. The Group Identifier Traits setting has one or more traits saved in the destination settings for Mixpanel.
    ![](images/mixpanel-group-id-traits.png)
-2. You have created a group key in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation).
+2. You have created a group key of the same name in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation).
 3. A Group trait with the same name as one of the configured Group Identifier Traits is sent with the group call.
 
 ```js
@@ -312,7 +312,7 @@ Mixpanel's [Autotrack](https://mixpanel.com/autotrack/) feature is supported via
 
 By default we don't send data to Mixpanel People since it usually requires upgrading your Mixpanel account. If you want to enable Mixpanel People simply check the box for: **Use Mixpanel People** from your source destinations page in the Mixpanel sheet.
 
-If you want to add people properties in Mixpanel before you know the user's unique databse `userId` you can identify `traits` without the `userId`.
+If you want to add people properties in Mixpanel before you know the user's unique database `userId` you can identify `traits` without the `userId`.
 
 <!-- Removing this note as this has been tested with our server libraries and works (Feb 2020) -->
 <!--**Note:** this only works in Analytics.js and our mobile SDKs.-->
