@@ -2,6 +2,9 @@
 title: Building a Stream
 ---
 
+> info ""
+> The Developer Center currently only supports the [Subscription](/docs/partners/subscriptions) component in _Developer Preview_. Please include [your information here](https://airtable.com/shrj3BkHMhdeaPYWt) and we will reach out once _Streams_ are made available!
+
 Streams enable you to send data to our mutual customers from your web services in realtime.
 
 # Building a Stream
