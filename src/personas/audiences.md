@@ -8,13 +8,13 @@ Audiences allow you to define cohorts of users or accounts based on their event 
 
 When building an audience you can leverage existing events, traits, computed traits or audiences.
 
-![](images/build_audiences1.png)
+![](images/audience_condition_list.png)
 
 ### Events
 
 You can build an audience from any of the events that are connected to Personas. This includes any [track](/docs/connections/spec/track), [page](/docs/connections/spec/page), or [screen](/docs/connections/spec/screen) calls. You can use the `property` button to refine the audience on specific event properties as well. Select `and not who` to indicate users that have not performed an event. For example, you might want to look at all users that have viewed a product above a certain price point, but not completed the order.
 
-![](images/1526326688131.png)
+![](images/audience_builder.png)
 
 You can also specify two different types of time-windows, `within` and `in between`. Within lets you specify an event that occurred in the last `x` number of days. In-between lets you specify events that occurred over a rolling time-window in the past. A common use case is to look at all customers that were active 30 to 90 days ago, but have not completed an action in the last 30 days.
 
@@ -26,7 +26,7 @@ You can also build audiences based on custom traits. These traits can be collect
 
 You can also use computed traits in an audience definition. For example, if you have created a `total_revenue` computed trait, you can use this to generate an audience of `big_spender` customers that exceed a certain threshold.
 
-![](images/1526327264494.png)
+![](images/audience_builder_computed.png)
 
 ### Funnel Audiences
 
@@ -78,7 +78,7 @@ Realtime Compute allows you to update traits and audiences as Segment receives n
 
 *By default, Segment queries all historical data to set the current value of the computed trait and audience. If you want to compute values only using data from the time you activate the feature on, uncheck Historical Backfill.*
 
-![](images/1538693602203_image.png)
+![](images/audience_review_create.png)
 
 
 Note that Facebook Custom Audiences, Marketo Lists, and Adwords have rate limits on how quickly we can update an audience. We will sync at the fastest frequency allowed by the tool. This is between 1 hour and 6 hours.
