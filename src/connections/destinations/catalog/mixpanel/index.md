@@ -71,8 +71,22 @@ analytics.identify({
 
 ## Group
 
-Group calls are sent to Mixpanel if, **and only if**, the Group Identifier Traits setting has one or more traits saved. For more information about Mixpanel's Group Analytics, check out
-[this article](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics).
+Group calls are sent to Mixpanel if, **and only if**,
+
+1. The Group Identifier Traits setting has one or more traits saved in the destination settings for Mixpanel. [INSERT IMAGE HERE]
+2. You have created a group key in your Mixpanel [project settings](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation).
+3. A Group trait with the same name as one of the configured Group Identifier Traits is sent with the group call.
+```js
+analytics.group("0e8c78ea9d97a7b8185e8632", {
+  name: "Initech",
+  company_id: "0e8c78ea9d97a7b8185e8632", // Group identifier trait.
+  industry: "Technology",
+  employees: 329,
+  plan: "enterprise",
+  "total billed": 830
+});
+```
+Mixpanel supports multiple definitions of groups. For more information about Mixpanel’s Group Analytics, check out this [article](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics).
 
 If the group call **does not** have a group trait that matches the Group Identifier Traits setting, then the event will be ignored.
 
