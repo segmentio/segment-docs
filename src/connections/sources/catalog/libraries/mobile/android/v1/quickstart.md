@@ -141,7 +141,7 @@ Here's what a basic call to `identify` might look like:
 ```java
 Traits traits = new Traits();
 traits.put("name", "Michael Bolton");
-traits.put("email", "mbolton@initech.com");
+traits.put("email", "mbolton@example.com");
 Analytics.identify("f4ca124298", traits);
 ```
 

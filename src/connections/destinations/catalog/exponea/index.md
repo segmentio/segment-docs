@@ -127,7 +127,7 @@ Example of identify call:
 ```js
 analytics.identify("userId123", {
   name: "John Doe",
-  email: "john.doe@segment.com",
+  email: "john.doe@example.com",
   address: {
     city: "New York",
     country: "USA"
@@ -139,7 +139,7 @@ This identify call is translated into a customer update for user with Exponea ha
 
 ```js
 "name": "John Doe",
-"email": "john.doe@segment.com",
+"email": "john.doe@example.com",
 "address_city": "New York",
 "address_country": "USA",
 ```

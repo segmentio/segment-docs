@@ -45,7 +45,7 @@ client.Enqueue(analytics.Identify{
   UserId: "019mr8mf4r",
   Traits: analytics.NewTraits().
     SetName("Michael Bolton").
-    SetEmail("mbolton@initech.com").
+    SetEmail("mbolton@example.com").
     Set("plan", "Enterprise").
     Set("friends", 42),
 })

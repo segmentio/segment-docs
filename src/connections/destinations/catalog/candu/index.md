@@ -48,7 +48,7 @@ An example call would look like:
 
 ```js
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 `identify` calls will be sent to Candu as an `identify` event. The `identify` call is used to record the identity of an end-user, which enables you to send them the most relevant content.
