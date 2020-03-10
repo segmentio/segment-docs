@@ -899,7 +899,7 @@ If you'd like to centralize this logic, you can write a middleware for it!
 
 ### IDFA
 
-Some destinations, particularly mobile attribution tools (e.g. Kochava), require the IDFA (identifier for advertisers). The IDFA shows up in Segment calls in the debugger under `context.device.advertisingId`. In order for this value to be captured by the Segment SDK, ensure that you include the [iAd framework](https://developer.apple.com/reference/iad).
+Some destinations, particularly mobile attribution tools (e.g. Kochava), require the IDFA (identifier for advertisers). The IDFA shows up in Segment calls in the debugger under `context.device.advertisingId`. In order for this value to be captured by the Segment SDK, ensure that you include the [AdSupport framework](https://developer.apple.com/reference/adsupport).
 
 Once you enable this, you will see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true`.
 
