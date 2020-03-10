@@ -6,6 +6,10 @@ title: Salesforce Marketing Cloud Destination
 
 Segment's Salesforce Marketing Cloud destination allows you to add contacts without using SOAP APIs.
 
+**Use Cases**
+
+* [https://segment.com/recipes/product-summary-emails-salesforce/](https://segment.com/recipes/product-summary-emails-salesforce/)
+
 ### A Note About ExactTarget
 
 ExactTarget was acquired by Salesforce in 2013 and renamed "Salesforce Marketing Cloud." Throughout Segment, we'll stick to the name Salesforce Marketing Cloud, but know that the names "Salesforce Marketing Cloud" and "ExactTarget" refer to the same product.

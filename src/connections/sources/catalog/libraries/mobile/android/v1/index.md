@@ -163,7 +163,7 @@ You can specify which analytics providers you want each action to go to.
 
 ```java
 Traits traits = new Traits();
-traits.put("email", "tom@initech.com");
+traits.put("email", "tom@example.com");
 traits.put("name", "Tom Smykowski");
 Analytics.identify("hj2kf92ds212", traits,
     new Options()

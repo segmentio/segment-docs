@@ -52,7 +52,7 @@ Example `identify` call:
 ```csharp
 Analytics.Client.Identify("019mr8mf4r", new Traits() {
     { "name", "Tom Smykowski" },
-    { "email", "tom@initech.com" },
+    { "email", "tom@example.com" },
     { "friends", 29 }
 });
 ```
@@ -175,7 +175,7 @@ Example `group` call:
 ```csharp
 Analytics.Client.Group("userId", "groupId", new Traits() {
     { "name", "Initech, Inc." },
-    { "website", "http://www.initech.com" }
+    { "website", "http://www.example.com" }
 });
 ```
 The `group` call has the following fields:
@@ -256,7 +256,7 @@ Here's an example `identify` call with the `options` object shown.
 
 ```csharp
 Analytics.Client.Identify("hj2kf92ds212", new Traits() {
-    { "email", "tom@initech.com" },
+    { "email", "tom@example.com" },
     { "name", "Tom Smykowski" },
 }, new Options()
     .SetIntegration("all", false)
@@ -314,7 +314,7 @@ You can provide nested properties, like so:
 
 ```csharp
 Analytics.Client.Identify("hj2kf92ds212", new Traits() {
-    { "email", "tom@initech.com" },
+    { "email", "tom@example.com" },
     { "name", "Tom Smykowski" },
     { "address", new Dict() {
         { "street", "123 Fake Street" },

@@ -28,7 +28,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.identify('userId12345', {
   firstName: 'Bob',
   lastName: 'Dole',
-  email: 'bob.dole@initech.com'
+  email: 'bob.dole@example.com'
 });
 ```
 
@@ -70,7 +70,7 @@ You can populate those fields using this `identify` call:
 analytics.identify('userId12345', {
   firstName: 'Bob',
   lastName: 'Dole',
-  email: 'bob.dole@initech.com',
+  email: 'bob.dole@example.com',
   company: 'Initech',
   employees: 234
 });

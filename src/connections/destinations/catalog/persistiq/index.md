@@ -23,7 +23,7 @@ _**NOTE:** The PersistIQ Destination is currently in beta, which means that they
 If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 ```
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -31,7 +31,7 @@ You can pass in an `email` and `unsubscribed` (with a value of true) in an `iden
 
 ```
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com',
+  email: 'john.doe@example.com',
   unsubscribed: true
 });
 ```
