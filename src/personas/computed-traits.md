@@ -118,11 +118,12 @@ Account-level examples:
 ![](images/1542074153487.png)
 
 ## Conditions
+
 All computed trait types support a common "Add Conditions" section. Conditions defined here restrict the messages considered when calculating the final value of the computed trait by looking at a property of the events. For example, you could limits events to only those where "price" is greater than 30.00 or where "page.url" contains "pricing".
 
-There are twelve different operators currently available.
+The following operators are available.
 - equals
-- not equals
+- not equals -
 - less than
 - greater than
 - less than or equal
@@ -142,7 +143,7 @@ There are twelve different operators currently available.
 
 ## Connecting your Computed Trait to a Destination
 
-User-level computed Traits are sent to destinations on our platform through the [identify](/docs/connections/spec/identify) call as a user trait. The trait name will correspond to the snake-cased name that you can find in the trait settings, for e.g. `most_viewed_page_category`. You can find the list of destinations [here](/docs/personas/activation)
+User-level computed Traits are sent to destinations on our platform through the [identify](/docs/connections/spec/identify/) call as a user trait. The trait name will correspond to the snake-cased name that you can find in the trait settings, for e.g. `most_viewed_page_category`. You can find the list of destinations [here](/docs/personas/activation/)
 
 ![](images/1525837601768.png)
 
@@ -153,7 +154,7 @@ For account-level computed traits, you have the option to send either a [group](
 You can access your computed traits via the Profile API by querying the `/traits` endpoint. For example, if you can query for the `emails_opened_last_30_days` with the following GET request:
 
 ```
-    https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:john.doe@segment.com/traits?include=emails_opened_last_30_days
+https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:john.doe@segment.com/traits?include=emails_opened_last_30_days
 ```
 
 returns:
@@ -170,4 +171,5 @@ returns:
         }
     }
 ```
-View the full Profile API docs [here](/docs/personas/profile-api/)
+
+You can read the [full Profile API docs](/docs/personas/profile-api/) to learn more.

@@ -52,7 +52,7 @@ Once you have previewed your audience, you can choose to connect a destination, 
 
 ![](images/audience_select_destination_card.png)
 
-Once you have created your audience, we will start syncing your audience to the destinations you have selected. Audiences are either sent to destinations as a boolean user-property or a user-list, depending on what is supported by the destination. Learn more about supported destinations [here](/docs/personas/activation/#destinations).
+When you create an audience, Segment starts syncing your audience to the destinations you selected. Audiences are either sent to destinations as a boolean user-property or a user-list, depending on what the destination supports. Read more about [which destinations are supported](/docs/personas/activation/#destinations) in the activation documentation.
 
 For account-level audiences, you have the option to send either a [group](/docs/connections/spec/group) call and/or [identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
 
@@ -60,28 +60,31 @@ For account-level audiences, you have the option to send either a [group](/docs/
 
 Realtime Compute allows you to update traits and audiences as Segment receives new events. Realtime Compute unlocks exciting use cases:
 
-  - **Intra-Session App Personalization:** change your app experience with personalized onboarding, product recommendations, and faster funnels based on a user entering and exiting an audience.
-  - **Instant Messaging:** Trigger messages in email, livechat, and push notifications instantly, to deliver immediate experiences across channels.
-  - **Operational Workflows:** Supercharge your sales and support teams by responding to customer needs faster, based on the latest understanding of a user
+- **Intra-Session App Personalization:** change your app experience with personalized onboarding, product recommendations, and faster funnels based on a user entering and exiting an audience.
+- **Instant Messaging:** Trigger messages in email, livechat, and push notifications instantly, to deliver immediate experiences across channels.
+- **Operational Workflows:** Supercharge your sales and support teams by responding to customer needs faster, based on the latest understanding of a user
 
-1. **Go to your Computed Traits or Audiences tab in Personas > New**
-![](images/1538693216424_image.png)
+To create a new audience:
 
-
-2. **Create your computed trait or audience.**
-
-*You will see a Lightning bolt indicating that the computation will be updated in realtime.*
-
-![](images/1538693443980_image.png)
-
-3. **Preview your audience > Select Destinations > Review & Create**
-
-*By default, Segment queries all historical data to set the current value of the computed trait and audience. If you want to compute values only using data from the time you activate the feature on, uncheck Historical Backfill.*
-
-![](images/audience_review_create.png)
+1. Go to your **Computed Traits** or **Audiences** tab in Personas and click **New**.
+   ![](images/1538693216424_image.png)
 
 
-Note that Facebook Custom Audiences, Marketo Lists, and Adwords have rate limits on how quickly we can update an audience. We will sync at the fastest frequency allowed by the tool. This is between 1 hour and 6 hours.
+2. Create your computed trait or audience.
+
+   A lightning bolt indicates that the computation updates in real-time.
+
+   ![](images/1538693443980_image.png)
+
+3. To preview your audience, click **Select Destinations**, then click **Review & Create**.
+
+   By default, Segment queries all historical data (or "[replays](/docs/guides/what-is-replay/)" data) to set the current value of the computed trait and audience. You can uncheck Historical Backfill to compute values for the audience or trait without using this data. With this disabled, the trait or audience only uses the data that arrives after you created it.
+
+   ![](images/audience_review_create.png)
+
+
+> warning ""
+> [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords](?) have rate limits on how quickly we can update an audience. We will sync at the fastest frequency allowed by the tool. This is between 1 hour and 6 hours.
 
 ## Accessing your audiences via the Profiles API
 
@@ -92,6 +95,7 @@ https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles
 ```
 
 returns:
+
 ```json
     {
         "traits": {
@@ -105,4 +109,4 @@ returns:
         }
     }
 ```
-View the full Profile API docs [here](/docs/personas/profile-api/)
+You can read the [full Profile API docs](/docs/personas/profile-api/) to learn more.
