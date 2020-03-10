@@ -9,9 +9,9 @@ If you submit a particularly tricky ticket to Segment Support Engineer, we might
 > *Note*: Support Access is not available for workspaces using forced-SSO at this time.
 
 ## Granting a Segment Support Engineer access to your account
-Support Access is available for all Segment Workspace Owners and can be found under your Workspace Settings.
+Support Access is available for all Segment Workspace Owners and can be found under your [Workspace Settings](https://app.segment.com/goto-my-workspace/settings/support-access).
 
-Click **Grant Access** to allow a Segment Support Engineer to access your account. 
+Click **Grant Access** to allow a Segment Support Engineer to access your account.
 
 When Segment Support no longer needs access to your account, simply revoke access at any time.
 
