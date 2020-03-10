@@ -33,21 +33,21 @@ BEGIN;
   UPDATE table_name SET column_new = column_name;
   ALTER TABLE table_name DROP column_name;
   ALTER TABLE table_name RENAME column_new TO column_name;
-  END;
+  COMMIT;
 ```
 
 Example:
 ```sql
 BEGIN;
   LOCK segment_prod.identifies;
-  ALTER TABLE segment_prod.identifies ADD COLUMN new_account_id VARCHAR;
+  ALTER TABLE segment_prod.identifies ADD COLUMN new_account_id VARCHAR(1024);
   UPDATE segment_prod.identifies SET new_account_id = account_id;
   ALTER TABLE segment_prod.identifies DROP account_id;
   ALTER TABLE table_name RENAME new_account_id TO account_id;
-  END;
+  COMMIT;
 ```
 > warning ""
-> Increasing the default size can impact query performance as it needs to process more data to accomodate the increased column size.
+> Increasing the default size can impact query performance as it needs to process more data to accomodate the increased column size. Read more [here](https://docs.aws.amazon.com/redshift/latest/dg/c_best-practices-smallest-column-size.html).
 
 ### Blacklisted track call properties:
 
