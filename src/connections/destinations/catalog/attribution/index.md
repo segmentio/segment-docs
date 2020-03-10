@@ -2,7 +2,7 @@
 title: Attribution Destination
 rewrite: true
 ---
-[Attribution](http://attributionapp.com/) is an easy to use one stop dashboard for multi-touch attribution across all marketing channels. Attribution is prided on high fidelitiy and allows marketers to walk back every  visit, conversion or revenue dollar to the source. Marketers can easily integrate Attribution and Segment to begin measuring the effectivness of their campaigns today.
+[Attribution](http://attributionapp.com/) is an easy to use one stop dashboard for multi-touch attribution across all marketing channels. Attribution prides itself on high-fidelity and allows marketers to trace every visit, conversion or revenue dollar to the source. Marketers can easily integrate Attribution and Segment to begin measuring the effectiveness of their campaigns today.
 
 This destination is maintained by Attribution. For any issues with the destination, please [reach out to their team](Support@attribtutionapp.com).
 
