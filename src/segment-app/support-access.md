@@ -10,7 +10,9 @@ If you submit a particularly tricky ticket to Segment Support Engineer, we might
 ## Granting a Segment Support Engineer access to your account
 Support Access is available for all Segment Workspace Owners and can be found under your Workspace Settings.
 
-Simply click “Grant Access” to allow a Segment Support Engineer to access your account. If you no longer need Support to access your account, simply revoke access at any time
+Click **Grant Access** to allow a Segment Support Engineer to access your account. 
+
+When Segment Support no longer needs access to your account, simply revoke access at any time.
 
 ![The Segment Settings page before granting Support Access](images/support-access-before.png)
 _The Segment Settings page before granting Support Access_
