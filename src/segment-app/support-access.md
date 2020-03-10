@@ -23,7 +23,7 @@ A Segment Support Engineer will be able to do everything you can do in your work
 
 ## How do I know it’s working?
 
-Workspace Owners of Business Tier workspaces will be able to view any Support Access actions in the Audit Trail. You will be able to monitor:
+Workspace Owners of Business Tier workspaces can view any Support Access actions in the Audit Trail. You can see and monitor:
 
 - **Support Access Granted** - you have enabled Support Access in your Workspace Settings
 - **Support Login** - a Segment Support Engineer has accessed in to your workspace with your account
