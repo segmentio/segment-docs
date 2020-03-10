@@ -8,7 +8,7 @@ Segment users instrument their apps with a the Segment SDKs. The most common SDK
 ```js
 analytics.identify("97980cfea0067", {
   name: "Peter Gibbons",
-  email: "peter@initech.com",
+  email: "peter@example.com",
   plan: "premium",
   logins: 5
 });
@@ -21,7 +21,7 @@ These simple SDK calls are turned into an "event" -- JSON data for Segment and i
   "type": "identify",
   "traits": {
     "name": "Peter Gibbons",
-    "email": "peter@initech.com",
+    "email": "peter@example.com",
     "plan": "premium",
     "logins": 5
   },
@@ -66,7 +66,7 @@ However the SDKs also add common fields about the user, their environment, times
   "sentAt": "2019-06-21T16:33:26.060Z",
   "timestamp": "2019-06-21T16:33:26.158Z",
   "traits": {
-    "email": "peter@initech.com",
+    "email": "peter@example.com",
     "logins": 5,
     "name": "Peter Gibbons",
     "plan": "premium"
@@ -297,7 +297,7 @@ A Segment user can identify who a customer is:
 ```js
 analytics.identify("97980cfea0067", {
   name: "Peter Gibbons",
-  email: "peter@initech.com",
+  email: "peter@example.com",
   plan: "premium",
   logins: 5
 });
@@ -340,7 +340,7 @@ This results in the following event data:
   "sentAt": "2019-06-21T17:33:22.373Z",
   "timestamp": "2019-06-21T17:33:22.486Z",
   "traits": {
-    "email": "peter@initech.com",
+    "email": "peter@example.com",
     "logins": 5,
     "name": "Peter Gibbons",
     "plan": "premium"

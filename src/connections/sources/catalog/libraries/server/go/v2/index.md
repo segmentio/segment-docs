@@ -49,7 +49,7 @@ client.Identify(&analytics.Identify{
   UserId: "019mr8mf4r",
   Traits: map[string]interface{}{
     "name":    "Michael Bolton",
-    "email":   "mbolton@initech.com",
+    "email":   "mbolton@example.com",
     "plan":    "Enterprise",
     "friends": 42,
   },
@@ -146,8 +146,7 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`Context` _map[string]interface{}, optional_</td>
-    <td>Extra [context]() to attach to the call.
-      <p>**Note:** `context` differs from `traits` because it is not attributes of the user itself.</p></td>
+    <td>Extra [context]() to attach to the call. **Note:** `context` differs from `traits` because it is not attributes of the user itself.</td>
   </tr>
   <tr>
     <td>`AnonymousId` _string, optional_</td>
@@ -235,7 +234,7 @@ client.Identify(&analytics.Identify{
   UserId: "019mr8mf4r",
   Traits: map[string]interface{}{
     "name":    "Michael Bolton",
-    "email":   "mbolton@initech.com",
+    "email":   "mbolton@example.com",
     "plan":    "Enterprise",
     "friends": 42,
   },

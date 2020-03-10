@@ -27,7 +27,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 ```js
 analytics.identify("97980cfea0067", {
   name: "Peter Gibbons",
-  email: "peter@initech.com",
+  email: "peter@example.com",
   plan: "premium",
   logins: 5
 });

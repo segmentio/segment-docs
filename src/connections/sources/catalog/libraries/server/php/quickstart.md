@@ -53,7 +53,7 @@ Segment::identify(array(
   "userId" => "f4ca124298",
   "traits" => array(
     "name" => "Michael Bolton",
-    "email" => "mbolton@initech.com"
+    "email" => "mbolton@example.com"
   )
 ));
 ```

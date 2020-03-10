@@ -68,7 +68,7 @@ When and where you call `identify` depends on how your users are authenticated, 
 Here's what a basic call to `identify` might look like:
 
 ```java
-Analytics.with(context).identify("f4ca124298", new Traits().putName("Michael Bolton").putEmail("mbolton@initech.com"));
+Analytics.with(context).identify("f4ca124298", new Traits().putName("Michael Bolton").putEmail("mbolton@example.com"));
 ```
 
 That's identifying Michael by his unique User ID (the one you know him by in your database) and labeling him with `name` and `email` traits.

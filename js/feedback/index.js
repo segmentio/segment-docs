@@ -33,7 +33,14 @@ export default function () {
         const feedbackValue = feedbackText.value
 
         if (feedbackValue) {
-          // TODO: track feedback
+          let { section = 'footer', helpful = false } = JSON.parse(window.localStorage.getItem('docsFeedback'))
+          typewriter.feedbackProvided({
+            section,
+            helpful,
+            title: `${document.title}`,
+            url: document.url,
+            comment: feedbackValue
+          })
 
           tooltip.hide()
           sent = true
@@ -87,6 +94,11 @@ export default function () {
       const section = buttons[i].hasAttribute('data-section') ? 'right-nav' : 'footer'
       const helpful = buttons[i].dataset.feedbackButton === 'helpful'
       const alternate = buttons[i].dataset.feedbackButton === 'alternate'
+
+      window.localStorage.setItem('docsFeedback', JSON.stringify({
+        section,
+        helpful
+      }))
 
       if (alternate) {
         tooltips[i].setContent(alternateTemplate[0].innerHTML)

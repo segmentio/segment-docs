@@ -51,7 +51,7 @@ POST https://api.segment.io/v1/identify
 {
   "userId": "019mr8mf4r",
   "traits": {
-    "email": "pgibbons@initech.com",
+    "email": "pgibbons@example.com",
     "name": "Peter Gibbons",
     "industry": "Technology"
   },
@@ -349,7 +349,7 @@ POST https://api.segment.io/v1/identify
 {
   "userId": "019mr8mf4r",
   "traits": {
-    "email": "pgibbons@initech.com",
+    "email": "pgibbons@example.com",
     "name": "Peter Gibbons",
     "industry": "Technology"
   },

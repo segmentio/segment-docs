@@ -23,7 +23,7 @@ _**NOTE:** The CustomFit.ai Destination is currently in beta, which means that t
 ```js
 analytics.identify("user_id", {
   name: "Peter Gibbons",
-  email: "peter@initech.com",
+  email: "peter@example.com",
   plan: "premium",
   logins: 5
 });
