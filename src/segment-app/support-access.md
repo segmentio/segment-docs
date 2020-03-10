@@ -28,6 +28,6 @@ When you grant Support Access, the Segment Support Engineers can do everything t
 
 Workspace Owners of Business Tier workspaces can view any Support Access actions in the Audit Trail. You can see and monitor:
 
-- **Support Access Granted** - you have enabled Support Access in your Workspace Settings
+- **Support Access Granted** - you enabled Support Access in your Workspace Settings
 - **Support Login** - a Segment Support Engineer accessed your workspace with your account
 - **Support Access Revoked**  - you revoked Support Access from your account
