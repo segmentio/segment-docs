@@ -5,7 +5,8 @@ hidden: true
 You can contact Segment Product Support by [submitting a ticket](https://segment.com/help/contact/).
 
 If you submit a particularly tricky ticket to Segment Support Engineer, we might ask you to grant temporary access to your Segment account so we can troubleshoot your issue. Once granted access, a Segment Support Engineer can access your account for up to 7 days. You can also revoke Support Access at any time.
-*Note*: Support Access for workspaces with forced-SSO is not supported at this time.
+> note ""
+> *Note*: Support Access is not available for workspaces using forced-SSO at this time.
 
 ## Granting a Segment Support Engineer access to your account
 Support Access is available for all Segment Workspace Owners and can be found under your Workspace Settings.
