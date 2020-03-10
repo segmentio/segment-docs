@@ -2783,7 +2783,7 @@ items:
   slug: attribution
   name: catalog/destinations/attribution
   description: Track spending and conversions across marketing channels.
-  hidden: true
+  hidden: false
   url: connections/destinations/catalog/attribution
   status: PUBLIC
   logo:
@@ -12280,17 +12280,6 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
-      - name: segmentProperty
-        display_name: Segment Property Name
-        type: STRING
-        deprecated: false
-        required: true
-        string_validators:
-          regexp: ''
-        description: >-
-          Enter the Segment Property Name. This is case sensitive so make sure
-          the name matches exactly how you are passing it in your .track() call.
-        settings: []
       - name: marketoAttributeName
         display_name: Marketo Field Name
         type: STRING
@@ -12321,6 +12310,17 @@ items:
         deprecated: false
         required: false
         description: Mark this property as the Primary field in Marketo.
+        settings: []
+      - name: segmentProperty
+        display_name: Segment Property Name
+        type: STRING
+        deprecated: false
+        required: true
+        string_validators:
+          regexp: ''
+        description: >-
+          Enter the Segment Property Name. This is case sensitive so make sure
+          the name matches exactly how you are passing it in your .track() call.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -16232,13 +16232,6 @@ items:
       required: false
       description: Map your Segment properties to Responsys Columns
       settings:
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as a Primary Key in Responsys.
-        settings: []
       - name: columns
         display_name: Segment Property Name
         type: STRING
@@ -16273,6 +16266,13 @@ items:
           - INTEGER
           - TIMESTAMP
         description: Enter the Responsys column type.
+        settings: []
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as a Primary Key in Responsys.
         settings: []
     - name: mapEmail
       display_name: Map Email
