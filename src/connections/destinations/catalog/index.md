@@ -5,6 +5,10 @@ layout: catalog
 menu_icon: "read-more"
 ---
 
+> info "Want a simpler list?"
+> Check out the [list of _all_ destinations](index-all/).
+
+<br>
 <div class="destinations-catalog">
   {% assign categories = site.data.catalog.destination_categories.items | sort:"display_name" %}
 

@@ -29,7 +29,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example identify call is shown below:
 ```javascript
 analytics.identify('97980cfea0085', {
-  email: 'gibbons@initech.com',
+  email: 'gibbons@example.com',
   name: 'John Gibbons'
 });
 ```

@@ -26,4 +26,4 @@ You can grant Source roles to specific resource instances (for example you could
 The other roles apply to all resource instances within the product area (Warehouses, Tracking Plans, Personas Audiences/Traits).
 These roles will become more granular very soon.
 
-_Note: If you are on a Developer or Team plan, only the `workspace owner` and `source admin` roles are available._
+_Note: If you are on a Free or Team plan, only the `workspace owner` and `source admin` roles are available._

@@ -56,7 +56,7 @@ Analytics.identify(
     user_id: 'f4ca124298',
     traits: {
       name: 'Michael Bolton',
-      email: 'mbolton@initech.com',
+      email: 'mbolton@example.com',
       created_at: DateTime.now
     })
 ```

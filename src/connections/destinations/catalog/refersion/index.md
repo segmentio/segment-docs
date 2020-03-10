@@ -37,7 +37,7 @@ If you haven't had a chance to review our spec, please take a look to understand
   "email": "test@example.org",
   "traits": {
     "name": "Peter Gibbons",
-    "email": "peter@initech.com",
+    "email": "peter@example.com",
     "plan": "premium",
     "logins": 5,
     "address": {
@@ -81,7 +81,7 @@ You can use a `delete` request to remove a certain affiliate from our system.
     "userId": "5678",
     "context": [],
     "integrations": [],
-    "email": "peter@initech.com",
+    "email": "peter@example.com",
     "receivedAt": "2019-02-19T23:58:54.387Z",
     "sentAt": "2019-02-19T21:58:54.387Z",
     "originalTimestamp": "2019-02-19T23:58:54.387Z",

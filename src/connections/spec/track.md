@@ -115,7 +115,7 @@ The following is all the reserved properties we have standardized that apply to 
     <td>`currency`</td>
     <td>String</td>
     <td>Currency of the revenue an event resulted in
-      <p>This should be sent in the [ISO 4127 format](http://en.wikipedia.org/wiki/ISO_4217). If this is not set, we assume the revenue to be in US dollars.</p></td>
+      This should be sent in the [ISO 4127 format](http://en.wikipedia.org/wiki/ISO_4217). If this is not set, we assume the revenue to be in US dollars.</td>
   </tr>
   <tr>
     <td>`value`</td>

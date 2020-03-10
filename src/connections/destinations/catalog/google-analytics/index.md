@@ -601,7 +601,7 @@ Analytics.track(
   user_id: '019mr8mf4r',
   event: 'Loaded a Page',
   properties: {
-    url: 'http://initech.com/pricing'
+    url: 'http://example.com/pricing'
   },
   context: {
     user_agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17'
@@ -736,7 +736,7 @@ We default the **Cookie Domain Name** to `auto`, which automatically sets the co
 
 If you need to test on `localhost`, but don't need to track between multiple sub-domains, then you can set the domain to `none`.
 
-If you only want the cookie to persist on a single sub-domain, enter that sub-domain in the **Cookie Domain Name** field, like this: `swingline.initech.com`. In this case visitors to `conclusions.initech.com` or `initech.com` will not be tracked.
+If you only want the cookie to persist on a single sub-domain, enter that sub-domain in the **Cookie Domain Name** field, like this: `swingline.example.com`. In this case visitors to `conclusions.example.com` or `example.com` will not be tracked.
 
 For more information on Google Analytics cookies and domains name see [Google's docs on the subject](https://developers.google.com/analytics/devguides/collection/analyticsjs/domains).
 

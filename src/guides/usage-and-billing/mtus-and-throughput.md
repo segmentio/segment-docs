@@ -25,9 +25,10 @@ Event based (mostly email sources like Klaviyo, Vero, Drip, etc.) _do create MTU
 
 ## How do I see my usage data?
 
-If you have questions about your data usage or how it relates to your bill, we recommend logging into your Segment workspace, navigating to the "Usage" and "Insights" pages in the "Usage and Billing" section under "Settings".
+If you have questions about your data usage or how it relates to your bill, we recommend logging into your Segment workspace, navigating to the “Usage” page in the “Usage and Billing” section under “Settings”.
+On the “Usage” page, you will see what plan you’re on, what data volumes your plan includes, and how much data you’ve used during a billing period. If you have used data volumes past what your bill includes, the page will provide information about what volume of data was in overage and what your overage rate is.
 
-On the "Usage" page, you will see what plan you're on, what data volumes your plan includes, and how much data you've used during a billing period. If you have used data volumes past what your bill includes, the page will provide information about what volume of data was in overage and what your overage rate is. For a more detailed view of your data volume, you can visit the "Insights" page. This page will provide a breakdown of data volume by day or by month.
+You’ll also be able to see a cumulative, daily breakdown of data volumes by source for that billing period. You can access the cumulative, daily breakdown from the previous five billing periods or an overview of the last 12 months of data volumes by adjusting the billing period dropdown at the top of the page.
 
 ## What is the difference between an event and an object?
 
@@ -40,7 +41,7 @@ We allow for each workspace to send up to 250 API calls + objects per MTU. This 
 
 ## What does throughput limit stand for?
 
-*   Your customer data comes in the form of API Calls and Objects. Developer and Team plans include up to **250 API Calls and Objects per MTU**.
+*   Your customer data comes in the form of API Calls and Objects. Free and Team plans include up to **250 API Calls and Objects per MTU**.
 
 *   **Business plans** are eligible for custom limits.
 
