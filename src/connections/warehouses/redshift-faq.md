@@ -47,7 +47,7 @@ BEGIN;
   COMMIT;
 ```
 > warning ""
-> Increasing the default size can impact query performance as it needs to process more data to accomodate the increased column size. Read more [here](https://docs.aws.amazon.com/redshift/latest/dg/c_best-practices-smallest-column-size.html).
+> Increasing the default size can impact query performance as it needs to process more data to accomodate the increased column size. See [Amazon's Redshift Documentation](https://docs.aws.amazon.com/redshift/latest/dg/c_best-practices-smallest-column-size.html) for more details.
 
 ### Blacklisted track call properties:
 
