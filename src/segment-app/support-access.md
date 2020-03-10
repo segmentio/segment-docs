@@ -21,7 +21,7 @@ _The Segment Settings page before granting Support Access_
 _The Segment Settings page after granting Support Access_
 
 **What can a Segment Support Engineer do in my account?**
-A Segment Support Engineer will be able to do everything you can do in your workspace when you grant Support Access.
+When you grant Support Access, the Segment Support Engineers can do everything that you can do in your workspace.
 
 ## How do I know it’s working?
 
