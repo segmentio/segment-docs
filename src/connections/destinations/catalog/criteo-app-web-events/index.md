@@ -192,7 +192,8 @@ analytics.track('Cart Viewed', {
       sku: '46493-32',
       name: 'Uno Card Game',
       price: 3,
-      position: 2,       quantity: 2,
+      position: 2, 
+      quantity: 2,
       category: 'Games'
     }
   ]
@@ -257,7 +258,6 @@ You will need to have a products array of product objects in your Segment [Order
 }); {% endcomment %}
 
 ```js
-{
   analytics.track('Order Completed', {
     checkout_id: 'fksdjfsdjfisjf9sdfjsd9f',
     order_id: '098dsf098f',
