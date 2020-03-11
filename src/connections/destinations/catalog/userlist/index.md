@@ -24,7 +24,7 @@ _**NOTE:** The Userlist.io Destination does not support tracking of anonymous us
 If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 	analytics.identify('userId123', {
-	  email: 'john.doe@segment.com',
+	  email: 'john.doe@example.com',
 	  name: 'John Doe',
 	  role: 'Owner',
 	  createdAt: '2019-03-21T12:12:54.735+01:00'

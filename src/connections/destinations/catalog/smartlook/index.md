@@ -26,7 +26,7 @@ Identify calls sent to Segment will be transformed and sent to [Smartlook's](htt
 
 ```
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 

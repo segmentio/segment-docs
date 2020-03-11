@@ -16,7 +16,7 @@ Here's the payload of a typical `page` call with most [common fields](/docs/conn
   "name": "Home",
   "properties": {
     "title": "Welcome | Initech",
-    "url": "http://www.initech.com"
+    "url": "http://www.example.com"
   }
 }
 ```
@@ -57,7 +57,7 @@ Here's a complete example of a `page` call:
   "name": "Home",
   "properties": {
     "title": "Welcome | Initech",
-    "url": "http://www.initech.com"
+    "url": "http://www.example.com"
   },
   "receivedAt": "2015-02-23T22:28:55.387Z",
   "sentAt": "2015-02-23T22:28:55.111Z",

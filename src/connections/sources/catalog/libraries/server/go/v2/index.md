@@ -49,7 +49,7 @@ client.Identify(&analytics.Identify{
   UserId: "019mr8mf4r",
   Traits: map[string]interface{}{
     "name":    "Michael Bolton",
-    "email":   "mbolton@initech.com",
+    "email":   "mbolton@example.com",
     "plan":    "Enterprise",
     "friends": 42,
   },
@@ -234,7 +234,7 @@ client.Identify(&analytics.Identify{
   UserId: "019mr8mf4r",
   Traits: map[string]interface{}{
     "name":    "Michael Bolton",
-    "email":   "mbolton@initech.com",
+    "email":   "mbolton@example.com",
     "plan":    "Enterprise",
     "friends": 42,
   },
