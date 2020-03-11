@@ -109,7 +109,7 @@ This event supports the following semantic properties:
 }
 ```
 
-### User Signed Up
+### Signed Up
 
 This event should be sent when a user signs up for your service.
 
@@ -148,11 +148,11 @@ This event supports the following semantic properties:
       }
 }'}}} {% endcomment %}
 
-```js
+```json
 {
   "userId": "019mr8mf4r",
   "action": "track",
-  "event": "User Signed Up",
+  "event": "Signed Up",
   "properties": {
     "type": "organic",
     "first_name": "Peter",
@@ -168,7 +168,7 @@ This event supports the following semantic properties:
 }
 ```
 
-### User Signed In
+### Signed In
 
 This event should be sent when a user signs in to your service.
 
@@ -195,11 +195,11 @@ This event supports the following semantic properties:
       }
 }'}}} {% endcomment %}
 
-```js
+```json
 {
   "userId": "019mr8mf4r",
   "action": "track",
-  "event": "User Signed In",
+  "event": "Signed In",
   "properties": {
     "username": "pgibbons"
   },
@@ -209,7 +209,7 @@ This event supports the following semantic properties:
 }
 ```
 
-### User Signed Out
+### Signed Out
 
 This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) to refresh the cookie when a Signed Out event occurs.
 
@@ -240,7 +240,7 @@ This event supports the following semantic properties:
 {
   "userId": "019mr8mf4r",
   "action": "track",
-  "event": "User Signed Out",
+  "event": "Signed Out",
   "properties": {
     "username": "pgibbons"
   },
