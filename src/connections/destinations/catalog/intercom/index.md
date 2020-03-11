@@ -5,12 +5,10 @@ rewrite: true
 
 [Intercom](https://www.intercom.com/) makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination is open-source. You can browse the code for [analytics.js](https://github.com/segment-integrations/analytics.js-integration-intercom), [iOS](https://github.com/segment-integrations/analytics-ios-integration-intercom) and [Android](https://github.com/segment-integrations/analytics-android-integration-intercom) on Github.
 
-This document was last updated on January 18, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on March 11, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
-* [Personalize Intercom live chat messages based on a visitor's matched industry](https://segment.com/recipes/personalize-intercom-live-chat-industry/)
-* [Deliver hyper-relevant Intercom messages based on a visitor's job role](https://segment.com/recipes/personalize-intercom-live-chat-role/)
 * [Trigger Intercom messages when users are likely to upgrade with ClearBrain](https://segment.com/recipes/trigger-upgrade-messages-intent-intercom-clearbrain/)
 * [Personalize Intercom welcome messages by incorporating a visitor's company](https://segment.com/recipes/personalize-intercom-live-chat-with-company-name/)
 
