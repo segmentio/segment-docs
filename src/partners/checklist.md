@@ -24,7 +24,7 @@ Make sure to sign up with your company email address and to answer all the surve
     - How did you hear about Segment?
 
 
-- Agree to the [Segment Partner Program Agreement](https://segment.com/docs/legal/partnersagreement/) and [Privacy Policy](https://segment.com/docs/legal/privacy/)
+- Agree to the [Segment Partner Program Agreement](https://segment.com/legal/partnersagreement/) and [Privacy Policy](https://segment.com/legal/privacy/)
 
 While waiting for approval (~1 business day), we encourage you to:
 

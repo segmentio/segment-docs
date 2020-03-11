@@ -1,6 +1,5 @@
 ---
 title: Radar Source
-source-type: event
 ---
 
 Radar is the location platform for mobile apps. You can use Radar to add location context and tracking to your apps in less than ten lines of code. The Radar Segment Source is a Cloud-mode event source. Instead of packaging Radar's SDK using Segment as a wrapper, you include, configure, and initialize their SDK separately. Radar then sends all events that it detects and infers to Segment via its servers. As a result, only destinations that allow Cloud-mode are compatible with the Radar source.

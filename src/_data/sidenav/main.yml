@@ -9,7 +9,7 @@ sections:
   - path: /guides/intro-user
     title: Segment Data User overview
   - path: /guides/intro-admin
-    title: Segment Workspace Admin overview  
+    title: Segment Workspace Admin overview
   - path: /guides/filtering-data
     title: Filtering your Segment Data
   - path: /guides/duplicate-data
@@ -144,9 +144,9 @@ sections:
       title: Warehouses and Data Storage
     - path: /connections/warehouses/catalog
       title: Warehouses catalog
+      menu_icon: read-more
     - path: /connections/warehouses/selective-sync
       title: Warehouse Selective Sync
-      menu_icon: read-more
     - path: /connections/warehouses/choose-warehouse
       title: Choosing a Warehouse
     - path: /connections/warehouses/faq

@@ -28,7 +28,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.identify('userId12345', {
   firstName: 'Bob',
   lastName: 'Dole',
-  email: 'bob.dole@initech.com'
+  email: 'bob.dole@example.com'
 });
 ```
 
@@ -70,7 +70,7 @@ You can populate those fields using this `identify` call:
 analytics.identify('userId12345', {
   firstName: 'Bob',
   lastName: 'Dole',
-  email: 'bob.dole@initech.com',
+  email: 'bob.dole@example.com',
   company: 'Initech',
   employees: 234
 });
@@ -86,7 +86,7 @@ Once Mailchimp has processed the new subscriber you'll see it show up in your li
 
 ### Recording userId
 
-If you send a `userId` in your `.identify()` call, we will attach it as Mailchimp's semantic `unique_email_id` for that user. This is a read-only unique identifier for that email across all of Mailchimp.
+To record a Segment `userId` in Mailchimp, you must pass the userID as a trait on your `identify()` calls. We do not automatically map the Segment userID to any Mailchimp properties.  
 
 ### Overriding List ID (Also now referred to as Audience ID)
 

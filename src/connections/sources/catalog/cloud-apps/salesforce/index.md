@@ -1,6 +1,5 @@
 ---
 title: Salesforce Source
-source-type: object
 ---
 Salesforce is a leader in on-demand customer relationship management. [Visit Website](http://salesforce.com)
 

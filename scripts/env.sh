@@ -30,13 +30,22 @@ echo "[[ -r \"/usr/local/etc/profile.d/bash_completion.sh\" ]] && . \"/usr/local
 which -s atom
 if [[ $? != 0 ]] ; then
   brew cask install atom
+  open -a Atom
+  which -s atom
+  if [[ $? != 0 ]] ; then
+      echo " Atom installed, but command shell not installed. Please click Atom > Install Shell Commands from in the Atom application."
+  else
+    # install atom packages which make markdown easy
+    echo "Installing useful Atom packages"
+    apm install language-markdown markdown-preview-plus minimap sort-selected-elements wordcount markdown-table-editor markdown-toc
+  fi
 else
     echo " ✔ Atom already installed"
+    # install atom packages which make markdown easy
+    echo "Installing useful Atom packages"
+    apm install language-markdown markdown-preview-plus minimap sort-selected-elements wordcount markdown-table-editor markdown-toc
 fi
 
-# install atom packages which make markdown easy
-echo "Installing useful Atom packages"
-apm install language-markdown markdown-preview-plus minimap sort-selected-elements wordcount markdown-table-editor markdown-toc
 
 # install stuff you need to run the docs locally
 
@@ -45,13 +54,6 @@ if [[ $? != 0 ]] ; then
   xcode-select --install
 else
   echo " ✔ Xcode command line tools already installed"
-fi
-
-which -s ruby
-if [[ $? != 0 ]] ; then
-  brew install ruby
-else
-    echo " ✔ Ruby already installed"
 fi
 
 which -s node
@@ -66,6 +68,16 @@ if [[ $? != 0 ]] ; then
   brew install yarn
 else
     echo " ✔ Yarn already installed"
+fi
+
+brew install ruby
+
+which -s bundler
+if [[ $? != 0 ]] ; then
+  gem install -n /usr/local/bin bundler:2.1.2
+  echo " ✔ Bundler installed"
+else
+    echo " ✔ Bundler already installed"
 fi
 
 echo " Updating your Gem installation. Please enter your password to sudo."
@@ -92,11 +104,3 @@ echo "Gem version " $(gem --version) "installed"
 #       " ✔ Gem version $version already installed"
 #   fi
 # fi
-
-which -s bundler
-if [[ $? != 0 ]] ; then
-  gem install bundler:2.1.2 --user-install
-  echo " ✔ Bundler installed"
-else
-    echo " ✔ Bundler already installed"
-fi

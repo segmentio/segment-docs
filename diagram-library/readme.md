@@ -21,6 +21,7 @@ You can also export the file, or diagrams you make with it, to `.svg` format for
 8. At the VERY end of the panel, find the **Export Selected** button, and click it.
 9. If needed, move the resulting `.png` file to the correct `images` directory.
 10. Add the new diagram in the markdown file, and run a test build to make sure your diagram is legible on the page!
+(Don't forget to add the file in git!)
 
 That's it!
 
@@ -30,3 +31,7 @@ When you need to update the images, you can reopen the Sketch file, make your ch
 ## Adding new items to the Library
 
 Contact @sanscontext for instructions. :)
+
+## More reading on diagrams and diagram best practices
+
+https://blog.ilograph.com/posts/diagram-mistakes/

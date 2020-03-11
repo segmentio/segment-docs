@@ -45,7 +45,7 @@ Here's what a basic call to `identify` might look like:
 ```python
 analytics.identify('f4ca124298', {
     'name': 'Michael Bolton',
-    'email': 'mbolton@initech.com',
+    'email': 'mbolton@example.com',
     'created_at': datetime.datetime.now()
 })
 ```
