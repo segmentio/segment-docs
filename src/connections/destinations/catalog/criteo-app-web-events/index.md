@@ -1,7 +1,7 @@
 ---
 title: Criteo App & Web Events Destination
 rewrite: true
-redirect_from: '/connections/destinations/catalog/criteo/'
+redirect_from: 'docs/connections/destinations/catalog/criteo'
 ---
 
 ## Getting Started
@@ -10,7 +10,7 @@ redirect_from: '/connections/destinations/catalog/criteo/'
 
 Currently this destination supports events originating from Mobile or Web sources (not Server). You can read more about how define a source [here](/docs/guides/getting-started/what-is-a-source/).
 
-**Our web integration with Criteo Events is currently in public beta. Please use carefully and **[contact us](https://segment.com/help/contact) **if you are having any issues.**
+**Our web integration with Criteo Events is currently in public beta. Please use carefully and [contact us](https://segment.com/help/contact) if you are having any issues.**
 
 To get started with Criteo Events and Segment, you'll need:
 
@@ -192,7 +192,8 @@ analytics.track('Cart Viewed', {
       sku: '46493-32',
       name: 'Uno Card Game',
       price: 3,
-      position: 2,       quantity: 2,
+      position: 2, 
+      quantity: 2,
       category: 'Games'
     }
   ]
@@ -257,7 +258,6 @@ You will need to have a products array of product objects in your Segment [Order
 }); {% endcomment %}
 
 ```js
-{
   analytics.track('Order Completed', {
     checkout_id: 'fksdjfsdjfisjf9sdfjsd9f',
     order_id: '098dsf098f',
