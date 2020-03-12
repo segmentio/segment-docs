@@ -9,7 +9,7 @@ beta: true
 This destination is maintained by CrowdPower. For any issues with the destination, please [reach out to their team](mailto:support@crowdpower.io).
 
 > note "Note:"
-> The CrowdPower Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on March 7, 2020. If you are interested in joining their beta program or have any feedback to help improve the CrowdPower Destination and its documentation, please [let  their team know](mailto:support@crowdpower.io)!
+> The CrowdPower Destination is currently in beta, which means that they are still actively developing the destination. If you are interested in joining their beta program or have any feedback to help improve the CrowdPower Destination and its documentation, please [let  their team know](mailto:support@crowdpower.io)!
 
 
 ## Getting Started
@@ -19,7 +19,7 @@ This destination is maintained by CrowdPower. For any issues with the destinatio
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "CrowdPower" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the API Key into your Segment Settings UI which you can find from your [CrowdPower Project Settings](https://app.crowdpower.io).
-4. To find your API Key, in the CrowdPower Console, click Settings in the sidebar menu. Your Segment API Key is your CrowdPower project's Public Key.
+4. To find your CrowdPower API Key, go to the CrowdPower Console and click **Settings** in the sidebar menu. Use your CrowdPower project's Public Key as the API key for Segment.
 
 ## Identify
 
@@ -33,9 +33,9 @@ analytics.identify('userId123', {
 });
 ```
 
-Identify calls will create or update customers and their attributes in CrowdPower. Customer attributes may be used for creating segments. Your segments may be used as audiences for your marketing campaigns.
+Identify calls in Segment create or update customers and their attributes in CrowdPower. Customer attributes may be used for creating segments. Your segments may be used as audiences for your marketing campaigns.
 
-> Date attributes should be sent as UNIX timestamps (UTC), and the keys should end in "_at".
+> Date attributes should be sent as UNIX timestamps (UTC), and the keys should end in `_at`.
 
 
 ## Track
@@ -50,9 +50,9 @@ analytics.track('Purchased Item', {
 })
 ```
 
-Track calls will create events for each customer in CrowdPower. Each event may have corresponding properties that may be used for creating customer segments and triggering marketing campaigns.
+Track calls in Segment create events for each customer in CrowdPower. Each event may have corresponding properties that may be used for creating customer segments and triggering marketing campaigns.
 
-> Date properties should be sent as UNIX timestamps (UTC), and the keys should end in "_at".
+> Date properties should be sent as UNIX timestamps (UTC), and the keys should end in `_at`.
 
 ### Charge
 
@@ -64,4 +64,4 @@ analytics.track('New Charge', {
 })
 ```
 
-Track calls with the revenue key will be treated as a charge in CrowdPower and will not show up in the customer's event feed. The revenue will be attributed to the customer and the event name (and any other properties) will be ignored.
+Track calls with the revenue key are treated as a charge in CrowdPower and do not appear in the customer's event feed. The revenue is attributed to the customer, and the event name (and any other properties) are ignored.
