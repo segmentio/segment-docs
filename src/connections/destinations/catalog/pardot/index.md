@@ -44,7 +44,7 @@ When you call `identify`, we'll create or update a prospect in Pardot. If you ar
 
 ```javascript
 analytics.identify('YOUR_DATABASE_USER_ID', {
-    email: 'tom@initech.com',
+    email: 'tom@example.com',
     name: 'Tom Smykowski'
     company: 'Initech, Inc',
     department: 'Customer Service',

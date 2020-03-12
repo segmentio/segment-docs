@@ -42,7 +42,7 @@ analytics.identify({
   userId:'f4ca124298',
   traits: {
     name: 'Michael Bolton',
-    email: 'mbolton@initech.com',
+    email: 'mbolton@example.com',
     createdAt: new Date('2014-06-14T02:00:19.467Z')
   }
 });

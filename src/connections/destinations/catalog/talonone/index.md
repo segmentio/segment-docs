@@ -29,7 +29,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```js
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com',
+  email: 'john.doe@example.com',
   name: 'John Doe',
 });
 ```

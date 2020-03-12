@@ -54,7 +54,7 @@ Remember to provide an email with every call as either the `userId` or as a trai
 ```java
 Analytics.identify("hj2kf92ds212",
     new Traits()
-        .put("email", "tom@initech.com")
+        .put("email", "tom@example.com")
         .put("name", "Tom Smykowski"));
 ```
 
