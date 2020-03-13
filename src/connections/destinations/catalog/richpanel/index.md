@@ -8,7 +8,7 @@ rewrite: true
 This destination is maintained by Richpanel. For any issues with the destination, please [reach out to their team](mailto:support@richpanel.com).
 
 
-_**NOTE:** The Richpanel Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on March 13, 2020. If you have any feedback to help improve the Richpanel Destination and its documentation, please [let  their team know](mailto:support@richpanel.com)!_
+_**NOTE:** The Richpanel Destination is currently in beta, which means that they are still actively developing the destination. If you have any feedback to help improve the Richpanel Destination and its documentation, please [let  their team know](mailto:support@richpanel.com)!_
 
 ## Getting Started
 
@@ -33,19 +33,19 @@ analytics.identify('userId123', {
 });
 ```
 
-`identify` calls that are sent to Richpanel will create or update a standard customer object record. If a record with a corresponding `userId` exists, that record will be updated. If a customer record doesn’t already exist, a new customer record will be created.
+`identify` calls sent to Richpanel create or update a standard customer object record. If a record with a corresponding `userId` exists, that record is updated. If no customer record exists, a new customer record is created.
 
-Each property in Richpanel poses different behaviour, here are the basic properties to identify and create a user:
+The basic properties to identify and create a user are:
 
-- `uid` : Unique User Id in a platform
-- `email` : User email
-- `firstName` : User First Name
-- `lastName` : User Last Name
-- `phone` : User Phone
+- `uid` : Unique User Id (required)
+- `email` : User's email
+- `firstName` : User's First Name
+- `lastName` : User's Last Name
+- `phone` : User's Phone
 
-`uid` is a *required* field; `email`, `firstName`, and `lastName` are highly recommended.
+`uid` is a *required* field; `email`, `firstName`, and `lastName` are optional, but highly recommended.
 
-More details on user properties can be found [here](http://event.richpanel.com/#/properties) and more details on events can be found [here](http://event.richpanel.com/#/events?id=attribute-glossary)
+See [Richpanel's User Properties](http://event.richpanel.com/#/properties) and [Richpanel's Events](http://event.richpanel.com/#/events?id=attribute-glossary) for more details.
 
 ## Page
 
@@ -59,9 +59,9 @@ analytics.page('Pricing', {
 });
 ```
 
-Page calls will sent as a tracking event to Richpanel on the timeline of the customer who was tracked. If the `richpanel_session_id` is included, it will cluster this tracking event into a single “session” on the customer’s timeline.
+Page calls are sent as a tracking event to Richpanel on the timeline of the customer who was tracked. If the `richpanel_session_id` is included, it clusters this tracking event into a single “session” on the customer’s timeline.
 
-If no `richpanel_session_id` is supplied, we will automatically generate session IDs based on time between tracking events. (Read why Segment doesn’t have session tracking [here](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/)). `page` calls can only update `email` traits, not create them.
+If no `richpanel_session_id` is supplied, Richpanel will automatically generate sessionIDs based on time between tracking events. (Read why [Segment doesn’t have session tracking](https://segment.com/blog/facts-vs-stories-why-segment-has-no-sessions-api/) for more details). `page` calls can only update `email` traits, not create them.
 
 ## Track
 
@@ -73,6 +73,6 @@ analytics.track('Clicked Login Button', {
 })
 ```
 
-Track calls will be sent to Richpanel as a `track` event. `track` calls can only update `email` traits, not create them.
+Track calls are sent to Richpanel as a `track` event. `track` calls can only update `email` traits, but do not create them.
 
-**NOTE**: Richpanel process all events as per Segment Specs. For events like Order Update/Cancelled/Refunded, passing an `order_status` property is recommended.
+**NOTE**: Richpanel accepts all events listed in [Segment's Specs](https://segment.com/docs/connections/spec/ecommerce/v2/). **NOTE**: Richpanel process all events as per Segment Specs. For events like Order Updated, Order Cancelled, and Order Refunded, we recommend pass an `order_status` property.
