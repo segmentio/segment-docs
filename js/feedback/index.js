@@ -53,7 +53,11 @@ export default function () {
         }
       })
     },
-    onHidden: (tooltip) => {
+    onShown: () => {
+      const feedbackText = document.querySelector(TEXT_SELECTOR)
+      feedbackText.focus()
+    },
+    onHidden: () => {
       if (!sent) {
         for (let i = 0; i < contents.length; i += 1) {
           contents[i].hidden = false
