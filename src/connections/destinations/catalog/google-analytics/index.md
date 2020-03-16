@@ -263,7 +263,7 @@ Here's an example:
   }
 }'}}} {% endcomment %}
 
-```js
+```json
 {
   "action": "track",
   "event": "Viewed Legal Info",
