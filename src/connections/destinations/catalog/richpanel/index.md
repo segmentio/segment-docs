@@ -75,4 +75,4 @@ analytics.track('Clicked Login Button', {
 
 Track calls are sent to Richpanel as a `track` event. `track` calls can only update `email` traits, but do not create them.
 
-**NOTE**: Richpanel accepts all events listed in [Segment's Specs](https://segment.com/docs/connections/spec/ecommerce/v2/). For events like Order Updated, Order Cancelled, and Order Refunded, we recommend pass an `order_status` property.
+**NOTE**: Richpanel accepts all events listed in [Segment's Specs](https://segment.com/docs/connections/spec/ecommerce/v2/). For events like Order Updated, Order Cancelled, and Order Refunded, we recommend that you pass an `order_status` property.
