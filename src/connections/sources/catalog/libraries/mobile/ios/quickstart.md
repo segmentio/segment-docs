@@ -104,7 +104,7 @@ Once you've added a few `track` calls, **you're done!** You successfully instrum
 
 ## Step 4: Flushing
 
-You can set the number of events should queue before flushing. Setting this to `1` will send events as they come in (i.e. not send batched events) and will use more battery. `20` by default.
+You can set the number of events that should queue before flushing. Setting this to `1` will send events as they come in (i.e. not send batched events) and will use more battery. `20` by default.
 
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
