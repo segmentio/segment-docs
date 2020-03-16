@@ -5,6 +5,10 @@ redirect_from: '/connections/sources/catalog/cloud-apps/desk/'
 hidden: true
 ---
 
+> error ""
+> Desk.com ended operations on March 13th 2020. This page is for historical reference purposes only.
+
+
 [Desk.com](http://www.desk.com/), previously known as Assistly, is a SaaS help desk and customer support product owned by Salesforce.com and accessible through the cloud.
 
 Desk.com is specifically implemented to targets small businesses with its features and functions. This tool can help you combining your support data with website activity and product usage data, as well as analyzing it using your favorite business intelligence and SQL querying tools.
