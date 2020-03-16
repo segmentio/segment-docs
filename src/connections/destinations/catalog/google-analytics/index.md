@@ -251,7 +251,7 @@ For **Event Value** you can name the event property `value` or `revenue`. We rec
 
 ### Non-interaction Events
 
-To create an event with the `nonInteraction` flag just pass us an event property labeled `nonInteraction` with the value of 1. You can also set all events to be non-interactive by default in the Advanced Options.
+Google Analytics allows you to tag some events as ["non-interaction" events](https://support.google.com/analytics/answer/1033068#NonInteractionEvents). To create an event with the `nonInteraction` flag just pass us an event property labeled `nonInteraction` with the value of 1. You can also set all events to be non-interactive by default in the Advanced Options.
 
 Here's an example:
 
