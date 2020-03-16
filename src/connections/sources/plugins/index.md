@@ -28,7 +28,7 @@ This means that they are no longer supported, and Segment cannot be responsible 
 
 ## Amazon Webstore
 
-- Amazon Webstore - suspect they don't want you running an out-of-ecosystem analytics tool.
+- Amazon Webstore - suspect they don't want you running an out-of-ecosystem analytics tool. Can anyone confirm?
 
 ## Bigcommerce
 
@@ -37,44 +37,43 @@ This means that they are no longer supported, and Segment cannot be responsible 
 
 ## Chrome Extension
 
-add the analytics-node library and call as usual
+To add tracking to a Chrome browser extension, you can add the [analytics-node](/docs/connections/sources/catalog/libraries/node/) library, and call your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
 
 ## Cloudflare
 
+?????
+
 ## Ghost
 
-- Ghost - use their injection instructions here: https://ghost.org/integrations/segment/
+The Ghost blogging system, maintains their own [instructions on how to inject Segment code](https://ghost.org/integrations/segment/).
 
 ## Goodsie
 
-- Goodsie - no known replacement. company is gone.
+Goodsie ceased operations in 2017. If you are using [Shopify](/docs/connections/sources/catalog/libraries/website/shopify-littledata/) Segment offers a website source for that platform. For other platforms, you should integrate using the appropriate [Segment Server library](/docs/connections/sources/catalog/#server) for your implementation.
 
 
 ## Magento
 
-use the php library https://github.com/segmentio/analytics-php
-
+If you are using Magento, use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/php/), and implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
 
 ## Shopify
 
-- Shopify -> use the [Shopify Source](/docs/connections/sources/catalog/cloud-apps/shopify-littledata/)
+If you are using Shopify, you can use the [Shopify Source](/docs/connections/sources/catalog/cloud-apps/shopify-littledata/).
 
 
 ## Tumblr
 
-insert ajs as part of site customization
+insert ajs as part of site customization ??
 
 
 ## Woocommerce
 
-- WooCommerce - has a paid plugin, https://docs.woocommerce.com/document/segment-io-connector/ otherwise you can probably use PHP
-
+WooCommerce offers a [paid Segment plugin](https://docs.woocommerce.com/document/segment-io-connector/), or you can use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/php/), and implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
 
 ## Wordpress
 
-use the php library https://github.com/segmentio/analytics-php
-
+If you are using Wordpress, use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/php/), and implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
 
 # WP eCommerce
 
-use the php library https://github.com/segmentio/analytics-php
+If you are using Wordpress eCommerce, use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/php/), and implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
