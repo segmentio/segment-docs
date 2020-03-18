@@ -8,7 +8,7 @@ related:
 
 {% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299968?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Identify Method" content="Check out our high-level overview of the Identify method in Segment University. (Must be logged in to access.)" %}
 
-Our recommendation for when and how often you should call identify is as follows:
+Our recommendation for when and how often you should call `identify` is as follows:
 
 - After a user registers
 - After a user logs in
