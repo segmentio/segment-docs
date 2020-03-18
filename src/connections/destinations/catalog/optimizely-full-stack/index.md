@@ -2,7 +2,7 @@
 title: Optimizely Full Stack Destination
 hide-personas-partial: true
 beta: true
-redirect_from: 'docs/connections/destinations/catalog/optimizelyx'
+redirect_from: '/connections/destinations/catalog/optimizelyx'
 ---
 
 ## Getting Started
