@@ -1,11 +1,12 @@
 ---
 title: Source Functions
+redirect_from: '/connections/sources/custom'
 ---
 
 > note ""
-> **Note:** Functions are currently in developer preview. If you are interested in joining the developer preview, go to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
+> **Note:** Functions are currently in Public Preview. If you are interested in joining the Public Preview, go to the Build page in your catalog [here](https://app.segment.com/goto-my-workspace/build/catalog). The use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
 
-Source Functions allow you to gather data from any third-party applications without worrying about setting up or maintaining any infrastructure. Source Functions are small pieces of JavaScript code that you create, edit, and deploy in Segment to receive webhooks and generate Segment events or objects using the [Segment Spec](https://segment.com/docs/connections/spec/).
+Source Functions allow you to gather data from any third-party applications without worrying about setting up or maintaining any infrastructure. Source Functions are small pieces of JavaScript code that you create, edit, and deploy in Segment to receive webhooks and generate Segment events or objects using the [Segment Spec](/docs/connections/spec/).
 
 Here are some ways that Segment customers are using Source Functions:
 
@@ -23,7 +24,7 @@ Here is an example of how a Source Function could be used to handle a webhook fr
 
 To create a Source Function:
 
-1. From your Segement Workspace, to go the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog).
+1. From your Segment Workspace, to go the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog).
 2. Click **New Function**.
 3. Select **Source Function** and click **Build**.
 
@@ -90,7 +91,7 @@ async function onRequest(request, settings) {
 
 The `Segment` module has `Segment.identify()`, `Segment.track()`, `Segment.group()`, `Segment.set()`, `Segment.page()`, `Segment.screen()` and `Segment.alias()` functions. These fill in defaults and validate the data you provide. You can call these functions anywhere in your function.
 
-Behind the scenes, the `Segment` module appends messages to an array and sends messages to the Segment [Tracking API](https://segment.com/docs/connections/sources/catalog/libraries/server/http/) and [Object API](https://segment.com/docs/connections/sources/catalog/libraries/server/object-api/), as long as your function returns without error.
+Behind the scenes, the `Segment` module appends messages to an array and sends messages to the Segment [Tracking API](/docs/connections/sources/catalog/libraries/server/http/) and [Object API](/docs/connections/sources/catalog/libraries/server/object-api/), as long as your function returns without error.
 
 ##### Events
 
@@ -129,7 +130,7 @@ Events are used to trigger real-time workflows in downstream streaming destinati
   </tr>
 </table>
 
-For more details on the events that are supported, see the [HTTP](https://segment.com/docs/connections/sources/catalog/libraries/server/http/) and [Object](https://segment.com/docs/connections/sources/catalog/libraries/server/object-api/) API documentation.
+For more details on the events that are supported, see the [HTTP](/docs/connections/sources/catalog/libraries/server/http/) and [Object](/docs/connections/sources/catalog/libraries/server/object-api/) API documentation.
 
 ##### Objects
 
@@ -275,7 +276,7 @@ Source Functions created before September 11, 2019 were written with a different
 
 These interfaces are now deprecated, so we recommend re-creating and managing your functions with the latest interfaces.
 
-However we still support these legacy functions.
+We still support these legacy functions but will be deprecating this support and removing your legacy function from your workspace on April 1, 2020. If you didn't receive an email about this change, please [reach out to us](https://segment.com/help/contact/).
 
 **Accessing the webhook payload (Legacy)**
 
