@@ -1,6 +1,8 @@
 ---
 title: Source Functions
-redirect_from: '/connections/sources/custom'
+redirect_from:
+  - '/connections/sources/custom'
+  - '/connections/sources/custom-sources'
 ---
 
 > note ""
