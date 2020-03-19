@@ -39,27 +39,26 @@ Here's what's on this main page:
 ## Quickstart
 
 Git clone this repo, navigate to it in Terminal, run `make env`.
-This will install everything you need to edit the docs, and run the docs build locally.
+This installs everything you need to edit the docs **and** run the docs build locally. That done: Edit the content files locally, check them in on a new branch, go to Github and open a PR to the segment-docs repo, and when your PR is merged to `master`, the public docs site automatically rebuilds.
 
-Edit the content files, check them in on a new branch, PR to the main repo, and when your PR is merged to `master`, the site automatically rebuilds.
-
-For more details, see the [Contributor Guide](contributors.md)!
+If these instructions didn't make any sense to you, or for more details, see the [Contributor Guide](contributors.md)!
 
 ### JUST Editing content?
 
-You can make a limited range of edits [from the Github site](contributors.md/#contribute-from-the-github-web-ui)! Hooray! But this system works best if you clone it locally so you can run test builds.
+You can make a limited range of edits [from the Github site](contributors.md/#contribute-from-the-github-web-ui)! Hooray! But the Github UI [has some limitations](contributors.md#contribute-from-the-github-web-ui), and this system works best if you clone it locally so you can run test builds.
 
 See the [Contributor Guide](contributors.md) for more info.
 
 ## Most frequently asked question: Do I need a review?
 
-The docs repo works on the honor system right now. The only rule is you can't merge if it breaks the build (or introduces security vulns that Snyk complains about).
+**At minimum you must open a PR so the docs team gets a notification. Do not merge directly to master.**
 
-- **Just fixing a typo**? -> No review needed, merge with blessings.
+- **Just fixing a typo**? -> No review needed, you can admin-merge your PR with our blessings.
 
-- **Delta of <50 words or ~250 characters**? -> No review needed, but get someone to spot check you just in case.
+- **Delta of <20 words or ~150 characters**? -> Yes, but a minor review. Open a PR and tag @sanscontext, who'll review mostly for formatting and copy issues.
 
 - **Adding new feature docs**? -> Yes. Get _two_ reviewers, one for technical accuracy, and one for copy.
+
 
 ## How to docs (The Docs Process)
 
@@ -70,12 +69,12 @@ The docs repo works on the honor system right now. The only rule is you can't me
 3. Commit your changes.
 3. Push the branch to `segment-docs` and make a PR to master.
     - Include any context you can in the PR: links to ZD tickets, Jira tickets, Paper docs or wiki pages about the project. (If you include a Jira ticket number, Jira can often link directly to the PR.)
-3. [Check if you need a review](#most-frequently-asked-question-do-i-need-a-review).
+3. [Check if you need a review](#most-frequently-asked-question-do-i-need-a-review) and tag @sanscontext (or another member of the docs team). (Github also tags the CODEOWNERS for the path you're editing.)
 5. If the reviewers ask for clarifications or edits:
     - make the changes
     - push the new commits to the branch
-5. Once you get a review, and the checks pass, merge your PR.
-6. Once you've merged the branch, delete it!
+5. Once you get an approving review and the checks pass, merge your PR.
+6. Once you've merged the branch, _delete it_!
 7. Once merged, you can track build and deploy process in [buildkite/segment-docs](https://buildkite.com/segment/segment-docs).
 
 ### Long running projects
@@ -85,11 +84,13 @@ If you're doing a substantial change and you're going to want to spend a few wee
 
 ## How the docs build works
 
-The actual content that you see on segment.com/docs lives in this repository, most of it in the `/src/` folder and its subdirectories. Everything outside of that folder is related to the build, styling, tracking, and process for this repo.
+The actual content that you see on segment.com/docs lives in this repository in the `/src/` folder and its subdirectories. Everything outside of that folder is related to the build, styling, tracking, and process for this repo.
 
-These files are built by Jekyll, our static-site builder program, into a full site of static HTML pages. We do not have any interactive or adaptive content on the site at this time.
+These files are built by Jekyll, a Ruby static-site builder, into a full site of static HTML pages. We do not have any interactive or adaptive content on the site at this time.
 
-When you run `make dev` (or `make docs`) on your laptop, Jekyll runs the same program that it uses to publish the public site content. It builds the page templates, then builds an HTML page for each markdown file (or html file) in the `src` path[**](#underscore-files). Some of these files include Liquid script, which allows them to load reusable content ("includes"), render fancy HTML styling, and run simple code processes to build programmatic content. As long as the Jekyll process is running on your laptop, you can edit the content of a page in markdown and save it, and Jekyll will detect the change and rebuild that page so you can view it locally. However, this doesn't work for the page layouts (and a few other things), which are assumed to be static at build time.
+When you run `make dev` (or `make docs`) on your laptop, Jekyll runs the same program that it uses to create the public site html pages. It builds the page templates, then builds an HTML page for each markdown file (or html file) in the `src` path[**](#underscore-files).
+
+Some of these files include Liquid script, which allows them to load reusable content ("includes"), render fancy HTML styling, and run simple code processes to build programmatic content. As long as the Jekyll process is running on your laptop, you can edit the content of a page in markdown and save it, and Jekyll will detect the change and rebuild that page so you can view it locally. However, this doesn't work if you're editing the page layouts or stylesheets, which are assumed to be static at build time.
 
 When you merge a PR to master, our build system runs the Jekyll program, and automatically publishes the rebuilt HTML files to our web server. (Which is why we *require* that the Buildkite build passes before you merge!)
 
@@ -116,13 +117,20 @@ The most interesting ones are:
 
 **All images should be saved locally! No linking to 3rd party-hosted images!** Images are published to our CDN from the build step.
 
-There are no _enforced_ naming conventions at this time. Files that start with an underscore are ignored by jekyll. Anything you see with `asset` was dowloaded by a script to save it from Contents.io. :)
+There are no _enforced_ naming conventions at this time. Files that start with an underscore are ignored by Jekyll. Anything you see with `asset` was dowloaded by a script to migrate it out of Contents.io.
 
-In general, it's a good practice to name images with a description that helps you figure out where they should go within a page, or within a larger folder of images. Naming with a prefix of what application the screenshot contains can be helpful (for example `atom-new-file.png`, `atom-commit-changes.png` etc), or you can name images to describe a process flow (for example `checkout-1-add-to-cart.png`, `checkout-2-est-shipping.png` and so on).
+In general, it's a good practice to name images with a description that helps you (& other docs maintainers) figure out where they should go within a page, or within a larger folder of images.
+
+A few possibilities/suggestions:
+
+- **Add a prefix of what file the image appears in**. This is helpful if you have images for multiple pages in the same `images` directory, but breaks down a bit if you reuse images across multiple pages.
+- **Give a prefix of the application the screenshot shows**. For example `atom-new-file.png`, `atom-commit-changes.png` etc),
+- **Name images to describe a process flow**. For example `checkout-1-add-to-cart.png`, `checkout-2-est-shipping.png` and so on.
+
 
 ### Diagram Library
 
-We have a diagram library in sketch, which you can use to build pretty, on-brand architecture diagrams, etc. There's a [readme file in that directory](diagram-library/readme.md) with instructions on how to use it.
+We have a diagram library in Sketch, which you can use to build pretty, on-brand architecture diagrams, etc. There's a [readme file in that directory](diagram-library/readme.md) with instructions on how to use it.
 
 ### Content structure
 
@@ -168,16 +176,16 @@ Each piece of frontmatter does something special!
 #### Utility frontmatter
 - `published`: defaults to true. Set this to "false" to prevent Jekyll from rendering an HTML page for this file. Good for when you're working on something in the repo but aren't ready to release it yet, and don't want to use a Draft PR.
 - `hidden`: omits the file from the `sitemap.xml`, adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file, and drops it from the convenience script for regenerating the nav.
-- `hide-feedback`: defaults to false. When true, hide the feedback footer. Good for legal and landing pages.
-- `hide_toc`: hides the right-nav TOC that's generated from H2s
+- `hide-feedback`: defaults to false. When true, hide the feedback footer. Good for landing pages.
+- `hide_toc`: hides the right-nav TOC that's generated from H2s. Also good for landing pages.
 - `landing`: defaults to false. Use this to drop the noun set by `integration_type` from the tab title.
-- `redirect_from`: Defaults to null. Takes an array of URLs from the frontmatter in a file, and generates a "stub" page at each URL at build-time. Each stub file redirects to the original file. **Note** We are mostly using NGINX redirects for SEO purposes. Approximately quarterly, we'll collect these and add them to NGINX.
+- `redirect_from`: Defaults to null. Takes an array of URLs from the frontmatter in a file, and generates a "stub" page at each URL at build-time. Each stub file redirects to the original file. Use the path from the root of the content directory, for example `/connections/destinations/catalog/` rather than `/docs/connections/destinations/catalog/`. **Note** We are mostly using NGINX redirects for SEO purposes. Approximately quarterly, we'll collect these and add them to NGINX.
 - `seo-changefreq`: default: `weekly `. Use the values [in the sitemap spec](https://www.sitemaps.org/protocol.html#xmlTagDefinitions). - sets the `changefreq` tag in the sitemap.xml generator, which tells search crawlers how often to check back.
 - `seo-priority`: values from `1.0` to `0.1`, default: `0.5 `. Sets the `Priority` tag in the sitemap
 
 ## Navigation
 
-The navigation is built from a static yml file, which allows us maximum control over what appears there and when.
+The navigation is built from static yml files, which allows us maximum control over what appears there and when. Find them in `src/_data/sidenav/`
 
 ### Sidenav Icons
 We have two neat icons that you can add to a bottom-level menu item to mark it with an icon. (If it's a folder/directory, the "expand" carat blocks this icon from appearing.)
@@ -188,7 +196,7 @@ We have two neat icons that you can add to a bottom-level menu item to mark it w
 
 ## Makefile commands
 
-- `dev`: runs `jekyll serve` locally with incremental builds. Useful when updating CSS, JS, or content and you don't want to rebuild everytime.
+- `dev`: runs `jekyll serve` locally with incremental builds. Useful when updating CSS, JS, or content and you don't want to rebuild every time.
 - `docs`: same as `make dev`, but for Laura's convenience.
 - `build`: Builds the site docs. Used by CI to publish the docs to staging and production
 - `catalog`: Pulls in the latest catalog data from the Platform API and saves it in the respective data files. Requires an API key to be passed in env via PLATFORM_API_TOKEN. [Instructions here](#bring-your-own-token).
