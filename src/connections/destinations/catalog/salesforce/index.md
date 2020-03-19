@@ -160,7 +160,7 @@ Upsert actions either create or update a resource in Salesforce. For these to wo
 
 ![upsert action example](images/upsert-action-example.png)
 
-In this example, we are creating or updating a Contact in Salesforce based on whether or not the `userId` property in `identify` events maps to a Contact with a custom `UserId__c` field value in SFDC. Additionally, the Salesforce Contact record fields `Email` and `Phone` will have values populated by the Segment event `traits.email` and `traits.phone` respectively.
+In this example, we creating or updating a Contact in Salesforce based on whether or not the `userId` property in `identify` events maps to a Contact with a custom `UserId__c` field value in SFDC. Additionally, the Salesforce Contact record field values `Email` and `Phone` are populated by the Segment event `traits.email` and `traits.phone` respectively.
 
 ## Troubleshooting
 
