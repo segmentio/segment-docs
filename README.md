@@ -62,6 +62,25 @@ See the [Contributor Guide](contributors.md) for more info.
 
 ## How to docs (The Docs Process)
 
+If you're planning substantial changes to the docs, follow this process for great success! 🏆
+
+1. 📞 Contact the docs team* during the planning phase. This way, we can help with logistics and information architecture, and alert you to any gotchas in your content area.
+2. 📝 Unless previously booked, we don't need to be involved in the writing - go for it! (We're happy to consult if you get stuck or need someone to bounce ideas off.)
+3. 👀 When you've got a draft at least 70% ready for review, tag a member of the docs team, who'll do an initial review. (This can be either in Paper/Gdocs, or in a Github [Draft PR](#draft-prs) with markdown changes if you're comfortable with that.) They'll do a copy edit pass, and ask clarifying questions.
+4. ❓The doc author/owner should answer the questions asked in the review phase. Either the doc author, or the docs team member can resolve comments as they are clarified in the doc text.👍
+5. ✅ The docs team member does a final review and approves.
+6. 🚢 Once it's signed off, you publish! This can mean:
+  - The author opens a PR to publish their changes
+  - The author consults with a docs-team person to publish changes (esp good when making nav changes, moving or deleting pages)
+  - The docs person opens a PR to push the changes
+
+Once the PR is merged, the docs site rebuilds and the changes are live!
+
+(* The docs team is just Laura right now.)
+
+
+### The Docs Process for direct contributors
+
 1. Check out the repo and get set up.
 2. Create a new branch and make your changes.
    - Change the content in the files.
@@ -77,7 +96,7 @@ See the [Contributor Guide](contributors.md) for more info.
 6. Once you've merged the branch, _delete it_!
 7. Once merged, you can track build and deploy process in [buildkite/segment-docs](https://buildkite.com/segment/segment-docs).
 
-### Long running projects
+### Draft PRs
 
 If you're doing a substantial change and you're going to want to spend a few weeks on it, use [Github's Draft PRs feature](https://help.github.com/en/articles/about-pull-requests#draft-pull-requests), or add `WIP` to the title of your PR. This lets us know to ignore the PR until you're ready.
 
