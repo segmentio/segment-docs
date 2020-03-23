@@ -134,6 +134,7 @@ Segment cannot guarantee that data is deleted from your Destinations. When you i
 ### Which destinations require additional destination setting configuration?
 
 #### Amplitude
+#### Amplitude
 If you have the Amplitude destination enabled in one or more sources, you must include Amplitude's secret key in each destination(s) settings so they can accept the deletion request. (You add it in the Amplitude destination settings, under "Secret Key"). You can find your Secret Key on the [General Settings](https://amplitude.zendesk.com/hc/en-us/articles/235649848-Settings#project-general-settings) of your Amplitude project.
 
 #### Google Analytics
