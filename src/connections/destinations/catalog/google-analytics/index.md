@@ -810,7 +810,11 @@ You may, however, want to deploy [page hiding](https://support.google.com/360sui
 
 ### User Deletion
 
-Through Segment's in app Privacy Tool you can send a deletion request using a `userId`. This will delete a user from your connected raw Data Destinations and forward a deletion request to Google Analytics. To learn more about the Privacy Tool [see our docs here](https://segment.com/docs/privacy/user-deletion-and-suppression/). To enable user deletion for Google Analytics, navigate to the the **User Deletion** setting in your Segment Google Analytics destination settings and authenticate your Google Analytics account using OAuth. 
+You can use Segment's in-app Privacy Tool to send deletion requests using `userId`s. This deletes a user from your connected raw Data Destinations and forwards a deletion request to Google Analytics. [See the Privacy Tools documentation](/docs/privacy/user-deletion-and-suppression/) to learn more. 
+
+To enable user deletion for Google Analytics:
+1. Navigate to the the **User Deletion** setting in your Segment Google Analytics destination settings
+2. Authenticate your Google Analytics account using OAuth. 
 
 > **Note**: User deletion for Google Analytics is currently only supported for Universal Analytics and not Classic Analytics. You also can only send user deletion requests using a `userId` through the Privacy Tool. This means you must  have the User-Id feature enable in your Google Analytics Property within the your Google Analytics dashboard and have Segment sending your Property `userIds` by enabling the setting **Send User-ID to GA**.
 
