@@ -70,7 +70,7 @@ Params: {
 ## Track
 
 [`track`](https://segment.com/docs/spec/track/) calls are sent to Stories as a new event on a user’s timeline to keep a track of user actions.
-`userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but not required.
+`userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but is not required.
 An example server-side call:
 
 ```text
@@ -91,7 +91,7 @@ To have Stories recognize a user, you must include `userId` when calling `identi
 
 ### Merging Users
 
-Stories automatically merges an identified User in Segment with the corresponding Stories User and creates a new User in Stories if it does not exist already. When an [`identify`](https://segment.com/docs/spec/identify/) call is fired, it will also merge/update User attributes with the `identify` call's traits.
+Stories automatically merges identified Users in Segment with their corresponding Stories User and creates a new User in Stories if it does not exist already. When an [`identify`](https://segment.com/docs/spec/identify/) fires, it merges/updates User attributes with the `identify` call's traits.
 
 An example server-side call:
 
