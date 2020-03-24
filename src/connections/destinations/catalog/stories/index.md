@@ -21,7 +21,7 @@ _**NOTE:** The Stories Destination is currently in beta, which means that they a
 
 ## Identify
 
-An [`identify`](https://segment.com/docs/spec/identify/) call is sent to Stories as a new event on a user's timeline. This call is mainly used to keep track of changes to users' profile and maintain user properties called _traits_ in Segment. If you want to track specific user actions we recommend using the [`track` call](#Track).
+[`identify`](https://segment.com/docs/spec/identify/) calls are sent to Stories as a new event on a user's timeline. This call is mainly used to keep track of changes to users' profile and maintain user properties called _traits_ in Segment. If you want to track specific user actions we recommend using the [`track` call](#Track).
 
 Only `identify` calls update the Profile traits and Attributes on the left-hand side of user profiles. `track`, `page`, and `screen` calls create users but don't populate user Attributes.
 
@@ -43,8 +43,8 @@ Params: {
 
 ## Page & Screen
 
-A [`page`](https://segment.com/docs/spec/page/) and/or a [`screen`](https://segment.com/docs/spec/screen/) call will be sent to Stories as a new event on a user’s timeline as a visited Page or opened Screen.
-`userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but not required.
+[`page`](https://segment.com/docs/spec/page/) and [`screen`](https://segment.com/docs/spec/screen/) calls are sent to Stories as a new event on a user’s timeline as a visited Page or opened Screen.
+`userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but is not required.
 An example server-side call:
 
 ```text
@@ -69,7 +69,7 @@ Params: {
 
 ## Track
 
-A [`track`](https://segment.com/docs/spec/track/) call will be sent to Stories as a new event on a user’s timeline to keep a track of user actions.
+[`track`](https://segment.com/docs/spec/track/) calls are sent to Stories as a new event on a user’s timeline to keep a track of user actions.
 `userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but not required.
 An example server-side call:
 
@@ -91,8 +91,7 @@ To have Stories recognize a user, you must include `userId` when calling `identi
 
 ### Merging Users
 
-You can enable **Sync Users** in Stories Destination Settings.
-When this option is enabled, Stories will automatically merge an identified User in Segment with the corresponding Stories User and create a new User in Stories if it does not exist already. When an [`identify`](https://segment.com/docs/spec/identify/) call is fired, it will also merge/update User attributes with the `identify` call's traits.
+Stories automatically merges an identified User in Segment with the corresponding Stories User and creates a new User in Stories if it does not exist already. When an [`identify`](https://segment.com/docs/spec/identify/) call is fired, it will also merge/update User attributes with the `identify` call's traits.
 
 An example server-side call:
 
@@ -109,3 +108,8 @@ Params: {
     },
 }
 ```
+
+## Sync Users
+
+When you setup your Stories Destination in Segment, your users automatically sync to Stories.
+Please note that only Users who have a `userId` in Segment are synced, Stories does not support anonymous users yet. Users are updated by `identify` events from Segment.
