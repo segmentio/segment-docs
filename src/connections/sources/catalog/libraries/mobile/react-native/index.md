@@ -73,7 +73,7 @@ Now that the SDK is installed and setup, you're ready to...
 
 `identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
-We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits are changed.
+We recommend calling `identify` a single time when the user's account is first created, identifying again later when their traits are changed, If users can log out of your app, we recommend identifying when a user logs back in.
 
 **Note:** We automatically assign an `anonymousId` to users before you identify them. The `userId` is what connects anonymous activities across devices.
 
