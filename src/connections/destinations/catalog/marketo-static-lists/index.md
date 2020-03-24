@@ -40,85 +40,82 @@ This allows you to run email campaigns in Marketo without having to manually fin
 > success "Good to know:"
 > To set up Marketo to receive Personas data, you need Marketo administrator access. If you don’t have that access, work with the administrator for your organization.
 
-**1. Create an API-Only Marketo user with both Access API and Lead Database access.**
+### Create an API-Only Marketo user
 
-- You can use an existing role with these permissions, or create a new role that has both Access API and Access Lead Database permissions. (Do this in Marketo by going to **Admin**→ **Users & Roles** → **Roles**).
-![](https://paper-attachments.dropbox.com/s_922D4790BF2E567EEC7C01232A3E24E0813696324324CD76FD4EEC3A4E7110FE_1584417578779_Screen+Shot+2020-03-17+at+2.58.33+PM.png)
+In this step, you'll create an API-Only Marketo user with both Access API and Lead Database access.
 
+1. You can use an existing role with these permissions, or create a new role that has both Access API and Access Lead Database permissions. (Do this in Marketo by going to **Admin**→ **Users & Roles** → **Roles**).
 
+   ![](images/marketosl-create-new-role.png)
 
-- Go to **Admin**→ **Users & Roles** → **Users** → **Invite New User** and create a new **API Only user** with the role that has both Access API and Lead Database permissions.
+2. Go to **Admin**→ **Users & Roles** → **Users** → **Invite New User** and create a new **API Only user** with the role that has both Access API and Lead Database permissions.
 
-
-![](https://paper-attachments.dropbox.com/s_922D4790BF2E567EEC7C01232A3E24E0813696324324CD76FD4EEC3A4E7110FE_1584417717415_Screen+Shot+2020-03-17+at+3.00.44+PM.png)
-
-
-**2. Create a** **Marketo Launchpoint Service for Segment Personas**
-
-- Go to **Admin** → **Integrations**→ **Launchpoint** → **New**
-- Create a new service. In the Service field, select `Custom`, and in the **API Only User** field, select the user you created in step 1.
-- Write down the **Client Id** and **Client Secret** for this service, as you will need it in Step 4.
+   ![](images/marketosl-perms.png)
 
 
-![](https://paper-attachments.dropbox.com/s_922D4790BF2E567EEC7C01232A3E24E0813696324324CD76FD4EEC3A4E7110FE_1584418128934_Screen+Shot+2020-03-17+at+3.07.57+PM.png)
+### Create a Marketo Launchpoint Service for Segment Personas
 
+1. Go to **Admin** → **Integrations**→ **Launchpoint** → **New**
+2. Create a new service. In the Service field, select `Custom`, and in the **API Only User** field, select the user you created in step 1.
+3. Write down the **Client Id** and **Client Secret** for this service, as you will need it in Step 4.
 
-
-3. **Create a Marketo Lead Database folder and g****et your** **Marketo Endpoint**
-- Go to your Marketo Lead Database and create a new folder under Group Lists. Once connected, each Personas audience shows up as a list in this folder.
-
-
-![](https://paper-attachments.dropbox.com/s_922D4790BF2E567EEC7C01232A3E24E0813696324324CD76FD4EEC3A4E7110FE_1584446964942_Screen+Shot+2020-03-17+at+3.16.01+PM.png)
-
-- Before you continue to the next step, in Marketo, go to **Admin → Web Services**, and copy or write down the REST API Endpoint. You’ll need that in the next step.
-
-Warning: Do not create a list in the folder for the audience. Segment creates the list for you!
-
-**4****.** **Set up the Marketo Static Lists destination in Segment Personas**
-
-- From your Segment workspace, go to **Personas → Destinations→ Add Destination** and then Search for Marketo Static Lists.
-- In the destination settings, enter the **Client Id**, **Client Secret**, **Endpoint** and **Folder Name** ****from the LaunchPoint service and folder you created in Steps 2 and 3. For **Endpoint**, note the Endpoint from Step 3.
-- Click the toggle to enable the Marketo Static Lists destination.
+![](images/marketosl-newservice.png)
 
 
 
-5. **Create Personas audiences and add Marketo Static Lists as a destination**
-- Navigate to the Personas Audiences tab or go to  `https://app.segment.com/goto-my-workspace``/personas/audiences` and create a new audience.
-- Give your audience a name, some event and trait criteria, then click **Preview**.
-- Select Marketo Static Lists as a destination for the Audience.
-> Note: Only users with an email address appear in the list in Marketo. Users with multiple email addresses as external ids appear in the list once for each email address.
+### Create a Marketo Lead Database folder and get your Marketo Endpoint
+
+1. Go to your Marketo Lead Database and create a new folder under Group Lists. Once connected, each Personas audience shows up as a list in this folder.
+
+
+   ![](images/marketosl-newfolder.png)
+
+2. Before you continue to the next step, in Marketo, go to **Admin → Web Services**, and copy or write down the REST API Endpoint. You’ll need that in the next step.
+
+> warning "Warning:"
+> Do not create a list in the folder for the audience. Segment creates the list for you!
+
+### Set up the Marketo Static Lists destination in Segment Personas
+
+1. From your Segment workspace, go to **Personas → Destinations→ Add Destination** and then Search for Marketo Static Lists.
+2. In the destination settings, enter the **Client Id**, **Client Secret**, **Endpoint** and **Folder Name** from the LaunchPoint service and folder you created in Steps 2 and 3. For **Endpoint**, note the Endpoint from Step 3.
+3. Click the toggle to enable the Marketo Static Lists destination.
 
 
 
+### Create Personas audiences and add Marketo Static Lists as a destination
 
-![](https://paper-attachments.dropbox.com/s_922D4790BF2E567EEC7C01232A3E24E0813696324324CD76FD4EEC3A4E7110FE_1584532273298_Screen+Shot+2020-03-18+at+10.47.05+PM.png)
+1. Navigate to the Personas Audiences tab or go to `https://app.segment.com/goto-my-workspace/personas/audiences` and create a new audience.
+2. Give your audience a name, some event and trait criteria, then click **Preview**.
+3. Select Marketo Static Lists as a destination for the Audience.
 
+> note "Note:"
+> Only users with an email address appear in the list in Marketo. Users with multiple email addresses as external ids appear in the list once for each email address.
+
+![](images/marketosl-leads.png)
 
 You can view the audience in Marketo by going to **Lead Database→ Group Lists→Name of folder you created in Step 3 → Audience name**
 
-
-
 ## How it works
 
-**Every time** **you create** **an audience in Personas and connect** **it** **to** **Marketo Static Lists****,** ******Segment** **do****es** **the following:**
+Every time you create an audience in Personas and connect it to Marketo Static Lists, Segment does the following:
 
 1. Creates a list with the same name as the Personas audience in the folder designated for Personas.
-2. Adds any users to that list who fit the audience definition, and who also have an email address.
+2. Adds any users to that list who both fit the audience definition and have an email address.
 3. If a user has multiple email addresses on their identity graph, each email address becomes a unique entry on the list.
 4. After the audience is configured, Segment checks which users still fit the audience definition, and adds or removes users from the audience, once every hour.
 
 
 ## Troubleshooting
 
-**Not seeing an audience in** **Marketo**
+**Not seeing an audience in Marketo**
 Check that you followed all of the set-up steps.
 Check that you didn’t create a list in the folder for the audience - Segment creates the list for you, and an existing one can conflict.
 Check that the audience members you expect have an email address on their profile.
 
-**Audience size** **is** **smaller than expected**
+**Audience size is smaller than expected**
 Only users in the audience who also have an email address are uploaded to the list. You might need to adjust your query to filter out users without an email so you can get a better estimate of how many users will appear on the list. In the example below, we added an AND condition where users have a Custom trait of `email` which `exists`.
 
-![](https://paper-attachments.dropbox.com/s_922D4790BF2E567EEC7C01232A3E24E0813696324324CD76FD4EEC3A4E7110FE_1585015931841_Screen_Shot_2020-03-24_at_1_11_09_PM.png)
-
+![](images/personas-add-emailtrait.png)
 
 A user with multiple email addresses appears once per email address in the Marketo lists.
