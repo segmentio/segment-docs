@@ -33,7 +33,7 @@ To learn more about about Connection Modes and what dictates which we support, [
 
 {% if currentIntegration.platforms.mobile == true %}
   {% if currentIntegration.platforms.server == true %}
-  Segment offers an *optional* **Device-based** Connection Mode for **Mobile** data going to {{ currentIntegration.display_name }}, so that you can use {{ currentIntegration.display_name }} features that collect data directly from the mobile device. To do this, you must package the {{ currentIntegration.display_name }} mobile SDK with the Segment SDK.
+  Segment offers an *optional* **Device-based** Connection Mode for **Mobile** data going to {{ currentIntegration.display_name }}, so that you can use {{ currentIntegration.display_name }} features that collect data directly from the mobile device. To do this, you must package the Segment-{{ currentIntegration.display_name }} mobile SDK with the Segment mobile SDK.
   {% else %}
   This destination *requires* that you use a **Device-based** Connection Mode for **Mobile** data. Make sure you package the {{ currentIntegration.display_name }} mobile SDK with the Segment mobile library.
   {% endif %}
