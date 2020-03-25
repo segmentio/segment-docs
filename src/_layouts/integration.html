@@ -61,8 +61,10 @@ layout: default
               {% endif %}
               {{ content }}
               {% if page.integration_type == 'destination' %}
+                {% unless page.hide-boilerplate == true %}
                 {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
                 {{ integration-foot | markdownify }}
+                {% endunless %}
               {% endif %}
             </div>
             <p><i style="color: #a5b0ba;font-size: small;">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>
@@ -84,8 +86,12 @@ layout: default
       <div class="sidebar sidebar--sticky sidebar--scroll">
         {%- unless page.hide_toc -%}
           {% if page.integration_type == 'destination' %}
-            {% assign toc_foot = integration-foot | markdownify %}
-            {% assign toc_content = content | append: toc_foot %}
+            {% if page.hide-boilerplate == true %}
+              {% assign toc_content = content  %}
+            {% else %}
+              {% assign toc_foot = integration-foot | markdownify %}
+              {% assign toc_content = content | append: toc_foot %}
+            {% endif %}
             <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
               {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=toc_content h_min=2 h_max=2 %}
             </div>
