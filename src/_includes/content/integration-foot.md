@@ -18,7 +18,7 @@ When the audience is first created an identify call is sent for every user in th
 
 {% endif %}
 
-{% unless page.rewrite == true %}
+{% unless page.rewrite == true or page.hide-cmodes == true%}
 ## Supported Sources and Connection Modes
 {% if currentIntegration.components.size > 0 %}
 {% include content/connection-modes.md %}
