@@ -1,5 +1,5 @@
 ---
-rewrite: true
+hide-cmodes: true
 title: Adikteev Destination
 ---
 

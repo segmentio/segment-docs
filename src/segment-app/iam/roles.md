@@ -41,7 +41,7 @@ The following roles are only available to Segment Business Tier accounts.
 | Role               | Description                                                                                                                 | Scope                          |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
 | Personas admin     | Edit access to Personas, including all audiences and computed traits. Personas admin can also view PII and change settings. | All audiences, computed traits |
-| Personas user      | Edit access to traits and audiences. Cannot view PII or change settings in Personas.                                        | The entire workspace           |
+| Personas user      | Edit access to traits and audiences. Cannot change settings in Personas.                                        | The entire workspace           |
 | Personas read-only | Read-only access to Personas,  including all audiences and computed traits.                                                 | The entire workspace           |
 
 

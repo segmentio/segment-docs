@@ -1,5 +1,8 @@
 ---
 title: 'Destination Functions'
+redirect_from:
+  - '/connections/destinations/custom'
+  - '/connections/destinations/custom-destinations'
 ---
 
 > note ""
