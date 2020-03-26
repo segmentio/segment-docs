@@ -12,10 +12,6 @@ An Access Token is used to access our Config API.
 
 A role is used to give a user access to resources within a workspace.
 
-## Groups
-
-A group can be used to give many users the same type of access to resources within a workspace.
-
 ## Workspace
 
 A Workspace holds your entire Segment configuration, including sources, destinations, warehouses, and so on.
