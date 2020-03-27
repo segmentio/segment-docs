@@ -101,7 +101,6 @@ The following event destinations below are supported. Note that some destination
 - [MailChimp](https://segment.com/docs/connections/destinations/catalog/mailchimp/)
 - [Mailjet](https://segment.com/docs/connections/destinations/catalog/mailjet/)
 - [Mammoth](https://segment.com/docs/connections/destinations/catalog/mammoth/)
-- [Marketo Static Lists](https://segment.com/docs/connections/destinations/catalog/marketo-static-lists/)
 - [Marketo V2](https://segment.com/docs/connections/destinations/catalog/marketo-v2/)
 - [Millennial Media](https://segment.com/docs/connections/destinations/catalog/millennial-media/)
 - [Mixpanel](https://segment.com/docs/connections/destinations/catalog/mixpanel/)
