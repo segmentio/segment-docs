@@ -1,7 +1,7 @@
 ---
 title: 'Personas Facebook Custom Audiences Destination'
 beta: true
-redirect_from: 'docs/connections/destinations/catalog/personas-facebook-ads'
+redirect_from: '/connections/destinations/catalog/personas-facebook-ads'
 ---
 
 ## Overview

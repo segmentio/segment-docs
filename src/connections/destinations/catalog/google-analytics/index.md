@@ -656,6 +656,7 @@ We support all of the following Google Analytics features:
 - [User-ID](#user-id)
 - [Virtual Pageviews](#virtual-pageviews)
 - [Optimize](#optimize)
+- [User Deletion](#user-deletion)
 
 ### Client-Side Library Methods
 
@@ -806,6 +807,16 @@ If you'd like to integrate with Google Analytics' [Optimize plugin](https://supp
 *Note*: Please make sure your Container ID is spelled correctly and that your Optimize container is ENABLED w/in Google. Otherwise, your GA destination will silently error out every time you try to make any tracking calls.
 
 You may, however, want to deploy [page hiding](https://support.google.com/360suite/optimize/answer/6262084#page-hiding) to prevent the page from flashing / flickering when the A/B test is loaded. This is recommended by Google. This code must be added manually by customers since it needs to load synchronously. Note that the Optimize container ID must be included in this snippet too.
+
+### User Deletion
+
+You can use Segment's in-app Privacy Tool to send deletion requests using `userId`s. This deletes a user from your connected raw Data Destinations and forwards a deletion request to Google Analytics. [See the Privacy Tools documentation](/docs/privacy/user-deletion-and-suppression/) to learn more. 
+
+To enable user deletion for Google Analytics:
+1. Navigate to the the **User Deletion** setting in your Segment Google Analytics destination settings
+2. Authenticate your Google Analytics account using OAuth. 
+
+> **Note**: User deletion for Google Analytics is currently only supported for Universal Analytics and not Classic Analytics. You also can only send user deletion requests using a `userId` through the Privacy Tool. This means you must  have the User-Id feature enable in your Google Analytics Property within the your Google Analytics dashboard and have Segment sending your Property `userIds` by enabling the setting **Send User-ID to GA**.
 
 - - -
 
