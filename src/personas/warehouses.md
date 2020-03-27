@@ -2,8 +2,6 @@
 title: Personas and Warehouses
 ---
 
-## How does Personas sync to my data warehouse?
-
 Personas provides a complete, up-to-date view of your users customer journey as it unfolds, and one of the best ways to understand the data produced by this journey is by analyzing the data in your data warehouse using SQL.
 
 With Personas, you can send Computed Traits and Audiences to a data warehouse like Redshift, BigQuery, or Snowflake. This allows you to perform analysis and reporting around key customer audiences and campaigns, as well set up your user data as input into predictive models.
@@ -16,7 +14,7 @@ When you build an audience or computed trait, you can configure it to send an id
 
 ![](images/warehouse1.png)
 
-### Identify calls for audiences
+## Identify calls for audiences
 
 If you chose to send your personas data as an identify call, Personas usually sends one call per user.
 
@@ -34,7 +32,7 @@ In the example below, you can see that the `identify` payload includes a trait o
 }
 ```
 
-### Identify calls for computed traits
+## Identify calls for computed traits
 
 When you send _computed traits_ as an identify call, Personas sends a similar call with the computed value for that trait. In the example below, the trait `total_revenue_180_days` includes the calculated value of `450.00`.
 
@@ -47,6 +45,8 @@ When you send _computed traits_ as an identify call, Personas sends a similar ca
   }
 }
 ```
+
+## Warehouse schema for Personas identify calls
 
 Personas identify calls appear in your warehouse using a similar format as normal Connections identify calls. Personas identify calls appear in two tables per Personas space. These tables are named with a prefix of `personas_`, then the Personas Space name, followed by `identifies` or `users`. The `identifies` table contains a record of every identify call, and the `users` table contains one record per `user_id` with the most recent value.
 
@@ -104,6 +104,8 @@ In the example below, the Trait Computed event contains the `trait_key` which re
   }
 }
 ```
+
+## Warehouse schema for Personas track calls
 
 Similar to track calls in Connections, Personas track calls appear in your warehouse as one table per event name. For example, if you configure your events called `Audience Entered`, `Audience Exited`, and `Trait Computed`, Personas would create tables like the following examples in your warehouse:
 
