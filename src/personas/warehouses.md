@@ -3,20 +3,28 @@ title: Personas and Warehouses
 ---
 
 ## How does Personas sync to my data warehouse?
-Personas provides a complete, up-to-date view of your users customer journey as it unfolds. We know that one of the best ways to understand this journey is through SQL in a Data Warehouses. With Personas, you can send Computed Traits and Audiences into your data warehouse like Redshift, BigQuery, or Snowflake. Common use cases include analysis & reporting around key customer audiences and campaigns, as well as inputs into predictive models.  
 
-Segment makes it easy to load your customer profile data into a clean schema so your analysts can help answer some of your toughest business questions.
+Personas provides a complete, up-to-date view of your users customer journey as it unfolds, and one of the best ways to understand the data produced by this journey is by analyzing the data in your data warehouse using SQL.
 
-### Setup
-When building an audience or computed trait, you can configure sending an identify call, a track call, and additionally include mobile ids to your data warehouse.
+With Personas, you can send Computed Traits and Audiences to a data warehouse like Redshift, BigQuery, or Snowflake. This allows you to perform analysis and reporting around key customer audiences and campaigns, as well set up your user data as input into predictive models.
+
+Segment makes it easy to load your customer profile data into a clean schema, so your analysts can help answer some of your toughest business questions.
+
+## Set up
+
+When you build an audience or computed trait, you can configure it to send an identify call or a track call to your data warehouse, and additionally include mobile ids.
 
 ![](images/warehouse1.png)
 
-#### Identify calls
+### Identify calls for audiences
 
-If you chose an identify call, we will typically send one call per user. For audiences, we will include a boolean trait that matches the audience name. When a user enters an audience this will be true, and when a user exits an audience this will be false.
+If you chose to send your personas data as an identify call, Personas usually sends one call per user.
 
-```
+When you send _audiences_ as an identify call, Personas includes a boolean trait that matches the audience name. When a user enters an audience the boolean is set to `true`, and when they exit, the boolean is set to `false`.
+
+In the example below, you can see that the `identify` payload includes a trait of the audience `first_time_shopper` with the value of `true.`
+
+```js
 {
   "type": "identify",
   "userId": u123,
@@ -26,9 +34,11 @@ If you chose an identify call, we will typically send one call per user. For aud
 }
 ```
 
-For computed traits, we will similarly send an identify call with the computed value for that trait.
+### Identify calls for computed traits
 
-```
+When you send _computed traits_ as an identify call, Personas sends a similar call with the computed value for that trait. In the example below, the trait `total_revenue_180_days` includes the calculated value of `450.00`.
+
+```js
 {
   "type": "identify",
   "userId": u123,
@@ -38,7 +48,9 @@ For computed traits, we will similarly send an identify call with the computed v
 }
 ```
 
-Similar to identify calls in Connections, these will be represented in your warehouse with two tables, `identifies` and `users`. The former contains a record of every identify call, whereas the latter contains one record per user_id with the latest value. The `personas_*` schema name is currently specific to the Personas space and cannot be modified. Additional audiences and computed traits will appear as additional columns in these tables.
+Personas identify calls appear in your warehouse using a similar format as normal Connections identify calls. Personas identify calls appear in two tables per Personas space. These tables are named with a prefix of `personas_`, then the Personas Space name, followed by `identifies` or `users`. The `identifies` table contains a record of every identify call, and the `users` table contains one record per `user_id` with the most recent value.
+
+The `personas_` schema name is specific to the Personas space and cannot be modified. Additional audiences and computed traits appear as additional columns in these tables.
 
 `personas_default.identifies`
 
@@ -53,11 +65,15 @@ Similar to identify calls in Connections, these will be represented in your ware
 | ------- | ------------------ | ---------------------- |
 | u123    | true               | 450.00                 |
 
-#### Track calls
+### Track calls for audiences
 
-If you send audiences using track calls, by default Segment sends an `Audience Entered` event when a user enters, and an `Audience Exited` event when the user exits. (These event names are configurable.) Segment also sends two event properties about the audience: the `audience_key` is equivalent to the audience name you enter in the last configuration step, and that name also becomes the next key, and is populated with a boolean value, as in the `first_time_shopper` audience in the example below.
+When you send _audiences_ using track calls, Personas sends an `Audience Entered` event when a user enters, and an `Audience Exited` event when the user exits, by default. These event names are configurable.
 
-```
+Personas also sends two event properties about the audience: the `audience_key`, which records the name of the audience that the event modifies, and the audience name and its value ,as a separate key and value pair. The value of the audience key is populated with a boolean value.
+
+In the example below, you can see that the `audience_key` is set to record a modification to the  `first_time_shopper` audience, and the `first_time_shopper` value is set to `true`.
+
+```js
 {
   "type": "track",
   "userId": u123,
@@ -69,11 +85,15 @@ If you send audiences using track calls, by default Segment sends an `Audience E
 }
 ```
 
-Computed Traits work in a similar fashion, but instead Segment sends a  `Trait Computed` event by default, with a property containing the computed value. You can also customize this event.
+### Track calls for computed traits
+
+When you send _computed traits_, Personas sends a `Trait Computed` event that records which computed trait it updates, then records the updated key and value. You can also customize this event name.
 
 ![](images/warehouse2.png)
 
-```
+In the example below, the Trait Computed event contains the `trait_key` which records which computed trait is being modified, and then includes the key `total_revenue_180_days` with the updated value of `450.00`.
+
+```js
 {
   "type": "track",
   "userId": u123,
@@ -85,7 +105,7 @@ Computed Traits work in a similar fashion, but instead Segment sends a  `Trait C
 }
 ```
 
-Similar to track calls in Connections, these are represented in your warehouse with one table per event name. For example, if you configure Audience Entered and Audience Exited events, and Trait Computed for computed traits, you would have the following tables in your warehouse:
+Similar to track calls in Connections, Personas track calls appear in your warehouse as one table per event name. For example, if you configure your events called `Audience Entered`, `Audience Exited`, and `Trait Computed`, Personas would create tables like the following examples in your warehouse:
 
 `personas_default.audience_entered`
 
@@ -105,23 +125,23 @@ Similar to track calls in Connections, these are represented in your warehouse w
 | ------- | ---------------------- | ---------------------- |
 | u123    | 450.00                 | total_revenue_180_days |
 
-#### Sync Frequency
+## Sync Frequency
 
-Although Personas can compute audiences and traits in realtime, they are still subject to the sync schedule your warehouses plan allows, typically hourly. You can check the warehouse sync history to see details about past and upcoming syncs. You will see a source with the `personas_` prefix that syncs the audiences and computed traits you connect to a warehouse.
+Although Personas can compute audiences and traits in real-time, these calculations are subject to the sync schedule allowed by your warehouses plan, which is usually hourly. You can check the warehouse sync history to see details about past and upcoming syncs. When you look at the sync schedule, sources with the `personas_` prefix sync data from Personas.
 
 ![](images/warehouse3.png)
 
 
 ## Common Questions
 
-### Can I disable a table, computed trait, or audience from syncing from my warehouse?
+### Can I prevent a table, a computed trait, or audience from syncing to my warehouse?
 
-Yes! You can use [Warehouses Selective Sync](https://segment.com/docs/connections/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse/) to manage which traits, audiences, and tables get synced from Personas.
+Yes! You can use [Warehouses Selective Sync](/docs/connections/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse/) to manage which traits, audiences, and tables get synced from Personas.
 
 ### Why are some users missing from the `users` table?
 
-The users table is an aggregated view based on the `user_id` field. This means that anonymous profiles with just an `anonymous_id` identifier will not get aggregated into this view. You can still view identify calls for anonymous audiences and computed traits in the `identifies` table.
+The users table is an aggregate view based on the `user_id` field. This means that anonymous profiles with just an `anonymous_id` identifier are not included in this view. You can still view identify calls for anonymous audiences and computed traits in the `identifies` table.
 
 ### Can I sync the identities table to my warehouse?
 
-Not yet. We're working on this feature, and if you're interested please let your CSM know or get in touch with us [here](https://segment.com/help/contact/).
+Not yet. We're working on this feature, and if you're interested, let your CSM know or [contact us](https://segment.com/help/contact/).
