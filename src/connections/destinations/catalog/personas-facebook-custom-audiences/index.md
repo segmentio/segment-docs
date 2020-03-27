@@ -5,8 +5,9 @@ hide-boilerplate: true
 redirect_from: '/connections/destinations/catalog/personas-facebook-ads'
 ---
 
-> note "Note on Facebook Destinations"
-> This page is about the **Facebook Custom Audiences** destination developed specifically for use with Segment Personas. For documentation on other Facebook destinations, see the pages linked below. For access to documentation on the Facebook Custom Audiences (Website) destination, contact [beta@segment.com](mailto:beta@segment.com), as it is an Early Access feature.
+> note ""
+> **Note on Facebook Destinations**: This page is about the **Facebook Custom Audiences** destination developed specifically for use with Segment Personas. For documentation on other Facebook destinations, see the pages linked below. For access to documentation on the Facebook Custom Audiences (Website) destination, contact [beta@segment.com](mailto:beta@segment.com), as it is an Early Access feature.
+
 
 | **Facebook Destination**   | Supported by Personas |
 | ---------------------- | --------------------- |
@@ -25,8 +26,8 @@ This Destination can send audiences (lists of users) created in Personas to Face
 
 This allows you to run advertising campaigns in Facebook without having to manually find and upload a refreshed a csv of users. We currently support Facebook Custom Audiences for Known Users. **Anonymous Website Audiences** is supported separately by the **Facebook Custom Audiences Website** Destination, which is currently in Early Access.
 
-> info "Note:"
-> You must have access to Personas as part of your Segment plan to use this destination. [Contact our sales team](https://segment.com/demo/) to try this out.
+> info ""
+> **Note:**You must have access to Personas as part of your Segment plan to use this destination. [Contact our sales team](https://segment.com/demo/) to try this out.
 
 
 ## Quick Info
@@ -66,6 +67,17 @@ Facebook Custom Audiences allows you to retarget these anonymous users using the
 
 Segment Personas supports this use case with the **Facebook Custom Audiences Device-Side Integration. This Personas destination is currently in Early Access**. To access join the Early Access program, email beta@segment.com.
 
+## How it works
+
+**Every time you create an audience in Personas and connect it to Personas Facebook Custom Audiences, Segment does the following**:
+
+1. Creates a Facebook Custom Audience (of type Customer List) with a name that matches the Personas Audience.
+2. Adds any users that fit the audience definition, based on the matching identifiers that Facebook supports (hashed). Facebook uses these identifiers to match users to Facebook users in their ads system.
+3. Once the audience is configured, Segment checks which users still fit the audience definition based on the same identifiers, and adds or remove users from the audience, every hour.
+
+> success "Tip:"
+> You can use the Audience History feature in Facebook to see this change over time.
+
 
 ## Set up
 
@@ -100,19 +112,11 @@ Once created, the audience should be available in Facebook in ten minutes unless
 ![](images/fb_ca_final.png)
 
 
-## How it works
 
-**Every time you create an audience in Personas and connect it to Personas Facebook Custom Audiences, Segment does the following**:
-
-1. Creates a Facebook Custom Audience (of type Customer List) with a name that matches the Personas Audience.
-2. Adds any users that fit the audience definition, based on the matching identifiers that Facebook supports (hashed). Facebook uses these identifiers to match users to Facebook users in their ads system.
-3. Once the audience is configured, Segment checks which users still fit the audience definition based on the same identifiers, and adds or remove users from the audience, every hour. **Tip**: You can use the Audience History feature in Facebook to see this change over time.
-
-
-**Early Access (Alpha) Feature: Additional identifier matching**
+## Early Access (Alpha) Feature: Additional identifier matching
 Previously, Segment only sent email and mobile ids to Facebook. Segment is now able to send an expanded list of identifiers to Facebook, so that Facebook can try to use these additional identifiers to match to their user profiles. If you have implemented any of these identifiers in your Segment tracking, Personas is able to send the identifiers to Facebook. Segment can now also sync multiple emails if the profile contains more than one. This feature is in Early Access. If you would like access, contact your CSM or email us at beta@segment.com.
 
-| **Name**        | **Trait Key formats supported**                                  | **Facebook Keys((        | **FB Hashing Required** | **FB Guidelines**                                                                                                                                             |
+| **Name**        | **Trait Key formats supported**   | **Facebook Keys**  | **FB Hashing Required** | **FB Guidelines**     |
 | Email       |                                                              | EMAIL                | Yes                 | Trim leading, trail whitespace, and convert all characters to lowercase.                                                                                  |
 | Mobile ID   |                                                              | MADID                | No                  | Use all lowercase, keep hyphens.                                                                                                                          |
 | First Name  | first_name<br>firstname<br>firstName<br>first                | FN                   | Yes                 | Use `a`-`z` only. Lowercase only, no punctuation. Special characters in UTF8 format.                                                                      |
