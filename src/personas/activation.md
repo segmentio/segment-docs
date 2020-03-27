@@ -145,7 +145,30 @@ Personas only sends events to the destination if the computed trait value has ch
 }
 ```
 
-Some destinations require specific keys to be included on the events in order to be ingested properly by the destination (ie. Zendesk requires the “name” property). We have included logic on our end to enrich the payloads being sent to these destinations to account for the destination API requirements, but please let us know if you are sending events to a destination that requires specific enrichment we do not already include, and we will do our best to address it!
+
+
+## Additional identifiers
+
+Personas has a flexible identity resolution layer that allows you to build user profiles based on multiple identifiers like `user_id`, `email`, `mobile advertisingId`, etc. By default, Personas includes email addresses in all payloads, because many marketing tools match users based on email address. However, different destinations may require different keys beyond email address, so they can do their own matching and identification. For example, Zendesk requires that you include the `name` property.
+Personas includes logic to automatically enrich payloads going to these destinations with the required keys.
+
+If you send events to a destination that requires specific enrichment we do not already include, [contact us and let us know](segment.com/help/contact/), and we‘ll do our best to address it.
+
+## Multiple identifiers of the same type
+
+You might also see that profiles that have multiple values for the same `external_id` type, for example a profile might have multiple email addresses. When this happens, Personas sends one event per email for each audience or computed trait event. This ensures that all downstream email-based profiles receive the complete audience or computed trait.
+
+We understand that in some situations this behavior might cause an unexpected volume of API calls. [Contact us](segment.com/help/contact/) if you have a use cases which calls for an exemption from this default behavior.
+
+## New external identifiers added to a profile
+
+There are two situations when Personas sends an audience or computed trait to a destination.
+
+The first is when the value of the trait or audience changes.
+
+The second, less common case is that Personas re-syncs an audience or computed trait when a new `external_id` is added to a profile. For example, an ecommerce company has an anonymous visitor with a computed trait called `last_viewed_category = 'Shoes'`. That visitor then creates an account and an email address is added to that profile, even though the computed trait value has not changed. When that email address is added to the profile, Personas re-syncs the computed trait that includes an email to downstream tools. This allows the ecommerce company to start personalizaing the user's experience from a more complete profile.
+
+If this behavior, re-syncing a computed trait or audience when the underlying trait or audience value hasn’t changed, is not the desired in your system, [contact us](segment.com/help/contact/).
 
 
 ## Rate Limits on Personas Event Destinations
