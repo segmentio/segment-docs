@@ -1,16 +1,148 @@
 ---
-title: Personas Activation
+title: Personas Activation - Syncing to Destinations
 ---
 
-Computed Traits are always sent to **Event Destinations** destinations through the identify call as a user trait, or additionally as a group call for account-level computed traits. With Audiences, we can send the audience either as a boolean user property to **Event Destinations**, or as a user list to **List Destinations**. Note that for account-level audiences syncing to list destinations, we will send the list of all users within an account that satisfies your audience criteria.
+## Overview
+Once you have created Computed Traits or Audiences in Personas, you can then **activate** that data by sending it to where you need it to go and putting that data to use! This page will provide an overview of activating Personas data in Segment Destinations so that you can use computed traits and audiences to personalize messages across channels, optimize ad spend, and improve targeting.
 
-#### Event Destinations
+Please note that the [Profile API](docs/personas/profile-api/) is another way that you can activate Personas data programmatically.
 
-For event destinations, you can send an audience as an [identify](/docs/connections/spec/identify) call and/or [track](/docs/connections/spec/identify) call to the destination for each user being added and removed. For identify calls, the trait name will be the snake_cased version of the audience name you provide with a true/false value. For example, when a user first completes an order in the last 30 days, we will send an identify call with the property `order_completed_last_30days: true`, and when this user no longer satisfies we will set that value to `false`. For track calls, we will send two events, `Audience Entered` and `Audience Exited`, with the event property `order_completed_last_30days` equal to true and false, respectively.
 
-When the audience is first created an identify or track call is sent for every user in the audience. Subsequent syncs will only send updates for those users which were added or removed since the last sync.
+## Compatible Personas Destinations
 
-The following event destinations below are supported. Note that some destinations do not support flexible schemas and require you to create the `audience_name` field before Personas can update those values. Check the specific destination's docs for more details.
+### Most Popular Personas Destinations
+
+This list includes the most important Personas Destinations that we support today, and which we consider industry-standard tools that many businesses use for the personalization and marketing. We dedicate the most amount of support to these top Personas Destinations. Note: software changes quickly, and this list is subject to change.
+
+| **Destination**                | **Category**           |
+| -------------------------- | ------------------ |
+| Facebook Custom Audiences  | Advertising        |
+| Salesforce Marketing Cloud | Marketing Automation                   |
+| Intercom                   | Customer Messaging |
+
+### Additional Personas Destinations
+
+In addition to the most popular Personas Destinations, Segment supports additional Destinations that you can use in conjuction with Personas. These are the full lists of Destinations that are compatible with Personas:
+- [Personas Destinations (Event Type)](#Personas-Compatible-Destinations-Event-Type)
+- [Personas Destinations (List Type)](#Personas-Compatible-Destinations-List-Type)
+
+
+## Personas Destination Types: Event vs. List
+
+### Overview
+There are two ways to send data to Personas Destinations: as **Events** and as **Lists**.
+
+**Event Destinations** receive data on a one by one, on a streaming basis as events, which are behaviors or occurrences tied to a user and a point in time. Every time a piece of data (track event, identify call, etc) is received in Segment — for example, from your website or your mobile app — Segment then sends this piece of data to the Destination right away.
+
+**List Destinations** periodically receive data in batches, and these batches contain lists of users. In most cases, Segment sends data to a list destination every hour, and sends all data accumulated since the last batch was sent.
+
+Some Destinations, such as Salesforce Marketing Cloud have both “event” and “list” destination types that you can use.
+
+**Personas sends computed traits and audiences to destinations in different ways depending on whether the destination is an Event or List type**: 
+
+- [Computed Traits](docs/personas/computed-traits/) are always sent to Event destinations either through the identify call as a user trait, as a group call for account-level computed traits, or as a track event. 
+- With [Audiences](docs/personas/audiences/), we can send the audience either as a boolean (true or false) user property to Event Destinations, or as a user list to List Destinations. If you are a B2B company creating account audiences (where each account represents a group of users, like employees at a business) and sending them to list destinations, Personas sends the list of all users within an account that satisfies the audience criteria. 
+
+The chart below provides an overview of differences in how computed traits and audiences each get sent to Event vs. List destinations supported by Personas.
+
+|                               | **Event Destinations**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | **List Destinations**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Computed Traits**               | - `identify` call as a user trait<br>- `group` call for account-level computed traits                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Audiences**                     | - `identify` call as a user trait. For identify calls, the trait name is the snake_cased version of the audience name you provided, and the value is a “true” if the user is part of the audience. For example, when a user first completes an order in the last 30 days, Segment sends an identify call with the property `order_completed_last_30days: true`, and when this user no longer satisfies that criteria (for example if 30 days elapses and they haven’t completed another order), Segment sets that value to `false`.<br>- `track` call as two events: `Audience Entered` and `Audience Exited`, with the event property `order_completed_last_30days` equal to true and false, respectively.<br><br>Segment sends an identify or track call for every user in the audience when the audience is first created. Later syncs only send updates for those users who were added or removed from the audience since the last sync. <br><br>Some destinations (like Braze and Iterable) allow you to send them audiences without pre-configuring a column to receive the audience data, however others require that you configure the audience column first. This depends on the individual destination, so consult the destination’s documentation for details. | - User-Level Audiences: a list of users that belong to an audience<br>- Account-Level Audiences: a list of users within an account that satisfy the audience criteria<br><br>When syncing to a list destination Personas uploads lists of users directly to the destination. When you first create an audience, Segment uploads the entire list of audience users to the destination. Later syncs only upload the users that have been added or removed since the last sync.<br><br>User-list destinations can have differing limits on how often Segment can sync with them. For example, an AdWords audience is updated once every 6 hours or more, because that is what AdWords recommends. |
+
+## What do the payloads look like for Personas data?
+The payloads being sent to your destinations from your Personas space can differ based on the type of event you have configured your destination to receive (identify vs. track) or whether the payload is coming from a computed trait or audience.
+
+**Computed Trait Generated Events**
+For identify events being generated by a computed trait, they will have the trait name set to the computed trait value:
+
+```
+    {
+      "type": "identify",
+      "userId": u123,
+      "traits": {
+         "total_revenue_180_days": 450.00 
+      }
+    }
+```
+For track events being generated by a computed trait, they will have a key for the trait name and a key for the computed trait value:
+```
+    {
+      "type": "track",
+      "event": "Trait Computed",
+      "userId": u123,
+      "properties": {
+         "trait_key": "total_revenue_180_days",
+         "total_revenue_180_days": 450.00 
+      }
+    }
+```
+Please note we will only send events to your destination if the computed trait value has changed for the user. We will not send a payload for every user in your trait every time the trait computes.
+
+**Audience Generated Events**
+For identify events being generated by an audience, they will have the audience key set to `true` or `false` based on whether the user is entering or exiting the audience:
+
+```
+    {
+      "type": "identify",
+      "userId": u123,
+      "traits": {
+         "first_time_shopper": true // false when a user exits the audience
+      }
+    }
+```
+For track events being generated by an audience, they will have a key for the audience name and a key for the audience value:
+
+```
+    {
+      "type": "track",
+      "userId": u123,
+      "event": "Audience Entered", // "Audience Exited" when a user exits an audience
+      "properties": {
+         "audience_key": "first_time_shopper",
+         "first_time_shopper": true // false when a user exits the audience
+      }
+    }
+```
+Some destinations require specific keys to be included on the events in order to be ingested properly by the destination (ie. Zendesk requires the “name” property). We have included logic on our end to enrich the payloads being sent to these destinations to account for the destination API requirements, but please let us know if you are sending events to a destination that requires specific enrichment we do not already include, and we will do our best to address it!
+
+
+## Rate Limits on Personas Event Destinations
+
+Many Destinations have strict rate limits that prevent Segment (and other partners) from sending too much data to a Destination at one time. Segment caps the number of requests per second to certain Destinations to avoid triggering rate limits that would cause data to be dropped.
+
+For additional information on Destination-specific rate limits, check the documentation for that Destination. If you need a higher rate limit, [reach out to support](https://segment.com/contact) or let your CSM know which Destination you need it for and why.
+
+| **Destination**                      | **Requests Per Second**                                                      |
+| Braze                            | 100                                                                      |
+| Customer.io                      | 30                                                                       |
+| Hubspot                          | 5 objects sent per second (for each object, 2 calls are sent to Hubspot) |
+| Intercom                         | 8                                                                        |
+| Iterable                         | 500                                                                      |
+| Mailchimp                        | 10                                                                       |
+| Marketo                          | 5                                                                        |
+| Marketo Static Lists             | 5                                                                        |
+| Pardot                           | 2                                                                        |
+| Resci                            | 200                                                                      |
+| Responsys                        | 3                                                                        |
+| Responsys Batch                  | 3                                                                        |
+| Sendgrid                         | 100                                                                      |
+| Sendgrid Lists                   | 100                                                                      |
+| Salesforce                       | 5                                                                        |
+| Salesforce Marketing Cloud       | 20                                                                       |
+| Salesforce Marketing Cloud Lists | 20                                                                       |
+| Zendesk                          | 50                                                                       |
+
+
+
+## Syncing data to a new Destination for the first time
+
+When you create a new Computed Trait or Audience in Personas, you can choose to calculate it either using all the available historical data from your Segment implementation, or only using data that arrives after you set up the trait or audience. By default, Segment opts to use historical data. 
+
+When you connect a new Destination to a computed trait or audience, Segment sends all the historical data (backfill) to that new destination. Afterwards, Segment only sends updates to that destination.
+
+**Note**: The Personas Facebook Custom Audiences Website destination does not accept historical data, and so only uses data from after the moment you configure it.
+
+## Personas Compatible Destinations: Event Type
 
 - [ActiveCampaign](https://segment.com/docs/connections/destinations/catalog/activecampaign/)
 - [AdWords Remarketing Lists](https://segment.com/docs/connections/destinations/catalog/adwords-remarketing-lists/)
@@ -187,18 +319,8 @@ The following event destinations below are supported. Note that some destination
 - [mabl](https://segment.com/docs/connections/destinations/catalog/mabl/)
 - [tray.io](https://segment.com/docs/connections/destinations/catalog/tray.io/)
 
-#### List Destinations
-
-When syncing to a list destination Personas will upload lists of users directly to the destination. When an audience is first created the entire list of audience users will be uploaded to the destination. Subsequent syncs will only upload the users added or removed since the last sync.
-
-Note that different user-list destinations have limits on how often we can sync. For example, AdWords recommends only updating user lists once every 6 hours. An AdWords audience would be updated every 6 hours if the sync rate was once an hour and every 8 hours if the sync rate was every 4 hours. Facebook supports syncing audiences every hour.
-
-We support the following user-list destinations:
+## Personas Compatible Destinations: List Type
 
 - [Facebook Custom Audiences](https://segment.com/docs/connections/destinations/catalog/personas-facebook-ads/)
 - [AdWords Remarketing Lists](https://segment.com/docs/connections/destinations/catalog/adwords-remarketing-lists/)
 - [Marketo Static Lists](https://segment.com/docs/connections/destinations/catalog/marketo-static-lists/)
-
-### Profile API
-
-You can also access your computed traits and audiences programmatically via the Profile API. Consult the [Profile API documentation](https://segment.com/docs/personas/profile-api/) for full details.
