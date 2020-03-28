@@ -14,7 +14,7 @@ You can send the Computed Traits and Audiences you create to Segment Destination
 
 ### Top Personas Destinations
 
-This list includes the most important Personas Destinations that we support today, and which we consider industry-standard tools that most businesses use for personalization and marketing.
+This list includes the most important Personas Destinations that we support today, and which we consider industry-standard tools that most businesses use for personalization and marketing. Please note that this list does not include warehouses.
 
 > info ""
 > Software changes quickly, and this list is subject to change.
@@ -22,8 +22,16 @@ This list includes the most important Personas Destinations that we support toda
 | **Destination**       | **Category**       |
 | --------------------------- | ------------------ |
 | [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/) | Advertising   |
+| [Google Adwords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/) | Advertising   |
+| [Braze](/docs/connections/destinations/catalog/braze/)   | Marketing Automation |
+| [Intercom](/docs/connections/destinations/catalog/intercom/)   | Livechat |
+| [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)   | Raw Data |
+| [Doubleclick Floodlight](/docs/connections/destinations/catalog/doubleclick-floodlight/)   | Advertising |
+| [Oracle Responsys](/docs/connections/destinations/catalog/responsys/)   | Email Marketing |
+| [Amplitude](/docs/connections/destinations/catalog/amplitude/)   | Analytics |
+| [Eloqua](/docs/connections/destinations/catalog/eloqua/)   | Email Marketing |
 | [Salesforce Marketing Cloud](/docs/connections/destinations/catalog/salesforce-marketing-cloud/) |  Marketing Automation     |
-| [Intercom](/docs/connections/destinations/catalog/intercom/)   | Customer Messaging |
+| [Iterable](/docs/connections/destinations/catalog/iterable/)   | Email Marketing |
 
 
 ### Additional Personas Destinations
