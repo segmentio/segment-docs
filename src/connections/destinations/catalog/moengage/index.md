@@ -43,7 +43,7 @@ To get started with MoEngage on iOS, first integrate your app with the [MoEngage
 
 Head to the App Delegate file and setup the Segment SDK by adding the `SEGMoEngageIntegrationFactory` instance to `SEGAnalyticsConfiguration` as shown below:
 
- ``
+ ```
  #import <SEGMoEngageIntegrationFactory.h> // This line is key for MoEngage integration
  #import <SEGAnalytics.h>
 
