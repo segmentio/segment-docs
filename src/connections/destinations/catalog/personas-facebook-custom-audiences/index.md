@@ -5,18 +5,6 @@ hide-boilerplate: true
 redirect_from: '/connections/destinations/catalog/personas-facebook-ads'
 ---
 
-> note ""
-> **Note on Facebook Destinations**: This page is about the **Facebook Custom Audiences** destination developed specifically for use with Segment Personas. For documentation on other Facebook destinations, see the pages linked below. For access to documentation on the Facebook Custom Audiences (Website) destination, contact [beta@segment.com](mailto:beta@segment.com), as it is an Early Access feature.
-
-
-| **Facebook Destination**   | Supported by Personas |
-| ---------------------- | --------------------- |
-| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                  | Yes                   |
-| **[Facebook Offline Conversions](docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
-| **[Facebook Pixel](docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
-| **Facebook Custom Audiences**      | Yes                   |
-| **Facebook Custom Audiences Website**    | Yes                   |
-
 
 ## Overview
 
@@ -28,6 +16,18 @@ This allows you to run advertising campaigns in Facebook without having to manua
 
 > info ""
 > **Note:**You must have access to Personas as part of your Segment plan to use this destination. [Contact our sales team](https://segment.com/demo/) to try this out.
+
+
+## Other Facebook Destinations Supported by Segment
+This page is about the **Facebook Custom Audiences** destination developed specifically for use with **Segment Personas**. For documentation on other Facebook destinations, see the pages linked below. For access to documentation on the Facebook Custom Audiences (Website) destination, contact [beta@segment.com](mailto:beta@segment.com), as it is an Early Access feature.
+
+| **Facebook Destination**   | Supported by Personas |
+| ---------------------- | --------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                  | Yes                   |
+| **[Facebook Offline Conversions](docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
+| **[Facebook Pixel](docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
+| **Facebook Custom Audiences**      | Yes                   |
+| **Facebook Custom Audiences Website**    | Yes                   |
 
 
 ## Quick Info
