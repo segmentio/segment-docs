@@ -8,7 +8,7 @@ Once you add the Segment-Moengage library to your app, you can enable MoEngage f
 
 The Segment-MoEngage Integration is a bundled integration, meaning it requires that you add a client-side integration to your app.
 
-## Setup MoEngage in Segment Dashboard
+## Set up MoEngage in the Segment Dashboard
 
   1. Get your [AppID](http://app.moengage.com/v3/#/settings/0/0) from the MoEngage dashboard.
   2. Go to your **Segment workspace**, then go to **Destinations**, and select **MoEngage**.
