@@ -19,7 +19,9 @@ This list includes the most important Personas Destinations that we support toda
 > info ""
 > Software changes quickly, and this list is subject to change.
 
+
 | **Destination**       | **Category**       |
+| === | === |
 | [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/) | Advertising   |
 | [Google Adwords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/) | Advertising   |
 | [Braze](/docs/connections/destinations/catalog/braze/)   | Marketing Automation |
@@ -29,7 +31,7 @@ This list includes the most important Personas Destinations that we support toda
 | [Oracle Responsys](/docs/connections/destinations/catalog/responsys/)   | Email Marketing |
 | [Amplitude](/docs/connections/destinations/catalog/amplitude/)   | Analytics |
 | [Eloqua](/docs/connections/destinations/catalog/eloqua/)   | Email Marketing |
-| [Salesforce Marketing Cloud](/docs/connections/destinations/catalog/salesforce-marketing-cloud/) |  Marketing Automation     |
+| [Salesforce Marketing Cloud](/docs/connections/destinations/catalog/salesforce-marketing-cloud/) |  Marketing Automation |
 | [Iterable](/docs/connections/destinations/catalog/iterable/)   | Email Marketing |
 
 
