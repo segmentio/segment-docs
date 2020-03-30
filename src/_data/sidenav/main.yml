@@ -192,22 +192,22 @@ sections:
       title: Identity Resolution E-Commerce Example
     - path: /personas/identity-resolution/personas-space-set-up
       title: Personas Space Set Up
-  - path: /personas/activation
-    title: Activation
-  - path: /personas/warehouses
-    title: Personas and Warehouses
-  - path: /personas/personas-gdpr
-    title: Personas and GDPR
-  - path: /personas/profile-api
-    title: Profile API
-  - path: /personas/faqs
-    title: Personas Frequently Asked Questions
-  - path: /personas/audiences
-    title: Audiences
   - path: /personas/computed-traits
     title: Computed Traits
   - path: /personas/sql-traits
     title: SQL Traits
+  - path: /personas/audiences
+    title: Audiences
+  - path: /personas/activation
+    title: Activation
+  - path: /personas/warehouses
+    title: Personas and Warehouses
+  - path: /personas/profile-api
+    title: Profile API
+  - path: /personas/personas-gdpr
+    title: Personas and GDPR
+  - path: /personas/faqs
+    title: Personas Frequently Asked Questions
 - section_title: Privacy
   section:
   - path: /privacy
