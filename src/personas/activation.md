@@ -20,7 +20,6 @@ This list includes the most important Personas Destinations that we support toda
 > Software changes quickly, and this list is subject to change.
 
 | **Destination**       | **Category**       |
-| --------------------------- | ------------------ |
 | [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/) | Advertising   |
 | [Google Adwords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists/) | Advertising   |
 | [Braze](/docs/connections/destinations/catalog/braze/)   | Marketing Automation |
