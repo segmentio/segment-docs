@@ -3,7 +3,7 @@ title: Using your Personas data
 redirect_from: 'personas/activation'
 ---
 
-You can send the Computed Traits and Audiences you create in Personas to you Segment Destinations, and use that it to personalize messages across channels, optimize ad spend, and improve targeting. This page provides an overview of different ways to activate Personas data in Segment Destinations.
+You can send the Computed Traits and Audiences you create in Personas to your Segment Destinations, and use that it to personalize messages across channels, optimize ad spend, and improve targeting. This page provides an overview of different ways to activate Personas data in Segment Destinations.
 
 <!-- TODO: image here? -->
 
