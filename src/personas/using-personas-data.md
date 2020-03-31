@@ -1,8 +1,9 @@
 ---
-title: Personas Activation - Syncing to Destinations
+title: Using your Personas data
+redirect_from: 'personas/activation'
 ---
 
-You can send the Computed Traits and Audiences you create to Segment Destinations, to **activate** that data and use it to personalize messages across channels, optimize ad spend, and improve targeting. This page provides an overview of different ways to activate Personas data in Segment Destinations.
+You can send the Computed Traits and Audiences you create in Personas to you Segment Destinations, and use that it to personalize messages across channels, optimize ad spend, and improve targeting. This page provides an overview of different ways to activate Personas data in Segment Destinations.
 
 <!-- TODO: image here? -->
 
@@ -12,9 +13,7 @@ You can send the Computed Traits and Audiences you create to Segment Destination
 
 ## Compatible Personas Destinations
 
-### Top Personas Destinations
-
-This list includes the most important Personas Destinations that we support today, and which we consider industry-standard tools that most businesses use for personalization and marketing. Please note that this list does not include warehouses.
+The table below includes the _most important_ Personas Destinations that we support today, and which we consider industry-standard tools that most businesses use for personalization and marketing. (This list does not include warehouses.)
 
 > info ""
 > Software changes quickly, and this list is subject to change.
@@ -35,16 +34,13 @@ This list includes the most important Personas Destinations that we support toda
 | [Iterable](/docs/connections/destinations/catalog/iterable/)   | Email Marketing |
 
 
-### Additional Personas Destinations
-
-In addition to the most popular Personas Destinations, Segment supports additional Destinations you can use in conjuction with Personas. These are the full lists of Destinations that are compatible with Personas:
+In addition to the most popular Personas Destinations, Segment supports additional Destinations you can use in conjunction with Personas. These are the full lists of Destinations that are compatible with Personas:
 - [Personas Destinations (Event Type)](#Personas-Compatible-Destinations-Event-Type)
 - [Personas Destinations (List Type)](#Personas-Compatible-Destinations-List-Type)
 
 
 ## Personas Destination Types: Event vs. List
 
-### Overview
 There are two ways to send data to Personas Destinations: as **Events** and as **Lists**.
 
 **Event Destinations** receive data on a one by one, on a streaming basis as *events*, which are behaviors or traits tied to a user and a point in time. Every time a piece of data (track event, identify call, etc) is received in Segment — for example, from your website or your mobile app — Segment then sends this piece of data to the Destination right away.
