@@ -1,5 +1,5 @@
 <div class="media-icon">
-  <a class="media-icon__inner" href="{% if include.variant == 'related' %}/docs{{ include.href }}{% else %}{{ include.href }}{% endif %}">
+  <a class="media-icon__inner" target="_blank" href="{% if include.variant == 'related' %}/docs{{ include.href }}{% else %}{{ include.href }}{% endif %}">
     <span class="media-icon__icon">
       {% if include.icon %}
         {% include icons/{{ include.icon }} %}
