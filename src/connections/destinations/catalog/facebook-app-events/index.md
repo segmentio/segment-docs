@@ -11,6 +11,20 @@ This document was last updated on October 04, 2018. If you notice any gaps, outd
 
 * [Improve mobile app retention with Facebook Ads](https://segment.com/recipes/mobile-app-retention-facebook-ads/)
 
+
+## Other Facebook Destinations Supported by Segment
+This page is about the **Facebook App Events**. For documentation on other Facebook destinations, see the pages linked below.
+
+| **Facebook Destination**   | Supported by Personas |
+| ---------------------- | --------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                  | Yes                   |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
+| **Facebook Custom Audiences Website**    | Yes                   |
+
+
+
 ## Getting Started
 
 {% include content/connection-modes.md %}

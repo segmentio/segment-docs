@@ -24,9 +24,9 @@ This page is about the **Facebook Custom Audiences** destination developed speci
 | **Facebook Destination**   | Supported by Personas |
 | ---------------------- | --------------------- |
 | **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                  | Yes                   |
-| **[Facebook Offline Conversions](docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
-| **[Facebook Pixel](docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
-| **Facebook Custom Audiences**      | Yes                   |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
 | **Facebook Custom Audiences Website**    | Yes                   |
 
 
