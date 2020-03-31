@@ -198,8 +198,8 @@ sections:
     title: SQL Traits
   - path: /personas/audiences
     title: Audiences
-  - path: /personas/activation
-    title: Activation
+  - path: /personas/using-personas-data
+    title: Using Personas data
   - path: /personas/warehouses
     title: Personas and Warehouses
   - path: /personas/profile-api

@@ -1,8 +1,9 @@
 ---
-title: Personas Activation - Syncing to Destinations
+title: Using your Personas data
+redirect_from: 'personas/activation'
 ---
 
-You can send the Computed Traits and Audiences you create to Segment Destinations, to **activate** that data and use it to personalize messages across channels, optimize ad spend, and improve targeting. This page provides an overview of different ways to activate Personas data in Segment Destinations.
+You can send the Computed Traits and Audiences you create in Personas to your Segment Destinations, and use that it to personalize messages across channels, optimize ad spend, and improve targeting. This page provides an overview of different ways to activate Personas data in Segment Destinations.
 
 <!-- TODO: image here? -->
 
@@ -12,9 +13,7 @@ You can send the Computed Traits and Audiences you create to Segment Destination
 
 ## Compatible Personas Destinations
 
-### Top Personas Destinations
-
-This list includes the most important Personas Destinations that we support today, and which we consider industry-standard tools that most businesses use for personalization and marketing. Please note that this list does not include warehouses.
+The table below includes the _most important_ Personas Destinations that we support today, and which we consider industry-standard tools that most businesses use for personalization and marketing. (This list does not include warehouses.)
 
 > info ""
 > Software changes quickly, and this list is subject to change.
@@ -35,16 +34,13 @@ This list includes the most important Personas Destinations that we support toda
 | [Iterable](/docs/connections/destinations/catalog/iterable/)   | Email Marketing |
 
 
-### Additional Personas Destinations
-
-In addition to the most popular Personas Destinations, Segment supports additional Destinations you can use in conjuction with Personas. These are the full lists of Destinations that are compatible with Personas:
-- [Personas Destinations (Event Type)](#Personas-Compatible-Destinations-Event-Type)
-- [Personas Destinations (List Type)](#Personas-Compatible-Destinations-List-Type)
+In addition to the most popular Personas Destinations, Segment supports additional Destinations you can use in conjunction with Personas. These are the full lists of Destinations that are compatible with Personas:
+- [Personas Destinations (Event Type)](#personas-compatible-destinations-event-type)
+- [Personas Destinations (List Type)](#personas-compatible-destinations-list-type)
 
 
 ## Personas Destination Types: Event vs. List
 
-### Overview
 There are two ways to send data to Personas Destinations: as **Events** and as **Lists**.
 
 **Event Destinations** receive data on a one by one, on a streaming basis as *events*, which are behaviors or traits tied to a user and a point in time. Every time a piece of data (track event, identify call, etc) is received in Segment — for example, from your website or your mobile app — Segment then sends this piece of data to the Destination right away.
@@ -161,13 +157,13 @@ Personas only sends events to the destination if the computed trait value has ch
 Personas has a flexible identity resolution layer that allows you to build user profiles based on multiple identifiers like `user_id`, `email`, `mobile advertisingId`, etc. By default, Personas includes email addresses in all payloads, because many marketing tools match users based on email address. However, different destinations may require different keys beyond email address, so they can do their own matching and identification. For example, Zendesk requires that you include the `name` property.
 Personas includes logic to automatically enrich payloads going to these destinations with the required keys.
 
-If you send events to a destination that requires specific enrichment we do not already include, [contact us and let us know](segment.com/help/contact/), and we‘ll do our best to address it.
+If you send events to a destination that requires specific enrichment we do not already include, [contact us and let us know](https://segment.com/help/contact/), and we‘ll do our best to address it.
 
 ## Multiple identifiers of the same type
 
 You might also see that profiles that have multiple values for the same `external_id` type, for example a profile might have multiple email addresses. When this happens, Personas sends one event per email for each audience or computed trait event. This ensures that all downstream email-based profiles receive the complete audience or computed trait.
 
-We understand that in some situations this behavior might cause an unexpected volume of API calls. [Contact us](segment.com/help/contact/) if you have a use cases which calls for an exemption from this default behavior.
+We understand that in some situations this behavior might cause an unexpected volume of API calls. [Contact us](https://segment.com/help/contact/) if you have a use cases which calls for an exemption from this default behavior.
 
 ## New external identifiers added to a profile
 
@@ -177,7 +173,7 @@ The first is when the value of the trait or audience changes.
 
 The second, less common case is that Personas re-syncs an audience or computed trait when a new `external_id` is added to a profile. For example, an ecommerce company has an anonymous visitor with a computed trait called `last_viewed_category = 'Shoes'`. That visitor then creates an account and an email address is added to that profile, even though the computed trait value has not changed. When that email address is added to the profile, Personas re-syncs the computed trait that includes an email to downstream tools. This allows the ecommerce company to start personalizaing the user's experience from a more complete profile.
 
-If this behavior, re-syncing a computed trait or audience when the underlying trait or audience value hasn’t changed, is not the desired in your system, [contact us](segment.com/help/contact/).
+If this behavior, re-syncing a computed trait or audience when the underlying trait or audience value hasn’t changed, is not the desired in your system, [contact us](https://segment.com/help/contact/).
 
 
 ## Rate Limits on Personas Event Destinations
