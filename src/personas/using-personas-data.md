@@ -35,8 +35,8 @@ The table below includes the _most important_ Personas Destinations that we supp
 
 
 In addition to the most popular Personas Destinations, Segment supports additional Destinations you can use in conjunction with Personas. These are the full lists of Destinations that are compatible with Personas:
-- [Personas Destinations (Event Type)](#Personas-Compatible-Destinations-Event-Type)
-- [Personas Destinations (List Type)](#Personas-Compatible-Destinations-List-Type)
+- [Personas Destinations (Event Type)](#personas-compatible-destinations-event-type)
+- [Personas Destinations (List Type)](#personas-compatible-destinations-list-type)
 
 
 ## Personas Destination Types: Event vs. List
