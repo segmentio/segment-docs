@@ -5,6 +5,8 @@ Access management lets workspace owners manage which users can access different 
 
 ![](images/access-mgmt-overview.png)
 
+{% include components/media-icon.html href="/segment-app/iam/" icon="media/icon-academy.svg" title="Add and manage workspace members" content="Learn how to add members to your workspace, and manage their permissions." variant="related" %}
+
 Access is scoped to a workspace. A Segment user is associated with one or more workspaces, either as an `owner` or `member` of each.
 Users access their Segment account with either email/password credentials, or by using Single Sign On.
 
