@@ -30,9 +30,7 @@ sections:
     - path: /guides/how-to-guides
       title: How-to Guides Index
     - path: /guides/how-to-guides/automated-multichannel-reengagement
-      title: How do I automate multi-channel re-engagement campaigns?
-    - path: /guides/how-to-guides/best-practices-identify
-      title: What are best practices for identifying users?
+      title: How do I automate multi-channel re-engagement campaigns
     - path: /guides/how-to-guides/collect-on-client-or-server
       title: Should I collect data on the client or server?
     - path: /guides/how-to-guides/collect-pageviews-serverside
@@ -107,6 +105,10 @@ sections:
       title: 'Spec: Ecommerce Events'
     - path: /connections/spec/video
       title: Video Spec
+    - path: /connections/spec/best-practices-identify
+      title: Best practices for identifying users
+    - path: /connections/spec/best-practices-event
+      title: Best Practices for Event Calls
   - section_title: Sources
     slug: connections/sources
     section:
