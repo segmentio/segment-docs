@@ -32,8 +32,20 @@ This page is about the **Facebook Custom Audiences** destination developed speci
 
 ## Quick Info
 
----
 
+- **Supports Personas**: Yes
+- **Personas Destination type**: List
+- **Must create audience_name field before Personas can update those values?**: No, Personas creates the audience for you.
+- **Audience appears as**: As a Facebook Custom Audience
+- **Destination rate limit**: None
+- **Lookback window allowed**: Yes
+- **Identifiers required** : Email or Mobile Device ID (IDFA)
+- **Identifiers accepted** : See [Facebook developer docs](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/) for full list
+- **Client or Server-Side Connection**: Server-side
+- **Minimum audience size required**: 100
+
+ <!-- commenting out until we can do better with formatting
+ ---
 | **Support for Personas**        | Yes     |
 | **Personas Destination Method**  | List |
 | **Must create audience_name field in the tool before Personas can update those values** | No, we create the audience for you. Note: if you change the name of the audience in Segment, it will not be reflected in Facebook |
@@ -43,7 +55,7 @@ This page is about the **Facebook Custom Audiences** destination developed speci
 | **Identifiers Required**   | email or IDFA   |
 | **Identifiers Accepted**    | See [Facebook developer docs](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/) for full list     |
 | **Client vs. Server-Side Connection**   | Server-side  |
-| **Minimum audience size required to send data to this Destination**   | 100  |
+| **Minimum audience size required to send data to this Destination**   | 100  |  -->
 
 
 ## Use Cases: Known Users
@@ -99,6 +111,9 @@ Segment Personas supports this use case with the **Facebook Custom Audiences Dev
 - Go to your Personas space, and select the Facebook destination you added to connect the audience to Facebook.
 - Give the audience a name and description, and click **Create**.
 - Your audience starts syncing from Personas to Facebook Ads.
+
+> note ""
+> **Note**: if you change the name of the audience in Segment, it will not be reflected in Facebook
 
 ![](images/fb_ca_setup.gif)
 
