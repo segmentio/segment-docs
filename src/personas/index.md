@@ -29,7 +29,7 @@ Add detail to user profiles with new traits, and use them to power personalized 
 Create a list of users or accounts that match specific criteria, for example “inactive accounts” (paying accounts who haven’t logged in in 60 days), and push that to your marketing and analytics tools. Learn more about [Personas audiences](/docs/personas/audiences/).
 
 #### Sync audiences to marketing tools
-Once you create your Computed Traits and Audiences, Personas sends them to your Segment Destinations in just a few clicks. You can use these to personalize messages across channels, optimize ad spend, and improve targeting. You can also use the [Profile API](/docs/personas/profile-api) to build in-app and onsite personalization.
+Once you create your Computed Traits and Audiences, Personas sends them to your Segment Destinations in just a few clicks. You can use these to personalize messages across channels, optimize ad spend, and improve targeting. You can also use the [Profile API](/docs/personas/profile-api) to build in-app and onsite personalization. Learn more about [using Personas data](/docs/personas/using-personas-data/) and the [Profile API](/docs/personas/profile-api).
 
 {% include components/media-icon.html href="https://segment.com/customers/drift/" icon="media/icon-personas.svg" title="Personalizing marketing campaigns" content="Marketing teams use Personas to run real-time multi-channel marketing campaigns, based off specific user attributes they’ve computed in Personas. Read about how Drift used Personas to increase prospect engagement by 150% in 2 month." %}
 
