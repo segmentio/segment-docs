@@ -40,7 +40,7 @@ This page is about the **Facebook Custom Audiences** destination developed speci
 - **Destination rate limit**: None
 - **Lookback window allowed**: Yes
 - **Identifiers required** : Email or Mobile Device ID (IDFA)
-- **Identifiers accepted** : Email and Mobile Device ID (IDFA)
+- **Identifiers accepted** : See [Facebook developer docs](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/) for full list
 - **Client or Server-Side Connection**: Server-side
 - **Minimum audience size required**: 100
 
@@ -111,6 +111,9 @@ Segment Personas supports this use case with the **Facebook Custom Audiences Dev
 - Go to your Personas space, and select the Facebook destination you added to connect the audience to Facebook.
 - Give the audience a name and description, and click **Create**.
 - Your audience starts syncing from Personas to Facebook Ads.
+
+> note ""
+> **Note**: if you change the name of the audience in Segment, it will not be reflected in Facebook
 
 ![](images/fb_ca_setup.gif)
 
