@@ -1,6 +1,6 @@
 ---
 hidden: true
-title: Data Lakes (Alpha)
+title: Data Lakes
 ---
 
 Segment Data Lakes let you send Segment data to cloud object stores (for example AWS S3 to start) in a way that is optimized for Data Analytics and Data Science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. However, without Data Lakes, you might need to do a significant amount of processing to get real value out of this data.
