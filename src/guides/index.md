@@ -27,6 +27,11 @@ When you implement Segment, you add our code to your website, app, or server, wh
 
 Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/connections/destinations/). Sources send messages _into_ Segment (and other tools), while Destinations receive messages _from_ Segment.
 
+### Anatomy of a Segment message
+
+{% include content/message-anatomy.md %}
+
+
 ### Segment Sources
 
 Segment provides several types of Sources which you can use to collect your data, and which you can choose among based on the needs of your app or site. For websites, you can embed a library which loads on the page to create the Segment messages. If you have a mobile app, you can embed one of our Mobile libraries, and if you'd like to create messages directly on a server (if you have, for example a dedicated .NET server that processes payments), we have several server-based libraries that you can embed directly into your backend code. (You can also use [cloud-sources](/docs/connections/sources/what-are-cloud-sources/) to import data about your app or site from other tools like Zendesk or Salesforce, to enrich the data sent through Segment.)

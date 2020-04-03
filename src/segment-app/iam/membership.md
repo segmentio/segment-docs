@@ -1,7 +1,8 @@
 ---
-title: Manage members
+title: Manage workspace members
 ---
 
+This page explains how to add members to your team's workspace, how to change their permissions, and how to remove them.
 
 ## Invite a new team member
 
