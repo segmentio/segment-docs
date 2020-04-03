@@ -262,7 +262,7 @@ sections:
     - path: /segment-app/iam/roles
       title: Roles
     - path: /segment-app/iam/membership
-      title: Manage members
+      title: Manage workspace members
     - path: /segment-app/iam/labels
       title: Label-Based Access Control
     - path: /segment-app/iam/audit-trail
