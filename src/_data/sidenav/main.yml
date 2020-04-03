@@ -115,6 +115,8 @@ sections:
     - path: /connections/sources/catalog
       title: Sources catalog
       menu_icon: read-more
+    - path: /connections/sources/debugger
+      title: Using the Source Debugger
     - path: /connections/sources/cloud-source-data
       title: What can you do with cloud source data?
     - path: /connections/sources/custom-domains
