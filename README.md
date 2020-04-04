@@ -198,7 +198,8 @@ Each piece of frontmatter does something special!
 #### Utility frontmatter
 - `published`: defaults to true. Set this to "false" to prevent Jekyll from rendering an HTML page for this file. Good for when you're working on something in the repo but aren't ready to release it yet, and don't want to use a Draft PR.
 - `hidden`: omits the file from the `sitemap.xml`, adds a `<meta name="robots" content="noindex" />` to the top of the generated HTML file, and drops it from the convenience script for regenerating the nav.
-- `hide-feedback`: defaults to false. When true, hide the feedback footer. Good for landing pages.
+- `hide-sidebar`: defaults to false. When true, hide the entire right-nav sidebar. Use with `hide-feedback` if you want to disable *all* feedback affordances.
+- `hide-feedback`: defaults to false. When true, hide the feedback in both rnav and footer. Good for landing pages.
 - `hide_toc`: hides the right-nav TOC that's generated from H2s. Also good for landing pages.
 - `landing`: defaults to false. Use this to drop the noun set by `integration_type` from the tab title.
 - `redirect_from`: Defaults to null. Takes an array of URLs from the frontmatter in a file, and generates a "stub" page at each URL at build-time. Each stub file redirects to the original file. Use the path from the root of the content directory, for example `/connections/destinations/catalog/` rather than `/docs/connections/destinations/catalog/`. **Note** We are mostly using NGINX redirects for SEO purposes. Approximately quarterly, we'll collect these and add them to NGINX.

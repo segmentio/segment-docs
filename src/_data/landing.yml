@@ -2,25 +2,25 @@ sections:
 - section_title: How can Segment help you?
   section_col: 6
   section:
-  - name: Simplify data collection with a single tool
+  - name: Simplify data collection
     icon: icon-connections.svg
-    description: "Integrate any tool your team needs for analytics, growth, marketing, and more."
+    description: "Integrate the tools you needs for analytics, growth, marketing, and more."
     path: /connections/
-  - name: Protect your data’s integrity
+  - name: Protect data integrity
     icon: icon-protocols.svg
-    description: "Prevent data quality issues before they start with a tracking schema and data quality enforcement with Protocols."
+    description: "Prevent data quality issues with a tracking schema and enforcement with Protocols."
     path: /protocols/
-  - name: Personalize customer interactions
+  - name: Personalize interactions
     icon: icon-personas.svg
-    description: "Improve customer interactions in and out of your app by building audiences to power personalized experiences."
+    description: "Improve customer interactions by building audiences to power personalized experiences."
     path: /personas/
-  - name: Take a proactive approach to privacy
+  - name: Get proactive about privacy
     icon: icon-privacy.svg
     description: "Respect your customers’ privacy with tools for data discovery and policy enforcement."
     path: /privacy/
 
 - section_title: Getting Data into Segment
-  section_description: "The Segment Spec provides guidance on meaningful data to capture, and the best format for it, across all of our libraries and APIs. If you implement Segment using these formats, it’s simple to translate your data to downstream tools."
+  section_description: "The Segment Spec provides guidance on meaningful data to capture, and the best format for it, across all of our libraries and APIs. When you use these formats it’s simple to send data to downstream tools."
   section_col: 4
   section:
   - name: Segment calls
@@ -38,7 +38,7 @@ sections:
   section:
   - name: Getting Started
     icon: icon-getting-started.svg
-    description: "An overview of Segment, including the problems it solves, how it works, and its important features."
+    description: "An overview of Segment: the problems it solves, how it works, and its important features."
     path: /guides/
   - name: How-To Guides
     icon: icon-guides.svg
