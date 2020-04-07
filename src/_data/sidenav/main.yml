@@ -117,6 +117,8 @@ sections:
     - path: /connections/sources/catalog
       title: Sources catalog
       menu_icon: read-more
+    - path: /connections/sources/debugger
+      title: Using the Source Debugger
     - path: /connections/sources/cloud-source-data
       title: What can you do with cloud source data?
     - path: /connections/sources/custom-domains
@@ -262,7 +264,7 @@ sections:
     - path: /segment-app/iam/roles
       title: Roles
     - path: /segment-app/iam/membership
-      title: Manage members
+      title: Manage workspace members
     - path: /segment-app/iam/labels
       title: Label-Based Access Control
     - path: /segment-app/iam/audit-trail
