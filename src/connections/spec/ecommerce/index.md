@@ -25,7 +25,7 @@ The ecommerce category includes the following semantic events:
 - [Viewed Product Category](#viewed-product-category)
 - [Viewed Product](#viewed-product)
 - [Added Product](#added-removed-product)
-- [Completed Order](#completing-an-order)
+- [Order Completed](#completing-an-order)
 
 
 ## Viewed Product Category
@@ -208,7 +208,7 @@ Be sure to **include all items in the cart as event properties**, with the same 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
   "action": "track",
-  "event": "Completed Order",
+  "event": "Order Completed",
   "properties": {
     "orderId": "50314b8e9bcf000000000000",
     "revenue": 25.00,
@@ -239,7 +239,7 @@ Be sure to **include all items in the cart as event properties**, with the same 
 {
   "userId": "019mr8mf4r",
   "action": "track",
-  "event": "Completed Order",
+  "event": "Order Completed",
   "properties": {
     "orderId": "50314b8e9bcf000000000000",
     "revenue": 25.00,

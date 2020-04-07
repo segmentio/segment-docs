@@ -116,7 +116,7 @@ Here's how we map our standard ecommerce events to Omniture events:
     <td>`scRemove`</td>
   </tr>
   <tr>
-    <td>Completed Order</td>
+    <td>Order Completed</td>
     <td>`purchase`</td>
   </tr>
 </table>
