@@ -1,6 +1,7 @@
 ---
 title: Intercom Destination
-rewrite: true
+hide-cmodes: true
+hide-personas-partial: true
 ---
 
 [Intercom](https://www.intercom.com/) makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination is open-source. You can browse the code for [analytics.js](https://github.com/segment-integrations/analytics.js-integration-intercom), [iOS](https://github.com/segment-integrations/analytics-ios-integration-intercom) and [Android](https://github.com/segment-integrations/analytics-android-integration-intercom) on Github.
@@ -311,14 +312,14 @@ Analytics.with(context).identify("123", traits, options);
 
 If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-integrations), the context object will look like this:
 
-```json
+```js
 {
-     integrations: {
-         All: false,
-         Intercom: {
-            user_hash: '<%= OpenSSL::HMAC.hexdigest("sha256", "YOUR_INTERCOM_APP_SECRET", current_user.id) %>'
-         }
+ integrations: {
+     All: false,
+     Intercom: {
+        user_hash: '<%= OpenSSL::HMAC.hexdigest("sha256", "YOUR_INTERCOM_APP_SECRET", current_user.id) %>'
      }
+ }
 }
 ```
 
@@ -462,8 +463,83 @@ If you are sending those two calls, then check that the CSS selector for the wid
 Server-side calls go the the project selected when you authenticated your Intercom account while setting up the destination. Client-side calls go to the project referenced with the [App ID setting](#app-id-required-for-analytics-js-).
 Make sure those projects are the same.
 
-### I'm seeing a `Cannot have more than 120 active event names` error
+### I'm seeing a "Cannot have more than 120 active event names" error
 
 Intercom only allows a total of [120 unique event names](http://docs.intercom.io/Intercom-for-user-analysis/Tracking-User-Events-in-Intercom#events-faqs). That means if you are sending Segment more than 120 unique event names, Intercom will only accept the first 120 events that hit their servers and the rest will throw an error.
 
 If you want to prevent some of your events from being passed to Intercom and thus prevent the error, you can filter out Intercom in those events using the [Selecting Destinations](https://segment.com/docs/guides/best-practices/should-i-instrument-data-collection-on-the-client-or-server/#selecting-destinations) feature available on all of our libraries.
+
+## Using Intercom with Personas
+
+Intercom is one of the most popular Destinations used with Personas.
+
+You can send computed traits and audiences that you create in Personas to this Destination so that you can use this data in live chat, automated emails, and other Intercom features to personalize interactions with your customers.
+
+{% include content/lookback.md %}
+
+### User-Level Traits and Audiences in Intercom
+
+Personas sends [**User-Level data**](https://segment.com/docs/glossary/#event) to Intercom using an **Identify** call that appends a trait to users’ profiles, or a **Track** call when a trait is computed or an audience is entered or exited.
+
+#### User level computed traits
+
+The name of the computed trait is added to the user profile as a trait, and the trait’s value is set to the value of the computed trait. When the trait is computed, a **Track** call will be sent For example: imagine you have a computed trait that counts the number of times a user visits your pricing page. If the user visits your pricing page five times, Segment sends an identify call with the property `pricing_page_visits: 5`.
+
+#### User level Audiences
+
+The name of the audience is added to the user’s profile as a trait, with boolean value that indicates if the user is in the audience. For example, when a user first completes an order in a lookback window for the last 30 days, Personas sends an identify call with the property `order_completed_last_30days: true`.  When the user no longer satisfies these criteria (for example when it’s been longer than 30 days since the last purchase), Personas sets that value to `false`.
+
+When you first create an audience, Personas sends an `identify` call for every user in the audience. Later syncs only update users which were added or removed from the audience since the last sync.
+
+> info ""
+> **Note**: Segment does not currently support the creation of **Leads** in Intercom.
+
+
+### Account-Level Traits and Audiences in Intercom
+
+Personas sends **Account-Level data** to Intercom using an **Identify** event call that appends an account trait to the users’ profiles or a **Track** call when a trait is computed or an audience is entered or exited. Users are added to an account using a single **Group** call, which appends a `groupID` to each user within the account.
+
+#### Account level computed traits
+
+When you build computed traits with Account-Level data, Personas computes for each account based on traits or aggregated user behavior. You can then export traits for each account, or for each user within an account. The name of the computed trait is added to the profiles of users who are part of the account as a user trait, and the value of the computed trait is added to the corresponding user’s user trait.
+
+For example, imagine you have a computed trait that counts the number of times that users from a specific account visit your pricing page. If users visit your pricing page five times, Personas sends an identify call with the property `pricing_page_visits: 5`.
+
+#### Account level audiences
+
+When you build audiences with Account-Level data, Personas returns a set of accounts or a set of users that match your criteria. Personas adds the name of the audience to the profile (individual user, or user within the account) as a trait, with a boolean value to indicate if the user is in the audience. For example: when users in an account first complete an order in the last 30 days, Personas sends an identify call with the property `order_completed_last_30days: true`. When the users in this Account no longer satisfy these criteria (for example if it’s been more than 30 days) we set that value to `false`.
+
+When you first create the audience, Personas sends an identify call for *every user in the account in that audience*. Later syncs only send updates for individual accounts and users which were added or removed since the last sync.
+
+> tip ""
+> **Tip**: For user-level events or traits, you can specify `None of the users`, `Any users`, or `All users` when building your audience criteria.
+
+
+### Intercom Personas Quick Info
+
+- **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
+- **Traits and Audiences created by**: Identify calls add traits and audiences as traits on the user
+- **Must create audience_name field before Personas can update those values?**: No, Personas creates the audience for you. Segment creates the name in Intercom when it passes user `identify` calls.
+- **Audience appears as**: A snake_cased version of the audience name (for example, `order_completed_last_30days: true` ) with a boolean value of `true` indicates that a user is in the audience.
+- **Destination rate limit**: Yes. 83 requests per 10 seconds
+- **Lookback window allowed**: Unlimited
+- **Identifiers required** : `i``d` or `email`
+- **Identifiers accepted** : `i``d` and `email`
+- **Client or Server-Side Connection**: Server-side
+
+## Setting Up Personas and Intercom
+
+To send computed traits or audiences to Intercom, you first need to connect it to your Personas space. Once it's set up, you can select Intercom as a destination for Personas data when create computed traits or audiences.
+
+1. In your Segment workspace, click Personas in the left navigation bar, and select your Personas space.
+2. Click **Destinations** in your Personas space and click **Add Destination**.
+   ![](images/pers-2-addbutton.png)
+
+3. Search for Intercom and click it when it appears in the search results
+   ![](images/pers-3-intercom-pdest.png)
+4. Click **Configure Intercom**.
+   ![](images/pers-4-config.png)
+5. Click **Connect to Intercom**.
+   ![](images/pers-5-connect.png)
+6. Log in to Intercom to allow Segment to send data to Intercom.
+   ![](images/pers-6-oath.png)
