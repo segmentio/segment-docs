@@ -115,6 +115,8 @@ sections:
     - path: /connections/sources/catalog
       title: Sources catalog
       menu_icon: read-more
+    - path: /connections/sources/debugger
+      title: Using the Source Debugger
     - path: /connections/sources/cloud-source-data
       title: What can you do with cloud source data?
     - path: /connections/sources/custom-domains
@@ -192,22 +194,22 @@ sections:
       title: Identity Resolution E-Commerce Example
     - path: /personas/identity-resolution/personas-space-set-up
       title: Personas Space Set Up
-  - path: /personas/activation
-    title: Activation
-  - path: /personas/warehouses
-    title: Personas and Warehouses
-  - path: /personas/personas-gdpr
-    title: Personas and GDPR
-  - path: /personas/profile-api
-    title: Profile API
-  - path: /personas/faqs
-    title: Personas Frequently Asked Questions
-  - path: /personas/audiences
-    title: Audiences
   - path: /personas/computed-traits
     title: Computed Traits
   - path: /personas/sql-traits
     title: SQL Traits
+  - path: /personas/audiences
+    title: Audiences
+  - path: /personas/using-personas-data
+    title: Using Personas data
+  - path: /personas/warehouses
+    title: Personas and Warehouses
+  - path: /personas/profile-api
+    title: Profile API
+  - path: /personas/personas-gdpr
+    title: Personas and GDPR
+  - path: /personas/faqs
+    title: Personas Frequently Asked Questions
 - section_title: Privacy
   section:
   - path: /privacy
@@ -260,7 +262,7 @@ sections:
     - path: /segment-app/iam/roles
       title: Roles
     - path: /segment-app/iam/membership
-      title: Manage members
+      title: Manage workspace members
     - path: /segment-app/iam/labels
       title: Label-Based Access Control
     - path: /segment-app/iam/audit-trail

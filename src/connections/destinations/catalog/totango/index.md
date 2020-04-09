@@ -27,7 +27,7 @@ A call to `group` is required before any `track` calls will be sent to Totango.
 ```js
 analytics.group('sjsj2hdj2', {
   name: 'Initech',
-  website: 'http://www.initech.com'
+  website: 'http://www.example.com'
 });
 ```
 
@@ -57,7 +57,7 @@ The first thing Totango needs to know is "who is the user browsing your site?" Y
 
 ```js
 analytics.identify('29ej29d', {
-  email: 'lawrence@initech.com',
+  email: 'lawrence@example.com',
   name: 'Lawrence Drywall',
   age: 42
 });
@@ -120,7 +120,7 @@ Here's a node `identify` example to get you started:
 analytics.identify({
   userId: '29ej29d',
   traits: {
-    email: 'lawrence@initech.com',
+    email: 'lawrence@example.com',
     name: 'Lawrence Drywall',
     age: 42
   },

@@ -63,7 +63,7 @@ analytics.enqueue(IdentifyMessage.builder()
     .userId("f4ca124298")
     .traits(ImmutableMap.builder()
         .put("name", "Michael Bolton")
-        .put("email", "mbolton@initech.com")
+        .put("email", "mbolton@example.com")
         .build()
     )
 );

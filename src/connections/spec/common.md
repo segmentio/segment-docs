@@ -154,7 +154,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`device` </td>
     <td>Object</td>
-    <td>Dictionary of information about the device, containing `id`, `manufacturer`, `model`, `name`, `type` and `version`.</td>
+    <td>Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type` and `version`.</td>
   </tr>
   <tr>
     <td>`ip`</td>
@@ -277,8 +277,8 @@ Other libraries only collect `context.library`, any other context variables must
 | userAgent                |      √       |               |      √            |
 | timezone                 |              |      √        |      √            |
 
-* IP Address is not collected by our libraries, but instead filled in by our servers when it receives a message for **client side events only**.
-* Our Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
+- IP Address is not collected by our libraries, but instead filled in by our servers when it receives a message for **client side events only**.
+- Our Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 
 ## Integrations
 

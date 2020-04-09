@@ -82,6 +82,6 @@ Here's an example:
 ```
 
 
-### Completed Order
+### Order Completed
 
 When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), we will send the event and data to Promoter as a custom event with the data stored with Promoter for future use.

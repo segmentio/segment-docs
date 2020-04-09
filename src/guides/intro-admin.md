@@ -23,7 +23,7 @@ You don't have to be a developer to be a Workspace administrator for an organiza
 However, many Workspace admins are also involved in the Segment implementation process as there are usually some tasks that must be performed in the Workspace to complete an implementation. If you think you might be developing a Segment implementation or helping out other developers, it's a good idea to [read the Segment developer intro](/docs/guides/intro-impl/)!
 
 > note ""
-> **Note**: Workspace roles are only available to Business Tier customers. If you're on a Developer or Team plan, all workspace members are granted workspace administrator access.
+> **Note**: Workspace roles are only available to Business Tier customers. If you're on a Free or Team plan, all workspace members are granted workspace administrator access.
 
 In addition, Workspace administrators set up and maintain the organization's [workspace settings](https://app.segment.com/goto-my-workspace/settings/), which include:
 - Billing information and billing contacts

@@ -670,8 +670,6 @@ return `null` if a Device ID has not been generated yet.
 
 ### Increment Traits
 
-Supported via our server-side, iOS and Android components.
-
 This will increment a user property by some numerical value. If the user
 property does not have a value set yet, it will be initialized to 0 before
 being incremented.

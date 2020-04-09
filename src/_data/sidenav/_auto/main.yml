@@ -31,7 +31,7 @@ sections:
       title: What can you do with cloud source data?
     - path: /connections/sources/custom-domains
       title: Set up a custom domain proxy in Segment
-    - path: /connections/sources/custom-sources
+    - path: /connections/sources/source-functions
       title: Custom Sources
     - path: /connections/sources/index-tonik
       title: Sources
@@ -159,24 +159,24 @@ sections:
   section:
   - path: /personas
     title: Personas Overview
-  - path: /personas/activation
-    title: 'Personas: Activation'
-  - path: /personas/audiences
-    title: 'Personas: Audiences'
-  - path: /personas/computed-traits
-    title: 'Personas: Computed Traits'
-  - path: /personas/faqs
-    title: Personas Frequently Asked Questions
   - path: /personas/identity-resolution
     title: 'Personas: Identity Resolution'
-  - path: /personas/personas-gdpr
-    title: Personas and GDPR
-  - path: /personas/profile-api
-    title: 'Personas: Profile API'
+  - path: /personas/computed-traits
+    title: 'Personas: Computed Traits'
   - path: /personas/sql-traits
     title: 'Personas: SQL Traits'
+  - path: /personas/audiences
+    title: 'Personas: Audiences'
+  - path: /personas/activation
+    title: 'Personas: Activation'
   - path: /personas/warehouses
     title: Personas and Warehouses
+  - path: /personas/profile-api
+    title: 'Personas: Profile API'
+  - path: /personas/personas-gdpr
+    title: Personas and GDPR
+  - path: /personas/faqs
+    title: Personas Frequently Asked Questions
 - section_title: Privacy
   section:
   - path: /privacy

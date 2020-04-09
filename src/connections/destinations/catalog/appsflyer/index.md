@@ -98,7 +98,7 @@ Finally, the serverside component will look for the following `properties` and h
 - `ip` (this should be the `ip` of your customer--this is not collected by Segment's libraries out-of-the-box)
 - `timestamp` (refer to AppsFlyer's docs on [how they process timestamps](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-). Since our libraries generate a [timestamp](/docs/connections/spec/common/#timestamps), we will always set this value)
 - `currency` (defaults to `"USD"`)
-- `revenue` (For `Order Completed / Completed Order` events, precedence is given to `total`, falling back to `properties.revenue`)
+- `revenue` (For `Order Completed` events, precedence is given to `total`, falling back to `properties.revenue`)
 
 All other `properties` will be sent to AppsFlyer as custom properties inside `eventValue`.
 

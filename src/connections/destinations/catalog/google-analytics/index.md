@@ -251,7 +251,7 @@ For **Event Value** you can name the event property `value` or `revenue`. We rec
 
 ### Non-interaction Events
 
-To create an event with the `nonInteraction` flag just pass us an event property labeled `nonInteraction` with the value of 1. You can also set all events to be non-interactive by default in the Advanced Options.
+Google Analytics allows you to tag some events as ["non-interaction" events](https://support.google.com/analytics/answer/1033068#NonInteractionEvents). To create an event with the `nonInteraction` flag just pass us an event property labeled `nonInteraction` with the value of 1. You can also set all events to be non-interactive by default in the Advanced Options.
 
 Here's an example:
 
@@ -263,7 +263,7 @@ Here's an example:
   }
 }'}}} {% endcomment %}
 
-```js
+```json
 {
   "action": "track",
   "event": "Viewed Legal Info",
@@ -601,7 +601,7 @@ Analytics.track(
   user_id: '019mr8mf4r',
   event: 'Loaded a Page',
   properties: {
-    url: 'http://initech.com/pricing'
+    url: 'http://example.com/pricing'
   },
   context: {
     user_agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17'
@@ -656,6 +656,7 @@ We support all of the following Google Analytics features:
 - [User-ID](#user-id)
 - [Virtual Pageviews](#virtual-pageviews)
 - [Optimize](#optimize)
+- [User Deletion](#user-deletion)
 
 ### Client-Side Library Methods
 
@@ -736,7 +737,7 @@ We default the **Cookie Domain Name** to `auto`, which automatically sets the co
 
 If you need to test on `localhost`, but don't need to track between multiple sub-domains, then you can set the domain to `none`.
 
-If you only want the cookie to persist on a single sub-domain, enter that sub-domain in the **Cookie Domain Name** field, like this: `swingline.initech.com`. In this case visitors to `conclusions.initech.com` or `initech.com` will not be tracked.
+If you only want the cookie to persist on a single sub-domain, enter that sub-domain in the **Cookie Domain Name** field, like this: `swingline.example.com`. In this case visitors to `conclusions.example.com` or `example.com` will not be tracked.
 
 For more information on Google Analytics cookies and domains name see [Google's docs on the subject](https://developers.google.com/analytics/devguides/collection/analyticsjs/domains).
 
@@ -806,6 +807,16 @@ If you'd like to integrate with Google Analytics' [Optimize plugin](https://supp
 *Note*: Please make sure your Container ID is spelled correctly and that your Optimize container is ENABLED w/in Google. Otherwise, your GA destination will silently error out every time you try to make any tracking calls.
 
 You may, however, want to deploy [page hiding](https://support.google.com/360suite/optimize/answer/6262084#page-hiding) to prevent the page from flashing / flickering when the A/B test is loaded. This is recommended by Google. This code must be added manually by customers since it needs to load synchronously. Note that the Optimize container ID must be included in this snippet too.
+
+### User Deletion
+
+You can use Segment's in-app Privacy Tool to send deletion requests using `userId`s. This deletes a user from your connected raw Data Destinations and forwards a deletion request to Google Analytics. [See the Privacy Tools documentation](/docs/privacy/user-deletion-and-suppression/) to learn more. 
+
+To enable user deletion for Google Analytics:
+1. Navigate to the the **User Deletion** setting in your Segment Google Analytics destination settings
+2. Authenticate your Google Analytics account using OAuth. 
+
+> **Note**: User deletion for Google Analytics is currently only supported for Universal Analytics and not Classic Analytics. You also can only send user deletion requests using a `userId` through the Privacy Tool. This means you must  have the User-Id feature enable in your Google Analytics Property within the your Google Analytics dashboard and have Segment sending your Property `userIds` by enabling the setting **Send User-ID to GA**.
 
 - - -
 
