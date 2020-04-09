@@ -1,6 +1,7 @@
 ---
-rewrite: true
 title: Mixpanel Destination
+hide-cmodes: true
+hide-personas-partial: true
 ---
 
 [Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
@@ -167,7 +168,7 @@ For array type traits passed to `identify` calls, we will use Mixpanel's `people
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Track method](/docs//connections/spec/track/) does. An example call would look like:
 ```javascript
 analytics.track('Button Clicked')
 ```
@@ -184,7 +185,7 @@ If Mixpanel People is enabled in your Segment settings and you include an event 
 There are two strings to avoid when naming event properties that will be sent to Mixpanel: `length` and `bucket`. `length` is interpreted as the JavaScript `.length` method, which causes the `mixpanel.track` call to fail silently. `bucket` is a reserved property that was used in the early days of Mixpanel. If you include a property called `bucket` in your events, it will not show up in the UI. However, it will not cause the `mixpanel.track` call to fail.
 
 ## Alias
-If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](/docs//connections/spec/alias/) does. An example call would look like:
 
 ```javascript
 analytics.alias('newUserId')
@@ -476,23 +477,23 @@ analytics.identify(
 
 Push notifications are only available for projects bundling the Segment-Mixpanel SDK.
 
-**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) documentation._
+**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](/docs//connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](/docs//connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) documentation._
 
 ### In-App Notifications
 
 In-app notifications are only available for projects either bundling the Segment-Mixpanel SDK or using the client-side Web integration. You must set up your in-app notification handlers by calling into native Mixpanel methods.
 
-**Note**: You can read more about how to approach this in our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) documentation.
+**Note**: You can read more about how to approach this in our [iOS](/docs//connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](/docs//connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) documentation.
 
 ### A/B Testing
 
-**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) documentation.
+**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](/docs//connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](/docs//connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) documentation.
 
 #### Device Connection Mode (Bundled Mobile SDK)
 
 We support Mixpanel push notifications automatically via the [didRegisterForRemoteNotificationsWithDeviceToken method](/docs/libraries/ios/#how-do-i-use-push-notifications-).
 
-For *in-app* notifications and surveys, you can follow the Mixpanel documentation [here](https://mixpanel.com/help/reference/ios-inapp-messages). You can leverage the native functionality to control when to show an in-app message by following the instructions [here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and calling the native Mixpanel methods.
+For *in-app* notifications and surveys, you can follow the Mixpanel documentation [here](https://mixpanel.com/help/reference/ios-inapp-messages). You can leverage the native functionality to control when to show an in-app message by following the instructions [here](/docs//connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and calling the native Mixpanel methods.
 
 #### Cloud Connection Mode (Unbundled/ Serverside)
 
@@ -524,3 +525,120 @@ To enable push tracking, click the checkbox within Mixpanel as explained in [Mix
 To add push open tracking, Mixpanel requires that on initialization Mixpanel is launched with options. Segment makes this  available through the factory ```(instancetype)createWithLaunchOptions:(NSString *)token launchOptions:(NSDictionary *)launchOptions;```
 
 *Note*: Push open tracking in Android is not currently supported by the Mixpanel Android library.
+
+
+## Using Mixpanel with Personas
+
+Mixpanel is a product analytics platform that is compatible as a Personas destination.
+
+You can send computed traits and audiences created in Personas to Mixpanel and use them to create dashboards, run cohort analyses or to power messages.
+
+{% include content/lookback.md %}
+
+
+### Using Personas Computed Traits with Mixpanel
+
+You can send Computed Traits created in Personas to Mixpanel as `identify` calls to create user properties in Mixpanel.
+
+![](images/pers-01-computed.png)
+
+You can check a specific user profile in Mixpanel for Computed Traits by going to **Users → Explore** and search for a specific user to view their profile.
+
+![](images/pers-02-mpx-profile-computed.png)
+
+
+Computed traits without a lookback window search across all historical events, and update in real time.
+
+Computed traits with a lookback window only search across events that occurred within the specified timeframe. Computed traits *with* a lookback window are updated hourly.
+
+![](images/pers-03-lookback.png)
+
+
+If you choose to include anonymous users when you create the computed trait, you must use the [`alias` call](/docs//connections/destinations/catalog/mixpanel/#alias) to merge user profiles when they become a known user.
+
+![](images/pers-04-incl-anons.png)
+
+### Using Personas Audiences with Mixpanel
+
+You can send Personas Audiences to Mixpanel as `identify` or `track` calls. You can choose the type of call to send when you add Mixpanel as a destination for an audience.
+
+![](images/pers-05-pdest-settings.png)
+
+
+When you send custom traits as `identify` calls, the name of the audience is added to the user’s profile as a user trait, with a boolean value to indicate if the user is in the audience. For example, when a user first completes an order in the last 30 days, we send an `identify` call with the property `order_completed_last_30days: true`. When this user no longer satisfies these criteria (for example when their last purchase was more than 30 days ago) Personas sets that value to `false`.
+
+![](images/pers-06-audience.png)
+
+You can check a specific user profile in Mixpanel for Computed Traits by going to **Users → Explore** and searching for a specific user to view their profile.
+
+
+![](images/pers-07-mxp-profile-audience.png)
+
+When you first create an audience, Personas sends an  `identify` call for every user in the audience. Later syncs only send updates for users who were added or removed from the audience since the last sync.
+
+
+When you use `track` calls, Segment sends an `Audience Entered` event when the user enters the audience, with the audience name as a property of the event. When the user exits the audience, Personas sends an `Audience Exited` event with the same property.
+
+
+![](images/pers-08-audience-track.png)
+
+
+You can check a specific user profile in Mixpanel for audience events by going to **Users → Explore** and searching for a specific user to view their profile. Look for `Audience Entered` and `Audience Exited` events in the Activity Feed.
+
+![](images/pers-09-mxp-profile-activityfeed.png)
+
+Audiences without a lookback window searches across all historical events and update in real time.
+
+Audiences with a lookback window only search across events that occurred within the specified timeframe. Audiences *with* a lookback window are updated hourly.
+
+
+![](images/pers-10-lookback.png)
+
+If you choose to include anonymous users when you create an audience, you must use the [alias call](/docs//connections/destinations/catalog/mixpanel/#alias) to merge user profiles when they become a known user.
+
+
+![](images/pers-11-incl-anons.png)
+
+
+### Setting Up Personas and Mixpanel
+
+To send computed traits or audiences to Mixpanel, you first must connect it to your Personas space. Once it's set up, you can select Intercom as a destination for Personas data when you create computed traits or audiences.
+
+1. Navigate to the Destinations tab in your Personas space.
+2. Search for Mixpanel and click add destination.
+3. Enter your API Secret and Token for the integration.
+4. Enable the "Use Mixpanel People” toggle. This allows Personas to send `identify` calls to Mixpanel.
+
+> success ""
+> **Tip**: Mixpanel now accepts Identify calls by default. Previously, this was an additional paid feature.
+
+
+![](images/pers-12-settigs-people.png)
+
+
+## Mixpanel Personas Quick Info
+
+- **Supports Personas**: Yes
+- **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
+- **Traits and Audiences created by**: Traits and audiences are added as user properties using `identify` calls. You can send Audiences as `Audience Entered` or `Audience Exited track` calls with the audience name as an event property.
+- **Must create audience_name field before Personas can update those values?**: No. If sent as an `identify` call, Personas auto-creates the computed trait or audience name as a user property.
+- **Audience appears as**:
+    - Computed traits appear as a lower case user property with spaces converted to underscores.
+    - For audiences sent as an `identify` call, Personas creates a lower case boolean (true/false) user property. Spaces are converted to underscores.
+    - For audiences sent as a `track` call, Personas sends `Audience Entered` and `Audience Exited` events with the audience name as an event property.
+- **Destination rate limit**: [None](https://help.mixpanel.com/hc/en-us/articles/115004602563-Rate-Limits-for-API-Endpoints#track-and-engage-endpoints)
+- **Lookback window allowed**: Yes, unlimited.
+- **Identifiers required** : `userId` or `anonymousId`
+- **Identifiers accepted** : `userId` or `anonymousId`
+- **Client or Server-Side Connection**: Server-side
+
+
+# Personas Mixpanel FAQs
+
+**What happens if I delete an audience or trait in Segment?**
+
+If you delete an audience or trait in Segment, it is not deleted from Mixpanel. To remove an audience-created property in Mixpanel, you must use either [the Mixpanel Engage API using the $unset method or hide user properties from the Lexicon](https://help.mixpanel.com/hc/en-us/articles/115004567926-Hide-or-Delete-Events-Properties-Users).
+
+**If a user has multiple external ids in Segment, what happens when they enter an audience or have a computed trait?**
+
+Segment sends an `identify` or a  `track` call for each external on the user’s account. For example, if a user has three email addresses, and you are sending `identify` calls for your audience, Personas sends three `identify` calls to Mixpanel and adds the latest email address to the user profile as the email “address of record” on the Mixpanel user profile.
