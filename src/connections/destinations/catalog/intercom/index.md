@@ -517,7 +517,7 @@ When you build audiences with Account-Level data, Personas returns a set of acco
 
 When you first create the audience, Personas sends an identify call for *every user in the account in that audience*. Later syncs only send updates for individual accounts and users which were added or removed since the last sync.
 
-> tip ""
+> success ""
 > **Tip**: For user-level events or traits, you can specify `None of the users`, `Any users`, or `All users` when building your audience criteria.
 
 

@@ -522,7 +522,7 @@ analytics.identify({
 
 To enable push tracking, click the checkbox within Mixpanel as explained in [Mixpanel's documentation](https://mixpanel.com/help/questions/articles/how-do-i-track-push-notification-open-rate). This feature allows push notification opens to be tracked as properties of an app open event, however this will miss pushes which are received when the app is already open.
 
-To add push open tracking, Mixpanel requires that on initialization Mixpanel is launched with options. Segment makes this  available through the factory ```(instancetype)createWithLaunchOptions:(NSString *)token launchOptions:(NSDictionary *)launchOptions;```
+To add push open tracking, Mixpanel requires that on initialization Mixpanel is launched with options. Segment makes this  available through the factory `(instancetype)createWithLaunchOptions:(NSString *)token launchOptions:(NSDictionary *)launchOptions;`
 
 *Note*: Push open tracking in Android is not currently supported by the Mixpanel Android library.
 
