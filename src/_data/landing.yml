@@ -31,7 +31,7 @@ sections:
     path: /connections/spec/common/
   - name: Use case specs
     description: "Use our business-case specs to ensure that your tools get the most from your data."
-    path: /connections/spec/mobile/
+    path: /connections/spec/semantic/
 
 - section_title: Learn the basics
   section_col: 6
