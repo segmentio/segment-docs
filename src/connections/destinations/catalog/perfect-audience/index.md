@@ -38,7 +38,7 @@ Perfect Audience requires that you define your goals ahead of time in their inte
 [Here's their video of how to set that up](http://support.perfectaudience.com/knowledgebase/articles/234037-how-to-create-and-track-conversion-goals-with-perf) - you'll need to match event names between Perfect Audience and your Segment track calls.
 
 
-### Completed Order
+### Order Completed
 
 If you're using our [ecommerce spec](/docs/connections/spec/ecommerce/v2/) and passing the `Order Completed` event the `orderId` and `total` will be passsed along to Perfect Audience.
 

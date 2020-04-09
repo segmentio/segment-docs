@@ -162,7 +162,7 @@ The below table shows the out of the box mappings in our integration between our
 
 | **Segment Ecommerce Spec | Klaviyo Standard Event** |
 |  ------ | ------- |
-| `Completed Order` | `Ordered Product` |
+| `Order Completed` | `Ordered Product` |
 
 The below table shows the parameter mappings in our integration between Order Completed properties and and Klaviyo's standard properties:
 
@@ -171,7 +171,7 @@ The below table shows the parameter mappings in our integration between Order Co
 | `revenue` | `$value` |
 | `eventId` or `orderId` | `$event_id` |
 
-#### Completed Order
+#### Order Completed
 
 Klaviyo supports the `Order Completed` event that is outlined in our [specs](/docs/connections/spec/ecommerce/v2/#order-completed). If you send us a `Order Completed` event, we will send Klaviyo a `Placed Order` event and a `Ordered Product` event for each item listed in the `properties.products` array. We will also attach `customer_properties` with the `userId` set as `$id` for each of those Klaviyo events.
 
