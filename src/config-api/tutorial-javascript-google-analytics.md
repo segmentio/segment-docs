@@ -5,7 +5,7 @@ sidebar: 'Tutorial: Google Analytics Destination'
 
 Segment makes it easy to collect data from cloud services (for example, advertising, helpdesk, and marketing) and send it to many destination services (for example, CRM services and data warehouses).
 
-A common use case is to send data from your website into Google Analytics to understand you website users. .
+A common use case is to send data from your website into Google Analytics to understand you website users.
 
 This tutorial uses the Config API to:
 
@@ -32,7 +32,7 @@ See the [Authentication](/docs/config-api/authentication/) doc for more informat
 
 To set up Segment Protocols through the API you first need to create a personal access token with **full access** to your workspace through the `workspace` scope.
 
-> tip ""
+> success ""
 > **Tip**: As best practice, tokens should be assigned the least permissions needed to perform a required API action, however for simplicity in this demo, we'll select Workspace Owner. You may want to delete the token once you've finished this demo.
 
 1. Log in to your Segment workspace.
