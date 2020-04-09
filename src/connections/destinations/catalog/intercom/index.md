@@ -535,7 +535,7 @@ When you first create the audience, Personas sends an identify call for *every u
 
 ## Setting Up Personas and Intercom
 
-To send computed traits or audiences to Intercom, you first must connect it to your Personas space. Once it's set up, you can select Intercom as a destination for Personas data when create computed traits or audiences.
+To send computed traits or audiences to Intercom, you first must connect it to your Personas space. Once it's set up, you can select Intercom as a destination for Personas data when you create computed traits or audiences.
 
 1. In your Segment workspace, click Personas in the left navigation bar, and select your Personas space.
 2. Click **Destinations** in your Personas space and click **Add Destination**.
