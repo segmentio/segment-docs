@@ -14,9 +14,9 @@ sections:
     icon: icon-personas.svg
     description: "Improve customer interactions by building audiences to power personalized experiences."
     path: /personas/
-  - name: Get proactive about privacy
+  - name: Respect users' privacy
     icon: icon-privacy.svg
-    description: "Respect your customers’ privacy with tools for data discovery and policy enforcement."
+    description: "Use Segment's tools for data discovery and policy enforcement to keep customer data private."
     path: /privacy/
 
 - section_title: Getting Data into Segment
