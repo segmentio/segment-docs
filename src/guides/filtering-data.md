@@ -119,7 +119,7 @@ If you have Protocols in your workspace, **and** have a tracking plan associated
 [Warehouse Selective Sync](/docs/connections/warehouses/selective-sync/) allows you to stop sending specific data to specific warehouses. You can use this to stop syncing specific events or properties that aren’t relevant, and which could be slowing down your warehouse syncs.
 
 > info ""
-> This feature is available to Business Tier customers only, and only Workspace or Warehouse Administrators can change Selective Sync settings.
+> This feature is available to Business Tier customers only, and only Workspace Owners can change Selective Sync settings.
 
 By default, a warehouse receives all sources and their collections and properties. No data is prevented from reaching warehouses. With Selective Sync, you can configure which collections and properties from a source are sent to each warehouse. This allows you to send different sets of data to each warehouse. This also means that you need to enable or disable data for each individual warehouse.
 
