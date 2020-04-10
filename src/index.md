@@ -2,12 +2,10 @@
 title: Segment Documentation
 layout: home
 landing: true
-hide-toc: true
+hide-sidebar: true
 ---
 
 Learn how to use Segment to collect, responsibly manage, and integrate your customer data with hundreds of tools.
-
-## Documentation Highlights
 
 <!-- {% comment %} {% include components/callout-mobile.html heading="Segment Platform" content="Integrate once. Connect your entire stack." buttonText="Learn more about Segment" buttonHref="https://segment.com" %}{% endcomment %} -->
 
