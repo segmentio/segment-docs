@@ -122,7 +122,7 @@ You can send Computed Traits created in Personas as `identify` calls to create u
 
 From the Iterable UI, you can check a specific user profile for Computed Traits by going to **Audience → Contact Lookup**. Personas only updates user profiles that contain an `email` or `userId`.
 
-![](images/pers-iterable-computed.png)
+![](images/pers-iterable-profile-computed.png)
 
 
 
@@ -130,15 +130,11 @@ Computed traits without a lookback window search across all historical events an
 
 Computed traits with a lookback window only search across events that occurred within the specified timeframe. Computed traits *with* a lookback window are updated hourly.
 
-
 ![](images/pers-lookback-2.png)
-
-
 
 ### Using Audiences with Iterable
 
 You can send Personas Audiences to Iterable as `identify` or `track` calls. You can choose the type of call to send when you add Iterable as a destination for an audience. Personas only sends updates to Iterable for users who have a known `email` or `userId`.
-
 
 ![](images/pers-iterable-audiences.png)
 
@@ -148,15 +144,11 @@ When you send Audiences as `identify` calls, Personas adds a trait matching the 
 
 ![](images/pers-audience-id.png)
 
-
-
 You can check a specific user profile for Audience membership in the Iterable UI by going to **Audience → Contact Lookup**.
 
 ![](images/pers-iterable-profile-audience.png)
 
-
 When you first create an audience, Personas sends an  `identify` call for every user in the audience. Later syncs only send updates for users who were added or removed from the audience since the last sync.
-
 
 #### Audiences using Track Calls
 
@@ -166,16 +158,13 @@ When you use `track` calls, Segment sends an Audience Entered event when the use
 
 You can check a specific user profile for an Audience event in the Iterable UI by going to **Audience → Contact Lookup→ Event History** tab.
 
-![](images/pers-iterable-events.png)
-
+![](images/pers-iterable-profile-events.png)
 
 Audiences without a lookback window search across all historical events, and update in real time.
 
 Audiences with a lookback window only searches across events that occurred within the specified timeframe. Audiences *with* a lookback window are updated hourly.
 
-
 ![](images/pers-lookback.png)
-
 
 ## Setting Up Personas and Iterable
 
@@ -186,7 +175,7 @@ To send computed traits or audiences to Iterable, you first must connect it to y
 3. On the set up screen, enter in your API Key for the Iterable.
 
 
-## Quick Info
+## Iterable Personas Quick Info
 
 - **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
 - **Traits and Audiences created by**:You can add traits and audiences as user properties using `identify` calls. You can send audiences as `Audience Entered` or `Audience Exited` `track` calls with the audience name as an event property.
@@ -199,7 +188,7 @@ To send computed traits or audiences to Iterable, you first must connect it to y
 - **Client or Server-Side Connection**: Server-side
 
 
-## Personas Iterable FAQs
+## Iterable Personas FAQs
 
 #### What happens if I delete an audience or trait in Segment?
 

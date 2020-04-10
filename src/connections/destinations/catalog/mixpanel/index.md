@@ -600,7 +600,7 @@ If you choose to include anonymous users when you create an audience, you must u
 ![](images/pers-11-incl-anons.png)
 
 
-### Setting Up Personas and Mixpanel
+## Setting Up Personas and Mixpanel
 
 To send computed traits or audiences to Mixpanel, you first must connect it to your Personas space. Once it's set up, you can select Intercom as a destination for Personas data when you create computed traits or audiences.
 
@@ -633,7 +633,7 @@ To send computed traits or audiences to Mixpanel, you first must connect it to y
 - **Client or Server-Side Connection**: Server-side
 
 
-# Personas Mixpanel FAQs
+## Mixpanel Personas FAQs
 
 **What happens if I delete an audience or trait in Segment?**
 

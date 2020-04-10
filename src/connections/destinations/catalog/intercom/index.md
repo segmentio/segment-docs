@@ -521,18 +521,6 @@ When you first create the audience, Personas sends an identify call for *every u
 > **Tip**: For user-level events or traits, you can specify `None of the users`, `Any users`, or `All users` when building your audience criteria.
 
 
-### Intercom Personas Quick Info
-
-- **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
-- **Traits and Audiences created by**: Identify calls add traits and audiences as traits on the user
-- **Must create audience_name field before Personas can update those values?**: No, Personas creates the audience for you. Segment creates the name in Intercom when it passes user `identify` calls.
-- **Audience appears as**: A snake_cased version of the audience name (for example, `order_completed_last_30days: true` ) with a boolean value of `true` indicates that a user is in the audience.
-- **Destination rate limit**: Yes. 83 requests per 10 seconds
-- **Lookback window allowed**: Unlimited
-- **Identifiers required** : `i``d` or `email`
-- **Identifiers accepted** : `i``d` and `email`
-- **Client or Server-Side Connection**: Server-side
-
 ## Setting Up Personas and Intercom
 
 To send computed traits or audiences to Intercom, you first must connect it to your Personas space. Once it's set up, you can select Intercom as a destination for Personas data when you create computed traits or audiences.
@@ -549,3 +537,15 @@ To send computed traits or audiences to Intercom, you first must connect it to y
    ![](images/pers-5-connect.png)
 6. Log in to Intercom to allow Segment to send data to Intercom.
    ![](images/pers-6-oath.png)
+
+## Intercom Personas Quick Info
+
+- **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
+- **Traits and Audiences created by**: Identify calls add traits and audiences as traits on the user
+- **Must create audience_name field before Personas can update those values?**: No, Personas creates the audience for you. Segment creates the name in Intercom when it passes user `identify` calls.
+- **Audience appears as**: A snake_cased version of the audience name (for example, `order_completed_last_30days: true` ) with a boolean value of `true` indicates that a user is in the audience.
+- **Destination rate limit**: Yes. 83 requests per 10 seconds
+- **Lookback window allowed**: Unlimited
+- **Identifiers required** : `i``d` or `email`
+- **Identifiers accepted** : `i``d` and `email`
+- **Client or Server-Side Connection**: Server-side
