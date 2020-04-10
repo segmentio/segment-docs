@@ -43,4 +43,4 @@ To manage data from one specific source to an individual warehouse, go to the Wa
 All changes made through Selective Sync only impact an individual warehouse - they do **not** propagate to multiple warehouses at once. To make changes to multiple warehouses, you need to enable/disable data for each individual warehouse.
 
 > warning ""
-> Note: Only Workspace or Warehouse Administrators can change Selective Sync settings.
+> Note: Only Workspace Owners can change Selective Sync settings.
