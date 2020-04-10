@@ -19,7 +19,7 @@ sections:
     description: "Use Segment's tools for data discovery and policy enforcement to keep customer data private."
     path: /privacy/
 
-- section_title: Getting Data into Segment
+- section_title: Get Data into Segment
   section_description: "The Segment Spec provides guidance on meaningful data to capture, and the best format for it, across all of our libraries and APIs. When you use these formats it’s simple to send data to downstream tools."
   section_col: 4
   section:
