@@ -30,7 +30,7 @@ sections:
     - path: /guides/how-to-guides
       title: How-to Guides Index
     - path: /guides/how-to-guides/automated-multichannel-reengagement
-      title: How do I automate multi-channel re-engagement campaigns
+      title: How do I automate multi-channel re-engagement campaigns?
     - path: /guides/how-to-guides/collect-on-client-or-server
       title: Should I collect data on the client or server?
     - path: /guides/how-to-guides/collect-pageviews-serverside
