@@ -38,7 +38,7 @@ You probably have teammates who help set up your Segment Workspace with the data
 2. On the screen that appears, choose one or two production sources from your Connections workspace.
    We recommend connecting your production website or App source as a great starting point.
 
-> tip ""
+> success ""
 > **Tip:** It sounds a little counter- intuitive to connect a production source to a developer Personas space, but your production sources have rich user data in them, which is what you need to build and validate user profiles.
 
 Once you select sources, Segment starts a replay of one month of historical data from these sources into your Personas space. We're doing this step first so you have some user data in Personas to build your first audiences and computed traits.
