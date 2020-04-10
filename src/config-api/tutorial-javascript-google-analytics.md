@@ -5,7 +5,7 @@ sidebar: 'Tutorial: Google Analytics Destination'
 
 Segment makes it easy to collect data from cloud services (for example, advertising, helpdesk, and marketing) and send it to many destination services (for example, CRM services and data warehouses).
 
-A common use case is to send data from your website into Google Analytics to understand you website users. .
+A common use case is to send data from your website into Google Analytics to understand you website users.
 
 This tutorial uses the Config API to:
 
