@@ -90,6 +90,11 @@ On the client and server, you can use the following settings:
 | Track Categorized Pages | A `page`/`screen` *category* is provided | Loaded/Viewed (Category) Page/Screen | "Loaded Merchant Page" |
 | Track All Pages | Always | Loaded/Viewed a Page/Screen | "Loaded a Page" |
 
+Before choosing which of the above settings is right for you, there are a couple of things worth considering first.
+
+* When choosing the the **Track All Pages** setting, this will fire a **Loaded a Page** event type to Amplitude. Due to the generic event name applied to all pages, you will not hit your event type limit in your project in Amplitude. However, the granular information on which specific page a user viewed will not be easily visible. You can still find the specific page name information by looking at the event property. The Loaded a Page will be counted as one event type and there is no limit on event properties values.
+* When choosing the **Track Named Pages** or **Track Categorized Pages** settings, this will fire a a page call that includes the page name or category. Given a site can have many pages and you may also be firing many Track events, you will have more granularity into which page a user viewed, but you will be subject to a limit in how many event types Amplitude allows tracked per project.
+
 These settings apply to mobile Cloud-mode connections.
 
 ### iOS
