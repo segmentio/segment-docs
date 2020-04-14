@@ -752,7 +752,6 @@ Have a question about the Amplitude/Segment integration that's already been answ
 
 ### I Don't See My Data In Amplitude
 
-If you aren't seeing your data arrive in Amplitude, we recommend you start by taking a look at our [Analytics.js Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#is-data-being-transmitted-to-your-third-party-destinations) on validating data being transmitted to your third-party destination .
-
+If you aren't seeing your data arrive in Amplitude, we recommend you start by taking a look at our [Analytics.js Guide on validating data being transmitted](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#is-data-being-transmitted-to-your-third-party-destinations) to your third-party destination .
 
 
