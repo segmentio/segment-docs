@@ -748,11 +748,11 @@ Amplitude offers a robust [Instrumentation Explorer/Debugger](https://help.ampli
 
 ### Amplitude/Segment FAQ
 
-Have a question about the Amplitude/Segment integration that's already been answered? Take a look at Amplitude's FAQ for common issues integrating Amplitude with Segment [here](https://help.amplitude.com/hc/en-us/articles/217934128-Segment-Amplitude-Integration#faq).
+Have a question about the Amplitude/Segment integration that's already been answered? Take a look at [Amplitude's FAQ](https://help.amplitude.com/hc/en-us/articles/217934128-Segment-Amplitude-Integration#faq) for common issues integrating Amplitude with Segment.
 
 ### I Don't See My Data In Amplitude
 
-If you aren't seeing your data arrive in Amplitude, we recommend you start by taking a look at our Analytics.js guide on validating data being transmitted to your third-party destination [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#is-data-being-transmitted-to-your-third-party-destinations).
+If you aren't seeing your data arrive in Amplitude, we recommend you start by taking a look at our [Analytics.js Guide](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#is-data-being-transmitted-to-your-third-party-destinations) on validating data being transmitted to your third-party destination .
 
 
 
