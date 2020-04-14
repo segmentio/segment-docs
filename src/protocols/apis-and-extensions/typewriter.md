@@ -54,7 +54,7 @@ To get started, check out one of the quickstart guides below:
 - [Browser Quickstart](#browser-quickstart)
 - [Node.js Quickstart](#node-js-quickstart)
 - [iOS Quickstart](#ios-quickstart)
-- Android Quickstart (Coming Soon)
+- [Android Quickstart](#android-quickstart)
 
 > Have feedback on Typewriter? Consider opening a [GitHub issue here](https://github.com/segmentio/typewriter/issues/new).
 
@@ -204,6 +204,60 @@ You can now import your new Typewriter client into your project via XCode. If yo
 To use it in an Objective-C application:
 
 ```objc
+// Import your auto-generated Typewriter client:
+#import "SEGTypewriterAnalytics.h"
+
+// Issue your first Typewriter track call!
+[SEGTypewriterAnalytics orderCompletedWithOrderID: "ck-f306fe0e-cc21-445a-9caa-08245a9aa52c" total: @39.99];
+```
+
+To use it in a Swift application, you add a [Bridging Header](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift) like the example below:
+
+```objc
+// TypewriterSwiftExample-Bridging-Header.h
+//
+// Make sure to include all generated headers from your Typewriter client:
+#import "Analytics/SEGTypewriterAnalytics.h"
+#import "Analytics/SEGGarage.h"
+#import "Analytics/SEGObjectItem.h"
+#import "Analytics/SEGOccupantsItem.h"
+#import "Analytics/SEGSubterraneanLab.h"
+#import "Analytics/SEGTunnel.h"
+#import "Analytics/SEGUniverse.h"
+#import "Analytics/SEGUniverseCharactersItemItem.h"
+```
+
+Then, you can use your Typewriter client in Swift:
+
+```objc
+// Issue your first Typewriter track call!
+SEGTypewriterAnalytics.orderCompleted(
+  orderID: "ck-f306fe0e-cc21-445a-9caa-08245a9aa52c",
+  total: 39.99
+)
+```
+
+You're now good to go! To learn more about some of the advanced configuration options that Typewriter supports, read on.
+
+## Android Quickstart
+
+Before you start, make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
+
+Next, install `analytics-android` in your app and configure the singleton analytics instance by following the first three steps in our [Android Quickstart](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-1-install-the-library).
+
+Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. To use this wizard, run:
+
+```sh
+$ npx typewriter init
+```
+
+> **Note**: You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
+
+Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
+
+You can now use your Typewriter client in your Android Java application:
+
+```java
 // Import your auto-generated Typewriter client:
 #import "SEGTypewriterAnalytics.h"
 
