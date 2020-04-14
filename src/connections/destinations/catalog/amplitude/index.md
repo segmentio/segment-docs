@@ -92,8 +92,9 @@ On the client and server, you can use the following settings:
 
 Before choosing which of the above settings is right for you, there are a couple of things worth considering first.
 
-* When choosing the the **Track All Pages** setting, this will fire a **Loaded a Page** event type to Amplitude. Due to the generic event name applied to all pages, you will not hit your event type limit in your project in Amplitude. However, the granular information on which specific page a user viewed will not be easily visible. You can still find the specific page name information by looking at the event property. The Loaded a Page will be counted as one event type and there is no limit on event properties values.
-* When choosing the **Track Named Pages** or **Track Categorized Pages** settings, this will fire a a page call that includes the page name or category. Given a site can have many pages and you may also be firing many Track events, you will have more granularity into which page a user viewed, but you will be subject to a limit in how many event types Amplitude allows tracked per project.
+* When choosing the the **Track All Pages** setting, this sends a `Loaded a Page` event type to Amplitude. When you use the generic event name, it is applied to all Page and Screen calls, so you don't hit the event type limit in your project in Amplitude. The page or screen name is available as an attribute of the `Loaded a Page` event, and you can query it as an event property. The `Loaded a Page` event is counted as one event type and there is no limit on event property values in Amplitude.
+
+* When choosing the **Track Named Pages** or **Track Categorized Pages** settings, this sends a Page or Screen call that includes the name or category. This option stores the page and screen name as a top-level event type. However, there are [limits for how many distinct event types Amplitude allows](https://help.amplitude.com/hc/en-us/articles/115002923888-Limits#event-types) tracked per project. Each unique Page and Screen name, Page and Screen category, and Track event counts towards the event type limit. Anything past the thresholds will not be visualized in Amplitude.
 
 These settings apply to mobile Cloud-mode connections.
 
