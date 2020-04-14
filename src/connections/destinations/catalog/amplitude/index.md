@@ -26,9 +26,9 @@ our documentation, please [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
-* [Use Optimizely and Amplitude to A/B test which CTAs lead to more signups](https://segment.com/recipes/ab-test-cta-signups-optimizely/)
-* [Test which call to action (CTA) results in more shopping cart conversions with Optimizely and Amplitude](https://segment.com/recipes/ab-test-cta-conversions-optimizely/)
-* [Identify what industries drive the highest LTV with Amplitude](https://segment.com/recipes/ltv-by-industry-amplitude/)
+- [Use Optimizely and Amplitude to A/B test which CTAs lead to more signups](https://segment.com/recipes/ab-test-cta-signups-optimizely/)
+- [Test which call to action (CTA) results in more shopping cart conversions with Optimizely and Amplitude](https://segment.com/recipes/ab-test-cta-conversions-optimizely/)
+- [Identify what industries drive the highest LTV with Amplitude](https://segment.com/recipes/ltv-by-industry-amplitude/)
 
 ## Getting Started
 
@@ -84,13 +84,20 @@ analytics.screen({
 
 On the client and server, you can use the following settings:
 
-| Setting Name | When events will be sent to Amplitude | Amplitude Event Name | Example for `{"name": "Settings", "category": "Merchant" }`  |
+| Setting Name | When events are sent to Amplitude | Amplitude Event Name | Example for `{"name": "Settings", "category": "Merchant" }`  |
 | --- | --- | --- | --- |
 | Track Named Pages | A `page`/`screen` *name* is provided | Loaded/Viewed (Category) (Name) Page/Screen | "Loaded Merchant Settings Page" |
 | Track Categorized Pages | A `page`/`screen` *category* is provided | Loaded/Viewed (Category) Page/Screen | "Loaded Merchant Page" |
 | Track All Pages | Always | Loaded/Viewed a Page/Screen | "Loaded a Page" |
 
-These settings apply to mobile Cloud-mode connections.
+Before you choose which setting is right for you, there are a couple of things worth considering first.
+
+- When you use the **Track Named Pages** or **Track Categorized Pages** settings, Segment sends a Page or Screen call that includes the name or category. This option stores the page and screen name as a top-level event type. However, there are [limits for how many distinct event types Amplitude allows](https://help.amplitude.com/hc/en-us/articles/115002923888-Limits#event-types) tracked per project. Each unique Page and Screen name, Page and Screen category, and Track event counts towards the event type limit. Anything past the thresholds is not visualized in Amplitude.
+
+- When you use the **Track All Pages** setting, Segment sends a `Loaded a Page` event type to Amplitude. When you use the generic event name, it is applied to all Page and Screen calls, so you don't hit the event type limit in your project in Amplitude. The page or screen name is available as an attribute of the `Loaded a Page` event, and you can query it as an event property. The `Loaded a Page` event is counted as one event type, and Amplitude does not place any limits on the number of unique event property values in Amplitude.
+
+> success ""
+> **Tip**: These settings apply to mobile Cloud-mode connections.
 
 ### iOS
 
@@ -412,11 +419,11 @@ To use Amplitude's groups with Segment, you must enable the following
 destination settings and provide them with the appropriate values. They act as
 a mapping from Segment group traits to Amplitude group types and values.
 
-* **"Amplitude Group Type Trait"**: This specifies what trait in your
+- **"Amplitude Group Type Trait"**: This specifies what trait in your
   `.group()` calls will contain the Amplitude "group type". In other words,
 it's how you tell Segment which trait should be used as the group type.
 
-* **"Amplitude Group Value Trait"**: This specifies what trait in your
+- **"Amplitude Group Value Trait"**: This specifies what trait in your
   `.group()` calls will contain the Amplitude "group value". It's how you tell
 Segment which trait should be used as the group value.
 
@@ -739,3 +746,19 @@ same client will be tracked under the same user.
 
 Segment logs out the user by setting the `userId` to `nil` and calling
 Amplitude's method to regenerate a new `deviceId`.
+
+## Troubleshooting
+
+### Instrumentation Explorer
+
+Amplitude offers a robust [Instrumentation Explorer/Debugger](https://help.amplitude.com/hc/en-us/articles/360003032451-Instrumentation-Explorer-Debugger). This is a helpful Chrome extension that shows each page interaction that sends an event to Amplitude.
+
+### Amplitude/Segment FAQ
+
+Have a question about the Amplitude/Segment integration that's already been answered? Take a look at [Amplitude's FAQ](https://help.amplitude.com/hc/en-us/articles/217934128-Segment-Amplitude-Integration#faq) for common issues integrating Amplitude with Segment.
+
+### I Don't See My Data In Amplitude
+
+If you aren't seeing your data arrive in Amplitude, we recommend you start by taking a look at our [Analytics.js Guide on validating data being transmitted](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#is-data-being-transmitted-to-your-third-party-destinations) to your third-party destination .
+
+
