@@ -49,7 +49,7 @@ Segment currently charges sales tax in the following states:
 - Utah
 - Washington
 
-### Do I qualify for a tax exemption?
+## Do I qualify for a tax exemption?
 
 If you believe your organization qualifies for a sales tax exemption (for example, because of a nonprofit or government status), you can contact [tax@segment.com](mailto:tax@segment.com) with the appropriate form.
 
