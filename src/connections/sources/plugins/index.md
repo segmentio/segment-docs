@@ -58,7 +58,7 @@ If you are using Magento, use the [Segment PHP library source](/docs/connections
 
 ## Shopify
 
-If you are using Shopify, you can use the [Shopify Source](/docs/connections/sources/catalog/cloud-apps/shopify-littledata/).
+If you are using Shopify, you can use our recommended third-party [Segment for Shopify by Littledata Source](/docs/connections/sources/catalog/cloud-apps/shopify-littledata/).
 
 
 ## Tumblr
@@ -68,7 +68,7 @@ insert ajs as part of site customization ??
 
 ## Woocommerce
 
-WooCommerce offers a [paid Segment plugin](https://docs.woocommerce.com/document/segment-io-connector/), or you can use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/php/), and implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
+WooCommerce offers a [paid Segment plugin](https://docs.woocommerce.com/document/segment-io-connector/) to replace prior implementations.
 
 ## Wordpress
 
