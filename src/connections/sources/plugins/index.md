@@ -58,7 +58,7 @@ If you are using Magento, use the [Segment PHP library source](/docs/connections
 
 ## Shopify
 
-If you are using Shopify, you can use the [Shopify Source](/docs/connections/sources/catalog/cloud-apps/shopify-littledata/).
+If you are using Shopify, you can use our recommended third-party [Segment for Shopify by Littledata Source](/docs/connections/sources/catalog/cloud-apps/shopify-littledata/).
 
 
 ## Tumblr
