@@ -1,14 +1,15 @@
 ---
 title: What are best practices for identifying users?
+redirect_from: 'guides/how-to-guides/best-practices-identify'
 ---
 
-Tracking signups correctly is a key step in your marketing funnels. The process of shifting from an anonymous visitor to an identified user requires some special tracking. This tutorial will help you track newly registered users the right way.
+Tracking sign ups correctly is a key step in your marketing funnels. The process of shifting from an anonymous visitor to an identified user requires some special tracking. This tutorial will help you track newly registered users the right way.
 
 The best way to track new users is in client-side javascript on the welcome page after they signup. Below, we’ll explain why.
 
 ### Choosing a userId
 
-Every identified user must be assigned a unique userId so they can be tracked consistently across different browsers or devices. When a new user registers, they should be assigned a userId at that point. Usually this userId is the same as the Id that identifies them in your database.
+Every identified user must be assigned a unique userId so they can be tracked consistently across different browsers or devices. You should assign new users their userId at the point that they register. Usually this userId is the same as the Id that identifies them in your database.
 
 Read [our identify docs](https://segment.com/docs/connections/spec/identify/#user-id) for more information on choosing the best userId.
 
@@ -45,9 +46,9 @@ analytics.track('Account Created',{  authentication:'Facebook'})
 
 #### Sending user traits from your server
 
-There are some advantages to sending details about your users directly from your server once the become a registered user. Server-side [identify](/docs/connections/spec/identify) calls are invisible to the end user, making it a more secure transaction. Making calls from your server also isolates your tracking away from the wild world of web browsers, which means your tracking will be much more reliable.
+There are some advantages to sending details about your users directly from your server once the become a registered user. Server-side [identify](/docs/connections/spec/identify) calls are invisible to the end user, making it a more secure transaction. Making calls from your server also isolates your tracking away from the wild world of web browsers, which means your tracking becomes much more reliable.
 
-If you want to send user data that is pretty sensitive and you don't want to expose that to the client, then you can make an `.identify` call server-side with all the traits.
+If you want to send user data that is sensitive and which you don't want to expose to the client, then you can make an `identify` call server-side with all the traits.
 
 Let's take the Rdio example from above. If they're going to send traits from their server the client-side sequence on the welcome screen would become:
 
