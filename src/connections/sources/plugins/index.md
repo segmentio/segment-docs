@@ -13,7 +13,6 @@ In 2018 we fully deprecated and stopped supporting the following Segment source 
 - [Goodsie](#goodsie)
 - [Magento](#magento)
 - [Shopify](#shopify)
-- [Tumblr](#tumblr)
 - [WooCommerce](#woocommerce)
 - [Wordpress](#wordpress)
 - [WP eCommerce](#wp-ecommerce)
@@ -52,9 +51,10 @@ If you are using Magento, use the [Segment PHP library source](/docs/connections
 
 If you are using Shopify, you can use our recommended third-party [Segment for Shopify by Littledata Source](/docs/connections/sources/catalog/cloud-apps/shopify-littledata/).
 
+<!--
 ## Tumblr
 
-Tumblr customization is limited based on which theme your site uses. You may still be able to add Segment tracking using [Segment's Javascript source](/docs/connections/sources/catalog/libraries/website/javascript/) as part of [your theme's Custom HTML](https://tumblr.zendesk.com/hc/en-us/articles/230778847-Custom-HTML) if available.
+Tumblr customization is limited based on which theme your site uses. You may still be able to add Segment tracking using [Segment's Javascript source](/docs/connections/sources/catalog/libraries/website/javascript/) as part of [your theme's Custom HTML](https://tumblr.zendesk.com/hc/en-us/articles/230778847-Custom-HTML) if available. -->
 
 ## Woocommerce
 
