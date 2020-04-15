@@ -50,17 +50,21 @@ You need to run these commands rather than creating a role with the "Create Role
 
 This role will be attached to Segment's user and it gives just enough permissions for loading data in your database. We recommend not reusing this role for other operations.
 
-Create a new role:
+1. Move on to Worksheets;
+2. Select SEGMENT_EVENTS under database objects 
+3. Change role to ACCOUNTADMIN
+
+4. Create a new role:
 ```sql
 CREATE ROLE "SEGMENT";
 ```
 
-Grant access to the virtual warehouse:
+5. Grant access to the virtual warehouse:
 ```sql
 GRANT USAGE ON WAREHOUSE "SEGMENT_WAREHOUSE" TO ROLE "SEGMENT";
 ```
 
-Grant access to the database:
+6. Grant access to the database:
 ```sql
 GRANT USAGE ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 GRANT CREATE SCHEMA ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
@@ -86,7 +90,29 @@ GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
 
 ### Test the User and Credentials
 
-You should now test the new user and credentials. If the following commands are run successfully, you are will then be ready to connect Snowflake to Segment. We recommend using [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html) to run the following:
+You should now test the new user and credentials. If the following commands are run successfully, you are will then be ready to connect Snowflake to Segment. We recommend using [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html). This can be done as follows:
+
+1. Download [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html) by running:
+
+```
+curl -O https://sfc-repo.azure.snowflakecomputing.com/snowsql/bootstrap/1.2/darwin_x86_64/snowsql-1.2.5-darwin_x86_64.pkg
+```
+
+2. Open the Installer and follow instructions;
+3. Run:
+
+```
+snowsql -a <account>  -u <user>
+```
+
+For non-us accounts, the account ID includes the region. You can also grab part of your account name by running the following query on your worksheet in Snowflake:
+
+```
+SELECT CURRENT_ACCOUNT();
+```
+4. Enter password when prompted.
+
+When you're all set, run the following:
 
 ```
 ~$ snowsql --accountname myb10 --username SEGMENT_USER
