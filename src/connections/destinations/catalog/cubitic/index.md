@@ -17,13 +17,13 @@ Cubitic supports the `identify` and `track` methods.
 
 ## Identify
 
-When you `identify` a user, Segment will pass that user's information to Cubitic.
-Cubitic will store each attribute sent to build a demographic profile of your users.
+When you `identify` a user, Segment passes that user's information to Cubitic.
+Cubitic stores each attribute sent to build a demographic profile of your users.
 
 
 ## Track
 
-When you `track` an event, Segment will send that event to Cubitic to be stored on the Cubitic platform.
+When you `track` an event, Segment sends that event to Cubitic to be stored on the Cubitic platform.
 
 Cubitic requires 2 events:
 
@@ -59,7 +59,7 @@ This event must contain a revenue property that specifies the amount spent using
 ```js
 {
   "type": "track",
-  "event": "Completed Order",
+  "event": "Order Completed",
   "properties": {
     "revenue": 10.0
   }

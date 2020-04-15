@@ -15,28 +15,49 @@ If you already have a Segment workspace, you can change which plan your workspac
 
 _If you cancel or downgrade your workspace within your 2-week trial period, you will not incur any charges._
 
-**What if I cancel my workspace before the end of the month?**
+### What if I cancel my workspace before the end of the month?
 
-**_Cancellation on the Monthly Team Plan_**
+#### Cancellation on the Monthly Team Plan
 
 If you cancel your workspace or downgrade to a free account before the end of your official billing period on the monthly team plan, you will receive a final bill consisting of a prorated amount for the $120 base + a charge for any MTUs you have used over the allotted 10,000 at the rates posted on our [pricing page](https://segment.com/pricing).
 
-_**Cancellation on the Annual Team Plan**_
+#### Cancellation on the Annual Team Plan
 
 We do not issue refunds for the pre-paid portion of your annual bill after your trial has ended.
 
 Please be aware that if you notify us that you want to cancel your annual plan, but continue to send data to our servers, you may incur overage charges in any given month. Please fully delete your workspace or cycle your write keys to stop all data flow into Segment and avoid future charges.
 
 
-## Why are you applying US sales tax to my invoice?
+## Will Segment charge sales tax on my invoice?
 
-Segment began collection of US Sales Tax on taxable sales to customer based on new tax laws. US sales tax is only applied to invoices addressed to paying customers based on the states listed below, containing purchases of taxable Segment products.
+All Segment customers with a US business address may be subject to state and local sales taxes. The applicable tax law will be applied based on your business location address, which may be different from your billing address. Customers who purchase a taxable product or service, and are located in a jurisdiction where Segment currently charges sales tax, will see the calculated sales tax on their invoice.
 
-Please contact us with your exemption documentation if you are eligible to claim a sales tax exemption in relation to your existing invoice(s). 
+Segment currently charges sales tax in the following states:
 
-**Current states:**
+- Arizona
+- Chicago
+- Colorado
+- Denver
+- District of Columbia
+- Massachusetts
+- New York
+- Pennsylvania
+- South Carolina
+- Tennessee (beginning 5/15/2020)
+- Texas
+- Utah
+- Washington
 
-*   Texas
+## Do I qualify for a tax exemption?
+
+If you believe your organization qualifies for a sales tax exemption (for example, because of a nonprofit or government status), you can contact [tax@segment.com](mailto:tax@segment.com) with the appropriate form.
+
+### I submitted a form for tax exemption, why am I still being charged sales tax?
+
+Tax might still be charged on your bill if either:
+
+- The exemption certificate was still in review while the invoice was issued; or
+- The exemption certificate covers a state that is different from the billing address
 
 
 ## Do you offer refunds?

@@ -59,9 +59,8 @@ These are currently only suitable for first party, trusted applications, such as
 
 When you create an access token, you'll give it a description, a workspace, and determine whether it has workspace owner or member access.
 
-> Warning: Secret Token
->
-> Note that you can not retrive the plain-text `token` later, so you should save it in a secret manager. If you lose the `token` you can generate a new one.
+> warning "Secret Token"
+> You can not retrieve the plain-text `token` later, so you should save it in a secret manager. If you lose the `token` you can generate a new one.
 
 Note: All Personal Access Tokens will be deprecated on August 3rd, 2019.
 

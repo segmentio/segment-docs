@@ -18,8 +18,17 @@ This allows you to run email campaigns in Marketo without having to manually fin
 
 ## Quick Info
 
----
+- **Supports Personas**: Yes
+- **Personas Destination type**: List
+- **Must create audience_name field before Personas can update those values?**: No. You don't need to create the _list_ in Marketo, however you do need the create the folder Segment will create the list in.
+- **Audience appears as**: A list in the folder you created, in the Marketo Lead Database under Group Lists.
+- **Destination rate limit**: 100 calls per 20 seconds, which is shared among all third-party API services
+- **Lookback window allowed**: Yes
+- **Identifiers required** : Email
+- **Identifiers accepted** : Email
+- **Client or Server-Side Connection**: Server-side
 
+<!-- commenting out this table because the format is giant
 | **Support for Personas**        | Yes     |
 | **Personas Destination Method**  | List |
 | **Must create audience_name field in the tool before Personas can update those values** | No. You do not have to create list in Marketo before Segment sends the audience to Marketo. However, you do need the pre-create the folder in which Segment will create the list. |
@@ -28,7 +37,7 @@ This allows you to run email campaigns in Marketo without having to manually fin
 | **Lookback window allowed by Destination**    | Yes   |
 | **Identifiers Required**   | email   |
 | **Identifiers Accepted**    | email     |
-| **Client vs. Server-Side Connection**   | Server-side  |
+| **Client vs. Server-Side Connection**   | Server-side  |-->
 
 ## How it works
 

@@ -39,8 +39,10 @@ Cloud mode: |
   *Cloud mode libraries* run on a server and are completely invisible to end users. You can find the full list of server-side languages Segment supports [in the Sources catalog](/docs/connections/sources/catalog/#server). These libraries can be used to track a user in realtime as they use your app, but are also able to run batches of calls to update many end users at once. Cloud-mode libraries do not maintain "state" which means every API call you make must include every detail you want to see inside of Segment.
 
 Computed trait: |
-  A calculated field in your Personas data, for example `docs_pageviews_last_7_days`.
+  [Computed traits](/docs/personas/computed-traits/) are per-user, or per-account [traits](#traits) that you create or “compute” in [Personas](/docs/personas/). When you build a Computed Trait, Personas adds it to relevant user profiles.
 
+Custom trait: |
+  [Custom Traits](/docs/personas/#custom-traits) are user or account properties collected from all the events you send to Personas.  For example, you can add any properties that you send as a part of your track calls or identify calls (`email`, `first_name`, `last_name`) as custom traits. You can then view them in the profile explorer, and use them in your audiences, computed traits and SQL traits.
 
 Debugger: |
   This is the place in the app where you can see your events flowing through Segment
@@ -74,6 +76,9 @@ Library: |
   A library is a reusable piece of code which acts as a building block for higher level pieces of code. It's the software equivalent of a 'tool'. For instance, take Instagram filters. In the good old days, to take a picture with an interesting filter, you had to adjust the aperture length, the focal length, the exposure and film speed to get the desired effect. But now, you can just use Instagram, and press a button to get the pre-tuned filter that you want. They've packaged those effects in software and made them re-usable.
 
   The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](https://segment.com/docs/libraries/). Libraries can collect either in "[Device mode](#device-mode)" or "[Cloud mode](#cloud-mode)".
+
+Lookback: |
+  A “lookback window” limits the period of time in which data is considered when calculating a trait or audience. For example, you might set a lookback window of 7 days on an audience or trait like `new_users_7_days`, but you would not add a lookback window to a trait that isn’t time-bounded, such as `lifetime_value`.
 
 Method: |
   A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, [etc](/docs/conncetions/spec/) are methods you can invoke on those objects.
@@ -122,7 +127,7 @@ SQL: |
   select * from users where first_name equals "Alice"
   ```
 SQL Trait: |
-  A Personas trait generated from queries on your data warehouse.
+  [SQL traits](/docs/personas/sql-traits/) are per-user or per-account traits that you create by running queries against your data warehouse, which can include data not captured using your Segment implementation. Segment imports the results into Personas, and appends these traits to the user profile.
 
 Source: |
   A website, server library, mobile SDK, or cloud application which can send data into Segment.
@@ -141,6 +146,9 @@ Track: |
 
 Tracking Plan: |
   A tracking plan is a tool that our customers use to keep track of their analytics setup. It contains all of the events, pages, traits and properties they want to record with information about how each is laid out. It's often in a spreadsheet or document, but we're actually building the functionality into the core product so that people can plan out their tracking setup right from inside Segment.
+
+Traits: |
+  Traits are individual pieces of information that we know about an [object](#object). Objects persist over time, so traits can change over time.
 
 Warehouses: |
   Segment’s Data warehouse product. All event data can be sent to one of several Warehouses, where your team can use it to perform more complex analysis of the data.
