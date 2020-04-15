@@ -56,7 +56,7 @@ From left to right in the above graphic:
 
 *   **Not Delivered:** This count tells you the number of messages Segment was unable to deliver. If this number is higher than zero, you will see the reasons for this failure in the errors table below. 
 
-*   **P95** **Latency:** This is the time it take for Segment to deliver the slowest 5% of your data (known as P95 latency). This helps tell you if there is a delay in your data and how bad it is.   
+*   **P95 Latency:** This is the time it takes for Segment to deliver the slowest 5% of your data (known as P95 latency). The latency reported is end-to-end: the event being received through the Segment API to the event being delivered to partner API. This helps tell you if there is a delay in your data and how bad it is. 
 
 
 ## **3\. Error details**
