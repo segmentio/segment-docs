@@ -2,13 +2,14 @@
 title: Extole Destination
 rewrite: true
 beta: true
+redirect_from: '/connections/destinations/catalog/extole'
 ---
 
 
 Brands use Extole to turn customers into advocates. Our enterprise platform and team of experts create beautiful referral and customer engagement programs, so brands can harness the power of sharing to the benefit of their bottom line. Extole enables marketers to engage thousands of advocates, scaling word-of-mouth to acquire new customers and increase loyalty using their greatest competitive advantage: their customers.
 
 
-This destination is maintained by Extole. For any issues with the destination, please [contact Extole Support](mailto:support@extole.com).
+This destination is maintained by Extole. For any issues with the destination, please [reach out to Extole Support](mailto:support@extole.com).
 
 
 
@@ -16,16 +17,18 @@ This destination is maintained by Extole. For any issues with the destination, p
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Extole Platform" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can generate in your [Extole Tech Center](https://my.extole.com/tech-center#access-token) page. If any issues please consult this [Help Page](https://success.extole.com/hc/en-us/articles/360001616668-Generating-Long-Lived-Access-Tokens). 
-
+1. Go to your [Extole Tech Center](https://my.extole.com/tech-center#access-token) page and generate an API Key. Copy that key. If you encounter any problems, check this [Extole Help Page on access tokens](https://success.extole.com/hc/en-us/articles/360001616668-Generating-Long-Lived-Access-Tokens).
+2. From the Segment Destinations page, click **Add Destination**.
+3. Search for "Extole Platform" in the Destinations Catalog, and select it.
+4. Confirm which Source to connect to Extole.
+5. Enter the Extole "API Key" in your Segment Settings UI.
 
 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. Identify calls are sent to Extole as an `identify` event. Extole will create a new profile or update an existing one. Find below a list of basic traits mapping:
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls are sent to Extole as an `identify` event. 
+Segment sends Identify calls to Extole as an `identify` event. Extole creates a new profile or updates an existing one. The table below lists how the basic traits are mapped:
 
 | Segment Traits | Extole Properties |
 | -------------- | ----------------- |
@@ -34,7 +37,8 @@ If you haven't had a chance to review our spec, please take a look to understand
 | `firstName`    | `first_name`      |
 | `lastName`     | `last_name`       |
 
-**Note:** All non-standard traits will be added to Extole user profile as PUBLIC parameters.
+> info ""
+> **Note:** All non-standard traits will be added to Extole user profile as PUBLIC parameters.
 
 An example of `.identify()` call:
 
@@ -61,7 +65,7 @@ Track calls are sent to Extole as a `track` event.
 
 ### Track Registrations
 
-Track when somebody creates a new account. See below an example for track event with `registration` event name. 
+Track when a user creates a new account. The example below shows a track event with an event name of  `registration`.
 
 ```js
 analytics.track('registration', {
@@ -71,14 +75,14 @@ analytics.track('registration', {
     partner_user_id: 'userId123'
 })
 ```
-Extole recommends sending `partner_user_id` every time. In case that this event is fired multiple times for the same person Extole de-duplicates it.
+Extole recommends that you send the `partner_user_id` with every call. If an event is fired multiple times for the same user, Extole de-duplicates it.
 
 
 
 
 ### Track Conversions
 
-Track when somebody performs a purchase. 
+Track when a user performs a purchase.
 
 ```js
 analytics.track('conversion', {
@@ -90,17 +94,17 @@ analytics.track('conversion', {
 })
 ```
 
-Extole recommends sending `partner_conversion_id` every time. In case that this event is fired multiple times for the same person Extole de-duplicates it.
+Extole recommends that you send the `partner_conversion_id` with every call. If an event is fired multiple times for the same user, Extole de-duplicates it.
 
 
 ## Event Names
 
-In case that event names does not match to above one just contact [Support](mailto:support@extole.com) and Extole can re-map Registration and Conversion events to any other event names.
+If you do not use the event names `registration` and `conversion` in your implementation, contact [Extole Support](mailto:support@extole.com) and Extole can re-map these events to any other event names.
 
 
 ## Delete
 
-In order to make consumer data deletion requests more seemless, Extole handles deletion requests. 
+To make consumer data deletion requests more seamless, Extole handles deletion requests.
 
 Example of expected `delete` request body:
 ```json=
@@ -109,4 +113,4 @@ Example of expected `delete` request body:
 }
 ```
 
-Upon deletion request Extole will remove all data associated with that user. 
+Upon receiving a deletion request, Extole removes all data associated with that user.
