@@ -4,7 +4,7 @@ title: Analytics for Android Wear
 
 Analytics for Android Wear makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
-All of our client libraries are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side libraries](/libraries) too.
+All of Segment's client libraries are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side libraries](/libraries) too.
 
 ## Getting Started
 

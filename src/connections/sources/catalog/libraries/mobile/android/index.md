@@ -8,7 +8,7 @@ sourceCategory: 'Mobile'
 
 Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
-All of our client sources are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/sources) too.
+All of Segment's client sources are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/sources) too.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-android/releases.atom).
 

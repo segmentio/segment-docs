@@ -10,7 +10,7 @@ Our Java library lets you record analytics data from your Java code. The request
 
 This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-java).
 
-All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make all calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make all calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-java/releases.atom).
 
