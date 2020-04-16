@@ -259,36 +259,15 @@ You can now use your Typewriter client in your Android Java application:
 
 ```java
 // Import your auto-generated Typewriter client:
-#import "SEGTypewriterAnalytics.h"
+import com.segment.generated.*
 
 // Issue your first Typewriter track call!
-[SEGTypewriterAnalytics orderCompletedWithOrderID: "ck-f306fe0e-cc21-445a-9caa-08245a9aa52c" total: @39.99];
-```
-
-To use it in a Swift application, you add a [Bridging Header](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift) like the example below:
-
-```objc
-// TypewriterSwiftExample-Bridging-Header.h
-//
-// Make sure to include all generated headers from your Typewriter client:
-#import "Analytics/SEGTypewriterAnalytics.h"
-#import "Analytics/SEGGarage.h"
-#import "Analytics/SEGObjectItem.h"
-#import "Analytics/SEGOccupantsItem.h"
-#import "Analytics/SEGSubterraneanLab.h"
-#import "Analytics/SEGTunnel.h"
-#import "Analytics/SEGUniverse.h"
-#import "Analytics/SEGUniverseCharactersItemItem.h"
-```
-
-Then, you can use your Typewriter client in Swift:
-
-```objc
-// Issue your first Typewriter track call!
-SEGTypewriterAnalytics.orderCompleted(
-  orderID: "ck-f306fe0e-cc21-445a-9caa-08245a9aa52c",
-  total: 39.99
-)
+TypewriterAnalytics.with(this).orderCompleted(
+  OrderCompleted.Builder()
+    .orderID("ck-f306fe0e-cc21-445a-9caa-08245a9aa52c")
+    .total(39.99)
+    .build()
+);
 ```
 
 You're now good to go! To learn more about some of the advanced configuration options that Typewriter supports, read on.
