@@ -8,7 +8,7 @@ beta: true
 Brands use Extole to turn customers into advocates. Our enterprise platform and team of experts create beautiful referral and customer engagement programs, so brands can harness the power of sharing to the benefit of their bottom line. Extole enables marketers to engage thousands of advocates, scaling word-of-mouth to acquire new customers and increase loyalty using their greatest competitive advantage: their customers.
 
 
-This destination is maintained by Extole. For any issues with the destination, please [reach out to Extole Support](mailto:support@extole.com).
+This destination is maintained by Extole. For any issues with the destination, please [contact Extole Support](mailto:support@extole.com).
 
 
 
