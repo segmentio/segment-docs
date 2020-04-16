@@ -154,7 +154,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`device` </td>
     <td>Object</td>
-    <td>Dictionary of information about the device, containing `id`, `manufacturer`, `model`, `name`, `type` and `version`.</td>
+    <td>Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type` and `version`.</td>
   </tr>
   <tr>
     <td>`ip`</td>

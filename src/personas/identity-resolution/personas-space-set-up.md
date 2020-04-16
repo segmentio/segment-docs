@@ -1,6 +1,7 @@
 ---
 title: Personas Space Set Up
 ---
+
 ## Step One: Create a New Dev Space
 
 When starting with Personas, begin by creating a *Dev* space. This will be your sandbox instance of Personas to test new Identity settings, audiences and traits before applying the same changes to a *Prod* space that would immediately affect production data flowing to downstream destinations.
@@ -30,4 +31,4 @@ Connect test audiences or traits to a dev instance of your downstream destinatio
 
 ## Step Six: Apply Changes to Prod sources
 
-Once everything looks good to go, create a new *Prod* space, following all the same steps above, and connect a live instance of your downstream destination to your *Prod* space. 
+Once everything looks good to go, create a new *Prod* space, following all the same steps above, and connect a live instance of your downstream destination to your *Prod* space.

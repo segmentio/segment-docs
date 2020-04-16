@@ -213,7 +213,7 @@ When Segment or an integrated partner can discern the source of an install, we'l
 
 ### Push Notification Received
 
-This event can be sent when a push notification is received in the app. It can be automatically enabled on [iOS](/sources/catalog/libraries/mobile/ios/#automatic-push-notification-tracking).
+This event can be sent when a push notification is received in the app. It can be automatically enabled on [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#automatic-push-notification-tracking).
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Push Notification Received", "properties": { "campaign": { "medium": "Push", "source": "Vendor Name", "name": "Referral Flow", "content": "Your friend invited you to play a match."}}}'}}} {% endcomment %}
 
@@ -243,7 +243,7 @@ This event can be sent when a push notification is received in the app. It can b
 
 ### Push Notification Tapped
 
-This event can be sent when a user taps on a push notification associated with your app. It can be automatically enabled on [iOS](/sources/catalog/libraries/mobile/ios/#automatic-push-notification-tracking).
+This event can be sent when a user taps on a push notification associated with your app. It can be automatically enabled on [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#automatic-push-notification-tracking).
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Push Notification Tapped", "properties": {"action": "Accept", "campaign": { "medium": "Push", "source": "Vendor Name", "name": "Referral Flow", "content": "Your friend invited you to play a match." }}}'}}} {% endcomment %}
 

@@ -1,65 +1,165 @@
 ---
 title: 'Personas Facebook Custom Audiences Destination'
 beta: true
+hide-boilerplate: true
 redirect_from: '/connections/destinations/catalog/personas-facebook-ads'
 ---
 
+
 ## Overview
 
-The destination lets you sync audiences created through [Segment Personas](/docs/personas/) into Facebook Custom Audiences as a **User-List**. Once you've created the audience, Segment will take care of sending that list of users to Facebook and keeping it up to date as users enter and exit the audience specification.
+The Facebook Custom Audiences Destination is one of our most popular Personas Destinations. It has a variety of use cases related to suppression, acquisition (using lookalikes), retargeting, and more.
 
-This will allow you to run advertising campaigns in Facebook without having to bug your data or engineering team for a csv of users. This doc lays out how authorize Facebook in Segment, how to create an audience, and what to expect in your Facebook Ads UI. Note that you must add Personas to your Segment plan to use this destination. Please [contact](https://segment.com/contact/demo) our sales team if you want to try this out.
+This Destination can send audiences (lists of users) created in Personas to Facebook Custom Audiences as a **User-List**. Once you set this up, Segment sends an initial list of users to Facebook, and then keeps it up-to-date as new users enter or exit that audience.
 
-**Use Cases**
+This allows you to run advertising campaigns in Facebook without having to manually find and upload a refreshed a csv of users. We currently support Facebook Custom Audiences for Known Users. **Anonymous Website Audiences** is supported separately by the **Facebook Custom Audiences Website** Destination, which is currently in Early Access.
 
-* [Retarget users on Facebook by potential return on ad spend (ROAS)](https://segment.com/recipes/facebook-retargeting-by-roas/)
+> info ""
+> **Note:**You must have access to Personas as part of your Segment plan to use this destination. [Contact our sales team](https://segment.com/demo/) to try this out.
 
-## Getting Started
+
+## Other Facebook Destinations Supported by Segment
+This page is about the **Facebook Custom Audiences** destination developed specifically for use with **Segment Personas**. For documentation on other Facebook destinations, see the pages linked below. For access to documentation on the Facebook Custom Audiences (Website) destination, contact [beta@segment.com](mailto:beta@segment.com), as it is an Early Access feature.
+
+| **Facebook Destination**   | Supported by Personas |
+| ---------------------- | --------------------- |
+| **[Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/)**                  | Yes                   |
+| **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
+| **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
+| **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
+| **Facebook Custom Audiences Website**    | Yes                   |
+
+
+## Quick Info
+
+
+- **Supports Personas**: Yes
+- **Personas Destination type**: List
+- **Must create audience_name field before Personas can update those values?**: No, Personas creates the audience for you.
+- **Audience appears as**: As a Facebook Custom Audience
+- **Destination rate limit**: None
+- **Lookback window allowed**: Yes
+- **Identifiers required** : Email or Mobile Device ID (IDFA)
+- **Identifiers accepted** : See [Facebook developer docs](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/) for full list
+- **Client or Server-Side Connection**: Server-side
+- **Minimum audience size required**: 100
+
+ <!-- commenting out until we can do better with formatting
+ ---
+| **Support for Personas**        | Yes     |
+| **Personas Destination Method**  | List |
+| **Must create audience_name field in the tool before Personas can update those values** | No, we create the audience for you. Note: if you change the name of the audience in Segment, it will not be reflected in Facebook |
+| **How does the audience appear within the destination?**                                | As a Facebook Custom Audience  |
+| **Are there rate limits?**  | No     |
+| **Lookback window allowed by Destination**    | Yes   |
+| **Identifiers Required**   | email or IDFA   |
+| **Identifiers Accepted**    | See [Facebook developer docs](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/) for full list     |
+| **Client vs. Server-Side Connection**   | Server-side  |
+| **Minimum audience size required to send data to this Destination**   | 100  |  -->
+
+
+## Use Cases: Known Users
+
+Facebook Custom Audiences allows you to efficiently run several marketing and advertising operations. The list below contains the most popular use cases when you know personally identifiable information (PII) about your users, such as email address, name, phone number, etc. Facebook takes the data that you send to Facebook Custom Audiences and matches it to the users that are on Facebook to enable these use cases.
+
+1. **Suppression Audiences.** Create an audience of users that signed up, purchased a product, or otherwise performed some conversion event. Getting those users into Facebook in a timely manner (hourly syncs) prevents you from spending money targeting users that already converted. You can do this by creating an Audience in Personas, and syncing it to the Facebook Custom Audience Destination.
+
+2. **Lookalikes & Seed Audiences.** You can use Personas to create a detailed profile of your most loyal customers (sometimes called a “seed audience”) and then send this list of customers to Facebook. In Facebook, you can then use Facebook’s lookalike audiencing features to find similar users to target. For example, you might want to create a group of high-value users that have spent a certain amount of money on your product, and then use Facebook audiences to find similar users.
+
+3. **Re-targeting Audiences.** You can use Personas to target users who completed some initial action, but didn’t follow through on a purchase or other conversion event. You can create audiences to re-target these individuals and remind them to complete the purchase or other process.
+
+> note ""
+> **Note**: Re-targeting can also mean targeting anonymous visitors (those with no known personally identifiable information, such as email). The Personas Facebook Custom Audiences Integration feature for this use case is currently in beta. See below.
+
+## Use Cases - Anonymous Users (Beta)
+
+Sometimes, users visit your website and perform high-intent activities such as looking at a product or pricing page multiple times, but they don’t convert (buy), and they don’t provide any personally identifiable information so you can contact them.
+
+Facebook Custom Audiences allows you to retarget these anonymous users using the Website Custom Audience. This is an audience that you can build in Facebook based on the Facebook Pixel, which identifies users based on a cookie set in their browser.
+
+Segment Personas supports this use case with the **Facebook Custom Audiences Device-Side Integration. This Personas destination is currently in Early Access**. To access join the Early Access program, email beta@segment.com.
+
+## How it works
+
+**Every time you create an audience in Personas and connect it to Personas Facebook Custom Audiences, Segment does the following**:
+
+1. Creates a Facebook Custom Audience (of type Customer List) with a name that matches the Personas Audience.
+2. Adds any users that fit the audience definition, based on the matching identifiers that Facebook supports (hashed). Facebook uses these identifiers to match users to Facebook users in their ads system.
+3. Once the audience is configured, Segment checks which users still fit the audience definition based on the same identifiers, and adds or remove users from the audience, every hour.
+
+> success "Tip:"
+> You can use the Audience History feature in Facebook to see this change over time.
+
+
+## Set up
+
+> success ""
+> Before you start, make sure you have a Facebook Ads account with “Advertiser” or “Admin” access to link Personas to Facebook Ads.
 
 ### 1. Authorize Facebook Custom Audiences
 
-![](images/facebook_auth.gif)
+- Go to your Personas Space in your Segment Workspace.
+- Go to the Destinations tab and click “Add Destination”.
+- Select the Personas Facebook Custom Audiences option, and click **Configure Personas Facebook Custom Audiences**.
+- Authorize Facebook Ads and select a Facebook account id to sync to.
 
-
-Steps:
-- Go to `https://app.segment.com/<your-workspace-slug>/destinations/catalog/personas-facebook-ads`
-- Configure FB on the personas source that we've pre-created for you (should be called `Personas default`)
-- Authorize Facebook Ads (NOTE: If you've already authorized FB before in your Segment workspace, the flow will skip the part where it redirects to Facebook to authorize Segment)
-![](images/1515622618588.png)
-- Make sure that you select a Facebook ad account id to sync to. *Note that you should have ad account 'Advertiser' or 'Admin' access for Personas to be able to send custom audiences*.
-
+![](images/fb_ca_auth.gif)
 
 ### 2. Create an audience in Segment & connect to Facebook
-![](images/facebook_setup.gif)
+
+- Go to the Audience Builder in Personas and create a new Audience with your desired event and trait criteria.
+- Go to your Personas space, and select the Facebook destination you added to connect the audience to Facebook.
+- Give the audience a name and description, and click **Create**.
+- Your audience starts syncing from Personas to Facebook Ads.
+
+> note ""
+> **Note**: if you change the name of the audience in Segment, it will not be reflected in Facebook
+
+![](images/fb_ca_setup.gif)
+
+### 3. Verify that the audience appears in Facebook
+
+Once created, the audience should be available in Facebook in ten minutes unless it’s unusually large.
+
+- From within Facebook Ads, go to **Business Manager > All tools > Assets > Audiences**.
+- Click the Facebook audience name that matches your Personas audience name, and check **Audience History** to see how many users were added.
+
+![](images/fb_ca_final.png)
 
 
-Steps:
-- Go to `https://app.segment.com/<your-workspace-slug>/personas/audiences` & create a new audience
-- Give your audience a name, some event and trait criteria, then click Preview
-- Connect your audience to Facebook
-- Give your audience a name, and hit create
 
+## Early Access (Alpha) Feature: Additional identifier matching
+Previously, Segment only sent email and mobile ids to Facebook. Segment is now able to send an expanded list of identifiers to Facebook, so that Facebook can try to use these additional identifiers to match to their user profiles. If you have implemented any of these identifiers in your Segment tracking, Personas is able to send the identifiers to Facebook. Segment can now also sync multiple emails if the profile contains more than one. This feature is in Early Access. If you would like access, contact your CSM or email us at beta@segment.com.
 
-### 3. Check FB for audience, should sync within a couple of minutes
-![](images/njhDdn1o3E.gif)
+| **Name**        | **Trait Key formats supported**   | **Facebook Keys**  | **FB Hashing Required** | **FB Guidelines**     |
+| Email       |                                                              | EMAIL                | Yes                 | Trim leading, trail whitespace, and convert all characters to lowercase.                                                                                  |
+| Mobile ID   |                                                              | MADID                | No                  | Use all lowercase, keep hyphens.                                                                                                                          |
+| First Name  | first_name<br>firstname<br>firstName<br>first                | FN                   | Yes                 | Use `a`-`z` only. Lowercase only, no punctuation. Special characters in UTF8 format.                                                                      |
+| Last Name   | last_name<br>lastname<br>lastName<br>last                    | LN                   | Yes                 | Use `a`-`z` only. Lowercase only, no punctuation. Special characters in UTF8 format.                                                                      |
+| Phone       | phone<br>phone_number<br>phonenumber<br>phoneNumber          | PHONE (+12023095976) | Yes                 | Remove symbols, letters, and any leading zeroes. You should prefix the country code if `COUNTRY` field is not specified.                                  |
+| Gender      | gender<br>gen                                                | GEN                  | Yes                 | Use these values: `m` for male and `f` for female.                                                                                                        |
+| Birth Year  | birth_year                                                   | DOBY                 | Yes                 | Use the YYYY format from 1900 to current year.                                                                                                            |
+| Birth Month | birth_month                                                  | DOBM                 | Yes                 | Use the MM format: `01` to `12`.                                                                                                                          |
+| Birth Day   | birth_day<br>birthday<br>date_of_birth<br>DOB<br>dateOfBirth | DOBD                 | Yes                 | Use the DD format: `01` to `31`.                                                                                                                          |
+| State       | state<br>address_state                                       | ST                   | Yes                 | Use the 2-character ANSI abbreviation code, lowercase. Normalize states outside U.S. in lowercase, no punctuation, no special characters, no white space. |
+| City        | city<br>address_city                                         | CT                   | Yes                 | Use `a`-`z` only. Lowercase only, no punctuation, no special characters, no white space.                                                                  |
+| Zipcode     | zip<br>zip_code<br>zipCode                                   | ZIP                  | Yes                 | Use lowercase, no white space. Use only the first 5 digits for U.S. Use Area/District/Sector format for the UK.                                           |
+| Country     | country_code<br>countryCode                                  | COUNTRY              | Yes                 | Use 2-letter country codes (lowercase) in ISO 3166-1 alpha-2.                                                                                             |
 
-
-- Inside Facebook go to Business Manager > All tools > Assets > Audiences
-- Click on the audience with the same name as in the Segment UI, and check the Audience History for how many users have been added
-- NOTE: our Facebook Custom Audiences integration supports matching users based off of email, and their mobile advertising identifiers (IDFA, Google advertising id)
 
 ## Troubleshooting
 
 ### Not seeing an audience in Facebook
 
-Make sure you have authorized Facebook and selected an account id. You can review & re-authorize this connection directly here: https://app.segment.com/<your_workspace_slug>/destinations/personas-facebook-ads/sources/personas_default/configuration
+Make sure you authorized Facebook and selected the correct account id.
 
 ### Audience size smaller than expected
 
-We attempt to match users in your audience with the identifiers that Facebook supports. This includes email, and their mobile advertising identifiers (IDFA, Google advertising id). Please ensure you are tracking these through Segment to have a successful match rate in Facebook.
+Segment sends lists of users with identifiers that Facebook supports to Facebook. The matching logic itself occurs within Facebook. Facebook is more likely to be able to match a user profile if you track as many identifiers as possible, including email, mobile advertising identifiers (IDFA, Google advertising id), and others. If Facebook is unable to identify users based on the data that you provide, then the match rate will be low.
 
-## FAQ
+For example: many B2B SaaS business have users that sign up for their products with a work email address, like `jane.doe@segment.com`. However, most Facebook users sign up for Facebook with a personal email only, like `janedoe@gmail.com`. If you only provide the work email address, and no other identifiers, then Facebook can’t match your user to the Jane Doe Facebook profile. This is the case for all identifiers: Facebook must have the identifier somewhere in a user's profile, or else they can't match on it.
 
-## How do lookalikes work?
+### Do you support LTV audiences?
+Facebook has a feature called [value-based audiences](https://developers.facebook.com/docs/marketing-api/audiences/guides/value-based-lookalike-audiences/) where you can send an additional field like LTV, to tell Facebook how to optimize their advertising based on a customer’s value.
 
-You can create a seed audience in Personas and then sync that to Facebook. For example, you might want to create a group of high-value users that have spent a certain amount of money on your product. In Facebook, you can then create a lookalike based on that audience.
+Personas does not currently support this feature. If this is important to you, let us know at [beta@segment.com](mailto:beta@segment.com).
