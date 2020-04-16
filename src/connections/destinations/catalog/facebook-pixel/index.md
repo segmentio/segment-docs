@@ -15,7 +15,7 @@ This document was last updated on 31st October, 2018. If you notice any gaps, ou
 
 
 ## Other Facebook Destinations Supported by Segment
-This page is about the **Facebook App Events**. For documentation on other Facebook destinations, see the pages linked below.
+This page is about the **Facebook Pixel**. For documentation on other Facebook destinations, see the pages linked below.
 
 | **Facebook Destination**   | Supported by Personas |
 | ---------------------- | --------------------- |
