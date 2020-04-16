@@ -4,7 +4,7 @@ beta: true
 ---
 {% include content/connection-modes.md %}
 
-The Google Cloud Storage destination puts the raw logs of the data Segment receives into your GCS bucket. The data is copied into your bucket at least every hour. You might see multiple files over a period of time depending on how much data is copied.
+The Google Cloud Storage (GCS) destination puts the raw logs of the data Segment receives into your GCS bucket. The data is copied into your bucket at least every hour. You might see multiple files over a period of time depending on how much data is copied.
 
 Keep in mind that GCS works differently from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/connections/spec/common/#integrations) does not affect events in the case of GCS. 
 
