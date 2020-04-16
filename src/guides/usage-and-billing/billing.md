@@ -43,7 +43,6 @@ Segment currently charges sales tax in the following states:
 - New York
 - Pennsylvania
 - South Carolina
-- South Carolina
 - Tennessee (beginning 5/15/2020)
 - Texas
 - Utah
