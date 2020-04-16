@@ -104,7 +104,7 @@ Congratulations! You've set up a GCS destination. You'll receive files in your B
 
 **Why is data not syncing to the GCS destination?**
 Common errors which can cause sync failures are:
-- Bucket not configured: A bucket for the Google Cloud Storage destination was not provided. Check the GCS destination settings to confirm that a valid bucket is entered.
+- Bucket not configured: A bucket for the GCS destination was not provided. Check the GCS destination settings to confirm that a valid bucket is entered.
 - GCS credentials not configured: Credentials for the Google Cloud Storage destination cannot be found. Confirm that you’ve inputted GCS credentials into the destination settings.
 - Invalid GCS credentials: Credentials for the Google Cloud Storage destination are found, but they are not correctly formatted credentials. Re-enter a valid credential as a setting for the destination to work.
 - Unable to upload files: We are unable to upload files to Google Cloud Storage due to incorrect credentials (e.g., non-existent bucket), insufficient permissions, or a Google Cloud Storage error. Confirm that credentials and permissions are set correctly.
