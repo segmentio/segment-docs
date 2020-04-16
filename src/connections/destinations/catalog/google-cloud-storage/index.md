@@ -8,7 +8,7 @@ The Google Cloud Storage destination puts the raw logs of the data Segment recei
 
 Keep in mind that Google Cloud Storage works differently from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/connections/spec/common/#integrations) does not affect events in the case of Google Cloud Storage. 
 
-Note: The GCS destination is currently in beta, and does not support product features such as deletions, replays, and error handling. Please note that errors for this destination are currently not shown in the Segment workspace.
+**Note**: The GCS destination is currently in beta, and does not support product features such as deletions, replays, or surfacing errors in the UI.
 
 
 ## Getting Started
