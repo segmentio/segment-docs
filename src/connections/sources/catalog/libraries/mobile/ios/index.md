@@ -4,19 +4,22 @@ sourceTitle: 'iOS'
 sourceCategory: 'Mobile'
 ---
 
-Analytics for iOS makes it dead simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
+Analytics for iOS makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
-All of our libraries are open-source, so you can [view Analytics for iOS on Github](https://github.com/segmentio/analytics-ios), or check out our [browser and server-side libraries](/sources) too.
+All of Segment's libraries are open-source, so you can [view Analytics for iOS on Github](https://github.com/segmentio/analytics-ios), or check out our [browser and server-side libraries](/sources/catalog/) too.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-ios/tags.atom).
 
-**Note:** At the moment we can't support tracking of watchkit extensions for the Apple watch. [Email us](/contact/requests) if you're interested in a watchkit SDK. For now we recommend tracking watch interactions via the iPhone app code.
+> note ""
+> **Note:** Segment does not currently support tracking of watchkit extensions for the Apple watch. [Email us](https://segment.com/requests/integrations/) if you're interested in a watchkit SDK. For now we recommend tracking watch interactions using the iPhone app code.
 
 ## Getting Started
 
+
+
 ### Install the SDK
 
-The recommended way to install Analytics for iOS is via [Cocoapods](http://cocoapods.org), since it means you can create a build with specific destinations, and because it makes it dead simple to install and upgrade.
+The recommended way to install Analytics for iOS is using [Cocoapods](http://cocoapods.org), since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade.
 
 First, add the `Analytics` dependency to your `Podfile`, like so:
 
@@ -33,7 +36,7 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 
-**Note:** Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional via initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-3-track-actions) for more info!
+**Note:** Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional using initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-3-track-actions) for more info!
 
 And of course, import the SDK in the files that you use it with:
 
@@ -374,7 +377,7 @@ If you are seeing any of your destinations turned off in the raw version of requ
 }
 ```
 
-These flags tell the Segment servers that a request was already made directly from the device through a packaged SDK. That way we don't send a duplicate request via our servers to those services.
+These flags tell the Segment servers that a request was already made directly from the device through a packaged SDK. That way we don't send a duplicate request through our servers to those services.
 
 ## Logging
 
@@ -679,7 +682,7 @@ iOS users can opt into limited ad tracking (similar to ad-blocking for browsers)
 
 We publish stable releases every second Wednesday, when we tag and release the `master` branch.
 
-After releasing, we also merge the `dev` branch merged into `master`. In general, code will be available on `master` for two weeks before being tagged as a stable release. During this two week period, it is available for use via Cocoapods and Carthage — our equivalent of bleeding edge releases. We recommend using this version to try out upcoming features and fixes that have not been published yet.
+After releasing, we also merge the `dev` branch merged into `master`. In general, code will be available on `master` for two weeks before being tagged as a stable release. During this two week period, it is available for use using Cocoapods and Carthage — our equivalent of bleeding edge releases. We recommend using this version to try out upcoming features and fixes that have not been published yet.
 
 To use the `master` branch for CocoaPods users, use this line in your `Podfile`:
 
@@ -907,7 +910,7 @@ _Note_: While the network is deprecated, the relevant [framework](https://develo
 
 ### tvOS Support
 
-As of [Version 3.3.0](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md#version-330-08-05-2016) we now have support for tvOS through our `Analytics-iOS` sdk. You can follow the [iOS quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) and you should be good to go! tvOS installation is only supported via Carthage and CocoaPods. The dynamic framework installation method is not supported for tvOS.
+As of [Version 3.3.0](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md#version-330-08-05-2016) we now have support for tvOS through our `Analytics-iOS` sdk. You can follow the [iOS quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) and you should be good to go! tvOS installation is only supported using Carthage and CocoaPods. The dynamic framework installation method is not supported for tvOS.
 
 ## Troubleshooting
 
@@ -937,10 +940,11 @@ This was due to an old [CocoaPods limitation](https://github.com/CocoaPods/Cocoa
 
 
 ### No events in my destinations
+
 1. Verify that your destination is enabled
 2. Verify your destination credentials entered in your Segment dashboard are correct
 3. Make sure the destination can accept what you're sending:
-   - Does the integration have device-mode/cloud-mode support? Confirm you are sending via the correct connection mode.
+   - Does the integration have device-mode/cloud-mode support? Confirm you are sending using the correct connection mode.
    - Does the destination accept the type of call you are sending? Not all destinations accept all calls: page, track, etc.
 4. If you are still not seeing data in your destination, continue debugging based on which type of connection mode you are using.
 
@@ -964,7 +968,7 @@ v3 was an API compatible release, but there are a few additional steps for packa
 Firstly, we changed how the anonymousId was stored between v2 and v3. You'll need to read the old anonymousId and set it so that it's moved to the new location.
 
 
-```
+```objc
 NSString *oldAnonymousId = loadOldAnonymousId();
 if (oldAnonymousId) {
   [[SEGAnalytics sharedAnalytics] identify:userId
@@ -1004,7 +1008,7 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 ### Still having issues?
 
-Feel free to [reach out to us](/help) with the following information:
+Please [contact our Product Support team](https://segment.com/help/contact/) with the following information:
 
 - The version of our SDK you are using
 - Whether you are using device- or cloud-mode

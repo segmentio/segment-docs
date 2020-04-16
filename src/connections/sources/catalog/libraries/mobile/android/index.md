@@ -6,7 +6,7 @@ sourceCategory: 'Mobile'
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 
-Analytics for Android makes it dead simple to send your data to any tool without having to learn, test or implement a new API every time.
+Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
 All of our client sources are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/sources) too.
 
@@ -19,7 +19,7 @@ Analytics for Android only supports any Android device running API 14 (Android 4
 ### Step 1: Install the Library
 
 
-The recommended way to install the library for Android is with a build system like Gradle. This makes it dead simple to upgrade versions and add destinations. The library is distributed via [Maven Central](http://maven.org/). Simply add the `analytics` module to your `build.gradle`:
+The recommended way to install the library for Android is with a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed via [Maven Central](http://maven.org/). Simply add the `analytics` module to your `build.gradle`:
 
 ```java
 dependencies {
@@ -867,10 +867,10 @@ Read through [the docs for that destination](/docs/connections/destinations/) to
 
 ### Still having issues?
 
-Feel free to [reach out to us](/help) with the following information:
+Please [contact our Product Support team](https://segment.com/help/contact/) with the following information:
 
 - The version of our SDK you are using
-- Whether you are using device- or cloud-smode
+- Whether you are using device- or cloud-mode
 - Logs of the call in question
 - Screenshots of the event in the Segment debugger
 - Screenshots of what you are seeing in your destination

@@ -21,7 +21,7 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ### Install the library
 
-The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it dead simple to upgrade and swap out destinations. The library is distributed via [Maven Central](http://maven.org/) as a `jar` dependency.
+The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it simple to upgrade and swap out destinations. The library is distributed via [Maven Central](http://maven.org/) as a `jar` dependency.
 
 Here's what it would look like with Maven:
 

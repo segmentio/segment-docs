@@ -4,9 +4,9 @@ sourceTitle: 'React Native'
 sourceCategory: 'Mobile'
 ---
 
-Analytics for React Native makes it dead simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
+Analytics for React Native makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
-All of our libraries are open-source, so you can [view Analytics for React Native on Github](https://github.com/segmentio/analytics-react-native), or check out our [browser and server-side libraries](/sources) too.
+All of Segment's libraries are open-source, so you can [view Analytics for React Native on Github](https://github.com/segmentio/analytics-react-native), or check out our [browser and server-side libraries](/sources) too.
 
 Subscribe to the [release feed](https://github.com/segmentio/analytics-react-native/tags.atom).
 
@@ -21,7 +21,7 @@ Subscribe to the [release feed](https://github.com/segmentio/analytics-react-nat
 
 ### Install the SDK
 
-The recommended way to install Analytics for React Native is via npm, since it means you can create a build with specific destinations, and because it makes it dead simple to install and upgrade.
+The recommended way to install Analytics for React Native is via npm, since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade.
 
 First, add the `@segment/analytics-react-native` dependency to your `dependencies` and link it using `react-native-cli`, like so:
 
@@ -538,7 +538,7 @@ Read through [the docs for that destination](/docs/connections/destinations/) to
 
 ### Still having issues?
 
-Feel free to [reach out to us](/help) with the following information:
+Please [contact our Product Support team](https://segment.com/help/contact/) with the following information:
 
 - The version of our SDK you are using
 - Whether you are using device- or cloud-mode

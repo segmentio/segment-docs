@@ -1,4 +1,4 @@
----
+All of Segment's libraries---
 title: Intercom Destination
 hide-cmodes: true
 hide-personas-partial: true
@@ -473,7 +473,7 @@ Make sure those projects are the same.
 
 Intercom only allows a total of [120 unique event names](http://docs.intercom.io/Intercom-for-user-analysis/Tracking-User-Events-in-Intercom#events-faqs). That means if you are sending Segment more than 120 unique event names, Intercom only accepts the first 120 events that hit their servers, and the rest throw an error.
 
-If you want to prevent some of your events from being passed to Intercom and thus prevent the error, you can filter out Intercom in those events using the [Selecting Destinations](https://segment.com/docs/guides/best-practices/should-i-instrument-data-collection-on-the-client-or-server/#selecting-destinations) feature available on all of our libraries.
+If you want to prevent some of your events from being passed to Intercom and thus prevent the error, you can filter out Intercom in those events using the [Selecting Destinations](https://segment.com/docs/guides/best-practices/should-i-instrument-data-collection-on-the-client-or-server/#selecting-destinations) feature available on all of Segment's libraries.
 
 ## Using Intercom with Personas
 
