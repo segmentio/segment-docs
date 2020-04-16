@@ -1,7 +1,5 @@
 ---
 title: Analytics for Android
-sourceTitle: 'Android'
-sourceCategory: 'Mobile'
 ---
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)

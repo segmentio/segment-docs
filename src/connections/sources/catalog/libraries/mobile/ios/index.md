@@ -1,7 +1,5 @@
 ---
 title: Analytics for iOS
-sourceTitle: 'iOS'
-sourceCategory: 'Mobile'
 ---
 
 Analytics for iOS makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
@@ -15,6 +13,10 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ## Getting Started
 
+
+
+
+Test apps: https://github.com/segmentio/analytics-test-apps
 
 
 ### Install the SDK
