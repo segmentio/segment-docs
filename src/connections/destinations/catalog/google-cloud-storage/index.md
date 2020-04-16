@@ -98,7 +98,7 @@ Once the Google Cloud Storage Bucket and Service Account are created, a destinat
    - **GCS Credentials**: Copy and paste the contents of the credentials (Private Key) file that downloaded to your computer when you created the Google Cloud Service Account. This grants access so Segment can upload raw data files to your bucket
 6. Click on the toggle to enable your Destination.
 
-Congratulations! You've set up a GCS destination. You'll receive files in your Bucket within 40 minutes, assuming the Segment Source is regularly producing events.
+Congratulations! You've set up a GCS destination. You'll receive files in your Bucket in 60 minutes, assuming the Segment Source is regularly producing events.
 
 ## Troubleshooting
 
