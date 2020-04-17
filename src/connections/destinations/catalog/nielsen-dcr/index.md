@@ -24,7 +24,7 @@ To get started with Nielsen-DCR and Segment, you'll want to first integrate your
 
 #### Install the SDK
 
-The recommended way to install Analytics for iOS is via Cocoapods, since it means you can create a build with specific destinations, and because it makes it dead simple to install and upgrade. Simply add the Analytics dependency to your Podfile, like so:
+The recommended way to install Analytics for iOS is via Cocoapods, since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade. Simply add the Analytics dependency to your Podfile, like so:
 
 ```
 pod 'Analytics' '~> 3.0'
@@ -93,7 +93,7 @@ Nielsen also requires the following frameworks, which must be included into Link
 
 #### Install the SDK
 
-The recommended way to install the library for Android is with a build system like Gradle. This makes it dead simple to upgrade versions and add destinations. The library is distributed via [Maven Central](https://search.maven.org/). Simply add the `analytics` module to your `build.gradle`:
+The recommended way to install the library for Android is with a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed via [Maven Central](https://search.maven.org/). Simply add the `analytics` module to your `build.gradle`:
 
 ```javascript
 dependencies {

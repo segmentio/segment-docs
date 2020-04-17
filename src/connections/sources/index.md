@@ -151,7 +151,7 @@ To dig into some examples of how to pull this data together, check out our [samp
 
 ### HTTP
 
-If we don't have a library for your environment yet, you can always send your data directly to our [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http/). All of our other sources and platforms use the HTTP API to work their magic behind the scenes.
+If we don't have a library for your environment yet, you can always send your data directly to our [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http/). All of Segment's other sources and platforms use the HTTP API to work their magic behind the scenes.
 
 
 ### Pixel

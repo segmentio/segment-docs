@@ -203,7 +203,7 @@ functions.
 ### Does Segment support streaming inserts?
 
 Segment's connector does not support streaming inserts at this time. If you have
-a need for streaming data into BigQuery, please [contact us](/contact/requests).
+a need for streaming data into BigQuery, please [contact us](https://segment.com/requests/integrations/).
 
 ### Can I customize my sync schedule?
 

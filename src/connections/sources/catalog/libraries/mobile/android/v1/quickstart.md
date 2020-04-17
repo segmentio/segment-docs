@@ -10,7 +10,7 @@ If you're looking for documentation on our upcoming version, head over to the [A
 
 ## Step 1: Install the SDK
 
-The Android analytics is distributed via [Maven Central](http://maven.org/). This is recommended since it makes it dead simple to upgrade, and bundle only specific destinations. If you can't use Maven, check out the [manual install instructions](/docs/connections/sources/catalog/libraries/mobile/android#manual-install).
+The Android analytics is distributed via [Maven Central](http://maven.org/). This is recommended since it makes it simple to upgrade, and bundle only specific destinations. If you can't use Maven, check out the [manual install instructions](/docs/connections/sources/catalog/libraries/mobile/android#manual-install).
 
 Then simply add the SDK as a dependency.
 

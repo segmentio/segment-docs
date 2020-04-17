@@ -2,18 +2,16 @@
 title: Google Cloud Storage Destination
 beta: true
 ---
-
-## Getting Started
-
 {% include content/connection-modes.md %}
 
-The Google Cloud Storage destination puts the raw logs of the data Segment receives into your GCS bucket.
+The Google Cloud Storage (GCS) destination puts the raw logs of the data Segment receives into your GCS bucket. The data is copied into your bucket at least every hour. You might see multiple files over a period of time depending on how much data is copied.
 
-**Note:** The data is copied into your bucket at least every hour. You might see multiple files over a period of time depending on how much data is copied.
+Keep in mind that GCS works differently from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/connections/spec/common/#integrations) does not affect events in the case of GCS. 
 
-Keep in mind that Google Cloud Storage works differently from most of our destinations. Using a destinations selector like the [integrations object](https://segment.com/docs/connections/spec/common/#integrations) does not affect events in the case of Google Cloud Storage.
+**Note**: The GCS destination is currently in beta, and does not support product features such as deletions, replays, or surfacing errors in the UI.
 
-## Required Steps
+
+## Getting Started
 
 1. Create a Service Account to allow Segment to copy files into the bucket
 2. Create a bucket in your preferred region.
@@ -97,7 +95,18 @@ Once the Google Cloud Storage Bucket and Service Account are created, a destinat
 4. Select the source you want to send to this destination.
 5. Enter the values for the settings below:
    - **Bucket**: The name of the bucket you created on the Google Cloud Storage Console.
-   - **GCS Credentials**: Copy and paste the contents of the credentials file that downloaded to your computer when you created the Google Cloud Service Account. This grants access so Segment can upload raw data files to your bucket
+   - **GCS Credentials**: Copy and paste the contents of the credentials (Private Key) file that downloaded to your computer when you created the Google Cloud Service Account. This grants access so Segment can upload raw data files to your bucket
 6. Click on the toggle to enable your Destination.
 
-Congratulations! You've set up a Google Cloud Storage destination. You'll receive files in your Bucket within 40 minutes, assuming the Segment Source is regularly producing events.
+Congratulations! You've set up a GCS destination. You'll receive files in your Bucket in 60 minutes, assuming the Segment Source is regularly producing events.
+
+## Troubleshooting
+
+**Why is data not syncing to the GCS destination?**
+Common errors which can cause sync failures are:
+- **Bucket not configured**: A bucket for the GCS destination was not provided. Check the GCS destination settings to confirm that a valid bucket is entered.
+- **GCS credentials not configured**: Credentials for the GCS destination cannot be found. Confirm that you’ve inputted GCS credentials into the destination settings.
+- **Invalid GCS credentials**: Credentials for the GCS destination are found, but they are not correctly formatted credentials. Re-enter a valid credential as a setting for the destination to work.
+- **Unable to upload files**: We are unable to upload files to GCS due to incorrect credentials (e.g., non-existent bucket), insufficient permissions, or a GCS error. Confirm that credentials and permissions are set correctly.
+- **Destination not found**: There is no GCS destination connected to the source, and can be connected within the workspace overview page.
+- **Destination disabled**: The GCS destination for the source is disabled, and can be enabled in the destination settings page.
