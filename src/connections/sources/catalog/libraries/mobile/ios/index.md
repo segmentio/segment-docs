@@ -13,10 +13,10 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ## Getting Started
 
+{% include content/mobile-cmodes.md %}
 
 
-
-Test apps: https://github.com/segmentio/analytics-test-apps
+{% include components/media-icon.html href="https://github.com/segmentio/analytics-test-apps" icon="destinations-catalog/marketing-automation.svg" title="iOS Test Apps" content="Segment maintains test apps for the iOS mobile library. Find them here." %}
 
 
 ### Install the SDK
