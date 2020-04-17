@@ -50,17 +50,21 @@ You need to run these commands rather than creating a role with the "Create Role
 
 This role will be attached to Segment's user and it gives just enough permissions for loading data in your database. We recommend not reusing this role for other operations.
 
-Create a new role:
+1. Click on to Worksheets;
+2. Select SEGMENT_EVENTS under database objects 
+3. Change role to ACCOUNTADMIN
+
+4. Create a new role using the following command:
 ```sql
 CREATE ROLE "SEGMENT";
 ```
 
-Grant access to the virtual warehouse:
+5. Grant access to the virtual warehouse:
 ```sql
 GRANT USAGE ON WAREHOUSE "SEGMENT_WAREHOUSE" TO ROLE "SEGMENT";
 ```
 
-Grant access to the database:
+6. Grant access to the database:
 ```sql
 GRANT USAGE ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
 GRANT CREATE SCHEMA ON DATABASE "SEGMENT_EVENTS" TO ROLE "SEGMENT";
@@ -86,7 +90,28 @@ GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
 
 ### Test the User and Credentials
 
-You should now test the new user and credentials. If the following commands are run successfully, you are will then be ready to connect Snowflake to Segment. We recommend using [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html) to run the following:
+Before you continue, test and validate the new user and credentials. When you can run the following commands successfully, you can connect Snowflake to Segment. 
+
+We use [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html) to run these verification steps. 
+To install and verify your accounts:
+
+1. Download [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html);
+
+2. Open the Installer and follow instructions;
+3. Once the installation is complete, run the following command, replacing "account" and "user" with your Snowflake Account and username:
+
+```
+snowsql -a <account>  -u <user>
+```
+
+For accounts outside the US, the account ID includes the region. You can also find part of your account name by running the following query on your worksheet in Snowflake:
+
+```
+SELECT CURRENT_ACCOUNT();
+```
+4. Enter password when prompted.
+
+5. Run the following:
 
 ```
 ~$ snowsql --accountname myb10 --username SEGMENT_USER

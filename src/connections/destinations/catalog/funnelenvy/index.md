@@ -3,7 +3,7 @@ title: FunnelEnvy Destination
 rewrite: true
 ---
 
-[FunnelEnvy](https://www.funnelenvy.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Predictive Revenue Optimization (PRO) helps marketers optimize revenue by delivering hyper-personalized experiences for every customer across their unique journey.
+[FunnelEnvy](https://www.funnelenvy.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps marketers optimize revenue by delivering personalized experiences and offers for every customer across their unique journey.
 
 This destination is maintained by FunnelEnvy. For any issues with the destination, please [reach out to their team](mailto:support@funnelenvy.com).
 
