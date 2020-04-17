@@ -1,4 +1,4 @@
-All of Segment's libraries---
+---
 title: Intercom Destination
 hide-cmodes: true
 hide-personas-partial: true
