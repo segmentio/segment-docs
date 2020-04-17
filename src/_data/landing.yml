@@ -1,4 +1,11 @@
 sections:
+- section_title: false
+  section_col: 12
+  section:
+  - name: Getting started with Segment
+    icon: icon-guides.svg
+    description: "Learn about Segment, work through a basic implementation, plan a full implementation and learn about features and extensions. "
+    path: /getting-started/
 - section_title: How can Segment help you?
   section_col: 6
   section:
