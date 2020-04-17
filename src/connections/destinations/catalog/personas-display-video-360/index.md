@@ -10,17 +10,16 @@ You must have Personas in your Segment plan to use this destination. Please [con
 > info ""
 > **Note**: DV360 is currently in beta. This means that there may still be some bugs for us to iron out, and we’re excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the DV360 Destination, and its documentation, please [let us know](https://segment.com/help/contact)!
 
-
 ## How It Works
 
 When you create an audience in Personas and connect it to DV360, Segment creates a corresponding user list in DV360 with the same name as the audience in Personas. It can take 24 to 48 hours for Google to process the audience list. Once processed, Segment starts syncing either [google user_ids](https://developers.google.com/authorized-buyers/rtb/cookie-guide) or mobile identifiers (`IDFA` on iOS and Google `advertisingId` on Android). Segment sends the entire audience on each sync to DV360. As users enter and exit the audience, they are added to, or removed from from the csv Segment sends to Google’s API.
 
-**Using Google User ID:**
+### Using Google User ID
+
 This integration requires manual set up, both on your end (requesting access from Google) and on the Segment backend. When a customer visits your website, Segment triggers the DV360 cookie id client-side using a cookie-sync, and stores the ID on the Personas user profile. You should see an identifier type `google_gid` on a user’s identities. Then, when you build an audience, Personas uses that cookie ID as the main identifier when it pushes lists of ids to DV360 list endpoints.
 
 > success ""
 > **Tip**! The client cookie may use the name “Doubleclick”, a previous version of the DV360 product name.
-
 
 ## Quick Info
 
@@ -54,10 +53,9 @@ Another use case is to target everyone who completes an initial action, but does
 
 One benefit of using Google is the [exchange of information between the different Google platforms](https://support.google.com/displayvideo/answer/6339564?hl=en). Once your audience list exists in Google’s Marketing Platform it’s easy to connect to other Google products, and this allows you to reach the specific audiences you care about with greater precision.
 
-
 ## Set Up
 
-### 1. Request access from Google for Segment
+### 1. Request that Google grant Segment access
 
 You can grant two levels of permissions:
 - access for Segment to push lists to DV360 as a partner as a whole, or
@@ -65,20 +63,23 @@ You can grant two levels of permissions:
 
 Once you decide what level of permissions work best for you, contact your Google account manager and request that Segment be given access your DV360 account. You can use this template:
 
-> Hi there,
->
-> I'd like to request access for Segment (account id 262932431) to push user lists into DV360 for our ad account <insert your account id>.
->
-> Thanks.
+```
+Hi there,
 
-Google then sends you an email agreement to sign, to confirm granting Segment the permissions on your account.
+I'd like to request access for Segment (account id 262932431)
+to push user lists into DV360 for our ad account <insert your account id>.
+
+Thanks.
+```
+
+Google response with an email agreement you must sign to confirm that you want to grant Segment permission to access your account.
 
 Once you accept, Google changes your back-end settings to give Segment the access level you requested.
 
 ### 2. Set up client integration
 
 > info ""
-> **Note**: This step is only necessary if you want to use build audiences based on website traffic, using Google User IDs. If you only plan to use mobile identifiers, skip to step 3.
+> **Note**: This step is only needed if you want to use Google User IDs to build audiences based on website traffic. If you only plan to use _mobile identifiers_, skip to step 3.
 
 To create audiences based on website browsing events, set up the Segment-to-Google cookie-syncing feature. This step allows Segment to retrieve the Google user id using our client-side Analytics.js library.
 
@@ -87,7 +88,7 @@ To create audiences based on website browsing events, set up the Segment-to-Goog
 3. In your workspace, click **Catalog**, and search for **DoubleClick Floodlight**.
 4. Connect the destination to the source you created in the first step, and leave all settings blank.
 
-> tip ""
+> success ""
 > **Tip**: The field "DoubleClick Advertiser ID” is required, but you can enter any value.
 
 ### 3. Set up DV360 Destination in Personas
@@ -97,7 +98,7 @@ The DV360 Personas destination is in beta, and so you must access it using a spe
 Copy example link below, replacing *both* instances of `<workspace_slug>` with your Segment workspace slug, and replacing `<space_slug>` with your personas space.
 
 ```text
-  https://app.segment.com/<workspace_slug>/destinations/catalog/personas-display-video-360?sourceSlug=personas_<space_slug>&spaceSlug=<worksspace_slug>`
+https://app.segment.com/<workspace_slug>/destinations/catalog/personas-display-video-360?sourceSlug=personas_<space_slug>&spaceSlug=<worksspace_slug>`
 ```
 Paste the resulting url into your browser’s URL bar and press Enter.
 
