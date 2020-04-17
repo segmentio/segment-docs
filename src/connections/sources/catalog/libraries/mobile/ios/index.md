@@ -16,7 +16,7 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 {% include content/mobile-cmodes.md %}
 
 
-{% include components/media-icon.html href="https://github.com/segmentio/analytics-test-apps" icon="destinations-catalog/marketing-automation.svg" title="iOS Test Apps" content="Segment maintains test apps for the iOS mobile library. Find them here." %}
+{% include components/media-icon.html href="https://github.com/segmentio/analytics-test-apps" icon="media/icon-guides.svg" title="iOS Test Apps" content="Segment maintains test apps for the iOS mobile library. Find them here." %}
 
 
 ### Install the SDK
@@ -698,7 +698,7 @@ To use the `master` branch for Carthage users, use this line in your `Cartfile`:
 github "segmentio/analytics-ios" "master"
 ```
 
-## Packaging Destinations using Device-mode
+## Packaging device-mode destination SDKs
 
 By default, our `Analytics` pod packages no external SDKs.
 

@@ -16,7 +16,7 @@ Analytics for Android only supports any Android device running API 14 (Android 4
 
 {% include content/mobile-cmodes.md %}
 
-{% include components/media-icon.html href="https://github.com/segmentio/analytics-android/tree/master/analytics-samples/analytics-sample" icon="destinations-catalog/marketing-automation.svg" title="Android Test Apps" content="Segment maintains test apps for the Android mobile library. Find them here." %}
+{% include components/media-icon.html href="https://github.com/segmentio/analytics-android/tree/master/analytics-samples/analytics-sample" icon="media/icon-guides.svg" title="Android Test Apps" content="Segment maintains test apps for the Android mobile library. Find them here." %}
 
 
 ### Step 1: Install the Library
@@ -557,7 +557,7 @@ There are two ways to send data to your analytics services through this library:
 
 When an destination's SDK is not packaged, but it is enabled from your dashboard, the request goes through the Segment REST API, and is routed to the service's server-side API as [described here](/docs/connections/destinations/#connection-modes).
 
-### Packaging Device-mode destination SDKs
+### Packaging device-mode destination SDKs
 
 By default, our `analytics` artifact does not package Device-mode destinations.
 
@@ -565,7 +565,7 @@ We recommend using device-mode destinations on a need-to-use basis to reduce the
 
 To package Device-mode destinations, first add the dependencies you need. You can find these in our app when you open the destination for your source.
 
-```
+```java
 compile('com.segment.analytics.android.integrations:google-analytics:+') {
   transitive = true
 }
