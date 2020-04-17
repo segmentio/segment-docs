@@ -10,7 +10,7 @@ Our Java library lets you record analytics data from your Java code. The request
 
 This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-java).
 
-All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make all calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make all calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-java/releases.atom).
 
@@ -21,7 +21,7 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ### Install the library
 
-The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it dead simple to upgrade and swap out destinations. The library is distributed via [Maven Central](http://maven.org/) as a `jar` dependency.
+The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it simple to upgrade and swap out destinations. The library is distributed via [Maven Central](http://maven.org/) as a `jar` dependency.
 
 Here's what it would look like with Maven:
 

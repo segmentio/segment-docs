@@ -34,7 +34,7 @@ import com.segment.analytics.android.integrations.batch.BatchIntegration;
 
 Then, add the factory to your Analytics instance:
 
-```
+```java
 Analytics analytics = new Analytics.Builder(this, "write_key")
                 .use(BatchIntegration.getFactory(this))
                 .build();
@@ -60,7 +60,7 @@ pod 'Segment-Batch/StaticLibWorkaround'
 
 Then, add the integration factory in your Analytics instance:
 
-```
+```objc
 #import <Segment-Batch/SEGBatchIntegrationFactory.h>
 
 SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"MySegmentWriteKey"];
@@ -95,4 +95,4 @@ All of our supported Segment integration features will work automatically, with 
 
 Batch's other features are available directly by using the native SDK, which comes bundled with this integration.
 
-To leverage the native SDK through Segment, follow the instructions outlined [here for Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) and [here for iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-).
+To use the Batch native SDK through Segment, follow the [instructions for Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) and [instructions for iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-).
