@@ -1,14 +1,11 @@
 ---
 title: Analytics for Node.js
-sourceTitle: 'Node.js'
-sourceCategory: 'Server'
-shortName: 'node'
+redirect_from: '/connections/sources/catalog/libraries/server/node-js'
 ---
 
+Our Node.js library lets you record analytics data from your node code. The requests hit our servers, and then we route your data to any destinations you have enabled.
 
-Our Node.js library lets you record analytics data from your node code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
-
-This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-node).
+The [Segment Node.js library is open-source](https://github.com/segmentio/analytics-node) on Github.
 
 All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
@@ -20,7 +17,7 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 Run:
 
-```
+```bash
 npm install --save analytics-node
 ```
 
@@ -348,7 +345,7 @@ analytics.track({
 
 In this case, we're specifying that we want this `track` to only go to Vero. `All: false` says that no destination should be enabled unless otherwise specified. `Vero: true` turns on Vero, etc.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.). In some cases, there may be several names for a destination; if that happens you'll see a "Adding (destination name) to the Integrations Object" section in the destination's doc page with a list of valid names.
 
 **Note:**
 
