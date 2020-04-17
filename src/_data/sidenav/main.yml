@@ -11,11 +11,11 @@ sections:
   - path: /getting-started/03-planning-full-install
     title: Planning a full installation
   - path: /getting-started/04-full-install
-    title: 04 Full Install
+    title: A full Segment installation
   - path: /getting-started/05-testing-debugging
-    title: 05 Testing Debugging
+    title: Testing and Debugging
   - path: /getting-started/06-data-to-destinations
-    title: 06 Data To Destinations
+    title: Sending data to destinations
   - path: /getting-started/07-whats-next
     title: What's next?
 

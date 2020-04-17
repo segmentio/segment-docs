@@ -1,3 +1,3 @@
 ---
-title:
+title: Sending data to destinations
 ---
