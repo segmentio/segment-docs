@@ -1,5 +1,24 @@
 ---
 sections:
+- section_title: Getting Started
+  section:
+  - path: /getting-started
+    title: Getting Started with Segment
+  - path: /getting-started/01-what-is-segment
+    title: What is Segment?
+  - path: /getting-started/02-simple-install
+    title: A simple Segment installation
+  - path: /getting-started/03-planning-full-install
+    title: Planning a full installation
+  - path: /getting-started/04-full-install
+    title: 04 Full Install
+  - path: /getting-started/05-testing-debugging
+    title: 05 Testing Debugging
+  - path: /getting-started/06-data-to-destinations
+    title: 06 Data To Destinations
+  - path: /getting-started/07-whats-next
+    title: What's next?
+
 - section_title: Guides
   section:
   - path: /guides
