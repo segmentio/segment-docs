@@ -138,16 +138,14 @@ sections:
       menu_icon: read-more
     - path: /connections/sources/debugger
       title: Using the Source Debugger
-    - path: /connections/sources/cloud-source-data
-      title: What can you do with cloud source data?
+    - path: /connections/sources/about-cloud-sources
+      title: All about Cloud Sources
     - path: /connections/sources/custom-domains
       title: Set up a custom domain proxy in Segment
     - path: /connections/sources/source-functions
       title: Source Functions
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
-    - path: /connections/sources/what-are-cloud-sources
-      title: What are Cloud-App Sources?
   - section_title: Destinations
     slug: connections/destinations
     section:
