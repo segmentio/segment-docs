@@ -6,11 +6,10 @@ You can access the Config API programmatically using access tokens. When you aut
 
 ## Create an Access Token
 
-As a workspace owner, you can create access tokens via the Access Management page in Admin settings. You can assign the same granularity of permissions as you can for a logged-in user. As best practice, tokens should be assigned the least permissions needed to perform a required API action. All tokens are required to have a description.
+As a workspace owner, you can create access tokens from the Access Management page in Admin settings. You can assign the same granularity of permissions as you can for a logged-in user. As best practice, tokens should be assigned the least permissions needed to perform a required API action. All tokens must have a description.
 
-> Warning: Secret Token
->
-> Note that you can not retrieve the plain-text `token` later, so you should save it in a secret manager. If you lose the `token` you can generate a new one.
+> warning "Secret Token"
+> You can not retrieve the plain-text `token` later, so you should save it in a secret manager. If you lose the `token` you can generate a new one.
 
 ## Use a Access Token
 

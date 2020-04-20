@@ -9,7 +9,7 @@ Our Rust library lets you record analytics data from your Rust code. The request
 
 This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-rust).
 
-All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library contains the building blocks to batch and efficiently send data to Segment.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library contains the building blocks to batch and efficiently send data to Segment.
 
 ## Getting Started
 

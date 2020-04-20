@@ -8,7 +8,7 @@ Our Ruby library lets you record analytics data from your ruby code. The request
 
 This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-ruby).
 
-All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
  Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-ruby/releases.atom).
 

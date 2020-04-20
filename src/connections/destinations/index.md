@@ -8,7 +8,7 @@ Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/conne
 
 ## Types of Sources
 
-Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud App, plus a fifth type: User-created [Source Functions](/docs/connections/sources/custom-sources/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, for example a ticketing system such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), a payments system such as [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), or a marketing tool like [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
+Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud App, plus a fifth type: User-created [Source Functions](/docs/connections/sources/source-functions/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, for example a ticketing system such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), a payments system such as [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), or a marketing tool like [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
 
 ## Catalog
 
@@ -191,4 +191,4 @@ You can see the current destination endpoint API success rates and final deliver
 
 ### Replays
 
-[Replays](/docs/guides/general/what-is-replay/) allow customers to load historical data from our S3 logs into downstream destinations which accept cloud-mode data. So, for example, if you wanted to try out a new email or analytics tool, we can replay your historical data into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage. Replay is available to our [Business](https://segment.com/pricing) customers, and you can learn more by [contacting us](https://segment.com/contact/sales).
+[Replays](/docs/guides/what-is-replay/) allow customers to load historical data from our S3 logs into downstream destinations which accept cloud-mode data. So, for example, if you wanted to try out a new email or analytics tool, we can replay your historical data into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage. Replay is available to our [Business](https://segment.com/pricing) customers, and you can learn more by [contacting us](https://segment.com/contact/sales).

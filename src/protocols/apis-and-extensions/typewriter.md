@@ -54,7 +54,7 @@ To get started, check out one of the quickstart guides below:
 - [Browser Quickstart](#browser-quickstart)
 - [Node.js Quickstart](#node-js-quickstart)
 - [iOS Quickstart](#ios-quickstart)
-- Android Quickstart (Coming Soon)
+- [Android Quickstart](#android-quickstart)
 
 > Have feedback on Typewriter? Consider opening a [GitHub issue here](https://github.com/segmentio/typewriter/issues/new).
 
@@ -238,6 +238,40 @@ SEGTypewriterAnalytics.orderCompleted(
 ```
 
 You're now good to go! To learn more about some of the advanced configuration options that Typewriter supports, read on.
+
+## Android Quickstart
+
+Before you start, make sure you have `node` installed. Use the instructions in the [prerequisites](#prerequisites) above.
+
+Next, install `analytics-android` in your app, and configure the singleton analytics instance by following the first three steps in our [Android Quickstart](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-1-install-the-library).
+
+Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. To use this wizard, run:
+
+```sh
+$ npx typewriter init
+```
+
+> success ""
+> **Note**: You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
+
+Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
+
+You can now use your Typewriter client in your Android Java application:
+
+```java
+// Import your auto-generated Typewriter client:
+import com.segment.generated.*
+
+// Issue your first Typewriter track call!
+TypewriterAnalytics.with(this).orderCompleted(
+  OrderCompleted.Builder()
+    .orderID("ck-f306fe0e-cc21-445a-9caa-08245a9aa52c")
+    .total(39.99)
+    .build()
+);
+```
+
+Congrats, you're ready to go! To learn more about some of the advanced configuration options that Typewriter supports, read on.
 
 ## Adding Events
 

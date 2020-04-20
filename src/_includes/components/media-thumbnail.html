@@ -1,10 +1,12 @@
 <div class="media-thumbnail">
   <a class="media-thumbnail__inner flex flex--stack flex--queue@xlarge waffle waffle--large" href="{{ site.baseurl }}{{ include.href }}">
-    <span class="flex__column flex__column--shrink">
-      <span class="media-thumbnail__icon">
-        {% include icons/media/{{ include.icon }} %}
+    {% if include.icon %}
+      <span class="flex__column flex__column--shrink">
+        <span class="media-thumbnail__icon">
+          {% include icons/media/{{ include.icon }} %}
+        </span>
       </span>
-    </span>
+    {% endif %}
 
     <span class="media-thumbnail__body flex__column">
       <h5 class="media-thumbnail__heading">{{ include.title }}</h5>

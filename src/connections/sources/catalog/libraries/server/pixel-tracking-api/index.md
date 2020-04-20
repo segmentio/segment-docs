@@ -12,6 +12,9 @@ Follow Segment's [HTTP Tracking API](/docs/connections/sources/catalog/libraries
 https://api.segment.io/v1/pixel/<METHOD ENDPOINT>?data=<base64-ENCODED-JSON>
 ```
 
+> note ""
+> The base64 encoding is optional, however it prevents special character interpretation or muxing by browsers, or other tools that might interpret URLs. For example, the URL `https://www.example.com/` might be altered to `http%3A%2F%2Fwww.example.com` when appended to another URL, but the base64 version, `aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20`, remains unchanged.
+
 #### Pixel Routes
 
 
@@ -57,4 +60,3 @@ eyJ3cml0ZUtleSI6ICJZT1VSX1dSSVRFX0tFWSIsICJ1c2VySWQiOiAiMDI1cGlrYWNodTAyNSIsICJl
 ```html
 <img src="https://api.segment.io/v1/pixel/track?data=eyJ3cml0ZUtleSI6ICJZT1VSX1dSSVRFX0tFWSIsICJ1c2VySWQiOiAiMDI1cGlrYWNodTAyNSIsICJldmVudCI6ICJFbWFpbCBPcGVuZWQiLCAicHJvcGVydGllcyI6IHsgICAic3ViamVjdCI6ICJUaGUgRWxlY3RyaWMgRGFpbHkiLCAgICJlbWFpbCI6ICJwZWVrQXRNZUBlbWFpbC5wb2tlIiB9fQ">
 ```
-

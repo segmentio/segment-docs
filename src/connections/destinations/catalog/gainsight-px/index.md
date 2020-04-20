@@ -1,7 +1,7 @@
 ---
 title: 'Gainsight PX Destination'
 rewrite: true
-redirect_from: 'docs/connections/destinations/catalog/aptrinsic'
+redirect_from: '/connections/destinations/catalog/aptrinsic'
 ---
 
 [Gainsight PX](https://www.gainsight.com/product-experience/) (formerly known as Aptrinsic) provides a personalized product experience platform to help companies acquire, retain, and grow customers by creating real-time, personalized engagements driven by product usage data. With Gainsight PX, companies can implement an effective product-led go-to-market strategy that will increase product adoption and customer lifetime value.
