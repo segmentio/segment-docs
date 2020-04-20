@@ -38,7 +38,7 @@ your mobile app with our [iOS](/docs/connections/sources/catalog/libraries/mobil
 
 The recommended way to install Analytics for iOS is via Cocoapods, since it
 means you can create a build with specific destinations, and because it makes
-it dead simple to install and upgrade. Simply add the Analytics dependency to
+it simple to install and upgrade. Simply add the Analytics dependency to
 your Podfile, like so:
 
 ```

@@ -1,14 +1,12 @@
 ---
 title: Analytics for Android
-sourceTitle: 'Android'
-sourceCategory: 'Mobile'
 ---
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 
-Analytics for Android makes it dead simple to send your data to any tool without having to learn, test or implement a new API every time.
+Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
-All of our client sources are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/sources) too.
+All of Segment's client sources are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/sources) too.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-android/releases.atom).
 
@@ -16,10 +14,15 @@ Analytics for Android only supports any Android device running API 14 (Android 4
 
 ## Getting Started
 
+{% include content/mobile-cmodes.md %}
+
+{% include components/media-icon.html href="https://github.com/segmentio/analytics-android/tree/master/analytics-samples/analytics-sample" icon="media/icon-guides.svg" title="Android Test Apps" content="Segment maintains test apps for the Android mobile library. Find them here." %}
+
+
 ### Step 1: Install the Library
 
 
-The recommended way to install the library for Android is with a build system like Gradle. This makes it dead simple to upgrade versions and add destinations. The library is distributed via [Maven Central](http://maven.org/). Simply add the `analytics` module to your `build.gradle`:
+The recommended way to install the library for Android is with a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed via [Maven Central](http://maven.org/). Simply add the `analytics` module to your `build.gradle`:
 
 ```java
 dependencies {
@@ -554,7 +557,7 @@ There are two ways to send data to your analytics services through this library:
 
 When an destination's SDK is not packaged, but it is enabled from your dashboard, the request goes through the Segment REST API, and is routed to the service's server-side API as [described here](/docs/connections/destinations/#connection-modes).
 
-### Packaging Device-mode destination SDKs
+### Packaging device-mode destination SDKs
 
 By default, our `analytics` artifact does not package Device-mode destinations.
 
@@ -562,7 +565,7 @@ We recommend using device-mode destinations on a need-to-use basis to reduce the
 
 To package Device-mode destinations, first add the dependencies you need. You can find these in our app when you open the destination for your source.
 
-```
+```java
 compile('com.segment.analytics.android.integrations:google-analytics:+') {
   transitive = true
 }
@@ -867,10 +870,10 @@ Read through [the docs for that destination](/docs/connections/destinations/) to
 
 ### Still having issues?
 
-Feel free to [reach out to us](/help) with the following information:
+Please [contact our Product Support team](https://segment.com/help/contact/) with the following information:
 
 - The version of our SDK you are using
-- Whether you are using device- or cloud-smode
+- Whether you are using device- or cloud-mode
 - Logs of the call in question
 - Screenshots of the event in the Segment debugger
 - Screenshots of what you are seeing in your destination

@@ -279,4 +279,4 @@ analytics.track({
 
 #### Track URL
 
-The destination does not currently support Parsely's `trackURL` method. Please [contact us](/contact/requests) if this is important to you.
+The destination does not currently support Parsely's `trackURL` method. Please [contact us](https://segment.com/requests/integrations/) if this is important to you.

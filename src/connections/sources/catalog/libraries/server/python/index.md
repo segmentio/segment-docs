@@ -6,7 +6,7 @@ Our Python library lets you record analytics data from your Python code. The req
 
 This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-python).
 
-All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers using a separate thread.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers using a separate thread.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-python/releases.atom).
 
