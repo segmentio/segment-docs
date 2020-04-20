@@ -1,7 +1,8 @@
 ---
 title: Identity Resolution Settings
 ---
-# Setting Up Identity Graph Rules
+
+## Setting Up Identity Graph Rules
 Before connecting a source to a Personas space, we recommend first reviewing our default Identity settings and configuring custom rules as needed. Updates to configurations will only be applied to all new data flowing through the space after the changes have been saved. Thus, if this is your first time setting up your Identity Graph, we recommend getting started with a *Dev* space [here](/docs/personas/identity-resolution/personas-space-set-up/).
 
 > note ""
@@ -64,6 +65,7 @@ analytics.track('Subscription Upgraded', {
   ]
 })
 ```
+
 We recommend adding custom externalIDs to the Identity Resolution table *before* events containing this identifier flow through the space. Once an event with a new type of externalID flows into the space, the externalID will automatically be added to the table if it wasn't manually added. However, when the externalID is automatically added, it will default to our preset priority and limit, as explained below.
 
 ## Flat Matching Logic
