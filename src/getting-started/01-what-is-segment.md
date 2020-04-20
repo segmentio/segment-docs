@@ -21,7 +21,7 @@ Once you've collected your interaction data, there are several different things 
 - Send it to [Destinations](/docs/connections/destinations/), which receive the data from any number of sources in real time
 - Send it to [Warehouses](/docs/connections/warehouses/) (and other bulk storage tools), which hold your raw event schemas and update on regular intervals
 
-You can also enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-sources), and then collect it in a warehouse it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use [Personas](/docs/personas/), our identity resolution tool, to unify data from individual users to gain a wholistic understanding of their actions.
+You can also enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-sources), and then collect it in a warehouse it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use [Personas](/docs/personas/), our identity resolution tool, to unify data from individual users to gain a holistic understanding of their actions.
 
 ## Workspaces
 
@@ -38,7 +38,7 @@ You can quickly implement Segment’s tracking libraries across several differen
 - [The Segment Mobile SDKs](/docs/connections/sources/catalog/#mobile) are the best way to simplify tracking in your iOS, Android, and Xamarin apps. We recommend them over server-side sources as the default installation for any mobile app.
 - [Server-side sources](/docs/connections/sources/catalog/#server) let you send analytics data directly from your servers when client-side tracking won't work, or when you're sending mission-critical data like revenues.
 
-We also offer source libraries to cover exceptional cases:
+We also offer other source libraries to cover less straightforward cases:
 
 - Use the [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/) if Segment doesn't offer a library for your specific environment yet.
 - The [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/) lets you track events from environments where you can’t execute code - for example, tracking when an email has been opened.
@@ -56,11 +56,12 @@ Segment supports two types of tracking: device-based (also called "client-side" 
 Neither is better than the other, and we usually recommend that you implement a mix of both. Still, there are some tradeoffs between the two methods.  Overall, more data points are easily available on the client side, but server-side collection is more secure, reliable, and can’t be blocked by ad blocker technology.
 
 
-<!-- LR: need a better version of this flowchart or else to just omit?
+<!-- TODO: LR: need a better version of this flowchart or else to just omit?
 Here’s a handy flow chart to help with the client-side/server-side decision:
 -->
 
 ## Where you can send data
+
 
 
 
