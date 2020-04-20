@@ -345,7 +345,7 @@ This behavior has now been deprecated and all existing Source Functions have bee
 
 The webhook payload retries up to 5 times with an exponential backoff for the function in the event of a failure with the function. After 5 attempts, the message is dropped.
 
-**What is the maxium payload size for the incoming webhook?**
+**What is the maximum payload size for the incoming webhook?**
 
 The maximum payload size for an incoming webhook payload is 2MB.
 

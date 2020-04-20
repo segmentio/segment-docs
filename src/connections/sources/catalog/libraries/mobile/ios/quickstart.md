@@ -15,7 +15,7 @@ _Note: At the moment we can't support tracking of watchkit extensions for tha Ap
 
 ## Step 1: Install the SDK
 
-The recommended way to install Analytics for iOS is via [Cocoapods](http://cocoapods.org), since it means you can create a build with specific destinations, and because it makes it dead simple to install and upgrade.
+The recommended way to install Analytics for iOS is via [Cocoapods](http://cocoapods.org), since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade.
 
 First, add the `Analytics` dependency to your `Podfile`, like so:
 

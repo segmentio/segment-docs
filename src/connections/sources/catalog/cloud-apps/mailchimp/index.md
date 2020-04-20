@@ -45,7 +45,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 |  Collection | Type | Description |
 |  ------ | ------ | ------ |
-|  `conversations` | object | Conversation tracking is a [paid feature](http://kb.mailchimp.com/accounts/billing/how-mailchimp-pricing-plans-work) that lets you view subscribers' replies to your campaigns from inside your MailChimp account. Fetched via Mailchimp's [`/conversations`endpoint](https://apidocs.mailchimp.com/api/2.0/conversations/list.php). |
-|  `lists` | object | The state of your various lists in Mailchimp. Fetched via Mailchimp's [`/lists` endpoint](https://apidocs.mailchimp.com/api/2.0/lists/list.php). |
-|  `campaigns` | object | Your Mailchimp campaigns. Fetched via Mailchimp's [`/campaigns` endpoint](https://apidocs.mailchimp.com/api/2.0/campaigns/list.php). |
+|  `conversations` | object | Conversation tracking is a [paid feature](http://kb.mailchimp.com/accounts/billing/how-mailchimp-pricing-plans-work) that lets you view subscribers' replies to your campaigns from inside your MailChimp account. Fetched via Mailchimp's [`/conversations`endpoint](https://mailchimp.com/developer/reference/conversations/). |
+|  `lists` | object | The state of your various lists in Mailchimp. Fetched via Mailchimp's [`/lists` endpoint](https://mailchimp.com/developer/reference/lists/). |
+|  `campaigns` | object | Your Mailchimp campaigns. Fetched via Mailchimp's [`/campaigns` endpoint](https://mailchimp.com/developer/reference/campaigns/). |
 |  `subscriber activity` | object | **Currently unavailable** Mailchimp's subscriber activity endpoint cannot support our Sources product. If you are interested in this collection, please reach out to your MailChimp Client Success Manager and request that they update their export API functionality.* |
