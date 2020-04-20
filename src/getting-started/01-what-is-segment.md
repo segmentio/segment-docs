@@ -25,7 +25,7 @@ You can also enrich the customer data you collect by [connecting data from your 
 
 ## Workspaces
 
-Your Segment Workspace is where you set up and manage sources and destinations, manage the schema of the data your interfaces send, and test and monitor that data for errors. A Workspace is a collection of Segment sources, destinations, and their configurations, that are administered and billed together. Each Workspace has a specific list of Segment users to which it has granted access, and it may also have several "environments" for production, development and testing use.
+Your Segment Workspace is where you set up and manage sources and destinations, manage the schema of the data your interfaces send, and test and monitor that data for errors. A Workspace is a collection of Segment sources, destinations, and their configurations, that are administered and billed together. Each Workspace has a specific list of Segment users who may access it, and it might also contain several "environments" for production, development and testing use.
 
 When you first log in to your Segment account, you can create a new workspace, or choose to log into an existing workspace if your account is part of an existing organization.
 
@@ -46,11 +46,19 @@ We also offer source libraries to cover exceptional cases:
 
 Segment also offers [Cloud App Sources](/docs/connections/sources/about-cloud-sources/) to integrate data from your third-party tools:
 
-- [Object Cloud Sources]() can import third party tool data directly into your Segment warehouse, but cannot stream that data into your other Segment destinations. Make sure you have a Segment warehouse enabled before you enable an object cloud source.
-- [Event Cloud Sources]() don’t just import third party tool data into your Segment warehouse, they also send event data in real time to your other  Segment destinations.  You’re not required to setup a data warehouse to receive your Event Cloud Source data.
+- [Object Cloud Sources](/docs/connections/sources/about-cloud-sources/#event-cloud-app-sources) can import third party tool data directly into your Segment warehouse, but cannot stream that data into your other Segment destinations. Make sure you have a Segment warehouse enabled before you enable an object cloud source.
+- [Event Cloud Sources](/docs/connections/sources/about-cloud-sources/#object-cloud-app-sources) don’t just import third party tool data into your Segment warehouse, they also send event data in real-time to your other Segment destinations. You don't need to set up a data warehouse to send Event Cloud Source data to your destinations.
 
 ## What you can track
 
+Segment supports two types of tracking: device-based (also called "client-side" or "device-mode") and server-based. You can use our device-based libraries  (JavaScript, iOS, and Android) to make calls within your users’ browsers or mobile devices. Or you can track data with our server-side libraries like Node, Python, etc. These calls are triggered from your own servers.
+
+Neither is better than the other, and we usually recommend that you implement a mix of both. Still, there are some tradeoffs between the two methods.  Overall, more data points are easily available on the client side, but server-side collection is more secure, reliable, and can’t be blocked by ad blocker technology.
+
+
+<!-- LR: need a better version of this flowchart or else to just omit?
+Here’s a handy flow chart to help with the client-side/server-side decision:
+-->
 
 ## Where you can send data
 
