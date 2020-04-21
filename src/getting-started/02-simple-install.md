@@ -2,97 +2,51 @@
 title: A simple Segment installation
 ---
 
-The best way to learn about how Segment works is to see it in action. This tutorial walks you though an installation on a _website_ using our Javascript source. If you'd prefer to follow along using a different method, you can select one of the other tabs below.
-
+The best way to learn about how Segment works is to see it in action. This tutorial walks you though an installation using one of our libraries: either our Javascript, PHP, or iOS library.
 
 ## Before you begin
 
-Before you start, you need a Segment user account and a workspace. If you're not already part of an organization with a Segment Workspace, you can sign up for a free one.
+Before you start, you need a Segment user account and a workspace. If you're not already part of an organization with a Segment Workspace, you can sign up for a free account and free workspace.
 
-For the website version of this quickstart, you also need access to the code for a basic website. If you don't have easy access to a website, you can start a [free Github Pages site](https://pages.github.com/) for purposes of this demonstration. You'll
-
-
-Steps:
-- set up source in segment app
-- find writekey
-- Follow quickstart
+For the quickstart portion, you also need access to the code for a basic website, PHP website, or an iOS app.
 
 
+## Dev and Prod Sources
+
+When developing and testing, you should create and use separate sources for each of your environments (production, development, staging, etc.) to prevent testing and development activities from filling production systems with invalid data.
+
+By default, Segment gives you the option to give each source an `environment` label on creation, and we strongly suggest that you use these labels to sort your sources.
+
+> warning ""
+> **Caution**! Double-check when you enter Write Keys for dev and production environments to make sure that you'll send the right data to the right place!
 
 
+## Create a Segment source
 
-## Install basic code in my app/site
-Find Write Key
-![](https://lh5.googleusercontent.com/Q2SkrIdhfc6e4aoV3EAcXlAxIIA9M4z5JF7GDhM1yFRoKHUcioXcbwYW6_nWVf3IjomEq-MDklfa3EpZF-Ca8BjQXqPcsriPK3rSY1MN9xgj6Kp-qXiCpyGe5E5PiyP8GzUes2zG)
+Go to your Segment workspace, and navigate to [the Sources catalog](https://app.segment.com/goto-my-workspace/sources/catalog).
 
+Choose either the [Javascript source](https://app.segment.com/goto-my-workspace/sources/catalog/javascript), [PHP source](https://app.segment.com/goto-my-workspace/sources/catalog/php), or [iOS source](https://app.segment.com/goto-my-workspace/sources/catalog/ios), and click **Add Source**.
 
-Segment determines which “source” a call is coming from by reading the Segment API Write Key that it uses as part of the analytics.load() event.  To view your Write Key for a given source, visit your workspace and click on the source.
+On the next screen, give the source a name. (We recommend that you include the word `demo`, `test`, or `quickstart` in the name so you can easily find and delete this later.)
 
-
-For JavaScript sources, the Write Key appears in the context of a code snippet
-
-
-![](https://lh3.googleusercontent.com/4Bf9flXWqdlqrEZhk8GuRPB4yTi8JJIZXUglZ7H9ZNbkAvtof6qG8A22iv1nAP0c2V8MjccAwi3puqz9AhywomjqVnguB6kry7y4tIPKcNcvSBQbhNMCldYFeF3uFBnVV58MqFRL)
+We also recommend that you add an Environment Label of `dev` to the source, so you know that this demo source isn't part of a production installation.
 
 
-For other sources, the Write Key appears on its own line, and can be copied on a click:
+## Find your Write Key
 
-NOTE: No Cloud Object and only some Cloud Event sources have write keys.
+The write key is the unique identifier for a source which tells Segment which source data comes from, to which workspace it belongs, and which destinations should receive the data.
 
+When you create a new library source, you can find the Write Key in the **Settings** tab of the source information, under **API Keys**.
 
-Dev & Prod Sources
+![](/docs/connections/images/find_writekey.png)
 
-When testing, you should create and use separate sources for each of your environments (production, development, staging, etc.) to prevent testing and development activities from filling production systems with invalid data. Remember to set up different sources for each of your dev/prod environments in each place you'll be measuring.
+> info ""
+> [Cloud-sources](/docs/guides/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service.
 
-IMPORTANT NOTE: The correct Write Key should always be applied to the corresponding environment to ensure that all events are tracked to the correct Segment source.
-
-
-
-
-### Github pages template
-
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home Questionnaire <span id="selection-marker-1" class="redactor-selection-marker"></span></title>
-</head>
-<body>
-<h1>What is your favorite place to travel?</h1>
-<p>I am building a directory of the sweetest travel destinations.</p>
-<form name="travel" onsubmit="identify(event)">
-     What is your favorite travel destination?
-    <input name="destination" required="" size="81" type="text"/>
-    <br><br><br>
-    Any recommendations (cool things to do, places to visit or restaurants to eat)?
-    <br><br>
-    <textarea cols="81" name="details" required="" rows="10">
-    </textarea>
-    <br><br>
-    Name: <input name="fullname" required="" size="75" type="text"/>
-    <br><br>
-    Email: <input name="email" required="" size="75" type="email"/>
-    <br><br>
-    <input name="submit" type="submit" value="submit"/>
-</form>
-    </body>
-</html>
-```
-
-
-
+Make note of or write down your Write Key, as you'll need it in the next steps.
 
 
 ## Installing Segment
-
-Quick starts — embed each guide on this page, with different tabs?
-
-
-- https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/
-- https://segment.com/docs/connections/sources/catalog/libraries/server/php/quickstart/
-- https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/
-
 
 
 {% codeexample %}
@@ -437,37 +391,49 @@ And presto, **you're done!** You successfully installed PHP tracking. Now you're
 
 ## Test that it’s working
 
-Source:
-https://segment.com/docs/connections/sources/debugger/
+Once you've set up your Segment library, and instrumented at least one call, you can look at the Debugger tab for the Source to check that it produces data as you expected.
 
 The Source Debugger is a real-time tool that helps you confirm that API calls made from your website, mobile app, or servers arrive to your Segment Source, so you can troubleshoot your Segment set up even quicker. With the Debugger, you can check that calls are sent in the expected format without having to wait for any data processing.
 
-![](https://segment.com/docs/connections/sources/images/debugger_view.png)
+![](/docs/connections/sources/images/debugger_view.png)
 
+The Debugger is separate from your workspace's data pipeline and is not an exhaustive view of all the events ever sent to your Segment workspace. The Debugger only shows a sample of the events that the Source receives in real time, with a cap of 500 events. The Debugger is a great way to test specific parts of your implementation to validate that events are being fired successfully and arriving to your Source.
 
-The Debugger is separate from your workspace’s data pipeline and is not an exhaustive view of all the events ever sent to your Segment workspace. The Debugger only shows a sample of the events that the Source receives in real time, with a cap of 500 events. The Debugger is a great way to test specific parts of your implementation to validate that events are being fired successfully and arriving to your Source.
-To see a more complete view of all your events, we recommend that you set up either a warehouse or an S3 destination.
-The Debugger shows a live stream of sampled events arriving into the Source, but you can also pause the stream from displaying new events by toggling “Live” to “Pause”. Events continue to arrive to your Source while you Pause the stream.
-You can search in the Debugger to find a specific payload using any information you know is available in the event’s raw payload. You can also use advanced search options to limit the results to a specific event.
+To see a more complete view of all your events, we recommend that you set up either a [warehouse](/docs/guides/general/what-is-a-warehouse/) or an [S3 destination](/docs/destinations/amazon-s3/).
 
-![](https://segment.com/docs/connections/sources/images/debugger_search.png)
+The Debugger shows a live stream of sampled events arriving into the Source, but you can also pause the stream from displaying new events by toggling "Live" to "Pause". Events continue to arrive to your Source while you Pause the stream.
+
+You can search in the Debugger to find a specific payload using any information you know is available in the event's raw payload. You can also use advanced search options to limit the results to a specific event.
+
+![](/docs/connections/sources/images/debugger_search.png)
 
 
 Two views are available when viewing a payload:
 
-- The Pretty view is a recreation of the API call you made that was sent to Segment.
-- The Raw view is the complete JSON object Segment received from the calls you sent. These calls include all the details about what is being tracked: timestamps, properties, traits, ids, and contextual information Segment automatically collects the moment the data is sent.
+* The **Pretty view** is a recreation of the API call you made that was sent to Segment.
+* The **Raw view** is the complete JSON object Segment received from the calls you sent. These calls include all the details about what is being tracked: timestamps, properties, traits, ids, and [contextual information Segment automatically collects](/docs/connections/spec/common/#context-fields-automatically-collected) the moment the data is sent.
 
 
 ## Set up your first destination
 
-some basic info about sending to google analytics, or mixpanel, etc
+Once you're satisfied that data is arriving from your new source, it's time to set up your first destination! As long as you have `page` or `screen` data, coming from the source, you can quickly enable Google Analytics to look at the page view statistics.
 
+If you don't have a Google Analytics account, you can either set up a free account, or look at the Destination Catalog for a different destination to enable.
 
-Google Analytics, FB pixel, Gtag?
+You'll need a tracking ID for Google Analytics (either a "website" or "serverside" tracking ID), or another API key if you're substituting another destination. Make note of this ID or key as you'll need it to connect your destination.
 
+To set up your first destination:
 
+1. Go to your Segment workspace, click **Destinations**, and click **Add Destination** to go to the [Catalog](https://app.segment.com/goto-my-workspace/destinations/catalog).
+2. Search for the destination you want to add. In this case, search for `Google Analytics`.
+3. Click the tile for the destination to see information about it.
+4. Click **Configure Google Analytics**.
+5. Select the source that you set up earlier in this quickstart, then click **Confirm Source**.
+6. On the settings page, locate the setting line for the tracking ID or other API key to connect to your destination.
+7. Enter the ID or API key and click **Save**. <!-- LR note: this seems like a lot. are 6/7 needed?-->
+8. Click **Back to Destination**, then click the toggle to enable the destination.
 
+Congratulations! Data is now flowing from the source you set up, to the first destination. Do some test browsing on your site or app, then log in to your downstream tool to see the data in place.
 
 
 
