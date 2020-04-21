@@ -98,8 +98,10 @@ The DV360 Personas destination is in beta, and so you must access it using a spe
 Copy example link below, replacing *both* instances of `<workspace_slug>` with your Segment workspace slug, and replacing `<space_slug>` with your personas space.
 
 ```text
-https://app.segment.com/<workspace_slug>/destinations/catalog/personas-display-video-360?sourceSlug=personas_<space_slug>&spaceSlug=<worksspace_slug>`
+https://app.segment.com/<workspace_slug>/destinations/catalog/personas-display-video-360?sourceSlug=personas_<source_slug>&spaceSlug=<personas_space_slug>`
 ```
+Your personas space slug is found in the URL when you are viewing your personas space right after `spaces/`, and your source slug is typically your personas space slug prepended with `personas_`.
+
 Paste the resulting url into your browser’s URL bar and press Enter.
 
 On the screen that appears, click **Configure Display & Video 360**.
