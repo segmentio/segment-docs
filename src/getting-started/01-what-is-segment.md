@@ -11,6 +11,13 @@ With Segment, you can collect, transform, send, and archive your [first-party cu
 When interaction data is captured in Segment, you can send it (often in real-time) to a wide variety of tools in the analytics, data warehousing, and marketing spaces, usually without having to add new tracking code to production applications.
 
 
+## Workspaces
+
+Your Segment Workspace is where you set up and manage sources and destinations, manage the schema of the data your interfaces send, and test and monitor that data for errors. A Workspace is a collection of Segment sources, destinations, and their configurations, that are administered and billed together. Each Workspace has a specific list of Segment users who may access it, and it might also contain several "environments" for production, development and testing use.
+
+When you first log in to your Segment account, you can create a new workspace, or choose to log into an existing workspace if your account is part of an existing organization.
+
+
 <!-- TODO: better "subway map" image here.-->
 
 ## The Segment Platform
@@ -22,12 +29,6 @@ Once you've collected your interaction data, there are several different things 
 - Send it to [Warehouses](/docs/connections/warehouses/) (and other bulk storage tools), which hold your raw event schemas and update on regular intervals
 
 You can also enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-sources), and then collect it in a warehouse it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use [Personas](/docs/personas/), our identity resolution tool, to unify data from individual users to gain a holistic understanding of their actions.
-
-## Workspaces
-
-Your Segment Workspace is where you set up and manage sources and destinations, manage the schema of the data your interfaces send, and test and monitor that data for errors. A Workspace is a collection of Segment sources, destinations, and their configurations, that are administered and billed together. Each Workspace has a specific list of Segment users who may access it, and it might also contain several "environments" for production, development and testing use.
-
-When you first log in to your Segment account, you can create a new workspace, or choose to log into an existing workspace if your account is part of an existing organization.
 
 
 ## Where data comes from
@@ -49,20 +50,35 @@ Segment also offers [Cloud App Sources](/docs/connections/sources/about-cloud-so
 - [Object Cloud Sources](/docs/connections/sources/about-cloud-sources/#event-cloud-app-sources) can import third party tool data directly into your Segment warehouse, but cannot stream that data into your other Segment destinations. Make sure you have a Segment warehouse enabled before you enable an object cloud source.
 - [Event Cloud Sources](/docs/connections/sources/about-cloud-sources/#object-cloud-app-sources) don’t just import third party tool data into your Segment warehouse, they also send event data in real-time to your other Segment destinations. You don't need to set up a data warehouse to send Event Cloud Source data to your destinations.
 
-## What you can track
+## Where you can track
 
-Segment supports two types of tracking: device-based (also called "client-side" or "device-mode") and server-based. You can use our device-based libraries  (JavaScript, iOS, and Android) to make calls within your users’ browsers or mobile devices. Or you can track data with our server-side libraries like Node, Python, etc. These calls are triggered from your own servers.
+Segment supports several ways to implement tracking. The two most common are to use device-based or server-based libraries. You can use Segment's device-based libraries, such as JavaScript, iOS, and Android, to make calls on users’ browsers or mobile devices. You can also track data with Segment's server-based libraries, such as Node, Python, PHP and so on, where the calls are triggered on your own servers and then sent to the Segment servers.
 
-Neither is better than the other, and we usually recommend that you implement a mix of both. Still, there are some tradeoffs between the two methods.  Overall, more data points are easily available on the client side, but server-side collection is more secure, reliable, and can’t be blocked by ad blocker technology.
+When you collect data using device-based libraries, you can choose between two different connection modes: you can either use "cloud-mode", where the library sends the data directly to the Segment servers which then translate and forward it, or you can use "device-mode" where the library sends the data both directly to the Segment servers, and also to the servers for the destination tool. (Device-mode sometimes requires some [additional set-up steps](/docs/connections/sources/mobile_guide/), but can unlock rich device data.)
 
+Although there are some tradeoffs between the two approaches, neither is better than the other, and we usually recommend that you implement a mix of both. In general, more direct interaction data is available using a device-based library, but server-side collection is more secure, reliable, and can’t be blocked by ad blockers.
 
 <!-- TODO: LR: need a better version of this flowchart or else to just omit?
 Here’s a handy flow chart to help with the client-side/server-side decision:
 -->
 
+## The Segment Methods
+
+The Segment libraries generate messages about what happens on your interface, translate those messages into different formats for use by destinations, and transmit the messages to those tools.
+
+There are several [tracking API methods](/docs/connections/spec/), which can be called to generate messages. The four most important methods are:
+  - [Identify](/docs/connections/spec/identify/): who is the user?
+  - [Page](/docs/connections/spec/page/) and [Screen](/docs/connections/spec/screen/): what web page or app screen are they on?
+  - [Track](/docs/connections/spec/track/): what are they doing?
+
+Every call shares the same [common fields](/docs/connections/spec/common/).  When you use these methods [as intended](/docs/connections/spec/best-practices-identify/), it allows Segment to detect specific type of data, and correctly translate it to send it on to downstream destinations.
+
+
 ## Where you can send data
 
+Segment maintains a catalog of destinations where you can send your data.
 
+<!-- TODO: big list o' destinations image should go here -->
 
 
 

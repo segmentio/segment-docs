@@ -14,6 +14,8 @@ Analytics for Android only supports any Android device running API 14 (Android 4
 
 ## Getting Started
 
+### About mobile connection modes
+
 {% include content/mobile-cmodes.md %}
 
 {% include components/media-icon.html href="https://github.com/segmentio/analytics-android/tree/master/analytics-samples/analytics-sample" icon="media/icon-guides.svg" title="Android Test Apps" content="Segment maintains test apps for the Android mobile library. Find them here." %}
