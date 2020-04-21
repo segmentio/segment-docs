@@ -64,6 +64,6 @@ WooCommerce offers a [paid Segment plugin](https://docs.woocommerce.com/document
 
 If you are using Wordpress, use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/php/), and implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
 
-# WP eCommerce
+## WP eCommerce
 
 If you are using Wordpress eCommerce, use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/php/), and implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.

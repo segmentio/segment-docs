@@ -362,7 +362,7 @@ The `ready` method has the following fields:
 
 ## Querystring API
 
-`analytics.js` can trigger track and identify events based on the URL querystring. This is helpful for tracking email click throughs, social media clicks, and digital advertising as well as for cross-domain tracking.
+`analytics.js` can trigger track and identify events based on the URL querystring. This is helpful for tracking email click throughs, social media clicks and digital advertising.
 
 Here are the query parameters to use:
 
@@ -725,16 +725,6 @@ When enabled, analytics.js automatically retries network and server errors. With
 * Better handle network issues. If there happens to be a time where your application can't connect to Segment's API, we'll continue to store the events on the browser to ensure you don't lose any data.
 
 Analytics.js stores events in localStorage (falling back to in-memory storage when localStorage is unavailable), and retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. You can see more details about the retry logic [here](/docs/connections/destinations/#retries).
-
-
-## Cross-Domain Analytics
-
-[Cross-Domain Analytics](/docs/connections/sources/cross-domain/) allows businesses to measure customer activity across their digital properties, without exposing user data to third parties. For example, if you have multiple brands, content properties, or marketing mini-sites, you likely want to learn how cross-domain browsing impacts your revenue.
-
-
-## Cross-Subdomain Analytics
-
-Analytics.js tracks across subdomains out of the box; all of our destinations fully support this feature.
 
 ## Anonymizing IP
 
