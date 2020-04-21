@@ -1,5 +1,6 @@
 ---
 title: 'Typewriter'
+redirect_from: '/protocols/typewriter/'
 ---
 
 [Typewriter](https://github.com/segmentio/typewriter) is a tool for generating strongly-typed Segment analytics libraries based on your pre-defined [Tracking Plan](/docs/protocols/tracking-plan) spec.
