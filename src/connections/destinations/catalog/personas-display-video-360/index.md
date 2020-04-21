@@ -95,12 +95,11 @@ To create audiences based on website browsing events, set up the Segment-to-Goog
 
 The DV360 Personas destination is in beta, and so you must access it using a special link.
 
-Copy example link below, replace all three slugs with your workspace information: replace the instance of `<workspace_slug>` with your Segment workspace slug, your personas space slug is found in the URL when you are viewing your personas space right after `spaces/`, and your source slug is typically your personas space slug prepended with `personas_`.
+Copy example link below, replace all three slugs with your workspace information: replace the instance of `<workspace_slug>` with your Segment workspace slug, and your source slug and personas space slug are found in the URL when you are viewing your personas space right after `spaces/`.
 
 ```text
 https://app.segment.com/<workspace_slug>/destinations/catalog/personas-display-video-360?sourceSlug=personas_<source_slug>&spaceSlug=<personas_space_slug>`
 ```
-
 Paste the resulting url into your browser’s URL bar and press Enter.
 
 On the screen that appears, click **Configure Display & Video 360**.
