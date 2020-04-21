@@ -65,7 +65,7 @@ const getConnectionModes = (destination) => {
         connectionModes.device.mobile = true
         break
       case 'WEB':
-        if (destination.browserUnbundlingSupported && destination.browserUnbundlingPublic) {
+        if (destination.browserUnbundlingSupported) {
           connectionModes.cloud.web = true
         }
         connectionModes.device.web = true
