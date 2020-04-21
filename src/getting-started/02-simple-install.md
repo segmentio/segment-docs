@@ -55,23 +55,11 @@ Make note of or write down your Write Key, as you'll need it in the next steps.
 <!-- marker JS start -->
 
 
-
-This tutorial gets you started sending data from your website to Segment and any of our destinations, using Segment's Analytics.js library. As soon as you're set up you can turn on new destinations with the flip of a switch!
-
-Want to learn more? Check out the [Analytics.js reference](/docs/connections/sources/catalog/libraries/website/javascript).
-
-
 ### Step 1: Copy the Snippet
 
-Installing Segment is easy, just paste this snippet into the `<head>` tag of your site.
-
-{% include content/snippet-helper.md %}
-
-Next, replace `YOUR_WRITE_KEY` in the snippet you pasted with your Segment project's **Write Key**, which you can find in your project set up guide or settings.
+Installing Segment is easy, just paste the snippet from the Javascript Source overview page into the `<head>` tag of your site.
 
 That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet is running on your site, you can turn on destinations from the destinations page in your workspace and they start loading on your site automatically!
-
-Note that you should remove other native third-party destination code that you might have on your site. For example, if you're using Segment to send data to Google Analytics, make sure you remove the Google Analytics snippet from your site source code to prevent sending the data twice.
 
 **Fun fact:** if you only want the most basic Google Analytics setup you can stop reading right now. You're done! Just switch on Google Analytics in our interface.
 
@@ -153,17 +141,6 @@ Once you add a few `track` calls, **you're done with this tutorial!** You succes
 
 
 <!-- marker iOS start -->
-
----
-title: 'Quickstart: iOS'
-hidden: true
----
-
-This tutorial gets you started sending data from your iOS app to Segment. When you're done you can turn on [any of Segment's destinations](/docs/connections/destinations/) with the flip of a switch! No more waiting for App Store approval.
-
-If you want to dive deeper at any point, check out the [iOS Library Reference](/docs/libraries/ios/).
-
-_Note: At the moment Segment does not support tracking watchkit extensions for the Apple watch. [Contact us](segment.com/help/contact) if you're interested in a watchkit SDK. For now we recommend tracking watch interactions using the native iPhone app code._
 
 
 ### Step 1: Install the SDK
