@@ -62,7 +62,11 @@ WooCommerce offers a [paid Segment plugin](https://docs.woocommerce.com/document
 
 ## Wordpress
 
-If you are using Wordpress, you have a few options. The best option is to use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/php/). However, you can also use the [Segment Analytics.js library source](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) if you are more comfortable with JavaScript. If you use Analytics.js, you may experience issues with Device Mode Connections and therefore we recommend using Cloud Mode Connections wherever possible. Regardless of the library you choose, implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
+If you are using Wordpress, you have a two options. 
+
+The best option is to use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/php/). However, you can also use the device-mode [Segment Analytics.js library source](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) if you are more comfortable with JavaScript. We recommend using the PHP library where possible, because the server library's Cloud mode connection is more reliable, and not subject to issues from ad blockers.
+
+Regardless of the library you choose, implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
 
 ## WP eCommerce
 
