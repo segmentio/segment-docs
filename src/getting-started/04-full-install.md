@@ -2,6 +2,12 @@
 title: A full Segment implementation
 ---
 
+
+
+
+
+
+
 ## API Methods
 
 **Segment supports several tracking-related API methods**, and these methods can be called from either the client-side or the server side. This section  explains the following methods:
@@ -13,20 +19,23 @@ title: A full Segment implementation
 The **Alias** and **Group** methods are other API tracking methods that Segment supports, but are currently out of scope for {Customer}.
 
 ## Identify
+
 ![](https://lh4.googleusercontent.com/ivo-4buqR99rYXt8GeXGEKPh7naSh1yknYD8-XUZ5nwPSzG_g1eFt0u7Bcp_CJ-CI1ljEjvogLtt5zGmuQWkfYzwIjW8YqkxGz-jjqHR4-qK2Vcwi0VD-lnaON4lc7xIA3_WJB8j)
 
 
-The identify() call allows Segment to know **who** is triggering an event.
+The `identify()` call allows Segment to know **who** is triggering an event.
 
-## *When to Call Identify*
+## When to Call Identify*
 
-Identify() should be called in when you can first identify that the user is a known {Customer} user (typically during login), or when a user has updated their profile information.
-When called as part of the login experience, the identify() call should be made as soon as possible after a user has authenticated. **When possible, identify() should also be immediately followed by a track event that indicates what caused the user to be identified.**  We’ve outlined these calls in the Identify tab of [**your Tracking Plan**](http://blah.com).
-**NOTE: When making an identify() call as part of a profile update, only the changed information needs to be passed to Segment**.  (Alternatively, you can send all profile info on every identify call if that makes implementation easier.)
+You should call `Identify()` when the user first provides identifying information (usually during log in), or when a user updates their profile information.
 
-## *Traits*
+When called as part of the login experience, you should call `identify()` as soon as possible after the user logs in. When possible, follow the `identify()` call with a `track` event that records what caused the user to be identified.
 
-These are **the metadata fields that you’ll pass in each Segment API call to enrich the data that you are sending.** These are called “Traits” for identify() calls, and “Properties” for all other methods.  ****
+When you make an `identify()` call as part of a profile update, you only need to send the changed information to Segment. You can send all profile info on every `identify` call if that makes implementation easier, but this is optional.
+
+## Traits*
+
+These are **the metadata fields that you’ll pass in each Segment API call to enrich the data that you are sending.** These are called “Traits” for identify() calls, and “Properties” for all other methods.
 **The most important trait to pass as part of the identify() call is userId**, which uniquely identifies a user across all {Customer} applications. It is recommended that you use some sort of hash value to ensure uniqueness, though other values are acceptable (e.g. email address is not preferred, but is usually acceptable due to it being unique and mostly unchanging).
 Beyond that, the identify() call is your opportunity to provide information about the user that can be used for future reporting, so **you should seek to send any fields that you will want to be able to report on later**. Consider using Identify and traits when...
 
@@ -35,7 +44,7 @@ Beyond that, the identify() call is your opportunity to provide information abou
 
 To see the Traits {Customer} plans on capturing for its users in Identify calls, please visit **the Identify tab of** [**your Tracking Plan**](http://blah.com).
 
-## *How to Call Identify*
+## How to Call Identify*
 
 Identify() can be called from any of Segment’s client-side or server-side libraries, including [Javascript](https://segment.com/docs/sources/website/analytics.js/), [iOS](https://segment.com/docs/sources/mobile/ios), [Android](https://segment.com/docs/sources/mobile/android), [Ruby](https://segment.com/docs/sources/server/ruby/), and [Python](https://segment.com/docs/sources/server/python/).  Here are two examples of calling identify from two different libraries:
 
@@ -61,14 +70,15 @@ analytics.identify( user_id: "12345abcde",
      internal: True })
 ```
 
-## *analytics.reset()*
+## analytics.reset()*
 
-When a user explicitly signs out of an application belonging to {Customer}, a call to Segment’s **analytics.reset()** method will stop logging any further event activity to that user, and will create a new anonymousId for subsequent activity.  **This call is most relevant for client-side Segment libraries**, as it clears cookies in the user’s browser.
-The Reset() call should be made as soon as possible after a signout has occurred and only after a sign-out is successful (not when the signout button is clicked).  For more info on this call, [**visit this page of our docs**](https://segment.com/docs/sources/website/analytics.js/#reset-logout).
+When a user explicitly signs out of one of your applications, you can call `analytics.reset()` to stop logging further event activity to that user, and create a new `anonymousId` for subsequent activity (until the user logins in again and is subsequently `identify`-ed).  **This call is most relevant for client-side Segment libraries**, as it clears cookies in the user’s browser.
+
+Make a `Reset()` call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out).  For more info on this call, [see the Javascript source documentation](https://segment.com/docs/connections/sources/website/javascript#reset-logout).
 
 ## Page & Screen
 
-The Page() and Screen() calls allow Segment to know what web page or mobile scren the user is on.  This call automatically captures key context so you don’t have to send this data explicitly:
+The `Page()` and `Screen()` calls tell Segment what web page or mobile screen the user is on.  This call automatically captures important context traits, so you don’t have to manually implement and send this data.
 
 | **Page context** auto-captured | **Screen context** auto-captured                    |             |                                                                                                    |
 | ------------------------------ | --------------------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------- |
@@ -81,15 +91,19 @@ The Page() and Screen() calls allow Segment to know what web page or mobile scre
 | **userAgent**                  | *string*                                            | **os**      | name, version                                                                                      |
 | **campaign**                   | *utm_source, utm_medium, utm_campaign, utm_content* | **screen**  | height, width                                                                                      |
 
-## *Properties*
+## Properties
 
-You can always [**override the auto-collected Page/Screen properties**](https://segment.com/docs/sources/website/analytics.js/#default-properties) with your own, as well as set additional custom page or screen properties.  Note that some applications (like Marketo) require that  specific properties (like email address) are attached to every page() call.  This is considered a destination-specific implementation nuance, and you should be sure to cover such nuances with your Segment Solutions Architect.
+You can always [override the auto-collected Page/Screen properties](https://segment.com/docs/sources/website/analytics.js/#default-properties) with your own, and set additional custom page or screen properties.
+
+Some downstream tools (like Marketo) require that you attach specific properties (like email address) to every `page()` call.
+
+This is considered a destination-specific implementation nuance, and you should consult the documentation for each destination you plan to use and make a list of these nuances before you begin implementation.
 
 ## Named Page & Screen Calls
 
-**You can specifiy a page “Name”** at the start of the page or screen call—which is especially useful **to roll up a giant list of page names into sometihng more succinct for analytics.** For example, on an ecommerce site you might want to call analytics.page( "Product" ) and then provide properties for that product:
+You can specify a page “Name" at the start of the page or screen call—which is especially useful to make list of page names into something more succinct for analytics. For example, on an ecommerce site you might want to call `analytics.page( "Product" )` and then provide properties for that product:
 
-**Named Page Call** for analytics.js
+**Named Page Call for analytics.js**
 ```js
 analytics.page("Product", {
   "category": "Smartwatches",
@@ -97,7 +111,8 @@ analytics.page("Product", {
 });
 ```
 
-**Named Screen Call** for iOS
+**Named Screen Call for iOS**
+
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Product"
 properties:@{ @"category": @"Smartwatches", @"sku": @"13d31" }];
@@ -105,15 +120,18 @@ properties:@{ @"category": @"Smartwatches", @"sku": @"13d31" }];
 ```
 
 
-## *When to Call Page()*
+## When to Call Page()
 
-Segment will automatically call a page() event whenever a web page is loaded.  This may be sufficient for most of {Customer}’s needs, but **page() will need to be called manually if you are changing the URL path without reloading the page (i.e., single page web apps).**  Please review
+Segment automatically calls a `page()` event whenever a web page loads. This might be enough for most of your needs, but if you change the URL path without reloading the page, for example in single page web apps, you must call `page()` manually .
+
 **NOTE: If the presentation of user interface components don’t substantially change the user’s context** (e.g., if a menu is displayed, search results are sorted/filtered, or an information panel is displayed on the exiting UI) **the event should be measured with a Track call, not a Page call.**
-**NOTE: When a page() call is triggered manually, it should happen when a UI element is successfully displayed, not when it is called** (e.g., it shouldn’t be called in conjunction with the click event that instigates it).
+
+> note ""
+> **Note**: When you trigger a page() call manually, make sure the call happens after the UI element is successfully displayed, not when it is called. It shouldn’t be called as part of the click event that initiates it.
 
 For more info on Page calls, please review  our [**general Page docs**](https://segment.com/docs/spec/page/) and [**analytics.js docs**](https://segment.com/docs/sources/website/analytics.js/#page).
 
-## *When to Call Screen()*
+## When to Call Screen()
 
 Analogous to the page() method, **Segment uses screen() calls in mobile apps.** You can expect that mobile screens will be treated similar to standard page() tracking (the goal is to have as much consistency between web and mobile as is feasible).
 
@@ -121,13 +139,14 @@ Analogous to the page() method, **Segment uses screen() calls in mobile apps.** 
 
 The track() call allows Segment to know **what** the user is doing.
 
-## *When to Call*
+## When to Call Track
 
 The track() call is used to track user and system events, such as:
 
 - The user’s interaction with a UI component (e.g.  ‘button clicked’)
 - The presentation of a significant UI component, other than a page (e.g.. search results)
-## *Events and Properties*
+-
+## Events and Properties*
 
 Your track calls should include both events and properties. **Events are the actions you want to track**, and **properties are the contextual data sent with each event**.
 Properties are powerful.  They enable you to capture as much context about the event as you’d like, and then cross-tabulate or filter your downstream tools.  For example, let’s say an eLearning website is tracking whenever a user bookmarks an educational article on a page.  Here’s what a robust analytics.js Track call could look like:
@@ -146,18 +165,28 @@ analytics.track('Article Bookmarked', {
 });
 ```
 
-With this track call, we could analyze which authors had the most popular articles, which months and years led to the greatest volume of bookmarking overall, which button locations drive the most bookmark clicks, or which users gravitate towards infographics related to Data Planning.
+With this track call, we can analyze which authors had the most popular articles, which months and years led to the greatest volume of bookmarking overall, which button locations drive the most bookmark clicks, or which users gravitate towards infographics related to Data Planning.
 
-## *Event Naming Best Practices*
+## Event Naming Best Practices
 
-Each event {Customer} tracks will need to have a name that describes the event, like 'Article Bookmarked' above. That name is passed in at the beginning of the track call, and should be standardized across all {Customer} properties to enable the comparison of the same actions on different properties.
-Segment’s best practice is to use an “Object Action” (Noun<>Verb) naming convention (i.e. 'Article Bookmarked') for all **Track** events. Segment maintains a robust set of ****[**Semantic Event Specs**](https://segment.com/docs/spec/semantic/) which follow this naming convention around different use cases such as eCommerce, B2B SaaS, and Mobile.  And our onboarding process also includes an exercise to select the best Semantic Events for [**your Tracking Plan**](http://blah.com).  Please see the Event Inventory tab in [**your Tracking Plan**](http://blah.com) for more info.  Let’s dive deeper into the Object<>Action syntax that all of your Segment Track events should use.
-***Objects = Nouns***
-Nouns are the entities or objects that the user or the system acts upon.  ****The important aspect of naming objects is that they are referred to consistently within an application, and that the same objects that exist in multiple applications are referred to by the same name.
+Each event you track must have a name that describes the event, like 'Article Bookmarked' above. That name is passed in at the beginning of the track call, and should be standardized across all your properties to enable the comparison of the same actions on different properties.
+
+Segment’s best practice is to use an “Object Action” (Noun<>Verb) naming convention (for example, 'Article Bookmarked') for all **Track** events.
+
+Segment maintains a set of [**Use-case Specs**](/docs/spec/semantic/) which follow this naming convention around different use cases such as eCommerce, B2B SaaS, and Mobile.
+
+<!-- TODO: -->
+
+And our onboarding process also includes an exercise to select the best Semantic Events for [**your Tracking Plan**](http://blah.com).  Please see the Event Inventory tab in [**your Tracking Plan**](http://blah.com) for more info.
+
+Let’s dive deeper into the Object<>Action syntax that all of your Segment Track events should use.
+
+### Objects = Nouns
+Nouns are the entities or objects that the user or the system acts upon.  The important aspect of naming objects is that they are referred to consistently within an application, and that the same objects that exist in multiple applications are referred to by the same name.
 Use the following list of objects to see if there is a logical match with your application.  If you have objects that aren’t in this list, name it in a way that makes sense if it were to appear in other applications, and/or run it by Product Analytics.
 
 
-*Suggested Nouns*
+#### Suggested Nouns
 
 | **Noun / Object**     | *Description*                                        |
 | --------------------- | ---------------------------------------------------- |
@@ -167,7 +196,7 @@ Use the following list of objects to see if there is a logical match with your a
 | **Account**           |                                                      |
 | **Video**             |                                                      |
 
-***Actions = Verbs**
+**Actions = Verbs**
 Verbs indicate the action taken by either a user or the {Customer} site.  When naming a new track event, consider if the current interaction can be adequately described using a verb from the list below.  If it can’t, choose a verb that describes what the user is trying to in your specific case, while being flexible enough to potentially be used in other scenarios in your app or even in other apps.
 *Suggested Verbs*
 
@@ -188,13 +217,13 @@ Verbs indicate the action taken by either a user or the {Customer} site.  When n
 
 
 
-## *Property Naming: Best Practices*
+## Property Naming: Best Practices*
 
 Segment recommends property names be in **snake case** (e.g., “property_name”), with values matching the format in which they are captured (e.g., a username value would be captured in whatever case it was typed in as).
 Ultimately, you may decide on the casing that suits you; however, **the single most aspect is that you’re consistent across your entire tracking with one casing method**.
 **IMPORTANT NOTE:** In the Segment [spec](https://segment.com/docs/spec/), **all** [API calls](https://segment.com/docs/spec#api-calls) have a common structure and a few common fields. Common fields will automatically be collected on every call, and are listed in the [common fields](https://segment.com/docs/spec/common/) section of our spec.
 
-## *Common properties to send with track() call*
+## Common properties to send with track() call*
 
 The following properties should be sent with every track() call:
 

@@ -153,9 +153,59 @@ If you want to learn more about how properties are used by downstream tools, che
 Want a free consultation from our Customer Success Managers on how they simplify our customer’s analytics? [Request a demo of Segment](https://segment.com/contact/demo).
 
 
-# Think about destinations
+## Think about destinations
 
 section covering how the customer should plan where they are going to send data?
+
+
+
+### Tracking Plans ← Planning a full impl
+
+Now that we’ve shown it working, let’s step back and think through your installation:
+
+→ You can use the tracking plan template we provide ←
+
+(Goal of this section: provide a DIY/less overwhelming version of the tracking plan spreadsheet)
+
+You might want to start a page in a spreadsheet for each of these questions:
+
+- Think about the business goals and questions you ask of your data
+  - What are your company metrics? What data do you base each one on?
+  - How do you define a user?
+  - What tools do you use to analyze your data?
+
+
+- List the tools you use. For each, write down:
+  - The tool name
+  - What questions is answers, or what business purpose it serves
+  - What data it uses/consumes
+  - The team that “owns” it
+  - The team(s) that use it (if different)
+
+
+- Think about your digital property/properties
+  - Is it a website, mobile app, both?
+  - What interactive items are on each? pages, buttons, login systems, user accounts, group accounts, carts, players, etc. For each item:
+      - Map it to a Segment method: Which best fits that item? page/screen, event, identify
+      - List any important information (properties and traits) you want to collect about that item
+  - Are there backend or server components you want to track from?
+  - Do you have data living in other tools (cloud-apps) that would be useful to enrich your data with?
+
+
+### Plan your Implementation
+
+Go back to your lists.
+
+On sheet one, for each business question:
+
+- Map these items to the actual interactions (in sheet three) that they run on
+- Write down which tools you use to answer each of these questions
+
+On sheet two, find the list of tools, and look up which methods, and which connection modes they support using these two charts:
+
+- https://segment.com/docs/connections/destinations/cmodes-compare/  - This list will tell you what source types you need
+- https://segment.com/docs/connections/destinations/methods-compare/ - This list will tell you which methods you can use.
+
 
 
 

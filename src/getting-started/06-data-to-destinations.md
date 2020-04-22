@@ -5,12 +5,13 @@ title: Sending data to destinations
 
 
 
-
-
-
-
-
-
+1. How destinations work
+   - https://university.segment.com/series/segment-101/destinations-warehouses
+2. testing/Debugging
+   - https://university.segment.com/series/segment-101/debugging-and-troubleshooting
+3. picking dests (methods comparison)
+   - https://segment.com/docs/connections/destinations/cmodes-compare/
+   - https://segment.com/academy/choosing-stack/how-to-navigate-the-sea-of-customer-data-tools/
 
 
 
