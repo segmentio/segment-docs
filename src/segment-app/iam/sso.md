@@ -82,6 +82,7 @@ In order to enable this, you'll need to verify your domain with Segment. To do t
 ![](images/asset_MSaDZk2f.png)
 
 Enter your domain and click "Add Domain." When you click verify, you're given two options to verify your domain, either via a meta tag to add to your `/index.html` at the root or a DNS txt record that you can add via your DNS provider. Once you do so and click verify, you're ready to go!
+_Note: domain tokens expire 14 days after they are verified._
 
 ## FAQ
 
