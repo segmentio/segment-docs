@@ -46,7 +46,7 @@ To see the Traits {Customer} plans on capturing for its users in Identify calls,
 
 ## How to Call Identify*
 
-Identify() can be called from any of Segment’s client-side or server-side libraries, including [Javascript](https://segment.com/docs/sources/website/analytics.js/), [iOS](https://segment.com/docs/sources/mobile/ios), [Android](https://segment.com/docs/sources/mobile/android), [Ruby](https://segment.com/docs/sources/server/ruby/), and [Python](https://segment.com/docs/sources/server/python/).  Here are two examples of calling identify from two different libraries:
+Identify() can be called from any of Segment’s client-side or server-side libraries, including [Javascript](https://segment.com/docs/connections/sources/catalog/website/javascript/), [iOS](https://segment.com/docs/connections/sources/catalog/mobile/ios), [Android](https://segment.com/docs/connections/sources/catalog/mobile/android), [Ruby](https://segment.com/docs/connections/sources/catalog/server/ruby/), and [Python](https://segment.com/docs/connections/sources/catalog/server/python/).  Here are two examples of calling identify from two different libraries:
 
 **Javascript (client-side) identify() call:**
 ```js
@@ -93,7 +93,7 @@ The `Page()` and `Screen()` calls tell Segment what web page or mobile screen th
 
 ## Properties
 
-You can always [override the auto-collected Page/Screen properties](https://segment.com/docs/sources/website/analytics.js/#default-properties) with your own, and set additional custom page or screen properties.
+You can always [override the auto-collected Page/Screen properties](https://segment.com/docs/connections/sources/catalog/website/javascript/#default-properties) with your own, and set additional custom page or screen properties.
 
 Some downstream tools (like Marketo) require that you attach specific properties (like email address) to every `page()` call.
 
@@ -129,7 +129,7 @@ Segment automatically calls a `page()` event whenever a web page loads. This mig
 > note ""
 > **Note**: When you trigger a page() call manually, make sure the call happens after the UI element is successfully displayed, not when it is called. It shouldn’t be called as part of the click event that initiates it.
 
-For more info on Page calls, please review  our [**general Page docs**](https://segment.com/docs/spec/page/) and [**analytics.js docs**](https://segment.com/docs/sources/website/analytics.js/#page).
+For more info on Page calls, please review  our [**general Page docs**](https://segment.com/docs/spec/page/) and [**analytics.js docs**](https://segment.com/docs/connections/sources/catalog/website/javascript/#page).
 
 ## When to Call Screen()
 
@@ -245,7 +245,7 @@ The following properties should be sent with every track() call:
 
 ## How to Call
 
-Track() can be called from any of Segment’s client-side or server-side libraries, including [Javascript](https://segment.com/docs/sources/website/analytics.js/), [iOS](https://segment.com/docs/sources/mobile/ios), [Android](https://segment.com/docs/sources/mobile/android), [Ruby](https://segment.com/docs/sources/server/ruby/), and [Python](https://segment.com/docs/sources/server/python/).  Here are two examples of calling track from two different libraries:
+Track() can be called from any of Segment’s client-side or server-side libraries, including [Javascript](https://segment.com/docs/connections/sources/catalog/website/javascript/), [iOS](https://segment.com/docs/connections/sources/catalog/mobile/ios), [Android](https://segment.com/docs/connections/sources/catalog/mobile/android), [Ruby](https://segment.com/docs/connections/sources/catalog/server/ruby/), and [Python](https://segment.com/docs/connections/sources/catalog/server/python/).  Here are two examples of calling track from two different libraries:
 **Javascript (client-side) track() call:**
 ```js
 analytics.track('Article Bookmarked', {
