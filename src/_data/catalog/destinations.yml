@@ -3657,7 +3657,7 @@ items:
       Braze that have a `name` associated with them. For example,
       `page('Signup')` would translate to **Viewed Signup Page** in Braze.
     settings: []
-   - name: onlyTrackKnownUsersOnWeb
+  - name: onlyTrackKnownUsersOnWeb
     display_name: Only Track Known Users
     type: BOOLEAN
     deprecated: false
