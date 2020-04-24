@@ -3657,6 +3657,15 @@ items:
       Braze that have a `name` associated with them. For example,
       `page('Signup')` would translate to **Viewed Signup Page** in Braze.
     settings: []
+  - name: onlyTrackKnownUsersOnWeb
+    display_name: Only Track Known Users
+    type: BOOLEAN
+    deprecated: false
+    required: false
+    description: >-
+      *Web Only* If enabled, this new setting delays calling of `window.appboy.initialize`
+       until there is an identify call that includes a valid `userId`. When enabled,
+       events for anonymous users will no longer be sent to Braze.
   - name: updateExistingOnly
     display_name: Update Existing Users Only
     type: BOOLEAN
