@@ -1,6 +1,6 @@
 ---
 title: Analytics for Node.js
-redirect_from: '/connections/sources/catalog/libraries/server/node-js'
+redirect_from: '/connections/sources/catalog/libraries/server/node'
 ---
 
 Our Node.js library lets you record analytics data from your node code. The requests hit our servers, and then we route your data to any destinations you have enabled.
