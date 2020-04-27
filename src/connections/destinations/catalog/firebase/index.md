@@ -27,7 +27,8 @@ buildscript {
 apply plugin: 'com.google.gms.google-services'
 ```
 
-**NOTE:** The Firebase SDK requires android resources which are available on `aar` packages. Use the `aar` package when adding the Segment-Firebase SDK.
+> note ""
+> **Note:** The Firebase SDK requires android resources which are available on `aar` packages. Use the `aar` package when adding the Segment-Firebase SDK.
 
 ***Project-level build.gradle***: Add Google Services dependency and their Maven repo location to repositories:
 
