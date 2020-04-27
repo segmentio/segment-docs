@@ -51,9 +51,11 @@ Yes! [Tracking Plan Libraries](/docs/protocols/tracking-plan/#tracking-plan-prop
 
 ### What is the difference between Violations Emails and the Violations page in the Segment UI?
 **Violations Daily Digest**
+<br>
 The daily digest contains unique violations within a 48 hour period for the previous day, sent at around 12AM EST. This means that if event “foo” had violations on the 1st of the month, the next time it will appear in the digest will be on the 3rd of the month. This helps users become informed of new violations that they may overlook through the Protocols Violations page. The fields included in the email are the event name, property name, the type of violation, the number of times that specific type of violation was seen, and the last time that that violation was seen. Users will get email digests per source. There is no opting in/out of sources.
 
 **Protocols Violations Page**
+<br>
 The Protocols Violations page contains a live count for violations, seen for the timeframe that the user has chosen for either the last hour, the last 24 hours, or the last 7 days. The difference between this count and the digest count is due to both the times that users view the Protocols Violations page (during the daytime, instead of exactly at 12AM EST), and the fact that the digest only shows unique violations. The fields included in the page are more detailed than the digest fields. There are different violations pages per source.
 
 ## Protocols Enforcement
