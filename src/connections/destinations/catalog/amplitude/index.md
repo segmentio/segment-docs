@@ -317,6 +317,8 @@ In our client side, iOS, and Android components, if the preferred `logRevenueV2`
 | `revenueType` | `revenueType` (Server-side only)| The type of revenue (e.g. tax, refund, income). |
 | `revenue`  |  `reveue` (Server-side only) | The revenue collected.  |
 | `eventProperties` | Any remaining properties (Server-side only) | A NSDictionary or Map of event properties to include in the revenue event. |
+
+
 ^ In our A.js, iOS and Android components, if `properties.price` is not present, Segment will fallback to `revenue` and send that as `price`. In addition, in our iOS and Android components, if `revenue` isn't present either,  we'll do an additional fallback to `total`.
 
 **Note:** If your site allows for users to perform a single transaction with multiple different products (such as a shopping cart checkout), we recommend using an [Order Completed](/docs/connections/destinations/catalog/amplitude/#order-completed) event to track revenue with Amplitude.

@@ -362,7 +362,7 @@ The `ready` method has the following fields:
 
 ## Querystring API
 
-`analytics.js` can trigger track and identify events based on the URL querystring. This is helpful for tracking email click throughs, social media clicks and digital advertising.
+`analytics.js` can trigger track and identify events based on the URL querystring. This is helpful for tracking email click throughs, social media clicks, and digital advertising as well as for cross-domain tracking.
 
 Here are the query parameters to use:
 
@@ -506,6 +506,12 @@ analytics.reset();
 ```
 
 Note: The reset method only clears the cookies and localStorage set by Segment, not the those of integrated end-tools, as their native libraries might set their own cookies to manage user tracking, sessions, and manage state. To completely clear out the user session, check the documentation provided by those tools.
+
+
+## Cross-Subdomain Analytics	
+
+Analytics.js tracks across subdomains out of the box; all of our destinations fully support this feature.	
+
 
 ## Anonymous ID
 
