@@ -2,17 +2,26 @@
 title: Protocols FAQ
 ---
 
+## Protocols Notifications
+
+### How can I subscribe to notifications?
+Users can subscribe via email to a variety of Protocols specific alerts via the workspace Activity Feed settings. To enable, visit your workspace **Settings** > **Notification Settings** > **Protocols**.
+
+![](images/activity_notifications.png)
+
+### How can I get notified when someone makes a change to my tracking plan?
+In addition to getting email notifications, you can also forward alerts to a Segment source and send them to any cloud-mode Segment destination that accepts `analytics.track()` calls. Most customers forward these activity feed events to a data warehouse for analysis.
+
+
+### How do I get notified when new violations are generated? Can I create custom violation notifications?
+In addition to getting email notifications, you can also enable [violation event forwarding](/docs/protocols/tracking-plan/#violation-forwarding) to start delivering violations as `.track()` calls to a Segment Source. From there, you can forward the events to any Segment destination that accepts `.track()` calls.
+
+
 ## Protocols Tracking Plan
 
 ### Do I need to add a Page Viewed event to my tracking plan?
 Yes. To consolidate the views in the Schema tab, we automatically convert `analytics.page()` calls into `Page Viewed` events that appear in the Schema Events view. We recommend adding a `Page Viewed` event to your Tracking Plan with any properties you want to validate against. At this time, you cannot validate that a specific named page (`analytics.page('Homepage')`) has a specific set of required properties.
 
-### How can I get notified when someone makes a change to my tracking plan?
-Users can subscribe via email to a variety of Protocols specific alerts via the workspace Activity Feed settings. To enable, visit your workspace **Settings** > **Activity Feed Settings** > **Protocols**.
-
-You can also forward alerts to a Segment source and send them to any cloud-mode Segment destination that accepts `analytics.track()` calls. Most customers forward these activity feed events to a data warehouse for analysis.
-
-![](images/activity_feed.png)
 
 ### How can I see who made changes to my Tracking Plan?
 Each Tracking Plan includes a Changelog which shows which changes were made by which users. To view it, open a Tracking Plan, click the **...** button (also known as the dot-dot-dot, or ellipses menu) next to the Edit Tracking Plan button, and click **View Changelog**.
@@ -40,8 +49,12 @@ Yes! [Tracking Plan Libraries](/docs/protocols/tracking-plan/#tracking-plan-prop
 
 ## Protocols Validation
 
-### How do I get notified when new violations are generated? Can I create custom violation notifications?
-To receive a daily digest of current and new violations, please email protocols(at)segment.com with a link to your workspace and preferred email address(es) to deliver the violation email summaries to. You can also enable [violation event forwarding](/docs/protocols/tracking-plan/#violation-forwarding) to start delivering violations as `.track()` calls to a Segment Source. From there, you can forward the events to any Segment destination that accepts `.track()` calls.
+### What is the difference between Violations Emails and the Violations page in the Segment UI?
+**Violations Daily Digest**
+The daily digest contains unique violations within a 48 hour period for the previous day, sent at around 12AM EST. This means that if event “foo” had violations on the 1st of the month, the next time it will appear in the digest will be on the 3rd of the month. This helps users become informed of new violations that they may overlook through the Protocols Violations page. The fields included in the email are the event name, property name, the type of violation, the number of times that specific type of violation was seen, and the last time that that violation was seen. Users will get email digests per source. There is no opting in/out of sources.
+
+**Protocols Violations Page**
+The Protocols Violations page contains a live count for violations, seen for the timeframe that the user has chosen for either the last hour, the last 24 hours, or the last 7 days. The difference between this count and the digest count is due to both the times that users view the Protocols Violations page (during the daytime, instead of exactly at 12AM EST), and the fact that the digest only shows unique violations. The fields included in the page are more detailed than the digest fields. There are different violations pages per source.
 
 ## Protocols Enforcement
 
