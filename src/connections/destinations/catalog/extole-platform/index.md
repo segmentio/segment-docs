@@ -2,7 +2,7 @@
 title: Extole Destination
 rewrite: true
 beta: true
-redirect_from: '/connections/destinations/catalog/extole'
+redirect_from: '/connections/destinations/catalog/extole/'
 ---
 
 
@@ -27,7 +27,7 @@ This destination is maintained by Extole. For any issues with the destination, p
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls are sent to Extole as an `identify` event. 
+If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls are sent to Extole as an `identify` event.
 Segment sends Identify calls to Extole as an `identify` event. Extole creates a new profile or updates an existing one. The table below lists how the basic traits are mapped:
 
 | Segment Traits | Extole Properties |
