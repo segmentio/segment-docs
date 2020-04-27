@@ -1,6 +1,6 @@
 ---
 title: Rockerbox Destination
-redirect_from: '/connections/destinations/catalog/hindsight'
+redirect_from: '/connections/destinations/catalog/hindsight/'
 ---
 
 ## Getting Started

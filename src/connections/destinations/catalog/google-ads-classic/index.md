@@ -1,6 +1,6 @@
 ---
 title: Google Ads (Classic) Destination
-redirect_from: '/connections/destinations/catalog/adwords'
+redirect_from: '/connections/destinations/catalog/adwords/'
 ---
 
 Our Google Ads (Classic) destination code is open-source on GitHub if you want to check it out.
