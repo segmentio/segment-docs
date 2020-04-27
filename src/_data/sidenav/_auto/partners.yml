@@ -2,7 +2,7 @@ sections:
 - section_title: Partners
   section:
   - path: /partners
-    title: Join the Segment Platform
+    title: Developer Center Overview
   - path: /partners/build-functions
     title: Building a Subscription Function
   - path: /partners/build-webhook
