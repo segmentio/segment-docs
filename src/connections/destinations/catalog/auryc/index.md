@@ -14,7 +14,9 @@ _**NOTE:** The Auryc Destination is currently in beta, which means that they are
 
 1. Go to your [Auryc Installation Guides](https://portal.auryc.com/auth/session?modal=integrations) and click  **Install Segment**.
 2. On the Segment page, log in and authorize the Auryc Destination. 
-3. And you’re done! After clicking "Allow", you will be rerouted back to Auryc where the completion of the installation will be confirmed.
+3. Select the workspace and source you to add Auryc to, and click **Allow**.
+
+And you’re done! Once you click "Allow", Auryc shows an installation confirmation message.
 
 ## Identify
 
