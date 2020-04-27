@@ -143,7 +143,7 @@ The following operators are available.
 
 ## Connecting your Computed Trait to a Destination
 
-User-level computed Traits are sent to destinations on our platform through the [identify](/docs/connections/spec/identify/) call as a user trait. The trait name will correspond to the snake-cased name that you can find in the trait settings, for e.g. `most_viewed_page_category`. You can find the list of destinations [here](/docs/personas/using-personas-data//#compatible-personas-destinations)
+User-level computed Traits are sent to destinations on our platform through the [identify](/docs/connections/spec/identify/) call as a user trait. The trait name will correspond to the snake-cased name that you can find in the trait settings, for e.g. `most_viewed_page_category`. You can find the list of destinations [here](/docs/personas/using-personas-data/#compatible-personas-destinations)
 
 ![](images/1525837601768.png)
 
