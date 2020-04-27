@@ -12,7 +12,7 @@ _**NOTE:** The Auryc Destination is currently in beta, which means that they are
 
 {% include content/connection-modes.md %}
 
-1. Go to your [Auryc Installation Guides](https://portal.auryc.com/auth/session?modal=integrations) and click the button “Install Segment”.
+1. Go to your [Auryc Installation Guides](https://portal.auryc.com/auth/session?modal=integrations) and click  **Install Segment**.
 2. You will then be routed to Segment where you will be prompted to login and authorize the Auryc Destination. Select the workspace and source you would like to integrate and click the button “Allow”.
 3. And you’re done! After clicking "Allow", you will be rerouted back to Auryc where the completion of the installation will be confirmed.
 
