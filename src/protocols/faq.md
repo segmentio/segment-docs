@@ -5,12 +5,12 @@ title: Protocols FAQ
 ## Protocols Notifications
 
 ### How can I subscribe to notifications?
-Users can subscribe via email to a variety of Protocols specific alerts via the workspace Activity Feed settings. To enable, visit your workspace **Settings** > **Notification Settings** > **Protocols**.
+You can subscribe via email to a variety of Protocols specific alerts by email through the workspace Activity Feed settings. To enable, visit your workspace **Settings** > **Notification Settings** > **Protocols**.
 
 ![](images/activity_notifications.png)
 
 ### How can I get notified when someone makes a change to my tracking plan?
-In addition to getting email notifications, you can also forward alerts to a Segment source and send them to any cloud-mode Segment destination that accepts `analytics.track()` calls. Most customers forward these activity feed events to a data warehouse for analysis.
+You can also forward alerts to a Segment source, which can then send them to any (cloud-mode) Segment destination that accepts Track calls, including data warehouses. Most customers forward these activity feed events to a data warehouse for analysis.
 
 
 ### How do I get notified when new violations are generated? Can I create custom violation notifications?
@@ -20,7 +20,7 @@ In addition to getting email notifications, you can also enable [violation event
 ## Protocols Tracking Plan
 
 ### Do I need to add a Page Viewed event to my tracking plan?
-Yes. To consolidate the views in the Schema tab, we automatically convert `analytics.page()` calls into `Page Viewed` events that appear in the Schema Events view. We recommend adding a `Page Viewed` event to your Tracking Plan with any properties you want to validate against. At this time, you cannot validate that a specific named page (`analytics.page('Homepage')`) has a specific set of required properties.
+Yes. To consolidate the views in the Schema tab, Segment automatically converts `page` calls into `Page Viewed` events that appear in the Schema Events view. We recommend adding a `Page Viewed` event to your Tracking Plan with any properties you want to validate against. At this time, you cannot validate that a specific named page (`analytics.page('Homepage')`) has a specific set of required properties.
 
 
 ### How can I see who made changes to my Tracking Plan?
@@ -56,7 +56,7 @@ The daily digest contains unique violations within a 48 hour period for the prev
 
 **Protocols Violations Page**
 <br>
-The Protocols Violations page contains a live count for violations, seen for the timeframe that the user has chosen for either the last hour, the last 24 hours, or the last 7 days. The difference between this count and the digest count is due to both the times that users view the Protocols Violations page (during the daytime, instead of exactly at 12AM EST), and the fact that the digest only shows unique violations. The fields included in the page are more detailed than the digest fields. There are different violations pages per source.
+The Protocols Violations page contains a live count for violations, seen for the timeframe that the user has chosen for either the last hour, the last 24 hours, or the last 7 days. The difference between this count and the digest count is due to both the times that users view the Protocols Violations page (during the daytime, instead of exactly at 12AM EST), and the fact that the digest only shows unique violations. The fields included in the page are more detailed than the digest fields. 
 
 ## Protocols Enforcement
 
