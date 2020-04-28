@@ -14,7 +14,7 @@ You can also forward alerts to a Segment source, which can then send them to any
 
 
 ### How do I get notified when new violations are generated? Can I create custom violation notifications?
-In addition to getting email notifications, you can also enable [violation event forwarding](/docs/protocols/tracking-plan/#violation-forwarding) to start delivering violations as `.track()` calls to a Segment Source. From there, you can forward the events to any Segment destination that accepts `.track()` calls.
+You can also enable [violation event forwarding](/docs/protocols/tracking-plan/#violation-forwarding) to start delivering violations as Track calls to a Segment Source. From there, you can forward the events to any Segment destination that accepts Track calls.
 
 
 ## Protocols Tracking Plan
