@@ -52,8 +52,8 @@ TODO IMAGE
 
 TODO IMAGE
 
-3. Add team members to the group. Search by name or email to locate the team member(s).
-4. Review the group permissions in the panel on the right of the screen and click **Create User Group**
+4. Add team members to the group. Search by name or email to locate the team member(s).
+5. Review the group permissions in the panel on the right of the screen and click **Create User Group**
 
 TODO IMAGE
 
