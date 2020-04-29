@@ -1,13 +1,13 @@
 ---
 title: Leanplum Source
 beta: true
+source-type: event
 ---
 
 [Leanplum](https://leanplum.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a multi-channel customer engagement platform that helps Growth and Marketing teams to achieve their engagement and revenue goals.
 
 When you add Leanplum as a Source, Segment starts collecting Leanplum engagement events (for example, Email Open, Push Delivered), which you can then connect to a destination of your choice or load in your data wharehouse.
 
-> Event source
 > The Leanplum source integration is an event source, which means that it sends Leanplum engagements as events.
 
 Collections represent the different messaging events that Leanplum sends to Segment as a streaming source. In your Segment warehouse, each collection gets its own table, as well as a tracks table that aggregates all the events into a single table.
