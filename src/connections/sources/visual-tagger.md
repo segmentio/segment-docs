@@ -87,7 +87,7 @@ When you choose a Recommended Event, it works much in the same way, but the Even
 <!-- TODO missing image
 ![Select Event Type](images/vt-docs-starterkit-event.gif)-->
 
-## Step 3: Add Details To Your Event
+## Step 2: Add Details To Your Event
 
 When you click on an element on your website, a window appears where you can enter the details for the event.
 
@@ -139,7 +139,7 @@ By default, events created using the Visual Tagger only fire on the same URL as 
 
 If you have similar pages with different URLs such as `/products/1` and `/products/2` and you want to same event to fire on both, you can change the **URL Page Targeting** to match `/products` instead of `/products/1` or any page on the entire website.
 
-## Step 4: Test your event(s)
+## Step 3: Test your event(s)
 
 Once you finish filling out the event details, click **Continue** to go to the Test and Publish screen. On this screen you can test your event to confirm that it works as expected before you publish it.
 
@@ -155,13 +155,13 @@ If something doesn't look right, click **Back** to return to the Build screen an
 
 If you’re having trouble validating your events, check out our [Troubleshooting Tips](#troubleshooting-your-events).
 
-## Step 5: Publish your event(s)
+## Step 4: Publish your event(s)
 
 When you've finished setting up and testing your events, click **Publish**.
 
 Events can take up to 10 minutes appear on your website. Once they are live, events begin sending to Segment when people visit your website and interact with the elements that you created events for. The data from these events appears in the Website Source's Debugger.
 
-## Step 6: Test your event to confirm that it works
+## Step 5: Test your event to confirm that it works
 
 After you publish your event and wait for ~10 minutes, do a last test to make sure your tags are working expected and that you see your data landing in your Segment Debugger.
 
