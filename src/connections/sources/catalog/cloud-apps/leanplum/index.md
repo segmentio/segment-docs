@@ -63,7 +63,7 @@ Below is a list of event properties, which might be associated with each Leanplu
 
 Now that your Source is set up, you can connect it to Destinations.
 
-Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Source docs for troubleshooting.
+Log into your downstream tools and check to see that your events are populating and that they contain all the properties you expect. If all your events and properties are not showing up, refer to the Source docs for troubleshooting.
 
 If there are any issues with how the events are arriving to Segment, please [contact the Leanplum team](mailto:support@leanplum.com).
 
