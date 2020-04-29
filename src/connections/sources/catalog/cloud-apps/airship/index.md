@@ -10,6 +10,9 @@ This Source integration is maintained by Airship. For any issues with the source
 
 _**NOTE:** The Airship Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on July 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the Airship Source and its documentation, please [let  their team know](mailto:partner-integration-ua@airship.com)!_
 
+> success ""
+> **Good to know**: This page is about the Airship Segment source, which sends data _into_ Segment. There's also a page about the [Airship Segment destination](/docs/connections/destinations/catalog/airship/), which receives data from Segment!
+
 
 ## Getting Started
 
