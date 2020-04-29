@@ -17,7 +17,7 @@ The Visual Tagger has two main views: the **Visual Tagger Home** and the **Event
 > **Note**: The website you're tagging must include the Segment analytics.js snippet before you can use the Visual Tagger.
 
 
-## Setting Up Visual Tagger
+## Setting up Visual Tagger
 
 ### Before you begin
 
@@ -32,7 +32,7 @@ Get the following things set up before you use Visual Tagger:
    If you're having trouble with this step, follow the [Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
 4. **Chrome browser**. Visual Tagger is only supported for Chrome browser at this time.
 
-## Enable Visual tagger
+## Enable Visual Tagger
 
 Once you have all of the prerequisites set up, you're ready to get started:
 
@@ -87,7 +87,7 @@ When you choose a Recommended Event, it works much in the same way, but the Even
 <!-- TODO missing image
 ![Select Event Type](images/vt-docs-starterkit-event.gif)-->
 
-## Step 2: Add Details To Your Event
+## Step 2: Add details to the event
 
 When you click on an element on your website, a window appears where you can enter the details for the event.
 
@@ -139,7 +139,7 @@ By default, events created using the Visual Tagger only fire on the same URL as 
 
 If you have similar pages with different URLs such as `/products/1` and `/products/2` and you want to same event to fire on both, you can change the **URL Page Targeting** to match `/products` instead of `/products/1` or any page on the entire website.
 
-## Step 3: Test your event(s)
+## Step 3: Test the event(s)
 
 Once you finish filling out the event details, click **Continue** to go to the Test and Publish screen. On this screen you can test your event to confirm that it works as expected before you publish it.
 
@@ -153,15 +153,15 @@ If something doesn't look right, click **Back** to return to the Build screen an
 
 ![Test Your Event](images/vt-docs-6.gif)
 
-If you’re having trouble validating your events, check out our [Troubleshooting Tips](#troubleshooting-your-events).
+If you’re having trouble validating your events, check out our [Troubleshooting Tips](#troubleshooting-visual-tagger-events).
 
-## Step 4: Publish your event(s)
+## Step 4: Publish the event(s)
 
 When you've finished setting up and testing your events, click **Publish**.
 
 Events can take up to 10 minutes appear on your website. Once they are live, events begin sending to Segment when people visit your website and interact with the elements that you created events for. The data from these events appears in the Website Source's Debugger.
 
-## Step 5: Test your event to confirm that it works
+## Step 5: Test the event to confirm that it works
 
 After you publish your event and wait for ~10 minutes, do a last test to make sure your tags are working expected and that you see your data landing in your Segment Debugger.
 
@@ -176,13 +176,13 @@ All events created using Visual Tagger automatically get a context property that
 
 ![Verify in Debugger](images/vt-docs-7.png)
 
-## Managing and editing your events
+## Managing and editing Visual Tagger events
 
 Once you publish your events, they appear on the **Visual Tagger Home** view in the **All Published Events** table. From here, you can create click **Add Event** to craete new events, and edit or delete existing ones.
 
 ![Visual Tagger Home](images/vt-docs-8.png)
 
-## Troubleshooting Your Events
+## Troubleshooting your events
 
 If your events are not working as expected, try the following steps to troubleshoot the issue.
 
@@ -225,19 +225,19 @@ These are ideal use cases for Visual Tagger:
 
 - Understanding your ecommerce funnel, how users browse and filter products, add them to cart before checking out and completing an order
 
-- Learn more about how users use your product or service, after logging in. Track key semantic events in your product such as Project Created (project mngt app), Account Upgraded, Listing Favorited (apartment rental site) etc to learn about adoption, engagement, and retention
+- Learn more about how users use your product or service, after logging in. Track key semantic events in your product such as Project Created (project management app), Account Upgraded, Listing Favorited (apartment rental site) etc to learn about adoption, engagement, and retention
 
 These are examples of when to augment with coded instrumentation:
 
-Depth of instrumentation
+#### Depth of instrumentation
 
 - After understanding the basic ecommerce funnel, you might want to go deeper and understand the value of orders, or value of products abandoned in the cart. This requires careful formatting of the price, for each product in the cart, which is not supported by Visual Tagger.
-- Similarly if you want to use Google Analytics Ecommerce functionality, some events must have the order_id sent as a property which is not supported by Visual Tagger yet.
-- Associate events with the logged in user requires that you instrument an identify call in code.
+- Similarly if you want to use Google Analytics Ecommerce functionality, some events must have the `order_id` sent as a property which is not supported by Visual Tagger yet.
+- Associating events with the logged in user requires that you instrument an identify call in code.
 
-Frequency of change
+#### Frequency of change
 
-- If your website or application changes frequently, you will need to keep track of each change and update Visual Tagger events accordingly. In that situation, it can be beneficial for the engineering team to have the event tracking in code and update at the same time as changing how a feature work.
+If your website or application changes frequently, you will need to keep track of each change and update Visual Tagger events accordingly. In that situation, it can be beneficial for the engineering team to have the event tracking in code and update at the same time as changing how a feature work.
 
 ### Will using Visual Tagger impact my site or app's performance?
 
