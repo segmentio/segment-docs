@@ -1,0 +1,19 @@
+.feedback-template {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 15px 10px 10px;
+  transition: 200ms ease;
+
+  &__textarea {
+    width: 260px;
+    border: none;
+    resize: none;
+    color: color(gray-dark);
+    outline: none;
+
+    &::placeholder {
+      color: #8ea5a9;
+    }
+  }
+}

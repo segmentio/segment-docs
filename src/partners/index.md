@@ -1,5 +1,5 @@
 ---
-title: Join the Segment Platform
+title: Developer Center Overview
 ---
 
 > note ""
