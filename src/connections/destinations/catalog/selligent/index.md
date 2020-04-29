@@ -1,6 +1,7 @@
 ---
 beta: true
 title: Selligent Destination
+hidden: true
 ---
 
 This destination is built and supported by Selligent. If you run into any issues with the destination, please reach out to the Selligent Support Team.
