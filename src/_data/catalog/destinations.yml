@@ -4015,8 +4015,7 @@ items:
   logo:
     url: 'https://cdn.filepicker.io/api/file/531aEP0LQpW4mKpxhOfx'
   mark:
-    url: >-
-      https://public-segment-devcenter-production.s3.amazonaws.com/03f0c75f-6fa8-44e9-96b2-8c6a13ea24f3.svg
+    url: 'https://cdn.filepicker.io/api/file/7SR7HsqDRiOv6t8LsaXb'
   categories:
   - Customer Success
   - Personalization
@@ -11674,9 +11673,9 @@ items:
   url: connections/destinations/catalog/livechat
   status: PUBLIC
   logo:
-    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/livechat-default.svg'
+    url: 'https://cdn.filepicker.io/api/file/ObR9F3DnQgGdKQQtGBwe'
   mark:
-    url: ''
+    url: 'https://cdn.filepicker.io/api/file/j48KV2RNQfkrJxumy31A'
   categories:
   - Livechat
   components:
