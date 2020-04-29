@@ -3,6 +3,7 @@ title: 'Selligent Source'
 source-type: event
 hidden: true
 ---
+<!-- Paul Y - Apr 29,2020, add hidden flag as it's deprecated & being replaced with a new version-->
 Selligent is a cross-channel marketing platform that allows brands to effectively engage with their customers across email, mobile, social, display and web channels.
 
 Take your company's email analysis to the next level by **adding Selligent as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse.
