@@ -472,6 +472,23 @@ items:
   - Feature Flagging
   - A/B Testing
   type: event
+- display_name: Leanplum
+  slug: leanplum
+  name: catalog/sources/leanplum
+  description: >-
+    Leanplum is a multi-channel customer engagement platform that helps Growth
+    and Marketing teams to achieve their engagement and revenue goals.
+  url: connections/sources/catalog/cloud-apps/leanplum
+  logo:
+    url: 'https://d3hotuclm6if1r.cloudfront.net/logos/leanplum-default.svg'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/NjOJdNcxTzChYbhsKvHa'
+  categories:
+  - SMS & Push Notifications
+  - A/B Testing
+  - Email Marketing
+  - Personalization
+  type: event
 - display_name: Looker
   slug: looker
   name: catalog/sources/looker
