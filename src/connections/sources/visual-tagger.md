@@ -45,7 +45,7 @@ Once you have all of the prerequisites set up, you're ready to get started:
    ![Getting Started Steps](images/vt-docs-website-type.png)
 5. The next screen shows **Recommended Events**, and you can choose which ones are relevant to your site. (You can also track any events beyond the recommended ones!)
    ![Getting Started Steps](images/vt-docs-setup-starterkit.png)
-6. The UI then loads a page with your website in an internal frame. Click one of the event type names to select it and begin configuring. We'll go over these in the following sections.
+6. The UI then loads a page with your website in an internal frame. Click one of the event type names to select it and begin configuring. We'll go over these [in the following sections](#step-1-choose-the-event-type).
 
 As you click each event, you're prompted to select the part of the website that should trigger the event, and describe the properties that event should have.
 <!-- TODO: this image is outdated
@@ -57,16 +57,15 @@ You are now ready to tag events on your website!
 > **Tip**: If you ever need to get back to this screen, you can navigate to the Javascript website source again, click the **Visual tagger** tab, then click **Add Event**.
 
 
+## Step 1: Choose the event type and select an element
 
-## Step 1: Choose the event type
-
-To create events, start in the **Event Editor**. This page shows an iframe with your website.
+To create events, start in the **Event Editor** on the **Build** screen. This page shows an iframe with your website.
 
 ![Start Drafting Your Event](images/vt-docs-3.png)
 
-You can either choose one of the Recommended Events, or you can Add Event from scratch.
+You can either choose one of the Recommended Events, or you can click **Add Event** and create a whole new one. Recommended Events works the same way, except that the Event Name is set for you, and each event comes with a set of default properties.
 
-We will start with Add Event. You can create three types:
+When you click **Add Event**, three types of events are available:
 
 - **Button or Link Click**. Select any `button` and `link` elements on the page to create events that fire when a user clicks that button or link. Depending on how your website is built, some elements that look like buttons might not actually be CSS "button" elements - use the "Any Element Click" event instead for these elements.
 
@@ -74,10 +73,7 @@ We will start with Add Event. You can create three types:
 
 - **Any Element Click**. Selecting this option will allow you to click on any element on your page. This will allow you to create an event for whenever a user on your website clicks on that element.
 
-
 ![Select Event Type](images/vt-docs-4.gif)
-
-## Step 2: Select an element
 
 Once you choose an event type, mouse over your website in the iframe to highlight elements that you can select to create an event, and click one to start the process.
 
@@ -96,9 +92,7 @@ When you choose a Recommended Event, it works much in the same way, but the Even
 When you click on an element on your website, a window appears where you can enter the details for the event.
 
 1. **Event Name**. Edit the event name to be simple yet descriptive.
-   Segment recommends the following when naming events:
-   - Use an "Object Action" format (for example, `Blog Post Clicked`)
-   - Use Title Case (the first letter of each word is capitalized).
+   Segment recommends that you use an "Object Action" format (for example, `Blog Post Clicked`, and use Title Case (the first letter of each word is capitalized) when naming events.
 
 2. **Properties**. Add properties to the event to add contextual information about the action that the user took. Properties are optional, but they are very helpful when you analyze events data later.
    - Use `snake_case` for property names (all lowercase, with spaces between words represented as an underscore “_”). For a guide on event naming best practices, check out our Docs [here](https://segment.com/docs/protocols/data-quality/#formalize-your-naming-and-collection-standards).
@@ -108,7 +102,7 @@ When you click on an element on your website, a window appears where you can ent
 
 Once you're satisfied with the event name and properties, click **Add**.
 
-> sucess ""
+> success ""
 > **Tip**! You can create more than one event before you move on to the next step.
 
 ![Edit Event Details](images/vt-docs-5.png)
@@ -119,17 +113,17 @@ When you use Visual Tagger, you can create **static properties** by entering the
 
 You can also create **dynamic properties** by selecting a piece of text from the website that you want as the value for that property. When a property is dynamic, its value is different depending on what the user clicked.
 
-For example, if you run an e-commerce web shop and want to create an event every time someone clicks on a product on your search results page, you would create a `Product Clicked` event.
+For example, if you run an e-commerce web shop and want to create an event that fires every time a user clicks on a product on your search results page, you would create a `Product Clicked` event.
 
-- To specify where the event was fired from, you would want to add a property called `location` to the event. You would hardcode the value of that property to be "Search Results Page". This is an example of a static property.
+- To specify where the event was fired from, you would add a property called `location` to the event. You would hardcode the value of that property as "Search Results Page". This is an example of a static property.
 
-- To indicate which product the user clicked, you can add a property called `product_name` to the event. You can use the Visual Tagger "select from page" feature to select the piece of text that says the product name from your website in the iframe. Depending on what users click, the value of the `product_name` property would be different.
+- To show which product the user clicked, you can add a property called `product_name` to the event. You can use the Visual Tagger "select from page" feature to select the text on the iframe-version of your website that gives the product name. The value of the `product_name` property would then be different, depending on what users click.
 
 ### More information on forms
 
-When you tag a form you, can track that the user submitted the form, and also update traits about the user.
+When you tag a form you can track both that the user _submitted_ the form, and also update traits about the user.
 
-This is useful if the form collects information about the user (such as Name, Email, Country). Forms where this is not useful would be a Search or Add To Cart form.
+This is useful if the form collects information about the user (such as Name, Email, Country). (This wouldn't be useful on a Search or Add To Cart form.)
 
 This is an illustration of how traits and events might appear for a user in a Destination or Personas.
 
@@ -149,11 +143,11 @@ If you have similar pages with different URLs such as `/products/1` and `/produc
 
 Once you finish filling out the event details, click **Continue** to go to the Test and Publish screen. On this screen you can test your event to confirm that it works as expected before you publish it.
 
-Test your events by clicking around on your website in the iframe, and doing things that should trigger the event.
+Test your events by clicking around on your website in the iframe, and doing things on the iframe-version of your site that should trigger the event.
 
 - When the event fires, a green icon appears in the Test Status column.
 - If the event fires, but does not contain any properties you created, the Test Status lists the errors.
-- If the event does not fire the Test Status remains grey.
+- If the event does not fire, the Test Status remains grey.
 
 If something doesn't look right, click **Back** to return to the Build screen and edit your tags.
 
@@ -169,13 +163,18 @@ Events can take up to 10 minutes appear on your website. Once they are live, eve
 
 ## Step 6: Test your event to confirm that it works
 
-Now that you have published your event and waited for ~10 minutes, it's time to make sure that it will fire as expected and that you see your data landing in your Segment Debugger.
+After you publish your event and wait for ~10 minutes, do a last test to make sure your tags are working expected and that you see your data landing in your Segment Debugger.
 
-In one window, open up your website where you created the event. In another window (side by side), open the **Segment Debugger** for your Source. The Debugger is a tool provided by Segment that is a livestream of all of the data coming into Segment for that Source. Please note that the Debugger is automatically paused after ~1 minute of idle time, so be sure to refresh the page if you leave it idle for an extended period of time.
+In one window, open up your website where you created the event. In another window (side by side), open the **Segment Debugger** for your Javascript Source. The Debugger is a Segment tool that shows a live stream of the data coming from that Source.
 
-On your website, pretend that you are an end-user and try to trigger the event that you created in Visual Tagger, and watch the Debugger to confirm that the event has fired when you take that action. All events created using Visual Tagger automatically get a context property that says `"visual_tagger" : true` so that you can easily distinguish between events that you have implemented using Visual Tagger versus events that you implemented using code.
+> info ""
+> **Good to know**: The Debugger automatically pauses after ~1 minute of idle time. Refresh the page if you leave and come back to it, and don't see new data.
 
-  ![Verify in Debugger](images/vt-docs-7.png)
+On your website, pretend that you are an end-user and try to trigger the event that you created in Visual Tagger. Watch the Debugger in the other window to confirm that the event fired when you took that action.
+
+All events created using Visual Tagger automatically get a context property that says `"visual_tagger" : true` so that you can easily distinguish between events that you implemented using Visual Tagger and events that you implemented using code.
+
+![Verify in Debugger](images/vt-docs-7.png)
 
 ## Managing and editing your events
 
