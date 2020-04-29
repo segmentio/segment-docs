@@ -3,11 +3,17 @@ title: Identity & Access Management Overview
 ---
 Access management lets workspace owners manage which users can access different parts of their Segment workspaces.
 
-![](images/access-mgmt-overview.png)
+TODO IMAGE
 
-{% include components/media-icon.html href="/segment-app/iam/membership/" icon="media/icon-academy.svg" title="Add and manage workspace members" content="Learn how to add members to your workspace, and manage their permissions." variant="related" %}
+## Quick Links
+TODO LINK TO HEADINGS
+  - [How to invite a team member to your workspace](/segment-app/iam/membership/)
+  - [How to create a User Group](/segment-app/iam/membership/)
+  - [How to update a team members' access](/segment-app/iam/membership)
+  - [How to remove a team member from a workspce](/segment-app/iam/membership)
+  - [Adding a new user with Single Sign On](/segment-app/iam/membership)
 
-TODO - add other quick links
+~{% include components/media-icon.html href="/segment-app/iam/membership/" icon="media/icon-academy.svg" title="Add and manage workspace members" content="Learn how to add members to your workspace, and manage their permissions." variant="related" %}~
 
 Access is scoped to a workspace. A Segment user is associated with one or more workspaces, either as an `owner` or `member` of each.
 Users access their Segment account with either email/password credentials, or by using Single Sign On. rach was here
