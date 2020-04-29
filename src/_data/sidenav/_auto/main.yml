@@ -159,6 +159,8 @@ sections:
   section:
   - path: /personas
     title: Personas Overview
+  - path: /personas/setup-guide
+    title: Personas set up guide
   - path: /personas/identity-resolution
     title: 'Personas: Identity Resolution'
   - path: /personas/computed-traits
@@ -167,8 +169,8 @@ sections:
     title: 'Personas: SQL Traits'
   - path: /personas/audiences
     title: 'Personas: Audiences'
-  - path: /personas/activation
-    title: 'Personas: Activation'
+  - path: /personas/using-personas-data
+    title: 'Using Personas Data'
   - path: /personas/warehouses
     title: Personas and Warehouses
   - path: /personas/profile-api

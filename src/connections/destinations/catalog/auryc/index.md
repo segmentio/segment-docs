@@ -12,10 +12,11 @@ _**NOTE:** The Auryc Destination is currently in beta, which means that they are
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for Auryc within the Destinations Catalog and confirm the Source you'd like to connect to. Please note the source must be sending events via our Javascript library Analytics.js.
-3. Add your Auryc site id in the destination settings. You can find this in Auryc by navigating to Project Settings > Web > and copying the value found on the line //cdn.auryc.com/auryc_siteid_here/container.js;
-4. In about 45 minutes the CDN will be updated and Auryc snippet will be initialized onto your page.
+1. Go to your [Auryc Installation Guides](https://portal.auryc.com/auth/session?modal=integrations) and click  **Install Segment**.
+2. On the Segment page, log in and authorize the Auryc Destination. 
+3. Select the workspace and source you to add Auryc to, and click **Allow**.
+
+And you’re done! Once you click "Allow", Auryc shows an installation confirmation message.
 
 ## Identify
 

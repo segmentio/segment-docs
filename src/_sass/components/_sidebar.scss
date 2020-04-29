@@ -13,10 +13,11 @@
     position: sticky;
     top: 32px;
     left: 0;
+    z-index: 1;
   }
 
   &--scroll {
-    max-height: calc(100vh - 400px);
+    max-height: calc(100vh - 200px);
 
     ::-webkit-scrollbar {
       width: 5px;

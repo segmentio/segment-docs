@@ -181,6 +181,8 @@ sections:
   section:
   - path: /personas
     title: Personas Overview
+  - path: /personas/quickstart
+    title: Personas Quickstart Guide
   - section_title: Personas Identity Resolution
     slug: personas/personas-identity-resolution
     section:
