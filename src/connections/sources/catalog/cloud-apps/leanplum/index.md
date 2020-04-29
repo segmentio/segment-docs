@@ -20,7 +20,7 @@ Leanplum calls the Source integration "Segment Feed" - this is the name you will
 
 1. From the Segment Sources page click **Add Source**.
 2. Search for “Leanplum” in the Sources Catalog click “Connect”.
-3. Configure your source and give it a name. This will also generate a schema, which will create a namespace you’ll query against in a warehouse. We recommend you name your source to represent the environment you are setting up (e.g. Prod, Dev, Staging)
+3. Configure your source and give it a name. This also generates a schema, which creates a namespace you can query against in a warehouse. We recommend that you name your source to represent the environment you are setting up (for example, Prod, Dev, Staging)
 4. On the overview page you will see the Segment write key. Copy it.
 5. Go to your Leanplum dashboard. In the navigation, under "More", find your Partner Integrations page. Open the configuration for Segment.
 6. Find the "Feed" setup, paste your Segment write key there and click "Save".
