@@ -190,9 +190,9 @@ If your events are not working as expected, try the following steps to troublesh
 
 - Ensure that analytics.js is implemented on your website. You can confirm this by visiting your website and watching the Segment Debugger. A `page` call should flow into your Debugger whenever someone visits a page on your website if you have implemented analytics.js. Please note that if you have an adblocker enabled when you visit your website, data will not get fired into Segment when you interact with your website.
 
-- Confirm that the CSS selector has not changed in any way for any events that you previously created using Visual Tagger (for example, a button moved locations or disappeared entirely). Because Visual Tagger relies on the CSS selector to tie events to user actions, if the CSS selector changes, the event stops sending. If this happens, edit the event in Visual Tagger and update the CSS selector. Segment does not currently have a way to alert you when events you created using Visual Tagger begin to fail.
+- Confirm that the CSS selector has not changed in any way since you created the event in the Visual Tagger (for example, a button could change locations or be removed entirely). Because Visual Tagger relies on the CSS selector to tie events to user actions, if the CSS selector changes, the event stops sending. If this happens, edit the event in Visual Tagger and update the CSS selector. Segment does not currently have a way to alert you when events you created using Visual Tagger begin to fail.
 
-- Because Visual Tagger relies on stable CSS selectors to fire events from, it is currently not compatible with websites that have CSS selectors that are dynamically generated on every page load. Reach out to beta@segment.com and let us know if this is the case for you.
+- Because Visual Tagger relies on stable CSS selectors to fire events from, it is currently not compatible with websites that have CSS selectors that are dynamically generated on every page load. Contact [beta@segment.com](mailto:beta@segment.com) and let us know if this is the case for you.
 
 - If your website has any iframed components (for example, if you embed Typeforms into your site), Visual Tagger cannot create events for that iframed content. We recommend that you install Segment on the iframed-in site and use Visual Tagger directly on that site.
 
@@ -204,13 +204,15 @@ If your events still don't work as expected, please contact [Segment Customer Su
 
 ### Are there situations where Visual Tagger will not work?
 
-Yes! Visual Tagger relies on CSS selectors, which typically involves what is called "class names" such as "hero" or "footer". Some web technologies autogenerate these names and change them on a regular basis, which makes the Visual Tagger events stop firing. Squarespace uses this technique, and you can examine the HTML of your site to see if the "class names" are randomized letters/numbers.
+Yes! Visual Tagger relies on CSS selectors, which usually involves what is called "class names" such as "hero" or "footer". Some web technologies automatically generate these names and change them on a regular basis, which makes the Visual Tagger events stop firing.
+
+Squarespace uses this technique, and you can examine the HTML of your site to see if the "class names" are randomized letters/numbers.
 
 Visual Tagger also does not support embedded elements, such as a YouTube video player or a Hubspot form.
 
 ### How can I make my website ideal for Visual Tagger?
 
-Unique IDs for each element are the most stable way for Visual Tagger to identify an element, even if the page is reorganized.
+The most stable way for Visual tagger to identify elements is if each one has a unique ID that persists even if the page is reorganized.
 
 ### When should I use Visual Tagger instead of a coded instrumentation?
 
