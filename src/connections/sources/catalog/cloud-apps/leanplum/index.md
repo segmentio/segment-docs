@@ -12,7 +12,7 @@ When you add Leanplum as a Source, we will start collecting Leanplum engagement 
 
 Collections represent the different messaging events that Leanplum sends to Segment as a streaming source. In your Segment warehouse, each collection gets its own table, as well as a tracks table that aggregates all the events into a single table.
 
-This source is maintained by Leanplum. For any issues with the source, please [reach out to their team](mailto:support@leanplum.com).
+This source is maintained by Leanplum. For any issues with the source, please [contact Leanplum Support](mailto:support@leanplum.com).
 
 
 ## Getting Started
