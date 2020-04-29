@@ -4,9 +4,6 @@ beta: true
 source-type: event
 ---
 
-> success ""
-> **Good to know**: This page is about the Leanplum Segment source, which sends data _into_ Segment. There's also a page about the [Leanplum Segment destination](https://segment.com/docs/connections/destinations/catalog/leanplum/), which receives data from Segment!
-
 [Leanplum](https://leanplum.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a multi-channel customer engagement platform that helps Growth and Marketing teams to achieve their engagement and revenue goals.
 
 When you add Leanplum as a Source, Segment starts collecting Leanplum engagement events (for example, Email Open, Push Delivered), which you can then connect to a destination of your choice or load in your data warehouse.
@@ -16,6 +13,9 @@ When you add Leanplum as a Source, Segment starts collecting Leanplum engagement
 Collections represent the different messaging events that Leanplum sends to Segment as a streaming source. In your Segment warehouse, each collection gets its own table, as well as a tracks table that aggregates all the events into a single table.
 
 This source is maintained by Leanplum. For any issues with the source, please [contact Leanplum Support](mailto:support@leanplum.com).
+
+> success ""
+> **Good to know**: This page is about the Leanplum Segment source, which sends data _into_ Segment. There's also a page about the [Leanplum Segment destination](https://segment.com/docs/connections/destinations/catalog/leanplum/), which receives data from Segment!
 
 
 ## Getting Started
