@@ -4,32 +4,41 @@ title: Concepts
 
 ## Team Member
 
-Team Members are individuals with access to Segment.
-They can have access to one or more workspaces, and authenticate either with email/password or Single Sign On.
-An Access Token is used to access our Config API.
+A Segment *Team Member* is an individual with access to a workspace. A Segment user can be associated with one or more workspaces, either as an `owner` or `member` of each.
+  - **Workspace Owners** have access to, and manage all aspects of the workspace.
+  - **Workspace Members** are given access via a set of *roles* corresponding to specific *resources* within the workspace.
+
+# User Groups
+
+A *User Group* is a set of Team Members with a set of shared policies. A Segment Team Member can be a member of one or many Groups. All roles in the Segment App are additive. Group membership may be assigned in addition to individual roles for a single team member - i.e., a single user could inherit roles from a Group definition AND have access to additional resources via individually assigned roles.
+
+# Resources
+
+Resources are the building blocks of Segment:
+  - Workspaces
+  - Sources
+  - Destinations
+  - Warehouses
+  - Personas Spaces
+  - Protocols Tracking Plans
+
+# Labels
+
+Workspace owners can assign users access to groups of resources by using Labels. Labels can be assigned to Sources and Personas Spaces.
+
+To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels for the entire workspace.
+
+  LINKS:
+
+  - [Label-based Access Management](/docs/iam/labels/)
+  - [Labels Best Practices](/docs/iam/labels/)
 
 ## Roles
 
-A role is used to give a user access to resources within a workspace.
+A role is used to give a user access to resources within a workspace. Roles are additive, and can be combined to configure a custom policy for a Team Member or a Group. A policy is at least one role plus one resource applied to an individual user or group.
 
-## Workspace
+## Role Concepts
 
-A Workspace holds your entire Segment configuration, including sources, destinations, warehouses, and so on.
-
-## Resource Types
-
-Resource types are the building blocks of Segment:
-
-- Workspaces
-- Sources
-- Destinations (Streaming Destinations)
-- Warehouses
-- Personas Spaces
-- Tracking Plans
-
-Members can be granted `owner` access to a resource type either globally (for example `owner` access to all warehouses), or to specific instances of a resource (for example only `owner` access to `Redshift`)
-
-## Resource Instances
-
-Your Workspace is a resource instance, as well as everything in it (like your sources `iOS Prod` and `Android Prod`).
-We've designed access management around these resource types, and you can grant roles to all or instances of each.
+**Workspace Owner** Owners have full read and edit access to everything in the workspace, including sources, destinations, add-on products, and settings. Owners have full edit access to all team permissions.
+**Workspace Members** are granted access to a resource or set of resources with additive Roles**.**
+Check out the [Roles documentation for a complete list of roles](/docs/iam/roles/).
