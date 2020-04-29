@@ -3,7 +3,7 @@ beta: true
 title: Selligent Destination
 hidden: true
 ---
-
+<!-- Paul Y - Apr 29,2020, add hidden flag as it's deprecated & being replaced with a new version-->
 This destination is built and supported by Selligent. If you run into any issues with the destination, please reach out to the Selligent Support Team.
 
 ## Getting Started
