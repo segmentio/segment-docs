@@ -19,13 +19,16 @@ buildscript {
     dependencies {
         // Add these lines
         implementation 'com.segment.analytics.android:analytics:4.+'
-        implementation 'com.segment.analytics.android.integrations:firebase:+'
+        implementation 'com.segment.analytics.android.integrations:firebase:+@aar'
     }
 }
 
 // Add to the bottom of the file
 apply plugin: 'com.google.gms.google-services'
 ```
+
+> note ""
+> **Note:** The Firebase SDK requires android resources which are available on `aar` packages. Use the `aar` package when adding the Segment-Firebase SDK.
 
 ***Project-level build.gradle***: Add Google Services dependency and their Maven repo location to repositories:
 

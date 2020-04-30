@@ -1,7 +1,7 @@
 ---
 title: 'User.com Destination'
 beta: true
-redirect_from: '/connections/destinations/catalog/userengage'
+redirect_from: '/connections/destinations/catalog/userengage/'
 ---
 
 This integration is maintained by contact@userengage.com.

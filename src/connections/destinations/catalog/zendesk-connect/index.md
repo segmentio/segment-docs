@@ -1,6 +1,6 @@
 ---
 title: 'Zendesk Connect Destination'
-redirect_from: '/connections/destinations/catalog/outbound'
+redirect_from: '/connections/destinations/catalog/outbound/'
 ---
 
 ## Getting Started

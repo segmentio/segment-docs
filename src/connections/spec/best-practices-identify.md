@@ -1,6 +1,6 @@
 ---
 title: What are best practices for identifying users?
-redirect_from: '/guides/how-to-guides/best-practices-identify'
+redirect_from: '/guides/how-to-guides/best-practices-identify/'
 ---
 
 Tracking sign ups correctly is a key step in your marketing funnels. The process of shifting from an anonymous visitor to an identified user requires some special tracking. This tutorial will help you track newly registered users the right way.

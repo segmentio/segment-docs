@@ -1,6 +1,6 @@
 ---
 title: Optimizely Web Destination
-redirect_from: '/connections/destinations/catalog/optimizely'
+redirect_from: '/connections/destinations/catalog/optimizely/'
 ---
 
 ## Getting Started

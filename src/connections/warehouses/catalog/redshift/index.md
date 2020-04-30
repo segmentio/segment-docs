@@ -126,7 +126,7 @@ Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC
   ![](images/redshift_cluster_modify.png)
 
 7. Make sure the "Publicly Accessible" option is set to "Yes"
-  ![](http://docs.aws.amazon.com/redshift/latest/mgmt/images/rs-mgmt-clusters-modify.png)
+  ![](images/rs-mgmt-clusters-modify.png)
 
 8. Check your "Outbound" tab to make sure your Redshift instance is setup to make outbound requests to the Segment S3 bucket. The default behavior is to allow all outbound traffic, but security groups can be put in place to limit outbound behavior.
 
@@ -186,4 +186,4 @@ You can also unload data to a s3 bucket and then load the data into another Reds
 
 {% include content/warehouse-sync-sched.md %}
 
-![sync schedule image](images/syncsched.png)
+![sync schedule image](/docs/connections/destinations/catalog/images/syncsched.png)
