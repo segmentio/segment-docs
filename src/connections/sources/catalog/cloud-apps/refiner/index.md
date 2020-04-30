@@ -70,10 +70,6 @@ A `group` call issued by Refiner could look like this:
 
 Now that your Source is set up, you can connect it with Destinations.
 
-<<<<<<< HEAD
-Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting and your [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool
-=======
-Log into your downstream tools and check to see that your events are populating and that they contain all of the properties you expect. If your events and properties don't appear, refer to the Destination docs for each tool for troubleshooting.
->>>>>>> bdb713dcc415a914936b14f6e23a3654a4bb9177
+Log into your downstream tools and check to see that your events are appearing as expected, and that they contain all of the properties you expect. If your events and properties don't appear, check the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool, and refer to the Destination docs for each tool for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the support team](mailto:contact@refiner.io).
+If you see any issues with how the events are arriving to Segment, [contact the Refiner support team](mailto:contact@refiner.io).
