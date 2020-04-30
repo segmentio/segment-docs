@@ -55,7 +55,9 @@ The daily digest contains unique violations within a 48 hour period for the prev
 
 **Protocols Violations Page**
 <br>
-The Protocols Violations page contains a live count for violations, seen for the timeframe that the user has chosen for either the last hour, the last 24 hours, or the last 7 days. The difference between this count and the digest count is due to both the times that users view the Protocols Violations page (during the daytime, instead of exactly at 12AM EST), and the fact that the digest only shows unique violations. The fields included in the page are more detailed than the digest fields. 
+The Protocols Violations page shows a live count for violations. You can adjust the timeframe to show violations in the last hour, the last 24 hours, or the last seven days. 
+
+You might see a difference between the count on the Violations page and the count in the Violations email digests. This is can happen because of differences between the time periods available (24 hours in in the live page, 48 hours in the daily digest email), and the fact that the digest only shows _unique_ violations. The fields displayed on the Violations page are more detailed than those included in the email digest. 
 
 ## Protocols Enforcement
 
