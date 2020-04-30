@@ -8,7 +8,7 @@ source-type: event
 
 When you add Leanplum as a Source, Segment starts collecting Leanplum engagement events (for example, Email Open, Push Delivered), which you can then connect to a destination of your choice or load in your data warehouse.
 
-> The Leanplum source integration is an event source, which means that it sends Leanplum engagements as events.
+The Leanplum source integration is an event source, which means that it sends Leanplum engagements as events.
 
 Collections represent the different messaging events that Leanplum sends to Segment as a streaming source. In your Segment warehouse, each collection gets its own table, as well as a tracks table that aggregates all the events into a single table.
 
