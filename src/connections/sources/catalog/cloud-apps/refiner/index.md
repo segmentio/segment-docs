@@ -9,7 +9,7 @@ This source allows you to enrich your user profiles with  survey responses in le
 This source is maintained by Refiner. For any issues with the source, please [contact Refiner Support](mailto:contact@refiner.io).
 
 > success ""
-> **Good to know**: This page is about the Leanplum Segment source, which sends data _into_ Segment. There's also a page about the [Leanplum Segment destination](https://segment.com/docs/connections/destinations/catalog/leanplum/), which receives data from Segment!
+> **Good to know**: This page is about the Refiner Segment source, which sends data _into_ Segment. There's also a page about the [Refiner Segment destination](https://segment.com/docs/connections/destinations/catalog/refiner/), which receives data from Segment!
 
 ## Getting Started
 
