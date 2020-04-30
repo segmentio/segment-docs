@@ -9,6 +9,9 @@ This source is maintained by Beamer. For any issues with the source, please [rea
 
 _**NOTE:** The Beamer Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 28, 2020. If you are interested in joining their beta program or have any feedback to help improve the Beamer Source and its documentation, please [let  their team know](mailto:info@getbeamer.com)!_
 
+> success ""
+> **Good to know**: This page is about the Beamer Segment source, which sends data _into_ Segment. There's also a page about the [Beamer Segment destination](/docs/connections/destinations/catalog/beamer/), which receives data from Segment!
+
 ## Getting Started
 
 1. From your Segment UI's Sources page click on "Add Source".
