@@ -4,17 +4,17 @@ title: Protocols FAQ
 
 ## Protocols Notifications
 
-### How can I subscribe to notifications?
+### How can I subscribe to Protocols notifications?
 You can subscribe to a variety of Protocols specific alerts through the workspace Activity Feed settings. To subscribe, visit your workspace **Settings** > **Notification Settings** > **Protocols**.
 
 ![](images/activity_notifications.png)
 
 ### How can I get notified when someone makes a change to my tracking plan?
-You can also forward alerts to a Segment source, which can then send them to any (cloud-mode) Segment destination that accepts Track calls, including data warehouses. Most customers forward these activity feed events to a data warehouse for analysis.
+You can forward Protocols alerts to a Segment source, which can then send them to any (cloud-mode) Segment destination that accepts Track calls, including data warehouses. Most customers forward these activity feed events to a data warehouse for analysis.
 
 
 ### How do I get notified when new violations are generated? Can I create custom violation notifications?
-You can also enable [violation event forwarding](/docs/protocols/tracking-plan/#violation-forwarding) to start delivering violations as Track calls to a Segment Source. From there, you can forward the events to any Segment destination that accepts Track calls.
+You can enable [violation event forwarding](/docs/protocols/tracking-plan/#violation-forwarding) to start delivering violations as Track calls to a Segment Source. From there, you can forward the events to any Segment destination that accepts Track calls.
 
 
 ## Protocols Tracking Plan
@@ -58,7 +58,6 @@ The digest contains all violations for that source that are _unique_ in the prev
 The email includes information about the violation to help you track down its source and correct it. It includes the event name and property name fields, the violation type, the number of times that specific type of violation was seen, and the last time it was seen. 
 
 **Protocols Violations Page**
-<br>
 The Protocols Violations page shows a live count for violations. You can adjust the timeframe to show violations in the last hour, the last 24 hours, or the last seven days. 
 
 You might see a difference between the count on the Violations page and the count in the Violations email digests. This is can happen because of differences between the time periods available (24 hours in in the live page, 48 hours in the daily digest email), and the fact that the digest only shows _unique_ violations. The fields displayed on the Violations page are more detailed than those included in the email digest. 
