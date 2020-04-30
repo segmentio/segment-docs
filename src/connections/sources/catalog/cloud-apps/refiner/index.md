@@ -2,9 +2,10 @@
 title: Refiner Source
 source-type: event
 ---
-[Refiner](https://refiner.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer survey tool built specifically for SaaS, eCommerce and Membership sites. Ask your users any question while they are using your product with our beautiful & simple survey widgets - on brand and perfectly timed.
 
-This source allows you to enrich your user profiles with  survey responses in leverage them in any tool connecteed to your Segment account.
+[Refiner](https://refiner.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer survey tool built specifically for SaaS, eCommerce and Membership sites. Ask your users any question while they are using your product with Refiner's beautiful and simple survey widgets - on brand and perfectly timed.
+
+This source allows you to enrich user profiles with survey responses and use them in any tool connected to your Segment account.
 
 This source is maintained by Refiner. For any issues with the source, please [contact Refiner Support](mailto:contact@refiner.io).
 
@@ -14,16 +15,16 @@ This source is maintained by Refiner. For any issues with the source, please [co
 ## Getting Started
 
 1. From your Segment UI’s Sources page click on “Add Source”.
-2. Search for "Refiner" within the Sources Catalog and confirm by clicking "Connect".
-3. Give the Source a nickname and follow the setup flow to "Add Source".
+2. Search for "Refiner" within the Sources Catalog and click **Connect** to confirm.
+3. Give the Source a nickname and follow the set-up flow to "Add Source".
 4. Copy the Write key from the Segment UI and log in to your Refiner account.
-5. Navigate to Integrations >  Segment and paste the key to connect.
+5. In Refiner, navigate to **Integrations >  Segment** and paste the write key to connect.
 
 ## Identify Call
 
-Refiner issues an `identify` call each time a new survey is completed by a user, with the collected survey reponses parsed into the traits object of the call.
+Refiner sends an `identify` call each time a user completes a new survey, and includes the collected survey responses parsed into the `traits` object of the call.
 
-Each trait is prepended with `refiner_` so that you can easily identify them later. For example, the question `What is your job role?` in Refiner becomes `refiner_what_is_your_job_role` in the `identify` call.
+Each trait is prepended with `refiner_` so you can easily identify them. For example, the question `What is your job role?` in Refiner becomes `refiner_what_is_your_job_role` in the `identify` call.
 
 An example `identify` call:
 
@@ -39,17 +40,17 @@ An example `identify` call:
 }
 ```
 
-You also have the option to define a custom property name for each question in Refiner's Survey Editor.
+You can also define a custom property name for each question in Refiner's Survey Editor.
 
 ## Group Call
 
 Refiner's internal data structure is based on `User` and `Account` entities, where one Account can have multiple Users.
 
-Each answer given by a user is either attributed to the User directly or to their parent Account.
+Each answer given by a user is either attributed to the User directly, or to their parent Account.
 
-To mirror this behavior in Segment, Refiner issues a `group` call right after each `identify` call.
+To mirror this behavior in Segment, Refiner sends a `group` call right after each `identify` call.
 
-The `group` call will include all collected data which is linked to an account in Refiner, as well as the `userId` used in the `identify` call.
+The `group` call includes all collected data which is linked to an account in Refiner, as well as the `userId` used in the `identify` call.
 
 A `group` call issued by Refiner could look like this:
 
@@ -69,8 +70,10 @@ A `group` call issued by Refiner could look like this:
 
 Now that your Source is set up, you can connect it with Destinations.
 
+<<<<<<< HEAD
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting and your [Event Delivery](https://segment.com/docs/connections/event-delivery/) tool
+=======
+Log into your downstream tools and check to see that your events are populating and that they contain all of the properties you expect. If your events and properties don't appear, refer to the Destination docs for each tool for troubleshooting.
+>>>>>>> bdb713dcc415a914936b14f6e23a3654a4bb9177
 
 If there are any issues with how the events are arriving to Segment, please [contact the support team](mailto:contact@refiner.io).
-
----
