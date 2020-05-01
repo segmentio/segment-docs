@@ -505,12 +505,12 @@ Calling `reset` resets the `id`, including anonymousId, and clear `traits` for t
 analytics.reset();
 ```
 
-Note: The reset method only clears the cookies and localStorage set by Segment, not the those of integrated end-tools, as their native libraries might set their own cookies to manage user tracking, sessions, and manage state. To completely clear out the user session, check the documentation provided by those tools.
+Note: The reset method only clears the cookies and localStorage set by Segment, not the those of integrated end-tools, as their native libraries might set their own cookies to manage user tracking, sessions, and manage state. To completely clear out the user session, check the documentation provided by those tools. If you have multiple subdomains, `analytics.reset()` should be called for each individual subdomain to completely clear out the user session because localStorage is not shared across subdomains.
 
 
-## Cross-Subdomain Analytics	
+## Cross-Subdomain Analytics
 
-Analytics.js tracks across subdomains out of the box; all of our destinations fully support this feature.	
+Analytics.js tracks across subdomains out of the box; all of our destinations fully support this feature.
 
 
 ## Anonymous ID
