@@ -4,6 +4,12 @@ title: Testing and Debugging
 
 
 
+## How do I test if it's working?
+
+There are several ways to check if your data is flowing. One is the [Debugger tab in each Source](/docs/connections/sources/debugger/) in the Segment web app, where you can see data coming from a source into Segment. Another is the [Event Delivery tool](/docs/connections/event-delivery/) which shows which data is arriving at specific destinations.
+
+For monitoring purposes, you'll also see alerts in the [Workspace Health](/docs/segment-app/#health) tool if your sources or destinations produce repeated errors.
+
 ## Using the Source Debugger:
 
 Source:
@@ -149,10 +155,6 @@ When debugging, it's helpful to see when issues start, stop and trend over time.
 
 #### Latency
 How P95 latency has trended over the time period you selected.
-
-
-
-
 
 
 

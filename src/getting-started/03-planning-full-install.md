@@ -2,29 +2,27 @@
 title: Planning a full installation
 ---
 
-
-## What to track
-
 Source: https://segment.com/docs/protocols/data-quality/
 
 ## Data Collection Best Practices
 
-Let’s face it, figuring out what events to track in Segment can feel overwhelming. Fortunately, we’ve helped 1000s of customers through this process and have amassed a ton of resources to help you get started. Whether you’re a small team just getting your app off the ground, or a highly complex enterprise with 100s of stakeholders, these resources can help!
+Let’s face it, figuring out what events to track in Segment can feel overwhelming. Fortunately, we’ve helped thousands of customers through this process and have lots of resources to help you get started. Whether you’re a small team just getting your app off the ground, or a highly complex enterprise with hundreds of stakeholders, these resources can help!
 That being said, be prepared to invest time defining how you want to track data. Any investment in improving data quality will reap massive rewards, and compound over time by allowing your analytics teams to produce better insights, your marketing teams to run better campaigns and so much more.
 
 ## Data Tracking Philosophy
 
-Tracking is about learning and taking action. Think about what you want to know about your product or customers. Think about what assumptions need to be tested or invalidated. Think about the unknowns. Here are some helpful questions to get started:
+Tracking is about learning and taking action. Think about what you want to know about your product or customers. Think about what assumptions need to be tested and what theories need to be proven true or false. Think about the unknowns. Here are some helpful questions to get started:
 
-- What kind of events or data will shed light on the how your customers use your product?
+- What kind of events or data best illustrate or explain how your customers use your product?
 - How do people discover, start using, and paying for your product?
-- What are the most important steps in a customers journey?
--
+- What are the most important steps in a customer's journey?
+
 ## Define Business Objectives
 
-While it may seem obvious, we highly recommend documenting your high level business objectives (see [Goals tab in Google Sheet Tracking Plan](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) template). More specifically, what are the measurable business outcomes you want to achieve this year. Are you looking to acquire new customers, activate new signups, drive incremental revenues among your current customer base, etc? Answering this question is best done by interviewing stakeholders who would consume the data in your organization.
+While it may seem obvious, we highly recommend documenting your high level business objectives (see [Goals tab in Google Sheet Tracking Plan](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) template). More specifically, ask yourself: what are the measurable business outcomes you want to achieve this year? Do you want to acquire new customers? Generate more new sign-ups, drive more incremental revenue among your current customer base? The best way to answer this question is to interview stakeholders in your organization who will consume the data.
 
-With your business goals documented, you now need to map user actions to those business goals. For example, if one of your goals is to activate new signups, you want to think about which activities are related to a signup. Ask yourself, what actions do people take before signing up? Are there specific actions that can predict a user signing up?
+With your business goals documented, the next step is to map user actions to those business goals. For example, if one of your goals is to activate new signups, you want to think about which activities are related to a signup. Ask yourself, what actions do people take _before_ signing up? Do specific actions predict a user signing up?
+
 As an example, you may end up with a list like the following:
 
 - Ad Campaign Clicked
@@ -35,21 +33,33 @@ As an example, you may end up with a list like the following:
 - Form Submitted
 - User Signed Up
 
-While the above represents a small portion of the total user actions you will track, focusing on business objectives helps break up the overwhelmingness of data collection into smaller chunks.
+While the list above represents a small portion of the total user actions you _could_ track, it gives a list focused on your top business objectives. This helps break up the huge project of data collection into smaller chunks.
 
-## Formalize Your Naming and Collection Standards
+## Decide what to collect
 
-With your business objectives documented, it’s time to build a set of standards that you and your team will use when determining what to track. Our most successful customers limit their tracking plan to a minimal number of core events with rich properties to provide context. While we’ve generally seen more success with the “less is more” philosophy of tracking data, we’ve had plenty of customers take a more liberal “track more and analyze later” approach. Like everything, each alternative has pros and cons that are important to consider especially as it relates to your company’s needs.
-Regardless of approach, here are some important notes to keep in mind:
+With your business objectives documented and mapped to user actions, it’s time to build standards that you can use when deciding what to track.
+
+Our most successful customers limit their tracking plan to a small number of core events, adding many properties that provide context about those events. We generally see more success with the “less is more” philosophy of tracking data, but you might also decide to take a more liberal “track more and analyze later” approach. Like everything, each alternative has pros and cons that are important to consider especially as it relates to your company’s needs.
+
+<!-- LR: this doesn't actually give an action they can do, or explain what would be in a collection standard? -->
+
+## Formalize naming standards
+
+Regardless of approach, here are some important best practices to keep in mind:
 
 - **Pick a casing convention:** We recommend *Title Case* for event names and *snake_case* for property names. Make sure you pick a casing standard and enforce it across your events and properties.
+
 - **Pick an event name structure:** As you may have noticed from our [specs](https://segment.com/docs/connections/spec/semantic/), we’re big fans of the Object (`Blog Post`) + Action (`Read`) framework for event names. Pick a convention and stick to it!
-- **Don’t create event names dynamically:** Avoid creating events that pull a dynamic value into the event name (ex. `User Signed Up (11-01-2019)`)
-- **Don’t create events to track properties:** Avoid adding values to event names that could be a property. Instead, add values a property (ex. `"blog_post_title":"Best Tracking Plans Ever"`)
+
+- **Don’t create event names dynamically:** Avoid creating events that pull a dynamic value into the event name (for example, `User Signed Up (11-01-2019)`). If and when you send these to a warehouse for analysis, you end up with huge numbers of tables and schema bloat!
+
+- **Don’t create events to track properties:** Avoid adding values to event names when they could be a property. Instead, add values as a property. For example, rather than having an event called "Read Blog Post - Best Tracking Plans Ever", create a "Blog Post Read" event and with a property like `"blog_post_title":"Best Tracking Plans Ever"`.
+
 - **Don’t create property keys dynamically:** Avoid creating property names like `"feature_1":"true"`,`"feature_2":"false"` as these are ambiguous and very difficult to analyze
 ![](https://segment.com/docs/protocols/data-quality/images/asset_nVdJ3ZyA.png)
 
 ## Review Use Cases
+(Should be semantic spec info here?)
 
 **B2B**
 Source: https://segment.com/academy/collecting-data/tracking-plans-for-b2b-companies/
@@ -65,14 +75,21 @@ Source: https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/ o
 ## What's a Tracking Plan?
 
 A [tracking plan](https://segment.com/blog/whats-a-tracking-plan) clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. Prior to Protocols, tracking plans typically lived in a spreadsheet. The tracking plan served as a project management tool to align an entire organization around data as the basis on which to make decisions. The tracking plan helps marketers, product managers, engineers, analysts, etc. get on the same page. It represents the single source of truth for what data to collect and why.
-The tracking plan has been so instrumental in helping organizations reclaim their own data efforts that we invested years of product development to create [Protocols](https://segment.com/docs/protocols/).
+
+The tracking plan is so important to help organizations understand their own data efforts that we invested years of product development to create [Protocols](https://segment.com/docs/protocols/).
+
 In the following, we share how to build a tracking plan from the ground up using a Google Sheet template. Note that you can use any tool to create the tracking plan!
 
 ## Tracking Plan Google Sheets Template
 
-To help you get started, we developed a Tracking Plan template in [Google Sheets](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view). The template includes all of our semantic specs including [eCommerce](https://segment.com/docs/connections/spec/ecommerce/v2/), [B2B SaaS](https://segment.com/docs/connections/spec/mobile/), [Mobile](https://segment.com/docs/connections/spec/mobile/) and [Video](https://segment.com/docs/connections/spec/video/), and a collection of common properties.
+To help you get started, we developed a Tracking Plan template in [Google Sheets](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view).
+
+The template includes all of our "semantic" specs (business-case tailored specifications) including [eCommerce](https://segment.com/docs/connections/spec/ecommerce/v2/), [B2B SaaS](https://segment.com/docs/connections/spec/mobile/), [Mobile](https://segment.com/docs/connections/spec/mobile/) and [Video](https://segment.com/docs/connections/spec/video/), and a collection of common properties.
+
 We highly recommend you start by [defining your business objectives](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#define-business-objectives), and have included a template in the **Goals** tab to guide that process.
+
 With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) and skip over that tab. The identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#identifying-your-users).
+
 From there, we recommend you specify Track events in the **Track (Custom)** tab. Note that we pre-created events with varying numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While more challenging to manage at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
 Once completed, the Google Sheet tracking plan can be shared with your stakeholders to either review, comment, edit or simply reference for implementation. And if you decide to purchase Protocols in the future, you’ll be able to upload the tracking plan into Segment [via the Config API](https://segment.com/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
 
@@ -96,6 +113,8 @@ The traits represent dimensions in your data that you can group or pivot on. For
 ## Define your Track events
 
 After you’ve documented your [event naming and collection standards](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#formalize-your-naming-and-collection-standards) it’s time to add events to your tracking plan. We recommend starting with fewer events that are directly tied to one of your [business objectives](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#define-business-objectives). This focused effort helps avoid a situation where you become overwhelmed by endless number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer peripheral questions.
+
+
 At Segment, we started out tracking these events:
 
 - **User Signed Up**

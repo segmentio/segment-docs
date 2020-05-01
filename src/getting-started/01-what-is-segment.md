@@ -2,14 +2,7 @@
 title: What is Segment?
 ---
 
-<!-- video here. owned by...?-->
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/T01YklpEqiM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-With Segment, you can collect, transform, send, and archive your [first-party customer data](https://segment.com/books/customer-data/first-party-data/). We simplify the process of collecting data and hooking up new tools, allowing you to spend more time using your data, and less time trying to collect it. You can use Segment to track events that happen when a user interacts with the your interfaces. "Interfaces" is our generic word for any digital properties you own: your website, mobile apps, and processes that run on a server or OTT device.
-
-When interaction data is captured in Segment, you can send it (often in real-time) to a wide variety of tools in the analytics, data warehousing, and marketing spaces, usually without having to add new tracking code to production applications.
-
+In the simplest form, the Segment libraries generate messages about what's happening in your site or app, and send them to the Segment servers. The Segment system then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and sends the translated messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/warehouses) (such as databases, warehouses, or bulk-storage buckets).
 
 ## Workspaces
 
@@ -52,7 +45,7 @@ Segment also offers [Cloud App Sources](/docs/connections/sources/about-cloud-so
 
 ## Where you can track
 
-Segment supports several ways to implement tracking. The two most common are to use device-based or server-based libraries. You can use Segment's device-based libraries, such as JavaScript, iOS, and Android, to make calls on users’ browsers or mobile devices. You can also track data with Segment's server-based libraries, such as Node, Python, PHP and so on, where the calls are triggered on your own servers and then sent to the Segment servers.
+Segment supports several ways to implement tracking. The two most common are to use _device-based_ or _server-based_ libraries. You can use Segment's device-based libraries, such as JavaScript, iOS, and Android, to make calls on users’ browsers or mobile devices. You can also track data with Segment's server-based libraries, such as Node, Python, PHP and so on, where the calls are triggered on your own servers and then sent to the Segment servers.
 
 When you collect data using device-based libraries, you can choose between two different connection modes: you can either use "cloud-mode", where the library sends the data directly to the Segment servers which then translate and forward it, or you can use "device-mode" where the library sends the data both directly to the Segment servers, and also to the servers for the destination tool. (Device-mode sometimes requires some [additional set-up steps](/docs/connections/sources/mobile_guide/), but can unlock rich device data.)
 
@@ -72,6 +65,7 @@ There are several [tracking API methods](/docs/connections/spec/), which can be 
   - [Track](/docs/connections/spec/track/): what are they doing?
 
 Every call shares the same [common fields](/docs/connections/spec/common/).  When you use these methods [as intended](/docs/connections/spec/best-practices-identify/), it allows Segment to detect specific type of data, and correctly translate it to send it on to downstream destinations.
+
 
 
 ## Where you can send data
