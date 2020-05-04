@@ -59,7 +59,7 @@ Regardless of approach, here are some important best practices to keep in mind:
 ![](https://segment.com/docs/protocols/data-quality/images/asset_nVdJ3ZyA.png)
 
 ## Review Use Cases
-(Should be semantic spec info here?)
+(Should be "semantic"/business-use-case spec info here? We also talk about this in the next chapter)
 
 **B2B**
 Source: https://segment.com/academy/collecting-data/tracking-plans-for-b2b-companies/

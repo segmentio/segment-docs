@@ -2,7 +2,7 @@
 title: A full Segment implementation
 ---
 
-Before you start implementing from your tracking plan, let's review the Segment methods, and when you should use each.
+Before you start implementing from your tracking plan, let's review the Segment methods, what they do, and when you should use each.
 
 ## Segment methods in detail
 
@@ -62,9 +62,9 @@ Consider using Identify and traits when:
 - Gathering company-level data (for example, company size, number of seats, etc)
 
 
-## How to Call Identify*
+## How to Call Identify
 
-You can call Identify from any of Segment’s device-based or server-based libraries, including [Javascript](https://segment.com/docs/connections/sources/catalog/website/javascript/), [iOS](https://segment.com/docs/connections/sources/catalog/mobile/ios), [Android](https://segment.com/docs/connections/sources/catalog/mobile/android), [Ruby](https://segment.com/docs/connections/sources/catalog/server/ruby/), and [Python](https://segment.com/docs/connections/sources/catalog/server/python/).
+You can call Identify from any of Segment’s device-based or server-based libraries, including [Javascript](/docs/connections/sources/catalog/website/javascript/), [iOS](/docs/connections/sources/catalog/mobile/ios), [Android](/docs/connections/sources/catalog/mobile/android), [Ruby](/docs/connections/sources/catalog/server/ruby/), and [Python](/docs/connections/sources/catalog/server/python/).
 
 Here are two examples of calling identify from two different libraries:
 
@@ -99,11 +99,11 @@ analytics.identify( user_id: "12345abcde",
 
 
 
-## analytics.reset()
+## Using analytics.reset()
 
 When a user explicitly signs out of one of your applications, you can call `analytics.reset()` to stop logging further event activity to that user, and create a new `anonymousId` for subsequent activity (until the user logins in again and is subsequently `identify`-ed). **This call is most relevant for client-side Segment libraries**, as it clears cookies in the user’s browser.
 
-Make a `Reset()` call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out). For more info on this call, [see the Javascript source documentation](https://segment.com/docs/connections/sources/website/javascript#reset-logout).
+Make a `Reset()` call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out). For more info on this call, [see the Javascript source documentation](/docs/connections/sources/website/javascript#reset-logout).
 
 ## Page and Screen
 
@@ -122,7 +122,7 @@ The `Page()` and `Screen()` calls tell Segment what web page or mobile screen th
 
 ### Page and Screen call properties
 
-You can always [override the auto-collected Page/Screen properties](https://segment.com/docs/connections/sources/catalog/website/javascript/#default-properties) with your own, and set additional custom page or screen properties.
+You can always [override the auto-collected Page/Screen properties](/docs/connections/sources/catalog/website/javascript/#default-properties) with your own, and set additional custom page or screen properties.
 
 Some downstream tools (like Marketo) require that you attach specific properties (like email address) to every `page()` call.
 
@@ -163,7 +163,7 @@ If the presentation of user interface components don’t substantially change th
 > note ""
 > **Note**: When you trigger a Page call manually, make sure the call happens _after_ the UI element is successfully displayed, not when it is called. It shouldn’t be called as part of the click event that initiates it.
 
-For more info on Page calls, please review [Page spec](https://segment.com/docs/spec/page/) and [Analytics.js docs](https://segment.com/docs/connections/sources/catalog/website/javascript/#page).
+For more info on Page calls, please review [Page spec](/docs/spec/page/) and [Analytics.js docs](/docs/connections/sources/catalog/website/javascript/#page).
 
 ### When to call Screen
 
@@ -212,76 +212,81 @@ Segment maintains a set of [**Use-case Specs**](/docs/spec/semantic/) which foll
 
 <!-- TODO: -->
 
-And our onboarding process also includes an exercise to select the best Semantic Events for [**your Tracking Plan**](http://blah.com). Please see the Event Inventory tab in [**your Tracking Plan**](http://blah.com) for more info.
-
 Let’s dive deeper into the Object<>Action syntax that all of your Segment Track events should use.
 
-### Objects = Nouns
+### Objects are Nouns
 Nouns are the entities or objects that the user or the system acts upon. The important aspect of naming objects is that they are referred to consistently within an application, and that the same objects that exist in multiple applications are referred to by the same name.
 Use the following list of objects to see if there is a logical match with your application. If you have objects that aren’t in this list, name it in a way that makes sense if it were to appear in other applications, and/or run it by Product Analytics.
 
+#### Some suggested Nouns
+(TODO: this section had a table with a mostly-empty "description" column. We should expand this table and provide descriptions.)
 
-#### Suggested Nouns
+- Menu
+- Navigation Drawer - the “Hamburger” menu in the upper left corner of a UI.
+- Profile
+- Account
+- Video
+-
+### Actions are Verbs
 
-| **Noun / Object**     | *Description*                                        |
-| --------------------- | ---------------------------------------------------- |
-| **Menu**              |                                                      |
-| **Navigation Drawer** | *“Hamburger” menu in the upper left corner of a UI.* |
-| **Profile**           |                                                      |
-| **Account**           |                                                      |
-| **Video**             |                                                      |
+Verbs indicate the action taken by either a user on your site. When you name a new track event, consider if you can describe the current interaction using a verb from the list below.
 
-**Actions = Verbs**
-Verbs indicate the action taken by either a user or the {Customer} site. When naming a new track event, consider if the current interaction can be adequately described using a verb from the list below. If it can’t, choose a verb that describes what the user is trying to in your specific case, while being flexible enough to potentially be used in other scenarios in your app or even in other apps.
-*Suggested Verbs*
+If you can’t, choose a verb that describes what the user is trying to in your specific case, but try to be flexible enough so that you could use is in other scenarios.
 
-| **Verb**             | *Description*                                                                                                                                                                                                                                                                                                                                                      |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Applied**          | *Applying a new format to the UI results.*                                                                                                                                                                                                                                                                                                                         |
-| **Clicked**          | *Catch-all for events where a user activated some part of the UI but no other verb captures the intent.*                                                                                                                                                                                                                                                           |
-| **Created/Deleted**  | *The user- or system-initiated action of creating or deleting an object (e.g., new search, favorite, post)*                                                                                                                                                                                                                                                        |
-| **Displayed/Hidden** | *The user- or system-initiated action of hiding or displaying an element*                                                                                                                                                                                                                                                                                          |
-| **Enabled/Disabled** | *Enabling or disabling some feature (e.g., audible alarms, emails, etc).*                                                                                                                                                                                                                                                                                          |
-| **Refreshed**        | *When a set of search results is refreshed.*                                                                                                                                                                                                                                                                                                                       |
-| **Searched**         | *When an app is searched*                                                                                                                                                                                                                                                                                                                                          |
-| **Selected**         | *User clicked on an individual search result.*                                                                                                                                                                                                                                                                                                                     |
-| **Sorted**           | *The user or UI action that causes data in a table, for example, to be sorted*                                                                                                                                                                                                                                                                                     |
-| **Unposted**         | *Making a previously publicly-viewable posting private.*                                                                                                                                                                                                                                                                                                           |
-| **Updated**          | *The user action that initiates an update to an object (profile, password, search, etc.; typically be making a call to the backend), or the they system having actually completed the update (often this tracking call will be made in response to a server-side response indicating that the object was updated, which may or may not have an impact on the UI).* |
-| **Viewed**           |                                                                                                                                                                                                                                                                                                                                                                    |
+#### Some suggested Verbs
+
+- Applied -  *Applying a new format to the UI results.*
+- Clicked - *Catch-all for events where a user activated some part of the UI but no other verb captures the intent.*
+- Created/Deleted - *The user- or system-initiated action of creating or deleting an object (e.g., new search, favorite, post)*
+- Displayed/Hidden - *The user- or system-initiated action of hiding or displaying an element*
+- Enabled/Disabled- *Enabling or disabling some feature (e.g., audible alarms, emails, etc).*
+- Refreshed - *When a set of search results is refreshed.*
+- Searched - *When an app is searched*
+- Selected - *User clicked on an individual search result.* =
+- Sorted - *The user or UI action that causes data in a table, for example, to be sorted*
+- Unposted - *Making a previously publicly-viewable posting private.*
+- Updated - *The user action that initiates an update to an object (profile, password, search, etc.; typically be making a call to the backend), or the they system having actually completed the update (often this tracking call will be made in response to a server-side response indicating that the object was updated, which may or may not have an impact on the UI).*
+- Viewed - (exactly what it says on the tin)
 
 
+### Property naming best practices
 
-## Property Naming: Best Practices*
+Segment recommends that you record property names using **snake case** (for example `property_name`), and that you format property values to match how they are captured. For example, a `username` value would be captured in whatever case it the user typed it in as.
 
-Segment recommends property names be in **snake case** (e.g., “property_name”), with values matching the format in which they are captured (e.g., a username value would be captured in whatever case it was typed in as).
-Ultimately, you may decide on the casing that suits you; however, **the single most aspect is that you’re consistent across your entire tracking with one casing method**.
-**IMPORTANT NOTE:** In the Segment [spec](https://segment.com/docs/spec/), **all** [API calls](https://segment.com/docs/spec#api-calls) have a common structure and a few common fields. Common fields will automatically be collected on every call, and are listed in the [common fields](https://segment.com/docs/spec/common/) section of our spec.
+Ultimately, you can decide to use a casing different from our recommendations; however, **the single most important aspect is that you’re consistent across your entire tracking with one casing method**.
 
-## Common properties to send with Track call*
+
+All of the basic [Segment methods](/docs/spec/) have a common structure and common fields which are automatically collected on every call. You can see these in the [common fields documentation](/docs/spec/common/).
+
+### Common properties to send with Track call
 
 The following properties should be sent with every Track call:
 
-| **Event Context**                                        | **Property Name**                                                                                                                                                                                                                                                                                                                                                                                      | **Description**                                                                                                                                                                                                                                   |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Any Track call**                                     | **initiator**                                                                                                                                                                                                                                                                                                                                                                                          | *Was the event initiated by the user (“User”) or the system (“System”)?*                                                                                                                                                                          |
-| **display_format**                                       | *Responsive or not (or some other indicator of the current page layout template)*                                                                                                                                                                                                                                                                                                                      |                                                                                                                                                                                                                                                   |
-| **Search Initiated** <br>**or Search Results Displayed** | **[Search Parameters]**                                                                                                                                                                                                                                                                                                                                                                                | *All search parameters, with the names being the snake case version of the internal names.*                                                                                                                                                       |
-| **Search Results Displayed**                             | **total_result_count**                                                                                                                                                                                                                                                                                                                                                                                 | *The total number of results returned that match the search parameters.  This number represents the number of results that could be returned to the user even if only a subset of those were actually returned (e.g., if results are paginated).* |
-| **Paginated List Displayed**                             | **total_items_pages**                                                                                                                                                                                                                                                                                                                                                                                  | *The total number of pages of items available to be viewed by the user.*                                                                                                                                                                          |
-| **items_per_page**                                       | *The number of possible items in each page of items (e.g., if the UI is showing 50 search results per page).  The actual number of items in the current page may be less than this number if, for example, the system is displaying the last page of results and there aren’t enough results to fill to the page’s maximum (e.g., if there are 27 results when the page could display as many as 50).* |                                                                                                                                                                                                                                                   |
-| **current_item_page**                                    | *The current page number being displayed to the user.*                                                                                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                   |
-| **External Link Clicked**                                | **destination_url**                                                                                                                                                                                                                                                                                                                                                                                    | *The URL that the user will be taken to when clicked.*<br>*Ideally this will be the final destination (e.g., after any redirects), but only the immediate destination is likely in most cases.*                                                   |
-| **Item List Sorted**                                     | **sort_column**                                                                                                                                                                                                                                                                                                                                                                                        | *The internal name of the column that was sorted on.*                                                                                                                                                                                             |
-| **sort_direction**                                       | *ascending or descending*                                                                                                                                                                                                                                                                                                                                                                              |                                                                                                                                                                                                                                                   |
+| **Event Context** | **Property Name** | **Description** |
 
 
+- **Any Track call**:
+    - **initiator** - *Was the event initiated by the user (“User”) or the system (“System”)?*
+    -  **display_format** - *Responsive or not (or some other indicator of the current page layout template)*
+- **Search Initiated or Search Results Displayed** - **[Search Parameters]** -  *All search parameters, with the names being the snake case version of the internal names.*
+-  **Search Results Displayed**: **total_result_count** -  *The total number of results returned that match the search parameters.  This number represents the number of results that could be returned to the user even if only a subset of those were actually returned (e.g., if results are paginated).*
+-  **Paginated List Displayed**:
+    -  **total_items_pages** - *The total number of pages of items available to be viewed by the user.*
+    -  **items_per_page**  - *The number of possible items in each page of items (e.g., if the UI is showing 50 search results per page).  The actual number of items in the current page may be less than this number if, for example, the system is displaying the last page of results and there aren’t enough results to fill to the page’s maximum (e.g., if there are 27 results when the page could display as many as 50).*
+    -  **current_item_page** - *The current page number being displayed to the user.*
+-  **External Link Clicked** : **destination_url** -  *The URL that the user will be taken to when clicked. *Ideally this will be the final destination (e.g., after any redirects), but only the immediate destination is likely in most cases.*
+-  **Item List Sorted**:
+    -  **sort_column**  - *The internal name of the column that was sorted on.*
+    -  **sort_direction**: *ascending or descending*
 
 
-## How to Call
+### How to call Track
 
-Track() can be called from any of Segment’s client-side or server-side libraries, including [Javascript](https://segment.com/docs/connections/sources/catalog/website/javascript/), [iOS](https://segment.com/docs/connections/sources/catalog/mobile/ios), [Android](https://segment.com/docs/connections/sources/catalog/mobile/android), [Ruby](https://segment.com/docs/connections/sources/catalog/server/ruby/), and [Python](https://segment.com/docs/connections/sources/catalog/server/python/). Here are two examples of calling track from two different libraries:
-**Javascript (client-side) Track call:**
+You can call `Track` from any of Segment’s client-side or server-side libraries, including [Javascript](/docs/connections/sources/catalog/website/javascript/), [iOS](/docs/connections/sources/catalog/mobile/ios), [Android](/docs/connections/sources/catalog/mobile/android), [Ruby](/docs/connections/sources/catalog/server/ruby/), and [Python](/docs/connections/sources/catalog/server/python/). Here are two examples of calling track from two different libraries:
+
+
+{% codeexample %}
+{% codeexampletab JavaScript Track call %}
 ```js
 analytics.track('Article Bookmarked', {
   "title": 'How to Create a Tracking Plan',
@@ -289,9 +294,9 @@ analytics.track('Article Bookmarked', {
   "author": 'Dr. Anna Lytics',
 });
 ```
+{% endcodeexampletab %}
 
-
-**Ruby (server-side) track call:**
+{% codeexampletab Ruby Identify call %}
 ```ruby
 analytics.track( user_id: '12345abcde',
   event: 'Article Bookmarked',
@@ -300,6 +305,8 @@ analytics.track( user_id: '12345abcde',
      course: 'Intro to Data Strategy',
      author: 'Dr. Anna Lytics'})
 ```
+{% endcodeexampletab %}
+{% endcodeexample %}
 
 
 
