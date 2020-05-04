@@ -11,7 +11,7 @@ Your Segment Workspace is where you set up and manage sources and destinations, 
 When you first log in to your Segment account, you can create a new workspace, or choose to log into an existing workspace if your account is part of an existing organization.
 
 
-<!-- TODO: better "subway map" image here.-->
+TODO: better "subway map" image here
 
 ## The Segment Platform
 
@@ -51,9 +51,10 @@ When you collect data using device-based libraries, you can choose between two d
 
 Although there are some tradeoffs between the two approaches, neither is better than the other, and we usually recommend that you implement a mix of both. In general, more direct interaction data is available using a device-based library, but server-side collection is more secure, reliable, and can’t be blocked by ad blockers.
 
-<!-- TODO: LR: need a better version of this flowchart or else to just omit?
 Here’s a handy flow chart to help with the client-side/server-side decision:
--->
+
+TODO: Image removed, didn't work with formatting. need a better version of this flowchart or else to just omit?
+
 
 ## The Segment Methods
 
@@ -67,13 +68,11 @@ There are several [tracking API methods](/docs/connections/spec/), which can be 
 Every call shares the same [common fields](/docs/connections/spec/common/).  When you use these methods [as intended](/docs/connections/spec/best-practices-identify/), it allows Segment to detect specific type of data, and correctly translate it to send it on to downstream destinations.
 
 
-
 ## Where you can send data
 
 Segment maintains a catalog of destinations where you can send your data.
 
-<!-- TODO: big list o' destinations image should go here -->
-
+TODO: big list o' destinations image (programmatically update?) should go here
 
 
 

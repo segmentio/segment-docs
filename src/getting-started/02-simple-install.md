@@ -40,7 +40,7 @@ We also recommend that you add an Environment Label of `dev` to the source, so y
 
 The write key is the unique identifier for a source which tells Segment which source data comes from, to which workspace it belongs, and which destinations should receive the data.
 
-When you create a new library source, you can find the Write Key in the **Settings** tab of the source information, under **API Keys**.
+When you create a new library source, you can find the Write Key in the **Settings** tab of the source information, under **API Keys**. Any time you change a library's settings in the Segment App, the writekey regenerates.
 
 ![](/docs/connections/images/find_writekey.png)
 
@@ -52,6 +52,7 @@ Make note of or write down your Write Key, as you'll need it in the next steps.
 
 ## Installing Segment
 
+TODO: Need to restyle these tabs so they're less subtle in contrast to the bulk of the text. Text in tabs is pulled from cleaned-up versions of our Quickstarts for these libraries
 
 {% codeexample %}
 {% codeexampletab Javascript quickstart %}
@@ -372,6 +373,8 @@ And presto, **you're done!** You successfully installed PHP tracking. Now you're
 
 ## Test that it’s working
 
+TODO: do we want to dedupe with [page 5: testing/debugging](05-testing-debugging/)?
+
 Once you've set up your Segment library, and instrumented at least one call, you can look at the Debugger tab for the Source to check that it produces data as you expected.
 
 The Source Debugger is a real-time tool that helps you confirm that API calls made from your website, mobile app, or servers arrive to your Segment Source, so you can troubleshoot your Segment set up even quicker. With the Debugger, you can check that calls are sent in the expected format without having to wait for any data processing.
@@ -411,16 +414,17 @@ To set up your first destination:
 4. Click **Configure Google Analytics**.
 5. Select the source that you set up earlier in this quickstart, then click **Confirm Source**.
 6. On the settings page, locate the setting line for the tracking ID or other API key to connect to your destination.
-7. Enter the ID or API key and click **Save**. <!-- LR note: this seems like a lot. are 6/7 needed?-->
+7. Enter the ID or API key and click **Save**.
 8. Click **Back to Destination**, then click the toggle to enable the destination.
+
+TODO LR note: this seems like a lot. are 6/7 needed?
 
 Congratulations! Data is now flowing from the source you set up, to the first destination. Do some test browsing on your site or app, then log in to your downstream tool to see the data in place.
 
 
 
-
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/" icon="media/icon-left.svg" title="Back to the index" content="back to the index" variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/01-what-is-segment/" icon="media/icon-left.svg" title="Go back to What is Segment" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/02-simple-install/" icon="media/icon-right.svg" title="Next doc" content="In the next step..." variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/03-planning-full-install/" icon="media/icon-right.svg" title="Next page: Planning a Full Installation" content=" " variant="related" %}
 </div>

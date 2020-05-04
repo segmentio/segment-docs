@@ -156,7 +156,7 @@ How P95 latency has trended over the time period you selected.
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/" icon="media/icon-left.svg" title="Back to the index" content="back to the index" variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/04-" icon="media/icon-left.svg" title="Back to A full Segment implementation" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/02-simple-install/" icon="media/icon-right.svg" title="Next doc" content="In the next step..." variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/06-data-to-destinations/" icon="media/icon-right.svg" title="Next page: Sending data to destinations" content=" " variant="related" %}
 </div>

@@ -97,8 +97,6 @@ analytics.identify( user_id: "12345abcde",
 
 
 
-
-
 ## Using analytics.reset()
 
 When a user explicitly signs out of one of your applications, you can call `analytics.reset()` to stop logging further event activity to that user, and create a new `anonymousId` for subsequent activity (until the user logins in again and is subsequently `identify`-ed). **This call is most relevant for client-side Segment libraries**, as it clears cookies in the user’s browser.
@@ -210,16 +208,14 @@ Segment’s best practice is to use an “Object Action” (Noun<>Verb) naming c
 
 Segment maintains a set of [**Use-case Specs**](/docs/spec/semantic/) which follow this naming convention around different use cases such as eCommerce, B2B SaaS, and Mobile.
 
-<!-- TODO: -->
-
-Let’s dive deeper into the Object<>Action syntax that all of your Segment Track events should use.
+Let’s dive deeper into the Object Action syntax that all Segment Track events should use.
 
 ### Objects are Nouns
 Nouns are the entities or objects that the user or the system acts upon. The important aspect of naming objects is that they are referred to consistently within an application, and that the same objects that exist in multiple applications are referred to by the same name.
 Use the following list of objects to see if there is a logical match with your application. If you have objects that aren’t in this list, name it in a way that makes sense if it were to appear in other applications, and/or run it by Product Analytics.
 
 #### Some suggested Nouns
-(TODO: this section had a table with a mostly-empty "description" column. We should expand this table and provide descriptions.)
+(TODO: this section had a table with a mostly-empty "description" column. We should expand this table and provide descriptions, then normalize formatting with the similar ones below.)
 
 - Menu
 - Navigation Drawer - the “Hamburger” menu in the upper left corner of a UI.
@@ -311,7 +307,7 @@ analytics.track( user_id: '12345abcde',
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/" icon="media/icon-left.svg" title="Back to the index" content="back to the index" variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/" icon="media/icon-left.svg" title="Back Planning a full installation" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/02-simple-install/" icon="media/icon-right.svg" title="Next doc" content="In the next step..." variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/05-testing-debugging/" icon="media/icon-right.svg" title="Next page: Testing and debugging" content=" " variant="related" %}
 </div>

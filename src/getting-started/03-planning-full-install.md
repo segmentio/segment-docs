@@ -41,7 +41,7 @@ With your business objectives documented and mapped to user actions, it’s time
 
 Our most successful customers limit their tracking plan to a small number of core events, adding many properties that provide context about those events. We generally see more success with the “less is more” philosophy of tracking data, but you might also decide to take a more liberal “track more and analyze later” approach. Like everything, each alternative has pros and cons that are important to consider especially as it relates to your company’s needs.
 
-<!-- LR: this doesn't actually give an action they can do, or explain what would be in a collection standard? -->
+TODO: this doesn't actually give an action they can do, or explain what would be in a collection standard? did we miss a bit when importing?
 
 ## Formalize naming standards
 
@@ -56,12 +56,14 @@ Regardless of approach, here are some important best practices to keep in mind:
 - **Don’t create events to track properties:** Avoid adding values to event names when they could be a property. Instead, add values as a property. For example, rather than having an event called "Read Blog Post - Best Tracking Plans Ever", create a "Blog Post Read" event and with a property like `"blog_post_title":"Best Tracking Plans Ever"`.
 
 - **Don’t create property keys dynamically:** Avoid creating property names like `"feature_1":"true"`,`"feature_2":"false"` as these are ambiguous and very difficult to analyze
+
 ![](https://segment.com/docs/protocols/data-quality/images/asset_nVdJ3ZyA.png)
 
 ## Review Use Cases
-(Should be "semantic"/business-use-case spec info here? We also talk about this in the next chapter)
 
-**B2B**
+(TODO: Should all of the "semantic"/business-use-case spec info go here? We also talk about this in the next chapter.)
+
+### B2B
 Source: https://segment.com/academy/collecting-data/tracking-plans-for-b2b-companies/
 
 Companies that sell a product or service to other businesses have a different need than most companies when it comes to analytics and marketing. They need to understand their customers' behavior both at the user-level, and also at the aggregate company or team-level. We face this challenge internally at Segment. We need to understand where users are getting stuck in the funnel, but also where the workspace, with one or more users, are at. In this article we will take a closer look at setting up your tracking to model these more complicated business relationships.
@@ -86,16 +88,19 @@ To help you get started, we developed a Tracking Plan template in [Google Sheets
 
 The template includes all of our "semantic" specs (business-case tailored specifications) including [eCommerce](https://segment.com/docs/connections/spec/ecommerce/v2/), [B2B SaaS](https://segment.com/docs/connections/spec/mobile/), [Mobile](https://segment.com/docs/connections/spec/mobile/) and [Video](https://segment.com/docs/connections/spec/video/), and a collection of common properties.
 
+TODO: we really need to get moving on standardizing away from the term "semantic" for these specs so we can normalize across all docs and help content
+
 We highly recommend you start by [defining your business objectives](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#define-business-objectives), and have included a template in the **Goals** tab to guide that process.
 
 With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) and skip over that tab. The identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#identifying-your-users).
 
-From there, we recommend you specify Track events in the **Track (Custom)** tab. Note that we pre-created events with varying numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While more challenging to manage at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
-Once completed, the Google Sheet tracking plan can be shared with your stakeholders to either review, comment, edit or simply reference for implementation. And if you decide to purchase Protocols in the future, you’ll be able to upload the tracking plan into Segment [via the Config API](https://segment.com/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
+From there, we recommend you specify Track events in the **Track (Custom)** tab. In the template we included preexisting events with different numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While more challenging to manage at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
+
+Once completed, you can share the Google Sheet tracking plan with stakeholders to either review, comment, edit or simply reference for implementation. And if you decide to purchase Protocols in the future, you’ll be able to upload the tracking plan into Segment [using the Config API](https://segment.com/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
 
 ## Identify your users
 
-The `.identify()` call is important, because it updates all records of the user with a set of traits. But how do you choose which traits to include?
+The `Identify` call is important, because it updates all records of the user with a set of traits. But how do you choose which traits to include?
 Here is a sample `.identify()` call (with [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) for Segment:
 
 ```js
@@ -112,7 +117,9 @@ The traits represent dimensions in your data that you can group or pivot on. For
 
 ## Define your Track events
 
-After you’ve documented your [event naming and collection standards](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#formalize-your-naming-and-collection-standards) it’s time to add events to your tracking plan. We recommend starting with fewer events that are directly tied to one of your [business objectives](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#define-business-objectives). This focused effort helps avoid a situation where you become overwhelmed by endless number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer peripheral questions.
+After you’ve documented your [event naming and collection standards](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#formalize-your-naming-and-collection-standards) it’s time to add events to your tracking plan.
+
+We recommend starting with fewer events that are directly tied to one of your [business objectives](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#define-business-objectives). This focused effort helps avoid a situation where you become overwhelmed by endless number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer peripheral questions.
 
 
 At Segment, we started out tracking these events:
@@ -124,7 +131,7 @@ At Segment, we started out tracking these events:
 Then we added some peripheral events to to better understand how we’re performing, for the following reasons:
 
 - **User Invited** When users invite more people to their organization, it’s a good indicator that they’re engaged and serious about using the product. This helps us measure growth in organizations.
-- **Destination Enabled** Turning on an destination is a key value driver for our customers.
+- **Destination Enabled** Turning on a destination is a key value driver for our customers.
 - **Debugger Call Expanded** When we see that a certain customer has used the live event stream feature a number of times, we can reach out to see if we can help them debug.
 
 For an ecommerce company, however, the main events might be something like:
@@ -134,7 +141,8 @@ For an ecommerce company, however, the main events might be something like:
 - **Order Completed**
 
 Note that Segment has a set of “reserved” event names specifically for ecommerce, called our [ecommerce spec](https://segment.com/docs/connections/spec/ecommerce/v2). Check it out to see which events we cover and how they are used in our downstream destinations.
-For a community, on the other hand, there is an entirely different set of actions that indicate engagement, listed in the below pyramid. For example, a community like [GrowthHackers](https://growthhackers.com/) may want to track actions like:
+
+For a community, on the other hand, there is an entirely different set of actions that indicate engagement listed below. For example, a community like [GrowthHackers](https://growthhackers.com/) might want to track actions like:
 
 - **Content Viewed**
 - **Content Shared**
@@ -142,11 +150,12 @@ For a community, on the other hand, there is an entirely different set of action
 - **Content Produced**
 - **Content Curated**
 
-With this, they’re able to measure key metrics around engagement and understand how users are moving towards their ultimate conversion event: curation content for others. For more information, check out [this article](https://segment.com/blog/growthhackers-community-metrics/) from GrowthHackers about the events they track and why.
+With this, they’re able to develop metrics around engagement, and understand how users are moving towards their ultimate conversion event: curation content for others. For more information, check out [this article](https://segment.com/blog/growthhackers-community-metrics/) from GrowthHackers about the events they track and why.
 
 ## Define your Track event properties
 
-Each `.track()` call can accept an optional dictionary of `properties`, which can contain any key-value pair you want. These `properties` act as dimensions that allow your end tool to group, filter, and analyze the events. They give you additional detail on broader events.
+Each `.track()` call can accept an optional dictionary of `properties`, which can contain any key-value pair. These `properties` act as dimensions that allow your end tool to group, filter, and analyze the events. They give you additional detail on broader events.
+
 As mentioned earlier, events should be generic and high level, whereas properties are specific and detailed. For example, at Segment, `Business Tier Workspace Created` is a horrible event name. Instead, we used `Workspace Created` with a `property` of `account_tier` and value of `business` :
 
 ```js
@@ -155,8 +164,12 @@ analytics.track('Workspace Created', {
 })
 ```
 
-Similar to the traits in the `.identify()` call, the properties provide you a column that you can pivot against or filter on in your analytics tools or allow you to create a cohort of users in email tools.
-There also shouldn’t be any dynamically generated `key`’s in the `properties` dictionary, as each `key` will create a new column in your downstream tools. Dynamically generated `key`’s will clutter your tools with tons of data that will make it difficult and confusing to use later.
+Similar to the traits in the `.identify()` call, the properties provide a column that you can pivot against or filter on in your analytics tools or allow you to create a cohort of users in email tools.
+
+TODO: this is a very databse-centric way of explaining. need to unpack.
+
+Don't create dynamically generated `key`s in the `properties` dictionary, as each `key` creates a new column in your downstream tools. Dynamically generated keys clutter your tools with tons of data that makes it difficult and confusing to use later.
+
 Here is Segment’s `Lead Captured` `.track()` call:
 
 ```js
@@ -168,14 +181,18 @@ analytics.track(userId, 'Lead Captured', {
 ```
 
 The high level event is **Lead Captured** and all of the details are tucked into the `properties` dictionary. In our downstream tools, we’ll be able to easily look at how many leads were captured in different locations on our site.
+
 If you want to learn more about how properties are used by downstream tools, check out [The Anatomy of a Track Call](https://segment.com/academy/collecting-data/the-anatomy-of-a-track-call/).
 Want a free consultation from our Customer Success Managers on how they simplify our customer’s analytics? [Request a demo of Segment](https://segment.com/contact/demo).
 
 
 ## Think about destinations
 
-section covering how the customer should plan where they are going to send data?
+TODO: section covering how the customer should plan where they are going to send data?  use /docs/utils comparison charts.
 
+
+
+Draft outline content below
 
 
 ### Tracking Plans ← Planning a full impl
@@ -234,7 +251,7 @@ On sheet two, find the list of tools, and look up which methods, and which conne
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/" icon="media/icon-left.svg" title="Back to the index" content="back to the index" variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/02-simple-install/" icon="media/icon-left.svg" title="Back to A Simple Installation" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/02-simple-install/" icon="media/icon-right.svg" title="Next doc" content="In the next step..." variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/04-full-install/" icon="media/icon-right.svg" title="Next page: A full Segment implementation" content=" " variant="related" %}
 </div>
