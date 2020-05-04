@@ -16,7 +16,6 @@ title: Sending data to destinations
 
 
 
-
 <div class="double">
   {% include components/media-icon.html  href="/getting-started/" icon="media/icon-left.svg" title="Back to the index" content="back to the index" variant="related" %}
 
