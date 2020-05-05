@@ -356,6 +356,14 @@ Below are tables outlining the properties included in the collections listed abo
 | quantity | The quantity of the plan to which the customer should be subscribed |
 | status | Possible values are trialing, active, past_due, canceled, or unpaid |
 | tax_percent | If provided, each invoice created by this subscription will apply the tax rate, increasing the amount billed to the customer |
+| canceled_at | If the subscription has been canceled, the date of that cancellation. If the subscription was canceled with cancel_at_period_end, canceled_at will still reflect the date of the initial cancellation request, not the end of the subscription period when the subscription is automatically moved to a canceled state. |
+| created | Time at which the object was created. Measured in seconds since the Unix epoch. |
+| current_period_end | End of the current period that the subscription has been invoiced for. At the end of this period, a new invoice will be created. |
+| current_period_start | Start of the current period that the subscription has been invoiced for. |
+| ended_at | If the subscription has ended, the date the subscription ended. |
+| quantity | The quantity of the plan to which the customer is subscribed. |
+| trial_end | If the subscription has a trial, the end of that trial. |
+| trial_start | If the subscription has a trial, the beginning of that trial. |
 
 ### transfer_reversals
 
