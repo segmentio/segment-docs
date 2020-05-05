@@ -187,3 +187,7 @@ You can also unload data to a s3 bucket and then load the data into another Reds
 {% include content/warehouse-sync-sched.md %}
 
 ![sync schedule image](/docs/connections/destinations/catalog/images/syncsched.png)
+
+### Can I connect to my Redshift instance via an SSH Tunnel?
+
+We don't currently support SSH tunneling. Typically our customers will use IP level restrictions to allow Segment's ETL to write to Redshift without leaving the cluster available to other connections.
