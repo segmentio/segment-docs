@@ -51,7 +51,7 @@ If you notice any gaps or outdated information in this document, or simply want 
 
 #### Sample App
 
-Braze has created a sample iOS application that integrates Braze via Segment.  Check it out at the [Github repo](https://github.com/Appboy/appboy-segment-ios/tree/master/Example).
+Braze has created a sample iOS application that integrates Braze via Segment. Check it out at the [Github repo](https://github.com/Appboy/appboy-segment-ios/tree/master/Example).
 
 ### Android
 
@@ -152,7 +152,7 @@ When you `track` an event with the name `Order Completed` using the [e-commerce 
 
 When you pass [ecommerce events](/docs/connections/spec/ecommerce/v2/), the name of your event will be used as the `productId` in Braze. An example of a purchase event would look like:
 
-```
+```js
 analytics.track('Purchased Item', {
     revenue: '2000',
     currency: 'USD'
@@ -405,8 +405,6 @@ There are currently two major [versions](https://github.com/Appboy/appboy-web-sd
 
 If you have never implemented Braze on your site, either via Segment or natively, you can ignore this section. If you have had Braze running before and want to migrate to Version 2 **you must ensure you remove all references to `appboy.min.css` from your site.** This is very important as it will cause issues with Version 2 of their SDK. Once you have done this you can select Version 2 via the "Braze Web SDK Version" with your Segment Settings UI.
 
-
-
 ## Using Braze with Personas
 
 You can send computed traits and audiences created in Personas to Braze, and use them to run personalization campaigns or power messages to users.
@@ -431,16 +429,13 @@ For example, if you have a Personas computed trait for “Last Product Viewed It
 
 ![](images/last_viewed-user.png)
 
-
 If the “Last Product Viewed Item” trait is connected to Braze to send `identify` calls, as in this example:
 
 ![](images/last_viewed-identify.png)
 
-
 The following custom attribute, “last_product_viewed_item” appears in Braze on the user’s profile:
 
-![](last_viewed-id-braze.png)
-
+![](images/last_viewed-id-braze.png)
 
 #### Computed Traits using Track calls
 
@@ -452,13 +447,10 @@ Using the same example as above, if a user has a computed trait for “Last Prod
 
 The following custom event appears in Braze on the user’s profile:
 
-![](last_viewed-track-braze.png)
-
+![](images/last_viewed-track-braze.png)
 
 > success ""
 > **Tip**: You can change the name of the “computed trait” event that Braze receives by going to the Personas Destination Connection Settings.
-
-
 
 ### Audiences in Braze
 
@@ -477,7 +469,6 @@ For example, if a user is in a “Dormant Shoppers” audience:
 
 ![](images/dormant-user.png)
 
-
 And the “Dormant Shoppers” audience is connected to Braze to send `identify` calls:
 
 ![](images/dormant-identify.png)
@@ -495,16 +486,12 @@ Using the same example as above, if a user is in a “Dormant Shoppers” audien
 
 ![](images/dormant-track.png)
 
-
 The following custom event appears in Braze on the user’s profile when they enter the audience:
 
 ![](images/dormant-track-braze.png)
 
-
-
 > success ""
 > **Tip**: You can change the name of the “Audience Entered” event that Braze receives from the Personas Destination Connection Settings.
-
 
 ## Setting up Personas with Braze
 
@@ -517,18 +504,17 @@ To send computed traits or audiences to Braze, you first must connect it to your
 
 ## Braze Personas Quick Info
 
-- **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
-- **Support for Track & Identify?**Yes, both are supported.
+- **Personas Destination type**: [Event](/docs/glossary/#event) - data is delivered to this Destination one-by-one on a realtime basis
+- **Support for Track and Identify?**: Yes, both are supported.
 - **Traits and Audiences created by**: Computed traits and audiences are added as custom attributes using `identify` calls. You can also send computed traits and audiences as custom events using `track` calls.
 - **Must create audience_name field before Personas can update those values?**: No. If sent as an `identify` call, Personas automatically creates the computed trait or audience name as a custom attribute in Braze. If sent as a `track` call, Personas automatically creates a custom event in Braze.
 - **Computed trait appears as**: A snake cased version of the computed trait name (for example, `last_product_viewed: 'Sweater'`) with a string for the value of the computed trait.
 - **Audience appears as**: A snake cased version of the audience name (for example, `order_completed_last_30days: true` ) with a boolean value of `true` indicates that a user is in the audience.
-- **Destination rate limit**: Unlimited. Segment sends Personas data to Braze’s `/users/track`  endpoint, which has [no rate limit](https://www.braze.com/docs/api/basics/#api-limits).
+- **Destination rate limit**: Unlimited. Segment sends Personas data to Braze’s `/users/track` endpoint, which has [no rate limit](https://www.braze.com/docs/api/basics/#api-limits).
 - **Lookback window allowed:** Yes, unlimited.
-- **Identifiers required** :  `userId` or `braze_id`
+- **Identifiers required** : `userId` or `braze_id`
 - **Identifiers accepted** : `userId` or `braze_id`
 - **Client or Server-Side Connection**: Server-side connection for Personas
-
 
 ## Braze Personas FAQs
 
