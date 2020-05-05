@@ -1,6 +1,7 @@
 ---
 title: Braze Destination
-rewrite: true
+hide-cmodes: true
+hide-personas-partial: true
 ---
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni channel customer experiences.
@@ -9,7 +10,7 @@ The Braze Destination is open-source on GitHub. You can browse the code on Githu
 
 _**NOTE:** There are currently two major versions of the Braze SDK. Make sure you read [important notes](https://segment.com/docs/connections/destinations/catalog/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2._
 
-This document was last updated on June 13, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+If you notice any gaps or outdated information in this document, or simply want to leave some feedback to help us improve, please [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
@@ -403,3 +404,147 @@ end
 There are currently two major [versions](https://github.com/Appboy/appboy-web-sdk/blob/master/CHANGELOG.md#breaking) of this SDK: 1 and 2. Segment currently supports both as migrating to Version 2 requires some important changes to your website.
 
 If you have never implemented Braze on your site, either via Segment or natively, you can ignore this section. If you have had Braze running before and want to migrate to Version 2 **you must ensure you remove all references to `appboy.min.css` from your site.** This is very important as it will cause issues with Version 2 of their SDK. Once you have done this you can select Version 2 via the "Braze Web SDK Version" with your Segment Settings UI.
+
+
+
+## Using Braze with Personas
+
+You can send computed traits and audiences created in Personas to Braze, and use them to run personalization campaigns or power messages to users.
+
+Personas sends [event data](/docs/glossary/#event) about your users to Braze using an `identify` call and/or `track` call.
+
+
+### Computed Traits in Braze
+
+You can send computed traits to Braze as [custom attributes](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/setting_custom_attributes/) or as [custom events](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/tracking_custom_events/).
+
+- If you send a computed trait using the `identify` call, they appear in Braze as custom attributes.
+- If you send a computed trait using the `track` call, they appear in Braze as custom events.
+
+You can choose which method to use (or choose to use both) when you connect the computed trait to the Braze destination.
+
+#### Computed Traits using Identify calls
+
+You can send computed traits created in Personas as `identify` calls to create custom attributes in Braze. The custom attribute is set to the value of the computed trait. The custom attribute name appears as the snake_cased version of the computed trait name you provide.
+
+For example, if you have a Personas computed trait for “Last Product Viewed Item,” that would be named “last_product_viewed_item” in the user’s Personas profile.
+
+![](images/last_viewed-user.png)
+
+
+If the “Last Product Viewed Item” trait is connected to Braze to send `identify` calls, as in this example:
+
+![](images/last_viewed-identify.png)
+
+
+The following custom attribute, “last_product_viewed_item” appears in Braze on the user’s profile:
+
+![](last_viewed-id-braze.png)
+
+
+#### Computed Traits using Track calls
+
+You can also send computed traits created in Personas as `track` calls to create custom events in Braze. When a Personas calculates a computed trait for a user, it sends a `Trait Computed` event to Braze.
+
+Using the same example as above, if a user has a computed trait for “Last Product Viewed Item” and the trait is connected to Braze and configured to send `track` calls:
+
+![](images/last_viewed-track.png)
+
+The following custom event appears in Braze on the user’s profile:
+
+![](last_viewed-track-braze.png)
+
+
+> success ""
+> **Tip**: You can change the name of the “computed trait” event that Braze receives by going to the Personas Destination Connection Settings.
+
+
+
+### Audiences in Braze
+
+You can send Audiences to Braze as [custom attributes](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/setting_custom_attributes/) or [custom events](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/tracking_custom_events/).
+
+- When you send an Audience using the `identify` call, it appears in Braze as a custom attribute.
+- When you send an Audience using the `track` call, it appears in Braze as a custom event.
+
+You can choose which method to use (or choose both) when you connect the audience to the Braze destination.
+
+#### Audiences using Identify calls
+
+You can send audiences created in Personas as `identify` calls to create custom attributes in Braze. If a user is added to an audience, Personas sends a custom attribute to Braze with a value of `true`. The custom attribute name is be the snake_cased version of the audience name in Personas.
+
+For example, if a user is in a “Dormant Shoppers” audience:
+
+![](images/dormant-user.png)
+
+
+And the “Dormant Shoppers” audience is connected to Braze to send `identify` calls:
+
+![](images/dormant-identify.png)
+
+The “dormant_shoppers” custom attribute appears in Braze on the user’s profile:
+
+![](images/dormant-identify-braze.png)
+
+
+#### Audiences using Track calls
+
+You can also send audiences created in Personas as `track` calls to create custom events in Braze. If a user is added to an audience, Personas sends an `Audience Entered` event to Braze. If a user leaves the audience (because they no longer satisfy the criteria) Personas sends an `Audience Exited` event to Braze.
+
+Using the same example as above, if a user is in a “Dormant Shoppers” audience and the audience is connected to Braze to send `track` calls, Personas sends the following “Audience Entered” and “Audience Exited” events. (You can edit the names of these events from this screen.)
+
+![](images/dormant-track.png)
+
+
+The following custom event appears in Braze on the user’s profile when they enter the audience:
+
+![](images/dormant-track-braze.png)
+
+
+
+> success ""
+> **Tip**: You can change the name of the “Audience Entered” event that Braze receives from the Personas Destination Connection Settings.
+
+
+## Setting up Personas with Braze
+
+To send computed traits or audiences to Braze, you first must connect it to your Personas space. Once it’s set up, you can select Braze as a destination for Personas data each time you create new computed traits or audiences.
+
+1. Navigate to the **Destinations** tab in your Personas space.
+2. Search for **Braze** and add the destination to your Personas space.
+3. On the set up screen, enter in your App Identifier, REST API Key and Datacenter for Braze.
+
+
+## Braze Personas Quick Info
+
+- **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
+- **Support for Track & Identify?**Yes, both are supported.
+- **Traits and Audiences created by**: Computed traits and audiences are added as custom attributes using `identify` calls. You can also send computed traits and audiences as custom events using `track` calls.
+- **Must create audience_name field before Personas can update those values?**: No. If sent as an `identify` call, Personas automatically creates the computed trait or audience name as a custom attribute in Braze. If sent as a `track` call, Personas automatically creates a custom event in Braze.
+- **Computed trait appears as**: A snake cased version of the computed trait name (for example, `last_product_viewed: 'Sweater'`) with a string for the value of the computed trait.
+- **Audience appears as**: A snake cased version of the audience name (for example, `order_completed_last_30days: true` ) with a boolean value of `true` indicates that a user is in the audience.
+- **Destination rate limit**: Unlimited. Segment sends Personas data to Braze’s `/users/track`  endpoint, which has [no rate limit](https://www.braze.com/docs/api/basics/#api-limits).
+- **Lookback window allowed:** Yes, unlimited.
+- **Identifiers required** :  `userId` or `braze_id`
+- **Identifiers accepted** : `userId` or `braze_id`
+- **Client or Server-Side Connection**: Server-side connection for Personas
+
+
+## Braze Personas FAQs
+
+#### Which ID does Segment match on when sending data to Braze?
+
+By default, Personas data is sent to Braze by matching the `userId`. The Segment `userId` maps to Braze’s External ID. If the user is anonymous and does not have a `userId`, you can also choose to send data using the `braze_id` auto-generated by Braze. To use `braze_id`, you must pass the `braze_id` to Segment as a [Segment externalId](https://segment.com/docs/personas/identity-resolution/externalids/). If `braze_id` is sent as an `externalId` **and** `userId` is missing, Personas matches on `braze_id` when sending to Braze. You can check the **Identities** tab on a user’s Personas profile to confirm that `braze_id` was successfully picked up as an `externalId`.
+
+![](images/braze-anonid.png)
+
+You can find the `braze_id` in the Braze UI or by using Braze’s [Users by Identifier API Endpoint](https://www.braze.com/docs/api/endpoints/export/user_data/post_users_identifier/).
+
+#### Do Personas audiences sync with [Braze Segments](https://www.braze.com/docs/user_guide/engagement_tools/segments/)?
+No. Audiences are sent to Braze as either custom attributes or custom events. You can use these events and attributes when building your Braze Segments and Campaigns.
+
+#### How long do my computed traits and audiences exist in Braze?
+All Braze user profile data (including custom events, custom attributes) is stored for as long as those profiles are active.
+
+#### What happens if I delete a computed trait or audience in Segment?
+When you delete an audience or trait in Segment they are not deleted from Braze. Data sent to Braze is immutable and cannot be deleted or modified once they receive it. However, you can [blacklist](https://www.braze.com/docs/user_guide/administrative/app_settings/manage_app_group/custom_event_and_attribute_management/#blacklisting-custom-attributes-custom-events-and-products) custom attributes and events in Braze.
