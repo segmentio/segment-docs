@@ -424,7 +424,7 @@ Congratulations! Data is now flowing from the source you set up, to the first de
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/01-what-is-segment/" icon="media/icon-left.svg" title="Go back to What is Segment" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/01-what-is-segment/" icon="symbols/arrow-left.svg" title="Go back to What is Segment" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/03-planning-full-install/" icon="media/icon-right.svg" title="Next page: Planning a Full Installation" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/03-planning-full-install/" icon="symbols/arrow-right.svg" title="Next page: Planning a Full Installation" content=" " variant="related" %}
 </div>

@@ -251,7 +251,7 @@ On sheet two, find the list of tools, and look up which methods, and which conne
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/02-simple-install/" icon="media/icon-left.svg" title="Back to A Simple Installation" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/02-simple-install/" icon="symbols/arrow-left.svg" title="Back to A Simple Installation" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/04-full-install/" icon="media/icon-right.svg" title="Next page: A full Segment implementation" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/04-full-install/" icon="symbols/arrow-right.svg" title="Next page: A full Segment implementation" content=" " variant="related" %}
 </div>

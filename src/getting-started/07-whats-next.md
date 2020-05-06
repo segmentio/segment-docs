@@ -18,4 +18,4 @@ title: What's next?
 
 
 
-{% include components/media-icon.html  href="/getting-started/" icon="media/icon-left.svg" title="Back to the index" content="Back to the Getting Started index" variant="related" %}
+{% include components/media-icon.html  href="/getting-started/" icon="symbols/arrow-left.svg" title="Back to the index" content="Back to the Getting Started index" variant="related" %}

@@ -307,7 +307,7 @@ analytics.track( user_id: '12345abcde',
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/" icon="media/icon-left.svg" title="Back Planning a full installation" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/" icon="symbols/arrow-left.svg" title="Back Planning a full installation" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/05-testing-debugging/" icon="media/icon-right.svg" title="Next page: Testing and debugging" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/05-testing-debugging/" icon="symbols/arrow-right.svg" title="Next page: Testing and debugging" content=" " variant="related" %}
 </div>

@@ -10,4 +10,4 @@ With Segment, you can collect, transform, send, and archive your [first-party cu
 
 When interaction data is captured in Segment, you can send it (often in real-time) to a wide variety of tools in the analytics, data warehousing, and marketing spaces, usually without having to add new tracking code to production applications.
 
-{% include components/media-icon.html  href="/getting-started/01-what-is-segment/" icon="media/icon-right.svg" title="Ready to get started?" content="Let's go!" variant="related" %}
+{% include components/media-icon.html  href="/getting-started/01-what-is-segment/" icon="symbols/arrow-right.svg" title="Ready to get started?" content="Let's go!" variant="related" %}
