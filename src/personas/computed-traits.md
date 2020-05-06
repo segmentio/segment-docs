@@ -187,6 +187,6 @@ Computed Trait CSVs are generated on demand. Before you can download the CSV, yo
 <table>
     <tr>
         <td>![](images/large_trait_csv.png)</td>
-        <td width="45%">Generating a CSV can take a substantial amount of time for large audiences (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, we present a rough estimate of generation time. After clicking "Generate", you may leave the page and return later to download the file (Note that if a more recent result for the audience has been calculated in that time, you will have to regenerate).</td>
+        <td width="45%">Generating a CSV can take a substantial amount of time for large traits (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, we present a rough estimate of generation time. After clicking "Generate", you may leave the page and return later to download the file (Note that if a more recent result for the trait has been calculated in that time, you will have to regenerate).</td>
     </tr>
 </table>
