@@ -190,4 +190,4 @@ You can also unload data to a s3 bucket and then load the data into another Reds
 
 ### Can I use an SSH tunnel to connect to my Redshift instance?
 
-We don't currently support SSH tunneling. Typically our customers will use IP level restrictions to allow Segment's ETL to write to Redshift without leaving the cluster available to other connections.
+Segment does not currently support SSH tunneling to Redshift. You can usually allow Segment's ETL to write to Redshift without leaving the cluster available to other connections by using IP level restrictions.
