@@ -116,15 +116,13 @@ You can read the [full Profile API docs](/docs/personas/profile-api/) to learn m
 You can download a copy of your audience by visiting the the audience overview page.
 ![](images/audience_overview.png)
 Audience CSVs are generated on demand. Before you can download the CSV, you will need to generate it. There are three different options for formatting:
-<ul>
-    <li><b>Unformatted:</b> Contains two columns. The first contains the user or account key and the second is a JSON object containing the external IDs. Generating this CSV is by far the fastest of the three options. <a id="raw-csv-a" href="files/audience_csv_format_a.csv">Download sample CSV</a></li>
-    <li><b>Extract external IDs into distinct columns:</b> Contains the same first two columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a given external ID type has more than one value, for example a user with two email addresses, <i>additional indexed columns are added,</i> for example <b>email_1, email_2</b>. <a id="raw-csv-b" href="files/audience_csv_format_b.csv">Download sample CSV</a></li>
-    <li><b>Expand external IDs into additional rows:</b> Contains the same first two columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a given external ID type has more than one value, for example a user with two email addresses, <i>additional rows are added with the first two columns repeated (user or account key and external IDs JSON).</i> <a id="raw-csv-c" href="files/audience_csv_format_c.csv">Download sample CSV</a></li>
-</ul>
+
+- **Unformatted:** Contains two columns. The first contains the user or account key and the second is a JSON object containing the external IDs. Generating this CSV is by far the fastest of the three options. <a id="raw-csv-a" href="files/audience_csv_format_a.csv">Download sample CSV</a>
+- **Extract external IDs into distinct columns:** Contains the same first two columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a given external ID type has more than one value, for example a user with two email addresses, <i>additional indexed columns are added,</i> for example <b>email_1, email_2</b>. <a id="raw-csv-b" href="files/audience_csv_format_b.csv">Download sample CSV</a>
+- **Expand external IDs into additional rows:** Contains the same first two columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a given external ID type has more than one value, for example a user with two email addresses, <i>additional rows are added with the first two columns repeated (user or account key and external IDs JSON).</i> <a id="raw-csv-c" href="files/audience_csv_format_c.csv">Download sample CSV</a>
 <table>
     <tr>
         <td>![](images/large_audience_csv.png)</td>
         <td width="45%">Generating a CSV can take a substantial amount of time for large audiences (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, we present a rough estimate of generation time. After clicking "Generate", you may leave the page and return later to download the file (Note that if a more recent result for the audience has been calculated in that time, you will have to regenerate).</td>
     </tr>
 </table>
-
