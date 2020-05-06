@@ -153,6 +153,7 @@ To view a specific violation, simply click on the violation to view recent sampl
 
 If you want to analyze or build custom alerts based on inbound violations, you can [enable violation forwarding here](/docs/protocols/tracking-plan/#violation-forwarding).
 
+**IMPORTANT: Page and Screen violations use the `name` field for aggregation**
 
 ## Schema Configuration
 
