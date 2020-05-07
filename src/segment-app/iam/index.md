@@ -6,13 +6,18 @@ Access management lets workspace owners manage which users can access different 
 TODO IMAGE
 
 ## Quick Links
+//should I remove this? Is it helpful here?
   - [How to invite a team member to your workspace](/segment-app/iam/membership/)
   - [How to create a User Group](/segment-app/iam/membership/)
   - [How to update a team members' access](/segment-app/iam/membership)
   - [How to remove a team member from a workspce](/segment-app/iam/membership)
   - [Adding a new user with Single Sign On](/segment-app/iam/membership)
 
-{% include components/media-icon.html href="/segment-app/iam/membership/" icon="media/icon-academy.svg" title="Add and manage workspace members" content="Learn how to add members to your workspace, and manage their permissions." variant="related" %}
+{% include components/media-icon.html href="/segment-app/iam/membership/" icon="media/icon-academy.svg" title="Invite and manage workspace members" content="Learn how to add members to your workspace, and manage their permissions." variant="related" %}
+
+{% include components/media-icon.html href="/segment-app/iam/membership/" icon="media/icon-academy.svg" title="Organize Users with User Groups" content="Learn manage workspace memebers in bulk." variant="related" %}
+
+# Access Management Overview
 
 Access is scoped to a workspace. A Segment user is associated with one or more workspaces, either as an `owner` or `member` of each.
 Users access their Segment account with either email/password credentials, or by using Single Sign On. rach was here
