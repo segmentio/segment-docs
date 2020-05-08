@@ -185,7 +185,7 @@ Computed Trait CSVs are generated on demand. Before you can download the CSV, yo
 <table>
     <tr>
         <td>![](images/large_trait_csv.png)</td>
-        <td width="45%">Generating a CSV can take a substantial amount of time for large traits (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, we present a rough estimate of generation time. After clicking Generate, it is recommended that you leave the modal and page open while the CSV is created.<br/>
-        (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
+        <td width="45%">Generating a CSV can take a substantial amount of time for large traits (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, the Segment app displays an estimated generation time. After clicking Generate, it is recommended that you leave the modal and page open while the CSV is created.
+        (If the trait recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
     </tr>
 </table>
