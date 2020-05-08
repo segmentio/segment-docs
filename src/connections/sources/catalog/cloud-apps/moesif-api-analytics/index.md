@@ -18,7 +18,7 @@ This source is maintained by Moesif. For any issues with the source, [contact th
 
 ## Identify Message
 
-Moesif will send an `identify()` message to Segment which consists of the `userId` and the user traits.
+Moesif sends an `identify()` message to Segment which consists of the `userId` and the user traits.
 
 <table>
   <tr>
