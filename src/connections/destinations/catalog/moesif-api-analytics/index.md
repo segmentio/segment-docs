@@ -19,7 +19,7 @@ This destination is maintained by Moesif. For any issues with the destination, [
  your [Moesif account](https://www.moesif.com) and navigating to the extensions settings.
 4. Once integrated, Segment data shows up in Moesif in a few seconds.
 
-> info ""
+> tip ""
 > **Tip**: You can use Segment's [Replay feature](https://segment.com/docs/guides/what-is-replay/) to sync historical events sent through Segment into your Moesif app.
 
 ## Identify
