@@ -46,7 +46,7 @@ Segment sends `identify()` calls to Moesif as [user updates](https://www.moesif.
 |`traits`|`metadata`|
 |`traits.company.id`|`company_id`|
 
-The integration handles Segment [reserved traits](https://segment.com/docs/connections/spec/identify/#traits) like `email` and `firstName`. It maps autocollected fields like campaign information and IP address.
+The integration handles Segment [reserved traits](https://segment.com/docs/connections/spec/identify/#traits) like `email` and `firstName`. It maps [automatically-collected fields](/docs/connections/spec/common/#context-fields-automatically-collected) like campaign information and IP address.
 
 ## Track
 If you haven’t had a chance to review our spec, please take a look to understand what the [Track](https://segment.com/docs/connections/spec/track/) method does. An example call would look like:
