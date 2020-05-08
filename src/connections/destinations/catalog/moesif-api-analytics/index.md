@@ -37,7 +37,8 @@ analytics.identify('userId123', {
       }
 });
 ```
-Segment `identify()` calls are sent to Moesif as [user updates](https://www.moesif.com/docs/getting-started/users/#the-update-user-endpoint?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) and can be seen under the _Users_ section in Moesif. If `traits.company.id` is set, Moesif associates the user to a company. The integration maps user fields as follows:
+
+Segment sends `identify()` calls to Moesif as [user updates](https://www.moesif.com/docs/getting-started/users/#the-update-user-endpoint?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) which you can see in the _Users_ section in Moesif. If you set `traits.company.id` on the user, Moesif associates them with a company. The integration maps user fields as follows:
 
 |Segment Field|Moesif Field|
 |-------------|------------|
