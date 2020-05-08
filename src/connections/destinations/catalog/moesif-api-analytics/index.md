@@ -30,7 +30,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.identify('userId123', {
       first_name: 'John',
       last_name: 'Doe',
-      email: 'john@gmail.com',
+      email: 'john@example.com',
       company: {
           id: '67890',
           plan: 'Free'
