@@ -5,7 +5,7 @@ title: Moesif API Analytics Source
 
 The [Moesif SDKs and API gateway plugins](https://www.moesif.com/implementation?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) are open-source and support REST, GraphQL, and other APIs.
 
-This source is maintained by Moesif. For any issues with the source, please [reach out to their team](mailto:support@moesif.com).
+This source is maintained by Moesif. For any issues with the source, [contact the Moesif team](mailto:support@moesif.com).
 
 ## Getting Started
 
