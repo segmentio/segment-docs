@@ -7,7 +7,7 @@ title: Moesif API Analytics Destination
 
 The [Moesif SDKs and API gateway plugins](https://www.moesif.com/implementation?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) are open-source and support REST, GraphQL, and other APIs.
 
-This destination is maintained by Moesif. For any issues with the destination, please [reach out to their team](mailto:support@moesif.com).
+This destination is maintained by Moesif. For any issues with the destination, [contact the Moesif team](mailto:support@moesif.com).
 
 ## Getting Started
 
