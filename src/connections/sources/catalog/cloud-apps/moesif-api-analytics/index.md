@@ -45,7 +45,7 @@ Moesif sends an `identify()` message to Segment which consists of the `userId` a
 
 ## Traits Object
 The integration maps user metadata in Moesif to the Segment trait called `metadata`.
-If the user was linked to a company in Moesif, the integration will map the associated company to a Segment Object called `company`.
+If the user is linked to a company in Moesif, the integration maps the associated company to a Segment object called `company`.
 
 <table>
   <tr>
