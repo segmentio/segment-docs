@@ -118,14 +118,14 @@ You can download a copy of your audience by visiting the the audience overview p
 Audience CSVs are generated on demand. Before you can download the CSV, you will need to generate it. There are three different options for formatting:
 
 - **Unformatted:** Contains two columns. The first contains the user or account key and the second is a JSON object containing the external IDs. Generating this CSV is by far the fastest of the three options. [Download example unformatted CSV](files/audience_csv_format_a.csv)
-- **Extract external IDs into distinct columns:** Contains the same first two columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a given external ID type has more than one value, for example a user with two email addresses, _additional indexed columns are added_, for example `email_1, email_2`. [Download example formatted CSV](files/audience_csv_format_b.csv)
-- **Expand external IDs into additional rows:** Contains the same first two columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a given external ID type has more than one value, for example a user with two email addresses, _additional rows are added with the first two columns repeated (user or account key and external IDs JSON)._ [Download example formatted CSV](files/audience_csv_format_c.csv)
+- **Distinct columns for unique external IDs (with indexed columns for ID types with multiple values):** Contains the same first two columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a given external ID type has more than one value, for example a user with three email addresses, _additional columns with indexed headers are added_,  (`email`, `email_1`, `email_2`). [Download example formatted CSV with indexed columns](files/audience_csv_format_b.csv)
+- **Distinct columns for unique external IDs (with additional rows for ID types with multiple values):** Contains the same first two columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a given external ID type has more than one value, for example a user with two email addresses, _additional rows are added with the first two columns repeated (user or account key and external IDs JSON)._ [Download example formatted CSV with additional rows](files/audience_csv_format_c.csv)
 
 
 <table>
   <tr>
     <td>![](images/large_audience_csv.png)</td>
-    <td width="45%">Generating a CSV can take a substantial amount of time for large audiences (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, the Segment app displays an estimated generation time. Once you click "Generate", you can leave the page and return later to download the file. </br>
-    (If the audience recalculates between when you click Generate, and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
+    <td width="45%">Generating a CSV can take a substantial amount of time for large audiences (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, the Segment app displays an estimated generation time. After clicking Generate, it is recommended that you leave the modal open while the CSV is created.
+    (If the audience recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
   </tr>
 </table>
