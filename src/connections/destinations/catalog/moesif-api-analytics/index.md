@@ -55,7 +55,7 @@ If you haven’t had a chance to review our spec, please take a look to understa
 analytics.track('Login Button Clicked')
 ```
 
-Segment `track()` calls are sent to Moesif as [user actions](https://www.moesif.com/docs/getting-started/user-actions/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) and can be seen under the _Events_ section in Moesif. The integration maps event fields as follows:
+Segment sends `track()` calls to Moesif as [user actions](https://www.moesif.com/docs/getting-started/user-actions/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) which you can see in the _Events_ section in Moesif. The integration maps event fields as follows:
 
 |Segment Field|Moesif Field|
 |-------------|------------|
