@@ -37,13 +37,13 @@ There are two main things we consider when we decide to build Device- or Cloud-M
 
 #### 1. Anonymous Attribution Methodology
 
-**Mobile Attribution**
+##### Mobile Attribution
 
 The anonymous identifiers used on mobile devices are usually static, which means we don't need to do additional resolution, and we can build Cloud-mode destinations by default. Because Segment uses native advertising identifiers on mobile devices, you don't need a full SDK on the device to reconcile or identify a user. For example, you might track users who viewed an advertisement in one app and installed another app as a result.
 
 However, some mobile attribution tools do more advanced reconciliation based on more than the native identifier, which requires the SDK on the device to work properly. For those destinations, we offer device-mode which packages the tool's SDK with our client-side library, so that you can get the entire range of tool functionality.
 
-**Web Attribution**
+##### Web Attribution**
 
 Cross-domain identity resolution for websites requires that the attribution tool use a third-party cookie so it can track a user anonymously across domains. This is a critical component of attribution modeling. As a matter of principle Segment only uses first-party cookies and does not share cookies with partners, so Analytics.js and the data it collects aren't enough to generate view-through attribution in ad networks.
 
@@ -77,7 +77,7 @@ Before you turn on or opt-in for Cloud-mode for a mobile source, consider if you
 
 ### How can I tell which Connection Modes and Platforms are supported for a Destination?
 
-The first place to look is the individual destination documentation. Each one includes a matrix of supported Sources and Connection Modes.
+The first place to look is the individual destination documentation. Each one includes a matrix of supported Sources and Connection Modes. We also provide a list of [all destinations and their connection modes](/docs/connections/destinations/cmodes-compare/).
 
 In order to override the default, check the destination settings pane in the Segment web App either for a **Connection Mode** toggle or instructions on bundling any additional mobile components required.
 
@@ -87,7 +87,7 @@ Segment increases deliverability to destinations in two ways: [retries](#retries
 
 ### Retries
 
-**Retries in our Client Libraries**
+#### Retries in our Client Libraries
 
 Our client libraries ensure delivery of your data to our API reliably in the face of spotty connections, device failure, or network partitions in your data centers.
 
@@ -175,11 +175,11 @@ If the delivery of the payload is not successfully sent due to connection issues
   </tr>
 </table>
 
-**Mobile Library Retries**
+#### Mobile Library Retries
 
 All mobile libraries handle retries by periodically attempting to flush their internal queue of events to Segment. If the flush is unsuccessful, the library will wait until the next regularly-scheduled flush time to try again. The background queue of requests to Segment is bounded in size so if events are being queued faster than we can successfully flush them to Segment, some events may be dropped.
 
-**Retries between Segment and Destinations**
+#### Retries between Segment and Destinations
 
 The destination endpoint APIs we send data to have fluctuations in availability due to any number of issues ranging from network failures to bugs to overload. Segment's internal systems retry failed destination API calls for 4 hours with a randomize exponential backoff after each attempt. This substantially improves delivery rates.
 

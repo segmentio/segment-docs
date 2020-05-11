@@ -7,9 +7,6 @@ rewrite: true
 
 This destination is maintained by ChurnZero. For any issues with the destination, please [reach out to their team](mailto:support@churnzero.net).
 
-_**NOTE:** ChurnZero is currently in beta, and this doc was last updated on February 12, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the ChurnZero Destination and its documentation, please [let us know](mailto:support@churnzero.net)!_
-
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
