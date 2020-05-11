@@ -298,7 +298,7 @@ Typewriter looks for an API token in two ways, in the following order:
 
 The quickstart wizard prompts you for an API token and stores it in `~/.typewriter` for you.
 
-Segment recommends you use a [Token Script](#token-script) to share an API token with your team. Using a token script, you can supply your API token as an environment variable (`echo $TYPEWRITER_TOKEN`), from a `.env.` file (`source .env; echo $TYPEWRITER_TOKEN`) or via any other CLI tooling for providing secrets.
+Segment recommends you use a [Token Script](#token-script) to share an API token with your team. When you use a token script, you can supply your API token as an environment variable (`echo $TYPEWRITER_TOKEN`), from a `.env.` file (`source .env; echo $TYPEWRITER_TOKEN`) or using any other CLI tool for providing secrets.
 
 ## Editor Configuration
 
