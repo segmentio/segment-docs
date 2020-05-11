@@ -6,7 +6,6 @@ Access management lets workspace owners manage which users can access different 
 TODO IMAGE
 
 ## Quick Links
-//should I remove this? Is it helpful here?
   - [How to invite a team member to your workspace](/segment-app/iam/membership/)
   - [How to create a User Group](/segment-app/iam/membership/)
   - [How to update a team members' access](/segment-app/iam/membership)
