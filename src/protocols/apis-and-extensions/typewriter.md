@@ -292,14 +292,13 @@ Only workspace owners can create Segment API tokens. To create an API token, ope
 <!-- This is a pretty tall image with an off-gray background. Just formatting it slightly to reduce its size and add a border. -->
 <img src="images/typewriter-token.png" alt="Example Typewriter Token" style="height: 800px; margin: auto; border: 1px solid lightgray">
 
-Typewriter looks for an API token in three ways, in the following order:
-1. Looks for an environment variable called `TYPEWRITER_TOKEN`.
-2. Executes a token script from the `typewriter.yml`. See [Token Script](#token-script) for more information.
-3. Reads the contents of a `~/.typewriter` file.
+Typewriter looks for an API token in two ways, in the following order:
+1. Executes a token script from the `typewriter.yml`. See [Token Script](#token-script) for more information.
+2. Reads the contents of a `~/.typewriter` file.
 
 The quickstart wizard prompts you for an API token and stores it in `~/.typewriter` for you.
 
-Segment recommends you use a [Token Script](#token-script) to share an API token with your team.
+Segment recommends you use a [Token Script](#token-script) to share an API token with your team. Using a token script, you can supply your API token as an environment variable (`echo $TYPEWRITER_TOKEN`), from a `.env.` file (`source .env; echo $TYPEWRITER_TOKEN`) or via any other CLI tooling for providing secrets.
 
 ## Editor Configuration
 
