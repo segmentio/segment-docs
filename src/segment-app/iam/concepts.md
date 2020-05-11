@@ -12,6 +12,10 @@ A Segment *Team Member* is an individual with access to a workspace. A Segment u
 
 A *User Group* is a set of Team Members with a set of shared policies. A Segment Team Member can be a member of one or many Groups. All roles in the Segment App are additive. Group membership may be assigned in addition to individual roles for a single team member - i.e., a single user could inherit roles from a Group definition AND have access to additional resources via individually assigned roles.
 
+# Tokens
+
+Tokens are generated to programmatically access Segment resources via our [Segment Public API](/config-api).
+
 # Resources
 
 Resources are the building blocks of Segment:
