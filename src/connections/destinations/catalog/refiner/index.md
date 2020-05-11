@@ -15,7 +15,7 @@ _**NOTE:** The Refiner Destination is currently in beta, which means that they a
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Refiner" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find in the settings of your [Refiner dashboard](https://app.refiner.io) under Integrations > Segment..
+3. Enter your Refiner "API Key" into the Segment Settings. You can find this key in on the [Refiner dashboard](https://app.refiner.io) settings under Integrations > Segment.
 
 ## Page
 
