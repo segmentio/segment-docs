@@ -471,7 +471,7 @@ This results in the following event data:
 
 ## Group
 
-A Segment can group a customer into an account or organization:
+A Segment user can group a customer into an account or organization:
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {
@@ -535,7 +535,7 @@ This results in the following event data:
 
 ## Alias
 
-A Segment can alias a past identity into their current identity:
+A Segment user can alias a past identity into their current identity:
 
 ```js
 analytics.alias("507f191e81");
@@ -590,7 +590,25 @@ Docs coming soon.
 
 ## Delete
 
-Docs coming soon.
+A Segment user can trigger delete action via Config API or App. Partners are required to delete data for `userId` in the request payload in line with GDPR and CCPA. 
+
+This results in the following event data:
+
+```json
+{
+  "type":"delete",
+  "channel":"server",
+  "userId":"507f191e81",
+  "context":null,
+  "integrations":null,
+  "messageId":"delete-reg-6543321::job-2-T6ayE2GKL8",
+  "projectId":"T6ayE2GKL8",
+  "timestamp":"2020-05-09T23:54:49.209Z",
+  "receivedAt":"2020-05-09T23:54:49.209Z",
+  "sentAt":"2020-05-09T17:49:00.000Z",
+  "originalTimestamp":"2020-05-09 23:54:49.209808489 +0000 UTC m=+70366.298768264"
+}
+```
 
 ## Testing your Component
 
