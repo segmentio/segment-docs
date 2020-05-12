@@ -43,6 +43,10 @@ A role is used to give a user access to resources within a workspace. Roles are 
 
 ## Role Concepts
 
+<<<<<<< HEAD
 **Workspace Owner** have full read and edit access to everything in the workspace, including sources, destinations, add-on products, and settings. Owners have full edit access to all team permissions.
+=======
+**Workspace Owners** have full read and edit access to everything in the workspace, including sources, destinations, add-on products, and settings. Owners have full edit access to all team permissions.
+>>>>>>> 2f60a164b7f7c1f197c37003dc4fcc7cf1d15e63
 **Workspace Members** are granted access to a resource or set of resources with additive Roles**.**
 Check out the [Roles documentation for a complete list of roles](/docs/iam/roles/).
