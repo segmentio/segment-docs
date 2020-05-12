@@ -227,31 +227,48 @@ sections:
 - section_title: Protocols
   section:
   - path: /protocols
-    title: Protocols Overview
-  - section_title: Data Quality Best Practices
-    slug: protocols/data-quality
+    title: Overview
+  - section_title: Align with Tracking Plan
+    slug: protocols/align
     section:
-    - path: /protocols/data-quality
+    - path: /protocols/align/best-practices
       title: Data Collection Best Practices
-    - path: /protocols/data-quality/whats-a-tracking-plan
-      title: What is a Tracking Plan?
-    - path: /protocols/data-quality/ecommerce-tracking-plan
-      title: Ecommerce Tracking Plans
-  - path: /protocols/tracking-plan
-    title: Protocols Tracking Plans
-  - path: /protocols/transformations
-    title: 'Protocols Transformations'
-  - section_title: 'Protocols APIs and Extensions'
+    - path: /protocols/align/tracking-plan
+      title: The Tracking Plan
+    - path: /protocols/align/tracking-plan-libraries
+      title: Tracking Plan Libraries
+  - section_title: Validate with violations
+    slug: protocols/validate
+    section:
+    - path: /protocols/validate/connect-sources
+      title: Connect Sources to your Tracking Plan
+    - path: /protocols/validate/review-violations
+      title: Review and Resolve Event Violations
+    - path: /protocols/validate/forward-violations
+      title: Forward Violations
+  - section_title: Enforce with data controls
+    slug: protocols/enforce
+    section:
+    - path: /protocols/enforce/schema-configuration
+      title: Customize your schema controls
+    - path: /protocols/enforce/forward-blocked-events
+      title: Forward blocked events
+  - section_title: Transform data
+    slug: protocols/transform
+    section:
+    - path: /protocols/transform
+      title: Fix bad data
+  - section_title: Extensions
     slug: protocols/apis-and-extensions
     section:
     - path: /protocols/apis-and-extensions
-      title: 'Protocols APIs and Extensions'
+      title: APIs
     - path: /protocols/apis-and-extensions/typewriter
       title: Typewriter
     - path: /protocols/apis-and-extensions/anomaly_detection
       title: Anomaly Detection
   - path: /protocols/faq
-    title: 'Protocols FAQ'
+    title: Frequently Asked Questions
 - section_title: Segment App
   section:
   - path: /segment-app
