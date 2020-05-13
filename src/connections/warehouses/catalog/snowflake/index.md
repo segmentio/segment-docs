@@ -236,3 +236,9 @@ Also, if the user has more than one role, make sure the role you use when doing 
 
 ### Indexes
 Queuing - you can use a different Warehouse for Segment, or use the recommendations from the Snowflake docs.
+
+### Can I customize my sync schedule?
+
+{% include content/warehouse-sync-sched.md %}
+
+![sync schedule image](/docs/connections/destinations/catalog/images/syncsched.png)
