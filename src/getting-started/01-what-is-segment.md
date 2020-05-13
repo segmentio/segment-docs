@@ -2,6 +2,9 @@
 title: What is Segment?
 ---
 
+This page introduces important terms and concepts about Segment that you should be familiar with before you start a Segment installation.
+
+
 In the simplest form, the Segment libraries generate messages about what's happening in your site or app, and send them to the Segment servers. The Segment system then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and sends the translated messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/warehouses) (such as databases, warehouses, or bulk-storage buckets).
 
 ## Workspaces
@@ -77,7 +80,7 @@ TODO: big list o' destinations image (programmatically update?) should go here
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/" icon="symbols/arrow-left.svg" title="Back to the index" content="back to the index" variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/" newtab="false"  icon="symbols/arrow-left.svg" title="Back to the Getting Started index" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/02-simple-install/" icon="symbols/arrow-right.svg" title="Next doc" content="In the next step..." variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/02-simple-install/" newtab="false"  icon="symbols/arrow-right.svg" title="Next page: A simple Segment installation" content="Walk through a disposable, demo implementation." variant="related" %}
 </div>

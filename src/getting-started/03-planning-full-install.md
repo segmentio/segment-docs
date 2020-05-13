@@ -19,7 +19,7 @@ Tracking is about learning and taking action. Think about what you want to know 
 
 ## Define Business Objectives
 
-While it may seem obvious, we highly recommend documenting your high level business objectives (see [Goals tab in Google Sheet Tracking Plan](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) template). More specifically, ask yourself: what are the measurable business outcomes you want to achieve this year? Do you want to acquire new customers? Generate more new sign-ups, drive more incremental revenue among your current customer base? The best way to answer this question is to interview stakeholders in your organization who will consume the data.
+While it may seem obvious, we highly recommend documenting your high-level business objectives (see [Goals tab in Google Sheet Tracking Plan](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) template). More specifically, ask yourself: what are the measurable business outcomes you want to achieve this year? Do you want to acquire new customers? Generate more new sign-ups, drive more incremental revenue among your current customer base? The best way to answer this question is to interview stakeholders in your organization who will consume the data.
 
 With your business goals documented, the next step is to map user actions to those business goals. For example, if one of your goals is to activate new signups, you want to think about which activities are related to a signup. Ask yourself, what actions do people take _before_ signing up? Do specific actions predict a user signing up?
 
@@ -43,7 +43,7 @@ Our most successful customers limit their tracking plan to a small number of cor
 
 TODO: this doesn't actually give an action they can do, or explain what would be in a collection standard? did we miss a bit when importing?
 
-## Formalize naming standards
+## Create naming conventions
 
 Regardless of approach, here are some important best practices to keep in mind:
 
@@ -98,10 +98,10 @@ From there, we recommend you specify Track events in the **Track (Custom)** tab.
 
 Once completed, you can share the Google Sheet tracking plan with stakeholders to either review, comment, edit or simply reference for implementation. And if you decide to purchase Protocols in the future, you’ll be able to upload the tracking plan into Segment [using the Config API](https://segment.com/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
 
-## Identify your users
+## Plan your Identify and Group calls
 
-The `Identify` call is important, because it updates all records of the user with a set of traits. But how do you choose which traits to include?
-Here is a sample `.identify()` call (with [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) for Segment:
+The Identify call is important, because it updates all records of the user with a set of traits. But how do you choose which traits to include?
+The example below shows an Identify call using [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) for Segment:
 
 ```js
 analytics.identify({
@@ -115,7 +115,11 @@ analytics.identify({
 
 The traits represent dimensions in your data that you can group or pivot on. For example, in the above, you can easily create cohorts of all types that are `users` or accounts created within a time window of your choosing.
 
-## Define your Track events
+When you plan your deployment, think about what information you can collect as traits that would be useful to you when grouping users together, and plan how you will collect that information.
+
+The Group call is similar to the Identify call, but it adds traits associated with a parent account to the user's profile. If your organization is a B2B company, you should also plan the group traits to collect, and how you'll use them once they're applied to a user account.
+
+## Plan your Track events
 
 After you’ve documented your [event naming and collection standards](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#formalize-your-naming-and-collection-standards) it’s time to add events to your tracking plan.
 
@@ -156,7 +160,7 @@ With this, they’re able to develop metrics around engagement, and understand h
 
 Each `.track()` call can accept an optional dictionary of `properties`, which can contain any key-value pair. These `properties` act as dimensions that allow your end tool to group, filter, and analyze the events. They give you additional detail on broader events.
 
-As mentioned earlier, events should be generic and high level, whereas properties are specific and detailed. For example, at Segment, `Business Tier Workspace Created` is a horrible event name. Instead, we used `Workspace Created` with a `property` of `account_tier` and value of `business` :
+As mentioned earlier, events should be generic and high-level, whereas properties are specific and detailed. For example, at Segment, `Business Tier Workspace Created` is a horrible event name. Instead, we used `Workspace Created` with a `property` of `account_tier` and value of `business` :
 
 ```js
 analytics.track('Workspace Created', {
@@ -180,7 +184,7 @@ analytics.track(userId, 'Lead Captured', {
 });
 ```
 
-The high level event is **Lead Captured** and all of the details are tucked into the `properties` dictionary. In our downstream tools, we’ll be able to easily look at how many leads were captured in different locations on our site.
+The high-level event is **Lead Captured** and all of the details are tucked into the `properties` dictionary. In our downstream tools, we’ll be able to easily look at how many leads were captured in different locations on our site.
 
 If you want to learn more about how properties are used by downstream tools, check out [The Anatomy of a Track Call](https://segment.com/academy/collecting-data/the-anatomy-of-a-track-call/).
 Want a free consultation from our Customer Success Managers on how they simplify our customer’s analytics? [Request a demo of Segment](https://segment.com/contact/demo).
@@ -251,7 +255,7 @@ On sheet two, find the list of tools, and look up which methods, and which conne
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/02-simple-install/" icon="symbols/arrow-left.svg" title="Back to A Simple Installation" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/02-simple-install/" newtab="false" icon="symbols/arrow-left.svg" title="Back to A Simple Installation" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/04-full-install/" icon="symbols/arrow-right.svg" title="Next page: A full Segment implementation" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/04-full-install/" newtab="false" icon="symbols/arrow-right.svg" title="Next page: A full Segment implementation" content="Learn how to take the plans you made, and make them real." variant="related" %}
 </div>

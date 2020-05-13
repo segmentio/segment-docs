@@ -17,7 +17,7 @@ title: Sending data to destinations
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/05-testing-debugging/" icon="symbols/arrow-left.svg" title="Back to Testing and Debugging" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/05-testing-debugging/" newtab="false" icon="symbols/arrow-left.svg" title="Back to Testing and Debugging" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/02-simple-install/" icon="symbols/arrow-right.svg" title="Next page: What's next?" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/02-simple-install/" newtab="false" icon="symbols/arrow-right.svg" title="Next page: What's next?" content=" " variant="related" %}
 </div>

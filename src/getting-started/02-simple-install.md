@@ -2,7 +2,7 @@
 title: A simple Segment installation
 ---
 
-When you implement Segment, you add Segment code to your website, app, or server. This code generates messages based on specific triggers you define.
+When you implement Segment, you add Segment code to your website, app, or server. This code generates messages based on specific triggers you define  .
 
 At its very simplest, this code can be a snippet of Javascript that you copy and paste into the HTML of a website to track page views. It can also be as complex as Segment calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example "ticket reservation expired" or "cart abandoned after 2 hours").
 
@@ -10,9 +10,9 @@ The best way to learn about how Segment works is to see it in action. This tutor
 
 ## Before you begin
 
-Before you start, you need a Segment user account and a workspace. If you're not already part of an organization with a Segment Workspace, you can sign up for a free account and free workspace.
+Before you start, you need a Segment user account and a workspace. If you're not already part of an organization with a Segment Workspace, you can [sign up for a free account and free workspace](https://app.segment.com/signup/?ref=docs).
 
-For the quickstart portion, you also need access to the code for a basic website, PHP website, or an iOS app.
+For the quickstart portion below, you also need access to the code for a basic website, PHP website, or an iOS app.
 
 
 ## Dev and Prod Sources
@@ -22,7 +22,7 @@ When developing and testing, you should create and use separate sources for each
 By default, Segment gives you the option to give each source an `environment` label on creation, and we strongly suggest that you use these labels to sort your sources.
 
 > warning ""
-> **Caution**! Double-check when you enter Write Keys for dev and production environments to make sure that you'll send the right data to the right place!
+> **Caution**! Double-check when you enter write keys for dev and production environments to make sure that you'll send the right data to the right place!
 
 
 ## Create a Segment source
@@ -36,18 +36,18 @@ On the next screen, give the source a name. (We recommend that you include the w
 We also recommend that you add an Environment Label of `dev` to the source, so you know that this demo source isn't part of a production installation.
 
 
-## Find your Write Key
+## Find your write key
 
 The write key is the unique identifier for a source which tells Segment which source data comes from, to which workspace it belongs, and which destinations should receive the data.
 
-When you create a new library source, you can find the Write Key in the **Settings** tab of the source information, under **API Keys**. Any time you change a library's settings in the Segment App, the writekey regenerates.
+When you create a new library source, you can find the write key in the **Settings** tab for the source, under **API Keys**. Any time you change a library's settings in the Segment App, the write key regenerates.
 
 ![](/docs/connections/images/find_writekey.png)
 
 > info ""
 > [Cloud-sources](/docs/guides/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service.
 
-Make note of or write down your Write Key, as you'll need it in the next steps.
+Make note of or write down your write key, as you'll need it in the next steps.
 
 
 ## Installing Segment
@@ -270,7 +270,7 @@ class_alias('Segment', 'Analytics');
 Segment::init("YOUR_WRITE_KEY");
 ```
 
-Replace `YOUR_WRITE_KEY` with the actual **Write Key**, which you can find in Segment under your project settings. Otherwise all that useful data goes straight to `/dev/null`.
+Replace `YOUR_WRITE_KEY` with the actual write key, which you can find in Segment under your project settings. Otherwise all that useful data goes straight to `/dev/null`.
 
 You only need to call `init` once when your php file is requested. All of your files then have access to the same `Analytics` client.
 
@@ -424,7 +424,7 @@ Congratulations! Data is now flowing from the source you set up, to the first de
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/01-what-is-segment/" icon="symbols/arrow-left.svg" title="Go back to What is Segment" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/01-what-is-segment/" newtab="false" icon="symbols/arrow-left.svg" title="Back to What is Segment" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/03-planning-full-install/" icon="symbols/arrow-right.svg" title="Next page: Planning a Full Installation" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/03-planning-full-install/" newtab="false" icon="symbols/arrow-right.svg" title="Next page: Planning a Full Installation" content="Think through your goals, plan your calls, and set yourself up for success." variant="related" %}
 </div>
