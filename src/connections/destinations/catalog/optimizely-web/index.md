@@ -61,7 +61,7 @@ Segment also handles the following mapping:
 
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
 
-**Note:** Custom Event Tags in Optimizely, which includes any Event Tag outside of `revenue` or `value`, will not be displayed on the Optimizely results page, however,  they will be available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
+**Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which includes any Event Tag outside of `revenue` or `value`, will not be displayed on the Optimizely results page, however,  they will be available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
 
 ### Page
 
@@ -146,7 +146,13 @@ If you're sending your experiment data to Google Analytics in the form of `track
 3. The instance must be named `optmizelyClientInstance`.
 4. Attach the `optimizelyClientInstance` to the `window` so Segment recognizes it.
 5. Now, paste your Segment snippet below the Optimizely implementation on every page where you'd like to include Segment's JavaScript. Or, if you've implemented Optimizely in a separate file, ensure Segment loads only after Optimizely has been initialized.
-6. Finally, define any `metrics` and `attributes` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`.
+6. Finally, define any [`events`](https://docs.developers.optimizely.com/full-stack/docs/create-events) and [`attributes`](https://docs.developers.optimizely.com/full-stack/docs/define-attributes) in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`.
+
+**Note:** If you are using Optimizely SDKs v1.x or v2.x require then the `attributes` that are passed in for a visitor with any `activate` or `isFeatureEnabled` call has to be the same as the `attributes` passed to any `track` made for that user id in order to be attributed on the Optimizely results page. 
+
+If you are using Optimizely SDKs v3+ or the React SDK, [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) is enabled by default for decision events and setup does not require maintaining the attributes of a user as long as the user id stays the same to have those Optimizely `events` populated in the Optimizely results page. If you would like to segment your results by Optimizely `attribute` then make sure the `attributes` passed in for the `activate` and `isFeatureEnabled` calls match the `attributes` passed in for the `track` calls for that user id.
+
+For more details on how events are attributed on the Optimizely results page, please refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
 
 ### Track
 
@@ -162,6 +168,8 @@ Segment also handles the following mapping:
 * Segment `track` event `traits`, falling back to cached user `traits`, to Optimizely `attributes`.
 
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
+
+**Note:** Custom [Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which includes any Event Tag outside of `revenue` or `value`, will not be displayed on the Optimizely results page, however,  they will be available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
 
 ### Page
 
@@ -190,6 +198,24 @@ Segment does not map any data to Optimizely from the Segment<>Optimizely Web des
 ### Lower Experiment Viewed counts inside Segment and other tools vs. Optimizely unique visitors
 
 The count of "Experiment Viewed" events may be slightly lower compared to the number of unique visitors seen in Optimizely because Optimizely loads synchronously and Segment loads asynchronously. This means that if the user quickly closes or redirects from a page, sometimes Segment does not have enough time to scrape the experiment data from the global Optimizely object and make its API calls back to Segment and to your other enabled tools.
+
+
+### Workaround for sending Segment event `properties` as Optimizely `events`
+
+If you use broader naming conventions for Segment `track` events, such as 'Click', you might not capture the specificity of the conversion event that you want to use to Optimizely as the `eventName`. An example of this could be a Segment `track` event called ‘Click’ and more context of that event is stored in the Segment event `properties`:
+
+```javascript
+analytics.track('Click', {
+  category: 'Shirts',
+  productId: '1234',
+  productName: 'Red Cotton T-shirt',
+  price: 23.95
+});
+```
+
+If you were to send this Segment `track` event to Optimizely via any of the Segment integrations, we would only be able to view the event name ‘Click’ as a `metric` in Optimizely since custom event tags in Optimizely are not available on the [Results page](https://help.optimizely.com/Analyze_Results/The_Experiment_Results_page_for_Optimizely_X). 
+
+To send a `track` event from Segment with the context about that event from the `properties` to Optimizely, create a [custom Segment Destination Function](https://segment.com/docs/connections/destinations/destination-functions/) that maps the Segment `eventName` to a more specific Optimizely `eventName` and send an Optimizely `event` payload with the transformed `eventName` to the Optimizely [Event API](https://docs.developers.optimizely.com/web/docs/event-api). Using the example above, the Segment `track` event ‘Click’ can be transformed to an Optimizely `event` with the `eventName`, ‘Clicked Shirt’.
 
 ### Sending effective referrer in your automatic page calls
 
