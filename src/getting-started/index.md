@@ -2,7 +2,6 @@
 title: Getting Started with Segment
 ---
 
-TODO find out who owns this video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/T01YklpEqiM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

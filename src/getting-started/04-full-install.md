@@ -33,18 +33,18 @@ A Track call is the most basic type of call, and can represent any type of event
 
 ## Identify calls
 
-![](https://lh4.googleusercontent.com/ivo-4buqR99rYXt8GeXGEKPh7naSh1yknYD8-XUZ5nwPSzG_g1eFt0u7Bcp_CJ-CI1ljEjvogLtt5zGmuQWkfYzwIjW8YqkxGz-jjqHR4-qK2Vcwi0VD-lnaON4lc7xIA3_WJB8j)
+![](images/identify-call.png)
 
 
-The `identify()` call allows Segment to know **who** is triggering an event.
+The `identify` call allows Segment to know **who** is triggering an event.
 
 ### When to call Identify
 
-Call `Identify()` when the user first provides identifying information about themselves (usually during log in), or when a they update their profile information.
+Call `Identify` when the user first provides identifying information about themselves (usually during log in), or when a they update their profile information.
 
-When called as part of the login experience, you should call `identify()` as soon as possible after the user logs in. When possible, follow the `identify()` call with a `track` event that records what caused the user to be identified.
+When called as part of the login experience, you should call `identify` as soon as possible after the user logs in. When possible, follow the `identify` call with a `track` event that records what caused the user to be identified.
 
-When you make an `identify()` call as part of a profile update, you only need to send the changed information to Segment. You can send all profile info on every `identify` call if that makes implementation easier, but this is optional.
+When you make an `identify` call as part of a profile update, you only need to send the changed information to Segment. You can send all profile info on every `identify` call if that makes implementation easier, but this is optional.
 
 ## Traits in Identify calls
 
@@ -105,7 +105,7 @@ Make a `Reset()` call as soon as possible after sign-out occurs, and only after 
 
 ## Page and Screen
 
-The `Page()` and `Screen()` calls tell Segment what web page or mobile screen the user is on. This call automatically captures important context traits, so you don’t have to manually implement and send this data.
+The `Page` and `Screen` calls tell Segment what web page or mobile screen the user is on. This call automatically captures important context traits, so you don’t have to manually implement and send this data.
 
 | **Page context** auto-captured | **Screen context** auto-captured                    |             |                                                                                                    |
 | ------------------------------ | --------------------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------- |
@@ -122,7 +122,7 @@ The `Page()` and `Screen()` calls tell Segment what web page or mobile screen th
 
 You can always [override the auto-collected Page/Screen properties](/docs/connections/sources/catalog/website/javascript/#default-properties) with your own, and set additional custom page or screen properties.
 
-Some downstream tools (like Marketo) require that you attach specific properties (like email address) to every `page()` call.
+Some downstream tools (like Marketo) require that you attach specific properties (like email address) to every `page` call.
 
 This is considered a destination-specific implementation nuance, and you should check the documentation for each destination you plan to use and make a list of these nuances before you start implementation.
 
@@ -215,6 +215,7 @@ Nouns are the entities or objects that the user or the system acts upon. The imp
 Use the following list of objects to see if there is a logical match with your application. If you have objects that aren’t in this list, name it in a way that makes sense if it were to appear in other applications, and/or run it by Product Analytics.
 
 #### Some suggested Nouns
+
 (TODO: this section had a table with a mostly-empty "description" column. We should expand this table and provide descriptions, then normalize formatting with the similar ones below.)
 
 - Menu
@@ -222,7 +223,8 @@ Use the following list of objects to see if there is a logical match with your a
 - Profile
 - Account
 - Video
--
+
+
 ### Actions are Verbs
 
 Verbs indicate the action taken by either a user on your site. When you name a new track event, consider if you can describe the current interaction using a verb from the list below.
@@ -309,5 +311,5 @@ analytics.track( user_id: '12345abcde',
 <div class="double">
   {% include components/media-icon.html  href="/getting-started/03-planning-full-install/" newtab="false" icon="symbols/arrow-left.svg" title="Back to Planning a full installation" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/05-testing-debugging/" newtab="false" icon="symbols/arrow-right.svg" title="Next page: Testing and debugging" content="Test your implementation and see where your data is and isn't arriving." variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/06-testing-debugging/" newtab="false" icon="symbols/arrow-right.svg" title="Next page: Testing and debugging" content="Test your implementation and see where your data is and isn't arriving." variant="related" %}
 </div>

@@ -34,11 +34,8 @@ This feature is only available for server side integrations (also known as cloud
 
 Event Delivery can be accessed within any supported destination in the App. It's located on the tab under "Settings" for each destination. 
 
-![](images/edelivery_rzYZESor.png)
+![](images/find-edelivery.png)
 
-To get to any individuals destination view, you should navigate to the destination overview page
-
-![](images/edelivery_feyzNqcy.png)
 
 ## How do I use Event Delivery?
 

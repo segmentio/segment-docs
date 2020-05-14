@@ -4,15 +4,17 @@ title: Planning a full installation
 
 Now that we’ve shown you Segment in action, let’s step back and think through what a full implementation of Segment for your organization would look like. We know that figuring out what events to track in Segment can feel overwhelming. You should expect this planning process to have the following steps:
 
-- Decide what data is meaningful
-- Check if a Business Spec meets your needs
-- Decide what to collect
-- Create naming conventions
--
+<!-- TOC depthFrom:1 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Define Business Objectives](#define-business-objectives)
+- [Decide what to collect](#decide-what-to-collect)
+- [Create naming conventions](#create-naming-conventions)
+- [Develop a Tracking Plan](#develop-a-tracking-plan)
+- [Plan for destination tools](#plan-for-destination-tools)
+
+<!-- /TOC -->
 
 Be prepared to invest time deciding with stakeholders how to track your data, and planning how you'll analyze it. The time you spend here will save you lots of time in the future, as following Segment's best practices allows you to easily change your tracking later.
-
-
 
 ## Define Business Objectives
 
@@ -43,35 +45,36 @@ As an example, you might end up with a list like this:
 
 While this list represents a tiny fraction of the user actions you _could_ track, it gives a list focused on your top business objectives. This helps break up the huge project of data collection into smaller chunks.
 
-## Check if a Business Spec meets your needs
-
-Segment maintains several "Business Specs", which are recommendations based on your type of business that give recommendations on what to track, what additional traits or properties to collect, and how to format them. The two most common are the B2B (business-to-business) Spec, Ecommerce Spec, and our Mobile and Video specs.
-
-If these specs meet your business needs, you're in luck! These specs are built into our tracking plan templates, so you don't need to start from a blank slate.
-
-### B2B Spec
-
-If your organization sells a product or service to other businesses, you might have different analytics and marketing needs than most companies. You need to understand your customer behaviors both at the user-level, and also at the company or team-level.  You can read more about [how Segment thinks about B2B tracking](https://segment.com/academy/collecting-data/tracking-plans-for-b2b-companies/), and [read more about the B2B Spec](/docs/connections/spec/b2b-saas/).
-
-### Ecommerce Spec
-
-If your organization sells products online, the E-commerce Spec covers the customer's journey as they browse your store, click on promotions, view products, add those products to a cart, and complete a purchase. It also provides recommendations about off-page interactions, including interactions with email promotions, coupons, and other systems. You can read more about [why companies need an Ecommerce Spec](https://segment.com/blog/2014-08-28-ecommerce-analytics-story/), read more about [Ecommerce tracking plans](/docs/protocols/data-quality/ecommerce-tracking-plan/), and dive directly into our [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
-
-### Mobile Spec
-
-The native Mobile Spec is a common blueprint for the mobile user lifecycle. The Spec outlines the most important events for mobile apps to track, and automatically collects many of these events when you use the [Segment Android and iOS SDKs](/docs/connections/sources/catalog/#mobile). Read more about the [benefits of the native mobile spec](/docs/connections/spec/native-mobile-spec/), or read through [the Native Mobile Spec](/docs/connections/spec/mobile) directly.
-
-### Video Spec
-
-Segment's video spec helps you understand how customers engage with your video and ad content, including playback events, types of media displayed, and performance metrics. You can [read more about our Video Spec](/docs/connections/spec/video/).
-
 ## Decide what to collect
 
 With your business objectives documented and mapped to user actions, it’s time to build standards that you can use when deciding what to track. With your stakeholders, make a list of the actual events (page or screen views, and user actions) that you want to track. Think about all of the ways your users can interact with your site or app
 
 When you're first starting out, we recommend that you limit your tracking plan to a few core events, but add lots of properties to provide context about them. We generally see more success with the “less is more” philosophy of tracking data, but you might also decide to take a more liberal “track more and analyze later” approach. Like everything, each alternative has pros and cons that are important to consider especially as it relates to your company’s needs.
 
-If you're having trouble starting out, we recommend that you look at our free [Tracking Plan spreadsheet template](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) for inspiration. (We'll talk more about Tracking Plans [below](#whats-a-tracking-plan).)
+If you're having trouble starting out, we recommend that you look at our free [Tracking Plan spreadsheet template](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) for inspiration. (We'll talk more about Tracking Plans [below](#develop-a-tracking-plan).)
+
+### Shortcut! Check if a Business Spec meets your needs
+
+Segment maintains several "Business Specs", which are recommendations based on your type of business that give recommendations on what to track, what additional traits or properties to collect, and how to format them. The two most common are the B2B (business-to-business) Spec, Ecommerce Spec, and our Mobile and Video specs.
+
+If these specs meet your business needs, you're in luck! These specs are built into our tracking plan templates, so you don't need to start from a blank slate.
+
+#### B2B Spec
+
+If your organization sells a product or services to other businesses, you might have different analytics and marketing needs than most companies. You need to understand your customer behaviors both at the user-level, and also at the company or team-level.  You can read more about [how Segment thinks about B2B tracking](https://segment.com/academy/collecting-data/tracking-plans-for-b2b-companies/), and [read more about the B2B Spec](/docs/connections/spec/b2b-saas/).
+
+#### Ecommerce Spec
+
+If your organization sells products online, the E-commerce Spec covers the customer's journey as they browse your store, click on promotions, view products, add those products to a cart, and complete a purchase. It also provides recommendations about off-page interactions, including interactions with email promotions, coupons, and other systems. You can read more about [why companies need an Ecommerce Spec](https://segment.com/blog/2014-08-28-ecommerce-analytics-story/), read more about [Ecommerce tracking plans](/docs/protocols/data-quality/ecommerce-tracking-plan/), and dive directly into our [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
+
+#### Mobile Spec
+
+The native Mobile Spec is a common blueprint for the mobile user lifecycle. The Spec outlines the most important events for mobile apps to track, and automatically collects many of these events when you use the [Segment Android and iOS SDKs](/docs/connections/sources/catalog/#mobile). Read more about the [benefits of the native mobile spec](/docs/connections/spec/native-mobile-spec/), or read through [the Native Mobile Spec](/docs/connections/spec/mobile) directly.
+
+#### Video Spec
+
+Segment's video spec helps you understand how customers engage with your video and ad content, including playback events, types of media displayed, and performance metrics. You can [read more about our Video Spec](/docs/connections/spec/video/).
+
 
 
 ## Create naming conventions
@@ -95,7 +98,7 @@ Got all that? Great! You’re now ready to develop a Tracking Plan.
 
 <!--Source: /docs/protocols/data-quality/whats-a-tracking-plan/ or /docs/protocols/tracking-plan/ -->
 
-## What's a Tracking Plan?
+## Develop a Tracking Plan
 
 A [tracking plan](https://segment.com/blog/whats-a-tracking-plan) clarifies what events to track, where those events live in the code base, and why you're tracking those events (from a business perspective). **A good tracking plan represents the single source of truth about what data you collect, and why.**
 
@@ -103,11 +106,11 @@ Your tracking plan is probably maintained in a spreadsheet (unless you use our t
 
 In the next section, we share how to build a tracking plan from the ground up using a Google Sheet template. Note that you can use any tool to create the tracking plan!
 
-## Tracking Plan Google Sheets template
+### Using the Tracking Plan Google Sheets template
 
 To help you get started, we developed a Tracking Plan template in [Google Sheets](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view).
 
-The template includes all of our Business-case ("semantic") Specs (which we mentioned [above](#check-if-a-business-spec-meets-your-needs)) as tabs, including [eCommerce](/docs/connections/spec/ecommerce/v2/), [B2B SaaS](/docs/connections/spec/mobile/), [Mobile](/docs/connections/spec/mobile/) and [Video](/docs/connections/spec/video/), and a collection of common properties.
+The template includes all of our Business-case ("semantic") Specs (which we mentioned [above](#shortcut-check-if-a-business-spec-meets-your-needs)) as tabs, including [eCommerce](/docs/connections/spec/ecommerce/v2/), [B2B SaaS](/docs/connections/spec/mobile/), [Mobile](/docs/connections/spec/mobile/) and [Video](/docs/connections/spec/video/), and a collection of common properties.
 
 
 With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](/docs/connections/sources/catalog/libraries/website/javascript/#page) and skip over that tab.
@@ -121,7 +124,7 @@ Once you complete the tracking plan, you can share the Google Sheet with stakeho
 > success ""
 > **Tip**! If you decide to purchase [Protocols](/docs/protocols/) in the future, you’ll be able to upload the tracking plan into Segment [using the Config API](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
 
-## Plan Identify and Group calls
+### Plan your Identify and Group calls
 
 The Identify call updates all records of the user with a set of traits, and so is extremely important for building your understanding of your users. But how do you choose which traits to include?
 The example below shows an Identify call using [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/)) for Segment:
@@ -142,7 +145,7 @@ When you plan your deployment, think about what information you can collect as t
 
 The Group call is similar to the Identify call, but it adds traits associated with a parent account to the user's profile. If your organization is a B2B company, you should also plan the group traits to collect, and how you'll use them once they're applied to a user account.
 
-## Plan your Track events
+### Plan your Track events
 
 We recommend starting with fewer events that are directly tied to one of your [business objectives](/docs/protocols/data-quality/whats-a-tracking-plan/#define-business-objectives), to help avoid becoming overwhelmed by endless number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer more specialized questions.
 
@@ -165,7 +168,7 @@ For an Ecommerce company, however, the main events might be something like:
 - **Order Completed**
 
 > success ""
-> **Tip**: As we mentioned [above](#check-if-a-business-spec-meets-your-needs), Segment has a set of “reserved” event names specifically for ecommerce, called our [Ecommerce Spec](/docs/connections/spec/ecommerce/v2). Check it out to see which events we cover and how they are used in our downstream destinations.
+> **Tip**: As we mentioned [above](#shortcut-check-if-a-business-spec-meets-your-needs), Segment has a set of “reserved” event names specifically for ecommerce, called our [Ecommerce Spec](/docs/connections/spec/ecommerce/v2). Check it out to see which events we cover and how they are used in our downstream destinations.
 
 An online community, on the other hand, has an entirely different set of actions that indicate engagement, as listed below. For example, a community might want to track actions like:
 
@@ -177,7 +180,7 @@ An online community, on the other hand, has an entirely different set of actions
 
 With these actions tracked, the community can develop metrics around engagement, and understand how users move towards their ultimate conversion events. You can read more in [this article from the online community GrowthHackers](https://segment.com/blog/growthhackers-community-metrics/) about the events they track and why.
 
-## Define your Track event properties
+### Define your Track event properties
 
 Each Track call can accept an optional dictionary of properties, which can contain any key-value pair. These properties act as dimensions that allow destination tools to group, filter, and analyze the events. They give you additional detail on broader events.
 

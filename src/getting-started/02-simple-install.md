@@ -396,7 +396,7 @@ Two views are available when viewing a payload:
 * The **Pretty view** is a recreation of the API call you made that was sent to Segment.
 * The **Raw view** is the complete JSON object Segment received from the calls you sent. These calls include all the details about what is being tracked: timestamps, properties, traits, ids, and [contextual information Segment automatically collects](/docs/connections/spec/common/#context-fields-automatically-collected) the moment the data is sent.
 
-We'll talk more about debugging and troubleshooting [in a later page](05-testing-debugging/).
+We'll talk more about debugging and troubleshooting [in a later page](06-testing-debugging/).
 
 ## Set up your first destination
 
