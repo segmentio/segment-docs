@@ -15,30 +15,34 @@ Segment's **Optimizely Full Stack (previously Optimizely X)** destination suppor
 * [Optimizely Full Stack Android (Cloud-mode)](#android-cloud-mode-implementation)
 * [Optimizely Full Stack iOS (Cloud-mode)](#ios-cloud-mode-implementation)
 
-If you're interested in implementing Optimizely Classic, Optimizely X Web, or Optimizely Full Stack (JavaScript), please see Segment's [**Optimizely Web** destination](https://segment.com/docs/connections/destinations/catalog/optimizely-web/), which supports:
+If you're interested in implementing Optimizely X Web or Optimizely Full Stack with the JavaScript SDK, please see Segment's [**Optimizely Web** destination](https://segment.com/docs/connections/destinations/catalog/optimizely-web/), which supports:
 
-* [Optimizely Classic](https://segment.com/docs/connections/destinations/catalog/optimizely/#optimizely-classic-web)
-* [Optimizely Classic Android 1.x](https://segment.com/docs/connections/destinations/catalog/optimizely/#optimizely-classic-android) (NOTE: This has been deprecated by Optimizely as of September 30, 2018.)
-* [Optimizely Classic iOS 1.x](https://segment.com/docs/connections/destinations/catalog/optimizely/#optimizely-classic-ios) (NOTE: This has been deprecated by Optimizely as of September 30, 2018.)
 * [Optimizely X Web](https://segment.com/docs/connections/destinations/catalog/optimizely/#optimizely-x-web)
 * [Optimizely Full Stack (JavaScript)](https://segment.com/docs/connections/destinations/catalog/optimizely/#optimizely-full-stack-javascript-)
 
 ## Implementation Prerequisite
 
-Optimizely works differently than other Segment destinations: It requires that customers implement at least some Optimizely functionalities natively.
+Optimizely works differently than other Segment destinations: It requires that customers implement Optimizely some functionalities natively to ensure experiment logic runs correctly.
 
-Although Segment maps `track` events to Optimizely's `track` method, customers must implement all Optimizely decision-based methods, such as `activate`, `isFeatureEnabled`, etc., natively. Segment's API does not include methods that correspond to decision-based methods.
+Segment maps `track` events to Optimizely's `track` method, customers must implement all Optimizely decision-based methods, such as `activate` and `isFeatureEnabled` natively. Segment's API does not include methods that correspond to decision-based methods.
 
-This limitation requires that customers include a native Optimizely implementation before their Segment implementation on pages or in mobile apps where Optimizely experiments run.
+This requires that customers include a native Optimizely implementation before their Segment implementation on pages or in mobile apps where Optimizely experiments run.
 
 ## Server Side
 
 ### Getting Started
 
 1. In your Segment source dashboard, enable the "Optimizely Full Stack" destination (*not the "Optimizely Web" destination*).
-2. Include your Optimizely project's `projectId` and `datafile` URL in your Segment settings.
-3. Create a native Optimizely instance in your server environment so you can access Optimizely methods like `activate`, `isFeatureEnabled`, etc.
-3. Finally, define any `metrics` and `attributes` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`. In addition, Segment maps `track` event `context.traits` to Optimizely `attributes`.
+2. Include your Optimizely project's `datafile` URL in your Segment settings.
+3. Create a native Optimizely instance in your server environment so you can access Optimizely decisioning methods like `activate`, `isFeatureEnabled`.
+4. Finally, define any [`events`](https://docs.developers.optimizely.com/full-stack/docs/create-events) and [`attributes`](https://docs.developers.optimizely.com/full-stack/docs/define-attributes) in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`. In addition, Segment maps `track` event `context.traits` to Optimizely `attributes`.
+
+**Note:** If you are using Optimizely SDKs v1.x or v2.x the `attributes` object that is passed in for a visitor with any `activate` or `isFeatureEnabled` call has to be the same as the `attributes` object passed to any `track` made for that user id in order to be attributed on the Optimizely results page. 
+
+If you are using Optimizely SDKs v3+, [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) is enabled by default for decision events. Set up does not require maintaining the attributes of a user as long as the user id stays the same between Optimizely `activate` and `isFeatureEnabled` calls and Segment `track` calls to have Optimizely `metrics` populated in the Optimizely results page. If you would like to segment your Optimizely results by user `attribute`, then make sure the `attributes` passed in for the `activate` and `isFeatureEnabled` calls match the `attributes` passed in for the `track` calls for that user id.
+
+For more details on how events are attributed on the Optimizely results page, please refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
+
 
 ### Track
 
@@ -55,11 +59,13 @@ Segment also handles the following mapping:
 
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
 
+**Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which includes any Event Tag outside of `revenue` or `value`, will not be displayed on the Optimizely results page, however,  they will be available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
+
 Segment defaults to identifying users with their `anonymousId`. Enabling the "Use User ID" setting in your Segment settings means that only `track` events triggered by identified users are passed downstream to Optimizely. You may optionally fall back to `anonymousId` when `userId` is unavailable by setting `fallbackToAnonymousId` to `true`.
 
 ### Notification Listeners
 
-Segment's server-side integration with Optimizely Full Stack does not support notification listeners.
+Segment's server-side integration with Optimizely Full Stack does not support notification listeners for Segment`track` events. [Notification listeners](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners) are still available with any native call invoked from your Optimizely client instance.
 
 ## Android Cloud-mode Implementation
 
@@ -67,9 +73,15 @@ Segment's server-side integration with Optimizely Full Stack does not support no
 
 1. In your Segment source dashboard, enable the "Optimizely Full Stack" destination (*not the "Optimizely Web" destination*).
 2. Include the latest version of Optimizely Full Stack's native SDK in your your app-level build.gradle file and [implement Optimizely as your would natively](https://docs.developers.optimizely.com/full-stack/docs/install-the-sdk#section-android).
-3. Finally, define any `metrics` and `attributes` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`. In addition, Segment maps `identify` `traits` to Optimizely `attributes`.
+3. Finally, define any [`events`](https://docs.developers.optimizely.com/full-stack/docs/create-events) and [`attributes`](https://docs.developers.optimizely.com/full-stack/docs/define-attributes) in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`. In addition, Segment maps `identify` `traits` to Optimizely `attributes`.
 
 When implementing Optimizely Full Stack via cloud-mode, Segment will map `track` events to Optimizely `track` events on our servers and deliver the data to your Optimizely project as usual.
+
+**Note:** If you are using Optimizely SDKs v1.x or v2.x the `attributes` object that is passed in for a visitor with any `activate` or `isFeatureEnabled` call has to be the same as the `attributes` object passed to any `track` made for that user id in order to be attributed on the Optimizely results page. 
+
+If you are using Optimizely SDKs v3+, [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) is enabled by default for decision events. Set up does not require maintaining the attributes of a user as long as the user id stays the same between Optimizely `activate` and `isFeatureEnabled` calls and Segment `track` calls to have Optimizely `metrics` populated in the Optimizely results page. If you would like to segment your Optimizely results by user `attribute`, then make sure the `attributes` passed in for the `activate` and `isFeatureEnabled` calls match the `attributes` passed in for the `track` calls for that user id.
+
+For more details on how events are attributed on the Optimizely results page, please refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
 
 ### Track
 
@@ -83,6 +95,8 @@ Segment also handles the following mapping:
 * Segment `track` event `properties` to Optimizely `eventTags`.
 
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
+
+**Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which includes any Event Tag outside of `revenue` or `value`, will not be displayed on the Optimizely results page, however,  they will be available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
 
 Segment defaults to identifying users with their `anonymousId`. Enabling "Use User ID" setting in your Segment dashboard means that only `track` events triggered by identified users are passed downstream to Optimizely. You may optionally fall back to `anonymousId` when `userId` is unavailable by setting `fallbackToAnonymousId` to `true`.
 
@@ -96,7 +110,8 @@ Invoking this method invalidates the listener for the `Experiment Viewed` event.
 
 ### Notification Listeners
 
-Notification listeners are not available when implementing Optimizely via Segment using cloud-mode. However, notification listeners are straightforward to set up, as [documented here on Optimizely's site](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners).
+Notification listeners are not available for Segment `track` events when implementing Optimizely via Segment using cloud-mode. [Notification listeners](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners) are still available with any native call invoked from your Optimizely client instance.
+ 
 
 ## iOS Cloud-mode Implementation
 
@@ -104,9 +119,15 @@ Notification listeners are not available when implementing Optimizely via Segmen
 
 1. In your Segment source dashboard, enable the "Optimizely Full Stack" destination (*not the "Optimizely Web" destination*).
 2. Include the latest version of Optimizely Full Stack's native SDK in your app and [implement it as you would natively](https://docs.developers.optimizely.com/full-stack/docs/install-the-sdk#section-ios-and-tvos).
-3. Finally, define any `metrics` and `attributes` in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`. In addition, Segment maps `identify` `traits` to Optimizely `attributes`.
+3. Finally, define any [`events`](https://docs.developers.optimizely.com/full-stack/docs/create-events) and [`attributes`](https://docs.developers.optimizely.com/full-stack/docs/define-attributes) in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`. In addition, Segment maps `identify` `traits` to Optimizely `attributes`.
 
 When implementing Optimizely via cloud-mode, Segment will map `track` events to Optimizely `track` events on our servers and deliver the data to your Optimizely project as usual.
+
+**Note:** If you are using Optimizely SDKs v1.x or v2.x the `attributes` object that is passed in for a visitor with any `activate` or `isFeatureEnabled` call has to be the same as the `attributes` object passed to any `track` made for that user id in order to be attributed on the Optimizely results page. 
+
+If you are using Optimizely SDKs v3+, [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) is enabled by default for decision events. Set up does not require maintaining the attributes of a user as long as the user id stays the same between Optimizely `activate` and `isFeatureEnabled` calls and Segment `track` calls to have Optimizely `metrics` populated in the Optimizely results page. If you would like to segment your Optimizely results by user `attribute`, then make sure the `attributes` passed in for the `activate` and `isFeatureEnabled` calls match the `attributes` passed in for the `track` calls for that user id.
+
+For more details on how events are attributed on the Optimizely results page, please refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
 
 ### Track
 
@@ -121,6 +142,8 @@ Segment also handles the following mapping:
 
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
 
+**Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which includes any Event Tag outside of `revenue` or `value`, will not be displayed on the Optimizely results page, however,  they will be available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
+
 Segment defaults to identifying users with their `anonymousId`. Enabling "Use User ID" setting in your Segment dashboard means that only `track` events triggered by identified users are passed downstream to Optimizely. You may optionally fall back to `anonymousId` when `userId` is unavailable by setting `fallbackToAnonymousId` to `true`.
 
 ### Identify
@@ -129,7 +152,7 @@ Invoking a Segment `identify` event sets Segment `traits` as Optimziely `attribu
 
 ### Notification Listeners
 
-Notification listeners are not available when implementing Optimizely via Segment using cloud-mode. However, notification listeners are straightforward to set up, as [documented here on Optimizely's site](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners).
+Notification listeners are not available for Segment `track` events when implementing Optimizely via Segment using cloud-mode. [Notification listeners](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners) are still available with any native call invoked from your Optimizely client instance.
 
 ## Personas
 
