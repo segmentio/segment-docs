@@ -13,7 +13,7 @@ This document was last updated on May 13, 2020. If you notice any gaps, outdated
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for Help Scout within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Click "Connect to Help Scout" to initiate Help Scout authentication flow. This will provide a secure token that Segment can use to send data to Help Scout. If you need to change accounts, click Disconnect and connect with a new Help Scout account.
+3. Click "Connect to Help Scout" to start the Help Scout authentication process. Help Scout provides a secure token that Segment uses to send data to Help Scout. If you need to change accounts, click **Disconnect**, then connect to a new Help Scout account.
 4. Enable the Destination.
 5. Start sending events!
 
