@@ -22,7 +22,7 @@ If you're interested in implementing Optimizely X Web or Optimizely Full Stack w
 
 ## Implementation Prerequisite
 
-Optimizely works differently than other Segment destinations: It requires that customers implement Optimizely some functionalities natively to ensure experiment logic runs correctly.
+Optimizely works differently than other Segment destinations: It requires that customers implement some Optimizely functionality natively to make sure your experiment logic runs correctly.
 
 Segment maps `track` events to Optimizely's `track` method, customers must implement all Optimizely decision-based methods, such as `activate` and `isFeatureEnabled` natively. Segment's API does not include methods that correspond to decision-based methods.
 
