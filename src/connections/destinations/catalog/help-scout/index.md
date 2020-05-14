@@ -5,8 +5,6 @@ rewrite: true
 
 [Help Scout](https://www.helpscout.net/) is a help desk software company which provides an email-based customer support platform, knowledge base tool, and an embeddable search/contact widget for customer service professionals.
 
-This document was last updated on May 13, 2020. If you notice any gaps, outdated information, or simply want to leave some feedback to help us improve our documentation, [please let us know](https://segment.com/help/contact/)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
