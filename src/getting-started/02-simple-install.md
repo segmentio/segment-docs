@@ -373,21 +373,20 @@ And presto, **you're done!** You successfully installed PHP tracking. Now you're
 
 ## Test that it’s working
 
-TODO: do we want to dedupe with [page 5: testing/debugging](05-testing-debugging/)?
-
 Once you've set up your Segment library, and instrumented at least one call, you can look at the Debugger tab for the Source to check that it produces data as you expected.
 
-The Source Debugger is a real-time tool that helps you confirm that API calls made from your website, mobile app, or servers arrive to your Segment Source, so you can troubleshoot your Segment set up even quicker. With the Debugger, you can check that calls are sent in the expected format without having to wait for any data processing.
+The Source Debugger is a real-time tool that helps you confirm that API calls made from your website, mobile app, or servers arrive at your Segment Source, so you can quickly see how calls are received by your Segment source, so you can troubleshoot quickly without having to wait for data processing.
 
 ![](/docs/connections/sources/images/debugger_view.png)
 
-The Debugger is separate from your workspace's data pipeline and is not an exhaustive view of all the events ever sent to your Segment workspace. The Debugger only shows a sample of the events that the Source receives in real time, with a cap of 500 events. The Debugger is a great way to test specific parts of your implementation to validate that events are being fired successfully and arriving to your Source.
+The Debugger is separate from your workspace's data pipeline, and is not an exhaustive view of all the events ever sent to your Segment workspace. The Debugger only shows a sample of the events that the Source receives in real time, with a cap of 500 events. The Debugger is a great way to test specific parts of your implementation to validate that events are being fired successfully and arriving to your Source.
 
-To see a more complete view of all your events, we recommend that you set up either a [warehouse](/docs/guides/general/what-is-a-warehouse/) or an [S3 destination](/docs/destinations/amazon-s3/).
+> success ""
+> Tip: To see a more complete view of all your events, you might consider setting up either a [warehouse](/docs/connections/warehouses/) or an [S3 destination](/docs/connections/warehouses/catalog/amazon-s3/).
 
-The Debugger shows a live stream of sampled events arriving into the Source, but you can also pause the stream from displaying new events by toggling "Live" to "Pause". Events continue to arrive to your Source while you Pause the stream.
+The Debugger shows a live stream of sampled events arriving at the Source, but you can also toggled from "Live" to "Pause", to stop the stream and prevent it from displaying new events. Events continue to arrive to your Source while you Pause the stream, they just are not displayed.
 
-You can search in the Debugger to find a specific payload using any information you know is available in the event's raw payload. You can also use advanced search options to limit the results to a specific event.
+You can search on any information you know is available in an event payload to search in the Debugger and show only matching payloads. You can also use advanced search options to limit the results to a specific event.
 
 ![](/docs/connections/sources/images/debugger_search.png)
 
@@ -397,6 +396,7 @@ Two views are available when viewing a payload:
 * The **Pretty view** is a recreation of the API call you made that was sent to Segment.
 * The **Raw view** is the complete JSON object Segment received from the calls you sent. These calls include all the details about what is being tracked: timestamps, properties, traits, ids, and [contextual information Segment automatically collects](/docs/connections/spec/common/#context-fields-automatically-collected) the moment the data is sent.
 
+We'll talk more about debugging and troubleshooting [in a later page](05-testing-debugging/).
 
 ## Set up your first destination
 
@@ -417,9 +417,14 @@ To set up your first destination:
 7. Enter the ID or API key and click **Save**.
 8. Click **Back to Destination**, then click the toggle to enable the destination.
 
-TODO LR note: this seems like a lot. are 6/7 needed?
+<!--TODO LR note: this seems like a lot. are 6/7 needed?-->
 
 Congratulations! Data is now flowing from the source you set up, to the first destination. Do some test browsing on your site or app, then log in to your downstream tool to see the data in place.
+
+You can click around and load pages to see your Segment calls in action, watch them arrive in the Debugger, and see them arrive in the destination tool.
+
+> warning ""
+> **Note**: When you're done with this test source and destination, you can delete them. This prevents you from getting unplanned "demo" data in your production environment later.
 
 
 

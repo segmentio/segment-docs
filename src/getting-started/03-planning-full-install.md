@@ -2,14 +2,22 @@
 title: Planning a full installation
 ---
 
-Source: https://segment.com/docs/protocols/data-quality/
+Now that we’ve shown you Segment in action, let’s step back and think through what a full implementation of Segment for your organization would look like. We know that figuring out what events to track in Segment can feel overwhelming. You should expect this planning process to have the following steps:
 
-## Data Collection Best Practices
+- Decide what data is meaningful
+- Check if a Business Spec meets your needs
+- Decide what to collect
+- Create naming conventions
+-
 
-Let’s face it, figuring out what events to track in Segment can feel overwhelming. Fortunately, we’ve helped thousands of customers through this process and have lots of resources to help you get started. Whether you’re a small team just getting your app off the ground, or a highly complex enterprise with hundreds of stakeholders, these resources can help!
-That being said, be prepared to invest time defining how you want to track data. Any investment in improving data quality will reap massive rewards, and compound over time by allowing your analytics teams to produce better insights, your marketing teams to run better campaigns and so much more.
+Be prepared to invest time deciding with stakeholders how to track your data, and planning how you'll analyze it. The time you spend here will save you lots of time in the future, as following Segment's best practices allows you to easily change your tracking later.
 
-## Data Tracking Philosophy
+
+
+## Define Business Objectives
+
+<!-- Source: /docs/protocols/data-quality/ (modified)
+-->
 
 Tracking is about learning and taking action. Think about what you want to know about your product or customers. Think about what assumptions need to be tested and what theories need to be proven true or false. Think about the unknowns. Here are some helpful questions to get started:
 
@@ -17,13 +25,13 @@ Tracking is about learning and taking action. Think about what you want to know 
 - How do people discover, start using, and paying for your product?
 - What are the most important steps in a customer's journey?
 
-## Define Business Objectives
+While it may seem obvious, we highly recommend documenting your high-level business objectives (see [the Goals tab in Google Sheet Tracking Plan](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) template). More specifically, ask yourself: what are the measurable business outcomes you want to achieve this year? Do you want to acquire new customers? Generate more new sign-ups, drive more incremental revenue among your current customer base?
 
-While it may seem obvious, we highly recommend documenting your high-level business objectives (see [Goals tab in Google Sheet Tracking Plan](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) template). More specifically, ask yourself: what are the measurable business outcomes you want to achieve this year? Do you want to acquire new customers? Generate more new sign-ups, drive more incremental revenue among your current customer base? The best way to answer this question is to interview stakeholders in your organization who will consume the data.
+The best way to answer this question is to interview stakeholders in your organization who will consume the data.
 
 With your business goals documented, the next step is to map user actions to those business goals. For example, if one of your goals is to activate new signups, you want to think about which activities are related to a signup. Ask yourself, what actions do people take _before_ signing up? Do specific actions predict a user signing up?
 
-As an example, you may end up with a list like the following:
+As an example, you might end up with a list like this:
 
 - Ad Campaign Clicked
 - Link Clicked
@@ -33,15 +41,38 @@ As an example, you may end up with a list like the following:
 - Form Submitted
 - User Signed Up
 
-While the list above represents a small portion of the total user actions you _could_ track, it gives a list focused on your top business objectives. This helps break up the huge project of data collection into smaller chunks.
+While this list represents a tiny fraction of the user actions you _could_ track, it gives a list focused on your top business objectives. This helps break up the huge project of data collection into smaller chunks.
+
+## Check if a Business Spec meets your needs
+
+Segment maintains several "Business Specs", which are recommendations based on your type of business that give recommendations on what to track, what additional traits or properties to collect, and how to format them. The two most common are the B2B (business-to-business) Spec, Ecommerce Spec, and our Mobile and Video specs.
+
+If these specs meet your business needs, you're in luck! These specs are built into our tracking plan templates, so you don't need to start from a blank slate.
+
+### B2B Spec
+
+If your organization sells a product or service to other businesses, you might have different analytics and marketing needs than most companies. You need to understand your customer behaviors both at the user-level, and also at the company or team-level.  You can read more about [how Segment thinks about B2B tracking](https://segment.com/academy/collecting-data/tracking-plans-for-b2b-companies/), and [read more about the B2B Spec](/docs/connections/spec/b2b-saas/).
+
+### Ecommerce Spec
+
+If your organization sells products online, the E-commerce Spec covers the customer's journey as they browse your store, click on promotions, view products, add those products to a cart, and complete a purchase. It also provides recommendations about off-page interactions, including interactions with email promotions, coupons, and other systems. You can read more about [why companies need an Ecommerce Spec](https://segment.com/blog/2014-08-28-ecommerce-analytics-story/), read more about [Ecommerce tracking plans](/docs/protocols/data-quality/ecommerce-tracking-plan/), and dive directly into our [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
+
+### Mobile Spec
+
+The native Mobile Spec is a common blueprint for the mobile user lifecycle. The Spec outlines the most important events for mobile apps to track, and automatically collects many of these events when you use the [Segment Android and iOS SDKs](/docs/connections/sources/catalog/#mobile). Read more about the [benefits of the native mobile spec](/docs/connections/spec/native-mobile-spec/), or read through [the Native Mobile Spec](/docs/connections/spec/mobile) directly.
+
+### Video Spec
+
+Segment's video spec helps you understand how customers engage with your video and ad content, including playback events, types of media displayed, and performance metrics. You can [read more about our Video Spec](/docs/connections/spec/video/).
 
 ## Decide what to collect
 
-With your business objectives documented and mapped to user actions, it’s time to build standards that you can use when deciding what to track.
+With your business objectives documented and mapped to user actions, it’s time to build standards that you can use when deciding what to track. With your stakeholders, make a list of the actual events (page or screen views, and user actions) that you want to track. Think about all of the ways your users can interact with your site or app
 
-Our most successful customers limit their tracking plan to a small number of core events, adding many properties that provide context about those events. We generally see more success with the “less is more” philosophy of tracking data, but you might also decide to take a more liberal “track more and analyze later” approach. Like everything, each alternative has pros and cons that are important to consider especially as it relates to your company’s needs.
+When you're first starting out, we recommend that you limit your tracking plan to a few core events, but add lots of properties to provide context about them. We generally see more success with the “less is more” philosophy of tracking data, but you might also decide to take a more liberal “track more and analyze later” approach. Like everything, each alternative has pros and cons that are important to consider especially as it relates to your company’s needs.
 
-TODO: this doesn't actually give an action they can do, or explain what would be in a collection standard? did we miss a bit when importing?
+If you're having trouble starting out, we recommend that you look at our free [Tracking Plan spreadsheet template](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view) for inspiration. (We'll talk more about Tracking Plans [below](#whats-a-tracking-plan).)
+
 
 ## Create naming conventions
 
@@ -49,7 +80,7 @@ Regardless of approach, here are some important best practices to keep in mind:
 
 - **Pick a casing convention:** We recommend *Title Case* for event names and *snake_case* for property names. Make sure you pick a casing standard and enforce it across your events and properties.
 
-- **Pick an event name structure:** As you may have noticed from our [specs](https://segment.com/docs/connections/spec/semantic/), we’re big fans of the Object (`Blog Post`) + Action (`Read`) framework for event names. Pick a convention and stick to it!
+- **Pick an event name structure:** As you may have noticed from our [specs](/docs/connections/spec/semantic/), we’re big fans of the Object (`Blog Post`) + Action (`Read`) framework for event names. Pick a convention and stick to it!
 
 - **Don’t create event names dynamically:** Avoid creating events that pull a dynamic value into the event name (for example, `User Signed Up (11-01-2019)`). If and when you send these to a warehouse for analysis, you end up with huge numbers of tables and schema bloat!
 
@@ -57,51 +88,43 @@ Regardless of approach, here are some important best practices to keep in mind:
 
 - **Don’t create property keys dynamically:** Avoid creating property names like `"feature_1":"true"`,`"feature_2":"false"` as these are ambiguous and very difficult to analyze
 
-![](https://segment.com/docs/protocols/data-quality/images/asset_nVdJ3ZyA.png)
+![](/docs/protocols/data-quality/images/asset_nVdJ3ZyA.png)
 
-## Review Use Cases
 
-(TODO: Should all of the "semantic"/business-use-case spec info go here? We also talk about this in the next chapter.)
+Got all that? Great! You’re now ready to develop a Tracking Plan.
 
-### B2B
-Source: https://segment.com/academy/collecting-data/tracking-plans-for-b2b-companies/
-
-Companies that sell a product or service to other businesses have a different need than most companies when it comes to analytics and marketing. They need to understand their customers' behavior both at the user-level, and also at the aggregate company or team-level. We face this challenge internally at Segment. We need to understand where users are getting stuck in the funnel, but also where the workspace, with one or more users, are at. In this article we will take a closer look at setting up your tracking to model these more complicated business relationships.
-
-## Create a Tracking Plan
-
-Great! You’re now ready to develop a Tracking Plan.
-
-Source: https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/ or https://segment.com/docs/protocols/tracking-plan/
+<!--Source: /docs/protocols/data-quality/whats-a-tracking-plan/ or /docs/protocols/tracking-plan/ -->
 
 ## What's a Tracking Plan?
 
-A [tracking plan](https://segment.com/blog/whats-a-tracking-plan) clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. Prior to Protocols, tracking plans typically lived in a spreadsheet. The tracking plan served as a project management tool to align an entire organization around data as the basis on which to make decisions. The tracking plan helps marketers, product managers, engineers, analysts, etc. get on the same page. It represents the single source of truth for what data to collect and why.
+A [tracking plan](https://segment.com/blog/whats-a-tracking-plan) clarifies what events to track, where those events live in the code base, and why you're tracking those events (from a business perspective). **A good tracking plan represents the single source of truth about what data you collect, and why.**
 
-The tracking plan is so important to help organizations understand their own data efforts that we invested years of product development to create [Protocols](https://segment.com/docs/protocols/).
+Your tracking plan is probably maintained in a spreadsheet (unless you use our tracking-plan tool, [Protocols](/docs/protocols/)), and serves as a project management tool to get your organization in agreement about what data to use to make decisions. A tracking plan helps build a shared understanding of the data among marketers, product managers, engineers, analysts, and any other data users.
 
-In the following, we share how to build a tracking plan from the ground up using a Google Sheet template. Note that you can use any tool to create the tracking plan!
+In the next section, we share how to build a tracking plan from the ground up using a Google Sheet template. Note that you can use any tool to create the tracking plan!
 
-## Tracking Plan Google Sheets Template
+## Tracking Plan Google Sheets template
 
 To help you get started, we developed a Tracking Plan template in [Google Sheets](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view).
 
-The template includes all of our "semantic" specs (business-case tailored specifications) including [eCommerce](https://segment.com/docs/connections/spec/ecommerce/v2/), [B2B SaaS](https://segment.com/docs/connections/spec/mobile/), [Mobile](https://segment.com/docs/connections/spec/mobile/) and [Video](https://segment.com/docs/connections/spec/video/), and a collection of common properties.
+The template includes all of our Business-case ("semantic") Specs (which we mentioned [above](#check-if-a-business-spec-meets-your-needs)) as tabs, including [eCommerce](/docs/connections/spec/ecommerce/v2/), [B2B SaaS](/docs/connections/spec/mobile/), [Mobile](/docs/connections/spec/mobile/) and [Video](/docs/connections/spec/video/), and a collection of common properties.
 
-TODO: we really need to get moving on standardizing away from the term "semantic" for these specs so we can normalize across all docs and help content
 
-We highly recommend you start by [defining your business objectives](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#define-business-objectives), and have included a template in the **Goals** tab to guide that process.
+With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](/docs/connections/sources/catalog/libraries/website/javascript/#page) and skip over that tab.
 
-With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) and skip over that tab. The identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#identifying-your-users).
+The Identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](/docs/protocols/data-quality/whats-a-tracking-plan/#identifying-your-users).
 
-From there, we recommend you specify Track events in the **Track (Custom)** tab. In the template we included preexisting events with different numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While more challenging to manage at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
+From there, we recommend you specify Track events in the **Track (Custom)** tab. The template includes preexisting events with different numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While this might be more challenging to work with at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
 
-Once completed, you can share the Google Sheet tracking plan with stakeholders to either review, comment, edit or simply reference for implementation. And if you decide to purchase Protocols in the future, you’ll be able to upload the tracking plan into Segment [using the Config API](https://segment.com/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
+Once you complete the tracking plan, you can share the Google Sheet with stakeholders to review, comment, and edit, or simply to share as a reference for implementation.
 
-## Plan your Identify and Group calls
+> success ""
+> **Tip**! If you decide to purchase [Protocols](/docs/protocols/) in the future, you’ll be able to upload the tracking plan into Segment [using the Config API](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
 
-The Identify call is important, because it updates all records of the user with a set of traits. But how do you choose which traits to include?
-The example below shows an Identify call using [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) for Segment:
+## Plan Identify and Group calls
+
+The Identify call updates all records of the user with a set of traits, and so is extremely important for building your understanding of your users. But how do you choose which traits to include?
+The example below shows an Identify call using [analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/)) for Segment:
 
 ```js
 analytics.identify({
@@ -121,10 +144,7 @@ The Group call is similar to the Identify call, but it adds traits associated wi
 
 ## Plan your Track events
 
-After you’ve documented your [event naming and collection standards](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#formalize-your-naming-and-collection-standards) it’s time to add events to your tracking plan.
-
-We recommend starting with fewer events that are directly tied to one of your [business objectives](https://segment.com/docs/protocols/data-quality/whats-a-tracking-plan/#define-business-objectives). This focused effort helps avoid a situation where you become overwhelmed by endless number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer peripheral questions.
-
+We recommend starting with fewer events that are directly tied to one of your [business objectives](/docs/protocols/data-quality/whats-a-tracking-plan/#define-business-objectives), to help avoid becoming overwhelmed by endless number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer more specialized questions.
 
 At Segment, we started out tracking these events:
 
@@ -138,15 +158,16 @@ Then we added some peripheral events to to better understand how we’re perform
 - **Destination Enabled** Turning on a destination is a key value driver for our customers.
 - **Debugger Call Expanded** When we see that a certain customer has used the live event stream feature a number of times, we can reach out to see if we can help them debug.
 
-For an ecommerce company, however, the main events might be something like:
+For an Ecommerce company, however, the main events might be something like:
 
 - **Account Created**
 - **Product Added**
 - **Order Completed**
 
-Note that Segment has a set of “reserved” event names specifically for ecommerce, called our [ecommerce spec](https://segment.com/docs/connections/spec/ecommerce/v2). Check it out to see which events we cover and how they are used in our downstream destinations.
+> success ""
+> **Tip**: As we mentioned [above](#check-if-a-business-spec-meets-your-needs), Segment has a set of “reserved” event names specifically for ecommerce, called our [Ecommerce Spec](/docs/connections/spec/ecommerce/v2). Check it out to see which events we cover and how they are used in our downstream destinations.
 
-For a community, on the other hand, there is an entirely different set of actions that indicate engagement listed below. For example, a community like [GrowthHackers](https://growthhackers.com/) might want to track actions like:
+An online community, on the other hand, has an entirely different set of actions that indicate engagement, as listed below. For example, a community might want to track actions like:
 
 - **Content Viewed**
 - **Content Shared**
@@ -154,13 +175,13 @@ For a community, on the other hand, there is an entirely different set of action
 - **Content Produced**
 - **Content Curated**
 
-With this, they’re able to develop metrics around engagement, and understand how users are moving towards their ultimate conversion event: curation content for others. For more information, check out [this article](https://segment.com/blog/growthhackers-community-metrics/) from GrowthHackers about the events they track and why.
+With these actions tracked, the community can develop metrics around engagement, and understand how users move towards their ultimate conversion events. You can read more in [this article from the online community GrowthHackers](https://segment.com/blog/growthhackers-community-metrics/) about the events they track and why.
 
 ## Define your Track event properties
 
-Each `.track()` call can accept an optional dictionary of `properties`, which can contain any key-value pair. These `properties` act as dimensions that allow your end tool to group, filter, and analyze the events. They give you additional detail on broader events.
+Each Track call can accept an optional dictionary of properties, which can contain any key-value pair. These properties act as dimensions that allow destination tools to group, filter, and analyze the events. They give you additional detail on broader events.
 
-As mentioned earlier, events should be generic and high-level, whereas properties are specific and detailed. For example, at Segment, `Business Tier Workspace Created` is a horrible event name. Instead, we used `Workspace Created` with a `property` of `account_tier` and value of `business` :
+Events should be generic and high-level, but properties should be specific and detailed. For example, at Segment, `Business Tier Workspace Created` is a horrible event name. Instead, we used `Workspace Created` with a `property` of `account_tier` and value of `business` :
 
 ```js
 analytics.track('Workspace Created', {
@@ -168,13 +189,13 @@ analytics.track('Workspace Created', {
 })
 ```
 
-Similar to the traits in the `.identify()` call, the properties provide a column that you can pivot against or filter on in your analytics tools or allow you to create a cohort of users in email tools.
+Similar to the traits in the Identify call, the properties provide a column that you can pivot against or filter on in your analytics tools or allow you to create a cohort of users in email tools.
 
-TODO: this is a very databse-centric way of explaining. need to unpack.
+<!-- TODO: this is a very databse-centric way of explaining. need to unpack.-->
 
-Don't create dynamically generated `key`s in the `properties` dictionary, as each `key` creates a new column in your downstream tools. Dynamically generated keys clutter your tools with tons of data that makes it difficult and confusing to use later.
+Don't create dynamically generated property names in the properties dictionary. Each `key` creates a new column in your downstream tools, and dynamically generated keys clutter your tools with fragmented data that makes it difficult and confusing to use later.
 
-Here is Segment’s `Lead Captured` `.track()` call:
+Here is Segment’s `Lead Captured` Track call:
 
 ```js
 analytics.track(userId, 'Lead Captured', {
@@ -184,78 +205,28 @@ analytics.track(userId, 'Lead Captured', {
 });
 ```
 
-The high-level event is **Lead Captured** and all of the details are tucked into the `properties` dictionary. In our downstream tools, we’ll be able to easily look at how many leads were captured in different locations on our site.
+The high-level event is **Lead Captured**, and all of the details appear in the properties dictionary. Because of this, we can easily see in our downstream tools how many leads were captured, and from which parts of the site.
 
 If you want to learn more about how properties are used by downstream tools, check out [The Anatomy of a Track Call](https://segment.com/academy/collecting-data/the-anatomy-of-a-track-call/).
-Want a free consultation from our Customer Success Managers on how they simplify our customer’s analytics? [Request a demo of Segment](https://segment.com/contact/demo).
 
 
-## Think about destinations
+## Plan for destination tools
 
-TODO: section covering how the customer should plan where they are going to send data?  use /docs/utils comparison charts.
+Once you've completed your tracking plan, there's one more step you might want to do before you move on to actually implementing Segment. The [Segment destination catalog](/docs/connections/destinations/catalog/) contains hundreds of tools, many of which you'll be familiar with already.
 
+If your organization has an established set of analytics tools, look for those tools in the catalog and bookmark their documentation pages. These docs pages contain important information about how Segment transforms data for the destination tool, and they also contain useful details about troubleshooting, set-up, and implementation considerations.
 
+Once you have an initial list of the destination tools your organization uses, you can also check [which Segment methods those tools accept](/docs/connections/destinations/methods-compare/). This helps you at implementation time to ensure that the calls you use can be consumed by the tools they're intended for.
 
-Draft outline content below
+Additionally, you should check [which connection modes each tool supports](/docs/connections/destinations/cmodes-compare/), so you know ahead of time which destinations may need to be bundled.
 
-
-### Tracking Plans ← Planning a full impl
-
-Now that we’ve shown it working, let’s step back and think through your installation:
-
-→ You can use the tracking plan template we provide ←
-
-(Goal of this section: provide a DIY/less overwhelming version of the tracking plan spreadsheet)
-
-You might want to start a page in a spreadsheet for each of these questions:
-
-- Think about the business goals and questions you ask of your data
-  - What are your company metrics? What data do you base each one on?
-  - How do you define a user?
-  - What tools do you use to analyze your data?
-
-
-- List the tools you use. For each, write down:
-  - The tool name
-  - What questions is answers, or what business purpose it serves
-  - What data it uses/consumes
-  - The team that “owns” it
-  - The team(s) that use it (if different)
-
-
-- Think about your digital property/properties
-  - Is it a website, mobile app, both?
-  - What interactive items are on each? pages, buttons, login systems, user accounts, group accounts, carts, players, etc. For each item:
-      - Map it to a Segment method: Which best fits that item? page/screen, event, identify
-      - List any important information (properties and traits) you want to collect about that item
-  - Are there backend or server components you want to track from?
-  - Do you have data living in other tools (cloud-apps) that would be useful to enrich your data with?
-
-
-### Plan your Implementation
-
-Go back to your lists.
-
-On sheet one, for each business question:
-
-- Map these items to the actual interactions (in sheet three) that they run on
-- Write down which tools you use to answer each of these questions
-
-On sheet two, find the list of tools, and look up which methods, and which connection modes they support using these two charts:
-
-- https://segment.com/docs/connections/destinations/cmodes-compare/  - This list will tell you what source types you need
-- https://segment.com/docs/connections/destinations/methods-compare/ - This list will tell you which methods you can use.
-
-
-
-
-
-
+> success ""
+> **Tip**: If you know you're looking for a tool for a specific purpose, but haven't chosen one yet, you can also check the [Connection Modes by category page](https://segment.com/docs/connections/destinations/category-compare/) to see which tools might be compatible with the least implementation changes.
 
 
 
 <div class="double">
   {% include components/media-icon.html  href="/getting-started/02-simple-install/" newtab="false" icon="symbols/arrow-left.svg" title="Back to A Simple Installation" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/04-full-install/" newtab="false" icon="symbols/arrow-right.svg" title="Next page: A full Segment implementation" content="Learn how to take the plans you made, and make them real." variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/04-full-install/" newtab="false" icon="symbols/arrow-right.svg" title="Next page: A full Segment implementation" content="Take your plans, and make them real." variant="related" %}
 </div>

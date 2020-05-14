@@ -5,20 +5,15 @@ title: What is Segment?
 This page introduces important terms and concepts about Segment that you should be familiar with before you start a Segment installation.
 
 
-In the simplest form, the Segment libraries generate messages about what's happening in your site or app, and send them to the Segment servers. The Segment system then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and sends the translated messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/warehouses) (such as databases, warehouses, or bulk-storage buckets).
+In the simplest form, the Segment libraries ("[Sources](/docs/connections/sources/catalog/)") generate messages about what's happening in your site or app, and send them to the Segment servers. Segment then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and sends the translated messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/warehouses) (such as databases, warehouses, or bulk-storage buckets).
 
-## Workspaces
-
-Your Segment Workspace is where you set up and manage sources and destinations, manage the schema of the data your interfaces send, and test and monitor that data for errors. A Workspace is a collection of Segment sources, destinations, and their configurations, that are administered and billed together. Each Workspace has a specific list of Segment users who may access it, and it might also contain several "environments" for production, development and testing use.
-
-When you first log in to your Segment account, you can create a new workspace, or choose to log into an existing workspace if your account is part of an existing organization.
-
-
-TODO: better "subway map" image here
 
 ## The Segment Platform
 
-The two most basic parts of the Segment platform are the [Segment Spec methods](/docs/connections/spec/), which are how you collect interaction data from your interfaces, and the [Segment Sources](/docs/connections/sources/), which you package with your interfaces to collect and route that data.
+TODO: better "subway map" image here
+
+
+The first two parts of the Segment platform are the [Segment Spec methods](/docs/connections/spec/), which are how you collect interaction data from your interfaces, and the [Segment Sources](/docs/connections/sources/), which you package with your interfaces to collect and route that data.
 
 Once you've collected your interaction data, there are several different things you can do with it:
 - Send it to [Destinations](/docs/connections/destinations/), which receive the data from any number of sources in real time
@@ -52,11 +47,11 @@ Segment supports several ways to implement tracking. The two most common are to 
 
 When you collect data using device-based libraries, you can choose between two different connection modes: you can either use "cloud-mode", where the library sends the data directly to the Segment servers which then translate and forward it, or you can use "device-mode" where the library sends the data both directly to the Segment servers, and also to the servers for the destination tool. (Device-mode sometimes requires some [additional set-up steps](/docs/connections/sources/mobile_guide/), but can unlock rich device data.)
 
-Although there are some tradeoffs between the two approaches, neither is better than the other, and we usually recommend that you implement a mix of both. In general, more direct interaction data is available using a device-based library, but server-side collection is more secure, reliable, and can’t be blocked by ad blockers.
+Although there are some tradeoffs between the two approaches, neither is better than the other, and we usually recommend that you implement a mix of both. In general, more direct interaction data is available using a device-based library, but server-based collection is more secure, reliable, and can’t be blocked by ad blockers.
 
-Here’s a handy flow chart to help with the client-side/server-side decision:
+<!-- Here’s a handy flow chart to help with the client-side/server-side decision:
 
-TODO: Image removed, didn't work with formatting. need a better version of this flowchart or else to just omit?
+TODO: Image removed, didn't work with formatting. need a better version of this flowchart or else to just omit?-->
 
 
 ## The Segment Methods
@@ -77,6 +72,12 @@ Segment maintains a catalog of destinations where you can send your data.
 
 TODO: big list o' destinations image (programmatically update?) should go here
 
+
+## Workspaces
+
+Your Segment Workspace is where you set up and manage sources and destinations, manage the schema of the data your interfaces send, and test and monitor that data for errors. A Workspace is a collection of Segment sources, destinations, and their configurations, that are administered and billed together. Each Workspace has a specific list of Segment users who may access it, and it might also contain several "environments" for production, development and testing use.
+
+When you first log in to your Segment account, you can create a new workspace, or choose to log into an existing workspace if your account is part of an existing organization.
 
 
 <div class="double">
