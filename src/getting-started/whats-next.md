@@ -12,7 +12,7 @@ The [Privacy Portal](/docs/privacy-portal/portal/) allows you to easily audit, m
 
 ## Data governance with Protocols
 
-You had a taste of the planning and coordination needed to set up clear, consistent, reliable and extensible tracking systems on page 3, [Planning a Full Install](03-planning-full-install). Business tier customers can use [Protocols], Segment's data governance solution, to streamline and coordinate the creation and maintenance of tracking schemas, and to ensure that data coming into your Segment workspaces conforms to the standards you set. 
+You had a taste of the planning and coordination needed to set up clear, consistent, reliable and extensible tracking systems on page 3, [Planning a Full Install](03-planning-full-install). Business tier customers can use [Protocols](/docs/protocols/), Segment's data governance solution, to streamline and coordinate the creation and maintenance of tracking schemas, and to ensure that data coming into your Segment workspaces conforms to the standards you set. 
 
 ## Single view of the customer with Personas
 
