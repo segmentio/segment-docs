@@ -29,7 +29,7 @@ Adding a destination is quick and easy from the Segment App. You'll need a token
 
 ### Recommended destinations
 
-If you're just starting out, we know the [catalog](https://app.segment.com/catalog){.target="_blank"} can be really overwhelming. How do you choose from all of the available destinations?
+If you're just starting out, we know the [catalog](https://app.segment.com/catalog){:target="_blank"} can be really overwhelming. How do you choose from all of the available destinations?
 
 We've written a lot about [how to choose your tools](https://segment.com/academy/choosing-stack/), but as a start, we recommend that you have one tool from each of the following categories:
 
