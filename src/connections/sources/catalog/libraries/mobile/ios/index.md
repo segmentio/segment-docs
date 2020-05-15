@@ -13,6 +13,9 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ## Getting Started
 
+
+### About mobile connection modes
+
 {% include content/mobile-cmodes.md %}
 
 

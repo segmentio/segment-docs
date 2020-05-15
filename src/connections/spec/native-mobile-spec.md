@@ -19,14 +19,14 @@ This article outlines common questions about our Native Mobile Spec. To learn wh
 
 ### Which destinations currently take advantage of the mobile spec?
 
-Our [Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/) server-side destination currently takes advantage of the "Application Installed" event to power new features like custom audience creation, dynamic ads and conversion tracking, without needing to sit on the device. Soon, more destinations like Google Adwords and Salesforce Marketing Cloud and attribution providers will offer similar functionality.
+Our [Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/) cloud-mode destination currently takes advantage of the "Application Installed" event to power new features like custom audience creation, dynamic ads and conversion tracking, without needing to sit on the device. Soon, more destinations like Google Adwords and Salesforce Marketing Cloud and attribution providers will offer similar functionality.
 
 
 ### How does all of this work?
 
 When an engineer installs the SDK, the SDK will automatically register on iOS and Android operation system handlers.
 
-When the application is foregrounded on the phone, our SDK will be called and emit the Application Opened event. Similarly, when the user updates the app, on the nextapp open, the iOS and Android operation system will tell us and we'll emit a track event called Application Updated event. In-app purchases will trigger Order Completed, etc.
+When the application is foregrounded on the phone, our SDK will be called and emit the Application Opened event. Similarly, when the user updates the app, on the next app open, the iOS and Android operation system will tell us and we'll emit a track event called Application Updated event. In-app purchases will trigger Order Completed, etc.
 
 ### How do I opt-in to the new feature?
 

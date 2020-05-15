@@ -14,6 +14,8 @@ Analytics for Android only supports any Android device running API 14 (Android 4
 
 ## Getting Started
 
+### About mobile connection modes
+
 {% include content/mobile-cmodes.md %}
 
 {% include components/media-icon.html href="https://github.com/segmentio/analytics-android/tree/master/analytics-samples/analytics-sample" icon="media/icon-guides.svg" title="Android Test Apps" content="Segment maintains test apps for the Android mobile library. Find them here." %}
@@ -377,6 +379,13 @@ analyticsContext.putValue(...).putReferrer(...).putCampaign(...);
 ```
 
 You can read more about these [special fields](/docs/connections/spec/common/#context).
+
+To alter data specific to the device object you can use the following:
+
+```java
+AnalyticsContext analyticsContext = Analytics.with(context).getAnalyticsContext();
+analyticsContext.device().putValue("advertisingId", "1");
+```
 
 If you'd prefer to opt out of automatic data collection, simply clear the context right after initializing the client. It's important to do this _BEFORE_ sending any events.
 

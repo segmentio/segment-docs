@@ -84,7 +84,7 @@ Once you accept, Google changes your back-end settings to give Segment the acces
 To create audiences based on website browsing events, set up the Segment-to-Google cookie-syncing feature. This step allows Segment to retrieve the Google user id using our client-side Analytics.js library.
 
 1. Create a “[Javascript Website](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)” source in Segment.
-2. Follow [the Analytics.js Quickstart guide](https://segment.com/docs/sources/website/analytics.js/quickstart/).
+2. Follow [the Analytics.js Quickstart guide](https://segment.com/docs/connections/sources/catalog/website/javascript/quickstart/).
 3. In your workspace, click **Catalog**, and search for **DoubleClick Floodlight**.
 4. Connect the destination to the source you created in the first step, and leave all settings blank.
 
