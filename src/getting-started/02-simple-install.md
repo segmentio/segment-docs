@@ -2,24 +2,28 @@
 title: A simple Segment installation
 ---
 
-When you implement Segment, you add Segment code to your website, app, or server. This code generates messages based on specific triggers you define  .
- 
-At its very simplest, this code can be a snippet of Javascript that you copy and paste into the HTML of a website to track page views. It can also be as complex as Segment calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example "ticket reservation expired" or "cart abandoned after 2 hours").
+
+When you implement Segment, you add Segment code to your website, app, or server. This code generates messages based on specific triggers you define.
+
+
+In the simplest implementation, the code can be a snippet of Javascript that you copy and paste into the HTML of a website to track page views. It can also be as complex as Segment calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example "ticket reservation expired" or "cart abandoned after 2 hours").
 
 The best way to learn about how Segment works is to see it in action. This tutorial walks you though an installation using one of our libraries: either our Javascript, PHP, or iOS library.
 
 ## Before you begin
 
-Before you start, you need a Segment user account and a workspace. If you're not already part of an organization with a Segment Workspace, you can [sign up for a free account and free workspace](https://app.segment.com/signup/?ref=docs).
+Before you start, you need a Segment user account and a workspace. If you're not already part of an organization with a Segment Workspace, you can [sign up for a free account and workspace](https://app.segment.com/signup/?ref=docs).
 
 For the quickstart portion below, you also need access to the code for a basic website, PHP website, or an iOS app.
 
+> success ""
+> **Tip**! If you don't have any of those things, you might consider creating a simple [Github Pages website](https://pages.github.com/).
 
-## Dev and Prod Sources
+## A note on Dev and Prod Sources
 
 When developing and testing, you should create and use separate sources for each of your environments (production, development, staging, etc.) to prevent testing and development activities from filling production systems with invalid data.
 
-By default, Segment gives you the option to give each source an `environment` label on creation, and we strongly suggest that you use these labels to sort your sources.
+You can give each source an `environment` label when you create it, and we strongly suggest that you use these labels to sort your sources. When you create a source during the steps below, make sure you enter an environment label.
 
 > warning ""
 > **Caution**! Double-check when you enter write keys for dev and production environments to make sure that you'll send the right data to the right place!
@@ -31,7 +35,7 @@ Go to your Segment workspace, and navigate to [the Sources catalog](https://app.
 
 Choose either the [Javascript source](https://app.segment.com/goto-my-workspace/sources/catalog/javascript), [PHP source](https://app.segment.com/goto-my-workspace/sources/catalog/php), or [iOS source](https://app.segment.com/goto-my-workspace/sources/catalog/ios), and click **Add Source**.
 
-On the next screen, give the source a name. (We recommend that you include the word `demo`, `test`, or `quickstart` in the name so you can easily find and delete this later.)
+On the next screen, give the source a name. (We recommend that you include the word `demo`, `test`, or `quickstart` in the name so you can easily find and delete this source later.)
 
 We also recommend that you add an Environment Label of `dev` to the source, so you know that this demo source isn't part of a production installation.
 
@@ -45,14 +49,16 @@ When you create a new library source, you can find the write key in the **Settin
 ![](/docs/connections/images/find_writekey.png)
 
 > info ""
-> [Cloud-sources](/docs/guides/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service.
+> [Cloud-sources](/docs/guides/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service. Cloud sources have other considerations, and aren't part of this tutorial.
 
 Make note of or write down your write key, as you'll need it in the next steps.
 
 
 ## Installing Segment
 
-TODO: Need to restyle these tabs so they're less subtle in contrast to the bulk of the text. Text in tabs is pulled from cleaned-up versions of our Quickstarts for these libraries
+<!--TODO: Need to restyle these tabs so they're less subtle in contrast to the bulk of the text. Text in tabs is pulled from cleaned-up versions of our Quickstarts for these libraries -->
+
+Click a tab below to see the tutorial content for the specific library you chose.
 
 {% codeexample %}
 {% codeexampletab Javascript quickstart %}
@@ -66,7 +72,7 @@ Installing Segment is easy, just paste the snippet from the Javascript Source ov
 
 That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet is running on your site, you can turn on destinations from the destinations page in your workspace and they start loading on your site automatically!
 
-**Fun fact:** if you only want the most basic Google Analytics setup you can stop reading right now. You're done! Just switch on Google Analytics in our interface.
+**Fun fact:** if you only want the most basic Google Analytics setup you can stop reading right now. You're done! Just switch on Google Analytics from the Segment App.
 
 However, lots of analytics and marketing tools need to record _who_ each user is on your site. If you want to use any tool that deals with the identity of your users, read on about the `identify` method.
 
@@ -134,7 +140,7 @@ If you're just getting started, some of the events you should track are events t
 
 To get started, we recommend that you track just a few important events. You can always add more later!
 
-Once you add a few `track` calls, **you're done with this tutorial!** You successfully installed Analytics.js tracking. Now you're ready to turn on any destination you like from our interface, margarita in hand.
+Once you add a few `track` calls, **you're done with this tutorial!** You successfully installed Analytics.js tracking. Now you're ready to turn on any destination you like from the Segment App.
 
 <!-- marker JS end -->
 
@@ -362,7 +368,7 @@ Finally, call the Segment `flush()` method. This manually sends all the queued c
 Segment::flush();
 ```
 
-And presto, **you're done!** You successfully installed PHP tracking. Now you're ready to turn on any destination you fancy from our interface, margarita in hand.
+And presto, **you're done!** You successfully installed PHP tracking. Now you're ready to turn on any destination you fancy from the Segment App.
 
 
 <!-- marker PHP end -->
@@ -382,7 +388,7 @@ The Source Debugger is a real-time tool that helps you confirm that API calls ma
 The Debugger is separate from your workspace's data pipeline, and is not an exhaustive view of all the events ever sent to your Segment workspace. The Debugger only shows a sample of the events that the Source receives in real time, with a cap of 500 events. The Debugger is a great way to test specific parts of your implementation to validate that events are being fired successfully and arriving to your Source.
 
 > success ""
-> Tip: To see a more complete view of all your events, you might consider setting up either a [warehouse](/docs/connections/warehouses/) or an [S3 destination](/docs/connections/warehouses/catalog/amazon-s3/).
+> **Tip**: To see a more complete view of all your events, you might consider setting up either a [warehouse](/docs/connections/warehouses/) or an [S3 destination](/docs/connections/warehouses/catalog/amazon-s3/).
 
 The Debugger shows a live stream of sampled events arriving at the Source, but you can also toggled from "Live" to "Pause", to stop the stream and prevent it from displaying new events. Events continue to arrive to your Source while you Pause the stream, they just are not displayed.
 

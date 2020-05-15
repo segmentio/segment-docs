@@ -4,14 +4,15 @@ title: What is Segment?
 
 This page introduces important terms and concepts about Segment that you should be familiar with before you start a Segment installation.
 
- 
+
 In the simplest form, the Segment libraries ("[Sources](/docs/connections/sources/catalog/)") generate messages about what's happening in your site or app, and send them to the Segment servers. Segment then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and sends the translated messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/warehouses) (such as databases, warehouses, or bulk-storage buckets).
 
 
 ## The Segment Platform
 
-TODO: better "subway map" image here
+<!--TODO: better "subway map" image here-->
 
+![](images/subwaymap.png)
 
 The first two parts of the Segment platform are the [Segment Spec methods](/docs/connections/spec/), which are how you collect interaction data from your interfaces, and the [Segment Sources](/docs/connections/sources/), which you package with your interfaces to collect and route that data.
 
@@ -70,7 +71,10 @@ Every call shares the same [common fields](/docs/connections/spec/common/).  Whe
 
 Segment maintains a catalog of destinations where you can send your data.
 
-TODO: big list o' destinations image (programmatically update?) should go here
+<!--TODO: big list o' destinations image (programmatically update?) should go here-->
+
+![](images/dests_grid.png)
+
 
 
 ## Workspaces

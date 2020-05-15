@@ -1,5 +1,8 @@
 ---
 title: A full Segment implementation
+related:
+  - "/connections/spec/best-practices-event/"
+  - "/connections/spec/best-practices-identify/"
 ---
 
 Before you start implementing from your tracking plan, let's review the Segment methods, what they do, and when you should use each.
@@ -122,7 +125,7 @@ The `Page` and `Screen` calls tell Segment what web page or mobile screen the us
 
 You can always [override the auto-collected Page/Screen properties](/docs/connections/sources/catalog/website/javascript/#default-properties) with your own, and set additional custom page or screen properties.
 
-Some downstream tools (like Marketo) require that you attach specific properties (like email address) to every `page` call.
+Some downstream tools (like [Marketo](/docs/connections/destinations/catalog/marketo/)) require that you attach specific properties (like email address) to every `page` call.
 
 This is considered a destination-specific implementation nuance, and you should check the documentation for each destination you plan to use and make a list of these nuances before you start implementation.
 
@@ -165,7 +168,7 @@ For more info on Page calls, please review [Page spec](/docs/spec/page/) and [An
 
 ### When to call Screen
 
-Segment uses Screen calls to replace the Page method in mobile apps. Mobile Screen calls are treated similarly to standard Page tracking, only with more context about the device. The goal is to have as much consistency between web and mobile as is feasible.
+Segment Screen calls are essentially the Page method, except for mobile apps. Mobile Screen calls are treated similarly to standard Page tracking, only they contain more context traits about the device. The goal is to have as much consistency between web and mobile as is feasible.
 
 ## Track calls
 
@@ -176,11 +179,11 @@ The Track call allows Segment to know **what** the user is doing.
 The Track call is used to track user and system events, such as:
 
 - The user interacting with a UI component (for example, "Button Clicked")
-- A significant UI component appearing, other than a page (for example, search results)
+- A significant UI component appearing, other than a page (for example, search results or a payment dialog)
 
 ### Events and Properties
 
-Your track calls should include both events and properties. **Events are the actions you want to track**, and **properties are the contextual data sent with each event**.
+Your track calls should include both events and properties. **Events are the actions you want to track**, and **properties are the data _about_ the event that are sent with each event**.
 
 Properties are powerful. They enable you to capture as much context about the event as you’d like, and then cross-tabulate or filter your downstream tools. For example, let’s say an eLearning website is tracking whenever a user bookmarks an educational article on a page. Here’s what a robust analytics.js Track call could look like:
 
@@ -202,24 +205,28 @@ With this track call, we can analyze which authors had the most popular articles
 
 ## Event Naming Best Practices
 
-Each event you track must have a name that describes the event, like 'Article Bookmarked' above. That name is passed in at the beginning of the track call, and should be standardized across all your properties to enable the comparison of the same actions on different properties.
+Each event you track must have a name that describes the event, like 'Article Bookmarked' above. That name is passed in at the beginning of the track call, and should be standardized across all your properties so you can compare the same actions on different properties.
 
-Segment’s best practice is to use an “Object Action” (Noun<>Verb) naming convention (for example, 'Article Bookmarked') for all **Track** events.
+Segment’s best practice is to use an “Object Action” (Noun<>Verb) naming convention for all **Track** events, for example, 'Article Bookmarked'.
 
-Segment maintains a set of [**Use-case Specs**](/docs/spec/semantic/) which follow this naming convention around different use cases such as eCommerce, B2B SaaS, and Mobile.
+Segment maintains a set of [**Business Specs**](/docs/spec/semantic/) which follow this naming convention around different use cases such as eCommerce, B2B SaaS, and Mobile.
 
 Let’s dive deeper into the Object Action syntax that all Segment Track events should use.
 
 ### Objects are Nouns
-Nouns are the entities or objects that the user or the system acts upon. The important aspect of naming objects is that they are referred to consistently within an application, and that the same objects that exist in multiple applications are referred to by the same name.
+
+Nouns are the entities or objects that the user or the system acts upon.
+
+It's important to be thoughtful when naming objects so that they are referred to consistently within an application, and so that you refer to the same objects that might exist in multiple applications or sites by the same name.
+
 Use the following list of objects to see if there is a logical match with your application. If you have objects that aren’t in this list, name it in a way that makes sense if it were to appear in other applications, and/or run it by Product Analytics.
 
 #### Some suggested Nouns
 
-(TODO: this section had a table with a mostly-empty "description" column. We should expand this table and provide descriptions, then normalize formatting with the similar ones below.)
+<!--(TODO: this section had a table with a mostly-empty "description" column. We should expand this table and provide descriptions, then normalize formatting with the similar ones below.)-->
 
 - Menu
-- Navigation Drawer - the “Hamburger” menu in the upper left corner of a UI.
+- Navigation Drawer (the “Hamburger” menu in the upper left corner of a UI)
 - Profile
 - Account
 - Video
@@ -233,18 +240,18 @@ If you can’t, choose a verb that describes what the user is trying to in your 
 
 #### Some suggested Verbs
 
-- Applied -  *Applying a new format to the UI results.*
-- Clicked - *Catch-all for events where a user activated some part of the UI but no other verb captures the intent.*
-- Created/Deleted - *The user- or system-initiated action of creating or deleting an object (e.g., new search, favorite, post)*
-- Displayed/Hidden - *The user- or system-initiated action of hiding or displaying an element*
-- Enabled/Disabled- *Enabling or disabling some feature (e.g., audible alarms, emails, etc).*
-- Refreshed - *When a set of search results is refreshed.*
-- Searched - *When an app is searched*
-- Selected - *User clicked on an individual search result.* =
-- Sorted - *The user or UI action that causes data in a table, for example, to be sorted*
-- Unposted - *Making a previously publicly-viewable posting private.*
-- Updated - *The user action that initiates an update to an object (profile, password, search, etc.; typically be making a call to the backend), or the they system having actually completed the update (often this tracking call will be made in response to a server-side response indicating that the object was updated, which may or may not have an impact on the UI).*
-- Viewed - (exactly what it says on the tin)
+- **Applied** - Applying a new format to the UI results.
+- **Clicked** - Catch-all for events where a user activated some part of the UI but no other verb captures the intent.
+- **Created/Deleted** - The user- or system-initiated action of creating or deleting an object (e.g., new search, favorite, post)
+- **Displayed/Hidden** - The user- or system-initiated action of hiding or displaying an element
+- **Enabled/Disabled** - Enabling or disabling some feature (e.g., audible alarms, emails, etc).
+- **Refreshed** - When a set of search results is refreshed.
+- **Searched** - When an app is searched
+- **Selected** - User clicked on an individual search result.
+- **Sorted** - The user or UI action that causes data in a table, for example, to be sorted
+- **Unposted** - Making a previously publicly-viewable posting private.
+- **Updated** - The user action that initiates an update to an object (profile, password, search, etc.; typically be making a call to the backend), or the they system having actually completed the update (often this tracking call will be made in response to a server-side response indicating that the object was updated, which may or may not have an impact on the UI).
+- **Viewed** - (exactly what it says on the tin)
 
 
 ### Property naming best practices
@@ -253,6 +260,7 @@ Segment recommends that you record property names using **snake case** (for exam
 
 Ultimately, you can decide to use a casing different from our recommendations; however, **the single most important aspect is that you’re consistent across your entire tracking with one casing method**.
 
+You can read more about [best practices for Track calls](/docs/connections/spec/best-practices-event/), .
 
 All of the basic [Segment methods](/docs/spec/) have a common structure and common fields which are automatically collected on every call. You can see these in the [common fields documentation](/docs/spec/common/).
 

@@ -1,5 +1,8 @@
 ---
 title: Planning a full installation
+related:
+  - "/connections/spec/best-practices-event/"
+  - "/connections/spec/best-practices-identify/"
 ---
 
 Now that we’ve shown you Segment in action, let’s step back and think through what a full implementation of Segment for your organization would look like. We know that figuring out what events to track in Segment can feel overwhelming. You should expect this planning process to have the following steps:
@@ -112,6 +115,7 @@ To help you get started, we developed a Tracking Plan template in [Google Sheets
 
 The template includes all of our Business-case ("semantic") Specs (which we mentioned [above](#shortcut-check-if-a-business-spec-meets-your-needs)) as tabs, including [eCommerce](/docs/connections/spec/ecommerce/v2/), [B2B SaaS](/docs/connections/spec/mobile/), [Mobile](/docs/connections/spec/mobile/) and [Video](/docs/connections/spec/video/), and a collection of common properties.
 
+![](images/trackingplans.png)
 
 With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](/docs/connections/sources/catalog/libraries/website/javascript/#page) and skip over that tab.
 
@@ -225,6 +229,7 @@ Additionally, you should check [which connection modes each tool supports](/docs
 
 > success ""
 > **Tip**: If you know you're looking for a tool for a specific purpose, but haven't chosen one yet, you can also check the [Connection Modes by category page](https://segment.com/docs/connections/destinations/category-compare/) to see which tools might be compatible with the least implementation changes.
+
 
 
 
