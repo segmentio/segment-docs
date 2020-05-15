@@ -4,7 +4,7 @@ sections:
   section:
   - name: Simplify data collection
     icon: icon-connections.svg
-    description: "Integrate the tools you needs for analytics, growth, marketing, and more."
+    description: "Integrate the tools you need for analytics, growth, marketing, and more."
     path: /connections/
   - name: Protect data integrity
     icon: icon-protocols.svg

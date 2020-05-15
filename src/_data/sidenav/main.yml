@@ -253,11 +253,8 @@ sections:
       title: Customize your schema controls
     - path: /protocols/enforce/forward-blocked-events
       title: Forward blocked events
-  - section_title: Transform data
-    slug: protocols/transform
-    section:
-    - path: /protocols/transform
-      title: Fix bad data
+  - path: /protocols/transform
+    title: Transform to fix bad data
   - section_title: Extensions
     slug: protocols/apis-and-extensions
     section:
