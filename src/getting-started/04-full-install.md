@@ -280,7 +280,7 @@ The following properties should be sent with every Track call:
 
 ### How to call Track
 
-You can call `Track` from any of Segment’s client-side or server-side libraries, including [Javascript](/docs/connections/sources/catalog/website/javascript/), [iOS](/docs/connections/sources/catalog/mobile/ios), [Android](/docs/connections/sources/catalog/mobile/android), [Ruby](/docs/connections/sources/catalog/server/ruby/), and [Python](/docs/connections/sources/catalog/server/python/). Here are two examples of calling track from two different libraries:
+You can call `Track` from any of Segment’s client-side or server-side libraries, including [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios), [Android](/docs/connections/sources/catalog/libraries/mobile/android), [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/), and [Python](/docs/connections/sources/catalog/libraries/server/python/). Here are two examples of calling track from two different libraries:
 
 
 {% codeexample %}
