@@ -9669,7 +9669,7 @@ items:
     type: BOOLEAN
     deprecated: false
     required: true
-    description: Help Scout uses OAuth to provide access to Segment integration.
+    description: OAuth provides Segment integration secure access to Help Scout.
     settings: []
   connection_modes:
     device:
