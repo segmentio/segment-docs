@@ -100,7 +100,7 @@ Got all that? Great! You’re now ready to develop a Tracking Plan.
 
 ## Develop a Tracking Plan
 
-A [tracking plan](https://segment.com/blog/whats-a-tracking-plan) clarifies what events to track, where those events live in the code base, and why you're tracking those events (from a business perspective). **A good tracking plan represents the single source of truth about what data you collect, and why.**
+A [tracking plan](https://segment.com/blog/what-is-a-tracking-plan/) clarifies what events to track, where those events live in the code base, and why you're tracking those events (from a business perspective). **A good tracking plan represents the single source of truth about what data you collect, and why.**
 
 Your tracking plan is probably maintained in a spreadsheet (unless you use our tracking-plan tool, [Protocols](/docs/protocols/)), and serves as a project management tool to get your organization in agreement about what data to use to make decisions. A tracking plan helps build a shared understanding of the data among marketers, product managers, engineers, analysts, and any other data users.
 

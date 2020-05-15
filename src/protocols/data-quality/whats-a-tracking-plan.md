@@ -2,23 +2,23 @@
 title: What's a Tracking Plan?
 ---
 
-A [tracking plan](https://segment.com/blog/whats-a-tracking-plan) clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. Prior to Protocols, tracking plans typically lived in a spreadsheet. The tracking plan served as a project management tool to align an entire organization around data as the basis on which to make decisions. The tracking plan helps marketers, product managers, engineers, analysts, etc. get on the same page. It represents the single source of truth for what data to collect and why.
+A [tracking plan](https://segment.com/blog/what-is-a-tracking-plan/) clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. Prior to Protocols, tracking plans typically lived in a spreadsheet. The tracking plan served as a project management tool to align an entire organization around data as the basis on which to make decisions. The tracking plan helps marketers, product managers, engineers, analysts, etc. get on the same page. It represents the single source of truth for what data to collect and why.
 
-The tracking plan has been so instrumental in helping organizations reclaim their own data efforts that we invested years of product development to create [Protocols](/docs/protocols/). 
+The tracking plan has been so instrumental in helping organizations reclaim their own data efforts that we invested years of product development to create [Protocols](/docs/protocols/).
 
-In the following, we share how to build a tracking plan from the ground up using a Google Sheet template. Note that you can use any tool to create the tracking plan! 
+In the following, we share how to build a tracking plan from the ground up using a Google Sheet template. Note that you can use any tool to create the tracking plan!
 
 ## Tracking Plan Google Sheets Template
 
 To help you get started, we developed a Tracking Plan template in [Google Sheets](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view). The template includes all of our semantic specs including [eCommerce](/docs/connections/spec/ecommerce/v2/), [B2B SaaS](/docs/connections/spec/mobile/), [Mobile](/docs/connections/spec/mobile/) and [Video](/docs/connections/spec/video/), and a collection of common properties.
 
-We highly recommend you start by [defining your business objectives](/docs/protocols/data-quality/#define-business-objectives), and have included a template in the **Goals** tab to guide that process. 
+We highly recommend you start by [defining your business objectives](/docs/protocols/data-quality/#define-business-objectives), and have included a template in the **Goals** tab to guide that process.
 
 With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](/docs/connections/sources/catalog/libraries/website/javascript/#page) and skip over that tab. The identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](/docs/protocols/data-quality/whats-a-tracking-plan/#identifying-your-users).
 
 From there, we recommend you specify Track events in the **Track (Custom)** tab. Note that we pre-created events with varying numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While more challenging to manage at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
 
-Once completed, the Google Sheet tracking plan can be shared with your stakeholders to either review, comment, edit or simply reference for implementation. And if you decide to purchase Protocols in the future, you'll be able to upload the tracking plan into Segment [via the Config API](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader). 
+Once completed, the Google Sheet tracking plan can be shared with your stakeholders to either review, comment, edit or simply reference for implementation. And if you decide to purchase Protocols in the future, you'll be able to upload the tracking plan into Segment [via the Config API](/docs/protocols/apis-and-extensions/#google-sheets-tracking-plan-uploader).
 
 ## Identify your users
 
