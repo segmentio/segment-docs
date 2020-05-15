@@ -8,6 +8,9 @@ There are several ways to check if your data is flowing. One is the [Debugger ta
 
 For monitoring purposes, you'll also see alerts in the [Workspace Health](/docs/segment-app/#health) tool if your sources or destinations produce repeated errors.
 
+{% include components/media-icon.html href="https://university.segment.com/series/segment-101/debugging-and-troubleshooting?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: Debugging and Troubleshooting" content="Want more? Check out our course on debugging and troubleshooting. (Must be logged in to access.)" %}
+
+
 ## The Source Debugger
 
 <!-- Source: https://segment.com/docs/connections/sources/debugger/ -->
