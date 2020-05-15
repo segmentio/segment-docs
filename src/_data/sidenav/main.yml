@@ -1,5 +1,24 @@
 ---
 sections:
+- section_title: Getting Started
+  section:
+  - path: /getting-started
+    title: Getting Started with Segment
+  - path: /getting-started/01-what-is-segment
+    title: What is Segment?
+  - path: /getting-started/02-simple-install
+    title: A simple Segment installation
+  - path: /getting-started/03-planning-full-install
+    title: Planning a full installation
+  - path: /getting-started/04-full-install
+    title: A full Segment installation
+  - path: /getting-started/05-data-to-destinations
+    title: Sending data to destinations
+  - path: /getting-started/06-testing-debugging
+    title: Testing and Debugging
+  - path: /getting-started/whats-next
+    title: What's next?
+
 - section_title: Guides
   section:
   - path: /guides
@@ -119,16 +138,14 @@ sections:
       menu_icon: read-more
     - path: /connections/sources/debugger
       title: Using the Source Debugger
-    - path: /connections/sources/cloud-source-data
-      title: What can you do with cloud source data?
+    - path: /connections/sources/about-cloud-sources
+      title: All about Cloud Sources
     - path: /connections/sources/custom-domains
       title: Set up a custom domain proxy in Segment
     - path: /connections/sources/source-functions
       title: Source Functions
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
-    - path: /connections/sources/what-are-cloud-sources
-      title: What are Cloud-App Sources?
   - section_title: Destinations
     slug: connections/destinations
     section:

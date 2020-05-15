@@ -1,9 +1,9 @@
 ---
 title: 'Quickstart: analytics-java'
 hidden: true
-sourceTitle: 'Java'
-sourceCategory: 'Server'
 ---
+
+<!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
 
