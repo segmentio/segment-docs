@@ -30,3 +30,5 @@ src/connections/sources/catalog/cloud-apps/project
 src/connections/sources/catalog/libraries/website/shopify-by-littledata
 src/connections/sources/catalog/libraries/server/node-js
 src/connections/destinations/catalog/amazon-s3
+src/connections/sources/catalog/libraries/server/node-js
+src/connections/destinations/catalog/amazon-s3
