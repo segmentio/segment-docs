@@ -200,7 +200,7 @@ Segment does not map any data to Optimizely from the Segment<>Optimizely Web des
 The count of "Experiment Viewed" events may be slightly lower compared to the number of unique visitors seen in Optimizely because Optimizely loads synchronously and Segment loads asynchronously. This means that if the user quickly closes or redirects from a page, sometimes Segment does not have enough time to scrape the experiment data from the global Optimizely object and make its API calls back to Segment and to your other enabled tools.
 
 
-### Workaround for sending Segment event `properties` as Optimizely `events`
+### Sending Segment event 'properties' as Optimizely 'events'
 
 If you use broader naming conventions for Segment `track`, you might not capture the specificity of the conversion event that you want to for the Optimizely `eventName`. An example of this is a Segment `track` event with the `eventName` ‘Click’ and more context of that event is stored in the Segment event `properties` where you want to send an `event` with the `eventName` 'Clicked Shirts' to Optimizely. Here is an example of that Segment `event`:
 
