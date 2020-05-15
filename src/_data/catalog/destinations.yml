@@ -9663,6 +9663,14 @@ items:
     identify: true
     page_view: false
     track: false
+  settings:
+  - name: oauth
+    display_name: OAuth
+    type: BOOLEAN
+    deprecated: false
+    required: true
+    description: Help Scout uses OAuth to provide access to Segment integration.
+    settings: []
   connection_modes:
     device:
       web: false
