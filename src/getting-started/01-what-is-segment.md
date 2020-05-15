@@ -4,7 +4,7 @@ title: What is Segment?
 
 This page introduces important terms and concepts about Segment that you should be familiar with before you start a Segment installation.
 
-
+ 
 In the simplest form, the Segment libraries ("[Sources](/docs/connections/sources/catalog/)") generate messages about what's happening in your site or app, and send them to the Segment servers. Segment then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and sends the translated messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/warehouses) (such as databases, warehouses, or bulk-storage buckets).
 
 
