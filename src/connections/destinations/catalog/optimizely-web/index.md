@@ -205,7 +205,7 @@ The count of "Experiment Viewed" events may be slightly lower compared to the nu
 If you follow the Segment recommended naming conventions for `track` calls, you might not automatically capture the specificity of the conversion event that you want to for the Optimizely `eventName`. For example, you might see a Segment `track` event with the `eventName` "Category Clicked", with additional important details about the event is stored in the Segment event's `properties`. However, you want to send an `event` to Optimizely with the `eventName` "Clicked Shirts" . Here is an example of that Segment `event`:
 
 ```javascript
-analytics.track('Click', {
+analytics.track('Category Clicked', {
   category: 'Shirts',
   productId: '1234',
   productName: 'Red Cotton T-shirt',
