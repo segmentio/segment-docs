@@ -114,7 +114,7 @@ Invoking this method invalidates the listener for the `Experiment Viewed` event.
 
 ### Notification Listeners
 
-Notification listeners are not available for Segment `track` events when implementing Optimizely via Segment using cloud-mode. [Notification listeners](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners) are still available with any native call invoked from your Optimizely client instance.
+If you want to use Optimizely's [notification listeners](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners), you must use the Optimizely native code to invoke them (in addition to using the Segment SDKs). Notification listeners require an [instantiated Optimizely client](https://docs.developers.optimizely.com/full-stack/docs/java#section-2-instantiate-optimizely) to be accessed, and so are not available for Segment `track` events when you connect to Optimizely using cloud-mode.
 
 
 ## iOS Cloud-mode Implementation
