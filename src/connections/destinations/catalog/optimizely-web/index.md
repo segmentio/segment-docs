@@ -202,7 +202,7 @@ The count of "Experiment Viewed" events may be slightly lower compared to the nu
 
 ### Sending Segment event 'properties' as Optimizely 'events'
 
-If you use broader naming conventions for Segment `track`, you might not capture the specificity of the conversion event that you want to for the Optimizely `eventName`. An example of this is a Segment `track` event with the `eventName` ‘Click’ and more context of that event is stored in the Segment event `properties` where you want to send an `event` with the `eventName` 'Clicked Shirts' to Optimizely. Here is an example of that Segment `event`:
+If you follow the Segment recommended naming conventions for `track` calls, you might not automatically capture the specificity of the conversion event that you want to for the Optimizely `eventName`. For example, you might see a Segment `track` event with the `eventName` "Category Clicked", with additional important details about the event is stored in the Segment event's `properties`. However, you want to send an `event` to Optimizely with the `eventName` "Clicked Shirts" . Here is an example of that Segment `event`:
 
 ```javascript
 analytics.track('Click', {
