@@ -380,6 +380,13 @@ analyticsContext.putValue(...).putReferrer(...).putCampaign(...);
 
 You can read more about these [special fields](/docs/connections/spec/common/#context).
 
+To alter data specific to the device object you can use the following:
+
+```java
+AnalyticsContext analyticsContext = Analytics.with(context).getAnalyticsContext();
+analyticsContext.device().putValue("advertisingId", "1");
+```
+
 If you'd prefer to opt out of automatic data collection, simply clear the context right after initializing the client. It's important to do this _BEFORE_ sending any events.
 
 ```java
