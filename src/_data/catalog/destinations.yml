@@ -9663,23 +9663,6 @@ items:
     identify: true
     page_view: false
     track: false
-  settings:
-  - name: apiKey
-    display_name: API Key
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: '^[a-z0-9]{40}$'
-    description: >-
-      You can find your API Key on the Help Scout API keys page by navigating
-      there from the [Help Scout
-      Dashboard](https://secure.helpscout.net/dashboard/). Go to the **user
-      icon** in the upper-right corner, and click **Your Profile** and then
-      **API Keys** and generate a new API key or grab your existing one. It
-      should be 40 characters long, and look something like this:
-      `19a568052a40916806975825946d1a0e39c721d6`.
-    settings: []
   connection_modes:
     device:
       web: false
