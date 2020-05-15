@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Segment
+title: An introduction to Segment
 ---
 
 Welcome! This page is a high-level introduction to the Segment Platform, including what it does and how. (If you're looking for detailed information about architecture, setup, or maintenance, you can **[skip ahead](#where-can-i-learn-more).**)
