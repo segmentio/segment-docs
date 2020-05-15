@@ -22,7 +22,7 @@ sections:
 - section_title: Guides
   section:
   - path: /guides
-    title: Getting Started with Segment
+    title: An introduction to Segment
   - path: /guides/intro-impl
     title: Segment Developer overview
   - path: /guides/intro-user
