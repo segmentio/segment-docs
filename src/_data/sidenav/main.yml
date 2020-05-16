@@ -156,7 +156,14 @@ sections:
       menu_icon: read-more
     - path: /connections/destinations/destination-filters
       title: Destination Filters
-    - path: /connections/destinations/destination-functions
+  - section_title: Functions
+    slug: connections/functions
+    section:
+    - path: /connections/functions
+      title: Functions Overview
+    - path: /connections/functions/source-functions
+      title: Source Functions 
+    - path: /connections/functions/destination-functions
       title: Destination Functions
   - section_title: Warehouses
     slug: connections/warehouses
