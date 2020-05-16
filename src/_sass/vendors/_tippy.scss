@@ -78,6 +78,34 @@
   border-style: solid;
 }
 
-.tippy-content {
-  // padding: 15px 10px 10px;
+.tippy-tooltip.dark-theme {
+  margin-top: -16px;
+  padding: 5px 7px;
+  background-color: #545454;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+
+  .tippy-arrow {
+    bottom: -5px;
+    border-top-color: #545454;
+    transform: translateX(-15px);
+  }
+}
+
+.tippy-tooltip.dark-theme[data-placement^=bottom-start] {
+  margin-top: 0;
+
+  .tippy-arrow {
+    top: -5px;
+    width: 0;
+    height: 0;
+    margin: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #545454;
+    border-top: none;
+    background-image: none;
+    transform: translateX(-17px);
+  }
 }
