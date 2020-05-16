@@ -3,6 +3,7 @@ title: 'Destination Functions'
 redirect_from:
   - '/connections/destinations/custom/'
   - '/connections/destinations/custom-destinations/'
+  - '/connections/destinations/destination-functions/'
 ---
 
 Destination Functions allow you to transform and annotate your Segment events and send them to any external tool or API without worrying about setting up or maintaining any infrastructure. 

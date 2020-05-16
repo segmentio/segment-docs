@@ -3,6 +3,7 @@ title: Source Functions
 redirect_from:
   - '/connections/sources/custom/'
   - '/connections/sources/custom-sources/'
+  - '/connections/sources/source-functions/'
 ---
 
 Source Functions allow you to gather data from any third-party applications without worrying about setting up or maintaining any infrastructure. 
