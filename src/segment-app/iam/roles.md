@@ -17,20 +17,58 @@ All Segment workspaces have the following roles, regardless of account type.
 
 The following roles are only available to Segment Business Tier accounts.
 
+#### Source Admin
+Edit access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.
+##### Scope
+Can be granted access to 1) all current and future Sources, 2) specific Sources, 3) Sources with a particular Label (BT only)
 
-| **Role**                 | **Description**                                                                                                                          | **Scope**                                                                                                                     |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Source Admin             | Edit access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.             | Can be granted access to 1) all current and future Sources, 2) specific Sources, 3) Sources with a particular Label (BT only) |
-| Source Read-only         | Read access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.             | Can be granted access to 1) all current and future Sources, 2) specific Sources, 3) Sources with a particular Label (BT only) |
-| Warehouse Admin          | Edit access to all warehouses and warehouse settings.                                                                                    | Grant access to **all** warehouses.                                                                                           |
-| Warehouse Read-only      | Read access to assigned warehouses and warehouse settings.                                                                               | Grant access to **all** warehouses.                                                                                           |
-| Personas Admin           | Edit access to assigned Personas Space(s), including all audiences and computed traits. Can update settings within the Personas product. | Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only)    |
-| Personas User            | Edit access to all traits and audiences within assigned Personas Space(s). Cannot change settings in Personas.                           | Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only)    |
-| Personas Read-only       | Read-only access to assigned Personas Space(s), including all audiences and computed traits.                                             | Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only)    |
-| Identity Admin           | Edit access to Identity settings in Personas.                                                                                            | Grant access to **all** Identity settings.                                                                                    |
-| Tracking plan Admin          | Edit access to all Tracking Plans in Protocols.                                                                                          | Grant access to **all** Tracking Plans.                                                                                       |
-| Trackign Plan Read-only      | Read access to all Tracking plans in Protocols.                                                                                          | Grant access to **all** Tracking Plans.                                                                                       |
-| Minimal Workspace Access | Access to only log into a workspace. Cannot view any resources or settings.                                                              |                                                                                                                               |
+#### Source Read-only
+Read access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.
+##### Scope
+Can be granted access to 1) all current and future Sources, 2) specific Sources, 3) Sources with a particular Label (BT only)
+
+#### Warehouse Admin
+Edit access to all warehouses and warehouse settings.
+##### Scope
+Grant access to **all** warehouses.
+
+##### Warehouse Read-only
+Read access to all warehouses and warehouse settings.
+##### Scope
+Grant access to **all** warehouses.
+
+#### Tracking Plan Admin
+Edit access to all Tracking Plans in Protocols.
+##### Scope
+Grant access to **all** Tracking Plans.
+
+#### Tracking Plan Read-only
+Read access to all Tracking Plans in Protocols.
+##### Scope
+Grant access to **all** Tracking Plans.
+
+#### Personas Admin
+Edit access to assigned Personas Space(s), including all audiences and computed traits. Can update settings within the Personas product.
+##### Scope
+Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only).
+
+#### Personas User
+Edit access to all traits and audiences within assigned Personas Space(s). Cannot change settings in Personas.
+##### Scope
+Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only).
+
+#### Personas Read-only
+Read-only access to assigned Personas Space(s), including all audiences and computed traits.
+##### Scope
+Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only).
+
+#### Identity Admin
+Edit access to Identity settings in Personas.
+##### Scope
+Grant access to **all** Identity settings.
+
+#### Minimal Workspace Access
+Access to only log into a workspace. Cannot view any resources or settings.                                                   |
 
 ## Privacy Mode
 
