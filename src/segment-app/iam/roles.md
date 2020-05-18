@@ -20,8 +20,8 @@ The following roles are only available to Segment Business Tier accounts.
 
 | **Role**                 | **Description**                                                                                                                          | **Scope**                                                                                                                     |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Source Admin             | Edit access to assigned source(s), source settings, connected streaming destinations, schema, and live data in the debugger.             | Can be granted access to 1) all current and future Sources, 2) specific Sources, 3) Sources with a particular Label (BT only) |
-| Source Read-only         | Read access to assigned source(s), source settings, connected streaming destinations, schema, and live data in the debugger.             | Can be granted access to 1) all current and future Sources, 2) specific Sources, 3) Sources with a particular Label (BT only) |
+| Source Admin             | Edit access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.             | Can be granted access to 1) all current and future Sources, 2) specific Sources, 3) Sources with a particular Label (BT only) |
+| Source Read-only         | Read access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.             | Can be granted access to 1) all current and future Sources, 2) specific Sources, 3) Sources with a particular Label (BT only) |
 | Warehouse Admin          | Edit access to all warehouses and warehouse settings.                                                                                    | Grant access to **all** warehouses.                                                                                           |
 | Warehouse Read-only      | Read access to assigned warehouses and warehouse settings.                                                                               | Grant access to **all** warehouses.                                                                                           |
 | Personas Admin           | Edit access to assigned Personas Space(s), including all audiences and computed traits. Can update settings within the Personas product. | Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only)    |
@@ -53,5 +53,9 @@ Connecting two resource instances requires access to both:
   <tr>
     <td>Connect source to tracking plan</td>
     <td>Requires Source Admin and Tracking Plan Admin. Either granted on the specific resources being connected or granted for all resources. </td>
+  </tr>
+  <tr>
+    <td>Create, view and edit Protocols Transformations</td>
+    <td>Creating and editing transformations requires either Source Admin for all Sources or specific Sources. Viewing transformations requires Source Read-only for all Sources or specific Sources. </td>
   </tr>
 </table>
