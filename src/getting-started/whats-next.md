@@ -10,9 +10,11 @@ Segment includes a suite of Privacy tools to help your organization comply with 
 
 The [Privacy Portal](/docs/privacy-portal/portal/) allows you to easily audit, monitor, and enforce privacy rules against your Segment data, to proactively protect your customers.
 
-## Data governance with Protocols
+## Improve data quality with Protocols
 
-You had a taste of the planning and coordination needed to set up clear, consistent, reliable and extensible tracking systems on page 3, [Planning a Full Install](03-planning-full-install). Business tier customers can use [Protocols](/docs/protocols/), Segment's data governance solution, to streamline and coordinate the creation and maintenance of tracking schemas, and to ensure that data coming into your Segment workspaces conforms to the standards you set. 
+The Business Tier [Protocols](/docs/protocols/) package offers a suite of tools that help your organization improve the quality of data flowing through Segment to your destinations. With higher quality data, your organization can move faster to build marketing campaigns, act on analytics insights, and keep track of what data is being collected where. 
+
+With Protocols, you can [align](/docs/protocols/align) your organization with Tracking Plans which list event and property you intend to collect across your web, mobile or server-side data sources. Once defined, you can connect the Tracking Plan to one or more sources to automatically [validate](/docs/protocols/validate) the data is flowing correctly. You can also turn on [enforcement](/docs/protocols/enforce) to block bad data, and even fix incorrect data with [Transformations](/docs/protocols/transform).
 
 ## Single view of the customer with Personas
 
