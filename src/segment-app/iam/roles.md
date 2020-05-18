@@ -24,48 +24,39 @@ Can be granted access to 1) all current and future Sources, 2) specific Sources,
 
 #### Source Read-only
 Read access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.
-##### Scope
-Can be granted access to 1) all current and future Sources, 2) specific Sources, 3) Sources with a particular Label (BT only)
+**Scope:** Can be granted access to 1) all current and future Sources, 2) specific Sources, 3) Sources with a particular Label (BT only)
 
 #### Warehouse Admin
 Edit access to all warehouses and warehouse settings.
-##### Scope
-Grant access to **all** warehouses.
+**Scope:** Grant access to **all** warehouses.
 
 ##### Warehouse Read-only
 Read access to all warehouses and warehouse settings.
-##### Scope
-Grant access to **all** warehouses.
+**Scope:** Grant access to **all** warehouses.
 
 #### Tracking Plan Admin
 Edit access to all Tracking Plans in Protocols.
-##### Scope
-Grant access to **all** Tracking Plans.
+**Scope:** Grant access to **all** Tracking Plans.
 
 #### Tracking Plan Read-only
 Read access to all Tracking Plans in Protocols.
-##### Scope
-Grant access to **all** Tracking Plans.
+**Scope:** Grant access to **all** Tracking Plans.
 
 #### Personas Admin
 Edit access to assigned Personas Space(s), including all audiences and computed traits. Can update settings within the Personas product.
-##### Scope
-Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only).
+**Scope:** Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only).
 
 #### Personas User
 Edit access to all traits and audiences within assigned Personas Space(s). Cannot change settings in Personas.
-##### Scope
-Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only).
+**Scope:** Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only).
 
 #### Personas Read-only
 Read-only access to assigned Personas Space(s), including all audiences and computed traits.
-##### Scope
-Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only).
+**Scope:** Can be granted access to 1) all current and future Spaces, 2) specific Spaces, 3) Spaces with a particular Label (BT only).
 
 #### Identity Admin
 Edit access to Identity settings in Personas.
-##### Scope
-Grant access to **all** Identity settings.
+**Scope:** Grant access to **all** Identity settings.
 
 #### Minimal Workspace Access
 Access to only log into a workspace. Cannot view any resources or settings.                                                   |
