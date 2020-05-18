@@ -1,5 +1,7 @@
 {% for section in include.sections %}
+{% unless section.section_title == false %}
 ## {{section.section_title}}
+{% endunless %}
 {{section.section_description}}
 
 <div class="flex flex--wrap waffle waffle--large">
