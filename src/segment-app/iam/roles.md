@@ -48,7 +48,7 @@ Connecting two resource instances requires access to both:
 <table>
   <tr>
     <td>Connect source to warehouse</td>
-    <td>Requires Source Admin and Warehouse Admin. Either granted on the specific resources being connected or granted for all resources.</td>
+    <td>Requires Source Admin and Warehouse Admin. Either granted on the specific resources being connected or granted for all Sources.</td>
   </tr>
   <tr>
     <td>Connect source to tracking plan</td>
