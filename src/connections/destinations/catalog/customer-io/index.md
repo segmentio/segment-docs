@@ -8,6 +8,9 @@ redirect_from: "/connections/destinations/catalog/customer.io/"
 
 This document was last updated on January 26, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
+> success ""
+> **Good to know**: This page is about the Customer.io Segment destination, which receives data from Segment. There's also a page about the [Customer.io Segment source](/docs/connections/sources/catalog/cloud-apps/customer-io/), which sends data _to_ Segment!
+
 **Use Cases**
 
 * [Send emails to users based on topics of interest with Customer.io](https://segment.com/recipes/emails-topic-interest-customerio/)
