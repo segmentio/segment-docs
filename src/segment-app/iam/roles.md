@@ -32,9 +32,11 @@ The following roles are only available to Segment Business Tier accounts.
 | Trackign Plan Read-only      | Read access to all Tracking plans in Protocols.                                                                                          | Grant access to **all** Tracking Plans.                                                                                       |
 | Minimal Workspace Access | Access to only log into a workspace. Cannot view any resources or settings.                                                              |                                                                                                                               |
 
-## PII Access
+## Privacy Mode
 
-By default, Workspace Members do not have access to Personally Identifiable Information (PII) within the Segment App. To enable PII Access for a Team Member or Group, Workspace Owners can toggle on PII Access when editing Access Management for a particular individual user or group. PII Access only applies to the resources a user or user group has access to. All Workspace Owners have PII access by default.
+By default, Workspace Members do not have access to detected Personally Identifiable Information (PII) within the Segment App. To enable PII Access for a Team Member or Group, Workspace Owners can toggle on PII Access when editing Access Management for a particular individual user or group. PII Access only applies to the resources a user or user group has access to. All Workspace Owners have PII access by default.
+
+PII Access masks deteted PII based on red/yellow default matchers and any custom matchers defined in the [Privacy Portal](/docs/privacy/portal/)
 
 # Role Assignment - Best Practices
 ## Personas Destinations
