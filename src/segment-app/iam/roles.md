@@ -19,8 +19,7 @@ The following roles are only available to Segment Business Tier accounts.
 
 #### Source Admin
 Edit access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.
-##### Scope
-Can be granted access to 1) all current and future Sources, 2) specific Sources, 3) Sources with a particular Label (BT only)
+**Scope:** Can be granted access to 1) all current and future Sources, 2) specific Sources, 3) Sources with a particular Label (BT only)
 
 #### Source Read-only
 Read access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.
