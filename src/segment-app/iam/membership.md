@@ -10,7 +10,9 @@ This page explains how to add [Team Members](/docs/segment-app/iam/concepts/#tea
 1. Navigate to the **Workspace settings** then to **Access management**. (Only Workspace owners can access this section.)
 2. Click **Invite Team Member**.
 3. Enter the user's email address and choose their roles OR assign them to a user group.
+4.
    _Note: If you are on a Free or Team plan, only the `workspace owner` and `source admin` roles are available._
+
 4. Select desired roles, and choose the specific resources to grant access to. See our Roles documentation for details.
 
 ## Change a team member's access
@@ -34,7 +36,7 @@ When multiple team members should have similar access, Workspace Owners can mana
 
 ## Add a team member to a User Group
 
-TODO ADD IMAGE OF EDIT TEAM MEMBER PAGE
+![](/images/user-group-overview.png)
 
 _From the Edit Team Member Page:_
 1. Navigate to the **Members** tab within **Access Management**
@@ -45,7 +47,8 @@ _From the Edit Team Member Page:_
 
 *Note: This method is best when adding a* *single* *team member to one or more user groups.*
 
-TODO ADD IMAGE OF EDIT USER GROUP PAGE
+![](/images/user-group-members.png)
+
 _From the Edit User Group page:_
 1. Navigate to the **Groups** tab within **Access Management**.
 2. Select the User Group you would like to add one or more new Team Members to.

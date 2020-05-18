@@ -3,7 +3,7 @@ title: Identity & Access Management Overview
 ---
 Access management lets workspace owners manage which users can access different parts of their Segment workspaces.
 
-TODO IMAGE
+![](images/IAM-overview.png)
 
 ## Quick Links
   - [How to invite a team member to your workspace](/segment-app/iam/membership/#invite-a-new-team-member/)
