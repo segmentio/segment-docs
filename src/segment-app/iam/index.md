@@ -6,11 +6,11 @@ Access management lets workspace owners manage which users can access different 
 TODO IMAGE
 
 ## Quick Links
-  - [How to invite a team member to your workspace](/segment-app/iam/membership/)
-  - [How to create a User Group](/segment-app/iam/membership/)
-  - [How to update a team members' access](/segment-app/iam/membership)
-  - [How to remove a team member from a workspce](/segment-app/iam/membership)
-  - [Adding a new user with Single Sign On](/segment-app/iam/membership)
+  - [How to invite a team member to your workspace](/segment-app/iam/membership/#invite-a-new-team-member/)
+  - [How to create a User Group](/segment-app/iam/membership/#create-a-new-user-group/)
+  - [How to update a team members' access](/segment-app/iam/membership#change-a-team-members-access/)
+  - [How to remove a team member from a workspce](/segment-app/iam/membership/#remove-a-team-member-from-your-workspace/)
+  - [Adding a new user with Single Sign On](/segment-app/iam/membership/#team-management-with-single-sign-on/)
 
 {% include components/media-icon.html href="/segment-app/iam/membership/" icon="media/icon-academy.svg" title="Invite and manage workspace members" content="Learn how to add members to your workspace, and manage their permissions." variant="related" %}
 

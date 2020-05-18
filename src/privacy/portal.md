@@ -181,6 +181,8 @@ even when it's not an CCN. For example, the key "Product_ID" could contain a
 10-digit string, even though Product_ID does not actually contain an SSN. A
 North American phone number (without country code) is also ten digits.
 
+{% include components/media-icon.html href="/segment-app/iam/roles/#pii-access/" icon="media/icon-academy.svg" title="PII Access" content="Limit access to PII as defined by custom and default matchers in your Segment Workspace." variant="related" %}
+
 #### An intro to Regular expressions
 Custom Matchers use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) (using the [Golang Regex Package](https://golang.org/pkg/regexp/)) to provide you great flexibility for your matching patterns.
 

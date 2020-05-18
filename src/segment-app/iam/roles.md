@@ -76,12 +76,12 @@ By default, Workspace Members do not have access to detected Personally Identifi
 
 PII Access masks deteted PII based on red/yellow default matchers and any custom matchers defined in the [Privacy Portal](/docs/privacy/portal/)
 
-# Role Assignment - Best Practices
-## Personas Destinations
+## Role Assignment - Best Practices
+### Personas Destinations
 
 Personas destinations are not included in the Personas roles, instead managing these destinations require `Source Admin` on the source named `Personas Default`.
 
-## Connecting resources
+### Connecting resources
 
 Connecting two resource instances requires access to both:
 
@@ -94,8 +94,9 @@ Connecting two resource instances requires access to both:
     <td>Connect source to tracking plan</td>
     <td>Requires Source Admin and Tracking Plan Admin. Either granted on the specific resources being connected or granted for all resources. </td>
   </tr>
-  <tr>
-    <td>Create, view and edit Protocols Transformations</td>
-    <td>Creating and editing transformations requires either Source Admin for all Sources or specific Sources. Viewing transformations requires Source Read-only for all Sources or specific Sources. </td>
-  </tr>
 </table>
+
+### Protocols Transformations
+
+Create, view and edit Protocols Transformations
+Creating and editing transformations requires either Source Admin for all Sources or specific Sources. Viewing transformations requires Source Read-only for all Sources or specific Sources.

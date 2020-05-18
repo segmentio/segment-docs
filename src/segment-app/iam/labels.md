@@ -1,5 +1,5 @@
 ---
-title: Label-Based Access Control
+title: Using Label-Based Access Control
 ---
 Labels allow workspace owners to assign permissions to users to grant them access to groups which represent collections of Sources or collections of Personas spaces.
 
