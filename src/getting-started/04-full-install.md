@@ -317,7 +317,7 @@ analytics.track( user_id: '12345abcde',
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/03-planning-full-install/" newtab="false" icon="symbols/arrow-left.svg" title="Back to Planning a full installation" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/03-planning-full-install/" newtab="false" icon="symbols/arrow-left.svg" title="Back: Planning a Full Installation" content="Think through your goals, plan your calls, and set yourself up for success." variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/06-testing-debugging/" newtab="false" icon="symbols/arrow-right.svg" title="Next page: Testing and debugging" content="Test your implementation and see where your data is and isn't arriving." variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/05-data-to-destinations/" newtab="false" icon="symbols/arrow-right.svg" title="Next: Sending data to Destinations" content="Unlock the power fo Segment with Destinations." variant="related" %}
 </div>

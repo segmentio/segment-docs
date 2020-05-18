@@ -125,7 +125,7 @@ The Latency view shows the end-to-end P95 latency during the time period you sel
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/05-data-to-destinations/" newtab="false" icon="symbols/arrow-left.svg" title="Back to Sending data to Destinations" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/05-data-to-destinations/" newtab="false" icon="symbols/arrow-left.svg" title="Back: Sending data to Destinations" content="Unlock the power fo Segment with Destinations" variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/whats-next/" newtab="false" icon="symbols/arrow-right.svg" title="Next page: What's next?" content=" " variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/whats-next/" newtab="false" icon="symbols/arrow-right.svg" title="Next: What's next?" content="Learn about what you can do next with Segment" variant="related" %}
 </div>
