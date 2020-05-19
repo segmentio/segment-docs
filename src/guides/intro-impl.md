@@ -67,14 +67,14 @@ To learn more about connection modes and when you should use each, see the [deta
 
 ## Planning your Segment implementation
 
-The journey of a thousand miles begins, ideally, with a plan. Regardless of if you're a new company just implementing analytics for the first time, or a multi--national corporation modernizing your analytics stack, it's a great idea to [start with a Tracking Plan](/docs/protocols/data-quality/whats-a-tracking-plan/). For new implementations, this can be as simple as a document where you write down these four things for each item you track:
+The journey of a thousand miles begins, ideally, with a plan. Regardless of if you're a new company just implementing analytics for the first time, or a multi--national corporation modernizing your analytics stack, it's a great idea to [start with a Tracking Plan](/docs/protocols/tracking-plan/create/). For new implementations, this can be as simple as a document where you write down these four things for each item you track:
 
 - What am I tracking? (What is the event name or type?)
 - Why am I tracking it? (What questions does this data answer?)
 - For whom am I tracking it? (Who owns this question, tool, or business area?)
 - Where (which destination tools) do I want to send this data to?
 
-If you're a large or long-established organization and you're replacing existing tools, you'll want to spend more time on this to maintain analytic parity and continuity of tooling. We highly recommend [reading up on tracking plans and schemas](/docs/protocols/), looking at [example tracking plans](/docs/protocols/example-tracking-plan/) including the sample [e-commerce tracking plan](/docs/protocols/ecommerce-tracking-plan/) and considering [Protocols](/docs/protocols/), our tool for managing and sharing tracking plans and enforcing schemas.
+If you're a large or long-established organization and you're replacing existing tools, you'll want to spend more time on this to maintain analytic parity and continuity of tooling. We highly recommend [reading up on tracking plans](/docs/protocols/tracking-plan/create/) and [schemas](/docs/protocols/enforce/schema-configuration/) for [Protocols](/docs/protocols/), our tool for managing and sharing tracking plans and enforcing schemas.
 
 Regardless of your organization's size or age, you'll want to take an inventory of the destination tools you'll be using with Segment, and make a list of the connection modes each one accepts. This makes it easier to check off when you've implemented each one, so you're not missing anything.
 

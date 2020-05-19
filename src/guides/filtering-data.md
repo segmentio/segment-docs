@@ -78,7 +78,7 @@ You can find the Schema Defaults in the **Settings** tab for each Source, in **S
 ![](images/schema-defaults.png)
 
 **Schema Defaults Blocking Limitations**
-You cannot use Schema defaults if the source is connected to a Tracking Plan. If you're using Protocols and Tracking Plans, use [Protocols Tracking Plan Blocking](#protocols-tracking-plan-blocking-and-property-omission) to perform the same blocking. Learn more in the [Protocols Schema Configuration documentation](/docs/protocols/tracking-plan/#schema-configuration).
+You cannot use Schema defaults if the source is connected to a Tracking Plan. If you're using Protocols and Tracking Plans, use [Protocols Tracking Plan Blocking](#protocols-tracking-plan-blocking-and-property-omission) to perform the same blocking. Learn more in the [Protocols Schema Configuration documentation](/docs/protocols/enforce/schema-configuration/).
 
 **Track** events blocked by Schema filters are not delivered to either device-mode or cloud-mode Destinations. That means if you send a blocked event from a client-side library like Analytics.js, it is not delivered to any device-mode Destinations.
 
@@ -105,7 +105,7 @@ This feature is only available if the Source is not connected to a Tracking Plan
 
 ## Protocols Tracking Plan blocking and property omission
 
-If you're using Protocols, and you're confident that your tracking plan includes exactly the events and properties you want to record, you can tell Segment to [block unplanned events or malformed JSON](https://segment.com/docs/protocols/tracking-plan/#event-blocking). When you do this, Segment discards any data coming from the Source that doesn't conform to the tracking plan.
+If you're using Protocols, and you're confident that your tracking plan includes exactly the events and properties you want to record, you can tell Segment to [block unplanned events or malformed JSON](/docs/protocols/enforce/schema-configuration/). When you do this, Segment discards any data coming from the Source that doesn't conform to the tracking plan.
 
 By default, the blocked events are permanently discarded: they do not flow to Destinations, and cannot be Replayed (similar to Schema Controls). However, you can opt to send data in violation of the tracking plan to a new Segment Source so you can monitor it. (This source can affect your MTU count.)
 
@@ -125,7 +125,7 @@ By default, a warehouse receives all sources and their collections and propertie
 
 This feature only affects [warehouses](/docs/connections/warehouses/), and does not prevent data from going to any other [destinations](/docs/connections/destinations/).
 
-When you use Selective Sync to prevent data from syncing to a specific warehouse, Segment stops sending new data that meets the selection criteria to that warehouse, however it doesn't delete any existing data in the warehouses. If you use Selective Sync to re-enable a source after disabling it, Segment loads all data that arrived since the last sync into the warehouse, but doesn't backfill data that was omitted while the source was not syncing. Re-enabling a collection or property does **not** backfill any historical data -- only new data generated after re-enabling will be synced to your warehouse. 
+When you use Selective Sync to prevent data from syncing to a specific warehouse, Segment stops sending new data that meets the selection criteria to that warehouse, however it doesn't delete any existing data in the warehouses. If you use Selective Sync to re-enable a source after disabling it, Segment loads all data that arrived since the last sync into the warehouse, but doesn't backfill data that was omitted while the source was not syncing. Re-enabling a collection or property does **not** backfill any historical data -- only new data generated after re-enabling will be synced to your warehouse.
 
 To enable selective sync, in the Segment app go to the Destinations page, select the warehouse, click **Settings**, and click **Selective sync** in the left menu.
 See the documentation on [Warehouse Selective Sync](/docs/connections/warehouses/selective-sync/) for more details.

@@ -1,12 +1,13 @@
 ---
 title: Ecommerce Tracking Plans
+redirect_from: '/protcols/data-quality/ecommerce-tracking-plans/'
 ---
 
 When tracking your data, it's important to set yourself up for success. E-commerce and retail companies want to use their data to understand why some customers fall out of their funnels or why customers become repeat buyers. They want to understand the important lifecycle events that lead up to the sale of a physical item, so they can, for example, test whether personalized shopping experiences yield higher conversions, or build a multi-channel cart abandonment campaign. But first, they need to make sure those lifecycle events are being captured in their datasets.
 
 That's where a tracking plan comes in. A tracking plan is a living document that can be used across your organization to record what events and properties to track, where you'll be tracking them in your code base, and why you're tracking them.
 
-[Learn more about the value and function of a tracking plan.](/docs/protocols/data-quality/whats-a-tracking-plan/)
+[Learn more about the value and function of a tracking plan.](/docs/protocols/tracking-plan/create/)
 
 In this guide, we'll share with you the core events most relevant to e-commerce companies that can get you started immediately in understanding your customers and driving sales.
 
