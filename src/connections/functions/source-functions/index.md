@@ -25,7 +25,7 @@ Your function is a small piece of JavaScript code, scoped to your specific works
 > info ""
 > **Tip:** Get started easily by referencing the templates available in the UI or in this open-sourced [Functions Library](https://github.com/segmentio/functions-library) - you're welcome to contribute too!
 
-When you click **Build** button, a JavaScript code editor opens so you can configure your source logic to transform a webhook payload into events or objects to be sent downstream. 
+When you click the **Build** button, a JavaScript code editor opens, allowing you to configure your source logic that transforms a webhook payload into events or objects to be sent downstream. 
 
 ![Functions Editor](images/editor.png)
 
