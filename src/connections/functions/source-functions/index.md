@@ -165,7 +165,7 @@ A modern JavaScript utility library delivering modularity, performance & extras.
 
 #### AWS
 
-The official Amazon Web Services SDK. [See the AWS docs](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/).
+The official Amazon Web Services SDK. Learn more in the [AWS docs](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/).
 
 ##### `fetch()`
 
