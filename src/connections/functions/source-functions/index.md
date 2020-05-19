@@ -204,7 +204,7 @@ The [`btoa()` method](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrW
  [See docs](https://www.npmjs.com/package/form-data).
 
 #### oauth v0.9.15
-... [See docs]().
+[See docs](https://github.com/ciaranj/node-oauth#readme).
 
 #### xml v1.0.1
 ... [See docs]().
