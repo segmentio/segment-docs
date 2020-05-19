@@ -41,6 +41,16 @@ Read access to all warehouses and warehouse settings.
 
 **Scope:** Grant access to **all** warehouses.
 
+#### Functions Admin
+Create, edit and delete access to assigned function(s).
+
+**Scope:** Can be granted access to 1) all current and future functions, 2) specific functions
+
+#### Functions Read-only
+Read access to assigned function(s).
+
+**Scope:** Can be granted access to 1) all current and future functions, 2) specific functions
+
 #### Tracking Plan Admin
 Edit access to all Tracking Plans in Protocols.
 
