@@ -19,8 +19,8 @@ export default function () {
   const contents = document.querySelectorAll(CONTENT_SELECTOR)
 
   let sent = false
-
-  tippy.setDefaultProps({
+  const tooltips = tippy(buttons)
+  const defaultSettings = {
     interactive: true,
     placement: 'bottom',
     boundary: 'viewport',
@@ -65,9 +65,7 @@ export default function () {
         }
       }
     }
-  })
-
-  const tooltips = tippy(buttons)
+  }
 
   const trackFeedback = (helpful, section) => {
     typewriter.feedbackProvided({
@@ -89,6 +87,10 @@ export default function () {
       const activeClass = elements[i].getAttribute(ACTIVE_CLASS)
       elements[i].classList.add(activeClass)
     }
+  }
+
+  for (let i = 0; i < tooltips.length; i++) {
+    tooltips[i].setProps(defaultSettings)
   }
 
   for (let i = 0; i < buttons.length; i++) {

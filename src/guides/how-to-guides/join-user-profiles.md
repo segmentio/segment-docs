@@ -6,7 +6,7 @@ One of the first questions we get when our customers start querying all of their
 
 ## What is the user ID problem?
 
-Each SaaS tool you use has its own way of identifying users with a unique primary key. And, you will find each of these different IDs across different collections of tables in your database. So, when you want to start matching Joe Shmo who entered a ticket in Zendesk and also clicked through a campaign in Mailchimp, it starts to get tricky.
+Each SaaS tool you use has its own way of identifying users with a unique primary key. And, you will find each of these different IDs across different collections of tables in your database. So, when you want to start matching Joe Smith who entered a ticket in Zendesk and also clicked through a campaign in Mailchimp, it starts to get tricky.
 
 ![](images/funnel_qpY6bhaY.png)
 
@@ -14,7 +14,7 @@ For example, Stripe keeps track of users with a `customer_id`, Segment requires 
 
 To effectively join across these sources, you need to understand how each id maps to each other. The best way to do this is to create a common identifier across tools.
 
-**Use a common identifier when possible**
+### Use a common identifier when possible
 
 When you install a new tool (or use [Segment](https://segment.com/catalog) to install all of them at once), you need to choose what you will put in the ID field. There are lots of different options for this: emails, twitter handles, usernames, and more.
 

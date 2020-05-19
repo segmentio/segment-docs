@@ -1,5 +1,5 @@
 <div class="media-icon">
-  <a class="media-icon__inner" target="_blank" href="{% if include.variant == 'related' %}/docs{{ include.href }}{% else %}{{ include.href }}{% endif %}">
+  <a class="media-icon__inner" {% unless include.newtab == 'false' %}target="_blank"{% endunless %} href="{% if include.variant == 'related' %}/docs{{ include.href }}{% else %}{{ include.href }}{% endif %}">
     <span class="media-icon__icon">
       {% if include.icon %}
         {% include icons/{{ include.icon }} %}
@@ -22,8 +22,10 @@
       {% endif %}
     </div>
 
-    <div class="media-icon__anchor">
-      {% include icons/anchor.svg %}
-    </div>
+    {% unless include.newtab == 'false' %}
+      <div class="media-icon__anchor">
+        {% include icons/anchor.svg %}
+      </div>
+    {% endunless %}
   </a>
 </div>
