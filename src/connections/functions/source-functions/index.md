@@ -159,15 +159,15 @@ Objects are pieces of data that you can ETL (extract, transform, load) to your w
 Source Functions run using Node.js 10.x. The following dependencies are pre-installed in the function environment. We don't currently support importing your own dependencies but please reach out to [our support team](https://segment.com/help/contact/) if you would like to request one to be added:
 
 
-#### lodash
+#### lodash v4.17.11
 
 A modern JavaScript utility library delivering modularity, performance & extras. Learn more in the [lodash docs](https://lodash.com/docs/4.17.11).
 
-#### AWS
+#### AWS v2.488.0
 
 The official Amazon Web Services SDK. Learn more in the [AWS docs](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/).
 
-##### `fetch()`
+#### `fetch()` v2.6.0
 
 The `fetch()` method starts the process of fetching a resource from the network, returning a promise which is fulfilled once the response is available. Learn more in the [docs](https://www.npmjs.com/package/node-fetch).
 
@@ -191,11 +191,11 @@ The [`URL` interface](https://developer.mozilla.org/en-US/docs/Web/API/URL) is u
 
 The [`URLSearchParams` interface](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) defines utility methods to work with the query string of a URL.
 
-##### `atob()`
+#### `atob()` v2.1.2
 
 The [`atob()` function](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/atob) decodes a string of data which has been encoded using base-64 encoding.
 
-##### `btoa()`
+#### `btoa()` v1.2.1
 
 The [`btoa()` method](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa) creates a base-64 encoded ASCII string from a binary string.
 
@@ -317,14 +317,10 @@ Next, you will see a webhook URL either under the "Overview" tab or under the "S
 
 ## FAQs
 
-**What is the retry policy for a webhook payload?**
-
-The webhook payload retries up to 5 times with an exponential backoff for the function in the event of a failure with the function. After 5 attempts, the message is dropped.
-
 **What is the maximum payload size for the incoming webhook?**
 
 The maximum payload size for an incoming webhook payload is 2MB.
 
 **What is the timeout for a function to execute?**
 
-The execution time limit is 1 second.
+The execution time limit is 3 seconds.

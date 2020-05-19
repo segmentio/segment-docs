@@ -22,14 +22,14 @@ Use cases:
 - Transform or reject data before it's received by Segment
 - Enrich incoming data using external APIs
 
-{% include components/button-fill.html size="medium" text="Build A Source Function ->" href="https://segment.com/docs/connections/functions/source-functions/" %}
+{% include components/button-fill.html size="medium" text="Learn more ->" href="https://segment.com/docs/connections/functions/source-functions/" %}
 
 #### Destination Functions
-Destination Functions can take events from a Segment Source, transform the events, and deliver them to external APIs. Destination Functions can make arbitrary requests to annotate data, as well.
+Destination Functions can take events from a Segment source, transform the events, and deliver them to external APIs. Destination Functions can make arbitrary requests to annotate data, as well.
 
 Use cases:
 - Send data from Segment to a service that's unavailable in the catalog
 - Transform data before sending it downstream
 - Enrich outgoing data using external APIs
 
-{% include components/button-fill.html size="medium" text="Build A Destination Function ->" href="https://segment.com/docs/connections/functions/destination-functions/" %}
+{% include components/button-fill.html size="medium" text="Learn more ->" href="https://segment.com/docs/connections/functions/destination-functions/" %}
