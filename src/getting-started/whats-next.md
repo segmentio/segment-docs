@@ -12,9 +12,9 @@ The [Privacy Portal](/docs/privacy/portal/) allows you to easily audit, monitor,
 
 ## Improve data quality with Protocols
 
-You had a taste of the planning and coordination needed to set up clear, consistent, reliable and extensible data schemas on page 3, [Planning a Full Install](03-planning-full-install).
+You had a taste of the planning needed to set up clear, consistent, reliable and extensible data schemas in [Planning a Full Install](03-planning-full-install).
 
-Business tier customers can use Segment's [Protocols](/docs/protocols/) package to help with this process and normalize their data as it flows through Segment, and keep track of what data is being collected where. Clean, consistent data helps you move faster to build marketing campaigns and act on analytics insights.
+Business tier customers can use Segment's [Protocols](/docs/protocols/) package to help with this process, to keep track of what data is being collected where, and to normalize their data as it flows through Segment. Clean, consistent data helps you move faster to build marketing campaigns and act on analytics insights.
 
 With Protocols, you can use [Tracking Plans](/docs/protocols/tracking-plan/create/) to build consensus in your organization about which events and property you intend to collect across your web, mobile or server-side data sources. Once defined, you can connect the Tracking Plan to your Sources to automatically [validate](/docs/protocols/validate/) the data is flowing correctly. You can also turn on [enforcement](/docs/protocols/enforce/) to block bad data, and even fix incorrect data with [Transformations](/docs/protocols/transform/).
 
