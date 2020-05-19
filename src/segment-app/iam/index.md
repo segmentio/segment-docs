@@ -5,6 +5,8 @@ Access management lets workspace owners manage which users can access different 
 
 ![](images/IAM-overview.png)
 
+The Access Management page has three tabs: [Users](/segment-app/iam/concepts/#team-members/), [User Groups](/segment-app/iam/concepts/#user-groups/), and [Tokens](/segment-app/iam/concepts/#tokens/). You can preview the [roles](/segment-app/iam/roles) in the side panel by selecting a User in the table. 
+
 ## Quick Links
   - [How to invite a team member to your workspace](/segment-app/iam/membership/#invite-a-new-team-member/)
   - [How to create a User Group](/segment-app/iam/membership/#create-a-new-user-group/)
