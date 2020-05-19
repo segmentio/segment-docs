@@ -167,38 +167,17 @@ A modern JavaScript utility library delivering modularity, performance & extras.
 
 The official Amazon Web Services SDK. Learn more in the [AWS docs](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/).
 
-#### `fetch()` v2.6.0
+#### node-fetch v2.6.0
 
 The `fetch()` method starts the process of fetching a resource from the network, returning a promise which is fulfilled once the response is available. Learn more in the [docs](https://www.npmjs.com/package/node-fetch).
 
-##### `Request`
-
-The [`Request` interface](https://developer.mozilla.org/en-US/docs/Web/API/Request) of the Fetch API represents a resource request.
-
-##### `Response`
-
-The [`Response` interface](https://developer.mozilla.org/en-US/docs/Web/API/Response) of the Fetch API represents the response to a request.
-
-##### `Headers`
-
-The [`Headers` interface](https://developer.mozilla.org/en-US/docs/Web/API/Headers) of the Fetch API allows you to perform various actions on HTTP request and response headers. These actions include retrieving, setting, adding to, and removing. A Headers object has an associated header list, which is initially empty and consists of zero or more name and value pairs.
-
-##### `URL`
-
-The [`URL` interface](https://developer.mozilla.org/en-US/docs/Web/API/URL) is used to parse, construct, normalize, and encode URLs. It works by providing properties which allow you to easily read and modify the components of a URL.
-
-##### `URLSearchParams`
-
-The [`URLSearchParams` interface](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) defines utility methods to work with the query string of a URL.
-
-#### `atob()` v2.1.2
+#### atob() v2.1.2
 
 The [`atob()` function](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/atob) decodes a string of data which has been encoded using base-64 encoding.
 
-#### `btoa()` v1.2.1
+#### btoa() v1.2.1
 
 The [`btoa()` method](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa) creates a base-64 encoded ASCII string from a binary string.
-
 
 #### form-data v2.4.0
 A library to create readable multipart/form-data streams. Can be used to submit forms and file uploads to other web applications. Learn more in the [docs](https://www.npmjs.com/package/form-data).
@@ -250,7 +229,16 @@ Click **Run** to test the event against your function code.
 
 ### Manual Input
 
-You can also manually include your own JSON payload with relevant headers before you click **Run**. In this view, you also have the option to switch back to the webhook catcher by clicking **Auto-fill via Webhook**.
+You can also manually include your own JSON payload with relevant headers before you click **Run**. 
+
+![Functions Editor Event Tester](images/src-editor-test.gif)
+
+If your function has failed to run, you can check the error details and logs in the **Output** section.
+
+- **Error Message** - This shows the error surfaced from your function.
+- **Logs** - Any messages to `console.log()` from the function appear here.
+
+In this view, you also have the option to switch back to the webhook catcher by clicking **Auto-fill via Webhook**.
 
 ## Creation and Deployment
 
