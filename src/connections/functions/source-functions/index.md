@@ -229,6 +229,10 @@ Settings can help you build a function that can be reused without having to modi
 - Build a function that can be rolled out without code changes to various Shopify stores
 - Source payment data from a payment process and have a setting to denote the region for that function
 
+Once your Source Function is deployed as an instance within your workspace, settings can be filled out while you're setting up your source or be accessed afterwards in your source settings page under **Connection**.
+
+![Source Function Settings](images/source-settings.png)
+
 
 ## Testing
 

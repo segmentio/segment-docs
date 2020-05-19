@@ -161,7 +161,7 @@ The [`btoa()` method](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrW
 
 Settings allow you to pass different variables to your function so that you can use it across multiple sources which might have different configurations.
 
-![Custom Settings](images/settings.png)
+![Custom Settings](images/settings.gif)
 
 For example, if we include a `settingKey` setting, you can access this from your code using dot notation on the `settings` object as follows:
 
@@ -173,14 +173,14 @@ async function onRequest(request, settings) {
 
 You can include multiple setting types including strings, booleans, string arrays and string objects to support your use case. You can also mark a particular setting as being required and/or sensitive (encrypted), if needed.
 
-Once your Destination Function is deployed as an instance within your workspace, settings can be filled out on the destination configuration page.
-
-![Destination Function Settings](images/dest-settings.png)
-
 Common use cases for using multiple settings include:
 
 - **Configuration and dynamic mappings for user-configurable flow control in your Destination Function**. Create a Destination Function once and allow your users to configure instances of that function multiple times with custom settings.
 - **Additional secrets**. This is for use cases like client credentials authentication models, or for when calling multiple external APIs, for example in enrichment workflows or when looking up stored user traits and identifiers by any `externalId` from Segment's Personas [Profile API](/docs/personas/profile-api).
+
+Once your Destination Function is deployed as an instance within your workspace, settings can be filled out on the destination configuration page.
+
+![Destination Function Settings](images/dest-settings.png)
 
 ## Testing
 
@@ -198,7 +198,7 @@ Click **Run** to test your function with the event you've selected.
 
 You can also manually include your own JSON payload of a Segment event, instead of fetching a sample from one of your workspace sources.
 
-![Functions Editor Event Tester](images/editor-test.png)
+![Functions Editor Event Tester](images/editor-test.gif)
 
 If your function has failed to run, you can check the error details and logs in the **Output** section.
 
