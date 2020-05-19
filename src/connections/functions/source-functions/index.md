@@ -156,7 +156,7 @@ Objects are pieces of data that you can ETL (extract, transform, load) to your w
 
 ### Runtime and Dependencies
 
-Source Functions are run using Node.js 10.x. The following dependencies are pre-installed in the function environment. We don't currently support importing your own dependencies but please reach out to [our support team](https://segment.com/help/contact/) if you would like to request one to be added:
+Source Functions run using Node.js 10.x. The following dependencies are pre-installed in the function environment. We don't currently support importing your own dependencies but please reach out to [our support team](https://segment.com/help/contact/) if you would like to request one to be added:
 
 
 #### lodash
