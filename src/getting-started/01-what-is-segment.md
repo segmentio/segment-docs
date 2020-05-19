@@ -10,9 +10,7 @@ In the simplest form, the Segment libraries ("[Sources](/docs/connections/source
 
 ## The Segment Platform
 
-<!--TODO: better "subway map" image here-->
-
-![](images/subwaymap.png)
+![](images/subwaymap-2.png)
 
 The first two parts of the Segment platform are the [Segment Spec methods](/docs/connections/spec/), which are how you collect interaction data from your interfaces, and the [Segment Sources](/docs/connections/sources/), which you package with your interfaces to collect and route that data.
 
