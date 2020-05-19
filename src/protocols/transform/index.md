@@ -1,5 +1,6 @@
 ---
-title: 'Protocols: Transformations'
+title: Use Transformations to fix bad data
+redirect_from: '/protocols/transformations/'
 ---
 
 ## What is a Transformation?
@@ -20,13 +21,13 @@ Our goal is to make Transformations a powerful tool that complements a well stru
 - **Transformations cannot be applied retroactively:** They only apply to data moving forward. However, you can manually extract and re-send (or even [Replay](/docs/guides/general/what-is-replay)) events through a source with an active Transformation, which will send the transformed events to your destinations.
 - **Transformations are only available to Protocols customers:** If you are interested in this feature, contact your Account Executive or CSM to learn more about the Protocols package.
 - **Source-level transformations are irrevocable:** When applied at the source, a transformation permanently changes the structure of the event. The original events are not easily recoverable or [Replayable](/docs/guides/general/what-is-replay). Assume that transformed data cannot be recovered.
-- **Device-mode destinations are NOT supported:** Source scoped transformations will **only** apply to cloud-mode destinations, warehouses, and S3 destinations. Destination scoped transformations will **only** apply to cloud-mode destinations.  
+- **Device-mode destinations are NOT supported:** Source scoped transformations will **only** apply to cloud-mode destinations, warehouses, and S3 destinations. Destination scoped transformations will **only** apply to cloud-mode destinations.
 
 ## View all Transformations
 
 All Protocols Transformations are listed in the Transformations tab in the Protocols section. The list view supports filtering and sorting to organize transformations by transformation type, source, and destination.
 
-![](images/transformation_list_view.png)
+![](../images/transformation_list_view.png)
 
 Transformations can be enabled and disabled directly from the list view using the toggle.
 
@@ -39,20 +40,20 @@ To create a Transformation, navigate to the Transformations tab in Protocols and
 > info ""
 > Only workspace owners can currently create and edit transformations!
 
-![](images/transformation_wizard.png)
+![](../images/transformation_wizard.png)
 
 ### Step 1: Select the transformation type
 
 To create a Transformation, you first need to select which type of transformation you want to create. For each transformation type, we display a description, use cases and example payload. Current transformation types include:
 
 **Rename track event:** Rename track event name at the source or per destination
-![rename track event](images/event-rename-example.png)
+![rename track event](../images/event-rename-example.png)
 
 **Edit track event properties:** Rename multiple properties and/or change property data structure at the source or per destination
-![edit track event properties](images/property-example.png)
+![edit track event properties](../images/property-example.png)
 
 **Edit identify or group event traits:** Rename multiple traits and/or change trait data structure at the source or per destination
-![edit identify or group event traits](images/traits-example.png)
+![edit identify or group event traits](../images/traits-example.png)
 
 ### Step 2: Set up the transformation
 
@@ -68,7 +69,7 @@ After selecting the source, you will need to select a scope. Scope determines wh
 > warning ""
 > Source-scoped Transformations only apply to cloud-mode, S3, and data warehouse destinations.
 
-![](images/transformation_scope.png)
+![](../images/transformation_scope.png)
 
 * **Source scope:**
 Events are transformed in all **active Segment cloud-mode destinations, warehouses, and S3 destinations.** This scope is best when you want to fix malformed events before sending them to all destinations. These transformations should be treated as a temporary solution to hold you over while your engineering team fixes the root event.
