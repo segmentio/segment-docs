@@ -15,11 +15,21 @@ Functions let you create your own sources and destinations directly within your 
 There are two types of Functions which allow you to send data into Segment or to forward data out.
 
 #### Source Functions
-Source Functions allow you to collect and transform any stream of first-party customer data by using a webhook and sending it through to your Segment workspace.
+Source Functions collect and transform any stream of data via a webhook and ingest that data into your Segment workspace.
+
+Use cases:
+- Ingest data into Segment from a source that's unavailable in the catalog
+- Transform or reject data before it's received by Segment
+- Enrich incoming data using external APIs
 
 {% include components/button-fill.html size="medium" text="Build A Source Function ->" href="https://segment.com/docs/connections/functions/source-functions/" %}
 
 #### Destination Functions
-Destination Functions enable you to transform and map events collected by Segment, and send them out to tools and services with a public API.
+Destination Functions receive events collected by Segment and send them out to tools and services with a public API endpoint. 
+
+Use cases:
+- Send data from Segment to a service that's unavailable in the catalog
+- Transform data before sending it downstream
+- Enrich outgoing data using external APIs
 
 {% include components/button-fill.html size="medium" text="Build A Destination Function ->" href="https://segment.com/docs/connections/functions/destination-functions/" %}
