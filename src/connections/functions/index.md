@@ -8,7 +8,7 @@ Functions lets you create your own sources and destinations directly within your
 ![](images/functions-overview.png)
 
 > info ""
-> Functions is scoped for your specific workspace. If you're a technology partner looking to build a new integration to be published on Segment's catalog, please read our [Developer Center documentation](https://segment.com/docs/partners/).
+> Functions are scoped to your specific workspace. If you're a technology partner looking to build a new integration to be published on Segment's catalog, please read our [Developer Center documentation](https://segment.com/docs/partners/).
 
 
 ## What can you do with Functions?
