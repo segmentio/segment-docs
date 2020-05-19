@@ -274,11 +274,11 @@ sections:
       title: Forward blocked events
   - path: /protocols/transform
     title: Transform to fix bad data
-  - section_title: Extensions
+  - section_title: Protocols Extensions
     slug: protocols/apis-and-extensions
     section:
     - path: /protocols/apis-and-extensions
-      title: APIs
+      title: Protocols APIs
     - path: /protocols/apis-and-extensions/typewriter
       title: Typewriter
     - path: /protocols/apis-and-extensions/anomaly_detection
