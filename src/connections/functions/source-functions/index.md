@@ -207,7 +207,7 @@ The [`btoa()` method](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrW
 [See docs](https://github.com/ciaranj/node-oauth#readme).
 
 #### xml v1.0.1
-... [See docs]().
+[See docs](https://github.com/dylang/node-xml).
 
 
 ### Settings and Secrets
