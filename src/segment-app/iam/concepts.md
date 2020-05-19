@@ -32,7 +32,7 @@ Workspace owners can assign users access to groups of resources by using Labels.
 
 To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels for the entire workspace.
 
-  LINKS:
+  ### Quick Links:
 
   - [Label-based Access Management](/docs/iam/labels/)
   - [Labels Best Practices](/docs/iam/labels/)
