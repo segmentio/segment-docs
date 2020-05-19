@@ -18,7 +18,7 @@ There are four steps to get started using Redshift with Segment:
 
 ### Pick the best instance for your needs
 
-While the number of events (database records) are important, the storage capacity utilization of your cluster depends primarily on the number of unique tables and columns created in the cluster. Keep in mind that each unique `.track()` event creates a new table, and each property sent creates a new column in that table. For reason, we highly recommend starting with a detailed [tracking plan](/docs/protocols/example-tracking-plan/) before implementing Segment libraries to ensure that only necessary events are being passed to Segment in a consistent way.
+While the number of events (database records) are important, the storage capacity utilization of your cluster depends primarily on the number of unique tables and columns created in the cluster. Keep in mind that each unique `.track()` event creates a new table, and each property sent creates a new column in that table. For reason, we highly recommend starting with a detailed [tracking plan](/docs/protocols/tracking-plan/create/) before implementing Segment libraries to ensure that only necessary events are being passed to Segment in a consistent way.
 
 There are two kinds of Redshift clusters: **Dense Compute** and **Dense Storage**
 
