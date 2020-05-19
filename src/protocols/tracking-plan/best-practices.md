@@ -1,6 +1,8 @@
 ---
 title: Data Collection Best Practices
-redirect_from: '/protocols/data-quality/'
+redirect_from:
+  - '/protocols/data-quality/'
+  - '/protocols/tracking-plan/'
 ---
 
 Let's face it, figuring out what events to track in Segment can feel overwhelming. Fortunately, we've helped 1000s of customers through this process and have amassed a ton of resources to help you get started. Whether you're a small team just getting your app off the ground, or a highly complex enterprise with 100s of stakeholders, these resources can help!
