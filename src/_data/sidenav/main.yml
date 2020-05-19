@@ -122,6 +122,8 @@ sections:
       title: 'Spec: B2B SaaS'
     - path: /connections/spec/ecommerce/v2
       title: 'Spec: Ecommerce Events'
+    - path: /connections/spec/ecommerce-tracking-plan
+      title: 'Ecommerce Tracking Plans'
     - path: /connections/spec/video
       title: Video Spec
     - path: /connections/spec/best-practices-identify
