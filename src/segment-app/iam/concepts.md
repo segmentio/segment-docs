@@ -7,6 +7,7 @@ title: Concepts
 A Segment *Team Member* is an individual with access to a workspace. A Segment user can be associated with one or more workspaces, either as an `owner` or `member` of each.
   - **Workspace Owners** have access to, and manage all aspects of the workspace.
   - **Workspace Members** are given access via a set of *roles* corresponding to specific *resources* within the workspace.
+Check out the [roles documentation](/segment-app/iam/roles) for a complete list of roles.
 
 ## User Groups
 
@@ -41,13 +42,3 @@ To create or configure labels, go to the **Labels** tab in your workspace settin
 ## Roles
 
 A role is used to give a user access to resources within a workspace. Roles are additive, and can be combined to configure a custom policy for a Team Member or a Group. A policy is at least one role plus one resource applied to an individual user or group.
-
-### Role Concepts
-
-<<<<<<< HEAD
-**Workspace Owner** have full read and edit access to everything in the workspace, including sources, destinations, add-on products, and settings. Owners have full edit access to all team permissions.
-=======
-**Workspace Owners** have full read and edit access to everything in the workspace, including sources, destinations, add-on products, and settings. Owners have full edit access to all team permissions.
->>>>>>> 2f60a164b7f7c1f197c37003dc4fcc7cf1d15e63
-**Workspace Members** are granted access to a resource or set of resources with additive Roles**.**
-Check out the [Roles documentation for a complete list of roles](/docs/iam/roles/).
