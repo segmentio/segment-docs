@@ -161,7 +161,7 @@ Source Functions are run using Node.js 10.x. The following dependencies are pre-
 
 #### lodash
 
-A modern JavaScript utility library delivering modularity, performance & extras. [See the lodash docs](https://lodash.com/docs/4.17.11).
+A modern JavaScript utility library delivering modularity, performance & extras. Learn more in [lodash docs](https://lodash.com/docs/4.17.11).
 
 #### AWS
 
