@@ -253,7 +253,7 @@ You can also manually include your own JSON payload with relevant headers before
 Once you finish writing your Source Function code, save the code and create the Function by clicking **Configure**. On the screen that appears, give the function a name, and optionally add useful details (these are displayed in your workspace). Click **Create Function** to finish and make your Destination Function available in your workspace.
 
 If you're editing an existing function, you can **Save** changes without changing the behavior of your deployed function. Alternatively, you can also choose to **Save 
-Deploy** to push changes to an existing function.
+and Deploy** to push changes to an existing function.
 
 ## Logs and Errors
 
