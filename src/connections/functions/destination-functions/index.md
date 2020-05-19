@@ -16,7 +16,7 @@ Your function is a small piece of JavaScript code, scoped to your specific works
 
 ### Creating your Destination Function
 
-1. From your Segment Workspace, go to the Catalog, and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog).
+1. From your Segment workspace, go to the Catalog, and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog).
 2. Click **New Function**.
 3. Select **Destination Function** and click **Build**.
 
