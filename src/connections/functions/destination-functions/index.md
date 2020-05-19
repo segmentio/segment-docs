@@ -289,7 +289,7 @@ If you are a **Workspace Owner** or **Functions Admin**, you can manage your Des
 
 You can use [Destination Event Delivery](https://segment.com/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/) to understand if Segment encounters any issues delivering your source data to destinations. Errors that the Function throws appear here.
 
-If any of your deployed function instances are failing consistently, it will also appear in the [Health tab](https://segment.com/docs/segment-app/#sts=Health).
+If any of your deployed function instances are failing consistently, they will also appear in [Connection Health](https://segment.com/docs/segment-app/#sts=Health).
 
 ### Data Control
 
