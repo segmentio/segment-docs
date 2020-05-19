@@ -10,9 +10,7 @@ In the simplest form, the Segment libraries ("[Sources](/docs/connections/source
 
 ## The Segment Platform
 
-<!--TODO: better "subway map" image here-->
-
-![](images/subwaymap.png)
+![](images/subwaymap-2.png)
 
 The first two parts of the Segment platform are the [Segment Spec methods](/docs/connections/spec/), which are how you collect interaction data from your interfaces, and the [Segment Sources](/docs/connections/sources/), which you package with your interfaces to collect and route that data.
 
@@ -85,7 +83,7 @@ When you first log in to your Segment account, you can create a new workspace, o
 
 
 <div class="double">
-  {% include components/media-icon.html  href="/getting-started/" newtab="false"  icon="symbols/arrow-left.svg" title="Back to the Getting Started index" content=" " variant="related" %}
+  {% include components/media-icon.html href="/getting-started/" newtab="false" newtab="false" icon="symbols/arrow-left.svg" title="Back: Getting Started Overview" content=" " variant="related" %}
 
-  {% include components/media-icon.html  href="/getting-started/02-simple-install/" newtab="false"  icon="symbols/arrow-right.svg" title="Next page: A simple Segment installation" content="Walk through a disposable, demo implementation." variant="related" %}
+  {% include components/media-icon.html  href="/getting-started/02-simple-install/" newtab="false"  icon="symbols/arrow-right.svg" title="Next: A simple Segment installation" content="Walk through a disposable, demo implementation." variant="related" %}
 </div>
