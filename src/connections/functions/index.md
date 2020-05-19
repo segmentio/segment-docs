@@ -25,7 +25,7 @@ Use cases:
 {% include components/button-fill.html size="medium" text="Build A Source Function ->" href="https://segment.com/docs/connections/functions/source-functions/" %}
 
 #### Destination Functions
-Destination Functions receive events collected by Segment and send them out to tools and services with a public API endpoint. 
+Destination Functions can take events from a Segment Source, transform the events, and deliver them to external APIs. Destination Functions can make arbitrary requests to annotate data, as well.
 
 Use cases:
 - Send data from Segment to a service that's unavailable in the catalog
