@@ -20,6 +20,6 @@ Source Functions allow you to collect and transform any stream of first-party cu
 {% include components/button-fill.html size="medium" text="Build A Source Function ->" href="https://segment.com/docs/connections/functions/source-functions/" %}
 
 #### Destination Functions
-Destination Functions enables you to transform and map events collected by Segment and send them out to tools and services with a public API endpoint. 
+Destination Functions enable you to transform and map events collected by Segment, and send them out to tools and services with a public API.
 
 {% include components/button-fill.html size="medium" text="Build A Destination Function ->" href="https://segment.com/docs/connections/functions/destination-functions/" %}
