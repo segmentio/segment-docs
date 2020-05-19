@@ -8,7 +8,7 @@ redirect_from:
 
 Source Functions allow you to gather data from any third-party applications without worrying about setting up or maintaining any infrastructure. 
 
-Your function is a small piece of JavaScript code, scoped to your specific workspace, that you create, edit, and deploy in Segment to receive webhooks and generate Segment events or objects using the [Segment Spec](/docs/connections/spec/).
+Your function is a small piece of JavaScript code, scoped to your specific workspace, that can generate Segment events or objects using the [Segment Spec](/docs/connections/spec/).
 
 **[VISUAL SHOWING DATA FLOW FROM UPSTREAM SOURCE TO FN TO SEGMENT]**
 
