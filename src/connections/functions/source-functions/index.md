@@ -301,7 +301,7 @@ The ability to create, edit and delete a function is dictated by two permission 
 - **Functions Admin:** Create, edit and delete all functions or a subset of specified functions.
 - **Functions Read-only:** View all functions or a subset of specified functions.
 
-Enabling your source function or deploying changes to one already connected in your workspace requires additional **Source Admin** permission in addition to the role selected above.
+Enabling your Source Function or deploying changes to one already connected in your workspace requires additional **Source Admin** permission in addition to the role selected above.
 
 ### Editing and Deleting
 
