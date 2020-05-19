@@ -25,7 +25,7 @@ Your function is a small piece of JavaScript code, scoped to your specific works
 > info ""
 > **Tip:** Get started easily by referencing the templates available in the UI or in this open-sourced [Functions Library](https://github.com/segmentio/functions-library) - you're welcome to contribute too!
 
-When you click **Build** button, a code editor opens so you can configure your destination logic to send data to a public API endpoint. 
+When you click the **Build** button, a code editor opens so you can configure your destination logic to send data to a public API endpoint. 
 
 Start by replacing the generic endpoint provided with the API endpoint (URL) for your tool or internal service.
 
