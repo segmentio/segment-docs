@@ -45,15 +45,15 @@ You can define and export functions for each type in the [Segment Spec](https://
 
 Two arguments are provided to the function: the `event` payload and the `settings` object.
 
-- The **Event** argument to the function is the [Segment Event Data]
+- The **event** argument to the function is the [Segment event data]
 (https://segment.com/docs/connections/spec/common/#structure) payload.
   
 > note ""
-> **Note:** Only Event Sources are supported at this time. Object Source data is not supported.
+> **Note:** Only Event sources are supported at this time. Object source data is not supported.
 
-- The `settings` object to the function contains user settings like `apiKey` and any [custom settings and secrets](#settings-and-secrets) that you add.
+- The `settings` argument contains user settings like `apiKey` and any [custom settings and secrets](#settings-and-secrets) that you add.
 
-The Functions are ["async/await" style JavaScript](https://javascript.info/async-await), and use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) in the pre-loaded `fetch` package for external requests. This ensures seamless integration with the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tab in the Segment dashboard for your destination.
+Functions use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) in the pre-loaded `fetch` package for external requests. This ensures seamless integration with the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tab in the Segment dashboard for your destination.
 
 Here's a basic example of a function that POSTs the event to a "request bin" for introspection. You can go to [RequestBin](https://requestbin.com/) to create your own `endpoint` to experiment with.
 
@@ -115,27 +115,19 @@ You can [read more about error handling](#errors) below.
 
 ### Runtime and dependencies
 
-Destinations Functions are run using Node.js 10.x. The following dependencies are pre-installed in the function environment. We don't currently support importing your own dependencies but please reach out to [our support team](https://segment.com/help/contact/) if you would like to request one to be added:
+Destination Functions are run using Node.js 10.x. The following dependencies are pre-installed in the function environment. We don't currently support importing your own dependencies but please reach out to [our support team](https://segment.com/help/contact/) if you would like to request one to be added:
 
 #### lodash
 
-A modern JavaScript utility library delivering modularity, performance & extras. [See the lodash docs](https://lodash.com/docs/4.17.11).
+A modern JavaScript utility library delivering modularity, performance & extras. Learn more in the [lodash docs](https://lodash.com/docs/4.17.11).
 
 #### AWS
 
-The official Amazon Web Services SDK. [See the AWS docs](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/).
-
-#### Crypto
-
-The crypto module provides cryptographic functionality that includes a set of wrappers for OpenSSL's hash, HMAC, cipher, decipher, sign, and verify Functions. [See Crypto docs](https://nodejs.org/dist/latest-v10.x/docs/api/crypto.html).
-
-#### Fetch API
-
-The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. It also provides a global `fetch()` method that provides an easy, logical way to fetch resources asynchronously across the network. [See the Fetch API docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
+The official Amazon Web Services SDK. Learn more in the [AWS docs](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/).
 
 ##### `fetch()`
 
-The `fetch()` method starts the process of fetching a resource from the network, returning a promise which is fulfilled once the response is available. [See docs](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch).
+The `fetch()` method starts the process of fetching a resource from the network, returning a promise which is fulfilled once the response is available. Learn more in the [docs](https://www.npmjs.com/package/node-fetch).
 
 ##### `Request`
 
@@ -171,7 +163,7 @@ Settings allow you to pass different variables to your function so that you can 
 
 ![Custom Settings](images/settings.png)
 
-For example, if we include a `settingKey` settings string, you can access this from your code using dot notation on the `settings` object as follows:
+For example, if we include a `settingKey` setting, you can access this from your code using dot notation on the `settings` object as follows:
 
 ```js
 async function onRequest(request, settings) {
@@ -181,7 +173,7 @@ async function onRequest(request, settings) {
 
 You can include multiple setting types including strings, booleans, string arrays and string objects to support your use case. You can also mark a particular setting as being required and/or sensitive (encrypted), if needed.
 
-Once your Destination Function is deployed as an instance within your workspace, the settings can be filled out on the destination configuration page.
+Once your Destination Function is deployed as an instance within your workspace, settings can be filled out on the destination configuration page.
 
 ![Destination Function Settings](images/dest-settings.png)
 
@@ -194,30 +186,30 @@ Common use cases for using multiple settings include:
 
 You can test your code directly from the Functions Editor in two ways:
 
-### Auto-fill Events
+### Use Sample Events
 
-Start by clicking on **Use Sample Event** and selecting the source you'd like to use events from under the drop down. You can either select events by scrolling through the list or filter by name or type in the search bar.
+Start by clicking on **Use Sample Event** and selecting the source you'd like to use events from.
 
 ![Capture events to test your function](images/autofill-events.gif)
 
-Click **Run** to test the event against your function code.
+Click **Run** to test your function with the event you've selected.
 
 ### Manual Input
 
-You can also manually include your own JSON payload before you click **Run**. In this view, you also have the option to switch back to the auto-fill events method by clicking **Use Sample Event**.
+You can also manually include your own JSON payload of a Segment event, instead of fetching a sample from one of your workspace sources.
 
 ![Functions Editor Event Tester](images/editor-test.png)
 
-In the debugger panel, check the two outputs. The error message and the logs.
+If your function has failed to run, you can check the error details and logs in the **Output** section.
 
 - **Error Message** - This shows the error surfaced from your function.
-- **Logs** - The raw log. Any messages to `console.log()` from the function appear here.
+- **Logs** - Any messages to `console.log()` from the function appear here.
 
 ## Creation and Deployment
 
-Once you've finished writing your Destination Function, click **Configure** to save and use the function. On the screen that appears, give the function a name. Click **Create Function** to finish and make your Destination Function available in your workspace.
+Once you've finished writing your function, click **Configure** to give your function a name. Then, click **Create Function** to finish and make this function available in your workspace.
 
-If you're editing an existing function, you can **Save** changes without changing the behavior of your deployed function. Alternatively, you can also choose to **Save & Deploy** to push changes to **all** existing deployed functions in your workspace.
+If you're editing an existing function, you can **Save** changes without changing the behavior of your deployed function. You can also choose to **Save & Deploy** to push changes to all or specific functions in your workspace that are already deployed.
 
 
 ## Logs and Errors
@@ -238,7 +230,7 @@ These errors are not retried.
 
 If your function throws an error, Segment captures the event, any outgoing requests/responses, any console logs you may have printed, as well as the error itself. 
 
-Segment then displays the captured error information in the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tab of your Destination. You can use this tab to find and fix unexpected errors.
+Segment then displays the captured error information in the [Event Delivery](https://segment.com/docs/connections/event-delivery/) tab of your destination. You can use this tab to find and fix unexpected errors.
 
 ![Destination Function error logs](images/error-logs.png)
 
@@ -275,12 +267,12 @@ The ability to create, edit and delete a function is dictated by two permission 
 - **Functions Admin:** Create, edit and delete all functions or a subset of specified functions.
 - **Functions Read-only:** View all functions or a subset of specified functions.
 
-The permissions required to enable your Destination Function on a source or deploy changes to functions already connected to a source require additional **Source Admin** permissions in addition to the role selected above.
+The permissions required to enable your destination function on a source or deploy changes to functions already connected to a source require additional **Source Admin** permissions in addition to the role selected above.
 
 
 ### Editing and deleting
 
-If you are a **Workspace Owner** or **Functions Admin**, you can manage your Destination Function from the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click the function to change, and the panel that appears allows you to connect, edit or delete your function.
+If you are a **Workspace Owner** or **Functions Admin**, you can manage your function from the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). From here you can view and manage your functions.
 
 ![Editing or deleting your Destination Function](images/function-sidesheet.gif)
 
@@ -311,8 +303,8 @@ No. Segment cannot guarantee the order in which the events are delivered to an e
 
 **Can I create a device-mode Destination?**
 
-Functions enable you to write and deploy Cloud-mode Destinations. We're in the early phases of exploration and discovery for supporting customer "web plugins" for custom device-mode destinations and other use cases, but this is unsupported today.
+Functions enable you to write and deploy cloud-mode destinations. We're in the early phases of exploration and discovery for supporting customer "web plugins" for custom device-mode destinations and other use cases, but this is unsupported today.
 
 **How do I publish a destination to the Segment catalog instead of my own workspace?**
 
-If you are a Partner, looking to publish your destination and distribute your App through Segment Catalog, visit the [Developer Center](https://segment.com/partners/developer-center/) and check out our [partner docs](/docs/partners).
+If you are a partner, looking to publish your destination and distribute your app through Segment catalog, visit the [Developer Center](https://segment.com/partners/developer-center/) and check out our [partner docs](/docs/partners).

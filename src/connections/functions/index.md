@@ -15,7 +15,7 @@ Functions let you create your own sources and destinations directly within your 
 There are two types of Functions which allow you to send data into Segment or to forward data out.
 
 #### Source Functions
-Source Functions allow you to collect and transform any stream of first-party customer data by leveraging a webhook and sending it through to your Segment workspace.
+Source Functions allow you to collect and transform any stream of first-party customer data by using a webhook and sending it through to your Segment workspace.
 
 {% include components/button-fill.html size="medium" text="Build A Source Function ->" href="https://segment.com/docs/connections/functions/source-functions/" %}
 

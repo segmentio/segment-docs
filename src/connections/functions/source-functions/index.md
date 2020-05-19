@@ -161,7 +161,7 @@ Source Functions are run using Node.js 10.x. The following dependencies are pre-
 
 #### lodash
 
-A modern JavaScript utility library delivering modularity, performance & extras. Learn more in [lodash docs](https://lodash.com/docs/4.17.11).
+A modern JavaScript utility library delivering modularity, performance & extras. Learn more in the [lodash docs](https://lodash.com/docs/4.17.11).
 
 #### AWS
 
@@ -169,7 +169,7 @@ The official Amazon Web Services SDK. Learn more in the [AWS docs](https://docs.
 
 ##### `fetch()`
 
-The `fetch()` method starts the process of fetching a resource from the network, returning a promise which is fulfilled once the response is available. [See docs](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch).
+The `fetch()` method starts the process of fetching a resource from the network, returning a promise which is fulfilled once the response is available. Learn more in the [docs](https://www.npmjs.com/package/node-fetch).
 
 ##### `Request`
 
@@ -201,13 +201,13 @@ The [`btoa()` method](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrW
 
 
 #### form-data v2.4.0
- [See docs](https://www.npmjs.com/package/form-data).
+A library to create readable multipart/form-data streams. Can be used to submit forms and file uploads to other web applications. Learn more in the [docs](https://www.npmjs.com/package/form-data).
 
 #### oauth v0.9.15
-[See docs](https://github.com/ciaranj/node-oauth#readme).
+An OAuth v1 and v2 client. Learn more in the [docs](https://github.com/ciaranj/node-oauth#readme).
 
 #### xml v1.0.1
-[See docs](https://github.com/dylang/node-xml).
+Build XML strings from a JavaScript object. Learn more in the [docs](https://github.com/dylang/node-xml).
 
 
 ### Settings and Secrets
@@ -234,7 +234,7 @@ Settings can help you build a function that can be reused without having to modi
 
 You can test your code directly from the Functions Editor in two ways:
 
-### Webhook Catcher
+### Webhook
 
 Start by copying the webhook URL from the sidebar or "Auto-fill via webhook" dialog to your upstream tool or service. This allows you to receive payloads which you can use to test your function code.
 
@@ -250,10 +250,9 @@ You can also manually include your own JSON payload with relevant headers before
 
 ## Creation and Deployment
 
-Once you finish writing your Source Function code, save the code and create the Function by clicking **Configure**. On the screen that appears, give the function a name, and optionally add useful details (these are displayed in your workspace). Click **Create Function** to finish and make your Destination Function available in your workspace.
+Once you finish writing your Source Function code, save the code and create the Function by clicking **Configure**. On the screen that appears, give the function a name, and optionally add useful details (these are displayed in your workspace). Click **Create Function** to finish and make your Source Function available in your workspace.
 
-If you're editing an existing function, you can **Save** changes without changing the behavior of your deployed function. Alternatively, you can also choose to **Save 
-and Deploy** to push changes to an existing function.
+If you're editing an existing function, you can **Save** changes without changing the behavior of your deployed function. Alternatively, you can also choose to **Save & Deploy** to push changes to an existing function.
 
 ## Logs and Errors
 
@@ -283,6 +282,14 @@ async function onRequest(request, settings) {
 > warning ""
 > **Warning:** Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. You should especially avoid logging entire request/response payloads. We only retain the 100 most recent errors and logs for up to 30 days but the "Errors" tab may be visible to other workspace members if they have the necessary permissions.
 
+### Error Types
+* "Bad Request" is any error thrown by your code not covered by the other errors.
+* "Invalid Settings": A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact us for help](https://segment.com/help/contact/).
+* "Message Rejected": Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
+* "Unsupported Event Type": Your code does not implement a specific event type (`onTrack()`, etc.) or threw a `EventNotSupported` error.
+
+These errors are not retried.
+
 ## Management
 
 ### Permissions
@@ -294,11 +301,11 @@ The ability to create, edit and delete a function is dictated by two permission 
 - **Functions Admin:** Create, edit and delete all functions or a subset of specified functions.
 - **Functions Read-only:** View all functions or a subset of specified functions.
 
-The permissions required to enable your Source Function or deploy changes to one already connected in your workspace require additional **Source Admin** permissions in addition to the role selected above.
+Enabling your source function or deploying changes to one already connected in your workspace requires additional **Source Admin** permission in addition to the role selected above.
 
 ### Editing and Deleting
 
-If you are a **Workspace Owner** or **Functions Admin**, you can manage your Source Function from the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog). Click the function tile and the panel that appears will allow you to connect, edit or delete your function.
+If you are a **Workspace Owner** or **Functions Admin**, you can manage your function from the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog).
 
 ![Editing or deleting your Source Function](images/function-sidesheet.gif)
 
