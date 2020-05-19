@@ -15,7 +15,7 @@ Functions let you create your own sources and destinations directly within your 
 There are two types of Functions which allow you to send data into Segment or to forward data out.
 
 #### Source Functions
-Source Functions collect and transform any stream of data via a webhook and ingest that data into your Segment workspace.
+Source Functions receive external data from a webhook and can create Segment events, objects, or both. Source Functions have access to the full power of JavaScript so you can validate and transform the incoming data and even make external API requests to annotate your data.
 
 Use cases:
 - Ingest data into Segment from a source that's unavailable in the catalog
