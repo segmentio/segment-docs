@@ -36,7 +36,3 @@ To create or configure labels, go to the **Labels** tab in your workspace settin
 
   - [Label-based Access Management](/docs/iam/labels/)
   - [Labels Best Practices](/docs/iam/labels/)
-
-## Roles
-
-A role is used to give a user access to resources within a workspace. Roles are additive, and can be combined to configure a custom policy for a Team Member or a Group. A policy is at least one role plus one resource applied to an individual user or group.
