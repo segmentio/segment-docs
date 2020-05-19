@@ -5,8 +5,6 @@ title: Concepts
 ## Team Members
 
 A Segment *Team Member* is an individual with access to a workspace. A Segment user can be associated with one or more workspaces, either as an `owner` or `member` of each.
-  - **Workspace Owners** have access to, and manage all aspects of the workspace.
-  - **Workspace Members** are given access via a set of *roles* corresponding to specific *resources* within the workspace.
 Check out the [roles documentation](/segment-app/iam/roles) for a complete list of roles.
 
 ## User Groups
