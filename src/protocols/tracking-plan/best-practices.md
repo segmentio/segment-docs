@@ -63,9 +63,9 @@ In the following, we share how to build a tracking plan from the ground up using
 
 To help you get started, we developed a Tracking Plan template in [Google Sheets](https://docs.google.com/spreadsheets/d/1ZHGfNrCxBQbEyevmVxNoU0DGjb8cJMro1iwIRZLWjPw/view). The template includes all of our semantic specs including [eCommerce](/docs/connections/spec/ecommerce/v2/), [B2B SaaS](/docs/connections/spec/mobile/), [Mobile](/docs/connections/spec/mobile/) and [Video](/docs/connections/spec/video/), and a collection of common properties.
 
-We highly recommend you start by [defining your business objectives](/docs/protocols/align/best-practices/#define-business-objectives), and have included a template in the **Goals** tab to guide that process.
+We highly recommend you start by [defining your business objectives](/docs/protocols/tracking-plan/best-practices/#define-business-objectives), and have included a template in the **Goals** tab to guide that process.
 
-With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](/docs/connections/sources/catalog/libraries/website/javascript/#page) and skip over that tab. The identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](/docs/protocols/align/best-practices/#identify-your-users).
+With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](/docs/connections/sources/catalog/libraries/website/javascript/#page) and skip over that tab. The identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](/docs/protocols/tracking-plan/best-practices/#identify-your-users).
 
 From there, we recommend you specify Track events in the **Track (Custom)** tab. Note that we pre-created events with varying numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While more challenging to manage at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
 
@@ -91,7 +91,7 @@ The traits represent dimensions in your data that you can group or pivot on. For
 
 ## Define your Track events
 
-After you've documented your [event naming and collection standards](/docs/protocols/align/best-practices/#formalize-your-naming-and-collection-standards) it's time to add events to your tracking plan. We recommend starting with fewer events that are directly tied to one of your [business objectives](/docs/protocols/align/best-practices/#define-business-objectives). This focused effort helps avoid a situation where you become overwhelmed by endless number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer peripheral questions.
+After you've documented your [event naming and collection standards](/docs/protocols/tracking-plan/best-practices/#formalize-your-naming-and-collection-standards) it's time to add events to your tracking plan. We recommend starting with fewer events that are directly tied to one of your [business objectives](/docs/protocols/tracking-plan/best-practices/#define-business-objectives). This focused effort helps avoid a situation where you become overwhelmed by endless number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer peripheral questions.
 
 At Segment, we started out tracking these events:
 - **User Signed Up**

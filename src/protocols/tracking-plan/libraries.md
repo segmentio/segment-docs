@@ -2,7 +2,7 @@
 title: Tracking Plan Libraries
 ---
 
-Tracking Plan Libraries make it easy to scale the creation of multiple Tracking Plans within your workspace. You can create libraries for track events or track event properties (Note: we do not currently support identify/group traits libraries). Editing Tracking Plan Libraries is identical to [editing Tracking Plans](/docs/protocols/align/tracking-plan/).
+Tracking Plan Libraries make it easy to scale the creation of multiple Tracking Plans within your workspace. You can create libraries for track events or track event properties (Note: we do not currently support identify/group traits libraries). Editing Tracking Plan Libraries is identical to [editing Tracking Plans](/docs/protocols/tracking-plan/create/).
 
 Once created, you can import event or property Libraries into a Tracking Plan using a simple wizard flow.
 
@@ -45,4 +45,4 @@ When synced, events and properties from the synced Library cannot be edited and 
 ![](../images/unsync_library.png)
 
 > warning ""
-> [Property Library](/docs/protocols/align/tracking-plan-libraries/) syncing is **not** currently supported.
+> [Property Library](/docs/protocols/tracking-plan/libraries/) syncing is **not** currently supported.

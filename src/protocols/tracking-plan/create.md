@@ -6,7 +6,7 @@ redirect_from: '/protocols/data-quality/whats-a-tracking-plan/'
 redirect_from: '/protocols/example-tracking-plan/'
 ---
 
-A Tracking Plan is a data spec outlining the events and properties you intend to collect across your Segment Sources. Crafting a comprehensive Tracking Plan takes time and effort across a range of teams within your organization, and a deep understanding of your business objectives. [Learn more about data quality best practices here](/docs/protocols/align/best-practices/). Once created though, the Tracking Plan becomes a highly valuable resource for both the engineers instrumenting Segment and all consumers of the data flowing through Segment.
+A Tracking Plan is a data spec outlining the events and properties you intend to collect across your Segment Sources. Crafting a comprehensive Tracking Plan takes time and effort across a range of teams within your organization, and a deep understanding of your business objectives. [Learn more about data quality best practices here](/docs/protocols/tracking-plan/best-practices/). Once created though, the Tracking Plan becomes a highly valuable resource for both the engineers instrumenting Segment and all consumers of the data flowing through Segment.
 
 When building a Tracking Plan, we recommend starting with the key metrics that drive value for your business. Key metrics may include new user signups, top line revenue, product utilization and more. With key metrics defined, it becomes much easier to define which user actions help track or improve those key metrics. Each user action maps to a distinct event, or `.track()`  call, that you will track in Segment. `.identify()`, `.page()` and `.group()` calls can also be validated in the Tracking Plan.
 

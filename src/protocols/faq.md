@@ -41,7 +41,7 @@ You cannot currently duplicate Tracking Plans in the Segment web app. Instead, w
 
 ### How do I handle versioning with mobile apps?
 
-We currently support the ability to [create multiple versions of an event](/docs/protocols/align/tracking-plan/#tracking-plan-event-versioning) in a Tracking Plan. This is ideal for mobile apps, where a breaking change like adding a new required property to an event could cause all previous app versions out in the wild on user devices to generate violations. You must manually add a `context.protocols.event_version` property to the specific track call so that we can correctly validate the event against the defined version. You can learn more about [setting up Tracking Plan event versioning here](/docs/protocols/align/tracking-plan/#tracking-plan-event-versioning).
+We currently support the ability to [create multiple versions of an event](/docs/protocols/tracking-plan/create/#tracking-plan-event-versioning) in a Tracking Plan. This is ideal for mobile apps, where a breaking change like adding a new required property to an event could cause all previous app versions out in the wild on user devices to generate violations. You must manually add a `context.protocols.event_version` property to the specific track call so that we can correctly validate the event against the defined version. You can learn more about [setting up Tracking Plan event versioning here](/docs/protocols/tracking-plan/create/#tracking-plan-event-versioning).
 
 ### How do I handle null property values?
 
@@ -49,7 +49,7 @@ In the Tracking Plan editor, click on the data type dropdown for a given propert
 
 ### Can I group specific events in a Tracking Plan?
 
-Yes. [Tracking Plan Labels](/docs/protocols/align/tracking-plan/#add-a-label) are an excellent way to organize events in a Tracking Plan by priority, platform, product, or similar metadata for each event.
+Yes. [Tracking Plan Labels](/docs/protocols/tracking-plan/create/#add-a-label) are an excellent way to organize events in a Tracking Plan by priority, platform, product, or similar metadata for each event.
 
 ### How do I send someone a specific event or group of events to implement?
 
@@ -57,7 +57,7 @@ You can search in a Tracking Plan to find a specific event, and then copy the UR
 
 ### Can I create a master Tracking Plan that supersedes all other Tracking Plans?
 
-Yes! [Tracking Plan Libraries](/docs/protocols/align/tracking-plan-libraries/) makes it easy to create groups of events or properties that can be easily imported into multiple Tracking plans.
+Yes! [Tracking Plan Libraries](/docs/protocols/tracking-plan/libraries/) makes it easy to create groups of events or properties that can be easily imported into multiple Tracking plans.
 
 ## Protocols Validation
 

@@ -245,14 +245,14 @@ sections:
   section:
   - path: /protocols
     title: Overview
-  - section_title: Align with Tracking Plan
-    slug: protocols/align
+  - section_title: Create a Tracking Plan
+    slug: protocols/tracking-plan
     section:
-    - path: /protocols/align/best-practices
+    - path: /protocols/tracking-plan/best-practices
       title: Data Collection Best Practices
-    - path: /protocols/align/tracking-plan
+    - path: /protocols/tracking-plan/create
       title: The Tracking Plan
-    - path: /protocols/align/tracking-plan-libraries
+    - path: /protocols/tracking-plan/libraries
       title: Tracking Plan Libraries
   - section_title: Validate with violations
     slug: protocols/validate
