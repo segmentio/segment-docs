@@ -12,7 +12,7 @@ Functions let you create your own sources and destinations directly within your 
 
 
 ## What can you do with Functions?
-There are two types of Functions which allow you to send data into Segment or to forward data out.
+Functions can help you bring external data into Segment (Source Functions) and send data in Segment out to external destinations (Destination Functions).
 
 #### Source Functions
 Source Functions receive external data from a webhook and can create Segment events, objects, or both. Source Functions have access to the full power of JavaScript so you can validate and transform the incoming data and even make external API requests to annotate your data.
