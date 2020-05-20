@@ -44,7 +44,7 @@ Workspace Owners can manage permissions for groups of team members who should ha
 
 You can make changes to group membership from two places in the Segment App: From the Edit Team Member page (the user's individual access page), and from the Edit User Group page, where you can see all members of the group.
 
-![](/images/user-group-overview.png)
+![](images/user-group-overview.png)
 
 To add a team member from the **Edit Team Member** page:
 1. Navigate to the **Workspace settings** > **Access management** and click the **Members** tab.
@@ -56,7 +56,7 @@ To add a team member from the **Edit Team Member** page:
 > success ""
 > **Tip**: This method is best when adding a *single* team member to one or more user groups.
 
-![](/images/user-group-members.png)
+![](images/user-group-members.png)
 
 To add a team member from the **Edit User Group** page:
 1. Navigate to the **Workspace settings** > **Access management** and click the **Groups** tab.
