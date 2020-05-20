@@ -116,20 +116,16 @@ Destination functions are powered by Node.js 10.x.
 We don't currently support importing your own dependencies but please reach out to [our support team](https://segment.com/help/contact/) if you would like to request one to be added.
 The following dependencies are pre-installed in the function environment.
 
-- [`atob`](https://www.npmjs.com/package/atob) *— version 2.1.2*
-- [`aws-sdk`](https://www.npmjs.com/package/aws-sdk) *— version 2.488.0*
-- [`btoa`](https://www.npmjs.com/package/btoa) *— version 1.2.1*
-- [`form-data`](https://www.npmjs.com/package/form-data) *— version 2.4.0*
-- [`lodash`](https://www.npmjs.com/package/lodash) *— version 4.17.15*
-- [`node-fetch`](https://www.npmjs.com/package/node-fetch) *— version 2.6.0*
-- [`oauth`](https://www.npmjs.com/package/oauth) *— version 0.9.15*
-- [`xml`](https://www.npmjs.com/package/lodash) *— version 1.0.1*
+- [`atob v2.1.2`](https://www.npmjs.com/package/atob) exposed as `atob`
+- [`aws-sdk v2.488.0`](https://www.npmjs.com/package/aws-sdk) exposed as `AWS`
+- [`btoa v1.2.1`](https://www.npmjs.com/package/btoa) exposed as `btoa`
+- [`form-data v2.4.0`](https://www.npmjs.com/package/form-data) exposed as `FormData`
+- [`lodash v4.17.15`](https://www.npmjs.com/package/lodash) exposed as `_`
+- [`node-fetch v2.6.0`](https://www.npmjs.com/package/node-fetch) exposed as `fetch`
+- [`oauth v0.9.15`](https://www.npmjs.com/package/oauth) exposed as `OAuth`
+- [`xml v1.0.1`](https://www.npmjs.com/package/lodash) exposed as `xml`
 
-Use `require()` to import a dependency:
-
-```js
-const _ = require('lodash');
-```
+Built-in Node.js modules are also unavailable, except `crypto` (exposed as `crypto` too).
 
 ### ️Settings and Secrets
 
