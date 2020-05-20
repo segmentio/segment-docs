@@ -90,4 +90,4 @@ Segment supports "Just-In-Time" user provisioning using SSO. Any users with acce
 
 Once they have been created, Workspace Owners can update these users' access from the **Access Management** page in the Segment App.
 
-Segment does not support programmatic de-provisioning at this time, but if your workspace has SSO enabled, any user that cannot authenticate to your IDP cannot not be granted authorization to view or edit your workspace or its contents.
+Segment does not support programmatic de-provisioning at this time. However, if your workspace uses SSO, a user that cannot authenticate to your IDP cannot view or edit any of your workspaces or their contents.
