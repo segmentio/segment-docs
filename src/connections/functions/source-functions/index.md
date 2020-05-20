@@ -7,10 +7,7 @@ redirect_from:
 ---
 
 Source functions allow you to gather data from any third-party applications without worrying about setting up or maintaining any infrastructure. 
-
-Source functions are written using JavaScript and can have settings associated with them.
 All functions are scoped to your workspace, so members of other workspaces won't be able to view and use them.
-Each source function has its own webhook URL, which you can use to send data to that specific function.
 
 **[VISUAL SHOWING DATA FLOW FROM UPSTREAM SOURCE TO FN TO SEGMENT]**
 
@@ -18,10 +15,9 @@ Each source function has its own webhook URL, which you can use to send data to 
 
 ### Creating Your Source Function
 
-1. Open your workspace in Segment.
-2. Go to Catalog and click the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog) tab.
-3. Click **New Function**.
-4. Select **Source Function** and click **Build**
+1. Go to Catalog and click the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog) tab.
+2. Click **New Function**.
+3. Select **Source Function** and click **Build**
 
 > info ""
 > **Tip:** Get started easily by referencing the templates available in the UI or in this open-sourced [Functions Library](https://github.com/segmentio/functions-library) - you're welcome to contribute too!
@@ -41,8 +37,8 @@ async function onRequest(request, settings) {
 
 `onRequest()` function receives two arguments:
 
-- `request` - an object describing the incoming HTTP request
-- `settings` - set of settings for this function
+- `request` - an object describing the incoming HTTP request.
+- `settings` - set of [settings](#settings-and-secrets) for this function.
 
 We'll learn more about settings later, let's dive into how we can process the incoming request first.
 
@@ -328,7 +324,7 @@ You can test your code directly from the editor in two ways, either by receiving
 
 ### Webhook
 
-Copy the webhook URL from the "Auto-fill via webhook" dialog.
+Copy the webhook URL from the "Auto-fill via Webhook" dialog.
 All `POST` requests sent to this URL will trigger your source function.
 You can either send requests manually via any HTTP client like cURL or Insomnia, or you can paste it into an external service with support for webhooks, like Slack.
 
@@ -347,10 +343,10 @@ You can also manually construct headers and body of an HTTP request right inside
 ## Creation and Deployment
 
 Once you finish building your source function, click **Configure** to name it and **Create Function** to save it.
-After that, source function will become available in **Functions** tab of Segment's catalog.
+After that, source function will become available on the **Functions** page in Segment's catalog.
 
 If you're editing an existing function, you can **Save** changes without updating instances of this function that already exist.
-You can also choose to **Save & Deploy** to save changes and update existing functions too.
+You can also choose to **Save & Deploy** to save changes and specify which functions you'd like to update..
 
 ## Logs and Errors
 
@@ -362,7 +358,7 @@ You can use this tab to find and fix unexpected errors.
 
 ![Source Function Error Logs](images/error-logs.png)
 
-Function can throw [an Error or custom Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error), and you can also add additional helpful context in logs using the [`console` API](https://developer.mozilla.org/en-US/docs/Web/API/console).
+Functions can throw [an Error or custom Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error), and you can also add additional helpful context in logs using the [`console` API](https://developer.mozilla.org/en-US/docs/Web/API/console).
 For example:
 
 ```js
@@ -402,7 +398,7 @@ The ability to create, edit and delete a function is dictated by two permission 
 - **Functions Admin** - Create, edit and delete all functions or a subset of specified functions.
 - **Functions Read-only** - View all functions or a subset of specified functions.
 
-Enabling your source function or deploying changes to existing ones requires additional **Source Admin** permissions in addition to the role selected above.
+Enabling your source function or deploying changes to existing ones require additional **Source Admin** permissions in addition to the role selected above.
 
 ### Editing and Deleting
 
