@@ -1,9 +1,10 @@
 ---
 title: 'Quickstart: Android'
 hidden: true
-sourceTitle: 'Android'
-sourceCategory: 'Mobile'
 ---
+
+<!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
+
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 

@@ -11,6 +11,10 @@ This destination is maintained by Airship. For any issues please [reach out to t
 
 _**NOTE:** The Airship Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 31, 2019. If you are interested in joining their beta program or have any feedback to help improve the Airship Destination and its documentation, please [let  their team know](mailto:support@airship.com)!_
 
+> success ""
+> **Good to know**: This page is about the Airship Segment destination, which receives data from Segment. There's also a page about the [Airship Segment source](/docs/connections/sources/catalog/cloud-apps/airship/), which sends data _to_ Segment!
+
+
 ## Getting Started
 
 {% include content/connection-modes.md %}

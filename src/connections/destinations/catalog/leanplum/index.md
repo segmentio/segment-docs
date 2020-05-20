@@ -7,6 +7,10 @@ rewrite: true
 
 This document was last updated on January 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
+> success ""
+> **Good to know**: This page is about the Leanplum Segment destination, which receives data from Segment. There's also a page about the [Leanplum Segment source](https://segment.com/docs/connections/sources/catalog/cloud-apps/leanplum/), which sends data _to_ Segment!
+
+
 ## Getting Started
 
 {% include content/connection-modes.md %}

@@ -18,7 +18,7 @@ There are four steps to get started using Redshift with Segment:
 
 ### Pick the best instance for your needs
 
-While the number of events (database records) are important, the storage capacity utilization of your cluster depends primarily on the number of unique tables and columns created in the cluster. Keep in mind that each unique `.track()` event creates a new table, and each property sent creates a new column in that table. For reason, we highly recommend starting with a detailed [tracking plan](/docs/protocols/example-tracking-plan/) before implementing Segment libraries to ensure that only necessary events are being passed to Segment in a consistent way.
+While the number of events (database records) are important, the storage capacity utilization of your cluster depends primarily on the number of unique tables and columns created in the cluster. Keep in mind that each unique `.track()` event creates a new table, and each property sent creates a new column in that table. For reason, we highly recommend starting with a detailed [tracking plan](/docs/protocols/tracking-plan/create/) before implementing Segment libraries to ensure that only necessary events are being passed to Segment in a consistent way.
 
 There are two kinds of Redshift clusters: **Dense Compute** and **Dense Storage**
 
@@ -126,7 +126,7 @@ Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC
   ![](images/redshift_cluster_modify.png)
 
 7. Make sure the "Publicly Accessible" option is set to "Yes"
-  ![](http://docs.aws.amazon.com/redshift/latest/mgmt/images/rs-mgmt-clusters-modify.png)
+  ![](images/rs-mgmt-clusters-modify.png)
 
 8. Check your "Outbound" tab to make sure your Redshift instance is setup to make outbound requests to the Segment S3 bucket. The default behavior is to allow all outbound traffic, but security groups can be put in place to limit outbound behavior.
 
@@ -186,4 +186,8 @@ You can also unload data to a s3 bucket and then load the data into another Reds
 
 {% include content/warehouse-sync-sched.md %}
 
-![sync schedule image](images/syncsched.png)
+![sync schedule image](/docs/connections/destinations/catalog/images/syncsched.png)
+
+### Can I use an SSH tunnel to connect to my Redshift instance?
+
+Segment does not currently support SSH tunneling to Redshift. You can usually allow Segment's ETL to write to Redshift without leaving the cluster available to other connections by using IP level restrictions.

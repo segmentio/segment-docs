@@ -157,6 +157,8 @@ Make sure you authorized Facebook and selected the correct account id.
 
 Segment sends lists of users with identifiers that Facebook supports to Facebook. The matching logic itself occurs within Facebook. Facebook is more likely to be able to match a user profile if you track as many identifiers as possible, including email, mobile advertising identifiers (IDFA, Google advertising id), and others. If Facebook is unable to identify users based on the data that you provide, then the match rate will be low.
 
+Please note that emails must be in a plaintext format. Facebook also provides these guidelines for the emails that you send to them: Trim leading, trail whitespace, and convert all characters to lowercase.
+
 For example: many B2B SaaS business have users that sign up for their products with a work email address, like `jane.doe@segment.com`. However, most Facebook users sign up for Facebook with a personal email only, like `janedoe@gmail.com`. If you only provide the work email address, and no other identifiers, then Facebook can’t match your user to the Jane Doe Facebook profile. This is the case for all identifiers: Facebook must have the identifier somewhere in a user's profile, or else they can't match on it.
 
 ### Do you support LTV audiences?
