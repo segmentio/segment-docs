@@ -1,11 +1,13 @@
 ---
 title: Using Label-Based Access Control
 ---
-Labels allow workspace owners to assign permissions to users to grant them access to groups which represent collections of Sources or collections of Personas spaces.
+
+Labels allow workspace owners to assign permissions to users to grant them access to groups. Groups represent collections of Sources, or collections of Personas spaces.
 
 To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels for the entire workspace.
 
 ## Custom Environments
+
 By default, all workspaces include labels for Dev (development) and Prod (production) environments. Workspace owners can configure what these labels are applied to, and can create up to five custom environments.
 
 Labels must be in `key:value` format, both the key and value must begin with a letter, and they can only contain letters, numbers, hyphens or dashes.
@@ -31,7 +33,7 @@ To create additional custom labels, a workspace owner can create new key types i
 
 When you create a new key, it becomes available in the Sources page as a column type that can be used to organize sources.
 
-## FAQ:
+## Labels FAQ
 
 1. *How many labels can I create?*
 Customers with the Enterprise pricing package can create an unlimited number of labels. All other customers can create up to five environments.
@@ -62,19 +64,19 @@ Labels are additive, so you can only further restrict a user's permissions by ad
 
 For example, if the following sources had these set of labels:
 
-| Source                | Labels                              |
-|-----------------------|-------------------------------------|
-| A                     | `environment:prod`, `product:car`       |
-| B                     | `environment:prod`, `product:truck`     |
-| C                     | `environment:dev, product: car`       |
+| Source | Labels                              |
+| ------ | ----------------------------------- |
+| A      | `environment:prod`, `product:car`   |
+| B      | `environment:prod`, `product:truck` |
+| C      | `environment:dev, product: car`     |
 
 Then the following through users with Source Admin restricted with Labels will only have access to the following Sources:
 
-| User                | Source Admin with Labels            | Access to Sources   |
-|---------------------|-------------------------------------|---------------------|
-| Sally               | `environment:prod`                    | A, B                |
-| Bob                 | `environment:prod`, `product:truck`     | B                   |
-| Jane                | `product: car`                        | A, C                |
+| User  | Source Admin with Labels            | Access to Sources |
+| ----- | ----------------------------------- | ----------------- |
+| Sally | `environment:prod`                  | A, B              |
+| Bob   | `environment:prod`, `product:truck` | B                 |
+| Jane  | `product: car`                      | A, C              |
 
 10. *Can I grant a user permissions with OR statements?*
 You can only assign one set of additive labels on a per-user basis. However, to give a user who needs access to all sources labeled `brand:a` or `brand:b`, we recommend that you use Group permissions and assign this user to two separate groups, where one group has Source Admin access to `brand:a` and the other has Source Admin access to `brand:b`.

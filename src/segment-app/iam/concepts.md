@@ -9,30 +9,32 @@ Check out the [roles documentation](/segment-app/iam/roles) for a complete list 
 
 ## User Groups
 
-A *User Group* is a set of Team Members with a set of shared policies. A Segment Team Member can be a member of one or many Groups. All roles in the Segment App are additive. Group membership may be assigned in addition to individual roles for a single team member. For example: a single user could inherit roles from a Group definition AND have access to additional resources via individually assigned roles.
+A *User Group* is a set of Team Members with a set of shared policies. A Segment Team Member can be a member of one or many Groups. All roles in the Segment App are additive, which means that group membership can be assigned in addition to individual roles for a single team member. For example, a single user could inherit roles from a Group definition AND have access to additional resources through individually assigned roles.
 
 ## Tokens
 
-Tokens are generated to programmatically access Segment resources via our [Segment Public API](/config-api).
+You can generate tokens to programmatically access Segment resources using the [Segment Config API](/docs/config-api/).
+
 ![](images/token-overview.png)
 
 ## Resources
 
-Resources are the building blocks of Segment:
-  - Workspaces
-  - Sources
-  - Destinations
-  - Warehouses
-  - Personas Spaces
-  - Protocols Tracking Plans
+Resources are the building blocks of Segment, and represent the different parts of your Segment deployment to which you can grant access. These include:
+
+- Workspaces
+- Sources
+- Destinations
+- Warehouses
+- Personas Spaces
+- Protocols Tracking Plans
 
 ## Labels
 
-Workspace owners can assign users access to groups of resources by using Labels. Labels can be assigned to Sources and Personas Spaces.
+Workspace owners can use Labels to grant users access to groups of resources. When you add a Label to a Source or Personas Spaces, any users who are granted access to that Label gain access to those resources.
 
 To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels for the entire workspace.
 
-  ### Quick Links:
+### Quick Links:
 
-  - [Label-based Access Management](/docs/iam/labels/)
-  - [Labels Best Practices](/docs/iam/labels/)
+- [Label-based Access Management](/docs/iam/labels/)
+- [Labels Best Practices](/docs/iam/labels/)

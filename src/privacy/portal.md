@@ -181,9 +181,10 @@ even when it's not an CCN. For example, the key "Product_ID" could contain a
 10-digit string, even though Product_ID does not actually contain an SSN. A
 North American phone number (without country code) is also ten digits.
 
-{% include components/media-icon.html href="/segment-app/iam/roles/#pii-access/" icon="media/icon-academy.svg" title="PII Access" content="Limit access to PII as defined by custom and default matchers in your Segment Workspace." variant="related" %}
+{% include components/media-icon.html href="/segment-app/iam/roles/#pii-access/" icon="media/icon-academy.svg" title="PII Access" content="Use Access Roles to control who has access to the PII identified by your matchers." variant="related" %}
 
 #### An intro to Regular expressions
+
 Custom Matchers use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) (using the [Golang Regex Package](https://golang.org/pkg/regexp/)) to provide you great flexibility for your matching patterns.
 
 Regular expressions (or regexes) are a way to describe to a computer a pattern
@@ -221,6 +222,7 @@ The Privacy Portal gives you control over whether specific data is allowed to
 enter Segment ([Standard Controls](#standard-controls)), or be sent to specific
 Destinations at all ([Advanced Controls](#advanced-controls)).
 
+> warning ""
 > **Note**: All Privacy Controls are in Public Beta, meaning their use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/)).
 
 
