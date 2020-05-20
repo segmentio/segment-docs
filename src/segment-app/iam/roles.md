@@ -110,7 +110,7 @@ Personas destinations are not included in the Personas roles by default. Users w
 
 Grant these users `Source Admin` on the source named `Personas (personas space name)` to grant them access to the Personas destinations for that Personas space.
 
-## Connecting resources
+## Roles for connecting resources
 
 To connect two resource instances, you must have access to both. This access can either be granted to all resources, or to the specific resources you want to connect.
 
