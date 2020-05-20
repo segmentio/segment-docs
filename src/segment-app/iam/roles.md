@@ -94,7 +94,7 @@ Edit access to Identity settings in Personas.
 #### Minimal Workspace Access
 Access to only log into a workspace. Users with minimal access cannot view any resources or settings.
 
-
+<!--
 ## Privacy Mode
 
 The Segment App does not show Personally Identifiable Information (PII) to workspace members if the information matches specific expected formats for PII.  (By default this includes any [red or yellow matcher](/docs/privacy/portal/#default-pii-matchers), or any [custom matchers](/docs/privacy/portal/#custom-pii-matchers).)
@@ -102,7 +102,7 @@ The Segment App does not show Personally Identifiable Information (PII) to works
 Workspace Owners can grant specific individuals or groups access to PII from their Access Management settings. PII Access only applies to the resources a user or user group has access to; it does not expand a user's access beyond the original scope. All Workspace Owners have PII access by default.
 
 PII Access masks detected PII based on red/yellow default matchers and any custom matchers defined in the [Privacy Portal](/docs/privacy/portal/).
-
+-->
 
 ## Roles for managing Personas destinations
 
@@ -123,4 +123,4 @@ To connect two resource instances, you must have access to both. This access can
 
 To **view** transformations, you only need `Source Read-only`, either for all Sources or the specific Sources using Protocols.
 
-To **create or edit** transformations you must have either `Source Admin` for all Sources, or for the specific Sources used with Protocols. 
+To **create or edit** transformations you must have either `Source Admin` for all Sources, or for the specific Sources used with Protocols.
