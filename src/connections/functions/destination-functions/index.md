@@ -7,8 +7,6 @@ redirect_from:
 ---
 
 Destination functions allow you to transform and annotate your Segment events and send them to any external tool or API without worrying about setting up or maintaining any infrastructure. 
-
-Destination functions are written using JavaScript and can have settings associated with them.
 All functions are scoped to your workspace, so members of other workspaces won't be able to view and use them.
 
 **[VISUAL SHOWING DATA FLOW FROM SEGMENT SOURCE TO FN TO DESTINATION]**
@@ -17,7 +15,6 @@ All functions are scoped to your workspace, so members of other workspaces won't
 
 ### Creating your Destination Function
 
-1. Open your workspace in Segment.
 2. Go to Catalog and click the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog) tab.
 3. Click **New Function**.
 4. Select **Destination Function** and click **Build**
@@ -34,7 +31,7 @@ For each event sent to your destination function, Segment invokes a separate fun
 > info ""
 > When [destination filters](/docs/connections/destinations/destination-filters/) are configured and an event doesn't pass the filter, your function won't be invoked.
 
-Default source code template includes all of them, but feel free to use only functions you need and skip the ones you don't.
+The default source code template includes handlers for all event types, but feel free to use only functions you need and skip the ones you don't.
 Destination function can define handlers for each message type in the [Segment spec](/docs/connections/spec/):
 
 - `onIdentify`
@@ -45,12 +42,12 @@ Destination function can define handlers for each message type in the [Segment s
 - `onAlias`
 - `onDelete`
 
-Note, that destination functions don't currently support data from [object sources](/docs/connections/sources/catalog/#object-cloud-sources) yet.
+Note, that destination functions don't currently support data from [object sources](/docs/connections/sources/catalog/#object-cloud-sources).
 
 Each of the functions above accepts two arguments:
 
 - **event** - Segment event object, where fields and values depend on the type of event. For example, for "Identify" events it's formatted according to [Identify spec](/docs/connections/spec/identify/) and so on.
-- **settings** - Set of settings for this function.
+- **settings** - Set of [settings](#settings-and-secrets) for this function.
 
 We'll learn more about settings later, let's see how we can process Segment events with destination function first.
 Here's an example of a destination function that listens to "Track" events and sends some details about them to an external service:
@@ -280,7 +277,7 @@ You can use [Destination Filters](/docs/connections/destinations/destination-fil
 
 **Can I see who made changes to a function?**
 
-Yes, functions are compatible with [Audit Trail](/docs/segment-app/iam/audit-trail/) and will display user activity relating to functions.
+Yes, Functions is compatible with [Audit Trail](/docs/segment-app/iam/audit-trail/) and will display user activity relating to functions.
 
 **Does Segment retry failed function invocations?**
 
