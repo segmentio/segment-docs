@@ -11,7 +11,8 @@ The Access Management page has three tabs: [Users (team members)](/docs/segment-
 ## Quick Links
 - [Invite a team member to your workspace](/docs/segment-app/iam/membership/#invite-a-new-team-member/)
 <!--- [Create a User Group](/docs/segment-app/iam/membership/#create-a-new-user-group/)
--->- [Update a team member's access](/docs/segment-app/iam/membership#change-a-team-members-access/)
+-->
+- [Update a team member's access](/docs/segment-app/iam/membership#change-a-team-members-access/)
 - [Remove a team member from a workspace](/docs/segment-app/iam/membership/#remove-a-team-member-from-your-workspace/)
 - [Add a new user with Single Sign On](/docs/segment-app/iam/membership/#team-management-with-single-sign-on/)
 
