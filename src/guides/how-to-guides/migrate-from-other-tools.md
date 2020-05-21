@@ -28,7 +28,9 @@ ga('send', {
   'eventValue': 4
 });
 ```
+
 Becomes:
+
 ```js
 analytics.track('Signed Up', {
   category: 'Account',
