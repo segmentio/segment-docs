@@ -3,7 +3,7 @@ title: PerimeterX Destination
 rewrite: true
 ---
 
-When you toggle on the PerimeterX Destination in Segment, our CDN is updated within 5-10 minutes. Our snippet will start asynchronously loading PerimeterX's snippet onto your page. This means you should remove PerimeterX's snippet from your page.
+When you toggle on the PerimeterX Destination in Segment, our cdn is updated within 45 minutes. Our snippet will start asynchronously loading PerimeterX's snippet onto your page. This means you should remove PerimeterX's snippet from your page.
 
 ## Getting Started
 
