@@ -21,7 +21,7 @@ This document was last updated on Aug 2, 2019. If you notice any gaps, outdated 
 ![](images/TagKey.png)
 
 4. Paste the Gainsight PX Tag Key into the Segment connection settings API Key field.
-5. We will automatically initialize Gainsight PX with your API key upon loading Analytics.js. In about 5-10 minutes the CDN will be updated and Gainsight PX snippet will be initialized onto your page. Note: By using this integration, you will not need to include the Gainsight PX tag on your page, it will be loaded automatically by Segment..
+5. We will automatically initialize Gainsight PX with your API key upon loading Analytics.js. In about 45 minutes the CDN will be updated and Gainsight PX snippet will be initialized onto your page. Note: By using this integration, you will not need to include the Gainsight PX tag on your page, it will be loaded automatically by Segment..
 
 Don't miss out the [The Configuration Checklist - Segment.com](https://www.gainsight.com/product-experience/) in Gainsight PX!
 

@@ -7,7 +7,7 @@ redirect_from: '/connections/destinations/catalog/outbound/'
 
 When you toggle on Zendesk Connect in Segment, this is what happens:
 
-- Our CDN is updated within 5-10 minutes. Then our snippet starts sending all your analytics data to Segment's servers, where we'll send the data onwards to Connect.
+- Our cdn is updated within 45 minutes. Then our snippet starts sending all your analytics data to Segment's servers, where we'll send the data onwards to Connect.
 - Your Zendesk Connect real-time feed will start showing visitor data.
 
 If you plan on having both a production and development environment, you will want enter your Connect API keys into the corresponding Segment sources.
