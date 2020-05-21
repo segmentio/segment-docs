@@ -34,7 +34,7 @@ The development process is simple:
 
 It's important to understand Segment's [Conceptual Model](/docs/partners/conceptual-model) to begin planning your integration. This will help you understand how data will flow from or into your integration.
 
-### 2. Request Access 
+### 2. Request Access
 
 During _Developer Preview_, you will need to [request access to Developer Center](https://segment.com/partners/developer-center/). A Segment account is required for this step.
 
@@ -78,7 +78,7 @@ You can submit your Component in the Developer Center for review. We strive to r
 
 Our team will test your integration and review your documentation and marketing material. In order to keep this review feedback loop short, please make sure that your integration:
 
-- Adheres to the [Segment Spec](/docs/partners/spec/)
+- Adheres to the [Segment Spec](/docs/connections/spec/)
 - Adheres to your published documentation
 - Supports high data volumes
 - Meets all [launch requirements](/docs/partners/#launch-requirements)

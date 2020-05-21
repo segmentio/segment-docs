@@ -8,7 +8,7 @@ But these off-domain and cross-device brand interactions are equally, if not mor
 
 In this guide, we'll share where and how to track these critical events so that you can understand your customer's journey before they even get to your storefront, as well as their preferred shopping experiences.
 
-_If you're interested in learning about what to track,_ [check out our guide on creating an e-commerce tracking plan](/docs/protocols/ecommerce-tracking-plan/).
+_If you're interested in learning about what to track,_ [check out our guide on creating an e-commerce tracking plan](/docs/connections/spec/ecommerce-tracking-plan/).
 
 [Talk to a product specialist today](https://segment.com/contact/sales) about building a clean, high-quality data spec so you can focus on brand engagement and sales growth.
 

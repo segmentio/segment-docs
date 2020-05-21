@@ -49,7 +49,7 @@ When you create a new library source, you can find the write key in the **Settin
 ![](/docs/connections/images/find_writekey.png)
 
 > info ""
-> [Cloud-sources](/docs/guides/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service. Cloud sources have other considerations, and aren't part of this tutorial.
+> [Cloud-sources](/docs/connections/sources/about-cloud-sources/) do not have write keys, as they use a token or key from your account with that service. Cloud sources have other considerations, and aren't part of this tutorial.
 
 Make note of or write down your write key, as you'll need it in the next steps.
 

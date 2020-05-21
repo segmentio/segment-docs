@@ -20,8 +20,8 @@
 /docs/connections/sources/catalog/server/net/quickstart/
 /docs/connections/sources/catalog/server/node/quickstart/
 /docs/connections/sources/catalog/server/php/quickstart/
-/docs/connections/sources/catalog/server/python/quickstart/
-/docs/connections/sources/catalog/server/ruby/quickstart/
+/docs/connections/sources/catalog/libraries/server/python/quickstart/
+/docs/connections/sources/catalog/libraries/server/ruby/quickstart/
 /docs/connections/sources/catalog/server/rust/quickstart/
 /docs/connections/sources/iterable/
 /docs/connections/warehouses/add-users/

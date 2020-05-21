@@ -1,13 +1,11 @@
 ---
-title: HTTP Tracking API
-sourceTitle: 'HTTP'
-sourceCategory: 'Server'
+title: HTTP Tracking API Source
+redirect_from: '/connections/sources/catalog/libraries/server/http/'
 ---
-
 
 The Segment HTTP Tracking API lets you record analytics data from any website or application. The requests hit our servers, and we route your data to any destination you want!
 
-We have native [sources](/docs/connections/sources/) for most use cases (Javascript, iOS, etc.) that are all built for high-performance and are open-source. But sometimes you may want to send to the HTTP API directly—that's what this reference is for.
+Segment has native [sources](/docs/connections/sources/) for most use cases (Javascript, iOS, etc.) that are all built for high-performance and are open-source. But sometimes you may want to send to the HTTP API directly—that's what this reference is for.
 
 ## Headers
 
@@ -187,7 +185,7 @@ Find details on the **`screen` payload** in our [Spec](/docs/connections/spec/sc
 
 `group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/node/#identify) with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/integrations/intercom/), [Preact](/docs/integrations/preact/) and [Totango](/docs/integrations/totango/), as it ties the user to a **group** of other users.
+This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
 Example `group` call:
 
@@ -225,7 +223,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/integrations/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/integrations/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -256,7 +254,7 @@ For more details on the `alias` call and payload, check out our [Spec](/docs/con
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you've just switched to Segment.
 
-Historical imports can only be done into destinations that can accept historical timestamp'ed data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
+Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
 
 **Note:** If you're tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
 
@@ -378,7 +376,7 @@ POST https://api.segment.io/v1/identify
 
 In this case, we're specifying that we want this identify to only go to Mixpanel and KISSmetrics. `'All': false` says that no destination should be enabled unless otherwise specified. `'Mixpanel': true` turns on Mixpanel, etc.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/integrations) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/catalog/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 **Note:**
 
@@ -393,3 +391,5 @@ When sending a HTTP call from a user's device, you can collect the IP address by
 ## Troubleshooting
 
 {% include content/troubleshooting-intro.md %}
+{% include content/troubleshooting-server-debugger.md %}
+{% include content/troubleshooting-server-integration.md %}
