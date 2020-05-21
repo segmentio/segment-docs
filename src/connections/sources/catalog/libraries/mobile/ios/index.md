@@ -678,7 +678,8 @@ When you submit to the app store, be aware that Segment collects the IDFA for us
 
 Note, you should *not* check the box labeled "Serve advertisements within the app" unless you are actually going to display ads.
 
-**Note** The information above has changed with the 4.0-beta series.  Segment no longer collects IDFA and instead relies on the customer to supply IDFA to the library.
+> note ""
+> **Note**: The information above has changed with the 4.0-beta series.  In line with Segment’s privacy stance, the IDFA is no longer collected automatically rather customers who need it for integrations and ad analytics are expected to pass it as configuration to the library.
 
 ### Limited Ad Tracking
 
@@ -918,6 +919,29 @@ _Note_: While the network is deprecated, the relevant [framework](https://develo
 ### tvOS Support
 
 As of [Version 3.3.0](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md#version-330-08-05-2016) we now have support for tvOS through our `Analytics-iOS` sdk. You can follow the [iOS quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) and you should be good to go! tvOS installation is only supported using Carthage and CocoaPods. The dynamic framework installation method is not supported for tvOS.
+
+### 4.0-beta's no longer include IDFA, how do I use this now?
+
+Recent 4.0 betas move IDFA collection outside of the library.  You can achieve the old behavior by now doing this:
+
+```
+  @import AdSupport;
+  
+  ...
+  
+  SEGAnalyticsConfiguration* configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
+
+  // Enable advertising collection
+  configuration.enableAdvertisingTracking = YES;
+  // Set the block to be called when the advertisingID is needed
+  configuration.adSupportBlock = ^{
+      return [][ASIdentifierManager sharedManager] advertisingIdentifier];
+  }
+  
+  [SEGAnalytics setupWithConfiguration:configuration];
+
+```
+
 
 ## Troubleshooting
 
