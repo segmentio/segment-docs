@@ -3,7 +3,7 @@ title: PerimeterX Destination
 rewrite: true
 ---
 
-When you toggle on the PerimeterX Destination in Segment, our cdn is updated within 45 minutes. Our snippet will start asynchronously loading PerimeterX's snippet onto your page. This means you should remove PerimeterX's snippet from your page.
+When you enable the PerimeterX destination in the Segment app, the Segment CDN updates within 45 minutes. Segment's Analytics.js javascript snippet then starts asynchronously loading PerimeterX's snippet onto your page. This means you should remove PerimeterX's snippet from your page.
 
 ## Getting Started
 
@@ -12,12 +12,15 @@ When you toggle on the PerimeterX Destination in Segment, our cdn is updated wit
 
 ## Identify
 
-Every time your page loads, your PerimeterX snippet asynchronously fires an `identify` call with the trait `pxResult`. The value of `pxResult` will be either 0 or 1, meaning the traffic is either human or non-human.
+Every time your page loads, the PerimeterX snippet asynchronously fires an `identify` call with the trait `pxResult`. The value of `pxResult` will be either `0` or `1`, meaning the traffic is either human or non-human.
 
-You have the option to map up to 10 of your `identify` traits to custom parameters within PerimeterX.
+You can map up to 10 of your `identify` traits to custom parameters within PerimeterX.
 
-1. Create the custom parameter in PerimeterX. Click "Admin" > "Applications" > choose your application. Under "Custom parameters" click "Add".
-2. Choose a Parameter (1-10) and a display name:
+To map an identify trait in PerimeterX:
+
+1. Create the custom parameter in PerimeterX. Click **Admin > Applications** then choose your application.
+2. Under **Custom parameters** click **Add**.
+3. Choose a Parameter (1-10) and a display name:
 ![](images/cmA_dv62kgp.png)
-3. In your Segment PerimeterX Destination settings, enter the name of the `identify` trait you'd like to map to the custom parameter you created and then enter the number of the custom parameter (1-10).
+4. In your Segment PerimeterX Destination settings, enter the name of the `identify` trait to map to the custom parameter you created. Then enter the number of the custom parameter (1-10).
 ![](images/cnKeeTBLune.png)
