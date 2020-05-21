@@ -935,7 +935,7 @@ Recent 4.0 betas move IDFA collection outside of the library.  You can achieve t
   configuration.enableAdvertisingTracking = YES;
   // Set the block to be called when the advertisingID is needed
   configuration.adSupportBlock = ^{
-      return [][ASIdentifierManager sharedManager] advertisingIdentifier];
+      return [[ASIdentifierManager sharedManager] advertisingIdentifier];
   }
   
   [SEGAnalytics setupWithConfiguration:configuration];
