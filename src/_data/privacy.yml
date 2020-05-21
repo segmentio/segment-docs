@@ -16,9 +16,9 @@ sections:
   section:
   - name: Understand and Comply with regulations
     description: "Segment is committed to making it easier for you to comply with the GDPR."
-    path: /protocols/tracking-plan/best-practices/
+    path: /privacy/preparing-for-the-gdpr/
     icon: icon-comply.svg
   - name: Delete and suppress data about end-users
     description: "Easily remove your company's end-users from Segment and supported connections."
-    path: /protocols/tracking-plan/create/
+    path: /privacy/user-deletion-and-suppression/
     icon: icon-delete.svg
