@@ -6,16 +6,46 @@ redirect_from:
   - '/connections/sources/source-functions/'
 ---
 
-Source functions allow you to gather data from any third-party applications without worrying about setting up or maintaining any infrastructure. 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+	- [Getting Started](#getting-started)
+		- [Creating a source function](#creating-a-source-function)
+			- [Sending Messages](#sending-messages)
+				- [Identify](#identify)
+				- [Track](#track)
+				- [Group](#group)
+				- [Page](#page)
+				- [Screen](#screen)
+				- [Alias](#alias)
+				- [Set](#set)
+		- [Runtime and Dependencies](#runtime-and-dependencies)
+		- [Settings and Secrets](#settings-and-secrets)
+	- [Testing](#testing)
+		- [Webhook](#webhook)
+		- [Manual Input](#manual-input)
+	- [Creation and Deployment](#creation-and-deployment)
+	- [Logs and Errors](#logs-and-errors)
+		- [Error Types](#error-types)
+	- [Managing source functions](#managing-source-functions)
+		- [Permissions](#permissions)
+		- [Editing and Deleting](#editing-and-deleting)
+		- [Connecting](#connecting)
+	- [Source function FAQs](#source-function-faqs)
+				- [What is the maximum payload size for the incoming webhook?](#what-is-the-maximum-payload-size-for-the-incoming-webhook)
+				- [Is there a function execution time limit?](#is-there-a-function-execution-time-limit)
+
+<!-- /TOC -->
+
+Source functions allow you to gather data from any third-party applications without worrying about setting up or maintaining any infrastructure.
 All functions are scoped to your workspace, so members of other workspaces won't be able to view and use them.
 
 **[VISUAL SHOWING DATA FLOW FROM UPSTREAM SOURCE TO FN TO SEGMENT]**
 
 ## Getting Started
 
-### Creating Your Source Function
+### Creating a source function
 
-1. Go to Catalog and click the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog) tab.
+1. Go to the Catalog and click the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog) tab.
 2. Click **New Function**.
 3. Select **Source Function** and click **Build**
 
@@ -68,7 +98,7 @@ async function onRequest(request) {
   // Access a query parameter (e.g. `?name=Jane`)
   const name = request.headers.searchParams.get('name')
 }
-````
+```
 
 #### Sending Messages
 
@@ -275,6 +305,7 @@ Built-in Node.js modules are also unavailable, except `crypto` (exposed as `cryp
 ### Settings and Secrets
 
 Settings allow you to pass configurable variables to your function.
+
 A common pattern is to add settings for an API endpoint and API key, so that you can use the same code with different settings for different purposes.
 
 First, add a setting in **Settings** tab in the code editor:
@@ -387,18 +418,18 @@ async function onRequest(request, settings) {
 
 These errors are not retried.
 
-## Management
+## Managing source functions
 
 ### Permissions
 
-Functions have specific roles which can be leveraged for [access management](/docs/segment-app/iam/) within your Segment workspace.
+Functions have specific roles which can be used for [access management](/docs/segment-app/iam/) in your Segment workspace.
 
-The ability to create, edit and delete a function is dictated by two permission roles:
+Access to functions is controlled by two permissions [roles](/docs/segment-app/iam/roles/):
 
-- **Functions Admin** - Create, edit and delete all functions or a subset of specified functions.
-- **Functions Read-only** - View all functions or a subset of specified functions.
+- **Functions Admin:** Create, edit and delete all functions, or a subset of specified functions.
+- **Functions Read-only:** View all functions, or a subset of specified functions.
 
-Enabling your source function or deploying changes to existing ones require additional **Source Admin** permissions in addition to the role selected above.
+You also need additional **Source Admin** permissions to enable your source function or deploy changes to existing source functions.
 
 ### Editing and Deleting
 
@@ -413,12 +444,12 @@ As with [editing and deleting](/docs/connections/sources/source-functions/#editi
 Next, you will see a webhook URL either on **Overview** or **Settings → Endpoint** page.
 Copy and paste this URL into your upstream tool or service in order to receive data in this source.
 
-## FAQs
+## Source function FAQs
 
-**What is the maximum payload size for the incoming webhook?**
+##### What is the maximum payload size for the incoming webhook?
 
 2MB.
 
-**Is there a function execution time limit?**
+##### Is there a function execution time limit?
 
 Yes, function should execute within 3 seconds.
