@@ -76,7 +76,7 @@ Given the power you have in your downstream tools to create cohorts based on the
 
 Now that you are tracking who your users are, you can work on what they're doing on your website or in your app with a `.track()` call. Tracking customer events lets you learn about your customers, measure the impact of your marketing efforts and product decisions, and proactively engage your customers in a meaningful way that drives sales.
 
-[Read our event tracking guide to learn more about tracking the right events.](/docs/protocols/what-to-track/)
+[Read our event tracking guide to learn more about tracking the right events.](/docs/protocols/tracking-plan/best-practices/)
 
 E-commerce businesses, unlike SaaS or consumer apps that optimize for product engagement, focus on directing users down their funnels to a conversion goal, like purchasing a product. To best understand why customers convert, it's important to track and measure all key funnel events.
 

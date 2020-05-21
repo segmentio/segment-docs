@@ -7,7 +7,7 @@ This tutorial gets you started sending data from your iOS app to Segment. When y
 
 If you want to dive deeper at any point, check out the [iOS Library Reference](/docs/libraries/ios/).
 
-_Note: At the moment Segment does not support tracking watchkit extensions for the Apple watch. [Contact us](segment.com/help/contact) if you're interested in a watchkit SDK. For now we recommend tracking watch interactions using the native iPhone app code._
+_Note: At the moment Segment does not support tracking watchkit extensions for the Apple watch. [Contact us](https://segment.com/help/contact) if you're interested in a watchkit SDK. For now we recommend tracking watch interactions using the native iPhone app code._
 
 
 ## Step 1: Install the SDK
