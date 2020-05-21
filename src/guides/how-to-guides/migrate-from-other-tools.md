@@ -28,6 +28,14 @@ ga('send', {
   'eventValue': 4
 });
 ```
+Becomes:
+```js
+analytics.track('Signed Up', {
+  category: 'Account',
+  label: 'Premium',
+  value: 4
+});
+```
 
 Since Event Category is required we'll populate it with `All` if you don't specify one. You can read more about this in [our Google Analytics docs](/docs/connections/destinations/catalog/google-analytics/#track).
 
@@ -71,7 +79,7 @@ ga('ecommerce:addItem', {
 ga('ecommerce:send');
 ```
 
-...becomes:
+Becomes:
 
 ```js
 analytics.track('Order Completed', {
@@ -140,7 +148,7 @@ mixpanel.track('Registered',{
 });
 ```
 
-becomes:
+Becomes:
 
 ```js
 analytics.track('Registered', {
@@ -156,7 +164,7 @@ Since `mixpanel.identify` only takes a single argument (a userID) it maps direct
 mixpanel.identify('123');
 ```
 
-becomes;
+Becomes:
 
 ```js
 analytics.identify('123');
@@ -173,7 +181,7 @@ mixpanel.register({
 });
 ```
 
-...becomes:
+Becomes:
 
 ```js
 analytics.identify({
