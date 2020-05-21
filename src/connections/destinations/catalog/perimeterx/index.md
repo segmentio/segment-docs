@@ -12,7 +12,7 @@ When you toggle on the PerimeterX Destination in Segment, our CDN is updated wit
 
 ## Identify
 
-PerimeterX will send an `identify` call back to Segment on every page load with the following custom trait: `pxResult`. The value of `pxResult` will be either 0 or 1 meaning the traffic is either human or non-human.
+Every time your page loads, your PerimeterX snippet asynchronously fires an `identify` call with the trait `pxResult`. The value of `pxResult` will be either 0 or 1, meaning the traffic is either human or non-human.
 
 You have the option to map up to 10 of your `identify` traits to custom parameters within PerimeterX.
 
