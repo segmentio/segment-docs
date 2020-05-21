@@ -924,7 +924,7 @@ As of [Version 3.3.0](https://github.com/segmentio/analytics-ios/blob/master/CHA
 
 Recent 4.0 betas move IDFA collection outside of the library.  You can achieve the old behavior by now doing this:
 
-```
+```objc
   @import AdSupport;
   
   ...
