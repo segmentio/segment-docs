@@ -134,6 +134,8 @@ When you submit to the app store, even if you're not currently doing mobile inst
 > note ""
 > **Note**: You should *not* check the box labeled "Serve advertisements within the app" unless you are actually going to display ads.
 
+> **Note**: The information above has changed with the 4.0-beta series.  Segment no longer collects IDFA and instead relies on the customer to supply IDFA to the library.
+
 ---
 
 

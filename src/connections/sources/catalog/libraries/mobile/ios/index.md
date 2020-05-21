@@ -678,6 +678,8 @@ When you submit to the app store, be aware that Segment collects the IDFA for us
 
 Note, you should *not* check the box labeled "Serve advertisements within the app" unless you are actually going to display ads.
 
+**Note** The information above has changed with the 4.0-beta series.  Segment no longer collects IDFA and instead relies on the customer to supply IDFA to the library.
+
 ### Limited Ad Tracking
 
 iOS users can opt into limited ad tracking (similar to ad-blocking for browsers). For those users that have opted in, `adTrackingEnabled` will come through as `false`; however there will still be an `advertisingId` present. Since the iOS 10 release, those who opt in for limited ad tracking will have `adTrackingEnabled` set to `false` AND there will either be no `advertisingId` or the `advertisingId` will be a series of zeroes.
