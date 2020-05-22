@@ -236,13 +236,25 @@ sections:
 - section_title: Privacy
   section:
   - path: /privacy
-    title: Privacy Tools Overview
-  - path: /privacy/portal
-    title: Privacy Portal
-  - path: /privacy/preparing-for-the-gdpr
-    title: Preparing for the GDPR & CCPA
-  - path: /privacy/user-deletion-and-suppression
-    title: User Deletion and Suppression
+    title: Overview
+  - section_title: Privacy Portal
+    slug: protocols/portal
+    expanded: true
+    section:
+    - path: /privacy/portal
+      title: Detect PII
+    - path: /privacy/data-controls
+      title: Data Controls and Alerts
+  - section_title: GDPR & CCPA
+    slug: protocols/preparing-for-the-gdpr
+    expanded: true
+    section:
+    - path: /privacy/preparing-for-the-gdpr
+      title: Complying with GDPR
+    - path: /privacy/user-deletion-and-suppression
+      title: User Deletion and Suppression
+  - path: /privacy/faq
+    title: Frequently Asked Questions
 - section_title: Protocols
   section:
   - path: /protocols
