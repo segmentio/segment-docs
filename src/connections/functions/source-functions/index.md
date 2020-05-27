@@ -34,7 +34,7 @@ redirect_from:
 				- [What is the maximum payload size for the incoming webhook?](#what-is-the-maximum-payload-size-for-the-incoming-webhook)
 				- [Is there a function execution time limit?](#is-there-a-function-execution-time-limit)
 
-<!-- /TOC -->
+<!-- /TOC -->cr
 
 Source functions allow you to gather data from any third-party applications without worrying about setting up or maintaining any infrastructure.
 All functions are scoped to your workspace, so members of other workspaces won't be able to view and use them.
@@ -300,7 +300,7 @@ The following dependencies are pre-installed in the function environment.
 - [`oauth v0.9.15`](https://www.npmjs.com/package/oauth) exposed as `OAuth`
 - [`xml v1.0.1`](https://www.npmjs.com/package/lodash) exposed as `xml`
 
-Built-in Node.js modules are also unavailable, except `crypto` (exposed as `crypto` too).
+Only the `crypto` Node.js module is included (exposed as `crypto` too). [Other Built-in Node.js modules](https://nodejs.org/api/modules.html) are not available.
 
 ### Settings and Secrets
 

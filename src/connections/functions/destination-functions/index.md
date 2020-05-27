@@ -155,7 +155,8 @@ The following dependencies are installed in the function environment by default.
 - [`oauth v0.9.15`](https://www.npmjs.com/package/oauth) exposed as `OAuth`
 - [`xml v1.0.1`](https://www.npmjs.com/package/lodash) exposed as `xml`
 
-Built-in Node.js modules are also unavailable, except `crypto` (exposed as `crypto` too).
+Only the `crypto` Node.js module is included (exposed as `crypto` too). [Other Built-in Node.js modules](https://nodejs.org/api/modules.html) are not available.
+
 
 ### ️Settings and Secrets
 
