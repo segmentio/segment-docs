@@ -1,11 +1,8 @@
 ---
-title: Warehouse Health
+title: Warehouse Health Dashboard
 ---
 
-The Warehouse Health feature allows you to understand trends in volume of data (specifically, rows) synced to your data warehouse over time.
-
-![](images/intro1.png)
-![](images/intro2.png)
+The Warehouse Health dashboard allows you to understand trends in volume of data (specifically, rows) synced to your data warehouse over time.
 
 You can use this feature to answer questions such as:
 
@@ -14,10 +11,15 @@ You can use this feature to answer questions such as:
 - Which sources are contributing the most (or least) amount of data?
 - How much data is each source syncing to the warehouse? Which collections make up the majority of data within a source?
 
+![](images/intro1.png){:width="60%"}
+
+![](images/intro2.png){:width="60%"}
+
+
 This information can be used in a variety of ways, including:
 
 - **Anomaly detection** - Identify spikes or dips in the volume of rows synced to understand anomalous behavior such as sudden changes in event volume, sync failures, etc.
-- **Storage utilization** - Use the growth patterns as a way to inform how the volume of data synced to the warehouse compares to the storage capacity available in the warehouse.
+- **Storage utilization** - Use the growth patterns to understand how the volume of data synced to the warehouse compares to the storage capacity available in the warehouse.
 - **Composition of data** - Understand how much data each source contributes to your warehouse to better manage the volume of data stored.
 
 > note ""
@@ -28,12 +30,13 @@ This information can be used in a variety of ways, including:
 
 The Warehouse Health feature is available at both the warehouse level, as well as the warehouse-source connection level.
 
-- **Warehouse level** - This will show aggregate trends from all sources syncing to that warehouse
-- **Warehouse-Source level** - This will show trends for each source syncing to a warehouse, and aggregations of the collections within that source.
+- **Warehouse level** - This level displays aggregate trends from _all_ sources that sync to a warehouse.
+- **Warehouse-Source level** - This level displays trends for each separate source that syncs to a warehouses. It also displays aggregations of the collections within that source.
 
 To use the Warehouse level Health feature, go to the **Overview** page in the Segment App and select the warehouse you want to access from the list of Destinations.
 
 ### Warehouse
+
 Click the **Health** feature, which can be found between the Overview and Settings tabs at the top of the page.
 
 ![](images/access1.png)
