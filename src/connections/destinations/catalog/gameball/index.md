@@ -11,8 +11,6 @@ This destination is maintained by Gameball. For any issues with the destination,
 
 ## Getting Started
 
-> Do not remove this line. It will auto-populate the following information for your integration: https://cl.ly/23e637f055f7
-
 {% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Gameball".
