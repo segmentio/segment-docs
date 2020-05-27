@@ -21,4 +21,6 @@ MFA is available to all Segment customers that are not [logged in using SSO](htt
 Once MFA is enabled, Segment prompts you for one of these methods every time you log in.
 
 ## Recovering MFA
-Your recovery code can be used disable MFA in the event you do not have your MFA device. If you no longer have access to your recovery code, you can choose to send a recovery code to your email to re-ccess your Account.
+Your recovery code can be used bypass in the event you do not have your MFA device. If you no longer have access to your recovery code, you can choose to send a recovery code to your email to re-access your Account.
+
+If you've lost your recovery code, you can send it to your email by continuing through the recovery code flow and clicking _Send recovery code to my email_.
