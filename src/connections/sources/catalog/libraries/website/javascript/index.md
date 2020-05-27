@@ -625,7 +625,8 @@ analytics.on('track', function(event, properties, options) {
 
 Please note that this emits events before they are processed by the Segment integration, and may not include some of the normalization we do on the client before uploading the data to Segment's servers.
 
-**Note:** For a `page` event the properties of the event are stored in the options object.
+> note ""
+> **Note:** Page event properties are stored in the `options` object.
 
 ### Track Link
 
