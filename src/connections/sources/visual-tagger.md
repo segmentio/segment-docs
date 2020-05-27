@@ -192,7 +192,7 @@ If your events are not working as expected, try the following steps to troublesh
 
 - Confirm that the CSS selector has not changed in any way since you created the event in the Visual Tagger (for example, a button could change locations or be removed entirely). Because Visual Tagger relies on the CSS selector to tie events to user actions, if the CSS selector changes, the event stops sending. If this happens, edit the event in Visual Tagger and update the CSS selector. Segment does not currently have a way to alert you when events you created using Visual Tagger begin to fail.
 
-- Because Visual Tagger relies on stable CSS selectors to fire events from, it is currently not compatible with websites that have CSS selectors that are dynamically generated on every page load. Contact [beta@segment.com](mailto:beta@segment.com) and let us know if this is the case for you.
+- Because Visual Tagger relies on stable CSS selectors to fire events from, it is currently not compatible with websites that have CSS selectors that are dynamically generated on every page load.
 
 - If your website has any iframed components (for example, if you embed Typeforms into your site), Visual Tagger cannot create events for that iframed content. We recommend that you install Segment on the iframed-in site and use Visual Tagger directly on that site.
 
