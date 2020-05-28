@@ -252,6 +252,19 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
         [[SEGAppboyIntegrationFactory instance] saveRemoteNotification:userInfo];
       }
     ```
+6. If you are using the `UserNotification` framework, follow [Braze's documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/push_notifications/integration/#using-usernotification-framework-ios-10) to register push notifications using the `UserNotification` framework. Then in your application's `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` method, add the following:
+
+    ```obj-c
+    if ([Appboy sharedInstance] == nil) {
+        [[SEGAppboyIntegrationFactory instance].appboyHelper saveUserNotificationCenter:center
+                                                                   notificationResponse:response];
+    }
+    [[SEGAppboyIntegrationFactory instance].appboyHelper userNotificationCenter:center
+                                                   receivedNotificationResponse:response];
+    if (completionHandler) {
+        completionHandler();
+    }
+    ```
 
 #### Android
 

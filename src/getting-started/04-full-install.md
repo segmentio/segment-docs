@@ -67,7 +67,7 @@ Consider using Identify and traits when:
 
 ## How to Call Identify
 
-You can call Identify from any of Segment’s device-based or server-based libraries, including [Javascript](/docs/connections/sources/catalog/website/javascript/), [iOS](/docs/connections/sources/catalog/mobile/ios), [Android](/docs/connections/sources/catalog/mobile/android), [Ruby](/docs/connections/sources/catalog/server/ruby/), and [Python](/docs/connections/sources/catalog/server/python/).
+You can call Identify from any of Segment’s device-based or server-based libraries, including [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/mobile/ios), [Android](/docs/connections/sources/catalog/mobile/android), [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/), and [Python](/docs/connections/sources/catalog/libraries/server/python/).
 
 Here are two examples of calling identify from two different libraries:
 
@@ -123,7 +123,7 @@ The `Page` and `Screen` calls tell Segment what web page or mobile screen the us
 
 ### Page and Screen call properties
 
-You can always [override the auto-collected Page/Screen properties](/docs/connections/sources/catalog/website/javascript/#default-properties) with your own, and set additional custom page or screen properties.
+You can always [override the auto-collected Page/Screen properties](/docs/connections/sources/catalog/libraries/website/javascript/#default-properties) with your own, and set additional custom page or screen properties.
 
 Some downstream tools (like [Marketo](/docs/connections/destinations/catalog/marketo/)) require that you attach specific properties (like email address) to every `page` call.
 
@@ -164,7 +164,7 @@ If the presentation of user interface components don’t substantially change th
 > note ""
 > **Note**: When you trigger a Page call manually, make sure the call happens _after_ the UI element is successfully displayed, not when it is called. It shouldn’t be called as part of the click event that initiates it.
 
-For more info on Page calls, please review [Page spec](/docs/spec/page/) and [Analytics.js docs](/docs/connections/sources/catalog/website/javascript/#page).
+For more info on Page calls, please review [Page spec](/docs/spec/page/) and [Analytics.js docs](/docs/connections/sources/catalog/libraries/website/javascript/#page).
 
 ### When to call Screen
 

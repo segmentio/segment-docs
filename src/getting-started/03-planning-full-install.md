@@ -65,7 +65,7 @@ If your organization sells a product or services to other businesses, you might 
 
 #### Ecommerce Spec
 
-If your organization sells products online, the E-commerce Spec covers the customer's journey as they browse your store, click on promotions, view products, add those products to a cart, and complete a purchase. It also provides recommendations about off-page interactions, including interactions with email promotions, coupons, and other systems. You can read more about [why companies need an Ecommerce Spec](https://segment.com/blog/2014-08-28-ecommerce-analytics-story/), read more about [Ecommerce tracking plans](/docs/protocols/data-quality/ecommerce-tracking-plan/), and dive directly into our [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
+If your organization sells products online, the E-commerce Spec covers the customer's journey as they browse your store, click on promotions, view products, add those products to a cart, and complete a purchase. It also provides recommendations about off-page interactions, including interactions with email promotions, coupons, and other systems. You can read more about [why companies need an Ecommerce Spec](https://segment.com/blog/2014-08-28-ecommerce-analytics-story/), read more about [Ecommerce tracking plans](/docs/connections/spec/ecommerce-tracking-plan/), and dive directly into our [Ecommerce Spec](/docs/connections/spec/ecommerce/v2/).
 
 #### Mobile Spec
 

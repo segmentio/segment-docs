@@ -1,9 +1,10 @@
 ---
 title: The Protocols Tracking Plan
-redirect_from: '/protocols/tracking-plan/'
-redirect_from: '/protocols/whats-a-tracking-plan/'
-redirect_from: '/protocols/data-quality/whats-a-tracking-plan/'
-redirect_from: '/protocols/example-tracking-plan/'
+redirect_from:
+  - '/protocols/tracking-plan/'
+  - '/protocols/whats-a-tracking-plan/'
+  - '/protocols/data-quality/whats-a-tracking-plan/'
+  - '/protocols/example-tracking-plan/'
 ---
 
 A Tracking Plan is a data spec outlining the events and properties you intend to collect across your Segment Sources. Crafting a comprehensive Tracking Plan takes time and effort across a range of teams within your organization, and a deep understanding of your business objectives. [Learn more about data quality best practices here](/docs/protocols/tracking-plan/best-practices/). Once created though, the Tracking Plan becomes a highly valuable resource for both the engineers instrumenting Segment and all consumers of the data flowing through Segment.

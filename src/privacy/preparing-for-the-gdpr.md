@@ -1,5 +1,5 @@
 ---
-title: "Preparing for the GDPR and CCPA"
+title: "Complying with the GDPR and CCPA"
 ---
 
 On May 25, 2018 businesses faced the greatest regulatory change in data privacy policy since the 1995 EU Data Protection Directive was enacted: the [EU General Data Protection Regulation](https://ec.europa.eu/info/law/law-topic/data-protection_en) (GDPR). The European Union began enforcing the GDPR on May 25, 2018 in an effort to strengthen the security and protection of personal data of EU residents.

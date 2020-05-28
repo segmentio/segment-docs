@@ -83,7 +83,7 @@ Sometimes, when the sync job fails due to an unhandled error or is mysteriously 
 
 In general, we've focused on pulling all of the collections directly related to the customer experience. We do not automatically pull all collections available from a partner API, since many of them aren't relevant to the customer journey. You can see a list of the collections we pull in the docs [for each cloud source](/docs/connections/sources/catalog/#cloud-apps). Each collection reflects a table in your database.
 
-Please [let us know](segment.com/help/contact) if you need additional data collected or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
+Please [let us know](https://segment.com/help/contact) if you need additional data collected or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
 
 ### What questions can you answer with data from cloud, web, and mobile sources combined in a single warehouse?
 
