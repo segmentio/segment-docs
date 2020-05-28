@@ -11,10 +11,10 @@ You can use this feature to answer questions such as:
 - Which sources are contributing the most (or least) amount of data?
 - How much data is each source syncing to the warehouse? Which collections make up the majority of data within a source?
 
-![](images/intro1.png){:width="60%"}
+![](images/intro1.png)
 _A warehouse level dashboard_
 
-![](images/intro2.png){:width="60%"}
+![](images/intro2.png)
 _A warehouse-source level dashboard_
 
 
@@ -28,12 +28,12 @@ This information can be used in a variety of ways, including:
 > **Note**: Warehouse Health is available for all Warehouse customers.
 
 
-The Warehouse Health dashboards are available at both the warehouse level, and at the warehouse-source connection level, explained briefly below.
+The Warehouse Health dashboards are available at both the [warehouse level](#warehouse-dashboard), and at the [warehouse-source connection level](#warehouse-source-dashboard), explained below.
 
 Data in the dashboards updates in real-time, and covers the previous 30 days. The timezones displayed in the dashboards are converted to the viewer's local time.
 
 
-### Warehouse dashboard
+## Warehouse dashboard
 
 Go to the Segment App, to the Destinations list, and select the warehouse. On the warehouse's information page, click the **Health** tab.
 
@@ -41,7 +41,7 @@ This dashboard displays aggregate trends from _all_ sources that sync to the spe
 
 ![](images/access1.png)
 
-### Warehouse-Source dashboard
+## Warehouse-Source dashboard
 
 Go to the Segment App, to the Destinations list, and select the warehouse. On the warehouse's Overview page, select the Source (schema) you want to see data for, then click the **Health** tab.
 
