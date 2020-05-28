@@ -2,7 +2,7 @@
 title: Warehouse Health Dashboard
 ---
 
-The Warehouse Health dashboard allows you to understand trends in volume of data (specifically, rows) synced to your data warehouse over time.
+The Warehouse Health dashboard helps you understand trends in data volume (specifically, rows) synced to your data warehouse over time.
 
 You can use this feature to answer questions such as:
 
@@ -12,60 +12,68 @@ You can use this feature to answer questions such as:
 - How much data is each source syncing to the warehouse? Which collections make up the majority of data within a source?
 
 ![](images/intro1.png){:width="60%"}
+_A warehouse level dashboard_
 
 ![](images/intro2.png){:width="60%"}
+_A warehouse-source level dashboard_
 
 
 This information can be used in a variety of ways, including:
 
-- **Anomaly detection** - Identify spikes or dips in the volume of rows synced to understand anomalous behavior such as sudden changes in event volume, sync failures, etc.
-- **Storage utilization** - Use the growth patterns to understand how the volume of data synced to the warehouse compares to the storage capacity available in the warehouse.
-- **Composition of data** - Understand how much data each source contributes to your warehouse to better manage the volume of data stored.
+- **Detect anomalies** - Identify spikes or dips in the volume of rows synced to understand sudden changes in event volume, sync failures, etc.
+- **Monitor storage utilization** - Use the growth patterns to understand how the volume of data synced to the warehouse compares to the available storage capacity.
+- **Understand composition of data** - Understand how much data each source contributes to your warehouse to better manage the volume of data stored.
 
 > note ""
 > **Note**: Warehouse Health is available for all Warehouse customers.
 
 
-## Accessing the Warehouse Health feature
+The Warehouse Health dashboards are available at both the warehouse level, and at the warehouse-source connection level, explained briefly below.
 
-The Warehouse Health feature is available at both the warehouse level, as well as the warehouse-source connection level.
+Data in the dashboards updates in real-time, and covers the previous 30 days. The timezones displayed in the dashboards are converted to the viewer's local time.
 
-- **Warehouse level** - This level displays aggregate trends from _all_ sources that sync to a warehouse.
-- **Warehouse-Source level** - This level displays trends for each separate source that syncs to a warehouses. It also displays aggregations of the collections within that source.
 
-To use the Warehouse level Health feature, go to the **Overview** page in the Segment App and select the warehouse you want to access from the list of Destinations.
+### Warehouse dashboard
 
-### Warehouse
+Go to the Segment App, to the Destinations list, and select the warehouse. On the warehouse's information page, click the **Health** tab.
 
-Click the **Health** feature, which can be found between the Overview and Settings tabs at the top of the page.
+This dashboard displays aggregate trends from _all_ sources that sync to the specific warehouse.
 
 ![](images/access1.png)
 
-### Warehouse-Source
-Click the **Overview** tab for that warehouse, and select the Source (schema) you want to see data for. From here, click the **Health** tab, which can be found between the Overview and Settings tabs at the top of the page.
+### Warehouse-Source dashboard
+
+Go to the Segment App, to the Destinations list, and select the warehouse. On the warehouse's Overview page, select the Source (schema) you want to see data for, then click the **Health** tab.
+
+This dashboard displays trends for each separate source that syncs to a specific warehouse. It also displays aggregations of the collections within that source.
 
 ![](images/access2.png)
 
 
-## FAQs
+## Warehouse Health Dashboard FAQs
 
-##### Can I use this data for QA purposes?
-The purpose of these dashboards are to help understand high level trends in data synced to the warehouse, but not QA data. With this, you’ll see rounded numbers provided in multiple places instead of exact numbers.
+##### Can I use the Health Dashboard data for QA and validation?
+
+No. These dashboards exist to help you understand high-level trends, but not to provide exact numbers about the data synced to the warehouse. The numbers provided in these dashboards are rounded, and are not exact.
 
 These dashboards will help you understand trends in the data, and use signals to do deeper investigation and QA, as needed.
 
-##### How often is the data refreshed?**
+##### How is this similar (or different) than the information available in the Sync History and Overview tabs?
+
+The Warehouse Overview, Sync History and Health tabs provide different levels of granularity into warehouse syncs.
+
+- **Overview** - Shows which sources (also referred to as schemas) are connected to a warehouse, and information about the most recent sync and upcoming sync for each source. This information includes when the last sync happened, what the status of that sync is, how many events were synced, and when the next sync is scheduled.
+- **Sync History** - Shows detailed information about most recent syncs for a specific source connected to a warehouse (warehouse-source level). In this tab you can find information for each sync including sync status, start time, duration, synced rows, and notices about errors and/or warnings.
+- **Health** - The Health tab provides an aggregate view of syncs to a warehouse over time. You can either look at this at a warehouse level, or warehouse-source level. This shows information about the volume of rows synced over the last 30 days.
+
+##### How often is the data refreshed?
+
 Data is refreshed on a real time basis.
 
-##### What timeframe is the data available for?**
+##### What timeframe is the data available for?
+
 The data available shows the last 30 days.
 
-##### How is this similar (or different) than the information available in the Sync History and Overview tabs?**
-The Overview, Sync History and Health tabs will help provide you with different levels of granularity into warehouse syncs.
+##### What timezone are the dates in?
 
-- **Overview** - Shows which sources (also referred to as schemas) are connected to a warehouse, and information about the most recent sync and upcoming sync for each source. This information includes when did the last sync take place, what is the status of that sync, how many events were synced, and when is the next sync scheduled to happen.
-- **Sync History** - Shows detailed information about most recent syncs for a specific source syncing to a warehouse (warehouse-source level). In this tab you can find information for each sync including sync status, start time, duration, synced rows, and notices about errors and/or warnings.
-- **Health** - The Health tab will provides an aggregate view of syncs to a warehouse over time. You can either look at this at a warehouse level, or warehouse-source level. This shows information about the volume of rows synced over the last 30 days.
-
-##### What timezone are the dates in?**
 All dates and times found within Warehouse Health, Sync History and Warehouse overview pages are in the user’s local time.
