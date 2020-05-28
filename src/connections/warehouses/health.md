@@ -33,7 +33,7 @@ The Warehouse Health dashboards are available at both the [warehouse level](#war
 Data in the dashboards updates in real-time, and covers the previous 30 days. The timezones displayed in the dashboards are converted to the viewer's local time.
 
 
-## Warehouse dashboard
+## Warehouse dashboards
 
 Go to the Segment App, to the Destinations list, and select the warehouse. On the warehouse's information page, click the **Health** tab.
 
@@ -41,7 +41,7 @@ This dashboard displays aggregate trends from _all_ sources that sync to the spe
 
 ![](images/access1.png)
 
-## Warehouse-Source dashboard
+## Warehouse-Source dashboards
 
 Go to the Segment App, to the Destinations list, and select the warehouse. On the warehouse's Overview page, select the Source (schema) you want to see data for, then click the **Health** tab.
 
