@@ -25,16 +25,16 @@ Go to the Segment App, to the Destinations list, and select the warehouse. On th
 
 This dashboard displays aggregate trends from _all_ sources that sync to the specific warehouse.
 
+![](images/wh-health-warehouse.png)
+_A warehouse level dashboard_
+
 ## Warehouse-Source dashboards
 
 Go to the Segment App, to the Destinations list, and select the warehouse. On the warehouse's Overview page, select the Source (schema) you want to see data for, then click the **Health** tab.
 
 This dashboard displays trends for each separate source that syncs to a specific warehouse. It also displays aggregations of the collections within that source.
 
-![](images/intro1.png)
-_A warehouse level dashboard_
-
-![](images/intro2.png)
+![](images/wh-health-warehouse-source.png)
 _A warehouse-source level dashboard_
 
 ## Warehouse Health Dashboard FAQs
