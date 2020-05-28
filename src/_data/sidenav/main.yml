@@ -164,9 +164,11 @@ sections:
     - path: /connections/functions
       title: Functions Overview
     - path: /connections/functions/source-functions
-      title: Source Functions 
+      title: Source Functions
     - path: /connections/functions/destination-functions
       title: Destination Functions
+    - path: /connections/functions/editor
+      title: Functions environment
   - section_title: Warehouses
     slug: connections/warehouses
     section:
