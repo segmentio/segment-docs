@@ -97,11 +97,9 @@ Access to only log into a workspace. Users with minimal access cannot view any r
 <!--
 ## Privacy Mode
 
-The Segment App does not show Personally Identifiable Information (PII) to workspace members if the information matches specific expected formats for PII.  (By default this includes any [red or yellow matcher](/docs/privacy/portal/#default-pii-matchers), or any [custom matchers](/docs/privacy/portal/#custom-pii-matchers).)
+The Segment App does not show detected Personally Identifiable Information (PII) to workspace members if the information matches specific expected formats for PII. When PII Access is turned “off”, detected PII is masked based on [red or yellow default matchers](/docs/privacy/portal/#default-pii-matchers) and any [custom matchers](/docs/privacy/portal/#custom-pii-matchers) defined in the Privacy Portal.
 
 Workspace Owners can grant specific individuals or groups access to PII from their Access Management settings. PII Access only applies to the resources a user or user group has access to; it does not expand a user's access beyond the original scope. All Workspace Owners have PII access by default.
-
-PII Access masks detected PII based on red/yellow default matchers and any custom matchers defined in the [Privacy Portal](/docs/privacy/portal/).
 -->
 
 ## Roles for managing Personas destinations
