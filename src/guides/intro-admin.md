@@ -57,7 +57,7 @@ Segment contains several ways to see what's going on in your Workspace:
 - Last but not least, check out our list of [integration error codes](/docs/connections/integration_error_codes/) for clues about what might be causing an error.
 
 > info ""
-> Still stumped? [Contact us](segment.com/help/contact/) for more help troubleshooting!
+> Still stumped? [Contact us](https://segment.com/help/contact/) for more help troubleshooting!
 
 
 <!-- TODO

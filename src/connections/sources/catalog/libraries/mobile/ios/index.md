@@ -678,6 +678,9 @@ When you submit to the app store, be aware that Segment collects the IDFA for us
 
 Note, you should *not* check the box labeled "Serve advertisements within the app" unless you are actually going to display ads.
 
+> info ""
+> The information above has changed with the 4.0-beta series. In line with Segment’s privacy stance, the IDFA is no longer collected automatically. Instead, customers who need it for integrations and ad analytics are must [pass it as configuration](#idfa-collection-in-40-beta-and-later) to the library.
+
 ### Limited Ad Tracking
 
 iOS users can opt into limited ad tracking (similar to ad-blocking for browsers). For those users that have opted in, `adTrackingEnabled` will come through as `false`; however there will still be an `advertisingId` present. Since the iOS 10 release, those who opt in for limited ad tracking will have `adTrackingEnabled` set to `false` AND there will either be no `advertisingId` or the `advertisingId` will be a series of zeroes.
@@ -916,6 +919,29 @@ _Note_: While the network is deprecated, the relevant [framework](https://develo
 ### tvOS Support
 
 As of [Version 3.3.0](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md#version-330-08-05-2016) we now have support for tvOS through our `Analytics-iOS` sdk. You can follow the [iOS quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) and you should be good to go! tvOS installation is only supported using Carthage and CocoaPods. The dynamic framework installation method is not supported for tvOS.
+
+### IDFA collection in 4.0-beta and later
+
+Recent 4.0 betas move IDFA collection outside of the library.  You can achieve the old behavior by now doing this:
+
+```objc
+  @import AdSupport;
+
+  ...
+
+  SEGAnalyticsConfiguration* configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
+
+  // Enable advertising collection
+  configuration.enableAdvertisingTracking = YES;
+  // Set the block to be called when the advertisingID is needed
+  configuration.adSupportBlock = ^{
+      return [[ASIdentifierManager sharedManager] advertisingIdentifier];
+  }
+
+  [SEGAnalytics setupWithConfiguration:configuration];
+
+```
+
 
 ## Troubleshooting
 
