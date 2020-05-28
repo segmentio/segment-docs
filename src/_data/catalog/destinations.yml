@@ -8270,6 +8270,62 @@ items:
   previous_names:
   - Aptrinsic
   - Gainsight PX
+- display_name: Gameball
+  slug: gameball
+  name: catalog/destinations/gameball
+  description: >-
+    Gameball is a gamified loyalty platform, offering growth, retention, and
+    referrals management programs. We help businesses increase engagement with
+    customers which translates to higher revenues.
+  hidden: false
+  url: connections/destinations/catalog/gameball
+  status: PUBLIC_BETA
+  logo:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/7189f98d-a11f-43d7-aabf-d64990288962.svg
+  mark:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/348a3e16-21fa-410b-871b-34d009cc1ff9.svg
+  categories:
+  - Analytics
+  - Personalization
+  - Referrals
+  - SMS & Push Notifications
+  components:
+  - type: CLOUD
+  platforms:
+    browser: true
+    server: true
+    mobile: true
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  methods:
+    alias: false
+    group: false
+    identify: true
+    page_view: false
+    track: true
+  settings:
+  - name: apiKey
+    display_name: API Key
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: '^.{8,}$'
+    description: OqXWwPPY7wyNXJtWKgIo4U5LyEufJAkF
+    settings: []
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: true
+      server: true
+  previous_names:
+  - Gameball
 - display_name: Gauges
   slug: gauges
   name: catalog/destinations/gauges
