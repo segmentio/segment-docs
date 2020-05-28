@@ -6,23 +6,9 @@ The Warehouse Health dashboard helps you understand trends in data volume (speci
 
 You can use this feature to answer questions such as:
 
-- How has the volume of data synced to the warehouse grown over time?
-- How much data is being synced on a daily basis?
-- Which sources are contributing the most (or least) amount of data?
-- How much data is each source syncing to the warehouse? Which collections make up the majority of data within a source?
-
-![](images/intro1.png)
-_A warehouse level dashboard_
-
-![](images/intro2.png)
-_A warehouse-source level dashboard_
-
-
-This information can be used in a variety of ways, including:
-
-- **Detect anomalies** - Identify spikes or dips in the volume of rows synced to understand sudden changes in event volume, sync failures, etc.
-- **Monitor storage utilization** - Use the growth patterns to understand how the volume of data synced to the warehouse compares to the available storage capacity.
-- **Understand composition of data** - Understand how much data each source contributes to your warehouse to better manage the volume of data stored.
+- *Growth patterns* - How has the volume of data synced to the warehouse grown over time? How does this growth align to the storage capacity available in my warehouse?
+- *Anomaly detection* - How much data is being synced on a daily basis? Have there been anomalous spikes or dips that may indicate sudden changes in event volume, sync failures, or something else?
+- *Data composition* - Which sources are contributing the most (or least) amount of data in my warehouse? Which collections make up the majority of data within a source?
 
 > note ""
 > **Note**: Warehouse Health is available for all Warehouse customers.
@@ -39,16 +25,17 @@ Go to the Segment App, to the Destinations list, and select the warehouse. On th
 
 This dashboard displays aggregate trends from _all_ sources that sync to the specific warehouse.
 
-![](images/access1.png)
-
 ## Warehouse-Source dashboards
 
 Go to the Segment App, to the Destinations list, and select the warehouse. On the warehouse's Overview page, select the Source (schema) you want to see data for, then click the **Health** tab.
 
 This dashboard displays trends for each separate source that syncs to a specific warehouse. It also displays aggregations of the collections within that source.
 
-![](images/access2.png)
+![](images/intro1.png)
+_A warehouse level dashboard_
 
+![](images/intro2.png)
+_A warehouse-source level dashboard_
 
 ## Warehouse Health Dashboard FAQs
 
