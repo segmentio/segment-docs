@@ -213,7 +213,7 @@ async function onTrack(event, settings) {
 
 ## Caching in destination functions
 
-Functions are executed only in response to incoming data, but the environments that functions themselves run in are generally long-running. You can take advantage of this to cache small bits of information between invocations in global variables. For example, you can reduce the rate that you generate access tokens by caching the token and re-fetching it only after the token expires. We cannot make any guarantees about the longevity of environments, but by using this strategy, you can significantly improve the performance and reliability of your Functions by reducing the need for redundant API requests.
+Functions execute only in response to incoming data, but the environments that functions run in are generally long-running. Because of this, you can use global variables to cache small amounts of information between invocations. For example, you can reduce the number of access tokens you generate by caching a token, and regenerating it only after it expires. Segment cannot make any guarantees about the longevity of environments, but by using this strategy, you can significantly improve the performance and reliability of your Functions by reducing the need for redundant API requests.
 
 This example code fetches an access token from an external API and refreshes it every hour:
 
