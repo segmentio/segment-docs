@@ -242,6 +242,36 @@ async function onTrack(event, settings) {
 > **Warning:** Do not log sensitive data, such as personally-identifying information (PII), authentication tokens, or other secrets. You should especially avoid logging entire request/response payloads. The **Function Logs** tab may be visible to other workspace members if they have the necessary permissions.
 
 
+## Caching
+
+Functions are executed only in response to incoming data, but the environments that functions themselves run in are generally long-running. You can take advantage of this to cache small bits of information between invocations in global variables. For example, you can reduce the rate that you generate access tokens by caching the token and re-fetching it only after the token expires. We cannot make any guarantees about the longevity of environments, but by using this strategy, you can significantly improve the performance and reliability of your Functions by reducing the need for redundant API requests.
+
+This example code fetches an access token from an external API and refreshes it every hour:
+
+```js
+const TOKEN_EXPIRE_SECS = 60 * 60 // 1 hour
+
+let token = null
+
+async function getAccessToken () {
+  const now = new Date().getTime()
+
+  if (!token || now - token.ts > TOKEN_EXPIRE_SECS) {
+    const resp = await fetch('https://example.com/tokens', {
+      method: 'POST'
+    }).then(resp => resp.json())
+
+    token = {
+      ts: now,
+      value: resp.token
+    }
+  }
+
+  return token.value
+}
+```
+
+
 ## Management
 
 ### Permissions
