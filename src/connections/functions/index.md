@@ -2,13 +2,13 @@
 title: Functions Overview
 ---
 
-Functions let you create your own sources and destinations directly within your workspace to bring new types of data into Segment and send data to new tools with just a few lines of JavaScript - no additional infrastructure required. 
+Functions let you create your own sources and destinations directly within your workspace to bring new types of data into Segment and send data to new tools with just a few lines of JavaScript - no additional infrastructure required.
 
 **[VISUAL SHOWING DATA FLOW FOR FUNCTIONS GENERALLY]**
 ![](images/functions-overview.png)
 
 > info ""
-> Functions are scoped to your specific workspace. If you're a technology partner looking to build a new integration to be published on Segment's catalog, please read our [Developer Center documentation](https://segment.com/docs/partners/).
+> Functions are scoped to your specific workspace. If you’re a technology partner and want to build a new integration and publish it in Segment’s catalog, see the [Developer Center documentation](/docs/partners/).
 
 
 ## What can you do with Functions?

@@ -11,8 +11,8 @@ Source functions allow you to gather data from any third-party applications with
 
 All functions are scoped to your workspace, so members of other workspaces cannot view or use them.
 
-> success ""
-> **Want to share your work?** This document is about Source Functions, which are scoped to an individual workspace and which cannot be shared. To publish your work for use by others, see the [Partners Program documentation](/docs/partners/).
+> info ""
+> Functions are scoped to your specific workspace. If you’re a technology partner and want to build a new integration and publish it in Segment’s catalog, see the [Developer Center documentation](/docs/partners/).
 
 **[VISUAL SHOWING DATA FLOW FROM UPSTREAM SOURCE TO FN TO SEGMENT]**
 
@@ -389,4 +389,4 @@ Copy and paste this URL into the upstream tool or service to send data to this s
 
 ##### Is there a function execution time limit?
 
-Yes, functions should execute within 3 seconds.
+Yes, functions should execute within 5 seconds.

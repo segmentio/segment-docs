@@ -10,19 +10,19 @@ Destination functions allow you to transform and annotate your Segment events an
 
 All functions are scoped to your workspace, so members of other workspaces won't be able to view and use them.
 
-> success ""
-> **Want to share your work?** This document is about Destination Functions, which are scoped to an individual workspace and which cannot be shared. To publish a destination for use by others, see the [Partners Program documentation](/docs/partners/).
+> info ""
+> Functions are scoped to your specific workspace. If you’re a technology partner and want to build a new integration and publish it in Segment’s catalog, see the [Developer Center documentation](/docs/partners/).
 
 **[VISUAL SHOWING DATA FLOW FROM SEGMENT SOURCE TO FN TO DESTINATION]**
 
 > note ""
-> Destination functions can't currently modify data coming from [Cloud-App sources](/docs/connections/sources/catalog/##cloud-apps).
+> Destination functions can't currently modify **objects** coming from [Cloud-App sources](/docs/connections/sources/#object-cloud-sources).
 
 ## Create a Destination Function
 
 1. From your workspace, go to the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog).
 2. Click **New Function**.
-4. Select **Destination Function** and click **Build**.
+3. Select **Destination Function** and click **Build**.
 
 > success ""
 > **Tip:** Want to see some example functions? Check out the templates available in the Functions UI, or in the open-source [Segment Functions Library](https://github.com/segmentio/functions-library). (Contributions welcome!)
@@ -31,7 +31,7 @@ When you click **Build**, a code editor appears. Use the editor to write the cod
 
 ![Functions Editor](images/editor-dest.png)
 
-## Code the source function
+## Code the destination function
 
 Segment invokes a separate part of the function (called a "handler") for each event type that you send to your destination function.
 
