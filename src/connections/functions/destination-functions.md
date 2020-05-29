@@ -163,11 +163,15 @@ If your function fails, you can check the error details and logs in the **Output
 - **Error Message** - This shows the error surfaced from your function.
 - **Logs** - This section displays any messages to `console.log()` from the function.
 
-## Save and deploy the destination function
+## Save and deploy the function
 
-Once you finish writing your function, click **Configure** to give it a name. Then, click **Create Function** to finish and make this function available in your workspace.
+Once you finish building your destination function, click **Configure** to name it, then click **Create Function** to save it.
 
-If you're editing an existing function, you can **Save** changes without changing the behavior of your deployed function. You can also choose to **Save & Deploy** to push changes to all, or specific functions in your workspace that are already deployed.
+Once you do that, the destination function appears on the **Functions** page in your workspace's catalog.
+
+If you're editing an existing function, you can **Save** changes without updating instances of the function that are already deployed and running.
+
+You can also choose to **Save & Deploy** to save the changes, and then choose which already-deployed functions to update with your changes. [You might need additional permissions](#functions-permissions) to update existing functions.
 
 ## Destination functions logs and errors
 

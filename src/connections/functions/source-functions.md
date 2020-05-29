@@ -309,12 +309,13 @@ You can also manually construct headers and body of an HTTP request right inside
 
 ## Save and deploy the function
 
-Once you finish building your source function, click **Configure** to name it and **Create Function** to save it.
-After that, source function will become available on the **Functions** page in Segment's catalog.
+Once you finish building your source function, click **Configure** to name it, then click **Create Function** to save it.
 
-If you're editing an existing function, you can **Save** changes without updating instances of this function that already exist.
+Once you do that, the source function appears on the **Functions** page in your workspace's catalog.
 
-You can also choose to **Save & Deploy** to save changes, and then specify which already-deployed functions you'd like to update.
+If you're editing an existing function, you can **Save** changes without updating instances of the function that are already deployed and running.
+
+You can also choose to **Save & Deploy** to save the changes, and then choose which already-deployed functions to update with your changes. [You might need additional permissions](#functions-permissions) to update existing functions.
 
 ## Source functions logs and errors
 

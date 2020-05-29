@@ -5,7 +5,7 @@ title: The Functions editing environment
 
 Segment Functions create reusable code that can be run in your Segment workspace either as Sources to format incoming events, or as Destinations, to handle specific event types.
 
-When you create a Function, write code for it, and save it, the function appears in the Catalog in your workspace. You can then deploy the function just as you would a conventional source or destination.
+When you create a Function, write code for it, and save it, the function appears in the Catalog in your workspace _only_. You can then deploy the function in your workspace just as you would a conventional source or destination.
 
 > note ""
 > Access to Functions is controlled by specific [access management roles](#functions-permissions). You may need additional access to create, and deploy functions.
@@ -18,6 +18,7 @@ Only [Functions admins](#functions-permissions) can create or edit functions.
 1. From your workspace, go to the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog).
 2. Click **New Function**.
 3. Select the type of function you want to build, and click **Build**.
+
    When you click **Build**, a code editor appears. Different template code is available depending on which type of function you created.
 4. Use the editor to write the code for your function, configure settings, and test the function's behavior.
 5. Once you finish writing your function, click **Configure** to give it a name.
