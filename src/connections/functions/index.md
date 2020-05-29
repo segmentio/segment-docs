@@ -4,7 +4,6 @@ title: Functions Overview
 
 Functions let you create your own sources and destinations directly within your workspace to bring new types of data into Segment and send data to new tools with just a few lines of JavaScript - no additional infrastructure required.
 
-**[VISUAL SHOWING DATA FLOW FOR FUNCTIONS GENERALLY]**
 ![](images/functions-overview.png)
 
 > info ""

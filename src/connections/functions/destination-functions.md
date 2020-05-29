@@ -13,7 +13,8 @@ All functions are scoped to your workspace, so members of other workspaces won't
 > info ""
 > Functions are scoped to your specific workspace. If you’re a technology partner and want to build a new integration and publish it in Segment’s catalog, see the [Developer Center documentation](/docs/partners/).
 
-**[VISUAL SHOWING DATA FLOW FROM SEGMENT SOURCE TO FN TO DESTINATION]**
+![](images/destination_functions_overview.png)
+
 
 > note ""
 > Destination functions can't currently accept data from [Object Cloud sources](/docs/connections/sources/#object-cloud-sources).
@@ -53,7 +54,7 @@ Destination functions can define handlers for each message type in the [Segment 
 Each of the functions above accepts two arguments:
 
 - **event** - Segment event object, where fields and values depend on the type of event. For example, for "Identify" events, the object is formatted to match the [Identify spec](/docs/connections/spec/identify/).
-- **settings** - Set of [settings](#settings-and-secrets) for this function.
+- **settings** - Set of [settings](#create-settings-and-secrets) for this function.
 
 We'll learn more about settings later, let's see how we can process Segment events with destination function first.
 
@@ -111,7 +112,7 @@ async function onAlias(event) {
 ```
 If you do not supply a function for an event type, Segment throws an `EventNotSupported` error by default.
 
-You can read more about [error handling](#errors) below.
+You can read more about [error handling](#destination-functions-logs-and-errors) below.
 
 ### Runtime and Dependencies
 

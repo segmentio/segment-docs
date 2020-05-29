@@ -14,7 +14,7 @@ All functions are scoped to your workspace, so members of other workspaces canno
 > info ""
 > Functions are scoped to your specific workspace. If you’re a technology partner and want to build a new integration and publish it in Segment’s catalog, see the [Developer Center documentation](/docs/partners/).
 
-**[VISUAL SHOWING DATA FLOW FROM UPSTREAM SOURCE TO FN TO SEGMENT]**
+![](images/source_functions_overview.png)
 
 
 ## Create a source function
@@ -45,7 +45,7 @@ async function onRequest(request, settings) {
 The `onRequest()` function receives two arguments:
 
 - `request` - an object describing the incoming HTTP request.
-- `settings` - set of [settings](#settings-and-secrets) for this function.
+- `settings` - set of [settings](#create-settings-and-secrets) for this function.
 
 We'll learn more about settings later, let's dive into how we can process the incoming request first.
 
@@ -262,7 +262,7 @@ The `Segment.set()` method accepts an object with the following fields:
 
 {% include content/functions/runtime.md %}
 
-## Create settings
+## Create ️settings and secrets
 
 {% include content/functions/settings.md %}
 
