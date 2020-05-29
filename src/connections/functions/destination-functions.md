@@ -16,7 +16,7 @@ All functions are scoped to your workspace, so members of other workspaces won't
 **[VISUAL SHOWING DATA FLOW FROM SEGMENT SOURCE TO FN TO DESTINATION]**
 
 > note ""
-> Destination functions can't currently modify **objects** coming from [Cloud-App sources](/docs/connections/sources/#object-cloud-sources).
+> Destination functions can't currently accept data from [Object Cloud sources](/docs/connections/sources/#object-cloud-sources).
 
 ## Create a destination function
 
