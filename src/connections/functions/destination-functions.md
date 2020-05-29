@@ -18,7 +18,7 @@ All functions are scoped to your workspace, so members of other workspaces won't
 > note ""
 > Destination functions can't currently modify **objects** coming from [Cloud-App sources](/docs/connections/sources/#object-cloud-sources).
 
-## Create a Destination Function
+## Create a destination function
 
 1. From your workspace, go to the Catalog and click the [Functions tab](https://app.segment.com/goto-my-workspace/functions/catalog).
 2. Click **New Function**.
@@ -118,10 +118,9 @@ You can read more about [error handling](#errors) below.
 {% include content/functions/runtime.md %}
 
 
-## Create ️settings
+## Create ️settings and secrets
 
 {% include content/functions/settings.md %}
-
 
 Next, fill out this setting's value in the **Test** tab, so you can run the function and verify that the correct setting value is passed. (This value is only for testing your function.)
 
@@ -163,12 +162,11 @@ If your function fails, you can check the error details and logs in the **Output
 - **Error Message** - This shows the error surfaced from your function.
 - **Logs** - This section displays any messages to `console.log()` from the function.
 
-## Save and deploy the destination functions
+## Save and deploy the destination function
 
 Once you finish writing your function, click **Configure** to give it a name. Then, click **Create Function** to finish and make this function available in your workspace.
 
 If you're editing an existing function, you can **Save** changes without changing the behavior of your deployed function. You can also choose to **Save & Deploy** to push changes to all, or specific functions in your workspace that are already deployed.
-
 
 ## Destination functions logs and errors
 

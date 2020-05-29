@@ -364,7 +364,7 @@ These errors are not retried.
 {% include content/functions/perms.md%}
 
 
-### Editing and Deleting source functions
+### Editing and deleting source functions
 
 If you are a **Workspace Owner** or **Functions Admin**, you can manage your source function from the [Functions](https://app.segment.com/goto-my-workspace/functions/catalog) tab in the catalog.
 
