@@ -4,7 +4,7 @@ title: Functions usage limits
 
 Functions are billed to your account using the total execution time per month.
 
-A _function_'s execution time is the total time it takes for the function to process events, including mapping, transformations, and requests to external APIs. Generally, requests to external APIs can greatly add to your total execution time.
+An **individual function's execution time** is the total time it takes for the function to process events, including mapping, transformations, and requests to external APIs. Generally, requests to external APIs can greatly add to your total execution time.
 
 Your **total execution time** is the execution time for all of your active functions accumulated over the course of a month. You can see your current execution time on the [Functions tab of the Usage page](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions&period=current) in each workspace.
 
@@ -20,6 +20,21 @@ Functions are billed in 100ms increments, rounded up. For example, a Function th
 
 Functions are currently use a max timeout of 5 seconds. If a function takes longer than 5 seconds, the run is cancelled and retried periodically for up to 4 hours.
 
+
+
+## Estimating execution time
+
+Execution time can vary widely between use cases, so it is extremely difficult to predict. The best way is to look at the function’s actual execution time and multiply it by the event volume.
+
+Another way to provide a rough estimate is to use an expected Source Function time of 100ms per invocation, and expected Destination Function time at 200ms per invocation:
+
+- A Source Function receiving 1M requests and taking an average of 100 milliseconds will use 27.8 hours of execution time: `1,000,000 events * 100ms = 100,000,000ms = 28 hours`
+- A Destination Function receiving 1B requests and taking an average of 200 milliseconds will use 42,222 hours: `1,000,000,000 * 200ms = 200,000,000,000ms = 27,778 hours`
+
+> note ""
+> **Note:** Test runs are generally slower than the time it takes a function to run once it’s deployed. For more accurate estimates, base your estimates on sending data into a production function, and not on timing the test runs.
+
+You can (and should!) use [Destination Filters](/docs/connections/destinations/destination-filters/) to reduce the volume of events reaching your function. Filtering events with a Destination Filter prevents the Function from being invoked for that event entirely.
 
 ## Improving speed of external requests
 
@@ -52,18 +67,3 @@ responses.forEach((resp) => console.log(resp.json()))
 ```
 
 If you’re only issuing a single request in your Function and it is slow, you might want to contact the owner of the external API for support.
-
-
-## Estimating execution time
-
-Execution time can vary widely between use cases, so it is extremely difficult to predict. The best way is to look at the function’s actual execution time and multiply it by the event volume.
-
-Another way to provide a rough estimate is to use an expected Source Function time of 100ms per invocation, and expected Destination Function time at 200ms per invocation:
-
-- A Source Function receiving 1M requests and taking an average of 100 milliseconds will use 27.8 hours of execution time: `1,000,000 events * 100ms = 100,000,000ms = 28 hours`
-- A Destination Function receiving 1B requests and taking an average of 200 milliseconds will use 42,222 hours: `1,000,000,000 * 200ms = 200,000,000,000ms = 27,778 hours`
-
-> note ""
-> **Note:** Test runs are generally slower than the time it takes a function to run once it’s deployed. For more accurate estimates, base your estimates on sending data into a production function, and not on timing the test runs.
-
-You can (and should!) use [Destination Filters](/docs/connections/destinations/destination-filters/) to reduce the volume of events reaching your function. Filtering events with a Destination Filter prevents the Function from being invoked for that event entirely.
