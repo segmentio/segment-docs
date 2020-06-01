@@ -796,9 +796,6 @@ In order to ensure high fidelity, first-party customer data, we persist the Segm
 
 If a user comes back to your site after a cookie has expired, Analytics.js checks localStorage to see if an ID exists, and resets it as the user's ID in the cookie. If a user clears their cookies and localstorage, all of the IDs are removed.
 
-### Using only the cookie as the Segment ID store
-If you want to use the cookie exclusively to store the Segment ID, then you can go to your javascript source settings > Analytics.js and disable the "Use Local Storage for Segment ID" option. This has an impact on the fidelity of your anonymous users, and might result in an increase in MTUs on certain platforms.
-
 ## Troubleshooting
 
 The console reveals all! [Learn how to access the Javascript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger-).
