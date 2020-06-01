@@ -258,7 +258,7 @@ The `Segment.set()` method accepts an object with the following fields:
 - `id` - Object's unique identifier.
 - `properties` - Object with free-form data.
 
-### Runtime and Dependencies
+### Runtime and dependencies
 
 {% include content/functions/runtime.md %}
 
