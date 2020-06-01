@@ -138,7 +138,7 @@ The `Segment.identify()` method accepts an object with the following fields:
 
 ##### Track
 
-[Track calls record actions](/docs/connections/spec/track/) that users perform, along with any properties that describe the action.
+[Track calls](/docs/connections/spec/track/) record actions that users perform, along with any properties that describe the action.
 
 
 ```js
