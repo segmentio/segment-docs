@@ -315,7 +315,7 @@ Once you do that, the source function appears on the **Functions** page in your 
 
 If you're editing an existing function, you can **Save** changes without updating instances of the function that are already deployed and running.
 
-You can also choose to **Save & Deploy** to save the changes, and then choose which already-deployed functions to update with your changes. [You might need additional permissions](#functions-permissions) to update existing functions.
+You can also choose to **Save & Deploy** to save the changes, and then choose which already-deployed functions to update with your changes. You might need [additional permissions](#functions-permissions) to update existing functions.
 
 ## Source functions logs and errors
 
