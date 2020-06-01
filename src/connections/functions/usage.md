@@ -28,7 +28,7 @@ Execution time can vary widely between use cases, so it is extremely difficult t
 
 Another way to provide a rough estimate is to use an expected Source Function time of 100ms per invocation, and expected Destination Function time at 200ms per invocation:
 
-- A Source Function receiving 1M requests and taking an average of 100 milliseconds will use 27.8 hours of execution time: `1,000,000 events * 100ms = 100,000,000ms = 28 hours`
+- A source function receiving 1M requests and taking an average of 100 milliseconds will use 27.8 hours of execution time: `1,000,000 events * 100ms = 100,000,000ms = 28 hours`
 - A Destination Function receiving 1B requests and taking an average of 200 milliseconds will use 55,556 hours: `1,000,000,000 * 200ms = 200,000,000,000ms = 55,556 hours`
 
 > note ""
