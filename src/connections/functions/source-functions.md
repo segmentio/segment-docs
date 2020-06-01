@@ -77,7 +77,7 @@ async function onRequest(request) {
 }
 ```
 
-#### Sending Messages
+#### Sending messages
 
 You can send messages to the Segment API using the `Segment` object:
 
