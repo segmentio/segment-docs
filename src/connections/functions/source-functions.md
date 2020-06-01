@@ -289,7 +289,7 @@ When you deploy a source function in your workspace, you are prompted to fill ou
 
 You can test your code directly from the editor in two ways: either by receiving real HTTP requests through a webhook, or by manually constructing an HTTP request from within the editor.
 
-The advantage of testing your source function with webhooks is that all incoming data is real, so you can test behavior closely mimicking the production conditions.
+The advantage of testing your source function with webhooks is that all incoming data is real, so you can test behavior while closely mimicking the production conditions.
 
 ### Testing source functions with a webhook
 
