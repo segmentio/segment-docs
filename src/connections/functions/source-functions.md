@@ -295,9 +295,7 @@ The advantage of testing your source function with webhooks is that all incoming
 
 You can use webhooks to test the source function either by sending requests manually (using any HTTP client such as cURL or Insomnia), or by pasting the webhook into an external server that supports webhooks (such as Slack).
 
-From the source function editor, copy the webhook URL from the "Auto-fill via Webhook" dialog. All `POST` requests sent to the webhook URL trigger the source function.
-
-To trigger the source function, send the request using the `POST` method, with the `Content-Type` header set to `application/json` or `application/x-www-form-urlencoded`.
+From the source function editor, copy the webhook URL from the "Auto-fill via Webhook" dialog. To trigger the source function, send the request using the `POST` method, with the `Content-Type` header set to `application/json` or `application/x-www-form-urlencoded`.
 
 ![Capture events to test your function](images/webhook-capture.gif)
 
