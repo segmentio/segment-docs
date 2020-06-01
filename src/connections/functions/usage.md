@@ -66,4 +66,4 @@ const responses = await Promise.all(requests)
 responses.forEach((resp) => console.log(resp.json()))
 ```
 
-If you’re only issuing a single request in your Function and it is slow, you might want to contact the owner of the external API for support.
+If you’re only issuing a single request in your function and it is slow, you might want to contact the owner of the external API for support.
