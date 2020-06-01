@@ -20,10 +20,7 @@ export default function () {
       })
 
       const clipboard = new ClipboardJS(headings[i], {
-        text: () => {
-          history.replaceState({}, '', '#' + headings[i].getAttribute('id'))
-          return window.location.href
-        }
+        text: () => `${window.location.origin}${window.location.pathname}#${headings[i].getAttribute('id')}`
       })
 
       clipboard.on('success', function(e) {
