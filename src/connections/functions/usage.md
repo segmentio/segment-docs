@@ -14,7 +14,7 @@ The amount of time you are allotted changes depending on your [Segment pricing p
 
 We measure execution time from when the Function first receives an event to the time the Function either returns successfully or throws an error. If Segment retries your Function (for example, if there was a timeout), those retries also count as billable execution time.
 
-Functions are billed in 100ms increments, rounded up. For example, a Function that takes 80ms to complete will be billed as 100ms. A function that takes 105ms to complete will be billed as 200ms.
+Functions are billed in 100ms increments, rounded up. For example, a function that takes 80ms to complete will be billed as 100ms. A function that takes 105ms to complete will be billed as 200ms.
 
 ## Execution timeouts
 
