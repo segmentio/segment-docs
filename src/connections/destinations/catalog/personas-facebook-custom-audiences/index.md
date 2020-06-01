@@ -129,7 +129,7 @@ Once created, the audience should be available in Facebook in ten minutes unless
 
 
 ## Early Access (Alpha) Feature: Additional identifier matching
-Previously, Segment only sent email and mobile ids to Facebook. Segment is now able to send an expanded list of identifiers to Facebook, so that Facebook can try to use these additional identifiers to match to their user profiles. If you have implemented any of these identifiers in your Segment tracking, Personas is able to send the identifiers to Facebook. Segment can now also sync multiple emails if the profile contains more than one. This feature is in Early Access. If you would like access, contact your CSM or email us at beta@segment.com.
+Previously, Segment only sent email and mobile ids to Facebook. Segment is now able to send an expanded list of identifiers to Facebook, so that Facebook can try to use these additional identifiers to match to their user profiles. If you have implemented any of these identifiers in your Segment tracking, Personas is able to send the identifiers to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally, Segment will hash fields to Facebook if required before sending them downstream. This feature is in Early Access. If you would like access, contact your CSM or email us at beta@segment.com.
 
 | **Name**        | **Trait Key formats supported**   | **Facebook Keys**  | **FB Hashing Required** | **FB Guidelines**     |
 | Email       |                                                              | EMAIL                | Yes                 | Trim leading, trail whitespace, and convert all characters to lowercase.                                                                                  |
