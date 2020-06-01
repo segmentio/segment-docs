@@ -57,7 +57,7 @@ Instead, consider making an array of async requests that are running in parallel
 
 ```js
 const requests = event.properties.objects.map((objectId) => {
-    fetch('https://example.com/?id=' + objectId, {
+    return fetch('https://example.com/?id=' + objectId, {
         body: event.properties
     })
 })
