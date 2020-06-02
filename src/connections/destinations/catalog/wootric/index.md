@@ -51,3 +51,13 @@ When you call Identify, the user's information is passed to Wootric to check eli
 
 When you call Track, the user’s information is passed along with the event name to Wootric to check eligibility during survey responses.
 Note: this only works if you have enabled Targeted Sampling in your Wootric account. The event name has to be exactly the same as the one used in the track call.
+
+## Page
+
+If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+
+```js
+analytics.page()
+```
+
+Page calls are sent to YOURINTEGRATION as a `pageview`.
