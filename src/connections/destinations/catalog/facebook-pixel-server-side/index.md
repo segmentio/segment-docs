@@ -40,7 +40,7 @@ Once you have configured the business and pixel:
 5. Toggle the Segment Partner Integration ‘On’
 
 > note ""
-> This section only appears if you enabled the Facebook Pixel Client-side integration (Facebook automatically gives you Server-Side API access overnight once enabled, and then contacted your Facebook Account Representative to get your Pixel ID whitelisted.
+> This section only appears if you enabled the Facebook Pixel Client-side integration (Facebook automatically gives you Server-Side API access overnight once enabled), and then contacted your Facebook Account Representative to get your Pixel ID whitelisted.
 
 ![](images/image1.png)
 
