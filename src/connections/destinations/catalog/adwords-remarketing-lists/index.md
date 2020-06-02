@@ -173,4 +173,6 @@ Personas sends the most recent id that was added to the user profile to Google A
 
 #### How do I enter multiple Mobile App IDs when exporting mobile IDs to Google Adwords?
 
-If you have more than one App ID (such as a sperate App Id for Android and iOS), you should add a Google Adwords Remarketing List destination for each App ID that you will be sending data to. Be sure to update your settings for these destinations with your App IDs. When you create your audiences you should add conditions to specify which App ID to send which audience to. For example, you might add a property condition of "where device.type contains iOS" to send only your iOS users to your destination.
+If you have more than one App ID (such as a separate App ID for Android and iOS apps), add a separate Google Adwords Remarketing List destination for each App ID, and make sure the settings for these destinations include the correct App IDs. 
+
+When you create Personas audiences, add conditions to specify which App ID to send the audience to. For example, you might add a property condition of "where `device.type` contains `iOS`" to send only your iOS users to a specific destination.
