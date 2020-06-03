@@ -18,6 +18,6 @@ After selecting a Source, you will be shown the consequences of connecting your 
 
 ## Disconnect Source from Tracking Plan
 
-To disconnect the Source from the Tracking Plan, click on the icons under the **Connected Sources** column for your specific Tracking Plan from the Tracking Plan overview page. A module will slide out from the right-side, then click **Disconnect** for the Source you'd like to disconnect.
+To disconnect the Source from the Tracking Plan, go to the Tracking Plan overview page, locate the column for the tracking plan you want to disconnect, then click the icon under the **Connected Sources**. In the settings that appear, click **Disconnect** next to the Source you want to disconnect.
 
 ![](../images/protocols_disconnect_source.gif)
