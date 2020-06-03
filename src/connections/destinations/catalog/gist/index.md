@@ -4,7 +4,7 @@ rewrite: true
 ---
 [Gist](https://getgist.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a marketing and support platform that helps companies attract visitors, convert leads, and support customers.
 
-This destination is maintained by Gist. For any issues with the destination, please [reach out to their team](mailto:support@getgist.com).
+This destination is maintained by Gist. For any issues with the destination, [contact the Gist Support team](mailto:support@getgist.com).
 
 ## Getting Started
 {% include content/connection-modes.md %}
