@@ -3,7 +3,7 @@ hidden: true
 title: Data Lakes (Private Beta)
 ---
 
-Segment Data Lakes let you send Segment data to cloud object stores (for example AWS S3 to start) in a way that is optimized for Data Analytics and Data Science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. However, without Data Lakes, you might need to do a significant amount of processing to get real value out of this data.
+Segment Data Lakes let you send Segment data to cloud data stores (for example AWS S3 to start) in a way that is optimized for Data analytics and Data Science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. However, without Data Lakes, you might need to do a significant amount of processing to get real value out of this data.
 
 Segment Data Lakes blends the experience of using our existing S3 destination and data warehouse destination. It makes data in S3 more actionable and accessible for customers by building in logical data partitions, storing it in a read optimized encoding format (Parquet initially), and integrating deeply with existing schema management tools, such as the AWS Glue Data Catalog. These formats are optimized for use with systems like Spark, Athena, or Machine Learning vendors like DataBricks or DataRobot.
 
@@ -20,8 +20,8 @@ Segment builds a Data Lake on top of what’s already in Segment today - out of 
 The three tenets to create a clean and easy to use Data Lake are:
 
 - **Fast and efficient**: All data is sent to S3 in Parquet format for easy read access.
-- **Break down data in logical structure**: All data is partitioned by source, event type, day and hour. This narrows in on the data you care about when querying, and provides the same tracks and events tables that you get with Segment’s warehouse product.
-- **Accessible data structure**: Data structure is fed into the Glue Data Catalog for all tools to be able to target specific pieces of data.
+- **Break down data in logical structure**: All data is partitioned by source, event type, date and hour. This narrows in on the data you care about when querying, and provides the same tracks and events tables that you get with Segment’s warehouse product.
+- **Accessible data structure**: Data structure is fed into the Glue Data Catalog for all tools to be able to target specific pieces of data, giving you flexbility to build on top of the raw data set.
 
 From here you can connect a multitude of tools to glean insights from the S3 data - Athena, Spectrum, Databricks, EMR.
 
@@ -33,7 +33,12 @@ Today, Segment sends Segment event data in S3 for you by doing the processing in
 
 Data Lakes bridges the gap between today’s S3 experience and warehouse experience for Segment customers, in order to provide a flexible blob storage solution to Data teams as they scale.
 
-When using Data Lakes, you can either solely use Data Lakes as your source of data and query all of your data directly from S3, or you can use Data Lakes alongside a data warehouse. Configuring the Glue Database name and table prefix will provide the option of being able to set up your Data Lake in a manner that’s consistent with Segment warehouse, to bridge the experience between the two.
+When using Data Lakes, you can either solely use Data Lakes as your source of data and query all of your data directly from S3, or you can use Data Lakes alongside a data warehouse.
+
+The Data Lakes and Warehouses products are not in parity with each other, but instead they are compatible because there is an understandable mapping between the two. This mapping enables you to identify and manage the differences to bridge the experience between Data Lakes and Warehouses.
+
+Additionally, Data Lakes offers the ability to configure different components of the set up to increase compatibility with Warehouses. This configuration includes the number of Glue Databases used, setting a table prefix, and selecting between two schemas.
+
 
 ## Data Lakes Schema
 
@@ -100,6 +105,11 @@ Examples: `ios_prod.track_page_view`, `ios_dev.identify`
 `$source_slug.$event_type`
 Examples: `ios_prod.page_view`, `ios_dev.identify`
 
+### Data Types
+Data Lakes infers the data type for the event it receives. Data Lakes looks at the group of events received every hour to infer the data type for that event.
+
+If a bad data type is seen, such as text in place of a number or an incorrectly formatted date, Data Lakes attempts a best effort conversion to cast the field to the target data type. Fields that cannot be casted may be dropped. There is always the option to correct the data type in the schema to the desired type and perform a replay to ensure no data is lost. [Contact us] (https://segment.com/help/contact/) if a data type needs to be corrected.
+
 
 ## Getting Started
 
@@ -146,7 +156,44 @@ Once the Data Lakes destination is enabled, the first sync will begin ~2 hours l
 > warning ""
 > Warning: Changing the table prefix will modify the table names created in Glue and will require a backfill for the older data.
 
-
 ### (Optional) Step 4 - Replay Historical Data
 
 If you’re a Business plan customer and would like to [replay historical data](/docs/guides/what-is-replay/) into your Data Lake to have a more valuable data set, please reach out to the Segment team to request a replay.
+
+Replays can take varying amounts of time based on the volume of data and number of events in each source. We recommend starting with a replay of data from the last six months to allow you to have a data set to get started, and then replaying more data after that.
+
+We are able to use a separate EMR cluster for replays to ensure the regular Data Lakes syncs aren't interrupted, and the replays finish faster. To do this, Segment will spin up and down an EMR cluster to use just for replays.
+
+
+## FAQs
+
+##### How often is data synced to Data Lakes?
+Data Lakes currently offers 12 syncs in a 24 hour period. Unlike Warehouses, Data Lakes does not offer support to customize the data sent via a custom sync schedule, or manage what data is sent using Selective Sync at this time.
+
+##### What should I expect in terms of duplicates in Data Lakes?
+The guarantee for duplicate data found in Data Lakes matches Segment’s overall guarantee for duplicates - 99% guarantee of no duplicates for data within a [24 hour look-back window] (https://segment.com/docs/guides/duplicate-data/).
+
+Customers who have advanced requirements for duplicates can add an additional de-duplication step downstream to further reduce duplicates beyond this look back window.
+
+##### Can I send all of my Segment data into Data Lakes?
+Data Lakes currently supports data from all event sources, including website libraries, mobile, server and event cloud sources.
+
+Data Lakes does not currently support any [object cloud sources] (https://segment.com/docs/connections/sources/#object-cloud-sources), as well as the users and accounts tables from event cloud sources.
+
+##### Are user deletions and suppression supported?
+User deletions are currently not supported in Data Lakes, however user suppression is.
+
+##### How does Data Lakes work with Protocols?
+Data Lakes does not currently have a direct integration with [Protocols] (https://segment.com/docs/protocols/).
+
+Today you can expect any changes made with Protocols to events at the source level will impact data for all downstream destinations, including Data Lakes.
+- *Mutated events* - If Protocols mutates an event due to a rule set in the Tracking Plan, then that mutation will appear in Segment's internal archives and thus reflected in both Data Lakes and Warehouses. To illustrate this, if you were to want the event `product_id` to be reflected as `productID` and have set this in Protocols, then this event will appear in both Data Lakes and Warehouses as `productID`.
+- *Blocked events* - If an event is set to be blocked in the Protocols Tracking Plan, then the event does not get forwarded to any downstream Segment destinations, including Warehouses and Data Lakes. However events marked with a violation will be passed to both Warehouses and Data Lakes.
+
+Data types and labels available in Protocols are not currently supported by Data Lakes or Warehouses.
+- *Data Types* - Warehouses and Data Lakes will infer the data type for each event using their own schema inference systems instead of using a data type set in Protocols for an event. This may lead to instances where the data type set in Warehouses and/or Data Lakes is different than the data type set in the tracking plan. For example, if you set `product_id` to be an integer in the Protocols Tracking Plan, if the event was sent into Segment as a string, then Data Lakes and Warehouses may infer this data type as a string in the Glue Data Catalog.
+- *Labels* - Labels set in Protocols are not sent to Data Lakes.
+
+##### How do I connect a source to Data Lakes?
+To connect a source to Data Lakes, you'll need to:
+1. Add the source_id found in the Segment workspace into the list of [external ids] (https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/iam#external_ids) within the IAM policy. You can either update this within the AWS console, or re-run [Terraform] (https://github.com/segmentio/terraform-aws-data-lake).
