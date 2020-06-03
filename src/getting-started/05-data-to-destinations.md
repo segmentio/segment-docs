@@ -43,7 +43,7 @@ We also feel that it's really important to have a data warehouse, so you can get
 
 ## Adding a warehouse
 
-Warehouses are a special type of destination which receive streaming data from your Segment sources, and store it in a table [schema based on your Segment calls](/docs/connections/warehouses/#warehouse-schemas). This allows you to do a lot of interesting analytics work to answer your own questions about what your users are doing and why.
+Warehouses are a special type of destination which receive streaming data from your Segment sources, and store it in a table [schema based on your Segment calls](/docs/connections/storage/warehouses/#warehouse-schemas). This allows you to do a lot of interesting analytics work to answer your own questions about what your users are doing and why.
 
 > note ""
 > All customers can connect a data warehouse to Segment. Free and Team customers can connect one, while Business customers can connect as many as needed.
@@ -54,7 +54,7 @@ When you choose a warehouse, you can then use the steps in the documentation to 
 
 Once your warehouse is configured and running, you can connect to it using a Business Intelligence (BI) tool (such as Looker, Mode, Tableau, or others) to analyze your data in-depth.
 
-There are also a number of Business tier features you can then use with your warehouse, including [selective sync](/docs/connections/warehouses/selective-sync/) and [Replay](/docs/guides/what-is-replay/).
+There are also a number of Business tier features you can then use with your warehouse, including [selective sync](/docs/connections/storage/warehouses/selective-sync/) and [Replay](/docs/guides/what-is-replay/).
 
 
 
