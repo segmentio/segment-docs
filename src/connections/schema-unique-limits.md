@@ -10,6 +10,8 @@ While you can technically track unlimited events with Segment, only the first 2,
 
 While you can technically track unlimited event properties with Segment, only the first 300 properties will be visible on the event details page for a given event. After you hit the 300 property limit, all future properties will still be tracked and sent to your Destinations. They will not, however, be logged on the event details page.
 
-If you hit the limit or would like to clear out old events or properties, you can clear the Schema data from your Source Settings. In your Source, navigate to Settings, then Schema Configuration. Scroll down to the **Clear Schema History** setting.
+**How can I clear the Schema if I have hit the limits?**
+
+If you hit any of the limits or would like to clear out old events or properties, you can clear the Schema data from your Source Settings. In your Source, navigate to Settings, then Schema Configuration. Scroll down to the **Clear Schema History** setting.
 
 ![](images/schema_config_clear_schema.png)
