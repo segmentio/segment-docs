@@ -15,3 +15,9 @@ After selecting a Source, you will be shown the consequences of connecting your 
 **IMPORTANT: Make sure to read through the consequences of connecting a source!**
 
 ![](../images/5763823424_Image+2018-08-31+at+6.02.54+PM.png)
+
+## Disconnect Source from Tracking Plan
+
+To disconnect the Source from the Tracking Plan, click on the icons under the **Connected Sources** column for your specific Tracking Plan from the Tracking Plan overview page. A module will slide out from the right-side, then click **Disconnect** for the Source you'd like to disconnect.
+
+![](../images/protocols_disconnect_source.gif)
