@@ -1,5 +1,6 @@
 ---
 title: Warehouses and Data Storage
+redirect_from: '/connections/warehouses/'
 ---
 
 

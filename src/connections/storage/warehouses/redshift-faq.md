@@ -1,5 +1,6 @@
 ---
 title: Redshift cluster and Redshift connector limitations
+redirect_from: '/connections/warehouses/redshift-faq/'
 ---
 
 > "Are there limitations of Redshift clusters and our Redshift connector?"

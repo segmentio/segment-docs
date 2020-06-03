@@ -1,5 +1,6 @@
 ---
 title: Warehouse FAQs
+redirect_from: '/connections/warehouses/faq/'
 ---
 
 ## Can I control what data is sent to my warehouse?
@@ -74,7 +75,7 @@ We highly recommend scripting any sort of additions of data you might have to wa
 
 You can whitelist our custom IP 52.25.130.38/32 while authorizing Segment to write in to your Redshift or Postgres port.
 
-BigQuery does not require whitelisting an IP address. To learn how to setup BigQuery, check out our [set up guide](https://segment.com/docs/connections/warehouses/catalog/bigquery/#getting-started)
+BigQuery does not require whitelisting an IP address. To learn how to setup BigQuery, check out our [set up guide](https://segment.com/docs/connections/storage/catalog/bigquery/#getting-started)
 
 
 ## Will Segment sync my historical data?

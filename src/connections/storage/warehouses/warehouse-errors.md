@@ -1,5 +1,6 @@
 ---
 title: "What does my warehouse error mean?"
+redirect_from: '/connections/warehouses/warehouse-errors/'
 ---
 
 ### ERROR: Schema "XXX" does not exist. (SQLSTATE 3F000)

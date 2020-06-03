@@ -1,6 +1,8 @@
 ---
 title: BigQuery Destination
 rewrite: true
+redirect_from:
+  - '/connections/storage/catalog/bigquery/'
 ---
 
 

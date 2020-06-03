@@ -65,9 +65,9 @@ For any warehouse, we recommend that you create a separate read-only user for bu
 #### Redshift, Postgres, Snowflake Setup
 
 If you don't already have a data warehouse, follow one of the guides here first:
-- [Redshift Getting Started](/docs/connections/warehouses/catalog/redshift/#getting-started)
-- [Postgres Getting Started](/docs/connections/warehouses/catalog/postgres/#getting-started)
-- [Snowflake Getting Started](/docs/connections/warehouses/catalog/snowflake/#getting-started)
+- [Redshift Getting Started](/docs/connections/storage/catalog/redshift/#getting-started)
+- [Postgres Getting Started](/docs/connections/storage/catalog/postgres/#getting-started)
+- [Snowflake Getting Started](/docs/connections/storage/catalog/snowflake/#getting-started)
 
 Remember to create a read-only service user!
 

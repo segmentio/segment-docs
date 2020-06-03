@@ -1,5 +1,6 @@
 ---
 title: Warehouse Health Dashboard
+redirect_from: '/connections/warehouses/health/'
 ---
 
 The Warehouse Health dashboard helps you understand trends in data volume (specifically, rows) synced to your data warehouse over time.

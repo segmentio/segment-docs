@@ -1,6 +1,8 @@
 ---
 title: Azure SQL Database Destination
 hidden: true
+redirect_from:
+  - '/connections/storage/catalog/azuresqldb/'
 ---
 
 > info ""
@@ -14,7 +16,7 @@ hidden: true
   slug: azuresqldb
   name: catalog/warehouses/azuresqldb
   description: ''
-  url: connections/warehouses/catalog/azuresqldb
+  url: connections/storage/catalog/azuresqldb
   status: PUBLIC_BETA
   logo:
     url: 'https://msftplayground.com/wp-content/uploads/2017/04/logoAzureSql.png'

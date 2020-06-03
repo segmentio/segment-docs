@@ -1,5 +1,6 @@
 ---
 title: Warehouse Selective sync
+redirect_from: '/connections/warehouses/selective-sync/'
 ---
 
 [Warehouse Selective Sync](https://segment.com/docs/connections/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse/) allows you to manage the data that you send to your warehouses. You can use this feature to stop syncing specific events (also known as collections) or properties that aren’t relevant, and could be slowing down your warehouse syncs.

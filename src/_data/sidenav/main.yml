@@ -161,28 +161,28 @@ sections:
     - path: /connections/destinations/destination-functions
       title: Destination Functions
   - section_title: Warehouses
-    slug: connections/warehouses
+    slug: connections/storage/warehouses
     section:
-    - path: /connections/warehouses
+    - path: /connections/storage/warehouses
       title: Warehouses and Data Storage
-    - path: /connections/warehouses/catalog
+    - path: /connections/storage/catalog
       title: Warehouses catalog
       menu_icon: read-more
-    - path: /connections/warehouses/selective-sync
+    - path: /connections/storage/warehouses/selective-sync
       title: Warehouse Selective Sync
-    - path: /connections/warehouses/health
+    - path: /connections/storage/warehouses/health
       title: Warehouse Health Dashboards
-    - path: /connections/warehouses/choose-warehouse
+    - path: /connections/storage/warehouses/choose-warehouse
       title: Choosing a Warehouse
-    - path: /connections/warehouses/faq
+    - path: /connections/storage/warehouses/faq
       title: Warehouse FAQs
-    - path: /connections/warehouses/add-warehouse-users
+    - path: /connections/storage/warehouses/add-warehouse-users
       title: How do you add users?
-    - path: /connections/warehouses/warehouse-errors
+    - path: /connections/storage/warehouses/warehouse-errors
       title: What does my warehouse error mean?
-    - path: /connections/warehouses/redshift-faq
+    - path: /connections/storage/warehouses/redshift-faq
       title: Redshift cluster and Redshift connector limitations
-    - path: /connections/warehouses/redshift-tuning
+    - path: /connections/storage/warehouses/redshift-tuning
       title: How Do I Speed Up My Redshift Queries?
   - path: /connections/test-connections
     title: How do I test my connections?

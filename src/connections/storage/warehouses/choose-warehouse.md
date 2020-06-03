@@ -1,5 +1,6 @@
 ---
 title: Choosing a Warehouse
+redirect_from: '/connections/warehouses/choose-warehouse/'
 ---
 
 ## Comparing Redshift and Postgres

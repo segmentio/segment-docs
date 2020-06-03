@@ -1,6 +1,8 @@
 ---
 title: Amazon S3 Destination
-redirect_from: '/connections/destinations/catalog/amazon-s3/'
+redirect_from:
+  - '/connections/destinations/catalog/amazon-s3/'
+  - '/connections/storage/catalog/amazon-s3/'
 ---
 
 ## Getting Started
@@ -45,7 +47,7 @@ Data from your sources is processed by the Segment Tracking API, which collects 
 
 Specifically, this adds the ability to `s3:PutObject` for the Segment s3-copy user for your bucket.
 
-If you have server-side encryption enabled, please see [additional required setup](https://segment.com/docs/connections/warehouses/catalog/amazon-s3/#encryption).
+If you have server-side encryption enabled, please see [additional required setup](https://segment.com/docs/connections/storage/catalog/amazon-s3/#encryption).
 
 You can edit your bucket policy in the [AWS management console](https://console.aws.amazon.com) by right-clicking the bucket and then selecting the "edit policy" option.
 

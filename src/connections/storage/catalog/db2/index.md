@@ -1,6 +1,8 @@
 ---
 title: IBM Db2 Destination
 rewrite: true
+redirect_from:
+  - '/connections/storage/catalog/db2/'
 ---
 
 Use [IBM Db2](https://www.ibm.com/analytics/us/en/db2/) with Segment to get

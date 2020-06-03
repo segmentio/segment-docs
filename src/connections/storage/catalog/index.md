@@ -1,5 +1,5 @@
 ---
-title: Warehouses catalog
+title: Storage catalog
 hide_toc: true
 menu_icon: "read-more"
 layout: catalog

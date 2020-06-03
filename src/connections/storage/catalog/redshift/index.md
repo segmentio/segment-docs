@@ -1,6 +1,8 @@
 ---
 title: Redshift Warehouse Destination
 rewrite: true
+redirect_from:
+  - '/connections/storage/catalog/redshift/'
 ---
 
 This guide will explain how to provision a Redshift cluster and allow the Segment warehouse connector to write to it.

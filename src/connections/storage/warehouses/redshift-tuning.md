@@ -1,5 +1,6 @@
 ---
 title: How Do I Speed Up My Redshift Queries?
+redirect_from: '/connections/warehouses/redshift-tuning/'
 ---
 
 Waiting minutes and minutes, maybe even an hour, for your queries to compute is an unfortunate reality for many growing companies. Whether your data has grown faster than your cluster, or you're running too many jobs in parallel, there are lots of reasons your queries might be slowing down.

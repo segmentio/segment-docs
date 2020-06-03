@@ -1,6 +1,8 @@
 ---
 title: Snowflake Destination
 rewrite: true
+redirect_from:
+  - '/connections/storage/catalog/snowflake/'
 ---
 
 [Snowflake](https://docs.snowflake.net/manuals/index.html) is a data warehouse built for the cloud. Snowflake delivers performance, simplicity, concurrency and affordability.
@@ -51,7 +53,7 @@ You need to run these commands rather than creating a role with the "Create Role
 This role will be attached to Segment's user and it gives just enough permissions for loading data in your database. We recommend not reusing this role for other operations.
 
 1. Click on to Worksheets;
-2. Select SEGMENT_EVENTS under database objects 
+2. Select SEGMENT_EVENTS under database objects
 3. Change role to ACCOUNTADMIN
 
 4. Create a new role using the following command:
@@ -90,9 +92,9 @@ GRANT ROLE "SEGMENT" TO USER "SEGMENT_USER";
 
 ### Test the User and Credentials
 
-Before you continue, test and validate the new user and credentials. When you can run the following commands successfully, you can connect Snowflake to Segment. 
+Before you continue, test and validate the new user and credentials. When you can run the following commands successfully, you can connect Snowflake to Segment.
 
-We use [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html) to run these verification steps. 
+We use [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html) to run these verification steps.
 To install and verify your accounts:
 
 1. Download [snowsql](https://docs.snowflake.net/manuals/user-guide/snowsql.html);
