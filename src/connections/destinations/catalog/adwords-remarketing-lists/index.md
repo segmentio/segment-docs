@@ -170,3 +170,9 @@ Currently, Personas sends either email or mobile device id (IDFA) to Google Adwo
 #### If a user has multiple emails or IDFAs on their account, which ids get sent to Google Adwords?
 
 Personas sends the most recent id that was added to the user profile to Google Adwords.
+
+#### How do I enter multiple Mobile App IDs when exporting mobile IDs to Google Adwords?
+
+If you have more than one App ID (such as a separate App ID for Android and iOS apps), add a separate Google Adwords Remarketing List destination for each App ID, and make sure the settings for these destinations include the correct App IDs. 
+
+When you create Personas audiences, add conditions to specify which App ID to send the audience to. For example, you might add a property condition of "where `device.type` contains `iOS`" to send only your iOS users to a specific destination.
