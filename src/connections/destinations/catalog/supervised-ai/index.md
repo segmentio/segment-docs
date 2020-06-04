@@ -3,7 +3,7 @@ title: Supervised AI Destination
 rewrite: true
 ---
 
-[Supervised AI](https://supervisedai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides proactive customer health monitoring for customer facing teams, leveraging machine learning to automate churn prediction and generating playbook recommendations.
+[Supervised AI](https://supervisedai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides proactive customer health monitoring for customer facing teams, using machine learning to automate churn prediction and generating playbook recommendations.
 
 This destination is maintained by Supervised AI. For any issues with the destination, please [contact the Supervised AI Support team](mailto:support@supervisedai.com).
 
