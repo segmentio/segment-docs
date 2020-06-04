@@ -7,7 +7,6 @@ If you have more than one person working with your Segment Warehouse, you might 
 
 ### 1\. Creating a user with the [CREATE USER](http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html) command
 
-![](images/asset_h5NYu2A6.png)
 
 ```sql
 CREATE USER <name>
