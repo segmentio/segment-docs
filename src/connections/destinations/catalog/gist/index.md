@@ -11,7 +11,9 @@ This destination is maintained by Gist. For any issues with the destination, [co
 
 1. From the Segment App's Destinations catalog page, click **Add Destination**.
 2. Search for "Gist" in the Destinations Catalog, and select the Gist destination.
-3. Drop in your [API Key](https://app.getgist.com/projects/_/settings/api-key) into your Segment Settings UI.
+3. Choose which Source should send data to the Gist destination.
+4. Copy your [Gist API key](https://app.getgist.com/projects/_/settings/api-key).
+5. Enter the "API Key" in the Gist destination settings in Segment.
 
 ## Identify
 If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
