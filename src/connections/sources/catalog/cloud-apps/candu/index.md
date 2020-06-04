@@ -27,7 +27,7 @@ Congratulations! The integration is up and running!
 
 
 ## Events
-Below is a list of events Leanplum sends to Segment
+Below is a list of events Candu sends to Segment
 
 | Collection                | Type  | Description                                    |
 |:------------------------- |:----- |:---------------------------------------------- |
