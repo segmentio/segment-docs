@@ -42,7 +42,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Identify calls will be sent to Supervised AI as an `identify` event.
+Segment sends Identify calls to Supervised AI as an `identify` event.
 
 ## Track
 
