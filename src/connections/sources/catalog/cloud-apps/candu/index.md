@@ -60,7 +60,7 @@ The tables below list the properties included in the events listed above.
 
 ## Adding Destinations
 
-The Candu Source works best when you also connect Candu as a Destination. With the Candu Destination, you can use Segment to send Candu user and event data from which you personalize product experiences for different users. 
+The Candu Source works best when you also connect Candu as a Destination. With the Candu Destination, you can use Segment to send Candu user and event data, which you can use to personalize product experiences for different users. 
 
 Want to make product experiences more personal? Check out [Candu's Destination docs](https://segment.com/docs/connections/destinations/catalog/candu/).
 
