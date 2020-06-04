@@ -64,4 +64,4 @@ The Candu Source works best when you also connect Candu as a Destination. With t
 
 Want to make product experiences more personal? Check out [Candu's Destination docs](https://segment.com/docs/connections/destinations/catalog/candu/).
 
-If there are any issues with how the events are arriving to Segment, please [contact the Candu support team](mailto:support@candu.ai).
+If you experience issues with how Candu events arrive to Segment, [contact the Candu support team](mailto:support@candu.ai).
