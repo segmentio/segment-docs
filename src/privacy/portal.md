@@ -132,6 +132,8 @@ the label "CCN") or value (for example, the payload 123-456-7890) in the
 **Matches On** column. You can also see how we classify these matchers by
 default in the **Default Classification** column.
 
+Below is a full list of automatically detected restricted fields.
+
 
 | Matcher                | Classification |
 | ---------------------- | -------------- |
