@@ -20,7 +20,7 @@ This destination is maintained by Supervised AI. For any issues with the destina
 > info ""
 > You should see data in Supervised AI within 48 hours. SupervisedAI notifies you by email when your model is generated.
 
-*Optional:* If you would like to sync your past events which were sent through Segment into your Supervised AI instance, you have the option of leveraging Segment's [Replay](https://segment.com/docs/guides/what-is-replay/) feature.
+*Optional:* You can use Segment [Replays](https://segment.com/docs/guides/what-is-replay/) to sync your past events which were sent through Segment into your Supervised AI instance.
 
 ## Page
 
