@@ -2,7 +2,7 @@
 title: Warehouse Schemas
 ---
 
-## Warehouse Schemas
+## Warehouse tables
 
 The table below describes the schema in Segment Warehouses:
 
@@ -25,7 +25,7 @@ The table below describes the schema in Segment Warehouses:
   </tr>
   <tr>
     <td>`<source>.users`</td>
-    <td>A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of of a user. The `id` column in the users table is equivalent to the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To get at a user's anonymousIds, you'll need to query the identifies table. *If you observe any duplicates in the users table, please [contact us](/contact/).*</td>
+    <td>A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of of a user. The `id` column in the users table is equivalent to the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To get at a user's anonymousIds, you'll need to query the identifies table. *If you observe any duplicates in the users table, please [contact us](https://segment.com/help/contact/).*</td>
   </tr>
   <tr>
     <td>`<source>.pages`</td>
@@ -46,7 +46,7 @@ The table below describes the schema in Segment Warehouses:
 </table>
 
 
-### Identifies
+## Identifies table
 
 Your `identifies` table is where all of your `.identify()` method calls are stored. Query it to find out user-level information. It has the following columns:
 
@@ -81,6 +81,8 @@ Your `identifies` table is where all of your `.identify()` method calls are stor
   </tr>
 </table>
 
+### Querying the Identifies table
+
 To see a list of the columns in the `identifies` table for your `<source>` run:
 
 ```sql
@@ -114,7 +116,7 @@ ORDER BY day
 ```
 
 
-### Groups
+## Groups table
 
 Your `groups` table is where all of your `group` method calls are stored. Query it to find out group-level information. It has the following columns:
 
@@ -152,6 +154,9 @@ Your `groups` table is where all of your `group` method calls are stored. Query 
     <td>Each trait of the group you record is created as it's own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `name`.</td>
   </tr>
 </table>
+
+### Querying the Groups table
+
 
 To see a list of the columns in the `groups` table for your `<source>` run:
 
@@ -197,7 +202,7 @@ GROUP BY name
 </table>
 
 
-### Pages & Screens
+## Pages and Screens tables
 
 Your `pages` and `screens` tables are where all of your `page` and `screen` method calls are stored. Query it to find out information about page views or screen views. It has the following columns:
 
@@ -231,6 +236,9 @@ Your `pages` and `screens` tables are where all of your `page` and `screen` meth
     <td>Each property of your pages or screens is created as it's own column, and the column type is automatically inferred from your data. For example, you might have columns like `referrer` and `title`.</td>
   </tr>
 </table>
+
+### Querying the Pages and Screens tables
+
 
 To see a list of the columns in the `pages` table for your `<source>` run:
 
@@ -290,7 +298,7 @@ ORDER BY day
 </table>
 
 
-### Tracks
+## Tracks table
 
 Your `tracks` table is where all of your `track` method calls are stored. Query it to find out information about the events your users have triggered. It has the following columns:
 
@@ -329,6 +337,9 @@ Your `tracks` table is where all of your `track` method calls are stored. Query 
   </tr>
 </table>
 
+### Querying the Tracks table
+
+
 Your `tracks` table is a rollup of all of the different event-specific tables, for quick querying of just a single type. For example, you could see the count of how many unique users signed up each day:
 
 ```sql
@@ -366,7 +377,7 @@ ORDER BY day
 </table>
 
 
-### Event Tables
+## Event Tables
 
 Your event tables are a series of table for each custom event you record to Segment. We break them out into their own tables because the properties, and thus the columns, differ for each event. Query these tables to find out information about specific properties of your custom events. They have the following columns:
 
@@ -407,6 +418,9 @@ Your event tables are a series of table for each custom event you record to Segm
     <td>Each property of your track calls is created as it's own column, and the column type is automatically inferred from your data.</td>
   </tr>
 </table>
+
+### Querying the Events tables
+
 
 To see a list of all of the event tables for a given `<source>` you can run:
 
@@ -471,7 +485,7 @@ ORDER by column_name
 
 **Note:** If you send us an array, we will stringify it in Redshift. That way you don't end up having to pollute your events. It won't work perfectly if you have a lot of array elements but should work decently to store and query those. We also flatten nested objects. 
 
-### Tracks vs. Events Tables
+## Tracks vs. Events Tables
 
 To see all of the tables for your organization, you can run this query:
 
@@ -565,9 +579,9 @@ ORDER BY day
   </tr>
 </table>
 
-#### New Columns
+### New Columns
 
-Columns are created for new event properties and traits. We process the incoming data to Segment in batches, based on either data size or an interval of time. If the table doesn't exist we lock and create the table. If the table exists but new columns need to be created, we perform a diff and alter the table to append new columns.
+Columns are created for new event properties and traits. Segment processes the incoming data in batches, based on either data size or an interval of time. If the table doesn't exist we lock and create the table. If the table exists but new columns need to be created, we perform a diff and alter the table to append new columns.
 
 **Note:** We create tables for each of your custom events, and columns for each event's custom properties. Redshift itself has limits on how many can be created, so we do not allow unbounded event or property spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar._
 
@@ -581,7 +595,7 @@ The datatypes that we support right now are: 
 -`boolean`
 -`varchar`
 
-### Column Sizing
+## Column Sizing
 
 After analyzing the data from dozens of customers we set the string column length limit at 512 characters. Longer strings are truncated. We found this was the sweet spot for good performance and ignoring non-useful data.
 
@@ -589,7 +603,7 @@ We special-case compression for some known columns like event names and timestam
 
 After a column is created, Redshift doesn't allow altering. Swapping and renaming may work down the road, but this would likely cause thrashing and performance issues. If you would like to change the column size, see our [docs here](/docs/faqs/warehouses/redshift-limitations/#varchar-size-limits-).
 
-### Timestamps
+## Timestamps
 
 There are four timestamps associated with every Segment API call: `timestamp`, `original_timestamp`, `sent_at` and `received_at`.
 
@@ -609,21 +623,21 @@ However, `received_at` does not ensure chronology of events.  For queries based 
 
 [Here's additional documentation](/docs/connections/spec/common/#timestamps) on timestamps in the context of our spec.
 
-### id
+## id
 
 Each row in your database will have an `id` which is equivalent to the messageId which is passed through in the raw JSON events. The `id` is a unique message id associated with the row.
 
-### uuid and uuid_ts
+## uuid and uuid_ts
 
 The `uuid` column is used to prevent duplicates. You can ignore this column.
 
 The `uuid_ts` column is used to keep track of when the specific event was last processed by our connector, specifically for deduping and debugging purposes. You can generally ignore this column.
 
-### Sort Key
+## Sort Key
 
 All tables use `received_at` for the sort key. Amazon Redshift stores your data on disk in sorted order according to the sort key. The Redshift query optimizer uses sort order when it determines optimal query plans.
 
-### More Help
+## More Help
 
 [How do I send custom data to my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse/)
 

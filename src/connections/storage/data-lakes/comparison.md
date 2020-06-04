@@ -3,13 +3,13 @@ title: Comparing Data Lakes and Warehouses
 ---
 
 <!--
-TODO: figure out title, add to nav.
+TODO:
 diagrams? Illustrations?
 Add sections about S3 and GCS
 links to analytics academy stuff on owning your data
 -->
 
-As Segment builds new data storage products over time, each product evolves from prior products to best support the needs of customers. Segment Data Lakes is an evolution of the warehouses product that meets the changing needs of customers. As such, you’ll find some areas where there are differences between the Data Lakes and Warehouses products, instead of seeing exact parity between the two.
+As Segment builds new data storage products, each product evolves from prior products to best support the needs of customers. Segment Data Lakes is an evolution of the warehouses product that meets the changing needs of customers. As such, you’ll find some areas where there are differences between the Data Lakes and Warehouses products, instead of seeing exact parity between the two.
 
 With this, the two products will not be in parity with each other, but instead will be compatible because there will be an understandable mapping between Data Lakes and Warehouses, which can enable you to identify and manage the differences.
 

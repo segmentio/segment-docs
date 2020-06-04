@@ -19,6 +19,10 @@ Relational databases are great when you know and predefine the information colle
 
 Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgres.
 
+<div data-headings-anchors id="warehouse-schemas"></div>
+> info "Looking for the Warehouse Schemas docs?"
+>  They've moved! Check them out [here](schema/).
+
 ### More Help
 
 [How do I send custom data to my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse/)

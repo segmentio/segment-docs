@@ -160,18 +160,21 @@ sections:
       title: Destination Filters
     - path: /connections/destinations/destination-functions
       title: Destination Functions
-  - section_title: Storage
+  - section_title: Data Storage
     slug: connections/storage
     section:
     - path: /connections/storage
-      title: Storage Destinations Overview
-    - path: /connections/storage/choose-storage
-      title: Choosing a storage destination
+      title: Data Storage overview
     - path: /connections/storage/catalog
       title: Storage destinations catalog
       menu_icon: read-more
-    - path: /connections/storage/data-lakes
-      title: Segment Data Lakes
+    - section_title: Segment Data Lakes
+      slug: connections/storage/data-lakes
+      section:
+      - path: /connections/storage/data-lakes
+        title: Data Lakes overview
+      - path: /connections/storage/data-lakes/comparison
+        title: Data Lakes vs Warehouses
     - section_title: Data Warehouses
       slug: connections/storage/warehouses
       section:
