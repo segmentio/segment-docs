@@ -35,7 +35,8 @@ Below is a list of events Leanplum sends to Segment
 | tutorial.interaction           | Event | Fires when a user clicks an element (track event)         |
 
 ## Event properties
-Below are tables outlining the properties included in the events listed above.
+
+The tables below list the properties included in the events listed above.
 
 #### tutorial.view
 
