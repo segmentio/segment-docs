@@ -362,7 +362,7 @@ The `ready` method has the following fields:
 
 ## Querystring API
 
-`analytics.js` can trigger track and identify events based on the URL querystring. This is helpful for tracking email click throughs, social media clicks, and digital advertising as well as for cross-domain tracking.
+`analytics.js` can trigger track and identify events based on the URL querystring. This is helpful for tracking email click throughs, social media clicks, and digital advertising.
 
 Here are the query parameters to use:
 
