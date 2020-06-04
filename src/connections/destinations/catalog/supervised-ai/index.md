@@ -52,7 +52,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.track('Clicked Login Button')
 ```
 
-Track calls will be sent to Supervised AI as a `track` event.
+Segment sends Track calls to Supervised AI as a `track` event.
 
 ## Screen
 
