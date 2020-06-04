@@ -9,7 +9,7 @@ This destination is maintained by Gist. For any issues with the destination, [co
 ## Getting Started
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment App's Destinations catalog page, click **Add Destination**.
 2. Search for "Gist" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your [API Key](https://app.getgist.com/projects/_/settings/api-key) into your Segment Settings UI.
 
