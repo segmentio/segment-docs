@@ -71,4 +71,5 @@ If you haven't had a chance to review our spec, please take a look to understand
   }
 }
 ```
-Screen calls are sent to Supervised AI as a `screenview`.
+Segment sends Screen calls to Supervised AI as a `screenview`.
+
