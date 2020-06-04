@@ -16,7 +16,9 @@ This destination is maintained by Supervised AI. For any issues with the destina
 2. Search for "Supervised AI" in the Destinations Catalog, and select the Supervised AI destination.
 3. Go to your [Supervised AI dashboard](https://supervisedai.com/integrations), and copy your "API Key". 
 4. Back in the Segment app, paste the API key into the settings for the Supervised AI destination.
-4. Expect to see data in under 48 hours. We will notify you via email when your model is generated.
+
+> info ""
+> You should see data in Supervised AI within 48 hours. SupervisedAI notifies you by email when your model is generated.
 
 *Optional:* If you would like to sync your past events which were sent through Segment into your Supervised AI instance, you have the option of leveraging Segment's [Replay](https://segment.com/docs/guides/what-is-replay/) feature.
 
