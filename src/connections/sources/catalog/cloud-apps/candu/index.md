@@ -8,7 +8,7 @@ source-type: event
  
 Candu’s Source integration automatically returns user interaction data to Segment, where you can join it with production data. This allows you to understand how a user’s interactions with Candu content drive downstream behaviors, such as feature adoption and renewal. 
 
-This source is maintained by Candu. For any issues with the source, please [reach out to their team](mailto:support@candu.ai).
+This source is maintained by Candu. For any issues with the source, [contact the Candu support team](mailto:support@candu.ai).
 
 > success ""
 > **Good to know**: This page is about the Candu Segment source, which sends data _into_ Segment. There's also a page about the [Candu Segment destination](https://segment.com/docs/connections/destinations/catalog/candu/), which receives data from Segment!
