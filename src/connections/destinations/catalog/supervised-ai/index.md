@@ -14,7 +14,7 @@ This destination is maintained by Supervised AI. For any issues with the destina
 
 1. From the Segment App's Destinations catalog page, click **Add Destination**.
 2. Search for "Supervised AI" in the Destinations Catalog, and select the Supervised AI destination.
-3. Go to your [Supervised AI dashboard](https://supervisedai.com/integrations), and copy your "API Key". 
+3. Go to your [Supervised AI dashboard](https://supervisedai.com/integrations), and copy your "API Key".
 4. Back in the Segment app, paste the API key into the settings for the Supervised AI destination.
 
 > info ""
@@ -49,7 +49,7 @@ Segment sends Identify calls to Supervised AI as an `identify` event.
 If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
 
 ```js
-analytics.track('Clicked Login Button')
+analytics.track('Login Button Clicked')
 ```
 
 Segment sends Track calls to Supervised AI as a `track` event.
