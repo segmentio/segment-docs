@@ -4,9 +4,11 @@ title: Data Lakes (Private Beta)
 redirect_from: '/connections/destinations/catalog/data-lakes/'
 ---
 
-Segment Data Lakes let you send Segment data to cloud data stores (for example AWS S3 to start) in a way that is optimized for Data analytics and Data Science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. However, without Data Lakes, you might need to do a significant amount of processing to get real value out of this data.
+<!-- Mallika TODO: Remove anything that's not getting started/reference material :) -->
 
-Segment Data Lakes blends the experience of using our existing S3 destination and data warehouse destination. It makes data in S3 more actionable and accessible for customers by building in logical data partitions, storing it in a read optimized encoding format (Parquet initially), and integrating deeply with existing schema management tools, such as the AWS Glue Data Catalog. These formats are optimized for use with systems like Spark, Athena, or Machine Learning vendors like DataBricks or DataRobot.
+Segment Data Lakes let you send Segment data to cloud data stores (for example AWS S3 to start) in a format optimized to reduce processing for data analytics and data science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. However, without Data Lakes, you might need to do a significant amount of processing to get real value out of this data.
+
+Data Lakes blends the experience of using our existing S3 destination and data warehouse destination. It makes data in S3 more actionable and accessible for customers by building in logical data partitions, storing it in a read optimized encoding format (Parquet initially), and integrating deeply with existing schema management tools, such as the AWS Glue Data Catalog. These formats are optimized for use with systems like Spark, Athena, or Machine Learning vendors like DataBricks or DataRobot.
 
 With Segment Data Lakes, Data Engineering, Analysts, and Data Science teams can keep hot and cold data in different places, reduce costs, remove resource contention to optimize performance, and have a flexible model to consume data across Parquet to build materialized views and aggregations.
 
@@ -14,25 +16,25 @@ To learn more, read our blog post on [Cultivating your Data Lake](https://segmen
 
 ## How Segment Data Lakes Work
 
-Segment builds a Data Lake on top of what’s already in Segment today - out of the box event collection, Parquet transformations, and a logical table structure, to provide a clean Data Lake to query and gain insights from.
+Segment builds a Data Lake on top of what’s already in Segment today - event collection, Parquet transformations, and a logical table structure, to provide a clean Data Lake to query and gain insights from.
 
 ![](images/datalakesoverview.png)
 
-The three tenets to create a clean and easy to use Data Lake are:
+The data lakes:
 
-- **Fast and efficient**: All data is sent to S3 in Parquet format for easy read access.
-- **Break down data in logical structure**: All data is partitioned by source, event type, date and hour. This narrows in on the data you care about when querying, and provides the same tracks and events tables that you get with Segment’s warehouse product.
-- **Accessible data structure**: Data structure is fed into the Glue Data Catalog for all tools to be able to target specific pieces of data, giving you flexbility to build on top of the raw data set.
+- **Are fast and efficient**: All data is sent to S3 in [Parquet format](https://parquet.apache.org/) for easy read access.
+- **Organize data in logical structures**: All data is partitioned by source, event type, date and hour to allow you to query a narrow scope of data. This also provides Tracks and Events tables similar to the ones that you get in Segment Warehouses.
+- **Accessible data structure**: The data structure is ingested by [Glue Data Catalog](https://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html) so all of your tools can access specific pieces of data, giving you flexibility to build on top of the raw data set.
 
-From here you can connect a multitude of tools to glean insights from the S3 data - Athena, Spectrum, Databricks, EMR.
+From here you can connect many tools to analyze the data - Athena, Spectrum, Databricks, EMR.
 
 ![data lakes architecture](images/data-lakes-architecture.png)
 
-Today, Segment sends Segment event data in S3 for you by doing the processing in an EMR cluster within your AWS account. Conducting the data processing in your VPC will provide privacy and data ownership gains for you short term.
+Today, Segment sends Segment event data to S3 for you by doing the processing in an EMR (Elastic MapReduce) cluster within your AWS account. You can use data lakes to process the data in your own VPC to provide privacy and data ownership gains for you short term.
 
 ### Using a Data Lake with a Data Warehouse
 
-Data Lakes bridges the gap between today’s S3 experience and warehouse experience for Segment customers, in order to provide a flexible blob storage solution to Data teams as they scale.
+Data Lakes provides a flexible blob storage solution to Data teams as they scale.
 
 When using Data Lakes, you can either solely use Data Lakes as your source of data and query all of your data directly from S3, or you can use Data Lakes alongside a data warehouse.
 
@@ -58,7 +60,7 @@ Identify calls
 
 ### Glue Database
 
-When enabling the Data Lakes destination for a source, you set the Glue Database name in the **Settings** tab. The name of the Glue Database is where your schema will be written.
+When you connect Data Lakes to a source, you set the Glue Database name in the **Settings** tab. The name of the Glue Database is where Segment writes your schema.
 
 Setting the Glue Database name will define whether all sources live in one Glue Database, or a different database for each source. For those looking to query data across Data Lakes and a data warehouse simultaneously, the latter option will provide this flexibility.
 

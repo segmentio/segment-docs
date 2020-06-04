@@ -160,7 +160,7 @@ sections:
       title: Destination Filters
     - path: /connections/destinations/destination-functions
       title: Destination Functions
-  - section_title: Storage destinations
+  - section_title: Storage
     slug: connections/storage
     section:
     - path: /connections/storage
@@ -170,11 +170,13 @@ sections:
     - path: /connections/storage/catalog
       title: Storage destinations catalog
       menu_icon: read-more
-    - section_title: Using Warehouses
+    - path: /connections/storage/data-lakes
+      title: Segment Data Lakes
+    - section_title: Data Warehouses
       slug: connections/storage/warehouses
       section:
       - path: /connections/storage/warehouses
-        title: Warehouses and databases
+        title: Warehouses overview
       - path: /connections/storage/warehouses/schema
         title: Warehouses schemas
       - path: /connections/storage/warehouses/selective-sync

@@ -1,5 +1,5 @@
 ---
-title: Choosing a storage destination
+title: Comparing Data Lakes and Warehouses
 ---
 
 <!--
