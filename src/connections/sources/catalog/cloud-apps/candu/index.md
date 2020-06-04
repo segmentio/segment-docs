@@ -16,7 +16,7 @@ This source is maintained by Candu. For any issues with the source, [contact the
 
 ## Getting Started
 
-1. From your Segment UI’s Sources page click on “Add Source”.
+1. From the Sources catalog page in your workspace click **Add Source**.
 2. Search for "Candu" within the Sources Catalog and confirm by clicking "Connect".
 3. Give the Source a nickname and follow the setup flow to "Add Source". The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (e.g., Candu_Prod, Candu_Staging, Candu_Dev).
 4. Copy the Write key from the Segment UI and log in to your Candu account - navigate to Settings > Integrations > Segment Source and paste the key to connect. 
