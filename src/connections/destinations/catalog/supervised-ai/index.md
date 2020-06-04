@@ -3,7 +3,7 @@ title: Supervised AI Destination
 rewrite: true
 ---
 
-[Supervised AI](https://supervisedai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides proactive customer health monitoring for customer facing teams, leveraging machine learning to automate churn prediction and generating playbook recommendations.
+[Supervised AI](https://supervisedai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides proactive customer health monitoring for customer facing teams, using machine learning to automate churn prediction and generating playbook recommendations.
 
 This destination is maintained by Supervised AI. For any issues with the destination, please [contact the Supervised AI Support team](mailto:support@supervisedai.com).
 
@@ -14,10 +14,13 @@ This destination is maintained by Supervised AI. For any issues with the destina
 
 1. From the Segment App's Destinations catalog page, click **Add Destination**.
 2. Search for "Supervised AI" in the Destinations Catalog, and select the Supervised AI destination.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Supervised AI dashboard](https://supervisedai.com/integrations).
-4. Expect to see data in under 48 hours. We will notify you via email when your model is generated.
+3. Go to your [Supervised AI dashboard](https://supervisedai.com/integrations), and copy your "API Key". 
+4. Back in the Segment app, paste the API key into the settings for the Supervised AI destination.
 
-*Optional:* If you would like to sync your past events which were sent through Segment into your Supervised AI instance, you have the option of leveraging Segment's [Replay](https://segment.com/docs/guides/what-is-replay/) feature.
+> info ""
+> You should see data in Supervised AI within 48 hours. SupervisedAI notifies you by email when your model is generated.
+
+*Optional:* You can use Segment [Replays](https://segment.com/docs/guides/what-is-replay/) to sync your past events which were sent through Segment into your Supervised AI instance.
 
 ## Page
 
@@ -27,7 +30,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page()
 ```
 
-Page calls will be sent to Supervised AI as a `pageview`.
+Segment sends Page calls to Supervised AI as a `pageview`.
 
 ## Identify
 
@@ -35,11 +38,11 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ```js
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
-Identify calls will be sent to Supervised AI as an `identify` event.
+Segment sends Identify calls to Supervised AI as an `identify` event.
 
 ## Track
 
@@ -49,7 +52,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.track('Clicked Login Button')
 ```
 
-Track calls will be sent to Supervised AI as a `track` event.
+Segment sends Track calls to Supervised AI as a `track` event.
 
 ## Screen
 
@@ -68,4 +71,4 @@ If you haven't had a chance to review our spec, please take a look to understand
   }
 }
 ```
-Screen calls are sent to Supervised AI as a `screenview`.
+Segment sends Screen calls to Supervised AI as a `screenview`.
