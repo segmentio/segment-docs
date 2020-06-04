@@ -2,7 +2,7 @@
 title: Azure Synapse Analytics Destination
 rewrite: true
 redirect_from:
-  - '/connections/storage/catalog/azuresqldw/'
+  - '/connections/warehouses/catalog/azuresqldw/'
 ---
 
 Azure's [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/), previously known as Azure SQL Data Warehouse, is a limitless analytics service that brings together enterprise data warehousing and Big Data analytics.
@@ -54,7 +54,7 @@ Lastly, assign this new user a [resource allocation class](https://docs.microsof
 EXEC sp_addrolemember 'largerc', 'Segment';
 ```
 
-By default, Azure Synapse Analytics cannot be connected to from the public internet. In order for Segment to connect, a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/connections/warehouses/faq/#which-ips-should-i-whitelist) is needed.
+By default, Azure Synapse Analytics cannot be connected to from the public internet. In order for Segment to connect, a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist) is needed.
 
 ### Configure an Azure SQL Data Warehouse Destination in Segment
 
@@ -77,4 +77,4 @@ The default [resource allocation class](https://docs.microsoft.com/en-us/azure/s
 
 ### Segment is not able to connect to Azure Synapse Analytics
 
-Make sure a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/connections/warehouses/faq/#which-ips-should-i-whitelist) is configured.
+Make sure a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist) is configured.

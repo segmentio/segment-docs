@@ -2,7 +2,7 @@
 title: Postgres Warehouse Destination
 rewite: true
 redirect_from:
-  - '/connections/storage/catalog/postgres/'
+  - '/connections/warehouses/catalog/postgres/'
 ---
 PostgreSQL, often simply Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. As a database server, its primary functions are to store data securely and return that data in response to requests from other software applications. It can handle workloads ranging from small single-machine applications to large Internet-facing applications (or for data warehousing) with many concurrent users. PostgreSQL is the default database on macOS Server, and it is also available for Microsoft Windows and Linux (supplied in most distributions).
 

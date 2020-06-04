@@ -2,7 +2,7 @@
 title: Azure SQL Database Destination
 hidden: true
 redirect_from:
-  - '/connections/storage/catalog/azuresqldb/'
+  - '/connections/warehouses/catalog/azuresqldb/'
 ---
 
 > info ""

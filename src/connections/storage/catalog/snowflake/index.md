@@ -2,7 +2,7 @@
 title: Snowflake Destination
 rewrite: true
 redirect_from:
-  - '/connections/storage/catalog/snowflake/'
+  - '/connections/warehouses/catalog/snowflake/'
 ---
 
 [Snowflake](https://docs.snowflake.net/manuals/index.html) is a data warehouse built for the cloud. Snowflake delivers performance, simplicity, concurrency and affordability.

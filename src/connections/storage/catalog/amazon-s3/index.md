@@ -2,7 +2,7 @@
 title: Amazon S3 Destination
 redirect_from:
   - '/connections/destinations/catalog/amazon-s3/'
-  - '/connections/storage/catalog/amazon-s3/'
+  - '/connections/waser/catalog/amazon-s3/'
 ---
 
 ## Getting Started

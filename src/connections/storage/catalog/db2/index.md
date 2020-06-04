@@ -2,7 +2,7 @@
 title: IBM Db2 Destination
 rewrite: true
 redirect_from:
-  - '/connections/storage/catalog/db2/'
+  - '/connections/warehouses/catalog/db2/'
 ---
 
 Use [IBM Db2](https://www.ibm.com/analytics/us/en/db2/) with Segment to get
@@ -84,7 +84,7 @@ database shortly.
 
 If your Db2 Warehouse is in a private network, be sure to [whitelist
 Segment's IP
-address](https://segment.com/docs/connections/warehouses/faq/#which-ips-should-i-whitelist).
+address](https://segment.com/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist).
 Otherwise, we will not be able to load your data.
 
 ### Unique User
