@@ -6,6 +6,7 @@ title: Choosing a storage destination
 TODO: figure out title, add to nav.
 diagrams? Illustrations?
 Add sections about S3 and GCS
+links to analytics academy stuff on owning your data
 -->
 
 As Segment builds new data storage products over time, each product evolves from prior products to best support the needs of customers. Segment Data Lakes is an evolution of the warehouses product that meets the changing needs of customers. As such, you’ll find some areas where there are differences between the Data Lakes and Warehouses products, instead of seeing exact parity between the two.
@@ -83,7 +84,7 @@ Similar to tables, columns between Warehouses and Data Lakes will be the same, e
 
 
 
-## Deletion and suppression\
+## Deletion and suppression
 
 [User deletions](/docs/privacy/user-deletion-and-suppression/) are currently not supported in Data Lakes, while they are supported in Warehouses.
 
