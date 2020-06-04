@@ -30,7 +30,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page()
 ```
 
-Page calls will be sent to Supervised AI as a `pageview`.
+Segment sends Page calls to Supervised AI as a `pageview`.
 
 ## Identify
 
