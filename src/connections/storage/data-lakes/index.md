@@ -41,6 +41,11 @@ The Data Lakes and Warehouses products are compatible using a mapping, but do no
 Additionally, Data Lakes allow you to configure different components to increase compatibility with Warehouses. This configuration includes the number of Glue Databases you use, setting a table prefix, and selecting between two schemas. Read more about [setting up Data Lakes to increase Warehouse compatibility here](/docs/connections/storage/catalog/data-lakes/).
 
 
+## Set up a Data Lake
+
+Detailed set up instructions can be found in the [Data Lakes catalog page](/docs/connections/storage/catalog/data-lakes/).
+
+
 ## Data Lakes Schema
 
 ### S3 Partition Structure
