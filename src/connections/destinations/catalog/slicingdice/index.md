@@ -95,7 +95,7 @@ Group calls will be sent to SlicingDice using the following columns:
 * `{source_name}-groups-{attribute_name}`: contains the `traits` attributes of a Group call, saving each one as an individual column
 * `{source_name}-groups-context-{attribute_name}`: contains the "context" attributes of a Group call, saving each one as an individual column
 
-    *Observation: Group calls will also be sent to SlicingDice using the following [Account](https://segment.com/docs/connections/warehouses/#warehouse-schemas) columns that holds the latest state of a group.*
+    *Observation: Group calls will also be sent to SlicingDice using the following [Account](https://segment.com/docs/connections/storage/warehouses/schema/) columns that holds the latest state of a group.*
     * `{source_name}-accounts-group-id`: contains the `groupId` attribute of a Group call
     * `{source_name}-accounts-{attribute_name}`: contains the `traits` attributes of a Track call, saving each one as an individual column
     * `{source_name}-accounts-context-{attribute_name}`: contains the `context` attributes of a Track call, saving each one as an individual column

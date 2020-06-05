@@ -160,30 +160,44 @@ sections:
       title: Destination Filters
     - path: /connections/destinations/destination-functions
       title: Destination Functions
-  - section_title: Warehouses
-    slug: connections/warehouses
+  - section_title: Data Storage
+    slug: connections/storage
     section:
-    - path: /connections/warehouses
-      title: Warehouses and Data Storage
-    - path: /connections/warehouses/catalog
-      title: Warehouses catalog
+    - path: /connections/storage
+      title: Data Storage overview
+    - path: /connections/storage/catalog
+      title: Storage destinations catalog
       menu_icon: read-more
-    - path: /connections/warehouses/selective-sync
-      title: Warehouse Selective Sync
-    - path: /connections/warehouses/health
-      title: Warehouse Health Dashboards
-    - path: /connections/warehouses/choose-warehouse
-      title: Choosing a Warehouse
-    - path: /connections/warehouses/faq
-      title: Warehouse FAQs
-    - path: /connections/warehouses/add-warehouse-users
-      title: How do you add users?
-    - path: /connections/warehouses/warehouse-errors
-      title: What does my warehouse error mean?
-    - path: /connections/warehouses/redshift-faq
-      title: Redshift cluster and Redshift connector limitations
-    - path: /connections/warehouses/redshift-tuning
-      title: How Do I Speed Up My Redshift Queries?
+    - section_title: Segment Data Lakes
+      slug: connections/storage/data-lakes
+      section:
+      - path: /connections/storage/data-lakes
+        title: Data Lakes overview
+      - path: /connections/storage/data-lakes/comparison
+        title: Data Lakes vs Warehouses
+    - section_title: Data Warehouses
+      slug: connections/storage/warehouses
+      section:
+      - path: /connections/storage/warehouses
+        title: Warehouses overview
+      - path: /connections/storage/warehouses/schema
+        title: Warehouses schemas
+      - path: /connections/storage/warehouses/selective-sync
+        title: Warehouse selective sync
+      - path: /connections/storage/warehouses/health
+        title: Warehouse Health dashboards
+      - path: /connections/storage/warehouses/choose-warehouse
+        title: Choosing a warehouse
+      - path: /connections/storage/warehouses/faq
+        title: Warehouse FAQs
+      - path: /connections/storage/warehouses/add-warehouse-users
+        title: How do you add users?
+      - path: /connections/storage/warehouses/warehouse-errors
+        title: What does my warehouse error mean?
+      - path: /connections/storage/warehouses/redshift-faq
+        title: Redshift cluster and Redshift connector limitations
+      - path: /connections/storage/warehouses/redshift-tuning
+        title: How do I speed up my redshift queries?
   - path: /connections/test-connections
     title: How do I test my connections?
   - path: /connections/data-export-options
