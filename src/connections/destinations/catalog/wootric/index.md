@@ -60,4 +60,12 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page()
 ```
 
-Page calls are sent to YOURINTEGRATION as a `pageview`.
+Page calls are sent to Wootric as a pageview.
+
+When you call page, Wootric will track the URL, page name, and page path that you are currently on. You can use this information in the Wootric Settings to trigger surveys by using our Targeted Sampling feature.
+Segment’s page variables recognized as Wootric’s standard page fields are:
+
+| Segment Parameter  | Wootric Parameter                   | Description                          |
+| ------------------ | ------------------------------------ | ------------------------------------ |
+| `name`            | `wootricSettings.email`           | The name assigned to this page.           |
+| `path`            | `wootricSettings.page_info.path`           | The path portion of the URL of the page. Equivalent to the canonical path which defaults to location.pathname from the DOM API. |
