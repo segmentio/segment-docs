@@ -130,15 +130,15 @@ Data Lakes currently supports data from all event sources, including website lib
 Data Lakes does not currently support any [object cloud sources] (https://segment.com/docs/connections/sources/#object-cloud-sources), as well as the users and accounts tables from event cloud sources.
 
 ##### Are user deletions and suppression supported?
-User deletions are currently not supported in Data Lakes, however user suppression is.
+User deletions are currently not supported in Data Lakes, however user suppression is supported.
 
 ##### How does Data Lakes work with Protocols?
 Data Lakes does not currently have a direct integration with [Protocols] (https://segment.com/docs/protocols/).
 
 Today you can expect any changes made with Protocols to events at the source level will impact data for all downstream destinations, including Data Lakes.
-- *Mutated events* - If Protocols mutates an event due to a rule set in the Tracking Plan, then that mutation will appear in Segment's internal archives and thus reflected in both Data Lakes and Warehouses. To illustrate this, if you were to want the event `product_id` to be reflected as `productID` and have set this in Protocols, then this event will appear in both Data Lakes and Warehouses as `productID`.
-- *Blocked events* - If an event is set to be blocked in the Protocols Tracking Plan, then the event does not get forwarded to any downstream Segment destinations, including Warehouses and Data Lakes. However events marked with a violation will be passed to both Warehouses and Data Lakes.
+- *Mutated events* - If Protocols mutates an event due to a rule set in the Tracking Plan, then that mutation will appear in Segment's internal archives and thus reflected in Data Lakes. To illustrate this, if you were to want the event `product_id` to be reflected as `productID` and have set this in Protocols, then this event will appear in both Data Lakes and Warehouses as `productID`.
+- *Blocked events* - If an event is set to be blocked in the Protocols Tracking Plan, then the event does not get forwarded to any downstream Segment destinations, including Data Lakes. However events marked with a violation will be passed to Data Lakes.
 
-Data types and labels available in Protocols are not currently supported by Data Lakes or Warehouses.
-- *Data Types* - Warehouses and Data Lakes will infer the data type for each event using their own schema inference systems instead of using a data type set in Protocols for an event. This may lead to instances where the data type set in Warehouses and/or Data Lakes is different than the data type set in the tracking plan. For example, if you set `product_id` to be an integer in the Protocols Tracking Plan, if the event was sent into Segment as a string, then Data Lakes and Warehouses may infer this data type as a string in the Glue Data Catalog.
+Data types and labels available in Protocols are not currently supported by Data Lakes.
+- *Data Types* - Data Lakes will infer the data type for each event using its own schema inference systems instead of using a data type set in Protocols for an event. This may lead to instances where the data type set in Data Lakes is different than the data type set in the tracking plan. For example, if you set `product_id` to be an integer in the Protocols Tracking Plan, if the event was sent into Segment as a string, then Data Lakes may infer this data type as a string in the Glue Data Catalog.
 - *Labels* - Labels set in Protocols are not sent to Data Lakes.

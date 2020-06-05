@@ -9,7 +9,7 @@ Add sections about S3 and GCS
 links to analytics academy stuff on owning your data
 -->
 
-As Segment builds new data storage products, each product evolves from prior products to best support the needs of customers. Segment Data Lakes is an evolution of the warehouses product that meets the changing needs of customers. As such, you’ll find some areas where there are differences between the Data Lakes and Warehouses products, instead of seeing exact parity between the two.
+As Segment builds new data storage products, each product evolves from prior products to best support the needs of customers. Segment Data Lakes is an evolution of the Warehouses product that meets the changing needs of customers. As such, you’ll find some areas where there are differences between the Data Lakes and Warehouses products, instead of seeing exact parity between the two.
 
 With this, the two products will not be in parity with each other, but instead will be compatible because there will be an understandable mapping between Data Lakes and Warehouses, which can enable you to identify and manage the differences.
 
@@ -81,14 +81,6 @@ Similar to tables, columns between Warehouses and Data Lakes will be the same, e
 - (Redshift only) `uuid`, `uuid_ts` - Redshift customers will see columns for `uuid` and `uuid_ts`, which are used for de-duplication in Redshift; Other warehouses may have similar columns. These aren’t relevant for Data Lakes so the columns won’t appear there.
 - `sent_at` - Warehouses computes the `sent_at` value based on timestamps found in the original event in order to account for clock skews and timestamps in the future. This was done when the Segment pipeline didn’t do this on it’s own, however it now calculates for this so Data Lakes does not need to do any additional computation, and will send the value as-is when computed at ingestion.
 - `integrations` - Warehouses does not include the integrations object, where as Data Lakes flattens and includes the integrations object. You can read more about the `integrations` object [here](/docs/guides/#filtering-with-the-integrations-object).
-
-
-
-## Deletion and suppression
-
-[User deletions](/docs/privacy/user-deletion-and-suppression/) are currently not supported in Data Lakes, while they are supported in Warehouses.
-
-User suppression is supported by both Data Lakes and Warehouses.
 
 
 ## Protocols
