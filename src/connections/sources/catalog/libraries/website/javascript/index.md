@@ -729,6 +729,9 @@ Using `analytics.js` does not offer a _huge_ performance benefit, but it is more
 
 One option, if you don't want to use any bundled 3rd-party tools, is to use our browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package.
 
+### Bundle size
+Segment's own javascript snippet has minimal impact on the size of the pages and will only increase the page size by ~1.1KB. The snippet then asynchronously requests and loads the main Segment javascript bundle (`analytics.min.js`). This file is a customized bundle containing your settings, and the code needed to load your enabled integrations, therefore, the size of the `analytics.min.js` can vary depending on the number and type of enabled integrations. Without any integrations,  the size of the `analytics.min.js` is ~62KB. Enabling integrations will slightly increase the size of this file. 
+
 ## Retries
 
 When enabled, analytics.js automatically retries network and server errors. With persistent retries, analytics.js can:
