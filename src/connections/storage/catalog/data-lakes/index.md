@@ -16,9 +16,11 @@ Before you set up Segment Data Lakes, you need the following resources:
 
 ## Step 1 - Set Up AWS Resources
 
-You can use this [open source Terraform module](https://github.com/segmentio/terraform-aws-data-lake) to automate much of the set up work to get Segment Data Lakes up and running. You can also use our [UI based setup docs](https://docs.google.com/document/d/1GlWzS5KO4QaiVZx9pwfpgF-N-Xy2e_QQcdYSX-nLMDU/edit?usp=sharing) if you prefer.
+You can use the [open source Terraform module](https://github.com/segmentio/terraform-aws-data-lake) to automate much of the set up work to get Segment Data Lakes up and running. If you’re familiar with Terraform, you can modify the module to meet your organization’s needs. However we can only guarantee support for the template as provided.
 
-The Terraform module and UI instructions provide a base level of permissions to Segment (for example, the correct IAM role to allow Segment to create Glue databases on your behalf). If you want stricter permissions, or other custom configurations, you can customize these manually.
+You can also use our [manual set up instructions](https://docs.google.com/document/d/1GlWzS5KO4QaiVZx9pwfpgF-N-Xy2e_QQcdYSX-nLMDU/view) to configure these AWS resources if you prefer.
+
+The Terraform module and manual set up instructions both provide a base level of permissions to Segment (for example, the correct IAM role to allow Segment to create Glue databases on your behalf). If you want stricter permissions, or other custom configurations, you can customize these manually.
 
 ## Step 2 - Enable Destination
 
@@ -53,9 +55,9 @@ Once the Data Lakes destination is enabled, the first sync will begin approximat
 
 ## (Optional) Step 3 - Replay Historical Data
 
-If you’re a Business plan customer and would like to increase the size of your data set with a [replay of historical data](/docs/guides/what-is-replay/) into your Data Lake, [contact the Segment Support team](https://segment.com/help/contact/) to request a replay.
+If you’re on a Business plan and want to add historical data to your data set using a [replay of historical data](/docs/guides/what-is-replay/) into your Data Lake, [contact the Segment Support team](https://segment.com/help/contact/) to request one.
 
-The time needed to process a Replay can varying depending on the volume of data and number of events in each source. If you decide to run a Replay, we recommend that you start with data from the last six months to get started, and then replay additional data if you find you need more.
+The time needed to process a Replay can vary depending on the volume of data and number of events in each source. If you decide to run a Replay, we recommend that you start with data from the last six months to get started, and then replay additional data if you find you need more.
 
 Segment uses a creates a separate EMR cluster to run replays, then destroys it when the replay finished. This ensures that regular Data Lakes syncs are not interrupted, and helps the replay finish faster.
 

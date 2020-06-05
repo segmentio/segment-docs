@@ -112,7 +112,7 @@ Examples: `ios_prod.page_view`, `ios_dev.identify`
 
 Data Lakes infers the data type for the event it receives. Data Lakes looks at the group of events received every hour to infer the data type for that event.
 
-If a bad data type is seen, such as text in place of a number or an incorrectly formatted date, Data Lakes attempts a best effort conversion to cast the field to the target data type. Fields that cannot be casted may be dropped. There is always the option to correct the data type in the schema to the desired type and perform a replay to ensure no data is lost. [Contact us](https://segment.com/help/contact/) if a data type needs to be corrected.
+If a bad data type is seen, such as text in place of a number or an incorrectly formatted date, Data Lakes attempts a best effort conversion to cast the field to the target data type. Fields that cannot be cast may be dropped. You can also correct the data type in the schema to the desired type and Replay to ensure no data is lost. [Contact Segment Support](https://segment.com/help/contact/) if you find a data type needs to be corrected.
 
 
 ## FAQs
@@ -125,7 +125,7 @@ Data Lakes currently offers 12 syncs in a 24 hour period. Data Lakes does not _c
 
 Segment's overall guarantee for duplicate data also applies to data in Data Lakes: 99% guarantee of no duplicates for data within a [24 hour look-back window](https://segment.com/docs/guides/duplicate-data/).
 
-If you have advanced requirements for duplicates, you can add de-duplication steps downstream to reduce duplicates outside this look back window.
+If you have advanced requirements for de-duplication, you can add de-duplication steps downstream to reduce duplicates outside this look back window.
 
 ##### Can I send all of my Segment data into Data Lakes?
 
@@ -141,11 +141,11 @@ User deletions are currently not supported in Data Lakes, however user suppressi
 
 Data Lakes does not currently have a direct integration with [Protocols](https://segment.com/docs/protocols/).
 
-Today, any changes to events at the source level (made with Protocols) also change the data for all downstream destinations, including Data Lakes.
+Today, any changes to events at the source level made with Protocols also change the data for all downstream destinations, including Data Lakes.
 
 - *Mutated events* - If Protocols mutates an event due to a rule set in the Tracking Plan, then that mutation appears in Segment's internal archives and is reflected in Data Lakes. For example, if you used Protocols to mutate the event `product_id` to be `productID`, then the event appears in both Data Lakes and Warehouses as `productID`.
 
-- *Blocked events* - If a Protocols Tracking Plan blocks an event, then the event is not forwarded to any downstream Segment destinations including Data Lakes. However events which are only marked with a violation _are_ passed to Data Lakes.
+- *Blocked events* - If a Protocols Tracking Plan blocks an event, the event is not forwarded to any downstream Segment destinations, including Data Lakes. However events which are only marked with a violation _are_ passed to Data Lakes.
 
 Data types and labels available in Protocols are not currently supported by Data Lakes.
 
