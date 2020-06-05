@@ -23,7 +23,7 @@ Segment builds a Data Lake on top of what’s already in Segment today - event c
 The data lakes:
 
 - **Are fast and efficient**: All data is sent to S3 in [Parquet format](https://parquet.apache.org/) for easy read access.
-- **Organize data in logical structures**: All data is partitioned by source, event type, date and hour to allow you to query a narrow scope of data. This also provides Tracks and Events tables similar to the ones that you get in Segment Warehouses.
+- **Organize data in logical structures**: All data is partitioned by source, event type, date and hour to allow you to query a narrower scope of data, and provides the same 'events' tables that you are familiar with from Segment's warehouse product.
 - **Accessible data structure**: The data structure is ingested by [Glue Data Catalog](https://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html) so all of your tools can access specific pieces of data, giving you flexibility to build on top of the raw data set.
 
 From here you can connect many tools to analyze the data - Athena, Spectrum, Databricks, EMR.
@@ -36,11 +36,11 @@ Today, Segment sends Segment event data to S3 for you by doing the processing in
 
 Data Lakes provides a flexible blob storage solution to Data teams as they scale.
 
-When using Data Lakes, you can either solely use Data Lakes as your source of data and query all of your data directly from S3, or you can use Data Lakes alongside a data warehouse.
+When using Data Lakes, you can either solely use Data Lakes as your source of data and directly query all of your data, or you can use Data Lakes alongside a data warehouse.
 
-The Data Lakes and Warehouses products are not in parity with each other, but instead they are compatible because there is an understandable mapping between the two. This mapping enables you to identify and manage the differences to bridge the experience between Data Lakes and Warehouses.
+The Data Lakes and Warehouses products are not in parity with each other, but instead they are compatible because there is an understandable mapping between the two. This mapping enables you to identify and manage the differences to bridge the experience between Data Lakes and Warehouses. You can see the differences between Data Lakes and Warehouses [here] ().
 
-Additionally, Data Lakes offers the ability to configure different components of the set up to increase compatibility with Warehouses. This configuration includes the number of Glue Databases used, setting a table prefix, and selecting between two schemas.
+Additionally, Data Lakes offers the ability to configure different components of the set up to increase compatibility with Warehouses. This configuration includes the number of Glue Databases used, setting a table prefix, and selecting between two schemas. Read more information about how to set up Data Lakes to increase compatibility with Warehouses [here] ().
 
 
 ## Data Lakes Schema
