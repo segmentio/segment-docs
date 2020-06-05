@@ -97,7 +97,7 @@ Access to only log into a workspace. Users with minimal access cannot view any r
 ## PII Access
 
 > info "PII Access is in Public Preview"
-> To join the Public Preview, send an email to [beta@segment.com](mailto:beta@segment.com). The use is governed by the [Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
+> To join the Public Preview, send an email to [beta@segment.com](mailto:beta@segment.com). The use of this feature is governed by the [Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
 
 The Segment App does not show detected Personally Identifiable Information (PII) to workspace members if the information matches specific expected formats for PII. When PII Access is turned “off”, detected PII is masked based on [red or yellow default matchers](/docs/privacy/portal/#default-pii-matchers) and any [custom matchers](/docs/privacy/portal/#custom-pii-matchers) defined in the Privacy Portal.
 
