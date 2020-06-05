@@ -3,8 +3,6 @@ hidden: true
 title: Data Lakes (Beta)
 redirect_from: '/connections/destinations/catalog/data-lakes/'
 ---
-<!-- Mallika TODO: Remove anything that's in the catalog page, make this just the overview/how it works/conceptual stuff. :) -->
-
 
 Segment Data Lakes let you send Segment data to cloud data stores (for example AWS S3) in a format optimized to reduce processing for data analytics and data science workloads. Segment data is great for building machine learning models for personalization and recommendations, and for other large scale advanced analytics. However, without Data Lakes, you might need to do a lot of processing to get real value out of your data.
 
@@ -38,7 +36,7 @@ Data Lakes provides a flexible blob storage solution to Data teams as they scale
 
 When you use Data Lakes, you can either use Data Lakes _only_ as your source of data and query all of your data directly, or you can use Data Lakes in addition to one or more data warehouses.
 
-The Data Lakes and Warehouses products are compatible using a mapping, but do not maintain exact parity with each other. This mapping helps you to identify and manage the differences between the two storage solutions, so you can easily understand how the data in each is related. You can [read more about the differences between Data Lakes and Warehouses](comparison/).
+The Data Lakes and Warehouses products are compatible using a mapping, but do not maintain exact parity with each other. This mapping helps you to identify and manage the differences between the two storage solutions, so you can easily understand how the data in each is related. You can [read more about the differences between Data Lakes and Warehouses](/docs/connections/storage/data-lakes/comparison/).
 
 Additionally, Data Lakes allow you to configure different components to increase compatibility with Warehouses. This configuration includes the number of Glue Databases you use, setting a table prefix, and selecting between two schemas. Read more about [setting up Data Lakes to increase Warehouse compatibility here](/docs/connections/storage/catalog/data-lakes/).
 
