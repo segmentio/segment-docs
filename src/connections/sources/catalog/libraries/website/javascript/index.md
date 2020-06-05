@@ -785,7 +785,7 @@ function({payload, next, integration})
 
 Where,
 - `payload` represents the event payload being sent by Analytics.js, if you wish to change the value of the payload you should mutate the `payload.obj` object, an example of which can be seen below
-- `next` represents the next function in the destination middleware chain to be called, if the provided middleware does not call this function then the event will be dropped completely for given Integration
+- `next` represents the next function in the destination middleware chain to be called, if the provided middleware does not call this function then the event will be dropped completely for the given Integration
 - `integration` is a string value representing the integration that this middleware will be applied to
 
 ```js
