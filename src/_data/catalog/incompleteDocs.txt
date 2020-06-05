@@ -34,3 +34,4 @@ src/connections/sources/catalog/libraries/server/node-js
 src/connections/destinations/catalog/amazon-s3
 src/connections/sources/catalog/cloud-apps/candu
 src/connections/destinations/catalog/gist
+src/connections/destinations/catalog/gist
