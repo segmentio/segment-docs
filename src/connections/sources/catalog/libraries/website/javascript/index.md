@@ -798,7 +798,7 @@ var DMW1 = function({ payload, integration, next }) {
 The above defined Source & Destination Middleware can be added to the Analytics.js execution chain as:
 ```js
 analytics.addSourceMiddleware(SMW1);
-analytics.addDestinationMiddleware('integrationA', [DMW2]);
+analytics.addDestinationMiddleware('integrationA', [DMW1]);
 ```
 
 **Notes:** 
