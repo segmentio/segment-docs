@@ -1,6 +1,6 @@
 ---
 hidden: true
-title: Data Lakes (Private Beta)
+title: Data Lakes (Beta)
 redirect_from: '/connections/destinations/catalog/data-lakes/'
 ---
 
