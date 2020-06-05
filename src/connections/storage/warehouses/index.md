@@ -23,6 +23,8 @@ Examples of data warehouses include Amazon Redshift, Google BigQuery, and Postgr
 > info "Looking for the Warehouse Schemas docs?"
 >  They've moved! Check them out [here](schema/).
 
+{% include components/media-icon.html href="https://segment.com/academy/intro/when-to-use-sql-for-analysis/&referrer=docs" icon="media/icon-academy.svg" title="Analytics Academy: When to use SQL for analysis" content="When your existing analytics tools can't answer your questions, it's time to level-up and use SQL for analysis." %}
+
 ### More Help
 
 [How do I send custom data to my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse/)
@@ -44,7 +46,6 @@ Check out our [Frequently Asked Questions about Warehouses](/docs/connections/st
 [Where do I find my source slug?](/docs/connections/storage/warehouses/faq/#how-do-i-find-my-source-slug)
 
 ### Setting up a warehouse
-
 
 [How do I create a user, grant usage on a schema and then grant the privileges that the user will need to interact with that schema?](/docs/connections/storage/warehouses/add-warehouse-users/)
 

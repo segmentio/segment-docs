@@ -23,7 +23,6 @@ Segment offers several [Data Storage Destinations](/docs/connections/storage/cat
 Need to write a section that explains: (Each of these could be a heading)
 
 - How do they work (streaming vs bulk loading) -- to be added later
-- What's included in the free tier -- added
 
 make sure there's a catalog entry in warehouses.yml for everything we're going to list here so it gets built
 
