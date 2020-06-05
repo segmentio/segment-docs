@@ -51,7 +51,7 @@ The following events will be tracked automatically when lifecycle events are ena
 
 This event fires when a user **first** opens your mobile application. Note, if the user never opens your app after installing, we will not be able to collect this event. This event does not wait for attribution or campaign information to be received, and is collected automatically by our SDKs. Advertising providers like Facebook and Google require discrete install events to correctly attribute installs to ads served through their platform.
 
-{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Installed", "properties": { "version": "1.2.3", "build": 1234 }}'}}} {% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Installed", "properties": { "version": "1.2.3", "build": "1234" }}'}}} {% endcomment %}
 
 
 ```json
@@ -60,7 +60,7 @@ This event fires when a user **first** opens your mobile application. Note, if t
   "action": "track",
   "event": "Application Installed",
   "properties": {
-    "version": "1.2.3", "build": 1234
+    "version": "1.2.3", "build": "1234"
   }
 }
 ```
@@ -118,7 +118,7 @@ This event should be sent when a user backgrounds the application upon [`applica
 
 This event fires when a user updates the application. Our SDK will automatically collect this event in lieu of an "Application Opened" event when we determine that the Open is first since an update.
 
-{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Updated", "properties": { "previous_version": "1.1.2", "previous_build": 1234,  "version": "1.2.0", "build": 1456 }}'}}} {% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Updated", "properties": { "previous_version": "1.1.2", "previous_build": 1234,  "version": "1.2.0", "build": "1456" }}'}}} {% endcomment %}
 
 ```json
 {
@@ -127,9 +127,9 @@ This event fires when a user updates the application. Our SDK will automatically
   "event": "Application Updated",
   "properties": {
     "previous_version": "1.1.2",
-    "previous_build": 1234,
+    "previous_build": "1234",
     "version": "1.2.0",
-    "build": 1456
+    "build": "1456"
   }
 }
 ```
