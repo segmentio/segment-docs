@@ -758,7 +758,7 @@ addSourceMiddleware(middleware)
 addDestinationMiddleware(targetIntegration, [middleware1, middleware2, ...])
 ```
 
-The first function allows you to manipulate the payload and filter events on a per source basis (Source Middleware), whilst the other function allow this on a per integration/destination basis (Destination Middleware). Middleware execute in the browser. 
+The first function allows you to manipulate the payload and filter events on a per source basis (Source Middleware), whilst the other function allows this on a per integration/destination basis (Destination Middleware). Middleware execute in the browser. 
 
 ### Usage
 The function signature for creating Source Middleware has three parameters:
