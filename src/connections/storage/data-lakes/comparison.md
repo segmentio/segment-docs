@@ -11,9 +11,9 @@ links to analytics academy stuff on owning your data
 
 As Segment builds new data storage products, each product evolves from prior products to best support the needs of customers. Segment Data Lakes is an evolution of the Warehouses product that meets the changing needs of customers. As such, you’ll find some areas where there are differences between the Data Lakes and Warehouses products, instead of seeing exact parity between the two.
 
-With this, the two products will not be in parity with each other, but instead will be compatible because there will be an understandable mapping between Data Lakes and Warehouses, which can enable you to identify and manage the differences.
+With this, the two products are not interoperable, but are compatible with a configurable mapping. This mapping helps you to identify and manage the differences between the two storage solutions, so you can easily understand how the data in each is related.
 
-For customers who are currently or have previously used Segment Warehouses, Data Lakes’s feature “Warehouse Compatibility Mode” provides a schema which minimizes the differences between Warehouses and Data Lakes. The remaining differences found between Data Lakes (with Warehouse Compatibility Mode) and Warehouses are mapped below.
+If you currently use or previously used Segment Warehouses, then Data Lakes’s “Warehouse Compatibility Mode” provides a schema which minimizes the differences between Warehouses and Data Lakes. The remaining differences found between Data Lakes (with Warehouse Compatibility Mode) and Warehouses are explained below.
 
 
 ## Data Freshness
@@ -22,21 +22,21 @@ Warehouses and Data Lakes currently offer different sync frequencies:
 
 Warehouses can sync up to once an hour, with the ability to set a custom sync schedule and [selectively sync](/docs/connections/warehouses/selective-sync/) collections and properties within a source to Warehouses.
 
-Data Lakes currently offers 12 syncs in a 24 hour period, and does not offer support for a custom sync schedule or selective sync at this time.
-
+Data Lakes currently offers 12 syncs in a 24 hour period, and does not currently offer custom sync schedules or selective sync.
 
 ## Duplicates
 
-The guarantee for duplicate data found in Data Lakes matches Segment’s overall guarantee for duplicates - 99% guarantee of no duplicates for data within a [24 hour look back window](/docs/guides/duplicate-data/).
+Segment's overall guarantee for duplicate data also applies to data in Data Lakes: 99% guarantee of no duplicates for data within a [24 hour look-back window](https://segment.com/docs/guides/duplicate-data/). The guarantee remains the same for Warehouses. However, Warehouses usually contain fewer duplicates because they run an additional duplicate filtering process which is not available in Data Lakes.
 
-When comparing this to Warehouses, the guarantee remains the same, however Warehouses will typically contain fewer duplicates because it has a secondary process to filter out duplicates, which Data Lakes does not have. Both Data Lakes and Warehouses (and all Segment destinations) rely on the [de-duplication process](/docs/guides/duplicate-data/) at time of event ingest, however Warehouses also has its own de-duplication system built in to further reduce the volume of duplicates.
+Both Data Lakes and Warehouses (and all Segment destinations) rely on the [de-duplication process](/docs/guides/duplicate-data/) at time of event ingest, however Warehouses also has its own de-duplication system built in to further reduce the volume of duplicates.
 
-To ensure Data Lakes is meeting the duplicate guarantee within a 24 hour look back window, as well as managing processing costs for customers, Data Lakes only uses the de-duplication process at time of event ingest. The result will remove duplicates found within the 24 hour look back period, which is sufficient for most analytical use cases. Customers who have advanced requirements for duplicates can add an additional de-duplication step downstream to further reduce duplicates beyond this look back window.
+To ensure Data Lakes is meeting the duplicate guarantee within a 24 hour look back window, as well as managing processing costs for customers, Data Lakes only uses the de-duplication process at time of event ingest. The result removes duplicates found within the 24 hour look back period, which is sufficient for most analytical use cases.
+If you have advanced requirements for duplicates, you can add de-duplication steps downstream to reduce duplicates outside this look back window.
 
 
 ## Object vs Event Data
 
-Warehouses support both event and object data today, whereas Data Lakes currently only supports event data.
+Warehouses support both event and object data today, where Data Lakes currently only support event data.
 
 Of the different types of [sources](/docs/connections/sources/) Segment supports, the following event sources are supported by Data Lakes today:
 
@@ -48,6 +48,7 @@ Of the different types of [sources](/docs/connections/sources/) Segment supports
 Data Lakes does not currently support object cloud sources, but will in the future.
 
 ## Schema
+
 ### Data Types
 
 Warehouses and Data Lakes both infer data types for the events each receives. Since events are received by Warehouses one by one, Warehouses look at the first event received every hour to infer the data type for subsequent events. Data Lakes uses a similar approach, however because it receives data every hour, Data Lakes is able to look at a group of events to infer the data type.
