@@ -492,18 +492,22 @@ persisted across device reboots, so you can simply call this once during your ap
 
 ## Middlewares
 
-Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify or reject events. Middlewares are available on analytics-android 4.3.0 and higher.
+Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. Source Middleware are available on analytics-android 4.3.0 and higher. Destination Middleware are available on analytics-android 4.7.0 and higher.
 
-You can register middlewares during construction with the `.middleware` method on the builder. Middlewares are invoked for all events, including automatically tracked events, and external event sources like Adjust and Optimizely. This offers you the ability the customize those messages to fit your use case even if the event was sent outside your source code.
+You can register source middleware during construction with the `.useSourceMiddleware` method on the builder. These middleware are invoked for all events, including automatically tracked events, and external event sources like Adjust and Optimizely.
 
-For example, you might want to record the [device year class](https://github.com/facebook/device-year-class) with your events. Previously, you would have to do this everywhere you trigger an event with the Segment SDK. With middlewares, you can do this in a single place.
+You can register destination middleware during construction with the `.useDestinationMiddleware` method on the builder. These middleware are invoked for all events to the specific device-mode destination.
+
+These middleware offer you the ability the customize those messages to fit your use case even if the event was sent outside your source code.
+
+For example, you might want to record the [device year class](https://github.com/facebook/device-year-class) with your events. Previously, you would have to do this everywhere you trigger an event with the Segment SDK. With middleware, you can do this in a single place.
 
 ```java
 Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_WRITE_KEY)
-    .middleware(new Middleware() {
+    .useSourceMiddleware(new Middleware() {
       @Override
       public void intercept(Chain chain) {
-        // Get the original payload.
+        // Get the payload.
         BasePayload payload = chain.payload();
 
         // Set the device year class on the context object.
@@ -527,11 +531,11 @@ Building on the earlier example, maybe you don't want to collect any events for 
 
 ```java
 Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_WRITE_KEY)
-        .middleware(deviceClassMiddleware) // From earlier example.
-        .middleware(new Middleware() {
+        .useSourceMiddleware(deviceClassMiddleware) // From earlier example.
+        .useSourceMiddleware(new Middleware() {
           @Override
           public void intercept(Chain chain) {
-            // Get the original payload.
+            // Get the payload.
             BasePayload payload = chain.payload();
 
             // Check the device year class.
@@ -551,6 +555,42 @@ Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_W
 ```
 
 The key thing to observe here is that the output produced by the first middleware feeds into the second. This allows you to chain and compose independent middlewares!
+
+### Destination Middleware
+Similarly, if say you wanted to add an additional property before sending all your `Checkout Started` track events to your Mixpanel device-mode integration, you can leverage destination middleware, and do this in a single place.
+
+```java
+Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_WRITE_KEY)
+        .useDestinationMiddleware(
+            "Mixpanel",
+            new Middleware() {
+              @Override
+              public void intercept(Chain chain) {
+                // Get the payload.
+                BasePayload payload = chain.payload();
+
+                if (payload.type() == BasePayload.Type.track) {
+                  TrackPayload track = (TrackPayload) payload;
+
+                  // Check the track call event name
+                  if (track.event().equals("Checkout Started")) {
+
+                    // Create copy of Properties map and add additional property
+                    ValueMap newProps = new ValueMap();
+                    newProps.putAll(track.properties());
+                    newProps.put("step", 1);
+
+                    // Build our new payload.
+                    payload = track.toBuilder().properties(newProps).build();
+                  }
+                }
+
+                // Continue with new payload
+                chain.proceed(payload);
+              }
+            })
+        .build();
+```
 
 ### Braze Middleware
 
