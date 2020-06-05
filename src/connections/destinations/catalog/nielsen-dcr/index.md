@@ -167,9 +167,9 @@ Again, please also refer to our [Video Spec](/docs/connections/spec/video/) and 
 
 ### Heartbeats
 
-Nielsen expects a heartbeat called with `playheadPosition` during session play every second until the stream is completed, paused or interrupted (due to ad breaks or buffering).The playhead position is the current location in seconds of the playhead from the beginning of the asset.
+Nielsen expects a heartbeat called with `playheadPosition` during session play every second until the stream is completed, paused or interrupted (due to ad breaks or buffering). The playhead position is the current location in seconds of the playhead from the beginning of the asset. For livestream, Segment expects a negative integer that represents the offset in seconds in relation to the current timestamp. For example, if content is being livestreamed at 8PM but the viewer is 30 seconds behind, the value of this property should be -30. You can override this and pass the current time in seconds to Nielsen by toggling the `Enable Default to Current Time for Livestream Playhead Position` setting.
 
-Segment will set a timer and to call this heartbeat event (`–(void) playheadPosition: (long long) playheadPos)`, `setTimeout (web)`) every second in background. You do **NOT** have to call the Segment equivalent heartbeat event (`Video Content/Ad Playing`) each second. You should follow our spec and call the Segment heartbeat event every 10 seconds (recommended). While we will keep state of our own playhead position for these background hearbeats, when we do receive an explicit Segment heartbeat event, we will respect its `properties.position` and restart the background heartbeats from that position.
+Segment will set a timer to call this heartbeat event (`–(void) playheadPosition: (long long) playheadPos)`, `setTimeout (web)`) every second in background. You do **NOT** have to call the Segment equivalent heartbeat event (`Video Content/Ad Playing`) each second. You should follow our spec and call the Segment heartbeat event every 10 seconds (recommended). While we will keep state of our own playhead position for these background hearbeats, when we do receive an explicit Segment heartbeat event, we will respect its `properties.position` and restart the background heartbeats from that position.
 
 ### Playback Events
 

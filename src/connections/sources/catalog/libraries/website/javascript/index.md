@@ -362,7 +362,7 @@ The `ready` method has the following fields:
 
 ## Querystring API
 
-`analytics.js` can trigger track and identify events based on the URL querystring. This is helpful for tracking email click throughs, social media clicks, and digital advertising as well as for cross-domain tracking.
+`analytics.js` can trigger track and identify events based on the URL querystring. This is helpful for tracking email click throughs, social media clicks, and digital advertising.
 
 Here are the query parameters to use:
 
@@ -625,6 +625,9 @@ analytics.on('track', function(event, properties, options) {
 
 Please note that this emits events before they are processed by the Segment integration, and may not include some of the normalization we do on the client before uploading the data to Segment's servers.
 
+> note ""
+> **Note:** Page event properties are stored in the `options` object.
+
 ### Track Link
 
 `trackLink` is a helper method that attaches the `track` call as a handler to a link.
@@ -746,6 +749,68 @@ Example:
   analytics.track("Order Completed", {}, { context: { ip: "0.0.0.0" }});
 ```
 
+## Middleware
+Middleware allow developers to extend Analytics.js with custom code which runs on every event. This code has full access to the DOM, Browser API and help customers enrich/transform event payload.
+
+Analytics.js can be extended through two functions:
+```js
+addSourceMiddleware(middleware)
+addDestinationMiddleware(targetIntegration, [middleware1, middleware2, ...])
+```
+
+The first function allows you to manipulate the payload and filter events on a per source basis (Source Middleware), whilst the other function allows this on a per integration/destination basis (Destination Middleware). Middleware execute in the browser. 
+
+### Usage
+The function signature for creating Source Middleware has three parameters:
+```js
+function({payload, next, integrations})
+```
+
+Where, 
+- `payload` represents the event payload being sent by Analytics.js, if you wish to change the value of the `payload` you should mutate the `payload.obj` object, an example of which can be seen below
+- `next` represents the next function in the source middleware chain to be called, if the provided middleware does not call this function then the event will be dropped on the client and not delivered to any destination (including Segment)
+- `Integrations` is an array of objects representing all the integrations that the payload will be sent to. If an integration in this array is set to a ‘falsey’ value then the event will not be sent to the Integration.
+
+```js
+var SMW1 = function({ payload, next, integrations }) {
+  payload.obj.pageTitle = document.title;
+  next(payload);
+};
+```
+
+The function signature for creating Destination Middleware has three parameters as well:
+```js
+function({payload, next, integration})
+```
+
+Where,
+- `payload` represents the event payload being sent by Analytics.js, if you wish to change the value of the payload you should mutate the `payload.obj` object, an example of which can be seen below
+- `next` represents the next function in the destination middleware chain to be called, if the provided middleware does not call this function then the event will be dropped completely for the given Integration
+- `integration` is a string value representing the integration that this middleware will be applied to
+
+```js
+var DMW1 = function({ payload, integration, next }) {
+  delete payload.obj.pageTitle;
+  next(payload);
+};
+```
+
+The above defined Source & Destination Middleware can be added to the Analytics.js execution chain as:
+```js
+analytics.addSourceMiddleware(SMW1);
+analytics.addDestinationMiddleware('integrationA', [DMW1]);
+```
+
+**Notes:** 
+1. You can call the `.addSourceMiddleware(fn)` multiple times and the order of operations reflects the order in which you register your Source Middleware
+2. Both `.addSourceMiddleware(fn)` and `.addDestinationMiddleware('integration', [fn, ...])` can be called before [`.load()`](/docs/connections/sources/catalog/libraries/website/javascript/#load-options)
+
+### Braze Middleware
+Customers using the Braze (Appboy) Integration in either [cloud or device mode](/docs/connections/destinations/#connection-modes) can save Braze costs by debouncing duplicate `identify()` calls from Segment. This optionally packaged Middleware ensures that any event with duplicate traits is not sent to Braze. Event where atleast one trait value has changed will be sent to Braze once enabled. The Braze Middleware is disabled by default. To enable this Middleware for Javascript or Project source type, Customers can goto `Analytics.js` under their source settings and toggle it on:
+![BrazeMiddleware](images/sources_ajs_brazemiddleware.gif)
+
+A complete explanation of inner workings of this Middleware is available [here](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
+
 ## Proxy
 
 To use a proxy server with analytics.js, you'll first want to update the address in the snippet to use your own host instead of `cdn.segment.com`. Secondly, you'll need to write in to our support to change the endpoint we send events to from `api.segment.io` to your proxy instead. Please take care that your proxy behaves exactly like our real APIs. You can use our [proxy server](https://github.com/segmentio/segment-proxy) as an example of a correctly working proxy.
@@ -792,9 +857,6 @@ This would append the `plan_id` trait to this track, but not name or email since
 In order to ensure high fidelity, first-party customer data, we persist the Segment ID to local storage and use it as the Segment ID on the cookie whenever possible. Local Storage is meant for storing this type of first-party customer information.
 
 If a user comes back to your site after a cookie has expired, Analytics.js checks localStorage to see if an ID exists, and resets it as the user's ID in the cookie. If a user clears their cookies and localstorage, all of the IDs are removed.
-
-### Using only the cookie as the Segment ID store
-If you want to use the cookie exclusively to store the Segment ID, then you can go to your javascript source settings > Analytics.js and disable the "Use Local Storage for Segment ID" option. This has an impact on the fidelity of your anonymous users, and might result in an increase in MTUs on certain platforms.
 
 ## Troubleshooting
 
