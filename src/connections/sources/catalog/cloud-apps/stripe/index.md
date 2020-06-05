@@ -258,6 +258,8 @@ Below are tables outlining the properties included in the collections listed abo
 | `tax` | The amount of tax included in the total, calculated from tax_percent and the subtotal. If no tax_percent is defined, this value will be null |
 | `tax_percent` | This percentage of the subtotal has been added to the total amount of the invoice, including invoice line items and discounts |
 | `total` | Total after discount |
+| `period_end` | End of the usage period during which invoice items were added to the invoice |
+| `period_start` | Start of the usage period during which invoice items were added to the invoice |
 
 ### invoice_lines
 
