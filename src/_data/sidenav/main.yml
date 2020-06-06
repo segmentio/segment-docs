@@ -166,7 +166,7 @@ sections:
     - path: /connections/storage
       title: Data Storage overview
     - path: /connections/storage/catalog
-      title: Storage destinations catalog
+      title: Data Storage catalog
       menu_icon: read-more
     - section_title: Segment Data Lakes
       slug: connections/storage/data-lakes

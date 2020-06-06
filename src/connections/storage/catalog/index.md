@@ -1,5 +1,5 @@
 ---
-title: Storage catalog
+title: Data Storage catalog
 hide_toc: true
 menu_icon: "read-more"
 layout: catalog
