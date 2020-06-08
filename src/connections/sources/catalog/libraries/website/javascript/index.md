@@ -733,7 +733,7 @@ One option, if you don't want to use any bundled 3rd-party tools, is to use our 
 
 Segment's javascript snippet ([Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) has minimal impact on the size of the pages, and only increases the page size by about 1.1KB. 
 
-However, the snippet then asynchronously requests and loads a customized javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your device-mode destinations. Because of this, the file size can vary depending on how many and which destinations you enable. Without any destinations, the `analytics.min.js` file is  about 62KB. Each time you enable a destination, it can slightly increase the size of this file. 
+However, the snippet then asynchronously requests and loads a customized javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your device-mode destinations. Because of this, the file size can vary depending on how many and which destinations you enable. Without any destinations, the `analytics.min.js` file is about 62KB. Each time you enable a destination, it can slightly increase the size of this file. 
 
 ## Retries
 
