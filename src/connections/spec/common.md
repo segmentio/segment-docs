@@ -189,7 +189,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`page`</td>
     <td>Object</td>
-    <td>Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by Analytics.js.
+    <td>Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).
     </td>
   </tr>
   <tr>
