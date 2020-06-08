@@ -38,7 +38,8 @@ Transformations can be deleted and edited by clicking on the overflow menu. When
 To create a Transformation, navigate to the Transformations tab in Protocols and click **New Transformation** in the top right. A three-step wizard guides you through creating a transformation.
 
 > info ""
-> Only workspace owners can currently create and edit transformations!
+> Workspace Owner or Source Admin permissions are required to create and edit transformations.
+> Source Read-only permissions are required to view transformations.
 
 ![](../images/transformation_wizard.png)
 
