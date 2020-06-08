@@ -46,8 +46,8 @@ Collections are the groupings of resources we pull from your source. In your war
 |  Bounced | Event | Message has hard bounced |
 |  Opened | Event | Recipient opened a message; will only occur when [open tracking](http://help.mandrill.com/entries/23298476-How-does-open-tracking-work-) is enabled. |
 |  Marked As Spam | Event | Recipient marked a message as spam |
-|  Rejected | Event | Message was [rejected](http://help.mandrill.com/entries/22880521-What-is-a-rejected-email-Rejection-Blacklist-) |
+|  Rejected | Event | Message was [rejected](https://mandrill.zendesk.com/hc/en-us/articles/360039337053-How-to-Add-and-Remove-Emails-on-the-Rejection-Blacklist) |
 |  Delayed | Event | Message has been sent, but the receiving server has indicated mail is being delivered too quickly and Mandrill should slow down sending temporarily |
 |  Soft-Bounced | Event | Message has soft bounced |
 |  Clicked | Event | Recipient clicked a link in a message; will only occur when click tracking is enabled |
-|  Recipient Unsubscribes | Event | Recipient [unsubscribed](http://help.mandrill.com/entries/22880521-What-is-a-rejected-email-Rejection-Blacklist-) |
+|  Recipient Unsubscribes | Event | Recipient [unsubscribed](https://mandrill.zendesk.com/hc/en-us/articles/360039337053-How-to-Add-and-Remove-Emails-on-the-Rejection-Blacklist) |
