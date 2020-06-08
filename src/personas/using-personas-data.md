@@ -228,7 +228,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)
 - [Amazon Lambda](/docs/connections/destinations/catalog/amazon-lambda/)
 - [Amazon Personalize](/docs/connections/destinations/catalog/amazon-personalize/)
-- [Amazon S3](/docs/connections/warehouses/catalog/amazon-s3/)
+- [Amazon S3](/docs/connections/storage/catalog/amazon-s3/)
 - [Amplitude](/docs/connections/destinations/catalog/amplitude/)
 - [Appcues](/docs/connections/destinations/catalog/appcues/)
 - [AppsFlyer](/docs/connections/destinations/catalog/appsflyer/)
