@@ -529,6 +529,11 @@ To send computed traits or audiences to Braze, you first must connect it to your
 - **Identifiers accepted** : `userId` or `braze_id`
 - **Client or Server-Side Connection**: Server-side connection for Personas
 
+## Debounce with Middlewares
+
+If you use the Braze destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation. More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
+
+
 ## Braze Personas FAQs
 
 #### Which ID does Segment match on when sending data to Braze?
