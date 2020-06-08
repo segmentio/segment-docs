@@ -19,6 +19,10 @@ This document was last updated on January 28, 2018. If you notice any gaps, out-
 
 **Note:** We'll send you HTTP(s) POST requests that look like the below for each type. Note with each call, you'll also receive a [`context`](/docs/connections/spec/common/#context) object that provides information about the user's device, IP address, etc. As you start experimenting, we recommend trying the Webhooks destination with [RequestBin.com](https://requestbin.com/) and [ultrahook](http://www.ultrahook.com) to immediately start seeing requests coming through.
 
+## Webhooks timeouts
+
+When Segment sends an event to a webhook endpoint, the service must respond within 5 seconds. If Segment does not receive a response within that period, the system logs a timeout error and [retries the event later](/docs/connections/destinations/#retries-between-segment-and-destinations).
+
 ## Page
 If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```

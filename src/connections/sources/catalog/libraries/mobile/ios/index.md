@@ -644,7 +644,9 @@ let blockScreenCallsToAmplitude = SEGBlockMiddleware { (context, next) in
 }
 ```
 ### Braze Middleware
-Customers using the Braze (Appboy) Integration in either [cloud or device mode](/docs/connections/destinations/#connection-modes) can save Braze costs by debouncing duplicate `identify()` calls from Segment through the use of a Middleware we have open sourced [here](https://github.com/segmentio/segment-braze-mobile-middleware) for Customers to optionally add to their implementation. A complete explanation of inner workings of this Middleware is available under the [same repository](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
+
+If you use the Braze (Appboy) destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation. More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
+
 
 
 ## Proxy HTTP Calls
