@@ -1,6 +1,8 @@
 ---
 title: Facebook Pixel Server-Side Destination
 rewrite: true
+hidden: true
+beta: true
 ---
 
 [Facebook Pixel Server-Side API](https://developers.facebook.com/docs/marketing-api/server-side-api) allows advertisers to send events from their servers directly to Facebook. Server-Side events are linked to a pixel and are processed like browser pixel events. This means that Server-Side events are used in measurement, reporting, and optimization in the same way as browser pixel events.
