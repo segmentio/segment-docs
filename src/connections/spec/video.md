@@ -73,7 +73,7 @@ The type of ad playing at the time of the event. Values can include 'pre-roll', 
 
 #### Position: `Integer`
 
-The current index position **in seconds** of the playhead. If the playback is a livestream, you must send a negative integer that represents the offset in seconds in relation to the current timestamp. For example, if content is being livestreamed at 8PM but the viewer is 30 seconds behind, the value of this property should be -30.
+The current index position **in seconds** of the playhead. If the playback is a livestream, check the documentation for relevant destinations for details on how to correctly pass the playhead position.
 
 #### Seek Position: `Integer`
 
@@ -618,7 +618,7 @@ The channel in which the video content is playing, ie. 'espn', 'my blog'.
 An [ISO 8601 Date String](https://en.wikipedia.org/wiki/ISO_8601) representing the original air date or published date.
 
 #### Position: `Integer`
-The current index position **in seconds** of the playhead. If the playback is a livestream, you must send a negative integer that represents the offset in seconds in relation to the current timestamp. For example, if content is being livestreamed at 8PM but the viewer is 30 seconds behind, the value of this property should be -30.
+The current index position **in seconds** of the playhead. If the playback is a livestream, check the documentation for relevant destinations for details on how to correctly pass the playhead position.
 
 #### Total Length: `Integer`
 The total duration of the playback in seconds. This should include the duration of all your content and ad included in this playback session. For livestream playback, send `null`.

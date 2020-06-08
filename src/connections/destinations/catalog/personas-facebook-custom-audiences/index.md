@@ -129,10 +129,15 @@ Once created, the audience should be available in Facebook in ten minutes unless
 
 
 ## Early Access (Alpha) Feature: Additional identifier matching
-Previously, Segment only sent email and mobile ids to Facebook. Segment is now able to send an expanded list of identifiers to Facebook, so that Facebook can try to use these additional identifiers to match to their user profiles. If you have implemented any of these identifiers in your Segment tracking, Personas is able to send the identifiers to Facebook. Segment can now also sync multiple emails if the profile contains more than one. This feature is in Early Access. If you would like access, contact your CSM or email us at beta@segment.com.
+
+> note ""
+> This feature is in Early Access. If you would like access, contact your CSM or email us at [beta@segment.com](mailto:beta@segment.com).
+
+Previously, Segment only sent email and mobile ids to Facebook. A new, early-access feature can send an expanded list of identifiers to Facebook, so that Facebook can try to use these additional identifiers to match to their user profiles. If you have this feature enabled and implemented any of these identifiers in your Segment tracking, Personas can send the identifiers to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this new alpha feature, Segment hashes fields before sending them downstream to Facebook, if required. (See the table below for hashing requirements.)
+
 
 | **Name**        | **Trait Key formats supported**   | **Facebook Keys**  | **FB Hashing Required** | **FB Guidelines**     |
-| Email       |                                                              | EMAIL                | Yes                 | Trim leading, trail whitespace, and convert all characters to lowercase.                                                                                  |
+| Email       |                                                              | EMAIL                | Yes (Segment does the hashing for you. In case you are *already* hashing emails, emails will get sent to Facebook double-hashed. Facebook will still match on double-hashed emails, but this is *not* recommended.                  | Trim leading, trail whitespace, and convert all characters to lowercase.                                                                                  |
 | Mobile ID   |                                                              | MADID                | No                  | Use all lowercase, keep hyphens.                                                                                                                          |
 | First Name  | first_name<br>firstname<br>firstName<br>first                | FN                   | Yes                 | Use `a`-`z` only. Lowercase only, no punctuation. Special characters in UTF8 format.                                                                      |
 | Last Name   | last_name<br>lastname<br>lastName<br>last                    | LN                   | Yes                 | Use `a`-`z` only. Lowercase only, no punctuation. Special characters in UTF8 format.                                                                      |
