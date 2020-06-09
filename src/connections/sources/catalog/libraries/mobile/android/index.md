@@ -492,7 +492,7 @@ persisted across device reboots, so you can simply call this once during your ap
 
 ## Middlewares
 
-Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. Source Middleware are available on analytics-android 4.3.0 and higher. Destination Middleware are available on analytics-android 4.7.0 and higher.
+Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. Source Middleware are available on analytics-android 4.3.0 and later. Destination Middleware are available on analytics-android 4.7.0 and later.
 
 You can register source middleware during construction with the `.useSourceMiddleware` method on the builder. These middleware are invoked for all events, including automatically tracked events, and external event sources like Adjust and Optimizely.
 
