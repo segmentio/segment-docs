@@ -8,7 +8,7 @@ All of Segment's client libraries are open-source, so you can [view Analytics fo
 
 ## Getting Started
 
-To get started with Analytics for Android Wear check out our [quickstart guide](/docs/tutorials/quickstart-android) which will help you install analytics tracking in your mobile app in just a few minutes. Once you've installed the SDK, read on for setting it up the wear part of your App. Please note that you can only use the Android SDK v2 or higher with wear, and that any Beta APIs below are subject to change.
+To get started with Analytics for Android Wear check out our [quickstart guide](/docs/connections/sources/catalog/libraries/mobile/android/quickstart/) which will help you install analytics tracking in your mobile app in just a few minutes. Once you've installed the SDK, read on for setting it up the wear part of your App. Please note that you can only use the Android SDK v2 or higher with wear, and that any Beta APIs below are subject to change.
 
 ## Adding the Wear dependency
 
