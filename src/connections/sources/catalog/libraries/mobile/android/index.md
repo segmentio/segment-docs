@@ -560,9 +560,11 @@ The key thing to observe here is that the output produced by the first middlewar
 Similarly, if say you wanted to add an additional property before sending all your `Checkout Started` track events to your Mixpanel device-mode integration, you can leverage destination middleware, and do this in a single place.
 
 ```java
+Integration.Factory mixpanelFactory = MixpanelIntegration.FACTORY; // https://github.com/segment-integrations/analytics-android-integration-mixpanel
 Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_WRITE_KEY)
+        .use(mixpanelFactory)
         .useDestinationMiddleware(
-            "Mixpanel",
+            mixpanelFactory.key(),
             new Middleware() {
               @Override
               public void intercept(Chain chain) {
