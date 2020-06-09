@@ -552,6 +552,9 @@ Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_W
 
 The key thing to observe here is that the output produced by the first middleware feeds into the second. This allows you to chain and compose independent middlewares!
 
+### Braze Middleware
+
+If you use the Braze (Appboy) destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation. More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
 
 ## Sending Data to destinations
 

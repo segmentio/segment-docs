@@ -24,7 +24,7 @@ There are a few pre-requisites:
 2. Ability to deploy Lambda functions in Amazon Web Services
 3. Access to AWS Personalize
 
-don't have an S3, Redshift warehouse, or Snowflake warehouse set up? You can read more about setting up S3 [here](https://segment.com/docs/connections/warehouses/catalog/amazon-s3/), Redshift [here](https://segment.com/docs/connections/warehouses/catalog/redshift/), and Snowflake [here](https://segment.com/docs/connections/warehouses/catalog/snowflake/).
+don't have an S3, Redshift warehouse, or Snowflake warehouse set up? You can read more about setting up S3 [here](https://segment.com/docs/connections/storage/catalog/amazon-s3/), Redshift [here](https://segment.com/docs/connections/storage/catalog/redshift/), and Snowflake [here](https://segment.com/docs/connections/storage/catalog/snowflake/).
 
 ***If you're a Segment business tier customer, reach out to your Success contact to initiate a replay to S3 or your Warehouse.***
 

@@ -3,7 +3,7 @@ title: Manage Workspace Access
 redirect_from: '/segment-app/iam/groups/'
 ---
 
-This page explains how to add [Team Members](/docs/segment-app/iam/concepts/#team-members) <!--and [User Groups](/docs/segment-app/iam/concepts/#user-groups/)--> to your team's workspace, how to assign them [roles](/docs/segment-app/iam/concepts/#roles/), and how to remove them.
+This page explains how to add [Team Members](/docs/segment-app/iam/concepts/#team-members) and [User Groups](/docs/segment-app/iam/concepts/#user-groups/) to your team's workspace, how to assign them [roles](/docs/segment-app/iam/concepts/#roles/), and how to remove them.
 
 > info ""
 > **Note**: Only Workspace Owners can change a workspace's Access Management settings.
@@ -28,7 +28,7 @@ This page explains how to add [Team Members](/docs/segment-app/iam/concepts/#tea
 
 > success ""
 > **Tip**: You can also grant the role for all current and future resources. For admin roles, this includes the ability to create new resources.
-<!--
+
 ## Create a new User Group
 
 Workspace Owners can manage permissions for groups of team members who should have similar access using "user groups".
@@ -77,7 +77,6 @@ To add a team member from the **Edit User Group** page:
 3. Click **Edit User Group** in the panel on the right.
 4. Navigate to the **Members** tab and select the team members you would like to remove.
 5. Click **Save**.
--->
 
 ## Remove a team member from your workspace
 
