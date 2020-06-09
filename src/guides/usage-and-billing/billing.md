@@ -25,7 +25,7 @@ If you cancel your workspace or downgrade to a free account before the end of yo
 
 We do not issue refunds for the pre-paid portion of your annual bill after your trial has ended.
 
-Please be aware that if you notify us that you want to cancel your annual plan, but continue to send data to our servers, you may incur overage charges in any given month. Please fully delete your workspace or cycle your write keys to stop all data flow into Segment and avoid future charges.
+Be aware that if you notify us that you want to cancel your annual plan, but continue to send data to our servers, you may incur overage charges in any given month. You should fully delete your workspace or cycle your write keys to stop all data flow into Segment and avoid future charges.
 
 
 ## Will Segment charge sales tax on my invoice?
@@ -62,7 +62,7 @@ Tax might still be charged on your bill if either:
 
 ## Do you offer refunds?
 
-In most cases we do not offer refunds, as noted in our [Terms of Service](https://segment.com/legal/terms/). Please [reach out to support](https://segment.com/help/contact) if you feel that you are in a unique situation.
+In most cases we do not offer refunds, as noted in our [Terms of Service](https://segment.com/legal/terms/). [Contact support](https://segment.com/help/contact) if you feel that you are in a unique situation.
 
 ## Is there a free trial for paid plans?
 
@@ -90,7 +90,7 @@ The free trial is available to all customers who have never had a Team plan. Thi
 
 If you're upgrading from a Free Plan to a Team Plan, you are required to add your payment information. 
 
-If you are signing up for a new Team plan, you do not have to add your payment information during sign up. However, if you would like to continue to use the Team plan after the 14 day trial, please add your credit card information on the "Payment Information" page in your workspace before the trial ends. 
+If you are signing up for a new Team plan, you do not have to add your payment information during sign up. However, if you would like to continue to use the Team plan after the 14 day trial, add your credit card information on the "Payment Information" page in your workspace before the trial ends. 
 
 **What happens when the two week trial ends?**
 

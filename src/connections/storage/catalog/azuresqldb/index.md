@@ -6,7 +6,7 @@ redirect_from:
 ---
 
 > info ""
-> Our Azure SQL Database connector is in limited beta. Please [contact us](https://segment.com/help/contact/) for more information.
+> Our Azure SQL Database connector is in limited beta. [contact us](https://segment.com/help/contact/) for more information.
 
 
 <!--

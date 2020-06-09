@@ -121,7 +121,7 @@ consolidating filters or would like to discuss your use case, [contact us](https
 
 Device-mode destination filters for Web are currently in Early Access Preview.
 
-Please [contact us](https://segment.com/help/contact/) if you are interested in testing this feature.
+[contact us](https://segment.com/help/contact/) if you are interested in testing this feature.
 
 **Q: When will you support warehouses?**
 

@@ -124,7 +124,7 @@ sections:
     - path: /guides/how-to-guides/cross-channel-tracking
       title: How do we track your customers across channels and devices?
     - path: /guides/how-to-guides/dynamic-coupon-program
-      title: How do I setup a dynamic coupon program to reward loyal customers?
+      title: How do I set up a dynamic coupon program to reward loyal customers?
     - path: /guides/how-to-guides/forecast-with-sql
       title: How do I forecast LTV with SQL and Excel for e-commerce?
     - path: /guides/how-to-guides/import-historical-data

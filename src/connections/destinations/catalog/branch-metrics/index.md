@@ -16,9 +16,9 @@ The legacy instructions for implementing the Branch mobile SDKs for Segment have
 
 ---
 
-This destination is maintained by Branch. For any issues with the destination, please [contact the Branch support team](https://support.branch.io/support/home).
+This destination is maintained by Branch. For any issues with the destination, [contact the Branch support team](https://support.branch.io/support/home).
 
-This document was last updated on November 13, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on November 13, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -33,7 +33,7 @@ This document was last updated on November 13, 2019. If you notice any gaps, out
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:
 ```ios
 [[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
                                 traits:@{ @"email": @"john.doe@example.com" }];
@@ -41,7 +41,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example iOS call would look like:
 
 ```ios
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"

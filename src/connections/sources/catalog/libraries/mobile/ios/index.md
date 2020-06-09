@@ -32,7 +32,7 @@ First, add the `Analytics` dependency to your `Podfile`, like so:
 pod 'Analytics', '~> 3.0'
 ```
 
-Then in your application delegate's `- application:didFinishLaunchingWithOptions:` method, setup the SDK like so:
+Then in your application delegate's `- application:didFinishLaunchingWithOptions:` method, set up the SDK like so:
 
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
@@ -57,7 +57,7 @@ In the interest of keeping our SDK lightweight, the Analytics pod only installs 
 
 Now that the SDK is installed and setup, you're ready to...
 
-### Configure and Setup the SDK
+### Configure and set up the SDK
 
 The `SEGAnalyticsConfiguration` class provides a set of properties that control various policies of the `SEGAnalytics` instance. You initialize it with a `writeKey` like so:
 
@@ -799,7 +799,7 @@ Here are the steps for installing manually:
 
 Once you've installed the framework, just import the header file and install as described above in [Install the SDK](/docs/connections/sources/catalog/libraries/mobile/ios/#install-the-sdk).
 
-Please note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
+Note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
 
 ### What if your SDK doesn't support feature X?
 
@@ -1074,7 +1074,7 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 ### Still having issues?
 
-Please [contact our Product Support team](https://segment.com/help/contact/) with the following information:
+[contact our Product Support team](https://segment.com/help/contact/) with the following information:
 
 - The version of our SDK you are using
 - Whether you are using device- or cloud-mode

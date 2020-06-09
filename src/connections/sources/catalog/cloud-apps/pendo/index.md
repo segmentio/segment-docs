@@ -3,9 +3,9 @@ title: Pendo Source
 ---
 [Pendo](https://pendo.io) is a product cloud that helps product teams deliver software users love. With Pendo, product teams can understand product usage, collect feedback, measure NPS, onboard users, and announce new features in app—all without requiring engineering resources.
 
-This source is maintained by Pendo. For any issues with the source, please [reach out to their team](mailto:integrations@pendo.io).
+This source is maintained by Pendo. For any issues with the source, [contact their team](mailto:integrations@pendo.io).
 
-*NOTE: The Pendo Source will continue to be adding new events sources as it is still in active development. This doc was last updated on September 13, 2019. If you have any feedback to help improve the Pendo Source and its documentation, please [let their team know](mailto:integrations@pendo.io)!*
+*NOTE: The Pendo Source will continue to be adding new events sources as it is still in active development. This doc was last updated on September 13, 2019. If you have any feedback to help improve the Pendo Source and its documentation, [let their team know](mailto:integrations@pendo.io)!*
 
 ## Getting Started
 
@@ -81,4 +81,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Pendo team](mailto:integrations@pendo.io).
+If you experience any issues with how the events arrive in Segment, [contact the Pendo team](mailto:integrations@pendo.io).

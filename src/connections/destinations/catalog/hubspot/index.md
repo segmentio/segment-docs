@@ -6,7 +6,7 @@ title: HubSpot Destination
 
 [HubSpot](https://www.hubspot.com/) is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers. The `analytics.js` HubSpot Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-hubspot).
 
-This document was last updated on March 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on March 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
@@ -22,7 +22,7 @@ This document was last updated on March 30, 2018. If you notice any gaps, outdat
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```
 analytics.page()
 ```
@@ -30,7 +30,7 @@ analytics.page()
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 ```
 analytics.identify('user1234', {
   email: 'petergibbon@email.com',
@@ -65,7 +65,7 @@ The following traits are tagged as special fields within HubSpot:
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 ```
 analytics.track("Clicked Buy Now button", {
   value: 20.5
@@ -118,7 +118,7 @@ analytics.track(
 
 __NOTE: Group calls are not compatible with our Analytics.js library.__
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```node
 analytics.group({
@@ -179,7 +179,7 @@ HubSpot Plan: API Add-On (Any Tier)
 
 HubSpot's API has [specific requirements](http://developers.hubspot.com/docs/faq/how-should-timestamps-be-formatted-for-hubspots-apis) regarding how dates should be formatted before they are delivered as contact properties with date types.
 
-In order to ensure proper transformation of these properties, please pass them to Segment as [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) formatted strings and **not** as UNIX timestamps. Here's a Javascript example:
+In order to ensure proper transformation of these properties, pass them to Segment as [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) formatted strings and **not** as UNIX timestamps. Here's a Javascript example:
 
 ```js
 analytics.identify('userid', {
@@ -194,7 +194,7 @@ When using any of our server-side sources, our connector will infer `traits.life
 ### Loading Forms SDK
 Segment gives you the option to load the [HubSpot Forms SDK](https://developers.hubspot.com/docs/methods/forms/advanced_form_options) alongside their tracking library. This can be done by enabling the **Load Forms SDK** setting when configuring your HubSpot integration.
 
-**Please Note:** The Forms SDK expects to be loaded synchronously but analytics.js is loaded asynchronously. Therefore, in order to interact with the API, you need to run your code inside an [analytics.ready](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#ready) callback. Here's an example:
+**Note:** The Forms SDK expects to be loaded synchronously but analytics.js is loaded asynchronously. Therefore, in order to interact with the API, you need to run your code inside an [analytics.ready](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#ready) callback. Here's an example:
 
 ```js
 analytics.ready(function(){

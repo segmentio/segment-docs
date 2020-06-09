@@ -169,7 +169,7 @@ Our [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixe
 
 ### Source request
 
-We'd love to know what other sources of data you'd like to analyze. Please [log your request](/contact/requests/source/).
+We'd love to know what other sources of data you'd like to analyze. [Contact the Support Team](https://segment.com/help/contact/) to log a request.
 
 ---
 

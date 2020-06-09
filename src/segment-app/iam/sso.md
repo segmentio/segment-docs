@@ -64,7 +64,7 @@ Back at the connections page, make sure your connection is enabled with the swit
 
 ![](images/asset_SNxN4JhO.png)
 
-You can now test using IDP-initiated SSO (by clicking login to Segment from within your IDP) is working correctly. If not, please double check the IDP configuration gotchas section above.
+You can now test using IDP-initiated SSO (by clicking login to Segment from within your IDP) is working correctly. If not, double check the IDP configuration gotchas section above.
 
 ## Setup — GSuite
 

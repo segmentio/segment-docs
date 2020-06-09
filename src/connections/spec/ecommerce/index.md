@@ -9,7 +9,7 @@ This guide maps out the standard data Segment expects to see from ecommerce comp
 
 Segment now supports a fully **backwards compatible** V2 of our Ecommerce Spec. You can still use V1 but we recommend upgrading to V2 as it includes many more spec'd ecommerce events!
 
-Please refer to our V2 docs [here](/docs/connections/spec/ecommerce/v2/).
+Refer to our V2 docs [here](/docs/connections/spec/ecommerce/v2/).
 
 ## V1 Overview
 

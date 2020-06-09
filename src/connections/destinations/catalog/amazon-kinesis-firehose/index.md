@@ -4,7 +4,7 @@ title: Amazon Kinesis Firehose Destination
 ---
 [Amazon Kinesis Firehose](https://aws.amazon.com/kinesis/data-firehose/) is the easiest way to load streaming data into AWS. It can capture, transform, and load streaming data into Amazon Kinesis Analytics, Amazon S3, Amazon Redshift, and Amazon Elasticsearch Service, enabling near real-time analytics with existing business intelligence tools and dashboards you're already using today. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security.
 
-This document was last updated on February 05, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on February 05, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -34,13 +34,13 @@ This document was last updated on February 05, 2020. If you notice any gaps, out
   4. Create a new Kinesis Firehose Destination. In the Segment source that you want to connect to your Kinesis Firehose destination, click the "Add Destination" button. Search and select the Kinesis Firehose destination and enter the options: `Mapped Streams`, `Region`, and `Role Address` (important for the `Role Address` is that the role itself immediately follows "role/" e.g. `arn:aws:iam::874699288871:role/example-role`).
 
 ## Page
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```javascript
   analytics.page();
 ```
 
 ## Identify
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example identify call is shown below:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example identify call is shown below:
 ```javascript
 analytics.identify('97980cfea0085', {
   email: 'gibbons@example.com',
@@ -49,7 +49,7 @@ analytics.identify('97980cfea0085', {
 ```
 
 ## Track
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example identify call is shown below:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example identify call is shown below:
 
 ```javascript
 analytics.track("User Registered", {
@@ -101,7 +101,7 @@ firehose.putRecord({
 Segment will append a newline character to each record to allow for easy downstream parsing.
 
 ## Group
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example group call is shown below:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example group call is shown below:
 
 ```js
 analytics.group("0e8c78ea9d9dsasahjg", {

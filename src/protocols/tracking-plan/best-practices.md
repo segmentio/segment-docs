@@ -107,7 +107,7 @@ Then we added some peripheral events to to better understand how we're performin
 - **Destination Enabled**
    Turning on an destination is a key value driver for our customers.
 - **Debugger Call Expanded**
-   When we see that a certain customer has used the live event stream feature a number of times, we can reach out to see if we can help them debug.
+   When we see that a certain customer has used the live event stream feature a number of times, we can contact them to see if we can help them debug.
 
 
 For an ecommerce company, however, the main events might be something like:

@@ -4,15 +4,15 @@ title: API Design
 
 ## API Evolution: Versioning and Compatibility
 
-Segment strives to maintain a strict contract around the stability of our APIs once they reach maturity. 
+Segment strives to maintain a strict contract around the stability of our APIs once they reach maturity.
 
-The Config API is versioned statically by path prefix. The current version, `/v1beta`, is stable and suitable for production use, but not 100% mature. We will not ship any backwards incompatible breaking changes after its public launch on December 12, 2018. However, we may release new versions of the API as further `/v1betaX` releases or as major version releases (such as `/v1`). 
+The Config API is versioned statically by path prefix. The current version, `/v1beta`, is stable and suitable for production use, but not 100% mature. We will not ship any backwards incompatible breaking changes after its public launch on December 12, 2018. However, we may release new versions of the API as further `/v1betaX` releases or as major version releases (such as `/v1`).
 
 The reason the path is currently `/v1beta` is to signify both that Segment's product model is evolving and that we are looking for feedback from developers on how best to expose that model for public consumption, extension, and automation.
 
-Therefore, `/v1beta` is subject to deprecation with 3 months of written notice after the release of `/v1`, should we decide to land any breaking changes in the final `/v1` release. 
+Therefore, `/v1beta` is subject to deprecation with 3 months of written notice after the release of `/v1`, should we decide to land any breaking changes in the final `/v1` release.
 
-We're always actively seeking feedback on the ergonomics and breadth of our APIs. If you have ideas of how we can improve them that you'd like to see as extensions to `/v1beta` or considered for changes in `/v1`, please don't hesitate to [get in touch](https://segment.com/help/contact/).
+We're always actively seeking feedback on the ergonomics and breadth of our APIs. If you have ideas of how we can improve them that you'd like to see as extensions to `/v1beta` or considered for changes in `/v1`, don't hesitate to [get in touch](https://segment.com/help/contact/).
 
 ## Common Methods and Fields
 
@@ -108,7 +108,7 @@ So a given Source resource might look like:
 
 `workspaces/<customer-workspace-slug>/sources/<customer-source-slug>`
 
-Segment APIs use scheme-less URIs for resource names. This allows us to generally follow REST URL conventions and provides a machine and human-legible standard for our identifiers. 
+Segment APIs use scheme-less URIs for resource names. This allows us to generally follow REST URL conventions and provides a machine and human-legible standard for our identifiers.
 
 Segment favors "slugs" over opaque IDs when the resource is customer- or Segment-named and unlikely to change, such as sources and destinations. For resources whose name is subject to change frequently, such as Tracking Plans, we will autogenerate prefixed IDs for you upon creation and use that in the fully qualified resource name.
 

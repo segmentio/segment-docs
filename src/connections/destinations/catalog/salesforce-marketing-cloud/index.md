@@ -106,13 +106,13 @@ Finally, we have a checkbox, `UUID Primary Key` that will override whatever you 
 
 ### Multiple Primary Keys
 
-If the data extension you are mapping to has more than one primary key, please enter each one seperated by a comma in the Primary Key Field. For example, if your primary keys were "Contact Key" and "Product Id", you would just enter "Contact Key, Product Id" (without the quotations). The ordering is not important.
+If the data extension you are mapping to has more than one primary key, enter each one seperated by a comma in the Primary Key Field. For example, if your primary keys were "Contact Key" and "Product Id", you would just enter "Contact Key, Product Id" (without the quotations). The ordering is not important.
 
 ## Features
 
 ### Contextual Properties
 
-Our destination with SFMC supports passing in many of the contextual properties that our SDK's and libraries collect automatically as Data Extension attributes. Please reference our [documentation](https://segment.com/docs/connections/spec/common/#context) for more information on contextual properties and the SDK's/libraries that collect them.
+Our destination with SFMC supports passing in many of the contextual properties that our SDK's and libraries collect automatically as Data Extension attributes. Reference our [documentation](https://segment.com/docs/connections/spec/common/#context) for more information on contextual properties and the SDK's/libraries that collect them.
 
 In order to take advantage of this functionality, you will need to create attributes in your Data Extensions that adhere to specific naming conventions. The table below outlines the Segment contextual properties availble with this feature and the corresponding Data Extension attribute names they will map to.
 

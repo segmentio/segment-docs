@@ -97,7 +97,7 @@ When a user pauses/resumes playback of a video, you should use our [Video
 Playback Paused](/docs/connections/spec/video/#playback-events) and [Video Playback
 Resumed](/docs/connections/spec/video/#playback-events) events.
 
-If the user pauses during an ad, please be sure to fill the
+If the user pauses during an ad, be sure to fill the
 `properties.ad_asset_id` field from our spec for **both** calls, as we use its
 presence to determine whether the pause is occuring during an ad or not.
 
@@ -138,7 +138,7 @@ Playback Buffer Started](/docs/connections/spec/video/#playback-events) and [Vid
 Buffer Completed](/docs/connections/spec/video/#playback-events) events. We will map the
 properties from these events to the following Youbora video metadata fields:
 
-If the buffer occurs during an ad, please be sure to fill the
+If the buffer occurs during an ad, be sure to fill the
 `properties.ad_asset_id` field from our spec for **both** calls, as we use its
 presence to determine whether the buffer is occuring during an ad or not.
 
@@ -157,7 +157,7 @@ Interrupted](/docs/connections/spec/video/#playback-events) event.
 
 ### Video Playback Completed
 
-To track the completion of the video playback session, please use our [Video
+To track the completion of the video playback session, use our [Video
 Playback Completed](https://segment.com/docs/connections/spec/video/#playback-events) event.
 
 **Example**
@@ -193,7 +193,7 @@ analytics.track('Video Ad Started', { session_id: 1, title: 'Test Ad Title', ad_
 
 ### Video Ad Completed
 
-To track the completion of an ad, please use our [Video Ad
+To track the completion of an ad, use our [Video Ad
 Completed](https://segment.com/docs/connections/spec/video/#ad-events) event.
 
 **Example**
@@ -204,7 +204,7 @@ analytics.track('Video Ad Completed', { session_id: 1, ad_asset_id: 1 });
 
 ### Video Ad Clicked
 
-To track an ad click, please track an event with event name 'Video Ad Clicked'.
+To track an ad click, track an event with event name 'Video Ad Clicked'.
 
 **Example**
 
@@ -272,7 +272,7 @@ below steps:
 }
 ```
 
-In the `player` field, please pass the video player object, or the ID of the
+In the `player` field, pass the video player object, or the ID of the
 video player element in the case of HTML5.
 
 In the `options` field, you can pass options the same way you would pass them

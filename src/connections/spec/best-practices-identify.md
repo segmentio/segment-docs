@@ -34,7 +34,7 @@ Let's look at Rdio as an example. When a new visitor goes to their site that v
 As part of that new user record the person is assigned a userId. Let's say the new userId is `12345`. Rdio will then need to fire the following calls on the welcome page:
 
 ```js
-analytics.identify('12345',{  name:'Jake Peterson',  email:'jake.peterson@example.com'});
+analytics.identify('12345',{  name:'Jake Peterson', email:'jake.peterson@example.com'});
 analytics.track('Account Created',{  authentication:'Facebook'})
 ```
 

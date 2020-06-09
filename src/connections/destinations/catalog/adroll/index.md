@@ -5,7 +5,7 @@ title: AdRoll Destination
 
 [AdRoll](https://developers.adroll.com/) is a retargeting network that allows you to show ads to visitors who've landed on your site while browsing the web. The AdRoll Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-adroll).
 
-This document was last updated on January 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on January 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
@@ -27,7 +27,7 @@ This document was last updated on January 26, 2018. If you notice any gaps, outd
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```javascript
 analytics.page()
 ```
@@ -35,7 +35,7 @@ _**NOTE:** The `page` call **must** be made on a page for any `identify` or `tra
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 ```javascript
 analytics.identify('123', {
   email: 'testing@segment.com'
@@ -46,7 +46,7 @@ Set a `userId` using the `identify` call which will then be passed it to AdRoll 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 ```javascript
 analytics.track('Sign-up Form Completed');
 ```

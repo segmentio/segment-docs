@@ -67,7 +67,7 @@ The entry point of the library is through the `Analytics` class. As you might ha
 Analytics analytics = new Analytics.Builder(context, writeKey).build();
 ```
 
-The `Analytics.Builder` class lets you customize settings for the Analytics client, including things like the flush interval and packaging Device-mode destinations. Please refer to the Javadocs for details on customizable parameters.
+The `Analytics.Builder` class lets you customize settings for the Analytics client, including things like the flush interval and packaging Device-mode destinations. Refer to the Javadocs for details on customizable parameters.
 
 We also maintain a global default instance which is initialized with defaults suitable to most implementations.
 
@@ -924,7 +924,7 @@ Read through [the docs for that destination](/docs/connections/destinations/) to
 
 ### Still having issues?
 
-Please [contact our Product Support team](https://segment.com/help/contact/) with the following information:
+[contact our Product Support team](https://segment.com/help/contact/) with the following information:
 
 - The version of our SDK you are using
 - Whether you are using device- or cloud-mode

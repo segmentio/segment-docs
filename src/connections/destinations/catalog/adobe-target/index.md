@@ -11,7 +11,7 @@ _**NOTE:** Adobe Target is currently in beta, and this doc was last
 updated on March 7, 2018. This means that there may still be some bugs for us to
 iron out, and we're excited to hear your thoughts. If you are interested in
 joining or have any feedback to help us improve the Adobe Target
-Destination and its documentation, please [let us know](https://segment.com/help/contact)!_
+Destination and its documentation, [let us know](https://segment.com/help/contact)!_
 
 ## Getting Started
 
