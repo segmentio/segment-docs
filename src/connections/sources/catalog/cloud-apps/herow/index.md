@@ -7,9 +7,9 @@ beta: true
 
 This is an [Enrichment Source](https://segment.com/docs/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
 
-This source is maintained by HEROW. For any issues with the source, please [contact their team](mailto:support@herow.io).
+This source is maintained by HEROW. For any issues with the source, [contact their team](mailto:support@herow.io).
 
-_**NOTE:** The HEROW Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 29, 2020. If you are interested in joining their beta program or have any feedback to help improve the HEROW Source and its documentation, please [let  their team know](mailto:support@HEROW.io)!_
+_**NOTE:** The HEROW Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 29, 2020. If you are interested in joining their beta program or have any feedback to help improve the HEROW Source and its documentation, [let their team know](mailto:support@HEROW.io)!_
 
 
 ## Getting Started
@@ -141,4 +141,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the HEROW team](mailto:support@HEROW.io).
+If you experience any issues with how the events arrive in Segment, [contact the HEROW team](mailto:support@HEROW.io).

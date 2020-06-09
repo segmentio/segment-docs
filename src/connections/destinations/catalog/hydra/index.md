@@ -4,9 +4,9 @@ rewrite: true
 ---
 [Hydra](https://hydra.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps marketing, sales operations and customer success teams implement holistic predictive analytics tailored to their own business without writing a single line of code. Hydra is capable of scanning a wide range of sources such as product usage, user demographic data, firmographic data, chat conversations, help desk tickets, emails and marketing engagement to discover signals and make predictions.
 
-This destination is maintained by Hydra. For any issues with the destination, please [reach out to their team](mailto:hello@hydra.ai).
+This destination is maintained by Hydra. For any issues with the destination, [contact their team](mailto:hello@hydra.ai).
 
-_**NOTE:** The Hydra Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 4, 2019. If you are interested in joining their beta program or have any feedback to help improve the Hydra Destination and its documentation, please [let  their team know](mailto:hello@hydra.ai)!_
+_**NOTE:** The Hydra Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 4, 2019. If you are interested in joining their beta program or have any feedback to help improve the Hydra Destination and its documentation, [let their team know](mailto:hello@hydra.ai)!_
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ If you would like to use `track` event data, create a `Segment Product Usage Sca
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -44,7 +44,7 @@ Identify calls will be sent to Hydra as an `identify` event. Upon receiving an I
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Device deploy started',
@@ -54,7 +54,7 @@ analytics.track('Device deploy started',
   })
 ```
 
-Track calls will be sent to Hydra as a `track` event. If you haven't already, please make sure to create a `Segment Product Usage Scanner` by visiting the [Scanners screen](https://app.hydra.ai/scanners) in Hydra app.
+Track calls will be sent to Hydra as a `track` event. If you haven't already, make sure to create a `Segment Product Usage Scanner` by visiting the [Scanners screen](https://app.hydra.ai/scanners) in Hydra app.
 
 Hydra uses the `feature` property to group events and the `eventFlag` property to weigh event importance. You can send any of the following as the value for the `eventFlag`: negative, neutral, positive. If you send anything other than these values, Hydra will consider the `eventFlag` to be neutral. Within Hydra, you will see this information populate in the following areas:
 

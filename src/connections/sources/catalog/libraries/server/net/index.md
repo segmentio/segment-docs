@@ -82,7 +82,7 @@ The default initialization settings are production-ready and queue messages on a
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [identify](/docs/connections/spec/identify/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [identify](/docs/connections/spec/identify/) method does.
 
 The `identify` call has the following fields:
 
@@ -113,7 +113,7 @@ Analytics.Client.Identify("019mr8mf4r", new Traits() {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [track](/docs/connections/spec/track/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [track](/docs/connections/spec/track/) method does.
 
 The `track` call has the following fields:
 
@@ -147,7 +147,7 @@ Analytics.Client.Track("019mr8mf4r", "Item Purchased", new Properties() {
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [page](/docs/connections/spec/page/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [page](/docs/connections/spec/page/) method does.
 
 The `page` call has the following fields:
 
@@ -185,7 +185,7 @@ Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [screen](/docs/connections/spec/screen/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [screen](/docs/connections/spec/screen/) method does.
 
 The `screen` call has the following fields:
 
@@ -222,7 +222,7 @@ Analytics.Client.Screen("019mr8mf4r", "Register", new Properties() {
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [group](/docs/connections/spec/group/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [group](/docs/connections/spec/group/) method does.
 
 The `group` call has the following fields:
 
@@ -256,7 +256,7 @@ Analytics.Client.Group("userId", "groupId", new Traits() {
 
 ## Alias
 
-If you haven't had a chance to review our spec, please take a look to understand what the [alias](/docs/connections/spec/alias/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [alias](/docs/connections/spec/alias/) method does.
 
 The `alias` call has the following fields:
 
@@ -507,7 +507,7 @@ static void LoggingHandler(Logger.Level level, string message, IDictionary<strin
 }
 ```
 
-Please note: the logger requires a minimum version of .NET Core 2.1.
+Note: the logger requires a minimum version of .NET Core 2.1.
 
 ### Json.NET
 

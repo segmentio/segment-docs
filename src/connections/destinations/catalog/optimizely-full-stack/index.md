@@ -15,7 +15,7 @@ Segment's **Optimizely Full Stack (previously Optimizely X)** destination suppor
 * [Optimizely Full Stack Android (Cloud-mode)](#android-cloud-mode-implementation)
 * [Optimizely Full Stack iOS (Cloud-mode)](#ios-cloud-mode-implementation)
 
-If you're interested in implementing Optimizely X Web or Optimizely Full Stack with the JavaScript SDK, please see Segment's [**Optimizely Web** destination](https://segment.com/docs/connections/destinations/catalog/optimizely-web/), which supports:
+If you're interested in implementing Optimizely X Web or Optimizely Full Stack with the JavaScript SDK, see Segment's [**Optimizely Web** destination](https://segment.com/docs/connections/destinations/catalog/optimizely-web/), which supports:
 
 * [Optimizely X Web](https://segment.com/docs/connections/destinations/catalog/optimizely/#optimizely-x-web)
 * [Optimizely Full Stack (JavaScript)](https://segment.com/docs/connections/destinations/catalog/optimizely/#optimizely-full-stack-javascript-)
@@ -42,7 +42,7 @@ This requires that customers include a native Optimizely implementation before t
 
 If you are using Optimizely SDKs v3+, [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) is enabled by default for decision events. Set up does not require maintaining the attributes of a user as long as the user id stays the same between Optimizely `activate` and `isFeatureEnabled` calls and Segment `track` calls to have Optimizely `metrics` populated in the Optimizely results page. If you would like to segment your Optimizely results by user `attribute`, then make sure the `attributes` passed in for the `activate` and `isFeatureEnabled` calls match the `attributes` passed in for the `track` calls for that user id.
 
-For more details on how events are attributed on the Optimizely results page, please refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
+For more details on how events are attributed on the Optimizely results page, refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
 
 
 ### Track
@@ -61,7 +61,7 @@ Segment also handles the following mapping:
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
 
 > note ""
-> **Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however,  they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
+> **Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however, they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
 
 Segment defaults to identifying users with their `anonymousId`. Enabling the "Use User ID" setting in your Segment settings means that only `track` events triggered by identified users are passed downstream to Optimizely. You may optionally fall back to `anonymousId` when `userId` is unavailable by setting `fallbackToAnonymousId` to `true`.
 
@@ -84,7 +84,7 @@ When implementing Optimizely Full Stack via cloud-mode, Segment will map `track`
 
 If you are using Optimizely SDKs v3+, [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) is enabled by default for decision events. Set up does not require maintaining the attributes of a user as long as the user id stays the same between Optimizely `activate` and `isFeatureEnabled` calls and Segment `track` calls to have Optimizely `metrics` populated in the Optimizely results page. If you would like to segment your Optimizely results by user `attribute`, then make sure the `attributes` passed in for the `activate` and `isFeatureEnabled` calls match the `attributes` passed in for the `track` calls for that user id.
 
-For more details on how events are attributed on the Optimizely results page, please refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
+For more details on how events are attributed on the Optimizely results page, refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
 
 ### Track
 
@@ -100,7 +100,7 @@ Segment also handles the following mapping:
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
 
 > note ""
-> **Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however,  they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
+> **Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however, they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
 
 Segment defaults to identifying users with their `anonymousId`. Enabling "Use User ID" setting in your Segment dashboard means that only `track` events triggered by identified users are passed downstream to Optimizely. You may optionally fall back to `anonymousId` when `userId` is unavailable by setting `fallbackToAnonymousId` to `true`.
 
@@ -132,7 +132,7 @@ When implementing Optimizely via cloud-mode, Segment will map `track` events to 
 
 If you are using Optimizely SDKs v3+, [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) is enabled by default for decision events. Set up does not require maintaining the attributes of a user as long as the user id stays the same between Optimizely `activate` and `isFeatureEnabled` calls and Segment `track` calls to have Optimizely `metrics` populated in the Optimizely results page. If you would like to segment your Optimizely results by user `attribute`, then make sure the `attributes` passed in for the `activate` and `isFeatureEnabled` calls match the `attributes` passed in for the `track` calls for that user id.
 
-For more details on how events are attributed on the Optimizely results page, please refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
+For more details on how events are attributed on the Optimizely results page, refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
 
 ### Track
 
@@ -148,7 +148,7 @@ Segment also handles the following mapping:
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
 
 > note ""
-> **Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however,  they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
+> **Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however, they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
 
 Segment defaults to identifying users with their `anonymousId`. Enabling "Use User ID" setting in your Segment dashboard means that only `track` events triggered by identified users are passed downstream to Optimizely. You may optionally fall back to `anonymousId` when `userId` is unavailable by setting `fallbackToAnonymousId` to `true`.
 
@@ -162,7 +162,7 @@ Notification listeners are not available for Segment `track` events when impleme
 
 ## Personas
 
-Please follow these instructions on how to setup Personas and Optimizely:
+Follow these instructions on how to setup Personas and Optimizely:
 
 * [Using Segment Personas and Optimizely Full Stack for Omnichannel Experiments](https://blog.optimizely.com/tag/segment-personas/)
 

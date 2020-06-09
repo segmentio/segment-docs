@@ -60,7 +60,7 @@ Push notifications on Android require a bit of extra work to setup.
   more information about bundled integrations in our [Android
   documentation](/docs/connections/sources/catalog/libraries/mobile/android/#bundled-integrations).
 
-* Follow Localytics' documentation to [setup the permission in your
+* Follow Localytics' documentation to [set up the permission in your
   AndroidManifest.xml](http://docs.localytics.com/dev/android.html#modify-androidmanifest-push-android).
   Specifically, the **AndroidManifest** changes regarding the `GcmReceiver`,
   `GcmListenerService`, `InstanceIDListenerServer`, and `PushTrackingActivity`

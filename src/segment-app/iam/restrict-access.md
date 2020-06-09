@@ -6,9 +6,9 @@ title: Restricting Workspace Access
 Is there special permissioning to allow access to only certain sources?
 
 > warning "Deprecated"
-> **This section is being deprecated, please refer to [IAM](/docs/segment-app/iam/) going forward**
+> **This section is being deprecated, refer to [IAM](/docs/segment-app/iam/) going forward**
 
-All team members on an account have access to make changes anywhere in the workspace. If you would like to have special permissioning to specific Sources we do offer this as a feature on our Business Tier plans, please contact our sales to to learn more! 
+All team members on an account have access to make changes anywhere in the workspace. If you would like to have special permissioning to specific Sources we do offer this as a feature on our Business Tier plans, contact our sales to to learn more! 
 
 ## Business Tier Only — Permission Levels
 

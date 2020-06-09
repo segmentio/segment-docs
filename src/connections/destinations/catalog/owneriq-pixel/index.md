@@ -7,9 +7,9 @@ title: OwnerIQ Destination
 
 [OwnerIQ](https://www.owneriq.com/platform-coex) allows marketers to leverage transparent, directly sourced, deterministic, shopping and purchasing data from retailers and brands.
 
-This destination is maintained by OwnerIQ. For any issues with the destination, please [reach out to their team](mailto:coex-support@owneriq.com).
+This destination is maintained by OwnerIQ. For any issues with the destination, [contact their team](mailto:coex-support@owneriq.com).
 
-_**NOTE:** The OwnerIQ Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on September 20, 2019. If you are interested in joining their beta program or have any feedback to help improve the OwnerIQ Destination and its documentation, please [let their team know](mailto:coex-support@owneriq.com)!_
+_**NOTE:** The OwnerIQ Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on September 20, 2019. If you are interested in joining their beta program or have any feedback to help improve the OwnerIQ Destination and its documentation, [let their team know](mailto:coex-support@owneriq.com)!_
 
 
 ## Getting Started
@@ -22,7 +22,7 @@ _**NOTE:** The OwnerIQ Destination is currently in beta, which means that they a
 
 ## Page
 
-If you haven't had a chance to review Segment's spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -32,7 +32,7 @@ OwnerIQ have mapped `analytics.page()` to OwnerIQ's Website Analytics Tag method
 
 ## Track
 
-If you haven't had a chance to review Segment's spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you aren't familiar with the Segment Spec, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 The following table shows how OwnerIQ map Segment's [semantic ecommerce](https://segment.com/docs/connections/spec/ecommerce/v2/) or custom event names to OwnerIQ's tag event:
 

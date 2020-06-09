@@ -45,7 +45,7 @@ We receive a large volume of requests so we encourage you to include a valid com
 Once approved, you can create your first [App](/docs/partners/conceptual-model/#apps). This represents a tile in the [Segment catalog](https://segment.com/catalog/) irrespective of which [Component](/docs/partners/conceptual-model/#components) type you choose to build so it should reflect your tool's name (eg. Zendesk Chat, Zendesk Sell).
 
 > info ""
-> The Developer Center currently only supports new Partner integrations (ie. Currently does not exist on the [Segment catalog](https://segment.com/catalog/)) in _Developer Preview_. If you're an existing Partner looking to build a new Component or make changes to your existing integration, please fill in [your details here](https://airtable.com/shrSweuRx5jspwsw7) and we will reach out once this is made available!
+> The Developer Center currently only supports new Partner integrations (ie. Currently does not exist on the [Segment catalog](https://segment.com/catalog/)) in _Developer Preview_. If you're an existing Partner looking to build a new Component or make changes to your existing integration, fill in [your details here](https://airtable.com/shrSweuRx5jspwsw7) and we'll contact you once this is made available!
 
 ### 4. Build & Test
 
@@ -56,7 +56,7 @@ Now you can start building! Depending on your use case you can build a:
 - [Stream](/docs/partners/streams)
 
 > info ""
-> The Developer Center currently only supports the [Subscription](/docs/partners/subscriptions) component in _Developer Preview_. If you're looking to build a [Web Plugin](https://airtable.com/shrT3b4C7agUEBKVS) or [Stream](https://airtable.com/shrj3BkHMhdeaPYWt) please fill out the respective form and we will reach out once this is made available!
+> The Developer Center currently only supports the [Subscription](/docs/partners/subscriptions) component in _Developer Preview_. If you're looking to build a [Web Plugin](https://airtable.com/shrT3b4C7agUEBKVS) or [Stream](https://airtable.com/shrj3BkHMhdeaPYWt)  fill out the respective form and we'll contact you once this is made available!
 
 No matter which Component you decide to build, make it aligns with the [Segment Spec](https://segment.com/docs/connections/spec). This is a critical component in preserving logical continuity between disparate writers and readers of data. If you encourage customers to break the spec, you are breaking the promise of Segment, and is grounds for removal from the catalog.
 
@@ -76,7 +76,7 @@ Finally, make sure you prepare documentation and relevant marketing material for
 
 You can submit your Component in the Developer Center for review. We strive to respond to your submission within 2 business days to kickstart the review process.
 
-Our team will test your integration and review your documentation and marketing material. In order to keep this review feedback loop short, please make sure that your integration:
+Our team will test your integration and review your documentation and marketing material. In order to keep this review feedback loop short, make sure that your integration:
 
 - Adheres to the [Segment Spec](/docs/connections/spec/)
 - Adheres to your published documentation
@@ -99,9 +99,9 @@ In a nutshell you need:
   - **Integrations / Partners Page:** Add your Segment integration to your integrations or partners page, like [this](https://success.clearbrain.com/connections/import-connections/connect-to-your-data-in-segment).
   - **Blog Post:** Publish a launch blog post about your integration, like [this](https://www.kustomer.com/blog/kustomer-segment-integration/). Make sure you share it on Twitter and LinkedIn too! (If you don't have a blog, an email is okay)
 
-Please be sure to use our [brand kit](https://brandfolder.com/segment/press-kit) for logos, and our [UTM guide](https://docs.google.com/document/d/1L0MHYdF2SYaMMiodQCYlZELF7pN0TXiZbD22nnlGhEk/copy) any time you link to a Segment page.
+Be sure to use our [brand kit](https://brandfolder.com/segment/press-kit) for logos, and our [UTM guide](https://docs.google.com/document/d/1L0MHYdF2SYaMMiodQCYlZELF7pN0TXiZbD22nnlGhEk/copy) any time you link to a Segment page.
 
-You can reach out to us at [partner-support@segment.com](mailto:partner-support@segment.com) once you have all these elements ready for review. Once we approve them, your Destination goes live on Catalog in Public Beta 🎉
+You can contact us at [partner-support@segment.com](mailto:partner-support@segment.com) once you have all these elements ready for review. Once we approve them, your Destination goes live on Catalog in Public Beta 🎉
 
 ## Post Launch
 

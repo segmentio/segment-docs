@@ -5,9 +5,9 @@ rewrite: true
 
 [Callingly](https://callingly.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically gets your sales team on the phone with your incoming leads within seconds, generating better results and happy customers.
 
-This destination is maintained by Callingly. For any issues with the destination, please [reach out to their team](mailto:support@callingly.com).
+This destination is maintained by Callingly. For any issues with the destination, [contact their team](mailto:support@callingly.com).
 
-_**NOTE:** The Callingly Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 2, 2019. If you are interested in joining their beta program or have any feedback to help improve the Callingly Destination and its documentation, please [let  their team know](mailto:support@callingly.com)!_
+_**NOTE:** The Callingly Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 2, 2019. If you are interested in joining their beta program or have any feedback to help improve the Callingly Destination and its documentation, [let their team know](mailto:support@callingly.com)!_
 
 
 ## Getting Started
@@ -21,7 +21,7 @@ _**NOTE:** The Callingly Destination is currently in beta, which means that they
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {

@@ -95,7 +95,7 @@ When you create an audience in Personas and connect it to Google Adwords Remarke
 
 ## Set up
 
-Before you start,  make sure you have administrative access to the Adwords account so you can set up and link this destination.
+Before you start, make sure you have administrative access to the Adwords account so you can set up and link this destination.
 
 ### 1. Add Adwords Remarketing Lists as a Personas Destination**
 
