@@ -107,7 +107,7 @@ At first glance, it appears that the group that was emailed did receive an absol
 
 Retaining and rewarding your customers is paramount to a strong and engaging brand. This example is just one of millions that you can employ to find new ways to delight and excite your customer base.
 
-Other ideas can be to send messages to your customers with a referral code to invite their friends. Or setup a coupon for customers who are just shy of entering your most valuable customers cohort. Or, if you're hosting a pop up shop event, sending a special and personalized invite to your strongest users first, as a way to thank them for their business.
+Other ideas can be to send messages to your customers with a referral code to invite their friends. Or set up a coupon for customers who are just shy of entering your most valuable customers cohort. Or, if you're hosting a pop up shop event, sending a special and personalized invite to your strongest users first, as a way to thank them for their business.
 
 The possibilities are endless! We're excited to see how you use your customer data to drive sales.
 

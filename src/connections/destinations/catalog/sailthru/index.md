@@ -38,7 +38,7 @@ analytics.page('Page Name', {
 })
 ```
 
-Please see our [documentation](https://segment.com/docs/connections/spec/page/#properties) for more info on the `keywords` property.
+See our [documentation](https://segment.com/docs/connections/spec/page/#properties) for more info on the `keywords` property.
 
 - - -
 
@@ -90,7 +90,7 @@ When you `track` an event, we will send that event to Sailthru as a custom event
 
 ![](images/1488218489126.png)
 
-Your account must have triggers or lifecycle optimizer enabled. This should be enabled when the account is setup, however, just to be sure you may need to reach out to your account representative to confirm it is enabled.
+Your account must have triggers or lifecycle optimizer enabled. This should be enabled when the account is setup, however, just to be sure you may need to contact your account representative to confirm it is enabled.
 
 A custom event will hit the **Sailthru Lifecycle Optimizer** feature. Navigate to **Communications > Lifecycle Optimizer** in your Sailthru dashboard:
 
@@ -192,7 +192,7 @@ The default status for the optout value is `none` or you can select `all`, `basi
 
 `all`: Opts the user out of all emails (campaigns & transactionals). This is the default status when a subscriber marks your email as spam from within an email client.
 
-`basic`: This opt-out setup allows for certain communications (see some acceptable examples in the next bullet) to always send to a user – despite their status.
+`basic`: This opt-out set up allows for certain communications (see some acceptable examples in the next bullet) to always send to a user – despite their status.
 
 `blast`: Opts the user out of all campaign emails. The user will still receive all transactional (1:1) emails.
 
@@ -205,7 +205,7 @@ You can read more about [Optout Levels here](https://getstarted.sailthru.com/man
 To configure a default list name, Segment exposes a setting to configure this in the UI. You can also explicitly set your own `defaultListName` through the destination option on `identify`.
 
 ### Reminder Time and Template
-To configure a default reminder time and template, enter the **public name** of your template (configured in Sailthru's UI) and the time frame you will want the email to send. Some example values are 60 minutes, 24 hours, 2 weeks. Segment will handle passing in the `+` increment. To read more about how Sailthru calculates time, please refer to their [time documentation](https://getstarted.sailthru.com/developers/zephyr-functions-library/time/).
+To configure a default reminder time and template, enter the **public name** of your template (configured in Sailthru's UI) and the time frame you will want the email to send. Some example values are 60 minutes, 24 hours, 2 weeks. Segment will handle passing in the `+` increment. To read more about how Sailthru calculates time, refer to their [time documentation](https://getstarted.sailthru.com/developers/zephyr-functions-library/time/).
 
 
 ## FAQ
@@ -214,7 +214,7 @@ To configure a default reminder time and template, enter the **public name** of 
 All calls are subject to rate limits.
  * For `identify` events, we hit the `/user` endpoint, which allows 300 requests/second.
  * All others allow 40 requests/second.
- * Limits can be raised on a case-by-case basis in order to support valid business practices. Reach out to your Sailthru account representative for more.
+ * Limits can be raised on a case-by-case basis in order to support valid business practices. contact your Sailthru account representative for more.
 
 ### Nested Traits and Property Handling
 

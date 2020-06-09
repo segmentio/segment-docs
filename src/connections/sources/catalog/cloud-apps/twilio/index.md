@@ -4,7 +4,7 @@ rewrite: true
 ---
 [Twilio](http://twilio.com) is a developer platform for communications. Software teams use Twilio APIs to add capabilities like voice, video, and messaging to their applications. This enables businesses to provide the right communications experience for their customers. Behind Twilio APIs is a Super Network, a software layer that connects and optimizes communications networks around the world. This is what allows users to reliably call and message anyone anywhere.
 
-This document was last updated on September 7, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on September 7, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ This document was last updated on September 7, 2018. If you notice any gaps, out
 
 4. When you click **Connect**, you'll be prompted for your Twilio Account SID. You can find it on your Twilio account under the project settings.
 
-5. You'll be re-directed to Twilio's app and you'll need to authorize Segment to read from your account data. To authorize, click in the "Allow" button. Once approved, you'll be redirected back to the setup page in the Segment app.
+5. You'll be re-directed to Twilio's app and you'll need to authorize Segment to read from your account data. To authorize, click in the "Allow" button. Once approved, you'll be redirected back to the set up page in the Segment app.
 
 6. Click on the "Finish" button and you'll be good to go!
 
@@ -30,11 +30,11 @@ We'll begin syncing your Twilio data into Segment momentarily, and it will be wr
 
 The Twilio source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Twilio objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. `twilio_prod.charges`).
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Twilio.  For example,  if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
+Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Twilio.  For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, please [let us know](https://segment.com/help/contact)!
+At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, [let us know](https://segment.com/help/contact)!
 
 
 ## Collections

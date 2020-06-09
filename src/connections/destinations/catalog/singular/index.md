@@ -7,7 +7,7 @@ title: Singular Destination
 
 The destination is available to receive data via Cloud Mode from all platforms and to integrate via Device Mode on Mobile.
 
-This destination is maintained by Singular. For any issues with the destination, please [reach out to Singular Support](mailto:support@singular.net).
+This destination is maintained by Singular. For any issues with the destination, [contact Singular Support](mailto:support@singular.net).
 
 ## Getting Started
 
@@ -82,7 +82,7 @@ Singular has explicitly mapped the `Application Installed` lifecycle event to pr
 
 ## Tracking Custom Events
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call (in Android) would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call (in Android) would look like:
 
 ```java
 Analytics.with(context).track("Signup")

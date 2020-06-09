@@ -6,10 +6,10 @@ beta: true
 
 [ProfitWell](https://www.profitwell.com) provides free subscription metrics to help you identify opportunities and then tools to help you reduce churn, optimize pricing, and grow your subscription business end-to-end. This integration enables ProfitWell users to leverage it's Retain product and Engagement Tracking capabilities.
 
-This destination is maintained by ProfitWell. For any issues with the destination, please [reach out to their team](mailto:product@profitwell.com).
+This destination is maintained by ProfitWell. For any issues with the destination, [contact their team](mailto:product@profitwell.com).
 
 > note ""
-> **NOTE:** The ProfitWell Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 19, 2020. If you are interested in joining their beta program or have any feedback to help improve the ProfitWell Destination and its documentation, please [let  their team know](mailto:product@profitwell.com)!
+> **NOTE:** The ProfitWell Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 19, 2020. If you are interested in joining their beta program or have any feedback to help improve the ProfitWell Destination and its documentation, [let their team know](mailto:product@profitwell.com)!
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ You can find your public token in the [Retain control center](https://www2.profi
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123', {

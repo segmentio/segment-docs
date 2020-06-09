@@ -4,9 +4,9 @@ rewrite: true
 ---
 [Attribution](http://attributionapp.com/) is an easy to use one stop dashboard for multi-touch attribution across all marketing channels. Attribution prides itself on high-fidelity and allows marketers to trace every visit, conversion or revenue dollar to the source. Marketers can easily integrate Attribution and Segment to begin measuring the effectiveness of their campaigns today.
 
-This destination is maintained by Attribution. For any issues with the destination, please [reach out to their team](Support@attribtutionapp.com).
+This destination is maintained by Attribution. For any issues with the destination, [contact their team](Support@attribtutionapp.com).
 
-This document was last updated on March 9, 2020. If you notice any gaps, out-dated information, or simply want to leave some feedback to help us improve our documentation, please [let us know](Support@attribtutionapp.com)!
+This document was last updated on March 9, 2020. If you notice any gaps, out-dated information, or simply want to leave some feedback to help us improve our documentation, [let us know](Support@attribtutionapp.com)!
 
 ## Getting Started
 
@@ -21,7 +21,7 @@ This document was last updated on March 9, 2020. If you notice any gaps, out-dat
 
 ## Page
 
-If you haven’t had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you haven’t had a chance to review our spec, take a look tounderstand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page("pageLoaded");
@@ -33,7 +33,7 @@ Page calls are sent to Attribution to record visits on your dashboard.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify("userId123", {
@@ -47,7 +47,7 @@ Identify calls are sent to Attribution as an `identify` event and are used to as
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track("Clicked Login Button")
@@ -58,7 +58,7 @@ Track calls are sent to Attribution as a `conversion event`. You should add a `c
 ![page](images/att5.png)
 
 ## Alias
-If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
 
 ```js
 analytics.alias('507f191e81');

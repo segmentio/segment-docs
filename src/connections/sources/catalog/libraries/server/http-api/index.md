@@ -24,12 +24,12 @@ In order to send data to our HTTP API, a content-type header must be set to `'ap
 
 We currently return a `200` response for all API requests so debugging should be done in the Segment Debugger. The only exception is if the request is too large / json is invalid it will respond with a `400`.
 
-We're hard at work surfacing more errors and more helpful responses to our users. If you have any suggestions, [let us know](/contact/)!
+We're hard at work surfacing more errors and more helpful responses to our users. If you have any suggestions, [let us know](https://segment.com/help/contact/)!
 
 
 ## Rate Limits
 
-There is no hard rate limit at which point Segment will drop your data. We ask that if you need to import at a rate exceeding 500 requests per second, please [contact us](/contact/) first. Requests include batches sent with the [batch method](#batch), which means you can send a large batch of events inside of a single request.
+There is no hard rate limit at which point Segment will drop your data. We ask that if you need to import at a rate exceeding 500 requests per second, [contact us](https://segment.com/help/contact/) first. Requests include batches sent with the [batch method](#batch), which means you can send a large batch of events inside of a single request.
 
 ## Max Request Size
 

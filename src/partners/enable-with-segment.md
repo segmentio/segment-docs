@@ -269,7 +269,7 @@ The library you use in your programming language should do this automatically fo
 
 ### What scopes do you support?
 
-We support `destination/<slug>`,  `workspace` and `workspace:read`. You set these scopes during app creation and when you start the install flow. You must use the same scope in both places, otherwise you get an invalid scope error when you start the error.
+We support `destination/<slug>`, `workspace` and `workspace:read`. You set these scopes during app creation and when you start the install flow. You must use the same scope in both places, otherwise you get an invalid scope error when you start the error.
 
 ### What is the fastest way to get started? Do I have to learn OAuth to make an app?
 
@@ -283,7 +283,7 @@ Your `redirect_uri` probably doesn't match what you set in the App Create Reques
 
 ### How many redirect_uris can I have? Can I add more after the app is created?
 
-You can have five `redirect_uris` on app creation. Editing the app info directly is not supported at this time. Please [contact us](https://segment.com/help/contact/) if you want any of your `redirect_uris` or other info changed.
+You can have five `redirect_uris` on app creation. Editing the app info directly is not supported at this time. [contact us](https://segment.com/help/contact/) if you want any of your `redirect_uris` or other info changed.
 
 In the future we will allow you to update this information on your own.
 

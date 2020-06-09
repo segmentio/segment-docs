@@ -8,7 +8,7 @@ Segment makes it easy to send your data to Azure Function (and lots of other des
 
 [Azure Function](https://azure.microsoft.com/en-us/services/functions) is a serverless compute service that enables you to run code on-demand without having to explicitly provision or manage infrastructure. Use Azure Functions to run a script or piece of code in response to a variety of events.
 
-_**NOTE:** Azure Function is currently in beta, and this doc was last updated on May 6, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Azure Function Destination and its documentation, please [let us know](https://segment.com/help/contact)!_
+_**NOTE:** Azure Function is currently in beta, and this doc was last updated on May 6, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Azure Function Destination and its documentation, [let us know](https://segment.com/help/contact)!_
 
 # Getting Started
 
@@ -73,7 +73,7 @@ In order to process events from Segment, you will need to provide a Azure Functi
 
 
 - In the `Key` field, if not already selected, select `default (Function key)`.
-- Click on the `Copy` button in order to copy the URL. Keep this URL in order to later setup the Azure Function Segment destination.
+- Click on the `Copy` button in order to copy the URL. Keep this URL in order to later set up the Azure Function Segment destination.
 ![](images/azure10.png)
 
 ## Configure Azure Function Destination

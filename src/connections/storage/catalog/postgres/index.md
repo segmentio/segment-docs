@@ -8,7 +8,7 @@ PostgreSQL, often simply Postgres, is an object-relational database management s
 
 PostgreSQL is ACID-compliant and transactional. PostgreSQL has updatable views and materialized views, triggers, foreign keys; supports functions and stored procedures, and other expandability. Developed by the PostgreSQL Global Development Group, free and open-source.
 
-This document was last updated on April, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on April, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting started
 Find below a selection of options on how to create your Postgres warehouse.
@@ -344,7 +344,7 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 
 5. Verify that the database connected successfully.
 
-    You should see a message indicating that the connection was successful. If not, check that you entered the settings correctly. If it still isn't working, feel free to [contact us](/contact)!
+    You should see a message indicating that the connection was successful. If not, check that you entered the settings correctly. If it still isn't working, feel free to [contact us](https://segment.com/help/contact/)!
 
 ### Sync schedule
 
@@ -433,7 +433,7 @@ In order to resolve the error, check the following settings:
 This error can be caused for a few reasons:
 
 - Your Warehouse went offline.
-- There's a setting needed for Segment to connect which hasn't been correctly configured. Please refer to our Warehouse docs to ensure all steps outlined there have been followed.</td>
+- There's a setting needed for Segment to connect which hasn't been correctly configured. Refer to our Warehouse docs to ensure all steps outlined there have been followed.</td>
     </tr>
     <tr>
         <td>Schema <schema_name> does not exist</td>

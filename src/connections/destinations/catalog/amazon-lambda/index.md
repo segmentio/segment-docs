@@ -56,7 +56,7 @@ There are two options for setting up the IAM policy and role:
 
 ### Use CloudFormation
 
-Using CloudFormation minimizes the setup steps needed, and is Segment's recommended way to create your Lambda's policy and role.
+Using CloudFormation minimizes the set up steps needed, and is Segment's recommended way to create your Lambda's policy and role.
 
 **Create the CloudFormation Template**
 

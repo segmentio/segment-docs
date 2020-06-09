@@ -446,7 +446,7 @@ You can either send the property value as a comma delimited string (ie. `'brady,
 
 You can map your Segment properties in your settings to any of your Adobe props.
 
-You can either send the property value as a string (ie. `'brady'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it so that it is a pipe (`|`) delimited string before sending to Adobe (ie. `'brady|edelman|blount'`). If you would like to set up a custom delimiter please see our documentation [here](https://segment.com/docs/connections/destinations/catalog/adobe-analytics/#custom-delimiter) for configuring custom delimiters.
+You can either send the property value as a string (ie. `'brady'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it so that it is a pipe (`|`) delimited string before sending to Adobe (ie. `'brady|edelman|blount'`). If you would like to set up a custom delimiter  see our documentation [here](https://segment.com/docs/connections/destinations/catalog/adobe-analytics/#custom-delimiter) for configuring custom delimiters.
 
 ## Options
 
@@ -497,7 +497,7 @@ This option allows you to associate specific Adobe events with individual Segmen
  ```
 
 ### IMS Region
-This option allows you to associate events with IMS Regions. **Please note. If you specify this you must also define a `Marketing Cloud Visitor Id`.**
+This option allows you to associate events with IMS Regions. **Note. If you specify this you must also define a `Marketing Cloud Visitor Id`.**
 
 ```javascript
  analytics.track({
@@ -551,7 +551,7 @@ This option allows you to associate a standard Visitor ID with the event.
  ```
 
  ## Link Names, Link URLs, Link Types
- Please see [this](#setting-custom-linktypes-linknames-and-linkurls) section for information about configuring these as options.
+ See [this](#setting-custom-linktypes-linknames-and-linkurls) section for information about configuring these as options.
 
 ## Settings
 
@@ -860,7 +860,7 @@ Then, set up your mobile libraries:
 For Android:
 
 - Download the latest version of the `AdobeHeartbeat.jar` file and include it in your Android project, as outlined in [Adobe's documentation here](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/android_2.0/c_vhl_download_android_sdk.html).
-- Follow the remaining setup steps [outlined here](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/android_2.0/r_vhl_getting-started-android.html).
+- Follow the remaining set up steps [outlined here](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/android_2.0/r_vhl_getting-started-android.html).
 
 For iOS: the Adobe Heartbeat SDK is already included with the Segment-Adobe-Analytics SDK.
 
@@ -1273,9 +1273,9 @@ _Considerations_
 ### Setting custom linkTypes, linkNames and linkUrls
 If you are setting up the Adobe Analytics destination in cloud-mode, you can pass in custom linkTypes, linkNames and linkURLs.
 
-**Note**: If you pass in the `visitorId` in a destination specific `integration` object within your Segment `page` or `track` events, then the `visitorId` passed will persist on page or track calls that occur after an identify call. This will effectively supersede Segment stting the `visitorId` variable to your `userId` after an `identify` call.
+**Note**: If you pass in the `visitorId` in a destination specific `integration` object within your Segment `page` or `track` events, then the `visitorId` passed will persist on page or track calls that occur after an identify call. This will effectively supersede Segment setting the `visitorId` variable to your `userId` after an `identify` call.
 
-We know this is daunting territory, so please don't hesitate to reach out directly for guidance!
+We know this is daunting territory, so don't hesitate to contact us directly for guidance!
 
 **Setting the event linkType**
 
@@ -1349,7 +1349,7 @@ If you're using the `marketingCloudVisitorID`, we recommend doing this and inclu
 
 <!-- TODO if you manually pass the visitorID in the Segment page or track call, then it sticks around after identify is called, and it prevents it from breaking - whatever you pass in the integrations object overrides what segment's adobe integration code logic does-->
 
-We know this is daunting territory, so please don't hesitate to reach out directly for guidance!
+We know this is daunting territory, so don't hesitate to contact us directly for guidance!
 
 ### Populating Custom Links report with server side data
 

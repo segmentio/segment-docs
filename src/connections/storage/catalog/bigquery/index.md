@@ -19,7 +19,7 @@ loaded into one of the most powerful and cost-effective data warehouses today.
 
 This document was last updated on March 12, 2019. If you notice any gaps,
 out-dated information or simply want to leave some feedback to help us improve
-our documentation, please [let us know](https://segment.com/help/contact)!
+our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -205,7 +205,7 @@ functions.
 ### Does Segment support streaming inserts?
 
 Segment's connector does not support streaming inserts at this time. If you have
-a need for streaming data into BigQuery, please [contact us](https://segment.com/requests/integrations/).
+a need for streaming data into BigQuery, [contact us](https://segment.com/requests/integrations/).
 
 ### Can I customize my sync schedule?
 

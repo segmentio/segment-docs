@@ -8,7 +8,7 @@ When you toggle on Google Cloud Pub/Sub in Segment, we'll start sending your spe
 
 ## Authentication
 
-In order for us to publish events to a Pub/Sub topic on your behalf, you must grant our [Google Cloud Service Account](https://cloud.google.com/iam/docs/understanding-service-accounts) publish access to your chosen topic. Please follow these steps to enable this:
+In order for us to publish events to a Pub/Sub topic on your behalf, you must grant our [Google Cloud Service Account](https://cloud.google.com/iam/docs/understanding-service-accounts) publish access to your chosen topic. Follow these steps to enable this:
 
 1. In your Google Cloud Console, navigate to your Pub/Sub topic list. You should be able to access this list [here](https://console.cloud.google.com/cloudpubsub/topicList).
 2. Once there, either select an individial topic or multiple using the checkboxes to the left of each topic name. Once you have made a selection, you should see some **Permissions** options on the right of the page.
@@ -28,7 +28,7 @@ Segment `track` events can map based on their **event name**. For example, if yo
 
 ![track event mapping screenshot](images/track_mapping.png)
 
-**Please ensure you use the full topic path!** They are formatted like this `projects/${PROJECT_NAME}/topics/${TOPIC_NAME}`
+**Make sure you use the full topic path!** They are formatted like this `projects/${PROJECT_NAME}/topics/${TOPIC_NAME}`
 
 Any Segment **event type** (ie. `page`, `track`, `identify`, `screen`, etc.) can also be mapped. This allows you to publish all occurrences of a given Segment event type to a given Pub/Sub topic. To do this, you simply to create a row with the event type (track, identify, page, etc.) and it's corrensponding topic:
 
@@ -44,4 +44,4 @@ The structure of a Pub/Sub message follows this structure: [PubsubMessage](https
 
 Our integration will publish the entire Segment event payload as a Base64 encoded string and set it as the value of the `data` parameter in the Pub/Sub message payload. We will set the `publishTime` to be the `timestamp` of the Segment event.
 
-We do not currently integrate with the optional `attributes` parameter. If you use this functionality, please [contact us](https://segment.com/help/contact).
+We do not currently integrate with the optional `attributes` parameter. If you use this functionality, [contact us](https://segment.com/help/contact).

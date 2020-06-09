@@ -63,7 +63,7 @@ Learn more about your pixel event data in Events Manager in the [Facebook Ads He
 
 Currently, Facebook Pixel Server-Side only supports Track calls.
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("My Custom Event", {

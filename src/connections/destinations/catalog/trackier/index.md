@@ -4,9 +4,9 @@ title: Trackier Destination
 ---
 [Trackier](https://trackier.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is customisable performance marketing software used by ad networks, agencies and advertisers to manage publisher relations.
 
-This destination is maintained by Trackier. For any issues with the destination, please [reach out to their team](mailto:support@trackier.com).
+This destination is maintained by Trackier. For any issues with the destination, [contact their team](mailto:support@trackier.com).
 
-_**NOTE:** The Trackier Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on May 14, 2019. If you are interested in joining their beta program or have any feedback to help improve the Trackier Destination and its documentation, please [let  their team know](mailto:support@trackier.com)!_
+_**NOTE:** The Trackier Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on May 14, 2019. If you are interested in joining their beta program or have any feedback to help improve the Trackier Destination and its documentation, [let their team know](mailto:support@trackier.com)!_
 
 
 ## Getting Started
@@ -20,7 +20,7 @@ _**NOTE:** The Trackier Destination is currently in beta, which means that they 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
   analytics.track("Item Sold", {

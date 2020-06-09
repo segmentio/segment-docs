@@ -15,7 +15,7 @@ title: Zapier Destination
     ![](images/webhooks-by-zapier.png)
     ![](images/zapier-catch-raw-hook.gif)
 
-3. Complete the remaining Webhook setup steps, and Zapier will present you with a custom Webhook URL.
+3. Complete the remaining Webhook set up steps, and Zapier will present you with a custom Webhook URL.
 4. Repeat step 3 to create as many Webhook URLs as you like.
 5. Remember that each Zapier "trigger" should be connected to an "Action" - i.e. posting the Webhook data to another downstream tool, such as Slack.
 
