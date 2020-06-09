@@ -17,7 +17,7 @@ _**NOTE:** The Userlist.io Destination is currently in beta, which means that th
 2. Search for "Userlist" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "Push API Key" into your Segment Settings UI which you can find from your [Userlist.io Push API settings](https://app.userlist.io/settings/push).
 
-_**NOTE:** The Userlist.io Destination does not support tracking of anonymous users, so  make sure to call `identify` before calling `track`. If you do call `track` on unidentified users, you will receive a 400 error which you can disregard if it was intentional._
+_**NOTE:** The Userlist.io Destination does not support tracking of anonymous users, so make sure to call `identify` before calling `track`. If you do call `track` on unidentified users, you will receive a 400 error which you can disregard if it was intentional._
 
 ## Identify
 

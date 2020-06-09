@@ -1275,7 +1275,7 @@ If you are setting up the Adobe Analytics destination in cloud-mode, you can pas
 
 **Note**: If you pass in the `visitorId` in a destination specific `integration` object within your Segment `page` or `track` events, then the `visitorId` passed will persist on page or track calls that occur after an identify call. This will effectively supersede Segment setting the `visitorId` variable to your `userId` after an `identify` call.
 
-We know this is daunting territory, so  don't hesitate to contact us directly for guidance!
+We know this is daunting territory, so don't hesitate to contact us directly for guidance!
 
 **Setting the event linkType**
 
@@ -1349,7 +1349,7 @@ If you're using the `marketingCloudVisitorID`, we recommend doing this and inclu
 
 <!-- TODO if you manually pass the visitorID in the Segment page or track call, then it sticks around after identify is called, and it prevents it from breaking - whatever you pass in the integrations object overrides what segment's adobe integration code logic does-->
 
-We know this is daunting territory, so  don't hesitate to contact us directly for guidance!
+We know this is daunting territory, so don't hesitate to contact us directly for guidance!
 
 ### Populating Custom Links report with server side data
 
