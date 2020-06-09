@@ -146,7 +146,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`campaign`</td>
     <td>Object</td>
-    <td>Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term` and `content`.
+    <td>Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter.
     <br><br>
     This maps directly to the common UTM campaign parameters.
     </td>
@@ -189,7 +189,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`page`</td>
     <td>Object</td>
-    <td>Dictionary of information about the current page in the browser, containing `hash`, `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by Analytics.js.
+    <td>Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).
     </td>
   </tr>
   <tr>
