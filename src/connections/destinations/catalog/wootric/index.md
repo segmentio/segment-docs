@@ -61,7 +61,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page()
 ```
 
-Page calls are sent to Wootric as a pageview.
+Segment sends Page calls to Wootric as a `pageview`.
 
 When you call Page, Wootric tracks the URL, page name, and page path that you are currently on. You can use this information in the Wootric Settings to trigger surveys by using Wootric's Targeted Sampling feature.
 Segment’s page variables recognized as Wootric’s standard page fields are:
