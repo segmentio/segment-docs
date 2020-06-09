@@ -5,22 +5,24 @@ rewrite: true
 
 [Nat.app](https://nat.app?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a CRM tool for founders and sales people that makes it easy to stay in touch with users and find product market fit.
 
-This destination is maintained by Nat.app. For any issues with the destination, please [reach out to their team](mailto:segment@nat.app).
+This destination is maintained by Nat.app. For any issues with the destination, [contact the Nat team](mailto:segment@nat.app).
 
 > info ""
-> The Nat.app Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the Nat.app Destination and its documentation, please [let  their team know](mailto:mailto:segment@nat.app)!
+> The Nat.app Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the Nat.app Destination and its documentation, please [let their team know](mailto:mailto:segment@nat.app)!
 
 ## Getting Started
 
 {% include content/connection-modes.md %} 
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Nat.app" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Nat.app's settings page](https://contacts.nat.app/settings).
+1. From the Destinations catalog page in the Segment App, click "Add Destination".
+2. Search for "Nat.app" in the Destinations Catalog, and select the "Nat.app" destination.
+3. Choose which Source should send data to the "Nat.app" destination.
+4. Go to the [Nat.app settings page](https://contacts.nat.app/settings), find and copy the "API key".
+5. Enter the "API Key" in the "Nat.app" destination settings in Segment.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, read the documentation to learn what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -30,35 +32,40 @@ analytics.identify('userId123', {
 
 Identify calls are sent to Nat.app as an `identify` event. 
 
-**Those are the only events this integration accepts and they need to contain an `email` and a `timestamp`to be accepted**.  
+> warning ""
+> Nat.app only accepts Identify calls. They must contain an `email` and a `timestamp` or else Nat.app will not accept them.  
 
-Every `identify` event that contains an email will be added as an interaction to the timeline of the contact it is associated with. There can only be one event generated per day per contact, so as to keep our *closeness indicator* accurate.
+If an `identify` event contains an email, it is added to the timeline of the contact record for that email address as an interaction. Nat only generates one event per day per contact to keep Nat's *closeness indicator* accurate.
 
-Additionally, they can also include a `url` that will be added as a description to the event in the user's timeline. 
+You can also include a `url` that is added as a description to the event in the user's timeline. 
 
 
 Here is an example of an `identify` even that has been added to a timeline:
 ![nat timeline](images/natTimeline.png)
 
 ### Accepted data format
-Nat accepts multiple types of data formats, so as to make the integration as easy as possible. Let's start with the recommended format: 
+
+Nat accepts several types of data formats to make the integration as easy as possible. There is a recommended format as well as alternative formats. 
 
 #### Recommended format - with traits & page
-The user email is stored in `traits` and the url in `page`.
+
+In the recommended format, the user email is stored in `traits`, and the url in `page`.
 ``` 
 {
 "type": "identify",
 "timestamp": "2020-05-31T17:55:47.263Z",
 "traits": {
-    "email": "peter@initech.com"
+    "email": "peter@example.com"
   },
 "page": {
-      "url": "xxxxx"
+      "url": "https://example.com"
     }
 }
 ```
+
 #### Alternative formats
-Additionally, Nat also accepts other formats that they've created to satisfy specific customer needs. Please reach out to segment@nat.app if you need a custom format.
+
+Nat also accepts other formats to meet specific customer needs. Contact [segment@nat.app](mailto:segment@nat.app) if you need a custom format.
 
 *Example 1 - Without traits or url information*
 
