@@ -564,6 +564,14 @@ analytics.track('Email Clicked', {
 });
 ```
 
+You can also set the `anonymousId` immediately inside your Segment snippet, even before the `ready` method has returned:
+
+ ```js
+  analytics.load('writekey');
+  analytics.page();
+  analytics.setAnonymousId('ABC-123-XYZ');
+```
+
 Keep in mind that setting the `anonymousId` in `analytics.js` does not overwrite the anonymous tracking IDs for any destinations you're using.
 
 
@@ -728,6 +736,12 @@ Only the libraries required for your **enabled** destinations are loaded. Whenev
 Using `analytics.js` does not offer a _huge_ performance benefit, but it is more performant than installing each of the destinations individually. And as more destinations move server-side, you'll receive more performance benefits automatically.
 
 One option, if you don't want to use any bundled 3rd-party tools, is to use our browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package.
+
+### Bundle size
+
+Segment's javascript snippet ([Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) has minimal impact on the size of the pages, and only increases the page size by about 1.1KB. 
+
+However, the snippet then asynchronously requests and loads a customized javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your device-mode destinations. Because of this, the file size can vary depending on how many and which destinations you enable. Without any destinations, the `analytics.min.js` file is about 62KB. Each time you enable a destination, it can slightly increase the size of this file. 
 
 ## Retries
 
