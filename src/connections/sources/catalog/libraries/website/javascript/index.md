@@ -13,7 +13,7 @@ Head over to our [`analytics.js` QuickStart Guide](/docs/connections/sources/cat
 
 ## Identify
 
-The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the guide](/docs/tutorials/quickstart-analytics.js#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
+The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
 **Note:** We recommend against using `identify` for anonymous visitors to your site. `analytics.js` automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors. It is attached to all `page` and `track` events both before and after an `identify`.
 
@@ -86,7 +86,7 @@ analytics.identify('12091906-01011992', function(){
 
 ## Track
 
-The `track` method lets you record any actions your users perform. You can [see a track example in the guide](/docs/tutorials/quickstart-analytics.js#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track).
+The `track` method lets you record any actions your users perform. You can [see a track example in the guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track).
 
 `track` method definition:
 
