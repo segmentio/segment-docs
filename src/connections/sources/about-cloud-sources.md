@@ -74,7 +74,7 @@ When you successfully authenticate, but your user lacks the required permissions
 
 Segment attempts to make the errors displayed in the UI clear enough so we don't need to document all of them. However, if it's not clear what to do to fix an error you encounter, [contact support](https://segment.com/help/contact/) and let them know.
 
-Sometimes, when the sync job fails due to an unhandled error or is mysteriously hanging for too long, we'll kill the job and report a failure with instructions to contact support. When this happens, our support and engineering teams have already been notified of the failure and have the complete set of logs to set about debugging and remediating the issue, but please don't hesitate to get in touch so they can keep you in the loop!
+Sometimes, when the sync job fails due to an unhandled error or is mysteriously hanging for too long, we'll kill the job and report a failure with instructions to contact support. When this happens, our support and engineering teams have already been notified of the failure and have the complete set of logs to set about debugging and remediating the issue, but  don't hesitate to get in touch so they can keep you in the loop!
 
 
 ## Using Cloud Source data
@@ -83,7 +83,7 @@ Sometimes, when the sync job fails due to an unhandled error or is mysteriously 
 
 In general, we've focused on pulling all of the collections directly related to the customer experience. We do not automatically pull all collections available from a partner API, since many of them aren't relevant to the customer journey. You can see a list of the collections we pull in the docs [for each cloud source](/docs/connections/sources/catalog/#cloud-apps). Each collection reflects a table in your database.
 
-Please [let us know](https://segment.com/help/contact) if you need additional data collected or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
+[Let us know](https://segment.com/help/contact) if you need additional data collected or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
 
 ### What questions can you answer with data from cloud, web, and mobile sources combined in a single warehouse?
 

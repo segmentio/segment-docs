@@ -6,9 +6,9 @@ title: Airship Source
 
 Real-Time Data Stream automatically collects user-level data and sends the data to Segment for analysis or action through other Destination integrations. At Airship, we understand that seamlessly tying data across platforms can be a complex task. This integration removes the development so users can get back to understanding their audience and reaching them on their preferred channel.
 
-This Source integration is maintained by Airship. For any issues with the source, please [reach out to their team](mailto:partner-integration-ua@airship.com).
+This Source integration is maintained by Airship. For any issues with the source, [contact their team](mailto:partner-integration-ua@airship.com).
 
-_**NOTE:** The Airship Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on July 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the Airship Source and its documentation, please [let  their team know](mailto:partner-integration-ua@airship.com)!_
+_**NOTE:** The Airship Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on July 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the Airship Source and its documentation, [let their team know](mailto:partner-integration-ua@airship.com)!_
 
 > success ""
 > **Good to know**: This page is about the Airship Segment source, which sends data _into_ Segment. There's also a page about the [Airship Segment destination](/docs/connections/destinations/catalog/airship/), which receives data from Segment!
@@ -134,4 +134,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-For any issues with the Source events, please [reach out to the Airship team](mailto:partner-integration-ua@airship.com).
+For any issues with the Source events, [contact the Airship team](mailto:partner-integration-ua@airship.com).

@@ -160,7 +160,7 @@ Then we added some peripheral events to to better understand how we’re perform
 
 - **User Invited** When users invite more people to their organization, it’s a good indicator that they’re engaged and serious about using the product. This helps us measure growth in organizations.
 - **Destination Enabled** Turning on a destination is a key value driver for our customers.
-- **Debugger Call Expanded** When we see that a certain customer has used the live event stream feature a number of times, we can reach out to see if we can help them debug.
+- **Debugger Call Expanded** When we see that a certain customer has used the live event stream feature a number of times, we can contact see if we can help them debug.
 
 For an Ecommerce company, however, the main events might be something like:
 

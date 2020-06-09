@@ -6,7 +6,7 @@ hide-personas-partial: true
 
 [Intercom](https://www.intercom.com/) makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination is open-source. You can browse the code for [analytics.js](https://github.com/segment-integrations/analytics.js-integration-intercom), [iOS](https://github.com/segment-integrations/analytics-ios-integration-intercom) and [Android](https://github.com/segment-integrations/analytics-android-integration-intercom) on Github.
 
-This document was last updated on March 11, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on March 11, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
@@ -22,7 +22,7 @@ This document was last updated on March 11, 2020. If you notice any gaps, outdat
 3.  Choose which Source to connect Intercom to.
 3.  Authorize your Intercom account in Segment and select the Intercom Account to sync with Segment.
 
-    You can choose which account to sync from the drop down menu in the top right. If you are using [server-side sources](https://segment.com/docs/connections/sources/#server), Segment starts passing data through once you activate the Destination. For other libraries please continue reading below.
+    You can choose which account to sync from the drop down menu in the top right. If you are using [server-side sources](https://segment.com/docs/connections/sources/#server), Segment starts passing data through once you activate the Destination. For other libraries  continue reading below.
 4. Find your "App ID" in the Intercom UI following [the instructions here](https://docs.intercom.com/faqs-and-troubleshooting/getting-set-up/where-can-i-find-my-app-id) or by navigating to the Gear Menu and clicking on "App Settings" followed by "API Keys". It should look something like `9iefb489`.
 
 ### Client
@@ -32,9 +32,9 @@ This document was last updated on March 11, 2020. If you notice any gaps, outdat
 
 ### Mobile
 
-**IMPORTANT:** Our Intercom mobile components are currently in public beta. We appreciate any feedback you have on the new components, so [please let us know](https://segment.com/help/contact)!
+**IMPORTANT:** Our Intercom mobile components are currently in public beta. We appreciate any feedback you have on the new components, so [let us know](https://segment.com/help/contact)!
 
-Before reading the specific instructions for iOS or Android below, please ensure you enter your Mobile API Key in the Segment Settings UI. This is required to send data to Intercom from your mobile apps.
+Before reading the specific instructions for iOS or Android below, make sure you enter your Mobile API Key in the Segment Settings UI. This is required to send data to Intercom from your mobile apps.
 
 #### iOS
 
@@ -59,7 +59,7 @@ Before reading the specific instructions for iOS or Android below, please ensure
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page();
@@ -76,7 +76,7 @@ If you have the Respond package and calling `page` still does not show your chat
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('su3r73', {
@@ -161,7 +161,7 @@ The fields collected from the [context object](/docs/connections/spec/common/) a
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Product Purchased', {
@@ -207,7 +207,7 @@ If you still see issues, the `identify` call is most likely either either not re
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```javascript
 analytics.group('companyId123', {
@@ -285,7 +285,7 @@ analytics.identify({
 
 Intercom's *identity verification* helps to make sure that conversations between you and your users are kept private and that one user can't impersonate another. Segment supports identity verification through our `analytics.js` web library and our `iOS` and `Android` mobile sources.
 
-For mobile apps, before enabling identity verification, please read Intercom's docs on identity verification for [iOS](https://developers.intercom.com/docs/ios-identity-verification) and [Android](https://developers.intercom.com/docs/android-identity-verification).
+For mobile apps, before enabling identity verification, read Intercom's docs on identity verification for [iOS](https://developers.intercom.com/docs/ios-identity-verification) and [Android](https://developers.intercom.com/docs/android-identity-verification).
 
 If you want to enable Intercom [identity verification](https://docs.intercom.com/configure-intercom-for-your-product-or-site/staying-secure/enable-identity-verification-on-your-web-product) for `analytics.js` or our bundled mobile SDKs, you can pass in the `user_hash` variable inside the integrations object.
 
@@ -378,7 +378,7 @@ Analytics.with(context).identify("123", traits, options);
 
 By default Intercom updates the **Last Seen** user trait whenever a user's profile is updated by `identify` calls, or if a group call is sent with a user's `userId`. If you want to update a user without updating their **Last Seen** time, pass `active` with a value of `false` into the context (see example below) of your `identify` or `group` calls.
 
-Note that this only works server-side; **Last Seen** is always updated client-side. Please note that id or name are necessary to update company.
+Note that this only works server-side; **Last Seen** is always updated client-side. Note that id or name are necessary to update company.
 
 Here's a full `python` example of an `identify` call with `active` set to `false`:
 

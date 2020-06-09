@@ -193,4 +193,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Moesif team](mailto:support@moesif.com).
+If you experience any issues with how the events arrive in Segment, [contact the Moesif team](mailto:support@moesif.com).

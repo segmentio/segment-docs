@@ -6,7 +6,7 @@ In keeping with our commitment to GDPR and CCPA readiness, Segment offers the ab
 
 [Contact us](https://segment.com/help/contact/) if you need to process more than 100,000 users within a 30 day period.
 
-**PLEASE NOTE (Business Plan Customers):** If you use this feature to delete data, you can not Replay the deleted data. For standard Replay requests, you must wait for any pending deletions to complete, and you cannot submit new deletion requests for the period of time that we replay data for you.
+**NOTE (Business Plan Customers):** If you use this feature to delete data, you can not Replay the deleted data. For standard Replay requests, you must wait for any pending deletions to complete, and you cannot submit new deletion requests for the period of time that we replay data for you.
 
 **NOTE:** The legacy GraphQL APIs for user deletion and suppression are deprecated. Instead, use the [Segment Config APIs](https://reference.segmentapis.com/?version=latest#57a69434-76cc-43cc-a547-98c319182247) to interact with our User Deletion and Suppression system.
 

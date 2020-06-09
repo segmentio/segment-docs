@@ -6,9 +6,9 @@ rewrite: true
 
 The `analytics.js` device-mode destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-drift).
 
-The cloud-mode destination is maintained by Drift. For any issues with the destination, please [reach out to their team](https://www.drift.com/help/).
+The cloud-mode destination is maintained by Drift. For any issues with the destination, [contact their team](https://www.drift.com/help/).
 
-This document was last updated on January 25, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on January 25, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
@@ -23,12 +23,12 @@ This document was last updated on January 25, 2019. If you notice any gaps, outd
 
   1. From your Segment UI's Destinations page click on "Add Destination".
   2. Search for "Drift" within the Destinations Catalog and confirm the Source you'd like to connect to.
-  3. Drop in your `API Key` and `Embed ID` as obtained from your Drift account (if Drift account not accessible yet, please [email the team](mailto:team@drift.com) to get a link for the Drift account creation).
+  3. Drop in your `API Key` and `Embed ID` as obtained from your Drift account (if Drift account not accessible yet, [email the team](mailto:team@drift.com) to get a link for the Drift account creation).
   4. If you're using analytics.js and 'identify' users by default, Drift will work automatically. If you don't have analytics.js setup, after enabling the Drift destination in Segment, you must 'identify' users in order for Drift to display in your product.
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page();
@@ -38,7 +38,7 @@ When you send a `page` or `screen` event, we will send that event to Drift as a 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('ksc2303', {
@@ -60,7 +60,7 @@ Keep in mind, we _strongly_ suggest to ensure that the `email` field is passed i
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Product Purchased', {
@@ -74,7 +74,7 @@ When you `track` an event, we will send that event to Drift as a custom event.
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```javascript
 analytics.group('companyId123', {

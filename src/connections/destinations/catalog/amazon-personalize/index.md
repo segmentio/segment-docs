@@ -26,7 +26,7 @@ There are a few pre-requisites:
 
 don't have an S3, Redshift warehouse, or Snowflake warehouse set up? You can read more about setting up S3 [here](https://segment.com/docs/connections/storage/catalog/amazon-s3/), Redshift [here](https://segment.com/docs/connections/storage/catalog/redshift/), and Snowflake [here](https://segment.com/docs/connections/storage/catalog/snowflake/).
 
-***If you're a Segment business tier customer, reach out to your Success contact to initiate a replay to S3 or your Warehouse.***
+***If you're a Segment business tier customer, contact your Success contact to initiate a replay to S3 or your Warehouse.***
 
 
 There are three main parts to using Amazon Personalize with Segment:
@@ -547,7 +547,7 @@ On the "Create user-item interaction data" page, select the "Create new schema" 
 ![](images/PersonalizeSchema.png)
 
 
-Scroll down to the "Schema definition" editor. Dataset schemas in Personalize are represented in [Avro](https://avro.apache.org/docs/current/spec.html).  For detailed information on Personalize schema definitions, please see: https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html.
+Scroll down to the "Schema definition" editor. Dataset schemas in Personalize are represented in [Avro](https://avro.apache.org/docs/current/spec.html).  For detailed information on Personalize schema definitions, see: https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html.
 
 
 > Avro is a remote procedure call and data serialization framework developed within Apache's Hadoop project. It uses JSON for defining data types and protocols, and serializes data in a compact binary format.
@@ -614,7 +614,7 @@ From the Dashboard page for the dataset group we created above, click the "Start
 
 On the "Create solution" page, enter a "Solution name".
 
-For a discussion on the different recipes you can use with Personalize, please see [here](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html)
+For a discussion on the different recipes you can use with Personalize, see [here](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html)
 
 
 ![](images/PersonalizeSolutionConfig.png)

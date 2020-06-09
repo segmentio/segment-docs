@@ -4,7 +4,7 @@ rewrite: true
 ---
 [Stripe](https://stripe.com/about) builds economic infrastructure for the internet, that enables businesses of every size to accept payments and manage their businesses online.
 
-This document was last updated on July 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on July 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
  1. From your workspace's `/sources` page, click `add source`.
@@ -18,7 +18,7 @@ This document was last updated on July 30, 2018. If you notice any gaps, outdate
 ### Sync
 The Stripe source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Stripe objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. `stripe_prod.charges`).
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Stripe.  For example,  if `subscription_status` goes from `active` to `inactive` between syncs, on its next sync that tickets status will be `inactive`.
+Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Stripe.  For example, if `subscription_status` goes from `active` to `inactive` between syncs, on its next sync that tickets status will be `inactive`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
@@ -324,7 +324,7 @@ Below are tables outlining the properties included in the collections listed abo
 | `customer_id`       | The ID of the Customer to which this PaymentMethod is saved. This will not be set when the PaymentMethod has not been saved to a Customer. |
 | `livemode`          | Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode. |
 | `type`              | The type of the PaymentMethod. An additional object is included on the PaymentMethod with a name matching this value. It contains additional information specific to the PaymentMethod type. |
-| custom object | The additional details of the PaymentMethod as specified by the `type` property. (Please note this is a Dynamic Object, and may have multiple properties prefixed with the same key) |
+| custom object | The additional details of the PaymentMethod as specified by the `type` property. (Note this is a Dynamic Object, and may have multiple properties prefixed with the same key) |
 
 ### plans
 

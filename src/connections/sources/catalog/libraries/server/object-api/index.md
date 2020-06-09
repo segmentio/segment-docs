@@ -17,7 +17,7 @@ In practice that means taking a Segment source **Write Key**,`'abc123'`, as the 
 
 ### Source Type
 
-Setup an `HTTP API` source type in Segment. You will use this source write key for authenticating with the Objects API.
+set up an `HTTP API` source type in Segment. You will use this source write key for authenticating with the Objects API.
 
 ### Content-Type
 
@@ -241,7 +241,7 @@ No; you should continue use `analytics.identify` to identify your customers. We'
 
 ### Can you just pull data automatically from my database?
 
-If you would like this feature, please [contact us](https://segment.com/help/contact/) and let us know.
+If you would like this feature, [contact us](https://segment.com/help/contact/) and let us know.
 
 ### How do you recommend we load object data into Segment?
 

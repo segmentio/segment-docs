@@ -7,7 +7,7 @@ redirect_from:
 
 This guide will explain how to provision a Redshift cluster and allow the Segment warehouse connector to write to it.
 
-This document was last updated on 23rd April, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on 23rd April, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 

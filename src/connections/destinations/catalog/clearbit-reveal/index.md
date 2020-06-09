@@ -3,9 +3,9 @@ title: Clearbit Reveal Destination
 rewrite: true
 ---
 
-[Clearbit Reveal](https://clearbit.com/segment) helps customers instantly match IP addresses with company names, and see full profiles for all site visitors. It turns your anonymous web traffic into a full company profile — complete with industry, employee count, funding details, and much more. You can find a list of the different attributes you can collect with Clearbit [here](https://clearbit.com/attributes). This destination is maintained by Clearbit. For any issues with the destination, please [reach out to their team](mailto:support@clearbit.com)
+[Clearbit Reveal](https://clearbit.com/segment) helps customers instantly match IP addresses with company names, and see full profiles for all site visitors. It turns your anonymous web traffic into a full company profile — complete with industry, employee count, funding details, and much more. You can find a list of the different attributes you can collect with Clearbit [here](https://clearbit.com/attributes). This destination is maintained by Clearbit. For any issues with the destination, [contact their team](mailto:support@clearbit.com)
 
-This document was last updated on August 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [please let us know](https://segment.com/help/contact)!
+This document was last updated on August 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
@@ -33,7 +33,7 @@ To verify that the destination has been set up correctly, send a page event **th
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page('Home', {
@@ -54,7 +54,7 @@ You can find details on what traits Clearbit adds and exactly what will be in th
 ## Troubleshooting
 
 ### Clearbit Enrichment data is not populating
-Please double check that you have entered **the _secret key_**, not the _public key_ Clearbit provides. Also please check that you included an IP address in your request.
+Double check that you have entered **the _secret key_**, not the _public key_ Clearbit provides. Also check that you included an IP address in your request.
 
 ### Marketo not receiving enriched data
-By default, Clearbit Reveal information will not be sent to Marketo. If you are interested in passing Clearbit data to Marketo, please reach out to <a href="mailto:support@clearbit.com?subject=Send%20Clearbit%20Reveal%20data%20to%20Marketo">Clearbit Support</a>.
+By default, Clearbit Reveal information will not be sent to Marketo. If you are interested in passing Clearbit data to Marketo, contact <a href="mailto:support@clearbit.com?subject=Send%20Clearbit%20Reveal%20data%20to%20Marketo">Clearbit Support</a>.
