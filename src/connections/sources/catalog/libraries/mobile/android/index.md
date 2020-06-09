@@ -560,43 +560,45 @@ The key thing to observe here is that the output produced by the first middlewar
 
 If you do not need to transform all of your Segment calls, and only want to transform the calls going to specific destinations, you should use Destination Middleware instead of Source middleware. Destination middleware are available for device-mode destinations only; there are several other ways to transform Segment calls sent to a destination in cloud-mode.
 
-You can use the same middleware object to apply transformations for several different device-mode destinations at the same time. For example, you can use middleware to add a property before sending `Checkout Started` track events to both a Mixpanel and an Amplitude destination. 
+You can use the same middleware object to apply transformations for several different device-mode destinations at the same time. For example, you can use middleware to add a property before sending `Checkout Started` track events to both a Mixpanel and an Amplitude destination.
 
 The example below adds a property key-value pair to any "Checkout Started" Track event, with the key "step" and the value "1".
 
 ```java
 Integration.Factory mixpanelFactory = MixpanelIntegration.FACTORY; // https://github.com/segment-integrations/analytics-android-integration-mixpanel
+Integration.Factory amplitudeFactory = AmplitudeIntegration.FACTORY; // https://github.com/segment-integrations/analytics-android-integration-amplitude
+Middleware addPropMiddleware = new Middleware() {
+      @Override
+      public void intercept(Chain chain) {
+        // Get the payload.
+        BasePayload payload = chain.payload();
+
+        if (payload.type() == BasePayload.Type.track) {
+          TrackPayload track = (TrackPayload) payload;
+
+          // Check the track call event name
+          if (track.event().equals("Checkout Started")) {
+
+            // Create copy of Properties map and add additional property
+            ValueMap newProps = new ValueMap();
+            newProps.putAll(track.properties());
+            newProps.put("step", 1);
+
+            // Build our new payload.
+            payload = track.toBuilder().properties(newProps).build();
+          }
+        }
+
+        // Continue with new payload
+        chain.proceed(payload);
+      }
+    };
 Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_WRITE_KEY)
-        .use(mixpanelFactory)
-        .useDestinationMiddleware(
-            mixpanelFactory.key(),
-            new Middleware() {
-              @Override
-              public void intercept(Chain chain) {
-                // Get the payload.
-                BasePayload payload = chain.payload();
-
-                if (payload.type() == BasePayload.Type.track) {
-                  TrackPayload track = (TrackPayload) payload;
-
-                  // Check the track call event name
-                  if (track.event().equals("Checkout Started")) {
-
-                    // Create copy of Properties map and add additional property
-                    ValueMap newProps = new ValueMap();
-                    newProps.putAll(track.properties());
-                    newProps.put("step", 1);
-
-                    // Build our new payload.
-                    payload = track.toBuilder().properties(newProps).build();
-                  }
-                }
-
-                // Continue with new payload
-                chain.proceed(payload);
-              }
-            })
-        .build();
+    .use(mixpanelFactory)
+    .use(amplitudeFactory)
+    .useDestinationMiddleware(mixpanelFactory.key(), addPropMiddleware)
+    .useDestinationMiddleware(amplitudeFactory.key(), addPropMiddleware)
+    .build();
 ```
 
 ### Braze Middleware
