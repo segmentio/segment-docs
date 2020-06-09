@@ -409,7 +409,7 @@ The middleware API is easily accessible in both Objective-C and Swift.
 
 Middleware is any Objective-C class that conforms to the following protocol.
 
-```objective_c
+```objc
 @protocol SEGMiddleware
 @required
 - (void)context:(SEGContext *_Nonnull)context next:(S
@@ -419,7 +419,7 @@ EGMiddlewareNext _Nonnull)next;
 
 We also provide a block-centric helper class to make it easier to create middlewares using anonymous functions on the fly. (See examples later on in the guide)
 
-```objective_c
+```objc
 typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNext _Nonnull next);
 
 @interface SEGBlockMiddleware : NSObject <SEGMiddleware>
@@ -434,7 +434,7 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 `SEGContext` object is not very information rich by itself. Typically you will need to use `eventType`  and `payload` to get more information about an event.
 
-```objective_c
+```objc
 @interface SEGContext : NSObject <NSCopying>
 
 @property (nonatomic, readonly, nonnull) SEGAnalytics *_analytics;
@@ -455,7 +455,7 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 If you look at `SEGEventType` more carefully, you'll realize that middleware is not only capable of handling `track` , `identify` and other normal analytics APIs, even calls like `reset` , `flush` and `openURL` go through and can therefore be processed by the middleware pipeline.
 
-```objective_c
+```objc
 typedef NS_ENUM(NSInteger, SEGEventType) {
     // Should not happen, but default state
     SEGEventTypeUndefined,
@@ -487,7 +487,7 @@ typedef NS_ENUM(NSInteger, SEGEventType) {
 
 There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enums. Subclassed payloads may contain call specific information, For example, the `SEGTrackPayload` contains `event` as well as `properties` .
 
-```objective_c
+```objc
 @interface SEGTrackPayload : SEGPayload
 
 @property (nonatomic, readonly) NSString *event;
@@ -499,7 +499,7 @@ There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enu
 
 Finally, to use a middleware, you will need to provide it to the `SEGAnalyticsConfiguration` object prior to the initialization of `SEGAnalytics` .
 
-```objective_c
+```objc
 @interface SEGAnalyticsConfiguration : NSObject
 
 /**
