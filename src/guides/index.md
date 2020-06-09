@@ -15,7 +15,7 @@ https://university.segment.com/introduction-to-segment/299955?reg=1&referrer=doc
 
 ## What does it do?
 
-In its very simplest form, Segment generates messages about what's happening in your site or app, then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and transmits messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/warehouses) (such as databases, warehouses, or bulk-storage buckets).
+In its very simplest form, Segment generates messages about what's happening in your site or app, then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and transmits messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/storage/) (such as databases, warehouses, or bulk-storage buckets).
 
 ## How does Segment work?
 

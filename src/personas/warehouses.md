@@ -138,7 +138,7 @@ Although Personas can compute audiences and traits in real-time, these calculati
 
 ### Can I prevent a table, a computed trait, or audience from syncing to my warehouse?
 
-Yes! You can use [Warehouses Selective Sync](/docs/connections/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse/) to manage which traits, audiences, and tables get synced from Personas.
+Yes! You can use [Warehouses Selective Sync](/docs/connections/storage/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse/) to manage which traits, audiences, and tables get synced from Personas.
 
 ### Why are some users missing from the `users` table?
 
