@@ -523,11 +523,14 @@ Once initialized, the list of middleware used in `SEGAnalytics` cannot be change
 The following examples will be written in Swift to demonstrate that the middleware API works just as well in Swift as in Objective-C. To start off, this is what initialization looks like
 
 ```swift
+let mixpanelIntegration = SEGMixpanelIntegrationFactory.instance()
+let amplitudeIntegration = SEGAmplitudeIntegrationFactory.instance()
 let config = SEGAnalyticsConfiguration(writeKey: "YOUR_WRITEKEY_HERE")
 config.trackApplicationLifecycleEvents = true
 config.trackDeepLinks = true
 config.recordScreenViews = true
-config.use(SEGMixpanelIntegrationFactory.instance())
+config.use(mixpanelIntegration)
+config.use(amplitudeIntegration)
 
 config.sourceMiddleware = [
     turnScreenIntoTrack,
