@@ -49,7 +49,7 @@ Check out our [Frequently Asked Questions about Warehouses](/docs/connections/st
 
 [How do I create a user, grant usage on a schema and then grant the privileges that the user will need to interact with that schema?](/docs/connections/storage/warehouses/add-warehouse-users/)
 
-[Which IPs should I whitelist?](/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist)
+[Which IPs should I allow?](/docs/connections/storage/warehouses/faq/#which-ips-should-i-allow)
 
 [Will Segment sync my historical data?](/docs/connections/storage/warehouses/faq/#will-segment-sync-my-historical-data)
 

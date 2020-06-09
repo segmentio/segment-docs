@@ -48,9 +48,9 @@ When you call [`track`](/docs/connections/spec/track/) in Analytics.js, we call 
 
 As per the example above, TV Squared **requires** that you pass in a `revenue`, `productType`, `orderId`, and `promo` property into each of your calls. If you cannot provide a value for one or more of the aforementioned properties, don't worry, you can simply pass in an empty string to send the event.
 
-### Event Whitelisting
+### Event Allow-lists
 
-For each event that you want to track (e.g. via analytics.track(your_event_name, …)), you will need to whitelist the event in your destination settings (under "Event Whitelist"). For example, if you want analytics.track('Order Completed`) and analytics.track('Sale`) events to be sent, then you will need to add Order Completed and Sale to this list.
+For each event that you want to track (for example using `analytics.track(your_event_name, …)`), you must add the event to the allow-list in your destination settings (under "Event allow-list"). For example, if you want to send `analytics.track('Order Completed')` and `analytics.track('Sale')` events, then you must add `Order Completed` and `Sale` to this list.
 
 ### Custom Track Properties
 
@@ -67,4 +67,5 @@ analytics.track('Completed Purchase', {
 });
 ```
 
-In order to take advantage of this feature, similar to [Event Whitelisting](#/event-whitelisting), you will need to add "Custom Metrics" to your destination settings. This will let you put in the specific additional metrics you want to send (the required properties are already sent automatically). In this case, you'd add `listViewed` and `browser`.
+In order to take advantage of this feature, similar to [Event Allow-listing](#event-allow-
+lists), you will need to add "Custom Metrics" to your destination settings. This will let you put in the specific additional metrics you want to send (the required properties are already sent automatically). In this case, you'd add `listViewed` and `browser`.

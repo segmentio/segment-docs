@@ -87,8 +87,8 @@ Collections are the groupings of resources we pull from your source. In your war
 |  recipients | Object | All contacts who have received an email, with information about their last activities and custom activities. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html).  **Will only return data if you're using Marketing Campaign featurs of SendGrid.** |
 |  campaigns | Object | All campaigns you've created in Sendgrid. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html).  **Will only return data if you're using Marketing Campaign featurs of SendGrid.** |
 
-## Troubleshooting 
+## Troubleshooting
 
 If you're getting an "Invalid Credentials" error when setting up the SendGrid source, send a direct ping to the [SendGrid Marketing Campaigns API](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html) to test if you're using the correct credentials.
 
-Make sure you whitelist the Segment IP addresses on Sendgrid. Please [contact our team](https://segment.com/help/contact/) for the list of IP addresses to whitelist.
+Make sure you add the Segment IP addresses to the allow-list on Sendgrid. Please [contact our team](https://segment.com/help/contact/) for the list of IP addresses.

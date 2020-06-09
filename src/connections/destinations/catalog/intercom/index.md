@@ -455,7 +455,7 @@ Our mobile SDKs do not support push notifications and deep linking out of the bo
 
 You probably have [Intercom's identity verification](#identity-verification) setting turned on but are not passing the `user_hash` correctly or at all.
 
-You may also have to [whitelist your domain](https://docs.intercom.io/configuring-for-your-product-or-site/customizing-the-intercom-messenger#whitelist-the-domains-you-want-to-use-intercom-with) in Intercom's dashboard. Otherwise, events on non-whitelisted pages may be rejected with a 403 error.
+You may also have to [add your domain to an allow-list](https://docs.intercom.io/configuring-for-your-product-or-site/customizing-the-intercom-messenger#whitelist-the-domains-you-want-to-use-intercom-with) in Intercom's dashboard. Events on pages that are not on the allow-list may be rejected with a 403 error.
 
 
 ### My Intercom Widget doesn't show up

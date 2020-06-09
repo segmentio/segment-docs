@@ -80,12 +80,9 @@ database shortly.
 
 ## Security
 
-### Whitelisting IPs
+### Allow-listing IPs
 
-If your Db2 Warehouse is in a private network, be sure to [whitelist
-Segment's IP
-address](https://segment.com/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist).
-Otherwise, we will not be able to load your data.
+If your Db2 Warehouse is in a private network, be sure to [add Segment's IP address to an allow-list](https://segment.com/docs/connections/storage/warehouses/faq/#which-ips-should-i-allow). Otherwise, we will not be able to load your data.
 
 ### Unique User
 

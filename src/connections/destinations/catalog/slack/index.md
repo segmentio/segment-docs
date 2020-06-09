@@ -26,14 +26,18 @@ analytics.identify('userId123', {
 });
 ```
 
-### Whitelisted Traits
-By default, your `identify` calls will not be sent through to Slack unless you have whitelisted a `trait` and the `identify` call contains that `trait`. If you whitelist multiple `traits` within the Segment UI under "Whitelisted Traits", then the `identify` call must contain all of them in order to be sent into your Slack. Following the code example above, we can whitelist the trait names of `name` and `email`.
+### Allow-listed Traits
+
+By default, your `identify` calls are not sent to Slack unless you have added a `trait` and the `identify` call contains that `trait` to an allow-list. If you add multiple `traits` to to the "Allow-listed Traits" setting in the Segment UI, then the `identify` call must contain _all_ of them in order for Segment to send them to Slack. Following the code example above, we can allow-list the trait names of `name` and `email`.
 
 ### Identify Template
-Once you've saved your whitelisted traits, you can now use them alongside [Handlebars expressions](http://handlebarsjs.com/expressions.html) syntax within a template. Make sure you reference the spec for the [Identify method](https://segment.com/docs/connections/spec/identify/) and [common object](https://segment.com/docs/connections/spec/common/). `Identify` events that contain the whitelisted `traits` will appear as a Slack message with the following default template:
-```
+
+Once you save your traits in the allow-list, you can use them with [Handlebars expressions](http://handlebarsjs.com/expressions.html) syntax in a template. Make sure you follow the spec for the [Identify method](https://segment.com/docs/connections/spec/identify/) and [common object](https://segment.com/docs/connections/spec/common/). `Identify` events that contain `traits` on the allow-list appear as a Slack message with the following default template:
+
+```handlebars
 Identified user \{{name}}. \n\{{traits}}
 ```
+
 where "name" is the first found of the following:
 * `context.traits.name`
 * `context.traits.firstName` + `context.traits.lastName`
@@ -124,7 +128,7 @@ More information on regex can be found [here](http://www.zytrax.com/tech/web/reg
 ### Page, Identify, Group calls are not showing up
 The Slack Destination does not support `page` or `group` calls. Only `track` events are supported by default. Remember that [`track.properties` object](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track) is an open dictionary and may include any data you choose.
 
-In order for `identify` events to work, please make sure you [whitelist the traits](https://segment.com/docs/connections/destinations/catalog/slack/#whitelisted-traits).
+In order for `identify` events to work, make sure you [add the traits to the allow-list](https://segment.com/docs/connections/destinations/catalog/slack/#allow-listed-traits).
 
-### I'm seeing [object Object] in my Slack message
-If you try to print an object (eg., `\{{properties}}`), you will see [object Object] in Slack. Drill down to a primitive type value (eg., `properties.plan`).
+### I'm seeing /[object Object/] in my Slack message
+If you try to print an object (for example `\{{properties}}`), you will see `/[object Object/]` in Slack. Drill down to a primitive type value (for example `properties.plan`).

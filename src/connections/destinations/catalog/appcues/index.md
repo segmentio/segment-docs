@@ -86,9 +86,9 @@ Want to read Appcues events in your 3rd party analytics or marketing automation 
 
 To enable this feature, go to the Integrations Settings in Appcues and click "Activate" under the Segment integration.
 
-### Whitelisted Domains
+### Allow-listed Domains
 
-By default, Appcues will target based on the path of the URL. So if we created an Appcues experience and targeted it to `/integrations`, it would appear wherever the embed script is installed with that URL path, like appcues.com/integrations and my.appcues.com/integrations. If your `analytics.js` script is installed on multiple domains (e.g. your marketing site and your web app), you'll want to use Appcues whitelisted domains when targeting your experience.
+By default, Appcues will target based on the path of the URL. So if we created an Appcues experience and targeted it to `/integrations`, it would appear wherever the embed script is installed with that URL path, like appcues.com/integrations and my.appcues.com/integrations. If your `analytics.js` script is installed on multiple domains (e.g. your marketing site and your web app), you'll want to use Appcues allow-listed domains when targeting your experience.
 
 
 ## Delete

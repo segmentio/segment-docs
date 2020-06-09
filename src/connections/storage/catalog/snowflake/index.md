@@ -169,7 +169,7 @@ After creating a Snowflake warehouse, the next step is to connect Segment.
 
 ## Security
 
-### Whitelisting IPs
+### Adding IPs to an allow-list
 
 If you create a network policy with Snowflake, add the following IP address to the "Allowed IP Addresses" list: `52.25.130.38/32`
 

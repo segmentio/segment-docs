@@ -78,7 +78,7 @@ This endpoint can be used to configure custom mappings for your Segment destinat
     "contactsErrorHandling":"ignoreMissingAttributes"   }
 ```
 
-You will be asked to authenticate. Use your Cordial API key as the username and proceed with the password blank. (To do this, log in to your Cordial account and open the dropdown menu in the top right corner. Navigate to Administration > API Keys. Here you will create a new key by whitelisting your IP with us.)
+You will be asked to authenticate. Use your Cordial API key as the username and proceed with the password blank. (To do this, log in to your Cordial account and open the dropdown menu in the top right corner. Navigate to** Administration > API Keys**. Here you create a new key by adding your IP to the Segment allow-list.)
 
 `PUT https://admin.cordial.io/api/integrations/segment`
 Update your Cordial/Segment field mapping using the same JSON format as in the POST call.

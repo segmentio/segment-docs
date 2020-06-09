@@ -170,24 +170,24 @@ For most implementations we recommend leaving these mappings blank. By default, 
 
 ## Troubleshooting
 
-### PII Blacklisting
+### PII Block-listing
 
-Facebook enforces strict guidelines around sending Personally Identifiable Information (PII) as properties of Pixel events. In order to adhere to these guidelines, Segment will automatically scan `track` event properties for PII and remove any that get flagged from the event to Facebook. The following keys are currently filtered:
+Facebook enforces strict guidelines around sending Personally Identifiable Information (PII) as properties of Pixel events. In order to follow these guidelines, Segment automatically scans `track` event properties sent to Facebook for PII and removes any matching ones. The following keys are currently filtered:
 
-- email
-- firstName
-- lastName
-- gender
-- city
-- country
-- phone
-- state
-- zip
-- birthday
+- `email`
+- `firstName`
+- `lastName`
+- `gender`
+- `city`
+- `country`
+- `phone`
+- `state`
+- `zip`
+- `birthday`
 
-Any `track` events with properties containing those keys will be sent to Facebook with those properties omitted.
+Any `track` events with properties that contain those keys are sent to Facebook with those properties omitted.
 
-If you have events that use any of those keys for non-PII properties, you can manually whitelist them using the **Whitelist PII Properties** setting. You may also add to this list and/or optionally hash blacklisted properties with the **Blacklist PII Properties** setting.
+If you have events that use any of those keys for non-PII properties, you can manually allow-list them using the **Allow-list PII Properties** setting. You can also add to this list and/or optionally hash Block-listed properties using the **Block-list PII Properties** setting.
 
 ### Inconsistent or Missing Conversions
 

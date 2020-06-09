@@ -71,11 +71,11 @@ If you want to insert custom data into your warehouse, create new schemas that a
 
 We highly recommend scripting any sort of additions of data you might have to warehouse, so that you aren't doing one-off tasks that can be hard to recover from in the future in the case of hardware failure.
 
-## Which IPs should I whitelist?
+## Which IPs should I allow?
 
-You can whitelist our custom IP 52.25.130.38/32 while authorizing Segment to write in to your Redshift or Postgres port.
+You can add our custom IP `52.25.130.38/32` to your allow-list while authorizing Segment to write in to your Redshift or Postgres port.
 
-BigQuery does not require whitelisting an IP address. To learn how to setup BigQuery, check out our [set up guide](https://segment.com/docs/connections/storage/catalog/bigquery/#getting-started)
+BigQuery does not require that you add IP addresses to an allow-list. To learn how to set up BigQuery, check out our [set up guide](https://segment.com/docs/connections/storage/catalog/bigquery/#getting-started)
 
 
 ## Will Segment sync my historical data?

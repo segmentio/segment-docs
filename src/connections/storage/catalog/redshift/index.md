@@ -70,7 +70,7 @@ After creating a Redshift warehouse, the next step is to connect Segment:
 3. Enter your Redshift credentials
 
 ## Security
-VPCs keep servers inaccessible to traffic from the internet. With VPC, you're able to designate specific web servers access to your servers.  In this case, you will be whitelisting the [Segment IPs](https://segment.com/docs/connections/warehouses/faq/#which-ips-should-i-whitelist/) to write to your data warehouse.
+VPCs keep servers inaccessible to traffic from the internet. With VPC, you're able to designate specific web servers access to your servers.  In this case, you [add the Segment IPs to an allow-list](https://segment.com/docs/connections/warehouses/faq/#which-ips-should-i-allow/) to write to your data warehouse.
 
 ## Best Practice
 
@@ -134,7 +134,7 @@ Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC
 
   ![](images/redshift_outbound_permissions.png)
 
-9. If your outbound traffic is not configured to allow all traffic, you can switch to default settings or specifically whitelist the Segment S3 buckets
+9. If your outbound traffic is not configured to allow all traffic, you can switch to default settings or specifically add the Segment S3 buckets to an allow-list.
 
   ![](images/redshift_custom_outbound_group.png)
 

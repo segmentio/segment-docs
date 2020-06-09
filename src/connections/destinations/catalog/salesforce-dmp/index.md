@@ -74,15 +74,15 @@ Segment does not support mapping `traits` to SFDMP attributes.
 
 ## Client-side Web: Track
 
-Segment pushes only mapped properties and `context.traits` from whitelisted
-Segment `track` events to the SFDMP `kruxDataLayer`.
+Segment pushes only mapped properties and `context.traits` from
+Segment `track` events that appear in the allow-list to the SFDMP `kruxDataLayer`.
 
-You can whitelist Segment `track` events in your Segment UI settings.
+You can add Segment `track` events to the allow-list in your Segment UI settings.
 
 You can map `track` event properties to SFDMP by specifying mappings in your
 Segment UI settings.
 
-Once mapped and associated with whitelisted events, Segment pushes properties
+Once mapped and associated with events in the allow-list, Segment pushes properties
 and `context.traits` to the `kruxDataLayer`. Key-value pairs pushed to the
 `kruxDataLayer` are forwarded to SFDMP as `page attributes`. You can customize
 whether these properties are classified as `page attributes` or other attribute
@@ -106,7 +106,7 @@ SFDMP dashboard or by contacting your Salesforce representative.
 If you are unsure of where to find your SFDMP settings or are unsure of what
 your SFDMP settings are, please contact your Salesforce representative.
 
-### Whitelisting and Blacklisting Properties
+### Allow-listing and block-listing Properties
 
 SFDMP manages its own filters and settings, which you must adjust either in the
 SFDMP dashboard or by contacting a Salesforce representative. Note that SFDMP
@@ -114,22 +114,20 @@ settings are independent of Segment UI settings. Updating a setting in SFDMP
 will not affect settings in Segment and vice versa. Therefore, it is important
 to ensure that SFDMP and Segment settings do not conflict.
 
-SFDMP has its own property whitelisting and blacklisting rules. For example,
-you could set up a blacklist rule in SFDMP. This means that Salesforce will
-accept any attributes save for those that have been explicitly blacklisted in
+SFDMP has its own property allow-listing and block-listing rules. For example,
+you could set up a block-list rule in SFDMP. This means that Salesforce will
+accept any attributes except those that have been explicitly added to the block-list in
 their system.
 
-A whitelist works the opposite way. Setting up a whitelist rule means that
-SFDMP will not accept any attributes that have not been explicitly whitelisted
+An allow-list works the opposite way. Setting up an allow-list rule means that
+SFDMP will not accept any attributes that have not been explicitly added to the allow-list
 in their system.
 
 If you map Segment properties in your Segment settings, remember that you must
 also adjust your SFDMP settings appropriately to ensure that SFDMP will accept
 your mapped properties.
 
-Say you map property `price` in your Segment settings to SFDMP page attribute
-`price`. If you have a whitelist set up in SFDMP and have not whitelisted the
-attribute `price` in SFDMP, the expected behavior is that Pixel.gif calls to
+For example, imagine you the map property `price` in your Segment settings to SFDMP page attribute `price`. If you have an allow-list set up in SFDMP but haven't yet added the `price` attribute to the allow-list in SFDMP, the expected behavior is that Pixel.gif calls to
 SFDMP will not include the `price` attribute. Remember, mapping the property
 within Segment's dashboard will not override your SFDMP's internal account
 settings. If this is the case, adjust your SFDMP settings or contact your
@@ -155,11 +153,11 @@ To set up a custom delimiter, contact your Salesforce representative.
 
 ### Attribute Cacheing
 
-SFDMP by default caches attributes client side. As a result, any attributes
-collected client side will be associated with all following whitelisted events
+SFDMP by default caches attributes on the user's device. As a result, any attributes
+collected on the device are associated with all following allow-listed events
 unless the attribute is explicitly overridden.
 
-For example, say one of your whitelisted Segment track events contains the
+For example, say one of your allow-listed Segment track events contains the
 property key-value pair `color: 'red'` :
 
 ```javascript
@@ -172,7 +170,7 @@ The above Segment event pushes the key-value pair `color: 'red'` to the SFDMP
 `kruxDataLayer`, then triggers a call to the Pixel.gif endpoint, which scrapes
 the `kruxDataLayer` and sends `color: 'red'` as a page attribute.
 
-Then you send another whitelisted event:
+Then you send another event that is on the allow-list:
 
 ```javascript
 analytics.track('Picture Viewed');
@@ -183,7 +181,7 @@ with the page attribute `color: 'red'`, in spite of the fact that this
 attribute was not explicitly associated with this event. This is expected
 behavior and a result of SFDMP's out-of-the-box client-side cacheing.
 
-Say, then, you send another whitelisted event:
+Say, then, you send another event that is on the allow-list:
 
 ```javascript
 analytics.track('Updated Preferences', {
@@ -195,10 +193,10 @@ This event would produce a call to SFDMP's Pixel.gif endpoint with the page
 attribute `color: 'blue'`, as this event overrode the value of the previous
 color attribute.
 
-The ramification of this behavior is that SFDMP will continue to cache page
-attributes for whitelisted events on all single-page applications until a page
-reload. Please contact your Salesforce representative for additional questions
-about SFDMP's attribute cacheing functionality.
+This means that SFDMP continues to cache page
+attributes for events on the allow-list on all single-page applications until a page
+reload. Please contact your Salesforce representative if you have additional questions
+about SFDMP's attribute caching functionality.
 
 ### Page Scraping for Page Attributes
 

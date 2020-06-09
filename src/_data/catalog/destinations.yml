@@ -7005,7 +7005,7 @@ items:
     required: false
     description: >-
       Facebook App Events limits the number of event parameters to 25. You may
-      choose to put a whitelist of properties which we will send to Facebook
+      choose to put an allow-list of properties which we will send to Facebook
       instead. This whitelist will be respected exactly (or not at all, if you
       choose not to use it), the only exception being that we will automatically
       send `_eventName` to ensure all events are valid. Top-level properties

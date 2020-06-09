@@ -54,7 +54,7 @@ Lastly, assign this new user a [resource allocation class](https://docs.microsof
 EXEC sp_addrolemember 'largerc', 'Segment';
 ```
 
-By default, Azure Synapse Analytics cannot be connected to from the public internet. In order for Segment to connect, a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist) is needed.
+By default, Azure Synapse Analytics cannot be connected to from the public internet. In order for Segment to connect, a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-allow) is needed.
 
 ### Configure an Azure SQL Data Warehouse Destination in Segment
 
@@ -77,4 +77,4 @@ The default [resource allocation class](https://docs.microsoft.com/en-us/azure/s
 
 ### Segment is not able to connect to Azure Synapse Analytics
 
-Make sure a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-whitelist) is configured.
+Make sure a [server-level firewall rule](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/create-data-warehouse-portal#create-a-server-level-firewall-rule) that allows connections from the [Segment IPs](/docs/connections/storage/warehouses/faq/#which-ips-should-i-allow) is configured.

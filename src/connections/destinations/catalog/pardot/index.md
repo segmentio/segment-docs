@@ -20,7 +20,7 @@ You'll need to provide API access to Segment via Pardot user credentials. Since 
 
 Since we don't want to ask for the password of one of your actual user accounts, we recommend you create a new Pardot user account for Segment. Please create this user by going to *Admin > Users and Groups > Add User*, and creating an Administrator role user.
 
-Also make sure to disable IP Security in this Pardot user account. First navigate to the [user settings](https://pi.pardot.com/account), then click "Edit Account", and change "Enable IP Security" to "Disabled". Why is this necessary? Segment server IP address(es) may change, meaning we cannot whitelist particular addresses.
+Also make sure to disable IP Security in this Pardot user account. First navigate to the [user settings](https://pi.pardot.com/account), then click "Edit Account", and change "Enable IP Security" to "Disabled". Why is this necessary? Segment server IP address(es) may change, meaning we cannot add specific addresses to an allow-list.
 
 If you have web pages with different campaigns, you should follow [Pardot campaign
 instructions](http://www.pardot.com/help/faqs/prospects/how-are-prospects-associated-with-campaigns)

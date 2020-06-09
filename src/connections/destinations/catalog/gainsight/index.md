@@ -34,7 +34,7 @@ You can map `identify` calls to Salesforce by including the Salesforce Account I
 
 ## Track
 
-**Important**: You should only send the `track` events you need to Gainsight. You can whitelist the names of the events you need in your Segment UI settings for Gainsight. Once you pre-map your events, we will only send those events to Gainsight for you. However, if you do *not* map any events, we will by default send all your track events to Gainsight.
+**Important**: You should only send the `track` events you need to Gainsight. You can add the names of the events you need to the allow-list in your Segment UI settings for Gainsight. Once you pre-map your events, Segment only sends those events to Gainsight for you. However, if you do *not* map any events, by default Segment sends all your track events to Gainsight.
 
 If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like this ([analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)):
 

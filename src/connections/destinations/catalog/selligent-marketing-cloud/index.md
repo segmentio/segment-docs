@@ -32,7 +32,7 @@ You can then proceed to configure your destination.
 ![adminURL](images/adminurl.jpg)
 5. *Organization* - You will find the organization name on the top-right hand corner next to the menu icon.
 ![organization](images/organization.png)
-6. *Allowed Events* - Add the `track` event names that you would like to whitelist/send to SMC
+6. *Allowed Events* - Add the `track` event names that you would like to allow Segment to send to SMC
 7. *Events data list API name* - The default value is **segment_events**, if you have any issue regarding the property please [contact the support team](mailto:jason.morgan@acceleration.biz).
 
 ## Identify

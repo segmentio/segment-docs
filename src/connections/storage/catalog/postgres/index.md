@@ -356,7 +356,7 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO segment;
 ## Security
 Make sure you're logging in with a user that has read and write permissions so that we can write to your database.
 
-- Whitelist the Segment IP (`52.25.130.38/32`)
+- Add the Segment IP (`52.25.130.38/32`) to the allow-list
 - Create a service user that has `read/write` permissions.
 
 ## Best Practices
