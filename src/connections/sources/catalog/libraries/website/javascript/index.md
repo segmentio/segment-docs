@@ -564,7 +564,7 @@ analytics.track('Email Clicked', {
 });
 ```
 
-The `anonymousId` can also be immediately set inside your Segment snippet before the `ready` method has returned:
+You can also set the `anonymousId` immediately inside your Segment snippet, even before the `ready` method has returned:
 
  ```js
   analytics.load('writekey');
