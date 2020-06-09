@@ -69,4 +69,4 @@ Segment’s page variables recognized as Wootric’s standard page fields are:
 | Segment Parameter  | Wootric Parameter                   | Description                          |
 | ------------------ | ------------------------------------ | ------------------------------------ |
 | `name`            | `wootricSettings.email`           | The name assigned to this page.           |
-| `path`            | `wootricSettings.page_info.path`           | The path portion of the URL of the page. Equivalent to the canonical path which defaults to location.pathname from the DOM API. |
+| `path`            | `wootricSettings.page_info.path`           | The path portion of the URL of the page. Equivalent to the canonical path which defaults to `location.pathname` from the DOM API. |
