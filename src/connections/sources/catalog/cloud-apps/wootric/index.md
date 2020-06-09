@@ -5,9 +5,9 @@ beta: true
 
 [Wootric](https://wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is modern customer feedback management software. Easily incorporate Voice of Customer data in your decision-making processes and marketing campaigns, and trigger customer follow-up when you send survey responses to your CRM, marketing platform or data warehouses automatically.
 
-This source is maintained by Wootric. For any issues with the source, please [reach out to the Wootric support team](mailto:support@wootric.com).
+This source is maintained by Wootric. For any issues with the source, [contact the Wootric support team](mailto:support@wootric.com).
 
-_**NOTE:** The Wootric Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on February 4, 2020. If you are interested in joining their beta program or have any feedback to help improve the Wootric Source and its documentation, please [let the Wootric support team know](mailto:support@wootric.com)!_
+_**NOTE:** The Wootric Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on February 4, 2020. If you are interested in joining their beta program or have any feedback to help improve the Wootric Source and its documentation, [let the Wootric support team know](mailto:support@wootric.com)!_
 
 
 ## Getting Started
@@ -50,4 +50,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Wootric team](mailto:support@wootric.com).
+If you experience any issues with how the events arrive in Segment, [contact the Wootric team](mailto:support@wootric.com).

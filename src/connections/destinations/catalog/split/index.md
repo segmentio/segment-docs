@@ -7,10 +7,10 @@ title: Split Destination
 
 In addition to the docs below, Split has created integration specific [documentation](https://docs.split.io/docs/segment#section-advanced-functionality) for additional troubleshooting and frequently asked questions.
 
-This destination is maintained by [Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, please [reach out to their team](https://help.split.io).
+This destination is maintained by [Split](https://split.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, [contact their team](https://help.split.io).
 
 
-_**NOTE:** Split is currently in beta, which means that there may still be some bugs for us to iron out. This doc was last updated on March 1, 2019, and we'd love to hear your feedback. If you are interested in joining our beta program or have any feedback to help us improve the Split Destination and its documentation, please [let us know](https://help.split.io)!_
+_**NOTE:** Split is currently in beta, which means that there may still be some bugs for us to iron out. This doc was last updated on March 1, 2019, and we'd love to hear your feedback. If you are interested in joining our beta program or have any feedback to help us improve the Split Destination and its documentation, [let us know](https://help.split.io)!_
 
 ## Getting Started
 
@@ -24,7 +24,7 @@ To find your key, log into Split and navigate to "Admin Settings" > "Integration
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page({
@@ -42,7 +42,7 @@ If you would not like Split to receive `page` calls, you can configure in your i
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.screen({
@@ -61,7 +61,7 @@ If you would not like Split to receive `screen` calls, you can configure in your
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify("userId1", {
@@ -80,7 +80,7 @@ If you would not like Split to receive `identify` calls, you can configure in yo
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track("Registered", {

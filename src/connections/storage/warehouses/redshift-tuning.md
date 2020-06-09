@@ -74,7 +74,7 @@ Our initial recommendation is for 2 WLM queues:
 
 Generally, we are responsible for most writes in the databases we connect to, so having a higher concurrency allows us to write as quickly as possible. However, if you are also using the same database for your own ETL process, you may want to use the same concurrency for both groups. In addition, you may even require additional queues if you have other applications writing to the database.
 
-Each cluster may have different needs, so feel free to stray from this recommendation if another configuration works better for your use-case. AWS provides some [guidelines](http://docs.aws.amazon.com/redshift/latest/dg/tutorial-configuring-workload-management.html), and of course you can always [contact us](/contact) as we're more than happy to share what we have learned while working with Redshift.
+Each cluster may have different needs, so feel free to stray from this recommendation if another configuration works better for your use-case. AWS provides some [guidelines](http://docs.aws.amazon.com/redshift/latest/dg/tutorial-configuring-workload-management.html), and of course you can always [contact us](https://segment.com/help/contact/) as we're more than happy to share what we have learned while working with Redshift.
 
 ## Pro-tips for Segment Warehouses
 
@@ -97,4 +97,4 @@ To make sure you have enough headroom for quick queries while using Segment Ware
 *   **Schedule syncs during off times.** If you're concerned about query times and you don't mind data that's a little stale, you can schedule your syncs to run when most of your team isn't actively using the database. (Available for business tier customers.)
 *   **Schedule regular vacuums.** Make sure to schedule regular vacuums for your cluster, so old deleted data isn't taking up space. (You can do this through Segment if you're on the business tier.)
 
-We hope these steps will speed up your workflow! If you need any other help, feel free to [contact us](/contact).
+We hope these steps will speed up your workflow! If you need any other help, feel free to [contact us](https://segment.com/help/contact/).

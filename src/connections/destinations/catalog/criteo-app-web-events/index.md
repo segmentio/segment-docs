@@ -10,7 +10,7 @@ redirect_from: '/connections/destinations/catalog/criteo/'
 
 Currently this destination supports events originating from Mobile or Web sources (not Server). You can read more about how define a source [here](/docs/guides/getting-started/what-is-a-source/).
 
-**Our web integration with Criteo Events is currently in public beta. Please use carefully and [contact us](https://segment.com/help/contact) if you are having any issues.**
+**Our web integration with Criteo Events is currently in public beta. Use carefully and [contact us](https://segment.com/help/contact) if you are having any issues.**
 
 To get started with Criteo Events and Segment, you'll need:
 
@@ -19,7 +19,7 @@ To get started with Criteo Events and Segment, you'll need:
 
 Assuming both of these criteria are met, you can add Criteo Events as a destination for your desired source in your Segment account.
 
-**If you are using our mobile integration with Criteo Events please ensure your app is properly registered with them.**
+**If you are using our mobile integration with Criteo Events make sure your app is properly registered with them.**
 
 
 - - -
@@ -29,7 +29,7 @@ Assuming both of these criteria are met, you can add Criteo Events as a destinat
 
 Criteo Events is built to help you track key purchase funnel events and details. To accomplish that, you'll want to [`track`](/docs/connections/spec/track/) your user's actions using the following spec'd events to ensure you're following Criteo's best practices.
 
-We use the context fields that we capture with our SDKs automatically to populate Criteo Events' tag with the app's name, user's language, locale, userId, deviceType and deviceId so you just need to make sure that the event names and properties match up! Please refer to our [common fields guide](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected) to identify which context fields we collect automatically for each of our client-side libraries (analytics.js, analytics-ios or analytics-android).
+We use the context fields that we capture with our SDKs automatically to populate Criteo Events' tag with the app's name, user's language, locale, userId, deviceType and deviceId so you just need to make sure that the event names and properties match up! Refer to our [common fields guide](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected) to identify which context fields we collect automatically for each of our client-side libraries (analytics.js, analytics-ios or analytics-android).
 
 ### Product Viewed
 
@@ -328,7 +328,7 @@ There are two ways of letting Segment know which `.page` event should trigger th
 analytics.page('Home')
 ```
 
-2. You can give us the URL of your home page as an integration setting. Please reference the [settings](/docs/connections/destinations/catalog/criteo/#settings) section for more info.
+2. You can give us the URL of your home page as an integration setting. Reference the [settings](/docs/connections/destinations/catalog/criteo/#settings) section for more info.
 
 ## Other Features
 
@@ -352,7 +352,7 @@ Here is an example of Supporting User Data:
 
 Once this is complete, we will do the following:
 
-We will compare the properties of any `.page` events you invoke with the **Supporting Page Data** mappings. If a match is found, we will set the values of those properties as the values of Criteo Events data parameters you defined and pass them along with any future events that occur on the page. **If you are using this functionality, please ensure the `.page` event is being invoked on the page before any subsequent `.track` events.**
+We will compare the properties of any `.page` events you invoke with the **Supporting Page Data** mappings. If a match is found, we will set the values of those properties as the values of Criteo Events data parameters you defined and pass them along with any future events that occur on the page. **If you are using this functionality, make sure the `.page` event is being invoked on the page before any subsequent `.track` events.**
 
 For example, if you set the page event mappings defined above and triggered a page event like this:
 

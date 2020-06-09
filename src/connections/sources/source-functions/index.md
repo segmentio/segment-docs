@@ -278,7 +278,7 @@ Source Functions created before September 11, 2019 were written with a different
 
 These interfaces are now deprecated, so we recommend re-creating and managing your functions with the latest interfaces.
 
-We still support these legacy functions but will be deprecating this support and removing your legacy function from your workspace on April 1, 2020. If you didn't receive an email about this change, please [reach out to us](https://segment.com/help/contact/).
+We still support these legacy functions but will be deprecating this support and removing your legacy function from your workspace on April 1, 2020. If you didn't receive an email about this change, [contact us](https://segment.com/help/contact/).
 
 **Accessing the webhook payload (Legacy)**
 

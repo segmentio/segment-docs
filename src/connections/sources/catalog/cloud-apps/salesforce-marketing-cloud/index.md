@@ -16,7 +16,7 @@ If you are trying to setup Salesforce Marketing Cloud as a destination to receiv
 [Salesforce Marketing Cloud Destination](https://segment.com/docs/connections/destinations/catalog/salesforce-marketing-cloud/).
 
 _**NOTE:** The Salesforce Marketing Cloud Source is currently in beta. This means that component names and functionality
-           may change. For all feedback, please [send us a note](https://segment.com/help/contact).
+           may change. For all feedback, [send us a note](https://segment.com/help/contact).
 
 ## Getting Started
 
@@ -100,7 +100,7 @@ Collections are the groupings of resources we pull from your source. In your war
 ## Collection Properties
 
 Segment performs a one-to-one mapping of all publicly available fields from Salesforce Marketing Cloud. Below are tables
-outlining the properties included in the collections listed above.To see the full description of each property, please
+outlining the properties included in the collections listed above. To see the full description of each property, 
 refer to the Salesforce Marketing Cloud documentation linked in each [collection](#collections) above.
 
 ### Campaigns
@@ -124,7 +124,7 @@ refer to the Salesforce Marketing Cloud documentation linked in each [collection
 | created_date  | Timestamp when the asset was created   |
 | id            | The campaign asset ID         |
 | item_id       | The asset's unique ID in Salesforce Marketing Cloud     |
-| type          | The asset type. Can be one of: email, triggered send, mobile message, push message, twitter update, facebook update, facebook tab,  sites, landing pages, subscriber list, subscriber group, data extension, automation, or event |
+| type          | The asset type. Can be one of: email, triggered send, mobile message, push message, twitter update, facebook update, facebook tab, sites, landing pages, subscriber list, subscriber group, data extension, automation, or event |
 
 
 ### Lists

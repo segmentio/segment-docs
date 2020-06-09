@@ -71,7 +71,7 @@ For example, consider these instances with some of our most popular destinations
 *   For Amplitude to associate both client-side and server-side activity with the same user, you will need to pass the same `deviceId` to Amplitude. Otherwise, Amplitude will create two users - one associated with your `deviceId` and another user associated with your Segment `anonymousId`.
 
 
-Please contact our [support team](https://segment.com/help/contact/) for further inquiries about a specific tool you have questions about to ensure there isn't an implementation error.
+contact our [support team](https://segment.com/help/contact/) for further inquiries about a specific tool you have questions about to ensure there isn't an implementation error.
 
 ## What caused an unexpected spike in my MTU count?
 
@@ -90,4 +90,4 @@ There are also some scenarios in which MTU numbers may be higher than expected b
 - If the user visits the page incognito
 - If the user clears their cookies
 
-If you suspect there is an implementation error causing your MTU number to rise please contact us immediately and we are happy to help you resolve the issue.
+If you suspect there is an implementation error causing your MTU number to rise contact us immediately and we are happy to help you resolve the issue.

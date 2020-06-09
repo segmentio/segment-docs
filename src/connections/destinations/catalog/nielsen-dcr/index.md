@@ -163,7 +163,7 @@ Segment only supports sending `track` events as outlined in our [Video Spec](/do
 
 **IMPORTANT**: If you do not implement the Segment [Video Spec](/docs/connections/spec/video/) properly with key lifecycle events, this integration will not behave properly.
 
-Again, please also refer to our [Video Spec](/docs/connections/spec/video/) and implement video tracking as outlined there. We will map the semantic events and properties to Nielsen's relevant methods and metadata.
+Again, also refer to our [Video Spec](/docs/connections/spec/video/) and implement video tracking as outlined there. We will map the semantic events and properties to Nielsen's relevant methods and metadata.
 
 ### Heartbeats
 
@@ -231,7 +231,7 @@ For playback events, Segment's video spec expects either `ad_asset_id​` or `co
 | `crossId1`                 | `options.crossId1`|
 | `crossId2`                 | `options.crossId2`|
 
-Please take note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
+Note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
 
 ### Ad Events
 
@@ -264,7 +264,7 @@ The Segment-Nielsen-DCR integration has logic to check for `type` in case of a p
 | `length`                        | `total_length`   |
 | `pipmode`                       | `options.pipmode`|
 
-Please take note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
+Note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
 
 ## Integration Specific Options
 

@@ -164,7 +164,7 @@ If the presentation of user interface components don’t substantially change th
 > note ""
 > **Note**: When you trigger a Page call manually, make sure the call happens _after_ the UI element is successfully displayed, not when it is called. It shouldn’t be called as part of the click event that initiates it.
 
-For more info on Page calls, please review [Page spec](/docs/spec/page/) and [Analytics.js docs](/docs/connections/sources/catalog/libraries/website/javascript/#page).
+For more info on Page calls, review [Page spec](/docs/spec/page/) and [Analytics.js docs](/docs/connections/sources/catalog/libraries/website/javascript/#page).
 
 ### When to call Screen
 

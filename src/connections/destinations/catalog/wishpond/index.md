@@ -40,7 +40,7 @@ Wishpond.Tracker.identify('1e810c197e', {
  ```
 
 A new lead will be created be in your 'Wishpond Leads Database'. The lead will have the attributes: name 'Jane Kim', email 'jane.kim@example.com'.
-To more details how Wishpond's identify works please visit [Wishpond API Docs: #identify](http://developers.wishpond.com/#identify).
+To more details how Wishpond's identify works  visit [Wishpond API Docs: #identify](http://developers.wishpond.com/#identify).
 
 ## Track
 
@@ -66,7 +66,7 @@ Wishpond.Tracker.track('Signed Up', {
 
 A new event will be added to the lead that the current session is tracking. The event title will be 'Signed Up', and it will have the properties: plan: 'Startup',source: 'Analytics Academy'.
 
-To more details how Wishpond's identify works please visit [Wishpond API Docs: #track](http://developers.wishpond.com/#tracking-events).
+To more details how Wishpond's identify works  visit [Wishpond API Docs: #track](http://developers.wishpond.com/#tracking-events).
 
 - - -
 ## Troubleshooting/ FAQ

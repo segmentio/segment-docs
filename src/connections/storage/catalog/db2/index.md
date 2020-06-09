@@ -13,10 +13,10 @@ Warehouse and Segment in a flash.
 Note: This document refers specifically to [IBM Db2 Warehouse on
 Cloud](https://www.ibm.com/cloud/db2-warehouse-on-cloud), [IBM Db2 Warehouse](https://www.ibm.com/analytics/db2), and the [IBM Integrated
 Analytics System](https://www.ibm.com/products/integrated-analytics-system). For questions related to any of these products,
-please see the [IBM Cloud Docs](https://cloud.ibm.com/docs).
+ see the [IBM Cloud Docs](https://cloud.ibm.com/docs).
 
 If you notice any gaps, outdated information or simply want to leave some
-feedback to help us improve our documentation, please [let us
+feedback to help us improve our documentation, [let us
 know](https://segment.com/help/contact)!
 
 ## Getting Started

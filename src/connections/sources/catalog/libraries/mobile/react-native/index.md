@@ -30,7 +30,7 @@ $ yarn add @segment/analytics-react-native
 $ yarn react-native link
 ```
 
-Then somewhere your application, setup the SDK like so:
+Then somewhere your application, set up the SDK like so:
 
 ```js
 await analytics.setup('YOUR_WRITE_KEY', {
@@ -59,7 +59,7 @@ Here are the steps for installing manually:
 2. In the `General` tab for your project, search for `Embedded Binaries` and add the `Analytics.framework`
    ![Embed Analytics.framework](images/embed-analytics-framework.png)
 
-Please note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
+Note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
 
 ### Including SDKs for destinations using Device-mode
 
@@ -538,7 +538,7 @@ Read through [the docs for that destination](/docs/connections/destinations/) to
 
 ### Still having issues?
 
-Please [contact our Product Support team](https://segment.com/help/contact/) with the following information:
+[contact our Product Support team](https://segment.com/help/contact/) with the following information:
 
 - The version of our SDK you are using
 - Whether you are using device- or cloud-mode

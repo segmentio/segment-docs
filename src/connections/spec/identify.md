@@ -21,7 +21,7 @@ Let's imagine this scenario:
 
 I log into your app. Identify is called. For whatever reason, I close the browser and don't return until later. There's no way of knowing where I will reenter your app from. I could start my session from anywhere. And because there are many tools out there that require an initial identify call for certain features (e.g. Intercom chat widget) it's important to tell your end tools who the user is when they first start their session.
 
-Calling `identify` in one of our [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Please refer to library-specific documentation for more details.
+Calling `identify` in one of our [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Refer to library-specific documentation for more details.
 
 Here's the payload of a typical `identify` call with most [common fields](/docs/connections/spec/common/) removed:
 

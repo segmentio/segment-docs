@@ -159,7 +159,7 @@ does not expose any hooks into player states during ad plays.
 Spec](/docs/connections/spec/video/) properly with key lifecycle events, this integration
 will not behave properly.
 
-Again, please also refer to our [Video Spec](/docs/connections/spec/video/) and implement
+Again, also refer to our [Video Spec](/docs/connections/spec/video/) and implement
 video tracking as outlined there. We will map the semantic events and
 properties to Nielsen's relevant methods and metadata.
 

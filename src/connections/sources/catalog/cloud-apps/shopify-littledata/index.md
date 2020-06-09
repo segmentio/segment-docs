@@ -7,7 +7,7 @@ Littledata is a smart analytics app that automates ecommerce tracking. Littledat
 
 Littledata uses a smart tracking script that can be applied to any Shopify site. The app uses server-side tracking to ensure 100% accuracy, gathering data at every customer touch point.
 
-This integration is maintained by Littledata. Please [reach out to their team](mailto:support@littledata.io) with any questions.
+This integration is maintained by Littledata. [Contact their team](mailto:support@littledata.io) with any questions.
 
 ## Getting Started
 

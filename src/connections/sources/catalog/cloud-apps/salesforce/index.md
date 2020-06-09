@@ -5,7 +5,7 @@ Salesforce is a leader in on-demand customer relationship management. [Visit Web
 
 Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** We'll automatically collect objects like `Accounts`, `Campaigns`, and `Tasks` and load them into your data warehouse. 
 
-This document was last updated on April 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on April 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -15,7 +15,7 @@ This document was last updated on April 26, 2018. If you notice any gaps, outdat
 
 3. Give your source a name.
 
-4. Connect Segment to your Salesforce environment and authorize Segment to connect to it. In order for Segment to collect and sync your Salesforce data, you must enable API access for the user that you are connecting to Segment with. For more information on how to confirm or change API access for a Salesforce user, please follow Salesforce's [recommended documentation](https://help.salesforce.com/articleView?id=admin_userperms.htm).
+4. Connect Segment to your Salesforce environment and authorize Segment to connect to it. In order for Segment to collect and sync your Salesforce data, you must enable API access for the user that you are connecting to Segment with. For more information on how to confirm or change API access for a Salesforce user, follow Salesforce's [recommended documentation](https://help.salesforce.com/articleView?id=admin_userperms.htm).
 
 5. Choose a data warehouse to connect Salesforce to.
 
@@ -92,7 +92,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 ### Custom Objects
 
-If you'd like to sync any SFDC custom objects, just [contact us](/help/contact) and we'll get it set up. Please include the [API names](https://help.salesforce.com/articleView?id=000007594&language=en_US&type=1) of the custom objects. We'll add support for this to the UI soon!
+If you'd like to sync any SFDC custom objects, just [contact us](/help/contact) and we'll get it set up. Include the [API names](https://help.salesforce.com/articleView?id=000007594&language=en_US&type=1) of the custom objects. We'll add support for this to the UI soon!
 
 ### Deleting Records
 
@@ -102,7 +102,7 @@ At this time, we do not support hard deletes in Salesforce. Use of hard deletes 
 
 ## Collection Properties
 
-Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields please refer to the Saleforce field documentation linked in each collection above. If you've added custom fields to an existing collection, [contact us](/help/contact) and we'll get those set up to sync. You do not need to include the field names.
+Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Saleforce field documentation linked in each collection above. If you've added custom fields to an existing collection, [contact us](/help/contact) and we'll get those set up to sync. You do not need to include the field names.
 
 ## Adding Destinations
 Currently, Warehouses are the only supported destination for object-cloud sources.

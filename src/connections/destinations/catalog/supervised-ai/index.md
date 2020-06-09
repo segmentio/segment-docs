@@ -5,7 +5,7 @@ rewrite: true
 
 [Supervised AI](https://supervisedai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides proactive customer health monitoring for customer facing teams, using machine learning to automate churn prediction and generating playbook recommendations.
 
-This destination is maintained by Supervised AI. For any issues with the destination, please [contact the Supervised AI Support team](mailto:support@supervisedai.com).
+This destination is maintained by Supervised AI. For any issues with the destination, [contact the Supervised AI Support team](mailto:support@supervisedai.com).
 
 ## Getting Started
 
@@ -24,7 +24,7 @@ This destination is maintained by Supervised AI. For any issues with the destina
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page()
@@ -34,7 +34,7 @@ Segment sends Page calls to Supervised AI as a `pageview`.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -46,7 +46,7 @@ Segment sends Identify calls to Supervised AI as an `identify` event.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')
@@ -56,7 +56,7 @@ Segment sends Track calls to Supervised AI as a `track` event.
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. Below are two example calls:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. Below are two example calls:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];

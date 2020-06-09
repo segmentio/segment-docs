@@ -516,4 +516,4 @@ If you're interested in contributing, [open an issue on GitHub](https://github.c
 
 ## Feedback
 
-We're always curious about any feedback you have on your experience with Typewriter! To reach out, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new).
+We're always curious about any feedback you have on your experience with Typewriter! To contact us, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new).

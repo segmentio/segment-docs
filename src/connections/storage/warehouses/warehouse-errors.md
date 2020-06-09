@@ -13,13 +13,13 @@ This error occurs when your cluster is currently resizing. The warehouse will co
 
 ### ERROR: 1040 (SQLSTATE XX000)
 
-This is a Redshift 500 - an internal server error. This is usually caused by having too many tables or too many columns. If you're seeing this error, [please visit our contact form to submit a request](/contact/support).
+This is a Redshift 500 - an internal server error. This is usually caused by having too many tables or too many columns. If you're seeing this error, [contact the Segment Support team](https://segment.com/help/contact/).
 
 ### read tcp XXX.XX.XX.XXXX:XXXX-XXX.XX.XX.XXXX:XXXX: read: connection timed out
 
 This is a networking error that typically arises when Redshift doesn't close properly close the connection or gets rebooted.
 
-If you see this error on consecutive syncs, [contact us](/contact).
+If you see this error on consecutive syncs, [contact us](https://segment.com/help/contact/).
 
 ### pq: role "XXX" is not permitted to log in
 
@@ -53,4 +53,4 @@ This is a permissioning issue. To learn how to set up proper permissions, you ca
 
 ### EOF
 
-This error is generally a network error when Redshift closes the connection. If the problem persists on multiple runs, [contact us](/contact).
+This error is generally a network error when Redshift closes the connection. If the problem persists on multiple runs, [contact us](https://segment.com/help/contact/).

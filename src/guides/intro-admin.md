@@ -66,7 +66,7 @@ warehouses, sync, replay
 ## Premium feature tasks
 
 personas spaces, workspaces
-protocols setup and maintenance
+protocols set up and maintenance
 Privacy monitoring
 -->
 > success ""

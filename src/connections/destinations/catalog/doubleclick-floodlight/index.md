@@ -67,7 +67,7 @@ Here's an example for tracking a `page` event with the name **Confirmation**:
 
 ![page event as track event](images/page-event.png)
 
-Please ensure you enter the name case sensitively.
+Make sure you enter the name case sensitively.
 
 Reference our [docs](/docs/connections/sources/catalog/libraries/website/javascript/#page) for more on the `name` parameter.
 
@@ -85,7 +85,7 @@ Reference our [docs](/docs/connections/sources/catalog/libraries/website/javascr
 
 ## Setting up Custom Variables
 
-There are two things you need to do in order to send custom track properties as custom Floodlight variables. Firstly, please refer to their [docs](https://support.google.com/dfa/partner/answer/2548879?hl=en) on how to create a custom variable inside DoubleClick:
+There are two things you need to do in order to send custom track properties as custom Floodlight variables. Firstly, refer to their [docs](https://support.google.com/dfa/partner/answer/2548879?hl=en) on how to create a custom variable inside DoubleClick:
 
 Custom Floodlight variables use the keys u1=, u2=, and so on, and can take any values that you choose to pass to them. You can include custom Floodlight variables in any of your Floodlight activity tags and report on their values in Report Builder.
 
@@ -114,6 +114,6 @@ Analytics.with(context).track("Free El", new Properties().putValue("show", "Stra
 
 ## Sending Personally Identifiable Information (PII)
 
-Please refrain from mapping custom variables that are PII. Please refer to the [warning](https://support.google.com/dfa/partner/answer/2548879?hl=en) by DoubleClick:
+Do not map custom variables that are PII. Refer to the [warning](https://support.google.com/dfa/partner/answer/2548879?hl=en) by DoubleClick:
 
 The terms of your DoubleClick contract prohibit passing any information to us that we could use or recognize as personally identifiable information (PII). If you enter certain key-values into a field in a DoubleClick product, you may see a warning that reminds you that you must not use key-values to pass data that we would recognize as PII. Key-values that trigger this warning include, for example, email and username. Note that it is okay to use these key-values if your purpose is not to collect information that DoubleClick could use or recognize as PII. (For example, email=weekly is fine, but passing a user's email address is not.) If you do choose one of these key-values, DoubleClick may contact you in the future to confirm that you are not using them in a way that is prohibited.

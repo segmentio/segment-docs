@@ -5,7 +5,7 @@ rewrite: true
 
 Google Ads is an online advertising service developed by Google. With Google Ads, you can take advantage of online advertising to improve your internet marketing effectiveness. [Visit Website](https://ads.google.com/home/#)
 
-This document was last updated on August 13, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on August 13, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -44,7 +44,7 @@ If you're getting the error pictured below, try disabling any ad block extension
 
 The Google Ads source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Google Ads objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation. For example, if you went with `google-ads`, the `ads` collection will be accessible at `google-ads.ads` in SQL.
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Google Ads.  For example,  if `budget` from `0` to `100` between syncs, on its next sync that tickets status will be `100`.
+Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Google Ads.  For example, if `budget` from `0` to `100` between syncs, on its next sync that tickets status will be `100`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
@@ -72,7 +72,7 @@ We do not pull in "Video Campaign Reports", since it is not supported via the [G
 
 ## Collection Properties
 
-Below are tables outlining the properties included in the collections listed above. To see the full description of each property, please refer to the Google Ads documentation linked in each collection above.
+Below are tables outlining the properties included in the collections listed above. To see the full description of each property, refer to the Google Ads documentation linked in each collection above.
 
 ### What unit is money in?
 Currency values in Google Ads are in micros, or one millionth of the smallest unit. For example, in USD, the value for `campaign.budget` would be in one millionth of a cent.

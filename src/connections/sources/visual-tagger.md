@@ -188,7 +188,7 @@ If your events are not working as expected, try the following steps to troublesh
 
 - Ensure that the Visual Tagger integration is toggled on. You find it in the Settings for your Source.
 
-- Ensure that analytics.js is implemented on your website. You can confirm this by visiting your website and watching the Segment Debugger. A `page` call should flow into your Debugger whenever someone visits a page on your website if you have implemented analytics.js. Please note that if you have an adblocker enabled when you visit your website, data will not get fired into Segment when you interact with your website.
+- Ensure that analytics.js is implemented on your website. You can confirm this by visiting your website and watching the Segment Debugger. A `page` call should flow into your Debugger whenever someone visits a page on your website if you have implemented analytics.js. Note that if you have an adblocker enabled when you visit your website, data will not get fired into Segment when you interact with your website.
 
 - Confirm that the CSS selector has not changed in any way since you created the event in the Visual Tagger (for example, a button could change locations or be removed entirely). Because Visual Tagger relies on the CSS selector to tie events to user actions, if the CSS selector changes, the event stops sending. If this happens, edit the event in Visual Tagger and update the CSS selector. Segment does not currently have a way to alert you when events you created using Visual Tagger begin to fail.
 
@@ -198,7 +198,7 @@ If your events are not working as expected, try the following steps to troublesh
 
 - If you use the same name for multiple events (whether in code or using Visual Tagger), duplicate events are *not* created downstream. Instead, those multiple events are joined into one event.
 
-If your events still don't work as expected, please contact [Segment Customer Support](https://segment.com/help/contact/) for help.
+If your events still don't work as expected, contact [Segment Customer Support](https://segment.com/help/contact/) for help.
 
 ## FAQs
 
