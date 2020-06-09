@@ -372,7 +372,7 @@ analytics.track('Completed Checkout Step', {
 });
 ```
 
-*Note*: `shippingMethod` and `paymentMethod` are semantic properties so if you want to send that information, please do so in this exact spelling!
+*Note*: `shippingMethod` and `paymentMethod` are semantic properties so if you want to send that information, do so in this exact spelling!
 
 You can have as many or as few steps in the checkout funnel as you'd like. The 4 steps above merely serve as an example. Note that you'll still need to track the `Order Completed` event per our standard [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
 
@@ -804,7 +804,7 @@ We take care of tracking the canonical URL to Google Analytics for you automatic
 
 If you'd like to integrate with Google Analytics' [Optimize plugin](https://support.google.com/360suite/optimize/answer/6262084#optimize-ga-plugin), all you have to do is insert your Optimize **Container ID** in your destination settings and we will require the plugin when we initialize GA!
 
-*Note*: Please make sure your Container ID is spelled correctly and that your Optimize container is ENABLED w/in Google. Otherwise, your GA destination will silently error out every time you try to make any tracking calls.
+*Note*: Make sure your Container ID is spelled correctly and that your Optimize container is ENABLED w/in Google. Otherwise, your GA destination will silently error out every time you try to make any tracking calls.
 
 You may, however, want to deploy [page hiding](https://support.google.com/360suite/optimize/answer/6262084#page-hiding) to prevent the page from flashing / flickering when the A/B test is loaded. This is recommended by Google. This code must be added manually by customers since it needs to load synchronously. Note that the Optimize container ID must be included in this snippet too.
 
@@ -847,7 +847,7 @@ Google Analytics's default reporting time frame is a month ago to yesterday. You
 
 ### HTTPS
 
-If your site uses `https://`, please go to your Google Analytics property settings page and change your **Site URL** to use the `https://` protocol.
+If your site uses `https://`, go to your Google Analytics property settings page and change your **Site URL** to use the `https://` protocol.
 
 
 ### Bounce Rates
@@ -989,7 +989,7 @@ The following Segment properties are mapped to Firebase Analytics properties:
 
 
 
-> **Note**: Firebase Analytics does not support `action` or `label` in their [predefined event parameter names](https://firebase.google.com/docs/reference/cpp/group/parameter-names), and Segment's Firebase SDK does not support mapping those properties. If you want to pass those properties to Firebase please send them as a custom property.
+> **Note**: Firebase Analytics does not support `action` or `label` in their [predefined event parameter names](https://firebase.google.com/docs/reference/cpp/group/parameter-names), and Segment's Firebase SDK does not support mapping those properties. If you want to pass those properties to Firebase  send them as a custom property.
 
 **Custom Events and Properties**
 Segment's Firebase Analytics SDK allows you to send custom events and properties. If you make a `track()` call but the event name is not one of the above mappings, Segment calls `logEventWithName` (iOS) or `logEvent` (Android). This allows you to pass any custom event name you want. Event names must contain 1 to 40 alphanumeric characters or underscores, per the [Firebase documentation](https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Event). The Segment Firebase SDKs format custom event names to remove trailing whitespace and replace all spaces and periods with underscores.

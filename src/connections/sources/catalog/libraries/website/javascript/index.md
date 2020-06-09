@@ -13,7 +13,7 @@ Head over to our [`analytics.js` QuickStart Guide](/docs/connections/sources/cat
 
 ## Identify
 
-The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the guide](/docs/tutorials/quickstart-analytics.js#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
+The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
 **Note:** We recommend against using `identify` for anonymous visitors to your site. `analytics.js` automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors. It is attached to all `page` and `track` events both before and after an `identify`.
 
@@ -86,7 +86,7 @@ analytics.identify('12091906-01011992', function(){
 
 ## Track
 
-The `track` method lets you record any actions your users perform. You can [see a track example in the guide](/docs/tutorials/quickstart-analytics.js#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track).
+The `track` method lets you record any actions your users perform. You can [see a track example in the guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track).
 
 `track` method definition:
 
@@ -437,7 +437,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 The `.load` method in analytics.js (the second line of the snippet) can also be modified to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations)), then we only load the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
-**IMPORTANT:** In order to leverage this feature, please ensure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
+**IMPORTANT:** In order to leverage this feature, make sure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
 
 An example:
 
@@ -631,7 +631,7 @@ analytics.on('track', function(event, properties, options) {
 });
 ```
 
-Please note that this emits events before they are processed by the Segment integration, and may not include some of the normalization we do on the client before uploading the data to Segment's servers.
+Note that this emits events before they are processed by the Segment integration, and may not include some of the normalization we do on the client before uploading the data to Segment's servers.
 
 > note ""
 > **Note:** Page event properties are stored in the `options` object.
@@ -739,9 +739,9 @@ One option, if you don't want to use any bundled 3rd-party tools, is to use our 
 
 ### Bundle size
 
-Segment's javascript snippet ([Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) has minimal impact on the size of the pages, and only increases the page size by about 1.1KB. 
+Segment's javascript snippet ([Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) has minimal impact on the size of the pages, and only increases the page size by about 1.1KB.
 
-However, the snippet then asynchronously requests and loads a customized javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your device-mode destinations. Because of this, the file size can vary depending on how many and which destinations you enable. Without any destinations, the `analytics.min.js` file is about 62KB. Each time you enable a destination, it can slightly increase the size of this file. 
+However, the snippet then asynchronously requests and loads a customized javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your device-mode destinations. Because of this, the file size can vary depending on how many and which destinations you enable. Without any destinations, the `analytics.min.js` file is about 62KB. Each time you enable a destination, it can slightly increase the size of this file.
 
 ## Retries
 
@@ -840,7 +840,7 @@ More information about this tool and how it works [is available in the project's
 
 ## Proxy
 
-To use a proxy server with analytics.js, you'll first want to update the address in the snippet to use your own host instead of `cdn.segment.com`. Secondly, you'll need to write in to our support to change the endpoint we send events to from `api.segment.io` to your proxy instead. Please take care that your proxy behaves exactly like our real APIs. You can use our [proxy server](https://github.com/segmentio/segment-proxy) as an example of a correctly working proxy.
+To use a proxy server with analytics.js, you'll first want to update the address in the snippet to use your own host instead of `cdn.segment.com`. Secondly, you'll need to write in to our support to change the endpoint we send events to from `api.segment.io` to your proxy instead. Make sure that your proxy behaves exactly like our real APIs. You can use our [proxy server](https://github.com/segmentio/segment-proxy) as an example of a correctly working proxy.
 
 ## Plugins
 
@@ -904,7 +904,7 @@ Solution: [Follow the `analytics.js` Quickstart Guide](/docs/libraries/analytics
 
 ### Are you loading two instances of `analytics.js`?
 
-Please note that you *cannot* load `analytics.js` twice on the same page, even if you're using different write keys. You might encounter `Uncaught RangeError: Maximum call stack size exceeded`. You can conditionally set the write key based on an environment variable.
+Note that you *cannot* load `analytics.js` twice on the same page, even if you're using different write keys. You might encounter `Uncaught RangeError: Maximum call stack size exceeded`. You can conditionally set the write key based on an environment variable.
 
 Example:
 ```js
@@ -943,7 +943,7 @@ One particular issue is Safari private browsing mode which allows analytics.js i
 
 ### Internet Explorer Support
 
-We guarantee support for Internet Explorer 9 and higher for analytics.js. Please keep in mind that different tools may have different compatibility guarantees for their own products. Please refer to the vendor's documents to see what their browser compatibility looks like.
+We guarantee support for Internet Explorer 9 and higher for analytics.js. Keep in mind that different tools may have different compatibility guarantees for their own products. Refer to the vendor's documents to see what their browser compatibility looks like.
 
 ### Is your web site deployed under a domain on the Public Suffix List?
 

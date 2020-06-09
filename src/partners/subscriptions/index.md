@@ -8,7 +8,7 @@ A Subscription gives you complete control over how you want to store, transform 
 
 ## Getting Started
 
-Please review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a subscription.
+Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a subscription.
 
 1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model).
 2. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).

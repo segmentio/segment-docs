@@ -5,7 +5,7 @@ title: Adjust Destination
 
 [Adjust](https://adjust.com) is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-adjust) and [Android](https://github.com/segment-integrations/analytics-android-integration-adjust).
 
-This document was last updated on January 31, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on January 31, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
@@ -97,7 +97,7 @@ analytics.track({
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('12091906-01011992', {
@@ -111,7 +111,7 @@ When you call `identify`, Segment will call Adjust's [addSessionPartnerParameter
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Article Completed', {
@@ -127,7 +127,7 @@ If you don't provide a mapping, Adjust cannot accept the event. We include all t
 
 ## Reset
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Reset method](https://segment.com/docs/connections/spec/reset/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Reset method](https://segment.com/docs/connections/spec/reset/) does. An example call would look like:
 
 ```javascript
 analytics.reset();
@@ -174,7 +174,7 @@ Unlike the Device-mode option to send `Install Attributed` to Segment, the Cloud
 
 If you are bundling the Segment-Adjust integration and would like attribution data sent from Adjust's servers back to Segment, you can [enable Segment as a Special Partner in Adjust](https://docs.adjust.com/en/special-partners/segment/#sending-partner-parameters-to-segment). Once set up, Install Attributed will be sent to Segment, and on to enabled Cloud-mode destinations.
 
-Please reach out to the Adjust team at `support@adjust.com` for questions related to enabling Segment as a Adjust Special Partner.
+contact the Adjust team at `support@adjust.com` for questions related to enabling Segment as a Adjust Special Partner.
 
 
 ## Additional Features
@@ -199,7 +199,7 @@ If you're using Adjust's iOS SDK, it will automatically takes care of duplicate 
 
 ### In-App Purchase Receipts
 
-The destination does not currently support in-app purchase receipts. If this is important to you, please [let us know](/contact/).
+The destination does not currently support in-app purchase receipts. If this is important to you, [let us know](https://segment.com/help/contact/).
 
 ### Push Notifications
 

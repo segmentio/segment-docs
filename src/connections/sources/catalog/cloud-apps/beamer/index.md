@@ -5,9 +5,9 @@ beta: true
 
 [Beamer](https://www.getbeamer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a changelog and notification center that lets you announce new features, product updates, special offers and more.
 
-This source is maintained by Beamer. For any issues with the source, please [reach out to their team](mailto:info@getbeamer.com).
+This source is maintained by Beamer. For any issues with the source, [contact their team](mailto:info@getbeamer.com).
 
-_**NOTE:** The Beamer Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 28, 2020. If you are interested in joining their beta program or have any feedback to help improve the Beamer Source and its documentation, please [let  their team know](mailto:info@getbeamer.com)!_
+_**NOTE:** The Beamer Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 28, 2020. If you are interested in joining their beta program or have any feedback to help improve the Beamer Source and its documentation, [let their team know](mailto:info@getbeamer.com)!_
 
 > success ""
 > **Good to know**: This page is about the Beamer Segment source, which sends data _into_ Segment. There's also a page about the [Beamer Segment destination](/docs/connections/destinations/catalog/beamer/), which receives data from Segment!
@@ -90,4 +90,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Beamer team](mailto:info@getbeamer.com).
+If you experience any issues with how the events arrive in Segment, [contact the Beamer team](mailto:info@getbeamer.com).

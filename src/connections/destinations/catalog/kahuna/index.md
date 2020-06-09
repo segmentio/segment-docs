@@ -8,7 +8,7 @@ Segment makes it easy to send your data to Kahuna. Once you're tracking data thr
 
 If you have mobile apps, then Kahuna recommends using the Segment [iOS](https://segment.com/docs/libraries/ios) and or [Android](https://segment.com/docs/libraries/android) library and bundling Kahuna (see [Mobile](#mobile) section below).
 
-If you are sending data from a server side library, please read the [Server side](#server-side) section.
+If you are sending data from a server side library, read the [Server side](#server-side) section.
 
 Be sure to enable Kahuna in your Segment destinations page and provide your **Kahuna Secret Key**, which can be found in the Settings page of the Kahuna Dashboard.
 

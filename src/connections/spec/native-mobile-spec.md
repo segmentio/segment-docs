@@ -4,7 +4,7 @@ title: What is the native mobile spec?
 
 The [Native Mobile Spec](https://segment.com/docs/connections/spec/mobile) is a common blueprint for the mobile user lifecycle. The Spec outlines the most important events for mobile apps to be tracking and automatically collects many of these events with the Segment Android and iOS SDKs.
 
-This article outlines common questions about our Native Mobile Spec. To learn what the benefits are of the feature, check out our [blog](https://segment.com/blog/native-mobile-spec). For technical setup and documentation, see our [spec docs](https://segment.com/docs/connections/spec/mobile).
+This article outlines common questions about our Native Mobile Spec. To learn what the benefits are of the feature, check out our [blog](https://segment.com/blog/native-mobile-spec). For technical set up and documentation, see our [spec docs](https://segment.com/docs/connections/spec/mobile).
 
 ### How does the Native Mobile Spec help me?
 

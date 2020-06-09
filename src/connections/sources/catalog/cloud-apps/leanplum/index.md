@@ -12,7 +12,7 @@ The Leanplum source integration is an event source, which means that it sends Le
 
 Collections represent the different messaging events that Leanplum sends to Segment as a streaming source. In your Segment warehouse, each collection gets its own table, as well as a tracks table that aggregates all the events into a single table.
 
-This source is maintained by Leanplum. For any issues with the source, please [contact Leanplum Support](mailto:support@leanplum.com).
+This source is maintained by Leanplum. For any issues with the source, [contact Leanplum Support](mailto:support@leanplum.com).
 
 > success ""
 > **Good to know**: This page is about the Leanplum Segment source, which sends data _into_ Segment. There's also a page about the [Leanplum Segment destination](https://segment.com/docs/connections/destinations/catalog/leanplum/), which receives data from Segment!
@@ -68,7 +68,7 @@ Now that your Source is set up, you can connect it to Destinations.
 
 Log into your downstream tools and check to see that your events are populating and that they contain all the properties you expect. If all your events and properties are not showing up, refer to the Source docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Leanplum team](mailto:support@leanplum.com).
+If you experience any issues with how the events arrive in Segment, [contact the Leanplum team](mailto:support@leanplum.com).
 
 ## Send data to Leanplum
 

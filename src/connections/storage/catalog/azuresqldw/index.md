@@ -16,7 +16,7 @@ There are four main steps to get started with Segment:
 3. Give Segment access to your SQL Data Warehouse
 4. Configure the Destination in Segment
 
-Please follow the links above to follow Azure's documentation on setting up these prerequisites. Following that, the guide below should take you through the rest.
+Follow the links above to follow Azure's documentation on setting up these prerequisites. Following that, the guide below should take you through the rest.
 
 ### Give Segment access to your SQL Data Warehouse
 

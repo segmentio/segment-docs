@@ -11,4 +11,4 @@ The Factual Engine Source is a cloud-mode event source. You simply include, conf
 
 ## Getting Started
 
-While the integration is in beta, please contact engine-team@factual.com for help and full documentation!
+While the integration is in beta, contact engine-team@factual.com for help and full documentation!

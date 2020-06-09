@@ -22,7 +22,7 @@ NOTE: If you're trying to delete users based on GDPR regulations, Amplitude requ
 
 This document was last updated on September 17th, 2019. If you notice any gaps,
 outdated information or simply want to leave some feedback to help us improve
-our documentation, please [let us know](https://segment.com/help/contact)!
+our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
@@ -58,7 +58,7 @@ will appear in your Amplitude project.
 
 ## Page and Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page](https://segment.com/docs/connections/spec/page/) and [Screen](https://segment.com/docs/connections/spec/screen/) method does. By default, Segment won't send these standard calls to Amplitude. However, you can enable them with the destination settings outlined below, which
+If you're not familiar with the Segment Specs, take a look to understand what the [Page](https://segment.com/docs/connections/spec/page/) and [Screen](https://segment.com/docs/connections/spec/screen/) method does. By default, Segment won't send these standard calls to Amplitude. However, you can enable them with the destination settings outlined below, which
 you can find under the "Optional Settings" tab. An example call would look like with a server-side call:
 
 ```js
@@ -128,7 +128,7 @@ and `screen` calls from our [`screen` spec](/docs/connections/spec/screen/).
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 // On server-side
@@ -231,7 +231,7 @@ with your `identify` call. Otherwise, Amplitude will create two separate users: 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. Amplitude supports a number of special properties, all of which are included in the example below:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. Amplitude supports a number of special properties, all of which are included in the example below:
 
 ```javascript
 // On server-side
@@ -294,7 +294,7 @@ Our iOS and Android components support sending revenue via Amplitude's preferred
 | `receipt` | `receipt` | This is required if you want to verify the revenue event. |
 | `eventProperties` | Any remaining properties | A NSDictionary or Map of event properties to include in the revenue event. |
 
-^ If `properties.price` is not present, Segment will fallback to `revenue` and send that as `price`. In our iOS and Android components, if `revenue` isn't present either,  we'll do an additional fallback to `total`.
+^ If `properties.price` is not present, Segment will fallback to `revenue` and send that as `price`. In our iOS and Android components, if `revenue` isn't present either, we'll do an additional fallback to `total`.
 
 Property names should be `camelCase` for Android implementations and `snake_case` for iOS implementations.
 
@@ -319,7 +319,7 @@ In our client side, iOS, and Android components, if the preferred `logRevenueV2`
 | `eventProperties` | Any remaining properties (Server-side only) | A NSDictionary or Map of event properties to include in the revenue event. |
 
 
-^ In our A.js, iOS and Android components, if `properties.price` is not present, Segment will fallback to `revenue` and send that as `price`. In addition, in our iOS and Android components, if `revenue` isn't present either,  we'll do an additional fallback to `total`.
+^ In our A.js, iOS and Android components, if `properties.price` is not present, Segment will fallback to `revenue` and send that as `price`. In addition, in our iOS and Android components, if `revenue` isn't present either, we'll do an additional fallback to `total`.
 
 **Note:** If your site allows for users to perform a single transaction with multiple different products (such as a shopping cart checkout), we recommend using an [Order Completed](/docs/connections/destinations/catalog/amplitude/#order-completed) event to track revenue with Amplitude.
 
@@ -388,13 +388,13 @@ multi-product purchase. You can choose which method you want to use via the
 
 2. Enable the setting ("on"): Log a single revenue event for each product that was purchased. Revenue data will be added to each "Product Purchased" event, and the "Order Completed" event will not have any native Amplitude revenue data.
 
-Please ensure you are adhering to our event spec and pass at minimum a
+Make sure you are adhering to our event spec and pass at minimum a
 `revenue` property, as well as a `price` and `quantity` property for each
 product in the products list.
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. Note that groups are an enterprise-only feature in Amplitude,
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. Note that groups are an enterprise-only feature in Amplitude,
 and are only available if you've purchased the Accounts add-on. An example call would look like:
 
 ```js
@@ -657,10 +657,10 @@ to update the initial location that was cached during app startup.
 On Android, when enabled, this setting adds a latitude and longitude property
 to each track event reflecting where geographically the event was triggered.
 
-Please take note that even you disable location listening, Amplitude's server
+Note that even you disable location listening, Amplitude's server
 side ingestion layer will attempt to determine the user's location from their
 IP address.  If you would like to block all location information from being
-tracked, please reach out to your CSM at amplitude to disable all location
+tracked, contact your CSM at amplitude to disable all location
 tracking.
 
 ### Set AdvertisingId for DeviceId

@@ -10,7 +10,7 @@ By standardizing the events that comprise the core **mobile application lifecycl
 
 These events pair nicely with our [ecommerce spec](/docs/connections/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like Tune and Kochava.
 
-**Note** Per our [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information) and applicable terms, please don't send us sensitive personal information about your users. Certain features from Segment and our partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
+**Note** Per our [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information) and applicable terms, don't send us sensitive personal information about your users. Certain features from Segment and our partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
 
 ## Overview of Events
 
@@ -118,7 +118,7 @@ This event should be sent when a user backgrounds the application upon [`applica
 
 This event fires when a user updates the application. Our SDK will automatically collect this event in lieu of an "Application Opened" event when we determine that the Open is first since an update.
 
-{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Updated", "properties": { "previous_version": "1.1.2", "previous_build": 1234,  "version": "1.2.0", "build": "1456" }}'}}} {% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Updated", "properties": { "previous_version": "1.1.2", "previous_build": 1234, "version": "1.2.0", "build": "1456" }}'}}} {% endcomment %}
 
 ```json
 {
@@ -179,7 +179,7 @@ As the walls between apps become increasingly lowered, capturing information abo
 
 When Segment or an integrated partner can discern the source of an install, we'll collect an `Install Attributed` event. This event may be sent to Segment via server-to-server connection from your attribution provider, or directly on the device via packaged destinations. In either case, this will happen **after** install, and does not apply to all installs, which is why it is a discrete event.
 
-{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Install Attributed", "properties": { "provider": "Tune/Kochava/Branch/AppsFlyer", "campaign": { "source": "Network/FB/AdWords/MoPub/Source", "name": "Campaign Name", "content": "Organic Content Title",  "ad_creative": "Red Hello World Ad", "ad_group": "Red Ones" }}}'}}} {% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Install Attributed", "properties": { "provider": "Tune/Kochava/Branch/AppsFlyer", "campaign": { "source": "Network/FB/AdWords/MoPub/Source", "name": "Campaign Name", "content": "Organic Content Title", "ad_creative": "Red Hello World Ad", "ad_group": "Red Ones" }}}'}}} {% endcomment %}
 
 ```json
 {

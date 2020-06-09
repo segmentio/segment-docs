@@ -20,13 +20,13 @@ The Event Source will be denoted by your Segment Source ID, which you can find i
 We'll forward all the messages in the source (pending any Destination Filters you've enabled) to the Segment Partner Event Source we create for you in EventBridge.
 
 ## Page
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```javascript
   analytics.page();
 ```
 
 ## Identify
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example identify call is shown below:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example identify call is shown below:
 ```javascript
 analytics.identify('97980cfea0085', {
   email: 'gibbons@example.com',
@@ -35,7 +35,7 @@ analytics.identify('97980cfea0085', {
 ```
 
 ## Track
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example identify call is shown below:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example identify call is shown below:
 
 ```javascript
 analytics.track("User Registered", {

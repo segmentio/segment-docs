@@ -20,7 +20,7 @@ We work hard to make our mobile SDKs as modular as possible so you only need to 
 
 These lightweight Segment-tool-SDKs allow us to offer the native functionality of all of our destinations without having to include hefty third-party SDKs by default. This gives you control over size and helps prevent method bloat. 
 
-Check out how to use custom builds for both [Android](/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-1-install-the-sdk) and [iOS](/docs/tutorials/quickstart-ios/#step-1-install-the-sdk)
+Check out how to use custom builds for both [Android](/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-1-install-the-sdk) and [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-1-install-the-sdk)
 
 ### Which destination's SDKs can be bundled?
 

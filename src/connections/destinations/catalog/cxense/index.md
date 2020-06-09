@@ -36,7 +36,7 @@ window.cX.callQueue.push(['sendPageViewEvent']);
 
 ### Geography API
 
-By default, Cxense captures location information about a user via their IP address. Their API, however, also offers the ability to explicitly define a location. If you would like to leverage this functionality, please adhere to our [spec](/docs/connections/spec/common/#context) and pass `location.latitude` and `location.longitude` as properties of the `context` argument of your `.page()` events.
+By default, Cxense captures location information about a user via their IP address. Their API, however, also offers the ability to explicitly define a location. If you would like to leverage this functionality, adhere to our [spec](/docs/connections/spec/common/#context) and pass `location.latitude` and `location.longitude` as properties of the `context` argument of your `.page()` events.
 
 ## Identify
 
@@ -72,7 +72,7 @@ In order to use this functionality, you will need to have:
 2. A Cxense Origin identifier.
 3. A Cxense Customer Prefix.
 
-These all need to be defined as integration settings. If you are unsure about any of these, please contact your Cxense representative to obtain them.
+These all need to be defined as integration settings. If you are unsure about any of these, contact your Cxense representative to obtain them.
 
 Once these settings are defined, we will begin mapping your `.track()` events to Cxense's API. Here's an example:
 
