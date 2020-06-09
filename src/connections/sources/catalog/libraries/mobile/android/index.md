@@ -498,7 +498,7 @@ You can register source middleware during construction with the `.useSourceMiddl
 
 You can register destination middleware during construction with the `.useDestinationMiddleware` method on the builder. These middleware are invoked for all events to the specific device-mode destination.
 
-These middleware offer you the ability the customize those messages to fit your use case even if the event was sent outside your source code.
+You can use middleware to customize those messages to fit your use case, even if the event was not sent by your source code.
 
 For example, you might want to record the [device year class](https://github.com/facebook/device-year-class) with your events. Previously, you would have to do this everywhere you trigger an event with the Segment SDK. With middleware, you can do this in a single place.
 
