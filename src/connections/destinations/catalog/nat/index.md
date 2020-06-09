@@ -12,7 +12,7 @@ This destination is maintained by Nat.app. For any issues with the destination, 
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+{% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click "Add Destination".
 2. Search for "Nat.app" in the Destinations Catalog, and select the "Nat.app" destination.
@@ -30,27 +30,27 @@ analytics.identify('userId123', {
 });
 ```
 
-Identify calls are sent to Nat.app as an `identify` event. 
+Identify calls are sent to Nat.app as an `identify` event.
 
 > warning ""
-> Nat.app only accepts Identify calls. They must contain an `email` and a `timestamp` or else Nat.app will not accept them.  
+> Nat.app only accepts Identify calls. They must contain an `email` and a `timestamp` or else Nat.app will not accept them.
 
 If an `identify` event contains an email, it is added to the timeline of the contact record for that email address as an interaction. Nat only generates one event per day per contact to keep Nat's *closeness indicator* accurate.
 
-You can also include a `url` that is added as a description to the event in the user's timeline. 
-
+You can also include a `url` that is added as a description to the event in the user's timeline.
 
 Here is an example of an `identify` even that has been added to a timeline:
 ![nat timeline](images/natTimeline.png)
 
-### Accepted data format
+## Accepted data format
 
-Nat accepts several types of data formats to make the integration as easy as possible. There is a recommended format as well as alternative formats. 
+Nat accepts several types of data formats to make the integration as easy as possible. There is a recommended format as well as alternative formats.
 
-#### Recommended format - with traits & page
+### Recommended format - with traits & page
 
 In the recommended format, the user email is stored in `traits`, and the url in `page`.
-``` 
+
+```js
 {
 "type": "identify",
 "timestamp": "2020-05-31T17:55:47.263Z",
@@ -63,35 +63,40 @@ In the recommended format, the user email is stored in `traits`, and the url in 
 }
 ```
 
-#### Alternative formats
+### Alternative formats
 
 Nat also accepts other formats to meet specific customer needs. Contact [segment@nat.app](mailto:segment@nat.app) if you need a custom format.
 
-*Example 1 - Without traits or url information*
+#### Example 1 - Without traits or url information
 
+```js
         {
       "timestamp": "2020-05-31T17:55:47.263Z",
       "type": "identify",
-      "email": "test@example.org"
+      "email": "test@example.com"
     }
-*Example 2 - With event information but without traits*      
-In this case, the `event`will replace the `url` in the app.
-   
+```
 
+#### Example 2 - With event information but without traits
+
+In this case, the `event ` replaces the `url` in the app.
+
+```js
     {
       "timestamp": "2020-05-31T17:55:47.263Z",
       "type": "identify",
-      "email": "test@example.org",
+      "email": "test@example.com",
       "event": "User logged in",
-        
+
       },
     }
-    
+```
 
 
-### Required & Optional data
+## Required & Optional data
+
 **Required: email & timestamp**
-If the integration can't identify an `email` and a `timestamp`, an error will be returned. Please follow the recommended format.
+If the integration can't identify an `email` and a `timestamp`, it returns an error. Please follow the recommended format.
 
 **Optional: url**
-A description data point is optional and needs to be called `url`. It will be added in the timeline as shown in the image above. If there is no `url`, a standard message will be added to the timeline instead.
+A description data point is optional and must be called `url`. It is added in the timeline as illustrated in the image above. If `url` is not included, a standard message is be added to the timeline instead.
