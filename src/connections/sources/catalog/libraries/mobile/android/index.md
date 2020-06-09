@@ -557,7 +557,12 @@ Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_W
 The key thing to observe here is that the output produced by the first middleware feeds into the second. This allows you to chain and compose independent middlewares!
 
 ### Destination Middleware
-Similarly, if say you wanted to add an additional property before sending all your `Checkout Started` track events to your Mixpanel device-mode integration, you can leverage destination middleware, and do this in a single place.
+
+If you do not need to transform all of your Segment calls, and only want to transform the calls going to specific destinations, you should use Destination Middleware instead of Source middleware. Destination middleware are available for device-mode destinations only; there are several other ways to transform Segment calls sent to a destination in cloud-mode.
+
+You can use the same middleware object to apply transformations for several different device-mode destinations at the same time. For example, you can use middleware to add a property before sending `Checkout Started` track events to both a Mixpanel and an Amplitude destination. 
+
+The example below adds a property key-value pair to any "Checkout Started" Track event, with the key "step" and the value "1".
 
 ```java
 Integration.Factory mixpanelFactory = MixpanelIntegration.FACTORY; // https://github.com/segment-integrations/analytics-android-integration-mixpanel
