@@ -55,7 +55,7 @@ When you call Track, the user’s information is passed along with the event nam
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, you should first read about what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page()
