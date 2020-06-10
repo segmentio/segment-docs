@@ -35,3 +35,4 @@ src/connections/destinations/catalog/amazon-s3
 src/connections/sources/catalog/cloud-apps/candu
 src/connections/destinations/catalog/gist
 src/connections/destinations/catalog/gist
+src/connections/destinations/catalog/google-cloud-storage
