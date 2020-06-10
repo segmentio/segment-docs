@@ -64,7 +64,7 @@ analytics.page()
 Segment sends Page calls to Wootric as a `pageview`.
 
 When you call Page, Wootric tracks the URL, page name, and page path that you are currently on. You can use this information in the Wootric Settings to trigger surveys by using Wootric's Targeted Sampling feature.
-Segment’s page variables recognized as Wootric’s standard page fields are:
+Wootric recognizes the following Segment Page properties as the following page fields:
 
 | Segment Parameter  | Wootric Parameter                   | Description                          |
 | ------------------ | ------------------------------------ | ------------------------------------ |
