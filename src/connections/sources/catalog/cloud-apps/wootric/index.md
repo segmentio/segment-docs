@@ -1,14 +1,11 @@
 ---
 title: Wootric
-beta: true
+rewrite: true
 ---
 
 [Wootric](https://wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is modern customer feedback management software. Easily incorporate Voice of Customer data in your decision-making processes and marketing campaigns, and trigger customer follow-up when you send survey responses to your CRM, marketing platform or data warehouses automatically.
 
 This source is maintained by Wootric. For any issues with the source, [contact the Wootric support team](mailto:support@wootric.com).
-
-_**NOTE:** The Wootric Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on February 4, 2020. If you are interested in joining their beta program or have any feedback to help improve the Wootric Source and its documentation, [let the Wootric support team know](mailto:support@wootric.com)!_
-
 
 ## Getting Started
 
