@@ -12,7 +12,8 @@ This destination is maintained by Kubit. For any issues with the destination, [c
 
 1. On Kubit's [Welcome Page](https://segment.kubit.ai/segment), click on “**Connect to Segment**”.
 ![](images/oauth.png)
-2. Select the Source you'd like to connect to Kubit Destination and click **Allow**.
+2. In Segment, select the Source to connect to the Kubit destination.
+3. Click **Allow**.
 
 ## Page
 
