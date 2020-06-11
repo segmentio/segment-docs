@@ -1,6 +1,5 @@
 ---
 title: 'Quickstart: Rust'
-hidden: true
 ---
 
 <!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->

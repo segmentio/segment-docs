@@ -1,6 +1,6 @@
 ---
 title: 'Quickstart: Node.js'
-hidden: true
+redirect_from: '/connections/sources/catalog/libraries/server/node-js/quickstart/'
 ---
 
 <!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
