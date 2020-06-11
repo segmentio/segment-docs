@@ -2,7 +2,7 @@
 title: Kubit Destination
 rewrite: true
 ---
-[Kubit](https://kubit.ai) is an Analytics Powerhouse which makes deep data discovery and insights accessible for everyone. Kubit Smart Analytics help product people get clear, fast answers about user engagement and retention. When you send your events through Segment, you will benefit from Kubit's AI-powered behavioral analytics, diagnostics, and collaborative workspaces.
+[Kubit](https://kubit.ai) is an analytics tool which makes deep data discovery and insights accessible for everyone. Kubit Smart Analytics help product people get clear, fast answers about user engagement and retention. When you send your events through Segment, you benefit from Kubit's AI-powered behavioral analytics, diagnostics, and collaborative workspaces.
 
 This destination is maintained by Kubit. For any issues with the destination, contact the  [Kubit Support team](mailto:support@kubit.ai).
 
