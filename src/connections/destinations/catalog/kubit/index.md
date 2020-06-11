@@ -25,7 +25,7 @@ Segment sends page() calls to Kubit as a `pageview`.
 
 ## Track
 
-If you haven't had a chance to review Segment's spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you aren't familiar with the Segment Spec,  take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')
