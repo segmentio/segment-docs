@@ -30,4 +30,4 @@ If you haven't had a chance to review Segment's spec, please take a look to unde
 ```js
 analytics.track('Login Button Clicked')
 ```
-Segment sends track() calls to Kubit as a `track` event.
+Segment sends Track calls to Kubit as a `track` event.
