@@ -21,7 +21,7 @@ If you haven't had a chance to review Segment's spec, please take a look to unde
 ```js
 analytics.page()
 ```
-Segment sends page() calls to Kubit as a `pageview`.
+Segment sends Page calls to Kubit as a `pageview`.
 
 ## Track
 
