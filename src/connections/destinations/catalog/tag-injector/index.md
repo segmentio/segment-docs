@@ -16,23 +16,23 @@ _**NOTE:** Tag Injector is only available for select customers at this time._
   - **URL**: A URL to the Javascript code to load on the page as the `src` attribute of the `<script>` tag.
   - **Raw**: Raw Javascript code to load onto the page within a `<script>` tag.
   - **Merge Variable**: A global variable that can be modified or created at runtime.
-3. You can also configure global variables, which the Tag Injector can manipulate in a user-specified way via Merge Variable tags. These Merge Variable tags support two fields:
+3. You can also configure global variables, which the Tag Injector can manipulate in a user-specified way using Merge Variable tags. These Merge Variable tags support two fields:
   - Variable Name indicates what global variable to operate on.
   - Tag Value specifies what values should be merged into the global variable.
 4. For each Merge Variable tag, the Tag Injector will inject code which will have the behavior as follows. For this example, let us call the global variable with the name specified in Variable Name _the global variable to modify_.
   - If the global variable to modify does not yet exist, it is created and initialized to the value described in Tag Value.
-  - If the global variable to modify already exists, its value is merged with the value described in Tag Value. This merging process will be implemented via a custom function.
+  - If the global variable to modify already exists, its value is merged with the value described in Tag Value. This merging process will be implemented using a custom function.
 
 
 ## Best Practices
 
-**Important**: This Destination allows you to inject Javascript onto a page where you have the Tag Injector enabled on the source loading `analytics.js`. Be sure that the script you have configured performs the desired task and does not break your page. You should mitigate any risks by assuring the script injected via the Tag Injector will be QA'd for correctness and security.
+**Important**: This Destination allows you to inject Javascript onto a page where you have the Tag Injector enabled on the source loading `analytics.js`. Be sure that the script you have configured performs the desired task and does not break your page. You should mitigate any risks by assuring the script injected using the Tag Injector will be QA'd for correctness and security.
 
 ## FAQ
 
 ### How do I know what tags were injected by the Tag Injector?
 
-You will be able to distinguish tags loaded via Segment's Tag Injector through the `data-injected-by="segment"` attribute on the tag.
+You will be able to distinguish tags loaded using Segment's Tag Injector through the `data-injected-by="segment"` attribute on the tag.
 
 ### Script injection location and ordering
 

@@ -609,7 +609,7 @@ There are four timestamps associated with every Segment API call: `timestamp`, `
 
 All four timestamps are passed through to your Warehouse for every ETL'd event. In most cases the timestamps are fairly close together, but they have different meanings which are important.
 
-`timestamp` is the UTC-converted timestamp which is set by the Segment library. If you are importing historical events via a server-side library, this is the timestamp you'll want to reference in your queries!
+`timestamp` is the UTC-converted timestamp which is set by the Segment library. If you are importing historical events using a server-side library, this is the timestamp you'll want to reference in your queries!
 
 `original_timestamp` is the original timestamp set by the Segment library at the time the event is created.  Keep in mind, this timestamp can be affected by device clock skew. You can override this value by manually passing in a value for `timestamp` which will then be relabed as `original_timestamp`. Generally, this timestamp should be ignored in favor of the `timestamp` column.
 

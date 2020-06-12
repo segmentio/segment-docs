@@ -36,4 +36,4 @@ Below is an  example of how your track events will start appearing instantly in 
 
 ## API Key
 
-To get your API key  get in touch with a Pointillist customer representative via customer-success@pointillist.com
+To get your API key  get in touch with a Pointillist customer representative using customer-success@pointillist.com

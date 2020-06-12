@@ -11,7 +11,7 @@ The Boomtrain destination with Segment supports the `identify`, `track` and `pag
 
 
 Steps to connect:
- - Turn on Boomtrain via the destinations catalog.
+ - Turn on Boomtrain using the destinations catalog.
  - Enter your Boomtrain API Key.
 
 If you're not sure where to find your Boomtrain API Key, contact [Boomtrain Support](mailto:support@boomtrain.com) or your Boomtrain CSM directly.

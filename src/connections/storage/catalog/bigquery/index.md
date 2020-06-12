@@ -198,7 +198,7 @@ costs.
 You can connect to BigQuery using a BI tool like Mode or Looker, or query
 directly from the BigQuery console.
 
-BigQuery now supports standard SQL, which you can enable via their query UI.
+BigQuery now supports standard SQL, which you can enable using their query UI.
 This does not work with views, or with a query that utilizes table range
 functions.
 

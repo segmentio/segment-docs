@@ -134,8 +134,8 @@ For `Added Product`, Segment tracks the Kahuna User Attributes "Last Product Add
 
 For `Order Completed`, Segment tracks the Kahuna User Attributes "Last Purchase Discount" taken from `properties.discount`. If `discount` is unspecified, Segment tracks 0.
 
-### Send Push Token via Server-Side
+### Send Push Token using Server-Side
 
 If you chose not to bundle the Kahuna Mobile SDK, then you will have to implement your own Push Message processors, and you won't have access to Kahuna's In-App feature.
 
-If you decide to implement your own Push Message processors, then make sure you pass the Push Tokens to Kahuna via Server Side.  You can do this by sending it inside `context.device.token`. We will send this to Kahuna as `push_token`.
+If you decide to implement your own Push Message processors, then make sure you pass the Push Tokens to Kahuna using Server Side.  You can do this by sending it inside `context.device.token`. We will send this to Kahuna as `push_token`.

@@ -15,7 +15,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 
 ### Install the Package
 
-Install `analytics-go` via `go get`:
+Install `analytics-go` using `go get`:
 
 ```bash
 go get gopkg.in/segmentio/analytics-go.v3

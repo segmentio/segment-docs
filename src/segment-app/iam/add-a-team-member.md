@@ -38,8 +38,8 @@ To add a Source Collaborator, navigate to the Settings page for a given Source, 
 
 If you are on a Business plan and elect to use Single Sign On, by assigning team members access to Segment in your identity provider, you are granting them implicit access to your workspaces **as a read-only member.**
 
-Segment supports "Just-In-Time" user provisioning via SSO. Any users with access to the application as defined in your IDP will be able to seamlessly create an account the very first time they log in. All auto-provisioned users are created as read-only members.
+Segment supports "Just-In-Time" user provisioning using SSO. Any users with access to the application as defined in your IDP will be able to seamlessly create an account the very first time they log in. All auto-provisioned users are created as read-only members.
 
 Admins may then promote new auto-provisioned read-only members to owners as they see fit.
 
-Segment does not support programmatic de-provisioning at this time, but if your workspace has SSO enabled, any user that cannot authenticate via your IDP will not be granted authorization to view or edit your workspace or the Sources, Destinations, etc. within it.
+Segment does not support programmatic de-provisioning at this time, but if your workspace has SSO enabled, any user that cannot authenticate using your IDP will not be granted authorization to view or edit your workspace or the Sources, Destinations, etc. within it.

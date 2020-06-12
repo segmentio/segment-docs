@@ -22,7 +22,7 @@ Destination and its documentation, [let us know](https://segment.com/help/contac
    tool, their Javascript must be loaded as soon as possible.
 2. From your Segment UI's Destinations page click on "Add Destination". Note
    that no integration settings are listed in this tab because you must manage
-   integration options via Adobe's UI or their `targetGlobalSettings` object.
+   integration options using Adobe's UI or their `targetGlobalSettings` object.
 3. Search for "Adobe Target" within the Destinations Catalog and confirm the
    Source you'd like to connect to.
 5. Start sending data!

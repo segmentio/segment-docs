@@ -18,7 +18,7 @@ Segment's core feature is our Connections Catalog:
 
 ![](images/catalog.gif)
 
-Customers discover your Sources and Destinations via the Connections Catalog and can enable them from there.
+Customers discover your Sources and Destinations using the Connections Catalog and can enable them from there.
 
 The development process is simple:
 

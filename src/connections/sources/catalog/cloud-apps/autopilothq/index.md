@@ -27,7 +27,7 @@ Autopilot uses our stream Source component to send events to Segment. These even
 
 Below is a table of events that Autopilot sends to Segment. These events will show up as tables in your warehouse, and as regular events in your other Destinations.
 
-Autopilot will send the `userID` if the contact has passed through the system before via Segment; otherwise Autopilot will send the email of the contact through as `anonymousID`.
+Autopilot will send the `userID` if the contact has passed through the system before using Segment; otherwise Autopilot will send the email of the contact through as `anonymousID`.
 
 Additionally, Autopilot also sends `email` and `contact_id` under `context.traits`.
 

@@ -30,7 +30,7 @@ Voila! We'll begin syncing your HubSpot data into Segment momentarily, and it wi
 
 The HubSpot source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the HubSpot objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. my_source.charges).
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in HubSpot. For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
+Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in HubSpot. For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
@@ -49,7 +49,7 @@ Due to HubSpot's [API Rate Limits](http://developers.hubspot.com/apps/api_guidel
 |  contacts | Object | Contacts represent people in an Organization's address book. For more info, check out [HubSpot's API docs](http://developers.hubspot.com/docs/methods/contacts/get_contacts) |
 | contact_identity_profiles | Object | Contact identity profiles represent identities of a contact.
 | contact_identities | Object | Contact identities represent communication methods for a contact's profile (email, lead, etc.).
-| form_submissions | Event | Form submissions represent input from contacts in forms created via HubSpot
+| form_submissions | Event | Form submissions represent input from contacts in forms created using HubSpot
 | deals | Object | Deals for HubSpot CRM.
 | contact_lists | Object | Contact lists are lists of contacts in an Organization's address book. For more info, check out [HubSpot's API docs about the resource](http://developers.hubspot.com/docs/methods/lists/get_lists) |
 | companies | Object | Companies visible to the portal in the HubSpot CRM. For more info, check out [HubSpot's API docs about the resource](http://developers.hubspot.com/docs/methods/companies/companies-overview) |

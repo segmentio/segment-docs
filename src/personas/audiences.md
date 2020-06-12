@@ -2,7 +2,7 @@
 title: Personas Audiences
 ---
 
-Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be sycned to hundreds of destinations and are available via the [Profile API](/docs/personas/profile-api).
+Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be sycned to hundreds of destinations and are available using the [Profile API](/docs/personas/profile-api).
 
 ## Building an Audience
 
@@ -20,7 +20,7 @@ You can also specify two different types of time-windows, `within` and `in betwe
 
 ### Custom Traits
 
-You can also build audiences based on custom traits. These traits can be collected from your apps when a user completes a form, or signs up, via an [identify](/docs/connections/spec/identify) call. You can also check out the Personas user explorer to see examples of these traits.
+You can also build audiences based on custom traits. These traits can be collected from your apps when a user completes a form, or signs up, using an [identify](/docs/connections/spec/identify) call. You can also check out the Personas user explorer to see examples of these traits.
 
 ### Computed Traits
 
@@ -86,9 +86,9 @@ To create a new audience:
 > warning ""
 > [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarketing Lists](/docs/destinations/adwords-remarketing-lists) have rate limits on how quickly we can update an audience. We sync at the highest frequency allowed by the tool, which is between 1 hour and 6 hours.
 
-## Accessing your Audiences via the Profiles API
+## Accessing your Audiences using the Profiles API
 
-You can access your audiences via the Profile API by querying the `/traits` endpoint. For example, if you can query for the `high_value_user` with the following GET request:
+You can access your audiences using the Profile API by querying the `/traits` endpoint. For example, if you can query for the `high_value_user` with the following GET request:
 
 ```
 https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:alex@segment.com/traits?limit=100&include=high_value_user

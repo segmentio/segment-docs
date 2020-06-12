@@ -19,11 +19,11 @@ For ecommerce events,(i.e. `purchase`) it is important that the `.track()` call 
 
 More information about the semantic naming of our [ecommerce events](/docs/connections/spec/ecommerce/v2/).
 
-If the folks at Nanigans ask you pass through any custom parameters, you can map the Segment event properties to arbitrary querystring parameters as well. **Note:** This is currently only supported via the server-side destination, which is used for our mobile and server-side libraries.
+If the folks at Nanigans ask you pass through any custom parameters, you can map the Segment event properties to arbitrary querystring parameters as well. **Note:** This is currently only supported using the server-side destination, which is used for our mobile and server-side libraries.
 
 ## Server-Side
 
-By default, if you are sending data via a mobile library, we will send the `IDFA` (iOS) or `Advertising ID` (Android) so that you can associate server side events with the anonymous users from your mobile app.
+By default, if you are sending data using a mobile library, we will send the `IDFA` (iOS) or `Advertising ID` (Android) so that you can associate server side events with the anonymous users from your mobile app.
 
 However, if you are sending events with a server side library, you can still manually pass the `IDFA` or `Advertising ID` under `context.device.advertisingId` and we will send it along to achieve the same effect.
 

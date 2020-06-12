@@ -89,7 +89,7 @@ For *logged in* visitors:
 
 ## Identify Postback
 
-When you integrate Modern Pricing via Segment, Modern Pricing returns a postback Identify call to your source so that you'll be able to easily pass the score to your downstream destinations.
+When you integrate Modern Pricing using Segment, Modern Pricing returns a postback Identify call to your source so that you'll be able to easily pass the score to your downstream destinations.
 
 How does it work?
 

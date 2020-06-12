@@ -21,7 +21,7 @@ Enabling Vitally as a destination in Segment can be done in one click from your 
   ![](images/6fztyvS.png)
 
 2. In a separate tab/window, make sure you are logged into your Segment account
-3. Configure the Segment integration via the one-click "Enable with Segment" button. Choose the primary source of product usage data in Segment and Segment will automatically create a destination for Vitally:
+3. Configure the Segment integration using the one-click "Enable with Segment" button. Choose the primary source of product usage data in Segment and Segment will automatically create a destination for Vitally:
 
   ![](images/uGHrIvX.gif)
 

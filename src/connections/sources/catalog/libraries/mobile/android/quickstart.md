@@ -14,7 +14,7 @@ If you want to dive deeper at any point, check out the [Android Source Reference
 
 ## Step 1: Install the Library
 
-The recommended way to install the library for Android is with a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed via [Maven Central](http://maven.org/). Simply add the `analytics` SDK to your module's `build.gradle` file:
+The recommended way to install the library for Android is with a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed using [Maven Central](http://maven.org/). Simply add the `analytics` SDK to your module's `build.gradle` file:
 
 ```
 dependencies {
@@ -24,7 +24,7 @@ dependencies {
 
 ### Including Additional Client Side SDKs
 
-In the interest of keeping our SDK lightweight, the `analytics` artifact only installs the Segment destination. This means that all your data will be sent via Segment's servers to any tools you've enabled with server-side-compatible destinations.
+In the interest of keeping our SDK lightweight, the `analytics` artifact only installs the Segment destination. This means that all your data will be sent using Segment's servers to any tools you've enabled with server-side-compatible destinations.
 
 You'll likely want to bundle some additional destinations client side. For many advanced marketing automation and analytics tools, we offer the option of including their SDK or electing to send data server to server, depending on the features you need. Most optimization, deep linking, error tracking, and survey tools must be included on the device to use their core feature set.
 

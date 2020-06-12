@@ -146,7 +146,7 @@ analytics.track('Viewed History');
 ```
 ### Server side Identify
 
-If you are sending `.identify()` calls from your server side libraries or have Segment Cloud Apps that send back `.identify()` calls with enriched user traits, you can send that data to your GA account via custom dimensions and metrics. Unlike the client side destination which has the luxury of browsers and the global window `ga` tracker, for server side we will check your `traits` and your settings for custom dimension/metric mappings and send it with an explicit event.
+If you are sending `.identify()` calls from your server side libraries or have Segment Cloud Apps that send back `.identify()` calls with enriched user traits, you can send that data to your GA account using custom dimensions and metrics. Unlike the client side destination which has the luxury of browsers and the global window `ga` tracker, for server side we will check your `traits` and your settings for custom dimension/metric mappings and send it with an explicit event.
 
 You can specify in the setting what you want this event action to be named. We will fallback to a default of **'User Enriched'**. Since event category is also required, you can specify which `trait` you want us to set this value as. For example, if you send a trait such as `type`, we will set the value of `traits.type` as the event category if defined and otherwise, we will fallback to **'All'**.
 
@@ -628,7 +628,7 @@ Analytics.track(
 
 ### UTM Parameters
 
-If you want to send UTM parameters to Google Analytics via one of the Segment server-side sources they need to be passed manually. The client-side Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript)) is highly recommended for collecting this data since it all happens automatically.
+If you want to send UTM parameters to Google Analytics using one of the Segment server-side sources they need to be passed manually. The client-side Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript)) is highly recommended for collecting this data since it all happens automatically.
 
 Your UTM params need to be passed in the `context` object in `context.campaign`. For Google Analytics `campaign.name`, `campaign.source` and `campaign.medium` all need to be sent together for things to show up in reports. The other two params (`campaign.term` and `campaign.content`) are both optional, but will be forwarded to GA if you send them to Segment.
 
@@ -1016,7 +1016,7 @@ If you received this deprecation notice, your property has already been flagged 
 
 ## Mobile Apps - DEPRECATED
 
-Segment supports Google Analytics mobile app analytics via our iOS and Android sources. For getting started with our mobile sources, check out the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/) technical docs.
+Segment supports Google Analytics mobile app analytics using our iOS and Android sources. For getting started with our mobile sources, check out the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/) technical docs.
 
 When including Segment-GoogleAnalytics in your project, we bundle IDFA support by default. You can choose to exclude IDFA Support by specifying `pod "Segment-GoogleAnalytics/Core"`. Doing this, we will only bundle the Segment and Core GA libraries, excluding GoogleIDFASupport.
 

@@ -65,7 +65,7 @@ The SendGrid source also has a streaming component which listens in real time fo
 
 Collections are the groupings of resources we pull from your source. In your warehouse, each collection gets its own table.
 
-**Object** collections are updated with each sync. These are pulled via our sync component.
+**Object** collections are updated with each sync. These are pulled using our sync component.
 
 **Event** collections are append only, represent a user action or activity, and may be likened to fact tables in a traditional data warehouse.
 

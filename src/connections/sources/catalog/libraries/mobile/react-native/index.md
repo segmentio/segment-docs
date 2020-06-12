@@ -21,7 +21,7 @@ Subscribe to the [release feed](https://github.com/segmentio/analytics-react-nat
 
 ### Install the SDK
 
-The recommended way to install Analytics for React Native is via npm, since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade.
+The recommended way to install Analytics for React Native is using npm, since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade.
 
 First, add the `@segment/analytics-react-native` dependency to your `dependencies` and link it using `react-native-cli`, like so:
 
@@ -258,7 +258,7 @@ If you are seeing any of your destinations turned off in the raw version of requ
 }
 ```
 
-These flags tell the Segment servers that a request was already made directly from the device through a packaged SDK. That way we don't send a duplicate request via our servers to those services.
+These flags tell the Segment servers that a request was already made directly from the device through a packaged SDK. That way we don't send a duplicate request using our servers to those services.
 
 
 ## Configuration
@@ -518,7 +518,7 @@ _Note_: While the network is deprecated, the relevant [framework](https://develo
 1. Verify that your destination is enabled
 2. Verify your destination credentials entered in your Segment dashboard are correct
 3. Make sure the destination can accept what you're sending:
-   - Does the integration have device-mode/cloud-mode support? Confirm you are sending via the correct connection mode.
+   - Does the integration have device-mode/cloud-mode support? Confirm you are sending using the correct connection mode.
    - Does the destination accept the type of call you are sending? Not all destinations accept all calls: page, track, etc.
 4. If you are still not seeing data in your destination, continue debugging based on which type of connection mode you are using.
 

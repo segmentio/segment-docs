@@ -83,7 +83,7 @@ There are also some scenarios in which MTU numbers may be higher than expected b
 
 - `Analytics.reset()` was called
 - If the user already had a userId assigned (meaning `user_id` was NOT `null`), and then `identify(xxx)` was called with a different `userId` value
-- If the `anonymousId` is changed manually, via `analytics.user().anonymousId(xxx)`
+- If the `anonymousId` is changed manually, using `analytics.user().anonymousId(xxx)`
 - If the user goes from one page to another, and each page has a different domain - in this case the second page will have a different `anonymousId`
 - If the user goes from one page to another and the second page exists within an iFrame
 - If the user visits the website from a different browser - each browser generates a different `anonymousId`

@@ -26,7 +26,7 @@ This document was last updated on August 13, 2018. If you notice any gaps, outda
 
 ### Permissions
 
-When setting up your Google Ads Source, you may notice that we don't list all Google Ads accounts your Google user can view. This is because Google Ads API does not expose a list of "managed" or sub-accounts to non-administrator via the API. That said, if you have read permissions to the account, you can enter your Google Ads Customer ID directly. For more information about finding your Google Ads Customer ID, see [here](https://support.google.com/google-ads/answer/1704344?co=ADWORDS.IsAWNCustomer%3Dfalse&hl=en).
+When setting up your Google Ads Source, you may notice that we don't list all Google Ads accounts your Google user can view. This is because Google Ads API does not expose a list of "managed" or sub-accounts to non-administrator using the API. That said, if you have read permissions to the account, you can enter your Google Ads Customer ID directly. For more information about finding your Google Ads Customer ID, see [here](https://support.google.com/google-ads/answer/1704344?co=ADWORDS.IsAWNCustomer%3Dfalse&hl=en).
 
 ### What Google Ads MCC do you sync?
 By default, we sync the "primary" Google Ads account connected to your Google account, but if you'd like to override this, you can specify an Google Ads Customer ID in settings.
@@ -44,7 +44,7 @@ If you're getting the error pictured below, try disabling any ad block extension
 
 The Google Ads source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Google Ads objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation. For example, if you went with `google-ads`, the `ads` collection will be accessible at `google-ads.ads` in SQL.
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Google Ads.  For example, if `budget` from `0` to `100` between syncs, on its next sync that tickets status will be `100`.
+Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Google Ads.  For example, if `budget` from `0` to `100` between syncs, on its next sync that tickets status will be `100`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
@@ -67,7 +67,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 ### Video Campaign Reports
 
-We do not pull in "Video Campaign Reports", since it is not supported via the [Google Ads API](https://developers.google.com/adwords/api/docs/guides/campaigns-overview#differences_from_the_adwords_ui).
+We do not pull in "Video Campaign Reports", since it is not supported using the [Google Ads API](https://developers.google.com/adwords/api/docs/guides/campaigns-overview#differences_from_the_adwords_ui).
 
 
 ## Collection Properties

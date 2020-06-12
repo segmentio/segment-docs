@@ -51,7 +51,7 @@ analytics.identify({
 
 When you call `identify` on analytics.js, we call Klaviyo's `identify` with the `traits` object. We augment the `traits` object to have `traits.$id` be the `userId` since Klaviyo takes the user ID on the `traits` object itself.
 
-**Note:** When sending data to Klaviyo via `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet).
+**Note:** When sending data to Klaviyo using `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet).
 
 We will map the following Segment spec'd traits to Klaviyo [special people properties](http://www.klaviyo.com/docs):
 
@@ -99,7 +99,7 @@ When you call `identify` using a **server side** library, you can optionally sen
 
 In order for this to work, you must add the **Private Key** inside the Klaviyo settings in Segment. You can generate a private key by clicking `Account > Settings > API Keys > Create API Key` inside Klaviyo.
 
-You can choose to provide a default `listId` that we can fallback on when adding users to a list. If you'd like to override this default `listId`, you can also do so by sending it manually via code in `destinations.Klaviyo.listId`.
+You can choose to provide a default `listId` that we can fallback on when adding users to a list. If you'd like to override this default `listId`, you can also do so by sending it manually using code in `destinations.Klaviyo.listId`.
 
 **Important**: You must provide an `email` in your `traits` or send `email` as the `userId`. Be sure to provide the `Private Key` in the Klaviyo settings for this to work.
 
@@ -125,7 +125,7 @@ analytics.identify({
 
 #### Confirm Optin
 
-You can also choose whether you want to force users to confirm the optin to your list. This flag determines whether someone is sent an email with a confirmation link before they are added to the list. The default settings will be `true`. However, you can uncheck this option in the Klaviyo settings inside Segment or override it per `identify` call via code in the `integration.Klaviyo.confirmOptin` parameter.
+You can also choose whether you want to force users to confirm the optin to your list. This flag determines whether someone is sent an email with a confirmation link before they are added to the list. The default settings will be `true`. However, you can uncheck this option in the Klaviyo settings inside Segment or override it per `identify` call using code in the `integration.Klaviyo.confirmOptin` parameter.
 
 **Note:** This setting should only be set to `false` or unchecked if you have already received explicit permission from that person to add them to this list. Inappropriately setting `Klaviyo.confirmOptin` to `false` without explicit permission of the people added can result in your Klaviyo account being suspended and/or terminated by Klaviyo.
 

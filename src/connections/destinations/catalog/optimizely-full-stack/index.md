@@ -50,7 +50,7 @@ For more details on how events are attributed on the Optimizely results page, re
 Upon invocation of a Segment `track` event, Segment maps the event to an Optimizely `track` event:
 * If the Segment event name matches exactly the name of an active experiment `metric` set up in the Optimizely dashboard;
 * If the experiment `metric` is associated with a running experiment;
-* If the current user has been assigned a `userId` via Segment's `identify` method (e.g. `analytics.identify('123')`);
+* If the current user has been assigned a `userId` using Segment's `identify` method (e.g. `analytics.identify('123')`);
 * If the current user is activated in a running experiment with the associated `metric`.
 
 Segment also handles the following mapping:
@@ -77,7 +77,7 @@ Segment's server-side integration with Optimizely Full Stack does not support no
 2. Include the latest version of Optimizely Full Stack's native SDK in your your app-level build.gradle file and [implement Optimizely as your would natively](https://docs.developers.optimizely.com/full-stack/docs/install-the-sdk#section-android).
 3. Finally, define any [`events`](https://docs.developers.optimizely.com/full-stack/docs/create-events) and [`attributes`](https://docs.developers.optimizely.com/full-stack/docs/define-attributes) in your Optimizely dashboard, and associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`. In addition, Segment maps `identify` `traits` to Optimizely `attributes`.
 
-When implementing Optimizely Full Stack via cloud-mode, Segment will map `track` events to Optimizely `track` events on our servers and deliver the data to your Optimizely project as usual.
+When implementing Optimizely Full Stack using cloud-mode, Segment will map `track` events to Optimizely `track` events on our servers and deliver the data to your Optimizely project as usual.
 
 > note ""
 > **Note:** If you are using Optimizely SDKs v1.x or v2.x: if a visitor has any `activate` or `isFeatureEnabled` calls, their `attributes` object for these calls must match the `attributes` object passed to any `track` calls for that user id so that it can be correctly attributed on the Optimizely results page.
@@ -125,7 +125,7 @@ If you want to use Optimizely's [notification listeners](https://docs.developers
 2. Include the latest version of Optimizely Full Stack's native SDK in your app and [implement it as you would natively](https://docs.developers.optimizely.com/full-stack/docs/install-the-sdk#section-ios-and-tvos).
 3. Finally, define any [`events`](https://docs.developers.optimizely.com/full-stack/docs/create-events) and [`attributes`](https://docs.developers.optimizely.com/full-stack/docs/define-attributes) in your Optimizely dashboard, and to associate `metrics` with the appropriate Optimizely Experiments. Segment maps `track` event names to Optimizely `eventName` - the `eventName` corresponds to an experiment `metric`. In addition, Segment maps `identify` `traits` to Optimizely `attributes`.
 
-When implementing Optimizely via cloud-mode, Segment will map `track` events to Optimizely `track` events on our servers and deliver the data to your Optimizely project as usual.
+When implementing Optimizely using cloud-mode, Segment will map `track` events to Optimizely `track` events on our servers and deliver the data to your Optimizely project as usual.
 
 > note ""
 > **Note:** If you are using Optimizely SDKs v1.x or v2.x: if a visitor has any `activate` or `isFeatureEnabled` calls, their `attributes` object for these calls must match the `attributes` object passed to any `track` calls for that user id so that it can be correctly attributed on the Optimizely results page.
@@ -158,7 +158,7 @@ Invoking a Segment `identify` event sets Segment `traits` as Optimziely `attribu
 
 ### Notification Listeners
 
-Notification listeners are not available for Segment `track` events when implementing Optimizely via Segment using cloud-mode. [Notification listeners](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners) are still available with any native call invoked from your Optimizely client instance.
+Notification listeners are not available for Segment `track` events when implementing Optimizely using Segment using cloud-mode. [Notification listeners](https://docs.developers.optimizely.com/full-stack/docs/notification-listeners) are still available with any native call invoked from your Optimizely client instance.
 
 ## Personas
 
@@ -167,4 +167,4 @@ Follow these instructions on how to setup Personas and Optimizely:
 * [Using Segment Personas and Optimizely Full Stack for Omnichannel Experiments](https://blog.optimizely.com/tag/segment-personas/)
 
 ## GDPR Support
-Segment supports deleting/suppressing users in Optimizely via the [Segment app](https://segment.com/docs/privacy/user-deletion-and-suppression/). In order to do this however, you will need to create a [Personal Access Token](https://developers.optimizely.com/x/authentication/personal-token/) in Optimizely and provide it as the value of the [Access Token](#access-token) setting.
+Segment supports deleting/suppressing users in Optimizely using the [Segment app](https://segment.com/docs/privacy/user-deletion-and-suppression/). In order to do this however, you will need to create a [Personal Access Token](https://developers.optimizely.com/x/authentication/personal-token/) in Optimizely and provide it as the value of the [Access Token](#access-token) setting.

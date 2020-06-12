@@ -12,7 +12,7 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ## Getting Started
 
-Install `analytics-python` via pip:
+Install `analytics-python` using pip:
 
 ```
 pip install analytics-python

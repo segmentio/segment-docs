@@ -202,7 +202,7 @@ You can test your code directly from the Functions Editor in two ways:
 
 #### Webhook Catcher
 
-Start by copying the webhook URL from the sidebar or "Auto-fill via webhook" dialog to your upstream tool or service. This allows you to receive payloads which you can use to test your function code.
+Start by copying the webhook URL from the sidebar or "Auto-fill using webhook" dialog to your upstream tool or service. This allows you to receive payloads which you can use to test your function code.
 
 ![Capture events to test your function](images/webhook-capture.gif)
 
@@ -212,7 +212,7 @@ Click **Run** to test the event against your function code.
 
 #### Manual Input
 
-You can also manually include your own JSON payload with relevant headers before you click **Run**. In this view, you also have the option to switch back to the webhook catcher by clicking **Auto-fill via Webhook**.
+You can also manually include your own JSON payload with relevant headers before you click **Run**. In this view, you also have the option to switch back to the webhook catcher by clicking **Auto-fill using Webhook**.
 
 ## Creation & Deployment
 

@@ -2,7 +2,7 @@
 rewrite: true
 title: Webhooks Destination
 ---
-Segment Webhooks submit real-time user data to your own HTTP endpoints. A Webhook is an HTTP callback: a simple event-notification via HTTP POST. A web application implementing Webhooks will POST a message to a URL when certain things happen.
+Segment Webhooks submit real-time user data to your own HTTP endpoints. A Webhook is an HTTP callback: a simple event-notification using HTTP POST. A web application implementing Webhooks will POST a message to a URL when certain things happen.
 
 This document was last updated on January 28, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 

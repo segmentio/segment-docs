@@ -200,7 +200,7 @@ $ npx typewriter init
 
 Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
 
-You can now import your new Typewriter client into your project via XCode. If you place your generated files into a folder in your project, import the project as a group not a folder reference.
+You can now import your new Typewriter client into your project using XCode. If you place your generated files into a folder in your project, import the project as a group not a folder reference.
 
 To use it in an Objective-C application:
 

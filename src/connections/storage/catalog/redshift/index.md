@@ -46,7 +46,7 @@ Now that you've provisioned your Redshift cluster, you'll need to configure your
 
 ### Create a Database User
 
-The username and password you've already created for your cluster is your admin password, which you should keep for your own usage. For Segment, and any other 3rd-parties, it is best to create distinct users. This will allow you to isolate queries from one another via [WLM](http://docs.aws.amazon.com/redshift/latest/dg/c_workload_mngmt_classification.html) and perform audits easier.
+The username and password you've already created for your cluster is your admin password, which you should keep for your own usage. For Segment, and any other 3rd-parties, it is best to create distinct users. This will allow you to isolate queries from one another using [WLM](http://docs.aws.amazon.com/redshift/latest/dg/c_workload_mngmt_classification.html) and perform audits easier.
 
 To create a [new user](http://docs.aws.amazon.com/redshift/latest/dg/r_Users.html), you'll need to log into the Redshift database directly and run the following SQL commands:
 

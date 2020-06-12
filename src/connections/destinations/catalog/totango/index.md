@@ -65,7 +65,7 @@ analytics.identify('29ej29d', {
 
 To learn more about how [`identify`](/docs/connections/spec/identify/) works, check out our [Identify docs](/docs/connections/spec/identify/). For example, `email` and `name` are two of our [special traits](/docs/connections/spec/identify/#special-traits) that we recognize semantically.
 
-**If you're sending data via the server-side or mobile libraries**, you'll need to include `context.groupId`. Check out the [server-side](#server-side-methods-require-group-id) section to see how.
+**If you're sending data using the server-side or mobile libraries**, you'll need to include `context.groupId`. Check out the [server-side](#server-side-methods-require-group-id) section to see how.
 
 
 ### Special Properties
@@ -102,7 +102,7 @@ analytics.track('Completed Purchase', {
 
 To learn more about how [`track`](/docs/connections/spec/track/) works check out our [Track docs](/docs/connections/spec/identify/). For example, `revenue` is a special property that lets you semantically describe how much money you're making.
 
-**If you're sending data via the server-side or mobile libraries**, you'll need to include `context.groupId`. Check out the [troubleshooting](#troubleshooting) section to see how.
+**If you're sending data using the server-side or mobile libraries**, you'll need to include `context.groupId`. Check out the [troubleshooting](#troubleshooting) section to see how.
 
 - - -
 
@@ -112,7 +112,7 @@ To learn more about how [`track`](/docs/connections/spec/track/) works check out
 
 ### Server-side Methods Require Group ID
 
-Totango requires `groupId` on every `identify`, `page` and `track` call, so you'll need to pass it via `context.groupId`.
+Totango requires `groupId` on every `identify`, `page` and `track` call, so you'll need to pass it using `context.groupId`.
 
 Here's a node `identify` example to get you started:
 

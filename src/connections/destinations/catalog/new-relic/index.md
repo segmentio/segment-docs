@@ -25,7 +25,7 @@ analytics.track('Article Completed', {
 });
 ```
 
-We forward `track` calls to New Relic in order to [insert custom events via their Insights API](https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/inserting-custom-events).
+We forward `track` calls to New Relic in order to [insert custom events using their Insights API](https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/inserting-custom-events).
 
 Your event `properties` will be included with the event, conforming to the following rules:
 - booleans are transformed to strings
@@ -34,6 +34,6 @@ Your event `properties` will be included with the event, conforming to the follo
 - dates are converted to ISO strings
 - arrays and objects are removed
 
-By default the events are given an `eventType` of 'Segment'. This can be changed via the optional 'Custom Default Event Type' setting in the Segment UI.
+By default the events are given an `eventType` of 'Segment'. This can be changed using the optional 'Custom Default Event Type' setting in the Segment UI.
 
 If you pass a revenue property, we'll pass that through as the value of the conversion.

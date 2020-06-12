@@ -846,7 +846,7 @@ To use a proxy server with analytics.js, you'll first want to update the address
 
 ## Plugins
 
-Segment offers 'plugins' across multiple video players that can quickly get you started collecting video events via analytics.js. Check out the specific links below for more information:
+Segment offers 'plugins' across multiple video players that can quickly get you started collecting video events using analytics.js. Check out the specific links below for more information:
 
 - [Youtube](/docs/connections/sources/catalog/libraries/website/plugins/youtube)
 - [Vimeo](/docs/connections/sources/catalog/libraries/website/plugins/vimeo)

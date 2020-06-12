@@ -281,7 +281,7 @@ For a complete list of special `context` keys see [our common fields spec](/docs
 
 ### Log Revenue V2
 
-Our iOS and Android components support sending revenue via Amplitude's preferred `logRevenueV2` method. Segment will set Amplitude's special revenue properties, such as `revenueType` and `productIdentifier`, which are used in Amplitude's Revenue Analysis and Revenue LTV charts. Any properties not mapped to Amplitude's special properties will be sent via the Amplitude
+Our iOS and Android components support sending revenue using Amplitude's preferred `logRevenueV2` method. Segment will set Amplitude's special revenue properties, such as `revenueType` and `productIdentifier`, which are used in Amplitude's Revenue Analysis and Revenue LTV charts. Any properties not mapped to Amplitude's special properties will be sent using the Amplitude
 `eventProperties` field.
 
 | Amplitude Property | Segment Property | Description |
@@ -381,7 +381,7 @@ on the individual "Product Purchased" events.
 **Track Revenue Per Product**
 
 Amplitude has two different ways to track revenue associated with a
-multi-product purchase. You can choose which method you want to use via the
+multi-product purchase. You can choose which method you want to use using the
 [Track Revenue Per Product](#track-revenue-per-product) destination setting:
 
 1. Disable the setting ("off"): Log a single revenue event with the total amount purchased. Revenue data will be added to the Amplitude "Order Completed" event. The "Product Purchased" events will not have any native Amplitude revenue data.
@@ -573,7 +573,7 @@ as an integration-specific option like so:
 
 You will need to pass the start time of a session as `<Timestamp>`.
 
-### Setting event-level groups via .track()
+### Setting event-level groups using .track()
 
 Amplitude supports setting event-level groups, meaning the group designation
 only applies for the specific event being logged and does not persist on the
@@ -611,7 +611,7 @@ analytics.identify('testUser', {
 });
 ```
 
-### Legacy group assignment via .identify()
+### Legacy group assignment using .identify()
 
 **Note:** While this behavior will continue to be supported, the recommended
 way to associate a user with a group in Amplitude is to use a `.group()` call.
@@ -640,7 +640,7 @@ This `identify` event would create or update a new user in Amplitude and set
 
 ### Location Tracking
 
-Supported via our iOS and Android components.
+Supported using our iOS and Android components.
 
 Defaults to enabled. If a user has granted your app location permissions,
 enable this setting so that the SDK will also grab the location of the user.
@@ -665,7 +665,7 @@ tracking.
 
 ### Set AdvertisingId for DeviceId
 
-Supported via our iOS and Android components.
+Supported using our iOS and Android components.
 
 Segment supports Amplitude's `useAdvertisingIdForDeviceId` method. For iOS,
 this will allow you to use the `advertisingIdentifier` instead of
@@ -699,13 +699,13 @@ object for the configured `trait` when `identify` is called.
 
 ### Log out of sessions
 
-Supported via our iOS and Android components.
+Supported using our iOS and Android components.
 
 Out-of-session events have a `session_id` of -1 and are not considered part of
 the current session, meaning they do not extend the current session. This might
 be useful if you are logging events triggered by push notifications, for
 example.  To set an out of session event, pass in `true` for the key
-`outOfSession` on a `track` call via the integration specific option.
+`outOfSession` on a `track` call using the integration specific option.
 
 iOS Example:
 
@@ -741,7 +741,7 @@ method.
 
 ### Reset
 
-Our mobile components support logging out users in Amplitude via Segment's
+Our mobile components support logging out users in Amplitude using Segment's
 `reset` method. There is no need to worry about aliasing users, as Amplitude
 will merge user data on the backend so that any events up to that point from the
 same client will be tracked under the same user.

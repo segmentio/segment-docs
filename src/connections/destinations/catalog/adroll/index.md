@@ -96,7 +96,7 @@ analytics.track('Vewed Product', {
 
 ### **Legacy:** Named Segments
 
-Prior to rolling out Segment ID's, AdRoll allowed "named segments". If your account was created prior to 2015, then the track events you send from the browser via our [`analytics.track`](https://segment.com/docs/connections/destinations/catalog/adroll/#track) method will be passed on to AdRoll as `adroll_segments` with the segment being the snake-cased event name.
+Prior to rolling out Segment ID's, AdRoll allowed "named segments". If your account was created prior to 2015, then the track events you send from the browser using our [`analytics.track`](https://segment.com/docs/connections/destinations/catalog/adroll/#track) method will be passed on to AdRoll as `adroll_segments` with the segment being the snake-cased event name.
 
 ## Troubleshooting
 

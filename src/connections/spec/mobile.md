@@ -177,7 +177,7 @@ As the walls between apps become increasingly lowered, capturing information abo
 
 ### Install Attributed
 
-When Segment or an integrated partner can discern the source of an install, we'll collect an `Install Attributed` event. This event may be sent to Segment via server-to-server connection from your attribution provider, or directly on the device via packaged destinations. In either case, this will happen **after** install, and does not apply to all installs, which is why it is a discrete event.
+When Segment or an integrated partner can discern the source of an install, we'll collect an `Install Attributed` event. This event may be sent to Segment using server-to-server connection from your attribution provider, or directly on the device using packaged destinations. In either case, this will happen **after** install, and does not apply to all installs, which is why it is a discrete event.
 
 {% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Install Attributed", "properties": { "provider": "Tune/Kochava/Branch/AppsFlyer", "campaign": { "source": "Network/FB/AdWords/MoPub/Source", "name": "Campaign Name", "content": "Organic Content Title", "ad_creative": "Red Hello World Ad", "ad_group": "Red Ones" }}}'}}} {% endcomment %}
 
@@ -307,7 +307,7 @@ This event fires when a push notification from a provider bounces. If your push 
 
 ### Deep Link Opened
 
-When your application is opened via a referring link, Segment or your packaged deep link partner can fire this event on your behalf. If the deep link has additional data associated with it, either passed through the third party service or as `annotations` in `launchOption`, you may want to include those values as properties here as well.
+When your application is opened using a referring link, Segment or your packaged deep link partner can fire this event on your behalf. If the deep link has additional data associated with it, either passed through the third party service or as `annotations` in `launchOption`, you may want to include those values as properties here as well.
 
 This event is fired *in addition* to the associated `Application Opened` event.
 

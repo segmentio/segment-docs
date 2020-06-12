@@ -64,7 +64,7 @@ analytics.identify('ze8rt1u89', {
 });
 ```
 
-When you make an Identify call with Segment, it will update Facebook Pixel the next time the user loads a page on your website. Facebook Pixel does not support immediately updating user properties via Identify. When you perform an Identify call in Segment, it will update in Facebook Pixel via their Advanced Matching feature.
+When you make an Identify call with Segment, it will update Facebook Pixel the next time the user loads a page on your website. Facebook Pixel does not support immediately updating user properties using Identify. When you perform an Identify call in Segment, it will update in Facebook Pixel using their Advanced Matching feature.
 
 ## Track
 

@@ -18,7 +18,7 @@ For more info on our automatically collected fields, refer to [this document](ht
 
 For known users, a Segment customer will implement an `identify` method to collect info on the user. This can be a moment in the user flow where a user logs in, registers, updates their info, or provides any type of identifiable information. A known user will have a `userId`, which is up to the customer to create and send.
 
-For unknown users, Segment will handle generating a unique `anonymousId` via our client-side libraries: analytics.js, analytics-android and analytics-ios, and pass this in through all of Segment's api calls. This value is determined by the client cookie on our analytics.js library, and via the deviceId in our mobile SDKs.
+For unknown users, Segment will handle generating a unique `anonymousId` using our client-side libraries: analytics.js, analytics-android and analytics-ios, and pass this in through all of Segment's api calls. This value is determined by the client cookie on our analytics.js library, and using the deviceId in our mobile SDKs.
 
 Segment handles cacheing these values on our mobile SDKs and client-side analytics.js library and sending the values on subsequent calls. Our server-side libraries rely on the customer creating either the `anonymousId` or `userId` and passing this in on each call.
 

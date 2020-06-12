@@ -24,7 +24,7 @@ Analytics for Android only supports any Android device running API 14 (Android 4
 ### Step 1: Install the Library
 
 
-The recommended way to install the library for Android is with a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed via [Maven Central](http://maven.org/). Simply add the `analytics` module to your `build.gradle`:
+The recommended way to install the library for Android is with a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed using [Maven Central](http://maven.org/). Simply add the `analytics` module to your `build.gradle`:
 
 ```java
 dependencies {
@@ -34,7 +34,7 @@ dependencies {
 
 ### Packaging SDKs for Device-mode destinations
 
-In the interest of keeping our SDK lightweight, the `analytics` artifact only installs the Segment destination. This means that all your data will be sent via Segment's servers to any tools you've enabled with server-side-compatible destinations.
+In the interest of keeping our SDK lightweight, the `analytics` artifact only installs the Segment destination. This means that all your data will be sent using Segment's servers to any tools you've enabled with server-side-compatible destinations.
 
 [As described here](/docs/connections/destinations/#connection-modes), some destinations require or offer **Device-mode**. If that's the case, you'll need to take package the destination SDK, which might [require some additional steps](#packaging-device-based-integration-sdks).
 
@@ -775,7 +775,7 @@ Our Android library has support for back to API level 14 (Android 4.0). You shou
 
 1. Use an older version of the library that does support your minimum requirements. Keep in mind that there won't be any updates or bug fixes to those versions, but we do still have clients still using old versions of the library in production.
 2. Skip analytics for users on older devices - you can wrap calls to our SDK in a Build.VERSION check.
-3. Write your own SDK. You can still use most of the tools on Segment via our [HTTP API](/docs/connections/sources/catalog/libraries/server/http/). You can use either our Android or [Java source](https://github.com/segmentio/analytics-java) to get a quick headstart.
+3. Write your own SDK. You can still use most of the tools on Segment using our [HTTP API](/docs/connections/sources/catalog/libraries/server/http/). You can use either our Android or [Java source](https://github.com/segmentio/analytics-java) to get a quick headstart.
 
 
 ### How can I use an destination specific feature, e.g. Mixpanel's push notifications?
@@ -911,7 +911,7 @@ We also collect the [Android ID](http://developer.android.com/reference/android/
 1. Verify that your destination is enabled
 2. Verify your destination credentials entered in your Segment dashboard are correct
 3. Make sure the destination can accept what you're sending:
-   - Does the integration have device-mode/cloud-mode support? Confirm you are sending via the correct connection mode.
+   - Does the integration have device-mode/cloud-mode support? Confirm you are sending using the correct connection mode.
    - Does the destination accept the type of call you are sending? Not all destinations accept all calls: page, track, etc.
 4. If you are still not seeing data in your destination, continue debugging based on which type of connection mode you are using.
 

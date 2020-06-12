@@ -21,7 +21,7 @@ Assuming these criteria are met, you can add Cxense as a destination for your de
 
 ## Page
 
-Tracking pageviews is a key component of Cxense's offering. We integrate with this capability via our `.page()` method. When you trigger a `.page()` event the integration will invoke Cxense's corresponding `sendPageView` functionality. We will also pass along any [custom properties](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) you define. Here is an example:
+Tracking pageviews is a key component of Cxense's offering. We integrate with this capability using our `.page()` method. When you trigger a `.page()` event the integration will invoke Cxense's corresponding `sendPageView` functionality. We will also pass along any [custom properties](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) you define. Here is an example:
 
 ```js
 analytics.page('My Page Name', { author: 'Chris Nixon' });
@@ -36,7 +36,7 @@ window.cX.callQueue.push(['sendPageViewEvent']);
 
 ### Geography API
 
-By default, Cxense captures location information about a user via their IP address. Their API, however, also offers the ability to explicitly define a location. If you would like to use this functionality, adhere to our [spec](/docs/connections/spec/common/#context) and pass `location.latitude` and `location.longitude` as properties of the `context` argument of your `.page()` events.
+By default, Cxense captures location information about a user using their IP address. Their API, however, also offers the ability to explicitly define a location. If you would like to use this functionality, adhere to our [spec](/docs/connections/spec/common/#context) and pass `location.latitude` and `location.longitude` as properties of the `context` argument of your `.page()` events.
 
 ## Identify
 
@@ -64,7 +64,7 @@ window.cX.callQueue.push(['addExternalId', {
 
 ## Track
 
-Customers using the Cxense DMP product are able to define and capture custom user events. We integrate with this functionality via our `.track()` method.
+Customers using the Cxense DMP product are able to define and capture custom user events. We integrate with this functionality using our `.track()` method.
 
 In order to use this functionality, you will need to have:
 

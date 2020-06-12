@@ -93,4 +93,4 @@ By default, Appcues will target based on the path of the URL. So if we created a
 
 ## Delete
 
-When you trigger a user deletion via our [Privacy features](https://segment.com/docs/privacy-portal/user-deletion-and-suppression/), we will forward a delete notification to Appcues, who will act on the notification. You can read more about how Appcues handles deletion requests [in their docs here.](https://docs.appcues.com/article/443-gdpr-deletion-api)
+When you trigger a user deletion using our [Privacy features](https://segment.com/docs/privacy-portal/user-deletion-and-suppression/), we will forward a delete notification to Appcues, who will act on the notification. You can read more about how Appcues handles deletion requests [in their docs here.](https://docs.appcues.com/article/443-gdpr-deletion-api)

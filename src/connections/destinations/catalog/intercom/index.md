@@ -92,7 +92,7 @@ analytics.identify('su3r73', {
 
 When you call Identify, Segment creates or updates the user in Intercom using their [Users API](https://developers.intercom.com/reference#users). Segment does not currently support creation of leads.
 
-*Note:* Intercom only associates Track events with known users, an Identify call with a `userId` is required before Track events are associated properly. Our bundled mobile SDK's also require that `identify` be called prior to `track`, but accepts setting an unknown user in Intercom via the `anonymousId`.
+*Note:* Intercom only associates Track events with known users, an Identify call with a `userId` is required before Track events are associated properly. Our bundled mobile SDK's also require that `identify` be called prior to `track`, but accepts setting an unknown user in Intercom using the `anonymousId`.
 
 Keep reading for more information about the Identify call depending on the source type you send it from.
 
@@ -314,7 +314,7 @@ Analytics.with(context).identify("123", traits, options);
 
 `YOUR_INTERCOM_APP_SECRET` is found in Intercom's identity verification setup guide.
 
-#### Identity verification plus filtering via Destinations Object
+#### Identity verification plus filtering using Destinations Object
 
 If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-integrations), the context object looks like this:
 
@@ -402,7 +402,7 @@ Our API doesn't support Intercom tags. Traits can be used instead of tags to cre
 
 ### Conditionally show the Intercom chat widget (Browser only)
 
-You can take advantage of Intercom's `hide_default_launcher` option to selectively show the chat widget. According to Intercom's [docs](https://docs.intercom.io/configure-intercom-for-your-product-or-site/customize-the-intercom-messenger/customize-the-intercom-messenger-technical#show-the-intercom-messenger-to-selected-users-for-web-), you want to first hide the Messenger for all users inside their UI via Messenger settings. Then think about how you want to programmatically decide which users you'd like to show the widget to. Then you can pass an Intercom specific destination setting like this:
+You can take advantage of Intercom's `hide_default_launcher` option to selectively show the chat widget. According to Intercom's [docs](https://docs.intercom.io/configure-intercom-for-your-product-or-site/customize-the-intercom-messenger/customize-the-intercom-messenger-technical#show-the-intercom-messenger-to-selected-users-for-web-), you want to first hide the Messenger for all users inside their UI using Messenger settings. Then think about how you want to programmatically decide which users you'd like to show the widget to. Then you can pass an Intercom specific destination setting like this:
 
 ```js
 // with analytics.js
@@ -411,7 +411,7 @@ analytics.identify('teemo', { someTrait: 'x'}, {
 });
 ```
 
-**Note**: You can pass in the Intercom specific option via all supported calls for this destination (`page`, `identify`, and `group`)!
+**Note**: You can pass in the Intercom specific option using all supported calls for this destination (`page`, `identify`, and `group`)!
 
 ### Control the Intercom Chat Widget (Mobile only)
 

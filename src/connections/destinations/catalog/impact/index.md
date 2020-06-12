@@ -268,7 +268,7 @@ These mappings will occur for events originating from any data source (Web, Mobi
 
 ## Deep Link Opened
 
-We integrate with Impact mobile attribution capabilities via our [Deep Link Opened](https://segment.com/docs/connections/spec/mobile/#deep-link-opened) event. When a Deep Link Opened event is fired we will first check to see if the referrer url (sent as the `url` property of the `properties` object) matches your Impact tracking domain. If so, we will look for the following contextual properties and pass them as metadata to Impact.
+We integrate with Impact mobile attribution capabilities using our [Deep Link Opened](https://segment.com/docs/connections/spec/mobile/#deep-link-opened) event. When a Deep Link Opened event is fired we will first check to see if the referrer url (sent as the `url` property of the `properties` object) matches your Impact tracking domain. If so, we will look for the following contextual properties and pass them as metadata to Impact.
 
 <table>
   <tr>

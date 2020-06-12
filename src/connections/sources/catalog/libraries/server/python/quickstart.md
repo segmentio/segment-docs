@@ -11,7 +11,7 @@ If you want to dive deeper at any point, check out the [Python library reference
 
 ## Step 1: Install the library
 
-You can install analytics-python via pip:
+You can install analytics-python using pip:
 
 ```bash
 pip install analytics-python
