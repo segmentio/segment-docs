@@ -125,7 +125,7 @@ Firebase automatically collects [these user properties](https://support.google.c
 
 When you call `track` Segment will log the event with Firebase. Firebase automatically tracks [the events listed here](https://support.google.com/firebase/answer/6317485) and it will still do so when bundling with Segment.
 
-Firebase has a limit of 500 distinctly named events so it pays off to be [intentional in what you track](/docs/faqs/sources/what-to-track/).
+Firebase has a limit of 500 distinctly named events so it pays off to be [intentional in what you track](/docs/protocols/tracking-plan/best-practices/).
 
 When you call `track`, Segment maps from the [Segment spec](/docs/connections/spec/) to those that match Firebase's spec. For anything that does not match, Segment will pass the event to Firebase as a custom event. Custom parameters cannot be seen directly in the Firebase Analytics dashboard but they can be used as filters in **Audiences**.
 
