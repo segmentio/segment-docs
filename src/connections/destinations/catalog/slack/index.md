@@ -74,7 +74,7 @@ If you would like to have specific events be sent to a particular channel (#chan
 
 
 ### Event Templates
-Event templates also utilize [Handlebars expressions](http://handlebarsjs.com/expressions.html) syntax. Make sure you reference the spec for the [Track method](https://segment.com/docs/connections/spec/track/) and [common object](https://segment.com/docs/connections/spec/common/). `Track` events will trigger a Slack message with the following default template:
+Event templates also use [Handlebars expressions](http://handlebarsjs.com/expressions.html) syntax. Make sure you reference the spec for the [Track method](https://segment.com/docs/connections/spec/track/) and [common object](https://segment.com/docs/connections/spec/common/). `Track` events will trigger a Slack message with the following default template:
 
 `'\{{name}} did \{{event}}.'`
 

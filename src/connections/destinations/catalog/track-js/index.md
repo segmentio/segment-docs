@@ -14,7 +14,7 @@ This document was last updated on November 26, 2018. If you notice any gaps, out
   2. Search for "Track JS" within the Destinations Catalog and confirm the Source you'd like to connect to.
   3. Drop in your Token as retrieved from your Track JS [set up page](https://my.trackjs.com/customer/login?returnUrl=%2fcustomer%2fsetup#install-locally).
   4. Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Track JS onto your page. This means you should remove Track JS' snippet from your page.
-  5. The Track JS Destination doesn't utilize any Segment API calls (e.g. identify, track, etc) so, once it's loaded, it will automatically start recording error data.
+  5. The Track JS Destination doesn't use any Segment API calls (e.g. identify, track, etc) so, once it's loaded, it will automatically start recording error data.
 
 ## Non-supported options
 

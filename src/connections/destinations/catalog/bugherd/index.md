@@ -14,4 +14,4 @@ This document was last updated on November 26, 2018. If you notice any gaps, out
   2. Search for "BugHerd" within the Destinations Catalog and confirm the Source you'd like to connect to.
   3. Drop in your `API Key` as retrieved from the Install BugHerd tab on your BugHerd Project page.
   4. Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading BugHerd onto your page. This means you should remove BugHerd's snippet from your page.
-  5. The BugHerd Destination doesn't utilize any Segment API calls (e.g. identify, track, etc) so, once it's loaded, it's good to go! Your BugHerd sidebar will begin appearing for your team.
+  5. The BugHerd Destination doesn't use any Segment API calls (e.g. identify, track, etc) so, once it's loaded, it's good to go! Your BugHerd sidebar will begin appearing for your team.
