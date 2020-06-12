@@ -8,11 +8,11 @@ When starting with Personas, begin by creating a *Dev* space. This will be your 
 
 ## Step Two: Configure Identity Settings
 
-Before you connect any source to the Dev space, we recommend that you first start by reviewing and configuring your Identity settings, as changes to the Identity rules will only be applied to new events received following any updates. Read more on those settings [here](/docs/personas/identity-resolution/identity-graph-rules).
+Before you connect any source to the Dev space, we recommend that you first start by reviewing and configuring your Identity settings, as changes to the Identity rules will only be applied to new events received following any updates. Read more on those settings [here](/docs/personas/identity-resolution/identity-resolution-settings/).
 
 ## Step Three: Set Up a Connection Policy
 
-If you haven't already, we highly recommend labeling all your sources with *Dev* or *Prod* [environments](/docs/segment-app/iam/labels). Once your sources have been labeled, navigate to the Connection Policy page in the Personas space settings. Here, you can enforce that only sources labeled *Dev* can be connected to your *Dev* Personas instance.
+If you haven't already, we highly recommend labeling all your sources with *Dev* or *Prod* [environments](/docs/segment-app/iam/labels/). Once your sources have been labeled, navigate to the Connection Policy page in the Personas space settings. Here, you can enforce that only sources labeled *Dev* can be connected to your *Dev* Personas instance.
 
 [](images/connection-policy.png)
 

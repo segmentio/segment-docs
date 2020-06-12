@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: Experiments by Growthhackers Destination
+redirect_from: '/connections/destinations/catalog/northstar-by-growthhackers/'
 ---
 [Experiments by Growthhackers](http://growthhackers.com/software) provides a project management tool for growth teams, allowing companies to create and prioritize ideas, run experiments and gather data to learn upon!
 

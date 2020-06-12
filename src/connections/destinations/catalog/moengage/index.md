@@ -373,7 +373,7 @@ If you selected `HTTPS` mode, you must take some additional steps:
 * serviceworker.js
 
 > note ""
-> **Note**: Make sure the name of the serviceworker file is exactly `serviceworker.js`. [Contact MoEngage support](support@moengage.com) if you need to rename the serviceworker file.
+> **Note**: Make sure the name of the serviceworker file is exactly `serviceworker.js`. [Contact MoEngage support](mailto:support@moengage.com) if you need to rename the serviceworker file.
 
 2. Use your serviceworker file (HTTPS only)
 

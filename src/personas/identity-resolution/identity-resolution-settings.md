@@ -1,5 +1,6 @@
 ---
 title: Identity Resolution Settings
+redirect_from: '/personas/identity-resolution/identity-graph-rules/'
 ---
 
 ## Setting Up Identity Graph Rules
