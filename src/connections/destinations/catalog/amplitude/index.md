@@ -648,7 +648,7 @@ Amplitude will never prompt the user for location permission, so this must be
 done by your app.
 
 The user's location is only fetched once per session on iOS. If you need to
-force update the location in Amplitude, you can leverage the native method
+force update the location in Amplitude, you can use the native method
 `updateLocation` (iOS only) as documented
 [here](https://amplitude.zendesk.com/hc/en-us/articles/115002278527#location-tracking).
 Also note that calling `enableLocationListening` on the iOS SDK forces the SDK
@@ -762,5 +762,3 @@ Have a question about the Amplitude/Segment integration that's already been answ
 ### I Don't See My Data In Amplitude
 
 If you aren't seeing your data arrive in Amplitude, we recommend you start by taking a look at our [Analytics.js Guide on validating data being transmitted](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#is-data-being-transmitted-to-your-third-party-destinations) to your third-party destination .
-
-

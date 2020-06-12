@@ -60,7 +60,7 @@ To track events from mobile, you will need to map your mobile event codes in Imp
 
 Once you have established Action Tracker / Mobile Event code mappings, we will perform the following data translations laid out in the tables below. Review these carefully as you may need to add some properties to your Segment events to conform to Impact's API requirements. You can learn more about our spec'd event properties [here](https://segment.com/docs/connections/spec/common/).
 
-**Note:** Some of the properties listed below are documented as properties of our [Order Completed](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed) event specification. You do not need to use our Order Completed event to leverage this integration but you may need to add some of the properties that are traditionally included in that event "type" to the events that you would like to integrate with Impact.
+**Note:** Some of the properties listed below are documented as properties of our [Order Completed](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed) event specification. You do not need to use our Order Completed event to use this integration but you may need to add some of the properties that are traditionally included in that event "type" to the events that you would like to integrate with Impact.
 
 #### Mobile Sources
 

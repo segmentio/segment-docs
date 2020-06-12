@@ -48,7 +48,7 @@ analytics.identify('jill', {
 Identify calls will be sent to Airship as an `identify` event. When an `identify` event is received, Airship will use the `userId` to set named users tags. To take advantage of identify features, in Airship you must set up a tag group called `segment-integration` and a named user must exist for the `userId`. The value of the property name will be true/false value.
 
 **Segment Identify Events to Airship Tags**
-Airship Tags are leveraged for profile enrichment, message triggering, segment building, and user analytics.
+Airship Tags are used for profile enrichment, message triggering, segment building, and user analytics.
 
 Example Use cases:
 * Identify event sets an Airship tag on a user is flagged as liking a specific product category

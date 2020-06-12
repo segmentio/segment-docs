@@ -5,7 +5,7 @@ title: OwnerIQ Destination
 
 ## OwnerIQ Destination
 
-[OwnerIQ](https://www.owneriq.com/platform-coex) allows marketers to leverage transparent, directly sourced, deterministic, shopping and purchasing data from retailers and brands.
+[OwnerIQ](https://www.owneriq.com/platform-coex) allows marketers to use transparent, directly sourced, deterministic, shopping and purchasing data from retailers and brands.
 
 This destination is maintained by OwnerIQ. For any issues with the destination, [contact their team](mailto:coex-support@owneriq.com).
 

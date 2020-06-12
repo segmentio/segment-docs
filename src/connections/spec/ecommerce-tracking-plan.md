@@ -183,7 +183,7 @@ It's important that these events contain particular properties, such as `sku` , 
 
 ## Using data to understand why your customers don't convert
 
-The most successful e-commerce businesses not only efficiently move their customers through the funnel towards conversion, but also have the infrastructure to collect and leverage customer data. Having a tracking plan focused on key funnel events can help e-commerce businesses get a sense of the health of their funnel.
+The most successful e-commerce businesses not only efficiently move their customers through the funnel towards conversion, but also have the infrastructure to collect and use customer data. Having a tracking plan focused on key funnel events can help e-commerce businesses get a sense of the health of their funnel.
 
 Aside from funnel health, having these key pieces of customer data gives companies the ability to tailor and personalize each interaction, as well as build marketing campaigns around actions taken or omitted.
 

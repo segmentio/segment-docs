@@ -26,7 +26,7 @@ dependencies {
 
 In the interest of keeping our SDK lightweight, the `analytics` artifact only installs the Segment destination. This means that all your data will be sent via Segment's servers to any tools you've enabled with server-side-compatible destinations.
 
-You'll likely want to bundle some additional destinations client side. For many advanced marketing automation and analytics tools, we offer the option of including their SDK or electing to send data server to server, depending on the features you need. Most optimization, deep linking, error tracking, and survey tools must be included on the device to leverage their core feature set.
+You'll likely want to bundle some additional destinations client side. For many advanced marketing automation and analytics tools, we offer the option of including their SDK or electing to send data server to server, depending on the features you need. Most optimization, deep linking, error tracking, and survey tools must be included on the device to use their core feature set.
 
 In those cases, you'll need to take some additional steps as shown in the [library reference documentation](/docs/connections/sources/catalog/libraries/mobile/android#bundling-integrations).
 

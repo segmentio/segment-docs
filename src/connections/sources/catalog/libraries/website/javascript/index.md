@@ -439,7 +439,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 The `.load` method in analytics.js (the second line of the snippet) can also be modified to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations)), then we only load the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
-**IMPORTANT:** In order to leverage this feature, make sure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
+**IMPORTANT:** In order to use this feature, make sure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
 
 An example:
 

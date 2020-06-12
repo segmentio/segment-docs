@@ -9,7 +9,7 @@ Streams enable you to send data to our mutual customers from your web services i
 
 # Building a Stream
 
-Segment empowers companies of all sizes to leverage their customer data to grow their business. In addition to more than 180 analytics and marketing tools that receive data from Segment, there are a growing number of source partners — including Salesforce, Twilio, Stripe, Zendesk, and more — sending data into Segment for their customers to use in any destination. By creating a Segment data stream, you'll enable customers to leverage data from your tool wherever it's most useful to them.
+Segment empowers companies of all sizes to use their customer data to grow their business. In addition to more than 180 analytics and marketing tools that receive data from Segment, there are a growing number of source partners — including Salesforce, Twilio, Stripe, Zendesk, and more — sending data into Segment for their customers to use in any destination. By creating a Segment data stream, you'll enable customers to use data from your tool wherever it's most useful to them.
 
 # Understanding the integration
 

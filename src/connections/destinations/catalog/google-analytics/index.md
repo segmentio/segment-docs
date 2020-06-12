@@ -376,7 +376,7 @@ analytics.track('Completed Checkout Step', {
 
 You can have as many or as few steps in the checkout funnel as you'd like. The 4 steps above merely serve as an example. Note that you'll still need to track the `Order Completed` event per our standard [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
 
-For client-side integrations, to leverage the ability to track Checkout Steps and Options, we use Google Analytics' ProductAction class. You can read their developer docs for information on specific methods:
+For client-side integrations we use Google Analytics' ProductAction class to track Checkout Steps and Options. You can read their developer docs for information on specific methods:
 - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/ProductAction)
 - [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_product_action)
 - [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)
@@ -404,7 +404,7 @@ analytics.track('Clicked Promotion', {
 });
 ```
 
-For client-side integrations, to leverage the ability to measure promotions, we use Google Analytics' Promotions class. You can read their developer docs for information on specific methods:
+For client-side integrations, we use Google Analytics' Promotions class to measure promotions. You can read their developer docs for information on specific methods:
 - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/Promotion)
 - [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_promotion)
 - [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)

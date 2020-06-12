@@ -86,7 +86,7 @@ So if you send an `identify` call without a `traits.email` and only a `userId`, 
 
 ### Track
 
-When you `track` an event, we will send that event to Sailthru as a custom event. **Important**: You must have each event mapped in Sailthru within **Communications > Lifecycle Optimizer** in order to leverage the custom event. Be sure that the **Status** is set to **Active**:
+When you `track` an event, we will send that event to Sailthru as a custom event. **Important**: You must have each event mapped in Sailthru within **Communications > Lifecycle Optimizer** in order to use the custom event. Be sure that the **Status** is set to **Active**:
 
 ![](images/1488218489126.png)
 
@@ -150,7 +150,7 @@ Note that purchases cannot be edited once they are posted.
 
 In addition to `Order Completed` events, we support the concept of [Sailthru's Abandonded Carts](https://getstarted.sailthru.com/email/transactionals/abandoned-shopping-carts/) via Segment's `Product Added` and `Product Removed` events. When these events are triggered, Segment will pass in `incomplete: 1` to signify that the order is incomplete.
 
-To leverage the functionality of sending transactional emails when a user abandonds his or her cart, you must pass in a `reminder_time` and `reminder_template` on the `Product Added` and `Product Removed` events. The template passed through as `reminder_template` must match the **public name** configured in Sailthru's UI.
+To send transactional emails when a user abandons their cart, you must pass in a `reminder_time` and `reminder_template` on the `Product Added` and `Product Removed` events. The template passed through as `reminder_template` must match the **public name** configured in Sailthru's UI.
 
 If you send in a `Product Added` event without a valid template, Sailthru will return an error. If you send in a `Product Added` event with the `reminder_template` param, it will successfully send in and appear in the user view within their **incomplete purchase cart**. Some example values for `reminder_time` are 60 minutes, 24 hrs, 2 weeks. Segment will handle passing in the `+` increment.
 

@@ -253,7 +253,7 @@ m.library.alias(userId, options)
 ## FAQ
 
 ### Does this library support single calls?
-Currently, this library leverages the Segment batch API endpoint, which is why you are able to set a queue limit on the config object before a method gets sent out as a request. You simply set the queueSize to 1 on config object to get the same effect for a message sending a single request.
+Currently, this library uses the Segment batch API endpoint, which is why you are able to set a queue limit on the config object before a method gets sent out as a request. You simply set the queueSize to 1 on config object to get the same effect for a message sending a single request.
 
 ### What is the size limit of each request?
 The size limit is 500k characters on the data body per request as noted on Segment batch API, which would be the parameters you're using for each message (identify, track, screen, group, alias). The size limit takes precedence over the queue limit in determining when a request gets sent out.

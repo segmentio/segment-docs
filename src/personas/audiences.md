@@ -6,7 +6,7 @@ Audiences allow you to define cohorts of users or accounts based on their event 
 
 ## Building an Audience
 
-When building an audience you can leverage existing events, traits, computed traits or audiences.
+When building an audience you can use existing events, traits, computed traits or audiences.
 
 ![](images/audience_condition_list.png)
 
@@ -42,7 +42,7 @@ Dynamic Property references give you more flexibility over funnel audiences. Ins
 
 ### Account-Level audiences
 
-If you are a B2B business, you might want to build an audience of accounts. You can leverage both account-level traits that you've sent through the [group](/docs/connections/spec/group) call, or user-level traits and events. For example, you might want to re-engage a list of at-risk accounts defined as companies which are on a business tier plan and where none of the users in that account have logged in recently. When incorporating user-level events or traits, you can specify `None of the users`, `Any users`, or `All users`.
+If you are a B2B business, you might want to build an audience of accounts. You can use both account-level traits that you've sent through the [group](/docs/connections/spec/group) call, or user-level traits and events. For example, you might want to re-engage a list of at-risk accounts defined as companies which are on a business tier plan and where none of the users in that account have logged in recently. When incorporating user-level events or traits, you can specify `None of the users`, `Any users`, or `All users`.
 
 ![](images/1542075123519.png)
 

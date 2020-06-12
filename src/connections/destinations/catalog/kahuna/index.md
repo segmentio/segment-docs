@@ -14,7 +14,7 @@ Be sure to enable Kahuna in your Segment destinations page and provide your **Ka
 
 ## Mobile
 
-In order to leverage the full capability of Kahuna's Push Messaging and In-App features, you will have to bundle the Kahuna SDK while configuring your Segment mobile SDKs.
+In order to use the full capability of Kahuna's Push Messaging and In-App features, you will have to bundle the Kahuna SDK while configuring your Segment mobile SDKs.
 
 ### Android
 
@@ -67,7 +67,7 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 ### Push Notifications
 
-To leverage the Push Notifications and In-App functionality provided by Kahuna, follow the steps in the Kahuna SDK destination guide:
+To use the Push Notifications and In-App functionality provided by Kahuna, follow the steps in the Kahuna SDK destination guide:
 
 - For **iOS**, follow the steps in [Enable Personalized Push](https://app.usekahuna.com/tap/docs/Content/Integration/IOS/iOS_Push.htm) in the iOS Get Started section.
 

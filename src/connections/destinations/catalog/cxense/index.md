@@ -36,7 +36,7 @@ window.cX.callQueue.push(['sendPageViewEvent']);
 
 ### Geography API
 
-By default, Cxense captures location information about a user via their IP address. Their API, however, also offers the ability to explicitly define a location. If you would like to leverage this functionality, adhere to our [spec](/docs/connections/spec/common/#context) and pass `location.latitude` and `location.longitude` as properties of the `context` argument of your `.page()` events.
+By default, Cxense captures location information about a user via their IP address. Their API, however, also offers the ability to explicitly define a location. If you would like to use this functionality, adhere to our [spec](/docs/connections/spec/common/#context) and pass `location.latitude` and `location.longitude` as properties of the `context` argument of your `.page()` events.
 
 ## Identify
 

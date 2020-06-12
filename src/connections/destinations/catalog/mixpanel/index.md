@@ -493,7 +493,7 @@ In-app notifications are only available for projects either bundling the Segment
 
 We support Mixpanel push notifications automatically via the [didRegisterForRemoteNotificationsWithDeviceToken method](/docs/libraries/ios/#how-do-i-use-push-notifications-).
 
-For *in-app* notifications and surveys, you can follow the Mixpanel documentation [here](https://mixpanel.com/help/reference/ios-inapp-messages). You can leverage the native functionality to control when to show an in-app message by following the instructions [here](/docs//connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and calling the native Mixpanel methods.
+For *in-app* notifications and surveys, you can follow the Mixpanel documentation [here](https://mixpanel.com/help/reference/ios-inapp-messages). You can use the native functionality to control when to show an in-app message by following the instructions [here](/docs//connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and calling the native Mixpanel methods.
 
 #### Cloud Connection Mode (Unbundled/ Serverside)
 

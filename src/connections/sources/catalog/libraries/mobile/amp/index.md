@@ -159,7 +159,7 @@ Our AMP Source doesn't automatically collect UTM parameters for you but you can 
 
 ## AMP Linker
 
-In order to maintain a merged session for a user navigating from an AMP page served from AMP cache to AMP pages hosted on your domain, you will need to leverage the [AMP Linker](https://amp.dev/documentation/examples/advertising-analytics/joining_analytics_sessions/) feature. It works by decorating outgoing links from AMP cache with params such as AMP Client ID in a URL parameter and gets written into a first-party cookie.
+In order to maintain a merged session for a user navigating from an AMP page served from AMP cache to AMP pages hosted on your domain, you will need to use the [AMP Linker](https://amp.dev/documentation/examples/advertising-analytics/joining_analytics_sessions/) feature. It works by decorating outgoing links from AMP cache with params such as AMP Client ID in a URL parameter and gets written into a first-party cookie.
 
 In order to enable this feature, you will need to include a `linkers` object set to `true` within your configuration.
 

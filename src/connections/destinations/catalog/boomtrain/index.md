@@ -3,7 +3,7 @@ tile: Boomtrain Destination
 beta: true
 ---
 
-Boomtrain is a predictive intelligence platform for marketers that leverages machine learning to drive increased clicks, engagement and revenue through customer communications. [Visit Website](http://boomtrain.com).
+Boomtrain is a predictive intelligence platform for marketers that uses machine learning to drive increased clicks, engagement and revenue through customer communications. [Visit Website](http://boomtrain.com).
 
 The Boomtrain destination with Segment supports the `identify`, `track` and `page` methods.  Our Javascript destination code is open sourced on Github. [Feel free to check it out](https://github.com/boomtrain/segmentio_integration).
 
