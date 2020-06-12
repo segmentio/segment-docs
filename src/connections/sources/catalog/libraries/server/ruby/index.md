@@ -158,7 +158,7 @@ The `track` call has the following fields:
   </tr>
 </table>
 
-You'll want to track events that are indicators of success for your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
+You should track events that are indicators of success for your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
 
 To get started, we recommend tracking just a few important events. You can always add more later!
 
@@ -451,7 +451,7 @@ Segment::Analytics.new({
 
 ## Flush
 
-If you're running any sort of script or internal queue system to upload data, you'll want to call `Analytics.flush` at the end of execution to ensure that all messages are sent to our servers. It's also recommended you call this method on shutdown to ensure all queued messages are uploaded to Segment.
+If you're running any sort of script or internal queue system to upload data, you should call `Analytics.flush` at the end of execution to ensure that all messages are sent to our servers. It's also recommended you call this method on shutdown to ensure all queued messages are uploaded to Segment.
 
 ```ruby
 AppAnalytics = Segment::Analytics.new({

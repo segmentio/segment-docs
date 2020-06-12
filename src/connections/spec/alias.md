@@ -25,7 +25,7 @@ Here's the payload of a basic `alias` call that will associate this user's exist
 }
 ```
 
-If you're instrumenting a website, then the Anonymous ID is generated in the browser so you'll want to call `alias` from the client-side. If you're using a server-side session ID as the Anonymous ID, then you'll want to alias from the server-side.
+If you're instrumenting a website, then the Anonymous ID is generated in the browser so you must call `alias` from the client-side. If you're using a server-side session ID as the Anonymous ID, then you must alias from the server-side.
 
 Here's the corresponding Javascript event that would generate the above payload. If you're using Segment's Javascript library, we'll automatically pass in the user's anonymousId as previousId for you:
 

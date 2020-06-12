@@ -316,7 +316,7 @@ Lastly, you have to enable Enhanced Ecommerce in the Google Analytics destinatio
 
 ### Measuring Checkout Steps
 
-To take full advantage of all the features of Enhanced E-commerce, you'll want to take advantage of some specific events. The biggest differentiator between e-commerce and enhanced e-commerce is support for checkout steps. To take advantage of tracking your checkout funnel and measuring metrics like cart abandonment, etc, you'll first need to configure your checkout funnel in the Google Analytics admin interface, giving easily readable labels to the numeric checkout steps:
+To take full advantage of all the features of Enhanced E-commerce, you should take advantage of some specific events. The biggest differentiator between e-commerce and enhanced e-commerce is support for checkout steps. To take advantage of tracking your checkout funnel and measuring metrics like cart abandonment, etc, you'll first need to configure your checkout funnel in the Google Analytics admin interface, giving easily readable labels to the numeric checkout steps:
 
 ![enhanced ecommerce checkout funnel](images/checkout-funnel.png)
 
@@ -1032,7 +1032,7 @@ Here are [Google's Best Practices for Mobile App Analytics](https://support.goog
 
 ### Add the Mobile Tracking Id Field
 
-The first thing you'll want to do if you're bundling the Segment-GoogleAnalytics SDK is to add your **Mobile Tracking Id** to your Google Analytics settings inside Segment. This ensures that data can flow from each user's mobile device to Google Analytics. Otherwise, Segment won't know where to send your data, and the events will be lost.
+The first thing you should do if you're bundling the Segment-GoogleAnalytics SDK is to add your **Mobile Tracking Id** to your Google Analytics settings inside Segment. This ensures that data can flow from each user's mobile device to Google Analytics. Otherwise, Segment won't know where to send your data, and the events will be lost.
 
 
 ### When Will I See Data?
