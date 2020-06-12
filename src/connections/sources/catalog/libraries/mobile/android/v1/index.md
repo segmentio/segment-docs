@@ -163,7 +163,7 @@ You can specify which analytics providers you want each action to go to.
 
 ```java
 Traits traits = new Traits();
-traits.put("email", "tom@initech.com");
+traits.put("email", "tom@example.com");
 traits.put("name", "Tom Smykowski");
 Analytics.identify("hj2kf92ds212", traits,
     new Options()
@@ -492,7 +492,7 @@ To add a bundled provider to the library, you can follow these steps:
 
 4 Build the project with `./gradlew clean build connectedCheck`. See the [building](#building) section for more info.
 
-5. Send a Pull Request, and [contact us](/contact) to add it to our platform, so that people can toggle it on with one click.
+5. Send a Pull Request, and [contact us](https://segment.com/help/contact/) to add it to our platform, so that people can toggle it on with one click.
 
 ### Destination Sizes
 

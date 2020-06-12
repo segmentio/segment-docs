@@ -3,6 +3,7 @@ title: Salesforce Marketing Cloud Source
 beta: true
 source-type: object
 ---
+<!-- SFMC is listed as an object source, but doesn't appear in our configapi source catalog, so leave the "source-type" set here-->
 
 [Salesforce Marketing Cloud](https://www.salesforce.com/ca/products/marketing-cloud/overview/), formerly known as
 ExactTarget, is a marketing automation suite with the ability to build complete customer journeys as well as creating,
@@ -15,7 +16,7 @@ If you are trying to setup Salesforce Marketing Cloud as a destination to receiv
 [Salesforce Marketing Cloud Destination](https://segment.com/docs/connections/destinations/catalog/salesforce-marketing-cloud/).
 
 _**NOTE:** The Salesforce Marketing Cloud Source is currently in beta. This means that component names and functionality
-           may change. For all feedback, please [send us a note](https://segment.com/help/contact).
+           may change. For all feedback, [send us a note](https://segment.com/help/contact).
 
 ## Getting Started
 
@@ -99,7 +100,7 @@ Collections are the groupings of resources we pull from your source. In your war
 ## Collection Properties
 
 Segment performs a one-to-one mapping of all publicly available fields from Salesforce Marketing Cloud. Below are tables
-outlining the properties included in the collections listed above.To see the full description of each property, please
+outlining the properties included in the collections listed above. To see the full description of each property, 
 refer to the Salesforce Marketing Cloud documentation linked in each [collection](#collections) above.
 
 ### Campaigns
@@ -117,13 +118,13 @@ refer to the Salesforce Marketing Cloud documentation linked in each [collection
 
 ### Campaign Assets
 
-| Property Name | Description                                                                                                                                                                                                                       |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| campaign_id   | The ID of the campaign this asset is associated to                                                                                                                                                                                |
-| created_date  | Timestamp when the asset was created                                                                                                                                                                                              |
-| id            | The campaign asset ID                                                                                                                                                                                                             |
-| item_id       | The asset's unique ID in Salesforce Marketing Cloud                                                                                                                                                                               |
-| type          | The asset type. Can be one of: email, triggered send, mobile message, push message, twitter update, facebook update, facebook tab,  sites, landing pages, subscriber list, subscriber group, data extension, automation, or event |
+| Property Name | Description |
+| ------------- | ------------------------- |
+| campaign_id   | The ID of the campaign this asset is associated to  |
+| created_date  | Timestamp when the asset was created   |
+| id            | The campaign asset ID         |
+| item_id       | The asset's unique ID in Salesforce Marketing Cloud     |
+| type          | The asset type. Can be one of: email, triggered send, mobile message, push message, twitter update, facebook update, facebook tab, sites, landing pages, subscriber list, subscriber group, data extension, automation, or event |
 
 
 ### Lists
@@ -174,6 +175,7 @@ refer to the Salesforce Marketing Cloud documentation linked in each [collection
 |                             |                                                                                                                                                                                        |
 
 ### Goals
+
 | Property Name                                      | Description                                                                                                     |
 | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | interaction_id                                     | The id of the interaction that this goal is associated with                                                     |

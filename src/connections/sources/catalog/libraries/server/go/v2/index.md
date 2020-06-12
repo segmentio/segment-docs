@@ -8,7 +8,7 @@ Our Go library lets you record analytics data from your Go code. The requests hi
 
 This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-go).
 
-All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses a tunable buffer to batch messages, optimized for throughput and reduced network activity.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses a tunable buffer to batch messages, optimized for throughput and reduced network activity.
 
 ## Getting Started
 
@@ -49,7 +49,7 @@ client.Identify(&analytics.Identify{
   UserId: "019mr8mf4r",
   Traits: map[string]interface{}{
     "name":    "Michael Bolton",
-    "email":   "mbolton@initech.com",
+    "email":   "mbolton@example.com",
     "plan":    "Enterprise",
     "friends": 42,
   },
@@ -146,8 +146,7 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`Context` _map[string]interface{}, optional_</td>
-    <td>Extra [context]() to attach to the call.
-      <p>**Note:** `context` differs from `traits` because it is not attributes of the user itself.</p></td>
+    <td>Extra [context]() to attach to the call. **Note:** `context` differs from `traits` because it is not attributes of the user itself.</td>
   </tr>
   <tr>
     <td>`AnonymousId` _string, optional_</td>
@@ -235,7 +234,7 @@ client.Identify(&analytics.Identify{
   UserId: "019mr8mf4r",
   Traits: map[string]interface{}{
     "name":    "Michael Bolton",
-    "email":   "mbolton@initech.com",
+    "email":   "mbolton@example.com",
     "plan":    "Enterprise",
     "friends": 42,
   },

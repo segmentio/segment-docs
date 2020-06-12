@@ -269,4 +269,34 @@
   & > *:first-child {
     margin-top: 0;
   }
+
+  .underline {
+    text-decoration: underline;
+  }
+
+  .double {
+    @include breakpoint(medium up) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .media-icon {
+      &:nth-of-type(even) {
+        margin-top: 20px;
+      }
+
+      @include breakpoint(medium up) {
+        width: calc(50% - 10px);
+
+        &:nth-of-type(even) {
+          margin-top: 0px;
+          margin-left: 20px;
+        }
+      }
+
+      &__anchor {
+        display: none;
+      }
+    }
+  }
 }

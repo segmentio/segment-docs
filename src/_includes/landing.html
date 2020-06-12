@@ -1,7 +1,0 @@
-<div class="flex flex--wrap waffle waffle--large">
-  {% for category in site.data.landing %}
-    <div class="flex__column flex__column--6 flex">
-      {% include components/media-thumbnail.html href=category.path icon=category.icon title=category.name content=category.description %}
-    </div>
-  {% endfor %}
-</div>

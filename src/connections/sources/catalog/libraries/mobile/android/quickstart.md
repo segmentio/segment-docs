@@ -1,9 +1,10 @@
 ---
 title: 'Quickstart: Android'
 hidden: true
-sourceTitle: 'Android'
-sourceCategory: 'Mobile'
 ---
+
+<!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
+
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 
@@ -13,11 +14,11 @@ If you want to dive deeper at any point, check out the [Android Source Reference
 
 ## Step 1: Install the Library
 
-The recommended way to install the library for Android is with a build system like Gradle. This makes it dead simple to upgrade versions and add destinations. The library is distributed via [Maven Central](http://maven.org/). Simply add the `analytics` module to your `build.gradle`:
+The recommended way to install the library for Android is with a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed via [Maven Central](http://maven.org/). Simply add the `analytics` SDK to your module's `build.gradle` file:
 
 ```
 dependencies {
-  compile 'com.segment.analytics.android:analytics:4.+'
+  implementation 'com.segment.analytics.android:analytics:4.+'
 }
 ```
 
@@ -55,8 +56,11 @@ If you need to bundle additional destinations client side, you'll need to take s
 Ensure that the necessary permissions are declared in your application's `AndroidManifest.xml`.
 
 ```xml
- <!-- Required for internet. -->
-<uses-permission android:name="android.permission.INTERNET"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="your.package.name">
+  ...
+  <!-- Required for internet. -->
+  <uses-permission android:name="android.permission.INTERNET"/>
+</manifest>
 ```
 
 ## Step 4. Identify Users
@@ -68,7 +72,7 @@ When and where you call `identify` depends on how your users are authenticated, 
 Here's what a basic call to `identify` might look like:
 
 ```java
-Analytics.with(context).identify("f4ca124298", new Traits().putName("Michael Bolton").putEmail("mbolton@initech.com"));
+Analytics.with(context).identify("f4ca124298", new Traits().putName("Michael Bolton").putEmail("mbolton@example.com"));
 ```
 
 That's identifying Michael by his unique User ID (the one you know him by in your database) and labeling him with `name` and `email` traits.

@@ -110,7 +110,7 @@ An example of the method call would be as follows:
 userId = "1sdf1fw4xgafs"
  
 traits = {
-  "email": testEmail@gmail.com
+  "email": testEmail@example.com
   "name": "John Doe"
   "accountType" : "tier-1"
 }
@@ -266,4 +266,4 @@ If you want to see how big your request is getting you can use set the debug pro
 You can follow [this guide](https://www.howtogeek.com/290787/how-to-enable-developer-mode-and-sideload-roku-apps/) to set your device into developer mode and [this one](https://sdkdocs.roku.com/display/sdkdoc/Debugging+Your+Application) to debug and surface logs out of your app. There are currently two levels of debugging which are "DEBUG" and "ERROR".
 
 ### Does the Roku library support device-mode integrations?
-The Roku library only supports cloud-mode destinations. If you have a need for a device-mode integration in your Roku application please [reach out](https://segment.com/help/contact/). 
+The Roku library only supports cloud-mode destinations. If you have a need for a device-mode integration in your Roku application  [contact us](https://segment.com/help/contact/). 

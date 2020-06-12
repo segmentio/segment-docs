@@ -1,22 +1,30 @@
 ---
 title: Analytics for iOS
-sourceTitle: 'iOS'
-sourceCategory: 'Mobile'
 ---
 
-Analytics for iOS makes it dead simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
+Analytics for iOS makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
-All of our libraries are open-source, so you can [view Analytics for iOS on Github](https://github.com/segmentio/analytics-ios), or check out our [browser and server-side libraries](/sources) too.
+All of Segment's libraries are open-source, so you can [view Analytics for iOS on Github](https://github.com/segmentio/analytics-ios), or check out our [browser and server-side libraries](/sources/catalog/) too.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-ios/tags.atom).
 
-**Note:** At the moment we can't support tracking of watchkit extensions for the Apple watch. [Email us](/contact/requests) if you're interested in a watchkit SDK. For now we recommend tracking watch interactions via the iPhone app code.
+> note ""
+> **Note:** Segment does not currently support tracking of watchkit extensions for the Apple watch. [Email us](https://segment.com/requests/integrations/) if you're interested in a watchkit SDK. For now we recommend tracking watch interactions using the iPhone app code.
 
 ## Getting Started
 
+
+### About mobile connection modes
+
+{% include content/mobile-cmodes.md %}
+
+
+{% include components/media-icon.html href="https://github.com/segmentio/analytics-test-apps" icon="media/icon-guides.svg" title="iOS Test Apps" content="Segment maintains test apps for the iOS mobile library. Find them here." %}
+
+
 ### Install the SDK
 
-The recommended way to install Analytics for iOS is via [Cocoapods](http://cocoapods.org), since it means you can create a build with specific destinations, and because it makes it dead simple to install and upgrade.
+The recommended way to install Analytics for iOS is using [Cocoapods](http://cocoapods.org), since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade.
 
 First, add the `Analytics` dependency to your `Podfile`, like so:
 
@@ -24,7 +32,7 @@ First, add the `Analytics` dependency to your `Podfile`, like so:
 pod 'Analytics', '~> 3.0'
 ```
 
-Then in your application delegate's `- application:didFinishLaunchingWithOptions:` method, setup the SDK like so:
+Then in your application delegate's `- application:didFinishLaunchingWithOptions:` method, set up the SDK like so:
 
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
@@ -33,7 +41,7 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 
-**Note:** Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional via initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-3-track-actions) for more info!
+**Note:** Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional using initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-3-track-actions) for more info!
 
 And of course, import the SDK in the files that you use it with:
 
@@ -49,7 +57,7 @@ In the interest of keeping our SDK lightweight, the Analytics pod only installs 
 
 Now that the SDK is installed and setup, you're ready to...
 
-### Configure and Setup the SDK
+### Configure and set up the SDK
 
 The `SEGAnalyticsConfiguration` class provides a set of properties that control various policies of the `SEGAnalytics` instance. You initialize it with a `writeKey` like so:
 
@@ -374,7 +382,7 @@ If you are seeing any of your destinations turned off in the raw version of requ
 }
 ```
 
-These flags tell the Segment servers that a request was already made directly from the device through a packaged SDK. That way we don't send a duplicate request via our servers to those services.
+These flags tell the Segment servers that a request was already made directly from the device through a packaged SDK. That way we don't send a duplicate request through our servers to those services.
 
 ## Logging
 
@@ -392,8 +400,8 @@ Or disable it like this:
 
 By default debug logging is disabled.
 
-## Middlewares
-Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify or reject events. Middlewares are available on `analytics-ios ` 3.6.0 and higher.
+## Middleware
+Middleware are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify or reject events. Source Middleware are available on `analytics-ios` 3.6.0 and higher. Destination Middleware are available on `analytics-ios` 4.0.0 and higher.
 
 The middleware API is easily accessible in both Objective-C and Swift.
 
@@ -401,7 +409,7 @@ The middleware API is easily accessible in both Objective-C and Swift.
 
 Middleware is any Objective-C class that conforms to the following protocol.
 
-```
+```objc
 @protocol SEGMiddleware
 @required
 - (void)context:(SEGContext *_Nonnull)context next:(S
@@ -411,7 +419,7 @@ EGMiddlewareNext _Nonnull)next;
 
 We also provide a block-centric helper class to make it easier to create middlewares using anonymous functions on the fly. (See examples later on in the guide)
 
-```
+```objc
 typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNext _Nonnull next);
 
 @interface SEGBlockMiddleware : NSObject <SEGMiddleware>
@@ -426,7 +434,7 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 `SEGContext` object is not very information rich by itself. Typically you will need to use `eventType`  and `payload` to get more information about an event.
 
-```
+```objc
 @interface SEGContext : NSObject <NSCopying>
 
 @property (nonatomic, readonly, nonnull) SEGAnalytics *_analytics;
@@ -447,7 +455,7 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 If you look at `SEGEventType` more carefully, you'll realize that middleware is not only capable of handling `track` , `identify` and other normal analytics APIs, even calls like `reset` , `flush` and `openURL` go through and can therefore be processed by the middleware pipeline.
 
-```
+```objc
 typedef NS_ENUM(NSInteger, SEGEventType) {
     // Should not happen, but default state
     SEGEventTypeUndefined,
@@ -479,7 +487,7 @@ typedef NS_ENUM(NSInteger, SEGEventType) {
 
 There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enums. Subclassed payloads may contain call specific information, For example, the `SEGTrackPayload` contains `event` as well as `properties` .
 
-```
+```objc
 @interface SEGTrackPayload : SEGPayload
 
 @property (nonatomic, readonly) NSString *event;
@@ -491,43 +499,55 @@ There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enu
 
 Finally, to use a middleware, you will need to provide it to the `SEGAnalyticsConfiguration` object prior to the initialization of `SEGAnalytics` .
 
-```
+```objc
 @interface SEGAnalyticsConfiguration : NSObject
+
 /**
- * Set custom middlewares. Will be run before all integrations
+ * Set custom source middleware. Will be run before all integrations
  */
-@property (nonatomic, strong, nullable) NSArray<id<SEGMiddleware>> *middlewares;
+@property (nonatomic, strong, nullable) NSArray<id<SEGMiddleware>> *sourceMiddleware;
+
+/**
+ * Set custom destination middleware. Will be run before the associated integration for a destination.
+ */
+@property (nonatomic, strong, nullable) NSArray<SEGDestinationMiddleware *> *destinationMiddleware;
 
 // ...
 @end
 ```
 
-Once initialized, the list of middlewares used in `SEGAnalytics` cannot be changed at this time.
+Once initialized, the list of middleware used in `SEGAnalytics` cannot be changed.
 
 ### Examples
 
 The following examples will be written in Swift to demonstrate that the middleware API works just as well in Swift as in Objective-C. To start off, this is what initialization looks like
 
-```
+```swift
+let mixpanelIntegration = SEGMixpanelIntegrationFactory.instance()
+let amplitudeIntegration = SEGAmplitudeIntegrationFactory.instance()
 let config = SEGAnalyticsConfiguration(writeKey: "YOUR_WRITEKEY_HERE")
 config.trackApplicationLifecycleEvents = true
 config.trackDeepLinks = true
 config.recordScreenViews = true
-config.use(SEGMixpanelIntegrationFactory.instance())
+config.use(mixpanelIntegration)
+config.use(amplitudeIntegration)
 
-config.middlewares = [
+config.sourceMiddleware = [
     turnScreenIntoTrack,
     enforceEventTaxonomy,
     customizeAllTrackCalls,
-    sampleEventsToMixpanel,
     blockScreenCallsToAmplitude,
+]
+config.destinationMiddleware = [
+    SEGDestinationMiddleware(key: mixpanelIntegration.key(), middleware: [sampleEventsToMixpanel]),
+    SEGDestinationMiddleware(key: amplitudeIntegration.key(), middleware: [customizeAmplitudeTrackCalls])
 ]
 SEGAnalytics.setup(with: config)
 ```
 
 Changing event names and adding custom attributes
 
-```
+```swift
 let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
     if context.eventType == .track {
         next(context.modify { ctx in
@@ -552,7 +572,7 @@ let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
 
 Turn one kind call into another
 
-```
+```swift
 let turnScreenIntoTrack = SEGBlockMiddleware { (context, next) in
     if context.eventType == .screen {
         next(context.modify { ctx in
@@ -576,7 +596,7 @@ let turnScreenIntoTrack = SEGBlockMiddleware { (context, next) in
 
 Completely block events
 
-```
+```swift
 let   = SEGBlockMiddleware { (context, next) in
     let validEvents = [
         "Application Opened",
@@ -595,31 +615,9 @@ let   = SEGBlockMiddleware { (context, next) in
 }
 ```
 
-Sample events to Mixpanel
-
-```
-let sampleEventsToMixpanel = SEGBlockMiddleware { (context, next) in
-    if let track = context.payload as? SEGTrackPayload {
-        let numberBetween0To4 = arc4random() % 5
-        if numberBetween0To4 != 0 {
-            next(context.modify { ctx in
-                ctx.payload = SEGTrackPayload(
-                    event: track.event,
-                    properties: track.properties,
-                    context: track.context,
-                    integrations: ["Mixpanel": false]
-                )
-            })
-            return
-        }
-    }
-    next(context)
-}
-```
-
 Block only screen calls to amplitude
 
-```
+```swift
 let blockScreenCallsToAmplitude = SEGBlockMiddleware { (context, next) in
     if let screen = context.payload as? SEGScreenPayload {
         next(context.modify { ctx in
@@ -635,6 +633,51 @@ let blockScreenCallsToAmplitude = SEGBlockMiddleware { (context, next) in
     next(context)
 }
 ```
+
+Sample events to Mixpanel device-mode destination
+
+```swift
+let sampleEventsToMixpanel = SEGBlockMiddleware { (context, next) in
+    if let track = context.payload as? SEGTrackPayload {
+        let numberBetween0To4 = arc4random() % 5
+        if numberBetween0To4 != 0 {
+            return
+        }
+    }
+    next(context)
+}
+```
+
+Add custom attribute to context for Amplitude device-mode destination
+
+```swift
+let customizeAmplitudeTrackCalls = SEGBlockMiddleware { (context, next) in
+    if context.eventType == .track {
+        next(context.modify { ctx in
+            guard let track = ctx.payload as? SEGTrackPayload else {
+                return
+            }
+            let newEvent = "[Amplitude] \(track.event)"
+            var newProps = track.properties ?? [:]
+            newProps["customAttribute"] = "Sausage"
+            ctx.payload = SEGTrackPayload(
+                event: newEvent,
+                properties: newProps,
+                context: track.context,
+                integrations: track.integrations
+            )
+        })
+    } else {
+        next(context)
+    }
+}
+```
+
+### Braze Middleware
+
+If you use the Braze (Appboy) destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation. More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
+
+
 
 ## Proxy HTTP Calls
 
@@ -670,6 +713,9 @@ When you submit to the app store, be aware that Segment collects the IDFA for us
 
 Note, you should *not* check the box labeled "Serve advertisements within the app" unless you are actually going to display ads.
 
+> info ""
+> The information above has changed with the 4.0-beta series. In line with Segment’s privacy stance, the IDFA is no longer collected automatically. Instead, customers who need it for integrations and ad analytics are must [pass it as configuration](#idfa-collection-in-40-beta-and-later) to the library.
+
 ### Limited Ad Tracking
 
 iOS users can opt into limited ad tracking (similar to ad-blocking for browsers). For those users that have opted in, `adTrackingEnabled` will come through as `false`; however there will still be an `advertisingId` present. Since the iOS 10 release, those who opt in for limited ad tracking will have `adTrackingEnabled` set to `false` AND there will either be no `advertisingId` or the `advertisingId` will be a series of zeroes.
@@ -679,7 +725,7 @@ iOS users can opt into limited ad tracking (similar to ad-blocking for browsers)
 
 We publish stable releases every second Wednesday, when we tag and release the `master` branch.
 
-After releasing, we also merge the `dev` branch merged into `master`. In general, code will be available on `master` for two weeks before being tagged as a stable release. During this two week period, it is available for use via Cocoapods and Carthage — our equivalent of bleeding edge releases. We recommend using this version to try out upcoming features and fixes that have not been published yet.
+After releasing, we also merge the `dev` branch merged into `master`. In general, code will be available on `master` for two weeks before being tagged as a stable release. During this two week period, it is available for use using Cocoapods and Carthage — our equivalent of bleeding edge releases. We recommend using this version to try out upcoming features and fixes that have not been published yet.
 
 To use the `master` branch for CocoaPods users, use this line in your `Podfile`:
 
@@ -693,7 +739,7 @@ To use the `master` branch for Carthage users, use this line in your `Cartfile`:
 github "segmentio/analytics-ios" "master"
 ```
 
-## Packaging Destinations using Device-mode
+## Packaging device-mode destination SDKs
 
 By default, our `Analytics` pod packages no external SDKs.
 
@@ -753,7 +799,7 @@ Here are the steps for installing manually:
 
 Once you've installed the framework, just import the header file and install as described above in [Install the SDK](/docs/connections/sources/catalog/libraries/mobile/ios/#install-the-sdk).
 
-Please note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
+Note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
 
 ### What if your SDK doesn't support feature X?
 
@@ -899,7 +945,7 @@ If you'd like to centralize this logic, you can write a middleware for it!
 
 ### IDFA
 
-Some destinations, particularly mobile attribution tools (e.g. Kochava), require the IDFA (identifier for advertisers). The IDFA shows up in Segment calls in the debugger under `context.device.advertisingId`. In order for this value to be captured by the Segment SDK, ensure that you include the [iAd framework](https://developer.apple.com/reference/iad).
+Some destinations, particularly mobile attribution tools (e.g. Kochava), require the IDFA (identifier for advertisers). The IDFA shows up in Segment calls in the debugger under `context.device.advertisingId`. In order for this value to be captured by the Segment SDK, ensure that you include the [AdSupport framework](https://developer.apple.com/documentation/adsupport).
 
 Once you enable this, you will see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true`.
 
@@ -907,7 +953,30 @@ _Note_: While the network is deprecated, the relevant [framework](https://develo
 
 ### tvOS Support
 
-As of [Version 3.3.0](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md#version-330-08-05-2016) we now have support for tvOS through our `Analytics-iOS` sdk. You can follow the [iOS quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) and you should be good to go! tvOS installation is only supported via Carthage and CocoaPods. The dynamic framework installation method is not supported for tvOS.
+As of [Version 3.3.0](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md#version-330-08-05-2016) we now have support for tvOS through our `Analytics-iOS` sdk. You can follow the [iOS quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) and you should be good to go! tvOS installation is only supported using Carthage and CocoaPods. The dynamic framework installation method is not supported for tvOS.
+
+### IDFA collection in 4.0-beta and later
+
+Recent 4.0 betas move IDFA collection outside of the library.  You can achieve the old behavior by now doing this:
+
+```objc
+  @import AdSupport;
+
+  ...
+
+  SEGAnalyticsConfiguration* configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
+
+  // Enable advertising collection
+  configuration.enableAdvertisingTracking = YES;
+  // Set the block to be called when the advertisingID is needed
+  configuration.adSupportBlock = ^{
+      return [[ASIdentifierManager sharedManager] advertisingIdentifier];
+  }
+
+  [SEGAnalytics setupWithConfiguration:configuration];
+
+```
+
 
 ## Troubleshooting
 
@@ -937,10 +1006,11 @@ This was due to an old [CocoaPods limitation](https://github.com/CocoaPods/Cocoa
 
 
 ### No events in my destinations
+
 1. Verify that your destination is enabled
 2. Verify your destination credentials entered in your Segment dashboard are correct
 3. Make sure the destination can accept what you're sending:
-   - Does the integration have device-mode/cloud-mode support? Confirm you are sending via the correct connection mode.
+   - Does the integration have device-mode/cloud-mode support? Confirm you are sending using the correct connection mode.
    - Does the destination accept the type of call you are sending? Not all destinations accept all calls: page, track, etc.
 4. If you are still not seeing data in your destination, continue debugging based on which type of connection mode you are using.
 
@@ -964,7 +1034,7 @@ v3 was an API compatible release, but there are a few additional steps for packa
 Firstly, we changed how the anonymousId was stored between v2 and v3. You'll need to read the old anonymousId and set it so that it's moved to the new location.
 
 
-```
+```objc
 NSString *oldAnonymousId = loadOldAnonymousId();
 if (oldAnonymousId) {
   [[SEGAnalytics sharedAnalytics] identify:userId
@@ -1004,7 +1074,7 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 ### Still having issues?
 
-Feel free to [reach out to us](/help) with the following information:
+[contact our Product Support team](https://segment.com/help/contact/) with the following information:
 
 - The version of our SDK you are using
 - Whether you are using device- or cloud-mode

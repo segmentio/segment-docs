@@ -1,6 +1,7 @@
 ---
 title: Cloudflare Source
 hidden: true
+redirect_from: '/connections/sources/catalog/libraries/server/cloudflare/'
 ---
 
 Cloudflare enables customers to mitigate website security attacks and speed up page load times. No technical knowledge required.

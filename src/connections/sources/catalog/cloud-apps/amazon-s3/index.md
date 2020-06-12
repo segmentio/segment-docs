@@ -1,7 +1,6 @@
 ---
 title: Amazon S3 from Lambda
 rewrite: true
-source-type: event
 ---
 
 This document contains a procedure that enables you to upload a CSV file containing data to Amazon S3, where it uses Lambda to automatically parse, format, and upload the data to Segment.
@@ -278,7 +277,7 @@ You'll do the following:
  - Add permissions to the Lambda function access policy so Amazon S3 can invoke the function.
  - Add notification configuration to your source bucket.
    In the notification configuration, provide the following:
-   - The event type for which you want Amazon S3 to publish events. For this tutorial, specify the`s3:ObjectCreated:*` event type so  Amazon S3 publishes events when objects are created.
+   - The event type for which you want Amazon S3 to publish events. For this tutorial, specify the`s3:ObjectCreated:*` event type so Amazon S3 publishes events when objects are created.
    -   Lambda function to invoke.
 
 **To add permissions to the function policy**
@@ -335,7 +334,7 @@ Last, test your system to make sure it's working as expected:
 ## Good to know
 
 ### Timestamps
-This script automatically transforms all CSV timestamp columns named `createdAt` and `timestamp` to timestamp objects, regardless of nesting, preparation for Segment ingestion. If your timestamps have a different name,  search the example `index.js` code for the "colParser" function, and add your column names there for automatic transformation. If you make this modification, re-zip the package (using `zip -r function.zip .`) and upload the new zip to Lambda.
+This script automatically transforms all CSV timestamp columns named `createdAt` and `timestamp` to timestamp objects, regardless of nesting, preparation for Segment ingestion. If your timestamps have a different name, search the example `index.js` code for the "colParser" function, and add your column names there for automatic transformation. If you make this modification, re-zip the package (using `zip -r function.zip .`) and upload the new zip to Lambda.
 
 ## CSV Formats
 

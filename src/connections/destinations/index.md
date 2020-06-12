@@ -8,7 +8,7 @@ Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/conne
 
 ## Types of Sources
 
-Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud App, plus a fifth type: User-created [Source Functions](/docs/connections/sources/custom-sources/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, for example a ticketing system such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), a payments system such as [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), or a marketing tool like [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
+Segment has five types of sources: Web (Analytics.js), Mobile, Server, and Cloud App, plus a fifth type: User-created [Source Functions](/docs/connections/sources/source-functions/). Web, Mobile, and Server sources send first-party data from your digital properties. Cloud-app sources send data about your users from your connected web apps, for example a ticketing system such as [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), a payments system such as [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/), or a marketing tool like [Braze](/docs/connections/sources/catalog/cloud-apps/braze/).
 
 ## Catalog
 
@@ -16,9 +16,15 @@ If you're just looking to explore all of our destinations check out the [destina
 
 For detailed information about each destination, select one from the list to learn how our API methods are implemented for that destination, and how you can use it through Segment.
 
+## Method Compatibility
+
+Not all destinations can accept data from specific method types. Wondering which ones are which? Check out the [Destinations Methods matrix](/docs/connections/destinations/methods-compare/).
+
 ## Source Compatibility
 
 Many destinations can accept data from all types of sources, but some are only compatible with specific source types (for example, web only, or server only). To find out which source types a specific destination can accept data from, check the documentation for that destination for a "Supported Sources and Connection Modes" section.
+
+{% include components/media-icon.html href="/docs/connections/destinations/category-compare/" icon="media/icon-guides.svg" title="Destinations Compatibility Matrix" content="Wondering which destinations take which data? Check out the Destination connection modes list by category." %}
 
 ## Connection Modes
 
@@ -31,13 +37,13 @@ There are two main things we consider when we decide to build Device- or Cloud-M
 
 #### 1. Anonymous Attribution Methodology
 
-**Mobile Attribution**
+##### Mobile Attribution
 
 The anonymous identifiers used on mobile devices are usually static, which means we don't need to do additional resolution, and we can build Cloud-mode destinations by default. Because Segment uses native advertising identifiers on mobile devices, you don't need a full SDK on the device to reconcile or identify a user. For example, you might track users who viewed an advertisement in one app and installed another app as a result.
 
 However, some mobile attribution tools do more advanced reconciliation based on more than the native identifier, which requires the SDK on the device to work properly. For those destinations, we offer device-mode which packages the tool's SDK with our client-side library, so that you can get the entire range of tool functionality.
 
-**Web Attribution**
+##### Web Attribution**
 
 Cross-domain identity resolution for websites requires that the attribution tool use a third-party cookie so it can track a user anonymously across domains. This is a critical component of attribution modeling. As a matter of principle Segment only uses first-party cookies and does not share cookies with partners, so Analytics.js and the data it collects aren't enough to generate view-through attribution in ad networks.
 
@@ -71,7 +77,7 @@ Before you turn on or opt-in for Cloud-mode for a mobile source, consider if you
 
 ### How can I tell which Connection Modes and Platforms are supported for a Destination?
 
-The first place to look is the individual destination documentation. Each one includes a matrix of supported Sources and Connection Modes.
+The first place to look is the individual destination documentation. Each one includes a matrix of supported Sources and Connection Modes. We also provide a list of [all destinations and their connection modes](/docs/connections/destinations/cmodes-compare/).
 
 In order to override the default, check the destination settings pane in the Segment web App either for a **Connection Mode** toggle or instructions on bundling any additional mobile components required.
 
@@ -81,21 +87,21 @@ Segment increases deliverability to destinations in two ways: [retries](#retries
 
 ### Retries
 
-**Retries in our Client Libraries**
+#### Retries in our Client Libraries
 
 Our client libraries ensure delivery of your data to our API reliably in the face of spotty connections, device failure, or network partitions in your data centers.
 
 When you use our mobile SDK, we dispatch each event to a background thread where the event is then written to a queue. Later, our SDK batches together many requests in to one compressed request and sends it to our servers. Our SDKs minimize battery use and bandwidth use by powering up the radio less frequently and for shorter time periods.
 
-If the delivery of the payload is not successfully sent due to connection issues, all of our SDKs will automatically retry the request until successful receipt of the payload according to the following policies. Please note that retry policies are subject to change / tuning in the future.
+If the delivery of the payload is not successfully sent due to connection issues, all of our SDKs will automatically retry the request until successful receipt of the payload according to the following policies. Note that retry policies are subject to change / tuning in the future.
 
 <table>
   <tr>
     <td>Platform</td>
-    <td><p><b>Initial Wait</b></p><p>Sleep duration before the first retry</p></td>
-    <td><p><b>Wait Growth</b></p><p>Rate of growth of the sleep duration between each retry</p></td>
-    <td><p><b>Max Wait</b></p><p>Maximum sleep duration between retries</p></td>
-    <td><p><b>Max Attempts</b></p><p>Maximum number of individual retries</p></td>
+    <td><b>Initial Wait - </b>Sleep duration before the first retry</td>
+    <td><b>Wait Growth - </b>Rate of growth of the sleep duration between each retry</td>
+    <td><b>Max Wait - </b>Maximum sleep duration between retries</td>
+    <td><b>Max Attempts - </b>Maximum number of individual retries</td>
   </tr>
   <tr>
     <td>**C++**</td>
@@ -169,11 +175,11 @@ If the delivery of the payload is not successfully sent due to connection issues
   </tr>
 </table>
 
-**Mobile Library Retries**
+#### Mobile Library Retries
 
 All mobile libraries handle retries by periodically attempting to flush their internal queue of events to Segment. If the flush is unsuccessful, the library will wait until the next regularly-scheduled flush time to try again. The background queue of requests to Segment is bounded in size so if events are being queued faster than we can successfully flush them to Segment, some events may be dropped.
 
-**Retries between Segment and Destinations**
+#### Retries between Segment and Destinations
 
 The destination endpoint APIs we send data to have fluctuations in availability due to any number of issues ranging from network failures to bugs to overload. Segment's internal systems retry failed destination API calls for 4 hours with a randomize exponential backoff after each attempt. This substantially improves delivery rates.
 
@@ -185,4 +191,7 @@ You can see the current destination endpoint API success rates and final deliver
 
 ### Replays
 
-[Replays](/docs/guides/general/what-is-replay/) allow customers to load historical data from our S3 logs into downstream destinations which accept cloud-mode data. So, for example, if you wanted to try out a new email or analytics tool, we can replay your historical data into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage. Replay is available to our [Business](https://segment.com/pricing) customers, and you can learn more by [contacting us](https://segment.com/contact/sales).
+[Replays](/docs/guides/what-is-replay/) allow customers to load historical data from our S3 logs into downstream destinations which accept cloud-mode data. So, for example, if you wanted to try out a new email or analytics tool, we can replay your historical data into that tool. This gives you a great testing environment and prevents data lock-in when vendors try to hold data hostage. Replay is available to our [Business](https://segment.com/pricing) customers, and you can learn more by [contacting us](https://segment.com/contact/sales).
+
+> warning ""
+> If you submitted [`suppress_only` requests](https://segment.com/docs/privacy/user-deletion-and-suppression/#suppressed-users), Segment still retains historical events for those users, which can be replayed. If you do not want historical events replayed for suppressed users, submit `suppress_and_delete` requests instead.

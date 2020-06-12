@@ -6,10 +6,10 @@ rewrite: true
 
 We ingest your analytics through Segment, perform state-of-the-art anomaly detection on each of your metrics, and  alert you on Slack when something doesn't look right. You get full-coverage over your product and the confidence that you will be notified of any significant variation.
 
-This destination is maintained by Lazy Lantern. For any issues with the destination, please reach out to [Lazy Lantern's support](mailto:support@lazylantern.com).
+This destination is maintained by Lazy Lantern. For any issues with the destination, contact [Lazy Lantern's support](mailto:support@lazylantern.com).
 
 
-_**NOTE:** The Lazy Lantern Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 31, 2019. If you are interested in joining their beta program or have any feedback to help improve the Lazy Lantern Destination and its documentation, please [let them know](mailto:support@lazylantern.com)!_
+_**NOTE:** The Lazy Lantern Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 31, 2019. If you are interested in joining their beta program or have any feedback to help improve the Lazy Lantern Destination and its documentation, [let them know](mailto:support@lazylantern.com)!_
 
 
 ## Getting Started
@@ -37,7 +37,7 @@ _**NOTE:** The Lazy Lantern Destination is currently in beta, which means that t
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page();
@@ -48,7 +48,7 @@ Lazy Lantern will monitor `page` events and send you alerts when an anomaly occu
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An iOS example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An iOS example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -59,11 +59,11 @@ Lazy Lantern will monitor `screen` events and send you alerts when an anomaly oc
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -72,7 +72,7 @@ Lazy Lantern does not store any information that links to a user's personal iden
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Products Searched', {

@@ -14,7 +14,7 @@ You may claim ownership of your domain for the purposes of Single Sign On login 
 
 ## I'm on a Legacy API plan, why can't I add the integration I want?
 
-Only users on our legacy API based plans will run into integration limits. Some of our older plans placed limitations on the integrations you could use. If you would like to add an integration that is not available on your current plan please move to a new Team plan where all integrations are included along with several other additional features.
+Only users on our legacy API based plans will run into integration limits. Some of our older plans placed limitations on the integrations you could use. If you would like to add an integration that is not available on your current plan  move to a new Team plan where all integrations are included along with several other additional features.
 
 ## Will deleting my account cancel my subscription?
 
@@ -22,7 +22,9 @@ No, deleting your account will only stop you from accessing workspaces through y
 
 ## How do I delete my workspace entirely?
 
-If you are looking to delete your workspace altogether you can head to your Settings, click on the "General" button, and hit \*\*Delete Workspace\*\*. Please also cycle your write keys for each source and remove all Segment snippets from your codebase.
+To delete your workspace, go your [Workspace's Settings](https://app.segment.com/goto-my-workspace/settings/basic), click the "General" tab, and click **Delete Workspace**.
+
+You should also change your write keys for each source and remove all Segment snippets from your codebase.
 
 ## Can I recover a source or workspace after I delete it?
 

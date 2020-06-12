@@ -8,7 +8,7 @@ But these off-domain and cross-device brand interactions are equally, if not mor
 
 In this guide, we'll share where and how to track these critical events so that you can understand your customer's journey before they even get to your storefront, as well as their preferred shopping experiences.
 
-_If you're interested in learning about what to track,_ [check out our guide on creating an e-commerce tracking plan](/docs/protocols/ecommerce-tracking-plan/).
+_If you're interested in learning about what to track,_ [check out our guide on creating an e-commerce tracking plan](/docs/connections/spec/ecommerce-tracking-plan/).
 
 [Talk to a product specialist today](https://segment.com/contact/sales) about building a clean, high-quality data spec so you can focus on brand engagement and sales growth.
 
@@ -171,7 +171,7 @@ If your store allows user registration and users are logged in when they shop on
 
 This works by using a `userId` instead of an `anonymousId` to track key events and where they occur. This `userId` serves as the primary key in your downstream tools and data warehouse, allowing you to join all of her anonymous activities with her logged in ones. You also can get a complete picture of where she is and what device she is on, while she is using your apps or website.
 
-[Learn more about pulling the entire user journey for a single user given a userId.](https://segment.com/docs/guides/sources/joining-user-profiles/)
+[Learn more about pulling the entire user journey for a single user given a userId.](https://segment.com/docs/guides/sources/join-user-profiles/)
 
 Unfortunately, tracking the same user across devices only works if she logs into each device. Anonymous browsing in each distinct "experience" (e.g. mobile safari, native iPhone, browser on laptop) generates its own unique `anonymousId` . Each `anonymousId` is limited to the scope of that browser or app, only measuring activities in those sessions. It's not until the user logs in when the `userId` is generated (if she is registering for a new account) or the `userId` is retrieved from your database, and then mapped to the `anonymousId` of that session. Segment will keep a table of `anonymousId` s mapped to a single `userId`so you can analyze a user's activity across multiple devices.
 

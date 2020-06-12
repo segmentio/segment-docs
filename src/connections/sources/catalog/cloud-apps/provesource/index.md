@@ -1,14 +1,11 @@
 ---
 title: ProveSouce Source
-source-type: event
 ---
 [ProveSource](https://provesrc.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a social proof platform, that lets you show recent activities and reviews that happen on your website - signups, purchases, positive reviews and more, this helps build trust with your visitors and ultimately increases your conversions rates.
 
-This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This source is maintained by ProveSource. For any issues with the source, [contact their team](mailto:support@provesrc.com).
 
-This source is maintained by ProveSource. For any issues with the source, please [reach out to their team](mailto:support@provesrc.com).
-
-_**NOTE:** The ProveSource Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on June 14, 2019. If you are interested in joining their beta program or have any feedback to help improve the ProveSource Source and its documentation, please [let  their team know](mailto:support@provesrc.com)!_
+_**NOTE:** The ProveSource Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on June 14, 2019. If you are interested in joining their beta program or have any feedback to help improve the ProveSource Source and its documentation, [let their team know](mailto:support@provesrc.com)!_
 
 
 ## Getting Started
@@ -95,4 +92,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the ProveSource team](mailto:support@provesrc.com).
+If you experience any issues with how the events arrive in Segment, [contact the ProveSource team](mailto:support@provesrc.com).

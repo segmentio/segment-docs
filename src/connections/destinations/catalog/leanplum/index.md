@@ -5,7 +5,11 @@ rewrite: true
 
 [Leanplum](https://www.leanplum.com/) helps mobile teams orchestrate multi-channel campaigns — from messaging to the in-app experience — all from a single mobile marketing platform.
 
-This document was last updated on January 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on January 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+
+> success ""
+> **Good to know**: This page is about the Leanplum Segment destination, which receives data from Segment. There's also a page about the [Leanplum Segment source](https://segment.com/docs/connections/sources/catalog/cloud-apps/leanplum/), which sends data _to_ Segment!
+
 
 ## Getting Started
 
@@ -24,13 +28,13 @@ In order to utilize Leanplum's Push Notifications, Messaging channels or A/B tes
 
 ### iOS
 
-CocoaPods is the dependency manager we use for Objective-C projects. If you already have CocoaPods installed and have a podfile, please skip to step 3.
+CocoaPods is the dependency manager we use for Objective-C projects. If you already have CocoaPods installed and have a podfile, skip to step 3.
 
 1. Install CocoaPods by running the following command:
 
     `sudo gem install cocoapods`
 
-    For issues with installing CocoaPods, please refer [here](https://cocoapods.org/)
+    For issues with installing CocoaPods, refer [here](https://cocoapods.org/)
 
 2. Add a podfile. In your terminal, navigate to your app's directory. Add a podfile to your app by running the following command:
 
@@ -97,7 +101,7 @@ For addition documentation you can also check [Leanplum docs](https://support.le
     <uses-permission android:name="android.permission.INTERNET"/>
     ```
 
-    If you want to use the advanced features of Leanplum, please also add the additional permissions, as described [here](https://www.leanplum.com/docs#/setup/android).
+    If you want to use the advanced features of Leanplum, also add the additional permissions, as described [here](https://www.leanplum.com/docs#/setup/android).
 
 4. Add the following lines to your Application or Controller:
 
@@ -128,7 +132,7 @@ That's it! Now you can use the Segment SDK and also the [advanced features](http
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page()
@@ -139,7 +143,7 @@ When you call `page` as a user moves to a new area, you can advance your user's 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 ```javascript
 analytics.identify({
   userId: 'user123',
@@ -154,7 +158,7 @@ As soon as a user logs-in or signs-up, you'll want to make an `identify` call wh
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 ```javascript
 analytics.track({
   userId: 'user123',

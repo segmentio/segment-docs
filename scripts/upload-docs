@@ -21,7 +21,7 @@ fi
 s3-sync() {
   echo "--- Uploading to s3://${S3_BUCKET_NAME}/docs"
   ls -a
-  aws s3 sync _site s3://${S3_BUCKET_NAME}/docs/
+  aws s3 sync _site s3://${S3_BUCKET_NAME}/docs/ --delete
 }
 
 # Only Sync to S3 on Build step and for prod/staging environments

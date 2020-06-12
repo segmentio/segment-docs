@@ -29,13 +29,23 @@ ga('send', {
 });
 ```
 
+Becomes:
+
+```js
+analytics.track('Signed Up', {
+  category: 'Account',
+  label: 'Premium',
+  value: 4
+});
+```
+
 Since Event Category is required we'll populate it with `All` if you don't specify one. You can read more about this in [our Google Analytics docs](/docs/connections/destinations/catalog/google-analytics/#track).
 
 ### Ecommerce
 
 Segment has full support for the Google Analytics E-Commere API and the [Enhanced E-Commerce API](/docs/connections/destinations/catalog/google-analytics/#enhanced-ecommerce) as well. Make sure you follow [our e-commerce quickstart](https://help.segment.com/hc/en-us/articles/204812439-Ecommerce-Quickstart) to make sure you'll be able to use all e-commerce features in the tools we support.
 
-For an e-commerce transaction to appear in Google Analytics you'll need to enable e-commerce for your Google Analytics view and send a Completed Order event to Segment. This simplifies things a lot compared to the direct Google Analytics code.
+For an e-commerce transaction to appear in Google Analytics you'll need to enable e-commerce for your Google Analytics view and send an Order Completed event to Segment. This simplifies things a lot compared to the direct Google Analytics code.
 
 Here's an example:
 
@@ -71,7 +81,7 @@ ga('ecommerce:addItem', {
 ga('ecommerce:send');
 ```
 
-...becomes:
+Becomes:
 
 ```js
 analytics.track('Order Completed', {
@@ -140,7 +150,7 @@ mixpanel.track('Registered',{
 });
 ```
 
-becomes:
+Becomes:
 
 ```js
 analytics.track('Registered', {
@@ -156,7 +166,7 @@ Since `mixpanel.identify` only takes a single argument (a userID) it maps direct
 mixpanel.identify('123');
 ```
 
-becomes;
+Becomes:
 
 ```js
 analytics.identify('123');
@@ -173,7 +183,7 @@ mixpanel.register({
 });
 ```
 
-...becomes:
+Becomes:
 
 ```js
 analytics.identify({
@@ -293,7 +303,7 @@ mixpanel.people.track_charge(30.50,
 Becomes:
 
 ```js
-analytics.track('Completed Order',
+analytics.track('Order Completed',
   revenue: 30.50,
   orderId: 'F9274'
 });

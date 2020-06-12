@@ -17,7 +17,7 @@ This Destination allows you to:
 ----------
 ## Page
 
-In order to load specific widgets on your various web pages, you can configure your settings to map your _named_ `.page()` call(s) to your desired Friendbuy Widget(s). You will also be able to configure a number of optionally [advanced widget configurations](http://developers.friendbuy.com/#widget-options) such as **auto delay** and **custom parameters**. Please see the following gif for example:
+In order to load specific widgets on your various web pages, you can configure your settings to map your _named_ `.page()` call(s) to your desired Friendbuy Widget(s). You will also be able to configure a number of optionally [advanced widget configurations](http://developers.friendbuy.com/#widget-options) such as **auto delay** and **custom parameters**. See the following gif for example:
 
 ![](images/23163f90cfc1f375f6c0da3a06060da4.gif)
 

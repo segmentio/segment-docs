@@ -11,7 +11,7 @@ Web | [Analytics.js SDK 2.1.0](https://github.com/segment-integrations/analytics
 Android | [Android SDK 2.0.0](https://github.com/segment-integrations/analytics-android-integration-bugsnag)
 iOS | [iOS SDK 1.0.3](https://github.com/segment-integrations/analytics-ios-integration-bugsnag)
 
-This document was last updated on July 11th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on July 11th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
@@ -39,13 +39,13 @@ If you'd like to integrate with Bugsnag's iOS and/or Android SDKs, in addition t
 
 Once you've correctly set up your Bugsnag integration, you should [`identify`](/docs/connections/spec/identify/) each of your users as soon as you know their identity (this typically happens after log in or sign up), so that Bugsnag can provide you with more visibility into which user is encountering which error.
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('ze8rt1u89', {
-  name: 'Zaphod Beeblebrox',
+  name: 'Zaphod Kim',
   gender: 'Male',
-  email: 'Zaphod@hotmail.com',
+  email: 'jane.kim@example.com',
 });
 ```
 

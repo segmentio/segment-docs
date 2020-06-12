@@ -11,7 +11,7 @@ Ultimately, Klaviyo lets you send personalized newsletters, automates triggered 
 
 Are you trying to setup Klaviyo as an Event Source to get data into your warehouse or other downstream tools? Go [here](https://segment.com/docs/connections/sources/catalog/cloud-apps/klaviyo/).
 
-This document was last updated on September 6, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on September 6, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ This document was last updated on September 6, 2018. If you notice any gaps, out
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page();
@@ -35,7 +35,7 @@ analytics.page();
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify({
@@ -131,7 +131,7 @@ You can also choose whether you want to force users to confirm the optin to your
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track({
@@ -162,7 +162,7 @@ The below table shows the out of the box mappings in our integration between our
 
 | **Segment Ecommerce Spec | Klaviyo Standard Event** |
 |  ------ | ------- |
-| `Completed Order` | `Ordered Product` |
+| `Order Completed` | `Ordered Product` |
 
 The below table shows the parameter mappings in our integration between Order Completed properties and and Klaviyo's standard properties:
 
@@ -171,7 +171,7 @@ The below table shows the parameter mappings in our integration between Order Co
 | `revenue` | `$value` |
 | `eventId` or `orderId` | `$event_id` |
 
-#### Completed Order
+#### Order Completed
 
 Klaviyo supports the `Order Completed` event that is outlined in our [specs](/docs/connections/spec/ecommerce/v2/#order-completed). If you send us a `Order Completed` event, we will send Klaviyo a `Placed Order` event and a `Ordered Product` event for each item listed in the `properties.products` array. We will also attach `customer_properties` with the `userId` set as `$id` for each of those Klaviyo events.
 

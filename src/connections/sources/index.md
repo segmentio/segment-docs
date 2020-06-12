@@ -5,7 +5,7 @@ related:
   - "/connections/sources/catalog/"
   - "/connections/sources/faq/"
 icon: media/icon-academy.svg
-excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
+excerpt: Detailed information about each Source. Learn how our API methods are implemented for that destination.
 ---
 
 ## What is a source?
@@ -16,31 +16,20 @@ You can create new sources using the button in the workspace view. Each source y
 
 
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu'
-  }, {
-  integrations: {
-    'All': false,
-    'Intercom': true,
-    'Google Analytics': true,
-  }
-});
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
+  });
 ```
 
 {% comment %}
 {% codeexample %}
 {% codeexampletab JavaScript %}
 ```js
-analytics.identify('025pikachu025', {
-  email: 'peekAtMe@email.poke',
-  name: 'Pikachu'
-  }, {
-  integrations: {
-    'All': false,
-    'Intercom': true,
-    'Google Analytics': true,
-  }
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
+  },
 });
 ```
 {% endcodeexampletab %}
@@ -109,6 +98,8 @@ Our server-side sources let you send analytics data directly from your servers. 
 
 Cloud app sources empower you to pull together data from all of your different third-party tools into a Segment warehouse or to your other enabled integrated tools. There are two types of Cloud Apps: **Object** and **Event** sources.
 
+{% include components/media-icon.html href="/docs/connections/sources/sources-compare/" icon="media/icon-guides.svg" title="Comparing Cloud Sources" content="Wondering which cloud-apps send which types of data? Check out the Cloud Sources comparison!" %}
+
 ### Object Cloud Sources
 
 These Cloud App Sources can export data from its third party tool and import it directly into your Segment warehouse. Make sure you have a Segment warehouse enabled before you enable any of the following sources:
@@ -160,7 +151,7 @@ To dig into some examples of how to pull this data together, check out our [samp
 
 ### HTTP
 
-If we don't have a library for your environment yet, you can always send your data directly to our [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http/). All of our other sources and platforms use the HTTP API to work their magic behind the scenes.
+If we don't have a library for your environment yet, you can always send your data directly to our [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http/). All of Segment's other sources and platforms use the HTTP API to work their magic behind the scenes.
 
 
 ### Pixel
@@ -178,7 +169,7 @@ Our [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixe
 
 ### Source request
 
-We'd love to know what other sources of data you'd like to analyze. Please [log your request](/contact/requests/source/).
+We'd love to know what other sources of data you'd like to analyze. [Contact the Support Team](https://segment.com/help/contact/) to log a request.
 
 ---
 

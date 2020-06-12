@@ -5,9 +5,9 @@ rewrite: true
 
 [Custify](https://www.custify.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)'s Customer Success Platform is designed for B2B SaaS businesses and enables them to reduce their churn and increase customer lifetime value.
 
-This destination is maintained by Custify. For any issues with the destination, please [reach out to their team](mailto:contact@custify.com).
+This destination is maintained by Custify. For any issues with the destination, [contact their team](mailto:contact@custify.com).
 
-_**NOTE:** The Custify Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the Custify Destination and its documentation, please [let  their team know](mailto:contact@custify.com)!_
+_**NOTE:** The Custify Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the Custify Destination and its documentation, [let their team know](mailto:contact@custify.com)!_
 
 
 ## Getting Started
@@ -20,11 +20,11 @@ _**NOTE:** The Custify Destination is currently in beta, which means that they a
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -33,7 +33,7 @@ Identify calls will be sent to Custify as `customers`, with the `userId` being s
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')
@@ -47,7 +47,7 @@ To view the events, go to their linked Customer and they are displayed in the ac
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {

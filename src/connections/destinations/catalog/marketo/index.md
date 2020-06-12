@@ -6,11 +6,11 @@ title: Marketo Destination
 
 When you toggle on Marketo in Segment, this is what happens:
 
-+ Our CDN is updated within 5-10 minutes. Then our snippet will start asynchronously loading Marketo's Munchkin onto your page. This means you should remove Marketo's snippet from your page.
++ Our cdn is updated within 45 minutes. Then our snippet will start asynchronously loading Marketo's Munchkin onto your page. This means you should remove Marketo's snippet from your page.
 + Marketo will start automatically recording visitor information.
 
 ### Important Note:
-Our client-side and server-side destinations each require **different** credentials for authentication. Please read through the information below on `identify` calls for further information.
+Our client-side and server-side destinations each require **different** credentials for authentication. Read through the information below on `identify` calls for further information.
 
 - - -
 
@@ -24,7 +24,7 @@ To associate Track events to a particular Lead in Marketo from a server side lib
 
 ### Client-side
 
-When you call [`identify`](/docs/connections/spec/identify/) on Analytics.js, we call Marketo's [`associateLead`](http://developers.marketo.com/documentation/websites/lead-tracking-munchkin-js/). Marketo **requires an email address** for this function, so if  the `traits` object you include in [`identify`](/docs/connections/spec/identify/) doesn't have an email, the request won't go through. Marketo's client-side library, [Munchkin](http://developers.marketo.com/documentation/websites/lead-tracking-munchkin-js/), **requires your API private key** for authentication along with your email, so please ensure that you have provided it in your Segment settings. We will not change the casing of traits on client-side identify calls.
+When you call [`identify`](/docs/connections/spec/identify/) on Analytics.js, we call Marketo's [`associateLead`](http://developers.marketo.com/documentation/websites/lead-tracking-munchkin-js/). Marketo **requires an email address** for this function, so if  the `traits` object you include in [`identify`](/docs/connections/spec/identify/) doesn't have an email, the request won't go through. Marketo's client-side library, [Munchkin](http://developers.marketo.com/documentation/websites/lead-tracking-munchkin-js/), **requires your API private key** for authentication along with your email, so make sure that you have provided it in your Segment settings. We will not change the casing of traits on client-side identify calls.
 
 ```javascript
 analytics.identify('1234', {
@@ -47,14 +47,14 @@ We will attempt to PascalCase server-side traits. So if you send `secondFavorite
 
 Note that leads can only be synced every 30 seconds via the SOAP API. If you exceed the allowed request amount, you will see `Exceeded lock attempts` errors in your debugger.
 
-Our server side destination with Marketo **requires your encryption key** along with your email for authentication, please ensure you have provided it in your Segment settings.
+Our server side destination with Marketo **requires your encryption key** along with your email for authentication, make sure you have provided it in your Segment settings.
 
 Remember to provide an email with every call as either the `userId` or as a trait labeled "email". Here's a java example of that:
 
 ```java
 Analytics.identify("hj2kf92ds212",
     new Traits()
-        .put("email", "tom@initech.com")
+        .put("email", "tom@example.com")
         .put("name", "Tom Smykowski"));
 ```
 
@@ -115,7 +115,7 @@ Analytics.track(
 )
 ```
 
-For more information about syncronising your Marketo leads, please [visit their documentation](http://developers.marketo.com/documentation/soap/synclead/).
+For more information about syncronising your Marketo leads, [visit their documentation](http://developers.marketo.com/documentation/soap/synclead/).
 
 ### Custom Fields
 

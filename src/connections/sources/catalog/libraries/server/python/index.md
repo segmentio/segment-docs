@@ -6,7 +6,7 @@ Our Python library lets you record analytics data from your Python code. The req
 
 This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-python).
 
-All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers using a separate thread.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers using a separate thread.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-python/releases.atom).
 
@@ -575,7 +575,7 @@ Client('YOUR_WRITE_KEY', debug=True, on_error=on_error, send=True,
   </tr>
   <tr>
     <td>`max_queue_size` _int_</td>
-    <td>Maximum number of elements allowed in the queue. If this condition is ever reached, that means you're identifying / tracking faster than you can flush. If this happens, let us know!</td>
+    <td>Maximum number of elements allowed in the queue. If this condition is ever reached, that means you're identifying / tracking faster than you can flush. If this happens, [let us know](https://segment.com/help/contact/)!</td>
   </tr>
   <tr>
     <td>`upload_interval` _float_</td>
@@ -669,7 +669,7 @@ analytics.write_key = 'YOUR_WRITE_KEY'
 
 We have heard from our customers that Google App Engine does not resolve project dependencies, so you'll need to get [requests](https://github.com/kennethreitz/requests) and [python-dateutil](https://github.com/paxan/python-dateutil) and add it into your project so that analytics-python can find it.
 
-If you're having issues with threads outliving your request, please check [Background threads and synchronous mode](#background-threads-and-synchronous-mode)
+If you're having issues with threads outliving your request, check [Background threads and synchronous mode](#background-threads-and-synchronous-mode)
 
 ## Troubleshooting
 

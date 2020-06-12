@@ -251,7 +251,7 @@ For **Event Value** you can name the event property `value` or `revenue`. We rec
 
 ### Non-interaction Events
 
-To create an event with the `nonInteraction` flag just pass us an event property labeled `nonInteraction` with the value of 1. You can also set all events to be non-interactive by default in the Advanced Options.
+Google Analytics allows you to tag some events as ["non-interaction" events](https://support.google.com/analytics/answer/1033068#NonInteractionEvents). To create an event with the `nonInteraction` flag just pass us an event property labeled `nonInteraction` with the value of 1. You can also set all events to be non-interactive by default in the Advanced Options.
 
 Here's an example:
 
@@ -263,7 +263,7 @@ Here's an example:
   }
 }'}}} {% endcomment %}
 
-```js
+```json
 {
   "action": "track",
   "event": "Viewed Legal Info",
@@ -372,7 +372,7 @@ analytics.track('Completed Checkout Step', {
 });
 ```
 
-*Note*: `shippingMethod` and `paymentMethod` are semantic properties so if you want to send that information, please do so in this exact spelling!
+*Note*: `shippingMethod` and `paymentMethod` are semantic properties so if you want to send that information, do so in this exact spelling!
 
 You can have as many or as few steps in the checkout funnel as you'd like. The 4 steps above merely serve as an example. Note that you'll still need to track the `Order Completed` event per our standard [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
 
@@ -571,7 +571,7 @@ ga(function (tracker) {
 });
 ```
 
-If you want our server-side destination to use your user's `clientId`, pass it to us in the `context.integrations['Google Analytics'].clientId` object. You must pass this value manually on every call as we do not store this value for you. If you do not pass this through, we look for the `userId` or `anonymousId` value and set the hashed value of either `userId` or `anonymousId` as the `cid`.
+If you want our server-side destination to use your user's `clientId`, pass it to us in the `integrations['Google Analytics'].clientId` object. You must pass this value manually on every call as we do not store this value for you. If you do not pass this through, we look for the `userId` or `anonymousId` value and set the hashed value of either `userId` or `anonymousId` as the `cid`.
 
 *Here's a Ruby example:*
 ```ruby
@@ -581,11 +581,9 @@ Analytics.track(
   properties: {
     linkText     : 'Next'
   },
-  context: {
-    integrations: {
-     'Google Analytics' => {
-       clientId: '1033501218.1368477899'
-     }
+  integrations: {
+    'Google Analytics' => {
+      clientId: '1033501218.1368477899'
     }
   }
 )
@@ -603,7 +601,7 @@ Analytics.track(
   user_id: '019mr8mf4r',
   event: 'Loaded a Page',
   properties: {
-    url: 'http://initech.com/pricing'
+    url: 'http://example.com/pricing'
   },
   context: {
     user_agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17'
@@ -658,6 +656,7 @@ We support all of the following Google Analytics features:
 - [User-ID](#user-id)
 - [Virtual Pageviews](#virtual-pageviews)
 - [Optimize](#optimize)
+- [User Deletion](#user-deletion)
 
 ### Client-Side Library Methods
 
@@ -738,7 +737,7 @@ We default the **Cookie Domain Name** to `auto`, which automatically sets the co
 
 If you need to test on `localhost`, but don't need to track between multiple sub-domains, then you can set the domain to `none`.
 
-If you only want the cookie to persist on a single sub-domain, enter that sub-domain in the **Cookie Domain Name** field, like this: `swingline.initech.com`. In this case visitors to `conclusions.initech.com` or `initech.com` will not be tracked.
+If you only want the cookie to persist on a single sub-domain, enter that sub-domain in the **Cookie Domain Name** field, like this: `swingline.example.com`. In this case visitors to `conclusions.example.com` or `example.com` will not be tracked.
 
 For more information on Google Analytics cookies and domains name see [Google's docs on the subject](https://developers.google.com/analytics/devguides/collection/analyticsjs/domains).
 
@@ -805,9 +804,19 @@ We take care of tracking the canonical URL to Google Analytics for you automatic
 
 If you'd like to integrate with Google Analytics' [Optimize plugin](https://support.google.com/360suite/optimize/answer/6262084#optimize-ga-plugin), all you have to do is insert your Optimize **Container ID** in your destination settings and we will require the plugin when we initialize GA!
 
-*Note*: Please make sure your Container ID is spelled correctly and that your Optimize container is ENABLED w/in Google. Otherwise, your GA destination will silently error out every time you try to make any tracking calls.
+*Note*: Make sure your Container ID is spelled correctly and that your Optimize container is ENABLED w/in Google. Otherwise, your GA destination will silently error out every time you try to make any tracking calls.
 
 You may, however, want to deploy [page hiding](https://support.google.com/360suite/optimize/answer/6262084#page-hiding) to prevent the page from flashing / flickering when the A/B test is loaded. This is recommended by Google. This code must be added manually by customers since it needs to load synchronously. Note that the Optimize container ID must be included in this snippet too.
+
+### User Deletion
+
+You can use Segment's in-app Privacy Tool to send deletion requests using `userId`s. This deletes a user from your connected raw Data Destinations and forwards a deletion request to Google Analytics. [See the Privacy Tools documentation](/docs/privacy/user-deletion-and-suppression/) to learn more. 
+
+To enable user deletion for Google Analytics:
+1. Navigate to the the **User Deletion** setting in your Segment Google Analytics destination settings
+2. Authenticate your Google Analytics account using OAuth. 
+
+> **Note**: User deletion for Google Analytics is currently only supported for Universal Analytics and not Classic Analytics. You also can only send user deletion requests using a `userId` through the Privacy Tool. This means you must  have the User-Id feature enable in your Google Analytics Property within the your Google Analytics dashboard and have Segment sending your Property `userIds` by enabling the setting **Send User-ID to GA**.
 
 - - -
 
@@ -838,7 +847,7 @@ Google Analytics's default reporting time frame is a month ago to yesterday. You
 
 ### HTTPS
 
-If your site uses `https://`, please go to your Google Analytics property settings page and change your **Site URL** to use the `https://` protocol.
+If your site uses `https://`, go to your Google Analytics property settings page and change your **Site URL** to use the `https://` protocol.
 
 
 ### Bounce Rates
@@ -980,7 +989,7 @@ The following Segment properties are mapped to Firebase Analytics properties:
 
 
 
-> **Note**: Firebase Analytics does not support `action` or `label` in their [predefined event parameter names](https://firebase.google.com/docs/reference/cpp/group/parameter-names), and Segment's Firebase SDK does not support mapping those properties. If you want to pass those properties to Firebase please send them as a custom property.
+> **Note**: Firebase Analytics does not support `action` or `label` in their [predefined event parameter names](https://firebase.google.com/docs/reference/cpp/group/parameter-names), and Segment's Firebase SDK does not support mapping those properties. If you want to pass those properties to Firebase  send them as a custom property.
 
 **Custom Events and Properties**
 Segment's Firebase Analytics SDK allows you to send custom events and properties. If you make a `track()` call but the event name is not one of the above mappings, Segment calls `logEventWithName` (iOS) or `logEvent` (Android). This allows you to pass any custom event name you want. Event names must contain 1 to 40 alphanumeric characters or underscores, per the [Firebase documentation](https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Event). The Segment Firebase SDKs format custom event names to remove trailing whitespace and replace all spaces and periods with underscores.

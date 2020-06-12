@@ -38,7 +38,7 @@ When you call `track` on on the server-side, we route the event to Keen.
 
 If you make the following Segment call using any of the server-side sources,
 ```javascript
-analytics.track('user@gmail.com', 'Purchased', {
+analytics.track('user@example.com', 'Purchased', {
     item: 'T-Shirt',
     revenue: 19.99
 });
@@ -50,7 +50,7 @@ We will forward the following to Keen:
 * Event Properties:
 ```javascript
 {
-    userId: 'user@gmail.com'
+    userId: 'user@example.com'
     item: 'T-Shirt',
     revenue: 19.99
 }

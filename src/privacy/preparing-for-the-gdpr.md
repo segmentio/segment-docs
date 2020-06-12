@@ -1,5 +1,5 @@
 ---
-title: "Preparing for the GDPR and CCPA"
+title: "Complying with the GDPR and CCPA"
 ---
 
 On May 25, 2018 businesses faced the greatest regulatory change in data privacy policy since the 1995 EU Data Protection Directive was enacted: the [EU General Data Protection Regulation](https://ec.europa.eu/info/law/law-topic/data-protection_en) (GDPR). The European Union began enforcing the GDPR on May 25, 2018 in an effort to strengthen the security and protection of personal data of EU residents.
@@ -60,7 +60,7 @@ In addition to seeking independent legal advice regarding your obligations under
 
 6.  Determine if your company needs to appoint a [Data Protection Officer](https://gdpr-info.eu/art-37-gdpr/) (DPO). If you will be appointing a DPO, begin searching for the best person for the role.
 
-7.  Start preparing today! Becoming GDPR compliant takes time, and will require you to rethink how you collect and manage customer data. If you have any questions about the GDPR or want to learn how Segment can help you prepare, [please let us know](https://segment.com/contact/sales)!
+7.  Start preparing today! Becoming GDPR compliant takes time, and will require you to rethink how you collect and manage customer data. If you have any questions about the GDPR or want to learn how Segment can help you prepare, [let us know](https://segment.com/contact/sales)!
 
 
 Over the coming weeks and months, we'll be sharing details on our new product capabilities and our best practices to help you prepare for the GDPR. Check back here for updates.

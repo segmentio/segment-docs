@@ -6,6 +6,8 @@ In the Segment [Spec](/docs/connections/spec/) all the [API calls](/docs/connect
 
 However, not all destinations accept all fields included in the Spec. Not sure which fields a destination accepts? Refer to the destination's documentation page, or check out the [open-source destination code on Github](https://github.com/segment-integrations).
 
+{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Segment Methods" content="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
+
 ## Structure
 Every API call has the same core structure and fields. These fields describe user identity, timestamping and mechanical aides like API version.
 
@@ -144,7 +146,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`campaign`</td>
     <td>Object</td>
-    <td>Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term` and `content`.
+    <td>Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter.
     <br><br>
     This maps directly to the common UTM campaign parameters.
     </td>
@@ -152,7 +154,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`device` </td>
     <td>Object</td>
-    <td>Dictionary of information about the device, containing `id`, `manufacturer`, `model`, `name`, `type` and `version`.</td>
+    <td>Dictionary of information about the device, containing `id`, `advertisingId`, `manufacturer`, `model`, `name`, `type` and `version`.</td>
   </tr>
   <tr>
     <td>`ip`</td>
@@ -187,7 +189,7 @@ Context is a dictionary of extra information that provides useful context about 
   <tr>
     <td>`page`</td>
     <td>Object</td>
-    <td>Dictionary of information about the current page in the browser, containing `hash`, `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by Analytics.js.
+    <td>Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#context--traits).
     </td>
   </tr>
   <tr>
@@ -275,8 +277,8 @@ Other libraries only collect `context.library`, any other context variables must
 | userAgent                |      √       |               |      √            |
 | timezone                 |              |      √        |      √            |
 
-* IP Address is not collected by our libraries, but instead filled in by our servers when it receives a message for **client side events only**.
-* Our Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
+- IP Address is not collected by our libraries, but instead filled in by our servers when it receives a message for **client side events only**.
+- Our Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 
 ## Integrations
 

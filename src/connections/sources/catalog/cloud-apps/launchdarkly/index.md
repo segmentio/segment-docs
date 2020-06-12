@@ -1,16 +1,11 @@
 ---
 title: LaunchDarkly Source
-source-type: event
 ---
 [LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver and control software through feature flags.
 
-This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This source is maintained by LaunchDarkly. For any issues with the source, [contact their team](mailto:support@launchdarkly.com).
 
-
-This source is maintained by LaunchDarkly. For any issues with the source, please [reach out to their team](mailto:support@launchdarkly.com).
-
-
-_**NOTE:** The LaunchDarkly Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on November 8, 2019. If you are interested in joining their beta program or have any feedback to help improve the LaunchDarkly Source and its documentation, please [let  their team know](mailto:support@launchdarkly.com)!_
+_**NOTE:** The LaunchDarkly Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on November 8, 2019. If you are interested in joining their beta program or have any feedback to help improve the LaunchDarkly Source and its documentation, [let their team know](mailto:support@launchdarkly.com)!_
 
 
 ## Getting Started
@@ -137,4 +132,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the LaunchDarkly team](mailto:support@launchdarkly.com).
+If you experience any issues with how the events arrive in Segment, [contact the LaunchDarkly team](mailto:support@launchdarkly.com).

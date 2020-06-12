@@ -1,9 +1,8 @@
 ---
 title: 'Quickstart: analytics-java'
-hidden: true
-sourceTitle: 'Java'
-sourceCategory: 'Server'
 ---
+
+<!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
 
@@ -14,7 +13,7 @@ If you want to dive deeper at any point, check out the [analytics-java reference
 
 ## Step 1: Install the Library
 
-The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it dead simple to upgrade and swap out destinations. The library is distributed via [Maven Central](http://maven.org/) as a `jar` dependency.
+The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it simple to upgrade and swap out destinations. The library is distributed via [Maven Central](http://maven.org/) as a `jar` dependency.
 
 Here's what it would look like with Maven:
 
@@ -63,7 +62,7 @@ analytics.enqueue(IdentifyMessage.builder()
     .userId("f4ca124298")
     .traits(ImmutableMap.builder()
         .put("name", "Michael Bolton")
-        .put("email", "mbolton@initech.com")
+        .put("email", "mbolton@example.com")
         .build()
     )
 );

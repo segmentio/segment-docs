@@ -8,7 +8,7 @@
 
 ## Personas
 
-You can send computed traits and audiences generated through [Segment Personas](/docs/personas) to this destination as a **user property**. To learn more about Personas, reach out for a [demo](https://segment.com/contact/demo).
+You can send computed traits and audiences generated through [Segment Personas](/docs/personas) to this destination as a **user property**. To learn more about Personas, contact us for a [demo](https://segment.com/contact/demo).
 
 For user-property destinations, an [identify](/docs/connections/spec/identify) call will be sent to the destination for each user being added and removed. The property name will be the snake_cased version of the audience name you provide with a true/false value. For example, when a user first completes an order in the last 30 days, we will send an identify call with the property `order_completed_last_30days: true`, and when this user no longer satisfies we will set that value to `false`.
 
@@ -18,7 +18,7 @@ When the audience is first created an identify call is sent for every user in th
 
 {% endif %}
 
-{% unless page.rewrite == true %}
+{% unless page.rewrite == true or page.hide-cmodes == true%}
 ## Supported Sources and Connection Modes
 {% if currentIntegration.components.size > 0 %}
 {% include content/connection-modes.md %}
@@ -33,9 +33,9 @@ To learn more about about Connection Modes and what dictates which we support, [
 
 {% if currentIntegration.platforms.mobile == true %}
   {% if currentIntegration.platforms.server == true %}
-  Segment offers an *optional* **Device-based** Connection Mode for **Mobile** data with {{ currentIntegration.display_name }}. If you'd like to use those features that require client-based functionality, follow the steps above to ensure you have packaged the {{ currentIntegration.display_name }} SDK with Segment's.
+  Segment offers an *optional* **Device-based** Connection Mode for **Mobile** data going to {{ currentIntegration.display_name }}, so that you can use {{ currentIntegration.display_name }} features that collect data directly from the mobile device. To do this, you must package the Segment-{{ currentIntegration.display_name }} mobile SDK with the Segment mobile SDK.
   {% else %}
-  This destination *requires* a **Device-based** Connection Mode for **Mobile** data. Follow the steps above to ensure you have packaged the {{ currentIntegration.display_name }} SDK with Segment's.
+  This destination *requires* that you use a **Device-based** Connection Mode for **Mobile** data. Make sure you package the {{ currentIntegration.display_name }} mobile SDK with the Segment mobile library.
   {% endif %}
 {% endif %}
 {% endunless %}

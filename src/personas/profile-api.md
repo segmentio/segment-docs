@@ -21,7 +21,7 @@ This document has four parts…
 4. [**Personalization**](/docs/personas/profile-api/#recommended-implementation): Example personalization solution built on Personas via server-side personalization
 
 ## Product Highlights
-1. **Realtime Access** - fetch your entire user profile in under 200ms
+1. **Realtime Access** - fetch your entire user profile
 2. **Realtime Data** — query streaming data on the user profile that happened seconds ago
 3. **One Identity** — query an end user's interactions across web, mobile, server, and third party touch-points
 4. **Rich Data** — query any amount of custom events or user traits
@@ -33,7 +33,7 @@ This document has four parts…
 Your access secret allows you to call the Segment API and access customer data.  We do not recommend exposing this key in client applications (see the end of this section for more details).
 
 
-1.  Go to _Personas > Settings > Access Secrets_: `https://app.segment.com/<your-workspace>/personas/settings` (replace <your-workspace> with your own workspace).
+1.  Go to _Personas > Settings > API Access_: `https://app.segment.com/<your-workspace>/personas/settings` (replace <your-workspace> with your own workspace).
 2.  Create your **Access Secret** with name, for e.g. `testing/development`
 
     ![](images/1516309197043.png)
@@ -53,7 +53,7 @@ Your access secret allows you to call the Segment API and access customer data. 
 
 1. Head over to Personas > Explorer: `https://app.segment.com/<your-workspace>/personas/explorer` (replace **your-workspace** with your own workspace slug)
 2. And press on any interesting user in the list.
-3. Copy their `external_id` (ex: `email:bob@gmail.com`)
+3. Copy their `external_id` (ex: `email:bob@example.com`)
 ![](images/1516310549937.png)
 ![](images/1516310623462.png)
 
@@ -87,7 +87,7 @@ Your access secret allows you to call the Segment API and access customer data. 
 **Search by an External ID**
 You can query directly by a user's email or user_id:
 
-`https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/email:user@gmail.com/events`
+`https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/email:user@example.com/events`
 
 
 `https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/user_id:u1234567/events`
@@ -95,7 +95,7 @@ You can query directly by a user's email or user_id:
 **External IDs**
 You can query all of a user's external ids (email, anonymous_id, user_id):
 
-`https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/email:user@gmail.com/external_ids`
+`https://profiles.segment.com/v1/spaces/<your-namespace-id>/collections/users/profiles/email:user@example.com/external_ids`
 
 **Traits**
 You can query a user's traits (first_name, last_name, ...):

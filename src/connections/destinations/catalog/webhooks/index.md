@@ -4,7 +4,7 @@ title: Webhooks Destination
 ---
 Segment Webhooks submit real-time user data to your own HTTP endpoints. A Webhook is an HTTP callback: a simple event-notification via HTTP POST. A web application implementing Webhooks will POST a message to a URL when certain things happen.
 
-This document was last updated on January 28, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on January 28, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -19,13 +19,17 @@ This document was last updated on January 28, 2018. If you notice any gaps, out-
 
 **Note:** We'll send you HTTP(s) POST requests that look like the below for each type. Note with each call, you'll also receive a [`context`](/docs/connections/spec/common/#context) object that provides information about the user's device, IP address, etc. As you start experimenting, we recommend trying the Webhooks destination with [RequestBin.com](https://requestbin.com/) and [ultrahook](http://www.ultrahook.com) to immediately start seeing requests coming through.
 
+## Webhooks timeouts
+
+When Segment sends an event to a webhook endpoint, the service must respond within 5 seconds. If Segment does not receive a response within that period, the system logs a timeout error and [retries the event later](/docs/connections/destinations/#retries-between-segment-and-destinations).
+
 ## Page
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 ```
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -44,12 +48,12 @@ Content-Type: application/json
 ```
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 ```
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -78,12 +82,12 @@ Content-Type: application/json
 ```
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 ```
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -102,12 +106,12 @@ Content-Type: application/json
 ```
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 ```
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -125,12 +129,12 @@ Content-Type: application/json
 ```
 ## Alias
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
 ```
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -144,13 +148,13 @@ Content-Type: application/json
 ```
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -178,7 +182,7 @@ When you create a deletion request, for each affected source that has webhooks e
 POST https://your-webhook-url.com/x
 ```
 ```
-User-Agent: Segment/version
+User-Agent: Segment.io/1.0
 Content-Type: application/json
 ```
 ```json
@@ -212,7 +216,7 @@ if (signature === digest) {
 
 ### SSL Certification
 
-If your server is using HTTPS, please note that our webhooks destination does not work with self-signed certs. If webhooks detects a self-signed cert it will throw an error and no request will be sent.
+If your server is using HTTPS, note that our webhooks destination does not work with self-signed certs. If webhooks detects a self-signed cert it will throw an error and no request will be sent.
 
 ### Sending to multiple webhooks
 

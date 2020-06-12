@@ -6,9 +6,9 @@ title: Mutiny Destination
 [Mutiny](https://mutinyhq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to personalize your website content based on customer's activity and 3rd party data. By integrating with [Segment](https://segment.com), you can easily and accurately track conversions and integrate 1st party data for personalization with Mutiny.
 
 
-This destination is maintained by [Mutiny](https://mutinyhq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, please [reach out to their team](mailto:mutinylovesyou@mutinyhq.com).
+This destination is maintained by [Mutiny](https://mutinyhq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, [contact their team](mailto:mutinylovesyou@mutinyhq.com).
 
-_**NOTE:** This doc was last updated December 12, 2019. If have any feedback to help improve the Mutiny Destination and its documentation, please [let the Mutiny team know](mailto:mutinylovesyou@mutinyhq.com)!_
+_**NOTE:** This doc was last updated December 12, 2019. If have any feedback to help improve the Mutiny Destination and its documentation, [let the Mutiny team know](mailto:mutinylovesyou@mutinyhq.com)!_
 
 
 ## Getting Started
@@ -22,7 +22,7 @@ To setup Mutiny to receive Segment data:
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -33,11 +33,11 @@ Page calls will be sent to Mutiny as an `impression`.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -46,7 +46,7 @@ Identify calls will be sent to Mutiny as an `identify` event. We use this in ord
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')

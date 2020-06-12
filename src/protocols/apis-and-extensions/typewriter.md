@@ -1,5 +1,6 @@
 ---
 title: 'Typewriter'
+redirect_from: '/protocols/typewriter/'
 ---
 
 [Typewriter](https://github.com/segmentio/typewriter) is a tool for generating strongly-typed Segment analytics libraries based on your pre-defined [Tracking Plan](/docs/protocols/tracking-plan) spec.
@@ -54,7 +55,7 @@ To get started, check out one of the quickstart guides below:
 - [Browser Quickstart](#browser-quickstart)
 - [Node.js Quickstart](#node-js-quickstart)
 - [iOS Quickstart](#ios-quickstart)
-- Android Quickstart (Coming Soon)
+- [Android Quickstart](#android-quickstart)
 
 > Have feedback on Typewriter? Consider opening a [GitHub issue here](https://github.com/segmentio/typewriter/issues/new).
 
@@ -239,6 +240,40 @@ SEGTypewriterAnalytics.orderCompleted(
 
 You're now good to go! To learn more about some of the advanced configuration options that Typewriter supports, read on.
 
+## Android Quickstart
+
+Before you start, make sure you have `node` installed. Use the instructions in the [prerequisites](#prerequisites) above.
+
+Next, install `analytics-android` in your app, and configure the singleton analytics instance by following the first three steps in our [Android Quickstart](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-1-install-the-library).
+
+Typewriter comes with a quickstart wizard that generates a [`typewriter.yml`](#configuration-reference) configuration, along with your first Typewriter client. To use this wizard, run:
+
+```sh
+$ npx typewriter init
+```
+
+> success ""
+> **Note**: You can regenerate your Typewriter client by running `npx typewriter`. You need to do this each time you update your Tracking Plan.
+
+Running the command creates a `typewriter.yml` file in your repo. For more information on the format of this file, see the [Typewriter Configuration Reference](#configuration-reference).
+
+You can now use your Typewriter client in your Android Java application:
+
+```java
+// Import your auto-generated Typewriter client:
+import com.segment.generated.*
+
+// Issue your first Typewriter track call!
+TypewriterAnalytics.with(this).orderCompleted(
+  OrderCompleted.Builder()
+    .orderID("ck-f306fe0e-cc21-445a-9caa-08245a9aa52c")
+    .total(39.99)
+    .build()
+);
+```
+
+Congrats, you're ready to go! To learn more about some of the advanced configuration options that Typewriter supports, read on.
+
 ## Adding Events
 
 To update or add a new event to a Typewriter client, first apply your changes to your Tracking Plan. Then run the following:
@@ -257,14 +292,13 @@ Only workspace owners can create Segment API tokens. To create an API token, ope
 <!-- This is a pretty tall image with an off-gray background. Just formatting it slightly to reduce its size and add a border. -->
 <img src="images/typewriter-token.png" alt="Example Typewriter Token" style="height: 800px; margin: auto; border: 1px solid lightgray">
 
-Typewriter looks for an API token in three ways, in the following order:
-1. Looks for an environment variable called `TYPEWRITER_TOKEN`.
-2. Executes a token script from the `typewriter.yml`. See [Token Script](#token-script) for more information.
-3. Reads the contents of a `~/.typewriter` file.
+Typewriter looks for an API token in two ways, in the following order:
+1. Executes a token script from the `typewriter.yml`. See [Token Script](#token-script) for more information.
+2. Reads the contents of a `~/.typewriter` file.
 
 The quickstart wizard prompts you for an API token and stores it in `~/.typewriter` for you.
 
-Segment recommends you use a [Token Script](#token-script) to share an API token with your team.
+Segment recommends you use a [Token Script](#token-script) to share an API token with your team. When you use a token script, you can supply your API token as an environment variable (`echo $TYPEWRITER_TOKEN`), from a `.env.` file (`source .env; echo $TYPEWRITER_TOKEN`) or using any other CLI tool for providing secrets.
 
 ## Editor Configuration
 
@@ -482,4 +516,4 @@ If you're interested in contributing, [open an issue on GitHub](https://github.c
 
 ## Feedback
 
-We're always curious about any feedback you have on your experience with Typewriter! To reach out, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new).
+We're always curious about any feedback you have on your experience with Typewriter! To contact us, [open an issue on GitHub](https://github.com/segmentio/typewriter/issues/new).

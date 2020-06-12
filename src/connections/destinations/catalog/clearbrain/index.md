@@ -4,9 +4,9 @@ rewrite: true
 ---
 [ClearBrain](https://clearbrain.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
 
-This destination is maintained by ClearBrain. For any issues with the destination, please [reach out to their team](mailto:support@clearbrain.com).
+This destination is maintained by ClearBrain. For any issues with the destination, [contact their team](mailto:support@clearbrain.com).
 
-_**NOTE:** ClearBrain is currently in beta, and this doc was last updated on January 23, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the ClearBrain Destination and its documentation, please [let us know](mailto:support@clearbrain.com)!_
+_**NOTE:** ClearBrain is currently in beta, and this doc was last updated on January 23, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the ClearBrain Destination and its documentation, [let us know](mailto:support@clearbrain.com)!_
 
 
 **Use Cases**
@@ -33,7 +33,7 @@ _**NOTE:** ClearBrain is currently in beta, and this doc was last updated on Jan
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -44,7 +44,7 @@ Page calls will be sent to ClearBrain as a `pageview`.
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -55,11 +55,11 @@ Screen calls will be sent to ClearBrain as a `screenview`.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -68,7 +68,7 @@ Identify calls will be sent to ClearBrain as an `identify` event. The `userId` w
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')

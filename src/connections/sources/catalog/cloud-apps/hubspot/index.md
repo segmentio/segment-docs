@@ -1,16 +1,13 @@
 ---
 title: HubSpot Source
 rewrite: true
-source-type: object
 ---
 
 [HubSpot](http://www.hubspot.com) is an all-in-one marketing tool that helps attract new leads and convert them into paying customers, with features like landing page creation and email automation.
 
-Hubspot is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
+Are you trying to set up HubSpot as a destination to receive data from Segment? Go here [HubSpot Destination](https://segment.com/docs/connections/destinations/catalog/hubspot/).
 
-Are you trying to setup HubSpot as a destination to receive data from Segment? Go here [HubSpot Destination](https://segment.com/docs/connections/destinations/catalog/hubspot/).
-
-This document was last updated on July 10, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on July 10, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -63,7 +60,7 @@ Due to HubSpot's [API Rate Limits](http://developers.hubspot.com/apps/api_guidel
 
 ## Collection Properties
 
-Below are tables outlining the properties included in the collections listed above. To see the full description of each property, please refer to the HubSpot documentation linked in the collections above.
+Below are tables outlining the properties included in the collections listed above. To see the full description of each property, refer to the HubSpot documentation linked in the collections above.
 
 If you have Custom Properties on any of these collections that you would like to sync, submit a ticket detailing the custom properties [here](http://segment.com/help/contact) and we can enable it for you.
 

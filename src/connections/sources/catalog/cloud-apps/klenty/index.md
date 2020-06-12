@@ -1,14 +1,11 @@
 ---
 title: Klenty Source
-source-type: event
 ---
 [Klenty](https://www.klenty.com/) helps sales teams to send personalized emails and automated follow-ups at scale. With Klenty, your sales team can completely automate their email outreach and focus on closing more deals.
 
-This is an [Event Cloud Source](https://segment.com/docs/connections/sources/#event-cloud-sources) which can not only export data into your Segment warehouse, but they can also federate the exported data into your other enabled Segment Destinations.
+This source is maintained by Klenty. For any issues with the destination, [contact their team](mailto:support@klenty.com).
 
-This source is maintained by Klenty. For any issues with the destination, please [reach out to their team](mailto:support@klenty.com).
-
-_**NOTE:** The Klenty Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on May 7, 2019. If you are interested in joining their beta program or have any feedback to help improve the Klenty Destination and its documentation, please [let  their team know](mailto:support@klenty.com)!_
+_**NOTE:** The Klenty Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on May 7, 2019. If you are interested in joining their beta program or have any feedback to help improve the Klenty Destination and its documentation, [let their team know](mailto:support@klenty.com)!_
 
 ## Getting Started
 
@@ -93,4 +90,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Klenty team](mailto:support@klenty.com).
+If you experience any issues with how the events arrive in Segment, [contact the Klenty team](mailto:support@klenty.com).

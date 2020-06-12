@@ -24,9 +24,9 @@ If a company needs to understand a user's activity across all apps, we recommend
 
 If, however, each app should maintain its own metrics and LTV analysis, regardless of the overlap of users between apps, we recommend creating a separate Personas space per app and only connecting sources related to each app to its space. This will give a siloed view of how users interact with each individual app.
 
-  _Note: Each workspace has two spaces by default. Please contact your CSM to enable additional spaces._
+  _Note: Each workspace has two spaces by default. contact your CSM to enable additional spaces._
 
-For an eCommerce example, see [here](/docs/personas/identity-resolution/ecommerce-example.md)
+For an eCommerce example, see [here](/docs/personas/identity-resolution/ecommerce-example/)
 
 ## Cross-Channel Identification
 A user can interact with a brand through multiple channels and departments. A user might have touch points with a sales team, a marketing team and a customer support team throughout her customer journey. It's important for companies to have insights into these cross-functional activities to ensure they understand the complete customer experience.

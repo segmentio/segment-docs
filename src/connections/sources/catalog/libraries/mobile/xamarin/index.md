@@ -52,7 +52,7 @@ Example `identify` call:
 ```csharp
 Analytics.Client.Identify("019mr8mf4r", new Traits() {
     { "name", "Tom Smykowski" },
-    { "email", "tom@initech.com" },
+    { "email", "tom@example.com" },
     { "friends", 29 }
 });
 ```
@@ -175,7 +175,7 @@ Example `group` call:
 ```csharp
 Analytics.Client.Group("userId", "groupId", new Traits() {
     { "name", "Initech, Inc." },
-    { "website", "http://www.initech.com" }
+    { "website", "http://www.example.com" }
 });
 ```
 The `group` call has the following fields:
@@ -219,11 +219,11 @@ Here's a full example of how we might use the `alias` call:
 // the anonymous user does actions ...
 Analytics.Client.Track("anonymous_user", "Anonymous Event");
 // the anonymous user signs up and is aliased
-Analytics.Client.Alias("anonymous_user", "identified@gmail.com");
+Analytics.Client.Alias("anonymous_user", "identified@example.com");
 // the identified user is identified
-Analytics.Client.Identify("identified@gmail.com", new Traits() { plan: "Free" });
+Analytics.Client.Identify("identified@example.com", new Traits() { plan: "Free" });
 // the identified user does actions ...
-Analytics.Client.Track("identified@gmail.com", "Identified Action");
+Analytics.Client.Track("identified@example.com", "Identified Action");
 ```
 
 For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
@@ -256,7 +256,7 @@ Here's an example `identify` call with the `options` object shown.
 
 ```csharp
 Analytics.Client.Identify("hj2kf92ds212", new Traits() {
-    { "email", "tom@initech.com" },
+    { "email", "tom@example.com" },
     { "name", "Tom Smykowski" },
 }, new Options()
     .SetIntegration("all", false)
@@ -314,7 +314,7 @@ You can provide nested properties, like so:
 
 ```csharp
 Analytics.Client.Identify("hj2kf92ds212", new Traits() {
-    { "email", "tom@initech.com" },
+    { "email", "tom@example.com" },
     { "name", "Tom Smykowski" },
     { "address", new Dict() {
         { "street", "123 Fake Street" },

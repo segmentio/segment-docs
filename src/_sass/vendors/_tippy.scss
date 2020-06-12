@@ -1,0 +1,111 @@
+.tippy-tooltip[data-animation=fade][data-state=hidden] {
+  opacity: 0;
+}
+
+.tippy-iOS {
+  cursor: pointer!important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tippy-popper {
+  pointer-events: none;
+  max-width: calc(100vw - 10px);
+  transition-timing-function: cubic-bezier(.165,.84,.44,1);
+  transition-property: transform;
+}
+
+.tippy-tooltip {
+  position: relative;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  background-color: #fff;
+  box-shadow: 0px 8px 24px rgba(13, 21, 55, 0.12);
+  border: 1px solid #edf0ed;
+  transition-property: visibility,opacity,transform;
+  outline: 0;
+}
+
+.tippy-tooltip[data-placement^=top]>
+.tippy-arrow {
+  border-width: 8px 8px 0;
+  border-top-color: #fff;
+  margin: 0 3px;
+  transform-origin: 50% 0;
+  bottom: -19px;
+}
+
+.tippy-tooltip[data-placement^=bottom]>
+.tippy-arrow {
+  margin: 0 3px;
+  transform-origin: 50% 7px;
+  top: -19px;
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='19' height='9' viewBox='0 0 19 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.08579 1.41421L1 8.5H18L10.9142 1.41421C10.1332 0.633165 8.86683 0.633165 8.08579 1.41421Z' fill='white'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5607 1.76777C9.97487 1.18198 9.02513 1.18198 8.43934 1.76777L1.70711 8.5H0.3L0.646446 8.14645L7.73223 1.06066C8.70854 0.0843495 10.2915 0.0843493 11.2678 1.06066L18.3536 8.14645L18.7 8.5H17.2929L10.5607 1.76777Z' fill='%23EDF0ED'/%3e%3c/svg%3e");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tippy-tooltip[data-placement^=left] > .tippy-arrow {
+  border-width: 8px 0 8px 8px;
+  border-left-color: #fff;
+  margin: 3px 0;
+  transform-origin: 0 50%;
+  right: -19px;
+}
+
+.tippy-tooltip[data-placement^=right] > .tippy-arrow {
+  border-width: 8px 8px 8px 0;
+  border-right-color: #fff;
+  margin: 3px 0;
+  transform-origin: 7px 50%;
+  left: -19px;
+}
+
+.tippy-tooltip[data-interactive][data-state=visible] {
+  pointer-events: auto;
+}
+
+.tippy-tooltip[data-inertia][data-state=visible] {
+  transition-timing-function: cubic-bezier(.54,1.5,.38,1.11);
+}
+
+.tippy-arrow {
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.tippy-tooltip.dark-theme {
+  margin-top: -16px;
+  padding: 5px 7px;
+  background-color: #545454;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+
+  .tippy-arrow {
+    bottom: -5px;
+    border-top-color: #545454;
+    transform: translateX(-15px);
+  }
+}
+
+.tippy-tooltip.dark-theme[data-placement^=bottom-start] {
+  margin-top: 0;
+
+  .tippy-arrow {
+    top: -5px;
+    width: 0;
+    height: 0;
+    margin: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #545454;
+    border-top: none;
+    background-image: none;
+    transform: translateX(-17px);
+  }
+}

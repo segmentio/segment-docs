@@ -1,13 +1,10 @@
 ---
 title: Zendesk Source
-source-type: object
 ---
 
-Zendesk is a customer service platform for enterprises, which provides a customer support platform that allows quicker and easier interaction between businesses and customers. [Visit website](https://www.zendesk.com/)
+[Zendesk](https://www.zendesk.com/) is a customer service platform for enterprises, which provides a customer support platform that allows quicker and easier interaction between businesses and customers.
 
-This is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
-
-This document was last updated on April, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on April, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -33,7 +30,7 @@ Make sure the user has Admin authorizations as we use the incremental export API
   ![](Images/zendesk3.png)
 
 ### Rate Limits
-The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/rest_api/docs/core/introduction) and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export). The source's requests to the Incremental API do not count towards your Zendesk account's rate limits, but requests to the Core API do. By default, we cap our requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/rest_api/docs/core/introduction#rate-limits). If you'd like us to increase or decrease the request rate for your source, please [let us know](/contact), and we'll get it set up. We'll add support for this in the UI soon!
+The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/rest_api/docs/core/introduction) and [Incremental Exports API](https://developer.zendesk.com/rest_api/docs/core/incremental_export). The source's requests to the Incremental API do not count towards your Zendesk account's rate limits, but requests to the Core API do. By default, we cap our requests to Zendesk's Core API to a rate of 200 requests per minute to avoid triggering [Zendesk's Rate Limits](https://developer.zendesk.com/rest_api/docs/core/introduction#rate-limits). If you'd like us to increase or decrease the request rate for your source, [let us know](https://segment.com/help/contact/), and we'll get it set up. We'll add support for this in the UI soon!
 
 ## Components
 
@@ -41,11 +38,11 @@ The Zendesk source uses both Zendesk's [Core API](https://developer.zendesk.com/
 
 The Zendesk source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Zendesk objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. `zendesk_prod.users`).
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Zendesk.  For example,  if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
+Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Zendesk.  For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, please let us know!
+At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, [let us know](https://segment.com/help/contact/)!
 
 ## Collections
 

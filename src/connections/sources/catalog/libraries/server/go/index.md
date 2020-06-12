@@ -9,7 +9,7 @@ Our Go library lets you record analytics data from your Go code. The requests hi
 
 This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-go).
 
-All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses a tunable buffer to batch messages, optimized for throughput and reduced network activity.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses a tunable buffer to batch messages, optimized for throughput and reduced network activity.
 
 ## Getting Started
 
@@ -53,7 +53,7 @@ client.Enqueue(analytics.Identify{
   UserId: "019mr8mf4r",
   Traits: analytics.NewTraits().
     SetName("Michael Bolton").
-    SetEmail("mbolton@initech.com").
+    SetEmail("mbolton@example.com").
     Set("plan", "Enterprise").
     Set("friends", 42),
 })
@@ -228,7 +228,7 @@ client.Enqueue(analytics.Identify{
   UserId: "019mr8mf4r",
   Traits: map[string]interface{}{
     "name":    "Michael Bolton",
-    "email":   "mbolton@initech.com",
+    "email":   "mbolton@example.com",
     "plan":    "Enterprise",
     "friends": 42,
   },

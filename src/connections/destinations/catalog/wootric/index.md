@@ -3,9 +3,11 @@ rewrite: true
 title: Wootric Destination
 ---
 
-[Wootric](https://www.wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the AI-powered platform, based on the Net Promoter Score℠ system, for measuring and boosting customer happiness. The Wootric Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-wootric).
+[Wootric](https://www.wootric.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the modern customer feedback management platform that brands around the globe use to make experience their competitive advantage. 
 
-This document was last updated on October 15, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please let us know!
+The Wootric Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-wootric).
+
+This document was last updated on January 23, 2020. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, let us [know](support@wootric.com)!
 
 
 ## Getting Started
@@ -23,24 +25,14 @@ This document was last updated on October 15, 2018. If you notice any gaps, out-
 
 **IMPORTANT:**  The incoming responses and surveys will not be tied to a user until you [identify](https://segment.com/docs/connections/destinations/catalog/wootric/#identify) your user.
 
-## Page
-
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
-
-```javascript
-analytics.page();
-```
-
-When you call `page` in the Javascript API, Wootric will log the page visit.
-
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123', {
-  email: 'hello@gmail.com',
+  email: 'hello@example.com',
   createdAt: '2018-08-03T15:28:46.493Z',
   language: 'EN'
 });
@@ -53,3 +45,28 @@ When you call Identify, the user's information is passed to Wootric to check eli
 | `email`            | `wootricSettings.email`           | The email of this user.           |
 | `createdAt`        | `wootricSettings.created_at` | ISO 8610 timestamp. Wootric requires the timestamp to be rounded to the nearest second so we will make this conversion for you. |
 | `language`         | `wootricSettings.language`              | Language for Wootric's Net Promoter Score (NPS). |
+
+
+## Track
+
+When you call Track, the user’s information is passed along with the event name to Wootric to check eligibility during survey responses.
+> note ""
+> **Note**: this only works if you enable Targeted Sampling in your Wootric account. The event name must be exactly the same as the one used in the Track call.
+
+## Page
+
+If you aren't familiar with the Segment Spec, you should first read about what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+
+```js
+analytics.page()
+```
+
+Segment sends Page calls to Wootric as a `pageview`.
+
+When you call Page, Wootric tracks the URL, page name, and page path that you are currently on. You can use this information in the Wootric Settings to trigger surveys by using Wootric's Targeted Sampling feature.
+Wootric recognizes the following Segment Page properties as the following page fields:
+
+| Segment Parameter  | Wootric Parameter                   | Description                          |
+| ------------------ | ------------------------------------ | ------------------------------------ |
+| `name`            | `wootricSettings.email`           | The name assigned to this page.           |
+| `path`            | `wootricSettings.page_info.path`           | The path portion of the URL of the page. Equivalent to the canonical path which defaults to `location.pathname` from the DOM API. |

@@ -5,7 +5,7 @@ rewrite: true
 
 [Inspectlet](https://www.inspectlet.com/) lets you analyze user behavior instantly with Eye Tracking Heatmaps, Screen Capture (record and playback actual visitor sessions), and User-Interaction Analytics. The Inspectlet Destination is open-source. You can browse the code on [GitHub](https://github.com/segment-integrations/analytics.js-integration-inspectlet).
 
-This document was last updated on 20th June, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on 20th June, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -20,7 +20,7 @@ This document was last updated on 20th June, 2018. If you notice any gaps, out-d
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 ```
 analytics.page();
 ```
@@ -29,11 +29,11 @@ The Page method is required to load Inspectlet on each new page load. Calling th
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 ```
 analytics.identify("97980cfea0067", {
   name: "Peter Gibbons",
-  email: "peter@initech.com"
+  email: "peter@example.com"
 });
 ```
 
@@ -41,7 +41,7 @@ Calling `identify` tags the Inspectlet session with all the `traits` you include
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 ```
 analytics.track("Purchased Product", {
   product: "book",

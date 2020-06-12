@@ -44,7 +44,8 @@ Your data is sent to your warehouse (if you have one) and into the Segment backe
 
 [Destination Filters](https://segment.com/docs/connections/destinations/destination-filters/) allow you to control the data flowing into each specific destination, by examining event payloads, and conditionally preventing data from being sent to destinations. You can filter out entire events, or just specific fields in the properties, in the traits, or in the context of your events. Destination filters are not available for, and do not prevent data from reaching your warehouse(s) or S3 destinations.
 
-Destination Filters are available in workspaces that are on a Business Tier plan only.
+> note ""
+> **Note**: Destination Filters are available in workspaces that are on a Business Tier plan only. Destination Filters can only be applied to Cloud-mode ("server-side") streaming destinations. Device-mode destinations are not supported.
 
 ![](images/destination-filter-create.png)
 
@@ -77,7 +78,7 @@ You can find the Schema Defaults in the **Settings** tab for each Source, in **S
 ![](images/schema-defaults.png)
 
 **Schema Defaults Blocking Limitations**
-You cannot use Schema defaults if the source is connected to a Tracking Plan. If you're using Protocols and Tracking Plans, use [Protocols Tracking Plan Blocking](#protocols-tracking-plan-blocking-and-property-omission) to perform the same blocking. Learn more in the [Protocols Schema Configuration documentation](/docs/protocols/tracking-plan/#schema-configuration).
+You cannot use Schema defaults if the source is connected to a Tracking Plan. If you're using Protocols and Tracking Plans, use [Protocols Tracking Plan Blocking](#protocols-tracking-plan-blocking-and-property-omission) to perform the same blocking. Learn more in the [Protocols Schema Configuration documentation](/docs/protocols/enforce/schema-configuration/).
 
 **Track** events blocked by Schema filters are not delivered to either device-mode or cloud-mode Destinations. That means if you send a blocked event from a client-side library like Analytics.js, it is not delivered to any device-mode Destinations.
 
@@ -104,7 +105,7 @@ This feature is only available if the Source is not connected to a Tracking Plan
 
 ## Protocols Tracking Plan blocking and property omission
 
-If you're using Protocols, and you're confident that your tracking plan includes exactly the events and properties you want to record, you can tell Segment to [block unplanned events or malformed JSON](https://segment.com/docs/protocols/tracking-plan/#event-blocking). When you do this, Segment discards any data coming from the Source that doesn't conform to the tracking plan.
+If you're using Protocols, and you're confident that your tracking plan includes exactly the events and properties you want to record, you can tell Segment to [block unplanned events or malformed JSON](/docs/protocols/enforce/schema-configuration/). When you do this, Segment discards any data coming from the Source that doesn't conform to the tracking plan.
 
 By default, the blocked events are permanently discarded: they do not flow to Destinations, and cannot be Replayed (similar to Schema Controls). However, you can opt to send data in violation of the tracking plan to a new Segment Source so you can monitor it. (This source can affect your MTU count.)
 
@@ -115,17 +116,21 @@ If you have Protocols in your workspace, **and** have a tracking plan associated
 
 ## Warehouse Selective Sync
 
-[Warehouse Selective Sync](https://segment.com/docs/connections/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse/) allows you to prevent specific data from getting into your warehouses. You can use this to stop syncing specific events or properties that aren't relevant, and which are just slowing down your warehouse syncs.
+[Warehouse Selective Sync](/docs/connections/storage/warehouses/selective-sync/) allows you to stop sending specific data to specific warehouses. You can use this to stop syncing specific events or properties that aren’t relevant, and which could be slowing down your warehouse syncs.
 
-This feature stops specific data from being sent to *all* data warehouses at the same time, so don't use it if you only want to pick and choose which warehouses get the data. This setting only affects warehouses, and does not prevent data from going to any other destinations.
+> info ""
+> This feature is available to Business Tier customers only, and only Workspace Owners can change Selective Sync settings.
 
-When you enable selective sync, Segment stops sending new data that meets the selection criteria to your warehouses, however it doesn't delete any existing data in the warehouses. If you turn off selective sync later, Segment loads all data that arrived since the last sync into the warehouses, but doesn't backfill data that was omitted while Selective Sync was enabled.
+By default, a warehouse receives all sources and their collections and properties. No data is prevented from reaching warehouses. With Selective Sync, you can configure which collections and properties from a source are sent to each warehouse. This allows you to send different sets of data to each warehouse. This also means that you need to enable or disable data for each individual warehouse.
 
-By default, all sources are enabled, and no data is prevented from reaching warehouses. To enable selective sync, in the Segment app go to the Destinations page, select the warehouse, click **Settings**, and click **Selective sync** in the left menu.
+This feature only affects [warehouses](/docs/connections/storage/warehouses/), and does not prevent data from going to any other [destinations](/docs/connections/destinations/).
+
+When you use Selective Sync to prevent data from syncing to a specific warehouse, Segment stops sending new data that meets the selection criteria to that warehouse, however it doesn't delete any existing data in the warehouses. If you use Selective Sync to re-enable a source after disabling it, Segment loads all data that arrived since the last sync into the warehouse, but doesn't backfill data that was omitted while the source was not syncing. Re-enabling a collection or property does **not** backfill any historical data -- only new data generated after re-enabling will be synced to your warehouse.
+
+To enable selective sync, in the Segment app go to the Destinations page, select the warehouse, click **Settings**, and click **Selective sync** in the left menu.
+See the documentation on [Warehouse Selective Sync](/docs/connections/storage/warehouses/selective-sync/) for more details.
 
 ![](images/warehouse-selective-sync.png)
-
-This feature is available to Business Tier customers only.
 
 ## Privacy Portal filtering
 

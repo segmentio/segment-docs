@@ -7,7 +7,7 @@ shortName: 'net'
 
 Our .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on Github](https://github.com/segmentio/Analytics.NET).
 
-All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
 
 ## Getting Started
@@ -82,7 +82,7 @@ The default initialization settings are production-ready and queue messages on a
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [identify](/docs/connections/spec/identify/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [identify](/docs/connections/spec/identify/) method does.
 
 The `identify` call has the following fields:
 
@@ -113,7 +113,7 @@ Analytics.Client.Identify("019mr8mf4r", new Traits() {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [track](/docs/connections/spec/track/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [track](/docs/connections/spec/track/) method does.
 
 The `track` call has the following fields:
 
@@ -147,7 +147,7 @@ Analytics.Client.Track("019mr8mf4r", "Item Purchased", new Properties() {
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [page](/docs/connections/spec/page/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [page](/docs/connections/spec/page/) method does.
 
 The `page` call has the following fields:
 
@@ -185,7 +185,7 @@ Analytics.Client.Page("019mr8mf4r", "Login", new Properties() {
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [screen](/docs/connections/spec/screen/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [screen](/docs/connections/spec/screen/) method does.
 
 The `screen` call has the following fields:
 
@@ -222,7 +222,7 @@ Analytics.Client.Screen("019mr8mf4r", "Register", new Properties() {
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [group](/docs/connections/spec/group/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [group](/docs/connections/spec/group/) method does.
 
 The `group` call has the following fields:
 
@@ -250,13 +250,13 @@ Example `group` call:
 ```csharp
 Analytics.Client.Group("userId", "groupId", new Traits() {
     { "name", "Initech, Inc." },
-    { "website", "http://www.initech.com" }
+    { "website", "http://www.example.com" }
 });
 ```
 
 ## Alias
 
-If you haven't had a chance to review our spec, please take a look to understand what the [alias](/docs/connections/spec/alias/) method does.
+If you're not familiar with the Segment Specs, take a look to understand what the [alias](/docs/connections/spec/alias/) method does.
 
 The `alias` call has the following fields:
 
@@ -283,11 +283,11 @@ Here's a full example of how we might use the `alias` call:
 // the anonymous user does actions ...
 Analytics.Client.Track("anonymous_user", "Anonymous Event");
 // the anonymous user signs up and is aliased
-Analytics.Client.Alias("anonymous_user", "identified@gmail.com");
+Analytics.Client.Alias("anonymous_user", "identified@example.com");
 // the identified user is identified
-Analytics.Client.Identify("identified@gmail.com", new Traits() { plan: "Free" });
+Analytics.Client.Identify("identified@example.com", new Traits() { plan: "Free" });
 // the identified user does actions ...
-Analytics.Client.Track("identified@gmail.com", "Identified Action");
+Analytics.Client.Track("identified@example.com", "Identified Action");
 ```
 
 ---
@@ -328,7 +328,7 @@ You can specify which analytics destinations you want each action to go to.
 
 ```csharp
 Analytics.Client.Identify("hj2kf92ds212", new Traits() {
-    { "email", "tom@initech.com" },
+    { "email", "tom@example.com" },
     { "name", "Tom Smykowski" },
 }, new Options()
     .SetIntegration("all", false)
@@ -381,7 +381,7 @@ You can provide nested properties, like so:
 
 ```csharp
 Analytics.Client.Identify("hj2kf92ds212", new Traits() {
-    { "email", "tom@initech.com" },
+    { "email", "tom@example.com" },
     { "name", "Tom Smykowski" },
     { "address", new Dict() {
         { "street", "123 Fake Street" },
@@ -507,7 +507,7 @@ static void LoggingHandler(Logger.Level level, string message, IDictionary<strin
 }
 ```
 
-Please note: the logger requires a minimum version of .NET Core 2.1.
+Note: the logger requires a minimum version of .NET Core 2.1.
 
 ### Json.NET
 
@@ -517,3 +517,6 @@ Please note: the logger requires a minimum version of .NET Core 2.1.
 ### Mono
 
 `Analytics.NET` has been tested and works in Mono.
+
+### .NET Core
+`Analytics.NET` is not officially supported using the .NET Core runtime.

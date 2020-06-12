@@ -111,7 +111,7 @@ If you use a standard OAuth library in your programming language, all of this is
 2. If the user is logged out, Segment redirects to `https://app.segment.com/login`
 3. If the user is logged in, Segment redirects to `https://app.segment.com/authorize`
 4. If user consents, Segment redirects with a code to your redirect_uri `http://localhost:8888/auth/segment/callback`. This app listens for this request and runs step #5 below.
-5. You exchange the code with for an install token from `https://id.segmentapis.com/oauth2/token`
+5. You exchange the code with for an install token from `https://id.segmentapis.com/oauth2/token`. The body of this POST request should include the code you received and your `redirect_uri`. Include your client secret and client id in a basic authorization header.
 6. You save the access token, install name, workspace name and source name for the user.
 
 At the end of a successful flow you get an "Install Token". If you passed in the scope as `destination/clearbrain` the user is prompted to select a source on which to install your Enable With Segment App, and that source is returned to you as well.
@@ -269,7 +269,7 @@ The library you use in your programming language should do this automatically fo
 
 ### What scopes do you support?
 
-We support `destination/<slug>`,  `workspace` and `workspace:read`. You set these scopes during app creation and when you start the install flow. You must use the same scope in both places, otherwise you get an invalid scope error when you start the error.
+We support `destination/<slug>`, `workspace` and `workspace:read`. You set these scopes during app creation and when you start the install flow. You must use the same scope in both places, otherwise you get an invalid scope error when you start the error.
 
 ### What is the fastest way to get started? Do I have to learn OAuth to make an app?
 
@@ -283,7 +283,7 @@ Your `redirect_uri` probably doesn't match what you set in the App Create Reques
 
 ### How many redirect_uris can I have? Can I add more after the app is created?
 
-You can have five `redirect_uris` on app creation. Editing the app info directly is not supported at this time. Please [contact us](https://segment.com/help/contact/) if you want any of your `redirect_uris` or other info changed.
+You can have five `redirect_uris` on app creation. Editing the app info directly is not supported at this time. [contact us](https://segment.com/help/contact/) if you want any of your `redirect_uris` or other info changed.
 
 In the future we will allow you to update this information on your own.
 

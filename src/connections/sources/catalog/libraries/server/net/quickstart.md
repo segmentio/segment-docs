@@ -1,9 +1,8 @@
 ---
 title: 'Quickstart: ASP.NET'
-hidden: true
-sourceTitle: NET
-sourceCategory: Server
 ---
+
+<!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
 
 This tutorial will help you start sending analytics data from your ASP.NET app to Segment and any of our destinations, using our .NET and analytics.js library. As soon as you're setup you'll be able to turn on analytics tools, ad conversion pixels, email tools and lots of other destinations with the flip of a switch!
 
@@ -41,7 +40,7 @@ Lots of analytics and marketing tools want to know more information about your u
 Your website will use our .NET library to identify and track users. You can use the handy-dandy NuGet to easily install the .NET library in your ASP.NET solution:
 
 ```
-Install-Package Analytics -Version <version>	
+Install-Package Analytics -Version <version>
 ```
 
 You can also accomplish the same thing in the `Manage NuGet Packages` menu of Visual Studio:

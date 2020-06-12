@@ -3,14 +3,13 @@ title: Marketo Source
 rewrite: true
 source-type: object
 ---
+<!-- Marketo is listed as an object source, but doesn't appear in our configapi source catalog, so leave the "source-type" set here -->
 
 [Marketo](https://www.marketo.com/) is a leader in marketing automation. Using our Marketo source, we will load your campaigns, emails, leads and other collections into your data warehouse.
 
 This will allow you to write SQL to analyze your analyze your email marketing campaigns ROI, or join your email data to other data sources like web and mobile events, Salesforce, and Zendesk to tie nurture emails to re-activation rates in your app.
 
-This is an [Object Cloud Source](https://segment.com/docs/connections/sources/#object-cloud-sources) which can export data from its third party tool and import it directly into your Segment warehouse.
-
-_**NOTE:** Marketo is currently in beta and this doc was last updated on April 30, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you have any feedback to help us improve the Marketo Source and its documentation, and please [let us know](https://segment.com/help/contact)!_
+_**NOTE:** Marketo is currently in beta and this doc was last updated on April 30, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you have any feedback to help us improve the Marketo Source and its documentation, and [let us know](https://segment.com/help/contact)!_
 
 ## Getting Started
 
@@ -290,7 +289,7 @@ We're primarily using the REST API, but also use the Lead Activity Bulk API to r
 
 ### Can I get other collections not default synced by the source?
 
-Yes! Please [contact us](/help/contact) to request additional collections.
+Yes! [contact us](/help/contact) to request additional collections.
 
 ### Can I get other columns not default synced by the source?
 Yes! For leads and activities, we've introduced a custom fields setting where you can enter comma-separated (no spaces, etc.) custom fields to sync by their REST API name.

@@ -21,13 +21,13 @@ Go to your Source Debugger, select an event and in the top right hand side of th
 
 ![](images/event-tester_GgyOswJA.png)
 
-**2.** **Choose your destination you want to test with **
+**2. Choose the destination you want to test with**
 
 Select the destination that you want to test this event with. At this time, you can only use the Event Tester for cloud-mode (server side) destinations.
 
 ![](images/event-tester_2JfoKddf.png)
 
-**3\. Send event to destination**
+**3. Send event to destination**
 
 The event payload from your debugger that you just selected will automatically load in the JSON view. You have the option to edit the payload if you want. Assuming it looks good, select "Send Event" at the bottom right of the screen. 
 
@@ -35,7 +35,7 @@ The event payload from your debugger that you just selected will automatically l
 
 **4. Ensure you're happy to send the test event to the destination**
 
- This is a real event that will appear in your end tool alongside your existing data. If you're not comfortable with this, then select "Cancel" and do not send the event. 
+This is a real event that will appear in your end tool alongside your existing data. If you're not comfortable with this, then select "Cancel" and do not send the event. 
 
 ![](images/event-tester_Yxw1DJqb.png)
 
@@ -45,14 +45,14 @@ On the right hand side of the Event Tester you will see the response from the pa
 
 ![](images/event-tester_il6mvexS.png)
 
-If you are receiving an error and are unsure how to fix the issue, please visit the partner docs (e.g. [https://developers.google.com/analytics/devguides/reporting/core/v3/errors](https://developers.google.com/analytics/devguides/reporting/core/v3/errors)) or reach out to the partner support team. 
+If you are receiving an error and are unsure how to fix the issue, visit the partner docs (e.g. [https://developers.google.com/analytics/devguides/reporting/core/v3/errors](https://developers.google.com/analytics/devguides/reporting/core/v3/errors)) or contact the partner support team. 
 
 # FAQ
 
 **Why can't I see the Event Tester when I log into my workspace?**
 
-The Event Tester is only accessible to users with write access in their Segment workspace (read only users will not see the Event Tester in their workspace). 
+The Event Tester is only accessible to users with write access in their Segment workspace (read-only users will not see the Event Tester in their workspace). 
 
 **The Event Tester experienced an error when sending my event. Why did this happen?**
 
-If you experience an error, let us know and we'll look into the issue for you.
+If you experience an error, [let us know](https://segment.com/help/contact/) and we'll help you troubleshoot the issue.

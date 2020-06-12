@@ -3,7 +3,6 @@ title: 'Quickstart: Go v2 (deprecated)'
 hidden: true
 ---
 
-
 This tutorial will help you start sending data from your Go servers to Segment and any of our destinations, using our Go library. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
 
 If you want to dive deeper at any point, check out the [Go library reference](/docs/connections/sources/catalog/libraries/server/go/).
@@ -42,8 +41,8 @@ Here's what a basic call to `identify` might look like:
 client.Identify(&Identify{
   UserId: "019mr8mf4r",
   Traits: map[string]interface{}{
-    "name": "Michael Bolton",
-    "email": "mbolton@initech.com",
+    "name": "Michael Brown",
+    "email": "mbrown@example.com",
     "plan": "Enterprise",
     "friends": 42,
   },

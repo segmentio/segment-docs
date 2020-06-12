@@ -5,7 +5,7 @@ title: Slack Destination
 
 [Slack](https://slack.com/) is a team collaboration tool where work flows. It's where the people you need, the information you share, and the tools you use come together to get things done.
 
-This document was last updated on January 25, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on January 25, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -17,12 +17,12 @@ This document was last updated on January 25, 2018. If you notice any gaps, out-
 4. Enter this in your Segment UI settings under 'Incoming Webhook URL'. The Slack channel you selected will be the default channel which will receive events.
 
 ## Identify
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123', {
   name: 'John Doe',
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -44,21 +44,26 @@ where "name" is the first found of the following:
 * `Anonymous user + anonymousId`
 
 Using the above code example, you can create the following template:
+
 ```
-The user \{{name}} has an email of \{{email}}
+{% raw %}
+The user {{name}} has an email of {{email}}
+{% endraw %}
 ```
+
 Which would result in the following message within your Slack channel:
+
 ```
-The user John Doe has an email of john.doe@segment.com
+The user John Doe has an email of john.doe@example.com
 ```
 
 ## Track
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call using the analytics.js library would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call using the analytics.js library would look like:
 
 ```javascript
 analytics.track('Email Opened', {
   name: 'John Doe',
-  email: 'john.doe@segment.com'
+  email: 'john.doe@example.com'
 });
 ```
 
@@ -89,24 +94,28 @@ The basic Track structure:
 }
 ```
 
-Using the above code example, you can enter the event name:
-```
-Email Opened
-```
+Using the above code example, you can enter the event name `Email Opened`
 and create the following template:
+
+```js
+{% raw %}
+{{name}} opened an email from {{properties.name}} ({{properties.email}})
+{% endraw %}
 ```
-\{{name}} opened an email from \{{properties.name}} (\{{properties.email}})
-```
+
 Which would result in the following message within your Slack channel depending on how "name" was set:
+
 ```
-Jane opened an email from John Doe (john.doe@gmail.com)
+Jane opened an email from John Doe (john.doe@example.com)
 ```
 
 ### Regex Matching
 In addition to exact event names, you can also enter regex patterns for channels and templates to map multiple events to a single channel or template rather than creating a mapping for each individual event. An example which captures all event names in both lower and upper case ending in "-ing" would look like:
-```
+
+```regex
 /[a-zA-Z]+ing$/g
 ```
+
 More information on regex can be found [here](http://www.zytrax.com/tech/web/regex.htm).
 
 
@@ -115,7 +124,7 @@ More information on regex can be found [here](http://www.zytrax.com/tech/web/reg
 ### Page, Identify, Group calls are not showing up
 The Slack Destination does not support `page` or `group` calls. Only `track` events are supported by default. Remember that [`track.properties` object](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track) is an open dictionary and may include any data you choose.
 
-In order for `identify` events to work, please make sure you [whitelist the traits](https://segment.com/docs/connections/destinations/catalog/slack/#whitelisted-traits).
+In order for `identify` events to work, make sure you [whitelist the traits](https://segment.com/docs/connections/destinations/catalog/slack/#whitelisted-traits).
 
 ### I'm seeing [object Object] in my Slack message
 If you try to print an object (eg., `\{{properties}}`), you will see [object Object] in Slack. Drill down to a primitive type value (eg., `properties.plan`).

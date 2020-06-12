@@ -2,7 +2,7 @@
 title: Partner FAQs
 ---
 
-If you cannot find the answer to your question within the documentation or the below FAQs, please reach out to our team at [partner-support@segment.com](mailto:partner-support@segment.com).
+If you cannot find the answer to your question within the documentation or the below FAQs, contact our team at [partner-support@segment.com](mailto:partner-support@segment.com).
 
 ### How do customers collect data?
 
@@ -12,7 +12,7 @@ A mutual customer will use `analytics.js` (our client-side Javascript library), 
 
 Only our `analytics.js` and mobile SDK's collect contextual information from the device. Our server-side libraries do not collect contextual information, and a user is responsible for sending additional context themselves.
 
-For more info on our automatically collected fields, please refer to [this document](https://segment.com/docs/connections/spec/common/).
+For more info on our automatically collected fields, refer to [this document](https://segment.com/docs/connections/spec/common/).
 
 ### How does Segment handle unique users?
 

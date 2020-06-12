@@ -3,9 +3,9 @@ rewrite: true
 title: ActiveCampaign Destination
 ---
 
-[ActiveCampaign](https://www.activecampaign.com) is an integrated email marketing, marketing automation, and small business CRM. It allows you to send beautiful newsletters, setup behavioral based automations, and benefit from sales automation. This destination is maintained by ActiveCampaign. For any issues with the destination, please [reach out to their team](https://www.activecampaign.com/contact/).
+[ActiveCampaign](https://www.activecampaign.com) is an integrated email marketing, marketing automation, and small business CRM. It allows you to send beautiful newsletters, set up behavioral based automations, and benefit from sales automation. This destination is maintained by ActiveCampaign. For any issues with the destination, [contact their team](https://www.activecampaign.com/contact/).
 
-This document was last updated on March 27, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on March 27, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 
@@ -21,7 +21,7 @@ This document was last updated on March 27, 2018. If you notice any gaps, outdat
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page();
@@ -34,13 +34,13 @@ When you call `page`, we will send that event to ActiveCampaign as a `site track
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('ze8rt1u89', {
-  firstName: 'Zaphod',
-  lastName: 'Beeblebrox',
-  email: 'Zaphod@hotmail.com'
+  firstName: 'Jane',
+  lastName: 'Kim',
+  email: 'jane.kim@example.com'
 });
 ```
 
@@ -61,11 +61,11 @@ When you `identify` a contact, we'll pass that contact's information to ActiveCa
 
 You can add tags to a contact by passing in a trait called `tags`. If you would like to delete all tags currently on a contact, you can pass in a trait called `tagsReset` with a value of `1`. You can pass both `tags` and `tagsReset` if you wish, or just one of the two. If you pass both, all tags will be deleted and then any new tags will be added.
 
-```
+```js
 analytics.identify('ze8rt1u89', {
-  firstName: 'Zaphod',
-  lastName: 'Beeblebrox',
-  email: 'Zaphod@hotmail.com',
+  firstName: 'Jane',
+  lastName: 'Kim',
+  email: 'jane.kim@example.com',
   tags: [
       'checkout',
       'abandoned'
@@ -84,11 +84,11 @@ For example, if you have a contact in ActiveCampaign with these custom fields:
 
 You can update those fields using this identify call:
 
-```
+```js
 analytics.identify('ze8rt1u89', {
-  firstName: 'Zaphod',
-  lastName: 'Beeblebrox',
-  email: 'Zaphod@hotmail.com',
+  firstName: 'Jane',
+  lastName: 'Kim',
+  email: 'jane.kim@example.com',
   shirtSize: 'medium',
   state: 'California',
   multiChoice: [Value1,Value2]
@@ -101,11 +101,12 @@ If your custom field has the same name as a [reserved trait](/docs/connections/s
 ### Lists
 
 You can add a contact to or unsubscribe a contact from any number of lists by passing in a trait called `lists`. As shown in the example below, this trait should be an array, with each element having an `id` and a `status`. The value of `status` must be either `active` or `unsubscribed`.
-```
+
+```js
 analytics.identify('ze8rt1u89', {
-  firstName: 'Zaphod',
-  lastName: 'Beeblebrox',
-  email: 'Zaphod@hotmail.com',
+  firstName: 'Jane',
+  lastName: 'Kim',
+  email: 'jane.kim@example.com',
   lists: [
      {
        id: 1,
@@ -120,7 +121,7 @@ analytics.identify('ze8rt1u89', {
 ```
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked a button', {

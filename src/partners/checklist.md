@@ -2,7 +2,7 @@
 title: Public Beta Checklist
 ---
 
-The purpose of this checklist is to give you a window into the full integration lifecycle, from how you first get started with Developer Center, to how we'll test your app before it goes live. 
+The purpose of this checklist is to give you a window into the full integration lifecycle, from how you first get started with Developer Center, to how we'll test your app before it goes live.
 
 ## 1. Partner Access
 
@@ -20,11 +20,11 @@ Make sure to sign up with your company email address and to answer all the surve
     - Company Website
     - How do your customers get data into your tool?
     - Where will data sent by Segment go and how will it show up in your tool?
-    - Please explain what your customers use your tool to do
+    - Explain what your customers use your tool to do
     - How did you hear about Segment?
 
 
-- Agree to the [Segment Partner Program Agreement](https://segment.com/docs/legal/partnersagreement/) and [Privacy Policy](https://segment.com/docs/legal/privacy/)
+- Agree to the [Segment Partner Program Agreement](https://segment.com/legal/partnersagreement/) and [Privacy Policy](https://segment.com/legal/privacy/)
 
 While waiting for approval (~1 business day), we encourage you to:
 
@@ -125,7 +125,7 @@ We also encourage marketing content that showcases how easy and powerful your in
 
 
 - Write launch marketing content
-    - Blog post 
+    - Blog post
     - Or email announcement
 
 ## 7. Partner Metadata

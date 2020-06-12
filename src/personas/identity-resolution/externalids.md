@@ -9,24 +9,37 @@ The Identity Graph creates or merges profiles based on externalIDs. ExternalIDs 
 
 We automatically promote the following traits and IDs in track and identify calls to externalIDs:
 
-| External ID Type      | Message Location in Track or Identify Call                            |
-|-----------------------|-----------------------------------------------------------------------|
-| anonymous_id          | anonymousId              |
-| user_id               | userId                   |
-| group_id              | groupId                  |
-| cross_domain_id       | cross_domain_id                     |   
-| email       | traits.email or context.traits.email                     |   
-| android.id       | context.device.id when context.device.type = 'android'               |   
-| ios.id       | context.device.id when context.device.type = 'ios'               |   
-| android.push_token       | context.device.token when context.device.type = 'android'                 |   
-| ios.push_token       | context.device.token when context.device.type = 'ios'                 |   
-| android.idfa       | context.device.advertisingId when context.device.type = 'android' AND context.device.adTrackingEnabled = true                    |   
-| ios.idfa       | context.device.advertisingId when context.device.type = 'ios' AND context.device.adTrackingEnabled = true
-| ga_client_id       | context.integrations['Google Analytics'].clientId when explicitly captured by users                    |   
+| External ID Type   | Message Location in Track or Identify Call                                                                    |
+| ------------------ | ------------------------------------------------------------------------------------------------------------- |
+| user_id            | userId                                                                                                        |
+| email              | traits.email or context.traits.email                                                                          |
+| android.id         | context.device.id when context.device.type = 'android'                                                        |
+| android.idfa       | context.device.advertisingId when context.device.type = 'android' AND context.device.adTrackingEnabled = true |
+| android.push_token | context.device.token when context.device.type = 'android'                                                     |
+| anonymous_id       | anonymousId                                                                                                   |
+| braze_id           | context.integrations.Braze.braze_id when Braze is connected as a destination                                  |
+| cross_domain_id    | cross_domain_id when XID has been enabled for the workspace                                                   |
+| ga_client_id       | context.integrations['Google Analytics'].clientId when explicitly captured by users                           |
+| group_id           | groupId                                                                                                       |
+| ios.id             | context.device.id when context.device.type = 'ios'                                                            |
+| ios.idfa           | context.device.advertisingId when context.device.type = 'ios' AND context.device.adTrackingEnabled = true     |
+| ios.push_token     | context.device.token when context.device.type = 'ios'                                                         |
+
 
 ## Custom ExternalIDs
 
 Personas will automatically resolve identity for any other externalIDs that you bind to users - such as a phone number or any custom identifier that you support. As seen in the below example, you can send custom `externalIds` in the `context` object of any call to our API.
+
+The four fields below (id, type, collection, encoding) are all required:
+
+| Key        | Value                                                                        |
+| ---------- | ---------------------------------------------------------------------------- |
+| id         | value of the externalID                                                      |
+| type       | name of externalID type (`app_id`, `ecommerce_id`, `shopify_id`, etc)        |
+| collection | `users` if a user-level identifier or `accounts` if a group-level identifier |
+| encoding   | `none`                                                                       |
+
+As an example:
 
 ``` js
 analytics.track('Subscription Upgraded', {
