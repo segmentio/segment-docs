@@ -52,7 +52,7 @@ To set up a destination:
 
 ## Troubleshooting
 
-If you're setting up a destination to use [cloud-mode data](docs/connections/destinations/#connection-modes) (data that's sent through Segment, rather than directly from a user's device), you can use the [Event Tester](/docs/connections/test-connections/) and [Event Delivery](/docs/connections/event-delivery/) tools to check that data is arriving, and being correctly delivered to the destination.
+If you're setting up a destination to use [cloud-mode data](/docs/connections/destinations/#connection-modes) (data that's sent through Segment, rather than directly from a user's device), you can use the [Event Tester](/docs/connections/test-connections/) and [Event Delivery](/docs/connections/event-delivery/) tools to check that data is arriving, and being correctly delivered to the destination.
 
 > success ""
 > Have suggestions for things to add to this guide? [Drop us a line](mailto:docs-feedback@segment.com?subject=Segment%20Data%20User%20guide%20Suggestion)!

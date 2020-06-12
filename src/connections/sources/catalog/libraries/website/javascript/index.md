@@ -1,8 +1,9 @@
 ---
 title: Analytics.js (Javascript) Source
-sourceTitle: 'JavaScript'
-sourceCategory: 'Website'
-redirect_from: '/connections/sources/catalog/libraries/website/analytics.js/'
+redirect_from:
+  - '/connections/sources/catalog/libraries/website/analytics.js/'
+  - '/sources/website/javascript/'
+  - '/sources/website/analytics.js/'
 ---
 
 Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
@@ -15,7 +16,8 @@ Head over to our [`analytics.js` QuickStart Guide](/docs/connections/sources/cat
 
 The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
-**Note:** We recommend against using `identify` for anonymous visitors to your site. `analytics.js` automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors. It is attached to all `page` and `track` events both before and after an `identify`.
+> note ""
+> We recommend against using `identify` for anonymous visitors to your site. `analytics.js` automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors. It is attached to all `page` and `track` events both before and after an `identify`.
 
 `identify` method definition:
 

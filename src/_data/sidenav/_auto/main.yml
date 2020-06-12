@@ -27,7 +27,7 @@ sections:
     section:
     - path: /connections/sources
       title: Sources Overview
-    - path: /connections/sources/cloud-source-data
+    - path: /connections/sources/about-cloud-sources
       title: What can you do with cloud source data?
     - path: /connections/sources/custom-domains
       title: Set up a custom domain proxy in Segment
@@ -37,7 +37,7 @@ sections:
       title: Sources
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
-    - path: /connections/sources/what-are-cloud-sources
+    - path: /connections/sources/about-cloud-sources
       title: What are Cloud-App Sources?
   - section_title: Spec
     slug: connections/spec

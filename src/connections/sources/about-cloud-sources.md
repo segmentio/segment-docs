@@ -1,8 +1,8 @@
 ---
 title: All about Cloud Sources
 redirect_from:
-  - 'connections/sources/what-are-cloud-sources'
-  - 'connections/sources/cloud-source-data'
+  - '/connections/sources/what-are-cloud-sources/'
+  - '/connections/sources/cloud-source-data/'
 ---
 
 Cloud-App Sources (often shortened to Cloud Sources) allow you to pull in data from third-party tools so you can use it in Segment. There are two types of Cloud Apps: **Object** and **Event** sources.
