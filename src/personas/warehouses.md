@@ -150,4 +150,5 @@ Not yet. We're working on this feature, and if you're interested, let your CSM k
 
 ### Why are there multiple schemas prefixed with `personas_` in my warehouse when I only have one space?
 
-The segment pipeline currently has a 1:1 source to destination restriction. This means a source can only send data to a single type of destination, i.e. one source cannot send to two different Amplitude instances. To get around this restriction, Personas will actually use multiple sources to emit events to your connected destinations. If you have three webhook destinations in your Personas space, Personas will create three different sources to emit events to your webhooks, which then make three different warehouse schemas. Most likely, this is the reason you can actually have more schemas than spaces!
+Segment currently can only connect a source to one instance of each destination, for example, one source cannot send to two different Amplitude instances. To get around this restriction, Personas creates multiple sources to send events to the destinations connected to your Personas space. 
+For example, if you have three webhook destinations in your Personas space, Personas creates three different sources to send events to them. This creates three different warehouse schemas, and is usually the reason you have more schemas than spaces!
