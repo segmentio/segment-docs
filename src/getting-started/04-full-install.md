@@ -67,7 +67,7 @@ Consider using Identify and traits when:
 
 ## How to Call Identify
 
-You can call Identify from any of Segment’s device-based or server-based libraries, including [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/mobile/ios), [Android](/docs/connections/sources/catalog/mobile/android), [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/), and [Python](/docs/connections/sources/catalog/libraries/server/python/).
+You can call Identify from any of Segment’s device-based or server-based libraries, including [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios), [Android](/docs/connections/sources/catalog/libraries/mobile/android), [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/), and [Python](/docs/connections/sources/catalog/libraries/server/python/).
 
 Here are two examples of calling identify from two different libraries:
 

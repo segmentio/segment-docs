@@ -1,6 +1,9 @@
 ---
 title: Analytics.js (Javascript) Source
-redirect_from: '/connections/sources/catalog/libraries/website/analytics.js/'
+redirect_from:
+  - '/connections/sources/catalog/libraries/website/analytics.js/'
+  - '/sources/website/javascript/'
+  - '/sources/website/analytics.js/'
 ---
 
 Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.

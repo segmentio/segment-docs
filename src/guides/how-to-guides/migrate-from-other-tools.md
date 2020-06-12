@@ -43,7 +43,7 @@ Since Event Category is required we'll populate it with `All` if you don't speci
 
 ### Ecommerce
 
-Segment has full support for the Google Analytics E-Commere API and the [Enhanced E-Commerce API](/docs/connections/destinations/catalog/google-analytics/#enhanced-ecommerce) as well. Make sure you follow [our e-commerce quickstart](https://help.segment.com/hc/en-us/articles/204812439-Ecommerce-Quickstart) to make sure you'll be able to use all e-commerce features in the tools we support.
+Segment has full support for the Google Analytics E-Commere API and the [Enhanced E-Commerce API](/docs/connections/destinations/catalog/google-analytics/#enhanced-ecommerce) as well. Make sure you follow [our e-commerce tracking plan](/docs/connections/spec/ecommerce-tracking-plan/) to make sure you'll be able to use all e-commerce features in the tools we support.
 
 For an e-commerce transaction to appear in Google Analytics you'll need to enable e-commerce for your Google Analytics view and send an Order Completed event to Segment. This simplifies things a lot compared to the direct Google Analytics code.
 

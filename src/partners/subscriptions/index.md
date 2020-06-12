@@ -23,6 +23,6 @@ Review the steps outlined in the [Developer Center Overview](/docs/partners). Th
 You can subscribe to customer data in two ways:
 
 1. **[Webhook](/docs/partners/subscriptions/build-webhook)**: Build a new HTTP service that receives Webhook POSTs from Segment.
-2. **[Functions](/docs/partners/subscriptions/build-functions)**: Write JavaScript functions that run on Segment to translate and send data to your existing API. [Get started...](/docs/partners/build-functions)
+2. **[Functions](/docs/partners/subscriptions/build-functions)**: Write JavaScript functions that run on Segment to translate and send data to your existing API. [Get started...](/docs/partners/subscriptions/build-functions)
 
-See the [Webhook](/docs/partners/build-webhook) and [Functions](/docs/partners/build-webhook) docs in-depth technical details about building.
+See the [Webhook](/docs/partners/subscriptions/build-webhook) and [Functions](/docs/partners/build-functions/) docs in-depth technical details about building.
