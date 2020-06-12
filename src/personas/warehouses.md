@@ -147,3 +147,8 @@ The users table is an aggregate view based on the `user_id` field. This means th
 ### Can I sync the identities table to my warehouse?
 
 Not yet. We're working on this feature, and if you're interested, let your CSM know or [contact us](https://segment.com/help/contact/).
+
+### Why are there multiple schemas prefixed with `personas_` in my warehouse when I only have one space?
+
+Segment currently can only connect a source to one instance of each destination, for example, one source cannot send to two different Amplitude instances. To get around this restriction, Personas creates multiple sources to send events to the destinations connected to your Personas space. 
+For example, if you have three webhook destinations in your Personas space, Personas creates three different sources to send events to them. This creates three different warehouse schemas, and is usually the reason you have more schemas than spaces!
