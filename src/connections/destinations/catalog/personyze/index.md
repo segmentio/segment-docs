@@ -45,5 +45,5 @@ The following traits are explicitly mapped in Personzyne:
 * industry
 * role
 
-All other traits will be sent to Personyze as custom string attributes and utilized for targeting. You can edit the default trait type of these traits within Personyze as needed, by going to:
+All other traits will be sent to Personyze as custom string attributes and used for targeting. You can edit the default trait type of these traits within Personyze as needed, by going to:
 Settings > Visitor Attributes > Visitor Attributes
