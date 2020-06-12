@@ -199,7 +199,7 @@ You can connect to BigQuery using a BI tool like Mode or Looker, or query
 directly from the BigQuery console.
 
 BigQuery now supports standard SQL, which you can enable via their query UI.
-This does not work with views, or with a query that utilizes table range
+This does not work with views, or with a query that uses table range
 functions.
 
 ### Does Segment support streaming inserts?
