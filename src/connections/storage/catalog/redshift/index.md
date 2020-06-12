@@ -39,7 +39,7 @@ You can skip this step if you already have a Redshift cluster:
 
 4. Choose your cluster size: ![](images/1442616281635_undefined.png)
 
-5. Setup your cluster Security Group or VPC and proceed to review (see below for instructions on settings up a VPC group)
+5. set up your cluster Security Group or VPC and proceed to review (see below for instructions on settings up a VPC group)
 
 
 Now that you've provisioned your Redshift cluster, you'll need to configure your Redshift cluster to allow Segment to access it.
@@ -130,7 +130,7 @@ Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC
 7. Make sure the "Publicly Accessible" option is set to "Yes"
   ![](images/rs-mgmt-clusters-modify.png)
 
-8. Check your "Outbound" tab to make sure your Redshift instance is setup to make outbound requests to the Segment S3 bucket. The default behavior is to allow all outbound traffic, but security groups can be put in place to limit outbound behavior.
+8. Check your "Outbound" tab to make sure your Redshift instance is set up to make outbound requests to the Segment S3 bucket. The default behavior is to allow all outbound traffic, but security groups can be put in place to limit outbound behavior.
 
   ![](images/redshift_outbound_permissions.png)
 

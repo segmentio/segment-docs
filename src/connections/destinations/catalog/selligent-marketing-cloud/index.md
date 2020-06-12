@@ -8,7 +8,7 @@ This Destination is maintained by Selligent Marketing Cloud. For any issues with
 
 ## Getting Started
 
-Before you enable Selligent Marketing Cloud in your Destination page, validate with your Selligent CSM that the segment components needed to start receiving information from the connector are setup on your account.
+Before you enable Selligent Marketing Cloud in your Destination page, validate with your Selligent CSM that the segment components needed to start receiving information from the connector are set up on your account.
 
 1. Login into your SMC environment.
 2. At the top-right hand side  click on the options menu and open the Admin Configuration module:

@@ -162,7 +162,7 @@ Notification listeners are not available for Segment `track` events when impleme
 
 ## Personas
 
-Follow these instructions on how to setup Personas and Optimizely:
+Follow these instructions on how to set up Personas and Optimizely:
 
 * [Using Segment Personas and Optimizely Full Stack for Omnichannel Experiments](https://blog.optimizely.com/tag/segment-personas/)
 

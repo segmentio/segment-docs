@@ -111,5 +111,5 @@ Params: {
 
 ## Sync Users
 
-When you setup your Stories Destination in Segment, your users automatically sync to Stories.
+When you set up your Stories Destination in Segment, your users automatically sync to Stories.
 Note that only Users who have a `userId` in Segment are synced, Stories does not support anonymous users yet. Users are updated by `identify` events from Segment.

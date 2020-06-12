@@ -23,7 +23,7 @@ Segment Workspace Owners authorize your App on their workspace using a web-based
 
 Therefore, the token returned by Segment isn't tied to a user – it's tied to an App Install. That's why we call it an Install Token.
 
-## Setup Guide
+## Set up Guide
 
 There are three steps to implement an "Enable with Segment" OAuth flow:
 

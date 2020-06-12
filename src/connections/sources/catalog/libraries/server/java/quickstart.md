@@ -6,7 +6,7 @@ title: 'Quickstart: analytics-java'
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
 
-This tutorial will help you start sending data from your program to Segment and any of our destinations, using our analytics-java library. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
+This tutorial will help you start sending data from your program to Segment and any of our destinations, using our analytics-java library. As soon as you're set up you'll be able to turn on any new destinations with the flip of a switch!
 
 If you want to dive deeper at any point, check out the [analytics-java reference](/docs/connections/sources/catalog/libraries/server/java).
 

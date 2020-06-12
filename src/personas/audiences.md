@@ -48,7 +48,7 @@ If you are a B2B business, you might want to build an audience of accounts. You 
 
 ## Connecting your Audience to a Destination
 
-Once you have previewed your audience, you can choose to connect a destination, or simply keep the audience in Segment and download a csv. If you already have destinations setup in Segment, you can import the configuration from one of your existing sources to Personas. Note that you can only connect one destination configuration per destination type.
+Once you have previewed your audience, you can choose to connect a destination, or simply keep the audience in Segment and download a csv. If you already have destinations set up in Segment, you can import the configuration from one of your existing sources to Personas. Note that you can only connect one destination configuration per destination type.
 
 ![](images/audience_select_destination_card.png)
 

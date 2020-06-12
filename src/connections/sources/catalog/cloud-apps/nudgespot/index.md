@@ -19,7 +19,7 @@ If you have previously enabled sending email events using the Nudgespot destinat
 
 4. The next page ("Overview") will surface your **Segment write key for Nudgespot.** Copy this write key. 
 
-5. To finish the setup, you'll have to go into your Nudgespot account and enter this Segment write key in their integrations settings. Find the right place in Nudgespot in Setup > Send Email Events to Segment.com.
+5. To finish the setup, you'll have to go into your Nudgespot account and enter this Segment write key in their integrations settings. Find the right place in Nudgespot in set up > Send Email Events to Segment.com.
 
 6. Click **Save**.
 

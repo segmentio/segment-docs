@@ -9,7 +9,7 @@ It measures opens, clicks, revenue generated, breakdown of generated revenue bas
 
 Ultimately, Klaviyo lets you send personalized newsletters, automates triggered emails, product recommendations, welcome campaigns, order announcements, push notifications and sync your data to facebook custom audiences.
 
-Are you trying to setup Klaviyo as an Event Source to get data into your warehouse or other downstream tools? Go [here](https://segment.com/docs/connections/sources/catalog/cloud-apps/klaviyo/).
+Are you trying to set up Klaviyo as an Event Source to get data into your warehouse or other downstream tools? Go [here](https://segment.com/docs/connections/sources/catalog/cloud-apps/klaviyo/).
 
 This document was last updated on September 6, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 

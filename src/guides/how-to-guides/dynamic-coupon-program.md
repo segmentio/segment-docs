@@ -30,7 +30,7 @@ Through a combination of SQL and statistical analysis on a set of historical dat
 
 _Learn how we defined these conditions in_ [How to Forecast LTV for e-commerce with Excel and SQL.](https://segment.com/docs/guides/how-to-guides/forecast-with-sql/)
 
-Will rewarding a $5 coupon to this cohort after they make the second purchase a month lead to higher engagement and LTV? We'll setup this program using Customer.io as the email provider and measure it's performance on engagement and LTV with Amplitude.
+Will rewarding a $5 coupon to this cohort after they make the second purchase a month lead to higher engagement and LTV? We'll set up this program using Customer.io as the email provider and measure it's performance on engagement and LTV with Amplitude.
 
 We'll conduct a split test (half of the cohort will represent the control group and will not receive any emails; the other half will receive an email with the $5 coupon) for one month. After which, we'll use Amplitude to see if there were any correlations between the coupon email and conversions.
 
@@ -60,7 +60,7 @@ Next, we'll create a "segment trigger campaign", where Customer.io will send a m
 
 Save the changes and then enable the campaign!
 
-Then, make sure that your e-commerce backend is setup properly to handle the coupons. If it's available in your system, create a coupon that only works for a specific set of customers.
+Then, make sure that your e-commerce backend is set up properly to handle the coupons. If it's available in your system, create a coupon that only works for a specific set of customers.
 
 
 ## Measure performance

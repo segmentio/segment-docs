@@ -340,7 +340,7 @@ Criteo Events supports the ability to send extra data with events about a page o
 
 To enable this functionality, you will need to provide us with the names of the Criteo Events data parameters you would like us to pass along as well as the name of the properties or traits of the Segment `.page` or `.identify` events that you would like us to map them from.
 
-This is setup using the **Supporting User Data** and **Supporting Page Data** settings in your Criteo Events integration settings. In each of these, you can provide us with a list of key/value mappings designating the name of the Segment property/trait on the left and the corresponding Criteo Events parameter it should map to on the right.
+This is set up using the **Supporting User Data** and **Supporting Page Data** settings in your Criteo Events integration settings. In each of these, you can provide us with a list of key/value mappings designating the name of the Segment property/trait on the left and the corresponding Criteo Events parameter it should map to on the right.
 
 Here is an example of Supporting Page Data:
 

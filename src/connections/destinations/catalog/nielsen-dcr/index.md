@@ -339,7 +339,7 @@ For Android, we retrieve the version of the application package from the [Packag
 
 #### What are the Nielsen-DCR `clientId` and `subbrand` values?
 
-The Parent Client ID and Sub-Brand (VCID) values are automatically populated through the AppID, which is Nielsen Supplied. By default, `clientid` and `subbrand` are setup in Nielsen backend configuration to capture brand and sub-brand information. The fields get populated from backend for a registered client `appid`.
+The Parent Client ID and Sub-Brand (VCID) values are automatically populated through the AppID, which is Nielsen Supplied. By default, `clientid` and `subbrand` are set up in Nielsen backend configuration to capture brand and sub-brand information. The fields get populated from backend for a registered client `appid`.
 
 #### Can I override the Nielsen-DCR `clientId` and `subbrand` values?
 

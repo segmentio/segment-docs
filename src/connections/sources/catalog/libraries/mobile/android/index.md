@@ -846,7 +846,7 @@ analytics.getContext().putDeviceToken(registrationId);
 __NOTE__: Version 3 of the SDK is now replaced by version 4. See the section below on upgrading.
 If you are already using version 2 of the Android SDK, you'll have to make few changes to get up and running with version 3.
 
-In version 3, we've organized the destinations to be make the core SDK even leaner and smaller. This is what the old setup looked like:
+In version 3, we've organized the destinations to be make the core SDK even leaner and smaller. This is what the old set up looked like:
 
 ```java
 compile('com.segment.analytics.android:analytics-core:+') {

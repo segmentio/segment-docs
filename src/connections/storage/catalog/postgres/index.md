@@ -228,7 +228,7 @@ Using Compose, companies can deploy databases instantly with backups, monitoring
 
 Compose uses Segment for hooking together web analytics, email, and social tracking and manages its Segment warehouse on PostgreSQL. Compose is pleased to be able to harness [the power of Postgres to query Segment data and be able create custom reports.
 
-1. Setup PostgreSQL
+1. set up PostgreSQL
 
     If you don't yet have an account with Compose, [sign-up](https://www.compose.com/signup) and select the PostgreSQL database to get started.
 
@@ -301,7 +301,7 @@ Compose uses Segment for hooking together web analytics, email, and social track
     This way, you can create custom reports for analysis on the tracking data, using SQL as simple or as complex as needed, to gain insights which Segment-integrated tracking tools may not be able to easily find.
 
 
-### Database Setup - Service user and permissions
+### Database set up - Service user and permissions
 
 Once you have your Postgres database running, you should do a few more things before connecting the database to Segment.
 

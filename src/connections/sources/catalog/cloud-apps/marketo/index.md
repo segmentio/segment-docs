@@ -275,7 +275,7 @@ Currently, Warehouses are the only supported destination for object-cloud source
 
 The Marketo API has different limits for the number of objects returned by different endpoints, but usually 100-300 objects per call.
 
-At setup time, you have the option to specify a cap to the API calls that our source can consume. If no cap is specified, we will by default consume as many API calls that are available to sync the entire source.
+At set up time, you have the option to specify a cap to the API calls that our source can consume. If no cap is specified, we will by default consume as many API calls that are available to sync the entire source.
 
 We also use the Lead Activities bulk API to reduce the number of requests needed to sync the data; this however, also has a limit of 500MB worth of files downloaded per day.
 

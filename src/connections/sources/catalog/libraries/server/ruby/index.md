@@ -192,7 +192,7 @@ For more information about choosing which events to track, event naming and more
 
 The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side setup in combination with the Ruby library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using our client-side set up in combination with the Ruby library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
 The `page` call has the following fields:
 

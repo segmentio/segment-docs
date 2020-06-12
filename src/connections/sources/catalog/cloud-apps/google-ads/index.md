@@ -33,7 +33,7 @@ By default, we sync the "primary" Google Ads account connected to your Google ac
 
 ### I'm getting an Internal Server Error!
 
-If you're getting the error pictured below, try disabling any ad block extensions in your browser and attempting again. We find this typically resolves the setup problems.
+If you're getting the error pictured below, try disabling any ad block extensions in your browser and attempting again. We find this typically resolves the set up problems.
   ![](images/connection_failed.png)
 
 

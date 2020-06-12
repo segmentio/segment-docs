@@ -18,7 +18,7 @@ The Omniture destination on Segment works with [all of our tracking sources](/do
 
 ## Page
 
-Pageviews can be tracked using Segment with [`page`](/docs/connections/spec/page/) calls from the browser. You must call it at least once per page. The javascript snippet you copy-paste from the setup guide comes with a default, `analytics.page();` call.
+Pageviews can be tracked using Segment with [`page`](/docs/connections/spec/page/) calls from the browser. You must call it at least once per page. The javascript snippet you copy-paste from the set up guide comes with a default, `analytics.page();` call.
 
 *You can extend the basic call to include the page name:*
 

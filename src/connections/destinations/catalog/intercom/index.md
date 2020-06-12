@@ -312,7 +312,7 @@ Options options = new Options().setIntegrationOptions("Intercom", intercomOption
 Analytics.with(context).identify("123", traits, options);
 ```
 
-`YOUR_INTERCOM_APP_SECRET` is found in Intercom's identity verification setup guide.
+`YOUR_INTERCOM_APP_SECRET` is found in Intercom's identity verification set up guide.
 
 #### Identity verification plus filtering using Destinations Object
 

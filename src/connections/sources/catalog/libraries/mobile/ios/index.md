@@ -432,7 +432,7 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 `context` is an object that encapsulates everything about an event in the stream. `next` is a callback function that should be invoked when the current middleware is done processing the event and can pass the processed event down to the next middleware in the chain.
 
-`SEGContext` object is not very information rich by itself. Typically you will need to use `eventType`  and `payload` to get more information about an event.
+`SEGContext` object is not very information rich by itself. Typically you must use `eventType`  and `payload` to get more information about an event.
 
 ```objc
 @interface SEGContext : NSObject <NSCopying>
@@ -497,7 +497,7 @@ There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enu
 @end
 ```
 
-Finally, to use a middleware, you will need to provide it to the `SEGAnalyticsConfiguration` object prior to the initialization of `SEGAnalytics` .
+Finally, to use a middleware, you must provide it to the `SEGAnalyticsConfiguration` object prior to the initialization of `SEGAnalytics` .
 
 ```objc
 @interface SEGAnalyticsConfiguration : NSObject

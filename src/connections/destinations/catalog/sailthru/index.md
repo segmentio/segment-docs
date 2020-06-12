@@ -4,7 +4,7 @@ title: Sailthru Destination
 
 ## Getting Started
 
-The Sailthru server-side destination will allow you to add users, send custom events and purchase events. Once the Segment library is integrated, toggle Sailthru on in your Segment destination panel and add your API Key and Shared Secret, which you can find in the Sailthru Dashboard under **App Settings > Setup > API & Postbacks**.
+The Sailthru server-side destination will allow you to add users, send custom events and purchase events. Once the Segment library is integrated, toggle Sailthru on in your Segment destination panel and add your API Key and Shared Secret, which you can find in the Sailthru Dashboard under **App Settings > set up > API & Postbacks**.
 
 ## Implementation Checklist
 

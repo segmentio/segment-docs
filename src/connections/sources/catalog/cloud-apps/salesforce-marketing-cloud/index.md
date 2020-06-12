@@ -12,7 +12,7 @@ targeting, tracking, and managing email and digital media campaigns.
 With the Segment Salesforce Marketing Cloud Source, you can extract data from Marketing Cloud and send them
 to a data warehouse such as Redshift or Big Query with ease, avoiding having to build your own expensive custom solutions.
 
-If you are trying to setup Salesforce Marketing Cloud as a destination to receive data from Segment, check out
+If you are trying to set up Salesforce Marketing Cloud as a destination to receive data from Segment, check out
 [Salesforce Marketing Cloud Destination](https://segment.com/docs/connections/destinations/catalog/salesforce-marketing-cloud/).
 
 _**NOTE:** The Salesforce Marketing Cloud Source is currently in beta. This means that component names and functionality
@@ -33,7 +33,7 @@ subdomain from your Salesforce Marketing Cloud integration. The integration must
 | Hub        | Campaigns               | Read              |
 
 **If you already have a Salesforce Marketing Cloud Segment Destination**, you can choose to re-use the client ID,
-client secret and subdomain setup for the destination. To enable the permissions required for the source:
+client secret and subdomain set up for the destination. To enable the permissions required for the source:
 
 1. Log in to your Salesforce Marketing Cloud account.
 2. Click your name in the top-right corner of the screen and select "Administration".

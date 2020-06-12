@@ -21,7 +21,7 @@ title: Mailchimp Source
    ![](images/3032880_ChimpKey.png)
 
 
-5. Paste the newly created key into the Segment setup flow:
+5. Paste the newly created key into the Segment set up flow:
 
    ![](images/3146819_Screen+Shot+2016-02-16+at+2.52.00+PM.png)
 

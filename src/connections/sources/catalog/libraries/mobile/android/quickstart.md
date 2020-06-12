@@ -8,7 +8,7 @@ hidden: true
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 
-This tutorial will help you start sending analytics data from your Android app to Segment and any of our destinations, using our Android library. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
+This tutorial will help you start sending analytics data from your Android app to Segment and any of our destinations, using our Android library. As soon as you're set up you'll be able to turn on any new destinations with the flip of a switch!
 
 If you want to dive deeper at any point, check out the [Android Source Reference](/docs/connections/sources/catalog/libraries/mobile/android).
 

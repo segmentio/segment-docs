@@ -33,7 +33,7 @@ pod "Analytics"
 pod "Analytics-iAds-Attribution"
 ```
 
-Segment and Kitemetrics can automatically record the following events: "Application Installed", "Application Opened", "Application Updated", "Install Attributed" and "In-App Purchases".  In order to capture those events you need to enable automatic tracking.  Ensure you setup [SEGAnalyticsConfiguration](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) as shown below:
+Segment and Kitemetrics can automatically record the following events: "Application Installed", "Application Opened", "Application Updated", "Install Attributed" and "In-App Purchases".  In order to capture those events you need to enable automatic tracking.  Ensure you set up [SEGAnalyticsConfiguration](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) as shown below:
 
 Swift
 ```swift

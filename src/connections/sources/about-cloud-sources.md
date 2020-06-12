@@ -36,7 +36,7 @@ We make an effort to be respectful of your API call allotments and limits. For e
 
 Moreover, we're deliberate about which collections we pull, striking a balance between allowing you to get a full picture of your users and reducing extraneous data (like administrative and metadata tables).
 
-Soon, we'll allow you to specify which collections you care about during the source setup phase, so if you need to cut down on calls, you'll be able to just deselect collections.
+Soon, we'll allow you to specify which collections you care about during the source set up phase, so if you need to cut down on calls, you'll be able to just deselect collections.
 
 ### Streaming
 

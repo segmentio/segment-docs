@@ -79,7 +79,7 @@ Totango recognizes a few special properties for accounts that mean very specific
   </tr>
   <tr>
     <td>`plan` _String_, _optional_</td>
-    <td>The "Free" or "Paying" plan of the account. You can setup extra types of plans in your Totango settings if "Free" and "Paying" don't suit your needs. If you don't provide this, we'll default it to `"Free"`.</td>
+    <td>The "Free" or "Paying" plan of the account. You can set up extra types of plans in your Totango settings if "Free" and "Paying" don't suit your needs. If you don't provide this, we'll default it to `"Free"`.</td>
   </tr>
 </table>
 

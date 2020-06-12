@@ -29,7 +29,7 @@ Enabling Vitally as a destination in Segment can be done in one click from your 
 
   ![](images/2JQwIBK.png)
 
-5. That's it! Once we receive at least 1 event from Segment, you'll be able to proceed with the setup process and configure how to [create accounts from Segment](http://docs.vitally.io/en/articles/4)
+5. That's it! Once we receive at least 1 event from Segment, you'll be able to proceed with the set up process and configure how to [create accounts from Segment](http://docs.vitally.io/en/articles/4)
 
 ## Identify
 

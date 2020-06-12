@@ -691,7 +691,7 @@ Sign in to the [Identity and Access Management (IAM) console](https://console.aw
 
 While setting up the new role, add the policy you created in the previous step.
 
-Finish with any other setup items you may want (like `tags`). Once that's complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
+Finish with any other set up items you may want (like `tags`). Once that's complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
 
 Select the "Trust Relationships" tab, then click the "Edit trust relationship" button.
 

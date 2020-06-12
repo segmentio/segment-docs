@@ -12,7 +12,7 @@ You'll need to provide API access to Segment using a Salesforce user credentials
 
 Since we don't want to ask for the password of one of your actual user accounts, we recommend you create a new Salesforce user account for Segment. We realize an extra user account costs money, so feel free to use an existing account if you wish.
 
-If you decide to create a new user account for the Segment API, create this user by going to *Setup > Administration Setup > Users > New User*, and creating a new user with a System Administrator profile. This profile is required to give us enough permissions to access the API.
+If you decide to create a new user account for the Segment API, create this user by going to *Setup > Administration set up > Users > New User*, and creating a new user with a System Administrator profile. This profile is required to give us enough permissions to access the API.
 
 Also make sure that IP Security is disabled in this Salesforce user account. This is because our servers often change and its hard to predict their IPs.
 
@@ -186,7 +186,7 @@ Also, every thirty minutes, our servers make two queries: one to renew our conne
 
 ### How can I check how many Salesforce API calls I have left today?
 
-Go to `Setup > Administration Setup > Company Profile > Company Information`, and you'll find a field labeled: `API Requests, Last 24 Hours`.
+Go to `Setup > Administration set up > Company Profile > Company Information`, and you'll find a field labeled: `API Requests, Last 24 Hours`.
 
 
 ### What do I do if I ran out of calls?
@@ -208,7 +208,7 @@ Make sure that the traits you're passing through match the Custom Field's API na
 
 By default, Salesforce user accounts are set to have their passwords expire after 90 days. When this happens, the Salesforce user account that's making API calls on your behalf will no longer be able to make API calls. You'll need to set a new password, get a new security token, and then set both of these in your Segment Salesforce destination settings.
 
-If you want to set your passwords to never expire, you can do so in **Salesforce Setup > Administration Setup > Security Controls > Password Policies**.
+If you want to set your passwords to never expire, you can do so in **Salesforce set up > Administration set up > Security Controls > Password Policies**.
 
 ### Updating Lead Status
 

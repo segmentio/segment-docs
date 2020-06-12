@@ -37,7 +37,7 @@ Take your company's analysis to the next level by **adding Sendgrid as a Source 
 
   ![](images/934372_Webhook+Settings.png)
 
-8. Once you enable the Event Notification, you're good to go! Press **Next**, and then **Finish** to wrap up the setup flow.
+8. Once you enable the Event Notification, you're good to go! Press **Next**, and then **Finish** to wrap up the set up flow.
 
 ### Event URL
 

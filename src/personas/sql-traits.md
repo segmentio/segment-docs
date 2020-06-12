@@ -58,7 +58,7 @@ To use SQL traits you need:
 
 ### Step 1. Set up a warehouse source
 
-We currently support Redshift, Postgres, Snowflake, and BigQuery as data warehouse sources for SQL traits. The setup process for BigQuery is a bit different as it _requires_ a service user.
+We currently support Redshift, Postgres, Snowflake, and BigQuery as data warehouse sources for SQL traits. The set up process for BigQuery is a bit different as it _requires_ a service user.
 
 For any warehouse, we recommend that you create a separate read-only user for building SQL traits.
 

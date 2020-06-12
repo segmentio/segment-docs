@@ -62,7 +62,7 @@ Analytics.track(
 
 ### Install Attributed Postback
 
-To create a Kochava-Certified Postback that will send campaign information to Segment after attributing an `Application Installed` event, follow [Kochava's Postback Setup documentation](https://support.kochava.com/campaign-management/create-a-kochava-certified-postback).
+To create a Kochava-Certified Postback that will send campaign information to Segment after attributing an `Application Installed` event, follow [Kochava's Postback set up documentation](https://support.kochava.com/campaign-management/create-a-kochava-certified-postback).
 
 ### Apple Search Ads
 

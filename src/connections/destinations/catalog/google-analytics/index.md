@@ -174,7 +174,7 @@ If you want to record that property or trait as a custom dimension you'd map **E
 
 ![a b test custom dimension mapping screenshot](images/ab-mapping.png)
 
-*Remember: You'll need to setup dimension13 inside of your Google Analytics Admin first as described at the top of this docs section.*
+*Remember: You'll need to set up dimension13 inside of your Google Analytics Admin first as described at the top of this docs section.*
 
 ## Track
 

@@ -4,7 +4,7 @@ beta: true
 title: Adobe Target Destination
 ---
 [Adobe Target](https://www.adobe.com/marketing-cloud/target.html) removes the
-coding and setup hassles of A/B testing to help you quickly discover which
+coding and set up hassles of A/B testing to help you quickly discover which
 offers, experiences and messages truly engage your visitors.
 
 _**NOTE:** Adobe Target is currently in beta, and this doc was last
