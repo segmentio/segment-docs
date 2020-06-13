@@ -39,7 +39,7 @@ To get started with MoEngage on iOS, first add the [MoEngage-Segment-iOS](https:
   pod update
   ```
 
-### set up Segment SDK
+### Set up Segment SDK
 
 Go to the App Delegate file and set up the Segment SDK by adding the `SEGMoEngageIntegrationFactory` instance to `SEGAnalyticsConfiguration` as shown below:
 

@@ -537,7 +537,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
-  ### ticket_events
+### ticket_events
 <table>
   <tr>
     <td>id</td>
@@ -589,7 +589,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
-  ### activities
+### activities
 <table>
   <tr>
     <td>id</td>
@@ -617,7 +617,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
-  ### attachments
+### attachments
 <table>
   <tr>
     <td>id</td>
@@ -649,7 +649,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
-  ### organizations
+### organizations
 <table>
   <tr>
     <td>id</td>
@@ -701,7 +701,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
-  ### satisfaction_ratings
+### satisfaction_ratings
 <table>
   <tr>
     <td>id</td>
@@ -744,7 +744,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
   </tr>
 </table>
 
-  ### ticket_comments
+### ticket_comments
   <table>
   <tr>
     <td>id</td>

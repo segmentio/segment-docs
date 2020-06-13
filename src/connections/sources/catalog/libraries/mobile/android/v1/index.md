@@ -157,7 +157,7 @@ Analytics.screen("Viewed Item", props);
 The `identify`, `group`, `screen`, `track`, and `alias` calls can be passed an options object.
 
 
-## destinations
+## Destinations
 
 You can specify which analytics providers you want each action to go to.
 
