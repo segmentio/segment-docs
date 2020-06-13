@@ -58,4 +58,4 @@ You can optionally configure Delighted to send feedback from Delighted _email su
 
 Simply copy the `Write Key` of the Segment Source where you want to send data and paste into the [Delighted Segment Destination page](https://delighted.com/destinations/segment).
 
-Delighted will then send all _email survey_ feedback triggered via the Segment integration into back into Segment. Refer to our [Delighted Source](/docs/connections/sources/catalog/cloud-apps/delighted/) documentation for more information.
+Delighted will then send all _email survey_ feedback triggered using the Segment integration into back into Segment. Refer to our [Delighted Source](/docs/connections/sources/catalog/cloud-apps/delighted/) documentation for more information.

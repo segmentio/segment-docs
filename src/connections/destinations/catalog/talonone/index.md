@@ -11,7 +11,7 @@ This destination is maintained by Talon.One. For any issues with the destination
 _**NOTE:** The Talon.One Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 15, 2020. If you are interested in joining their beta program or have any feedback to help improve the Talon.One Destination and its documentation, [let their team know](mailto:support@talon.one)!_
 
 > warning ""
-> Data collection that affects promotions should be collected using a Segment **server-side** implementation. Client-side implementations exposes you to risks of fraud. (e.g. a user changing a custom trait relating to their profile via JS modification tools, which triggers them to receive a higher discount than they are entitled to) For more information  [read this](https://segment.com/docs/guides/how-to-guides/collect-on-client-or-server/).
+> Data collection that affects promotions should be collected using a Segment **server-side** implementation. Client-side implementations exposes you to risks of fraud. (e.g. a user changing a custom trait relating to their profile using JS modification tools, which triggers them to receive a higher discount than they are entitled to) For more information  [read this](https://segment.com/docs/guides/how-to-guides/collect-on-client-or-server/).
 
 ## Getting Started
 

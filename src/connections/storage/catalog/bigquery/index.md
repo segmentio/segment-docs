@@ -96,7 +96,7 @@ from <project-id>.<source-name>.<collection-name>$20160809
 A [view](https://cloud.google.com/bigquery/querying-data#views) is a virtual
 table defined by a SQL query. We use views in our de-duplication process to
 ensure that events that you are querying unique events, and the latest objects
-from third-party data. All our views are setup to show information from the last
+from third-party data. All our views are set up to show information from the last
 60 days. Whenever possible, we recommend that you query from these views.
 
 Views are appended with `_view` , which you can query like this:
@@ -186,7 +186,7 @@ BigQuery offers both a scalable, pay-as-you-go pricing plan based on the amount
 of data scanned, or a flat-rate monthly cost. You can learn more about BigQuery
 pricing [here](https://cloud.google.com/bigquery/pricing).
 
-BigQuery allows you to setup [Cost Controls and
+BigQuery allows you to set up [Cost Controls and
 Alerts](https://cloud.google.com/bigquery/cost-controls) to help control and
 monitor costs. If you want to learn more about what BigQuery will cost you,
 they've provided [this
@@ -198,8 +198,8 @@ costs.
 You can connect to BigQuery using a BI tool like Mode or Looker, or query
 directly from the BigQuery console.
 
-BigQuery now supports standard SQL, which you can enable via their query UI.
-This does not work with views, or with a query that uses table range
+BigQuery now supports standard SQL, which you can enable using their query UI.
+This does not work with views, or with a query that utilizes table range
 functions.
 
 ### Does Segment support streaming inserts?

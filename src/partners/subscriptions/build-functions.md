@@ -39,7 +39,7 @@ The two items passed into the functions are the _event payload_ and the _setting
 * The _Event_ argument to the function is the [Segment Event Data](https://segment.com/docs/connections/spec/common/#structure)
 * The _Settings_ argument to the function contains user settings like _apiKey_ and any custom settings you have added.
 
-The functions are ["async/await" style JavaScript](https://javascript.info/async-await), and should use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) via the pre-loaded `fetch` package.
+The functions are ["async/await" style JavaScript](https://javascript.info/async-await), and should use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) using the pre-loaded `fetch` package.
 
 Here's a basic example of a function that POSTs the event to a "request bin" for introspection. You can go to [RequestBin](https://requestbin.com/) to create your own `endpoint` to experiment with. This builds a query string for the URL, sets a basic auth header, and sends a JSON body:
 

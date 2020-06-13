@@ -31,7 +31,7 @@ require_once("/path/to/analytics-php/lib/Segment.php");
 Now, you're ready to actually initialize the module. In our examples, we first rename this module to be `Analytics` for convenience. In your initialization script, go ahead and make the following call:
 
 ```php
-# Setup our Segment tracking and
+# set up our Segment tracking and
 # alias to Analytics for convenience
 class_alias('Segment', 'Analytics');
 Segment::init("YOUR_WRITE_KEY");
@@ -161,7 +161,7 @@ Find details on **best practices in event naming as well as the `track` method p
 
 The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side setup in combination with the PHP library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using our client-side set up in combination with the PHP library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
 Example `page` call:
 

@@ -14,7 +14,7 @@ In order to get started using custom domains, you will need:
 
 This guide will go through how to set up a custom domain in Cloudfront. The same principles can be applied to virtually any modern CDN that supports proxying.
 
-You will need to setup two key pieces, regardless of the CDN provider you're using:
+You will need to set up two key pieces, regardless of the CDN provider you're using:
 1. Proxy to Segment CDN (cdn.segment.com)
 2. Proxy to Segment tracking API (api.segment.io)
 

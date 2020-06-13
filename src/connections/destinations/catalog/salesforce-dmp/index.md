@@ -384,7 +384,7 @@ Sending data to SFDMP's Event.gif endpoint requires that you map any Segment
 event names to SFDMP event IDs in the `Server-side Event ID Mapping` setting in
 Segment's UI. Segment `properties` must be mapped to SFDMP properties in the
 `Event Attribute Mapping` setting in Segment's UI. **Note** that `track`
-properties sent to SFDMP via their Event.gif endpoint must be set up in
+properties sent to SFDMP using their Event.gif endpoint must be set up in
 SFDMP's dashboard before SFDMP will accept them.
 
 In addition, Segment maps fewer event properties to SFDMP out of the box:

@@ -112,7 +112,7 @@ At the very minimum you must include an orderId for each Order and for each prod
 
 ### Custom Dimensions
 
-Through Segment you can record user-scope custom dimensions via our identify, page, or track methods.
+Through Segment you can record user-scope custom dimensions using our identify, page, or track methods.
 
 A full explanation can be found in [our Google Analytics docs](/docs/connections/destinations/catalog/google-analytics/#custom-dimensions) page, but here's a quick example:
 

@@ -55,4 +55,4 @@ analytics.track('New Order', {
 });
 ```
 
-Track calls will be sent to Asayer via its `asayer.event` method as a `track` event.
+Track calls will be sent to Asayer using its `asayer.event` method as a `track` event.

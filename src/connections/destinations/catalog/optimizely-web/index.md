@@ -52,7 +52,7 @@ Behind the scenes, Segment's Optimizely Web destination creates a global Optimiz
 Segment forwards the event to Optimizely:
 * If the Segment event name matches exactly the name of an active experiment `metric` set up in the Optimizely dashboard;
 * If the experiment `metric` is associated with a running experiment;
-* If the current user has been assigned a `userId` via Segment's `identify` method (e.g. `analytics.identify('123')`);
+* If the current user has been assigned a `userId` using Segment's `identify` method (e.g. `analytics.identify('123')`);
 * If the current user is activated in a running experiment with the associated `metric`.
 
 Segment also handles the following mapping:
@@ -76,7 +76,7 @@ Upon activation of an Optimizely experiment, an “Experiment Viewed” `track` 
 
 #### Standard or Redirect Experiments
 
-**Properties sent via `track` calls:**
+**Properties sent using `track` calls:**
 
 * campaignName
 * campaignId
@@ -109,7 +109,7 @@ analytics.track('Experiment Viewed', {
 });
 ```
 
-**Trait sent via `identify` calls:**
+**Trait sent using `identify` calls:**
 
 * experimentName
 * variationName
@@ -161,7 +161,7 @@ For more details on how events are attributed on the Optimizely results page, re
 Upon invocation of a Segment `track` event, Segment maps the event to an Optimizely `track` event:
 * If the Segment event name matches exactly the name of an active experiment `metric` set up in the Optimizely dashboard;
 * If the experiment `metric` is associated with a running experiment;
-* If the current user has been assigned a `userId` via Segment's `identify` method (e.g. `analytics.identify('123')`);
+* If the current user has been assigned a `userId` using Segment's `identify` method (e.g. `analytics.identify('123')`);
 * If the current user is activated in a running experiment with the associated `metric`.
 
 Segment also handles the following mapping:
@@ -183,7 +183,7 @@ Segment does not implement experiment listeners for Optimizely X Full Stack.
 
 ### Tracking Anonymous Data with Optimizely X Full Stack
 
-If you are sending anonymous data to Optimizely X Full Stack via their server-side SDK elsewhere and would like to send anonymous data for the same user via this Segment client-side component, you can pass in an Optimizely-specific `userId`:
+If you are sending anonymous data to Optimizely X Full Stack using their server-side SDK elsewhere and would like to send anonymous data for the same user using this Segment client-side component, you can pass in an Optimizely-specific `userId`:
 
   ```javascript
   analytics.track('Some event', { /* properties */ }, {
@@ -215,7 +215,7 @@ analytics.track('Category Clicked', {
 });
 ```
 
-If you were to send this Segment `track` event to Optimizely via any of the Segment integrations, you would only be able to use the `eventName` ‘Click’ as a `metric` in Optimizely since custom event tags in Optimizely are not available on the [Results page](https://help.optimizely.com/Analyze_Results/The_Experiment_Results_page_for_Optimizely_X).
+If you were to send this Segment `track` event to Optimizely using any of the Segment integrations, you would only be able to use the `eventName` ‘Click’ as a `metric` in Optimizely since custom event tags in Optimizely are not available on the [Results page](https://help.optimizely.com/Analyze_Results/The_Experiment_Results_page_for_Optimizely_X).
 
 To send a `track` event from Segment with the context about that event from the `properties` to Optimizely, create a [custom Segment Destination Function](https://segment.com/docs/connections/destinations/destination-functions/) that maps the Segment `eventName` to a more specific Optimizely `eventName` and send an Optimizely `event` payload with the transformed `eventName` to the Optimizely [Event API](https://docs.developers.optimizely.com/web/docs/event-api). Using the example above, the Segment `track` event ‘Click’ can be transformed to an Optimizely `event` with the `eventName` ‘Clicked Shirt’.
 
@@ -223,7 +223,7 @@ To send a `track` event from Segment with the context about that event from the 
 
 If you are running redirect experiments, you might run into a case where the effective referrer is different than the referrer that is captured by `page` calls, such as the default page call in our Segment snippet.
 
-For example, let's say you run a redirect experiment on page `http://home.com` that redirects you to `http://home-offers.com`. Now, if a customer visits your page via a Google ad, you want to make sure that the `page` call fired on `http://home-offers.com` knows that the true referrer was Google and NOT `http://home.com`.
+For example, let's say you run a redirect experiment on page `http://home.com` that redirects you to `http://home-offers.com`. Now, if a customer visits your page using a Google ad, you want to make sure that the `page` call fired on `http://home-offers.com` knows that the true referrer was Google and NOT `http://home.com`.
 
 Our Optimizely Web destination detects this and send the effective referrer value as a property of the subsequent Experiment Viewed. Segment also overrides the `context.page.referrer` with the effective referrer.
 

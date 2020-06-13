@@ -10,7 +10,7 @@ This source is maintained by YOUBORA. For any issues with the source, you may [c
 
 _**NOTE:** Youbora is currently in private beta and this doc was last updated on July 2nd, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Youbora Destination and its documentation, and [let us know](https://segment.com/help/contact) and your YOUBORA representative know!_
 
-Adding YOUBORA as a Source to Segment will allow you to leverage YOUBORA data with other Segment collected data.
+Adding YOUBORA as a Source to Segment will allow you to use YOUBORA data with other Segment collected data.
 
 These events can be passed to your Segment Destinations such as data warehouses and analytics tools. Joined with data from other marketing programs, you can start telling a unified story of each customer's journey and tailor your reporting to the KPIs that matter most.
 

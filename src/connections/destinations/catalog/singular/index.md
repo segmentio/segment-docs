@@ -5,7 +5,7 @@ title: Singular Destination
 
 [Singular](https://www.singular.net/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Marketing Intelligence Platform that transforms marketing data into accurate, granular and actionable insights to drive growth. By unifying marketing campaign data with attribution data, marketers can measure ROI from every touchpoint across multiple channels for a single source of truth.
 
-The destination is available to receive data via Cloud Mode from all platforms and to integrate via Device Mode on Mobile.
+The destination is available to receive data using Cloud Mode from all platforms and to integrate using Device Mode on Mobile.
 
 This destination is maintained by Singular. For any issues with the destination, [contact Singular Support](mailto:support@singular.net).
 
@@ -27,7 +27,7 @@ This destination is maintained by Singular. For any issues with the destination,
 
 ## Install Attribution
 
-Enable automatic tracking of lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) via initialization config parameters ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#application-lifecycle-tracking), [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#step-2-initialize-the-client)) to track installs and sessions in Singular. The Singular "**session**" will be sent automatically by the integration as long as you are including the events above.
+Enable automatic tracking of lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) using initialization config parameters ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#application-lifecycle-tracking), [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#step-2-initialize-the-client)) to track installs and sessions in Singular. The Singular "**session**" will be sent automatically by the integration as long as you are including the events above.
 
 
 ## Apple Search Ads Attribution

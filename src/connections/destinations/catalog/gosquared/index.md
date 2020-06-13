@@ -19,7 +19,7 @@ When you enter your GoSquared site token into Segment, website tracking will aut
 
 ## Mobile and Server-Side Tracking
 
-To track data via Segment's mobile and server-side sources, you will need to enter a GoSquared API Key, which can be created in your [GoSquared account](https://www.gosquared.com/settings/api). The API Key must have "Write Tracking" access. All functionality is supported by mobile and server-side tracking.
+To track data using Segment's mobile and server-side sources, you will need to enter a GoSquared API Key, which can be created in your [GoSquared account](https://www.gosquared.com/settings/api). The API Key must have "Write Tracking" access. All functionality is supported by mobile and server-side tracking.
 
 - - -
 

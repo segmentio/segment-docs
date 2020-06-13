@@ -12,13 +12,13 @@ If you already host an Omniture instance on your page, we will hook into that. I
 
 ### Overview
 
-The Omniture destination on Segment works with [all of our tracking sources](/docs/connections/sources/). When you send events via our mobile SDKs or server-side sources we translate that data into XML format and pass it to Omniture's XML Insertion API. Events tracked in client-side javascript are sent directly from the browser.
+The Omniture destination on Segment works with [all of our tracking sources](/docs/connections/sources/). When you send events using our mobile SDKs or server-side sources we translate that data into XML format and pass it to Omniture's XML Insertion API. Events tracked in client-side javascript are sent directly from the browser.
 
 - - -
 
 ## Page
 
-Pageviews can be tracked via Segment with [`page`](/docs/connections/spec/page/) calls from the browser. You must call it at least once per page. The javascript snippet you copy-paste from the setup guide comes with a default, `analytics.page();` call.
+Pageviews can be tracked using Segment with [`page`](/docs/connections/spec/page/) calls from the browser. You must call it at least once per page. The javascript snippet you copy-paste from the set up guide comes with a default, `analytics.page();` call.
 
 *You can extend the basic call to include the page name:*
 
@@ -144,7 +144,7 @@ For [ecommerce events](#e-commerce), we'll automatically send standard propertie
 
 ## Mobile
 
-Segment supports Omniture mobile app analytics via the Omniture XML Insertion API. You'll no longer need to deal with the Omniture SDKs at all.
+Segment supports Omniture mobile app analytics using the Omniture XML Insertion API. You'll no longer need to deal with the Omniture SDKs at all.
 
 For getting started with our mobile sources, check out the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios) and [Android](/docs/connections/sources/catalog/libraries/mobile/android) technical docs.
 

@@ -8,7 +8,7 @@ After destination Segment with your app, enable OneSignal in your segment destin
 
 OneSignal will only track new users. If you have existing push notification data in another service, [contact OneSignal support](mailto:support@onesignal.com) to transfer it over.
 
-OneSignal supports the `identify` and `track` methods and is currently only available on iOS via Segment.
+OneSignal supports the `identify` and `track` methods and is currently only available on iOS using Segment.
 
 - - -
 

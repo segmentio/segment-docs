@@ -23,7 +23,7 @@ Segment Workspace Owners authorize your App on their workspace using a web-based
 
 Therefore, the token returned by Segment isn't tied to a user – it's tied to an App Install. That's why we call it an Install Token.
 
-## Setup Guide
+## Set up Guide
 
 There are three steps to implement an "Enable with Segment" OAuth flow:
 
@@ -38,7 +38,7 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
    ![Step 1](images/enable-with-segment/step1.png)
 3. Name your App, and click **Create**.
    ![Step 2](images/enable-with-segment/step2.png)
-   You'll be redirected to your App's main page. If you are implementing Enable with OAuth for an integration not built via the Developer Center and encounter an issue where your integration's name is already taken, you may choose another name (eg. TOOLNAME-enable). You will have the option to connect the two by selecting a scope in Step #2.
+   You'll be redirected to your App's main page. If you are implementing Enable with OAuth for an integration not built using the Developer Center and encounter an issue where your integration's name is already taken, you may choose another name (eg. TOOLNAME-enable). You will have the option to connect the two by selecting a scope in Step #2.
 4. Click the `App Info` tab.
    ![Step 3](images/enable-with-segment/step3.png)
 5. From the `App Info` tab, click `OAuth` in the left side navigation.

@@ -13,7 +13,7 @@ Our Google Ads (Classic) destination code is open-source on GitHub if you want t
 **Note:** Google released a new version of Google Ads that uses [a Global Site Tag (or Gtag)](https://support.google.com/adwords/answer/7548399?hl=en). Segment supports this using a different version of the destination - see the documentation for [Google Ads (Gtag)](/docs/connections/destinations/catalog/google-adwords-new/) for more details.
 
 With Segment your events can be used to fire a Google Ads conversion pixel from your website **in client-side javascript.**
-It can also be used to trigger Google Ads (Classic) conversion from your mobile app via **Server to Server** destination, so you don't have to include the SDK in your app. Our server to server connection requires mobile device specific details to forward the events to Google Ads (Classic). Google Ads (Classic) **does not work with any server-side libraries**. Make sure when you're setting up your Google Ads (Classic) conversions that you choose the appropriate tracking method.
+It can also be used to trigger Google Ads (Classic) conversion from your mobile app using **Server to Server** destination, so you don't have to include the SDK in your app. Our server to server connection requires mobile device specific details to forward the events to Google Ads (Classic). Google Ads (Classic) **does not work with any server-side libraries**. Make sure when you're setting up your Google Ads (Classic) conversions that you choose the appropriate tracking method.
 
 From your Segment Destinations Catalog click Google Ads (Classic).
 You'll need to enter your Conversion ID from your Google Ads (Classic) account first. Next, enter the name of the event exactly as it appears in your [`track`](/docs/connections/spec/track) call on the left and map it to your Google Ads (Classic) conversion's `google_conversion_label` on the right.
@@ -85,7 +85,7 @@ To authorize Segment to track conversion events using the Google Ads (Classic) A
 
 #### Generate a Link ID in your Google Ads (Classic) Account
 
-Authorization between an Google Ads (Classic) account and a third-party-application is done via the use of a Link Id. This process is detailed [here](https://support.google.com/adwords/answer/7365001).
+Authorization between an Google Ads (Classic) account and a third-party-application is done using the use of a Link Id. This process is detailed [here](https://support.google.com/adwords/answer/7365001).
 
 **Important:** During this process, you will be required to enter a Provider ID. Segment's is the following: 7552494388
 
@@ -110,7 +110,7 @@ All `track` events are by default sent to your Google Ads (Classic) account and 
  8. ecommerce_purchase
  9. custom
 
- We integrate with these event types via the use of our [Semantic Event Spec](https://segment.com/docs/connections/spec/semantic/). Each individual mapping we support is documented in the sections below. Any event we recieve that is not a mapped semantic event will be sent to Google Ads (Classic) as a `custom` event type.
+ We integrate with these event types using the use of our [Semantic Event Spec](https://segment.com/docs/connections/spec/semantic/). Each individual mapping we support is documented in the sections below. Any event we recieve that is not a mapped semantic event will be sent to Google Ads (Classic) as a `custom` event type.
 
 ### Application Installed
 

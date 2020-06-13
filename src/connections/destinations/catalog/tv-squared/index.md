@@ -50,7 +50,7 @@ As per the example above, TV Squared **requires** that you pass in a `revenue`, 
 
 ### Event Whitelisting
 
-For each event that you want to track (e.g. via analytics.track(your_event_name, …)), you will need to whitelist the event in your destination settings (under "Event Whitelist"). For example, if you want analytics.track('Order Completed`) and analytics.track('Sale`) events to be sent, then you will need to add Order Completed and Sale to this list.
+For each event that you want to track (e.g. using `analytics.track(your_event_name, …)`), you must whitelist the event in your destination settings (under "Event Whitelist"). For example, if you want analytics.track('Order Completed`) and analytics.track('Sale`) events to be sent, then you must add Order Completed and Sale to this list.
 
 ### Custom Track Properties
 
@@ -67,4 +67,4 @@ analytics.track('Completed Purchase', {
 });
 ```
 
-In order to take advantage of this feature, similar to [Event Whitelisting](#/event-whitelisting), you will need to add "Custom Metrics" to your destination settings. This will let you put in the specific additional metrics you want to send (the required properties are already sent automatically). In this case, you'd add `listViewed` and `browser`.
+In order to take advantage of this feature, similar to [Event Whitelisting](#/event-whitelisting), you must add "Custom Metrics" to your destination settings. This will let you put in the specific additional metrics you want to send (the required properties are already sent automatically). In this case, you'd add `listViewed` and `browser`.

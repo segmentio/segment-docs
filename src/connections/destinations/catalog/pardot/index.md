@@ -16,7 +16,7 @@ Pardot is supported on the client-side and server-side.
 
 ### API Access
 
-You'll need to provide API access to Segment via Pardot user credentials. Since Pardot's API [requires](http://developer.pardot.com/kb/api-version-3/authentication) that we provide an email and password to get access to their API, we'll need to store this password in plain text in our database.
+You'll need to provide API access to Segment using Pardot user credentials. Since Pardot's API [requires](http://developer.pardot.com/kb/api-version-3/authentication) that we provide an email and password to get access to their API, we'll need to store this password in plain text in our database.
 
 Since we don't want to ask for the password of one of your actual user accounts, we recommend you create a new Pardot user account for Segment. Create this user by going to *Admin > Users and Groups > Add User*, and creating an Administrator role user.
 

@@ -47,4 +47,4 @@ analytics.track("Button Clicked", {
 });
 ```
 
-QuanticMind only accepts numbered events like `event1` and `event12`. When you `analytics.track(event, properties)` an event, we need to map that event name to QuanticMind numbered event via your destination settings. Enter an event on the left, and the QuanticMind event number you want on the right.
+QuanticMind only accepts numbered events like `event1` and `event12`. When you `analytics.track(event, properties)` an event, we need to map that event name to QuanticMind numbered event using your destination settings. Enter an event on the left, and the QuanticMind event number you want on the right.

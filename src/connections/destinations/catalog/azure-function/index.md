@@ -65,7 +65,7 @@ In order to process events from Segment, you will need to provide a Azure Functi
 
 
 
-- Setup your function code.
+- set up your function code.
 - In the created function screen, click on `</> Get function URL`.
 ![](images/azure9.png)
 

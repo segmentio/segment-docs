@@ -29,7 +29,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Learndot leverages the `identify` event in order to map events in Segment back to learners in Learndot.
+Learndot uses the `identify` event in order to map events in Segment back to learners in Learndot.
 
 **IMPORTANT:** `email` is a required trait as Learndot will use this as the primary field to complete the mapping.
 

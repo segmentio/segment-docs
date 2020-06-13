@@ -14,7 +14,7 @@ Be sure to enable Kahuna in your Segment destinations page and provide your **Ka
 
 ## Mobile
 
-In order to leverage the full capability of Kahuna's Push Messaging and In-App features, you will have to bundle the Kahuna SDK while configuring your Segment mobile SDKs.
+In order to use the full capability of Kahuna's Push Messaging and In-App features, you will have to bundle the Kahuna SDK while configuring your Segment mobile SDKs.
 
 ### Android
 
@@ -67,7 +67,7 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 ### Push Notifications
 
-To leverage the Push Notifications and In-App functionality provided by Kahuna, follow the steps in the Kahuna SDK destination guide:
+To use the Push Notifications and In-App functionality provided by Kahuna, follow the steps in the Kahuna SDK destination guide:
 
 - For **iOS**, follow the steps in [Enable Personalized Push](https://app.usekahuna.com/tap/docs/Content/Integration/IOS/iOS_Push.htm) in the iOS Get Started section.
 
@@ -134,8 +134,8 @@ For `Added Product`, Segment tracks the Kahuna User Attributes "Last Product Add
 
 For `Order Completed`, Segment tracks the Kahuna User Attributes "Last Purchase Discount" taken from `properties.discount`. If `discount` is unspecified, Segment tracks 0.
 
-### Send Push Token via Server-Side
+### Send Push Token using Server-Side
 
 If you chose not to bundle the Kahuna Mobile SDK, then you will have to implement your own Push Message processors, and you won't have access to Kahuna's In-App feature.
 
-If you decide to implement your own Push Message processors, then make sure you pass the Push Tokens to Kahuna via Server Side.  You can do this by sending it inside `context.device.token`. We will send this to Kahuna as `push_token`.
+If you decide to implement your own Push Message processors, then make sure you pass the Push Tokens to Kahuna using Server Side.  You can do this by sending it inside `context.device.token`. We will send this to Kahuna as `push_token`.

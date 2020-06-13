@@ -45,9 +45,9 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 
 Our integration also supports using Segment `screen` events as `track` events. For example, if you had a `screen` event named `Confirmation` you could map the invocation of this to a Facebook app event as you would with Segment `track` events.
 
-To use this functionality you must opt into it via the integration setting named **Use Screen Events as Track Events**. Once enabled, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be bookended with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
+To use this functionality you must opt into it using the integration setting named **Use Screen Events as Track Events**. Once enabled, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be bookended with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
 
-Note, the integration will not automatically translate `screen` events to spec'd Facebook events as our `track` method does. If you would like to map these events to specific Facebook events you can do this via the **Map your events to Standard FB App Events** setting. Be sure to specify the event as **Viewed** `name` **Screen** where `name` is the name property of the `screen` event.
+Note, the integration will not automatically translate `screen` events to spec'd Facebook events as our `track` method does. If you would like to map these events to specific Facebook events you can do this using the **Map your events to Standard FB App Events** setting. Be sure to specify the event as **Viewed** `name` **Screen** where `name` is the name property of the `screen` event.
 
 ## Track
 

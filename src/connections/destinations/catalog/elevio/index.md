@@ -14,8 +14,9 @@ This document was last updated on 31 July, 2018. If you notice any gaps, out-dat
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Elevio" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your "Account ID" from your Elevio's [Installation](https://app.elev.io/installation) page under "Install via Code Snippet". You can also use Elevio's "Install via Segment" workflow from the same page.
-4. Ensure that you have Elevio's Assistant enabled via your [Settings](https://app.elev.io/settings).
+3. Drop in your "Account ID" from your Elevio's [Installation](https://app.elev.io/installation) page under "Install via Code Snippet". You can also use Elevio's "Install with Segment" workflow from the same page.
+4. Ensure that you have Elevio's Assistant enabled from your [Settings](https://app.elev.io/settings).
+
 5. In about 45 minutes the CDN will be updated and Elevio's snippet will be initialized onto your page.
 
 

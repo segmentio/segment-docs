@@ -24,7 +24,7 @@ Scenarios when this tool will be useful: 
 
 #### Available for server side event streaming destinations only
 
-This feature is only available for server side integrations (also known as cloud-mode destinations). You will not be able to use this for client side / device-mode destinations as device-mode data is sent directly to the tool's API. To be report on deliverability, the data must be sent to Destinations via Segment's APIs. 
+This feature is only available for server side integrations (also known as cloud-mode destinations). You will not be able to use this for client side / device-mode destinations as device-mode data is sent directly to the tool's API. To be report on deliverability, the data must be sent to Destinations using Segment's APIs. 
 
 > warning ""
 > **Not available for Warehouses or Amazon S3**. These destinations work differently to our other destinations, and aren't supported at this time.

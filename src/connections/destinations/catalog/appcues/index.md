@@ -51,7 +51,7 @@ analytics.identify('12091906-01011992', {
 
 When you `identify` on `analytics.js`, we call `Appcues.identify`. This is the preferred method of using and targeting on user properties.
 
-To get the most out of Appcues, you'll want to send as much user data as possible in the `identify` call. Properties are used to target experiences to specific users and personalize content. Most Appcues customers send properties that fall into a few groups:
+To get the most out of Appcues, you should send as much user data as possible in the `identify` call. Properties are used to target experiences to specific users and personalize content. Most Appcues customers send properties that fall into a few groups:
   * Properties to target based on broad classifications such as `role` or `userType`
   * Properties to personalize Appcues content such as `name`, `firstName` or `company`
   * Properties to target based on user lifecycle such as `createdAt` (date) or usage metrics such as `numTasksComplete`
@@ -88,9 +88,9 @@ To enable this feature, go to the Integrations Settings in Appcues and click "Ac
 
 ### Whitelisted Domains
 
-By default, Appcues will target based on the path of the URL. So if we created an Appcues experience and targeted it to `/integrations`, it would appear wherever the embed script is installed with that URL path, like appcues.com/integrations and my.appcues.com/integrations. If your `analytics.js` script is installed on multiple domains (e.g. your marketing site and your web app), you'll want to use Appcues whitelisted domains when targeting your experience.
+By default, Appcues will target based on the path of the URL. So if we created an Appcues experience and targeted it to `/integrations`, it would appear wherever the embed script is installed with that URL path, like appcues.com/integrations and my.appcues.com/integrations. If your `analytics.js` script is installed on multiple domains (e.g. your marketing site and your web app), you should use Appcues whitelisted domains when targeting your experience.
 
 
 ## Delete
 
-When you trigger a user deletion via our [Privacy features](https://segment.com/docs/privacy-portal/user-deletion-and-suppression/), we will forward a delete notification to Appcues, who will act on the notification. You can read more about how Appcues handles deletion requests [in their docs here.](https://docs.appcues.com/article/443-gdpr-deletion-api)
+When you trigger a user deletion using our [Privacy features](https://segment.com/docs/privacy-portal/user-deletion-and-suppression/), we will forward a delete notification to Appcues, who will act on the notification. You can read more about how Appcues handles deletion requests [in their docs here.](https://docs.appcues.com/article/443-gdpr-deletion-api)

@@ -25,7 +25,7 @@ Setup within Segment:
 Setup within Clearbit:
 1. From your [Clearbit dashboard](https://dashboard.clearbit.com/integrate) click on the [Reveal product](https://dashboard.clearbit.com/integrate/reveal).
 2. Click on the Segment integration tile and click to 'Enable with Segment'.
-3. Select the source that you connected Clearbit Reveal to as a destination in the above Segment Setup instructions.
+3. Select the source that you connected Clearbit Reveal to as a destination in the above Segment set up instructions.
 4. CLick 'Send Data'.
 
 To verify that the destination has been set up correctly, send a page event **that includes an IP address**, check the Debugger section of your Segment Source. Assuming everything is as it should be, you should start seeing Clearbit Reveal data populate in an `identify` event – click on the specific event you're interested in to see Clearbit Reveal traits. These traits will now be available to other Segment destinations in your account. Notice that all Clearbit Reveal traits are prefixed with `reveal_` to ensure they don't conflict with existing traits. Clearbit will also send a `track` event for 'enrichment_provider'.
