@@ -22,9 +22,9 @@ This document was last updated on January 29, 2018. If you notice any gaps, outd
 5. We recommend creating 2 Leanplum Destinations, 1 for production and 1 for development.
 6. Copy the "Production" or "Development" value into the corresponding Leanplum destination and add it to the Segment Settings UI under "Leanplum Client Key" depending on your chosen environment.
 
-If you have opted to utilize our [server-side sources](https://segment.com/docs/connections/sources/#server), we will begin passing data through our servers or from your users' devices to Leanplum within minutes after you enable it on your source destinations page.
+If you have opted to use our [server-side sources](https://segment.com/docs/connections/sources/#server), we will begin passing data through our servers or from your users' devices to Leanplum within minutes after you enable it on your source destinations page.
 
-In order to utilize Leanplum's Push Notifications, Messaging channels or A/B testing in your mobile app, you will need to use our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/) SDKs. Read on to find out how to set this up.
+In order to use Leanplum's Push Notifications, Messaging channels or A/B testing in your mobile app, you will need to use our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/) SDKs. Read on to find out how to set this up.
 
 ### iOS
 

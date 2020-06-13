@@ -20,7 +20,7 @@ The Sailthru server-side destination will allow you to add users, send custom ev
 - - -
 ### Page
 
-You must configure a `customerId` in your integration settings in order to utilize the `page` functionality. This value is only required for `page` calls and can be found in your Sailthru Dashboard under **App Settings**
+You must configure a `customerId` in your integration settings in order to use the `page` functionality. This value is only required for `page` calls and can be found in your Sailthru Dashboard under **App Settings**
 
 When you call `page`, we will hit the Sailthru `page` endpoint and you will see the calls populate in the **Sailthru Realtime Dashboard**.
 
