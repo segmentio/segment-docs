@@ -538,7 +538,7 @@ There are some situations where you might not want to send an event to a specifi
 analytics.track('MyEvent', null, { integrations: { Mixpanel: false }})
 ```
 
-By default, events will be delivered to any cloud-mode destinations currently enabled on Segment.com.  This can be overridden as shown above.  In this particular case this event will be prevented from reaching Mixpanel.  It should be noted that destination flags are **case sensitive** and need to match the actual destination name.
+By default, events are delivered to any cloud-mode destinations currently enabled on Segment.com. You can override this delivery by adding a list, as in the example above. In this example, the event does not reach the  Mixpanel destination.  Remember that destination flags are **case sensitive** and must match the actual destination name. (Many destination documentation pages include a list of acceptable names when the correct name is not clear.)
 
 ## Troubleshooting
 
