@@ -528,7 +528,7 @@ In some cases, you may find it useful to add information into the `context` port
 analytics.identify('brandon', null, { context: { myValue: false, loginFailures: 3 }})
 ```
 
-The data passed in the above `context` dictionary will be merged with data already present in the context for this event.
+The data passed in the `context` dictionary (as in the example above) are merged with data already present in the context object for this event.
 
 ### Block specific events from going to a given destination
 
