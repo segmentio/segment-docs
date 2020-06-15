@@ -514,7 +514,7 @@ _Note_: While the network is deprecated, the relevant [framework](https://develo
 
 ### Using a custom anonymousID
 
-Some customers may find it desirable to use their own anonymousID to better integrate with other systems.  The best way to accomplish this is to substitute your own when calling `analytics.identify` via the `options` parameter as shown below.
+You might want to use a custom `anonymousID` to better integrate with other systems in your deployment. The best way to do this is to override the default when using the `options` parameter you call `analytics.identify`, as in the example below.
 
 ```js
 analytics.identify('brandon', null, { anonymousId: '0123456789' })
