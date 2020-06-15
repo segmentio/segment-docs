@@ -14,6 +14,10 @@ Subscribe to the [release feed](https://github.com/segmentio/analytics-react-nat
 
 ### Prerequisite
 
+#### React-Native
+
+- 0.62 or greater is required.
+
 #### iOS
 
 - CocoaPods (**recommended**)
@@ -355,11 +359,11 @@ After adding the dependency, you must register the destination with our SDK.
 import analytics from '@segment/analytics-react-native'
 import Bugsnag from '@segment/analytics-react-native-bugsnag'
 import Branch from '@segment/analytics-react-native-branch'
-import GoogleAnalytics from '@segment/analytics-react-native-google-analytics'
+import Firebase from '@segment/analytics-react-native-firebase'
 
 await analytics.setup('YOUR_WRITE_KEY', {
   // Add any of your Device-mode destinations.
-  using: [Bugsnag, Branch, GoogleAnalytics]
+  using: [Bugsnag, Branch, Firebase]
   // ...
 })
 ```
@@ -439,6 +443,10 @@ If you're using Device-mode for a mobile destination, you can always access feat
 To make sure you use the same instance of these destinations as we do, you can register a listener that notifies you when the destinations are ready. This will be called synchronously if the destinations are notified, and asynchronously if the destinations aren't yet ready.
 
 ```java
+analytics = Analytics.with(myActivity) // typically `this` will suffice here.
+
+...
+
 analytics.onIntegrationReady("Crittercism", new Callback() {
   @Override public void onReady(Object instance) {
     // Crittercism uses static methods only, so the instance returned is null.
@@ -503,6 +511,34 @@ Some destinations, particularly mobile attribution tools (e.g. Kochava), require
 Once you enable this, you will see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true`.
 
 _Note_: While the network is deprecated, the relevant [framework](https://developer.apple.com/reference/iad) is not.
+
+### Using a custom anonymousID
+
+Some customers may find it desirable to use their own anonymousID to better integrate with other systems.  The best way to accomplish this is to substitute your own when calling `analytics.identify` via the `options` parameter as shown below.
+
+```js
+analytics.identify('brandon', null, { anonymousId: '0123456789' })
+```
+
+### Adding data to the context
+
+In some cases, you may find it useful to add information into the `context` portion of the Segment analytics payload.  This can be particularly useful for context or session data for a given event that doesn't have a logical place for it to be added, such as Identify, Screen or Group.
+
+```js
+analytics.identify('brandon', null, { context: { myValue: false, loginFailures: 3 }})
+```
+
+The data passed in the above `context` dictionary will be merged with data already present in the context for this event.
+
+### Block specific events from going to a given destination
+
+There are certain instances where you may not want an event to be sent to another cloud-mode destination.  Blocking events from destinations can be achieved on a per-event basis very easily as shown below.
+
+```js
+analytics.track('MyEvent', null, { integrations: { Mixpanel: false }})
+```
+
+By default, events will be delivered to any cloud-mode destinations currently enabled on Segment.com.  This can be overridden as shown above.  In this particular case this event will be prevented from reaching Mixpanel.  It should be noted that destination flags are **case sensitive** and need to match the actual destination name.
 
 ## Troubleshooting
 
