@@ -532,7 +532,7 @@ The data passed in the `context` dictionary (as in the example above) are merged
 
 ### Block specific events from going to a given destination
 
-There are certain instances where you may not want an event to be sent to another cloud-mode destination.  Blocking events from destinations can be achieved on a per-event basis very easily as shown below.
+There are some situations where you might not want to send an event to a specific cloud-mode destination.  You can block events from destinations on a per-event basis by setting customizing the `integrations` object as shown in the example below. Learn more about [filtering data with the integrations object here](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
 
 ```js
 analytics.track('MyEvent', null, { integrations: { Mixpanel: false }})
