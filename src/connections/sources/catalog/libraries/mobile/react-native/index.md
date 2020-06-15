@@ -522,7 +522,7 @@ analytics.identify('brandon', null, { anonymousId: '0123456789' })
 
 ### Adding data to the context
 
-In some cases, you may find it useful to add information into the `context` portion of the Segment analytics payload.  This can be particularly useful for context or session data for a given event that doesn't have a logical place for it to be added, such as Identify, Screen or Group.
+In some cases, you might want to add information into the `context` object in the Segment message payload. This can be useful for adding context or session data for an event that doesn't have another logical place to add it, such as in an Identify, Screen or Group.
 
 ```js
 analytics.identify('brandon', null, { context: { myValue: false, loginFailures: 3 }})
