@@ -115,7 +115,7 @@ analytics.track({
 });
 ```
 
-Example `track` call:
+Example identified `track` call:
 
 ```javascript
 analytics.track({
