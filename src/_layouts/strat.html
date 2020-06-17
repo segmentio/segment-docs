@@ -1,0 +1,227 @@
+---
+layout: default
+---
+
+<div class="docs">
+  <div class="stage">
+    <div class="docs__aside stage__aside">
+      {% include_cached navbar/logo.html %}
+
+      <div class="sidebar sidebar--dark">
+        <nav class="menu">
+          <ul class="menu__list list list--unstyle">
+            <li class="menu-item menu-item--separated">
+              <a href="{{ site.baseurl }}/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--icon flex flex--middle">
+                <div class="menu-item__icon flex__column">
+                  {% include icons/menu/icon-back.svg %}
+                </div>
+
+                <div class="flex__column">Back to Documentation</div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="menu">
+          <ul class="menu__list list list--unstyle">
+            <li class="menu-item menu-item--active">
+              <button class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" data-ref="accordion[trigger]">
+                <span class="menu-item__icon flex__column">
+                  {% include icons/menu/icon-partners.svg %}
+                </span>
+                {% assign sectionSlug = page.strat %}
+                {% assign ourSection = site.data.sidenav.strat.sections | where: "slug", sectionSlug %}
+                <span class="flex__column">Foo {{ourSection.section_title}}</span>
+              </button>
+
+              <ul class="menu-item__body">
+                {% for item in ourSection %}
+                  {% assign currentPage = page.path | downcase | replace: "/index.md" "" | replace: ".md" "" %}
+                  {% assign currentPath = item.path | downcase | replace_first: "/" "" %}
+
+                  {% assign currentSectionPage = page.path | downcase | split: "/" %}
+                  {% assign currentSectionPath = item.slug | downcase %}
+                  {% capture currentSectionSlug %}{{ currentSectionPage[0] | downcase }}/{{ currentSectionPage[1] | downcase }}{% endcapture %}
+
+                  <li class="menu-item menu-item--gray" data-accordion data-class-active="menu-item--active">
+                    {% if item.path %}
+                      <a class="menu-item__link {% if currentPage == currentPath or currentSectionSlug == currentSectionPath %}menu-item__link--indicator-large{% endif %} flex" href="{{ site.baseurl }}{{ item.path }}/">{{ item.title }}</a>
+                    {% endif %}
+
+                    {% if item.section_title %}
+                      <button class="menu-item__link flex flex--middle flex--justify gutter gutter--small" data-ref="accordion[trigger]">
+                        <span class="flex__column">
+                          {{ item.section_title }}
+                        </span>
+
+                        <div class="menu-item__chevron flex__column flex__column--shrink">
+                          {% include icons/symbols/chevron-down.svg %}
+                        </div>
+                      </button>
+
+                      <ul class="menu-item__body menu-item__body--nested" data-ref="accordion[body]">
+                        {% for subsection in item.section %}
+                          {% assign currentPage = page.path | downcase | replace: "/index.md" "" | replace: ".md" "" %}
+                          {% assign currentPath = subsection.path | downcase | replace_first: "/" "" %}
+
+                          <li class="menu-item {% if currentPage == currentPath %}menu-item--active menu-item--indicator{% endif %}" data-accordion data-class-active="menu-item--active">
+                            {% if subsection.path %}
+                              {% assign menuLink = site.baseurl | append: subsection.path | append: "/" %}
+                              {% if subsection.path contains "http://" or  subsection.path contains "https://"%}
+                                {% assign menuLink = subsection.path  %}
+                              {% endif %}
+                              <a class="menu-item__link menu-item__link--icon {% if currentPage == currentPath %}menu-item__link--indicator{% endif %} flex" href="{{menuLink}}">
+                                {{ subsection.title }}
+                                {% if subsection.menu_icon %}
+                                  <div class="menu-item__icon menu-item__icon--small menu-item__icon--right flex__column">
+                                    {% include icons/menu/icon-{{ subsection.menu_icon }}.svg %}
+                                  </div>
+                                {% endif %}
+                              </a>
+                            {% endif %}
+
+                            {% if subsection.section_title %}
+                              <button class="menu-item__link flex flex--middle flex--justify gutter gutter--small" data-ref="accordion[trigger]">
+                                <span class="flex__column">
+                                  {{ subsection.section_title }}
+                                </span>
+
+                                <div class="menu-item__chevron flex__column flex__column--shrink">
+                                  {% include icons/symbols/chevron-down.svg %}
+                                </div>
+                              </button>
+
+                              <ul class="menu-item__body menu-item__body--nested" data-ref="accordion[body]">
+                                {% for subsubsection in subsection.section %}
+                                  {% assign currentPage = page.path | downcase | replace: "/index.md" "" | replace: ".md" "" %}
+                                  {% assign currentPath = subsubsection.path | downcase | replace_first: "/" "" %}
+
+                                  <li class="menu-item">
+                                    <a class="menu-item__link flex" href="{{ site.baseurl }}{{ subsubsection.path }}/">{{ subsubsection.title }}</a>
+                                  </li>
+                                {% endfor %}
+                              </ul>
+                            {% endif %}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+    <main class="docs__body stage__body">
+      <div>
+        <div class="search">
+          {% include_cached navbar/search.html placeholder="Search the Segment documentation..." %}
+        </div>
+
+
+        {% include_cached navbar/navbar-mobile.html %}
+      </div>
+
+
+      <div class="stage__content" data-swiftype-name="body" data-swiftype-type="text">
+        <article class="integration page" data-headings-anchors>
+          {% include components/breadcrumbs.html %}
+
+          <div class="integration-header">
+            {%- if page.mark -%}
+              <div class="integration-header__icon">
+                <img src="{{ page.mark }}" alt="" class="image">
+              </div>
+            {%- endif -%}
+            <div class="flex__column">
+              {%- if page.title -%}
+                <h1 id="{{ page.title | slugify }}" class="page__heading">
+                  {{ page.title }}
+                </h1>
+              {%- endif -%}
+
+              {%- if page.excerpt -%}
+                <div class="integration-header__content">
+                  {{ page.excerpt | markdownify }}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+
+          <hr>
+
+          {%- unless page.hide_toc -%}
+            {% include sidebar/mobile-menu-side.html %}
+          {%- endunless -%}
+
+          <div class="integration__body page__body">
+            <div class="markdown">
+
+              {% if page.integration_type == 'source' %}
+                {% capture cloud-app-note %}{% include content/cloud-app-note.md %}{% endcapture %}
+                {{ cloud-app-note | markdownify }}
+              {% endif %}
+              {{ content }}
+              {% if page.integration_type == 'destination' %}
+                {% unless page.hide-boilerplate == true %}
+                {% capture integration-foot %}{% include content/integration-foot.md  %}{% endcapture %}
+                {{ integration-foot | markdownify }}
+                {% endunless %}
+              {% endif %}
+            </div>
+            <p><i style="color: #a5b0ba;font-size: small;">This page was last modified: {{ page.last_modified_at | date: '%d %b %Y' }} </i></p>
+
+            {% if page.contributors %}
+              {% include components/avatar.html contributors=page.contributors %}
+            {% endif %}
+
+            {% include components/feedback.html %}
+            {% include components/callout.html %}
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <div class="docs__sidebar stage__sidebar">
+      {% include_cached navbar/nav.html %}
+
+      <div class="sidebar sidebar--sticky sidebar--scroll">
+        {%- unless page.hide_toc -%}
+          {% if page.integration_type == 'destination' %}
+            {% if page.hide-boilerplate == true %}
+              {% assign toc_content = content  %}
+            {% else %}
+              {% assign toc_foot = integration-foot | markdownify %}
+              {% assign toc_content = content | append: toc_foot %}
+            {% endif %}
+            <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+              {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=toc_content h_min=2 h_max=2 %}
+            </div>
+          {% else %}
+              <div data-anchors-indicator data-sections="h2" data-active-class="menu-side__link--active">
+                {% include sidebar/menu-side.html class="menu-side" anchor_class="menu-side__link" html=content h_min=2 h_max=2 %}
+              </div>
+          {% endif %}
+        {%- endunless -%}
+
+        {% if page.related %}
+          {% include sidebar/related-content.html items=page.related %}
+        {% endif %}
+
+        {% include sidebar/related-categories.html %}
+
+        {% unless page.hide-feedback %}
+          {% include_cached sidebar/feedback.html %}
+        {% endunless %}
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    {% include_cached components/footer.html %}
+  </footer>
+</div>

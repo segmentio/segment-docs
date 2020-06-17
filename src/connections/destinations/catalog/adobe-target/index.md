@@ -1,7 +1,9 @@
 ---
+title: Adobe Target Destination
 rewrite: true
 beta: true
-title: Adobe Target Destination
+integration_type: strat
+strat-slug: adobe
 ---
 [Adobe Target](https://www.adobe.com/marketing-cloud/target.html) removes the
 coding and set up hassles of A/B testing to help you quickly discover which

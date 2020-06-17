@@ -21,6 +21,7 @@ defaults:
       seo-priority: 0.5
       seo-changefreq: weekly
       hide-feedback: false
+      strat: false
   - scope:
       path: "connections/destinations/catalog"
     values:
