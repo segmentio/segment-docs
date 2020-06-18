@@ -14,7 +14,7 @@ This destination is maintained by Retently. For any issues with the destination,
 
 {% include content/connection-modes.md %} 
 
-The Retently integration gives you the possibility to send transactional surveys when an event is triggered in Segment. 
+The Retently destination allows you to send transactional surveys when an event is triggered in Segment. 
 
 It takes only three steps to set everything up and start surveying your audience:
 
