@@ -26,7 +26,7 @@ It takes only three steps to set everything up and start surveying your audience
 
 ### 2. Enter the Retently API key
 
-1. In Retently, access the [API token page](https://app.retently.com/settings/api/tokens).
+1. In Retently, go to the [API token page](https://app.retently.com/settings/api/tokens).
 2. Give the API key a name and click "Create".
 3. Copy the API key and enter it in the "API key" section, on the Retently destination settings page.
 
