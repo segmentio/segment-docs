@@ -5,7 +5,7 @@ title: Retently Destination
 
 [Retently](https://www.retently.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer experience management service. Measure your customer satisfaction with your company, products, or services by sending NPS, CSAT, CES, or 5-STAR surveys and act on the received feedback.
 
-This destination is maintained by Retently. For any issues with the destination, [contact their support team](mailto:support@retently.com).
+This destination is maintained by Retently. For any issues with the destination, [contact the Retently Support team](mailto:support@retently.com).
 
 > note "Note:"
 > The Retently Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the Retently Destination and its documentation, [contact the Retently support team](mailto:support@retently.com)!
