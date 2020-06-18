@@ -279,7 +279,7 @@ Find more details about `group`, including the **`group` payload**, in our [Spec
 
 ## Alias
 
-`alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations. Please note that some destinations do not respect the alias call.
+The `alias` call allows you to associate one identity with another. This is an advanced method and should not be widely used, but is required to manage user identities in _some_  destinations. Other destinations do not support the alias call. 
 
 In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
