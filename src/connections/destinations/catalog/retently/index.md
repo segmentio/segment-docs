@@ -45,7 +45,7 @@ Save your changes to activate the Retently destination. After you complete these
 When a Segment Track event fires, Retently performs the following actions:
 
 1. Identifies the Track event name, and attempts to match it with the campaign ID from the Retently destination settings in Segment. If no campaign ID lists this track event name, then Retently dismisses the event. 
-2. If the track event name matches with a campaign ID, then Retently will look for the `properties` object passed with the track event and will create a new customer record in Retently using the properties listed in the object.
+2. If the Track event name matches a campaign ID, Retently looks for the `properties` object passed with the track event, and creates a new customer record in Retently using the properties listed in the object.
 
 The only property that is **required** by Retently is `email`. Any other property can be assigned optionally as customer properties in Retently. To learn how to manage customer properties via Segment track events [read Retently's documentation](https://help.retently.com/en/articles/4097690-set-up-segment-transactional-email-surveys).
 
