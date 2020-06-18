@@ -37,7 +37,7 @@ It takes only three steps to set everything up and start surveying your audience
 3. In the right field, list the name of one or more Segment Track events that should trigger the survey in the specified campaign. 
    Write the name of the event exactly as it's written in the `analytics.track` method (more details in the section below). You can enter multiple Track events by separating them with a comma symbol (for example Order Placed, Dashboard Visited).
 
-After completing these three steps, saving your changes and activating the Retently destination, every time one of the specified track events will be triggered in Segment, a survey will be sent in your transactional campaign in Retently.
+Save your changes to activate the Retently destination. After you complete these steps, Retently sends a survey in your transactional campaign every time one of the specified Track events is triggered in Segment.
 
 
 ## Track
