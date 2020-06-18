@@ -49,7 +49,7 @@ analytics.identify({
 });
 ```
 
-This call is identifying the user with their unique anonymous ID, and labelling them with the `friends` trait.
+This call identifies the user and records their unique anonymous ID, and labels them with the `friends` trait.
 
 Example of an `identify` call for an identified user:
 
