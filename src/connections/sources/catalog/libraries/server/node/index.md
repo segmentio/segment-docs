@@ -56,7 +56,6 @@ Example of an `identify` call for an identified user:
 ```javascript
 analytics.identify({
   userId: '019mr8mf4r',
-  anonymousId: '48d213bb-95c3-4f8d-af97-86b2b404dcfe',
   traits: {
     name: 'Michael Bolton',
     email: 'mbolton@example.com',
@@ -120,7 +119,6 @@ Example identified `track` call:
 ```javascript
 analytics.track({
   userId: '019mr8mf4r',
-  anonymousId: '48d213bb-95c3-4f8d-af97-86b2b404dcfe',
   event: 'Item Purchased',
   properties: {
     revenue: 39.95,
@@ -175,7 +173,6 @@ Example `page` call:
 ```js
 analytics.page({
   userId: '019mr8mf4r',
-  anonymousId: '48d213bb-95c3-4f8d-af97-86b2b404dcfe',
   category: 'Docs',
   name: 'Node.js Library',
   properties: {
@@ -233,7 +230,6 @@ Example `group` call:
 ```javascript
 analytics.group({
   userId: '019mr8mf4r',
-  anonymousId: '48d213bb-95c3-4f8d-af97-86b2b404dcfe',
   groupId: '56',
   traits: {
     name: 'Initech',
