@@ -42,7 +42,7 @@ Save your changes to activate the Retently destination. After you complete these
 
 ## Track
 
-When a track event is triggered, Retently will perform the next actions:
+When a Segment Track event fires, Retently performs the following actions:
 
 1. Identify the event name and try to match it with the campaign ID from the Retently destination settings in Segment. If no campaign ID has this track event name listed, then the event will be dismissed by Retently. 
 2. If the track event name matches with a campaign ID, then Retently will look for the `properties` object passed with the track event and will create a new customer record in Retently using the properties listed in the object.
