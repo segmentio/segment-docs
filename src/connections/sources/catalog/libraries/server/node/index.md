@@ -65,7 +65,7 @@ analytics.identify({
   }
 });
 ```
-This call is identifying Michael by his unique User ID (the one you know him by in your database), his associated anonymous ID, and labeling him with `name`, `email`, `plan` and `friends` traits.
+The call below identifies Michael by his unique User ID (the one you know him by in your database), records his associated anonymous ID, and labels him with the `name`, `email`, `plan` and `friends` traits.
 
 The `identify` call has the following fields:
 
