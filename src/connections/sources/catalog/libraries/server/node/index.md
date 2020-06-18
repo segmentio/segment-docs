@@ -36,7 +36,7 @@ This will create an instance of `Analytics` that you can use to send data to Seg
 
 `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and/or anonymous ID, and any optional traits you know about them.
 
-We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits change. We also highly recommend including the anonymousId even when the userId is available.
+You should call `identify` once when the user's account is first created, and then again any time their traits change.
 
 Example of an anonymous `identify` call:
 
