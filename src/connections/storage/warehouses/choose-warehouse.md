@@ -31,7 +31,7 @@ The difference in architecture translates into differences in pricing.
 
 [Redshift prices](https://aws.amazon.com/redshift/pricing/) based on an hourly rate determined by the number and types of nodes in your cluster. They offer dense storage - optimized for storage - and dense compute nodes - optimized for query performance.
 
-BigQuery has two [pricing options](https://cloud.google.com/bigquery/pricing): variable and fixed pricing. With the variable, pay-as-you-go plan, you pay for the data you load into BigQuery, and then pay only for the amount of data you query. BigQuery allows you to setup [Cost Controls and Alerts](https://cloud.google.com/bigquery/cost-controls) to help control and monitor costs.
+BigQuery has two [pricing options](https://cloud.google.com/bigquery/pricing): variable and fixed pricing. With the variable, pay-as-you-go plan, you pay for the data you load into BigQuery, and then pay only for the amount of data you query. BigQuery allows you to set up [Cost Controls and Alerts](https://cloud.google.com/bigquery/cost-controls) to help control and monitor costs.
 
 Fixed-price plans are geared toward high-volume customers and allow you to rent a fixed amount of compute power.
 

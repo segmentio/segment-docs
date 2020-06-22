@@ -15,7 +15,7 @@ When you toggle on KISSmetrics in Segment, this is what happens:
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "KISSmetrics" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your KISSmetrics "API Key" into the connection settings.
-4. If you are using KISSmetrics via Segment's client-side analytics.js library, we asynchronously load KISSmetrics Javascript library onto the page. This means you should remove KISSmetrics's snippet from your page. Your KISSmetrics source will start automatically collecting "Visited Site" events and [other automatically tracked events](http://support.kissmetrics.com/article/show/javascript-settings).
+4. If you are using KISSmetrics using Segment's client-side analytics.js library, we asynchronously load KISSmetrics Javascript library onto the page. This means you should remove KISSmetrics's snippet from your page. Your KISSmetrics source will start automatically collecting "Visited Site" events and [other automatically tracked events](http://support.kissmetrics.com/article/show/javascript-settings).
 
 ## Page
 
@@ -195,7 +195,7 @@ Note that this is without the prefix setting enabled. If you had enabled that fe
 
 ### Receive experiment data from A/B Testing tools
 
-You can track A/B testing event data like [`Experiment Viewed`](/docs/connections/spec/ab-testing/#experiment-viewed) and send it to Kissmetrics via Segment.
+You can track A/B testing event data like [`Experiment Viewed`](/docs/connections/spec/ab-testing/#experiment-viewed) and send it to Kissmetrics using Segment.
 
 In order to enable this feature,
 1. Find your A/B testing tool in your Segment dashboard

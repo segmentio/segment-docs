@@ -18,7 +18,7 @@ This document was last updated on January 26, 2018. If you notice any gaps, out-
 * [Automatically send an autoresponder email when your initial email goes unopened with Customer.io](https://segment.com/recipes/autoresponder-email-customerio/)
 * [Use email to move users through your onboarding funnel with Customer.io](https://segment.com/recipes/onboarding-email-customerio/)
 * [Ask engaged users to take an NPS survey with Customer.io](https://segment.com/recipes/nps-email-active-users-customerio/)
-* [Get users to your Aha moment faster with email via Customer.io](https://segment.com/recipes/aha-activation-customerio/)
+* [Get users to your Aha moment faster with email using Customer.io](https://segment.com/recipes/aha-activation-customerio/)
 * [Ask your best customers to leave a review at just the right moment with Customer.io](https://segment.com/recipes/automate-customer-reviews-customerio/)
 
 
@@ -29,9 +29,9 @@ This document was last updated on January 26, 2018. If you notice any gaps, out-
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Customer.io" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your Customer.io `API Key` and `Site ID`, which you can retrieve from Settings > [API Credentials](https://fly.customer.io/account/api_credentials) in Customer.io, into the Segment UI Settings.
-4. Alternatively, you can automatically sync your Customer.io connection settings to your desired Segment source by following the flow within the Customer.io Setup Guide.
+4. Alternatively, you can automatically sync your Customer.io connection settings to your desired Segment source by following the flow within the Customer.io set up Guide.
 
-![customerio setup guide screenshot](images/customerio_setup_guide.png)
+![customerio set up guide screenshot](images/customerio_setup_guide.png)
 
 
 ## Page
@@ -101,7 +101,7 @@ For that, you need to make the following calls:
 
 ## Application Installed
 
-[Application Installed](https://segment.com/docs/connections/spec/mobile/#application-installed) events will add or update a device in the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_update) API endpoint. Note, you must pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
+[Application Installed](https://segment.com/docs/connections/spec/mobile/#application-installed) events will add or update a device in the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_update) API endpoint. Note, you must pass a device token in your event payload using a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
 
 {% comment %} api-example '{
 "action": "track",
@@ -138,7 +138,7 @@ For that, you need to make the following calls:
 ```
 
  ## Application Opened
-[Application Opened](https://segment.com/docs/connections/spec/mobile/#application-opened) events will add or update a device device in the person's Customer.io profile using the same endpoint as above.  If a device already exists, Customer.io will update its `last_used_at` timestamp. Again, make sure you pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
+[Application Opened](https://segment.com/docs/connections/spec/mobile/#application-opened) events will add or update a device device in the person's Customer.io profile using the same endpoint as above.  If a device already exists, Customer.io will update its `last_used_at` timestamp. Again, make sure you pass a device token in your event payload using a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
 
 {% comment %} api-example '{
 "action": "track",
@@ -175,7 +175,7 @@ For that, you need to make the following calls:
 ```
 
  ## Application Uninstalled
-[Application Uninstalled](https://segment.com/docs/connections/spec/mobile/#application-installed) events will remove the device from the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_delete) API endpoint. Note, you must pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
+[Application Uninstalled](https://segment.com/docs/connections/spec/mobile/#application-installed) events will remove the device from the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_delete) API endpoint. Note, you must pass a device token in your event payload using a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
 
 
 {% comment %} api-example '{

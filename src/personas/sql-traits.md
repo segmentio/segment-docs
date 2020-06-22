@@ -58,7 +58,7 @@ To use SQL traits you need:
 
 ### Step 1. Set up a warehouse source
 
-We currently support Redshift, Postgres, Snowflake, and BigQuery as data warehouse sources for SQL traits. The setup process for BigQuery is a bit different as it _requires_ a service user.
+We currently support Redshift, Postgres, Snowflake, and BigQuery as data warehouse sources for SQL traits. The set up process for BigQuery is a bit different as it _requires_ a service user.
 
 For any warehouse, we recommend that you create a separate read-only user for building SQL traits.
 
@@ -149,7 +149,7 @@ If you are sending data from [object cloud sources](https://segment.com/docs/con
 
 When you're building your query, there are some requirements for the data your query returns.
 
-- The query must return a column with a `user_id` (or `group_id` for account traits, if you have Personas for B2B enabled).
+- The query must return a column with a `user_id`, `email`, or `anonymous_id` (or `group_id` for account traits, if you have Personas for B2B enabled).
 - It must return at least one additional trait in addition to `user_id`/`group_id`, and no more than 25 total columns
 - The query must not return any `user_id`s with a `null` value, or any duplicate `user_id`s.
 - The query must not return more than 10 million rows.

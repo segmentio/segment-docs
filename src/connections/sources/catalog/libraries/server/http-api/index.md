@@ -391,5 +391,13 @@ When sending a HTTP call from a user's device, you can collect the IP address by
 ## Troubleshooting
 
 {% include content/troubleshooting-intro.md %}
-{% include content/troubleshooting-server-debugger.md %}
+
+<!-- LR: no quickstart for this file. removing this include and manually putting in a flat text version that can be customized {% include content/troubleshooting-server-debugger.md %} -->
+
+### No events in my debugger
+
+1. Double check that you've set up the library correctly.
+
+2. Make sure that you're calling one of our API methods once the library is successfully installed—[`identify`](#identify), [`track`](#track), etc.
+
 {% include content/troubleshooting-server-integration.md %}

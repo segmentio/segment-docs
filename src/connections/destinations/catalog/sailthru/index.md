@@ -4,7 +4,7 @@ title: Sailthru Destination
 
 ## Getting Started
 
-The Sailthru server-side destination will allow you to add users, send custom events and purchase events. Once the Segment library is integrated, toggle Sailthru on in your Segment destination panel and add your API Key and Shared Secret, which you can find in the Sailthru Dashboard under **App Settings > Setup > API & Postbacks**.
+The Sailthru server-side destination will allow you to add users, send custom events and purchase events. Once the Segment library is integrated, toggle Sailthru on in your Segment destination panel and add your API Key and Shared Secret, which you can find in the Sailthru Dashboard under **App Settings > set up > API & Postbacks**.
 
 ## Implementation Checklist
 
@@ -15,22 +15,22 @@ The Sailthru server-side destination will allow you to add users, send custom ev
   -  For `Product Added` and `Product Removed` events, whether there is an `email` or not, we need to make a request to grab the items in the user's cart. We rely on the `userId` value for this request. It is essential that you have a `userId` on these calls, otherwise they will not make it to Sailthru.
   - To trigger abandoned cart campaigns, you must pass in a `reminder_time` and `reminder_template` on the `Product Added`and `Product Removed` events.
   - The template passed through as `reminder_template` must match the public name configured in Sailthru's UI.
-- We recommend appending `traits.email` whenever possible in your `identify` calls. If you send an `identify` call without a `traits.email` and only a `userId`, the profile will be created in Sailthru but you would not be able to find that user via their **User Look Up** feature.
+- We recommend appending `traits.email` whenever possible in your `identify` calls. If you send an `identify` call without a `traits.email` and only a `userId`, the profile will be created in Sailthru but you would not be able to find that user using their **User Look Up** feature.
 
 - - -
 ### Page
 
-You must configure a `customerId` in your integration settings in order to utilize the `page` functionality. This value is only required for `page` calls and can be found in your Sailthru Dashboard under **App Settings**
+You must configure a `customerId` in your integration settings in order to use the `page` functionality. This value is only required for `page` calls and can be found in your Sailthru Dashboard under **App Settings**
 
 When you call `page`, we will hit the Sailthru `page` endpoint and you will see the calls populate in the **Sailthru Realtime Dashboard**.
 
 The `context.page.url` is also a required field for all `page` calls, so be sure this is present on each call.
 
-We will automatically handle the proper identification of user's in Sailthru via the Segment `userId`.
+We will automatically handle the proper identification of user's in Sailthru using the Segment `userId`.
 
 #### Tags
 
-Sailthru provides an out of band web scraper that will automatically collect contextual information from your pages to power their [personalization engine](https://getstarted.sailthru.com/site/personalization-engine/meta-tags/). If the design of your site requires passing these tags to Sailthru manually (Single Page Apps are one example) you can manually pass them via a `keywords` property in the `page` event:
+Sailthru provides an out of band web scraper that will automatically collect contextual information from your pages to power their [personalization engine](https://getstarted.sailthru.com/site/personalization-engine/meta-tags/). If the design of your site requires passing these tags to Sailthru manually (Single Page Apps are one example) you can manually pass them using a `keywords` property in the `page` event:
 
 ```js
 analytics.page('Page Name', {
@@ -82,11 +82,11 @@ analytics.identify("3242351231",{
   });
 ```
 
-So if you send an `identify` call without a `traits.email` and only a `userId`, the profile will be created in Sailthru but you would not be able to find that user via their **User Look Up** feature.
+So if you send an `identify` call without a `traits.email` and only a `userId`, the profile will be created in Sailthru but you would not be able to find that user using their **User Look Up** feature.
 
 ### Track
 
-When you `track` an event, we will send that event to Sailthru as a custom event. **Important**: You must have each event mapped in Sailthru within **Communications > Lifecycle Optimizer** in order to leverage the custom event. Be sure that the **Status** is set to **Active**:
+When you `track` an event, we will send that event to Sailthru as a custom event. **Important**: You must have each event mapped in Sailthru within **Communications > Lifecycle Optimizer** in order to use the custom event. Be sure that the **Status** is set to **Active**:
 
 ![](images/1488218489126.png)
 
@@ -148,9 +148,9 @@ Note that purchases cannot be edited once they are posted.
 
 ## Abandonded Cart Events
 
-In addition to `Order Completed` events, we support the concept of [Sailthru's Abandonded Carts](https://getstarted.sailthru.com/email/transactionals/abandoned-shopping-carts/) via Segment's `Product Added` and `Product Removed` events. When these events are triggered, Segment will pass in `incomplete: 1` to signify that the order is incomplete.
+In addition to `Order Completed` events, we support the concept of [Sailthru's Abandonded Carts](https://getstarted.sailthru.com/email/transactionals/abandoned-shopping-carts/) using Segment's `Product Added` and `Product Removed` events. When these events are triggered, Segment will pass in `incomplete: 1` to signify that the order is incomplete.
 
-To leverage the functionality of sending transactional emails when a user abandonds his or her cart, you must pass in a `reminder_time` and `reminder_template` on the `Product Added` and `Product Removed` events. The template passed through as `reminder_template` must match the **public name** configured in Sailthru's UI.
+To send transactional emails when a user abandons their cart, you must pass in a `reminder_time` and `reminder_template` on the `Product Added` and `Product Removed` events. The template passed through as `reminder_template` must match the **public name** configured in Sailthru's UI.
 
 If you send in a `Product Added` event without a valid template, Sailthru will return an error. If you send in a `Product Added` event with the `reminder_template` param, it will successfully send in and appear in the user view within their **incomplete purchase cart**. Some example values for `reminder_time` are 60 minutes, 24 hrs, 2 weeks. Segment will handle passing in the `+` increment.
 

@@ -4,7 +4,7 @@ title: Eloqua Destination
 
 ## Page
 
-Client-side page-view tracking is achieved via an integration with the [Eloqua
+Client-side page-view tracking is achieved using an integration with the [Eloqua
 Asynchronous Visitor Tracking
 Script](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/pdf/AsynchronousVisitorTrackingScripts.pdf).
 

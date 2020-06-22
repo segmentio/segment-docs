@@ -51,7 +51,7 @@ endpoint from Segment's support team._
 5. Once registered, the new endpoint's status will remain "Pending" in the
    "Endpoints" tab until it has been activated. To activate an endpoint, 
    include your UBX account's API URL and your endpoint authentication key in an
-   email to Segment via our [tech support form](https://segment.com/help/contact/).
+   email to Segment using our [tech support form](https://segment.com/help/contact/).
 
     ![](images/endpoint-details.png)
 
@@ -483,7 +483,7 @@ downstream tools connected to UBX (e.g. Watson Customer Engagement tools).
 
 ## FAQ
 
-Segment does not auto-generate events other than an initial `page` call when using our Analytics.js library and mobile lifecycle events when mobile lifecycle tracking is enabled via Segment's Android or iOS library.
+Segment does not auto-generate events other than an initial `page` call when using our Analytics.js library and mobile lifecycle events when mobile lifecycle tracking is enabled using Segment's Android or iOS library.
 
 This means some events supported and in some cases expected by downstream UBX destinations - including *abandonment events* - must be derived by the customer. One approach would be to integrate with a marketing tool such as [Braze](https://segment.com/docs/connections/destinations/catalog/braze/) or [Bronto](https://segment.com/docs/connections/destinations/catalog/bronto/), in which you can [set up rules that generate abandonment events](https://segment.com/docs/guides/destinations/how-do-i-automate-multi-channel-re-engagement-campaigns/#1st-line-of-defense-the-push-notification), which are then be sent back through Segment and downstream to UBX.
 

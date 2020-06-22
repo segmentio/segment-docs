@@ -15,7 +15,7 @@ _**NOTE:** This doc was last updated December 12, 2019. If have any feedback to 
 
 {% include content/connection-modes.md %}
 
-To setup Mutiny to receive Segment data:
+To set up Mutiny to receive Segment data:
 1. From your Segment Project's Destinations page click on "Add Destination".
 2. Search for "Mutiny" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your personal "API Key" into Segment's Mutiny integration settings panel UI, which you can find from your [Mutiny dashboard](https://app.mutinyhq.com/integrations/segment).

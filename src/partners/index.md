@@ -18,7 +18,7 @@ Segment's core feature is our Connections Catalog:
 
 ![](images/catalog.gif)
 
-Customers discover your Sources and Destinations via the Connections Catalog and can enable them from there.
+Customers discover your Sources and Destinations using the Connections Catalog and can enable them from there.
 
 The development process is simple:
 
@@ -93,7 +93,7 @@ In a nutshell you need:
 
 2. Complete the fields under the _App Info_ tab with your App including both _Basic Info_ and _Launch Info_. This includes:
 
-  - **Segment Documentation:** Using these templates ([subscription](https://hackmd.io/t7amLXluS7-39rg7ARZgSA?both=)/[stream](https://hackmd.io/TV8cZR6tRnKwGtkvSexeag), document how our mutual customers can utilize your integration.
+  - **Segment Documentation:** Using these templates ([subscription](https://hackmd.io/t7amLXluS7-39rg7ARZgSA?both=)/[stream](https://hackmd.io/TV8cZR6tRnKwGtkvSexeag), document how our mutual customers can use your integration.
   - **Your Documentation:** Similar to the above but hosted on your own website.
   - **Catalog Details:** Details for our [catalog](https://segment.com/catalog) material including screenshots by making a copy of [this template](https://docs.google.com/document/d/1kvAvAHLyM3pOq-lBcZJhP_X_KivHlk1eiFy-5ERWDXc/copy).
   - **Integrations / Partners Page:** Add your Segment integration to your integrations or partners page, like [this](https://success.clearbrain.com/connections/import-connections/connect-to-your-data-in-segment).
@@ -108,7 +108,7 @@ You can contact us at [partner-support@segment.com](mailto:partner-support@segme
 Congratulations on launching your integration in Public Beta - welcome aboard! Here are the next steps to move out from Public Beta to Public:
 
 1. Implement the [Enable with Segment OAuth](/docs/partners/enable-with-segment) button - this makes it much easier for our mutual customers to get started with your integration!
-2. Onboard at least 3 customers to actively utilize your integration
+2. Onboard at least 3 customers to actively use your integration
 
 Bonus points if you join the [Segment Select](/docs/partners/#segment-select) Partner Program!
 

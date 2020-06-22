@@ -94,7 +94,7 @@ By default, Segment only bundles `Firebase/Core` which is [Firebase's Analytics 
 
 When you call `identify` Segment will map to the corresponding Firebase Analytics calls:
 
-- If there is a `userId` on your `identify` call, Segment triggers `setUserId` via the Firebase SDK
+- If there is a `userId` on your `identify` call, Segment triggers `setUserId` using the Firebase SDK
 - If there are traits included, Segment will set user properties for each trait you include on the `identify` call
 
 You can use these traits to create audiences and views to analyze your users' behavior.
@@ -125,7 +125,7 @@ Firebase automatically collects [these user properties](https://support.google.c
 
 When you call `track` Segment will log the event with Firebase. Firebase automatically tracks [the events listed here](https://support.google.com/firebase/answer/6317485) and it will still do so when bundling with Segment.
 
-Firebase has a limit of 500 distinctly named events so it pays off to be [intentional in what you track](/docs/faqs/sources/what-to-track/).
+Firebase has a limit of 500 distinctly named events so it pays off to be [intentional in what you track](/docs/protocols/tracking-plan/best-practices/).
 
 When you call `track`, Segment maps from the [Segment spec](/docs/connections/spec/) to those that match Firebase's spec. For anything that does not match, Segment will pass the event to Firebase as a custom event. Custom parameters cannot be seen directly in the Firebase Analytics dashboard but they can be used as filters in **Audiences**.
 
@@ -195,14 +195,14 @@ Segment doesn't map screen events to Firebase - that's because Firebase's SDK co
 
 For Android, Segment passes contextual screen information into each screen view on each activity's `onResume` callback. To ensure that screen names are labeled properly, Segment recommends adding a `label` value to each of your activities in your app's `AndroidManifest.xml` file. At the moment, Firebase does not allow disabling automatic screen tracking for Android.
 
-For iOS, you can configure `recordScreenViews` which will automatically track screen views, or pass in a screen manually via a [screen](/docs/connections/spec/screen/) call. You should be able to disable the Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
+For iOS, you can configure `recordScreenViews` which will automatically track screen views, or pass in a screen manually using a [screen](/docs/connections/spec/screen/) call. You should be able to disable the Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
 
 Google Analytics for Firebase iOS does NOT support the case of manual-only screen reporting. Firebase only supports automatic + manual screen reporting or no screen reporting at all.
 
 
 #### **Firebase Dynamic Linking** (iOS only)
 
-Firebase Dynamic Links are smart URLs that can change behavior dynamically depending on the platform where the user clicks them. Use them in web, email, social media, referral and physical promotions to increase user acquisition, retention and lifetime value. Key features include ability to survive app installs, controlling user experience depending on what platform they access the link on and knowing which content and campaigns are working via tracking in the Firebase console. [Check out Firebase's Docs here](https://firebase.google.com/docs/dynamic-links/).
+Firebase Dynamic Links are smart URLs that can change behavior dynamically depending on the platform where the user clicks them. Use them in web, email, social media, referral and physical promotions to increase user acquisition, retention and lifetime value. Key features include ability to survive app installs, controlling user experience depending on what platform they access the link on and knowing which content and campaigns are working using tracking in the Firebase console. [Check out Firebase's Docs here](https://firebase.google.com/docs/dynamic-links/).
 
 To use Firebase Dynamic Links, add the below to your podfile.
 

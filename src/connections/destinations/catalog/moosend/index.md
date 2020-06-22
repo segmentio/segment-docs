@@ -8,7 +8,7 @@ Integrating with Segment requires creating a Website Id. Once you login to your 
 
 ## Page
 
-You can track [Page](https://segment.com/docs/connections/spec/page/) events via Segment's `analytics.page` method. It is highly recommended that, if possible, you add this event to the header of your website, after the library initialization and before you close your script tag.
+You can track [Page](https://segment.com/docs/connections/spec/page/) events using Segment's `analytics.page` method. It is highly recommended that, if possible, you add this event to the header of your website, after the library initialization and before you close your script tag.
 
 ## Identify
 

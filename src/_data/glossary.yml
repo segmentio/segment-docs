@@ -11,7 +11,7 @@ Asynchronous: |
   Asynchronous means occurring without a specific order or sequence. In engineering, it's most often used for things like when you have to ask a server for a piece of information. If that was a synchronous task, while you were waiting for the server to respond you wouldn't be able to do anything else, you'd just be stuck waiting. But since it's asynchronous, you can request information from a server, continue to go do a bunch of other tasks, and then when the server responds you can get back to what you were doing to start. Basically it lets you work on multiple things at once (in parallel) instead of needing to finish everything in the order it comes in. Think of it like one of the ways computers are able to multi-task.
 
 Audience: |
-  [Personas Audiences](/docs/personas/audiences/) allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core tracking events, traits, or computed traits. These audiences can then be sycned to hundreds of destinations or available via the Profile API.
+  [Personas Audiences](/docs/personas/audiences/) allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core tracking events, traits, or computed traits. These audiences can then be synced to hundreds of destinations or available using the Profile API.
 
 AWS: |
   Amazon Web Services, a large cloud service provider.
@@ -81,7 +81,7 @@ Lookback: |
   A “lookback window” limits the period of time in which data is considered when calculating a trait or audience. For example, you might set a lookback window of 7 days on an audience or trait like `new_users_7_days`, but you would not add a lookback window to a trait that isn’t time-bounded, such as `lifetime_value`.
 
 Method: |
-  A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, [etc](/docs/conncetions/spec/) are methods you can invoke on those objects.
+  A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, [etc](/docs/connections/spec/) are methods you can invoke on those objects.
 
 MTU: |
   Monthly Tracked Users. You can find more about how they are calculated [here](https://segment.com/docs/guides/usage-and-billing/how-are-mtus-calculated-by-segment/) but in short, they are calculated by adding the number unique userIds and number of unique anonymousIds that a customer tracks with Segment.

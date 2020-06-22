@@ -26,7 +26,7 @@ This is an introduction to how Segment and Whalr work together and how to get Wh
 
 ### Identity intelligence
 
-The first step is to send Whalr your customer's email addresses via the Segment IDENTIFY call.  You should send this the first time a lead is identified with an email address, and  every time a user logs in after that.  This is sent as a JSON message in the standard Segment format, and the minimum information required is:
+The first step is to send Whalr your customer's email addresses using the Segment IDENTIFY call.  You should send this the first time a lead is identified with an email address, and  every time a user logs in after that.  This is sent as a JSON message in the standard Segment format, and the minimum information required is:
 
 	{
 	  "type" : "identify",

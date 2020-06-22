@@ -41,7 +41,7 @@ If you see this error on consecutive syncs, [contact us](https://segment.com/hel
 
 ### ERROR: syntax error at or near "ENCODE"; (SQLSTATE 42601)
 
-This occurs when a Postgres database is incorrectly connected as Redshift. To resolve this, delete the warehouse and reconnect, using the Postgres setup option.
+This occurs when a Postgres database is incorrectly connected as Redshift. To resolve this, delete the warehouse and reconnect, using the Postgres set up option.
 
 ### Error during deduping step for collectionXXX: EOF
 

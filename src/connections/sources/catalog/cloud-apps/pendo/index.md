@@ -11,7 +11,7 @@ This source is maintained by Pendo. For any issues with the source, [contact the
 
 1. From your Segment UI's Sources page click on "Add Source".
 2. Search for "Pendo" within the Sources Catalog and confirm by clicking "Connect".
-3. Give the Source a nickname and follow the setup flow to "Add Source". The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. Pendo_Prod, Pendo_Staging, Pendo_Dev).
+3. Give the Source a nickname and follow the set up flow to "Add Source". The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you'll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. Pendo_Prod, Pendo_Staging, Pendo_Dev).
 4. Copy the Write Key from the Segment UI.
 5.  Log in to your Pendo subscription - navigate to Settings > Integrations > Webhooks.
 6. Select "Add Webhook".
@@ -25,45 +25,14 @@ Below is a table of events that Pendo can send to Segment. These events will sho
 
 | Event                         | Description |
 |-------------------------------|-------------|
-| `visitorCreated`              | A new visitor was created |
-| `visitorMetadataUpdated`      | Visitor metadata was updated |
-| `visitorDoNotProcessUpdated`  | Flag indicating GDPR status was updated |
-| `accountCreated`              | A new account was created |
-| `accountMetadataUpdated`      | Account metadata was updated |
-| `featureClicked`              | A feature was clicked |
-| `trackEventReceived`          | A track event was received |
-| `guideSeen`                   | A guide was seen |
-| `pollSeen`                    | A poll was seen |
+| `accountCreated`              | A new account was created (coming soon!) |
+| `guideDisplayed`              | A guide was displayed |
+| `npsDisplayed`                | An NPS survey was displayed |
+| `npsSubmitted`                | An NPS survey was submitted |
+| `pollDisplayed`               | A poll was displayed |
 | `pollSubmitted`               | A poll was submitted |
-| `pageTagged`                  | A page was tagged |
-| `pageUpdated`                 | A page was updated |
-| `pageDeleted`                 | A page was deleted |
-| `featureTagged`               | A feature was tagged |
-| `featureUpdated`              | A feature was update |
-| `featureDeleted`              | A feature was deleted |
-| `goalCreated`                 | A goal was created |
-| `goalUpdated`                 | A goal was updated |
-| `goalDeleted`                 | A goal was deleted |
-| `goalStatusChanged`           | A goal status was changed |
-| `NPSSeen`                     | A NPS survey was seen |
-| `NPSSubmitted`                | A NPS survey was submitted |
-| `NPSCreated`                  | A NPS survey was created |
-| `NPSUpdated`                  | A NPS survey was updated |
-| `NPSDeleted`                  | A NPS survey was deleted |
-| `NPSStatusChanged`            | A NPS survey status changed |
-| `pollCreated`                 | A poll was created |
-| `pollUpdated`                 | A poll was updated |
-| `pollDeleted`                 | A poll was deleted |
-| `pathCreated`                 | A path was created |
-| `pathUpdated`                 | A path was updated |
-| `pathDeleted`                 | A path was deleted |
-| `funnelCreated`               | A funnel was created |
-| `funnelUpdated`               | A funnel was updated |
-| `funnelDeleted`               | A funnel was deleted |
-| `userInvited`                 | A user was invited |
-| `userAdded`                   | A user was added |
-| `userUpdated`                 | A user was updated |
-| `userDeleted`                 | A user was deleted |
+| `trackEventReceived`          | A track event was received |
+| `visitorCreated`              | A new visitor was created (coming soon!) |
 
 ## Event Properties
 

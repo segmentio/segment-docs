@@ -1,8 +1,9 @@
 ---
 title: Analytics.js (Javascript) Source
-sourceTitle: 'JavaScript'
-sourceCategory: 'Website'
-redirect_from: '/connections/sources/catalog/libraries/website/analytics.js/'
+redirect_from:
+  - '/connections/sources/catalog/libraries/website/analytics.js/'
+  - '/sources/website/javascript/'
+  - '/sources/website/analytics.js/'
 ---
 
 Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
@@ -15,7 +16,8 @@ Head over to our [`analytics.js` QuickStart Guide](/docs/connections/sources/cat
 
 The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
-**Note:** We recommend against using `identify` for anonymous visitors to your site. `analytics.js` automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors. It is attached to all `page` and `track` events both before and after an `identify`.
+> note ""
+> We recommend against using `identify` for anonymous visitors to your site. `analytics.js` automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors. It is attached to all `page` and `track` events both before and after an `identify`.
 
 `identify` method definition:
 
@@ -437,7 +439,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 The `.load` method in analytics.js (the second line of the snippet) can also be modified to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations)), then we only load the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
-**IMPORTANT:** In order to leverage this feature, make sure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
+**IMPORTANT:** In order to use this feature, make sure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
 
 An example:
 
@@ -579,7 +581,7 @@ Keep in mind that setting the `anonymousId` in `analytics.js` does not overwrite
 
 A user's `anonymousId` refreshes on any of the following conditions:
 
-* A user clears their cache or cookies
+* A user clears their cookies _and_ `localstorage`
 * [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript//#reset-logout) is called during in the user's browser session
 * `analytics.identify()` is called with a userId that differs from the current userId
 
@@ -844,7 +846,7 @@ To use a proxy server with analytics.js, you'll first want to update the address
 
 ## Plugins
 
-Segment offers 'plugins' across multiple video players that can quickly get you started collecting video events via analytics.js. Check out the specific links below for more information:
+Segment offers 'plugins' across multiple video players that can quickly get you started collecting video events using analytics.js. Check out the specific links below for more information:
 
 - [Youtube](/docs/connections/sources/catalog/libraries/website/plugins/youtube)
 - [Vimeo](/docs/connections/sources/catalog/libraries/website/plugins/vimeo)

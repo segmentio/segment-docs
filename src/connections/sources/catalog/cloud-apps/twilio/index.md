@@ -30,7 +30,7 @@ We'll begin syncing your Twilio data into Segment momentarily, and it will be wr
 
 The Twilio source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Twilio objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. `twilio_prod.charges`).
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Twilio.  For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
+Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Twilio.  For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
@@ -83,7 +83,7 @@ Below are tables outlining the properties included in the collections listed abo
 |  caller_name | The caller's name if this Call was an incoming call to a phone number with Caller ID Lookup enabled |
 |  date_created | The date that this resource was created, given as GMT in RFC 2822 format |
 |  date_updated | The date that this resource was last updated, given as GMT in RFC 2822 format |
-|  direction | A string describing the direction of the Call. Values are inbound for inbound calls, outbound-api for calls initiated via the REST API or outbound-dial for calls initiated by a <Dial> verb |
+|  direction | A string describing the direction of the Call. Values are inbound for inbound calls, outbound-api for calls initiated using the REST API or outbound-dial for calls initiated by a <Dial> verb |
 |  duration | The length of the Call in seconds. This value is empty for busy, failed, unanswered or ongoing calls |
 |  end_time | The time the Call ended, given as GMT in RFC 2822 format. Empty if the call did not complete successfully |
 |  forwarded_from | The forwarding phone number if this Call was an incoming call forwarded from another number (depends on carrier supporting forwarding) |
@@ -133,7 +133,7 @@ Below are tables outlining the properties included in the collections listed abo
 |  date_created	| The date that this resource was created, given in RFC 2822 format |
 |  date_sent	| The date that the message was sent. For outgoing messages, this is the date that the message was sent from Twilio's platform |
 |  date_updated	| The date that this resource was last updated, given in RFC 2822 format |
-|  direction	| The direction of this message. inbound for incoming messages, outbound-api for messages initiated via the REST API, outbound-call for messages initiated during a call or outbound-reply for messages initiated in response to an incoming message |
+|  direction	| The direction of this message. inbound for incoming messages, outbound-api for messages initiated using the REST API, outbound-call for messages initiated during a call or outbound-reply for messages initiated in response to an incoming message |
 |  error_code	| The error code, if any, associated with your message |
 |  error_message	| The human readable description of the ErrorCode above. If the message status is failed or undelivered it will have one of the values described below, otherwise, it will be null |
 |  from	| The phone number (in E.164 format), alphanumeric sender ID, or Wireless SIM that initiated the message |

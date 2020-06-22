@@ -15,7 +15,7 @@ _**NOTE:** Movable Ink is currently in beta and this doc was last updated on Mar
 
 Perform the following steps to get started with Segment's Movable Ink destination:
 1. Ensure you have an active Movable Ink account.
-2. Turn on the Movable Ink destination via the Segment dashboard.
+2. Turn on the Movable Ink destination using the Segment dashboard.
 3. Talk to your Movable Ink account manager to get your Movable Ink API key.
 4. Enter the API key into the Movable Ink destination settings.
 5. set up the Segment SDK to send `track` and `identify` events to Movable Ink.
@@ -35,7 +35,7 @@ When you send a `track` event with one of Segment's sources, Movable Ink will no
 
 Track events that are sent to Movable Ink will be attributed to the user identifier provided by any `identify` call. This user identifier may be an email or another unique identifier if one exists for that user.
 
-If no `identify` call has been made, then the events will be attributed to an anonymous user via the `anonymousId`, until an `identify` call is made and the `userId` is set.
+If no `identify` call has been made, then the events will be attributed to an anonymous user using the `anonymousId`, until an `identify` call is made and the `userId` is set.
 
 Events coming from Segment have a few required properties for them to work with **Signals**.
 

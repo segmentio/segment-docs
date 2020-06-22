@@ -2,7 +2,7 @@
 title: Kitemetrics Destination
 rewrite: true
 ---
-[Kitemetrics](https://kitemetrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides keyword level attribution for Apple Search Ads and associates them with In-App Purchases.  Kitemetrics allows you to leverage automation to easily manage and optimize Apple Search Ads campaigns and bids.
+[Kitemetrics](https://kitemetrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides keyword level attribution for Apple Search Ads and associates them with In-App Purchases.  Kitemetrics allows you to use automation to easily manage and optimize Apple Search Ads campaigns and bids.
 
 This destination is maintained by Kitemetrics. For any issues with the destination, [contact their team](mailto:support@kitemetrics.com).
 
@@ -33,7 +33,7 @@ pod "Analytics"
 pod "Analytics-iAds-Attribution"
 ```
 
-Segment and Kitemetrics can automatically record the following events: "Application Installed", "Application Opened", "Application Updated", "Install Attributed" and "In-App Purchases".  In order to capture those events you need to enable automatic tracking.  Ensure you setup [SEGAnalyticsConfiguration](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) as shown below:
+Segment and Kitemetrics can automatically record the following events: "Application Installed", "Application Opened", "Application Updated", "Install Attributed" and "In-App Purchases".  In order to capture those events you need to enable automatic tracking.  Ensure you set up [SEGAnalyticsConfiguration](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) as shown below:
 
 Swift
 ```swift

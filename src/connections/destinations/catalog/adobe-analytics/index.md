@@ -319,7 +319,7 @@ Segment does the follwing:
 
 9. Sets `window.s.linkTrackVars` which is a string of keys we want Adobe Analytics to read from the `window.s` object when the request is sent. For the example above, the value of `linkTrackVars` would be set as `'pageName,events,products,purchaseID,transactionID,timestamp'`.
 
-10. Finally, fires off the event via `window.s.tl(true, 'o', 'Order Completed');`.
+10. Finally, fires off the event using `window.s.tl(true, 'o', 'Order Completed');`.
 
 ### Creating Page calls
 
@@ -431,7 +431,7 @@ Here's what happens:
 7. Next, we create a comma-delimited joined string of variable keys to send as  `window.s.linkTrackVars`. This tells Adobe Analytics which properties on the `window.s` object to send with this event.
    In the example above, the a string would be `'eVar3,events,pageName,timestamp,eVar3,prop1'`.
 
-8. Finally, we flush the request to Adobe Analytics via `window.s.tl(true, 'o', 'Watched Video')`
+8. Finally, we flush the request to Adobe Analytics using `window.s.tl(true, 'o', 'Watched Video')`
 
   *Note*: `true` sets a `500ms` delay to give your browser time to flush the event. It also signifies to Adobe that this event is something other than a `href` link. The `'o'` stands for `'Other'`, as opposed to `'d'` for `'Downloads'` and `'e'` for `'Exit Links'`. The final parameter is the link name as it appears in reports inside Adobe Analytics.
 
@@ -877,7 +877,7 @@ The following fields are required in order to initialize the MediaHeartbeat inst
 
 | Field | Description |
 | ------------ | ------------ |
-| `SSL` | Segment UI setting that allows you to choose whether to track data via SSL. Defaults to `false`. |
+| `SSL` | Segment UI setting that allows you to choose whether to track data using SSL. Defaults to `false`. |
 | `appVersion` | Auto-collected from your SDK. Defaults to "unknown". |
 | `properties.channel` | Must be passed as a property on a "Video Playback Started" event. Sets the "channel" configuration property. Defaults to an empty string. |
 | `properties.playerName` | Must be passed as a property on a "Video Playback Started" event. Sets the "playerName" configuration property. Defaults to "unknown". |

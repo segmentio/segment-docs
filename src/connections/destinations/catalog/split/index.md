@@ -93,7 +93,7 @@ Track calls will be sent to Split as a `track` event. The `track` event's userId
 
 The events received correspond to an event type in Split. In some cases the name of the event is not in the `event` field. If this is the case, configure your integration in Split to select the correct field when creating the event type. If an event type does not exist when an event is first received, the event type will be automatically created.
 
-Each event may have a `value` field which you would like to utilize in Split metric definitions. Configure your integration in Split to select the correct field from your track events as the `value` field. The value must be an integer or float value.
+Each event may have a `value` field which you would like to use in Split metric definitions. Configure your integration in Split to select the correct field from your track events as the `value` field. The value must be an integer or float value.
 
 If you would not like Split to receive `track` calls, you can configure in your integration settings in Split.
 

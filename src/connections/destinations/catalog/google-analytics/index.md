@@ -146,7 +146,7 @@ analytics.track('Viewed History');
 ```
 ### Server side Identify
 
-If you are sending `.identify()` calls from your server side libraries or have Segment Cloud Apps that send back `.identify()` calls with enriched user traits, you can send that data to your GA account via custom dimensions and metrics. Unlike the client side destination which has the luxury of browsers and the global window `ga` tracker, for server side we will check your `traits` and your settings for custom dimension/metric mappings and send it with an explicit event.
+If you are sending `.identify()` calls from your server side libraries or have Segment Cloud Apps that send back `.identify()` calls with enriched user traits, you can send that data to your GA account using custom dimensions and metrics. Unlike the client side destination which has the luxury of browsers and the global window `ga` tracker, for server side we will check your `traits` and your settings for custom dimension/metric mappings and send it with an explicit event.
 
 You can specify in the setting what you want this event action to be named. We will fallback to a default of **'User Enriched'**. Since event category is also required, you can specify which `trait` you want us to set this value as. For example, if you send a trait such as `type`, we will set the value of `traits.type` as the event category if defined and otherwise, we will fallback to **'All'**.
 
@@ -174,7 +174,7 @@ If you want to record that property or trait as a custom dimension you'd map **E
 
 ![a b test custom dimension mapping screenshot](images/ab-mapping.png)
 
-*Remember: You'll need to setup dimension13 inside of your Google Analytics Admin first as described at the top of this docs section.*
+*Remember: You'll need to set up dimension13 inside of your Google Analytics Admin first as described at the top of this docs section.*
 
 ## Track
 
@@ -316,7 +316,7 @@ Lastly, you have to enable Enhanced Ecommerce in the Google Analytics destinatio
 
 ### Measuring Checkout Steps
 
-To take full advantage of all the features of Enhanced E-commerce, you'll want to take advantage of some specific events. The biggest differentiator between e-commerce and enhanced e-commerce is support for checkout steps. To take advantage of tracking your checkout funnel and measuring metrics like cart abandonment, etc, you'll first need to configure your checkout funnel in the Google Analytics admin interface, giving easily readable labels to the numeric checkout steps:
+To take full advantage of all the features of Enhanced E-commerce, you should take advantage of some specific events. The biggest differentiator between e-commerce and enhanced e-commerce is support for checkout steps. To take advantage of tracking your checkout funnel and measuring metrics like cart abandonment, etc, you'll first need to configure your checkout funnel in the Google Analytics admin interface, giving easily readable labels to the numeric checkout steps:
 
 ![enhanced ecommerce checkout funnel](images/checkout-funnel.png)
 
@@ -376,7 +376,7 @@ analytics.track('Completed Checkout Step', {
 
 You can have as many or as few steps in the checkout funnel as you'd like. The 4 steps above merely serve as an example. Note that you'll still need to track the `Order Completed` event per our standard [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
 
-For client-side integrations, to leverage the ability to track Checkout Steps and Options, we use Google Analytics' ProductAction class. You can read their developer docs for information on specific methods:
+For client-side integrations we use Google Analytics' ProductAction class to track Checkout Steps and Options. You can read their developer docs for information on specific methods:
 - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/ProductAction)
 - [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_product_action)
 - [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)
@@ -404,7 +404,7 @@ analytics.track('Clicked Promotion', {
 });
 ```
 
-For client-side integrations, to leverage the ability to measure promotions, we use Google Analytics' Promotions class. You can read their developer docs for information on specific methods:
+For client-side integrations, we use Google Analytics' Promotions class to measure promotions. You can read their developer docs for information on specific methods:
 - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/Promotion)
 - [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_promotion)
 - [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)
@@ -628,7 +628,7 @@ Analytics.track(
 
 ### UTM Parameters
 
-If you want to send UTM parameters to Google Analytics via one of the Segment server-side sources they need to be passed manually. The client-side Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript)) is highly recommended for collecting this data since it all happens automatically.
+If you want to send UTM parameters to Google Analytics using one of the Segment server-side sources they need to be passed manually. The client-side Javascript library ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript)) is highly recommended for collecting this data since it all happens automatically.
 
 Your UTM params need to be passed in the `context` object in `context.campaign`. For Google Analytics `campaign.name`, `campaign.source` and `campaign.medium` all need to be sent together for things to show up in reports. The other two params (`campaign.term` and `campaign.content`) are both optional, but will be forwarded to GA if you send them to Segment.
 
@@ -725,7 +725,7 @@ analytics.on('track', function(event, properties, options){
 
 **Important**: Keep in mind you will need to do all the data translation/properties mapping inside this `.on()` function before you send the event to Google Analytics like you see in our [destination code](https://github.com/segment-integrations/analytics.js-integration-google-analytics/blob/master/lib/index.js#L161-L207).
 
-To do this server side, you can create a separate [source](https://help.segment.com/hc/en-us/articles/204892239-What-are-sources-) in Segment, and within this source enter your GA credentials for the second tracker.
+To do this server side, you can create a separate [source](/docs/connections/sources/) in Segment, and within this source enter your GA credentials for the second tracker.
 
 This source can be your server-side source. From there, its easy to send data to multiple projects server-side, as you can see in this [Node example](/docs/connections/sources/catalog/libraries/server/node/#multiple-clients) you can initialize multiple instances of our library.
 
@@ -810,11 +810,11 @@ You may, however, want to deploy [page hiding](https://support.google.com/360sui
 
 ### User Deletion
 
-You can use Segment's in-app Privacy Tool to send deletion requests using `userId`s. This deletes a user from your connected raw Data Destinations and forwards a deletion request to Google Analytics. [See the Privacy Tools documentation](/docs/privacy/user-deletion-and-suppression/) to learn more. 
+You can use Segment's in-app Privacy Tool to send deletion requests using `userId`s. This deletes a user from your connected raw Data Destinations and forwards a deletion request to Google Analytics. [See the Privacy Tools documentation](/docs/privacy/user-deletion-and-suppression/) to learn more.
 
 To enable user deletion for Google Analytics:
 1. Navigate to the the **User Deletion** setting in your Segment Google Analytics destination settings
-2. Authenticate your Google Analytics account using OAuth. 
+2. Authenticate your Google Analytics account using OAuth.
 
 > **Note**: User deletion for Google Analytics is currently only supported for Universal Analytics and not Classic Analytics. You also can only send user deletion requests using a `userId` through the Privacy Tool. This means you must  have the User-Id feature enable in your Google Analytics Property within the your Google Analytics dashboard and have Segment sending your Property `userIds` by enabling the setting **Send User-ID to GA**.
 
@@ -1016,7 +1016,7 @@ If you received this deprecation notice, your property has already been flagged 
 
 ## Mobile Apps - DEPRECATED
 
-Segment supports Google Analytics mobile app analytics via our iOS and Android sources. For getting started with our mobile sources, check out the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/) technical docs.
+Segment supports Google Analytics mobile app analytics using our iOS and Android sources. For getting started with our mobile sources, check out the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/) technical docs.
 
 When including Segment-GoogleAnalytics in your project, we bundle IDFA support by default. You can choose to exclude IDFA Support by specifying `pod "Segment-GoogleAnalytics/Core"`. Doing this, we will only bundle the Segment and Core GA libraries, excluding GoogleIDFASupport.
 
@@ -1032,7 +1032,7 @@ Here are [Google's Best Practices for Mobile App Analytics](https://support.goog
 
 ### Add the Mobile Tracking Id Field
 
-The first thing you'll want to do if you're bundling the Segment-GoogleAnalytics SDK is to add your **Mobile Tracking Id** to your Google Analytics settings inside Segment. This ensures that data can flow from each user's mobile device to Google Analytics. Otherwise, Segment won't know where to send your data, and the events will be lost.
+The first thing you should do if you're bundling the Segment-GoogleAnalytics SDK is to add your **Mobile Tracking Id** to your Google Analytics settings inside Segment. This ensures that data can flow from each user's mobile device to Google Analytics. Otherwise, Segment won't know where to send your data, and the events will be lost.
 
 
 ### When Will I See Data?

@@ -318,7 +318,7 @@ Our [Application Opened](/docs/connections/spec/mobile/#application-opened) even
 
 ## Page
 
-Criteo Events' `viewHome` tag tracks top of funnel visits to your site's home page. We integrate with this functionality on web via the use of our `.page` method.
+Criteo Events' `viewHome` tag tracks top of funnel visits to your site's home page. We integrate with this functionality on web using the use of our `.page` method.
 
 There are two ways of letting Segment know which `.page` event should trigger this tag:
 
@@ -334,13 +334,13 @@ analytics.page('Home')
 
 ### Extra Data
 
-**This functionality is currently only available via our web integration with Criteo. We are working on adding it for mobile.**
+**This functionality is currently only available using our web integration with Criteo. We are working on adding it for mobile.**
 
 Criteo Events supports the ability to send extra data with events about a page or user to supply your events with more context (This is a feature that is set up with the assistance of your Crtieo Account Manager).
 
 To enable this functionality, you will need to provide us with the names of the Criteo Events data parameters you would like us to pass along as well as the name of the properties or traits of the Segment `.page` or `.identify` events that you would like us to map them from.
 
-This is setup via the **Supporting User Data** and **Supporting Page Data** settings in your Criteo Events integration settings. In each of these, you can provide us with a list of key/value mappings designating the name of the Segment property/trait on the left and the corresponding Criteo Events parameter it should map to on the right.
+This is set up using the **Supporting User Data** and **Supporting Page Data** settings in your Criteo Events integration settings. In each of these, you can provide us with a list of key/value mappings designating the name of the Segment property/trait on the left and the corresponding Criteo Events parameter it should map to on the right.
 
 Here is an example of Supporting Page Data:
 
@@ -380,7 +380,7 @@ Any future `.track` events documented above would have `sub_status` as an extra 
 window.criteo_q.push({ event: 'viewItem', item: 'PRODUCT-ID', sub_status: 'trial' })
 ```
 
-**Note: Of course if you later change the user's `subscriptionStatus` to be a different value via the use of another `identify` call, the `sub_status` value will also be updated.**
+**Note: Of course if you later change the user's `subscriptionStatus` to be a different value using the use of another `identify` call, the `sub_status` value will also be updated.**
 
 ### Setting Emails
 
@@ -400,4 +400,4 @@ Criteo Events can receive dates in a specific format, in order for us to pass al
 
 ### Is the mobile integration bundled?
 
-Even though we don't support integrating with Criteo Events via Segment from a server source, it's still not necessary for you to [bundle](https://segment.com/docs/guides/sources/bundled-SDK-vs-server/) the Criteo Events SDK into the Segment SDK! This is because while our mobile integration with them is powered from our servers, the integration requires metadata that can only be supplied by the user's mobile device (which is collected and passed along automatically by the Segment mobile SDK).
+Even though we don't support integrating with Criteo Events using Segment from a server source, it's still not necessary for you to [bundle](https://segment.com/docs/guides/sources/bundled-SDK-vs-server/) the Criteo Events SDK into the Segment SDK! This is because while our mobile integration with them is powered from our servers, the integration requires metadata that can only be supplied by the user's mobile device (which is collected and passed along automatically by the Segment mobile SDK).

@@ -83,7 +83,7 @@ UTM parameters are types of query strings added to the end of a URL. When clicke
 
 ![](images/x-channel_GWqnp2I6.png)
 
-UTM parameters are only used when linking to your site from outside of your domain. When a visitor arrives to your site via a link containing UTM parameters, Segment's client-side analytics.js library will automatically parse the URL's query strings, and store them within the `context` object as outlined [here](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected). These parameters do not persist to subsequent calls unless you pass them explicitly.
+UTM parameters are only used when linking to your site from outside of your domain. When a visitor arrives to your site using a link containing UTM parameters, Segment's client-side analytics.js library will automatically parse the URL's query strings, and store them within the `context` object as outlined [here](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected). These parameters do not persist to subsequent calls unless you pass them explicitly.
 
 UTM parameters contain three essential components:
 
@@ -171,7 +171,7 @@ If your store allows user registration and users are logged in when they shop on
 
 This works by using a `userId` instead of an `anonymousId` to track key events and where they occur. This `userId` serves as the primary key in your downstream tools and data warehouse, allowing you to join all of her anonymous activities with her logged in ones. You also can get a complete picture of where she is and what device she is on, while she is using your apps or website.
 
-[Learn more about pulling the entire user journey for a single user given a userId.](https://segment.com/docs/guides/sources/join-user-profiles/)
+[Learn more about pulling the entire user journey for a single user given a userId.](https://segment.com/docs/guides/how-to-guides/join-user-profiles/)
 
 Unfortunately, tracking the same user across devices only works if she logs into each device. Anonymous browsing in each distinct "experience" (e.g. mobile safari, native iPhone, browser on laptop) generates its own unique `anonymousId` . Each `anonymousId` is limited to the scope of that browser or app, only measuring activities in those sessions. It's not until the user logs in when the `userId` is generated (if she is registering for a new account) or the `userId` is retrieved from your database, and then mapped to the `anonymousId` of that session. Segment will keep a table of `anonymousId` s mapped to a single `userId`so you can analyze a user's activity across multiple devices.
 

@@ -14,7 +14,7 @@ When you want to trial or start using a new vendor, Segment can [replay](/docs/g
 
 *   Eliminate vendor lock-in
 *   Take your data to new tools
-*   Increase leverage in vendor negotiations
+*   Increase advantage in vendor negotiations
 
 Replay works for all server-side destinations that have or accept timestamps, including our Amazon S3 destination, so you can get all your data history since the first event you sent to Segment.
 

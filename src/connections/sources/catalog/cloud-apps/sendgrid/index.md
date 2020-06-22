@@ -37,7 +37,7 @@ Take your company's analysis to the next level by **adding Sendgrid as a Source 
 
   ![](images/934372_Webhook+Settings.png)
 
-8. Once you enable the Event Notification, you're good to go! Press **Next**, and then **Finish** to wrap up the setup flow.
+8. Once you enable the Event Notification, you're good to go! Press **Next**, and then **Finish** to wrap up the set up flow.
 
 ### Event URL
 
@@ -65,7 +65,7 @@ The SendGrid source also has a streaming component which listens in real time fo
 
 Collections are the groupings of resources we pull from your source. In your warehouse, each collection gets its own table.
 
-**Object** collections are updated with each sync. These are pulled via our sync component.
+**Object** collections are updated with each sync. These are pulled using our sync component.
 
 **Event** collections are append only, represent a user action or activity, and may be likened to fact tables in a traditional data warehouse.
 

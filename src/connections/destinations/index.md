@@ -83,7 +83,7 @@ In order to override the default, check the destination settings pane in the Seg
 
 ## Data Deliverability
 
-Segment increases deliverability to destinations in two ways: [retries](#retries) and [replays](docs/guides/what-is-replay/). Retries happen automatically for all customers, while replays are available on request for [Business](https://segment.com/pricing/) customers.
+Segment increases deliverability to destinations in two ways: [retries](#retries) and [replays](/docs/guides/what-is-replay/). Retries happen automatically for all customers, while replays are available on request for [Business](https://segment.com/pricing/) customers.
 
 ### Retries
 

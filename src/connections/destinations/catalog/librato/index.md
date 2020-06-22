@@ -40,7 +40,7 @@ The `value` event property allows you to set the magnitude of the data point. Al
 
 ### Metrics
 
-To get the most out of your event gauges, you'll want to enable the following options in the Librato interface for each Segment gauge:
+To get the most out of your event gauges,  enable the following options in the Librato interface for each Segment gauge:
 
 ![librato event gauges segment destination](librato-graph.png)
 

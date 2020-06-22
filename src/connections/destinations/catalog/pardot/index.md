@@ -16,7 +16,7 @@ Pardot is supported on the client-side and server-side.
 
 ### API Access
 
-You'll need to provide API access to Segment via Pardot user credentials. Since Pardot's API [requires](http://developer.pardot.com/kb/api-version-3/authentication) that we provide an email and password to get access to their API, we'll need to store this password in plain text in our database.
+You'll need to provide API access to Segment using Pardot user credentials. Since Pardot's API [requires](http://developer.pardot.com/kb/api-version-3/authentication) that we provide an email and password to get access to their API, we'll need to store this password in plain text in our database.
 
 Since we don't want to ask for the password of one of your actual user accounts, we recommend you create a new Pardot user account for Segment. Create this user by going to *Admin > Users and Groups > Add User*, and creating an Administrator role user.
 
@@ -61,7 +61,8 @@ You can provide custom fields, but they won't be updated or visible until you cr
 
 ### Version 4
 
-*Note: our integration with v4 of the Pardot API is currently in beta.*
+> note ""
+> The Segment integration with v4 of the Pardot API is currently in beta, and is only available in cloud-mode.
 
 If you are using version 4, the functionaly is the same as version 3 except you will need to provide some kind of identifier to Segment that we can use to correctly handle either the creation of a new prospect *or* the update of an existing one. There are two options for this.
 

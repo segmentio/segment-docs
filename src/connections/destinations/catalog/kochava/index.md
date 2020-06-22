@@ -5,7 +5,7 @@ rewrite: true
 
 [Kochava](https://www.kochava.com/) offers mobile app attribution and mobile app analytics providing holistic, unbiased measurement for precise, real-time visualization of app performance through the funnel.
 
-_**NOTE:** As outlined in [Kochava's documentation](https://support.freeappanalytics.com/server-to-server-integration/segment-integration/), you must have a paid account with Kochava to utilize the Segment-Kochava Destination._
+_**NOTE:** As outlined in [Kochava's documentation](https://support.freeappanalytics.com/server-to-server-integration/segment-integration/), you must have a paid account with Kochava to use the Segment-Kochava Destination._
 
 This destination is maintained by Kochava. For any issues with the destination, [contact their team](mailto:support@kochava.com)
 
@@ -62,7 +62,7 @@ Analytics.track(
 
 ### Install Attributed Postback
 
-To create a Kochava-Certified Postback that will send campaign information to Segment after attributing an `Application Installed` event, follow [Kochava's Postback Setup documentation](https://support.kochava.com/campaign-management/create-a-kochava-certified-postback).
+To create a Kochava-Certified Postback that will send campaign information to Segment after attributing an `Application Installed` event, follow [Kochava's Postback set up documentation](https://support.kochava.com/campaign-management/create-a-kochava-certified-postback).
 
 ### Apple Search Ads
 

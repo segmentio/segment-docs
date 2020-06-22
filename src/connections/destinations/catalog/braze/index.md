@@ -26,7 +26,7 @@ If you notice any gaps or outdated information in this document, or simply want 
 2. Search for "Braze" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. In your Segment Settings UI, add the "API Key" which can be found in your Braze Dashboard under App Settings > Manage App Group.
 4. You will also need to set up a new App Group REST API Key in the Braze Dashboard under App Settings > Developer Console > API Settings. Instructions can be found [here](https://www.braze.com/documentation/REST_API/#creating-and-managing-rest-api-keys). **Note:** For this App Group REST API Key, you will only need to select users.track endpoint under "User Data"
-5. If you are implementing via Analytics.js, Segment will automatically load the [Braze Web SDK](https://www.braze.com/documentation/Web/). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
+5. If you are implementing using Analytics.js, Segment will automatically load the [Braze Web SDK](https://www.braze.com/documentation/Web/). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
 
 
 ### iOS
@@ -51,7 +51,7 @@ If you notice any gaps or outdated information in this document, or simply want 
 
 #### Sample App
 
-Braze has created a sample iOS application that integrates Braze via Segment. Check it out at the [Github repo](https://github.com/Appboy/appboy-segment-ios/tree/master/Example).
+Braze has created a sample iOS application that integrates Braze using Segment. Check it out at the [Github repo](https://github.com/Appboy/appboy-segment-ios/tree/master/Example).
 
 ### Android
 
@@ -82,7 +82,7 @@ Braze has created a sample iOS application that integrates Braze via Segment. Ch
 
 #### Sample App
 
-Braze has created a sample Android application that integrates Braze via Segment. Check it out at the [Github repo](https://github.com/Appboy/appboy-segment-android-sample).
+Braze has created a sample Android application that integrates Braze using Segment. Check it out at the [Github repo](https://github.com/Appboy/appboy-segment-android-sample).
 
 ## Page
 
@@ -416,7 +416,7 @@ end
 ### Migrating to v2 of the Braze Web SDK
 There are currently two major [versions](https://github.com/Appboy/appboy-web-sdk/blob/master/CHANGELOG.md#breaking) of this SDK: 1 and 2. Segment currently supports both as migrating to Version 2 requires some important changes to your website.
 
-If you have never implemented Braze on your site, either via Segment or natively, you can ignore this section. If you have had Braze running before and want to migrate to Version 2 **you must ensure you remove all references to `appboy.min.css` from your site.** This is very important as it will cause issues with Version 2 of their SDK. Once you have done this you can select Version 2 via the "Braze Web SDK Version" with your Segment Settings UI.
+If you have never implemented Braze on your site, either using Segment or natively, you can ignore this section. If you have had Braze running before and want to migrate to Version 2 **you must ensure you remove all references to `appboy.min.css` from your site.** This is very important as it will cause issues with Version 2 of their SDK. Once you have done this you can select Version 2 using the "Braze Web SDK Version" with your Segment Settings UI.
 
 ## Using Braze with Personas
 
@@ -523,7 +523,7 @@ To send computed traits or audiences to Braze, you first must connect it to your
 - **Must create audience_name field before Personas can update those values?**: No. If sent as an `identify` call, Personas automatically creates the computed trait or audience name as a custom attribute in Braze. If sent as a `track` call, Personas automatically creates a custom event in Braze.
 - **Computed trait appears as**: A snake cased version of the computed trait name (for example, `last_product_viewed: 'Sweater'`) with a string for the value of the computed trait.
 - **Audience appears as**: A snake cased version of the audience name (for example, `order_completed_last_30days: true` ) with a boolean value of `true` indicates that a user is in the audience.
-- **Destination rate limit**: Unlimited. Segment sends Personas data to Braze’s `/users/track` endpoint, which has [no rate limit](https://www.braze.com/docs/api/basics/#api-limits).
+- **Destination rate limit**: 100 requests per second
 - **Lookback window allowed:** Yes, unlimited.
 - **Identifiers required** : `userId` or `braze_id`
 - **Identifiers accepted** : `userId` or `braze_id`

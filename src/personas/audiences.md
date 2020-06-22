@@ -2,11 +2,11 @@
 title: Personas Audiences
 ---
 
-Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be sycned to hundreds of destinations and are available via the [Profile API](/docs/personas/profile-api).
+Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be sycned to hundreds of destinations and are available using the [Profile API](/docs/personas/profile-api).
 
 ## Building an Audience
 
-When building an audience you can leverage existing events, traits, computed traits or audiences.
+When building an audience you can use existing events, traits, computed traits or audiences.
 
 ![](images/audience_condition_list.png)
 
@@ -20,7 +20,7 @@ You can also specify two different types of time-windows, `within` and `in betwe
 
 ### Custom Traits
 
-You can also build audiences based on custom traits. These traits can be collected from your apps when a user completes a form, or signs up, via an [identify](/docs/connections/spec/identify) call. You can also check out the Personas user explorer to see examples of these traits.
+You can also build audiences based on custom traits. These traits can be collected from your apps when a user completes a form, or signs up, using an [identify](/docs/connections/spec/identify) call. You can also check out the Personas user explorer to see examples of these traits.
 
 ### Computed Traits
 
@@ -42,13 +42,13 @@ Dynamic Property references give you more flexibility over funnel audiences. Ins
 
 ### Account-Level audiences
 
-If you are a B2B business, you might want to build an audience of accounts. You can leverage both account-level traits that you've sent through the [group](/docs/connections/spec/group) call, or user-level traits and events. For example, you might want to re-engage a list of at-risk accounts defined as companies which are on a business tier plan and where none of the users in that account have logged in recently. When incorporating user-level events or traits, you can specify `None of the users`, `Any users`, or `All users`.
+If you are a B2B business, you might want to build an audience of accounts. You can use both account-level traits that you've sent through the [group](/docs/connections/spec/group) call, or user-level traits and events. For example, you might want to re-engage a list of at-risk accounts defined as companies which are on a business tier plan and where none of the users in that account have logged in recently. When incorporating user-level events or traits, you can specify `None of the users`, `Any users`, or `All users`.
 
 ![](images/1542075123519.png)
 
 ## Connecting your Audience to a Destination
 
-Once you have previewed your audience, you can choose to connect a destination, or simply keep the audience in Segment and download a csv. If you already have destinations setup in Segment, you can import the configuration from one of your existing sources to Personas. Note that you can only connect one destination configuration per destination type.
+Once you have previewed your audience, you can choose to connect a destination, or simply keep the audience in Segment and download a csv. If you already have destinations set up in Segment, you can import the configuration from one of your existing sources to Personas. Note that you can only connect one destination configuration per destination type.
 
 ![](images/audience_select_destination_card.png)
 
@@ -86,9 +86,9 @@ To create a new audience:
 > warning ""
 > [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarketing Lists](/docs/destinations/adwords-remarketing-lists) have rate limits on how quickly we can update an audience. We sync at the highest frequency allowed by the tool, which is between 1 hour and 6 hours.
 
-## Accessing your Audiences via the Profiles API
+## Accessing your Audiences using the Profiles API
 
-You can access your audiences via the Profile API by querying the `/traits` endpoint. For example, if you can query for the `high_value_user` with the following GET request:
+You can access your audiences using the Profile API by querying the `/traits` endpoint. For example, if you can query for the `high_value_user` with the following GET request:
 
 ```
 https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:alex@segment.com/traits?limit=100&include=high_value_user

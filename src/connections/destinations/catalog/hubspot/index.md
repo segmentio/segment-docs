@@ -26,7 +26,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 ```
 analytics.page()
 ```
-**IMPORTANT:** An initial `page` call is required for data to be sent to HubSpot via Analytics.js. This is included by default in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet).
+**IMPORTANT:** An initial `page` call is required for data to be sent to HubSpot using Analytics.js. This is included by default in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet).
 
 ## Identify
 
@@ -44,7 +44,7 @@ HubSpot does not accept any trait keys that contain uppercases or spaces. So for
 
 Any traits that aren't contact fields in HubSpot will be removed from the request. To find out which fields you can set, check out the custom field names in **Contacts > Contact Settings**. Example field names are "firstname", "lastname", "company", "phone", etc.
 
-If you specify a company name (via `traits.company.name`), it will show up as a *property* of the contact (you can find it in HubSpot's UI via **About [contact] > View > View All Properties**), but it will not show up as the user's company under **[contact]'s Company**.
+If you specify a company name (via `traits.company.name`), it will show up as a *property* of the contact (you can find it in HubSpot's UI using **About [contact] > View > View All Properties**), but it will not show up as the user's company under **[contact]'s Company**.
 
 The following traits are tagged as special fields within HubSpot:
 
@@ -95,7 +95,7 @@ In this case, your HubSpot `eventId` is 'Bought Item'. If you want to use an exi
 
 ### Setting Contact Properties on Track
 
-Although we recommend you send `traits` via [`identify`](/docs/connections/spec/identify/), you can also set HubSpot properties on a track call, as allowed by their [events API](http://developers.hubspot.com/docs/methods/enterprise_events/http_api). You might want to use this method if you're running out of API calls on the Identify requests.
+Although we recommend you send `traits` using [`identify`](/docs/connections/spec/identify/), you can also set HubSpot properties on a track call, as allowed by their [events API](http://developers.hubspot.com/docs/methods/enterprise_events/http_api). You might want to use this method if you're running out of API calls on the Identify requests.
 
 Include HubSpot contact properties into the `context.traits` object:
 
@@ -135,8 +135,8 @@ Group calls map to the HubSpot [Companies API](https://developers.hubspot.com/do
 
 **IMPORTANT**: There are three requirements to creating companies and associating contacts:
 
-1. Group calls only take effect when called via server-side libraries or mobile libraries, not via our client-side javascript library.
-2. Your contact must have been identified and created within HubSpot (called via analytics.identify for this userId first).
+1. Group calls only take effect when called using server-side libraries or mobile libraries, not using our client-side javascript library.
+2. Your contact must have been identified and created within HubSpot (called using analytics.identify for this userId first).
 3. You must include a `website` trait in your group call, and it must be a full, valid, and complete URL. HubSpot uses the domain of the website trait as a unique identifier for companies. To create a new company you must use the full URL and not just the subdomain.
 
 The following group traits are supported as special properties within HubSpot:

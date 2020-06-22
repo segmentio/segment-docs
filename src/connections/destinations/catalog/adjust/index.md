@@ -43,7 +43,7 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 ```
 
-In cases where the Adjust integration sometimes does not track the install attribution properly, you can configure a delay for the Adjust reporting to ensure all session parameters have been loaded properly. Segment allows you to configure this via our UI by enabling `setDelay` and providing a `delayTime` in seconds. Segment then calls the [Adjust iOS SDK's configuration](https://github.com/adjust/ios_sdk#delay-start) to set a delay. The maximum delay start time of the Adjust SDK is 10 seconds.
+In cases where the Adjust integration sometimes does not track the install attribution properly, you can configure a delay for the Adjust reporting to ensure all session parameters have been loaded properly. Segment allows you to configure this using our UI by enabling `setDelay` and providing a `delayTime` in seconds. Segment then calls the [Adjust iOS SDK's configuration](https://github.com/adjust/ios_sdk#delay-start) to set a delay. The maximum delay start time of the Adjust SDK is 10 seconds.
 
 
 ### Android
@@ -133,7 +133,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.reset();
 ```
 
-When you call `reset`, Segment will reset these partner parameters via Adjust's [resetSessionPartnerParameters](https://github.com/adjust/ios_sdk#session-partner-parameters) method.
+When you call `reset`, Segment will reset these partner parameters using Adjust's [resetSessionPartnerParameters](https://github.com/adjust/ios_sdk#session-partner-parameters) method.
 
 ## Install Attributed
 
@@ -158,7 +158,7 @@ If any value is unavailable, it will default to nil.  This call will be sent to 
 
 #### Troubleshooting
 
-If you are also loading Adjust's SDK natively in addition to loading via the Segment-Adjust integration, `Install Attributed` event callback will likely be affected/unable to be triggered. **Remove native Adjust implementation**.
+If you are also loading Adjust's SDK natively in addition to loading using the Segment-Adjust integration, `Install Attributed` event callback will likely be affected/unable to be triggered. **Remove native Adjust implementation**.
 
 Since there will not be a change in attribution for registered testing devices you are currently using to send data to Adjust, you will need to unregister that device in Adjust.
 

@@ -26,7 +26,7 @@ Take your company's email analysis to the next level by **adding Mandrill as a S
 
    Once you enable the webhook, you're good to go! We'll automatically create your collections based on which triggers you select. If any seem unnecessary for your analysis, feel free to leave them unchecked.
 
-5. Finally, back in the Segment UI, press Next and then Finish to wrap up the setup flow.
+5. Finally, back in the Segment UI, press Next and then Finish to wrap up the set up flow.
 
 ## Components
 
