@@ -203,7 +203,7 @@ Because our server-side libraries batch calls by default, it is possible for an 
 
 [Adding a Flush method](/docs/connections/sources/catalog/libraries/server/node/#batching) immediately following the `identify`, and before any additional `track` events helps ensure that the `identify` call reaches Intercom first to create the user. Generally, this is enough to prevent the race condition, but you can add an extra timeout if necessary.
 
-If you still see issues, the `identify` call is most likely either either not reaching Intercom at all, or is arriving too late after a subsequent [retry](https://segment.com/docs/connections/destinations/#retries). In cases like this you can use our [Event Delivery functionality](https://segment.com/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/) to check for recent errors, and get some insight into how to prevent errors in the future.
+If you still see issues, the `identify` call is most likely either not reaching Intercom at all, or is arriving too late after a subsequent [retry](https://segment.com/docs/connections/destinations/#retries). In cases like this you can use our [Event Delivery functionality](https://segment.com/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/) to check for recent errors, and get some insight into how to prevent errors in the future.
 
 ## Group
 
