@@ -41,7 +41,7 @@ The Tracking Plan editor is organized as a spreadsheet to help you quickly add n
 | Conditionals | Enter simple regular expressions to validate property values. This currently only works when a property data type is set to `string`. For example, you can add pipe delimited strings to the regex column to generate violations when a property value does not match fall, winter or spring. |
 
 > info ""
-> Negative lookaheads `?!` are currently not supported. As an alternative, `not` can be used in your regex or JSON schema.
+> Negative lookaheads `?!` are not currently supported. As an alternative, you can use `not` in your regex or JSON schema.
 
 ### Add a new track call
 Click on the **Add Event** button in the top right. A new row will be added. Click into the row to add an event name and description. The event name will be used to strictly validate the name passed in your `.track()` calls. Casing, spacing and spelling matter!
