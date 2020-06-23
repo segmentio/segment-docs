@@ -2,13 +2,13 @@
 title: Salesforce Marketing Cloud Destination
 ---
 
-Salesforce Marketing Cloud (SFMC) is a provider of digital marketing automation and analytics software and services. Marketers can use this software to create sophisticated multi-channel campaigns using the SFMC [Journey Builder](https://help.salesforce.com/articleView?id=mc_jb_journey_builder.htm&type=5). This is a campaign planning tool that helps you design and automate campaigns that guide customers through their journey with your brand, such as [Weekly Product Summary Emails](https://segment.com/recipes/product-summary-emails-salesforce/) that you can enable with Segment.
+Salesforce Marketing Cloud (SFMC) provides digital marketing automation and analytics software and services. Marketers can use this software to create sophisticated multi-channel campaigns using the SFMC [Journey Builder](https://help.salesforce.com/articleView?id=mc_jb_journey_builder.htm&type=5). This is a campaign planning tool that helps you design and automate campaigns that guide customers through their journey with your brand, such as [Weekly Product Summary Emails](https://segment.com/recipes/product-summary-emails-salesforce/) that you can enable with Segment.
 
-> success "A Note About ExactTarget"
+> info "A Note About ExactTarget"
 > ExactTarget was acquired by Salesforce in 2013 and renamed "Salesforce Marketing Cloud." At Segment we use the name "Salesforce Marketing Cloud" (or sometimes SFMC, for short), but the names "Salesforce Marketing Cloud" and "ExactTarget" refer to the same product.
 
 
-## SFMC Quick Info
+### SFMC quick info
 
 | **Support for Personas**               | Yes                                                                  |
 | **Rate Limits**                        | 20 requests per second                                               |
@@ -17,7 +17,7 @@ Salesforce Marketing Cloud (SFMC) is a provider of digital marketing automation 
 | **Client vs. Server-Side Connection**  | Server-side                                                          |
 
 
-## Segment and SFMC
+### Segment and SFMC
 
 Segment sends data to SFMC using [Data Extensions](https://help.salesforce.com/articleView?id=mc_co_salesforce_data_extensions.htm&type=5), or using API Events.
 
@@ -26,7 +26,9 @@ Segment sends data to SFMC using [Data Extensions](https://help.salesforce.com/a
 - **API Events** can trigger an email or push notification campaign immediately when they receive data from Segment.
 
 
-## Set Up: Compatibility and Authentication
+## SFMC prerequisites
+
+Before you start working with SFMC, work through the followins sections to confirm that the destination will work as you expect, and set up any authentication requirements.
 
 ### Confirm that Salesforce Marketing Cloud supports your source type and connection mode
 
@@ -62,7 +64,7 @@ Segment uses your unique Salesforce subdomain to make API calls to SFMC. Your su
 > **Note**: If you do not set up your subdomain, Segment uses the legacy V1 endpoint and your events might result in authentication errors.
 
 
-## Optional: Set up SFMC Batching
+## Optional: Set up SFMC batching
 
 SFMC has strict rate limits, usually 20 requests per second. If your organization sends a very high volume of data or has audiences with many people in them, Segment allows you to send data to SFMC in batches. This can help you reduce your SFMC API quota, reduce the number of rate-limiting errors you see, and help speed up transfers of large volumes of data.
 
@@ -79,7 +81,7 @@ To use the SFMC Batch feature:
 If possible, you should enable batching for your SFMC destination before you send it any data. If you enable batching for an existing SFMC destination that has already received Segment data, you must work with [Segment Product Support](http://segment.com/help/contact/) to migrate that data.
 
 
-## Set Up: Sending Identify calls to SFMC
+## Set up to send Identify calls to SFMC
 
 To use the Journey Builder to send campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment [Identify](https://segment.com/docs/connections/spec/identify/) calls to an SFMC Data Extension which you specify. When you call `identify`, Segment creates a Salesforce Marketing Cloud Contact, and upserts (updates) the user’s `traits` in the Data Extension.
 
@@ -89,7 +91,7 @@ To use the Journey Builder to send campaigns to your users, you need to have dat
 > info ""
 > During this set up process, you will create one Data Extension for Identify calls ("the Identify Data Extension"), and one for each unique Track call ("the Track Data Extensions").
 
-### SFMC Set up: Create a Data Extension to store Identify calls
+### Create a Data Extension in SFMC to store Identify calls
 You must create a Data Extension in SFMC to store the Identify calls coming from Segment. For each trait you want to send to SFMC, you must manually create an attribute on the Data Extension in SFMC. When you create a Data Extension in SFMC, you can set up as many (or as few) attributes as you need.
 
 
@@ -115,7 +117,7 @@ The example below shows a Data Extension for Identify calls that stores Email, F
 ![](images/sfmc-identify-dext-key.png)
 
 
-**Data Formatting Requirements**
+#### Data Formatting Requirements
 SFMC is very strict about the format of your data, and rejects calls if they don’t fit an expected format.
 
 To keep your data format consistent, predictable, and readable in SFMC, Segment converts all of your property keys to **Title Case** before sending them to SFMC. For example, the following example data:
@@ -156,11 +158,11 @@ There are a few more things you should to know about sending data to SFMC:
    - If `userId` is present in the Identify call, Segment sends it to SFMC as the `Contact Key`
    - If no `userId` is present, Segment sends the `email` in the Identify to SFMC as the `Contact Key`
    - SFMC does not allow colon characters (":") in the `Contact Key` field, so you must remove those characters from any `userId` fields.
-- SFMC doesn’t handle nested objects gracefully, so Segment excludes any nested properties from the data it sends. To send nested context fields, see the section on [Using Context Properties](#using-context-properties-from-identify-or-track) below.
+- SFMC doesn’t handle nested objects gracefully, so Segment excludes any nested properties from the data it sends. To send nested context fields, see the section on [Using Context Properties](#using-context-properties-from-identify-or-track-calls) below.
 - SFMC accepts ISO-8601-formatted dates, and rejects any calls that include dates not in that format. Make sure you send all dates in ISO format.
 
 
-## Set Up: Sending Track calls to SFMC
+## Set up to send Track calls to SFMC
 
 You can use Segment Track calls to send rich data about what your users are doing to a Data Extension in SFMC, which you can then use to build Journeys. When you send Track calls to SFMC, Segment fires an event using SFMC’s [eventing API](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/putDataExtensionRowByKey.htm).
 
@@ -202,7 +204,7 @@ Just as you did for the Identify Data Extension, copy and paste the External ID 
 ![](images/sfmc-conversion-events.png)
 
 
-#### Configuring Each Conversion Event: Primary Keys
+#### Configuring Primary Keys for each conversion event
 
 Segment uses the Primary Key you define in the Conversion Events setting to *deduplicate* records in the Data Extension.
 
@@ -221,14 +223,14 @@ If we return to the example of one user clicking multiple buttons, if you check 
 ![](images/uuid-primary-key.png)
 
 
-#### Using multiple primary keys
+#### Using multiple Primary Keys
 
 You can use more than one Primary Key if needed. To add more than one Primary Key, enter them in the Primary Key Field separated by a comma. For example, if for the Primary Keys `Contact Key` and `Product Id`, you enter `Contact Key,Product Id`. The order of the keys does not change the deduplication behavior.
 
 You might use more than one primary key if, for example, you want to track if a user clicks the Start Button and the Stop Button, but you don’t care how many time the users clicked them. In this case, you could use `Contact Key` and `Button Title` as Primary Keys. Then, SFMC only deduplicates if *both* Contact Key (the user) and Button Title are the same. This means you would record that individual users clicked the Start Button and the Stop Button, but not how many times they clicked them.
 
 
-## Using Context Properties from Identify or Track
+## Using context properties from Identify or Track calls
 
 The Segment SDKs and libraries automatically collect many [context properties](https://segment.com/docs/connections/spec/common/#context), and you can pass these properties into SFMC as Data Extension attributes.
 
@@ -303,6 +305,7 @@ When you send a computed trait to SFMC, Segment creates a new column named after
 ## Troubleshooting and Tips
 
 ### Connecting a Segment Workspace to an existing SFMC instance does not work as expected
+
 Currently, the state of your SFMC instance changes how the integration with Segment works. If your SFMC instance is new and empty, then setting up SFMC with Segment works as expected. If your SFMC instance already has Contacts in it, then the implementation with Segment is more complex.
 We recommend that you use a brand new SFMC instance where possible. Please reach out to friends@segment.com if this causes you problems.
 
