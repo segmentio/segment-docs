@@ -330,4 +330,4 @@ If you select **Use email attribute from Entry Source** you can use an email or 
 
 This issue usually occurs for customers that have very large volumes of customer data (10MM+ users), because multiple audiences and traits attempt to send large quantities of backfill data into SFMC at the same time, and compete for the SFMC rate limit. To help with this, avoid syncing multiple *new* audiences and *new* traits at the same time. Instead, create an audience, sync it to SFMC and wait for it to complete. Then, create and sync your next audience or trait.
 
-You can also request a higher rate limit from your SFMC account representative. After you confirm the higher rate limit with your SFMC representative, contact [Segment](http://segment.com/help/contact) [Product Support](http://segment.com/help/contact) to adjust the rate limit from the Segment side for you.
+You can also request a higher rate limit from your SFMC account representative. After you confirm the higher rate limit with your SFMC representative, contact [Segment Product Support](http://segment.com/help/contact) to adjust the rate limit from the Segment side for you.
