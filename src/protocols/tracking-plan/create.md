@@ -60,7 +60,10 @@ For consistency purposes, we *highly* recommend that you create a standard way o
 The Tracking Plan events can be filtered by keyword or by label. The applied filter generates a permanent link so you can share specific events with teammates. Label filters also persist after you leave the Tracking Plan.
 
 ### Edit underlying JSON Schema
-Protocols Tracking Plans use [JSON Schema](https://json-schema.org/) as the underlying technology used to validate Segment event payloads. To support a broader range of validation use-cases, we allow you to edit the underlying JSON schema. Editing JSON schema requires technical expertise and should be done so carefully. The [JSON schema documentation found here](https://json-schema.org/understanding-json-schema/index.html) and [JSON schema validator found here](https://www.jsonschemavalidator.net/) are helpful resources to get started.
+Protocols Tracking Plans use [JSON Schemas](https://json-schema.org/) to validate Segment event payloads. To support a broader range of validation use-cases, Segment lets you to edit your underlying JSON schema. 
+
+> warning ""
+> Editing a JSON schema requires technical expertise and should be done carefully. The [JSON schema documentation](https://json-schema.org/understanding-json-schema/index.html) and [JSON schema validator](https://www.jsonschemavalidator.net/) are helpful resources to get started.
 
 We currently allow you to edit JSON schema associated with each track event listed in the Tracking Plan, in addition to a common JSON schema defintion that applies across all events.
 
