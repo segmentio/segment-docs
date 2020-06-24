@@ -78,7 +78,7 @@ In addition to the event-specific JSON schema definitions, the Tracking Plan use
 
 The common JSON schema definition is unique for each tracking plan. An example use of this feature is to validate that all track, identify and page events sent to Segment include a `context.device.advertisingId` property. 
 
-To edit the common JSON schema, click on the overflow menu at the top of the Tracking Plan editor. Once edited, you can define specific blocking behavior for common JSON schema violations in the Schema Configuration Advanced Blocking Controls section
+To edit the common JSON schema, click the "more" menu (...) at the top of the Tracking Plan editor. Once you have edited, saved and merged your JSON schema changes, you can go to the **Settings** tab for your source, click the **Schema Controls** page and go to the **Advanced Blocking Controls** section to define specific blocking behavior for common JSON schema violations. 
 
 > info ""
 > [Negative lookahead regexes (`?!`)](https://www.regular-expressions.info/lookaround.html) are not currently supported. This means you can’t use regex to prevent matches with a specific following character or expression. However you can use `not` in the regex of your JSON schema to generate violations when a property key or value does not match the provided regex pattern.
