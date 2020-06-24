@@ -60,10 +60,23 @@ For consistency purposes, we *highly* recommend that you create a standard way o
 The Tracking Plan events can be filtered by keyword or by label. The applied filter generates a permanent link so you can share specific events with teammates. Label filters also persist after you leave the Tracking Plan.
 
 ### Edit underlying JSON Schema
-Protocols uses [JSON Schema](https://json-schema.org/) to validate the JSON in Segment call payloads. Advanced users can edit the JSON schema directly in the Tracking Plan UI. Each distinct track event and corresponding properties will have a separate JSON Schema object. To edit the JSON schema for an event, click on the overflow menu to open the JSON schema editor.
+Protocols Tracking Plans use [JSON Schema](https://json-schema.org/) as the underlying technology used to validate Segment event payloads. To support a broader range of validation use-cases, we allow you to edit the underlying JSON schema. Editing JSON schema requires technical expertise and should be done so carefully. The [JSON schema documentation found here](https://json-schema.org/understanding-json-schema/index.html) and [JSON schema validator found here](https://www.jsonschemavalidator.net/) are helpful resources to get started.
+
+We currently allow you to edit JSON schema associated with each track event listed in the Tracking Plan, in addition to a common JSON schema defintion that applies across all events.
+
+**1. Track event JSON schema**
+Each track event listed in the tracking plan has a separate JSON schema definition to validate the properties passed in that event. If you are comfortable editing JSON schema, you can do so by clicking on the overflow menu next to each event row in the Tracking Plan. 
 
 > info ""
-> [Negative lookahead regexes (`?!`)](https://www.regular-expressions.info/lookaround.html) are not currently supported. This means you can’t use regex to prevent matches with a specific following character or expression. However you can use `not` in the regex of your JSON schema.
+> Advanced edits to the JSON schema will not be visible in the Tracking Plan and thus will make it harder for others to understand the validation logic in place. Please be aware of this when editing JSON schema.
+
+**2. Common JSON schema**
+In addition to the event-specific JSON schema definitions, the Tracking Plan supports a common JSON schema definition which applies to the entire payload of every event flowing through sources connected to the tracking plan. The common JSON schema definition is unique to the associated tracking plan. A common use case of this feature is to validate that all track, identify and page events sent to Segment include a `context.device.advertisingId` property. 
+
+To edit the common JSON schema, click on the overflow menu at the top of the Tracking Plan editor. Once edited, you can define specific blocking behavior for common JSON schema violations in the Schema Configuration Advanced Blocking Controls section
+
+> info ""
+> [Negative lookahead regexes (`?!`)](https://www.regular-expressions.info/lookaround.html) are not currently supported. This means you can’t use regex to prevent matches with a specific following character or expression. However you can use `not` in the regex of your JSON schema to generate violations when a property key or value does not match the provided regex pattern.
 
 ### Extend the Tracking Plan
 Many customers prefer to manage the Tracking Plan with outside tools and resources. [Click over to the APIs and extensions](/docs/protocols/apis-and-extensions/) section to learn more.
