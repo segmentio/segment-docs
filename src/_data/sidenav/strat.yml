@@ -1,0 +1,30 @@
+---
+sections:
+- slug: adobe
+  section_title: Adobe Integrations
+  section:
+  - path: /connections/destinations/catalog/heartbeats
+    title: Heartbeats
+  - path: /partners/plugins
+    title: Building a Plugin
+  - path: /partners/streams
+    title: Building a Stream
+  - path: /partners/checklist
+    title: Public Beta Checklist
+  - path: /partners/enable-with-segment
+    title: Enable with OAuth
+  - path: /partners/faqs
+    title: FAQs
+
+
+- slug: facebook
+  section_title: Facebook
+  section:
+  - path: /connections/destinations/catalog/facebook
+    title: Facebook
+  - path: /connections/destinations/catalog/also-facebook
+    title: Also facebook
+  - path: /partners/plugins
+    title: More facebook
+  - path: /partners/streams
+    title: Building a Stream

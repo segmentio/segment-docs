@@ -1,6 +1,7 @@
 ---
 title: Adobe Analytics Destination
 rewrite: true
+strat: adobe
 ---
 <!-- LR note: Setting rewrite true to remove bad boilerplate, manually including the footer partial-->
 
