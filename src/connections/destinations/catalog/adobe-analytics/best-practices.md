@@ -5,7 +5,7 @@ strat: adobe
 
 There are a few common questions that we've heard over time that are worth mentioning.
 
-### Reducing API calls by sending events on page or screen
+## Reducing API calls by sending events on page or screen
 
 You might want to associate Adobe `<events>` with Segment page or screen events to reduce the number of API calls Segment sends to Adobe Analytics.
 
@@ -23,7 +23,7 @@ When the integration option `events` is passed in, we map the events and send th
 
 _Considerations_
 
-- We do not automatically map to Adobe Pre-Defined events on `page` or `screen` calls
+- Segment does not automatically map to Adobe Pre-Defined events on `page` or `screen` calls
 - You must change your implementation to pass integration: AA: false on the event you do not want duplicated.
 
 ```javascript
@@ -32,7 +32,7 @@ _Considerations_
     }
 ```
 
-### Setting custom linkTypes, linkNames and linkUrls
+## Setting custom linkTypes, linkNames and linkUrls
 If you are setting up the Adobe Analytics destination in cloud-mode, you can pass in custom linkTypes, linkNames and linkURLs.
 
 **Note**: If you pass in the `visitorId` in a destination specific `integration` object within your Segment `page` or `track` events, then the `visitorId` passed will persist on page or track calls that occur after an identify call. This will effectively supersede Segment setting the `visitorId` variable to your `userId` after an `identify` call.
@@ -88,7 +88,7 @@ If you want to pass in a custom LinkUrl to Adobe Analytics, you can do this by p
 If a custom linkUrl is not specified in the integration specific object in the payload, Segment will default to mapping `linkUrl` to the `(context.page.url)`. If there is no URL present Segment will set `linkUrl`  to `No linkUrl provided`.
 
 
-### Best practices for userId and sessioning
+## Best practices for userId and sessioning
 You can enable **Drop Visitor ID** from the Segment app to prevent Adobe from creating a new user profile when you set `window.s.visitorID` with a custom value. However, this can break the links between anonymous and identified users inside your reports, if you're only using Analytics.js to send data to Adobe.
 
 Adobe Analytics unfortunately counts every "effective" visitor ID as a *unique* visitor. There is no ability for Segment to alias, implicitly or explicitly, two effective IDs on your behalf.
@@ -113,6 +113,6 @@ If you're using the `marketingCloudVisitorID`, we recommend doing this and inclu
 
 We know this is daunting territory, so don't hesitate to contact us directly for guidance!
 
-### Populating Custom Links report with server side data
+## Populating Custom Links report with server side data
 
 Since we cannot automatically track page data for **server side** calls, if you want to populate the **Custom Links** report in Adobe Analytics, you must manually pass `context.page.url`.
