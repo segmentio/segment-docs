@@ -74,7 +74,9 @@ Each track event in the tracking plan has a separate JSON schema definition to v
 > Advanced edits to the JSON schema are not visible in the Tracking Plan and make it harder for other users to understand the validation logic. Be sure to communicate to any other Protocols users that you are making changes in the validation logic.
 
 #### Common JSON schema
-In addition to the event-specific JSON schema definitions, the Tracking Plan supports a common JSON schema definition which applies to the entire payload of every event flowing through sources connected to the tracking plan. The common JSON schema definition is unique to the associated tracking plan. A common use case of this feature is to validate that all track, identify and page events sent to Segment include a `context.device.advertisingId` property. 
+In addition to the event-specific JSON schema definitions, the Tracking Plan uses a common JSON schema definition which applies to the entire payload of every event that is sent from sources connected to the tracking plan. 
+
+The common JSON schema definition is unique for each tracking plan. An example use of this feature is to validate that all track, identify and page events sent to Segment include a `context.device.advertisingId` property. 
 
 To edit the common JSON schema, click on the overflow menu at the top of the Tracking Plan editor. Once edited, you can define specific blocking behavior for common JSON schema violations in the Schema Configuration Advanced Blocking Controls section
 
