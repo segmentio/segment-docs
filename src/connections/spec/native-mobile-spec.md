@@ -30,7 +30,7 @@ When the application is foregrounded on the phone, our SDK will be called and em
 
 ### How do I opt-in to the new feature?
 
-This feature is opted out by default. You have to opt in to collect these events as mentioned in our Quick Start guides ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/), [Android](https://segment.com/docs/libraries/android/quickstart/)). You'll be doing this in code by altering the configuration you pass into the SDK initialization methods (telling the SDK to collect these events automatically).
+This feature is opted out by default. You have to opt in to collect these events as mentioned in our Quick Start guides ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/), [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/)). You'll be doing this in code by altering the configuration you pass into the SDK initialization methods (telling the SDK to collect these events automatically).
 
 ### What happens if I' already tracking these events? Will they be double counted?
 

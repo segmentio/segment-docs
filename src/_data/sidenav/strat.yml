@@ -3,28 +3,26 @@ sections:
 - slug: adobe
   section_title: Adobe Integrations
   section:
-  - path: /connections/destinations/catalog/heartbeats
-    title: Heartbeats
-  - path: /partners/plugins
-    title: Building a Plugin
-  - path: /partners/streams
-    title: Building a Stream
-  - path: /partners/checklist
-    title: Public Beta Checklist
-  - path: /partners/enable-with-segment
-    title: Enable with OAuth
-  - path: /partners/faqs
-    title: FAQs
+  - path: /connections/destinations/catalog/adobe-analytics
+    title: Adobe Analytics destination
+  - path: /connections/destinations/catalog/adobe-analytics/mobile
+    title: Set up Adobe Analytics for mobile
+  - path: /connections/destinations/catalog/adobe-analytics/heartbeat
+    title: Set up Adobe Analytics Heartbeat
+  - path: /connections/destinations/catalog/adobe-analytics/best-practices
+    title: Adobe Analytics Best Practices
+  - path: /connections/destinations/catalog/adobe-target
+    title: Adobe Target destination
 
 
 - slug: facebook
-  section_title: Facebook
+  section_title: Facebook Integrations
   section:
-  - path: /connections/destinations/catalog/facebook
-    title: Facebook
-  - path: /connections/destinations/catalog/also-facebook
-    title: Also facebook
-  - path: /partners/plugins
-    title: More facebook
-  - path: /partners/streams
-    title: Building a Stream
+  - path: /connections/destinations/catalog/facebook-pixel
+    title: Facebook Pixel destintation
+  - path: /connections/destinations/catalog/facebook-app-events
+    title: Facebook App Events destination
+  - path: /connections/sources/catalog/cloud-apps/facebook-ads
+    title: Facebook Ads Cloud Source
+  - path: /connections/sources/catalog/cloud-apps/facebook-lead-ads
+    title: Facebook Lead Ads Cloud Source

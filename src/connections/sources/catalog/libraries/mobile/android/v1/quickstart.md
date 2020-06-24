@@ -132,7 +132,7 @@ public class YourActivity extends Activity {
 
 ## 5. Identify Users
 
-The `identify` method is how you tell Segment who the current user is. It takes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/libraries/android#identify).
+The `identify` method is how you tell Segment who the current user is. It takes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/mobile/android#identify).
 
 When and where you `identify` depends on how your users are authenticated, but doing it in the Application's `onCreate` method is most common. If that doesn't work for you, then do it after the `MainActivity`'s `onCreate` method.
 
@@ -153,7 +153,7 @@ Once you've added an `identify` call, you're ready to move on to...
 
 ## 6. Track Actions
 
-The `track` method is how you tell Segment about which actions your users are performing inside your app. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/libraries/android#track).
+The `track` method is how you tell Segment about which actions your users are performing inside your app. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/connections/sources/catalog/libraries/mobile/android#track).
 
 Here's what a call to `track` might look like when a user signs up:
 
