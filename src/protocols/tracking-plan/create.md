@@ -40,7 +40,6 @@ The Tracking Plan editor is organized as a spreadsheet to help you quickly add n
 | Data Type    | Specify the data type of the property. Data type options include `any, array, object, boolean, integer, number, string`. |
 | Conditionals | Enter simple regular expressions to validate property values. This currently only works when a property data type is set to `string`. For example, you can add pipe delimited strings to the regex column to generate violations when a property value does not match fall, winter or spring. |
 
-
 ### Add a new track call
 Click on the **Add Event** button in the top right. A new row will be added. Click into the row to add an event name and description. The event name will be used to strictly validate the name passed in your `.track()` calls. Casing, spacing and spelling matter!
 
@@ -62,6 +61,9 @@ The Tracking Plan events can be filtered by keyword or by label. The applied fil
 
 ### Edit underlying JSON Schema
 Protocols uses [JSON Schema](https://json-schema.org/) to validate the JSON in Segment call payloads. Advanced users can edit the JSON schema directly in the Tracking Plan UI. Each distinct track event and corresponding properties will have a separate JSON Schema object. To edit the JSON schema for an event, click on the overflow menu to open the JSON schema editor.
+
+> info ""
+> [Negative lookahead regexes (`?!`)](https://www.regular-expressions.info/lookaround.html) are not currently supported. This means you can’t use regex to prevent matches with a specific following character or expression. However you can use `not` in the regex of your JSON schema.
 
 ### Extend the Tracking Plan
 Many customers prefer to manage the Tracking Plan with outside tools and resources. [Click over to the APIs and extensions](/docs/protocols/apis-and-extensions/) section to learn more.
