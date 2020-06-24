@@ -67,7 +67,7 @@ Protocols Tracking Plans use [JSON Schemas](https://json-schema.org/) to validat
 
 You can currently edit the JSON schema for each track event listed in the Tracking Plan, and a common JSON schema definition that applies across all events.
 
-**1. Track event JSON schema**
+#### Track event JSON schema
 Each track event in the tracking plan has a separate JSON schema definition to validate the properties in that event. You can click on the overflow menu next to each event row in the Tracking Plan to edit.
 
 > info ""
