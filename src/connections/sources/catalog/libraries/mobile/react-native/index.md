@@ -284,7 +284,15 @@ analytics.setup('YOUR_WRITE_KEY', {
 
 ### Native configuration
 
-You can also use the native Analytics API to configure it. Just make sure to call `analytics.useNativeConfiguration()` in your JavaScript code so that Analytics doesn't wait for you to configure it.
+You can also use the native Analytics API to configure it. Just make sure to call `analytics.useNativeConfiguration()` in your JavaScript code so that Analytics doesn't wait for you to configure it. As a best practice, ensure that you have the call wrapped under a conditional like so:
+
+```js
+import analytics from '@segment/analytics-react-native';
+
+if (!analytics.ready) { // checks if analytics is already ready; if not we can safely call `useNativeConfiguration`
+    analytics.useNativeConfiguration();
+}
+```
 
 ### Flushing
 
