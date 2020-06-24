@@ -5,7 +5,7 @@ rewrite: true
 
 [Facebook App Events](https://developers.facebook.com/docs/app-events) collects required information from one of Segment's mobile SDKs ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/)) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The Facebook App Events Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events).
 
-This document was last updated on October 04, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on October 04, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
@@ -36,7 +36,7 @@ This page is about the **Facebook App Events**. For documentation on other Faceb
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
@@ -45,13 +45,13 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 Our integration also supports using Segment `screen` events as `track` events. For example, if you had a `screen` event named `Confirmation` you could map the invocation of this to a Facebook app event as you would with Segment `track` events.
 
-To use this functionality you must opt into it via the integration setting named **Use Screen Events as Track Events**. Once enabled, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be bookended with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
+To use this functionality you must opt into it using the integration setting named **Use Screen Events as Track Events**. Once enabled, you should start seeing `screen` events populate in Facebook App Events. The screen name you provide will be bookended with the words **Viewed** and **Screen**. So, if you have a `screen` event with the name property set to `Welcome`, it will show up in Facebook as an event called **Viewed Welcome Screen**.
 
-Please note, the integration will not automatically translate `screen` events to spec'd Facebook events as our `track` method does. If you would like to map these events to specific Facebook events you can do this via the **Map your events to Standard FB App Events** setting. Please be sure to specify the event as **Viewed** `name` **Screen** where `name` is the name property of the `screen` event.
+Note, the integration will not automatically translate `screen` events to spec'd Facebook events as our `track` method does. If you would like to map these events to specific Facebook events you can do this using the **Map your events to Standard FB App Events** setting. Be sure to specify the event as **Viewed** `name` **Screen** where `name` is the name property of the `screen` event.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"
@@ -166,7 +166,7 @@ In addition to the integration available for both iOS and Android, there is a cl
 
 ### Pre-defined Events and Parameters
 
-The integration currently only supports the `FBSDKAppEventNameActivatedApp` pre-defined event (via the `activateApp` handler). All other events are forwarded as [custom events](https://developers.facebook.com/docs/app-events/ios#custom). If other [pre-defined events](https://developers.facebook.com/docs/app-events/ios#manual) are important to you, please [contact us](/contact/).
+The integration currently only supports the `FBSDKAppEventNameActivatedApp` pre-defined event (via the `activateApp` handler). All other events are forwarded as [custom events](https://developers.facebook.com/docs/app-events/ios#custom). If other [pre-defined events](https://developers.facebook.com/docs/app-events/ios#manual) are important to you, [contact us](https://segment.com/help/contact/).
 
 ## Troubleshooting
 

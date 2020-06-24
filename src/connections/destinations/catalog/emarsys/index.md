@@ -5,9 +5,9 @@ rewrite: true
 
 [The Emarsys Marketing Platform](https://www.emarsys.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows consumer-facing companies of any industry to convert, grow and retain their clients by enabling automated and personalized interactions across the customer lifecycle and across channels and devices.
 
-This destination is maintained by Emarsys. For any issues with the destination, please [reach out to their team](mailto:help@support.emarsys.com).
+This destination is maintained by Emarsys. For any issues with the destination, [contact their team](mailto:help@support.emarsys.com).
 
-NOTE: The Emarsys Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 4, 2019. If you are interested in joining their beta program or have any feedback to help improve the Emarsys Destination and its documentation, please [let their team know](mailto:help@support.emarsys.com)!
+NOTE: The Emarsys Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 4, 2019. If you are interested in joining their beta program or have any feedback to help improve the Emarsys Destination and its documentation, [let their team know](mailto:help@support.emarsys.com)!
 
 ## Getting Started
 

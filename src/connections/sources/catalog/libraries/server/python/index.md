@@ -12,7 +12,7 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ## Getting Started
 
-Install `analytics-python` via pip:
+Install `analytics-python` using pip:
 
 ```
 pip install analytics-python
@@ -162,7 +162,7 @@ Find details on **best practices in event naming** as well as the **`track` meth
 
 The [`page`](/docs/connections/spec/page) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side setup in combination with the Python library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using our client-side set up in combination with the Python library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
 Example `page` call:
 
@@ -575,7 +575,7 @@ Client('YOUR_WRITE_KEY', debug=True, on_error=on_error, send=True,
   </tr>
   <tr>
     <td>`max_queue_size` _int_</td>
-    <td>Maximum number of elements allowed in the queue. If this condition is ever reached, that means you're identifying / tracking faster than you can flush. If this happens, let us know!</td>
+    <td>Maximum number of elements allowed in the queue. If this condition is ever reached, that means you're identifying / tracking faster than you can flush. If this happens, [let us know](https://segment.com/help/contact/)!</td>
   </tr>
   <tr>
     <td>`upload_interval` _float_</td>
@@ -669,7 +669,7 @@ analytics.write_key = 'YOUR_WRITE_KEY'
 
 We have heard from our customers that Google App Engine does not resolve project dependencies, so you'll need to get [requests](https://github.com/kennethreitz/requests) and [python-dateutil](https://github.com/paxan/python-dateutil) and add it into your project so that analytics-python can find it.
 
-If you're having issues with threads outliving your request, please check [Background threads and synchronous mode](#background-threads-and-synchronous-mode)
+If you're having issues with threads outliving your request, check [Background threads and synchronous mode](#background-threads-and-synchronous-mode)
 
 ## Troubleshooting
 

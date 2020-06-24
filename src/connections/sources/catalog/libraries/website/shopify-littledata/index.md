@@ -8,7 +8,7 @@ Littledata is a smart analytics app that automates ecommerce tracking. Littledat
 
 Littledata is available as an independent app in the Shopify App Store. When you install the Littledata app on your Store, Littledata does two things: 
 
-1. It inserts a smart tracking script to your store's front end. This script can be used with any custom Shopify site, and leverages analytics.js under the hood to send data in a spec-compliant manner to Segment. 
+1. It inserts a smart tracking script to your store's front end. This script can be used with any custom Shopify site, and uses analytics.js under the hood to send data in a spec-compliant manner to Segment. 
 
 2. The app also sets up server-side webhook forwarding to ensure 100% accuracy of important Customer and Order data. 
 
@@ -16,8 +16,8 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 
 ![](images/littledata_arch.png)
 
-> warning "Please Note"
-> This integration is maintained by Littledata _and is not supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with our [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is our recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. Please [reach out to their team](mailto:support@littledata.io) with any questions.
+> warning "Note"
+> This integration is maintained by Littledata _and is not supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with our [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is our recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact their team](mailto:support@littledata.io) with any questions.
 
 
 ## Getting Started

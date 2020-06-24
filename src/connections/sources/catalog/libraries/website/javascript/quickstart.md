@@ -23,7 +23,7 @@ That snippet loads Analytics.js onto the page _asynchronously_, so it won't affe
 
 Note that you should remove other native third-party destination code that you might have on your site. For example, if you're using Segment to send data to Google Analytics, make sure you remove the Google Analytics snippet from your site source code to prevent sending the data twice.
 
-**Fun fact:** if you only want the most basic Google Analytics setup you can stop reading right now. You're done! Just switch on Google Analytics in our interface.
+**Fun fact:** if you only want the most basic Google Analytics set up you can stop reading right now. You're done! Just switch on Google Analytics in our interface.
 
 However, lots of analytics and marketing tools need to record _who_ each user is on your site. If you want to use any tool that deals with the identity of your users, read on about the `identify` method.
 

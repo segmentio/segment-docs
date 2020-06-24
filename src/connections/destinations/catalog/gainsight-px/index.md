@@ -8,7 +8,7 @@ redirect_from: '/connections/destinations/catalog/aptrinsic/'
 
 Our Gainsight PX destination code is open sourced on Github, feel free to check it out: [Gainsight PX integration code](https://github.com/segment-integrations/analytics.js-integration-aptrinsic).
 
-This document was last updated on Aug 2, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on Aug 2, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -26,7 +26,7 @@ This document was last updated on Aug 2, 2019. If you notice any gaps, outdated 
 Don't miss out the [The Configuration Checklist - Segment.com](https://www.gainsight.com/product-experience/) in Gainsight PX!
 
 ## Identify
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
 
 An example identify call is shown below:
 
@@ -46,7 +46,7 @@ Segment must be running on all of pages of your web application or site that you
 Your Segment integration must include use of the identify call (identifies the user & group/account).
 
 ## Track
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 An example track call is shown below:
 
@@ -60,7 +60,7 @@ analytics.track("Form submitted", {
 When you track an event, we will send the event name together with the properties included in the track call. In Gainsight PX you will be able to create new funnels based on the custom events and properties received from Segment. You can also add "custom events" in the features created in the "Product Mapper" view.
 
 ## Group
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
 
 An example group call is shown below:
 

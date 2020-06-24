@@ -6,7 +6,7 @@ redirect_from: "/connections/destinations/catalog/customer.io/"
 
 [Customer.io](https://customer.io/) lets you send automated email, push, SMS, letters, and webhooks based on your customer's activities in your app or product. It makes conversion tracking, optimization and remarketing easier than ever. The `analytics.js` Customer.io Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-customerio).
 
-This document was last updated on January 26, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on January 26, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 > success ""
 > **Good to know**: This page is about the Customer.io Segment destination, which receives data from Segment. There's also a page about the [Customer.io Segment source](/docs/connections/sources/catalog/cloud-apps/customer-io/), which sends data _to_ Segment!
@@ -18,7 +18,7 @@ This document was last updated on January 26, 2018. If you notice any gaps, out-
 * [Automatically send an autoresponder email when your initial email goes unopened with Customer.io](https://segment.com/recipes/autoresponder-email-customerio/)
 * [Use email to move users through your onboarding funnel with Customer.io](https://segment.com/recipes/onboarding-email-customerio/)
 * [Ask engaged users to take an NPS survey with Customer.io](https://segment.com/recipes/nps-email-active-users-customerio/)
-* [Get users to your Aha moment faster with email via Customer.io](https://segment.com/recipes/aha-activation-customerio/)
+* [Get users to your Aha moment faster with email using Customer.io](https://segment.com/recipes/aha-activation-customerio/)
 * [Ask your best customers to leave a review at just the right moment with Customer.io](https://segment.com/recipes/automate-customer-reviews-customerio/)
 
 
@@ -29,14 +29,14 @@ This document was last updated on January 26, 2018. If you notice any gaps, out-
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Customer.io" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your Customer.io `API Key` and `Site ID`, which you can retrieve from Settings > [API Credentials](https://fly.customer.io/account/api_credentials) in Customer.io, into the Segment UI Settings.
-4. Alternatively, you can automatically sync your Customer.io connection settings to your desired Segment source by following the flow within the Customer.io Setup Guide.
+4. Alternatively, you can automatically sync your Customer.io connection settings to your desired Segment source by following the flow within the Customer.io set up Guide.
 
-![customerio setup guide screenshot](images/customerio_setup_guide.png)
+![customerio set up guide screenshot](images/customerio_setup_guide.png)
 
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page();
@@ -46,7 +46,7 @@ Page events will be sent to Customer.io as a `Page View` event where name and pr
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -57,7 +57,7 @@ Screen events will be sent to Customer.io as a custom event. In the Customer.io 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123', {
@@ -80,7 +80,7 @@ analytics.identify('userId123', {
 ```
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Clicked Button');
@@ -101,7 +101,7 @@ For that, you need to make the following calls:
 
 ## Application Installed
 
-[Application Installed](https://segment.com/docs/connections/spec/mobile/#application-installed) events will add or update a device in the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_update) API endpoint. Please note, you must pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
+[Application Installed](https://segment.com/docs/connections/spec/mobile/#application-installed) events will add or update a device in the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_update) API endpoint. Note, you must pass a device token in your event payload using a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
 
 {% comment %} api-example '{
 "action": "track",
@@ -138,7 +138,7 @@ For that, you need to make the following calls:
 ```
 
  ## Application Opened
-[Application Opened](https://segment.com/docs/connections/spec/mobile/#application-opened) events will add or update a device device in the person's Customer.io profile using the same endpoint as above.  If a device already exists, Customer.io will update its `last_used_at` timestamp. Again, please ensure you pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
+[Application Opened](https://segment.com/docs/connections/spec/mobile/#application-opened) events will add or update a device device in the person's Customer.io profile using the same endpoint as above.  If a device already exists, Customer.io will update its `last_used_at` timestamp. Again, make sure you pass a device token in your event payload using a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
 
 {% comment %} api-example '{
 "action": "track",
@@ -175,7 +175,7 @@ For that, you need to make the following calls:
 ```
 
  ## Application Uninstalled
-[Application Uninstalled](https://segment.com/docs/connections/spec/mobile/#application-installed) events will remove the device from the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_delete) API endpoint. Please note, you must pass a device token in your event payload via a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
+[Application Uninstalled](https://segment.com/docs/connections/spec/mobile/#application-installed) events will remove the device from the person's Customer.io profile using [this](https://customer.io/docs/api/#apitrackcustomersdevices_delete) API endpoint. Note, you must pass a device token in your event payload using a `context.device.token` property. See more on Contextual properties [here](https://segment.com/docs/connections/spec/common/#context).
 
 
 {% comment %} api-example '{
@@ -224,7 +224,7 @@ To enable this feature, go to the Account Settings in Customer.io and add your S
 ## Best Practices
 
 ### Rate Limits
-Customer.io has limits on the data collected by their API. To ensure your events arrive in Customer.io, please ensure that you are respecting the limits placed on the [Customer.io API](https://learn.customer.io/api/#api-documentationlimits). If you are using our [HTTP API](/docs/connections/sources/catalog/libraries/server/http/) to send a batch of events to Customer.io at once, make sure you throttle the `import` to 100-200 requests per second.
+Customer.io has limits on the data collected by their API. To ensure your events arrive in Customer.io, make sure that you are respecting the limits placed on the [Customer.io API](https://learn.customer.io/api/#api-documentationlimits). If you are using our [HTTP API](/docs/connections/sources/catalog/libraries/server/http/) to send a batch of events to Customer.io at once, make sure you throttle the `import` to 100-200 requests per second.
 
 ## Troubleshooting
 

@@ -2,7 +2,7 @@
 title: Drip Destination
 ---
 
-Our Drip destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-drip),(iOS and Android work via the server destination).
+Our Drip destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-drip),(iOS and Android work using the server destination).
 
 ## Getting Started
 

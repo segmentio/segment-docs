@@ -14,7 +14,7 @@ When you want to trial or start using a new vendor, Segment can [replay](/docs/g
 
 *   Eliminate vendor lock-in
 *   Take your data to new tools
-*   Increase leverage in vendor negotiations
+*   Increase advantage in vendor negotiations
 
 Replay works for all server-side destinations that have or accept timestamps, including our Amazon S3 destination, so you can get all your data history since the first event you sent to Segment.
 
@@ -24,11 +24,11 @@ If you are on any of our plans, there are multiple options available to you to g
 
 #### Warehouses
 
-All customers can connect a [data warehouse](/docs/connections/warehouses/catalog/) to Segment – Free and Team customers can connect one, while Business customers can connect as many as they need. We translate and load your raw data logs into your warehouse for more powerful analysis in SQL.
+All customers can connect a [data warehouse](/docs/connections/storage/catalog/) to Segment – Free and Team customers can connect one, while Business customers can connect as many as they need. We translate and load your raw data logs into your warehouse for more powerful analysis in SQL.
 
 #### S3 Logs
 
-We store all your API calls as line-separated JSON objects in Amazon S3. If you [enable Amazon S3](/docs/connections/warehouses/catalog/amazon-s3/) in your destinations catalog, we will copy the same data to your own S3 bucket. The data copied will only include data sent to Segment after you turn on the destination. Read our [Amazon S3 docs](/docs/connections/warehouses/catalog/amazon-s3/) to learn more about how we structure that data.
+We store all your API calls as line-separated JSON objects in Amazon S3. If you [enable Amazon S3](/docs/connections/storage/catalog/amazon-s3/) in your destinations catalog, we will copy the same data to your own S3 bucket. The data copied will only include data sent to Segment after you turn on the destination. Read our [Amazon S3 docs](/docs/connections/storage/catalog/amazon-s3/) to learn more about how we structure that data.
 
 #### Webhooks
 

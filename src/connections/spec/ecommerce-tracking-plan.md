@@ -1,6 +1,9 @@
 ---
 title: Ecommerce Tracking Plans
-redirect_from: '/protcols/data-quality/ecommerce-tracking-plans/'
+redirect_from:
+  - '/protcols/data-quality/ecommerce-tracking-plans/'
+  - '/protcols/ecommerce-tracking-plan/'
+  - '/guides/sources/how-to-implement-an-ecommerce-tracking-plan/'
 ---
 
 When tracking your data, it's important to set yourself up for success. E-commerce and retail companies want to use their data to understand why some customers fall out of their funnels or why customers become repeat buyers. They want to understand the important lifecycle events that lead up to the sale of a physical item, so they can, for example, test whether personalized shopping experiences yield higher conversions, or build a multi-channel cart abandonment campaign. But first, they need to make sure those lifecycle events are being captured in their datasets.
@@ -180,7 +183,7 @@ It's important that these events contain particular properties, such as `sku` , 
 
 ## Using data to understand why your customers don't convert
 
-The most successful e-commerce businesses not only efficiently move their customers through the funnel towards conversion, but also have the infrastructure to collect and leverage customer data. Having a tracking plan focused on key funnel events can help e-commerce businesses get a sense of the health of their funnel.
+The most successful e-commerce businesses not only efficiently move their customers through the funnel towards conversion, but also have the infrastructure to collect and use customer data. Having a tracking plan focused on key funnel events can help e-commerce businesses get a sense of the health of their funnel.
 
 Aside from funnel health, having these key pieces of customer data gives companies the ability to tailor and personalize each interaction, as well as build marketing campaigns around actions taken or omitted.
 

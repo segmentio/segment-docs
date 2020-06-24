@@ -4,9 +4,9 @@ title: Personyze Destination
 ---
 [Personyze](https://www.personyze.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete cross-channel personalization solution for showing highly optimized content in websites, emails, and apps using targeting and recommendation engines, and a variety of content creation, editing, and A/B testing tools.
 
-This destination is maintained by Personyze. For any issues with the destination, please [reach out to their team](mailto:info@personyze.com).
+This destination is maintained by Personyze. For any issues with the destination, [contact their team](mailto:info@personyze.com).
 
-_**NOTE:** Personyze is currently in beta, which means that they are still actively developing the product. This doc was last updated on February 25, 2019. If you are interested in joining their beta program or have any feedback to help improve the Personyze Destination and its documentation, please [let  their team know:](mailto:info@personyze.com)!_
+_**NOTE:** Personyze is currently in beta, which means that they are still actively developing the product. This doc was last updated on February 25, 2019. If you are interested in joining their beta program or have any feedback to help improve the Personyze Destination and its documentation, [let their team know:](mailto:info@personyze.com)!_
 
 ## Getting Started
 
@@ -20,7 +20,7 @@ _**NOTE:** Personyze is currently in beta, which means that they are still activ
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -45,5 +45,5 @@ The following traits are explicitly mapped in Personzyne:
 * industry
 * role
 
-All other traits will be sent to Personyze as custom string attributes and utilized for targeting. You can edit the default trait type of these traits within Personyze as needed, by going to:
+All other traits will be sent to Personyze as custom string attributes and used for targeting. You can edit the default trait type of these traits within Personyze as needed, by going to:
 Settings > Visitor Attributes > Visitor Attributes

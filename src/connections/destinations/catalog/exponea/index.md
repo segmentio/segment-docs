@@ -4,12 +4,12 @@ rewrite: true
 beta: true
 ---
 
-[Exponea](https://exponea.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Customer Data & Experience Platform (CDXP) which creates a unified source of customer intelligence in real-time, ready for immediate activation via its own built‑in omnichannel marketing systems (web, email, push, mobile, text messages,etc.) powered by customer-centric analytics and artificial intelligence (product recommendations and predictions).
+[Exponea](https://exponea.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Customer Data & Experience Platform (CDXP) which creates a unified source of customer intelligence in real-time, ready for immediate activation using its own built‑in omnichannel marketing systems (web, email, push, mobile, text messages,etc.) powered by customer-centric analytics and artificial intelligence (product recommendations and predictions).
 
-This destination is maintained by Exponea. For any issues with the destination, please reach out to your dedicated Exponea team or [support](mailto:support@exponea.com).
+This destination is maintained by Exponea. For any issues with the destination, contact your dedicated Exponea team or [support](mailto:support@exponea.com).
 
 
-_**NOTE:** The Exponea Destination is currently in a beta stage, which means that they are still actively developing the destination. This doc was last updated on January 20, 2020. If you are interested in joining their beta program or have any feedback to help improve the Exponea Destination and its documentation, please [let  their team know](mailto:support@exponea.com)!_
+_**NOTE:** The Exponea Destination is currently in a beta stage, which means that they are still actively developing the destination. This doc was last updated on January 20, 2020. If you are interested in joining their beta program or have any feedback to help improve the Exponea Destination and its documentation, [let their team know](mailto:support@exponea.com)!_
 
 
 ## Getting Started
@@ -26,7 +26,7 @@ _**NOTE:** The Exponea Destination is currently in a beta stage, which means tha
 
 ## Common fields
 
-If you have not had a chance to review our spec, please take a look to understand what the [Common fields](https://segment.com/docs/connections/spec/common/) are.
+If you have not had a chance to review our spec, take a look tounderstand what the [Common fields](https://segment.com/docs/connections/spec/common/) are.
 
 The `userId` and `anonymousId` common fields are used for all types of calls to identify the user in Exponea. Mapping of the IDs is based on the destination settings:
 
@@ -48,7 +48,7 @@ Other common fields are used only for `track`, `page` and `screen` calls which a
 
 ## Page
 
-If you have not had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Page method](https://segment.com/docs/spec/page/) does.
 
 Page calls will be sent to Exponea as a `page_visit` event with the `properties` field mapped into event properties and the `name` field mapped into the `page_name` property.
 
@@ -74,7 +74,7 @@ An optional event `session_ping` can be tracked along with `page_visit` for [aut
 
 ## Screen
 
-If you have not had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/spec/screen/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Screen method](https://segment.com/docs/spec/screen/) does.
 
 Screen calls will be sent to Exponea as a `screen_visit` event with the `properties` field mapped into event properties and the`name` field mapped into the `screen_name` property.
 
@@ -96,7 +96,7 @@ An optional event `session_ping` can be tracked along with `screen_visit` for [a
 
 ## Track
 
-If you have not had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Track method](https://segment.com/docs/spec/track/) does.
 
 Track calls will be sent to Exponea as events under name provided in the event field. The `properties` field will be mapped into event properties (objects will be flattened using underscore).
 
@@ -118,7 +118,7 @@ This track call is translated into a `Registered` event with the following prope
 
 ## Identify
 
-If you have not had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Identify method](https://segment.com/docs/spec/identify/) does.
 
 Identify calls will be sent to Exponea as customer updates with traits set as customer properties.
 
@@ -146,7 +146,7 @@ This identify call is translated into a customer update for user with Exponea ha
 
 ## Alias
 
-If you have not had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does.
 
 The alias call can be used to merge two user identities and their data to one. The `previousId` field should always contain a previously used `anonymousId`, as merging users by specifying two `userIds` is not supported. Sending an alias event with `previousId` and no `userId` will cause the event to be ignored. Note that users are also merged when any call specifies both a userId and an anonymousId, which previously belonged to two separate users.
 
@@ -157,7 +157,7 @@ analytics.alias("507f191e81");
 ```
 ## Group
 
-If you have not had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
 
 Group calls will be sent to Exponea as customer updates with group traits as customer properties prefixed with `group_` and `groupId` into `group_id`. For example:
 

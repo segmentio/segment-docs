@@ -1288,4 +1288,4 @@ analytics.track('Video Playback Completed', {
 
 Below is a graphical view of how a playback that has 3 mid-roll ads interspersed within the content:
   ![](images/Video_Tracking_Workflow.png)
-<!-- svg by Aimee via lucidchart-->
+<!-- svg by Aimee using lucidchart-->

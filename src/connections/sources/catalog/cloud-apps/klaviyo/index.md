@@ -11,7 +11,7 @@ In your favorite BI or analytics tool, you'll be able to analyze your email camp
 
 ## Getting Started
 
-If you have previously enabled sending email events via the Klaviyo destination during our beta (using a project write key), you do not need to create new Klaviyo source. Your email data will continue to flow as normal.
+If you have previously enabled sending email events using the Klaviyo destination during our beta (using a project write key), you do not need to create new Klaviyo source. Your email data will continue to flow as normal.
 
 1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
 
@@ -33,7 +33,7 @@ That's it! As you send emails, events will now be sent to your destinations and 
 
 **Stream**
 
-Klaviyo uses our stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query via SQL. 
+Klaviyo uses our stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL. 
 
 The default behavior is for Klaviyo to pass the `userId` associated with the email recipient as the `userId`. There are cases in which Klaviyo does not have an associated `userId`, in which case the email address will be passed in as the `anonymousId`. 
 

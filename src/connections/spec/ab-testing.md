@@ -17,7 +17,7 @@ The one semantic event for recording A/B Test experiments is:
 
 ### Experiment Viewed
 
-This event will be sent **automatically** every time a customer sees a variation of an active A/B Test when using some A/B testing tools via Segment. You don't actually have to make these track calls! Note that the A/B testing tools will need to be loaded synchronously in order for these events to fire properly.
+This event will be sent **automatically** every time a customer sees a variation of an active A/B Test when using some A/B testing tools using Segment. You don't actually have to make these track calls! Note that the A/B testing tools will need to be loaded synchronously in order for these events to fire properly.
 
 #### Properties
 

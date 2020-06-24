@@ -24,7 +24,7 @@ This destination is maintained by Moesif. For any issues with the destination, [
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -49,7 +49,7 @@ Segment sends `identify()` calls to Moesif as [user updates](https://www.moesif.
 The integration handles Segment [reserved traits](https://segment.com/docs/connections/spec/identify/#traits) like `email` and `firstName`. It maps [automatically-collected fields](/docs/connections/spec/common/#context-fields-automatically-collected) like campaign information and IP address.
 
 ## Track
-If you haven’t had a chance to review our spec, please take a look to understand what the [Track](https://segment.com/docs/connections/spec/track/) method does. An example call would look like:
+If you haven’t had a chance to review our spec, take a look tounderstand what the [Track](https://segment.com/docs/connections/spec/track/) method does. An example call would look like:
 
 ```
 analytics.track('Login Button Clicked')

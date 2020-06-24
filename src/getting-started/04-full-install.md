@@ -67,7 +67,7 @@ Consider using Identify and traits when:
 
 ## How to Call Identify
 
-You can call Identify from any of Segment’s device-based or server-based libraries, including [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/mobile/ios), [Android](/docs/connections/sources/catalog/mobile/android), [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/), and [Python](/docs/connections/sources/catalog/libraries/server/python/).
+You can call Identify from any of Segment’s device-based or server-based libraries, including [Javascript](/docs/connections/sources/catalog/libraries/website/javascript/), [iOS](/docs/connections/sources/catalog/libraries/mobile/ios), [Android](/docs/connections/sources/catalog/libraries/mobile/android), [Ruby](/docs/connections/sources/catalog/libraries/server/ruby/), and [Python](/docs/connections/sources/catalog/libraries/server/python/).
 
 Here are two examples of calling identify from two different libraries:
 
@@ -164,7 +164,7 @@ If the presentation of user interface components don’t substantially change th
 > note ""
 > **Note**: When you trigger a Page call manually, make sure the call happens _after_ the UI element is successfully displayed, not when it is called. It shouldn’t be called as part of the click event that initiates it.
 
-For more info on Page calls, please review [Page spec](/docs/spec/page/) and [Analytics.js docs](/docs/connections/sources/catalog/libraries/website/javascript/#page).
+For more info on Page calls, review [Page spec](/docs/spec/page/) and [Analytics.js docs](/docs/connections/sources/catalog/libraries/website/javascript/#page).
 
 ### When to call Screen
 

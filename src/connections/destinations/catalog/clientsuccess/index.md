@@ -6,7 +6,7 @@ This destination is maintained by ClientSuccess.
 
 ## Getting Started (for CSMs)
 
-If your engineers have already setup Segment, adding Segment data to ClientSuccess is straightforward. All you need to do is turn on the destination.
+If your engineers have already set up Segment, adding Segment data to ClientSuccess is straightforward. All you need to do is turn on the destination.
 
 To turn on the destination, do the following:
 

@@ -111,7 +111,7 @@ $ curl \
 
 On Segment, events are sent in real-time to "streaming destination" services. Destinations are created with the name of the service, e.g. `google-analytics`, and configuration for the services such as the website tracking ID.
 
-Let's create a Google Analytics destination. Note that we are setting the `CLOUD` connection mode that sends data to Google Analytics via Segment's servers. Also note that we are setting the website tracking ID from our Google Analytics account.
+Let's create a Google Analytics destination. Note that we are setting the `CLOUD` connection mode that sends data to Google Analytics using Segment's servers. Also note that we are setting the website tracking ID from our Google Analytics account.
 
 ```shell
 $ curl \

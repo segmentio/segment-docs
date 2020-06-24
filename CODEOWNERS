@@ -18,16 +18,16 @@ CODEOWNERS  @sanscontext @XavierAgostini @danielstjules @stephment
 
 
 # Libraries owners
-/src/connections/catalog/libraries  @osamakhn @bsneed @lubird
+/src/connections/catalog/libraries  @osamakhn @bsneed @lubird @pooyaj @juliofarah
 
 
 # Destination owners
-/src/connections/destinations   @n2parko @danielstjules @benhorowitz
+/src/connections/destinations  @n2parko @danielstjules @benhorowitz
 # temporary removal: @carlosmecha
 
 
 # Privacy owners
-/src/privacy    @notfelineit @aliya-dossa
+/src/privacy    @notfelineit
 
 
 # Protocols owners

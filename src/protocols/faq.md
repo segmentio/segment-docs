@@ -103,7 +103,7 @@ To reduce the risk of creating circular and conflicting transformations, we only
 
 ### What can't I select multiple events or destinations in a single transformation?
 
-In early transformations prototypes we allowed users to select multiple events and destinations for a single transformation rule. We realized however that this created a structure that was impossible to scale, and likely to generate unintended consequences. For example, if we allow multiple track events to be selected for a property name change, it'd be possible to create conflicting changes. Instead, by enforcing a single event, we can check to see if a transformation rule exists and smartly link you to that rule via a warning.
+In early transformations prototypes we allowed users to select multiple events and destinations for a single transformation rule. We realized however that this created a structure that was impossible to scale, and likely to generate unintended consequences. For example, if we allow multiple track events to be selected for a property name change, it'd be possible to create conflicting changes. Instead, by enforcing a single event, we can check to see if a transformation rule exists and smartly link you to that rule using a warning.
 
 ### What permissions are required to create and edit transformations?
 
@@ -115,7 +115,7 @@ All users with Protocols admin or readonly permissions can view transformations.
 
 ### Why can't we support transformations for device-mode destinations?
 
-Transformations introduce advanced logic that at scale may impact performance of client-side libraries. We are exploring ways to maintain high performance while selectively supporting transformations in the clients. If you are interested in testing new functionality which supports device-mode destination transformations in analytics.js, please reach out to your account rep.
+Transformations introduce advanced logic that at scale may impact performance of client-side libraries. We are exploring ways to maintain high performance while selectively supporting transformations in the clients. If you are interested in testing new functionality which supports device-mode destination transformations in analytics.js, contact your account rep.
 
 ### Why do I need Protocols to use transformations?
 

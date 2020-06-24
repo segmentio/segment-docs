@@ -14,7 +14,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 
 ### Install the Package
 
-Install `analytics-go` via `go get`:
+Install `analytics-go` using `go get`:
 
 ```bash
 go get github.com/segmentio/analytics-go
@@ -108,7 +108,7 @@ Find details on **best practices in event naming** as well as the **`track` meth
 
 The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side setup in combination with the Go library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using our client-side set up in combination with the Go library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
 Example `page` call:
 

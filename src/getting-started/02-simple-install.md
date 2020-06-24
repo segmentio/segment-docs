@@ -72,7 +72,7 @@ Installing Segment is easy, just paste the snippet from the Javascript Source ov
 
 That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet is running on your site, you can turn on destinations from the destinations page in your workspace and they start loading on your site automatically!
 
-**Fun fact:** if you only want the most basic Google Analytics setup you can stop reading right now. You're done! Just switch on Google Analytics from the Segment App.
+**Fun fact:** if you only want the most basic Google Analytics set up you can stop reading right now. You're done! Just switch on Google Analytics from the Segment App.
 
 However, lots of analytics and marketing tools need to record _who_ each user is on your site. If you want to use any tool that deals with the identity of your users, read on about the `identify` method.
 
@@ -388,7 +388,7 @@ The Source Debugger is a real-time tool that helps you confirm that API calls ma
 The Debugger is separate from your workspace's data pipeline, and is not an exhaustive view of all the events ever sent to your Segment workspace. The Debugger only shows a sample of the events that the Source receives in real time, with a cap of 500 events. The Debugger is a great way to test specific parts of your implementation to validate that events are being fired successfully and arriving to your Source.
 
 > success ""
-> **Tip**: To see a more complete view of all your events, you might consider setting up either a [warehouse](/docs/connections/warehouses/) or an [S3 destination](/docs/connections/warehouses/catalog/amazon-s3/).
+> **Tip**: To see a more complete view of all your events, you might consider setting up either a [warehouse](/docs/connections/storage/warehouses/) or an [S3 destination](/docs/connections/storage/catalog/amazon-s3/).
 
 The Debugger shows a live stream of sampled events arriving at the Source, but you can also toggled from "Live" to "Pause", to stop the stream and prevent it from displaying new events. Events continue to arrive to your Source while you Pause the stream, they just are not displayed.
 

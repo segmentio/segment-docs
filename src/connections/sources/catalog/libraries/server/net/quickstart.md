@@ -1,11 +1,10 @@
 ---
 title: 'Quickstart: ASP.NET'
-hidden: true
 ---
 
 <!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
 
-This tutorial will help you start sending analytics data from your ASP.NET app to Segment and any of our destinations, using our .NET and analytics.js library. As soon as you're setup you'll be able to turn on analytics tools, ad conversion pixels, email tools and lots of other destinations with the flip of a switch!
+This tutorial will help you start sending analytics data from your ASP.NET app to Segment and any of our destinations, using our .NET and analytics.js library. As soon as you're set up you'll be able to turn on analytics tools, ad conversion pixels, email tools and lots of other destinations with the flip of a switch!
 
 If you want to dive deeper at any point, check out the [.NET library reference](/docs/connections/sources/catalog/libraries/server/net).
 
@@ -29,7 +28,7 @@ That snippet will load Analytics.js onto the page _asynchronously_, so it won't 
 
 ![image](images/debuggerpage.png)
 
-**Fun fact:** if you only want the most basic Google Analytics setup you can stop reading right now. You're done! Just switch on Google Analytics in our interface.
+**Fun fact:** if you only want the most basic Google Analytics set up you can stop reading right now. You're done! Just switch on Google Analytics in our interface.
 
 For a more in depth analytics.js tutorial, check out our [quick start](/docs/connections/sources/catalog/libraries/website/javascript/quickstart).
 

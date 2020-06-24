@@ -39,7 +39,7 @@ To get started with MoEngage on iOS, first add the [MoEngage-Segment-iOS](https:
   pod update
   ```
 
-### Setup Segment SDK
+### Set up Segment SDK
 
 Go to the App Delegate file and set up the Segment SDK by adding the `SEGMoEngageIntegrationFactory` instance to `SEGAnalyticsConfiguration` as shown below:
 
@@ -373,7 +373,7 @@ If you selected `HTTPS` mode, you must take some additional steps:
 * serviceworker.js
 
 > note ""
-> **Note**: Make sure the name of the serviceworker file is exactly `serviceworker.js`. [Contact MoEngage support](support@moengage.com) if you need to rename the serviceworker file.
+> **Note**: Make sure the name of the serviceworker file is exactly `serviceworker.js`. [Contact MoEngage support](mailto:support@moengage.com) if you need to rename the serviceworker file.
 
 2. Use your serviceworker file (HTTPS only)
 

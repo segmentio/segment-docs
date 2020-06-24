@@ -12,7 +12,7 @@ To enable SSO-based login from the Segment login page (app.segment.com/login), y
 
 The Segment login page can only be connected to one workspace. To use your IDP with multiple workspaces, you will have to initiate login to the other workspaces from the IDP instead of through the login portal.
 
-## Setup — SAML
+## Set up — SAML
 
 Segment's SSO configuration is entirely self-service; we don't require any back and forth with our team in order to test and enable the feature on your workspace. However, we are here to help! don't hesitate to [get in touch](https://segment.com/help/contact/) if you run into any questions or issues.
 
@@ -26,7 +26,7 @@ To get started, go to your workspace settings and choose the "Connections" tab u
 
 To get started, you'll need to create an application in your IDP. We're in the process of rolling out officially supported apps with the most popular IDPs, but in the meantime you can create a custom SAML-based application.
 
-Your provider will ask you for a few things from Segment, which we provide in the setup flow:
+Your provider will ask you for a few things from Segment, which we provide in the set up flow:
 
 ![](images/asset_RRAJ92MY.png)
 
@@ -64,9 +64,9 @@ Back at the connections page, make sure your connection is enabled with the swit
 
 ![](images/asset_SNxN4JhO.png)
 
-You can now test using IDP-initiated SSO (by clicking login to Segment from within your IDP) is working correctly. If not, please double check the IDP configuration gotchas section above.
+You can now test using IDP-initiated SSO (by clicking login to Segment from within your IDP) is working correctly. If not, double check the IDP configuration gotchas section above.
 
-## Setup — GSuite
+## Set up — GSuite
 
 GSuite configuration is incredibly simple with Segment. To get started, go to your workspace settings and choose the "Connections" tab under "Authentication" and click "Add New Connection." Follow the steps to create a "Google Apps For Work" connection.
 

@@ -2,7 +2,7 @@
 title: Public Beta Checklist
 ---
 
-The purpose of this checklist is to give you a window into the full integration lifecycle, from how you first get started with Developer Center, to how we'll test your app before it goes live. 
+The purpose of this checklist is to give you a window into the full integration lifecycle, from how you first get started with Developer Center, to how we'll test your app before it goes live.
 
 ## 1. Partner Access
 
@@ -20,7 +20,7 @@ Make sure to sign up with your company email address and to answer all the surve
     - Company Website
     - How do your customers get data into your tool?
     - Where will data sent by Segment go and how will it show up in your tool?
-    - Please explain what your customers use your tool to do
+    - Explain what your customers use your tool to do
     - How did you hear about Segment?
 
 
@@ -42,7 +42,7 @@ To maintain the quality of the partner integrations catalog, Segment reviews par
 
 ## 3. Segment → Partner Communications
 
-The Segment Dev Center team is here to help you every step of the way. You can expect to hear from us via email or Slack for key events:
+The Segment Dev Center team is here to help you every step of the way. You can expect to hear from us using email or Slack for key events:
 
 - Email
     - Welcome
@@ -80,7 +80,7 @@ Once you've decided, you can:
 
 We also highly encourage you to build a 1-click enablement of your tool with OAuth and the Segment Config API. Partners who have implemented "Enable with Segment" button in their sign-up flows have reported 2X increase in conversions. You can [refer to the docs for full details about building an Enable with Segment button](https://segment.com/docs/partners/enable-with-segment/).
 
-- Implement one-click setup via Enable with Segment / OAuth
+- Implement one-click set up using Enable with Segment / OAuth
 
 > Note: If you are time constrained, you may skip the above step for now. Once we see at-least 5 customers using your public beta integration, it's a hard requirement to build "Enable with Segment" button in your sign-up flows or app/settings page for general availability. By building this, we are making it super easy for future customers to turn ON your Integration. Not doing so, will result in de-listing your Integration from the Segment Catalog.
 
@@ -125,7 +125,7 @@ We also encourage marketing content that showcases how easy and powerful your in
 
 
 - Write launch marketing content
-    - Blog post 
+    - Blog post
     - Or email announcement
 
 ## 7. Partner Metadata
@@ -172,11 +172,11 @@ To maintain the quality of the partner integrations catalog, the Segment Develop
     - Verify data flow to partner tool - in particular, if the partner UI is complicated, where different data types appear are clearly documented
 
 
-- Review documentation partner submitted via [HackMD Template](https://hackmd.io/t7amLXluS7-39rg7ARZgSA?both=)
+- Review documentation partner submitted using [HackMD Template](https://hackmd.io/t7amLXluS7-39rg7ARZgSA?both=)
     - All signup, API key and data delivery matches test
 
 
-- Review catalog information partner submitted via [Google Docs Template](https://docs.google.com/document/d/1kvAvAHLyM3pOq-lBcZJhP_X_KivHlk1eiFy-5ERWDXc/edit)
+- Review catalog information partner submitted using [Google Docs Template](https://docs.google.com/document/d/1kvAvAHLyM3pOq-lBcZJhP_X_KivHlk1eiFy-5ERWDXc/edit)
 
 
 - Verify that in-app catalog entry renders correctly

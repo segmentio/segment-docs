@@ -4,14 +4,14 @@ beta: true
 title: Adobe Target Destination
 ---
 [Adobe Target](https://www.adobe.com/marketing-cloud/target.html) removes the
-coding and setup hassles of A/B testing to help you quickly discover which
+coding and set up hassles of A/B testing to help you quickly discover which
 offers, experiences and messages truly engage your visitors.
 
 _**NOTE:** Adobe Target is currently in beta, and this doc was last
 updated on March 7, 2018. This means that there may still be some bugs for us to
 iron out, and we're excited to hear your thoughts. If you are interested in
 joining or have any feedback to help us improve the Adobe Target
-Destination and its documentation, please [let us know](https://segment.com/help/contact)!_
+Destination and its documentation, [let us know](https://segment.com/help/contact)!_
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ Destination and its documentation, please [let us know](https://segment.com/help
    tool, their Javascript must be loaded as soon as possible.
 2. From your Segment UI's Destinations page click on "Add Destination". Note
    that no integration settings are listed in this tab because you must manage
-   integration options via Adobe's UI or their `targetGlobalSettings` object.
+   integration options using Adobe's UI or their `targetGlobalSettings` object.
 3. Search for "Adobe Target" within the Destinations Catalog and confirm the
    Source you'd like to connect to.
 5. Start sending data!

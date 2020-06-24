@@ -6,9 +6,9 @@ beta: true
 
 [Stories](https://www.getstories.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) gathers all the user events that matter on a timeline, so your teams can understand what is going on and take action in the right direction.
 
-This destination is maintained by Stories. For any issues with the destination, please [reach out to their team](mailto:support@getstories.io).
+This destination is maintained by Stories. For any issues with the destination, [contact their team](mailto:support@getstories.io).
 
-_**NOTE:** The Stories Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 7, 2020. If you are interested in joining their beta program or have any feedback to help improve the Stories Destination and its documentation, please [let  their team know](mailto:support@getstories.io)!_
+_**NOTE:** The Stories Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 7, 2020. If you are interested in joining their beta program or have any feedback to help improve the Stories Destination and its documentation, [let their team know](mailto:support@getstories.io)!_
 
 ## Getting Started
 
@@ -111,5 +111,5 @@ Params: {
 
 ## Sync Users
 
-When you setup your Stories Destination in Segment, your users automatically sync to Stories.
-Please note that only Users who have a `userId` in Segment are synced, Stories does not support anonymous users yet. Users are updated by `identify` events from Segment.
+When you set up your Stories Destination in Segment, your users automatically sync to Stories.
+Note that only Users who have a `userId` in Segment are synced, Stories does not support anonymous users yet. Users are updated by `identify` events from Segment.
