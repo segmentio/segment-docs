@@ -14,7 +14,7 @@ Analytics for Android uses a light-weight queuing mechanism to make API calls to
 
 ## Getting Started
 
-To get started head over to our [Android QuickStart](/docs/libraries/android/v1/quickstart) which will help you install analytics tracking on your app in just a few minutes. Once you've installed the library, read on for the detailed API reference!
+To get started head over to our [Android QuickStart](/docs/connections/sources/catalog/libraries/mobile/android/v1/quickstart) which will help you install analytics tracking on your app in just a few minutes. Once you've installed the library, read on for the detailed API reference!
 
 
 ## Identify

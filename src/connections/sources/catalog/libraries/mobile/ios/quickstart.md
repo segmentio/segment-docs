@@ -5,7 +5,7 @@ hidden: true
 
 This tutorial gets you started sending data from your iOS app to Segment. When you're done you can turn on [any of Segment's destinations](/docs/connections/destinations/) with the flip of a switch! No more waiting for App Store approval.
 
-If you want to dive deeper at any point, check out the [iOS Library Reference](/docs/libraries/ios/).
+If you want to dive deeper at any point, check out the [iOS Library Reference](/docs/connections/sources/catalog/libraries/mobile/ios/).
 
 _Note: At the moment Segment does not support tracking watchkit extensions for the Apple watch. [Contact us](https://segment.com/help/contact) if you're interested in a watchkit SDK. For now we recommend tracking watch interactions using the native iPhone app code._
 

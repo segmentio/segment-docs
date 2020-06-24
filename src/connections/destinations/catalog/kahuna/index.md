@@ -6,7 +6,7 @@ title: Kahuna Destination
 
 Segment makes it easy to send your data to Kahuna. Once you're tracking data through our iOS, Android or server side libraries, we'll translate and route your data to Kahuna in the format they can process.
 
-If you have mobile apps, then Kahuna recommends using the Segment [iOS](https://segment.com/docs/libraries/ios) and or [Android](https://segment.com/docs/libraries/android) library and bundling Kahuna (see [Mobile](#mobile) section below).
+If you have mobile apps, then Kahuna recommends using the Segment [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios) and or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android) library and bundling Kahuna (see [Mobile](#mobile) section below).
 
 If you are sending data from a server side library, read the [Server side](#server-side) section.
 

@@ -33,7 +33,7 @@ If there is something unique about your tool that requires specific data points 
 
 ## Sending data
 
-To send events to Segment you should post events directly to the [Segment HTTP API](https://segment.com/docs/libraries/http/#track). You may use a Segment [library](https://segment.com/docs/libraries/) to do so. The HTTP API has a couple of basic requirements.
+To send events to Segment you should post events directly to the [Segment HTTP API](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/#track). You may use a Segment [library](https://segment.com/docs/connections/sources/catalog/) to do so. The HTTP API has a couple of basic requirements.
 
 Beyond the Spec, there are a few additional requirements for partner Streams.
 
@@ -77,12 +77,12 @@ This should be part of the `context` top-level object and will look like:
 
 Each call must contain a `writeKey`. Segment provides this `writeKey` to customers in the settings panel for each of their sources. As mentioned in the set up flow description above, customers will need to save their Segment write key in your UI in order authenticate calls being made by your tool.
 
-The write key is required in the header of every call to identify the customer whose data we're receiving. See the [authentication section](https://segment.com/docs/libraries/http/#authentication) of the HTTP API docs for more detail. If you do not include a customer write key in the call header, we will reject track calls from your tool.
+The write key is required in the header of every call to identify the customer whose data we're receiving. See the [authentication section](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/#authentication) of the HTTP API docs for more detail. If you do not include a customer write key in the call header, we will reject track calls from your tool.
 
 **Rate limits and batching**
 There is no hard rate limit at which point Segment will drop your data. However, to avoid processing delays, we ask partners to send requests at a maximum rate of 50 requests per second.
 
-If you want to batch requests to the HTTP endpoint, refer to the batching documentation [here](https://segment.com/docs/libraries/http/#import). The suggested maximum rate includes any batch requests.
+If you want to batch requests to the HTTP endpoint, refer to the batching documentation [here](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/#import). The suggested maximum rate includes any batch requests.
 
 # Process
 

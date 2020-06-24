@@ -176,8 +176,8 @@ analytics.page({
   category: 'Docs',
   name: 'Node.js Library',
   properties: {
-    url: 'https://segment.com/docs/libraries/node',
-    path: '/docs/libraries/node/',
+    url: 'https://segment.com/docs/connections/sources/catalog/librariesnode',
+    path: '/docs/connections/sources/catalog/librariesnode/',
     title: 'Node.js Library - Segment',
     referrer: 'https://github.com/segmentio/analytics-node'
   }
@@ -275,7 +275,7 @@ Find more details about `group`, including the **`group` payload**, in our [Spec
 
 ## Alias
 
-The `alias` call allows you to associate one identity with another. This is an advanced method and should not be widely used, but is required to manage user identities in _some_  destinations. Other destinations do not support the alias call. 
+The `alias` call allows you to associate one identity with another. This is an advanced method and should not be widely used, but is required to manage user identities in _some_  destinations. Other destinations do not support the alias call.
 
 In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
