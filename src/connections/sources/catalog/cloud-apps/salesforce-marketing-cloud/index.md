@@ -2,6 +2,7 @@
 title: Salesforce Marketing Cloud Source
 beta: true
 source-type: object
+strat: salesforce
 ---
 <!-- SFMC is listed as an object source, but doesn't appear in our configapi source catalog, so leave the "source-type" set here-->
 
@@ -15,8 +16,11 @@ to a data warehouse such as Redshift or Big Query with ease, avoiding having to 
 If you are trying to set up Salesforce Marketing Cloud as a destination to receive data from Segment, check out
 [Salesforce Marketing Cloud Destination](https://segment.com/docs/connections/destinations/catalog/salesforce-marketing-cloud/).
 
-_**NOTE:** The Salesforce Marketing Cloud Source is currently in beta. This means that component names and functionality
-           may change. For all feedback, [send us a note](https://segment.com/help/contact).
+> note ""
+> *NOTE:* The Salesforce Marketing Cloud Source is currently in beta. This means that component names and functionality may change. For all feedback, [send us a note](https://segment.com/help/contact).
+
+> success ""
+> **Good to know**: This page is about the Salesforce Marketing Cloud Segment source, which sends data _into_ Segment. There's also a page about the [Salesforce Marketing Cloud Segment destination](/docs/connections/destinations/catalog/salesforce-marketing-cloud/), which receives data from Segment!
 
 ## Getting Started
 
@@ -100,7 +104,7 @@ Collections are the groupings of resources we pull from your source. In your war
 ## Collection Properties
 
 Segment performs a one-to-one mapping of all publicly available fields from Salesforce Marketing Cloud. Below are tables
-outlining the properties included in the collections listed above. To see the full description of each property, 
+outlining the properties included in the collections listed above. To see the full description of each property,
 refer to the Salesforce Marketing Cloud documentation linked in each [collection](#collections) above.
 
 ### Campaigns

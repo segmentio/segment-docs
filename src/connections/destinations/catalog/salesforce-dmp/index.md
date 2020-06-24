@@ -1,8 +1,9 @@
 ---
+title: Salesforce DMP Destination
+strat: salesforce
 rewrite: true
 beta: true
 hidden: true
-title: Salesforce DMP Destination
 ---
 
 [Salesforce DMP](https://konsole.zendesk.com/hc/en-us) allows website operators
@@ -13,7 +14,7 @@ audience segments to improve content delivery and advertising revenue.
 _**NOTE:** Salesforce DMP is currently in beta, and this doc was last
 updated on November 6, 2018. This means that there may still be some bugs for
 us to iron out. If you are interested in joining or have any feedback to help
-us improve the Salesforce DMP Destination and its documentation, 
+us improve the Salesforce DMP Destination and its documentation,
 [let us know](https://segment.com/help/contact)!_
 
 ## Getting Started

@@ -1,8 +1,8 @@
 ---
 title: Salesforce Destination
+strat: salesforce
 ---
 
-## Getting Started
 
 Segment's Salesforce destination allows you to identify leads without using SOAP APIs.
 

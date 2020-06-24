@@ -26,3 +26,19 @@ sections:
     title: Facebook Ads Cloud Source
   - path: /connections/sources/catalog/cloud-apps/facebook-lead-ads
     title: Facebook Lead Ads Cloud Source
+
+- slug: salesforce
+  section_title: Salesforce Integrations
+  section:
+  - path: /connections/destinations/catalog/salesforce
+    title: Salesforce destintation
+  - path: /connections/destinations/catalog/salesforce-live-agent
+    title: Salesforce Live Agent destintation
+  - path: /connections/destinations/catalog/salesforce-marketing-cloud
+    title: Salesforce Marketing Cloud destination
+  - path: /connections/destinations/catalog/salesforce-dmp
+    title: Salesforce DMP destintation (beta)
+  - path: /connections/sources/catalog/cloud-apps/salesforce
+    title: Salesforce Cloud Source
+  - path: /connections/sources/catalog/cloud-apps/salesforce-marketing-cloud
+    title: Salesforce Marketing Cloud cloud-app Source
