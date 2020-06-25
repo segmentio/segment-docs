@@ -65,7 +65,7 @@ The date partition structure is defaulted to `day=<YYYY-MM-DD>/hr=<HH>` to offer
 ### AWS Glue
 
 #### Glue Data Catalog
-Data Lakes stores the inferred schema and associated metadata of the S3 data in AWS Glue Data Catalog. This map includes the location of the S3 file, data converted into Parquet format, column names inferred from the Segment event, nested properties and traits which are now flattened, and the inferred data type.
+Data Lakes stores the inferred schema and associated metadata of the S3 data in AWS Glue Data Catalog. This metadata includes the location of the S3 file, data converted into Parquet format, column names inferred from the Segment event, nested properties and traits which are now flattened, and the inferred data type.
 
 ![](images/dl_gluecatalog.png)
 
