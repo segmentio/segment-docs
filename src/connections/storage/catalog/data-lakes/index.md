@@ -44,7 +44,7 @@ After you set up the necessary AWS resources:
    - **EMR Cluster ID**: The EMR Cluster ID where the Data Lakes jobs will be run.
    - **Glue Catalog ID**: The Glue Catalog ID (this must be the same as your AWS account ID).
    - **IAM Role ARN**: The ARN of the IAM role that Segment will use to connect to Data Lakes.
-   - **S3 Bucket**: Name of the S3 bucket used by  Data Lakes. The EMR cluster will be configured to store logs in this bucket.
+   - **S3 Bucket**: Name of the S3 bucket used by Data Lakes. The EMR cluster will store logs in this bucket.
 
 5. _(Optional)_ **Date Partition**: Optional setting to change the date partition structure. If the default structure `day=<YYYY-MM-DD>/hr=<HH>` is sufficient, then no change is required. However if you prefer to partition the data by a different date structure, you can choose from four preset options:
   - Day/Hour [YYYY-MM-DD/HH] (Default)
