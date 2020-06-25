@@ -65,6 +65,23 @@ Segment uses your unique Salesforce subdomain to make API calls to SFMC. Your su
 > **Note**: If you do not set up your subdomain, Segment uses the legacy V1 endpoint and your events might result in authentication errors.
 
 
+## Optional: Set up SFMC batching
+
+SFMC has strict rate limits, usually 20 requests per second. If your organization sends a very high volume of data or has audiences with many people in them, Segment allows you to send data to SFMC in batches. This can help you reduce your SFMC API quota, reduce the number of rate-limiting errors you see, and help speed up transfers of large volumes of data.
+
+> info ""
+> The batching feature in SFMC is only available to our **Business Tier** customers.
+
+To use the SFMC Batch feature:
+
+1. **Make sure you don’t need to use [API Events](#segment-and-sfmc) or create contacts from Identify calls**. If you have the SFMC Batch Integration enabled, you cannot use these two features at all.
+2. **Enable the SFMC Data Extensions Async API on your account**. SFMC requires that each customer specifically request access to the Salesforce API that allows Segment to send batched data to SFMC. Contact your account representative to [enable the asynchronous REST API endpoints](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/data-extensions-api.htm). **This step is required.** If you do not enable these endpoints, your data will be dropped. This setting is configured by Salesforce per account, so if the account can already access these endpoints, go to the next step.
+3. **Contact Segment to enable batching for each SFMC destination**. Once you confirm that you have access to the async API endpoints, contact your Segment CSM or [Segment Product Support](http://segment.com/help/contact/) to request that batching be enabled on your Segment account. You must do this step for each instance of the SFMC destination that you create in your Segment workspace. You will need to provide a link to the SFMC destination you want this functionality enabled on.
+4. Once you complete these enablement steps, follow the standard set up instructions for the SFMC destination below.
+
+If possible, you should enable batching for your SFMC destination before you send it any data. If you enable batching for an existing SFMC destination that has already received Segment data, you must work with [Segment Product Support](http://segment.com/help/contact/) to migrate that data.
+
+
 ## Set up to send Identify calls to SFMC
 
 To use the Journey Builder to send campaigns to your users, you need to have data about those users in SFMC. The most common way to send data to SFMC is to send Segment [Identify](https://segment.com/docs/connections/spec/identify/) calls to an SFMC Data Extension which you specify. When you call `identify`, Segment creates a Salesforce Marketing Cloud Contact, and upserts (updates) the user’s `traits` in the Data Extension.
@@ -92,23 +109,6 @@ Before you leave this screen, copy the External Key for the Data Extension. You�
 The example below shows a Data Extension for Identify calls that stores Email, First Name, and Last Name traits. Note the external key in the left column.
 
 ![](images/identify-dext.png)
-
-
-## Optional: Set up SFMC batching
-
-SFMC has strict rate limits, usually 20 requests per second. If your organization sends a very high volume of data or has audiences with many people in them, Segment allows you to send data to SFMC in batches. This can help you reduce your SFMC API quota, reduce the number of rate-limiting errors you see, and help speed up transfers of large volumes of data.
-
-> info ""
-> The batching feature in SFMC is only available to our **Business Tier** customers.
-
-To use the SFMC Batch feature:
-
-1. **Make sure you don’t need to use [API Events](#segment-and-sfmc) or create contacts from Identify calls**. If you have the SFMC Batch Integration enabled, you cannot use these two features at all.
-2. **Enable the SFMC Data Extensions Async API on your account**. SFMC requires that each customer specifically request access to the Salesforce API that allows Segment to send batched data to SFMC. Contact your account representative to [enable the asynchronous REST API endpoints](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/data-extensions-api.htm). **This step is required.** If you do not enable these endpoints, your data will be dropped. This setting is configured by Salesforce per account, so if the account can already access these endpoints, go to the next step.
-3. **Contact Segment to enable batching for each SFMC destination**. Once you confirm that you have access to the async API endpoints, contact your Segment CSM or [Segment Product Support](http://segment.com/help/contact/) to request that batching be enabled on your Segment account. You must do this step for each instance of the SFMC destination that you create in your Segment workspace. You will need to provide a link to the SFMC destination you want this functionality enabled on.
-4. Once you complete these enablement steps, follow the standard set up instructions for the SFMC destination below.
-
-If possible, you should enable batching for your SFMC destination before you send it any data. If you enable batching for an existing SFMC destination that has already received Segment data, you must work with [Segment Product Support](http://segment.com/help/contact/) to migrate that data.
 
 
 ### Configure the Salesforce Marketing Cloud Destination in Segment
