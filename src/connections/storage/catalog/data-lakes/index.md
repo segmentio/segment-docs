@@ -71,7 +71,7 @@ Segment uses a creates a separate EMR cluster to run replays, then destroys it w
 
 ##### Do I need to create Glue databases?
 
-No, Data Lakes will automatically create a Glue database per source. This database will be named as the source slug.
+No, Data Lakes automatically creates one Glue database per source. This database uses the source slug as its name.
 
 ##### What IAM role do I use in the Settings page?
 
