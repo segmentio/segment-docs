@@ -29,7 +29,7 @@ The Terraform module and manual set up instructions both provide a base level of
 
 Once you have set up the necessary AWS resources:
 
-1. [Contact the Support team] (/https://segment.com/help/contact/) to receive a link to the Data Lakes landing page in your workspace.
+1. [Contact the Support team](/https://segment.com/help/contact/) to receive a link to the Data Lakes landing page in your workspace.
 
 2. Once you're in the Data Lakes landing page, click **Configure Data Lakes**.
 
@@ -81,26 +81,26 @@ If setting up Data Lakes using Terraform, you will see that four roles are creat
 
 There are four roles which Data Lakes assigns during set up:
 
-1. **`segment-datalake-iam-role`** - This is the role that Segment assumes to access S3, Glue and the EMR cluster. It allows Segment access to:
-- Get, create, delete access to the Glue catalog. Note that this does not provide access to Glue ETL or Glue crawlers.
-- Access only to the specific S3 bucket used for Data Lakes.
-- EMR access only to the clusters having the `vendor=segment` tag
+- **`segment-datalake-iam-role`** - This is the role that Segment assumes to access S3, Glue and the EMR cluster. It allows Segment access to:
+  - Get, create, delete access to the Glue catalog. Note that this does not provide access to Glue ETL or Glue crawlers.
+  - Access only to the specific S3 bucket used for Data Lakes.
+  - EMR access only to the clusters having the `vendor=segment` tag
 
-2. **`segment_emr_service_role`** - Restricted role that can only be assumed by the EMR service. This is set up based on [AWS best practices] (/https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role.html).
+- **`segment_emr_service_role`** - Restricted role that can only be assumed by the EMR service. This is set up based on [AWS best practices](/https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role.html).
 
-3. **`segment_emr_instance_profile_role`** - Role that is assumed by the applications running on the EMR cluster. Based on [AWS best practices] (/https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role-for-ec2.html), it allows Segment access to:
-- Get, create, delete access to the Glue catalog. Note that this does not provide access to Glue ETL or Glue crawlers.
-- Access only to the specific S3 bucket used for Data Lakes.
+- **`segment_emr_instance_profile_role`** - Role that is assumed by the applications running on the EMR cluster. Based on [AWS best practices](/https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role-for-ec2.html), it allows Segment access to:
+  - Get, create, delete access to the Glue catalog. Note that this does not provide access to Glue ETL or Glue crawlers.
+  - Access only to the specific S3 bucket used for Data Lakes.
 
-4. **`segment_emr_autoscaling_role`** - Restricted role that can only be assumed by EMR and EC2. This is set up based on [AWS best practices] (/https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role-automatic-scaling.html).
+- **`segment_emr_autoscaling_role`** - Restricted role that can only be assumed by EMR and EC2. This is set up based on [AWS best practices](/https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role-automatic-scaling.html).
 
-##### Why isn’t the creation of a S3 bucket included in the Data Lakes Terraform repo?
+##### Why doesn't the Data Lakes Terraform module create an S3 bucket?
 
-The Data Lakes set up doesn't require the creation of a new S3 bucket to provide you with flexibility to re-use an existing bucket for Data Lakes.
+The module doesn't create a new S3 bucket so you can re-use an existing bucket for your Data Lakes.
 
 ##### Does my S3 bucket need to be in the same region as the other infrastructure?
 
-Yes, the S3 bucket and the EMR cluster are required to be in the same region.
+Yes, the S3 bucket and the EMR cluster must be in the same region.
 
 ##### How do I connect a new source to Data Lakes?
 
@@ -123,27 +123,28 @@ If you don't see data after enabling a source, check the following:
 - Is the correct IAM role and S3 bucket configured in the settings?
 - Does the IAM role have the Segment account ID and source IDs as the external IDs?
 
-If all of these look correct and you're still not seeing any data, please [contact the Support team] (/https://segment.com/help/contact/).
+If all of these look correct and you're still not seeing any data, please [contact the Support team](/https://segment.com/help/contact/).
 
-##### What are "Segment Output" tables I'm seeing in S3?
+##### What are "Segment Output" tables in S3?
 
-The `output` tables are temporary tables we create for the loads. They are deleted after each sync so you should not see them at all times.
+The `output` tables are temporary tables Segment creates when loading data. They are deleted after each sync.
 
 ##### Can I make additional directories in the S3 bucket Data Lakes is using?
 
-Yes, you can create new directories in S3 since it won't interfere with Segment data. The four Segment directories you should avoid are:
+Yes, you can create new directories in S3 without interfering with Segment data.
+Do not modify, or create additional directories with the following names:
 - `logs/`
 - `segment-stage/`
 - `segment-data/`
 - `segment-logs/`
 
-##### I see `(partitioned)` next to each table name. What does that mean?
+##### What does "partitioned" mean in the table name?
 
-`Partitioned` just means that the table has partition columns (day and hour). You'll see this on all tables since we partition all of the tables
+`Partitioned` just means that the table has partition columns (day and hour). All tables are partitioned, so you should see this on all table names.
 
 ##### Why are the Filters, Event Tester and Event Delivery tabs in-app empty?
 
-Data Lakes currently does not support these features, however sync history information will soon be available.
+Data Lakes does not currently support these features. Sync history information will be available soon.
 
 ##### How can I use AWS Spectrum to access Data Lakes tables in Glue, and join it with Redshift data?
 
@@ -151,12 +152,14 @@ You can use the following command to create external tables in Spectrum to acces
 
 Run the `CREATE EXTERNAL SCHEMA` command:
 
-    create external schema `spectrum_schema_name`
-    from data catalog
-    database `glue_db_name`
-    iam_role `arn:aws:iam::123456789012:role/MySpectrumRole`
-    create external database if not exists;
+```sql
+create external schema `spectrum_schema_name`
+from data catalog
+database `glue_db_name`
+iam_role `arn:aws:iam::123456789012:role/MySpectrumRole`
+create external database if not exists;
+```
 
-Where
+Replace:
 - `glue_db_name` = The Glue database created by Data Lakes which is named after the source slug
 - `spectrum_schema_name` = The schema name in Redshift you want to map to
