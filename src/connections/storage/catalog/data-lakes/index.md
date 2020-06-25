@@ -79,7 +79,7 @@ Four roles are created when you set up Data Lakes using Terraform. You add the `
 
 ##### What level of access do the AWS roles have?
 
-There are four roles which Data Lakes assigns during set up:
+The roles which Data Lakes assigns during set up are:
 
 - **`segment-datalake-iam-role`** - This is the role that Segment assumes to access S3, Glue and the EMR cluster. It allows Segment access to:
   - Get, create, delete access to the Glue catalog. Note that this does not provide access to Glue ETL or Glue crawlers.
@@ -153,13 +153,13 @@ You can use the following command to create external tables in Spectrum to acces
 Run the `CREATE EXTERNAL SCHEMA` command:
 
 ```sql
-create external schema `spectrum_schema_name`
+create external schema [spectrum_schema_name]
 from data catalog
-database `glue_db_name`
-iam_role `arn:aws:iam::123456789012:role/MySpectrumRole`
+database [glue_db_name]
+iam_role arn:aws:iam::[account_id]:role/MySpectrumRole
 create external database if not exists;
 ```
 
 Replace:
-- `glue_db_name` = The Glue database created by Data Lakes which is named after the source slug
-- `spectrum_schema_name` = The schema name in Redshift you want to map to
+- [glue_db_name] = The Glue database created by Data Lakes which is named after the source slug
+- [spectrum_schema_name] = The schema name in Redshift you want to map to
