@@ -69,7 +69,7 @@ Data Lakes stores the inferred schema and associated metadata of the S3 data in 
 
 ![](images/dl_gluecatalog.png)
 
-Any new columns detected will be appended to the end of the table in the Glue Data Catalog.
+New columns are appended to the end of the table in the Glue Data Catalog as they are detected.
 
 #### Glue Database
 The Glue database is used to store the schema inferred by Segment. To organize the data in a way which makes it easier to query the data, Segment stores the schema for each source in its own Glue database. The schema will be written to a Glue database named after the source slug for easy discoverability.
