@@ -48,7 +48,7 @@ Detailed set up instructions can be found in the [Data Lakes catalog page](/docs
 
 ### S3 Partition Structure
 
-To ensure the data is actionable and accessible, Segment partitions the data in S3 by the Segment source, event type, then the day and hour an event was received by Segment.
+Segment partitions the data in S3 by the Segment source, event type, then the day and hour an event was received by Segment, to ensure that the data is actionable and accessible.
 
 The file path looks like:
 `s3://<top-level-Segment-bucket>/data/<source-id>/segment_type=<event type>/day=<YYYY-MM-DD>/hr=<HH>`
