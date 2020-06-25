@@ -56,7 +56,7 @@ The file path looks like:
 Here are a few examples of what events look like:
 ![](images/dl_s3bucket.png)
 
-The date partition structure is defaulted to `day=<YYYY-MM-DD>/hr=<HH>` to offer granular access to the S3 data. If this partition structure doesn't meet what you're looking for, during the [set up process](/docs/connections/storage/catalog/data-lakes/) you can specify which date partition structure you'd like to use between the following options:
+By default, the date partition structure is `day=<YYYY-MM-DD>/hr=<HH>` to give you granular access to the S3 data. You can change the partition structure during the [set up process](/docs/connections/storage/catalog/data-lakes/), where you can choose from the following options:
 - Day/Hour [YYYY-MM-DD/HH] (Default)
 - Year/Month/Day/Hour [YYYY/MM/DD/HH]
 - Year/Month/Day [YYYY/MM/DD]
