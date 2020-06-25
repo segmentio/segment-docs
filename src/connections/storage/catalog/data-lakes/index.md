@@ -31,7 +31,7 @@ After you set up the necessary AWS resources:
 
 1. [Contact the Support team](https://segment.com/help/contact/) to receive a link to the Data Lakes landing page in your workspace.
 
-2. Once you're in the Data Lakes landing page, click **Configure Data Lakes**.
+2. Click the link provided, and from the Data Lakes landing page, click **Configure Data Lakes**.
 
 3. Select the source to connect to the Data Lakes destination.
 
