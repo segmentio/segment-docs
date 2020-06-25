@@ -124,7 +124,7 @@ Push Notifications are a great way to keep your users engaged and informed about
 
 **Segment Push Implementation:**
 
-1. Follow the directions to register for push notifications [using Segment's SDK](https://segment.com/docs/libraries/ios/#how-do-i-use-push-notifications-).
+1. Follow the directions to register for push notifications [using Segment's SDK](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications-).
 
 2. In your application's `application:didReceiveRemoteNotification:` method, add the following:
 

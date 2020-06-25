@@ -461,7 +461,7 @@ onConsentDialogClosed(function(consentedTools){
 
 Once `analytics.js` loads, executing the `user` or `group` method functions returns information about the currently identified user or group.
 
-**Note:** To ensure these methods are available, wrap any reference to `user()` or `group()` in a [ready function block](https://segment.com/docs/libraries/analytics.js/#ready).
+**Note:** To ensure these methods are available, wrap any reference to `user()` or `group()` in a [ready function block](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript#ready).
 
 Examples:
 
@@ -902,7 +902,7 @@ The object means that you are successfully loading `analytics.js` onto your webs
 
 ![Returning analytics object error](images/CFsktto.gif)
 
-Solution: [Follow the `analytics.js` Quickstart Guide](/docs/libraries/analytics.js/quickstart/)
+Solution: [Follow the `analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascriptquickstart/)
 
 ### Are you loading two instances of `analytics.js`?
 
