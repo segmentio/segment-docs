@@ -77,7 +77,7 @@ No, Data Lakes automatically creates one Glue database per source. This database
 
 Four roles are created when you set up Data Lakes using Terraform. You add the `arn:aws:iam::$ACCOUNT_ID:role/segment-data-lake-iam-role` role to the Data Lakes Settings page in the Segment web app.
 
-##### What level of access does the roles have?
+##### What level of access do the AWS roles have?
 
 There are four roles which Data Lakes assigns during set up:
 
