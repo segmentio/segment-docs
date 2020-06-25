@@ -1,6 +1,7 @@
 ---
 rewrite: true
 title: PixelMe Destination
+hidden: true
 ---
 [PixelMe](https://pixelme.me/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Smart Attribution works by gathering all your traffic from any source and attributing it instantly using UTMs. Combined with our event tracking, you can easily see which traffic is causing which conversions on your website.
 
