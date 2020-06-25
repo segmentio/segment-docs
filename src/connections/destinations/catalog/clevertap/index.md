@@ -123,7 +123,7 @@ CleverTap has created a sample Android application that integrates CleverTap usi
 
 ### Integrating Push
 
-1. Follow the directions to register for push at: [https://segment.com/docs/libraries/ios/#how-do-i-use-push-notifications-](https://segment.com/docs/libraries/ios/#how-do-i-use-push-notifications-).
+1. Follow the directions to register for push at: [https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications-](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications-).
 
 2. In your application's application:didReceiveRemoteNotification: method, add the following:
 

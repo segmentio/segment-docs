@@ -878,9 +878,9 @@ compile('com.segment.analytics.android:analytics-integration-quantcast:+') {
 }
 ```
 
-Earlier, you could control the debugging behaviour with a boolean flag. In version 3, this is replaced by the more powerful [`LogLevel`](/docs/libraries/android/#debugging) Enum, that lets you not only control the logging behavior of our SDK, but also for Device-mode destinations.
+Earlier, you could control the debugging behaviour with a boolean flag. In version 3, this is replaced by the more powerful [`LogLevel`](/docs/connections/sources/catalog/libraries/mobile/android/#debugging) Enum, that lets you not only control the logging behavior of our SDK, but also for Device-mode destinations.
 
-Version 2 of the SDK also let you customize the behaviour of the SDK by providing resource values in XML. Version 3 ignores these custom options from XML to simplify behaviour and improve performance. The recommended way to customize the Analytics client is to use the [Builder](/docs/libraries/android/#customizing-the-client) methods instead.
+Version 2 of the SDK also let you customize the behaviour of the SDK by providing resource values in XML. Version 3 ignores these custom options from XML to simplify behaviour and improve performance. The recommended way to customize the Analytics client is to use the [Builder](/docs/connections/sources/catalog/libraries/mobile/android/#customizing-the-client) methods instead.
 
 ### Do you support Phonegap/Cordova?
 

@@ -156,8 +156,8 @@ Here is a sample Node `.page()`  event:
       category: 'Docs',
       name: 'Node.js Library',
       properties: {
-        url: 'https://segment.com/docs/libraries/node',
-        path: '/docs/libraries/node/',
+        url: 'https://segment.com/docs/connections/sources/catalog/libraries/server/node',
+        path: '/docs/connections/sources/catalog/libraries/server/node/',
         title: 'Node.js Library - Segment',
         referrer: 'https://github.com/segmentio/analytics-node'
       },
