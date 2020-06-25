@@ -14,7 +14,7 @@ The Segment login page can only be connected to one workspace. To use your IDP w
 
 ## Set up — SAML
 
-Segment's SSO configuration is entirely self-service; we don't require any back and forth with our team in order to test and enable the feature on your workspace. However, we are here to help! don't hesitate to [get in touch](https://segment.com/help/contact/) if you run into any questions or issues.
+Segment's SSO configuration is entirely self-service; we don't require any back and forth with our team in order to test and enable the feature on your workspace. Additionally, we have prebuilt connections with [Okta](https://www.okta.com/integrations/segment/), OneLogin, and [Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/segment-tutorial) which can help you get setup faster. However, we are here to help! don't hesitate to [get in touch](https://segment.com/help/contact/) if you run into any questions or issues.
 
 To get started, go to your workspace settings and choose the "Connections" tab under "Authentication" and click "Add New Connection." Follow the steps to create a SAML connection.
 
@@ -83,7 +83,6 @@ In order to enable this, you'll need to verify your domain with Segment. To do t
 ![](images/asset_MSaDZk2f.png)
 
 Enter your domain and click "Add Domain." When you click verify, you're given two options to verify your domain, either using a meta tag to add to your `/index.html` at the root, or a DNS txt record that you can add through your DNS provider. Once you do so and click verify, you're ready to go!
-
 
 > note ""
 > **Note**: domain tokens expire 14 days after they are verified.
