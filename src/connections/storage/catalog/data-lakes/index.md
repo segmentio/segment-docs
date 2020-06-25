@@ -27,7 +27,7 @@ The Terraform module and manual set up instructions both provide a base level of
 
 ## Step 2 - Enable Data Lakes Destination
 
-Once you have set up the necessary AWS resources:
+After you set up the necessary AWS resources:
 
 1. [Contact the Support team](https://segment.com/help/contact/) to receive a link to the Data Lakes landing page in your workspace.
 
