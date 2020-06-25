@@ -50,14 +50,11 @@ Detailed set up instructions can be found in the [Data Lakes catalog page](/docs
 
 To ensure the data is actionable and accessible, Segment partitions the data in S3 by the Segment source, event type, then the day and hour an event was received by Segment.
 
-Here’s an example of what this file path looks like:
+The file path looks like:
 `s3://<top-level-Segment-bucket>/data/<source-id>/segment_type=<event type>/day=<YYYY-MM-DD>/hr=<HH>`
 
-An example path for Track events called "Checkout":
-`s3://data-lake/segment-data-lake/data/xxxxxxxxxx/segment_type=track_checkout/day=2019-10-01/hr=12`
-
-An example path for Identify calls:
-`s3://data-lake/segment-data-lake/data/xxxxxxxxxx/segment_type=identify/day=2019-10-02/hr=22`
+Here are a few examples of what events look like:
+![](images/dl_s3bucket.png)
 
 The date partition structure is defaulted to `day=<YYYY-MM-DD>/hr=<HH>` to offer granular access to the S3 data. If this partition structure doesn't meet what you're looking for, during the [set up process](/docs/connections/storage/catalog/data-lakes/) you can specify which date partition structure you'd like to use between the following options:
 - Day/Hour [YYYY-MM-DD/HH] (Default)
