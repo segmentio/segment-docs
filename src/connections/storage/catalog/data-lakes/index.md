@@ -29,7 +29,7 @@ The Terraform module and manual set up instructions both provide a base level of
 
 Once you have set up the necessary AWS resources:
 
-1. [Contact the Support team](/https://segment.com/help/contact/) to receive a link to the Data Lakes landing page in your workspace.
+1. [Contact the Support team](https://segment.com/help/contact/) to receive a link to the Data Lakes landing page in your workspace.
 
 2. Once you're in the Data Lakes landing page, click **Configure Data Lakes**.
 
@@ -86,13 +86,13 @@ There are four roles which Data Lakes assigns during set up:
   - Access only to the specific S3 bucket used for Data Lakes.
   - EMR access only to the clusters having the `vendor=segment` tag
 
-- **`segment_emr_service_role`** - Restricted role that can only be assumed by the EMR service. This is set up based on [AWS best practices](/https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role.html).
+- **`segment_emr_service_role`** - Restricted role that can only be assumed by the EMR service. This is set up based on [AWS best practices](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role.html).
 
-- **`segment_emr_instance_profile_role`** - Role that is assumed by the applications running on the EMR cluster. Based on [AWS best practices](/https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role-for-ec2.html), it allows Segment access to:
+- **`segment_emr_instance_profile_role`** - Role that is assumed by the applications running on the EMR cluster. Based on [AWS best practices](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role-for-ec2.html), it allows Segment access to:
   - Get, create, delete access to the Glue catalog. Note that this does not provide access to Glue ETL or Glue crawlers.
   - Access only to the specific S3 bucket used for Data Lakes.
 
-- **`segment_emr_autoscaling_role`** - Restricted role that can only be assumed by EMR and EC2. This is set up based on [AWS best practices](/https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role-automatic-scaling.html).
+- **`segment_emr_autoscaling_role`** - Restricted role that can only be assumed by EMR and EC2. This is set up based on [AWS best practices](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-iam-role-automatic-scaling.html).
 
 ##### Why doesn't the Data Lakes Terraform module create an S3 bucket?
 
@@ -123,7 +123,7 @@ If you don't see data after enabling a source, check the following:
 - Is the correct IAM role and S3 bucket configured in the settings?
 - Does the IAM role have the Segment account ID and source IDs as the external IDs?
 
-If all of these look correct and you're still not seeing any data, please [contact the Support team](/https://segment.com/help/contact/).
+If all of these look correct and you're still not seeing any data, please [contact the Support team](https://segment.com/help/contact/).
 
 ##### What are "Segment Output" tables in S3?
 

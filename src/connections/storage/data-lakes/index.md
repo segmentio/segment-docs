@@ -93,7 +93,7 @@ If a bad data type is seen, such as text in place of a number or an incorrectly 
 
 ## EMR
 
-Data Lakes uses an EMR cluster to run jobs which load events from all sources into Data Lakes. The set up instructions will have you spin up an EMR cluster using a m5.xlarge node type. Currently the cluster is always running, however the cluster will auto-scale to ensure it's not always running at full capacity. More information about the EMR specification can be found [here] (/https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/emr).
+Data Lakes uses an EMR cluster to run jobs which load events from all sources into Data Lakes. The set up instructions will have you spin up an EMR cluster using a m5.xlarge node type. Currently the cluster is always running, however the cluster will auto-scale to ensure it's not always running at full capacity. More information about the EMR specification can be found [here](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/emr).
 
 ## IAM
 
@@ -149,11 +149,11 @@ Data types and labels available in Protocols are not currently supported by Data
 
 ##### What is the cost to use AWS Glue?
 
-The pricing for Glue can be found [here] (/https://aws.amazon.com/glue/pricing/). For reference, Data Lakes creates 1 table per event type in your source and adds 1 partition per hour to the event table.
+The pricing for Glue can be found [here](https://aws.amazon.com/glue/pricing/). For reference, Data Lakes creates 1 table per event type in your source and adds 1 partition per hour to the event table.
 
 ##### What limits does AWS Glue have?
 
-AWS Glue has limits across various factors, such as number of databases per account, tables per account, etc. A full list of Glue limits can be found [here] (/https://docs.aws.amazon.com/general/latest/gr/glue.html#limits_glue).
+AWS Glue has limits across various factors, such as number of databases per account, tables per account, etc. A full list of Glue limits can be found [here](https://docs.aws.amazon.com/general/latest/gr/glue.html#limits_glue).
 
 The most common limits to keep in mind are:
 - Databases per account: 10,000
@@ -162,4 +162,4 @@ The most common limits to keep in mind are:
 
 If the limit is met or exceeded, we will skip creating the tables for the events which exceed this limit. However you can reach out to your AWS account representative to increase these limits.
 
-Here are [additional considerations] (/https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html) when using AWS Glue Data Catalog.
+Here are [additional considerations](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html) when using AWS Glue Data Catalog.
