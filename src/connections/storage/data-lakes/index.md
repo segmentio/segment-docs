@@ -14,9 +14,7 @@ To learn more, read our blog post on [Cultivating your Data Lake](https://segmen
 
 ## How Segment Data Lakes Work
 
-Data Lakes store Segment data in S3 in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also builds in logical data partitions and event tables, and integrates metadata with existing schema management tools, such as the AWS Glue Data Catalog.
-
-The resulting data set is optimized for use with systems like Spark, Athena, EMR, or Machine Learning vendors like DataBricks or DataRobot.
+Data Lakes store Segment data in S3 in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also builds in logical data partitions and event tables, and integrates metadata with existing schema management tools, such as the AWS Glue Data Catalog. The resulting data set is optimized for use with systems like Spark, Athena, EMR, or Machine Learning vendors like DataBricks or DataRobot.
 
 ![](images/dl_overview2.png)
 
