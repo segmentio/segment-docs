@@ -93,7 +93,7 @@ If Data Lakes sees a bad data type, for example text in place of a number or an 
 
 ## EMR
 
-Data Lakes uses an EMR cluster to run jobs which load events from all sources into Data Lakes. The set up instructions will have you spin up an EMR cluster using a m5.xlarge node type. Currently the cluster is always running, however the cluster will auto-scale to ensure it's not always running at full capacity. More information about the EMR specification can be found [here](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/emr).
+Data Lakes uses an EMR cluster to run jobs which load events from all sources into Data Lakes. The set up instructions have you deploy an EMR cluster using a `m5.xlarge` node type. Currently Data Lakes keeps the cluster  always running, however the cluster auto-scales to ensure it's not always running at full capacity. Check the Terraform module documentation for the [EMR specifications](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/emr).
 
 ## IAM
 
