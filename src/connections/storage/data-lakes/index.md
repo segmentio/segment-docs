@@ -160,6 +160,6 @@ The most common limits to keep in mind are:
 - Tables per database: 200,000
 - Characters in a column name: 250
 
-If the limit is met or exceeded, we will skip creating the tables for the events which exceed this limit. However you can reach out to your AWS account representative to increase these limits.
+Segment stops creating new tables for the events after you exceed this limit. However you can contact your AWS account representative to increase these limits.
 
 Here are [additional considerations](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html) when using AWS Glue Data Catalog.
