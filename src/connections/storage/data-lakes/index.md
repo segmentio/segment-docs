@@ -153,7 +153,7 @@ You can find details on Amazon's [pricing for Glue page](https://aws.amazon.com/
 
 ##### What limits does AWS Glue have?
 
-AWS Glue has limits across various factors, such as number of databases per account, tables per account, etc. A full list of Glue limits can be found [here](https://docs.aws.amazon.com/general/latest/gr/glue.html#limits_glue).
+AWS Glue has limits across various factors, such as number of databases per account, tables per account, and so on. See the [full list of Glue limits](https://docs.aws.amazon.com/general/latest/gr/glue.html#limits_glue) for more information.
 
 The most common limits to keep in mind are:
 - Databases per account: 10,000
