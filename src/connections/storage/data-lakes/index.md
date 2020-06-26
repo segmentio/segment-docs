@@ -30,7 +30,7 @@ Segment sends data to S3 by orchestrating the processing in an EMR (Elastic MapR
 ![](images/dl_vpc.png)
 
 
-### Using a data lakes with a data warehouse
+### Using a data lake with a data warehouse
 
 Data Lakes provides a flexible blob storage solution to Data teams as they scale.
 
