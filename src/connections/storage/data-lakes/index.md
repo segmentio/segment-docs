@@ -162,4 +162,4 @@ The most common limits to keep in mind are:
 
 Segment stops creating new tables for the events after you exceed this limit. However you can contact your AWS account representative to increase these limits.
 
-Here are [additional considerations](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html) when using AWS Glue Data Catalog.
+You should also read the [additional considerations](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html) when using AWS Glue Data Catalog.
