@@ -222,11 +222,11 @@ Functions execute only in response to incoming data, but the environments that f
 This example code fetches an access token from an external API and refreshes it every hour:
 
 ```js
-const TOKEN_EXPIRE_SECS = 60 * 60 // 1 hour
+const TOKEN_EXPIRE_MS = 60 * 60 * 1000 // 1 hour
 let token = null
 async function getAccessToken () {
   const now = new Date().getTime()
-  if (!token || now - token.ts > TOKEN_EXPIRE_SECS) {
+  if (!token || now - token.ts > TOKEN_EXPIRE_MS) {
     const resp = await fetch('https://example.com/tokens', {
       method: 'POST'
     }).then(resp => resp.json())
