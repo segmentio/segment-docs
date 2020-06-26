@@ -84,7 +84,7 @@ Data Lakes infers the data type for the event it receives. Data Lakes looks at t
 The data types supported in Glue are bigint, decimal(38,6), string, boolean, and timestamp.
 
 #### Schema evolution
-Once the data type is set, Data Lakes does not change the data type for a column in the Glue tables. If the data type seen in a sync is different from the column type set in the Glue table, Data Lakes will try to cast the column to the target data type.
+Data Lakes does not change the data type for a column in the Glue tables once it has been set. If incoming data does not match the data type in an existing Glue table, Data Lakes tries to cast the column to the target data type.
 
 If the data type in Glue is wider than the data type for a column in an on-going sync (e.g., decimal vs integer, string vs integer), then the column is casted to the wider type in the Glue table. Alternatively, if the column is narrower (e.g., integer in the table versus decimal in the data), then in the case of numbers, some data might lose precision or might get dropped if it cannot be casted at all. Note that the original data still contains this data so the types can be fixed and a replay can ensure no data is lost.
 
