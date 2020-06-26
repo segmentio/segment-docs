@@ -149,7 +149,7 @@ Data types and labels available in Protocols are not currently supported by Data
 
 ##### What is the cost to use AWS Glue?
 
-The pricing for Glue can be found [here](https://aws.amazon.com/glue/pricing/). For reference, Data Lakes creates 1 table per event type in your source and adds 1 partition per hour to the event table.
+You can find details on Amazon's [pricing for Glue page](https://aws.amazon.com/glue/pricing/). For reference, Data Lakes creates 1 table per event type in your source, and adds 1 partition per hour to the event table.
 
 ##### What limits does AWS Glue have?
 
