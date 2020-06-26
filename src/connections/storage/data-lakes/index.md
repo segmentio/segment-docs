@@ -89,7 +89,7 @@ Once the data type is set, Data Lakes does not change the data type for a column
 If the data type in Glue is wider than the data type for a column in an on-going sync (e.g., decimal vs integer, string vs integer), then the column is casted to the wider type in the Glue table. Alternatively, if the column is narrower (e.g., integer in the table versus decimal in the data), then in the case of numbers, some data might lose precision or might get dropped if it cannot be casted at all. Note that the original data still contains this data so the types can be fixed and a replay can ensure no data is lost.
 
 #### Changing data types
-If a bad data type is seen, such as text in place of a number or an incorrectly formatted date, Data Lakes attempts a best effort conversion to cast the field to the target data type. Fields that cannot be cast may be dropped. You can also correct the data type in the schema to the desired type and Replay to ensure no data is lost. [Contact Segment Support](https://segment.com/help/contact/) if you find a data type needs to be corrected.
+If Data Lakes sees a bad data type, for example text in place of a number or an incorrectly formatted date, it attempts a best effort conversion to cast the field to the target data type. Fields that cannot be cast may be dropped. You can also correct the data type in the schema to the desired type and Replay to ensure no data is lost. [Contact Segment Support](https://segment.com/help/contact/) if you find a data type needs to be corrected.
 
 ## EMR
 
