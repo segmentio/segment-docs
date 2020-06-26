@@ -14,16 +14,14 @@ To learn more, read our blog post on [Cultivating your Data Lake](https://segmen
 
 ## How Segment Data Lakes Work
 
-Data Lakes blends the experience of using our existing S3 destination and data warehouse destination to build a clean customer data lake on top of Segment to query and glean insights from. Data Engineering, Analysts, and Data Science teams can keep hot and cold data in different places, manage storage costs, remove resource contention, and have a flexible model to consume data across Parquet to build materialized views and aggregations.
-
-![](images/dl_overview2.png)
-
 Data Lakes makes Segment data in S3 more actionable and accessible for customers by:
 - Storing Segment data in a read-optimized encoding format (Parquet initially)
 - Building in logical data partitions and event tables
 - Integrating metadata with existing schema management tools, such as the AWS Glue Data Catalog.
 
 The resulting data set is optimized for use with systems like Spark, Athena, EMR, or Machine Learning vendors like DataBricks or DataRobot.
+
+![](images/dl_overview2.png)
 
 Segment sends data to S3 by orchestrating the processing in an EMR (Elastic MapReduce) cluster within your AWS account using an assumed role. Customers using Data Lakes own and pay AWS directly for these AWS services.
 
