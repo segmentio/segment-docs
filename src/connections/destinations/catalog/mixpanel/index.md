@@ -602,7 +602,7 @@ If you choose to include anonymous users when you create an audience, you must u
 
 ## Setting Up Personas and Mixpanel
 
-To send computed traits or audiences to Mixpanel, you first must connect it to your Personas space. Once it's set up, you can select Intercom as a destination for Personas data when you create computed traits or audiences.
+To send computed traits or audiences to Mixpanel, you first must connect it to your Personas space. Once it's set up, you can select Mixpanel as a destination for Personas data when you create computed traits or audiences.
 
 1. Navigate to the Destinations tab in your Personas space.
 2. Search for Mixpanel and click add destination.
