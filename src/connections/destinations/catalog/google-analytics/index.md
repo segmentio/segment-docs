@@ -3,61 +3,41 @@ title: Google Analytics Destination
 strat: google
 ---
 
-<!-- TOC depthFrom:1 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
-
- - [Getting Started](#getting-started)
- - [Page & Screen](#page-screen)
- - [Identify](#identify)
- - [Track](#track)
- - [E-Commerce](#e-commerce)
- - [Enhanced E-Commerce](#enhanced-e-commerce)
- - [Server Side](#server-side)
- - [Features](#features)
- - [Troubleshooting](#troubleshooting)
-
-<!-- /TOC -->
-
-## Deprecating Mobile SDKs
-
-Using Segment's Google Analytics mobile SDKs you could previously measure and optimize user engagement with your mobile-apps. On October 31st 2019, Google is sunsetting the Google Analytics mobile-apps reporting based on the Google Analytics Services SDKs for Android and iOS. This means all data collection and processing for properties that receive data from the Google Analytics Service SDK for mobile apps will stop. Google is deprecating Google Analytics in favor of Firebase SDKs. Read the [migration tutorial](migrating) to learn more about how to migrate your Google Analytics mobile-apps to Segment's Firebase SDK.
+> warning "Migrate mobile implementations to Firebase"
+> Google ended support for Google Analytics on iOS and Android mobile apps on October 31st 2019. To continue to continue measuring and optimizing user engagement in your mobile-apps, [migrate your implementation to use the Firebase SDKs](migrating).
 
 
 ## Getting Started
 
-Segment supports Google Analytics client-side and the server-side tracking.
-To use Google Analytics for mobile devices, you must use [Google Firebase](/docs/connections/destinations/catalog/firebase/) instead of the original Google Analytics destination. See the [migration guide](migration/) for more instructions.
+Segment supports Google Analytics client-side and server-side tracking.
+To use Google Analytics for mobile devices, you must use [Google Firebase](/docs/connections/destinations/catalog/firebase/) instead of the original Google Analytics destination. See the [migration guide](migrating/) for more instructions.
 
 When you enable the Google Analytics destination in Segment, this is what happens:
 
-  - The Segment CDN is updated within 45 minutes. The Segment snippet starts asynchronously loading the Google Analytics javascript library on your web page. **This means you should remove Google's snippet from your page.**
+  - The Segment CDN updates within 45 minutes. The Segment snippet starts asynchronously loading the Google Analytics javascript library on your web page. **This means you should remove Google's snippet from your page.**
 
   - Your Google Analytics real-time dashboard starts showing live, concurrent visitors.
 
   - Google Analytics starts automatically collecting data on your site. It takes several hours for Google to process this data and add it to your reports, but you should still see events appear in the Google Analytics real-time events dashboard.
 
-Segment supports Google Analytics client-side and the server-side tracking.
-
-These docs will only cover GA Universal features, since the [Classic tracking method has been depreciated](http://analytics.blogspot.com/2014/04/universal-analytics-out-of-beta-into.html).
-
-- - -
+> info "Classic tracking deprecated"
+> These docs cover Google Analytics Universal features, since the [Classic tracking method has been depreciated](http://analytics.blogspot.com/2014/04/universal-analytics-out-of-beta-into.html).
 
 
-## Page & Screen
+## Page and Screen
 
-When you call [`page`](/docs/connections/spec/page), we send a pageview to Google Analytics. Pageviews can be sent from the browser or through any of our server-side libraries.
+When you call [`page`](/docs/connections/spec/page/), Segment sends a `pageview` to Google Analytics. You can send pageviews from the browser, or using any of the [Segment server libraries](/docs/connections/sources/catalog/#server).
 
-The resulting `page` event name in Google Analytics will correspond to the `fullName` of your page event. `fullName` consists of a combination of the `category` and `name` parameters. For example, `analytics.page('Home');` would produce a `Home` page event in GA's dashboard, whereas `analytics.page('Retail Page', 'Home');` would produce an event called `Retail Page Home`.
+The resulting `page` event name in Google Analytics corresponds to the `fullName` of the page event. `fullName` consists of a combination of the `category` and `name` parameters. For example, `analytics.page('Home');` produces a `Home` Page event in the Google Analytics dashboard, but `analytics.page('Retail Page', 'Home');` produces an event called `Retail Page Home`.
 
-Note that when sending `page` views from one of Segment's server-side libraries, a `url` property is required. Otherwise, Google Analytics will silently reject your `page` event.
+When you send Page events from a server library you must include a `url` property, or else Google Analytics silently rejects the Page event.
 
-If you are sending a [`screen`](/docs/connections/spec/screen) call server-side, you must pass in an [application name](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#appName) through Segment's `context.app.name` object or Google will reject your event.
-
-If you've set an application name in your Android or iOS project, Segment will grab the name and pass `context.app.name` automatically. For iOS, Segment collects your project's `infoDictionary` and uses whatever name you've set there. You can see [Segment's iOS Library code in action](https://github.com/segmentio/analytics-ios/blob/760be85a5119c2e8bd31a745ce2ec30385a0ad69/Pod/Classes/Internal/SEGSegmentIntegration.m#L110), and you can read more about how to [set the display name for your iOS app](https://developer.apple.com/library/content/qa/qa1823/_index.html).
+If you send a [`screen`](/docs/connections/spec/screen) call using a server library, you must pass in an [application name](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#appName) using Segment's `context.app.name` object, or Google rejects your event.
 
 
 ### Virtual Pageviews
 
-Virtual pageviews are when you send a pageview to Google Analytics when the page URL didn't actually change. You can do this through Segment by simply calling [`page`](/docs/connections/spec/page) with optional properties, like this:
+Virtual pageviews are when you send a pageview to Google Analytics when the page URL didn't actually change, for example when a full-screen modal dialog appears. You can do this with Segment by making a [Page call](/docs/connections/spec/page/) with optional properties, like in the following example.
 
 ```javascript
 analytics.page({
@@ -69,98 +49,93 @@ analytics.page({
 ```
 
 
-### URL Query Strings
+### Including URL Query Strings
 
-By default we will only send the domain and path to Google Analytics. For example, if someone lands on:
+By default Segment only sends the domain and path to Google Analytics. For example, if someone views a page with the url `http://example.com/pagename/?xyz=123&r=5`, Segment sends `http://example.com/pagename/` to Google Analytics as the URL.
 
-```
-http://domain.com/page/?xyz=123&r=5
-```
-
-Segment will send this as the URL to Google Analytics:
-
-```
-http://domain.com/page/
-```
-
-In some cases, like using Google Analytics to track search queries, you may want to pass the whole URL with query string to Google Analytics. To make that happen check the **Include the Query String in Pageviews** box under Advanced Options in the Google Analytics sheet on the Segment destinations catalog.
-
+In some cases, for example if you're tracking search queries, you might want to include the whole URL including the query string to Google Analytics. To do this, go to the Google Analytics destination settings in the Segment App, navigate to the Advanced Options section, and check **Include the Query String in Pageviews**.
 
 ## Identify
 
-It is against Google's terms of service to pass Personally Identifiable Information (PII) to your Google Analytics reporting interface. For that reason Segment will never pass anything from an [`identify`](/docs/connections/spec/identify) call to Google unless you specifically tell us to. You can read about Google's best practices for avoiding this [here](https://support.google.com/analytics/answer/6366371?hl=en).
+It is against Google's terms of service to pass Personally Identifiable Information (PII) to the Google Analytics reporting interface. For that reason Segment never passes anything from an [Identify call](/docs/connections/spec/identify/) to Google unless you specifically tell it to. You can read about Google's best practices for avoiding this [here](https://support.google.com/analytics/answer/6366371?hl=en).
 
 
 ### User ID
 
-Google Analytics Universal tracking method allows you to set a user ID for your identified visitors. [Read more here](https://support.google.com/analytics/answer/3123663).
+[Google Analytics Universal tracking method](https://support.google.com/analytics/answer/3123663) allows you to set a user ID for your identified visitors.
 
-To use this feature you must enable User-ID in your Google Analytics property and create a User-ID view, [read more here](https://support.google.com/analytics/answer/3123666).
+To use this feature you must [set up User-ID in your Google Analytics property](https://support.google.com/analytics/answer/3123666) and create a User-ID view.
 
-If you want to pass the `id` from your [`identify`](/docs/connections/spec/identify) calls to Google Analytics - enable **Send User-ID to GA** in your Advanced Google Analytics settings on the Segment destinations catalog.
+To pass the `id` from your [Identify calls](/docs/connections/spec/identify) to Google Analytics, go to the Google Analytics destination settings in the Segment App, navigate to the Advanced Options section, and enable the **Send User-ID to GA** setting.
 
-Here's an example:
+An example call might look like the following:
 
 ```javascript
 analytics.identify('12345', {
-  email: 'example@example.com',
+  email: 'jakep@example.com',
   name: 'Jake Peterson'
 });
 ```
 
-In this example we will set the `User-ID` to `12345` for Google Analytics, but we won't share the `email` or `name` traits with Google.
+In this example set the `User-ID` to `12345` for Google Analytics, but don't share the `email` or `name` traits with Google.
 
-If you are passing an **email**, **phone number**, **full name** or other PII as the `id` in [`identify`](/docs/connections/spec/identify) do not use this feature. That is against the Google Analytics terms of service and your account could be suspended.
+If you are passing an **email**, **phone number**, **full name** or other PII as the `id` in an [Identify call](/docs/connections/spec/identify) do not use this feature. That is against the Google Analytics terms of service and your account could be suspended.
 
 
 ### Custom Dimensions
 
-Google Analytics has multiple scopes for each custom dimensions: hit (synonymous with events), session, user, product (required enhanced ecommerce to be enabled). Our client-side analytics.js library supports all of them.
+Google Analytics has multiple scopes for each custom dimensions: hit (synonymous with events), session, user, product (which requires that enhanced ecommerce be enabled). Segment's device-mode [Analytics.js library](/docs/connections/sources/catalog/libraries/website/javascript/) supports all of them.
 
-Configuring Custom Dimensions:
-First, configure the Custom Dimensions in your Google Analytics admin page. [Read how to set those up here](https://support.google.com/analytics/answer/2709829?hl=en).
+#### Setting up Custom Dimensions
+First, [configure the Custom Dimensions](https://support.google.com/analytics/answer/2709829?hl=en) from your Google Analytics admin page.
 
-Once you are set up in Google Analytics, you are ready to map traits and properties to your custom dimensions.
-From your Segment Dashboard, open the destinations catalog and select the Google Analytics destination, then Settings. Locate Custom Dimensions and declare the mapping.
+Once you finish this set up in Google Analytics, you can to map traits and properties to your custom dimensions. Go to the Google Analytics destination settings in the Segment App and locate the **Custom Dimensions** setting. This is where you will enter your mapping.
 
-Here's an example of mapping "Gender" to dimension "1" and "User Type" to dimension "2":
+The following images show an example of mapping "Gender" to dimension "1" and "User Type" to dimension "2":
 
 On Segment:
 ![custom dimension mapping screenshot](images/dimension-mapping.png)
 On Google:
 ![custom dimension mapping screenshot](images/dimension-mapping-google-analytics.png)
 
-**Note:** A particular trait or property may only be mapped to a single Custom Dimension at a time.
+You can only map each trait or property to one Custom Dimension at a time.
 
-Once all your dimensions have been mapped, we will check user traits and properties in [`identify`](/docs/connections/spec/identify), [`track`](/docs/connections/spec/track) and [`page`](/docs/connections/spec/page) calls to see if they are defined as a dimension. If they are defined in your mapping, we will send that dimension to Google Analytics.
+When you finish mapping your dimensions and save the settings, Segment checks if the user traits and properties in [Identify](/docs/connections/spec/identify/), [Track](/docs/connections/spec/track/) and [Page](/docs/connections/spec/page/) calls are defined as a dimension. If they are defined in your mapping, Segment sends that dimension to Google Analytics.
 
-**Note:** Traits in [`Identify`](/docs/connections/spec/identify) calls that map to Custom Dimensions will only be recorded to Google Analytics when the next [`track`](/docs/connections/spec/track) or [`page`](/docs/connections/spec/page) call is fired from the browser.
+**Note:** Traits in [Identify calls](/docs/connections/spec/identify) that map to Custom Dimensions are only recorded to Google Analytics when the next [Track call](/docs/connections/spec/track) or [Page call](/docs/connections/spec/page) is fired from the browser.
 
-Continuing the example above, we can set the **Gender** trait with the value of **Male**, which maps to `dimension9`, and it will be passed to Google Analytics **when we make the 'Viewed History' [`track`](/docs/connections/spec/track) call**.
+Continuing the example above, we can set the **Gender** trait with the value of **Male**, which maps to `dimension9`, and it will be passed to Google Analytics _when we make the 'Viewed History' Track call_.
 
-```javascript
+You would make the following Identify call:
+```js
 analytics.identify({
   Gender: 'Male'
 });
 ```
+
+And then the following Track call:
 ```javascript
 analytics.track('Viewed History');
 ```
+
 ### Server side Identify
 
-If you are sending `.identify()` calls from your server side libraries or have Segment Cloud Apps that send back `.identify()` calls with enriched user traits, you can send that data to your GA account using custom dimensions and metrics. Unlike the client side destination which has the luxury of browsers and the global window `ga` tracker, for server side we will check your `traits` and your settings for custom dimension/metric mappings and send it with an explicit event.
+If you are sending Identify calls from your server libraries or have Segment Cloud Apps that send back Identify calls with enriched user traits, you can send that data to your GA account using custom dimensions and metrics.
 
-You can specify in the setting what you want this event action to be named. We will fallback to a default of **'User Enriched'**. Since event category is also required, you can specify which `trait` you want us to set this value as. For example, if you send a trait such as `type`, we will set the value of `traits.type` as the event category if defined and otherwise, we will fallback to **'All'**.
+Unlike the client-based destination which can use the browser and the global window `ga` tracker, for server library implementations Segment checks your `traits`, then checks your settings for custom dimension or metric mappings, and then sends the Identify with an explicit event.
 
-**NOTE**: We will always mark this event as a **Non Interaction** hit. This is also **only** available if you are using Universal GA.
+You can specify what the event action should be called in the Google Analytics settings. If you don't specify a name, Segment uses a default of event **'User Enriched'**. Since an event category is also required, you can specify which `trait` you want Segment to set this value to. For example, if you send a trait such as `type`, Segment sets the value of `traits.type` as the event category if defined, and if it is not, sets it to the default value **'All'**.
+
+> note ""
+> **Note**: Segment always marks this event as a **Non Interaction** evemt. This is _only_ available if you are using Universal GA.
 
 ### A/B Test Versions to Dimensions
 
-Segment makes it simple to save your A/B testing versions to custom dimensions in Google Analytics. All you have to do is map an experiment to a custom dimension in the Google Analytics Advanced Options inside Segment.
+Segment makes it simple to save your A/B testing versions to custom dimensions in Google Analytics by mapping an experiment to a custom dimension in the Google Analytics destination settings.
 
-If you are using Cloud-mode or server-side Google Analytics destinations, you can also send this data automatically using our `experiment_id`, `experiment_name`, `variation_id`, and `variation_name` properties. If both an experiment and variation are defined, then this will send automatically. Note that we will use the ids over the names, if both exist (for example, sending experiment_id, experiment_name, and variation_name in a call will ultimately send experiment_id and variation_name).
+If you are using Cloud-mode or server-side Google Analytics destinations, you can also send this data automatically using our `experiment_id`, `experiment_name`, `variation_id`, and `variation_name` properties. If both an experiment and variation are defined, then this is sent automatically. Segment uses the ids before using the names. If both an ID and a name exist, Segment sends the ID first. For example, if you an `experiment_id`, an `experiment_name`, and a `variation_name` in a call, only the `experiment_id` and `variation_name` are sent to Google Analytics.
 
-When you have an active A/B test on a page, Segment will either set that experiment as a property or a user trait, depending on how you opt to send experiment data to other tools on your A/B testing tool's Segment settings page. The property or trait for A/B test experiments are labeled like this:
+When you have an active A/B test on a page, Segment either sets that experiment as a property or a user trait, depending on how you choose to send experiment data to other tools on your A/B testing tool's Segment settings page. The property or trait for A/B test experiments are labeled like the following examples:
 
 ```javascript
 'Experiment: EXPERIMENT_NAME': 'EXPERIMENT_VARIATION'
@@ -172,17 +147,18 @@ For example, if you have an experiment called **Home CTA** and a visitor sees a 
 'Experiment: Home CTA': 'Create free account now'
 ```
 
-If you want to record that property or trait as a custom dimension you'd map **Experiment: Home CTA** to a custom dimension, like this:
+To record that property or trait as a custom dimension you would map **Experiment: Home CTA** to a custom dimension, as in the following example:
 
 ![a b test custom dimension mapping screenshot](images/ab-mapping.png)
 
-*Remember: You'll need to set up dimension13 inside of your Google Analytics Admin first as described at the top of this docs section.*
+> tip ""
+> **Tip!** Remember to set up `dimension13` in your Google Analytics Admin first, as described above.
 
 ## Track
 
-We'll record a Google Analytics event whenever you make a [`track`](/docs/connections/spec/track) call. You can see your events inside Google Analytics under **Behavior** -> **Events** -> **Overview**. Keep reading for more details about the Google Analytics event category, action, label, value and how to populate them.
+Segment records a Google Analytics event whenever you make a [Track call](/docs/connections/spec/track). You can see your events inside Google Analytics under **Behavior** -> **Events** -> **Overview**. Keep reading for more details about the Google Analytics event category, action, label, value and how to populate them.
 
-Events can be sent from the browser or your server. Here's a basic [`track`](/docs/connections/spec/track) example:
+You can send events from the browser or your server. Here's a basic Track call example:
 
 ```javascript
 analytics.track('Logged In');
@@ -190,18 +166,11 @@ analytics.track('Logged In');
 
 For this example these event attributes are sent to Google Analytics:
 
-<table>
-  <tr>
-    <td>**Event Category**</td>
-    <td>All</td>
-  </tr>
-  <tr>
-    <td>**Event Action**</td>
-    <td>Logged In</td>
-  </tr>
-</table>
+| **Event Category** | All       |
+| **Event Action**   | Logged In |
 
-And another [`track`](/docs/connections/spec/track/) example, this time with all Google Analytics event parameters:
+
+And another Track call example, this time with all Google Analytics event parameters:
 
 {% comment %} api-example '{
   "userId": "12345",
@@ -229,31 +198,18 @@ And another [`track`](/docs/connections/spec/track/) example, this time with all
 
 That call creates a Google Analytics event with these attributes:
 
-<table>
-  <tr>
-    <td>**Event Category**</td>
-    <td>Account</td>
-  </tr>
-  <tr>
-    <td>**Event Action**</td>
-    <td>Logged In</td>
-  </tr>
-  <tr>
-    <td>**Event Label**</td>
-    <td>Premium</td>
-  </tr>
-  <tr>
-    <td>**Event Value**</td>
-    <td>50</td>
-  </tr>
-</table>
+| **Event Category** | Account   |
+| **Event Action**   | Logged In |
+| **Event Label**    | Premium   |
+| **Event Value**    | 50        |
 
-For **Event Value** you can name the event property `value` or `revenue`. We recommend using `value` for client-side tracking and `revenue` for more accurate server-side revenue tracking. Calling it `revenue` is best if the event made you money directly. That way we can also pass the revenue data to other destinations you have enabled.
+
+For **Event Value** you can name the event property `value` or `revenue`. Segment recommends that you use `value` for client-side tracking and `revenue` for more accurate server-side revenue tracking. Calling it `revenue` is best if the event made you money directly. That way Segment can also pass the revenue data to other destinations you enable.
 
 
 ### Non-interaction Events
 
-Google Analytics allows you to tag some events as ["non-interaction" events](https://support.google.com/analytics/answer/1033068#NonInteractionEvents). To create an event with the `nonInteraction` flag just pass us an event property labeled `nonInteraction` with the value of 1. You can also set all events to be non-interactive by default in the Advanced Options.
+Google Analytics allows you to tag some events as ["non-interaction" events](https://support.google.com/analytics/answer/1033068#NonInteractionEvents). To create an event with the `nonInteraction` flag, pass Segment an event property labeled `nonInteraction` with the value of `1`. You can also set all events to be non-interactive by default in the Advanced Options.
 
 Here's an example:
 
@@ -275,47 +231,40 @@ Here's an example:
 }
 ```
 
-- - -
 
 
-## E-Commerce
+## Enabling E-Commerce tracking
 
-Segment supports Google Analytics basic e-commerce tracking across all our libraries. All you have to do is adhere to our [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/) and we'll record the appropriate data to Google Analytics.
+Segment supports Google Analytics basic e-commerce tracking across all our libraries. All you have to do is follow to our [E-commerce tracking spec](/docs/connections/spec/ecommerce/v2/) and Segment records the appropriate data to Google Analytics.
 
+Before you begin, enable Ecommerce tracking for the view you want to track transactions to. You can do this in Google Analytics by navigating to **Admin > View Settings** and switching the **Ecommerce Settings** switch to ON.
 
-### Required Steps
+Transactions do not appear in your reports until you enable this setting.
 
-All of our [e-commerce events](/docs/connections/spec/ecommerce/v2/) are recommended, but not required. The only required event is `Order Completed`. For each order completed you must include an `orderId`, and for each product inside that order, you must include an `id` and `name` for each product. **All other properties are optional**.
-
-The most important thing to remember in Google's Universal Analytics is to enable e-commerce tracking for the view you want to track transactions to. This can be done inside of Google Analytics by clicking:
-
-**Admin > View Settings > Ecommerce Settings switch to ON**
-
-Without this step transactions will not show up in your reports.
+All of our [Ecommerce spec events](/docs/connections/spec/ecommerce/v2/) are recommended, but not required. The only required event is `Order Completed`. For each order completed you must include an `orderId`, and for each product inside that order, you must include an `id` and `name` for each product. **All other properties are optional**.
 
 
-## Enhanced E-Commerce
+## Enabling Enhanced E-Commerce tracking
 
-Segment supports Google Analytics Enhanced E-Commerce tracking across both our client-side (analytics.js, android-analytics, ios-analytics) and server-side destinations. Enhanced Ecommerce allows you to derive insights by combining impression data, product data, promotion data, and action data. This is required for product-scoped custom dimensions.
+Segment supports Google Analytics Enhanced E-Commerce tracking across both our client-side (analytics.js, android-analytics, ios-analytics) and server-side destinations. Enhanced Ecommerce allows you to combine impression data, product data, promotion data, and action data. This is required for product-scoped custom dimensions.
 
-To get started, you need only enable enhanced ecommerce and adhere to our standard [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), and we'll record the data to Google Analytics with their enhanced ecommerce API.
+To get started, enable enhanced ecommerce and use the standard [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/), and Segment records the data to Google Analytics formatted using their enhanced ecommerce API.
 
-### Required Steps (enhanced)
+Before you begin, enable Ecommerce tracking for the view you want to track transactions to. You can do this in Google Analytics by navigating to **Admin > View Settings** and switching the **Ecommerce Settings** switch to ON.
+
+Next, go to your Google Analytics destination settings in the Segment App, and enable **Enhanced Ecommerce**.
 
 Similar to regular e-commerce, the only required event is `Order Completed`. This call also must include an `orderId` and an array of products, each containing an `id` or `name`.
 
-For all events that include product details you must pass either `name` or `product_id`. For `product_id` we default to `properties.product_id` and fallback to `properties.sku`.
-
-*Segment's Android SDK v2.0.0 does not support `properties.sku` since no mapping to this property is available in Google's latest SDK, so you must pass a product_id.*
+For all events that include product details, you must pass either `name` or `product_id`. For `product_id` Segment defaults to `properties.product_id` and fallback to `properties.sku`.
 
 **All other properties are optional**. The Refunded Order event also requires an `orderId`.
 
-In order to see Enhanced E-Commerce data in your reports, you must be using Google Analytics Universal and enable Enhanced E-Commerce in your Google Analytics:
+> warning ""
+> **Note**: Segment's Android SDK v2.0.0 does not support `properties.sku` since no mapping to this property is available in Google's latest SDK. Instead, pass this as a `product_id`.
 
-**Admin > View Settings > Enhanced Ecommerce Settings switch to ON**
 
-Lastly, you have to enable Enhanced Ecommerce in the Google Analytics destination settings.
-
+<!-- copyedit mark --> 
 ### Measuring Checkout Steps
 
 To take full advantage of all the features of Enhanced E-commerce, you should take advantage of some specific events. The biggest differentiator between e-commerce and enhanced e-commerce is support for checkout steps. To take advantage of tracking your checkout funnel and measuring metrics like cart abandonment, etc, you'll first need to configure your checkout funnel in the Google Analytics admin interface, giving easily readable labels to the numeric checkout steps:

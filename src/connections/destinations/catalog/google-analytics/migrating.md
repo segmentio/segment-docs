@@ -9,6 +9,8 @@ strat: google
 Using Segment's Google Analytics mobile SDKs you could previously measure and optimize user engagement with your mobile-apps. On October 31st 2019, Google is sunsetting the Google Analytics mobile-apps reporting based on the Google Analytics Services SDKs for Android and iOS. This means all data collection and processing for properties that receive data from the Google Analytics Service SDK for mobile apps will stop. Google is deprecating Google Analytics in favor of Firebase SDKs. View the [migration tutorial below](#migrating-deprecated-google-analytics-mobile-sdks-to-firebase) to learn more about how to migrate your Google Analytics mobile-apps to Segment's Firebase SDK.
 
 
+If you've set an application name in your Android or iOS project, Segment will grab the name and pass `context.app.name` automatically. For iOS, Segment collects your project's `infoDictionary` and uses whatever name you've set there. You can see [Segment's iOS Library code in action](https://github.com/segmentio/analytics-ios/blob/760be85a5119c2e8bd31a745ce2ec30385a0ad69/Pod/Classes/Internal/SEGSegmentIntegration.m#L110), and you can read more about how to [set the display name for your iOS app](https://developer.apple.com/library/content/qa/qa1823/_index.html).
+
 ### Providing Required Field Display Name
 
 Google Analytics requires the `context.app.name` passed in each call. Since the `analytics-ios` SDK pulls it in [locally](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-110725), you may see the error "`context.app.name` required" if you are not providing a `CFBundleDisplayName` within your **Info.plist** file.
