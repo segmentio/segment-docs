@@ -1,7 +1,8 @@
 ---
 title: Google Cloud Function Destination
-rewrite: true
+hide-cmodes: true
 beta: true
+strat: google
 ---
 
 Segment makes it easy to send your data to Google Cloud Function (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to Google Cloud Function in the format they understand. [Learn more about how to use Google Cloud Function with Segment.](/docs/connections/destinations/catalog/google-cloud-function)

@@ -1,5 +1,6 @@
 ---
 title: Google Cloud Pub/Sub Destination
+strat: google
 ---
 
 ## Getting Started

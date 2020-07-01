@@ -32,7 +32,7 @@ apply plugin: 'com.google.gms.google-services'
 
 ***Project-level build.gradle***: Add Google Services dependency and their Maven repo location to repositories:
 
-```
+```js
 buildscript {
     dependencies {
         // Add this line
