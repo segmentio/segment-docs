@@ -4,7 +4,7 @@ strat: google
 ---
 
 > warning "Migrate mobile implementations to Firebase"
-> Google ended support for Google Analytics on iOS and Android mobile apps on October 31st 2019. To continue to continue measuring and optimizing user engagement in your mobile-apps, [migrate your implementation to use the Firebase SDKs](migrating).
+> Google ended support for Google Analytics on iOS and Android mobile apps on October 31st 2019. To continue measuring and optimizing user engagement in your mobile apps, [migrate your implementation to use the Firebase SDKs](migrating).
 
 
 ## Getting Started
@@ -26,9 +26,9 @@ When you enable the Google Analytics destination in Segment, this is what happen
 
 ## Page and Screen
 
-When you call [`page`](/docs/connections/spec/page/), Segment sends a `pageview` to Google Analytics. You can send pageviews from the browser, or using any of the [Segment server libraries](/docs/connections/sources/catalog/#server).
+When you make a [Page call](/docs/connections/spec/page/), Segment sends a `pageview` to Google Analytics. You can send pageviews from the browser, or using any of the [Segment server libraries](/docs/connections/sources/catalog/#server).
 
-The resulting `page` event name in Google Analytics corresponds to the `fullName` of the page event. `fullName` consists of a combination of the `category` and `name` parameters. For example, `analytics.page('Home');` produces a `Home` Page event in the Google Analytics dashboard, but `analytics.page('Retail Page', 'Home');` produces an event called `Retail Page Home`.
+The resulting `page` event name in Google Analytics corresponds to the `fullName` of the page event. `fullName` consists of a combination of the `category` and `name` parameters. For example, `analytics.page('Home');` produces a Page event called `Home` in the Google Analytics dashboard, but `analytics.page('Retail Page', 'Home');` produces an event called `Retail Page Home`.
 
 When you send Page events from a server library you must include a `url` property, or else Google Analytics silently rejects the Page event.
 
@@ -264,15 +264,16 @@ For all events that include product details, you must pass either `name` or `pro
 > **Note**: Segment's Android SDK v2.0.0 does not support `properties.sku` since no mapping to this property is available in Google's latest SDK. Instead, pass this as a `product_id`.
 
 
-<!-- copyedit mark --> 
 ### Measuring Checkout Steps
 
-To take full advantage of all the features of Enhanced E-commerce, you should take advantage of some specific events. The biggest differentiator between e-commerce and enhanced e-commerce is support for checkout steps. To take advantage of tracking your checkout funnel and measuring metrics like cart abandonment, etc, you'll first need to configure your checkout funnel in the Google Analytics admin interface, giving easily readable labels to the numeric checkout steps:
+To take get the most out of the Enhanced E-commerce features, you should implement some specific events. The biggest difference between "e-commerce" and "enhanced e-commerce" is support for checkout steps. To track your checkout funnel and measure metrics like cart abandonment, etc, you must first configure your checkout funnel in the Google Analytics admin interface to give each checkout step an easily readable label.:
 
 ![enhanced ecommerce checkout funnel](images/checkout-funnel.png)
 
-Then you'll instrument your checkout flow with `Viewed Checkout Step` and `Completed Checkout Step` for each step of the funnel you configured in the Google Analytics admin interface, passing the step number and step-specific options through as a property of those events:
+Next, add `Viewed Checkout Step` and `Completed Checkout Step` events to your checkout flow for each step of the funnel you set up in Google Analytics. Make sure you pass the step number and step-specific options as a property of those events, as in the examples below.
 
+
+The example below shows two Track calls: one for when the user first arrives at the first checkout step, and one for when they complete it. These correspond to the "Review Cart" funnel step in the example image above.
 ```js
 //upon arrival at first checkout step ('Review Cart' per the screenshot example above)
 analytics.track('Viewed Checkout Step', {
@@ -283,7 +284,10 @@ analytics.track('Viewed Checkout Step', {
 analytics.track('Completed Checkout Step', {
   step: 1
 });
+```
 
+Next, are two Track calls for entering and exiting the second step of the funnel, "Collect Payment Info".
+```js
 //upon arrival at second checkout step ('Collect Payment Info' per the screenshot example above)
 analytics.track('Viewed Checkout Step', {
   step: 2
@@ -297,7 +301,10 @@ analytics.track('Completed Checkout Step', {
 //if this is the payment step
   paymentMethod: 'Visa'
 });
+```
 
+The next four examples are similar, for the additional two steps in the checkout flow. By instrumenting these, you can tell where a user leaves the checkout process.
+```js
 //upon arrival at third checkout step ('Confirm Purchase Details' per the screenshot example above)
 analytics.track('Viewed Checkout Step', {
   step: 3
@@ -323,19 +330,21 @@ analytics.track('Completed Checkout Step', {
 });
 ```
 
-*Note*: `shippingMethod` and `paymentMethod` are semantic properties so if you want to send that information, do so in this exact spelling!
+> info ""
+> **Note**: Both `shippingMethod` and `paymentMethod` are semantic properties and part of the [Ecommerce spec](/docs/connections/spec/ecommerce/v2/). Use the exact spelling if you want to send these properties.
 
-You can have as many or as few steps in the checkout funnel as you'd like. The 4 steps above merely serve as an example. Note that you'll still need to track the `Order Completed` event per our standard [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
+The four steps above are only an example, and you can create as many steps in your funnel as you need. You still must track the `Order Completed` event per our standard [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/) after you've tracked the checkout steps.
 
-For client-side integrations we use Google Analytics' ProductAction class to track Checkout Steps and Options. You can read their developer docs for information on specific methods:
+For client-side integrations we use Google Analytics' `ProductAction` class to track Checkout Steps and Options. You can read the Google Analytics developer docs for information on specific methods:
+<!-- commenting out until we can confirm that these aren't useful. the pages are still up, if all mobile needs to use firebase this seems weird to include here
 - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/ProductAction)
-- [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_product_action)
+- [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_product_action)-->
 - [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)
 - [Analytics.js - E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce)
 
 ### Measuring Promotions
 
-Enhanced Ecommerce allows you to go beyond measuring product performance to measure the internal and external marketing efforts that support those products. To take advantage of enhance e-commerce's promotion reports, you can easily collect data about promotion impressions and promotion clicks with Analytics.js, like so:
+Enhanced Ecommerce allows you to measure the internal and external marketing efforts that support your sales. To use Enhanced Ecommerce's promotion reports, collect data about promotion impressions and promotion clicks with Analytics.js, like in the following examples:
 
 ```js
 analytics.track('Viewed Promotion', {
@@ -356,14 +365,18 @@ analytics.track('Clicked Promotion', {
 ```
 
 For client-side integrations, we use Google Analytics' Promotions class to measure promotions. You can read their developer docs for information on specific methods:
+<!-- same note as above re mobile
 - [Android](https://developers.google.com/android/reference/com/google/android/gms/analytics/ecommerce/Promotion)
-- [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_promotion)
+- [iOS](https://developers.google.com/analytics/devguides/collection/ios/v3/reference/interface_g_a_i_ecommerce_promotion)-->
 - [Analytics.js - Enhanced E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce)
 - [Analytics.js - E-Commerce](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce)
 
 ### Coupons
 
-If you want to send coupon data to your `Order Completed` event when using Enhanced E-commerce, you can simply add the `coupon` property on the order level or the product level or both. In the below example, note that our Google Analytics Ecommerce destination accepts `total` *or* `revenue`, but not both. We recommend using `revenue` because several other destinations use `revenue` too. For better flexibility and total control over tracking, we let you decide how to calculate how coupons and discounts are applied. For example:
+To send coupon data to your `Order Completed` event when using Enhanced E-commerce, you can add the `coupon` property on the order level, or the product level, or both. In the example below, the Segment Google Analytics Ecommerce destination accepts `total` *or* `revenue`, but not both. We recommend that you use `revenue` for compatibility with several other destinations that also use the term `revenue`.
+
+For better flexibility and total control over tracking, Segment lets you decide how to calculate how coupons and discounts are applied. For example:
+<!-- This example needs more explanantion - which of the lines are most interesting to us? what are we looking at here?-->
 
 ```js
 analytics.track({
@@ -404,11 +417,12 @@ analytics.track({
 
 ### Measuring Product Impressions
 
-Enhanced Ecommerce also allows you to collect impression information from users who have viewed or filtered through lists containing products. This allows you to collect information about which products have been viewed in a list, which filters/sorts have been applied to a list of search results, and the positions that each product had within that list.
+Enhanced Ecommerce also allows you to collect impression information from users who have viewed or filtered through lists containing products. This allows you to collect information about which products have been viewed in a list, which filters or sorts they applied to a list of results, and the positions of each product within that list.
 
-Product impressions are mapped to our 'Product List Viewed' and 'Product List Filtered' analytics.js events. You can find more information about the parameters and requirements here in our [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/).
+Product impressions are mapped to our 'Product List Viewed' and 'Product List Filtered' Analytics.js events. You can find more information about the parameters and requirements here in our [Ecommerce tracking spec](/docs/connections/spec/ecommerce/v2/).
 
-Analytics.js allows you to easily collect this data and send it forward, like such:
+Analytics.js allows you to easily collect and send this data, like in the examples below:
+<!-- need more explanation of what we're looking at here. -->
 
 ```js
 analytics.track('Product List Viewed', {
@@ -457,9 +471,9 @@ analytics.track('Product List Filtered', {
 
 ### Refunds
 
-For refunds to work, you need to have enhanced e-commerce turned on.
+To view refund in Google Analytics, you must have enhanced e-commerce enabled.
 
-For full refunds, fire this event whenever an order/transaction gets refunded:
+For full refunds, you can send this event when an order or transaction is refunded:
 
 ```js
 analytics.track('Order Refunded', {
@@ -467,7 +481,7 @@ analytics.track('Order Refunded', {
   });
 ```
 
-For partial refunds, you must include the productId and quantity for the items you want refunded:
+For partial refunds, you must include the `productId` and quantity for the items refunded:
 
 ```js
 analytics.track('Order Refunded', {
@@ -481,21 +495,22 @@ analytics.track('Order Refunded', {
   });
 ```
 
-- - -
+
 
 ## Server Side
 
-When you track an event or pageview with one of our server-side libraries or [HTTP API](/docs/connections/sources/catalog/libraries/server/http/) we will send it along to the Google Analytics REST API.
+When you track an event or pageview with one of our server-side libraries or [HTTP API](/docs/connections/sources/catalog/libraries/server/http/) Segment sends it to the Google Analytics REST API.
 
-**You must include a server-side tracking ID in your Google Analytics destination settings or we won't pass server-side events to Google Analytics.** The tracking ID can be the same UA code as your regular property ID, or you can choose to send the server-side events to a separate Google Analytics property.
+**You must include a server-side tracking ID in your Google Analytics destination settings or else Segment cannot pass server-side events to Google Analytics.** The tracking ID can be the same UA code as your regular property ID, or you can choose to send the server-side events to a separate Google Analytics property.
 
+<!-- copyedit mark -->
 ### Combining Server-side and Client-side Events
 
 Google Analytics uses cookies to keep track of visitors and their sessions while visiting your website. The cookie data is stored in the visitor's browser, and is sent along to Google Analytics every time a new pageview or event occurs. This allows Google Analytics to show a single unique visitor between multiple page reloads.
 
 Your servers also have access to this cookie, so they can re-use it when you send server-side events to Segment. If you don't use the existing cookie Segment has to create a new one to make the server-side request to Google Analytics. When we create a new cookie the client-side and server-side events from the same user will look like two distinct visitors in Google Analytics.
 
-If you want to use server-side Google Analytics, there are three options with Segment:
+To use server-side Google Analytics, there are three options with Segment:
 
 1. **Pass your Google Analytics cookies to Segment (preferred).**
 2. Use two Google Analytics profiles: one for client-side data and one for server-side data.
@@ -589,7 +604,7 @@ Your UTM params need to be passed in the `context` object in `context.campaign`.
 
 ## Features
 
-We support all of the following Google Analytics features:
+Segment supports the following Google Analytics features.
 
 - [Client-side (Analytics.js) library methods](#client-side-library-methods)
 - [Anonymize IP Address](#anonymize-ip-address)
@@ -608,6 +623,9 @@ We support all of the following Google Analytics features:
 - [Virtual Pageviews](#virtual-pageviews)
 - [Optimize](#optimize)
 - [User Deletion](#user-deletion)
+
+> success ""
+> In general, Segment's Google Analytics destination supports Google Analytics Universal features, and does not support the deprecated Google Analytics Classic features.
 
 ### Client-Side Library Methods
 
