@@ -76,7 +76,7 @@ Upon activation of an Optimizely experiment, an “Experiment Viewed” `track` 
 
 
 > note ""
-> **Note:** This functionality is automatically enabled for Optimizely Web experiments when using this Destination, but this particular behavior is more source-like. 
+> **Note:** This functionality is automatically enabled for Optimizely Web experiments when using this Destination. In this case, the integration is acting as both a Destination and a Source, enriching and sending data (Experiment Decisions and Exposure events) to Segment that can be leveraged in other platforms. 
 
 #### Standard or Redirect Experiments
 
