@@ -72,3 +72,22 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 }
 ```
 Segment sends Screen calls to Supervised AI as a `screenview`.
+
+## Group
+
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+
+```js
+{
+  "type": "group",
+  "groupId": "0e8c78ea9d97a7b8185e8632",
+  "traits": {
+    "name": "FooBar",
+    "industry": "Insurance",
+    "employees": 329,
+    "plan": "enterprise",
+    "total billed": 830
+  }
+}
+```
+Segment sends Group calls to Supervised AI as a `group` event.
