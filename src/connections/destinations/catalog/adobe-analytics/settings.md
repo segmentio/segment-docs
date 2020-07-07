@@ -260,7 +260,13 @@ When you make a `page` call, here's what Segment does from the browser in our A.
 
 
 ## Conversion Variables - eVars 
-<!-- TODO -->
+
+Custom Conversion variables, also known as eVars, are how Adobe segments conversion success metrics in custom marketing reports. To learn more about eVars and how to configure them see Adobe's [documentation here](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html). 
+
+You must configure an eVar mapping in your Segment destination settings to send eVars to Adobe on `.track()` and `.page()` calls. When configuring the mapping, the list of eVars must be defined in the Adobe Analytics UI. Map your Adobe Analytics eVar names to the Segment property names you’re using in your Segment events. Enter a Segment property name on the left and an Adobe Analytics eVar number on the right. You can view your Segment events and properties in your Schema.
+
+An example eVar mapping in the Segment Destination settings UI should look like this:
+![](images/eVar-mapping.png)
 
 ## Merchandising Events
 
