@@ -1,6 +1,7 @@
 ---
 title: Migrating mobile analytics from Google Analytics to Firebase
 strat: google
+hidden: true 
 ---
 
 Using Segment's Google Analytics mobile SDKs you could previously measure and optimize user engagement with your mobile-apps. On [October 31st 2019, Google sunset the Google Analytics mobile-apps reporting](https://support.google.com/firebase/answer/9167112?hl=en) using the Google Analytics Services SDKs for Android and iOS. This means all data collection and processing stopped for properties that received data from the Google Analytics Service SDK for mobile apps. Google deprecated Google Analytics in favor of Firebase SDKs.

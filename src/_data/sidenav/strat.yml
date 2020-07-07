@@ -32,12 +32,12 @@ sections:
   section:
   - path: /connections/destinations/catalog/firebase
     title: Google Firebase (mobile analytics) destintation
-  - path: /connections/destinations/catalog/google-analytics/migrating
-    title: Migrating mobile code from Google Analytics to Firebase
   - path: /connections/destinations/catalog/google-analytics
     title: Google Analytics destintation
   - path: /connections/destinations/catalog/doubleclick-floodlight
     title: DoubleClick Floodlight destintation
+  - path: /connections/destinations/catalog/personas-display-video-360
+    title: Using Personas with Google DV360 (Beta)
   - path: /connections/destinations/catalog/google-ads-classic
     title: Google Ads Classic destintation
   - path: /connections/destinations/catalog/google-ads-gtag
