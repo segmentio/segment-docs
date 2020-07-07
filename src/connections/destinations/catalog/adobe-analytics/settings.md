@@ -378,24 +378,19 @@ Custom Traffic Variables, also known as props, allow you to correlate custom dat
 
 ## List Variables - lVars 
 
-You can map your Segment properties in your settings to any of your three list variables.
+List variables are similar to eVars except you can send multiple values for the same hit. You can map your Segment properties in your settings to any of your list variables.
 
-You can either send the property value as a comma delimited string (ie. `'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults joins it as a comma delimited string before sending it to Adobe. To set up a custom delimiter, see the [documentation section on custom delimiters](https://segment.com/docs/connections/destinations/catalog/adobe-analytics/#custom-delimiter).
+To represent the miltiple values in list, you can either send the property value as a comma delimited string (ie. `'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it as a comma delimited string before sending it to Adobe. To set up a custom delimiter, see the [documentation section below on custom delimiters](https://segment.com/docs/connections/destinations/catalog/adobe-analytics/#custom-delimiter).
 
 ### Custom Delimiter
 
-For list variables and props, you can either send the property value as a comma delimited string (ie. `'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). In your Segment settings UI, **List Variable and Prop Custom Delimiter: Server-Side Only**, you can configure a custom delimiter to join the array before sending to Adobe. If you choose to send those properties as an array, without configuring a custom delimiter, we default to join it so that it is a comma delimited string.
-<!-- TODO this has  changed in  V2  UI and  has a bug -->
+For list variables you can either send the property value as a comma delimited string (ie. `'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). In your Segment settings UI, **List Variables**, you can configure a custom delimiter to join the array before sending to Adobe. If you choose to send those properties as an array, without configuring a custom delimiter, we default to join it so that it is a comma delimited string.
+<!-- TODO this has  changed in  V2  UI and  has a bug and add back props -->
 
 **Note:** You must configure the custom delimiter in the Adobe Analytics dashboard for each list variable and prop prior to instantiating this mapping.
 
-For the following List Variable and Prop Mapping configured in the Segment UI:
-![](images/list-var-map.png)
-
-![](images/prop-map.png)
-
-Here is an example of how to configure the Segment custom delimiter mapping:
-![](images/map-delimiter.png)
+Here is an example of how to configure the Segment custom delimiter mapping for a List Variable:
+![](images/list-var-delimiter.png)
 
 When you send an event:
 ```javascript
@@ -403,13 +398,12 @@ analytics.track({
    userId: 'user12345',
    event: 'Event1',
    properties: {
-    list_var1: ['hello', 'world'],
-    prop1: ['howdy', 'yall']
+    list_var1: ['hello', 'world']
    }
 });
 ```
 
-Segment concatenates `list_var1` into `hello|world` and `prop1` into `howdy:yall` before sending it to Adobe. The XML request to Adobe includes `<list1>hello|world<list1>` and `<prop1>howdy:yall<prop1>`.
+Segment concatenates `list_var1` into `hello|world` before sending it to Adobe. The XML request to Adobe includes `<list1>hello|world<list1>`.
 
 
 ## Hierarchy Variablse - hVars
