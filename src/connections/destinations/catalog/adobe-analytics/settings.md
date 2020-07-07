@@ -11,8 +11,8 @@ In this section we will discuss in detail how to configure your Segment Adobe An
 2. [Conversion Variables (eVars)](#conversion-variables---eVars)
 4. [Merchandising Variables](#merchandising-events)
 4. [Custom Traffic Variables (props)](#custom-traffic-variables---props)
-5. [List Variables (lVars)](#list-variables---lVars)
-6. [Heirarchy Variables (hVars)](#hierarchy-variables---hVars)
+5. [List Variables (lVars)](#list-variables---lvars)
+6. [Heirarchy Variables (hVars)](#hierarchy-variables---hvars)
 7. [Segment Destination Specific Options](#segment-destination-specific-options)
 
 ## Implementing Success Events
@@ -406,7 +406,7 @@ analytics.track({
 Segment concatenates `list_var1` into `hello|world` before sending it to Adobe. The XML request to Adobe includes `<list1>hello|world<list1>`.
 
 
-## Hierarchy Variablse - hVars
+## Hierarchy Variables - hVars
 
 Hierarchy variables mirror how customers can track “breadcrumbs” or “breadcrumb trails”  which is a type of secondary navigation scheme that reveals the user’s location in a website or Web application. To learn more about list variables and how to configure them in the Adobe UI, see the documentation [here](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/hier.html).
 
@@ -533,3 +533,4 @@ This option is only available cloud mode aka server side. This option allows you
       }
     }
  });
+```
