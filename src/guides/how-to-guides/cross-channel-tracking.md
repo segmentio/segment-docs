@@ -147,7 +147,7 @@ It's common for customers to discover you on their desktop before making the pur
 
 Tracking with JavaScript in the browser has its benefits, such as leveraging browser technologies to automatically track things like UTM parameters, referring domain, IP address, and user agent. But here are a few reasons why it might make sense for your store to track on the server side.
 
-*   Are your customers technically savvy and use ad blockers? Ad blockers restrict requests from a list of blacklisted domains to your browser, which means that none of your event tracking will work properly. If you sell to a technical audience, it is possible that you may be underreporting your analytics by a material amount.
+*   Are your customers technically savvy and use ad blockers? Ad blockers restrict requests from a list of blocklisted domains to your browser, which means that none of your event tracking will work properly. If you sell to a technical audience, it is possible that you may be underreporting your analytics by a material amount.
 
 *   Do you have multiple devices? If you have multiple devices with the same customer check out flow, moving those events to the server-side will reduce your surface area of your code base. This means less maintenance and faster changes.
 
