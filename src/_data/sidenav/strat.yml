@@ -5,6 +5,10 @@ sections:
   section:
   - path: /connections/destinations/catalog/adobe-analytics
     title: Adobe Analytics destination
+  - path: /connections/destinations/catalog/adobe-analytics/settings
+    title: Segment Adobe Analytics Settings
+  - path: /connections/destinations/catalog/adobe-analytics/identity
+    title: Identity Resolution in Segment Adobe Analytics
   - path: /connections/destinations/catalog/adobe-analytics/mobile
     title: Set up Adobe Analytics for mobile
   - path: /connections/destinations/catalog/adobe-analytics/heartbeat
