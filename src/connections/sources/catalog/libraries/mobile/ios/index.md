@@ -161,7 +161,7 @@ The `identify` call has the following fields:
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
-    <td>A dictionary of extra [options](/libraries/ios/#integrations) for the call.</td>
+    <td>A dictionary of extra [options](/docs/connections/sources/libraries/mobile/ios/#selecting-destinations) for the call.</td>
   </tr>
 </table>
 
@@ -203,7 +203,7 @@ The `track` call has the following fields:
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
-    <td>A dictionary of extra [options](/libraries/ios/#selecting-integrations) for the call.</td>
+    <td>A dictionary of extra [options](/docs/connections/sources/libraries/mobile/ios/#selecting-destinations) for the call.</td>
   </tr>
 </table>
 
@@ -234,7 +234,7 @@ The `screen` call has the following fields:
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
-    <td>A dictionary of extra [options](/libraries/ios/#integrations) for the call.</td>
+    <td>A dictionary of extra [options](/docs/connections/sources/libraries/mobile/ios/#selecting-destinations) for the call.</td>
   </tr>
 </table>
 
@@ -270,7 +270,7 @@ The `group` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -297,7 +297,7 @@ The `alias` call has the following fields:
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
-    <td>A dictionary of extra [options](/libraries/ios/#integrations) for the call.</td>
+    <td>A dictionary of extra [options](/docs/connections/sources/libraries/mobile/ios/#selecting-destinations) for the call.</td>
   </tr>
 </table>
 

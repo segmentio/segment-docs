@@ -316,7 +316,7 @@ Analytics.with(context).identify("123", traits, options);
 
 #### Identity verification plus filtering using Destinations Object
 
-If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-integrations), the context object looks like this:
+If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-destinations), the context object looks like this:
 
 ```js
 {

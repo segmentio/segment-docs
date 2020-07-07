@@ -889,7 +889,7 @@ If a user comes back to your site after a cookie has expired, Analytics.js check
 
 ## Troubleshooting
 
-The console reveals all! [Learn how to access the Javascript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger-).
+The console reveals all! [Learn how to access the Javascript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger).
 Any `analytics.js` methods may be executed manually. Use the Network tab to inspect requests.
 
 ### Are you loading `analytics.js`?
