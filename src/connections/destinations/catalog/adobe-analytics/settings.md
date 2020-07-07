@@ -378,7 +378,7 @@ Custom Traffic Variables, also known as props, allow you to correlate custom dat
 
 ## List Variables - lVars 
 
-List variables are similar to eVars except you can send multiple values for the same hit. You can map your Segment properties in your settings to any of your list variables.
+List variables are similar to eVars except you can send multiple values for the same hit. You can map your Segment properties in your settings to any of your list variables. To learn more about list variables and how to configure them in the Adobe UI, see the documentation [here](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/list.html).
 
 To represent the miltiple values in list, you can either send the property value as a comma delimited string (ie. `'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it as a comma delimited string before sending it to Adobe. To set up a custom delimiter, see the [documentation section below on custom delimiters](https://segment.com/docs/connections/destinations/catalog/adobe-analytics/#custom-delimiter).
 
