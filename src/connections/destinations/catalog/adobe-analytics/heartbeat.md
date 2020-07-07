@@ -3,7 +3,10 @@ title: Setting up Adobe Analytics Heartbeat
 strat: adobe
 ---
 
-Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and Javascript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/). At this time, Adobe Heartbeat is only available for events sent device mode.
+Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and Javascript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
+
+> info ""
+> At this time, Adobe Heartbeat is only available for events sent device mode.
 
 Before you start, complete these required steps.
 
@@ -23,7 +26,7 @@ Then, set up your mobile libraries:
 
 For Android:
 
-- If you  haven’t done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46) to download the core adobeMobileLibrary  and configure in your Android project. Add the ABDMobileConfig.json to your project from the downloaded SDK. 
+- If you  haven’t done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46) to download the core adobeMobileLibrary  and configure in your Android project. Add the ABDMobileConfig.json to your project from the downloaded SDK.
 - Download the latest version of the `MediaSDK.jar` file and include it in your Android project, as outlined in [Adobe's documentation here](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
 - Follow the remaining set up steps [outlined here](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
 
