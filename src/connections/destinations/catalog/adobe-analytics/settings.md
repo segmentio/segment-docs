@@ -13,7 +13,7 @@ In this section we will discuss in detail how to configure your Segment Adobe An
 4. [Custom Traffic Variables (props)](#custom-traffic-variables---props)
 5. [List Variables (lVars)](#list-variables---lVars)
 6. [Heirarchy Variables (hVars)](#hierarchy-variables---hVars)
-7. [Segment Options Object](#segment-options-object)
+7. [Segment Integration Options Object](#segment-integration-options-object)
 
 ## Implementing Success Events
 When getting started with sending Success Events to Adobe, you can choose to use the [automatic Ecommerce Spec mapping](#using-default-ecommerce-spec-events) so you don't have to set up a mapping in Segment and Adobe. If you need event support beydont the the standard Ecommerce spec, to support more event types or different ones, you can implement custom [Track events](#creating-custom-track-events) or [Page calls](#creating-page-calls). 
@@ -407,9 +407,14 @@ Segment concatenates `list_var1` into `hello|world` before sending it to Adobe. 
 
 
 ## Hierarchy Variablse - hVars
-<!-- TODO -->
 
-## Segment Options Object 
+Hierarchy variables mirror how customers can track “breadcrumbs” or “breadcrumb trails”  which is a type of secondary navigation scheme that reveals the user’s location in a website or Web application. To learn more about list variables and how to configure them in the Adobe UI, see the documentation [here](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/hier.html).
+
+Map your Adobe Analytics hVars to the property names you’re using in your Segment page calls. Enter a Segment property name on the left and an Adobe Analytics hVar number on the right. You can view your Segment page calls and properties in your Schema.
+
+![](images/hier-mapping.png)
+
+## Segment Integration Options Object 
 The Adobe Analytics destination offers a couple of different ways to configure behavior using destination specific options. These are options that are defined in your event payloads rather than in the Segment app. To use these options, you must define them as values of an object in the following property of your Segment event payloads:
 
 ```javascript
