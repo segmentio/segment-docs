@@ -270,7 +270,7 @@ An example eVar mapping in the Segment Destination settings UI should look like 
 
 ## Merchandising Events
 
-The Merchandising Events settings allow you to set eVars and events on a per-product basis within the "products" string, and support increment and currency events. This provides robust product string support, which you can read more about [here](https://marketing.adobe.com/resources/help/en_US/sc/implement/products.html).
+The Merchandising Events setting allows you to set eVars and events on a per-product basis within the "products" string, and supports increment and currency events. This provides robust product string support, which you can read more about [here](https://marketing.adobe.com/resources/help/en_US/sc/implement/products.html).
 
 The setting operates as follows:
 
@@ -282,7 +282,8 @@ The setting operates as follows:
 
 Let's take the following example:
 
-![](images/merchandising-events.png)
+![](images/merch-var-event-scope.png)
+![](images/merch-var-prod-scope.png)
 
 The configuration in the example image above configures a `Product Added` Segment event which sends Adobe Analytics:
 - `event1` in `s.events` with the value passed from `properties.increment`.
@@ -293,8 +294,8 @@ The configuration in the example image above configures a `Product Added` Segmen
 
 _Considerations_:
 - We also pass in `event2` without a value on `s.events`, as this is a requirement for Adobe.
-- We still map to Adobe's predefined `scAdd` event.
-- we use dot notation for product values, for example `products.priceStatus` parses through properties for this value.
+- We still map to Adobe's predefined `scAdd` event. See default [Ecommerce Spec events](#using-default-ecommerce-spec-events)
+- We use dot notation for product values, for example `products.priceStatus` parses through properties for this value.
   - This includes the product string, so if you want a value nested in products, you would configure `products.priceStatus`.
 
 Once you have the above example mapping configured, you send in the relevant event to Segment.
@@ -310,7 +311,7 @@ analytics.track({
       product_id: '342039402fsl12njfs',
       sku: 'G-32',
       priceStatus:'promo',
-      increment: i,
+      increment: 20,
       category: 'Games',
       name: 'The Settlers of Catan',
       brand: 'Kosmos',
@@ -325,7 +326,7 @@ analytics.track({
   });
   ```
 
-The `s.events` call passes in `scAdd` and `event1= 20`, and `s.products` passes in `event2=18.99` and `evar1=discounted|evar2=MAYDEALS`.
+The `s.events` call passes in `scAdd` and `event1=20`, and `s.products` passes in `event2=18.99` and `evar1=discounted|evar2=MAYDEALS`.
 
 The resulting request payload to Adobe looks like:
 
@@ -335,6 +336,7 @@ The resulting request payload to Adobe looks like:
 ```
 
 ### Page Example:
+You can send Merchandising events on `.page()` calls. In order to send `<events>` on `page`, you must pass in `events` on the Adobe Analytics integration option. We merge the configured event within the setting with the array passed in. In the example below, we pass in `scAdd`, as this is not automatically mapped on `page`.
 
 ```javascript
 analytics.page({
@@ -358,13 +360,12 @@ analytics.page({
       image_url: 'https://www.example.com/product/path.jpg'
     },
     integrations: {
-    "Adobe Analytics": {
-      "events": ["scAdd"]
-    }
-  },
+      "Adobe Analytics": {
+        "events": ["scAdd"]
+      }
+    },
   });
   ```
-**Note** To send `<events>` on `page`, you must pass in `events` on the Adobe Analytics integration option. We merge the configured event within the setting with the array passed in. In the example above, we pass in `scAdd`, as this is not automatically mapped on `page`.
 
 ## Properties - props 
 
