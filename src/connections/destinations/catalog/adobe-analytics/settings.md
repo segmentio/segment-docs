@@ -13,7 +13,7 @@ In this section we will discuss in detail how to configure your Segment Adobe An
 4. [Custom Traffic Variables (props)](#custom-traffic-variables---props)
 5. [List Variables (lVars)](#list-variables---lVars)
 6. [Heirarchy Variables (hVars)](#hierarchy-variables---hVars)
-7. [Segment Integration Options Object](#segment-integration-options-object)
+7. [Segment Destination Specific Options](#segment-destination-specific-options)
 
 ## Implementing Success Events
 When getting started with sending Success Events to Adobe, you can choose to use the [automatic Ecommerce Spec mapping](#using-default-ecommerce-spec-events) so you don't have to set up a mapping in Segment and Adobe. If you need event support beydont the the standard Ecommerce spec, to support more event types or different ones, you can implement custom [Track events](#creating-custom-track-events) or [Page calls](#creating-page-calls). 
@@ -414,7 +414,7 @@ Map your Adobe Analytics hVars to the property names you’re using in your Segm
 
 ![](images/hier-mapping.png)
 
-## Segment Integration Options Object 
+## Segment Destination Specific Options 
 The Adobe Analytics destination offers a couple of different ways to configure behavior using destination specific options. These are options that are defined in your event payloads rather than in the Segment app. To use these options, you must define them as values of an object in the following property of your Segment event payloads:
 
 ```javascript
@@ -515,6 +515,21 @@ This option allows you to associate a standard Visitor ID with the event.
  });
  ```
 
-<!-- ## Link Names, Link URLs, Link Types
-See [this](#setting-custom-linktypes-linknames-and-linkurls) section for information about configuring these as options. 
-TODO: This link is dead and there is no associated section so need to add-->
+### Link Names, Link URLs, Link Types
+This option is only available cloud mode aka server side. This option allows you to customize link report parameters for link names, link URLs, and link types. The default `linkType` Segment is `o` which is a custom link. For `linkType` you can also choose to pass `d` or `e` for download and exit links. 
+
+```javascript
+ analytics.track({
+    userId: '019mr8mf4r',
+    event: 'Gotta catch em all',
+    properties: {
+     caught: 1738
+    },
+    integrations: {
+      'Adobe Analytics': {
+        linkUrl: 'http://customLinkNameUrl.com',
+        linkType: 'e', 
+        linkName: 'Custom Exit Link'
+      }
+    }
+ });
