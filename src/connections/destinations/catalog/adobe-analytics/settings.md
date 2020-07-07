@@ -10,7 +10,7 @@ In this section we will discuss in detail how to configure your Segment Adobe An
 1. [Success Events](#implementing-success-events)
 2. [Conversion Variables (eVars)](#conversion-variables---eVars)
 4. [Merchandising Variables](#merchandising-events)
-4. [Properties (props)](#properties---props)
+4. [Custom Traffic Variables (props)](#custom-traffic-variables---props)
 5. [List Variables (lVars)](#list-variables---lVars)
 6. [Heirarchy Variables (hVars)](#hierarchy-variables---hVars)
 7. [Segment Options Object](#segment-options-object)
@@ -367,11 +367,14 @@ analytics.page({
   });
   ```
 
-## Properties - props 
+## Custom Traffic Variables - props 
 
-You can map your Segment properties in your settings to any of your Adobe props.
+Custom Traffic Variables, also known as props, allow you to correlate custom data with specific traffic-related events in Adobe. To learn more about props and how to configure them in the Adobe UI, see the documentation [here](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/traffic-variables/traffic-var.html). You can map your Segment properties in your destination settings to any of your Adobe props.
 
-You can either send the property value as a string (ie. `'brady'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it so that it is a pipe (`|`) delimited string before sending to Adobe (ie. `'brady|edelman|blount'`). If you would like to set up a custom delimiter  see our documentation [here](https://segment.com/docs/connections/destinations/catalog/adobe-analytics/#custom-delimiter) for configuring custom delimiters.
+<!-- You can either send the property value as a string (ie. `'brady'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it so that it is a pipe (`|`) delimited string before sending to Adobe (ie. `'brady|edelman|blount'`). If you would like to set up a custom delimiter  see our documentation [here](https://segment.com/docs/connections/destinations/catalog/adobe-analytics/#custom-delimiter) for configuring custom delimiters. -->
+
+
+<!-- TODO: Commenting this out because I need to fix V2 UI in app for props to show delimiter and ths is  curently only available SS -->
 
 ## List Variables - lVars 
 
