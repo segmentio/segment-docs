@@ -1,13 +1,13 @@
 ---
-title: Segment Adobe Analytics Settings
+title: Implementing Segment for Adobe Analytics
 strat: adobe
 ---
 
-## Overview 
+## Data Mapping Model Overview 
 As we have mentioned elsewheree, Segment uses a user-action data model, in which we use different types of calls to track different activities of a user on a website or app. Adobe Analytics uses page views as the basic unit of activity, and specific data variables such as "props", eVars, lVars, and hVars to add details that allow more nuanced analysis.
 
 In this section we will discuss in detail how to configure your Segment Adobe Analytics Destination settings to customzie your Segment calls for Adobe Analytics. In this section we will cover: 
-1. [Success Events](#events)
+1. [Success Events](#implementing-success-events)
 2. [Conversion Variables (eVars)](#conversion-variables---eVars)
 4. [Merchandising Variables](#merchandising-events)
 4. [Properties (props)](#properties---props)
@@ -15,18 +15,13 @@ In this section we will discuss in detail how to configure your Segment Adobe An
 6. [Heirarchy Variables (hVars)](#hierarchy-variables---hVars)
 7. [Segment Options Object](#segment-options-object)
 
-## Events
-When getting started with sending Success Events to Adobe, you can choose to use the [automatic Ecommerce Spec mapping](#using-default-ecommerce-spec-events) so you don't have to set up a mapping in Segment and Adobe. If you need more event types or different ones, you can implement custom [Page calls](#creating-page-calls) and [Track events](#creating-custom-track-events) to add to the standard Ecommerce spec. 
+## Implementing Success Events
+When getting started with sending Success Events to Adobe, you can choose to use the [automatic Ecommerce Spec mapping](#using-default-ecommerce-spec-events) so you don't have to set up a mapping in Segment and Adobe. If you need event support beydont the the standard Ecommerce spec, to support more event types or different ones, you can implement custom [Track events](#creating-custom-track-events) or [Page calls](#creating-page-calls). 
 
 ### Using default Ecommerce Spec Events
 
-The Adobe Analytics destination automatically works with our standard [Ecommerce API](/docs/connections/spec/ecommerce/v2/), and automatically maps the follwing events between Segment and Adobe Analytics. 
-
-Segment sends the Ecommerce event data like a standard `track` event. These Ecommerce events are automatically mapped and sent to Adobe Analytics along with product description data. If you implement Segment events using the Ecommerce spec and naming conventions you do **NOT** need to create a mapping in your Segment Adobe destination settings. You only need to map **event names** if you want to set them as the value of an `eVar`. 
-<!-- TODO add a link to eVar docs below --> 
-<!-- TODO: You can also override or opt-out of automatically mapping the Ecommerce events by passing `integration: AA: false` as part of your call.-->
-
-Ecommerce properties such as `orderId` and `products` are also sent automatically. However, if you use other custom properties and want to send them to Adobe's `eVar`, `prop`, `hVar`, or `lVar` variables, you *do* need to map them as properties in your Segment settings.
+The Adobe Analytics destination automatically works with our standard [Ecommerce API](/docs/connections/spec/ecommerce/v2/). The following events are automatically mapped between Segment and Adobe Analytics across all our components: iOS, Android, A.js (device-mode), and Server Side (Cloud-Mode). 
+<!-- TODO LAURA to check wording of last sentence -->
 
 <table>
   <tr>
@@ -65,7 +60,14 @@ Ecommerce properties such as `orderId` and `products` are also sent automaticall
   </tr>
 </table>
 
+Segment sends the Ecommerce event data to Adobe like a standard `track` event. These Ecommerce events are automatically mapped and sent to Adobe Analytics along with product description data. If you implement Segment events using the Ecommerce spec and naming conventions you do **NOT** need to create a mapping in your Segment Adobe destination settings. You only need to map **event names** if you want to set them as the value of an `eVar`. 
+<!-- TODO add a link to eVar docs below --> 
+<!-- TODO: You can also override or opt-out of automatically mapping the Ecommerce events by passing `integration: AA: false` as part of your call.-->
+
+Ecommerce properties such as `orderId` and `products` are also sent automatically. However, if you use other custom properties and want to send them to Adobe's `eVar`, `prop`, `hVar`, or `lVar` variables, you *do* need to map them as properties in your Segment Adobe Analytics destination settings.
+
 ### Example using Segment Ecommerce spec
+<!-- Should this be moved to a new section. Like What is happening to my events? -->
 
 Given the sample `Order Completed` Segment event below:
 
@@ -138,13 +140,17 @@ Segment does the follwing:
 
 ### Creating Custom Track events
 
-Before you send Events from Segment to Adobe Analytics, you must first list which `events` to collect so you can set up a mapping. This list of `.track()` events must be defined in both Adobe Analytics, and the Segment destination settings UI, including the properties to send as custom variables.
+You can send custom `.track()` events to Adobe if you would like event support beyond the standard Ecommerce spec. We strongly recommend that you create a tracking plan for both your Segment and Adobe Analytics events before you send any events or properties to Adobe. Once you have your tracking plan prepared, you can use the list of `events` to set up a mapping in the Segment destination settings UI. 
 
-This means that you **must** create a mapping for each event and property to a corresponding Adobe Analytics `event`, `prop`, or `eVar`.
+When configuring the mapping, the list of `.track()` events must be defined in both Adobe Analytics, and the Segment destination settings UI, including the properties to send as custom data variables.
 
-The image below shows an example of how you might map variables in Segment:
+This means that you **must** create a mapping for each event and property to a corresponding Adobe Analytics `event`, `prop`, or `eVar`. 
 
-![](images/mapping-2.png)
+The image below shows an example of how you might map an event and thecorresponding custom variables in the Segment destination settings UI:
+
+![](images/event-mapping.png)
+![](images/prop-mapping.png)
+![](images/eVar-mapping.png)
 
 Using the sample settings in the image above, if you make the `.track()` call example below:
 
@@ -155,7 +161,7 @@ analytics.track('Watched Video', {
 });
 ```
 
-Here's what happens:
+Here's what happens to this event sent from the browser in our A.js or Device Mode integration:
 
 1. First Segment checks if the event name, `'Watched Video'`, is mapped in your Segment settings for Adobe Analytics.
    If you haven't configured a mapping for this event name, Segment does nothing and aborts the call.
@@ -187,7 +193,7 @@ Here's what happens:
 
 By default, the Segment snippet includes an empty `page` call. Page calls are more similar to the native Adobe tracking methodology, and don't require as extensive a mapping process.
 
-When you make a `page` call, here's what Segment does:
+When you make a `page` call, here's what Segment does from the browser in our A.js or Device Mode integration:
 
 1. Sets the Adobe property `window.s.pageName` to the `name` of the page call.
    By default, a Segment `.page()` call sets this property as `undefined` since no parameters are passed, but if you include a `name` such as `.page('Home')`, Segment sets `window.s.pageName` to `'Home'`.
@@ -229,7 +235,9 @@ When you make a `page` call, here's what Segment does:
 
    Given the mapping setting below:
 
-   ![](images/mapping-1.png)
+   ![](images/props-page-mapping.png)
+   ![](images/eVar-page-mapping.png)
+   ![](images/hier-page-mapping.png)
 
    If you make the following page call:
 
