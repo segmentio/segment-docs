@@ -616,7 +616,7 @@ There are two ways to send data to your analytics services through this library:
 
 ### Cloud-Mode in Android
 
-When an destination's SDK is not packaged, but it is enabled from your dashboard, the request goes through the Segment REST API, and is routed to the service's server-side API as [described here](/docs/connections/destinations/#connection-modes).
+When a destination's SDK is not packaged, but it is enabled from your dashboard, the request goes through the Segment REST API, and is routed to the service's server-side API as [described here](/docs/connections/destinations/#connection-modes).
 
 ### Packaging device-mode destination SDKs
 
@@ -778,7 +778,9 @@ Our Android library has support for back to API level 14 (Android 4.0). You shou
 3. Write your own SDK. You can still use most of the tools on Segment using our [HTTP API](/docs/connections/sources/catalog/libraries/server/http/). You can use either our Android or [Java source](https://github.com/segmentio/analytics-java) to get a quick headstart.
 
 
-### How can I use an destination specific feature, e.g. Mixpanel's push notifications?
+### How can I use a destination specific feature?
+
+...for example, Mixpanel's push notifications?
 
 If you're using Device-mode for a mobile destination, you can always access features from that tool's native SDK.
 

@@ -442,7 +442,7 @@ analytics.onIntegrationReady("Intercom", new Callback() {
 }
 ```
 
-You can read more about tapping into destination-specific methods on [Android here](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) and on [iOS here](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-know-when-an-destination-is-initialized-).
+You can read more about tapping into destination-specific methods on [Android here](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature) and on [iOS here](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-know-when-a-destination-is-initialized).
 
 ### Push notification and deep linking
 
@@ -466,14 +466,14 @@ If you are sending those two calls, then check that the CSS selector for the wid
 
 ### My client-side and server-side calls are going to one Segment source, but different Intercom projects
 
-Server-side calls go the the project selected when you authenticated your Intercom account while setting up the destination. Client-side calls go to the project referenced with the [App ID setting](#app-id-required-for-analytics-js-).
+Server-side calls go the the project selected when you authenticated your Intercom account while setting up the destination. Client-side calls go to the project referenced with the [App ID setting](##app-id-required-for-analyticsjs-and-mobile).
 Make sure those projects are the same.
 
 ### I'm seeing a "Cannot have more than 120 active event names" error
 
 Intercom only allows a total of [120 unique event names](http://docs.intercom.io/Intercom-for-user-analysis/Tracking-User-Events-in-Intercom#events-faqs). That means if you are sending Segment more than 120 unique event names, Intercom only accepts the first 120 events that hit their servers, and the rest throw an error.
 
-If you want to prevent some of your events from being passed to Intercom and thus prevent the error, you can filter out Intercom in those events using the [Selecting Destinations](https://segment.com/docs/guides/best-practices/should-i-instrument-data-collection-on-the-client-or-server/#selecting-destinations) feature available on all of Segment's libraries.
+If you want to prevent some of your events from being passed to Intercom and thus prevent the error, you can filter out Intercom in those events using the [Selecting Destinations](/docs/guides/how-to-guides/collect-on-client-or-server/#selecting-destinations) feature available on all of Segment's libraries.
 
 ## Using Intercom with Personas
 

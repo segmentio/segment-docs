@@ -5,7 +5,7 @@ title: Google Analytics Destination
 <!-- TOC depthFrom:1 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
  - [Getting Started](#getting-started)
- - [Page & Screen](#page-screen)
+ - [Page and Screen](#page-and-screen)
  - [Identify](#identify)
  - [Track](#track)
  - [E-Commerce](#e-commerce)
@@ -40,7 +40,7 @@ These docs will only cover GA Universal features, since the [Classic tracking me
 - - -
 
 
-## Page & Screen
+## Page and Screen
 
 When you call [`page`](/docs/connections/spec/page), we send a pageview to Google Analytics. Pageviews can be sent from the browser or through any of our server-side libraries.
 

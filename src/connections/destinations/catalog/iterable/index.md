@@ -95,7 +95,7 @@ To enable this feature, go to Destinations, Third Party, and select Segment in t
 
 ## Sending Push Notification Data from Iterable
 
-Iterable supports sending push notification events to Segment. These events are sent as `track` calls to the other destinations you've turned on. Push events are automatically enabled once the [Email Source](/docs/connections/sources/iterable/) is enabled.
+Iterable supports sending push notification events to Segment. These events are sent as `track` calls to the other destinations you've turned on. Push events are automatically enabled once the [Email Source](/docs/connections/sources/catalog/cloud-apps/iterable/) is enabled.
 
 They support the following events:
 `Push Delivered`, `Push Bounced`, `Mobile App Uninstalled`, `Push Opened`
