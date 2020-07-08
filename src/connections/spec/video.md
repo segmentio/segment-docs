@@ -73,7 +73,7 @@ The type of ad playing at the time of the event. Values can include 'pre-roll', 
 
 #### Position: `Integer`
 
-The current index position **in seconds** of the playhead. If available - this should includes the duration of any ads seen. If the playback is a livestream, check the documentation for relevant destinations for details on how to correctly pass the playhead position.
+The current index position **in seconds** of the playhead, including the duration of any ads seen (if available). If the playback is a livestream, check the documentation for relevant destinations for details on how to correctly pass the playhead position.
 
 #### Seek Position: `Integer`
 
