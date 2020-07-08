@@ -104,7 +104,7 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
 
 ## OAuth Implementation
 
-If you use a standard OAuth library in your programming language, all of this is done for you as shown in the [setup guide](#setup-guide). These steps are just for illustration.
+If you use a standard OAuth library in your programming language, all of this is done for you as shown in the [setup guide](#set-up-guide). These steps are just for illustration.
 
 1. When the user wants to authenticate, you redirect them to `https://id.segmentapis.com/oauth2/auth?response_type=code&scope=workspace:read&client_id=...`.
    > **Note**: We only accept `response_type=code` here. That means Segment returns an `auth_code` that your library exchanges for an install token in Step 5 below.

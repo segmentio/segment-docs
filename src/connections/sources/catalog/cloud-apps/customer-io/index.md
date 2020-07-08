@@ -103,4 +103,4 @@ from customerio.email_delivered
 
 ## Send data to Customer.io
 
-The Customer.io Source works better when you also connect Customer.io as an destination. With the Customer.io **Destination**, you can use Segment to send Cusotmer.io user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Customer.io? Head on over to our [Customer.io destination docs](https://segment.com/docs/connections/destinations/catalog/customer.io/).
+The Customer.io Source works better when you also connect Customer.io as a destination. With the Customer.io **Destination**, you can use Segment to send Cusotmer.io user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Customer.io? Head on over to our [Customer.io destination docs](https://segment.com/docs/connections/destinations/catalog/customer.io/).

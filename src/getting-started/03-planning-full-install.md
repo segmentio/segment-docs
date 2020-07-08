@@ -116,7 +116,7 @@ The template includes all of our Business-case ("semantic") Specs (which we ment
 
 With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](/docs/connections/sources/catalog/libraries/website/javascript/#page) and skip over that tab.
 
-The Identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](/docs/protocols/data-quality/whats-a-tracking-plan/#identifying-your-users).
+The Identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](/docs/protocols/tracking-plan/best-practices/#identify-your-users).
 
 From there, we recommend you specify Track events in the **Track (Custom)** tab. The template includes preexisting events with different numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While this might be more challenging to work with at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
 
@@ -148,7 +148,7 @@ The Group call is similar to the Identify call, but it adds traits associated wi
 
 ### Plan your Track events
 
-We recommend starting with fewer events that are directly tied to one of your [business objectives](/docs/protocols/data-quality/whats-a-tracking-plan/#define-business-objectives), to help avoid becoming overwhelmed by endless number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer more specialized questions.
+We recommend starting with fewer events that are directly tied to one of your [business objectives](/docs/protocols/tracking-plan/best-practices/#define-business-objectives), to help avoid becoming overwhelmed by endless number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer more specialized questions.
 
 At Segment, we started out tracking these events:
 

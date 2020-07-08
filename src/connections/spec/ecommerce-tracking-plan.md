@@ -110,7 +110,7 @@ Lastly, we have a set of semantic campaign events that are automatically collect
 
 You may notice a pattern in the event names. We've selected the "Object Action" naming convention to ensure that all of our event data is clean and easily analyzable, while choosing "snake\_case" for the traits and properties. It doesn't matter what you choose, so long as it's consistent. Without a uniform and enforced naming framework to guide developers that add tracking code later, your data could get marred with conflicting naming structures. Learn more about the importance of naming conventions.
 
-_We recommend tracking core checkout activity on the server-side. Learn more about_ [tracking on the client vs. server](/docs/guides/sources/client-vs-server/).
+_We recommend tracking core checkout activity on the server-side. Learn more about_ [tracking on the client vs. server](/docs/guides/how-to-guides/collect-on-client-or-server/).
 
 ## Selecting your properties
 
