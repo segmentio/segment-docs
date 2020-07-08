@@ -13,6 +13,8 @@ In this section we will discuss in detail how to configure your Segment Adobe An
 4. [Custom Traffic Variables (props)](#custom-traffic-variables---props)
 5. [List Variables (lVars)](#list-variables---lvars)
 6. [Heirarchy Variables (hVars)](#hierarchy-variables---hvars)
+<!-- 7. [Context Data Variables](#context-data-variables) -->
+<!-- TODO -->
 7. [Segment Destination Specific Options](#segment-destination-specific-options)
 
 ## Implementing Success Events
@@ -371,11 +373,12 @@ analytics.page({
 
 Custom Traffic Variables, also known as props, allow you to correlate custom data with specific traffic-related events in Adobe. To learn more about props and how to configure them in the Adobe UI, see the documentation [here](https://docs.adobe.com/content/help/en/analytics/admin/admin-tools/traffic-variables/traffic-var.html). You can map your Segment properties in your destination settings to any of your Adobe props.
 
+![](images/prop-mapping.png)
+
+<!-- TODO Uncomment once this PR is merged: https://github.com/segmentio/app/pull/10054 -->
 <!-- You can either send the property value as a string (ie. `'brady'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it so that it is a pipe (`|`) delimited string before sending to Adobe (ie. `'brady|edelman|blount'`). If you would like to set up a custom delimiter  see our documentation [here](https://segment.com/docs/connections/destinations/catalog/adobe-analytics/#custom-delimiter) for configuring custom delimiters. -->
-
-
-<!-- TODO: Commenting this out because I need to fix V2 UI in app for props to show delimiter and ths is  curently only available SS -->
-
+<!-- 
+![](images/prop-custom-delimiter.png) -->
 ## List Variables - lVars 
 
 List variables are similar to eVars except you can send multiple values for the same hit. You can map your Segment properties in your settings to any of your list variables. To learn more about list variables and how to configure them in the Adobe UI, see the documentation [here](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/list.html).
@@ -413,6 +416,10 @@ Hierarchy variables mirror how customers can track “breadcrumbs” or “bread
 Map your Adobe Analytics hVars to the property names you’re using in your Segment page calls. Enter a Segment property name on the left and an Adobe Analytics hVar number on the right. You can view your Segment page calls and properties in your Schema.
 
 ![](images/hier-mapping.png)
+
+<!-- ## Context Data Variables -->
+<!-- TODO -->
+
 
 ## Segment Destination Specific Options 
 The Adobe Analytics destination offers a couple of different ways to configure behavior using destination specific options. These are options that are defined in your event payloads rather than in the Segment app. To use these options, you must define them as values of an object in the following property of your Segment event payloads:
