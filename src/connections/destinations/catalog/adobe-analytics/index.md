@@ -4,7 +4,7 @@ hide-cmodes: true
 strat: adobe
 ---
 
-Once you enable Adobe Analytics (formerly known as Omniture/Sitecatalyst) in Segment, you can start sending data from any of our [libraries](/docs/connections/sources/catalog/) to an Adobe report suite. When you send events from our mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics `Data Insertion API`.
+Once you enable Adobe Analytics (formerly known as Omniture/Sitecatalyst) in Segment, you can start sending data from any of our [libraries](/docs/connections/sources/catalog/) to an Adobe report suite. When you send events from our mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics [Data Insertion API](https://docs.adobe.com/content/help/en/analytics/import/c-data-insertion-api.html).
 
 The following documentation provides detailed explanation of how both destination the Device-mode and Cloud-mode components work. For FAQs about Device- vs Cloud-mode tracking, unique users, identifiers, and more, see the Best Practices page!
 
@@ -22,30 +22,34 @@ The following documentation provides detailed explanation of how both destinatio
 <!-- /TOC -->
 
 ## Planning for Adobe Analytics
-Adobe Analytics uses a slightly different approach to tracking than Segment, and it's important to understand the difference so you can effectively set up your account. Segment uses a user-action data model, in which we use different types of calls to track different activities of a user on a website or app. Adobe Analytics uses page views as the basic unit of activity, and variables like "props", eVars, lVars, and hVars to add details that allow more nuanced analysis.
+Adobe Analytics uses a slightly different approach to tracking than Segment, and it's important to understand the difference so you can effectively set up your account. Segment uses a user-action data model, in which we use different types of calls to track different activities of a user on a website or app. Adobe Analytics uses page views as the basic unit of activity, and variables like custom traffic variables (aka props), eVars, list variables, and hierarchy variables to add details that allow more nuanced analysis.
 
-For example, a `Welcome Dialog Dismissed` event in Segment (where the action is "dismissed") with properties that contain the user ID (`user123`) and the dialog name `welcome-dialog`, could be modeled in Adobe Analytics as a pageView with variables for the dialog name, visitorID, and with the event name mapping the user action ("dismissed") to a variable.
+For example, a `Welcome Dialog Dismissed` event in Segment (where the action is "dismissed") with properties that contain the user ID (`user123`) and the dialog name `welcome-dialog`, could be modeled in Adobe Analytics as a pageView with variables that represent the dialog name, visitorID, and the event name mapping the user action ("dismissed") to an eVar.
 
-Both Segment and Adobe Analytics have recommended standard formats for tracking events. Segment has [the Spec](/docs/connections/spec/), and Adobe uses [predefined events](https://marketing.adobe.com/resources/help/en_US/sc/implement/event_predefined.html). Segment automatically maps incoming data that's in the Ecommerce Spec format to Adobe's predefined events, and can also map data in the Ecommerce Spec format to some of Adobe's product level properties. Video calls using the format described in this document are also automatically mapped. If you're using the Mobile SDKs, mobile lifecycle events are also automatically mapped. If you will be creating Page and Track events that are outside the scope of the Ecommerce spec, you'll need to map those to your Adobe events.
+Both Segment and Adobe Analytics have recommended standard data for tracking events. Segment has [the Spec](/docs/connections/spec/), and Adobe uses [predefined events](https://marketing.adobe.com/resources/help/en_US/sc/implement/event_predefined.html). Segment automatically maps incoming event data and some product level properties to Adobe's predefined events, when the event data is in the proper Segment Ecommerce Spec format. Video calls using the format described in this document are also automatically mapped. If you're using the Mobile SDKs, mobile lifecycle events are also automatically mapped. If you will be creating Page and Track events that are outside the scope of the Ecommerce spec, you'll need to map those to your Segment destinations settings UI.
 
 We strongly recommend that you create a tracking plan for both your Segment and Adobe Analytics events before you send any events or properties to Adobe. This will help you map your Segment events to Adobe `events`, and Segment properties to Adobe variables. If you decide to set up Adobe Analytics for mobile, you'll have to do this mapping in both the Segment settings, and the Adobe Mobile Services dashboard - so it's good to keep your options open!
 
 
 ### Choosing between Device-mode and Cloud-mode
-If you're using device-mode javascript, by default Segment "bundles" (mobile) or "wraps" (when using Analytics.js) the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics `Appmeasurement.js` library. Adobe's client-side libraries can provide services to other Adobe suites and products, however they can also increase the size of your page.
+If you're using device-mode javascript, by default Segment "bundles" (mobile) or "wraps" (when using Analytics.js) the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics [`Appmeasurement.js` library](https://docs.adobe.com/content/help/en/analytics/implementation/js/overview.html). Adobe's client-side libraries can provide services to other Adobe suites and products, however they can also increase the size of your page.
 
 If you prefer, you can enable [Cloud-mode](/docs/connections/destinations/#connection-modes), and send data through the Segment servers where it is then mapped and sent on to Adobe Analytics. You enable Cloud-mode for Javascript or Legacy sources from the Adobe Analytics source settings in the Segment app.
 
-Our Cloud-mode Adobe Analytics destination also provides support for **Adobe Mobile Services** "states", "actions", and lifecycle events, metrics, and dimensions.
+Our Cloud-mode Adobe Analytics destination also provides support for **Adobe Mobile Services** "states", "actions", and lifecycle events, metrics, and dimensions. 
+
+*Note*: Segment only supports Adobe Heartbeat through device-mode implementations, using our javascript destination or mobile SDKs unbunbled. 
 
 ### Connecting Segment to Adobe Analytics
 To set up Adobe Analytics as a destination for your Segment data, Segment needs some information on how to connect to Adobe.
 
 - If you're using Device-mode data collection with Analytics.js, or using a server-side library, you need your Adobe Report Suite ID, and your Tracking Server URL. You'll add this information in the Destination settings in the Segment app UI so that Segment can send information to Adobe. An example tracking server is `jimsbrims.sc.omtrdc.net`. You do not  need to include the hypertext transfer protocol (ie. `http://`). For more information on  how to identify your analytics tracking server and report suites see Adobe’s [documentation here](https://docs.adobe.com/content/help/en/analytics-learn/tutorials/implementation/implementation-basics/how-to-identify-your-analytics-tracking-server-and-report-suites.html).  
 
+![](images/trackingurl-setup.png)
+
 - If you're collecting data from mobile devices, you can download the `ADBMobileConfig.json` file instead of specifying these settings in the UI which contains that information. Follow the instructions in Adobe's documentation, [here for iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/dev_qs.html), and [here for Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/dev_qs.html).
 
-Once you've done that, you can either use the default Ecommerce Spec and the mappings Segment provides, or write custom Page and Track events, and then configure how they map to your Adobe Analytics fields and settings.
+Once you've done that, you can either use the default Ecommerce Spec and the mappings Segment provides, or write custom Page and Track events, and then configure how they map to your Adobe Analytics fields and settings. For more information on how to get started with implementation see our [Implementing Segment for Adobe Analytics](settings/) guide. 
 
 ### When Will I See Data?
 
@@ -61,6 +65,11 @@ Adobe Analytics has a real-time reporting feature which displays web page traffi
 
 Device-mode web data is sent using Analytics.js, with Analytics.js either serving as a wrapper/bundle around the Adobe Analytics code, or sending directly to Segment servers where the data is then sent on to the Adobe destination.
 
+Our Adobe Analytics device-mode destination code is open sourced on Github. Feel free to check it out:
+[iOS](https://github.com/segment-integrations/analytics-ios-integration-adobe-analytics),
+[Android](hhttps://github.com/segment-integrations/analytics-android-integration-adobe-analytics) and
+[JS](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/adobe-analytics).
+
 ### Initialization
 
 When you use Adobe Analytics with Analytics.js, we first check to see if you have any global properties (such as `window.s_account`) or any properties on the `window.s` object, and use them. However, if we don't find anything, we use the **Report Suite ID**, **Tracking Server URL**, and **Tracking Server Secure URL** (optional) you defined in the destination settings from the Segment app.
@@ -73,17 +82,21 @@ Our Analytics.js destination loads the Adobe `visitorAPI.js` library, but does n
 
 **Note:** We load `visitorAPI.js` in the same script as `appmeasurement.js` because Adobe Analytics requires synchronous execution of the two scripts. Using the visitor API is **optional** but if you do, we make it available on the page.
 
-To use Adobe's Marketing Cloud Visitor ID Service, enter your **Marketing Cloud Organization ID** in the **Advanced Options** in the Segment app.
+To use Adobe's Marketing Cloud Visitor ID Service, enter your **Marketing Cloud Organization ID** in the **Identity Resolution** settings tab in the Segment app.
+
+![](images/mcvid.png)
+
+---
 
 ## Cloud-mode - aka Server-side
 
-"Cloud-mode" data is data sent _without_ bundling the Segment-Adobe-Analytics SDK. It can be sent using mobile libraries, Analytics.js, and other server-based sources.
+"Cloud-mode" data is data sent _without_ bundling the Segment-Adobe-Analytics SDK. It can be sent using mobile libraries, Analytics.js, and other server-based sources. Cloud mode data is sent to Adobe using Adobe's data insertion API in XML format. To learn more about Adobe’s data insertion API see the [documentation here](https://docs.adobe.com/content/help/en/analytics/import/c-data-insertion-api.html). 
 
-*For more information on mobile native integrations using Segment's iOS and Android Adobe Analytics SDKs, see the [next section in this doc](#setting-up-adobe-analytics-for-mobile).*
+*For more information on mobile native integrations using Segment's iOS and Android Adobe Analytics SDKs, see the [section "Setting up Adobe Analytics for Mobile"](mobile/).*
 
 **Important**: For data sent from server-side libraries, you need to predefine your events and custom properties to send events to Adobe Analytics server-side destination. However, *for data sent from mobile devices*, we send *every* event along automatically, and you can use the Adobe Analytics [processing rules](https://marketing.adobe.com/resources/help/en_US/reference/processing_rules.html) UI to map actions, lifecycle dimensions, and custom properties from `contextData` to events, props and eVars.
 
-When we generate the XML to send to Adobe, there are a few things that happen:
+Our our server-side integration is not open-source. Let's explore what happens when Segment generates the XML to send to Adobe:
 
 1. If your **Timestamp Option** is **Timestamp Enabled** or **Timestamp Optional**, we set the `<timestamp>`.
 
