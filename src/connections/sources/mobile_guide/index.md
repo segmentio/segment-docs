@@ -24,6 +24,6 @@ Check out how to use custom builds for both [Android](/docs/connections/sources
 
 ### Which destination's SDKs can be bundled?
 
-To check if an destination can be bundled or not, look at [the connection modes referece page](/docs/connections/destinations/cmodes-compare/) and find the line for that specific destination. 
+To check if a destination can be bundled or not, look at [the connection modes referece page](/docs/connections/destinations/cmodes-compare/) and find the line for that specific destination. 
 
 If a destination has a checkmark in the "Device - Mobile" column, it can be bundled.

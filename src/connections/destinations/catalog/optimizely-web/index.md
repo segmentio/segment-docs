@@ -9,7 +9,7 @@ Segment's **Optimizely Web (previously Optimizely)** destination supports the fo
 
 
 * [Optimizely X Web](#optimizely-x-web)
-* [Optimizely Full Stack (JavaScript)](#optimizely-full-stack-javascript)
+* [Optimizely Full Stack (JavaScript)](#optimizely-full-stack-javascript-sdk)
 
 If you're interested in implementing Optimizely Full Stack server-side or on mobile, see Segment's [**Optimizely Full Stack** destination](https://segment.com/docs/connections/destinations/catalog/optimizelyx/), which supports:
 

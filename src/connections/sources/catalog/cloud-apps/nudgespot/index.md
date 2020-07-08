@@ -90,4 +90,4 @@ from nudgespot.email_delivered
 
 ## Send data to Nudgespot
 
-The Nudgespot Source works better when you also connect Nudgespot as an destination. With the Nudgespot **Destination**, you can use Segment to send Nudgespot user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Nudgespot? Head on over to our [Nudgespot destination docs](/docs/connections/destinations/catalog/nudgespot/).
+The Nudgespot Source works better when you also connect Nudgespot as a destination. With the Nudgespot **Destination**, you can use Segment to send Nudgespot user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Nudgespot? Head on over to our [Nudgespot destination docs](/docs/connections/destinations/catalog/nudgespot/).

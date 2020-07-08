@@ -14,4 +14,4 @@ Custom builds allow us to offer the native functionality of all of our destinati
 
 ### Which SDKs are bundled?
 
-To check if an destination is bundled or not, take a look at our [documentation](/docs/connections/destinations/) for that specific destination.
+To check if a destination is bundled or not, take a look at our [documentation](/docs/connections/destinations/) for that specific destination.

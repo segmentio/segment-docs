@@ -126,7 +126,7 @@ When we generate the XML to send to Adobe, there are a few things that happen:
 
  **Important**: The Android library can collect the `userAgent` automatically - however, the iOS library cannot do so. However, since we do collect other contextual metadata about your device, we render a valid iOS userAgent string that populates all your Mobile Web Reports.
 
-6. If you are using the [Marketing Cloud ID Service](https://marketing.adobe.com/resources/help/en_US/mcvid/mcvid_overview.html), you can pass the **Marketing Cloud Visitor ID** as an destination specific setting and we set that as `<marketingCloudVisitorID>`.
+6. If you are using the [Marketing Cloud ID Service](https://marketing.adobe.com/resources/help/en_US/mcvid/mcvid_overview.html), you can pass the **Marketing Cloud Visitor ID** as a destination-specific setting and we set that as `<marketingCloudVisitorID>`.
 
  (In Node.js)
  ```javascript

@@ -604,7 +604,7 @@ analytics.debug(false);
 ## Emitter
 
 The global `analytics` object emits events whenever you call `alias`, `group`, `identify`, `track` or `page`.
-Using the `on` method You can set listeners for these events and run your own custom code. Useful for sending data to a service for which Segment does not have an destination.
+Using the `on` method You can set listeners for these events and run your own custom code. Useful for sending data to a service for which Segment does not have a destination.
 
 ```js
 analytics.on(method, callback);
@@ -733,7 +733,7 @@ The `analytics.js` library and all of the destination libraries are loaded with 
 
 While many tools require access to the DOM or cookies, for our Zendesk, Salesforce, and MailChimp destinations, we do not load a native Javascript library! Instead data is sent from Segment's servers to the end-tools. We aim to expand on this front in the future.
 
-Only the libraries required for your **enabled** destinations are loaded. Whenever an destination is disabled, the custom version of `analytics.js` stops requesting that library.
+Only the libraries required for your **enabled** destinations are loaded. Whenever a destination is disabled, the custom version of `analytics.js` stops requesting that library.
 
 Using `analytics.js` does not offer a _huge_ performance benefit, but it is more performant than installing each of the destinations individually. And as more destinations move server-side, you'll receive more performance benefits automatically.
 

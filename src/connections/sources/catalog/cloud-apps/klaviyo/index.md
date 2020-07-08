@@ -92,4 +92,4 @@ from klaviyo.email_delivered
 
 ## Send data to Klaviyo
 
-The Klaviyo Source works better when you also connect Klaviyo as an destination. With the Klaviyo **Destination**, you can use Segment to send Klaviyo user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Klaviyo? Head on over to our [Klaviyo destination docs](/docs/connections/destinations/catalog/klaviyo/).
+The Klaviyo Source works better when you also connect Klaviyo as a destination. With the Klaviyo **Destination**, you can use Segment to send Klaviyo user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Klaviyo? Head on over to our [Klaviyo destination docs](/docs/connections/destinations/catalog/klaviyo/).
