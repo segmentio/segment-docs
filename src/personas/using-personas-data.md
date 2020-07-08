@@ -289,7 +289,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Indicative](/docs/connections/destinations/catalog/indicative/)
 - [Intellimize](/docs/connections/destinations/catalog/intellimize/)
 - [Intercom](/docs/connections/destinations/catalog/intercom/)
-- [Iron.io](/docs/connections/destinations/catalog/iron.io/)
+- [Iron.io](/docs/connections/destinations/catalog/iron-io/)
 - [Iterable](/docs/connections/destinations/catalog/iterable/)
 - [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/)
 - [Kahuna](/docs/connections/destinations/catalog/kahuna/)

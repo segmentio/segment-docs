@@ -78,10 +78,10 @@ VPCs keep servers inaccessible to traffic from the internet. With VPC, you're ab
 
 Redshift clusters can either be in a **EC2 Classic subnet** or **VPC subnet**.
 
-If your cluster has a field called `Cluster Security Groups`, proceed to [EC2 Classic](/docs/warehouses/redshift/#ec2-classic)
+If your cluster has a field called `Cluster Security Groups`, proceed to [EC2 Classic](//docs/connections/storage/catalog/redshift/#ec2-classic)
 ![](images/redshift_permissioning1.png)
 
-Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC](/docs/warehouses/redshift/#ec2-vpc)
+Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC](/docs/connections/storage/catalog/redshift/#ec2-vpc)
 ![](images/redshift_permissioning2.png)
 
 #### EC2-Classic
