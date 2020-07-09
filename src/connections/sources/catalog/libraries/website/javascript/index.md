@@ -582,7 +582,7 @@ Keep in mind that setting the `anonymousId` in `analytics.js` does not overwrite
 A user's `anonymousId` refreshes on any of the following conditions:
 
 * A user clears their cookies _and_ `localstorage`
-* [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript//#reset-logout) is called during in the user's browser session
+* [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) is called during in the user's browser session
 * `analytics.identify()` is called with a userId that differs from the current userId
 
 
@@ -902,7 +902,7 @@ The object means that you are successfully loading `analytics.js` onto your webs
 
 ![Returning analytics object error](images/CFsktto.gif)
 
-Solution: [Follow the `analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascriptquickstart/)
+Solution: [Follow the `analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
 
 ### Are you loading two instances of `analytics.js`?
 

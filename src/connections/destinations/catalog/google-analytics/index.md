@@ -1014,7 +1014,7 @@ You might wonder why Segment can't just send your Google Analytics events cloud-
 If you received this deprecation notice, your property has already been flagged for deprecation - so sending events cloud-mode won't make Google Analytics to collect and process that data after October 31st, 2019.
 
 
-## Mobile Apps - DEPRECATED
+## Mobile Apps (DEPRECATED)
 
 Segment supports Google Analytics mobile app analytics using our iOS and Android sources. For getting started with our mobile sources, check out the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/) technical docs.
 

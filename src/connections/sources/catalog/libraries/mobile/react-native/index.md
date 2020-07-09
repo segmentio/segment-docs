@@ -69,7 +69,7 @@ Note, if you are choosing to not use a dependency manager, you must keep files u
 
 In the interest of keeping our SDK lightweight, Analytics only installs the Segment destination. This means that all your data is sent using Segment's servers to any tools you've enabled using the default Cloud-mode.
 
-[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/connections/sources/catalog/libraries/mobile/react-native#packaging-integrations).
+[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](#packaging-destinations-using-device-mode).
 
 Now that the SDK is installed and setup, you're ready to...
 

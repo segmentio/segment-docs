@@ -33,7 +33,7 @@ A Bigcommerce native integration is
 
 ## Chrome Extension
 
-To add tracking to a Chrome browser extension, you can add the [analytics-node](/docs/connections/sources/catalog/libraries/node/) library, and call your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
+To add tracking to a Chrome browser extension, you can add the [analytics-node](/docs/connections/sources/catalog/libraries/server/node/) library, and call your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
 
 ## Ghost
 

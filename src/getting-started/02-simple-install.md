@@ -188,7 +188,7 @@ To keep the Segment SDK lightweight, the `Analytics` pod only installs the Segme
 
 Some destinations do not accept data from the Segment servers, and instead require that you collect the data from the device. In these cases you must bundle some additional destination code with the Segment SDK.
 
-We're going to skip over this part for now, but you can see the instructions on [how to bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios#bundling-destinations).
+We're going to skip over this part for now, but you can see the instructions on [how to bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios/#about-mobile-connection-modes).
 
 Now that the SDK is installed and set up, you're ready to start making calls!
 

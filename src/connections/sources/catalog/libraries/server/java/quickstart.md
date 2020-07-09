@@ -68,7 +68,7 @@ analytics.enqueue(IdentifyMessage.builder()
 );
 ```
 
-**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. Read more about it in the [transformer reference docs](/docs/connections/sources/catalog/libraries/server/java#transformer).
+**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. <!-- LR: Can't find that we ever had a doc about this. Read more about it in the [transformer reference docs](/docs/connections/sources/catalog/libraries/server/java#transformer).-->
 
 That's identifying Michael by his unique User ID (the one you know him by in your database) and labeling him with `name` and `email` traits.
 
