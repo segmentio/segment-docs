@@ -12,7 +12,7 @@ The following documentation provides detailed explanation of how both destinatio
 
 - [Planning for Adobe Analytics](#planning-for-adobe-analytics)
 - [Device-mode - Analytics.js](#device-mode---analytics.js)
-- [Cloud-mode - aka Server-side](#cloud-mode---aka-server-side)
+- [Cloud-mode - aka Server-side](#cloud-mode---server-side)
 - [Implementing Segment for Adobe Analytics](settings/)
 - [Identity Resolution](identity/)
 - [Setting up Adobe Analytics for Mobile](mobile/)
@@ -88,7 +88,7 @@ To use Adobe's Marketing Cloud Visitor ID Service, enter your **Marketing Cloud 
 
 ---
 
-## Cloud-mode - aka Server-side
+## Cloud-mode - Server-side
 
 "Cloud-mode" data is data sent _without_ bundling the Segment-Adobe-Analytics SDK. It can be sent using mobile libraries, Analytics.js, and other server-based sources. Cloud mode data is sent to Adobe using Adobe's data insertion API in XML format. To learn more about Adobe’s data insertion API see the [documentation here](https://docs.adobe.com/content/help/en/analytics/import/c-data-insertion-api.html). 
 
