@@ -523,7 +523,7 @@ This option allows you to associate a standard Visitor ID with the event.
  ```
 
 ### Link Names, Link URLs, Link Types
-This option is only available cloud mode aka server side. This option allows you to customize link report parameters for link names, link URLs, and link types. The default `linkType` Segment is `o` which is a custom link. For `linkType` you can also choose to pass `d` or `e` for download and exit links. 
+This option is only available cloud mode aka server side. This option allows you to customize link report parameters for link names, link URLs, and link types. The default `linkType` Segment is `o` which is a custom link. For `linkType` you can also choose to pass `d` or `e` for download and exit links. For more detailed information on sending LinkNames Link Names, Link URLs, Link Types via the integrations object see the the ["Best Practices for Adobe Analytics" section.](best-practices/#setting-custom-linktypes-linknames-and-linkurls)
 
 ```javascript
  analytics.track({
