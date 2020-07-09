@@ -6,7 +6,7 @@ sourceCategory: 'Mobile'
 
 Analytics for React Native makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
-All of Segment's libraries are open-source, so you can [view Analytics for React Native on Github](https://github.com/segmentio/analytics-react-native), or check out our [browser and server-side libraries](/sources) too.
+All of Segment's libraries are open-source, so you can [view Analytics for React Native on Github](https://github.com/segmentio/analytics-react-native), or check out our [browser and server-side libraries](/docs/connections/sources/catalog/) too.
 
 Subscribe to the [release feed](https://github.com/segmentio/analytics-react-native/tags.atom).
 
@@ -284,7 +284,7 @@ analytics.setup('YOUR_WRITE_KEY', {
 
 ### Native configuration
 
-You can also use the native Analytics API to configure the Analytics instance by calling `analytics.useNativeConfiguration()` in your JavaScript code. This prevents the Analytics instance from waiting for additional configuration. 
+You can also use the native Analytics API to configure the Analytics instance by calling `analytics.useNativeConfiguration()` in your JavaScript code. This prevents the Analytics instance from waiting for additional configuration.
 You should wrap the call under a conditional, as in the following example:
 
 ```js

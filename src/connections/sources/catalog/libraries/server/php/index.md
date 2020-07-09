@@ -41,7 +41,7 @@ You only need to call `init` once when your php file is requested. All of your f
 
 Of course, you'll want to replace `YOUR_WRITE_KEY` with your actual **Write Key** which you can find in Segment under your source settings.
 
-The default PHP consumer is the [libcurl consumer](/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you may want to try one of our other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
+The default PHP consumer is the [libcurl consumer](/docs/connections/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you may want to try one of our other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
 
 ## Identify
 

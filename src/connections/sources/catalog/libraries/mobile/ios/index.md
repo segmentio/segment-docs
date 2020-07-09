@@ -4,7 +4,7 @@ title: Analytics for iOS
 
 Analytics for iOS makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
-All of Segment's libraries are open-source, so you can [view Analytics for iOS on Github](https://github.com/segmentio/analytics-ios), or check out our [browser and server-side libraries](/sources/catalog/) too.
+All of Segment's libraries are open-source, so you can [view Analytics for iOS on Github](https://github.com/segmentio/analytics-ios), or check out our [browser and server-side libraries](/docs/connections/sources/catalog/) too.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-ios/tags.atom).
 

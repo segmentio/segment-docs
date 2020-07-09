@@ -6,7 +6,7 @@ title: Analytics for Android
 
 Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
-All of Segment's client sources are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/sources) too.
+All of Segment's client sources are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/docs/connections/sources/catalog/) too.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-android/releases.atom).
 
@@ -42,7 +42,7 @@ Now that the SDK is installed and set up, you're ready to...
 
 ### Step 2. Initialize the Client
 
-We recommend initializing the client in your `Application` subclass.  You'll need your [Write Key](/docs/guides/setup/how-do-i-find-my-write-key/).
+We recommend initializing the client in your `Application` subclass.  You'll need your [Write Key](/docs/connections/find-writekey/).
 
 ```java
 // Create an analytics client with the given context and Segment write key.
