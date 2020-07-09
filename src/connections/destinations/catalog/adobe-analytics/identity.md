@@ -30,7 +30,7 @@ If you're using the Experience Cloud ID, we recommend doing this and including a
 We know this is daunting territory, so don't hesitate to contact us directly for guidance
 
 
-### No Fallbacks for VisitorId Setting - Cloud Mode Only
+#### No Fallbacks for VisitorId Setting - Cloud Mode Only
 As Adobe Analytics customers begin to migrate from using visitorId to using the Experience Cloud ID (ECID), we introduced a new called **No Fallbacks for Visitor ID**, to assist in this transition and reduce inflated user counts. If you disable the **Drop Visitor ID** setting, Segment will sends a `<visitorID>` in these three scenarios:
 
 1. A customer isn't sending timestamps (meaning the Timestamp Option setting is set to disabled)
