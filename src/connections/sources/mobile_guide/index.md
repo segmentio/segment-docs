@@ -8,12 +8,12 @@ redirect_from: '/connections/sources/catalog/libraries/mobile/mobile_guide'
 {% include content/mobile-cmodes.md %}
 
 
-#### Packaging Destinations using Device-mode
+#### Packaging Device-mode destination SDKs
 
 You can find the instructions for packging (or bundling) mobile SDKs in the instructions for each library:
 - [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks)
 - [Android](/docs/connections/sources/catalog/libraries/mobile/android/#packaging-device-mode-destination-sdks)
-- [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/#packaging-device-mode-destination-sdks)
+- [React Native](/docs/connections/sources/catalog/libraries/mobile/react-native/#packaging-destinations-using-device-mode)
 
 ## Bundled SDKs vs. cloud-mode destinations for mobile
 
