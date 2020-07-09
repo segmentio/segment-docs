@@ -21,7 +21,7 @@ _**NOTE:** The Stories Destination is currently in beta, which means that they a
 
 ## Identify
 
-[`identify`](/docs/spec/identify/) calls are sent to Stories as a new event on a user's timeline. This call is mainly used to keep track of changes to users' profile and maintain user properties called _traits_ in Segment. If you want to track specific user actions we recommend using the [`track` call](#track).
+[`identify`](/docs/connections/spec/identify/) calls are sent to Stories as a new event on a user's timeline. This call is mainly used to keep track of changes to users' profile and maintain user properties called _traits_ in Segment. If you want to track specific user actions we recommend using the [`track` call](#track).
 
 Only `identify` calls update the Profile traits and Attributes on the left-hand side of user profiles. `track`, `page`, and `screen` calls create users but don't populate user Attributes.
 
@@ -43,7 +43,7 @@ Params: {
 
 ## Page & Screen
 
-[`page`](/docs/spec/page/) and [`screen`](/docs/spec/screen/) calls are sent to Stories as a new event on a user’s timeline as a visited Page or opened Screen.
+[`page`](/docs/connections/spec/page/) and [`screen`](/docs/connections/spec/screen/) calls are sent to Stories as a new event on a user’s timeline as a visited Page or opened Screen.
 `userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but is not required.
 An example server-side call:
 
@@ -69,7 +69,7 @@ Params: {
 
 ## Track
 
-[`track`](/docs/spec/track/) calls are sent to Stories as a new event on a user’s timeline to keep a track of user actions.
+[`track`](/docs/connections/spec/track/) calls are sent to Stories as a new event on a user’s timeline to keep a track of user actions.
 `userId` is a **required** property to assign the call to a specific user. `name` is a recommended field that helps identify the event characteristics but is not required.
 An example server-side call:
 
@@ -91,7 +91,7 @@ To have Stories recognize a user, you must include `userId` when calling `identi
 
 ### Merging Users
 
-Stories automatically merges identified Users in Segment with their corresponding Stories User and creates a new User in Stories if it does not exist already. When an [`identify`](/docs/spec/identify/) fires, it merges/updates User attributes with the `identify` call's traits.
+Stories automatically merges identified Users in Segment with their corresponding Stories User and creates a new User in Stories if it does not exist already. When an [`identify`](/docs/connections/spec/identify/) fires, it merges/updates User attributes with the `identify` call's traits.
 
 An example server-side call:
 

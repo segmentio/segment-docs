@@ -477,23 +477,23 @@ analytics.identify(
 
 Push notifications are only available for projects bundling the Segment-Mixpanel SDK.
 
-**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation._
+**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation._
 
 ### In-App Notifications
 
 In-app notifications are only available for projects either bundling the Segment-Mixpanel SDK or using the client-side Web integration. You must set up your in-app notification handlers by calling into native Mixpanel methods.
 
-**Note**: You can read more about how to approach this in our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
+**Note**: You can read more about how to approach this in our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
 
 ### A/B Testing
 
-**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
+**Note**: You must set up your push notification handlers by calling into native Mixpanel methods. You can read more about how to approach this in our [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) documentation.
 
 #### Device Connection Mode (Bundled Mobile SDK)
 
 We support Mixpanel push notifications automatically using the [didRegisterForRemoteNotificationsWithDeviceToken method](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications-).
 
-For *in-app* notifications and surveys, you can follow the Mixpanel documentation [here](https://mixpanel.com/help/reference/ios-inapp-messages). You can use the native functionality to control when to show an in-app message by following the instructions [here](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-) and calling the native Mixpanel methods.
+For *in-app* notifications and surveys, you can follow the Mixpanel documentation [here](https://mixpanel.com/help/reference/ios-inapp-messages). You can use the native functionality to control when to show an in-app message by following the instructions [here](/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x) and calling the native Mixpanel methods.
 
 #### Cloud Connection Mode (Unbundled/ Serverside)
 

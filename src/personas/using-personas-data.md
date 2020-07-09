@@ -293,7 +293,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Iterable](/docs/connections/destinations/catalog/iterable/)
 - [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/)
 - [Kahuna](/docs/connections/destinations/catalog/kahuna/)
-- [Keen](/docs/connections/destinations/catalog/keen-io/)
+- [Keen](/docs/connections/destinations/catalog/keen/)
 - [Kitemetrics](/docs/connections/destinations/catalog/kitemetrics/)
 - [Klaviyo](/docs/connections/destinations/catalog/klaviyo/)
 - [Kochava](/docs/connections/destinations/catalog/kochava/)
@@ -390,7 +390,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [goedle.io](/docs/connections/destinations/catalog/goedle/)
 - [hydra](/docs/connections/destinations/catalog/hydra/)
 - [mabl](/docs/connections/destinations/catalog/mabl/)
-- [tray.io](/docs/connections/destinations/catalog/tray.io/)
+- [tray.io](/docs/connections/destinations/catalog/tray-io/)
 
 ## Personas Compatible Destinations: List Type
 

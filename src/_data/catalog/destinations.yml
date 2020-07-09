@@ -3679,7 +3679,7 @@ items:
     deprecated: false
     required: false
     description: >-
-      This will send all [`page` calls](https://segment.com/docs/spec/page/) to
+      This will send all [`page` calls](https://segment.com/docs/connections/spec/page/) to
       Braze as a Loaded/Viewed a Page event. This option is disabled by default
       since Braze isn't generally used for page view tracking.
     settings: []
@@ -3689,7 +3689,7 @@ items:
     deprecated: false
     required: false
     description: >-
-      This will send only [`page` calls](https://segment.com/docs/spec/page/) to
+      This will send only [`page` calls](https://segment.com/docs/connections/spec/page/) to
       Braze that have a `name` associated with them. For example,
       `page('Signup')` would translate to **Viewed Signup Page** in Braze.
     settings: []
@@ -7115,7 +7115,7 @@ items:
       This setting allows you to track your Segment screen events as though they
       were track events. If enabled, we will being routing screen events from
       this source to Facebook App Events formatted as Viewed `name` Screen
-      (where `name` is the [screen name](https://segment.com/docs/spec/screen/)
+      (where `name` is the [screen name](https://segment.com/docs/connections/spec/screen/)
       you specify).
     settings: []
   connection_modes:
@@ -8700,7 +8700,7 @@ items:
       `Application Installed` events from AdWords as `Install Attributed` events
       back into this source. These events will contain data about the AdWords
       campaign that lead to the conversion. You can learn more about these
-      events [here](https://segment.com/docs/spec/mobile/#install-attributed).
+      events [here](https://segment.com/docs/connections/spec/mobile/#install-attributed).
 
 
       **Important:** this feature is only available if you are using the new
