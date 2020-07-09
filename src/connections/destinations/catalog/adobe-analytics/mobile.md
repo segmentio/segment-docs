@@ -47,15 +47,15 @@ You can map Segment events in your `Events V2` settings to any event variable yo
 
 **Note**: Don't use the older, deprecated `Events` settings as they do not forward events to Adobe.
 
-Here's an example of how you might map Segment events to Adobe Analytics events:
+Here's an example of how you might map Segment events to Adobe Analytics events connected in device mode:
 
-![](images/map-event-segment.png)
+![](images/eventsV2.png)
 
 Here's an example of how you would implement the same mapping in Adobe's Mobile Services Dashboard:
 
 ![](images/map-event-adobe.png)
 
-## Sending Properties
+## Sending Custom Properties
 
 You can use the `Context Data Variables` settings to map Segment `properties` to any context data variable defined in your Adobe Analytics Mobile Services dashboard. This includes both Adobe `props` and `eVars`. You can see a list of the Adobe variable types in your Adobe Mobile Services dashboard.
 
@@ -64,6 +64,55 @@ You can use the `Context Data Variables` settings to map Segment `properties` to
 Here's an example of how you would implement the same mapping in Adobe's Mobile Services Dashboard:
 
 ![](images/map-property-adobe.png)
+
+
+<table>
+  <tr>
+    <td>**Segment Payload Field**</td>
+    <td>**iOS Mapping Notation**</td>
+    <td>**Android Mapping Notation**</td>
+  </tr>
+  <tr>
+    <td>`anonymousId`</td>
+    <td>`anonymousId`</td>
+    <td>`.anonymousId`</td>
+  </tr>
+  <tr>
+    <td>`messageId`</td>
+    <td>`messageId`</td>
+    <td>`.messageId`</td>
+  </tr>
+  <tr>
+    <td>`event`<br>`.track()` calls only</td>
+    <td>`event`</td>
+    <td>`.event`</td>
+  </tr>
+  <tr>
+    <td>`name`<br>`screen()` calls only</td>
+    <td>`name`</td>
+    <td>`.name`</td>
+  </tr>
+  <tr>
+    <td>`context.traits.key`</td>
+    <td>`traits.key`</td>
+    <td>`.context.traits.key`</td>
+  </tr>
+  <tr>
+    <td>`context.key`</td>
+    <td>`key`</td>
+    <td>`.context.key`</td>
+  </tr>
+  <tr>
+    <td>`context.arrayKey.key`<br>ie. `context.device.id`</td>
+    <td>`arrayKey.key`<br>ie. `device.id`</td>
+    <td>`.context.arrayKey.key`</td>
+  </tr>
+  <tr>
+    <td>`properties.key`</td>
+    <td>`key`</td>
+    <td>`key`</td>
+  </tr>
+</table>
 
 ## Adobe Lifecycle events
 
