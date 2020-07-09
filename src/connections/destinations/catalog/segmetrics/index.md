@@ -1,5 +1,5 @@
 ---
-title: Selligent Marketing Cloud Destination
+title: SegMetrics Destination
 rewrite: true
 ---
 [SegMetrics](https://segmetrics.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a lead and revenue attribution tool for marketers. It combines cross-platform behavioral data from the marketing tools you already use to create a holistical customer journey of your entire marketing funnel.
