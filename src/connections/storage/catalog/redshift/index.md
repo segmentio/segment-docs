@@ -162,7 +162,7 @@ In an usual workload we have seen Redshift using around 20-40% of CPU, we take a
 
 ### How do I improve Query Speed?
 
-The speed of your queries depends on the capabilities of the hardware you have chosen as well as the size of the dataset. The amount of data utilization in the cluster will also impact query speed. For Redshift clusters if you're above 75% utilization, you will likely experience degradation in query speed. [Here's a guide on how to improve your query speeds.](/docs/faqs/warehouses/improve-query-speeds)
+The speed of your queries depends on the capabilities of the hardware you have chosen as well as the size of the dataset. The amount of data utilization in the cluster will also impact query speed. For Redshift clusters if you're above 75% utilization, you will likely experience degradation in query speed. [Here's a guide on how to improve your query speeds.](/docs/connections/storage/warehouses/redshift-tuning)
 
 ## FAQ
 
@@ -170,7 +170,7 @@ The speed of your queries depends on the capabilities of the hardware you have c
 
 It's often the case that our customers want to combine 1st party transactional and operational data their Segment data to generate a 360 degree view of the customer. The challenge is that those data sets are often stored in separate data warehouses.
 
-If you're interested in importing data into a Redshift cluster, it's important that you follow these [guidelines](/docs/faqs/warehouses/custom-data/).
+If you're interested in importing data into a Redshift cluster, it's important that you follow these [guidelines](/docs/connections/storage/warehouses/faq/).
 
 Additionally, there a number of tools which provide syncing services between databases (mySQL, SQL Server, Oracle, PostgreSQL). Here is a list of some we've seen used by customers.
 
