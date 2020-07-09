@@ -104,7 +104,7 @@ analytics.identify( user_id: "12345abcde",
 
 When a user explicitly signs out of one of your applications, you can call `analytics.reset()` to stop logging further event activity to that user, and create a new `anonymousId` for subsequent activity (until the user logins in again and is subsequently `identify`-ed). **This call is most relevant for client-side Segment libraries**, as it clears cookies in the user’s browser.
 
-Make a `Reset()` call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out). For more info on this call, [see the Javascript source documentation](/docs/connections/sources/website/javascript#reset-logout).
+Make a `Reset()` call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out). For more info on this call, [see the Javascript source documentation](/docs/connections/sources/website/javascript#reset-or-logout).
 
 ## Page and Screen
 

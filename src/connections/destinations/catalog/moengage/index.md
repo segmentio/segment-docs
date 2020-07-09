@@ -393,7 +393,7 @@ Use [track](https://segment.com/docs/connections/sources/catalog/libraries/websi
 
 ### Reset
 
-If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) method in `analytics.js`.
+If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) method in `analytics.js`.
 
 ### Optional
 
