@@ -84,7 +84,7 @@ Method: |
   A method is programming speak for "an action an object can take". It's a specific type of function that is attached to an object. All of our analytics tracking libraries create `analytics` objects, and then `track`, `identify`, `page`, [etc](/docs/connections/spec/) are methods you can invoke on those objects.
 
 MTU: |
-  Monthly Tracked Users. You can find more about how they are calculated [here](https://segment.com/docs/guides/usage-and-billing/how-are-mtus-calculated-by-segment/) but in short, they are calculated by adding the number unique userIds and number of unique anonymousIds that a customer tracks with Segment.
+  Monthly Tracked Users. You can find more about how they are calculated [here](https://segment.comdocs/guides/usage-and-billing/mtus-and-throughput/#how-does-segment-calculate-mtus) but in short, they are calculated by adding the number unique userIds and number of unique anonymousIds that a customer tracks with Segment.
 
 Object: |
   An object is a type of data that persists over time and can be updated, for example a Business or a User record. Objects have "traits" which record information about that object, and which can change over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a [computed trait](#computed-trait) like `logged_in_last_7_days`. (Objects are in contrast to "[events](#event)" which happen at a single moment in time, and whose properties do not change.)
