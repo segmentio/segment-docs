@@ -92,7 +92,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 ### Custom Objects
 
-If you'd like to sync any SFDC custom objects, just [contact us](/help/contact) and we'll get it set up. Include the [API names](https://help.salesforce.com/articleView?id=000007594&language=en_US&type=1) of the custom objects. We'll add support for this to the UI soon!
+If you'd like to sync any SFDC custom objects, just [contact us]https://segment.com/help/contact/ and we'll get it set up. Include the [API names](https://help.salesforce.com/articleView?id=000007594&language=en_US&type=1) of the custom objects. We'll add support for this to the UI soon!
 
 ### Deleting Records
 
@@ -102,7 +102,7 @@ At this time, we do not support hard deletes in Salesforce. Use of hard deletes 
 
 ## Collection Properties
 
-Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Saleforce field documentation linked in each collection above. If you've added custom fields to an existing collection, [contact us](/help/contact) and we'll get those set up to sync. You do not need to include the field names.
+Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Saleforce field documentation linked in each collection above. If you've added custom fields to an existing collection, [contact us]https://segment.com/help/contact/ and we'll get those set up to sync. You do not need to include the field names.
 
 ## Adding Destinations
 Currently, Warehouses are the only supported destination for object-cloud sources.
