@@ -401,77 +401,53 @@ At the moment, Segment only passes `publisher` as standard ad metadata. We map t
 
 You may send any custom metadata you wish along with any video event that accepts metadata. To send Custom Video Metadata please map the values you wish to send in the Context Data Variable mappings in the Segment Adobe Destination settings. Remember that although you do not need to set up standard video or ad metadata in your Adobe dashboard first, you **must** set up all custom video and ad metadata in Adobe before sending it. Adobe discards all metadata that have not been set up before being received in their system.
 
-### iOS Custom Video Metadata
-For custom Context Data Variables, including custom video metadata, use the following notation on iOS when mapping your Segment payload properties.
+### Custom Video Metadata Formatting 
+For custom Context Data Variables, including custom video metadata, use the following notation on iOS and Android when mapping your Segment payload properties. The proper formating for mapping Segment property and context fields is different for iOS and Android components so be sure to read documentation carefully below:
+
 <table>
   <tr>
-    <td>**Segment Field**</td>
-    <td>**Mapping Notation**</td>
+    <td>**Segment Payload Field**</td>
+    <td>**iOS Mapping Notation**</td>
+    <td>**Android Mapping Notation**</td>
   </tr>
   <tr>
     <td>`anonymousId`</td>
-    <td>`anonymousId`</td>
-  </tr>
-  <tr>
-    <td>`messageId`</td>
-    <td>`messageId`</td>
-  </tr>
-  <tr>
-    <td>`event` (on `track()` calls)</td>
-    <td>`event`</td>
-  </tr>
-  <tr>
-    <td>`name` (on `screen()` calls</td>
-    <td>`name`</td>
-  </tr>
-  <tr>
-    <td>`context.traits.key`</td>
-    <td>`traits.key`</td>
-  </tr>
-  <tr>
-    <td>`context.key`</td>
-    <td>`key`</td>
-  </tr>
-  <tr>
-    <td>context.arrayKey.key (ie. `context.device.id`)</td>
-    <td>`arrayKey.key`(ie. `device.id`)</td>
-  </tr>
-  <tr>
-    <td>`properties.key`</td>
-    <td>`key`</td>
-  </tr>
-</table>
-
-
-### Android Custom Video Metadata
-For custom Context Data Variables, including custom video metadata, use the following notation on Androiid when mapping your Segment payload properties.
-<table>
-  <tr>
-    <td>**Segment Field**</td>
-    <td>**Mapping Notation**</td>
-  </tr>
-  <tr>
     <td>`anonymousId`</td>
     <td>`.anonymousId`</td>
   </tr>
   <tr>
     <td>`messageId`</td>
+    <td>`messageId`</td>
     <td>`.messageId`</td>
   </tr>
   <tr>
-    <td>`event` (on `track()` calls)</td>
+    <td>`event`<br>`.track()` calls only</td>
+    <td>`event`</td>
     <td>`.event`</td>
   </tr>
   <tr>
+    <td>`name`<br>`screen()` calls only</td>
+    <td>`name`</td>
+    <td>`.name`</td>
+  </tr>
+  <tr>
     <td>`context.traits.key`</td>
+    <td>`traits.key`</td>
     <td>`.context.traits.key`</td>
   </tr>
   <tr>
     <td>`context.key`</td>
+    <td>`key`</td>
     <td>`.context.key`</td>
   </tr>
   <tr>
+    <td>`context.arrayKey.key`<br>ie. `context.device.id`</td>
+    <td>`arrayKey.key`<br>ie. `device.id`</td>
+    <td>`.context.arrayKey.key`</td>
+  </tr>
+  <tr>
     <td>`properties.key`</td>
+    <td>`key`</td>
     <td>`key`</td>
   </tr>
 </table>
