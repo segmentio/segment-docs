@@ -11,15 +11,17 @@ This destination is maintained by SegMetrics. For any issues with the destinatio
 {% include content/connection-modes.md %}
 
 1. Go to your [Integrations tab](https://app.segmetrics.io/a/integration) in SegMetrics, and click **Connect** for the Segment Integration.
-2. From the Destinations catalog page in the Segment App, click **Add Destination**.
-3. Search for “SegMetrics” in the Destinations Catalog and select the SegMetrics Destination.
-4. Go to your [Account Settings](https://app.segmetrics.io/a/account/edit) and copy your SegMetrics `Account Id` and `API Key`.
+2. Go to your [Account Settings](https://app.segmetrics.io/a/account/edit) and copy your SegMetrics `Account Id` and `API Key`.
+3. From the Destinations catalog page in the Segment App, click **Add Destination**.
+4. Search for “SegMetrics” in the Destinations Catalog and select the SegMetrics Destination.
 5. Enter the `Account Key` and `API Key` in the SegMetrics destination settings in Segment.
-6. Data is available in your dashboard depending on your [SegMetrics plan](https://segmetrics.io/pricing/).
+
+> info ""
+> Data is available in your dashboard depending on your [SegMetrics plan](https://segmetrics.io/pricing/).
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.page()
@@ -29,7 +31,7 @@ Segment sends `page` calls to SegMetrics as `view` events, which are available i
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track("User Registered", {
@@ -42,7 +44,7 @@ Segment sends `track` calls to SegMetrics as `view` events, which are available 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
