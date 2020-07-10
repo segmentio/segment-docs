@@ -74,6 +74,10 @@ Upon activation of an Optimizely experiment, an "Experiment Viewed" `track` even
 
 Upon activation of an Optimizely experiment, an “Experiment Viewed” `track` event is sent to Segment. The event includes Optimizely experiment metadata which is sent whenever the Optimizely [`campaignDecided` listener](https://docs.developers.optimizely.com/web/docs/add-listener#section-campaign-decided) is activated.
 
+
+> note ""
+> **Note:** When an Optimizely Web experiment is activated, Optimizely automatically sends an "Experiment Viewed" `track` event to Segment. This makes the Optimizely Web integration act as both a Destination and a Source, because the `track` calls enrich and send Experiment Decisions and Exposure event data to Segment, which can be used by other platforms.  
+
 #### Standard or Redirect Experiments
 
 **Properties sent using `track` calls:**
