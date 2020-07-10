@@ -25,7 +25,7 @@ If you haven't had a chance to review our spec, please take a look to understand
 analytics.page()
 ```
 
-Segment sends `page` calls to SegMetrics as a `view` event and are available in the analytics dashboard as a `click` event.
+Segment sends `page` calls to SegMetrics as `view` events, which are available in the analytics dashboard as a `click` event.
 
 ## Track
 
