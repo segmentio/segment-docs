@@ -50,7 +50,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Segment sends `identify` calls to SegMetrics as an `identify` event.
+Segment sends `identify` calls to SegMetrics as `identify` events.
 
 An email address is **required** by SegMetrics to connect a contact to your existing contacts in your CRM.
 
