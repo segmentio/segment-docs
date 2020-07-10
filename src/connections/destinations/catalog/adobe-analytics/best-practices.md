@@ -5,6 +5,29 @@ strat: adobe
 
 There are a few common questions that we've heard over time that are worth mentioning.
 
+## Validating by Data by Component 
+<table>
+  <tr>
+    <td>**Component**</td>
+    <td>**Validation Tool**</td>
+  </tr>
+  <tr>
+    <td>Analytics.js</td>
+    <td>[Adobe Experience Cloud Debugger](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj)<br>Chrome Developer Tools</td>
+  </tr>
+  <tr>
+    <td>Server Side</td>
+    <td>Segment in-app Event Tester Tool</td>
+  </tr>
+  <tr>
+    <td>iOS Device Mode</td>
+    <td>Charles Proxy<br>DEBUG mode</td>
+  </tr>
+  <tr>
+    <td>Android Device Mode</td>
+    <td>Charles Proxy<br>VERBOSE logging</td>
+  </tr>
+</table>
 ## Reducing API calls by sending events on page or screen
 
 You might want to associate Adobe `<events>` with Segment page or screen events to reduce the number of API calls Segment sends to Adobe Analytics.

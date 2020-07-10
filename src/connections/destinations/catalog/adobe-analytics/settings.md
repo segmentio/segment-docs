@@ -274,24 +274,28 @@ An example eVar mapping in the Segment Destination settings UI should look like 
 
 The Merchandising Events setting allows you to set eVars and events on a per-product basis within the "products" string, and supports increment and currency events. This provides robust product string support, which you can read more about [here](https://marketing.adobe.com/resources/help/en_US/sc/implement/products.html).
 
-The setting operates as follows:
+Per Adobe documentation, Segment formats the `s.products` as `[category][item][quantity][total][incrementor][merchString]`. Segment will automatically assign the product category, quantity, and total. The [item] defaults to the Product Name. If you want to instead use the SKU or ID you can change using the [Product Identifier setting](#product-identifier-setting). 
+
+The success event incrementor and merchandising string are determined by your Segment Adobe destination settings. It relies on the "Segment Event", "Adobe Analytics Event", and "Segment Property". You do not need to select an incrementor for product scoped merchandising events. The merchandising string is how you can send Segment property values to Adobe as eVars. Each eVar will be delimited from the next eVar by a `|`.
+
+The Segment Adobe Analytics Merchandising setting operates as follows:
 
 - Keys off of the Segment `track` call event name, or for `page` support, a `property.eventName`
 - Maps to the Adobe event to send in as an increment or currency event.
 - Reads if the event is scoped to the product or event level.
 - [optional] Sets a value on the event. This value is the increment or currency to pass to Adobe. If you don't include a value, Segment sends the event without one, and Adobe understands this as an increment of 1. If you configure a value and the value is not present on the `track` or `page` call, we do not send the event to Adobe.
-- Map of product eVars to set on the products string. This is only supported at the product level, as expected by Adobe Analytics.
+- Map of product eVars to set on the products string. This is only supported at the product level, as expected by Adobe Analytics.  
+  - Note: We have some events in our Ecommerce spec that do not utilize the products array and product information is located in the top level property object. For an example see our [Product Added Spec](https://segment.com/docs/connections/spec/ecommerce/v2/#product-added). For the following events when adding an eVar mapping ensure you specify `properties.key` as the Segment key in the mapping: Product Added, Product Removed, and Product Viewed.  
 
 Let's take the following example:
 
-![](images/merch-var-event-scope.png)
-![](images/merch-var-prod-scope.png)
+![](images/merchandising-event.png)
 
-The configuration in the example image above configures a `Product Added` Segment event which sends Adobe Analytics:
+The configuration in the example image above configures a `Order Completed` Segment event which sends Adobe Analytics:
 - `event1` in `s.events` with the value passed from `properties.increment`.
 - `event2` on `s.products` with the value passed from `properties.products.price`.
-- the value for `properties.products.priceStatus` in `eVar1`
-- the value for `properties.products.coupon` in `eVar2`
+- the value for `properties.products.priceStatus` in `eVar1` on `s.products`.
+- the value for `properties.products.coupon` in `eVar2` on `s.products`.
 
 
 _Considerations_:
@@ -305,37 +309,42 @@ Once you have the above example mapping configured, you send in the relevant eve
 For example, in a Node.js environment we sent:
 
 ```javascript
-analytics.track({
-    userId: '098094356890',
-    event: 'Product Added',
-    properties: {
-      cart_id: '124efsdovnt4edvsldfpf',
-      product_id: '342039402fsl12njfs',
-      sku: 'G-32',
-      priceStatus:'promo',
-      increment: 20,
-      category: 'Games',
-      name: 'The Settlers of Catan',
-      brand: 'Kosmos',
-      variant: 'Cities and Knights',
+  analytics.track('Order Completed', {
+  orderId: '50314b8e9bcf000000000000',
+  total: 30.00,
+  revenue: 25.00,
+  shipping: 3.00,
+  tax: 2.00,
+  discount: 2.50,
+  coupon: 'hasbros',
+  currency: 'USD',
+  increment: 1,
+  products: [
+    {
+      id: '507f1f77bcf86cd799439011',
+      sku: '45790-32',
+      name: 'Monopoly: 3rd Edition',
       price: 34.99,
       quantity: 1,
-      coupon: 'MAYDEALS',
-      position: 2,
-      url: 'https://www.example.com/product/path',
-      image_url: 'https://www.example.com/product/path.jpg'
+      category: 'Games', 
+      priceStatus: 'promo',
+      coupon: 'MAYDEALS'
     }
+  ]
   });
   ```
 
-The `s.events` call passes in `scAdd` and `event1=20`, and `s.products` passes in `event2=18.99` and `evar1=discounted|evar2=MAYDEALS`.
+The `s.events` call passes in `purchase` and `event1=1`, and `s.products` passes in `event2=34.99` and `evar1=promo|evar2=MAYDEALS`.
 
 The resulting request payload to Adobe looks like:
 
 ```xml
-<events>scAdd,event1=20,event2</events>
-<products>Games;Monopoly: 3rd Edition;1;18.99;event2=18.99;eVar1=discounted|eVar2=MAYDEALS</products></request>
+<events>purchase,event1=1,event2</events>
+<products>Games;Monopoly: 3rd Edition;1;34.99;event2=34.99;eVar1=promo|eVar2=MAYDEALS</products>
 ```
+
+### Product Identifier Setting
+Adobe Analytics only accepts a single product identifier. Use this option to choose whether we send product name, id, or sku.
 
 ### Page Example:
 You can send Merchandising events on `.page()` calls. In order to send `<events>` on `page`, you must pass in `events` on the Adobe Analytics integration option. We merge the configured event within the setting with the array passed in. In the example below, we pass in `scAdd`, as this is not automatically mapped on `page`.
