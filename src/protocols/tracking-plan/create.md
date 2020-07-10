@@ -1,4 +1,4 @@
-/docs/connections/spec/best-practices-identify/#when-and-how-often-to-call-identify---
+---
 title: The Protocols Tracking Plan
 redirect_from:
   - '/protocols/tracking-plan/'

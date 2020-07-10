@@ -42,7 +42,7 @@ Computed trait: |
   [Computed traits](/docs/personas/computed-traits/) are per-user, or per-account [traits](#traits) that you create or “compute” in [Personas](/docs/personas/). When you build a Computed Trait, Personas adds it to relevant user profiles.
 
 Custom trait: |
-  [Custom Traits](/docs/personas/#custom-traits) are user or account properties collected from all the events you send to Personas.  For example, you can add any properties that you send as a part of your track calls or identify calls (`email`, `first_name`, `last_name`) as custom traits. You can then view them in the profile explorer, and use them in your audiences, computed traits and SQL traits.
+  [Custom Traits](/docs/personas/audiences/#custom-traits) are user or account properties collected from all the events you send to Personas.  For example, you can add any properties that you send as a part of your track calls or identify calls (`email`, `first_name`, `last_name`) as custom traits. You can then view them in the profile explorer, and use them in your audiences, computed traits and SQL traits.
 
 Debugger: |
   This is the place in the app where you can see your events flowing through Segment

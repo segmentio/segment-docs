@@ -6,7 +6,7 @@ Segment's access management tools let workspace owners manage which users can ac
 
 
 
-The Access Management page has three tabs: [Users (team members)](/docs/segment-app/iam/concepts/#team-members/), [User Groups](/docs/segment-app/iam/concepts/#user-groups/), and [Tokens](/docs/segment-app/iam/concepts/#tokens/). You can select a user in the table to see their [roles](/docs/segment-app/iam/roles).
+The Access Management page has three tabs: [Users (team members)](/docs/segment-app/iam/concepts/#team-members), [User Groups](/docs/segment-app/iam/concepts/#user-groups), and [Tokens](/docs/segment-app/iam/concepts/#tokens). You can select a user in the table to see their [roles](/docs/segment-app/iam/roles).
 
 ## Quick Links
 - [Invite a team member to your workspace](/docs/segment-app/iam/membership/#invite-a-new-team-member)

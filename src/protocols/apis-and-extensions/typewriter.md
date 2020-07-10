@@ -53,7 +53,7 @@ Typewriter also helps teams adopt [analytics best practices](/docs/protocols/tra
 
 To get started, check out one of the quickstart guides below:
 - [Browser Quickstart](#browser-quickstart)
-- [Node.js Quickstart](#node-js-quickstart)
+- [Node.js Quickstart](#nodejs-quickstart)
 - [iOS Quickstart](#ios-quickstart)
 - [Android Quickstart](#android-quickstart)
 

@@ -61,7 +61,7 @@ The **Workspace Settings** tab shows more information about your workspace, incl
 
 The **User Preferences** tab shows your individual account settings, including Notification settings.
 
-The **Usage** tab shows how many API calls or [Monthly Tracked Users (MTUs)](docs/guides/usage-and-billing/mtus-and-throughput/#how-does-segment-calculate-mtus) your workspace has used this month - which can be important for keeping an eye on your Segment bill.
+The **Usage** tab shows how many API calls or [Monthly Tracked Users (MTUs)](/docs/guides/usage-and-billing/mtus-and-throughput/#how-does-segment-calculate-mtus) your workspace has used this month - which can be important for keeping an eye on your Segment bill.
 
 ## Health
 

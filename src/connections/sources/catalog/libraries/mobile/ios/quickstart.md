@@ -30,7 +30,7 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 ```
 
 > success ""
-> **Tip**: You don't _need_ to use initialization config parameters to track lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views automatically, but we highly recommend that you do so you can start off already tracking some important core events. See [the track call info below](#track) for more info!
+> **Tip**: You don't _need_ to use initialization config parameters to track lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views automatically, but we highly recommend that you do so you can start off already tracking some important core events. See [the track call info](/docs/connections/sources/catalog/libraries/mobile/ios/#track) for more info!
 
 And of course, import the SDK in the files that you use it by adding the following line:
 
