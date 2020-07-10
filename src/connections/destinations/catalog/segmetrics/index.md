@@ -4,7 +4,7 @@ rewrite: true
 ---
 [SegMetrics](https://segmetrics.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a lead and revenue attribution tool for marketers. It combines cross-platform behavioral data from the marketing tools you already use to create a holistical customer journey of your entire marketing funnel.
 
-This destination is maintained by SegMetrics. For any issues with the destination, [contact their team](mailto:support@segmetrics.io).
+This destination is maintained by SegMetrics. For any issues with the destination, [contact the SegMetrics Support team](mailto:support@segmetrics.io).
 
 ## Getting Started
 
