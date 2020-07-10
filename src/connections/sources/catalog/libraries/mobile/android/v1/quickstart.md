@@ -1,6 +1,7 @@
 ---
 title: "Quickstart: Android (v1 - Deprecated)"
 hidden: true
+published: false
 ---
 
 This tutorial will help you start sending analytics data from your Android app to Segment. Once you're done you'll be able to turn on [any of our destinations](/docs/connections/destinations/) with the flip of a switch! No more waiting for Play Store releases.

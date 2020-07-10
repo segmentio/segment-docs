@@ -1,6 +1,7 @@
 ---
 title: 'Analytics for Android (V1 - Deprecated)'
 hidden: true
+published: false
 ---
 
 Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.

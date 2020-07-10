@@ -136,7 +136,7 @@ Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozi
 
 You're now good to go! To learn more about some of the advanced configuration options that Typewriter supports, read on.
 
-## Node.js Quickstart
+## Nodejs Quickstart
 
 Before you start, make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
 
