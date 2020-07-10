@@ -38,7 +38,7 @@ analytics.track("User Registered", {
 });
 ```
 
-Segment sends `track` calls to SegMetrics as a `view` event and are available in the analytics dashboard as a `click` event.
+Segment sends `track` calls to SegMetrics as `view` events, which are available in the analytics dashboard as a `click` event.
 
 ## Identify
 
