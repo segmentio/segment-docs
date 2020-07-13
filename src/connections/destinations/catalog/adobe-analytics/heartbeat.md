@@ -6,7 +6,7 @@ strat: adobe
 Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and Javascript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
 
 > info ""
-> At this time, Adobe Heartbeat is only available for events sent device mode.
+> At this time, Adobe Heartbeat is only available for events sent using [device mode](/docs/connections/destinations/#connection-modes).
 
 Before you start, complete these required steps.
 
@@ -26,9 +26,9 @@ Then, set up your mobile libraries:
 
 For Android:
 
-- If you  haven’t done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46) to download the core adobeMobileLibrary  and configure in your Android project. Add the ABDMobileConfig.json to your project from the downloaded SDK.
-- Download the latest version of the `MediaSDK.jar` file and include it in your Android project, as outlined in [Adobe's documentation here](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
-- Follow the remaining set up steps [outlined here](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
+- If you  haven’t done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46) to download the core `adobeMobileLibrary`  and configure in your Android project. Add the `ABDMobileConfig.json` to your project from the downloaded SDK.
+- Download the latest version of the `MediaSDK.jar` file and [include it in your Android project using Adobe's documentation steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
+- Follow the [remaining set up steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html) to complete the installation.
 
 For iOS: the Adobe Heartbeat SDK is already included with the Segment-Adobe-Analytics SDK. Ensure you have added the `ABDMobileConfig.json` for your iOS project from the Adobe Mobile Services UI.
 
@@ -402,7 +402,8 @@ At the moment, Segment only passes `publisher` as standard ad metadata. We map t
 You may send any custom metadata you wish along with any video event that accepts metadata. To send Custom Video Metadata please map the values you wish to send in the Context Data Variable mappings in the Segment Adobe Destination settings. Remember that although you do not need to set up standard video or ad metadata in your Adobe dashboard first, you **must** set up all custom video and ad metadata in Adobe before sending it. Adobe discards all metadata that have not been set up before being received in their system.
 
 ### Custom Video Metadata Formatting 
-For custom Context Data Variables, including custom video metadata, use the following notation on iOS and Android when mapping your Segment payload properties. The proper formating for mapping Segment property and context fields is different for iOS and Android components so be sure to read documentation carefully below:
+
+For custom Context Data Variables, including custom video metadata, use the following notation when mapping your Segment payload properties. The formatting for these mapings is different for iOS and Android components, so read the documentation below carefully.
 
 <table>
   <tr>
