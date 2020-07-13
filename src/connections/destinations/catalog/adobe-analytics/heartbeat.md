@@ -36,7 +36,7 @@ For iOS: the Adobe Heartbeat SDK is already included with the Segment-Adobe-Anal
 
 ## Configure the MediaHeartbeat Instance
 
-Segment instantiates a `MediaHeartbeat` object to track video data, but you need more information about each video session to make sure we configure the instance properly.
+Segment instantiates a `MediaHeartbeat` object to track video data, but you need more information about each video session to make sure Segment configures the instance properly.
 
 A "Video Playback Started" begins a new video session and destroys any existing MediaHeartbeat instances. This means that you can only track one video session at a time.
 
@@ -79,7 +79,7 @@ The following example shows how to set an integration-specific option on iOS:
 
 ## Supported Video Events
 
-Adobe Analytics supports many - but not all - of our [specced video events](/docs/connections/spec/video/). Note, too, that **some events required for Adobe Analytics are not specced as part of Segment's standard video tracking**, so read the documentation closely. The list below includes supported events, as well as the corresponding Adobe method(s) triggered. In the next section, we go into more detail on the functionality of each event, as well as list any required properties:
+Adobe Analytics supports many - but not all - of the [Segment video spec events](/docs/connections/spec/video/). Note, too, that **some events required for Adobe Analytics are not specced as part of Segment's standard video tracking**, so read the documentation closely. The list below includes supported events, as well as the corresponding Adobe method(s) triggered. The next section explains the function of each event in more detail, and lists any required properties.
 
 <table>
   <tr>
@@ -344,7 +344,7 @@ This event is required to set quality of service information in the `MediaHeartb
 
 ## Standard Video Metadata
 
-We map the following Segment-specced properties to Adobe constants. Note you don't need to set up standard video properties in your Adobe dashboard as with `contextData` values.
+Segment maps the following [Segment-spec properties](/docs/connections/spec/) to Adobe constants. Note you don't need to set up standard video properties in your Adobe dashboard as with `contextData` values.
 
 <table>
   <tr>
@@ -395,13 +395,13 @@ We map the following Segment-specced properties to Adobe constants. Note you don
 
 ## Standard Ad Metadata
 
-At the moment, Segment only passes `publisher` as standard ad metadata. We map this property to Adobe constant `MediaHeartbeat.AdMetadataKeys.ADVERTISER`.
+At the moment, Segment only passes `publisher` as standard ad metadata. Segment maps this property to Adobe constant `MediaHeartbeat.AdMetadataKeys.ADVERTISER`.
 
 ## Custom Video Metadata
 
 You may send any custom metadata you wish along with any video event that accepts metadata. To send Custom Video Metadata please map the values you wish to send in the Context Data Variable mappings in the Segment Adobe Destination settings. Remember that although you do not need to set up standard video or ad metadata in your Adobe dashboard first, you **must** set up all custom video and ad metadata in Adobe before sending it. Adobe discards all metadata that have not been set up before being received in their system.
 
-### Custom Video Metadata Formatting 
+### Custom Video Metadata Formatting
 
 For custom Context Data Variables, including custom video metadata, use the following notation when mapping your Segment payload properties. The formatting for these mapings is different for iOS and Android components, so read the documentation below carefully.
 

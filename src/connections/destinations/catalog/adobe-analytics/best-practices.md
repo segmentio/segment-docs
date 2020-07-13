@@ -3,31 +3,18 @@ title: Adobe Analytics Best Practices
 strat: adobe
 ---
 
-There are a few common questions that we've heard over time that are worth mentioning.
+This page contains best practices and tips for setting up and testing Adobe Analytics with Segment.
 
-## Validating by Data by Component 
-<table>
-  <tr>
-    <td>**Component**</td>
-    <td>**Validation Tool**</td>
-  </tr>
-  <tr>
-    <td>Analytics.js</td>
-    <td>[Adobe Experience Cloud Debugger](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj)<br>Chrome Developer Tools</td>
-  </tr>
-  <tr>
-    <td>Server Side</td>
-    <td>Segment in-app Event Tester Tool</td>
-  </tr>
-  <tr>
-    <td>iOS Device Mode</td>
-    <td>Charles Proxy<br>DEBUG mode</td>
-  </tr>
-  <tr>
-    <td>Android Device Mode</td>
-    <td>Charles Proxy<br>VERBOSE logging</td>
-  </tr>
-</table>
+## Validating by Data by Component
+
+The following list contains tools you can use to validate datat coming from Segment and going to each different Adobe Analytics component
+
+- **Analytics.js** - [Adobe Experience Cloud Debugger](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj) and Chrome Developer Tools
+- **Other Segment server libraries** - Segment's in-app [Event Tester Tool](/docs/connections/test-connections/)
+- **iOS Device mode** - Charles Proxy, DEBUG mode
+- **Android Device Mode** - Charles Proxy, VERBOSE logging
+
+
 ## Reducing API calls by sending events on page or screen
 
 You might want to associate Adobe `<events>` with Segment page or screen events to reduce the number of API calls Segment sends to Adobe Analytics.
@@ -42,7 +29,7 @@ For example, instead of sending the Product Viewed event as a `track` to AA, you
     }
 ```
 
-When the integration option `events` is passed in, we map the events and send them using the `<events>` tag. In the example above, we would build `<events>event35, scAdd</events>`.
+When the integration option `events` is passed in, Segment maps the events and sends them using the `<events>` tag. In the example above, the output would be `<events>event35, scAdd</events>`.
 
 _Considerations_
 
@@ -112,4 +99,4 @@ If a custom linkUrl is not specified in the integration specific object in the p
 
 ## Populating Custom Links report with server side data
 
-Since we cannot automatically track page data for **server side** calls, if you want to populate the **Custom Links** report in Adobe Analytics, you must manually pass `context.page.url`.
+Since Segment cannot automatically track page data for **server side** calls, you must manually pass `context.page.url` if you want to populate the **Custom Links** report in Adobe Analytics.

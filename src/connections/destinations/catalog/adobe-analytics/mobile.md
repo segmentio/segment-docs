@@ -7,7 +7,7 @@ Segment supports Adobe Analytics Mobile Services. With Segment, you don't need t
 
 To learn more about Segment's mobile libraries, check out the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios) and [Android](/docs/connections/sources/catalog/libraries/mobile/android) technical docs.
 
-Our Adobe-Analytics mobile SDKs are currently in beta. We invite you to try them and send us feedback through our [contact form](https://segment.com/help/contact/).
+The Segment Adobe-Analytics mobile SDKs are currently in beta. Please try them and [contact us](https://segment.com/help/contact/) with any feedback!
 
 ## Setting Up the Mobile SDKs
 

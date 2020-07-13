@@ -4,43 +4,54 @@ strat: adobe
 ---
 
 ## Best practices for userId and sessioning
+<!-- Not the clearest section title, and it's not super clear how its child sections relate to this topic.  It might work a little better if we start with some statements that walk through how each system (segment and adobe, and adobe experience?) does their ID, so people have that as a refresher-baseline? then we can go into the whats, and expand to include the whys for each mode. -->
 
-### Analytics.js - Device Mode 
-You can enable **Drop Visitor ID** from the Segment app to prevent Adobe from creating a new user profile when you set `window.s.visitorID` with a custom value. However, this can break the links between anonymous and identified users inside your reports, if you're only using Analytics.js to send data to Adobe.
+### Analytics.js - Device Mode
 
-Adobe Analytics unfortunately counts every "effective" visitor ID as a *unique* visitor. There is no ability for Segment to alias, implicitly or explicitly, two effective IDs on your behalf.
+<!-- Some more introductory explanantion might be good here? "In device-mode, you bundle the Adobe Analytics SDK with Analytics.js so it is included on your site or app. When you do this, Analytics.js events are routed to the API endpoints for Adobe and send data both to the Segment servers, and to the Adobe systems."-->
 
-The key to understanding the implications of this fact is an understanding of what Adobe Analytics means by **"effective" visitor ID identifiers**. To do so, we recommend reading [this section of their documentation](https://docs.adobe.com/content/help/en/analytics/implementation/js/xdevice-visid/xdevice-connecting.html).
+You can enable **Drop Visitor ID** from the Segment app to prevent Adobe from creating a new user profile when you set `window.s.visitorID` with a custom value. However if you're only using Analytics.js to send data to Adobe, this can make it difficult to combine anonymous and identified users inside your reports.
 
-With analytics.js, we use the default auto-generated Adobe Analytics [`s_vi` cookie value](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-analytics.html) as effective visitor ID until you `identify` your users. If you provide your Marketing Cloud ID Service Organization ID, then we'll set the Experience Cloud ID and use that instead.
+Adobe Analytics counts every "effective" visitor ID as a *unique* visitor. Unfortunately, Segment cannot to alias two effective IDs on your behalf, either implicitly or explicitly.
 
-Once you `identify` your user, Segment sets the `visitorId` variable to your `userId`. This effectively creates a new user, which *does* have unique user implications. However, based on a thorough reading of their documentation and discussion with many customers, we believe this is the best practice because now you can seamlessly track this user across devices whenever they are logged in.
+To understand this, it's important to first understand what Adobe Analytics means by **"effective" visitor ID identifiers**. We recommend reading [the Adobe documentation on connecting users across devices](https://docs.adobe.com/content/help/en/analytics/implementation/js/xdevice-visid/xdevice-connecting.html).
 
-### Cloud Mode - Server Side 
-If you'd like to track your users on the server, you have a few options. If you're only tracking logged-in users, sending their `userId` in your events ensures that the events are attributed to the proper user. If you're tracking anonymous users, Segment will send the `s_vi` cookie from Adobe if you pass it under `context['Adobe Analytics'].visitorId` as the `visitorId`. If you do not pass one, we fallback to the `userId` and lastly the Segment `anonymousId`. You'll notice the Segment `anonymousId` is a different ID from the anonymous `s_vi` value used on the client (Adobe Analytics' auto-generated effective ID for anonymous users).
+Analytics.js automatically generates an Adobe Analytics [`s_vi` cookie value](https://docs.adobe.com/content/help/en/core-services/interface/ec-cookies/cookies-analytics.html) which it uses as a visitor ID until you `identify` your users. If you provide your Marketing Cloud ID Service Organization ID, then Segment sets the Experience Cloud ID and uses that instead.
 
-If you don't mind slightly inflated unique user counts, this may be acceptable, as all events in that anonymous user's session are still attributable to a single user ID. If you really do want to tie the anonymous event from the client side with your server side events, you could grab the `s_vi` cookie value from the client and pass it to your server. We respect any value passed in `context["Adobe Analytics"].visitorId` and pass that as the `visitorID` if provided. But keep in mind that if you go this route, you would probably need to manage the `s_vi` cookies for all your users since you always need to pass it with all your server side calls. Note that you can only parse the `s_vi` cookie if you have **1st party cookie** enabled in you reporting suite.
+Once you `identify` your user, Segment sets the `visitorId` variable to your `userId`. This effectively creates a new user, which *does* have unique user implications. However, based on a thorough reading of the Adobe documentation and discussion with many customers, we believe this is the best practice because it allows you to seamlessly track logged-in users across devices.
 
-Thus our recommendation is to take the slightly inflated user count, and just use the Segment `userId` as the `visitorId`. Yes, you'll have two user profiles if you have any anonymous client side events, but you can always set up custom eVars to connect the few anonymous events to the right user.
+### Cloud Mode - Server Side
 
-If you're using the Experience Cloud ID, we recommend doing this and including a `marketingCloudVisitotId` in `context["Adobe Analytics"].marketingCloudVisitorId`. Segment sends both the `userId` (or `anonymousId`, if the call is anonymous) in the `<visitorId>` tag and the Experience Cloud ID in the `<marketingCloudVisitorID>` tag, and Adobe handles it from there.
+<!-- Same comment plus we should distinguish between if we mean using a source installed on a server, sending through Segment's cloud, or both. "When you use cloud-mode to connect to Adobe Analytics, your sources... and this results in...  which means you need to..."-->
 
-**Note**: If you pass in the `visitorId` in a destination specific `integration` object within your Segment `page` or `track` events, then the `visitorId` persists on page or track calls that occur after an identify call. This effectively supersedes Segment setting the `visitorId` variable to your `userId` after an `identify` call.
+There are several options for tracking your users on the server. If you only track logged-in users, you can send their `userId` in your events to ensures that the events are attributed to the correct user. If you're tracking anonymous users, Segment sends the `s_vi` cookie from Adobe if you pass it under `context['Adobe Analytics'].visitorId` as the `visitorId`. If you do not pass as `visitorID`, Segment uses the `userId` if present, or as a last resort uses the Segment `anonymousId`. The Segment `anonymousId` is different from the anonymous `s_vi` value that Adobe Analytics auto-generates and uses on the client as an anonymous ID.
 
-We know this is daunting territory, so don't hesitate to contact us directly for guidance
+This may be acceptable if your organization can handle slightly inflated user counts, because all events in that anonymous user's session can still be attributed to a single user ID. If you want to tie the anonymous event from the device with your server-side events, you could extract the `s_vi` cookie value from the client and pass it to your server. Segment retains any value passed in `context["Adobe Analytics"].visitorId` and passes that as the `visitorID` when provided. However if you use this method, you might need to manage the `s_vi` cookies for all of your users since you must always pass it with each server side call. You can only parse the `s_vi` cookie if you have **1st party cookie** enabled in you reporting suite.
+
+Segment recommends that you accept the slightly inflated user count, and use the Segment `userId` as the `visitorId`. Yes, you'll have two user profiles if you have any anonymous client side events, but you can always set up custom `eVars` to connect the few anonymous events to the correct user.
+
+If you're using the Experience Cloud ID, you should accept this and use the Segment `userId`, and include a `marketingCloudVisitotId` in `context["Adobe Analytics"].marketingCloudVisitorId`. Segment sends both the `userId` (or `anonymousId`, if the call is anonymous) in the `<visitorId>` tag and the Experience Cloud ID in the `<marketingCloudVisitorID>` tag, and Adobe resolves the users from there.
+
+> note ""
+> **Note**: If you use the destination-specific `integration` object to pass the `visitorId` in your Segment `page` or `track` events, then the `visitorId` persists on Page or Track calls that occur after an Identify call. You can use this to override the Segment setting the `visitorId` variable to your `userId` after an `identify` call.
+
+We know this is daunting territory, so don't hesitate to [contact us directly for guidance](https://segment.com/help/contact/).
 
 
 #### No Fallbacks for VisitorId Setting - Cloud Mode Only
-As Adobe Analytics customers begin to migrate from using visitorId to using the Experience Cloud ID (ECID), we introduced a new called **No Fallbacks for Visitor ID**, to assist in this transition and reduce inflated user counts. If you disable the **Drop Visitor ID** setting, Segment will sends a `<visitorID>` in these three scenarios:
 
-1. A customer isn't sending timestamps (meaning the Timestamp Option setting is set to disabled)
-2. A customer is using hybrid timestamp mode and is sending `visitorId`
-3. A customer is using hybrid timestamp mode and is sending `visitorId` and timestamp
+Segment introduced a new **No Fallbacks for Visitor ID** setting to help with the transition from using the Adobe Analytics `visitorID` to using the Experience Cloud ID (ECID). This can also reduce inflated user counts<!-- how?-->. <!-- Probably also want to cover what sorts of visitorID we can use? (Segment userID and anonId, s_vi, visitorID, visitorID in the integrations object, ECID? do we have this in another doc we can copy/paste in?) why are timestamps involved here? and what does No Fallbacks do?-->
 
-**NOTE:** If one of these three scenarios is met and a customer does not send a `visitorId` in the integrations object, Segment falls back to setting the visitorId to either a Segment `userId` or `anonymousId`. This timestamp dependent functionality of when Segment sends a visitorID does not change when you enable **No Fallbacks for Visitor ID**. The **No Fallbacks for Visitor ID** setting is added functionality on top of that.
+If you disable the **Drop Visitor ID** setting, Segment sends a `<visitorID>` in these three scenarios:
+<!-- does the customer have control over this setting about timestamps? if not, reword. I think we mean 'if the customer's call includes..' -->
+- A customer isn't sending timestamps (meaning the Timestamp Option setting is set to disabled)
+- A customer is using hybrid timestamp mode and is sending `visitorId`
+- A customer is using hybrid timestamp mode and is sending `visitorId` and timestamp
+
+**NOTE:** If one of these three scenarios is met and a customer does not send a `visitorId` in the integrations object, Segment falls back to setting the visitorId to either a Segment `userId` or `anonymousId`. This timestamp-dependent functionality of when Segment sends a visitorID does not change when you enable **No Fallbacks for Visitor ID**. The **No Fallbacks for Visitor ID** setting is an added feature on top of that.
 
 The **No Fallbacks for Visitor ID** setting functionality behaves as such, if a customer is sending data in one of the three above scenarios, Segment checks if the setting is enabled and if they are sending a marketingCloudVisitorId in the integrations object. If they meet both of those criteria Segment removes the fallback behavior and sets `<visitorID>` to the value passed in the destination specific setting for `visitorId`. If that value is not passed, it leaves it blank.
 
-This decision tree is a visual representation of how Segment's Adobe Analytics destination settings and payload data interact with Segment to determine when to send a `visitorId` to Adobe. 
+This decision tree is a visual representation of how Segment's Adobe Analytics destination settings and payload data interact with Segment to determine when to send a `visitorId` to Adobe.
 
 ![](images/adobe-identity-res-decision-tree.png)
