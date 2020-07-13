@@ -44,7 +44,7 @@ Identity Graph automatically collects a rich set of external IDs without any add
 4. Common external IDs (`email`)
 5. Cross domain analytics IDs (`cross_domain_id`)
 
-If you want Identity Graph to operate on a different custom ID, you can pass it in using `context.externalIds` on an `identify()` or `track()`. If you're interested in this feature, please contact your CSM to discuss the best way to implement this feature.
+If you want Identity Graph to operate on a different custom ID, you can pass it in using `context.externalIds` on an `identify()` or `track()`. If you're interested in this feature, contact your CSM to discuss the best way to implement this feature.
 
 ## How do historical lookback windows work?
 
@@ -91,7 +91,7 @@ You can think of Personas as the brain on top of your raw data streams, synthesi
 
 From there, your marketing, product, sales, and success teams have channels on which they can act on a user's needs.
 
-They can reach out via livechat, email, push notification, or text. Success can better prioritize their support ticket in Zendesk, or hone in on the customer's problem faster. On the sales side, they can focus on the products a prospect is most engaged with, or focus on getting the customer on the right plan. Your product team can serve specific recommendations, based on that user's specific needs next time they visit your site.
+They can contact you using livechat, email, push notification, or text. Success can better prioritize their support ticket in Zendesk, or hone in on the customer's problem faster. On the sales side, they can focus on the products a prospect is most engaged with, or focus on getting the customer on the right plan. Your product team can serve specific recommendations, based on that user's specific needs next time they visit your site.
 
 Today, most businesses are forced to think about each channel as individual siloes. With Personas, all channels — including your marketing automation tool — can be powered by the same, singular understanding of your users.
 

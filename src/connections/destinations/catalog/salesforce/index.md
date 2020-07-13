@@ -8,11 +8,11 @@ Segment's Salesforce destination allows you to identify leads without using SOAP
 
 ### API Access
 
-You'll need to provide API access to Segment via a Salesforce user credentials. Since we use Salesforce's SOAP API, you'll need to provide an email, password, and security token to get access to their API.
+You'll need to provide API access to Segment using a Salesforce user credentials. Since we use Salesforce's SOAP API, you'll need to provide an email, password, and security token to get access to their API.
 
 Since we don't want to ask for the password of one of your actual user accounts, we recommend you create a new Salesforce user account for Segment. We realize an extra user account costs money, so feel free to use an existing account if you wish.
 
-If you decide to create a new user account for the Segment API, please create this user by going to *Setup > Administration Setup > Users > New User*, and creating a new user with a System Administrator profile. This profile is required to give us enough permissions to access the API.
+If you decide to create a new user account for the Segment API, create this user by going to *Setup > Administration set up > Users > New User*, and creating a new user with a System Administrator profile. This profile is required to give us enough permissions to access the API.
 
 Also make sure that IP Security is disabled in this Salesforce user account. This is because our servers often change and its hard to predict their IPs.
 
@@ -78,7 +78,7 @@ When you call `identify`, we'll check to see if this Lead exists based on the `e
 
 **IMPORTANT**: If you're planning to update custom fields in Salesforce with Segment, you need to make sure you create the custom Lead Field inside Salesforce *prior* to sending the data. The [Salesforce API for Leads](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_lead.htm) requires `lastName` and `company`. If either of this fields are not present in a server-side request we will automatically append the string `'n/a'` to each of those fields even if you have provided those fields in a previous request.
 
-For example, if you want to collect a custom trait in Segment called `testProp`, you can create a Field Label called `testProp` which will generate an API Name as `testProp__c`. We will append the `__c` to any custom traits so you don't need to worry about that. Please ensure to stay consistent with your casing. If you create custom fields in camelCase, make sure you send `traits` to Segment in camelCase. If you are creating custom fields in SFDC as `snake_case`, then be sure to send your `traits` in the same format.
+For example, if you want to collect a custom trait in Segment called `testProp`, you can create a Field Label called `testProp` which will generate an API Name as `testProp__c`. We will append the `__c` to any custom traits so you don't need to worry about that. Make sure to stay consistent with your casing. If you create custom fields in camelCase, make sure you send `traits` to Segment in camelCase. If you are creating custom fields in SFDC as `snake_case`, then be sure to send your `traits` in the same format.
 
 **NOTE**: Our Salesforce destination requires **every event to include a 'Salesforce': true in an integrations object**. Segment will not attempt to send any events to Salesforce that do not include this in their payload. The Salesforce SOAP API has very strict API limits so to prevent users from unintentionally hitting their limits, we require this in all events.
 
@@ -136,7 +136,7 @@ The above call will be sent like the following, in accordance with [Salesforce's
 - You must be using V2 of this destination.
 - You must pass in `traits.name` as this is a required field imposed by Salesforce for Account Objects.
 - You must pass `{ 'Salesforce': true }` in the `options`.
-- You must include `AccountNumber` as part of your page layout for us to be able to look up for the Account Objects via `groupId`:
+- You must include `AccountNumber` as part of your page layout for us to be able to look up for the Account Objects using `groupId`:
   - Log into your Salesforce account and go to `setup`
   - Go to `Build` > `Customize` > `Accounts` > `Page Layout`
   - Drag the `Account Number` Field to the `Account Detail`
@@ -148,7 +148,7 @@ In order to send custom traits, you must do the same steps as you had done for t
 
 ## Trait Validation
 
-Salesforce has documented strict validations on their semantic traits. We will trim all of those traits if they go over the limit. Please refer to their docs for [Account Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_account.htm#topic-title) and [Lead Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_lead.htm) to make sure you are sending the trait values under these limits if you do not want to see them trimmed off.
+Salesforce has documented strict validations on their semantic traits. We will trim all of those traits if they go over the limit. Refer to their docs for [Account Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_account.htm#topic-title) and [Lead Objects](https://developer.salesforce.com/docs/atlas.en-us.200.0.api.meta/api/sforce_api_objects_lead.htm) to make sure you are sending the trait values under these limits if you do not want to see them trimmed off.
 
 ## Custom Actions
 If you need to manually configure how your Segment events interact with Salesforce resources, you can do so using the [Actions](#actions) setting. This setting allows you to trigger standard CRUD operation (Create, Read, Update/Upsert, Delete) on your internal SFDC resources in response to your Segment events. You can configure as many of these actions as you would like. Each action must be associated with either a specific `track` event or **all** `identify` events. Actions can be further configured to map event properties to SFDC fields. Here's an example action configuration that will create a new Case in Salesforce in response to an **Issue Submitted** `track` event:
@@ -166,7 +166,7 @@ In this example, we creating or updating a Contact in Salesforce based on whethe
 
 ### Creating Other Resources
 
-To reduce the complexity of our API, our Salesforce destination intentionally only supports creating leads via the `identify` call. We make it extremely easy to create and update leads with our destination.
+To reduce the complexity of our API, our Salesforce destination intentionally only supports creating leads using the `identify` call. We make it extremely easy to create and update leads with our destination.
 
 To create resources of other types, such as Accounts or custom objects, we recommend integrating with Salesforce directly
 
@@ -186,7 +186,7 @@ Also, every thirty minutes, our servers make two queries: one to renew our conne
 
 ### How can I check how many Salesforce API calls I have left today?
 
-Go to `Setup > Administration Setup > Company Profile > Company Information`, and you'll find a field labeled: `API Requests, Last 24 Hours`.
+Go to `Setup > Administration set up > Company Profile > Company Information`, and you'll find a field labeled: `API Requests, Last 24 Hours`.
 
 
 ### What do I do if I ran out of calls?
@@ -208,7 +208,7 @@ Make sure that the traits you're passing through match the Custom Field's API na
 
 By default, Salesforce user accounts are set to have their passwords expire after 90 days. When this happens, the Salesforce user account that's making API calls on your behalf will no longer be able to make API calls. You'll need to set a new password, get a new security token, and then set both of these in your Segment Salesforce destination settings.
 
-If you want to set your passwords to never expire, you can do so in **Salesforce Setup > Administration Setup > Security Controls > Password Policies**.
+If you want to set your passwords to never expire, you can do so in **Salesforce set up > Administration set up > Security Controls > Password Policies**.
 
 ### Updating Lead Status
 

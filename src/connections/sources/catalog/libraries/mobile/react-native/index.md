@@ -14,6 +14,10 @@ Subscribe to the [release feed](https://github.com/segmentio/analytics-react-nat
 
 ### Prerequisite
 
+#### React-Native
+
+- 0.62 or greater is required.
+
 #### iOS
 
 - CocoaPods (**recommended**)
@@ -21,7 +25,7 @@ Subscribe to the [release feed](https://github.com/segmentio/analytics-react-nat
 
 ### Install the SDK
 
-The recommended way to install Analytics for React Native is via npm, since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade.
+The recommended way to install Analytics for React Native is using npm, since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade.
 
 First, add the `@segment/analytics-react-native` dependency to your `dependencies` and link it using `react-native-cli`, like so:
 
@@ -30,7 +34,7 @@ $ yarn add @segment/analytics-react-native
 $ yarn react-native link
 ```
 
-Then somewhere your application, setup the SDK like so:
+Then somewhere your application, set up the SDK like so:
 
 ```js
 await analytics.setup('YOUR_WRITE_KEY', {
@@ -59,7 +63,7 @@ Here are the steps for installing manually:
 2. In the `General` tab for your project, search for `Embedded Binaries` and add the `Analytics.framework`
    ![Embed Analytics.framework](images/embed-analytics-framework.png)
 
-Please note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
+Note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
 
 ### Including SDKs for destinations using Device-mode
 
@@ -258,7 +262,7 @@ If you are seeing any of your destinations turned off in the raw version of requ
 }
 ```
 
-These flags tell the Segment servers that a request was already made directly from the device through a packaged SDK. That way we don't send a duplicate request via our servers to those services.
+These flags tell the Segment servers that a request was already made directly from the device through a packaged SDK. That way we don't send a duplicate request using our servers to those services.
 
 
 ## Configuration
@@ -280,7 +284,16 @@ analytics.setup('YOUR_WRITE_KEY', {
 
 ### Native configuration
 
-You can also use the native Analytics API to configure it. Just make sure to call `analytics.useNativeConfiguration()` in your JavaScript code so that Analytics doesn't wait for you to configure it.
+You can also use the native Analytics API to configure the Analytics instance by calling `analytics.useNativeConfiguration()` in your JavaScript code. This prevents the Analytics instance from waiting for additional configuration. 
+You should wrap the call under a conditional, as in the following example:
+
+```js
+import analytics from '@segment/analytics-react-native';
+
+if (!analytics.ready) { // checks if analytics is already ready; if not we can safely call `useNativeConfiguration`
+    analytics.useNativeConfiguration();
+}
+```
 
 ### Flushing
 
@@ -355,11 +368,11 @@ After adding the dependency, you must register the destination with our SDK.
 import analytics from '@segment/analytics-react-native'
 import Bugsnag from '@segment/analytics-react-native-bugsnag'
 import Branch from '@segment/analytics-react-native-branch'
-import GoogleAnalytics from '@segment/analytics-react-native-google-analytics'
+import Firebase from '@segment/analytics-react-native-firebase'
 
 await analytics.setup('YOUR_WRITE_KEY', {
   // Add any of your Device-mode destinations.
-  using: [Bugsnag, Branch, GoogleAnalytics]
+  using: [Bugsnag, Branch, Firebase]
   // ...
 })
 ```
@@ -439,6 +452,10 @@ If you're using Device-mode for a mobile destination, you can always access feat
 To make sure you use the same instance of these destinations as we do, you can register a listener that notifies you when the destinations are ready. This will be called synchronously if the destinations are notified, and asynchronously if the destinations aren't yet ready.
 
 ```java
+analytics = Analytics.with(myActivity) // typically `this` will suffice here.
+
+...
+
 analytics.onIntegrationReady("Crittercism", new Callback() {
   @Override public void onReady(Object instance) {
     // Crittercism uses static methods only, so the instance returned is null.
@@ -504,6 +521,34 @@ Once you enable this, you will see the `context.device.advertisingId` populate a
 
 _Note_: While the network is deprecated, the relevant [framework](https://developer.apple.com/reference/iad) is not.
 
+### Using a custom anonymousID
+
+You might want to use a custom `anonymousID` to better integrate with other systems in your deployment. The best way to do this is to override the default using the `options` parameter when you call `analytics.identify`, as in the example below.
+
+```js
+analytics.identify('brandon', null, { anonymousId: '0123456789' })
+```
+
+### Adding data to the context
+
+In some cases, you might want to add information to [the `context` object](/docs/connections/spec/common/#context) in the Segment message payload. This can be useful for adding context or session data for an event that doesn't have another logical place to add it, such as in an Identify, Screen or Group.
+
+```js
+analytics.identify('brandon', null, { context: { myValue: false, loginFailures: 3 }})
+```
+
+The data passed in the `context` dictionary (as in the example above) are merged with data already present in the context object for this event.
+
+### Block specific events from going to a given destination
+
+There are some situations where you might not want to send an event to a specific cloud-mode destination.  You can block events from destinations on a per-event basis by setting customizing the `integrations` object as shown in the example below. Learn more about [filtering data with the integrations object here](/docs/guides/filtering-data/#filtering-with-the-integrations-object).
+
+```js
+analytics.track('MyEvent', null, { integrations: { Mixpanel: false }})
+```
+
+By default, events are delivered to any cloud-mode destinations currently enabled on Segment.com. You can override this delivery by adding a list, as in the example above. In this example, the event does not reach the  Mixpanel destination.  Remember that destination flags are **case sensitive** and must match the actual destination name. (Many destination documentation pages include a list of acceptable names when the correct name is not clear.)
+
 ## Troubleshooting
 
 ### No events in my debugger
@@ -518,7 +563,7 @@ _Note_: While the network is deprecated, the relevant [framework](https://develo
 1. Verify that your destination is enabled
 2. Verify your destination credentials entered in your Segment dashboard are correct
 3. Make sure the destination can accept what you're sending:
-   - Does the integration have device-mode/cloud-mode support? Confirm you are sending via the correct connection mode.
+   - Does the integration have device-mode/cloud-mode support? Confirm you are sending using the correct connection mode.
    - Does the destination accept the type of call you are sending? Not all destinations accept all calls: page, track, etc.
 4. If you are still not seeing data in your destination, continue debugging based on which type of connection mode you are using.
 
@@ -538,7 +583,7 @@ Read through [the docs for that destination](/docs/connections/destinations/) to
 
 ### Still having issues?
 
-Please [contact our Product Support team](https://segment.com/help/contact/) with the following information:
+[contact our Product Support team](https://segment.com/help/contact/) with the following information:
 
 - The version of our SDK you are using
 - Whether you are using device- or cloud-mode

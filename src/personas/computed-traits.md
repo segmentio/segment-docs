@@ -149,9 +149,9 @@ User-level computed Traits are sent to destinations on our platform through the 
 
 For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group/) call and/or [identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
 
-## Accessing your Computed Traits via the Profiles API
+## Accessing your Computed Traits using the Profiles API
 
-You can access your computed traits via the Profile API by querying the `/traits` endpoint. For example, if you can query for the `emails_opened_last_30_days` with the following GET request:
+You can access your computed traits using the Profile API by querying the `/traits` endpoint. For example, if you can query for the `emails_opened_last_30_days` with the following GET request:
 
 ```
 https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:john.doe@segment.com/traits?include=emails_opened_last_30_days
@@ -180,7 +180,7 @@ You can download a copy of your trait by visiting the the computed trait overvie
 ![](images/trait_overview.png)
 Computed Trait CSVs are generated on demand. Before you can download the CSV, you will need to generate it. There are three different options for formatting:
 - **Unformatted:** Contains three columns. The first contains the user or account key, the second contains the trait value and the third is a JSON object containing the external IDs. Generating this CSV is by far the fastest of the three options. [Download example unformatted CSV](files/trait_csv_format_a.csv)
-- **Distinct columns for unique external IDs (with indexed columns for ID types with multiple values):** Contains the same first three columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a single row has more than one value for a given external ID type, for example a user with three email addresses, _additional columns with indexed headers are added_,  (`email`, `email_1`, `email_2`). [Download example formatted CSV with indexed columns](files/trait_csv_format_b.csv)
+- **Distinct columns for unique external IDs (with indexed columns for ID types with multiple values):** Contains the same first three columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a single row has more than one value for a given external ID type, for example a user with three email addresses, _additional columns with indexed headers are added_, (`email`, `email_1`, `email_2`). [Download example formatted CSV with indexed columns](files/trait_csv_format_b.csv)
 - **Distinct columns for unique external IDs (with additional rows for ID types with multiple values):** Contains the same first three columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a single row has more than one value for a given external ID type, for example a user with two email addresses, _additional rows are added with the first three columns repeated (user or account key, trait value and external IDs JSON)._ [Download example formatted CSV with additional rows](files/trait_csv_format_c.csv)
 <table>
     <tr>

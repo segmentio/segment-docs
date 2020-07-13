@@ -5,18 +5,11 @@ title: Privacy Controls & Alerts
 ## Privacy Controls
 
 The Privacy Portal gives you control over whether specific data is allowed to
-enter Segment ([Standard Controls](#standard-controls)), or be sent to specific
-Destinations at all ([Advanced Controls](#advanced-controls)).
+enter Segment.
 
-> **Note**: All Privacy Controls are in Public Beta, meaning their use is governed by [(1) Segment First Access](https://segment.com/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/)).
-
-
-### Standard Controls
-
-Standard controls are available to all customers, across all plan types. With
-these standard controls, you can block data at the source level, which means
-data from those sources never enters Segment once blocked. Source-level Privacy
-Controls do not support blocking to device-mode destinations.
+The controls are available to all customers, across all plan types. With
+these, you can block data at the source level, which means
+data from those sources never enters Segment once blocked. This does not support blocking to device-mode destinations.
 
 For example, if you want to prevent certain types of PII (like Credit Card
 Number) from ever being ingested by Segment, you can block it using standard
@@ -33,36 +26,6 @@ Yellow data into or out of Segment, the standard controls respect the rules set
 by those Controls. For example, if you have a Privacy Control set up to block
 **Red** data at the Source-level, any new fields you classify in the Inbox as
 **Red** will also be blocked from that Source.
-
-
-### Advanced Controls
-
-Advanced controls are in public beta, but are available to all customers who
-have the Protocols add-on as part of their Segment Plan. As of today, advanced
-controls are available upon request through the in-app **Advanced Privacy Controls** card.
-
-Advanced controls allow you to block, allow, or hash data on a granular Source
-and Destination level. By submitting a request in the app, Segment will
-configure Controls for you. Advanced Controls works on both Server-Side Sources,
-as well as Server-Side and Cloud-mode Destinations. Blocking events at the
-Source simply blocks the properties from entering Segment, but does not block
-the rest of the event from flowing through. Blocking events at the Destination
-simply blocks the properties from being sent to the Destination, but it does not
-block the rest of the event from being forwarded to destinations.
-
-Hashing is available upon request, and at this time is only compatible with
-cloud-mode destinations, and device-mode destinations sent from Analytics.js.
-Warehouses and S3 are not currently supported by Privacy Controls. Our default
-hashing algorithm is `sha256`, and others may be available upon request through
-the in-app form link.
-
-Note that if you block Segment data at the Source, this is irreversible and we
-can not Replay it for you. Additionally, note that if you have any [Privacy Controls](#privacy-controls) configured for how to route your Red and Yellow
-data into or out of Segment, the classifications you create in the Inbox will
-respect by those Controls. For example, if you have a Privacy Control set up to
-block **Yellow** data from Google Analytics, any new fields you classify in the
-Inbox as **Yellow** will also be blocked from Google Analytics.
-
 
 ## Privacy Alerts
 

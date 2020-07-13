@@ -14,7 +14,7 @@ Analytics for Android uses a light-weight queuing mechanism to make API calls to
 
 ## Getting Started
 
-To get started head over to our [Android QuickStart](/docs/libraries/android/v1/quickstart) which will help you install analytics tracking on your app in just a few minutes. Once you've installed the library, read on for the detailed API reference!
+To get started head over to our [Android QuickStart](/docs/connections/sources/catalog/libraries/mobile/android/v1/quickstart) which will help you install analytics tracking on your app in just a few minutes. Once you've installed the library, read on for the detailed API reference!
 
 
 ## Identify
@@ -157,7 +157,7 @@ Analytics.screen("Viewed Item", props);
 The `identify`, `group`, `screen`, `track`, and `alias` calls can be passed an options object.
 
 
-## destinations
+## Destinations
 
 You can specify which analytics providers you want each action to go to.
 
@@ -186,7 +186,7 @@ If you are seeing any of your destinations turned off in the raw version of requ
 }
 ```
 
-These flags tell the Segment servers that a request was already made directly from the device through a bundled SDK. That way we don't send a duplicate request via our servers to those services.
+These flags tell the Segment servers that a request was already made directly from the device through a bundled SDK. That way we don't send a duplicate request using our servers to those services.
 
 
 ## Historical Import
@@ -310,7 +310,7 @@ There is no performance hit to enqueueing an action into the Android sql-lite da
 
 ### Flushing thread
 
-The flushing thread is seperate from the database thread, and is responsible for taking information from the database and sending it to our servers via a HTTPS request. This is designed to happen less frequently because each outbound HTTP request can take a toll on the user's battery life.
+The flushing thread is seperate from the database thread, and is responsible for taking information from the database and sending it to our servers using a HTTPS request. This is designed to happen less frequently because each outbound HTTP request can take a toll on the user's battery life.
 
 
 ### Flush timer thread
@@ -434,7 +434,7 @@ If an analytics service offers an Android SDK, we prefer to bundle their SDK wit
 
 * The service's SDK is usually the best implementation of their own API, so the end user will get the best analytics experience.
 * Changes to the SDK are easy to integrate back into this library.
-* Some services don't document a REST API, so its only possible to integrate via their mobile SDK.
+* Some services don't document a REST API, so its only possible to integrate using their mobile SDK.
 
 The SDKs are bundled with our library so that you can turn them on in the Segment interface without re-building your app, re-publishing it to the Play Store, and waiting for your users to update to the new version.
 
@@ -492,7 +492,7 @@ To add a bundled provider to the library, you can follow these steps:
 
 4 Build the project with `./gradlew clean build connectedCheck`. See the [building](#building) section for more info.
 
-5. Send a Pull Request, and [contact us](/contact) to add it to our platform, so that people can toggle it on with one click.
+5. Send a Pull Request, and [contact us](https://segment.com/help/contact/) to add it to our platform, so that people can toggle it on with one click.
 
 ### Destination Sizes
 

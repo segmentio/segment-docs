@@ -158,7 +158,7 @@ The `track` call has the following fields:
   </tr>
 </table>
 
-You'll want to track events that are indicators of success for your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
+You should track events that are indicators of success for your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
 
 To get started, we recommend tracking just a few important events. You can always add more later!
 
@@ -192,7 +192,7 @@ For more information about choosing which events to track, event naming and more
 
 The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side setup in combination with the Ruby library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using our client-side set up in combination with the Ruby library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
 The `page` call has the following fields:
 
@@ -451,7 +451,7 @@ Segment::Analytics.new({
 
 ## Flush
 
-If you're running any sort of script or internal queue system to upload data, you'll want to call `Analytics.flush` at the end of execution to ensure that all messages are sent to our servers. It's also recommended you call this method on shutdown to ensure all queued messages are uploaded to Segment.
+If you're running any sort of script or internal queue system to upload data, you should call `Analytics.flush` at the end of execution to ensure that all messages are sent to our servers. It's also recommended you call this method on shutdown to ensure all queued messages are uploaded to Segment.
 
 ```ruby
 AppAnalytics = Segment::Analytics.new({

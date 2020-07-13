@@ -7,9 +7,9 @@ redirect_from: '/connections/destinations/catalog/smbstream/'
 
 [SMBStreams](https://www.buzzboard.com/smbstreams/solutions/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations. The most comprehensive set of data is maintained, integrated and then delivered as important insights across your sales and marketing organization.
 
-This destination is maintained by SMBStreams. For any issues with the destination, please [reach out to their team](mailto:support@buzzboard.com).
+This destination is maintained by SMBStreams. For any issues with the destination, [contact their team](mailto:support@buzzboard.com).
 
-_**NOTE:** The SMBStreams Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the SMBStreams Destination and its documentation, please [let  their team know](mailto:support@buzzboard.com)!_
+_**NOTE:** The SMBStreams Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the SMBStreams Destination and its documentation, [let their team know](mailto:support@buzzboard.com)!_
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ _**NOTE:** The SMBStreams Destination is currently in beta, which means that the
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('John123', {

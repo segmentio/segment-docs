@@ -7,7 +7,7 @@ rewrite: true
 
 Our Flurry destination code is open sourced on Github. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-flurry), [Android](https://github.com/segment-integrations/analytics-android-integration-flurry).
 
-This document was last updated on January 10, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on January 10, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -24,7 +24,7 @@ _Note: Flurry does not always display data in real time. We've seen that it can 
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does.
 
 An example iOS call would look like:
 
@@ -42,7 +42,7 @@ _Note: When you toggle the Screen Tracks As Events option on in your Flurry Segm
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
 
 An example iOS call would look like:
 
@@ -64,7 +64,7 @@ When you call [`identify`](/docs/connections/spec/identify/), we'll set the user
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 An example iOS call would look like:
 

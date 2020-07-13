@@ -11,7 +11,7 @@ This source is maintained by Moesif. For any issues with the source, [contact th
 
 1. From your Segment UI's Sources page click on "Add Source".
 2. Select Moesif API Analytics within the Source Catalog and confirm adding the source.
-3. Give the Source a nickname and follow the setup flow to "Add Source".
+3. Give the Source a nickname and follow the set up flow to "Add Source".
 3. Copy the Write Key from the added source. You'll need this later in Moesif.
 4. Log into your [Moesif account](https://www.moesif.com/wrap/), go to the _Settings_ menu and click _Extensions_.
 5. Select the Segment Extension within the extensions gallery and add your write key under _Add Partner Key_.
@@ -193,4 +193,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Moesif team](mailto:support@moesif.com).
+If you experience any issues with how the events arrive in Segment, [contact the Moesif team](mailto:support@moesif.com).

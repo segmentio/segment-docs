@@ -5,10 +5,10 @@ hide-boilerplate: true
 
 [Google Display & Video 360 (DV360)](https://marketingplatform.google.com/about/display-video-360/), previously called ‘DoubleClick’ and part of the Google Marketing Platform, is an end-to-end campaign management tool for small businesses and enterprises. It can help with anything from media planning and creative development to measurement and optimization. When paired with [Segment’s Personas](https://segment.com/product/personas/), you now have the ability to sync [audience lists](https://segment.com/docs/personas/audiences/) straight to DV360’s platform and perform in-depth analysis on your customer’s browsing and purchasing activities across various client-side platforms.
 
-You must have Personas in your Segment plan to use this destination. Please [contact](https://segment.com/contact/demo) our sales team to try this out.
+You must have Personas in your Segment plan to use this destination. [contact](https://segment.com/contact/demo) our sales team to try this out.
 
 > info ""
-> **Note**: DV360 is currently in beta. This means that there may still be some bugs for us to iron out, and we’re excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the DV360 Destination, and its documentation, please [let us know](https://segment.com/help/contact)!
+> **Note**: DV360 is currently in beta. This means that there may still be some bugs for us to iron out, and we’re excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the DV360 Destination, and its documentation, [let us know](https://segment.com/help/contact)!
 
 ## How It Works
 

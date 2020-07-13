@@ -1,5 +1,6 @@
 ---
 title: Identity Resolution Settings
+redirect_from: '/personas/identity-resolution/identity-graph-rules/'
 ---
 
 ## Setting Up Identity Graph Rules
@@ -118,7 +119,7 @@ Identity Admins can specify the total number of values allowed per externalID ty
 
 ![](images/user-id.png)
 
-There are specific cases that will deviate from this default. For example, a case where a user can have more than one user_id but only one email, like when a user is defined by both their shopify_id and an internal UUID. In this case, an example setup may be:
+There are specific cases that will deviate from this default. For example, a case where a user can have more than one user_id but only one email, like when a user is defined by both their shopify_id and an internal UUID. In this case, an example set up may be:
 
 | ExternalID            | Limit |
 | --------------------- | ----- |

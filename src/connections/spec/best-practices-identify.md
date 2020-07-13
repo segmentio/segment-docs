@@ -34,13 +34,13 @@ Let's look at Rdio as an example. When a new visitor goes to their site that v
 As part of that new user record the person is assigned a userId. Let's say the new userId is `12345`. Rdio will then need to fire the following calls on the welcome page:
 
 ```js
-analytics.identify('12345',{  name:'Jake Peterson',  email:'jake.peterson@example.com'});
+analytics.identify('12345',{  name:'Jake Peterson', email:'jake.peterson@example.com'});
 analytics.track('Account Created',{  authentication:'Facebook'})
 ```
 
 [Identify](https://segment.com/docs/connections/sources/catalog/libraries/server/http/#identify) signals that the user of this browser is user `12345`. And also sets name and email as traits of user `12345`.
 
-[Track](/docs/connections/spec/track) records an event that says `12345` registered for an account via Facebook.
+[Track](/docs/connections/spec/track) records an event that says `12345` registered for an account using Facebook.
 
 ### Advanced
 
@@ -57,7 +57,7 @@ analytics.identify('12345');
 analytics.track('Account Created', { authentication:'Facebook'})
 ```
 
-So far the user is only identified by their userId. Later, all the user's traits can be filled in via Python (or any of our other server-side [sources](https://segment.com/docs/connections/sources/catalog/libraries/server)).
+So far the user is only identified by their userId. Later, all the user's traits can be filled in using Python (or any of our other server-side [sources](https://segment.com/docs/connections/sources/catalog/libraries/server)).
 
 ```js
 analytics.identify('12345',{

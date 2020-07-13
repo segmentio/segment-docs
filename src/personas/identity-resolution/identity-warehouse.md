@@ -4,7 +4,7 @@ title: Identity Warehouse (Limited Availability)
 
 
 > note ""
-> **NOTE:** The Identity warehouse currently has limited availability. Please contact your Segment customer success manager to enable this feature.
+> **NOTE:** The Identity warehouse currently has limited availability. contact your Segment customer success manager to enable this feature.
 
 The Personas Identity Warehouse allows customers to export all the identifiers associated with any one user.
 

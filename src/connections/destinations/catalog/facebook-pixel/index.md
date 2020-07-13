@@ -1,13 +1,14 @@
 ---
 title: Facebook Pixel Destination
 rewrite: true
+strat: facebook
 ---
 
 [Facebook Pixel](https://developers.facebook.com/docs/facebook-pixel) lets you measure and optimize the performance of your Facebook Ads. It makes conversion tracking, optimization and remarketing easier than ever. The Facebook Pixel Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-facebook-pixel).
 
 _**NOTE:** Facebook has deprecated their modular "Ads For Websites" suite, which previously comprised Facebook Custom Audiences and Facebook Conversion Tracking. We've consolidated those two destinations into this new and improved "Facebook Pixel" destination._
 
-This document was last updated on 31st October, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on 31st October, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
@@ -38,7 +39,7 @@ We'll automatically initialize Facebook's pixel with your `pixelId` upon loading
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page();
@@ -48,7 +49,7 @@ We've mapped `analytics.page()` to [Facebook's `fbq('track', "PageView")`](https
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('ze8rt1u89', {
@@ -64,11 +65,11 @@ analytics.identify('ze8rt1u89', {
 });
 ```
 
-When you make an Identify call with Segment, it will update Facebook Pixel the next time the user loads a page on your website. Facebook Pixel does not support immediately updating user properties via Identify. When you perform an Identify call in Segment, it will update in Facebook Pixel via their Advanced Matching feature.
+When you make an Identify call with Segment, it will update Facebook Pixel the next time the user loads a page on your website. Facebook Pixel does not support immediately updating user properties using Identify. When you perform an Identify call in Segment, it will update in Facebook Pixel using their Advanced Matching feature.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("My Custom Event", {
@@ -170,7 +171,7 @@ For most implementations we recommend leaving these mappings blank. By default, 
 
 ## Troubleshooting
 
-### PII Blacklisting
+### PII Blocklisting
 
 Facebook enforces strict guidelines around sending Personally Identifiable Information (PII) as properties of Pixel events. In order to adhere to these guidelines, Segment will automatically scan `track` event properties for PII and remove any that get flagged from the event to Facebook. The following keys are currently filtered:
 
@@ -187,7 +188,7 @@ Facebook enforces strict guidelines around sending Personally Identifiable Infor
 
 Any `track` events with properties containing those keys will be sent to Facebook with those properties omitted.
 
-If you have events that use any of those keys for non-PII properties, you can manually whitelist them using the **Whitelist PII Properties** setting. You may also add to this list and/or optionally hash blacklisted properties with the **Blacklist PII Properties** setting.
+If you have events that use any of those keys for non-PII properties, you can manually whitelist them using the **Allowlist PII Properties** setting. You may also add to this list and/or optionally hash blocklisted properties with the **Blocklist PII Properties** setting.
 
 ### Inconsistent or Missing Conversions
 

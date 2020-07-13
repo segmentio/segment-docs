@@ -5,7 +5,7 @@ rewrite: true
 
 [Facebook Offline Conversions](https://www.facebook.com/business/help/1782327938668950?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables offline event tracking, so marketers can run campaigns, upload transaction data, and compare in-store transactions.
 
-This document was last updated on April 24, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on April 24, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
@@ -54,7 +54,7 @@ You can find Facebook Offline Event Set ID by going to your **Offline Events** p
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track({
@@ -257,7 +257,7 @@ analytics.track({
 });
 ```
 
-_Note_: You can choose to exlicitly send `firstName` or `lastName` separately or just send `name`. We will properly map to `fn` and `ln` properly. If your server has access to Facebook's **Lead IDs** from their Lead Ads product, you can opt to send this via integration specific options:
+_Note_: You can choose to exlicitly send `firstName` or `lastName` separately or just send `name`. We will properly map to `fn` and `ln` properly. If your server has access to Facebook's **Lead IDs** from their Lead Ads product, you can opt to send this using integration specific options:
 
 ```js
 // node.js library example

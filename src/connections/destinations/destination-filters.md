@@ -37,7 +37,7 @@ The Destination Filters API offers four different types of filters:
 2. **sample_event**: Send only a percentage of events through to the
    destination.
 3. **whitelist_fields**: Only send whitelisted properties to destination.
-4. **blacklist_fields**: Do not send blacklisted properties to destination.
+4. **blocklist_fields**: Do not send blocklisted properties to destination.
 
 Read more in the [Destination Filters API docs](https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5).
 
@@ -121,7 +121,7 @@ consolidating filters or would like to discuss your use case, [contact us](https
 
 Device-mode destination filters for Web are currently in Early Access Preview.
 
-Please [contact us](https://segment.com/help/contact/) if you are interested in testing this feature.
+[contact us](https://segment.com/help/contact/) if you are interested in testing this feature.
 
 **Q: When will you support warehouses?**
 

@@ -1,8 +1,9 @@
 ---
 title: Analytics.js (Javascript) Source
-sourceTitle: 'JavaScript'
-sourceCategory: 'Website'
-redirect_from: '/connections/sources/catalog/libraries/website/analytics.js/'
+redirect_from:
+  - '/connections/sources/catalog/libraries/website/analytics.js/'
+  - '/sources/website/javascript/'
+  - '/sources/website/analytics.js/'
 ---
 
 Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
@@ -13,9 +14,10 @@ Head over to our [`analytics.js` QuickStart Guide](/docs/connections/sources/cat
 
 ## Identify
 
-The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the guide](/docs/tutorials/quickstart-analytics.js#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
+The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
-**Note:** We recommend against using `identify` for anonymous visitors to your site. `analytics.js` automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors. It is attached to all `page` and `track` events both before and after an `identify`.
+> note ""
+> We recommend against using `identify` for anonymous visitors to your site. `analytics.js` automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors. It is attached to all `page` and `track` events both before and after an `identify`.
 
 `identify` method definition:
 
@@ -86,7 +88,7 @@ analytics.identify('12091906-01011992', function(){
 
 ## Track
 
-The `track` method lets you record any actions your users perform. You can [see a track example in the guide](/docs/tutorials/quickstart-analytics.js#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track).
+The `track` method lets you record any actions your users perform. You can [see a track example in the guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track).
 
 `track` method definition:
 
@@ -362,7 +364,7 @@ The `ready` method has the following fields:
 
 ## Querystring API
 
-`analytics.js` can trigger track and identify events based on the URL querystring. This is helpful for tracking email click throughs, social media clicks, and digital advertising as well as for cross-domain tracking.
+`analytics.js` can trigger track and identify events based on the URL querystring. This is helpful for tracking email click throughs, social media clicks, and digital advertising.
 
 Here are the query parameters to use:
 
@@ -437,7 +439,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 The `.load` method in analytics.js (the second line of the snippet) can also be modified to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations)), then we only load the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
-**IMPORTANT:** In order to leverage this feature, please ensure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
+**IMPORTANT:** In order to use this feature, make sure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
 
 An example:
 
@@ -459,7 +461,7 @@ onConsentDialogClosed(function(consentedTools){
 
 Once `analytics.js` loads, executing the `user` or `group` method functions returns information about the currently identified user or group.
 
-**Note:** To ensure these methods are available, wrap any reference to `user()` or `group()` in a [ready function block](https://segment.com/docs/libraries/analytics.js/#ready).
+**Note:** To ensure these methods are available, wrap any reference to `user()` or `group()` in a [ready function block](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript#ready).
 
 Examples:
 
@@ -505,7 +507,7 @@ Calling `reset` resets the `id`, including anonymousId, and clear `traits` for t
 analytics.reset();
 ```
 
-The `reset` method only clears the cookies and `localStorage` created by Segment. It does not clear data from other integrated tools, as their native libraries might set their own cookies to manage user tracking, sessions, and manage state. To completely clear out the user session, see the documentation provided by those tools. 
+The `reset` method only clears the cookies and `localStorage` created by Segment. It does not clear data from other integrated tools, as their native libraries might set their own cookies to manage user tracking, sessions, and manage state. To completely clear out the user session, see the documentation provided by those tools.
 
 Segment does not share `localStorage` across subdomains. If you use Segment tracking on multiple subdomains, you must call `analytics.reset()` for each subdomain to completely clear out the user session.
 
@@ -564,6 +566,14 @@ analytics.track('Email Clicked', {
 });
 ```
 
+You can also set the `anonymousId` immediately inside your Segment snippet, even before the `ready` method has returned:
+
+ ```js
+  analytics.load('writekey');
+  analytics.page();
+  analytics.setAnonymousId('ABC-123-XYZ');
+```
+
 Keep in mind that setting the `anonymousId` in `analytics.js` does not overwrite the anonymous tracking IDs for any destinations you're using.
 
 
@@ -571,7 +581,7 @@ Keep in mind that setting the `anonymousId` in `analytics.js` does not overwrite
 
 A user's `anonymousId` refreshes on any of the following conditions:
 
-* A user clears their cache or cookies
+* A user clears their cookies _and_ `localstorage`
 * [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript//#reset-logout) is called during in the user's browser session
 * `analytics.identify()` is called with a userId that differs from the current userId
 
@@ -623,7 +633,7 @@ analytics.on('track', function(event, properties, options) {
 });
 ```
 
-Please note that this emits events before they are processed by the Segment integration, and may not include some of the normalization we do on the client before uploading the data to Segment's servers.
+Note that this emits events before they are processed by the Segment integration, and may not include some of the normalization we do on the client before uploading the data to Segment's servers.
 
 > note ""
 > **Note:** Page event properties are stored in the `options` object.
@@ -729,6 +739,12 @@ Using `analytics.js` does not offer a _huge_ performance benefit, but it is more
 
 One option, if you don't want to use any bundled 3rd-party tools, is to use our browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package.
 
+### Bundle size
+
+Segment's javascript snippet ([Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) has minimal impact on the size of the pages, and only increases the page size by about 1.1KB.
+
+However, the snippet then asynchronously requests and loads a customized javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your device-mode destinations. Because of this, the file size can vary depending on how many and which destinations you enable. Without any destinations, the `analytics.min.js` file is about 62KB. Each time you enable a destination, it can slightly increase the size of this file.
+
 ## Retries
 
 When enabled, analytics.js automatically retries network and server errors. With persistent retries, analytics.js can:
@@ -749,13 +765,88 @@ Example:
   analytics.track("Order Completed", {}, { context: { ip: "0.0.0.0" }});
 ```
 
+## Middleware
+
+Middlewares allow developers to extend Analytics.js with custom code which runs on every event. This code has full access to the DOM and Browser API, and helps customers enrich and transform event payloads.
+
+Analytics.js can be extended using two functions:
+
+```js
+addSourceMiddleware(middleware)
+addDestinationMiddleware(targetIntegration, [middleware1, middleware2, ...])
+```
+
+The first function (Source Middleware) allows you to manipulate the payload and filter events on a per-source basis, while the second function (Destination Middleware) allows this on a per destination basis. Middlewares run in the browser.
+
+### Using Source Middlewares
+
+The function signature for creating Source Middleware has three parameters:
+
+```js
+function({payload, next, integrations}){};
+```
+
+- `payload` represents the event payload sent by Analytics.js. To change the value of the `payload`, mutate the `payload.obj` object. (See the example below.)
+- `next` represents the next function to be called in the source middleware chain. If the middleware provided does not call this function, the event is dropped on the client and is not delivered to Segment or any destinations.
+- `integrations` is an array of objects representing all the integrations that the payload is sent to. If an integration in this array is set to a ‘falsey’ value then the event is not be sent to the Integration.
+
+```js
+var SMW1 = function({ payload, next, integrations }) {
+  payload.obj.pageTitle = document.title;
+  next(payload);
+};
+```
+
+### Using Destination Middlewares
+
+The function signature for creating Destination Middleware also has three parameters:
+
+```js
+function({payload, next, integration}){}
+```
+
+- `payload` represents the event payload sent by Analytics.js. To change the value of the `payload`, mutate the `payload.obj` object. (See the example below.)
+- `next` represents the next function to be called in the destination middleware chain. If the middleware provided does not call this function, then the event is dropped completely for the given destination.
+- `integration` is a string value representing the integration that this middleware is applied to.
+
+```js
+var DMW1 = function({ payload, integration, next }) {
+  delete payload.obj.pageTitle;
+  next(payload);
+};
+```
+
+### Adding middlewares to Analytics.js
+
+The above defined Source & Destination Middleware can be added to the Analytics.js execution chain as:
+
+```js
+analytics.addSourceMiddleware(SMW1);
+analytics.addDestinationMiddleware('integrationA', [DMW1]);
+```
+
+
+You can call the `.addSourceMiddleware(fn)` multiple times, and the order of operations reflects the order in which you register your Source Middleware.
+
+Both `.addSourceMiddleware(fn)` and `.addDestinationMiddleware('integration', [fn, ...])` can be called before [`.load()`](/docs/connections/sources/catalog/libraries/website/javascript/#load-options).
+
+### Braze Middleware
+
+If you use the Braze (Appboy) destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation.
+This optional middleware is disabled by default. When enabled, it ensures that only events where at least one changed trait value are sent to Braze, and events with duplicate traits are not sent.
+
+To enable this Middleware for a Javascript or Project source, go to `Analytics.js` in your source settings.
+![BrazeMiddleware](images/sources_ajs_brazemiddleware.gif)
+
+More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
+
 ## Proxy
 
-To use a proxy server with analytics.js, you'll first want to update the address in the snippet to use your own host instead of `cdn.segment.com`. Secondly, you'll need to write in to our support to change the endpoint we send events to from `api.segment.io` to your proxy instead. Please take care that your proxy behaves exactly like our real APIs. You can use our [proxy server](https://github.com/segmentio/segment-proxy) as an example of a correctly working proxy.
+To use a proxy server with analytics.js, you'll first want to update the address in the snippet to use your own host instead of `cdn.segment.com`. Secondly, you'll need to write in to our support to change the endpoint we send events to from `api.segment.io` to your proxy instead. Make sure that your proxy behaves exactly like our real APIs. You can use our [proxy server](https://github.com/segmentio/segment-proxy) as an example of a correctly working proxy.
 
 ## Plugins
 
-Segment offers 'plugins' across multiple video players that can quickly get you started collecting video events via analytics.js. Check out the specific links below for more information:
+Segment offers 'plugins' across multiple video players that can quickly get you started collecting video events using analytics.js. Check out the specific links below for more information:
 
 - [Youtube](/docs/connections/sources/catalog/libraries/website/plugins/youtube)
 - [Vimeo](/docs/connections/sources/catalog/libraries/website/plugins/vimeo)
@@ -811,11 +902,11 @@ The object means that you are successfully loading `analytics.js` onto your webs
 
 ![Returning analytics object error](images/CFsktto.gif)
 
-Solution: [Follow the `analytics.js` Quickstart Guide](/docs/libraries/analytics.js/quickstart/)
+Solution: [Follow the `analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascriptquickstart/)
 
 ### Are you loading two instances of `analytics.js`?
 
-Please note that you *cannot* load `analytics.js` twice on the same page, even if you're using different write keys. You might encounter `Uncaught RangeError: Maximum call stack size exceeded`. You can conditionally set the write key based on an environment variable.
+Note that you *cannot* load `analytics.js` twice on the same page, even if you're using different write keys. You might encounter `Uncaught RangeError: Maximum call stack size exceeded`. You can conditionally set the write key based on an environment variable.
 
 Example:
 ```js
@@ -854,7 +945,7 @@ One particular issue is Safari private browsing mode which allows analytics.js i
 
 ### Internet Explorer Support
 
-We guarantee support for Internet Explorer 9 and higher for analytics.js. Please keep in mind that different tools may have different compatibility guarantees for their own products. Please refer to the vendor's documents to see what their browser compatibility looks like.
+We guarantee support for Internet Explorer 9 and higher for analytics.js. Keep in mind that different tools may have different compatibility guarantees for their own products. Refer to the vendor's documents to see what their browser compatibility looks like.
 
 ### Is your web site deployed under a domain on the Public Suffix List?
 

@@ -132,8 +132,46 @@ the label "CCN") or value (for example, the payload 123-456-7890) in the
 **Matches On** column. You can also see how we classify these matchers by
 default in the **Default Classification** column.
 
+Below is a full list of automatically detected restricted fields.
 
-![](images/privacy-suggested-matchers.png)
+
+| Matcher                | Classification |
+| ---------------------- | -------------- |
+| social security number | red            |
+| health                 | red            |
+| password               | red            |
+| visa                   | red            |
+| veteran                | red            |
+| disability             | red            |
+| credit card            | red            |
+| genetic                | red            |
+| race                   | red            |
+| passport               | red            |
+| token                  | red            |
+| birthdate              | yellow         |
+| phone                  | yellow         |
+| address                | yellow         |
+| gender                 | yellow         |
+| ethnicity              | yellow         |
+| citizenship            | yellow         |
+| name                   | yellow         |
+| street                 | yellow         |
+| city                   | yellow         |
+| zipcode                | yellow         |
+| email                  | yellow         |
+| certificate            | yellow         |
+| license                | yellow         |
+| identification         | yellow         |
+| serial                 | yellow         |
+| ip                     | yellow         |
+| photo                  | yellow         |
+| salary                 | yellow         |
+| religion               | yellow         |
+| email                  | yellow         |
+| mac                    | yellow         |
+| sex                    | yellow         |
+| gender                 | yellow         |
+| sexual orientation     | yellow         |
 
 
 When Segment detects data that meets the criteria for one of the default

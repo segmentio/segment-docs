@@ -6,10 +6,10 @@ beta: true
 
 [CrowdPower](https://crowdpower.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a growth marketing platform that enables businesses to track key customer actions and deliver automated tailored communications to drive sales and increase engagement.
 
-This destination is maintained by CrowdPower. For any issues with the destination, please [reach out to their team](mailto:support@crowdpower.io).
+This destination is maintained by CrowdPower. For any issues with the destination, [contact their team](mailto:support@crowdpower.io).
 
 > note "Note:"
-> The CrowdPower Destination is currently in beta, which means that they are still actively developing the destination. If you are interested in joining their beta program or have any feedback to help improve the CrowdPower Destination and its documentation, please [let  their team know](mailto:support@crowdpower.io)!
+> The CrowdPower Destination is currently in beta, which means that they are still actively developing the destination. If you are interested in joining their beta program or have any feedback to help improve the CrowdPower Destination and its documentation, [let their team know](mailto:support@crowdpower.io)!
 
 
 ## Getting Started
@@ -23,7 +23,7 @@ This destination is maintained by CrowdPower. For any issues with the destinatio
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -40,7 +40,7 @@ Identify calls in Segment create or update customers and their attributes in Cro
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Purchased Item', {

@@ -49,7 +49,7 @@ analytics.page('Blog'); // sends label "Blog"
 analytics.page(); // does not send any label
 ```
 
-If you opt to send multiple custom labels, you can do so in a few ways. You can attach a property called `label` and define a custom label there or send them via the `Quantcast.labels` in the `options` object.
+If you opt to send multiple custom labels, you can do so in a few ways. You can attach a property called `label` and define a custom label there or send them using the `Quantcast.labels` in the `options` object.
 
 For advertisers:
 
@@ -92,4 +92,4 @@ When you call `screen` we'll automatically log an event like `Viewed ABC Screen`
 
 ### Other Features
 #### Labels
-The destination does not currently support labels. If this is important to you, please [let us know](https://segment.com/help/contact/).
+The destination does not currently support labels. If this is important to you, [let us know](https://segment.com/help/contact/).
