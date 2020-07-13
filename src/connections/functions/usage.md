@@ -63,7 +63,9 @@ const requests = event.properties.objects.map((objectId) => {
 })
 
 const responses = await Promise.all(requests)
-responses.forEach((resp) => console.log(resp.json()))
+for (const response of responses) {
+    console.log(response.json())
+}
 ```
 
 If you’re only issuing a single request in your function and it is slow, you might want to contact the owner of the external API for support.
