@@ -4,6 +4,7 @@ redirect_from:
   - '/connections/destinations/custom/'
   - '/connections/destinations/custom-destinations/'
   - '/connections/destinations/destination-functions/'
+integration_type: feature
 ---
 
 Destination functions allow you to transform and annotate your Segment events and send them to any external tool or API without worrying about setting up or maintaining any infrastructure.
@@ -11,7 +12,7 @@ Destination functions allow you to transform and annotate your Segment events an
 All functions are scoped to your workspace, so members of other workspaces won't be able to view and use them.
 
 > info ""
-> Functions are scoped to your specific workspace. If you’re a technology partner and want to build a new integration and publish it in Segment’s catalog, see the [Developer Center documentation](/docs/partners/).
+> Functions is available to all customer plan types with a free allotment of usage hours. Refer to the [Functions usage limits](/usage) page for more information.
 
 ![](images/destination_functions_overview.png)
 

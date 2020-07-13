@@ -4,14 +4,13 @@ title: Functions Overview
 
 Functions let you create your own sources and destinations directly within your workspace to bring new types of data into Segment and send data to new tools with just a few lines of JavaScript - no additional infrastructure required.
 
-![](images/functions-overview.png)
-
 > info ""
-> Functions are scoped to your specific workspace. If you’re a technology partner and want to build a new integration and publish it in Segment’s catalog, see the [Developer Center documentation](/docs/partners/).
+> Functions is available to all customer plan types with a free allotment of usage hours. Refer to the [Functions usage limits](/usage) page for more information.
 
+![](images/functions_overview.png)
 
 ## What can you do with Functions?
-Functions can help you bring external data into Segment (Source Functions) and send data in Segment out to external destinations (Destination Functions).
+Functions can help you bring external data into Segment ([Source Functions](/docs/connections/functions/source-functions)) and send data in Segment out to external destinations ([Destination Functions](/docs/connections/functions/destination-functions)). Functions are scoped to your specific workspace. If you’re a technology partner and want to build a new integration and publish it in Segment’s catalog, see the [Developer Center documentation](/docs/partners/).
 
 #### Source Functions
 Source Functions receive external data from a webhook and can create Segment events, objects, or both. Source Functions have access to the full power of JavaScript so you can validate and transform the incoming data and even make external API requests to annotate your data.

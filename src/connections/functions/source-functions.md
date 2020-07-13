@@ -12,7 +12,7 @@ Source functions allow you to gather data from any third-party applications with
 All functions are scoped to your workspace, so members of other workspaces cannot view or use them.
 
 > info ""
-> Functions are scoped to your specific workspace. If you’re a technology partner and want to build a new integration and publish it in Segment’s catalog, see the [Developer Center documentation](/docs/partners/).
+> Functions is available to all customer plan types with a free allotment of usage hours. Refer to the [Functions usage limits](/usage) page for more information.
 
 ![](images/source_functions_overview.png)
 
