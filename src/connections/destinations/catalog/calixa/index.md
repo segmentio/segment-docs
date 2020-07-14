@@ -5,7 +5,7 @@ rewrite: true
 
 [Calixa](https://www.calixa.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) makes it easy to manage all your customers in one place. No more jumping around from tool to tool, learning SQL, or maintaining internal tools. Calixa connects to the third party SaaS tools you use (like Stripe, Zendesk, and Intercom) so that you can see everything about your customers and take action in one place.
 
-This destination is maintained by Calixa. For any issues with the destination, [contact their support team](mailto:team@calixa.io).
+This destination is maintained by Calixa. For any issues with the destination, [contact the Calixa support team](mailto:team@calixa.io).
 
 ## Getting Started
 
