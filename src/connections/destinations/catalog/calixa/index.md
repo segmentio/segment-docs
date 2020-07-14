@@ -48,7 +48,7 @@ analytics.identify('userId123', {
   email: 'john.doe@example.com'
 });
 ```
-Segment sends Identify calls to Calixa as an `identify` event. When you identify a new user, the User is created in Calixa. If the User already exists, the User's properties are updated.
+Segment sends Identify calls to Calixa as an `identify` event. When you identify a new user, Calixa creates a new User record. If the User already exists, Calixa updates the User's properties.
 
 ## Group
 If you aren't familiar with the Segment Spec, take a look at the [Group method documentation](https://segment.com/docs/connections/spec/group/) to learn about what it does. An example call would look like:
