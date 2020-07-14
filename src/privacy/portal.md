@@ -79,7 +79,7 @@ The Inventory is a central repository of all of the properties _you_ classified 
 **The Inventory is intended to be a Single Source of Truth so you can answer common regulatory questions about the data you're sending through Segment, for example:**
 
 - What data am I sending into Segment, and how frequently?
-- How restricted is the data I' sending through Segment?
+- How restricted is the data I'm sending through Segment?
 - Where is the data coming from, on a property-by-property level?
 - Where am I sending this data?
 - Who within my organization has access to each property within Segment?
