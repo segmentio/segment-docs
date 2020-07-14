@@ -44,19 +44,19 @@ If you’re making many requests that could be done in parallel, ensure that you
 
 ```js
 for (const objectId of event.properties.objects) {
-   const resp = await fetch('https://example.com/?id=' + objectId, {
+   const response = await fetch('https://example.com/?id=' + objectId, {
+       method: 'POST',
        body: event.properties
    })
-   console.log(resp.json())
+   
+   console.log(response.json())
 }
-
-return "Done!"
 ```
 
 Instead, consider making an array of async requests that are running in parallel and then using `Promise.all()` to wait for all of them to complete:
 
 ```js
-const requests = event.properties.objects.map((objectId) => {
+const requests = event.properties.objects.map(objectId => {
     return fetch('https://example.com/?id=' + objectId, {
         body: event.properties
     })

@@ -261,7 +261,7 @@ If any of your deployed function instances are failing consistently, they will a
 
 ### Data control
 
-You can use [Destination Filters](/docs/connections/destinations/destination-filters/) or Privacy Controls to manage what events and, of those events, which event properties are sent to your Destination Function.
+You can use [Destination Filters](/docs/connections/destinations/destination-filters/) or [Privacy Portal](https://segment.com/docs/privacy/portal/) to manage what events and, of those events, which event properties are sent to your destination function.
 
 ## Destination functions FAQs
 
