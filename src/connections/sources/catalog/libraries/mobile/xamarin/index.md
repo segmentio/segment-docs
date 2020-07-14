@@ -73,7 +73,7 @@ The `identify` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -116,7 +116,7 @@ The `track` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -159,7 +159,7 @@ The `screen` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -196,7 +196,7 @@ The `group` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -245,7 +245,7 @@ Don't forget to set async back to `true` for production, so that you can advanta
 
 An `Options` object lets you:
 
-1. Set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations)
+1. Set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations)
 2. [Send additional context](#context)
 3. [Send an anoymousId](#anonymous-id)
 

@@ -42,7 +42,7 @@ Every time you call [identify](/docs/connections/spec/identify/) with an email a
 
 So you no longer have to worry about the `identify` call resubscribing users unintentionally!
 
-Segment recognizes `firstName`, `lastName` and `email` as [special traits](/docs/connections/spec/identify#special-traits), so we will translate those for you to match the Mailchimp accepted field names. Mailchimp includes these fields by default when you create a list.
+Segment recognizes `firstName`, `lastName` and `email` as [special traits](/docs/connections/spec/identify#traits), so we will translate those for you to match the Mailchimp accepted field names. Mailchimp includes these fields by default when you create a list.
 
 ### Recording Custom User Traits
 
@@ -86,7 +86,7 @@ Once Mailchimp has processed the new subscriber you'll see it show up in your li
 
 ### Recording userId
 
-To record a Segment `userId` in Mailchimp, you must pass the userID as a trait on your `identify()` calls. We do not automatically map the Segment userID to any Mailchimp properties.  
+To record a Segment `userId` in Mailchimp, you must pass the userID as a trait on your `identify()` calls. We do not automatically map the Segment userID to any Mailchimp properties.
 
 ### Overriding List ID (Also now referred to as Audience ID)
 

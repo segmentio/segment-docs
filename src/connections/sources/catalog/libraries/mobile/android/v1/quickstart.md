@@ -1,16 +1,17 @@
 ---
 title: "Quickstart: Android (v1 - Deprecated)"
 hidden: true
+published: false
 ---
 
 This tutorial will help you start sending analytics data from your Android app to Segment. Once you're done you'll be able to turn on [any of our destinations](/docs/connections/destinations/) with the flip of a switch! No more waiting for Play Store releases.
 
 If you want to dive deeper at any point, check out the [Android Library Reference](/docs/connections/sources/catalog/libraries/mobile/android).
-If you're looking for documentation on our upcoming version, head over to the [Android v2 Beta Docs](/docs/connections/sources/catalog/libraries/mobile/android-beta).
+
 
 ## Step 1: Install the SDK
 
-The Android analytics is distributed using [Maven Central](http://maven.org/). This is recommended since it makes it simple to upgrade, and bundle only specific destinations. If you can't use Maven, check out the [manual install instructions](/docs/connections/sources/catalog/libraries/mobile/android#manual-install).
+The Android analytics is distributed using [Maven Central](http://maven.org/). This is recommended since it makes it simple to upgrade, and bundle only specific destinations.
 
 Then simply add the SDK as a dependency.
 

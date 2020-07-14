@@ -10,13 +10,6 @@ The following documentation provides detailed explanation of how both destinatio
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Planning for Adobe Analytics](#planning-for-adobe-analytics)
-- [Device-mode - Analytics.js](#device-mode-analytics-js)
-- [Cloud-mode - aka Server-side](#cloud-mode-aka-server-side)
-- [Implementing Segment for Adobe Analytics](#implementing-segment-for-adobe-analytics)
-- [Adobe Analytics List Variables - lVars](#adobe-analytics-list-variables-lvars)
-- [Adobe Analytics Properties - props](#adobe-analytics-properties-props)
-- [Configuring Adobe Analytics Settings](#configuring-adobe-analytics-settings)
 - [Setting up Adobe Analytics for Mobile](mobile/)
 - [Setting up Adobe Heartbeat](heartbeat/)
 - [Best Practices](best-practices/)
@@ -34,6 +27,7 @@ We strongly recommend that you create a tracking plan for both your Segment and 
 
 
 ### Choosing between Device-mode and Cloud-mode
+
 If you're using device-mode javascript, by default Segment "bundles" (mobile) or "wraps" (when using Analytics.js) the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics `Appmeasurement.js` library. Adobe's client-side libraries can provide services to other Adobe suites and products, however they can also increase the size of your page.
 
 If you prefer, you can enable [Cloud-mode](/docs/connections/destinations/#connection-modes), and send data through the Segment servers where it is then mapped and sent on to Adobe Analytics. You enable Cloud-mode for Javascript or Legacy sources from the Adobe Analytics source settings in the Segment app.
@@ -79,7 +73,7 @@ To use Adobe's Marketing Cloud Visitor ID Service, enter your **Marketing Cloud 
 
 "Cloud-mode" data is data sent _without_ bundling the Segment-Adobe-Analytics SDK. It can be sent using mobile libraries, Analytics.js, and other server-based sources.
 
-*For more information on mobile native integrations using Segment's iOS and Android Adobe Analytics SDKs, see the [next section in this doc](#setting-up-adobe-analytics-for-mobile).*
+*For more information on mobile native integrations using Segment's iOS and Android Adobe Analytics SDKs, see the [page on mobile set up](mobile/).*
 
 **Important**: For data sent from server-side libraries, you need to predefine your events and custom properties to send events to Adobe Analytics server-side destination. However, *for data sent from mobile devices*, we send *every* event along automatically, and you can use the Adobe Analytics [processing rules](https://marketing.adobe.com/resources/help/en_US/reference/processing_rules.html) UI to map actions, lifecycle dimensions, and custom properties from `contextData` to events, props and eVars.
 
@@ -132,7 +126,7 @@ When we generate the XML to send to Adobe, there are a few things that happen:
 
  **Important**: The Android library can collect the `userAgent` automatically - however, the iOS library cannot do so. However, since we do collect other contextual metadata about your device, we render a valid iOS userAgent string that populates all your Mobile Web Reports.
 
-6. If you are using the [Marketing Cloud ID Service](https://marketing.adobe.com/resources/help/en_US/mcvid/mcvid_overview.html), you can pass the **Marketing Cloud Visitor ID** as an destination specific setting and we set that as `<marketingCloudVisitorID>`.
+6. If you are using the [Marketing Cloud ID Service](https://marketing.adobe.com/resources/help/en_US/mcvid/mcvid_overview.html), you can pass the **Marketing Cloud Visitor ID** as a destination-specific setting and we set that as `<marketingCloudVisitorID>`.
 
  (In Node.js)
  ```javascript
@@ -203,7 +197,7 @@ Support for additional "stateful" lifecycle dimensions is coming in a future Ado
 
 ## Implementing Segment for Adobe Analytics
 
-This section contains information about how to implement Segment calls for Adobe Analytics. You can choose to use the [automatic Ecommerce Spec mapping](#using-default-ecommerce-spec-events) so you don't have to set up a mapping in Segment and Adobe. If you need more event types or different ones, you can implement custom [Page calls](#creating-page-calls) and [Track events](#creating-track-events) to add to the standard Ecommerce spec. <!-- TODO: You can also override or opt-out of automatically mapping the Ecommerce events by passing `integration: AA: false` as part of your call.-->
+This section contains information about how to implement Segment calls for Adobe Analytics. You can choose to use the [automatic Ecommerce Spec mapping](#using-default-ecommerce-spec-events) so you don't have to set up a mapping in Segment and Adobe. If you need more event types or different ones, you can implement custom [Page calls](#creating-page-calls) and [Track events](#creating-custom-track-events) to add to the standard Ecommerce spec. <!-- TODO: You can also override or opt-out of automatically mapping the Ecommerce events by passing `integration: AA: false` as part of your call.-->
 
 ### Using default Ecommerce Spec Events
 
@@ -551,7 +545,7 @@ This option allows you to associate a standard Visitor ID with the event.
  ```
 
  ## Link Names, Link URLs, Link Types
- See [this](#setting-custom-linktypes-linknames-and-linkurls) section for information about configuring these as options.
+ See [this](best-practices/#setting-custom-linktypes-linknames-and-linkurls) section for information about configuring these as options.
 
 ## Configuring Adobe Analytics Settings
 

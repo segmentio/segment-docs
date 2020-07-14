@@ -48,7 +48,7 @@ Other common fields are used only for `track`, `page` and `screen` calls which a
 
 ## Page
 
-If you have not had a chance to review our spec, take a look tounderstand what the [Page method](https://segment.com/docs/spec/page/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Page method](https://segment.com/docs/connections/spec/page/) does.
 
 Page calls will be sent to Exponea as a `page_visit` event with the `properties` field mapped into event properties and the `name` field mapped into the `page_name` property.
 
@@ -74,7 +74,7 @@ An optional event `session_ping` can be tracked along with `page_visit` for [aut
 
 ## Screen
 
-If you have not had a chance to review our spec, take a look tounderstand what the [Screen method](https://segment.com/docs/spec/screen/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does.
 
 Screen calls will be sent to Exponea as a `screen_visit` event with the `properties` field mapped into event properties and the`name` field mapped into the `screen_name` property.
 
@@ -96,7 +96,7 @@ An optional event `session_ping` can be tracked along with `screen_visit` for [a
 
 ## Track
 
-If you have not had a chance to review our spec, take a look tounderstand what the [Track method](https://segment.com/docs/spec/track/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 Track calls will be sent to Exponea as events under name provided in the event field. The `properties` field will be mapped into event properties (objects will be flattened using underscore).
 
@@ -118,7 +118,7 @@ This track call is translated into a `Registered` event with the following prope
 
 ## Identify
 
-If you have not had a chance to review our spec, take a look tounderstand what the [Identify method](https://segment.com/docs/spec/identify/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
 
 Identify calls will be sent to Exponea as customer updates with traits set as customer properties.
 

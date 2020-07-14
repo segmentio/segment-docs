@@ -14,7 +14,7 @@ ShareASale is a destination that is only supported on the client-side.
 
 ## Identify
 
-When you call [`identify`](/docs/connections/spec/identify) on analytics.js and you have enabled "Create Leads" in the [advanced options](/segment/testing/integrations#shareasale), then we will create a lead for the user with the `userId` that you specify. Note that if the `userId` is not specified, then no lead is created.
+When you call [Identify](/docs/connections/spec/identify/) on analytics.js and you have enabled "Create Leads" in the advanced options, then we will create a lead for the user with the `userId` that you specify. Note that if the `userId` is not specified, then no lead is created.
 
 ## Track
 

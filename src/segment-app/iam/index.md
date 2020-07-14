@@ -6,14 +6,14 @@ Segment's access management tools let workspace owners manage which users can ac
 
 
 
-The Access Management page has three tabs: [Users (team members)](/docs/segment-app/iam/concepts/#team-members/), [User Groups](/docs/segment-app/iam/concepts/#user-groups/), and [Tokens](/docs/segment-app/iam/concepts/#tokens/). You can select a user in the table to see their [roles](/docs/segment-app/iam/roles).
+The Access Management page has three tabs: [Users (team members)](/docs/segment-app/iam/concepts/#team-members), [User Groups](/docs/segment-app/iam/concepts/#user-groups), and [Tokens](/docs/segment-app/iam/concepts/#tokens). You can select a user in the table to see their [roles](/docs/segment-app/iam/roles).
 
 ## Quick Links
-- [Invite a team member to your workspace](/docs/segment-app/iam/membership/#invite-a-new-team-member/)
-- [Create a User Group](/docs/segment-app/iam/membership/#create-a-new-user-group/)
-- [Update a team member's access](/docs/segment-app/iam/membership#change-a-team-members-access/)
-- [Remove a team member from a workspace](/docs/segment-app/iam/membership/#remove-a-team-member-from-your-workspace/)
-- [Add a new user with Single Sign On](/docs/segment-app/iam/membership/#team-management-with-single-sign-on/)
+- [Invite a team member to your workspace](/docs/segment-app/iam/membership/#invite-a-new-team-member)
+- [Create a User Group](/docs/segment-app/iam/membership/#create-a-new-user-group)
+- [Update a team member's access](/docs/segment-app/iam/membership#change-a-team-members-access)
+- [Remove a team member from a workspace](/docs/segment-app/iam/membership/#remove-a-team-member-from-your-workspace)
+- [Add a new user with Single Sign On](/docs/segment-app/iam/membership/#team-management-with-single-sign-on)
 
 {% include components/media-icon.html href="/segment-app/iam/membership/" icon="media/icon-academy.svg" title="Invite and manage workspace members" content="Learn how to add members to your workspace, and manage their permissions." variant="related" %}
 

@@ -33,7 +33,7 @@ A Bigcommerce native integration is
 
 ## Chrome Extension
 
-To add tracking to a Chrome browser extension, you can add the [analytics-node](/docs/connections/sources/catalog/libraries/node/) library, and call your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
+To add tracking to a Chrome browser extension, you can add the [analytics-node](/docs/connections/sources/catalog/libraries/server/node/) library, and call your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
 
 ## Ghost
 
@@ -45,7 +45,7 @@ Goodsie ceased operations in 2017. If you are using [Shopify](/docs/connections/
 
 ## Magento
 
-If you are using Magento, use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/php/), and implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
+If you are using Magento, use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/server/php/), and implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
 
 ## Shopify
 
@@ -62,12 +62,12 @@ WooCommerce offers a [paid Segment plugin](https://docs.woocommerce.com/document
 
 ## Wordpress
 
-If you are using Wordpress, you have two options. 
+If you are using Wordpress, you have two options.
 
-The best option is to use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/php/). However, you can also use the device-mode [Segment Analytics.js library source](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) if you are more comfortable with JavaScript. We recommend using the PHP library where possible, because the server library's Cloud mode connection is more reliable, and not subject to issues from ad blockers.
+The best option is to use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/server/php/). However, you can also use the device-mode [Segment Analytics.js library source](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) if you are more comfortable with JavaScript. We recommend using the PHP library where possible, because the server library's Cloud mode connection is more reliable, and not subject to issues from ad blockers.
 
 Regardless of the library you choose, implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
 
 ## WP eCommerce
 
-If you are using Wordpress eCommerce, use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/php/), and implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.
+If you are using Wordpress eCommerce, use the [Segment PHP library source](/docs/connections/sources/catalog/libraries/server/php/), and implement your Segment events following the [Segment Spec](/docs/connections/spec/), as usual.

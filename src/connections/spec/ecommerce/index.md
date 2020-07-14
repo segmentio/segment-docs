@@ -24,7 +24,7 @@ The ecommerce category includes the following semantic events:
 
 - [Viewed Product Category](#viewed-product-category)
 - [Viewed Product](#viewed-product)
-- [Added Product](#added-removed-product)
+- [Added Product](#added---removed-product)
 - [Order Completed](#completing-an-order)
 
 
@@ -271,4 +271,4 @@ Be sure to **include all items in the cart as event properties**, with the same 
 
 ## Google Analytics Enhanced Ecommerce
 
-If you're using Google Analytics enhanced ecommerce there are some special events you might also want to add. Details in [our GA docs](/docs/connections/destinations/catalog/google-analytics/#enhanced-ecommerce).
+If you're using Google Analytics enhanced ecommerce there are some special events you might also want to add. Details in [our GA docs](/docs/connections/destinations/catalog/google-analytics/#enhanced-e-commerce).

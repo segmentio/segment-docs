@@ -222,7 +222,7 @@ If your server is using HTTPS, note that our webhooks destination does not work 
 
 Under 'Connection Settings', you can provide up to 5 webhooks.
 
-**Note:** If sending a message to any of the webhooks succeed, we consider the message to be successfully processed and won't retry the request to the other webhooks. If your webhooks aren't robust, you should consider using our [Iron.io](/docs/connections/destinations/catalog/iron.io/) destination.
+**Note:** If sending a message to any of the webhooks succeed, we consider the message to be successfully processed and won't retry the request to the other webhooks. If your webhooks aren't robust, you should consider using our [Iron.io](/docs/connections/destinations/catalog/iron-io/) destination.
 
 ### Retries
 
