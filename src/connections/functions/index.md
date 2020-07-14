@@ -5,7 +5,7 @@ title: Functions Overview
 Functions let you create your own sources and destinations directly within your workspace to bring new types of data into Segment and send data to new tools with just a few lines of JavaScript - no additional infrastructure required.
 
 > info ""
-> Functions is available to all customer plan types with a free allotment of usage hours. Refer to the [Functions usage limits](/usage) page for more information.
+> Functions is available to all customer plan types with a free allotment of usage hours. Read more about [Functions usage limits](/docs/connections/functions/usage/), or see [your workspace’s Functions usage stats](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions).
 
 ![](images/functions_overview.png)
 
