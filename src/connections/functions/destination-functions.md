@@ -96,7 +96,7 @@ The examples show basic uses of these error types.
 
 ```js
 async function onGroup(event) {
-  if (!event.company) {
+  if (!event.traits.company) {
     throw new InvalidEventPayload('Company name is required')
   }
 }
