@@ -188,7 +188,7 @@ To keep the Segment SDK lightweight, the `Analytics` pod only installs the Segme
 
 Some destinations do not accept data from the Segment servers, and instead require that you collect the data from the device. In these cases you must bundle some additional destination code with the Segment SDK.
 
-We're going to skip over this part for now, but you can see the instructions on [how to bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios#bundling-destinations).
+We're going to skip over this part for now, but you can see the instructions on [how to bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios/#about-mobile-connection-modes).
 
 Now that the SDK is installed and set up, you're ready to start making calls!
 
@@ -402,7 +402,7 @@ Two views are available when viewing a payload:
 * The **Pretty view** is a recreation of the API call you made that was sent to Segment.
 * The **Raw view** is the complete JSON object Segment received from the calls you sent. These calls include all the details about what is being tracked: timestamps, properties, traits, ids, and [contextual information Segment automatically collects](/docs/connections/spec/common/#context-fields-automatically-collected) the moment the data is sent.
 
-We'll talk more about debugging and troubleshooting [in a later page](06-testing-debugging/).
+We'll talk more about debugging and troubleshooting [in a later page](/docs/getting-started/06-testing-debugging/).
 
 ## Set up your first destination
 

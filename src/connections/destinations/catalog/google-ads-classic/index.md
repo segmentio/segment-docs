@@ -25,7 +25,7 @@ To find a conversion ID look inside of your Google Ads (Classic) account and nav
 
 If you select "Website," click through to the "Review and Install" step in the Google Ads (Classic) dashboard. Scroll down to the "Install your tag" section and look for `w.google_conversion_id`. Copy the string directly to the right of it, and paste it into the Google Ads (Classic) section of your Segment destination tab.
 
-If you select "App" you can choose to track conversions from Firebase, Google Play, or first opens and in-app actions. For more on setting up moble tracking, see [Server to Server Destination for Mobile Apps](#server-to-server-destination-for-mobile-apps) further down on this page.
+If you select "App" you can choose to track conversions from Firebase, Google Play, or first opens and in-app actions. For more on setting up moble tracking, see [Server to Server Destination for Mobile Apps](#mobile--server) further down on this page.
 
 _**NOTE:** If using the New Adwords Experience, the Conversion ID can now be found in a different location. Navigate to Tools, Billing, and Settings menu and, then, select "Measurement: Conversions", which opens to the "Conversion Actions" table. From here you can drill down to the conversion "Tag setup" to view the tag details. From here, select Use Google Tag Manager card in order to expose the Conversion ID._
 
@@ -68,7 +68,7 @@ Our server-to-server integration with Google Ads (Classic) integrates with the [
 
 1) App Event Mappings
 
-Google has replaced the concept of associating conversion events with **conversion ids** and **conversion labels**. Instead, conversion events are simply associated with their event name. Once you've enabled the new integration in your settings, you can begin creating and tracking new conversion events in Google Ads (Classic) that are tied to your Segment `track` event names and ignore the legacy [Event Mappings](/docs/connections/destinations/catalog/adwords/#event-mappings) configuration step.
+Google has replaced the concept of associating conversion events with **conversion ids** and **conversion labels**. Instead, conversion events are simply associated with their event name. Once you've enabled the new integration in your settings, you can begin creating and tracking new conversion events in Google Ads (Classic) that are tied to your Segment `track` event names and ignore the legacy [Event Mappings](/docs/connections/destinations/catalog/google-ads-classic/#event-mappings) configuration step.
 
 2) App Event Types
 
@@ -95,7 +95,7 @@ Once this step is complete, you should see a screen that looks like this showing
 
 #### Add your Link ID as an Integration Setting
 
-Once you have a Link ID, you need to add them to your Google Ads (Classic) [integration settings](/docs/connections/destinations/catalog/adwords/#settings) in your Segment account. **Make sure the API version setting is set to 2.**
+Once you have a Link ID, you need to add them to your Google Ads (Classic) [destination settings](#settings) in your Segment account. **Make sure the API version setting is set to 2.**
 
 ### Track
 All `track` events are by default sent to your Google Ads (Classic) account and from there, you can choose which ones you want to designate as **Conversion Events**. All events sent to Google Ads (Classic) require an **event type** specification. This is an enumerated list of nine potential values:

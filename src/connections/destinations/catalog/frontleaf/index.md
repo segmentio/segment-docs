@@ -10,11 +10,12 @@ Frontleaf uses our `page`, `identify`, `track`, and `group` methods.
 
 
 ## Page
+
 For Frontleaf to work effectively with Segment page calls, you will need to specify the _type of interaction_ that each call represents.
 
 Frontleaf supports three options for categorizing page calls by interaction type:
 
-* The optional `category` property. For more information on this property, see our [category docs](/docs/connections/spec/page/#category). In the following example, "Product" is the category and "Shoe" is the page name. Segment will transform this category to "Viewed Product Page" before sending it to Frontleaf.
+* The optional `category` property. For more information on this property, see the [Ecommerce spec docs](/docs/connections/spec/ecommerce/v2/). In the following example, "Product" is the category and "Shoe" is the page name. Segment will transform this category to "Viewed Product Page" before sending it to Frontleaf.
 
 ```js
 analytics.page('Product', 'Shoe');
