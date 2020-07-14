@@ -3,7 +3,7 @@ title: The Functions editing environment
 ---
 
 
-Segment Functions create reusable code that can be run in your Segment workspace either as Sources to format incoming events, or as Destinations, to handle specific event types.
+Segment Functions create reusable code that can be run in your Segment workspace either as sources to format incoming events, or as destinations, to handle specific event types.
 
 When you create a function, write code for it, and save it, the function appears in the Catalog in your workspace _only_. You can then deploy that function in your workspace just as you would a conventional source or destination.
 

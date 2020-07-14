@@ -115,7 +115,7 @@ If you do not supply a function for an event type, Segment throws an `EventNotSu
 
 You can read more about [error handling](#destination-functions-logs-and-errors) below.
 
-### Runtime and Dependencies
+### Runtime and dependencies
 
 {% include content/functions/runtime.md %}
 

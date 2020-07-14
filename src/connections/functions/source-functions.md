@@ -319,9 +319,7 @@ You can also choose to **Save & Deploy** to save the changes, and then choose wh
 
 Your function might encounter errors that you missed during testing, or you might intentionally throw errors in your code (for example if the incoming request is missing required fields).
 
-If your function throws an error, execution halts immediately.
-
-Segment captures the incoming request, any console logs the function printed, and the error, and displays the this information in the function's **Errors** tab. You can use this tab to find and fix unexpected errors.
+If your function throws an error, execution halts immediately. Segment captures the incoming request, any console logs the function printed, and the error, and displays the this information in the function's **Errors** tab. You can use this tab to find and fix unexpected errors.
 
 ![Source Function Error Logs](images/error-logs-source.png)
 

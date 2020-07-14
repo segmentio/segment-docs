@@ -18,7 +18,7 @@ Functions are billed in 100ms increments, rounded up. For example, a function th
 
 ## Execution timeouts
 
-Functions have a timeout of 5 seconds. If a function takes longer than 5 seconds, the run is cancelled and retried periodically for up to 4 hours.
+Functions have a timeout of 5 seconds. If a function takes longer than 5 seconds, execution halts and the function is retried periodically for up to 4 hours.
 
 
 
