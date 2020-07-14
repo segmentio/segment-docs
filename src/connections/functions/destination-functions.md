@@ -102,7 +102,7 @@ async function onGroup(event) {
 }
 
 async function onPage(event) {
-  if (!event.pageName) {
+  if (!event.properties.pageName) {
     throw new ValidationError('Page name is required')
   }
 }
