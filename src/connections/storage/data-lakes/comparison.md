@@ -2,18 +2,9 @@
 title: Comparing Data Lakes and Warehouses
 ---
 
-<!--
-TODO:
-diagrams? Illustrations?
-Add sections about S3 and GCS
-links to analytics academy stuff on owning your data
--->
-
 As Segment builds new data storage products, each product evolves from prior products to best support the needs of customers. Segment Data Lakes is an evolution of the Warehouses product that meets the changing needs of customers. As such, you’ll find some areas where there are differences between the Data Lakes and Warehouses products, instead of seeing exact parity between the two.
 
-With this, the two products are not interoperable, but are compatible with a configurable mapping. This mapping helps you to identify and manage the differences between the two storage solutions, so you can easily understand how the data in each is related.
-
-If you currently use or previously used Segment Warehouses, then Data Lakes’s “Warehouse Compatibility Mode” provides a schema which minimizes the differences between Warehouses and Data Lakes. The remaining differences found between Data Lakes (with Warehouse Compatibility Mode) and Warehouses are explained below.
+With this, the two products are not identical, but are compatible with a configurable mapping. This mapping helps you to identify and manage the differences between the two storage solutions, so you can easily understand how the data in each is related.
 
 
 ## Data Freshness
@@ -67,10 +58,10 @@ If a bad data type is seen, such as text in place of a number or an incorrectly 
 
 Tables between Warehouses and Data Lakes will be the same, except for in these two cases:
 
-- `**tracks` **table** - Data Lakes and Warehouses both create one table per specific `tracks` event, however Warehouses also creates one `tracks` table with all of your `tracks` method calls whereas Data Lakes does not. Learn more about the `tracks` table [here](/docs/connections/storage/warehouses/schema/).
-- `**users` **table** - Both Warehouses and Data Lakes create an  `identifies` table (as seen [here](/docs/connections/storage/warehouses/schema/)), however Warehouses also creates a `user``s` table just for user data while Data Lakes does not since it does not currently support object data. This `user``s` table is a materialized view of users in a source constructed by data infered about users from the identify calls.
-- `**accounts**` **table** - Group calls are used to generate the `accounts` table in Warehouses, however because this is object data which Data Lakes does not currently support, there is no `accounts` table found in Data Lakes.
-- (Redshift only) **Table names which begin with numbers** - Table names are not allowed to begin with numbers in the Redshift Warehouse, so they are automatically given a “_” prefix. Data Lakes doesn’t need to assign a “_" prefix since Glue Data Catalog doesn’t have this restriction. For example, in Redshift a table name may be named `_101_account_update`, however in Data Lakes it would be named `101_account_update`. Note: While this nuance is specific to Redshift, other warehouses may show similar behavior for other reserved words.
+- `tracks` **table** - Data Lakes and Warehouses both create one table per specific `tracks` event, however Warehouses also create one `tracks` table with all of your `tracks` method calls, but Data Lakes do not. Learn more about the `tracks` table [here](/docs/connections/storage/warehouses/schema/).
+- `users` **table** - Both Warehouses and Data Lakes create an  `identifies` table (as seen [here](/docs/connections/storage/warehouses/schema/)), however Warehouses also create a `users` table just for user data.  Data Lakes does not create this, since it does not currently support object data. The `users` table is a materialized view of users in a source, constructed by data inferred about users from the identify calls.
+- `accounts` **table** - Group calls generate the `accounts` table in Warehouses. However because Data Lakes does not currently support object data (Groups are objects not events), there is no `accounts` table in Data Lakes.
+- *(Redshift only)* **Table names which begin with numbers** - Table names are not allowed to begin with numbers in the Redshift Warehouse, so they are automatically given an underscore ( _ ) prefix. Glue Data Catalog does not have this restriction, so Data Lakes don’t assign this prefix. For example, in Redshift a table name may be named `_101_account_update`, however in Data Lakes it would be named `101_account_update`. Note: While this nuance is specific to Redshift, other warehouses may show similar behavior for other reserved words.
 
 
 ### Columns
@@ -81,4 +72,4 @@ Similar to tables, columns between Warehouses and Data Lakes will be the same, e
 - `channel`, `metadata_*`, `project_id`, `type`, `version` - These columns are Segment internal data which are not found in Warehouses, but are found in Data Lakes. The reason is that Warehouses is intentionally very detailed about it’s transformation logic so it doesn’t include any of these, where as Data Lakes does include them based on it’s more straightforward approach to flatten the whole event.
 - (Redshift only) `uuid`, `uuid_ts` - Redshift customers will see columns for `uuid` and `uuid_ts`, which are used for de-duplication in Redshift; Other warehouses may have similar columns. These aren’t relevant for Data Lakes so the columns won’t appear there.
 - `sent_at` - Warehouses computes the `sent_at` value based on timestamps found in the original event in order to account for clock skews and timestamps in the future. This was done when the Segment pipeline didn’t do this on it’s own, however it now calculates for this so Data Lakes does not need to do any additional computation, and will send the value as-is when computed at ingestion.
-- `integrations` - Warehouses does not include the integrations object, where as Data Lakes flattens and includes the integrations object. You can read more about the `integrations` object [here](/docs/guides/#filtering-with-the-integrations-object).
+- `integrations` - Warehouses does not include the integrations object, where as Data Lakes flattens and includes the integrations object. You can read more about the `integrations` object [here](/docs/guides/filtering-data/#filtering-with-the-integrations-object).

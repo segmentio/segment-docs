@@ -53,7 +53,7 @@ Yes. [Tracking Plan Labels](/docs/protocols/tracking-plan/create/#add-a-label) a
 
 ### How do I send someone a specific event or group of events to implement?
 
-You can search in a Tracking Plan to find a specific event, and then copy the URL for the search results page and share it. You can also filter by label to share a group of events. The person you send the URL to must have access to the Workspace and tracking plan to see the results page. (See [the Access Management documentation](/docs/iam/) for more details.)
+You can search in a Tracking Plan to find a specific event, and then copy the URL for the search results page and share it. You can also filter by label to share a group of events. The person you send the URL to must have access to the Workspace and tracking plan to see the results page. (See [the Access Management documentation](/docs/segment-app/iam/) for more details.)
 
 ### Can I create a master Tracking Plan that supersedes all other Tracking Plans?
 

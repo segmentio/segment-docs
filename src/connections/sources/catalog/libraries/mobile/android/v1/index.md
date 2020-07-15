@@ -1,6 +1,7 @@
 ---
 title: 'Analytics for Android (V1 - Deprecated)'
 hidden: true
+published: false
 ---
 
 Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
@@ -14,7 +15,7 @@ Analytics for Android uses a light-weight queuing mechanism to make API calls to
 
 ## Getting Started
 
-To get started head over to our [Android QuickStart](/docs/libraries/android/v1/quickstart) which will help you install analytics tracking on your app in just a few minutes. Once you've installed the library, read on for the detailed API reference!
+To get started head over to our [Android QuickStart](/docs/connections/sources/catalog/libraries/mobile/android/v1/quickstart) which will help you install analytics tracking on your app in just a few minutes. Once you've installed the library, read on for the detailed API reference!
 
 
 ## Identify
@@ -199,7 +200,7 @@ props.put("distance", "10 miles");
 props.put("city", "boston");
 Analytics.track("sadi89e2jd", "Logged Workout", props,
     new Options()
-        .setTimestamp(Calendar.getInstance());
+        .setTimestamp(Calendar.getInstance());)
 ```
 
 ## Context
@@ -298,7 +299,7 @@ The first time you call `Analytics.onCreate`, we'll start these threads:
 + **The flush timer thread** is in charge of flushing the database every `10 seconds`, which is [change-able](#configuration) using the `flushAfter` option.
 + **The settings cache refresh thread** is in charge of download your project's destination settings every `1 hour`, which is [change-able](#configuration) using the `analytics_settings_cache_expiry` option.
 
-When you call `Analytics.identify`, we'll first validate that all your arguments are valid. Then we'll call `identify` into the [bundled providers](#bundled), Finally we'll immediately move execution to the database thread, which will attempt to enqueue the action into our sql-lite database.
+When you call `Analytics.identify`, we'll first validate that all your arguments are valid. Then we'll call `identify` into the [bundled providers](/docs/connections/sources/catalog/libraries/mobile/android/#about-mobile-connection-modes), Finally we'll immediately move execution to the database thread, which will attempt to enqueue the action into our sql-lite database.
 
 
 #### Why a database?

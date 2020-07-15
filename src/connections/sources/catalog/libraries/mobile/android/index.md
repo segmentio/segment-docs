@@ -6,7 +6,7 @@ title: Analytics for Android
 
 Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
-All of Segment's client sources are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/sources) too.
+All of Segment's client sources are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/docs/connections/sources/catalog/) too.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-android/releases.atom).
 
@@ -36,13 +36,13 @@ dependencies {
 
 In the interest of keeping our SDK lightweight, the `analytics` artifact only installs the Segment destination. This means that all your data will be sent using Segment's servers to any tools you've enabled with server-side-compatible destinations.
 
-[As described here](/docs/connections/destinations/#connection-modes), some destinations require or offer **Device-mode**. If that's the case, you'll need to take package the destination SDK, which might [require some additional steps](#packaging-device-based-integration-sdks).
+[As described here](/docs/connections/destinations/#connection-modes), some destinations require or offer **Device-mode**. If that's the case, you'll need to take package the destination SDK, which might [require some additional steps](#packaging-device-mode-destination-sdks).
 
 Now that the SDK is installed and set up, you're ready to...
 
 ### Step 2. Initialize the Client
 
-We recommend initializing the client in your `Application` subclass.  You'll need your [Write Key](/docs/guides/setup/how-do-i-find-my-write-key/).
+We recommend initializing the client in your `Application` subclass.  You'll need your [Write Key](/docs/connections/find-writekey/).
 
 ```java
 // Create an analytics client with the given context and Segment write key.
@@ -616,7 +616,7 @@ There are two ways to send data to your analytics services through this library:
 
 ### Cloud-Mode in Android
 
-When an destination's SDK is not packaged, but it is enabled from your dashboard, the request goes through the Segment REST API, and is routed to the service's server-side API as [described here](/docs/connections/destinations/#connection-modes).
+When a destination's SDK is not packaged, but it is enabled from your dashboard, the request goes through the Segment REST API, and is routed to the service's server-side API as [described here](/docs/connections/destinations/#connection-modes).
 
 ### Packaging device-mode destination SDKs
 
@@ -778,7 +778,9 @@ Our Android library has support for back to API level 14 (Android 4.0). You shou
 3. Write your own SDK. You can still use most of the tools on Segment using our [HTTP API](/docs/connections/sources/catalog/libraries/server/http/). You can use either our Android or [Java source](https://github.com/segmentio/analytics-java) to get a quick headstart.
 
 
-### How can I use an destination specific feature, e.g. Mixpanel's push notifications?
+### How can I use a destination specific feature?
+
+...for example, Mixpanel's push notifications?
 
 If you're using Device-mode for a mobile destination, you can always access features from that tool's native SDK.
 
@@ -878,9 +880,9 @@ compile('com.segment.analytics.android:analytics-integration-quantcast:+') {
 }
 ```
 
-Earlier, you could control the debugging behaviour with a boolean flag. In version 3, this is replaced by the more powerful [`LogLevel`](/docs/libraries/android/#debugging) Enum, that lets you not only control the logging behavior of our SDK, but also for Device-mode destinations.
+Earlier, you could control the debugging behaviour with a boolean flag. In version 3, this is replaced by the more powerful [`LogLevel`](/docs/connections/sources/catalog/libraries/mobile/android/#debugging) Enum, that lets you not only control the logging behavior of our SDK, but also for Device-mode destinations.
 
-Version 2 of the SDK also let you customize the behaviour of the SDK by providing resource values in XML. Version 3 ignores these custom options from XML to simplify behaviour and improve performance. The recommended way to customize the Analytics client is to use the [Builder](/docs/libraries/android/#customizing-the-client) methods instead.
+Version 2 of the SDK also let you customize the behaviour of the SDK by providing resource values in XML. Version 3 ignores these custom options from XML to simplify behaviour and improve performance. The recommended way to customize the Analytics client is to use the [Builder](/docs/connections/sources/catalog/libraries/mobile/android/#optional-customizing-the-client) methods instead.
 
 ### Do you support Phonegap/Cordova?
 

@@ -61,7 +61,7 @@ Collections are the groupings of resources we pull from your source.
 |  ticket_events | events | Returns a stream of changes that occurred on tickets. Each event is tied to an update on a ticket and contains all the fields that were updated in that change. **Note**: We pull 1 year of ticket events to start by default. If you need more, just let us know and we'll do a run to pull further back in history.|
 |  ticket_metrics | object | All kinds of aggregate metrics about a ticket |
 |  satisfaction_ratings | object | If you have enabled satisfaction ratings for your account, this end point allows you to quickly retrieve all ratings. |
-|  ticket_comments | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact us](/help/contact). |
+|  ticket_comments | object | Ticket comments represent the conversation between requesters, collaborators, and agents. It includes the full body of each comment, public and private. **Note**: This collection is not included by default. To request it, [contact us]https://segment.com/help/contact/. |
 
 In your warehouse, each collection gets its own table. Find below a list of the properties we automatically fetch for each collection.
 **Note** The list in this document includes the standard properties only, but doesn't include _your_ custom fields. (Don't worry, they'll be there in your warehouse!)

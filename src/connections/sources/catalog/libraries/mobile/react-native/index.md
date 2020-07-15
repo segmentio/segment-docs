@@ -6,7 +6,7 @@ sourceCategory: 'Mobile'
 
 Analytics for React Native makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
-All of Segment's libraries are open-source, so you can [view Analytics for React Native on Github](https://github.com/segmentio/analytics-react-native), or check out our [browser and server-side libraries](/sources) too.
+All of Segment's libraries are open-source, so you can [view Analytics for React Native on Github](https://github.com/segmentio/analytics-react-native), or check out our [browser and server-side libraries](/docs/connections/sources/catalog/) too.
 
 Subscribe to the [release feed](https://github.com/segmentio/analytics-react-native/tags.atom).
 
@@ -69,7 +69,7 @@ Note, if you are choosing to not use a dependency manager, you must keep files u
 
 In the interest of keeping our SDK lightweight, Analytics only installs the Segment destination. This means that all your data is sent using Segment's servers to any tools you've enabled using the default Cloud-mode.
 
-[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/connections/sources/catalog/libraries/mobile/react-native#packaging-integrations).
+[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](#packaging-destinations-using-device-mode).
 
 Now that the SDK is installed and setup, you're ready to...
 
@@ -284,7 +284,16 @@ analytics.setup('YOUR_WRITE_KEY', {
 
 ### Native configuration
 
-You can also use the native Analytics API to configure it. Just make sure to call `analytics.useNativeConfiguration()` in your JavaScript code so that Analytics doesn't wait for you to configure it.
+You can also use the native Analytics API to configure the Analytics instance by calling `analytics.useNativeConfiguration()` in your JavaScript code. This prevents the Analytics instance from waiting for additional configuration.
+You should wrap the call under a conditional, as in the following example:
+
+```js
+import analytics from '@segment/analytics-react-native';
+
+if (!analytics.ready) { // checks if analytics is already ready; if not we can safely call `useNativeConfiguration`
+    analytics.useNativeConfiguration();
+}
+```
 
 ### Flushing
 

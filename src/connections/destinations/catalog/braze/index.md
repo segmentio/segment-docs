@@ -230,7 +230,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 #### iOS
 
-1. Follow the directions to register for push at in [Segment's iOS library](https://segment.com/docs/libraries/ios/) docs.
+1. Follow the directions to register for push at in [Segment's iOS library](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) docs.
 2. Add the following to your application:didFinishLaunchingWithOptions
 
     ```
@@ -551,4 +551,4 @@ No. Audiences are sent to Braze as either custom attributes or custom events. Yo
 All Braze user profile data (including custom events, custom attributes) is stored for as long as those profiles are active.
 
 #### What happens if I delete a computed trait or audience in Segment?
-When you delete an audience or trait in Segment they are not deleted from Braze. Data sent to Braze is immutable and cannot be deleted or modified once they receive it. However, you can [blacklist](https://www.braze.com/docs/user_guide/administrative/app_settings/manage_app_group/custom_event_and_attribute_management/#blacklisting-custom-attributes-custom-events-and-products) custom attributes and events in Braze.
+When you delete an audience or trait in Segment they are not deleted from Braze. Data sent to Braze is immutable and cannot be deleted or modified once they receive it. However, you can [blocklist](https://www.braze.com/docs/user_guide/administrative/app_settings/manage_app_group/custom_event_and_attribute_management/#blacklisting-custom-attributes-custom-events-and-products) custom attributes and events in Braze.

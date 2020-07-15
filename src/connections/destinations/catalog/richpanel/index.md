@@ -24,7 +24,7 @@ _**NOTE:** The Richpanel Destination is currently in beta, which means that they
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [`identify` method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`identify` method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -49,7 +49,7 @@ See [Richpanel's User Properties](http://event.richpanel.com/#/properties) and [
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [`page` method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`page` method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page('Pricing', {
@@ -65,7 +65,7 @@ If no `richpanel_session_id` is supplied, Richpanel will automatically generate 
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [`track` method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`track` method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Clicked Login Button', {

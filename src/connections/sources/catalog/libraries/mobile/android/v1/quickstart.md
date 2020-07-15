@@ -1,16 +1,17 @@
 ---
 title: "Quickstart: Android (v1 - Deprecated)"
 hidden: true
+published: false
 ---
 
 This tutorial will help you start sending analytics data from your Android app to Segment. Once you're done you'll be able to turn on [any of our destinations](/docs/connections/destinations/) with the flip of a switch! No more waiting for Play Store releases.
 
 If you want to dive deeper at any point, check out the [Android Library Reference](/docs/connections/sources/catalog/libraries/mobile/android).
-If you're looking for documentation on our upcoming version, head over to the [Android v2 Beta Docs](/docs/connections/sources/catalog/libraries/mobile/android-beta).
+
 
 ## Step 1: Install the SDK
 
-The Android analytics is distributed using [Maven Central](http://maven.org/). This is recommended since it makes it simple to upgrade, and bundle only specific destinations. If you can't use Maven, check out the [manual install instructions](/docs/connections/sources/catalog/libraries/mobile/android#manual-install).
+The Android analytics is distributed using [Maven Central](http://maven.org/). This is recommended since it makes it simple to upgrade, and bundle only specific destinations.
 
 Then simply add the SDK as a dependency.
 
@@ -132,7 +133,7 @@ public class YourActivity extends Activity {
 
 ## 5. Identify Users
 
-The `identify` method is how you tell Segment who the current user is. It takes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/libraries/android#identify).
+The `identify` method is how you tell Segment who the current user is. It takes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/mobile/android#identify).
 
 When and where you `identify` depends on how your users are authenticated, but doing it in the Application's `onCreate` method is most common. If that doesn't work for you, then do it after the `MainActivity`'s `onCreate` method.
 
@@ -153,7 +154,7 @@ Once you've added an `identify` call, you're ready to move on to...
 
 ## 6. Track Actions
 
-The `track` method is how you tell Segment about which actions your users are performing inside your app. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/libraries/android#track).
+The `track` method is how you tell Segment about which actions your users are performing inside your app. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/connections/sources/catalog/libraries/mobile/android#track).
 
 Here's what a call to `track` might look like when a user signs up:
 

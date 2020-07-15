@@ -28,7 +28,7 @@ In the interest of keeping our SDK lightweight, the `analytics` artifact only in
 
 You'll likely want to bundle some additional destinations client side. For many advanced marketing automation and analytics tools, we offer the option of including their SDK or electing to send data server to server, depending on the features you need. Most optimization, deep linking, error tracking, and survey tools must be included on the device to use their core feature set.
 
-In those cases, you'll need to take some additional steps as shown in the [library reference documentation](/docs/connections/sources/catalog/libraries/mobile/android#bundling-integrations).
+In those cases, you'll need to take some additional steps as shown in the [library reference documentation](/docs/connections/sources/catalog/libraries/mobile/android/#about-mobile-connection-modes).
 
 Now that the SDK is installed and setup, you're ready to...
 
@@ -49,7 +49,7 @@ Analytics.setSingletonInstance(analytics);
 **Notes**:
 - Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and is optional, but highly recommended to hit the ground running with core events! See [below](/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-5-track-actions) for more info!
 - This only installs the Segment destination. This means that all your data will be sent server side to tools.
-If you need to bundle additional destinations client side, you'll need to take some additional steps as [shown here](/docs/connections/sources/catalog/libraries/mobile/android#bundling-integrations).
+If you need to bundle additional destinations client side, you'll need to take some additional steps as [shown here](/docs/connections/sources/catalog/libraries/mobile/android/#about-mobile-connection-modes).
 
 ## Step 3. Add Permissions
 

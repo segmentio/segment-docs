@@ -2,7 +2,7 @@
 title: Personas Audiences
 ---
 
-Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be sycned to hundreds of destinations and are available using the [Profile API](/docs/personas/profile-api).
+Audiences allow you to define cohorts of users or accounts based on their event behavior and traits that Segment then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be synced to hundreds of destinations and are available using the [Profile API](/docs/personas/profile-api).
 
 ## Building an Audience
 
@@ -84,7 +84,7 @@ To create a new audience:
 
 
 > warning ""
-> [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarketing Lists](/docs/destinations/adwords-remarketing-lists) have rate limits on how quickly we can update an audience. We sync at the highest frequency allowed by the tool, which is between 1 hour and 6 hours.
+> [Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/), [Marketo Lists](/docs/connections/destinations/catalog/marketo-static-lists/), and [Adwords Remarketing Lists](/docs/connections/destinations/catalog/adwords-remarketing-lists) have rate limits on how quickly we can update an audience. We sync at the highest frequency allowed by the tool, which is between 1 hour and 6 hours.
 
 ## Accessing your Audiences using the Profiles API
 

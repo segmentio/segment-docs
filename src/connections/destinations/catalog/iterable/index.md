@@ -25,7 +25,7 @@ Iterable keys users by `email` or a user ID. This user ID will be the Segment `u
 ### Merge Nested Objects
 
 
-Iterable offers the option to either merge user fields with nested data or overwrite them. (see their [docs](https://api.iterable.com/api/docs#!/users/updateUser_post_10) for more info). By default, this option is set to false. If you wish to disable this, you can pass an destination specific property called `mergeNestedObjects` and set it's value to `true`.
+Iterable offers the option to either merge user fields with nested data or overwrite them. (see their [docs](https://api.iterable.com/api/docs#!/users/updateUser_post_10) for more info). By default, this option is set to false. If you wish to disable this, you can pass a destination-specific property called `mergeNestedObjects` and set it's value to `true`.
 
 Here's an example:
 
@@ -95,7 +95,7 @@ To enable this feature, go to Destinations, Third Party, and select Segment in t
 
 ## Sending Push Notification Data from Iterable
 
-Iterable supports sending push notification events to Segment. These events are sent as `track` calls to the other destinations you've turned on. Push events are automatically enabled once the [Email Source](/docs/connections/sources/iterable/) is enabled.
+Iterable supports sending push notification events to Segment. These events are sent as `track` calls to the other destinations you've turned on. Push events are automatically enabled once the [Email Source](/docs/connections/sources/catalog/cloud-apps/iterable/) is enabled.
 
 They support the following events:
 `Push Delivered`, `Push Bounced`, `Mobile App Uninstalled`, `Push Opened`

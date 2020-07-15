@@ -461,7 +461,7 @@ onConsentDialogClosed(function(consentedTools){
 
 Once `analytics.js` loads, executing the `user` or `group` method functions returns information about the currently identified user or group.
 
-**Note:** To ensure these methods are available, wrap any reference to `user()` or `group()` in a [ready function block](https://segment.com/docs/libraries/analytics.js/#ready).
+**Note:** To ensure these methods are available, wrap any reference to `user()` or `group()` in a [ready function block](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript#ready).
 
 Examples:
 
@@ -499,7 +499,7 @@ analytics.group().traits({});
 ```
 
 
-### Reset / Logout
+### Reset or Logout
 
 Calling `reset` resets the `id`, including anonymousId, and clear `traits` for the currently identified user and group.
 
@@ -582,7 +582,7 @@ Keep in mind that setting the `anonymousId` in `analytics.js` does not overwrite
 A user's `anonymousId` refreshes on any of the following conditions:
 
 * A user clears their cookies _and_ `localstorage`
-* [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript//#reset-logout) is called during in the user's browser session
+* [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) is called during in the user's browser session
 * `analytics.identify()` is called with a userId that differs from the current userId
 
 
@@ -604,7 +604,7 @@ analytics.debug(false);
 ## Emitter
 
 The global `analytics` object emits events whenever you call `alias`, `group`, `identify`, `track` or `page`.
-Using the `on` method You can set listeners for these events and run your own custom code. Useful for sending data to a service for which Segment does not have an destination.
+Using the `on` method You can set listeners for these events and run your own custom code. Useful for sending data to a service for which Segment does not have a destination.
 
 ```js
 analytics.on(method, callback);
@@ -733,7 +733,7 @@ The `analytics.js` library and all of the destination libraries are loaded with 
 
 While many tools require access to the DOM or cookies, for our Zendesk, Salesforce, and MailChimp destinations, we do not load a native Javascript library! Instead data is sent from Segment's servers to the end-tools. We aim to expand on this front in the future.
 
-Only the libraries required for your **enabled** destinations are loaded. Whenever an destination is disabled, the custom version of `analytics.js` stops requesting that library.
+Only the libraries required for your **enabled** destinations are loaded. Whenever a destination is disabled, the custom version of `analytics.js` stops requesting that library.
 
 Using `analytics.js` does not offer a _huge_ performance benefit, but it is more performant than installing each of the destinations individually. And as more destinations move server-side, you'll receive more performance benefits automatically.
 
@@ -889,7 +889,7 @@ If a user comes back to your site after a cookie has expired, Analytics.js check
 
 ## Troubleshooting
 
-The console reveals all! [Learn how to access the Javascript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger-).
+The console reveals all! [Learn how to access the Javascript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger).
 Any `analytics.js` methods may be executed manually. Use the Network tab to inspect requests.
 
 ### Are you loading `analytics.js`?
@@ -902,7 +902,7 @@ The object means that you are successfully loading `analytics.js` onto your webs
 
 ![Returning analytics object error](images/CFsktto.gif)
 
-Solution: [Follow the `analytics.js` Quickstart Guide](/docs/libraries/analytics.js/quickstart/)
+Solution: [Follow the `analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
 
 ### Are you loading two instances of `analytics.js`?
 

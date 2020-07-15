@@ -4,7 +4,7 @@ title: Analytics for iOS
 
 Analytics for iOS makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
-All of Segment's libraries are open-source, so you can [view Analytics for iOS on Github](https://github.com/segmentio/analytics-ios), or check out our [browser and server-side libraries](/sources/catalog/) too.
+All of Segment's libraries are open-source, so you can [view Analytics for iOS on Github](https://github.com/segmentio/analytics-ios), or check out our [browser and server-side libraries](/docs/connections/sources/catalog/) too.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-ios/tags.atom).
 
@@ -53,7 +53,7 @@ And of course, import the SDK in the files that you use it with:
 
 In the interest of keeping our SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data is sent using Segment's servers to any tools you've enabled using the default Cloud-mode.
 
-[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/connections/sources/catalog/libraries/mobile/ios#packaging-destinations-using-device-mode).
+[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks).
 
 Now that the SDK is installed and setup, you're ready to...
 
@@ -161,7 +161,7 @@ The `identify` call has the following fields:
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
-    <td>A dictionary of extra [options](/libraries/ios/#integrations) for the call.</td>
+    <td>A dictionary of extra [options](/docs/connections/sources/catalog/libraries/mobile/ios/#selecting-destinations) for the call.</td>
   </tr>
 </table>
 
@@ -203,7 +203,7 @@ The `track` call has the following fields:
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
-    <td>A dictionary of extra [options](/libraries/ios/#selecting-integrations) for the call.</td>
+    <td>A dictionary of extra [options](/docs/connections/sources/catalog/libraries/mobile/ios/#selecting-destinations) for the call.</td>
   </tr>
 </table>
 
@@ -234,7 +234,7 @@ The `screen` call has the following fields:
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
-    <td>A dictionary of extra [options](/libraries/ios/#integrations) for the call.</td>
+    <td>A dictionary of extra [options](/docs/connections/sources/catalog/libraries/mobile/ios/#selecting-destinations) for the call.</td>
   </tr>
 </table>
 
@@ -270,7 +270,7 @@ The `group` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](/docs/connections/spec/common/#timestamps), [enable or disable destinations](#selecting-destinations), or [send additional context](/docs/connections/spec/common/#context).</td>
   </tr>
 </table>
 
@@ -297,7 +297,7 @@ The `alias` call has the following fields:
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
-    <td>A dictionary of extra [options](/libraries/ios/#integrations) for the call.</td>
+    <td>A dictionary of extra [options](/docs/connections/sources/catalog/libraries/mobile/ios/#selecting-destinations) for the call.</td>
   </tr>
 </table>
 

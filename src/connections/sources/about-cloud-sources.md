@@ -55,7 +55,7 @@ To use cloud sources, we suggest going through the following steps.
 
 Before you connect a source, check out the [sources documentation](/docs/connections/sources/). See what kind of credentials you will need to enable the source. Different sources require different levels of permissioning.
 
-Next, you'll also need to get the credentials for your [warehouse](/docs/warehouses/).
+Next, you'll also need to get the credentials for your [warehouse](/docs/connections/storage/catalog/).
 
 Once you have the necessary credentials (or are logged in to OAuth for your cloud source), you should be ready to go!
 
@@ -100,8 +100,8 @@ Generally, you need intermediate- to advanced SQL experience to explore and anal
 <!-- LR 4.20.2020 I think these have been missing for a long time. :(
 **Entity Relationship Diagrams** The links to the ER (entity relationship) diagrams [in the documentation](/docs/connections/sources/#cloud-app) will really help you fast track your queries. They show the relationship between each table in a particular source, and how each table can be joined based on particular keys. -->
 
-**Joining IDs** As you start to get into joining across different types of sources, you'll need a way to join user IDs. This [help article](/docs/faqs/sources/join-user-profiles) explains how to do this in detail.
+**Joining IDs** As you start to get into joining across different types of sources, you'll need a way to join user IDs. This [help article](/docs/guides/how-to-guides/join-user-profiles/) explains how to do this in detail.
 
-**Getting Started Queries** We've created a number of queries for common use cases to help you get started – you can copy and paste them to start querying your data. Find them in the Warehouse section of the [Segment Community](https://segment.forumbee.com/category/warehouses).
+<!-- LR 7.8.2020 - Community shut down pending ??? so hiding this for now **Getting Started Queries** We've created a number of queries for common use cases to help you get started – you can copy and paste them to start querying your data. Find them in the Warehouse section of the [Segment Community](https://segment.forumbee.com/category/warehouses).-->
 
 **Partner Dashboards** Our BI partners at Mode, Looker, BIME, Periscope, and Chartio have created out of the box dashboards that work on top of our source schemas.
