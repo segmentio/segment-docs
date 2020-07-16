@@ -37,14 +37,6 @@ Your source slug can be found in the URL when you're looking at the source desti
 
 `https://segment.com/[my-workspace]/sources/[my-source-slug]/overview`
 
-
-## How do I find my warehouse id?
-
-Your warehouse id can be found in the URL when you’re looking at the warehouse destinations page. The URL structure will look like this:
-
-`https://segment.com/[my-workspace]/warehouses/[my-warehouse-id]/overview`
-
-
 ## How fresh is the data in Segment Warehouses?
 
 Your data will be available in Warehouses within 24-48 hours. The underlying Redshift datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience we need to balance all three of these.
@@ -92,17 +84,8 @@ We will automatically load up to 2 months of your historical data when you conne
 
 For full historical backfills you'll need to be a Segment Business plan customer. If you'd like to learn more about our Business plan and all the features that come with it, [check out our pricing page](https://segment.com/pricing).
 
-
 ## What do you recommend for Postgres: Amazon or Heroku?
 
 Heroku's simple set up and administration process make it a great option to get up and running quickly.
 
 Amazon's service has some more powerful features and will be more cost-effective for most cases. However, first time users of Amazon Web Services (AWS) will likely need to spend some time with the documentation to get set up properly.
-
-
-## How do I disable a newly created source from syncing to some or all warehouses?
-
-When creating a new source, the source will sync to all warehouse(s) within a workspace by default. The source can be disabled from syncing to some or all warehouses within a workspace in two ways:
-
-- **Segment app**: When adding a source from the Workspace Overview page, all warehouses will automatically be selected to sync. De-select the warehouse(s) you do not want the source to sync to.
-- **Config API**: Send a [PATCH Connected Warehouse request](https://reference.segmentapis.com/?version=latest#ec12dae0-1a3e-4bd0-bf1c-840f43537ee2) for the warehouse(s) which you want to disable from syncing.
