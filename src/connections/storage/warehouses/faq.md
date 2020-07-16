@@ -40,7 +40,7 @@ Your source slug can be found in the URL when you're looking at the source desti
 
 ## How do I find my warehouse id?
 
-Your warehouse id can be found in the URL when you’re looking at the warehouse destinations page. The URL structure will look like this:
+Your warehouse id appears in the URL when you look at the [warehouse destinations page](https://app.segment.com/goto-my-workspace/warehouses/). The URL structure looks like this:
 
 ​​`app.segment.com/[my-workspace]/warehouses/[my-warehouse-id]/overview`
 
