@@ -4,7 +4,7 @@ title: Tracking Pixel API
 
 Tracking pixels (aka beacon, 1×1 gif, or clear gif) allow for tracking email opens, advertising impressions and checkout pages where JavaScript and POST requests are disallowed, but where you _can_ embed an image.
 
-Follow Segment's [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http) to leverage the `/pixel` API endpoint, which accepts base64 encoded url `?data` and returns an 1x1 transparent gif.
+Follow Segment's [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http) to use the `/pixel` API endpoint, which accepts base64 encoded url `?data` and returns an 1x1 transparent gif.
 
 ### Pixel API endpoint signature:
 

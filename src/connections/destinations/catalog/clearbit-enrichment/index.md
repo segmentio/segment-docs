@@ -5,7 +5,7 @@ rewrite: true
 
 [Clearbit Enrichment](https://clearbit.com/segment) helps customers enrich and append real-time data to an email or domain, driving growth or powering your product with social data, location, job title, company size and technology.
 
-This document was last updated on April 20th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on April 20th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
@@ -25,7 +25,7 @@ To verify that the destination has been set up correctly, check the Debugger sec
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('pixar123', {
@@ -41,4 +41,4 @@ You can find details on what traits Clearbit Enrichment adds and exactly what wi
 
 ### Clearbit Enrichment data is not populating
 
-Please double check that you have entered **the _secret key_**, not the _public key_ Clearbit provides.
+Double check that you have entered **the _secret key_**, not the _public key_ Clearbit provides.

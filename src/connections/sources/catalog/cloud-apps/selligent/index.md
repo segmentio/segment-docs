@@ -8,12 +8,12 @@ Selligent is a cross-channel marketing platform that allows brands to effectivel
 
 Take your company's email analysis to the next level by **adding Selligent as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse.
 
-In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Selligent data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Selligent with Segment.](/sources/selligent)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Selligent data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Selligent with Segment.](/docs/connections/destinations/catalog/selligent)
 
 
 ## Getting Started
 
-If you have previously enabled sending email events via the Selligent destination during our beta (using a project write key), you do not need to create new Selligent source. Your email data will continue to flow as normal.
+If you have previously enabled sending email events using the Selligent destination during our beta (using a project write key), you do not need to create new Selligent source. Your email data will continue to flow as normal.
 
 1. From your workspace's `segment.com/<your-workspace>/sources page`, click `Add source`.
 
@@ -35,7 +35,7 @@ That's it! As you send emails, events will now be sent to your destinations and 
 
 **Stream**
 
-Selligent uses our stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query via SQL.
+Selligent uses our stream Source component to send Segment email events. It uses a server-side `track` method to send data to Segment. These events are then available in any destination that accepts server-side events, and available in a schema in your data warehouse, so you can query using SQL.
 
 The default behavior is for Selligent to pass the `userId` associated with the email recipient as the `userId`. There are cases in which Selligent does not have an associated `userId`, in which case the email address will be passed in as the `anonymousId`.
 

@@ -4,7 +4,7 @@ title: Appcues Destination
 ---
 [Appcues](https://www.appcues.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) adds an experience layer to your product, so you can build user onboarding, NPS surveys, or feature announcements in minutes instead of in weeks. The Appcues JavaScript Destination is open-source. You can browse the code [on GitHub](https://github.com/appcues/analytics.js-integration-appcues).
 
-This document was last updated on November 08, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on November 08, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
@@ -30,7 +30,7 @@ For example, using the server-side destination, customer profile and event data 
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page();
@@ -40,7 +40,7 @@ Appcues will check to see if a user qualifies for an experience every time the p
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('12091906-01011992', {
@@ -51,14 +51,14 @@ analytics.identify('12091906-01011992', {
 
 When you `identify` on `analytics.js`, we call `Appcues.identify`. This is the preferred method of using and targeting on user properties.
 
-To get the most out of Appcues, you'll want to send as much user data as possible in the `identify` call. Properties are used to target experiences to specific users and personalize content. Most Appcues customers send properties that fall into a few groups:
+To get the most out of Appcues, you should send as much user data as possible in the `identify` call. Properties are used to target experiences to specific users and personalize content. Most Appcues customers send properties that fall into a few groups:
   * Properties to target based on broad classifications such as `role` or `userType`
   * Properties to personalize Appcues content such as `name`, `firstName` or `company`
   * Properties to target based on user lifecycle such as `createdAt` (date) or usage metrics such as `numTasksComplete`
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("step_activated", {
@@ -88,9 +88,9 @@ To enable this feature, go to the Integrations Settings in Appcues and click "Ac
 
 ### Whitelisted Domains
 
-By default, Appcues will target based on the path of the URL. So if we created an Appcues experience and targeted it to `/integrations`, it would appear wherever the embed script is installed with that URL path, like appcues.com/integrations and my.appcues.com/integrations. If your `analytics.js` script is installed on multiple domains (e.g. your marketing site and your web app), you'll want to use Appcues whitelisted domains when targeting your experience.
+By default, Appcues will target based on the path of the URL. So if we created an Appcues experience and targeted it to `/integrations`, it would appear wherever the embed script is installed with that URL path, like appcues.com/integrations and my.appcues.com/integrations. If your `analytics.js` script is installed on multiple domains (e.g. your marketing site and your web app), you should use Appcues whitelisted domains when targeting your experience.
 
 
 ## Delete
 
-When you trigger a user deletion via our [Privacy features](https://segment.com/docs/privacy-portal/user-deletion-and-suppression/), we will forward a delete notification to Appcues, who will act on the notification. You can read more about how Appcues handles deletion requests [in their docs here.](https://docs.appcues.com/article/443-gdpr-deletion-api)
+When you trigger a user deletion using our [Privacy features](https://segment.com/docs/privacy-portal/user-deletion-and-suppression/), we will forward a delete notification to Appcues, who will act on the notification. You can read more about how Appcues handles deletion requests [in their docs here.](https://docs.appcues.com/article/443-gdpr-deletion-api)

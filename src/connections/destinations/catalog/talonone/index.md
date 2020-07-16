@@ -6,12 +6,12 @@ beta: true
 Create flexible and targeted promotional & loyalty campaigns with [Talon.One](https://Talon.One/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
 Campaigns can be created and managed by non-technical users such as marketeers. There is no need to get your development team involved. Features include coupons, discounts, loyalty programs, referral tracking, geo-fencing, and bundling.
 
-This destination is maintained by Talon.One. For any issues with the destination, please [contact their team](mailto:support@talon.one).
+This destination is maintained by Talon.One. For any issues with the destination, [contact their team](mailto:support@talon.one).
 
-_**NOTE:** The Talon.One Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 15, 2020. If you are interested in joining their beta program or have any feedback to help improve the Talon.One Destination and its documentation, please [let their team know](mailto:support@talon.one)!_
+_**NOTE:** The Talon.One Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 15, 2020. If you are interested in joining their beta program or have any feedback to help improve the Talon.One Destination and its documentation, [let their team know](mailto:support@talon.one)!_
 
 > warning ""
-> Data collection that affects promotions should be collected using a Segment **server-side** implementation. Client-side implementations exposes you to risks of fraud. (e.g. a user changing a custom trait relating to their profile via JS modification tools, which triggers them to receive a higher discount than they are entitled to) For more information please [read this](https://segment.com/docs/guides/how-to-guides/collect-on-client-or-server/).
+> Data collection that affects promotions should be collected using a Segment **server-side** implementation. Client-side implementations exposes you to risks of fraud. (e.g. a user changing a custom trait relating to their profile using JS modification tools, which triggers them to receive a higher discount than they are entitled to) For more information  [read this](https://segment.com/docs/guides/how-to-guides/collect-on-client-or-server/).
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ _**NOTE:** The Talon.One Destination is currently in beta, which means that they
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {

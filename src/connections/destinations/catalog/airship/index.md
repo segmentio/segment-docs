@@ -7,9 +7,9 @@ Airship gives brands the data, channels, orchestration and services they need to
 
 [Airship Cloud-mode Destination integration](https://docs.airship.com/partners/segment/#destination) enables users to set Airship Tags and Custom Events through Segment Identify and Track events.
 
-This destination is maintained by Airship. For any issues please [reach out to their team](mailto:support@airship.com).
+This destination is maintained by Airship. For any issues [contact their team](mailto:support@airship.com).
 
-_**NOTE:** The Airship Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 31, 2019. If you are interested in joining their beta program or have any feedback to help improve the Airship Destination and its documentation, please [let  their team know](mailto:support@airship.com)!_
+_**NOTE:** The Airship Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 31, 2019. If you are interested in joining their beta program or have any feedback to help improve the Airship Destination and its documentation, [let their team know](mailto:support@airship.com)!_
 
 > success ""
 > **Good to know**: This page is about the Airship Segment destination, which receives data from Segment. There's also a page about the [Airship Segment source](/docs/connections/sources/catalog/cloud-apps/airship/), which sends data _to_ Segment!
@@ -36,7 +36,7 @@ See [Tags and Named Users](https://docs.airship.com/guides/audience/tags-named-u
 
 ## Identify
 
-If you haven't had a chance to review the Segment spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review the Segment spec, take a look tounderstand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('jill', {
@@ -45,10 +45,10 @@ analytics.identify('jill', {
 });
 ```
 
-Identify calls will be sent to Airship as an `identify` event. When an `identify` event is received, Airship will use the `userId` to set named users tags. To take advantage of identify features, in Airship you must setup a tag group called `segment-integration` and a named user must exist for the `userId`. The value of the property name will be true/false value.
+Identify calls will be sent to Airship as an `identify` event. When an `identify` event is received, Airship will use the `userId` to set named users tags. To take advantage of identify features, in Airship you must set up a tag group called `segment-integration` and a named user must exist for the `userId`. The value of the property name will be true/false value.
 
 **Segment Identify Events to Airship Tags**
-Airship Tags are leveraged for profile enrichment, message triggering, segment building, and user analytics.
+Airship Tags are used for profile enrichment, message triggering, segment building, and user analytics.
 
 Example Use cases:
 * Identify event sets an Airship tag on a user is flagged as liking a specific product category

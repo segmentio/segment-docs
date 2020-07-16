@@ -5,7 +5,7 @@ rewrite: true
 
 [Indicative]( https://app.indicative.com/#/login/register?utm_source=partners&utm_medium=segment&utm_campaign=integration) is a behavioral analytics platform designed to help Marketing and Product teams optimize user engagement, conversion, and retention.
 
-This document was last updated on 18th October, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on 18th October, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -29,7 +29,7 @@ For additional information, contact `support@indicative.com`.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
 
 When you call [`identify`](/docs/connections/spec/identify/), we send the entire call as is to Indicative's server.
 
@@ -50,7 +50,7 @@ analytics.identify('ze8rt1u89', {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 When you call [`track`](/docs/connections/spec/track/), we send the entire call as is to Indicative's server.
 
@@ -64,7 +64,7 @@ analytics.track("Calculation Completed", {
 
 ## Page and Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) and [Screen method](https://segment.com/docs/connections/spec/page/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) and [Screen method](https://segment.com/docs/connections/spec/page/) does.
 
 Both [`page`](/docs/connections/spec/page/) and [`screen`](/docs/connections/spec/screen/) calls will be sent to Indicative as events.
 

@@ -18,9 +18,9 @@ Our goal is to make Transformations a powerful tool that complements a well stru
 
 ### Other important notes
 
-- **Transformations cannot be applied retroactively:** They only apply to data moving forward. However, you can manually extract and re-send (or even [Replay](/docs/guides/general/what-is-replay)) events through a source with an active Transformation, which will send the transformed events to your destinations.
+- **Transformations cannot be applied retroactively:** They only apply to data moving forward. However, you can manually extract and re-send (or even [Replay](/docs/guides/what-is-replay)) events through a source with an active Transformation, which will send the transformed events to your destinations.
 - **Transformations are only available to Protocols customers:** If you are interested in this feature, contact your Account Executive or CSM to learn more about the Protocols package.
-- **Source-level transformations are irrevocable:** When applied at the source, a transformation permanently changes the structure of the event. The original events are not easily recoverable or [Replayable](/docs/guides/general/what-is-replay). Assume that transformed data cannot be recovered.
+- **Source-level transformations are irrevocable:** When applied at the source, a transformation permanently changes the structure of the event. The original events are not easily recoverable or [Replayable](/docs/guides/what-is-replay). Assume that transformed data cannot be recovered.
 - **Device-mode destinations are NOT supported:** Source scoped transformations will **only** apply to cloud-mode destinations, warehouses, and S3 destinations. Destination scoped transformations will **only** apply to cloud-mode destinations.
 
 ## View all Transformations
@@ -38,7 +38,8 @@ Transformations can be deleted and edited by clicking on the overflow menu. When
 To create a Transformation, navigate to the Transformations tab in Protocols and click **New Transformation** in the top right. A three-step wizard guides you through creating a transformation.
 
 > info ""
-> Only workspace owners can currently create and edit transformations!
+> Workspace Owner or Source Admin permissions are required to create and edit transformations.
+> Source Read-only permissions are required to view transformations.
 
 ![](../images/transformation_wizard.png)
 

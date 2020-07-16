@@ -23,7 +23,7 @@ Segment Workspace Owners authorize your App on their workspace using a web-based
 
 Therefore, the token returned by Segment isn't tied to a user – it's tied to an App Install. That's why we call it an Install Token.
 
-## Setup Guide
+## Set up Guide
 
 There are three steps to implement an "Enable with Segment" OAuth flow:
 
@@ -38,7 +38,7 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
    ![Step 1](images/enable-with-segment/step1.png)
 3. Name your App, and click **Create**.
    ![Step 2](images/enable-with-segment/step2.png)
-   You'll be redirected to your App's main page. If you are implementing Enable with OAuth for an integration not built via the Developer Center and encounter an issue where your integration's name is already taken, you may choose another name (eg. TOOLNAME-enable). You will have the option to connect the two by selecting a scope in Step #2.
+   You'll be redirected to your App's main page. If you are implementing Enable with OAuth for an integration not built using the Developer Center and encounter an issue where your integration's name is already taken, you may choose another name (eg. TOOLNAME-enable). You will have the option to connect the two by selecting a scope in Step #2.
 4. Click the `App Info` tab.
    ![Step 3](images/enable-with-segment/step3.png)
 5. From the `App Info` tab, click `OAuth` in the left side navigation.
@@ -104,7 +104,7 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
 
 ## OAuth Implementation
 
-If you use a standard OAuth library in your programming language, all of this is done for you as shown in the [setup guide](#setup-guide). These steps are just for illustration.
+If you use a standard OAuth library in your programming language, all of this is done for you as shown in the [setup guide](#set-up-guide). These steps are just for illustration.
 
 1. When the user wants to authenticate, you redirect them to `https://id.segmentapis.com/oauth2/auth?response_type=code&scope=workspace:read&client_id=...`.
    > **Note**: We only accept `response_type=code` here. That means Segment returns an `auth_code` that your library exchanges for an install token in Step 5 below.
@@ -269,7 +269,7 @@ The library you use in your programming language should do this automatically fo
 
 ### What scopes do you support?
 
-We support `destination/<slug>`,  `workspace` and `workspace:read`. You set these scopes during app creation and when you start the install flow. You must use the same scope in both places, otherwise you get an invalid scope error when you start the error.
+We support `destination/<slug>`, `workspace` and `workspace:read`. You set these scopes during app creation and when you start the install flow. You must use the same scope in both places, otherwise you get an invalid scope error when you start the error.
 
 ### What is the fastest way to get started? Do I have to learn OAuth to make an app?
 
@@ -283,7 +283,7 @@ Your `redirect_uri` probably doesn't match what you set in the App Create Reques
 
 ### How many redirect_uris can I have? Can I add more after the app is created?
 
-You can have five `redirect_uris` on app creation. Editing the app info directly is not supported at this time. Please [contact us](https://segment.com/help/contact/) if you want any of your `redirect_uris` or other info changed.
+You can have five `redirect_uris` on app creation. Editing the app info directly is not supported at this time. [contact us](https://segment.com/help/contact/) if you want any of your `redirect_uris` or other info changed.
 
 In the future we will allow you to update this information on your own.
 

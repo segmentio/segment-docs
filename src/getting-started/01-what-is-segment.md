@@ -5,7 +5,7 @@ title: What is Segment?
 This page introduces important terms and concepts about Segment that you should be familiar with before you start a Segment installation.
 
 
-In the simplest form, the Segment libraries ("[Sources](/docs/connections/sources/catalog/)") generate messages about what's happening in your site or app, and send them to the Segment servers. Segment then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and sends the translated messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/warehouses) (such as databases, warehouses, or bulk-storage buckets).
+In the simplest form, the Segment libraries ("[Sources](/docs/connections/sources/catalog/)") generate messages about what's happening in your site or app, and send them to the Segment servers. Segment then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations/)'), and sends the translated messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/storage/) (such as databases, warehouses, or bulk-storage buckets).
 
 
 ## The Segment Platform
@@ -16,9 +16,9 @@ The first two parts of the Segment platform are the [Segment Spec methods](/docs
 
 Once you've collected your interaction data, there are several different things you can do with it:
 - Send it to [Destinations](/docs/connections/destinations/), which receive the data from any number of sources in real time
-- Send it to [Warehouses](/docs/connections/warehouses/) (and other bulk storage tools), which hold your raw event schemas and update on regular intervals
+- Send it to [Warehouses](/docs/connections/storage/) (and other bulk storage tools), which hold your raw event schemas and update on regular intervals
 
-You can also enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-sources), and then collect it in a warehouse it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use [Personas](/docs/personas/), our identity resolution tool, to unify data from individual users to gain a holistic understanding of their actions.
+You can also enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-apps), and then collect it in a warehouse it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use [Personas](/docs/personas/), our identity resolution tool, to unify data from individual users to gain a holistic understanding of their actions.
 
 
 ## Where data comes from

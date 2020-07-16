@@ -6,9 +6,9 @@ title: OneSignal Destination
 
 After destination Segment with your app, enable OneSignal in your segment destinations. Use your OneSignal App ID to enable the destination. This ID can be found on the settings page for your app on the OneSignal dashboard.
 
-OneSignal will only track new users. If you have existing push notification data in another service, please get in touch with us to transfer it over: support@onesignal.com
+OneSignal will only track new users. If you have existing push notification data in another service, [contact OneSignal support](mailto:support@onesignal.com) to transfer it over.
 
-OneSignal supports the `identify` and `track` methods and is currently only available on iOS via Segment.
+OneSignal supports the `identify` and `track` methods and is currently only available on iOS using Segment.
 
 - - -
 

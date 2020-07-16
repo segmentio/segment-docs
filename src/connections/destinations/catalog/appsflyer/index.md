@@ -4,7 +4,7 @@ title: AppsFlyer Destination
 ---
 [AppsFlyer](https://www.appsflyer.com/) is the world's leading mobile attribution & marketing analytics platform, helping app marketers around the world make better decisions. Our AppsFlyer destination code is open-source. You can browse the code on GitHub for [iOS](https://github.com/AppsFlyerSDK/segment-appsflyer-ios) and [Android](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration).
 
-This document was last updated on April 27, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on April 27, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -16,19 +16,19 @@ This document was last updated on April 27, 2018. If you notice any gaps, outdat
   4. Follow the instructions in the Github repos: [iOS SDK](https://github.com/AppsFlyerSDK/segment-appsflyer-ios) and [Android SDK](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration).
   5. After you build and release to the app store, we start translating and sending your data to AppsFlyer automatically.
 
-**Important:** If you plan on using the server-side destination for an Android project, please make sure to enter your **Android App ID**. If you are using only the mobile SDK, Android projects only require the **AppsFlyer Dev Key**. iOS projects always require both the **AppsFlyer Dev Key** and the **Apple App ID**. Also, note that if you do use the server-side destination, you will not be able to selectively disable calls sent to AppsFlyer via your Segment dashboard.
+**Important:** If you plan on using the server-side destination for an Android project, make sure to enter your **Android App ID**. If you are using only the mobile SDK, Android projects only require the **AppsFlyer Dev Key**. iOS projects always require both the **AppsFlyer Dev Key** and the **Apple App ID**. Also, note that if you do use the server-side destination, you will not be able to selectively disable calls sent to AppsFlyer using your Segment dashboard.
 
 ### Server
 
-AppsFlyer offers an **augmentative** server-side [HTTP API](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-) intended for use along side their mobile SDK. Use the server-side destination alongside the mobile SDK to associate out-of-app events such as website or offline purchases with attributed users/devices. Please read further for more information on this functionality.
+AppsFlyer offers an **augmentative** server-side [HTTP API](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-) intended for use along side their mobile SDK. Use the server-side destination alongside the mobile SDK to associate out-of-app events such as website or offline purchases with attributed users/devices. Read further for more information on this functionality.
 
-**Important**: Keep in mind that the server-side destination is not meant to *supplant* the client side SDK! In order for AppsFlyer to properly attribute, you must bundle their mobile SDK! The server-side destination should not be used alone. Also, keep in mind if you are passing in `appsFlyerId` for server-side calls, you will not be able to disable events from sending to AppsFlyer via your Segment dashboard.
+**Important**: Keep in mind that the server-side destination is not meant to *supplant* the client side SDK! In order for AppsFlyer to properly attribute, you must bundle their mobile SDK! The server-side destination should not be used alone. Also, keep in mind if you are passing in `appsFlyerId` for server-side calls, you will not be able to disable events from sending to AppsFlyer using your Segment dashboard.
 
 If you'd like to use AppsFlyer fully server-side, this can be done but it is a Enterprise Customer Feature and you need to contact your AppsFlyer representative to enable this feature.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:
 
 ```ios
 [[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
@@ -37,11 +37,11 @@ If you haven't had a chance to review our spec, please take a look to understand
 
 When you call `.identify()`, we will use AppsFlyer's `setCustomerUserID` to send the `userId` that was passed in.
 
-**Note:** `identify` calls are not supported via AppsFlyer's HTTP API at the moment. You can only send `.identify` calls if you have the AppsFlyer SDK bundled.
+**Note:** `identify` calls are not supported using AppsFlyer's HTTP API at the moment. You can only send `.identify` calls if you have the AppsFlyer SDK bundled.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example iOS call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example iOS call would look like:
 
 ```ios
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"
@@ -164,7 +164,7 @@ The destination automatically recognizes the spec'd `orderId` property, and se
 
 ### In-App Purchase Receipts
 
-The destination does not currently support in-app purchase receipts. If this is important to you, please email support@appsflyer.com.
+The destination does not currently support in-app purchase receipts. If this is important to you, email support@appsflyer.com.
 
 ### Deeplinking
 
@@ -172,4 +172,4 @@ The destination does not automatically support out-of-the-box deeplinking (you n
 
 Therefore, you can use AppsFlyer's OneLink integration which is a single, smart, tracking link that can be used to track on both Android and iOS. OneLink tracking links can launch your app when it is already installed instead of redirecting the user to the app store.
 
-For more details, please review the [AppsFlyer OneLink Setup Guide](https://support.appsflyer.com/hc/en-us/articles/207032246-OneLink-Setup-Guide). More information is available in the AppsFlyer SDK Integration Guides ([iOS](https://support.appsflyer.com/hc/en-us/articles/207032066-AppsFlyer-SDK-Integration-iOS), [Android](https://support.appsflyer.com/hc/en-us/articles/207032126-AppsFlyer-SDK-Integration-Android)) and Segment's mobile FAQs ([iOS](/docs/server/mobile/ios/#faq), [Android](/docs/libraries/android/#faq)).
+For more details, review the [AppsFlyer OneLink set up Guide](https://support.appsflyer.com/hc/en-us/articles/207032246-OneLink-Setup-Guide). More information is available in the AppsFlyer SDK Integration Guides ([iOS](https://support.appsflyer.com/hc/en-us/articles/207032066-AppsFlyer-SDK-Integration-iOS), [Android](https://support.appsflyer.com/hc/en-us/articles/207032126-AppsFlyer-SDK-Integration-Android)) and Segment's mobile FAQs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#faq), [Android](/docs/connections/sources/catalog/libraries/mobile/android/#faq)).

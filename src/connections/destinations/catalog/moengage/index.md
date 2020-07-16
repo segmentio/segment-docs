@@ -39,7 +39,7 @@ To get started with MoEngage on iOS, first add the [MoEngage-Segment-iOS](https:
   pod update
   ```
 
-### Setup Segment SDK
+### Set up Segment SDK
 
 Go to the App Delegate file and set up the Segment SDK by adding the `SEGMoEngageIntegrationFactory` instance to `SEGAnalyticsConfiguration` as shown below:
 
@@ -124,7 +124,7 @@ Push Notifications are a great way to keep your users engaged and informed about
 
 **Segment Push Implementation:**
 
-1. Follow the directions to register for push notifications [using Segment's SDK](https://segment.com/docs/libraries/ios/#how-do-i-use-push-notifications-).
+1. Follow the directions to register for push notifications [using Segment's SDK](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
 
 2. In your application's `application:didReceiveRemoteNotification:` method, add the following:
 
@@ -373,7 +373,7 @@ If you selected `HTTPS` mode, you must take some additional steps:
 * serviceworker.js
 
 > note ""
-> **Note**: Make sure the name of the serviceworker file is exactly `serviceworker.js`. [Contact MoEngage support](support@moengage.com) if you need to rename the serviceworker file.
+> **Note**: Make sure the name of the serviceworker file is exactly `serviceworker.js`. [Contact MoEngage support](mailto:support@moengage.com) if you need to rename the serviceworker file.
 
 2. Use your serviceworker file (HTTPS only)
 
@@ -393,7 +393,7 @@ Use [track](https://segment.com/docs/connections/sources/catalog/libraries/websi
 
 ### Reset
 
-If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) method in `analytics.js`.
+If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) method in `analytics.js`.
 
 ### Optional
 

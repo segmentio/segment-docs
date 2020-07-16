@@ -57,7 +57,7 @@ In practice that means taking a Segment source **Write Key** encoding it with ba
 
 ### Source Type
 
-Setup an `HTTP API` source type in Segment. You will use this source write key for authenticating with the Objects Bulk API.
+set up an `HTTP API` source type in Segment. You will use this source write key for authenticating with the Objects Bulk API.
 
 ### Limits
 The API imposes some rate limits including:
@@ -210,4 +210,4 @@ If the data being collected is streaming all of the time then the **Objects API*
 
 ### Can you just pull data automatically from my database?
 
-If you would like this feature, please [contact us](https://segment.com/contact/) and let us know.
+If you would like this feature, [contact us](https://segment.com/contact/) and let us know.

@@ -26,7 +26,7 @@ This is an introduction to how Segment and Whalr work together and how to get Wh
 
 ### Identity intelligence
 
-The first step is to send Whalr your customer's email addresses via the Segment IDENTIFY call.  You should send this the first time a lead is identified with an email address, and  every time a user logs in after that.  This is sent as a JSON message in the standard Segment format, and the minimum information required is:
+The first step is to send Whalr your customer's email addresses using the Segment IDENTIFY call.  You should send this the first time a lead is identified with an email address, and  every time a user logs in after that.  This is sent as a JSON message in the standard Segment format, and the minimum information required is:
 
 	{
 	  "type" : "identify",
@@ -46,7 +46,7 @@ In addition, studies show a negative correlation between the number fields and t
 
 ### Contextual Intelligence
 
-As noted above,  by default Segment sends a PAGE event every time a customer visits a page.   You can also create custom messages using the TRACK method.   You can track any event you are interested in, such as signing up to a newsletter or responding to a campaign.  For example, you might add the following Javascript code to an email signup form on your website:
+As noted above, by default Segment sends a PAGE event every time a customer visits a page.   You can also create custom messages using the TRACK method.   You can track any event you are interested in, such as signing up to a newsletter or responding to a campaign.  For example, you might add the following Javascript code to an email signup form on your website:
 
 	analytics.track("email signup")
 

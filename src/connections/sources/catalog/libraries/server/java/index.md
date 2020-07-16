@@ -1,7 +1,5 @@
 ---
 title: Analytics for Java
-sourceTitle: 'Java'
-sourceCategory: 'Server'
 ---
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.java/analytics)
@@ -21,7 +19,7 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 ### Install the library
 
-The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it simple to upgrade and swap out destinations. The library is distributed via [Maven Central](http://maven.org/) as a `jar` dependency.
+The recommended way to install the library for Java is with a build system like Gradle or Maven. This makes it simple to upgrade and swap out destinations. The library is distributed using [Maven Central](http://maven.org/) as a `jar` dependency.
 
 Here's what it would look like with Maven:
 
@@ -96,7 +94,8 @@ The `identify` call has the following fields:
   </tr>
 </table>
 
-**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. Read more in our [transformer reference section](/docs/connections/sources/catalog/libraries/server/java#transformer).
+**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. <!-- LR: can't find this seciton, commenting out.
+Read more in our [transformer reference section](/docs/connections/sources/catalog/libraries/server/java#transformer).-->
 
 Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
 

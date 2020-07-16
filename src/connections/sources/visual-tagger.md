@@ -45,7 +45,7 @@ Once you have all of the prerequisites set up, you're ready to get started:
    ![Getting Started Steps](images/vt-docs-website-type.png)
 5. The next screen shows **Recommended Events**, and you can choose which ones are relevant to your site. (You can also track any events beyond the recommended ones!)
    ![Getting Started Steps](images/vt-docs-setup-starterkit.png)
-6. The UI then loads a page with your website in an internal frame. Click one of the event type names to select it and begin configuring. We'll go over these [in the following sections](#step-1-choose-the-event-type).
+6. The UI then loads a page with your website in an internal frame. Click one of the event type names to select it and begin configuring. We'll go over these [in the following sections](#step-1-choose-the-event-type-and-select-an-element).
 
 As you click each event, you're prompted to select the part of the website that should trigger the event, and describe the properties that event should have.
 <!-- TODO: this image is outdated
@@ -153,7 +153,7 @@ If something doesn't look right, click **Back** to return to the Build screen an
 
 ![Test Your Event](images/vt-docs-6.gif)
 
-If you’re having trouble validating your events, check out our [Troubleshooting Tips](#troubleshooting-visual-tagger-events).
+If you’re having trouble validating your events, check out our [Troubleshooting Tips](#troubleshooting-your-events).
 
 ## Step 4: Publish the event(s)
 
@@ -188,7 +188,7 @@ If your events are not working as expected, try the following steps to troublesh
 
 - Ensure that the Visual Tagger integration is toggled on. You find it in the Settings for your Source.
 
-- Ensure that analytics.js is implemented on your website. You can confirm this by visiting your website and watching the Segment Debugger. A `page` call should flow into your Debugger whenever someone visits a page on your website if you have implemented analytics.js. Please note that if you have an adblocker enabled when you visit your website, data will not get fired into Segment when you interact with your website.
+- Ensure that analytics.js is implemented on your website. You can confirm this by visiting your website and watching the Segment Debugger. A `page` call should flow into your Debugger whenever someone visits a page on your website if you have implemented analytics.js. Note that if you have an adblocker enabled when you visit your website, data will not get fired into Segment when you interact with your website.
 
 - Confirm that the CSS selector has not changed in any way since you created the event in the Visual Tagger (for example, a button could change locations or be removed entirely). Because Visual Tagger relies on the CSS selector to tie events to user actions, if the CSS selector changes, the event stops sending. If this happens, edit the event in Visual Tagger and update the CSS selector. Segment does not currently have a way to alert you when events you created using Visual Tagger begin to fail.
 
@@ -198,7 +198,7 @@ If your events are not working as expected, try the following steps to troublesh
 
 - If you use the same name for multiple events (whether in code or using Visual Tagger), duplicate events are *not* created downstream. Instead, those multiple events are joined into one event.
 
-If your events still don't work as expected, please contact [Segment Customer Support](https://segment.com/help/contact/) for help.
+If your events still don't work as expected, contact [Segment Customer Support](https://segment.com/help/contact/) for help.
 
 ## FAQs
 

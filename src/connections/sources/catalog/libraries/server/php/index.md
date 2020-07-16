@@ -1,7 +1,5 @@
 ---
 title: Analytics for PHP
-sourceTitle: 'PHP'
-sourceCategory: 'Server'
 ---
 
 Our PHP library lets you record analytics data from your PHP code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
@@ -31,7 +29,7 @@ require_once("/path/to/analytics-php/lib/Segment.php");
 Now, you're ready to actually initialize the module. In our examples, we first rename this module to be `Analytics` for convenience. In your initialization script, go ahead and make the following call:
 
 ```php
-# Setup our Segment tracking and
+# set up our Segment tracking and
 # alias to Analytics for convenience
 class_alias('Segment', 'Analytics');
 Segment::init("YOUR_WRITE_KEY");
@@ -41,7 +39,7 @@ You only need to call `init` once when your php file is requested. All of your f
 
 Of course, you'll want to replace `YOUR_WRITE_KEY` with your actual **Write Key** which you can find in Segment under your source settings.
 
-The default PHP consumer is the [libcurl consumer](/sources/catalog/libraries/server/php/#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you may want to try one of our other consumers like the [fork-curl consumer](/docs/connections/sources/catalog/libraries/server/php/#fork-curl-consumer).
+The default PHP consumer is the [lib-curl consumer](#lib-curl-consumer). If this is not working well for you, or if you have a high-volume project, you may want to try one of our other consumers like the [fork-curl consumer](#fork-curl-consumer).
 
 ## Identify
 
@@ -161,7 +159,7 @@ Find details on **best practices in event naming as well as the `track` method p
 
 The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side setup in combination with the PHP library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using our client-side set up in combination with the PHP library, page calls are **already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
 Example `page` call:
 
@@ -255,7 +253,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Trak.io](/docs/connections/destinations/catalog/trak.io/#alias) if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) if your user switches IDs, you can use `alias` to rename the `userId`.
 
 Example `alias` call:
 

@@ -1,8 +1,8 @@
 ---
 title: All about Cloud Sources
 redirect_from:
-  - 'connections/sources/what-are-cloud-sources'
-  - 'connections/sources/cloud-source-data'
+  - '/connections/sources/what-are-cloud-sources/'
+  - '/connections/sources/cloud-source-data/'
 ---
 
 Cloud-App Sources (often shortened to Cloud Sources) allow you to pull in data from third-party tools so you can use it in Segment. There are two types of Cloud Apps: **Object** and **Event** sources.
@@ -36,7 +36,7 @@ We make an effort to be respectful of your API call allotments and limits. For e
 
 Moreover, we're deliberate about which collections we pull, striking a balance between allowing you to get a full picture of your users and reducing extraneous data (like administrative and metadata tables).
 
-Soon, we'll allow you to specify which collections you care about during the source setup phase, so if you need to cut down on calls, you'll be able to just deselect collections.
+Soon, we'll allow you to specify which collections you care about during the source set up phase, so if you need to cut down on calls, you'll be able to just deselect collections.
 
 ### Streaming
 
@@ -55,7 +55,7 @@ To use cloud sources, we suggest going through the following steps.
 
 Before you connect a source, check out the [sources documentation](/docs/connections/sources/). See what kind of credentials you will need to enable the source. Different sources require different levels of permissioning.
 
-Next, you'll also need to get the credentials for your [warehouse](/docs/warehouses/).
+Next, you'll also need to get the credentials for your [warehouse](/docs/connections/storage/catalog/).
 
 Once you have the necessary credentials (or are logged in to OAuth for your cloud source), you should be ready to go!
 
@@ -74,7 +74,7 @@ When you successfully authenticate, but your user lacks the required permissions
 
 Segment attempts to make the errors displayed in the UI clear enough so we don't need to document all of them. However, if it's not clear what to do to fix an error you encounter, [contact support](https://segment.com/help/contact/) and let them know.
 
-Sometimes, when the sync job fails due to an unhandled error or is mysteriously hanging for too long, we'll kill the job and report a failure with instructions to contact support. When this happens, our support and engineering teams have already been notified of the failure and have the complete set of logs to set about debugging and remediating the issue, but please don't hesitate to get in touch so they can keep you in the loop!
+Sometimes, when the sync job fails due to an unhandled error or is mysteriously hanging for too long, we'll kill the job and report a failure with instructions to contact support. When this happens, our support and engineering teams have already been notified of the failure and have the complete set of logs to set about debugging and remediating the issue, but  don't hesitate to get in touch so they can keep you in the loop!
 
 
 ## Using Cloud Source data
@@ -83,7 +83,7 @@ Sometimes, when the sync job fails due to an unhandled error or is mysteriously 
 
 In general, we've focused on pulling all of the collections directly related to the customer experience. We do not automatically pull all collections available from a partner API, since many of them aren't relevant to the customer journey. You can see a list of the collections we pull in the docs [for each cloud source](/docs/connections/sources/catalog/#cloud-apps). Each collection reflects a table in your database.
 
-Please [let us know](https://segment.com/help/contact) if you need additional data collected or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
+[Let us know](https://segment.com/help/contact) if you need additional data collected or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
 
 ### What questions can you answer with data from cloud, web, and mobile sources combined in a single warehouse?
 
@@ -100,8 +100,8 @@ Generally, you need intermediate- to advanced SQL experience to explore and anal
 <!-- LR 4.20.2020 I think these have been missing for a long time. :(
 **Entity Relationship Diagrams** The links to the ER (entity relationship) diagrams [in the documentation](/docs/connections/sources/#cloud-app) will really help you fast track your queries. They show the relationship between each table in a particular source, and how each table can be joined based on particular keys. -->
 
-**Joining IDs** As you start to get into joining across different types of sources, you'll need a way to join user IDs. This [help article](/docs/faqs/sources/join-user-profiles) explains how to do this in detail.
+**Joining IDs** As you start to get into joining across different types of sources, you'll need a way to join user IDs. This [help article](/docs/guides/how-to-guides/join-user-profiles/) explains how to do this in detail.
 
-**Getting Started Queries** We've created a number of queries for common use cases to help you get started – you can copy and paste them to start querying your data. Find them in the Warehouse section of the [Segment Community](https://segment.forumbee.com/category/warehouses).
+<!-- LR 7.8.2020 - Community shut down pending ??? so hiding this for now **Getting Started Queries** We've created a number of queries for common use cases to help you get started – you can copy and paste them to start querying your data. Find them in the Warehouse section of the [Segment Community](https://segment.forumbee.com/category/warehouses).-->
 
 **Partner Dashboards** Our BI partners at Mode, Looker, BIME, Periscope, and Chartio have created out of the box dashboards that work on top of our source schemas.

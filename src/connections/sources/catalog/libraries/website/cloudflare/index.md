@@ -1,6 +1,7 @@
 ---
 title: Cloudflare Source
 hidden: true
+redirect_from: '/connections/sources/catalog/libraries/server/cloudflare/'
 ---
 
 Cloudflare enables customers to mitigate website security attacks and speed up page load times. No technical knowledge required.
@@ -29,7 +30,7 @@ That's it! As visitors come on to your site, events will now be sent to your des
 
 ## What Data Gets Sent
 
-If you turned on the `Automatically Track Page Views` option in your Cloudflare app, then [`page`](/docs/connections/spec/page/) events should already be flowing into your Segment source. That data is being sent via [`analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript) which has been loaded onto your site; you can now use it to send custom data to Segment and downstream to other tools.
+If you turned on the `Automatically Track Page Views` option in your Cloudflare app, then [`page`](/docs/connections/spec/page/) events should already be flowing into your Segment source. That data is being sent using [`analytics.js`](/docs/connections/sources/catalog/libraries/website/javascript) which has been loaded onto your site; you can now use it to send custom data to Segment and downstream to other tools.
 
 Read more about [`page` calls here](/docs/connections/spec/page/).
 

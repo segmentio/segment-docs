@@ -1,20 +1,17 @@
 ---
 title: 'Quickstart: Python'
-hidden: true
-sourceTitle: 'Python'
-sourceCategory: 'Server'
 ---
 
 <!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
 
-This tutorial will help you start sending data from your servers to Segment and any of our destinations, using our Python library. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
+This tutorial will help you start sending data from your servers to Segment and any of our destinations, using our Python library. As soon as you're set up you'll be able to turn on any new destinations with the flip of a switch!
 
 If you want to dive deeper at any point, check out the [Python library reference](/docs/connections/sources/catalog/libraries/server/python).
 
 
 ## Step 1: Install the library
 
-You can install analytics-python via pip:
+You can install analytics-python using pip:
 
 ```bash
 pip install analytics-python
@@ -94,4 +91,4 @@ And voila, **you're done!** You've just successfully installed analytics trackin
 
 We just walked through the quickest way to get started with Segment using Python. You might also want to check out our full [Python library reference](/docs/connections/sources/catalog/libraries/server/python/) to see what else is possible, or read about the [Tracking API methods](/docs/connections/sources/catalog/libraries/server/http/) to get a sense for the bigger picture.
 
-You might also want to consider installing [Analytics.js](/docs/tutorials/quickstart-analytics.js) so that you can use destinations that require being loaded in the browser, like live chat tools or user feedback systems.
+You might also want to consider installing [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) so that you can use destinations that require being loaded in the browser, like live chat tools or user feedback systems.

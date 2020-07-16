@@ -5,11 +5,11 @@ rewrite: true
 
 [Kochava](https://www.kochava.com/) offers mobile app attribution and mobile app analytics providing holistic, unbiased measurement for precise, real-time visualization of app performance through the funnel.
 
-_**NOTE:** As outlined in [Kochava's documentation](https://support.freeappanalytics.com/server-to-server-integration/segment-integration/), you must have a paid account with Kochava to utilize the Segment-Kochava Destination._
+_**NOTE:** As outlined in [Kochava's documentation](https://support.freeappanalytics.com/server-to-server-integration/segment-integration/), you must have a paid account with Kochava to use the Segment-Kochava Destination._
 
-This destination is maintained by Kochava. For any issues with the destination, please [reach out to their team](mailto:support@kochava.com)
+This destination is maintained by Kochava. For any issues with the destination, [contact their team](mailto:support@kochava.com)
 
-This document was last updated on October 8, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on October 8, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ Additional information from Kochava on [setting up your first campaign within Ko
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] track:@"Item Purchased"
@@ -62,7 +62,7 @@ Analytics.track(
 
 ### Install Attributed Postback
 
-To create a Kochava-Certified Postback that will send campaign information to Segment after attributing an `Application Installed` event, follow [Kochava's Postback Setup documentation](https://support.kochava.com/campaign-management/create-a-kochava-certified-postback).
+To create a Kochava-Certified Postback that will send campaign information to Segment after attributing an `Application Installed` event, follow [Kochava's Postback set up documentation](https://support.kochava.com/campaign-management/create-a-kochava-certified-postback).
 
 ### Apple Search Ads
 
