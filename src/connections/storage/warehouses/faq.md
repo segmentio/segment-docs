@@ -98,7 +98,7 @@ Heroku's simple set up and administration process make it a great option to get 
 
 Amazon's service has some more powerful features and will be more cost-effective for most cases. However, first time users of Amazon Web Services (AWS) will likely need to spend some time with the documentation to get set up properly.
 
-## How do I disable a newly created source from syncing to some or all warehouses?
+## How do I prevent a source from syncing to some or all warehouses when I first create it?
 
 When creating a new source, the source will sync to all warehouse(s) within a workspace by default. The source can be disabled from syncing to some or all warehouses within a workspace in two ways:
 
