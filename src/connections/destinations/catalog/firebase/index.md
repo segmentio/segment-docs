@@ -143,7 +143,7 @@ Segment adheres to Firebase's semantic event specification and maps the followin
 
 | Segment Event     | Firebase Event    |
 |-------------------|-------------------|
-| [Products Searched](/docs/connections/spec/ecommerce/v2/#product-searched) | search |
+| [Products Searched](/docs/connections/spec/ecommerce/v2/#products-searched) | search |
 | [Product List Viewed](/docs/connections/spec/ecommerce/v2/#product-list-viewed)| view_item_list |
 | [Product Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) | view_item |
 | [Product Clicked](/docs/connections/spec/ecommerce/v2/#product-clicked) | select_content |

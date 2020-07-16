@@ -16,7 +16,7 @@ This integration is maintained by Littledata. [Contact their team](mailto:suppor
 ![](images/Nd5L0C6.png)
 4. Click **Add app** to begin the installation process.
 5. **Sign up** for a Littledata account using an email address, Google login or Facebook login. *More team members can be added to the subscription after completing the installation process.*
-6. Add the [**Segment write key**](https://segment.com/docs/guides/setup/how-do-i-find-my-write-key/) for the source that is going to send data in the **input field**.
+6. Add the [**Segment write key**](https://segment.com/docs/connections/find-writekey/) for the source that is going to send data in the **input field**.
 ![](images/eLUh6GF.png)
 7. Choose either an **Automatic** or a **Manual** install. *Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/).*
 ![](images/iYM76VI.png)

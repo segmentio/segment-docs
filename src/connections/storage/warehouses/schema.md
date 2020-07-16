@@ -601,7 +601,7 @@ After analyzing the data from dozens of customers we set the string column lengt
 
 We special-case compression for some known columns like event names and timestamps. The others default to LZO. We may add look-ahead sampling down the road, but from inspecting the datasets today this would be unnecessary complexity.
 
-After a column is created, Redshift doesn't allow altering. Swapping and renaming may work down the road, but this would likely cause thrashing and performance issues. If you would like to change the column size, see our [docs here](/docs/faqs/warehouses/redshift-limitations/#varchar-size-limits-).
+After a column is created, Redshift doesn't allow altering. Swapping and renaming may work down the road, but this would likely cause thrashing and performance issues. If you would like to change the column size, see our [docs here](/docs/connections/storage/warehouses/redshift-faq/#varchar-size-limits).
 
 ## Timestamps
 
@@ -639,7 +639,7 @@ All tables use `received_at` for the sort key. Amazon Redshift stores your data 
 
 ## More Help
 
-[How do I send custom data to my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse/)
+[How do I send custom data to my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse)
 
 [How do I give users permissions to my warehouse?](/docs/connections/storage/warehouses/add-warehouse-users/)
 

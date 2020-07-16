@@ -5,7 +5,7 @@ hidden: true
 
 This tutorial gets you started sending data from your iOS app to Segment. When you're done you can turn on [any of Segment's destinations](/docs/connections/destinations/) with the flip of a switch! No more waiting for App Store approval.
 
-If you want to dive deeper at any point, check out the [iOS Library Reference](/docs/libraries/ios/).
+If you want to dive deeper at any point, check out the [iOS Library Reference](/docs/connections/sources/catalog/libraries/mobile/ios/).
 
 _Note: At the moment Segment does not support tracking watchkit extensions for the Apple watch. [Contact us](https://segment.com/help/contact) if you're interested in a watchkit SDK. For now we recommend tracking watch interactions using the native iPhone app code._
 
@@ -30,7 +30,7 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 ```
 
 > success ""
-> **Tip**: You don't _need_ to use initialization config parameters to track lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views automatically, but we highly recommend that you do so you can start off already tracking some important core events. See [the track call info below](/#track) for more info!
+> **Tip**: You don't _need_ to use initialization config parameters to track lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views automatically, but we highly recommend that you do so you can start off already tracking some important core events. See [the track call info](/docs/connections/sources/catalog/libraries/mobile/ios/#track) for more info!
 
 And of course, import the SDK in the files that you use it by adding the following line:
 
@@ -46,7 +46,7 @@ Some destinations do not accept data coming from the Segment servers and instead
 
 Many advanced marketing automation and analytics tools offer the an SDK or allow you to choose to send data server to server - depending on the features you need. Most optimization, deep linking, error tracking, and survey tools _must_ be included on the device to use their core features.
 
-In those cases, follow the additional steps to [bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios#bundling-destinations).
+In those cases, follow the additional steps to [bundle the destination tools](/docs/connections/sources/catalog/libraries/mobile/ios/#about-mobile-connection-modes).
 
 Now that the SDK is installed and set up, you're ready to start making calls!
 

@@ -17,23 +17,20 @@ When you call [identify](/docs/connections/spec/identify), we'll log an `identif
 
 ## Track
 
-When you call [track](/docs/connections/spec/track), we'll log an event with Pointillist with `userId` and / or `anonymousId` as Actor Identifier and set `event` as Event Type. The table below shows mappings for other attributes. You'll pass the key on the left into Segment and we will transform it to the key on the right in Pointillist.
+When you call [track](/docs/connections/spec/track/), we'll log an event with Pointillist with `userId` and / or `anonymousId` as Actor Identifier and set `event` as Event Type. The table below shows mappings for other attributes. You'll pass the key on the left into Segment and we will transform it to the key on the right in Pointillist.
 
-Segment Parameter | Pointillist Parameter
------------- | -------------
-anonymousID	| Actor Identifier
-userId	| Actor Identifier
-timestamp	| Event Time
-event	| Event Type
-location | Attributes	Labels
-campaign | Attributes	Labels
-user traits	| Labels
-device attributes	| Labels
+| Segment Parameter | Pointillist Parameter |
+| ----------------- | --------------------- |
+| `anonymousID`       | Actor Identifier      |
+| `userId`            | Actor Identifier      |
+| `timestamp`         | Event Time            |
+| `event`             | Event Type            |
+| `location`          | Attributes Labels     |
+| `campaign`          | Attributes Labels     |
+| user traits       | Labels                |
+| device attributes | Labels                |
 
-Below is an  example of how your track events will start appearing instantly in Pointillist.
-
-![Pointillist Screen Image](/images/pointillist_snapshot.png)
 
 ## API Key
 
-To get your API key  get in touch with a Pointillist customer representative using customer-success@pointillist.com
+To get your API key, contact the [Pointillist customer success team](mailto:customer-success@pointillist.com)

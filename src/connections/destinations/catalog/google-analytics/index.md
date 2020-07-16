@@ -5,7 +5,7 @@ title: Google Analytics Destination
 <!-- TOC depthFrom:1 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
  - [Getting Started](#getting-started)
- - [Page & Screen](#page-screen)
+ - [Page and Screen](#page-and-screen)
  - [Identify](#identify)
  - [Track](#track)
  - [E-Commerce](#e-commerce)
@@ -40,7 +40,7 @@ These docs will only cover GA Universal features, since the [Classic tracking me
 - - -
 
 
-## Page & Screen
+## Page and Screen
 
 When you call [`page`](/docs/connections/spec/page), we send a pageview to Google Analytics. Pageviews can be sent from the browser or through any of our server-side libraries.
 
@@ -1014,7 +1014,7 @@ You might wonder why Segment can't just send your Google Analytics events cloud-
 If you received this deprecation notice, your property has already been flagged for deprecation - so sending events cloud-mode won't make Google Analytics to collect and process that data after October 31st, 2019.
 
 
-## Mobile Apps - DEPRECATED
+## Mobile Apps (DEPRECATED)
 
 Segment supports Google Analytics mobile app analytics using our iOS and Android sources. For getting started with our mobile sources, check out the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) and [Android](/docs/connections/sources/catalog/libraries/mobile/android/) technical docs.
 

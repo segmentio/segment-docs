@@ -1,0 +1,28 @@
+---
+sections:
+- slug: adobe
+  section_title: Adobe Integrations
+  section:
+  - path: /connections/destinations/catalog/adobe-analytics
+    title: Adobe Analytics destination
+  - path: /connections/destinations/catalog/adobe-analytics/mobile
+    title: Set up Adobe Analytics for mobile
+  - path: /connections/destinations/catalog/adobe-analytics/heartbeat
+    title: Set up Adobe Analytics Heartbeat
+  - path: /connections/destinations/catalog/adobe-analytics/best-practices
+    title: Adobe Analytics Best Practices
+  - path: /connections/destinations/catalog/adobe-target
+    title: Adobe Target destination
+
+
+- slug: facebook
+  section_title: Facebook Integrations
+  section:
+  - path: /connections/destinations/catalog/facebook-pixel
+    title: Facebook Pixel destintation
+  - path: /connections/destinations/catalog/facebook-app-events
+    title: Facebook App Events destination
+  - path: /connections/sources/catalog/cloud-apps/facebook-ads
+    title: Facebook Ads Cloud Source
+  - path: /connections/sources/catalog/cloud-apps/facebook-lead-ads
+    title: Facebook Lead Ads Cloud Source
