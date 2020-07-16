@@ -100,7 +100,7 @@ Amazon's service has some more powerful features and will be more cost-effective
 
 ## How do I prevent a source from syncing to some or all warehouses when I first create it?
 
-When creating a new source, the source will sync to all warehouse(s) within a workspace by default. The source can be disabled from syncing to some or all warehouses within a workspace in two ways:
+When you create a new source, the source syncs to all warehouse(s) in the workspace by default. You can prevent the source from syncing to some or all warehouses in the workspace in two ways:
 
 - **Segment app**: When adding a source from the Workspace Overview page, all warehouses will automatically be selected to sync. De-select the warehouse(s) you do not want the source to sync to.
 - **Config API**: Send a [PATCH Connected Warehouse request](https://reference.segmentapis.com/?version=latest#ec12dae0-1a3e-4bd0-bf1c-840f43537ee2) for the warehouse(s) which you want to disable from syncing.
