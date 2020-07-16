@@ -66,8 +66,8 @@ Once you decide what level of permissions work best for you, contact your Google
 ```
 Hi there,
 
-I'd like to request access for Segment (account id 262932431)
-to push user lists into DV360 for our ad account <insert your account id>.
+I'd like to request to allow Segment to push user lists into DV360 for our ad account <insert your account id>.
+Segment's Google account ID is 262932431.
 
 Thanks.
 ```
