@@ -120,6 +120,8 @@ Here is how you'd specify standard events in the settings view:
 
 ![event mapping](images/event-mapping.png)
 
+You can map more than one Track event to the same Facebook standard event.
+
 ### Legacy Events
 
 To send *Legacy Conversion* events, use the Segment setting called "Legacy Conversion Pixel IDs". Any events that appear in that mapping will be sent to Facebook with the specified Pixel ID used as the Facebook Pixel `eventName`. Conversion events only support `currency` and `value` as event properties, so only these will be associated with the event. `currency` will default to "USD" if left out.
@@ -171,7 +173,7 @@ For most implementations we recommend leaving these mappings blank. By default, 
 
 ## Troubleshooting
 
-### PII Blacklisting
+### PII Blocklisting
 
 Facebook enforces strict guidelines around sending Personally Identifiable Information (PII) as properties of Pixel events. In order to adhere to these guidelines, Segment will automatically scan `track` event properties for PII and remove any that get flagged from the event to Facebook. The following keys are currently filtered:
 
@@ -188,7 +190,7 @@ Facebook enforces strict guidelines around sending Personally Identifiable Infor
 
 Any `track` events with properties containing those keys will be sent to Facebook with those properties omitted.
 
-If you have events that use any of those keys for non-PII properties, you can manually whitelist them using the **Whitelist PII Properties** setting. You may also add to this list and/or optionally hash blacklisted properties with the **Blacklist PII Properties** setting.
+If you have events that use any of those keys for non-PII properties, you can manually whitelist them using the **Allowlist PII Properties** setting. You may also add to this list and/or optionally hash blocklisted properties with the **Blocklist PII Properties** setting.
 
 ### Inconsistent or Missing Conversions
 

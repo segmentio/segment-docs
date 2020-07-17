@@ -62,7 +62,7 @@ For example, if you have an experiment called Home CTA and a visitor sees a vari
 
 ### Track Revenue Goals
 
-The Track Revenue goal allows you to track revenue from purchases and other transactions on your website by attributing the revenue amount for every valid and successful transaction. In other to track these transactions, you'll need to use our `Order Completed` ecommerce track event and include the revenue data as `total`. An example call would look like this:
+The Track Revenue goal allows you to track revenue from purchases and other transactions on your website by attributing the revenue amount for every valid and successful transaction. In order to track these transactions, you'll need to use our `Order Completed` ecommerce track event and include the revenue data as `total`. An example call would look like this:
 
 ```javascript
 analytics.track('Order Completed', {

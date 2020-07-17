@@ -64,7 +64,7 @@ Mobile plugins are loaded into [analytics-ios](/docs/connections/sources/catalog
 
 ## Streams
 
-Streams are the basis for sending events to Segment directly as an [Event Source](/docs/connections/sources#event-cloud-sources). If you supply channels and properties where customer interactions happen, you can apply for inclusion in the Segment Source Catalog with a documented Stream. Streams are not yet supported in the Developer Center but we are working with select partners currently, and are working to make this available to any partner using the Developer Center in the future, so feel free to [get in touch](/partners/integration/) and get started if you're interested in eventually joining the catalog!
+Streams are the basis for sending events to Segment directly as an [Event Source](/docs/connections/sources#event-cloud-sources). If you supply channels and properties where customer interactions happen, you can apply for inclusion in the Segment Source Catalog with a documented Stream. Streams are not yet supported in the Developer Center but we are working with select partners currently, and are working to make this available to any partner using the Developer Center in the future, so feel free to [get in touch](/docs/partners/integration/) and get started if you're interested in eventually joining the catalog!
 
 ## Subscriptions
 

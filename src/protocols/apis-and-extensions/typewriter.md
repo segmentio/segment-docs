@@ -53,7 +53,7 @@ Typewriter also helps teams adopt [analytics best practices](/docs/protocols/tra
 
 To get started, check out one of the quickstart guides below:
 - [Browser Quickstart](#browser-quickstart)
-- [Node.js Quickstart](#node-js-quickstart)
+- [Node.js Quickstart](#nodejs-quickstart)
 - [iOS Quickstart](#ios-quickstart)
 - [Android Quickstart](#android-quickstart)
 
@@ -136,7 +136,7 @@ Typewriter wraps your analytics calls in an [ES6 `Proxy`](https://developer.mozi
 
 You're now good to go! To learn more about some of the advanced configuration options that Typewriter supports, read on.
 
-## Node.js Quickstart
+## Nodejs Quickstart
 
 Before you start, make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
 

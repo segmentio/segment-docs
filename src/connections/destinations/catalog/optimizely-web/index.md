@@ -9,7 +9,7 @@ Segment's **Optimizely Web (previously Optimizely)** destination supports the fo
 
 
 * [Optimizely X Web](#optimizely-x-web)
-* [Optimizely Full Stack (JavaScript)](#optimizely-full-stack-javascript)
+* [Optimizely Full Stack (JavaScript)](#optimizely-full-stack-javascript-sdk)
 
 If you're interested in implementing Optimizely Full Stack server-side or on mobile, see Segment's [**Optimizely Full Stack** destination](https://segment.com/docs/connections/destinations/catalog/optimizelyx/), which supports:
 
@@ -73,6 +73,10 @@ Segment maps `page` calls to its own `track` events, i.e. invoking `analytics.pa
 Upon activation of an Optimizely experiment, an "Experiment Viewed" `track` event is sent to Segment. The event includes Optimizely experiment metadata.
 
 Upon activation of an Optimizely experiment, an “Experiment Viewed” `track` event is sent to Segment. The event includes Optimizely experiment metadata which is sent whenever the Optimizely [`campaignDecided` listener](https://docs.developers.optimizely.com/web/docs/add-listener#section-campaign-decided) is activated.
+
+
+> note ""
+> **Note:** When an Optimizely Web experiment is activated, Optimizely automatically sends an "Experiment Viewed" `track` event to Segment. This makes the Optimizely Web integration act as both a Destination and a Source, because the `track` calls enrich and send Experiment Decisions and Exposure event data to Segment, which can be used by other platforms.  
 
 #### Standard or Redirect Experiments
 

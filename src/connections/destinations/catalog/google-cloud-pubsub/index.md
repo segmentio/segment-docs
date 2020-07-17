@@ -23,7 +23,7 @@ You should now see our Service Account email as a Pub/Sub Publisher like this:
 
 ## Event Mapping
 
-To begin using the Google Cloud Pub/Sub destination you must first decide on which Segment events you would like to route to which of your Pub/Sub topics. This mapping then needs to be defined in your [destination settings](/#mapped-topics).
+To begin using the Google Cloud Pub/Sub destination you must first decide on which Segment events you would like to route to which of your Pub/Sub topics. This mapping then needs to be defined in your [destination settings](#settings).
 
 Segment `track` events can map based on their **event name**. For example, if you have an event called `User Registered`, and you wanted these events to be published to a topic called `projects/my-project/topics/user-registered`, you would create a row in your destination settings that looks like this:
 

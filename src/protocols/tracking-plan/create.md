@@ -60,7 +60,7 @@ For consistency purposes, we *highly* recommend that you create a standard way o
 The Tracking Plan events can be filtered by keyword or by label. The applied filter generates a permanent link so you can share specific events with teammates. Label filters also persist after you leave the Tracking Plan.
 
 ### Edit underlying JSON Schema
-Protocols Tracking Plans use [JSON Schemas](https://json-schema.org/) to validate Segment event payloads. To support a broader range of validation use-cases, Segment lets you to edit your underlying JSON schema. 
+Protocols Tracking Plans use [JSON Schemas](https://json-schema.org/) to validate Segment event payloads. To support a broader range of validation use-cases, Segment lets you to edit your underlying JSON schema.
 
 > warning ""
 > Editing a JSON schema requires technical expertise and should be done carefully. The [JSON schema documentation](https://json-schema.org/understanding-json-schema/index.html) and [JSON schema validator](https://www.jsonschemavalidator.net/) are helpful resources to get started.
@@ -74,11 +74,11 @@ Each track event in the tracking plan has a separate JSON schema definition to v
 > Advanced edits to the JSON schema are not visible in the Tracking Plan and make it harder for other users to understand the validation logic. Be sure to communicate to any other Protocols users that you are making changes in the validation logic.
 
 #### Common JSON schema
-In addition to the event-specific JSON schema definitions, the Tracking Plan uses a common JSON schema definition which applies to the entire payload of every event that is sent from sources connected to the tracking plan. 
+In addition to the event-specific JSON schema definitions, the Tracking Plan uses a common JSON schema definition which applies to the entire payload of every event that is sent from sources connected to the tracking plan.
 
-The common JSON schema definition is unique for each tracking plan. An example use of this feature is to validate that all track, identify and page events sent to Segment include a `context.device.advertisingId` property. 
+The common JSON schema definition is unique for each tracking plan. An example use of this feature is to validate that all track, identify and page events sent to Segment include a `context.device.advertisingId` property.
 
-To edit the common JSON schema, click the "more" menu (...) at the top of the Tracking Plan editor. Once you have edited, saved and merged your JSON schema changes, you can go to the **Settings** tab for your source, click the **Schema Controls** page and go to the **Advanced Blocking Controls** section to define specific blocking behavior for common JSON schema violations. 
+To edit the common JSON schema, click the "more" menu (...) at the top of the Tracking Plan editor. Once you have edited, saved and merged your JSON schema changes, you can go to the **Settings** tab for your source, click the **Schema Controls** page and go to the **Advanced Blocking Controls** section to define specific blocking behavior for common JSON schema violations.
 
 > info ""
 > [Negative lookahead regexes (`?!`)](https://www.regular-expressions.info/lookaround.html) are not currently supported. This means you can’t use regex to prevent matches with a specific following character or expression. However you can use `not` in the regex of your JSON schema to generate violations when a property key or value does not match the provided regex pattern.
@@ -89,7 +89,7 @@ Many customers prefer to manage the Tracking Plan with outside tools and resourc
 ### Add identify or group traits
 Similar to how you would add `.track()` calls to the Tracking Plan, you can define which traits you expect to see passed in `.identify()` or `.group()` calls. Navigate to the Identify or Group tab in your Tracking Plan and click the **(+)** button to add a new trait.
 
-We recommend that you keep traits optional because `.identify()` and `.group()` should be called often, and pass only _new or changed_ traits, because our client-side libraries (analytics.js, iOS, Android) cache traits in local storage. [See the Identify Best Practices](/docs/guides/best-practices/what-are-best-practices-for-identifying-users/#when-and-how-often-to-call-identify) to learn more.
+We recommend that you keep traits optional because `.identify()` and `.group()` should be called often, and pass only _new or changed_ traits, because our client-side libraries (analytics.js, iOS, Android) cache traits in local storage. [See the Identify Best Practices](/docs/connections/spec/best-practices-identify/#when-and-how-often-to-call-identify) to learn more.
 
 ## Tracking Plan Event Versioning
 

@@ -5,7 +5,7 @@ Drip is an automated email tool that lets you set up a drip campaign on your sit
 
 Take your company's email analysis to the next level by **adding Drip as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Drip data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Drip with Segment.](/sources/drip)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Drip data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Drip with Segment.](/docs/connections/destinations/catalog/drip)
 
 
 ## Getting Started
@@ -95,4 +95,4 @@ from drip.email_delivered
 
 ## Send data to Drip
 
-The Drip Source works better when you also connect Drip as an destination. With the Drip **Destination**, you can use Segment to send Drip user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Drip? Head on over to our [Drip destination docs](/docs/connections/destinations/catalog/drip/).
+The Drip Source works better when you also connect Drip as a destination. With the Drip **Destination**, you can use Segment to send Drip user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Drip? Head on over to our [Drip destination docs](/docs/connections/destinations/catalog/drip/).

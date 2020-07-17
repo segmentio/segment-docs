@@ -45,7 +45,7 @@ Once you have all of the prerequisites set up, you're ready to get started:
    ![Getting Started Steps](images/vt-docs-website-type.png)
 5. The next screen shows **Recommended Events**, and you can choose which ones are relevant to your site. (You can also track any events beyond the recommended ones!)
    ![Getting Started Steps](images/vt-docs-setup-starterkit.png)
-6. The UI then loads a page with your website in an internal frame. Click one of the event type names to select it and begin configuring. We'll go over these [in the following sections](#step-1-choose-the-event-type).
+6. The UI then loads a page with your website in an internal frame. Click one of the event type names to select it and begin configuring. We'll go over these [in the following sections](#step-1-choose-the-event-type-and-select-an-element).
 
 As you click each event, you're prompted to select the part of the website that should trigger the event, and describe the properties that event should have.
 <!-- TODO: this image is outdated
@@ -153,7 +153,7 @@ If something doesn't look right, click **Back** to return to the Build screen an
 
 ![Test Your Event](images/vt-docs-6.gif)
 
-If you’re having trouble validating your events, check out our [Troubleshooting Tips](#troubleshooting-visual-tagger-events).
+If you’re having trouble validating your events, check out our [Troubleshooting Tips](#troubleshooting-your-events).
 
 ## Step 4: Publish the event(s)
 

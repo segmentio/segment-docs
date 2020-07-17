@@ -31,13 +31,17 @@ There are two kinds of Redshift clusters: **Dense Compute** and **Dense Storage
 ### Provision a new Redshift Cluster
 
 You can skip this step if you already have a Redshift cluster:
-1. Open the Redshift Console: ![](images/Screen+Shot+2015-09-17+at+10.25.47+AM.png)
+1. Open the Redshift Console
+   ![](images/Screen+Shot+2015-09-17+at+10.25.47+AM.png)
 
-2. Click on "Launch Cluster": ![](images/Screen+Shot+2015-09-17+at+10.26.03+AM.png)
+2. Click on "Launch Cluster"
+   ![](images/Screen+Shot+2015-09-17+at+10.26.03+AM.png)
 
-3. Fill out the cluster details (make sure to select a secure password!): ![Image](images/cVcF5ZtC51a+.png)
+3. Fill out the cluster details (make sure to select a secure password!)
+   ![Image](images/cVcF5ZtC51a+.png)
 
-4. Choose your cluster size: ![](images/1442616281635_undefined.png)
+4. Choose your cluster size:
+   ![](images/1442616281635_undefined.png)
 
 5. set up your cluster Security Group or VPC and proceed to review (see below for instructions on settings up a VPC group)
 
@@ -78,10 +82,10 @@ VPCs keep servers inaccessible to traffic from the internet. With VPC, you're ab
 
 Redshift clusters can either be in a **EC2 Classic subnet** or **VPC subnet**.
 
-If your cluster has a field called `Cluster Security Groups`, proceed to [EC2 Classic](/docs/warehouses/redshift/#ec2-classic)
+If your cluster has a field called `Cluster Security Groups`, proceed to [EC2 Classic](//docs/connections/storage/catalog/redshift/#ec2-classic)
 ![](images/redshift_permissioning1.png)
 
-Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC](/docs/warehouses/redshift/#ec2-vpc)
+Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC](/docs/connections/storage/catalog/redshift/#ec2-vpc)
 ![](images/redshift_permissioning2.png)
 
 #### EC2-Classic
@@ -90,19 +94,19 @@ Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC
 
 2. Click on the Cluster Security Groups
 
-  ![](images/redshift_permissioning4.png)
+   ![](images/redshift_permissioning4.png)
 
 3. Open the Cluster Security Group
 
-  ![](images/redshift_permissioning5.png)
+   ![](images/redshift_permissioning5.png)
 
 4. Click on "Add Connection Type"
 
-  ![](images/redshift_permissioning6.png)
+   ![](images/redshift_permissioning6.png)
 
 5. Choose Connection Type CIDR/IP and authorize Segment to write into your Redshift Port using `52.25.130.38/32`
 
-  ![](images/redshift_permissioning7.png)
+   ![](images/redshift_permissioning7.png)
 
 #### EC2-VPC
 
@@ -110,25 +114,25 @@ Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC
 
 2. Click on the VPC Security Groups
 
-  ![](images/redshift_permissioning8.png)
+   ![](images/redshift_permissioning8.png)
 
 3. Select the "Inbound" tab and then "Edit"
 
-  ![](images/redshift_permissioning9.png)
+   ![](images/redshift_permissioning9.png)
 
 4. Allow Segment to write into your Redshift Port using `52.25.130.38/32`
 
-  ![](images/redshift_permissioning10.png)
+   ![](images/redshift_permissioning10.png)
 
   You can find more information on that [here](http://docs.aws.amazon.com/redshift/latest/mgmt/managing-clusters-vpc.html). 
 
 5. Navigate back to your Redshift Cluster Settings: `Redshift Dashboard > Clusters > Select Your Cluster`
 
 6. Select the "Cluster" button and then "Modify"
-  ![](images/redshift_cluster_modify.png)
+   ![](images/redshift_cluster_modify.png)
 
 7. Make sure the "Publicly Accessible" option is set to "Yes"
-  ![](images/rs-mgmt-clusters-modify.png)
+   ![](images/rs-mgmt-clusters-modify.png)
 
 8. Check your "Outbound" tab to make sure your Redshift instance is set up to make outbound requests to the Segment S3 bucket. The default behavior is to allow all outbound traffic, but security groups can be put in place to limit outbound behavior.
 
@@ -136,7 +140,7 @@ Or if your cluster has a field called `VPC Security Groups`, proceed to [EC2 VPC
 
 9. If your outbound traffic is not configured to allow all traffic, you can switch to default settings or specifically whitelist the Segment S3 buckets
 
-  ![](images/redshift_custom_outbound_group.png)
+   ![](images/redshift_custom_outbound_group.png)
 
 ### Electing to encrypt your data 
 
@@ -162,7 +166,7 @@ In an usual workload we have seen Redshift using around 20-40% of CPU, we take a
 
 ### How do I improve Query Speed?
 
-The speed of your queries depends on the capabilities of the hardware you have chosen as well as the size of the dataset. The amount of data utilization in the cluster will also impact query speed. For Redshift clusters if you're above 75% utilization, you will likely experience degradation in query speed. [Here's a guide on how to improve your query speeds.](/docs/faqs/warehouses/improve-query-speeds)
+The speed of your queries depends on the capabilities of the hardware you have chosen as well as the size of the dataset. The amount of data utilization in the cluster will also impact query speed. For Redshift clusters if you're above 75% utilization, you will likely experience degradation in query speed. [Here's a guide on how to improve your query speeds.](/docs/connections/storage/warehouses/redshift-tuning/)
 
 ## FAQ
 
@@ -170,7 +174,7 @@ The speed of your queries depends on the capabilities of the hardware you have c
 
 It's often the case that our customers want to combine 1st party transactional and operational data their Segment data to generate a 360 degree view of the customer. The challenge is that those data sets are often stored in separate data warehouses.
 
-If you're interested in importing data into a Redshift cluster, it's important that you follow these [guidelines](/docs/faqs/warehouses/custom-data/).
+If you're interested in importing data into a Redshift cluster, it's important that you follow these [guidelines](/docs/connections/storage/warehouses/faq/).
 
 Additionally, there a number of tools which provide syncing services between databases (mySQL, SQL Server, Oracle, PostgreSQL). Here is a list of some we've seen used by customers.
 
