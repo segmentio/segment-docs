@@ -26,3 +26,27 @@ sections:
     title: Facebook Ads Cloud Source
   - path: /connections/sources/catalog/cloud-apps/facebook-lead-ads
     title: Facebook Lead Ads Cloud Source
+
+- slug: google
+  section_title: Google Integrations
+  section:
+  - path: /connections/sources/catalog/libraries/mobile/android
+    title: Segment Android mobile source library
+  - path: /connections/destinations/catalog/firebase
+    title: Google Firebase (mobile analytics) destintation
+  - path: /connections/destinations/catalog/google-analytics
+    title: Google Analytics destintation
+  - path: /connections/destinations/catalog/google-tag-manager
+    title: Google Tag Manager destintation
+  - path: /connections/destinations/catalog/doubleclick-floodlight
+    title: DoubleClick Floodlight destintation
+  - path: /connections/destinations/catalog/personas-display-video-360
+    title: 'Using Personas with Google DV360 (Beta)'
+  - path: /connections/destinations/catalog/google-ads-classic
+    title: 'Google Ads (Classic) destintation'
+  - path: /connections/destinations/catalog/google-ads-gtag
+    title: 'Google Ads (Gtag) destintation'
+  - path: /connections/destinations/catalog/google-cloud-function
+    title: Google Cloud Function destintation
+  - path: /connections/destinations/catalog/google-cloud-pubsub
+    title: Google Cloud Pubsub destintation

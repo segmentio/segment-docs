@@ -1,18 +1,20 @@
 ---
 title: Google DV360 Personas Destination
 hide-boilerplate: true
+beta: true
+strat: google
 ---
 
 [Google Display & Video 360 (DV360)](https://marketingplatform.google.com/about/display-video-360/), previously called ‘DoubleClick’ and part of the Google Marketing Platform, is an end-to-end campaign management tool for small businesses and enterprises. It can help with anything from media planning and creative development to measurement and optimization. When paired with [Segment’s Personas](https://segment.com/product/personas/), you now have the ability to sync [audience lists](https://segment.com/docs/personas/audiences/) straight to DV360’s platform and perform in-depth analysis on your customer’s browsing and purchasing activities across various client-side platforms.
 
-You must have Personas in your Segment plan to use this destination. [contact](https://segment.com/contact/demo) our sales team to try this out.
+You must have Personas in your Segment plan to use this destination. [Contact](https://segment.com/contact/demo) our sales team to try this out.
 
 > info ""
 > **Note**: DV360 is currently in beta. This means that there may still be some bugs for us to iron out, and we’re excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the DV360 Destination, and its documentation, [let us know](https://segment.com/help/contact)!
 
 ## How It Works
 
-When you create an audience in Personas and connect it to DV360, Segment creates a corresponding user list in DV360 with the same name as the audience in Personas. It can take 24 to 48 hours for Google to process the audience list. Once processed, Segment starts syncing either [google user_ids](https://developers.google.com/authorized-buyers/rtb/cookie-guide) or mobile identifiers (`IDFA` on iOS and Google `advertisingId` on Android). Segment sends the entire audience on each sync to DV360. As users enter and exit the audience, they are added to, or removed from from the csv Segment sends to Google’s API.
+When you create an audience in Personas and connect it to DV360, Segment creates a corresponding user list in DV360 with the same name as the audience in Personas. It can take 24 to 48 hours for Google to process the audience list. Once processed, Segment starts syncing either [google user_ids](https://developers.google.com/authorized-buyers/rtb/cookie-guide) or mobile identifiers (`IDFA` on iOS, and Google `advertisingId` on Android). Segment sends the entire audience on each sync to DV360. As users enter and exit the audience, they are added to, or removed from the csv Segment sends to Google’s API.
 
 ### Using Google User ID
 
