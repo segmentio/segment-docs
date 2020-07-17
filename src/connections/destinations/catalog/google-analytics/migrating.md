@@ -1,10 +1,10 @@
 ---
 title: Migrating mobile analytics from Google Analytics to Firebase
 strat: google
-hidden: true 
+hidden: true
 ---
 
-Using Segment's Google Analytics mobile SDKs you could previously measure and optimize user engagement with your mobile-apps. On [October 31st 2019, Google sunset the Google Analytics mobile-apps reporting](https://support.google.com/firebase/answer/9167112?hl=en) using the Google Analytics Services SDKs for Android and iOS. This means all data collection and processing stopped for properties that received data from the Google Analytics Service SDK for mobile apps. Google deprecated Google Analytics in favor of Firebase SDKs.
+Previously, you could use Segment's Google Analytics mobile SDKs to measure and optimize user engagement with your mobile-apps. On [October 31st 2019, Google sunset the Google Analytics mobile-apps reporting](https://support.google.com/firebase/answer/9167112?hl=en) using the Google Analytics Services SDKs for both Android and iOS. This means all data collection and processing stopped for properties that received data from the Google Analytics Service SDK for mobile apps. Google deprecated Google Analytics in favor of its new [Firebase SDKs](/docs/connections/destinations/catalog/firebase/).
 
 The following tutorial explains how to migrate your mobile analytics from Google Analytics to Firebase.
 
@@ -24,10 +24,10 @@ If you received this deprecation notice, your property has already been flagged 
 
 For more detailed information for each of the classes and methods in the Firebase SDK by platform visit the [Firebase Analytics SDK documentation](https://firebase.google.com/docs/reference).
 
-**Installing the iOS SDK**
+#### Installing the iOS SDK
 For information on how to add the Segment-Firebase SDK and register the dependency with the Segment SDK visit [Segment's Firebase for iOS](https://segment.com/docs/connections/destinations/catalog/firebase/#ios) documentation.
 
-**Installing the Android SDK**
+#### Installing the Android SDK
 For information on how to add the Segment-Firebase SDK and apply the Google Services plugin visit [Segment's Firebase for Android](https://segment.com/docs/connections/destinations/catalog/firebase/#android) documentation.
 
 
@@ -41,20 +41,20 @@ For information on how to add the Segment-Firebase SDK and apply the Google Serv
 
 ## Migrating Screen Calls
 
-Segment's Google Analytics SDK sends a screen view to Google Analytics for mobile apps when you call `screen` in your mobile app. For Segment's Android GA SDK, we will send a hit on product events on Screen calls using the screen name as the event name for `Product *:` formatted screen names.
+Segment's Google Analytics SDK sends a screen view to Google Analytics for mobile apps when you call `screen` in your mobile app. For Segment's Android GA SDK, Segment sends a hit on product events on Screen calls that use the screen name as the event name for `Product *:` formatted screen names.
 
-The Firebase SDK collects screen information automatically, so when you migrate to Segment's Firebase Analytics SDK, you will notice that Segment no longer needs to map screen events.
+The Firebase SDK collects screen information automatically, so when you migrate to Segment's Firebase Analytics SDK, Segment no longer needs to map screen events.
 
-For Android, Segment passes contextual screen information into each screen view on each activity's `onResume` callback. To ensure that this screen information is not lost now that we no longer perform a mapping step, we recommend that you add a `label` value to each activity in your app's `AndroidManifest.xml` file. At the moment, Firebase does not allow you to disable automatic screen tracking for Android.
+For Android, Segment passes contextual screen information into each screen view on each activity's `onResume` callback. Segment recommends that you add a `label` value to each activity in your app's `AndroidManifest.xml` file to make sure this screen information is not lost. At the time of this writing, Firebase does not allow you to disable automatic screen tracking for Android.
 
-For iOS, you can configure `recordScreenViews` which will automatically track screen views, or pass in a screen manually using a [screen](https://segment.com/docs/connections/spec/screen/) call. You can disable Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
+For iOS, you can configure `recordScreenViews` (which automatically tracks screen views), or pass in a screen manually using a [screen](/docs/connections/spec/screen/) call. You can disable Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
 
 To send product events in the Firebase SDK you must invoke a track call separately from the screen call.
 
 
 ## Migrating Identify Calls
 
-Previously, if you used Google Analytics on Identify calls, Segment only passed the ID of the call, because passing PII is against the Google Analytics Terms of Service. In order to pass additional user properties to Google Analytics you had to define custom dimensions and metrics within the Google Analytics UI.
+Previously, if you used Google Analytics on Identify calls, Segment only passed the ID of the call, because passing PII is against the Google Analytics Terms of Service. To pass additional user properties to Google Analytics you had to define custom dimensions and metrics within the Google Analytics UI.
 
 The Firebase Terms of Service also prohibits you from passing PII, however on an Identify call Segment sends all user traits in an Identify payload to Firebase as user properties. To use these in analytics tooling these user properties must be configured in your Firebase console.
 
