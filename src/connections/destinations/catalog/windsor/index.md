@@ -64,7 +64,7 @@ analytics.identify("user-123", {
 
 Windsor **requires** a **`userId`** and **`email`** for most integrations to work correctly. Additionally, a value for `phone` will let Windsor track any text messages you send. The `avatar` property lets you identify users easily on Windsor.
 
-Segment sends Identify calls to Windsor in order to populate new users and their properties. You can find all your users on the [Users Page](https://app.windsor.io/people)
+Segment sends Identify calls to Windsor to create new users and their properties. You can find all your users on the [Users Page](https://app.windsor.io/people)
 
 ### Best Practices
 
