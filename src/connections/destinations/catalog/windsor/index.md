@@ -51,7 +51,7 @@ Segment sends Screen calls to Windsor to the tracked events for each [user](http
 
 ## Identify
 
-If you aren't familiar with the Segment Spec,  take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.identify("user-123", {
