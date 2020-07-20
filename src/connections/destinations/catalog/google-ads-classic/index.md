@@ -1,10 +1,11 @@
 ---
 title: Google Ads (Classic) Destination
 redirect_from: '/connections/destinations/catalog/adwords/'
+strat: google
 ---
 
-Our Google Ads (Classic) destination code is open-source on GitHub if you want to check it out.
-[Our clientside javascript destination.](https://github.com/segment-integrations/analytics.js-integration-adwords).
+Our Google Ads (Classic) destination code is open-source on GitHub if you want to check out
+[Segment's javascript Google Ads destination](https://github.com/segment-integrations/analytics.js-integration-adwords).
 
 ## Web
 
