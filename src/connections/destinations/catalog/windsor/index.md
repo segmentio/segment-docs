@@ -68,7 +68,7 @@ Segment sends Identify calls to Windsor to create new users and their properties
 
 ### Best Practices
 
-We recommend calling the `identify()` method as often as possible from your app. As a general guide, call `identify()` -
+We recommend that you make an Identify call frequently from your app. As a general guide, call `identify`:
 
 - On Sign up
 - On Every Login (preferably on the client and server)
