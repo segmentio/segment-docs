@@ -83,7 +83,7 @@ To pass in a custom LinkName to Adobe Analytics, pass it as a string in the `int
 If you don't specify a custom linkName in the integration specific object in the payload, Segment defaults to mapping `linkName` to the value from `(context.page.url)`. If no URL is present Segment, sets `linkName` to `No linkName provided`.
 
 > note ""
-> **Note**: If you enable the `useLegacyLinkName` setting in the UI, this takes precedence over a custom `linkName` in the integration specific object. <!-- TODO Brie: I rewrote this to make it active voice, but I may have reversed the meaning, please check. :) -->
+> **Note**: If you enable the `useLegacyLinkName` setting in the UI, Segment prepends `Link Name -` to the value you specified in the integration-specific object.
 
 ### Setting the event LinkURL
 
