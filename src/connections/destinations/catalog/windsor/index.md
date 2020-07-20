@@ -46,7 +46,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Screen method 
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-Segment sends Screen calls to Windsor as events can find on the Windsor [feed](https://app.windsor.io/feed) and the tracked events for each [user](https://app.windsor.io/people).
+Segment sends Screen calls to Windsor to the tracked events for each [user](https://app.windsor.io/people), and also as events that appear in the Windsor [feed](https://app.windsor.io/feed).
 
 
 ## Identify
