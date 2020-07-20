@@ -113,6 +113,6 @@ If you aren't familiar with the Segment Spec, take a look at the [Alias method d
 analytics.alias("new-user-id");
 ```
 
-Segment sends Alias calls to Windsor to help correctly match users behind the scenes. It merges any user previously identified using the old `userID` with a user identified with the new `userID`. If a user does not exist with the new `userID`, one is created.
+Segment sends Alias calls to Windsor to help correctly match users behind the scenes. It merges any user previously identified using the old `userID` with a user identified with the new `userID`. If a user does not exist with the new `userID`, Windsor will create a new user with the newly entered `userID`
 
 This is an advanced method and will irreversibly merge users on Windsor (and possibly other destinations too). Make sure to [read the Segment docs](https://segment.com/docs/connections/spec/alias/) when implementing Alias.
