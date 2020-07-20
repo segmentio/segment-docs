@@ -7,7 +7,7 @@ title: Windsor Destination
 
 This destination is maintained by Windsor. For any issues with the destination, [contact the Windsor Support team](mailto:support@windsor.io).
 
-In addition to the information here regarding the Segment integration with Windsor, you can find more documentation on setting up Windsor [here](https://docs.windsor.io).
+You can find more information on Windsor on [the Windsor docs site](https://docs.windsor.io).
 
 > note "Note:"
 > The Windsor Destination is currently in beta, which means that they are still actively developing the destination. To join the Windsor beta program, or if you have any feedback to help improve the Windsor Destination and its documentation, [contact the Windsor support team](mailto:support@windsor.com)!
