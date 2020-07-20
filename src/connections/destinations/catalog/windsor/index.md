@@ -88,7 +88,7 @@ analytics.track('Login Button Clicked')
 
 Segment sends Track calls to Windsor as tracked events for each [user](https://app.windsor.io/people), and as events that appear on the Windsor [feed](https://app.windsor.io/feed).
 
-We recommend following Segment's guide for your industry/application to get the best experience with Windsor.
+To get the best experience with Windsor, we recommend that you follow the Segment's specs for your industry or application .
 
 - [Mobile App](https://segment.com/docs/connections/spec/mobile/)
 - [E-Commerce](https://segment.com/docs/connections/spec/ecommerce/v2/)
