@@ -23,7 +23,7 @@ You can find more information on Windsor on [the Windsor docs site](https://docs
 3. Choose which Source should send data to the Windsor destination.
 4. Go to the [Windsor app Sources page](https://app.windsor.io/sources)
 5. Select **Segment** and click **Generate Token**. Copy the token provided.
-6. Enter the "Token" in the "Windsor" destination settings in Segment.
+6. Enter the token in the Windsor destination settings in the Segment app.
 
 
 
