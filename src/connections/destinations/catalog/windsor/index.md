@@ -18,7 +18,7 @@ In addition to the information here regarding the Segment integration with Winds
 
 {% include content/connection-modes.md %} 
 
-1. From the Destinations catalog page in the Segment App, click "Add Destination".
+1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Windsor" in the Destinations Catalog, and select the "Windsor" destination.
 3. Choose which Source should send data to the "Windsor" destination.
 4. Go to the [Sources page on Windsor](https://app.windsor.io/sources)
