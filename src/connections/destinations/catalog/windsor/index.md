@@ -71,7 +71,7 @@ Segment sends Identify calls to Windsor to create new users and their properties
 We recommend that you make an Identify call frequently from your app. As a general guide, call `identify`:
 
 - On Sign up
-- On Every Login (preferably on the client and server)
+- On every login (preferably on the device and server)
 - Every time a core user property changes (name, email, avatar or phone number)
 - Upon Loading any pages that are accessible by a logged in user
 
