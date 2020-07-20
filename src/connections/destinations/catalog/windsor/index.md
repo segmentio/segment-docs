@@ -103,7 +103,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Group method d
 analytics.group("group-id");
 ```
 
-Segment sends Groups calls to Windsor to help correctly match users behind the scenes. It attaches an internal property to users belonging to the same group. Windsor does not support a user belonging to multiple groups. If you call `group()` with a new ID for the same user, it simply updates which group the user belongs to.
+You can use group calls to attach an internal property to users who belonging to the same group, which Segment sends to Windsor to help correctly match users behind the scenes. Windsor does not support users belonging to multiple groups. If you call `group()` with a new group ID for the same user, it updates which group the user belongs to.
 
 ## Alias
 
