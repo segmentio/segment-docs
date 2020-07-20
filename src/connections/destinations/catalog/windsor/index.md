@@ -35,7 +35,7 @@ If you aren't familiar with the Segment Spec, take a look at the [Page method do
 analytics.page()
 ```
 
-Segment sends Page calls to the Windsor [feed](https://app.windsor.io/feed) and as tracked events for each [user](https://app.windsor.io/people). Page events are hidden on Windsor by default, but can be toggled using the "Show Hidden Events" button at the top of the feed.
+Segment sends Page calls as tracked events for each [user](https://app.windsor.io/people, and also to the Windsor [feed](https://app.windsor.io/feed). Page events are hidden on Windsor by default, but can be enabled using the **Show Hidden Events** button at the top of the feed.
 
 
 ## Screen
