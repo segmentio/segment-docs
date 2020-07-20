@@ -75,7 +75,7 @@ We recommend that you make an Identify call frequently from your app. As a gener
 - Every time a core user property changes (name, email, avatar or phone number)
 - On loading any pages that are only accessible by a logged in user
 
-You can find [additional documentation here](https://docs.windsor.io/docs/analytics#identify) on how to best use `identify()` with Windsor.
+You can find [additional best practices on using Identify with Windsor here](https://docs.windsor.io/docs/analytics#identify).
 
 
 ## Track
