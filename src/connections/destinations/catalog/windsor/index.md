@@ -86,7 +86,7 @@ If you aren't familiar with the Segment Spec,  take a look at the [Track method 
 analytics.track('Login Button Clicked')
 ```
 
-Segment sends Track calls to Windsor as events can find on the Windsor [feed](https://app.windsor.io/feed) and the tracked events for each [user](https://app.windsor.io/people).
+Segment sends Track calls to Windsor as tracked events for each [user](https://app.windsor.io/people), and as events that appear on the Windsor [feed](https://app.windsor.io/feed).
 
 We recommend following Segment's guide for your industry/application to get the best experience with Windsor.
 
