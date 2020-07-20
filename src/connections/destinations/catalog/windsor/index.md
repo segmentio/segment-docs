@@ -58,7 +58,7 @@ analytics.identify("user-123", {
   name: "John Doe",
   email: "john@example.com",
   avatar: "https://avatar.windsor.io/user-123",
-  phone: "+1 (415) 123-4567",
+  phone: "+1 (415) 555-1234",
 });
 ```
 
