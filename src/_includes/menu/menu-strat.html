@@ -1,54 +1,56 @@
 {% assign sectionSlug = page.strat %}
 {% assign ourSection = site.data.sidenav.strat.sections | where: "slug", sectionSlug %}
 
-<div class="sidebar sidebar--dark">
-  <nav class="menu">
-    <ul class="menu__list list list--unstyle">
-      <li class="menu-item menu-item--separated">
-        <a href="{{ site.baseurl }}/connections/destinations/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--icon flex flex--middle">
-          <div class="menu-item__icon flex__column">
-            {% include icons/menu/icon-back.svg %}
-          </div>
-
-          <div class="flex__column">Back to Connections</div>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-  <nav class="menu menu--compact">
-    <ul class="menu__list list list--unstyle">
-      {% for item in ourSection %}
-        <li class="menu-item menu-item--gray menu-item--active menu-item--compact" data-accordion data-class-active="menu-item--active">
-          <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
-            <span class="flex__column">
-              {{ item.section_title }}
-            </span>
-
-            <div class="menu-item__chevron flex__column flex__column--shrink">
-              {% include icons/symbols/chevron-down.svg %}
+<div class="sidebar sidebar--sticky sidebar--scroll sidebar--dark">
+  <div class="sidebar__content">
+    <nav class="menu">
+      <ul class="menu__list list list--unstyle">
+        <li class="menu-item">
+          <a href="{{ site.baseurl }}/connections/destinations/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--icon flex flex--middle">
+            <div class="menu-item__icon flex__column">
+              {% include icons/menu/icon-back.svg %}
             </div>
-          </button>
-
-          <ul class="menu-item__body" data-ref="accordion[body]">
-            {% for subsection in item.section %}
-              {% if subsection.path %}
-                {% assign menuLink = site.baseurl | append: subsection.path | append: "/" %}
-
-                {% if subsection.path contains "http://" or  subsection.path contains "https://"%}
-                  {% assign menuLink = subsection.path  %}
-                {% endif %}
-              {% endif %}
-
-              <li class="menu-item menu-item--compact">
-                <a href="{{ menuLink }}" class="menu-item__link">
-                  {{ subsection.title }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
+  
+            <div class="flex__column">Back to Connections</div>
+          </a>
         </li>
-      {% endfor %}
-    </ul>
-  </nav>
+      </ul>
+    </nav>
+  
+    <nav class="menu menu--compact">
+      <ul class="menu__list list list--unstyle">
+        {% for item in ourSection %}
+          <li class="menu-item menu-item--gray menu-item--active menu-item--compact" data-accordion data-class-active="menu-item--active">
+            <button class="menu-item__link flex flex--middle flex--justify" data-ref="accordion[trigger]">
+              <span class="flex__column">
+                {{ item.section_title }}
+              </span>
+  
+              <div class="menu-item__chevron flex__column flex__column--shrink">
+                {% include icons/symbols/chevron-down.svg %}
+              </div>
+            </button>
+  
+            <ul class="menu-item__body" data-ref="accordion[body]">
+              {% for subsection in item.section %}
+                {% if subsection.path %}
+                  {% assign menuLink = site.baseurl | append: subsection.path | append: "/" %}
+  
+                  {% if subsection.path contains "http://" or  subsection.path contains "https://"%}
+                    {% assign menuLink = subsection.path  %}
+                  {% endif %}
+                {% endif %}
+  
+                <li class="menu-item menu-item--compact">
+                  <a href="{{ menuLink }}" class="menu-item__link">
+                    {{ subsection.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
 </div>
