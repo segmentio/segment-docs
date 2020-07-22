@@ -10,8 +10,6 @@ As mentioned elsewheree, Segment uses a user-action data model, which uses diffe
 
 This page explains in detail how to configure your Segment Adobe Analytics Destination settings to customzie your Segment calls for Adobe Analytics.
 
-<!-- TODO Brie: link to in mobile? 7. [Context Data Variables](#context-data-variables) -->
-
 ## Implementing Success Events
 
 You can choose to use the [automatic Ecommerce Spec mapping](#using-default-ecommerce-spec-events) when you start sending Success Events to Adobe, which means you don't have to set up mappings in Segment and Adobe. If you need event support beyond the the [standard Ecommerce spec](/docs/connections/spec/ecommerce/v2/), for example to support more event types or different ones, you can implement custom [Track events](#creating-custom-track-events) or [Page calls](#creating-page-calls).
@@ -57,8 +55,7 @@ The Adobe Analytics destination automatically works with Segment's standard [Eco
   </tr>
 </table>
 
-Segment sends the Ecommerce event data to Adobe just as it would send a standard Track event. These Ecommerce events are automatically mapped and sent to Adobe Analytics along with product description data. If you implement Segment events using the Ecommerce spec and naming conventions, you do **NOT** need to create a mapping in your Segment Adobe destination settings. You only need to map **event names** if you want to set them as the value of an `eVar`.
-<!-- TODO add a link to eVar docs below -->
+Segment sends the Ecommerce event data to Adobe just as it would send a standard Track event. These Ecommerce events are automatically mapped and sent to Adobe Analytics along with product description data. If you implement Segment events using the Ecommerce spec and naming conventions, you do **NOT** need to create a mapping in your Segment Adobe destination settings. You only need to map **event names** if you want to set them as the value of an `eVar`. To learn more about configuring `eVars` see our documentation on [how to setup using your destinatoin settnigs.](#conversion-variables---eVars)
 
 Ecommerce properties such as `orderId` and `products` are also sent automatically. However, if you use other custom properties and want to send them to Adobe's `eVar`, `prop`, `hVar`, or `lVar` variables, you *do* need to map them as properties in your Segment Adobe Analytics destination settings.
 
@@ -406,7 +403,6 @@ Custom Traffic Variables, also known as props, allow you to correlate custom dat
 
 ## List Variables - lVars
 
-<!-- TODO What does "hit" mean here?-->
 List variables are similar to eVars except you can send multiple values for the same event. You can map your Segment properties in your settings to any of your list variables. To learn more about list variables and how to configure them in the Adobe UI, see [the list vars documentation](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/list.html).
 
 To represent the multiple values in a list, you can either send the property value as a comma delimited string (ie. `'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment joins it as a comma delimited string by default before sending it to Adobe. To set up a custom delimiter, see the [documentation section below on custom delimiters](#custom-delimiter).
@@ -443,9 +439,15 @@ Map your Adobe Analytics hVars to the property names you use in your Segment Pag
 
 ![](images/hier-mapping.png)
 
-<!-- ## Context Data Variables -->
-<!-- TODO B -->
+## Context Data Variables
+Context data variables let you define custom variables on each page that processing rules can read. See  the Adobe documentatoin to learn more about [how to use Adobe Analytics `contextData` and use processing rules](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/contextdata.html) to populate analytics variables from that data. 
 
+Segment will automatically sends all event properties as context data on specced eccommerce events, `page()`, `track()`, and `screen()` calls if you are using a device-mode ("bundled") destination for Analytics.js, or if you are sending unbundled events from a [Server library](/docs/connections/sources/catalog/). If you want to send additional context data from within your context data object ini your Segment payload, you can configure the Context Data Variables mapping in your destination settings to tell Segment which context variables to send to Adobe as context data. 
+
+> note ""
+> **Note**: The context data value cannot be an object or an array as this not an Adobe accepted data type by Adobe Analytics. 
+
+For more information on how to setup Context Data for iOS and Android see our [Sending Custom Properties section](/mobile/sending-custom-properties) in our [Setting up Adobe Analytics for Mobile guide](/mobile). For more information on how to set up Context Data for Hearbeat Events see our [Custom Video Metadata section](/heartbeat/#custom-video-metadata) in our [Setting up Adobe Analytics Heartbeat guide](/heartbeat). 
 
 ## Segment Destination Specific Options
 
