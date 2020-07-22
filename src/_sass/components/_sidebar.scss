@@ -12,8 +12,6 @@
   }
 
   &__content {
-    overflow-y: auto;
-    max-height: calc(100vh - 100px);
     padding-right: 25px;
 
     & > * + * {
@@ -36,6 +34,11 @@
 
   &--scroll {
     max-height: calc(100vh - 100px);
+
+    &__content {
+      overflow-y: auto;
+      max-height: calc(100vh - 100px);
+    }
 
     ::-webkit-scrollbar {
       width: 5px;

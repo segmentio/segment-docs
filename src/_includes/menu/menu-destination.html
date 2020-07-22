@@ -2,7 +2,7 @@
 {% assign currentSlug = page.url | split: "/" | last %}
 {% assign currentIntegration = site.data.catalog.destinations.items | where: "slug", currentSlug | first %}
 
-<div class="sidebar sidebar--scroll sidebar--sticky sidebar--dark">
+<div class="sidebar sidebar--dark">
   <div class="sidebar__content">
     <nav class="menu">
       <ul class="menu__list list list--unstyle">

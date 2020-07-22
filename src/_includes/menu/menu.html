@@ -1,12 +1,18 @@
-<div class="sidebar sidebar--sticky sidebar--scroll sidebar--dark">
+<div class="sidebar sidebar--dark">
   <div class="sidebar__content">
     {% include menu/menu-primary.html %}
 
     <nav class="menu">
       <ul class="menu__list list list--unstyle">
-        {% for root_section in site.data.sidenav.api.sections %}
-          {% include menu/menu-item.html root_section=root_section %}
-        {% endfor %}
+        <li class="menu-item">
+          <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/config-api/">
+            <div class="menu-item__icon flex__column">
+              {% include icons/menu/icon-config-api.svg %}
+            </div>
+
+            <div class="flex__column">Config API</div>
+          </a>
+        </li>
 
         <li class="menu-item">
           <a class="menu-item__link menu-item__link--highlight menu-item__link--icon flex flex--middle" href="{{ site.baseurl }}/help/">
