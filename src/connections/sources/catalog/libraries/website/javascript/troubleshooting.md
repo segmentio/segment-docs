@@ -4,23 +4,23 @@ strat: ajs
 ---
 
 The console reveals all! [Learn how to access the Javascript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger).
-Any `analytics.js` methods may be executed manually. Use the Network tab to inspect requests.
+Any Analytics.js methods may be executed manually. Use the Network tab to inspect requests.
 
-## Are you loading `analytics.js`?
+## Are you loading Analytics.js?
 
 Open the Javascript console and enter `analytics`. Does it return an object, as seen below?
 
 ![Returning analytics object](images/VOsmoAB.gif)
 
-The object means that you are successfully loading `analytics.js` onto your website. If you get an `undefined` error, `analytics.js` is not loading successfully:
+The object means that you are successfully loading Analytics.js onto your website. If you get an `undefined` error, Analytics.js is not loading successfully:
 
 ![Returning analytics object error](images/CFsktto.gif)
 
-Solution: [Follow the `analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
+Solution: [Follow the Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
 
-## Are you loading two instances of `analytics.js`?
+## Are you loading two instances of Analytics.js?
 
-Note that you *cannot* load `analytics.js` twice on the same page, even if you're using different write keys. You might encounter `Uncaught RangeError: Maximum call stack size exceeded`. You can conditionally set the write key based on an environment variable.
+Note that you *cannot* load Analytics.js twice on the same page, even if you're using different write keys. You might encounter `Uncaught RangeError: Maximum call stack size exceeded`. You can conditionally set the write key based on an environment variable.
 
 Example:
 ```js
@@ -38,7 +38,7 @@ If the call doesn't appear in the debugger, open up the Javascript console and c
 
 ![Checking for calls in the network tab](images/d8CmIY2.png)
 
-In the above, the `p` is a [`page`](/docs/connections/spec/page) call and the `i` is an [`identify`](/docs/connections/spec/identify) call. If you don't at least see the `p`, then check if you are loading `analytics.js` correctly.
+In the above, the `p` is a [`page`](/docs/connections/spec/page) call and the `i` is an [`identify`](/docs/connections/spec/identify) call. If you don't at least see the `p`, then check if you are loading Analytics.js correctly.
 
 
 ## Is data being transmitted to your third-party destinations?
@@ -55,11 +55,11 @@ If this outbound request is not showing up in the network when you fire an `iden
 
 Segment and many destination partners use cookies/local storage to store information about users in the browser. Ad blockers prevent cookies and other data these tools rely on to make valid analytics requests. Some portion of your users are probably using ad blockers, which prevent the Segment script from fully executing. Both desktop and mobile browsers are impacted.
 
-One particular issue is Safari private browsing mode which allows analytics.js identify calls to be made, but the traits object is stripped from the call. This results in identify calls missing email address and other traits.
+One particular issue is Safari private browsing mode which allows Analytics.js Identify calls to be made, but the traits object is stripped from the call. This results in identify calls missing email address and other traits.
 
 ## Internet Explorer Support
 
-We guarantee support for Internet Explorer 9 and higher for analytics.js. Keep in mind that different tools may have different compatibility guarantees for their own products. Refer to the vendor's documents to see what their browser compatibility looks like.
+We guarantee support for Internet Explorer 9 and higher for Analytics.js. Keep in mind that different tools may have different compatibility guarantees for their own products. Refer to the vendor's documents to see what their browser compatibility looks like.
 
 ## Is your web site deployed under a domain on the Public Suffix List?
 
@@ -87,19 +87,19 @@ The Javascript console reveals all requests, outbound and inbound, to your brows
 
 Yes, 32KB per message.
 
-## If `analytics.js` fails to load, are callbacks not fired?
+## If Analytics.js fails to load, are callbacks not fired?
 
-In the event that `analytics.js` does not load, callbacks passed into your API calls do not fire. This is as designed, because the purpose of callbacks are to provide an estimate that the event was delivered and if the library never loads, the events won't be delivered.
+In the event that Analytics.js does not load, callbacks passed into your API calls do not fire. This is as designed, because the purpose of callbacks are to provide an estimate that the event was delivered and if the library never loads, the events won't be delivered.
 
 ## Why do I see a network request to `/m`?
-In May 2018, we're rolling out a change to analytics.js that allows us to collect client side performance metrics in analytics.js. This includes metrics such as:
+In May 2018, we're rolling out a change to Analytics.js that allows us to collect client side performance metrics in Analytics.js. This includes metrics such as:
 
 - When client side integrations are initialized and when they fail
 - When messages are sent to client side integrations and when they fail
 
 We added these metrics so that we can proactively identify and resolve issues with individual client-side integrations. These metrics are connected to alerts that notify our on-call engineers so we can take action on these quickly.
 
-There should be no noticeable impact to your data flow. You may notice analytics.js make an extra network request in the network tab to carry the metrics data to our servers. This should be very infrequent since the data is sampled and batched every 30 seconds, and should not have any impact of website performance.
+There should be no noticeable impact to your data flow. You may notice Analytics.js make an extra network request in the network tab to carry the metrics data to our servers. This should be very infrequent since the data is sampled and batched every 30 seconds, and should not have any impact of website performance.
 
 ## How are properties with `null` and `undefined` values treated?
 We use the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:

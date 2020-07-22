@@ -9,7 +9,41 @@ strat: ajs
 
 Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+	- [Getting Started](#getting-started)
+	- [Identify](#identify)
+	- [Track](#track)
+	- [Page](#page)
+		- [Default Page Properties](#default-page-properties)
+	- [Group](#group)
+	- [Alias](#alias)
+	- [Ready](#ready)
+	- [Selecting destinations with the Integrations object](#selecting-destinations-with-the-integrations-object)
+	- [Load Options](#load-options)
+	- [User & Group Information](#user-group-information)
+		- [Clearing Traits](#clearing-traits)
+		- [Reset or Logout](#reset-or-logout)
+	- [Cross-Subdomain Analytics](#cross-subdomain-analytics)
+	- [Anonymous ID](#anonymous-id)
+		- [Retrieving the Anonymous ID](#retrieving-the-anonymous-id)
+		- [Setting the Anonymous ID](#setting-the-anonymous-id)
+		- [Refreshing the Anonymous ID](#refreshing-the-anonymous-id)
+	- [Debug](#debug)
+	- [Emitter](#emitter)
+		- [Track Link](#track-link)
+		- [Track Form](#track-form)
+	- [Extending Timeout](#extending-timeout)
+	- [Performance](#performance)
+		- [Bundle size](#bundle-size)
+	- [Retries](#retries)
+	- [Anonymizing IP](#anonymizing-ip)
+	- [Proxy](#proxy)
+	- [Plugins](#plugins)
+	- [Context & Traits](#context-traits)
+	- [Segment ID Persistence](#segment-id-persistence)
+
+<!-- /TOC -->
 ## Getting Started
 
 Read through the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) which explains how to add Analytics.js to your site in just a few minutes. Once you've installed the library, read on for the detailed API reference!
@@ -127,7 +161,7 @@ The `track` call has the following fields:
   </tr>
 </table>
 
-The only required argument to track in `analytics.js` is an event name string. You can read more about [how we recommend naming your events](/docs/connections/spec/track#event).
+The only required argument to track in Analytics.js is an event name string. You can read more about [how we recommend naming your events](/docs/connections/spec/track#event).
 
 Example Track call:
 
@@ -140,7 +174,7 @@ analytics.track('Article Completed', {
 
 For more information about choosing which events to track, event naming and more, check out [Analytics Academy](https://segment.com/academy/)
 
-The only required argument to `track` in `analytics.js` is an `event` name string. Read more about how we recommend [naming your events](/docs/connections/spec/track#event).
+The only required argument to `track` in Analytics.js is an `event` name string. Read more about how we recommend [naming your events](/docs/connections/spec/track#event).
 
 
 ## Page
@@ -149,7 +183,7 @@ The [`page`](/docs/connections/spec/page/) method lets you record page views on 
 
 Because some destinations require a `page` call to instantiate their libraries, **you must call `page`** at least once per page load!  You may call it more than once if needed, (eg, on virtual page changes in a single page app).
 
-A `page` call is included by default as the final line in the `analytics.js` [snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet). You may modify this `page` call within the guidelines below.
+A `page` call is included by default as the final line in the Analytics.js [snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet). You may modify this `page` call within the guidelines below.
 
 `page` method definition:
 
@@ -333,13 +367,13 @@ For more details about `alias`, including the **`alias` call payload**, check ou
 
 ## Ready
 
-The `ready` method allows you to pass in a callback that is called once all enabled destinations load, and once `analytics.js` finishes initializing. It's like jQuery's `ready` method, except for destinations.
+The `ready` method allows you to pass in a callback that is called once all enabled destinations load, and once Analytics.js finishes initializing. It's like jQuery's `ready` method, except for destinations.
 
 `ready` is still invoked if a destination throws an error during initialization, such as due to an expired API key or incorrect settings configuration. Doing so prevents blocking code listening for the `ready` callback.
 
 Code inside the `ready` function only executes after `ready` has been emitted.
 
-If you would like to access end-tool library methods that do not match any `analytics.js` methods, like adding an extra setting to Mixpanel, you can use a ready callback so that you're guaranteed to have access to the Mixpanel object, like so:
+If you would like to access end-tool library methods that do not match any Analytics.js methods, like adding an extra setting to Mixpanel, you can use a ready callback so that you're guaranteed to have access to the Mixpanel object, like so:
 
 
 ```js
@@ -408,7 +442,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 ## Load Options
 
-The `.load` method in analytics.js (the second line of the snippet) can also be modified to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations-with-the-integrations-object)), then we only load the integrations in that dictionary that are marked as enabled with the boolean value `true`.
+The `.load` method in Analytics.js (the second line of the snippet) can also be modified to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations-with-the-integrations-object)), then we only load the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
 **IMPORTANT:** In order to use this feature, make sure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
 
@@ -430,7 +464,7 @@ onConsentDialogClosed(function(consentedTools){
 
 ## User & Group Information
 
-Once `analytics.js` loads, executing the `user` or `group` method functions returns information about the currently identified user or group.
+Once Analytics.js loads, executing the `user` or `group` method functions returns information about the currently identified user or group.
 
 **Note:** To ensure these methods are available, wrap any reference to `user()` or `group()` in a [ready function block](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript#ready).
 
@@ -490,7 +524,7 @@ Analytics.js tracks across subdomains out of the box; all of our destinations fu
 
 ## Anonymous ID
 
-`analytics.js` generates a UUID and sets this as `anonymousId` for all new visitors to your site.
+Analytics.js generates a UUID and sets this as `anonymousId` for all new visitors to your site.
 
 Example:
 ```js
@@ -545,7 +579,7 @@ You can also set the `anonymousId` immediately inside your Segment snippet, even
   analytics.setAnonymousId('ABC-123-XYZ');
 ```
 
-Keep in mind that setting the `anonymousId` in `analytics.js` does not overwrite the anonymous tracking IDs for any destinations you're using.
+Keep in mind that setting the `anonymousId` in Analytics.js does not overwrite the anonymous tracking IDs for any destinations you're using.
 
 
 ### Refreshing the Anonymous ID
@@ -700,13 +734,13 @@ Set the timeout to 500ms. This is helpful if you have multiple scripts that need
 
 ## Performance
 
-The `analytics.js` library and all of the destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async). This also means that Segment methods are fired asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a particular order.
+The Analytics.js library and all of the destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async). This also means that Segment methods are fired asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a particular order.
 
 While many tools require access to the DOM or cookies, for our Zendesk, Salesforce, and MailChimp destinations, we do not load a native Javascript library! Instead data is sent from Segment's servers to the end-tools. We aim to expand on this front in the future.
 
-Only the libraries required for your **enabled** destinations are loaded. Whenever a destination is disabled, the custom version of `analytics.js` stops requesting that library.
+Only the libraries required for your **enabled** destinations are loaded. Whenever a destination is disabled, the custom version of Analytics.js stops requesting that library.
 
-Using `analytics.js` does not offer a _huge_ performance benefit, but it is more performant than installing each of the destinations individually. And as more destinations move server-side, you'll receive more performance benefits automatically.
+Using Analytics.js does not offer a _huge_ performance benefit, but it is more performant than installing each of the destinations individually. And as more destinations move server-side, you'll receive more performance benefits automatically.
 
 One option, if you don't want to use any bundled 3rd-party tools, is to use our browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package.
 
@@ -718,15 +752,16 @@ However, the snippet then asynchronously requests and loads a customized javascr
 
 ## Retries
 
-When enabled, analytics.js automatically retries network and server errors. With persistent retries, analytics.js can:
-* Support offline tracking. analytics.js queues your events and delivers them when the user comes back online.
+When enabled, Analytics.js automatically retries network and server errors. With persistent retries, Analytics.js can:
+
+* Support offline tracking. Analytics.js queues your events and delivers them when the user comes back online.
 * Better handle network issues. If there happens to be a time where your application can't connect to Segment's API, we'll continue to store the events on the browser to ensure you don't lose any data.
 
 Analytics.js stores events in localStorage (falling back to in-memory storage when localStorage is unavailable), and retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. You can see more details about the retry logic [here](/docs/connections/destinations/#retries).
 
 ## Anonymizing IP
 
-We collect IP address for client-side (iOS, Android, `analytics.js` and Xamarin) events automatically.
+We collect IP address for client-side (iOS, Android, Analytics.js and Xamarin) events automatically.
 
 Passing a value for `options.context.ip` prevents our server from recording the IP address associated with the request.
 
@@ -739,11 +774,11 @@ Example:
 
 ## Proxy
 
-To use a proxy server with analytics.js, you'll first want to update the address in the snippet to use your own host instead of `cdn.segment.com`. Secondly, you'll need to write in to our support to change the endpoint we send events to from `api.segment.io` to your proxy instead. Make sure that your proxy behaves exactly like our real APIs. You can use our [proxy server](https://github.com/segmentio/segment-proxy) as an example of a correctly working proxy.
+To use a proxy server with Analytics.js, you'll first want to update the address in the snippet to use your own host instead of `cdn.segment.com`. Secondly, you'll need to write in to our support to change the endpoint we send events to from `api.segment.io` to your proxy instead. Make sure that your proxy behaves exactly like our real APIs. You can use our [proxy server](https://github.com/segmentio/segment-proxy) as an example of a correctly working proxy.
 
 ## Plugins
 
-Segment offers 'plugins' across multiple video players that can quickly get you started collecting video events using analytics.js. Check out the specific links below for more information:
+Segment offers 'plugins' across multiple video players that can quickly get you started collecting video events using Analytics.js. Check out the specific links below for more information:
 
 - [Youtube](/docs/connections/sources/catalog/libraries/website/plugins/youtube)
 - [Vimeo](/docs/connections/sources/catalog/libraries/website/plugins/vimeo)
