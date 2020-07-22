@@ -8,16 +8,72 @@ redirect_from:
 
 Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+	- [Getting Started](#getting-started)
+	- [Identify](#identify)
+	- [Track](#track)
+	- [Page](#page)
+		- [Default Page Properties](#default-page-properties)
+	- [Group](#group)
+	- [Alias](#alias)
+	- [Ready](#ready)
+	- [Querystring API](#querystring-api)
+	- [Selecting destinations with the Integrations object](#selecting-destinations-with-the-integrations-object)
+	- [Load Options](#load-options)
+	- [User & Group Information](#user-group-information)
+		- [Clearing Traits](#clearing-traits)
+		- [Reset or Logout](#reset-or-logout)
+	- [Cross-Subdomain Analytics](#cross-subdomain-analytics)
+	- [Anonymous ID](#anonymous-id)
+		- [Retrieving the Anonymous ID](#retrieving-the-anonymous-id)
+		- [Setting the Anonymous ID](#setting-the-anonymous-id)
+		- [Refreshing the Anonymous ID](#refreshing-the-anonymous-id)
+	- [Debug](#debug)
+	- [Emitter](#emitter)
+		- [Track Link](#track-link)
+		- [Track Form](#track-form)
+	- [Extending Timeout](#extending-timeout)
+	- [Performance](#performance)
+		- [Bundle size](#bundle-size)
+	- [Retries](#retries)
+	- [Anonymizing IP](#anonymizing-ip)
+	- [Middleware](#middleware)
+		- [Using Source Middlewares](#using-source-middlewares)
+		- [Using Destination Middlewares](#using-destination-middlewares)
+		- [Adding middlewares to Analytics.js](#adding-middlewares-to-analyticsjs)
+		- [Braze Middleware](#braze-middleware)
+	- [Proxy](#proxy)
+	- [Plugins](#plugins)
+	- [Context & Traits](#context-traits)
+	- [Segment ID Persistence](#segment-id-persistence)
+	- [Troubleshooting](#troubleshooting)
+		- [Are you loading `analytics.js`?](#are-you-loading-analyticsjs)
+		- [Are you loading two instances of `analytics.js`?](#are-you-loading-two-instances-of-analyticsjs)
+		- [Do you see events appear in your debugger?](#do-you-see-events-appear-in-your-debugger)
+		- [Is data being transmitted to your third-party destinations?](#is-data-being-transmitted-to-your-third-party-destinations)
+		- [Do you have any ad blockers enabled in your browser?](#do-you-have-any-ad-blockers-enabled-in-your-browser)
+		- [Internet Explorer Support](#internet-explorer-support)
+		- [Is your web site deployed under a domain on the Public Suffix List?](#is-your-web-site-deployed-under-a-domain-on-the-public-suffix-list)
+		- [How do I open the Javascript console in your debugger?](#how-do-i-open-the-javascript-console-in-your-debugger)
+		- [Is there a size limit on requests?](#is-there-a-size-limit-on-requests)
+		- [If `analytics.js` fails to load, are callbacks not fired?](#if-analyticsjs-fails-to-load-are-callbacks-not-fired)
+		- [Why do I see a network request to `/m`?](#why-do-i-see-a-network-request-to-m)
+		- [How are properties with `null` and `undefined` values treated?](#how-are-properties-with-null-and-undefined-values-treated)
+		- [Known Issues:](#known-issues)
+
+<!-- /TOC -->
+
 ## Getting Started
 
-Head over to our [`analytics.js` QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) which walks you through adding Analytics.js to your site in just a few minutes. Once you've installed the library, read on for the detailed API reference!
+Read through the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) which explains how to add Analytics.js to your site in just a few minutes. Once you've installed the library, read on for the detailed API reference!
 
 ## Identify
 
-The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
+The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
 > note ""
-> We recommend against using `identify` for anonymous visitors to your site. `analytics.js` automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors. It is attached to all `page` and `track` events both before and after an `identify`.
+> We recommend against using `identify` for anonymous visitors to your site. Analytics.js automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors. It is attached to all `page` and `track` events both before and after an `identify`.
 
 `identify` method definition:
 
@@ -44,7 +100,7 @@ The `identify` call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations) for the call. _Note: If you do not pass a *traits* object, pass an empty object (ie, '{}') before *options*_</td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a *traits* object, pass an empty object (ie, '{}') before *options*_</td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -66,7 +122,7 @@ analytics.identify({
 });
 ```
 
-and when the user completes signup:
+and when the user completes sign up:
 
 ```js
 analytics.identify('12091906-01011992', {
@@ -88,9 +144,9 @@ analytics.identify('12091906-01011992', function(){
 
 ## Track
 
-The `track` method lets you record any actions your users perform. You can [see a track example in the guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track).
+The Track method lets you record any actions your users perform. You can [see a track example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track).
 
-`track` method definition:
+Track method definition:
 
 ```js
 analytics.track(event, [properties], [options], [callback]);
@@ -115,7 +171,7 @@ The `track` call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations) for the call. _Note: If you do not pass a *properties* object, pass an empty object (ie, '{}') before *options*_</td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a *properties* object, pass an empty object (ie, '{}') before *options*_</td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -127,7 +183,7 @@ The `track` call has the following fields:
 
 The only required argument to track in `analytics.js` is an event name string. You can read more about [how we recommend naming your events](/docs/connections/spec/track#event).
 
-Example `track` call:
+Example Track call:
 
 ```js
 analytics.track('Article Completed', {
@@ -180,7 +236,7 @@ The `page` call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations) for the call. _Note: If you do not pass a `properties` object, pass an empty object (ie, '{}') before `options`_ </td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (ie, '{}') before `options`_ </td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -231,12 +287,12 @@ analytics.page('Pricing', {
 
 ## Group
 
-The `group` method associates an [identified user](/docs/connections/sources/catalog/libraries/website/javascript/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other name you came up with for the same concept.
+The `group` method associates an [identified user](/docs/connections/sources/catalog/libraries/website/javascript/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other collective noun you come up with for the same concept.
 
-This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
+This is useful for <!-- Business-to-Business (B2B) -->tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
 
-`group` method definition:
+Group method definition:
 
 ```js
 analytics.group(groupId, [traits], [options], [callback]);
@@ -260,7 +316,7 @@ The `group` call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations) for the call. _Note: If you do not pass a `properties` object, pass an empty object (ie, '{}') before `options`_</td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (ie, '{}') before `options`_</td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -290,7 +346,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 The `alias` method combines two previously unassociated user identities. Aliasing is generally handled automatically when you `identify` a user. However, some tools require an explicit `alias` call.
 
-This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations. Most notably, alias is necessary for properly implementing [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias).
+This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations. Most notably, you need to make alias calls to properly implement [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias). <!-- Dests question: is this still true? -->
 
 `alias` method definition:
 
@@ -298,7 +354,7 @@ This is an advanced method, but it is required to manage user identities success
 analytics.alias(userId, [previousId], [options], [callback]);
 ```
 
-The `alias` call has the following fields:
+The Alias call has the following fields:
 
 <table>
   <tr>
@@ -317,7 +373,7 @@ The `alias` call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations) for the call.</td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call.</td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -364,16 +420,15 @@ The `ready` method has the following fields:
 
 ## Querystring API
 
-`analytics.js` can trigger track and identify events based on the URL querystring. This is helpful for tracking email click throughs, social media clicks, and digital advertising.
+Analytics.js can trigger Track and Identify events based on the URL querystring. You can use this when tracking email click-throughs, social media clicks, and digital advertising.
 
 Here are the query parameters to use:
 
 | param | description | triggers |
 | ----- | ----------- | -------- |
-|       |             |          |
 | `ajs_uid` |  The userId to pass to an identify call. | This triggers an `identify` call. |
-| `ajs_event` |The event name to pass to a track call. | This triggers a `track` call.  |
-| `ajs_aid` |The anonymousId to set for the user.|This triggers an `analytics.user().anonymousId()` call.|
+| `ajs_event` | The event name to pass to a track call. | This triggers a `track` call.  |
+| `ajs_aid` | The anonymousId to set for the user.| This triggers an `analytics.user().anonymousId()` call.|
 | `ajs_prop_<property>` | A property to pass to the track call | This won't implicitly trigger an event and is dependent on you also passing `ajs_event` - this property  be included in the resulting `track` call |
 | `ajs_trait_<trait>` | A trait to pass to the identify call | This won't implicitly trigger any call and is dependent on you also passing `ajs_uid` - this trait is included in the resulting `identify` call |
 
@@ -383,7 +438,7 @@ So for example, this URL:
 http://segment.com/?ajs_uid=123456789abcd&ajs_event=Clicked%20Email&ajs_aid=abc123&ajs_prop_emailCampaign=First+Touch&ajs_trait_name=Karl+Jr.
 ```
 
-would trigger the following events on the page:
+would create the following events on the page.
 
 ```js
 analytics.identify('123456789abcd', { name: 'Karl Jr.' });
@@ -392,9 +447,9 @@ analytics.user().anonymousId('abc123');
 ```
 
 You can pass up to **one of each trigger parameter** as shown in the example above.
+<!-- TODO: by "up to" do we mean they're optional? -->
 
-
-## Selecting Destinations
+## Selecting destinations with the Integrations object
 
 An `integrations` object may be passed in the `options` of `alias`, `group`, `identify`, `page` and `track` methods, allowing selective destination filtering. By default all destinations are enabled.
 
@@ -437,7 +492,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 ## Load Options
 
-The `.load` method in analytics.js (the second line of the snippet) can also be modified to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations)), then we only load the integrations in that dictionary that are marked as enabled with the boolean value `true`.
+The `.load` method in analytics.js (the second line of the snippet) can also be modified to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations-with-the-integrations-object)), then we only load the integrations in that dictionary that are marked as enabled with the boolean value `true`.
 
 **IMPORTANT:** In order to use this feature, make sure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
 
