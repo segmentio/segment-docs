@@ -50,3 +50,18 @@ sections:
     title: Google Cloud Function destintation
   - path: /connections/destinations/catalog/google-cloud-pubsub
     title: Google Cloud Pubsub destintation
+
+
+- slug: ajs
+  section_title: Analytics.js Resources
+  section:
+  - path: /connections/sources/catalog/libraries/website/javascript
+    title: Segment Analytics.js (Javascript) Library
+  - path: /connections/sources/catalog/libraries/website/javascript/quickstart
+    title: Analytics.js Quickstart Tutorial
+  - path: /connections/sources/catalog/libraries/website/javascript/middleware
+    title: Middlewares for Analytics.js
+  - path: /connections/sources/catalog/libraries/website/javascript/querystring
+    title: Analytics.js Querystring API
+  - path: /connections/sources/catalog/libraries/website/javascript/troubleshooting
+    title: Troubleshooting Analytics.js

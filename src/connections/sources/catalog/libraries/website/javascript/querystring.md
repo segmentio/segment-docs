@@ -1,5 +1,6 @@
 ---
 title: Using the Analytics.js Querystring API
+strat: ajs
 ---
 
 Analytics.js can trigger Track and Identify events based on the URL querystring. You can use this when tracking email click-throughs, social media clicks, and digital advertising.

@@ -1,5 +1,6 @@
 ---
 title: Troubleshooting Analytics.js
+strat: ajs
 ---
 
 The console reveals all! [Learn how to access the Javascript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger).

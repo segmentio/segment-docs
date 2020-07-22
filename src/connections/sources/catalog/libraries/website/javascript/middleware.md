@@ -1,5 +1,6 @@
 ---
 title: Analytics.js Middleware
+strat: ajs
 ---
 
 
