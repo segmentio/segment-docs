@@ -8,61 +8,6 @@ redirect_from:
 
 Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-	- [Getting Started](#getting-started)
-	- [Identify](#identify)
-	- [Track](#track)
-	- [Page](#page)
-		- [Default Page Properties](#default-page-properties)
-	- [Group](#group)
-	- [Alias](#alias)
-	- [Ready](#ready)
-	- [Querystring API](#querystring-api)
-	- [Selecting destinations with the Integrations object](#selecting-destinations-with-the-integrations-object)
-	- [Load Options](#load-options)
-	- [User & Group Information](#user-group-information)
-		- [Clearing Traits](#clearing-traits)
-		- [Reset or Logout](#reset-or-logout)
-	- [Cross-Subdomain Analytics](#cross-subdomain-analytics)
-	- [Anonymous ID](#anonymous-id)
-		- [Retrieving the Anonymous ID](#retrieving-the-anonymous-id)
-		- [Setting the Anonymous ID](#setting-the-anonymous-id)
-		- [Refreshing the Anonymous ID](#refreshing-the-anonymous-id)
-	- [Debug](#debug)
-	- [Emitter](#emitter)
-		- [Track Link](#track-link)
-		- [Track Form](#track-form)
-	- [Extending Timeout](#extending-timeout)
-	- [Performance](#performance)
-		- [Bundle size](#bundle-size)
-	- [Retries](#retries)
-	- [Anonymizing IP](#anonymizing-ip)
-	- [Middleware](#middleware)
-		- [Using Source Middlewares](#using-source-middlewares)
-		- [Using Destination Middlewares](#using-destination-middlewares)
-		- [Adding middlewares to Analytics.js](#adding-middlewares-to-analyticsjs)
-		- [Braze Middleware](#braze-middleware)
-	- [Proxy](#proxy)
-	- [Plugins](#plugins)
-	- [Context & Traits](#context-traits)
-	- [Segment ID Persistence](#segment-id-persistence)
-	- [Troubleshooting](#troubleshooting)
-		- [Are you loading `analytics.js`?](#are-you-loading-analyticsjs)
-		- [Are you loading two instances of `analytics.js`?](#are-you-loading-two-instances-of-analyticsjs)
-		- [Do you see events appear in your debugger?](#do-you-see-events-appear-in-your-debugger)
-		- [Is data being transmitted to your third-party destinations?](#is-data-being-transmitted-to-your-third-party-destinations)
-		- [Do you have any ad blockers enabled in your browser?](#do-you-have-any-ad-blockers-enabled-in-your-browser)
-		- [Internet Explorer Support](#internet-explorer-support)
-		- [Is your web site deployed under a domain on the Public Suffix List?](#is-your-web-site-deployed-under-a-domain-on-the-public-suffix-list)
-		- [How do I open the Javascript console in your debugger?](#how-do-i-open-the-javascript-console-in-your-debugger)
-		- [Is there a size limit on requests?](#is-there-a-size-limit-on-requests)
-		- [If `analytics.js` fails to load, are callbacks not fired?](#if-analyticsjs-fails-to-load-are-callbacks-not-fired)
-		- [Why do I see a network request to `/m`?](#why-do-i-see-a-network-request-to-m)
-		- [How are properties with `null` and `undefined` values treated?](#how-are-properties-with-null-and-undefined-values-treated)
-		- [Known Issues:](#known-issues)
-
-<!-- /TOC -->
 
 ## Getting Started
 
@@ -144,7 +89,7 @@ analytics.identify('12091906-01011992', function(){
 
 ## Track
 
-The Track method lets you record any actions your users perform. You can [see a track example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track).
+The Track method lets you record any actions your users perform. You can [see a track example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track/).
 
 Track method definition:
 
@@ -418,36 +363,6 @@ The `ready` method has the following fields:
   </tr>
 </table>
 
-## Querystring API
-
-Analytics.js can trigger Track and Identify events based on the URL querystring. You can use this when tracking email click-throughs, social media clicks, and digital advertising.
-
-Here are the query parameters to use:
-
-| param | description | triggers |
-| ----- | ----------- | -------- |
-| `ajs_uid` |  The userId to pass to an identify call. | This triggers an `identify` call. |
-| `ajs_event` | The event name to pass to a track call. | This triggers a `track` call.  |
-| `ajs_aid` | The anonymousId to set for the user.| This triggers an `analytics.user().anonymousId()` call.|
-| `ajs_prop_<property>` | A property to pass to the track call | This won't implicitly trigger an event and is dependent on you also passing `ajs_event` - this property  be included in the resulting `track` call |
-| `ajs_trait_<trait>` | A trait to pass to the identify call | This won't implicitly trigger any call and is dependent on you also passing `ajs_uid` - this trait is included in the resulting `identify` call |
-
-So for example, this URL:
-
-```text
-http://segment.com/?ajs_uid=123456789abcd&ajs_event=Clicked%20Email&ajs_aid=abc123&ajs_prop_emailCampaign=First+Touch&ajs_trait_name=Karl+Jr.
-```
-
-would create the following events on the page.
-
-```js
-analytics.identify('123456789abcd', { name: 'Karl Jr.' });
-analytics.track('Clicked Email', { 'emailCampaign': 'First Touch' });
-analytics.user().anonymousId('abc123');
-```
-
-You can pass up to **one of each trigger parameter** as shown in the example above.
-<!-- TODO: by "up to" do we mean they're optional? -->
 
 ## Selecting destinations with the Integrations object
 
@@ -820,80 +735,6 @@ Example:
   analytics.track("Order Completed", {}, { context: { ip: "0.0.0.0" }});
 ```
 
-## Middleware
-
-Middlewares allow developers to extend Analytics.js with custom code which runs on every event. This code has full access to the DOM and Browser API, and helps customers enrich and transform event payloads.
-
-Analytics.js can be extended using two functions:
-
-```js
-addSourceMiddleware(middleware)
-addDestinationMiddleware(targetIntegration, [middleware1, middleware2, ...])
-```
-
-The first function (Source Middleware) allows you to manipulate the payload and filter events on a per-source basis, while the second function (Destination Middleware) allows this on a per destination basis. Middlewares run in the browser.
-
-### Using Source Middlewares
-
-The function signature for creating Source Middleware has three parameters:
-
-```js
-function({payload, next, integrations}){};
-```
-
-- `payload` represents the event payload sent by Analytics.js. To change the value of the `payload`, mutate the `payload.obj` object. (See the example below.)
-- `next` represents the next function to be called in the source middleware chain. If the middleware provided does not call this function, the event is dropped on the client and is not delivered to Segment or any destinations.
-- `integrations` is an array of objects representing all the integrations that the payload is sent to. If an integration in this array is set to a ‘falsey’ value then the event is not be sent to the Integration.
-
-```js
-var SMW1 = function({ payload, next, integrations }) {
-  payload.obj.pageTitle = document.title;
-  next(payload);
-};
-```
-
-### Using Destination Middlewares
-
-The function signature for creating Destination Middleware also has three parameters:
-
-```js
-function({payload, next, integration}){}
-```
-
-- `payload` represents the event payload sent by Analytics.js. To change the value of the `payload`, mutate the `payload.obj` object. (See the example below.)
-- `next` represents the next function to be called in the destination middleware chain. If the middleware provided does not call this function, then the event is dropped completely for the given destination.
-- `integration` is a string value representing the integration that this middleware is applied to.
-
-```js
-var DMW1 = function({ payload, integration, next }) {
-  delete payload.obj.pageTitle;
-  next(payload);
-};
-```
-
-### Adding middlewares to Analytics.js
-
-The above defined Source & Destination Middleware can be added to the Analytics.js execution chain as:
-
-```js
-analytics.addSourceMiddleware(SMW1);
-analytics.addDestinationMiddleware('integrationA', [DMW1]);
-```
-
-
-You can call the `.addSourceMiddleware(fn)` multiple times, and the order of operations reflects the order in which you register your Source Middleware.
-
-Both `.addSourceMiddleware(fn)` and `.addDestinationMiddleware('integration', [fn, ...])` can be called before [`.load()`](/docs/connections/sources/catalog/libraries/website/javascript/#load-options).
-
-### Braze Middleware
-
-If you use the Braze (Appboy) destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation.
-This optional middleware is disabled by default. When enabled, it ensures that only events where at least one changed trait value are sent to Braze, and events with duplicate traits are not sent.
-
-To enable this Middleware for a Javascript or Project source, go to `Analytics.js` in your source settings.
-![BrazeMiddleware](images/sources_ajs_brazemiddleware.gif)
-
-More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
 
 ## Proxy
 
@@ -941,118 +782,3 @@ This would append the `plan_id` trait to this track, but not name or email since
 In order to ensure high fidelity, first-party customer data, we persist the Segment ID to local storage and use it as the Segment ID on the cookie whenever possible. Local Storage is meant for storing this type of first-party customer information.
 
 If a user comes back to your site after a cookie has expired, Analytics.js checks localStorage to see if an ID exists, and resets it as the user's ID in the cookie. If a user clears their cookies and localstorage, all of the IDs are removed.
-
-## Troubleshooting
-
-The console reveals all! [Learn how to access the Javascript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger).
-Any `analytics.js` methods may be executed manually. Use the Network tab to inspect requests.
-
-### Are you loading `analytics.js`?
-
-Open the Javascript console and enter `analytics`. Does it return an object, as seen below?
-
-![Returning analytics object](images/VOsmoAB.gif)
-
-The object means that you are successfully loading `analytics.js` onto your website. If you get an `undefined` error, `analytics.js` is not loading successfully:
-
-![Returning analytics object error](images/CFsktto.gif)
-
-Solution: [Follow the `analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/)
-
-### Are you loading two instances of `analytics.js`?
-
-Note that you *cannot* load `analytics.js` twice on the same page, even if you're using different write keys. You might encounter `Uncaught RangeError: Maximum call stack size exceeded`. You can conditionally set the write key based on an environment variable.
-
-Example:
-```js
-var writeKey;
-ENV === 'production' ? writeKey = 'A' : writeKey = 'B';
-```
-
-### Do you see events appear in your debugger?
-
-When you reload the page, does your debugger show a new [`page`](/docs/connections/spec/page) and an [`identify`](/docs/connections/spec/identify) call? You can also check the Javascript console in the browser and manually fire an `identify` call as such, which would show up in the debugger.
-
-![Making an identify call](images/7Ymnh2S.gif)
-
-If the call doesn't appear in the debugger, open up the Javascript console and check the Network tab to see if the outbound web services requests are being initiated:
-
-![Checking for calls in the network tab](images/d8CmIY2.png)
-
-In the above, the `p` is a [`page`](/docs/connections/spec/page) call and the `i` is an [`identify`](/docs/connections/spec/identify) call. If you don't at least see the `p`, then check if you are loading `analytics.js` correctly.
-
-
-### Is data being transmitted to your third-party destinations?
-
-Some destinations send data directly from the website to their servers. You can check the Network tab in your Javascript console to see the outbound web services requests being initiated.
-
-In the below image, we use Google Analytics as an example. Our `page` call forms an outbound request that looks like this:
-
-![Google Analytics outbound request](images/CBdS5dO.png)
-
-If this outbound request is not showing up in the network when you fire an `identify` call, then check the following:
-
-### Do you have any ad blockers enabled in your browser?
-
-Segment and many destination partners use cookies/local storage to store information about users in the browser. Ad blockers prevent cookies and other data these tools rely on to make valid analytics requests. Some portion of your users are probably using ad blockers, which prevent the Segment script from fully executing. Both desktop and mobile browsers are impacted.
-
-One particular issue is Safari private browsing mode which allows analytics.js identify calls to be made, but the traits object is stripped from the call. This results in identify calls missing email address and other traits.
-
-### Internet Explorer Support
-
-We guarantee support for Internet Explorer 9 and higher for analytics.js. Keep in mind that different tools may have different compatibility guarantees for their own products. Refer to the vendor's documents to see what their browser compatibility looks like.
-
-### Is your web site deployed under a domain on the Public Suffix List?
-
-The [Public Suffix List](https://publicsuffix.org/list/) is a catalog of certain Internet effective top-level domains--enumerating all domain suffixes controlled by registrars.
-
-The implications of these domain suffixes is that first party cookies cannot be set on them. Meaning, foo.example.co.uk can share cookie access with bar.example.co.uk, but example.co.uk should be walled off from cookies at example2.co.uk. The latter two domains could be registered by different owners.
-
-Examples of domains on the Public Suffix List that are common in troubleshooting include:
-
-- *.github.io
-- *.herokuapp.com
-- *.appspot.com
-
-
-### How do I open the Javascript console in your debugger?
-
-The Javascript console reveals all requests, outbound and inbound, to your browser. Additionally, you may execute valid Javascript.
-
-- **Chrome**: `COMMAND+OPTION+J` (Mac) or `CTRL+SHIFT+J` (Windows).
-- **Firefox**: `COMMAND+OPTION+K` (Mac) or `CTRL+SHIFT+K` (Windows) and then click on the **Console** tab.
-- **Safari**: `COMMAND+OPTION+I` (Mac) or `CTRL+ALT+I` (Windows) and then click on the **Console** tab.
-- **IE**: `F12` and then click on the **Console** tab.
-
-### Is there a size limit on requests?
-
-Yes, 32KB per message.
-
-### If `analytics.js` fails to load, are callbacks not fired?
-
-In the event that `analytics.js` does not load, callbacks passed into your API calls do not fire. This is as designed, because the purpose of callbacks are to provide an estimate that the event was delivered and if the library never loads, the events won't be delivered.
-
-### Why do I see a network request to `/m`?
-In May 2018, we're rolling out a change to analytics.js that allows us to collect client side performance metrics in analytics.js. This includes metrics such as:
-
-- When client side integrations are initialized and when they fail
-- When messages are sent to client side integrations and when they fail
-
-We added these metrics so that we can proactively identify and resolve issues with individual client-side integrations. These metrics are connected to alerts that notify our on-call engineers so we can take action on these quickly.
-
-There should be no noticeable impact to your data flow. You may notice analytics.js make an extra network request in the network tab to carry the metrics data to our servers. This should be very infrequent since the data is sampled and batched every 30 seconds, and should not have any impact of website performance.
-
-### How are properties with `null` and `undefined` values treated?
-We use the [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) method under the hood. Property values set to `null` or `undefined` are treated in accordance with the expected behaviour for the standard method:
-
-```js
-console.log(JSON.stringify({ x: null, y: 6 }));
-// expected output: "{"x":null,"y":6}"
-
-console.log(JSON.stringify({ x: undefined, y: 6 }));
-// expected output: "{"y":6}"
-```
-
-### Known Issues:
-
-[Review and contribute to these on Github](https://github.com/segmentio/analytics.js/issues)
