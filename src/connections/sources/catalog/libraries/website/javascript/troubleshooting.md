@@ -63,7 +63,7 @@ We guarantee support for Internet Explorer 9 and higher for Analytics.js. Keep i
 
 ## Is your web site deployed under a domain on the Public Suffix List?
 
-The [Public Suffix List](https://publicsuffix.org/list/) is a catalog of certain Internet effective top-level domains--enumerating all domain suffixes controlled by registrars.
+The [Public Suffix List](https://publicsuffix.org/list/) is a catalog of certain Internet effective top-level domains, enumerating all domain suffixes controlled by registrars.
 
 The implications of these domain suffixes is that first party cookies cannot be set on them. Meaning, foo.example.co.uk can share cookie access with bar.example.co.uk, but example.co.uk should be walled off from cookies at example2.co.uk. The latter two domains could be registered by different owners.
 

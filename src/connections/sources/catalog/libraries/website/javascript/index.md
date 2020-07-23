@@ -8,45 +8,6 @@ strat: ajs
 ---
 
 Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-	- [Getting Started](#getting-started)
-	- [Basic tracking methods](#basic-tracking-methods)
-		- [Identify](#identify)
-		- [Track](#track)
-			- [Track Link](#track-link)
-			- [Track Form](#track-form)
-		- [Page](#page)
-			- [Default Page Properties](#default-page-properties)
-		- [Group](#group)
-		- [Alias](#alias)
-	- [Utility Methods](#utility-methods)
-		- [Ready](#ready)
-		- [Debug](#debug)
-		- [Emitter](#emitter)
-		- [Extending Timeout](#extending-timeout)
-		- [Reset or Logout](#reset-or-logout)
-	- [Managing identity data](#managing-identity-data)
-		- [Segment ID Persistence](#segment-id-persistence)
-		- [Anonymous IDs](#anonymous-ids)
-		- [Retrieving the Anonymous ID](#retrieving-the-anonymous-id)
-		- [Setting the Anonymous ID](#setting-the-anonymous-id)
-		- [Refreshing the Anonymous ID](#refreshing-the-anonymous-id)
-		- [Context and Traits](#context-and-traits)
-		- [User and Group Information](#user-and-group-information)
-		- [Clearing Traits](#clearing-traits)
-		- [Anonymizing IP](#anonymizing-ip)
-	- [Managing data flow with the Integrations object](#managing-data-flow-with-the-integrations-object)
-		- [Load Options](#load-options)
-	- [Retries](#retries)
-	- [Proxying Analytics.js](#proxying-analyticsjs)
-	- [Plugins](#plugins)
-	- [Cross-Subdomain Analytics](#cross-subdomain-analytics)
-	- [Analytics.js Performance](#analyticsjs-performance)
-		- [Bundle size](#bundle-size)
-
-<!-- /TOC -->
-
 
 ## Getting Started
 
@@ -56,7 +17,7 @@ Read through the [Analytics.js QuickStart Guide](/docs/connections/sources/catal
 
 The basic tracking methods below are the building blocks of your Segment tracking. They include [Identify](#identify), [Track](#track), [Page](#page), [Group](#group), and [Alias](#alias), as described below.
 
-(These names may seem familar because these are the basic methods covered by the [Segment Spec](/docs/connections/spec/). The documentation on this page explains how to use these methods in Analytics.js specifically.)
+These names may seem familar because these are the basic methods covered by the [Segment Spec](/docs/connections/spec/). The documentation on this page explains how to use these methods in Analytics.js specifically.
 
 ### Identify
 
