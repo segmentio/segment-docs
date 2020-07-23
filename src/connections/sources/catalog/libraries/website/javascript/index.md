@@ -8,60 +8,70 @@ strat: ajs
 ---
 
 Analytics.js, Segment's Javascript source, makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
-
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 	- [Getting Started](#getting-started)
-	- [Identify](#identify)
-	- [Track](#track)
-	- [Page](#page)
-		- [Default Page Properties](#default-page-properties)
-	- [Group](#group)
-	- [Alias](#alias)
-	- [Ready](#ready)
-	- [Selecting destinations with the Integrations object](#selecting-destinations-with-the-integrations-object)
-	- [Load Options](#load-options)
-	- [User & Group Information](#user-group-information)
-		- [Clearing Traits](#clearing-traits)
+	- [Basic tracking methods](#basic-tracking-methods)
+		- [Identify](#identify)
+		- [Track](#track)
+			- [Track Link](#track-link)
+			- [Track Form](#track-form)
+		- [Page](#page)
+			- [Default Page Properties](#default-page-properties)
+		- [Group](#group)
+		- [Alias](#alias)
+	- [Utility Methods](#utility-methods)
+		- [Ready](#ready)
+		- [Debug](#debug)
+		- [Emitter](#emitter)
+		- [Extending Timeout](#extending-timeout)
 		- [Reset or Logout](#reset-or-logout)
-	- [Cross-Subdomain Analytics](#cross-subdomain-analytics)
-	- [Anonymous ID](#anonymous-id)
+	- [Managing identity data](#managing-identity-data)
+		- [Segment ID Persistence](#segment-id-persistence)
+		- [Anonymous IDs](#anonymous-ids)
 		- [Retrieving the Anonymous ID](#retrieving-the-anonymous-id)
 		- [Setting the Anonymous ID](#setting-the-anonymous-id)
 		- [Refreshing the Anonymous ID](#refreshing-the-anonymous-id)
-	- [Debug](#debug)
-	- [Emitter](#emitter)
-		- [Track Link](#track-link)
-		- [Track Form](#track-form)
-	- [Extending Timeout](#extending-timeout)
-	- [Performance](#performance)
-		- [Bundle size](#bundle-size)
+		- [Context and Traits](#context-and-traits)
+		- [User and Group Information](#user-and-group-information)
+		- [Clearing Traits](#clearing-traits)
+		- [Anonymizing IP](#anonymizing-ip)
+	- [Managing data flow with the Integrations object](#managing-data-flow-with-the-integrations-object)
+		- [Load Options](#load-options)
 	- [Retries](#retries)
-	- [Anonymizing IP](#anonymizing-ip)
-	- [Proxy](#proxy)
+	- [Proxying Analytics.js](#proxying-analyticsjs)
 	- [Plugins](#plugins)
-	- [Context & Traits](#context-traits)
-	- [Segment ID Persistence](#segment-id-persistence)
+	- [Cross-Subdomain Analytics](#cross-subdomain-analytics)
+	- [Analytics.js Performance](#analyticsjs-performance)
+		- [Bundle size](#bundle-size)
 
 <!-- /TOC -->
+
+
 ## Getting Started
 
 Read through the [Analytics.js QuickStart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/) which explains how to add Analytics.js to your site in just a few minutes. Once you've installed the library, read on for the detailed API reference!
 
-## Identify
+## Basic tracking methods
 
-The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can see [an `identify` example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
+The basic tracking methods below are the building blocks of your Segment tracking. They include [Identify](#identify), [Track](#track), [Page](#page), [Group](#group), and [Alias](#alias), as described below.
+
+(These names may seem familar because these are the basic methods covered by the [Segment Spec](/docs/connections/spec/). The documentation on this page explains how to use these methods in Analytics.js specifically.)
+
+### Identify
+
+The `identify` method is how you link your users, and their actions, to a recognizable `userId` and `traits`. You can see [an `identify` example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
 > note ""
-> We recommend against using `identify` for anonymous visitors to your site. Analytics.js automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors. It is attached to all `page` and `track` events both before and after an `identify`.
+> Segment recommends _against_ using `identify` for anonymous visitors to your site. Analytics.js automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors, which is attached to all `page` and `track` events both before and after an `identify`.
 
-`identify` method definition:
+The Identify method follows the format below:
 
 ```js
 analytics.identify([userId], [traits], [options], [callback]);
 ```
 
-The `identify` call has the following fields:
+The Identify call has the following fields:
 
 <table>
   <tr>
@@ -74,7 +84,7 @@ The `identify` call has the following fields:
     <td>`traits`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify).</td>
+    <td>A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify/).</td>
   </tr>
   <tr>
     <td>`options`</td>
@@ -91,9 +101,9 @@ The `identify` call has the following fields:
 </table>
 
 
-By default, traits are cached in the browser's local storage and attached to each subsequent `identify` call. For example, you might do that when someone signs up for a newsletter but hasn't yet created an account on your site:
+By default, traits are cached in the browser's `localStorage` and  are attached to each subsequent Identify call.
 
-Example `identify` with hard-coded information:
+For example, you might call Identify when someone signs up for a newsletter, but hasn't yet created an account on your site. The example below shows an Identify call (using hard-coded traits) that you might send in this case.
 ```js
 analytics.identify({
   nickname: 'Amazing Grace',
@@ -102,7 +112,7 @@ analytics.identify({
 });
 ```
 
-and when the user completes sign up:
+Then, when the user completes the sign up process, you might see the following:
 
 ```js
 analytics.identify('12091906-01011992', {
@@ -122,11 +132,11 @@ analytics.identify('12091906-01011992', function(){
 });
 ```
 
-## Track
+### Track
 
-The Track method lets you record any actions your users perform. You can [see a track example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track/).
+The Track method lets you record actions your users perform. You can [see a track example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track/).
 
-Track method definition:
+The Track method follows the format below:
 
 ```js
 analytics.track(event, [properties], [options], [callback]);
@@ -161,7 +171,7 @@ The `track` call has the following fields:
   </tr>
 </table>
 
-The only required argument to track in Analytics.js is an event name string. You can read more about [how we recommend naming your events](/docs/connections/spec/track#event).
+The only required argument in Analytics.js is an _event name string_. You can read more about [how Segment recommends you name events](/docs/connections/spec/track#event).
 
 Example Track call:
 
@@ -174,18 +184,97 @@ analytics.track('Article Completed', {
 
 For more information about choosing which events to track, event naming and more, check out [Analytics Academy](https://segment.com/academy/)
 
-The only required argument to `track` in Analytics.js is an `event` name string. Read more about how we recommend [naming your events](/docs/connections/spec/track#event).
+The only required argument on Track calls in Analytics.js is an `event` name string. Read more about how Segment recommends [naming your events](/docs/connections/spec/track#event).
 
 
-## Page
+#### Track Link
 
-The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
+`trackLink` is a helper method that attaches the `track` call as a handler to a link.
+With `trackLink` a short timeout (300 ms) is inserted to give the `track` call more time. This is useful when a page would redirect before the `track` method could complete all requests.
 
-Because some destinations require a `page` call to instantiate their libraries, **you must call `page`** at least once per page load!  You may call it more than once if needed, (eg, on virtual page changes in a single page app).
+The `trackLink` method follows the format below.
 
-A `page` call is included by default as the final line in the Analytics.js [snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet). You may modify this `page` call within the guidelines below.
+```js
+analytics.trackLink(element, event, [properties])
+```
 
-`page` method definition:
+<table>
+  <tr>
+    <td>`element(s)` </td>
+    <td>Element or Array</td>
+    <td>DOM element to be bound with `track` method. You may pass an array of elements or jQuery objects. _Note: This must be an element, **not** a CSS selector._</td>
+  </tr>
+  <tr>
+    <td>`event` </td>
+    <td>String or Function</td>
+    <td>The name of the event, passed to the `track` method. Or a **function** that returns a string to be used as the name of the `track` event.</td>
+  </tr>
+  <tr>
+    <td>`properties` optional</td>
+    <td>Object or Function</td>
+    <td>A dictionary of properties to pass with the track method. Or a **function** that returns an object to be used as the `properties` of the event.</td>
+  </tr>
+</table>
+
+Example:
+
+```js
+var link = document.getElementById('free-trial-link');
+
+analytics.trackLink(link, 'Clicked Free-Trial Link', {
+  plan: 'Enterprise'
+});
+```
+
+#### Track Form
+
+`trackForm` is a helper method that binds a `track` call to a form submission.
+The `trackForm` method inserts a short timeout (300 ms) to give the `track` call more time to complete. This is useful to prevent a page from redirecting before the `track` method could complete all requests.
+
+The `trackForm` method follows the format below.
+
+```js
+analytics.trackForm(form, event, [properties])
+```
+
+<table>
+  <tr>
+    <td>`form(s)` Element or Array</td>
+    <td>Element or Array</td>
+    <td>The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._</td>
+  </tr>
+  <tr>
+    <td>`event` </td>
+    <td>String or Function</td>
+    <td>The name of the event, passed to the `track` method. Or a **function** that returns a string to be used as the name of the `track` event.</td>
+  </tr>
+  <tr>
+    <td>`properties` optional</td>
+    <td>Object or Function</td>
+    <td>A dictionary of properties to pass with the track method. Or a **function** that returns an object to be used as the `properties` of the event.</td>
+  </tr>
+</table>
+
+Example:
+
+```js
+var form = document.getElementById('signup-form');
+
+analytics.trackForm(form, 'Signed Up', {
+  plan: 'Premium',
+  revenue: 99.00
+});
+```
+
+### Page
+
+The [Page](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
+
+Because some destinations require a `page` call to instantiate their libraries, **you must call `page`** at least once per page load. You can call it more than once if needed, for example on virtual page changes in a single page app.
+
+A Page call is included by default as the final line in [the Analytics.js snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet). You can modify this `page` call within the guidelines below.
+
+The `page` method follows the format below.
 
 ```js
 analytics.page([category], [name], [properties], [options], [callback]);
@@ -227,7 +316,7 @@ The `page` call has the following fields:
 </table>
 
 
-### Default Page Properties
+#### Default Page Properties
 
 A few properties are automatically added to each `page` call.
 
@@ -235,7 +324,7 @@ A few properties are automatically added to each `page` call.
 analytics.page('Pricing');
 ```
 
-We translate that to the following without any extra work from you:
+Segment adds the following information without any extra work from you:
 
 ```js
 analytics.page('Pricing', {
@@ -246,7 +335,7 @@ analytics.page('Pricing', {
 });
 ```
 
-You can override these values. For example:
+You can override these values by explicitly setting them in your calls. For example:
 
 ```js
 analytics.page('Pricing', {
@@ -265,19 +354,19 @@ analytics.page('Pricing', {
 });
 ```
 
-## Group
+### Group
 
-The `group` method associates an [identified user](/docs/connections/sources/catalog/libraries/website/javascript/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other collective noun you come up with for the same concept.
+The Group method associates an [identified user](/docs/connections/sources/catalog/libraries/website/javascript/#identify) with a company, organization, project, workspace, team, tribe, platoon, assemblage, cluster, troop, gang, party, society or any other collective noun you come up with for the same concept.
 
 This is useful for <!-- Business-to-Business (B2B) -->tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
 
-Group method definition:
+The Group method follows the format below.
 
 ```js
 analytics.group(groupId, [traits], [options], [callback]);
 ```
-The `group` call has the following fields:
+The Group call has the following fields:
 
 <table>
   <tr>
@@ -318,17 +407,17 @@ analytics.group('UNIVAC Working Group', {
 });
 ```
 
-By default, group `traits` are cached in the browser's local storage and attached to each subsequent `group` call, similar to `identify` method behavior.
+By default, group `traits` are cached in the browser's local storage and attached to each subsequent `group` call, similar to how the `identify` method works.
 
-Find more details about `group` including the **`group` payload** in our [Spec](/docs/connections/spec/group/).
+Find more details about `group` including the **`group` payload** in [the Group Spec](/docs/connections/spec/group/).
 
-## Alias
+### Alias
 
-The `alias` method combines two previously unassociated user identities. Aliasing is generally handled automatically when you `identify` a user. However, some tools require an explicit `alias` call.
+The Alias method combines two previously unassociated user identities. Segment usually handles aliasing automatically when you call Identify on a user, however some tools require an explicit `alias` call.
 
-This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations. Most notably, you need to make alias calls to properly implement [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias). <!-- Dests question: is this still true? -->
+This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations such as [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias). <!-- TODO: LR Dests question: is this still true? Is there a list of the ones that require this?-->
 
-`alias` method definition:
+The Alias method follows the format below:
 
 ```js
 analytics.alias(userId, [previousId], [options], [callback]);
@@ -363,17 +452,28 @@ The Alias call has the following fields:
   </tr>
 </table>
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
+For more details about Alias, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
 
-## Ready
 
-The `ready` method allows you to pass in a callback that is called once all enabled destinations load, and once Analytics.js finishes initializing. It's like jQuery's `ready` method, except for destinations.
+## Utility Methods
 
-`ready` is still invoked if a destination throws an error during initialization, such as due to an expired API key or incorrect settings configuration. Doing so prevents blocking code listening for the `ready` callback.
+The Analytics.js utility methods help you change how Segment loads on your page. They include:
 
-Code inside the `ready` function only executes after `ready` has been emitted.
+- [Ready](#ready)
+- [Debug](#debug)
+- [On (Emitter)](#emitter)
+- [Timeout](#extending-timeout)
+- [Reset (Logout)](#reset-or-logout)
 
-If you would like to access end-tool library methods that do not match any Analytics.js methods, like adding an extra setting to Mixpanel, you can use a ready callback so that you're guaranteed to have access to the Mixpanel object, like so:
+### Ready
+
+The `ready` method allows you to pass in a method that is called once all enabled destinations load, and once Analytics.js finishes initializing. It's like [jQuery's `ready` method](https://api.jquery.com/ready/), except for destinations.
+
+`ready` is still invoked if a destination throws an error (for example for an expired API key or incorrect settings configuration) during initialization. Doing so prevents blocking code listening for the `ready` callback.
+
+The code in the `ready` function only executes after `ready` is emitted.
+
+If you want to access end-tool library methods that do not match any Analytics.js methods, like adding an extra setting to Mixpanel, you can use a `ready` callback so that you're guaranteed to have access to the Mixpanel object, like so:
 
 
 ```js
@@ -382,7 +482,7 @@ analytics.ready(function() {
 });
 ```
 
-`ready` method definition:
+The `ready` method uses the following format:
 
 ```js
 analytics.ready(callback);
@@ -398,131 +498,95 @@ The `ready` method has the following fields:
   </tr>
 </table>
 
+### Debug
 
-## Selecting destinations with the Integrations object
+Calling the `debug` method turns on debug mode, which logs helpful messages to the console. Refresh the page after you invoke `debug` to see the messages.
 
-An `integrations` object may be passed in the `options` of `alias`, `group`, `identify`, `page` and `track` methods, allowing selective destination filtering. By default all destinations are enabled.
-
-An example showing how to send a single message only to Intercom and Google Analytics:
-
+Enable:
 ```js
-analytics.identify('user_123', {
-  email: 'jane.kim@example.com',
-  name: 'Jane Kim'
-}, {
-  integrations: {
-    'All': false,
-    'Intercom': true,
-    'Google Analytics': true
-  }
-});
+analytics.debug();
 ```
 
-`'All': false` tells Segment not to send data to _any_ destinations by default, unless they're explicitly listed as `true` in the next lines.
-
-Conversely, an example how to send a single message to all integrations **except** Intercom and Google Analytics:
-
+Disable:
 ```js
-analytics.identify('user_123', {
-  email: 'jane.kim@example.com',
-  name: 'Jane Kim'
-}, {
-  integrations: {
-    'Intercom': false,
-    'Google Analytics': false
-  }
-});
+analytics.debug(false);
 ```
 
-It is not necessary to include `'All': true` in this call, as that is the default behavior. Instead, only specify which destinations should be excluded with a `false` flag for each.
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+### Emitter
 
-**NOTE:** Available at the business plan level, filtering `track` calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
+The global `analytics` object emits events whenever you call `alias`, `group`, `identify`, `track` or `page`.
 
-## Load Options
-
-The `.load` method in Analytics.js (the second line of the snippet) can also be modified to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations-with-the-integrations-object)), then we only load the integrations in that dictionary that are marked as enabled with the boolean value `true`.
-
-**IMPORTANT:** In order to use this feature, make sure that you have a snippet version 4.1.0 or higher. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet)
-
-An example:
+Use the `on` method to set listeners for these events and run your own custom code. This can be useful if you want to send data to a service for which Segment does not have a destination.
 
 ```js
-analytics.load('writekey', { integrations: { All: false, 'Google Analytics': true, 'Segment.io': true } })
+analytics.on(method, callback);
 ```
 
-This way, you can conditionally load integrations based on what customers opt into on your site.
+<table>
+  <tr>
+    <td>`method` </td>
+    <td>String</td>
+    <td>Name of the method to listen for</td>
+  </tr>
+  <tr>
+    <td>`callback` </td>
+    <td>Function</td>
+    <td>A function to execute after each the emitted method, taking three arguments: `event`, `properties`, `options`</td>
+  </tr>
+</table>
 
-A pseudocode example:
-
-```js
-onConsentDialogClosed(function(consentedTools){
-  analytics.load('writekey', { integrations: consentedTools })
-})
-```
-
-## User & Group Information
-
-Once Analytics.js loads, executing the `user` or `group` method functions returns information about the currently identified user or group.
-
-**Note:** To ensure these methods are available, wrap any reference to `user()` or `group()` in a [ready function block](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript#ready).
-
-Examples:
+Example:
 
 ```js
-analytics.ready(function() {
+analytics.on('track', function(event, properties, options) {
 
-  var user = analytics.user();
-  var id = user.id();
-  var traits = user.traits();
+  bigdataTool.push(['recordEvent', event]);
 
 });
 ```
 
-```js
-analytics.ready(function() {
+This method emits events _before_ they are processed by the Segment integration, and may not include some of the normalization Segment does on the client before sending the data to the Segment servers.
 
-  var group = analytics.group();
-  var id = group.id();
-  var traits = group.traits();
-
-});
-```
+> note ""
+> **Note:** Page event properties are stored in the `options` object.
 
 
-### Clearing Traits
+### Extending Timeout
 
-Passing an empty object to the `traits` object clears all cached traits for a User or Group.
-Remember, `traits` are cached by default by `identify` and `group` methods. You can clear the `traits` object for the user or group by passing `traits` an empty object:
+The `timeout` method sets the length (in milliseconds) of the callbacks and helper functions. This is helpful if you have multiple scripts that need to fire in your callback or `trackLink`, `trackForm` helper function.
+
+The example below sets the timeout to 500ms.
 
 ```js
-analytics.user().traits({});
+analytics.timeout(500);
 ```
-```js
-analytics.group().traits({});
-```
+
+> success ""
+> **Tip**: We recommend extending to 500ms if you're triggering ad network conversion pixels since those are often a bit slower to load.
 
 
 ### Reset or Logout
 
-Calling `reset` resets the `id`, including anonymousId, and clear `traits` for the currently identified user and group.
+Calling `reset` resets the `id`, including anonymousId, and clears `traits` for the currently identified user and group.
 
 ```js
 analytics.reset();
 ```
 
-The `reset` method only clears the cookies and `localStorage` created by Segment. It does not clear data from other integrated tools, as their native libraries might set their own cookies to manage user tracking, sessions, and manage state. To completely clear out the user session, see the documentation provided by those tools.
+The `reset` method only clears the cookies and `localStorage` created by Segment. It does not clear data from other integrated tools, as those native libraries might set their own cookies to manage user tracking, sessions, and manage state. To completely clear out the user session, see the documentation provided by those tools.
 
 Segment does not share `localStorage` across subdomains. If you use Segment tracking on multiple subdomains, you must call `analytics.reset()` for each subdomain to completely clear out the user session.
 
 
-## Cross-Subdomain Analytics
+## Managing identity data
 
-Analytics.js tracks across subdomains out of the box; all of our destinations fully support this feature.
+### Segment ID Persistence
+In order to ensure high fidelity, first-party customer data, we persist the Segment ID to local storage and use it as the Segment ID on the cookie whenever possible. Local Storage is meant for storing this type of first-party customer information.
 
+If a user comes back to your site after a cookie has expired, Analytics.js checks localStorage to see if an ID exists, and resets it as the user's ID in the cookie. If a user clears their cookies and localstorage, all of the IDs are removed.
 
-## Anonymous ID
+### Anonymous IDs
 
 Analytics.js generates a UUID and sets this as `anonymousId` for all new visitors to your site.
 
@@ -571,7 +635,7 @@ analytics.track('Email Clicked', {
 });
 ```
 
-You can also set the `anonymousId` immediately inside your Segment snippet, even before the `ready` method has returned:
+You can also set the `anonymousId` immediately inside your Segment snippet, even before the `ready` method returns:
 
  ```js
   analytics.load('writekey');
@@ -586,206 +650,16 @@ Keep in mind that setting the `anonymousId` in Analytics.js does not overwrite t
 
 A user's `anonymousId` refreshes on any of the following conditions:
 
-* A user clears their cookies _and_ `localstorage`
-* [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) is called during in the user's browser session
-* `analytics.identify()` is called with a userId that differs from the current userId
+* The user clears their cookies _and_ `localstorage`
+* Your site or app calls [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) during in the user's browser session
+* Your site or app calls `analytics.identify()` with a userId that differs from the current userId
 
 
-## Debug
+### Context and Traits
 
-Calling the `debug` method turns on debug mode, logging helpful messages to the console. You'll have to refresh the page after invoking `debug` to see the messages.
+The `options` dictionary contains a sub-dictionary called `context` which automatically captures data depending on the event- and source-type. See the [Context documentation](https://segment.com/docs/connections/spec/common/#context) to learn more.
 
-Enable:
-```js
-analytics.debug();
-```
-
-Disable:
-```js
-analytics.debug(false);
-```
-
-
-## Emitter
-
-The global `analytics` object emits events whenever you call `alias`, `group`, `identify`, `track` or `page`.
-Using the `on` method You can set listeners for these events and run your own custom code. Useful for sending data to a service for which Segment does not have a destination.
-
-```js
-analytics.on(method, callback);
-```
-
-<table>
-  <tr>
-    <td>`method` </td>
-    <td>String</td>
-    <td>Name of the method to listen for</td>
-  </tr>
-  <tr>
-    <td>`callback` </td>
-    <td>Function</td>
-    <td>A function to execute after each the emitted method, taking three arguments: `event`, `properties`, `options`</td>
-  </tr>
-</table>
-
-Example:
-
-```js
-analytics.on('track', function(event, properties, options) {
-
-  bigdataTool.push(['recordEvent', event]);
-
-});
-```
-
-Note that this emits events before they are processed by the Segment integration, and may not include some of the normalization we do on the client before uploading the data to Segment's servers.
-
-> note ""
-> **Note:** Page event properties are stored in the `options` object.
-
-### Track Link
-
-`trackLink` is a helper method that attaches the `track` call as a handler to a link.
-With `trackLink` a small timeout (300 ms) is inserted to give the `track` call more time. This is useful when a page would redirect before the `track` method could complete all requests.
-
-`trackLink` method definition:
-
-```js
-analytics.trackLink(element, event, [properties])
-```
-
-<table>
-  <tr>
-    <td>`element(s)` </td>
-    <td>Element or Array</td>
-    <td>DOM element to be bound with `track` method. You may pass an array of elements or jQuery objects. _Note: This must be an element, **not** a CSS selector._</td>
-  </tr>
-  <tr>
-    <td>`event` </td>
-    <td>String or Function</td>
-    <td>The name of the event, passed to the `track` method. Or a **function** that returns a string to be used as the name of the `track` event.</td>
-  </tr>
-  <tr>
-    <td>`properties` optional</td>
-    <td>Object or Function</td>
-    <td>A dictionary of properties to pass with the track method. Or a **function** that returns an object to be used as the `properties` of the event.</td>
-  </tr>
-</table>
-
-Example:
-
-```js
-var link = document.getElementById('free-trial-link');
-
-analytics.trackLink(link, 'Clicked Free-Trial Link', {
-  plan: 'Enterprise'
-});
-```
-
-
-### Track Form
-
-`trackForm` is a helper method that binds a `track` call to a form submission.
-With `trackForm` a small timeout (300 ms) is inserted to give the `track` call more time. Useful when a page would redirect before the `track` method can complete all requests.
-
-```js
-analytics.trackForm(form, event, [properties])
-```
-
-<table>
-  <tr>
-    <td>`form(s)` Element or Array</td>
-    <td>Element or Array</td>
-    <td>The form element to track or an array of form elements or jQuery objects. _Note: trackForm takes an element, not a CSS selector._</td>
-  </tr>
-  <tr>
-    <td>`event` </td>
-    <td>String or Function</td>
-    <td>The name of the event, passed to the `track` method. Or a **function** that returns a string to be used as the name of the `track` event.</td>
-  </tr>
-  <tr>
-    <td>`properties` optional</td>
-    <td>Object or Function</td>
-    <td>A dictionary of properties to pass with the track method. Or a **function** that returns an object to be used as the `properties` of the event.</td>
-  </tr>
-</table>
-
-Example:
-
-```js
-var form = document.getElementById('signup-form');
-
-analytics.trackForm(form, 'Signed Up', {
-  plan: 'Premium',
-  revenue: 99.00
-});
-```
-
-## Extending Timeout
-
-The `timeout` method sets the length (in milliseconds) of the callbacks and helper functions:
-
-```js
-analytics.timeout(500);
-```
-
-Set the timeout to 500ms. This is helpful if you have multiple scripts that need to fire in your callback or `trackLink`, `trackForm` helper function. We recommend extending to 500ms if you're triggering ad network conversion pixels since those are often a bit slower to load.
-
-
-## Performance
-
-The Analytics.js library and all of the destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async). This also means that Segment methods are fired asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a particular order.
-
-While many tools require access to the DOM or cookies, for our Zendesk, Salesforce, and MailChimp destinations, we do not load a native Javascript library! Instead data is sent from Segment's servers to the end-tools. We aim to expand on this front in the future.
-
-Only the libraries required for your **enabled** destinations are loaded. Whenever a destination is disabled, the custom version of Analytics.js stops requesting that library.
-
-Using Analytics.js does not offer a _huge_ performance benefit, but it is more performant than installing each of the destinations individually. And as more destinations move server-side, you'll receive more performance benefits automatically.
-
-One option, if you don't want to use any bundled 3rd-party tools, is to use our browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package.
-
-### Bundle size
-
-Segment's javascript snippet ([Analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)) has minimal impact on the size of the pages, and only increases the page size by about 1.1KB.
-
-However, the snippet then asynchronously requests and loads a customized javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your device-mode destinations. Because of this, the file size can vary depending on how many and which destinations you enable. Without any destinations, the `analytics.min.js` file is about 62KB. Each time you enable a destination, it can slightly increase the size of this file.
-
-## Retries
-
-When enabled, Analytics.js automatically retries network and server errors. With persistent retries, Analytics.js can:
-
-* Support offline tracking. Analytics.js queues your events and delivers them when the user comes back online.
-* Better handle network issues. If there happens to be a time where your application can't connect to Segment's API, we'll continue to store the events on the browser to ensure you don't lose any data.
-
-Analytics.js stores events in localStorage (falling back to in-memory storage when localStorage is unavailable), and retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. You can see more details about the retry logic [here](/docs/connections/destinations/#retries).
-
-## Anonymizing IP
-
-We collect IP address for client-side (iOS, Android, Analytics.js and Xamarin) events automatically.
-
-Passing a value for `options.context.ip` prevents our server from recording the IP address associated with the request.
-
-Example:
-
-```js
-  analytics.track("Order Completed", {}, { context: { ip: "0.0.0.0" }});
-```
-
-
-## Proxy
-
-To use a proxy server with Analytics.js, you'll first want to update the address in the snippet to use your own host instead of `cdn.segment.com`. Secondly, you'll need to write in to our support to change the endpoint we send events to from `api.segment.io` to your proxy instead. Make sure that your proxy behaves exactly like our real APIs. You can use our [proxy server](https://github.com/segmentio/segment-proxy) as an example of a correctly working proxy.
-
-## Plugins
-
-Segment offers 'plugins' across multiple video players that can quickly get you started collecting video events using Analytics.js. Check out the specific links below for more information:
-
-- [Youtube](/docs/connections/sources/catalog/libraries/website/plugins/youtube)
-- [Vimeo](/docs/connections/sources/catalog/libraries/website/plugins/vimeo)
-
-## Context & Traits
-
-Within the `options` dictionary, a sub-dictionary, `context`, exists. The context dictionary captures various data automatically depending on the event type and what your source type is. You can read more about the context dictionary [here](https://segment.com/docs/connections/spec/common/#context). Within context is an optional `traits` dictionary that contains traits about the current user. This is useful for associating information about a user from previous identify calls to a track or page event.
+The `context` object contains an optional `traits` dictionary that contains traits about the current user. You can use this to store information about a user from previous identify calls that you want to associate with Track or Page events.
 
 Consider this identify event:
 
@@ -796,7 +670,9 @@ analytics.identify('12091906-01011992', {
 });
 ```
 
-The traits on this event are `plan_id`. If you want these traits to appear on a subsequent track or page event that this user triggers, you can get this association by passing those traits into `context.traits` as follows:
+The "trait" on this event is `plan_id`. You can pass these traits into  `context.traits` so they appear on Track or Page events that the user triggers later.
+
+The example below shows how you could pass the `plan_id` as a trait so you can use it later.
 
 ```js
 analytics.track('Clicked Email', {
@@ -810,11 +686,179 @@ analytics.track('Clicked Email', {
 );
 ```
 
-This would append the `plan_id` trait to this track, but not name or email since they do not exist in context. This must be done for every susbequent event you want these traits to appear on.
+This appends the `plan_id` trait to this Track event, but does not add the name or email since they do not exist in `context` object. This must be done for every susbequent event you want these traits to appear on.
 
-**Note:** information in `context.traits` does _not_ appear in your downstream tools (eg, Salesforce, Mixpanel, Google Analytics, etc.); however, this data does appear in your warehouses and raw data tools (eg, RedShift, Postgres, Amazon S3, Tray.io, etc).
+Information passed in `context.traits` _does not_ appear in your downstream tools (such as Salesforce, Mixpanel, Google Analytics, etc.); however, this data _does_ appear in your [warehouses and storage destinations](/docs/connections/storage/).
 
-## Segment ID Persistence
-In order to ensure high fidelity, first-party customer data, we persist the Segment ID to local storage and use it as the Segment ID on the cookie whenever possible. Local Storage is meant for storing this type of first-party customer information.
 
-If a user comes back to your site after a cookie has expired, Analytics.js checks localStorage to see if an ID exists, and resets it as the user's ID in the cookie. If a user clears their cookies and localstorage, all of the IDs are removed.
+### User and Group Information
+
+Once Analytics.js loads, you can use the `user` or `group` method to return information about the currently identified user or group.
+
+> success ""
+> **Tip:** You can wrap any reference to `user()` or `group()` in a [ready function block](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript#ready) to ensure that Analytics.js has fully loaded so these methods are available.
+
+Examples:
+
+```js
+analytics.ready(function() {
+
+  var user = analytics.user();
+  var id = user.id();
+  var traits = user.traits();
+
+});
+```
+
+```js
+analytics.ready(function() {
+
+  var group = analytics.group();
+  var id = group.id();
+  var traits = group.traits();
+
+});
+```
+
+### Clearing Traits
+
+You can pass an empty object to the `traits` object to clear all cached traits for a User or Group.
+
+Traits are cached by default when you call the Identify and Group methods. You can clear the `traits` object for the user or group by passing `traits` an empty object:
+
+```js
+analytics.user().traits({});
+```
+```js
+analytics.group().traits({});
+```
+
+
+
+### Anonymizing IP
+
+Segment automatically collects IP address for device-based (iOS, Android, Analytics.js and Xamarin) events.
+
+You can pass a value for `options.context.ip` to prevent the Segment systems from recording the IP address for the request.
+
+Example:
+
+```js
+  analytics.track("Order Completed", {}, { context: { ip: "0.0.0.0" }});
+```
+
+
+
+## Managing data flow with the Integrations object
+
+> success ""
+> **Tip**: There are many ways to change how your data flows without having to change your code. See [Filtering Data](/docs/guides/filtering-data/) to learn more.
+
+You can pass an `integrations` object in the `options` of Alias, Group, Identify, Page and Track <!--TODO: Lr note, not screen?--> methods to send data to only the selected destinations. By default all destinations are enabled.
+
+The example below sends a message only to Intercom and Google Analytics.
+
+```js
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
+}, {
+  integrations: {
+    'All': false,
+    'Intercom': true,
+    'Google Analytics': true
+  }
+});
+```
+
+`'All': false` tells Segment not to send data to _any_ destinations by default, unless they're explicitly listed as `true` in the next lines.
+
+As an opposite example, the snippet below sends a message to all integrations _except_ Intercom and Google Analytics.
+
+```js
+analytics.identify('user_123', {
+  email: 'jane.kim@example.com',
+  name: 'Jane Kim'
+}, {
+  integrations: {
+    'Intercom': false,
+    'Google Analytics': false
+  }
+});
+```
+
+You don't need to include `'All': true` in this call because it is implied as the default behavior. Instead, only list the destinations that you want to exclude, with a `false` flag for each.
+
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (for example, "AdLearn Open Platform", "awe.sm", "MailChimp", etc). If a destination has more than one acceptable name, this appears in the documentation for that destination.
+
+> success ""
+> **Tip:** Business tier customers can filter Track calls from the Source Schema page in the Segment UI. We recommend that you use the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
+
+
+### Load Options
+
+You can modify the `.load` method in Analytics.js (the second line of the snippet) to take a second argument. If you pass an object with an `integrations` dictionary (matching the format [above](#selecting-destinations-with-the-integrations-object)), then Segment only loads the integrations in that dictionary that are marked as enabled with the boolean value `true`.
+
+An example:
+
+```js
+analytics.load('writekey', { integrations: { All: false, 'Google Analytics': true, 'Segment.io': true } })
+```
+
+> info ""
+> **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet).
+
+This way, you can conditionally load integrations based on what customers opt into on your site. The pseudocode example below shows how you might load only the tools the user consented to.
+
+```js
+onConsentDialogClosed(function(consentedTools){
+  analytics.load('writekey', { integrations: consentedTools })
+})
+```
+
+
+## Retries
+
+When enabled, Analytics.js automatically retries network and server errors. With persistent retries, Analytics.js can:
+
+- **Support offline tracking**. Analytics.js queues your events and delivers them when the user comes back online.
+- **Better handle network issues**. If there happens to be a time where your application can't connect to Segment's API, we'll continue to store the events on the browser to ensure you don't lose any data.
+
+Analytics.js stores events in `localStorage` and falls back to in-memory storage when `localStorage` is unavailable. It retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. See the [destination Retries documentation](/docs/connections/destinations/#retries) to learn more.
+
+
+## Proxying Analytics.js
+
+To use a proxy server with Analytics.js, first change the `cdn.segment.com` address in the snippet to use your own host. Next, [contact Segment Product Support](https://segment.com/help/contact/) and request to change the endpoint Segment sends your events to so that is uses your proxy instead. Make sure that your proxy behaves exactly like the Segment APIs. You can use [the Segment proxy server](https://github.com/segmentio/segment-proxy) as an example of a correctly-working proxy.
+
+## Plugins
+
+Segment offers video player 'plugins' so you can quickly collect video events using Analytics.js. See the specific documentation below to learn more:
+
+- [Youtube](/docs/connections/sources/catalog/libraries/website/plugins/youtube)
+- [Vimeo](/docs/connections/sources/catalog/libraries/website/plugins/vimeo)
+
+## Cross-Subdomain Analytics
+
+Analytics.js tracks across subdomains out of the box; all of our destinations fully support this feature.
+
+
+## Analytics.js Performance
+
+The Analytics.js library and all of the destination libraries are loaded with the [HTML script `async` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async). This also means that Segment methods are fired asynchronously, so you should adjust your code accordingly if you require that events be sent from the browser in a specific order.
+
+While many tools require access to the DOM or cookies, for our Zendesk, Salesforce, and MailChimp destinations, Segment does not need to load a native Javascript library! Instead data is sent from Segment's servers to the end-tools. We aim to expand on this front in the future.
+
+Segment only loads the libraries required for your **enabled** destinations. When you disable a destination, the custom version of Analytics.js loaded on your site stops requesting that library.
+
+Using Analytics.js does not offer a _huge_ performance benefit, but it is more performant than installing each of the destinations individually. And as more destinations move to accept data directly from Segment, you'll receive more performance benefits automatically.
+
+One option, if you don't want to use any bundled third-party tools, is to use our browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package. <!-- TODO LR note: WTF does "browserified" mean-->
+
+### Bundle size
+
+Segment's Analytics.js javascript snippet only increases the page size by about 1.1KB.
+
+However, the snippet asynchronously requests and loads a customized javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your [device-mode destinations](/docs/connections/destinations/#connection-modes). The size of this file changes depending on how many and which destinations you enable.
+
+Without any destinations enabled, the `analytics.min.js` file is about 62KB. Each time you enable a destination, the file's size may increase slightly.
