@@ -42,7 +42,7 @@ Segment sends Page calls as tracked events for each [user](https://app.windsor.i
 
 If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](https://segment.com/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
 
-```obj-c
+```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
