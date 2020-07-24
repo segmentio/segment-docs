@@ -23,8 +23,7 @@ The Timestamp destination settings are:
 
 ### Analytics.js - Device Mode
 
-<!-- TODO - Brie - check this section.
-In device-mode, you bundle the Adobe Analytics SDK with Analytics.js so it is included on your site or app. When you do this, Analytics.js events are routed to the API endpoints for Adobe and send data both to the Segment servers, and to the Adobe systems.-->
+If you're using Analytics.js in device-mode, Segment "wraps" the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics [`Appmeasurement.js` library](https://docs.adobe.com/content/help/en/analytics/implementation/js/overview.html). For more information on choosing a connection mode see our section on "Choosing between Device-mode and Cloud-mode" in [Planning for Adobe Analytics](index/#planning-for-adobe-analytics). In this section we will discuss how identity resolution is  handled if you are  using  Analytics.js in device-mode.  
 
 You can enable **Drop Visitor ID** from the Segment app to prevent Adobe from creating a new user profile when you set `window.s.visitorID` with a custom value. However if you're only using Analytics.js to send data to Adobe, this can make it difficult to combine anonymous and identified users inside your reports.
 
@@ -38,7 +37,7 @@ Once you `identify` your user, Segment sets the `visitorId` variable to your `us
 
 ### Cloud Mode - Server Side
 
-<!-- TODO Same comment plus we should distinguish between if we mean using a source installed on a server, sending through Segment's cloud, or both. "When you use cloud-mode to connect to Adobe Analytics, your sources... and this results in...  which means you need to..."-->
+In Cloud Mode, you can send data through the Segment servers where it is then mapped and sent on to Adobe Analytics. "Cloud-mode" data is data sent _without_ bundling the Segment-Adobe-Analytics SDK. You enable Cloud-mode from the Adobe Analytics source settings in the Segment app. It can be sent using mobile libraries, Analytics.js, and other server-based sources. Cloud mode data is sent to Adobe using Adobe's data insertion API in XML format. For more information on choosing a connection mode see our section on "Choosing between Device-mode and Cloud-mode" in [Planning for Adobe Analytics](index/#planning-for-adobe-analytics). In this section we will discuss how identity resolution is handled if you are using a Cloud Mode connection.
 
 There are several options for tracking your users on the server. If you only track logged-in users, you can send their `userId` in your events to ensures that the events are attributed to the correct user. If you're tracking anonymous users, Segment sends the `s_vi` cookie from Adobe if you pass it under `context['Adobe Analytics'].visitorId` as the `visitorId`. If you do not pass as `visitorID`, Segment uses the `userId` if present, or as a last resort uses the Segment `anonymousId`. The Segment `anonymousId` is different from the anonymous `s_vi` value that Adobe Analytics auto-generates and uses on the client as an anonymous ID.
 
