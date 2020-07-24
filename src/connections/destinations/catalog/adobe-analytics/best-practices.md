@@ -87,7 +87,7 @@ If you don't specify a custom linkName in the integration specific object in the
 
 ### Setting the event LinkURL
 
-To pass a custom LinkUrl to Adobe Analytics, pass it as a string in the `integrations.Adobe Anlaytics` object of your Segment event. The example below sets the custom linkURLs to "example.com/example".
+To pass a custom LinkUrl to Adobe Analytics, pass it as a string in the `integrations.Adobe Analytics` object of your Segment event. The example below sets the custom linkURLs to "example.com/example".
 
 ```javascript
 "integrations": {
@@ -102,4 +102,4 @@ If you don't specify a custom linkUrl in the integration specific object in the 
 ## Populating Custom Links report with server side data
 
 Since Segment cannot automatically track page data for **server side** calls, you must manually pass `context.page.url` if you want to populate the **Custom Links** report in Adobe Analytics.
-<!-- this is a lot to parse. can we explain when you might do this?-->
+<!-- this is a lot to parse. can we explain when you might do this? -->
