@@ -31,7 +31,7 @@ compile 'com.segment.analytics.android.integrations:adobe-analytics:1.0.0'
 
 
 iOS:
-```objective-c
+```objc
 pod 'Segment-Adobe-Analytics', '1.1.0-beta'
 ```
 
@@ -79,7 +79,7 @@ Config.setUserIdentifier("123");
 
 And on iOS:
 
-```objective-c
+```objc
 [ADBMobile setUserIdentifier:@"123"];
 ```
 
@@ -93,7 +93,7 @@ Analytics.trackState("Home Screen", <properties mapped in contextData>);
 
 And on iOS:
 
-```objective-c
+```objc
 [self.ADBMobile trackState:@"Home Screen" data:<properties mapped in contextData>];
 ```
 
@@ -107,7 +107,7 @@ Analytics.trackEvent("Clicked A Button", <properties mapped in contextData>);
 
 And on iOS:
 
-```objective-c
+```objc
 [ADBMobile trackAction:@"Clicked A Button" data:<properties mapped in contextData>];
 ```
 
@@ -119,7 +119,7 @@ Calling `reset` sets your user's `visitorId` to  `null`. `null` is Adobe's defau
 Config.setUserIdentifier(null);
 ```
 
-```objective-c
+```objc
 [ADBMobile trackingClearCurrentBeacon];
 ```
 
@@ -133,6 +133,6 @@ Analytics.sendQueuedHits();
 
 And on iOS:
 
-```objective-c
+```objc
 [ADBMobile trackingSendQueuedHits];
 ```
