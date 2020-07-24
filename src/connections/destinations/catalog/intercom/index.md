@@ -243,7 +243,7 @@ Segment supports Intercom's `reset` method only for Device-mode Mobile sources. 
 
 On iOS:
 
-```objective-c
+```objc
   [Intercom reset];
 ```
 
@@ -429,7 +429,7 @@ analytics.onIntegrationReady("Intercom", new Callback() {
 });
 ```
 
-```objective-c
+```objc
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(integrationDidStart:) name:SEGAnalyticsIntegrationDidStart object:nil];
 
 - (void)integrationDidStart:(nonnull NSNotification *)notification

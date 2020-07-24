@@ -61,7 +61,7 @@ Analytics.with(this).track("Video Playback Started",
 
 The following example shows how to set an integration-specific option on iOS:
 
-```objective-c
+```objc
 options:@{
   @"integrations": @{
    @"Adobe Analytics" : @{

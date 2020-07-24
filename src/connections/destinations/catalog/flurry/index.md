@@ -28,7 +28,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 
 An example iOS call would look like:
 
-```objective-c
+```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
