@@ -100,7 +100,15 @@ analytics.track('Order Completed', {
 });
 ```
 {% endcodeexampletab %}
-{% codeexampletab Output Adobe Analytics XML %}
+{% codeexampletab Settings JSON %}
+
+```json
+<TODO B to add setttings JSON>
+
+```
+
+{% endcodeexampletab %}
+{% codeexampletab Outbound Server-Side XML Payload %}
 
 ```xml
 <TODO B to find/generate output XML>
@@ -110,7 +118,7 @@ analytics.track('Order Completed', {
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-Segment does the follwing:
+When you use Segment's Analytics.js or another Device Mode integration, Segment does the follwing:
 
 1. Sets `window.s.products` with the product description string.
 
