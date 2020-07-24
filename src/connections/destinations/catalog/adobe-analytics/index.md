@@ -49,7 +49,7 @@ To set up Adobe Analytics as a destination for your Segment data, Segment needs 
 
 - If you're collecting data from mobile devices, you can download the `ADBMobileConfig.json` file instead of specifying these settings in the UI which contains that information. Follow the instructions in Adobe's documentation, [here for iOS](https://marketing.adobe.com/resources/help/en_US/mobile/ios/dev_qs.html), and [here for Android](https://marketing.adobe.com/resources/help/en_US/mobile/android/dev_qs.html).
 
-Once you've done that, you can either use the default Ecommerce Spec and the mappings Segment provides, or write custom Page and Track events, and then configure how they map to your Adobe Analytics fields and settings. For more information on how to get started with implementation see the [Implementing Segment for Adobe Analytics](settings/) guide.
+Once you've done that, you can either use the default Ecommerce Spec and the mappings Segment provides, or write custom Page and Track events, and then configure how they map to your Adobe Analytics fields and settings. For more information on how to get started with implementation see the [Mapping Segment to Adobe Analytics](settings/) guide.
 
 ### When Will I See Data?
 

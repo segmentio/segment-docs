@@ -1,5 +1,5 @@
 ---
-title: Implementing Segment for Adobe Analytics
+title: Mapping Segment to Adobe Analytics
 strat: adobe
 ---
 
