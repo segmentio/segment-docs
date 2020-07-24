@@ -48,7 +48,7 @@ We know this is daunting territory, so don't hesitate to [contact us directly fo
 
 #### No Fallbacks for VisitorId Setting - Cloud Mode Only
 
-Segment introduced a new **No Fallbacks for Visitor ID** setting to help with the transition from using the Adobe Analytics `visitorID` to using the Experience Cloud ID (ECID). This can also reduce inflated user counts<!-- how?-->. <!-- Probably also want to cover what sorts of visitorID we can use? (Segment userID and anonId, s_vi, visitorID, visitorID in the integrations object, ECID? do we have this in another doc we can copy/paste in?) why are timestamps involved here? and what does No Fallbacks do?-->
+Segment introduced a new **No Fallbacks for Visitor ID** setting to help with the transition from using the Adobe Analytics `visitorID` to using the Experience Cloud ID (ECID). If a `visitorId` is not explicitly sent in the integration specific object in your payload (ie. `context["Adobe Analytics"].visitorId`), Segment will fallback  to settinig the `<visitorID>` tag to `userId` (or `anonymousId`, if the call is anonymous). You can use this setttinig to indicate that you only want the `<visitorId>` tag to be set with the `visitorId` value sent in your integration specific object.  Enabling this will help to reduce inflated user counts that are set with a Segment `userId`. 
 
 If you disable the **Drop Visitor ID** setting, Segment sends a `<visitorID>` in these three scenarios:
 <!-- L Comment: does the customer have control over this setting about timestamps? if not, reword. I think we mean 'if the customer's call includes..' -->
@@ -58,7 +58,7 @@ If you disable the **Drop Visitor ID** setting, Segment sends a `<visitorID>` in
 - A customer is using hybrid timestamp mode and is sending `visitorId`
 - A customer is using hybrid timestamp mode and is sending `visitorId` and timestamp
 
-**NOTE:** If one of these three scenarios is met and a customer does not send a `visitorId` in the integrations object, Segment falls back to setting the visitorId to either a Segment `userId` or `anonymousId`. This timestamp-dependent functionality of when Segment sends a visitorID does not change when you enable **No Fallbacks for Visitor ID**. The **No Fallbacks for Visitor ID** setting is an added feature on top of that.
+**NOTE:** If one of these three scenarios is met and a customer does not send a `visitorId` in the integrations object, Segment falls back to setting the visitorId to either a Segment `userId`. This timestamp-dependent functionality of when Segment sends a visitorID does not change when you enable **No Fallbacks for Visitor ID**. The **No Fallbacks for Visitor ID** setting is an added feature on top of that.
 
 The **No Fallbacks for Visitor ID** setting functionality behaves as such, if a customer is sending data in one of the three above scenarios, Segment checks if the setting is enabled and if they are sending a marketingCloudVisitorId in the integrations object. If they meet both of those criteria Segment removes the fallback behavior and sets `<visitorID>` to the value passed in the destination specific setting for `visitorId`. If that value is not passed, it leaves it blank.
 
