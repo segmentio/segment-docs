@@ -399,7 +399,10 @@ At the moment, Segment only passes `publisher` as standard ad metadata. Segment 
 
 ## Custom Video Metadata
 
-You may send any custom metadata you wish along with any video event that accepts metadata. To send Custom Video Metadata please map the values you wish to send in the Context Data Variable mappings in the Segment Adobe Destination settings. Remember that although you do not need to set up standard video or ad metadata in your Adobe dashboard first, you **must** set up all custom video and ad metadata in Adobe before sending it. Adobe discards all metadata that have not been set up before being received in their system.
+You can send custom metadata with any video event that accepts metadata. To send Custom Video Metadata, map the values you want to send in the **Context Data Variable mappings** setting in the Adobe Destination settings in the Segment web app. 
+
+> warning ""
+> You do not need to map _standard_ video or ad metadata in your Adobe dashboard, you **must** set up all _custom_ video and ad metadata in Adobe before sending it. Adobe discards any metadata it receives that does not have a mapping.
 
 ### Custom Video Metadata Formatting
 
