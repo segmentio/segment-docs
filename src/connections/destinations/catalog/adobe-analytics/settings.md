@@ -103,16 +103,63 @@ analytics.track('Order Completed', {
 {% codeexampletab Settings JSON %}
 
 ```json
-<TODO B to add setttings JSON>
+{
+   "reportSuiteId":"segmenttestreportsuite",
+   "trackingServerUrl":"jimsbrims.sc.omtrdc.net",
+   "trackingServerSecureUrl":"jimsbrims.sc.omtrdc.net",
+   "useSecureServerUrl":false,
+   "timestampOption":"disabled",
+   "enableTrackPageName":true,
+   "productIdentifier":"name",
+   "disableVisitorId":false,
+   "preferVisitorId":false,
+   "sendBothTimestampVisitorId":false,
+   "events":[
 
+   ],
+   "customDelimiter":{
+
+   },
+   "removeFallbackVisitorId":false,
+   "useLegacyLinkName":true
+}
 ```
 
 {% endcodeexampletab %}
 {% codeexampletab Outbound Server-Side XML Payload %}
 
 ```xml
-<TODO B to find/generate output XML>
-
+<request>
+   <scXmlVer>1.0</scXmlVer>
+   <reportSuiteID>segmenttestreportsuite</reportSuiteID>
+   <trackingServerUrl>jimsbrims.sc.omtrdc.net</trackingServerUrl>
+   <visitorID>user-id</visitorID>
+   <pageName>None</pageName>
+   <pageURL>http://www.mysite.com</pageURL>
+   <ipAddress>0.0.0.0</ipAddress>
+   <currencyCode>USD</currencyCode>
+   <contextData>
+      <total>30</total>
+      <transactionID>50314b8e9bcf000000000000</transactionID>
+      <purchaseID>50314b8e9bcf000000000000</purchaseID>
+      <revenue>25</revenue>
+      <shipping>3</shipping>
+      <tax>2</tax>
+      <discount>2.5</discount>
+      <coupon>hasbros</coupon>
+      <currency>USD</currency>
+      <a>
+         <action>Order Completed</action>
+         <HourOfDay>0</HourOfDay>
+         <DayOfWeek>3</DayOfWeek>
+      </a>
+   </contextData>
+   <linkType>o</linkType>
+   <linkURL>http://www.mysite.com</linkURL>
+   <linkName>Link Name - http://www.mysite.com</linkName>
+   <events>purchase</events>
+   <products>Games;Monopoly: 3rd Edition;1;19.00,Electronics;Go Pro;2;198.00</products>
+</request>
 ```
 
 {% endcodeexampletab %}
@@ -126,7 +173,7 @@ When you use Segment's Analytics.js or another Device Mode integration, Segment 
 
    **Note**: You can choose whether to map the `name`, `sku`, or `id` for each item in the `products` array. So you could alternatively send product descriptions with `[category];[sku];[quantity];[total]`. To configure this option, go to your Adobe Analytics settings in Segment, locate the Advanced Options, and select the mapping from the **Product Identifier**. The `name` is the default identifier.
 
-   For the example above, we would set `window.s.products` to `'Games;Monopoly: 3rd Edition;1;19,Electronics;Go Pro;2;99'`.
+   For the example above, we would set `window.s.products` to `'Games;Monopoly: 3rd Edition;1;19,Electronics;Go Pro;2;198'`.
 
    The default fallback value for `quantity` is `1`, and for `price` it is `0`.
 
