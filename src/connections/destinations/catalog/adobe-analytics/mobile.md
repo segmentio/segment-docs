@@ -3,9 +3,9 @@ title: Setting up Adobe Analytics for Mobile
 strat: adobe
 ---
 
-Segment supports Adobe Analytics Mobile Services. With Segment, you don't need to package Adobe Analytics SDKs to take advantage of Adobe Analytics Mobile Services functionality.
+Segment supports Adobe Analytics Mobile Services. With Segment, you don't need to package Adobe Analytics SDKs to use Adobe Analytics Mobile Services features.
 
-To learn more about Segment's mobile libraries, check out the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios) and [Android](/docs/connections/sources/catalog/libraries/mobile/android) technical docs.
+To learn more about Segment's mobile libraries, see the [iOS](/docs/connections/sources/catalog/libraries/mobile/ios) and [Android](/docs/connections/sources/catalog/libraries/mobile/android) technical docs.
 
 The Segment Adobe-Analytics mobile SDKs are currently in beta. Please try them and [contact us](https://segment.com/help/contact/) with any feedback!
 

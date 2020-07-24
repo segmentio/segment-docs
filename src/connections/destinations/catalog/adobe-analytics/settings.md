@@ -3,12 +3,9 @@ title: Implementing Segment for Adobe Analytics
 strat: adobe
 ---
 
-## Data Mapping Model Overview
+This page explains in detail how to configure your Segment Adobe Analytics Destination settings to customzie how your Segment calls are formatted when they're sent to Adobe Analytics.
 
-As mentioned elsewheree, Segment uses a user-action data model, which uses different types of calls to track a user's different activities on a website or app. Adobe Analytics uses page views as the basic unit of activity, and specific data variables such as "props", eVars, lVars, and hVars to add details that allow more nuanced analysis.
-
-
-This page explains in detail how to configure your Segment Adobe Analytics Destination settings to customzie your Segment calls for Adobe Analytics.
+Segment uses a user-action data model, which uses different types of calls to track a user's different activities on a website or app. Adobe Analytics uses page views as the basic unit of activity, and specific data variables such as "props", eVars, lVars, and hVars to add details that allow more granular analysis. The Adobe Analytics destination settings in the Segment App allow you to create mappings between properties in your Segment calls and Adobe's expected format.
 
 <!-- TODO Brie: link to in mobile? 7. [Context Data Variables](#context-data-variables) -->
 
@@ -63,9 +60,6 @@ Segment sends the Ecommerce event data to Adobe just as it would send a standard
 Ecommerce properties such as `orderId` and `products` are also sent automatically. However, if you use other custom properties and want to send them to Adobe's `eVar`, `prop`, `hVar`, or `lVar` variables, you *do* need to map them as properties in your Segment Adobe Analytics destination settings.
 
 ### Example using Segment Ecommerce spec
-
-<!-- Should this be moved to a new section. Like What is happening to my events? -->
-<!-- LR note: Maybe a good place to use a tabbed example before and after? idk-->
 
 Given the sample `Order Completed` Segment event below, you can see how the original Track event is mapped to the Adobe event in the tab to the right.
 
@@ -292,12 +286,12 @@ The success event incrementor and merchandising string are determined by your Se
 
 The Segment Adobe Analytics Merchandising setting runs as follows:
 
-- Looks for the Segment `track` call event name, or for a `page` call, a `property.eventName`
+- Looks for the Segment event name if a `track` call, or for the `property.eventName`if a `page` call.
 - Maps to the Adobe event to send in as an increment or currency event.
 - Reads if the event is scoped to the product or event level.
 - _Optional_: Sets a value on the event. This value is the increment or currency to pass to Adobe.
   If you don't include a value, Segment sends the event without one, and Adobe understands this as an increment of `1`. If you configure a value and the value is not present on the `track` or `page` call, Segment does not send the event to Adobe.
-- Map of product eVars to set on the products string. This is only supported at the product level, as expected by Adobe Analytics. <!-- LR Note: this whole section could use work, but this part is especially confusing-->
+- Map of product eVars to set on the products string. This is only supported at the product level, as expected by Adobe Analytics. <!-- TODO LR Note: this whole section could use work, but this part is especially confusing-->
 
 > note ""
 > **Note**: Some events in the Ecommerce spec do not use the "products" array and product information is located in the top level property object, for example the [Product Added Spec](/docs/connections/spec/ecommerce/v2/#product-added). Make sure you specify `properties.key` as the Segment key in the mapping when adding an eVar for **Product Added**, **Product Removed**, and **Product Viewed**.
