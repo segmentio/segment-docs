@@ -7,7 +7,7 @@ This page contains best practices and tips for setting up and testing Adobe Anal
 
 ## Validating by Data by Component
 
-The following list contains tools you can use to validate datat coming from Segment and going to each different Adobe Analytics component
+The following list contains tools you can use to validate data coming from Segment and going to each different Adobe Analytics component
 
 - **Analytics.js** - [Adobe Experience Cloud Debugger](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj) and Chrome Developer Tools
 - **Other Segment server libraries** - Segment's in-app [Event Tester Tool](/docs/connections/test-connections/)
@@ -46,7 +46,7 @@ _Considerations_
 
 If you are setting up the Adobe Analytics destination in cloud-mode, you can pass in custom `linkTypes`, `linkNames` and `linkURLs`.
 
-**Note**: If you pass in the `visitorId` in a destination-specific `integration` object in your Segment Page or Track events, the `visitorId` passed persists on Page or Track calls that occur after an Identify call. This effectively supersedes the `visitorId` variable Segement would set to your `userId` after an Identify call.
+**Note**: If you pass in the `visitorId` in a destination-specific `integration` object in your Segment Page or Track events, the `visitorId` passed persists on Page or Track calls that occur after an Identify call. This effectively supersedes the `visitorId` variable Segment would set to your `userId` after an Identify call.
 
 We know this is daunting territory, so don't hesitate to [contact us directly for guidance](https://segment.com/help/contact/)!
 
@@ -70,7 +70,7 @@ If you pass in Segment events with a download (d or D) linkType, they appear the
 
 ### Setting the event linkName
 
-To pass in a custom LinkName to Adobe Analytics, pass it as a string in the `integrations.Adobe Anlaytics` object of your Segment event. The example below sets the custom linkname to "Click me".
+To pass in a custom LinkName to Adobe Analytics, pass it as a string in the `integrations.Adobe Analytics` object of your Segment event. The example below sets the custom linkname to "Click me".
 
 ```javascript
 "integrations": {
@@ -87,7 +87,7 @@ If you don't specify a custom linkName in the integration specific object in the
 
 ### Setting the event LinkURL
 
-To pass a custom LinkUrl to Adobe Analytics, pass it as a string in the `integrations.Adobe Anlaytics` object of your Segment event. The example below sets the custom linkURLs to "example.com/example".
+To pass a custom LinkUrl to Adobe Analytics, pass it as a string in the `integrations.Adobe Analytics` object of your Segment event. The example below sets the custom linkURLs to "example.com/example".
 
 ```javascript
 "integrations": {
@@ -102,4 +102,4 @@ If you don't specify a custom linkUrl in the integration specific object in the 
 ## Populating Custom Links report with server side data
 
 Since Segment cannot automatically track page data for **server side** calls, you must manually pass `context.page.url` if you want to populate the **Custom Links** report in Adobe Analytics.
-<!-- this is a lot to parse. can we explain when you might do this?-->
+<!-- this is a lot to parse. can we explain when you might do this? -->

@@ -72,7 +72,7 @@ Our Adobe Analytics device-mode destination code is open sourced on Github. Feel
 
 ### Initialization
 
-When you use Adobe Analytics with Analytics.js, Segment first checks to see if you have any global properties (such as `window.s_account`) or any properties on the `window.s` object, and uses them. However, if it doesnt find anything, it uses the **Report Suite ID**, **Tracking Server URL**, and **Tracking Server Secure URL** (optional) you defined in the destination settings in the Segment app.
+When you use Adobe Analytics with Analytics.js, Segment first checks to see if you have any global properties (such as `window.s_account`) or any properties on the `window.s` object, and uses them. However, if it doesn't find anything, it uses the **Report Suite ID**, **Tracking Server URL**, and **Tracking Server Secure URL** (optional) you defined in the destination settings in the Segment app.
 
 Once these required properties are set, Segment loads `appmeasurement.js` version 2.20.0.
 
@@ -137,7 +137,7 @@ Segment's server-side integration is not open-source. Let's explore what happens
 
    Segment also set your `context.locale` (which is automatically collected if using a mobile library) to `<language>`. Since mobile libraries also send your `traits` from previous `.identify()` calls inside the `context.traits`, Segment tries to send `<state>` and `<zip>` by looking up `context.traits.address.state` and `context.traits.postalCode` respectively, as noted in the [Identify spec](/docs/connections/spec/identify/). If these lookups fail, Segment uses the default `properties.state` and `properties.zip`.
 
-   For mobile libraries, since Segemtn can detect whether the event occurred while the user had a wifi connection, it also sends the `<connectionType>` as `lan/wifi`. All other events are treated as `Mobile Carrier` inside Adobe's Mobile Web Reports.
+   For mobile libraries, since Segment can detect whether the event occurred while the user had a wifi connection, it also sends the `<connectionType>` as `lan/wifi`. All other events are treated as `Mobile Carrier` inside Adobe's Mobile Web Reports.
 
    Segment also calculates the timezone offset from UTC/GMT as required by Adobe, and sends a `<timezone>` based on your `context.timezone` and the `timestamp` fields.
 

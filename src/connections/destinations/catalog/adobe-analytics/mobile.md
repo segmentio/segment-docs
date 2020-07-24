@@ -166,7 +166,7 @@ Analytics.trackState("Home Screen", <properties mapped in contextData>);
 
 ## Track on Mobile
 
-Whene you call `track`, Segment sends an Adobe `trackAction` event, and passes your event nameand any properties you mapped to Adobe, as context data values.
+When you call `track`, Segment sends an Adobe `trackAction` event, and passes your event name and any properties you mapped to Adobe, as context data values.
 The snippets below show what Segment does with this information, for iOS and Android.
 
 {% codeexample %}

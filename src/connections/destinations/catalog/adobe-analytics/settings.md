@@ -3,7 +3,7 @@ title: Implementing Segment for Adobe Analytics
 strat: adobe
 ---
 
-This page explains in detail how to configure your Segment Adobe Analytics Destination settings to customzie how your Segment calls are formatted when they're sent to Adobe Analytics.
+This page explains in detail how to configure your Segment Adobe Analytics Destination settings to customize how your Segment calls are formatted when they're sent to Adobe Analytics.
 
 Segment uses a user-action data model, which uses different types of calls to track a user's different activities on a website or app. Adobe Analytics uses page views as the basic unit of activity, and specific data variables such as "props", eVars, lVars, and hVars to add details that allow more granular analysis. The Adobe Analytics destination settings in the Segment App allow you to create mappings between properties in your Segment calls and Adobe's expected format.
 
@@ -162,7 +162,7 @@ analytics.track('Order Completed', {
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-When you use Segment's Analytics.js or another Device Mode integration, Segment does the follwing:
+When you use Segment's Analytics.js or another Device Mode integration, Segment does the following:
 
 1. Sets `window.s.products` with the product description string.
 
@@ -178,7 +178,7 @@ When you use Segment's Analytics.js or another Device Mode integration, Segment 
 
 2. Updates common variables such as `channel`, `campaign`, `state`, `zip`, and `pageName`. These values are set if they exist at the property level, your existing Adobe Analytics variables already attached on the `window.s` object, or `context.page.title` (for `pageName`).
 
-3. Sets `window.s.events` with the corresponding Adobe Analytics naming convention. The example above wouild set this as `'purchase'`.
+3. Sets `window.s.events` with the corresponding Adobe Analytics naming convention. The example above would set this as `'purchase'`.
 
 4. Checks if the event name is mapped as an `eVar` and if so, sets it on the `window.s`.
 
@@ -193,7 +193,7 @@ When you use Segment's Analytics.js or another Device Mode integration, Segment 
 
 7. Attaches the `timestamp` as `window.s.timestamp` if your **Timestamp Option** (in the Adobe settings in Segment) is set to **Timestamp Enabled** or **Timestamp Optional**.
 
-8. Sets `window.s.linkTrackEvents` to the Adobe Analyics event name. In the example above, this is `purchase`.
+8. Sets `window.s.linkTrackEvents` to the Adobe Analytics event name. In the example above, this is `purchase`.
 
 9. Sets `window.s.linkTrackVars` which is a string of keys that Adobe Analytics reads from the `window.s` object when you send the request. For the example above, the value of `linkTrackVars` would be set as `'pageName,events,products,purchaseID,transactionID,timestamp'`.
 
@@ -319,7 +319,7 @@ When you make a `page` call, here's what Segment does from the browser when you 
    - `window.s.eVar3` is set to the `url` of the page where the call was made (`.page()` automatically sets a `url` property)
    - `window.s.hier1 = 'swimwear'`
 
-7. Finally, Segment flushes the pageview request to Adobe Analytics using `window.s.t()`.
+7. Finally, Segment flushes the page view request to Adobe Analytics using `window.s.t()`.
 
 
 ## Conversion Variables - eVars
@@ -460,7 +460,7 @@ To represent the multiple values in a list, you can either send the property val
 
 ### Custom Delimiter
 
-For list variables and props you can either send the property value as a comma delimited string (`'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). You can configure a custom delimiter to join the array before sending to Adobe by entering one in the **List Variables** or **Props** setting in the Segment app. If you do not set a custom delimeter, Segment defaults to joining properties in an array as a comma delimited string.
+For list variables and props you can either send the property value as a comma delimited string (`'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). You can configure a custom delimiter to join the array before sending to Adobe by entering one in the **List Variables** or **Props** setting in the Segment app. If you do not set a custom delimiter, Segment defaults to joining properties in an array as a comma delimited string.
 
 **Note:** You must configure the custom delimiter in _both_ the Adobe Analytics dashboard, and in the Segment Adobe Analytics destination settings, for each list variable and prop. Do this in the Adobe Analytics dashboard before setting up this mapping in the Segment destination settings.
 
@@ -482,21 +482,21 @@ Segment concatenates `list_var1` into `hello|world` before sending it to Adobe. 
 
 ## Hierarchy Variables - hVars
 
-Hierarchy variables mirror how customers can track “breadcrumbs” or “breadcrumb trails”  which are a type of secondary navigation scheme that reveals the user’s location in a website or Web application. See the Adobe documenatation to learn more about [`hier` variables and how to configure them](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/hier.html).
+Hierarchy variables mirror how customers can track “breadcrumbs” or “breadcrumb trails”  which are a type of secondary navigation scheme that reveals the user’s location in a website or Web application. See the Adobe documentation to learn more about [`hier` variables and how to configure them](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/hier.html).
 
 Map your Adobe Analytics hVars to the property names you use in your Segment Page calls. Enter a Segment property name on the left, and an Adobe Analytics hVar number on the right. You can view your Segment page calls and properties in your Schema.
 
 ![](images/hier-mapping.png)
 
 ## Context Data Variables
-Context data variables let you define custom variables on each page that processing rules can read. See  the Adobe documentatoin to learn more about [how to use Adobe Analytics `contextData` and use processing rules](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/contextdata.html) to populate analytics variables from that data.
+Context data variables let you define custom variables on each page that processing rules can read. See  the Adobe documentation to learn more about [how to use Adobe Analytics `contextData` and use processing rules](https://docs.adobe.com/content/help/en/analytics/implementation/vars/page-vars/contextdata.html) to populate analytics variables from that data.
 
 Segment will automatically sends all event properties as context data on specced eccommerce events, `page()`, `track()`, and `screen()` calls if you are using a device-mode ("bundled") destination for Analytics.js, or if you are sending unbundled events from a [Server library](/docs/connections/sources/catalog/). If you want to send additional context data from within your context data object ini your Segment payload, you can configure the Context Data Variables mapping in your destination settings to tell Segment which context variables to send to Adobe as context data.
 
 > note ""
 > **Note**: The context data value cannot be an object or an array as this not an Adobe accepted data type by Adobe Analytics.
 
-For more information on how to set up Context Data for iOS and Android see the [Sending Custom Properties section](/mobile/sending-custom-properties) in [Setting up Adobe Analytics for Mobile](/mobile). For more information on how to set up Context Data for Hearbeat Events see the [Custom Video Metadata section](/heartbeat/#custom-video-metadata) in [Setting up Adobe Analytics Heartbeat guide](/heartbeat).
+For more information on how to set up Context Data for iOS and Android see the [Sending Custom Properties section](/mobile/sending-custom-properties) in [Setting up Adobe Analytics for Mobile](/mobile). For more information on how to set up Context Data for Heartbeat Events see the [Custom Video Metadata section](/heartbeat/#custom-video-metadata) in [Setting up Adobe Analytics Heartbeat guide](/heartbeat).
 
 ## Segment Destination Specific Options
 
