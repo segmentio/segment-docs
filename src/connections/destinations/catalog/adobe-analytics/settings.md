@@ -1,5 +1,5 @@
 ---
-title: Implementing Segment for Adobe Analytics
+title: Mapping Segment to Adobe Analytics
 strat: adobe
 ---
 
@@ -8,7 +8,7 @@ This page explains in detail how to configure your Segment Adobe Analytics Desti
 Segment uses a user-action data model, which uses different types of calls to track a user's different activities on a website or app. Adobe Analytics uses page views as the basic unit of activity, and specific data variables such as "props", eVars, lVars, and hVars to add details that allow more granular analysis. The Adobe Analytics destination settings in the Segment App allow you to create mappings between properties in your Segment calls and Adobe's expected format.
 
 > success ""
-> **Tip**: Mobile implementations use the `ADBMobileConfig.json` file to store the settings that you would otherwise enter in the Adobe Analytics destination settings in the Segment app. This file includes the Report Suite ID, Timestamp Option, Tracking Server Secure URL, Tracking Server URL, and Use Secure URL for Server-side settings. See the [Segment Adobe Analytics Mobile documentation](/mobile) to learn more.
+> **Tip**: Mobile implementations use the `ADBMobileConfig.json` file to store the settings that you would otherwise enter in the Adobe Analytics destination settings in the Segment app. This file includes the Report Suite ID, Timestamp Option, Tracking Server Secure URL, Tracking Server URL, and Use Secure URL for Server-side settings. See the [Segment Adobe Analytics Mobile documentation](mobile) to learn more.
 
 ## Implementing Success Events
 
@@ -341,7 +341,7 @@ The success event incrementor and merchandising string are determined by your Se
 
 The Segment Adobe Analytics Merchandising setting runs as follows:
 
-- Looks for the Segment event name if a `track` call, or for the `property.eventName`if a `page` call.
+- Looks for the Segment event name if a `track` call, or for the `property.eventName` if a `page` call.
 - Maps to the Adobe event to send in as an increment or currency event.
 - Reads if the event is scoped to the product or event level.
 - _Optional_: Sets a value on the event. This value is the increment or currency to pass to Adobe.
@@ -496,7 +496,7 @@ Segment will automatically sends all event properties as context data on specced
 > note ""
 > **Note**: The context data value cannot be an object or an array as this not an Adobe accepted data type by Adobe Analytics.
 
-For more information on how to set up Context Data for iOS and Android see the [Sending Custom Properties section](/mobile/sending-custom-properties) in [Setting up Adobe Analytics for Mobile](/mobile). For more information on how to set up Context Data for Heartbeat Events see the [Custom Video Metadata section](/heartbeat/#custom-video-metadata) in [Setting up Adobe Analytics Heartbeat guide](/heartbeat).
+For more information on how to set up Context Data for iOS and Android see the [Sending Custom Properties section](mobile/sending-custom-properties) in [Setting up Adobe Analytics for Mobile](mobile). For more information on how to set up Context Data for Heartbeat Events see the [Custom Video Metadata section](heartbeat/#custom-video-metadata) in [Setting up Adobe Analytics Heartbeat guide](heartbeat).
 
 ## Segment Destination Specific Options
 

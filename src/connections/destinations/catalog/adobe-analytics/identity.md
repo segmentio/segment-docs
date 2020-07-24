@@ -23,7 +23,8 @@ The Timestamp destination settings are:
 
 ### Analytics.js - Device Mode
 
-In device-mode, you bundle the Adobe Analytics SDK with Analytics.js so it is included on your site or app. When you do this, Analytics.js events are routed to the API endpoints for Adobe and send data both to the Segment servers, and to the Adobe systems.
+<!-- TODO - Brie - check this section.
+In device-mode, you bundle the Adobe Analytics SDK with Analytics.js so it is included on your site or app. When you do this, Analytics.js events are routed to the API endpoints for Adobe and send data both to the Segment servers, and to the Adobe systems.-->
 
 You can enable **Drop Visitor ID** from the Segment app to prevent Adobe from creating a new user profile when you set `window.s.visitorID` with a custom value. However if you're only using Analytics.js to send data to Adobe, this can make it difficult to combine anonymous and identified users inside your reports.
 
@@ -58,16 +59,13 @@ We know this is daunting territory, so don't hesitate to [contact us directly fo
 Segment introduced a new **No Fallbacks for Visitor ID** setting to help with the transition from using the Adobe Analytics `visitorID` to using the Experience Cloud ID (ECID). If a `visitorId` is not explicitly sent in the integration specific object in your payload (ie. `context["Adobe Analytics"].visitorId`), Segment will fallback  to setting the `<visitorID>` tag to `userId` (or `anonymousId`, if the call is anonymous). You can use this setting to indicate that you only want the `<visitorId>` tag to be set with the `visitorId` value sent in your integration specific object.  Enabling this will help to reduce inflated user counts that are set with a Segment `userId`.
 
 If you disable the **Drop Visitor ID** setting, Segment sends a `<visitorID>` in these three scenarios:
-<!-- TODO L Comment: does the customer have control over this setting about timestamps? if not, reword. I think we mean 'if the customer's call includes..' Need to check customer vs user here-->
+- When your calls don't send timestamps (meaning the Timestamp Option setting is set to disabled)
+- When your calls use hybrid timestamp mode and are sending `visitorId`
+- When your calls use hybrid timestamp mode and are sending `visitorId` and timestamp
 
-<!-- B Comment: Yes this is fully customer controlled through settings see above timestamps image -->
-- A customer isn't sending timestamps (meaning the Timestamp Option setting is set to disabled)
-- A customer is using hybrid timestamp mode and is sending `visitorId`
-- A customer is using hybrid timestamp mode and is sending `visitorId` and timestamp
+**NOTE:** If one of these three scenarios is met and a your calls do not send a `visitorId` in the integrations object, Segment falls back to setting the visitorId to a Segment `userId`. This timestamp-dependent behavior does not change when you enable **No Fallbacks for Visitor ID**. The **No Fallbacks for Visitor ID** setting is an added feature in addition to that setting.
 
-**NOTE:** If one of these three scenarios is met and a customer does not send a `visitorId` in the integrations object, Segment falls back to setting the visitorId to either a Segment `userId`. This timestamp-dependent functionality of when Segment sends a visitorID does not change when you enable **No Fallbacks for Visitor ID**. The **No Fallbacks for Visitor ID** setting is an added feature on top of that.
-
-The **No Fallbacks for Visitor ID** setting functionality behaves as such, if a customer is sending data in one of the three above scenarios, Segment checks if the setting is enabled and if they are sending a marketingCloudVisitorId in the integrations object. If they meet both of those criteria Segment removes the fallback behavior and sets `<visitorID>` to the value passed in the destination specific setting for `visitorId`. If that value is not passed, it leaves it blank.
+If **No Fallbacks for Visitor ID** is enabled, and you're setting a `marketingCloudVisitorID` in the `integrations` object, then Segment will _never_ pass anything except the `visitorId` from the integrations object as the `<visitorID>` tag.
 
 This decision tree is a visual representation of how Segment's Adobe Analytics destination settings and payload data interact with Segment to determine when to send a `visitorId` to Adobe.
 
