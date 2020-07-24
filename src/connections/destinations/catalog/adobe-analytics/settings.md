@@ -396,10 +396,9 @@ Custom Traffic Variables, also known as props, allow you to correlate custom dat
 
 ![](images/prop-mapping.png)
 
-<!-- TODO Uncomment once this PR is merged: https://github.com/segmentio/app/pull/10054 -->
-<!-- You can either send the property value as a string (ie. `'brady'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it so that it is a pipe (`|`) delimited string before sending to Adobe (ie. `'brady|edelman|blount'`). See the [documentation on setting a custom delimiter](#custom-delimiter) to learn more. -->
-<!--
-![](images/prop-custom-delimiter.png) -->
+You can either send the property value as a string (ie. `'brady'`) or as an array (`['brady', 'edelman', 'blount']`). If you choose to send them as an array, Segment defaults to join it so that it is a pipe (`|`) delimited string before sending to Adobe (ie. `'brady|edelman|blount'`). See the [documentation on setting a custom delimiter](#custom-delimiter) to learn more.
+
+![](images/prop-custom-delimiter.png)
 
 ## List Variables - lVars
 
@@ -409,8 +408,7 @@ To represent the multiple values in a list, you can either send the property val
 
 ### Custom Delimiter
 
-For list variables you can either send the property value as a comma delimited string (`'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). You can configure a custom delimiter to join the array before sending to Adobe by entering one in the **List Variables** settings in the Segment app. If you do not set a custom delimeter, Segment defaults to joining properties in an array as a comma delimited string.
-<!-- TODO this has  changed in  V2  UI and  has a bug and add back props -->
+For list variables and props you can either send the property value as a comma delimited string (`'brady,edelman,blount'`) or as an array (`['brady', 'edelman', 'blount']`). You can configure a custom delimiter to join the array before sending to Adobe by entering one in the **List Variables** or **Props** setting in the Segment app. If you do not set a custom delimeter, Segment defaults to joining properties in an array as a comma delimited string.
 
 **Note:** You must configure the custom delimiter in _both_ the Adobe Analytics dashboard, and in the Segment Adobe Analytics destination settings, for each list variable and prop. Do this in the Adobe Analytics dashboard before setting up this mapping in the Segment destination settings.
 
