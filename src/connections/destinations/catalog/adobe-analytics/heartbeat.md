@@ -26,9 +26,9 @@ Then, set up your mobile libraries:
 
 For Android:
 
-- If you  haven’t done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46) to download the core `adobeMobileLibrary`  and configure in your Android project. Add the `ABDMobileConfig.json` to your project from the downloaded SDK.
-- Download the latest version of the `MediaSDK.jar` file and [include it in your Android project using Adobe's documentation steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
-- Follow the [remaining set up steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html) to complete the installation.
+1. If you haven’t done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46) to download the core `adobeMobileLibrary`  and configure in your Android project. Add the `ABDMobileConfig.json` to your project from the downloaded SDK.
+2. Download the latest version of the `MediaSDK.jar` file and [include it in your Android project using Adobe's documentation steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
+3. Follow the [remaining set up steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html) to complete the installation.
 
 For iOS: the Adobe Heartbeat SDK is already included with the Segment-Adobe-Analytics SDK. Ensure you have added the `ABDMobileConfig.json` for your iOS project from the Adobe Mobile Services UI.
 
@@ -399,7 +399,10 @@ At the moment, Segment only passes `publisher` as standard ad metadata. Segment 
 
 ## Custom Video Metadata
 
-You may send any custom metadata you wish along with any video event that accepts metadata. To send Custom Video Metadata please map the values you wish to send in the Context Data Variable mappings in the Segment Adobe Destination settings. Remember that although you do not need to set up standard video or ad metadata in your Adobe dashboard first, you **must** set up all custom video and ad metadata in Adobe before sending it. Adobe discards all metadata that have not been set up before being received in their system.
+You can send custom metadata with any video event that accepts metadata. To send Custom Video Metadata, map the values you want to send in the **Context Data Variable mappings** setting in the Adobe Destination settings in the Segment web app. 
+
+> warning ""
+> You do not need to map _standard_ video or ad metadata in your Adobe dashboard, you **must** set up all _custom_ video and ad metadata in Adobe before sending it. Adobe discards any metadata it receives that does not have a mapping.
 
 ### Custom Video Metadata Formatting
 

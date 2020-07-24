@@ -3,12 +3,20 @@ title: Identity Resolution in Segment Adobe Analytics
 strat: adobe
 ---
 
-## Best practices for userId and sessioning
-<!-- Not the clearest section title, and it's not super clear how its child sections relate to this topic.  It might work a little better if we start with some statements that walk through how each system (segment and adobe, and adobe experience?) does their ID, so people have that as a refresher-baseline? then we can go into the whats, and expand to include the whys for each mode. -->
+## Identity Resolution and Timestamps 
+In this section we will cover how your destination settings for Identity Resolution and Timestamps impact how user session (ie. userId & visitorId) data are sent to Adobe Analytics. We suggest familiarizing yourself with the destination settings in app prior to continuing this section. The Identity Resolution settings refer to the **Marketing Cloud ID**, **Drop VisitorID**, and **No Fallbacks for VisitorID:Server-Side Only** destination settings. 
+
+![](images/identity.png)
+
+The Timestamp settings refer to the **Timestamp Option**, **Send Both Timestamp and VisitorID for Timestamp Optional Reporting Suites**, **Prefer VisitorID for Hybrid Timestamp Reporting**. 
+
+![](images/timestamps.png)
 
 ### Analytics.js - Device Mode
 
-<!-- Some more introductory explanantion might be good here? "In device-mode, you bundle the Adobe Analytics SDK with Analytics.js so it is included on your site or app. When you do this, Analytics.js events are routed to the API endpoints for Adobe and send data both to the Segment servers, and to the Adobe systems."-->
+<!-- L Comment: Some more introductory explanantion might be good here? "In device-mode, you bundle the Adobe Analytics SDK with Analytics.js so it is included on your site or app. When you do this, Analytics.js events are routed to the API endpoints for Adobe and send data both to the Segment servers, and to the Adobe systems."-->
+<!-- 
+B Comment: IMO that seems redundant to what is covered in index. These tabs are more tailored to specific information related to specific topics. I covered that info in the index. Maybe we can include a linkto? -->
 
 You can enable **Drop Visitor ID** from the Segment app to prevent Adobe from creating a new user profile when you set `window.s.visitorID` with a custom value. However if you're only using Analytics.js to send data to Adobe, this can make it difficult to combine anonymous and identified users inside your reports.
 
@@ -40,15 +48,17 @@ We know this is daunting territory, so don't hesitate to [contact us directly fo
 
 #### No Fallbacks for VisitorId Setting - Cloud Mode Only
 
-Segment introduced a new **No Fallbacks for Visitor ID** setting to help with the transition from using the Adobe Analytics `visitorID` to using the Experience Cloud ID (ECID). This can also reduce inflated user counts<!-- how?-->. <!-- Probably also want to cover what sorts of visitorID we can use? (Segment userID and anonId, s_vi, visitorID, visitorID in the integrations object, ECID? do we have this in another doc we can copy/paste in?) why are timestamps involved here? and what does No Fallbacks do?-->
+Segment introduced a new **No Fallbacks for Visitor ID** setting to help with the transition from using the Adobe Analytics `visitorID` to using the Experience Cloud ID (ECID). If a `visitorId` is not explicitly sent in the integration specific object in your payload (ie. `context["Adobe Analytics"].visitorId`), Segment will fallback  to settinig the `<visitorID>` tag to `userId` (or `anonymousId`, if the call is anonymous). You can use this setttinig to indicate that you only want the `<visitorId>` tag to be set with the `visitorId` value sent in your integration specific object.  Enabling this will help to reduce inflated user counts that are set with a Segment `userId`. 
 
 If you disable the **Drop Visitor ID** setting, Segment sends a `<visitorID>` in these three scenarios:
-<!-- does the customer have control over this setting about timestamps? if not, reword. I think we mean 'if the customer's call includes..' -->
+<!-- L Comment: does the customer have control over this setting about timestamps? if not, reword. I think we mean 'if the customer's call includes..' -->
+
+<!-- B Comment: Yes this is fully customer controlled through settings see above timestamps image -->
 - A customer isn't sending timestamps (meaning the Timestamp Option setting is set to disabled)
 - A customer is using hybrid timestamp mode and is sending `visitorId`
 - A customer is using hybrid timestamp mode and is sending `visitorId` and timestamp
 
-**NOTE:** If one of these three scenarios is met and a customer does not send a `visitorId` in the integrations object, Segment falls back to setting the visitorId to either a Segment `userId` or `anonymousId`. This timestamp-dependent functionality of when Segment sends a visitorID does not change when you enable **No Fallbacks for Visitor ID**. The **No Fallbacks for Visitor ID** setting is an added feature on top of that.
+**NOTE:** If one of these three scenarios is met and a customer does not send a `visitorId` in the integrations object, Segment falls back to setting the visitorId to either a Segment `userId`. This timestamp-dependent functionality of when Segment sends a visitorID does not change when you enable **No Fallbacks for Visitor ID**. The **No Fallbacks for Visitor ID** setting is an added feature on top of that.
 
 The **No Fallbacks for Visitor ID** setting functionality behaves as such, if a customer is sending data in one of the three above scenarios, Segment checks if the setting is enabled and if they are sending a marketingCloudVisitorId in the integrations object. If they meet both of those criteria Segment removes the fallback behavior and sets `<visitorID>` to the value passed in the destination specific setting for `visitorId`. If that value is not passed, it leaves it blank.
 
