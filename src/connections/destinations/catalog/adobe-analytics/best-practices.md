@@ -7,7 +7,7 @@ This page contains best practices and tips for setting up and testing Adobe Anal
 
 ## Validating by Data by Component
 
-The following list contains tools you can use to validate datat coming from Segment and going to each different Adobe Analytics component
+The following list contains tools you can use to validate data coming from Segment and going to each different Adobe Analytics component
 
 - **Analytics.js** - [Adobe Experience Cloud Debugger](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj) and Chrome Developer Tools
 - **Other Segment server libraries** - Segment's in-app [Event Tester Tool](/docs/connections/test-connections/)
@@ -46,7 +46,7 @@ _Considerations_
 
 If you are setting up the Adobe Analytics destination in cloud-mode, you can pass in custom `linkTypes`, `linkNames` and `linkURLs`.
 
-**Note**: If you pass in the `visitorId` in a destination-specific `integration` object in your Segment Page or Track events, the `visitorId` passed persists on Page or Track calls that occur after an Identify call. This effectively supersedes the `visitorId` variable Segement would set to your `userId` after an Identify call.
+**Note**: If you pass in the `visitorId` in a destination-specific `integration` object in your Segment Page or Track events, the `visitorId` passed persists on Page or Track calls that occur after an Identify call. This effectively supersedes the `visitorId` variable Segment would set to your `userId` after an Identify call.
 
 We know this is daunting territory, so don't hesitate to [contact us directly for guidance](https://segment.com/help/contact/)!
 
@@ -66,11 +66,11 @@ The example below shows of how you would set a Segment event as a download link 
 }
 ```
 
-If you pass in Segment events with a download (d or D) linkType, they appear the Download link report in your Adobe Analytics reporting suite. If you pass in Segment events with a exit (e or E) linkType, they appear in the Exit link report in your Adobe Analytics reporting suite. Finally, if you pass in Segment events with a value of "o" or "O", or no linkType in the `integration.Adobe Analytics` object, they appear in the custom link report in your Adobe Analytics reporting suite.
+If you pass in Segment events with a download (d or D) linkType, they appear the Download link report in your Adobe Analytics reporting suite. If you pass in Segment events with an "exit" (e or E) linkType, they appear in the Exit link report in your Adobe Analytics reporting suite. Finally, if you pass in Segment events with a value of `o` or `O`, or _no_ linkType in the `integration.Adobe Analytics` object, they appear in the custom link report in your Adobe Analytics reporting suite.
 
 ### Setting the event linkName
 
-To pass in a custom LinkName to Adobe Analytics, pass it as a string in the `integrations.Adobe Anlaytics` object of your Segment event. The example below sets the custom linkname to "Click me".
+To pass in a custom LinkName to Adobe Analytics, pass it as a string in the `integrations.Adobe Analytics` object of your Segment event. The example below sets the custom linkname to "Click me".
 
 ```javascript
 "integrations": {
@@ -80,7 +80,7 @@ To pass in a custom LinkName to Adobe Analytics, pass it as a string in the `int
     }
 ```
 
-If you don't specify a custom linkName in the integration specific object in the payload, Segment defaults to mapping `linkName` to the value from `(context.page.url)`. If no URL is present Segment, sets `linkName` to `No linkName provided`.
+If you don't specify a custom linkName in the integration specific object in the payload, Segment defaults to mapping `linkName` to the value from `(context.page.url)`. If no URL is present, Segment sets `linkName` to `No linkName provided`.
 
 > note ""
 > **Note**: If you enable the `useLegacyLinkName` setting in the UI, Segment prepends `Link Name -` to the value you specified in the integration-specific object.
@@ -97,7 +97,7 @@ To pass a custom LinkUrl to Adobe Analytics, pass it as a string in the `integra
     }
 ```
 
-If you don't specify a custom linkUrl in the integration specific object in the payload, Segment defaults to mapping `linkUrl` to the `(context.page.url)`. If there is no URL present, Segment sets `linkUrl`  to `No linkUrl provided`.
+If you don't specify a custom linkUrl in the integration specific object in the payload, Segment defaults to mapping `linkUrl` to the `(context.page.url)`. If no is URL present, Segment sets `linkUrl`  to `No linkUrl provided`.
 
 ## Populating Custom Links report with server side data
 

@@ -4,7 +4,7 @@ hide-cmodes: true
 strat: adobe
 ---
 
-Once you enable Adobe Analytics (formerly known as Omniture/Sitecatalyst) in Segment, you can start sending data from any of the Segment [libraries](/docs/connections/sources/catalog/) to an Adobe report suite. When you send events from Segment's mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics [Data Insertion API](https://docs.adobe.com/content/help/en/analytics/import/c-data-insertion-api.html).
+Once you enable Adobe Analytics (formerly known as Omniture or Sitecatalyst) in Segment, you can start sending data from any of the Segment [libraries](/docs/connections/sources/catalog/) to an Adobe report suite. When you send events from Segment's mobile SDKs or Cloud-mode libraries, Segment translates that data using a mapping that you configure, and then passes it to the Adobe Analytics [Data Insertion API](https://docs.adobe.com/content/help/en/analytics/import/c-data-insertion-api.html).
 
 The following documentation provides detailed explanation of how both destination the Device-mode and Cloud-mode components work. For FAQs about Device- vs Cloud-mode tracking, unique users, identifiers, and more, see the Best Practices page!
 
@@ -37,7 +37,7 @@ If you prefer, you can enable [Cloud-mode](/docs/connections/destinations/#conne
 
 Our Cloud-mode Adobe Analytics destination also provides support for **Adobe Mobile Services** "states", "actions", and lifecycle events, metrics, and dimensions.
 
-*Note*: Segment only supports Adobe Heartbeat through device-mode implementations, using Segment's javascript source or mobile SDKs unbunbled.
+*Note*: Segment only supports Adobe Heartbeat through device-mode implementations, using Segment's javascript source or mobile SDKs unbundled.
 
 ### Connecting Segment to Adobe Analytics
 
@@ -72,7 +72,7 @@ Our Adobe Analytics device-mode destination code is open sourced on Github. Feel
 
 ### Initialization
 
-When you use Adobe Analytics with Analytics.js, Segment first checks to see if you have any global properties (such as `window.s_account`) or any properties on the `window.s` object, and uses them. However, if it doesnt find anything, it uses the **Report Suite ID**, **Tracking Server URL**, and **Tracking Server Secure URL** (optional) you defined in the destination settings in the Segment app.
+When you use Adobe Analytics with Analytics.js, Segment first checks to see if you have any global properties (such as `window.s_account`) or any properties on the `window.s` object, and uses them. However, if it doesn't find anything, it uses the **Report Suite ID**, **Tracking Server URL**, and **Tracking Server Secure URL** (optional) you defined in the destination settings in the Segment app.
 
 Once these required properties are set, Segment loads `appmeasurement.js` version 2.20.0.
 
@@ -137,7 +137,7 @@ Segment's server-side integration is not open-source. Let's explore what happens
 
    Segment also set your `context.locale` (which is automatically collected if using a mobile library) to `<language>`. Since mobile libraries also send your `traits` from previous `.identify()` calls inside the `context.traits`, Segment tries to send `<state>` and `<zip>` by looking up `context.traits.address.state` and `context.traits.postalCode` respectively, as noted in the [Identify spec](/docs/connections/spec/identify/). If these lookups fail, Segment uses the default `properties.state` and `properties.zip`.
 
-   For mobile libraries, since Segemtn can detect whether the event occurred while the user had a wifi connection, it also sends the `<connectionType>` as `lan/wifi`. All other events are treated as `Mobile Carrier` inside Adobe's Mobile Web Reports.
+   For mobile libraries, since Segment can detect whether the event occurred while the user had a wifi connection, it also sends the `<connectionType>` as `lan/wifi`. All other events are treated as `Mobile Carrier` inside Adobe's Mobile Web Reports.
 
    Segment also calculates the timezone offset from UTC/GMT as required by Adobe, and sends a `<timezone>` based on your `context.timezone` and the `timestamp` fields.
 
