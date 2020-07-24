@@ -65,7 +65,7 @@ Data Lakes stores the inferred schema and associated metadata of the S3 data in 
 New columns are appended to the end of the table in the Glue Data Catalog as they are detected.
 
 #### Glue Database
-The Glue database stores the schema inferred by Segment. Segment stores the schema for each source in its own Glue database to organize the data so it is easier to query. To make it easier to find, Segment writes the schema to a Glue database named using the source slug.
+The Glue database stores the schema inferred by Segment. Segment stores the schema for each source in its own Glue database to organize the data so it is easier to query. To make it easier to find, Segment writes the schema to a Glue database named using the source slug by default. The database name can be modified within the Data Lakes settings.
 
 > info ""
 > The recommended IAM role permissions grant Segment access to create the Glue databases on your behalf. If you do not grant Segment these permissions, you must manually create the Glue databases for Segment to write to.
