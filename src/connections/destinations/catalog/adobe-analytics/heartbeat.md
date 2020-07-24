@@ -26,9 +26,9 @@ Then, set up your mobile libraries:
 
 For Android:
 
-- If you  haven’t done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46) to download the core `adobeMobileLibrary`  and configure in your Android project. Add the `ABDMobileConfig.json` to your project from the downloaded SDK.
-- Download the latest version of the `MediaSDK.jar` file and [include it in your Android project using Adobe's documentation steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
-- Follow the [remaining set up steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html) to complete the installation.
+1. If you haven’t done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46) to download the core `adobeMobileLibrary`  and configure in your Android project. Add the `ABDMobileConfig.json` to your project from the downloaded SDK.
+2. Download the latest version of the `MediaSDK.jar` file and [include it in your Android project using Adobe's documentation steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
+3. Follow the [remaining set up steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html) to complete the installation.
 
 For iOS: the Adobe Heartbeat SDK is already included with the Segment-Adobe-Analytics SDK. Ensure you have added the `ABDMobileConfig.json` for your iOS project from the Adobe Mobile Services UI.
 
