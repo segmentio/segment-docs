@@ -10,11 +10,11 @@ The following documentation provides detailed explanation of how both destinatio
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Implementing Segment for Adobe Analytics](settings/)
+- [Mapping Segment for Adobe Analytics](settings/)
 - [Identity Resolution](identity/)
-- [Setting up Adobe Analytics for Mobile](mobile/)
-- [Setting up Adobe Heartbeat](heartbeat/)
-- [Best Practices](best-practices/)
+- [Adobe Analytics for Mobile](mobile/)
+- [Adobe Analytics for Heartbeat](heartbeat/)
+- [Adobe Analytics Best Practices](best-practices/)
 
 <!-- /TOC -->
 
