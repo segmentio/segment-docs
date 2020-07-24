@@ -68,7 +68,7 @@ analytics.track('Email Opened', {
 ```
 
 ### Event Channels
-By default, all `track` events are sent to the default Slack channel configured in the Segment UI when [getting started](https://segment.com/docs/connections/destinations/catalog/slack/#getting-started). To prevent events from sending you will need to modify your track call to use [selective integrations](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-integrations). Business Tier customers also have the option to filter the events within the "Schema" section of the Segment UI.
+By default, all `track` events are sent to the default Slack channel configured in the Segment UI when [getting started](https://segment.com/docs/connections/destinations/catalog/slack/#getting-started). To prevent events from sending you will need to modify your track call to use [selective integrations](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-destinations). Business Tier customers also have the option to filter the events within the "Schema" section of the Segment UI.
 
 If you would like to have specific events be sent to a particular channel (#channel) or user (@user) using a direct message, you can specify this in the "Events Channels" settings within the Segment UI.
 

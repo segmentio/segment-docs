@@ -144,8 +144,6 @@ sections:
       title: All about Cloud Sources
     - path: /connections/sources/custom-domains
       title: Set up a custom domain proxy in Segment
-    - path: /connections/sources/source-functions
-      title: Source Functions
     - path: /connections/sources/visual-tagger
       title: Visual Tagger
   - section_title: Destinations
@@ -158,8 +156,19 @@ sections:
       menu_icon: read-more
     - path: /connections/destinations/destination-filters
       title: Destination Filters
-    - path: /connections/destinations/destination-functions
+  - section_title: Functions
+    slug: connections/functions
+    section:
+    - path: /connections/functions
+      title: Functions Overview
+    - path: /connections/functions/source-functions
+      title: Source Functions
+    - path: /connections/functions/destination-functions
       title: Destination Functions
+    - path: /connections/functions/environment
+      title: Functions environment
+    - path: /connections/functions/usage
+      title: Functions usage limits
   - section_title: Data Storage
     slug: connections/storage
     section:

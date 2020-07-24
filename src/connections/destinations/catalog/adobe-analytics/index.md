@@ -10,11 +10,11 @@ The following documentation provides detailed explanation of how both destinatio
 
 <!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Implementing Segment for Adobe Analytics](settings/)
-- [Identity Resolution](identity/)
-- [Setting up Adobe Analytics for Mobile](mobile/)
-- [Setting up Adobe Heartbeat](heartbeat/)
-- [Best Practices](best-practices/)
+- [Implementing Segment for Adobe Analytics](/settings/)
+- [Identity Resolution](/identity/)
+- [Setting up Adobe Analytics for Mobile](/mobile/)
+- [Setting up Adobe Heartbeat](/heartbeat/)
+- [Best Practices](/best-practices/)
 
 <!-- /TOC -->
 
@@ -145,7 +145,7 @@ Segment's server-side integration is not open-source. Let's explore what happens
 
    **Important**: The Android library can collect the `userAgent` automatically - however, the iOS library cannot do so. However, since Segment does collect other contextual metadata about a device, it can render a valid iOS userAgent string to populate your Mobile Web Reports.
 
-6. If you are using the [Marketing Cloud ID Service](https://marketing.adobe.com/resources/help/en_US/mcvid/mcvid_overview.html), you can pass the **Marketing Cloud Visitor ID** as an destination specific setting and which Segment sets that as `<marketingCloudVisitorID>`.
+6. If you are using the [Marketing Cloud ID Service](https://marketing.adobe.com/resources/help/en_US/mcvid/mcvid_overview.html), you can pass the **Marketing Cloud Visitor ID** as an destination specific setting and which Segment sets as `<marketingCloudVisitorID>`.
 
  (In Node.js)
  ```javascript

@@ -134,8 +134,8 @@ See the documentation on [Warehouse Selective Sync](/docs/connections/storage/wa
 
 ## Privacy Portal filtering
 
-The [Privacy Portal](/docs/privacy-portal/portal/) is available to all Segment customers, because we believe that data privacy is a right, and that anyone collecting data should have tools to help ensure their users' privacy. More enhancements are available to BT customers who may need tools for managing complex implementations.
+The [Privacy Portal](/docs/privacy/portal/) is available to all Segment customers, because we believe that data privacy is a right, and that anyone collecting data should have tools to help ensure their users' privacy. More enhancements are available to BT customers who may need tools for managing complex implementations.
 
-The Privacy Portal tools allow you to inspect your incoming calls and their payloads, detect potential Personally Identifiable Information (PII) in properties using matchers, classify the information by different categories of risk, and use those categories to determine which Destinations may or may not receive the data. Learn more about these features in the [Privacy Portal documentation](/docs/privacy-portal/portal/).
+The Privacy Portal tools allow you to inspect your incoming calls and their payloads, detect potential Personally Identifiable Information (PII) in properties using matchers, classify the information by different categories of risk, and use those categories to determine which Destinations may or may not receive the data. Learn more about these features in the [Privacy Portal documentation](/docs/privacy/portal/).
 
-![](/docs/privacy-portal/images/privacy-add-new-matcher.gif)
+![](/docs/privacy/images/privacy-add-new-matcher.gif)

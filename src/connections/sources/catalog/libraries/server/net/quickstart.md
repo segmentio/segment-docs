@@ -11,7 +11,7 @@ If you want to dive deeper at any point, check out the [.NET library reference](
 
 ## Client-side vs Server-side
 
-The best analytics installation combines both client-side and server-side tracking. A client-side analytics.js installation allows you to install A/B testing, heat mapping, session recording, and ad optimization tools. A server-side .NET installation allows you to accurately track events that aren't available client-side, such as payments. For best practices, [check out our guide client-side vs. server-side](/docs/faqs/sources/client-vs-server).
+The best analytics installation combines both client-side and server-side tracking. A client-side analytics.js installation allows you to install A/B testing, heat mapping, session recording, and ad optimization tools. A server-side .NET installation allows you to accurately track events that aren't available client-side, such as payments. For best practices, [check out our guide client-side vs. server-side](/docs/guides/how-to-guides/collect-on-client-or-server/).
 
 
 ## Step 1: Add Analytics.js to your ASP.NET Master Page

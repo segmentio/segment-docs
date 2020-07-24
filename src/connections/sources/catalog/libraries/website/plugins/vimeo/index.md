@@ -14,7 +14,7 @@ Vimeo provides documentation outlining this process [here](https://developer.vim
 
 Enable a new plugin by navigating to the settings for your Source and clicking **Plugins**. You can enable the Vimeo plugin from this menu.
 
-![the plugins setting screen](/docs/connections/sources/plugins-enable.png)
+![the plugins setting screen](/docs/docs/connections/sources/plugins-enable.png)
 
 **NOTE:** At this time, only Javascript sources support plugins.
 

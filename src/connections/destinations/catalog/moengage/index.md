@@ -124,7 +124,7 @@ Push Notifications are a great way to keep your users engaged and informed about
 
 **Segment Push Implementation:**
 
-1. Follow the directions to register for push notifications [using Segment's SDK](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications-).
+1. Follow the directions to register for push notifications [using Segment's SDK](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
 
 2. In your application's `application:didReceiveRemoteNotification:` method, add the following:
 
@@ -393,7 +393,7 @@ Use [track](https://segment.com/docs/connections/sources/catalog/libraries/websi
 
 ### Reset
 
-If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) method in `analytics.js`.
+If your website supports the ability for a user to logout and login with a new identity, then you'll need to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) method in `analytics.js`.
 
 ### Optional
 
