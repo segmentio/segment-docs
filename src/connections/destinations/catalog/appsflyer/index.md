@@ -132,7 +132,7 @@ If you are sending in the attribution data yourself, for iOS be sure the followi
 
 For example, an attribution event coming from an attribution partner would look like:
 
-```objective-c
+```objc
 [[SEGAnalytics sharedAnalytics] track:@"Install Attributed", properties: @{
     @"provider" : @"Appsflyer/Tune/Kochava/Branch",
     @"campaign" : @{

@@ -75,6 +75,14 @@ The following example shows how to set an integration-specific option on iOS:
                   }
               },
               @"context":@{}}];
+options:@{
+  @"integrations": @{
+   @"Adobe Analytics" : @{
+     @"ovp_name": @"ovp name",
+     @"debug" : @YES
+    }
+  }
+}
 ```
 
 ## Supported Video Events

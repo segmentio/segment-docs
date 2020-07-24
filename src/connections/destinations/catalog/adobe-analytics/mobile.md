@@ -37,6 +37,9 @@ You can see the [Android SDK changelog](https://github.com/segment-integrations/
 #### For iOS
 ```objc
 pod 'Segment-Adobe-Analytics'
+iOS:
+```objc
+pod 'Segment-Adobe-Analytics', '1.1.0-beta'
 ```
 
 You can see the [iOS SDK changelog](https://github.com/segment-integrations/analytics-ios-integration-adobe-analytics/blob/master/Changelog.md) in the open-source repository for information about specific versions of the iOS Adobe Analytics SDK.
@@ -196,6 +199,7 @@ Config.setUserIdentifier(null);
 ```
 {% endcodeexampletab %}
 {% codeexampletab Reset on iOS %}
+
 ```objc
 [ADBMobile trackingClearCurrentBeacon];
 ```
@@ -215,6 +219,9 @@ Analytics.sendQueuedHits();
 ```
 {% endcodeexampletab %}
 {% codeexampletab Flush on iOS %}
+
+And on iOS:
+
 ```objc
 [ADBMobile trackingSendQueuedHits];
 ```
