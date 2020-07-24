@@ -55,7 +55,7 @@ The Adobe Analytics destination automatically works with Segment's standard [Eco
   </tr>
 </table>
 
-Segment sends the Ecommerce event data to Adobe just as it would send a standard Track event. These Ecommerce events are automatically mapped and sent to Adobe Analytics along with product description data. If you implement Segment events using the Ecommerce spec and naming conventions, you do **NOT** need to create a mapping in your Segment Adobe destination settings. You only need to map **event names** if you want to set them as the value of an `eVar`. To learn more about configuring `eVars` see [How to set up using your destination settings.](#conversion-variables---eVars)
+Segment sends the Ecommerce event data to Adobe just as it would send a standard Track event. These Ecommerce events are automatically mapped and sent to Adobe Analytics along with product description data. If you implement Segment events using the Ecommerce spec and naming conventions, you do **NOT** need to create a mapping in your Segment Adobe destination settings. You only need to map **event names** if you want to set them as the value of an `eVar`. To learn more about configuring `eVars` see [the section below on configuring conversion variables in your destination settings.](#conversion-variables---evars)
 
 Ecommerce properties such as `orderId` and `products` are also sent automatically. However, if you use other custom properties and want to send them to Adobe's `eVar`, `prop`, `hVar`, or `lVar` variables, you *do* need to map them as properties in your Segment Adobe Analytics destination settings.
 
@@ -162,7 +162,7 @@ analytics.track('Order Completed', {
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-When you use Segment's Analytics.js or another Device Mode integration, Segment does the following:
+When you use Segment's Analytics.js Device Mode integration, Segment does the following:
 
 1. Sets `window.s.products` with the product description string.
 
@@ -496,7 +496,7 @@ Segment will automatically sends all event properties as context data on specced
 > note ""
 > **Note**: The context data value cannot be an object or an array as this not an Adobe accepted data type by Adobe Analytics.
 
-For more information on how to set up Context Data for iOS and Android see the [Sending Custom Properties section](/mobile/#sending-custom-properties) in [Setting up Adobe Analytics for Mobile](/mobile). For more information on how to set up Context Data for Heartbeat Events see the [Custom Video Metadata section](/heartbeat/#custom-video-metadata) in [Setting up Adobe Analytics Heartbeat guide](/heartbeat).
+For more information on how to set up Context Data for iOS and Android see the [Sending Custom Properties section](mobile/#sending-custom-properties) in [Setting up Adobe Analytics for Mobile](mobile). For more information on how to set up Context Data for Heartbeat Events see the [Custom Video Metadata section](heartbeat/#custom-video-metadata) in [Setting up Adobe Analytics Heartbeat guide](heartbeat).
 
 ## Segment Destination Specific Options
 
