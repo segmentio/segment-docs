@@ -62,6 +62,8 @@ sections:
     title: Analytics.js (Javascript) Source
   - path: /connections/sources/catalog/libraries/website/javascript/quickstart
     title: Quickstart Tutorial
+  - path: /connections/sources/catalog/libraries/website/identity
+    title: Managing identity in Analytics.js
   - path: /connections/sources/catalog/libraries/website/javascript/middleware
     title: Middlewares for Analytics.js
   - path: /connections/sources/catalog/libraries/website/javascript/querystring
