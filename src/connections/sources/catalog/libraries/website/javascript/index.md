@@ -428,7 +428,7 @@ The Analytics.js utility methods help you change how Segment loads on your page.
 
 ### Ready
 
-The `ready` method allows you to pass in a method that is called once all enabled destinations load, and once Analytics.js finishes initializing. It's like [jQuery's `ready` method](https://api.jquery.com/ready/), except for destinations.
+The `ready` method allows you to pass in a method that is called once Analytics.js finishes initializing, and once all enabled device-mode destinations load. It's like [jQuery's `ready` method](https://api.jquery.com/ready/), except for destinations.
 
 `ready` is still invoked if a destination throws an error (for example for an expired API key or incorrect settings configuration) during initialization. Doing so prevents blocking code listening for the `ready` callback.
 
