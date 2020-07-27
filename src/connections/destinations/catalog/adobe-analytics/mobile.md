@@ -57,21 +57,21 @@ You can map Segment events in your `Events V2` settings to any event variable yo
 
 Here's an example of how you might map Segment events to Adobe Analytics events connected in device mode:
 
-![](images/eventsV2.png)
+![](/docs/connections/destinations/catalog/adobe-analytics/images/eventsV2.png)
 
 Here's an example of how you would implement the same mapping in Adobe's Mobile Services Dashboard:
 
-![](images/map-event-adobe.png)
+![](/docs/connections/destinations/catalog/adobe-analytics/images/map-event-adobe.png)
 
 ## Sending Custom Properties
 
 You can use the `Context Data Variables` settings to map Segment `properties` to any context data variable defined in your Adobe Analytics Mobile Services dashboard. This includes both Adobe `props` and `eVars`. You can see a list of the Adobe variable types in your Adobe Mobile Services dashboard.
 
-![](images/map-property-segment.png)
+![](/docs/connections/destinations/catalog/adobe-analytics/images/map-property-segment.png)
 
 Here's an example of how you would implement the same mapping in Adobe's Mobile Services Dashboard:
 
-![](images/map-property-adobe.png)
+![](/docs/connections/destinations/catalog/adobe-analytics/images/map-property-adobe.png)
 
 
 <table>
