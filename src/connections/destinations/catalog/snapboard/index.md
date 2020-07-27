@@ -50,7 +50,7 @@ Page calls are sent to Snapboard as a `pageview`.
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 
-```obj-c
+```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
