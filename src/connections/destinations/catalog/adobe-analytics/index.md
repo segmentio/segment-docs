@@ -1,6 +1,5 @@
 ---
 title: Adobe Analytics Destination
-hide-cmodes: true
 strat: adobe
 ---
 
