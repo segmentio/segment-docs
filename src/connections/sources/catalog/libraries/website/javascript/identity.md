@@ -140,7 +140,7 @@ Consider this Identify event:
 
 ```js
 analytics.identify('12091906-01011992', {
-    plan_id: 'Paid, Tier 2'
+    plan_id: 'Paid, Tier 2',
     email: 'grace@usnavy.gov'
 });
 ```
