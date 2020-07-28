@@ -57,7 +57,6 @@ A user's `anonymousId` changes when any of the following conditions are met.
 ### Override the Anonymous ID from the Segment snippet
 
 You can also set the `anonymousId` immediately inside your Segment snippet, even before the `ready` method returns.
-<!-- TODO: explain when you would do this, when not to do this. What this buys you.-->
 
  ```js
   analytics.load('writekey');
@@ -65,7 +64,7 @@ You can also set the `anonymousId` immediately inside your Segment snippet, even
   analytics.setAnonymousId('ABC-123-XYZ');
 ```
 
-Keep in mind that setting the `anonymousId` in Analytics.js does not overwrite the anonymous tracking IDs for any destinations you're using.
+Use this method if you are queueing calls before `ready` returns and they require a custom `anonymousId`. Keep in mind that setting the `anonymousId` in Analytics.js does not overwrite the anonymous tracking IDs for any destinations you're using.
 
 > info ""
 > Device-mode destinations that load their code on your site _might_ also set their own anonymous ID for the user that is separate and different from the Segment generated one. Some destinations use the Segment anonymousId. Read the documentation for each destination to find out if a destination sets its own ID.
@@ -134,13 +133,12 @@ The information you pass in `context.traits` _does not_ appear in your downstrea
 
 > note ""
 > The `options` object described in the previous seciton behaves differently from the `options.context.traits` object discussed here. The `traits` object described here does not cause the anonymousId to persist across different calls.
-<!-- different from the options, probably different behavior, probably don't persist TODO: P check this pls :) -->
 
 Consider this Identify event:
 
 ```js
 analytics.identify('12091906-01011992', {
-    plan_id: 'Paid, Tier 2',
+    plan_id: 'Paid, Tier 2'
     email: 'grace@usnavy.gov'
 });
 ```
@@ -161,8 +159,7 @@ analytics.track('Clicked Email', {
 );
 ```
 
-This appends the `plan_id` trait to this Track event. <!-- TODO: P - check this behavior? Does it persist? Also please add the context object brackets)  This does _not_ add the name or email, since those traits are not in the `context` object. You must do this for every susbequent event you want these traits to appear on.-->
-
+This appends the `plan_id` trait to this Track event. This does _not_ add the name or email, since those traits were not added to the `context` object. You must do this for every following event you want these traits to appear on, as the `traits` object does not persist between calls.
 
 
 ## Clearing Traits
@@ -178,11 +175,9 @@ analytics.user().traits({});
 analytics.group().traits({});
 ```
 
-
-
 ## User and Group Information
 
-You can use the `user` or `group` method to return information about the currently identified user or group, as soon as the Analytics.js library loads.
+You can use the `user` or `group` method as soon as the Analytics.js library loads, to return information about the currently identified user or group. This information is retrieved from the user's cookie.
 
 <!-- TODO: retrieves info from cookie, if they have any info - maybe link to the top section-->
 
@@ -217,11 +212,10 @@ analytics.ready(function() {
 
 Segment automatically collects the user's IP address for device-based (iOS, Android, Analytics.js and Xamarin) events.
 
-You can pass a value for `options.context.ip` to prevent the Segment systems from recording the IP address for the request.
-<!-- TODO have to send with every track call to anonymize & explicitly override. if you reset, then Seg defaults to the normal common/context behavior -->
-
-Example:
+You can pass a value for `options.context.ip` to prevent the Segment systems from recording the IP address for the request, as in the example below.
 
 ```js
   analytics.track("Order Completed", {}, { context: { ip: "0.0.0.0" }});
 ```
+
+You must add this override to _every_ Track call to explicitly override IP collection. If you reset this trait in the context object, Segment defaults to the normal IP collection behavior.
