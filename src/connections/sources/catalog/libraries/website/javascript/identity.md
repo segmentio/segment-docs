@@ -22,40 +22,41 @@ If a user returns to your site after the cookie expires, Analytics.js looks for 
 
 ## Anonymous IDs
 
-Analytics.js generates a unique user ID (UUID) and sets this as `anonymousId` for all new visitors to your site.
-
-<!-- TODO: explain when this happens - during lib init and before any device-mode dests load -  link to UUID format, you can override-->
+Analytics.js generates a [universally unique ID (UUID)](https://en.wikipedia.org/wiki/Universally_unique_identifier) for the viewer during the library's initialization phase, and sets this as `anonymousId` for each new visitor to your site. This happens before Analytics.js loads any device-mode destinations, and so before these destination-libraries can generate their own user IDs.
 
 Example:
 ```js
 ajs_anonymous_id=%2239ee7ea5-b6d8-4174-b612-04e1ef3fa952
 ```
 
-You can override the default-generated anonymousID in code, by setting is in the `options` object of a call, or by setting it in Analytics.js before you make a call. <!-- TODO: link to stuff below -->
-
-
-
-### Refreshing the Anonymous ID
-
-A user's `anonymousId` refreshes (changes) on any of the following conditions:
-
-- The user clears their cookies _and_ `localstorage`
-- Your site or app calls [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) during in the user's browser session
-- Your site or app calls `analytics.identify()` with a userId that differs from the current userId
+You can override the default-generated anonymousID in code using the methods described below:
+- [Set anonymousId from the Segment snippet](#override-the-anonymous-id-from-the-segment-snippet) (before the `ready` method returns)
+- [Use a call to override the anonymousID](#override-the-default-anonymous-id-with-a-call)
+- [Set anonymousId in the `options` object of a call](#override-the-anonymous-id-using-the-options-object)
 
 ### Retrieve the Anonymous ID
 
-You can retrieve the user's current `anonymousId` with the following call:
+You can get the user's current `anonymousId` using either of the following calls:
 
 ```js
 analytics.user().anonymousId();
 ```
-If the user's `anonymousId` is `null` (meaning not set), Analytics.js automatically sets a new `anonymousId` when you call this function.
+
+If the user's `anonymousId` is `null` (meaning not set) when you call this function, Analytics.js automatically generated and sets a new `anonymousId` for the user.
+
+
+### Refreshing the Anonymous ID
+
+A user's `anonymousId` changes when any of the following conditions are met.
+
+- The user clears their cookies _and_ `localstorage`.
+- Your site or app calls [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) during in the user's browser session.
+- Your site or app calls `analytics.identify()` with a userId that is different from the current userId.
 
 
 ### Override the Anonymous ID from the Segment snippet
 
-You can also set the `anonymousId` immediately inside your Segment snippet, even before the `ready` method returns:
+You can also set the `anonymousId` immediately inside your Segment snippet, even before the `ready` method returns.
 <!-- TODO: explain when you would do this, when not to do this. What this buys you.-->
 
  ```js
@@ -65,25 +66,36 @@ You can also set the `anonymousId` immediately inside your Segment snippet, even
 ```
 
 Keep in mind that setting the `anonymousId` in Analytics.js does not overwrite the anonymous tracking IDs for any destinations you're using.
-<!-- TODO: device-mode dests can set an anonid - this is not the same. read the docs for each dest to find-->
 
+> info ""
+> Device-mode destinations that load their code on your site _might_ also set their own anonymous ID for the user that is separate and different from the Segment generated one. Some destinations use the Segment anonymousId. Read the documentation for each destination to find out if a destination sets its own ID.
 
 ### Override the default Anonymous ID with a call
 
-Override the assigned `anonymousId` for the current user:
+If the default generated UUID does not meet your needs, you can override it `anonymousId` for the current user using either of the following methods.
+
 ```js
 analytics.user().anonymousId('ABC-123-XYZ');
 ```
-<!-- TODO: explain when you would do this, when not to do this. What this buys you.
-do this when - the standard UUID is not what you want, -->
 
+```js
+analytics.setAnonymousId('ABC-123-XYZ')
+```
+
+These methods behave exactly the same.
 
 ### Override the Anonymous ID using the options object
 
-<!-- LR TODO - tag P on the docs to make sure the payloads are correctly formed to show the options object -->
 Or in the `options` object of [`identify`](/docs/connections/spec/identify/), [`page`](/docs/connections/spec/page/), or [`track`](/docs/connections/spec/track/) calls, like this:
 
-<!-- TODO: add some padding between these because it's not clear how they follow. possible codetabs?-->
+
+Set the anonymousId in the Options object using the format in the following examples.
+
+The custom anonymousId persists when you use these methods, even if you do not explicitly specify the anonymousId in the calls.
+
+For example, after the Track call below sets the anonId, any later track calls from this user will have the anonymousId of `ABC-123-XYZ`, even if it is not explicitly specified in the track call.
+
+#### Override anonymousId in an Identify call
 
 ```js
 analytics.identify('user_123', {
@@ -93,9 +105,13 @@ analytics.identify('user_123', {
 });
 ```
 
+#### Override anonymousId on a Page call
+
 ```js
 analytics.page({}, { anonymousId: 'ABC-123-XYZ' });
 ```
+
+#### Override anonymousId on a Track call
 
 ```js
 analytics.track('Email Clicked', {
@@ -104,7 +120,7 @@ analytics.track('Email Clicked', {
   anonymousId: 'ABC-123-XYZ'
 });
 ```
-<!-- TODO: P - does this persist in this method?-->
+
 
 ## Saving traits to the context object
 
@@ -116,7 +132,9 @@ The `context` object contains an optional `traits` dictionary that contains trai
 
 The information you pass in `context.traits` _does not_ appear in your downstream tools (such as Salesforce, Mixpanel, Google Analytics, etc.); however, this data _does_ appear in your [warehouses and storage destinations](/docs/connections/storage/).
 
-<!-- different from the options, probably different behavior, probably don't persist TODO:P check this pls :) -->
+> note ""
+> The `options` object described in the previous seciton behaves differently from the `options.context.traits` object discussed here. The `traits` object described here does not cause the anonymousId to persist across different calls.
+<!-- different from the options, probably different behavior, probably don't persist TODO: P check this pls :) -->
 
 Consider this Identify event:
 
