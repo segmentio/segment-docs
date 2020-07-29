@@ -1,5 +1,6 @@
 ---
 title: Managing identity in Analytics.js
+strat: ajs
 ---
 
 This page explains how Analytics.js identifies users, and passes userID and anonymousID data, and how to override and change this information.
