@@ -16,8 +16,6 @@ sections:
   - path: /connections/destinations/catalog/adobe-analytics/best-practices
     title: Adobe Analytics Best Practices
 
-
-
 - slug: facebook
   section_title: Facebook Integrations
   section:
@@ -62,7 +60,7 @@ sections:
     title: Analytics.js (Javascript) Source
   - path: /connections/sources/catalog/libraries/website/javascript/quickstart
     title: Quickstart Tutorial
-  - path: /connections/sources/catalog/libraries/website/identity
+  - path: /connections/sources/catalog/libraries/website/javascript/identity
     title: Managing identity in Analytics.js
   - path: /connections/sources/catalog/libraries/website/javascript/middleware
     title: Middlewares for Analytics.js
