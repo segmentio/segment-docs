@@ -1,18 +1,21 @@
 ---
 sections:
 - slug: adobe
-  section_title: Adobe Integrations
+  section_title: Adobe Analytics
   section:
   - path: /connections/destinations/catalog/adobe-analytics
     title: Adobe Analytics destination
+  - path: /connections/destinations/catalog/adobe-analytics/settings
+    title: Mapping Segment to Adobe Analytics
+  - path: /connections/destinations/catalog/adobe-analytics/identity
+    title: Identity Resolution in Segment Adobe Analytics
   - path: /connections/destinations/catalog/adobe-analytics/mobile
-    title: Set up Adobe Analytics for mobile
+    title: Adobe Analytics for mobile
   - path: /connections/destinations/catalog/adobe-analytics/heartbeat
-    title: Set up Adobe Analytics Heartbeat
+    title: Adobe Analytics Heartbeat
   - path: /connections/destinations/catalog/adobe-analytics/best-practices
     title: Adobe Analytics Best Practices
-  - path: /connections/destinations/catalog/adobe-target
-    title: Adobe Target destination
+
 
 
 - slug: facebook
