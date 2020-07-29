@@ -3,27 +3,24 @@ title: Identity Resolution in Segment Adobe Analytics
 strat: adobe
 ---
 
-## Identity Resolution and Timestamps
-
-This explains how your destination settings (for Identity Resolution and Timestamps) change how user session data (the `userId` and `visitorId`) are sent to Adobe Analytics. You should get familiar with the destination settings in the Segment app before continuing.
-
+This page explains how your destination settings (for Identity Resolution and Timestamps) change how user session data (the `userId` and `visitorId`) are sent to Adobe Analytics. You should get familiar with the destination settings in the Segment app before continuing.
 
 The Identity Resolution destination settings are:
 - **Marketing Cloud ID**
 - **Drop VisitorID**, and **No Fallbacks for VisitorID:Server-Side Only** destination settings.
 
-![](images/identity.png)
+![](/docs/connections/destinations/catalog/adobe-analytics/images/identity-resolution.png)
 
 The Timestamp destination settings are:
 - **Timestamp Option**
 - **Send Both Timestamp and VisitorID for Timestamp Optional Reporting Suites**
 - **Prefer VisitorID for Hybrid Timestamp Reporting**
 
-![](images/timestamps.png)
+![](/docs/connections/destinations/catalog/adobe-analytics/images/timestamps.png)
 
-### Analytics.js - Device Mode
+## Analytics.js - Device Mode
 
-If you're using Analytics.js in device-mode, Segment "wraps" the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics [`Appmeasurement.js` library](https://docs.adobe.com/content/help/en/analytics/implementation/js/overview.html). For more information on choosing a connection mode see our section on [Choosing between Device-mode and Cloud-mode](index/#choosing-between-device-mode-and-cloud-mode). In this section we will discuss how identity resolution is  handled if you are  using  Analytics.js in device-mode.  
+If you're using Analytics.js in device-mode, Segment "wraps" the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics [`Appmeasurement.js` library](https://docs.adobe.com/content/help/en/analytics/implementation/js/overview.html). For more information on choosing a connection mode see our section on [Choosing between Device-mode and Cloud-mode](/docs/connections/destinations/catalog/adobe-analytics/#choosing-between-device-mode-and-cloud-mode). In this section we will discuss how identity resolution is  handled if you are  using  Analytics.js in device-mode.
 
 You can enable **Drop Visitor ID** from the Segment app to prevent Adobe from creating a new user profile when you set `window.s.visitorID` with a custom value. However if you're only using Analytics.js to send data to Adobe, this can make it difficult to combine anonymous and identified users inside your reports.
 
@@ -35,9 +32,9 @@ Analytics.js automatically generates an Adobe Analytics [`s_vi` cookie value](ht
 
 Once you `identify` your user, Segment sets the `visitorId` variable to your `userId`. This effectively creates a new user, which *does* have unique user implications. However, based on a thorough reading of the Adobe documentation and discussion with many customers, we believe this is the best practice because it allows you to seamlessly track logged-in users across devices.
 
-### Cloud Mode - Server Side
+## Cloud Mode - Server Side
 
-In Cloud Mode, you can send data through the Segment servers where it is then mapped and sent on to Adobe Analytics. "Cloud-mode" data is data sent _without_ bundling the Segment-Adobe-Analytics SDK. You enable Cloud-mode from the Adobe Analytics source settings in the Segment app. It can be sent using mobile libraries, Analytics.js, and other server-based sources. Cloud mode data is sent to Adobe using Adobe's data insertion API in XML format. For more information on choosing a connection mode see our section on [Choosing between Device-mode and Cloud-mode](index/#choosing-between-device-mode-and-cloud-mode). In this section we will discuss how identity resolution is handled if you are using a Cloud Mode connection.
+In Cloud Mode, you can send data through the Segment servers where it is then mapped and sent on to Adobe Analytics. "Cloud-mode" data is data sent _without_ bundling the Segment-Adobe-Analytics SDK. You enable Cloud-mode from the Adobe Analytics source settings in the Segment app. It can be sent using mobile libraries, Analytics.js, and other server-based sources. Cloud mode data is sent to Adobe using Adobe's data insertion API in XML format. For more information on choosing a connection mode see our section on [Choosing between Device-mode and Cloud-mode](/docs/connections/destinations/catalog/adobe-analytics/#choosing-between-device-mode-and-cloud-mode). In this section we will discuss how identity resolution is handled if you are using a Cloud Mode connection.
 
 There are several options for tracking your users on the server. If you only track logged-in users, you can send their `userId` in your events to ensures that the events are attributed to the correct user. If you're tracking anonymous users, Segment sends the `s_vi` cookie from Adobe if you pass it under `context['Adobe Analytics'].visitorId` as the `visitorId`. If you do not pass as `visitorID`, Segment uses the `userId` if present, or as a last resort uses the Segment `anonymousId`. The Segment `anonymousId` is different from the anonymous `s_vi` value that Adobe Analytics auto-generates and uses on the client as an anonymous ID.
 
@@ -53,7 +50,7 @@ If you're using the Experience Cloud ID, you should accept this and use the Segm
 We know this is daunting territory, so don't hesitate to [contact us directly for guidance](https://segment.com/help/contact/).
 
 
-#### No Fallbacks for VisitorId Setting - Cloud Mode Only
+## No Fallbacks for VisitorId Setting - Cloud Mode Only
 
 Segment introduced a new **No Fallbacks for Visitor ID** setting to help with the transition from using the Adobe Analytics `visitorID` to using the Experience Cloud ID (ECID). If a `visitorId` is not explicitly sent in the integration specific object in your payload (ie. `context["Adobe Analytics"].visitorId`), Segment will fallback  to setting the `<visitorID>` tag to `userId` (or `anonymousId`, if the call is anonymous). You can use this setting to indicate that you only want the `<visitorId>` tag to be set with the `visitorId` value sent in your integration specific object.  Enabling this will help to reduce inflated user counts that are set with a Segment `userId`.
 
@@ -68,4 +65,4 @@ If **No Fallbacks for Visitor ID** is enabled, and you're setting a `marketingCl
 
 This decision tree is a visual representation of how Segment's Adobe Analytics destination settings and payload data interact with Segment to determine when to send a `visitorId` to Adobe.
 
-![](images/adobe-identity-res-decision-tree.png)
+![](/docs/connections/destinations/catalog/adobe-analytics/images/adobe-identity-res-decision-tree.png)
