@@ -29,5 +29,4 @@ analytics.track('Clicked Email', { 'emailCampaign': 'First Touch' });
 analytics.user().anonymousId('abc123');
 ```
 
-You can pass up to **one of each trigger parameter** as shown in the example above.
-<!-- TODO: by "up to" do we mean they're optional? -->
+Each trigger parameter is optional. You can pass up to **one of each trigger parameter** as shown in the example above.
