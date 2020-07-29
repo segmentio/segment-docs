@@ -3,7 +3,7 @@ title: Indicative Destination
 rewrite: true
 ---
 
-[Indicative]( https://app.indicative.com/#/login/register?utm_source=partners&utm_medium=segment&utm_campaign=integration) is a behavioral analytics platform designed to help Marketing and Product teams optimize user engagement, conversion, and retention.
+[Indicative](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/login/register) is a behavioral analytics platform designed to help Marketing and Product teams optimize user engagement, conversion, and retention.
 
 This document was last updated on 18th October, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
@@ -11,9 +11,9 @@ This document was last updated on 18th October, 2018. If you notice any gaps, ou
 
 {% include content/connection-modes.md %}
 
-1. [Create an Indicative account](https://app.indicative.com/#/login/register?utm_source=partners&utm_medium=segment&utm_campaign=integration).
+1. [Create an Indicative account](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/login/register).
 
-2. To integrate Segment as a data source go to **Settings > Integrations > [Segment](https://app.indicative.com/#/onboarding/segment?utm_source=partners&utm_medium=segment&utm_campaign=integration)**
+2. To integrate Segment as a data source go to **Settings > Integrations > [Segment](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/onboarding/segment)**
 
 3. Click **Enable with Segment** under One-click Setup.
 
@@ -21,7 +21,7 @@ This document was last updated on 18th October, 2018. If you notice any gaps, ou
 
 5. To connect multiple sources to this project, simply repeat steps 2 - 4.
 
-you're all set! Walkthrough the [Interactive Demo](https://app.indicative.com/#/onboard/tutorial?utm_source=partners&utm_medium=segment&utm_campaign=integration) to get ramped up quickly and easily!
+You're all set! Walkthrough the [Interactive Demo](https://app.indicative.com/?utm_source=segment&utm_medium=partners&utm_campaign=setupguide#/onboard/dashboard) to get ramped up quickly and easily!
 
 For additional information, contact `support@indicative.com`.
 

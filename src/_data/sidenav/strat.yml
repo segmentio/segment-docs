@@ -1,25 +1,26 @@
 ---
 sections:
 - slug: adobe
-  section_title: Adobe Integrations
+  section_title: Adobe Analytics
   section:
   - path: /connections/destinations/catalog/adobe-analytics
     title: Adobe Analytics destination
+  - path: /connections/destinations/catalog/adobe-analytics/settings
+    title: Mapping Segment to Adobe Analytics
+  - path: /connections/destinations/catalog/adobe-analytics/identity
+    title: Identity Resolution in Segment Adobe Analytics
   - path: /connections/destinations/catalog/adobe-analytics/mobile
-    title: Set up Adobe Analytics for mobile
+    title: Adobe Analytics for mobile
   - path: /connections/destinations/catalog/adobe-analytics/heartbeat
-    title: Set up Adobe Analytics Heartbeat
+    title: Adobe Analytics Heartbeat
   - path: /connections/destinations/catalog/adobe-analytics/best-practices
     title: Adobe Analytics Best Practices
-  - path: /connections/destinations/catalog/adobe-target
-    title: Adobe Target destination
-
 
 - slug: facebook
   section_title: Facebook Integrations
   section:
   - path: /connections/destinations/catalog/facebook-pixel
-    title: Facebook Pixel destintation
+    title: Facebook Pixel destination
   - path: /connections/destinations/catalog/facebook-app-events
     title: Facebook App Events destination
   - path: /connections/sources/catalog/cloud-apps/facebook-ads
@@ -33,20 +34,37 @@ sections:
   - path: /connections/sources/catalog/libraries/mobile/android
     title: Segment Android mobile source library
   - path: /connections/destinations/catalog/firebase
-    title: Google Firebase (mobile analytics) destintation
+    title: Google Firebase (mobile analytics) destination
   - path: /connections/destinations/catalog/google-analytics
-    title: Google Analytics destintation
+    title: Google Analytics destination
   - path: /connections/destinations/catalog/google-tag-manager
-    title: Google Tag Manager destintation
+    title: Google Tag Manager destination
   - path: /connections/destinations/catalog/doubleclick-floodlight
-    title: DoubleClick Floodlight destintation
+    title: DoubleClick Floodlight destination
   - path: /connections/destinations/catalog/personas-display-video-360
     title: 'Using Personas with Google DV360 (Beta)'
   - path: /connections/destinations/catalog/google-ads-classic
-    title: 'Google Ads (Classic) destintation'
+    title: 'Google Ads (Classic) destination'
   - path: /connections/destinations/catalog/google-ads-gtag
-    title: 'Google Ads (Gtag) destintation'
+    title: 'Google Ads (Gtag) destination'
   - path: /connections/destinations/catalog/google-cloud-function
-    title: Google Cloud Function destintation
+    title: Google Cloud Function destination
   - path: /connections/destinations/catalog/google-cloud-pubsub
-    title: Google Cloud Pubsub destintation
+    title: Google Cloud Pubsub destination
+
+
+- slug: ajs
+  section_title: Analytics.js Documentation
+  section:
+  - path: /connections/sources/catalog/libraries/website/javascript
+    title: Analytics.js (Javascript) Source
+  - path: /connections/sources/catalog/libraries/website/javascript/quickstart
+    title: Quickstart Tutorial
+  - path: /connections/sources/catalog/libraries/website/javascript/identity
+    title: Managing identity in Analytics.js
+  - path: /connections/sources/catalog/libraries/website/javascript/middleware
+    title: Middlewares for Analytics.js
+  - path: /connections/sources/catalog/libraries/website/javascript/querystring
+    title: Querystring API
+  - path: /connections/sources/catalog/libraries/website/javascript/troubleshooting
+    title: Troubleshooting

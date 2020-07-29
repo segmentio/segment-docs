@@ -46,13 +46,15 @@ After you set up the necessary AWS resources:
    - **IAM Role ARN**: The ARN of the IAM role that Segment will use to connect to Data Lakes.
    - **S3 Bucket**: Name of the S3 bucket used by Data Lakes. The EMR cluster will store logs in this bucket.
 
-5. _(Optional)_ **Date Partition**: Optional setting to change the date partition structure, with a default structure `day=<YYYY-MM-DD>/hr=<HH>`. To use the default, leave this setting unchanged. To partition the data by a different date structure, choose one of the following options:
+5. _(Optional)_ **Date Partition**: Optional advanced setting to change the date partition structure, with a default structure `day=<YYYY-MM-DD>/hr=<HH>`. To use the default, leave this setting unchanged. To partition the data by a different date structure, choose one of the following options:
   - Day/Hour [YYYY-MM-DD/HH] (Default)
   - Year/Month/Day/Hour [YYYY/MM/DD/HH]
   - Year/Month/Day [YYYY/MM/DD]
   - Day [YYYY-MM-DD]
 
-6. Enable the Data Lakes destination by toggling the switch next to the “Setup Guide” button to on.
+6. _(Optional)_ **Glue Database Name**: Optional advanced setting to change the name of the Glue Database which is set to the source slug by default. Each source connected to Data Lakes must have a different Glue Database name otherwise data from different sources will collide in the same database.
+
+7. Enable the Data Lakes destination by clicking the toggle near the **Set up Guide** button.
 
 Once the Data Lakes destination is enabled, the first sync will begin approximately 2 hours later.
 

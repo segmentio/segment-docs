@@ -709,7 +709,7 @@ example.  To set an out of session event, pass in `true` for the key
 
 iOS Example:
 
-```objective-c
+```objc
 [[SEGAnalytics sharedAnalytics]
   track: @"Push Notification Viewed"
   properties: nil

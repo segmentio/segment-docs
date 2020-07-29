@@ -243,7 +243,7 @@ Segment supports Intercom's `reset` method only for Device-mode Mobile sources. 
 
 On iOS:
 
-```objective-c
+```objc
   [Intercom reset];
 ```
 
@@ -316,7 +316,7 @@ Analytics.with(context).identify("123", traits, options);
 
 #### Identity verification plus filtering using Destinations Object
 
-If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-destinations), the context object looks like this:
+If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-destinations-with-the-integrations-object), the context object looks like this:
 
 ```js
 {
@@ -402,7 +402,7 @@ Our API doesn't support Intercom tags. Traits can be used instead of tags to cre
 
 ### Conditionally show the Intercom chat widget (Browser only)
 
-You can take advantage of Intercom's `hide_default_launcher` option to selectively show the chat widget. According to Intercom's [docs](https://docs.intercom.io/configure-intercom-for-your-product-or-site/customize-the-intercom-messenger/customize-the-intercom-messenger-technical#show-the-intercom-messenger-to-selected-users-for-web-), you want to first hide the Messenger for all users inside their UI using Messenger settings. Then think about how you want to programmatically decide which users you'd like to show the widget to. Then you can pass an Intercom specific destination setting like this:
+You can take advantage of Intercom's `hide_default_launcher` option to selectively show the chat widget. According to Intercom's [docs](https://www.intercom.com/help/en/articles/178-customize-the-intercom-messenger-basics), you want to first hide the Messenger for all users inside their UI using Messenger settings. Then think about how you want to programmatically decide which users you'd like to show the widget to. Then you can pass an Intercom specific destination setting like this:
 
 ```js
 // with analytics.js
@@ -429,7 +429,7 @@ analytics.onIntegrationReady("Intercom", new Callback() {
 });
 ```
 
-```objective-c
+```objc
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(integrationDidStart:) name:SEGAnalyticsIntegrationDidStart object:nil];
 
 - (void)integrationDidStart:(nonnull NSNotification *)notification
