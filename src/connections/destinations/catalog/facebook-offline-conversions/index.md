@@ -1,6 +1,7 @@
 ---
 title: Facebook Offline Conversions Destination
 rewrite: true
+strat: facebook
 ---
 
 [Facebook Offline Conversions](https://www.facebook.com/business/help/1782327938668950?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables offline event tracking, so marketers can run campaigns, upload transaction data, and compare in-store transactions.
