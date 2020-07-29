@@ -54,7 +54,7 @@ After you set up the necessary AWS resources:
 
 6. _(Optional)_ **Glue Database Name**: Optional advanced setting to change the name of the Glue Database which is set to the source slug by default. Each source connected to Data Lakes must have a different Glue Database name otherwise data from different sources will collide in the same database.
 
-7. Enable the Data Lakes destination by toggling the switch next to the “Setup Guide” button to on.
+7. Enable the Data Lakes destination by clicking the toggle near the **Set up Guide** button.
 
 Once the Data Lakes destination is enabled, the first sync will begin approximately 2 hours later.
 
