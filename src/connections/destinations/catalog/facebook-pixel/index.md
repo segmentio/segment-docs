@@ -56,7 +56,7 @@ analytics.identify('ze8rt1u89', {
   name: 'Zaphod Kim',
   gender: 'Male',
   email: 'jane.kim@example.com',
-  phone: '1-401-826-4421',
+  phone: '1-401-555-4421',
   address: {
     city: 'San Francisco',
     state: 'Ca',
@@ -162,6 +162,29 @@ Facebook accepts the following properties:
 If you follow Segment's [spec](/docs/connections/spec/identify/#traits), these would automatically be sent correctly.
 
 Facebook also accepts an External ID. This can be any unique ID from the advertiser, such as loyalty membership IDs, user IDs, and external cookie IDs. In order to send an `external_id` to Facebook you can indicate which user trait you would like Segment to map to `external_id` using the **Client-Side Only: Advanced Match Trait Key for External ID** setting.
+
+## Limited Data Use
+
+{% include content/facebook-ldu-intro.md %}
+
+> info ""
+> The **Use Limited Data Use** destination setting is disabled by default for all Facebook destinations except for Facebook Pixel. This must be enabled manually from the destination settings if you're using other Facebook destinations.
+
+{% include content/facebook-ldu-params.md %}
+
+Facebook uses the `context.ip` to determine the geolocation of the event.
+
+You can manually change the Data Processing parameters by adding settings to the `integrations` object. For Facebook Pixel, you must store these settings in the [Load object](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#load-options) so that Segment can set them *before* it calls `init`. The example below shows how you might set custom Data Processing parameters in Analytics.js.
+
+```javascript
+analytics.load("replace_with_your_write_key", {
+  integrations: {
+    'Facebook Pixel': {
+      dataProcessingOptions: [['LDU'], 1, 1000]
+    }
+  }
+});
+```
 
 ## Settings
 
