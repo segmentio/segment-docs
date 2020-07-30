@@ -188,6 +188,8 @@ analytics.track({
 
 #### iOS Device Mode
 
+You must be using the Facebbok App Events integration SDK version `2.0.0` or higher to be able to call `setDataProcessingOptions` when you enable the **Use Limited Data Use** destination setting. Events sent from Facebbok App Events integration SDK versions older than `v2.0.0` will not have acess to call `setDataProcessingOptions`, but Facebook will have access to the IP address in the events to process LDU based on geolocation.
+
 When you use Segment’s mobile libraries, you must set the Data Processing Options when you declare the destination in your app delegate’s instance. The example below shows how you might set custom Data Processing parameters in an iOS project.
 
 ```objc
