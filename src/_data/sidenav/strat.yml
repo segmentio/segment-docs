@@ -21,8 +21,12 @@ sections:
   section:
   - path: /connections/destinations/catalog/facebook-pixel
     title: Facebook Pixel destination
+  - path: /connections/destinations/catalog/facebook-pixel-server-side
+    title: Facebook Pixel Server destination (Beta)
   - path: /connections/destinations/catalog/facebook-app-events
     title: Facebook App Events destination
+  - path: /connections/destinations/catalog/facebook-offline-conversions
+    title: Facebook Offline Conversions destination
   - path: /connections/sources/catalog/cloud-apps/facebook-ads
     title: Facebook Ads Cloud Source
   - path: /connections/sources/catalog/cloud-apps/facebook-lead-ads
