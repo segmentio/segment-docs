@@ -5899,14 +5899,14 @@ destinations:
     description: 'For pre-purchase events such as `Product Viewed` and `Product Added`,
       choose which Segment property you would like to map to Facebook''s value property. '
     settings: []
-  - name: blacklistPiiProperties
-    display_name: Blacklist PII Properties
+  - name: blocklistPiiProperties
+    display_name: Blocklist PII Properties
     type: MIXED
     deprecated: false
     required: false
     description: Facebook has a strict policy prohibiting any personally identifiable
       information (PII) from being sent as properties of events to their API. By default,
-      this integration will scan `track` events for [these](https://segment.com/docs/destinations/facebook-pixel/#pii-blacklisting)
+      this integration will scan `track` events for [these](https://segment.com/docs/destinations/facebook-pixel/#pii-blocklisting)
       properties and strip them from the payload that gets sent to Facebook. If your
       events contain other properties with PII values, you can use this setting to
       append to this default list. You can also use this setting to optionally hash
