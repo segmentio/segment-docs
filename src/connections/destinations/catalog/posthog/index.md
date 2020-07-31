@@ -14,10 +14,10 @@ This destination is maintained by PostHog. For any issues with the destination, 
 2. Search for "PostHog" in the Destinations Catalog, and select the PostHog destination.
 3. Choose which Source should send data to the PostHog destination.
 4. Go to your [PostHog set up page](https://app.posthog.com/setup), and find and copy the **API key**.
- 
-6. Enter the PostHog API Key that you copied in the PostHog destination settings in Segment.
+5. Enter the PostHog API Key that you copied in the PostHog destination settings in Segment.
 
-**Note**: If you're hosting your own PostHog instance, add the URL of your instance without the trailing slash. Ex. `https://posthog-example.herokuapp.com`
+> note ""
+> **Note**: If you're hosting your own PostHog instance, add the URL of your instance without the trailing slash in the **PostHog instance** setting. For example, `https://posthog-example.herokuapp.com`
 
 ## Page
 
