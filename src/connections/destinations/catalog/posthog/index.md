@@ -11,7 +11,7 @@ This destination is maintained by PostHog. For any issues with the destination, 
 {% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "PostHog" in the Destinations Catalog, and select the "PostHog" destination.
+2. Search for "PostHog" in the Destinations Catalog, and select the PostHog destination.
 3. Choose which Source should send data to the PostHog destination.
 4. Go to your PostHog setup page, find and copy the “API key”.
     - [Saas Account Setup Page](https://app.posthog.com/setup)
