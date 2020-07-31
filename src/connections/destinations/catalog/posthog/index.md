@@ -66,7 +66,7 @@ Segment sends Track calls to PostHog as a `track` event.
 
 ## Alias
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Alias method documentation](https://segment.com/docs/connections/spec/alias/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.alias('507f191e81')
