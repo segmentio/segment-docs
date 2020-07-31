@@ -32,7 +32,7 @@ Segment sends Page calls to PostHog as a `$pageview`.
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look at the [Screen method documentation](https://segment.com/docs/connections/spec/screen/) to learn about what it does. An example call would look like:
 
 ```obj
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
