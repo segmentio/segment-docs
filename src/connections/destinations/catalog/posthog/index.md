@@ -4,7 +4,7 @@ rewrite: true
 ---
 [PostHog](https://posthog.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is self-hosted, open-source analytics product. Get the same powerful features as other product analytics software but keep full control over your data.
 
-This destination is maintained by PostHog. For any issues with the destination, [contact their support team](mailto:hey@posthog.com).
+This destination is maintained by PostHog. For any issues with the destination, [contact the PostHog Support team](mailto:hey@posthog.com).
 
 ## Getting Started
 
