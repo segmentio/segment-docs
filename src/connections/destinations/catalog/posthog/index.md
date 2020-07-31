@@ -51,7 +51,7 @@ analytics.identify('userId123', {
 });
 ```
 
-Segment sends Identify calls to PostHog as an `identify` event. Data will appear under the People tab.
+Segment sends Identify calls to PostHog as an `identify` event. Data from Identify calls appears in PostHog under the **People** tab.
 
 
 ## Track
