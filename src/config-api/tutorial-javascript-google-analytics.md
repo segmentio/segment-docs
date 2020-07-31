@@ -3,13 +3,12 @@ title: 'Creating a Javascript web source and Google Analytics destination'
 sidebar: 'Tutorial: Google Analytics Destination'
 ---
 
-Segment makes it easy to collect data from cloud services (i.e. advertising, helpdesk, and marketing) and send it to many destination services (i.e. CRM services and data warehouses).
+Segment makes it easy to collect data from cloud services (for example, advertising, helpdesk, and marketing) and send it to many destination services (for example, CRM services and data warehouses).
 
 A common use case is to send data from your website into Google Analytics to understand you website users.
 
 This tutorial uses the Config API to:
 
-* Create a personal access token to access the api
 * Create a JavaScript source
 * Create Google Analytics destination
 * Update Google Analytics settings
@@ -20,48 +19,35 @@ Finally it uses the Tracking API to:
 
 ## Prerequisites
 
+Before you begin, you'll need to get your Google Analytics website tracking ID, and create an access token in the Segment App.
+
 ### Google Analytics Website Tracking ID
 
 The Google Analytics integration requires a Google account and website tracking ID. See the Google [Set Up Analytics Tracking doc](https://support.google.com/analytics/answer/1008080?hl=en) for instructions to create an ID.
 
 ### Personal Access Token
 
-Programmatic access to the Config API for resources that you own happens through personal access tokens. Personal access tokens belong to Segment users, and can be used to access resources owned by the user who created them.
+You can programmatically access resources that you own in using Config API as long as you have an access token. Segment users can generate access tokens for an individual workspace, with permissions for resources in that workspace. These tokens can then be used to access those resources.
+See the [Authentication](/docs/config-api/authentication/) doc for more information.
 
-To set up Segment Protocols through the API you first need to create a personal access token with **full access** to your workspace through the `workspace` scope. Use your Segment account email and password:
+To set up Segment Protocols through the API you first need to create a personal access token with **full access** to your workspace through the `workspace` scope.
 
-```shell
-$ USER=me@example.com
-$ PASS=<your Segment password>
-$ WORKSPACE=<your Segment workspace>
+> success ""
+> **Tip**: As best practice, tokens should be assigned the least permissions needed to perform a required API action, however for simplicity in this demo, we'll select Workspace Owner. You may want to delete the token once you've finished this demo.
 
-$ curl \
-  -X POST \
-  -d "{'access_token': {'description': 'my access token', 'scopes': 'workspace', 'workspace_names': ['workspaces/$WORKSPACE']}}" \
-  -u "$USER:$PASS" \
-  https://platform.segmentapis.com/v1beta/access-tokens
-```
+1. Log in to your Segment workspace.
+2. Click **Settings** in the left navigation bar.
+3. Click **Access Management**, then the **Tokens** tab, and click **Create Token**.
+4. For purposes of this demonstration, select **Workspace Owner** as the token's scope.
+5. Enter a description for the token. For this demo, we recommend using `demo-token` so it's easy to find and remove later.
+6. Click **Create**.
 
-Example response:
+The token payload appears in the dialog. Copy the payload and save it in a secure location, like a password- or secrets-manager app.
 
-```json
-{
-  "name": "access-tokens/5",
-  "description": "my access token",
-  "scopes": "workspace",
-  "create_time": "2018-10-12T22:36:39Z",
-  "token": "qiTgISif4zprgBb_5j4hXfp3qhDbxrntWwwOaHgAMr8.gg9ok4Bk7sWlP67rFyXeH3ABBsXyWqNuoXbXZPv1y2g",
-  "workspace_names": [
-    "workspaces/myworkspace"
-  ]
-}
-```
+> warning "Secret Token"
+> You can not retrieve the plain-text `token` later, so you should save it in a secret manager. If you lose the `token` you can generate a new one.
 
-> Warning: Secret Token
->
-> Note that you can not retrive the plain-text `token` later, so you should save it in a secret manager.
-
-Now that you have a personal access token, you can use this token to access the Config API by setting it in the `Authorization` header of your requests, for example:
+Now that you have a personal access token, you can use it to access the Config API by setting it in the `Authorization` header of your requests, for example:
 
 ```shell
 $ ACCESS_TOKEN=qiTgISif4zprgBb_5j4hXfp3qhDbxrntWwwOaHgAMr8.gg9ok4Bk7sWlP67rFyXeH3ABBsXyWqNuoXbXZPv1y2g
@@ -125,7 +111,7 @@ $ curl \
 
 On Segment, events are sent in real-time to "streaming destination" services. Destinations are created with the name of the service, e.g. `google-analytics`, and configuration for the services such as the website tracking ID.
 
-Let's create a Google Analytics destination. Note that we are setting the `CLOUD` connection mode that sends data to Google Analytics via Segment's servers. Also note that we are setting the website tracking ID from our Google Analytics account.
+Let's create a Google Analytics destination. Note that we are setting the `CLOUD` connection mode that sends data to Google Analytics using Segment's servers. Also note that we are setting the website tracking ID from our Google Analytics account.
 
 ```shell
 $ curl \

@@ -3,7 +3,7 @@ rewrite: true
 title: Amazon Personalize Destination
 ---
 
-Segment makes it easy to send your data to Amazon Personalize (and lots of other destinations). Once you've tracked your data through our open source [libraries](https://segment.com/libraries) we'll translate and route your data to Amazon Personalize in the format they understand. [Learn more about how to use Amazon Personalize with Segment.](/docs/connections/destinations/catalog/amazon-personalize)
+Segment makes it easy to send your data to Amazon Personalize (and lots of other destinations). Once you track your data using our open-source [libraries](/docs/connections/sources/catalog/) we'll translate and route your data to Amazon Personalize in the format they understand. [Learn more about how to use Amazon Personalize with Segment.](/docs/connections/destinations/catalog/amazon-personalize)
 
 [Amazon Personalize](https://aws.amazon.com/personalize/) is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications. AWS Personalize enables…
 
@@ -24,9 +24,9 @@ There are a few pre-requisites:
 2. Ability to deploy Lambda functions in Amazon Web Services
 3. Access to AWS Personalize
 
-don't have an S3, Redshift warehouse, or Snowflake warehouse set up? You can read more about setting up S3 [here](https://segment.com/docs/connections/warehouses/catalog/amazon-s3/), Redshift [here](https://segment.com/docs/connections/warehouses/catalog/redshift/), and Snowflake [here](https://segment.com/docs/connections/warehouses/catalog/snowflake/).
+don't have an S3, Redshift warehouse, or Snowflake warehouse set up? You can read more about setting up S3 [here](https://segment.com/docs/connections/storage/catalog/amazon-s3/), Redshift [here](https://segment.com/docs/connections/storage/catalog/redshift/), and Snowflake [here](https://segment.com/docs/connections/storage/catalog/snowflake/).
 
-***If you're a Segment business tier customer, reach out to your Success contact to initiate a replay to S3 or your Warehouse.***
+***If you're a Segment business tier customer, contact your Success contact to initiate a replay to S3 or your Warehouse.***
 
 
 There are three main parts to using Amazon Personalize with Segment:
@@ -41,7 +41,7 @@ There are three main parts to using Amazon Personalize with Segment:
 
 Whatever method you choose to train your model will result in placing a CSV into an S3 bucket. Be sure to update the policies of the bucket to include [these permissions](https://docs.aws.amazon.com/personalize/latest/dg/data-prep-upload-s3.html) to allow Personalize to access your CSV:
 
-```
+```json
 {
     "Version": "2012-10-17",
     "Id": "PersonalizeS3BucketAccessPolicy",
@@ -69,7 +69,7 @@ Whatever method you choose to train your model will result in placing a CSV into
 
 To train a Personalize model, you will need to define the event schema for the event names and properties that your model will use as features.  For the examples below, we are using the following Personalize Dataset schema to train our model.  You will want to modify this to suit your use cases.  For more information on Personalize schemas, see:  https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html
 
-```javascript
+```json
 {
     "type": "record",
     "name": "Interactions",
@@ -216,7 +216,7 @@ Click the "Add job" button and enter the following information.
 - For IAM role, you will need to create a role and execution policies that gives your Glue job the ability to write to your S3 bucket:
 
 Policy 1:
-```
+```json
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -311,7 +311,7 @@ Policy 1:
 ```
 
 Policy 2:
-```
+```json
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -411,7 +411,7 @@ Click "Save" to save the job script.
 ![](images/GlueEditJobScript.png)
 
 
-Let's review key parts of the script in more detail. First, the script is initialized with a few job parameters. We'll see how to specify these parameter values when we run the job below. For now, just see we're passing in the location of the raw JSON files via `S3_JSON_INPUT_PATH` and the location where the output CSV should be written through `S3_CSV_OUTPUT_PATH`.
+Let's review key parts of the script in more detail. First, the script is initialized with a few job parameters. We'll see how to specify these parameter values when we run the job below. For now, just see we're passing in the location of the raw JSON files using `S3_JSON_INPUT_PATH` and the location where the output CSV should be written through `S3_CSV_OUTPUT_PATH`.
 
 ```python
     args = getResolvedOptions(sys.argv, ['JOB_NAME', 'S3_JSON_INPUT_PATH', 'S3_CSV_OUTPUT_PATH'])
@@ -547,14 +547,14 @@ On the "Create user-item interaction data" page, select the "Create new schema" 
 ![](images/PersonalizeSchema.png)
 
 
-Scroll down to the "Schema definition" editor. Dataset schemas in Personalize are represented in [Avro](https://avro.apache.org/docs/current/spec.html).  For detailed information on Personalize schema definitions, please see: https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html.
+Scroll down to the "Schema definition" editor. Dataset schemas in Personalize are represented in [Avro](https://avro.apache.org/docs/current/spec.html).  For detailed information on Personalize schema definitions, see: https://docs.aws.amazon.com/personalize/latest/dg/how-it-works-dataset-schema.html.
 
 
 > Avro is a remote procedure call and data serialization framework developed within Apache's Hadoop project. It uses JSON for defining data types and protocols, and serializes data in a compact binary format.
 
 This example uses the following example schema:
 
-```
+```json
 {
     "type": "record",
     "name": "Interactions",
@@ -614,7 +614,7 @@ From the Dashboard page for the dataset group we created above, click the "Start
 
 On the "Create solution" page, enter a "Solution name".
 
-For a discussion on the different recipes you can use with Personalize, please see [here](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html)
+For a discussion on the different recipes you can use with Personalize, see [here](https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html)
 
 
 ![](images/PersonalizeSolutionConfig.png)
@@ -664,7 +664,7 @@ Select the **Create Policy from JSON** option and use the following template pol
 
 _Note: you can put in a placeholder ARN for now, as you will need to come back to this step to update with the ARN of your Lambda once that's been created._
 
-```
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -691,7 +691,7 @@ Sign in to the [Identity and Access Management (IAM) console](https://console.aw
 
 While setting up the new role, add the policy you created in the previous step.
 
-Finish with any other setup items you may want (like `tags`). Once that's complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
+Finish with any other set up items you may want (like `tags`). Once that's complete, search for and click on your new roles from the [IAM home](https://console.aws.amazon.com/iam/home#/home).
 
 Select the "Trust Relationships" tab, then click the "Edit trust relationship" button.
 
@@ -700,7 +700,7 @@ Select the "Trust Relationships" tab, then click the "Edit trust relationship" b
 Copy and paste the following into your trust relationship. You should replace `<your-source-id>` with either the Source ID of the attached Segment source (the default) or whatever custom external id you set in your Amazon Lambda destination settings.
   Note: Source ID *can be found by navigating to Settings > API Keys from your Segment source homepage.*
 
-```
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -722,7 +722,7 @@ Copy and paste the following into your trust relationship. You should replace `<
 
 If you have multiple Source's using this Role, replace the `sts:ExternalId` setting above with
 
-```
+```json
     "sts:ExternalId": ["YOUR_SEGMENT_SOURCE_ID", "ANOTHER_SOURCE_ID", "A_THIRD_SOURCE_ID"]
 ```
 
@@ -776,7 +776,7 @@ import of import init_personalize_api as api_helper
 api_helper.init()
 ```
 
-This `import` and function call utilize some boilerplate code, packaged as a [Lambda Layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html), needed to configure the Personalize API with the AWS Python SDK. This is only necessary while Personalize is in Preview. Once Personalize is GA and the API is bundled with the Python SDK, as well as other language SDKs, this supporting Layer will no longer be needed.
+This `import` and function call use some boilerplate code, packaged as a [Lambda Layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html), needed to configure the Personalize API with the AWS Python SDK. This is only necessary while Personalize is in Preview. Once Personalize is GA and the API is bundled with the Python SDK, as well as other language SDKs, this supporting Layer will no longer be needed.
 
 To install our Layer, open the Lambda navigation panel and click "Layers".
 
@@ -818,7 +818,7 @@ Click the arrow next to your policy in this role, then "Edit Policy".
 
 Add the code below to the existing permissions from within the JSON editor. Then "Review Policy" and "Save Changes".
 
-```
+```json
 {
     "Effect": "Allow",
     "Action": [
@@ -836,7 +836,7 @@ Add the code below to the existing permissions from within the JSON editor. Then
 
 Another dependency in our function is the ability to call the Personalize [PutEvents API](https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html) endpoint as shown in the following excerpt.
 
-```
+```js
     personalize_events.put_events(
       trackingId = os.environ['personalize_tracking_id'],
       userId = event['userId'],
@@ -871,7 +871,7 @@ You will need to configure a role for Personalize to that allows it to execute t
 
 Often this is automatically included as a policy labelled "AmazonPersonalizeFullAccess"
 
-```
+```json
     {
         "Version": "2012-10-17",
         "Statement": [
@@ -920,7 +920,7 @@ Often this is automatically included as a policy labelled "AmazonPersonalizeFull
 
 This may be automatically included as policy "AmazonPersonalize-ExecutionPolicy-<some-set-of-numbers>"
 
-```
+```json
     {
         "Version": "2012-10-17",
         "Statement": [
@@ -1016,10 +1016,8 @@ There are two settings relevant for track calls:
 
 **What is the Log Type Setting?**
 
-This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax) for your Lambda function via Cloud Watch. Select option `Tail` if you would like to see [detailed logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html) in Cloud Watch.
+This setting controls the [Log Type](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax) for your Lambda function using Cloud Watch. Select option `Tail` if you would like to see [detailed logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html) in Cloud Watch.
 
 **My Lambda <> Segment connection is timing out, what do I do?**
 
 Due to how our event delivery system, [Centrifuge](https://segment.com/blog/introducing-centrifuge/), works, your Lambda can't take more than 5 seconds to run per message. If you're consistently running into timeout issues, you should consult the [AWS Lambda docs](https://docs.aws.amazon.com/lambda/index.html#lang/en_us), as well as docs for your language of choice, for tips on optimizing performance.
-
-{% include content/personas.md %}

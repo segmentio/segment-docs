@@ -7,25 +7,21 @@ Destination Filters allow you to control the data flowing into each specific des
 
 With Destination Filters, you can:
 
- - Control your event volume by sampling or dropping unnecessary events for
-   specific destinations.
+- Control your event volume by sampling or dropping unnecessary events for
+ specific destinations.
+- Manage PII (personally identifiable information) by blocking fields from
+ reaching certain destinations.
+- Increase the relevance of the data in your destinations by removing unused or unwanted data.
+- Prevent test or internally-generated events from reaching your production tools.
 
- - Manage PII (personally identifiable information) by blocking fields from
-   reaching certain destinations.
-
- - Increase the relevance of the data in your destinations by removing unused or unwanted data.
-
- - Prevent test or internally-generated events from reaching your production tools.
-
- **Note**: Destination Filters are currently available to Business Tier customers only
+> note ""
+> **Note**: Destination Filters are currently available to Business Tier customers only.
 
 ### Destination Filtering Limitations
 
-* Destination Filters can only be applied to Cloud-mode ("server-side") streaming destinations. Device-mode destinations are not supported.
-
-* You cannot apply Destination Filters to Warehouses or S3 destinations.
-
-* Each filter can only apply to one source-destination pair.
+- Destination Filters can only be applied to Cloud-mode ("server-side") streaming destinations. Device-mode destinations are not supported.
+- You cannot apply Destination Filters to Warehouses or S3 destinations.
+- Each filter can only apply to one source-destination pair.
 
 If you have a compelling use case for these unsupported options, [contact us](https://segment.com/help/contact/).
 
@@ -38,13 +34,10 @@ that are conditionally applied using Segment's "Filter Query Language" (FQL).
 The Destination Filters API offers four different types of filters:
 
 1. **drop_event**: Do not send matched event to the destination.
-
 2. **sample_event**: Send only a percentage of events through to the
    destination.
-
 3. **whitelist_fields**: Only send whitelisted properties to destination.
-
-4. **blacklist_fields**: Do not send blacklisted properties to destination.
+4. **blocklist_fields**: Do not send blocklisted properties to destination.
 
 Read more in the [Destination Filters API docs](https://reference.segmentapis.com/#6c12fbe8-9f84-4a6c-848e-76a2325cb3c5).
 
@@ -128,7 +121,7 @@ consolidating filters or would like to discuss your use case, [contact us](https
 
 Device-mode destination filters for Web are currently in Early Access Preview.
 
-Please [contact us](https://segment.com/help/contact/) if you are interested in testing this feature.
+[contact us](https://segment.com/help/contact/) if you are interested in testing this feature.
 
 **Q: When will you support warehouses?**
 

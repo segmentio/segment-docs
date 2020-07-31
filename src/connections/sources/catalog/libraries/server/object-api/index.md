@@ -6,7 +6,7 @@ NOTE: The Objects API is in beta, and so features and names may change without n
 
 The Segment Objects API allows you to send business objects relevant to your business right to Redshift and other Segment supported data warehouses.
 
-NOTE: We haven't yet added support for set to our core analytics-<language> libraries so you'll need to use our HTTP API directly or our independent Go(lang) client for now.
+NOTE: We haven't yet added support for set to our core `analytics-<language>` libraries so you'll need to use our HTTP API directly or our independent Go(lang) client for now.
 
 ### Authentication
 
@@ -17,7 +17,7 @@ In practice that means taking a Segment source **Write Key**,`'abc123'`, as the 
 
 ### Source Type
 
-Setup an `HTTP API` source type in Segment. You will use this source write key for authenticating with the Objects API.
+set up an `HTTP API` source type in Segment. You will use this source write key for authenticating with the Objects API.
 
 ### Content-Type
 
@@ -148,19 +148,23 @@ This call sends a collection of "rooms". "rooms" becomes the table name in your 
 
 <table>
   <tr>
-    <td><p>`collection`</p> Required</td>
+    <td>`collection` - Required</td>
     <td>String</td>
     <td>
-    	<p>A string that represents the name of the collection. The collection name will become the table name in your data warehouse.</p>
-    	<p>Collection must consist of lowercase letters and underscores and maximum of 100 characters. Can not begin or end with an underscore.</p>
+    	A string that represents the name of the collection. The collection name will become the table name in your data warehouse.
+
+    	Collection must consist of lowercase letters and underscores and maximum of 100 characters. Can not begin or end with an underscore.
+
     </td>
   </tr>
   <tr>
-    <td><p>`objects`</p></td>
+    <td>`objects`</td>
     <td>Array</td>
     <td>
-  	<p>A required array of objects describing the objects and properties being set.</p>
-	<p>Must consist of atleast one json object and a maximum of 10</p>
+  A required array of objects describing the objects and properties being set.
+
+  Must consist of at least one json object and a maximum of 10.
+
     </td>
   </tr>
 </table>
@@ -169,20 +173,22 @@ Each object inside of the objects array must consist of the following parameters
 
 <table>
   <tr>
-    <td><p>`id`</p> Required</td>
+    <td>`id` - Required</td>
     <td>String</td>
     <td>
-	 <p>The unique ID representing the object in the third party system.</p>
-	 <p>Maximum of 100 characters.</p>
+    The unique ID representing the object in the third party system.
+    Maximum of 100 characters.
     </td>
   </tr>
   <tr>
-    <td><p>`Properties`</p> Required</td>
+    <td>`Properties` - Required</td>
     <td>Object</td>
     <td>
-	<p>The object properties that represent the object. Example:<p>
-	<p>Each value could be a string (ISO dates are parsed and recognised as `isodate` type), an integer, or a float (json types). </p>
-	<p>Values cannot be lists or objects. Each value must be less 32kb in size.</p>
+The object properties that represent the object. Example:
+
+Each value could be a string (ISO dates are parsed and recognised as `isodate` type), an integer, or a float (json types).
+
+Values cannot be lists or objects. Each value must be less 32kb in size.
     </td>
   </tr>
 </table>
@@ -229,13 +235,13 @@ curl https://objects.segment.com/v1/set \
 
 ## FAQ
 
-### Should I use the Objects API instead of `.identify()` and `.group()`?
+### Should I use the Objects API instead of .identify() and .group()?
 
 No; you should continue use `analytics.identify` to identify your customers. We'll sync that to your data warehouse as `select * from project.users`.
 
 ### Can you just pull data automatically from my database?
 
-If you would like this feature, please [contact us](https://segment.com/help/contact/) and let us know.
+If you would like this feature, [contact us](https://segment.com/help/contact/) and let us know.
 
 ### How do you recommend we load object data into Segment?
 

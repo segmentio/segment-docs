@@ -4,7 +4,7 @@ title: Mailchimp Destination
 ---
 [Mailchimp](https://mailchimp.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides email marketing automation for e-commerce businesses. With Segment you can add people to your MailChimp list with a single [`identify`](/docs/connections/spec/identify/) call.
 
-This document was last updated on May 08, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please let us know!
+This document was last updated on May 08, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
 **Use Cases**
 
@@ -22,13 +22,13 @@ This document was last updated on May 08, 2018. If you notice any gaps, out-date
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId12345', {
   firstName: 'Bob',
   lastName: 'Dole',
-  email: 'bob.dole@initech.com'
+  email: 'bob.dole@example.com'
 });
 ```
 
@@ -42,7 +42,7 @@ Every time you call [identify](/docs/connections/spec/identify/) with an email a
 
 So you no longer have to worry about the `identify` call resubscribing users unintentionally!
 
-Segment recognizes `firstName`, `lastName` and `email` as [special traits](/docs/connections/spec/identify#special-traits), so we will translate those for you to match the Mailchimp accepted field names. Mailchimp includes these fields by default when you create a list.
+Segment recognizes `firstName`, `lastName` and `email` as [special traits](/docs/connections/spec/identify#traits), so we will translate those for you to match the Mailchimp accepted field names. Mailchimp includes these fields by default when you create a list.
 
 ### Recording Custom User Traits
 
@@ -70,7 +70,7 @@ You can populate those fields using this `identify` call:
 analytics.identify('userId12345', {
   firstName: 'Bob',
   lastName: 'Dole',
-  email: 'bob.dole@initech.com',
+  email: 'bob.dole@example.com',
   company: 'Initech',
   employees: 234
 });
@@ -86,7 +86,7 @@ Once Mailchimp has processed the new subscriber you'll see it show up in your li
 
 ### Recording userId
 
-If you send a `userId` in your `.identify()` call, we will attach it as Mailchimp's semantic `unique_email_id` for that user. This is a read-only unique identifier for that email across all of Mailchimp.
+To record a Segment `userId` in Mailchimp, you must pass the userID as a trait on your `identify()` calls. We do not automatically map the Segment userID to any Mailchimp properties.
 
 ### Overriding List ID (Also now referred to as Audience ID)
 

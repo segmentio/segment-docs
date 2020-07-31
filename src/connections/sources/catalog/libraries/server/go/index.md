@@ -9,13 +9,13 @@ Our Go library lets you record analytics data from your Go code. The requests hi
 
 This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-go).
 
-All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses a tunable buffer to batch messages, optimized for throughput and reduced network activity.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses a tunable buffer to batch messages, optimized for throughput and reduced network activity.
 
 ## Getting Started
 
 ### Install the Package
 
-Install `analytics-go` via `go get`:
+Install `analytics-go` using `go get`:
 
 ```bash
 go get gopkg.in/segmentio/analytics-go.v3
@@ -53,7 +53,7 @@ client.Enqueue(analytics.Identify{
   UserId: "019mr8mf4r",
   Traits: analytics.NewTraits().
     SetName("Michael Bolton").
-    SetEmail("mbolton@initech.com").
+    SetEmail("mbolton@example.com").
     Set("plan", "Enterprise").
     Set("friends", 42),
 })
@@ -118,7 +118,7 @@ Find details on **best practices in event naming** as well as the **`track` meth
 
 The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side setup in combination with the Go library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using our client-side set up in combination with the Go library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
 Example `page` call:
 
@@ -228,7 +228,7 @@ client.Enqueue(analytics.Identify{
   UserId: "019mr8mf4r",
   Traits: map[string]interface{}{
     "name":    "Michael Bolton",
-    "email":   "mbolton@initech.com",
+    "email":   "mbolton@example.com",
     "plan":    "Enterprise",
     "friends": 42,
   },

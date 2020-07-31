@@ -3,6 +3,8 @@
 
   list-style-type: none;
   padding-left: 0;
+  max-height: calc(100vh - 400px);
+  overflow-y: auto;
 
   & > * + * {
     margin-top: 12px;

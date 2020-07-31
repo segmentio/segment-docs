@@ -156,7 +156,7 @@ The main costs that are incorporated in an ROI calculation are salaries (pro-rat
 
 The costs associated with a given campaign consist of two major pieces: the person-hour cost and any associated media spend.
 
-*   Calculating the pro-rated person-hour is an estimate of the number of hours and people used to setup and manage the campaign, then multiplied by the hourly rates based off their annual salaries.
+*   Calculating the pro-rated person-hour is an estimate of the number of hours and people used to set up and manage the campaign, then multiplied by the hourly rates based off their annual salaries.
 
 *   The media spend is the advertising cost for distributing creatives to generate traffic to your store
 

@@ -1,5 +1,5 @@
 ---
-title: 'Amplitude Engage Event Source'
+title: Amplitude Engage Event Source
 ---
 
 This source combines Amplitude's analytics with Segment's rich connections

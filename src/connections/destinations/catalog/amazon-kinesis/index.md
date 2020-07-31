@@ -4,7 +4,7 @@ title: Amazon Kinesis Destination
 ---
 [Amazon Kinesis](https://aws.amazon.com/kinesis/) enables you to build custom applications that process or analyze streaming data for specialized needs. Amazon Kinesis Streams can continuously capture and store terabytes of data per hour from hundreds of thousands of sources such as website clickstreams, financial transactions, social media feeds, IT logs, and location-tracking events.
 
-This document was last updated on July 17, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on February 05, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -40,24 +40,24 @@ This document was last updated on July 17, 2018. If you notice any gaps, outdate
    In the Segment source that you want to connect to your Kinesis destination, click the "Add Destination" button. Search and select the Amazon Kinesis destination and enter the options: `Role Address`, `region`, `stream`.
 
 ## Page
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
   analytics.page();
 ```
 
 ## Identify
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.  An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.  An example call would look like:
 
 ```js
 analytics.identify('97980cfea0085', {
-  email: 'gibbons@initech.com',
+  email: 'gibbons@example.com',
   name: 'John Gibbons'
 });
 ```
 
 ## Track
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track("User Registered", {
@@ -93,7 +93,7 @@ Segment uses the the `userId || anonymousId` as the `PartitionKey`. The partitio
 **Note:** The JSON payload is base64 stringified.
 
 ## Group
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
 
 An example group call is shown below:
 ```js
@@ -109,6 +109,24 @@ analytics.group("0e8c78ea9d9dsasahjg", {
 When you get started, we recommend using any of the open source [Kinesis tailing utility](https://github.com/search?utf8=%E2%9C%93&q=kinesis-tail) to validate that data is flowing correctly!
 
 ## Best Practices
+
+### Updating IAM role permissions for encryption
+Extra permissions need to be added to IAM role if using at-rest encryption on the Kinesis stream. An updated role policy like below should resolve issues when submitting PutRecords into Kinesis stream using encryption:
+
+```json
+{
+	"Version": "2012-10-17",
+	"Statement": [{
+		"Effect": "Allow",
+		"Action": ["kms:GenerateDataKey"],
+		"Resource": "${aws_kms_key.kinesis_key.arn}"
+	}, {
+		"Effect": "Allow",
+		"Action": ["kinesis:PutRecord", "kinesis:PutRecords"],
+		"Resource": ["${aws_kinesis_stream.kinesis1.arn}"]
+	}]
+}
+```
 
 ### Multiple Sources
 If you have multiple sources using Kinesis/Firehose, you have two options:

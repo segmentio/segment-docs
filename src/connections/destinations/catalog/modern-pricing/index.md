@@ -5,13 +5,13 @@ hide-personas-partial: true
 ---
 [Modern Pricing](https://modernpricing.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides intelligent, real-time pricing recommendations for every potential customer visiting your web application.
 
-This destination is maintained by Modern Pricing. For any issues with the destination, please [reach out to their team](mailto:john@modernpricing.com).
+This destination is maintained by Modern Pricing. For any issues with the destination, [contact their team](mailto:john@modernpricing.com).
 
-_**NOTE:** The Modern Pricing Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on November 6, 2019. If you are interested in joining their beta program or have any feedback to help improve the Modern Pricing Destination and its documentation, please [let  their team know](mailto:john@modernpricing.com)!_
+This document was last updated on January 8, 2020. If you notice any gaps, out-dated information, or simply want to leave some feedback to help us improve our documentation, [let their team know](mailto:john@modernpricing.com)!
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+{% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Modern Pricing" within the Destinations Catalog and confirm the Source you'd like to connect to.
@@ -40,7 +40,7 @@ analytics.page(
     ip_address: request.remote_ip,
     user_agent: request.user_agent
   },
-  properties: { 
+  properties: {
     url: request.original_url,
     path: request.path,
     referrer: request.referrer
@@ -48,7 +48,7 @@ analytics.page(
 );
 ```
 
-Page calls will be sent to Modern Pricing as a `pageview`. If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does.
+Page calls will be sent to Modern Pricing as a `pageview`. If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does.
 
 **Optional Best Practices**
 
@@ -89,11 +89,11 @@ For *logged in* visitors:
 
 ## Identify Postback
 
-When you integrate Modern Pricing via Segment, Modern Pricing returns a postback Identify call to your source so that you'll be able to easily pass the score to your downstream destinations. 
+When you integrate Modern Pricing using Segment, Modern Pricing returns a postback Identify call to your source so that you'll be able to easily pass the score to your downstream destinations.
 
 How does it work?
 
-1. You send a Page call from your server-source like normal. 
-2. Modern Pricing then recognizes your Page call and automatically returns and Identify call with the `modern_pricing_score` trait. 
+1. You send a Page call from your server-source like normal.
+2. Modern Pricing then recognizes your Page call and automatically returns and Identify call with the `modern_pricing_score` trait.
 
 Segment is then able to send the Modern Pricing score to the other destinations you have connected to your source.

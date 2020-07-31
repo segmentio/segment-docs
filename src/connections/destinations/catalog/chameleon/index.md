@@ -39,4 +39,4 @@ You can send us your app's events for two main reasons:
 Product tours should lead to user actions and so offer the option of tagging each Chameleon product tour with a 'conversion event' that helps you track how successful your tour is. We collect data about each tour (users starting, completing, conversions) and send this back to your preferred analytics provider. Read more about the [analytics Chameleon tracks](https://docs.trychameleon.com/docs/analytics).
 
 ## Help
-For more information, please refer to [Chameleon's docs](https://docs.trychameleon.com) or [email them](mailto:support@trychameleon.com).
+For more information, refer to [Chameleon's docs](https://docs.trychameleon.com) or [email them](mailto:support@trychameleon.com).

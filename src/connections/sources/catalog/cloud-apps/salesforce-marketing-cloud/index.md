@@ -1,7 +1,9 @@
 ---
 title: Salesforce Marketing Cloud Source
 beta: true
+source-type: object
 ---
+<!-- SFMC is listed as an object source, but doesn't appear in our configapi source catalog, so leave the "source-type" set here-->
 
 [Salesforce Marketing Cloud](https://www.salesforce.com/ca/products/marketing-cloud/overview/), formerly known as
 ExactTarget, is a marketing automation suite with the ability to build complete customer journeys as well as creating,
@@ -10,11 +12,11 @@ targeting, tracking, and managing email and digital media campaigns.
 With the Segment Salesforce Marketing Cloud Source, you can extract data from Marketing Cloud and send them
 to a data warehouse such as Redshift or Big Query with ease, avoiding having to build your own expensive custom solutions.
 
-If you are trying to setup Salesforce Marketing Cloud as a destination to receive data from Segment, check out
+If you are trying to set up Salesforce Marketing Cloud as a destination to receive data from Segment, check out
 [Salesforce Marketing Cloud Destination](https://segment.com/docs/connections/destinations/catalog/salesforce-marketing-cloud/).
 
 _**NOTE:** The Salesforce Marketing Cloud Source is currently in beta. This means that component names and functionality
-           may change. For all feedback, please [send us a note](https://segment.com/help/contact).
+           may change. For all feedback, [send us a note](https://segment.com/help/contact).
 
 ## Getting Started
 
@@ -31,7 +33,7 @@ subdomain from your Salesforce Marketing Cloud integration. The integration must
 | Hub        | Campaigns               | Read              |
 
 **If you already have a Salesforce Marketing Cloud Segment Destination**, you can choose to re-use the client ID,
-client secret and subdomain setup for the destination. To enable the permissions required for the source:
+client secret and subdomain set up for the destination. To enable the permissions required for the source:
 
 1. Log in to your Salesforce Marketing Cloud account.
 2. Click your name in the top-right corner of the screen and select "Administration".
@@ -98,7 +100,7 @@ Collections are the groupings of resources we pull from your source. In your war
 ## Collection Properties
 
 Segment performs a one-to-one mapping of all publicly available fields from Salesforce Marketing Cloud. Below are tables
-outlining the properties included in the collections listed above.To see the full description of each property, please
+outlining the properties included in the collections listed above. To see the full description of each property, 
 refer to the Salesforce Marketing Cloud documentation linked in each [collection](#collections) above.
 
 ### Campaigns
@@ -116,13 +118,14 @@ refer to the Salesforce Marketing Cloud documentation linked in each [collection
 
 ### Campaign Assets
 
-| Property Name | Description                                                                                                                                                                                                                       |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| campaign_id   | The ID of the campaign this asset is associated to                                                                                                                                                                                |
-| created_date  | Timestamp when the asset was created                                                                                                                                                                                              |
-| id            | The campaign asset ID                                                                                                                                                                                                             |
-| item_id       | The asset's unique ID in Salesforce Marketing Cloud                                                                                                                                                                               |
-| type          | The asset type. Can be one of: email, triggered send, mobile message, push message, twitter update, facebook update, facebook tab,  sites, landing pages, subscriber list, subscriber group, data extension, automation, or event |
+| Property Name | Description |
+| ------------- | ------------------------- |
+| campaign_id   | The ID of the campaign this asset is associated to  |
+| created_date  | Timestamp when the asset was created   |
+| id            | The campaign asset ID         |
+| item_id       | The asset's unique ID in Salesforce Marketing Cloud     |
+| type          | The asset type. Can be one of: email, triggered send, mobile message, push message, twitter update, facebook update, facebook tab, sites, landing pages, subscriber list, subscriber group, data extension, automation, or event |
+
 
 ### Lists
 
@@ -153,24 +156,26 @@ refer to the Salesforce Marketing Cloud documentation linked in each [collection
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | key                         | The developer defined customer key (also a unique identifier within the MID) for this journey                                                                                          |
 | name                        | The display name used in the Journey Builder UI for this journey, this will be visible to everyone who logs into your Marketing Cloud account                                          |
-| last_published_date         |
+| last_published_date         |                                                                                                                                                                                        |
 | description                 | The human readable description of this journey that informs others of purpose                                                                                                          |
 | version                     | This number denotes the iteration of this particular journey                                                                                                                           |
 | workflow_api_version        | This number represents the current release of the Journey Spec that the Journey Builder APIs will expect in order to understand how to parse and properly respond to your API requests |
-| created_date                |
-| modified_date               |
-| stats_cumulative_population |
-| stats_current_population    |
-| stats_goal_performance      |
-| stats_met_goal              |
-| execution_mode              |
-| status                      |
-| definition_id               |
+| created_date                |                                                                                                                                                                                        |
+| modified_date               |                                                                                                                                                                                        |
+| stats_cumulative_population |                                                                                                                                                                                        |
+| stats_current_population    |                                                                                                                                                                                        |
+| stats_goal_performance      |                                                                                                                                                                                        |
+| stats_met_goal              |                                                                                                                                                                                        |
+| execution_mode              |                                                                                                                                                                                        |
+| status                      |                                                                                                                                                                                        |
+| definition_id               |                                                                                                                                                                                        |
 | default_email               | An ordered list of email expressions used to determine which email address to use as the default, starting with the first expression                                                   |
-| default_analytics_type      |
-| default_enabled             |
+| default_analytics_type      |                                                                                                                                                                                        |
+| default_enabled             |                                                                                                                                                                                        |
+|                             |                                                                                                                                                                                        |
 
 ### Goals
+
 | Property Name                                      | Description                                                                                                     |
 | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | interaction_id                                     | The id of the interaction that this goal is associated with                                                     |
@@ -178,48 +183,49 @@ refer to the Salesforce Marketing Cloud documentation linked in each [collection
 | name                                               | The display name for this goal                                                                                  |
 | description                                        | The description for this goal, will be displayed in the Journey Builder user interface                          |
 | type                                               | The type of goal this is (only option currently is ContactEvent)                                                |
-| arguments_dequeue_reason                           |
-| arguments_filter_result                            |
-| arguments_last_executed_activity_key               |
-| start_activity_key                                 |
-| config_arguments_filter_def_id                     |
-| config_arguments_criteria                          |
-| config_arguments_schema_version_id                 |
-| metadata_is_exit_criteria                          |
+| arguments_dequeue_reason                           |                                                                                                                 |
+| arguments_filter_result                            |                                                                                                                 |
+| arguments_last_executed_activity_key               |                                                                                                                 |
+| start_activity_key                                 |                                                                                                                 |
+| config_arguments_filter_def_id                     |                                                                                                                 |
+| config_arguments_criteria                          |                                                                                                                 |
+| config_arguments_schema_version_id                 |                                                                                                                 |
+| metadata_is_exit_criteria                          |                                                                                                                 |
 | metadata_conversion_unit                           | This value is used for deterministic evaluations of the goal, can be either "percentage" or "wholenumber"       |
 | metadata_conversion_value                          | Based on the conversionUnit this is the metric Journey Builder uses to determine if the goal has been satisfied |
-| metadata_event_definition_id                       |
-| metadata_event_definition_key                      |
-| metadata_configuration_description                 |
-| metadata_configuration_chain_type                  |
-| metadata_configuration_required                    |
-| metadata_configuration_icon_url                    |
-| metadata_configuration_title                       |
-| schema_args_condition_outcome_access               |
-| schema_args_condition_outcome_data_type            |
-| schema_args_condition_outcome_direction            |
-| schema_args_condition_outcome_is_nullable          |
-| schema_args_condition_outcome_read_only            |
-| schema_args_dequeue_reason_access                  |
-| schema_args_dequeue_reason_type                    |
-| schema_args_dequeue_reason_direction               |
-| schema_args_dequeue_reason_is_nullable             |
-| schema_args_dequeue_reason_read_only               |
-| schema_args_filter_result_access                   |
-| schema_args_filter_result_data_type                |
-| schema_args_filter_result_direction                |
-| schema_args_filter_result_is_nullable              |
-| schema_args_filter_result_read_only                |
-| schema_args_last_executed_activity_key_access      |
-| schema_args_last_executed_activity_key_data_type   |
-| schema_args_last_executed_activity_key_direction   |
-| schema_args_last_executed_activity_key_is_nullable |
-| schema_args_last_executed_activity_key_read_only   |
-| schema_args_start_activity_key_access              |
-| schema_args_start_activity_key_data_type           |
-| schema_args_start_activity_key_direction           |
-| schema_args_start_activity_key_is_nullable         |
-| schema_args_start_activity_key_read_only           |
+| metadata_event_definition_id                       |                                                                                                                 |
+| metadata_event_definition_key                      |                                                                                                                 |
+| metadata_configuration_description                 |                                                                                                                 |
+| metadata_configuration_chain_type                  |                                                                                                                 |
+| metadata_configuration_required                    |                                                                                                                 |
+| metadata_configuration_icon_url                    |                                                                                                                 |
+| metadata_configuration_title                       |                                                                                                                 |
+| schema_args_condition_outcome_access               |                                                                                                                 |
+| schema_args_condition_outcome_data_type            |                                                                                                                 |
+| schema_args_condition_outcome_direction            |                                                                                                                 |
+| schema_args_condition_outcome_is_nullable          |                                                                                                                 |
+| schema_args_condition_outcome_read_only            |                                                                                                                 |
+| schema_args_dequeue_reason_access                  |                                                                                                                 |
+| schema_args_dequeue_reason_type                    |                                                                                                                 |
+| schema_args_dequeue_reason_direction               |                                                                                                                 |
+| schema_args_dequeue_reason_is_nullable             |                                                                                                                 |
+| schema_args_dequeue_reason_read_only               |                                                                                                                 |
+| schema_args_filter_result_access                   |                                                                                                                 |
+| schema_args_filter_result_data_type                |                                                                                                                 |
+| schema_args_filter_result_direction                |                                                                                                                 |
+| schema_args_filter_result_is_nullable              |                                                                                                                 |
+| schema_args_filter_result_read_only                |                                                                                                                 |
+| schema_args_last_executed_activity_key_access      |                                                                                                                 |
+| schema_args_last_executed_activity_key_data_type   |                                                                                                                 |
+| schema_args_last_executed_activity_key_direction   |                                                                                                                 |
+| schema_args_last_executed_activity_key_is_nullable |                                                                                                                 |
+| schema_args_last_executed_activity_key_read_only   |                                                                                                                 |
+| schema_args_start_activity_key_access              |                                                                                                                 |
+| schema_args_start_activity_key_data_type           |                                                                                                                 |
+| schema_args_start_activity_key_direction           |                                                                                                                 |
+| schema_args_start_activity_key_is_nullable         |                                                                                                                 |
+| schema_args_start_activity_key_read_only           |                                                                                                                 |
+
 
 ## Adding Destinations
 Currently, Warehouses are the only supported destination for object-cloud sources.

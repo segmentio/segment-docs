@@ -1,5 +1,6 @@
 ---
 title: Segment Spec for Partners
+published: false
 ---
 
 Segment users instrument their apps with a the Segment SDKs. The most common SDK is analytics.js, which is used in a webapp as the following:
@@ -7,7 +8,7 @@ Segment users instrument their apps with a the Segment SDKs. The most common SDK
 ```js
 analytics.identify("97980cfea0067", {
   name: "Peter Gibbons",
-  email: "peter@initech.com",
+  email: "peter@example.com",
   plan: "premium",
   logins: 5
 });
@@ -20,7 +21,7 @@ These simple SDK calls are turned into an "event" -- JSON data for Segment and i
   "type": "identify",
   "traits": {
     "name": "Peter Gibbons",
-    "email": "peter@initech.com",
+    "email": "peter@example.com",
     "plan": "premium",
     "logins": 5
   },
@@ -60,12 +61,12 @@ However the SDKs also add common fields about the user, their environment, times
   "integrations": {},
   "messageId": "ajs-18c6f23382e31fad89210c1c022cc068",
   "originalTimestamp": "2019-06-21T16:33:26.060Z",
-  "projectId": "T6ayE2GKL8",
+  "projectId": "P0OJ3CTID1",
   "receivedAt": "2019-06-21T16:33:26.158Z",
   "sentAt": "2019-06-21T16:33:26.060Z",
   "timestamp": "2019-06-21T16:33:26.158Z",
   "traits": {
-    "email": "peter@initech.com",
+    "email": "peter@example.com",
     "logins": 5,
     "name": "Peter Gibbons",
     "plan": "premium"
@@ -296,7 +297,7 @@ A Segment user can identify who a customer is:
 ```js
 analytics.identify("97980cfea0067", {
   name: "Peter Gibbons",
-  email: "peter@initech.com",
+  email: "peter@example.com",
   plan: "premium",
   logins: 5
 });
@@ -334,12 +335,12 @@ This results in the following event data:
   "integrations": {},
   "messageId": "ajs-54ca80b0e856b62bb239ca9debbf5e2e",
   "originalTimestamp": "2019-06-21T17:33:22.373Z",
-  "projectId": "T6ayE2GKL8",
+  "projectId": "P0OJ3CTID1",
   "receivedAt": "2019-06-21T17:33:22.486Z",
   "sentAt": "2019-06-21T17:33:22.373Z",
   "timestamp": "2019-06-21T17:33:22.486Z",
   "traits": {
-    "email": "peter@initech.com",
+    "email": "peter@example.com",
     "logins": 5,
     "name": "Peter Gibbons",
     "plan": "premium"
@@ -394,7 +395,7 @@ This results in the following event data:
   "integrations": {},
   "messageId": "ajs-920a8b6591f0d25cc117fb71602a6b17",
   "originalTimestamp": "2019-06-21T17:35:47.381Z",
-  "projectId": "T6ayE2GKL8",
+  "projectId": "P0OJ3CTID1",
   "properties": {
     "accountType": "Facebook",
     "plan": "Pro Annual"
@@ -450,7 +451,7 @@ This results in the following event data:
   "messageId": "ajs-472682d0fbe3250d9e436f18e18d1966",
   "name": "Home",
   "originalTimestamp": "2019-06-21T17:36:42.787Z",
-  "projectId": "T6ayE2GKL8",
+  "projectId": "P0OJ3CTID1",
   "properties": {
     "name": "Home",
     "path": "/index.html",
@@ -470,7 +471,7 @@ This results in the following event data:
 
 ## Group
 
-A Segment can group a customer into an account or organization:
+A Segment user can group a customer into an account or organization:
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {
@@ -515,7 +516,7 @@ This results in the following event data:
   "integrations": {},
   "messageId": "ajs-faf5e68c4da409781e30660f918d7be6",
   "originalTimestamp": "2019-06-21T17:39:06.142Z",
-  "projectId": "T6ayE2GKL8",
+  "projectId": "P0OJ3CTID1",
   "receivedAt": "2019-06-21T17:39:06.172Z",
   "sentAt": "2019-06-21T17:39:06.143Z",
   "timestamp": "2019-06-21T17:39:06.171Z",
@@ -534,7 +535,7 @@ This results in the following event data:
 
 ## Alias
 
-A Segment can alias a past identity into their current identity:
+A Segment user can alias a past identity into their current identity:
 
 ```js
 analytics.alias("507f191e81");
@@ -573,7 +574,7 @@ This results in the following event data:
   "messageId": "ajs-d45a45c1384424545c2cff67345f25ce",
   "originalTimestamp": "2019-06-21T17:39:56.999Z",
   "previousId": "97980cfea0067",
-  "projectId": "T6ayE2GKL8",
+  "projectId": "P0OJ3CTID1",
   "receivedAt": "2019-06-21T17:39:57.032Z",
   "sentAt": "2019-06-21T17:39:57.000Z",
   "timestamp": "2019-06-21T17:39:57.031Z",
@@ -589,7 +590,25 @@ Docs coming soon.
 
 ## Delete
 
-Docs coming soon.
+A Segment user can trigger delete action using [Config API](https://reference.segmentapis.com/?version=latest#57a69434-76cc-43cc-a547-98c319182247) or App. Partners are required to delete data for `userId` in the request payload in line with GDPR and CCPA. 
+
+This results in the following event data:
+
+```json
+{
+  "type":"delete",
+  "channel":"server",
+  "userId":"507f191e81",
+  "context":null,
+  "integrations":null,
+  "messageId":"delete-reg-6543321::job-2-P0OJ3CTID1",
+  "projectId":"P0OJ3CTID1",
+  "timestamp":"2020-05-09T23:54:49.209Z",
+  "receivedAt":"2020-05-09T23:54:49.209Z",
+  "sentAt":"2020-05-09T17:49:00.000Z",
+  "originalTimestamp":"2020-05-09 23:54:49.209808489 +0000 UTC m=+70366.298768264"
+}
+```
 
 ## Testing your Component
 

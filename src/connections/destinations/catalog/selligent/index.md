@@ -1,9 +1,10 @@
 ---
 beta: true
 title: Selligent Destination
+hidden: true
 ---
-
-This destination is built and supported by Selligent. If you run into any issues with the destination, please reach out to the Selligent Support Team.
+<!-- Paul Y - Apr 29,2020, add hidden flag as it's deprecated & being replaced with a new version-->
+This destination is built and supported by Selligent. If you run into any issues with the destination, contact the Selligent Support Team.
 
 ## Getting Started
 
@@ -106,5 +107,5 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>acct_
 
 <p class=MsoNormal style='margin-top:10.0pt'><a name=h.gpdttka362f6></a>&nbsp;</p>
 
-<p class=MsoNormal style='margin-top:10.0pt'>If you have any questions, please
+<p class=MsoNormal style='margin-top:10.0pt'>If you have any questions, 
 contact your Selligent Relationship Manager for assistance.</p>

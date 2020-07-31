@@ -5,7 +5,7 @@ title: Parse.ly Destination
 
 [Parse.ly](https://www.parse.ly) provides web analyses and content optimization for online publishers by partnering with them to provide clear audience insights through intuitive analytics.
 
-This document was last updated on November 8th, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on November 8th, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
@@ -32,13 +32,13 @@ If you are using dynamic tracking, you must explicitly let us know in your [inte
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('ze8rt1u89', {
-  name: 'Zaphod Beeblebrox',
+  name: 'Zaphod Kim',
   gender: 'Male',
-  email: 'Zaphod@hotmail.com',
+  email: 'jane.kim@example.com',
   phone: '1-401-826-4421',
   address: {
     city: 'San Francisco',
@@ -58,7 +58,7 @@ Video tracking is possible with either web or server sources.
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {
@@ -73,7 +73,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 
 ## Alias
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
 
 ```js
 analytics.alias("507f191e81");
@@ -245,9 +245,9 @@ analytics.track({
 
 This event is only required for server side tracking.
 
-To track the completion of a video, please use our [Video Content Completed](https://segment.com/docs/connections/spec/video/#content-events) event.
+To track the completion of a video, use our [Video Content Completed](https://segment.com/docs/connections/spec/video/#content-events) event.
 
-Please ensure you are sending at minimum, `assetId`, `totalLength`, and `position` as properties.
+Make sure you are sending at minimum, `assetId`, `totalLength`, and `position` as properties.
 
 **Example:**
 
@@ -279,4 +279,4 @@ analytics.track({
 
 #### Track URL
 
-The destination does not currently support Parsely's `trackURL` method. Please [contact us](/contact/requests) if this is important to you.
+The destination does not currently support Parsely's `trackURL` method. [contact us](https://segment.com/requests/integrations/) if this is important to you.

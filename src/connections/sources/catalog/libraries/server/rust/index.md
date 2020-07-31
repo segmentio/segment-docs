@@ -9,7 +9,7 @@ Our Rust library lets you record analytics data from your Rust code. The request
 
 This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-rust).
 
-All of our server-side libraries are built for high-performance, so you can use them in your web server controller code. This library contains the building blocks to batch and efficiently send data to Segment.
+All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library contains the building blocks to batch and efficiently send data to Segment.
 
 ## Getting Started
 
@@ -83,7 +83,7 @@ Identify{
   user: User::UserId { user_id: format!("user-{}", i) },
   traits: json!({
     "name":"Michael Bolton",
-    "email":"mbolton@initech.com",
+    "email":"mbolton@example.com",
     "plan":"Enterprise",
     "friends":"42"
   }),
@@ -152,7 +152,7 @@ Find details on **best practices in event naming** as well as the **`track` meth
 
 The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side setup in combination with the Rust library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using our client-side set up in combination with the Rust library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
 Example `page` call:
 
@@ -266,7 +266,7 @@ Identify{
   user: User::UserId { user_id: "019mr8mf4r".to_owned() },
   traits: json!({
     "name":"Michael Bolton",
-    "email":"mbolton@initech.com",
+    "email":"mbolton@example.com",
     "plan":"Enterprise",
     "friends":"42"
   }),

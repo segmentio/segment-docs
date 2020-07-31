@@ -6,7 +6,7 @@ In keeping with our commitment to GDPR and CCPA readiness, Segment offers the ab
 
 [Contact us](https://segment.com/help/contact/) if you need to process more than 100,000 users within a 30 day period.
 
-**PLEASE NOTE (Business Plan Customers):** If you use this feature to delete data, you can not Replay the deleted data. For standard Replay requests, you must wait for any pending deletions to complete, and you cannot submit new deletion requests for the period of time that we replay data for you.
+**NOTE (Business Plan Customers):** If you use this feature to delete data, you can not Replay the deleted data. For standard Replay requests, you must wait for any pending deletions to complete, and you cannot submit new deletion requests for the period of time that we replay data for you.
 
 **NOTE:** The legacy GraphQL APIs for user deletion and suppression are deprecated. Instead, use the [Segment Config APIs](https://reference.segmentapis.com/?version=latest#57a69434-76cc-43cc-a547-98c319182247) to interact with our User Deletion and Suppression system.
 
@@ -104,30 +104,3 @@ Refer to [List Suppressed Users](https://reference.segmentapis.com/?version=late
 ### List Deletion Requests for your Workspace
 
 Refer to the [List Regulations](https://reference.segmentapis.com/?version=latest#e27e4dac-892d-431e-b4f8-cee0eca5b3d8) Config API method.
-
-
-## Frequently Asked Questions
-
-### How can I find my user's userId?
-
-The easiest way to find a customer's `userId` is by querying an existing tool. Specifically, you can use your Segment [data warehouse](https://segment.com/warehouses) to query the `users` table for another known item of information about the user (their email address, for example) and then use that row to find their userId.
-
-### How many deletion requests can I send?
-You can send us batches of up to 5,000 `userIds`, or 4 MB, per payload. We process these batches asynchronously. [Contact us](https://segment.com/help/contact/) if you need to process more than 100,000 users within a 30 day period.
-
-### Which Destinations can I send deletion requests to?
-
-In addition to your Raw Data destinations (Amazon S3 and Data Warehouses), we can forward requests to the following streaming destinations:
-
-- Amplitude
-- Iterable
-- Braze
-- Intercom
-- Webhooks
-- tray.io
-- Appcues
-- Vero
-
-Segment cannot guarantee that data is deleted from your Destinations. When you issue a user deletion request, Segment forwards the request to supported streaming Destinations. You must still contact these Destinations to confirm that they have executed the request.
-
-**NOTE:**  If you have the Amplitude destination enabled in one or more sources, you'll must include Amplitude's secret key in each destination(s) settings so they can accept the deletion request. (You add it in the Amplitude destination settings, under "Secret Key"). You can find your Secret Key on the [General Settings](https://amplitude.zendesk.com/hc/en-us/articles/235649848-Settings#project-general-settings) of your Amplitude project.

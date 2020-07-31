@@ -19,7 +19,7 @@ Woopra is supported on client-side and server-side.
 
 When you call `.page()` in the browser, we will pass all the properties of the page such as `url`, `referrer`, `path`, and etc. If you pass a `name` in your `.page()` call, we will send that as `title` to Woopra.
 
-*Note*: `.page()` calls are not supported when sending those events server side or via mobile libraries.
+*Note*: `.page()` calls are not supported when sending those events server side or using mobile libraries.
 
 
 ## Identify
@@ -37,7 +37,7 @@ When you call `identify` from the server-side languages, we call Woopra's [HTTP 
 
 ## Group
 
-Woopra does not accept data sent via the Segment `group` method.
+Woopra does not accept data sent using the Segment `group` method.
 
 
 ## Track

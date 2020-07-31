@@ -4,11 +4,13 @@ title: 'Spec: Group'
 
 The `group` API call is how you associate an individual user with a group—be it a company, organization, account, project, team or whatever other crazy name you came up with for the same concept!
 
+{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Segment Methods" content="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
+
 A user can be in more than one group; however, not all platforms support multiple groups. It also lets you record custom traits about the group, like industry or number of employees.  Calling `group` is a slightly more advanced feature, but it's helpful if you have accounts with multiple users.
 
 Here's the payload of a typical `group` call, with most [common fields](/docs/connections/spec/common/) removed:
 
-```js
+```json
 {
   "type": "group",
   "groupId": "0e8c78ea9d97a7b8185e8632",
@@ -37,11 +39,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 Beyond the common fields, the `group` call takes the following fields:
 
 <table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-group-id.md %}
   {% include content/spec-field-group-traits.md %}
 </table>
@@ -109,7 +107,7 @@ The following are the reserved traits we have standardized:
     <td>`address`</td>
     <td>Object</td>
     <td>Street address of a group
-      <p>This should be a dictionary containing optional `city`, `country`, `postalCode`, `state` or `street`.</p></td>
+      This should be a dictionary containing optional `city`, `country`, `postalCode`, `state` or `street`.</td>
   </tr>
   <tr>
     <td>`avatar`</td>
@@ -120,7 +118,7 @@ The following are the reserved traits we have standardized:
     <td>`createdAt`</td>
     <td>Date</td>
     <td>Date the group's account was first created
-    <p>We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.</p></td>
+    We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.</td>
   </tr>
   <tr>
     <td>`description`</td>

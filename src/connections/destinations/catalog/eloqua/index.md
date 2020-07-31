@@ -4,7 +4,7 @@ title: Eloqua Destination
 
 ## Page
 
-Client-side page-view tracking is achieved via an integration with the [Eloqua
+Client-side page-view tracking is achieved using an integration with the [Eloqua
 Asynchronous Visitor Tracking
 Script](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/pdf/AsynchronousVisitorTrackingScripts.pdf).
 
@@ -31,7 +31,7 @@ Segment `identify` trait on the left to the Eloqua field on the right:
 | country _or_ address.country | Country |
 | title | Title |
 
-Please adhere to our spec to ensure proper mapping of these fields from Segment
+Follow the Segment spec to ensure proper mapping of these fields from Segment
 `identify` traits: https://segment.com/docs/connections/spec/identify/#traits.
 
 In addition, Segment supports mapping custom `identify` traits to Eloqua custom
@@ -42,7 +42,7 @@ Eloqua destination in the Segment UI.
 
 Segment integrates with Eloqua's REST API to support creating or updating
 Accounts in Eloqua. By default, Segment does not send `group` events downstream
-to Eloqua, so to get started, please enable "Create or Update Account on Group"
+to Eloqua, so to get started, enable "Create or Update Account on Group"
 in your destination settings.
 
 Upon invocation of a server-side `group` event, Segment will by default map the
@@ -64,7 +64,7 @@ the Segment `group` event needs to include the Account's name and groupId. If
 you set up a custom Account field called Company in Eloqua, Segment will
 automatically map the name of the Account to that field.
 
-Please adhere to our spec to ensure proper mapping of these fields from Segment
+Follow the Segment spec to ensure proper mapping of these fields from Segment
 `group` traits: https://segment.com/docs/connections/spec/group/#traits.
 
 In addition, Segment supports mapping custom `group` traits to Eloqua custom
@@ -99,7 +99,7 @@ Segment `track` events trigger the creation of [Eloqua Custom
 Object](http://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/CustomObjects/CustomObjects.htm)
 records and associate them with a specific Contact.
 
-To get started, please provide a mapping in your destination settings
+To get started, provide a mapping in your destination settings
 specifying the Segment event names with the corresponding Custom Object you
 would like to associate it with in Eloqua.
 
@@ -110,7 +110,7 @@ in Eloqua and a property called `AccountType` in your Segment event, the
 mapping will get handled.
 
 For `track` event properties you intend to send to Eloqua as Custom Object
-fields, please ensure the value of the data type sent to Segment matches the
+fields, make sure the value of the data type sent to Segment matches the
 data type specified in your Eloqua dashboard. If a Custom Object field data
 type does not match the data type specified in Eloqua, Eloqua will not create a
 Custom Object, and will return an error for the request.

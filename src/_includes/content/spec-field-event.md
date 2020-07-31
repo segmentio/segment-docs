@@ -1,8 +1,9 @@
 <tr>
-  <td>`event`</td>
-  <td>*required*</td>
-  <td>String</td>
-  <td>Name of the action that a user has performed.
-    <p>See the [Event field docs](/docs/connections/spec/track#event) for more detail</p>
+  <td markdown="span">`event`</td>
+  <td markdown="span">*required*</td>
+  <td markdown="span">String</td>
+  <td markdown="span">Name of the action that a user has performed.
+
+    See the [Event field docs](/docs/connections/spec/track#event) for more details.
   </td>
 </tr>

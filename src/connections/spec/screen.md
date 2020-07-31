@@ -4,9 +4,11 @@ title: 'Spec: Screen'
 
 The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of `page`, in your mobile app, along with any properties about the screen. Calling `page` or [`screen`](/docs/connections/spec/screen/) in one of our [sources](/docs/connections/sources/) is one of the first steps to getting started with Segment.
 
+{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299973?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Screen Method" content="Check out our high-level overview of the Screen method in Segment University. (Must be logged in to access.)" %}
+
 Here's the payload of a typical `screen` call, with most [common fields](/docs/connections/spec/common/) removed:
 
-```js
+```json
 {
   "type": "screen",
   "name": "Home",
@@ -26,11 +28,7 @@ And here's the corresponding Objective-C event that would generate the above pay
 Beyond the common fields, the `screen` call takes the following fields:
 
 <table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-screen-name.md %}
   {% include content/spec-field-screen-properties.md %}
 </table>
@@ -39,7 +37,7 @@ Beyond the common fields, the `screen` call takes the following fields:
 
 Here's a complete example of a `screen` call:
 
-```js
+```json
 {
   "anonymousId": "3a12eab0-bca7-11e4-8dfc-aa07a5b093db",
   "channel": "mobile",
@@ -93,7 +91,8 @@ Reserved properties we have standardized:
   <tr>
     <td>`name`</td>
     <td>String</td>
-    <td>Name of the screen
-      <p>This is reserved for future use.</p></td>
+    <td>Name of the screen.
+
+      This is reserved for future use.</td>
   </tr>
 </table>

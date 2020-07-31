@@ -24,7 +24,7 @@ To get started with Nielsen-DCR and Segment, you'll want to first integrate your
 
 #### Install the SDK
 
-The recommended way to install Analytics for iOS is via Cocoapods, since it means you can create a build with specific destinations, and because it makes it dead simple to install and upgrade. Simply add the Analytics dependency to your Podfile, like so:
+The recommended way to install Analytics for iOS is using Cocoapods, since it means you can create a build with specific destinations, and because it makes it simple to install and upgrade. Simply add the Analytics dependency to your Podfile, like so:
 
 ```
 pod 'Analytics' '~> 3.0'
@@ -32,11 +32,11 @@ pod 'Segment-Nielsen-DCR'
 ```
 
 #### Add the Nielsen App SDK Framework
-The integration relies on the Nielsen App SDK framework, which can either be installed via CocoaPods or by manually adding the framework. You will need to have a Nielsen representative before getting started.
+The integration relies on the Nielsen App SDK framework, which can either be installed using CocoaPods or by manually adding the framework. You will need to have a Nielsen representative before getting started.
 
 ##### CocoaPods
 
-When using the Nielsen SDK version 6.2.0.0 and above, Nielsen recommends installation via CocoaPods, and Apple recommends using the dynamic framework.
+When using the Nielsen SDK version 6.2.0.0 and above, Nielsen recommends installation using CocoaPods, and Apple recommends using the dynamic framework.
 
 Requirements for CocoaPods:
 
@@ -93,7 +93,7 @@ Nielsen also requires the following frameworks, which must be included into Link
 
 #### Install the SDK
 
-The recommended way to install the library for Android is with a build system like Gradle. This makes it dead simple to upgrade versions and add destinations. The library is distributed via [Maven Central](https://search.maven.org/). Simply add the `analytics` module to your `build.gradle`:
+The recommended way to install the library for Android is with a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed using [Maven Central](https://search.maven.org/). Simply add the `analytics` module to your `build.gradle`:
 
 ```javascript
 dependencies {
@@ -163,13 +163,13 @@ Segment only supports sending `track` events as outlined in our [Video Spec](/do
 
 **IMPORTANT**: If you do not implement the Segment [Video Spec](/docs/connections/spec/video/) properly with key lifecycle events, this integration will not behave properly.
 
-Again, please also refer to our [Video Spec](/docs/connections/spec/video/) and implement video tracking as outlined there. We will map the semantic events and properties to Nielsen's relevant methods and metadata.
+Again, also refer to our [Video Spec](/docs/connections/spec/video/) and implement video tracking as outlined there. We will map the semantic events and properties to Nielsen's relevant methods and metadata.
 
 ### Heartbeats
 
-Nielsen expects a heartbeat called with `playheadPosition` during session play every second until the stream is completed, paused or interrupted (due to ad breaks or buffering).The playhead position is the current location in seconds of the playhead from the beginning of the asset.
+Nielsen expects a heartbeat called with `playheadPosition` during session play every second until the stream is completed, paused or interrupted (due to ad breaks or buffering). The playhead position is the current location in seconds of the playhead from the beginning of the asset. For livestream, Segment expects a negative integer that represents the offset in seconds in relation to the current timestamp. For example, if content is being livestreamed at 8PM but the viewer is 30 seconds behind, the value of this property should be -30. You can override this and pass the current time in seconds to Nielsen by toggling the `Enable Default to Current Time for Livestream Playhead Position` setting.
 
-Segment will set a timer and to call this heartbeat event (`–(void) playheadPosition: (long long) playheadPos)`, `setTimeout (web)`) every second in background. You do **NOT** have to call the Segment equivalent heartbeat event (`Video Content/Ad Playing`) each second. You should follow our spec and call the Segment heartbeat event every 10 seconds (recommended). While we will keep state of our own playhead position for these background hearbeats, when we do receive an explicit Segment heartbeat event, we will respect its `properties.position` and restart the background heartbeats from that position.
+Segment will set a timer to call this heartbeat event (`–(void) playheadPosition: (long long) playheadPos)`, `setTimeout (web)`) every second in background. You do **NOT** have to call the Segment equivalent heartbeat event (`Video Content/Ad Playing`) each second. You should follow our spec and call the Segment heartbeat event every 10 seconds (recommended). While we will keep state of our own playhead position for these background hearbeats, when we do receive an explicit Segment heartbeat event, we will respect its `properties.position` and restart the background heartbeats from that position.
 
 ### Playback Events
 
@@ -231,7 +231,7 @@ For playback events, Segment's video spec expects either `ad_asset_id​` or `co
 | `crossId1`                 | `options.crossId1`|
 | `crossId2`                 | `options.crossId2`|
 
-Please take note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
+Note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
 
 ### Ad Events
 
@@ -264,13 +264,13 @@ The Segment-Nielsen-DCR integration has logic to check for `type` in case of a p
 | `length`                        | `total_length`   |
 | `pipmode`                       | `options.pipmode`|
 
-Please take note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
+Note that iOS and Android expect different casing. We expect `snake_case` for iOS and `camelCase` for Android.
 
 ## Integration Specific Options
 
 Example on passing destination specific option values through on iOS
 
-```objective-c
+```objc
 options:@{
   @"integrations": @{
    @"nielsen-dcr" : @{
@@ -339,7 +339,7 @@ For Android, we retrieve the version of the application package from the [Packag
 
 #### What are the Nielsen-DCR `clientId` and `subbrand` values?
 
-The Parent Client ID and Sub-Brand (VCID) values are automatically populated through the AppID, which is Nielsen Supplied. By default, `clientid` and `subbrand` are setup in Nielsen backend configuration to capture brand and sub-brand information. The fields get populated from backend for a registered client `appid`.
+The Parent Client ID and Sub-Brand (VCID) values are automatically populated through the AppID, which is Nielsen Supplied. By default, `clientid` and `subbrand` are set up in Nielsen backend configuration to capture brand and sub-brand information. The fields get populated from backend for a registered client `appid`.
 
 #### Can I override the Nielsen-DCR `clientId` and `subbrand` values?
 

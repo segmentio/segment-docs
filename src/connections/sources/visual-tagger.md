@@ -1,140 +1,262 @@
 ---
-title: Visual Tagger (Alpha) User Guide
-sourceTitle: 'Visual Tagger (Alpha)'
-sourceCategory: 'Tools'
+title: Visual Tagger
 ---
 
-**Note**: Downloading the Visual Tagger Chrome Extension constitutes acknowledgment of the [Visual Tagger Alpha Product Terms and Conditions](#Alpha-Product-Terms-Conditions), and acceptance of the [Segment Alpha Terms and Conditions](/docs/legal/first-access-beta-preview/). If you are interested in gaining access to the Visual Tagger (Alpha), please email beta@segment.com! 
+Visual Tagger is a tool that helps you easily collect data about what your customers are doing on your websites without having to write any code. Specifically, it helps you implement `track` events simply by pointing and clicking on parts of your website.
 
-## Overview
+![Visual Tagger intro](images/vt-docs-1.gif)
 
-Segment offers tons of functionality with downstream integrations once you've started sending data into Segment, but the first step of setting up event tracking on your website or web app can be a challenge! Segment's Visual Tagger shortens the process of implementing event tracking on your site by letting you add events without writing any code.
+**With Visual Tagger, you can:**
+- Create **`track` events** to start collecting data on actions that your users take, such as button or link clicks and form submissions. Events that you create using Visual Tagger work exactly the same way as `track` events that you may have implemented in code. You'll be able to send them to any of the integrations in Segment's Catalog.
+- Collect rich, contextual information in the form of **properties** to help you understand more about the specific action that the user took.
+- **Test your events** to make sure that they are working as expected before you publish them live.
 
-The Visual Tagger is a Chrome Extension created by Segment that allows you to create Segment track events on a website or web app by pointing and clicking on parts of the site's UI. When you create events in the Visual Tagger, it sends real track events into Segment.
+The Visual Tagger has two main views: the **Visual Tagger Home** and the **Event Editor**, which shows your website in an iframe.
 
-## Supported Features:
+> note ""
+> **Note**: The website you're tagging must include the Segment analytics.js snippet before you can use the Visual Tagger.
 
-- `track` events
-- `identify` calls
-- Ability to send form field values as properties on a `Form Submitted` track event
 
-## Alpha Requirements and Limitations
+## Setting up Visual Tagger
 
-### Requirements:
+### Before you begin
 
-- The Visual Tagger is only available for websites or web apps. There is no support for mobile apps at this time.
-- You must have a Segment Workspace and a Javascript Source set up to receive data from the website before using the Visual Tagger.
-- You must have the Segment snippet for Analytics.js already installed on the website you want to use Visual Tagger for.
-- You must use the Google Chrome browser. The Visual Tagger is currently only available as a Chrome Extension.
+Get the following things set up before you use Visual Tagger:
 
-### Current Limitations
+1. **A Segment account and Workspace**. You'll need to have either Workspace Owner or Source Admin-level permissions in order to create events using Visual Tagger.
+2. **A website**. Visual Tagger currently works best with simple marketing websites, like landing pages or content sites. There is no support for mobile apps at this time, but you can tag the mobile-web version of your websites using Visual Tagger.
+   > **Note**: Your website must use HTTPS.
 
-- **MFA and SSO login are currently unsupported**. If you use MFA or SSO to log in, Visual Tagger unfortunately won't work. It is on our roadmap to add support for MFA and SSO login. If you would like for us to prioritize this feature, please email us at beta@segment.com.
-- **Support is currently limited for adding properties to `track` calls**. Creating a `track` event based on `form` element and `submit` handler will add the form fields as properties to the `track` event. It is on our roadmap to add more support for adding properties to `track` events.
-- **Only `track` and `identify` calls are supported**. Other methods are not yet available in Visual Tagger.
-- **We are currently unable to notify you if tracking breaks** due to changes in the website UI.
+3. **A [Javascript (Website) Source](/docs/connections/sources/catalog/libraries/website/javascript/) in Segment**.
+   Once you create a Javascript Source, you must add the analytics.js snippet to the website for Visual Tagger to work.
+   If you're having trouble with this step, follow the [Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
+4. **Chrome browser**. Visual Tagger is only supported for Chrome browser at this time.
 
-## Visual Tagger Set up
+## Enable Visual Tagger
 
-### Install the Chrome Extension
+Once you have all of the prerequisites set up, you're ready to get started:
 
-1. Download and install the Visual Tagger Chrome Extension. The extension is private while the Visual Tagger is in Alpha. Once you install the extension, it appears in the browser in the extensions area.
-   ![Segment Visual Tagger in the browser extensions](images/steps-2.png)
+1. Go to your Segment Workspace and navigate to your Website Source.
+2. Click the **Visual Tagger** tab to go to the Visual Tagger main page.
+   You'll see an introduction, where you can learn about Visual Tagger and watch a short overview video.
+3. If this is your first time on this page, click **Get Started**.
+   Segment checks that you have the Visual Tagger Chrome extension installed and the correct type of source. If either of these items is missing, follow the instructions to install the extension, and enable the Visual Tagger. Click **Continue**.
+4. Visual Tagger asks what type of website you have so it can recommend events to track. You can also choose `Other` and describe your website, to help us prioritize which event types to add next.
+   ![Getting Started Steps](images/vt-docs-website-type.png)
+5. The next screen shows **Recommended Events**, and you can choose which ones are relevant to your site. (You can also track any events beyond the recommended ones!)
+   ![Getting Started Steps](images/vt-docs-setup-starterkit.png)
+6. The UI then loads a page with your website in an internal frame. Click one of the event type names to select it and begin configuring. We'll go over these [in the following sections](#step-1-choose-the-event-type-and-select-an-element).
 
-### Install the Segment snippet on your site
+As you click each event, you're prompted to select the part of the website that should trigger the event, and describe the properties that event should have.
+<!-- TODO: this image is outdated
+![Getting Started Steps](images/vt-docs-2.png)-->
 
-Before you start: Make sure you have Workspace Owner or Source Admin privileges, so you can create a new Source.
+You are now ready to tag events on your website!
 
-1. Log in to your Segment Workspace and create a Javascript Source.
-2. Copy the Analytics.js script tag which appears.
-3. Paste this tag into your website's code within the `<head>` tag.
-   If you're having trouble with this step, follow the [Analytics.js Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript).
-   ![Install Segment snippet on your site](images/steps-3.png)
+> success ""
+> **Tip**: If you ever need to get back to this screen, you can navigate to the Javascript website source again, click the **Visual tagger** tab, then click **Add Event**.
 
-### Enable the Visual Tagger integration
 
-Enable the Visual Tagger integration for the source you created above.
+## Step 1: Choose the event type and select an element
 
-1. Navigate to your source settings and click on the Analytics.js tab.
-2. Accept the alpha terms and toggle to enable/disable the integration.
-   ![Enable the Viusal Tagger integration](images/steps-4.png)
+To create events, start in the **Event Editor** on the **Build** screen. This page shows an iframe with your website.
 
-### Tag Events Using Visual Tagger
+![Start Drafting Your Event](images/vt-docs-3.png)
 
-#### Go to your site in your browser window.
+You can either choose one of the Recommended Events, or you can click **Add Event** and create a whole new one. Recommended Events works the same way, except that the Event Name is set for you, and each event comes with a set of default properties.
 
-1. Click Segment Logo in the Chrome toolbar, and log in to your Segment account.
-2. Click **Enable Tagger**.
-3. In the white bar that appears at the bottom of the screen, click **Event Tagger**.
-   ![Event Tagger](images/steps-7.png)
+When you click **Add Event**, three types of events are available:
 
-4. Click **Tag an Event** and mouse over parts of the site. The mouse highlights components that you can add an event tag to.
-5. Click a component to open the **Tag Creation** panel, where you can adjust the event tag's configuration.
-   For each event, there are the following configuration options:
-   - _Selector_: The CSS selector that the event will be added to. If you are unsure whether or not the right selector has been chosen (or you need to go up a level in the elements tree to a parent element), click on the "Elements" dropdown where you can explore the tree.
-   - _URL_: The page that the event should be fired from
-   - _Trigger_: What user action should trigger the event. Currently, we support:
-     - `click` - when a user clicks on an element
-     - `focus` - when a user's mouse enters a form field
-     - `blur` - when a user exits a form field that was focused on
-     - `submit` - when a user submits a form
-   - _Event Name_ What the event should be named. We recommend that you follow the Segment Spec for standard naming conventions.
-     ![Element selection](images/steps-8.gif)
-     ![Tag creation panel](images/steps-9.png)
-6. When you're satisfied with the event details, click **Save** to create the event.
-   User interactions with your site start sending events into Segment as soon as you save the event. To test that events are working, refresh the page.
-7. Verify that events are appearing as expected by interacting with the element you tagged, and checking the Debugger in your Segment Workspace for the expected event call.
-   Events added to your site using the Visual Tagger have a `context` property in the event payload that says `"visual_tagger" : true`. You can use this in the Keywords field to filter the Debugger contents to only show Visual Tagger events.
+- **Button or Link Click**. Select any `button` and `link` elements on the page to create events that fire when a user clicks that button or link. Depending on how your website is built, some elements that look like buttons might not actually be CSS "button" elements - use the "Any Element Click" event instead for these elements.
 
-All events that you create in Visual Tagger appear in the **Tagged Events** panel. Mouse over any existing events to highlight the element that the tag is associated with.
-  ![Verify in Debugger](images/steps-12.png)
-  ![Mousing over existing events](images/steps-13.png)
+- **Form Submit**. Select this option to highlight any `form` elements on the page so you can select them. When you choose Form Submit, all form fields are added to your event automatically as **properties**.
 
-## Tagging Tips
+- **Any Element Click**. Selecting this option will allow you to click on any element on your page. This will allow you to create an event for whenever a user on your website clicks on that element.
 
-- You can edit and delete tags as needed by clicking the (…) link at the end of each event row.
-- If the tagging panel covers an element that you want to tag, click the button in the upper right to move the panel to the other side.
-- You can deactivate the Visual Tagger extension or log out by clicking the gear icon in the lower right corner.
+![Select Event Type](images/vt-docs-4.gif)
+
+Once you choose an event type, mouse over your website in the iframe to highlight elements that you can select to create an event, and click one to start the process.
+
+If the element on the page has siblings, you can tag them all at the same time, or tag just the one specific element you clicked.
+
+When you choose a Recommended Event, it works much in the same way, but the Event Name is pre-set and each event comes with a set of default properties.
+
+> info ""
+> The events you create are not saved until you publish them.
+
+<!-- TODO missing image
+![Select Event Type](images/vt-docs-starterkit-event.gif)-->
+
+## Step 2: Add details to the event
+
+When you click on an element on your website, a window appears where you can enter the details for the event.
+
+1. **Event Name**. Edit the event name to be simple yet descriptive.
+   Segment recommends that you use an "Object Action" format (for example, `Blog Post Clicked`, and use Title Case (the first letter of each word is capitalized) when naming events.
+
+2. **Properties**. Add properties to the event to add contextual information about the action that the user took. Properties are optional, but they are very helpful when you analyze events data later.
+   - Use `snake_case` for property names (all lowercase, with spaces between words represented as an underscore “_”). For a guide on event naming best practices, check out our Docs [here](https://segment.com/docs/protocols/tracking-plan/best-practices/#formalize-your-naming-and-collection-standards).
+   - Check the [list of properties that are collected by default](https://segment.com/docs/connections/spec/common/) before you add a property.
+
+3. **Advanced**. You can also click the `</>` button to manually edit the CSS selector. If you didn't select the right element, you can choose the element on the page again by clicking on the finger button.
+
+Once you're satisfied with the event name and properties, click **Add**.
+
+> success ""
+> **Tip**! You can create more than one event before you move on to the next step.
+
+![Edit Event Details](images/vt-docs-5.png)
+
+### More information on properties
+
+When you use Visual Tagger, you can create **static properties** by entering the value that the property should have. When a property is static its value is hardcoded, and is always the same regardless of any actions from the user.
+
+You can also create **dynamic properties** by selecting a piece of text from the website that you want as the value for that property. When a property is dynamic, its value is different depending on what the user clicked.
+
+For example, if you run an e-commerce web shop and want to create an event that fires every time a user clicks on a product on your search results page, you would create a `Product Clicked` event.
+
+- To specify where the event was fired from, you would add a property called `location` to the event. You would hardcode the value of that property as "Search Results Page". This is an example of a static property.
+
+- To show which product the user clicked, you can add a property called `product_name` to the event. You can use the Visual Tagger "select from page" feature to select the text on the iframe-version of your website that gives the product name. The value of the `product_name` property would then be different, depending on what users click.
+
+### More information on forms
+
+When you tag a form you can track both that the user _submitted_ the form, and also update traits about the user.
+
+This is useful if the form collects information about the user (such as Name, Email, Country). (This wouldn't be useful on a Search or Add To Cart form.)
+
+This is an illustration of how traits and events might appear for a user in a Destination or Personas.
+
+![Forms Details](images/vt-docs-identify.png)
+
+If you enable the Identify Users feature, you can specify which traits to update in the same way as properties for the event.
+
+![Edit Event Details](images/vt-docs-traits.png)
+
+### More information on URLs
+
+By default, events created using the Visual Tagger only fire on the same URL as the one where you tagged the event. This prevents unexpected events if the same CSS selector exists on other pages of your site.
+
+If you have similar pages with different URLs such as `/products/1` and `/products/2` and you want to same event to fire on both, you can change the **URL Page Targeting** to match `/products` instead of `/products/1` or any page on the entire website.
+
+## Step 3: Test the event(s)
+
+Once you finish filling out the event details, click **Continue** to go to the Test and Publish screen. On this screen you can test your event to confirm that it works as expected before you publish it.
+
+Test your events by clicking around on your website in the iframe, and doing things on the iframe-version of your site that should trigger the event.
+
+- When the event fires, a green icon appears in the Test Status column.
+- If the event fires, but does not contain any properties you created, the Test Status lists the errors.
+- If the event does not fire, the Test Status remains grey.
+
+If something doesn't look right, click **Back** to return to the Build screen and edit your tags.
+
+![Test Your Event](images/vt-docs-6.gif)
+
+If you’re having trouble validating your events, check out our [Troubleshooting Tips](#troubleshooting-your-events).
+
+## Step 4: Publish the event(s)
+
+When you've finished setting up and testing your events, click **Publish**.
+
+Events can take up to 10 minutes appear on your website. Once they are live, events begin sending to Segment when people visit your website and interact with the elements that you created events for. The data from these events appears in the Website Source's Debugger.
+
+## Step 5: Test the event to confirm that it works
+
+After you publish your event and wait for ~10 minutes, do a last test to make sure your tags are working expected and that you see your data landing in your Segment Debugger.
+
+In one window, open up your website where you created the event. In another window (side by side), open the **Segment Debugger** for your Javascript Source. The Debugger is a Segment tool that shows a live stream of the data coming from that Source.
+
+> info ""
+> **Good to know**: The Debugger automatically pauses after ~1 minute of idle time. Refresh the page if you leave and come back to it, and don't see new data.
+
+On your website, pretend that you are an end-user and try to trigger the event that you created in Visual Tagger. Watch the Debugger in the other window to confirm that the event fired when you took that action.
+
+All events created using Visual Tagger automatically get a context property that says `"visual_tagger" : true` so that you can easily distinguish between events that you implemented using Visual Tagger and events that you implemented using code.
+
+![Verify in Debugger](images/vt-docs-7.png)
+
+## Managing and editing Visual Tagger events
+
+Once you publish your events, they appear on the **Visual Tagger Home** view in the **All Published Events** table. From here, you can create click **Add Event** to craete new events, and edit or delete existing ones.
+
+![Visual Tagger Home](images/vt-docs-8.png)
+
+## Troubleshooting your events
+
+If your events are not working as expected, try the following steps to troubleshoot the issue.
+
+- Ensure that the Visual Tagger integration is toggled on. You find it in the Settings for your Source.
+
+- Ensure that analytics.js is implemented on your website. You can confirm this by visiting your website and watching the Segment Debugger. A `page` call should flow into your Debugger whenever someone visits a page on your website if you have implemented analytics.js. Note that if you have an adblocker enabled when you visit your website, data will not get fired into Segment when you interact with your website.
+
+- Confirm that the CSS selector has not changed in any way since you created the event in the Visual Tagger (for example, a button could change locations or be removed entirely). Because Visual Tagger relies on the CSS selector to tie events to user actions, if the CSS selector changes, the event stops sending. If this happens, edit the event in Visual Tagger and update the CSS selector. Segment does not currently have a way to alert you when events you created using Visual Tagger begin to fail.
+
+- Because Visual Tagger relies on stable CSS selectors to fire events from, it is currently not compatible with websites that have CSS selectors that are dynamically generated on every page load.
+
+- If your website has any iframed components (for example, if you embed Typeforms into your site), Visual Tagger cannot create events for that iframed content. We recommend that you install Segment on the iframed-in site and use Visual Tagger directly on that site.
+
+- If you use the same name for multiple events (whether in code or using Visual Tagger), duplicate events are *not* created downstream. Instead, those multiple events are joined into one event.
+
+If your events still don't work as expected, contact [Segment Customer Support](https://segment.com/help/contact/) for help.
 
 ## FAQs
 
-### Does the Visual Tagger impact my site or app's performance?
+### Are there situations where Visual Tagger will not work?
 
-The Visual Tagger integration has very minimal negative impact to your site's performance, because it installs a single event handler that makes an asynchronous call to Segment when a tag's event is invoked. The integration makes an initial request that takes the same amount of time required to load Analytics.js, and it is cached for subsequent requests.
+Yes! Visual Tagger relies on CSS selectors, which usually involves what is called "class names" such as "hero" or "footer". Some web technologies automatically generate these names and change them on a regular basis, which makes the Visual Tagger events stop firing.
 
-However, adding a large number of tags to your site could potentially impact your site's performance. To guard against this we limit the number of tags you can add using Visual Tagger to 99 while the Visual Tagger is in alpha.
+Squarespace uses this technique, and you can examine the HTML of your site to see if the "class names" are randomized letters/numbers.
 
-### How many events can I create with Visual Tagger?
+Visual Tagger also does not support embedded elements, such as a YouTube video player or a Hubspot form.
 
-Currently, you can create up to 99 events with the Visual Tagger.
+### How can I make my website ideal for Visual Tagger?
 
-### Are events applicable to specific URLs? Or are we able to match on URL patterns?
+The most stable way for Visual tagger to identify elements is if each one has a unique ID that persists even if the page is reorganized.
 
-Currently, Visual Tagger only supports direct string matching on URLs. More flexibility, including matching on URL patterns, is on our roadmap.
+### When should I use Visual Tagger instead of a coded instrumentation?
 
-### Does the Chrome extension work with dynamically generated elements or Single Page Applications?
+Visual Tagger is a great way to get started with tracking, but over time you might need to augment with coded instrumentation.
 
-Yes. The Chrome DOM is queried on runtime, so you can track dynamically generated elements like modals (for example) using the Visual Tagger.
+These are ideal use cases for Visual Tagger:
+- Understanding how users are engaging with your public website. Beyond page tracking, you can learn which CTA’s are most popular, collect information from forms, learn when users engage with interactive content like a carousel.
 
-### Once the Visual Tagger supports properties, can I grab info from the data layer that's not visually on the page?
+- Similarly for campaign landing pages, that needs to go live with short turnaround, and require tracking forms, CTA, and other interactive content
 
-In the short term, only information that is visually present on the page will be available for use in the Visual Tagger. We're considering implementing a data layer as part of our roadmap.
+- Understanding your ecommerce funnel, how users browse and filter products, add them to cart before checking out and completing an order
 
-### How can I tell which events were created using the Visual Tagger, versus those which were implemented using code?
+- Learn more about how users use your product or service, after logging in. Track key semantic events in your product such as Project Created (project management app), Account Upgraded, Listing Favorited (apartment rental site) etc to learn about adoption, engagement, and retention
 
-Events that were added using the Visual Tagger (as opposed to in code) have a `context` property in the event payload that says `"visual_tagger": true`.
-Events _not_ implemented using the Visual Tagger do not have this property.
+These are examples of when to augment with coded instrumentation:
 
-### If I have MFA or SSO enabled on my Segment account, can I login and use Visual Tagger?
+#### Depth of instrumentation
 
-Visual Tagger does **not** support accounts that have MFA or SSO enabled to login into the extension. We are planning to add MFA support before the General Availability launch.
+- After understanding the basic ecommerce funnel, you might want to go deeper and understand the value of orders, or value of products abandoned in the cart. This requires careful formatting of the price, for each product in the cart, which is not supported by Visual Tagger.
+- Similarly if you want to use Google Analytics Ecommerce functionality, some events must have the `order_id` sent as a property which is not supported by Visual Tagger yet.
+- Associating events with the logged in user requires that you instrument an identify call in code.
 
-### When will the Visual Tagger be Generally Availabile, have standard support and fully stable releases?
+#### Frequency of change
 
-General Availability launch is planned for Fall of 2019.
+If your website or application changes frequently, you will need to keep track of each change and update Visual Tagger events accordingly. In that situation, it can be beneficial for the engineering team to have the event tracking in code and update at the same time as changing how a feature work.
 
-## Alpha Product Terms & Conditions
+### Will using Visual Tagger impact my site or app's performance?
 
-Segment cannot make commitments around warranties, support, service levels, etc. and will not be liable for any loss of use, lost or inaccurate data or failure of security mechanisms in connection with your use of this or other alpha products, until we release the feature to general availability.
+The Visual Tagger integration has negligible impact to your site's performance, because it installs a single event handler that makes an asynchronous call to Segment when a tag's event is invoked.
 
-In particular, this means that events instrumented via Visual Tagger may be less reliable and prone to breakage than standard Segment track events instrumented via code.
+However, adding a large number of tags to your site could potentially impact your site's performance. To guard against this we limit the number of tags you can add using Visual Tagger to a maximum of 50.
+
+### Does Visual Tagger work with dynamically generated elements or Single Page Applications?
+
+Yes. You can track dynamically generated elements like modals (for example) using the Visual Tagger.
+
+### Does Visual Tagger have a data layer so that I can make use of data that's not rendered on the page?
+
+Currently, only information that is visually present on the page is available for use in the Visual Tagger.
+
+### How can I tell which events were created using Visual Tagger versus which were implemented using code?
+
+Events that were added using the Visual Tagger (as opposed to in code) have a `context` property in the event payload that says `"visual_tagger": true`. Events _not_ implemented using the Visual Tagger do not have this property.
+
+### The old version of Visual Tagger didn't have support for MFA or SSO. What about the new version?
+
+Because the new version of Visual Tagger is available in the Segment app, Workspaces that have MFA or SSO enabled are able to access it.

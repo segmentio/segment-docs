@@ -1,14 +1,12 @@
 ---
 title: Analytics for Android
-sourceTitle: 'Android'
-sourceCategory: 'Mobile'
 ---
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 
-Analytics for Android makes it dead simple to send your data to any tool without having to learn, test or implement a new API every time.
+Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
-All of our client sources are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/sources) too.
+All of Segment's client sources are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/docs/connections/sources/catalog/) too.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-android/releases.atom).
 
@@ -16,10 +14,17 @@ Analytics for Android only supports any Android device running API 14 (Android 4
 
 ## Getting Started
 
+### About mobile connection modes
+
+{% include content/mobile-cmodes.md %}
+
+{% include components/media-icon.html href="https://github.com/segmentio/analytics-android/tree/master/analytics-samples/analytics-sample" icon="media/icon-guides.svg" title="Android Test Apps" content="Segment maintains test apps for the Android mobile library. Find them here." %}
+
+
 ### Step 1: Install the Library
 
 
-The recommended way to install the library for Android is with a build system like Gradle. This makes it dead simple to upgrade versions and add destinations. The library is distributed via [Maven Central](http://maven.org/). Simply add the `analytics` module to your `build.gradle`:
+The recommended way to install the library for Android is with a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed using [Maven Central](http://maven.org/). Simply add the `analytics` module to your `build.gradle`:
 
 ```java
 dependencies {
@@ -29,15 +34,15 @@ dependencies {
 
 ### Packaging SDKs for Device-mode destinations
 
-In the interest of keeping our SDK lightweight, the `analytics` artifact only installs the Segment destination. This means that all your data will be sent via Segment's servers to any tools you've enabled with server-side-compatible destinations.
+In the interest of keeping our SDK lightweight, the `analytics` artifact only installs the Segment destination. This means that all your data will be sent using Segment's servers to any tools you've enabled with server-side-compatible destinations.
 
-[As described here](/docs/connections/destinations/#connection-modes), some destinations require or offer **Device-mode**. If that's the case, you'll need to take package the destination SDK, which might [require some additional steps](#packaging-device-based-integration-sdks).
+[As described here](/docs/connections/destinations/#connection-modes), some destinations require or offer **Device-mode**. If that's the case, you'll need to take package the destination SDK, which might [require some additional steps](#packaging-device-mode-destination-sdks).
 
 Now that the SDK is installed and set up, you're ready to...
 
 ### Step 2. Initialize the Client
 
-We recommend initializing the client in your `Application` subclass.  You'll need your [Write Key](/docs/guides/setup/how-do-i-find-my-write-key/).
+We recommend initializing the client in your `Application` subclass.  You'll need your [Write Key](/docs/connections/find-writekey/).
 
 ```java
 // Create an analytics client with the given context and Segment write key.
@@ -62,7 +67,7 @@ The entry point of the library is through the `Analytics` class. As you might ha
 Analytics analytics = new Analytics.Builder(context, writeKey).build();
 ```
 
-The `Analytics.Builder` class lets you customize settings for the Analytics client, including things like the flush interval and packaging Device-mode destinations. Please refer to the Javadocs for details on customizable parameters.
+The `Analytics.Builder` class lets you customize settings for the Analytics client, including things like the flush interval and packaging Device-mode destinations. Refer to the Javadocs for details on customizable parameters.
 
 We also maintain a global default instance which is initialized with defaults suitable to most implementations.
 
@@ -118,7 +123,7 @@ We recommend calling `identify` a single time when the user's account is first c
 Analytics.with(context).identify(new Traits().putName("Michael Bolton"));
 
 // Sometime later in your app when the user gives you their email
-Analytics.with(context).identify(new Traits().putEmail("mbolton@initech.com"));
+Analytics.with(context).identify(new Traits().putEmail("mbolton@example.com"));
 ```
 Hold up though! When you actually put that code in your Android app, you'll need to replace all those hard-coded strings with details about the currently logged-in user.
 
@@ -375,6 +380,13 @@ analyticsContext.putValue(...).putReferrer(...).putCampaign(...);
 
 You can read more about these [special fields](/docs/connections/spec/common/#context).
 
+To alter data specific to the device object you can use the following:
+
+```java
+AnalyticsContext analyticsContext = Analytics.with(context).getAnalyticsContext();
+analyticsContext.device().putValue("advertisingId", "1");
+```
+
 If you'd prefer to opt out of automatic data collection, simply clear the context right after initializing the client. It's important to do this _BEFORE_ sending any events.
 
 ```java
@@ -480,18 +492,22 @@ persisted across device reboots, so you can simply call this once during your ap
 
 ## Middlewares
 
-Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify or reject events. Middlewares are available on analytics-android 4.3.0 and higher.
+Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. Source Middleware are available on analytics-android 4.3.0 and later. Destination Middleware are available on analytics-android 4.7.0 and later.
 
-You can register middlewares during construction with the `.middleware` method on the builder. Middlewares are invoked for all events, including automatically tracked events, and external event sources like Adjust and Optimizely. This offers you the ability the customize those messages to fit your use case even if the event was sent outside your source code.
+You can register source middleware during construction with the `.useSourceMiddleware` method on the builder. These middleware are invoked for all events, including automatically tracked events, and external event sources like Adjust and Optimizely.
 
-For example, you might want to record the [device year class](https://github.com/facebook/device-year-class) with your events. Previously, you would have to do this everywhere you trigger an event with the Segment SDK. With middlewares, you can do this in a single place.
+You can register destination middleware during construction with the `.useDestinationMiddleware` method on the builder. These middleware are invoked for all events to the specific device-mode destination.
+
+You can use middleware to customize those messages to fit your use case, even if the event was not sent by your source code.
+
+For example, you might want to record the [device year class](https://github.com/facebook/device-year-class) with your events. Previously, you would have to do this everywhere you trigger an event with the Segment SDK. With middleware, you can do this in a single place.
 
 ```java
 Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_WRITE_KEY)
-    .middleware(new Middleware() {
+    .useSourceMiddleware(new Middleware() {
       @Override
       public void intercept(Chain chain) {
-        // Get the original payload.
+        // Get the payload.
         BasePayload payload = chain.payload();
 
         // Set the device year class on the context object.
@@ -515,11 +531,11 @@ Building on the earlier example, maybe you don't want to collect any events for 
 
 ```java
 Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_WRITE_KEY)
-        .middleware(deviceClassMiddleware) // From earlier example.
-        .middleware(new Middleware() {
+        .useSourceMiddleware(deviceClassMiddleware) // From earlier example.
+        .useSourceMiddleware(new Middleware() {
           @Override
           public void intercept(Chain chain) {
-            // Get the original payload.
+            // Get the payload.
             BasePayload payload = chain.payload();
 
             // Check the device year class.
@@ -540,6 +556,54 @@ Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_W
 
 The key thing to observe here is that the output produced by the first middleware feeds into the second. This allows you to chain and compose independent middlewares!
 
+### Destination Middleware
+
+If you do not need to transform all of your Segment calls, and only want to transform the calls going to specific destinations, you should use Destination Middleware instead of Source middleware. Destination middleware are available for device-mode destinations only; there are several other ways to transform Segment calls sent to a destination in cloud-mode.
+
+You can use the same middleware object to apply transformations for several different device-mode destinations at the same time. For example, you can use middleware to add a property before sending `Checkout Started` track events to both a Mixpanel and an Amplitude destination.
+
+The example below adds a property key-value pair to any "Checkout Started" Track event, with the key "step" and the value "1".
+
+```java
+Integration.Factory mixpanelFactory = MixpanelIntegration.FACTORY; // https://github.com/segment-integrations/analytics-android-integration-mixpanel
+Integration.Factory amplitudeFactory = AmplitudeIntegration.FACTORY; // https://github.com/segment-integrations/analytics-android-integration-amplitude
+Middleware addPropMiddleware = new Middleware() {
+      @Override
+      public void intercept(Chain chain) {
+        // Get the payload.
+        BasePayload payload = chain.payload();
+
+        if (payload.type() == BasePayload.Type.track) {
+          TrackPayload track = (TrackPayload) payload;
+
+          // Check the track call event name
+          if (track.event().equals("Checkout Started")) {
+
+            // Create copy of Properties map and add additional property
+            ValueMap newProps = new ValueMap();
+            newProps.putAll(track.properties());
+            newProps.put("step", 1);
+
+            // Build our new payload.
+            payload = track.toBuilder().properties(newProps).build();
+          }
+        }
+
+        // Continue with new payload
+        chain.proceed(payload);
+      }
+    };
+Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_WRITE_KEY)
+    .use(mixpanelFactory)
+    .use(amplitudeFactory)
+    .useDestinationMiddleware(mixpanelFactory.key(), addPropMiddleware)
+    .useDestinationMiddleware(amplitudeFactory.key(), addPropMiddleware)
+    .build();
+```
+
+### Braze Middleware
+
+If you use the Braze (Appboy) destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation. More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
 
 ## Sending Data to destinations
 
@@ -552,9 +616,9 @@ There are two ways to send data to your analytics services through this library:
 
 ### Cloud-Mode in Android
 
-When an destination's SDK is not packaged, but it is enabled from your dashboard, the request goes through the Segment REST API, and is routed to the service's server-side API as [described here](/docs/connections/destinations/#connection-modes).
+When a destination's SDK is not packaged, but it is enabled from your dashboard, the request goes through the Segment REST API, and is routed to the service's server-side API as [described here](/docs/connections/destinations/#connection-modes).
 
-### Packaging Device-mode destination SDKs
+### Packaging device-mode destination SDKs
 
 By default, our `analytics` artifact does not package Device-mode destinations.
 
@@ -562,7 +626,7 @@ We recommend using device-mode destinations on a need-to-use basis to reduce the
 
 To package Device-mode destinations, first add the dependencies you need. You can find these in our app when you open the destination for your source.
 
-```
+```java
 compile('com.segment.analytics.android.integrations:google-analytics:+') {
   transitive = true
 }
@@ -711,10 +775,12 @@ Our Android library has support for back to API level 14 (Android 4.0). You shou
 
 1. Use an older version of the library that does support your minimum requirements. Keep in mind that there won't be any updates or bug fixes to those versions, but we do still have clients still using old versions of the library in production.
 2. Skip analytics for users on older devices - you can wrap calls to our SDK in a Build.VERSION check.
-3. Write your own SDK. You can still use most of the tools on Segment via our [HTTP API](/docs/connections/sources/catalog/libraries/server/http/). You can use either our Android or [Java source](https://github.com/segmentio/analytics-java) to get a quick headstart.
+3. Write your own SDK. You can still use most of the tools on Segment using our [HTTP API](/docs/connections/sources/catalog/libraries/server/http/). You can use either our Android or [Java source](https://github.com/segmentio/analytics-java) to get a quick headstart.
 
 
-### How can I use an destination specific feature, e.g. Mixpanel's push notifications?
+### How can I use a destination specific feature?
+
+...for example, Mixpanel's push notifications?
 
 If you're using Device-mode for a mobile destination, you can always access features from that tool's native SDK.
 
@@ -782,7 +848,7 @@ analytics.getContext().putDeviceToken(registrationId);
 __NOTE__: Version 3 of the SDK is now replaced by version 4. See the section below on upgrading.
 If you are already using version 2 of the Android SDK, you'll have to make few changes to get up and running with version 3.
 
-In version 3, we've organized the destinations to be make the core SDK even leaner and smaller. This is what the old setup looked like:
+In version 3, we've organized the destinations to be make the core SDK even leaner and smaller. This is what the old set up looked like:
 
 ```java
 compile('com.segment.analytics.android:analytics-core:+') {
@@ -814,9 +880,9 @@ compile('com.segment.analytics.android:analytics-integration-quantcast:+') {
 }
 ```
 
-Earlier, you could control the debugging behaviour with a boolean flag. In version 3, this is replaced by the more powerful [`LogLevel`](/docs/libraries/android/#debugging) Enum, that lets you not only control the logging behavior of our SDK, but also for Device-mode destinations.
+Earlier, you could control the debugging behaviour with a boolean flag. In version 3, this is replaced by the more powerful [`LogLevel`](/docs/connections/sources/catalog/libraries/mobile/android/#debugging) Enum, that lets you not only control the logging behavior of our SDK, but also for Device-mode destinations.
 
-Version 2 of the SDK also let you customize the behaviour of the SDK by providing resource values in XML. Version 3 ignores these custom options from XML to simplify behaviour and improve performance. The recommended way to customize the Analytics client is to use the [Builder](/docs/libraries/android/#customizing-the-client) methods instead.
+Version 2 of the SDK also let you customize the behaviour of the SDK by providing resource values in XML. Version 3 ignores these custom options from XML to simplify behaviour and improve performance. The recommended way to customize the Analytics client is to use the [Builder](/docs/connections/sources/catalog/libraries/mobile/android/#optional-customizing-the-client) methods instead.
 
 ### Do you support Phonegap/Cordova?
 
@@ -847,7 +913,7 @@ We also collect the [Android ID](http://developer.android.com/reference/android/
 1. Verify that your destination is enabled
 2. Verify your destination credentials entered in your Segment dashboard are correct
 3. Make sure the destination can accept what you're sending:
-   - Does the integration have device-mode/cloud-mode support? Confirm you are sending via the correct connection mode.
+   - Does the integration have device-mode/cloud-mode support? Confirm you are sending using the correct connection mode.
    - Does the destination accept the type of call you are sending? Not all destinations accept all calls: page, track, etc.
 4. If you are still not seeing data in your destination, continue debugging based on which type of connection mode you are using.
 
@@ -867,10 +933,10 @@ Read through [the docs for that destination](/docs/connections/destinations/) to
 
 ### Still having issues?
 
-Feel free to [reach out to us](/help) with the following information:
+[contact our Product Support team](https://segment.com/help/contact/) with the following information:
 
 - The version of our SDK you are using
-- Whether you are using device- or cloud-smode
+- Whether you are using device- or cloud-mode
 - Logs of the call in question
 - Screenshots of the event in the Segment debugger
 - Screenshots of what you are seeing in your destination

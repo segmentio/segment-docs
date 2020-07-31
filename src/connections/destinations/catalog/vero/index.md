@@ -2,7 +2,7 @@
 title: Vero Destination
 ---
 
-Our Vero destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segment-integrations/analytics.js-integration-vero), [Server](https://github.com/segmentio/integration-vero).
+Our Vero destination code is all open-source on GitHub if you want to check it out: [Javascript](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/vero), [Server](https://github.com/segmentio/integration-vero).
 
 ## Getting Started
 
@@ -82,9 +82,9 @@ analytics.alias('example@example.com', '8765309')
 
 ### Tags
 
-The destination is capable of both adding and removing tags in Vero for a given user. Because `tags` is not a common property of events, this functionality is invoked via an [destination specific option](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-integrations).
+The destination is capable of both adding and removing tags in Vero for a given user. Because `tags` is not a common property of events, this functionality is invoked using an [destination specific option](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-destinations-with-the-integrations-object).
 
-To start using this feature, please pass an object called `tags` with the following properties:
+To start using this feature, pass an object called `tags` with the following properties:
 
 <table>
   <tr>

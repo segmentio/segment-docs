@@ -2,12 +2,13 @@
 title: 'Spec: Identify'
 related:
   - "/connections/sources/catalog/"
-  - "/connections/sources/faq/"
 ---
 
 `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them like their email, name, etc.
 
-Our recommendation for when and how often you should call identify is as follows:
+{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299968?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Identify Method" content="Check out our high-level overview of the Identify method in Segment University. (Must be logged in to access.)" %}
+
+Our recommendation for when and how often you should call `identify` is as follows:
 
 - After a user registers
 - After a user logs in
@@ -20,7 +21,7 @@ Let's imagine this scenario:
 
 I log into your app. Identify is called. For whatever reason, I close the browser and don't return until later. There's no way of knowing where I will reenter your app from. I could start my session from anywhere. And because there are many tools out there that require an initial identify call for certain features (e.g. Intercom chat widget) it's important to tell your end tools who the user is when they first start their session.
 
-Calling `identify` in one of our [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Please refer to library-specific documentation for more details.
+Calling `identify` in one of our [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Refer to library-specific documentation for more details.
 
 Here's the payload of a typical `identify` call with most [common fields](/docs/connections/spec/common/) removed:
 
@@ -29,7 +30,7 @@ Here's the payload of a typical `identify` call with most [common fields](/docs/
   "type": "identify",
   "traits": {
     "name": "Peter Gibbons",
-    "email": "peter@initech.com",
+    "email": "peter@example.com",
     "plan": "premium",
     "logins": 5
   },
@@ -42,7 +43,7 @@ And here's the corresponding Javascript event that would generate the above payl
 ```js
 analytics.identify("97980cfea0067", {
   name: "Peter Gibbons",
-  email: "peter@initech.com",
+  email: "peter@example.com",
   plan: "premium",
   logins: 5
 });
@@ -51,11 +52,7 @@ analytics.identify("97980cfea0067", {
 Beyond the common fields, an `identify` call has the following fields:
 
 <table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-identify-traits.md %}
   {% include content/spec-field-user-id.md %}
 </table>
@@ -84,7 +81,7 @@ Here's a complete example of an `identify` call:
   "timestamp": "2015-02-23T22:28:55.111Z",
   "traits": {
     "name": "Peter Gibbons",
-    "email": "peter@initech.com",
+    "email": "peter@example.com",
     "plan": "premium",
     "logins": 5,
     "address": {
@@ -177,8 +174,7 @@ Reserved traits we've standardized:
   <tr>
     <td>`createdAt`</td>
     <td>Date</td>
-    <td>Date the user's account was first created
-      <p>We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.</p></td>
+    <td>Date the user's account was first created. We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.</td>
   </tr>
   <tr>
     <td>`description`</td>
@@ -213,8 +209,7 @@ Reserved traits we've standardized:
   <tr>
     <td>`name`</td>
     <td>String</td>
-    <td>Full name of a user
-      <p> If you only pass a first and last name we'll automatically fill in the full name for you.</p>
+    <td>Full name of a user. If you only pass a first and last name we'll automatically fill in the full name for you.
     </td>
   </tr>
   <tr>
@@ -225,15 +220,13 @@ Reserved traits we've standardized:
   <tr>
     <td>`title`</td>
     <td>String</td>
-    <td>Title of a user, usually related to their position at a specific company
-      <p>Example: "VP of Engineering"</p>
+    <td>Title of a user, usually related to their position at a specific company. Example: "VP of Engineering"
     </td>
   </tr>
   <tr>
     <td>`username`</td>
     <td>String</td>
-    <td>User's username
-      <p> This should be unique to each user, like the usernames of Twitter or GitHub.</p></td>
+    <td>User's username. This should be unique to each user, like the usernames of Twitter or GitHub.</td>
   </tr>
   <tr>
     <td>`website`</td>

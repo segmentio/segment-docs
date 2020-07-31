@@ -26,14 +26,14 @@ The Salescamp destination makes it simple to integrate from Segment and send dat
 
 Let's go through a quick javascript example of identifying a customers
 
-If you haven't had a chance to review Segment's spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you aren't familiar with the Segment Spec, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('YOUR_USERS_ID', {
   firstname: 'Pete',
   lastname: 'Gibbons',
   title: 'VP of Derp',
-  email: 'peter.gibbons@initech.com',
+  email: 'peter.gibbons@example.com',
   company: 'Initech',
   phone: '570-690-4150',
   state: 'California',

@@ -1,13 +1,13 @@
 ---
 title: Cxense Destination
-beta: true
+hidden: true
 ---
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-Currently this destination supports events originating from Web sources (not Server or Mobile). You can read more about how define a source [here](/docs/guides/getting-started/what-is-a-source/).
+Currently this destination supports events originating from Web sources (not Server or Mobile). You can read more about how define a source [here](/docs/connections/sources/#what-is-a-source).
 
 To get started with Cxense and Segment, you'll need the following:
 
@@ -21,7 +21,7 @@ Assuming these criteria are met, you can add Cxense as a destination for your de
 
 ## Page
 
-Tracking pageviews is a key component of Cxense's offering. We integrate with this capability via our `.page()` method. When you trigger a `.page()` event the integration will invoke Cxense's corresponding `sendPageView` functionality. We will also pass along any [custom properties](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) you define. Here is an example:
+Tracking pageviews is a key component of Cxense's offering. We integrate with this capability using our `.page()` method. When you trigger a `.page()` event the integration will invoke Cxense's corresponding `sendPageView` functionality. We will also pass along any [custom properties](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page) you define. Here is an example:
 
 ```js
 analytics.page('My Page Name', { author: 'Chris Nixon' });
@@ -36,13 +36,13 @@ window.cX.callQueue.push(['sendPageViewEvent']);
 
 ### Geography API
 
-By default, Cxense captures location information about a user via their IP address. Their API, however, also offers the ability to explicitly define a location. If you would like to leverage this functionality, please adhere to our [spec](/docs/connections/spec/common/#context) and pass `location.latitude` and `location.longitude` as properties of the `context` argument of your `.page()` events.
+By default, Cxense captures location information about a user using their IP address. Their API, however, also offers the ability to explicitly define a location. If you would like to use this functionality, adhere to our [spec](/docs/connections/spec/common/#context) and pass `location.latitude` and `location.longitude` as properties of the `context` argument of your `.page()` events.
 
 ## Identify
 
 By default, Cxense provides basic anonymous user identity management but it also allows events to be associated with a custom user identifier. Our `identify()` method is used to integrate with this through the use of Cxense's `addExternalId` method. Two things to note:
 
-1. In order to use this functionality, you must have a customer prefix registered with Cxense and defined as an [integration setting](/docs/connections/destinations/catalog/cxense/#customer-prefix).
+1. In order to use this functionality, you must have a customer prefix registered with Cxense and defined as a destination setting.
 2. The User Id you are using with Segment `.identify()` events must be less than 40 characters. This is a limit enfored by Cxense's API.
 3. The User Id will be sent to Cxense with the subsequent `.page()` event the user triggers.
 
@@ -64,7 +64,7 @@ window.cX.callQueue.push(['addExternalId', {
 
 ## Track
 
-Customers using the Cxense DMP product are able to define and capture custom user events. We integrate with this functionality via our `.track()` method.
+Customers using the Cxense DMP product are able to define and capture custom user events. We integrate with this functionality using our `.track()` method.
 
 In order to use this functionality, you will need to have:
 
@@ -72,7 +72,7 @@ In order to use this functionality, you will need to have:
 2. A Cxense Origin identifier.
 3. A Cxense Customer Prefix.
 
-These all need to be defined as integration settings. If you are unsure about any of these, please contact your Cxense representative to obtain them.
+These all need to be defined as integration settings. If you are unsure about any of these, contact your Cxense representative to obtain them.
 
 Once these settings are defined, we will begin mapping your `.track()` events to Cxense's API. Here's an example:
 

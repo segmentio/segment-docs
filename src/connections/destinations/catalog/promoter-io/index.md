@@ -13,7 +13,7 @@ Promoter supports the `identify` and `track` methods from Segment and will allow
 - Add a contact to a list
 - Send a survey to a contact
 
-Both `identify` and `track` will need to be called in order to utilize the full power of Promoter.
+Both `identify` and `track` will need to be called in order to use the full power of Promoter.
 
 ## Identify
 
@@ -82,6 +82,6 @@ Here's an example:
 ```
 
 
-### Completed Order
+### Order Completed
 
 When you `track` an event with the name `Order Completed` using the [e-commerce tracking API](/docs/connections/spec/ecommerce/v2/), we will send the event and data to Promoter as a custom event with the data stored with Promoter for future use.

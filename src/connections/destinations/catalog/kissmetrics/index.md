@@ -4,7 +4,7 @@ rewrite: true
 ---
 [KISSmetrics](https://www.kissmetricshq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a behavioral email and analytics platofrm. It pulls cross-platform behavior reports so marketers can analyze key audience growth segments. It also provides an overview of custom populations, population change and growth, so marketers can analyze populations from customers who have completed actions or events.
 
-This document was last updated on July 3, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please let us know!
+This document was last updated on July 3, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
 ## Getting Started
 
@@ -15,11 +15,11 @@ When you toggle on KISSmetrics in Segment, this is what happens:
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "KISSmetrics" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your KISSmetrics "API Key" into the connection settings.
-4. If you are using KISSmetrics via Segment's client-side analytics.js library, we asynchronously load KISSmetrics Javascript library onto the page. This means you should remove KISSmetrics's snippet from your page. Your KISSmetrics source will start automatically collecting "Visited Site" events and [other automatically tracked events](http://support.kissmetrics.com/article/show/javascript-settings).
+4. If you are using KISSmetrics using Segment's client-side analytics.js library, we asynchronously load KISSmetrics Javascript library onto the page. This means you should remove KISSmetrics's snippet from your page. Your KISSmetrics source will start automatically collecting "Visited Site" events and [other automatically tracked events](http://support.kissmetrics.com/article/show/javascript-settings).
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page('Docs');
@@ -44,7 +44,7 @@ __Note:__ KISSmetrics requires an initial pageview to load the library. By defau
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123');
@@ -54,7 +54,7 @@ When you call [`identify`](/docs/connections/spec/identify/), we first call KISS
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Clicked Button');
@@ -68,7 +68,7 @@ The KISSmetrics javascript library automatically tracks a bunch of events (Visit
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```javascript
 analytics.group('123');
@@ -93,7 +93,7 @@ will add the following traits to the user:
 
 ## Alias
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
 
 ```javascript
 analytics.alias();
@@ -119,7 +119,7 @@ For example, if you're identifying people by their email address and they change
 ```javascript
 analytics.alias({
   previousId: 'old_email@aol.com',
-  userId: 'new_email@gmail.com'
+  userId: 'new_email@example.com'
 });
 ```
 
@@ -195,7 +195,7 @@ Note that this is without the prefix setting enabled. If you had enabled that fe
 
 ### Receive experiment data from A/B Testing tools
 
-You can track A/B testing event data like [`Experiment Viewed`](/docs/connections/spec/ab-testing/#experiment-viewed) and send it to Kissmetrics via Segment.
+You can track A/B testing event data like [`Experiment Viewed`](/docs/connections/spec/ab-testing/#experiment-viewed) and send it to Kissmetrics using Segment.
 
 In order to enable this feature,
 1. Find your A/B testing tool in your Segment dashboard

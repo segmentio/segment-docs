@@ -4,9 +4,9 @@ title: Savio Destination
 ---
 [Savio](https://savio.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables B2B SaaS teams to centrally managed customer feedback so they can make better product decisions.
 
-This destination is maintained by Savio. For any issues with the destination, please [reach out to their team](mailto:support@savio.io).
+This destination is maintained by Savio. For any issues with the destination, [contact their team](mailto:support@savio.io).
 
-_**NOTE:** Savio is currently in beta, which means that they are still actively developing the product. This doc was last updated on February 22, 2019. If you are interested in joining their beta program or have any feedback to help improve the Savio Destination and its documentation, please [let  their team know](mailto:support@savio.io)!_
+_**NOTE:** Savio is currently in beta, which means that they are still actively developing the product. This doc was last updated on February 22, 2019. If you are interested in joining their beta program or have any feedback to help improve the Savio Destination and its documentation, [let their team know](mailto:support@savio.io)!_
 
 
 ## Getting Started
@@ -20,11 +20,11 @@ _**NOTE:** Savio is currently in beta, which means that they are still actively 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
-  email: 'john.doe@segment.com',
+  email: 'john.doe@example.com',
   name: 'John Doe',
   phone: '(555) 555-2219'
 });
@@ -39,7 +39,7 @@ Once created you will be able to associate the `Person` with feedback in the Sav
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```
 analytics.group("0e8c78ea9d97a7b8185e8632", {

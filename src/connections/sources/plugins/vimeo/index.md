@@ -8,13 +8,13 @@ With the analytics.js Vimeo Plugin you can easily collect Vimeo player events in
 ## Getting Started
 To use the plugin you must first generate an Access Token in Vimeo. The plugin uses this token to access metadata about the video content being played.
 
-Vimeo provides documentation outlining this process [here](https://developer.vimeo.com/api/start#getting-started-step1). Please ensure you are carefully selecting your access scopes! The plugin only needs to read information about your video(s).
+Vimeo provides documentation outlining this process [here](https://developer.vimeo.com/api/start#getting-started-step1). Make sure you are carefully selecting your access scopes! The plugin only needs to read information about your video(s).
 
 ### 1. Enable
 
 Enable a new plugin by navigating to the settings for your Source and clicking **Plugins**. You can enable the Vimeo plugin from this menu.
 
-![the plugins setting screen](/docs/connections/sources/plugins-enable.png)
+![the plugins setting screen](/docs/connections/sources/plugins/plugins-enable.png)
 
 **NOTE:** At this time, only Javascript sources support plugins.
 

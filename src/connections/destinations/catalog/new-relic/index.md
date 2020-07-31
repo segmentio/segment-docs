@@ -4,7 +4,7 @@ title: New Relic Destination
 ---
 [New Relic](https://newrelic.com/insights) enables you to better understand, using their real-time analytics, the end-to-end business impact of your software performance.
 
-This document was last updated on August 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on August 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ This document was last updated on August 29, 2018. If you notice any gaps, outda
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 ```
 analytics.track('Article Completed', {
   title: 'How to Create a Tracking Plan',
@@ -25,7 +25,7 @@ analytics.track('Article Completed', {
 });
 ```
 
-We forward `track` calls to New Relic in order to [insert custom events via their Insights API](https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/inserting-custom-events).
+We forward `track` calls to New Relic in order to [insert custom events using their Insights API](https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/inserting-custom-events).
 
 Your event `properties` will be included with the event, conforming to the following rules:
 - booleans are transformed to strings
@@ -34,6 +34,6 @@ Your event `properties` will be included with the event, conforming to the follo
 - dates are converted to ISO strings
 - arrays and objects are removed
 
-By default the events are given an `eventType` of 'Segment'. This can be changed via the optional 'Custom Default Event Type' setting in the Segment UI.
+By default the events are given an `eventType` of 'Segment'. This can be changed using the optional 'Custom Default Event Type' setting in the Segment UI.
 
 If you pass a revenue property, we'll pass that through as the value of the conversion.

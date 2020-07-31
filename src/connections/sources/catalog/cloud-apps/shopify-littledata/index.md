@@ -1,12 +1,13 @@
 ---
 title: Shopify by Littledata Source
+source-type: event
 ---
 
 Littledata is a smart analytics app that automates ecommerce tracking. Littledata's [Shopify-to-Segment connection](https://www.littledata.io/connections/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) automatically tracks key ecommerce events on a Shopify or Shopify Plus store, so you can use Shopify as a source in your Segment workspace.
 
 Littledata uses a smart tracking script that can be applied to any Shopify site. The app uses server-side tracking to ensure 100% accuracy, gathering data at every customer touch point.
 
-This integration is maintained by Littledata. Please [reach out to their team](mailto:support@littledata.io) with any questions.
+This integration is maintained by Littledata. [Contact their team](mailto:support@littledata.io) with any questions.
 
 ## Getting Started
 
@@ -15,7 +16,7 @@ This integration is maintained by Littledata. Please [reach out to their team](m
 ![](images/Nd5L0C6.png)
 4. Click **Add app** to begin the installation process.
 5. **Sign up** for a Littledata account using an email address, Google login or Facebook login. *More team members can be added to the subscription after completing the installation process.*
-6. Add the [**Segment write key**](https://segment.com/docs/guides/setup/how-do-i-find-my-write-key/) for the source that is going to send data in the **input field**.
+6. Add the [**Segment write key**](https://segment.com/docs/connections/find-writekey/) for the source that is going to send data in the **input field**.
 ![](images/eLUh6GF.png)
 7. Choose either an **Automatic** or a **Manual** install. *Automatic installs work in most instances, but if you choose to do a manual install, just follow [this guide](https://blog.littledata.io/help/posts/segment-installation-guide/).*
 ![](images/iYM76VI.png)

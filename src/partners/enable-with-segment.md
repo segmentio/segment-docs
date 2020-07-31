@@ -1,12 +1,15 @@
 ---
-title: Use OAuth to Build a Two-Click Enable Flow
+title: Enable with OAuth
 ---
 
+> info ""
 > If you're a customer who just wants to build a simple script or app against a single workspace, you may want to use [Workspace Access Tokens](/docs/config-api/authentication).
+
+Enable with OAuth, supported with our [Config API](/docs/config-api), allows partners to build seamless flows for customers to implement and enable integrations within their workspace. This is a [post-launch requirement](/docs/partners/#post-launch) for a partner to graduate from public beta to public.
 
 ## Concepts
 
-Segment supports OAuth with our [Config API](/docs/config-api) to enable partners to build seamless flows for enabling and monitoring instances of their integration on mutual customers' workspaces.
+Before getting started with your implementation, it's important to understand the below concepts.
 
 ### Apps
 
@@ -20,7 +23,7 @@ Segment Workspace Owners authorize your App on their workspace using a web-based
 
 Therefore, the token returned by Segment isn't tied to a user – it's tied to an App Install. That's why we call it an Install Token.
 
-## Setup Guide
+## Set up Guide
 
 There are three steps to implement an "Enable with Segment" OAuth flow:
 
@@ -35,7 +38,7 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
    ![Step 1](images/enable-with-segment/step1.png)
 3. Name your App, and click **Create**.
    ![Step 2](images/enable-with-segment/step2.png)
-   You'll be redirected to your App's main page. If you are implementing Enable with OAuth for an integration not built via the Developer Center and encounter an issue where your integration's name is already taken, you may choose another name (eg. TOOLNAME-enable). You will have the option to connect the two by selecting a scope in Step #2.
+   You'll be redirected to your App's main page. If you are implementing Enable with OAuth for an integration not built using the Developer Center and encounter an issue where your integration's name is already taken, you may choose another name (eg. TOOLNAME-enable). You will have the option to connect the two by selecting a scope in Step #2.
 4. Click the `App Info` tab.
    ![Step 3](images/enable-with-segment/step3.png)
 5. From the `App Info` tab, click `OAuth` in the left side navigation.
@@ -101,14 +104,14 @@ There are three steps to implement an "Enable with Segment" OAuth flow:
 
 ## OAuth Implementation
 
-If you use a standard OAuth library in your programming language, all of this is done for you as shown in the [setup guide](#setup-guide). These steps are just for illustration.
+If you use a standard OAuth library in your programming language, all of this is done for you as shown in the [setup guide](#set-up-guide). These steps are just for illustration.
 
 1. When the user wants to authenticate, you redirect them to `https://id.segmentapis.com/oauth2/auth?response_type=code&scope=workspace:read&client_id=...`.
    > **Note**: We only accept `response_type=code` here. That means Segment returns an `auth_code` that your library exchanges for an install token in Step 5 below.
 2. If the user is logged out, Segment redirects to `https://app.segment.com/login`
 3. If the user is logged in, Segment redirects to `https://app.segment.com/authorize`
 4. If user consents, Segment redirects with a code to your redirect_uri `http://localhost:8888/auth/segment/callback`. This app listens for this request and runs step #5 below.
-5. You exchange the code with for an install token from `https://id.segmentapis.com/oauth2/token`
+5. You exchange the code with for an install token from `https://id.segmentapis.com/oauth2/token`. The body of this POST request should include the code you received and your `redirect_uri`. Include your client secret and client id in a basic authorization header.
 6. You save the access token, install name, workspace name and source name for the user.
 
 At the end of a successful flow you get an "Install Token". If you passed in the scope as `destination/clearbrain` the user is prompted to select a source on which to install your Enable With Segment App, and that source is returned to you as well.
@@ -210,7 +213,7 @@ $ curl \
 
 If you created the app with any of these scopes, and then updated the scope in index.js at the top to match it, you can uncomment the lines around sourceList in index.js to see an example of how you could list all sources on the users workspace.
 
-## FAQ and Troubleshooting
+## FAQs
 
 ### What should the exact destination slug word be?
 
@@ -266,7 +269,7 @@ The library you use in your programming language should do this automatically fo
 
 ### What scopes do you support?
 
-We support `destination/<slug>`,  `workspace` and `workspace:read`. You set these scopes during app creation and when you start the install flow. You must use the same scope in both places, otherwise you get an invalid scope error when you start the error.
+We support `destination/<slug>`, `workspace` and `workspace:read`. You set these scopes during app creation and when you start the install flow. You must use the same scope in both places, otherwise you get an invalid scope error when you start the error.
 
 ### What is the fastest way to get started? Do I have to learn OAuth to make an app?
 
@@ -280,7 +283,7 @@ Your `redirect_uri` probably doesn't match what you set in the App Create Reques
 
 ### How many redirect_uris can I have? Can I add more after the app is created?
 
-You can have five `redirect_uris` on app creation. Editing the app info directly is not supported at this time. Please [contact us](https://segment.com/help/contact/) if you want any of your `redirect_uris` or other info changed.
+You can have five `redirect_uris` on app creation. Editing the app info directly is not supported at this time. [contact us](https://segment.com/help/contact/) if you want any of your `redirect_uris` or other info changed.
 
 In the future we will allow you to update this information on your own.
 

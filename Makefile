@@ -6,11 +6,18 @@ ifeq ('${BUILDKITE_BRANCH}','master')
 JEKYLL_ENV := 'production'
 endif
 
+ifeq ('${BUILDKITE_BRANCH}','staging')
+JEKYLL_ENV := 'staging'
+endif
+
+# Laura's convenience command because Reasons
+docs: dev
+
 .PHONY: dev
 dev: node_modules vendor/bundle
 	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
 		"$(BIN)/webpack --mode=development --watch" \
-		"bundle exec jekyll clean && jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
+		"bundle exec jekyll clean && bundle exec jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
 
 .PHONY: intialize-work-dir
 intialize-work-dir:
@@ -64,6 +71,10 @@ typewriter: npx typewriter
 .PHONY: deps
 deps: node_modules vendor/bundle
 
+.PHONY: env
+env:
+	@sh scripts/env.sh
+
 .PHONY: clean
 clean:
 	@rm -Rf _site
@@ -87,11 +98,27 @@ node_modules: package.json yarn.lock
 	yarn --frozen-lockfile
 
 .PHONY: vendor/bundle
-vendor/bundle: 
+vendor/bundle:
 	@export BUNDLE_PATH="vendor/bundle"
 	@mkdir -p vendor && mkdir -p vendor/bundle
 	@chmod -R 777 vendor/
 	@bundle install --path=vendor/bundle
+
+
+.PHONY: lint
+lint: node_modules
+	@echo "Checking yml files..."
+	@npx yamllint src/_data/**/*.yml
+	# @echo "Checking markdown files..."
+	# @npx remark ./src --use preset-lint-markdown-style-guide
+
+.PHONY: test
+test: lint
+
+.PHONY: check-spelling
+check-spelling:
+	@echo 'Check spelling in markdown files..."
+	@npx mdspell 'src/**/*.md' -r --en-us -h
 
 .PHONY: docker-dev
 docker-dev:
@@ -132,6 +159,7 @@ docker-build:
 #catalog:
 #	bundle exec rake catalog:update
 #
+# old env command
 #.PHONY: env
 #env:
 #	gem install bundler

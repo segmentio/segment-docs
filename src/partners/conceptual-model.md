@@ -2,7 +2,7 @@
 title: Conceptual Model
 ---
 
-At a high level Segment provides a simple product model for customer data. Segment collects data via "sources" and routes data to "destinations". Along the way data is translated to and from the "spec" -- a specification for how to represent customer data events.
+At a high level Segment provides a simple product model for customer data. Segment collects data using "sources" and routes data to "destinations". Along the way data is translated to and from the "spec" -- a specification for how to represent customer data events.
 
 ## Sources
 
@@ -16,7 +16,7 @@ Segment Customers use Segment to intelligently route this data with a flip of a 
 
 The [Spec](https://segment.com/docs/connections/spec) is arguably the most critical component of Segment. It's how we preserve semantics between disparate writers and readers of data, and ensure that sources and destinations can stay on the same page. It's crucial that your Source or Destination adhere to the spec. If you encourage customers to break the spec, you are breaking the promise of Segment, which is grounds for removal from the catalog.
 
-If there is something unique about your tool that requires specific data points that are not included in the spec, please get in touch. We love partner suggestions for augmentations to the spec!
+If there is something unique about your tool that requires specific data points that are not included in the spec, get in touch. We love partner suggestions for augmentations to the spec!
 
 ## Apps
 
@@ -27,7 +27,7 @@ Apps represent a unit of functionality that Segment users can add to their works
 "Sources and Destinations" are a bit more complicated under the hood than publishing and subscribing to data to and from Segment's servers. For instance:
 
 - We offer SDKs that expose runtime support for plugins so that Destinations may be configured in either Cloud-mode or Device-mode.
-- Within Destinations, we have Streaming Destinations, Batch Destinations, and Warehouse Destinations, all of which receive different data, via different processes, at different intervals and with varying degrees of control and flexibility.
+- Within Destinations, we have Streaming Destinations, Batch Destinations, and Warehouse Destinations, all of which receive different data, using different processes, at different intervals and with varying degrees of control and flexibility.
 - On the Sources side, integrations are categorized based on whether they send Objects or Events, whether they are "Push" or "Pull," and whether they are built and hosted by Segment or by Partners.
 
 ![](images/product-model.svg)
@@ -44,10 +44,10 @@ In the future Segment will enable Partners to build Streams and Syncs that will 
 
 Plugins are the basis for [Device-mode Destinations](/docs/connections/destinations/#connection-modes) and, in the future, possibly Device-mode Sources.
 
-Client SDK Plugins are used to augment Subscriptions and Streams by shipping code to the End User's Device via Segment's SDKs:
+Client SDK Plugins are used to augment Subscriptions and Streams by shipping code to the End User's Device using Segment's SDKs:
 
 - [analytics.js](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)
-- [analytics-ios](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-destinations-using-device-mode)
+- [analytics-ios](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks)
 - [analytics-android](/docs/connections/sources/catalog/libraries/mobile/android/#sending-data-to-destinations)
 
 These SDKs serve as microcosms of the Segment runtime — they enable the dynamic orchestration of event collection, cleaning/transformation, and delivery.
@@ -60,11 +60,11 @@ Web plugins are loaded into [analytics.js](https://segment.com/docs/connections/
 
 ### Mobile Plugins
 
-Mobile plugins are loaded into [analytics-ios](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-destinations-using-device-mode) or [analytics-android](/docs/connections/sources/catalog/libraries/mobile/android/#sending-data-to-destinations)).
+Mobile plugins are loaded into [analytics-ios](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks) or [analytics-android](/docs/connections/sources/catalog/libraries/mobile/android/#sending-data-to-destinations)).
 
 ## Streams
 
-Streams are the basis for sending events to Segment directly as an [Event Source](/docs/connections/sources#event-cloud-sources). If you supply channels and properties where customer interactions happen, you can apply for inclusion in the Segment Source Catalog with a documented Stream. Streams are not yet supported in the Developer Center but we are working with select partners currently, and are working to make this available to any partner via the Developer Center in the future, so feel free to [get in touch](/partners/integration/) and get started if you're interested in eventually joining the catalog!
+Streams are the basis for sending events to Segment directly as an [Event Source](/docs/connections/sources#event-cloud-sources). If you supply channels and properties where customer interactions happen, you can apply for inclusion in the Segment Source Catalog with a documented Stream. Streams are not yet supported in the Developer Center but we are working with select partners currently, and are working to make this available to any partner using the Developer Center in the future, so feel free to [get in touch](/docs/partners/integration/) and get started if you're interested in eventually joining the catalog!
 
 ## Subscriptions
 
@@ -90,4 +90,4 @@ Webhooks are designed to be the most traditional way to receive data. You can re
 
 Syncs are scheduled processes that pull data from Partner APIs and upload it to Segment's Object API, or which pull data from our Object and Event Archives to load into Data Warehouses. Currently, the Object API only targets customer Warehouse Destinations. This data is not made available in streaming destinations.
 
-> Syncs are currently not available to partners. If you are interested in building one, reach out to partner-support@segment.com.
+> Syncs are currently not available to partners. If you are interested in building one, contact partner-support@segment.com.

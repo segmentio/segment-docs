@@ -22,9 +22,9 @@ layout: default
 
       <div class="stage__content" data-swiftype-name="body" data-swiftype-type="text">
         <article class="destinations">
-          {% include_cached components/breadcrumbs.html %}
+          {% include components/breadcrumbs.html %}
           {%- if page.title -%}
-            <h1 id="{{ page.title | downcase }}" class="destinations__heading page__heading">
+            <h1 id="{{ page.title | slugify }}" class="destinations__heading page__heading">
               {{ page.title }}
             </h1>
           {%- endif -%}
@@ -42,10 +42,10 @@ layout: default
     <div class="docs__sidebar stage__sidebar">
       {% include_cached navbar/nav.html %}
 
-      <div class="sidebar sidebar--sticky">
-        {% unless page.integration_type  %}
+      <div class="sidebar sidebar--sticky sidebar--scroll">
+        {% if page.integration_type and page.integration_type != 'warehouse' %}
           {% include sidebar/{{ page.integration_type }}-menu.html %}
-        {% endunless %}
+        {% endif %}
         {% unless page.hide-feedback %}
           {% include sidebar/feedback.html %}
         {% endunless %}

@@ -4,7 +4,7 @@ title: Oracle Responsys Destination
 
 ## Getting Started
 
-Before you enable Responsys in your destinations page, there are a few things in your Segment destination settings you must set up. Once the setup is complete, you'll be able to use `.identify()` calls to add records to **Profile Lists**, **Profile Extension Tables** and `.track()` calls to add records to **Supplemental Tables**.
+Before you enable Responsys in your destinations page, there are a few things in your Segment destination settings you must set up. Once the set up is complete, you'll be able to use `.identify()` calls to add records to **Profile Lists**, **Profile Extension Tables** and `.track()` calls to add records to **Supplemental Tables**.
 
 ### Pre-requisite steps
 
@@ -39,9 +39,9 @@ _NOTE_: You can find your account's endpoint by simply going to your Oracle Resp
 
 2. Enter your **username** and **password** for your Responsys account. We require these credentials in order to retrieve an auth token from Oracle in order to send data to your account on your behalf.
 
-3. Please enter the name of the default **Folder** you'd like to send your Segment data to. Don't worry, you can override the default folder name on a per-call basis via destination specific options for [`.identify()`](#overriding-default-folder-and-list-names).
+3. Enter the name of the default **Folder** you'd like to send your Segment data to. Don't worry, you can override the default folder name on a per-call basis using destination specific options for [`.identify()`](#overriding-default-folder-and-list-names).
 
-4. Please enter the name of your default **Profile List** where you would like to store your `.identify()` calls. Again, this can be overriden via destination specific options on a per-call basis as seen [here](#overriding-default-folder-and-list-names).
+4. Enter the name of your default **Profile List** where you would like to store your `.identify()` calls. Again, this can be overriden using destination specific options on a per-call basis as seen [here](#overriding-default-folder-and-list-names).
 
 5. Choose whether you'd like to set your **Default Permission Status** to be `OPTIN` or `OPTOUT`. Unless configured otherwise, the default will be `OPTOUT`. If you are unsure the implications of this settings, you can read more about it [here](https://policy3.responsys.net/permission.htm).
 
@@ -118,7 +118,7 @@ The above call will try to first find an existing record in the provided Profile
 </table>
 
 #### Email and Mobile Permission Statuses
-If you would like to keep track of users who are opting in or out of marketing communications  in your apps and websites please indicate a key of the custom trait to map to Responsys `EMAIL_PERMISSION_STATUS_` or `MOBILE_PERMISSION_STATUS_` fields in your Segment settings. **NOTE:** The value of this custom trait key must be a boolean. When the value is true that indicates the user wants to opt in and false indicates the user wants to opt out. Segment will transform that boolean into the appropriate Responsys accepted format (`I` or `O`).
+If you would like to keep track of users who are opting in or out of marketing communications  in your apps and websites  indicate a key of the custom trait to map to Responsys `EMAIL_PERMISSION_STATUS_` or `MOBILE_PERMISSION_STATUS_` fields in your Segment settings. **NOTE:** The value of this custom trait key must be a boolean. When the value is true that indicates the user wants to opt in and false indicates the user wants to opt out. Segment will transform that boolean into the appropriate Responsys accepted format (`I` or `O`).
 
 _Responsys does not have an API to create Profile Lists so you must create one manually inside their UI_.
 
@@ -241,7 +241,7 @@ In order to attribute the event record in your Supplemental Tables with the matc
 
 ### Map Email
 
-Since we still accept `.identify()` calls without `userId`s so long as it has `traits.email`, you can also enable this for your `.track()` events if you want to attribute event records via `email`. We will lookup `context.traits.email` (which is automatically cached if you are using a mobile library), `properties.email`, and fallback on the `userId` field if it is a valid email address.
+Since we still accept `.identify()` calls without `userId`s so long as it has `traits.email`, you can also enable this for your `.track()` events if you want to attribute event records using `email`. We will lookup `context.traits.email` (which is automatically cached if you are using a mobile library), `properties.email`, and fallback on the `userId` field if it is a valid email address.
 
 **IMPORTANT**: Make sure if you mapping an existing Supplemental Table, you have created a field in your table called `EMAIL_ADDRESS_`! Otherwise, if you have not created the table and is relying on Segment to do so, we will create the field `EMAIL_ADDRESS_` and set the field type as `STR500`.
 

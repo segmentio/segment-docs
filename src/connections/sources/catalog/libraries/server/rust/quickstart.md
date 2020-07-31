@@ -1,12 +1,10 @@
 ---
 title: 'Quickstart: Rust'
-hidden: true
-sourceTitle: 'Rust'
-sourceCategory: 'Server'
 ---
 
+<!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
 
-This tutorial will help you start sending data from your Rust servers to Segment and any of our destinations, using our Rust library. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
+This tutorial will help you start sending data from your Rust servers to Segment and any of our destinations, using our Rust library. As soon as you're set up you'll be able to turn on any new destinations with the flip of a switch!
 
 If you want to dive deeper at any point, check out the [Rust library reference](/docs/connections/sources/catalog/libraries/server/rust/).
 
@@ -78,7 +76,7 @@ Identify{
   user: User::UserId { user_id: format!("user-{}", i) },
   traits: json!({
     "name":"Michael Bolton",
-    "email":"mbolton@initech.com",
+    "email":"mbolton@example.com",
     "plan":"Enterprise",
     "friends":"42"
   }),

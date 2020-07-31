@@ -2,8 +2,12 @@
 title: 'Spec: Alias'
 ---
 
+> note "Alias is an advanced method"
+> The Alias method allows you to explicitly change the ID of a tracked user, however this should only be done when it's required for downstream destination compatibility. See our [Best Practices for Identifying Users](/docs/guides/how-to-guides/best-practices-identify/) for more information.
 
 The `alias` method is used to merge two user identities, effectively connecting two sets of user data as one. This is an advanced method, but it is required to manage user identities successfully in some of our destinations.
+
+{% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/324252?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Segment Methods" content="Check out our high-level overview of these APIs in Segment University. (Must be logged in to access.)" %}
 
 Since this is our most advanced method we have added sections to each docs page for destinations that use it:
 
@@ -21,7 +25,7 @@ Here's the payload of a basic `alias` call that will associate this user's exist
 }
 ```
 
-If you're instrumenting a website, then the Anonymous ID is generated in the browser so you'll want to call `alias` from the client-side. If you're using a server-side session ID as the Anonymous ID, then you'll want to alias from the server-side.
+If you're instrumenting a website, then the Anonymous ID is generated in the browser so you must call `alias` from the client-side. If you're using a server-side session ID as the Anonymous ID, then you must alias from the server-side.
 
 Here's the corresponding Javascript event that would generate the above payload. If you're using Segment's Javascript library, we'll automatically pass in the user's anonymousId as previousId for you:
 
@@ -32,11 +36,7 @@ analytics.alias("507f191e81");
 Beyond the common fields, the `alias` call takes the following fields:
 
 <table>
-  <tr>
-    <td>**Field**</td>
-    <td>**Type**</td>
-    <td>**Description**</td>
-  </tr>
+  {% include content/spec-table-header.md %}
   {% include content/spec-field-previous-id.md %}
   {% include content/spec-field-user-id.md %}
 </table>

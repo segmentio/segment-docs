@@ -30,7 +30,7 @@
         {% assign currentSectionPath = item.slug | downcase %}
         {% capture currentSectionSlug %}{{ currentSectionPage[0] | downcase }}/{{ currentSectionPage[1] | downcase }}{% endcapture %}
 
-        <li class="menu-item menu-item--gray {% if currentPage == currentPath or currentSectionSlug == currentSectionPath %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
+        <li class="menu-item {% if item.section_title %}menu-item--gray{% else %}menu-item--green{% endif %} {% if currentPage == currentPath or currentSectionSlug == currentSectionPath or item.expanded %}menu-item--active{% endif %}" data-accordion data-class-active="menu-item--active">
           {% if item.path %}
             {% assign menuLink = site.baseurl | append: item.path  | append: "/" %}
             {% if item.path contains "http://" or  item.path contains "https://"%}
@@ -87,8 +87,8 @@
                         {% assign currentPage = page.path | downcase | replace: "/index.md" "" | replace: ".md" "" %}
                         {% assign currentPath = subsubsection.path | downcase | replace_first: "/" "" %}
 
-                        <li class="menu-item {% if currentPage == currentPath %}menu-item--active menu-item--indicator{% endif %}">
-                          <a class="menu-item__link {% if currentPage == currentPath %}menu-item__link--indicator{% endif %} flex" href="{{ site.baseurl }}{{ subsubsection.path }}/">{{ subsubsection.title }}</a>
+                        <li class="menu-item">
+                          <a class="menu-item__link flex" href="{{ site.baseurl }}{{ subsubsection.path }}/">{{ subsubsection.title }}</a>
                         </li>
                       {% endfor %}
                     </ul>
