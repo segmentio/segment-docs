@@ -27,7 +27,6 @@ This page is about the **Facebook Custom Audiences** destination developed speci
 | **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
 | **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
 | **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
-| **Facebook Custom Audiences Website**    | Yes                   |
 
 
 ## Quick Info
@@ -71,13 +70,11 @@ Facebook Custom Audiences allows you to efficiently run several marketing and ad
 > note ""
 > **Note**: Re-targeting can also mean targeting anonymous visitors (those with no known personally identifiable information, such as email). The Personas Facebook Custom Audiences Integration feature for this use case is currently in beta. See below.
 
-## Use Cases - Anonymous Users (Beta)
+## Use Cases - Anonymous Users (Facebook Pixel support only)
 
 Sometimes, users visit your website and perform high-intent activities such as looking at a product or pricing page multiple times, but they don’t convert (buy), and they don’t provide any personally identifiable information so you can contact them.
 
-Facebook Custom Audiences allows you to retarget these anonymous users using the Website Custom Audience. This is an audience that you can build in Facebook based on the Facebook Pixel, which identifies users based on a cookie set in their browser.
-
-Segment Personas supports this use case with the **Facebook Custom Audiences Device-Side Integration. This Personas destination is currently in Early Access**. To access join the Early Access program, email beta@segment.com.
+Facebook offers the Facebook Pixel, which allows you to retarget these types of anonymous users with advertising. This works by identifying users based on a cookie set in their browser. You can create a Website Custom Audience in Facebook for this use case. Segment today does not provide a way to sync audiences of anonymous users from Personas to Facebook to automatically create one of these Website Custom Audiences, though this feature is currently under development.
 
 ## How it works
 
