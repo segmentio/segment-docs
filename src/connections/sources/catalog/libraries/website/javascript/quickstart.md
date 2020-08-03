@@ -20,6 +20,8 @@ Installing Segment is easy, just paste this snippet into the `<head>` tag of you
 
 Next, replace `YOUR_WRITE_KEY` in the snippet you pasted with your Segment project's **Write Key**, which you can find in your project set up guide or settings.
 
+**Note:** Analytics.js runs client-side on the user's browser, so your Write Key will be public and accessible.  If you are concerned with this, you can explore our collection of sources that run server-side.
+
 That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet is running on your site, you can turn on destinations from the destinations page in your workspace and they start loading on your site automatically!
 
 Note that you should remove other native third-party destination code that you might have on your site. For example, if you're using Segment to send data to Google Analytics, make sure you remove the Google Analytics snippet from your site source code to prevent sending the data twice.
