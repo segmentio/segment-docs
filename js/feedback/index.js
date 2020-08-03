@@ -9,7 +9,7 @@ const ACTIVE_CLASS = 'data-active-class'
 const typewriter = require('analytics')
 
 export default function() {
-  const buttons = document.querycSelectorAll(BUTTON_SELECTOR)
+  const buttons = document.querySelectorAll(BUTTON_SELECTOR)
   const templates = document.querySelectorAll(TEMPLATE_SELECTOR)
   const helpfulTemplate = [...templates].filter(
     (template) => template.dataset.feedbackTemplate === 'helpful'
