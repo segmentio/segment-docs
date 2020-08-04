@@ -280,6 +280,18 @@ Other libraries only collect `context.library`, any other context variables must
 - IP Address is not collected by our libraries, but instead filled in by our servers when it receives a message for **client side events only**.
 - Our Android library collects `screen.density` with [this method](/docs/connections/spec/common/#context-fields-automatically-collected).
 
+### Overwriting Context Fields
+
+Sometimes, context fields may inadvertently contain sensitive information.  For example, if you are using Analytics.js, the current page's url may contain a secret only visible to the current user.  You can prevent the `page.url` from being sent to Segment by overriding the context field in the `options` parameter.  For example:
+
+```js
+analytics.track("Product Viewed", {}, {
+    page: {
+        url: null
+    }   
+})
+```
+
 ## Integrations
 
 A dictionary of destination names that the message should be sent to. `'All'` is a special key that applies when no key for a specific destination is found.
