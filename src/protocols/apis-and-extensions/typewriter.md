@@ -88,7 +88,7 @@ Once you've installed Node and NPM, run the `--version` commands again to verify
 
 Before you start, make sure you have `node` installed using the instructions in the [prerequisites](#prerequisites) above.
 
-Next, install `analytics.js` in your app. For now, you just need to complete [`Step 1: Copy the Snippet`](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet) from the [`analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
+Next, install `analytics.js` in your app. For now, you just need to complete [`Step 1: Copy the Snippet`](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) from the [`analytics.js` Quickstart Guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
 
 Once you've got `analytics.js` installed, add Typewriter as a developer dependency in your project:
 

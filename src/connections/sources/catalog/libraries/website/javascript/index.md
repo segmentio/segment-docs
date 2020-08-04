@@ -19,9 +19,12 @@ The basic tracking methods below are the building blocks of your Segment trackin
 
 These names may seem familar because these are the basic methods covered by the [Segment Spec](/docs/connections/spec/). The documentation on this page explains how to use these methods in Analytics.js specifically.
 
+> note ""
+> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties in the code samples with variables that represent the data collected.
+
 ### Identify
 
-The `identify` method is how you link your users, and their actions, to a recognizable `userId` and `traits`. You can see [an `identify` example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
+The `identify` method is how you link your users, and their actions, to a recognizable `userId` and `traits`. You can see [an `identify` example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-identify-users) or [find details on the identify method payload](/docs/connections/spec/identify/).
 
 > note ""
 > Segment recommends _against_ using `identify` for anonymous visitors to your site. Analytics.js automatically retrieves an `anonymousId` from localStorage or assigns one for new visitors, which is attached to all `page` and `track` events both before and after an `identify`.
@@ -95,7 +98,7 @@ analytics.identify('12091906-01011992', function(){
 
 ### Track
 
-The Track method lets you record actions your users perform. You can [see a track example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-3-track-actions) or find details on [the track method payload](/docs/connections/spec/track/).
+The Track method lets you record actions your users perform. You can [see a track example in the Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-4-track-actions) or find details on [the track method payload](/docs/connections/spec/track/).
 
 The Track method follows the format below:
 
@@ -233,7 +236,7 @@ The [Page](/docs/connections/spec/page/) method lets you record page views on yo
 
 Because some destinations require a `page` call to instantiate their libraries, **you must call `page`** at least once per page load. You can call it more than once if needed, for example on virtual page changes in a single page app.
 
-A Page call is included by default as the final line in [the Analytics.js snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet). You can modify this `page` call within the guidelines below.
+A Page call is included by default as the final line in [the Analytics.js snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet). You can modify this `page` call within the guidelines below.
 
 The `page` method follows the format below.
 
@@ -598,7 +601,7 @@ analytics.load('writekey', { integrations: { All: false, 'Google Analytics': tru
 ```
 
 > info ""
-> **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet).
+> **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
 This way, you can conditionally load integrations based on what customers opt into on your site. The pseudocode example below shows how you might load only the tools the user consented to.
 
