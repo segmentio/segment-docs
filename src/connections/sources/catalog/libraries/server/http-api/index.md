@@ -33,7 +33,7 @@ There is no hard rate limit at which point Segment will drop your data. We ask t
 
 ## Max Request Size
 
-There is a maximum of `32KB` per call (our `batch` endpoint accepts a maximum of `500KB` per batch and `32KB` per call). Server-side, Segment's API will respond with `400 Bad Request` if these limits are exceeded.
+There is a maximum of `32KB` per call (our `batch` endpoint accepts a maximum of `500KB` per batch and `32KB` per contained event). Server-side, Segment's API will respond with `400 Bad Request` if these limits are exceeded.
 
 ## Identify
 
