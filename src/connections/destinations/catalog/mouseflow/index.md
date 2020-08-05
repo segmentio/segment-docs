@@ -22,7 +22,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 ```
 analytics.page()
 ```
-An initial `page` call is required for data to be sent to Mouseflow using Analytics.js and sends a page view. This is included by default in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet).
+An initial `page` call is required for data to be sent to Mouseflow using Analytics.js and sends a page view. This is included by default in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
 ## Identify
 

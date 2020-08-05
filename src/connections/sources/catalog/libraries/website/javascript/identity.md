@@ -15,7 +15,7 @@ If a user returns to your site after the cookie expires, Analytics.js looks for 
 
 <!-- TODO: also info on
 - what is the userId
-- what's it mean
+- what's it mean (where's it come from)
 - where's it set
 - methods for working w/
 - retrieving the userID  -->
