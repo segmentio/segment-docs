@@ -16,15 +16,17 @@ sections:
   - path: /connections/destinations/catalog/adobe-analytics/best-practices
     title: Adobe Analytics Best Practices
 
-
-
 - slug: facebook
   section_title: Facebook Integrations
   section:
   - path: /connections/destinations/catalog/facebook-pixel
     title: Facebook Pixel destination
+  - path: /connections/destinations/catalog/facebook-pixel-server-side
+    title: Facebook Pixel Server destination (Beta)
   - path: /connections/destinations/catalog/facebook-app-events
     title: Facebook App Events destination
+  - path: /connections/destinations/catalog/facebook-offline-conversions
+    title: Facebook Offline Conversions destination
   - path: /connections/sources/catalog/cloud-apps/facebook-ads
     title: Facebook Ads Cloud Source
   - path: /connections/sources/catalog/cloud-apps/facebook-lead-ads
@@ -53,3 +55,20 @@ sections:
     title: Google Cloud Function destination
   - path: /connections/destinations/catalog/google-cloud-pubsub
     title: Google Cloud Pubsub destination
+
+
+- slug: ajs
+  section_title: Analytics.js Documentation
+  section:
+  - path: /connections/sources/catalog/libraries/website/javascript
+    title: Analytics.js (Javascript) Source
+  - path: /connections/sources/catalog/libraries/website/javascript/quickstart
+    title: Quickstart Tutorial
+  - path: /connections/sources/catalog/libraries/website/javascript/identity
+    title: Managing identity in Analytics.js
+  - path: /connections/sources/catalog/libraries/website/javascript/middleware
+    title: Middlewares for Analytics.js
+  - path: /connections/sources/catalog/libraries/website/javascript/querystring
+    title: Querystring API
+  - path: /connections/sources/catalog/libraries/website/javascript/troubleshooting
+    title: Troubleshooting

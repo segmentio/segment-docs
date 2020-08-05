@@ -1,6 +1,7 @@
 ---
 title: 'Quickstart: Analytics.js'
 hidden: true
+strat: ajs
 ---
 
 <!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
@@ -18,6 +19,9 @@ Installing Segment is easy, just paste this snippet into the `<head>` tag of you
 {% include content/snippet-helper.md %}
 
 Next, replace `YOUR_WRITE_KEY` in the snippet you pasted with your Segment project's **Write Key**, which you can find in your project set up guide or settings.
+
+> note ""
+> **Note:** When you use Analytics.js in device-mode the source's Write Key is public, because it runs in a user's browser and can be accessed using the browser's developer tools. If this is not acceptable to your organization, you can explore [other Segment Sources](/docs/connections/sources/catalog/) which collect data from a server-based installation, and which are not accessible to the user.
 
 That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet is running on your site, you can turn on destinations from the destinations page in your workspace and they start loading on your site automatically!
 

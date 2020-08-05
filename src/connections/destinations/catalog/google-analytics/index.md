@@ -127,7 +127,7 @@ Unlike the client-based destination which can use the browser and the global win
 You can specify what the event action should be called in the Google Analytics settings. If you don't specify a name, Segment uses a default of event **'User Enriched'**. Since an event category is also required, you can specify which `trait` you want Segment to set this value to. For example, if you send a trait such as `type`, Segment sets the value of `traits.type` as the event category if defined, and if it is not, sets it to the default value **'All'**.
 
 > note ""
-> **Note**: Segment always marks this event as a **Non Interaction** evemt. This is _only_ available if you are using Universal GA.
+> **Note**: Segment always marks this event as a **Non Interaction** event. This is _only_ available if you are using Universal GA.
 
 ### A/B Test Versions to Dimensions
 

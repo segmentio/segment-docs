@@ -101,5 +101,4 @@ If you don't specify a custom linkUrl in the integration specific object in the 
 
 ## Populating Custom Links report with server side data
 
-Since Segment cannot automatically track page data for **server side** calls, you must manually pass `context.page.url` if you want to populate the **Custom Links** report in Adobe Analytics.
-<!-- TODO this is a lot to parse. can we explain when you might do this? -->
+Since Segment cannot automatically record context data (including the URL) for calls made from a server library (sending in cloud-mode), you must manually pass `context.page.url` if you want your events to appear in the **Custom Links** report in Adobe Analytics.
