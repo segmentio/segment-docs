@@ -20,7 +20,7 @@ The basic tracking methods below are the building blocks of your Segment trackin
 These names may seem familar because these are the basic methods covered by the [Segment Spec](/docs/connections/spec/). The documentation on this page explains how to use these methods in Analytics.js specifically.
 
 > note ""
-> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties in the code samples with variables that represent the data collected.
+> **Good to know**: For any of the different methods described in this page, you can replace the properties in the code samples with variables that represent the data collected.
 
 ### Identify
 
