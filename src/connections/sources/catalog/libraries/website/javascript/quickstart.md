@@ -23,7 +23,7 @@ To create an Analytics.js source from your Workspace:
 3. Click **Add Source** again from the informational panel that appears to the right.
 4. Give the source a display name, and enter the URL the source will collect data from.
 
-When you create a Source in the Segment web app, it tells the Segment servers that you'll be sending data using from specific source type. When you create (or change!) a Source in the Segment app, Segment generates a new Write Key for that source. You use the write key in your website code to tell the Segment servers where the data is coming from, so Segment can route it to your destinations and other tools.
+When you create a Source in the Segment web app, it tells the Segment servers that you'll be sending data from a specific source type. When you create (or change!) a Source in the Segment app, Segment generates a new Write Key for that source. You use the write key in your website code to tell the Segment servers where the data is coming from, so Segment can route it to your destinations and other tools.
 
 
 ## Step 2: Copy the Segment Snippet
