@@ -6,7 +6,7 @@ title: Savio Destination
 
 This destination is maintained by Savio. For any issues with the destination, [contact their team](mailto:support@savio.io).
 
-_**NOTE:** Savio is currently in beta, which means that they are still actively developing the product. This doc was last updated on February 22, 2019. If you are interested in joining their beta program or have any feedback to help improve the Savio Destination and its documentation, [let their team know](mailto:support@savio.io)!_
+_**NOTE:** Savio is currently in beta, which means that they are still actively developing the product. This doc was last updated on August 05, 2020. If you are interested in joining their beta program or have any feedback to help improve the Savio Destination and its documentation, [let their team know](mailto:support@savio.io)!_
 
 
 ## Getting Started
@@ -15,7 +15,7 @@ _**NOTE:** Savio is currently in beta, which means that they are still actively 
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Savio" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Savio dashboard](https://savio.io/app/accounts/settings).
+3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Savio dashboard](https://www.savio.io/app/accounts/integration-settings).
 
 
 ## Identify
