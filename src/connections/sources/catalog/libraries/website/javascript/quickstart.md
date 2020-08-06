@@ -4,9 +4,6 @@ hidden: true
 strat: ajs
 ---
 
-<!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
-
-
 This tutorial gets you started sending data from your website to Segment and any of our destinations, using Segment's Analytics.js library. As soon as you're set up you can turn on new destinations with the flip of a switch!
 
 Want to learn more? Check out the [Analytics.js reference](/docs/connections/sources/catalog/libraries/website/javascript/).
@@ -15,8 +12,7 @@ Want to learn more? Check out the [Analytics.js reference](/docs/connections/sou
 
 Before you begin, you need a Workspace (which is a container that holds all of the sources and destinations which are billed together for an organization). If you already created one, great! If not, you can sign up for a free Segment account and create one.
 
-
-To create an Analytics.js source from your Workspace:
+Next create an Analytics.js source from your Workspace:
 
 1. Click **Add Source**.
 2. From the source catalog page, click **Javascript**.
@@ -48,7 +44,7 @@ However, lots of analytics and marketing tools need to record _who_ each user is
 ## Step 3: Identify Users
 
 > note ""
-> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties in the code samples with variables that represent the data collected.
+> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 The `identify` method is how you tell Segment who the current user is. It includes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify method reference](/docs/connections/sources/catalog/libraries/website/javascript#identify).
 

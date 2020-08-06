@@ -49,6 +49,9 @@ analytics.on_error = on_error
 
 ## Identify
 
+> note ""
+> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+
 The `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them.
 
 We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits change.
