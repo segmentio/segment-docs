@@ -42,6 +42,9 @@ The default initialization settings are production-ready and queue 20 messages b
 
 ## Identify
 
+> note ""
+> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+
 `identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
 We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits change.
@@ -434,7 +437,7 @@ client.Enqueue(analytics.Track{
     SetCategory("Enterprise").
     Set("application", "Segment Desktop"),
 })
-```  
+```
 
 ```go
 client.Enqueue(analytics.Track{
@@ -445,7 +448,7 @@ client.Enqueue(analytics.Track{
     "application": "Segment Desktop",
   },
 })
-```  
+```
 
 Lastly, you'll notice that configuration is provided during initialization and cannot be changed after initialization. The various configuration options are documented in the [GoDocs](https://godoc.org/gopkg.in/segmentio/analytics-go.v3#Config).
 

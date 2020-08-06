@@ -39,7 +39,7 @@ Additionally, though they're not formally part of the Native Mobile Spec, we als
 
 ## Lifecycle Events
 
-Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, many of which we can capture automatically in the latest versions of our SDKs, allow you to get a picture of top-line metrics like DAUs, MAUs, Screen Views per session, etc. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-1-install-the-sdk) and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-2-initialize-the-client) library docs.
+Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, many of which we can capture automatically in the latest versions of our SDKs, allow you to get a picture of top-line metrics like DAUs, MAUs, Screen Views per session, etc. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-2-install-the-sdk) and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-3-initialize-the-client) library docs.
 
 The following events will be tracked automatically when lifecycle events are enabled:
 
