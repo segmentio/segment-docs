@@ -127,7 +127,7 @@ analytics.track("Product Viewed", {}, {
 })
 ```
 
-This works for any context field that we automatically collect.
+This works for any [context field](/docs/connections/spec/common/#context) that Segment automatically collects.
 
 ## Known Issues:
 
