@@ -2,12 +2,9 @@
 rewrite: true
 title: Savio Destination
 ---
-[Savio](https://savio.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables B2B SaaS teams to centrally managed customer feedback so they can make better product decisions.
+[Savio](https://savio.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables B2B SaaS teams to centrally manage customer feedback so they can make better product decisions.
 
 This destination is maintained by Savio. For any issues with the destination, [contact their team](mailto:support@savio.io).
-
-_**NOTE:** Savio is currently in beta, which means that they are still actively developing the product. This doc was last updated on August 05, 2020. If you are interested in joining their beta program or have any feedback to help improve the Savio Destination and its documentation, [let their team know](mailto:support@savio.io)!_
-
 
 ## Getting Started
 
