@@ -47,6 +47,9 @@ If you're using Rails, you can stick that initialization logic in `config/initia
 
 ## Identify
 
+> note ""
+> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+
 The `identify` method is how you associate your users and their actions to a recognizable `userId` and `traits`. You can [find details on the identify method payload in our Spec](/docs/connections/spec/identify/).
 
 The `identify` call has the following fields:

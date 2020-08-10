@@ -20,9 +20,9 @@ items:
   url: connections/storage/catalog/data-lakes
   status: PUBLIC_BETA
   logo:
-    url: 'https://cdn.filepicker.io/api/file/JrQWOYvMRRCVvSHp4HL0'
+    url: 'https://cdn.filepicker.io/api/file/YR7dKXAiQWyYvBiVOZNX'
   mark:
-    url: 'https://cdn.filepicker.io/api/file/OBhrGoCRKaSyvAhDX3fw'
+    url: 'https://cdn.filepicker.io/api/file/zKQw43MuQjmTtXBXs4VL'
   categories:
     - Warehouses
 - display_name: BigQuery
