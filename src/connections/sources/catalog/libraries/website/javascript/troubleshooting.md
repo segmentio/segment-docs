@@ -115,12 +115,14 @@ console.log(JSON.stringify({ x: undefined, y: 6 }));
 
 ### Can I overwrite the context fields?
 
-Yes.  This can be useful if some of these fields contain sensitive information.  
+Yes.  This can be useful if some of these fields contain information you don't want collected.  
 
-For example, if the current page url contains secrets that should only be visible to the user, you can prevent the `page.url` from being sent to Segment by overriding the context field in the `options` parameter.  For example:
+For example, suppose your website allows users to view a receipt for purchases at the URL `https://mywebsite.com/store/purchases`.  Users click on a link that redirects to that specific URL, your app sets a `receiptId` in the query string, and the appropriate receipt will be returned.  You also send Track call to Segment from this page.
+
+Since this `receiptId` could contain sensitive information, you can stop the context field `page.url` from being sent in your Track call by overwriting the field in the `options` parameter like so:
 
 ```js
-analytics.track("Product Viewed", {}, {
+analytics.track("Receipt Viewed", {}, {
     page: {
         url: null
     }   
