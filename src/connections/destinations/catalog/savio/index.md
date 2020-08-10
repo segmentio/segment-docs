@@ -6,8 +6,6 @@ title: Savio Destination
 
 This destination is maintained by Savio. For any issues with the destination, [contact their team](mailto:support@savio.io).
 
-This document was last updated on August 07, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
