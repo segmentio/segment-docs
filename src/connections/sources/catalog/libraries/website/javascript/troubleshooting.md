@@ -113,7 +113,7 @@ console.log(JSON.stringify({ x: undefined, y: 6 }));
 ```
 
 
-### Is it possible to overwrite the context fields?
+### Can I overwrite the context fields?
 
 Yes.  This can be useful if some of these fields contain sensitive information.  
 
