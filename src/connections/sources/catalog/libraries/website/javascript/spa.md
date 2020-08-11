@@ -22,7 +22,7 @@ or, if you are using yarn:
 $ yarn add analytics-node
 ```
 
-Once installed, you can import `analytics-node` and instrument your events like you would with Analytics.js.  Here is an example implementation in React:
+Once installed, you can import `analytics-node` and instrument your events like you would with Analytics.js.  The example implementation below is in React:
 
 ```js
 import Analytics from 'analytics-node'
