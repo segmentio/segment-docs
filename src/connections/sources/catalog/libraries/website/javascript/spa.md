@@ -12,13 +12,13 @@ If you have a single-page application and plan to heavily use Analytics.js, you 
 
 First add `analytics-node` as a dependency:
 
-```shell script
+```shell
 $ npm install analytics-node 
 ```
 
 or, if you are using yarn:
 
-```shell script
+```shell
 $ yarn add analytics-node
 ```
 
@@ -42,9 +42,3 @@ class ShoppingCartButton {
 
 }
 ```
-
-Our snippet approach still works fine with the SPAs, and nothing should be done fundamentally different from non-SPA apps. I can guess big bulk of our customers have SPAs without any issue. So I don’t think we need to dedicate a section on SPAs. 
-
-We should definitely write docs around how to integrate specifically with Next.JS / Gatsby frameworks as they don’t offer access to the index.html right out of the box, and that makes adding a snippet difficult. We need to spend some time and create a reference implantation to understand the right way of integrating with Next/Gatsby before prescribing that to the customers.
-
-We can add a section to the docs about how to use analytics.js as an npm package ( similar to this ). I’m waiting to get some feedback from OSS community on the npm usage before moving it to the official docs, but we can offer that as an alternative solution to snippet specifically for SPA users.
