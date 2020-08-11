@@ -82,6 +82,9 @@ The default initialization settings are production-ready and queue messages on a
 
 ## Identify
 
+> note ""
+> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
+
 If you're not familiar with the Segment Specs, take a look to understand what the [identify](/docs/connections/spec/identify/) method does.
 
 The `identify` call has the following fields:
