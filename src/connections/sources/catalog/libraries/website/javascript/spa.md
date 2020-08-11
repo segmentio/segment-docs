@@ -10,7 +10,7 @@ Analytics.js can work with your single-page applications built with technologies
 
 If you have a single-page application and plan to heavily use Analytics.js, you might need to add Analytics.js to your build system.  You can do this using Segment's `analytics-node` package instead of the Analytics.js snippet. This package works like any standard node-js dependency.
 
-First add `analytics-node` as a dependency:
+First add the package as a dependency:
 
 ```shell
 $ npm install analytics-node 
@@ -42,3 +42,6 @@ class ShoppingCartButton {
 
 }
 ```
+
+**Note:** Our `analytics-node` package does not support device mode destinations or some browser specific features that the Analytics.js snippet supports.
+
