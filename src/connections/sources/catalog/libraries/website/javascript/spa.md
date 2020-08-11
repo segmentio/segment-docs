@@ -7,7 +7,8 @@ strat: ajs
 Analytics.js can work with your single-page applications built with technologies such as React or Vue.  
 
 ## Integrating with your build tooling
-If you are planning to do some deep integration with Analytics.js and your single-page application, you may need to integrate Analytics.js with your build system.  This can easily be done using our analytics node package instead of the Analytics.js snippet.  This package work like any standard nodejs dependency.
+
+If you have a single-page application and plan to heavily use Analytics.js, you might need to add Analytics.js to your build system.  You can do this using Segment's `analytics-node` package instead of the Analytics.js snippet. This package works like any standard node-js dependency.
 
 First add `analytics-node` as a dependency:
 
