@@ -11919,6 +11919,61 @@ items:
       server: true
   previous_names:
   - Kustomer
+- display_name: LaunchDarkly-subscription
+  slug: launchdarkly-subscription
+  name: catalog/destinations/launchdarkly-subscription
+  description: >-
+    This destination sends track events to LaunchDarkly experiments.
+    LaunchDarkly is a feature management platform that empowers development
+    teams to safely deliver and control software through feature flags. 
+  hidden: false
+  url: connections/destinations/catalog/launchdarkly-subscription
+  status: PUBLIC_BETA
+  logo:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/9d3b780d-d6a6-413d-b606-49ce7b9af1a9.svg
+  mark:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/e15902da-fbab-4789-82a0-09da26f51d8a.svg
+  categories:
+  - A/B Testing
+  - Analytics
+  components: []
+  platforms:
+    browser: true
+    server: true
+    mobile: true
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  methods:
+    alias: false
+    group: false
+    identify: false
+    page_view: false
+    track: true
+  settings:
+  - name: apiKey
+    display_name: API Key
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: '^.{8,}$'
+    description: >-
+      Generate a token in the Authorization tab in LaunchDarkly Account
+      Settings.
+    settings: []
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+  previous_names:
+  - LaunchDarkly-subscription
 - display_name: Lazy Lantern
   slug: lazy-lantern
   name: catalog/destinations/lazy-lantern
@@ -12995,26 +13050,6 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
-      - name: marketoAttributeType
-        display_name: Marketo Field Type
-        type: SELECT
-        deprecated: false
-        required: true
-        select_validators:
-          select_options:
-          - string
-          - boolean
-          - number
-          - date
-        description: Enter the Marketo Field type.
-        settings: []
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as the Primary field in Marketo.
-        settings: []
       - name: segmentProperty
         display_name: Segment Property Name
         type: STRING
@@ -13036,6 +13071,26 @@ items:
         description: >-
           Enter the Marketo Field name. Make sure to copy and paste the exact
           API Name for your field as it appears in Marketo.
+        settings: []
+      - name: marketoAttributeType
+        display_name: Marketo Field Type
+        type: SELECT
+        deprecated: false
+        required: true
+        select_validators:
+          select_options:
+          - string
+          - boolean
+          - number
+          - date
+        description: Enter the Marketo Field type.
+        settings: []
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as the Primary field in Marketo.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -17044,23 +17099,6 @@ items:
       required: false
       description: Map your Segment properties to Responsys Columns
       settings:
-      - name: fieldType
-        display_name: Responsys Column Type
-        type: SELECT
-        deprecated: false
-        required: true
-        select_validators:
-          select_options:
-          - CHAR
-          - STR25
-          - STR100
-          - STR500
-          - STR4000
-          - Number
-          - INTEGER
-          - TIMESTAMP
-        description: Enter the Responsys column type.
-        settings: []
       - name: primaryKey
         display_name: Set as Primary Key
         type: BOOLEAN
@@ -17085,6 +17123,23 @@ items:
         string_validators:
           regexp: ''
         description: Enter the Responsys column name.
+        settings: []
+      - name: fieldType
+        display_name: Responsys Column Type
+        type: SELECT
+        deprecated: false
+        required: true
+        select_validators:
+          select_options:
+          - CHAR
+          - STR25
+          - STR100
+          - STR500
+          - STR4000
+          - Number
+          - INTEGER
+          - TIMESTAMP
+        description: Enter the Responsys column type.
         settings: []
     - name: mapEmail
       display_name: Map Email
