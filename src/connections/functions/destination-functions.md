@@ -113,18 +113,25 @@ async function onAlias(event) {
 }
 
 async function onTrack(event) {
+  let res
   try {
-    await fetch('http://example-service.com/api', {
+    res = await fetch('http://example-service.com/api', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
       body: JSON.stringify({ event })
     })
   } catch (err) {
+    // Retry on connection error
     throw new RetryError(err.message)
   }
+  if (res.status >= 500 || res.status === 429) {
+    // Retry on 5xx and 429s (ratelimits)
+    throw new RetryError(`HTTP Status ${res.status}`)
+  }
 }
+
 ```
 If you do not supply a function for an event type, Segment throws an `EventNotSupported` error by default.
 
