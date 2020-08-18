@@ -11,9 +11,9 @@ redirect_from: '/connections/destinations/catalog/algolia/'
 - A/B Testing
 - Personalization
 
-This destination is maintained by [Algolia](https://www.algolia.com/). For any issues with the destination, please [reach out to their team](mailto:hey@algolia.com).
+This destination is maintained by [Algolia](https://www.algolia.com/). For any issues with the destination, [contact their team](mailto:hey@algolia.com).
 
-_**NOTE:** The Algolia Insights Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 20, 2020. If you are interested in joining their beta program or have any feedback to help improve the Algolia Insights Destination and its documentation, please [let their team know](mailto:hey@algolia.com)!_
+_**NOTE:** The Algolia Insights Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 20, 2020. If you are interested in joining their beta program or have any feedback to help improve the Algolia Insights Destination and its documentation, [let their team know](mailto:hey@algolia.com)!_
 
 
 ## Getting Started
@@ -32,7 +32,7 @@ You can read more about how to send Algolia-related data to Segment from [the do
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 Algolia supports the following six events from Segment's [Ecommerce Spec](https://segment.com/docs/connections/spec/ecommerce/v2/).
 

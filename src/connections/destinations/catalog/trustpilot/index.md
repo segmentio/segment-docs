@@ -4,9 +4,9 @@ title: Trustpilot Destination
 ---
 [Trustpilot](https://www.trustpilot.com/) is an open and independent review platform. On Trustpilot, people can share and discover reviews of businesses, and businesses can gain insights and showcase their service and products performance through reviews.
 
-This destination is maintained by Trustpilot. For any issues with the destination, please [reach out to their team](https://support.trustpilot.com/hc/en-us/articles/215949867-Contact-Trustpilot-s-Support-Team).
+This destination is maintained by Trustpilot. For any issues with the destination, [contact their team](https://support.trustpilot.com/hc/en-us/articles/215949867-Contact-Trustpilot-s-Support-Team).
 
-_**NOTE:** The Trustpilot Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 25, 2019. If you are interested in joining their beta program or have any feedback to help improve the Trustpilot Destination and its documentation, please [let  their team know](https://support.trustpilot.com/hc/en-us/articles/215949867-Contact-Trustpilot-s-Support-Team)!_
+_**NOTE:** The Trustpilot Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 25, 2019. If you are interested in joining their beta program or have any feedback to help improve the Trustpilot Destination and its documentation, [let their team know](https://support.trustpilot.com/hc/en-us/articles/215949867-Contact-Trustpilot-s-Support-Team)!_
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ _**NOTE:** The Trustpilot Destination is currently in beta, which means that the
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Order Completed', {

@@ -40,11 +40,11 @@ When you call [`track`](/docs/connections/spec/track/) or one of its helpers on 
 
 ### Customizing the chat box
 
-All the settings you can change [from your Olark settings pages](https://www.olark.com/help/customize), like targeted chat and your chat box design, still work exactly the same when Olark is enabled via Segment.
+All the settings you can change [from your Olark settings pages](https://www.olark.com/help/customize), like targeted chat and your chat box design, still work exactly the same when Olark is enabled using Segment.
 
 ### Olark Javascript API
 
-If you'd like to use the native Olark Javascript functions after turning on Olark via Segment our `ready` function will allow you to do that. Since we still load the Olark library in the background you can access those functions like this:
+If you'd like to use the native Olark Javascript functions after turning on Olark using Segment our `ready` function will allow you to do that. Since we still load the Olark library in the background you can access those functions like this:
 
 ```js
 analytics.ready(function(){

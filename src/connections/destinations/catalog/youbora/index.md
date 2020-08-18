@@ -97,7 +97,7 @@ When a user pauses/resumes playback of a video, you should use our [Video
 Playback Paused](/docs/connections/spec/video/#playback-events) and [Video Playback
 Resumed](/docs/connections/spec/video/#playback-events) events.
 
-If the user pauses during an ad, please be sure to fill the
+If the user pauses during an ad, be sure to fill the
 `properties.ad_asset_id` field from our spec for **both** calls, as we use its
 presence to determine whether the pause is occuring during an ad or not.
 
@@ -138,7 +138,7 @@ Playback Buffer Started](/docs/connections/spec/video/#playback-events) and [Vid
 Buffer Completed](/docs/connections/spec/video/#playback-events) events. We will map the
 properties from these events to the following Youbora video metadata fields:
 
-If the buffer occurs during an ad, please be sure to fill the
+If the buffer occurs during an ad, be sure to fill the
 `properties.ad_asset_id` field from our spec for **both** calls, as we use its
 presence to determine whether the buffer is occuring during an ad or not.
 
@@ -157,7 +157,7 @@ Interrupted](/docs/connections/spec/video/#playback-events) event.
 
 ### Video Playback Completed
 
-To track the completion of the video playback session, please use our [Video
+To track the completion of the video playback session, use our [Video
 Playback Completed](https://segment.com/docs/connections/spec/video/#playback-events) event.
 
 **Example**
@@ -193,7 +193,7 @@ analytics.track('Video Ad Started', { session_id: 1, title: 'Test Ad Title', ad_
 
 ### Video Ad Completed
 
-To track the completion of an ad, please use our [Video Ad
+To track the completion of an ad, use our [Video Ad
 Completed](https://segment.com/docs/connections/spec/video/#ad-events) event.
 
 **Example**
@@ -204,7 +204,7 @@ analytics.track('Video Ad Completed', { session_id: 1, ad_asset_id: 1 });
 
 ### Video Ad Clicked
 
-To track an ad click, please track an event with event name 'Video Ad Clicked'.
+To track an ad click, track an event with event name 'Video Ad Clicked'.
 
 **Example**
 
@@ -272,7 +272,7 @@ below steps:
 }
 ```
 
-In the `player` field, please pass the video player object, or the ID of the
+In the `player` field, pass the video player object, or the ID of the
 video player element in the case of HTML5.
 
 In the `options` field, you can pass options the same way you would pass them
@@ -285,9 +285,9 @@ See the below example for what a working implementation looks like:
   <script>
     var vplayer = videojs('html5player')
 
-    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var
-      e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,o){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src="http://localhost:3000/analytics.js/v1/"+t+"/analytics.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n);analytics._loadOptions = o;};analytics.SNIPPET_VERSION="4.0.0";
-      analytics.load("K3wz25G4iMGTJcsHFOWeuAWk6BBfwF3e", {
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0"; 
+      
+      analytics.load("YOUR_WRITE_KEY", {
         integrations: {
           Youbora: {
             players: {

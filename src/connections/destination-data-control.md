@@ -2,7 +2,7 @@
 title: "How do I use Schema Controls?"
 ---
 
-Once you have enabled Destinations for a given Source, all of the [data](https://segment.com/docs/connections/spec/) you track will be routed to your connected tools and warehouses. If you no longer wish to send all data to a particular Destination, you can disable the Destination from the Source overview page. 
+Once you have enabled Destinations for a given Source, all of the [data](/docs/connections/spec/) you track will be routed to your connected tools and warehouses. If you no longer wish to send all data to a particular Destination, you can disable the Destination from the Source overview page. 
 
 But what happens when you want to send all of your data to a warehouse, and only two specific events to an analytics tool? And once you're satisfied with your spec, how do you make sure rogue events are blocked from all of your warehouses and end tools? Segment gives you the power to control exactly what data is allowed into your Destinations, so you can protect the integrity of your data, and the decisions you make with it.
 
@@ -25,7 +25,7 @@ analytics.identify('user_123', {
 });
 ```
 
-Destination flags are **case sensitive** and match [the Destination's name in the docs](https://segment.com/docs/integrations) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the Destination's name in the docs](/docs/connections/destinations/catalog/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
 If you're on Segment's Business plan, you can filter track calls right from the Segment UI on your Source Schema page by clicking on the field in the "Integrations" column and then adjusting the toggle for each tool. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
@@ -35,7 +35,7 @@ If you're on Segment's Business plan, you can filter track calls right from the 
 
 If you no longer want to track an event, you can either remove it from your code or, if you're on the Business plan, you can block track calls right from the Segment UI on your Source Schema page by adjusting the toggle for each event.
 
-![](images/asset_ZCRZqdO9.gif)
+![](/docs/protocols/images/asset_ZCRZqdO9.gif)
 
 Once you block an event in Segment, we'll stop forwarding it to all of your Destinations, including your warehouses. You can remove it from your code at your leisure. In addition to blocking track calls, Business plan customers can block all Page and Screen calls, as well as Identify traits and Group properties. 
 
@@ -83,7 +83,7 @@ No new identify traits will be allowed in Segment or sent to your Destinations.
 
 For example, if you set your Schema Defaults for New Events to "Block," and a new event, `Order Completed`, is tracked, Segment will automatically block the event and it will not be sent to your warehouse or downstream tools. The event will continue to be blocked until you actively choose to allow it.
 
-You will need to upgrade to the latest [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#install-the-sdk) and/or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#step-1-install-the-library) SDKs for Schema Defaults to apply to events sent from mobile sources. 
+You will need to upgrade to the latest [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/#install-the-sdk) and/or [Android](/docs/connections/sources/catalog/libraries/mobile/android/#step-1-install-the-library) SDKs for Schema Defaults to apply to events sent from mobile sources. 
 
 ## **What is considered a "new" event?**
 

@@ -26,9 +26,9 @@ hide-boilerplate: true
 
 The Google Adwords Remarketing Lists Destination is one of our most popular Personas List Destinations. It has a variety of use cases related to exclusion, acquisition (using Similar Audience), re-marketing, and more.
 
-This Destination can send *audiences* (lists of users) created in [Personas](/docs/personas/) to Google Adwords Audience Lists as a [**Customer List**](https://support.google.com/google-ads/answer/7558048) type. Once you set this up, Segment sends an [initial list](https://developers.google.com/analytics/devguides/config/mgmt/v3/remarketing#insert) of users to Google Adwords Audience lists as a “Customer list”. As users move in and out of the audience, Segment automatically [updates the list](https://developers.google.com/analytics/devguides/config/mgmt/v3/remarketing#insert) in Google on an hourly basis. This allows you to run advertising campaigns without having manually update the list of users to target in Adwords campaigns.
+This Destination can send *audiences* (lists of users) created in [Personas](/docs/personas/) to Google Adwords Audience Lists as a [**Customer List**](https://support.google.com/google-ads/answer/7558048) type. Once you set this up, Segment sends an [initial list](https://developers.google.com/analytics/devguides/config/mgmt/v3/remarketing#insert) of users to Google Adwords Audience lists as a “Customer list”. As users move in and out of the audience, Segment automatically [updates the list](https://developers.google.com/analytics/devguides/config/mgmt/v3/remarketing#insert) in Google every 6 hours. This allows you to run advertising campaigns without having manually update the list of users to target in Adwords campaigns.
 
-Currently, you can only send either an email address or mobile id (IDFA) from Segment Personas to Google as custom matchers. You can set an email address on the user profile by including `email` as a trait on an [`identify` call](/docs/connections/spec/identify/), as a property on a [`track` call](/docs/connections/spec/track/) or as an [external id](/docs/personas/identity-resolution-externalids/) for the user.
+Currently, you can only send either an email address or mobile id (IDFA) from Segment Personas to Google as custom matchers. You can set an email address on the user profile by including `email` as a trait on an [`identify` call](/docs/connections/spec/identify/), as a property on a [`track` call](/docs/connections/spec/track/) or as an [external id](/docs/personas/identity-resolution/externalids/) for the user.
 If you use Segment’s mobile SDK to collect events from a mobile app, the user’s IDFA is automatically captured. If you do not use Segment’s mobile SDK, you can set the user’s IDFA by setting it within `context.device.advertisingId`.
 
 When you send an audience to Google Adwords Remarketing Lists, you can choose which custom matcher (email or mobile id/IDFA) to match with. If a user has multiple emails or IDFAs on their account as `external_ids`, Personas only sends Adwords the ID that was most recently added to the user profile.
@@ -95,7 +95,7 @@ When you create an audience in Personas and connect it to Google Adwords Remarke
 
 ## Set up
 
-Before you start,  make sure you have administrative access to the Adwords account so you can set up and link this destination.
+Before you start, make sure you have administrative access to the Adwords account so you can set up and link this destination.
 
 ### 1. Add Adwords Remarketing Lists as a Personas Destination**
 
@@ -170,3 +170,9 @@ Currently, Personas sends either email or mobile device id (IDFA) to Google Adwo
 #### If a user has multiple emails or IDFAs on their account, which ids get sent to Google Adwords?
 
 Personas sends the most recent id that was added to the user profile to Google Adwords.
+
+#### How do I enter multiple Mobile App IDs when exporting mobile IDs to Google Adwords?
+
+If you have more than one App ID (such as a separate App ID for Android and iOS apps), add a separate Google Adwords Remarketing List destination for each App ID, and make sure the settings for these destinations include the correct App IDs. 
+
+When you create Personas audiences, add conditions to specify which App ID to send the audience to. For example, you might add a property condition of "where `device.type` contains `iOS`" to send only your iOS users to a specific destination.

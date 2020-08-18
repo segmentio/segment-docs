@@ -7,11 +7,11 @@ title: Serenytics Destination
 When the Serenytics destination is enabled in Segment, messages from Segment will be stored in the Serenytics Redshift and will be available for transformation and to create dashboards.
 
 
-This destination is maintained by the company Serenytics. For any issues with the destination, please [reach out to their team](mailto:support@serenytics.com).
+This destination is maintained by the company Serenytics. For any issues with the destination, [contact their team](mailto:support@serenytics.com).
 
 
 
-_**NOTE:** The Serenytics Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 5, 2019. If you are interested in joining their beta program or have any feedback to help improve the Serenytics Destination and its documentation, please [let  their team know](mailto:support@serenytics.com)!_
+_**NOTE:** The Serenytics Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 5, 2019. If you are interested in joining their beta program or have any feedback to help improve the Serenytics Destination and its documentation, [let their team know](mailto:support@serenytics.com)!_
 
 
 ## Getting Started
@@ -33,7 +33,7 @@ From Segment Destinations Catalog:
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -44,7 +44,7 @@ To view your page calls in Serenytics, open the datasource called `Segment_Pages
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -54,7 +54,7 @@ To view your screen calls in Serenytics, open the datasource called `Segment_Scr
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -67,7 +67,7 @@ To view your identify calls in Serenytics, open the datasource called `Segment_I
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Article Completed')

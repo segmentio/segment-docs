@@ -53,7 +53,7 @@ Yes. [Tracking Plan Labels](/docs/protocols/tracking-plan/create/#add-a-label) a
 
 ### How do I send someone a specific event or group of events to implement?
 
-You can search in a Tracking Plan to find a specific event, and then copy the URL for the search results page and share it. You can also filter by label to share a group of events. The person you send the URL to must have access to the Workspace and tracking plan to see the results page. (See [the Access Management documentation](/docs/iam/) for more details.)
+You can search in a Tracking Plan to find a specific event, and then copy the URL for the search results page and share it. You can also filter by label to share a group of events. The person you send the URL to must have access to the Workspace and tracking plan to see the results page. (See [the Access Management documentation](/docs/segment-app/iam/) for more details.)
 
 ### Can I create a master Tracking Plan that supersedes all other Tracking Plans?
 
@@ -103,7 +103,7 @@ To reduce the risk of creating circular and conflicting transformations, we only
 
 ### What can't I select multiple events or destinations in a single transformation?
 
-In early transformations prototypes we allowed users to select multiple events and destinations for a single transformation rule. We realized however that this created a structure that was impossible to scale, and likely to generate unintended consequences. For example, if we allow multiple track events to be selected for a property name change, it'd be possible to create conflicting changes. Instead, by enforcing a single event, we can check to see if a transformation rule exists and smartly link you to that rule via a warning.
+In early transformations prototypes we allowed users to select multiple events and destinations for a single transformation rule. We realized however that this created a structure that was impossible to scale, and likely to generate unintended consequences. For example, if we allow multiple track events to be selected for a property name change, it'd be possible to create conflicting changes. Instead, by enforcing a single event, we can check to see if a transformation rule exists and smartly link you to that rule using a warning.
 
 ### What permissions are required to create and edit transformations?
 
@@ -115,7 +115,7 @@ All users with Protocols admin or readonly permissions can view transformations.
 
 ### Why can't we support transformations for device-mode destinations?
 
-Transformations introduce advanced logic that at scale may impact performance of client-side libraries. We are exploring ways to maintain high performance while selectively supporting transformations in the clients. If you are interested in testing new functionality which supports device-mode destination transformations in analytics.js, please reach out to your account rep.
+Transformations introduce advanced logic that at scale may impact performance of client-side libraries. We are exploring ways to maintain high performance while selectively supporting transformations in the clients. If you are interested in testing new functionality which supports device-mode destination transformations in analytics.js, contact your account rep.
 
 ### Why do I need Protocols to use transformations?
 

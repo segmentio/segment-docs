@@ -4,7 +4,7 @@ title: Analytics for iOS
 
 Analytics for iOS makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
-All of Segment's libraries are open-source, so you can [view Analytics for iOS on Github](https://github.com/segmentio/analytics-ios), or check out our [browser and server-side libraries](/sources/catalog/) too.
+All of Segment's libraries are open-source, so you can [view Analytics for iOS on Github](https://github.com/segmentio/analytics-ios), or check out our [browser and server-side libraries](/docs/connections/sources/catalog/) too.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-ios/tags.atom).
 
@@ -32,7 +32,7 @@ First, add the `Analytics` dependency to your `Podfile`, like so:
 pod 'Analytics', '~> 3.0'
 ```
 
-Then in your application delegate's `- application:didFinishLaunchingWithOptions:` method, setup the SDK like so:
+Then in your application delegate's `- application:didFinishLaunchingWithOptions:` method, set up the SDK like so:
 
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
@@ -41,7 +41,7 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 
-**Note:** Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional using initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-3-track-actions) for more info!
+**Note:** Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional using initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-4-track-actions) for more info!
 
 And of course, import the SDK in the files that you use it with:
 
@@ -53,11 +53,11 @@ And of course, import the SDK in the files that you use it with:
 
 In the interest of keeping our SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data is sent using Segment's servers to any tools you've enabled using the default Cloud-mode.
 
-[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/connections/sources/catalog/libraries/mobile/ios#packaging-destinations-using-device-mode).
+[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks).
 
 Now that the SDK is installed and setup, you're ready to...
 
-### Configure and Setup the SDK
+### Configure and set up the SDK
 
 The `SEGAnalyticsConfiguration` class provides a set of properties that control various policies of the `SEGAnalytics` instance. You initialize it with a `writeKey` like so:
 
@@ -131,6 +131,9 @@ You can also manually `flush` the queue:
 
 Now that the Segment SDK and any accompanying packaged SDKs are installed, you're ready to collect some data!
 
+> note ""
+> **Good to know**: For any of the different methods described in this doc, you can replace the properties and traits in the code samples with variables that represent the data collected.
+
 ### Identify
 
 `identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
@@ -161,7 +164,7 @@ The `identify` call has the following fields:
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
-    <td>A dictionary of extra [options](/libraries/ios/#integrations) for the call.</td>
+    <td>A dictionary of extra [options](/docs/connections/sources/catalog/libraries/mobile/ios/#selecting-destinations) for the call.</td>
   </tr>
 </table>
 
@@ -203,7 +206,7 @@ The `track` call has the following fields:
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
-    <td>A dictionary of extra [options](/libraries/ios/#selecting-integrations) for the call.</td>
+    <td>A dictionary of extra [options](/docs/connections/sources/catalog/libraries/mobile/ios/#selecting-destinations) for the call.</td>
   </tr>
 </table>
 
@@ -234,7 +237,7 @@ The `screen` call has the following fields:
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
-    <td>A dictionary of extra [options](/libraries/ios/#integrations) for the call.</td>
+    <td>A dictionary of extra [options](/docs/connections/sources/catalog/libraries/mobile/ios/#selecting-destinations) for the call.</td>
   </tr>
 </table>
 
@@ -270,7 +273,7 @@ The `group` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](/docs/connections/spec/common/#timestamps), [enable or disable destinations](#selecting-destinations), or [send additional context](/docs/connections/spec/common/#context).</td>
   </tr>
 </table>
 
@@ -297,7 +300,7 @@ The `alias` call has the following fields:
   </tr>
   <tr>
     <td>`options` _NSDictionary *, optional_</td>
-    <td>A dictionary of extra [options](/libraries/ios/#integrations) for the call.</td>
+    <td>A dictionary of extra [options](/docs/connections/sources/catalog/libraries/mobile/ios/#selecting-destinations) for the call.</td>
   </tr>
 </table>
 
@@ -400,8 +403,8 @@ Or disable it like this:
 
 By default debug logging is disabled.
 
-## Middlewares
-Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify or reject events. Middlewares are available on `analytics-ios ` 3.6.0 and higher.
+## Middleware
+Middleware are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify or reject events. Source Middleware are available on `analytics-ios` 3.6.0 and higher. Destination Middleware are available on `analytics-ios` 4.0.0 and higher.
 
 The middleware API is easily accessible in both Objective-C and Swift.
 
@@ -409,7 +412,7 @@ The middleware API is easily accessible in both Objective-C and Swift.
 
 Middleware is any Objective-C class that conforms to the following protocol.
 
-```
+```objc
 @protocol SEGMiddleware
 @required
 - (void)context:(SEGContext *_Nonnull)context next:(S
@@ -419,7 +422,7 @@ EGMiddlewareNext _Nonnull)next;
 
 We also provide a block-centric helper class to make it easier to create middlewares using anonymous functions on the fly. (See examples later on in the guide)
 
-```
+```objc
 typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNext _Nonnull next);
 
 @interface SEGBlockMiddleware : NSObject <SEGMiddleware>
@@ -432,9 +435,9 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 `context` is an object that encapsulates everything about an event in the stream. `next` is a callback function that should be invoked when the current middleware is done processing the event and can pass the processed event down to the next middleware in the chain.
 
-`SEGContext` object is not very information rich by itself. Typically you will need to use `eventType`  and `payload` to get more information about an event.
+`SEGContext` object is not very information rich by itself. Typically you must use `eventType`  and `payload` to get more information about an event.
 
-```
+```objc
 @interface SEGContext : NSObject <NSCopying>
 
 @property (nonatomic, readonly, nonnull) SEGAnalytics *_analytics;
@@ -455,7 +458,7 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 If you look at `SEGEventType` more carefully, you'll realize that middleware is not only capable of handling `track` , `identify` and other normal analytics APIs, even calls like `reset` , `flush` and `openURL` go through and can therefore be processed by the middleware pipeline.
 
-```
+```objc
 typedef NS_ENUM(NSInteger, SEGEventType) {
     // Should not happen, but default state
     SEGEventTypeUndefined,
@@ -487,7 +490,7 @@ typedef NS_ENUM(NSInteger, SEGEventType) {
 
 There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enums. Subclassed payloads may contain call specific information, For example, the `SEGTrackPayload` contains `event` as well as `properties` .
 
-```
+```objc
 @interface SEGTrackPayload : SEGPayload
 
 @property (nonatomic, readonly) NSString *event;
@@ -497,45 +500,57 @@ There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enu
 @end
 ```
 
-Finally, to use a middleware, you will need to provide it to the `SEGAnalyticsConfiguration` object prior to the initialization of `SEGAnalytics` .
+Finally, to use a middleware, you must provide it to the `SEGAnalyticsConfiguration` object prior to the initialization of `SEGAnalytics` .
 
-```
+```objc
 @interface SEGAnalyticsConfiguration : NSObject
+
 /**
- * Set custom middlewares. Will be run before all integrations
+ * Set custom source middleware. Will be run before all integrations
  */
-@property (nonatomic, strong, nullable) NSArray<id<SEGMiddleware>> *middlewares;
+@property (nonatomic, strong, nullable) NSArray<id<SEGMiddleware>> *sourceMiddleware;
+
+/**
+ * Set custom destination middleware. Will be run before the associated integration for a destination.
+ */
+@property (nonatomic, strong, nullable) NSArray<SEGDestinationMiddleware *> *destinationMiddleware;
 
 // ...
 @end
 ```
 
-Once initialized, the list of middlewares used in `SEGAnalytics` cannot be changed at this time.
+Once initialized, the list of middleware used in `SEGAnalytics` cannot be changed.
 
 ### Examples
 
 The following examples will be written in Swift to demonstrate that the middleware API works just as well in Swift as in Objective-C. To start off, this is what initialization looks like
 
-```
+```swift
+let mixpanelIntegration = SEGMixpanelIntegrationFactory.instance()
+let amplitudeIntegration = SEGAmplitudeIntegrationFactory.instance()
 let config = SEGAnalyticsConfiguration(writeKey: "YOUR_WRITEKEY_HERE")
 config.trackApplicationLifecycleEvents = true
 config.trackDeepLinks = true
 config.recordScreenViews = true
-config.use(SEGMixpanelIntegrationFactory.instance())
+config.use(mixpanelIntegration)
+config.use(amplitudeIntegration)
 
-config.middlewares = [
+config.sourceMiddleware = [
     turnScreenIntoTrack,
     enforceEventTaxonomy,
     customizeAllTrackCalls,
-    sampleEventsToMixpanel,
     blockScreenCallsToAmplitude,
+]
+config.destinationMiddleware = [
+    SEGDestinationMiddleware(key: mixpanelIntegration.key(), middleware: [sampleEventsToMixpanel]),
+    SEGDestinationMiddleware(key: amplitudeIntegration.key(), middleware: [customizeAmplitudeTrackCalls])
 ]
 SEGAnalytics.setup(with: config)
 ```
 
 Changing event names and adding custom attributes
 
-```
+```swift
 let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
     if context.eventType == .track {
         next(context.modify { ctx in
@@ -560,7 +575,7 @@ let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
 
 Turn one kind call into another
 
-```
+```swift
 let turnScreenIntoTrack = SEGBlockMiddleware { (context, next) in
     if context.eventType == .screen {
         next(context.modify { ctx in
@@ -584,7 +599,7 @@ let turnScreenIntoTrack = SEGBlockMiddleware { (context, next) in
 
 Completely block events
 
-```
+```swift
 let   = SEGBlockMiddleware { (context, next) in
     let validEvents = [
         "Application Opened",
@@ -603,31 +618,9 @@ let   = SEGBlockMiddleware { (context, next) in
 }
 ```
 
-Sample events to Mixpanel
-
-```
-let sampleEventsToMixpanel = SEGBlockMiddleware { (context, next) in
-    if let track = context.payload as? SEGTrackPayload {
-        let numberBetween0To4 = arc4random() % 5
-        if numberBetween0To4 != 0 {
-            next(context.modify { ctx in
-                ctx.payload = SEGTrackPayload(
-                    event: track.event,
-                    properties: track.properties,
-                    context: track.context,
-                    integrations: ["Mixpanel": false]
-                )
-            })
-            return
-        }
-    }
-    next(context)
-}
-```
-
 Block only screen calls to amplitude
 
-```
+```swift
 let blockScreenCallsToAmplitude = SEGBlockMiddleware { (context, next) in
     if let screen = context.payload as? SEGScreenPayload {
         next(context.modify { ctx in
@@ -643,6 +636,51 @@ let blockScreenCallsToAmplitude = SEGBlockMiddleware { (context, next) in
     next(context)
 }
 ```
+
+Sample events to Mixpanel device-mode destination
+
+```swift
+let sampleEventsToMixpanel = SEGBlockMiddleware { (context, next) in
+    if let track = context.payload as? SEGTrackPayload {
+        let numberBetween0To4 = arc4random() % 5
+        if numberBetween0To4 != 0 {
+            return
+        }
+    }
+    next(context)
+}
+```
+
+Add custom attribute to context for Amplitude device-mode destination
+
+```swift
+let customizeAmplitudeTrackCalls = SEGBlockMiddleware { (context, next) in
+    if context.eventType == .track {
+        next(context.modify { ctx in
+            guard let track = ctx.payload as? SEGTrackPayload else {
+                return
+            }
+            let newEvent = "[Amplitude] \(track.event)"
+            var newProps = track.properties ?? [:]
+            newProps["customAttribute"] = "Sausage"
+            ctx.payload = SEGTrackPayload(
+                event: newEvent,
+                properties: newProps,
+                context: track.context,
+                integrations: track.integrations
+            )
+        })
+    } else {
+        next(context)
+    }
+}
+```
+
+### Braze Middleware
+
+If you use the Braze (Appboy) destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation. More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
+
+
 
 ## Proxy HTTP Calls
 
@@ -764,7 +802,7 @@ Here are the steps for installing manually:
 
 Once you've installed the framework, just import the header file and install as described above in [Install the SDK](/docs/connections/sources/catalog/libraries/mobile/ios/#install-the-sdk).
 
-Please note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
+Note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
 
 ### What if your SDK doesn't support feature X?
 
@@ -1039,7 +1077,7 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 ### Still having issues?
 
-Please [contact our Product Support team](https://segment.com/help/contact/) with the following information:
+[contact our Product Support team](https://segment.com/help/contact/) with the following information:
 
 - The version of our SDK you are using
 - Whether you are using device- or cloud-mode

@@ -6,7 +6,7 @@ sourceCategory: 'Website'
 ---
 
 > warning ""
-> **Note**: Cross-domain analytics is no longer being offered as a product for new customers. If you have any questions, please contact [Segment support](https://www.segment.com/help/contact).
+> **Note**: Cross-domain analytics is no longer being offered as a product for new customers. If you have any questions, contact [Segment support](https://www.segment.com/help/contact).
 
 Cross-Domain Analytics allows businesses to measure customer activity across their digital properties, without exposing user data to third parties. For example, if you have multiple brands, content properties, or marketing mini-sites, you likely want to learn how cross-domain browsing impacts your revenue.
 
@@ -28,10 +28,10 @@ Browsers like Safari have moved to block third party cookies by default, and ins
 
 
 ## Technical setup
-Setting up Cross-Domain Analytics requires you to create subdomains and CNAME records. It also involves implementation work on Segment's end. Please [let us know](https://www.segment.com/help/contact) that you're interested in Cross-Domain Analytics and we can help you get set up.
+Setting up Cross-Domain Analytics requires you to create subdomains and CNAME records. It also involves implementation work on Segment's end. [Let us know](https://www.segment.com/help/contact) if you're interested in Cross-Domain Analytics and we can help you get set up.
 
 ### Step 1: Set up subdomains and CNAMEs
-You will first need to set up a subdomain for each domain that you want to collect cross-domain data from. Each subdomain will redirect to Segment's Cross-Domain ID service to check if an ID already exists for this visitor. For example, you can setup the subdomains `xid.example1.com` and `xid.example2.com`, and modify the CNAME records to point to Segment's Cross Domain ID service at `{your-cross-domain-id-service}.xid.segment.com`.
+You will first need to set up a subdomain for each domain that you want to collect cross-domain data from. Each subdomain will redirect to Segment's Cross-Domain ID service to check if an ID already exists for this visitor. For example, you can set up the subdomains `xid.example1.com` and `xid.example2.com`, and modify the CNAME records to point to Segment's Cross Domain ID service at `{your-cross-domain-id-service}.xid.segment.com`.
 
 Setting up a CNAME record will depend on your provider. Refer to specific provider instructions below or [let us know](https://www.segment.com/help/contact) if you need help.
 
@@ -52,7 +52,7 @@ The CNAME records for the above example will look like:
 ### Step 2: Let us know you'd like to activate Cross-Domain Analytics
 Once you're ready with your subdomains, [send us your](https://www.segment.com/help/contact) subdomain URLs (such as xid.example1.com) and their corresponding source slugs. You can find the source slug as part of your Segment source url, for example, `segment.com/{workspace_slug}/sources/{source_slug}`.
 
-Segment will verify that your subdomains have CNAME records setup correctly. This will also validate to us that you own the domain and lets our certificate provider issue us your xid subdomain certificate. You will receive an estimate of when this work will be completed.
+Segment will verify that your subdomains have CNAME records set up correctly. This will also validate to us that you own the domain and lets our certificate provider issue us your xid subdomain certificate. You will receive an estimate of when this work will be completed.
 
 ### Step 3: Verify your Cross-Domain Analytics setup
 
@@ -92,14 +92,14 @@ Google Analytics also provides a cross-domain feature but it only unifies user d
 Google Analytics shares the user's client ID across domains by appending it to the query parameter of the link URL. When the user uses that link to navigate to the second domain, the second domain reads the ID out of the URL.
 
 ### How many domains can I setup?
-We can setup cross domain analytics on upto 100 domains per customer. If you need to support more domains, please reach out to us.
+We can set up cross domain analytics on upto 100 domains per customer. If you need to support more domains, contact us.
 
 ### Will our event delivery be affected?
 To improve performance, we retrieve the cross domain identifier asynchronously. To avoid blocking events from being sent until this is available, we continue to send events without a cross domain identifier while we fetch it.
 
 ### How long can it take to retrieve the cross domain identifier?
 The time it takes to resolve the cross domain identifier can depend on a few factors, such as:
-* How many domains have been setup for your project (the higher the number of domains, the longer it will take).
+* How many domains have been set up for your project (the higher the number of domains, the longer it will take).
 * How many other domains the user has visited previously (the higher the number of domains the user has visited previously, the quicker it will be retrieved).
 * Network speed, which itself is dependendent on factors such as how far the user is from the cross domain analytics server, or what type of network the user is on (the slower the network is, the slower the cross domain identifier will be to resolve).
 

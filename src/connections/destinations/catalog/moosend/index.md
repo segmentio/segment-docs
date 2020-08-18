@@ -8,7 +8,7 @@ Integrating with Segment requires creating a Website Id. Once you login to your 
 
 ## Page
 
-You can track [Page](https://segment.com/docs/connections/spec/page/) events via Segment's `analytics.page` method. It is highly recommended that, if possible, you add this event to the header of your website, after the library initialization and before you close your script tag.
+You can track [Page](https://segment.com/docs/connections/spec/page/) events using Segment's `analytics.page` method. It is highly recommended that, if possible, you add this event to the header of your website, after the library initialization and before you close your script tag.
 
 ## Identify
 
@@ -24,16 +24,16 @@ Although you can track any custom event, Moosend has some known events that impl
 
 A [Product Viewed](https://segment.com/docs/connections/spec/ecommerce/v2/#product-viewed) event should be used to track when a user views a product (before adding to cart or purchasing). This event helps to implement advanced retargeting strategies in Moosend like browse abandonment and engage with customers that view, but do not purchase, a product.
 
-Please adhere to the specd property defintions outlined in the documentation linked above.
+Make sure you follow the spec format explained in the documentation linked above.
 
 ## Order Completed
 
 An [Order Completed](https://segment.com/docs/connections/spec/ecommerce/v2/#order-completed) event should be used to track when a user succesfully completes their order.
 
-Please adhere to the specd property defintions outlined in the documentation linked above.
+Make sure you follow the spec format explained in the documentation linked above.
 
 ## Added To Cart
 
 A [Product Added](https://segment.com/docs/connections/spec/ecommerce/v2/#product-added) event should be used to track when a user adds an item to their cart. These events can be then used to implement cart abandonment emails.
 
-Please adhere to the specd property defintions outlined in the documentation linked above.
+Make sure you follow the spec format explained in the documentation linked above.

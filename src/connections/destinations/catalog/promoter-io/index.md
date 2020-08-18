@@ -13,7 +13,7 @@ Promoter supports the `identify` and `track` methods from Segment and will allow
 - Add a contact to a list
 - Send a survey to a contact
 
-Both `identify` and `track` will need to be called in order to utilize the full power of Promoter.
+Both `identify` and `track` will need to be called in order to use the full power of Promoter.
 
 ## Identify
 

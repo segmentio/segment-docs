@@ -11,7 +11,7 @@ Once the Segment library is integrated with your app, add your API key and selec
 Follow the below steps for destination
 
 ### iOS
-To get started with Taplytics on iOS, first integrate your app with the Taplytics [iOS](/docs/connections/sources/catalog/libraries/mobile/ios) library. To get the API key, [login](https://taplytics.com/) to your account, select the App on the top left then click into the Settings menu on the left side. If you want to set up Push Notifications click on the Push Notification tab in their UI and [follow the instructions](https://taplytics.com/docs/guides/push-notifications/apple-push-certificates). Finally, you want to ensure you have configured your app delegate to [enable push notifications](/docs/connections/sources/catalog/libraries/mobile/ios#how-do-i-use-push-notifications-).
+To get started with Taplytics on iOS, first integrate your app with the Taplytics [iOS](/docs/connections/sources/catalog/libraries/mobile/ios) library. To get the API key, [login](https://taplytics.com/) to your account, select the App on the top left then click into the Settings menu on the left side. If you want to set up Push Notifications click on the Push Notification tab in their UI and [follow the instructions](https://taplytics.com/docs/guides/push-notifications/apple-push-certificates). Finally, you want to ensure you have configured your app delegate to [enable push notifications](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications).
 
 If you want to set up deep linking, just follow [this section of their docs](https://taplytics.com/docs/ios-sdk/getting-started#app-linking)!
 

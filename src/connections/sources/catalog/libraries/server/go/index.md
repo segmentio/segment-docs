@@ -15,7 +15,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 
 ### Install the Package
 
-Install `analytics-go` via `go get`:
+Install `analytics-go` using `go get`:
 
 ```bash
 go get gopkg.in/segmentio/analytics-go.v3
@@ -41,6 +41,9 @@ That will create a `client` that you can use to send data to Segment for your so
 The default initialization settings are production-ready and queue 20 messages before sending a batch request, and a 5 second interval.
 
 ## Identify
+
+> note ""
+> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 `identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
@@ -118,7 +121,7 @@ Find details on **best practices in event naming** as well as the **`track` meth
 
 The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side setup in combination with the Go library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using our client-side set up in combination with the Go library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
 Example `page` call:
 
@@ -434,7 +437,7 @@ client.Enqueue(analytics.Track{
     SetCategory("Enterprise").
     Set("application", "Segment Desktop"),
 })
-```  
+```
 
 ```go
 client.Enqueue(analytics.Track{
@@ -445,7 +448,7 @@ client.Enqueue(analytics.Track{
     "application": "Segment Desktop",
   },
 })
-```  
+```
 
 Lastly, you'll notice that configuration is provided during initialization and cannot be changed after initialization. The various configuration options are documented in the [GoDocs](https://godoc.org/gopkg.in/segmentio/analytics-go.v3#Config).
 

@@ -10,7 +10,7 @@ By standardizing the events that comprise the core **mobile application lifecycl
 
 These events pair nicely with our [ecommerce spec](/docs/connections/spec/ecommerce/v2/) for mobile marketplaces to take full advantage of features like dynamic ads in Facebook and the ability to take full advantage of server-side destinations with Mobile Attribution Platforms like Tune and Kochava.
 
-**Note** Per our [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information) and applicable terms, please don't send us sensitive personal information about your users. Certain features from Segment and our partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
+**Note** Per our [Privacy Policy](https://segment.com/legal/privacy/#sensitive-personal-information) and applicable terms, don't send us sensitive personal information about your users. Certain features from Segment and our partners allow you to opt-in to automatically track data (for example: Application Installed or Deep Link Clicked). When working with these features and Segment in general, be cognizant of the data that is being tracked to ensure its matching both your obligations under your agreement with Segment and the privacy expectations of your users.
 
 ## Overview of Events
 
@@ -39,7 +39,7 @@ Additionally, though they're not formally part of the Native Mobile Spec, we als
 
 ## Lifecycle Events
 
-Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, many of which we can capture automatically in the latest versions of our SDKs, allow you to get a picture of top-line metrics like DAUs, MAUs, Screen Views per session, etc. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-1-install-the-sdk) and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-2-initialize-the-client) library docs.
+Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it's crucial to instrument the core flows associated with installing and opening your app. The following events, many of which we can capture automatically in the latest versions of our SDKs, allow you to get a picture of top-line metrics like DAUs, MAUs, Screen Views per session, etc. Automatic tracking of lifecycle events is completely optional - you can learn how to enable and disable them in our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#step-2-install-the-sdk) and [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-3-initialize-the-client) library docs.
 
 The following events will be tracked automatically when lifecycle events are enabled:
 
@@ -51,7 +51,7 @@ The following events will be tracked automatically when lifecycle events are ena
 
 This event fires when a user **first** opens your mobile application. Note, if the user never opens your app after installing, we will not be able to collect this event. This event does not wait for attribution or campaign information to be received, and is collected automatically by our SDKs. Advertising providers like Facebook and Google require discrete install events to correctly attribute installs to ads served through their platform.
 
-{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Installed", "properties": { "version": "1.2.3", "build": 1234 }}'}}} {% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Installed", "properties": { "version": "1.2.3", "build": "1234" }}'}}} {% endcomment %}
 
 
 ```json
@@ -60,7 +60,7 @@ This event fires when a user **first** opens your mobile application. Note, if t
   "action": "track",
   "event": "Application Installed",
   "properties": {
-    "version": "1.2.3", "build": 1234
+    "version": "1.2.3", "build": "1234"
   }
 }
 ```
@@ -118,7 +118,7 @@ This event should be sent when a user backgrounds the application upon [`applica
 
 This event fires when a user updates the application. Our SDK will automatically collect this event in lieu of an "Application Opened" event when we determine that the Open is first since an update.
 
-{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Updated", "properties": { "previous_version": "1.1.2", "previous_build": 1234,  "version": "1.2.0", "build": 1456 }}'}}} {% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Application Updated", "properties": { "previous_version": "1.1.2", "previous_build": 1234, "version": "1.2.0", "build": "1456" }}'}}} {% endcomment %}
 
 ```json
 {
@@ -127,9 +127,9 @@ This event fires when a user updates the application. Our SDK will automatically
   "event": "Application Updated",
   "properties": {
     "previous_version": "1.1.2",
-    "previous_build": 1234,
+    "previous_build": "1234",
     "version": "1.2.0",
-    "build": 1456
+    "build": "1456"
   }
 }
 ```
@@ -177,9 +177,9 @@ As the walls between apps become increasingly lowered, capturing information abo
 
 ### Install Attributed
 
-When Segment or an integrated partner can discern the source of an install, we'll collect an `Install Attributed` event. This event may be sent to Segment via server-to-server connection from your attribution provider, or directly on the device via packaged destinations. In either case, this will happen **after** install, and does not apply to all installs, which is why it is a discrete event.
+When Segment or an integrated partner can discern the source of an install, we'll collect an `Install Attributed` event. This event may be sent to Segment using server-to-server connection from your attribution provider, or directly on the device using packaged destinations. In either case, this will happen **after** install, and does not apply to all installs, which is why it is a discrete event.
 
-{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Install Attributed", "properties": { "provider": "Tune/Kochava/Branch/AppsFlyer", "campaign": { "source": "Network/FB/AdWords/MoPub/Source", "name": "Campaign Name", "content": "Organic Content Title",  "ad_creative": "Red Hello World Ad", "ad_group": "Red Ones" }}}'}}} {% endcomment %}
+{% comment %} api-example '{ "userId": "019mr8mf4r", "action": "track", "event": "Install Attributed", "properties": { "provider": "Tune/Kochava/Branch/AppsFlyer", "campaign": { "source": "Network/FB/AdWords/MoPub/Source", "name": "Campaign Name", "content": "Organic Content Title", "ad_creative": "Red Hello World Ad", "ad_group": "Red Ones" }}}'}}} {% endcomment %}
 
 ```json
 {
@@ -307,7 +307,7 @@ This event fires when a push notification from a provider bounces. If your push 
 
 ### Deep Link Opened
 
-When your application is opened via a referring link, Segment or your packaged deep link partner can fire this event on your behalf. If the deep link has additional data associated with it, either passed through the third party service or as `annotations` in `launchOption`, you may want to include those values as properties here as well.
+When your application is opened using a referring link, Segment or your packaged deep link partner can fire this event on your behalf. If the deep link has additional data associated with it, either passed through the third party service or as `annotations` in `launchOption`, you may want to include those values as properties here as well.
 
 This event is fired *in addition* to the associated `Application Opened` event.
 

@@ -41,7 +41,7 @@ Privacy Portal Inbox as **Red** (likely highly restricted data), **Yellow**
 (likely moderately restricted data), and **Green** (likely least restricted
 data). These colors indicate how restricted the data is for your business. You
 can also send and block data from flowing based on its color classification and
-how restricted it is using [Privacy Controls](#privacy-controls).
+how restricted it is.
 
 Segment makes recommendations about how a field should be classified using
 built-in PII matcher [detection](#privacy-detection), however, you can always
@@ -65,8 +65,7 @@ Yellow, and Green. Any time you send this field from a Web, Mobile, Server, or
 Cloud Event Source — whether from another Source or event type — the Privacy
 Portal automatically classifies it and adds it to the Inventory.
 
-Keep in mind that if you have any [Privacy Controls](#privacy-controls)
-configured to control how you route Red and Yellow data into or out of Segment,
+Keep in mind that if you have any Privacy Controls configured to control how you route Red and Yellow data into or out of Segment,
 the classifications you create in the Inbox are forwarded on to those Controls.
 For example, if you have a Privacy Control set up to block **Yellow** data from
 Google Analytics, any new fields you classify in the Inbox as **Yellow** will
@@ -79,7 +78,7 @@ The Inventory is a central repository of all of the properties _you_ classified 
 **The Inventory is intended to be a Single Source of Truth so you can answer common regulatory questions about the data you're sending through Segment, for example:**
 
 - What data am I sending into Segment, and how frequently?
-- How restricted is the data I' sending through Segment?
+- How restricted is the data I'm sending through Segment?
 - Where is the data coming from, on a property-by-property level?
 - Where am I sending this data?
 - Who within my organization has access to each property within Segment?
@@ -132,8 +131,46 @@ the label "CCN") or value (for example, the payload 123-456-7890) in the
 **Matches On** column. You can also see how we classify these matchers by
 default in the **Default Classification** column.
 
+Below is a full list of automatically detected restricted fields.
 
-![](images/privacy-suggested-matchers.png)
+
+| Matcher                | Classification |
+| ---------------------- | -------------- |
+| social security number | red            |
+| health                 | red            |
+| password               | red            |
+| visa                   | red            |
+| veteran                | red            |
+| disability             | red            |
+| credit card            | red            |
+| genetic                | red            |
+| race                   | red            |
+| passport               | red            |
+| token                  | red            |
+| birthdate              | yellow         |
+| phone                  | yellow         |
+| address                | yellow         |
+| gender                 | yellow         |
+| ethnicity              | yellow         |
+| citizenship            | yellow         |
+| name                   | yellow         |
+| street                 | yellow         |
+| city                   | yellow         |
+| zipcode                | yellow         |
+| email                  | yellow         |
+| certificate            | yellow         |
+| license                | yellow         |
+| identification         | yellow         |
+| serial                 | yellow         |
+| ip                     | yellow         |
+| photo                  | yellow         |
+| salary                 | yellow         |
+| religion               | yellow         |
+| email                  | yellow         |
+| mac                    | yellow         |
+| sex                    | yellow         |
+| gender                 | yellow         |
+| sexual orientation     | yellow         |
 
 
 When Segment detects data that meets the criteria for one of the default
@@ -181,7 +218,7 @@ even when it's not an CCN. For example, the key "Product_ID" could contain a
 10-digit string, even though Product_ID does not actually contain an SSN. A
 North American phone number (without country code) is also ten digits.
 
-{% include components/media-icon.html href="/segment-app/iam/roles/#pii-access/" icon="media/icon-academy.svg" title="PII Access" content="Use Access Roles to control who has access to the PII identified by your matchers." variant="related" %}
+{% include components/media-icon.html href="/segment-app/iam/roles/#pii-access" icon="media/icon-academy.svg" title="PII Access" content="Use Access Roles to control who has access to the PII identified by your matchers." variant="related" %}
 
 #### An intro to Regular expressions
 

@@ -2,11 +2,11 @@
 title: Kitemetrics Destination
 rewrite: true
 ---
-[Kitemetrics](https://kitemetrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides keyword level attribution for Apple Search Ads and associates them with In-App Purchases.  Kitemetrics allows you to leverage automation to easily manage and optimize Apple Search Ads campaigns and bids.
+[Kitemetrics](https://kitemetrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides keyword level attribution for Apple Search Ads and associates them with In-App Purchases.  Kitemetrics allows you to use automation to easily manage and optimize Apple Search Ads campaigns and bids.
 
-This destination is maintained by Kitemetrics. For any issues with the destination, please [reach out to their team](mailto:support@kitemetrics.com).
+This destination is maintained by Kitemetrics. For any issues with the destination, [contact their team](mailto:support@kitemetrics.com).
 
-_**NOTE:** The Kitemetrics Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 9, 2019. If you are interested in joining their beta program or have any feedback to help improve the Kitemetrics Destination and its documentation, please [let  their team know](mailto:support@kitemetrics.com)!_
+_**NOTE:** The Kitemetrics Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 9, 2019. If you are interested in joining their beta program or have any feedback to help improve the Kitemetrics Destination and its documentation, [let their team know](mailto:support@kitemetrics.com)!_
 
 
 ## Getting Started
@@ -22,7 +22,7 @@ _**NOTE:** The Kitemetrics Destination is currently in beta, which means that th
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 In order to track Apple Search Ads attribution events you will need to include the [Analytics-iAds-Attribution](https://github.com/segmentio/analytics-ios-iads-attribution) middleware library in your iOS source application.
 
@@ -33,7 +33,7 @@ pod "Analytics"
 pod "Analytics-iAds-Attribution"
 ```
 
-Segment and Kitemetrics can automatically record the following events: "Application Installed", "Application Opened", "Application Updated", "Install Attributed" and "In-App Purchases".  In order to capture those events you need to enable automatic tracking.  Ensure you setup [SEGAnalyticsConfiguration](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) as shown below:
+Segment and Kitemetrics can automatically record the following events: "Application Installed", "Application Opened", "Application Updated", "Install Attributed" and "In-App Purchases".  In order to capture those events you need to enable automatic tracking.  Ensure you set up [SEGAnalyticsConfiguration](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) as shown below:
 
 Swift
 ```swift
@@ -46,7 +46,7 @@ SEGAnalytics.setup(with: configuration)
 ```
 
 Objective-C
-```objectivec
+```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.trackApplicationLifecycleEvents = YES;
 configuration.trackAttributionData = YES;
@@ -60,7 +60,7 @@ Kitemetrics will show the device installs, sessions and purchases on the Analyti
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. You can turn on automatic screen tracking and/or call it manually. An example manual call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. You can turn on automatic screen tracking and/or call it manually. An example manual call would look like:
 
 Swift
 ```swift
@@ -68,7 +68,7 @@ SEGAnalytics.shared().screen("Screen Title")
 ```
 
 Objective-C
-```objectivec
+```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Screen Title"];
 ```
 
@@ -80,8 +80,8 @@ configuration.recordScreenViews = true
 ```
 
 Objective-C
-```objectivec
+```objc
 configuration.recordScreenViews = YES;
 ```
 
-Screen calls will be sent to Kitemetrics as a `custom event`.  They are available for selection as a KPI in Settings -> KPI. Screen calls can be a maximum of 255 characters.  Do not include personally identifiable information. Please omit parameters or attributes from the Screen Call.
+Screen calls will be sent to Kitemetrics as a `custom event`.  They are available for selection as a KPI in Settings -> KPI. Screen calls can be a maximum of 255 characters.  Do not include personally identifiable information. Omit parameters or attributes from the Screen Call.

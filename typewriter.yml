@@ -7,10 +7,13 @@ client:
   sdk: analytics.js
   language: javascript
 
+scripts:
+  token: aws-okta exec dev-privileged -- chamber export app | jq -r .typewriter_token
+
 trackingPlans:
-  # Tracking Plan: DocsV2
-  # https://app.segment.com/personal-sandbox/protocols/tracking-plans/rs_1TXEwonMAr3lovaSXucnJifEEg4
-  - id: rs_1TXEwonMAr3lovaSXucnJifEEg4
-    workspaceSlug: personal-sandbox
+  # Tracking Plan: Docs
+  # https://app.segment.com/segment_prod/protocols/tracking-plans/rs_1Ohr9MJskSjbjKIZJ8ixf5dIAJ1
+  - id: rs_1Ohr9MJskSjbjKIZJ8ixf5dIAJ1
+    workspaceSlug: segment_prod
     path: analytics
 

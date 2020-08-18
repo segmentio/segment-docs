@@ -4,9 +4,9 @@ title: Smartlook Destination
 ---
 [Smartlook](https://smartlook.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a product analytics tool for websites and mobile apps offering visitor recordings, heatmaps, conversion funnels and automatic event tracking.
 
-This destination is maintained by Smartlook. For any issues with the destination, please [reach out to their team](mailto:support@smartlook.com).
+This destination is maintained by Smartlook. For any issues with the destination, [contact their team](mailto:support@smartlook.com).
 
-_**NOTE:** The Smartlook Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 25, 2019. If you are interested in joining their beta program or have any feedback to help improve the Smartlook Destination and its documentation, please [let  their team know](mailto:support@smartlook.com)!_
+_**NOTE:** The Smartlook Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 25, 2019. If you are interested in joining their beta program or have any feedback to help improve the Smartlook Destination and its documentation, [let their team know](mailto:support@smartlook.com)!_
 
 
 ## Getting Started
@@ -21,7 +21,7 @@ _**NOTE:** The Smartlook Destination is currently in beta, which means that they
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
 Identify calls sent to Segment will be transformed and sent to [Smartlook's](https://smartlook.github.io/docs/web/identify-visitor/) `identify` method. An example call would look like:
 
 ```
@@ -33,7 +33,7 @@ analytics.identify('userId123', {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 Track calls sent to Segment will be transformed and sent to [Smartlook's](https://smartlook.github.io/docs/web/custom-events/) `track` method.
 An example call would look like:
 

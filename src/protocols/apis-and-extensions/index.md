@@ -1,7 +1,7 @@
 ---
 title: 'Protocols: APIs and Extensions'
 ---
-Protocols was developed from the ground up to support a wide range of customer needs. Whether you're interested in helping your engineers reduce tracking errors, or want to get notified when an issue arises, or want to utilize a Tracking Plan you already have, we have a suite of features and API support to get it done. We've captured many of those resources below.
+Protocols was developed from the ground up to support a wide range of customer needs. Whether you're interested in helping your engineers reduce tracking errors, or want to get notified when an issue arises, or want to use a Tracking Plan you already have, we have a suite of features and API support to get it done. We've captured many of those resources below.
 
 ## Anomaly detection
 
