@@ -71,7 +71,7 @@ Algolia supports the following six events from Segment's [Ecommerce Spec](https:
 analytics.track('Product List Viewed', {
     products: [{
         objectID: "hit objectID",
-        position: "hit position on index",
+        position: hitPositionOnIndex,  // number
         index: "my-index-name",
         queryID: "Algolia queryID" // required only for Click Analytics,
     }]
@@ -86,7 +86,7 @@ analytics.track('Product List Filtered', {
 
 analytics.track('Product Viewed', {
     objectID: "hit objectID",
-    position: "hit position on index",
+    position: hitPositionOnIndex,  // number
     index: "my-index-name",
     queryID: "Algolia queryID" // required only for Click Analytics,
 })
@@ -94,7 +94,7 @@ analytics.track('Product Viewed', {
 
 analytics.track('Product Clicked', {
     objectID: "hit objectID",
-    position: "hit position on index",
+    position: hitPositionOnIndex,  // number
     index: "my-index-name",
     queryID: "Algolia queryID" // required only for Click Analytics,
 })
