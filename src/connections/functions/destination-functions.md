@@ -86,7 +86,7 @@ To change which type of event the handler listens to, you can rename it to the n
 
 A function's execution is considered successful if it finishes without any errors. You can also `throw` an error to indicate a failure on purpose. You can use these errors to validate event data before processing it, to ensure your function works as expected.
 
-There are four pre-defined error types that you can `throw` to indicate that the function ran as expected, but that data could not be delivered:
+You can `throw` the following pre-defined error types to indicate that the function ran as expected, but that data could not be delivered:
 
 - `EventNotSupported`
 - `InvalidEventPayload`
