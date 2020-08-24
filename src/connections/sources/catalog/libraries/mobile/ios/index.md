@@ -102,7 +102,7 @@ configuration.trackPushNotifications = YES;
 ```
 
 ### Automatic Deep Link Tracking
-Tracking deep linking will automatically track `Deep Link Clicked` and `Deep Link Opened`.
+Tracking deep linking will automatically track `Deep Link Opened`.
 
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
