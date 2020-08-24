@@ -350,8 +350,9 @@ async function onRequest(request, settings) {
 - **Invalid Settings**: A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/).
 - **Message Rejected**: Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
 - **Unsupported Event Type**: Your code does not implement a specific event type (`onTrack()`, etc.) or threw a `EventNotSupported` error.
+- **Retry** - Your code threw `RetryError` indicating that the function should be retried.
 
-These errors are not retried.
+Segment only attempts to run your source function again if a **Retry** error occurs.
 
 ## Managing source functions
 
