@@ -28,7 +28,7 @@ analytics.identify('userId123', {
   lastName: 'Gibbon'
 })
 ```
-Identify your users in UserLeap with the Identify method. Segment`Traits` map to UserLeap `Attributes`.
+Identify your users in UserLeap using Segment's Identify method. Segment `traits` map to UserLeap `attributes`.
 
 **Important:** You can only create new users with Identify calls.
 
