@@ -30,7 +30,7 @@ analytics.identify('userId123', {
 ```
 Use Segment's Identify method to identify your users in UserLeap. Segment `traits` map to UserLeap `attributes`.
 
-**Important:** Only Identify calls can create new users.
+**Important:** Only Identify calls can create new users in UserLeap.
 
 ## Track
 If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
