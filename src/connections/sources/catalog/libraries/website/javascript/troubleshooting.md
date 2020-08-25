@@ -112,6 +112,25 @@ console.log(JSON.stringify({ x: undefined, y: 6 }));
 // expected output: "{"y":6}"
 ```
 
+
+### Can I overwrite the context fields?
+
+Yes.  This can be useful if some of these fields contain information you don't want to collect.  
+
+For example, imagine that your website allows users to view a receipt for purchases at the URL `https://mywebsite.com/store/purchases`.  Your users click a link that redirects to that specific URL, your app sets a `receiptId` in the query string, and returns the appropriate receipt.  You also send a Track call to Segment from this page.
+
+Since this `receiptId` might contain sensitive information, you can prevent the context field `page.url` from being included in your Track call by overwriting the field in the `options` parameter, as in the example below:
+
+```js
+analytics.track("Receipt Viewed", {}, {
+    page: {
+        url: null
+    }   
+})
+```
+
+This works for any [context field](/docs/connections/spec/common/#context) that Segment automatically collects.
+
 ## Known Issues:
 
 [Review and contribute to these on Github](https://github.com/segmentio/analytics.js/issues)
