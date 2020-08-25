@@ -48,7 +48,7 @@ analytics.page()
 ```
 Segment sends Page calls to UserLeap as a `pageview` which you can use as filtering criteria for your surveys.
 
-Add Page URLs mapped to your Segment Page call's `properties.url` field in your UserLeap [Events dashboard](https://app.userleap.com/events) before sending them through Segment.
+Add Page URLs  in your UserLeap [Events dashboard](https://app.userleap.com/events) and map them to your Segment Page call's `properties.url` field before you start sending Segment data to UserLeap.
 
 
 ## Alias
