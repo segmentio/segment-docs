@@ -39,7 +39,7 @@ analytics.track('Button Clicked');
 ```
 Use Track calls to track events and use them as filtering criteria for your Surveys.
 
-Add Triggered Events mapped to your Segment Track event names in your UserLeap [Events dashboard](https://app.userleap.com/events) before sending them through Segment.
+Create Triggered Events in your UserLeap [Events dashboard](https://app.userleap.com/events) and map them to your Segment Track event names before you start sending Segment data to UserLeap.
 
 ## Page
 If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
