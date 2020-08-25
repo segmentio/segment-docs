@@ -5,7 +5,7 @@ rewrite: true
 
 [UserLeap](https://userleap.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a microsurvey platform that continuously identifies opportunities to build better experiences. Gain clarity into customer needs and grow faster.
 
-This destination is maintained by UserLeap. For any issues with the destination, contact support@userleap.com.
+This destination is maintained by UserLeap. For any issues with the destination, contact [the UserLeap support team](mailto:support@userleap.com).
 
 ## Getting Started
 
