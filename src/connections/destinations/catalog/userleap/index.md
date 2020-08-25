@@ -30,16 +30,16 @@ analytics.identify('userId123', {
 ```
 Identify your users in UserLeap using Segment's Identify method. Segment `traits` map to UserLeap `attributes`.
 
-**Important:** You can only create new users with Identify calls.
+**Important:** Only Identify calls can create new users.
 
 ## Track
 If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 ```js
-analytics.track('Clicked Button');
+analytics.track('Button Clicked');
 ```
 Use Track calls to track events and use them as filtering criteria for your Surveys.
 
-**Important:** Add Triggered Events mapped to your Segment Track event names in your UserLeap [Events dashboard](https://app.userleap.com/events) before sending them through Segment.
+Add Triggered Events mapped to your Segment Track event names in your UserLeap [Events dashboard](https://app.userleap.com/events) before sending them through Segment.
 
 ## Page
 If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
@@ -48,7 +48,7 @@ analytics.page()
 ```
 Segment sends Page calls to UserLeap as a `pageview` which you can use as filtering criteria for your surveys.
 
-**Important:** Add Page URLs mapped to your Segment Page call's `properties.url` field in your UserLeap [Events dashboard](https://app.userleap.com/events) before sending them through Segment.
+Add Page URLs mapped to your Segment Page call's `properties.url` field in your UserLeap [Events dashboard](https://app.userleap.com/events) before sending them through Segment.
 
 
 ## Alias
