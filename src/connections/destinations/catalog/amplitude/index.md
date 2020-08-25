@@ -429,21 +429,21 @@ it's how you tell Segment which trait should be used as the group type.
   `.group()` calls will contain the Amplitude "group value". It's how you tell
 Segment which trait should be used as the group value.
 
-For example, if you specified `industry` as the "Amplitude Group Type Trait",
+For example, if you specified `group_type` as the "Amplitude Group Type Trait",
 and `name` as the "Amplitude Group Value Trait", then the following call:
 
 ```js
 analytics.group("082108c8-f51e-485f-9d2d-b6ba57ee2c40", {
-  industry: "Placeholding",
+  group_type: "Organization",
   name: "ExampleCorp, LLC",
   employees: "20",
   email: "hello@example.com"
 });
 ```
 
-Would associate the current user with the group with type `"Placeholding"` and
+Would associate the current user with the group with type `"Organization"` and
 value `"ExampleCorp, LLC"`. On client-side, that's all that happens. On
-server-side and Android, the traits you pass (in this case, `industry`, `name`,
+server-side and Android, the traits you pass (in this case, `group_type`, `name`,
 `employees`, and `email`) will be provided as `group_properties` of that group.
 
 What you provide as group ID doesn't matter, but Segment requires that all
