@@ -66,7 +66,7 @@ Device-mode web data is sent using Analytics.js, with Analytics.js either servin
 
 Our Adobe Analytics device-mode destination code is open sourced on Github. Feel free to check it out:
 [iOS](https://github.com/segment-integrations/analytics-ios-integration-adobe-analytics),
-[Android](hhttps://github.com/segment-integrations/analytics-android-integration-adobe-analytics) and
+[Android](https://github.com/segment-integrations/analytics-android-integration-adobe-analytics) and
 [JS](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/adobe-analytics).
 
 ### Initialization
