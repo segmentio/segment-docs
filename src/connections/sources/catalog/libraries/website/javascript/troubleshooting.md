@@ -117,7 +117,7 @@ console.log(JSON.stringify({ x: undefined, y: 6 }));
 
 Yes.  This can be useful if some of these fields contain information you don't want collected.  
 
-For example, suppose your website allows users to view a receipt for purchases at the URL `https://mywebsite.com/store/purchases`.  Users click on a link that redirects to that specific URL, your app sets a `receiptId` in the query string, and the appropriate receipt will be returned.  You also send Track call to Segment from this page.
+For example, imagine that your website allows users to view a receipt for purchases at the URL `https://mywebsite.com/store/purchases`.  Your users click a link that redirects to that specific URL, your app sets a `receiptId` in the query string, and returns the appropriate receipt.  You also send a Track call to Segment from this page.
 
 Since this `receiptId` could contain sensitive information, you can stop the context field `page.url` from being sent in your Track call by overwriting the field in the `options` parameter like so:
 
