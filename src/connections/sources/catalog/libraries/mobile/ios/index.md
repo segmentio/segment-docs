@@ -736,31 +736,40 @@ iOS users can opt into limited ad tracking (similar to ad-blocking for browsers)
 
 ## Bleeding Edge Releases
 
-We publish stable releases every second Wednesday, when we tag and release the `master` branch.
+Segment publishes stable releases every second Wednesday by tagging and releasing the `master` branch.
 
-After releasing, we also merge the `dev` branch merged into `master`. In general, code will be available on `master` for two weeks before being tagged as a stable release. During this two week period, it is available for use using Cocoapods and Carthage — our equivalent of bleeding edge releases. We recommend using this version to try out upcoming features and fixes that have not been published yet.
+After release, Segment also merges the release's `dev` branch into `master`. In general, code is available on `master` for two weeks before it is tagged as a stable release. During this period, the code is available using Cocoapods and Carthage — our equivalent of bleeding edge releases. We recommend that you use this version to try out upcoming features and fixes that have not been published yet.
 
-To use the `master` branch for CocoaPods users, use this line in your `Podfile`:
+To use the `master` branch, use one of the following methods:
+
+{% codeexample %}
+{% codeexampletab CocoaPods %}
+Add this line in your `Podfile`:
 
 ```
 pod 'Analytics', :git => 'https://github.com/segmentio/analytics-ios.git', :branch => 'master'
 ```
+{% endcodeexampletab %}
 
-To use the `master` branch for Carthage users, use this line in your `Cartfile`:
+{% codeexampletab Carthage %}
+Add this line in your `Cartfile`:
 
 ```
 github "segmentio/analytics-ios" "master"
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
 
 ## Packaging device-mode destination SDKs
 
-By default, the Segment `Analytics` pod does not package any external SDKs.
+By default, the Segment `Analytics` pod does not package any destination SDKs.
 
 ```ruby
 pod 'Analytics', '~> 3.1.0'
 ```
 
-To add destinations using Device-mode, first add the dependencies you need. You can find these in the Segment app when you open the destination sheet for any mobile destination with a Device-mode option.
+To add destinations using Device-mode, first add the dependencies you need. You can find these in the Segment app when you open the destination sheet for[ any mobile destination with a Device-mode option](/docs/connections/destinations/cmodes-compare/). 
 
 ```ruby
 pod 'Segment-Bugsnag'
