@@ -8,10 +8,6 @@ strat: facebook
 
 This document was last updated on October 04, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
-**Use Cases**
-
-* [Improve mobile app retention with Facebook Ads](https://segment.com/recipes/mobile-app-retention-facebook-ads/)
-
 
 ## Other Facebook Destinations Supported by Segment
 This page is about the **Facebook App Events**. For documentation on other Facebook destinations, see the pages linked below.

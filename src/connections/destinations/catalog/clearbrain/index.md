@@ -9,17 +9,6 @@ This destination is maintained by ClearBrain. For any issues with the destinatio
 _**NOTE:** ClearBrain is currently in beta, and this doc was last updated on January 23, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the ClearBrain Destination and its documentation, [let us know](mailto:support@clearbrain.com)!_
 
 
-**Use Cases**
-
-* [Trigger Intercom messages when users are likely to upgrade with ClearBrain](https://segment.com/recipes/trigger-upgrade-messages-intent-intercom-clearbrain/)
-* [Trigger in-app notifications based on user intent to upgrade with Appcues and ClearBrain](https://segment.com/recipes/trigger-upgrade-notifications-appcues-clearbrain/)
-* [Retarget users on Facebook by potential return on ad spend (ROAS)](https://segment.com/recipes/facebook-retargeting-by-roas/)
-* [Trigger upgrade messages to users who are likely to upgrade with Braze and ClearBrain](https://segment.com/recipes/trigger-upgrade-messages-braze-clearbrain/)
-* [Personalize notifications based on topics of interest with Iterable and ClearBrain](https://segment.com/recipes/personalize-notifications-by-interest-iterable-clearbrain/)
-* [Personalize Web Content with Optimizely and ClearBrain](https://segment.com/recipes/personalize-web-pages-optimizely-clearbrain/)
-
-
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
