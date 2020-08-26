@@ -1,5 +1,5 @@
 ---
-title: Sync Reports and Errors
+title: Sync Reports and error reporting
 ---
 
 Segment Data Lakes generates reports with operational metrics about each sync to your data lake so you can monitor sync performance. These sync reports are stored in your S3 bucket and Glue Data Catalog. This means you have access to the raw data, so you can query it to answer questions and set up alerting and monitoring tools.
@@ -14,9 +14,9 @@ The table has the following columns in its schema:
 | `workspace_id`    | Distinct ID assigned to each Segment workspace and [found in the workspace settings](https://app.segment.com/goto-my-workspace/settings/basic). |
 | `source_id`       | Distinct ID assigned to each Segment source, found in the Source Settings > API Keys > Source ID.         |
 | `database`        | Name of the Glue Database used to store sync report tables. Segment automatically creaets this database during the Data Lakes set up process.         |
-| `emr_cluster_id`  | ID of the EMR cluster which Data Lakes uses, found in the Data Lakes Settings page in the Segment app.  |
-| `s3_bucket`       | Name of the S3 bucket which Data Lakes uses, found in the Data Lakes Settings page in the Segment app.  |
-| `run_id`          | ID dynamically generated and assigned to each Data Lakes run.   |
+| `emr_cluster_id`  | ID of the EMR cluster which Data Lakes uses, found in the [Data Lakes Settings page]().  |
+| `s3_bucket`       | Name of the S3 bucket which Data Lakes uses, found in the [Data Lakes Settings page]().  |
+| `run_id`          | ID dynamically generated and assigned to each Data Lakes sync run.   |
 | `start_time`      | Time when the sync run started, in UTC.         |
 | `finish_time`     | Time when the sync run finished, in UTC.        |
 | `sync_duration`   | The length of the sync in minutes, calculated by the difference between the start and finish time.  |
@@ -35,7 +35,7 @@ The Glue Database named `__segment_datalake` stores the schema of the `sync_repo
 ![](images/dl_syncreports_glue.png)
 
 
-The sync_reports table is available in S3 and Glue only once a sync completes. Sync reports are not available for syncs in progress.
+The `sync_reports` table is available in S3 and Glue only once a sync completes. Sync reports are not available for syncs in progress.
 
 ## Data Location
 
@@ -54,8 +54,8 @@ Each table and event is stored as a separate JSON object which contains the deta
 
 The example below shows the raw JSON object for a **successful** sync report.
 
-```js
-{
+```json
+  {
     "type": "source",
     "workspace_id": "P3IMS7SBDH",
     "source_id": "9IP56Shn6",
@@ -68,7 +68,7 @@ The example below shows the raw JSON object for a **successful** sync report.
     "database": "ios_prod",
     "row_count": 81020,
     "emr_cluster_id": "j-3SXSUSDNPIS",
-    "s3_bucket": "segment-datalakes-bucket"
+    "s3_bucket": "my-segment-datalakes-bucket"
   }
   {
     "type": "event",
@@ -99,7 +99,7 @@ The example below shows the raw JSON object for a **successful** sync report.
     ],
     "row_count": 20020,
     "emr_cluster_id": "j-3SXSUSDNPIS",
-    "s3_bucket": "segment-datalakes-bucket"
+    "s3_bucket": "my-segment-datalakes-bucket"
   }
   {
     "type": "event",
@@ -120,14 +120,14 @@ The example below shows the raw JSON object for a **successful** sync report.
     ],
     "row_count": 20260,
     "emr_cluster_id": "j-3SXSUSDNPIS",
-    "s3_bucket": "segment-datalakes-bucket"
+    "s3_bucket": "my-segment-datalakes-bucket"
 }
 ```
 
 
 The example below shows the raw JSON object for a **failed** sync report.
 
-```js
+```json
 {
     "type": "source",
     "workspace_id": "P3IMS7SBDH",
