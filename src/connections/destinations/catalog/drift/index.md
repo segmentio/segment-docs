@@ -10,12 +10,6 @@ The cloud-mode destination is maintained by Drift. For any issues with the desti
 
 This document was last updated on January 25, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
-**Use Cases**
-
-* [Personalize Drift live chat messages based on a visitor's matched industry](https://segment.com/recipes/personalize-drift-live-chat-industry/)
-* [Deliver hyper-relevant Drift messages based on a visitor's job role](https://segment.com/recipes/personalize-drift-live-chat-role/)
-* [Use Drift messages and email to nudge users to the Aha moment](https://segment.com/recipes/drift-message-aha-moment/)
-* [Personalize Drift welcome messages by including a visitor's company name](https://segment.com/recipes/personalize-drift-live-chat-with-company-name/)
 
 ## Getting Started
 

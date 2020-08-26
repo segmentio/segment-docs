@@ -6,9 +6,6 @@ title: Mailchimp Destination
 
 This document was last updated on May 08, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
-**Use Cases**
-
-* [Email shopping cart abandoners and generate more conversions with MailChimp](https://segment.com/recipes/email-shopping-cart-abandoners-mailchimp/)
 
 ## Getting Started
 
