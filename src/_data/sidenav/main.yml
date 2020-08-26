@@ -286,13 +286,15 @@ sections:
   section:
   - path: /protocols
     title: Overview
-  - section_title: Create a Tracking Plan
+  - path: /protocols/basic
+    title: Create a Basic Tracking Plan
+  - section_title: Protocols Tracking Plans
     slug: protocols/tracking-plan
     section:
     - path: /protocols/tracking-plan/best-practices
       title: Data Collection Best Practices
     - path: /protocols/tracking-plan/create
-      title: The Tracking Plan
+      title: Create a Protocols Tracking Plan
     - path: /protocols/tracking-plan/libraries
       title: Tracking Plan Libraries
   - section_title: Validate with violations

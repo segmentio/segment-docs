@@ -1,5 +1,5 @@
 ---
-title: Basic Tracking Plan
+title: The Segment Basic Tracking Plan
 ---
 
 ( to be reviewed by PMM )
