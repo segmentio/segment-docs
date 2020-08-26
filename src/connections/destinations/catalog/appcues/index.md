@@ -8,9 +8,6 @@ This document was last updated on November 08, 2018. If you notice any gaps, out
 
 **Use Cases**
 
-* [Send in-app notifications based on topics of interest with Appcues](https://segment.com/recipes/in-app-notifications-topic-interest-appcues/)
-* [Trigger in-app notifications based on user intent to upgrade with Appcues and ClearBrain](https://segment.com/recipes/trigger-upgrade-notifications-appcues-clearbrain/)
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
