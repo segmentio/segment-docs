@@ -286,8 +286,8 @@ sections:
   section:
   - path: /protocols
     title: Overview
-  - path: /protocols/basic
-    title: Create a Basic Tracking Plan
+  - path: /protocols/starter
+    title: Create a starter Tracking Plan
   - section_title: Protocols Tracking Plans
     slug: protocols/tracking-plan
     section:
