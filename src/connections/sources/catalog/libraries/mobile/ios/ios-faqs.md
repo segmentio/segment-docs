@@ -9,28 +9,28 @@ The core Segment SDK is extremely lightweight. It weighs in at about 212kb.
 
 ## Can I install the SDK Manually with a Dynamic Framework?
 
-We **highly recommend** using Cocoapods.
+Segment **highly recommends** using Cocoapods. We cannot guarantee support if you do not use a dependency manager.
 
 However, if you cannot use Cocoapods or Carthage, you can manually install our dynamic framework allowing you to send data to Segment and on to enabled cloud-mode destinations.  We do not support sending data to bundled, device-mode integrations outside of Cocoapods.
 
 Here are the steps for installing manually:
 
-  1. Download the [latest built SDK](https://github.com/segmentio/analytics-ios/releases/), and unzip the zip file.
-  2. Drag the unzipped `Analytics.framework` folder into your XCode project.
-  3. In the `General Tab` for your project, search for `Embedded Binaries` and add the `Analytics.framework`.
+1. Download the [latest built SDK](https://github.com/segmentio/analytics-ios/releases/), and unzip the zip file.
+2. Drag the unzipped `Analytics.framework` folder into your XCode project.
+3. In the `General Tab` for your project, search for `Embedded Binaries` and add the `Analytics.framework`.
 
 
 ![](images/embeddedbinaries.png)
 
 Once you've installed the framework, just import the header file and install as described above in [Install the SDK](/docs/connections/sources/catalog/libraries/mobile/ios/#install-the-sdk).
 
-Note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
+If you choose not to use a dependency manager, you must manually keep files up-to-date with regularly scheduled, manual updates.
 
 ## What if your SDK doesn't support feature X?
 
 If you're using a Device-mode for a mobile destination, if you want to access a feature from a tool's native SDK, you can include the header file and call the method just as normal.
 
-For example, you might want access to Flurry's location logging or Localytics's attribution parameters. To use the destination's SDK, just import the headers and then access the SDK as you would without Segment. We'll still handle initialization, event, screen & user tracking, plus all the proxied services and data storage for you.
+For example, you might want access to Flurry's location logging or Localytics's attribution parameters. To use the destination's SDK, just import the headers and then access the SDK as you would without Segment. Segment still handles initialization, event, screen and user tracking, plus all the proxied services and data storage for you.
 
 Here's an example for Flurry location logging:
 
@@ -118,11 +118,11 @@ For services that send push notifications, you first want to [create a Push SSL 
 
 
 
-## How Do You Handle Unique Identifiers?
+## How does Segment handle unique identifiers?
 
 A key component of any analytics platform is consistently and accurately identifying users. Some kind of ID must be assigned and persisted on the device so that user actions can be effectively studied. This is especially important for funnel conversion analysis and retention analysis.
 
-Naturally the Analytics SDK needs a unique ID for each user. To protect end-users' privacy, Apple places restrictions on how these IDs can be generated and used. Here's an explanation of these policies from Apple, and how we generate IDs in compliance.
+Naturally the Analytics SDK needs a unique ID for each user. To protect end-users' privacy, Apple places restrictions on how these IDs can be generated and used. Here's an explanation of these policies from Apple, and how Segment generates IDs in compliance.
 
 Before iOS 5 developers had access to uniqueIdentifier which was a hardware-specific serial number that was consistent across different apps, vendors and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a). In iOS 6 Apple introduced the identifierForVendor which protects end-users from cross-app identification. In iOS 7 Apple [restricted access to the device's MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/), which was being used by many developers as a workaround to get a device-specific serial number similar to like uniqueIdentifier.
 
@@ -131,20 +131,28 @@ Segment's iOS library supports iOS 7+ by generating a UUID and storing it on dis
 
 ## Should I include each service's SDK alongside Segment?
 
-No, don't include an SDK manually for a service we support. That will cause symbol conflicts/namespace collisions. Sometimes it can even fail silently :( So make sure you remove the old Google Analytics or Mixpanel SDK when you install Segment's SDK.
+No. Don't include destination native-SDKs manually for a service Segment supports. In fact, you should remove old SDKs when you install the Segment SDK. Keeping the duplicate native SDK can cause symbol conflicts and namespace collisions, and sometimes even fail silently.
 
 ## How does the SDK queue API calls?
 
-Our SDK queues API calls so that we don't use up your user's battery life by making a network request for each event tracked.
+The Segment SDK queues API calls rather than making a network request for each event tracked, to help improve the user's battery life.
 
-Here's how queuing works for server-side destinations: When you make an API call (e.g. `-track:`) that call is added to the queue. The SDK sends the events to the server in batches (by default, the batch size is `100`). The batches are then sent either when there are 20 or more events in the queue, on a scheduled timer every 30 seconds, or when the app goes to the background. To limit memory and disk usage, we only queue upto 1000 events.
+For server-side destinations, when you make an API call (Track, Page, etc.) the Segment SDK adds that call to the queue, and sends the events to the Segment servers in batches (by default, the batch size is `100`).
 
-When the app is terminated we persist the queue to disk and load that data at app launch so there is no data loss.
-The queue behavior may differ in packaged destinations.
+Batches are sent either:
+- when there are 20 or more events in the queue
+- on a scheduled timer every 30 seconds
+- when the app goes to the background
+
+To limit memory and disk usage, Segment only queues up to 1000 events.
+
+When the app is terminated, Segment saves the queue to disk and loads that data again at app launch so there is no data loss.
+
+The queue behavior might differ for packaged destinations.
 
 ## Can I set user traits without a User ID?
 
-Yes! Just pass a `nil` value for the `userId` into your [`identify`](/docs/connections/spec/identify) call, like this:
+Yes! You can pass a `nil` value for the `userId` in an [Identify call](/docs/connections/spec/identify), like in the following example:
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -164,23 +172,23 @@ Yes! Just pass a `nil` value for the `userId` into your [`identify`](/docs/conne
 {% endcodeexample %}
 
 
-
-
 ## Do you support iOS 5?
 
-Our SDK does not support iOS 5. If you need support for iOS 5 it's possible by forking [our iOS repo on GitHub](https://github.com/segmentio/analytics-ios/) and [building the framework](https://github.com/segmentio/analytics-ios/wiki/Building-the-framework).
+The Segment Analytics-iOS SDK does not support iOS 5. If you need support for iOS 5 you can forking [the Segment iOS repo on GitHub](https://github.com/segmentio/analytics-ios/) and [build the framework](https://github.com/segmentio/analytics-ios/wiki/Building-the-framework).
 
 ## Is The Segment SDK Compatible with Swift?
 
-Indeed! Swift's compatibility with Objective-C lets you create a source that contains files written in either language, so to use our SDK from a Swift source just follow the instructions from Apple [here](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
+Yes! Swift's compatibility with Objective-C lets you create a source that contains files written in either language. To use the Segment Analytics-iOS SDK from a Swift source, just [follow these instructions from Apple](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
 
 ## Can I help develop a destination?
 
-Yep! Our SDK is [open-source](https://github.com/segmentio/analytics-ios). If you'd like to contribute, fix a bug, or add a destination - here's [documentation on how to do so](https://github.com/segmentio/analytics-ios/blob/master/CONTRIBUTING.md). to add a destination, make sure you contact our [partners team](https://github.com/segmentio/analytics-ios/blob/master/CONTRIBUTING.md) first.
+Yes! The Segment [Analytics-iOS SDK is open-source](https://github.com/segmentio/analytics-ios). If you'd like to contribute, fix a bug, or add a destination - here's [see the Contrbuting guide for instructions](https://github.com/segmentio/analytics-ios/blob/master/CONTRIBUTING.md).
+
+If you want to add a destination, contact the [Segment Partners Team](https://github.com/segmentio/analytics-ios/blob/master/CONTRIBUTING.md) first.
 
 ## How do I know when a destination is initialized?
 
-The iOS library will post a notification to indicate when it initializes any destination so you can call it's methods directly.
+The iOS library posts a notification to indicate when it initializes any destination so you can call its methods directly.
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -210,9 +218,9 @@ The iOS library will post a notification to indicate when it initializes any des
 
 ## Can I anonymize IP addresses?
 
-We collect IP address for client-side (iOS, Android, Analytics.js and Xamarin) events automatically.
+Segment collects IP addresses for client-side (iOS, Android, Analytics.js and Xamarin) events automatically.
 
-If you don't want us to record your tracked users' IP in destinations and S3, you can set your event's `context.ip` field to `0.0.0.0` . Our server won't record the IP address of the client for libraries if the `context.ip` field is already set. An example would look like this:
+If you don't want to record your tracked users' IP in destinations and S3, you can set your event's `context.ip` field to `0.0.0.0` . The Segment servers won't record the IP address of the client for libraries if the `context.ip` field is already set. An example would look like this:
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -233,7 +241,7 @@ If you don't want us to record your tracked users' IP in destinations and S3, yo
 {% endcodeexample %}
 
 
-If you'd like to centralize this logic, you can write a middleware for it!
+If you'd like to centralize this logic, you can write a [middleware](middleware/) for it!
 
 ## IDFA
 
