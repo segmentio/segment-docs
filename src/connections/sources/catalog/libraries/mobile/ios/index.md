@@ -6,7 +6,7 @@ strat: ios
 
 Analytics for iOS makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
-All of Segment's libraries are open-source, so you can [view Analytics for iOS on Github](https://github.com/segmentio/analytics-ios), or check out our [browser and server-side libraries](/docs/connections/sources/catalog/) too.
+All of Segment's libraries are open-source, so you can [view Analytics for iOS on Github](https://github.com/segmentio/analytics-ios), or check out the Segment [browser and server-side libraries](/docs/connections/sources/catalog/) too.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-ios/tags.atom).
 
@@ -66,15 +66,15 @@ And of course, import the SDK in the files that you use it with:
 
 ### Including SDKs for destinations using Device-mode
 
-In the interest of keeping our SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data is sent using Segment's servers to any tools you've enabled using the default Cloud-mode.
+In the interest of keeping the Analytics-iOS SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data is sent through Segment's servers to any tools you enable using the default Cloud-mode.
 
-[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks).
+Some destinations [require or offer Device-mode connections](/docs/connections/destinations/#connection-modes). For those destinations, you must take some additional steps as [to package the device-mode SDKs](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks).
 
-Now that the SDK is installed and setup, you're ready to...
+Now that the Segment Analytics-iOS SDK is installed and set up, you're ready to...
 
 ### Configure and set up the SDK
 
-The `SEGAnalyticsConfiguration` class provides a set of properties that control various policies of the `SEGAnalytics` instance. You initialize it with a `writeKey` like so:
+The `SEGAnalyticsConfiguration` class provides a set of properties that control various policies of the `SEGAnalytics` instance. You initialize it with a `writeKey` as in the examples below:
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -102,7 +102,7 @@ The `SEGAnalyticsConfiguration` class provides a set of properties that control 
 
 ### Application Lifecycle Tracking
 
-Our SDK can automatically instrument common application lifecycle events such as "Application Installed", "Application Updated" and "Application Opened". Simply enable this option when you initialize the SDK.
+The Segment Analytics-iOS SDK can automatically instrument [common application lifecycle events](/docs/connections/spec/mobile/) such as "Application Installed", "Application Updated" and "Application Opened". Simply enable this option when you initialize the SDK.
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -126,7 +126,7 @@ configuration.trackApplicationLifecycleEvents = YES;
 
 ### Automatic Screen Tracking
 
-Our SDK can automatically instrument screen calls. It uses method swizzling to detect when ViewController's are loaded and uses the label of the view controller (or the class name if a label is not available) as the screen name. It removes the string "ViewController" from the name (if present).
+The Segment Analytics-iOS SDK can automatically instrument screen calls. It uses method swizzling to detect when `ViewController`s are loaded, and uses the label of the view controller (or the class name if a label is not available) as the screen name. It removes the string "ViewController" from the name if one is present.
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -148,7 +148,8 @@ configuration.recordScreenViews = YES;
 
 
 ### Automatic Push Notification Tracking
-Tracking Push notifications will automatically track `Push Notification Received` and `Push Notification Tapped`.
+
+When you set `trackPushNotifications` to `YES`, the SDK automatically sends a Track event for `Push Notification Received` and `Push Notification Tapped`.
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -170,7 +171,8 @@ configuration.trackPushNotifications = YES;
 
 
 ### Automatic Deep Link Tracking
-Tracking deep linking will automatically track `Deep Link Opened`.
+
+When you set `trackDeepLinks` to `YES`, the SDK automatically sends a Track event for `Deep Link Opened`.
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -193,7 +195,7 @@ configuration.trackDeepLinks = YES;
 
 ### Flushing
 
-You can set the number of events should queue before flushing. Setting this to `1` will send events as they come in (i.e. not send batched events) and will use more battery. `20` by default.
+You can set the number of events that should queue before flushing. Setting this to `1` will send events as they come in (i.e. not send batched events) and will use more battery. `20` by default.
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -239,13 +241,13 @@ You can also manually `flush` the queue:
 Now that the Segment SDK and any accompanying packaged SDKs are installed, you're ready to collect some data!
 
 > note ""
-> **Good to know**: For any of the different methods described in this doc, you can replace the properties and traits in the code samples with variables that represent the data collected.
+> **Good to know**: For any of the methods described in this doc, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 ### Identify
 
 Segment's Identify method lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
-We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits are changed.
+Segment recommends that you call Identify once when you first create the user's account, and only call it again later when they update their traits or you change them.
 
 **Note:** Segment automatically assigns an `anonymousId` to users before you identify them. The `userId` is what connects anonymous activities across devices (for example, iPhone and iPad).
 
@@ -271,7 +273,7 @@ Example `identify` call:
 
 This call identifies a user by his unique User ID (the one you know him by in your database) and labels him with `name` and `email` traits.
 
-The `identify` call has the following fields:
+The Identify call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -292,17 +294,17 @@ Analytics for iOS works on its own background thread, so it will never block the
 
 Calling `- identify:` with a `userId` will write that ID to disk to be used in subsequent calls. That ID can be removed either by uninstalling the app or by calling [`reset`](#reset).
 
-Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
+Find details on the identify method payload in the [Identify Spec documentation](/docs/connections/spec/identify/).
 
 ### Track
 
 Segment's Track method lets you record the actions your users perform.  Every action triggers what we call an "event", which can also have associated properties.
 
-To get started, our SDK can automatically track a few key common events with our [Native Mobile Spec](/docs/connections/spec/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. Simply enable this option during initialization.
+To get started, the Segment iOS SDK can automatically track a few key common events with the [Segment Native Mobile Spec](/docs/connections/spec/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. Enable this option during initialization.
 
-You'll also want to track events that are indicators of success for your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. We recommend tracking just a few important events. You can always add more later!
+You might also want to track events that are indicators of success for your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. Segment recommends tracking just a few important events to start out. You can always add more later!
 
-Example `track` call:
+An example Track call might look like this:
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -320,11 +322,11 @@ Example `track` call:
 
 {% endcodeexample %}
 
-This example `track` call tells us that your user just triggered the **Item Purchased** event recording the `item` name of "Sword of Heracles" and `revenue` of 2.95.
+This example Track call above tells you that your user just triggered the **Item Purchased** event, and records the `item` name of "Sword of Heracles" and `revenue` of 2.95.
 
-`track` event properties can be anything you want to record. In this case, item and revenue.
+Track event properties can be anything you want to record. In this case, item and revenue.
 
-The `track` call has the following fields:
+The Track call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -344,11 +346,11 @@ The `track` call has the following fields:
 
 ### Screen
 
-The [`screen`](/docs/connections/spec/screen/) method lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
+The [Screen](/docs/connections/spec/screen/) method lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
 
 You'll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
 
-Example `screen` call:
+Example Screen` call:
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -385,15 +387,15 @@ The `screen` call has the following fields:
   </tr>
 </table>
 
-Find details on the **`screen` payload** in our [Spec](/docs/connections/spec/screen/).
+Find details on the Screen payload in the [Screen Spec documentation](/docs/connections/spec/screen/).
 
 ### Group
 
-`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
+The Segment Group method lets you associate an [identified user](#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
 This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
-Example `group` call:
+An example Group call might look like this:
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -412,7 +414,7 @@ traits:@{ @"name": @"Initech", @"description": @"Accounting Software" }];
 {% endcodeexample %}
 
 
-The `group` call has the following fields:
+The Group call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -437,11 +439,11 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 ### Alias
 
-`alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
+The Segment Alias method is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in some destinations.
 
 In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
-Example `alias` call:
+Example Alias call:
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -460,7 +462,7 @@ Example `alias` call:
 
 
 
-The `alias` call has the following fields:
+The Alias call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -473,7 +475,7 @@ The `alias` call has the following fields:
   </tr>
 </table>
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/).
+For more details about the Alias method, including the Alias call payload, check out the [Alias Spec documentation](/docs/connections/spec/alias/).
 
 ### AnonymousId
 
@@ -517,13 +519,14 @@ Clearing all information about the user is as simple as calling:
 
 {% endcodeexample %}
 
-Events queued on disk are not cleared and are uploaded the next time the app starts.
+**Events in the queue are not cleared**, and are sent to Segment the next time the app starts. You might want to call Flush in combination before you call Reset.
 
+> info ""
 > **Note**: Each time you call `reset`, a new AnonymousId is generated the next time the app is opened, which can impact the number of Monthly Tracked Users (MTUs) you process.
 
 ### Disabling Data Collection for Users who opt out
 
-Depending on the audience for your app (e.g. children) or the countries where you sell your app (e.g. the EU), you may need to offer the ability for users to opt-out of analytics data collection inside your app. You can turn off forwarding to ALL destinations including Segment itself:
+Depending on the audience for your app (for example, children) or the countries where you sell your app (for example, the EU), you might need to offer the ability for users to opt-out of analytics data collection from inside your app. You can turn off forwarding to ALL destinations including Segment itself using the following code:
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -542,7 +545,7 @@ Depending on the audience for your app (e.g. children) or the countries where yo
 
 
 
-Or if they opt-back-in, you can re-enable data collection:
+Or if the user opts back in, you can re-enable data collection:
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -561,13 +564,14 @@ Or if they opt-back-in, you can re-enable data collection:
 {% endcodeexample %}
 
 
-Note: If you disable the Segment SDK, it ensures that all data collection method invocations (eg. `track`, `identify`, etc) are ignored; however, it does not tear down inititialized SDKs. If your packaged SDKs are collecting data automatically or outside of Segment, disabling Segment does not address that. We recommend invoking corresponding `disable` methods for each of your packaged SDKs in response to user opt-out to ensure that any automatic data collection is stopped.
+> warning ""
+> If you disable the Segment SDK in response to user opt-out, all Segment method invocations (Track, Screen, Identify, etc) are ignored. However, thise does not disable any destination SDKs that you bundled along with Segment. You should consult the vendor documentation for those destinations, and invoke the corresponding `disable` methods for each packaged SDK to ensure that any automatic data collection stops.
 
 ## Selecting Destinations
 
-The `alias`, `group`, `identify`, `page` and `track` calls can all be passed an object of `destinations` that lets you turn certain destinations on or off. By default all destinations are enabled.
+You can pass an `integrations` object on Page, Track, Alias, Group and Identify calls to turn specific destinations on or off. All destinations are enabled by default.
 
-You can enable or disable destinations by specifying an `NSDictionary *` in the options parameter of our methods as follows:
+You can enable or disable destinations by specifying an `NSDictionary *` in the `options` parameter of the Segment methods as in the examples below:
 
 
 {% codeexample %}
@@ -592,8 +596,7 @@ options:@{
 {% endcodeexample %}
 
 
-
-Here's an example showing an `- track:` call that is sent to all enabled destinations except Mixpanel:
+The example below shows a Track call that is sent to all enabled destinations except Mixpanel:
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -614,13 +617,13 @@ Here's an example showing an `- track:` call that is sent to all enabled destina
 
 
 
-Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (for example "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
-**Note:** Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
+**Note:** Business level customers can filter track calls from the Segment App from the source schema page. Segment recommends that you use this method when possible, because simpler, and can be updated without any code changes in your app.
 
-### Destinations in Debugger
+### Disabled destinations in the debugger
 
-If you are seeing any of your destinations turned off in the raw version of requests in the Segment live debugger, but you haven't added those to your requests, like this:
+When you view raw payload data in the [Segment Debugger](/docs/connections/sources/debugger/), you might see an `integrations` object in the payload that indicates that some of your destinations are turned off, even if you didn't specifically turn them off. You might see a payload that like the example below:
 
 ```js
 "integrations": {
@@ -631,7 +634,7 @@ If you are seeing any of your destinations turned off in the raw version of requ
 }
 ```
 
-These flags tell the Segment servers that a request was already made directly from the device through a packaged SDK. That way we don't send a duplicate request through our servers to those services.
+When Segment sends data in Device-mode (directly from a user's device) it sets the destination to `false` in the `integrations` object of the data that it sends to the Segment servers. This indicates that the data was sent directly from the user's device to the destination endpoint, and prevents the Segment servers from sending the destination that same data again.
 
 ## Logging
 
@@ -678,7 +681,7 @@ By default debug logging is disabled.
 
 ## Proxy HTTP Calls
 
-You can point the iOS SDK to your own hosted [proxy](https://github.com/segmentio/segment-proxy) of the Segment API. This will run the HTTP traffic for the Segment API through the proxy.
+You can point the iOS SDK to your own hosted [proxy](https://github.com/segmentio/segment-proxy) of the Segment API. This runs the HTTP traffic for the Segment API through the proxy.
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -751,13 +754,13 @@ github "segmentio/analytics-ios" "master"
 
 ## Packaging device-mode destination SDKs
 
-By default, our `Analytics` pod packages no external SDKs.
+By default, the Segment `Analytics` pod does not package any external SDKs.
 
 ```ruby
 pod 'Analytics', '~> 3.1.0'
 ```
 
-To add destinations using Device-mode, first add the dependencies you need. You can find these in our app when you open the destination sheet for any mobile destination with a Device-mode option.
+To add destinations using Device-mode, first add the dependencies you need. You can find these in the Segment app when you open the destination sheet for any mobile destination with a Device-mode option.
 
 ```ruby
 pod 'Segment-Bugsnag'
@@ -766,7 +769,7 @@ pod 'Segment-GoogleAnalytics'
 ...
 ```
 
-After adding the dependency, you must register the destination with our SDK.
+After you add the dependency, you must register the destination with the Segment SDK.
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -797,4 +800,4 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 [SEGAnalytics setupWithConfiguration:config];
 ```
 
-We recommend using Device-mode destinations sparingly to reduce the size of your application.
+Segment recommends that you use Device-mode destinations sparingly, to reduce the size of your application.
