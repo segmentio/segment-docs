@@ -1,6 +1,8 @@
 ---
 title: Analytics for iOS
+strat: ios
 ---
+
 
 Analytics for iOS makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
@@ -45,9 +47,22 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 
 And of course, import the SDK in the files that you use it with:
 
+
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 #import <Analytics/SEGAnalytics.h>
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
 
 ### Including SDKs for destinations using Device-mode
 
@@ -61,9 +76,22 @@ Now that the SDK is installed and setup, you're ready to...
 
 The `SEGAnalyticsConfiguration` class provides a set of properties that control various policies of the `SEGAnalytics` instance. You initialize it with a `writeKey` like so:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 [SEGAnalytics setupWithConfiguration:[SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"]];
 ```
+
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
 
 <table class="api-table">
     <tr>
@@ -76,56 +104,135 @@ The `SEGAnalyticsConfiguration` class provides a set of properties that control 
 
 Our SDK can automatically instrument common application lifecycle events such as "Application Installed", "Application Updated" and "Application Opened". Simply enable this option when you initialize the SDK.
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.trackApplicationLifecycleEvents = YES;
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
+
 ### Automatic Screen Tracking
 
 Our SDK can automatically instrument screen calls. It uses method swizzling to detect when ViewController's are loaded and uses the label of the view controller (or the class name if a label is not available) as the screen name. It removes the string "ViewController" from the name (if present).
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.recordScreenViews = YES;
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 ### Automatic Push Notification Tracking
 Tracking Push notifications will automatically track `Push Notification Received` and `Push Notification Tapped`.
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.trackPushNotifications = YES;
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 ### Automatic Deep Link Tracking
 Tracking deep linking will automatically track `Deep Link Opened`.
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.trackDeepLinks = YES;
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 ### Flushing
 
 You can set the number of events should queue before flushing. Setting this to `1` will send events as they come in (i.e. not send batched events) and will use more battery. `20` by default.
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.flushAt = 1;
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 You can also manually `flush` the queue:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 [[SEGAnalytics sharedAnalytics] alias:@"glenncoco"];
 [[SEGAnalytics sharedAnalytics] flush]
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 ## Data Collection
 
@@ -136,18 +243,31 @@ Now that the Segment SDK and any accompanying packaged SDKs are installed, you'r
 
 ### Identify
 
-`identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
+Segment's Identify method lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
 We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits are changed.
 
-**Note:** We automatically assign an `anonymousId` to users before you identify them. The `userId` is what connects anonymous activities across devices (e.g. iPhone and iPad).
+**Note:** Segment automatically assigns an `anonymousId` to users before you identify them. The `userId` is what connects anonymous activities across devices (for example, iPhone and iPad).
 
 Example `identify` call:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 [[SEGAnalytics sharedAnalytics] identify:@"a user's id"
                                 traits:@{ @"email": @"a user's email address" }];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 This call identifies a user by his unique User ID (the one you know him by in your database) and labels him with `name` and `email` traits.
 
@@ -176,7 +296,7 @@ Find details on the **identify method payload** in our [Spec](/docs/connections/
 
 ### Track
 
-`track` lets you record the actions your users perform.  Every action triggers what we call an "event", which can also have associated properties.
+Segment's Track method lets you record the actions your users perform.  Every action triggers what we call an "event", which can also have associated properties.
 
 To get started, our SDK can automatically track a few key common events with our [Native Mobile Spec](/docs/connections/spec/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. Simply enable this option during initialization.
 
@@ -184,10 +304,21 @@ You'll also want to track events that are indicators of success for your mobile 
 
 Example `track` call:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 [[SEGAnalytics sharedAnalytics] track:@"Item Purchased"
                            properties:@{ @"item": @"Sword of Heracles", @"revenue": @2.95 }];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
 
 This example `track` call tells us that your user just triggered the **Item Purchased** event recording the `item` name of "Sword of Heracles" and `revenue` of 2.95.
 
@@ -219,10 +350,23 @@ You'll want to record a screen event an event whenever the user opens a screen i
 
 Example `screen` call:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
                             properties:@{ @"Feed Type": @"private" }];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 The `screen` call has the following fields:
 
@@ -251,10 +395,22 @@ This is useful for tools like [Intercom](/docs/connections/destinations/catalog/
 
 Example `group` call:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
 ```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
+```objc
 [[SEGAnalytics sharedAnalytics] group:@"group123"
 traits:@{ @"name": @"Initech", @"description": @"Accounting Software" }];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
 
 The `group` call has the following fields:
 
@@ -287,9 +443,22 @@ In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used 
 
 Example `alias` call:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 [[SEGAnalytics sharedAnalytics] alias:@"some new id"];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 The `alias` call has the following fields:
 
@@ -310,9 +479,21 @@ For more details about `alias`, including the **`alias` call payload**, check ou
 
 You can retrieve the `anonymousId` set by the library by using:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
 ```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
+```objc
 [[SEGAnalytics sharedAnalytics] getAnonymousId];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
 
 ### Reset
 
@@ -320,9 +501,21 @@ The `- reset` method clears the SDK's internal stores for the current `user` and
 
 Clearing all information about the user is as simple as calling:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 [[SEGAnalytics sharedAnalytics] reset];
 ```
+
+{% endcodeexampletab %}
+
+{% endcodeexample %}
 
 Events queued on disk are not cleared and are uploaded the next time the app starts.
 
@@ -332,17 +525,43 @@ Events queued on disk are not cleared and are uploaded the next time the app sta
 
 Depending on the audience for your app (e.g. children) or the countries where you sell your app (e.g. the EU), you may need to offer the ability for users to opt-out of analytics data collection inside your app. You can turn off forwarding to ALL destinations including Segment itself:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 [[SEGAnalytics sharedAnalytics] disable];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 Or if they opt-back-in, you can re-enable data collection:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 [[SEGAnalytics sharedAnalytics] enable];
 ```
 
-Note: disabling the Segment SDK ensures that all data collection method invocations (eg. `track`, `identify`, etc) are ignored; however, it does not tear down inititialized SDKs. If your packaged SDKs are collecting data automatically or outside of Segment, disabling Segment does not address that. We recommend invoking corresponding disable methods in each of your packaged SDKs in response to user opt-out to ensure any automatic data collection is stopped.
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
+Note: If you disable the Segment SDK, it ensures that all data collection method invocations (eg. `track`, `identify`, etc) are ignored; however, it does not tear down inititialized SDKs. If your packaged SDKs are collecting data automatically or outside of Segment, disabling Segment does not address that. We recommend invoking corresponding `disable` methods for each of your packaged SDKs in response to user opt-out to ensure that any automatic data collection is stopped.
 
 ## Selecting Destinations
 
@@ -350,6 +569,15 @@ The `alias`, `group`, `identify`, `page` and `track` calls can all be passed an 
 
 You can enable or disable destinations by specifying an `NSDictionary *` in the options parameter of our methods as follows:
 
+
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 
 ```objc
 options:@{
@@ -359,14 +587,32 @@ options:@{
   }
 }
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 Here's an example showing an `- track:` call that is sent to all enabled destinations except Mixpanel:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 [[SEGAnalytics sharedAnalytics] track:@"Product Rated"
                            properties:nil
                               options:@{ @"integrations": @{ @"All": @YES, @"Mixpanel": @NO }}];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
@@ -376,7 +622,7 @@ Destination flags are **case sensitive** and match [the destination's name in th
 
 If you are seeing any of your destinations turned off in the raw version of requests in the Segment live debugger, but you haven't added those to your requests, like this:
 
-```javascript
+```js
 "integrations": {
   "Segment.io": false,
   "Google Analytics": false,
@@ -391,301 +637,57 @@ These flags tell the Segment servers that a request was already made directly fr
 
 To see a trace of your data going through the SDK, you can enable debug logging with `- debug:`:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 [SEGAnalytics debug:YES];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 Or disable it like this:
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 [SEGAnalytics debug:NO];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 By default debug logging is disabled.
-
-## Middleware
-Middleware are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify or reject events. Source Middleware are available on `analytics-ios` 3.6.0 and higher. Destination Middleware are available on `analytics-ios` 4.0.0 and higher.
-
-The middleware API is easily accessible in both Objective-C and Swift.
-
-### Usage
-
-Middleware is any Objective-C class that conforms to the following protocol.
-
-```objc
-@protocol SEGMiddleware
-@required
-- (void)context:(SEGContext *_Nonnull)context next:(S
-EGMiddlewareNext _Nonnull)next;
-@end
-```
-
-We also provide a block-centric helper class to make it easier to create middlewares using anonymous functions on the fly. (See examples later on in the guide)
-
-```objc
-typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNext _Nonnull next);
-
-@interface SEGBlockMiddleware : NSObject <SEGMiddleware>
-@property (nonnull, nonatomic, readonly) SEGMiddlewareBlock block;
-
-- (instancetype _Nonnull)initWithBlock:(SEGMiddlewareBlock _Nonnull)block;
-
-@end
-```
-
-`context` is an object that encapsulates everything about an event in the stream. `next` is a callback function that should be invoked when the current middleware is done processing the event and can pass the processed event down to the next middleware in the chain.
-
-`SEGContext` object is not very information rich by itself. Typically you must use `eventType`  and `payload` to get more information about an event.
-
-```objc
-@interface SEGContext : NSObject <NSCopying>
-
-@property (nonatomic, readonly, nonnull) SEGAnalytics *_analytics;
-@property (nonatomic, readonly) SEGEventType eventType;
-
-@property (nonatomic, readonly, nullable) NSString *userId;
-@property (nonatomic, readonly, nullable) NSString *anonymousId;
-@property (nonatomic, readonly, nullable) NSError *error;
-@property (nonatomic, readonly, nullable) SEGPayload *payload;
-@property (nonatomic, readonly) BOOL debug;
-
-- (instancetype _Nonnull)initWithAnalytics:(SEGAnalytics *_Nonnull)analytics;
-
-- (SEGContext *_Nonnull)modify:(void (^_Nonnull)(id<SEGMutableContext> _Nonnull ctx))modify;
-
-@end
-```
-
-If you look at `SEGEventType` more carefully, you'll realize that middleware is not only capable of handling `track` , `identify` and other normal analytics APIs, even calls like `reset` , `flush` and `openURL` go through and can therefore be processed by the middleware pipeline.
-
-```objc
-typedef NS_ENUM(NSInteger, SEGEventType) {
-    // Should not happen, but default state
-    SEGEventTypeUndefined,
-    // Core Tracking Methods
-    SEGEventTypeIdentify,
-    SEGEventTypeTrack,
-    SEGEventTypeScreen,
-    SEGEventTypeGroup,
-    SEGEventTypeAlias,
-
-    // General utility
-    SEGEventTypeReset,
-    SEGEventTypeFlush,
-
-    // Remote Notification
-    SEGEventTypeReceivedRemoteNotification,
-    SEGEventTypeFailedToRegisterForRemoteNotifications,
-    SEGEventTypeRegisteredForRemoteNotifications,
-    SEGEventTypeHandleActionWithForRemoteNotification,
-
-    // Application Lifecycle
-    SEGEventTypeApplicationLifecycle,
-
-    // Misc.
-    SEGEventTypeContinueUserActivity,
-    SEGEventTypeOpenURL,
-};
-```
-
-There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enums. Subclassed payloads may contain call specific information, For example, the `SEGTrackPayload` contains `event` as well as `properties` .
-
-```objc
-@interface SEGTrackPayload : SEGPayload
-
-@property (nonatomic, readonly) NSString *event;
-
-@property (nonatomic, readonly, nullable) NSDictionary *properties;
-
-@end
-```
-
-Finally, to use a middleware, you must provide it to the `SEGAnalyticsConfiguration` object prior to the initialization of `SEGAnalytics` .
-
-```objc
-@interface SEGAnalyticsConfiguration : NSObject
-
-/**
- * Set custom source middleware. Will be run before all integrations
- */
-@property (nonatomic, strong, nullable) NSArray<id<SEGMiddleware>> *sourceMiddleware;
-
-/**
- * Set custom destination middleware. Will be run before the associated integration for a destination.
- */
-@property (nonatomic, strong, nullable) NSArray<SEGDestinationMiddleware *> *destinationMiddleware;
-
-// ...
-@end
-```
-
-Once initialized, the list of middleware used in `SEGAnalytics` cannot be changed.
-
-### Examples
-
-The following examples will be written in Swift to demonstrate that the middleware API works just as well in Swift as in Objective-C. To start off, this is what initialization looks like
-
-```swift
-let mixpanelIntegration = SEGMixpanelIntegrationFactory.instance()
-let amplitudeIntegration = SEGAmplitudeIntegrationFactory.instance()
-let config = SEGAnalyticsConfiguration(writeKey: "YOUR_WRITEKEY_HERE")
-config.trackApplicationLifecycleEvents = true
-config.trackDeepLinks = true
-config.recordScreenViews = true
-config.use(mixpanelIntegration)
-config.use(amplitudeIntegration)
-
-config.sourceMiddleware = [
-    turnScreenIntoTrack,
-    enforceEventTaxonomy,
-    customizeAllTrackCalls,
-    blockScreenCallsToAmplitude,
-]
-config.destinationMiddleware = [
-    SEGDestinationMiddleware(key: mixpanelIntegration.key(), middleware: [sampleEventsToMixpanel]),
-    SEGDestinationMiddleware(key: amplitudeIntegration.key(), middleware: [customizeAmplitudeTrackCalls])
-]
-SEGAnalytics.setup(with: config)
-```
-
-Changing event names and adding custom attributes
-
-```swift
-let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
-    if context.eventType == .track {
-        next(context.modify { ctx in
-            guard let track = ctx.payload as? SEGTrackPayload else {
-                return
-            }
-            let newEvent = "[New] \(track.event)"
-            var newProps = track.properties ?? [:]
-            newProps["customAttribute"] = "Hello"
-            ctx.payload = SEGTrackPayload(
-                event: newEvent,
-                properties: newProps,
-                context: track.context,
-                integrations: track.integrations
-            )
-        })
-    } else {
-        next(context)
-    }
-}
-```
-
-Turn one kind call into another
-
-```swift
-let turnScreenIntoTrack = SEGBlockMiddleware { (context, next) in
-    if context.eventType == .screen {
-        next(context.modify { ctx in
-            guard let screen = ctx.payload as? SEGScreenPayload else {
-                return
-            }
-            let event = "\(screen.name) Screen Tracked"
-            ctx.payload = SEGTrackPayload(
-                event: event,
-                properties: screen.properties,
-                context: screen.context,
-                integrations: screen.integrations
-            )
-            ctx.eventType = .track
-        })
-    } else {
-        next(context)
-    }
-}
-```
-
-Completely block events
-
-```swift
-let   = SEGBlockMiddleware { (context, next) in
-    let validEvents = [
-        "Application Opened",
-        "Order Completed",
-        "Home Screen Tracked",
-        "AnalyticsIOSTestApp. Screen Tracked",
-    ]
-    if let track = context.payload as? SEGTrackPayload {
-        if !validEvents.contains(track.event) {
-            showAlert(title: "Dropping Rogue Event",
-                      message: track.event)
-            return
-        }
-    }
-    next(context)
-}
-```
-
-Block only screen calls to amplitude
-
-```swift
-let blockScreenCallsToAmplitude = SEGBlockMiddleware { (context, next) in
-    if let screen = context.payload as? SEGScreenPayload {
-        next(context.modify { ctx in
-            ctx.payload = SEGScreenPayload(
-                name: screen.name,
-                properties: screen.properties,
-                context: screen.context,
-                integrations: ["Amplitude": false]
-            )
-        })
-        return
-    }
-    next(context)
-}
-```
-
-Sample events to Mixpanel device-mode destination
-
-```swift
-let sampleEventsToMixpanel = SEGBlockMiddleware { (context, next) in
-    if let track = context.payload as? SEGTrackPayload {
-        let numberBetween0To4 = arc4random() % 5
-        if numberBetween0To4 != 0 {
-            return
-        }
-    }
-    next(context)
-}
-```
-
-Add custom attribute to context for Amplitude device-mode destination
-
-```swift
-let customizeAmplitudeTrackCalls = SEGBlockMiddleware { (context, next) in
-    if context.eventType == .track {
-        next(context.modify { ctx in
-            guard let track = ctx.payload as? SEGTrackPayload else {
-                return
-            }
-            let newEvent = "[Amplitude] \(track.event)"
-            var newProps = track.properties ?? [:]
-            newProps["customAttribute"] = "Sausage"
-            ctx.payload = SEGTrackPayload(
-                event: newEvent,
-                properties: newProps,
-                context: track.context,
-                integrations: track.integrations
-            )
-        })
-    } else {
-        next(context)
-    }
-}
-```
-
-### Braze Middleware
-
-If you use the Braze (Appboy) destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation. More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
-
 
 
 ## Proxy HTTP Calls
 
 You can point the iOS SDK to your own hosted [proxy](https://github.com/segmentio/segment-proxy) of the Segment API. This will run the HTTP traffic for the Segment API through the proxy.
 
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 
@@ -705,6 +707,11 @@ configuration.requestFactory = ^(NSURL *url) {
 // Initialize the SDK with the configuration.
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
+
+
 
 ## Submitting to the App Store
 
@@ -752,8 +759,6 @@ pod 'Analytics', '~> 3.1.0'
 
 To add destinations using Device-mode, first add the dependencies you need. You can find these in our app when you open the destination sheet for any mobile destination with a Device-mode option.
 
-
-
 ```ruby
 pod 'Segment-Bugsnag'
 pod 'Segment-Branch'
@@ -762,6 +767,21 @@ pod 'Segment-GoogleAnalytics'
 ```
 
 After adding the dependency, you must register the destination with our SDK.
+
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// TODO - swift sample here
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
+```objc
+#import <Analytics/SEGAnalytics.h>
+```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
 
 ```objc
 #import <Segment-GoogleAnalytics/SEGGoogleAnalyticsIntegrationFactory.h>
@@ -778,309 +798,3 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 ```
 
 We recommend using Device-mode destinations sparingly to reduce the size of your application.
-
-## FAQ
-
-### How big is the Segment SDK?
-
-The core Segment SDK is extremely lightweight. It weighs in at about 212kb.
-
-### Can I install the SDK Manually with a Dynamic Framework?
-
-We **highly recommend** using Cocoapods.
-
-However, if you cannot use Cocoapods or Carthage, you can manually install our dynamic framework allowing you to send data to Segment and on to enabled cloud-mode destinations.  We do not support sending data to bundled, device-mode integrations outside of Cocoapods.
-
-Here are the steps for installing manually:
-
-  1. Download the [latest built SDK](https://github.com/segmentio/analytics-ios/releases/), and unzip the zip file.
-  2. Drag the unzipped `Analytics.framework` folder into your XCode project.
-  3. In the `General Tab` for your project, search for `Embedded Binaries` and add the `Analytics.framework`.
-
-
-![](images/embeddedbinaries.png)
-
-Once you've installed the framework, just import the header file and install as described above in [Install the SDK](/docs/connections/sources/catalog/libraries/mobile/ios/#install-the-sdk).
-
-Note, if you are choosing to not use a dependency manager, you must keep files up-to-date with regularly scheduled, manual updates.
-
-### What if your SDK doesn't support feature X?
-
-If you're using a Device-mode for a mobile destination, if you want to access a feature from a tool's native SDK, you can include the header file and call the method just as normal.
-
-For example, you might want access to Flurry's location logging or Localytics's attribution parameters. To use the destination's SDK, just import the headers and then access the SDK as you would without Segment. We'll still handle initialization, event, screen & user tracking, plus all the proxied services and data storage for you.
-
-Here's an example for Flurry location logging:
-
-```objc
-#import <Flurry-iOS-SDK/Flurry.h>
-
-CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-[locationManager startUpdatingLocation];
-CLLocation *location = locationManager.location;
-[Flurry setLatitude:location.coordinate.latitude
-          longitude:location.coordinate.longitude
- horizontalAccuracy:location.horizontalAccuracy
-   verticalAccuracy:location.verticalAccuracy];
-```
-
-
-### How Do I Use Push Notifications?
-
-For services that send push notifications, you first want to [create a Push SSL certificate following these steps](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html). You then want to configure your application delegate to look like the code below, and replace your Segment source write key.
-
-```objc
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  SEGAnalyticsConfiguration* configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
-
-  // Use launchOptions to track tapped notifications
-  configuration.launchOptions = launchOptions;
-  [SEGAnalytics setupWithConfiguration:configuration];
-
-  if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerForRemoteNotifications)]) {
-    UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeSound |
-    UIUserNotificationTypeBadge;
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types
-    categories:nil];
-    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
-  } else {
-    UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound |
-    UIRemoteNotificationTypeBadge;
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
-  }
-  return YES;
-}
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  [[SEGAnalytics sharedAnalytics] registeredForRemoteNotificationsWithDeviceToken:deviceToken];
-}
-
-// A notification has been received while the app is running in the foreground
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-  [[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];
-}
-
-// iOS 8+ only
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-  // register to receive notifications
-  [application registerForRemoteNotifications];
-}
-```
-
-### How Do You Handle Unique Identifiers?
-
-A key component of any analytics platform is consistently and accurately identifying users. Some kind of ID must be assigned and persisted on the device so that user actions can be effectively studied. This is especially important for funnel conversion analysis and retention analysis.
-
-Naturally the Analytics SDK needs a unique ID for each user. To protect end-users' privacy, Apple places restrictions on how these IDs can be generated and used. Here's an explanation of these policies from Apple, and how we generate IDs in compliance.
-
-Before iOS 5 developers had access to uniqueIdentifier which was a hardware-specific serial number that was consistent across different apps, vendors and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a). In iOS 6 Apple introduced the identifierForVendor which protects end-users from cross-app identification. In iOS 7 Apple [restricted access to the device's MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/), which was being used by many developers as a workaround to get a device-specific serial number similar to like uniqueIdentifier.
-
-Segment's iOS library supports iOS 7+ by generating a UUID and storing it on disk. This is in line with the privacy policies required by Apple, maintains compatibility, and leaves open the option for multiple users on one device since the UUID can be regenerated.
-
-
-### Should I include each service's SDK alongside Segment?
-
-No, don't include an SDK manually for a service we support. That will cause symbol conflicts/namespace collisions. Sometimes it can even fail silently :( So make sure you remove the old Google Analytics or Mixpanel SDK when you install Segment's SDK.
-
-### How does the SDK queue API calls?
-
-Our SDK queues API calls so that we don't use up your user's battery life by making a network request for each event tracked.
-
-Here's how queuing works for server-side destinations: When you make an API call (e.g. `-track:`) that call is added to the queue. The SDK sends the events to the server in batches (by default, the batch size is `100`). The batches are then sent either when there are 20 or more events in the queue, on a scheduled timer every 30 seconds, or when the app goes to the background. To limit memory and disk usage, we only queue upto 1000 events.
-
-When the app is terminated we persist the queue to disk and load that data at app launch so there is no data loss.
-The queue behavior may differ in packaged destinations.
-
-### Can I set user traits without a User ID?
-
-Yes! Just pass a `nil` value for the `userId` into your [`identify`](/docs/connections/spec/identify) call, like this:
-
-```objc
-[[SEGAnalytics sharedAnalytics] identify: nil
-    traits:@{ @"email": @"example@example.com",
-      @"Gender": @"F" }];
-```
-
-
-### Do you support iOS 5?
-
-Our SDK does not support iOS 5. If you need support for iOS 5 it's possible by forking [our iOS repo on GitHub](https://github.com/segmentio/analytics-ios/) and [building the framework](https://github.com/segmentio/analytics-ios/wiki/Building-the-framework).
-
-### Is The Segment SDK Compatible with Swift?
-
-Indeed! Swift's compatibility with Objective-C lets you create a source that contains files written in either language, so to use our SDK from a Swift source just follow the instructions from Apple [here](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
-
-### Can I help develop a destination?
-
-Yep! Our SDK is [open-source](https://github.com/segmentio/analytics-ios). If you'd like to contribute, fix a bug, or add a destination - here's [documentation on how to do so](https://github.com/segmentio/analytics-ios/blob/master/CONTRIBUTING.md). to add a destination, make sure you contact our [partners team](https://github.com/segmentio/analytics-ios/blob/master/CONTRIBUTING.md) first.
-
-### How do I know when a destination is initialized?
-
-The iOS library will post a notification to indicate when it initializes any destination so you can call it's methods directly.
-
-```objc
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(integrationDidStart:) name:SEGAnalyticsIntegrationDidStart object:nil];
-
-- (void)integrationDidStart:(nonnull NSNotification *)notification
-{
-    NSString *integration = notification.object;
-
-    if ([integration.name isEqualToString:@"Mixpanel"]) {
-        // Call Mixpanel library methods here.
-    }
-}
-```
-
-### Can I anonymize IP addresses?
-
-We collect IP address for client-side (iOS, Android, Analytics.js and Xamarin) events automatically.
-
-If you don't want us to record your tracked users' IP in destinations and S3, you can set your event's `context.ip` field to `0.0.0.0` . Our server won't record the IP address of the client for libraries if the `context.ip` field is already set. An example would look like this:
-
-```
-[[SEGAnalytics sharedAnalytics] track: @"Clicked Button"
-  properties:nil
-  options:@{ @"context": @{@"ip": @"0.0.0.0"}}];
-```
-
-If you'd like to centralize this logic, you can write a middleware for it!
-
-### IDFA
-
-Some destinations, particularly mobile attribution tools (e.g. Kochava), require the IDFA (identifier for advertisers). The IDFA shows up in Segment calls in the debugger under `context.device.advertisingId`. In order for this value to be captured by the Segment SDK, ensure that you include the [AdSupport framework](https://developer.apple.com/documentation/adsupport).
-
-Once you enable this, you will see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true`.
-
-_Note_: While the network is deprecated, the relevant [framework](https://developer.apple.com/reference/iad) is not.
-
-### tvOS Support
-
-As of [Version 3.3.0](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md#version-330-08-05-2016) we now have support for tvOS through our `Analytics-iOS` sdk. You can follow the [iOS quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) and you should be good to go! tvOS installation is only supported using Carthage and CocoaPods. The dynamic framework installation method is not supported for tvOS.
-
-### IDFA collection in 4.0-beta and later
-
-Recent 4.0 betas move IDFA collection outside of the library.  You can achieve the old behavior by now doing this:
-
-```objc
-  @import AdSupport;
-
-  ...
-
-  SEGAnalyticsConfiguration* configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
-
-  // Enable advertising collection
-  configuration.enableAdvertisingTracking = YES;
-  // Set the block to be called when the advertisingID is needed
-  configuration.adSupportBlock = ^{
-      return [[ASIdentifierManager sharedManager] advertisingIdentifier];
-  }
-
-  [SEGAnalytics setupWithConfiguration:configuration];
-
-```
-
-
-## Troubleshooting
-
-### Target has transitive dependencies that include static binaries
-
-This was due to an old [CocoaPods limitation](https://github.com/CocoaPods/CocoaPods/issues/2926).
-
-1. Verify you are not using any previously needed workarounds
-2. Verify you are using at least CocoaPods 1.4
-   ```bash
-   $ pod --version
-   1.5.3
-   ```
-3. Verify you are using the latest Segment pods
-   ```bash
-   $ pod outdated
-   The following pod updates are available:
-    - Segment-GoogleAnalytics 1.1.7 -> 1.1.7 (latest version 1.1.8)
-   ```
-
-### No events in my debugger
-1. Verify you have followed all [Getting Started](/docs/connections/sources/catalog/libraries/mobile/ios/#getting-started) steps
-2. Verify you have entered the correct writeKey for your source
-    - If the writeKey you have entered is something other than a string or an empty string your app may crash
-    - If the writeKey you have entered is a valid form but not the correct writeKey for your specific source, you will not see an error response. Data will be accepted by Segment but not able to be correctly routed to your source (debugger).
-3. [Enable logging](/docs/connections/sources/catalog/libraries/mobile/ios/#logging) to confirm if call is being sent to Segment
-
-
-### No events in my destinations
-
-1. Verify that your destination is enabled
-2. Verify your destination credentials entered in your Segment dashboard are correct
-3. Make sure the destination can accept what you're sending:
-   - Does the integration have device-mode/cloud-mode support? Confirm you are sending using the correct connection mode.
-   - Does the destination accept the type of call you are sending? Not all destinations accept all calls: page, track, etc.
-4. If you are still not seeing data in your destination, continue debugging based on which type of connection mode you are using.
-
-
-### Debugging Device-mode Destinations
-
-If you are using device-mode, you should see the value of that integration set to false in the `integrations` object. That means that the data is being sent from the device to the destination SDK, and not through Segment's servers. This is expected if you chose to use a device-mode destination's SDK with Segment's during installation.
-
-Enable verbose [logging](/docs/connections/sources/catalog/libraries/mobile/ios/#logging) and trigger the call in question. You should see a call to Segment triggered as well as to the partner SDK.  It will show you exactly which partner method was invoked and the arguments it was invoked with!
-
-### Debugging Cloud-mode Destinations
-
-Look at the raw JSON in your debugger.  Does the call look like what is expected?
-
-Read through [the docs for that destination](/docs/connections/destinations/) to see expected event format, behavior and caveats for that destination.
-
-### Migrating to v3 from earlier releases
-
-v3 was an API compatible release, but there are a few additional steps for packaging destinations using Device-mode and migrating from the older data format.
-
-Firstly, we changed how the anonymousId was stored between v2 and v3. You'll need to read the old anonymousId and set it so that it's moved to the new location.
-
-
-```objc
-NSString *oldAnonymousId = loadOldAnonymousId();
-if (oldAnonymousId) {
-  [[SEGAnalytics sharedAnalytics] identify:userId
-                           traits:traits
-                              options:@{ @"anonymousId": oldAnonymousId }];
-  deleteOldAnonymousId();
-}
-```
-
-In version 3, we've organized the destinations to be make the core SDK even leaner and smaller. The `Analytics/Segmentio` pod is not available any longer. It has been renamed to `Analytics` (which previously packaged all possible destinations). Version 3 of `Analytics` only includes the core library which forwards data directly to . To add a destination using Device-mode, you must manually add that destination's dependencies, like so:
-
-```ruby
-pod 'Segment-Bugsnag'
-pod 'Segment-Branch'
-pod 'Segment-GoogleAnalytics'
-...
-```
-
-...and then register them in your configuration when you initialize the SDK.
-
-*Note:* If you are unsure about the name of the pod for a given SDK, you can always confirm on by searching for the destination in [our app](https://cloudup.com/cOQk2yX98mW)!
-
-```objc
-#import <Segment-GoogleAnalytics/SEGGoogleAnalyticsIntegrationFactory.h>
-#import <Segment-Branch/BNCBranchIntegrationFactory.h>
-
-SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
-
-// Add any of your Device-mode destination components.
-[config use:[SEGGoogleAnalyticsIntegrationFactory instance]];
-[config use:[BNCBranchIntegrationFactory instance]];
-...
-
-[SEGAnalytics setupWithConfiguration:config];
-```
-
-
-### Still having issues?
-
-[contact our Product Support team](https://segment.com/help/contact/) with the following information:
-
-- The version of our SDK you are using
-- Whether you are using device- or cloud-mode
-- Logs of the call in question
-- Screenshots of the event in the Segment debugger
-- Screenshots of what you are seeing in your destination

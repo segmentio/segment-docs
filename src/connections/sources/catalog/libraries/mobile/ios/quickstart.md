@@ -1,6 +1,7 @@
 ---
 title: 'Quickstart: iOS'
 hidden: true
+strat: ios
 ---
 
 This tutorial gets you started sending data from your iOS app to Segment. When you're done you can turn on [any of Segment's destinations](/docs/connections/destinations/) with the flip of a switch! No more waiting for App Store approval.
