@@ -21,7 +21,7 @@ If using OSX:
   * Run server, `make dev`
   * Visit http://localhost:4000/docs/
 
-## Changing DevCenter Destinations
+## Changing a DevCenter Destination's name
 
 Occasionally, a destination will change names. This shouldn't be too difficult to handle, but make sure you do the following:
 - Change the name of the file **to match destination's new slug**
