@@ -2670,31 +2670,6 @@ items:
     page_view: false
     track: true
   settings:
-  - name: obscureTextEmails
-    display_name: Obscure text emails
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: Do not record email addresses
-    settings: []
-  - name: obscureTextNumbers
-    display_name: Obscure text numbers
-    type: BOOLEAN
-    deprecated: false
-    required: false
-    description: Do not record any numeric text
-    settings: []
-  - name: projectId
-    display_name: Project ID
-    type: STRING
-    deprecated: false
-    required: false
-    string_validators:
-      regexp: ''
-    description: >-
-      The ID associated with your project. You can find in Preferences ->
-      Projects in your Asayer app.
-    settings: []
   - name: siteId
     display_name: Site ID
     type: STRING
@@ -2703,8 +2678,8 @@ items:
     string_validators:
       regexp: ''
     description: >-
-      The ID associated with your website. You can find in Preferences -> Sites
-      -> Tracking Code in your Asayer app.
+      The ID associated with your project. You can find in Preferences ->
+      Projects in your Asayer app.
     settings: []
   connection_modes:
     device:
@@ -5443,7 +5418,7 @@ items:
     alias: false
     group: false
     identify: true
-    page_view: false
+    page_view: true
     track: true
   settings:
   - name: apiKey
@@ -17099,13 +17074,6 @@ items:
       required: false
       description: Map your Segment properties to Responsys Columns
       settings:
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as a Primary Key in Responsys.
-        settings: []
       - name: columns
         display_name: Segment Property Name
         type: STRING
@@ -17140,6 +17108,13 @@ items:
           - INTEGER
           - TIMESTAMP
         description: Enter the Responsys column type.
+        settings: []
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as a Primary Key in Responsys.
         settings: []
     - name: mapEmail
       display_name: Map Email
@@ -21697,6 +21672,61 @@ items:
   previous_names:
   - useriq
   - UserIQ
+- display_name: UserLeap
+  slug: userleap
+  name: catalog/destinations/userleap
+  description: >-
+    UserLeap is a microsurvey platform that continuously identifies
+    opportunities to build better experiences. Gain clarity into customer needs
+    and grow faster.
+  hidden: false
+  url: connections/destinations/catalog/userleap
+  status: PUBLIC_BETA
+  logo:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/2ad4508d-5be6-4358-a7f7-45b97dd54d22.svg
+  mark:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/b6a1db0f-1b55-4651-9cc5-d78d8365a447.svg
+  categories:
+  - Customer Success
+  - Analytics
+  - Surveys
+  - Personalization
+  components: []
+  platforms:
+    browser: true
+    server: true
+    mobile: true
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  methods:
+    alias: true
+    group: false
+    identify: true
+    page_view: true
+    track: true
+  settings:
+  - name: apiKey
+    display_name: API Key
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: '^.{8,}$'
+    description: 'Find your API key here https://app.userleap.com/settings/installation'
+    settings: []
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+  previous_names:
+  - UserLeap
 - display_name: UserVoice
   slug: uservoice
   name: catalog/destinations/uservoice
