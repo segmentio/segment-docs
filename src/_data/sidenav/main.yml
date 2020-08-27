@@ -186,6 +186,8 @@ sections:
         title: Data Lakes vs Warehouses
       - path: /connections/storage/catalog/data-lakes
         title: Set up Data Lakes
+      - path: /connections/storage/data-lakes/sync-reports
+        title: Sync Reports and error reporting
     - section_title: Data Warehouses
       slug: connections/storage/warehouses
       section:
