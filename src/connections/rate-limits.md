@@ -7,7 +7,7 @@ Segment limits the number of both inbound and outbound requests in order to ensu
 
 Segment allows customer sources to send up to 60,000,000 events within any 10 minute period (an average of 100,000 events per second). If, without prior arrangement, Segment reserves the right to queue any events that exceeed this threshold, and process those at a rate that does not exceed 60,000,000 events in a 10 minute period.
 
-## Outbound Downstream
+## Outbound Downstream Destination Rate Limits
 
 Most destinations have their own rate limits that are outside of Segment's control. In some instances, Segment can inngest and attempt to deliver data faster than the downstream destination can accept that data. 
 
