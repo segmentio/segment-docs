@@ -7,12 +7,6 @@ title: AdRoll Destination
 
 This document was last updated on January 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
-**Use Cases**
-
-* [Retarget users who abandon signup with AdRoll](https://segment.com/recipes/retarget-users-abandoned-signup-adroll/)
-* [Personalize retargeting display ads by company size with AdRoll](https://segment.com/recipes/personalize-ads-by-company-size-adroll/)
-* [Retarget shopping cart abandoners with AdRoll to increase conversions](https://segment.com/recipes/abandon-cart-retargeting-adroll/)
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
