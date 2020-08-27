@@ -19,20 +19,22 @@ The table has the following columns in its schema:
 | `run_id`          | ID dynamically generated and assigned to each Data Lakes sync run.   |
 | `start_time`      | Time when the sync run started, in UTC.         |
 | `finish_time`     | Time when the sync run finished, in UTC.        |
-| `sync_duration`   | The length of the sync in minutes, calculated by the difference between the start and finish time.  |
+| `duration_mins`   | The length of the sync in minutes, calculated by the difference between the start and finish time.  |
 | `status`          | Status of the sync. Values can either be `finished` for a successful sync or `failed` for a failed sync.   |
 | `error_code`      | The type of error, which can include: insufficient permissions, invalid settings, or a Segment internal error.  |
 | `error`           | If the sync failed, the error that describes the issue, for example “External ID is invalid”.    |
 | `table_name`      | Name of the Segment event synced to S3.      |
 | `row_count`       | Number of rows synced to S3 for a specific run.           |
 | `partitions`      | Partitions added to the event tables during the sync.     |
-| `new_column`      | New columns inferred and added to event table during the sync.       |
+| `new_columns`      | New columns inferred and added to event table during the sync.       |
 | `day`             | Day on which the sync occurred.                       |
 | `type`            | Defines whether the run metrics are at the source or event level. If type = source, the run aggregates data for syncs across all events within the source. If type = event, the run shows detailed sync metrics per event. |
-
+| `replay`      | True or false value which indicates whether the sync run was a [replay](/docs/guides/what-is-replay/).     |
+| `replay_from`      | Start date for the replay, if applicable.       |
+| `replay_to`      | Finish date for the replay, if applicable.     |
 
 The Glue Database named `__segment_datalake` stores the schema of the `sync_reports` table. The schema looks like:
-![](images/dl_syncreports_glue.png)
+![](images/dl_syncreports_schema.png)
 
 
 The `sync_reports` table is available in S3 and Glue only once a sync completes. Sync reports are not available for syncs in progress.
@@ -50,7 +52,7 @@ The S3 structure is:
 
 The data in the sync reports is stored in JSON format to ensure that it is human-readable and can be processed by other systems.
 
-Each table and event is stored as a separate JSON object which contains the details of the overall report status.
+Each table involved in the sync is a separate JSON object that contains the sync metrics for the data loaded to that table.
 
 The example below shows the raw JSON object for a **successful** sync report.
 
@@ -163,6 +165,7 @@ ORDER BY day
 ```
 
 #### Return row counts per day for all events in the source
+
 ```sql
 SELECT day, table_name,sum(row_count)
 FROM "__segment_datalake"."sync_reports"
@@ -202,12 +205,13 @@ If Data Lakes does not have the correct access permissions for S3, Glue, and EMR
 If permissions are the problem, you might see one of the following permissions-related error messages:
 
 - "Segment was unable to upload staging data to your S3 Bucket due to a lack of sufficient permissions".
-- Segment does not have permissions to:
-  - Download, upload or delete object from S3 Bucket
-  - fetch schema information from Glue catalog
-  - delete table from Glue Catalog
-  - submit an EMR job to the cluster
-  - check the status of EMR Job on EMR Cluster
+- "Segment does not have permissions to download object from S3 Bucket".
+- "Segment does not have permissions to upload object to S3 Bucket".
+- "Segment does not have permissions to delete S3 objects from S3 Bucket".
+- "Segment does not have permissions to submit an EMR job to cluster".
+- "Segment does not have permissions to check the status of EMR Job on EMR Cluster".
+- "Segment does not have permissions to delete table from Glue Catalog".
+- "Segment does not have permissions to fetch schema information from Glue catalog".
 
 [Check the set up guide](https://docs.google.com/document/d/1GlWzS5KO4QaiVZx9pwfpgF-N-Xy2e_QQcdYSX-nLMDU/edit?usp=sharing) to ensure that you set up the required permission configuration for S3, Glue and EMR.
 
@@ -235,10 +239,6 @@ Internal errors occurr in Segment’s internal systems, and should resolve on th
 Both Warehouses and Data Lakes provide similar information about syncs, including the start and finish time, rows synced, and errors.
 
 However, Warehouse sync information is only available in the Segment app: on the Sync History page and Warehouse Health pages. With Data Lakes sync reports, the raw sync information is sent directly to your data lake. This means you can query the raw data and answer your own questions about syncs, and use the data to power alerting and monitoring tools.
-
-##### Are replays shown in sync reports?
-
-[Replays](/docs/guides/what-is-replay/) are not currently supported in sync reports, but will be in the near future.
 
 ##### What happens if a sync is partly successful?
 
