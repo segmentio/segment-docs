@@ -24,11 +24,11 @@ When you identify a user, we'll pass that user's information to CleverTap with u
 - `phone` maps to `Phone`
 - `email` maps to `Email`
 
-All other traits will be sent to CleverTap as custom attributes.
+All other traits will be sent to CleverTap as custom attributes. Please also note that the default logic will lower case and snake_case any user traits - custom or special - passed to CleverTap.
 
 ## Track
 
-When you `track` an event, we will send that event to CleverTap as a custom event.  Note that CleverTap does not support arrays or nested objects for custom track event properties.
+When you `track` an event, we will send that event to CleverTap as a custom event.  Note that CleverTap does not support arrays or nested objects for custom track event properties. Please also note that the default logic will lower case and snake_case any event properties passed to CleverTap.
 
 ### Order Completed
 

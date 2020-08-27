@@ -7,12 +7,6 @@ rewrite: true
 
 This document was last updated on August 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
-**Use Cases**
-
-* [Personalize Intercom live chat messages based on a visitor's matched industry](https://segment.com/recipes/personalize-intercom-live-chat-industry/)
-* [Deliver hyper-relevant Intercom messages based on a visitor's job role](https://segment.com/recipes/personalize-intercom-live-chat-role/)
-* [Personalize Intercom welcome messages by incorporating a visitor's company](https://segment.com/recipes/personalize-intercom-live-chat-with-company-name/)
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

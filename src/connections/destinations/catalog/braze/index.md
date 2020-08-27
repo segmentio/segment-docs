@@ -12,12 +12,6 @@ _**NOTE:** There are currently two major versions of the Braze SDK. Make sure yo
 
 If you notice any gaps or outdated information in this document, or simply want to leave some feedback to help us improve, [let us know](https://segment.com/help/contact)!
 
-**Use Cases**
-
-* [Trigger upgrade messages to users who are likely to upgrade with Braze and ClearBrain](https://segment.com/recipes/trigger-upgrade-messages-braze-clearbrain/)
-* [Trigger notifications when users don't complete activation steps with Braze](https://segment.com/recipes/trigger-push-notifications-activation-braze/)
-* [Prompt active users to leave a product review with Braze](https://segment.com/recipes/braze-customer-review-automation/)
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

@@ -8,9 +8,6 @@ This destination is maintained by TrafficGuard.
 
 _**NOTE:** The TrafficGuard Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on March 4, 2019. If you are interested in joining their beta program or have any feedback to help improve the TrafficGuard Destination and its documentation, [let their team know](mailto:support@trafficguard.ai)!_
 
-**Use Cases**
-
-* [Protect your website and apps from fraud and bots with TrafficGuard](https://segment.com/recipes/trafficguard-website-app-protection/)
 
 ## Getting Started
 
