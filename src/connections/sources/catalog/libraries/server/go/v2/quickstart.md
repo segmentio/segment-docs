@@ -7,8 +7,20 @@ This tutorial will help you start sending data from your Go servers to Segment a
 
 If you want to dive deeper at any point, check out the [Go library reference](/docs/connections/sources/catalog/libraries/server/go/).
 
+## Step 1: Create a Source in the Segment app
 
-## Step 1: Install the Package
+Before you begin, you need a Workspace (which is a container that holds all of the sources and destinations which are billed together for an organization). If you already created one, great! If not, you can sign up for a free Segment account and create one.
+
+Next, create a Go source from your Workspace:
+
+1. Click **Add Source**.
+2. From the source catalog page, click **Go**.
+3. Click **Add Source** again from the informational panel that appears to the right.
+4. Give the source a display name, and enter the URL the source will collect data from.
+
+When you create a Source in the Segment web app, it tells the Segment servers that you'll be sending data from a specific source type. When you create (or change!) a Source in the Segment app, Segment generates a new Write Key for that source. You use the write key in your code to tell the Segment servers where the data is coming from, so Segment can route it to your destinations and other tools.
+
+## Step 2: Install the Package
 
 Installing our Go library is easy, just run the following:
 
@@ -31,7 +43,10 @@ func main() {
 That will create a `client` that you can use to send data to Segment for your source. Once you've got that, you're ready to...
 
 
-## Step 2: Identify Users
+## Step 3: Identify Users
+
+> note ""
+> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/server/go#identify).
 
@@ -56,7 +71,7 @@ When you're using our Go library, you don't need to identify a user on every req
 Once you've added an identify call, you can move on to...
 
 
-## Step 3: Track Actions
+## Step 4: Track Actions
 
 The `track` method is how you tell Segment about which actions your users are performing. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track reference](/docs/connections/sources/catalog/libraries/server/go#track).
 

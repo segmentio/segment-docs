@@ -14,10 +14,14 @@ _**NOTE:** The mabl Destination is currently in beta, which means that they are 
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "mabl" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop the "API Key," accessible from into your from your mabl workspace's [API keys page](https://app-dev.mabl.com/workspaces/-/settings/apis), into the Segment Settings UI.
-4. mabl processes the usage data into rolling 24 hour summaries hourly.  It may take up to an hour for usage to begin to populate in your test coverage metrics.
+
+1. From the Destinations catalog page in the Segment App, click **Add Destination**.
+2. Search for "mabl" in the Destinations Catalog, and select the mabl destination.
+3. Choose which Source should send data to the mabl destination.
+4. Go to the [mabl api settings page](https://app.mabl.com/workspaces/-/settings/apis) (or navigate in the mabl app to **Settings > APIs**), find and copy the API key.
+5. Enter the API Key in the mabl destination settings in Segment.
+
+mabl processes the usage data into rolling 24 hour summaries, every hour.  It can take up to an hour for usage to appear in your test coverage metrics.
 
 ## Page
 

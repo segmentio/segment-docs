@@ -1,6 +1,6 @@
 ---
 rewrite: true
-title: Adriba Destination
+title: Adtriba Destination
 ---
 
 

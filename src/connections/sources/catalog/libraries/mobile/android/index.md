@@ -12,6 +12,9 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 Analytics for Android only supports any Android device running API 14 (Android 4.0) and higher. This includes Amazon Fire devices.
 
+> success ""
+> In addition to the documentation here, you can also [read the Javadocs for all versions of Analytics-Android on Javadoc.io](https://javadoc.io/doc/com.segment.analytics.android/analytics/latest/index.html).
+
 ## Getting Started
 
 ### About mobile connection modes
@@ -105,6 +108,9 @@ Ensure that the necessary permissions are declared in your application's `Androi
 ```
 
 ## Identify
+
+> note ""
+> **Good to know**: For any of the different methods described in this doc, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them.
 

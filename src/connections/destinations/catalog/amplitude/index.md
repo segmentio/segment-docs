@@ -26,9 +26,7 @@ our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
-- [Use Optimizely and Amplitude to A/B test which CTAs lead to more signups](https://segment.com/recipes/ab-test-cta-signups-optimizely/)
-- [Test which call to action (CTA) results in more shopping cart conversions with Optimizely and Amplitude](https://segment.com/recipes/ab-test-cta-conversions-optimizely/)
-- [Identify what industries drive the highest LTV with Amplitude](https://segment.com/recipes/ltv-by-industry-amplitude/)
+{% include components/media-icon.html href="https://segment.com/recipes/ab-test-cta-conversions-optimizely/" icon="media/icon-academy.svg" title="Optimizing page performance using heatmaps" content="Test which call to action (CTA) results in more shopping cart conversions with Optimizely and Amplitude." %}
 
 ## Getting Started
 
@@ -709,7 +707,7 @@ example.  To set an out of session event, pass in `true` for the key
 
 iOS Example:
 
-```objective-c
+```objc
 [[SEGAnalytics sharedAnalytics]
   track: @"Push Notification Viewed"
   properties: nil

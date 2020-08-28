@@ -11,16 +11,6 @@ This document was last updated on January 26, 2018. If you notice any gaps, out-
 > success ""
 > **Good to know**: This page is about the Customer.io Segment destination, which receives data from Segment. There's also a page about the [Customer.io Segment source](/docs/connections/sources/catalog/cloud-apps/customer-io/), which sends data _to_ Segment!
 
-**Use Cases**
-
-* [Send emails to users based on topics of interest with Customer.io](https://segment.com/recipes/emails-topic-interest-customerio/)
-* [Send users an email that summarizes recent product usage with Customer.io](https://segment.com/recipes/product-summary-email-customerio/)
-* [Automatically send an autoresponder email when your initial email goes unopened with Customer.io](https://segment.com/recipes/autoresponder-email-customerio/)
-* [Use email to move users through your onboarding funnel with Customer.io](https://segment.com/recipes/onboarding-email-customerio/)
-* [Ask engaged users to take an NPS survey with Customer.io](https://segment.com/recipes/nps-email-active-users-customerio/)
-* [Get users to your Aha moment faster with email using Customer.io](https://segment.com/recipes/aha-activation-customerio/)
-* [Ask your best customers to leave a review at just the right moment with Customer.io](https://segment.com/recipes/automate-customer-reviews-customerio/)
-
 
 ## Getting Started
 

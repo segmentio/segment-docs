@@ -1,11 +1,10 @@
 ---
 title: Firebase Destination
+strat: google
 ---
 
 
-## Getting Started
-
-### Android
+## Getting Started on Android
 
 To start sending data to Firebase Analytics from your Android project, you'll need to follow a few simple steps:
 
@@ -32,7 +31,7 @@ apply plugin: 'com.google.gms.google-services'
 
 ***Project-level build.gradle***: Add Google Services dependency and their Maven repo location to repositories:
 
-```
+```js
 buildscript {
     dependencies {
         // Add this line
@@ -68,7 +67,7 @@ Analytics analytics = new Analytics.Builder(context, writeKey)
 
 By default, we bundle only `Firebase/Core` which is [Firebase's Analytics offering](https://firebase.google.com/docs/analytics/). You can see the other available [Firebase dependencies and features here](https://firebase.google.com/docs/android/setup).
 
-### iOS
+## Getting Started on iOS
 
 1. Register your app in the [Firebase console](https://console.firebase.google.com/) and add the `GoogleService-Info.plist` to the root of your Xcode project.
 

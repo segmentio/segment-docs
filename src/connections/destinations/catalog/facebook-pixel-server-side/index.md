@@ -3,6 +3,7 @@ title: Facebook Pixel Server-Side Destination
 rewrite: true
 hidden: true
 beta: true
+strat: facebook
 ---
 
 [Facebook Pixel Server-Side API](https://developers.facebook.com/docs/marketing-api/server-side-api) allows advertisers to send events from their servers directly to Facebook. Server-Side events are linked to a pixel and are processed like browser pixel events. This means that Server-Side events are used in measurement, reporting, and optimization in the same way as browser pixel events.
@@ -144,6 +145,33 @@ the pre-purchase events "Product Viewed" and "Product Added", Segment
 uses the value of the "Value Field Identifier" setting to determine which
 property to use for the "value" field. This field defaults to
 `price`.
+
+## Limited Data Use
+
+{% include content/facebook-ldu-intro.md %}
+
+> info ""
+> The **Use Limited Data Use** destination setting is disabled by default for all Facebook destinations except for Facebook Pixel. This must be enabled manually from the destination settings if you're using other Facebook destinations.
+
+{% include content/facebook-ldu-params.md %}
+
+Facebook uses the `context.ip` to determine the geolocation if it exists on the event.
+
+You can manually change the Data Processing parameters by adding settings to the `integrations` object. The example below shows how you might set custom Data Processing parameters in Node.
+
+```javascript
+// node.js library example
+
+    analytics.track({
+      event: 'Membership Upgraded',
+      userId: '97234974',
+      integrations: {
+        "Facebook Pixel Server-Side": {
+          "dataProcessingOptions": [[], 1,1000]
+        }
+      }
+    })
+```
 
 ## Verify Events in Facebook
 

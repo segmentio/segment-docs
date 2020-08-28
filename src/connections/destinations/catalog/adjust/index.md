@@ -27,13 +27,13 @@ pod "Segment-Adjust"
 
 After adding the dependency, you must register the destination with our SDK.  To do this, import the Adjust destination in your `AppDelegate`:
 
-```objective-c
+```objc
 #import <Segment-Adjust/SEGAdjustIntegrationFactory.h>
 ```
 
 And add the following lines:
 
-```objective-c
+```objc
 NSString *const SEGMENT_WRITE_KEY = @" ... ";
 SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
 

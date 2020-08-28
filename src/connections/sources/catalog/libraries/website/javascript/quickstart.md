@@ -1,23 +1,37 @@
 ---
 title: 'Quickstart: Analytics.js'
 hidden: true
+strat: ajs
 ---
-
-<!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
-
 
 This tutorial gets you started sending data from your website to Segment and any of our destinations, using Segment's Analytics.js library. As soon as you're set up you can turn on new destinations with the flip of a switch!
 
 Want to learn more? Check out the [Analytics.js reference](/docs/connections/sources/catalog/libraries/website/javascript/).
 
+## Step 1: Create a Source in the Segment app
 
-## Step 1: Copy the Snippet
+Before you begin, you need a Workspace (which is a container that holds all of the sources and destinations which are billed together for an organization). If you already created one, great! If not, you can sign up for a free Segment account and create one.
+
+Next create an Analytics.js source from your Workspace:
+
+1. Click **Add Source**.
+2. From the source catalog page, click **Javascript**.
+3. Click **Add Source** again from the informational panel that appears to the right.
+4. Give the source a display name, and enter the URL the source will collect data from.
+
+When you create a Source in the Segment web app, it tells the Segment servers that you'll be sending data from a specific source type. When you create (or change!) a Source in the Segment app, Segment generates a new Write Key for that source. You use the write key in your website code to tell the Segment servers where the data is coming from, so Segment can route it to your destinations and other tools.
+
+
+## Step 2: Copy the Segment Snippet
 
 Installing Segment is easy, just paste this snippet into the `<head>` tag of your site.
 
 {% include content/snippet-helper.md %}
 
-Next, replace `YOUR_WRITE_KEY` in the snippet you pasted with your Segment project's **Write Key**, which you can find in your project set up guide or settings.
+Next, replace `YOUR_WRITE_KEY` in the snippet you pasted with your Segment project's **Write Key**. You can [find the write key](/docs/connections/find-writekey/) in your project set up guide or in the source's settings.
+
+> note ""
+> **Note:** When you use Analytics.js in device-mode the source's Write Key is public, because it runs in a user's browser and can be accessed using the browser's developer tools. If this is not acceptable to your organization, you can explore [other Segment Sources](/docs/connections/sources/catalog/) which collect data from a server-based installation, and which are not accessible to the user.
 
 That snippet loads Analytics.js onto the page _asynchronously_, so it won't affect your page load speed. Once the snippet is running on your site, you can turn on destinations from the destinations page in your workspace and they start loading on your site automatically!
 
@@ -27,7 +41,10 @@ Note that you should remove other native third-party destination code that you m
 
 However, lots of analytics and marketing tools need to record _who_ each user is on your site. If you want to use any tool that deals with the identity of your users, read on about the `identify` method.
 
-## Step 2: Identify Users
+## Step 3: Identify Users
+
+> note ""
+> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 The `identify` method is how you tell Segment who the current user is. It includes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify method reference](/docs/connections/sources/catalog/libraries/website/javascript#identify).
 
@@ -43,7 +60,7 @@ analytics.identify('f4ca124298', {
 ```
 That identifies Michael by his unique User ID (in this case, `f4ca124298`, which is what you know him by in your database) and labels him with `name` and `email` traits.
 
-**Hold up though!** When you actually put that code on your site,you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user.
+**Hold up though!** When you actually put that code on your site, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user.
 
 To do that, we recommend that you use a backend template to inject an `identify` call into the footer of **every page** of your site where the user is logged in. That way, no matter what page the user first lands on, they will always be identified. You don't need to call `identify` if your unique identifier (`userId`) is not known.
 
@@ -65,7 +82,7 @@ With that call in your page footer, you successfully identify every user that vi
 Of course, lots of analytics tools record more than just _identities_... they record the actions each user performs too! If you're looking for a complete event tracking analytics setup, keep reading...
 
 
-## Step 3: Track Actions
+## Step 4: Track Actions
 
 The `track` method is how you tell Segment about the actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the [track method reference](/docs/connections/sources/catalog/libraries/website/javascript#track).
 

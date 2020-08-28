@@ -12,12 +12,6 @@ _**NOTE:** There are currently two major versions of the Braze SDK. Make sure yo
 
 If you notice any gaps or outdated information in this document, or simply want to leave some feedback to help us improve, [let us know](https://segment.com/help/contact)!
 
-**Use Cases**
-
-* [Trigger upgrade messages to users who are likely to upgrade with Braze and ClearBrain](https://segment.com/recipes/trigger-upgrade-messages-braze-clearbrain/)
-* [Trigger notifications when users don't complete activation steps with Braze](https://segment.com/recipes/trigger-push-notifications-activation-braze/)
-* [Prompt active users to leave a product review with Braze](https://segment.com/recipes/braze-customer-review-automation/)
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
@@ -254,7 +248,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
     ```
 6. If you are using the `UserNotification` framework, follow [Braze's documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/push_notifications/integration/#using-usernotification-framework-ios-10) to register push notifications using the `UserNotification` framework. Then in your application's `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` method, add the following:
 
-    ```obj-c
+    ```objc
     if ([Appboy sharedInstance] == nil) {
         [[SEGAppboyIntegrationFactory instance].appboyHelper saveUserNotificationCenter:center
                                                                    notificationResponse:response];
@@ -309,7 +303,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
     });
     ```
 
-    **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet) within your `script` tag.
+    **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
 
     **Note:** This will immediately request push permission from the user.
 
@@ -384,7 +378,7 @@ analytics.ready(function() {
 
 For more details on this snippet, check out the Braze's docs [here](https://www.braze.com/documentation/Web/#soft-push-prompts).
 
-**Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet) within your `script` tag.
+**Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
 
 4. When you'd like to display the Soft Push to a user, call:
 

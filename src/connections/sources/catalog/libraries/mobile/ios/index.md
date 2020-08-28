@@ -41,7 +41,7 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 
-**Note:** Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional using initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-3-track-actions) for more info!
+**Note:** Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views is optional using initialization config parameters, but highly recommended to hit the ground running with core events! See [below](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-4-track-actions) for more info!
 
 And of course, import the SDK in the files that you use it with:
 
@@ -102,7 +102,7 @@ configuration.trackPushNotifications = YES;
 ```
 
 ### Automatic Deep Link Tracking
-Tracking deep linking will automatically track `Deep Link Clicked` and `Deep Link Opened`.
+Tracking deep linking will automatically track `Deep Link Opened`.
 
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
@@ -130,6 +130,9 @@ You can also manually `flush` the queue:
 ## Data Collection
 
 Now that the Segment SDK and any accompanying packaged SDKs are installed, you're ready to collect some data!
+
+> note ""
+> **Good to know**: For any of the different methods described in this doc, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 ### Identify
 
