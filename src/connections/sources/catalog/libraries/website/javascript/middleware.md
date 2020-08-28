@@ -53,6 +53,9 @@ var DMW1 = function({ payload, integration, next }) {
 };
 ```
 
+> note ""
+> Currently only Device-mode Destinations are supported by Destination Middlewares 
+
 ## Adding middlewares to Analytics.js
 
 The above defined Source & Destination Middleware can be added to the Analytics.js execution chain as:

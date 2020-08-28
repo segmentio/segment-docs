@@ -7,12 +7,6 @@ rewrite: true
 
 This document was last updated on April 20th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
-**Use Cases**
-
-* [Identify what industries drive the highest LTV with Amplitude and Clearbit](https://segment.com/recipes/ltv-by-industry-amplitude/)
-* [Identify what industries drive the highest LTV with Mixpanel and Clearbit](https://segment.com/recipes/ltv-by-industry-mixpanel/)
-
-
 ## Getting Started
 
 {% include content/connection-modes.md %}

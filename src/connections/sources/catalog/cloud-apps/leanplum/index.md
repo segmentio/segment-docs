@@ -53,7 +53,8 @@ Below is a list of event properties, which might be associated with each Leanplu
 
 | Property        | Type   | Description                                                            |
 | --------------- | ------ |:---------------------------------------------------------------------- |
-| email_id        | String | The Leanplum message ID for the specific email                         |
+| email_id        | String | The unique email ID                         |
+| message_id        | String | The Leanplum message ID                         |
 | email_subject   | String | The email subject as set up in Leanplum                                |
 | campaign_id     | String | (Optional) Leanplum Campaign ID if the message is part of a campaign   |
 | campaign_name   | String | (Optional) Leanplum Campaign Name if the message is part of a campaign |

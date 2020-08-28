@@ -25,7 +25,7 @@ To enable its full functionality (like Push Notifications, Deep linking), there 
 
 
 ## Identify
-Use [Identify](/docs/connections/sources/catalog/libraries/mobile/ios/#identify) to track user specific attributes. It equivalent to tracking [user attributes](https://taplytics.com/docs/guides/user-attributes-setup) on Taplytics. Taplytics supports traits supported by Segment as well as custom traits. If you set traits.id, we set that as the Unique ID for that user.
+Use [Identify](/docs/connections/sources/catalog/libraries/mobile/ios/#identify) to track user specific attributes. It equivalent to tracking [user attributes](https://docs.taplytics.com/docs/guides-user-insights) on Taplytics. Taplytics supports traits supported by Segment as well as custom traits. If you set traits.id, we set that as the Unique ID for that user.
 
 ## Track
 Use [track](/docs/connections/sources/catalog/libraries/mobile/ios/#track) to track events and user behaviour in your app.

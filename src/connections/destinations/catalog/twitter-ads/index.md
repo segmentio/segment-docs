@@ -4,11 +4,6 @@ title: Twitter Destination
 
 [Our Twitter Ads destination code](https://github.com/segment-integrations/analytics.js-integration-twitter-ads) is all open-source on GitHub if you want to check it out.
 
-**Use Cases**
-
-* [Target users similar to your top customers on Twitter](https://segment.com/recipes/top-customer-similar-audiences-twitter/)
-* [Retarget shopping cart abandoners on Twitter](https://segment.com/recipes/abandon-cart-retargeting-twitter/)
-
 ## Getting Started
 
 From your Segment Destinations page click on Twitter Ads. Twitter Ads can track conversions in two ways. You can opt to use their newest **Universal Website Tag** or their **Single Event Website Tag**. You could also use both types of tags on the same page.
