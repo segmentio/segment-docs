@@ -17,9 +17,10 @@ Our [Xamarin](http://xamarin.com/) Portable Class Library ([PCL](http://develope
 
 The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on Github](https://github.com/segmentio/Analytics.Xamarin).
 
-**Note:** Since Xamarin requires our library to be portable to different builds, we can only enable server-side destinations, as opposed to bundling select native SDKs like we do for iOS and Android. Look for the "Server" icon when selecting destinations. For tools for which we offer both bundled and server-side destinations, like Mixpanel, Amplitude, and Google Analytics, our Xamarin library will only be able to leverage their server-side functionality. [Read this help article for more information](https://help.segment.com/hc/en-us/articles/204892879).
+**Note:** Since Xamarin requires our library to be portable to different builds, we can only enable server-side destinations, as opposed to bundling select native SDKs like we do for iOS and Android. Look for the "Server" icon when selecting destinations. For tools for which we offer both bundled and server-side destinations, like Mixpanel, Amplitude, and Google Analytics, our Xamarin library will only be able to use their server-side functionality.
 
 ## Getting Started
+
 Clone `Analytics.Xamarin` from [Github](https://github.com/segmentio/Analytics.Xamarin)...
 
 ```bash
@@ -72,7 +73,7 @@ The `identify` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -115,7 +116,7 @@ The `track` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -158,7 +159,7 @@ The `screen` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -195,7 +196,7 @@ The `group` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -244,7 +245,7 @@ Don't forget to set async back to `true` for production, so that you can advanta
 
 An `Options` object lets you:
 
-1. Set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations)
+1. Set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations)
 2. [Send additional context](#context)
 3. [Send an anoymousId](#anonymous-id)
 

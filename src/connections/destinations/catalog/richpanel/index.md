@@ -5,10 +5,10 @@ rewrite: true
 
 [Richpanel](https://richpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the helpdesk software built for Ecommerce teams to support customers at scale in a fun, easy, collaborative way.
 
-This destination is maintained by Richpanel. For any issues with the destination, please [reach out to their team](mailto:support@richpanel.com).
+This destination is maintained by Richpanel. For any issues with the destination, [contact their team](mailto:support@richpanel.com).
 
 
-_**NOTE:** The Richpanel Destination is currently in beta, which means that they are still actively developing the destination. If you have any feedback to help improve the Richpanel Destination and its documentation, please [let  their team know](mailto:support@richpanel.com)!_
+_**NOTE:** The Richpanel Destination is currently in beta, which means that they are still actively developing the destination. If you have any feedback to help improve the Richpanel Destination and its documentation, [let their team know](mailto:support@richpanel.com)!_
 
 ## Getting Started
 
@@ -24,7 +24,7 @@ _**NOTE:** The Richpanel Destination is currently in beta, which means that they
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [`identify` method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`identify` method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -49,7 +49,7 @@ See [Richpanel's User Properties](http://event.richpanel.com/#/properties) and [
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [`page` method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`page` method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page('Pricing', {
@@ -65,7 +65,7 @@ If no `richpanel_session_id` is supplied, Richpanel will automatically generate 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [`track` method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`track` method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Clicked Login Button', {

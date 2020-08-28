@@ -5,7 +5,7 @@ title: Zendesk Destination
 
 [Zendesk](https://www.zendesk.com/support/documentation/) is a premier, cloud-based customer service application. It was designed with one purpose in mind: to improve communication between a company and its customers. Their products allow businesses to be more reliable, flexible, and scalable. They help improve communication and make sense of massive amounts of data. Above all, they work together to build the best experience for your customers.
 
-This document was last updated on April 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [please let us know](https://segment.com/help/contact)!
+This document was last updated on April 30, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
@@ -22,7 +22,7 @@ This document was last updated on April 30, 2018. If you notice any gaps, outdat
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify("97980cfea0067", {
@@ -111,11 +111,11 @@ To limit identified users from receiving a verification email from Zendesk, simp
 
 ### Zendesk Custom User Fields
 
-You may map to custom user fields within Zendesk by passing your custom field key-value pair as a trait in the Identify call. When passing traits within the identify event, Segment will first try and map the trait to a known, existing field in Zendesk - either the canned standard fields described above or to a custom field (user_fields). We format the field name from either camelCaseFormat or snake_case_format into snake_case_format. If you're finding that your custom fields are not populating in Zendesk as you would expect please check the name formatting with this in mind.
+You may map to custom user fields within Zendesk by passing your custom field key-value pair as a trait in the Identify call. When passing traits within the identify event, Segment will first try and map the trait to a known, existing field in Zendesk - either the canned standard fields described above or to a custom field (user_fields). We format the field name from either camelCaseFormat or snake_case_format into snake_case_format. If you're finding that your custom fields are not populating in Zendesk as you would expect check the name formatting with this in mind.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Article Completed', {
@@ -136,7 +136,7 @@ We will only send `track` events when the following two conditions are met:
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```js
 analytics.group("0e8c78ea9d97a7b8185e8632", {
@@ -196,4 +196,4 @@ Here are the Zendesk Organization Attributes Segment maps to and their syntax.
 
 ### Zendesk Custom Organization Fields
 
-You may map to custom organization fields within Zendesk by passing your custom field key-value pair as a trait in the Group call. When passing traits within the group event, Segment will first try and map the trait to a known, existing field in Zendesk - either the canned standard fields described above or to a custom field (organization_fields). We format the field name from either camelCaseFormat or snake_case_format into snake_case_format. If you're finding that your custom fields are not populating in Zendesk as you would expect please check the name formatting with this in mind.
+You may map to custom organization fields within Zendesk by passing your custom field key-value pair as a trait in the Group call. When passing traits within the group event, Segment will first try and map the trait to a known, existing field in Zendesk - either the canned standard fields described above or to a custom field (organization_fields). We format the field name from either camelCaseFormat or snake_case_format into snake_case_format. If you're finding that your custom fields are not populating in Zendesk as you would expect check the name formatting with this in mind.

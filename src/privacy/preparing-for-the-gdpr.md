@@ -8,7 +8,7 @@ In keeping with our ongoing commitment to privacy and security, Segment will be 
 
 Specifically, here is how we'll support our customers:
 
-*   An updated Data Processing Agreement (DPA) to reflect the requirements of the GDPR and to ensure compliant data transfer with storage outside the EU. Existing customers can enter into the updated data processing agreement via the opt-in process described [here](https://segment.com/docs/guides/best-practices/preparing-for-the-gdpr/#how-to-opt-into-the-data-processing-agreement-and-eu-model-contract-clauses).
+*   An updated Data Processing Agreement (DPA) to reflect the requirements of the GDPR and to ensure compliant data transfer with storage outside the EU. Existing customers can enter into the updated data processing agreement using the opt-in process described [here](https://segment.com/docs/guides/best-practices/preparing-for-the-gdpr/#how-to-opt-into-the-data-processing-agreement-and-eu-model-contract-clauses).
 
 *   New product capabilities to help you be compliant when users request you delete or suppress their data.
 
@@ -60,7 +60,7 @@ In addition to seeking independent legal advice regarding your obligations under
 
 6.  Determine if your company needs to appoint a [Data Protection Officer](https://gdpr-info.eu/art-37-gdpr/) (DPO). If you will be appointing a DPO, begin searching for the best person for the role.
 
-7.  Start preparing today! Becoming GDPR compliant takes time, and will require you to rethink how you collect and manage customer data. If you have any questions about the GDPR or want to learn how Segment can help you prepare, [please let us know](https://segment.com/contact/sales)!
+7.  Start preparing today! Becoming GDPR compliant takes time, and will require you to rethink how you collect and manage customer data. If you have any questions about the GDPR or want to learn how Segment can help you prepare, [let us know](https://segment.com/contact/sales)!
 
 
 Over the coming weeks and months, we'll be sharing details on our new product capabilities and our best practices to help you prepare for the GDPR. Check back here for updates.

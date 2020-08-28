@@ -44,7 +44,7 @@ This event supports the following semantic properties:
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Created",
   "properties": {
     "account_name": "Initech"
@@ -57,7 +57,7 @@ This event supports the following semantic properties:
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Created",
   "properties": {
     "account_name": "Initech"
@@ -85,7 +85,7 @@ This event supports the following semantic properties:
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Deleted",
   "properties": {
     "account_name": "Initech"
@@ -98,7 +98,7 @@ This event supports the following semantic properties:
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Deleted",
   "properties": {
     "account_name": "Initech"
@@ -135,7 +135,7 @@ This event supports the following semantic properties:
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Signed Up",
   "properties": {
     "type": "organic",
@@ -154,7 +154,7 @@ This event supports the following semantic properties:
 ```json
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Signed Up",
   "properties": {
     "type": "organic",
@@ -191,7 +191,7 @@ This event supports the following semantic properties:
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Signed In",
   "properties": {
     "username": "pgibbons"
@@ -204,7 +204,7 @@ This event supports the following semantic properties:
 ```json
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Signed In",
   "properties": {
     "username": "pgibbons"
@@ -217,7 +217,7 @@ This event supports the following semantic properties:
 
 ### Signed Out
 
-This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) to refresh the cookie when a Signed Out event occurs.
+This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) to refresh the cookie when a Signed Out event occurs.
 
 > success ""
 > **Good to know**: Segment's best practice is to use an "Object-Action" naming convention, which in this case would be "User Signed Out". However, because in the B2B case this may not be a specific user, we omit that noun in our example. You may include or omit it as needed for your implementation.
@@ -235,7 +235,7 @@ This event supports the following semantic properties:
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Signed Out",
   "properties": {
     "username": "pgibbons"
@@ -248,7 +248,7 @@ This event supports the following semantic properties:
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Signed Out",
   "properties": {
     "username": "pgibbons"
@@ -278,7 +278,7 @@ This event supports the following semantic properties:
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Invite Sent",
   "properties": {
     "invitee_email": "pgibbons@example.com",
@@ -294,7 +294,7 @@ This event supports the following semantic properties:
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Invite Sent",
   "properties": {
     "invitee_email": "pgibbons@example.com",
@@ -325,7 +325,7 @@ This event supports the following semantic properties:
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Added User",
   "properties": {
     "role": "Owner"
@@ -338,7 +338,7 @@ This event supports the following semantic properties:
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Added User",
   "properties": {
     "role": "Owner"
@@ -365,7 +365,7 @@ This event supports the following semantic properties:
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Removed User",
   "properties": {},
   "context": {
@@ -376,7 +376,7 @@ This event supports the following semantic properties:
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Account Removed User",
   "properties": {},
   "context": {
@@ -404,7 +404,7 @@ This event supports the following semantic properties:
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Trial Started",
   "properties": {
       "trial_start_date": "2018-08-28T04:09:47Z",
@@ -419,7 +419,7 @@ This event supports the following semantic properties:
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Trial Started",
   "properties": {
       "trial_start_date": "2018-08-28T04:09:47Z",
@@ -451,7 +451,7 @@ This event supports the following semantic properties:
 
 {% comment %} api-example '{
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Trial Ended",
   "properties": {
       "trial_start_date": "2018-08-28T04:09:47Z",
@@ -466,7 +466,7 @@ This event supports the following semantic properties:
 ```js
 {
   "userId": "019mr8mf4r",
-  "action": "track",
+  "type": "track",
   "event": "Trial Ended",
   "properties": {
       "trial_start_date": "2018-08-28T04:09:47Z",

@@ -7,7 +7,7 @@ source-type: event
 
 This source allows you to enrich user profiles with survey responses and use them in any tool connected to your Segment account.
 
-This source is maintained by Refiner. For any issues with the source, please [contact Refiner Support](mailto:contact@refiner.io).
+This source is maintained by Refiner. For any issues with the source, [contact Refiner Support](mailto:contact@refiner.io).
 
 > success ""
 > **Good to know**: This page is about the Refiner Segment source, which sends data _into_ Segment. There's also a page about the [Refiner Segment destination](https://segment.com/docs/connections/destinations/catalog/refiner/), which receives data from Segment!

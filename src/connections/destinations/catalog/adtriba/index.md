@@ -1,14 +1,14 @@
 ---
 rewrite: true
-title: Adriba Destination
+title: Adtriba Destination
 ---
 
 
 [Adtriba](https://www.adtriba.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows advertisers to track, control and optimize their marketing activities across all digital marketing channels through AI and user journey analysis.
 
-This destination is maintained by Adtriba. For any issues with the destination, please [reach out to their team](mailto:support@adtriba.com).
+This destination is maintained by Adtriba. For any issues with the destination, [contact their team](mailto:support@adtriba.com).
 
-_**NOTE:** The Adtriba Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on Feburary 28, 2019. If you are interested in joining their beta program or have any feedback to help improve the Adtriba Destination and its documentation, please [let their team know](mailto:support@adtriba.com)!_
+_**NOTE:** The Adtriba Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on Feburary 28, 2019. If you are interested in joining their beta program or have any feedback to help improve the Adtriba Destination and its documentation, [let their team know](mailto:support@adtriba.com)!_
 
 
 ## Getting Started
@@ -22,7 +22,7 @@ _**NOTE:** The Adtriba Destination is currently in beta, which means that they a
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -33,7 +33,7 @@ Page calls will be sent to Adtriba as a `pageview`.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -46,7 +46,7 @@ Identify calls will be sent to Adtriba as an `identify` event.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Conversion', {

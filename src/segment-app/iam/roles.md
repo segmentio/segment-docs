@@ -89,10 +89,13 @@ Read-only access to assigned Personas Space(s), including all audiences and comp
 
 Edit access to Identity settings in Personas.
 
-**Scope:** Grant access to **all** Identity settings.
+**Scope:** Grants access to **all** Identity settings.
 
-#### Minimal Workspace Access
-Access to only log into a workspace. Users with minimal access cannot view any resources or settings.
+#### End User Privacy Admin
+
+Edit access to [End User Privacy Settings](/docs/privacy/user-deletion-and-suppression). Includes access to Data Privacy Agreement, and user suppression and deletion workflows.
+
+**Scope:** Grants access to only End User Privacy Settings in the App.
 
 ## PII Access
 

@@ -5,7 +5,7 @@ title: Adjust Destination
 
 [Adjust](https://adjust.com) is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-adjust) and [Android](https://github.com/segment-integrations/analytics-android-integration-adjust).
 
-This document was last updated on January 31, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on January 31, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
@@ -27,13 +27,13 @@ pod "Segment-Adjust"
 
 After adding the dependency, you must register the destination with our SDK.  To do this, import the Adjust destination in your `AppDelegate`:
 
-```objective-c
+```objc
 #import <Segment-Adjust/SEGAdjustIntegrationFactory.h>
 ```
 
 And add the following lines:
 
-```objective-c
+```objc
 NSString *const SEGMENT_WRITE_KEY = @" ... ";
 SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
 
@@ -43,7 +43,7 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 ```
 
-In cases where the Adjust integration sometimes does not track the install attribution properly, you can configure a delay for the Adjust reporting to ensure all session parameters have been loaded properly. Segment allows you to configure this via our UI by enabling `setDelay` and providing a `delayTime` in seconds. Segment then calls the [Adjust iOS SDK's configuration](https://github.com/adjust/ios_sdk#delay-start) to set a delay. The maximum delay start time of the Adjust SDK is 10 seconds.
+In cases where the Adjust integration sometimes does not track the install attribution properly, you can configure a delay for the Adjust reporting to ensure all session parameters have been loaded properly. Segment allows you to configure this using our UI by enabling `setDelay` and providing a `delayTime` in seconds. Segment then calls the [Adjust iOS SDK's configuration](https://github.com/adjust/ios_sdk#delay-start) to set a delay. The maximum delay start time of the Adjust SDK is 10 seconds.
 
 
 ### Android
@@ -97,7 +97,7 @@ analytics.track({
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('12091906-01011992', {
@@ -111,7 +111,7 @@ When you call `identify`, Segment will call Adjust's [addSessionPartnerParameter
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track('Article Completed', {
@@ -127,13 +127,13 @@ If you don't provide a mapping, Adjust cannot accept the event. We include all t
 
 ## Reset
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Reset method](https://segment.com/docs/connections/spec/reset/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Reset method](https://segment.com/docs/connections/spec/reset/) does. An example call would look like:
 
 ```javascript
 analytics.reset();
 ```
 
-When you call `reset`, Segment will reset these partner parameters via Adjust's [resetSessionPartnerParameters](https://github.com/adjust/ios_sdk#session-partner-parameters) method.
+When you call `reset`, Segment will reset these partner parameters using Adjust's [resetSessionPartnerParameters](https://github.com/adjust/ios_sdk#session-partner-parameters) method.
 
 ## Install Attributed
 
@@ -158,7 +158,7 @@ If any value is unavailable, it will default to nil.  This call will be sent to 
 
 #### Troubleshooting
 
-If you are also loading Adjust's SDK natively in addition to loading via the Segment-Adjust integration, `Install Attributed` event callback will likely be affected/unable to be triggered. **Remove native Adjust implementation**.
+If you are also loading Adjust's SDK natively in addition to loading using the Segment-Adjust integration, `Install Attributed` event callback will likely be affected/unable to be triggered. **Remove native Adjust implementation**.
 
 Since there will not be a change in attribution for registered testing devices you are currently using to send data to Adjust, you will need to unregister that device in Adjust.
 
@@ -174,7 +174,7 @@ Unlike the Device-mode option to send `Install Attributed` to Segment, the Cloud
 
 If you are bundling the Segment-Adjust integration and would like attribution data sent from Adjust's servers back to Segment, you can [enable Segment as a Special Partner in Adjust](https://docs.adjust.com/en/special-partners/segment/#sending-partner-parameters-to-segment). Once set up, Install Attributed will be sent to Segment, and on to enabled Cloud-mode destinations.
 
-Please reach out to the Adjust team at `support@adjust.com` for questions related to enabling Segment as a Adjust Special Partner.
+contact the Adjust team at `support@adjust.com` for questions related to enabling Segment as a Adjust Special Partner.
 
 
 ## Additional Features
@@ -199,7 +199,7 @@ If you're using Adjust's iOS SDK, it will automatically takes care of duplicate 
 
 ### In-App Purchase Receipts
 
-The destination does not currently support in-app purchase receipts. If this is important to you, please [let us know](/contact/).
+The destination does not currently support in-app purchase receipts. If this is important to you, [let us know](https://segment.com/help/contact/).
 
 ### Push Notifications
 

@@ -4,9 +4,9 @@ title: Userpilot
 ---
 [Userpilot](https://userpilot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps product teams increase user adoption by allowing them to trigger highly personalized onboarding experiences across the user journey. The Segment integration will help you install and send data to Userpilot without added development time.
 
-This destination is maintained by Userpilot. For any issues with the destination, please [reach out to their team](mailto:support@userpilot.io).
+This destination is maintained by Userpilot. For any issues with the destination, [contact their team](mailto:support@userpilot.io).
 
-_**NOTE:** The Userpilot Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 18, 2019. If you are interested in joining their beta program or have any feedback to help improve the Userpilot Destination and its documentation, please [let  their team know](mailto:support@userpilot.io)!_
+_**NOTE:** The Userpilot Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 18, 2019. If you are interested in joining their beta program or have any feedback to help improve the Userpilot Destination and its documentation, [let their team know](mailto:support@userpilot.io)!_
 
 
 ## Getting Started
@@ -18,7 +18,7 @@ _**NOTE:** The Userpilot Destination is currently in beta, which means that they
 3. Drop in the "App Token" into your Segment Settings UI which you can find from your [Userpilot dashboard](https://app.userpilot.io/settings/setup) within the code snippet that looks like this `<script src = "https://deploy.userpilot.io/73fe57o8.js"></script>` where `73fe57o8` is the value you want to use.
 
 ## Page
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -28,7 +28,7 @@ Calling the `page` from `analytics.js` triggers the `userpilot.reload` method th
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -46,7 +46,7 @@ Data passed in the `identify` can be organized under different categories.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')

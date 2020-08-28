@@ -5,11 +5,11 @@ title: MSG91 Destination
 
 [MSG91](https://msg91.com/) provides SMS marketing/transactional automation for businesses. With Segment you can send SMS with a single call.
 
-This document was last updated on April 05, 2019. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please let us know!
+This document was last updated on April 05, 2019. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
-This destination is maintained by MSG91. For any issues with the destination, please [reach out to their team](mailto:support@msg91.com).
+This destination is maintained by MSG91. For any issues with the destination, [contact their team](mailto:support@msg91.com).
 
-_**NOTE:** The MSG91 Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 23, 2019. If you are interested in joining their beta program or have any feedback to help improve the MSG91 Destination and its documentation, please [let  their team know](mailto:support@msg91.com)!_
+_**NOTE:** The MSG91 Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 23, 2019. If you are interested in joining their beta program or have any feedback to help improve the MSG91 Destination and its documentation, [let their team know](mailto:support@msg91.com)!_
 
 
 
@@ -25,7 +25,7 @@ _**NOTE:** The MSG91 Destination is currently in beta, which means that they are
 
 
 ## Identify
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 {
@@ -49,7 +49,7 @@ Identify calls will be sent to MSG91 as an `Send SMS` event.
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. Make sure you send the following Properties with `page` method to send SMS. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. Make sure you send the following Properties with `page` method to send SMS. An example call would look like:
 
 ```
 {
@@ -68,7 +68,7 @@ Page calls will be sent to MSG91 as a `Send SMS`.
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. Make sure you send the following Properties with `Screen` method to send SMS. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. Make sure you send the following Properties with `Screen` method to send SMS. An example call would look like:
 
 ```
 {
@@ -86,7 +86,7 @@ Screen calls will be sent to MSG91 as a `Send SMS`.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. Make sure you send the following Properties with `track` method to send SMS. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. Make sure you send the following Properties with `track` method to send SMS. An example call would look like:
 
 ```
 {

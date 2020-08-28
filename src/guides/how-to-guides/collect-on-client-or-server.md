@@ -43,7 +43,7 @@ Sensitive information is also best kept out of browsers. Any data you don't want
 
 ### Selecting Destinations
 
-Each Segment library allows an `integrations` object either as a top level object or nested in options object. [Check your library docs](https://segment.com/docs/connections/sources/) for details; look for the section titled ["Selecting Destinations"](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-integrations).
+Each Segment library allows an `integrations` object either as a top level object or nested in options object. [Check your library docs](https://segment.com/docs/connections/sources/) for details; look for the section titled ["Selecting Destinations"](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-destinations-with-the-integrations-object).
 
 This flag may be especially useful in Legacy source types, where an event might be triggered on both the client & server for various reasons. The following will cause the payload to be sent to all enabled tools EXCEPT Facebook Pixel:
 

@@ -110,4 +110,4 @@ and search like '%ttg=2'
 order by received_at
 ```
 
-We hope this overview helps explain the technical nuances of measuring what happens when a customer finds you via an ad! If you have any other questions, please feel free to share them in the Segment Community for discussion.
+We hope this overview helps explain the technical nuances of measuring what happens when a customer finds you using an ad! If you have any other questions, feel free to share them in the Segment Community for discussion.

@@ -6,17 +6,11 @@ hide-personas-partial: true
 
 [Braze](https://www.braze.com/), formerly Appboy, is an engagement platform that empowers growth by helping marketing teams to build customer loyalty through mobile, omni channel customer experiences.
 
-The Braze Destination is open-source on GitHub. You can browse the code on Github: [iOS](https://github.com/Appboy/appboy-segment-ios), [Android](https://github.com/Appboy/appboy-segment-android) (Android and iOS maintained by Braze), [Web](https://github.com/segment-integrations/analytics.js-integration-appboy), [Server](https://github.com/segmentio/integration-appboy) (Web and Server maintained by Segment). If you find any issues for mobile platforms, please let Braze know, if the issues appear on web or server, let [us know](https://segment.com/help/contact).
+The Braze Destination is open-source on GitHub. You can browse the code on Github: [iOS](https://github.com/Appboy/appboy-segment-ios), [Android](https://github.com/Appboy/appboy-segment-android) (Android and iOS maintained by Braze), [Web](https://github.com/segment-integrations/analytics.js-integration-appboy), [Server](https://github.com/segmentio/integration-appboy) (Web and Server maintained by Segment). If you find any issues for mobile platforms, let Braze know, if the issues appear on web or server, let [us know](https://segment.com/help/contact).
 
 _**NOTE:** There are currently two major versions of the Braze SDK. Make sure you read [important notes](https://segment.com/docs/connections/destinations/catalog/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2._
 
-If you notice any gaps or outdated information in this document, or simply want to leave some feedback to help us improve, please [let us know](https://segment.com/help/contact)!
-
-**Use Cases**
-
-* [Trigger upgrade messages to users who are likely to upgrade with Braze and ClearBrain](https://segment.com/recipes/trigger-upgrade-messages-braze-clearbrain/)
-* [Trigger notifications when users don't complete activation steps with Braze](https://segment.com/recipes/trigger-push-notifications-activation-braze/)
-* [Prompt active users to leave a product review with Braze](https://segment.com/recipes/braze-customer-review-automation/)
+If you notice any gaps or outdated information in this document, or simply want to leave some feedback to help us improve, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -25,8 +19,8 @@ If you notice any gaps or outdated information in this document, or simply want 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Braze" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. In your Segment Settings UI, add the "API Key" which can be found in your Braze Dashboard under App Settings > Manage App Group.
-4. You will also need to setup a new App Group REST API Key in the Braze Dashboard under App Settings > Developer Console > API Settings. Instructions can be found [here](https://www.braze.com/documentation/REST_API/#creating-and-managing-rest-api-keys). **Note:** For this App Group REST API Key, you will only need to select users.track endpoint under "User Data"
-5. If you are implementing via Analytics.js, Segment will automatically load the [Braze Web SDK](https://www.braze.com/documentation/Web/). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
+4. You will also need to set up a new App Group REST API Key in the Braze Dashboard under App Settings > Developer Console > API Settings. Instructions can be found [here](https://www.braze.com/documentation/REST_API/#creating-and-managing-rest-api-keys). **Note:** For this App Group REST API Key, you will only need to select users.track endpoint under "User Data"
+5. If you are implementing using Analytics.js, Segment will automatically load the [Braze Web SDK](https://www.braze.com/documentation/Web/). Otherwise, depending on the source you've selected, include Braze's library by adding the following lines to your dependency configuration.
 
 
 ### iOS
@@ -51,7 +45,7 @@ If you notice any gaps or outdated information in this document, or simply want 
 
 #### Sample App
 
-Braze has created a sample iOS application that integrates Braze via Segment. Check it out at the [Github repo](https://github.com/Appboy/appboy-segment-ios/tree/master/Example).
+Braze has created a sample iOS application that integrates Braze using Segment. Check it out at the [Github repo](https://github.com/Appboy/appboy-segment-ios/tree/master/Example).
 
 ### Android
 
@@ -82,11 +76,11 @@ Braze has created a sample iOS application that integrates Braze via Segment. Ch
 
 #### Sample App
 
-Braze has created a sample Android application that integrates Braze via Segment. Check it out at the [Github repo](https://github.com/Appboy/appboy-segment-android-sample).
+Braze has created a sample Android application that integrates Braze using Segment. Check it out at the [Github repo](https://github.com/Appboy/appboy-segment-android-sample).
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page();
@@ -96,7 +90,7 @@ Page calls are only sent to Braze if you have enabled either "Track All Pages" o
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('ze8rt1u89', {
@@ -123,7 +117,7 @@ All other traits (except their [reserved keys](https://www.braze.com/documentati
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Purchased Item', {
@@ -164,7 +158,7 @@ The example above would have "Purchased Item" as its `productId` and includes tw
 - `revenue`
 - `currency`
 
-Braze supports a currency codes as specified in [their documentation](https://www.braze.com/docs/developer_guide/rest_api/user_data/#purchase-object-specification). Please be aware that any currency reported other than USD will still be shown in [your Braze UI in USD based on the exchange rate on the date it was reported](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/logging_purchases/#logging-purchases).
+Braze supports a currency codes as specified in [their documentation](https://www.braze.com/docs/developer_guide/rest_api/user_data/#purchase-object-specification). Be aware that any currency reported other than USD will still be shown in [your Braze UI in USD based on the exchange rate on the date it was reported](https://www.braze.com/docs/developer_guide/platform_integration_guides/web/analytics/logging_purchases/#logging-purchases).
 
 You can add more product details in the form of key-value pairs to the `properties` object. However, the following reserved keys will not be passed to Braze if included in your Track call's `properties` object:
 
@@ -177,7 +171,7 @@ You can add more product details in the form of key-value pairs to the `properti
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```js
 analytics.group("1234", {
@@ -230,7 +224,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 #### iOS
 
-1. Follow the directions to register for push at in [Segment's iOS library](https://segment.com/docs/libraries/ios/) docs.
+1. Follow the directions to register for push at in [Segment's iOS library](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) docs.
 2. Add the following to your application:didFinishLaunchingWithOptions
 
     ```
@@ -254,7 +248,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
     ```
 6. If you are using the `UserNotification` framework, follow [Braze's documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/push_notifications/integration/#using-usernotification-framework-ios-10) to register push notifications using the `UserNotification` framework. Then in your application's `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` method, add the following:
 
-    ```obj-c
+    ```objc
     if ([Appboy sharedInstance] == nil) {
         [[SEGAppboyIntegrationFactory instance].appboyHelper saveUserNotificationCenter:center
                                                                    notificationResponse:response];
@@ -309,7 +303,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
     });
     ```
 
-    **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet) within your `script` tag.
+    **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
 
     **Note:** This will immediately request push permission from the user.
 
@@ -384,7 +378,7 @@ analytics.ready(function() {
 
 For more details on this snippet, check out the Braze's docs [here](https://www.braze.com/documentation/Web/#soft-push-prompts).
 
-**Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet) within your `script` tag.
+**Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
 
 4. When you'd like to display the Soft Push to a user, call:
 
@@ -396,7 +390,7 @@ For more details on this snippet, check out the Braze's docs [here](https://www.
 
 ### Enable IDFA collection
 
-To enable IDFA collection in Braze, please add following lines to your `Podfile`:
+To enable IDFA collection in Braze, add following lines to your `Podfile`:
 
 ```objc
 post_install do |installer|
@@ -416,7 +410,7 @@ end
 ### Migrating to v2 of the Braze Web SDK
 There are currently two major [versions](https://github.com/Appboy/appboy-web-sdk/blob/master/CHANGELOG.md#breaking) of this SDK: 1 and 2. Segment currently supports both as migrating to Version 2 requires some important changes to your website.
 
-If you have never implemented Braze on your site, either via Segment or natively, you can ignore this section. If you have had Braze running before and want to migrate to Version 2 **you must ensure you remove all references to `appboy.min.css` from your site.** This is very important as it will cause issues with Version 2 of their SDK. Once you have done this you can select Version 2 via the "Braze Web SDK Version" with your Segment Settings UI.
+If you have never implemented Braze on your site, either using Segment or natively, you can ignore this section. If you have had Braze running before and want to migrate to Version 2 **you must ensure you remove all references to `appboy.min.css` from your site.** This is very important as it will cause issues with Version 2 of their SDK. Once you have done this you can select Version 2 using the "Braze Web SDK Version" with your Segment Settings UI.
 
 ## Using Braze with Personas
 
@@ -523,11 +517,16 @@ To send computed traits or audiences to Braze, you first must connect it to your
 - **Must create audience_name field before Personas can update those values?**: No. If sent as an `identify` call, Personas automatically creates the computed trait or audience name as a custom attribute in Braze. If sent as a `track` call, Personas automatically creates a custom event in Braze.
 - **Computed trait appears as**: A snake cased version of the computed trait name (for example, `last_product_viewed: 'Sweater'`) with a string for the value of the computed trait.
 - **Audience appears as**: A snake cased version of the audience name (for example, `order_completed_last_30days: true` ) with a boolean value of `true` indicates that a user is in the audience.
-- **Destination rate limit**: Unlimited. Segment sends Personas data to Braze’s `/users/track` endpoint, which has [no rate limit](https://www.braze.com/docs/api/basics/#api-limits).
+- **Destination rate limit**: 100 requests per second
 - **Lookback window allowed:** Yes, unlimited.
 - **Identifiers required** : `userId` or `braze_id`
 - **Identifiers accepted** : `userId` or `braze_id`
 - **Client or Server-Side Connection**: Server-side connection for Personas
+
+## Debounce with Middlewares
+
+If you use the Braze destination in either [cloud or device mode](/docs/connections/destinations/#connection-modes) you can save Braze costs by "debouncing" duplicate `identify()` calls from Segment by adding our [open-source Middleware tool](https://github.com/segmentio/segment-braze-mobile-middleware) to your implementation. More information about this tool and how it works [is available in the project's README](https://github.com/segmentio/segment-braze-mobile-middleware/blob/master/README.md#how-does-this-work).
+
 
 ## Braze Personas FAQs
 
@@ -546,4 +545,4 @@ No. Audiences are sent to Braze as either custom attributes or custom events. Yo
 All Braze user profile data (including custom events, custom attributes) is stored for as long as those profiles are active.
 
 #### What happens if I delete a computed trait or audience in Segment?
-When you delete an audience or trait in Segment they are not deleted from Braze. Data sent to Braze is immutable and cannot be deleted or modified once they receive it. However, you can [blacklist](https://www.braze.com/docs/user_guide/administrative/app_settings/manage_app_group/custom_event_and_attribute_management/#blacklisting-custom-attributes-custom-events-and-products) custom attributes and events in Braze.
+When you delete an audience or trait in Segment they are not deleted from Braze. Data sent to Braze is immutable and cannot be deleted or modified once they receive it. However, you can [blocklist](https://www.braze.com/docs/user_guide/administrative/app_settings/manage_app_group/custom_event_and_attribute_management/#blacklisting-custom-attributes-custom-events-and-products) custom attributes and events in Braze.

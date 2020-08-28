@@ -4,7 +4,7 @@ title: What is the native mobile spec?
 
 The [Native Mobile Spec](https://segment.com/docs/connections/spec/mobile) is a common blueprint for the mobile user lifecycle. The Spec outlines the most important events for mobile apps to be tracking and automatically collects many of these events with the Segment Android and iOS SDKs.
 
-This article outlines common questions about our Native Mobile Spec. To learn what the benefits are of the feature, check out our [blog](https://segment.com/blog/native-mobile-spec). For technical setup and documentation, see our [spec docs](https://segment.com/docs/connections/spec/mobile).
+This article outlines common questions about our Native Mobile Spec. To learn what the benefits are of the feature, check out our [blog](https://segment.com/blog/native-mobile-spec). For technical set up and documentation, see our [spec docs](https://segment.com/docs/connections/spec/mobile).
 
 ### How does the Native Mobile Spec help me?
 
@@ -30,7 +30,7 @@ When the application is foregrounded on the phone, our SDK will be called and em
 
 ### How do I opt-in to the new feature?
 
-This feature is opted out by default. You have to opt in to collect these events as mentioned in our Quick Start guides ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/), [Android](https://segment.com/docs/libraries/android/quickstart/)). You'll be doing this in code by altering the configuration you pass into the SDK initialization methods (telling the SDK to collect these events automatically).
+This feature is opted out by default. You have to opt in to collect these events as mentioned in our Quick Start guides ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/), [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/quickstart/)). You'll be doing this in code by altering the configuration you pass into the SDK initialization methods (telling the SDK to collect these events automatically).
 
 ### What happens if I' already tracking these events? Will they be double counted?
 
@@ -58,4 +58,4 @@ You can, but the sooner you switch to the spec'd events, the further back you'll
 
 ### How will I be able to take advantage of new campaign events?
 
-In the coming months, we'll be updating our mobile marketing destinations to automatically capture campaign events around attribution, deep linking, and push notifications. These events will go to [destinations](/docs/connections/destinations/), including [warehouses](https://segment.com/docs/warehouses/).
+In the coming months, we'll be updating our mobile marketing destinations to automatically capture campaign events around attribution, deep linking, and push notifications. These events will go to [destinations](/docs/connections/destinations/), including [warehouses](/docs/connections/storage/catalog/).

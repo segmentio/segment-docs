@@ -5,10 +5,10 @@ title: Upcall Destination
 
 [Upcall](https://www.upcall.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) creates real phone conversations seconds after a lead comes in and automatically follows up at the right time and with the right message, 24/7/365.
 
-This destination is maintained by Upcall. For any issues with the destination, please [reach out to their team](mailto:success@upcall.com).
+This destination is maintained by Upcall. For any issues with the destination, [contact their team](mailto:success@upcall.com).
 
 
-_**NOTE:** Upcall is currently in beta, which means that there may still be some bugs for us to iron out. This doc was last updated on February 21, 2019, and we'd love to hear your feedback. If you are interested in joining our beta program or have any feedback to help us improve the Upcall Destination and its documentation, please [let us know](mailto:success@upcall.com)!_
+_**NOTE:** Upcall is currently in beta, which means that there may still be some bugs for us to iron out. This doc was last updated on February 21, 2019, and we'd love to hear your feedback. If you are interested in joining our beta program or have any feedback to help us improve the Upcall Destination and its documentation, [let us know](mailto:success@upcall.com)!_
 
 
 ## Getting Started
@@ -21,7 +21,7 @@ _**NOTE:** Upcall is currently in beta, which means that there may still be some
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call in [Node](https://segment.com/docs/connections/sources/catalog/libraries/server/node/) would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call in [Node](https://segment.com/docs/connections/sources/catalog/libraries/server/node/) would look like:
 ```
 analytics.identify({
   userId: 'userId12345',

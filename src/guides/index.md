@@ -15,7 +15,7 @@ https://university.segment.com/introduction-to-segment/299955?reg=1&referrer=doc
 
 ## What does it do?
 
-In its very simplest form, Segment generates messages about what's happening in your site or app, then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and transmits messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/warehouses) (such as databases, warehouses, or bulk-storage buckets).
+In its very simplest form, Segment generates messages about what's happening in your site or app, then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and transmits messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/storage/) (such as databases, warehouses, or bulk-storage buckets).
 
 ## How does Segment work?
 
@@ -34,7 +34,7 @@ Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/conne
 
 ### Segment Sources
 
-Segment provides several types of Sources which you can use to collect your data, and which you can choose among based on the needs of your app or site. For websites, you can embed a library which loads on the page to create the Segment messages. If you have a mobile app, you can embed one of our Mobile libraries, and if you'd like to create messages directly on a server (if you have, for example a dedicated .NET server that processes payments), we have several server-based libraries that you can embed directly into your backend code. (You can also use [cloud-sources](/docs/connections/sources/what-are-cloud-sources/) to import data about your app or site from other tools like Zendesk or Salesforce, to enrich the data sent through Segment.)
+Segment provides several types of Sources which you can use to collect your data, and which you can choose among based on the needs of your app or site. For websites, you can embed a library which loads on the page to create the Segment messages. If you have a mobile app, you can embed one of our Mobile libraries, and if you'd like to create messages directly on a server (if you have, for example a dedicated .NET server that processes payments), we have several server-based libraries that you can embed directly into your backend code. (You can also use [cloud-sources](/docs/connections/sources/about-cloud-sources/) to import data about your app or site from other tools like Zendesk or Salesforce, to enrich the data sent through Segment.)
 
 ### Destinations
 

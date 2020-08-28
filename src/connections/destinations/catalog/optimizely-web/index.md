@@ -9,9 +9,9 @@ Segment's **Optimizely Web (previously Optimizely)** destination supports the fo
 
 
 * [Optimizely X Web](#optimizely-x-web)
-* [Optimizely Full Stack (JavaScript)](#optimizely-full-stack-javascript)
+* [Optimizely Full Stack (JavaScript)](#optimizely-full-stack-javascript-sdk)
 
-If you're interested in implementing Optimizely Full Stack server-side or on mobile, please see Segment's [**Optimizely Full Stack** destination](https://segment.com/docs/connections/destinations/catalog/optimizelyx/), which supports:
+If you're interested in implementing Optimizely Full Stack server-side or on mobile, see Segment's [**Optimizely Full Stack** destination](https://segment.com/docs/connections/destinations/catalog/optimizelyx/), which supports:
 
 * [Optimizely Full Stack (server)](https://segment.com/docs/connections/destinations/catalog/optimizelyx/#server-side)
 * [Optimizely Full Stack Android (cloud-mode)](https://segment.com/docs/connections/destinations/catalog/optimizelyx/#android-cloud-mode-implementation)
@@ -19,9 +19,7 @@ If you're interested in implementing Optimizely Full Stack server-side or on mob
 
 **Use Cases**
 
-* [Personalize Web Content with Optimizely and ClearBrain](https://segment.com/recipes/personalize-web-pages-optimizely-clearbrain/)
-* [Use Optimizely to A/B test which CTAs lead to more signups](https://segment.com/recipes/ab-test-cta-signups-optimizely/)
-* [Test which call to action (CTA) results in more shopping cart conversions with Optimizely](https://segment.com/recipes/ab-test-cta-conversions-optimizely/)
+{% include components/media-icon.html href="https://segment.com/recipes/ab-test-cta-conversions-optimizely/" icon="media/icon-academy.svg" title="Optimizing page performance using heatmaps" content="Test which call to action (CTA) results in more shopping cart conversions with Optimizely and Amplitude." %}
 
 ## Implementation Prerequisite
 
@@ -52,7 +50,7 @@ Behind the scenes, Segment's Optimizely Web destination creates a global Optimiz
 Segment forwards the event to Optimizely:
 * If the Segment event name matches exactly the name of an active experiment `metric` set up in the Optimizely dashboard;
 * If the experiment `metric` is associated with a running experiment;
-* If the current user has been assigned a `userId` via Segment's `identify` method (e.g. `analytics.identify('123')`);
+* If the current user has been assigned a `userId` using Segment's `identify` method (e.g. `analytics.identify('123')`);
 * If the current user is activated in a running experiment with the associated `metric`.
 
 Segment also handles the following mapping:
@@ -62,7 +60,7 @@ Segment also handles the following mapping:
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
 
 > note ""
-> **Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however,  they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
+> **Note:** [Custom Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which include all Event Tags except `revenue` and `value`, are not displayed on the Optimizely results page, however, they are available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
 
 ### Page
 
@@ -74,9 +72,13 @@ Upon activation of an Optimizely experiment, an "Experiment Viewed" `track` even
 
 Upon activation of an Optimizely experiment, an “Experiment Viewed” `track` event is sent to Segment. The event includes Optimizely experiment metadata which is sent whenever the Optimizely [`campaignDecided` listener](https://docs.developers.optimizely.com/web/docs/add-listener#section-campaign-decided) is activated.
 
+
+> note ""
+> **Note:** When an Optimizely Web experiment is activated, Optimizely automatically sends an "Experiment Viewed" `track` event to Segment. This makes the Optimizely Web integration act as both a Destination and a Source, because the `track` calls enrich and send Experiment Decisions and Exposure event data to Segment, which can be used by other platforms.  
+
 #### Standard or Redirect Experiments
 
-**Properties sent via `track` calls:**
+**Properties sent using `track` calls:**
 
 * campaignName
 * campaignId
@@ -109,7 +111,7 @@ analytics.track('Experiment Viewed', {
 });
 ```
 
-**Trait sent via `identify` calls:**
+**Trait sent using `identify` calls:**
 
 * experimentName
 * variationName
@@ -154,14 +156,14 @@ If you're sending your experiment data to Google Analytics in the form of `track
 
 If you are using Optimizely SDKs v3+ or the React SDK, [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) is enabled by default for decision events. Set up does not require maintaining the attributes of a user as long as the user id stays the same between Optimizely `activate` and `isFeatureEnabled` calls and Segment `track` calls to have Optimizely `metrics` populated in the Optimizely results page. If you would like to segment your Optimizely results by user `attribute`, then make sure the `attributes` passed in for the `activate` and `isFeatureEnabled` calls match the `attributes` passed in for the `track` calls for that user id.
 
-For more details on how events are attributed on the Optimizely results page, please refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
+For more details on how events are attributed on the Optimizely results page, refer to their documentation [here])(https://help.optimizely.com/Analyze_Results/How_Optimizely_counts_conversions).
 
 ### Track
 
 Upon invocation of a Segment `track` event, Segment maps the event to an Optimizely `track` event:
 * If the Segment event name matches exactly the name of an active experiment `metric` set up in the Optimizely dashboard;
 * If the experiment `metric` is associated with a running experiment;
-* If the current user has been assigned a `userId` via Segment's `identify` method (e.g. `analytics.identify('123')`);
+* If the current user has been assigned a `userId` using Segment's `identify` method (e.g. `analytics.identify('123')`);
 * If the current user is activated in a running experiment with the associated `metric`.
 
 Segment also handles the following mapping:
@@ -171,7 +173,7 @@ Segment also handles the following mapping:
 
 `revenue` values should be passed as a Segment `property`. The value should be an integer and represent the value in cents, so, for example, $1 should be represented by `100`.
 
-**Note:** Custom [Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which includes any Event Tag outside of `revenue` or `value`, will not be displayed on the Optimizely results page, however,  they will be available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
+**Note:** Custom [Event Tags](https://docs.developers.optimizely.com/full-stack/docs/include-event-tags) in Optimizely, which includes any Event Tag outside of `revenue` or `value`, will not be displayed on the Optimizely results page, however, they will be available in a [Data Export](https://docs.developers.optimizely.com/web/docs/data-export) report.
 
 ### Page
 
@@ -183,7 +185,7 @@ Segment does not implement experiment listeners for Optimizely X Full Stack.
 
 ### Tracking Anonymous Data with Optimizely X Full Stack
 
-If you are sending anonymous data to Optimizely X Full Stack via their server-side SDK elsewhere and would like to send anonymous data for the same user via this Segment client-side component, you can pass in an Optimizely-specific `userId`:
+If you are sending anonymous data to Optimizely X Full Stack using their server-side SDK elsewhere and would like to send anonymous data for the same user using this Segment client-side component, you can pass in an Optimizely-specific `userId`:
 
   ```javascript
   analytics.track('Some event', { /* properties */ }, {
@@ -215,7 +217,7 @@ analytics.track('Category Clicked', {
 });
 ```
 
-If you were to send this Segment `track` event to Optimizely via any of the Segment integrations, you would only be able to use the `eventName` ‘Click’ as a `metric` in Optimizely since custom event tags in Optimizely are not available on the [Results page](https://help.optimizely.com/Analyze_Results/The_Experiment_Results_page_for_Optimizely_X).
+If you were to send this Segment `track` event to Optimizely using any of the Segment integrations, you would only be able to use the `eventName` ‘Click’ as a `metric` in Optimizely since custom event tags in Optimizely are not available on the [Results page](https://help.optimizely.com/Analyze_Results/The_Experiment_Results_page_for_Optimizely_X).
 
 To send a `track` event from Segment with the context about that event from the `properties` to Optimizely, create a [custom Segment Destination Function](https://segment.com/docs/connections/destinations/destination-functions/) that maps the Segment `eventName` to a more specific Optimizely `eventName` and send an Optimizely `event` payload with the transformed `eventName` to the Optimizely [Event API](https://docs.developers.optimizely.com/web/docs/event-api). Using the example above, the Segment `track` event ‘Click’ can be transformed to an Optimizely `event` with the `eventName` ‘Clicked Shirt’.
 
@@ -223,7 +225,7 @@ To send a `track` event from Segment with the context about that event from the 
 
 If you are running redirect experiments, you might run into a case where the effective referrer is different than the referrer that is captured by `page` calls, such as the default page call in our Segment snippet.
 
-For example, let's say you run a redirect experiment on page `http://home.com` that redirects you to `http://home-offers.com`. Now, if a customer visits your page via a Google ad, you want to make sure that the `page` call fired on `http://home-offers.com` knows that the true referrer was Google and NOT `http://home.com`.
+For example, let's say you run a redirect experiment on page `http://home.com` that redirects you to `http://home-offers.com`. Now, if a customer visits your page using a Google ad, you want to make sure that the `page` call fired on `http://home-offers.com` knows that the true referrer was Google and NOT `http://home.com`.
 
 Our Optimizely Web destination detects this and send the effective referrer value as a property of the subsequent Experiment Viewed. Segment also overrides the `context.page.referrer` with the effective referrer.
 
@@ -231,7 +233,7 @@ More importantly, to send the true referrer value with the initial `page` call i
 
 ```javascript
 <script type="text/javascript">
-  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
   analytics.load("YOUR_WRITE_KEY");
 
   /* MODIFIED SECTION */

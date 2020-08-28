@@ -40,7 +40,7 @@ Wishpond.Tracker.identify('1e810c197e', {
  ```
 
 A new lead will be created be in your 'Wishpond Leads Database'. The lead will have the attributes: name 'Jane Kim', email 'jane.kim@example.com'.
-To more details how Wishpond's identify works please visit [Wishpond API Docs: #identify](http://developers.wishpond.com/#identify).
+To more details how Wishpond's identify works  visit [Wishpond API Docs: #identify](http://developers.wishpond.com/#identify).
 
 ## Track
 
@@ -66,7 +66,7 @@ Wishpond.Tracker.track('Signed Up', {
 
 A new event will be added to the lead that the current session is tracking. The event title will be 'Signed Up', and it will have the properties: plan: 'Startup',source: 'Analytics Academy'.
 
-To more details how Wishpond's identify works please visit [Wishpond API Docs: #track](http://developers.wishpond.com/#tracking-events).
+To more details how Wishpond's identify works  visit [Wishpond API Docs: #track](http://developers.wishpond.com/#tracking-events).
 
 - - -
 ## Troubleshooting/ FAQ
@@ -75,6 +75,6 @@ To more details how Wishpond's identify works please visit [Wishpond API Docs: #
 
 Make sure you have copied the right keys from Wishpond's ["API Keys" dialog](https://www.wishpond.com/central/welcome?api_keys=true), this destination will need `Merchant ID` and `Tracking Key`.
 
-[Analytics.js]: https://segment.com/docs/libraries/analytics.js/
+[Analytics.js]: https://segment.com//docs/connections/sources/catalog/libraries/website/javascript/
 [ci-link]: https://circleci.com/gh/segment-integrations/analytics.js-integration-wishpond
 [ci-badge]: https://circleci.com/gh/segment-integrations/analytics.js-integration-wishpond.svg?style=svg
