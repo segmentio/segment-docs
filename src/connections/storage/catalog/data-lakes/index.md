@@ -41,7 +41,7 @@ After you set up the necessary AWS resources, the next step is to set up the Dat
    - **IAM Role ARN**: The ARN of the IAM role that Segment will use to connect to Data Lakes.
    - **S3 Bucket**: Name of the S3 bucket used by Data Lakes. The EMR cluster will store logs in this bucket.
    
-   Each source must be individually connected to the Data Lakes destination. However, you can copy the settings from another source by clicking the “…” button (next to the button for “Setup Guide”).
+   You must individually connect each source to the Data Lakes destination. However, you can copy the settings from another source by clicking **…** ("more") (next to the button for “Set up Guide”).
 
 5. _(Optional)_ **Date Partition**: Optional advanced setting to change the date partition structure, with a default structure `day=<YYYY-MM-DD>/hr=<HH>`. To use the default, leave this setting unchanged. To partition the data by a different date structure, choose one of the following options:
   - Day/Hour [YYYY-MM-DD/HH] (Default)
