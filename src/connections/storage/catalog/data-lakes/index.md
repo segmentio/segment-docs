@@ -29,7 +29,7 @@ The Terraform module and manual set up instructions both provide a base level of
 
 After you set up the necessary AWS resources, the next step is to set up the Data Lakes destination within Segment:
 
-1. In the [Segment App](https://app.segment.com/goto-my-workspace/overview), select 'Add Destination', then search for and select 'Data Lakes'.
+1. In the [Segment App](https://app.segment.com/goto-my-workspace/overview), click **Add Destination**, then search for and select **Data Lakes**.
 
 2. Click **Configure Data Lakes** and select the source to connect to the Data Lakes destination. 
    > **Warning**: You must include all source ids in the external ID list in the IAM policy, or else the source data cannot be synced to S3.
