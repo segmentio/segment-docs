@@ -27,17 +27,12 @@ The Terraform module and manual set up instructions both provide a base level of
 
 ## Step 2 - Enable Data Lakes Destination
 
-After you set up the necessary AWS resources:
+After you set up the necessary AWS resources, the next step is to set up the Data Lakes destination within Segment:
 
-1. [Contact the Support team](https://segment.com/help/contact/) to receive a link to the Data Lakes landing page in your workspace.
+1. In the [Segment App](https://app.segment.com/goto-my-workspace/overview), select 'Add Destination', then search for and select 'Data Lakes'.
 
-2. Click the link provided, and from the Data Lakes landing page, click **Configure Data Lakes**.
-
-3. Select the source to connect to the Data Lakes destination.
-
-   Each source must be individually connected to the Data Lakes destination. However, you can copy the settings from another source by clicking the “…” button (next to the button for “Setup Guide”).
-
-   > **Note**: You must include all source ids in the external ID list in the IAM policy, or else the source data cannot be synced to S3.
+2. Click **Configure Data Lakes** and select the source to connect to the Data Lakes destination. 
+   > **Warning**: You must include all source ids in the external ID list in the IAM policy, or else the source data cannot be synced to S3.
 
 4. In the Settings tab, enter and save the following connection settings:
    - **AWS Region**: The AWS Region where your EMR cluster, S3 Bucket and Glue DB reside.
@@ -45,6 +40,8 @@ After you set up the necessary AWS resources:
    - **Glue Catalog ID**: The Glue Catalog ID (this must be the same as your AWS account ID).
    - **IAM Role ARN**: The ARN of the IAM role that Segment will use to connect to Data Lakes.
    - **S3 Bucket**: Name of the S3 bucket used by Data Lakes. The EMR cluster will store logs in this bucket.
+   
+   Each source must be individually connected to the Data Lakes destination. However, you can copy the settings from another source by clicking the “…” button (next to the button for “Setup Guide”).
 
 5. _(Optional)_ **Date Partition**: Optional advanced setting to change the date partition structure, with a default structure `day=<YYYY-MM-DD>/hr=<HH>`. To use the default, leave this setting unchanged. To partition the data by a different date structure, choose one of the following options:
   - Day/Hour [YYYY-MM-DD/HH] (Default)
