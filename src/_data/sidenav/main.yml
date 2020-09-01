@@ -225,6 +225,8 @@ sections:
     title: Integration Error Codes
   - path: /connections/schema-unique-limits
     title: Are there limits on my Segment Schema?
+  - path: /connections/rate-limits
+    title: Rate Limits and SLA
 - section_title: Personas
   section:
   - path: /personas
