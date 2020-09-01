@@ -88,7 +88,11 @@ To create audiences based on website browsing events, set up the Segment-to-Goog
 1. Create a “[Javascript Website](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)” source in Segment.
 2. Follow [the Analytics.js Quickstart guide](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
 3. In your workspace, click **Catalog**, and search for **DoubleClick Floodlight**.
-4. Connect the destination to the source you created in the first step, and leave all settings blank.
+4. Connect the destination to the source you created in the first step, and enable the following settings under the Doubleclick section:
+    - Get DoubleclickId → “On”
+    - Google Network Id → “segment”
+    - Segment Write Key → you can get this from the following source link: `https://app.segment.com/<workspace_slug>/sources/<source_slug>/settings/keys`. This should be the same javascript source from Step 1. The write key usually looks something like `k8mJ77kAbCNMOgmj1OFfVphvqXd8mLCx`
+5. Turn the DoubleClick Floodlight destination on 
 
 > success ""
 > **Tip**: The field "DoubleClick Advertiser ID” is required, but you can enter any value.
