@@ -24,7 +24,7 @@ To get started, go to your workspace settings and choose the "Connections" tab u
 
 ## Prepare your IdP for the connection.
 
-To get started, you'll need to create an application in your IdP. We officially supported apps for Okta, Azure AD, and OneLogin. These providers should have tailored setup instructions for you to follow after adding Segment via the IdP's app catalog. If you're using another IdP, you'll need to create a custom SAML-based application.
+To get started, you'll need to create an application in your IdP. We have officially supported apps for Okta, Azure AD, and OneLogin. These providers should have tailored setup instructions for you to follow after finding Segment via the IdP's app catalog. If you're using another IdP, you'll need to create a custom SAML-based application.
 
 Your provider will ask you for a few things from Segment, which we provide in the set up flow:
 
