@@ -15,7 +15,7 @@ This destination is maintained by Stormly. For any issues with the destination, 
 {% include content/connection-modes.md %} 
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
-2. Search for "Stormly" in the Destinations Catalog, and select the "Stormly" destination.
+2. Search for "Stormly" in the Destinations Catalog, and select the Stormly destination.
 3. Choose which Source should send data to the "Stormly" destination.
 4. Go to the [Stormly projects](https://www.stormly.com/projects) page, click "Set-Up Data" and under "Use tracking code from:" pick "Segment.com". Copy the "API key".
 5. Enter the "API Key" in the "Stormly" destination settings in Segment.
