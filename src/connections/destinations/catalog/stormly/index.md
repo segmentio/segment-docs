@@ -20,7 +20,8 @@ This destination is maintained by Stormly. For any issues with the destination, 
 4. Go to the [Stormly projects](https://www.stormly.com/projects) page, click **Set-Up Data** and under "Use tracking code from:" choose **Segment.com**. Copy the API key that appears.
 5. Enter the API Key you copied from the Stormly projects page in the Stormly destination settings in the Segment app.
 
-_Note:_ Tracked data becomes available in Stormly within seconds usually, but new projects become "active" only once at least 50 unique users are tracked.
+> info ""
+> Tracked data is usually available in Stormly within seconds. However, brand new projects are only  "active" once they have tracked at least 50 unique users.
 
 ## Page
 
