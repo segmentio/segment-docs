@@ -70,7 +70,7 @@ Segment sends Track calls to Stormly as an `event`.
 
 ## Arrays
 
-Stormly doesn't support arrays in traits or properties. In the example below the `products` property will be ignored:
+Stormly _does not_ support arrays in traits or properties. In the example below the `products` property is ignored:
 
 ```js
 analytics.track('View Webshop Items', {
