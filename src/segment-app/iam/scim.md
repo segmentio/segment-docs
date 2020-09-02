@@ -3,13 +3,15 @@ title: "System for Cross-domain Identity Management (SCIM) Configuration Guide"
 hidden: true
 ---
 
-The SCIM specification is designed to make managing user identities in cloud-based applications like Segment easier. SCIM allows your Identity Provider (IdP) to manage users and groups within Segment. SCIM is offered by most IdPs and compliments SAML. You can think of SAML as a way for users to authenticate and SCIM as a way to make sure they have the appropriate permissions within Segment.
+The SCIM specification is designed to make managing user identities in cloud-based applications like Segment easier. SCIM allows your Identity Provider (IdP) to manage users and groups within your Segment workspace.
+
+SCIM is offered by most IdPs and compliments SAML. You can think of SAML as a way for your employees to authenticate and SCIM as a way to make sure they have the appropriate permissions.
 
 ## Requirements
 
 Before you start, remember that SSO is only available to Business Tier customers and that SSO connections can only be configured by a workspace owner.
 
-To use SCIM, you must first create an SSO connection. Once you [create your SSO connection](https://segment.com/docs/segment-app/iam/sso/), log back into Segment using SSO.
+To setup SCIM, you must first create an SSO connection. Once you [create your SSO connection](https://segment.com/docs/segment-app/iam/sso/), log back into Segment using SSO.
 
 ## Configuration Instructions
 
@@ -31,9 +33,9 @@ Because of this, Segment must balance the autonomy of our users with the desired
 
 ## Creating Users
 
-Even though Segment users exist separately from workspaces, your IdP can create a new Segment user or add an existing Segment user to your workspace using the same IdP workflow.
+Even though Segment users exist separately from workspaces, your IdP can create a new Segment user or add an existing Segment user to your workspace using the same IdP workflow. This process is transparent to the IdP and to you as the customer. In other words, you don't need to know if a user exists before adding them to your workspace.
 
-If the person you want to add does not have a Segment account, your IdP will create one. If the person already has a Segment account, you can still add them to your Workspace using your IdP, but it **does not create a new Segment account**. This process is transparent to the IdP and to you as the customer. In other words, you don't need to know if a user exists before adding them to your workspace.
+If the person you want to add does not have a Segment account, your IdP will create one. If the person already has a Segment account, you can still add them to your Workspace using your IdP, but it **does not create a new Segment account**.
 
 You can create new users and set their `userName` (email) and `displayName` (single value field that represents a user’s full name) using your IdP.
 
@@ -47,15 +49,15 @@ Segment user profiles only contain a `userName` (email) and `displayName`. Once 
 
 Segment workspace owners **cannot** delete Segment workspace member accounts using SCIM, the web UI, or the Segment API. A user must delete their own account using the Segment app. Workspace owners **can** remove members from the workspace using SCIM, the web UI, or the Segment API.
 
-Some IdPs want to set users as “inactive” or “active.” Segment does not have an “inactive” state for user accounts. The equivalent would be to remove a user from your workspace. Setting an existing Segment user to “active” is the equivalent of adding that user to the workspace.
+Some IdPs want to set users as “inactive” or “active.” Segment does not have an “inactive” state for user accounts. Similar functionality can be achieved by removing a user from your workspace. Setting an existing Segment user to “active” is similar to adding that user to the workspace.
 
 When your IdP updates a user to set `active: false` or attempts to delete a user, Segment removes the user from your Segment workspace. If your IdP attempts to create a user with an existing email, or set `active: true`, the existing user account is added to your workspace.
 
-Any Segment group memberships **must be reassigned** when a user is removed and re-added. Newly added workspace users have the “Minimal Workspace Access” permission by default. The “Minimal Workspace Access” role does not have access to any sources, destinations, etc.
+Any Segment group memberships **must be reassigned** when a user is removed and re-added from your workspace. Newly added workspace users have the “Minimal Workspace Access” permission by default. The “Minimal Workspace Access” role does not have access to any sources, destinations, etc.
 
 ## Creating Groups
 
-Your IdP can create new groups in Segment using SCIM. All groups are created with “Minimal Workspace Access” by default. The “Minimal Workspace Access” permission does not have access to any sources, destinations, etc. To add more permissions to a group you must use the Segment web app.
+Your IdP can create new groups in Segment using SCIM. All groups are created via SCIM start with “Minimal Workspace Access." The “Minimal Workspace Access” permission does not have access to any sources, destinations, etc. To add more permissions to a group you must use the Segment web app.
 
 ## Updating Groups
 
