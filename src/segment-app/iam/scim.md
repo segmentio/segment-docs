@@ -21,7 +21,7 @@ The other value needed is an API key or Authorization Header. To generate one, g
 
 This page is located as part of the settings sidebar: https://app.segment.com/CUSTOMER_WORKSPACE_SLUG/settings/advanced
 
-![](assets/asset_generate_scim_token.png)
+![](images/asset_generate_scim_token.png)
 
 ## Features
 
