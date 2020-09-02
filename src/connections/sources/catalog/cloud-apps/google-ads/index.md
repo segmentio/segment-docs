@@ -255,10 +255,7 @@ Currency values in Google Ads are in micros, or one millionth of the smallest un
 | average_position | Your ad's position relative to those of other advertisers. |
 | campaign_id | The ID of the Campaign. |
 | clicks | The number of clicks. |
-| conversion_category_name | A category that describes the action the user will take to complete a conversion. |
-| conversion_name | The name of the conversion type. |
 | conversion_rate | The number of conversions divided by total clicks that can be tracked to conversions |
-| conversion_tracker_id | ID of the conversion tracker. |
 | conversion_value | The sum of conversion values for all conversions.  |
 | conversions | The number of conversions for all conversion actions that you have opted into optimization. |
 | cost | The sum of your cost-per-click (CPC) and cost-per-thousand impressions (CPM) costs during this period. |
