@@ -23,6 +23,28 @@ This destination is maintained by Stormly. For any issues with the destination, 
 > info ""
 > Tracked data is usually available in Stormly within seconds. However, brand new projects are only  "active" once they have tracked at least 50 unique users.
 
+### Arrays
+
+Stormly _does not_ support arrays in traits or properties. In the example below the `products` property is ignored:
+
+```js
+analytics.track('View Webshop Items', {
+  cartId: "cart-12345",
+  products: [
+    {
+      productId: "1",
+      price: 99.0
+    },
+    {
+      productId: "1",
+      price: 99.0
+    }
+  ]
+});
+```
+
+Stormly supports nested properties and traits, except for nested arrays.
+
 ## Page
 
 If you aren't familiar with the Segment Spec, take a look at the [Page method documentation](https://segment.com/docs/connections/spec/page/) to learn about what it does. An example call would look like:
@@ -67,25 +89,3 @@ analytics.track('Login Button Clicked')
 ```
 
 Segment sends Track calls to Stormly as an `event`.
-
-## Arrays
-
-Stormly _does not_ support arrays in traits or properties. In the example below the `products` property is ignored:
-
-```js
-analytics.track('View Webshop Items', {
-  cartId: "cart-12345",
-  products: [
-    {
-      productId: "1",
-      price: 99.0
-    },
-    {
-      productId: "1",
-      price: 99.0
-    }
-  ]
-});
-```
-
-Stormly supports everything else such as nested properties.
