@@ -142,7 +142,7 @@ You can read more about [error handling](#destination-functions-logs-and-errors)
 {% include content/functions/runtime.md %}
 
 
-## Create ️settings and secrets
+## Create settings and secrets
 
 {% include content/functions/settings.md %}
 
@@ -278,9 +278,9 @@ If you are a **Workspace Owner** or **Functions Admin**, you can manage your fun
 
 ### Monitoring destination functions
 
-You can use [Destination Event Delivery](/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/) to understand if Segment encounters any issues delivering your source data to destinations. Errors that the Function throws appear here.
+You can use [Destination Event Delivery](/docs/connections/event-delivery/) to understand if Segment encounters any issues delivering your source data to destinations. Errors that the Function throws appear here.
 
-If any of your deployed function instances are failing consistently, they will also appear in [Connection Health](/docs/segment-app/#sts=Health).
+If any of your deployed function instances are failing consistently, they will also appear in [Connection Health](/docs/segment-app/#health).
 
 ### Data control
 
@@ -294,7 +294,7 @@ Yes, Functions access is logged in the [Audit Trail](/docs/segment-app/iam/audit
 
 ##### Does Segment retry failed function invocations?
 
-Segment retries 9 times over the course of 4 hours. This increases the number of attempts for messages, so we try to re-deliver them another 4 times after some backoff. Segment doesn't retry if your function throws a [non-recoverable error](#functions-error-types).
+Segment retries 9 times over the course of 4 hours. This increases the number of attempts for messages, so we try to re-deliver them another 4 times after some backoff. Segment doesn't retry if your function throws a [non-recoverable error](#errors-and-error-handling).
 
 ##### Are events guaranteed to send data in order?
 
