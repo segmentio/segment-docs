@@ -132,3 +132,5 @@ There is as also some manual testing scripts that can be run to validate the bui
 3. `tests/imageSizes/getImageSizes.js`: used to get the 10 largest images in the repo.
 
 4. `npx mdspell 'src/**/*.md' -r --en-us`: used to validate spelling in docs, needs to be configured to add Segment terms.
+
+5. Included is the [Hyperlink](https://www.npmjs.com/package/hyperlink) NPM module. Run `bundle install` to install that, plus the tap-spot plugin for pretty output. To check all links on the site, prior to build, run `yarn run hyperlink ./_site/index.html --canonicalroot https://segment.com/docs -i -r --skip 0.0.0.0 | yarn run tap-spot`. This module checks hyper links, images, and anchor tags to ensure that everything linked internally resolves to a location. **TODO**: Add support for external links.
