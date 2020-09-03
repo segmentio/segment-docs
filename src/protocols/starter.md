@@ -1,5 +1,6 @@
 ---
-title: The Segment Basic Tracking Plan
+title: Create a starter Tracking Plan
+hidden: true
 ---
 
 ( to be reviewed by PMM )
