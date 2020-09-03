@@ -8,7 +8,7 @@ hide-personas-partial: true
 
 The Braze Destination is open-source on GitHub. You can browse the code on Github: [iOS](https://github.com/Appboy/appboy-segment-ios), [Android](https://github.com/Appboy/appboy-segment-android) (Android and iOS maintained by Braze), [Web](https://github.com/segment-integrations/analytics.js-integration-appboy), [Server](https://github.com/segmentio/integration-appboy) (Web and Server maintained by Segment). If you find any issues for mobile platforms, let Braze know, if the issues appear on web or server, let [us know](https://segment.com/help/contact).
 
-_**NOTE:** There are currently two major versions of the Braze SDK. Make sure you read [important notes](https://segment.com/docs/connections/destinations/catalog/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2._
+_**NOTE:** There are currently two major versions of the Braze SDK. Make sure you read [important notes](/docs/connections/destinations/catalog/braze/#migrating-to-v2-of-the-braze-web-sdk) regarding migration from Version 1 to Version 2._
 
 If you notice any gaps or outdated information in this document, or simply want to leave some feedback to help us improve, [let us know](https://segment.com/help/contact)!
 
@@ -80,7 +80,7 @@ Braze has created a sample Android application that integrates Braze using Segme
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page();
@@ -90,7 +90,7 @@ Page calls are only sent to Braze if you have enabled either "Track All Pages" o
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('ze8rt1u89', {
@@ -117,7 +117,7 @@ All other traits (except their [reserved keys](https://www.braze.com/documentati
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Purchased Item', {
@@ -171,7 +171,7 @@ You can add more product details in the form of key-value pairs to the `properti
 
 ## Group
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](/docs/connections/spec/group/) does. An example call would look like:
 
 ```js
 analytics.group("1234", {
@@ -195,7 +195,7 @@ In-app messages will be registered for and requested by default. This functional
 
 #### Web
 
-Instructions on how to set this up within Braze can be found in their [docs](https://www.braze.com/academy/Best_Practices/#in-app-message-behavior). Once setup, it allows you to trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, simply make an identify with the corresponding [userId](https://segment.com/docs/connections/spec/identify/#user-id) for that user.
+Instructions on how to set this up within Braze can be found in their [docs](https://www.braze.com/academy/Best_Practices/#in-app-message-behavior). Once setup, it allows you to trigger in-app message display as a result of several different event types. By default, all In-App Messages that a user is eligible for are automatically delivered to the user upon a session start event. A new session automatically starts when a user loads your site. If you'd like to force a new session for a user, simply make an identify with the corresponding [userId](/docs/connections/spec/identify/#user-id) for that user.
 
 If you don't want your site to immediately display new In-App Messages when they're received, you can disable automatic display and register your own display subscribers. To do this:
 
@@ -224,7 +224,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
 
 #### iOS
 
-1. Follow the directions to register for push at in [Segment's iOS library](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) docs.
+1. Follow the directions to register for push at in [Segment's iOS library](/docs/connections/sources/catalog/libraries/mobile/ios/) docs.
 2. Add the following to your application:didFinishLaunchingWithOptions
 
     ```
@@ -303,7 +303,7 @@ The `inAppMessages` parameter will be an array of [`appboy.ab.InAppMessage`](htt
     });
     ```
 
-    **Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
+    **Note:** We recommend placing this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
 
     **Note:** This will immediately request push permission from the user.
 
@@ -378,7 +378,7 @@ analytics.ready(function() {
 
 For more details on this snippet, check out the Braze's docs [here](https://www.braze.com/documentation/Web/#soft-push-prompts).
 
-**Note:** We recommend placing this snippet outside of your [Segment Snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
+**Note:** We recommend placing this snippet outside of your [Segment Snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet) within your `script` tag.
 
 4. When you'd like to display the Soft Push to a user, call:
 
@@ -532,7 +532,7 @@ If you use the Braze destination in either [cloud or device mode](/docs/connecti
 
 #### Which ID does Segment match on when sending data to Braze?
 
-By default, Personas data is sent to Braze by matching the `userId`. The Segment `userId` maps to Braze’s External ID. If the user is anonymous and does not have a `userId`, you can also choose to send data using the `braze_id` auto-generated by Braze. To use `braze_id`, you must pass the `braze_id` to Segment as a [Segment externalId](https://segment.com/docs/personas/identity-resolution/externalids/). If `braze_id` is sent as an `externalId` **and** `userId` is missing, Personas matches on `braze_id` when sending to Braze. You can check the **Identities** tab on a user’s Personas profile to confirm that `braze_id` was successfully picked up as an `externalId`.
+By default, Personas data is sent to Braze by matching the `userId`. The Segment `userId` maps to Braze’s External ID. If the user is anonymous and does not have a `userId`, you can also choose to send data using the `braze_id` auto-generated by Braze. To use `braze_id`, you must pass the `braze_id` to Segment as a [Segment externalId](/docs/personas/identity-resolution/externalids/). If `braze_id` is sent as an `externalId` **and** `userId` is missing, Personas matches on `braze_id` when sending to Braze. You can check the **Identities** tab on a user’s Personas profile to confirm that `braze_id` was successfully picked up as an `externalId`.
 
 ![](images/braze-anonid.png)
 
