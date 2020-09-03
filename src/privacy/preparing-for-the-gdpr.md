@@ -8,7 +8,7 @@ In keeping with our ongoing commitment to privacy and security, Segment will be 
 
 Specifically, here is how we'll support our customers:
 
-*   An updated Data Processing Agreement (DPA) to reflect the requirements of the GDPR and to ensure compliant data transfer with storage outside the EU. Existing customers can enter into the updated data processing agreement using the opt-in process described [here](https://segment.com/docs/guides/best-practices/preparing-for-the-gdpr/#how-to-opt-into-the-data-processing-agreement-and-eu-model-contract-clauses).
+*   An updated Data Processing Agreement (DPA) to reflect the requirements of the GDPR and to ensure compliant data transfer with storage outside the EU. Existing customers can enter into the updated data processing agreement using the opt-in process described [here](#how-to-opt-into-the-data-processing-agreement-and-eu-model-contract-clauses).
 
 *   New product capabilities to help you be compliant when users request you delete or suppress their data.
 

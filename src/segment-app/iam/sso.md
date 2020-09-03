@@ -24,7 +24,7 @@ To get started, go to your workspace settings and choose the "Connections" tab u
 
 ## Prepare your IdP for the connection.
 
-Segment officially supports apps for Okta, Azure AD, and OneLogin. Next, find Segment in your IdP's app catalog, and follow the set up instructions they provide. 
+Segment officially supports apps for Okta, Azure AD, and OneLogin. Next, find Segment in your IdP's app catalog, and follow the set up instructions they provide.
 
 If you're using a different IdP, you must create a custom SAML-based application.
 
@@ -67,6 +67,14 @@ Back at the connections page, make sure your connection is enabled with the swit
 ![](images/asset_SNxN4JhO.png)
 
 You can now test using IdP-initiated SSO (by clicking login to Segment from within your IdP) is working correctly. If not, double check the IdP configuration gotchas section above.
+
+## Require SSO.
+
+For most customers we recommend requiring SSO for all users. If you do not require SSO, users can still log in with a username and password. If some members cannot log in using SSO, Segment also supports SSO exceptions.
+
+These options are off by default, but configurable on the "Advanced Settings" page.
+
+![](images/asset_require_sso.png)
 
 ## Set up — GSuite
 
