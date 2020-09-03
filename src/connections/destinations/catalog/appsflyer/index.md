@@ -18,6 +18,32 @@ This document was last updated on April 27, 2018. If you notice any gaps, outdat
 
 **Important:** If you plan on using the server-side destination for an Android project, make sure to enter your **Android App ID**. If you are using only the mobile SDK, Android projects only require the **AppsFlyer Dev Key**. iOS projects always require both the **AppsFlyer Dev Key** and the **Apple App ID**. Also, note that if you do use the server-side destination, you will not be able to selectively disable calls sent to AppsFlyer using your Segment dashboard.
 
+### Additional Device Mode Setup for iOS 14 Support
+Segment’s ApplsFlyer iOS SDK has been updated to use AppsFlyer version 6.0 beta as a key way for you to prepare for iOS 14. The SDK beta is compatible with the beta version of the iOS 14 and supports AppsFlyer's aggregate attribution, and Apple's AppTrackingTransperancy framework, among other functionality. See [AppsFlyer's blog](https://www.appsflyer.com/blog/privacy-centric-attribution-ios14/] written by their CEO, which  coverrs their new privacy-centric attribution  model. 
+
+To utilize the latest AppsFlyer SDK to collect IDFAs you must do the following:
+
+1. Upgrade to using Xcode12.
+2. Update your Segment AppsFlyer SDK to version 6.0.2 or greater. 
+3. Import and implement the AppTrackingTransparency (ATT) Framework. You will need to navigate to your project `Info.plist` and add a “Privacy - Tracking Usage Description”. This description will be used in the popup when  the application initializes in iOS 14. Users will be prompted to indicate whether or not they want to allow tracking. 
+4. Use the following block in your `AppDelegate.m`  file on `didFinishLaunchingWithOptions` if you wish for AppsFlyer collect IDFA 
+
+```ios
+// The following block is for applications wishing to collect IDFA.
+// for iOS 14 and above - The user will be prompted for permission to collect IDFA.
+// If permission granted, the IDFA will be collected by the SDK.
+// for iOS 13 and below - The IDFA will be collected by the SDK. The user will NOT be prompted for permission.
+if #available(iOS 14, *) {
+    // Set a timeout for the SDK to wait for the IDFA collection before handling app launch
+    AppsFlyerLib.shared().waitForAdvertisingIdentifier(withTimeoutInterval: 60)
+    // Show the user the Apple IDFA consent dialog (AppTrackingTransparency)
+    // Can be called in any place
+    ATTrackingManager.requestTrackingAuthorization { (status) in
+    }
+}
+```
+5. Follow [Segment's guide for collecting IDFA](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
+
 ### Server
 
 AppsFlyer offers an **augmentative** server-side [HTTP API](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-) intended for use along side their mobile SDK. Use the server-side destination alongside the mobile SDK to associate out-of-app events such as website or offline purchases with attributed users/devices. Read further for more information on this functionality.
