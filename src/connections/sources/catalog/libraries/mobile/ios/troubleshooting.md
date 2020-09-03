@@ -59,14 +59,15 @@ v3 was an API compatible release, but there are a few additional steps for packa
 
 Firstly, we changed how the anonymousId was stored between v2 and v3. You'll need to read the old anonymousId and set it so that it's moved to the new location.
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 NSString *oldAnonymousId = loadOldAnonymousId();
 if (oldAnonymousId) {
@@ -76,9 +77,9 @@ if (oldAnonymousId) {
   deleteOldAnonymousId();
 }
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -95,14 +96,15 @@ pod 'Segment-GoogleAnalytics'
 
 *Note:* If you are unsure about the name of the pod for a given SDK, you can always confirm on by searching for the destination in [our app](https://cloudup.com/cOQk2yX98mW)!
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 #import <Segment-GoogleAnalytics/SEGGoogleAnalyticsIntegrationFactory.h>
 #import <Segment-Branch/BNCBranchIntegrationFactory.h>
@@ -116,9 +118,9 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 [SEGAnalytics setupWithConfiguration:config];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 

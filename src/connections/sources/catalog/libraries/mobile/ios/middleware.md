@@ -15,14 +15,15 @@ The middleware API is easily accessible in both Objective-C and Swift.
 Middleware is any Objective-C class that conforms to the following protocol.
 
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 @protocol SEGMiddleware
 @required
@@ -30,22 +31,23 @@ Middleware is any Objective-C class that conforms to the following protocol.
 EGMiddlewareNext _Nonnull)next;
 @end
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
 We also provide a block-centric helper class to make it easier to create middlewares using anonymous functions on the fly. (See examples later on in the guide)
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNext _Nonnull next);
 
@@ -56,9 +58,9 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 @end
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -66,14 +68,15 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 `SEGContext` object is not very information rich by itself. Typically you must use `eventType`  and `payload` to get more information about an event.
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 @interface SEGContext : NSObject <NSCopying>
 
@@ -92,22 +95,21 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 @end
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 If you look at `SEGEventType` more carefully, you'll realize that middleware is not only capable of handling `track` , `identify` and other normal analytics APIs, even calls like `reset` , `flush` and `openURL` go through and can therefore be processed by the middleware pipeline.
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
-
+{% codeexampletab Objective-C %}-->
 ```objc
 typedef NS_ENUM(NSInteger, SEGEventType) {
     // Should not happen, but default state
@@ -137,21 +139,22 @@ typedef NS_ENUM(NSInteger, SEGEventType) {
     SEGEventTypeOpenURL,
 };
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enums. Subclassed payloads may contain call specific information, For example, the `SEGTrackPayload` contains `event` as well as `properties` .
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 @interface SEGTrackPayload : SEGPayload
 
@@ -161,22 +164,23 @@ There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enu
 
 @end
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
 Finally, to use a middleware, you must provide it to the `SEGAnalyticsConfiguration` object prior to the initialization of `SEGAnalytics`.
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 @interface SEGAnalyticsConfiguration : NSObject
 
@@ -193,9 +197,9 @@ Finally, to use a middleware, you must provide it to the `SEGAnalyticsConfigurat
 // ...
 @end
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -205,8 +209,8 @@ Once initialized, the list of middleware used in `SEGAnalytics` cannot be change
 
 The following examples will be written in Swift to demonstrate that the middleware API works just as well in Swift as in Objective-C. To start off, this is what initialization looks like
 
-{% codeexample %}
-{% codeexampletab Swift %}
+<!--{% codeexample %}
+{% codeexampletab Swift %}-->
 
 ```swift
 let mixpanelIntegration = SEGMixpanelIntegrationFactory.instance()
@@ -230,7 +234,7 @@ config.destinationMiddleware = [
 ]
 SEGAnalytics.setup(with: config)
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
 {% codeexampletab Objective-C %}
 ```objc
@@ -238,7 +242,7 @@ SEGAnalytics.setup(with: config)
 ```
 {% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 Changing event names and adding custom attributes

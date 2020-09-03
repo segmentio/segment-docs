@@ -48,20 +48,21 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 And of course, import the SDK in the files that you use it with:
 
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 #import <Analytics/SEGAnalytics.h>
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 ### Including SDKs for destinations using Device-mode
@@ -76,21 +77,22 @@ Now that the Segment Analytics-iOS SDK is installed and set up, you're ready to.
 
 The `SEGAnalyticsConfiguration` class provides a set of properties that control various policies of the `SEGAnalytics` instance. You initialize it with a `writeKey` as in the examples below:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [SEGAnalytics setupWithConfiguration:[SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"]];
 ```
 
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 <table class="api-table">
@@ -104,23 +106,24 @@ The `SEGAnalyticsConfiguration` class provides a set of properties that control 
 
 The Segment Analytics-iOS SDK can automatically instrument [common application lifecycle events](/docs/connections/spec/mobile/) such as "Application Installed", "Application Updated" and "Application Opened". Simply enable this option when you initialize the SDK.
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.trackApplicationLifecycleEvents = YES;
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -128,22 +131,23 @@ configuration.trackApplicationLifecycleEvents = YES;
 
 The Segment Analytics-iOS SDK can automatically instrument screen calls. It uses method swizzling to detect when `ViewController`s are loaded, and uses the label of the view controller (or the class name if a label is not available) as the screen name. It removes the string "ViewController" from the name if one is present.
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.recordScreenViews = YES;
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -151,22 +155,23 @@ configuration.recordScreenViews = YES;
 
 When you set `trackPushNotifications` to `YES`, the SDK automatically sends a Track event for `Push Notification Received` and `Push Notification Tapped`.
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.trackPushNotifications = YES;
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -174,22 +179,23 @@ configuration.trackPushNotifications = YES;
 
 When you set `trackDeepLinks` to `YES`, the SDK automatically sends a Track event for `Deep Link Opened`.
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.trackDeepLinks = YES;
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -197,42 +203,44 @@ configuration.trackDeepLinks = YES;
 
 You can set the number of events that should queue before flushing. Setting this to `1` will send events as they come in (i.e. not send batched events) and will use more battery. `20` by default.
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.flushAt = 1;
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 You can also manually `flush` the queue:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [[SEGAnalytics sharedAnalytics] alias:@"glenncoco"];
 [[SEGAnalytics sharedAnalytics] flush]
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -253,21 +261,22 @@ Segment recommends that you call Identify once when you first create the user's 
 
 Example `identify` call:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [[SEGAnalytics sharedAnalytics] identify:@"a user's id"
                                 traits:@{ @"email": @"a user's email address" }];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -306,21 +315,22 @@ You might also want to track events that are indicators of success for your mobi
 
 An example Track call might look like this:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [[SEGAnalytics sharedAnalytics] track:@"Item Purchased"
                            properties:@{ @"item": @"Sword of Heracles", @"revenue": @2.95 }];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 This example Track call above tells you that your user just triggered the **Item Purchased** event, and records the `item` name of "Sword of Heracles" and `revenue` of 2.95.
 
@@ -352,21 +362,22 @@ You'll want to record a screen event an event whenever the user opens a screen i
 
 Example Screen` call:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
                             properties:@{ @"Feed Type": @"private" }];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -397,21 +408,22 @@ This is useful for tools like [Intercom](/docs/connections/destinations/catalog/
 
 An example Group call might look like this:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [[SEGAnalytics sharedAnalytics] group:@"group123"
 traits:@{ @"name": @"Initech", @"description": @"Accounting Software" }];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 The Group call has the following fields:
@@ -445,20 +457,21 @@ In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used 
 
 Example Alias call:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [[SEGAnalytics sharedAnalytics] alias:@"some new id"];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -481,20 +494,21 @@ For more details about the Alias method, including the Alias call payload, check
 
 You can retrieve the `anonymousId` set by the library by using:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [[SEGAnalytics sharedAnalytics] getAnonymousId];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 ### Reset
@@ -503,21 +517,22 @@ The `- reset` method clears the SDK's internal stores for the current `user` and
 
 Clearing all information about the user is as simple as calling:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [[SEGAnalytics sharedAnalytics] reset];
 ```
 
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 **Events in the queue are not cleared**, and are sent to Segment the next time the app starts. You might want to call Flush in combination before you call Reset.
 
@@ -528,40 +543,42 @@ Clearing all information about the user is as simple as calling:
 
 Depending on the audience for your app (for example, children) or the countries where you sell your app (for example, the EU), you might need to offer the ability for users to opt-out of analytics data collection from inside your app. You can turn off forwarding to ALL destinations including Segment itself using the following code:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [[SEGAnalytics sharedAnalytics] disable];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
 Or if the user opts back in, you can re-enable data collection:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [[SEGAnalytics sharedAnalytics] enable];
 ```
 
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 > warning ""
@@ -574,14 +591,14 @@ You can pass an `integrations` object on Page, Track, Alias, Group and Identify 
 You can enable or disable destinations by specifying an `NSDictionary *` in the `options` parameter of the Segment methods as in the examples below:
 
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
 
 ```objc
 options:@{
@@ -591,29 +608,29 @@ options:@{
   }
 }
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 The example below shows a Track call that is sent to all enabled destinations except Mixpanel:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
 ```objc
 [[SEGAnalytics sharedAnalytics] track:@"Product Rated"
                            properties:nil
                               options:@{ @"integrations": @{ @"All": @YES, @"Mixpanel": @NO }}];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -640,39 +657,41 @@ When Segment sends data in Device-mode (directly from a user's device) it sets t
 
 To see a trace of your data going through the SDK, you can enable debug logging with `- debug:`:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [SEGAnalytics debug:YES];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
 Or disable it like this:
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 [SEGAnalytics debug:NO];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -683,14 +702,15 @@ By default debug logging is disabled.
 
 You can point the iOS SDK to your own hosted [proxy](https://github.com/segmentio/segment-proxy) of the Segment API. This runs the HTTP traffic for the Segment API through the proxy.
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 
@@ -710,9 +730,9 @@ configuration.requestFactory = ^(NSURL *url) {
 // Initialize the SDK with the configuration.
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 
 
@@ -769,7 +789,7 @@ By default, the Segment `Analytics` pod does not package any destination SDKs.
 pod 'Analytics', '~> 3.1.0'
 ```
 
-To add destinations using Device-mode, first add the dependencies you need. You can find these in the Segment app when you open the destination sheet for[ any mobile destination with a Device-mode option](/docs/connections/destinations/cmodes-compare/). 
+To add destinations using Device-mode, first add the dependencies you need. You can find these in the Segment app when you open the destination sheet for[ any mobile destination with a Device-mode option](/docs/connections/destinations/cmodes-compare/).
 
 ```ruby
 pod 'Segment-Bugsnag'
@@ -780,20 +800,21 @@ pod 'Segment-GoogleAnalytics'
 
 After you add the dependency, you must register the destination with the Segment SDK.
 
-{% codeexample %}
+<!--{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}
+{% codeexampletab Objective-C %}-->
+
 ```objc
 #import <Analytics/SEGAnalytics.h>
 ```
-{% endcodeexampletab %}
+<!--{% endcodeexampletab %}
 
-{% endcodeexample %}
+{% endcodeexample %}-->
 
 ```objc
 #import <Segment-GoogleAnalytics/SEGGoogleAnalyticsIntegrationFactory.h>

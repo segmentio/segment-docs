@@ -1,4 +1,0 @@
----
-title: todo :)
-strat: ios
----
