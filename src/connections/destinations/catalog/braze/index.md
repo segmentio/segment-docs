@@ -45,17 +45,21 @@ If you notice any gaps or outdated information in this document, or simply want 
 
 #### Sample App
 
-Braze has created a sample iOS application that integrates Braze using Segment. Check it out at the [Github repo](https://github.com/Appboy/appboy-segment-ios/tree/master/Example).
+Braze created a sample iOS application that integrates Braze using Segment. Check it out at the [Github repo](https://github.com/Appboy/appboy-segment-ios/tree/master/Example).
 
-#### Additional Device Mode Setup for iOS 14 Support
-Segment’s Braze SDK has been updated to use AppBoy's version 3.26.1 as a key way for you to prepare for iOS 14. Braze will continue to allow apps to provide a user’s IDFA value to the Braze SDK. The `ABK_ENABLE_IDFA_COLLECTION` macro, which would conditionally compile in optional automatic IDFA collection, will be removed in their iOS 14 release.
+#### Additional device-mode set up for iOS 14 support
 
-See Braze's [iOS 14 SDK Upgrade Guide](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/ios_14/) for more information. To utilize the latest Braze SDK to collect IDFAs you must do the following:
+Segment’s Braze SDK was updated to use AppBoy's version 3.26.1 to prepare for iOS 14. Braze will continue to allow apps to provide a user’s IDFA value to the Braze SDK. The `ABK_ENABLE_IDFA_COLLECTION` macro, which would conditionally compile in optional automatic IDFA collection, will be removed in Braze's iOS 14 release.
 
-1. Upgrade to using Xcode12.
-2. Update your Segment Appboy SDK to version 3.3.0 or greater. 
-3. Import and implement the AppTrackingTransparency (ATT) Framework. You will need to navigate to your project `Info.plist` and add a “Privacy - Tracking Usage Description”. This description will be used in the popup when  the application initializes in iOS 14. Users will be prompted to indicate whether or not they want to allow tracking. 
-4. Implement Braze's `ABKIDFADelegate`. For more information on how to implement this see [Braze’s IDFA Collection documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/#implementing-idfa-collection). 
+See the [Braze iOS 14 SDK Upgrade Guide](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/ios_14/) for more information.
+
+To use the latest Braze SDK to collect IDFAs you must do the following:
+
+1. Upgrade to use Xcode12.
+2. Update your Segment Appboy SDK to version 3.3.0 or greater.
+3. Import and implement the AppTrackingTransparency (ATT) Framework.
+   - Navigate to your project `Info.plist` and add a “Privacy - Tracking Usage Description”. This description appears in a popup when the application initializes in iOS 14. Users are prompted to indicate whether or not they want to allow tracking.
+4. Implement Braze's `ABKIDFADelegate`. For more information on how to implement this see [Braze’s IDFA Collection documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/#implementing-idfa-collection).
 5. Follow [Segment's guide for collecting IDFA](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
 
 ### Android
