@@ -15,7 +15,7 @@ To setup SCIM, you must first create an SSO connection. Once you [create your SS
 
 ## Configuration Instructions
 
-Segment officially supports Okta, Azure AD, and OneLogin. However, you may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions. If using a supported provider, start by searching for Segment in your provider's app catalog.
+Segment officially supports [Okta](#okta-setup-guide), Azure AD, and OneLogin. However, you may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions. If using a supported provider, start by searching for Segment in your provider's app catalog.
 
 When you enable SCIM, your IdP asks for two values. One is the "base URL", the Segment base URL is: https://scim.segmentapis.com/scim/v2
 
@@ -76,3 +76,29 @@ When intergrating Segment SCIM and your IdP you may need to map attributes for u
 You'll need to map an email (IdP) to `userName` (Segment). Depending on your IdP this attribute may be called `email` or simply `mail`. If your IdP uses emails for usernames, you can map `userName` (IdP) to `userName` (Segment).
 
 If your IdP supports the `displayName` attribute this can be mapped directly to the Segment `displayName` attribute. If not, most IdPs can create a "macro mapping" which would allow you to map multiple fields to a single field within Segment, such as `{firstName} {lastName}` (IdP) to `displayName` (Segment). If your IdP doesn't support this concept you can map `firstName` (IdP) to `displayName` (Segment).
+
+## Okta Setup Guide
+
+1. [Complete Okta Setup Guide for SSO](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Segment.html?baseAdminUrl=https://segment-admin.oktapreview.com&app=segment&instanceId=0oata15py1n3kQUo50h7)
+2. Click on the provisioning tab and follow the [Configuration Instructions](#configuration-instructions) to fill in the required fields.
+3. Once the credentials have been saved, select "To App" under the provisioning tab. Click edit and select "Create Users" and "Deactivate Users," and then Save.
+4. Under the provisioning tab, click "Go to Profile Editor," and then "Mappings."
+5. The left tab represents the data that Segment will send to Okta. Click "do not map" for all attributes except `email` and `displayName`, click "Save Mappings," and "Apply Updates Now" (if prompted).
+
+![](images/scim_attribute_mappings.png)
+
+6. Reopen "Mappings" and click the right right tab. This represents data that Okta will send to Segment. Again, click "do not map" for all attributes except `email` and `displayName`, "Save Mappings," and "Apply Updates Now" (if prompted).
+7. This should close the "Mappings" pop up. You can now delete all unused attributes. "Given Name" and "Family Name" are required by Okta, but unused by Segment.
+
+![](images/scim_delete_attributes.png)
+
+8. Navigate back to the Segment Okta app. You're now ready to assign people or groups! Please read through the (features)[#features] sections of this doc to make sure you understand this functionality.
+9. We recommend assigning users to the Segment app by Okta group. Assignment by group allows you to easily manage which groups in your organization are able to authenticate to Segment. Users can also be assigned individually.
+
+![](images/scim_assignments.png)
+
+10. Once users have been assigned we recommend pushing your Okta groups into Segment, and then going into the Segment app to assign permissions to these groups. You can also link Okta groups to an existing group within the Segment app using the Okta UI.
+
+![](images/scim_group_push.png)
+
+![](images/scim_edit_groups.png)
