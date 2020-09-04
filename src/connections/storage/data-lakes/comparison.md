@@ -21,7 +21,7 @@ Both Data Lakes and Warehouses (and all Segment destinations) rely on the [de-du
 - The 24 hour look back window duplicate guarantee is met
 - Processing costs for customers are managed appropriately
 
-Warehouses also has a secondary de-duplication system built in to further reduce the volume of duplicates. If you have advanced requirements for duplicates in Data Lakes, you can add de-duplication steps downstream to reduce duplicates outside this look back window.
+Warehouses also have a secondary de-duplication system built in to further reduce the volume of duplicates. If you have advanced requirements for duplicates in Data Lakes, you can add de-duplication steps downstream to reduce duplicates outside this look back window.
 
 
 ## Object vs Event Data
@@ -64,12 +64,12 @@ See the table below for information about the [source](/docs/connections/sources
 <tr>
     <td><a href="/docs/connections/sources/#http">HTTP</a></td>
     <td>✅</td>
-    <td>⬜️</td>
+    <td>✅</td>
 </tr>
 <tr>
     <td><a href="/docs/connections/sources/#pixel">Pixel</a></td>
     <td>✅</td>
-    <td>⬜️</td>
+    <td>✅</td>
 </tr>
 </table>
 
@@ -87,7 +87,7 @@ This approach leads to a few scenarios where the data type for an event may be d
 
 Variance in data types between Warehouses and Data Lakes don’t happen often for booleans, strings, and timestamps, however it can occur for decimals and integers.
 
-If a bad data type is seen, such as text in place of a number or an incorrectly formatted date, Warehouses and Data Lakes attempt a best effort conversion to cast the fields to the target data type. Fields that cannot be casted may be dropped. [Contact us](https://segment.com/contact) if you want to correct data types in the schema and perform a [replay](https://segment.com/docs/guides/what-is-replay/) to ensure no data is lost.
+If a bad data type is seen, such as text in place of a number or an incorrectly formatted date, Warehouses and Data Lakes attempt a best effort conversion to cast the fields to the target data type. Fields that cannot be casted may be dropped. [Contact us](https://segment.com/contact) if you want to correct data types in the schema and perform a [replay](/docs/guides/what-is-replay/) to ensure no data is lost.
 
 
 ### Tables
