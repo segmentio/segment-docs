@@ -132,7 +132,7 @@ Data Lakes does not support loading [object cloud source data](https://segment.c
 
 ##### Are user deletions and suppression supported?
 
-User deletions are not supported in Data Lakes, however user suppression is supported.
+User deletions are not supported in Data Lakes, however user suppression is supported. [Contact us](http://segment.com/contact) for user suppression requests.
 
 ##### How does Data Lakes handle schema evolution?
 
