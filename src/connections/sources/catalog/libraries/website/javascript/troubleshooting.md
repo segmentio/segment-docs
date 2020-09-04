@@ -131,6 +131,10 @@ analytics.track("Receipt Viewed", {}, {
 
 This works for any [context field](/docs/connections/spec/common/#context) that Segment automatically collects.
 
+### Changes I made to my Javascript source settings aren't being reflected in analytics.js
+
+Our cloudfront distribution caches files for 5 minutes, so sometimes it may take up to 5 minutes for your changes to be reflected.
+
 ## Known Issues:
 
 [Review and contribute to these on Github](https://github.com/segmentio/analytics.js/issues)
