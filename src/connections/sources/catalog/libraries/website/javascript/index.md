@@ -657,3 +657,9 @@ Segment's Analytics.js javascript snippet only increases the page size by about 
 However, the snippet asynchronously requests and loads a customized javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your [device-mode destinations](/docs/connections/destinations/#connection-modes). The size of this file changes depending on how many and which destinations you enable.
 
 Without any destinations enabled, the `analytics.min.js` file is about 62KB. Each time you enable a destination, the file's size may increase slightly.
+
+### Localstorage cookies used by Analytics.js
+
+There are a few localstorage cookies used by Analytics.js if you have retries enabled. `ack` is a timer used to see if another tab should claim the retry queue. `reclaimStart` and `reclaimEnd` are used to signify if a tab is taking over the queue of another tab. `inProgress` and `queue` are used to track in-flight events and events that are queued up to be retried. For more information you can visit our localstorage-retry library at https://github.com/segmentio/localstorage-retry.
+
+`debug` is a flag that can be set to 'analytics.js' if you want Analytics.js to log debug messages in the console.
