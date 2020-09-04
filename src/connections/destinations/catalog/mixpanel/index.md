@@ -190,7 +190,9 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 ```javascript
 analytics.alias('newUserId')
 ```
-**Important:** Calling `alias` used to be required for Mixpanel in all libraries in order to connect anonymous visitors to identified users. However, with the release of Mixpanel's New [identity merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge) this is no longer necessary if you enable the ID Merge Setting under Mixpanel -> Project Settings -> Identity Merge. **If you aren't using this setting, please continue with the instructions below.**
+
+**Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge) this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.**
+
 
 As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
 
