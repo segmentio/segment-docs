@@ -69,10 +69,10 @@ Your IdP can add or remove workspace members from existing groups via SCIM. Your
 
 Your IdP can use SCIM to delete groups from your Segment workspace. Deleting a group within Segment does **not** remove its members from your workspace. You need to unassign users from Segment within your IdP for them to be removed from the workspace.
 
-## Troubleshooting
+## Attribute Mapping
 
-When intergrating Segment and your IdP you may need to map attributes for users. The only attributes that Segment supports are `userName` and `displayName`.
+When intergrating Segment SCIM and your IdP you may need to map attributes for users. The only attributes that Segment SCIM supports are `userName` and `displayName`. You should leave an existing mapping for the `email` SAML attribute, which you may have setup during your initial SSO onboarding. This mapping supports SAML authentication, and is separate from setting up SCIM.
 
-You'll need to map an email (IdP) to `userName` (Segment). Depending on your IdP this attribute may be called `email` or simply `mail`. If your IdP uses emails for usernames, you can simply map `userName` (IdP) to `userName` (Segment).
+You'll need to map an email (IdP) to `userName` (Segment). Depending on your IdP this attribute may be called `email` or simply `mail`. If your IdP uses emails for usernames, you can map `userName` (IdP) to `userName` (Segment).
 
 If your IdP supports the `displayName` attribute this can be mapped directly to the Segment `displayName` attribute. If not, most IdPs can create a "macro mapping" which would allow you to map multiple fields to a single field within Segment, such as `{firstName} {lastName}` (IdP) to `displayName` (Segment). If your IdP doesn't support this concept you can map `firstName` (IdP) to `displayName` (Segment).
