@@ -71,7 +71,7 @@ Your IdP can use SCIM to delete groups from your Segment workspace. Deleting a g
 
 ## Attribute Mapping
 
-When intergrating Segment SCIM and your IdP you may need to map attributes for users. The only attributes that Segment SCIM supports are `userName` and `displayName`. You should leave an existing mapping for the `email` SAML attribute, which you may have setup during your initial SSO onboarding. This mapping supports SAML authentication, and is separate from setting up SCIM.
+When intergrating Segment SCIM and your IdP you may need to map attributes for users. The only attributes that Segment SCIM supports are `userName` and `displayName`. You should leave any existing mapping for the `email` SAML attribute, which you may have setup during your initial SSO onboarding. This mapping supports SAML authentication, and is separate from setting up SCIM, but may be within the same page depending on your IdP.
 
 You'll need to map an email (IdP) to `userName` (Segment). Depending on your IdP this attribute may be called `email` or simply `mail`. If your IdP uses emails for usernames, you can map `userName` (IdP) to `userName` (Segment).
 
@@ -81,23 +81,23 @@ If your IdP supports the `displayName` attribute this can be mapped directly to 
 
 1. [Complete Okta Setup Guide for SSO](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Segment.html?baseAdminUrl=https://segment-admin.oktapreview.com&app=segment&instanceId=0oata15py1n3kQUo50h7)
 2. Click on the provisioning tab and follow the [Configuration Instructions](#configuration-instructions) to fill in the required fields.
-3. Once the credentials have been saved, select "To App" under the provisioning tab. Click edit and select "Create Users" and "Deactivate Users," and then Save.
+3. Once the credentials have been saved, select "To App" (left sidebar) under the provisioning tab. Click edit and select "Create Users" and "Deactivate Users," and then Save.
 4. Under the provisioning tab, click "Go to Profile Editor," and then "Mappings."
 5. The left tab represents the data that Segment will send to Okta. Click "do not map" for all attributes except `email` and `displayName`, click "Save Mappings," and "Apply Updates Now" (if prompted).
 
 ![](images/scim_attribute_mappings.png)
 
 6. Reopen "Mappings" and click the right right tab. This represents data that Okta will send to Segment. Again, click "do not map" for all attributes except `email` and `displayName`, "Save Mappings," and "Apply Updates Now" (if prompted).
-7. This should close the "Mappings" pop up. You can now delete all unused attributes. "Given Name" and "Family Name" are required by Okta, but unused by Segment.
+7. This should close the "Mappings" pop up. You can now delete all unused attributes from the bottom of the "Provisioning Tab". "Given Name" and "Family Name" are required by Okta, but unused by Segment.
 
 ![](images/scim_delete_attributes.png)
 
-8. Navigate back to the Segment Okta app. You're now ready to assign people or groups! Please read through the (features)[#features] sections of this doc to make sure you understand this functionality.
+8. Navigate back to the Segment Okta app. You're now ready to assign people or groups! Please read through the [features](#features) sections of this doc to make sure you understand this functionality before continuing.
 9. We recommend assigning users to the Segment app by Okta group. Assignment by group allows you to easily manage which groups in your organization are able to authenticate to Segment. Users can also be assigned individually.
 
 ![](images/scim_assignments.png)
 
-10. Once users have been assigned we recommend pushing your Okta groups into Segment, and then going into the Segment app to assign permissions to these groups. You can also link Okta groups to an existing group within the Segment app using the Okta UI.
+10. Once users have been assigned we recommend pushing your assigned Okta groups into Segment, and then going into the Segment app to assign permissions to these groups. You can also link Okta groups to an existing group within the Segment app using the Okta UI.
 
 ![](images/scim_group_push.png)
 
