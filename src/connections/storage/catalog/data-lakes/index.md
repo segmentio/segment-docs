@@ -55,7 +55,17 @@ After you set up the necessary AWS resources, the next step is to set up the Dat
 Once the Data Lakes destination is enabled, the first sync will begin approximately 2 hours later.
 
 
-## (Optional) Step 3 - Replay Historical Data
+## Step 3 - Verify Data is Synced to S3 and Glue
+
+You will see event data and [sync reports](https://segment.com/docs/connections/storage/data-lakes/sync-reports) populated in S3 and Glue after the first sync successfully completes. However if an [insufficient permission](https://segment.com/docs/connections/storage/data-lakes/sync-reports/#insufficient-permissions) or [invalid setting](https://segment.com/docs/connections/storage/data-lakes/sync-reports/#invalid-settings) is provided during set up, the first data lake sync will fail.
+
+To be alerted of sync failures via email, subscribe to the `Storage Destination Sync Failed` activity email notification within the App Settings > User Preferences > [Notification Settings](https://app.segment.com/goto-my-workspace/settings/notifications).
+![](images/dl_activity_notifications2.png)
+
+`Sync Failed` emails are sent on the 1st, 5th and 20th sync failure. Learn more about the types of errors which can cause sync failures [here](https://segment.com/docs/connections/storage/data-lakes/sync-reports/#sync-errors).
+
+
+## (Optional) Step 4 - Replay Historical Data
 
 If you want to add historical data to your data set using a [replay of historical data](/docs/guides/what-is-replay/) into Data Lakes, [contact the Segment Support team](https://segment.com/help/contact/) to request one.
 
@@ -66,6 +76,9 @@ Segment creates a separate EMR cluster to run replays, then destroys it when the
 # FAQ
 
 ## Data Lakes Set Up
+
+
+
 
 ##### Do I need to create Glue databases?
 

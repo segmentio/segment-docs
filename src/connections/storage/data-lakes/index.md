@@ -30,7 +30,7 @@ When you use Data Lakes, you can either use Data Lakes as your _only_ source of 
 
 ## Set up Segment Data Lakes
 
-Detailed set up instructions can be found in the [Data Lakes catalog page](/docs/connections/storage/catalog/data-lakes/).
+For detailed instructions on how to configure Segment Data Lakes, see the [Data Lakes catalog page](/docs/connections/storage/catalog/data-lakes/). Be sure to consider the EMR and AWS IAM components listed below."
 
 ### EMR
 
@@ -101,11 +101,11 @@ The data types supported in Glue are:
 
 Once Data Lakes sets a data type for a column, all subsequent data will attempt to be cast into that data type. If incoming data does not match the data type, Data Lakes tries to cast the column to the target data type.
 
-### Size mismatch
+**Size mismatch**
 
 If the data type in Glue is wider than the data type for a column in an on-going sync (for example, a decimal vs integer, or string vs integer), then the column is cast to the wider type in the Glue table. If the column is narrower (for example, integer in the table versus decimal in the data), the data might be dropped if it cannot be cast at all, or in the case of numbers, some data might lose precision. The original data in Segment remains in its original format, so you can fix the types and [replay](/docs/guides/what-is-replay/) to ensure no data is lost. Learn more about type casting [here](https://www.w3schools.com/java/java_type_casting.asp).
 
-#### Data mismatch
+**Data mismatch**
 
 If Data Lakes sees a bad data type, for example text in place of a number or an incorrectly formatted date, it attempts a best effort conversion to cast the field to the target data type. Fields that cannot be cast may be dropped. You can also correct the data type in the schema to the desired type and Replay to ensure no data is lost. [Contact Segment Support](https://segment.com/help/contact/) if you find a data type needs to be corrected.
 
@@ -131,7 +131,7 @@ Data Lakes does not support loading [object cloud source data](https://segment.c
 
 ##### Are user deletions and suppression supported?
 
-User deletions are not supported in Data Lakes, however [user suppression](https://segment.com/docs/privacy/user-deletion-and-suppression/#suppressed-users) is supported. 
+User deletions are not supported in Data Lakes, however [user suppression](https://segment.com/docs/privacy/user-deletion-and-suppression/#suppressed-users) is supported.
 
 ##### How does Data Lakes handle schema evolution?
 
