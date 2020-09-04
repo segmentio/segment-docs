@@ -32,14 +32,13 @@ After you set up the necessary AWS resources, the next step is to set up the Dat
 1. In the [Segment App](https://app.segment.com/goto-my-workspace/overview), click **Add Destination**, then search for and select **Data Lakes**.
 
 2. Click **Configure Data Lakes** and select the source to connect to the Data Lakes destination.
-   > warning ""
-   >You must include all source ids in the external ID list in the IAM policy, or else the source data cannot be synced to S3.
+  **Warning**:You must include all source ids in the external ID list in the IAM policy, or else the source data cannot be synced to S3.
 
 3. In the Settings tab, enter and save the following connection settings:
-   - **AWS Region**: The AWS Region where your EMR cluster, S3 Bucket and Glue DB reside. Ex: us-west-2
+   - **AWS Region**: The AWS Region where your EMR cluster, S3 Bucket and Glue DB reside. Ex: `us-west-2`
    - **EMR Cluster ID**: The EMR Cluster ID where the Data Lakes jobs will be run.
    - **Glue Catalog ID**: The Glue Catalog ID (this must be the same as your AWS account ID).
-   - **IAM Role ARN**: The ARN of the IAM role that Segment will use to connect to Data Lakes. Ex: arn:aws:iam::000000000000:role/SegmentDataLakeRole
+   - **IAM Role ARN**: The ARN of the IAM role that Segment will use to connect to Data Lakes. Ex: `arn:aws:iam::000000000000:role/SegmentDataLakeRole`
    - **S3 Bucket**: Name of the S3 bucket used by Data Lakes. The EMR cluster will store logs in this bucket. Ex: segment-data-lake
 
    You must individually connect each source to the Data Lakes destination. However, you can copy the settings from another source by clicking **…** ("more") (next to the button for “Set up Guide”).
