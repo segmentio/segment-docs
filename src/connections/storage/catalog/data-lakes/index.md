@@ -38,7 +38,7 @@ After you set up the necessary AWS resources, the next step is to set up the Dat
    - **EMR Cluster ID**: The EMR Cluster ID where the Data Lakes jobs will be run.
    - **Glue Catalog ID**: The Glue Catalog ID (this must be the same as your AWS account ID).
    - **IAM Role ARN**: The ARN of the IAM role that Segment will use to connect to Data Lakes. Ex: `arn:aws:iam::000000000000:role/SegmentDataLakeRole`
-   - **S3 Bucket**: Name of the S3 bucket used by Data Lakes. The EMR cluster will store logs in this bucket. Ex: segment-data-lake
+   - **S3 Bucket**: Name of the S3 bucket used by Data Lakes. The EMR cluster will store logs in this bucket. Ex: `segment-data-lake`
 
    You must individually connect each source to the Data Lakes destination. However, you can copy the settings from another source by clicking **…** ("more") (next to the button for “Set up Guide”).
 
