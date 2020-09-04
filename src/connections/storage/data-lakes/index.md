@@ -1,5 +1,4 @@
 ---
-hidden: true
 title: Segment Data Lakes
 redirect_from: '/connections/destinations/catalog/data-lakes/'
 ---
