@@ -1,6 +1,6 @@
 ---
 hidden: true
-title: Data Lakes (Beta)
+title: Segment Data Lakes
 redirect_from: '/connections/destinations/catalog/data-lakes/'
 ---
 
@@ -9,7 +9,7 @@ Segment Data Lakes sends Segment data to a cloud data store (for example AWS S3)
 > info ""
 > Segment Data Lakes is available to Business tier customers only.
 
-To learn more, read our blog post on [Cultivating your Data Lake](https://segment.com/blog/cultivating-your-data-lake).
+To learn more, check out our [blog post](https://segment.com/blog/introducing-segment-data-lakes/).
 
 
 ## How Segment Data Lakes Work
@@ -73,6 +73,10 @@ By default, the date partition structure is `day=<YYYY-MM-DD>/hr=<HH>` to give y
 Data Lakes stores the inferred schema and associated metadata of the S3 data in AWS Glue Data Catalog. This metadata includes the location of the S3 file, data converted into Parquet format, column names inferred from the Segment event, nested properties and traits which are now flattened, and the inferred data type.
 
 ![](images/dl_gluecatalog.png)
+<!--
+TODO:
+add annotated glue image calling out different parts of inferred schema)
+-->
 
 New columns are appended to the end of the table in the Glue Data Catalog as they are detected.
 

@@ -1,5 +1,5 @@
 ---
-title: Sync Reports and error reporting
+title: Sync Reports and Error Reporting
 ---
 
 Segment Data Lakes generates reports with operational metrics about each sync to your data lake so you can monitor sync performance. These sync reports are stored in your S3 bucket and Glue Data Catalog. This means you have access to the raw data, so you can query it to answer questions and set up alerting and monitoring tools.
