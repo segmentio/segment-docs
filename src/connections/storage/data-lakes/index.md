@@ -11,7 +11,7 @@ Segment Data Lakes sends Segment data to a cloud data store (for example AWS S3)
 To learn more, check out our [blog post](https://segment.com/blog/introducing-segment-data-lakes/).
 
 
-## How Segment Data Lakes Work
+## How Segment Data Lakes work
 
 Data Lakes store Segment data in S3 in a read-optimized encoding format (Parquet) which makes the data more accessible and actionable. To help you zero-in on the right data, Data Lakes also creates logical data partitions and event tables, and integrates metadata with existing schema management tools, such as the AWS Glue Data Catalog. The resulting data set is optimized for use with systems like Spark, Athena, EMR, or Machine Learning vendors like DataBricks or DataRobot.
 
@@ -34,7 +34,7 @@ Detailed set up instructions can be found in the [Data Lakes catalog page](/docs
 
 ### EMR
 
-Data Lakes uses an EMR cluster to run jobs that load events from all sources into Data Lakes. The [AWS resources portion of the set up instructions](/docs/connections/storage/catalog/data-lakes/) sets up an EMR cluster using the `m5.xlarge` node type. Data Lakes keeps the cluster  always running, however the cluster auto-scales to ensure it's not always running at full capacity. Check the Terraform module documentation for the [EMR specifications](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/emr).
+Data Lakes uses an EMR cluster to run jobs that load events from all sources into Data Lakes. The [AWS resources portion of the set up instructions](/docs/connections/storage/catalog/data-lakes#step-1---set-up-aws-resources) sets up an EMR cluster using the `m5.xlarge` node type. Data Lakes keeps the cluster  always running, however the cluster auto-scales to ensure it's not always running at full capacity. Check the Terraform module documentation for the [EMR specifications](https://github.com/segmentio/terraform-aws-data-lake/tree/master/modules/emr).
 
 ### AWS IAM Role
 
@@ -43,7 +43,7 @@ Data Lakes uses an IAM role to grant Segment secure access to your AWS account. 
 - **s3_bucket**: Name of the S3 bucket used by the Data Lake.
 
 
-## Data Lakes Schema
+## Data Lakes schema
 
 Segment Data Lakes applies a standard schema to make the raw data easier and faster to query. Partitions are applied to the S3 data for grnaular access to subsets of the data, schema components such as data types are inferred, and a map of the underlying data structure is stored in a Glue Database.
 <!--
@@ -51,7 +51,7 @@ TODO:
 add schema overview (tables/columns generated)
 -->
 
-### S3 Partition Structure
+### S3 partition structure
 
 Segment partitions the data in S3 by the Segment source, event type, then the day and hour an event was received by Segment, to ensure that the data is actionable and accessible.
 
@@ -67,7 +67,7 @@ By default, the date partition structure is `day=<YYYY-MM-DD>/hr=<HH>` to give y
 - Year/Month/Day [YYYY/MM/DD]
 - Day [YYYY-MM-DD]
 
-### AWS Glue Data Catalog
+### AWS Glue data catalog
 
 Data Lakes stores the inferred schema and associated metadata of the S3 data in AWS Glue Data Catalog. This metadata includes the location of the S3 file, data converted into Parquet format, column names inferred from the Segment event, nested properties and traits which are now flattened, and the inferred data type.
 
@@ -79,14 +79,14 @@ add annotated glue image calling out different parts of inferred schema)
 
 New columns are appended to the end of the table in the Glue Data Catalog as they are detected.
 
-#### Glue Database
+#### Glue database
 
 The schema inferred by Segment is stored in a Glue database within Glue Data Catalog. Segment stores the schema for each source in its own Glue database to organize the data so it is easier to query. To make it easier to find, Segment writes the schema to a Glue database named using the source slug by default. The database name can be modified from the Data Lakes settings.
 
 > info ""
 > The recommended IAM role permissions grant Segment access to create the Glue databases on your behalf. If you do not grant Segment these permissions, you must manually create the Glue databases for Segment to write to.
 
-### Data Types
+### Data types
 
 Data Lakes infers the data type for an event it receives. Groups of events are poled every hour to infer the data type for that each event.
 
@@ -97,15 +97,15 @@ The data types supported in Glue are:
 - string
 - timestamp
 
-#### Schema Evolution
+#### Schema evolution
 
 Once Data Lakes sets a data type for a column, all subsequent data will attempt to be cast into that data type. If incoming data does not match the data type, Data Lakes tries to cast the column to the target data type.
 
-### Size Mismatch
+### Size mismatch
 
 If the data type in Glue is wider than the data type for a column in an on-going sync (for example, a decimal vs integer, or string vs integer), then the column is cast to the wider type in the Glue table. If the column is narrower (for example, integer in the table versus decimal in the data), the data might be dropped if it cannot be cast at all, or in the case of numbers, some data might lose precision. The original data in Segment remains in its original format, so you can fix the types and [replay](/docs/guides/what-is-replay/) to ensure no data is lost. Learn more about type casting [here](https://www.w3schools.com/java/java_type_casting.asp).
 
-#### Data Mismatch
+#### Data mismatch
 
 If Data Lakes sees a bad data type, for example text in place of a number or an incorrectly formatted date, it attempts a best effort conversion to cast the field to the target data type. Fields that cannot be cast may be dropped. You can also correct the data type in the schema to the desired type and Replay to ensure no data is lost. [Contact Segment Support](https://segment.com/help/contact/) if you find a data type needs to be corrected.
 
