@@ -17,7 +17,7 @@ To setup SCIM, you must first create an SSO connection. Once you [create your SS
 
 Segment officially supports Okta, Azure AD, and OneLogin. However, you may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions. If using a supported provider, start by searching for Segment in your provider's app catalog.
 
-When you enable SCIM, your IdP asks for two values. One is the “base URL”, the Segment base URL is: https://scim.segmentapis.com/scim/v2
+When you enable SCIM, your IdP asks for two values. One is the "base URL", the Segment base URL is: https://scim.segmentapis.com/scim/v2
 
 The other value needed is an API key or Authorization Header. To generate one, go to **Settings > Advanced Settings** in the Segment app, and find the SSO Sync section. Click **Generate SSO Token** and copy the generated token. Use this token for the API key or Authorization Header in your IdP.
 
@@ -49,15 +49,17 @@ Segment user profiles only contain a `userName` (email) and `displayName`. Once 
 
 Segment workspace owners **cannot** delete Segment workspace member accounts using SCIM, the web UI, or the Segment API. A user must delete their own account using the Segment app. Workspace owners **can** remove members from the workspace using SCIM, the web UI, or the Segment API.
 
-Some IdPs want to set users as “inactive” or “active.” Segment does not have an “inactive” state for user accounts. Similar functionality can be achieved by removing a user from your workspace. Setting an existing Segment user to “active” is similar to adding that user to the workspace.
+Some IdPs want to set users as "inactive" or "active." Segment does not have an "inactive" state for user accounts. Similar functionality can be achieved by removing a user from your workspace. Setting an existing Segment user to "active" is similar to adding that user to the workspace.
 
 When your IdP updates a user to set `active: false` or attempts to delete a user, Segment removes the user from your Segment workspace. If your IdP attempts to create a user with an existing email, or set `active: true`, the existing user account is added to your workspace.
 
-Any Segment group memberships **must be reassigned** when a user is removed and re-added from your workspace. Newly added workspace users have the “Minimal Workspace Access” permission by default. The “Minimal Workspace Access” role does not have access to any sources, destinations, etc.
+Any Segment group memberships **must be reassigned** when a user is removed and re-added from your workspace. Newly added workspace users have the "Minimal Workspace Access" permission by default. The "Minimal Workspace Access" role does not have access to any sources, destinations, etc.
+
+This reassignment may happen automatically depending on how you have configured your IdP. If the user was assigned groups via your IdP, your IdP should automatically re-add the user within Segment. For this reason, we **strongly** recommend creating your groups within your IdP, pushing them into Segment, and maintaining an active link between your IdP and Segment.
 
 ## Creating Groups
 
-Your IdP can create new groups in Segment using SCIM. All groups are created via SCIM start with “Minimal Workspace Access." The “Minimal Workspace Access” permission does not have access to any sources, destinations, etc. To add more permissions to a group you must use the Segment web app.
+Your IdP can create new groups in Segment using SCIM. All groups are created via SCIM start with "Minimal Workspace Access." The "Minimal Workspace Access" permission does not have access to any sources, destinations, etc. To add more permissions to a group you must use the Segment web app.
 
 ## Updating Groups
 
@@ -67,6 +69,10 @@ Your IdP can add or remove workspace members from existing groups via SCIM. Your
 
 Your IdP can use SCIM to delete groups from your Segment workspace. Deleting a group within Segment does **not** remove its members from your workspace. You need to unassign users from Segment within your IdP for them to be removed from the workspace.
 
-## Importing Users and Groups
+## Troubleshooting
 
-Segment groups and users can be imported to your IdP if your IdP supports this feature.
+When intergrating Segment and your IdP you may need to map attributes for users. The only attributes that Segment supports are `userName` and `displayName`.
+
+You'll need to map an email (IdP) to `userName` (Segment). Depending on your IdP this attribute may be called `email` or simply `mail`. If your IdP uses emails for usernames, you can simply map `userName` (IdP) to `userName` (Segment).
+
+If your IdP supports the `displayName` attribute this can be mapped directly to the Segment `displayName` attribute. If not, most IdPs can create a "macro mapping" which would allow you to map multiple fields to a single field within Segment, such as `{firstName} {lastName}` (IdP) to `displayName` (Segment). If your IdP doesn't support this concept you can map `firstName` (IdP) to `displayName` (Segment).
