@@ -26,16 +26,53 @@ Warehouses also has a secondary de-duplication system built in to further reduce
 
 ## Object vs Event Data
 
-Warehouses support both event and object data, where Data Lakes only support event data.
+Warehouses support both event and object data, while Data Lakes supports only event data.
 
-Of the different types of [sources](/docs/connections/sources/) Segment supports, the following event sources are supported by Data Lakes:
+See the table below for information about the [source](/docs/connections/sources/) types supported by Warehouses and Data Lakes.
 
-- Website libraries
-- Mobile
-- Server
-- Event Cloud Sources
+<table>
+<tr>
+    <th></th>
+    <th>Warehouses</th>
+    <th>Data Lakes</th>
+</tr>
+<tr>
+    <td><a href="/docs/connections/sources/#website-libraries">Website Libraries</a></td>
+    <td>✅</td>
+    <td>✅</td>
+</tr>
+<tr>
+    <td><a href="/docs/connections/sources/#mobile">Mobile</a></td>
+    <td>✅</td>
+    <td>✅</td>
+</tr>
+<tr>
+    <td><a href="/docs/connections/sources/#server">Server</a></td>
+    <td>✅</td>
+    <td>✅</td>
+</tr>
+<tr>
+    <td><a href="/docs/connections/sources/#object-cloud-sources">Object Cloud Sources</a></td>
+    <td>✅</td>
+    <td>⬜️</td>
+</tr>
+<tr>
+    <td><a href="/docs/connections/sources/#event-cloud-sources">Event Cloud Sources</a></td>
+    <td>✅</td>
+    <td>✅</td>
+</tr>
+<tr>
+    <td><a href="/docs/connections/sources/#http">HTTP</a></td>
+    <td>✅</td>
+    <td>⬜️</td>
+</tr>
+<tr>
+    <td><a href="/docs/connections/sources/#pixel">Pixel</a></td>
+    <td>✅</td>
+    <td>⬜️</td>
+</tr>
+</table>
 
-Data Lakes does not support object cloud sources.
 
 ## Schema
 
