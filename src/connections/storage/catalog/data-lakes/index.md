@@ -16,15 +16,15 @@ Before you set up Segment Data Lakes, you need the following resources:
 - An [Amazon S3 bucket](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket) to receive data and store logs
 - A subnet within a VPC for the EMR cluster to run in
 
-## Step 1 - Set Up AWS Resources
+## AWS Configuration
 
-You can use the [open source Terraform module](https://github.com/segmentio/terraform-aws-data-lake) to automate much of the set up work to get Data Lakes up and running. If you’re familiar with Terraform, you can modify the module to meet your organization’s needs, however Segment guarantees support only for the template as provided. The Data Lakes set up uses Terraform v0.11+. To support more versions of Terraform, the aws provider must use v2, which is included in our example main.tf.
+You can use the [open source Terraform module](https://github.com/segmentio/terraform-aws-data-lake) to automate much of the set up work to get Data Lakes up and running. If you’re familiar with Terraform, you can modify the module to meet your organization’s needs, however Segment guarantees support only for the template as provided. The Data Lakes set up uses Terraform v0.11+. To support additional versions of Terraform, the aws provider must use v2, which is included in our example main.tf.
 
-You can also use our [manual set up instructions](https://docs.google.com/document/d/1GlWzS5KO4QaiVZx9pwfpgF-N-Xy2e_QQcdYSX-nLMDU/view) to configure these AWS resources if you prefer.
+If you're not familiar with the Terraform module, and prefer to configure AWS manually, see the [Manual configuration instructions](#manual-configuration-instructions) below.
 
 The Terraform module and manual set up instructions both provide a base level of permissions to Segment (for example, the correct IAM role to allow Segment to create Glue databases on your behalf). If you want stricter permissions, or other custom configurations, you can customize these manually.
 
-## Step 2 - Enable Data Lakes Destination
+### Step 1 - Enable Data Lakes Destination
 
 After you set up the necessary AWS resources, the next step is to set up the Data Lakes destination within Segment:
 
@@ -55,7 +55,7 @@ After you set up the necessary AWS resources, the next step is to set up the Dat
 Once the Data Lakes destination is enabled, the first sync will begin approximately 2 hours later.
 
 
-## Step 3 - Verify Data is Synced to S3 and Glue
+### Step 3 - Verify Data is Synced to S3 and Glue
 
 You will see event data and [sync reports](https://segment.com/docs/connections/storage/data-lakes/sync-reports) populated in S3 and Glue after the first sync successfully completes. However if an [insufficient permission](https://segment.com/docs/connections/storage/data-lakes/sync-reports/#insufficient-permissions) or [invalid setting](https://segment.com/docs/connections/storage/data-lakes/sync-reports/#invalid-settings) is provided during set up, the first data lake sync will fail.
 
@@ -65,7 +65,7 @@ To be alerted of sync failures via email, subscribe to the `Storage Destination 
 `Sync Failed` emails are sent on the 1st, 5th and 20th sync failure. Learn more about the types of errors which can cause sync failures [here](https://segment.com/docs/connections/storage/data-lakes/sync-reports/#sync-errors).
 
 
-## (Optional) Step 4 - Replay Historical Data
+### (Optional) Step 4 - Replay Historical Data
 
 If you want to add historical data to your data set using a [replay of historical data](/docs/guides/what-is-replay/) into Data Lakes, [contact the Segment Support team](https://segment.com/help/contact/) to request one.
 
@@ -73,12 +73,190 @@ The time needed to process a Replay can vary depending on the volume of data and
 
 Segment creates a separate EMR cluster to run replays, then destroys it when the replay finished. This ensures that regular Data Lakes syncs are not interrupted, and helps the replay finish faster.
 
+## Manual configuration instructions
+
+The instructions below will guide you through the process required to configure the environment required to begin loading data into your Segment Data Lake. For a more automated process, see [Step 1 - Configure AWS Resources](#step-1---configure-aws-resources) above.
+
+
+### Step 1 - Create an S3 Bucket
+
+In this step, you'll create the S3 bucket that will store both the intermediate and final data.
+
+> info ""
+> Take note of the S3 bucket name you set in this step, as the rest of the set up flow requires it. In these instructions, `segment-data-lake` is used.
+
+During the set up process, create a Lifecycle rule and set it to expire staging data after 14 days. For more information, see Amazon's documentation, [How do I create a lifecycle?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-lifecycle.html). 
+
+### Step 2 - Configure an EMR cluster
+
+Segment requires access to an EMR cluster to perform necessary data processing. We recommend starting with a small cluster, with the option to add more compute as required.
+
+#### Configure the hardware and networking configuration
+
+1. Locate and select EMR from the AWS console.
+2. Click **Create Cluster**, and open the **Advanced Options**.
+3. In the Advanced Options, on Step 1: Software and Steps, ensure the following options are selected, along with the defaults:
+   - `Use for Hive table metadata`
+   - `Use for Spark table metadata`
+4. In the Networking setup section, select to create the cluster in either a public or private subnet. Creating the cluster in a private subnet is more secure, but requires some additional configuration. Creating a cluster in a public subnet is accessible from the internet. However, you can configure strict security groups to prevent inbound access to the cluster. See Amazon's document, [Amazon VPC Options - Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-clusters-in-a-vpc.html) for more information. As a best practice, Segment recommends that you consult with your network and security before you configure your EMR cluster.
+5. In the Hardware Configuration section, create a cluster with the nodes listed below. This configuration uses the default **On demand** purchasing option for the instances.
+   - **1** master node
+   - **2** core nodes
+   - **2** task nodes
+ 
+For more information about configuring the cluster hardware and networking, see Amazon's document, [Configure Cluster Hardware and Networking](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances.html).
+
+#### Enable EMR managed scaling for the Core and Task nodes
+
+On the **Cluster Scaling** settings, select **Use EMR-managed scaling**, and select the following number of task units:
+- Minimum: **2**
+- Maximum: **8**
+- On-demand limit: **8**
+- Maximum Core Node: **2**
+
+#### Configure logging
+
+On the General Options step, configure logging to use the same S3 bucket you configured as the destination for the final data (`segment-data-lakes` in this case). Once configured, logs will be written to a new prefix, and separated from the final processed data.
+
+Set value of the **vendor** tag to `segment`.
+
+#### Secure the cluster
+
+On the Security step, ensure that the following steps have been completed:
+1. Create or select an **EC2 key pair**.
+2. Choose the appropriate roles in the **EC2 instance profile**.
+3. Select the appropriate security groups for the Master and Core & Task types.
+
+### Step 3 - Create an Access Management role and policy
+
+The following steps provide examples of the IAM Role and IAM Policy.
+
+#### IAM Role
+
+Create a `segment-data-lake-role` role for Segment to assume. Attach the following trust relationship document to the role:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::294048959147:role/customer-datalakes-prod-admin",
+          "arn:aws:iam::294048959147:role/datalakes-aws-worker",
+          "arn:aws:iam::294048959147:role/datalakes-customer-service"
+        ]
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "StringEquals": {
+          "sts:ExternalId": [
+            "SOURCE_1",
+            "SOURCE_N"
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
+> note ""
+> **NOTE:** Replace the `ExternalID` list with the Segment `SourceId` values that are synced to the Data Lake.
+
+#### IAM Policy
+
+Add a policy to the role created above to give Segment access to the relevant Glue databases and tables, EMR cluster, and S3
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "elasticmapreduce:TerminateJobFlows",
+                "elasticmapreduce:RunJobFlow",
+                "elasticmapreduce:DescribeStep",
+                "elasticmapreduce:DescribeCluster",
+                "elasticmapreduce:CancelSteps",
+                "elasticmapreduce:AddJobFlowSteps"
+            ],
+            "Effect": "Allow",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "elasticmapreduce:ResourceTag/vendor": "segment"
+                }
+            }
+        },
+                {
+            "Sid": "",
+            "Effect": "Allow",
+            "Action": [
+                "glue:UpdateTable",
+                "glue:UpdatePartition",
+                "glue:GetTables",
+                "glue:GetTableVersions",
+                "glue:GetTableVersion",
+                "glue:GetTable",
+                "glue:GetPartitions",
+                "glue:GetPartition",
+                "glue:DeleteTableVersion",
+                "glue:DeleteTable",
+                "glue:DeletePartition",
+                "glue:CreateTable",
+                "glue:CreatePartition",
+                "glue:CreateDatabase",
+                "glue:BatchGetPartition",
+                "glue:BatchDeleteTableVersion",
+                "glue:BatchDeleteTable",
+                "glue:BatchDeletePartition",
+                "glue:BatchCreatePartition"
+            ],
+            "Resource": [
+                "arn:aws:glue:$REGION:$YOUR_ACCOUNT:table/*",
+                "arn:aws:glue:$REGION:$YOUR_ACCOUNT:database/default",
+                "arn:aws:glue:$REGION:$YOUR_ACCOUNT:database/*",
+                "arn:aws:glue:$REGION:$YOUR_ACCOUNT:catalog"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": [
+                "arn:aws:s3:::$BUCKET_NAME/*", 
+                "arn:aws:s3:::$BUCKET_NAME"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "athena:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
+```
+
+> note ""
+> **NOTE:** The policy above grants full access to Athena, but the individual Glue and S3 policies decide which table can be queried. Segment queries only for debugging purposes, and will notify you be for running any queries.
+
+### Debugging
+
+Segment requires access to the data and schema for debugging data quality issues. The modes available for debugging are:
+- Access the individual objects stored in S3 and the associated schema in order to understand data discrepancies
+- Run an Athena query on the underlying data stored in S3
+  - Ensure Athena uses Glue as the data catalog. Older accounts may not have this configuration, and may require some additional steps to complete the upgrade. The Glue console typically displays a warning and provides a link to instructions on how to complete the upgrade.
+  - An easier alternative is to create a new account that has Athena backed by Glue as the default. 
+
 # FAQ
 
-## Data Lakes Set Up
-
-
-
+## Data Lakes set up
 
 ##### Do I need to create Glue databases?
 
