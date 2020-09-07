@@ -8,10 +8,6 @@ strat: facebook
 
 This document was last updated on April 24, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
-**Use Cases**
-
-* [Track offline conversions from Facebook Ads](https://segment.com/recipes/facebook-offline-conversion-tracking/)
-
 
 ## Other Facebook Destinations Supported by Segment
 This page is about the **Facebook Offline Conversions**. For documentation on other Facebook destinations, see the pages linked below.

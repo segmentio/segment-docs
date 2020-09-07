@@ -9,17 +9,6 @@ This destination is maintained by ClearBrain. For any issues with the destinatio
 _**NOTE:** ClearBrain is currently in beta, and this doc was last updated on January 23, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the ClearBrain Destination and its documentation, [let us know](mailto:support@clearbrain.com)!_
 
 
-**Use Cases**
-
-* [Trigger Intercom messages when users are likely to upgrade with ClearBrain](https://segment.com/recipes/trigger-upgrade-messages-intent-intercom-clearbrain/)
-* [Trigger in-app notifications based on user intent to upgrade with Appcues and ClearBrain](https://segment.com/recipes/trigger-upgrade-notifications-appcues-clearbrain/)
-* [Retarget users on Facebook by potential return on ad spend (ROAS)](https://segment.com/recipes/facebook-retargeting-by-roas/)
-* [Trigger upgrade messages to users who are likely to upgrade with Braze and ClearBrain](https://segment.com/recipes/trigger-upgrade-messages-braze-clearbrain/)
-* [Personalize notifications based on topics of interest with Iterable and ClearBrain](https://segment.com/recipes/personalize-notifications-by-interest-iterable-clearbrain/)
-* [Personalize Web Content with Optimizely and ClearBrain](https://segment.com/recipes/personalize-web-pages-optimizely-clearbrain/)
-
-
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
@@ -28,12 +17,12 @@ _**NOTE:** ClearBrain is currently in beta, and this doc was last updated on Jan
 2. Search for "ClearBrain" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "API Key" into your Segment Settings UI which you can find from your [ClearBrain dashboard](https://app.clearbrain.com/connections).
 
-*Optional:* If you would like to sync your past events which were sent through Segment into your ClearBrain instance, you have the option of leveraging [Segment Replay](https://segment.com/docs/guides/destinations/what-are-my-data-export-options/#business-plan-customers).
+*Optional:* If you would like to sync your past events which were sent through Segment into your ClearBrain instance, you have the option of leveraging [Segment Replay](/docs/connections/data-export-options/#business-plan-customers).
 
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -44,7 +33,7 @@ Page calls will be sent to ClearBrain as a `pageview`.
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -55,7 +44,7 @@ Screen calls will be sent to ClearBrain as a `screenview`.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -68,7 +57,7 @@ Identify calls will be sent to ClearBrain as an `identify` event. The `userId` w
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')

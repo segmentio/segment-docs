@@ -169,23 +169,25 @@ sections:
       title: Functions environment
     - path: /connections/functions/usage
       title: Functions usage limits
-  - section_title: Data Storage
+  - section_title: Storage Destinations
     slug: connections/storage
     section:
     - path: /connections/storage
-      title: Data Storage overview
+      title: Storage Destinations overview
     - path: /connections/storage/catalog
-      title: Data Storage catalog
+      title: Storage Destinations catalog
       menu_icon: read-more
     - section_title: Segment Data Lakes
       slug: connections/storage/data-lakes
       section:
       - path: /connections/storage/data-lakes
         title: Data Lakes overview
-      - path: /connections/storage/data-lakes/comparison
-        title: Data Lakes vs Warehouses
       - path: /connections/storage/catalog/data-lakes
         title: Set up Data Lakes
+      - path: /connections/storage/data-lakes/sync-reports
+        title: Sync Reports and error reporting
+      - path: /connections/storage/data-lakes/comparison
+        title: Data Lakes vs Warehouses
     - section_title: Data Warehouses
       slug: connections/storage/warehouses
       section:
@@ -223,6 +225,8 @@ sections:
     title: Integration Error Codes
   - path: /connections/schema-unique-limits
     title: Are there limits on my Segment Schema?
+  - path: /connections/rate-limits
+    title: Rate Limits and SLA
 - section_title: Personas
   section:
   - path: /personas
