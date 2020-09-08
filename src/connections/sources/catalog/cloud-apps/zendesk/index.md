@@ -102,7 +102,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
 <table>
    <tr>
      <td>id</td>
-     <td> utomatically assigned when the user is created. </td>
+     <td> Automatically assigned when the user is created. </td>
    </tr>
    <tr>
      <td>url</td>
@@ -152,6 +152,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
      <td>alias</td>
      <td> An alias displayed to end users.</td>
    </tr>
+   <tr>
      <td>active</td>
      <td> false if the user has been deleted.</td>
    </tr>
@@ -175,6 +176,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
      <td>signature</td>
      <td> The user's signature. Only agents and admins can have signatures.</td>
    </tr>
+   <tr>
      <td>details</td>
      <td> Any details you want to store about the user, such as an address.</td>
    </tr>
@@ -198,7 +200,7 @@ In your warehouse, each collection gets its own table. Find below a list of the 
      <td>only_private_comments</td>
      <td> true if the user can only create private comments.</td>
    </tr>
-   </tr>
+   <tr>
      <td>restricted_agent</td>
      <td> If the agent has any restrictions; false for admins and unrestricted agents, true for other agents.</td>
    </tr>

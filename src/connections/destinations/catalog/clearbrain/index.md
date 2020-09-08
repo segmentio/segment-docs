@@ -17,12 +17,12 @@ _**NOTE:** ClearBrain is currently in beta, and this doc was last updated on Jan
 2. Search for "ClearBrain" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "API Key" into your Segment Settings UI which you can find from your [ClearBrain dashboard](https://app.clearbrain.com/connections).
 
-*Optional:* If you would like to sync your past events which were sent through Segment into your ClearBrain instance, you have the option of leveraging [Segment Replay](https://segment.com/docs/guides/destinations/what-are-my-data-export-options/#business-plan-customers).
+*Optional:* If you would like to sync your past events which were sent through Segment into your ClearBrain instance, you have the option of leveraging [Segment Replay](/docs/connections/data-export-options/#business-plan-customers).
 
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -33,7 +33,7 @@ Page calls will be sent to ClearBrain as a `pageview`.
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -44,7 +44,7 @@ Screen calls will be sent to ClearBrain as a `screenview`.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -57,7 +57,7 @@ Identify calls will be sent to ClearBrain as an `identify` event. The `userId` w
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')

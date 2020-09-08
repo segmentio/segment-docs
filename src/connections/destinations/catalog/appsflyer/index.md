@@ -18,19 +18,47 @@ This document was last updated on April 27, 2018. If you notice any gaps, outdat
 
 **Important:** If you plan on using the server-side destination for an Android project, make sure to enter your **Android App ID**. If you are using only the mobile SDK, Android projects only require the **AppsFlyer Dev Key**. iOS projects always require both the **AppsFlyer Dev Key** and the **Apple App ID**. Also, note that if you do use the server-side destination, you will not be able to selectively disable calls sent to AppsFlyer using your Segment dashboard.
 
+#### Additional device-mode set up for iOS 14 support
+
+Segment’s AppsFlyer iOS SDK was updated to use AppsFlyer version 6.0 beta to prepare for iOS 14. The SDK beta is compatible with the beta version of iOS 14, and supports AppsFlyer's aggregate attribution, and Apple's AppTrackingTransperancy framework, and more. See [the AppsFlyer blog post](https://www.appsflyer.com/blog/privacy-centric-attribution-ios14/] about AppsFlyer's new privacy-centric attribution model.
+
+To use the latest AppsFlyer SDK to collect IDFAs you must do the following:
+
+1. Upgrade to use Xcode12.
+2. Update your Segment AppsFlyer SDK to version 6.0.2 or later.
+3. Import and implement the AppTrackingTransparency (ATT) Framework.
+   - Navigate to your project `Info.plist` and add a “Privacy - Tracking Usage Description”. This description appears in a popup when the application initializes in iOS 14. Users are prompted to indicate whether or not they want to allow tracking.
+4. Add and customize the following code in your `AppDelegate.m` file on `didFinishLaunchingWithOptions` to allow AppsFlyer collect IDFAs.
+
+   ```swift
+   // The following block is for applications wishing to collect IDFA.
+   // for iOS 14 and later - The user will be prompted for permission to collect IDFA.
+   // If permission granted, the IDFA will be collected by the SDK.
+   // for iOS 13 and earlier - The IDFA will be collected by the SDK. The user will NOT be prompted for permission.
+   if #available(iOS 14, *) {
+       // Set a timeout for the SDK to wait for the IDFA collection before handling app launch
+       AppsFlyerLib.shared().waitForAdvertisingIdentifier(withTimeoutInterval: 60)
+       // Show the user the Apple IDFA consent dialog (AppTrackingTransparency)
+       // Can be called in any place
+       ATTrackingManager.requestTrackingAuthorization { (status) in
+       }
+   }
+   ```
+5. Follow [Segment's guide for collecting IDFA](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
+
 ### Server
 
-AppsFlyer offers an **augmentative** server-side [HTTP API](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-) intended for use along side their mobile SDK. Use the server-side destination alongside the mobile SDK to associate out-of-app events such as website or offline purchases with attributed users/devices. Read further for more information on this functionality.
+AppsFlyer offers an **augmentative** server-side [HTTP API](https://support.appsflyer.com/hc/en-us/articles/207034486-Server-to-Server-In-App-Events-API-HTTP-API-) intended for use along side the AppsFlyer mobile SDK. Use the cloud-mode destination _with_ the mobile SDK to link out-of-app events (such as website or offline purchases) with attributed users and devices.
 
-**Important**: Keep in mind that the server-side destination is not meant to *supplant* the client side SDK! In order for AppsFlyer to properly attribute, you must bundle their mobile SDK! The server-side destination should not be used alone. Also, keep in mind if you are passing in `appsFlyerId` for server-side calls, you will not be able to disable events from sending to AppsFlyer using your Segment dashboard.
+**Important**: The cloud-mode destination is not meant to replace the device-mode destination, and you should not use the cloud-mode destination by itself. AppsFlyer requires that you bundle the mobile SDK to correctly attribute user actions. Remember that if you pass in an `appsFlyerId` on cloud-mode calls, you cannot prevent events from sending to AppsFlyer from the Segment app.
 
-If you'd like to use AppsFlyer fully server-side, this can be done but it is a Enterprise Customer Feature and you need to contact your AppsFlyer representative to enable this feature.
+If you want to use AppsFlyer server-side only, contact your AppsFlyer representative, as this is an Enterprise Customer Feature.
 
 ## Identify
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example iOS call would look like:
 
-```ios
+```swift
 [[SEGAnalytics sharedAnalytics] identify:@"12091906-01011992"
                                 traits:@{ @"email": @"john.doe@example.com" }];
 ```
@@ -43,12 +71,12 @@ When you call `.identify()`, we will use AppsFlyer's `setCustomerUserID` to send
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example iOS call would look like:
 
-```ios
+```swift
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"
                            properties:@{ @"title": @"How to Create a Tracking Plan", @"course": @"Intro to Analytics" }];
 ```
 
-When you call `track`, we translate it automatically and send the event to AppsFlyer.
+When you call `track`, Segment translates it automatically and sends the event to AppsFlyer.
 
 We include all the event properties as callback parameters on the AppsFlyer event, and automatically translate `properties.revenue` to the appropriate AppsFlyer purchase event properties based on our spec'd properties.
 

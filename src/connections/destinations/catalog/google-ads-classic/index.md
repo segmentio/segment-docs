@@ -163,7 +163,7 @@ Our [Products Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) event
 ### Other Features
 
 #### Attribution Postbacks
-If a conversion event is successfully attributed to an active campaign, Google Ads (Classic) will respond with information about the campaign. If the conversion event was an `Application Installed` event (used to track successful app installs), we will map the attribution information to an [`Install Attributed`](/docs/connections/spec/mobile/#install-attributed) event and send it back to your Segment source to get proliferated out to your other downstream integrations. You can enable this functionality in your integration settings.
+If a conversion event is successfully attributed to an active campaign, Google Ads (Classic) will respond with information about the campaign. If the conversion event was an `Application Installed` event (used to track successful app installs), we will map the attribution information to an [`Install Attributed`](/docs/connections/spec/mobile#install-attributed) event and send it back to your Segment source to get proliferated out to your other downstream integrations. You can enable this functionality in your integration settings.
 
 #### Tracking Value and Currency
 To track the monetary value of a conversion, make sure your event contains a `.revenue` property with a Number designating the total value of the conversion. You may also pass a three letter `currency` property (ex. USD, EUR, etc...).
