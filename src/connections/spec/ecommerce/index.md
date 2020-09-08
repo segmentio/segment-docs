@@ -22,10 +22,20 @@ The `properties` listed in the sections below are **required** for some destinat
 
 The ecommerce category includes the following semantic events:
 
+- [V2](#v2)
+- [V1 Overview](#v1-overview)
+- [Events](#events)
 - [Viewed Product Category](#viewed-product-category)
+  - [Properties](#properties)
+  - [Example](#example)
 - [Viewed Product](#viewed-product)
-- [Added Product](#added---removed-product)
-- [Order Completed](#completing-an-order)
+  - [Properties](#properties-1)
+  - [Example](#example-1)
+- [Added / Removed Product](#added--removed-product)
+  - [Properties](#properties-2)
+  - [Example](#example-2)
+- [Completing an Order](#completing-an-order)
+- [Google Analytics Enhanced Ecommerce](#google-analytics-enhanced-ecommerce)
 
 
 ## Viewed Product Category
@@ -271,4 +281,4 @@ Be sure to **include all items in the cart as event properties**, with the same 
 
 ## Google Analytics Enhanced Ecommerce
 
-If you're using Google Analytics enhanced ecommerce there are some special events you might also want to add. Details in [our GA docs](/docs/connections/destinations/catalog/google-analytics/#enhanced-e-commerce).
+If you're using Google Analytics enhanced ecommerce there are some special events you might also want to add. Details in [our GA docs](/docs/connections/destinations/catalog/google-analytics/#enabling-enhanced-e-commerce-tracking).
