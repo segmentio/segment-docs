@@ -79,12 +79,13 @@ You can click **Save and add more** to add more than one property, or click **Sa
 
 ## Monitor your Segment data flow
 
-<!--TODO: sounds like some of this isn't shipping today-->
-The Tracking Plan page shows <!--an overview of the data that is arriving to your Segment workspace. The page information includes--> a **Name** and **Description** for each event that you expect to see in Segment, <!-- information about if Segment has seen any data matching that event name yet,--> and information about who last modified the event in the tracking plan.
+The Tracking Plan page shows an overview of the data that is arriving to your Segment workspace. The page information includes a **Name** and **Description** for each event that you expect to see in Segment, information about if Segment has _actually_ seen any data matching that event name yet, and information about who last modified the event in the tracking plan.
 
 You can click each event in the table to expand it, view the event description, and view its properties and their descriptions. Property descriptions include the expected data type for each property.
 
-<!--The **Sending** column shows the number of Events Segment has seen with that description and format. You can expand this to see how many of the events Segment saw for Dev, Test, and Production sources. If you see a 0 in this column for all sources, this usually means that the event has not been implemented yet, or has not been implemented correctly.-->
+![](images/starter-tp-seen.png)
+
+The **Sending** column shows the number of Events Segment has seen with that description and format. You can expand this to see how many of the events Segment saw for Dev, Test, and Production sources. If you see a 0 in this column for all sources, this usually means that the event has not been implemented yet, or has not been implemented correctly.
 
 At the far right of the table is a **…** (more) menu.
 From this menu you can click **View Code Snippet** to see and copy a Javascript snippet for the event, including its properties. This might be helpful if you’re not sure how to implement or format the actual Track event.
