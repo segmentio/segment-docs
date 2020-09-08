@@ -3,6 +3,9 @@ title: Segment Starter Tracking Plan
 hidden: true
 ---
 
+> info "Early Access Preview"
+> The Segment Starter Tracking Plan is in early access preview. This means that it is currently under development, and its features and behavior might change before it is generally released.
+
 With Segment, you can track the myriad events that are important to your organization the way you want to track them - the possibilities are endless. But when you're just getting started, what do you track first? Over the years, we've helped countless organizations think through what they need to track, and recommended the best way to do it. With Segment tracking plans you can start out strong with some common Track events.
 
 With Segment tracking plans you can choose from the most common Events, and create a personalized tracking plan for your workspace. Tracking plans help you and other people working in your organization to understand what data you're tracking, under what names, and which additional data (properties) are attached to each event type.
