@@ -31,7 +31,7 @@ Though we wish you could use a database ID for everything, some tools force you 
 
 ## For Segment Destination Users
 
-Integrating as many tools as possible through Segment will make your joins down the road a little easier. When you use Segment to [`identify`](https://segment.com/docs/connections/spec/identify) users, we'll send the same ID and traits out to all the destinations you turn on in our interface. (More about [Segment destinations](https://segment.com/docs/connections/destinations/catalog.)
+Integrating as many tools as possible through Segment will make your joins down the road a little easier. When you use Segment to [`identify`](https://segment.com/docs/connections/spec/identify) users, we'll send the same ID and traits out to all the destinations you turn on in our interface. (More about [Segment destinations](https://segment.com/docs/connections/destinations/catalog).
 
 A few of our destination partners accept an external ID, where they will insert the same Segment user ID. Then you can join tables in one swoop. For example, Zendesk saves the Segment User ID as `external_id`, making a Segment-Zendesk join look like this:
 
