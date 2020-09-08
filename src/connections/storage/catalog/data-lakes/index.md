@@ -20,7 +20,7 @@ Before you set up Segment Data Lakes, you need the following resources:
 
 You can use the [open source Terraform module](https://github.com/segmentio/terraform-aws-data-lake) to automate much of the set up work to get Data Lakes up and running. If you’re familiar with Terraform, you can modify the module to meet your organization’s needs, however Segment guarantees support only for the template as provided. The Data Lakes set up uses Terraform v0.11+. To support more versions of Terraform, the aws provider must use v2, which is included in our example main.tf.
 
-You can also use our [manual set up instructions](https://docs.google.com/document/d/1GlWzS5KO4QaiVZx9pwfpgF-N-Xy2e_QQcdYSX-nLMDU/view) to configure these AWS resources if you prefer.
+You can also use our [manual set up instructions](/docs/connections/storage/data-lakes/data-lakes-manual-setup) to configure these AWS resources if you prefer.
 
 The Terraform module and manual set up instructions both provide a base level of permissions to Segment (for example, the correct IAM role to allow Segment to create Glue databases on your behalf). If you want stricter permissions, or other custom configurations, you can customize these manually.
 
@@ -57,12 +57,12 @@ Once the Data Lakes destination is enabled, the first sync will begin approximat
 
 ## Step 3 - Verify Data is Synced to S3 and Glue
 
-You will see event data and [sync reports](https://segment.com/docs/connections/storage/data-lakes/sync-reports) populated in S3 and Glue after the first sync successfully completes. However if an [insufficient permission](https://segment.com/docs/connections/storage/data-lakes/sync-reports/#insufficient-permissions) or [invalid setting](https://segment.com/docs/connections/storage/data-lakes/sync-reports/#invalid-settings) is provided during set up, the first data lake sync will fail.
+You will see event data and [sync reports](/docs/connections/storage/data-lakes/sync-reports) populated in S3 and Glue after the first sync successfully completes. However if an [insufficient permission](/docs/connections/storage/data-lakes/sync-reports/#insufficient-permissions) or [invalid setting](/docs/connections/storage/data-lakes/sync-reports/#invalid-settings) is provided during set up, the first data lake sync will fail.
 
 To be alerted of sync failures via email, subscribe to the `Storage Destination Sync Failed` activity email notification within the App Settings > User Preferences > [Notification Settings](https://app.segment.com/goto-my-workspace/settings/notifications).
 ![](images/dl_activity_notifications2.png)
 
-`Sync Failed` emails are sent on the 1st, 5th and 20th sync failure. Learn more about the types of errors which can cause sync failures [here](https://segment.com/docs/connections/storage/data-lakes/sync-reports/#sync-errors).
+`Sync Failed` emails are sent on the 1st, 5th and 20th sync failure. Learn more about the types of errors which can cause sync failures [here](/docs/connections/storage/data-lakes/sync-reports/#sync-errors).
 
 
 ## (Optional) Step 4 - Replay Historical Data
