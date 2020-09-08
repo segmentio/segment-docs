@@ -125,7 +125,7 @@ Import from a Schema is not available at this time.
 
 ### What happens when I upgrade?
 
-When you add Protocols to your Segment workspace, your starter tracking plan is converted to a full Protocols tracking plan, which allows you to use additional features.
+When you add Protocols to your Segment workspace, your starter tracking plan is converted to a full [Protocols tracking plan](/docs/protocols/tracking-plan/create/), which allows you to use additional features.
 
 
 {% include components/media-icon.html href="https://segment.com/academy/intro/choosing-metrics-that-matter/" icon="media/icon-academy.svg" title="What should I track?" content="Everyone loves dashboards, but how do you pick the right metrics to track?" %}
