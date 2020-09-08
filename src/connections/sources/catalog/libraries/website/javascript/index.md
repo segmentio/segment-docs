@@ -660,6 +660,11 @@ Without any destinations enabled, the `analytics.min.js` file is about 62KB. Eac
 
 ### Localstorage cookies used by Analytics.js
 
-There are a few localstorage cookies used by Analytics.js if you have retries enabled. `ack` is a timer used to see if another tab should claim the retry queue. `reclaimStart` and `reclaimEnd` are used to signify if a tab is taking over the queue of another tab. `inProgress` and `queue` are used to track in-flight events and events that are queued up to be retried. For more information you can visit our localstorage-retry library at https://github.com/segmentio/localstorage-retry.
+Analytics.js uses a few `localstorage` cookies if you have retries enabled, to keep track of retry timing.
+- The `ack` cookie is a timer used to see if another tab should claim the retry queue.
+- The `reclaimStart` and `reclaimEnd` cookies determine if a tab takes over the queue from another tab.
+- The `inProgress` and `queue` cookies track events in progress, and events that are queued to be retried.
 
-`debug` is a flag that can be set to 'analytics.js' if you want Analytics.js to log debug messages in the console.
+For more information, visit the [Segment localstorage-retry library](https://github.com/segmentio/localstorage-retry).
+
+You can set the `debug` cookie to `analytics.js` to log debug messages from Analytics.js to the console.
