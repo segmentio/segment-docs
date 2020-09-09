@@ -103,7 +103,7 @@ console.log(JSON.stringify({ x: undefined, y: 6 }));
 // expected output: "{"y":6}"
 ```
 
-## Why am I seeing a "SameSite` warning? 
+## Why am I seeing a "SameSite" warning? 
 
 If you see a warning like the following, it could be one of several causes:
 "A cookie associated with a cross-site resource at http://segment.com/ was set without the `SameSite` attribute [...]"
