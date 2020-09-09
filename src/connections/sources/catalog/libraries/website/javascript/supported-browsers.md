@@ -1,6 +1,6 @@
 ---
 title: Analytics.js Browser Support
-redirect_from: '/guides/intelligent-tracking-prevention'
+redirect_from: '/guides/intelligent-tracking-prevention/'
 strat: ajs
 ---
 
