@@ -105,7 +105,7 @@ console.log(JSON.stringify({ x: undefined, y: 6 }));
 
 ## Why am I seeing a "SameSite" warning? 
 
-If you see a warning like the following, it could be one of several causes:
+If you see a warning like the following, it could have one of several causes:
 "A cookie associated with a cross-site resource at http://segment.com/ was set without the `SameSite` attribute [...]"
 
 Segment correctly sets cookies with the 'SameSite' attribute with Analytics.js. 
