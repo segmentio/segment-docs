@@ -1,6 +1,6 @@
 ---
 title: Set up a custom domain proxy for Analytics.js
-redirect_from: '/connections/sources/custom-domains'
+redirect_from: '/connections/sources/custom-domains/'
 strat: ajs
 ---
 
