@@ -515,7 +515,7 @@ Yep! Our SDK is [open-source](https://github.com/segmentio/analytics-react-nativ
 
 ### IDFA
 
-Some destinations, particularly mobile attribution tools (e.g. Kochava), require the IDFA (identifier for advertisers). The IDFA shows up in Segment calls in the debugger under `context.device.advertisingId`. From our React Native [1.3.0](https://github.com/segmentio/analytics-react-native/blob/master/CHANGELOG.md) release onwards Segment will no longer automatically collect IDFA. Collection of IDFA will be handled externally of Segment and can be set via the following method:
+Some destinations, especially mobile attribution tools (such as Kochava), require the IDFA (identifier for advertisers). The IDFA appears in Segment calls in the debugger as `context.device.advertisingId`. In the [React Native library version 1.3.0](https://github.com/segmentio/analytics-react-native/blob/master/CHANGELOG.md) and later Segment no longer automatically collects the IDFA. IDFA collection must be done outside of Segment, and can be set using the following method:
 
 ```java
 import analytics from '@segment/analytics-react-native';
