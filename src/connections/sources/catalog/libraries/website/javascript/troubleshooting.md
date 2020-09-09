@@ -117,7 +117,9 @@ console.log(JSON.stringify({ x: undefined, y: 6 }));
 If you see a warning like the following, it could be one of several causes:
 "A cookie associated with a cross-site resource at http://segment.com/ was set without the `SameSite` attribute [...]"
 
-We actually do properly set our cookies with the 'SameSite' attribute with analytics.js. If you are seeing this warning it is because you have previously visited http://segment.com, and are getting the warning due to unrelated cookies. You can verify this by visiting your webpage in incognito mode and confirming that the warning doesn't occur. Your users will not see this warning unless they happen to have also visited http://segment.com.
+Segment correctly sets cookies with the 'SameSite' attribute with Analytics.js. 
+
+If you see this warning, it is because you previously visited http://segment.com, and are getting the warning due to unrelated cookies. To verify that this is the issue, visit your page in Incognito Mode and confirm that the warning no longer occurs. Your users won't see this warning unless they _also_  visited http://segment.com.
 
 
 ### Can I overwrite the context fields?
