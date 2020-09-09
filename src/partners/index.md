@@ -23,7 +23,7 @@ Customers discover your Sources and Destinations using the Connections Catalog a
 The development process is simple:
 
 1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](https://segment.com/docs/connections/spec).
-2. Review Segment's security guidance.
+2. Follow Segment's security guidance.
 3. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
 4. Create an App.
 5. Build and test your Component(s).
@@ -35,12 +35,12 @@ The development process is simple:
 
 It's important to understand Segment's [Conceptual Model](/docs/partners/conceptual-model) to begin planning your integration. This will help you understand how data will flow from or into your integration.
 
-### 2. Review Segment's security guidance
+### 2. Follow Segment's security guidance
 
 Security is a priority for us at Segment for both our customers and our partners. Before you start building on the Developer Center, please review our [Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/) and ensure you're following the below guidance:
 
 - Follow a secure software-development lifecycle, which enables you to create code that is safe for Segment customers and their end users, and that enables you to maintain and raise the security of that code over time
-- If you or your code come into contact with Segment customer or end-user data for any reason, protect it with commercially reasonable methods throughout its data lifecycle: creation, handling, transporting, storing and destruction
+- If you or your code come into contact with Segment customer or end-user data for any reason, protect it with commercially reasonable security methods throughout its data lifecycle: creation, handling, transporting, storing and destruction
 - If you suspect a security event, incident or breach while working on this project or afterward, contact [Segment Security](mailto:security@segment.com?subject=Developer%20Center%20Security) for assistance with your investigation and communications
 - Practice modern and common-sense security for any scenario not explicitly stated  
 
