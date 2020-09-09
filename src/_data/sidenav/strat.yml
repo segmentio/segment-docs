@@ -62,6 +62,8 @@ sections:
   section:
   - path: /connections/sources/catalog/libraries/website/javascript
     title: Analytics.js (Javascript) Source
+  - path: /connections/sources/catalog/libraries/website/javascript/supported-browsers
+    title: Analytics.js Supported Browsers
   - path: /connections/sources/catalog/libraries/website/javascript/quickstart
     title: Quickstart Tutorial
   - path: /connections/sources/catalog/libraries/website/javascript/identity
