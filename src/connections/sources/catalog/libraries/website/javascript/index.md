@@ -621,11 +621,6 @@ When enabled, Analytics.js automatically retries network and server errors. With
 
 Analytics.js stores events in `localStorage` and falls back to in-memory storage when `localStorage` is unavailable. It retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. See the [destination Retries documentation](/docs/connections/destinations/#retries) to learn more.
 
-
-## Proxying Analytics.js
-
-To use a proxy server with Analytics.js, first change the `cdn.segment.com` address in the snippet to use your own host. Next, [contact Segment Product Support](https://segment.com/help/contact/) and request to change the endpoint Segment sends your events to so that is uses your proxy instead. Make sure that your proxy behaves exactly like the Segment APIs. You can use [the Segment proxy server](https://github.com/segmentio/segment-proxy) as an example of a correctly-working proxy.
-
 ## Plugins
 
 Segment offers video player 'plugins' so you can quickly collect video events using Analytics.js. See the specific documentation below to learn more:
@@ -657,3 +652,14 @@ Segment's Analytics.js javascript snippet only increases the page size by about 
 However, the snippet asynchronously requests and loads a customized javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your [device-mode destinations](/docs/connections/destinations/#connection-modes). The size of this file changes depending on how many and which destinations you enable.
 
 Without any destinations enabled, the `analytics.min.js` file is about 62KB. Each time you enable a destination, the file's size may increase slightly.
+
+### Localstorage cookies used by Analytics.js
+
+Analytics.js uses a few `localstorage` cookies if you have retries enabled, to keep track of retry timing.
+- The `ack` cookie is a timer used to see if another tab should claim the retry queue.
+- The `reclaimStart` and `reclaimEnd` cookies determine if a tab takes over the queue from another tab.
+- The `inProgress` and `queue` cookies track events in progress, and events that are queued to be retried.
+
+For more information, visit the [Segment localstorage-retry library](https://github.com/segmentio/localstorage-retry).
+
+You can set the `debug` cookie to `analytics.js` to log debug messages from Analytics.js to the console.
