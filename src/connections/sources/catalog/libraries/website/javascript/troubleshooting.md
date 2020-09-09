@@ -51,15 +51,6 @@ In the below image, we use Google Analytics as an example. Our `page` call forms
 
 If this outbound request is not showing up in the network when you fire an `identify` call, then check the following:
 
-## Do you have any ad blockers enabled in your browser?
-
-Segment and many destination partners use cookies/local storage to store information about users in the browser. Ad blockers prevent cookies and other data these tools rely on to make valid analytics requests. Some portion of your users are probably using ad blockers, which prevent the Segment script from fully executing. Both desktop and mobile browsers are impacted.
-
-One particular issue is Safari private browsing mode which allows Analytics.js Identify calls to be made, but the traits object is stripped from the call. This results in identify calls missing email address and other traits.
-
-## Internet Explorer Support
-
-We guarantee support for Internet Explorer 9 and higher for Analytics.js. Keep in mind that different tools may have different compatibility guarantees for their own products. Refer to the vendor's documents to see what their browser compatibility looks like.
 
 ## Is your web site deployed under a domain on the Public Suffix List?
 
@@ -115,7 +106,7 @@ console.log(JSON.stringify({ x: undefined, y: 6 }));
 
 ### Can I overwrite the context fields?
 
-Yes.  This can be useful if some of these fields contain information you don't want to collect.  
+Yes.  This can be useful if some of these fields contain information you don't want to collect.
 
 For example, imagine that your website allows users to view a receipt for purchases at the URL `https://mywebsite.com/store/purchases`.  Your users click a link that redirects to that specific URL, your app sets a `receiptId` in the query string, and returns the appropriate receipt.  You also send a Track call to Segment from this page.
 
@@ -125,7 +116,7 @@ Since this `receiptId` might contain sensitive information, you can prevent the 
 analytics.track("Receipt Viewed", {}, {
     page: {
         url: null
-    }   
+    }
 })
 ```
 
