@@ -8,8 +8,17 @@ Now that we’ve shown you Segment in action, let’s step back and think throug
 
 - [Define Business Objectives](#define-business-objectives)
 - [Decide what to collect](#decide-what-to-collect)
+  - [Shortcut! Check if a Business Spec meets your needs](#shortcut-check-if-a-business-spec-meets-your-needs)
+    - [B2B Spec](#b2b-spec)
+    - [Ecommerce Spec](#ecommerce-spec)
+    - [Mobile Spec](#mobile-spec)
+    - [Video Spec](#video-spec)
 - [Create naming conventions](#create-naming-conventions)
 - [Develop a Tracking Plan](#develop-a-tracking-plan)
+  - [Using the Tracking Plan Google Sheets template](#using-the-tracking-plan-google-sheets-template)
+  - [Plan your Identify and Group calls](#plan-your-identify-and-group-calls)
+  - [Plan your Track events](#plan-your-track-events)
+  - [Define your Track event properties](#define-your-track-event-properties)
 - [Plan for destination tools](#plan-for-destination-tools)
 
 <!-- /TOC -->
@@ -91,7 +100,7 @@ Regardless of approach, here are some important best practices to keep in mind:
 
 - **Don’t create property keys dynamically:** Avoid creating property names like `"feature_1":"true"`,`"feature_2":"false"` as these are ambiguous and very difficult to analyze
 
-![](/docs/protocols/data-quality/images/asset_nVdJ3ZyA.png)
+![](/docs/protocols/images/asset_nVdJ3ZyA.png)
 
 
 Got all that? Great! You’re now ready to develop a Tracking Plan.

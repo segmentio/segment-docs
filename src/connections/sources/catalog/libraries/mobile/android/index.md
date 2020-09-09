@@ -12,6 +12,9 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 
 Analytics for Android only supports any Android device running API 14 (Android 4.0) and higher. This includes Amazon Fire devices.
 
+> success ""
+> In addition to the documentation here, you can also [read the Javadocs for all versions of Analytics-Android on Javadoc.io](https://javadoc.io/doc/com.segment.analytics.android/analytics/latest/index.html).
+
 ## Getting Started
 
 ### About mobile connection modes

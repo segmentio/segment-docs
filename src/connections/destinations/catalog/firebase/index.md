@@ -56,7 +56,7 @@ Add these permissions to your AndroidManifest.xml:
 
 Finally, register the dependency with the Segment SDK in your application subclass, as [seen here in our Android library documentation](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#packaging-sdks-for-device-mode-destinations):
 
-Periodically, Firebase updates the Android configuration requirements for loading their SDK in your app. To validate that your Android configuration is sufficient for your version of Firebase, consult [Google's Firebase release notes](https://firebase.google.com/support/release-notes/android#). You can find the corresponding verison of the Firebase SDK Segment requires in each of the Segment-Firebase SDK versions by consulting the [Segment-Firebase changelog](https://github.com/segment-integrations/analytics-android-integration-firebase/blob/master/CHANGELOG.md). For example, Segment-Firebase 1.3.1 includes Firebase Core 17.0.1 as a dependency.
+Periodically, Firebase updates the Android configuration requirements for loading their SDK in your app. To validate that your Android configuration is sufficient for your version of Firebase, consult [Google's Firebase release notes](https://firebase.google.com/support/release-notes/android). You can find the corresponding verison of the Firebase SDK Segment requires in each of the Segment-Firebase SDK versions by consulting the [Segment-Firebase changelog](https://github.com/segment-integrations/analytics-android-integration-firebase/blob/master/CHANGELOG.md). For example, Segment-Firebase 1.3.1 includes Firebase Core 17.0.1 as a dependency.
 
 ```java
 Analytics analytics = new Analytics.Builder(context, writeKey)
