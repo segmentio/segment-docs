@@ -522,6 +522,8 @@ import analytics from '@segment/analytics-react-native';
 analytics.setIDFA("123");
 ```
 
+To get the IDFA you can use an external package such as [react-native-idfa](https://www.npmjs.com/package/react-native-idfa).
+
 ### Using a custom anonymousID
 
 You might want to use a custom `anonymousID` to better integrate with other systems in your deployment. The best way to do this is to override the default using the `options` parameter when you call `analytics.identify`, as in the example below.
