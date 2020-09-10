@@ -26,9 +26,7 @@ our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
-- [Use Optimizely and Amplitude to A/B test which CTAs lead to more signups](https://segment.com/recipes/ab-test-cta-signups-optimizely/)
-- [Test which call to action (CTA) results in more shopping cart conversions with Optimizely and Amplitude](https://segment.com/recipes/ab-test-cta-conversions-optimizely/)
-- [Identify what industries drive the highest LTV with Amplitude](https://segment.com/recipes/ltv-by-industry-amplitude/)
+{% include components/media-icon.html href="https://segment.com/recipes/ab-test-cta-conversions-optimizely/" icon="media/icon-academy.svg" title="Optimizing page performance using heatmaps" content="Test which call to action (CTA) results in more shopping cart conversions with Optimizely and Amplitude." %}
 
 ## Getting Started
 
@@ -429,21 +427,21 @@ it's how you tell Segment which trait should be used as the group type.
   `.group()` calls will contain the Amplitude "group value". It's how you tell
 Segment which trait should be used as the group value.
 
-For example, if you specified `industry` as the "Amplitude Group Type Trait",
+For example, if you specified `group_type` as the "Amplitude Group Type Trait",
 and `name` as the "Amplitude Group Value Trait", then the following call:
 
 ```js
 analytics.group("082108c8-f51e-485f-9d2d-b6ba57ee2c40", {
-  industry: "Placeholding",
+  group_type: "Organization",
   name: "ExampleCorp, LLC",
   employees: "20",
   email: "hello@example.com"
 });
 ```
 
-Would associate the current user with the group with type `"Placeholding"` and
+Would associate the current user with the group with type `"Organization"` and
 value `"ExampleCorp, LLC"`. On client-side, that's all that happens. On
-server-side and Android, the traits you pass (in this case, `industry`, `name`,
+server-side and Android, the traits you pass (in this case, `group_type`, `name`,
 `employees`, and `email`) will be provided as `group_properties` of that group.
 
 What you provide as group ID doesn't matter, but Segment requires that all
@@ -709,7 +707,7 @@ example.  To set an out of session event, pass in `true` for the key
 
 iOS Example:
 
-```objective-c
+```objc
 [[SEGAnalytics sharedAnalytics]
   track: @"Push Notification Viewed"
   properties: nil

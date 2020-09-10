@@ -33,7 +33,7 @@ We also offer other source libraries to cover less straightforward cases:
 
 - Use the [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/) if Segment doesn't offer a library for your specific environment yet.
 - The [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/) lets you track events from environments where you can’t execute code - for example, tracking when an email has been opened.
-- The [Querystring API](/docs/connections/sources/catalog/libraries/website/javascript/#querystring-api) lets you use querystrings to load API methods when a user first visits a Segment-enabled site. Use this API for tracking events like email clicks, and identifying users associated with those clicks on the destination page.
+- The [Querystring API](/docs/connections/sources/catalog/libraries/website/javascript/querystring/) lets you use querystrings to load API methods when a user first visits a Segment-enabled site. Use this API for tracking events like email clicks, and identifying users associated with those clicks on the destination page.
 
 Segment also offers [Cloud App Sources](/docs/connections/sources/about-cloud-sources/) to integrate data from your third-party tools:
 

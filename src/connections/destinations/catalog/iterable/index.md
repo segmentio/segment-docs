@@ -5,6 +5,7 @@ hide-personas-partial: true
 
 When you enable the Iterable destination from the Segment app, your data starts flowing into Iterable, where it can trigger workflows and make data available for analytics. You can find your Iterable API key by going to Destinations → API Keys inside the Iterable app.
 
+<!-- LR 8/7/2020 these are all 404ing, commenting out until we can figure out if they're gone or just moved
 **Use Cases**
 
 * [Send personalized emails and messages based on topics of interest with Iterable](https://segment.com/recipes/personalized-email-by-topic-iterable/)
@@ -12,6 +13,7 @@ When you enable the Iterable destination from the Segment app, your data starts 
 * [Personalize notifications based on topics of interest with Iterable and ClearBrain](https://segment.com/recipes/personalize-notifications-by-interest-iterable-clearbrain/)
 * [Increase activation by reaching inactive users across mulitple channels with Iterable](https://segment.com/recipes/multi-channel-activation-iterable/)
 * [Automatically send a follow up email when your initial email goes unopened](https://segment.com/recipes/iterable-autoresponder-emails-when-unopened/)
+-->
 
 - - -
 

@@ -45,7 +45,7 @@ async function onRequest(request, settings) {
 The `onRequest()` function receives two arguments:
 
 - `request` - an object describing the incoming HTTP request.
-- `settings` - set of [settings](#create-settings-and-secrets) for this function.
+- `settings` - set of [settings](#create-️settings-and-secrets) for this function.
 
 We'll learn more about settings later, let's dive into how we can process the incoming request first.
 
@@ -262,7 +262,7 @@ The `Segment.set()` method accepts an object with the following fields:
 
 {% include content/functions/runtime.md %}
 
-## Create ️settings and secrets
+## Create settings and secrets
 
 {% include content/functions/settings.md %}
 
@@ -313,7 +313,7 @@ Once you do that, the source function appears on the **Functions** page in your 
 
 If you're editing an existing function, you can **Save** changes without updating instances of the function that are already deployed and running.
 
-You can also choose to **Save & Deploy** to save the changes, and then choose which already-deployed functions to update with your changes. You might need [additional permissions](#functions-permissions) to update existing functions.
+You can also choose to **Save & Deploy** to save the changes, and then choose which already-deployed functions to update with your changes. You might need [additional permissions](#source-functions-permissions) to update existing functions.
 
 ## Source functions logs and errors
 
@@ -350,8 +350,9 @@ async function onRequest(request, settings) {
 - **Invalid Settings**: A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/).
 - **Message Rejected**: Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
 - **Unsupported Event Type**: Your code does not implement a specific event type (`onTrack()`, etc.) or threw a `EventNotSupported` error.
+- **Retry** - Your code threw `RetryError` indicating that the function should be retried.
 
-These errors are not retried.
+Segment only attempts to run your source function again if a **Retry** error occurs.
 
 ## Managing source functions
 

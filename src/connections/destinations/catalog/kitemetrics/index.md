@@ -46,7 +46,7 @@ SEGAnalytics.setup(with: configuration)
 ```
 
 Objective-C
-```objectivec
+```objc
 SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 configuration.trackApplicationLifecycleEvents = YES;
 configuration.trackAttributionData = YES;
@@ -68,7 +68,7 @@ SEGAnalytics.shared().screen("Screen Title")
 ```
 
 Objective-C
-```objectivec
+```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Screen Title"];
 ```
 
@@ -80,7 +80,7 @@ configuration.recordScreenViews = true
 ```
 
 Objective-C
-```objectivec
+```objc
 configuration.recordScreenViews = YES;
 ```
 

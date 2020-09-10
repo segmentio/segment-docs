@@ -35,8 +35,6 @@ sections:
     title: How does Segment handle duplicate data?
   - path: /guides/ignore-bots
     title: How can I ignore internet bots?
-  - path: /guides/intelligent-tracking-prevention
-    title: Is Segment impacted by Intelligent Tracking Prevention?
   - path: /guides/segment-vs-tag-managers
     title: What is the difference between Segment and tag managers?
   - path: /guides/what-is-replay
@@ -169,23 +167,25 @@ sections:
       title: Functions environment
     - path: /connections/functions/usage
       title: Functions usage limits
-  - section_title: Data Storage
+  - section_title: Storage Destinations
     slug: connections/storage
     section:
     - path: /connections/storage
-      title: Data Storage overview
+      title: Storage Destinations overview
     - path: /connections/storage/catalog
-      title: Data Storage catalog
+      title: Storage Destinations catalog
       menu_icon: read-more
     - section_title: Segment Data Lakes
       slug: connections/storage/data-lakes
       section:
       - path: /connections/storage/data-lakes
         title: Data Lakes overview
-      - path: /connections/storage/data-lakes/comparison
-        title: Data Lakes vs Warehouses
       - path: /connections/storage/catalog/data-lakes
         title: Set up Data Lakes
+      - path: /connections/storage/data-lakes/sync-reports
+        title: Sync Reports and error reporting
+      - path: /connections/storage/data-lakes/comparison
+        title: Data Lakes vs Warehouses
     - section_title: Data Warehouses
       slug: connections/storage/warehouses
       section:
@@ -223,6 +223,8 @@ sections:
     title: Integration Error Codes
   - path: /connections/schema-unique-limits
     title: Are there limits on my Segment Schema?
+  - path: /connections/rate-limits
+    title: Rate Limits and SLA
 - section_title: Personas
   section:
   - path: /personas

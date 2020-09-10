@@ -4,13 +4,9 @@ rewrite: true
 strat: facebook
 ---
 
-[Facebook App Events](https://developers.facebook.com/docs/app-events) collects required information from one of Segment's mobile SDKs ([iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/)) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The Facebook App Events Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events).
+[Facebook App Events](https://developers.facebook.com/docs/app-events) collects required information from one of Segment's mobile SDKs ([iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](/docs/connections/sources/catalog/libraries/mobile/android/)) and sends it from Segment's servers to Facebook App Events servers. This *server-to-server* connection will not work with our server-side libraries. The Facebook App Events Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-facebook-app-events).
 
 This document was last updated on October 04, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
-**Use Cases**
-
-* [Improve mobile app retention with Facebook Ads](https://segment.com/recipes/mobile-app-retention-facebook-ads/)
 
 
 ## Other Facebook Destinations Supported by Segment
@@ -37,7 +33,7 @@ This page is about the **Facebook App Events**. For documentation on other Faceb
 
 ## Screen
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] screen:@"Photo Feed"
@@ -52,7 +48,7 @@ Note, the integration will not automatically translate `screen` events to spec'd
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```objc
 [[SEGAnalytics sharedAnalytics] track:@"Article Completed"
@@ -155,6 +151,69 @@ The most important events that can help advertisers improve campaign ROI are the
 
 In addition, there are special requirements for dynamic ads. These events are marked with "m" for dynamic ads for mobile, and "t" for dynamic ads for travel within Segment's Facebook App Events settings page.
 
+## Limited Data Use
+
+{% include content/facebook-ldu-intro.md %}
+
+> info ""
+> The **Use Limited Data Use** destination setting is disabled by default for all Facebook destinations except for Facebook Pixel. This must be enabled manually from the destination settings if you're using other Facebook destinations.
+
+{% include content/facebook-ldu-params.md %}
+
+Facebook uses the `context.ip` to determine the geolocation of the event.
+
+You can manually change the Data Processing parameters by adding settings to the `integrations` object.
+
+#### Server-side library
+
+The example below shows how you might set custom Data Processing parameters for a Segment server library.
+
+```javascript
+// node library example
+
+analytics.track({
+  event: 'Membership Upgraded',
+  userId: '97234974',
+  integrations: {
+    "Facebook App Events": {
+      "dataProcessingOptions": [[], 1,1000]
+    }
+  }
+})
+```
+
+#### iOS Device Mode
+
+You must use the Facebbok App Events integration SDK version `2.0.0` or later to call `setDataProcessingOptions` when you enable the **Use Limited Data Use** destination setting. Events sent from earlier versions of the Facebook App Events integration SDK cannot call `setDataProcessingOptions`, but Facebook still has access to the IP address in the events to process LDU based on geolocation.
+
+When you use Segment’s mobile libraries, you must set the Data Processing Options when you declare the destination in your app delegate’s instance. The example below shows how you might set custom Data Processing parameters in an iOS project.
+
+```objc
+// Add the bundle FB integration SDK
+// Set data processing values.
+SEGFacebookAppEventsIntegrationFactory *fb = [SEGFacebookAppEventsIntegrationFactory instance];
+[fb setDataProcessingOptions:@[ @"LDU" ] forCountry:1 forState: 1000];
+[config use:fb];
+```
+
+#### Android and iOS Cloud Mode
+
+To send the Data Processing Parameters in cloud mode on iOS or Android, you can set them in the integrations object. The example below shows how you might set custom Data Processing parameters in Android.
+
+```java
+Object[] dataProcessingOptions = new Object[3]
+dataProcessingOptions[0] = {'LDU'} // options
+dataProcessOptions[1] = 1 // country
+dataProcessingOptions[2] = 1000 // state
+
+Analytics.with(context).track(
+  "Purchased Item",
+  new Properties(),
+  new Options().setIntegrationOptions(
+    "Facebook App Events", new ImmutableMap.Builder<String, Object>().put("dateProcessingOptions", dataProcessingOptions).build());
+)
+```
+
 ## Other Features
 
 ### Facebook Login and Facebook Dialogs
@@ -173,9 +232,9 @@ The integration currently only supports the `FBSDKAppEventNameActivatedApp` pre-
 
 ### Not seeing events?
 
-You will have to be sure that the [IDFA](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa) is working within your app, which involves adding the [iAD framework](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa).
+You will have to be sure that the [IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa) is working within your app, which involves adding the [iAD framework](/docs/connections/sources/catalog/libraries/mobile/ios/#idfa).
 
-Similarly, on Android, you'll need to include the Play Services Ads library as [mentioned here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-do-you-handle-unique-identifiers-) in order for the `advertisingId` to populate.
+Similarly, on Android, you'll need to include the Play Services Ads library as [mentioned here](/docs/connections/sources/catalog/libraries/mobile/android/#how-do-you-handle-unique-identifiers-) in order for the `advertisingId` to populate.
 
 Once you have added these, you will start to see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true` unless the user has ad tracking limited or is using a mobile ad blocker.
 

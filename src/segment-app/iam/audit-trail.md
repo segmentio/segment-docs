@@ -29,6 +29,14 @@ The Audit Trail includes information on the following activity:
 *   Integrations Modified
 *   Integrations Deleted
 
+### Functions
+*   Source Function Created
+*   Source Function Deleted
+*   Source Function Modified
+*   Destination Function Created
+*   Destination Function Deleted
+*   Destination Function Modified
+
 ### Destination Filters
 *   Destination Filters Created
 *   Destination Filters Modified

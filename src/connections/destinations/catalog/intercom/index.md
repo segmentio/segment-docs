@@ -8,11 +8,6 @@ hide-personas-partial: true
 
 This document was last updated on March 11, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
-**Use Cases**
-
-* [Trigger Intercom messages when users are likely to upgrade with ClearBrain](https://segment.com/recipes/trigger-upgrade-messages-intent-intercom-clearbrain/)
-* [Personalize Intercom welcome messages by incorporating a visitor's company](https://segment.com/recipes/personalize-intercom-live-chat-with-company-name/)
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
@@ -243,7 +238,7 @@ Segment supports Intercom's `reset` method only for Device-mode Mobile sources. 
 
 On iOS:
 
-```objective-c
+```objc
   [Intercom reset];
 ```
 
@@ -316,7 +311,7 @@ Analytics.with(context).identify("123", traits, options);
 
 #### Identity verification plus filtering using Destinations Object
 
-If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-destinations), the context object looks like this:
+If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-destinations-with-the-integrations-object), the context object looks like this:
 
 ```js
 {
@@ -429,7 +424,7 @@ analytics.onIntegrationReady("Intercom", new Callback() {
 });
 ```
 
-```objective-c
+```objc
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(integrationDidStart:) name:SEGAnalyticsIntegrationDidStart object:nil];
 
 - (void)integrationDidStart:(nonnull NSNotification *)notification

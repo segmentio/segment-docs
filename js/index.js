@@ -16,6 +16,7 @@ import navigation from './navigation'
 import relativeLinks from './relative-links'
 import sideMenu from './side-menu'
 import tracking from './tracking'
+import searchBar from './search-bar'
 feedback()
 accordion()
 accordionGroup()
@@ -34,3 +35,4 @@ navigation()
 relativeLinks()
 sideMenu()
 tracking()
+searchBar()
