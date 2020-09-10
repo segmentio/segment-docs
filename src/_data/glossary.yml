@@ -139,7 +139,7 @@ SSP: |
   Supply-side Platform
 
 Throughput: |
-  The number of calls you can make. This is set in your account plan.
+  The number of API calls and Objects your account makes, per MTU. The limit on this number is defined by your account plan.
 
 Track: |
   Type of API call (method) which records any actions that users perform on a web or mobile app.
