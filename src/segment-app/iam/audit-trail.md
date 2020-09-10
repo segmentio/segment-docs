@@ -11,6 +11,7 @@ The Audit Trail includes information on the following activity:
 *   User Invite Sent
 *   User Invite Deleted
 *   User Invite Accepted
+*   User Added via SSO
 *   User Removed
 *   User Group Created
 *   User Group Updated
