@@ -66,6 +66,8 @@ sections:
     title: Analytics.js Supported Browsers
   - path: /connections/sources/catalog/libraries/website/javascript/quickstart
     title: Quickstart Tutorial
+  - path: /connections/sources/catalog/libraries/website/javascript/custom-proxy
+    title: Custom Proxy for Analytics.js
   - path: /connections/sources/catalog/libraries/website/javascript/identity
     title: Managing identity in Analytics.js
   - path: /connections/sources/catalog/libraries/website/javascript/middleware

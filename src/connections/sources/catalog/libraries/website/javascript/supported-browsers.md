@@ -1,6 +1,6 @@
 ---
 title: Analytics.js Browser Support
-redirect_from: '/guides/intelligent-tracking-prevention'
+redirect_from: '/guides/intelligent-tracking-prevention/'
 strat: ajs
 ---
 
@@ -33,7 +33,9 @@ For example, [Firefox Enhanced Tracking Protection (ETP)](https://blog.mozilla.o
 
 ## Proxying Analytics.js
 
-Because of regulatory, environmental, or security concerns, some customers prefer to set up proxy infrastructure for Analytics.js. You can use the `apihost` configuration option in the Analytics object to route traffic to different API endpoints. Business Tier customers can use Segment’s fully-managed proxy service: In-domain Instrumentation, which provides a similar function without the additional maintenance burden and cost of running your own proxy infrastructure.
+Because of regulatory, environmental, or security concerns, some customers prefer to [set up proxy infrastructure for Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/).
+
+You can also use the `apihost` configuration option in the Analytics object to route traffic to different API endpoints. Business Tier customers can use Segment’s fully-managed proxy service: In-domain Instrumentation, which provides a similar function without the additional maintenance burden and cost of running your own proxy infrastructure.
 
 > info ""
 > Business Tier customers who want to use a fully-managed proxy service can contact their account teams for full details.
