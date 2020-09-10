@@ -6,8 +6,6 @@ strat: ajs
 
 Custom domains allow you to proxy Analytics.js and proxy all tracking event requests through your domain.
 
-> success ""
-> Business Tier customers who want to use a fully-managed proxy service can contact their account teams for full details.
 
 ## Prerequisites
 
