@@ -5,7 +5,7 @@ title: Wishpond Destination
 
 This destination is maintained by Wishpond.
 
-Our Wishpond destination code is open sourced on Github. Feel free to check it out: [JavaScript (browser) Integration](https://github.com/wishpond-dev/analytics.js-integration-wishpond "Wishpond Segment Integration").
+Our Wishpond destination code is open sourced on GitHub. Feel free to check it out: [JavaScript (browser) Integration](https://github.com/wishpond-dev/analytics.js-integration-wishpond "Wishpond Segment Integration").
 
 ## Getting Started
 

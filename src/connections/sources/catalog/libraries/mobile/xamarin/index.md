@@ -15,13 +15,13 @@ Our [Xamarin](http://xamarin.com/) Portable Class Library ([PCL](http://develope
 - Xamarin.Android
 - Xamarin.iOS
 
-The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on Github](https://github.com/segmentio/Analytics.Xamarin).
+The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/Analytics.Xamarin).
 
 **Note:** Since Xamarin requires our library to be portable to different builds, we can only enable server-side destinations, as opposed to bundling select native SDKs like we do for iOS and Android. Look for the "Server" icon when selecting destinations. For tools for which we offer both bundled and server-side destinations, like Mixpanel, Amplitude, and Google Analytics, our Xamarin library will only be able to use their server-side functionality.
 
 ## Getting Started
 
-Clone `Analytics.Xamarin` from [Github](https://github.com/segmentio/Analytics.Xamarin)...
+Clone `Analytics.Xamarin` from [GitHub](https://github.com/segmentio/Analytics.Xamarin)...
 
 ```bash
 git clone https://github.com/segmentio/Analytics.Xamarin.git

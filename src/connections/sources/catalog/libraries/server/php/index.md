@@ -4,7 +4,7 @@ title: Analytics for PHP
 
 Our PHP library lets you record analytics data from your PHP code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
-This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-php).
+This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-php).
 
 PHP is a little different than our other server-side libraries because it is a single-threaded language. We've done everything we can to make our library as performant as possible, while still leaving you room to tune the settings for your application. If you want to learn more about tuning your settings for high performance, be sure to read through our section on [configuration](#configuration) at the end of this guide.
 

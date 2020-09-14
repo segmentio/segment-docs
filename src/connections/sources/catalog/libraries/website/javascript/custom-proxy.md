@@ -15,7 +15,7 @@ To set up a custom domain, you need:
 2. A CDN you can serve assets from
 3. Access to the CDN settings
 
-This guide explains how to set up a custom domain in Cloudfront. The same principles can be applied to almost any modern CDN that supports proxying.
+This guide explains how to set up a custom domain in CloudFront. The same principles can be applied to almost any modern CDN that supports proxies.
 
 You need to set up two important parts, regardless of the CDN provider you use:
 - Proxy to Segment CDN (`cdn.segment.com`)
@@ -23,7 +23,7 @@ You need to set up two important parts, regardless of the CDN provider you use:
 
 ## Set up
 
-Follow the directions listed for Cloudfront or use your own CDN setup. Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
+Follow the directions listed for CloudFront or use your own CDN setup. Once you complete those steps and verify that your proxy works for both `cdn.segment.com` and `api.segment.io`, [contact Segment Product Support](https://segment.com/help/contact/) with the following template email:
 
 ```text
 Hi,
@@ -34,9 +34,9 @@ This is {person} from {company}. I would like to request that you add a proxy fo
 * Source {link to source in Segment} with source ID {source id} should point to {api host}
 ```
 
-Double-check the source link, the Source ID, and the api proxy host to make sure they are correct. A member of our Success team will respond and set up the proxy for you.
+Double-check the source link, the Source ID, and the API proxy host to make sure they are correct. A member of our Success team will respond and set up the proxy for you.
 
-## Cloudfront
+## CloudFront
 
 ### CDN Proxy
 
@@ -131,7 +131,7 @@ Next, add a CNAME record to your DNS settings. Go to your domain registrar and a
   </tr>
   <tr>
     <td>Value</td>
-    <td>Cloudfront Distribution Domain Name</td>
+    <td>CloudFront Distribution Domain Name</td>
   </tr>
 </table>
 
@@ -139,7 +139,7 @@ Save your record. This might take some time to take effect, depending on your TT
 
 ### Tracking API Proxy
 
-Next, set up a proxy for the tracking API so that all calls are proxied through your domain. In this step, we set up a Cloudfront distribution that's very similar to the previous step, with a few minor changes:
+Next, set up a proxy for the tracking API so that all calls are proxied through your domain. In this step, we set up a CloudFront distribution that's very similar to the previous step, with a few minor changes:
 
 <table>
   <tr>
@@ -149,14 +149,14 @@ Next, set up a proxy for the tracking API so that all calls are proxied through 
   </tr>
   <tr>
    <td>Origin Domain Name</td>
-   <td>api.segment.io</td>
+   <td>`api.segment.io`</td>
    <td>The domain name you would like the proxy to be served to</td>
   </tr>
 </table>
 
 #### Add CNAME Record to DNS
 
-Next, add a CNAME record to your DNS settings. Go to your domain registrar and add a new record to your DNS of type "CNAME". This time use the Cloudfront distribution for the tracking API proxy.
+Next, add a CNAME record to your DNS settings. Go to your domain registrar and add a new record to your DNS of type "CNAME". This time use the CloudFront distribution for the tracking API proxy.
 
 <table>
   <tr>
@@ -169,8 +169,8 @@ Next, add a CNAME record to your DNS settings. Go to your domain registrar and a
   </tr>
   <tr>
     <td>Value</td>
-    <td>Tracking API Cloudfront Distribution Domain Name</td>
+    <td>Tracking API CloudFront Distribution Domain Name</td>
   </tr>
 </table>
 
-Save your record. This might take some time to take effect, depending on your TTL settings. Try `curl`ing your domain to check if it is proxying correctly.
+Save your record. This might take some time to take effect, depending on your TTL settings. Try running `curl` on your domain to check if the proxy is working correctly.

@@ -6,7 +6,7 @@ hidden: true
 
 Our Go library lets you record analytics data from your Go code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
-This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-go).
+This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-go).
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses a tunable buffer to batch messages, optimized for throughput and reduced network activity.
 

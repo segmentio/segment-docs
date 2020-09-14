@@ -56,13 +56,13 @@ If this outbound request is not showing up in the network when you fire an `iden
 
 The [Public Suffix List](https://publicsuffix.org/list/) is a catalog of certain Internet effective top-level domains, enumerating all domain suffixes controlled by registrars.
 
-The implications of these domain suffixes is that first party cookies cannot be set on them. Meaning, foo.example.co.uk can share cookie access with bar.example.co.uk, but example.co.uk should be walled off from cookies at example2.co.uk. The latter two domains could be registered by different owners.
+The implications of these domain suffixes is that first party cookies cannot be set on them. Meaning, `foo.example.co.uk` can share cookie access with `bar.example.co.uk`, but `example.co.uk` should be walled off from cookies at `example2.co.uk`. The latter two domains could be registered by different owners.
 
 Examples of domains on the Public Suffix List that are common in troubleshooting include:
 
-- *.github.io
-- *.herokuapp.com
-- *.appspot.com
+- `*.github.io`
+- `*.herokuapp.com`
+- `*.appspot.com`
 
 
 ## How do I open the Javascript console in your debugger?
@@ -103,12 +103,12 @@ console.log(JSON.stringify({ x: undefined, y: 6 }));
 // expected output: "{"y":6}"
 ```
 
-## Why am I seeing a "SameSite" warning? 
+## Why am I seeing a "SameSite" warning?
 
 If you see a warning like the following, it could have one of several causes:
 "A cookie associated with a cross-site resource at http://segment.com/ was set without the `SameSite` attribute [...]"
 
-Segment correctly sets cookies with the 'SameSite' attribute with Analytics.js. 
+Segment correctly sets cookies with the 'SameSite' attribute with Analytics.js.
 
 If you see this warning, it is because you previously visited http://segment.com, and are getting the warning due to unrelated cookies. To verify that this is the issue, visit your page in Incognito Mode and confirm that the warning no longer occurs. Your users won't see this warning unless they _also_  visited http://segment.com.
 
@@ -133,4 +133,4 @@ This works for any [context field](/docs/connections/spec/common/#context) that 
 
 ## Known Issues:
 
-[Review and contribute to these on Github](https://github.com/segmentio/analytics.js/issues)
+[Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues)

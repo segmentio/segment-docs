@@ -4,7 +4,7 @@ title: Quantcast Destination
 
 ## Getting Started
 
-We have both web and mobile destinations with Quantcast. The two integrations are outlined below. Our Quantcast destination code is also open source on Github. Feel free to check it out: [analytics-ios-integration-quantcast](https://github.com/segment-integrations/analytics-ios-integration-quantcast), [analytics.js-integration-quantcast](https://github.com/segment-integrations/analytics.js-integration-quantcast).
+We have both web and mobile destinations with Quantcast. The two integrations are outlined below. Our Quantcast destination code is also open source on GitHub. Feel free to check it out: [analytics-ios-integration-quantcast](https://github.com/segment-integrations/analytics-ios-integration-quantcast), [analytics.js-integration-quantcast](https://github.com/segment-integrations/analytics.js-integration-quantcast).
 
 ## Web Destination
 When you toggle on Quantcast for a website in Segment, this is what happens:

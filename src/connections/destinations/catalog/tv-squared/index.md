@@ -3,7 +3,7 @@ rewrite: true
 title: tvsquared Destination
 ---
 
-[TV Squared](https://tvsquared.com/) enables you to pull same-day TV performance analytics so you can manage TV spend, and create data-driven TV media plans based on network, days, programs, and genres. Our TV Squared Destination is open-source. You can browse the code [in Github](https://github.com/segment-integrations/analytics.js-integration-tvsquared).
+[TV Squared](https://tvsquared.com/) enables you to pull same-day TV performance analytics so you can manage TV spend, and create data-driven TV media plans based on network, days, programs, and genres. Our TV Squared Destination is open-source. You can browse the code [in GitHub](https://github.com/segment-integrations/analytics.js-integration-tvsquared).
 
 This document was last updated on April 20th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 

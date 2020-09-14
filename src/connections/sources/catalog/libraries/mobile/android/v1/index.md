@@ -8,7 +8,7 @@ Analytics for Android makes it simple to send your data to any tool without havi
 
 Analytics for Android lets you record analytics data from your Android applications. It supports Android 2.3 (Gingerbread, API level 10) and up.
 
-This library lets you bundle native destinations like Google Analytics or Mixpanel. For non-bundled destinations, like Customer.io or KISSmetrics, our library will send analytics requests to our servers, which then route your data to any analytics service you enable on your destinations page. You can also choose to not include any bundled destinations, in which case all the requests will be sent through our servers. The library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-android).
+This library lets you bundle native destinations like Google Analytics or Mixpanel. For non-bundled destinations, like Customer.io or KISSmetrics, our library will send analytics requests to our servers, which then route your data to any analytics service you enable on your destinations page. You can also choose to not include any bundled destinations, in which case all the requests will be sent through our servers. The library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-android).
 
 Analytics for Android uses a light-weight queuing mechanism to make API calls to Segment non-blocking and fast. It also batches messages and flushes asynchronously to our servers to achieve high performance and save your users' battery life.
 

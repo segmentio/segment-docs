@@ -350,7 +350,7 @@ Read more about [migrating from a SDK version less than 2.0.00](http://docs.moen
 
 ### Sample Implementation
 
-View a sample implementation in our [Github Repository](https://github.com/moengage/SegmentDemo).
+View a sample implementation in our [GitHub Repository](https://github.com/moengage/SegmentDemo).
 
 ## Web
 

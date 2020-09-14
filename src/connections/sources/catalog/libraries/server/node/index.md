@@ -5,7 +5,7 @@ redirect_from: '/connections/sources/catalog/libraries/server/node-js/'
 
 Our Node.js library lets you record analytics data from your node code. The requests hit our servers, and then we route your data to any destinations you have enabled.
 
-The [Segment Node.js library is open-source](https://github.com/segmentio/analytics-node) on Github.
+The [Segment Node.js library is open-source](https://github.com/segmentio/analytics-node) on GitHub.
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 

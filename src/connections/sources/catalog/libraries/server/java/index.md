@@ -6,7 +6,7 @@ title: Analytics for Java
 
 Our Java library lets you record analytics data from your Java code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
-This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-java).
+This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-java).
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make all calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
@@ -97,7 +97,7 @@ The `identify` call has the following fields:
   </tr>
 </table>
 
-**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. <!-- LR: can't find this seciton, commenting out.
+**Note:** The enqueue method takes a `MessageBuilder` instance and not a `Message` instance directly. This is to allow you to use a `MessageTransformer` that applies to all incoming messages and transform or add data. <!-- LR: can't find this section, commenting out.
 Read more in our [transformer reference section](/docs/connections/sources/catalog/libraries/server/java#transformer).-->
 
 Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).

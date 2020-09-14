@@ -222,7 +222,7 @@ Client.Set(*objects.Object{
 Client.Close()
 ```
 
-View the Objects-go library on Github [here](https://github.com/segmentio/objects-go).
+View the Objects-go library on GitHub [here](https://github.com/segmentio/objects-go).
 
 Here is a `curl` example of how to get started:
 
