@@ -335,11 +335,11 @@ Analytics.Client.Identify("hj2kf92ds212", new Traits() {
     { "name", "Tom Smykowski" },
 }, new Options()
     .SetIntegration("all", false)
-    .SetIntegration("KISSmetrics", true)
+    .SetIntegration("Kissmetrics", true)
 );
 ```
 
-In this case, we're specifying that we want this identify to only go to KISSmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "KISSmetrics", true }` turns on KISSmetrics, etc.
+In this case, we're specifying that we want this identify to only go to Kissmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "Kissmetrics", true }` turns on Kissmetrics, etc.
 
 Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 

@@ -11381,7 +11381,7 @@ items:
       server: true
   previous_names:
   - Iterable
-- display_name: KISSmetrics
+- display_name: Kissmetrics
   slug: kissmetrics
   name: catalog/destinations/kissmetrics
   description: >-
@@ -11456,7 +11456,7 @@ items:
       mobile: true
       server: true
   previous_names:
-  - KISSmetrics
+  - Kissmetrics
 - display_name: Kahuna
   slug: kahuna
   name: catalog/destinations/kahuna

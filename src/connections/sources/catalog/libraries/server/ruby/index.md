@@ -330,7 +330,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
  `alias` method definition:
 
@@ -386,11 +386,11 @@ Here's an example `track` call with the `integrations` object shown.
 Analytics.track({
   user_id: '83489',
   event: 'Song Paused',
-  integrations: { All: false, KISSmetrics: true }
+  integrations: { All: false, Kissmetrics: true }
 })
 ```
 
-In this case, we're specifying that we want this identify to only go to KISSmetrics. `all: false` says that no destination should be enabled unless otherwise specified. `KISSmetrics: true` turns on KISSmetrics, etc.
+In this case, we're specifying that we want this identify to only go to Kissmetrics. `all: false` says that no destination should be enabled unless otherwise specified. `Kissmetrics: true` turns on Kissmetrics, etc.
 
 Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 

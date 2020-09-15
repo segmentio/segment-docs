@@ -73,7 +73,7 @@ analytics.identify('12345',{
 
 #### Aliasing server-side
 
-If you plan on tracking anonymous visitors from the browser and only calling [identify](/docs/connections/spec/identify)from your servers you'll need to call [alias](/docs/connections/spec/alias) for KISSmetrics and Mixpanel. That call links client-side anonymous visitors with server-side identified users. This isn't recommended, but if you must go down this road, read the [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#aliasing-new-users-server-side)and[Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias-using-cloud-mode) specific [alias](/docs/connections/spec/alias) docs.
+If you plan on tracking anonymous visitors from the browser and only calling [identify](/docs/connections/spec/identify)from your servers you'll need to call [alias](/docs/connections/spec/alias) for Kissmetrics and Mixpanel. That call links client-side anonymous visitors with server-side identified users. This isn't recommended, but if you must go down this road, read the [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#aliasing-new-users-server-side)and[Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias-using-cloud-mode) specific [alias](/docs/connections/spec/alias) docs.
 
 ### Common questions
 

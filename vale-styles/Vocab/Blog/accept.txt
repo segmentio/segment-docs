@@ -16,7 +16,7 @@ https
 Javadoc
 Javadocs
 Javascript
-KISSmetrics
+Kissmetrics
 Littledata
 md
 Middleware

@@ -11,7 +11,7 @@ The `alias` method is used to merge two user identities, effectively connecting 
 
 Since this is our most advanced method we have added sections to each docs page for destinations that use it:
 
-- [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics#alias)
+- [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics#alias)
 - [Mixpanel](/docs/connections/destinations/catalog/mixpanel#alias)
 - [Vero](/docs/connections/destinations/catalog/vero#alias)
 
