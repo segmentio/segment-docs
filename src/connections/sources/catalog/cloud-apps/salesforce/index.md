@@ -105,7 +105,6 @@ At this time, we do not support hard deletes in Salesforce. Use of hard deletes 
 
 ## Collection Properties
 
-Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Saleforce field documentation linked in each collection above. If you've added custom fields to an existing collection, [contact us]https://segment.com/help/contact/ and we'll get those set up to sync. You do not need to include the field names.
 Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Saleforce field documentation linked in each collection above. If you've added custom fields to an existing collection, [contact us](https://segment.com/help/contact/) and we'll get those set up to sync. You do not need to include the field names.
 
 ## Adding Destinations
