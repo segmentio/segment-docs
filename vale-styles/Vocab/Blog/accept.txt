@@ -1,4 +1,6 @@
+allowlist
 Appboy
+blocklist
 boolean
 CloudFront
 Cocoapods
