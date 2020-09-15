@@ -18,3 +18,9 @@ Preact
 Totango
 WebKit
 Zendesk
+Okta
+Shopify
+Gradle
+endif
+endfor
+Littledata
