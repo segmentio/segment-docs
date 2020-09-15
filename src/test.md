@@ -18,6 +18,9 @@ published: false
 > note "This is a note"
 > Some note text foo bar baz
 
+{% includeifythis %}
+{{ thiswordismisspelled }}
+
 We hope you like their pie.
 
 Welcome to the documentation test page!
@@ -85,6 +88,7 @@ the page's front-matter.
 Plain block of text.
 
 <!-- vale off -->
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
 nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -148,7 +152,7 @@ You can add a link to a YouTube video like this:
 [Drop Events using Destination Filters](https://www.youtube.com/watch?v=47dhAF1Hoco "Drop Events using Destination Filters"){:target="_blank" class="_"}
 
 ## Lists
-
+<!-- vale off -->
 - Bullet list item 1
 - Bullet list item 2
 * Bullet list item 3
@@ -180,7 +184,7 @@ You can add a link to a YouTube video like this:
           |---------|----------|
           | Thing 1 | Thing 2  |
           | Thing 3 | Thing 4  |
-
+<!-- vale on -->
 
 ## Tables
 
