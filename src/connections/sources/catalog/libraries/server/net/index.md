@@ -514,7 +514,7 @@ Note: the logger requires a minimum version of .NET Core 2.1.
 
 ### Json.NET
 
-`Analytics.NET` uses [Json.NET](http://json.codeplex.com/) to serialize json payloads. If you have an older version of `Json.NET` in your build path, `Analytics.NET` could create incomplete json payloads, which can cause strange API responses. If you're seeing issues, try updating `Json.NET`.
+`Analytics.NET` uses [Json.NET](http://json.codeplex.com/) to serialize JSON payloads. If you have an older version of `Json.NET` in your build path, `Analytics.NET` could create incomplete JSON payloads, which can cause strange API responses. If you're seeing issues, try updating `Json.NET`.
 
 
 ### Mono

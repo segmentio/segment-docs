@@ -22,7 +22,7 @@ In order to send data to our HTTP API, a content-type header must be set to `'ap
 
 ## Errors
 
-We currently return a `200` response for all API requests so debugging should be done in the Segment Debugger. The only exception is if the request is too large / json is invalid it will respond with a `400`.
+We currently return a `200` response for all API requests so debugging should be done in the Segment Debugger. The only exception is if the request is too large / JSON is invalid it will respond with a `400`.
 
 We're hard at work surfacing more errors and more helpful responses to our users. If you have any suggestions, [let us know](https://segment.com/help/contact/)!
 

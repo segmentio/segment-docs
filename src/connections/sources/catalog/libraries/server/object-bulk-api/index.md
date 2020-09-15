@@ -42,7 +42,7 @@ Example objects:
     <td>Object</td>
     <td>
       The object properties that represent the object. Example:<br/><br/>
-      Each value could be a string (ISO dates are parsed and recognised as `isodate` type), an integer, or a float (json types).<br/><br/>
+      Each value could be a string (ISO dates are parsed and recognised as `isodate` type), an integer, or a float (JSON types).<br/><br/>
       Values cannot be lists or objects. Each value must be less 32kb in size.
     </td>
   </tr>

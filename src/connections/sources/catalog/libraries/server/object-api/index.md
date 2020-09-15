@@ -163,7 +163,7 @@ This call sends a collection of "rooms". "rooms" becomes the table name in your 
     <td>
   A required array of objects describing the objects and properties being set.
 
-  Must consist of at least one json object and a maximum of 10.
+  Must consist of at least one JSON object and a maximum of 10.
 
     </td>
   </tr>
@@ -186,7 +186,7 @@ Each object inside of the objects array must consist of the following parameters
     <td>
 The object properties that represent the object. Example:
 
-Each value could be a string (ISO dates are parsed and recognised as `isodate` type), an integer, or a float (json types).
+Each value could be a string (ISO dates are parsed and recognised as `isodate` type), an integer, or a float (JSON types).
 
 Values cannot be lists or objects. Each value must be less 32kb in size.
     </td>
