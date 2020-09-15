@@ -91,26 +91,26 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 2. Click **Provisioning**, then click **Configure API Integration** and select **Enable API Integration**.
 3. [Generate an API key](#api-key), then copy and paste this value into the **API Token** field in Okta, and click **Save**.
 
-![](images/okta_provisioning.png)
+   ![](images/okta_provisioning.png)
 
 4. Next, select **To App** in the left sidebar of the **Provisioning** tab. Click **Edit** and select both **Create Users** and **Deactivate Users**. Click **Save**.
 5. From the **Provisioning** tab, click **Go to Profile Editor** > **Mappings**.
 6. In the left tab that appears, review the data that Segment sends to Okta. Select `do not map` for all attributes except `email` and `displayName`. Click **Save Mappings**, and **Apply Updates Now** (if prompted).
 
-![](images/scim_attribute_mappings.png)
+   ![](images/scim_attribute_mappings.png)
 
 7. Open the **Mappings** again, and click the right tab. This represents the data that Okta sends to Segment. Again, click `do not map` for all attributes except `email` and `displayName`. Then click **Save Mappings**, and **Apply Updates Now** (if prompted) to close the **Mappings** dialog.
 8. Next, delete all unused attributes from the bottom of the **Provisioning** Tab. You must include "Given Name" and "Family Name" as they are required by Okta, but unused by Segment.
 
-![](images/scim_delete_attributes.png)
+   ![](images/scim_delete_attributes.png)
 
 9. Navigate back to the Segment Okta app. You're now ready to assign people or groups. Before you continue, read through the [features](#features) section in this doc to make sure you understand how groups work.
 10. Segment recommends that you assign users to the Segment app by Okta group. This allows you to manage which groups in your organization can authenticate to Segment. You can also assign users individually.
 
-![](images/scim_assignments.png)
+   ![](images/scim_assignments.png)
 
 11. Once you assign your users, push the assigned Okta groups to Segment. Then, go to the Segment app to assign permissions to these groups. You can also link Okta groups to an existing group from in the Segment app using the Okta UI.
 
-![](images/scim_group_push.png)
+   ![](images/scim_group_push.png)
 
-![](images/scim_edit_groups.png)
+   ![](images/scim_edit_groups.png)
