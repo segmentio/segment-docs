@@ -8,5 +8,3 @@ login
 leverage
 utilize
 utilizing
-blacklist
-whitelist

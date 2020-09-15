@@ -1,0 +1,7 @@
+extends: substitution
+message:  Please use '%s' instead of '%s'
+level: error
+ignorecase: true
+swap:
+  blacklist: blocklist
+  whitelist: allowlist
