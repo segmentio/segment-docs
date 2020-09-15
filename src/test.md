@@ -18,6 +18,7 @@ published: false
 > note "This is a note"
 > Some note text foo bar baz
 
+We hope you like their pie.
 
 Welcome to the documentation test page!
 
@@ -42,6 +43,8 @@ Cool? Let's dive in!
 # Heading 1
 
 Our pages use the H1 heading for the Title of the page, as set in the `title:` frontmatter. It's included in this page just so you can see and test the formatting. :)
+
+via
 
  We have included it here to show all heading levels, and
 set front matter as `toc_min: 1` so that it shows in the navigation bar (on-page
