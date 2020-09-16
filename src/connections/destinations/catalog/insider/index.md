@@ -94,7 +94,7 @@ Segment sends Track calls to Insider as a custom event. Only the following Page 
 
 Some Segment Track methods map to Insider's predefined events. These are detected using the event name in the Track event. The table below lists these event names and their Insider mappings.
 
-| Segment             | Insider                  |
+| Segment event name  | Insider predefined event |
 | ------------------- | ------------------------ |
 | Product List Viewed | Listing Page View        |
 | Product Viewed      | Product Detail Page View |
