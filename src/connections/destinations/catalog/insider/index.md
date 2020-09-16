@@ -78,7 +78,11 @@ analytics.track('Product Viewed', {
 });
 ```
 
-Segment sends Track calls to Insider as a custom event. Only the following page views will be mapped automatically to Insider's default events: Product List Viewed, Product Viewed, Cart Viewed, Order Completed.
+Segment sends Track calls to Insider as a custom event. Only the following Page views are mapped automatically to Insider's default events: 
+- Product List Viewed
+- Product Viewed
+- Cart Viewed
+- Order Completed.
 
 ```json
 "product_id": "507f1f77bcf86cd799439011"
