@@ -92,7 +92,7 @@ Segment sends Track calls to Insider as a custom event. Only the following Page 
 "product_imgage_url": "https://www.example.com/product/path.jpg"
 ```
 
-For the track method, some of the events will be mapped to Insider's predefined events based on the event name in the track event. The unique event names that will be mapped as follows:
+Some Segment Track methods map to Insider's predefined events. These are detected using the event name in the Track event. The table below lists these event names and their Insider mappings.
 
 | Segment             | Insider                  |
 | ------------------- | ------------------------ |
