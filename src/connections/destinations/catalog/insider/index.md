@@ -3,7 +3,7 @@ rewrite: true
 title: Insider Destination
 ---
 
-[Insider](https://useinsider.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Growth Management Platform (GMP) helps digital marketers drive growth across the funnel. Leveraging real-time predictive segmentation powered by deep AI and ML capabilities, Insider GMP empowers marketers to deliver personalized journeys across the web, mobile web, mobile apps, messaging, email, and ad channels via the unified data.
+[Insider](https://useinsider.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Growth Management Platform (GMP) helps digital marketers drive growth across the funnel. Insider GMP helps marketers deliver personalized journeys across the web, mobile web, mobile apps, messaging, email, and ad channels using the unified data.
 
 This destination is maintained by Insider. For any issues with the destination, [contact the Insider Support team](mailto:pst@useinsider.com).
 
