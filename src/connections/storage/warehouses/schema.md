@@ -590,11 +590,11 @@ When Segment process a new batch and discover a new column to add, we take the m
 
 The datatypes that we support right now are: 
 
--`timestamp`
--`integer` 
--`float`
--`boolean`
--`varchar`
+- `timestamp`
+- `integer` 
+- `float`
+- `boolean`
+- `varchar`
 
 ## Column Sizing
 
