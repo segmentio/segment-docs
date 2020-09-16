@@ -52,7 +52,7 @@ analytics.identify("userId123", {
 });
 ```
 
-Segment sends Identify calls to Insider as a user insert/update request for the `userId123` with the following attributes:
+Segment sends Identify calls to Insider as a user insert or update request for the `userId123` with the following attributes:
 
 ```json
 "uuid": "userId123",
