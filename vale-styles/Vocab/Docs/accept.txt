@@ -4,12 +4,6 @@ blocklist
 boolean
 CloudFront
 Cocoapods
-endfaq
-endfaqitem
-endfor
-endif
-faq
-faqitem
 Gradle
 HTTP
 http
@@ -20,7 +14,6 @@ Javadocs
 Javascript
 Kissmetrics
 Littledata
-md
 Middleware
 middleware
 Mixpanel
