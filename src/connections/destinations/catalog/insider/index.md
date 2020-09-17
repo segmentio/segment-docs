@@ -62,7 +62,7 @@ Segment sends Identify calls to Insider as a user insert or update request for t
 "country": "USA"
 ```
 
-Insider uses userId, anonymousId, email and phone number as identifiers.
+Insider uses `userId`, `anonymousId`, `email` and `phone number` as identifiers.
 
 ## Track
 
