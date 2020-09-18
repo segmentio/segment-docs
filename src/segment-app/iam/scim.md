@@ -11,11 +11,11 @@ Most IdPs offer SCIM, and it compliments SAML. You can think of SAML as a way fo
 
 Before you start, remember that SSO is only available to Business Tier customers, and that only workspace owners may configure SSO connections.
 
-To setup SCIM, you must first create an SSO connection. Once you [create your SSO connection](https://segment.com/docs/segment-app/iam/sso/), log back into Segment using SSO.
+To set up SCIM, you must first create an SSO connection. Once you [create your SSO connection](https://segment.com/docs/segment-app/iam/sso/), log back in to Segment using SSO.
 
 ## Configuration Instructions
 
-Segment officially supports [Okta](#okta-setup-guide), Azure AD, and OneLogin. Each link includes specific setup instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
+Segment officially supports [Okta](#okta-set-up-guide), Azure AD, and OneLogin. Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
 
 You may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions.
 
@@ -25,7 +25,7 @@ Your IdP needs to know where to send SCIM requests. The Segment base URL is: htt
 
 ### API Key
 
-The other value you need is an API key (sometimes referred to as an Authorization Header). To generate one, go to **Settings > Advanced Settings** in the Segment app, and find the SSO Sync section. Click **Generate SSO Token** and copy the generated token. Use this token for the API key or Authorization Header in your IdP.
+The other value you need is an API key (sometimes referred to as an Authorization Header). To generate one, go to **Settings > Advanced Settings** in the Segment app, and find the **SSO Sync** section. Click **Generate SSO Token** and copy the generated token. Use this token for the API key or Authorization Header in your IdP.
 
 This page is located as part of the settings sidebar: https://app.segment.com/CUSTOMER_WORKSPACE_SLUG/settings/advanced
 
@@ -53,7 +53,7 @@ Segment user profiles only contain a `userName` (email) and `displayName`. Once 
 
 ## Deleting or Deactivating Users
 
-Segment workspace owners **cannot** delete Segment workspace member accounts using SCIM, the web UI, or the Segment API. A user must delete their own account using the Segment app. Workspace owners **can** remove members from the workspace using SCIM, the web UI, or the Segment API.
+Segment workspace owners _cannot_ **delete** Segment workspace member accounts using SCIM, the web UI, or the Segment API. A user must delete their own account using the Segment app. Workspace owners _can_ **remove members from the workspace** using SCIM, the web UI, or the Segment API.
 
 Some IdPs want to set users as "inactive" or "active." Segment does not have an "inactive" state for user accounts. Similar functionality can be achieved by removing a user from your workspace. Setting an existing Segment user to "active" is similar to adding that user to the workspace.
 
@@ -73,13 +73,13 @@ Your IdP can add or remove workspace members from existing groups via SCIM. Your
 
 ## Deleting Groups
 
-Your IdP can use SCIM to delete groups from your Segment workspace. Deleting a group in Segment does **not** remove its members from your workspace. You need to unassign users from Segment from your IdP, then Segment removes them from the workspace.
+Your IdP can use SCIM to delete groups from your Segment workspace. Deleting a group in Segment does **not** remove its members from your workspace. To remove members from the workspace, unassign the users from Segment from your IdP, then Segment removes them from the workspace.
 
 ## Attribute Mapping
 
-When you integrate Segment SCIM and your IdP you might need to map attributes for users. The only attributes that Segment SCIM supports are `userName` and `displayName`. You should leave any existing mapping for the `email` SAML attribute, which you might have setup during your initial SSO onboarding. This mapping supports SAML authentication, and is separate from setting up SCIM, but may be within the same page depending on your IdP.
+When you integrate Segment SCIM and your IdP you might need to map attributes for users. The only attributes that Segment SCIM supports are `userName` and `displayName`. You should leave any existing mapping for the `email` SAML attribute, which you might have set up during your initial SSO set up. This mapping supports SAML authentication, and is separate from setting up SCIM, but may be within the same page depending on your IdP.
 
-You'll need to map an email (IdP) to `userName` (Segment). Depending on your IdP this attribute may be called `email` or simply `mail`. If your IdP uses emails for usernames, you can map `userName` (IdP) to `userName` (Segment).
+You'll need to map an email (IdP) to `userName` (Segment). Depending on your IdP this attribute might be called `email` or `mail`. If your IdP uses emails for usernames, you can map `userName` (IdP) to `userName` (Segment).
 
 If your IdP supports the `displayName` attribute, you can map it directly to the Segment `displayName` attribute. If it does not, most IdPs can create a "macro mapping" which allows you to map more than one field to a single field in Segment.
 
@@ -95,22 +95,24 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 
 4. Next, select **To App** in the left sidebar of the **Provisioning** tab. Click **Edit** and select both **Create Users** and **Deactivate Users**. Click **Save**.
 5. From the **Provisioning** tab, click **Go to Profile Editor** > **Mappings**.
-6. In the left tab that appears, review the data that Segment sends to Okta. Select `do not map` for all attributes except `email` and `displayName`. Click **Save Mappings**, and **Apply Updates Now** (if prompted).
+6. In the left tab that appears, review the data that Segment sends to Okta.
+   Select `do not map` for all attributes except `email` and `displayName`. Click **Save Mappings**, and **Apply Updates Now** (if prompted).
 
    ![](images/scim_attribute_mappings.png)
 
-7. Open the **Mappings** again, and click the right tab. This represents the data that Okta sends to Segment. Again, click `do not map` for all attributes except `email` and `displayName`. Then click **Save Mappings**, and **Apply Updates Now** (if prompted) to close the **Mappings** dialog.
-8. Next, delete all unused attributes from the bottom of the **Provisioning** Tab. You must include "Given Name" and "Family Name" as they are required by Okta, but unused by Segment.
+7. Open the **Mappings** again, and click the right tab. This represents the data that Okta sends to Segment.
+   Again, click `do not map` for all attributes except `email` and `displayName`. Then click **Save Mappings**, and **Apply Updates Now** (if prompted) to close the dialog.
+8. Next, delete all unused attributes from the bottom of the **Provisioning** Tab. You must include "Given Name" and "Family Name" as they are required by Okta (but are not used by Segment).
 
    ![](images/scim_delete_attributes.png)
 
-9. Navigate back to the Segment Okta app. You're now ready to assign people or groups. Before you continue, read through the [features](#features) section in this doc to make sure you understand how groups work.
+9. Navigate back to the Segment Okta app. You can now assign people or groups. Before you continue, read through the [features](#features) section in this doc to make sure you understand how groups work.
 10. Segment recommends that you assign users to the Segment app by Okta group. This allows you to manage which groups in your organization can authenticate to Segment. You can also assign users individually.
 
-   ![](images/scim_assignments.png)
+    ![](images/scim_assignments.png)
 
 11. Once you assign your users, push the assigned Okta groups to Segment. Then, go to the Segment app to assign permissions to these groups. You can also link Okta groups to an existing group from in the Segment app using the Okta UI.
 
-   ![](images/scim_group_push.png)
+    ![](images/scim_group_push.png)
 
-   ![](images/scim_edit_groups.png)
+    ![](images/scim_edit_groups.png)
