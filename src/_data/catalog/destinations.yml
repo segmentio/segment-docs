@@ -13236,13 +13236,6 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as the Primary field in Marketo.
-        settings: []
       - name: segmentProperty
         display_name: Segment Property Name
         type: STRING
@@ -13277,6 +13270,13 @@ items:
           - number
           - date
         description: Enter the Marketo Field type.
+        settings: []
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as the Primary field in Marketo.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -21962,6 +21962,61 @@ items:
   previous_names:
   - useriq
   - UserIQ
+- display_name: UserLeap
+  slug: userleap
+  name: catalog/destinations/userleap
+  description: >-
+    UserLeap is a microsurvey platform that continuously identifies
+    opportunities to build better experiences. Gain clarity into customer needs
+    and grow faster.
+  hidden: false
+  url: connections/destinations/catalog/userleap
+  status: PUBLIC_BETA
+  logo:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/2ad4508d-5be6-4358-a7f7-45b97dd54d22.svg
+  mark:
+    url: >-
+      https://public-segment-devcenter-production.s3.amazonaws.com/b6a1db0f-1b55-4651-9cc5-d78d8365a447.svg
+  categories:
+  - Customer Success
+  - Analytics
+  - Surveys
+  - Personalization
+  components: []
+  platforms:
+    browser: true
+    server: true
+    mobile: true
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  methods:
+    alias: true
+    group: false
+    identify: true
+    page_view: true
+    track: true
+  settings:
+  - name: apiKey
+    display_name: API Key
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: '^.{8,}$'
+    description: 'Find your API key here https://app.userleap.com/settings/installation'
+    settings: []
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: false
+      mobile: false
+      server: false
+  previous_names:
+  - UserLeap
 - display_name: UserVoice
   slug: uservoice
   name: catalog/destinations/uservoice
