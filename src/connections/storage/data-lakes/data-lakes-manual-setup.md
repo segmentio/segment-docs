@@ -33,24 +33,16 @@ Segment requires access to an EMR cluster to perform necessary data processing. 
    - **1** master node
    - **2** core nodes
    - **2** task nodes ![Configure the number of nodes](images/03_hardware-node-instances.png)
- 
+
 For more information about configuring the cluster hardware and networking, see Amazon's document, [Configure Cluster Hardware and Networking](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances.html).
 
-### Enable EMR managed scaling for the Core and Task nodes
-
-On the **Cluster Scaling** settings, select **Use EMR-managed scaling**, and select the following number of task units:
-- Minimum: **2**
-- Maximum: **8**
-- On-demand limit: **8**
-- Maximum Core Node: **2**
-
-![Configure the Cluster scaling options](images/04_cluster-scaling.png)
 
 ### Configure logging
 
 On the General Options step, configure logging to use the same S3 bucket you configured as the destination for the final data (`segment-data-lakes` in this case). Once configured, logs will be written to a new prefix, and separated from the final processed data.
 
-Set value of the **vendor** tag to `segment`.
+Set value of the **vendor** tag to `segment`. This is used in the IAM policy to provide Segment access to submit jobs in the EMR cluster.
+
 
 ![Configure logging](images/05_logging.png)
 
@@ -62,6 +54,9 @@ On the Security step, ensure that the following steps have been completed:
 3. Select the appropriate security groups for the Master and Core & Task types.
 
 ![Secure the cluster](images/06_secure-cluster.png)
+
+The image uses the default settings, however these settings can be made more restrictive, if required.
+
 
 ## Step 3 - Create an Access Management role and policy
 
@@ -104,7 +99,7 @@ Create a `segment-data-lake-role` role for Segment to assume. Attach the followi
 
 ### IAM Policy
 
-Add a policy to the role created above to give Segment access to the relevant Glue databases and tables, EMR cluster, and S3
+Add a policy to the role created above to give Segment access to the relevant Glue databases and tables, EMR cluster, and S3.
 
 ```json
 {
@@ -162,7 +157,7 @@ Add a policy to the role created above to give Segment access to the relevant Gl
             "Effect": "Allow",
             "Action": "*",
             "Resource": [
-                "arn:aws:s3:::$BUCKET_NAME/*", 
+                "arn:aws:s3:::$BUCKET_NAME/*",
                 "arn:aws:s3:::$BUCKET_NAME"
             ]
         },
@@ -173,6 +168,16 @@ Add a policy to the role created above to give Segment access to the relevant Gl
             ],
             "Resource": [
                 "*"
+            ]
+        },
+        {
+            "Sid": "",
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": [
+                "arn:aws:iam::$ACCOUNT_ID:role/EMR_DefaultRole",
+                "arn:aws:iam::$ACCOUNT_ID:role/EMR_AutoScaling_DefaultRole",
+                "arn:aws:iam::$ACCOUNT_ID:role/EMR_EC2_DefaultRole"
             ]
         }
     ]
@@ -188,5 +193,5 @@ Segment requires access to the data and schema for debugging data quality issues
 - Access the individual objects stored in S3 and the associated schema in order to understand data discrepancies
 - Run an Athena query on the underlying data stored in S3
   - Ensure Athena uses Glue as the data catalog. Older accounts may not have this configuration, and may require some additional steps to complete the upgrade. The Glue console typically displays a warning and provides a link to instructions on how to complete the upgrade.
-  - An easier alternative is to create a new account that has Athena backed by Glue as the default. 
-
+![Debugging](images/dl_setup_glueerror.png)
+  - An easier alternative is to create a new account that has Athena backed by Glue as the default.
