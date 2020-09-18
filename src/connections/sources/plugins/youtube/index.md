@@ -1,14 +1,14 @@
 ---
-title: analytics.js Youtube Plugin
+title: analytics.js YouTube Plugin
 hidden: true
 ---
 
-With the analytics.js Youtube Plugin you can easily collect Youtube player events into the Segment ecosystem.
+With the analytics.js YouTube Plugin you can easily collect YouTube player events into the Segment ecosystem.
 
 ## Prerequisites
-The Segment Youtube Plugin requires the Youtube player JavaScript object as an input, so your Youtube player embed must use the [Youtube IFrame player API](https://developers.google.com/youtube/iframe_api_reference#Getting_Started).
+The Segment YouTube Plugin requires the YouTube player JavaScript object as an input, so your YouTube player embed must use the [YouTube IFrame player API](https://developers.google.com/youtube/iframe_api_reference#Getting_Started).
 
-To begin, you'll need to generate an API Key for the Segment Youtube plugin, which it uses to access metadata about the video content being played. To do this, create a new project in the Google Developer Console, then create a new API Key in that project for the Segment Youtube plugin. You can read more about this process in the Youtube documentation on [registering an application](https://developers.google.com/youtube/registering_an_application).
+To begin, you'll need to generate an API Key for the Segment YouTube plugin, which it uses to access metadata about the video content being played. To do this, create a new project in the Google Developer Console, then create a new API Key in that project for the Segment YouTube plugin. You can read more about this process in the YouTube documentation on [registering an application](https://developers.google.com/youtube/registering_an_application).
 
 ## Getting Started
 
@@ -21,8 +21,8 @@ Enable a new plugin by navigating to the settings for your Source, and clicking 
 **Note: At this time, only Javascript sources support plugins.**
 
 ### 2. Initialize
-Initialize the plugin by giving it access to the YouTube video player instance(s) running on your page. Use the initialize method in the Youtube `onYouTubeIframeAPIReady()` function:
-<pre>
+Initialize the plugin by giving it access to the YouTube video player instance(s) running on your page. Use the initialize method in the YouTube `onYouTubeIframeAPIReady()` function:
+```js
 var player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
@@ -33,9 +33,9 @@ function onYouTubeIframeAPIReady() {
     <b>var ytAnalytics = new window.analyticsPlugins.YT(player, 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX0365')
     ytAnalytics.initialize()</b>
 }
-</pre>
+```
 
-That's it! The plugin listens to the Youtube player for events, and fires the corresponding [Segment Video Spec](https://segment.com/docs/connections/spec/video/) events on analytics.js.
+That's it! The plugin listens to the YouTube player for events, and fires the corresponding [Segment Video Spec](https://segment.com/docs/connections/spec/video/) events on Analytics.js.
 
 ## Supported Events
 The following [Segment Video Spec](https://segment.com/docs/connections/spec/video/) events are tracked by this plugin:

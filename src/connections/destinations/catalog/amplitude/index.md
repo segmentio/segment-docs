@@ -8,7 +8,7 @@ platform for your web and mobile apps. By analyzing the actions your users
 perform, you can gain a better understanding to drive retention, engagement,
 and conversion.
 
-Our Amplitude destination code is open sourced on Github. Feel free to check it
+Our Amplitude destination code is open sourced on GitHub. Feel free to check it
 out:
 [iOS](https://github.com/segment-integrations/analytics-ios-integration-amplitude),
 [Android](https://github.com/segment-integrations/analytics-android-integration-amplitude) and

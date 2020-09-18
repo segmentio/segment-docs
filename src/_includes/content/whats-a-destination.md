@@ -1,4 +1,4 @@
-Destinations are business tools or apps that you can connect to the data flowing through Segment. Some of our most popular destinations are Google Analytics, Mixpanel, KISSmetrics, Customer.io, Intercom, and KeenIO.
+Destinations are business tools or apps that you can connect to the data flowing through Segment. Some of our most popular destinations are Google Analytics, Mixpanel, Kissmetrics, Customer.io, Intercom, and KeenIO.
 
 All of these tools run on the same data: who are your customers and what are they doing? But each tool requires that you send that data in a slightly different format, which means that you'd have to write code to track all of this information, again and again, for each tool, on each page of your app or website.
 

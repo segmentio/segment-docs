@@ -2,7 +2,7 @@
 title: Countly Destination
 ---
 
-Our Countly destination code is open source on Github. Feel free to check it out: [iOS](https://github.com/segmentio/analytics-ios/tree/master/Analytics/Integrations/Countly), [Android](https://github.com/segmentio/analytics-android/tree/master/analytics-integrations/countly).
+Our Countly destination code is open source on GitHub. Feel free to check it out: [iOS](https://github.com/segmentio/analytics-ios/tree/master/Analytics/Integrations/Countly), [Android](https://github.com/segmentio/analytics-android/tree/master/analytics-integrations/countly).
 
 ## Getting Started
 

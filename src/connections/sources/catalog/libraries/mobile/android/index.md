@@ -6,7 +6,7 @@ title: Analytics for Android
 
 Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
-All of Segment's client sources are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/docs/connections/sources/catalog/) too.
+All of Segment's client sources are open-source, so you can [view Analytics for Android on GitHub](https://github.com/segmentio/analytics-android), or check out our [browser and server-side sources](/docs/connections/sources/catalog/) too.
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/segmentio/analytics-android/releases.atom).
 
@@ -309,7 +309,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -719,7 +719,7 @@ The library is published to [Maven Central](http://search.maven.org/#search%7Cga
 
 ### Where is the changelog for the library?
 
-We publish a changelog in the [Github repository](https://github.com/segmentio/analytics-android/blob/master/CHANGELOG.md), detailing the changes made in each release.
+We publish a changelog in the [GitHub repository](https://github.com/segmentio/analytics-android/blob/master/CHANGELOG.md), detailing the changes made in each release.
 
 ### Can I use the library with Maven?
 

@@ -3,7 +3,7 @@ title: Batch Destination
 beta: true
 ---
 
-The Batch.com integration code is open sourced on Github. Feel free to check it out: [iOS](https://github.com/BatchLabs/ios-segment-integration), [Android](https://github.com/BatchLabs/android-segment-integration).
+The Batch.com integration code is open sourced on GitHub. Feel free to check it out: [iOS](https://github.com/BatchLabs/ios-segment-integration), [Android](https://github.com/BatchLabs/android-segment-integration).
 
 ## Getting Started
 

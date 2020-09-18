@@ -99,7 +99,7 @@ When you send a `screen` event using the server-side destination or the iOS bund
 
 ### Sample App
 
-CleverTap has created a sample Android application that integrates CleverTap using Segment. Check it out at the [Github repo](https://github.com/CleverTap/clevertap-segment-android-example).
+CleverTap has created a sample Android application that integrates CleverTap using Segment. Check it out at the [GitHub repo](https://github.com/CleverTap/clevertap-segment-android-example).
 
 ## iOS
 
@@ -143,7 +143,7 @@ No further action is required to integrate in-app notifications, which are regis
 
 ### Sample App
 
-CleverTap has created a sample iOS application that integrates CleverTap using Segment. Check it out at the [Github repo](https://github.com/CleverTap/clevertap-segment-ios/tree/master/Example).
+CleverTap has created a sample iOS application that integrates CleverTap using Segment. Check it out at the [GitHub repo](https://github.com/CleverTap/clevertap-segment-ios/tree/master/Example).
 
 ## Server-Side
 

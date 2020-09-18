@@ -4,7 +4,7 @@ title: Analytics for Android Wear
 
 Analytics for Android Wear makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
 
-All of Segment's client libraries are open-source, so you can [view Analytics for Android on Github](https://github.com/segmentio/analytics-android), or check out our [browser and server-side libraries](/docs/connections/sources/catalog/) too.
+All of Segment's client libraries are open-source, so you can [view Analytics for Android on GitHub](https://github.com/segmentio/analytics-android), or check out our [browser and server-side libraries](/docs/connections/sources/catalog/) too.
 
 ## Getting Started
 
@@ -63,7 +63,7 @@ The `getAnalytics()` method is consulted for every call, so make sure you return
 
 ## Track
 
-The `track` method lets you record the actions your users perform, and record adiditonal properties the action.
+The `track` method lets you record the actions your users perform, and record additional properties the action.
 
 You'll want to track an event whenever the user clicks, taps or submits something in your app. You can read more about [how it works](/docs/connections/spec/track).
 

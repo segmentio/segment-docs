@@ -1,6 +1,0 @@
-faqitem
-endfaqitem
-faq
-endfaq
-http
-https

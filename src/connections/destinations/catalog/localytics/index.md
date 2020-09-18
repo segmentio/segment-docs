@@ -2,7 +2,7 @@
 title: Localytics Destination
 ---
 
-Our Localytics mobile destination code is open sourced on Github. Feel free to
+Our Localytics mobile destination code is open sourced on GitHub. Feel free to
 check it out:
 [iOS](https://github.com/segment-integrations/analytics-ios-integration-localytics),
 [Android](https://github.com/segment-integrations/analytics-android-integration-localytics).
