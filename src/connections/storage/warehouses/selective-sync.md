@@ -1,5 +1,5 @@
 ---
-title: Warehouse Selective sync
+title: Warehouse Selective Sync
 redirect_from: '/connections/warehouses/selective-sync/'
 ---
 
@@ -13,6 +13,9 @@ With Selective Sync, you can customize which collections and properties from a s
 This feature only affects [warehouses](/docs/connections/storage/warehouses/), and does not prevent data from going to any other [destinations](/docs/connections/destinations/).
 
 When you use Selective Sync to prevent data from syncing to a specific warehouse, Segment stops sending new data that meets the selection criteria to that warehouse, however it doesn't delete any existing data in the warehouses. If you use Selective Sync to re-enable a source after disabling it, Segment loads all data that arrived since the last sync into the warehouse, but doesn't backfill data that was omitted while the source was not syncing.
+
+> warning ""
+> Note: While all Segment data syncs to your warehouse, for each warehouse only the first 5,000 collections per source and 5,000 properties per collection are visible in the Selective Sync user interface. Learn more about the limits [here](#selective-sync-user-interface-limitations).
 
 
 ## When to use Selective Sync
@@ -42,6 +45,14 @@ To manage data from one specific source to an individual warehouse, go to the Wa
 
 
 All changes made through Selective Sync only impact an individual warehouse - they do **not** propagate to multiple warehouses at once. To make changes to multiple warehouses, you need to enable/disable data for each individual warehouse.
+
+### Selective Sync User Interface Limits
+
+While you can track unlimited uniquely named events with Segment, only the first 5,000 collections per source and 5,000 properties per collection can be managed using the Selective Sync user interface. After you hit any of these limits, all future data will still be tracked and sent to your warehouse. New collections created after hitting this limit will not be displayed in the Selective Sync table.
+
+You will see a warning in the Selective Sync user interface when the warehouse schema has reached 80% of the limit for collections and/or properties. An error message will appear when you've reached the limit.
+
+Contact [Support](https://app.segment.com/help/contact/) to edit Selective Sync settings for any collections and/or properties which exceed the limit.
 
 > warning ""
 > Note: Only Workspace Owners can change Selective Sync settings.
