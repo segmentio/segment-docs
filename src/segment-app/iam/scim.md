@@ -98,12 +98,13 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
 
    ![](images/scim_assignments.png)
 
-6. Once you assign your users, push the assigned Okta groups to Segment. 
-7. Next, go to the Segment app and assign permissions to these groups. 
+6. Once you assign your users, push the assigned Okta groups to Segment.
+
+   ![](images/scim_group_push.png)
+
+7. Next, go to the Segment app and assign permissions to these groups.
 
 > success ""
 > **Tip**: You can also link Okta groups to an existing group from in the Segment app using the Okta UI.
 
-   ![](images/scim_group_push.png)
-
-   ![](images/scim_edit_groups.png)
+![](images/scim_edit_groups.png)
