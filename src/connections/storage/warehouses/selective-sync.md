@@ -48,7 +48,7 @@ All changes made through Selective Sync only impact an individual warehouse - th
 
 ### Selective Sync User Interface Limits
 
-For each warehouse only the first 5,000 collections per source and 5,000 properties per collection can be managed using the Selective Sync user interface. After you hit any of these limits, all future data will still be tracked and sent to your warehouse. New collections created after hitting this limit will not be displayed in the Selective Sync table.
+Regardless of schema size, for each warehouse only the first 5,000 collections per source and 5,000 properties per collection can be managed using the Selective Sync user interface. After you hit any of these limits, all future data will still be tracked and sent to your warehouse. New collections created after hitting this limit will not be displayed in the Selective Sync table.
 
 You will see a warning in the Selective Sync user interface when the warehouse schema has reached 80% of the limit for collections and/or properties. An error message will appear when you've reached the limit.
 
