@@ -94,15 +94,13 @@ For example, you might map `{firstName} {lastName}` from your IdP to `displayNam
    ![](images/okta_provisioning.png)
 
 4. Next, select **To App** in the left sidebar of the **Provisioning** tab. Click **Edit** and select both **Create Users** and **Deactivate Users**. Click **Save**.
+5. Click the Assignments tab. You can now assign people or groups. Before you continue, read through the [features](#features) section in this doc to make sure you understand how groups work.
 
-   ![](images/scim_delete_attributes.png)
+Segment recommends that you assign users to the Segment app by Okta group. This allows you to manage which groups in your organization can authenticate to Segment. You can also assign users individually.
 
-5. Click the assignment tab. You can now assign people or groups. Before you continue, read through the [features](#features) section in this doc to make sure you understand how groups work.
-6. Segment recommends that you assign users to the Segment app by Okta group. This allows you to manage which groups in your organization can authenticate to Segment. You can also assign users individually.
+![](images/scim_assignments.png)
 
-   ![](images/scim_assignments.png)
-
-7. Once you assign your users, push the assigned Okta groups to Segment. Then, go to the Segment app to assign permissions to these groups. You can also link Okta groups to an existing group from in the Segment app using the Okta UI.
+6. Once you assign your users, push the assigned Okta groups to Segment. Then, go to the Segment app to assign permissions to these groups. You can also link Okta groups to an existing group from in the Segment app using the Okta UI.
 
    ![](images/scim_group_push.png)
 
