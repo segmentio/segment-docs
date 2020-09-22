@@ -12,8 +12,6 @@ With Selective Sync, you can customize which collections and properties from a s
 
 This feature affects [warehouses](/docs/connections/storage/warehouses/), and does not prevent data from going to any other [destinations](/docs/connections/destinations/).
 
-When you use Selective Sync to prevent data from syncing to a specific warehouse, Segment stops sending new data that meets the selection criteria to that warehouse, however it doesn't delete any existing data in the warehouses. If you use Selective Sync to re-enable a source after disabling it, Segment loads all data that arrived since the last sync into the warehouse, but doesn't backfill data that was omitted while the source was not syncing.
-
 > warning ""
 > Note: For each warehouse only the first 5,000 collections per source and 5,000 properties per collection are visible in the Selective Sync user interface. Learn more about the limits [here](#selective-sync-user-interface-limits).
 
