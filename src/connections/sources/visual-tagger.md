@@ -210,6 +210,17 @@ Squarespace uses this technique, and you can examine the HTML of your site to se
 
 Visual Tagger also does not support embedded elements, such as a YouTube video player or a Hubspot form.
 
+### What do I do if my website does not behave correctly inside the VT iframe?
+
+When you load your website in the Visual tagger iframe, you might see unexpected or incorrect behavior. This is because browsers load websites differently inside an `iframe` than in a regular browser window. 
+For example, Google Chrome blocks certain types of cookies when a page is loaded inside an iframe, and this can cause problems with authentication or other functions. 
+
+Click the **Open in Popup** button (above the top right corner of the iframed website) if you experience unexpected behavior when you load your website in the VT iframe, including issues with the login or authentication, or errors with form submissions. This opens the website in a new browser window (outside of an iframe) which is connected to the Visual Tagger. 
+
+> success ""
+> **Tip!**: You might want to change the width of both the Visual tagger window and your website window so you can view them side by side for easier tagging.
+
+
 ### How can I make my website ideal for Visual Tagger?
 
 The most stable way for Visual tagger to identify elements is if each one has a unique ID that persists even if the page is reorganized.
