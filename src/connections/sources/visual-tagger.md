@@ -212,7 +212,14 @@ Visual Tagger also does not support embedded elements, such as a YouTube video p
 
 ### What do I do if my website does not behave correctly inside the VT iframe?
 
-The behaviour of a website can be different inside an `iframe` compared to a regular browser window. Specially, Google Chrome blocks certain types of cookies inside an iframe, which can lead to authentication issues inside an iframe. If you see any unexpected behaviour when loading your website inside the VT iframe, including issues with the login flow, or errors during the form submission, you should use the "Open in Popup" button located above the top right-hand corner of the iframed website. This will open the website in a new browser window, and still allow you to tag elements using the Visual Tagger. 
+When you load your website in the Visual tagger iframe, you might see unexpected or incorrect behavior. This is because browsers load websites differently inside an `iframe` than in a regular browser window. 
+For example, Google Chrome blocks certain types of cookies when a page is loaded inside an iframe, and this can cause problems with authentication or other functions. 
+
+Click the **Open in Popup** button (above the top right corner of the iframed website) if you experience unexpected behavior when you load your website in the VT iframe, including issues with the login or authentication, or errors with form submissions. This opens the website in a new browser window (outside of an iframe) which is connected to the Visual Tagger. 
+
+> success ""
+> **Tip!**: You might want to change the width of both the Visual tagger window and your website window so you can view them side by side for easier tagging.
+
 
 ### How can I make my website ideal for Visual Tagger?
 
