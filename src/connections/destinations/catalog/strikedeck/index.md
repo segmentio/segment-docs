@@ -52,6 +52,19 @@ analytics.identify('userId123', {
 Identify calls will be sent to Strikedeck as an `identify` event.
 
 
+## Group
+
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+
+```
+analytics.group( {
+  groupId: 'abc123'
+});
+```
+
+Group calls will be sent to Strikedeck as a `group` event.
+
+
 ## Track
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
