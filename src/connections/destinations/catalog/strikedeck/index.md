@@ -20,7 +20,7 @@ Strikedeck maintains this documentation. For any issues with the destination, th
 
 ## Page
 
-For more information about the Page method, see the [Segment Specs - Page](https://segment.com/docs/connections/spec/page/) documentation.
+For more information about the Page method, see the [Segment Specs - Page](/docs/connections/spec/page/) documentation.
 
 An example Page call looks like:
 
@@ -32,7 +32,7 @@ Segment sends Page calls to Strikedeck as a `pageview`.
 
 
 ## Screen
-For more information about the Screen method, see the [Segment Specs - Screen](https://segment.com/docs/connections/spec/screen/) documentation.
+For more information about the Screen method, see the [Segment Specs - Screen](/docs/connections/spec/screen/) documentation.
 
 An example Screen call looks like:
 
@@ -44,7 +44,7 @@ Segment sends Screen calls to Strikedeck as a `screenview`.
 
 
 ## Identify
-For more information about the Screen method, see the [Segment Specs - Screen](https://segment.com/docs/connections/spec/identify/) documentation.
+For more information about the Screen method, see the [Segment Specs - Screen](/docs/connections/spec/identify/) documentation.
 
 An example Identify call looks like:
 
@@ -59,7 +59,7 @@ Segment sends Identify to Strikedeck as an `identify` event.
 
 ## Group
 
-For more information about the Screen method, see the [Segment Specs - Screen](https://segment.com/docs/connections/spec/group/) documentation.
+For more information about the Screen method, see the [Segment Specs - Screen](/docs/connections/spec/group/) documentation.
 
 An example Group call looks like:
 
@@ -74,7 +74,7 @@ Segment sends Group to Strikedeck as a `group` event.
 
 ## Track
 
-For more information about the Screen method, see the [Segment Specs - Screen](https://segment.com/docs/connections/spec/track/) documentation.
+For more information about the Screen method, see the [Segment Specs - Screen](/docs/connections/spec/track/) documentation.
 
 An example Track call looks like:
 
