@@ -274,11 +274,11 @@ sections:
       title: Detect PII
     - path: /privacy/data-controls
       title: Data Controls and Alerts
-  - section_title: GDPR & CCPA
-    slug: protocols/preparing-for-the-gdpr
+  - section_title: GDPR
+    slug: protocols/complying-with-the-gdpr
     expanded: true
     section:
-    - path: /privacy/preparing-for-the-gdpr
+    - path: /privacy/complying-with-the-gdpr
       title: Complying with GDPR
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
