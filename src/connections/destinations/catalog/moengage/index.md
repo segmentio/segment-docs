@@ -8,12 +8,12 @@ Once you add the Segment-Moengage library to your app, you can enable MoEngage f
 
 The Segment-MoEngage Integration is a bundled integration, meaning it requires that you add a client-side integration to your app.
 
-## Setup MoEngage in Segment Dashboard:
+## Setup MoEngage in your Segment Workspace:
 
 To setup MoEngage do the following : 
   1. First get your key([AppID](http://app.moengage.com/v3/#/settings/0/0)) from MoEngage dashboard. 
-  2. Go to **Segment dashboard**, go to **Integrations** and select **MoEngage**. 
-  3. Enable MoEngage Integration.
+  2. Go to your **Segment workspace**, go to **Destinations** and select **MoEngage**. 
+  3. Enable MoEngage Destination.
   4. Go to MoEngage Settings and enter the MoEngage AppID, obtained in **Step1**.
   5. Save the changes.
   6. Make sure the `Connection Mode` is set to `Device Mode`. This is required in order to make use
@@ -66,30 +66,35 @@ User attributes are specific traits of a user, like email, username, mobile, gen
 
  ```[[SEGAnalytics sharedAnalytics] identify:@"a user's id" traits:@{ @"email": @"a user's email address" }];```
 
-For more info refer to this [link](https://segment.com/docs/sources/mobile/ios/#identify).
+Read more about [identify calls](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#identify).
+
 
 ### Tracking Events
 
-Event tracking is used to track user behaviour in an app. **track** lets you record the actions your users perform. Every action triggers i.e,“event”, which can also have associated attributes.
+Event tracking is used to track user behavior in an app. `track` calls let you record the actions your users perform. Every action triggers an "event", which can also have associated attributes.
 
  ```[[SEGAnalytics sharedAnalytics] track:@"Item Purchased" properties:@{ @"item": @"Sword of Heracles"}];```
 
-That's all you need for tracking data. For more info refer this [link](https://segment.com/docs/sources/mobile/ios/#track).
+Read more about [track calls](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#track).
+
 
 ### Reset Users
 
-The *reset* method clears the SDK’s internal stores for the current user. This is useful for apps where users can log in and out with different identities over time.
+The `reset` method clears the SDK's internal stores for the current user. This is useful for apps where users can log in and out with different identities over time.
 
- ```[[SEGAnalytics sharedAnalytics] reset];```
+ ```ruby
+ [[SEGAnalytics sharedAnalytics] reset];
+ ```
 
-For more info refer to this [link](https://segment.com/docs/sources/mobile/ios/#reset).
+Read more about the [reset method](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#reset).
+
 
 ### Install / Update Differentiation 
 
-Since you might integrate us when your app is already on the App Store, we would need to know whether your app update would be an actual UPDATE or an INSTALL.
+Since your app might already be on the App Store, you must specify whether your app update would be an `UPDATE` or an `INSTALL`.
 To differentiate between those, use one of the method below:
 
- ```
+ ```ruby
  //For new Install call following
  [[MoEngage sharedInstance]appStatus:INSTALL];
 
@@ -97,18 +102,18 @@ To differentiate between those, use one of the method below:
  [[MoEngage sharedInstance]appStatus:UPDATE];
  ```
 
-For more info on this refer following [link](https://docs.moengage.com/docs/installupdate-differentiation).
+Read more on [install/update differentiation](https://docs.moengage.com/docs/installupdate-differentiation).
 
 ### Data Redirection
 
-We support data redirection to our EU servers in our SDK. This can be done by calling `redirectDataToRegion:` method to redirect the data to `MOE_REGION_EU` region defined in DataRedirectionRegion Enumerator. Use the method as shown below:
+Data redirection to MoEngage's EU servers is supported. This can be done by calling the `redirectDataToRegion:` method to redirect the data to the `MOE_REGION_EU` region defined in the 'DataRedirectionRegion' Enumerator. Use the method as shown below:
 
-```
+```ruby
  [MoEngage redirectDataToRegion:MOE_REGION_EU];
 ```
 
 **IMPORTANT** :
-To sign up to our EU environment go to the following [URL](https://app-eu.moengage.com).
+If you will be using MoEngage in the EU, you must [sign up for the EU environment](https://app-eu.moengage.com).
 
 ### Using features provided in MoEngage SDK
 
@@ -119,11 +124,13 @@ Push Notifications are a great way to keep your users engaged and informed about
 
 **Segment Push Implementation:**
 
-1.Follow the directions to register for push using Segment SDK in this [link](https://segment.com/docs/libraries/ios/#how-do-i-use-push-notifications-).
+1. Follow the directions to register for push notifications [using Segment's SDK](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-use-push-notifications)..
 
 2.In your application’s application:didReceiveRemoteNotification: method, add the following:
 
- ```[[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];```
+ ```ruby
+ [[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];
+ ```
 
 3.If you integrated the application:didReceiveRemoteNotification:fetchCompletionHandler: in your app, add the following to that method:
  
@@ -153,6 +160,7 @@ For more info on using **Segment for iOS** refer to [**Developer Docs**](https:/
 
 ## Android
 
+To use MoEngage in an Android app, you must perform the following steps to set up your environment.
 ![Downlaod](https://api.bintray.com/packages/moengage/android-sdk/moengage-segment-integration/images/download.svg)
 
 
@@ -211,16 +219,16 @@ MoEngage.initialise(moEngage);
 ```
 
 #### Install/Update Differentiation
-This is solely required for migration to the MoEngage Platform. We need your help to tell the SDK whether the user is
- a new user for your application, or an existing user who has updated to the latest version.
+This is only required for migrations to MoEngage Platform so the SDK can determine whether the user is a new user on your app, or an existing user who updated to the latest version.
 
-If the user was already using your application and has just updated to a new version which has MoEngage SDK it is an updated call the below API
+If the user was already using your application and has just updated to a new version which has MoEngage SDK, below is an example call:
 
 ```java
 MoEHelper.getInstance(getApplicationContext()).setAppStatus(AppStatus.UPDATE);
 ```
 
-In case it is a fresh install call the below API
+In case it is a fresh install:
+
 
 ```java
 MoEHelper.getInstance(getApplicationContext()).setAppStatus(AppStatus.INSTALL);
@@ -232,7 +240,8 @@ Copy the Server Key from the FCM console and add it to the MoEngage Dashboard(No
 
 ##### Adding meta information for push notification.
 
-Along with the App Id and the notification small icon and large icon to the builder.
+Add the AppId, and the small and large notification icons to the builder:
+
 
 ```java
 MoEngage moEngage =
@@ -244,7 +253,7 @@ MoEngage moEngage =
 MoEngage.initialise(moEngage);
 ```
 
-For showing Push notifications there are 2 important things 
+For showing Push notifications there are 2 important steps: 
 
 1. Registration for Push, i.e. generating push token.
 2. Receiving the Push payload from Firebase Cloud Messaging(FCM) service and showing the notification on the device. 
@@ -253,7 +262,7 @@ For showing Push notifications there are 2 important things
 
 By default, MoEngage SDK attempts to register for push token, since your application is handling push you need to opt-out of SDK's token registration.
 
-###### How to opt-out of MoEngage Registration?
+###### Opting out of MoEngage Registration
 
 To opt-out of MoEngage's token registration mechanism call in the `optOutTokenRegistration()` on the `MoEngage.Builder` as shown below
 
@@ -302,11 +311,9 @@ When MoEngage SDK handles push registration it optionally provides a callback to
 Application can get this callback by implementing `FirebaseEventListener` and registering for a callback in the Application class' `onCreate()` using `MoEFireBaseHelper.Companion.getInstance().setEventListener()` 
 
 
-##### 4. Configure Geo-fence
+##### Configure Geo-fence
 
-By default, SDK does not track location neither geo-fence campaigns work by default.
-To track location and run geo-fence campaigns you need to opt-in for location service in the MoEngage initializer.
-To initialize call the below opt-in API.
+By default, the MoEngage SDK does not track location, and geo-fence campaigns do not work. To track location and run geo-fence campaigns you need to opt-in for location services in the MoEngage initializer. To initialize, call the opt-in API below:
 
 ```java
     MoEngage moEngage =
