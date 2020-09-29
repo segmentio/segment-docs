@@ -3,45 +3,39 @@ title: Inkit Destination
 rewrite: true
 ---
 
-## Inkit Destination
+[Inkit](https://inkit.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) connects to hundreds of printers with complete visibility. Instantly use global print infrastructure with Inkit's developer friendly APIs, dashboards, and reporting. Connect, track, and manage critical business communications faster than ever before.
 
+The Inkit Destination is in beta, which indicates ongoing development. To join the Inkit beta program, or if you have any feedback to help improve the Inkit Destination and its documentation, [contact the Inkit support team](mailto:support@inkit.com).
 
-
-[Inkit](https://inkit.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) connects to hundreds of printers with complete visibility. Instantly leverage global print infrastructure with Inkit's developer friendly APIs, dashboards, and reporting. Connect, track, and manage critical business communications faster than ever before.
-
-This destination is maintained by Inkit!
-For any issues with the destination, [contact the Inkit support team](mailto:support@inkit.com).
-
-> The Inkit Destination is currently in beta, which means that it is still actively being developed. To join the Inkit beta program, or if you have any feedback to help improve the Inkit Destination and its documentation, [contact the Inkit support team](mailto:support@inkit.com)!
+> note ""
+> Inkit maintains this destination. For any issues with the destination, [contact the Inkit support team](mailto:support@inkit.com).
 
 
 ## Getting Started
 
-Adding Destination
+Add the destination:
 
-1. From the Destinations catalog page in the Segment App, click **Add Destination**.
+1. From the Destinations catalog page in your Segment workspace, click **Add Destination**.
 2. Search for "INKIT" in the Destinations Catalog, and select the "INKIT" destination.
 3. Choose which Source should send data to the "INKIT" destination.
 
-API KEY
+Get the Inkit API Key:
 
 1. Go to the [INKIT Integrations](https://app.inkit.io/#/account/integrations), find and copy the "API key".
 2. Enter the "API Key" in the "INKIT" destination settings in Segment.
 
-TEMPLATE ID
+To use a Template ID:
 
-1. From the Destinations catalog page in the Segment App, click **Add Destination**.
+1. From the Destinations catalog page in your Segment workspace, click **Add Destination**.
 2. Search for "INKIT" in the Destinations Catalog, and select the "INKIT" destination.
 3. Choose which Source should send data to the "INKIT" destination.
 4. Go to the [INKIT Templates](https://app.inkit.io/#/templates), find the desired template.
-5. Select the three dots on the far right side and select "Copy Id"
-6. Paste the id into the "template_id" field when setting up the destination
+5. Click the three dots on the far right side and select "Copy Id".
+6. Paste the id into the "template_id" field when setting up the destination.
 
->For additional assistance see INKIT [documentation](https://docs.inkit.com/docs/inkit-postcards-api) for getting keys and ID's
+For more information, see INKIT [documentation](https://docs.inkit.com/docs/inkit-postcards-api).
 
 ## Expected Data
-
-
 
 | Field | Type | Description |
 | -------- | -------- | -------- |
@@ -61,10 +55,11 @@ TEMPLATE ID
 
 ## Identify
 
-If you aren't familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call with Inkit would look like:
+If you aren't familiar with the Segment Spec, see the [Identify method documentation](/docs/connections/spec/identify/) to learn about what it does. An example call with Inkit would look like:
 
 
->All address elements should be satisified within the segment's user identity
+> note""
+> All address elements should be satisified within the segment's user identity
 (exception of address_line_2 which is a custom entry)
 
 Expected Requirements
@@ -112,8 +107,6 @@ analytics.identify('userId123', {
 });
 ```
 
->All additional fields are then added to the user's profile as custom fields within Inkit's dashboard.
->
-
+All other fields are then added to the user's profile as custom fields within Inkit's dashboard.
 
 Segment sends Identify calls to INKIT as an `identify` event.
