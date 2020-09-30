@@ -3,6 +3,9 @@ title: Identity Resolution Settings
 redirect_from: '/personas/identity-resolution/identity-graph-rules/'
 ---
 
+> note ""
+> **NOTE:** This setup guide is intended for spaces created before September 27th, 2020. For spaces created after September 27th, 2020, please refer to the onboarding guide [here](/docs/personas/identity-resolution/identity-onboarding/).
+
 ## Setting Up Identity Graph Rules
 Before connecting a source to a Personas space, we recommend first reviewing our default Identity settings and configuring custom rules as needed. Updates to configurations will only be applied to all new data flowing through the space after the changes have been saved. Thus, if this is your first time setting up your Identity Graph, we recommend getting started with a *Dev* space [here](/docs/personas/identity-resolution/personas-space-set-up/).
 

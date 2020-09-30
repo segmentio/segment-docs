@@ -1,6 +1,10 @@
 ---
 title: Identity Resolution ExternalIDs
 ---
+
+> note ""
+> **NOTE:** This setup guide is intended for spaces created before September 27th, 2020. For spaces created after September 27th, 2020, please refer to the onboarding guide [here](/docs/personas/identity-resolution/identity-onboarding/).
+
 ## Default ExternalIDs
 
 The Identity Graph creates or merges profiles based on externalIDs. ExternalIDs will become the Identities attached to a User Profile in the User Explorer:
