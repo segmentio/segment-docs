@@ -1,83 +1,95 @@
 ---
 title: Identity Resolution Onboarding
 ---
+<!-- COMMENTS HERE 
+1. Double-check to make sure code `style` is used correctly? Is it fields or values that get it?
+2. A heading says Select Identity Resolution settings, but this is not described in that section.
+3. "Merge Protection Rules" are mentioned as referenceable below, but not found in the doc.
+4. For Limits, we might want to mention in the examples that a time period is included with a numeric value.
+-->
 
 > note ""
-> **NOTE:** This setup guide is intended for spaces created after October 5th, 2020. For spaces created before October 5th, 2020, please refer to the onboarding guide [here](/docs/personas/identity-resolution/identity-resolution-settings).
+> **NOTE:** The steps in this guide pertain to spaces created after **October 5th, 2020**. For spaces created before **October 5th, 2020**, please refer to[Identity Resolution Settings](/docs/personas/identity-resolution/identity-resolution-settings).
 
-# Choosing Identity Resolution Settings
+## Select Identity Resolution settings
+
 > note ""
-> **NOTE:** Identity Resolution Settings can only be edited by workspace owners, Personas admins and users with the Identity Admin role.
+> **NOTE:** Workspace owners, Personas administrators, and users with the Identty Admin role can edit Identity Resolution Settings.
 
-Segment creates and merges user profiles based the Identity Resolution configuration of a space. We look for identifiers such as userId, anonymousId and email on incoming events and match them to existing profiles or create new ones. These identifiers will be displayed in the Identities tab of a User Profile in the User Explorer:
+Segment creates and merges user profiles based a space's Identity Resolution configuration. Segment searches for identifiers such as `userId`, `anonymousId` and `email` on incoming events and matches them to existing profiles or creates new profiles. These identifiers display in the Identities tab of a User Profile in the User Explorer:
 
 ![](images/jane_doe_new_identities.png)
 
-## Flat Matching Logic
-When a new event flows into Personas, we look for any profiles that match any of the identifiers on the event.
+### Flat matching logic
 
-There are three cases that can occur:
+When Personas receives a new event, Segment looks for any profiles that match any of the identifiers on the event.
 
-**Case One: Create New Profile**
-When there are no pre-existing profiles that have matching identifiers to the event, we create a new user profile.
+Based on the existance of a match, one of three actions can occur:
 
-**Case Two: Add Event to Existing Profile**
-When there is only one profile that matches all identifiers in an event, we attempt to map the traits, identifiers and events on the call to that existing profile. If there is an excess of any identifier on the final profile, we defer to our merge protection rules outlined below.
+**1: Create a new profile**
+When there are no pre-existing profiles that have matching identifiers to the event, Segment create a new user profile.
 
-**Case Three: Merge Existing Profiles**
-When there are multiple profiles that match the identifiers in an event, we attempt to merge profiles and first check our merge protection rules as outlined below.
+**2: Add to existing profile**
+When there is one profile that matches all identifiers in an event, Segment attempta to map the traits, identifiers and events on the call to that existing profile. If there is an excess of any identifier on the final profile, Segment defers to the merge protection rules outlined below.
 
-# Identity Resolution Settings
-Identity Admins are directed to first configure Identity Resolution Settings page to protect the identity graph from inaccurate merges and user profiles.
+**3: Merge existing profiles**
+When there are multiple profiles that match the identifiers in an event, Segment checks the merge protection rules outlined below, and attemts to merge profiles.
 
-When creating a space, the first step is to choose an Identity Resolution configuration. If this is your first space, you will be given the option of choosing an Segment-suggested Out-of-the-Box configuration or choosing a custom identity resolution setup. All subsequent spaces will given the third option of importing settings from a different space.
+## Identity Resolution settings
+
+Identity Admins should first configure Identity Resolution Settings page to protect the identity graph from inaccurate merges and user profiles.
+
+During the space creation process, the first step is to choose an Identity Resolution configuration. If this is your first space, you have the option to choose a Segment-suggested Out-of-the-Box configuration or a custom Identity Resolution setup. All subsequent spaces have a third option of importing settings from a different space.
 
 ![](images/first_screen.png)
 
-## Out-of-the-Box
-For most first-time Personas users, we recommend using the out-of-the-box configuration and answering a simple series of questions for a best-fit setup for your use-case.
+### Out-of-the-Box
+
+For most first-time Personas users, Segment recommends that you use the out-of-the-box configuration and answer a short series of questions for a best-fit setup for your use-case.
 
 ![](images/out_of_the_box_1.png)
 
 ![](images/out_of_the_box.png)
 
-Customers who have custom unique identifiers or do not have a canonical user_id will be automatically redirected to our Identity Resolution Settings page to complete their setup.
+If you have custom unique identifiers or do not have a canonical `user_id` are automatically redirected to the Identity Resolution Settings page to complete your setup.
 
-## Custom Rules
-For customers who are familiar with identity or have custom identifiers, we recommend this option.
+### Custom rules
+
+If you are familiar with identity or have custom identifiers, Segment recommends that you select Custom Rules.
 
 ![](images/custom_rules_1.png)
 
-Customers will be redirected to our Identity Resolutions Settings page where they can add default or custom identifiers.
+Segment redirects youto the Identity Resolutions Settings page where you can add default or custom identifiers.
 
 ![](images/add_identifiers.png)
 
-Segment's default 11 identifiers are listed below.
+Find Segment's default 11 identifiers below.
 
-| External ID Type   | Message Location in Track or Identify Call                                                                    |
-| ------------------ | ------------------------------------------------------------------------------------------------------------- |
-| user_id            | userId                                                                                                        |
-| email              | traits.email or context.traits.email                                                                          |
-| android.id         | context.device.id when context.device.type = 'android'                                                        |
-| android.idfa       | context.device.advertisingId when context.device.type = 'android' AND context.device.adTrackingEnabled = true |
-| android.push_token | context.device.token when context.device.type = 'android'                                                     |
-| anonymous_id       | anonymousId                                                                                                   |
-| ga_client_id       | context.integrations['Google Analytics'].clientId when explicitly captured by users                           |
-| group_id           | groupId                                                                                                       |
-| ios.id             | context.device.id when context.device.type = 'ios'                                                            |
-| ios.idfa           | context.device.advertisingId when context.device.type = 'ios' AND context.device.adTrackingEnabled = true     |
-| ios.push_token     | context.device.token when context.device.type = 'ios'                                                         |
+| External ID Type     | Message Location in Track or Identify Call                                                                    |
+| -------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `user_id`            | userId                                                                                                        |
+| `email`              | traits.email or context.traits.email                                                                          |
+| `android.id `        | context.device.id when context.device.type = 'android'                                                        |
+| `android.idfa`       | context.device.advertisingId when context.device.type = 'android' AND context.device.adTrackingEnabled = true |
+| `android.push_token` | context.device.token when context.device.type = 'android'                                                     |
+| `anonymous_id`       | anonymousId                                                                                                   |
+| `ga_client_id`       | context.integrations['Google Analytics'].clientId when explicitly captured by users                           |
+| `group_id `          | groupId                                                                                                       |
+| `ios.id `            | context.device.id when context.device.type = 'ios'                                                            |
+| `ios.idfa`           | context.device.advertisingId when context.device.type = 'ios' AND context.device.adTrackingEnabled = true     |
+| `ios.push_token`     | context.device.token when context.device.type = 'ios'                                                         |
 
-Customers can also add custom identifiers by providing the trait or property key to match on. Customers can preview the locations where Segment will look for the identifier. Segment will accept both camelCase and snake_case for context.traits, traits and properties, but will only accept lowercase types for identifiers in the context.externalIds object.
+You can also provide a trait or property key to match on to add custom identifiers. You can preview the locations where Segment looks for the identifier. Segment accepts both camelCase and snake_case for context.traits, traits and properties, but accepts lowercase types for identifiers only in the context.externalIds object.
 
 ![](images/custom_identifiers.png)
 
-### Blocked Values
-We recommend proactively blocking certain values from ever been used as identifiers. While these values will remain in the payload on the event itself, it will not be promoted to as an identifier Segment uses to determine user profiles.
+#### Blocked values
 
-This is extremely important when developers have a hard-coded value for fields like user_id during QA or development that then erroneously makes it production. This can cause hundreds of profiles to merge incorrectly and can have costly consequences when these spaces are already feeding data into a production email marketing tool or push notification tool downstream.
+Segment recommends that you proactively prevent using certain values as identifiers. While these values remain in the payload on the event itself, it os not promoted to as an identifier Segment uses to determine user profiles.
 
-In the past, we've seen certain default values across many different customers cause mass amounts of profiles to merge incorrectly. Segment suggests that for every identifier, customers opt into automatically blocking the following suggested values:
+This is important when developers have a hard-coded value for fields like `user_id` during QA or development that then erroneously make it production. This may cause hundreds of profiles to merge incorrectly and can have costly consequences if these spaces already feed data into a production email marketing tool or push notification tool downstream.
+
+In the past, Segment has seen certain default values that cause large amounts of profiles to merge incorrectly. Segment suggests that for every identifier, customers opt into automatically blocking the following suggested values:
 
 | Value                         | Type            |
 | ----------------------------- | --------------- |
@@ -88,9 +100,9 @@ In the past, we've seen certain default values across many different customers c
 
 ![](images/blocked-values.png)
 
-Before sending data through, we also recommend adding any default hard-coded values that your team uses during the development process, such as `void` or `abc123`.
+Before sending data through, Segment also recommends that you add any default hard-coded values that your team uses during the development process, such as `void` or `abc123`.
 
-### Limit
+#### Limit
 
 Identity Admins can specify the total number of values allowed per identifier type on a profile during a certain period. This will vary depending on how companies define a user today. In most cases, companies rely on `user_id` to distinguish user profiles and Segment defaults to the following configurations:
 
@@ -101,7 +113,7 @@ Identity Admins can specify the total number of values allowed per identifier ty
 
 ![](images/user-id.png)
 
-There are specific cases that will deviate from this default. For example, a case where a user can have more than one user_id but only one email, like when a user is defined by both their shopify_id and an internal UUID. In this case, an example set up may be:
+Specific cases may deviate from this default. For example, a case where a user can have more than one `user_id` but one email, like when `shopify_id` and an internal UUID define a user. In this case, an example configuration may be:
 
 | Identifier            | Limit |
 | --------------------- | ----- |
@@ -109,19 +121,19 @@ There are specific cases that will deviate from this default. For example, a cas
 | user_id               | 2     |
 | all other identifiers | 5     |
 
-When choosing the limit on your identifier, ask the following questions about each of the identifiers you will send through to Segment:
+When you choose the limit on an identifier, ask the following questions about each of the identifiers you send to Segment:
 
-1. Is it an immutable ID? An immutable ID, such as user_id, should only have `1 ever` per user profile.
-2. Is it a constantly changing ID? A constantly changing ID, such as anonymous_id or ga_client_id, should be given a short sliding window, such as `5 weekly` or `5 monthly`, depending on how often your application automatically logs out the user.
-3. Is it an ID that can be updated on a yearly basis? Most customers will have around 5 emails or devices at any one time, but can update these over time. For identifiers like email, android.id or ios.id, we might recommend using something like `5 annually`.
+1. Is it an immutable ID? An immutable ID, such as `user_id`, should have `1 ever` per user profile.
+2. Is it a constantly changing ID? A constantly changing ID, such as `anonymous_id` or `ga_client_id`, should have a short sliding window, such as `5 weekly` or `5 monthly`, depending on how often your application automatically logs out the user.
+3. Is it an ID that updates on a yearly basis? Most customers will have around 5 emails or devices at any one time, but can update these over time. For identifiers like `email`, `android.id` or `ios.id`, Segment recommends a longer limit like `5 annually`.
 
 ![](images/anonymous-id.png)
 
-### Priority
+#### Priority
 
-The priority of an identifier is taken into consideration once we exceed the limit of any identifier on the final profile.
+Segment considers the priority of an identifier once the limit of any identifier on the final profile is exceeded.
 
-Let's take as an example a Personas space with the following Identity Resolution configurations:
+For example, consider a Personas space with the following Identity Resolution configurations:
 
 | Identifier   | Limit | Priority |
 | ------------ | ----- | -------- |
@@ -129,11 +141,11 @@ Let's take as an example a Personas space with the following Identity Resolution
 | email        | 5     | 2        |
 | anonymous_id | 5     | 3        |
 
-A profile already exists with user_id `abc123` and email `jane@example1.com`. A new event comes in with new user_id `abc456` but the same email `jane@example1.com`. If we mapped this event to this profile, the resulting profile would then contain two user_ids and one email. Given that user_id has a limit of 1, we've now exceeded the limit of an identifier so check the priority of these identifiers. Because email and user_id are the only two identifiers on the event and email is ranked lower than user_id, we demote email as an identifier on the incoming event and try again.
+A profile already exists with user_id `abc123` and email `jane@example1.com`. A new event comes in with new user_id `abc456` but the same email `jane@example1.com`. If this event maps to this profile, the resulting profile would then contain two user_ids and one email. Given that user_id has a limit of 1, this exceeds the limit of an identifier. As a result, the priority of these identifiers is checked. Because email and user_id are the two identifiers on the event and email ranks lower than user_id, Segment demotes email as an identifier on the incoming event and tries again.
 
-At this point, the event searches for any profiles that match just the identifier user_id `abc456`. Now there are no existing profiles with this identifier, so a new profile is created with user_id `abc456`.
+At this point, the event searches for any profiles that match just the identifier user_id `abc456`. Now there are no existing profiles with this identifier, so Segment creates a new profile is created with user_id `abc456`.
 
-By default, we explicitly order user_id and email as rank `1` and `2`, respectively. All other identifiers are in alphabetical order beginning from rank `3`. This means that if the only identifiers ever sent in on events flowing into personas are user_id, email, anonymous_id and ga_client_id, the rank would be as follows:
+By default, Segment explicitly orders user_id and email as rank `1` and `2`, respectively. All other identifiers are in alphabetical order beginning from rank `3`. This means that if the identifiers sent with events flowing into personas are user_id, email, anonymous_id and ga_client_id, the rank would be as follows:
 
 | Identifier   | Priority |
 | ------------ | -------- |
@@ -156,28 +168,31 @@ Thus, if you require an explicit order for all identifiers, configure this in th
 
 ![](images/edit-priority.png)
 
-When choosing the priority of your identifier, ask the following questions about each of the identifiers you will send through to Segment:
+When choosing the priority of your identifier, ask the following questions about each of the identifiers you send to Segment:
 
-1. Is it an immutable ID? An immutable ID, such as user_id, should be prioritized highest.
-2. Are they unique IDs? Unique IDs such as email should be prioritized higher over possibly shared identifiers like android.id or ios.id.
-3. Does it temporarily identify a user? Identifiers such as anonymous_id, ios.idfa, ga_client_id are constantly updated or expired for a user. Generally speaking, these should rank lower than identifiers that permanently identify a user.
+1. Is it an immutable ID? Give immutable IDs, such as user_id, highest priority.
+2. Are they unique IDs? Give Unique IDs such as email higher priority than possibly shared identifiers like android.id or ios.id.
+3. Does it temporarily identify a user? Identifiers such as anonymous_id, ios.idfa, ga_client_id are constantly updated or expired for a user. Generally speaking, rank these lower than identifiers that permanently identify a user.
 
-## Importing from an Existing Space
-This option is only available to new spaces once the initial Dev space has been created. We recommend this option when identity settings have been validated as correct in the initial Dev space and should be copied into the Prod space.
+### Importing from an existing space
+
+This option is available to new spaces once the initial Dev space is created. Segment recommends this option when identity settings are validated as correct in the initial Dev space and should be copied into the Prod space.
 
 ![](images/import.png)
 
-# Connecting a Source
-Once Identity Resolution Settings are configured, the next step is to connect a source to the Personas space.
+## Connecting a source
+
+After you configure Identity Resolution settings, the next step is to connect a source to the Personas space.
 
 ![](images/connect_sources.png)
 
-# Creating an Audience
-Once the source is connected, Personas will begin creating user profiles based off of replayed and newly incoming data.
+## Creating an Audience
+
+After you connect a source, Personas creates user profiles based off of replayed and newly incoming data.
 
 ![](images/create_audience.png)
 
-The next step, which is important especially in the Dev space, is to create an audience to ensure that user profiles have populated correctly and that the identity resolution settings follow expected business logic.
+The next step, which is important in the Dev space, is to create an audience to ensure that user profiles have populated correctly and that the identity resolution settings follow expected business logic.
 
 For example, if there should be 100,000 distinct users who have a user_id, this would be a great way to validate that the identity resolution settings have calculated profiles correctly.
 
