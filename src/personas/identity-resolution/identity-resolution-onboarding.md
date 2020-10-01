@@ -2,10 +2,11 @@
 title: Identity Resolution Onboarding
 ---
 <!-- COMMENTS HERE 
-1. Double-check to make sure code `style` is used correctly? Is it fields or values that get it?
-2. A heading says Select Identity Resolution settings, but this is not described in that section.
-3. "Merge Protection Rules" are mentioned as referenceable below, but not found in the doc.
-4. For Limits, we might want to mention in the examples that a time period is included with a numeric value.
+- Are all the images necessary? Concerned that they break up the flow of content too much, making important text more difficult to scan.
+- Double-check to make sure code `style` is used correctly? Is it fields or values that get it?
+- A heading says Select Identity Resolution settings, but this is not described in that section.
+- "Merge Protection Rules" are mentioned as referenceable below, but not found in the doc.
+- For Limits, we might want to mention in the examples that a time period is included with a numeric value.
 -->
 
 > note ""
