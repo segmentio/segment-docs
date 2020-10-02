@@ -81,6 +81,7 @@ analytics.group("e8c78ea9d97a7b8185e8632", {
   total billed: 830
 });
 ```
+
 ## Alias
 If you aren’t familiar with the Segment Spec, take a look at the [Alias method documentation](https://segment.com/docs/connections/spec/alias/) to learn about what it does. An example call would look like:
 
