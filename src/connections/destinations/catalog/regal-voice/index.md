@@ -5,18 +5,18 @@ title: Regal Voice Destination
 
 [Regal Voice](https://regalvoice.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a next-gen outbound phone marketing and sales platform that helps consumer and financial services brands proactively engage and convert customers before they buy elsewhere.
 
-This destination is maintained by Regal Voice. For any issues with the destination, [contact their support team](mailto:support@regalvoice.com).
+Regal Voice maintains this destination. For any issues with the destination, contact their [Regal Voice support team](mailto:support@regalvoice.com).
 
 > note "Note:"
-> Regal Voice is currently only available in the U.S.
+> Regal Voice is available in the U.S only.
 
 > note "Note:"
-> The Regal Voice Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the Regal Voice Destination and its documentation, [contact the Regal Voice support team](mailto:support@regalvoice.com)!* 
+> The Regal Voice Destination is in beta, which means that they are still actively developing the destination. To join the beta program, or if you have any feedback to help improve the Regal Voice Destination and its documentation, [contact the Regal Voice support team](mailto:support@regalvoice.com)! 
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+{% include content/connection-modes.md %}
 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for "Regal Voice" in the Destinations Catalog, and select the "Regal Voice" destination.
@@ -27,7 +27,7 @@ This destination is maintained by Regal Voice. For any issues with the destinati
 
 ## Page
 
-If you are not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you are not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call looks like:
 
 ```js
 analytics.page()
@@ -38,7 +38,7 @@ Segment sends Page calls to Regal Voice as a pageview.
 
 ## Screen
 
-If you are not familiar with the Segment Spec, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you are not familiar with the Segment Spec, take a look to understand what the [Screen method](/docs/connections/spec/screen/) does. An example call looks like:
 
 ```obj-c
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -49,7 +49,7 @@ Segment sends Screen calls to Regal Voice as a screen.
 
 ## Identify
 
-If you are not familiar with the Segment Spec, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you are not familiar with the Segment Spec, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call  looks like:
 
 ```js
 analytics.identify({
@@ -93,18 +93,18 @@ analytics.identify({
 
 Supported messaging channels are: `sms`, `voice` and `email`. 
 
-The `ip` field is only required if you are opting in users server side. 
+The `ip` field is required if you are opting in users server side. 
 
-Make sure to include `subscribedAt` with the exact time the user opted in. Since traits are [cached](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/identity/#clearing-traits) and sent with subsequent `identify` calls, Regal Voice will ignore opt ins without a `subscribedAt` date. 
+Make sure to include `subscribedAt` with the exact time the user opted in. Since traits are [cached](/docs/connections/sources/catalog/libraries/website/javascript/identity/#clearing-traits) and sent with subsequent `identify` calls, Regal Voice ignores opt-ins without a `subscribedAt` date. 
 
 
 ## Track
 
-If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. 
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](/docs/connections/spec/track/) to learn about what it does. 
 
-We recommend calling `track` on any user or system event that you may want Regal Voice to be able to use for lead scoring or as triggers or conditions when sending voice and sms campaigns.
+Segment recommends calling `track` on any user or system event that you may want Regal Voice to be able to use for lead scoring or as triggers or conditions when sending voice and sms campaigns.
 
-Segment sends `track` calls to Regal Voice as a track event. All attributes relevant to your use case should be passed into the `properties` object. 
+Segment sends `track` calls to Regal Voice as a track event. Pass allattributes relevant to your use case into the `properties` object. 
 
 Regal Voice communications can be triggered proactively to a user based on their activity or inactivity - in order to nudge them through your funnel. 
 
