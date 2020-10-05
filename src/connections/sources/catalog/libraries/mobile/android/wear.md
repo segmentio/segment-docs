@@ -1,5 +1,6 @@
 ---
 title: Analytics for Android Wear
+strat: android
 ---
 
 Analytics for Android Wear makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
