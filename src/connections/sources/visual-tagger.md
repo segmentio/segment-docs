@@ -262,7 +262,7 @@ Yes. You can track dynamically generated elements like modals (for example) usin
 
 ### Why does my form submit event not work?
 
-Visual Tagger binds its event listeners to the `document` object. Forms using `stopPropagation()`/`stopImmediatePropagation()` prevent the event from bubbling up causing Visual Tagger to not execute the handlers for emitting track/identify calls. In order for these forms to work with Visual Tagger, you will have to remove `stopPropagation()`/`stopImmediatePropagation()` from your existing form handler.
+Visual Tagger binds its event listeners to the `document` object. Forms using `stopPropagation` and `stopImmediatePropagation` methods prevent the event from bubbling up, causing Visual Tagger to not execute the handlers for emitting track/identify calls. Remove any `stopPropagation` and `stopImmediatePropagation` method calls from your form handler to allow Visual Tagger to process the event.
 
 ### Does Visual Tagger have a data layer so that I can make use of data that's not rendered on the page?
 
