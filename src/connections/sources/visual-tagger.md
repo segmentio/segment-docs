@@ -260,6 +260,10 @@ However, adding a large number of tags to your site could potentially impact you
 
 Yes. You can track dynamically generated elements like modals (for example) using the Visual Tagger.
 
+### Why does my form submit event not work?
+
+Visual Tagger binds its event listeners to the `document` object. Forms using `stopPropagation()`/`stopImmediatePropagation()` prevent the event from bubbling up causing Visual Tagger to not execute the handlers for emitting track/identify calls. In order for these forms to work with Visual Tagger, you will have to remove `stopPropagation()`/`stopImmediatePropagation()` from your existing form handler.
+
 ### Does Visual Tagger have a data layer so that I can make use of data that's not rendered on the page?
 
 Currently, only information that is visually present on the page is available for use in the Visual Tagger.
