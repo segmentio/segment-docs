@@ -203,7 +203,7 @@ sections:
         title: Warehouse FAQs
       - path: /connections/storage/warehouses/add-warehouse-users
         title: How do you add users?
-      - path: /connections/storage/warehouses/warehouse-errors
+      - path: /connections/storage/warehouses/warehouse-errorsx
         title: What does my warehouse error mean?
       - path: /connections/storage/warehouses/redshift-faq
         title: Redshift cluster and Redshift connector limitations
@@ -235,15 +235,17 @@ sections:
     slug: personas/personas-identity-resolution
     section:
     - path: /personas/identity-resolution
-      title: Identity Resolution Overview
+      title: Overview
+    - path: /personas/identity-resolution/identity-resolution-onboarding
+      title: Onboarding
     - path: /personas/identity-resolution/use-cases
-      title: Identity Resolution Use Cases
+      title: Use Cases
     - path: /personas/identity-resolution/externalids
-      title: Identity Resolution External IDs
+      title: External IDs
     - path: /personas/identity-resolution/identity-resolution-settings
-      title: Identity Resolution Settings
+      title: Settings
     - path: /personas/identity-resolution/ecommerce-example
-      title: Identity Resolution E-Commerce Example
+      title: E-Commerce Example
     - path: /personas/identity-resolution/personas-space-set-up
       title: Personas Space Set Up
   - path: /personas/computed-traits

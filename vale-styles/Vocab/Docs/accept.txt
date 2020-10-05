@@ -27,3 +27,7 @@ Vero
 WebKit
 Wootric
 Zendesk
+iOS
+ios
+Dev
+ga
