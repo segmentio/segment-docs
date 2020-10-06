@@ -159,7 +159,7 @@ In-App Messaging are custom views which you can send to a segment of users to sh
 The MoEngage SDK is GDPR compliant, follow the doc in this [link](https://docs.moengage.com/docs/gdpr-compliance-1) to know how to use opt-outs for different features. 
 
 ### Segment Docs
-For more info on using **Segment for iOS** refer to [**Developer Docs**](/docs/sources/mobile/ios/) provided by Segment.
+For more info on using **Segment for iOS** refer to [**Developer Docs**](/docs/connections/sources/catalog/libraries/mobile/ios/) provided by Segment.
 
 
 ## Android
@@ -362,10 +362,10 @@ You are now all set up to receive push notifications from MoEngage. For more inf
  
 
 ### Identify
-Use [Identify](/docs/sources/mobile/android/#identify) to track user-specific attributes. This is the same as tracking [user attributes](http://docs.moengage.com/docs/identifying-user) on MoEngage. MoEngage supports traits supported by Segment as well as custom traits. If you set traits.id, MoEngage sets that as the Unique ID for that user.
+Use [Identify](/docs/connections/sources/catalog/libraries/mobil/android/#identify) to track user-specific attributes. This is the same as tracking [user attributes](http://docs.moengage.com/docs/identifying-user) on MoEngage. MoEngage supports traits supported by Segment as well as custom traits. If you set traits.id, MoEngage sets that as the Unique ID for that user.
 
 ### Track
-Use [track](/docs/sources/mobile/android/#track) to track events and user behavior in your app.
+Use [track](/docs/connections/sources/catalog/libraries/mobil/android/#track) to track events and user behavior in your app.
 This will send the event to MoEngage with the associated properties. Tracking events is essential and will help you create segments for engaging users.
 
 ### Reset
