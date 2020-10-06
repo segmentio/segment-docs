@@ -5,9 +5,9 @@ strat: android
 
 ## What is the latest version of the library?
 
-The library is published to [Maven Central](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.segment.analytics.android%22%20AND%20a%3A%22analytics%22) where you can see all the published releases.
+Analytics-Android is published to [Maven Central](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.segment.analytics.android%22%20AND%20a%3A%22analytics%22) where you can see all published releases.
 
-# Where is the changelog for the library?
+## Where is the changelog for the library?
 
 You can see a changelog in the [GitHub repository](https://github.com/segmentio/analytics-android/blob/master/CHANGELOG.md), detailing the changes made in each release.
 
@@ -68,20 +68,20 @@ Analytics-Android saves up to 1000 calls on disk, and these never expire.
 
 ## I need to use the SDK on an older version of Android not supported by your library!
 
-Our Android library has support for back to API level 14 (Android 4.0). You should [consider](https://developer.android.com/about/dashboards/index.html#Platform) it too! If you can't do this for your own application, there are three options we've recommended to users:
+The Analytics-Android library supports back to API level 14 (Android 4.0). You should [consider](https://developer.android.com/about/dashboards/index.html#Platform) it too! If you can't do this for your own application, there are three options we recommended:
 
-1. Use an older version of the library that does support your minimum requirements. Keep in mind that there won't be any updates or bug fixes to those versions, but we do still have clients still using old versions of the library in production.
-2. Skip analytics for users on older devices - you can wrap calls to our SDK in a Build.VERSION check.
-3. Write your own SDK. You can still use most of the tools on Segment using our [HTTP API](/docs/connections/sources/catalog/libraries/server/http/). You can use either our Android or [Java source](https://github.com/segmentio/analytics-java) to get a quick headstart.
+1. Use an older version of the Analytics-Android library that supports your minimum requirements. Remember that there won't be any updates or bug fixes to those versions, but you might still have clients using old versions of the library in production.
+2. Skip running analytics for users on older devices by wrapping calls to the Analytics-Android SDK in a `Build.VERSION` check.
+3. Write your own SDK. You can still use most of the tools on Segment using the [HTTP API](/docs/connections/sources/catalog/libraries/server/http/). You can use either the Analytics-Android or [Java source](https://github.com/segmentio/analytics-java) to get a quick head start.
 
 
-## How can I use a destination specific feature?
+## How can I use a destination-specific feature?
 
 ...for example, Mixpanel's push notifications?
 
-If you're using Device-mode for a mobile destination, you can always access features from that tool's native SDK.
+If you're using Device-mode for a mobile destination, meaning that you are bundling the destination's mobile SDK, you can always access features from that tool's native SDK.
 
-To make sure you use the same instance of these destinations as we do, you can register a listener that notifies you when the destinations are ready. This will be called synchronously if the destinations are notified, and asynchronously if the destinations aren't yet ready.
+To make sure you use the same instance of these destinations as Segment does, you can register a listener that notifies you when the destinations are ready. This listener is called synchronously if the destinations are notified, and asynchronously if the destinations aren't yet ready.
 
 ```java
 analytics.onIntegrationReady("Crittercism", new Callback() {
@@ -98,7 +98,7 @@ analytics.onIntegrationReady("Mixpanel", new Callback() {
 });
 ```
 
-For the destinations that return `Void`, they simply use a shared instance. You can call into the SDK directly. With this API, you're guaranteed that they've been initialized first, and if you ever decide to change the settings for the destination on our dashboard, they'll be reflected here.
+Destinations that return `Void` use a shared instance, and you can call into the SDK directly. This API guarantees that the destinations are initialized first. If you ever decide to change the settings for the destination from the Segment App, the changes are reflected here.
 
 ```java
 analytics.onIntegrationReady(BundledIntegration.FLURRY, new Callback() {
@@ -111,7 +111,7 @@ analytics.onIntegrationReady(BundledIntegration.FLURRY, new Callback() {
 
 ## Why is my callback not being invoked?
 
-If you're using the destination callbacks described above, and don't receive a callback, check your proguard configuration. Any easy way to verify that Proguard is the issue is to disable it completely for a run and see if the callbacks is invoked.
+If you use the destination callbacks described above, and don't receive a callback, check your Proguard configuration. Any easy way to verify that Proguard is the issue is to disable it completely for a run and see if the callbacks is invoked.
 
 <!-- Per linked site, this bug has been fixed. Hiding until I can confirm.
 ## Why is Google Analytics not receiving crash reports?
@@ -120,7 +120,7 @@ This is a known bug https://code.google.com/p/analytics-issues/issues/detail?id=
 
 ## How should I configure Proguard?
 
-For our SDK, you should add `-keep class com.segment.analytics.** { *; }` to your proguard configuration. You should also look up any proguard configurations recommended by each of the Device-mode destinations on their respective docs and websites.
+For the Segment SDKs, add `-keep class com.segment.analytics.** { *; }` to your Proguard configuration. You should also check the vendor documentation for any Device-mode destinations you are bundling, to see if they include any recommended Proguard configurations.
 
 ## How should I use Outbound's push notifications?
 
@@ -148,10 +148,10 @@ Yes! You can use Segment's browserify'd [analytics-node](https://github.com/segm
 
 ## How do you handle Unique Identifiers?
 
-A key component of any analytics platform is consistently and accurately identifying users. Some kind of ID must be assigned and persisted on the device so that user actions can be effectively studied. This is especially important for funnel conversion analysis and retention analysis.
+One of the most important parts of any analytics platform is the ability to consistently and accurately identify users. To do this, the platform must assign and persist some form of identification on the device so you can analyze user actions effectively. This is especially important for funnel conversion analysis and retention analysis.
 
-Naturally the Analytics SDK needs a unique ID for each user. The very first time an app is launched, our SDK will generated a UUID and save it on disk. This is used as the `anonymousId` and stays constant for the user on the device. If you want to create a new user on the same device, call `reset` on the Analytics client.
+Naturally the Analytics SDK needs a unique ID for each user. The very first time an Android app that uses Segment launches, the Segment SDK generates a UUID and saves it on the device's disk. This is used as the `anonymousId` and stays constant for the user on the device. To create a new user on the same device, call `reset` on the Analytics client.
 
-Our SDK also collects the [Advertising ID](https://developer.android.com/google/play-services/id.html) provided by Play Services. Make sure the Play Services Ads library is included as a dependency for your application. This is the ID that should be used for advertising purposes. This value will be set to `context.device.advertisingId`.
+The Segment SDK also collects the [Advertising ID](https://developer.android.com/google/play-services/id.html) provided by Play Services. Make sure the Play Services Ads library is included as a dependency for your application. This is the ID that should be used for advertising purposes. This value is set to `context.device.advertisingId`.
 
-We also collect the [Android ID](http://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID) as `context.device.id`. Some destinations rely on this field being the Android ID, so take care if you choose to override the default value.
+Segment also collects the [Android ID](http://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID) as `context.device.id`. Some destinations rely on this field being the Android ID, so double check your destinations vendor documentation if you choose to override the default value.

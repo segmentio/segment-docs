@@ -406,11 +406,12 @@ Analytics.setSingletonInstance(analytics);
 Analytics.with(context).track("Viewed Item", new Properties());
 ```
 
-Notice that in the first snippet, we used an Enum to disable the destination, but in the second snippet, we used a String. In general, we recommend, using the Enum method for Device-mode destinations (this way you get type safety, and don't accidentally disable "GoogleAnalytics" instead of "Google Analytics"), and pass in a String for controlling the behavior of server side destinations.
+Notice that the first example uses an Enum to disable the destination, but the second example uses a String. Segment recommends that you use the Enum method for Device-mode destinations, and use the String method to change the behavior of Cloud-mode destinations. The Enum method ensures type safety, and prevents you from accidentally disabling "GoogleAnalytics" instead of "Google Analytics", while the String method gives you more flexibility in what options you pass.
 
-destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
+Destination name flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/catalog/) In some cases where a destination's name has more than one spelling (for example if it changed names, or brand capitalization styles, or if it was commonly misspelled and we added an alias) the documentation for that destination will include a section called "Adding (destination name) to the integrations object".
 
-**Note:** Available at the business level, filtering track calls can be done right from the Segment UI on your source schema page. We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
+> success ""
+> **Note:** If you are on a business tier Segment plan, you can filter track calls  right from the Segment App in the [source schema page](). We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
 
 ## Context
 
@@ -430,7 +431,7 @@ AnalyticsContext analyticsContext = Analytics.with(context).getAnalyticsContext(
 analyticsContext.device().putValue("advertisingId", "1");
 ```
 
-If you'd prefer to opt out of automatic data collection, simply clear the context right after initializing the client. It's important to do this _BEFORE_ sending any events.
+To opt out of automatic data collection, clear the context after initializing the client. Do this _BEFORE_ you send any events.
 
 ```java
 Analytics analytics = new Analytics.Builder(context, writeKey).defaultOptions(defaultOptions).build();
@@ -448,31 +449,37 @@ Analytics.with(context).getAnalyticsContext().traits().anonymousId()
 
 ## Reset
 
-The `reset` method clears the SDK's internal stores for the current user and group. This is useful for apps where users can log in and out with different identities over time.
+The `reset` method clears the SDK's internal stores for the current user and group. This is useful for apps where users log in and out with different identities on the same device over time.
 
-Clearing all information about the user is as simple as calling:
+The example code below clears all information about the user.
 ```java
 Analytics.with(context).reset()
 ```
 
-Events queued on disk are not cleared and are uploaded the next time the app starts.
+Events queued on disk are _not_ cleared and are uploaded the next time the app starts.
 
-> **Note**: Each time you call `reset`, a new AnonymousId is generated the next time the app is opened, which can impact the number of Monthly Tracked Users (MTUs) you process.
+> warning ""
+> **Note**: When you call `reset`, the next time the app opens Segment generates a new AnonymousId. This can impact the number of Monthly Tracked Users (MTUs) you process.
 
 ## Debugging
 
-If you run into any issues while using the Android library, we recommend turning on logging to help us trace the issue. The default singleton instance will have logging turned on if your application is in debug mode. If you're using a custom instance, simply attach a `LogLevel` to the `Builder`.
+If you run into issues while using the Android library, you should enable logging to help trace the issue. Logging also helps you see how long destinations take to complete their calls and discover bottlenecks.
+
+The logging is enabled by default in the default singleton instance if your application is running in `debug` mode. If you use a custom instance, attach a `LogLevel` to the `Builder` and set the logging level there, as in the example below.
 
 ```java
 Analytics analytics = new Analytics.Builder(context, writeKey).logLevel(LogLevel.VERBOSE)...build();
 ```
 
-You can choose to disable logging completely (`LogLevel.NONE`), turn on basic logging for the SDK (`LogLevel.BASIC`), turn on basic logging for Device-mode destination (`LogLevel.INFO`), or simply log everything (`LogLevel.VERBOSE`). We recommend turn logging off in production modes of your app. Logging also helps you see how long destinations take to complete their calls and discover bottlenecks.
+You can choose to disable logging completely (`LogLevel.NONE`), enable basic logging for the SDK (`LogLevel.BASIC`), enable basic logging for Device-mode destination (`LogLevel.INFO`), or simply log everything (`LogLevel.VERBOSE`).
+
+> success ""
+> Segment recommends that you turn logging off in _production_ modes of your app.
 
 
 ## Proxy HTTP Calls
 
-You can point the Android SDK to your own hosted [proxy](https://github.com/segmentio/segment-proxy) of the Segment API. This will run the HTTP traffic for the Segment API through the proxy.
+You can point the Android SDK to your own hosted [proxy](https://github.com/segmentio/segment-proxy) of the Segment API. This runs the HTTP traffic for the Segment API through the proxy.
 
 ```java
 Analytics analytics = new Analytics.Builder(this, ANALYTICS_WRITE_KEY) //
@@ -488,7 +495,7 @@ Analytics analytics = new Analytics.Builder(this, ANALYTICS_WRITE_KEY) //
 
 ## Automatic Screen Tracking
 
-Our SDK can automatically instrument screen calls. It uses the label of the activity declared in the manifest as the screen name. Fragments and views do not trigger screen calls. However you can do so manually with the `screen` method directly.
+The Segment SDK can automatically instrument screen calls, using the label of the activity you declared in the `manifest` as the screen's name. Fragments and views do not trigger screen calls automatically, however you can manually call the Screen method these.
 
 ```java
 Analytics analytics = new Analytics.Builder(context, writeKey)
@@ -498,7 +505,7 @@ Analytics analytics = new Analytics.Builder(context, writeKey)
 
 ## Stats
 
-Local device stats help you quickly see how many events you sent to Segment, the average time taken for bundled destinations to run, and similar metrics.
+Local device stats help you quickly see how many events you sent to Segment, the average time bundled destinations took to run, and similar metrics.
 
 ```java
 StatsSnapshot snapshot = Analytics.with(context).getSnapshot();
@@ -508,7 +515,7 @@ log(snapshot.flushCount);
 
 ## Bleeding Edge Releases
 
-We publish stable releases every second Wednesday, when we tag and release the `master` branch.
+Segment publishes stable releases every second Wednesday, when we tag and release the `master` branch.
 
 After releasing, we also merge the `dev` branch merged into `master`. In general, code will be available on `master` for two weeks before being tagged as a stable release. During this period, `master` is published as a snapshot — the equivalent of bleeding edge releases. We recommend using the snapshot version to try out upcoming features and fixes that have not been published yet. Simply add the snapshots repo to your repository and Gradle will pull in the latest snapshot build.
 
