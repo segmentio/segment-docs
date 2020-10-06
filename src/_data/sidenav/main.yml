@@ -235,15 +235,17 @@ sections:
     slug: personas/personas-identity-resolution
     section:
     - path: /personas/identity-resolution
-      title: Identity Resolution Overview
+      title: Overview
+    - path: /personas/identity-resolution/identity-resolution-onboarding
+      title: Onboarding
     - path: /personas/identity-resolution/use-cases
-      title: Identity Resolution Use Cases
+      title: Use Cases
     - path: /personas/identity-resolution/externalids
-      title: Identity Resolution External IDs
+      title: External IDs
     - path: /personas/identity-resolution/identity-resolution-settings
-      title: Identity Resolution Settings
+      title: Settings
     - path: /personas/identity-resolution/ecommerce-example
-      title: Identity Resolution E-Commerce Example
+      title: E-Commerce Example
     - path: /personas/identity-resolution/personas-space-set-up
       title: Personas Space Set Up
   - path: /personas/computed-traits
@@ -274,11 +276,11 @@ sections:
       title: Detect PII
     - path: /privacy/data-controls
       title: Data Controls and Alerts
-  - section_title: GDPR & CCPA
-    slug: protocols/preparing-for-the-gdpr
+  - section_title: GDPR
+    slug: protocols/complying-with-the-gdpr
     expanded: true
     section:
-    - path: /privacy/preparing-for-the-gdpr
+    - path: /privacy/complying-with-the-gdpr
       title: Complying with GDPR
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression
