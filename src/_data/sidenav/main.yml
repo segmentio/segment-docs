@@ -203,7 +203,7 @@ sections:
         title: Warehouse FAQs
       - path: /connections/storage/warehouses/add-warehouse-users
         title: How do you add users?
-      - path: /connections/storage/warehouses/warehouse-errorsx
+      - path: /connections/storage/warehouses/warehouse-errors
         title: What does my warehouse error mean?
       - path: /connections/storage/warehouses/redshift-faq
         title: Redshift cluster and Redshift connector limitations
