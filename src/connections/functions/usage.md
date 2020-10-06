@@ -6,7 +6,7 @@ Functions are billed to your account using the total execution time per month.
 
 An **individual function's execution time** is the total time it takes for the function to process events, including mapping, transformations, and requests to external APIs. Generally, requests to external APIs can greatly add to your total execution time.
 
-Your **total execution time** is the execution time for all of your active functions accumulated over the course of a month. You can see your current execution time on the [Functions tab of the Usage page](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions&period=current) in each workspace.
+Your **total execution time** is the execution time for all of your active functions accumulated over the course of a month. You can see your current execution time on the [Functions tab of the Usage page](https://app.segment.com/goto-my-workspace/settings/usage?metric=functions&period=current) in each workspace. You will receive notifications of your usage when you've reached 75%, 90% and 100% of your allotted execution time.
 
 The amount of time you are allotted changes depending on your [Segment pricing plan](http://segment.com/pricing).
 
