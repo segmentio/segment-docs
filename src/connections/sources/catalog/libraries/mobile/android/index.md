@@ -35,6 +35,7 @@ strat: android
 	- [Proxying HTTP Calls](#proxying-http-calls)
 	- [Analytics-Android Versions](#analytics-android-versions)
 		- [Bleeding Edge Releases](#bleeding-edge-releases)
+		- [Support for Older versions of Android](#support-for-older-versions-of-android)
 		- [Migrating from v2 to v3](#migrating-from-v2-to-v3)
 		- [Migrating to v4](#migrating-to-v4)
 
@@ -611,6 +612,7 @@ Analytics analytics = new Analytics.Builder(this, ANALYTICS_WRITE_KEY) //
 
 This section includes information on:
 - [Bleeding Edge Releases](#bleeding-edge-releases)
+- [Support for Older versions of Android](#support-for-older-versions-of-android)
 - [Migrating from v2 to v3](#migrating-from-v2-to-v3)
 - [Migrating to v4](#migrating-to-v4)
 
@@ -628,6 +630,13 @@ repositories {
 }
 ```
 
+### Support for Older versions of Android
+
+The Analytics-Android library supports back to API level 14 (Android 4.0). You should [consider it too](https://developer.android.com/about/dashboards/index.html#Platform)! If you can't do this for your own application, there are three options we recommend:
+
+1. Use an older version of the Analytics-Android library that supports your minimum requirements. Remember that there won't be any updates or bug fixes to those versions, but you might still have clients using old versions of the library in production.
+2. Skip running analytics for users on older devices by wrapping calls to the Analytics-Android SDK in a `Build.VERSION` check.
+3. Write your own SDK. You can still use most of the tools on Segment using the [HTTP API](/docs/connections/sources/catalog/libraries/server/http/). You can use either the Analytics-Android or [Java source](https://github.com/segmentio/analytics-java) to get a quick head start.
 
 ### Migrating from v2 to v3
 

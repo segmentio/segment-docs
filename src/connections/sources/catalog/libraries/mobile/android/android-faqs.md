@@ -50,30 +50,6 @@ class MyApp extends Application {
 }
 ```
 
-## How does the library queue API calls?
-
-The Analytics-Android library queues API calls and uploads them in batches. This limits the number of network calls made, and helps save battery on the user's device.
-
-When you send an event, the library saves it to disk. When the queue size reaches the maximum size you specify (20 by default), the library flushes the queue and uploads the events in a single batch. Since the data is saved immediately, it isn't lost even if the app is killed or the operating system crashes.
-
-The queue behavior might differ for Device-mode destinations. For example, Mixpanel's SDK queues events and then flushes them only when the app goes to the background.
-
-This is why even if you see events in the debugger, the Device-mode destination may not show them on their dashboards yet, simply because their mobile SDK may still have them queued. The opposite may also happen, that we have some events queued so they haven't shown up in the debugger, but the Device-mode destination has already sent the events to their servers.
-
-## Will my events be delivered even if the app is killed?
-
-Analytics-Android uses a persistent disk queue, so the events persist even when the app is killed. The library simply reads them from disk, and uploads the events the next time the app starts. The queue works on top of [Tape](http://square.github.io/tape/), which is designed to even survive process and system crashes.
-
-Analytics-Android saves up to 1000 calls on disk, and these never expire.
-
-## I need to use the SDK on an older version of Android not supported by your library!
-
-The Analytics-Android library supports back to API level 14 (Android 4.0). You should [consider](https://developer.android.com/about/dashboards/index.html#Platform) it too! If you can't do this for your own application, there are three options we recommended:
-
-1. Use an older version of the Analytics-Android library that supports your minimum requirements. Remember that there won't be any updates or bug fixes to those versions, but you might still have clients using old versions of the library in production.
-2. Skip running analytics for users on older devices by wrapping calls to the Analytics-Android SDK in a `Build.VERSION` check.
-3. Write your own SDK. You can still use most of the tools on Segment using the [HTTP API](/docs/connections/sources/catalog/libraries/server/http/). You can use either the Analytics-Android or [Java source](https://github.com/segmentio/analytics-java) to get a quick head start.
-
 
 ## How can I use a destination-specific feature?
 
@@ -145,6 +121,22 @@ analytics.getContext().putDeviceToken(registrationId);
 ## Do you support Phonegap or Cordova?
 
 Yes! You can use Segment's browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package just like any other client-side JavaScript library.
+
+## How does Analytics-Android queue API calls?
+
+The Analytics-Android library queues API calls and uploads them in batches. This limits the number of network calls made, and helps save battery on the user's device.
+
+When you send an event, the library saves it to disk. When the queue size reaches the maximum size you specify (20 by default), the library flushes the queue and uploads the events in a single batch. Since the data is saved immediately, it isn't lost even if the app is killed or the operating system crashes.
+
+The queue behavior might differ for Device-mode destinations. For example, Mixpanel's SDK queues events and then flushes them only when the app goes to the background.
+
+This is why even if you see events in the debugger, the Device-mode destination may not show them on their dashboards yet because they might still be in their mobile SDK's queue. The opposite may also happen: the Device-mode destination SDK might send events to its servers before Segment sends its queue, so events could show up in the destination's dashboard before they appear in the Segment debugger.
+
+## Will my events be delivered even if the app is killed?
+
+Analytics-Android uses a persistent disk queue, so the events persist even when the app is killed. The library simply reads them from disk, and uploads the events the next time the app starts. The queue works on top of [Tape](http://square.github.io/tape/), which is designed to even survive process and system crashes.
+
+Analytics-Android saves up to 1000 calls on disk, and these never expire.
 
 ## How do you handle Unique Identifiers?
 
