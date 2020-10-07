@@ -3,7 +3,6 @@ title: Middleware for Android
 strat: android
 ---
 
-
 Middlewares are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify, augment or reject events. Source Middleware are available on analytics-android 4.3.0 and later. Destination Middleware are available on analytics-android 4.7.0 and later.
 
 You can register source middleware during construction with the `.useSourceMiddleware` method on the builder. These middleware are invoked for all events, including automatically tracked events, and external event sources like Adjust and Optimizely.
@@ -66,7 +65,7 @@ Analytics analytics = new Analytics.Builder(getApplicationContext(), ANALYTICS_W
         .build();
 ```
 
-The key thing to observe here is that the output produced by the first middleware feeds into the second. This allows you to chain and compose independent middlewares!
+The important thing to see is that the output produced by the first middleware feeds into the second. This allows you to chain and compose independent middlewares!
 
 ## Destination Middleware
 
