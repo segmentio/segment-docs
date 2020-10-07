@@ -38,7 +38,7 @@ During the space creation process, the first step is to choose an Identity Resol
 
 For most first-time Personas users, Segment recommends that you use the out-of-the-box configuration and answer a short series of questions for a best-fit setup for your use-case.
 
-If you have custom unique identifiers or do not have a canonical `user_id` are automatically redirected to the Identity Resolution Settings page to complete your setup.
+If you have custom unique identifiers or do not have a canonical `user_id` you are automatically redirected to the Identity Resolution Settings page to complete your setup.
 
 ### Custom rules
 
@@ -68,9 +68,9 @@ You can also provide a trait or property key to match on to add custom identifie
 
 #### Blocked values
 
-Segment recommends that you proactively prevent using certain values as identifiers. While these values remain in the payload on the event itself, it os not promoted to as an identifier Segment uses to determine user profiles.
+Segment recommends that you proactively prevent using certain values as identifiers. While these values remain in the payload on the event itself, it is not promoted to as an identifier Segment uses to determine user profiles.
 
-This is important when developers have a hard-coded value for fields like `user_id` during QA or development that then erroneously make it production. This may cause hundreds of profiles to merge incorrectly and can have costly consequences if these spaces already feed data into a production email marketing tool or push notification tool downstream.
+This is important when developers have a hard-coded value for fields like `user_id` during QA or development that then erroneously make it to production. This may cause hundreds of profiles to merge incorrectly and can have costly consequences if these spaces already feed data into a production email marketing tool or push notification tool downstream.
 
 In the past, Segment has seen certain default values that cause large amounts of profiles to merge incorrectly. Segment suggests that for every identifier, customers opt into automatically blocking the following suggested values:
 
