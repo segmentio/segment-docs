@@ -1,13 +1,16 @@
 # The default owners for everything in
 # the repo. Unless a later match takes precedence.
-CODEOWNERS  @sanscontext @XavierAgostini @danielstjules @stephment
+CODEOWNERS  @sanscontext @markzegarelli @nielst @XavierAgostini @danielstjules @stephment
 
 # Diagram library
 /diagram-library @sanscontext
 
 # Utility scripts
-/scripts @sanscontext @XavierAgostini
+/scripts @sanscontext @bryanmikaelian @XavierAgostini
 
+# Vale Linting
+/vale-styles @segmentio/segment-doc-team
+.vale.ini @segmentio/segment-doc-team
 
 # Content owners should be in the order of PM, TL (team-lead), and EM (in a crisis) for a given team.
 # This team will receive review requests automatically when a PR is submitted modifying the files in
@@ -20,10 +23,8 @@ CODEOWNERS  @sanscontext @XavierAgostini @danielstjules @stephment
 # Libraries owners
 /src/connections/catalog/libraries  @osamakhn @bsneed @lubird @pooyaj @juliofarah
 
-
 # Destination owners
 /src/connections/destinations  @n2parko @danielstjules @benhorowitz
-# temporary removal: @carlosmecha
 
 
 # Privacy owners

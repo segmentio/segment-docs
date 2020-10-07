@@ -64,9 +64,9 @@ Adobe Analytics has a real-time reporting feature which displays web page traffi
 
 Device-mode web data is sent using Analytics.js, with Analytics.js either serving as a wrapper/bundle around the Adobe Analytics code, or sending directly to Segment servers where the data is then sent on to the Adobe destination.
 
-Our Adobe Analytics device-mode destination code is open sourced on Github. Feel free to check it out:
+Our Adobe Analytics device-mode destination code is open sourced on GitHub. Feel free to check it out:
 [iOS](https://github.com/segment-integrations/analytics-ios-integration-adobe-analytics),
-[Android](hhttps://github.com/segment-integrations/analytics-android-integration-adobe-analytics) and
+[Android](https://github.com/segment-integrations/analytics-android-integration-adobe-analytics) and
 [JS](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/adobe-analytics).
 
 ### Initialization

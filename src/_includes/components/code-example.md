@@ -2,7 +2,7 @@
 layout: code-example
 ---
 
-{:title="JavaScript"}
+{:title="Javascript"}
 ```js
 var example = document.querySelectorAll('.example');
 ```

@@ -6,7 +6,7 @@ hide-personas-partial: true
 
 [Mixpanel](https://mixpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an event tracking and segmentation platform for your web and mobile apps. By analyzing the actions your users perform, you can gain a better understanding to drive retention, engagement, and conversion. The client-side Mixpanel Destination code is open-source.
 
-You can browse the code on Github for [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel), [Cloud-mode](https://github.com/segmentio/analytics-cloud-integrations/tree/master/integrations/mixpanel), [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel) and [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel).
+You can browse the code on GitHub for [Analytics.js in Device-mode](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/mixpanel), [Cloud-mode](https://github.com/segmentio/analytics-cloud-integrations/tree/master/integrations/mixpanel), [iOS](https://github.com/segment-integrations/analytics-ios-integration-mixpanel) and [Android](https://github.com/segment-integrations/analytics-android-integration-mixpanel).
 
 If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](mailto:docs-feedback@segment.com)!
 
@@ -190,7 +190,9 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 ```javascript
 analytics.alias('newUserId')
 ```
-**Important:** Calling `alias` is required for Mixpanel in all libraries in order to connect anonymous visitors to identified users.
+
+**Important:** Mixpanel used to require that you call `alias` in all libraries to connect anonymous visitors to identified users. However, with the release of Mixpanel's new [Identity Merge feature](https://help.mixpanel.com/hc/en-us/articles/360039133851#enable-id-merge) this is no longer necessary. To enable ID Merge, go to your Mixpanel Settings Dashboard, navigate to **Project Settings > Identity Merge** and enable the setting from that screen. If you are _not_ using this setting, use the instructions below.**
+
 
 As soon as you have a `userId` for a visitor that was previously anonymous you'll need to [`alias`](/docs/connections/spec/alias/) their old anonymous `id` to the new `userId`. In Mixpanel only **one** anonymous user history can be merged to **one** identified user. For that reason you should only call `alias` once, right after a user registered, but before the first `identify`.
 

@@ -133,7 +133,7 @@ The `context` object contains an optional `traits` dictionary that contains trai
 The information you pass in `context.traits` _does not_ appear in your downstream tools (such as Salesforce, Mixpanel, Google Analytics, etc.); however, this data _does_ appear in your [warehouses and storage destinations](/docs/connections/storage/).
 
 > note ""
-> The `options` object described in the previous seciton behaves differently from the `options.context.traits` object discussed here. The `traits` object described here does not cause the anonymousId to persist across different calls.
+> The `options` object described in the previous section behaves differently from the `options.context.traits` object discussed here. The `traits` object described here does not cause the anonymousId to persist across different calls.
 
 Consider this Identify event:
 

@@ -17,7 +17,7 @@ Before you start, you need a Segment user account and a workspace. If you're not
 For the quickstart portion below, you also need access to the code for a basic website, PHP website, or an iOS app.
 
 > success ""
-> **Tip**! If you don't have any of those things, you might consider creating a simple [Github Pages website](https://pages.github.com/).
+> **Tip**! If you don't have any of those things, you might consider creating a simple [GitHub Pages website](https://pages.github.com/).
 
 ## A note on Dev and Prod Sources
 
@@ -255,7 +255,7 @@ Once you've added a few `track` calls, **you're set up!** You successfully instr
 
 ### Step 1: Download the library
 
-To install the library, clone the repository from Github into your desired application directory. (psst, composer users: we've [got you covered too](https://packagist.org/packages/segmentio/analytics-php)!)
+To install the library, clone the repository from GitHub into your desired application directory. (psst, composer users: we've [got you covered too](https://packagist.org/packages/segmentio/analytics-php)!)
 
 ```bash
 git clone https://github.com/segmentio/analytics-php /my/application/folders/

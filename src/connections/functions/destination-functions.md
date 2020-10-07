@@ -86,11 +86,12 @@ To change which type of event the handler listens to, you can rename it to the n
 
 A function's execution is considered successful if it finishes without any errors. You can also `throw` an error to indicate a failure on purpose. You can use these errors to validate event data before processing it, to ensure your function works as expected.
 
-There are three pre-defined error types that you can `throw` to indicate that the function ran as expected, but that data could not be delivered:
+You can `throw` the following pre-defined error types to indicate that the function ran as expected, but that data could not be delivered:
 
 - `EventNotSupported`
 - `InvalidEventPayload`
 - `ValidationError`
+- `RetryError`
 
 The examples show basic uses of these error types.
 
@@ -110,6 +111,27 @@ async function onPage(event) {
 async function onAlias(event) {
   throw new EventNotSupported('Alias event is not supported')
 }
+
+async function onTrack(event) {
+  let res
+  try {
+    res = await fetch('http://example-service.com/api', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ event })
+    })
+  } catch (err) {
+    // Retry on connection error
+    throw new RetryError(err.message)
+  }
+  if (res.status >= 500 || res.status === 429) {
+    // Retry on 5xx and 429s (ratelimits)
+    throw new RetryError(`HTTP Status ${res.status}`)
+  }
+}
+
 ```
 If you do not supply a function for an event type, Segment throws an `EventNotSupported` error by default.
 
@@ -120,7 +142,7 @@ You can read more about [error handling](#destination-functions-logs-and-errors)
 {% include content/functions/runtime.md %}
 
 
-## Create ️settings and secrets
+## Create settings and secrets
 
 {% include content/functions/settings.md %}
 
@@ -186,8 +208,9 @@ A function can throw errors, or Segment might encounter errors while invoking yo
 - **Invalid Settings** - A configuration error prevented Segment from executing your code. If this error persists for more than an hour, [contact Segment Support](https://segment.com/help/contact/).
 - **Message Rejected** - Your code threw `InvalidEventPayload` or `ValidationError` due to invalid input.
 - **Unsupported Event Type** - Your code does not implement a specific event type (`onTrack()`, etc.) or threw a `EventNotSupported` error.
+- **Retry** - Your code threw `RetryError` indicating that the function should be retried.
 
-When these errors occur, Segment does not attempt to send that event to your destination function again.
+Segment only attempts to send the event to your destination function again if a **Retry** error occurs.
 
 ### Destination functions logs
 
@@ -255,9 +278,9 @@ If you are a **Workspace Owner** or **Functions Admin**, you can manage your fun
 
 ### Monitoring destination functions
 
-You can use [Destination Event Delivery](/docs/guides/destinations/how-do-i-check-if-data-is-successfully-being-delivered-to-my-destination/) to understand if Segment encounters any issues delivering your source data to destinations. Errors that the Function throws appear here.
+You can use [Destination Event Delivery](/docs/connections/event-delivery/) to understand if Segment encounters any issues delivering your source data to destinations. Errors that the Function throws appear here.
 
-If any of your deployed function instances are failing consistently, they will also appear in [Connection Health](/docs/segment-app/#sts=Health).
+If any of your deployed function instances are failing consistently, they will also appear in [Connection Health](/docs/segment-app/#health).
 
 ### Data control
 
@@ -271,7 +294,7 @@ Yes, Functions access is logged in the [Audit Trail](/docs/segment-app/iam/audit
 
 ##### Does Segment retry failed function invocations?
 
-Segment retries 9 times over the course of 4 hours. This increases the number of attempts for messages, so we try to re-deliver them another 4 times after some backoff. Segment doesn't retry if your function throws a [non-recoverable error](#functions-error-types).
+Segment retries 9 times over the course of 4 hours. This increases the number of attempts for messages, so we try to re-deliver them another 4 times after some backoff. Segment doesn't retry if your function throws a [non-recoverable error](#errors-and-error-handling).
 
 ##### Are events guaranteed to send data in order?
 

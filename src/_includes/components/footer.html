@@ -21,7 +21,7 @@
         <div class="footer__aside">
           {% include icons/segment.svg %}
 
-          <p>© 2019 Segment.io, Inc.</p>
+          <p>© {{ site.time | date: "%Y" }} Segment.io, Inc.</p>
 
           <div class="nav">
             <ul class="nav-list">
@@ -68,7 +68,7 @@
 
 <div class="footer-mobile">
   <div class="footer__aside">
-    <p>© Copyright 2019 Segment</p>
+    <p>© Copyright {{ site.time | date:"%Y" }} Segment</p>
   </div>
 
   <ul class="social-list social-list--dark flex flex--middle flex--center gutter gutter--xlarge">
