@@ -390,26 +390,31 @@ Segment supports all of the following Google Analytics features:
 - [Virtual Pageviews](#)
 - [Optimize](#)
 
-### Client-Side Library Methods**
+### Client-Side Library Methods
 Because Segment's client-side snippet wraps the `gtag.js` Javascript SDK, all gtag.js library methods that don't map to Segment methods are available client side. Although invoking a native library method won't send data to Segment or other Segment-enabled destinations, the method *will* send data to Google.
 
 To access gtag.js methods while using Segment, write these methods inside an `analytics.ready()` function, for example:
 
-    analytics.ready(function(){
-      window.gtag('config', 'GA_MEASUREMENT_ID');
-    })
+```js
+analytics.ready(function(){
+  window.gtag('config', 'GA_MEASUREMENT_ID');
+})
+```
 
-### Anonymize IP Address**
+### Anonymize IP Address
+
 To anonymize the IP addresses of all hits sent to Google, enable the **Anonymize IP** setting in your destination settings.
 
-### Remarketing**
+### Remarketing
+
 Google's remarketing (The remarketing tag formerly known as Doubleclick) is used to tag visitors for remarketing campaigns. It is also used to identify demographic and interest data on visitors that is displayed in Demographic & Interest reports inside of Google Analytics.
 
 Turn this feature on by checking the box in your Google Analytics destination settings.
 
 Since remarketing is loaded through Segment Google Analytics will not be able to validate that the code is present on the page. Just click **Skip validation** and your data will start showing up within a few hours.
 
-### Multiple Trackers**
+### Multiple Trackers
+
 Although Segment does not support loading multiple trackers of the same type (e.g.; multiple web measurement IDs) through the destinations settings page (you will probably run into Google Analytics's [rate limits](https://developers.google.com/analytics/devguides/collection/ios/v3/limits-quotas?hl=en)), you can load a 2nd tracker on the page manually.
 
 Here's how you'd initialize configure the second tracker:
