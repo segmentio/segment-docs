@@ -5,7 +5,7 @@ strat: google
 
 The [DoubleClick Floodlight](https://support.google.com/searchads/answer/7298761?hl=en) destination allows you to make calls directly to Floodlight based on your mapped events. All you have to do is enter your **DoubleClick Advertiser ID** in the Doubleclick Floodlight destinations settings in the Segment App, then map the Segment `track` events to their corresponding Floodlight tags.
 
-This destination _requires_ that mobile implementations send device-specific information such as the `IDFA` or the `AdvertisingId`, so you should send events using [one of the Segment mobile libraries](/docs/connections/sources/catalog/#mobile). You can also send data from [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) and Segment makes direct HTTP requests to Doubleclick Floodlight from your browser.
+This destination _requires_ that implementations send device-specific information such as the `IDFA` or the `advertisingId`, so you should send events using [one of the Segment mobile libraries](/docs/connections/sources/catalog/#mobile). If using [one of our server-side libraries](/docs/connections/sources/catalog/#server) instead, the required `advertisingId` won't be collected automatically so you will need to manually include it. You can also send data from [Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/) and Segment makes direct HTTP requests to Doubleclick Floodlight from your browser.
 
 ## Track
 
