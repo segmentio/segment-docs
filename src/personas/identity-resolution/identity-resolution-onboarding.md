@@ -2,7 +2,7 @@
 title: Identity Resolution Onboarding
 ---
 > note ""
-> **NOTE:** The steps in this guide pertain to spaces created after **October 5th, 2020**. For spaces created before **October 5th, 2020**, please refer to[Identity Resolution Settings](/docs/personas/identity-resolution/identity-resolution-settings).
+> **NOTE:** The steps in this guide pertain to spaces created after **October 5th, 2020**. For spaces created before **October 5th, 2020**, please refer to [Identity Resolution Settings](/docs/personas/identity-resolution/identity-resolution-settings).
 
 > note ""
 > **NOTE:** Workspace owners, Personas administrators, and users with the Identity Admin role can edit Identity Resolution Settings.
