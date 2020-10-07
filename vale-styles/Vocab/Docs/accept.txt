@@ -31,3 +31,5 @@ iOS
 ios
 Dev
 ga
+(?:G|g)tag
+(?:P|p)ageviews?\b

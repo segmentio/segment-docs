@@ -4,18 +4,18 @@ beta: true
 hidden: true
 strat: google
 ---
+> note ""
+> The Gtag Destination is in a closed Early Access Preview. To join the preview, contact [Segment Support](https://segment.com/help/contact/) or your CSM. The use is governed by [(1) Segment First Access](/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](/docs/legal/acceptable-use-policy/).
 
-The Gtag Destination is currently in a closed Early Access Preview. If you are interested in joining this preview, please [contact us](https://segment.com/help/contact/) or your CSM if you are interested in testing this new destination. The use is governed by [(1) Segment First Access](https://segment.com/docs/legal/first-access-beta-preview/) and Beta Terms and Conditions and [(2) Segment Acceptable Use Policy](https://segment.com/docs/legal/acceptable-use-policy/).
 
+## Getting started
 
-## Getting Started
-
-The Google Site Tag (Gtag) Device Mode destination allows you to unify tracking across the Google Suite using the gtag.js library. Our early Access Preview Gtag Destination currently only supports sending data to Google Analytics. All you have to do is drop in your **Google Measurement ID** into your settings. You can either choose to use a Web Measurement Id or a Web + App Measurement Id.
+The Google Site Tag (Gtag) Device Mode destination allows you to unify tracking across the Google Suite using the gtag.js library. This early Access Preview Gtag Destination supports sending data to Google Analytics. To enable, add your **Google Measurement ID** into the destination settings. You can either choose to use a Web Measurement Id or a Web + App Measurement Id.
 
 
 ## Page calls
 
-When you make a [Page call](/docs/connections/spec/page), Segment send a pageview to Google Analytics. Pageviews can be sent from the browser.
+When you make a [Page call](/docs/connections/spec/page), Segment sends a pageview to Google Analytics. Pageviews send from the browser.
 
 The resulting `page` event name in Google Analytics corresponds to the `fullName` of your page event. The `fullName` is a combination of the `category` and `name` parameters. For example, `analytics.page('Home');` produces a `Home` Page event in GA's dashboard, but `analytics.page('Retail Page', 'Home');` produces an event called `Retail Page Home`.
 
@@ -34,21 +34,21 @@ analytics.page({
 
 ### URL Query Strings
 
-By default Segment only sends the domain and path to Google Analytics. For example, if someone views the page at on `http://domain.com/page/?xyz=123&r=5`, Segment sends `http://domain.com/page/` URL to Google Analytics.
+By default Segment sends the domain and path to Google Analytics. For example, if someone views the page at `http://domain.com/page/?xyz=123&r=5`, Segment sends `http://domain.com/page/` URL to Google Analytics.
 
 In some cases, like using Google Analytics to track search queries, you might want to pass the whole URL including a query string to Google Analytics. To enable this, go to the Gtag destination settings, and check the **Include the Query String** option in the Advanced Options.
 
 ## UTM parameters
 
-Segment highly recommends Analytics.js, the device-mode Javascript library, for collecting UTM parameter data since it all happens automatically.
+Segment recommends Analytics.js, the device-mode Javascript library, for collecting UTM parameter data because Analytics.js collects this data automatically.
 
-Your UTM params must be passed in the `context` object in `context.campaign`. For Google Analytics `campaign.name`, `campaign.source` and `campaign.medium` all need to be sent together for things to show up in reports. The other two params (`campaign.term` and `campaign.content`) are both optional, but will be forwarded to GA if you send them to Segment.
+Pass UTM parameters in the `context` object in `context.campaign`. For Google Analytics, send  `campaign.name`, `campaign.source` and `campaign.medium` all together to ensure the appear in reports. The other two parameters (`campaign.term` and `campaign.content`) are both optional, but is forwarded to Google Analytics if you send them to Segment.
 
 
 
 ## Identify
 
-It is against Google's terms of service to pass Personally Identifiable Information (PII) to your Google Analytics reporting interface. For that reason Segment will never pass anything from an [Identify](/docs/connections/spec/identify) call to Google unless you specifically tell us to. You can read about Google's best practices for avoiding this [here](https://support.google.com/analytics/answer/6366371?hl=en).
+Google's terms of service forbid passing Personally Identifiable Information (PII) to your Google Analytics reporting interface. For that reason Segment does not pass data from an [Identify](/docs/connections/spec/identify) call to Google unless you specifically request it. You can read about Google's best practices for avoiding this [here](https://support.google.com/analytics/answer/6366371?hl=en).
 
 ### User ID
 Google Analytics Universal tracking method allows you to set a user ID for your identified visitors. [Read more here](https://support.google.com/analytics/answer/3123663).
@@ -67,20 +67,20 @@ analytics.identify('12345', {
 });
 ```
 
-In this example we will set the `User-ID` to `12345` for Google Analytics, but we won't share the `email` or `name` traits with Google.
+In this example the `User-ID` is to `12345` for Google Analytics, but Segment won't share the `email` or `name` traits with Google.
 
 > warning ""
-> If you are passing an **email**, **phone number**, **full name** or other PII as the `id` in [Identify](/docs/connections/spec/identify) do not use this feature. That is against the Google Analytics terms of service and your account could be suspended.
+> If you pass an **email**, **phone number**, **full name** or other PII as the `id` in [Identify](/docs/connections/spec/identify) do not use this feature. That is against the Google Analytics terms of service and your Google may suspend your service.
 
 ### Custom Dimensions
-Google Analytics has multiple scopes for each custom dimension: hit (synonymous with events), session, user, and product (required enhanced ecommerce to be enabled). Our device-mode Analytics.js library supports all of them.
+Google Analytics has several scopes for each custom dimension: hit (synonymous with events), session, user, and product (requires enabling enhanced ecommerce). Segment's device-mode Analytics.js library supports them all.
 
 ### Configuring Custom Dimensions
 First, configure the Custom Dimensions in your Google Analytics admin page. [Read how to set those up here](https://support.google.com/analytics/answer/2709829?hl=en).
 
-Once you are set up in Google Analytics, you are ready to map traits and properties to your custom dimensions.
+Once you've enabled Google Analytics, you can map traits and properties to your custom dimensions.
 
-From your Segment Dashboard, open the destinations catalog and select the Gtag destination, then Settings. Locate Custom Dimensions and declare the mapping.
+From your Segment Workspace, open the destinations catalog and select the Gtag destination, then Settings. Locate Custom Dimensions and declare the mapping.
 
 Here's an example of mapping "Gender" to dimension "1" and "User Type" to dimension "2":
 
