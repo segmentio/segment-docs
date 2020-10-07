@@ -4,7 +4,7 @@ hidden: true
 strat: ajs
 ---
 
-Analytics.js can work with your single-page applications built with technologies such as React or Vue.  
+Analytics.js can work with your single-page applications built with technologies such as React or Vue.
 
 ## Integrating with your build tooling
 
@@ -12,17 +12,17 @@ If you have a single-page application and plan to use Segment a lot, you might n
 
 First add the package as a dependency:
 
-```shell
-$ npm install analytics-node 
+```sh
+$ npm install analytics-node
 ```
 
-or, if you are using yarn:
+or, if you are using `yarn`:
 
-```shell
+```sh
 $ yarn add analytics-node
 ```
 
-Once installed, you can import `analytics-node` and instrument your events like you would with Analytics.js.  The example implementation below is in React:
+Once installed, you can import `analytics-node` and instrument your events the same way you would with Analytics.js.  The example implementation below is in React:
 
 ```js
 import Analytics from 'analytics-node'
@@ -35,12 +35,12 @@ class ShoppingCartButton {
             itemId: "abc"
         })
     }
-    
+
     render() {
         return <button onClick={this.onPurchase}>Buy Item</button>
-    }   
+    }
 
 }
 ```
 
-**Note:** Our `analytics-node` package does not support device mode destinations or some browser specific features that the Analytics.js snippet supports.
+**Note:** Segment's `analytics-node` package does not support [device-mode destinations](/docs/utils/cmodes-compare/) or some browser specific features that Analytics.js supports.
