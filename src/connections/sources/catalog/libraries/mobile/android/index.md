@@ -4,40 +4,41 @@ strat: android
 ---
 
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 	- [Getting Started](#getting-started)
 		- [About mobile connection modes](#about-mobile-connection-modes)
+		- [Create an Android source](#create-an-android-source)
 		- [Step 1: Install the Library](#step-1-install-the-library)
-		- [Packaging SDKs for Device-mode destinations](#packaging-sdks-for-device-mode-destinations)
 		- [Step 2. Initialize the Client](#step-2-initialize-the-client)
-		- [*Optional* Customizing the Client](#optional-customizing-the-client)
+		- [Customize the Client (Optional)](#customize-the-client-optional)
 		- [Step 3. Add Permissions](#step-3-add-permissions)
-	- [Identify](#identify)
-	- [Track](#track)
-	- [Formatting Order Completed Events](#formatting-order-completed-events)
-	- [Screen](#screen)
-	- [Group](#group)
-	- [Alias](#alias)
-	- [Selecting Destinations](#selecting-destinations)
+	- [Data Collection - The Basic Segment API calls](#data-collection-the-basic-segment-api-calls)
+		- [Identify](#identify)
+		- [Track](#track)
+		- [Screen](#screen)
+		- [Group](#group)
+		- [Alias](#alias)
 	- [Context](#context)
-	- [AnonymousId](#anonymousid)
-	- [Reset](#reset)
-	- [Debugging](#debugging)
-	- [Proxy HTTP Calls](#proxy-http-calls)
-	- [Automatic Screen Tracking](#automatic-screen-tracking)
-	- [Stats](#stats)
-	- [Bleeding Edge Releases](#bleeding-edge-releases)
-	- [Opt-out](#opt-out)
-	- [Sending Data to destinations](#sending-data-to-destinations)
-		- [Cloud-Mode in Android](#cloud-mode-in-android)
-		- [Packaging device-mode destination SDKs](#packaging-device-mode-destination-sdks)
-	- [Anonymizing IP](#anonymizing-ip)
+	- [Routing collected data](#routing-collected-data)
+		- [Sending Data to destinations](#sending-data-to-destinations)
+		- [Selecting Destinations](#selecting-destinations)
+	- [Utility methods](#utility-methods)
+		- [Retrieve AnonymousId](#retrieve-anonymousid)
+		- [Reset](#reset)
+		- [Collecting Stats](#collecting-stats)
+		- [Adding debug logging](#adding-debug-logging)
+	- [Privacy methods](#privacy-methods)
+		- [Opt-out](#opt-out)
+		- [Anonymizing IP](#anonymizing-ip)
+	- [Formatting Order Completed Events](#formatting-order-completed-events)
+	- [Proxying HTTP Calls](#proxying-http-calls)
+	- [Analytics-Android Versions](#analytics-android-versions)
+		- [Bleeding Edge Releases](#bleeding-edge-releases)
 		- [Migrating from v2 to v3](#migrating-from-v2-to-v3)
-	- [Migrating to v4](#migrating-to-v4)
+		- [Migrating to v4](#migrating-to-v4)
 
 <!-- /TOC -->
-
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 
@@ -60,29 +61,38 @@ Analytics for Android only supports any Android device running API 14 (Android 4
 
 {% include components/media-icon.html href="https://github.com/segmentio/analytics-android/tree/master/analytics-samples/analytics-sample" icon="media/icon-guides.svg" title="Android Test Apps" content="Segment maintains test apps for the Android mobile library. Find them here." %}
 
+### Create an Android source
+
+Before you start installing the Analytics-Android library, create an Android Source in Segment. This tells the Segment servers that you'll be sending them data from this type of source.
+
+1. Go to the [Segment App](https://app.segment.com), and sign in to the Workspace you want to send your Android data to.
+2. Click **Sources**, then **Add Source**
+3. Select an Android source from the catalog and click **Add Source**.
+4. Give the new source a name, and optionally any labels that might apply. Click **Add Source** to save the changes.
+
+Once you save the source, go to the **Settings** tab and click **API Keys** in the left navigation. Find and write down your Write Key, as you'll need it later to set up your environment. The Write Key is how Segment knows that data coming from your app is really coming from you!
 
 ### Step 1: Install the Library
 
-
-The recommended way to install the library for Android is with a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed using [Maven Central](http://maven.org/). Simply add the `analytics` module to your `build.gradle`:
+The easiest way to install the Analytics-Android library is using a build system like Gradle. This makes it simple to upgrade versions and add destinations. The library is distributed using [Maven Central](http://maven.org/). Just add the `analytics` module to your `build.gradle` file as in the example lines below:
 
 ```java
 dependencies {
   implementation 'com.segment.analytics.android:analytics:4.+'
-}
+  }
 ```
 
-### Packaging SDKs for Device-mode destinations
+#### Packaging SDKs for Device-mode destinations
 
-To keep the Analytics-Android SDK lightweight, the `analytics` artifact only installs the Segment destination. This means that all your data is sent using Segment's servers to any tools you've enabled with server-side-compatible destinations.
+To keep the Analytics-Android SDK lightweight, the `analytics` artifact only installs the Segment destination. This means that all your data is sent using Segment's servers to any tools you've enabled with cloud-mode-compatible destinations.
 
-[As described here](/docs/connections/destinations/#connection-modes), some destinations require or offer **Device-mode**. If that's the case, you'll need to take package the destination SDK, which might [require some additional steps](#packaging-device-mode-destination-sdks).
+[As described here](/docs/connections/destinations/#connection-modes), some destinations require or offer **Device-mode** SDKs. for these destinations, you must package the destination SDK, which might [require some additional steps](#packaging-device-mode-destination-sdks).
 
 Now that the SDK is installed and set up, you're ready to...
 
 ### Step 2. Initialize the Client
 
-We recommend initializing the client in your `Application` subclass.  You'll need your [Write Key](/docs/connections/find-writekey/).
+We recommend initializing the client in your `Application` subclass.  You'll need your [Segment Write Key](/docs/connections/find-writekey/) for your Android Source.
 
 ```java
 // Create an analytics client with the given context and Segment write key.
@@ -96,10 +106,10 @@ Analytics.setSingletonInstance(analytics);
 ```
 
 **Notes**:
-- Automatically tracking lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and is optional, but highly recommended to hit the ground running with core events!
+- You can automatically track lifecycle events such as `Application Opened`, `Application Installed`, `Application Updated` to start quickly with core events. These are optional, but highly recommended.
 - This only installs the Segment destination. This means that all your data is sent server-side to tools.  To bundle additional destinations client-side, you'll need to take some additional steps as [shown here](/docs/connections/sources/catalog/libraries/mobile/android/#packaging-sdks-for-device-mode-destinations).
 
-### *Optional* Customizing the Client
+### Customize the Client (Optional)
 
 The entry point of the library is through the `Analytics` class. As you might have seen in the quickstart, here's how you initialize the Analytics client with it's defaults.
 
@@ -117,7 +127,7 @@ Analytics.setSingletonInstance(analytics);
 Analytics.with(context).track(...);
 ```
 
-In general, we recommend using the Builder method as it provides the greatest flexibility. Keep in mind that you can call `Analytics.setSingletonInstance` only _ONCE_, so it's best to stash the initialization code inside your custom Application class.
+In general, Segment recommends that you use the Builder method because it provides the most flexibility. Remember you can call `Analytics.setSingletonInstance` only _ONCE_, so it's best to put the initialization code inside your custom Application class.
 
 ```java
 public class MyApp extends Application {
@@ -133,7 +143,8 @@ public class MyApp extends Application {
 
 Once you initialize an Analytics client, you can safely call any of its tracking methods from any thread. These events are dispatched asynchronously to the Segment servers and to any Device-mode destinations.
 
-**Note:** You should only ever initialize _ONE_ instance of the Analytics client. These are expensive to create and throw away, and in most cases, you should stick to Segment's singleton implementation to make using the SDK easier.
+> warning ""
+> **Note:** You should only ever initialize _ONE_ instance of the Analytics client. These are expensive to create and throw away, and in most cases, you should stick to Segment's singleton implementation to make using the SDK easier.
 
 ### Step 3. Add Permissions
 
@@ -144,22 +155,30 @@ Ensure that the necessary permissions are declared in your application's `Androi
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-## Identify
+## Data Collection - The Basic Segment API calls
+
+The Segment API calls include:
+- [Identify](#identify)
+- [Track](#track)
+- [Screen](#screen)
+- [Group](#group)
+- [Alias](#alias)
+
+### Identify
 
 > note ""
 > **Good to know**: For any of the different methods described in this doc, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
-`identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them.
+Identify calls let you tie a user to their actions, and record traits about them.  It includes a unique User ID and any optional traits you know about them.
 
-We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits change.
 
 Example `identify` call:
 
 ```java
-Analytics.with(context).identify("a user's id", new Traits().putName("a user's name"), null);
+Analytics.with(context).identify("a user's id", new Traits().putName("John Doe"), null);
 ```
+Segment recommends that you make an Identify call once when the user's first creates an account, and only using the Identify call later when their traits change. Segment remembers the previous userIDs and merges the new traits with the old ones.
 
-We recommend calling `identify` a single time when the user's account is first created, and only identifying again later when their traits change. We'll remember the previous user id and merge the new traits with the old ones.
 
 ```java
 // Initially when you only know the user's name
@@ -168,9 +187,10 @@ Analytics.with(context).identify(new Traits().putName("Michael Bolton"));
 // Sometime later in your app when the user gives you their email
 Analytics.with(context).identify(new Traits().putEmail("mbolton@example.com"));
 ```
-Hold up though! When you actually put that code in your Android app, you'll need to replace all those hard-coded strings with details about the currently logged-in user.
 
-The `identify` call has the following fields:
+Remember, you can replace the properties and traits in the code samples with variables that represent the data you actually collected.
+
+The Identify call has the following fields:
 
 <table class="api-table">
   <tr>
@@ -187,11 +207,11 @@ The `identify` call has the following fields:
   </tr>
 </table>
 
-Currently, the Android library will also send `userId` and `anonymousId` as `traits` as automatically. Additionally, `traits` will be sent in the `context.traits` field with every message.
+The Android library currently automatically sends the `userId` and `anonymousId` as `traits`. Additionally, `traits` are sent in the `context.traits` field with every message.
 
-## Track
+### Track
 
-`track` lets you record the actions your users perform. Every action triggers what we call an "event", which can also have associated properties.
+The Track call lets you record the actions your users perform. Every action triggers what we call an "event", which can also have associated properties.
 
 To get started, the Analytics-Android SDK can automatically tracks a few key common events using the Segment [Native Mobile Spec](/docs/connections/spec/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. You can enable this option during initialization.
 
@@ -208,17 +228,17 @@ Analytics.with(context).track("Product Viewed", new Properties().putValue("name"
 
 ```
 
-This example `track` call tells us that your user just triggered the **Product Viewed** event with a name of "Moto 360."
+This example Track call tells us that your user just triggered the **Product Viewed** event with a name of "Moto 360."
 
-`track` event properties can be anything you want to record, for example:
+The Track call properties can be anything you want to record, for example:
 
-```
+```java
 Analytics.with(context).track("Purchased Item", new Properties().putValue("sku", "13d31").putRevenue(199.99));
 ```
 
-The `track` call has the following fields:
+The Track call includes the following fields:
 
-<table class="api-table">
+<table>
   <tr>
     <td>`name` _String,required_</td>
     <td>A name for the tracked action.</td>
@@ -233,37 +253,8 @@ The `track` call has the following fields:
   </tr>
 </table>
 
-## Formatting Order Completed Events
 
-Segment's Android library provides several helper methods so you can easily construct both properties objects and products lists so your Order Completed events conform to the Segment [ecommerce specification](https://segment.com/docs/connections/spec/ecommerce/v2/). Here's a code example:
-
-```java
-import com.segment.analytics.Analytics;
-import com.segment.analytics.Properties;
-import com.segment.analytics.Properties.Product;
-
-// initialize a new properties object
-Properties properties = new Properties();
-
-// add orderId and revenue to the properties object
-properties.putValue("orderId", String orderId).putValue("revenue", double revenue);
-
-// initialize a new product
-Product product1 = new Product(String id, String sku, double price);
-
-// initialize a second product
-Product product2 = new Product(String id, String sku, double price);
-
-// add products to the properties object
-properties.putProducts(product1, product2);
-
-// pass the properties object into your Order Completed event
-Analytics.with(context).track("Order Completed", properties);
-```
-
-Find details on **best practices in event naming** as well as the **Track method payload** in the [Segment Track call spec](/docs/connections/spec/track/).
-
-## Screen
+### Screen
 
 The [Screen](/docs/connections/spec/screen/) method lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
 
@@ -307,7 +298,18 @@ The `screen` call has the following fields:
 
 Find details on the Screen payload in [the Segment Screen call spec](/docs/connections/spec/screen/).
 
-## Group
+
+#### Automatic Screen Tracking
+
+The Segment SDK can automatically instrument screen calls, using the label of the activity you declared in the `manifest` as the screen's name. Fragments and views do not trigger screen calls automatically, however you can manually call the Screen method for these.
+
+```java
+Analytics analytics = new Analytics.Builder(context, writeKey)
+  .recordScreenViews()
+  .build();
+```
+
+### Group
 
 Group calls let you associate an [identified user](/docs/connections/sources/catalog/libraries/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
 
@@ -342,7 +344,7 @@ The `group` call has the following fields:
 
 Find more details about the Group method, including the Group call payload, in the [Segment Group call spec](/docs/connections/spec/group/).
 
-## Alias
+### Alias
 
 Alias is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* Segment destinations, such as Mixpanel or Kissmetrics.
 
@@ -372,57 +374,16 @@ For more details about `alias`, including the **`alias` call payload**, check ou
 
 Note that the `previousId` is the value passed in as the `userId`, which Segment cached after you made an `identify` call. Segment passes that value as the `previousId` when you call `alias` and pass in a `newId`. If you have not called `identify`, the `previousId` is set to the `anonymousId`.
 
----
-
-## Selecting Destinations
-
-The `alias`, `group`, `identify`, `page` and `track` calls can all be passed an `options` object that allows you to turn certain destinations on or off. By default all destinations are enabled. (In Segment's other libraries, you could do this in the list of `integrations` inside the `options` object.)
-
-For instance, in the snippet below, the first event is sent to all destinations, but the second one is sent to all except Mixpanel.
-
-```java
-// Sent to all destinations
-Analytics.with(context).track("Viewed Item", new Properties());
-
-// Sent to all destinations, except Mixpanel
-Analytics.with(context).track("Purchased Item", new Properties(), new Options().setIntegration("Mixpanel", false));
-
-// Sent only to Google Analytics and Countly
-Analytics.with(context).track("Purchased Item", new Properties(), new Options().setIntegration(Options.ALL_INTEGRATIONS_KEY, false).setIntegration("Countly", true).setIntegration("Google Analytics", true));
-```
-
-If you build your own instance of the client, you can also specify a default options object that will be used for each call. In the snippet below, _NONE_ of the analytics events will be sent to Heap.
-
-```java
-// Disable Heap destination
-Options defaultOptions = new Options().setIntegration("Heap", false);
-
-// Attach the options to our client
-Analytics analytics = new Analytics.Builder(context, writeKey).defaultOptions(defaultOptions).build();
-// Set the client as a global singleton so it can be called from anywhere
-Analytics.setSingletonInstance(analytics);
-
-// Now any calls made with this Analytics client won't be sent to Heap
-Analytics.with(context).track("Viewed Item", new Properties());
-```
-
-Notice that the first example uses an Enum to disable the destination, but the second example uses a String. Segment recommends that you use the Enum method for Device-mode destinations, and use the String method to change the behavior of Cloud-mode destinations. The Enum method ensures type safety, and prevents you from accidentally disabling "GoogleAnalytics" instead of "Google Analytics", while the String method gives you more flexibility in what options you pass.
-
-Destination name flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/catalog/) In some cases where a destination's name has more than one spelling (for example if it changed names, or brand capitalization styles, or if it was commonly misspelled and we added an alias) the documentation for that destination will include a section called "Adding (destination name) to the integrations object".
-
-> success ""
-> **Note:** If you are on a business tier Segment plan, you can filter track calls  right from the Segment App in the [source schema page](). We recommend using the UI if possible since it's a much simpler way of managing your filters and can be updated with no code changes on your side.
-
 ## Context
 
-Context is a dictionary of extra information you can provide about a specific API call.  You can add any custom data to the context dictionary that you'd like to have access to in the raw logs. Some keys in the context dictionary have semantic meaning and will be collected for you automatically, e.g. the information about the device the user is on.
+Context is a dictionary of extra information you can provide about a specific API call.  You can add any custom data to the context dictionary that you want to have access to in the raw logs. Some keys in the context dictionary have semantic meaning and are collected for you automatically, such as information about the user's device.
 
 ```java
 AnalyticsContext analyticsContext = Analytics.with(context).getAnalyticsContext();
 analyticsContext.putValue(...).putReferrer(...).putCampaign(...);
 ```
 
-You can read more about these [special fields](/docs/connections/spec/common/#context).
+You can read more about these special fields in the [Segment Common spec documentation](/docs/connections/spec/common/#context).
 
 To alter data specific to the device object you can use the following:
 
@@ -439,7 +400,92 @@ AnalyticsContext context = analytics.getContext();
 context.clear();
 ```
 
-## AnonymousId
+## Routing collected data
+
+### Sending Data to destinations
+
+There are two ways to send data to your analytics services through this library:
+
+1. Through the Segment servers
+2. Directly from the device using bundled SDK's
+
+**Note:** Refer to the specific destination's docs to see if your tool must be bundled in the app or sent server-side.
+
+#### Cloud-Mode in Android
+
+When a destination is enabled for your Android source from the Segment web app, but you haven't packaged its SDK with your app, requests go through the Segment REST API, and are routed to the destination service's API as [described here](/docs/connections/destinations/#connection-modes). Most, but not all destinations offer a cloud-based connection mode, so it's a good idea to [check for destinations that you might _need_ to package](/docs/util/cmodes-compare/).
+
+#### Packaging device-mode destination SDKs
+
+By default, Segment's `analytics` artifact does not package Device-mode destination SDKs.
+
+We recommend using device-mode destinations on a need-to-use basis _only_, to reduce the size of your application, and to avoid running into the dreaded 65k method limit.
+
+To package Device-mode destinations, first add the dependencies you need to your project. You can find these in the Segment app when you open the destination for your source.
+
+```java
+compile('com.segment.analytics.android.integrations:google-analytics:+') {
+  transitive = true
+}
+compile('io.branch.segment.analytics.android.integrations:library:+') {
+  transitive = true
+}
+```
+
+Once you add the dependency, register the destination with the Analytics-Android SDK.
+
+```java
+Analytics analytics = new Analytics.Builder(context, writeKey)
+  .use(GoogleAnalyticsIntegration.FACTORY)
+  .use(BranchIntegration.FACTORY)
+  ...
+  .build();
+```
+
+### Selecting Destinations
+
+The `alias`, `group`, `identify`, `page` and `track` calls can all be passed an `options` object that allows you to turn certain destinations on or off. By default all destinations are enabled. (In Segment's other libraries, you could do this in the list of `integrations` inside the `options` object.)
+
+In the examples below, the first event is sent to all destinations, but the second one is sent to all except Mixpanel.
+
+```java
+// Sent to all destinations
+Analytics.with(context).track("Viewed Item", new Properties());
+
+// Sent to all destinations, except Mixpanel
+Analytics.with(context).track("Purchased Item", new Properties(), new Options().setIntegration("Mixpanel", false));
+
+// Sent only to Google Analytics and Countly
+Analytics.with(context).track("Purchased Item", new Properties(), new Options().setIntegration(Options.ALL_INTEGRATIONS_KEY, false).setIntegration("Countly", true).setIntegration("Google Analytics", true));
+```
+
+If you build your own instance of the client, you can also specify a default `options` object to use for each call. In the example below, _NONE_ of the analytics events are sent to Heap.
+
+```java
+// Disable Heap destination
+Options defaultOptions = new Options().setIntegration("Heap", false);
+
+// Attach the options to our client
+Analytics analytics = new Analytics.Builder(context, writeKey).defaultOptions(defaultOptions).build();
+// Set the client as a global singleton so it can be called from anywhere
+Analytics.setSingletonInstance(analytics);
+
+// Now any calls made with this Analytics client won't be sent to Heap
+Analytics.with(context).track("Viewed Item", new Properties());
+```
+
+Notice that the first example uses an Enum to disable the destination, but the second example uses a String. Segment recommends that you use the Enum method for Device-mode destinations, and use the String method to change the behavior of Cloud-mode destinations. The Enum method ensures type safety, and prevents you from accidentally disabling "GoogleAnalytics" instead of "Google Analytics", while the String method gives you more flexibility in what options you pass to cloud-mode destinations.
+
+Destination name flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/catalog/) In some cases where a destination's name has more than one spelling (for example if it changed names, or brand capitalization styles, or if it was commonly misspelled and we added an alias) the documentation for that destination will include a section called "Adding (destination name) to the integrations object".
+
+> success ""
+> **Note:** If you are on a business tier Segment plan, you can filter track calls  right from the Segment App in the source schema page. This is a much simpler way to manage your filters, and you can update it without having to make and publish code changes.
+
+
+
+## Utility methods
+
+### Retrieve AnonymousId
 
 You can retrieve the `anonymousId` set by the library by using:
 
@@ -447,7 +493,7 @@ You can retrieve the `anonymousId` set by the library by using:
 Analytics.with(context).getAnalyticsContext().traits().anonymousId()
 ```
 
-## Reset
+### Reset
 
 The `reset` method clears the SDK's internal stores for the current user and group. This is useful for apps where users log in and out with different identities on the same device over time.
 
@@ -461,9 +507,20 @@ Events queued on disk are _not_ cleared and are uploaded the next time the app s
 > warning ""
 > **Note**: When you call `reset`, the next time the app opens Segment generates a new AnonymousId. This can impact the number of Monthly Tracked Users (MTUs) you process.
 
-## Debugging
 
-If you run into issues while using the Android library, you should enable logging to help trace the issue. Logging also helps you see how long destinations take to complete their calls and discover bottlenecks.
+### Collecting Stats
+
+Local device stats help you quickly see how many events you sent to Segment, the average time bundled destinations took to run, and similar metrics.
+
+```java
+StatsSnapshot snapshot = Analytics.with(context).getSnapshot();
+log(snapshot.integrationOperationAverageDuration);
+log(snapshot.flushCount);
+```
+
+### Adding debug logging
+
+If you run into issues while using the Android library, you can enable logging to help trace the issue. Logging also helps you see how long destinations take to complete their calls so you can find performance bottlenecks.
 
 The logging is enabled by default in the default singleton instance if your application is running in `debug` mode. If you use a custom instance, attach a `LogLevel` to the `Builder` and set the logging level there, as in the example below.
 
@@ -477,7 +534,63 @@ You can choose to disable logging completely (`LogLevel.NONE`), enable basic log
 > Segment recommends that you turn logging off in _production_ modes of your app.
 
 
-## Proxy HTTP Calls
+## Privacy methods
+
+### Opt-out
+
+Depending on the audience for your app (for example, children) or the countries where you sell your app (for example, the EU), you may need to offer the ability for users to opt-out of analytics data collection inside your app. You can turn off ALL destinations including Segment itself:
+
+```java
+public void optOut(boolean optOut) {
+  this.optOut.set(optOut);
+}
+```
+
+Set the opt-out status for the current device and analytics client combination. This flag
+persists across device reboots, so you can call it once in your application,
+such as in a screen where a user can opt out of analytics tracking.
+
+
+
+### Anonymizing IP
+
+The Segment iOS, Android, Analytics.js and Xamarin libraries automatically derive and set the IP address for events recorded on the user's device. The IP is not collected on the device itself, but instead is filled in by Segment's servers when they receive a message.
+
+To prevent Segment from recording the users' IP in destinations and S3, you can set the event's `context.ip` field to `0.0.0.0`. The Segment servers won't overwrite this data if it comes from the client, and so do not record the IP address of the client.
+
+
+## Formatting Order Completed Events
+
+Segment's Android library provides several helper methods so you can easily construct both properties objects and products lists so your Order Completed events conform to the Segment [ecommerce specification](https://segment.com/docs/connections/spec/ecommerce/v2/). Here's a code example:
+
+```java
+import com.segment.analytics.Analytics;
+import com.segment.analytics.Properties;
+import com.segment.analytics.Properties.Product;
+
+// initialize a new properties object
+Properties properties = new Properties();
+
+// add orderId and revenue to the properties object
+properties.putValue("orderId", String orderId).putValue("revenue", double revenue);
+
+// initialize a new product
+Product product1 = new Product(String id, String sku, double price);
+
+// initialize a second product
+Product product2 = new Product(String id, String sku, double price);
+
+// add products to the properties object
+properties.putProducts(product1, product2);
+
+// pass the properties object into your Order Completed event
+Analytics.with(context).track("Order Completed", properties);
+```
+
+Find details on **best practices in event naming** as well as the **Track method payload** in the [Segment Track call spec](/docs/connections/spec/track/).
+
+
+## Proxying HTTP Calls
 
 You can point the Android SDK to your own hosted [proxy](https://github.com/segmentio/segment-proxy) of the Segment API. This runs the HTTP traffic for the Segment API through the proxy.
 
@@ -493,27 +606,16 @@ Analytics analytics = new Analytics.Builder(this, ANALYTICS_WRITE_KEY) //
         .build();
 ```
 
-## Automatic Screen Tracking
 
-The Segment SDK can automatically instrument screen calls, using the label of the activity you declared in the `manifest` as the screen's name. Fragments and views do not trigger screen calls automatically, however you can manually call the Screen method these.
+## Analytics-Android Versions
 
-```java
-Analytics analytics = new Analytics.Builder(context, writeKey)
-  .recordScreenViews()
-  .build();
-```
+This section includes information on:
+- [Bleeding Edge Releases](#bleeding-edge-releases)
+- [Migrating from v2 to v3](#migrating-from-v2-to-v3)
+- [Migrating to v4](#migrating-to-v4)
 
-## Stats
 
-Local device stats help you quickly see how many events you sent to Segment, the average time bundled destinations took to run, and similar metrics.
-
-```java
-StatsSnapshot snapshot = Analytics.with(context).getSnapshot();
-log(snapshot.integrationOperationAverageDuration);
-log(snapshot.flushCount);
-```
-
-## Bleeding Edge Releases
+### Bleeding Edge Releases
 
 Segment publishes stable releases every second Wednesday, when we tag and release the `master` branch.
 
@@ -526,70 +628,12 @@ repositories {
 }
 ```
 
-## Opt-out
-
-Depending on the audience for your app (e.g. children) or the countries where you sell your app (e.g. the EU), you may need to offer the ability for users to opt-out of analytics data collection inside your app. You can turn off ALL destinations including Segment itself:
-
-```java
-public void optOut(boolean optOut) {
-  this.optOut.set(optOut);
-}
-```
-
-Set the opt-out status for the current device and analytics client combination. This flag is
-persisted across device reboots, so you can simply call this once during your application
-(such as in a screen where a user can opt out of analytics tracking).
-
-## Sending Data to destinations
-
-There are two ways to send data to your analytics services through this library:
-
-1. Through the Segment servers
-2. Directly from the device using bundled SDK's
-
-**Note:** Refer to the specific destination's docs to see if your tool must be bundled in the app or sent server-side.
-
-### Cloud-Mode in Android
-
-When a destination's SDK is not packaged, but it is enabled from your dashboard, the request goes through the Segment REST API, and is routed to the service's server-side API as [described here](/docs/connections/destinations/#connection-modes).
-
-### Packaging device-mode destination SDKs
-
-By default, Segment's `analytics` artifact does not package Device-mode destinations.
-
-We recommend using device-mode destinations on a need-to-use basis to reduce the size of your application, and to avoid running into the dreaded 65k method limit.
-
-To package Device-mode destinations, first add the dependencies you need to your project. You can find these in the Segment app when you open the destination for your source.
-
-```java
-compile('com.segment.analytics.android.integrations:google-analytics:+') {
-  transitive = true
-}
-compile('io.branch.segment.analytics.android.integrations:library:+') {
-  transitive = true
-}
-```
-
-After adding the dependency, you must register the destination with the Analytics-Android SDK.
-
-```java
-Analytics analytics = new Analytics.Builder(context, writeKey)
-  .use(GoogleAnalyticsIntegration.FACTORY)
-  .use(BranchIntegration.FACTORY)
-  ...
-  .build();
-```
-
-## Anonymizing IP
-
-Segment automatically derives and sets the IP address for client-side (iOS, Android, Analytics.js and Xamarin) events. It is not collected on the device itself, but instead is filled in by Segment's servers when they receive a message. The Segment servers don't record the IP address of the client for libraries if the `context.ip` field is already set.
-
-If you do not want us to record your tracked users' IP in destinations and S3, you can set your event's `context.ip` field to `0.0.0.0`.
-
 
 ### Migrating from v2 to v3
 
-__NOTE__: Version 3 of the SDK is now replaced by version 4. See the section below on upgrading.
+> warning "Version 3 deprecated in favor of Version 4"
+> See the [section below for instructions on how to upgrade](#migrating-to-v4).
+
 If you are already using version 2 of the Android SDK, you'll have to make few changes to get up and running with version 3.
 
 In version 3, we've organized the destinations to be make the core SDK even leaner and smaller. This is what the old set up looked like:
@@ -628,7 +672,7 @@ Earlier, you could control the debugging behaviour with a boolean flag. In versi
 
 Version 2 of the SDK also let you customize the behaviour of the SDK by providing resource values in XML. Version 3 ignores these custom options from XML to simplify behaviour and improve performance. The recommended way to customize the Analytics client is to use the [Builder](/docs/connections/sources/catalog/libraries/mobile/android/#optional-customizing-the-client) methods instead.
 
-## Migrating to v4
+### Migrating to v4
 
 **Note:** If you are using version 2 of the Android SDK, you'll have to make few changes to get up and running with [version 3](/docs/connections/sources/catalog/libraries/mobile/android/#migrating-to-v4).
 
