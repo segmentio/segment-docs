@@ -18,8 +18,7 @@ published: false
 > note "This is a note"
 > Some note text foo bar baz
 
-{% includeifythis %}
-{{ thiswordismisspelled }}
+
 
 We hope you like their pie.
 
