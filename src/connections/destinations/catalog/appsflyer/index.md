@@ -20,9 +20,9 @@ This document was last updated on April 27, 2018. If you notice any gaps, outdat
 
 #### Additional device-mode set up for iOS 14 support
 
-Segment’s AppsFlyer iOS SDK was updated to use AppsFlyer version 6.0 beta to prepare for iOS 14. The SDK beta is compatible with the beta version of iOS 14, and supports AppsFlyer's aggregate attribution, and Apple's AppTrackingTransperancy framework, and more. See [the AppsFlyer blog post](https://www.appsflyer.com/blog/privacy-centric-attribution-ios14/] about AppsFlyer's new privacy-centric attribution model.
+Segment updated the AppsFlyer iOS SDK to use version `6.0 beta` to prepare for tracking changes in iOS 14. The SDK beta version is compatible with the beta version of iOS 14 released by Apple, and supports both AppsFlyer's aggregate attribution, and Apple's `AppTrackingTransperancy` framework, and more. See [the AppsFlyer blog post](https://www.appsflyer.com/blog/privacy-centric-attribution-ios14/] about AppsFlyer's new privacy-centric attribution model.
 
-To use the latest AppsFlyer SDK to collect IDFAs you must do the following:
+To use the latest AppsFlyer SDK to collect IDFAs, do the following:
 
 1. Upgrade to use Xcode12.
 2. Update your Segment AppsFlyer SDK to version 6.0.2 or later.
@@ -46,11 +46,13 @@ To use the latest AppsFlyer SDK to collect IDFAs you must do the following:
    ```
 5. Follow [Segment's guide for collecting IDFA](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
 
-#### Additional iOS Cloud Mode Setup for iOS 14
+#### Additional iOS Cloud Mode Set up for iOS 14
 
-With Segment’s release of our latest Analytics-iOS SDK with updates to support iOS 14,  there are two paths for you to take regarding IDFA collection, you need IDFA collection or you do not. If you do not need to collect the IDFA it means you have not imported the necessary IDFA closure as a config to the  library nor imported the Ad Tracking Transparency framework from Apple. If you do not need to collect IDFA and simply  bump your Analytics-iOS SDK, the `device.adTrackingEnabled`  will be set to false and the  `device.advertisingId` key will be deleted from the context object in your payloads. 
+With the release of Segment’s latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
 
-For AppsFlyer, if you have the setting  “Can Omit AppsFlyerID” enabled, and you are either not passing an IDFA (as stated above) or passing IDFA as zero’d out (meaning the customer declined permission  to collect IDFA) the event  will fail to send to AppsFlyer. To mitigate this we have introduced a new setting “Fallback to send IDFV when advertisingId key not present (Server-Side Only)”. When this setting is enabled in your AppsFlyer destination settings and you are sending events Cloud mode, we will fallback to sending the IDFV (ie. `device.id`)  when `device.advertisingId` is either not present or zero’d out AND “Can Omit AppsFlyerID” is enabled. 
+If you have the **Can Omit AppsFlyerID** setting enabled, but aren't sending an IDFA (either because you aren't passing one, or the user denied permission to collect it), AppsFlyer rejects the event because it has no way to identify the user.
+
+To prevent this, you can enable the new **Fallback to send IDFV when advertisingId key not present** setting in your AppsFlyer destination settings. With this enabled, when you send data using cloud-mode (through the Segment servers), Segment sends the user's IDFV (the `device.id`) when `device.advertisingId` is missing or blank AND “Can Omit AppsFlyerID” is enabled.
 
 ### Server
 

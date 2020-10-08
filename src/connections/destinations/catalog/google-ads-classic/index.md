@@ -21,13 +21,13 @@ You'll need to enter your Conversion ID from your Google Ads (Classic) account f
 
 #### Additional iOS Cloud Mode Setup for iOS 14
 
-With Segment’s release of our latest Analytics-iOS SDK with updates to support iOS 14,  there are two paths for you to take regarding IDFA collection, you need IDFA collection or you do not. If you do not need to collect the IDFA it means you have not imported the necessary IDFA closure as a config to the  library nor imported the Ad Tracking Transparency framework from Apple. If you do not need to collect IDFA and simply  bump your Analytics-iOS SDK, the `device.adTrackingEnabled`  will be set to false and the  `device.advertisingId` key will be deleted from the context object in your payloads. 
+With the release of Segment’s latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
 
-In this scenario where the `device.advertisingId` key is removed from the payload, the  outbound request to Google Adwords (which maps IDFA to `rdid`), will return a 4xx error. To mitigate these errors the following has been introduced:
+Google Adwords maps the IDFA to `rdid`, and returns a 4xx error on the outbound request if no `device.advertisingId` key appears in the payload, because it cannot identify the user.
 
-1. Segment introduced new setting destination setting “Fallback to Zeroed IDFA when advertisingId key not present (Server-Side Only)”
-2. When this setting is enabled and there is no `device.advertisingId` key we will fallback to setting the `rdid` to be zero’d out (ie.  `'00000000-0000-0000-0000-000000000000'`) .
-3. To maintain backwards compatibility, if this setting is not enabled and there is no no `device.advertisingId` key Segment will reject the message.
+ To work around this, enable the **Fallback to Zeroed IDFA when advertisingId key not present** destination setting for Google Adwords in the Segment web app. When enabled, Segment checks if a `device.advertisingId` exists in the payload, and if none exists, sets the `rdid` to `'00000000-0000-0000-0000-000000000000'`.
+
+To maintain backwards compatibility, if you do not enable this setting and no `device.advertisingId` key appears in the payload, Segment rejects the message.
 
 
 ### Conversion ID

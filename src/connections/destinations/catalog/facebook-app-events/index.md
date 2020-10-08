@@ -214,11 +214,11 @@ Analytics.with(context).track(
 )
 ```
 
-#### Additional iOS Cloud Mode Setup for iOS 14
+#### Additional iOS Cloud Mode Set up for iOS 14
 
-With Segment’s release of our latest Analytics-iOS SDK with updates to support iOS 14,  there are two paths for you to take regarding IDFA collection, you need IDFA collection or you do not. If you do not need to collect the IDFA it means you have not imported the necessary IDFA closure as a config to the  library nor imported the Ad Tracking Transparency framework from Apple. If you do not need to collect IDFA and simply  bump your Analytics-iOS SDK, the `device.adTrackingEnabled`  will be set to false and the  `device.advertisingId` key will be deleted from the context object in your payloads. 
+With the release of Segment’s latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
 
-In the scenario where the `device.advertisingId` key is missing from the payload and hence not passed to Facebook App Events, Facebook will return a 4xx error due to lack of required parameters. To mitigate these errors Segment introduced a new setting destination setting “Fallback to Zeroed IDFA when advertisingId key not present (Server-Side Only)”. When this setting is enabled and there is no `device.advertisingId` key we will fallback to setting the the  `advertiser_id` in the outbound payload to be zero’d out (ie.  `'00000000-0000-0000-0000-000000000000'`).
+Facebook returns a 4xx error due to lack of required parameters if the `device.advertisingId` key does not appear in the payload. To work around this, enable the  **Fallback to Zeroed IDFA when advertisingId key not present** destination setting for Facebook App Events from the Segment web app. When you enable this setting, Segment checks for the `device.advertisingId` key, and if none is present, sets the `advertiser_id` in the outbound payload to `'00000000-0000-0000-0000-000000000000'`.
 
 
 ## Other Features
