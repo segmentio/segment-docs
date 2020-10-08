@@ -214,6 +214,13 @@ Analytics.with(context).track(
 )
 ```
 
+#### Additional iOS Cloud Mode Setup for iOS 14
+
+With Segment’s release of our latest Analytics-iOS SDK with updates to support iOS 14,  there are two paths for you to take regarding IDFA collection, you need IDFA collection or you do not. If you do not need to collect the IDFA it means you have not imported the necessary IDFA closure as a config to the  library nor imported the Ad Tracking Transparency framework from Apple. If you do not need to collect IDFA and simply  bump your Analytics-iOS SDK, the `device.adTrackingEnabled`  will be set to false and the  `device.advertisingId` key will be deleted from the context object in your payloads. 
+
+In the scenario where the `device.advertisingId` key is missing from the payload and hence not passed to Facebook App Events, Facebook will return a 4xx error due to lack of required parameters. To mitigate these errors Segment introduced a new setting destination setting “Fallback to Zeroed IDFA when advertisingId key not present (Server-Side Only)”. When this setting is enabled and there is no `device.advertisingId` key we will fallback to setting the the  `advertiser_id` in the outbound payload to be zero’d out (ie.  `'00000000-0000-0000-0000-000000000000'`).
+
+
 ## Other Features
 
 ### Facebook Login and Facebook Dialogs
