@@ -241,7 +241,7 @@ Personas sends **Account-Level data** to HubSpot using **Identify** calls to add
     **Note**: For user-level events or traits, you can specify `None of the users`, `Any users`, or `All users` when you build your audience criteria.
 
 
-### Generating Audiences
+### Creating Personas Audiences in HubSpot
 
 1. Create your audience criteria and preview the audience in Segment. Click Select Destinations.
 
@@ -268,17 +268,14 @@ Personas sends **Account-Level data** to HubSpot using **Identify** calls to add
    - For Personas Audiences that are only individual users, set the **Object Type** as `Contact`.
    - For Audiences that use *Groups*, set the **Object type** to `Contact information`.
 
-7. Enter the label for the custom property, and make sure it matches the Audience Key you wrote down from the Personas audience builder.
-
+7. Enter the label for the custom property, and make sure it matches the Audience Key you wrote down from the Personas audience builder (see the tip below). Click **Next**.
 
    > ✅ **Tip**: The audience label’s “internal name” in HubSpot *must exactly match* the Segment  `audience key`. You can check this by clicking the `</>` icon to the right of the Label field, and making corrections.
-
-   Click **Next**.
 
 
    ![](images/hubspot-personas05.png)
 
-6.  On the next screen, set the **Field type** for audiences to `Single Checkbox`. (This represents a boolean value that indicates audience membership.)
+8. On the next screen, set the **Field type** for audiences to `Single Checkbox`. (This represents a boolean value that indicates audience membership.)
    (For computed traits, depending on whether the output is a string or number, select `Single-line text` or `Number`.)
 
    Click **Create** to finish adding the audience contact property.
@@ -286,17 +283,16 @@ Personas sends **Account-Level data** to HubSpot using **Identify** calls to add
    ![](images/hubspot-personas06.png)
 
 
-7. Back in the Personas Audience builder, click **Create Audience**.
+9. Back in the Personas Audience builder, click **Create Audience**. Personas sends any users that meet the audience criteria to HubSpot immediately.
 
 
 ### Verify the audience
 
-Personas sends any users that meet the audience criteria to HubSpot in seconds. You can also use the debugger to see these calls. Edit the URL below to replace YOUR_WORKSPACE and YOUR_PERSONAS_SPACE with the workspace and personas space you're working in.
+You can use the debugger in your Personas space to see the calls sent to HubSpot. Edit the URL below to replace YOUR_WORKSPACE and YOUR_PERSONAS_SPACE with the workspace and personas space you're working in.
 
 `https://app.segment.com/YOUR_WORKSPACE/sources/YOUR_PERSONAS_SPACE/debugger`
 
 ![](images/hubspot-personas07.png)
-
 
 You can check back in HubSpot to see the audience boolean as a contact property. For the audience created in the example above, you could check individual contact profiles and see a contact property called  `Email Opened 30 Days` = `Yes`.
 
