@@ -50,7 +50,7 @@ To use the latest AppsFlyer SDK to collect IDFAs, do the following:
 
 With the release of Segment’s latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
 
-If you have the **Can Omit AppsFlyerID** setting enabled, but aren't sending an IDFA (either because you aren't passing one, or the user denied permission to collect it), AppsFlyer rejects the event because it has no way to identify the user.
+If you have the **Can Omit AppsFlyerID** setting enabled, but aren't sending an IDFA (either because you aren't passing one, or the user denied permission to collect it), AppsFlyer rejects the event.
 
 To prevent this, you can enable the new **Fallback to send IDFV when advertisingId key not present** setting in your AppsFlyer destination settings. With this enabled, when you send data using cloud-mode (through the Segment servers), Segment sends the user's IDFV (the `device.id`) when `device.advertisingId` is missing or blank AND “Can Omit AppsFlyerID” is enabled.
 
