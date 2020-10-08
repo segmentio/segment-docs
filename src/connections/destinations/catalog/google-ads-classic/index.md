@@ -19,7 +19,7 @@ It can also be used to trigger Google Ads (Classic) conversion from your mobile 
 From your Segment Destinations Catalog click Google Ads (Classic).
 You'll need to enter your Conversion ID from your Google Ads (Classic) account first. Next, enter the name of the event exactly as it appears in your [`track`](/docs/connections/spec/track) call on the left and map it to your Google Ads (Classic) conversion's `google_conversion_label` on the right.
 
-#### Additional cloud-mode set up for iOS 14 support
+#### Additional iOS Cloud Mode Setup for iOS 14
 
 With Segment’s release of our latest Analytics-iOS SDK with updates to support iOS 14,  there are two paths for you to take regarding IDFA collection, you need IDFA collection or you do not. If you do not need to collect the IDFA it means you have not imported the necessary IDFA closure as a config to the  library nor imported the Ad Tracking Transparency framework from Apple. If you do not need to collect IDFA and simply  bump your Analytics-iOS SDK, the `device.adTrackingEnabled`  will be set to false and the  `device.advertisingId` key will be deleted from the context object in your payloads. 
 
