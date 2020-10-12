@@ -219,7 +219,7 @@ HubSpot requires that you create and define any custom traits in the HubSpot UI 
 
 ### How it works: User-Level Traits and Audiences
 
-Personas sends **User-Level data** to HubSpot to update properties on a user’s (or `contacts`  in HubSpot) record, using an **Identify** call to add a standard  `Property`, and using a **Track** call when a trait is computed or an audience is entered or exited.
+Personas sends **User-Level data** to HubSpot to update properties on a user (or `contacts` in HubSpot) record, using an **Identify** call to add a standard  `Property`, and using a **Track** call when a trait is computed or an audience is entered or exited.
 
 - **Computed Traits**: When the trait is first computed, Personas sends an **Identify** call to update the records of all users who are included in the computed trait. Each time the trait is computed after that, Personas sends a **Track** call to HubSpot to update the values. For example, if a computed trait counts the number of times a user visits your pricing page, and the user visits your pricing page five times, Segment first sends an Identify call with the property `pricing_page_visits: 5`, then sends a Track call when this number updates. This appears in HubSpot as a `Property` for the contact.
 
@@ -247,7 +247,7 @@ Personas sends **Account-Level data** to HubSpot using **Identify** calls to add
 
    ![](images/hubspot-personas01.png)
 
-2. Next, select HubSpot as a destination for the audience in Segment. Use the default settings, which send an Identify calls.
+2. Next, select HubSpot as a destination for the audience in Segment. Use the default settings, which send an Identify call to mark users as members of an audience or when they have a specific trait. <!-- some clarifying changes coming here in a future update, per Dadson.-->
 
    ![](images/hubspot-personas02.png)
 
@@ -308,7 +308,7 @@ You can also see this in the contact property history for each user record.
 
 - **Personas Destination type**: Event Method (data is delivered to this Destination one-by-one on a realtime basis)
 - **Traits and Audiences created by**: Identify calls add traits and audiences as traits on the user, Track calls update the values.
-- **Must create audience_name field before Personas can update those values?**: Yes for custom traits. If a trait does not already exist, you must create and define the it before sending Personas data to HubSpot. Otherwise the initial `Identify` call creates the audience itself.
+- **Must create audience_name field before Personas can update those values?**: Yes, you must manually create Contact properties in Hubspot before you send Custom Traits or Audiences.
 - **Audience appears as**: A prose-text version of the audience name (for example, `Order Completed 30 Days: Yes`) where `Yes` indicates that the user is in the audience.
 - **Destination rate limit**: Yes. HubSpot’s rate limit depends on what account tier you have in HubSpot, but is *usually* 100 calls per ten seconds, or 10 per second.
 - **Lookback window allowed**: Unlimited
