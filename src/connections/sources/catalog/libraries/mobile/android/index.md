@@ -4,43 +4,6 @@ strat: android
 ---
 
 
-<!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-	- [Getting Started](#getting-started)
-		- [About mobile connection modes](#about-mobile-connection-modes)
-		- [Create an Android source](#create-an-android-source)
-		- [Step 1: Install the Library](#step-1-install-the-library)
-		- [Step 2. Initialize the Client](#step-2-initialize-the-client)
-		- [Customize the Client (Optional)](#customize-the-client-optional)
-		- [Step 3. Add Permissions](#step-3-add-permissions)
-	- [Data Collection - The Basic Segment API calls](#data-collection-the-basic-segment-api-calls)
-		- [Identify](#identify)
-		- [Track](#track)
-		- [Screen](#screen)
-		- [Group](#group)
-		- [Alias](#alias)
-	- [Context](#context)
-	- [Routing collected data](#routing-collected-data)
-		- [Sending Data to destinations](#sending-data-to-destinations)
-		- [Selecting Destinations](#selecting-destinations)
-	- [Utility methods](#utility-methods)
-		- [Retrieve AnonymousId](#retrieve-anonymousid)
-		- [Reset](#reset)
-		- [Collecting Stats](#collecting-stats)
-		- [Adding debug logging](#adding-debug-logging)
-	- [Privacy methods](#privacy-methods)
-		- [Opt-out](#opt-out)
-		- [Anonymizing IP](#anonymizing-ip)
-	- [Formatting Order Completed Events](#formatting-order-completed-events)
-	- [Proxying HTTP Calls](#proxying-http-calls)
-	- [Analytics-Android Versions](#analytics-android-versions)
-		- [Bleeding Edge Releases](#bleeding-edge-releases)
-		- [Support for Older versions of Android](#support-for-older-versions-of-android)
-		- [Migrating from v2 to v3](#migrating-from-v2-to-v3)
-		- [Migrating to v4](#migrating-to-v4)
-
-<!-- /TOC -->
-
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.segment.analytics.android/analytics)
 
 Analytics for Android makes it simple to send your data to any tool without having to learn, test or implement a new API every time.
