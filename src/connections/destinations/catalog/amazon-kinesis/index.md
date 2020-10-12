@@ -15,6 +15,7 @@ This document was last updated on February 05, 2020. If you notice any gaps, out
 2. Create an IAM policy.
    Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/) and follow these instructions to [Create an IAM policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) to allow Segment permission to write to your Kinesis Stream.
    Select the **Create Policy from JSON** option and use the following template policy in the `Policy Document` field. Be sure to change the {region}, {account-id} and {stream-name} with the applicable values.
+
    ```json
    {
       "Version": "2012-10-17",
@@ -22,7 +23,8 @@ This document was last updated on February 05, 2020. If you notice any gaps, out
           {
               "Effect": "Allow",
               "Action": [
-                  "kinesis:PutRecord"
+                  "kinesis:PutRecord",
+                  "kinesis:PutRecords"
               ],
               "Resource": [
                   "arn:aws:kinesis:{region}:{account-id}:stream/{stream-name}"
