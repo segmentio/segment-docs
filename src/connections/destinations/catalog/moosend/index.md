@@ -12,7 +12,7 @@ You can track [Page](https://segment.com/docs/connections/spec/page/) events usi
 
 ## Identify
 
-An [Identify](https://segment.com/docs/connections/spec/identify/) event lets you tie a user in Moosend to their actions and record traits about them. It includes a unique email and any optional traits you know about them like their name, etc.
+An [Identify](https://segment.com/docs/connections/spec/identify/) event lets you tie a user in Moosend to their actions and record traits about them. It includes a unique email and their name.
 
 Our recommendation is to call `identify` after a user registers, after a user logs in and after a user provides their email as part of your newsletter subscription form (if applicable).
 
