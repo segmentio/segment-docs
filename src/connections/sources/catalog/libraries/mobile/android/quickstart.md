@@ -1,5 +1,5 @@
 ---
-title: Quickstart: Android
+title: 'Quickstart: Analytics-Android'
 hidden: true
 strat: android
 ---

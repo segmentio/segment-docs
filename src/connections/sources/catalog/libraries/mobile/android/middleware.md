@@ -1,5 +1,5 @@
 ---
-title: Middleware for Android
+title: 'Middleware for Analytics-Android'
 strat: android
 ---
 

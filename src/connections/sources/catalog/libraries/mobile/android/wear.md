@@ -1,5 +1,5 @@
 ---
-title: Analytics for Android Wear
+title: 'Analytics for Android Wear'
 strat: android
 hidden: true
 ---

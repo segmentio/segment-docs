@@ -98,7 +98,7 @@ sections:
   - path: /connections/sources/catalog/libraries/mobile/android
     title: Analytics-Android mobile source
   - path: /connections/sources/catalog/libraries/mobile/android/quickstart
-    title: Android Quickstart tutorial
+    title: Analytics-Android Quickstart tutorial
   - path: /connections/sources/catalog/libraries/mobile/android/middleware
     title: Middlewares for Android
   - path: /connections/sources/catalog/libraries/mobile/android/troubleshooting

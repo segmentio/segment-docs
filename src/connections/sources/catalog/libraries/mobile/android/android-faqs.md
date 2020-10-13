@@ -1,5 +1,5 @@
 ---
-title: Analytics-Android Frequently asked questions
+title: 'Analytics-Android frequently asked questions'
 strat: android
 ---
 
@@ -121,29 +121,3 @@ analytics.getContext().putDeviceToken(registrationId);
 ## Do you support Phonegap or Cordova?
 
 Yes! You can use Segment's browserify'd [analytics-node](https://github.com/segmentio/analytics-node) package just like any other client-side JavaScript library.
-
-## How does Analytics-Android queue API calls?
-
-The Analytics-Android library queues API calls and uploads them in batches. This limits the number of network calls made, and helps save battery on the user's device.
-
-When you send an event, the library saves it to disk. When the queue size reaches the maximum size you specify (20 by default), the library flushes the queue and uploads the events in a single batch. Since the data is saved immediately, it isn't lost even if the app is killed or the operating system crashes.
-
-The queue behavior might differ for Device-mode destinations. For example, Mixpanel's SDK queues events and then flushes them only when the app goes to the background.
-
-This is why even if you see events in the debugger, the Device-mode destination may not show them on their dashboards yet because they might still be in their mobile SDK's queue. The opposite may also happen: the Device-mode destination SDK might send events to its servers before Segment sends its queue, so events could show up in the destination's dashboard before they appear in the Segment debugger.
-
-## Will my events be delivered even if the app is killed?
-
-Analytics-Android uses a persistent disk queue, so the events persist even when the app is killed. The library simply reads them from disk, and uploads the events the next time the app starts. The queue works on top of [Tape](http://square.github.io/tape/), which is designed to even survive process and system crashes.
-
-Analytics-Android saves up to 1000 calls on disk, and these never expire.
-
-## How do you handle Unique Identifiers?
-
-One of the most important parts of any analytics platform is the ability to consistently and accurately identify users. To do this, the platform must assign and persist some form of identification on the device so you can analyze user actions effectively. This is especially important for funnel conversion analysis and retention analysis.
-
-Naturally the Analytics SDK needs a unique ID for each user. The very first time an Android app that uses Segment launches, the Segment SDK generates a UUID and saves it on the device's disk. This is used as the `anonymousId` and stays constant for the user on the device. To create a new user on the same device, call `reset` on the Analytics client.
-
-The Segment SDK also collects the [Advertising ID](https://developer.android.com/google/play-services/id.html) provided by Play Services. Make sure the Play Services Ads library is included as a dependency for your application. This is the ID that should be used for advertising purposes. This value is set to `context.device.advertisingId`.
-
-Segment also collects the [Android ID](http://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID) as `context.device.id`. Some destinations rely on this field being the Android ID, so double check your destinations vendor documentation if you choose to override the default value.
