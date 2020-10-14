@@ -1,5 +1,6 @@
 ---
 title: Lytics Destination
+hide-device: true
 ---
 ## Getting Started
 
