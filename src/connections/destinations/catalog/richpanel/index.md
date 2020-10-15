@@ -7,8 +7,7 @@ rewrite: true
 
 This destination is maintained by Richpanel. For any issues with the destination, [contact their team](mailto:support@richpanel.com).
 
-
-_**NOTE:** The Richpanel Destination is currently in beta, which means that they are still actively developing the destination. If you have any feedback to help improve the Richpanel Destination and its documentation, [let their team know](mailto:support@richpanel.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

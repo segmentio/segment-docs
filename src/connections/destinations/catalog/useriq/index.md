@@ -7,7 +7,7 @@ title: UserIQ Destination
 
 This destination is maintained by UserIQ. For any issues with the destination, [contact their team](mailto:support@useriq.com).
 
-_**NOTE:** The UserIQ Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on March 0, 2019. If you are interested in joining their beta program or have any feedback to help improve the UserIQ Destination and its documentation, [let their team know](mailto:support@useriq.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

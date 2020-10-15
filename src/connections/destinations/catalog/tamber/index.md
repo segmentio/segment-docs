@@ -6,7 +6,7 @@ title: Tamber Destination
 
 This destination is maintained by Tamber. For any issues with the destination, [contact their team](mailto:support@tamber.com).
 
-_**NOTE:** The Tamber Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 4, 2019. If you are interested in joining their beta program or have any feedback to help improve the Tamber Destination and its documentation, [let their team know](mailto:support@tamber.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
