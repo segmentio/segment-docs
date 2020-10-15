@@ -6,11 +6,12 @@ strat: facebook
 
 Facebook Lead Ads help you capture contact information from people who have expressed interest in your product. Without leaving Facebook's interface, your prospects can now share helpful information with you including work email, name, phone number, and more. Learn more about Facebook Lead Ads [here](https://www.facebook.com/business/news/lead-ads-launch). 
 
-Segment lets you make the most of your leads by automatically sending them to your business tools like CRM and email. Importantly, these destinations allow you to contact customers in real-time using your communication platform of choice, whether you've promised them a demo, a newsletter, a piece of content, or a call from a salesperson. 
+Segment lets you make the most of your leads by automatically sending them to your business tools like CRM and email. Importantly, these destinations allow you to contact customers in real-time using your communication platform of choice, whether you've promised them a demo, a newsletter, a piece of content, or a call from a salesperson.
 
-This source is maintained by Facebook. For any issues with the source, you may [contact their team](mailto:supportemail@email.com).
+This source is maintained by Facebook. For any issues with the source, you may [contact the Facebook Support team](mailto:supportemail@email.com).
 
-_**NOTE:** Facebook Lead Ads is currently in beta and this doc was last updated on January 07, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Facebook Lead Ads Destination and its documentation, and [let us know](https://segment.com/help/contact)!_
+{% include content/beta-note.md %}
+
 
 ## Getting Started
 
