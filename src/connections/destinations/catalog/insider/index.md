@@ -7,8 +7,7 @@ title: Insider Destination
 
 This destination is maintained by Insider. For any issues with the destination, [contact the Insider Support team](mailto:pst@useinsider.com).
 
-> note "Note:"
-> The Insider Destination is currently in beta, which means that they are still actively developing the destination. To join the Insider beta program, or if you have any feedback to help improve the Insider Destination and its documentation, [contact the Insider support team](mailto:pst@useinsider.com)!
+{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -78,7 +77,7 @@ analytics.track('Product Viewed', {
 });
 ```
 
-Segment sends Track calls to Insider as a custom event. Only the following Page views are mapped automatically to Insider's default events: 
+Segment sends Track calls to Insider as a custom event. Only the following Page views are mapped automatically to Insider's default events:
 - Product List Viewed
 - Product Viewed
 - Cart Viewed

@@ -5,9 +5,10 @@ hidden: true
 ---
 [PixelMe](https://pixelme.me/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Smart Attribution works by gathering all your traffic from any source and attributing it instantly using UTMs. Combined with our event tracking, you can easily see which traffic is causing which conversions on your website.
 
-This destination is maintained by PixelMe. For any issues with the destination, [contact their team](mailto:team@pixelme.me).
+This destination is maintained by PixelMe. For any issues with the destination, [contact the PixelMe team](mailto:team@pixelme.me).
 
-_**NOTE:** The PixelMe Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on August 7, 2019. If you are interested in joining their beta program or have any feedback to help improve the PixelMe Destination and its documentation, [let their team know](mailto:team@pixelme.me)!_
+{% include content/beta-note.md %}
+
 
 
 ## Getting Started
@@ -38,7 +39,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-`Screen` calls are saved but not processed by default. If you want to use `screen` calls with PixelMe, [let  their team know](mailto:team@pixelme.me).
+`Screen` calls are saved but not processed by default. If you want to use `screen` calls with PixelMe, [let  the PixelMe team know](mailto:team@pixelme.me).
 
 
 

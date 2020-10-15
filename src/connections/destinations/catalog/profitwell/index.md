@@ -8,8 +8,7 @@ beta: true
 
 This destination is maintained by ProfitWell. For any issues with the destination, [contact their team](mailto:product@profitwell.com).
 
-> note ""
-> **NOTE:** The ProfitWell Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 19, 2020. If you are interested in joining their beta program or have any feedback to help improve the ProfitWell Destination and its documentation, [let their team know](mailto:product@profitwell.com)!
+{% include content/beta-note.md %}
 
 ## Getting Started
 

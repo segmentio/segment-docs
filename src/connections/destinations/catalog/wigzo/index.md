@@ -3,13 +3,10 @@ rewrite: true
 title: Wigzo Destination
 ---
 
-[Wigzo](https://www.wigzo.com/) is a Contextual Marketing Platform that helps marketers send Smarter Communication in Email or In-App.
-Which means changing content dynamically based on User behaviour on Website and App.
-Using Wigzo's predictive technologies companies can produce Dynamic content blocks which automatically populates in emails based on User behaviour and Context.
+[Wigzo](https://www.wigzo.com/) is a Contextual Marketing Platform that helps marketers send smarter communication through email or in-app, by changing content dynamically based on User behavior. Using Wigzo's predictive technologies, companies can produce Dynamic content blocks which automatically populate in emails based on User behavior and Context.
+
 This destination is maintained by Wigzo. For any issues with the destination, [contact their team](mailto:support@wigzo.com)
 
-This document was last updated on November 7, 2018.
-If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
 ## Getting Started
 
