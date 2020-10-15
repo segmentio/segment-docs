@@ -5,9 +5,7 @@ rewrite: true
 
 [AdQuick](https://adquick.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) makes outdoor advertising easy to purchase and measure. By integrating with Segment you can analyze the impact of your outdoor ad campaign across all your digital channels.
 
-This destination is maintained by AdQuick. For any issues with the destination, [contact their team](mailto:segment@adquick.com).
-
-This document was last updated on January 8, 2020. If you notice any gaps, out-dated information, or simply want to leave some feedback to help us improve our documentation, [let their team know](mailto:segment@adquick.com)!
+This destination is maintained by AdQuick. For any issues with the destination, [contact the AdQuick team](mailto:segment@adquick.com).
 
 
 ## Getting Started
