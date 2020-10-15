@@ -10,7 +10,7 @@ title: Sentry Destination
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Sentry" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "Sentry" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Drop in your "Public DSN" into the Sentry destination settings.
 4. We'll automatically initialize Sentry with your "Public DSN" upon loading analytics.js.
 5. Sentry will automatically start tracking errors in your app's javascript.

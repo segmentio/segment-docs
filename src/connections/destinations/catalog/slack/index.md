@@ -12,7 +12,7 @@ This document was last updated on January 25, 2018. If you notice any gaps, out-
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Slack" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "Slack" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In your Slack custom integration settings, create a new [Incoming Webhook](https://my.slack.com/services/new/incoming-webhook/) URL by selecting a Slack channel associated with your account.
 4. Enter this in your Segment UI settings under 'Incoming Webhook URL'. The Slack channel you selected will be the default channel which will receive events.
 

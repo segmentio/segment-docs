@@ -15,7 +15,7 @@ This document was last updated on Aug 2, 2019. If you notice any gaps, outdated 
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Gainsight PX" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "Gainsight PX" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. To find your Gainsight PX key, log into Gainsight PX and navigate to Settings > Products > Web App. If you have not already entered the URL for your web application, do that and click the Generate button. The Tag Key is the value to the right of the URL value. Use the "Copy" button to copy the value to your clipboard.
 
 ![](images/TagKey.png)

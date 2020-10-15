@@ -13,7 +13,7 @@ This document was last updated on July 3, 2018. If you notice any gaps, out-date
 When you toggle on Kissmetrics in Segment, this is what happens:
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Kissmetrics" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "Kissmetrics" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Drop in your Kissmetrics "API Key" into the connection settings.
 4. If you are using Kissmetrics using Segment's client-side analytics.js library, we asynchronously load Kissmetrics Javascript library onto the page. This means you should remove Kissmetrics's snippet from your page. Your Kissmetrics source will start automatically collecting "Visited Site" events and [other automatically tracked events](http://support.kissmetrics.com/article/show/javascript-settings).
 

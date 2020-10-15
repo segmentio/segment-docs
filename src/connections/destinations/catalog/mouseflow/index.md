@@ -12,7 +12,7 @@ This document was last updated on April 28, 2018. If you notice any gaps, outdat
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Mouseflow" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "Mouseflow" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Drop in your Site ID within the Segment Settings UI. You can find this in [your Mouseflow UI](http://help.mouseflow.com/knowledge_base/topics/how-do-i-find-my-mouseflow-site-id).
 4. In about 45 minutes the CDN will be updated and Mouseflow snippet will be initialized onto your page.
 

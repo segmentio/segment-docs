@@ -11,7 +11,7 @@ This document was last updated on January 18, 2019. If you notice any gaps, outd
 ## Getting Started
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Yandex.Metrica" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "Yandex.Metrica" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter your Counter ID that you can find in your Yandex.Metrica UI navigating to Settings > Tag.
 4. In about 45 minutes the CDN will be updated and Yandex.Metrica's snippet will be initialized onto your page.
 

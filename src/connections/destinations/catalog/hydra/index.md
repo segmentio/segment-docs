@@ -14,7 +14,7 @@ This destination is maintained by Hydra. For any issues with the destination, [c
 
 
 1. From the Segment web app, click **Catalog**.
-2. Search for Hydra within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for Hydra in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Drop in the "Hydra API Key" into your Segment Settings UI which you can find from Hydra's [Settings screen, under the integrations tab](https://app.hydra.ai/settings#api_info).
 
 If you would like to use `track` event data, create a `Segment Product Usage Scanner` by visiting the [Scanners screen](https://app.hydra.ai/scanners) in Hydra app. See `track` event details below for more information.

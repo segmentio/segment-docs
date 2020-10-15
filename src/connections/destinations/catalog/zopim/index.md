@@ -14,7 +14,7 @@ This document was last updated on June 11th, 2018. If you notice any gaps, outda
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Zopim" within the Destinations Catalog and confirm the Source you'd like to connect to. (This is the old name.)
+2. Search for "Zopim" in the Catalog, select it, and choose which of your sources to connect the destination to. (This is the old name.)
 3. Add your Zendesk Chat ID (Zopim ID) to your Destination Settings. If you are using the `Chat Widget`, you can find your ID in the widget script itself. See example below:
 
 ```js

@@ -12,7 +12,7 @@ This document was last updated on October 15, 2018. If you notice any gaps, outd
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "FoxMetrics" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "FoxMetrics" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your FoxMetrics `App ID`
 4. When FoxMetrics in enabled in Segment, our CDN will update within 45 minutes, and FoxMetrics's javascript will be loaded asynchronously onto your page. Remember to remove FoxMetrics's snippet from your page.
 

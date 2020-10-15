@@ -14,7 +14,7 @@ This document was last updated on April 30, 2018. If you notice any gaps, outdat
 
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Zendesk" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "Zendesk" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. There are two ways to authenticate your Zendesk account with Segment:
    * Use the standard email and password you use to Sign In to your Zendesk account. In the Zendesk settings, add your email in the **Email** setting and your password in the **Password** setting.
    * Use Zendesk OAuth with a unique token. Get the corresponding token from your Zendesk account: **Settings > Channels > API** and under the Settings Tab choose the corresponding token from the "Active API Tokens" list. In the Zendesk settings, add your `email/token` in the **Email** setting (i.e. `peter@intech.com/token` - use the actual word token in your email address) and add the actual token in the **Password** setting.

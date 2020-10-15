@@ -12,7 +12,7 @@ This document was last updated on May 08, 2018. If you notice any gaps, out-date
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "MailChimp" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "MailChimp" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Drop in your MailChimp "API key" into the connection settings. It is recommended that you create a brand new API key for the Segment destination. MailChimp restricts each API key to a maximum of 10 concurrent requests, so creating a dedicated one for Segment will ensure maximum throughput for outgoing calls. You can read more about API keys on [MailChimp's docs](http://kb.mailchimp.com/integrations/api-integrations/about-api-keys).
 4. Drop in your MailChimp "[Audience ID](#audience-id)" into your connection settings.
 5. Drop in your MailChimp "[Datacenter ID](#datacenter-id)"into your connection settings.

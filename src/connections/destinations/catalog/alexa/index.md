@@ -11,7 +11,7 @@ This document was last updated on October 16, 2018. If you notice any gaps, outd
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Alexa" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "Alexa" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Fill in your "Account ID" which you can find in the Alexa Javascript snippet. It appears as atrk_acct: 'XXXXXXX'.
 4. Fill in your "Domain" which you can find in the Alexa Javascript snippet. It appears as domain: 'example.com'.
 5. In about 30-45 minutes the CDN will be updated and the Alexa Javascript snippet will be initialized onto your page.

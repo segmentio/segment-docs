@@ -15,7 +15,7 @@ Segment's Salescamp destination allows you to identify leads without using rest 
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Salescamp" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "Salescamp" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Salescamp's dashboard](https://dashboard.salescamp.app/settings/integrations).
 
 

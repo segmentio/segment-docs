@@ -16,7 +16,7 @@ This destination is maintained by Hawkei. For any issues with the destination, [
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Hawkei" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "Hawkei" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the settings, enter the following fields:
     * **API Key:** You can find your Api key inside the [Api Keys settings](https://app.hawkei.io/settings/api_keys).
     * **Workspace:** Enter the Hawkei workspace where you want your Segment events to be sent. You can see a list of all your Hawkei workspaces in your [Workspace settings](https://app.hawkei.io/settings/spaces).

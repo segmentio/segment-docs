@@ -16,7 +16,7 @@ This destination is maintained by SMBStreams. For any issues with the destinatio
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "SMBStreams" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "SMBStreams" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Drop in the "API Key" into your Segment Settings UI which you can find from your SMBStreams [Dashboard](https://sales.buzzboard.com/v5/stream-dashboard).
 
 

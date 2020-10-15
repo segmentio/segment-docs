@@ -16,7 +16,7 @@ This destination is maintained by [Split](https://split.io/?utm_source=segmentio
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for Split within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for Split in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Drop in the "API Key" into your Segment Settings UI.
 
 To find your key, log into Split and navigate to "Admin Settings" > "Integrations" > select your desired workspace > "Segment". There you can find the key for each configured integration. If you don't have an integration configured, be sure to configure your integration in the section "Configure as a destination in Segment" and click save to generate a key.  For more information, learn more in Split's [integration documentation](https://docs.split.io/docs/segment).

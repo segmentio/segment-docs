@@ -13,7 +13,7 @@ This document was last updated on November 8th, 2018. If you notice any gaps, ou
 {% include content/connection-modes.md %}
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Parsely" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2. Search for "Parsely" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter your Domain and enable the destination in Segment. (To enable this destination, you use your Parsely website domain as your API key.)
 4. We'll automatically start recording data.
 
