@@ -4,7 +4,7 @@ title: Userpilot
 ---
 [Userpilot](https://userpilot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps product teams increase user adoption by allowing them to trigger highly personalized onboarding experiences across the user journey. The Segment integration will help you install and send data to Userpilot without added development time.
 
-This destination is maintained by Userpilot. For any issues with the destination, [contact their team](mailto:support@userpilot.io).
+This destination is maintained by Userpilot. For any issues with the destination, [contact the Userpilot Support team](mailto:support@userpilot.io).
 
 {% include content/beta-note.md %}
 
@@ -20,7 +20,7 @@ This destination is maintained by Userpilot. For any issues with the destination
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
-```
+```js
 analytics.page()
 ```
 
@@ -30,7 +30,7 @@ Calling the `page` from `analytics.js` triggers the `userpilot.reload` method th
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
-```
+```js
 analytics.identify('userId123', {
   email: 'john.doe@example.com'
 });
@@ -40,7 +40,7 @@ Calling `identify` from `analytics.js` will trigger the `userpilot.identify`. We
 
 Data passed in the `identify` can be organized under different categories.
 * Properties about the user such as `plan` or `userRole` to help targetting a specifc segment.
-* Properties to personlize the content of the Userplot experiences such as `name` or `company`
+* Properties to personlize the content of the Userpilot experiences such as `name` or `company`
 * Properties to target users based on their lifecycle such as `createdAt`. This will allow you to target newly created accounts or accounts that have yet to achieve a certain feature in the user lifecyle.
 
 
@@ -48,7 +48,7 @@ Data passed in the `identify` can be organized under different categories.
 
 If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
-```
+```js
 analytics.track('Clicked Login Button')
 ```
 

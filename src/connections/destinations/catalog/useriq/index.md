@@ -5,7 +5,7 @@ title: UserIQ Destination
 
 [UserIQ](http://useriq.com) empowers companies to deliver what each user needs to be successful in every moment, starting with adoption. Our platform collects user engagement data from your product and allows you to communicate to your users when they are most engaged: within the product itself.
 
-This destination is maintained by UserIQ. For any issues with the destination, [contact their team](mailto:support@useriq.com).
+This destination is maintained by UserIQ. For any issues with the destination, [contact the UserIQ Support team](mailto:support@useriq.com).
 
 {% include content/beta-note.md %}
 
