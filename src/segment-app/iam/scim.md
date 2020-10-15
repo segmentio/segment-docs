@@ -1,6 +1,5 @@
 ---
 title: "System for Cross-domain Identity Management (SCIM) Configuration Guide"
-hidden: true
 ---
 
 The SCIM specification is designed to make managing user identities in cloud-based applications like Segment easier. SCIM allows your Identity Provider (IdP) to manage users and groups within your Segment workspace.
@@ -15,7 +14,7 @@ To set up SCIM, you must first create an SSO connection. Once you [create your S
 
 ## Configuration Instructions
 
-Segment officially supports [Okta](#okta-set-up-guide), Azure AD, and OneLogin. Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
+Segment officially supports [Okta](#okta-set-up-guide), and has plans to support Azure AD and OneLogin soon. Each link includes specific set up instructions for that IdP. You should read the [features](#features) section of this page to understand which features of SCIM Segment supports.
 
 You may still be able to use SCIM with another Identity Provider (IdP) by adapting the following instructions.
 
