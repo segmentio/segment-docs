@@ -5,7 +5,7 @@ Nudgespot is the easiest way to trigger emails, SMS, push notifications or in-ap
 
 Take your company's email analysis to the next level by **adding Nudgespot as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Nudgespot data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Nudgespot with Segment.](/docs/connections/destinations/catalog/nudgespot)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Nudgespot data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. 
 
 ## Getting Started
 
