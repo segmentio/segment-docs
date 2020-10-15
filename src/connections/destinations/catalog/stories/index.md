@@ -6,7 +6,7 @@ beta: true
 
 [Stories](https://www.getstories.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) gathers all the user events that matter on a timeline, so your teams can understand what is going on and take action in the right direction.
 
-This destination is maintained by Stories. For any issues with the destination, [contact their team](mailto:support@getstories.io).
+This destination is maintained by Stories. For any issues with the destination, [contact the Stories Support team](mailto:support@getstories.io).
 
 {% include content/beta-note.md %}
 

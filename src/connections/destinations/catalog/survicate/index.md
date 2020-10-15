@@ -4,7 +4,7 @@ title: Survicate Destination
 ---
 [Survicate](https://survicate.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete toolkit for customer feedback. From website optimization and customer satisfaction surveys to complex customer insight processes integrated with your email campaigns.
 
-This destination is maintained by Survicate. For any issues with the destination, [contact their team](mailto:help@survicate.com).
+This destination is maintained by Survicate. For any issues with the destination, [contact the Survicate Support team](mailto:help@survicate.com).
 
 {% include content/beta-note.md %}
 

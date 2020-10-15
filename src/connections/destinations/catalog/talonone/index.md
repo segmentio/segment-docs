@@ -6,7 +6,7 @@ beta: true
 Create flexible and targeted promotional & loyalty campaigns with [Talon.One](https://Talon.One/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners).
 Campaigns can be created and managed by non-technical users such as marketeers. There is no need to get your development team involved. Features include coupons, discounts, loyalty programs, referral tracking, geo-fencing, and bundling.
 
-This destination is maintained by Talon.One. For any issues with the destination, [contact their team](mailto:support@talon.one).
+This destination is maintained by Talon.One. For any issues with the destination, [contact the Talon.One Support team](mailto:support@talon.one).
 
 {% include content/beta-note.md %}
 

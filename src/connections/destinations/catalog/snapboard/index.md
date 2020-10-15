@@ -11,7 +11,7 @@ beta: true
 You can then create any tool you want by hooking up the data to the cards/components (inputs, sliders, tables, charts, forms, todos, calendars, gallery, etc).
 
 
-This destination is maintained by Snapboard. For any issues with the destination, [contact their team](mailto:calum@snapboard.io).
+This destination is maintained by Snapboard. For any issues with the destination, [contact the Snapboard Support team](mailto:calum@snapboard.io).
 
 {% include content/beta-note.md %}
 

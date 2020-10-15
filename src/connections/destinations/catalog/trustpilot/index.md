@@ -4,7 +4,7 @@ title: Trustpilot Destination
 ---
 [Trustpilot](https://www.trustpilot.com/) is an open and independent review platform. On Trustpilot, people can share and discover reviews of businesses, and businesses can gain insights and showcase their service and products performance through reviews.
 
-This destination is maintained by Trustpilot. For any issues with the destination, [contact their team](https://support.trustpilot.com/hc/en-us/articles/215949867-Contact-Trustpilot-s-Support-Team).
+This destination is maintained by Trustpilot. For any issues with the destination, [contact the Trustpilot Support team](https://support.trustpilot.com/hc/en-us/articles/215949867-Contact-Trustpilot-s-Support-Team).
 
 {% include content/beta-note.md %}
 
