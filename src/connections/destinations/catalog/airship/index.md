@@ -22,7 +22,7 @@ Follow these steps to configure the integration
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Airship" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in the "API Key" into your Segment Settings UI.
+3. Enter the "API Key" into your Segment Settings UI.
 * Steps to create an Access Token to enable integration from Airship outlined [here](https://docs.airship.com/partners/segment/#access-token). Save this Access Token & API Key for the pasting into Segment Settings UI.
 4. For Identify Events, be sure to set up a Tag Group first within Airship. Steps outlined [here](https://docs.airship.com/partners/segment/#tag-group).
 

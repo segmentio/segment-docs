@@ -16,7 +16,7 @@ This destination is maintained by Callingly. For any issues with the destination
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Callingly" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Callingly Integrations page](https://callingly.com/dashboard/integrations). Click "Connect" on the Segment integration to enable it.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Callingly Integrations page](https://callingly.com/dashboard/integrations). Click "Connect" on the Segment integration to enable it.
 4. In the Segment integration settings on the [Callingly Integrations page](https://callingly.com/dashboard/integrations) you can also select which Team will receive the calls triggered from Segment events.
 
 ## Identify

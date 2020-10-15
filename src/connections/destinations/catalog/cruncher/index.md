@@ -15,7 +15,7 @@ This destination is maintained by Cruncher. For any issues with the destination,
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Cruncher" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Cruncher dashboard](https://tower.cruncherlabs.com/connectors).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Cruncher dashboard](https://tower.cruncherlabs.com/connectors).
 
 Alternatively, you can connect Segment to Cruncher directly from your [Cruncher dashboard](https://tower.cruncherlabs.com/connectors). For more information, visit [Cruncher Documentation](https://docs.cruncherlabs.com/connectors/saas/segment).
 

@@ -15,7 +15,7 @@ This destination is maintained by Emarsys. For any issues with the destination, 
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Emarsys" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in the "API Key" into your Segment Settings UI which you obtain from your Emarsys Account Manager.
+3. Enter the "API Key" into your Segment Settings UI which you obtain from your Emarsys Account Manager.
 4. Work with your Emarsys Account Manager to establish the initial processing rules required within the Emarsys platform.
 
 ### Configuration

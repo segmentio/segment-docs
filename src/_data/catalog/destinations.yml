@@ -21834,7 +21834,7 @@ items:
     string_validators:
       regexp: '^[a-zA-Z0-9]*$'
     description: >-
-      Drop in the “Integration Key” into your Segment Settings UI which you can
+      Enter the “Integration Key” into your Segment Settings UI which you can
       find on https://businessapp.b2b.trustpilot.com/#/ecommerce/segment
     settings: []
   connection_modes:

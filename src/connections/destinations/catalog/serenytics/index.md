@@ -24,7 +24,7 @@ From Serenytics app using OAuth:
 From Segment Destinations Catalog:
 1. From the Segment web app, click **Catalog**.
 2. Search for "Serenytics" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Serenytics account page](https://app.serenytics.com/studio/account).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Serenytics account page](https://app.serenytics.com/studio/account).
 4. In the [Serenytics datasources list](https://app.serenytics.com/studio/data_sources), when the first message from Segment is received, a new folder named 'Segment integration' will be automatically created with datasources that contain your data.
 
 

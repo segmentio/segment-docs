@@ -15,7 +15,7 @@ This destination is maintained by TrafficGuard.
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "TrafficGuard" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find in your property in the [TrafficGuard dashboard](https://dash.trafficguard.ai/dashboard).
+3. Enter the "API Key" into your Segment Settings UI which you can find in your property in the [TrafficGuard dashboard](https://dash.trafficguard.ai/dashboard).
 
 ![](images/trafficguard.png)
 

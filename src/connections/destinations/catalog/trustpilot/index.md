@@ -14,7 +14,7 @@ This destination is maintained by Trustpilot. For any issues with the destinatio
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Trustpilot" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in the "Integration Key" into your Segment Settings UI as "API Key" which you can find on [Trustpilot integrations page](https://businessapp.b2b.trustpilot.com/#/ecommerce/segment).
+3. Enter the "Integration Key" into your Segment Settings UI as "API Key" which you can find on [Trustpilot integrations page](https://businessapp.b2b.trustpilot.com/#/ecommerce/segment).
 
 
 ## Track

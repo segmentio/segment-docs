@@ -15,7 +15,7 @@ This destination is maintained by Userlist.io. For any issues with the destinati
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Userlist" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in the "Push API Key" into your Segment Settings UI which you can find from your [Userlist.io Push API settings](https://app.userlist.io/settings/push).
+3. Enter the "Push API Key" into your Segment Settings UI which you can find from your [Userlist.io Push API settings](https://app.userlist.io/settings/push).
 
 _**NOTE:** The Userlist.io Destination does not support tracking of anonymous users, so make sure to call `identify` before calling `track`. If you do call `track` on unidentified users, you will receive a 400 error which you can disregard if it was intentional._
 

@@ -27,7 +27,7 @@ You can then proceed to configure your destination.
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "*Selligent Marketing Cloud*" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in the "*API Key*" and "*API Secret*" into your Segment Settings UI.
+3. Enter the "*API Key*" and "*API Secret*" into your Segment Settings UI.
 4. *SMC Admin URL* - Copy the link you use to log into the SMC admin should look like https://**{you company}**.slgnt.us
 ![adminURL](images/adminurl.jpg)
 5. *Organization* - You will find the organization name on the top-right hand corner next to the menu icon.

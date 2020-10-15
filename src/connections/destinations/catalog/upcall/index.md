@@ -17,7 +17,7 @@ This destination is maintained by Upcall. For any issues with the destination, [
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Upcall" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Upcall dashboard](https://app2.upcall.com/company/settings/integrations/api).
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Upcall dashboard](https://app2.upcall.com/company/settings/integrations/api).
 
 ## Identify
 
