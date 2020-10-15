@@ -17,7 +17,7 @@ Once you have created the Tag ID, you can follow the steps below:
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Bing Ads" in the Catalog, select it, and choose which of your sources to connect the destination to. Note the source must be sending events using our Javascript library Analytics.js.
-3. Drop in your Tag Id
+3. In the destination settings, enter your Tag Id
 4. In about 45 minutes the CDN will be updated and Bing Ads' snippet will be initialized onto your page.
 
 _**Note:** You'll only be able to include one Tag ID per source so make sure to associate the conversion goals to the correct Tag ID that is included in your settings._

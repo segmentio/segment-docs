@@ -13,7 +13,7 @@ This destination is maintained by Pendo. For any issues with the destination, [c
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Pendo" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in your Pendo API Key which you can find in the Pendo UI under [Site Settings](https://app.pendo.io/admin) > Basic Information > API Key.
+3. In the destination settings, enter your Pendo API Key which you can find in the Pendo UI under [Site Settings](https://app.pendo.io/admin) > Basic Information > API Key.
 4. In about 45 minutes the CDN will be updated and Pendo's snippet will be initialized onto your page. This pulls in all page and click events without needing to make additional method calls.
 
 ### Server

@@ -14,7 +14,7 @@ This destination is maintained by Mutiny. For any issues with the destination, [
 To set up Mutiny to receive Segment data:
 1. From your Segment Project's Destinations page click on "Add Destination".
 2. Search for "Mutiny" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in your personal "API Key" into Segment's Mutiny integration settings panel UI, which you can find from your [Mutiny dashboard](https://app.mutinyhq.com/integrations/segment).
+3. In the destination settings, enter your personal "API Key" into Segment's Mutiny integration settings panel UI, which you can find from your [Mutiny dashboard](https://app.mutinyhq.com/integrations/segment).
 
 ## Page
 

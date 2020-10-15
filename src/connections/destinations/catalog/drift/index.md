@@ -15,7 +15,7 @@ The cloud-mode destination is maintained by Drift. For any issues with the desti
 
   1. From the Segment web app, click **Catalog**.
   2. Search for "Drift" in the Catalog, select it, and choose which of your sources to connect the destination to.
-  3. Drop in your `API Key` and `Embed ID` as obtained from your Drift account (if Drift account not accessible yet, [email the team](mailto:team@drift.com) to get a link for the Drift account creation).
+  3. In the destination settings, enter your `API Key` and `Embed ID` as obtained from your Drift account (if Drift account not accessible yet, [email the team](mailto:team@drift.com) to get a link for the Drift account creation).
   4. If you're using analytics.js and 'identify' users by default, Drift will work automatically. If you don't have analytics.js setup, after enabling the Drift destination in Segment, you must 'identify' users in order for Drift to display in your product.
 
 ## Page

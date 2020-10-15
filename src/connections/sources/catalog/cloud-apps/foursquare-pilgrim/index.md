@@ -12,10 +12,10 @@ This destination is maintained by Foursquare. For any issues with the destinatio
 
 ## Getting Started
 
-1. From your Segment UI's Source page click on "Add Source".
-2. Search for "Foursquare Pilgrim" within the Source Catalog and confirm the Source you'd like to connect to.
-3. Once Foursquare is added as a source, copy your "Write Key".
-4. Head over to your [Foursquare Developer Console](https://foursquare.com/developers/apps/) and create a new Segment integration in your Foursquare app's Pilgrim SDK console. There you can drop in your Segment "Write Key" into your Segment Integration Configuration screen.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Foursquare Pilgrim" in the Catalog, select it, and choose which of your sources to connect the it to.
+3. Once you save Foursquare Pilgrim as a source, copy your "Write Key".
+4. Go to your [Foursquare Developer Console](https://foursquare.com/developers/apps/) and create a new Segment integration in your Foursquare app's Pilgrim SDK console. There you can enter the Segment "Write Key" into the Segment Integration Configuration screen.
 
 ## Events
 

@@ -13,7 +13,7 @@ This document was last updated on October 16, 2018. If you notice any gaps, outd
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Lucky Orange" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in your Site ID from the Lucky Orange.
+3. In the destination settings, enter your Site ID from the Lucky Orange.
 4. We'll automatically initialize Lucky Orange's library upon loading analytics.js.
 
 ## Identify

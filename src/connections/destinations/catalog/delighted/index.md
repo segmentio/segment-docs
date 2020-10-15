@@ -16,7 +16,7 @@ _**NOTE:** The Delighted Destination is currently only compatible with email sur
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Delighted" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Drop in your Delighted "API Key" in Segment's Settings UI. You can retrieve this from your Delighted Settings > API > Your API Key. It should look like "T8jtGnuYaNerDedVMYrcgn1dRdywfGOl".
+3. In the destination settings, enter your Delighted "API Key" in Segment's Settings UI. You can retrieve this from your Delighted Settings > API > Your API Key. It should look like "T8jtGnuYaNerDedVMYrcgn1dRdywfGOl".
 4. If you're using Segment's client-side `analytics.js` library, we asynchronously load Delighted's Javascript library onto the page and the CDN will be updated in 45 minutes.
 
 

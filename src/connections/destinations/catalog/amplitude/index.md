@@ -37,7 +37,7 @@ our documentation, [let us know](https://segment.com/help/contact)!
 2. Search for "Amplitude" within the Destinations Catalog and confirm the
    Source you'd like to connect to.
 
-3. Drop in your Amplitude API key.
+3. In the destination settings, enter your Amplitude API key.
 
    You can find the your Amplitude API key from the [Amplitude project
 settings](https://analytics.amplitude.com/settings/projects). Find the project
