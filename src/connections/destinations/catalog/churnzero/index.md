@@ -5,7 +5,7 @@ rewrite: true
 
 [ChurnZero](https://churnzero.net/) is a real-time Customer Success platform that helps subscription businesses fight churn, expand current accounts, increase product adoption and optimize the customer experience.
 
-This destination is maintained by ChurnZero. For any issues with the destination, [contact their team](mailto:support@churnzero.net).
+This destination is maintained by ChurnZero. For any issues with the destination, [contact the ChurnZero Support team](mailto:support@churnzero.net).
 
 ## Getting Started
 

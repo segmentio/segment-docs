@@ -11,9 +11,9 @@ redirect_from: '/connections/destinations/catalog/algolia/'
 - A/B Testing
 - Personalization
 
-This destination is maintained by [Algolia](https://www.algolia.com/). For any issues with the destination, [contact their team](mailto:hey@algolia.com).
+This destination is maintained by [Algolia](https://www.algolia.com/). For any issues with the destination, [contact the Algolia team](mailto:hey@algolia.com).
 
-_**NOTE:** The Algolia Insights Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 20, 2020. If you are interested in joining their beta program or have any feedback to help improve the Algolia Insights Destination and its documentation, [let their team know](mailto:hey@algolia.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

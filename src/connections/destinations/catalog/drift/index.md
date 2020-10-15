@@ -6,9 +6,7 @@ rewrite: true
 
 The `analytics.js` device-mode destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-drift).
 
-The cloud-mode destination is maintained by Drift. For any issues with the destination, [contact their team](https://www.drift.com/help/).
-
-This document was last updated on January 25, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+The cloud-mode destination is maintained by Drift. For any issues with the destination, [contact the Drift support team](https://www.drift.com/help/).
 
 
 ## Getting Started

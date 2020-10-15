@@ -4,9 +4,9 @@ title: Asayer Destination
 ---
 [Asayer](https://asayer.io) is a session replay tool for engineering teams. It lets you capture the full picture of each user session on your website so you can quickly solve issues and improve your customer experience.
 
-This destination is maintained by Asayer. For any issues with the destination, [contact their team](mailto:support@asayer.io).
+This destination is maintained by Asayer. For any issues with the destination, [contact the Asayer Support team](mailto:support@asayer.io).
 
-_**NOTE:** The Asayer Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 8, 2019. If you are interested in joining their beta program or have any feedback to help improve the Asayer Destination and its documentation, [let their team know](mailto:support@asayer.io)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
