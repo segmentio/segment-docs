@@ -14,7 +14,7 @@ If you notice any gaps, out-dated information or simply want to leave some feedb
 1. From the Segment web app, click **Catalog**.
 2. Search for "Perfect Audience" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your `Advertiser ID` (located in the User tracking session in Perfect Audience) and enable the destination in Segment.
-4. We'll automatically start recording data.
+4. Segment automatically starts sending data from the source you selected
 
 When Perfect Audience in enabled in Segment, our CDN will update within 45 minutes, and Perfect Audience's javascript is asynchronously loaded onto your page. Remember to remove Perfect Audience's snippet from your page.
 
