@@ -79,16 +79,16 @@ analytics.page('Home', {}, {
 When you toggle on Quantcast for a mobile app in Segment, this is what happens:
 
 + Follow the instructions on the Quantcast sheet on the destinations page for adding the packaged Quantcast SDK (a simple one-liner to add to your Podfile).
-+ After you build and release to the app store, we'll automatically start translating and sending your data to Quantcast. If this is the first time sending data to Quantcast it can take them up to **12 days** to process your new data.
++ After you build and release to the app store, Segment automatically starts translating and sending your data to Quantcast. If this is the first time sending data to Quantcast it can take them up to **12 days** to process your new data.
 
 ### Identify
 When you call `identify` with a `userId`, we'll pass that to Quantcast. This allows you to accurately measure your audience size across multiple platforms and devices.
 
 ### Track
-When you call `track` we'll automatically log the events to Quantcast.
+When you call `track` Segment automatically logs the events to Quantcast.
 
 ### Screen
-When you call `screen` we'll automatically log an event like `Viewed ABC Screen` to Quantcast.
+When you call `screen` Segment automatically logs an event like `Viewed ABC Screen` to Quantcast.
 
 ### Other Features
 #### Labels

@@ -104,7 +104,7 @@ analytics = new Analytics.Builder(this, "write_key")
                 .build();
 ```
 
-After you build and release to the App Store, we'll automatically start translating and sending your data to Adjust.
+After you build and release to the App Store, Segment automatically starts translating and sending your data to Adjust.
 
 ### Server
 

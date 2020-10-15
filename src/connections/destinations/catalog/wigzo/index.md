@@ -15,7 +15,7 @@ The first step is to make sure Wigzo supports the source type and connection mod
 1. From the Segment web app, click **Catalog**.
 2. Search for "Wigzo" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Copy, then paste in your Wigzo `Organization Token`, which you can find inside the auto generated snippet under Wigzo Settings > Integration.
-4. We'll automatically initialize Wigzo with your Organization Token upon loading analytics.js.
+4. Segment automatically initializes Wigzo with your Organization Token upon loading analytics.js.
 
 ## Page
 

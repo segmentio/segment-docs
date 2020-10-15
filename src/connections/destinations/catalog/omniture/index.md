@@ -1,4 +1,4 @@
----
+Segment automatically ---
 title: Omniture Destination
 ---
 
@@ -51,7 +51,7 @@ Check out the `page` method docs for more information about our [page tracking A
 
 Event tracking in Omniture requires one extra step as compared to other destinations.
 
-You'll have to map each event and event property to a corresponding Omniture `event`, `prop`, or `eVar` in our interface. Once you've created that mapping, we'll automatically translate your `analytics.track()` calls and send them to Omniture.
+You'll have to map each event and event property to a corresponding Omniture `event`, `prop`, or `eVar` in our interface. Once you've created that mapping, Segment automatically translates your `analytics.track()` calls and send them to Omniture.
 
 Here's an example mapping in our interface:
 
@@ -90,7 +90,7 @@ In this example Segment will automatically send the following data to Omniture:
 
 We _will not_ send any `event`, `prop` or `eVar` which isn't found in your mapping. Except for [Ecommerce events](#e-commerce), which are automatically aliased to Omniture events.
 
-With [`track`](/docs/connections/spec/track) in place, you'll no longer need to write Omniture-specific code to send data to Omniture. Once you create the mapping we'll automatically set up all of the tracking code and send the data to the Omniture server.
+With [`track`](/docs/connections/spec/track) in place, you'll no longer need to write Omniture-specific code to send data to Omniture. Once you create the mapping Segment automatically sets up all of the tracking code and send the data to the Omniture server.
 
 ### eVars
 
@@ -138,7 +138,7 @@ These events are specific to Omniture and thus, not mentioned in our ecommerce d
   </tr>
 </table>
 
-For [ecommerce events](#e-commerce), we'll automatically send standard properties to Omniture, like `category`, `product`, `quantity`, `orderId`, and `price`.
+For [ecommerce events](#e-commerce), Segment automatically sends standard properties to Omniture, like `category`, `product`, `quantity`, `orderId`, and `price`.
 
 - - -
 

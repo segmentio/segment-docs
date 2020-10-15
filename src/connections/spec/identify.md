@@ -1,4 +1,4 @@
----
+Segment automatically ---
 title: 'Spec: Identify'
 related:
   - "/connections/sources/catalog/"
@@ -209,7 +209,7 @@ Reserved traits we've standardized:
   <tr>
     <td>`name`</td>
     <td>String</td>
-    <td>Full name of a user. If you only pass a first and last name we'll automatically fill in the full name for you.
+    <td>Full name of a user. If you only pass a first and last name Segment automatically fills in the full name for you.
     </td>
   </tr>
   <tr>

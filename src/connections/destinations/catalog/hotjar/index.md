@@ -25,7 +25,7 @@ This document was last updated on February 6, 2020. This destination is maintain
 
 3. Add your Hotjar Site ID to your Destination settings. You can find this under Settings and Sites & Organizations in your Hotjar dashboard. It should be a whole number (e.g. 123456).
 
-4. We'll automatically load Hotjar's tracking snippet, along with your Site ID, onto the page once analytics.js loads. If you are already using Hotjar, remove Hotjar’s snippet from your code.
+4. Segment automatically loads Hotjar's tracking snippet, along with your Site ID, onto the page once analytics.js loads. If you are already using Hotjar, remove Hotjar’s snippet from your code.
 
 5. Once our CDN updates in 45 minutes, Hotjar will automatically start tracking visitors based on the tools you have enabled in your Hotjar dashboard.
 

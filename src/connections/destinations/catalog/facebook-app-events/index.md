@@ -55,7 +55,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
                            properties:@{ @"title": @"How to Create a Tracking Plan", @"course": @"Intro to Analytics" }];
 ```
 
-When you call `track` we'll automatically send that event and it's properties to Facebook. In the Facebook analytics interface you'll be able to use the event properties to segment your data.
+When you call `track` Segment automatically sends that event and it's properties to Facebook. In the Facebook analytics interface you'll be able to use the event properties to segment your data.
 
 Facebook App Events doesn't like events with periods in the name so if you send us an event with periods in the name, we'll convert all periods to underscores. So if your event is `friend.added`, we'll send that to Facebook as `friend_added`. We also truncate events that are longer than 40 characters long due to Facebook's API constraints.
 
@@ -102,7 +102,7 @@ If you don't provide a `currency` explicitly, we send `USD`. If any properties d
 
 ### Facebook Events
 
-We'll automatically translate any of your events that match one of our [spec'd events](/docs/connections/spec/) that map to Facebook's spec'd events. The below table shows the out of the box mappings in our integration:
+Segment automatically translates any of your events that match one of our [spec'd events](/docs/connections/spec/) that map to Facebook's spec'd events. The below table shows the out of the box mappings in our integration:
 
 <table>
   <tr>
