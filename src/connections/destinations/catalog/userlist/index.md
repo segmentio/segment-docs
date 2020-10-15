@@ -6,7 +6,7 @@ title: Userlist Destination
 
 This destination is maintained by Userlist.io. For any issues with the destination, [contact their team](mailto:support@userlist.io).
 
-_**NOTE:** The Userlist.io Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 5, 2019. If you are interested in joining their beta program or have any feedback to help improve the Userlist Destination and its documentation, [let their team know](mailto:support@userlist.io)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

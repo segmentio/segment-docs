@@ -6,7 +6,7 @@ title: SlicingDice Destination
 
 This destination is maintained by SlicingDice. For any issues with the destination, [contact their team](mailto:support@slicingdice.com).
 
-_**NOTE:** The SlicingDice Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on May 8, 2019. If you are interested in joining their beta program or have any feedback to help improve the SlicingDice Destination and its documentation, [let their team know](mailto:support@slicingdice.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

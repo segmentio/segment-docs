@@ -8,7 +8,7 @@ beta: true
 
 This destination is maintained by Stories. For any issues with the destination, [contact their team](mailto:support@getstories.io).
 
-_**NOTE:** The Stories Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 7, 2020. If you are interested in joining their beta program or have any feedback to help improve the Stories Destination and its documentation, [let their team know](mailto:support@getstories.io)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
