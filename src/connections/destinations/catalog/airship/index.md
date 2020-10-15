@@ -7,13 +7,12 @@ Airship gives brands the data, channels, orchestration and services they need to
 
 [Airship Cloud-mode Destination integration](https://docs.airship.com/partners/segment/#destination) enables users to set Airship Tags and Custom Events through Segment Identify and Track events.
 
-This destination is maintained by Airship. For any issues [contact their team](mailto:support@airship.com).
-
-_**NOTE:** The Airship Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 31, 2019. If you are interested in joining their beta program or have any feedback to help improve the Airship Destination and its documentation, [let their team know](mailto:support@airship.com)!_
+This destination is maintained by Airship. For any issues [contact the Airship Support team](mailto:support@airship.com).
 
 > success ""
 > **Good to know**: This page is about the Airship Segment destination, which receives data from Segment. There's also a page about the [Airship Segment source](/docs/connections/sources/catalog/cloud-apps/airship/), which sends data _to_ Segment!
 
+{% include content/beta-note.md %}
 
 ## Getting Started
 

@@ -5,9 +5,9 @@ rewrite: true
 
 [CustomerSuccessBox](https://customersuccessbox.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is Outcome Driven Customer Success software, which helps maximize retention, drive product adoption and grow revenue for your B2B SaaS
 
-This destination is maintained by CustomerSuccessBox. For any issues with the destination, [contact their team](mailto:support@customersuccessbox.com).
+This destination is maintained by CustomerSuccessBox. For any issues with the destination, [contact the CustomerSuccessBox Support team](mailto:support@customersuccessbox.com).
 
-_**NOTE:** The CustomerSuccessBox Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 10, 2019. If you are interested in joining their beta program or have any feedback to help improve the CustomerSuccessBox Destination and its documentation, [let their team know](mailto:support@customersuccessbox.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

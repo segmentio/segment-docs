@@ -4,9 +4,9 @@ title: Userlist Destination
 ---
 [Userlist.io](https://userlist.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to send behavior-based messages to your SaaS users. It's great for onboarding users as well as nurturing them throughout their journey.
 
-This destination is maintained by Userlist.io. For any issues with the destination, [contact their team](mailto:support@userlist.io).
+This destination is maintained by Userlist.io. For any issues with the destination, [contact the Userlist Support team](mailto:support@userlist.io).
 
-_**NOTE:** The Userlist.io Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 5, 2019. If you are interested in joining their beta program or have any feedback to help improve the Userlist Destination and its documentation, [let their team know](mailto:support@userlist.io)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

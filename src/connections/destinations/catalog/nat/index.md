@@ -7,8 +7,7 @@ rewrite: true
 
 This destination is maintained by Nat.app. For any issues with the destination, [contact the Nat team](mailto:segment@nat.app).
 
-> info ""
-> The Nat.app Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the Nat.app Destination and its documentation, [contact the Nat support team](mailto:segment@nat.app)!
+{% include content/beta-note.md %}
 
 ## Getting Started
 

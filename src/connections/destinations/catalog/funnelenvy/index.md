@@ -5,9 +5,9 @@ rewrite: true
 
 [FunnelEnvy](https://www.funnelenvy.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps marketers optimize revenue by delivering personalized experiences and offers for every customer across their unique journey.
 
-This destination is maintained by FunnelEnvy. For any issues with the destination, [contact their team](mailto:support@funnelenvy.com).
+This destination is maintained by FunnelEnvy. For any issues with the destination, [contact the FunnelEnvy Support team](mailto:support@funnelenvy.com).
 
-_**NOTE:** The FunnelEnvy Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on September 13, 2019. If you are interested in joining their beta program or have any feedback to help improve the FunnelEnvy Destination and its documentation, [let their team know](mailto:support@funnelenvy.com)!_
+{% include content/beta-note.md %}
 
 ## Implementation Prerequisite
 

@@ -4,10 +4,9 @@ title: ScopeAI Destination
 ---
 [ScopeAI](https://www.getscopeai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) improves communication between support and product teams by aggregating user feedback and tracking the impact of bugs or issues and feature requests.
 
-This destination is maintained by ScopeAI. For any issues with the destination, [contact their team](mailto:support@getscopeai.com).
+This destination is maintained by ScopeAI. For any issues with the destination, [contact the ScopeAI Support team](mailto:support@getscopeai.com).
 
-_**NOTE:** ScopeAI is currently in beta, which means that they are still actively developing the product. This doc was last updated on February 22, 2019. If you are interested in joining their beta program or have any feedback to help improve the ScopeAI Destination and its documentation, [let their team know](mailto:support@getscopeai.com)!_
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 

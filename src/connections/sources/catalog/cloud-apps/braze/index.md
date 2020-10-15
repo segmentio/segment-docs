@@ -8,11 +8,9 @@ Take your company's marketing and customer engagement to the next level by addin
 
 In your favorite BI or analytics tool, you'll be able to analyze your mobile, email, and web marketing campaign data in SQL or using drag-and-drop reports. You'll be able to join your Braze data with the event data you're already sending through Segment to analyze the impacts of your marketing and engagement programs.
 
-This source is maintained by Braze. For any issues with the source, you may [contact their team](https://www.braze.com/docs/support_contact/).
+This source is maintained by Braze. For any issues with the source, you may [contact the Braze Support team](https://www.braze.com/docs/support_contact/).
 
-This document was last updated on October 03, 2019. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
-_**NOTE:** If you are interested in using Braze, contact your Braze Customer Success Manager. Braze Currents is only available in select Braze packages and cannot be configured within Braze without assistance from their team._
+_**NOTE:** If you are interested in using Braze, contact your Braze Customer Success Manager. Braze Currents is only available in select Braze packages and cannot be configured without assistance from the Braze team._
 
 ## Getting Started
 

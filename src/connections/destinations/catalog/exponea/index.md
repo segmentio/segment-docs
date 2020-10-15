@@ -6,10 +6,10 @@ beta: true
 
 [Exponea](https://exponea.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Customer Data & Experience Platform (CDXP) which creates a unified source of customer intelligence in real-time, ready for immediate activation using its own built‑in omnichannel marketing systems (web, email, push, mobile, text messages,etc.) powered by customer-centric analytics and artificial intelligence (product recommendations and predictions).
 
-This destination is maintained by Exponea. For any issues with the destination, contact your dedicated Exponea team or [support](mailto:support@exponea.com).
+This destination is maintained by Exponea. For any issues with the destination, contact [the Exponea Support team](mailto:support@exponea.com).
 
 
-_**NOTE:** The Exponea Destination is currently in a beta stage, which means that they are still actively developing the destination. This doc was last updated on January 20, 2020. If you are interested in joining their beta program or have any feedback to help improve the Exponea Destination and its documentation, [let their team know](mailto:support@exponea.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

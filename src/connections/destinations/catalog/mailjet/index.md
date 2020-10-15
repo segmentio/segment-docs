@@ -2,7 +2,7 @@
 title: Mailjet Destination
 ---
 
-This destination is maintained by Mailjet. For any issues with the destination, you may [contact their team](mailto:support@mailjet.com).
+This destination is maintained by Mailjet. For any issues with the destination, you may [contact the Mailjet Support team](mailto:support@mailjet.com).
 
 ## Getting Started
 

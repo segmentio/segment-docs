@@ -4,9 +4,9 @@ rewrite: true
 ---
 [Interana's](https://www.interana.com/segment/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) full stack solution allows you to visually explore trillions of data points from multiple data sets all in real time without the need for ETL, data aggregation, or writing any SQL.
 
-This destination is maintained by Interana. For any issues with the destination, [contact their team](mailto:support@interana.com).
+This destination is maintained by Interana. For any issues with the destination, [contact the Interana Support team](mailto:support@interana.com).
 
-_**NOTE:** The Interana Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on September 24, 2019. If you are interested in joining their beta program or have any feedback to help improve the Interana Destination and its documentation, [let their team know](mailto:support@interana.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

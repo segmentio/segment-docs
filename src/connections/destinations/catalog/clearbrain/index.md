@@ -2,6 +2,7 @@
 title: ClearBrain Destination
 rewrite: true
 ---
+
 [ClearBrain](https://clearbrain.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, using machine learning to automate audience insights and recommendations.
 
 This destination is maintained by ClearBrain. For any issues with the destination, [contact the ClearBrain Support team](mailto:support@clearbrain.com).
