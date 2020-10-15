@@ -13,6 +13,6 @@ This document was last updated on January 18, 2019. If you notice any gaps, outd
 1. From the Segment web app, click **Catalog**.
 2. Search for "Yandex.Metrica" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter your Counter ID that you can find in your Yandex.Metrica UI navigating to Settings > Tag.
-4. In about 45 minutes the CDN will be updated and Yandex.Metrica's snippet will be initialized onto your page.
+4. The Segment CDN updates in about 45 minutes, and Yandex.Metrica's snippet initializes on your page and begins sending data.
 
 Once you've followed these steps you should be good to go! No additional code will be required for your Yandex.Metrica Destination to start tracking activity on your page.

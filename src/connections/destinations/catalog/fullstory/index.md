@@ -13,7 +13,7 @@ This document was last updated on January 25, 2018. If you notice any gaps, outd
 1. From the Segment web app, click **Catalog**.
 2. Search for "FullStory" in the Catalog, select it, and choose which of your sources to connect the destination to. Note the source must be sending events using our Javascript library Analytics.js.
 3. Add your `FS Org` in the destination settings. You can find this in FullStory by navigating to `Settings` > `General` > and copying the value found on the line `window['_fs_org'] = 'fullstory_org_here';`
-4. In about 45 minutes the CDN will be updated and FullStory's recording snippet will be initialized onto your page.
+4. The Segment CDN updates in about 45 minutes, and FullStory's recording snippet initializes on your page and begins sending data.
 
 ## Identify
 

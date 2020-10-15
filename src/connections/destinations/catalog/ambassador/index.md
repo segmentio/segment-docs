@@ -14,7 +14,7 @@ This document was last updated on September 03, 2018. If you notice any gaps, ou
   1. From the Segment web app, click **Catalog**.
   2. Search for "Ambassador" in the Catalog, select it, and choose which of your sources to connect the destination to.
   3. In the destination settings, enter your "Client ID" from your Ambassador dashboard, and populate any "Campaigns" to be mapped as per the below [Mapping campaigns to URLs](#mapping-campaigns-to-urls) section.
-  4. In about 45 minutes the CDN will be updated and the Ambassador snippet will be initialized onto your page.
+  4. The Segment CDN updates in about 45 minutes, and the Ambassador snippet initializes on your page and begins sending data.
   5. Since Ambassador only records specific events and user data, events and users may not appear in Ambassador until you start using the API outlined below.
 
 ## Identify

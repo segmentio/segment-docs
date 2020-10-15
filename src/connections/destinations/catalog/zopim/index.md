@@ -38,7 +38,7 @@ If you are using the `Web Widget` (see example below), **you will need to contac
 <!-- End of Zendesk Widget script -->
 ```
 
-4. In about 45 minutes the CDN updates and the Zendesk Chat snippet is initialized onto your page.
+4. The Segment CDN updates in about 45 minutes, and the Zendesk Chat snippet initializes on your page and begins sending data.
 
 ## Identify
 

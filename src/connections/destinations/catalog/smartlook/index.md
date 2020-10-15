@@ -16,7 +16,7 @@ This destination is maintained by Smartlook. For any issues with the destination
 1. From the Segment web app, click **Catalog**.
 2. Search for "Smartlook" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter the "Project Key" into your Segment Settings UI which you can find from your [project settings](https://www.smartlook.com/app/dashboard/settings/projects) after clicking the **Tracking code** link.
-4. In about 45 minutes the CDN will be updated and Smartlook's recording snippet will be loaded into your page.
+4. The Segment CDN updates in about 45 minutes, and Smartlook's recording snippet will be loaded into your page.
 
 
 ## Identify
