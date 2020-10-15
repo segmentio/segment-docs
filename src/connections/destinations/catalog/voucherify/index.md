@@ -6,15 +6,13 @@ beta: true
 
 [Voucherify](https://voucherify.io?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps developers integrate digital promotions across any marketing channel or customer touchpoint - eventually giving full control over campaigns back to the marketing team.
 
-This destination is maintained by Voucherify. For any issues with the destination, [contact their team](mailto:support@voucherify.io).
+This destination is maintained by Voucherify. For any issues with the destination, [contact the Voucherify Support team](mailto:support@voucherify.io).
 
-> note "Note:"
-> The Voucherify Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 27, 2020. If you are interested in joining their beta program or have any feedback to help improve the Voucherify Destination and its documentation, [let their team know](mailto:support@voucherify.io)!
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+{% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "Voucherify" within the Destinations Catalog and confirm the Source you'd like to connect to.

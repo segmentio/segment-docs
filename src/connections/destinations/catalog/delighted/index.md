@@ -5,11 +5,9 @@ rewrite: true
 
 [Delighted](https://delighted.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the modern customer feedback solution used by the world's most coveted brands to deliver stellar experiences to their customers.
 
-This destination is maintained by Delighted. For any issues with the destination, [contact their team](mailto:hello@delighted.com)
+This destination is maintained by Delighted. For any issues with the destination, [contact the Delighted Support team](mailto:hello@delighted.com)
 
 _**NOTE:** The Delighted Destination is currently only compatible with email surveys._
-
-This document was last updated on January 29, 2019. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
 
 ## Getting Started

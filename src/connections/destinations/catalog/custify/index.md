@@ -5,10 +5,9 @@ rewrite: true
 
 [Custify](https://www.custify.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)'s Customer Success Platform is designed for B2B SaaS businesses and enables them to reduce their churn and increase customer lifetime value.
 
-This destination is maintained by Custify. For any issues with the destination, [contact their team](mailto:contact@custify.com).
+This destination is maintained by Custify. For any issues with the destination, [contact the Custify Support team](mailto:contact@custify.com).
 
-_**NOTE:** The Custify Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the Custify Destination and its documentation, [let their team know](mailto:contact@custify.com)!_
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 

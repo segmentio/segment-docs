@@ -4,9 +4,9 @@ title: Refersion Destination
 ---
 [Refersion](https://refersion.com/?utm_source=segment&utm_medium=partner) is a fully-loaded affiliate and influencer marketing platform that you can launch in minutes; they handle the heavy lifting so you can focus on building partnerships with your affiliates. By connecting Refersion with Segment you will easily be able to create new affiliate accounts.
 
-This destination is maintained by Refersion. For any issues with the destination, [contact their team](mailto:helpme@refersion.com).
+This destination is maintained by Refersion. For any issues with the destination, [contact the Refersion Support team](mailto:helpme@refersion.com).
 
-_**NOTE:** The Refersion Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on May 13, 2019. If you are interested in joining their beta program or have any feedback to help improve the Refersion Destination and its documentation, [let their team know](mailto:helpme@refersion.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

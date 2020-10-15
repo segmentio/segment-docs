@@ -5,9 +5,9 @@ redirect_from: '/connections/destinations/catalog/northstar-by-growthhackers/'
 ---
 [Experiments by Growthhackers](http://growthhackers.com/software) provides a project management tool for growth teams, allowing companies to create and prioritize ideas, run experiments and gather data to learn upon!
 
-This destination is maintained by Experiments by Growthhackers. For any issues with the destination, [contact their team](mailto:tech@growthhackers.com).
+This destination is maintained by Experiments by Growthhackers. For any issues with the destination, [contact the Growthhackers Support team](mailto:tech@growthhackers.com).
 
-_**NOTE:** The Experiments by Growthhackers Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the Experiments by Growthhackers Destination and its documentation, [let their team know](mailto:tech@growthhackers.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
