@@ -13,7 +13,7 @@ This destination is maintained by WalkMe. For any issues with the destination, [
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "WalkMe" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. In the WalkMe settings, select an Environment (for example Production, Test etc.)
 4. Enter your WalkMe system ID which you can find in your WalkMe Editor under Menu > Snippet tab.

@@ -11,7 +11,7 @@ This document was last updated on October 16, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Lucky Orange" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your Site ID from the Lucky Orange.
 4. We'll automatically initialize Lucky Orange's library upon loading analytics.js.

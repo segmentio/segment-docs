@@ -11,7 +11,7 @@ This document was last updated on November 8th, 2018. If you notice any gaps, ou
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "UserVoice" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Add your Javascript API Key (Your API Key appears in the javascript snippet URL as widget.uservoice.com/APIKEY.js.) and enable the destination in Segment.
 4. We'll automatically start recording data.

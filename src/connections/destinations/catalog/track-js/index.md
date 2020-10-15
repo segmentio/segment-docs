@@ -10,7 +10,7 @@ This document was last updated on November 26, 2018. If you notice any gaps, out
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI's Destinations page click on "Add Destination".
+  1. From the Segment web app, click **Catalog**.
   2. Search for "Track JS" within the Destinations Catalog and confirm the Source you'd like to connect to.
   3. Drop in your Token as retrieved from your Track JS [set up page](https://my.trackjs.com/customer/login?returnUrl=%2fcustomer%2fsetup#install-locally).
   4. Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Track JS onto your page. This means you should remove Track JS' snippet from your page.

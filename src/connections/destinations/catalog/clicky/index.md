@@ -15,7 +15,7 @@ This document was last updated on July 30th, 2018. If you notice any gaps, outda
 {% include content/connection-modes.md %}
 
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Clicky" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your Site ID in the settings. You can find your Site ID under the Preferences of your account.
 4. We'll automatically initialize Clicky's script with your Site ID upon loading analytics.js.

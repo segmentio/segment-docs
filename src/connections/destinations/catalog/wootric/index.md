@@ -14,7 +14,7 @@ This document was last updated on January 23, 2020. If you notice any gaps, out-
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Wootric" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your Wootric "Account Token" in Segment's Settings UI. You can retrieve this from your Wootric Settings > Your unique Account Token is. It should look like "NPS-XXXXXXXX".
 4. If you're using Segment's client-side `analytics.js` library, we asynchronously load Wootric's Javascript library onto the page and the CDN will be updated in 45 minutes.

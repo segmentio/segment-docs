@@ -11,7 +11,7 @@ This document was last updated on April 20th, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Clearbit Enrichment" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. In your Segment UI's destination settings, enter your Clearbit **secret** API key (note: it should start with "sk_"). You can find this in the API section of your [Clearbit dashboard](https://dashboard.clearbit.com/api).
 

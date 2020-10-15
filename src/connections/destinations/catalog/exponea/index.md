@@ -17,7 +17,7 @@ This destination is maintained by Exponea. For any issues with the destination, 
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Exponea" within the Destinations Catalog and confirm the Source you would like to connect to.
 3. Create a [public API group](https://docs.exponea.com/reference#setting-up-access-keys) for your Segment integration in your Exponea project. Don't forget to set the appropriate [group permissions](https://docs.exponea.com/v2/reference#section-modifying-the-access-of-your-api-group) to allow recieveing events and customer updates.
 4. Fill in the "API Base URL", "API key" and "Project Token" into your Segment Settings UI. You can find all of the above in the API settings page of your Exponea project.

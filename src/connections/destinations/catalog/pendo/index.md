@@ -11,7 +11,7 @@ This destination is maintained by Pendo. For any issues with the destination, [c
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Pendo" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your Pendo API Key which you can find in the Pendo UI under [Site Settings](https://app.pendo.io/admin) > Basic Information > API Key.
 4. In about 45 minutes the CDN will be updated and Pendo's snippet will be initialized onto your page. This pulls in all page and click events without needing to make additional method calls.
@@ -20,7 +20,7 @@ This destination is maintained by Pendo. For any issues with the destination, [c
 
 If you are implementing server-side, follow the steps above to add Pendo continue with steps below to add a Webhook destination:
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Webhooks" within the Destinations Catalog and confirm the Javascript Source you'd like to connect to.
 3. Add the following as your Webhook URL: `https://pendo-io.appspot.com/data/segmentio/YOUR_PENDO_API_KEY` and replace `YOUR_PENDO_API_KEY` with your actual Pendo API Key which you can find in the Pendo UI under [Site Settings](https://app.pendo.io/admin) > Basic Information > API Key.
 4. Headers are not required in Webhook configuration. Once you're done adding in your URL, save changes.

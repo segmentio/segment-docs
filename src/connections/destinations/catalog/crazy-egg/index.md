@@ -12,7 +12,7 @@ This document was last updated on 18th January, 2018. If you notice any gaps, ou
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Crazy Egg" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Navigate to the [set up page within your Crazy Egg UI](https://app.crazyegg.com/v2/install/manually) and copy the Account Number which should be a series of 8-9 numbers in bold.
 4. Enter this within the Segment UI under "Account Number" and Crazy Egg will automatically start recording heatmap data once the CDN updates in 45 minutes.

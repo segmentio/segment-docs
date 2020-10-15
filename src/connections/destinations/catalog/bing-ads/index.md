@@ -15,7 +15,7 @@ Before you can track conversions or target audiences, you need to create a UET t
 
 Once you have created the Tag ID, you can follow the steps below:
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Bing Ads" within the Destinations Catalog and confirm the Source you'd like to connect to. Note the source must be sending events using our Javascript library Analytics.js.
 3. Drop in your Tag Id
 4. In about 45 minutes the CDN will be updated and Bing Ads' snippet will be initialized onto your page.

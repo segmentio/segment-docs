@@ -32,7 +32,7 @@ our documentation, [let us know](https://segment.com/help/contact)!
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 
 2. Search for "Amplitude" within the Destinations Catalog and confirm the
    Source you'd like to connect to.

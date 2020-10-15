@@ -10,7 +10,7 @@ This document was last updated on April 27, 2018. If you notice any gaps, outdat
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI's Destinations page click on "Add Destination".
+  1. From the Segment web app, click **Catalog**.
   2. Search for "AppsFlyer" within the Destinations Catalog and confirm the Source you'd like to connect to.
   3. Drop in your `AppsFlyer Dev Key`, which can be retrieved from the App Settings section of your AppsFlyer account.
   4. Follow the instructions in the GitHub repos: [iOS SDK](https://github.com/AppsFlyerSDK/segment-appsflyer-ios) and [Android SDK](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration).

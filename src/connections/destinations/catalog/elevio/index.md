@@ -12,7 +12,7 @@ This document was last updated on 31 July, 2018. If you notice any gaps, out-dat
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Elevio" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your "Account ID" from your Elevio's [Installation](https://app.elev.io/installation) page under "Install via Code Snippet". You can also use Elevio's "Install with Segment" workflow from the same page.
 4. Ensure that you have Elevio's Assistant enabled from your [Settings](https://app.elev.io/settings).

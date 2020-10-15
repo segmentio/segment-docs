@@ -25,7 +25,7 @@ Before you enable Selligent Marketing Cloud in your Destination page, validate w
 
 You can then proceed to configure your destination.
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "*Selligent Marketing Cloud*" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "*API Key*" and "*API Secret*" into your Segment Settings UI.
 4. *SMC Admin URL* - Copy the link you use to log into the SMC admin should look like https://**{you company}**.slgnt.us

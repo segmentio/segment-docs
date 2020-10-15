@@ -13,7 +13,7 @@ This destination is maintained by Richpanel. For any issues with the destination
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Richpanel" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. If this is the first time setting up Richpanel as a destination, you’ll need to install the Segment App in your Richpanel Account.
 4. In your Richpanel account, go to Data Sources > Integrations and install the Segment Connector.

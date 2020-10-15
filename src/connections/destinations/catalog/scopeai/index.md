@@ -12,7 +12,7 @@ This destination is maintained by ScopeAI. For any issues with the destination, 
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "ScopeAI" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. In the Segment Settings UI under "API Key" place the Segment token that can be seen after clicking "Show Token" in the panel of the Segment integration you've  created in the [ScopeAI integrations page](https://www.getscopeai.com/integrations). If you haven't yet created a Segment integration on the ScopeAI app, follow these [instructions](http://help.getscopeai.com/integrations/integrating-with-segment) to create one.
 

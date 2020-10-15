@@ -20,7 +20,7 @@ Because the VWO destination needs to be on the page right away, there are two wa
 
 Additionaly, to enable the destination  follow these instructions:
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Visual Web Optimizer" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Toggle the destination on!
 

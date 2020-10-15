@@ -25,7 +25,7 @@ This page is about the **Facebook Offline Conversions**. For documentation on ot
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 
 2. Search for "Facebook Offline Conversions" within the Destinations Catalog and confirm the Source you'd like to connect to.
 

@@ -12,7 +12,7 @@ This document was last updated on July 18th, 2018. If you notice any gaps, outda
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Matomo" within the Destinations Catalog and confirm the Source you'd like to connect to. Note the source must be sending events using our Javascript library Analytics.js.
 3. Drop in your Site Id. You can find your Site ID in your Matomo snippet.
 4. Drop in your Server URL. You can find your Server URL in your snippet, we will append /matomo.php to the URL automatically.

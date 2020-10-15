@@ -12,7 +12,7 @@ This destination is maintained by ByteGain. For any issues with the destination,
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "ByteGain" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "API Key" which you can find from the set up tab in the ByteGain UI into your Segment Settings UI.
 4. You can now start sending events to ByteGain and check the status light on the set up tab in the ByteGain UI to verify that data is flowing.

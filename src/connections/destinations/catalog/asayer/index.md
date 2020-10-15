@@ -12,7 +12,7 @@ This destination is maintained by Asayer. For any issues with the destination, [
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Asayer" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Set your Asayer Site ID - which you can find in your Asayer dashboard after clicking on Tracking Code in [Preferences -> Sites](https://app.asayer.io/client/sites) - into your Destination settings. Site ID is a whole number (e.g. 435).
 4. The CDN takes about 45 minutes to update. Right after that, Asayer's tracking code will automatically initialize onto your website. In the meantime, make sure to remove Asayer's snippet from your site, if there's any.

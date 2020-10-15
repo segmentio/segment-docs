@@ -12,7 +12,7 @@ This destination is maintained by CustomFit.ai. For any issues with the destinat
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "CustomFit.ai" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "Server Key" into your Segment Settings UI which you can find from your [CustomFit.ai dashboard](https://dashboard.customfit.ai/settings/app-settings).
 

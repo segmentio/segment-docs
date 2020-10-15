@@ -11,7 +11,7 @@ This document was last updated on September 03, 2018. If you notice any gaps, ou
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI's Destinations page click on "Add Destination".
+  1. From the Segment web app, click **Catalog**.
   2. Search for "Ambassador" within the Destinations Catalog and confirm the Source you'd like to connect to.
   3. Drop in your "Client ID" from your Ambassador dashboard, and populate any "Campaigns" to be mapped as per the below [Mapping campaigns to URLs](#mapping-campaigns-to-urls) section.
   4. In about 45 minutes the CDN will be updated and the Ambassador snippet will be initialized onto your page.

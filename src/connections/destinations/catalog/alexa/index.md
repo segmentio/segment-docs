@@ -10,7 +10,7 @@ This document was last updated on October 16, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Alexa" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Fill in your "Account ID" which you can find in the Alexa Javascript snippet. It appears as atrk_acct: 'XXXXXXX'.
 4. Fill in your "Domain" which you can find in the Alexa Javascript snippet. It appears as domain: 'example.com'.

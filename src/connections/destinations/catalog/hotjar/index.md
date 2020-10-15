@@ -19,7 +19,7 @@ This document was last updated on February 6, 2020. This destination is maintain
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 
 2. Search for "Hotjar" within the Destinations Catalog and confirm the Javascript source you'd like to connect to.
 

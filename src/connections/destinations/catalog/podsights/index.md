@@ -15,7 +15,7 @@ This destination is maintained by Podsights. For any issues with the destination
 {% include content/connection-modes.md %}
 
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Podsights" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Visit your [Podsights dashboard](https://analytics.podsights.com) and navigate to Manage > Pixels. Copy your Pixel ID which will be your Segment "API Key".
 4. Drop the Pixel ID in the "API Key" field in your Segment Settings UI.

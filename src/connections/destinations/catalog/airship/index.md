@@ -20,7 +20,7 @@ This destination is maintained by Airship. For any issues [contact the Airship S
 
 Follow these steps to configure the integration
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Airship" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in the "API Key" into your Segment Settings UI.
 * Steps to create an Access Token to enable integration from Airship outlined [here](https://docs.airship.com/partners/segment/#access-token). Save this Access Token & API Key for the pasting into Segment Settings UI.

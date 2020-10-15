@@ -10,7 +10,7 @@ This document was last updated on April 27, 2018. If you notice any gaps, outdat
 
 {% include content/connection-modes.md %}
 
- 1. From your Segment UI's Destinations page click on "Add Destination".
+ 1. From the Segment web app, click **Catalog**.
  2. Search for "Apptimize" within the Destinations Catalog and confirm the Source you'd like to connect to.
  3. Drop in your Apptimize application key, the 31 character key which you can find in your [Apptimize app settings](https://apptimize.com/admin/settings/apps).
  4. Depending on the mobile library you've selected, follow the below instructions to complete your setup.

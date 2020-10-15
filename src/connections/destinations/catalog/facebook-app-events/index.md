@@ -26,7 +26,7 @@ This page is about the **Facebook App Events**. For documentation on other Faceb
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Facebook App Events" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Drop in your Facebook App ID which can be retrieved from your [Facebook Apps dashboard](https://developers.facebook.com/apps/).
 4. Once you turn on the Facebook App Events integration in your app's Segment project, we'll start sending `track` data to Facebook's App Events endpoints.

@@ -12,7 +12,7 @@ This destination is maintained by AdQuick. For any issues with the destination, 
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "AdQuick" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Select the campaign you want to connect to Segment in your [Campaings list page](https://adquick.com/campaigns)
 4. Click on the Analytics tab.

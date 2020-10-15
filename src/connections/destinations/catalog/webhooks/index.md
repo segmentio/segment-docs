@@ -10,7 +10,7 @@ This document was last updated on January 28, 2018. If you notice any gaps, out-
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 2. Search for "Webhooks" within the Destinations Catalog and confirm the Source you'd like to connect to.
 3. Specify up to five different Webhook URLs, you would like to forward data to.
 4. Add in any header values you would like to add to the HTTP requests

@@ -10,7 +10,7 @@ This document was last updated on November 26, 2018. If you notice any gaps, out
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI's Destinations page click on "Add Destination".
+  1. From the Segment web app, click **Catalog**.
   2. Search for "BugHerd" within the Destinations Catalog and confirm the Source you'd like to connect to.
   3. Drop in your `API Key` as retrieved from the Install BugHerd tab on your BugHerd Project page.
   4. Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading BugHerd onto your page. This means you should remove BugHerd's snippet from your page.
