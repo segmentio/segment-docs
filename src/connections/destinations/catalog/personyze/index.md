@@ -4,9 +4,10 @@ title: Personyze Destination
 ---
 [Personyze](https://www.personyze.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete cross-channel personalization solution for showing highly optimized content in websites, emails, and apps using targeting and recommendation engines, and a variety of content creation, editing, and A/B testing tools.
 
-This destination is maintained by Personyze. For any issues with the destination, [contact their team](mailto:info@personyze.com).
+This destination is maintained by Personyze. For any issues with the destination, [contact the Personyze Support team](mailto:info@personyze.com).
 
-_**NOTE:** Personyze is currently in beta, which means that they are still actively developing the product. This doc was last updated on February 25, 2019. If you are interested in joining their beta program or have any feedback to help improve the Personyze Destination and its documentation, [let their team know:](mailto:info@personyze.com)!_
+{% include content/beta-note.md %}
+
 
 ## Getting Started
 

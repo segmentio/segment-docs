@@ -3,14 +3,11 @@ rewrite: true
 title: OwnerIQ Destination
 ---
 
-## OwnerIQ Destination
-
 [OwnerIQ](https://www.owneriq.com/platform-coex) allows marketers to use transparent, directly sourced, deterministic, shopping and purchasing data from retailers and brands.
 
-This destination is maintained by OwnerIQ. For any issues with the destination, [contact their team](mailto:coex-support@owneriq.com).
+This destination is maintained by OwnerIQ. For any issues with the destination, [contact the OwnerIQ Support team](mailto:coex-support@owneriq.com).
 
-_**NOTE:** The OwnerIQ Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on September 20, 2019. If you are interested in joining their beta program or have any feedback to help improve the OwnerIQ Destination and its documentation, [let their team know](mailto:coex-support@owneriq.com)!_
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -24,7 +21,7 @@ _**NOTE:** The OwnerIQ Destination is currently in beta, which means that they a
 
 If you aren't familiar with the Segment Spec, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
-```
+```js
 analytics.page()
 ```
 
@@ -64,9 +61,10 @@ Since track events by default do not require you to send user metadata, it is st
 
 
 ### Order Completed
+
 For each order completed you must include an `orderId`. All other properties are optional.
 
-```
+```js
 analytics.track({
   userId: '019mr8mf4r',
   event: 'Order Completed',
