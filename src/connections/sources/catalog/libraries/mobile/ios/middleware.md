@@ -3,12 +3,9 @@ title: Middleware for iOS
 strat: ios
 ---
 
+Middlewares are simple functions invoked by the Segment libraries, which give you a way to add information to the events you collect using the Segment SDKs. They can be used to monitor, modify, or reject events. Source Middleware are available on `analytics-ios` 3.6.0 and later. Destination Middleware are available on `analytics-ios` 4.0.0 and later.
 
-
-## Middleware
-Middleware are a powerful mechanism that can augment the events collected by the SDK. A middleware is a simple function that is invoked by the Segment SDK and can be used to monitor, modify or reject events. Source Middleware are available on `analytics-ios` 3.6.0 and higher. Destination Middleware are available on `analytics-ios` 4.0.0 and higher.
-
-The middleware API is easily accessible in both Objective-C and Swift.
+You can access the middleware API in both Objective-C and Swift.
 
 ### Usage
 
@@ -64,18 +61,18 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 
 
-`context` is an object that encapsulates everything about an event in the stream. `next` is a callback function that should be invoked when the current middleware is done processing the event and can pass the processed event down to the next middleware in the chain.
+The `context` object encapsulates everything about an event in the stream. You invoke the `next` callback function when the current middleware is done processing the event, and can pass the processed event down to the next middleware in the chain.
 
-`SEGContext` object is not very information rich by itself. Typically you must use `eventType`  and `payload` to get more information about an event.
+The `SEGContext` object is not very information rich by itself. Typically you must use `eventType`  and `payload` to get more information about an event.
 
-<!--{% codeexample %}
+{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}-->
+{% codeexampletab Objective-C %}
 
 ```objc
 @interface SEGContext : NSObject <NSCopying>
@@ -95,21 +92,23 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 @end
 ```
-<!--{% endcodeexampletab %}
+{% endcodeexampletab %}
 
-{% endcodeexample %}-->
+{% endcodeexample %}
 
 
-If you look at `SEGEventType` more carefully, you'll realize that middleware is not only capable of handling `track` , `identify` and other normal analytics APIs, even calls like `reset` , `flush` and `openURL` go through and can therefore be processed by the middleware pipeline.
+Look at the `SEGEventType` carefully, and notice that middleware can handle `track` , `identify` and other Segment analytics APIs. Even calls like `reset` , `flush` and `openURL` go through and can be processed by the middleware pipeline.
 
-<!--{% codeexample %}
+{% codeexample %}
 {% codeexampletab Swift %}
+
 ```swift
 // TODO - swift sample here
 ```
+
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}-->
+{% codeexampletab Objective-C %}
 ```objc
 typedef NS_ENUM(NSInteger, SEGEventType) {
     // Should not happen, but default state
@@ -139,21 +138,21 @@ typedef NS_ENUM(NSInteger, SEGEventType) {
     SEGEventTypeOpenURL,
 };
 ```
-<!--{% endcodeexampletab %}
+{% endcodeexampletab %}
 
-{% endcodeexample %}-->
+{% endcodeexample %}
 
 
 There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enums. Subclassed payloads may contain call specific information, For example, the `SEGTrackPayload` contains `event` as well as `properties` .
 
-<!--{% codeexample %}
+{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}-->
+{% codeexampletab Objective-C %}
 
 ```objc
 @interface SEGTrackPayload : SEGPayload
@@ -164,22 +163,21 @@ There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enu
 
 @end
 ```
-<!--{% endcodeexampletab %}
+{% endcodeexampletab %}
 
-{% endcodeexample %}-->
-
+{% endcodeexample %}
 
 
 Finally, to use a middleware, you must provide it to the `SEGAnalyticsConfiguration` object prior to the initialization of `SEGAnalytics`.
 
-<!--{% codeexample %}
+{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}-->
+{% codeexampletab Objective-C %}
 
 ```objc
 @interface SEGAnalyticsConfiguration : NSObject
@@ -197,17 +195,21 @@ Finally, to use a middleware, you must provide it to the `SEGAnalyticsConfigurat
 // ...
 @end
 ```
-<!--{% endcodeexampletab %}
+{% endcodeexampletab %}
 
-{% endcodeexample %}-->
+{% endcodeexample %}
 
 
 
 Once initialized, the list of middleware used in `SEGAnalytics` cannot be changed.
 
-### Examples
+## Middlewares Examples
 
-The following examples will be written in Swift to demonstrate that the middleware API works just as well in Swift as in Objective-C. To start off, this is what initialization looks like
+The following examples are written in Swift to show that the middleware API works just as well in Swift as in Objective-C.
+
+
+#### Initialize
+The following example shows how to initialize middlewares.
 
 <!--{% codeexample %}
 {% codeexampletab Swift %}-->
@@ -245,7 +247,9 @@ SEGAnalytics.setup(with: config)
 {% endcodeexample %}-->
 
 
-Changing event names and adding custom attributes
+#### Change event names and add attributes
+
+The following examples show how to changing event names, and add custom attributes.
 
 ```swift
 let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
@@ -270,7 +274,9 @@ let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
 }
 ```
 
-Turn one kind call into another
+#### Change a call type
+
+The following example turns one kind call into another
 
 ```swift
 let turnScreenIntoTrack = SEGBlockMiddleware { (context, next) in
@@ -294,7 +300,9 @@ let turnScreenIntoTrack = SEGBlockMiddleware { (context, next) in
 }
 ```
 
-Completely block events
+#### Block specific events
+
+The following example completely blocks specific events from a list.
 
 ```swift
 let   = SEGBlockMiddleware { (context, next) in
@@ -315,7 +323,9 @@ let   = SEGBlockMiddleware { (context, next) in
 }
 ```
 
-Block only screen calls to amplitude
+#### Block specific call types to a specific destination
+
+The following example blocks only screen calls from reaching the Amplitude destination.
 
 ```swift
 let blockScreenCallsToAmplitude = SEGBlockMiddleware { (context, next) in
@@ -334,7 +344,9 @@ let blockScreenCallsToAmplitude = SEGBlockMiddleware { (context, next) in
 }
 ```
 
-Sample events to Mixpanel device-mode destination
+#### Sample events to a destination
+
+The following example records a random selection of events sent to the Mixpanel device-mode destination.
 
 ```swift
 let sampleEventsToMixpanel = SEGBlockMiddleware { (context, next) in
@@ -348,7 +360,10 @@ let sampleEventsToMixpanel = SEGBlockMiddleware { (context, next) in
 }
 ```
 
-Add custom attribute to context for Amplitude device-mode destination
+
+#### Add a custom attribute for a specific destination
+
+The following example adds a custom attribute to the `context` object when sending data to Amplitude in device-mode.
 
 ```swift
 let customizeAmplitudeTrackCalls = SEGBlockMiddleware { (context, next) in
