@@ -85,6 +85,8 @@ sections:
     title: Analytics-iOS mobile source
   - path: /connections/sources/catalog/libraries/mobile/ios/quickstart
     title: iOS Quickstart tutorial
+  - path: /connections/sources/catalog/libraries/mobile/ios/ios14-guide
+    title: iOS14 guide
   - path: /connections/sources/catalog/libraries/mobile/ios/middleware
     title: Middlewares for iOS
   - path: /connections/sources/catalog/libraries/mobile/ios/troubleshooting
