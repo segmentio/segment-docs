@@ -15,6 +15,35 @@ Want to stay updated on releases? Subscribe to the [release feed](https://github
 > **Note:** Segment does not currently support tracking of watchkit extensions for the Apple Watch. [Email us](https://segment.com/requests/integrations/) if you're interested in a Watchkit SDK. For now we recommend tracking watch interactions using the iPhone app code.
 
 
+## Analytics-iOS and Unique Identifiers
+
+One of the most important parts of any analytics platform is the ability to consistently and accurately identify users. To do this, the platform must assign and persist some form of identification on the device, so you can analyze user actions effectively. This is especially important for funnel conversion analysis and retention analysis.
+
+Naturally the Analytics SDK needs a unique ID for each user. To protect end-users’ privacy, Apple places restrictions on how these IDs can be generated and used. This section explains Apple’s policies, and how Segment generates IDs in compliance with these policies.
+
+Before iOS 5 developers had access to `uniqueIdentifier`, which was a hardware-specific serial number that was consistent across different apps, vendors and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a). In iOS 6 Apple introduced the `identifierForVendor` which protects end-users from cross-app identification. In iOS 7 Apple [restricted access to the device’s MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/), which many developers used as a workaround to get a similar device-specific serial number to replace  `uniqueIdentifier`.
+
+Segment’s iOS library supports iOS 7+ by generating a UUID and storing it on disk. This complies with Apple’s required privacy policies, maintains compatibility, and also enables correct tracking in situations where multiple people use the same device, since the UUID can be regenerated.
+
+
+## API call queueing in Analytics-iOS
+
+The Segment SDK queues API calls rather than making a network request for each event tracked, to help improve the user’s battery life.
+
+Packaged, or “device-mode” destinations (where Segment sends data directly from the user’s device using the destination’s integration SDK), might have their own queue behavior. Check the destination vendor’s documentation for details.
+
+For cloud-mode destinations, when you make an API call (Track, Page, etc.) the Segment library adds that call to the queue, and sends the events to the Segment servers in batches. By default, the batch size is `100`.
+
+Batches are sent either:
+
+- when there are 20 or more events in the queue
+- on a scheduled timer, every 30 seconds
+- when the app goes to the background
+
+To limit memory and disk usage, Segment only queues up to 1000 events.
+When the app is terminated, Segment saves the queue to disk, and loads that data again at app launch so there is no data loss.
+
+
 ## Getting Started
 
 ### About mobile connection modes
@@ -114,7 +143,7 @@ The Segment Analytics-iOS SDK can automatically instrument [common application l
 ```swift
 let configuration = AnalyticsConfiguration(writeKey: "YOUR_WRITE_KEY")
 configuration.trackApplicationLifecycleEvents = true
-Analytics.setup(with: configuration) 
+Analytics.setup(with: configuration)
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
@@ -640,7 +669,7 @@ By default debug logging is disabled.
 
 ## Proxy HTTP(S) Calls
 
-You can point the iOS SDK to your own hosted [proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/) of the Segment API. 
+You can point the iOS SDK to your own hosted [proxy](/docs/connections/sources/catalog/libraries/website/javascript/custom-proxy/) of the Segment API.
 
 This runs the HTTP traffic for the Segment API through the proxy.
 
@@ -838,4 +867,3 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 {% endcodeexample %}
 
 Segment recommends that you use Device-mode destinations sparingly, to reduce the size of your application.
-
