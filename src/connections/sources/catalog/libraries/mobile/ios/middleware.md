@@ -12,14 +12,14 @@ You can access the middleware API in both Objective-C and Swift.
 Middleware is any Objective-C class that conforms to the following protocol.
 
 
-<!--{% codeexample %}
+{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}-->
+{% codeexampletab Objective-C %}
 
 ```objc
 @protocol SEGMiddleware
@@ -28,22 +28,22 @@ Middleware is any Objective-C class that conforms to the following protocol.
 EGMiddlewareNext _Nonnull)next;
 @end
 ```
-<!--{% endcodeexampletab %}
+{% endcodeexampletab %}
 
-{% endcodeexample %}-->
+{% endcodeexample %}
 
 
 
 We also provide a block-centric helper class to make it easier to create middlewares using anonymous functions on the fly. (See examples later on in the guide)
 
-<!--{% codeexample %}
+{% codeexample %}
 {% codeexampletab Swift %}
 ```swift
 // TODO - swift sample here
 ```
 {% endcodeexampletab %}
 
-{% codeexampletab Objective-C %}-->
+{% codeexampletab Objective-C %}
 
 ```objc
 typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNext _Nonnull next);
@@ -55,9 +55,9 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 @end
 ```
-<!--{% endcodeexampletab %}
+{% endcodeexampletab %}
 
-{% endcodeexample %}-->
+{% endcodeexample %}
 
 
 
