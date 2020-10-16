@@ -7,7 +7,7 @@ In June 2020, Apple made several privacy-related announcements at WWDC20 about i
 
 Segment fundamentally agrees with Apple’s stance. The world is becoming more privacy-conscious, and we believe that every single one of us will have right to own our own data. The best companies are the ones using this data in responsible ways.
 
-Apple released iOS14 in the autumn of 2020, but [delayed the IDFA changes until early 2021](https://developer.apple.com/news/?id=hx9s63c5&1599152522). Segment products, including Connections, Protocols, Personas (including Identity Resolution), and Privacy, Data Lakes, Cloud Sources, do not rely on IDFA and so are not affected by these platform changes. However, Segment’s iOS Source SDK (`analytics-ios`) and any destinations that previously used IDFA require that you update them so they continue to work with iOS14.
+Apple released iOS14 in the autumn of 2020, but [delayed the IDFA changes until early 2021](https://developer.apple.com/news/?id=hx9s63c5&1599152522). Segment products, including Connections, Protocols, Personas (including Identity Resolution), and Privacy, Data Lakes, and Cloud Sources, do not rely on IDFA and so are not affected by these platform changes. However, Segment’s iOS Source SDK (`analytics-ios`) and any destinations that previously used IDFA require that you update them so they continue to work with iOS14.
 
 Segment updated the iOS Source SDK (`analytics-ios`) and any affected destinations so they support Apple’s iOS platform changes. The Segment iOS SDK (`analytics-ios`) has been updated to version 4 with v4.1 released as stable.
 
@@ -37,12 +37,12 @@ Due to [major changes](https://github.com/segmentio/analytics-ios/blob/master/CH
 
 Several integration partners made their own updates to support Apple’s iOS14 platform changes. Segment integrations for both device- and cloud-mode now have the most recent changes from affected integration partners:
 
-1. [Amplitude](/docsconnections/destinations/catalog/amplitude/#troubleshooting)
-2. [Braze](/docsconnections/destinations/catalog/braze/#additional-device-mode-set-up-for-ios-14-support)
-3. [Adjust](/docsconnections/destinations/catalog/adjust/#additional-device-mode-set-up-for-ios-14-support)
-4. [AppsFlyer](/docsconnections/destinations/catalog/appsflyer/#additional-device-mode-set-up-for-ios-14-support)
-5. [Google Ads](/docsconnections/destinations/catalog/google-ads-classic/#additional-ios-cloud-mode-setup-for-ios-14)
-6. [Facebook App Events](/docsconnections/destinations/catalog/facebook-app-events/#additional-ios-cloud-mode-set-up-for-ios-14)
+1. [Amplitude](/docs/connections/destinations/catalog/amplitude/#troubleshooting)
+2. [Braze](/docs/connections/destinations/catalog/braze/#additional-device-mode-set-up-for-ios-14-support)
+3. [Adjust](/docs/connections/destinations/catalog/adjust/#additional-device-mode-set-up-for-ios-14-support)
+4. [AppsFlyer](/docs/connections/destinations/catalog/appsflyer/#additional-device-mode-set-up-for-ios-14-support)
+5. [Google Ads](/docs/connections/destinations/catalog/google-ads-classic/#additional-ios-cloud-mode-setup-for-ios-14)
+6. [Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/#additional-ios-cloud-mode-set-up-for-ios-14)
 
 Additional affected integration partners are in the process of making changes, and these will be included in future updates.
 
