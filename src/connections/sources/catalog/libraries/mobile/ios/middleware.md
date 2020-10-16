@@ -11,16 +11,6 @@ You can access the middleware API in both Objective-C and Swift.
 
 Middleware is any Objective-C class that conforms to the following protocol.
 
-
-{% codeexample %}
-{% codeexampletab Swift %}
-```swift
-// TODO - swift sample here
-```
-{% endcodeexampletab %}
-
-{% codeexampletab Objective-C %}
-
 ```objc
 @protocol SEGMiddleware
 @required
@@ -28,22 +18,9 @@ Middleware is any Objective-C class that conforms to the following protocol.
 EGMiddlewareNext _Nonnull)next;
 @end
 ```
-{% endcodeexampletab %}
-
-{% endcodeexample %}
-
-
 
 We also provide a block-centric helper class to make it easier to create middlewares using anonymous functions on the fly. (See examples later on in the guide)
 
-{% codeexample %}
-{% codeexampletab Swift %}
-```swift
-// TODO - swift sample here
-```
-{% endcodeexampletab %}
-
-{% codeexampletab Objective-C %}
 
 ```objc
 typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNext _Nonnull next);
@@ -55,24 +32,11 @@ typedef void (^SEGMiddlewareBlock)(SEGContext *_Nonnull context, SEGMiddlewareNe
 
 @end
 ```
-{% endcodeexampletab %}
-
-{% endcodeexample %}
-
 
 
 The `context` object encapsulates everything about an event in the stream. You invoke the `next` callback function when the current middleware is done processing the event, and can pass the processed event down to the next middleware in the chain.
 
 The `SEGContext` object is not very information rich by itself. Typically you must use `eventType`  and `payload` to get more information about an event.
-
-{% codeexample %}
-{% codeexampletab Swift %}
-```swift
-// TODO - swift sample here
-```
-{% endcodeexampletab %}
-
-{% codeexampletab Objective-C %}
 
 ```objc
 @interface SEGContext : NSObject <NSCopying>
@@ -92,23 +56,11 @@ The `SEGContext` object is not very information rich by itself. Typically you mu
 
 @end
 ```
-{% endcodeexampletab %}
-
-{% endcodeexample %}
 
 
 Look at the `SEGEventType` carefully, and notice that middleware can handle `track` , `identify` and other Segment analytics APIs. Even calls like `reset` , `flush` and `openURL` go through and can be processed by the middleware pipeline.
 
-{% codeexample %}
-{% codeexampletab Swift %}
 
-```swift
-// TODO - swift sample here
-```
-
-{% endcodeexampletab %}
-
-{% codeexampletab Objective-C %}
 ```objc
 typedef NS_ENUM(NSInteger, SEGEventType) {
     // Should not happen, but default state
@@ -138,21 +90,11 @@ typedef NS_ENUM(NSInteger, SEGEventType) {
     SEGEventTypeOpenURL,
 };
 ```
-{% endcodeexampletab %}
 
-{% endcodeexample %}
 
+In Objective C, the most classes are prefixed with `SEG`. In swift, this
 
 There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enums. Subclassed payloads may contain call specific information, For example, the `SEGTrackPayload` contains `event` as well as `properties` .
-
-{% codeexample %}
-{% codeexampletab Swift %}
-```swift
-// TODO - swift sample here
-```
-{% endcodeexampletab %}
-
-{% codeexampletab Objective-C %}
 
 ```objc
 @interface SEGTrackPayload : SEGPayload
@@ -163,21 +105,10 @@ There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enu
 
 @end
 ```
-{% endcodeexampletab %}
-
-{% endcodeexample %}
 
 
 Finally, to use a middleware, you must provide it to the `SEGAnalyticsConfiguration` object prior to the initialization of `SEGAnalytics`.
 
-{% codeexample %}
-{% codeexampletab Swift %}
-```swift
-// TODO - swift sample here
-```
-{% endcodeexampletab %}
-
-{% codeexampletab Objective-C %}
 
 ```objc
 @interface SEGAnalyticsConfiguration : NSObject
@@ -195,9 +126,6 @@ Finally, to use a middleware, you must provide it to the `SEGAnalyticsConfigurat
 // ...
 @end
 ```
-{% endcodeexampletab %}
-
-{% endcodeexample %}
 
 
 
