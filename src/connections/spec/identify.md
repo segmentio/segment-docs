@@ -1,4 +1,4 @@
-Segment automatically ---
+---
 title: 'Spec: Identify'
 related:
   - "/connections/sources/catalog/"
