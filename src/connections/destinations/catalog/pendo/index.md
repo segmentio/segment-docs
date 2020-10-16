@@ -21,7 +21,7 @@ This destination is maintained by Pendo. For any issues with the destination, [c
 If you are implementing server-side, follow the steps above to add Pendo continue with steps below to add a Webhook destination:
 
 1. From the Segment web app, click **Catalog**.
-2. Search for "Webhooks" within the Destinations Catalog and confirm the Javascript Source you'd like to connect to.
+2. Search for "Webhooks" in the Catalog, select it, and choose which of your Javascript sources to connect the destination to.
 3. Add the following as your Webhook URL: `https://pendo-io.appspot.com/data/segmentio/YOUR_PENDO_API_KEY` and replace `YOUR_PENDO_API_KEY` with your actual Pendo API Key which you can find in the Pendo UI under [Site Settings](https://app.pendo.io/admin) > Basic Information > API Key.
 4. Headers are not required in Webhook configuration. Once you're done adding in your URL, save changes.
 5. Using Track method also requires a setting enabled on your Pendo subscription. contact Pendo to enable this feature flag for your account.

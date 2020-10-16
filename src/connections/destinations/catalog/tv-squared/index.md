@@ -13,7 +13,7 @@ This document was last updated on April 20th, 2018. If you notice any gaps, outd
 
 1. From the Segment web app, click **Catalog**.
 
-2. Search for "TV Squared" within the Destinations Catalog and confirm the Javascript source you'd like to connect to.
+2. Search for "TV Squared" in the Catalog, select it, and choose which of your Javascript sources to connect the destination to.
 
 3. Add your TV Squared Brand ID and Client ID to your Segment Settings UI. You can find this within your TV Squared dashboard.
 

@@ -21,7 +21,7 @@ This document was last updated on February 6, 2020. This destination is maintain
 
 1. From the Segment web app, click **Catalog**.
 
-2. Search for "Hotjar" within the Destinations Catalog and confirm the Javascript source you'd like to connect to.
+2. Search for "Hotjar" in the Catalog, select it, and choose which of your Javascript sources to connect the destination to.
 
 3. Add your Hotjar Site ID to your Destination settings. You can find this under Settings and Sites & Organizations in your Hotjar dashboard. It should be a whole number (e.g. 123456).
 

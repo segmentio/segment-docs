@@ -19,7 +19,7 @@ Retina AI maintains this destination. For any issues with the destination, conta
 
 To integrate Retina AI with Segment as a **Destination**:
 1. From your Segment UI’s Destinations page click on “Add Destination”.
-2. Search for “Retina” within the Destinations Catalog and confirm the source you’d like to connect to.
+2. Search for “Retina” in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add the “API Key” that Retina AI provides through a secure data transfer to your Segment workspace.
 4. You will receive an email confirming data connectivity once the setup is complete.
 
