@@ -212,8 +212,8 @@ The following examples are written in Swift to show that the middleware API work
 
 The following example shows how to initialize middleware.
 
-<!--{% codeexample %}
-{% codeexampletab Swift %}-->
+{% codeexample %}
+{% codeexampletab Swift %}
 
 ```swift
 let mixpanelIntegration = SEGMixpanelIntegrationFactory.instance()
@@ -237,20 +237,22 @@ config.destinationMiddleware = [
 ]
 SEGAnalytics.setup(with: config)
 ```
-<!--{% endcodeexampletab %}
-
+{% endcodeexampletab %}
 {% codeexampletab Objective-C %}
+
 ```objc
 // TODO - objc sample here?
 ```
 {% endcodeexampletab %}
-
-{% endcodeexample %}-->
+{% endcodeexample %}
 
 
 #### Change event names and add attributes
 
 The following examples show how to changing event names, and add custom attributes.
+
+{% codeexample %}
+{% codeexampletab Swift %}
 
 ```swift
 let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
@@ -274,11 +276,24 @@ let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
     }
 }
 ```
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+
+```objc
+// TODO - objc sample here?
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+
 
 #### Change a call type
 
 The following example turns one kind call into another
 
+
+{% codeexample %}
+{% codeexampletab Swift %}
 ```swift
 let turnScreenIntoTrack = SEGBlockMiddleware { (context, next) in
     if context.eventType == .screen {
@@ -301,10 +316,23 @@ let turnScreenIntoTrack = SEGBlockMiddleware { (context, next) in
 }
 ```
 
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+
+```objc
+// TODO - objc sample here?
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+
 #### Block specific events
 
 The following example completely blocks specific events from a list.
 
+
+{% codeexample %}
+{% codeexampletab Swift %}
 ```swift
 let   = SEGBlockMiddleware { (context, next) in
     let validEvents = [
@@ -324,10 +352,23 @@ let   = SEGBlockMiddleware { (context, next) in
 }
 ```
 
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+
+```objc
+// TODO - objc sample here?
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+
 #### Block specific call types to a specific destination
 
 The following example blocks only screen calls from reaching the Amplitude destination.
 
+
+{% codeexample %}
+{% codeexampletab Swift %}
 ```swift
 let blockScreenCallsToAmplitude = SEGBlockMiddleware { (context, next) in
     if let screen = context.payload as? SEGScreenPayload {
@@ -345,10 +386,22 @@ let blockScreenCallsToAmplitude = SEGBlockMiddleware { (context, next) in
 }
 ```
 
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+
+```objc
+// TODO - objc sample here?
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+
 #### Sample events to a destination
 
 The following example records a random selection of events sent to the Mixpanel device-mode destination.
 
+{% codeexample %}
+{% codeexampletab Swift %}
 ```swift
 let sampleEventsToMixpanel = SEGBlockMiddleware { (context, next) in
     if let track = context.payload as? SEGTrackPayload {
@@ -361,11 +414,23 @@ let sampleEventsToMixpanel = SEGBlockMiddleware { (context, next) in
 }
 ```
 
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+
+```objc
+// TODO - objc sample here?
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
+
 
 #### Add a custom attribute for a specific destination
 
 The following example adds a custom attribute to the `context` object when sending data to Amplitude in device-mode.
 
+{% codeexample %}
+{% codeexampletab Swift %}
 ```swift
 let customizeAmplitudeTrackCalls = SEGBlockMiddleware { (context, next) in
     if context.eventType == .track {
@@ -388,6 +453,16 @@ let customizeAmplitudeTrackCalls = SEGBlockMiddleware { (context, next) in
     }
 }
 ```
+
+{% endcodeexampletab %}
+{% codeexampletab Objective-C %}
+
+```objc
+// TODO - objc sample here?
+```
+{% endcodeexampletab %}
+{% endcodeexample %}
+
 
 ### Braze Middleware
 
