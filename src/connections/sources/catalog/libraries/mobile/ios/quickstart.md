@@ -94,7 +94,7 @@ Now that the SDK is installed and set up, you’re ready to start making calls.
 The `identify` method informs Segment who the current user is. It takes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify reference](/docs/connections/sources/catalog/libraries/mobile/ios#identify).
 
 Here’s what a basic call to `identify` might look like:
-
+ 
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
