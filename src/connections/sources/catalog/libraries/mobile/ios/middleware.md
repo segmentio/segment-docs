@@ -208,8 +208,9 @@ Once initialized, the list of middleware used in `SEGAnalytics` cannot be change
 The following examples are written in Swift to show that the middleware API works just as well in Swift as in Objective-C.
 
 
-#### Initialize
-The following example shows how to initialize middlewares.
+#### Initialize middleware
+
+The following example shows how to initialize middleware.
 
 <!--{% codeexample %}
 {% codeexampletab Swift %}-->
