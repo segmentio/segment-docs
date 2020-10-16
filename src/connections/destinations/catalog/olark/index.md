@@ -6,10 +6,10 @@ title: Olark Destination
 
 When you toggle on Olark in Segment, this is what happens:
 
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Olark's loader0.js onto your page. This means you should remove Olark's snippet from your page.
++ The Segment CDN updates in about 45 minutes, and starts asynchronously loading Olark's loader0.js onto your page. This means you should remove Olark's snippet from your page.
 + Olark's chat box will appear on your page, as configured in your [Olark account](http://www.olark.com/?r=qhl4tltg), and you can start chatting with visitors.
 
-Olark is only supported on the client side.
+Olark is only supported in device mode (on the client).
 
 - - -
 

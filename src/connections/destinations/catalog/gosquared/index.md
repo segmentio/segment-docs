@@ -6,7 +6,7 @@ title: GoSquared Destination
 
 When you toggle on GoSquared in Segment, this is what happens:
 
-- Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading GoSquared's Tracker onto your page. This means you should remove any manual integration of GoSquared.
+- The Segment CDN updates in about 45 minutes, and starts asynchronously loading GoSquared's Tracker onto your page. This means you should remove any manual integration of GoSquared.
 - Your GoSquared Now dashboard will instantly start showing the number of visitors online, and if you're using `identify`, users will start appearing in People Analytics.
 
 GoSquared supports mobile, webpage and server-side tracking.

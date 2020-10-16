@@ -10,7 +10,7 @@ Our comScore destination code is open-source on GitHub if you want to check it o
 
 When you toggle on comScore in Segment, this is what happens:
 
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading comScore's beacon.js onto your page. **This means you should remove comScore's snippet from your page.**
++ The Segment CDN updates in about 45 minutes, and starts asynchronously loading comScore's beacon.js onto your page. **This means you should remove comScore's snippet from your page.**
 + comScore will automatically start recording data.
 
 ## Mobile

@@ -9,7 +9,7 @@ We have both web and mobile destinations with Quantcast. The two integrations ar
 ## Web Destination
 When you toggle on Quantcast for a website in Segment, this is what happens:
 
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading quant.js onto your page. This means you should remove Quantcast's snippet from your page.
++ The Segment CDN updates in about 45 minutes, and starts asynchronously loading quant.js onto your page. This means you should remove Quantcast's snippet from your page.
 + Quantcast will automatically start recording data. If this is the first time sending data to Quantcast it can take them up to **12 days** to process your new data.
 
 Quantcast supports the `identify` and `track` methods on our API.
