@@ -14,26 +14,26 @@ Segment updated the iOS Source SDK (`analytics-ios`) and any affected destinatio
 This major version release includes the following (API compatible) updates:
 
 
-## 1. Segment no longer automatically collects IDFA.
+## Segment no longer automatically collects IDFA.
 
 Previously, the Segment SDK collected the IDFA as the `context.device.advertisingId` value for each event if the user enabled ad-tracking. The Segment SDK no longer automatically collects the IDFA after version 4. (If your implementation requires the IDFA for compatibility with specific destinations, see the section below.)
 
 Due to this major change, **you should upgrade to the latest stable version of `analytics-ios`**. ([v4.1](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md) at the time of this writing)
 
 
-## 2. You can manually pass the IDFA to the Segment SDK.
+## You can manually pass the IDFA to the Segment SDK.
 
 If you need to collect the user’s IDFA to pass it to specific destinations, or for other uses, you can [follow these steps](/docs/connections/sources/catalog/libraries/mobile/ios/#ad-tracking-and-idfa) to collect and pass IDFA as a configuration item to the Segment SDK.
 
 Remember, under iOS14, applications can only collect the IDFA from a user if they consent to make it available. The Segment example code, used along with Apple’s documentation, make it easy for developers to collect and pass the IDFA to the Segment SDK as a configuration item on app load.
 
 
-## 3. All device-mode destination SDKs require an update.
+## All device-mode destination SDKs require an update.
 
 Due to [major changes](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md) to core Segment SDKs for version 4, **all device-mode destination SDKs have been updated**. You should update all device-mode integrations and their bundled SDK packages accordingly.
 
 
-## 4. Segment’s integrations have been updated to support Apple’s iOS14 changes.
+## Segment’s integrations have been updated to support Apple’s iOS14 changes.
 
 Several integration partners made their own updates to support Apple’s iOS14 platform changes. Segment integrations for both device- and cloud-mode now have the most recent changes from affected integration partners:
 
