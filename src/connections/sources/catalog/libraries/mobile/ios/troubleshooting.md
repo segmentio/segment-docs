@@ -52,12 +52,16 @@ Look at the raw JSON in your debugger. Does the call look like what is expected?
 
 Read through [the docs for that destination](/docs/connections/destinations/) to see expected event format, behavior and caveats for that destination.
 
-{% comment %}
-## Migrating to v4 from earlier releases
+## Migrating to v4 from v3
 
-// @Brandon S I think we need to update this entire section [here](/docs/connections/sources/catalog/libraries/mobile/ios/troubleshooting/#migrating-to-v3-from-earlier-releases) to speak for v4 but I am not sure of all changes that need to be listed here. can you help look at the og public doc and write bullets for what we need to cover under v4 🙏 
+For the most part, there's not many changes, however you should be aware of the following:
 
-{% endcomment %}
+- The module name has changed from `Analytics` to `Segment` to make usage within Swift easier.
+- Swift naming has changed extensively.  This was done to make the library easier to work with in Swift.
+- Support for Swift Package Manager has been added.
+- Segment Analytics can now be deployed to macOS and Catalyst as well as iOS/tvOS.
+- `SEGAnalytics.configuration` has been deprecated and is no longer available.
+- `SEGAnalyticsConfiguration.middlewares` has been deprecated and replaced by `SEGAnalyticsConfiguration.sourceMiddleware` and `destinationMiddleware` respectively.
 
 ## Still having issues?
 
