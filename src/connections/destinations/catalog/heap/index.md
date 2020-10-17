@@ -1,4 +1,4 @@
-In the destination settings, enter your---
+---
 title: Heap Destination
 rewrite: true
 ---

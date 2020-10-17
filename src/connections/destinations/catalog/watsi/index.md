@@ -38,10 +38,11 @@ When you call [track](), Segment will send the event to Watsi with the `event na
 
 If you'd like to send a Watsi gift card to one of your customers, all you have to do is send us this `track` event along with the following properties:
 
-property |	description
----|----
-`name` | The name of the customer who will receive a gift card.
-`email` | The customer's email to send the gift card to.
+| property | description                                            |
+| -------- | ------------------------------------------------------ |
+| `name`   | The name of the customer who will receive a gift card. |
+| `email`  | The customer's email to send the gift card to.         |
+|          |                                                        |
 
 ### *Responses*
 
