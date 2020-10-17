@@ -42,14 +42,6 @@ If you’re using device-mode for a mobile destination and want to access a feat
 For example, you might want access to Flurry’s location logging or Localytics’s attribution parameters. To use the destination’s SDK you import the headers, then access the SDK as you would without Segment. Segment still handles initialization, event, screen and user tracking, plus all the proxied services and data storage for you.
 Here’s an example for Flurry location logging:
 
-{% codeexample %}
-{% codeexampletab Swift %}
-```swift
-// TODO - swift sample here
-```
-{% endcodeexampletab %}
-
-{% codeexampletab Objective-C %}
 ```objc
 #import <Analytics/SEGAnalytics.h>
 #import <Flurry-iOS-SDK/Flurry.h>
@@ -63,9 +55,6 @@ CLLocation *location = locationManager.location;
    verticalAccuracy:location.verticalAccuracy];
 
 ```
-{% endcodeexampletab %}
-
-{% endcodeexample %}
 
 ## How do I use push notifications?
 
@@ -136,7 +125,7 @@ Yes, you can pass a `nil` value for the `userId` in an [Identify call](/docs/con
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
-// TODO - swift sample here
+Analytics.shared().identify(nil, traits: ["email": "example@example.com", "gender": "F"])
 ```
 {% endcodeexampletab %}
 
@@ -152,16 +141,14 @@ Yes, you can pass a `nil` value for the `userId` in an [Identify call](/docs/con
 
 
 
-## Do you support iOS5?
+## Do you support iOS 10.x?
 
-Analytics-iOS does not support iOS 5. If you need support for iOS 5 you can fork [the Segment iOS repo on GitHub](https://github.com/segmentio/analytics-ios/) and [build the framework](https://github.com/segmentio/analytics-ios/wiki/Building-the-framework) with support for iOS5.
+Analytics-iOS supports iOS 11.0+. If you need support for older operating systems you can fork [the Segment iOS repo on GitHub](https://github.com/segmentio/analytics-ios/) and [build the framework](https://github.com/segmentio/analytics-ios/wiki/Building-the-framework) with support for your version of iOS.
 
 
 ## Is the Segment SDK compatible with Swift?
 
 Yes, Swift’s compatibility with Objective-C lets you create a source that contains files written in either language. To use the Segment Analytics-iOS SDK from a Swift source, [follow these instructions from Apple](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
-
- TODO: Brandon to update if needed.
 
 
 ## Can I help develop a destination?
