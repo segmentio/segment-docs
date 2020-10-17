@@ -7,9 +7,8 @@ title: Quantcast Destination
 We have both web and mobile destinations with Quantcast. The two integrations are outlined below. Our Quantcast destination code is also open source on GitHub. Feel free to check it out: [analytics-ios-integration-quantcast](https://github.com/segment-integrations/analytics-ios-integration-quantcast), [analytics.js-integration-quantcast](https://github.com/segment-integrations/analytics.js-integration-quantcast).
 
 ## Web Destination
-When you toggle on Quantcast for a website in Segment, this is what happens:
+When you enable Quantcast for a website from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously `loadingquant.js` onto your page. This means you should remove Quantcast's snippet from your page.
 
-+ The Segment CDN updates in about 45 minutes, and starts asynchronously loading quant.js onto your page. This means you should remove Quantcast's snippet from your page.
 + Quantcast will automatically start recording data. If this is the first time sending data to Quantcast it can take them up to **12 days** to process your new data.
 
 Quantcast supports the `identify` and `track` methods on our API.
@@ -76,7 +75,8 @@ analytics.page('Home', {}, {
 {% include content/client-side-script-unverified.md %}
 
 ## Mobile Destination
-When you toggle on Quantcast for a mobile app in Segment, this is what happens:
+
+To enable Quantcast for a mobile app in Segment:
 
 + Follow the instructions on the Quantcast sheet on the destinations page for adding the packaged Quantcast SDK (a simple one-liner to add to your Podfile).
 + After you build and release to the app store, Segment automatically starts translating and sending your data to Quantcast. If this is the first time sending data to Quantcast it can take them up to **12 days** to process your new data.

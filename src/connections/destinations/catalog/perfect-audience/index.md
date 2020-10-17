@@ -16,7 +16,9 @@ If you notice any gaps, out-dated information or simply want to leave some feedb
 3. Add your `Advertiser ID` (located in the User tracking session in Perfect Audience) and enable the destination in Segment.
 4. Segment automatically starts sending data from the source you selected
 
-When Perfect Audience in enabled in Segment, our CDN will update within 45 minutes, and Perfect Audience's javascript is asynchronously loaded onto your page. Remember to remove Perfect Audience's snippet from your page.
+When you enable Perfect Audience from the Segment web app,Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Perfect Audience's javascript onto your page.
+
+Remember to remove Perfect Audience's snippet from your page.
 
 Perfect Audience is only supported on the client-side.
 

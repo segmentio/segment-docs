@@ -18,10 +18,15 @@ This document was last updated on Aug 2, 2019. If you notice any gaps, outdated 
 2. Search for "Gainsight PX" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. To find your Gainsight PX key, log into Gainsight PX and navigate to Settings > Products > Web App. If you have not already entered the URL for your web application, do that and click the Generate button. The Tag Key is the value to the right of the URL value. Use the "Copy" button to copy the value to your clipboard.
 
-![](images/TagKey.png)
+   ![](images/TagKey.png)
 
 4. Paste the Gainsight PX Tag Key into the Segment connection settings API Key field.
-5. The Segment CDN updates in about 45 minutes, and automatically initializes the Gainsight PX snippet on your page with your API key, and begins sending data. Note: If you use this integration, you don't need to include the Gainsight PX tag on your page, since Segment loads it for you.
+
+
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Gainsight PX snippet on your page, and sending data.
+
+> note ""
+> **Note**: If you use this integration, you should remove the Gainsight PX native tag code from your page, since Segment loads it for you.
 
 Don't miss out the [The Configuration Checklist - Segment.com](https://www.gainsight.com/product-experience/) in Gainsight PX!
 
@@ -42,7 +47,7 @@ userId as the Gainsight PX's user identifier. User traits are mapped to visitor
 metadata in Gainsight PX. Any matching custom attributes will also be mapped into
 Gainsight PX. You'll be able to find all users and traits in the "Audience explorer" in Gainsight PX.
 
-Segment must be running on all of pages of your web application or site that you wish to use Gainsight PX on.
+Segment must be running on all pages of the web application or site that you want to use Gainsight PX on.
 Your Segment integration must include use of the identify call (identifies the user & group/account).
 
 ## Track

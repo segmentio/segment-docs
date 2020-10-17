@@ -4,9 +4,7 @@ title: LiveChat Destination
 
 ## Getting Started
 
-When you toggle on LiveChat in Segment, this is what happens:
-
-+ The Segment CDN updates in about 45 minutes, and starts asynchronously loading LiveChat's javascript onto your page. This means you should remove LiveChat's snippet from your page.
+When you enable LiveChat in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading LiveChat's javascript onto your page. This means you should remove LiveChat's snippet from your page.
 + LiveChat's chat box will appear on your page and you can start chatting with visitors.
 
 LiveChat is only supported on the client-side.

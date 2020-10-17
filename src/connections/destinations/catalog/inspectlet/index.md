@@ -15,7 +15,7 @@ This document was last updated on 20th June, 2018. If you notice any gaps, out-d
   2. Search for "Inspectlet" in the Catalog, select it, and choose which of your sources to connect the destination to.
   3. Take your Inspectlet WID (website's ID), you can find it after clicking the Get Install Code button for your site in your Inspectlet dashboard. It will appear near the beginning of your embed code snippet. It should be a series of numbers, like 9492461759.
   4. Add the WID in the "Connection Settings" section in Segment.
-  5. The Segment CDN updates in about 45 minutes, and starts asynchronously loading Inspectlet's tracker.js onto your page. This means you should remove Inspectlet's snippet from your page.
+  5. Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Inspectlet's tracker.js onto your page. This means you should remove Inspectlet's snippet from your page.
   6. Your Inspectlet dashboard will start showing recordings.
 
 ## Page

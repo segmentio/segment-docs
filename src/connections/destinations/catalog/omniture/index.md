@@ -1,11 +1,11 @@
-Segment automatically ---
+---
 title: Omniture Destination
 ---
 
 
 ## Getting Started
 
-When you enable the Omniture destination in Segment, our CDN is updated within 45 minutes. Then the Segment Analytics.js javascript library starts sending all mapped `track` calls to your Omniture installation.
+When you enable the Omniture destination in Segment, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts sending all mapped `track` calls to your Omniture installation.
 
 If you already host an Omniture instance on your page, we will hook into that. In the absence of an existing client-side instance we will create one that points to the **Tracking Server URL** you entered in your Omniture settings on Segment.
 

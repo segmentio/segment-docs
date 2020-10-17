@@ -27,7 +27,7 @@ analytics.identify('userId123', {
 ```
 
 ### Whitelisted Traits
-By default, your `identify` calls will not be sent through to Slack unless you have whitelisted a `trait` and the `identify` call contains that `trait`. If you whitelist multiple `traits` within the Segment UI under "Whitelisted Traits", then the `identify` call must contain all of them in order to be sent into your Slack. Following the code example above, we can whitelist the trait names of `name` and `email`.
+By default, your `identify` calls will not be sent through to Slack unless you have whitelisted a `trait` and the `identify` call contains that `trait`. If you whitelist multiple `traits` in the Segment app's destintation settings under "Whitelisted Traits", then the `identify` call must contain all of them in order to be sent into your Slack. Following the code example above, we can whitelist the trait names of `name` and `email`.
 
 ### Identify Template
 Once you've saved your whitelisted traits, you can now use them alongside [Handlebars expressions](http://handlebarsjs.com/expressions.html) syntax within a template. Make sure you reference the spec for the [Identify method](https://segment.com/docs/connections/spec/identify/) and [common object](https://segment.com/docs/connections/spec/common/). `Identify` events that contain the whitelisted `traits` will appear as a Slack message with the following default template:

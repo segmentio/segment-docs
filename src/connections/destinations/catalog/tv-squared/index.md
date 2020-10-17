@@ -19,7 +19,7 @@ This document was last updated on April 20th, 2018. If you notice any gaps, outd
 
 4. Segment automatically loads TV Squared's Javascript tracking snippet onto the page once analytics.js loads. Make sure you remove TV Squared's snippet from your code.
 
-5. TV Squared will start automatically recording events after approximately 45 minutes, once our CDN is updated.
+5. TV Squared starts automatically recording events after approximately 45 minutes, once our CDN is updated.
 
 ## Page
 

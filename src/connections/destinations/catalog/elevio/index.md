@@ -17,7 +17,7 @@ This document was last updated on 31 July, 2018. If you notice any gaps, out-dat
 3. In the destination settings, enter your "Account ID" from your Elevio's [Installation](https://app.elev.io/installation) page under "Install via Code Snippet". You can also use Elevio's "Install with Segment" workflow from the same page.
 4. Ensure that you have Elevio's Assistant enabled from your [Settings](https://app.elev.io/settings).
 
-5. The Segment CDN updates in about 45 minutes, and Elevio's snippet initializes on your page and begins sending data.
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Elevio's snippet on your page and sending data.
 
 
 ## Identify

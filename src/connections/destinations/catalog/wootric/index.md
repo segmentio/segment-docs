@@ -18,7 +18,7 @@ This document was last updated on January 23, 2020. If you notice any gaps, out-
 2. Search for "Wootric" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your Wootric "Account Token".
    You can retrieve this from your **Wootric Settings > Your unique Account Token**. It should look like `NPS-XXXXXXXX`.
-4. If you're using Segment's client-side `analytics.js` library, the Segment CDN updates in about 45 minutes, then asynchronously loads Wootric's Javascript library onto the page and begins sending data.
+4. If you're using Segment's client-side `analytics.js` library, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Wootric's Javascript library onto the page and begins sending data.
 
 ### Mobile
 

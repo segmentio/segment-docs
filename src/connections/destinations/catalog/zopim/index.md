@@ -38,7 +38,7 @@ If you are using the `Web Widget` (see example below), **you will need to contac
 <!-- End of Zendesk Widget script -->
 ```
 
-4. The Segment CDN updates in about 45 minutes, and the Zendesk Chat snippet initializes on your page and begins sending data.
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Zendesk Chat snippet on your page and sending data.
 
 ## Identify
 

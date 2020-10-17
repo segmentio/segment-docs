@@ -14,9 +14,11 @@ This document was last updated on October 16, 2018. If you notice any gaps, outd
 2. Search for "Alexa" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Fill in your "Account ID" which you can find in the Alexa Javascript snippet. It appears as atrk_acct: 'XXXXXXX'.
 4. Fill in your "Domain" which you can find in the Alexa Javascript snippet. It appears as domain: 'example.com'.
-5. The Segment CDN updates in about 45 minutes, and the Alexa Javascript snippet initializes on your page and begins sending data.
 
-Alexa will now start tracking your website to help optimize your SEO and understand your web traffic. There's nothing further you will need to do within Segment!
+
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Alexa Javascript snippet on your page and sending data.
+
+Alexa starts tracking your website to help optimize your SEO and understand your web traffic. There's nothing further you need to do in Segment!
 
 ## Troubleshooting
 

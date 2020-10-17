@@ -17,13 +17,15 @@ This document was last updated on November 8th, 2018. If you notice any gaps, ou
 3. Enter your Domain and enable the destination in Segment. (To enable this destination, you use your Parsely website domain as your API key.)
 4. Segment automatically starts sending data from the source you selected.
 
-When Parse.ly is enabled in Segment, our CDN updates within 45 minutes.  Parse.ly's javascript is asynchronously loaded onto your page, so remember to remove the Parse.ly snippet from your page.
+When you enable Parse.ly from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Parse.ly's javascript onto your page.
 
-Parsely is substantially more useful when you implement JSON-LD metadata across your website as described [here](https://www.parse.ly/help/integration/basic).
+Remember to remove the Parse.ly native snippet from your page.
+
+Parsely is more useful when you implement JSON-LD metadata across your website as described [here](https://www.parse.ly/help/integration/basic).
 
 ## Page
 
-By default, unless you are using [Dynamic Tracking](https://www.parse.ly/help/integration/dynamic/), Parse.ly automatically tracks pageviews in the background, so you do not need to track them separately with Segment's `.page()` method.
+By default, unless you are using [Dynamic Tracking](https://www.parse.ly/help/integration/dynamic/), Parse.ly automatically tracks pageviews in the background, so you do not need to track them separately with Segment's Page method.
 
 If you are using dynamic tracking, you must explicitly let us know in your [integration settings](/docs/connections/destinations/catalog/parsely/#enable-dynamic-tracking). If this setting is enabled, we will disable Parse.ly's autotracking functionality and begin sending their API pageview events only in response to `analytics.page()` events.
 

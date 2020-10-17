@@ -14,7 +14,8 @@ This document was last updated on April 28, 2018. If you notice any gaps, outdat
 1. From the Segment web app, click **Catalog**.
 2. Search for "Mouseflow" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In the destination settings, enter your Site ID within the Segment Settings UI. You can find this in [your Mouseflow UI](http://help.mouseflow.com/knowledge_base/topics/how-do-i-find-my-mouseflow-site-id).
-4. The Segment CDN updates in about 45 minutes, and Mouseflow snippet initializes on your page and begins sending data.
+
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Mouseflow snippet on your page and sending data.
 
 ## Page
 

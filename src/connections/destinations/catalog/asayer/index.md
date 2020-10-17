@@ -14,8 +14,12 @@ This destination is maintained by Asayer. For any issues with the destination, [
 
 1. From the Segment web app, click **Catalog**.
 2. Search for "Asayer" in the Catalog, select it, and choose which of your sources to connect the destination to.
-3. Set your Asayer Site ID - which you can find in your Asayer dashboard after clicking on Tracking Code in [Preferences -> Sites](https://app.asayer.io/client/sites) - into your Destination settings. Site ID is a whole number (e.g. 435).
-4. The CDN takes about 45 minutes to update. Right after that, Asayer's tracking code will automatically initialize onto your website. In the meantime, make sure to remove Asayer's snippet from your site, if there's any.
+3. Set your Asayer Site ID into your Destination settings. You can find in your [Asayer dashboard](https://app.asayer.io/client/sites) by clicking **Preferences > Sites > Tracking Code**. The Site ID is a whole number (e.g. 435).
+
+
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Asayer's tracking code onto your website.
+
+In the meantime, remove Asayer's native snippet from your site.
 
 ## Identify
 

@@ -47,7 +47,7 @@ analytics.track('Experiment Viewed', {
 });
 ```
 
-However, you can also send the Experiment data as traits of an identify call that can be routed to all other destinations you have enabled. You'll just need to toggle on the "Send experiment data to other tools (as an identify call)" setting and we will send those experiment values as traits of the user. An example would look like this:
+However, you can also send the Experiment data as traits of an identify call that can be routed to all other destinations you have enabled. You'll just need to enable the "Send experiment data to other tools (as an identify call)" setting and we will send those experiment values as traits of the user. An example would look like this:
 
 ```javascript
 'Experiment: Home CTA': 'Create free account now'
