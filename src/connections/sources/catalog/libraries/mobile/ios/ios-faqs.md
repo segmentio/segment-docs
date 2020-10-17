@@ -223,8 +223,7 @@ Some destinations, especially mobile attribution tools (e.g. Kochava), require t
 
 As of [Version 3.3.0](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md#version-330-08-05-2016), Analytics-iOS now supports tvOS. You can follow the [iOS quickstart documentation](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) to set it up!
 
->warning “”
-
+> warning “”
 > tvOS installation is only supported using Carthage and CocoaPods. Dynamic framework installation is not supported for tvOS.
 
 // Brandon TODO is this still true for ios14? and do we need to update that v3.3.0 we mentioned in the first line to 4.1?
