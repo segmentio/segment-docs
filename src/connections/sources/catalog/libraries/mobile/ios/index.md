@@ -96,7 +96,7 @@ import Segment
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 ```objc
-#import <Analytics/SEGAnalytics.h>
+#import <Segment/SEGAnalytics.h>
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
