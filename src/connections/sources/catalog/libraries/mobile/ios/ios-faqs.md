@@ -10,15 +10,15 @@ The core Segment SDK is extremely lightweight. It weighs in at about 212kb.
 
 ## Can I install the SDK manually using a dynamic framework?
 
-Segment **highly recommends** using Cocoapods. We cannot guarantee support if you do not use a dependency manager.
+Segment **highly recommends** using Swift Package Manager or Cocoapods. We cannot guarantee support if you do not use a dependency manager.
 
-However, if you cannot use Cocoapods or Carthage, you can manually install our dynamic framework allowing you to send data to Segment and on to enabled cloud-mode destinations. We do not support sending data to bundled, device-mode integrations outside of Cocoapods.
+However, if you cannot use Swift Package Manager or Cocoapods, you can manually install our dynamic framework allowing you to send data to Segment and on to enabled cloud-mode destinations. We do not support sending data to bundled, device-mode integrations outside of Cocoapods.
 
 To install manually:
 
 1. Download the [latest built SDK](https://github.com/segmentio/analytics-ios/releases/), and unzip the zip file
-2. Drag the unzipped `Analytics.framework` folder into your XCode project
-3. In the **General Tab** for your project, search for `Embedded Binaries` and add the `Analytics.framework`
+2. Drag the unzipped `Segment.framework` folder into your XCode project
+3. In the **General Tab** for your project, search for `Embedded Binaries` and add the `Segment.framework`
 
 ![](images/embeddedbinaries.png)
 
@@ -43,7 +43,7 @@ For example, you might want access to Flurry’s location logging or Localytics�
 Here’s an example for Flurry location logging:
 
 ```objc
-#import <Analytics/SEGAnalytics.h>
+#import <Segment/SEGAnalytics.h>
 #import <Flurry-iOS-SDK/Flurry.h>
 
 CLLocationManager *locationManager = [[CLLocationManager alloc] init];
@@ -58,59 +58,77 @@ CLLocation *location = locationManager.location;
 
 ## How do I use push notifications?
 
-For services that send push notifications, you must first [create a Push SSL certificate](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html). Then configure your application delegate similarly to the example code below, replacing `YOUR_WRITE_KEY` with your own Segment source write key.
+For services that send push notifications, you must first [create a Push SSL certificate](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html). Then configure your application delegate similarly to the example code below, replacing `YOUR_WRITE_KEY` with your own Segment source write key.  Detailed examples of how to complete the process can be found in [Apple's documentation on the subject](https://developer.apple.com/documentation/usernotifications/handling_notifications_and_notification-related_actions).
 
 
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
-// TODO - swift sample here
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    let configuration = AnalyticsConfiguration(writeKey: "YOUR_WRITE_KEY")
+
+    // Use launchOptions to track tapped notifications
+    configuration.launchOptions = launchOptions
+    Analytics.setup(with: configuration)
+
+    // See the Apple linked above for detailed setup information, as it will vary 
+    // based on which versions of iOS are supported and what language is being used.
+    ...
+
+    return true
+}
+
 ```
 {% endcodeexampletab %}
 
 {% codeexampletab Objective-C %}
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  SEGAnalyticsConfiguration* configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
+    SEGAnalyticsConfiguration* configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 
-  // Use launchOptions to track tapped notifications
-  configuration.launchOptions = launchOptions;
-  [SEGAnalytics setupWithConfiguration:configuration];
+    // Use launchOptions to track tapped notifications
+    configuration.launchOptions = launchOptions;
+    [SEGAnalytics setupWithConfiguration:configuration];
 
-  if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerForRemoteNotifications)]) {
-    UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeSound |
-    UIUserNotificationTypeBadge;
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types
-    categories:nil];
-    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
-  } else {
-    UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound |
-    UIRemoteNotificationTypeBadge;
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
-  }
-  return YES;
-}
+    // See the Apple documentation linked above for detailed setup information, as it will vary 
+    // based on which versions of iOS are supported and what language is being used.
+    ...
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  [[SEGAnalytics sharedAnalytics] registeredForRemoteNotificationsWithDeviceToken:deviceToken];
-}
-
-// A notification has been received while the app is running in the foreground
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-  [[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];
-}
-
-// iOS 8+ only
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-  // register to receive notifications
-  [application registerForRemoteNotifications];
+    return YES;
 }
 ```
 {% endcodeexampletab %}
 
 {% endcodeexample %}
 
+Once you've passed in the launch options and configured the types of notifications your application should received you can then call into Segment's library to indicate that a device token and/or notification has been received.
+
+{% codeexample %}
+{% codeexampletab Swift %}
+```swift
+// Let Segment Analytics know a device token was received
+Analytics.shared().registeredForRemoteNotifications(deviceToken: deviceToken)
+
+...
+
+// Let Segment Analytics know that a remote notification was received
+Analytics.shared().receivedRemoteNotification(userInfo)
+```
+{% endcodeexampletab %}
+
+{% codeexampletab Objective-C %}
+```objc
+// Let Segment Analytics know a device token was received
+[[SEGAnalytics sharedAnalytics] registeredForRemoteNotificationsWithDeviceToken:deviceToken];
+
+...
+
+// Let Segment Analytics know that a remote notification was received
+[[SEGAnalytics sharedAnalytics] receivedRemoteNotification:userInfo];
+```
+{% endcodeexampletab %}
+
+{% endcodeexample %}
 
 
 
@@ -163,7 +181,15 @@ The iOS library posts a notification to indicate when it initializes any destina
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
-// TODO - swift sample here
+NotificationCenter.default.addObserver(self, selector: #selector(integrationDidStart(_:)), name: SEGAnalyticsIntegrationDidStart, object: nil)
+
+@objc func integrationDidStart(_ notification:Notification) {
+    guard let integration = notification.object as? String else { return }
+
+    if integration == "Mixpanel" {
+        // Call Mixpanel library methods here.
+    }
+}
 ```
 {% endcodeexampletab %}
 
@@ -173,9 +199,11 @@ The iOS library posts a notification to indicate when it initializes any destina
 
 - (void)integrationDidStart:(nonnull NSNotification *)notification
 {
-    NSString *integration = notification.object;
+    NSString *integration = nil
+    if ([notification.object isKindOfClass:[NSString class]])
+        integration = (NSString *)notification.object;
 
-    if ([integration.name isEqualToString:@"Mixpanel"]) {
+    if ([integration isEqualToString:@"Mixpanel"]) {
         // Call Mixpanel library methods here.
     }
 }
@@ -196,7 +224,7 @@ The following examples show how to set a static 0 value for the IP.
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
-// TODO - swift sample here
+Analytics.shared().track("Clicked Button", properties: nil, options: ["context": ["ip": "0.0.0.0"]])
 ```
 {% endcodeexampletab %}
 
@@ -219,19 +247,6 @@ Some destinations, especially mobile attribution tools (e.g. Kochava), require t
 
 
 
-## tvOS Support
+## tvOS / macOS / Catalyst Support
 
-As of [Version 3.3.0](https://github.com/segmentio/analytics-ios/blob/master/CHANGELOG.md#version-330-08-05-2016), Analytics-iOS now supports tvOS. You can follow the [iOS quickstart documentation](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) to set it up!
-
-> warning “”
-> tvOS installation is only supported using Carthage and CocoaPods. Dynamic framework installation is not supported for tvOS.
-
-// Brandon TODO is this still true for ios14? and do we need to update that v3.3.0 we mentioned in the first line to 4.1?
-
-## MacOS Support
-
-// Brandon TODO can you help add if this is ready
-
-## Catalyst Support
-
-// Brandon TODO can you help add if this is ready
+As of [Version 4.1.0](https://github.com/segmentio/analytics-ios/releases/tag/4.1.0), Analytics-iOS now supports tvOS, macOS and Catalyst as well. You can follow the [quickstart documentation](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) to set it up!
