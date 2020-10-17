@@ -126,7 +126,9 @@ To get started, the Segment iOS SDK can automatically track a few important comm
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
-
+AnalyticsConfiguration configuration = AnalyticsConfiguration(writeKey:"YOUR_WRITE_KEY")
+configuration.trackApplicationLifecycleEvents = true
+Analytics.setup(with: configuration)
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
