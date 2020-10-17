@@ -146,10 +146,12 @@ The following example shows how to initialize middleware.
 ```swift
 let mixpanelIntegration = SEGMixpanelIntegrationFactory.instance()
 let amplitudeIntegration = SEGAmplitudeIntegrationFactory.instance()
-let config = SEGAnalyticsConfiguration(writeKey: "YOUR_WRITEKEY_HERE")
+let config = AnalyticsConfiguration(writeKey: "YOUR_WRITEKEY_HERE")
+
 config.trackApplicationLifecycleEvents = true
 config.trackDeepLinks = true
 config.recordScreenViews = true
+
 config.use(mixpanelIntegration)
 config.use(amplitudeIntegration)
 
@@ -163,13 +165,39 @@ config.destinationMiddleware = [
     SEGDestinationMiddleware(key: mixpanelIntegration.key(), middleware: [sampleEventsToMixpanel]),
     SEGDestinationMiddleware(key: amplitudeIntegration.key(), middleware: [customizeAmplitudeTrackCalls])
 ]
-SEGAnalytics.setup(with: config)
+
+Analytics.setup(with: config)
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 
 ```objc
 // TODO - objc sample here?
+id<SEGIntegrationFactory> mixpanelIntegration = [SEGMixpanelIntegrationFactory instance];
+id<SEGIntegrationFactory> amplitudeIntegration = [SEGAmplitudeIntegrationFactory instance];
+
+SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITEKEY_HERE"];
+
+config.trackApplicationLifecycleEvents = YES;
+config.trackDeepLinks = YES;
+config.recordScreenViews = YES;
+
+[config use:mixpanelIntegration];
+[config use:amplitudeIntegration];
+
+config.sourceMiddleware = @[
+    turnScreenIntoTrack,
+    enforceEventTaxonomy,
+    customizeAllTrackCalls,
+    blockScreenCallsToAmplitude,
+];
+
+config.destinationMiddleware = @[
+    [[SEGDestinationMiddleware alloc] initWithKey:mixpanelIntegration.key middleware:@[sampleEventsToMixpanel]];
+    [[SEGDestinationMiddleware alloc] initWithKey:amplitudeIntegration.key middleware:@[customizeAmplitudeTrackCalls]];
+];
+
+[SEGAnalytics setupWithConfiguration:config];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -183,16 +211,16 @@ The following examples show how to changing event names, and add custom attribut
 {% codeexampletab Swift %}
 
 ```swift
-let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
+let customizeAllTrackCalls = BlockMiddleware { (context, next) in
     if context.eventType == .track {
         next(context.modify { ctx in
-            guard let track = ctx.payload as? SEGTrackPayload else {
+            guard let track = ctx.payload as? TrackPayload else {
                 return
             }
             let newEvent = "[New] \(track.event)"
             var newProps = track.properties ?? [:]
             newProps["customAttribute"] = "Hello"
-            ctx.payload = SEGTrackPayload(
+            ctx.payload = TrackPayload(
                 event: newEvent,
                 properties: newProps,
                 context: track.context,
@@ -208,7 +236,22 @@ let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
 {% codeexampletab Objective-C %}
 
 ```objc
-// TODO - objc sample here?
+SEGBlockMiddleware *customizeAllTrackCalls = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
+    if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
+        SEGTrackPayload *track = (SEGTrackPayload *)context.payload;
+        next([context modify:^(id<SEGMutableContext> _Nonnull ctx) {
+            NSString *newEvent = [NSString stringWithFormat:@"[New] %@", track.event];
+            NSMutableDictionary *newProps = (track.properties != nil) ? [track.properties mutableCopy] : [@{} mutableCopy];
+            newProps[@"customAttribute"] = @"Hello";
+            ctx.payload = [[SEGTrackPayload alloc] initWithEvent:newEvent
+                                                      properties:newProps
+                                                         context:track.context
+                                                    integrations:track.integrations];
+        }]);
+    } else {
+        next(context);
+    }
+}];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -217,20 +260,21 @@ let customizeAllTrackCalls = SEGBlockMiddleware { (context, next) in
 
 #### Change a call type
 
-The following example turns one kind call into another
+The following example turns one kind call into another.  
+NOTE: This is only applicable to Source Middleware.
 
 
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
-let turnScreenIntoTrack = SEGBlockMiddleware { (context, next) in
+let turnScreenIntoTrack = BlockMiddleware { (context, next) in
     if context.eventType == .screen {
         next(context.modify { ctx in
-            guard let screen = ctx.payload as? SEGScreenPayload else {
+            guard let screen = ctx.payload as? ScreenPayload else {
                 return
             }
             let event = "\(screen.name) Screen Tracked"
-            ctx.payload = SEGTrackPayload(
+            ctx.payload = TrackPayload(
                 event: event,
                 properties: screen.properties,
                 context: screen.context,
@@ -248,7 +292,21 @@ let turnScreenIntoTrack = SEGBlockMiddleware { (context, next) in
 {% codeexampletab Objective-C %}
 
 ```objc
-// TODO - objc sample here?
+SEGBlockMiddleware *turnScreenIntoTrack = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
+    if ([context.payload isKindOfClass:[SEGScreenPayload class]]) {
+        SEGScreenPayload *screen = (SEGScreenPayload *)context.payload;
+        next([context modify:^(id<SEGMutableContext> _Nonnull ctx) {
+            NSString *event = [NSString stringWithFormat:@"%@ Screen Tracked", screen.name];
+            ctx.payload = [[SEGTrackPayload alloc] initWithEvent:event
+                                                        properties:screen.properties
+                                                            context:screen.context
+                                                    integrations:screen.integrations];
+            ctx.eventType = SEGEventTypeTrack;
+        }]);
+    } else {
+        next(context);
+    }
+}];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -262,17 +320,17 @@ The following example completely blocks specific events from a list.
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
-let   = SEGBlockMiddleware { (context, next) in
+let dropSpecificEvents = BlockMiddleware { (context, next) in
     let validEvents = [
         "Application Opened",
         "Order Completed",
         "Home Screen Tracked",
         "AnalyticsIOSTestApp. Screen Tracked",
     ]
-    if let track = context.payload as? SEGTrackPayload {
+    if let track = context.payload as? TrackPayload {
         if !validEvents.contains(track.event) {
-            showAlert(title: "Dropping Rogue Event",
-                      message: track.event)
+            print("Dropping Rogue Event '\(track.event)'")
+            // not calling next results in an event being discarded
             return
         }
     }
@@ -284,7 +342,22 @@ let   = SEGBlockMiddleware { (context, next) in
 {% codeexampletab Objective-C %}
 
 ```objc
-// TODO - objc sample here?
+SEGBlockMiddleware *dropSpecificEvents = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
+    NSArray<NSString *> *validEvents = @[@"Application Opened",
+                                            @"Order Completed",
+                                            @"Home Screen Tracked",
+                                            @"AnalyticsIOSTestApp. Screen Tracked"];
+    
+    if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
+        SEGTrackPayload *track = (SEGTrackPayload *)context.payload;
+        if ([validEvents containsObject:track.event]) {
+            NSLog(@"Dropping Rogue Event '%@'", track.event);
+            // not calling next results in an event being discarded
+            return;
+        }
+    }
+    next(context);
+}];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -298,10 +371,10 @@ The following example blocks only screen calls from reaching the Amplitude desti
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
-let blockScreenCallsToAmplitude = SEGBlockMiddleware { (context, next) in
-    if let screen = context.payload as? SEGScreenPayload {
+let blockScreenCallsToAmplitude = BlockMiddleware { (context, next) in
+    if let screen = context.payload as? ScreenPayload {
         next(context.modify { ctx in
-            ctx.payload = SEGScreenPayload(
+            ctx.payload = ScreenPayload(
                 name: screen.name,
                 properties: screen.properties,
                 context: screen.context,
@@ -318,7 +391,19 @@ let blockScreenCallsToAmplitude = SEGBlockMiddleware { (context, next) in
 {% codeexampletab Objective-C %}
 
 ```objc
-// TODO - objc sample here?
+SEGBlockMiddleware *blockScreenCallsToAmplitude = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
+    if ([context.payload isKindOfClass:[SEGScreenPayload class]]) {
+        SEGScreenPayload *screen = (SEGScreenPayload *)context.payload;
+        next([context modify:^(id<SEGMutableContext>  _Nonnull ctx) {
+            ctx.payload = [[SEGScreenPayload alloc] initWithName:screen.name
+                                                        properties:screen.properties
+                                                            context:screen.context
+                                                    integrations:@{@"Amplitude": @NO}];
+        }]);
+        return;
+    }
+    next(context);
+}];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -331,8 +416,8 @@ The following example records a random selection of events sent to the Mixpanel 
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
-let sampleEventsToMixpanel = SEGBlockMiddleware { (context, next) in
-    if let track = context.payload as? SEGTrackPayload {
+let sampleEventsToMixpanel = BlockMiddleware { (context, next) in
+    if let track = context.payload as? TrackPayload {
         let numberBetween0To4 = arc4random() % 5
         if numberBetween0To4 != 0 {
             return
@@ -346,7 +431,15 @@ let sampleEventsToMixpanel = SEGBlockMiddleware { (context, next) in
 {% codeexampletab Objective-C %}
 
 ```objc
-// TODO - objc sample here?
+SEGBlockMiddleware *sampleEventsToMixpanel = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
+    if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
+        NSUInteger numberBetween0To4 = arc4random() % 5;
+        if (numberBetween0To4 != 0) {
+            return;
+        }
+    }
+    next(context);
+}];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -360,16 +453,17 @@ The following example adds a custom attribute to the `context` object when sendi
 {% codeexample %}
 {% codeexampletab Swift %}
 ```swift
-let customizeAmplitudeTrackCalls = SEGBlockMiddleware { (context, next) in
+// define middleware we'll use for amplitude
+let customizeAmplitudeTrackCalls = BlockMiddleware { (context, next) in
     if context.eventType == .track {
         next(context.modify { ctx in
-            guard let track = ctx.payload as? SEGTrackPayload else {
+            guard let track = ctx.payload as? TrackPayload else {
                 return
             }
             let newEvent = "[Amplitude] \(track.event)"
             var newProps = track.properties ?? [:]
-            newProps["customAttribute"] = "Sausage"
-            ctx.payload = SEGTrackPayload(
+            newProps["customAttribute"] = "Hello"
+            ctx.payload = TrackPayload(
                 event: newEvent,
                 properties: newProps,
                 context: track.context,
@@ -380,13 +474,43 @@ let customizeAmplitudeTrackCalls = SEGBlockMiddleware { (context, next) in
         next(context)
     }
 }
+
+...
+
+// configure destination middleware for amplitude
+let amplitude = SEGAmplitudeIntegrationFactory.instance()
+config.use(amplitude)
+config.destinationMiddleware = [DestinationMiddleware(key: amplitude.key(), middleware:[customizeAmplitudeTrackCalls])]
 ```
 
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
 
 ```objc
-// TODO - objc sample here?
+// define middleware we'll use for amplitude
+SEGBlockMiddleware *customizeAmplitudeTrackCalls = [[SEGBlockMiddleware alloc] initWithBlock:^(SEGContext * _Nonnull context, SEGMiddlewareNext  _Nonnull next) {
+    if ([context.payload isKindOfClass:[SEGTrackPayload class]]) {
+        SEGTrackPayload *track = (SEGTrackPayload *)context.payload;
+        next([context modify:^(id<SEGMutableContext> _Nonnull ctx) {
+            NSString *newEvent = [NSString stringWithFormat:@"[Amplitude] %@", track.event];
+            NSMutableDictionary *newProps = (track.properties != nil) ? [track.properties mutableCopy] : [@{} mutableCopy];
+            newProps[@"customAttribute"] = @"Hello";
+            ctx.payload = [[SEGTrackPayload alloc] initWithEvent:newEvent
+                                                      properties:newProps
+                                                         context:track.context
+                                                    integrations:track.integrations];
+        }]);
+    } else {
+        next(context);
+    }
+}];
+
+...
+
+// configure destination middleware for amplitude
+id<SEGIntegrationFactory> amplitude = [SEGAmplitudeIntegrationFactory instance];
+[config use:amplitude];
+config.destinationMiddleware = [SEGDestinationMiddleware alloc] initWithKey:amplitude.key middleware:@[customizeAmplitudeTrackCalls]];
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
