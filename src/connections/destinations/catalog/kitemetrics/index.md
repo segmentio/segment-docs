@@ -4,9 +4,9 @@ rewrite: true
 ---
 [Kitemetrics](https://kitemetrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides keyword level attribution for Apple Search Ads and associates them with In-App Purchases.  Kitemetrics allows you to use automation to easily manage and optimize Apple Search Ads campaigns and bids.
 
-This destination is maintained by Kitemetrics. For any issues with the destination, [contact their team](mailto:support@kitemetrics.com).
+This destination is maintained by Kitemetrics. For any issues with the destination, [contact the Kitemetrics Support team](mailto:support@kitemetrics.com).
 
-_**NOTE:** The Kitemetrics Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 9, 2019. If you are interested in joining their beta program or have any feedback to help improve the Kitemetrics Destination and its documentation, [let their team know](mailto:support@kitemetrics.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

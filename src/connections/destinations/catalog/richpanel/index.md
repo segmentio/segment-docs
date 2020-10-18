@@ -5,10 +5,9 @@ rewrite: true
 
 [Richpanel](https://richpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the helpdesk software built for Ecommerce teams to support customers at scale in a fun, easy, collaborative way.
 
-This destination is maintained by Richpanel. For any issues with the destination, [contact their team](mailto:support@richpanel.com).
+This destination is maintained by Richpanel. For any issues with the destination, [contact the Richpanel Support team](mailto:support@richpanel.com).
 
-
-_**NOTE:** The Richpanel Destination is currently in beta, which means that they are still actively developing the destination. If you have any feedback to help improve the Richpanel Destination and its documentation, [let their team know](mailto:support@richpanel.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

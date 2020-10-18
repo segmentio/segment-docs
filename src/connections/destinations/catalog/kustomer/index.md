@@ -4,9 +4,9 @@ rewrite: true
 ---
 [Kustomer](https://www.kustomer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the next-generation customer management platform for the people-first enterprise. It enables support teams to get a holistic view of the customers they are engaging with, resulting in meaningful interactions between businesses and customers.
 
-This destination is maintained by Kustomer. For any issues with the destination, [contact their team](mailto:support@kustomer.com).
+This destination is maintained by Kustomer. For any issues with the destination, [contact the Kustomer Support team](mailto:support@kustomer.com).
 
-_**NOTE:** The Kustomer data source is currently in beta, which means that they are still actively developing the integration. This doc was last updated on Feb 28, 2019. If you are interested in joining their beta program or have any feedback to help improve the Kustomer Destination and its documentation, [let their team know](mailto:support@kustomer.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

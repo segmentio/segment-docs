@@ -6,9 +6,9 @@ title: Adtriba Destination
 
 [Adtriba](https://www.adtriba.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows advertisers to track, control and optimize their marketing activities across all digital marketing channels through AI and user journey analysis.
 
-This destination is maintained by Adtriba. For any issues with the destination, [contact their team](mailto:support@adtriba.com).
+This destination is maintained by Adtriba. For any issues with the destination, [contact the Adtriba Support team](mailto:support@adtriba.com).
 
-_**NOTE:** The Adtriba Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on Feburary 28, 2019. If you are interested in joining their beta program or have any feedback to help improve the Adtriba Destination and its documentation, [let their team know](mailto:support@adtriba.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

@@ -5,9 +5,7 @@ title: Pendo Destination
 
 [Pendo](http://www.pendo.io/) is a product cloud that helps product teams deliver software users love. With Pendo, product teams can understand product usage, collect feedback, measure NPS, onboard users, and announce new features in app—all without requiring engineering resources.
 
-This destination is maintained by Pendo. For any issues with the destination, [contact their team](https://help.pendo.io/).
-
-This document was last updated on September 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+This destination is maintained by Pendo. For any issues with the destination, [contact the Pendo Support team](https://help.pendo.io/).
 
 ## Getting Started
 

@@ -4,10 +4,9 @@ rewrite: true
 ---
 [Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) uses your Segment data to deliver multitouch, per account attribution. This enables B2B companies to understand the impact on revenue of every touch in their customer journey.
 
-This destination is maintained by [Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, [contact their team](mailto:friends@dreamdata.io).
+This destination is maintained by Dreamdata IO. For any issues with the destination, [contact the Dreamdata Support team](mailto:friends@dreamdata.io).
 
-_**NOTE:** [Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is currently in beta, which means that there may still be some bugs for us to iron out. This doc was last updated on February 21, 2019, and we would love to hear your feedback. If you are interested in joining our beta program or have any feedback to help us improve the [Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Destination and its documentation, [let us know](mailto:friends@dreamdata.io)!_
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 

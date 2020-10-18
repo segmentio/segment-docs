@@ -7,8 +7,7 @@ title: MetaCX Destination
 
 This destination is maintained by MetaCX. For any issues with the destination, contact their [success team](mailto:support@metacx.com).
 
-_**NOTE:** The MetaCX Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on August 14, 2019. If you are interested in joining their beta program or have any feedback to help improve the MetaCX Destination and its documentation, contact their [success team](mailto:support@metacx.com)!_
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 

@@ -6,15 +6,14 @@ beta: true
 
 [CrowdPower](https://crowdpower.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a growth marketing platform that enables businesses to track key customer actions and deliver automated tailored communications to drive sales and increase engagement.
 
-This destination is maintained by CrowdPower. For any issues with the destination, [contact their team](mailto:support@crowdpower.io).
+This destination is maintained by CrowdPower. For any issues with the destination, [contact the CrowdPower Support team](mailto:support@crowdpower.io).
 
-> note "Note:"
-> The CrowdPower Destination is currently in beta, which means that they are still actively developing the destination. If you are interested in joining their beta program or have any feedback to help improve the CrowdPower Destination and its documentation, [let their team know](mailto:support@crowdpower.io)!
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+{% include content/connection-modes.md %}
 
 1. From your Segment UI's Destinations page click on "Add Destination".
 2. Search for "CrowdPower" within the Destinations Catalog and confirm the Source you'd like to connect to.

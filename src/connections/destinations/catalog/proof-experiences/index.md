@@ -7,9 +7,10 @@ redirect_from: '/connections/destinations/catalog/proof/'
 
 [Proof Experiences](https://useproof.com/experiences?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps B2B SaaS businesses increase new trials and demos by creating delightfully personalized experiences for their visitors and customers.
 
-This destination is maintained by Proof. For any issues with the destination, [contact their team](mailto:help@useproof.com).
+This destination is maintained by Proof. For any issues with the destination, [contact the Proof Experiences Support team](mailto:help@useproof.com).
 
-_**NOTE:** Proof Experiences is currently in beta, which means that there may still be some bugs for us to iron out. This doc was last updated on February 21, 2019, and we'd love to hear your feedback. If you are interested in joining our beta program or have any feedback to help us improve the Proof Experiences Destination and its documentation, [let us know](mailto:help@useproof.com)!_
+
+{% include content/beta-note.md %}
 
 
 ## Getting Started

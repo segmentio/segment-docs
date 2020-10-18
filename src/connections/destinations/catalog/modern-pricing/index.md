@@ -5,9 +5,8 @@ hide-personas-partial: true
 ---
 [Modern Pricing](https://modernpricing.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides intelligent, real-time pricing recommendations for every potential customer visiting your web application.
 
-This destination is maintained by Modern Pricing. For any issues with the destination, [contact their team](mailto:john@modernpricing.com).
+This destination is maintained by Modern Pricing. For any issues with the destination, [contact the Modern Pricing Support team](mailto:john@modernpricing.com).
 
-This document was last updated on January 8, 2020. If you notice any gaps, out-dated information, or simply want to leave some feedback to help us improve our documentation, [let their team know](mailto:john@modernpricing.com)!
 
 ## Getting Started
 

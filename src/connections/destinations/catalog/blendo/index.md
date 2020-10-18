@@ -5,10 +5,9 @@ rewrite: true
 
 [Blendo](https://www.blendo.co/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an ELT platform that syncs all your sales, marketing, financial or any other data, from your SaaS tools to your data warehouse.
 
-This destination is maintained by Blendo. For any issues with the destination, [contact their team](mailto:help@blendo.co).
+This destination is maintained by Blendo. For any issues with the destination, [contact the Blendo Support team](mailto:help@blendo.co).
 
-_**NOTE:** Blendo is currently in beta, which means that there may still be some bugs for us to iron out. This doc was last updated on Feb 21, 2019, and we'd love to hear your feedback. If you are interested in joining our beta program or have any feedback to help us improve the Blendo Destination and its documentation, [let us know](mailto:help@blendo.co)!_
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 

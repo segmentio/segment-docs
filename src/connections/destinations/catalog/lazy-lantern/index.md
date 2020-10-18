@@ -9,7 +9,7 @@ We ingest your analytics through Segment, perform state-of-the-art anomaly detec
 This destination is maintained by Lazy Lantern. For any issues with the destination, contact [Lazy Lantern's support](mailto:support@lazylantern.com).
 
 
-_**NOTE:** The Lazy Lantern Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 31, 2019. If you are interested in joining their beta program or have any feedback to help improve the Lazy Lantern Destination and its documentation, [let them know](mailto:support@lazylantern.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
