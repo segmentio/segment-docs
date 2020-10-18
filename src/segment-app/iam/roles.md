@@ -99,9 +99,6 @@ Edit access to [End User Privacy Settings](/docs/privacy/user-deletion-and-suppr
 
 ## PII Access
 
-> info "PII Access is in Public Preview"
-> To join the Public Preview, send an email to [beta@segment.com](mailto:beta@segment.com). The use of this feature is governed by the [Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
-
 The Segment App does not show detected Personally Identifiable Information (PII) to workspace members if the information matches specific expected formats for PII. When PII Access is turned “off”, detected PII is masked based on [red or yellow default matchers](/docs/privacy/portal/#default-pii-matchers) and any [custom matchers](/docs/privacy/portal/#custom-pii-matchers) defined in the Privacy Portal.
 
 Workspace Owners can grant specific individuals or groups access to PII from their Access Management settings. PII Access only applies to the resources a user or user group has access to; it does not expand a user's access beyond the original scope. All Workspace Owners have PII access by default.
