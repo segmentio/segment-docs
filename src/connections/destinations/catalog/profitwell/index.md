@@ -6,10 +6,9 @@ beta: true
 
 [ProfitWell](https://www.profitwell.com) provides free subscription metrics to help you identify opportunities and then tools to help you reduce churn, optimize pricing, and grow your subscription business end-to-end. This integration enables ProfitWell users to use it's Retain product and Engagement Tracking capabilities.
 
-This destination is maintained by ProfitWell. For any issues with the destination, [contact their team](mailto:product@profitwell.com).
+This destination is maintained by ProfitWell. For any issues with the destination, [contact the ProfitWell Support team](mailto:product@profitwell.com).
 
-> note ""
-> **NOTE:** The ProfitWell Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 19, 2020. If you are interested in joining their beta program or have any feedback to help improve the ProfitWell Destination and its documentation, [let their team know](mailto:product@profitwell.com)!
+{% include content/beta-note.md %}
 
 ## Getting Started
 

@@ -5,9 +5,9 @@ rewrite: true
 
 [EPICA](https://www.epica.ai?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the world's first Prediction-as-a-Service platform. Powered by AI, EPICA captures, processes and analyses online data sources to accurately predict customer behavior. EPICA provides predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations.
 
-This destination is maintained by EPICA. For any issues with the destination, [contact their team](mailto:support@epica.ai).
+This destination is maintained by EPICA. For any issues with the destination, [contact the Epica Support team](mailto:support@epica.ai).
 
-_**NOTE:**_ EPICA is currently in beta, which means that they are still actively developing the product. This doc was last updated on February 22, 2019. If you are interested in joining their beta program or have any feedback to help improve the EPICA Destination and its documentation, [let their team know](mailto:support@epica.ai)!
+{% include content/beta-note.md %}
 
 
 ## Getting Started

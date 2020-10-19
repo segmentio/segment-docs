@@ -5,12 +5,12 @@ beta: true
 
 [Beamer](https://www.getbeamer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a changelog and notification center that lets you announce new features, product updates, special offers and more.
 
-This source is maintained by Beamer. For any issues with the source, [contact their team](mailto:info@getbeamer.com).
-
-_**NOTE:** The Beamer Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 28, 2020. If you are interested in joining their beta program or have any feedback to help improve the Beamer Source and its documentation, [let their team know](mailto:info@getbeamer.com)!_
+This source is maintained by Beamer. For any issues with the source, [contact the Beamer Support team](mailto:info@getbeamer.com).
 
 > success ""
 > **Good to know**: This page is about the Beamer Segment source, which sends data _into_ Segment. There's also a page about the [Beamer Segment destination](/docs/connections/destinations/catalog/beamer/), which receives data from Segment!
+
+{% include content/beta-note.md %}
 
 ## Getting Started
 

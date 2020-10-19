@@ -3,11 +3,9 @@ rewrite: true
 title: ActiveCampaign Destination
 ---
 
-[ActiveCampaign](https://www.activecampaign.com) is an integrated email marketing, marketing automation, and small business CRM. It allows you to send beautiful newsletters, set up behavioral based automations, and benefit from sales automation. This destination is maintained by ActiveCampaign. For any issues with the destination, [contact their team](https://www.activecampaign.com/contact/).
+[ActiveCampaign](https://www.activecampaign.com) is an integrated email marketing, marketing automation, and small business CRM. It allows you to send beautiful newsletters, set up behavioral based automations, and benefit from sales automation.
 
-This document was last updated on March 27, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
-
+This destination is maintained by ActiveCampaign. For any issues with the destination, [contact the ActiveCampaign support team](https://www.activecampaign.com/contact/).
 
 ## Getting Started
 

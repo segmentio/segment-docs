@@ -3,9 +3,9 @@ title: Goedle.io Destination
 rewrite: true
 ---
 
-[goedle.io](https://goedle.io/) uses powerful AI and Machine Learning algorithms to predict user behavior. The more data you provide, the better its recommendations will be. This destination is maintained by Goedle. For any issues with the destination, [contact their team](mailto:support@goedle.io).
+[goedle.io](https://goedle.io/) uses powerful AI and Machine Learning algorithms to predict user behavior. The more data you provide, the better its recommendations will be.
 
-This document was last updated on May 16, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+This destination is maintained by Goedle. For any issues with the destination, [contact the Goedle Support team](mailto:support@goedle.io).
 
 
 ## Getting Started

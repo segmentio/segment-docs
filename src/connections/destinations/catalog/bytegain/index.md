@@ -4,9 +4,9 @@ rewrite: true
 ---
 [ByteGain](https://bytegain.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an Artificial Intelligence platform that learns from online user behavior to predict and automate the exact actions needed to engage, convert, and retain customers. ByteGain's software analyzes billions of data points on a website to identify patterns in journeys enabling real-time predictions, and improves over time due to its self-learning nature. The platform then uses these predictions to intelligently automate ad retargeting, personalization, content recommendations, and more.
 
-This destination is maintained by ByteGain. For any issues with the destination, [contact their team](mailto:support@bytegain.com).
+This destination is maintained by ByteGain. For any issues with the destination, [contact the ByteGain Support team](mailto:support@bytegain.com).
 
-_**NOTE:** The ByteGain Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 3, 2019. If you are interested in joining their beta program or have any feedback to help improve the ByteGain Destination and its documentation, [let their team know](mailto:support@bytegain.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

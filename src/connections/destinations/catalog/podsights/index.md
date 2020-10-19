@@ -5,9 +5,10 @@ title: Podsights Destination
 
 [Podsights](https://podsights.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) measures the effectiveness of podcast advertising. Through integrations with podcast hosting providers, matches downloads with on-site actions, providing advertisers household-level attribution.
 
-This destination is maintained by Podsights. For any issues with the destination, [contact their team](mailto:hello@podights.com).
+This destination is maintained by Podsights. For any issues with the destination, [contact the Podsights Support team](mailto:hello@podights.com).
 
-_**NOTE:** The Podsights Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 26th, 2019. If you are interested in joining their beta program or have any feedback to help improve the Podsights Destination and its documentation, [let their team know](mailto:hello@podsights.com)!_
+{% include content/beta-note.md %}
+
 
 ## Getting Started
 

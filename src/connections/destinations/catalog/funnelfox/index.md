@@ -4,9 +4,9 @@ rewrite: true
 ---
 [FunnelFox](https://www.funnelfox.com/integrations/segment?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to sort your sales operations in just a few clicks. Integrate your sales tools to eliminate data silos, get accurate CRM data to make the right decisions and know when opportunities require attention.
 
-This destination is maintained by FunnelFox. For any issues with the destination, [contact their team](mailto:support@funnelfox.com).
+This destination is maintained by FunnelFox. For any issues with the destination, [contact the FunnelFox Support team](mailto:support@funnelfox.com).
 
-_**NOTE:** The FunnelFox Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 15th, 2019. If you are interested in joining their beta program or have any feedback to help improve the FunnelFox Destination and its documentation, [let their team know](mailto:support@funnelfox.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
