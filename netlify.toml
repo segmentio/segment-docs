@@ -1,6 +1,6 @@
 [build]
 
 [[redirects]]
-  from = "/*"
-  to = "/docs/:splat"
+  from = "/docs/*"
+  to = "/:splat"
   status = 200
