@@ -27,6 +27,9 @@ If you need to collect the user’s IDFA to pass it to specific destinations, or
 
 Remember, under iOS14, applications can only collect the IDFA from a user if they consent to make it available. The Segment example code, used along with Apple’s documentation, make it easy for developers to collect and pass the IDFA to the Segment SDK as a configuration item on app load.
 
+{% comment %}
+Investigate why above link doesn't work when relative.
+{% endcomment %}
 
 ## All device-mode destination SDKs require an update.
 
