@@ -6,6 +6,6 @@
   status = 200
   
 [[redirects]]
-  from = "/docs/docs.bundle.js"
-  to = "/docs.bundle.js"
+  from = "/docs/assets/docs.bundle.js"
+  to = "/assets/docs.bundle.js"
   status = 200
