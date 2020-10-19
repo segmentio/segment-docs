@@ -4,9 +4,9 @@ rewrite: true
 ---
 [Cruncher](https://cruncherlabs.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides an end-to-end data crunching platform with a focus on data science and advanced analytics for analysts and business people. It lets you bring all your siloed data sources in one place and empowers you to extract deep insights using a powerful, yet simple interface.
 
-This destination is maintained by Cruncher. For any issues with the destination, [contact their team](mailto:support@cruncherlabs.com).
+This destination is maintained by Cruncher. For any issues with the destination, [contact the Cruncher Support team](mailto:support@cruncherlabs.com).
 
-_**NOTE:** Cruncher is currently in beta, which means that they are still actively developing the product. This doc was last updated on March 14, 2019. If you are interested in joining their beta program or have any feedback to help improve the Cruncher Destination and its documentation, [let their team know](mailto:support@cruncherlabs.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

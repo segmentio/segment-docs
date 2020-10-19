@@ -7,9 +7,9 @@ redirect_from: '/connections/destinations/catalog/smbstream/'
 
 [SMBStreams](https://www.buzzboard.com/smbstreams/solutions/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve predictive analytics for growth marketers, leveraging machine learning to automate audience insights and recommendations. The most comprehensive set of data is maintained, integrated and then delivered as important insights across your sales and marketing organization.
 
-This destination is maintained by SMBStreams. For any issues with the destination, [contact their team](mailto:support@buzzboard.com).
+This destination is maintained by SMBStreams. For any issues with the destination, [contact the SMBStreams Support team](mailto:support@buzzboard.com).
 
-_**NOTE:** The SMBStreams Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the SMBStreams Destination and its documentation, [let their team know](mailto:support@buzzboard.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

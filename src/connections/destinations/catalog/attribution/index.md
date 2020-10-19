@@ -4,9 +4,8 @@ rewrite: true
 ---
 [Attribution](http://attributionapp.com/) is an easy to use one stop dashboard for multi-touch attribution across all marketing channels. Attribution prides itself on high-fidelity and allows marketers to trace every visit, conversion or revenue dollar to the source. Marketers can easily integrate Attribution and Segment to begin measuring the effectiveness of their campaigns today.
 
-This destination is maintained by Attribution. For any issues with the destination, [contact their team](mailto:support@attribtutionapp.com).
+This destination is maintained by Attribution. For any issues with the destination, [contact the Attribution App Support team](mailto:support@attribtutionapp.com).
 
-This document was last updated on March 9, 2020. If you notice any gaps, out-dated information, or simply want to leave some feedback to help us improve our documentation, [let us know](mailto:support@attribtutionapp.com)!
 
 ## Getting Started
 

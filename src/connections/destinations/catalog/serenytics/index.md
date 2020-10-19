@@ -6,12 +6,10 @@ title: Serenytics Destination
 
 When the Serenytics destination is enabled in Segment, messages from Segment will be stored in the Serenytics Redshift and will be available for transformation and to create dashboards.
 
-
-This destination is maintained by the company Serenytics. For any issues with the destination, [contact their team](mailto:support@serenytics.com).
-
+This destination is maintained by the company Serenytics. For any issues with the destination, [contact the Serenytics Support team](mailto:support@serenytics.com).
 
 
-_**NOTE:** The Serenytics Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 5, 2019. If you are interested in joining their beta program or have any feedback to help improve the Serenytics Destination and its documentation, [let their team know](mailto:support@serenytics.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

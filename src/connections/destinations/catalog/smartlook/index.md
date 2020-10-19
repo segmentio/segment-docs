@@ -4,9 +4,9 @@ title: Smartlook Destination
 ---
 [Smartlook](https://smartlook.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a product analytics tool for websites and mobile apps offering visitor recordings, heatmaps, conversion funnels and automatic event tracking.
 
-This destination is maintained by Smartlook. For any issues with the destination, [contact their team](mailto:support@smartlook.com).
+This destination is maintained by Smartlook. For any issues with the destination, [contact the Smartlook Support team](mailto:support@smartlook.com).
 
-_**NOTE:** The Smartlook Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 25, 2019. If you are interested in joining their beta program or have any feedback to help improve the Smartlook Destination and its documentation, [let their team know](mailto:support@smartlook.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

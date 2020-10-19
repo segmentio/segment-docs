@@ -6,7 +6,7 @@ title: WalkMe Destination
 
 This destination is maintained by WalkMe. For any issues with the destination, [contact the WalkMe Support team](mailto:support@walkme.com).
 
-_**NOTE:** The WalkMe Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 29, 2019. If you are interested in joining their beta program or have any feedback to help improve the WalkMe Destination and its documentation, [let their team know](mailto:support@walkme.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

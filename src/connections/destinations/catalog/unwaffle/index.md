@@ -5,9 +5,9 @@ title: Unwaffle Destination
 
 [Unwaffle](https://unwaffle.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps SaaS businesses improve their Free Trial conversion rates. By tracking every action that your trialers take, Unwaffle can discover patterns that lead to successful conversions and provide actionable recommendations to boost trial funnel performance.
 
-This destination is maintained by Unwaffle. For any issues with the destination, [contact their team](mailto:info@unwaffle.com).
+This destination is maintained by Unwaffle. For any issues with the destination, [contact the Unwaffle Support team](mailto:info@unwaffle.com).
 
-_**NOTE:** The Unwaffle Destination is currently in beta, that they are still actively developing the product. This doc was last updated on February 27, 2019. If you are interested in joining their beta program or have any feedback to help improve the Unwaffle Destination and its documentation, [let their team know](mailto:info@unwaffle.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

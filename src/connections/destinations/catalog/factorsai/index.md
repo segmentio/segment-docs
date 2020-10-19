@@ -4,9 +4,9 @@ rewrite: true
 ---
 [FactorsAI](https://www.factors.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides advanced and intuitive analytics for marketers and product managers, to help drive growth. With FactorsAI you get immediate insights to optimize marketing campaigns, improve conversions and understand user behaviours that drive feature adoption and retention.
 
-This destination is maintained by FactorsAI. For any issues with the destination, [contact their team](mailto:support@factors.ai).
+This destination is maintained by FactorsAI. For any issues with the destination, [contact the FactorsAI Support team](mailto:support@factors.ai).
 
-_**NOTE:** The FactorsAI Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 23, 2019. If you are interested in joining their beta program or have any feedback to help improve the FactorsAI Destination and its documentation, [let their team know](mailto:support@factors.ai)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

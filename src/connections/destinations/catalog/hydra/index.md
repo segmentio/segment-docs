@@ -4,9 +4,9 @@ rewrite: true
 ---
 [Hydra](https://hydra.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps marketing, sales operations and customer success teams implement holistic predictive analytics tailored to their own business without writing a single line of code. Hydra is capable of scanning a wide range of sources such as product usage, user demographic data, firmographic data, chat conversations, help desk tickets, emails and marketing engagement to discover signals and make predictions.
 
-This destination is maintained by Hydra. For any issues with the destination, [contact their team](mailto:hello@hydra.ai).
+This destination is maintained by Hydra. For any issues with the destination, [contact the Hydra Support team](mailto:hello@hydra.ai).
 
-_**NOTE:** The Hydra Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 4, 2019. If you are interested in joining their beta program or have any feedback to help improve the Hydra Destination and its documentation, [let their team know](mailto:hello@hydra.ai)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

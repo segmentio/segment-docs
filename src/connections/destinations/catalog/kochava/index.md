@@ -5,11 +5,9 @@ rewrite: true
 
 [Kochava](https://www.kochava.com/) offers mobile app attribution and mobile app analytics providing holistic, unbiased measurement for precise, real-time visualization of app performance through the funnel.
 
-_**NOTE:** As outlined in [Kochava's documentation](https://support.freeappanalytics.com/server-to-server-integration/segment-integration/), you must have a paid account with Kochava to use the Segment-Kochava Destination._
+_**NOTE:** The Segment-Kochava destination is only available to [Kochava paid accounts](https://support.freeappanalytics.com/server-to-server-integration/segment-integration/)._
 
-This destination is maintained by Kochava. For any issues with the destination, [contact their team](mailto:support@kochava.com)
-
-This document was last updated on October 8, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+This destination is maintained by Kochava. For any issues with the destination, [contact the Kochava Support team](mailto:support@kochava.com)
 
 ## Getting Started
 

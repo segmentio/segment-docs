@@ -5,9 +5,10 @@ beta: true
 
 [Foursquare's Pilgrim SDK](https://developer.foursquare.com/pilgrimsdk) provides real-time event triggering based upon your users’ location in the physical world, allowing you to harness our powerful geotargeting capabilities to send those events to other services using Segment.
 
-This destination is maintained by Foursquare. For any issues with the destination, [contact their team](mailto:developers@foursquare.com).
+This destination is maintained by Foursquare. For any issues with the destination, [contact the Foursquare Developer Support team](mailto:developers@foursquare.com).
 
-_**NOTE:** The Foursquare-Pilgrim Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 29, 2020. If you are interested in joining their beta program or have any feedback to help improve the Foursquare-Pilgrim Source and its documentation, [let their team know](mailto:developers@foursquare.com)!_
+{% include content/beta-note.md %}
+
 
 ## Getting Started
 
