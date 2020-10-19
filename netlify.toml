@@ -4,3 +4,8 @@
   from = "/docs/*"
   to = "/:splat"
   status = 200
+  
+[[redirects]]
+  from = "/docs/docs.bundle.js"
+  to = "/docs.bundle.js"
+  status = 200
