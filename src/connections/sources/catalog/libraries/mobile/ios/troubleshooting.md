@@ -52,11 +52,11 @@ Look at the raw JSON in your debugger. Does the call look like what is expected?
 
 Read through [the docs for that destination](/docs/connections/destinations/) to see expected event format, behavior and caveats for that destination.
 
-## Migrating to v4 from v3
+## Migrating from version 3 to version 4
 
-For the most part, there's not many changes, however you should be aware of the following:
+Version 3 and version 4 are similar, however, keep the following in mind:
 
-- The module name has changed from `Analytics` to `Segment` to make usage within Swift easier.
+- The module name has changed from `Analytics` to `Segment` to make use within Swift easier.
 - Swift naming has changed extensively.  This was done to make the library easier to work with in Swift.
 - Support for Swift Package Manager has been added.
 - Segment Analytics can now be deployed to macOS and Catalyst as well as iOS/tvOS.
