@@ -137,6 +137,8 @@ analytics.identify('user_123', {
 });
 ```
 
+## Code Blocks with tabs
+
 {% codeexample %}
 {% codeexampletab JavaScript %}
 ```js
