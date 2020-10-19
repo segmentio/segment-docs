@@ -29,7 +29,7 @@ Remember, under iOS14, applications can only collect the IDFA from a user if the
 
 {% comment %}
 Investigate why above link doesn't work when relative.
-{% endcomment}
+{% endcomment %}
 
 ## All device-mode destination SDKs require an update.
 
