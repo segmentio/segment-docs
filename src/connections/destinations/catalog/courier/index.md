@@ -1,0 +1,86 @@
+---
+rewrite: true
+title: Courier Destination
+---
+
+[Courier](https://courier.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the smartest way to design & deliver notifications. Design once with our rich visual editor and quickly deliver to any channel through one API request.
+
+This destination is maintained by Courier. For any issues with the destination, [contact their support team](mailto:support@courier.com).
+
+> note "Note:"
+> The Courier Destination is currently in beta. To join their beta program, or if you have any feedback to help improve the Courier Destination and its documentation, [contact the Courier support team](mailto:support@courier.com).
+
+## Getting Started
+
+{% include content/connection-modes.md %} 
+
+1. From the Destinations catalog page in the Segment App, click **Add Destination**.
+2. Search for “Courier” in the Destinations Catalog, and select the “Courier” destination.
+3. Choose which Source should send data to the “Courier” destination.
+4. Go to the [Courier Settings Page](https://courier.com/settings), find and copy the “Auth Token”.
+5. Enter the “Auth Token” in the “Courier” destination settings field “API Key” in Segment.
+
+## Identify
+
+If you aren’t familiar with the Segment Spec, take a look at the [Identify method documentation](https://segment.com/docs/connections/spec/identify/) to learn about what it does. An example call would look like:
+
+```js
+analytics.identify('userId123', {
+  email: carrier.pigeon@example.com'
+});
+```
+
+Segment sends Identify calls to Courier as an `identify` event.
+
+### User Profiles
+Identify calls made from Segment will automatically create profiles for users in Courier. `Traits` included in the Segment Identify call are automatically merged over time to a user's Courier Profile. 
+
+The following shows a few basic examples of properties you may be interested in tracking to leverage when sending notifications to users in one or more channels:
+
+```js
+analytics.identify('userId123', {
+  email: 'carrier.pigeon@example.com',
+  sms: '+1-123-456-7890',
+  tokens: {
+    slackToken: '****************',
+    microsoftTeamsToken: '****************',
+    whatsAppToken: '****************'
+  },
+  ...
+});
+```
+
+Check out the [Courier Profile](https://docs.courier.com/reference/profiles-api?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) documentation for more information.
+
+## Track
+
+If you aren't familiar with the Segment Spec, take a look at the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+
+```js
+analytics.track('Login Button Clicked')
+```
+
+Segment sends Track calls to Courier as a `track` event.
+
+### Inbound Events and Properties
+Segment Track events are inbound events that may trigger a notification when received by Courier. To begin, events will appear in [Courier's Data Logs](https://www.trycourier.app/data/messages?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) after the Courier Destination is configured. 
+
+> All Inbound Events coming from Segment Track calls will be prefixed with `Segment-TrackEvent` to make it simple to discern from other inbound events.  
+
+Courier will extract data in the Segment Track `properties` object and conditionally trigger a request to the [Courier Send API](https://docs.courier.com/reference/send-api?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) - only if that event is already [mapped](https://www.google.com/url?q=https://help.courier.com/en/articles/4202416-how-to-create-and-map-event-triggers-for-your-notifications&sa=D&ust=1601580114151000&usg=AFQjCNFl86AcJc2U8l45vfHFloXO2rDVUA). 
+
+* All `properties` passed in the Segment Track call will be passed to the `Send API` as elements in the `data` json objects. These data points can be used as variables in the Notification Template or input on conditional routing logic.
+* The `userId` or `anonymousId` will be utilized to lookup and include the associated `User Profile` (noted about in the Identify section above) with the inbound event.
+
+```js
+analytics.track('Login Button Clicked', {
+  orderNumber: 12345678980,
+  estimatedDelivery: '2020-06-10T18:41:29.093Z',
+  ...
+})
+```
+> note "Note:"
+> Notifications will not be sent until you have published a Notification Template and mapped incoming Segment Track events to that published Notification Template. Prior to those steps, incoming events will simply be marked with a status of `Unmapped`.  
+
+### Mapping Inbound Events to Notification Templates
+Once you are comfortable with the Notification Template(s) and are ready to send Notifications, you can map these inbound events to start sending. That can be accomplished directly on the [Event Log in the Courier](https://www.trycourier.app/data/messages?status=unmapped) or in the `Events` settings page.
