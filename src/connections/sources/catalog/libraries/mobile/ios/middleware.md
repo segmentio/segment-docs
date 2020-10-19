@@ -7,7 +7,7 @@ Middlewares are simple functions invoked by the Segment libraries, which give yo
 
 You can access the middleware API in both Objective-C and Swift.
 
-### Usage
+### Use
 
 Middleware is any Objective-C class that conforms to the following protocol.
 
@@ -19,7 +19,7 @@ EGMiddlewareNext _Nonnull)next;
 @end
 ```
 
-We also provide a block-centric helper class to make it easier to create middlewares using anonymous functions on the fly. (See examples later on in the guide)
+Segment also provides a block-centric helper class to make it easier to create middlewares using anonymous functions on the fly. (See examples below)
 
 
 ```objc
@@ -91,8 +91,9 @@ typedef NS_ENUM(NSInteger, SEGEventType) {
 };
 ```
 
-
-In Objective C, the most classes are prefixed with `SEG`. In swift, this
+{% comment %}
+In Objective C, the most classes are prefixed with `SEG`. In Swift, this
+{% endcomment% }
 
 There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enums. Subclassed payloads may contain call specific information, For example, the `SEGTrackPayload` contains `event` as well as `properties` .
 
@@ -172,7 +173,6 @@ Analytics.setup(with: config)
 {% codeexampletab Objective-C %}
 
 ```objc
-// TODO - objc sample here?
 id<SEGIntegrationFactory> mixpanelIntegration = [SEGMixpanelIntegrationFactory instance];
 id<SEGIntegrationFactory> amplitudeIntegration = [SEGAmplitudeIntegrationFactory instance];
 
