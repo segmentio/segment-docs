@@ -442,7 +442,7 @@ The Group call has the following fields:
   </tr>
 </table>
 
-Find more details about `group` including the `**group**` **payload** in our [Spec](/docs/connections/spec/group/).
+Find more details about `group` including the `group` **payload** in our [Spec](/docs/connections/spec/group/).
 
 ### Alias
 
