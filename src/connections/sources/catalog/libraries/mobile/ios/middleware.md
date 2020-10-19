@@ -93,7 +93,7 @@ typedef NS_ENUM(NSInteger, SEGEventType) {
 
 {% comment %}
 In Objective C, the most classes are prefixed with `SEG`. In Swift, this
-{% endcomment% }
+{% endcomment %}
 
 There are almost as many `SEGPayload` subclasses as there are `SEGEventType` enums. Subclassed payloads may contain call specific information, For example, the `SEGTrackPayload` contains `event` as well as `properties` .
 
@@ -143,7 +143,6 @@ The following example shows how to initialize middleware.
 
 {% codeexample %}
 {% codeexampletab Swift %}
-
 ```swift
 let mixpanelIntegration = SEGMixpanelIntegrationFactory.instance()
 let amplitudeIntegration = SEGAmplitudeIntegrationFactory.instance()
@@ -171,7 +170,6 @@ Analytics.setup(with: config)
 ```
 {% endcodeexampletab %}
 {% codeexampletab Objective-C %}
-
 ```objc
 id<SEGIntegrationFactory> mixpanelIntegration = [SEGMixpanelIntegrationFactory instance];
 id<SEGIntegrationFactory> amplitudeIntegration = [SEGAmplitudeIntegrationFactory instance];
@@ -201,6 +199,7 @@ config.destinationMiddleware = @[
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
+
 
 
 #### Change event names and add attributes
