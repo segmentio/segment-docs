@@ -6,7 +6,7 @@ CODEOWNERS  @segmentio/segment-doc-team
 /diagram-library @sanscontext
 
 # Utility scripts
-/scripts @sanscontext @XavierAgostini
+/scripts @segmentio/segment-doc-team @XavierAgostini
 
 # Vale Linting
 /vale-styles @segmentio/segment-doc-team
