@@ -17,7 +17,7 @@ AWS: |
   Amazon Web Services, a large cloud service provider.
 
 Catalog: |
-  Segment's list of available sources, destinations, and warehouses. You can access the catalog from the [Segment website](/catalog/), and from inside the Segment app.
+  Segment's list of available sources, destinations, and warehouses. You can access the catalog from the [Segment website](https://segment.com/catalog/), and from inside the Segment app.
 
 CDN: |
   Content Delivery Network. CDNs are a network of servers which make downloading files faster for the user, by placing them all around the world to reduce data transit time. When you have servers in a CDN, they're much closer on average to the end user. If someone is using Segment in Asia, they don't have to download our files all the way from California, they can get them from a server much closer to them in the network.
