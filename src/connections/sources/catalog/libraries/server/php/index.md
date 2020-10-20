@@ -194,7 +194,7 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`properties` _Object, optional_</td>
-    <td>A dictionary of properties of the page. We'll automatically send the `url`, `title`, `referrer` and `path`, but you can add your own too!</td>
+    <td>A dictionary of properties of the page. Segment automatically sends the `url`, `title`, `referrer` and `path`, but you can add your own too!</td>
   </tr>
   <tr>
     <td>`anonymousId` _String, optional_</td>

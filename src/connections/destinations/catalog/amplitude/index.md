@@ -32,12 +32,11 @@ our documentation, [let us know](https://segment.com/help/contact)!
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 
-2. Search for "Amplitude" within the Destinations Catalog and confirm the
-   Source you'd like to connect to.
+2. Search for "Amplitude" in the Catalog, select it, and choose which of your sources to connect the destination to.
 
-3. Drop in your Amplitude API key.
+3. In the destination settings, enter your Amplitude API key.
 
    You can find the your Amplitude API key from the [Amplitude project
 settings](https://analytics.amplitude.com/settings/projects). Find the project

@@ -4,9 +4,7 @@ title: Pinterest Destination
 
 ## Getting Started
 
-When you toggle on the Pinterest Tag in Segment, this is what happens:
-
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Pinterest Tag's tracking snippet onto your page. This means you should remove Pinterest Tag's snippet from your page.
+When you enable the Pinterest Tag in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Pinterest Tag's tracking snippet onto your page. This means you should remove Pinterest Tag's snippet from your page.
 + Pinterest Tag will automatically start tracking visits and the defined events located on Pinterest Tag's documentation.
 
 Here's how you can get started with using the Pinterest Tag!

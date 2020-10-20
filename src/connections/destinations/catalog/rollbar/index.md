@@ -4,7 +4,7 @@ title: Rollbar Destination
 
 ## Getting Started
 
-When you toggle on Rollbar in Segment, we'll start sending data to the Rollbar API for your account. Currently, Rollbar will send data from our analytics.js library.
+When you enable Rollbar in Segment, we'll start sending data to the Rollbar API for your account. Currently, Rollbar will send data from our analytics.js library.
 
 To start pushing user data to Rollbar, toggle the destination on and add your Rollbar access token. Your access token can be found in your Rollbar Settings > Access Tokens.
 

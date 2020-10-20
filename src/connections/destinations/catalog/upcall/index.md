@@ -15,9 +15,9 @@ This destination is maintained by Upcall. For any issues with the destination, [
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Upcall" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Upcall dashboard](https://app2.upcall.com/company/settings/integrations/api).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Upcall" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Upcall dashboard](https://app2.upcall.com/company/settings/integrations/api).
 
 ## Identify
 

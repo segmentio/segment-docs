@@ -5,17 +5,19 @@ title: Wishpond Destination
 
 This destination is maintained by Wishpond.
 
-Our Wishpond destination code is open sourced on GitHub. Feel free to check it out: [JavaScript (browser) Integration](https://github.com/wishpond-dev/analytics.js-integration-wishpond "Wishpond Segment Integration").
+The [Wishpond JavaScript (browser) Integration](https://github.com/wishpond-dev/analytics.js-integration-wishpond) destination code is open source and on GitHub. Feel free to check it out.
 
 ## Getting Started
 
-Wishpond works with our client-side javascript library: Analytics.js.
+Wishpond works with Segment's client-side javascript library: Analytics.js.
 
-From your Segment Destinations page click on Wishpond. Drop in your Merchant ID and Trackey Key from Wishpond's ["API Keys" dialog](https://www.wishpond.com/central/welcome?api_keys=true). These are also found in your Wishpond Account in the "API Keys" dropdown under your account name in the top right corner.
 
-We'll automatically initialize Wishpond's Tracking Code with your Tracking Key and Merchant ID upon loading Analytics.js.
+1.  From your Segment UI's Destinations page click on "Add Destination".
+2.  Search for "Wishpond" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Merchant ID and Trackey Key from Wishpond's ["API Keys" dialog](https://www.wishpond.com/central/welcome?api_keys=true). These are also found in your Wishpond Account in the "API Keys" dropdown under your account name in the top right corner.
+4. Segment automatically initializes Wishpond's Tracking Code with your Tracking Key and Merchant ID when it next loads Analytics.js.
 
-When you toggle on Wishpond in Segment, your Wishpond account will start to receive data when you use `identify` or `track` methods.
+When you enable Wishpond in Segment, your Wishpond account starts to receive data when you use `identify` or `track` methods.
 
 ## Identify
 

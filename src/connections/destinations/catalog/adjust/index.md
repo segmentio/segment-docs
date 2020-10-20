@@ -5,15 +5,15 @@ title: Adjust Destination
 
 [Adjust](https://adjust.com) is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-adjust) and [Android](https://github.com/segment-integrations/analytics-android-integration-adjust).
 
-This document was last updated on January 31, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Adjust" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Adjust" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Do not need to include Adjust's SDK natively as this prevent you from successfully implementing the Adjust.
 4. Depending on the source you've selected, include Adjust's library by adding the following lines to your dependency configuration.
 
@@ -104,7 +104,7 @@ analytics = new Analytics.Builder(this, "write_key")
                 .build();
 ```
 
-After you build and release to the App Store, we'll automatically start translating and sending your data to Adjust.
+After you build and release to the App Store, Segment automatically starts translating and sending your data to Adjust.
 
 ### Server
 

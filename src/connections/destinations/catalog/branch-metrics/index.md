@@ -24,8 +24,8 @@ This document was last updated on November 13, 2019. If you notice any gaps, out
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI's Destinations page click on "Add Destination".
-  2. Search for "Branch Metrics" within the Destinations Catalog and confirm the Source you'd like to connect to.
+  1. From the Segment web app, click **Catalog**.
+  2. Search for "Branch Metrics" in the Catalog, select it, and choose which of your sources to connect the destination to.
   3. On Branch side you will need to [sign up for a free Branch account](http://branch.io/signup?bmp=segment) and follow the steps on their Dashboard to complete set up.
   4. Copy your `Branch Key` from the Settings page of your [Branch dashboard](https://dashboard.branch.io/#/settings).
   5. Paste the Branch Key in the destination settings and click **Save**.

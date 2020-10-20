@@ -11,15 +11,15 @@ This document was last updated on April 20th, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 
-2. Search for "TV Squared" within the Destinations Catalog and confirm the Javascript source you'd like to connect to.
+2. Search for "TV Squared" in the Catalog, select it, and choose which of your Javascript sources to connect the destination to.
 
 3. Add your TV Squared Brand ID and Client ID to your Segment Settings UI. You can find this within your TV Squared dashboard.
 
-4. We'll automatically load TV Squared's Javascript tracking snippet onto the page once analytics.js loads. Make sure you remove TV Squared's snippet from your code.
+4. Segment automatically loads TV Squared's Javascript tracking snippet onto the page once analytics.js loads. Make sure you remove TV Squared's snippet from your code.
 
-5. TV Squared will start automatically recording events after approximately 45 minutes, once our CDN is updated.
+5. TV Squared starts automatically recording events after approximately 45 minutes, once our CDN is updated.
 
 ## Page
 

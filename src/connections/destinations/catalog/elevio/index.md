@@ -12,12 +12,12 @@ This document was last updated on 31 July, 2018. If you notice any gaps, out-dat
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Elevio" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your "Account ID" from your Elevio's [Installation](https://app.elev.io/installation) page under "Install via Code Snippet". You can also use Elevio's "Install with Segment" workflow from the same page.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Elevio" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your "Account ID" from your Elevio's [Installation](https://app.elev.io/installation) page under "Install via Code Snippet". You can also use Elevio's "Install with Segment" workflow from the same page.
 4. Ensure that you have Elevio's Assistant enabled from your [Settings](https://app.elev.io/settings).
 
-5. In about 45 minutes the CDN will be updated and Elevio's snippet will be initialized onto your page.
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Elevio's snippet on your page and sending data.
 
 
 ## Identify

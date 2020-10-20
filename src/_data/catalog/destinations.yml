@@ -21834,7 +21834,7 @@ items:
     string_validators:
       regexp: '^[a-zA-Z0-9]*$'
     description: >-
-      Drop in the “Integration Key” into your Segment Settings UI which you can
+      Enter the “Integration Key” into your Segment Settings UI which you can
       find on https://businessapp.b2b.trustpilot.com/#/ecommerce/segment
     settings: []
   connection_modes:
@@ -22763,7 +22763,7 @@ items:
     deprecated: false
     required: false
     description: >-
-      If you would like to utilize VWO's asynchronous smart code, toggle on this
+      If you would like to utilize VWO's asynchronous smart code, enable this
       feature. This means you will not need to include VWO's native snippet on
       your page as Segment will do this on your behalf. If this feature is
       toggled off, you will need to include VWO's native smart code on your

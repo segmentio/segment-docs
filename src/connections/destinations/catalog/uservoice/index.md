@@ -11,12 +11,14 @@ This document was last updated on November 8th, 2018. If you notice any gaps, ou
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "UserVoice" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "UserVoice" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your Javascript API Key (Your API Key appears in the javascript snippet URL as widget.uservoice.com/APIKEY.js.) and enable the destination in Segment.
-4. We'll automatically start recording data.
+4. Segment automatically starts sending data from the source you selected
 
-When UserVoice is enabled in Segment, our CDN will update within 45 minutes, and Uservoice's javascript is asynchronously loaded onto your page. Remember to remove UserVoice's snippet from your page.
+When you enable UserVoice from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Uservoice's javascript onto your page.
+
+Remember to remove UserVoice's native snippet from your page.
 
 ## Identify
 

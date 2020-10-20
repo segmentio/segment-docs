@@ -4,12 +4,11 @@ title: Nudgespot Destination
 
 ## Getting Started
 
-When you toggle on Nudgespot in Segment, this is what happens:
+When you enable on Nudgespot from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Nudgespot code on your site.
 
-+ Our CDN is updated within 45 minutes.
-+ If you are using Nudgespot for the first time, sign up and choose the 'Segment' option under Destinations on their 'Getting Started with Nudgespot' page.
-+ Once you reach the Segment onboarding page, click on the 'Enable with Segment' option.
-+ If you are already using Nudgespot, go to the 'Settings' page and click on the 'Enable with Segment' button.
+If you're using Nudgespot for the first time, sign up and choose the **Segment** option under Destinations on Nudgespot's **Getting Started with Nudgespot** page. Once you reach the Segment onboarding page, click **Enable with Segment** option.
+
+If you already use Nudgespot, go to the **Settings** page and click **Enable with Segment**.
 
 Nudgespot is supported on mobile, web browsers and on the server side.
 

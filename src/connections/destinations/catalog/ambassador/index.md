@@ -11,11 +11,14 @@ This document was last updated on September 03, 2018. If you notice any gaps, ou
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI's Destinations page click on "Add Destination".
-  2. Search for "Ambassador" within the Destinations Catalog and confirm the Source you'd like to connect to.
-  3. Drop in your "Client ID" from your Ambassador dashboard, and populate any "Campaigns" to be mapped as per the below [Mapping campaigns to URLs](#mapping-campaigns-to-urls) section.
-  4. In about 45 minutes the CDN will be updated and the Ambassador snippet will be initialized onto your page.
-  5. Since Ambassador only records specific events and user data, events and users may not appear in Ambassador until you start using the API outlined below.
+  1. From the Segment web app, click **Catalog**.
+  2. Search for "Ambassador" in the Catalog, select it, and choose which of your sources to connect the destination to.
+  3. In the destination settings, enter your "Client ID" from your Ambassador dashboard, and populate any "Campaigns" to be mapped as per the below [Mapping campaigns to URLs](#mapping-campaigns-to-urls) section.
+
+
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Ambassador snippet on your page and sending data.
+
+Since Ambassador only records specific events and user data, events and users may not appear in Ambassador until you start using the API explained below.
 
 ## Identify
 

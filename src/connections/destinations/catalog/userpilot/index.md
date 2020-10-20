@@ -13,9 +13,9 @@ This destination is maintained by Userpilot. For any issues with the destination
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Userpilot" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "App Token" into your Segment Settings UI which you can find from your [Userpilot dashboard](https://app.userpilot.io/settings/setup) within the code snippet that looks like this `<script src = "https://deploy.userpilot.io/73fe57o8.js"></script>` where `73fe57o8` is the value you want to use.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Userpilot" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "App Token" into your Segment Settings UI which you can find from your [Userpilot dashboard](https://app.userpilot.io/settings/setup) within the code snippet that looks like this `<script src = "https://deploy.userpilot.io/73fe57o8.js"></script>` where `73fe57o8` is the value you want to use.
 
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
