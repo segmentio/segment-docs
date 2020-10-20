@@ -79,7 +79,6 @@ analytics.track('Login Button Clicked', {
   estimatedDelivery: '2020-06-10T18:41:29.093Z',
   ...
 })
-```
 > note "Note:"
 > Courier does not send notifications until you publish a Notification Template and map incoming Segment Track events to that published Notification Template. If you send data to Courier before you complete those steps, incoming events are marked with a status of `Unmapped`.  
 
