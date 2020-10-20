@@ -17,7 +17,7 @@ AWS: |
   Amazon Web Services, a large cloud service provider.
 
 Catalog: |
-  Segment's list of available sources, destinations, and warehouses. You can access the catalog from the [Segment website](/catalog/), and from inside the Segment app.
+  Segment's list of available sources, destinations, and warehouses. You can access the catalog from the [Segment website](https://segment.com/catalog/), and from inside the Segment app.
 
 CDN: |
   Content Delivery Network. CDNs are a network of servers which make downloading files faster for the user, by placing them all around the world to reduce data transit time. When you have servers in a CDN, they're much closer on average to the end user. If someone is using Segment in Asia, they don't have to download our files all the way from California, they can get them from a server much closer to them in the network.
@@ -75,7 +75,7 @@ JSON: |
 Library: |
   A library is a reusable piece of code which acts as a building block for higher level pieces of code. It's the software equivalent of a 'tool'. For instance, take Instagram filters. In the good old days, to take a picture with an interesting filter, you had to adjust the aperture length, the focal length, the exposure and film speed to get the desired effect. But now, you can just use Instagram, and press a button to get the pre-tuned filter that you want. They've packaged those effects in software and made them re-usable.
 
-  The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](/docs/sources/catalog/). Libraries can collect either in "[Device mode](#device-mode)" or "[Cloud mode](#cloud-mode)".
+  The most common use case for this term at Segment is in reference to the libraries people use to send data to our API. [A full list of libraries can be found in our docs](/docs/connections/sources/catalog/). Libraries can collect either in "[Device mode](#device-mode)" or "[Cloud mode](#cloud-mode)".
 
 Lookback: |
   A “lookback window” limits the period of time in which data is considered when calculating a trait or audience. For example, you might set a lookback window of 7 days on an audience or trait like `new_users_7_days`, but you would not add a lookback window to a trait that isn’t time-bounded, such as `lifetime_value`.

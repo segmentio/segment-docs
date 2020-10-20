@@ -19,12 +19,6 @@ dev: node_modules vendor/bundle
 		"$(BIN)/webpack --mode=development --watch" \
 		"bundle exec jekyll clean && bundle exec jekyll serve --force_polling --trace --incremental -H 0.0.0.0 -V"
 
-.PHONY: netlify
-netlify: node_modules vendor/bundle
-	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
-		"$(BIN)/webpack --mode=development --watch" \
-		"bundle exec jekyll clean && bundle exec jekyll build --trace --incremental"
-
 .PHONY: intialize-work-dir
 intialize-work-dir:
 	@mkdir -p _site
