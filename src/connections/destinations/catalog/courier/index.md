@@ -40,7 +40,7 @@ The example below shows a few basic properties you might want to track if you se
 ```js
 analytics.identify('userId123', {
   email: 'carrier.pigeon@example.com',
-  sms: '+1-123-456-7890',
+  sms: '+1-123-555-7890',
   tokens: {
     slackToken: '****************',
     microsoftTeamsToken: '****************',
