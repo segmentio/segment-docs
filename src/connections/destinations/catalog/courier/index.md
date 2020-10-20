@@ -64,7 +64,7 @@ Segment sends Track calls to Courier as a `track` event.
 
 ### Inbound Events and Properties
 
-Segment Track events are inbound events that may trigger a notification when received by Courier. To begin, events will appear in [Courier's Data Logs](https://www.trycourier.app/data/messages?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) after the Courier Destination is configured. 
+Segment Track events are inbound events that might trigger a notification when Courier receives them. To begin, events appear in [Courier's Data Logs](https://www.trycourier.app/data/messages?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) after you configure the Courier destination. 
 
 All Inbound Events coming from Segment Track calls will be prefixed with `Segment-TrackEvent` to help discern from other inbound events.  
 
