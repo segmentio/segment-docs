@@ -33,7 +33,7 @@ Segment sends Identify calls to Courier as an `identify` event.
 
 ### User Profiles
 
-Identify calls made from Segment will automatically create profiles for users in Courier. `Traits` included in the Segment Identify call are automatically merged over time to a user's Courier Profile. 
+Identify calls made from Segment automatically create profiles for users in Courier. `Traits` included in the Segment Identify call automatically merge into a user's Courier Profile over time. 
 
 The following shows a few basic examples of properties you may be interested in tracking to leverage when sending notifications to users in one or more channels:
 
