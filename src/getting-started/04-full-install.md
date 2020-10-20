@@ -1,8 +1,8 @@
 ---
 title: A full Segment implementation
 related:
-  - "/docs/connections/spec/best-practices-event/"
-  - "/docs/connections/spec/best-practices-identify/"
+  - "/connections/spec/best-practices-event/"
+  - "/connections/spec/best-practices-identify/"
 ---
 
 Before you start implementing from your tracking plan, let's review the Segment methods, what they do, and when you should use each.

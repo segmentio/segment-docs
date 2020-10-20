@@ -4,7 +4,7 @@
     {% for related_url in include.items %}
       {% assign subpage = site.pages | where: 'url', related_url | first %}
       <li>
-        <a href="{{ subpage.url }}" class="menu-side__link">
+        <a href="/docs{{ subpage.url }}" class="menu-side__link">
           {{ subpage.title }}
         </a>
       </li>
