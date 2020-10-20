@@ -71,7 +71,7 @@ All Inbound Events coming from Segment Track calls appear with a `Segment-TrackE
 Courier extracts data from the Segment Track `properties` object, and conditionally triggers a request to the [Courier Send API](https://docs.courier.com/reference/send-api?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) - only if that event is already [mapped](https://help.courier.com/en/articles/4202416-how-to-create-and-map-event-triggers-for-your-notifications). 
 
 * Segment passes all `properties`  from the Track call to the `Send API` as elements in the `data` json objects. You can use these data points as variables in the Notification Template or as input on conditional routing logic.
-* The `userId` or `anonymousId` is used to lookup and include the associated `User Profile` (noted about in the Identify section above) with the inbound event.
+* Courier uses the `userId` or `anonymousId` to look up and include the associated `User Profile` with the inbound event.  (See the note in the [Identify section](#identify) above.)
 
 ```js
 analytics.track('Login Button Clicked', {
