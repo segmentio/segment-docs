@@ -84,4 +84,4 @@ analytics.track('Login Button Clicked', {
 
 ### Mapping Inbound Events to Notification Templates
 
-Once you are comfortable with the Notification Template(s) and are ready to send Notifications, you can map these inbound events to start sending. That can be accomplished directly on the [Event Log in the Courier](https://www.trycourier.app/data/messages?status=unmapped) or in the `Events` settings page.
+Once you are comfortable with the Notification Template(s) and are ready to send Notifications, you can map these inbound events to start sending. You can do this directly from the [Event Log in Courier](https://www.trycourier.app/data/messages?status=unmapped) or in the `Events` settings page.
