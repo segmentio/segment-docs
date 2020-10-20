@@ -50,7 +50,7 @@ analytics.identify('userId123', {
 });
 ```
 
-For more information about the way Courier handles profiles, see the [Courier Profile](https://docs.courier.com/reference/profiles-api?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) documentation.
+For more information on how Courier handles profiles, see the [Courier Profile documentation](https://docs.courier.com/reference/profiles-api?utm_source=segmentio&utm_medium=docs&utm_campaign=partners.
 
 ## Track
 
