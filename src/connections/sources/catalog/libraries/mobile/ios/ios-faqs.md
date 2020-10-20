@@ -217,7 +217,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(integrationDidS
 
 Segment collects IP addresses for device-mode (iOS, Android, Analytics.js and Xamarin) events automatically. If you don’t want to record your tracked users’ IP in destinations (and in storage destinations like S3), you can set the event’s `context.ip` field to `0.0.0.0` .  The Segment servers don’t record the IP address of the client for libraries if the `context.ip` field is already set.
 
-If you’d like to centralize this logic, you can write a [middleware](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/middleware/) for it.
+If you’d like to centralize this logic, you can write a [middleware](/docs/connections/sources/catalog/libraries/mobile/ios/middleware/) for it.
 
 The following examples show how to set a static 0 value for the IP.
 
@@ -243,10 +243,10 @@ Analytics.shared().track("Clicked Button", properties: nil, options: ["context":
 
 ## How can I get the user’s IDFA?
 
-Some destinations, especially mobile attribution tools (e.g. Kochava), require the IDFA (identifier for advertisers). The IDFA appears in Segment calls in the debugger as `context.device.advertisingId`. To capture this value with Analytics-iOS, follow the steps in [Ad-tracking and IDFA](https://paper.dropbox.com/doc/Analytics-iOS-Docs-Update--A9nGsBOUUVP5fMNtud88dPIcAg-uUsE439B51WXj8ty0gg8U#:uid=543502921136255701315856&h2=Ad-Tracking-and-IDFA).  Remember that Apple now requires that the user consent to your tracking before you can collect the IDFA.
+Some destinations, especially mobile attribution tools (e.g. Kochava), require the IDFA (identifier for advertisers). The IDFA appears in Segment calls in the debugger as `context.device.advertisingId`. To capture this value with Analytics-iOS, follow the steps in [Ad-tracking and IDFA](/docs/connections/sources/catalog/libraries/mobile/ios/#ad-tracking-and-idfa).  Remember that Apple now requires that the user consent to your tracking before you can collect the IDFA.
 
 
 
 ## tvOS / macOS / Catalyst Support
 
-As of [Version 4.1.0](https://github.com/segmentio/analytics-ios/releases/tag/4.1.0), Analytics-iOS now supports tvOS, macOS and Catalyst as well. You can follow the [quickstart documentation](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) to set it up!
+As of [Version 4.1.0](https://github.com/segmentio/analytics-ios/releases/tag/4.1.0), Analytics-iOS now supports tvOS, macOS and Catalyst as well. You can follow the [quickstart documentation](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/) to set it up!
