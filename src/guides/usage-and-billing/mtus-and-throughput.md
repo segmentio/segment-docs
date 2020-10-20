@@ -2,13 +2,15 @@
 title: MTUs, Throughput and Billing
 ---
 
+## What is an MTU?
+
+MTU stands for "monthly tracked user".
+
 ## How does Segment calculate MTUs?
 
-**MTUs are Monthly Tracked Users**
+Segment calculates Monthly tracked users by counting the number of **unique** `user_ids` and **unique** `anonymous_ids` that appear in any call to Segment in a given month. Object-based sources do not count towards your MTU count.
 
-Monthly tracked users are calculated based on the number of **unique** `user_ids` plus **unique** `anonymous_ids` that appear in any call to Segment in a given month. Object-based sources do not count towards your MTU count.
-
-We only count users once per month, even if they perform multiple actions across your sources.
+Segment only counts each user once per month, even if they perform more than one action across your sources.
 
 **What about object-based sources?**
 

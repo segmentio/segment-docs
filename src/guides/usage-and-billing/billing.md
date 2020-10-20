@@ -4,9 +4,9 @@ title: Billing and Account FAQs
 
 ## What is a billing cycle?
 
-On our monthly Team plan, your billing cycle will start the day after your 14-day trial ends. You will be billed on this day each month going forward. 
+On the Segment monthly Team plan, your billing cycle starts the day after your 14-day trial ends. You are billed on this day for each month while you are on this plan. 
 
-On our annual Team plan, you will be billed at the end of your 14-day trail for the sum of the entire year of service at a certain number of MTU. All overages for annual plans are billed at the end of your monthly billing cycle.
+On the Segment annual Team plan, you are billed at the end of your 14-day trail for the amount for an entire year of service including a specific number of MTUs. Annual plan subscribers are billed for MTU overages at the end of each monthly cycle.
 
 
 ## How do I change my plan?
