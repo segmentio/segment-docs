@@ -11,11 +11,13 @@ hide-personas-partial: true
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "HubSpot" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. If you haven't already done so, add your API Key from [HubSpot](https://knowledge.hubspot.com/articles/kcs_article/integrations/how-do-i-get-my-hubspot-api-key) and drop into the "API Key" field within the Segment UI.
-4. Navigate to the "Settings" page within the HubSpot UI to find your Hub ID and drop into the "Hub ID" field within the Segment UI.
-5. When you activate the destination, our CDN will be updated in about 45 minutes and the HubSpot snippet will be initialized and begin recording data.
+1. From the Segment web app, click **Catalog**.
+2. Search for "HubSpot" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. If you haven't already done so, add your API Key from [HubSpot](https://knowledge.hubspot.com/articles/kcs_article/integrations/how-do-i-get-my-hubspot-api-key) and enter it in the "API Key" field in the Segment web app.
+4. Navigate to the "Settings" page in the HubSpot UI to find your Hub ID and enter it to the "Hub ID" field in the Segment web app.
+
+
+When you activate the destination from the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the HubSpot snippet and recording data.
 
 
 ## Page

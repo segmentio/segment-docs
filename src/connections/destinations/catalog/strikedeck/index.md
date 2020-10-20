@@ -4,19 +4,18 @@ title: Strikedeck Destination
 ---
 [Strikedeck](https://strikedeck.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Customer Success platform which actively manages customer relationships to reduce churn, increase existing revenue and influence new sales. Strikedeck includes  Customer Engagement Analytics, Health Scorecard, Notifications, Recommendations & Actions.
 
-Strikedeck maintains this documentation. For any issues with the destination, the [Strikedeck Support team](mailto:support@strikedeck.com).
+Strikedeck maintains this documentation. For any issues with the destination, [contact the Strikedeck Support team](mailto:support@strikedeck.com).
 
-> note ""
-> **NOTE:** The Strikedeck Destination is in beta, which means that they are still actively developing the destination. This doc was last updated on April 23, 2019. If you have interest in joining the Strikedeck beta program or have any feedback to help improve the Strikedeck Destination and its documentation, let the [Strikedeck Support team](mailto:support@strikedeck.com) know.
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Strikedeck" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your Strikedeck settings page. Go to Settings -> Connector and click on "Segment". Copy the API Key from this page.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Strikedeck" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your Strikedeck settings page. Go to Settings -> Connector and click on "Segment". Copy the API Key from this page.
 
 ## Page
 

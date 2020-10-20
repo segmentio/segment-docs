@@ -4,18 +4,16 @@ title: Librato Destination
 
 ## Getting Started
 
-When you toggle on Librato in Segment, this is what happens:
+When you enable Librato in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the custom Librato provider on your website.
++ Since Librato only records custom events, no metrics appear in Librato until you start using the API explained below.
 
-+ Our CDN is updated within 45 minutes with our custom Librato provider inside analytics.js.
-+ Since Librato only records custom events, no metrics will appear in Librato until you start using the API outlined below.
-
-Librato supports our `track` method for both client-side and server-side.
+Librato supports the Segment `track` method for both client-side and server-side.
 
 - - -
 
 ## Track
 
-When you call [`track`](/docs/connections/spec/track/), we add a gauge measurement to Librato. The gauge is named after your event.
+When you make a [Track call](/docs/connections/spec/track/), Segment adds a gauge measurement to Librato. The gauge is named after your event.
 
 Here's an example using Node.js
 

@@ -11,9 +11,9 @@ This document was last updated on January 29, 2018. If you notice any gaps, out-
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Heap" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your Heap "App ID" into the connection settings.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Heap" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Heap "App ID" into the connection settings.
 4. If you are using Heap using Segment's client-side `analytics.js` library, we asynchronously load Heap's Javascript library onto the page. As such, all native functionality of Heap, including auto-capturing of all events.
 
 ## Identify

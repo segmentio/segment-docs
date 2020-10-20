@@ -13,9 +13,9 @@ This destination is maintained by Emarsys. For any issues with the destination, 
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Emarsys" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you obtain from your Emarsys Account Manager.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Emarsys" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you obtain from your Emarsys Account Manager.
 4. Work with your Emarsys Account Manager to establish the initial processing rules required within the Emarsys platform.
 
 ### Configuration

@@ -11,8 +11,8 @@ This document was last updated on January 25, 2018. If you notice any gaps, out-
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Slack" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Slack" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In your Slack custom integration settings, create a new [Incoming Webhook](https://my.slack.com/services/new/incoming-webhook/) URL by selecting a Slack channel associated with your account.
 4. Enter this in your Segment UI settings under 'Incoming Webhook URL'. The Slack channel you selected will be the default channel which will receive events.
 
@@ -27,7 +27,7 @@ analytics.identify('userId123', {
 ```
 
 ### Whitelisted Traits
-By default, your `identify` calls will not be sent through to Slack unless you have whitelisted a `trait` and the `identify` call contains that `trait`. If you whitelist multiple `traits` within the Segment UI under "Whitelisted Traits", then the `identify` call must contain all of them in order to be sent into your Slack. Following the code example above, we can whitelist the trait names of `name` and `email`.
+By default, your `identify` calls will not be sent through to Slack unless you have whitelisted a `trait` and the `identify` call contains that `trait`. If you whitelist multiple `traits` in the Segment app's destintation settings under "Whitelisted Traits", then the `identify` call must contain all of them in order to be sent into your Slack. Following the code example above, we can whitelist the trait names of `name` and `email`.
 
 ### Identify Template
 Once you've saved your whitelisted traits, you can now use them alongside [Handlebars expressions](http://handlebarsjs.com/expressions.html) syntax within a template. Make sure you reference the spec for the [Identify method](https://segment.com/docs/connections/spec/identify/) and [common object](https://segment.com/docs/connections/spec/common/). `Identify` events that contain the whitelisted `traits` will appear as a Slack message with the following default template:

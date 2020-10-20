@@ -15,8 +15,8 @@ This document was last updated on January 8, 2020. If you notice any gaps, out-d
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Criteo Offline Conversions" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Criteo Offline Conversions" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Input "NA" into "API Key" as this information is not required.
 4. Drop your client identifier into "Client ID" into your Segment Settings UI.  You can obtain this ID from your Criteo Account Strategist.
 

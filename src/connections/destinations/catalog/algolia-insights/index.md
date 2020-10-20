@@ -20,9 +20,9 @@ This destination is maintained by [Algolia](https://www.algolia.com/). For any i
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Algolia" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "App ID" & "API Key" into your Segment Settings UI which you can find from your [Algolia Dashboard](https://www.algolia.com/apps/), under API Keys menu.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Algolia" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "App ID" & "API Key" into your Segment Settings UI which you can find from your [Algolia Dashboard](https://www.algolia.com/apps/), under API Keys menu.
 
 _**NOTE:** The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to send additional Algolia-related data like index name, queryID, etc._
 

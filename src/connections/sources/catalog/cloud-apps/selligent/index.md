@@ -6,9 +6,9 @@ hidden: true
 <!-- Paul Y - Apr 29,2020, add hidden flag as it's deprecated & being replaced with a new version-->
 Selligent is a cross-channel marketing platform that allows brands to effectively engage with their customers across email, mobile, social, display and web channels.
 
-Take your company's email analysis to the next level by **adding Selligent as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse.
+Take your company's email analysis to the next level by **adding Selligent as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse.
 
-In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Selligent data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Selligent with Segment.](/docs/connections/destinations/catalog/selligent)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Selligent data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. 
 
 
 ## Getting Started

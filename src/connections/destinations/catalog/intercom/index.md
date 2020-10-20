@@ -22,8 +22,11 @@ This document was last updated on March 11, 2020. If you notice any gaps, outdat
 
 ### Client
 
-1. Activate your Intercom Destination and our CDN is updated within 45 minutes.
-2. Our snippet starts asynchronously loading Intercom's `library.js` onto your page. This means you should remove Intercom's snippet from your page.
+
+Enable the Intercom Destination from the Segment web app.
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Intercom's `library.js` onto your page.
+
+This means you should remove Intercom's snippet from your page.
 
 ### Mobile
 

@@ -14,9 +14,9 @@ This destination is maintained by Learndot. For any issues with the destination,
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Learndot" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Learndot admin](https://admin.learndotx.com/settings).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Learndot" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Learndot admin](https://admin.learndotx.com/settings).
 
 
 ## Identify

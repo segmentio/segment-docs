@@ -10,7 +10,7 @@ If your engineers have already set up Segment, adding Segment data to ClientSucc
 
 To turn on the destination, do the following:
 
-1. Go to the Segment destinations catalog and toggle on ClientSuccess.
+1. Go to the Segment destinations catalog and enable ClientSuccess.
 2. Add your `ClientSuccess Source Id` and `ClientSuccess API Key` (these can be found within ClientSuccess under the top right menu, Apps & Integrations > Usage).
 
 

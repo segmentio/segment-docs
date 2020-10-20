@@ -12,13 +12,13 @@ strat: google
 Segment supports Google Analytics client-side and server-side tracking.
 To use Google Analytics for mobile devices, you must use [Google Firebase](/docs/connections/destinations/catalog/firebase/) instead of the original Google Analytics destination. See the [migration guide](migrating/) for more instructions.
 
-When you enable the Google Analytics destination in Segment, this is what happens:
+When you enable the Google Analytics destination in Segment:
 
-  - The Segment CDN updates within 45 minutes. The Segment snippet starts asynchronously loading the Google Analytics javascript library on your web page. **This means you should remove Google's snippet from your page.**
+- Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Google Analytics javascript library on your web page. **This means you should remove Google's snippet from your page.**
 
-  - Your Google Analytics real-time dashboard starts showing live, concurrent visitors.
+- Your Google Analytics real-time dashboard starts showing live, concurrent visitors.
 
-  - Google Analytics starts automatically collecting data on your site. It takes several hours for Google to process this data and add it to your reports, but you should still see events appear in the Google Analytics real-time events dashboard.
+- Google Analytics starts automatically collecting data on your site. It takes several hours for Google to process this data and add it to your reports, but you should still see events appear in the Google Analytics real-time events dashboard.
 
 > info "Classic tracking deprecated"
 > These docs cover Google Analytics Universal features, since the [Classic tracking method has been depreciated](http://analytics.blogspot.com/2014/04/universal-analytics-out-of-beta-into.html).

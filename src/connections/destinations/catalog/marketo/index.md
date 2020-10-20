@@ -4,10 +4,8 @@ title: Marketo Destination
 
 ## Getting Started
 
-When you toggle on Marketo in Segment, this is what happens:
-
-+ Our cdn is updated within 45 minutes. Then our snippet will start asynchronously loading Marketo's Munchkin onto your page. This means you should remove Marketo's snippet from your page.
-+ Marketo will start automatically recording visitor information.
+When you enable Marketo in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Marketo's Munchkin onto your page. This means you should remove Marketo's snippet from your page.
++ Marketo starts automatically recording visitor information.
 
 ### Important Note:
 Our client-side and server-side destinations each require **different** credentials for authentication. Read through the information below on `identify` calls for further information.

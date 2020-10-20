@@ -16,9 +16,8 @@ Steps to connect:
 
 If you're not sure where to find your Boomtrain API Key, contact [Boomtrain Support](mailto:support@boomtrain.com) or your Boomtrain CSM directly.
 
-When you turn on Boomtrain in Segment, this is what happens:
-- The Boomtrain snippet will start asynchronously loading Boomtrain's Javascript library onto your page.
-- Once loaded, the Boomtrain Javascript library will automatically start sending events to the Boomtrain system indicating that the current page has been viewed.
+When you enable Boomtrain in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Boomtrain's Javascript library onto your page.
+- Once loaded, the Boomtrain Javascript library automatically starts sending events to the Boomtrain system indicating that the current page has been viewed.
 - When users visit pages on your site, the "viewed" events sent to the Boomtrain system will trigger ingestion of your content and processing by our machine learning algorithms.
 - To start sending custom events and user data, use the Javascript methods described below.
 
