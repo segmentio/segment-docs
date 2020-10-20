@@ -1,0 +1,11 @@
+[build]
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/:splat"
+  status = 200
+  
+[[redirects]]
+  from = "/docs/assets/docs.bundle.js"
+  to = "/assets/docs.bundle.js"
+  status = 200

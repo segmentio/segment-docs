@@ -5,10 +5,8 @@ name: Pardot
 
 ## Getting Started
 
-When you toggle on Pardot in Segment, this is what happens:
-
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page.
-+ Pardot will start automatically collecting anonymous visitor data data on your site.
+When you enable Pardot in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Pardot's javascript onto your page. This means you should remove Pardot's snippet from your page.
++ Pardot starts automatically collecting anonymous visitor data data on your site.
 
 Pardot is supported on the client-side and server-side.
 

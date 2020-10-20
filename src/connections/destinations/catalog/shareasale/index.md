@@ -4,9 +4,7 @@ title: ShareASale Destination
 
 ## Getting Started
 
-When you toggle on ShareASale in Segment, this is what happens:
-
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading ShareASale tag onto your page. This means you should remove ShareASale's snippet from your page.
+When you enable ShareASale in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the ShareASale tag onto your page. This means you should remove ShareASale's snippet from your page.
 + Your ShareASale sidebar will begin appearing for your team.
 
 ShareASale is a destination that is only supported on the client-side.

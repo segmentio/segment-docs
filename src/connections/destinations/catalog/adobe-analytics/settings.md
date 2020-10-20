@@ -496,7 +496,7 @@ Segment will automatically sends all event properties as context data on specced
 > note ""
 > **Note**: The context data value cannot be an object or an array as this not an Adobe accepted data type by Adobe Analytics.
 
-For more information on how to set up Context Data for iOS and Android see the [Sending Custom Properties section](mobile/#sending-custom-properties) in [Setting up Adobe Analytics for Mobile](mobile). For more information on how to set up Context Data for Heartbeat Events see the [Custom Video Metadata section](heartbeat/#custom-video-metadata) in [Setting up Adobe Analytics Heartbeat guide](heartbeat).
+For more information on how to set up Context Data for iOS and Android see the [Sending Custom Properties section](/docs/connections/destinations/catalog/adobe-analytics/mobile/#sending-custom-properties) in [Setting up Adobe Analytics for Mobile](/docs/connections/destinations/catalog/adobe-analytics/mobile). For more information on how to set up Context Data for Heartbeat Events see the [Custom Video Metadata section](/docs/connections/destinations/catalog/adobe-analytics/heartbeat/#custom-video-metadata) in [Setting up Adobe Analytics Heartbeat guide](/docs/connections/destinations/catalog/adobe-analytics/heartbeat).
 
 ## Segment Destination Specific Options
 

@@ -5,18 +5,17 @@ rewrite: true
 
 [Custify](https://www.custify.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)'s Customer Success Platform is designed for B2B SaaS businesses and enables them to reduce their churn and increase customer lifetime value.
 
-This destination is maintained by Custify. For any issues with the destination, [contact their team](mailto:contact@custify.com).
+This destination is maintained by Custify. For any issues with the destination, [contact the Custify Support team](mailto:contact@custify.com).
 
-_**NOTE:** The Custify Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the Custify Destination and its documentation, [let their team know](mailto:contact@custify.com)!_
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Custify" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Custify Developer area](https://app.custify.com/settings/developer/api-key).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Custify" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Custify Developer area](https://app.custify.com/settings/developer/api-key).
 
 ## Identify
 

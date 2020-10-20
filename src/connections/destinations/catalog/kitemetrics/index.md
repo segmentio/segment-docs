@@ -4,9 +4,9 @@ rewrite: true
 ---
 [Kitemetrics](https://kitemetrics.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides keyword level attribution for Apple Search Ads and associates them with In-App Purchases.  Kitemetrics allows you to use automation to easily manage and optimize Apple Search Ads campaigns and bids.
 
-This destination is maintained by Kitemetrics. For any issues with the destination, [contact their team](mailto:support@kitemetrics.com).
+This destination is maintained by Kitemetrics. For any issues with the destination, [contact the Kitemetrics Support team](mailto:support@kitemetrics.com).
 
-_**NOTE:** The Kitemetrics Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 9, 2019. If you are interested in joining their beta program or have any feedback to help improve the Kitemetrics Destination and its documentation, [let their team know](mailto:support@kitemetrics.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
@@ -14,9 +14,9 @@ _**NOTE:** The Kitemetrics Destination is currently in beta, which means that th
 {% include content/connection-modes.md %}
 
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Kitemetrics" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Kitemetrics Account Settings -> Applications page](https://cloud.kitemetrics.com/applications).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Kitemetrics" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Kitemetrics Account Settings -> Applications page](https://cloud.kitemetrics.com/applications).
 4. Once data is flowing from your source to the Kitemetrics destination, you will need to refresh your browser to view the latest data in your Kitemetrics analytics or keywords dashboard.
 
 

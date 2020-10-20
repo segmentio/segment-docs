@@ -10,9 +10,9 @@ This document was last updated on January 09, 2019. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI's Destinations page click on "Add Destination".
-  2. Search for "QuanticMind" within the Destinations Catalog and confirm the Source you'd like to connect to.
-  3. Drop in your `ClientID`, and `Domain` if provided, from QuanticMind account manager.
+  1. From the Segment web app, click **Catalog**.
+  2. Search for "QuanticMind" in the Catalog, select it, and choose which of your sources to connect the destination to.
+  3. In the destination settings, enter your `ClientID`, and `Domain` if provided, from QuanticMind account manager.
   4. Under `Events` you can then map any necessary 'track' event/s to QuanticMind numbered event/s. Note that unless mapped in the settings, no 'track' calls will be sent to QuanticMind.
 
 

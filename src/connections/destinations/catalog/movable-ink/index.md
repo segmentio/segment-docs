@@ -7,7 +7,7 @@ title: Movable Ink Destination
 
 This destination is maintained by [Movable Ink](https://movableink.com/). If you have any issues, contact Movable Ink at support@movableink.com.
 
-_**NOTE:** Movable Ink is currently in beta and this doc was last updated on March 14, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Movable Ink Destination and its documentation, and [let us know](https://segment.com/help/contact)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

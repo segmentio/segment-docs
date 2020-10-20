@@ -1,12 +1,12 @@
 # The default owners for everything in
 # the repo. Unless a later match takes precedence.
-CODEOWNERS  @sanscontext @markzegarelli @nielst @XavierAgostini @danielstjules @stephment
+CODEOWNERS  @segmentio/segment-doc-team
 
 # Diagram library
 /diagram-library @sanscontext
 
 # Utility scripts
-/scripts @sanscontext @XavierAgostini
+/scripts @segmentio/segment-doc-team @XavierAgostini
 
 # Vale Linting
 /vale-styles @segmentio/segment-doc-team
@@ -24,7 +24,7 @@ CODEOWNERS  @sanscontext @markzegarelli @nielst @XavierAgostini @danielstjules @
 /src/connections/catalog/libraries  @osamakhn @bsneed @pooyaj @juliofarah
 
 # Destination owners
-/src/connections/destinations  @n2parko @danielstjules @benhorowitz
+/src/connections/destinations  @segmentio/segment-doc-team
 
 
 # Privacy owners

@@ -6,17 +6,17 @@ beta: true
 
 [Candu](https://www.candu.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the first Editor for your app. Instead of overlaying an experience layer, Candu’s embedded components inherit your style guide, so they look like a native part of your interface. Candu helps you build, iterate, and personalize native onboarding experiences that guide your end-users from basic to expert-level fluency.
 
-This destination is maintained by Candu Labs. For any issues with the destination, [contact their team](mailto:support@candu.ai).
+This destination is maintained by Candu Labs. For any issues with the destination, [contact the Candu Support team](mailto:support@candu.ai).
 
-_**NOTE:** The Candu Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 18th, 2020. If you are interested in joining their beta program or have any feedback to help improve the Candu Destination and its documentation, [let their team know](mailto:support@candu.ai)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Candu" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Candu Settings page](https://app.candu.ai/settings/workplace).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Candu" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Candu Settings page](https://app.candu.ai/settings/workplace).
 
 ## Page
 

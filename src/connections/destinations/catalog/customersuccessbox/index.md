@@ -5,9 +5,9 @@ rewrite: true
 
 [CustomerSuccessBox](https://customersuccessbox.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is Outcome Driven Customer Success software, which helps maximize retention, drive product adoption and grow revenue for your B2B SaaS
 
-This destination is maintained by CustomerSuccessBox. For any issues with the destination, [contact their team](mailto:support@customersuccessbox.com).
+This destination is maintained by CustomerSuccessBox. For any issues with the destination, [contact the CustomerSuccessBox Support team](mailto:support@customersuccessbox.com).
 
-_**NOTE:** The CustomerSuccessBox Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 10, 2019. If you are interested in joining their beta program or have any feedback to help improve the CustomerSuccessBox Destination and its documentation, [let their team know](mailto:support@customersuccessbox.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
@@ -17,8 +17,8 @@ _**NOTE:** The CustomerSuccessBox Destination is currently in beta, which means 
 
 ### Adding Destination
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "CustomerSuccessBox" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "CustomerSuccessBox" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Copy "API key for POST request" from under "Settings (Gear icon) > Developer Console > API Key tab" in your CustomerSuccessBox.
 4. Fill "API key for POST request" as "API Key" for CustomerSuccessBox Destination app in Segment UI
 
