@@ -3,7 +3,7 @@ rewrite: true
 title: Courier Destination
 ---
 
-[Courier](https://courier.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a way to design & deliver notifications. Design once with a rich visual editor and  deliver to any channel through one API request.
+[Courier](https://courier.com?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides a way to design and deliver notifications. Design once with a rich visual editor and  deliver to any channel through one API request.
 
 This destination is maintained by Courier. For any issues with the destination, [contact the Courier support team](mailto:support@courier.com).
 
