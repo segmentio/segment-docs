@@ -54,7 +54,7 @@ For more information on how Courier handles profiles, see the [Courier Profile d
 
 ## Track
 
-If you aren't familiar with the Segment Spec, reference the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
+If you aren't familiar with the Segment Spec, read through the [Track method documentation](https://segment.com/docs/connections/spec/track/) to learn about what it does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')
