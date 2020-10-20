@@ -23,7 +23,7 @@ dev: node_modules vendor/bundle
 netlify: node_modules vendor/bundle
 	@$(BIN)/concurrently --raw --kill-others -n webpack,jekyll \
 		"$(BIN)/webpack --mode=development" \
-		"bundle exec jekyll build --trace --incremental"
+		"bundle exec jekyll build --trace --incremental -V"
 
 .PHONY: intialize-work-dir
 intialize-work-dir:
