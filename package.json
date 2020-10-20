@@ -10,6 +10,14 @@
       "remark-preset-lint-recommended"
     ]
   },
+  "scripts": {
+    "develop": "bundle exec jekyll clean && webpack --mode production && bundle exec jekyll build --trace -V",
+    "develop:jekyll": "sleep 5 && bundle exec jekyll serve --watch",
+    "develop:webpack": "webpack --mode development --watch",
+    "build": "run-s build:webpack build:jekyll purgecss",
+    "build:jekyll": "JEKYLL_ENV=production bundle exec jekyll build",
+    "build:webpack": "webpack --mode production"
+  },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
