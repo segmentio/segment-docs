@@ -11,15 +11,15 @@ On the Segment annual Team plan, you are billed at the end of your 14-day trail 
 
 ## How do I change my plan?
 
-If you already have a Segment workspace, you can change which plan your workspace is on by navigating to the "Usage & Billing" menu, then finding the "Plans" page. You can select your new plan on the "Plans" page.
+If you already have a Segment workspace, you can change which plan your workspace is on by navigating to the "Usage & Billing" menu, then finding the "Plans" page. You can select a different plan from the "Plans" page.
 
-_If you cancel or downgrade your workspace within your 2-week trial period, you will not incur any charges._
+_If you cancel or downgrade your plan during the two-week trial period, you do not incur any charges._
 
-### What if I cancel my workspace before the end of the month?
+### What if I cancel my paid plan before the end of the month?
 
 #### Cancellation on the Monthly Team Plan
 
-If you cancel your workspace or downgrade to a free account before the end of your official billing period on the monthly team plan, you will receive a final bill consisting of a prorated amount for the $120 base + a charge for any MTUs you have used over the allotted 10,000 at the rates posted on our [pricing page](https://segment.com/pricing).
+If you cancel your plan or downgrade to a free account before the end of your official billing period on the monthly team plan, you will receive a final bill for the prorated amount for the $120 base + a charge for any MTUs you have used over the allotted 10,000 at the rates posted on our [pricing page](https://segment.com/pricing).
 
 #### Cancellation on the Annual Team Plan
 

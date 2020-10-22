@@ -16,11 +16,11 @@ Each data blob (with its properties or traits) goes through this endpoint, and i
 
 ## How does Segment calculate MTUs?
 
-Segment counts the number of **unique** `userID`s, and then adds the number of **unique** `anonymousId`s that are never associated with a `userID`. Segment counts these IDs over all calls made from all sources in your workspace, over a billing month. Segment only counts each user once per month, even if they perform more than one action or are active across more than one source.
+Segment counts the number of **unique** `userId`s, and then adds the number of **unique** `anonymousId`s that are never associated with a `userId`. Segment counts these IDs over all calls made from all sources in your workspace, over a billing month. Segment only counts each user once per month, even if they perform more than one action or are active across more than one source.
 
-For example, a user might visit your website, and use your mobile app. At first, they would have two `anonymousID`s, one for each platform. However, if they log in during the course of the month, that `anonymousID` is attached to a `userID`.
-If the user logs in on _just_ the app, you would still see two MTUs: one `anonymousID` for the website source, and one `anonymousID` with an attached `userID` from the app source.
-If the user logs in on _both_ the app and website, they would count as one MTU: two different `anonymousID`s attached to one `userID`.
+For example, a user might visit your website, and use your mobile app. At first, they would have two `anonymousId`s, one for each platform. However, if they log in during the course of the month, that `anonymousId` is attached to a `userId`.
+If the user logs in on _just_ the app, you would still see two MTUs: one `anonymousId` for the website source, and one `anonymousId` with an attached `userId` from the app source.
+If the user logs in on _both_ the app and website, they would count as one MTU: two different `anonymousId`s attached to one `userId`.
 
 ## How do I see my usage data?
 
@@ -83,7 +83,7 @@ For example, consider these instances with some of our most popular destinations
 
 - Segment does not pass data from [Identify calls](https://segment.com/docs/connections/spec/identify) to Google because it is against Google's terms of service to pass Personally Identifiable Information (PII) to the Google Analytics reporting interface. If you need to pass data from an Identify call, you can set up a [Custom Dimension mapping](/docs/connections/destinations/catalog/google-analytics/#custom-dimensions) to override this.
 
-- To pass the `userID` from your [Identify calls](https://segment.com/docs/connections/spec/identify/) to Google Analytics, go to the Google Analytics destination settings in the Segment web app, locate the **Advanced Google Analytics settings**, and enable **Send User-ID to GA**.
+- To pass the `userId` from your [Identify calls](https://segment.com/docs/connections/spec/identify/) to Google Analytics, go to the Google Analytics destination settings in the Segment web app, locate the **Advanced Google Analytics settings**, and enable **Send User-ID to GA**.
 
 #### Amplitude
 
@@ -91,26 +91,47 @@ By default, Segment doesn't send standard [Page calls](https://segment.com/docs
 
 To send Page and Screen calls to Amplitude, go to the Amplitude destination settings in the Segment web app, and locate the **Advanced Options** tab.
 
-- Amplitude can only automatically link an anonymous user to their logged-in `userID` if the events or traits come from a device-mode source (such as Analytics.js or a mobile library). If you use a server library or the Segment HTTP API, Amplitude can't _automatically_ connect the anonymous user to their logged-in identity. To work around this so Amplitude can connect the anonymous and identified user, make your Identify call when the user logs in, and include both the `anonymousID` from before the user logged in _and_ the `userID` the user provided at log-in.
+- Amplitude can only automatically link an anonymous user to their logged-in `userId` if the events or traits come from a device-mode source (such as Analytics.js or a mobile library). If you use a server library or the Segment HTTP API, Amplitude can't _automatically_ connect the anonymous user to their logged-in identity. To work around this so Amplitude can connect the anonymous and identified user, make your Identify call when the user logs in, and include both the `anonymousId` from before the user logged in _and_ the `userId` the user provided at log-in.
 
 - For Amplitude to associate both client-side and server-side activity with the same user, you must pass the same `deviceId` to Amplitude. Otherwise, Amplitude creates two users - one associated with the user's `deviceId` and another user associated with the user's Segment `anonymousId`.
 
 
 ## What might cause a spike in my MTU count?
 
-MTU counts usually increase when you have an increase in users or visitors on instrumented parts of your site or application. Sometimes you'll see a spike when you post a big press release or marketing campaign that leads to an influx of visitors. Another potential cause of big increases is adding tracking to new parts of your site or app, for example a marketing page that didn't have tracking before.
+There are several reasons why you might see a sudden increase in MTUs. Most of them are due to traffic fluctuations, however, some changes you make in code might also increase your MTU count, usually because you are (unexpectedly) generating a new `anonymousId` or `userId` for a single user.
 
-Another possibility is an increase in the number of interactions you have with your users outside your app (emails, help desk, push notifications, etc) that are being imported by cloud sources. Since you are now tracking users you weren't tracking before, your MTU count will go up. If you're already tracking those users elsewhere with Segment, we won't double-count them.
+> success ""
+> If you think an implementation problem is causing an increase in your MTU count, [contact Segment Product Support](https://segment.com/help/contact/) as soon as possible for help troubleshooting and resolving the issue.
 
-There are also some scenarios in which MTU numbers might be higher than expected because you are (unexpectedly) generating a new `anonymousId` or `userId` for a single user.
 
-- If you are calling `analytics.reset()` more than you did previously. (This generates a new `anonymousID` each time it is called, and detaches any association from a known `userID`. To resolve this with the main user record you need to make an Identify call again.)
-- If the user already had a `userId` (meaning `user_id` is NOT `null`), and you then call `identify(xxx)` to overwrite this with a different `userId` value.
-- If the `anonymousId` is changed manually, using `analytics.user().anonymousId(xxx)`
-- If the user goes from one page to another, and each page has a different domain - in this case the second page will have a different `anonymousId`.
-- If the user goes from one page to another and the second page exists within an iFrame
-- If the user visits the website from a different browser - each browser generates a different `anonymousId`
-- If the user visits the page incognito
-- If the user clears their cookies
+#### Changes in traffic
 
-If you think there might be an implementation error causing your MTU number to rise, contact [Segment Product Support](https://segment.com/help/contact/) as soon as possible so we can help you troubleshoot and resolve the issue.
+MTU counts usually increase when the number users or visitors to parts of your site or application that use Segment tracking increase. Sometimes you'll see a spike when you post a big press release, or marketing campaign that leads to an influx of visitors. Another potential cause of big increases is adding tracking to parts of your site or app that didn't have tracking before.
+
+#### Changes to imported sources
+
+Another possibility is an increase in the number of interactions with your users outside your app (emails, help desk, push notifications, etc) that you are importing using cloud sources. Tracking users you weren't tracking before increases your MTU count unless you are able to pass a `userId` so they can be resolved with existing users. If you're already tracking those users elsewhere with Segment, they are not counted a second time.
+
+#### User behavior
+
+Users who are very privacy-conscious might cause your tracking to generate more MTUs; however in most cases these users are a fraction of a percentage of total traffic.
+
+- If the user visits the website from a different browser, each browser generates a different `anonymousId`. If these are not linked to a `userId` they continue to count as new MTUs.
+- If the user visits the page in Incognito mode, the browser generates a new `anonymousId` for each incognito session. These IDs are discarded at the end of the session.
+- If the user manually clears their browser cookies, this removes any Segment tracking data they may have gathered, including the `userId` and `anonymousId`s. When they next visit your site they generate all new `anonymousId`s and tracking information. This new information isn't resolved with existing tracked user records until you can attach a `userId` to them.
+
+#### Calling reset
+
+Check to see if you changed how you call `analytics.reset()`. This clears the old user identity information, and generates a new `anonymousId` each time you call it. This creates a user that Segment cannot resolve with an existing user until they are further identified.
+
+#### Overwriting an existing identity
+
+Segment's analytics libraries include methods that allow you to overwrite both the `userId` (using `identify(xxx)`) and `anonymousId` (using `analytics.user().anonymousId(xxx)`). Using these methods on a user whose tracking information already includes an ID can cause the user to be counted more than once.
+
+If you find you need to use one of these overwrite methods, you should check to make sure that the field you are changing is `null` first. This ensures that you don't lose the original tracked identity.
+
+#### Cross-domain issues
+
+If the pages you track are on more than one domain (for example, `mydomain.com` and `mydomain.net`), the user generates a new `anonymousId` for each domain.
+
+If the user goes from one page to another and the second page loads in an iFrame, the page in the iFrame generates its own `anonymousId`.
