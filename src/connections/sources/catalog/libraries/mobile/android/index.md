@@ -96,6 +96,17 @@ Analytics analytics = new Analytics.Builder(context, YOUR_WRITE_KEY)
 Analytics.setSingletonInstance(analytics);
 ```
 
+```kotlin
+// Create an analytics client with the given context and Segment write key.
+val analytics = Analytics.Builder(context, YOUR_WRITE_KEY)
+  .trackApplicationLifecycleEvents() // Enable this to record certain application events automatically!
+  .recordScreenViews() // Enable this to record screen views automatically!
+  .build()
+
+// Set the initialized instance as a globally accessible instance.
+Analytics.setSingletonInstance(analytics);
+```
+
 **Notes**:
 - You can automatically track lifecycle events such as `Application Opened`, `Application Installed`, `Application Updated` to start quickly with core events. These are optional, but highly recommended.
 - This only installs the Segment destination. This means that all your data is sent server-side to tools.  To bundle additional destinations client-side, you'll need to take some additional steps as [shown here](/docs/connections/sources/catalog/libraries/mobile/android/#packaging-sdks-for-device-mode-destinations).
@@ -108,6 +119,10 @@ The entry point of the library is through the `Analytics` class. As you might ha
 Analytics analytics = new Analytics.Builder(context, writeKey).build();
 ```
 
+```kotlin
+val analytics = Analytics.Builder(context, writeKey).build()
+```
+
 The `Analytics.Builder` class lets you customize settings for the Analytics client, including things like the flush interval and packaging Device-mode destinations. Refer to the Javadocs for details on customizable parameters.
 
 We also maintain a global default instance which is initialized with defaults suitable to most implementations.
@@ -116,6 +131,12 @@ We also maintain a global default instance which is initialized with defaults su
 // You can also register your custom instance as a global singleton.
 Analytics.setSingletonInstance(analytics);
 Analytics.with(context).track(...);
+```
+
+```kotlin
+// You can also register your custom instance as a global singleton.
+Analytics.setSingletonInstance(analytics)
+Analytics.with(context).track(...)
 ```
 
 In general, Segment recommends that you use the Builder method because it provides the most flexibility. Remember you can call `Analytics.setSingletonInstance` only _ONCE_, so it's best to put the initialization code inside your custom Application class.
@@ -128,6 +149,18 @@ public class MyApp extends Application {
 
     // Safely call Analytics.with(context) from anywhere within your app!
     Analytics.with(context).track("Application Started");
+  }
+}
+```
+
+```kotlin
+class MyApp : Application() {
+  override fun onCreate() {
+    val analytics = Analytics.Builder(context, writeKey).build()
+    Analytics.setSingletonInstance(analytics)
+
+    // Safely call Analytics.with(context) from anywhere within your app!
+    Analytics.with(context).track("Application Started")
   }
 }
 ```
@@ -168,6 +201,10 @@ Example `identify` call:
 ```java
 Analytics.with(context).identify("a user's id", new Traits().putName("John Doe"), null);
 ```
+
+```kotlin
+Analytics.with(context).identify("a user's id", Traits().putName("John Doe"), null)
+```
 Segment recommends that you make an Identify call once when the user's first creates an account, and only using the Identify call later when their traits change. Segment remembers the previous userIDs and merges the new traits with the old ones.
 
 
@@ -177,6 +214,14 @@ Analytics.with(context).identify(new Traits().putName("Michael Bolton"));
 
 // Sometime later in your app when the user gives you their email
 Analytics.with(context).identify(new Traits().putEmail("mbolton@example.com"));
+```
+
+```kotlin
+// Initially when you only know the user's name
+Analytics.with(context).identify(Traits().putName("Michael Bolton"))
+
+// Sometime later in your app when the user gives you their email
+Analytics.with(context).identify(Traits().putEmail("mbolton@example.com"))
 ```
 
 Remember, you can replace the properties and traits in the code samples with variables that represent the data you actually collected.
@@ -219,12 +264,25 @@ Analytics.with(context).track("Product Viewed", new Properties().putValue("name"
 
 ```
 
+```kotlin
+val analytics = Analytics.Builder(context, writeKey)
+  .trackApplicationLifecycleEvents()
+  .build()
+
+Analytics.with(context).track("Product Viewed", Properties().putValue("name", "Moto 360"))
+
+```
+
 This example Track call tells us that your user just triggered the **Product Viewed** event with a name of "Moto 360."
 
 The Track call properties can be anything you want to record, for example:
 
 ```java
 Analytics.with(context).track("Purchased Item", new Properties().putValue("sku", "13d31").putRevenue(199.99));
+```
+
+```kotlin
+Analytics.with(context).track("Purchased Item", Properties().putValue("sku", "13d31").putRevenue(199.99))
 ```
 
 The Track call includes the following fields:
@@ -266,6 +324,17 @@ Analytics.with(context).screen(null, "Photo Feed", new Properties().putValue("Fe
 Analytics.with(context).screen("Smartwatches", "Purchase Screen", new Properties().putValue("sku", "13d31"));
 ```
 
+```kotlin
+// category "Feed" and a property "Feed Length"
+Analytics.with(context).screen("Feed", Properties().putValue("Feed Length", "26"))
+
+// no category, name "Photo Feed" and a property "Feed Length"
+Analytics.with(context).screen(null, "Photo Feed", Properties().putValue("Feed Length", "26"))
+
+// category "Smartwatches", name "Purchase Screen", and a property "sku"
+Analytics.with(context).screen("Smartwatches", "Purchase Screen", Properties().putValue("sku", "13d31"))
+```
+
 The `screen` call has the following fields:
 
 <table class="api-table">
@@ -300,6 +369,12 @@ Analytics analytics = new Analytics.Builder(context, writeKey)
   .build();
 ```
 
+```kotlin
+val analytics = Analytics.Builder(context, writeKey)
+  .recordScreenViews()
+  .build()
+```
+
 ### Group
 
 Group calls let you associate an [identified user](/docs/connections/sources/catalog/libraries/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
@@ -310,6 +385,10 @@ Example `group` call:
 
 ```java
 Analytics.with(context).group("a user's id", "a group id", new Traits().putEmployees(20));
+```
+
+```kotlin
+Analytics.with(context).group("a user's id", "a group id", Traits().putEmployees(20))
 ```
 
 The `group` call has the following fields:
@@ -344,8 +423,13 @@ Alias is how you associate one identity with another. This is an advanced method
 Example `alias` call:
 
 ```java
-Analytics.with(context).alias(newId)
+Analytics.with(context).alias(newId);
 Analytics.with(context).identify(newId);
+```
+
+```kotlin
+Analytics.with(context).alias(newId)
+Analytics.with(context).identify(newId)
 ```
 
 The `alias` call has the following fields:
@@ -374,6 +458,11 @@ AnalyticsContext analyticsContext = Analytics.with(context).getAnalyticsContext(
 analyticsContext.putValue(...).putReferrer(...).putCampaign(...);
 ```
 
+```kotlin
+val analyticsContext = Analytics.with(context).getAnalyticsContext()
+analyticsContext.putValue(...).putReferrer(...).putCampaign(...)
+```
+
 You can read more about these special fields in the [Segment Common spec documentation](/docs/connections/spec/common/#context).
 
 To alter data specific to the device object you can use the following:
@@ -383,12 +472,23 @@ AnalyticsContext analyticsContext = Analytics.with(context).getAnalyticsContext(
 analyticsContext.device().putValue("advertisingId", "1");
 ```
 
+```kotlin
+val analyticsContext = Analytics.with(context).getAnalyticsContext()
+analyticsContext.device().putValue("advertisingId", "1")
+```
+
 To opt out of automatic data collection, clear the context after initializing the client. Do this _BEFORE_ you send any events.
 
 ```java
 Analytics analytics = new Analytics.Builder(context, writeKey).defaultOptions(defaultOptions).build();
 AnalyticsContext context = analytics.getContext();
 context.clear();
+```
+
+```kotlin
+val analytics = Analytics.Builder(context, writeKey).defaultOptions(defaultOptions).build()
+val context = analytics.getContext()
+context.clear()
 ```
 
 ## Routing collected data
@@ -435,6 +535,14 @@ Analytics analytics = new Analytics.Builder(context, writeKey)
   .build();
 ```
 
+```kotlin
+val analytics = Analytics.Builder(context, writeKey)
+  .use(GoogleAnalyticsIntegration.FACTORY)
+  .use(BranchIntegration.FACTORY)
+  ...
+  .build()
+```
+
 ### Selecting Destinations
 
 You can pass an `options` object on any of the basic Segment API calls that allows you to turn specific destinations on or off. By default, all destinations are enabled. (In Segment's other libraries, you could do this in the list of `integrations` inside the `options` object.)
@@ -452,6 +560,17 @@ Analytics.with(context).track("Purchased Item", new Properties(), new Options().
 Analytics.with(context).track("Purchased Item", new Properties(), new Options().setIntegration(Options.ALL_INTEGRATIONS_KEY, false).setIntegration("Countly", true).setIntegration("Google Analytics", true));
 ```
 
+```kotlin
+// Sent to all destinations
+Analytics.with(context).track("Viewed Item", Properties())
+
+// Sent to all destinations, except Mixpanel
+Analytics.with(context).track("Purchased Item", Properties(), Options().setIntegration("Mixpanel", false))
+
+// Sent only to Google Analytics and Countly
+Analytics.with(context).track("Purchased Item", Properties(), Options().setIntegration(Options.ALL_INTEGRATIONS_KEY, false).setIntegration("Countly", true).setIntegration("Google Analytics", true))
+```
+
 If you build your own instance of the client, you can also specify a default `options` object to use for each call. In the example below, _NONE_ of the analytics events are sent to Heap.
 
 ```java
@@ -465,6 +584,19 @@ Analytics.setSingletonInstance(analytics);
 
 // Now any calls made with this Analytics client won't be sent to Heap
 Analytics.with(context).track("Viewed Item", new Properties());
+```
+
+```kotlin
+// Disable Heap destination
+val defaultOptions = Options().setIntegration("Heap", false)
+
+// Attach the options to our client
+val analytics = Analytics.Builder(context, writeKey).defaultOptions(defaultOptions).build()
+// Set the client as a global singleton so it can be called from anywhere
+Analytics.setSingletonInstance(analytics)
+
+// Now any calls made with this Analytics client won't be sent to Heap
+Analytics.with(context).track("Viewed Item", Properties())
 ```
 
 Notice that the first example uses an Enum to disable the destination, but the second example uses a String. Segment recommends that you use the Enum method for Device-mode destinations, and use the String method to change the behavior of Cloud-mode destinations. The Enum method ensures type safety, and prevents you from accidentally disabling "GoogleAnalytics" instead of "Google Analytics", while the String method gives you more flexibility in what options you pass to cloud-mode destinations.
@@ -483,7 +615,7 @@ Destination name flags are **case sensitive** and match [the destination's name 
 You can retrieve the `anonymousId` set by the library by using:
 
 ```java
-Analytics.with(context).getAnalyticsContext().traits().anonymousId()
+Analytics.with(context).getAnalyticsContext().traits().anonymousId();
 ```
 
 ### Reset
@@ -492,7 +624,7 @@ The `reset` method clears the SDK's internal stores for the current user and gro
 
 The example code below clears all information about the user.
 ```java
-Analytics.with(context).reset()
+Analytics.with(context).reset();
 ```
 
 Events queued on disk are _not_ cleared and are uploaded the next time the app starts.
@@ -511,6 +643,12 @@ log(snapshot.integrationOperationAverageDuration);
 log(snapshot.flushCount);
 ```
 
+```kotlin
+val snapshot = Analytics.with(context).getSnapshot()
+log(snapshot.integrationOperationAverageDuration)
+log(snapshot.flushCount)
+```
+
 ### Adding debug logging
 
 If you run into issues while using the Android library, you can enable logging to help trace the issue. Logging also helps you see how long destinations take to complete their calls so you can find performance bottlenecks.
@@ -519,6 +657,10 @@ The logging is enabled by default in the default singleton instance if your appl
 
 ```java
 Analytics analytics = new Analytics.Builder(context, writeKey).logLevel(LogLevel.VERBOSE)...build();
+```
+
+```kotlin
+val analytics = Analytics.Builder(context, writeKey).logLevel(LogLevel.VERBOSE)...build()
 ```
 
 You can choose to disable logging completely (`LogLevel.NONE`), enable basic logging for the SDK (`LogLevel.BASIC`), enable basic logging for Device-mode destination (`LogLevel.INFO`), or simply log everything (`LogLevel.VERBOSE`).
@@ -536,6 +678,12 @@ Depending on the audience for your app (for example, children) or the countries 
 ```java
 public void optOut(boolean optOut) {
   this.optOut.set(optOut);
+}
+```
+
+```kotlin
+fun optOut(optOut: boolean) {
+  this.optOut.set(optOut)
 }
 ```
 
@@ -579,6 +727,36 @@ properties.putProducts(product1, product2);
 Analytics.with(context).track("Order Completed", properties);
 ```
 
+```kotlin
+import com.segment.analytics.Analytics
+import com.segment.analytics.Properties
+import com.segment.analytics.Properties.Product
+
+// initialize product variables
+lateinit var id: String
+lateinit var orderId: String
+lateinit var sku: String
+var price = 0.0
+var revenue = 0.0
+// initialize a new properties object
+val properties = Properties();
+
+// add orderId and revenue to the properties object
+properties.putValue("orderId", orderId).putValue("revenue", revenue)
+
+// initialize a new product
+Product product1 = new Product(id, sku, price)
+
+// initialize a second product
+Product product2 = new Product(id, sku, price)
+
+// add products to the properties object
+properties.putProducts(product1, product2)
+
+// pass the properties object into your Order Completed event
+Analytics.with(context).track("Order Completed", properties)
+```
+
 Find details on **best practices in event naming** as well as the **Track method payload** in the [Segment Track call spec](/docs/connections/spec/track/).
 
 
@@ -596,6 +774,19 @@ Analytics analytics = new Analytics.Builder(this, ANALYTICS_WRITE_KEY) //
           }
         })
         .build();
+```
+
+```kotlin
+val analytics = Analytics.Builder(this, ANALYTICS_WRITE_KEY) //
+        .connectionFactory(object: ConnectionFactory() {
+          @Throws(IOException::class)
+          override fun openConnection(url: String): HttpURLConnection {
+            val path = Uri.parse(url).path
+            // Replace YOUR_PROXY_HOST with the address of your proxy, e.g. https://aba64da6.ngrok.io.
+            return super.openConnection("YOUR_PROXY_HOST$path")
+          }
+        })
+        .build()
 ```
 
 
@@ -724,4 +915,12 @@ Analytics analytics = new Analytics.Builder(context, writeKey)
   .use(BranchIntegration.FACTORY)
   ...
   .build();
+```
+
+```kotlin
+val analytics = Analytics.Builder(context, writeKey)
+  .use(GoogleAnalyticsIntegration.FACTORY)
+  .use(BranchIntegration.FACTORY)
+  ...
+  .build()
 ```
