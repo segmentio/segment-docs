@@ -20,9 +20,9 @@ This destination is maintained by Snapboard. For any issues with the destination
 {% include content/connection-modes.md %}
 
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Snapboard" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your Snapboard dashboard.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Snapboard" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your Snapboard dashboard.
 
 You can obtain the API Key by [logging into Snapboard](https://snapboard.io/login), clicking on the circle icon in the top-left, and then clicking on the workspace name. Then click on the Settings menu item.
 

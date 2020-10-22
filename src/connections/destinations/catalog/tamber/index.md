@@ -16,7 +16,7 @@ This destination is maintained by Tamber. For any issues with the destination, [
 2. Follow the instructions to configure your Destination and optionally defined a custom name for your `item` and click save.
 3. You may now use either the one-click activation button to complete your set up or continue reading the below steps to manually add the Tamber Destination from within Segment using the "API Key" displayed.
 4. From your Segment UI's Destinations page click on "Add Destination".
-5. Search for "Tamber" within the Destinations Catalog and confirm the Source you'd like to connect to.
+5. Search for "Tamber" in the Catalog, select it, and choose which of your sources to connect the destination to.
 6. Drop the "API Key" into your Segment Settings UI. If you do not have the key from the steps above, you can find it in your [Tamber dashboard](https://dashboard.tamber.com) as the "Project Key" in your project's dashboard.
 
 

@@ -13,9 +13,9 @@ This destination is maintained by MetaCX. For any issues with the destination, c
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "MetaCX" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Segment IO connection](https://app.metacx.com/app/connections).
+1. From the Segment web app, click **Catalog**.
+2. Search for "MetaCX" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Segment IO connection](https://app.metacx.com/app/connections).
 4. If you do not already have a Segment IO connection, create one by clicking the Add Connection button at the bottom right of the page.
 
 

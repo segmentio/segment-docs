@@ -13,8 +13,8 @@ This destination is maintained by ConvertFlow. For any issues with the destinati
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "ConvertFlow" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "ConvertFlow" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Paste in your ConvertFlow website's ID into your Segment Settings UI, which you can find by heading into your [ConvertFlow account](https://app.convertflow.com/), selecting a website and copying the website ID from the website dashboard's URL. This will enable the ConvertFlow website's tracking snippet as a Destination for your selected Segment source. Your ConvertFlow website campaigns can then be fully managed from the ConvertFlow dashboard.
 
 ## Identify

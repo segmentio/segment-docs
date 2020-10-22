@@ -14,8 +14,8 @@ This destination is maintained by ProfitWell. For any issues with the destinatio
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "ProfitWell" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "ProfitWell" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Drop your token into the Segment destination settings for "Public API Token".
 You can find your public token in the [Retain control center](https://www2.profitwell.com/app/engagement) under preview snippet.
 4. Select "wep app" in the dropdown if you're tracking inside the app or "marketing" for your marketing site.

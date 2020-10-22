@@ -20,10 +20,10 @@ This document was last updated on July 11th, 2018. If you notice any gaps, outda
 
 ### Web
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Bugsnag" within the Destinations Catalog and confirm the project you'd like to connect to
+1. From the Segment web app, click **Catalog**.
+2. Search for "Bugsnag" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your API key to your connection settings. You can find your API key in your Bugsnag dashboard under "Settings", which is located in the upper left-hand corner
-4. We'll automatically initialize Bugsnag's javascript script with your API key upon loading analytics.js
+4. Segment automatically initializes Bugsnag's javascript script with your API key upon loading analytics.js
 
 ### Mobile
 

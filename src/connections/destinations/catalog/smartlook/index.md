@@ -13,10 +13,12 @@ This destination is maintained by Smartlook. For any issues with the destination
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Smartlook" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "Project Key" into your Segment Settings UI which you can find from your [project settings](https://www.smartlook.com/app/dashboard/settings/projects) after clicking the **Tracking code** link.
-4. In about 45 minutes the CDN will be updated and Smartlook's recording snippet will be loaded into your page.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Smartlook" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "Project Key" into your Segment Settings UI which you can find from your [project settings](https://www.smartlook.com/app/dashboard/settings/projects) after clicking the **Tracking code** link.
+
+
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Smartlook's recording snippet onto your page.
 
 
 ## Identify

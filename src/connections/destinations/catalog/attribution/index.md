@@ -11,9 +11,9 @@ This destination is maintained by Attribution. For any issues with the destinati
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Attribution" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "Project ID" into your Segment Settings UI which you can find from your [Attribution settings](https://dashboard.attributionapp.com/v1/#!/settings).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Attribution" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "Project ID" into your Segment Settings UI which you can find from your [Attribution settings](https://dashboard.attributionapp.com/v1/#!/settings).
 4. It will take 15 - 30 minutes for data to begin populating on your Attribution dashboard.
 
 ![gettingstarted](images/att1.png)

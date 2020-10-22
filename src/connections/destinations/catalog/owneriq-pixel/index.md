@@ -13,9 +13,9 @@ This destination is maintained by OwnerIQ. For any issues with the destination, 
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "OwnerIQ" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the `dataGroupId`,`analyticsTagId`,`dctTagId` into your Segment Settings UI which you can find from  [My Data Tab under My Audience in CoEx](https://coex.owneriq.com/app/myaudience/data-management/datasources).
+1. From the Segment web app, click **Catalog**.
+2. Search for "OwnerIQ" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the `dataGroupId`,`analyticsTagId`,`dctTagId` into your Segment Settings UI which you can find from  [My Data Tab under My Audience in CoEx](https://coex.owneriq.com/app/myaudience/data-management/datasources).
 
 ## Page
 

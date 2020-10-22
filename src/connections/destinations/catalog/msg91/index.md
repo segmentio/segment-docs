@@ -16,9 +16,9 @@ This destination is maintained by MSG91. For any issues with the destination, [c
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
 
-2.  Search for "MSG91" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2.  Search for "MSG91" in the Catalog, select it, and choose which of your sources to connect the destination to.
 
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [MSG91 dashboard](https://control.msg91.com/signin/) in the API page using the ['API' option in the sidebar](https://help.msg91.com/article/177-where-can-i-find-my-authentication-key). It is recommended that you create a brand new API key for the Segment destination.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [MSG91 dashboard](https://control.msg91.com/signin/) in the API page using the ['API' option in the sidebar](https://help.msg91.com/article/177-where-can-i-find-my-authentication-key). It is recommended that you create a brand new API key for the Segment destination.
 
 
 ## Identify

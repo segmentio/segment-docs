@@ -16,9 +16,9 @@ This document was last updated on January 26, 2018. If you notice any gaps, out-
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Customer.io" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your Customer.io `API Key` and `Site ID`, which you can retrieve from Settings > [API Credentials](https://fly.customer.io/account/api_credentials) in Customer.io, into the Segment UI Settings.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Customer.io" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Customer.io `API Key` and `Site ID`, which you can retrieve from Settings > [API Credentials](https://fly.customer.io/account/api_credentials) in Customer.io, into the Segment UI Settings.
 4. Alternatively, you can automatically sync your Customer.io connection settings to your desired Segment source by following the flow within the Customer.io set up Guide.
 
 ![customerio set up guide screenshot](images/customerio_setup_guide.png)

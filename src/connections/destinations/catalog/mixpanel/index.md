@@ -158,7 +158,7 @@ We also allow you to disable the default behavior and register super properties 
 
 If you've enabled Mixpanel People in your Segment settings, we also call Mixpanel's `people.set` with the same `traits` object. There's no need for an additional API call to populate Mixpanel People.
 
-We also allow you to disable the default behavior and set people properties explicitly by unchecking `Set All Traits as Super Properties or People Properties By Default` and explicitly specifying in the traits or properties you want us to set as people properties in the Mixpanel destination panel in Segment. We'll automatically include any trait on an identify that matches one of Mixpanel's special properties, which you can see in the table above. [Check out the documentation here](#explicitly-set-people-properties-and-super-properties)
+We also allow you to disable the default behavior and set people properties explicitly by unchecking `Set All Traits as Super Properties or People Properties By Default` and explicitly specifying in the traits or properties you want us to set as people properties in the Mixpanel destination panel in Segment. Segment automatically includes any trait on an identify that matches one of Mixpanel's special properties, which you can see in the table above. [Check out the documentation here](#explicitly-set-people-properties-and-super-properties)
 
 If you call `identify` without a `userId`, it may not set the People Properties inside Mixpanel, but it will cache those traits for later use with Segment's `analytics.js`. It is best practice to always call `identify` with a `userId`.
 

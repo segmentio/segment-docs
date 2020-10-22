@@ -12,8 +12,8 @@ This destination is maintained by Clearbit. For any issues with the destination,
 {% include content/connection-modes.md %}
 
 Setup within Segment:
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Clearbit Reveal" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Clearbit Reveal" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In your Segment Settings UI, enter your Clearbit **secret** API key (note: it should start with "sk_"). You can find this in the API section of your [Clearbit dashboard](https://dashboard.clearbit.com/api).
 
 Setup within Clearbit:

@@ -1,7 +1,7 @@
 ---
 title: 'Spec: Identify'
 related:
-  - "/connections/sources/catalog/"
+  - "/docs/connections/sources/catalog/"
 ---
 
 `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them like their email, name, etc.
@@ -209,7 +209,7 @@ Reserved traits we've standardized:
   <tr>
     <td>`name`</td>
     <td>String</td>
-    <td>Full name of a user. If you only pass a first and last name we'll automatically fill in the full name for you.
+    <td>Full name of a user. If you only pass a first and last name Segment automatically fills in the full name for you.
     </td>
   </tr>
   <tr>

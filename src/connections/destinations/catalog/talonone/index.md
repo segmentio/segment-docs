@@ -17,9 +17,9 @@ This destination is maintained by Talon.One. For any issues with the destination
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for `Talon.One` within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your Talon.One Dashboard. Select your Application > Settings > Developer Settings > Create A New API Key
+1. From the Segment web app, click **Catalog**.
+2. Search for `Talon.One` in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your Talon.One Dashboard. Select your Application > Settings > Developer Settings > Create A New API Key
 4. Add your Talon.One Application Domain Name e.g. https://demo.talon.one.
 5. Add at least one Custom Attribute. These are the Segment `Custom Traits` that link to Talon.One's Customer Profile `Custom Attributes`. More Information below.
 

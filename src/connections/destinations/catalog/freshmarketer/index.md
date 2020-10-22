@@ -3,7 +3,7 @@ title: Freshmarketer Destination
 rewrite: true
 ---
 
-Segment makes it easy to send your data to [Freshmarketer](https://www.freshmarketer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) (and lots of other destinations). Once you track your data using our open-source [libraries](/docs/connections/sources/catalog/) we'll translate and route your data to Freshmarketer in the format they understand. Learn more about how to use Freshmarketer with Segment.
+Segment makes it easy to send your data to [Freshmarketer](https://www.freshmarketer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Freshmarketer in the format it can use.
 
 This destination is maintained by Freshmarketer. For any issues with the destination, [contact the Freshmarketer Support team](mailto:support@freshmarketer.com).
 

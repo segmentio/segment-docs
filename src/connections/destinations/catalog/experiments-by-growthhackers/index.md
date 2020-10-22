@@ -13,9 +13,9 @@ This destination is maintained by Experiments by Growthhackers. For any issues w
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Experiments by Growthhackers" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find following the path: "Integrations" > "Segment" > "Settings".
+1. From the Segment web app, click **Catalog**.
+2. Search for "Experiments by Growthhackers" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find following the path: "Integrations" > "Segment" > "Settings".
 
 ## Track
 

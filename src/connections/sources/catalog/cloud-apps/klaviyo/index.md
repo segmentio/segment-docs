@@ -10,9 +10,9 @@ hidden: true
 
 Klaviyo is an email marketing platform that helps companies make more money. It lets you send personalized newsletters, triggered emails, product recommendations, push notifications and sync your data to facebook custom audiences. [Visit Website](https://www.klaviyo.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
-Take your company's email analysis to the next level by **adding Klaviyo as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Klaviyo as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Klaviyo data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Klaviyo with Segment.](/docs/connections/destinations/catalog/klaviyo)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Klaviyo data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. 
 
 
 ## Getting Started

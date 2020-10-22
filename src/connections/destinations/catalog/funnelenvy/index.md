@@ -20,8 +20,8 @@ The FunnelEnvy snippet can be found in your settings within FunnelEnvy which is 
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "FunnelEnvy" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "FunnelEnvy" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Head over to your [FunnelEnvy integration settings](https://backstage.funnelenvy.com/#/integrationsNew) and add "Segment Souce" as a source integration.
 4. Copy the "API Key" from the Segment Source integration in FunnelEnvy into your Segment Settings UI.
 

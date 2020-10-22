@@ -18,9 +18,9 @@ This destination is maintained by Beamer. For any issues with the destination, [
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Beamer" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Beamer settings](https://app.getbeamer.com/settings#api).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Beamer" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Beamer settings](https://app.getbeamer.com/settings#api).
 
 You can select any of the existing API keys in [your list](https://app.getbeamer.com/settings#api), but we recommend creating a new key to use specifically with your new Segment integration. Make sure to **enable the 'Create users' and 'Update users' permissions** for the API key you select.
 

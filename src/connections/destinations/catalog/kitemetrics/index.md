@@ -14,9 +14,9 @@ This destination is maintained by Kitemetrics. For any issues with the destinati
 {% include content/connection-modes.md %}
 
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Kitemetrics" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Kitemetrics Account Settings -> Applications page](https://cloud.kitemetrics.com/applications).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Kitemetrics" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Kitemetrics Account Settings -> Applications page](https://cloud.kitemetrics.com/applications).
 4. Once data is flowing from your source to the Kitemetrics destination, you will need to refresh your browser to view the latest data in your Kitemetrics analytics or keywords dashboard.
 
 

@@ -17,8 +17,8 @@ This destination is maintained by CustomerSuccessBox. For any issues with the de
 
 ### Adding Destination
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "CustomerSuccessBox" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "CustomerSuccessBox" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Copy "API key for POST request" from under "Settings (Gear icon) > Developer Console > API Key tab" in your CustomerSuccessBox.
 4. Fill "API key for POST request" as "API Key" for CustomerSuccessBox Destination app in Segment UI
 

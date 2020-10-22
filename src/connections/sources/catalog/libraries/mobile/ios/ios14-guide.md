@@ -23,7 +23,8 @@ Due to this major change, **you should upgrade to the latest stable version of `
 
 ## You can manually pass the IDFA to the Segment SDK.
 
-If you need to collect the user’s IDFA to pass it to specific destinations, or for other uses, you can <a href="https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#ad-tracking-and-idfa">follow these steps</a> to collect and pass IDFA as a configuration item to the Segment SDK. <!-- canary comment-->
+
+If you need to collect the user’s IDFA to pass it to specific destinations, or for other uses, you can follow the steps for Ad Tracking and IDFA in the [iOS documentation](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa) to collect and pass IDFA as a configuration item to the Segment SDK.
 
 Remember, under iOS14, applications can only collect the IDFA from a user if they consent to make it available. The Segment example code, used along with Apple’s documentation, make it easy for developers to collect and pass the IDFA to the Segment SDK as a configuration item on app load.
 

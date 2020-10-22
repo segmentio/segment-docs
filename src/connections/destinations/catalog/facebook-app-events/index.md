@@ -26,9 +26,9 @@ This page is about the **Facebook App Events**. For documentation on other Faceb
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Facebook App Events" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your Facebook App ID which can be retrieved from your [Facebook Apps dashboard](https://developers.facebook.com/apps/).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Facebook App Events" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Facebook App ID which can be retrieved from your [Facebook Apps dashboard](https://developers.facebook.com/apps/).
 4. Once you turn on the Facebook App Events integration in your app's Segment project, we'll start sending `track` data to Facebook's App Events endpoints.
 
 ## Screen
@@ -55,7 +55,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
                            properties:@{ @"title": @"How to Create a Tracking Plan", @"course": @"Intro to Analytics" }];
 ```
 
-When you call `track` we'll automatically send that event and it's properties to Facebook. In the Facebook analytics interface you'll be able to use the event properties to segment your data.
+When you call `track` Segment automatically sends that event and it's properties to Facebook. In the Facebook analytics interface you'll be able to use the event properties to segment your data.
 
 Facebook App Events doesn't like events with periods in the name so if you send us an event with periods in the name, we'll convert all periods to underscores. So if your event is `friend.added`, we'll send that to Facebook as `friend_added`. We also truncate events that are longer than 40 characters long due to Facebook's API constraints.
 
@@ -102,7 +102,7 @@ If you don't provide a `currency` explicitly, we send `USD`. If any properties d
 
 ### Facebook Events
 
-We'll automatically translate any of your events that match one of our [spec'd events](/docs/connections/spec/) that map to Facebook's spec'd events. The below table shows the out of the box mappings in our integration:
+Segment automatically translates any of your events that match one of our [spec'd events](/docs/connections/spec/) that map to Facebook's spec'd events. The below table shows the out of the box mappings in our integration:
 
 <table>
   <tr>

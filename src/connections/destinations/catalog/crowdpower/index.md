@@ -15,9 +15,9 @@ This destination is maintained by CrowdPower. For any issues with the destinatio
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "CrowdPower" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the API Key into your Segment Settings UI which you can find from your [CrowdPower Project Settings](https://app.crowdpower.io).
+1. From the Segment web app, click **Catalog**.
+2. Search for "CrowdPower" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the API Key into your Segment Settings UI which you can find from your [CrowdPower Project Settings](https://app.crowdpower.io).
 4. To find your CrowdPower API Key, go to the CrowdPower Console and click **Settings** in the sidebar menu. Use your CrowdPower project's Public Key as the API key for Segment.
 
 ## Identify

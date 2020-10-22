@@ -5,7 +5,7 @@ title: Pendo Source
 
 This source is maintained by Pendo. For any issues with the source, [contact the Pendo Support team](mailto:integrations@pendo.io).
 
-*NOTE: The Pendo Source will continue to be adding new events sources as it is still in active development. This doc was last updated on September 13, 2019. If you have any feedback to help improve the Pendo Source and its documentation, [let the Pendo Support team know](mailto:integrations@pendo.io)!*
+*NOTE: The Pendo Source will continue to be adding new events sources as it is still in active development. If you have any feedback to help improve the Pendo Source and its documentation, [let the Pendo Support team know](mailto:integrations@pendo.io)!*
 
 ## Getting Started
 

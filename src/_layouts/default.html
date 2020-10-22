@@ -62,6 +62,13 @@
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
 </head>
 <body>
+  {% if jekyll.environment == "testing" %}
+  <div style="height:30px; background-color:#fbfb81; width:100%; border-bottom: 1px solid #888">
+    <div class="stage">
+      <p>This site is meant for preview only. Please do not share outside of Segment. Search results link directly to production.</p>
+    </div>
+  </div>
+  {% endif %}
   <div id="consent-manager"></div>
   {{ content }}
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">

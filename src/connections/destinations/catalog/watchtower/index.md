@@ -15,9 +15,9 @@ This destination is maintained by Watchtower. For any issues with the destinatio
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Watchtower" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find on the Settings page of your Watchtower dashboard.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Watchtower" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find on the Settings page of your Watchtower dashboard.
 
 ## Page
 

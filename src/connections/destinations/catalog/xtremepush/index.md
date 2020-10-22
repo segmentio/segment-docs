@@ -14,9 +14,9 @@ This destination is maintained by Xtremepush. For any issues with the destinatio
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Xtremepush" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your Xtremepush Project under *Settings > Integrations* as described in the [user guide](https://support.xtremepush.com/hc/en-us/articles/360001351637-Generating-API-Tokens).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Xtremepush" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your Xtremepush Project under *Settings > Integrations* as described in the [user guide](https://support.xtremepush.com/hc/en-us/articles/360001351637-Generating-API-Tokens).
 
 ## Identify
 

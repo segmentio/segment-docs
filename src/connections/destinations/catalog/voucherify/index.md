@@ -14,9 +14,9 @@ This destination is maintained by Voucherify. For any issues with the destinatio
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Voucherify" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" and "API Token" into your Segment Settings UI which you can find from your [Voucherify dashboard](https://voucherify.io/dashboard).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Voucherify" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" and "API Token" into your Segment Settings UI which you can find from your [Voucherify dashboard](https://voucherify.io/dashboard).
 
 #### Getting API Key and API Token
 On the Voucherify Dashboard page:
