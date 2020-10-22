@@ -16,7 +16,7 @@ This destination is maintained by Courier. For any issues with the destination, 
 1. From the Destinations catalog page in the Segment App, click **Add Destination**.
 2. Search for “Courier” in the Destinations Catalog, and select the “Courier” destination.
 3. Choose which Source should send data to the “Courier” destination.
-4. Go to the [Courier Settings Page](https://courier.com/settings), find and copy the “Auth Token”.
+4. Go to the [Courier Settings Page](https://app.courier.com/settings), find and copy the “Auth Token”.
 5. Enter the “Auth Token” in the “Courier” destination settings field “API Key” in Segment.
 
 ## Identify
@@ -50,7 +50,7 @@ analytics.identify('userId123', {
 });
 ```
 
-For more information on how Courier handles profiles, see the [Courier Profile documentation](https://docs.courier.com/reference/profiles-api?utm_source=segmentio&utm_medium=docs&utm_campaign=partners.
+For more information on how Courier handles profiles, see the [Courier Profile documentation](https://docs.courier.com/reference/profiles-api?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
 ## Track
 
@@ -64,7 +64,7 @@ Segment sends Track calls to Courier as a `track` event.
 
 ### Inbound Events and Properties
 
-Segment Track events are inbound events that might trigger a notification when Courier receives them. To begin, events appear in [Courier's Data Logs](https://www.trycourier.app/data/messages?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) after you configure the Courier destination. 
+Segment Track events are inbound events that might trigger a notification when Courier receives them. To begin, events appear in [Courier's Data Logs](https://app.courier.com/data/messages?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) after you configure the Courier destination. 
 
 All Inbound Events coming from Segment Track calls appear with a `Segment-TrackEvent` prefix in Courier to help distinguish them from other inbound events.  
 
@@ -79,9 +79,11 @@ analytics.track('Login Button Clicked', {
   estimatedDelivery: '2020-06-10T18:41:29.093Z',
   ...
 })
+```
+
 > note "Note:"
 > Courier does not send notifications until you publish a Notification Template and map incoming Segment Track events to that published Notification Template. If you send data to Courier before you complete those steps, incoming events are marked with a status of `Unmapped`.  
 
 ### Mapping Inbound Events to Notification Templates
 
-Once you are comfortable with the Notification Template(s) and are ready to send Notifications, you can map these inbound events to start sending. You can do this directly from the [Event Log in Courier](https://www.trycourier.app/data/messages?status=unmapped) or in the `Events` settings page.
+Once you are comfortable with the Notification Template(s) and are ready to send Notifications, you can map these inbound events to start sending. You can do this directly from the [Event Log in Courier](https://app.courier.com/data/messages?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) or in the `Events` settings page.
