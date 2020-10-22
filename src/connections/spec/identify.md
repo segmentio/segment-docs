@@ -1,7 +1,7 @@
 ---
 title: 'Spec: Identify'
 related:
-  - "/connections/sources/catalog/"
+  - "/docs/connections/sources/catalog/"
 ---
 
 The Segment Identify call lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about the user, like their email, name, etc.
