@@ -6,6 +6,14 @@ title: MTUs, Throughput and Billing
 
 MTU stands for "monthly tracked user".
 
+## What is an API call?
+
+When use Segment to collect your data, you use the Segment Methods (Track, Page, Screen, Identify, Group, and Alias) which collect the data in a structured way, and then send it to `api.segment.io`. If you are using the Segment HTTP API, or sending batched data using a cloud-source, this data also goes through this Segment API endpoint.
+
+Each data blob (with its properties or traits) goes through this endpoint, and is considered an "API call".
+
+## What is throughput?
+
 ## How does Segment calculate MTUs?
 
 Segment counts the number of **unique** `userID`s, and then adds the number of **unique** `anonymousId`s that are never associated with a `userID`. Segment counts these IDs over all calls made from all sources in your workspace, over a billing month. Segment only counts each user once per month, even if they perform more than one action or are active across more than one source.
@@ -22,27 +30,31 @@ The Usage page shows what plan the workspace is on, what data volume that plan i
 
 Click the billing period dropdown at the top of the page to see a cumulative, daily report of data volumes by source for the current and last five billing periods, and an overview of the last twelve months of data volumes.
 
+## What is the difference between an event and an object?
+
+We know this sounds like a non-sequitur, but understanding events and objects will help you understand how MTUs are calculated.
+
+An event is a data collection triggered in response to a user action: a [Track call](/docs/connections/spec/track/), or a [Page](/docs/connections/spec/page/) or [Screen](/docs/connections/spec/screen/) call if the action was to navigate to a new page. Events take place in a single moment in time, and include a name and **properties**. When an event happens more than once, it creates a new Event record rather than updating an existing one. For example, a user browsing a product catalog might generate several "Product Viewed" events, which might include the product name, price, and category.
+
+This is in contrast to "Objects" which represent a single thing that persists over time and can be updated. Objects have "traits" (instead of properties) which record information about that object, and which can change over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a [computed trait](#computed-trait) like `logged_in_last_7_days`.
+
 ## MTUs and Cloud sources
 
-If you use Cloud sources to pull in data from your third party services (in addition to tracking your users with Segment library sources), the data from these cloud apps _might_ increase your MTU counts.
+If you use [Cloud sources](/docs/connections/sources/about-cloud-sources/) to pull in data from your third party services (in addition to tracking your users with Segment library sources), the data from these cloud apps _might_ increase your MTU counts.
 
-There are two types of cloud sources: object sources, and event sources. Object sources bring in information about entities, such as a person or company, which can change and have their properties updated over time. Events happen once in time, so while their properties don't change, they can also happen more than once over time.
-
-You can check the **Collections** section of a cloud-source's Segment documentation to see what type of data it sends. The Collections table lists each data type sent from the cloud source, and if that data is an Object or an Event.
+There are two types of cloud sources: **object sources**, and **event sources**. Object sources bring in information about entities, such as a person or company, which can change and have their properties updated over time. Events happen once in time, so while their properties don't change, they can also happen more than once over time.
 
 **Object sources do not increase your MTU count** because the data included doesn't usually contain an IDs. (Object sources _do_ affect your total object count for storage destinations. More on this later.) Some examples of object-sources are [Salesforce](/docs/connections/sources/catalog/cloud-apps/salesforce/), [Zendesk](/docs/connections/sources/catalog/cloud-apps/zendesk/), and [Stripe](/docs/connections/sources/catalog/cloud-apps/stripe/).
 
 **Event sources _can_ create new MTUs** because each event coming from this source includes either a userID or an anonID associated with the event. Some examples of event sources are [Vero](/docs/connections/sources/catalog/cloud-apps/vero/), [Drip](/docs/connections/sources/catalog/cloud-apps/drip/), and [Youbora](/docs/connections/sources/catalog/cloud-apps/youbora/).
 
+> success ""
+> **Tip!** You can check the **Collections** section of a cloud-source's Segment documentation to see what type of data it sends. The Collections table lists each data type sent from the cloud source, and if that data is an Object or an Event.
 
-
-### What is the difference between an event and an object?
-
-Events are append-only data streams, similar to "facts" in data warehousing terminology. Objects are like "dimensional values" that can be updated when they change. The documentation for each cloud source includes if it sends objects or events.
 
 ### How does my event and object volume impact my pricing?
 
-Segment allows each workspace to send up to 250 API calls + objects per MTU in your plan. This means that on a plan with a standard 10,000 MTU limit, you can send up to 2.5M API calls + objects per month.
+Segment allows each workspace to send up to 250 API calls and 250 objects per MTU in your plan. This means that on a plan with a standard 10,000 MTU limit, you can send up to 2.5M API calls + objects per month.
 
 Most customers never hit this limit; business tier plans are eligible for custom limits.
 
@@ -84,21 +96,21 @@ To send Page and Screen calls to Amplitude, go to the Amplitude destination sett
 - For Amplitude to associate both client-side and server-side activity with the same user, you must pass the same `deviceId` to Amplitude. Otherwise, Amplitude creates two users - one associated with the user's `deviceId` and another user associated with the user's Segment `anonymousId`.
 
 
-## What caused an unexpected spike in my MTU count?
+## What might cause a spike in my MTU count?
 
-MTU counts usually increase when you have an increase in users or visitors on instrumented parts of your application. Sometimes you'll see a spike when you post a big press release or marketing campaign that leads to an influx of visitors.
+MTU counts usually increase when you have an increase in users or visitors on instrumented parts of your site or application. Sometimes you'll see a spike when you post a big press release or marketing campaign that leads to an influx of visitors. Another potential cause of big increases is adding tracking to new parts of your site or app, for example a marketing page that didn't have tracking before.
 
-Another potential cause of big increases is adding tracking to new parts of your site or workflow, for example a marketing site that didn't have tracking before. or ramp-up in the number of interactions you have with your users outside your app (emails, help desk, push notifications, etc). Since you are now tracking users you weren't tracking before, your MTU count will go up. If you're already tracking those users elsewhere with Segment, we won't double-count them.
+Another possibility is an increase in the number of interactions you have with your users outside your app (emails, help desk, push notifications, etc) that are being imported by cloud sources. Since you are now tracking users you weren't tracking before, your MTU count will go up. If you're already tracking those users elsewhere with Segment, we won't double-count them.
 
-There are also some scenarios in which MTU numbers may be higher than expected because you might be generating a new `anonymousId` or `userId` for a single user.
+There are also some scenarios in which MTU numbers might be higher than expected because you are (unexpectedly) generating a new `anonymousId` or `userId` for a single user.
 
-- `Analytics.reset()` was called
-- If the user already had a userId assigned (meaning `user_id` was NOT `null`), and then `identify(xxx)` was called with a different `userId` value
+- If you are calling `analytics.reset()` more than you did previously. (This generates a new `anonymousID` each time it is called, and detaches any association from a known `userID`. To resolve this with the main user record you need to make an Identify call again.)
+- If the user already had a `userId` (meaning `user_id` is NOT `null`), and you then call `identify(xxx)` to overwrite this with a different `userId` value.
 - If the `anonymousId` is changed manually, using `analytics.user().anonymousId(xxx)`
-- If the user goes from one page to another, and each page has a different domain - in this case the second page will have a different `anonymousId`
+- If the user goes from one page to another, and each page has a different domain - in this case the second page will have a different `anonymousId`.
 - If the user goes from one page to another and the second page exists within an iFrame
 - If the user visits the website from a different browser - each browser generates a different `anonymousId`
 - If the user visits the page incognito
 - If the user clears their cookies
 
-If you suspect there is an implementation error causing your MTU number to rise contact us immediately and we are happy to help you resolve the issue.
+If you think there might be an implementation error causing your MTU number to rise, contact [Segment Product Support](https://segment.com/help/contact/) as soon as possible so we can help you troubleshoot and resolve the issue.
