@@ -3,6 +3,9 @@ title: iOS14 Guide
 strat: ios
 ---
 
+> warning ""
+> **Note:** You should update your `analytics-ios` and device-mode destinations to adapt to iOS14 changes explained in this guide.
+
 In June 2020, Apple made several privacy-related announcements at WWDC20 about its upcoming iOS14 release, including [changes to the collection and use of Identifier for Advertising (IDFA)](https://developer.apple.com/app-store/user-privacy-and-data-use/). These changes require developers to ask for user consent *before* collecting IDFA to track users across multiple applications.
 
 Segment fundamentally agrees with Apple’s stance. The world is becoming more privacy-conscious, and we believe that every single one of us will have right to own our own data. The best companies are the ones using this data in responsible ways.
@@ -23,7 +26,8 @@ Due to this major change, **you should upgrade to the latest stable version of `
 
 ## You can manually pass the IDFA to the Segment SDK.
 
-If you need to collect the user’s IDFA to pass it to specific destinations, or for other uses, you can [follow these steps](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#ad-tracking-and-idfa) to collect and pass IDFA as a configuration item to the Segment SDK. <!-- canary comment-->
+
+If you need to collect the user’s IDFA to pass it to specific destinations, or for other uses, you can follow the steps for Ad Tracking and IDFA in the [iOS documentation](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa) to collect and pass IDFA as a configuration item to the Segment SDK.
 
 Remember, under iOS14, applications can only collect the IDFA from a user if they consent to make it available. The Segment example code, used along with Apple’s documentation, make it easy for developers to collect and pass the IDFA to the Segment SDK as a configuration item on app load.
 
@@ -48,10 +52,6 @@ Several integration partners made their own updates to support Apple’s iOS14 p
 6. [Facebook App Events](/docs/connections/destinations/catalog/facebook-app-events/#additional-ios-cloud-mode-set-up-for-ios-14)
 
 Additional affected integration partners are in the process of making changes, and these will be included in future updates.
-
-> warning ""
-> **Note:** You should update your `analytics-ios` and device-mode destinations to adapt to iOS14 changes explained above.
-
 
 > info ""
 > If you discover an integration affected by Apple’s iOS14 changes, but is not listed above or does not have updates, [contact customer support](https://segment.com/help/contact/).
