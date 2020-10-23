@@ -44,8 +44,6 @@ Collections are the groupings of resources we pull from your source. In your war
 |  `invoice_items` | object | Sometimes you want to add a charge or credit to a customer but only actually charge the customer's card at the end of a regular billing cycle. This is useful for combining several charges to minimize per-transaction fees or having Stripe tabulate your usage-based billing totals. For more info, see [Stripe's API docs](https://stripe.com/docs/api#invoiceitems) |
 |  `invoice_lines` | object | When retrieving an invoice, you'll get a lines property containing the total count of line items and the first handful of those items For more info, see [Stripe's API docs](https://stripe.com/docs/api#invoice_lines) |
 |  `invoices` | object | Invoices are statements of what a customer owes for a particular billing period, including subscriptions, invoice items, and any automatic proration adjustments if necessary. For more info, see [Stripe's API docs](https://stripe.com/docs/api#invoices) |
-| `orders`  | object |                                    |
-| `order_returns` | object |                              |
 | `order_shipping_methods` | object |                     |
 | `payment_intents`  | object | A PaymentIntent tracks the process of collecting a payment from your customer. A PaymentIntent transitions through multiple statuse throughout its lifetime and ultimately creates at most one successful charge. For more info, see [Stripe's API docs](https://stripe.com/docs/api/payment_intents) |
 | `payment_methods`  | object | PaymentMethod objects represent your customer's payment instruments. They can be used with [PaymentIntents](https://stripe.com/docs/payments/payment-intents) to collect payments or saved to Customer objects to store instrument details for future payments. For more info, see [Stripe's API docs](https://stripe.com/docs/payments/payment-methods) |
@@ -285,34 +283,6 @@ Below are tables outlining the properties included in the collections listed abo
 | `type` | A string identifying the type of the source of this line item, either an `InvoiceItem` or a `Subscription` |
 | `item_id` | If id is prefixed with `ii_` then this is the line item's UUID, if any |
 
-### orders
-
-| Property Name             | Description                                                  |
-| ------------------------- | ------------------------------------------------------------ |
-| `amount`                  |                                                              |
-| `amount_returned`         |                                                              |
-| `application`             |                                                              |
-| `application_fee`         |                                                              |
-| `charge_id`               |                                                              |
-| `currency`                |                                                              |
-| `customer_id`             |                                                              |
-| `email`                   |                                                              |
-| `livemode`                |                                                              |
-| `selected_shipping_method`|                                                              |
-| `status`                  |                                                              |
-
-### order_returns
-
-| Property Name             | Description                                                  |
-| ------------------------- | ------------------------------------------------------------ |
-| `amount`                  |                                                              |
-| `currency`                |                                                              |
-| `description`             |                                                              |
-| `parent_id`               |                                                              |
-| `quantity`                |                                                              |
-| `type`                    |                                                              |
-| `livemode`                |                                                              |
-| `order_id`                |                                                              |
 
 ### order_shipping_methods
 
