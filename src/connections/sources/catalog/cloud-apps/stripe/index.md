@@ -44,11 +44,17 @@ Collections are the groupings of resources we pull from your source. In your war
 |  `invoice_items` | object | Sometimes you want to add a charge or credit to a customer but only actually charge the customer's card at the end of a regular billing cycle. This is useful for combining several charges to minimize per-transaction fees or having Stripe tabulate your usage-based billing totals. For more info, see [Stripe's API docs](https://stripe.com/docs/api#invoiceitems) |
 |  `invoice_lines` | object | When retrieving an invoice, you'll get a lines property containing the total count of line items and the first handful of those items For more info, see [Stripe's API docs](https://stripe.com/docs/api#invoice_lines) |
 |  `invoices` | object | Invoices are statements of what a customer owes for a particular billing period, including subscriptions, invoice items, and any automatic proration adjustments if necessary. For more info, see [Stripe's API docs](https://stripe.com/docs/api#invoices) |
+| `orders`  | object |                                    |
+| `order_returns` | object |                              |
+| `order_shipping_methods` | object |                     |
 | `payment_intents`  | object | A PaymentIntent tracks the process of collecting a payment from your customer. A PaymentIntent transitions through multiple statuse throughout its lifetime and ultimately creates at most one successful charge. For more info, see [Stripe's API docs](https://stripe.com/docs/api/payment_intents) |
 | `payment_methods`  | object | PaymentMethod objects represent your customer's payment instruments. They can be used with [PaymentIntents](https://stripe.com/docs/payments/payment-intents) to collect payments or saved to Customer objects to store instrument details for future payments. For more info, see [Stripe's API docs](https://stripe.com/docs/payments/payment-methods) |
 |  plans | object | A subscription plan contains the pricing information for different products and feature levels on your site. For more info, see [Stripe's API docs](https://stripe.com/docs/api#plans) |
 |  refunds | object | Refund objects allow you to refund a charge that has previously been created but not yet refunded. Funds will be refunded to the credit or debit card that was originally charged. The fees you were originally charged are also refunded. For more info, see [Stripe's API docs](https://stripe.com/docs/api#refunds) |
+| `products`  | object |                                  |
+| `skus`      | object |                                  |
 |  `subscriptions` | object | Subscriptions allow you to charge a customer's card on a recurring basis. A subscription ties a customer to a particular plan you've created. For more info, see [Stripe's API docs](https://stripe.com/docs/api#subscriptions) |
+| `subscription_items` | object |                          | 
 |  `transfer_reversals` | object | A previously created transfer can be reversed if it has not yet been paid out. Funds will be refunded to your available balance, and the fees you were originally charged on the transfer will be refunded. You may not reverse automatic Stripe transfers. For more info, see [Stripe's API docs](https://stripe.com/docs/api#transfer_reversals) |
 |  `transfers` | object | When Stripe sends you money or you initiate a transfer to a bank account, debit card, or connected Stripe account, a transfer object will be created. You can retrieve individual transfers as well as list all transfers. For more info, see [Stripe's API docs](https://stripe.com/docs/api#transfers) |
 
@@ -279,6 +285,46 @@ Below are tables outlining the properties included in the collections listed abo
 | `type` | A string identifying the type of the source of this line item, either an `InvoiceItem` or a `Subscription` |
 | `item_id` | If id is prefixed with `ii_` then this is the line item's UUID, if any |
 
+### orders
+
+| Property Name             | Description                                                  |
+| ------------------------- | ------------------------------------------------------------ |
+| `amount`                  |                                                              |
+| `amount_returned`         |                                                              |
+| `application`             |                                                              |
+| `application_fee`         |                                                              |
+| `charge_id`               |                                                              |
+| `currency`                |                                                              |
+| `customer_id`             |                                                              |
+| `email`                   |                                                              |
+| `livemode`                |                                                              |
+| `selected_shipping_method`|                                                              |
+| `status`                  |                                                              |
+
+### order_returns
+
+| Property Name             | Description                                                  |
+| ------------------------- | ------------------------------------------------------------ |
+| `amount`                  |                                                              |
+| `currency`                |                                                              |
+| `description`             |                                                              |
+| `parent_id`               |                                                              |
+| `quantity`                |                                                              |
+| `type`                    |                                                              |
+| `livemode`                |                                                              |
+| `order_id`                |                                                              |
+
+### order_shipping_methods
+
+| Property Name             | Description                                                  |
+| ------------------------- | ------------------------------------------------------------ |
+| `order_id`                |                                                              |
+| `shipping_id`             |                                                              |
+| `amount`                  |                                                              |
+| `currency`                |                                                              |
+| `description`             |                                                              |
+
+
 ### payment_intents
 
 | Property Name             | Description                                                  |
@@ -337,6 +383,21 @@ Below are tables outlining the properties included in the collections listed abo
 | `interval_count` | The number of intervals (specified in the interval property) between subscription billings |
 | `trial_period_days` | Default number of trial days when subscribing a customer to this plan using trial_from_plan=true |
 
+### products
+
+| Property Name     | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| `active`          |                                                              |   
+| `attributes`      |                                                              |       
+| `caption`         |                                                              |   
+| `deactivate_on`   |                                                              |         
+| `description`     |                                                              |       
+| `images`          |                                                              |   
+| `livemode`        |                                                              |     
+| `name`            |                                                              | 
+| `shippable`       |                                                              |     
+| `url`             |                                                              | 
+
 ### refunds
 
 |  Property Name | Description |
@@ -347,6 +408,19 @@ Below are tables outlining the properties included in the collections listed abo
 | `charge_id` | ID of the charge that was refunded |
 | `receipt_number` | This is the transaction number that appears on email receipts sent for this refund |
 | `reason` | Reason for the refund |
+
+### skus
+
+| Property Name     | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| `product_id`      |                                                              | 
+| `active`          |                                                              |         
+| `currency`        |                                                              |           
+| `image`           |                                                              |       
+| `livemode`        |                                                              |           
+| `price`           |                                                              |
+
+### 
 
 ### subscriptions
 
@@ -366,6 +440,13 @@ Below are tables outlining the properties included in the collections listed abo
 | `quantity` | The quantity of the plan to which the customer is subscribed. |
 | `trial_end` | If the subscription has a trial, the end of that trial. |
 | `trial_start` | If the subscription has a trial, the beginning of that trial. |
+
+### subscription_items
+
+| Property Name     | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| `subscription_id` |                                                              | 
+| `quantity`        |                                                              |   
 
 ### transfer_reversals
 
@@ -391,58 +472,3 @@ Below are tables outlining the properties included in the collections listed abo
 | `reversed` | Whether the transfer has been fully reversed. If the transfer is only partially reversed, this attribute will still be false |
 | `source_transaction` | ID of the charge or payment that was used to fund the transfer. If null, the transfer was funded from the available balance |
 
-## V2 Changelog
-In September 2017, Segment will upgrade all Stripe sources to sync incrementally, using the [List Events](https://stripe.com/docs/api#list_events) endpoint to sync changes to Stripe objects. There are a few benefits to this approach…
-
-  - **Faster sync times:** for larger accounts, we've seen performance improve by 10x
-  - **Additional Object Properties:** Events provide additional metadata about objects, like their creation time and deletion time
-  - **Reduced load on the Stripe API:** Our new Stripe source helps cut down load on our partner's API, and reduces unnecessary data transfer
-
-### How It Works
-1. The Stripe Source will run a full sync of all objects, using the `List All` endpoints for `Charges`, `Customers`, `Refunds`, etc.
-2. After the first sync completes, the source will automatically switch into incremental mode.
-  1. When the source is scheduled to run, it will query for all events since the last sync completed. An event can be an object (e.g. a customer) being `created`, `updated`, or `deleted`
-  2. The Segment source will materialize the event stream into the latest state of the object. So the `charges` table will always reflect the latest `charge.updated` event.
-
-### Changelog
-
-**30-May-2019**
-
-|  **Collection** | **Changes**  |
-|  ------ | -------------------------------------- |
-|  charges | **New Properties**<ul><li>payment_method_id</li><li>payment_intent_id</li></ul> |
-|  invoice_lines   | ***Updated docs for collection*** |
-|  payment_intents | ***New Collection*** |
-|  payment_methods | ***New Collection*** |
-
-|  **Collection** | **Changes**  |
-|  ------ | -------------------------------------- |
-|  accounts | *No Change - accounts cannot be synced incrementally* |
-|  application_fee_refunds | **Deprecated properties** <ul><li> balance_transaction_id </li></ul> |
-|  application_fees | **Deprecated properties** <ul><li>refund_ids</li></ul> |
-|  balance_transaction_fee_details | *No Change* |
-|  balance_transactions | **Deprecated properties** <ul><li>sourced_transfers</li></ul> |
-|  bank_accounts | **Deprecated properties** <ul><li>currency</li></ul>**New properties**<ul><li>is_deleted</li></ul> |
-|  cards | **New properties** <ul><li>customer_id</li><li>is_deleted</li></ul> |
-|  charges | **Deprecated properties**<ul><li>receipt_number</li><li>dispute_id</li><li>tokenization_method</li></ul> |
-|  coupons | *No Change* |
-|  customers | **Deprecated properties**<ul><li>source_ids</li><li>subscription_ids</li><li>discount_id</li></ul>**New properties** <ul><li> is_deleted </li></ul> |
-|  discounts | *No Change* |
-|  disputes | *No Change* |
-|  invoice_items | *No Change* |
-|  invoice_lines | **Deprecated properties** <ul><li>metadata_*</li></ul> |
-|  invoices | **Deprecated properties** <ul><li>line_ids</li><li>attempt_count</li><li>next_payment_attempt</li></ul> |
-|  order_returns | **Deprecated properties**<ul><li>refund_id</li></ul> |
-|  order_shipping_methods | *No Change* |
-|  orders | **Deprecated properties**<ul><li>status_transitions_*</li></ul> |
-|  plans | *No Change* |
-|  products | *No Change* |
-|  refunds | **Deprecated properties** <ul><li>refunds starting with `py_` </li></ul> |
-|  skus | *No Change* |
-|  subscriptions | *No Change* |
-|  subscription_items | ***NEWCOLLECTION*** |
-|  transfer_reversals | *No Change* |
-|  transfers | **Deprecated Properties**<ul><li>reversal_ids</li></ul> |
-
-## Adding Destinations
-Currently, Warehouses are the only supported destination for object-cloud sources.
