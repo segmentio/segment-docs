@@ -64,9 +64,9 @@
 <body>
   {% if jekyll.environment == "testing" %}
   <!-- This section displays on Netlify only -->
-  <div style="height:30px; background-color:#fbfb81; width:100%; border-bottom: 1px solid #888">
+  <div style="height:30px; background-color:#fbfb81; width:100%; border-bottom: 1px solid #888; position: sticky; top:0; z-index: 1000;">
     <div class="stage">
-      <p>This site is meant for preview only. Please do not share outside of Segment. Search results link directly to production.<span id="ghtext"> This page previews pull request <strong><a id="ghlink" href=""></a></strong></span></p>
+      <p>This site is meant for preview only. Please do not share outside of Segment.<span id="ghtext"> This page previews pull request <strong><a id="ghlink" href="" target="_blank"></a></strong></span></p>
     </div>
     <script>
       const page =  window.location.hostname;  
