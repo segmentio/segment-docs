@@ -63,10 +63,29 @@
 </head>
 <body>
   {% if jekyll.environment == "testing" %}
+  <!-- This section displays on Netlify only -->
   <div style="height:30px; background-color:#fbfb81; width:100%; border-bottom: 1px solid #888">
     <div class="stage">
-      <p>This site is meant for preview only. Please do not share outside of Segment. Search results link directly to production.</p>
+      <p>This site is meant for preview only. Please do not share outside of Segment. Search results link directly to production.<span id="ghtext"> This page previews pull request <strong><a id="ghlink" href=""></a></strong></span></p>
     </div>
+    <script>
+      const page =  window.location.hostname;  
+      const regex = /(?!(preview-))(\d+)/g;
+      var span = document.getElementById("ghtext");
+      const found = page.match(regex);
+      const gh_base = "https://github.com/segmentio/segment-docs/pull/"
+    
+      if (found == null) {
+        span.style.display = "none";
+      } else {
+        const pr = found[0]
+        const full_url = gh_base.concat(pr);
+        const link = document.getElementById("ghlink");
+        
+        link.href = full_url;
+        link.innerHTML = pr;
+      }
+      </script>
   </div>
   {% endif %}
   <div id="consent-manager"></div>
