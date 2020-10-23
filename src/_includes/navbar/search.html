@@ -4,7 +4,7 @@
   </div>
   {% if jekyll.environment == "testing" %}
   <input class="field__input input DocsNav-search-input st-search-input" disabled type="text" placeholder="Search disabled for previews"/>
-  {% elsif %}
+  {% else %}
   <input class="field__input input DocsNav-search-input st-search-input" type="text" placeholder="{{ include.placeholder }}"/>
   {% endif %}
   {% unless include.mobile %}
