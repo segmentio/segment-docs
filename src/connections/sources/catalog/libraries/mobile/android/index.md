@@ -535,7 +535,7 @@ analyticsContext.putValue(...).putReferrer(...).putCampaign(...);
 
 {% codeexampletab Kotlin %}
 ```kotlin
-val analyticsContext = Analytics.with(context).getAnalyticsContext()
+val analyticsContext = Analytics.with(context).analyticsContext()
 analyticsContext.putValue(...).putReferrer(...).putCampaign(...)
 ```
 {% endcodeexampletab %}
@@ -555,7 +555,7 @@ analyticsContext.device().putValue("advertisingId", "1");
 
 {% codeexampletab Kotlin %}
 ```kotlin
-val analyticsContext = Analytics.with(context).getAnalyticsContext()
+val analyticsContext = Analytics.with(context).analyticsContext()
 analyticsContext.device().putValue("advertisingId", "1")
 ```
 {% endcodeexampletab %}
@@ -567,7 +567,7 @@ To opt out of automatic data collection, clear the context after initializing th
 {% codeexampletab Java %}
 ```java
 Analytics analytics = new Analytics.Builder(context, writeKey).defaultOptions(defaultOptions).build();
-AnalyticsContext context = analytics.getContext();
+AnalyticsContext context = getAnalyticsContext();
 context.clear();
 ```
 {% endcodeexampletab %}
@@ -575,7 +575,7 @@ context.clear();
 {% codeexampletab Kotlin %}
 ```kotlin
 val analytics = Analytics.Builder(context, writeKey).defaultOptions(defaultOptions).build()
-val context = analytics.getContext()
+val context = analytics.analyticsContext()
 context.clear()
 ```
 {% endcodeexampletab %}
@@ -731,7 +731,7 @@ Analytics.with(context).getAnalyticsContext().traits().anonymousId();
 
 {% codeexampletab Kotlin %}
 ```kotlin
-Analytics.with(context).getAnalyticsContext().traits().anonymousId()
+Analytics.with(context).analyticsContext().traits().anonymousId()
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -776,7 +776,7 @@ log(snapshot.flushCount);
 
 {% codeexampletab Kotlin %}
 ```kotlin
-val snapshot = Analytics.with(context).getSnapshot()
+val snapshot = Analytics.with(context).snapshot()
 log(snapshot.integrationOperationAverageDuration)
 log(snapshot.flushCount)
 ```
@@ -818,17 +818,13 @@ Depending on the audience for your app (for example, children) or the countries 
 {% codeexample %}
 {% codeexampletab Java %}
 ```java
-public void optOut(boolean optOut) {
-  this.optOut.set(optOut);
-}
+Analytics.with(this).optOut(true);
 ```
 {% endcodeexampletab %}
 
 {% codeexampletab Kotlin %}
 ```kotlin
-fun optOut(optOut: Boolean) {
-  optOut to optOut
-}
+Analytics.with(this).optOut(true)
 ```
 {% endcodeexampletab %}
 {% endcodeexample %}
@@ -881,13 +877,6 @@ Analytics.with(context).track("Order Completed", properties);
 import com.segment.analytics.Analytics
 import com.segment.analytics.Properties
 import com.segment.analytics.Properties.Product
-
-// initialize product variables
-lateinit var id: String
-lateinit var orderId: String
-lateinit var sku: String
-var price = 0.0
-var revenue = 0.0
 
 // initialize a new properties object
 val properties = Properties();
