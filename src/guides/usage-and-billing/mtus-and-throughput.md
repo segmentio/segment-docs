@@ -14,6 +14,15 @@ Each data blob (with its properties or traits) goes through this endpoint, and i
 
 ## What is throughput?
 
+<!-- TODO; throughput as a term. ""growth rate of your API usage compared to your monthly tracked users." (API calls + objects) / MTU
+
+- Batched API calls don't reduce throughput usage, as they are unpacked and the objects are counted individually. they do reduce the possibility of rate limit errors
+- Protocols: Blocked events do not count towards your MTU counts as long as blocked event forwarding is disabled.
+- Personas volume does not count against your MTU limit.
+- Replays do not affect your MTU count, unless you are using a Repeater destination.
+
+-->
+
 ## How does Segment calculate MTUs?
 
 Segment counts the number of **unique** `userId`s, and then adds the number of **unique** `anonymousId`s that are never associated with a `userId`. Segment counts these IDs over all calls made from all sources in your workspace, over a billing month. Segment only counts each user once per month, even if they perform more than one action or are active across more than one source.
@@ -26,7 +35,7 @@ If the user logs in on _both_ the app and website, they would count as one MTU: 
 
 If you have questions about your data usage or how it relates to your bill, log into your Segment workspace, click **Settings > Usage and Billing > Usage**.
 
-The Usage page shows what plan the workspace is on, what data volume that plan includes, and how much data you have already used in the current billing period. If you have used more data volume than your plan includes, the page shows information about how much data is in overage, and what your overage rate is.
+The Usage page shows what plan the workspace is on, what data volume that plan includes, and how much data you have already used in the current billing period. If you have used more data volume than your plan includes, the page shows information about how much data is in overage.
 
 Click the billing period dropdown at the top of the page to see a cumulative, daily report of data volumes by source for the current and last five billing periods, and an overview of the last twelve months of data volumes.
 
@@ -36,7 +45,7 @@ We know this sounds like a non-sequitur, but understanding events and objects wi
 
 An event is a data collection triggered in response to a user action: a [Track call](/docs/connections/spec/track/), or a [Page](/docs/connections/spec/page/) or [Screen](/docs/connections/spec/screen/) call if the action was to navigate to a new page. Events take place in a single moment in time, and include a name and **properties**. When an event happens more than once, it creates a new Event record rather than updating an existing one. For example, a user browsing a product catalog might generate several "Product Viewed" events, which might include the product name, price, and category.
 
-This is in contrast to "Objects" which represent a single thing that persists over time and can be updated. Objects have "traits" (instead of properties) which record information about that object, and which can change over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a [computed trait](#computed-trait) like `logged_in_last_7_days`.
+This is in contrast to "Objects" which represent a single thing that persists over time and can be updated. Objects have "traits" (instead of properties) which record information about that object, and which can change over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a [computed trait](/docs/personas/computed-traits/) like `logged_in_last_7_days`.
 
 ## MTUs and Cloud sources
 
@@ -132,6 +141,6 @@ If you find you need to use one of these overwrite methods, you should check to 
 
 #### Cross-domain issues
 
-If the pages you track are on more than one domain (for example, `mydomain.com` and `mydomain.net`), the user generates a new `anonymousId` for each domain.
+If the pages you track are on more than one domain (for example, `mydomain.com` and `mydomain.net`), the user generates a new `anonymousId` for each domain. However, if the domain is a subdomain (for example `mydomain.com` and `app.mydomain.com`), they can share a user cookie and so share identity data and count as only one MTU.
 
 If the user goes from one page to another and the second page loads in an iFrame, the page in the iFrame generates its own `anonymousId`.
