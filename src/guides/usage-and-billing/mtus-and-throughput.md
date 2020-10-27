@@ -8,7 +8,7 @@ MTU stands for "monthly tracked user". (Keep reading to learn [how Segment count
 
 ## What is an API call?
 
-When use Segment to collect your data, you use the Segment tracking methods (Track, Page, Screen, Identify, Group, and Alias) which collect the data [in a structured way](/docs/connections/spec/), and then send it to `api.segment.io`. If you are using the Segment HTTP API, or sending batched data using a cloud-source, that data also goes through this Segment API endpoint.
+When you use Segment to collect your data, you use the Segment tracking methods (Track, Page, Screen, Identify, Group, and Alias) which collect the data [in a structured way](/docs/connections/spec/), and then send it to `api.segment.io`. If you are using the Segment HTTP API, or sending batched data using a cloud-source, that data also goes through this Segment API endpoint.
 
 Each data blob (with its properties or traits) goes through this endpoint, and is considered one "API call".
 
