@@ -8,7 +8,7 @@ Littledata is a smart analytics app that automates ecommerce tracking. Littledat
 
 Littledata is available as an independent [Shopify App](https://apps.shopify.com/segment-com-by-littledata). When you install the Littledata app on your store, Littledata does two things:
 
-1. It inserts a smart tracking script to your store's front end. This script can be used with any custom Shopify site, and uses analytics.js under the hood to send data in a spec-compliant manner to Segment.
+1. It inserts a smart tracking script to your store's front end. You can use this script with any custom Shopify site, and uses analytics.js under the hood to send data in a spec-compliant manner to Segment.
 
 2. The app also sets up server-side webhook forwarding to ensure 100% accuracy of important Customer and Order data.
 
@@ -17,7 +17,7 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 ![](images/littledata_arch.png)
 
 > warning "Note"
-> This integration is maintained by Littledata _and is not supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with our [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is our recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact the Littledata Support team](mailto:support@littledata.io) with any questions.
+> This integration is maintained by Littledata _and is not supported by Segment directly_. The Littledata app has been reviewed by the Segment team for conformance with the [E-Commerce Spec](/docs/connections/spec/ecommerce/v2/), and is the recommended way of using Segment with Shopify. However, it does require a paid subscription with Littledata, who mediates the connection between Shopify and Segment. [Contact the Littledata Support team](mailto:support@littledata.io) with any questions.
 
 ## Getting Started
 
@@ -35,7 +35,7 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 
 ## Device-mode Events
 
-Below is a table of events that **Shopify by Littledata** sends to Segment via the analytics.js libary. These events will show up as tables in your warehouse, and as regular events in your other Destinations supporting device-mode.
+Below is a table of events that **Shopify by Littledata** sends to Segment through the analytics.js libary. These events will show up as tables in your warehouse, and as regular events in your other Destinations supporting device-mode.
 
 
 | Event Name            | Description                                                           |
@@ -71,7 +71,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 | Order Completed         | A prospect has completed an order                                                                                                                                                           |
 | Order Refunded          | An order has been refunded                                                                                                                                                                  |
 | Order Cancelled (v2)    | An admin has cancelled an order (including the cancel_reason)                                                                                                                               |
-| POS Order Placed (v2)   | A user has placed an order via Shopify POS                                                                                                                                                  |
+| POS Order Placed (v2)   | A user has placed an order through Shopify POS                                                                                                                                              |
 | Payment Failure (v2)    | A user completed checkout step 3 but the payment method failed (for example, the card details were valid but the [charge did not succeed(https://stripe.com/docs/testing#cards-responses)]) |
 | Customer Enabled (v2)   | A user has confirmed their email address and created a Shopify customer account with verified_email set as true                                                                             |
 | Fulfilment Update (v2)  | An order fulfilment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                         |
@@ -109,16 +109,16 @@ To support seamless customer tracking the [Mixpanel](/docs/connections/destinati
 
 Additional events available through Littledata's [ReCharge connection](https://www.littledata.io/connections/recharge), and available in cloud-mode destinations.
 
-| Event Name               | Description                                           |
-| ------------------------ | ----------------------------------------------------- |
-| Subscription Created     | A customer has created a subscription                 |
-| Subscription Updated     | A customer has updated a subscription                 |
-| Subscription Cancelled   | A customer has cancelled a subscription               |
-| Order Processed          | A recurring order has been processed                  |
-| Charge Failed            | A failed to charge customer                           |
-| Charge Max Tries Reached | The maximum tries to charge customer has been reached |
-| Payment Method Updated   | A customer has updated the payment method             |
-| Customer Update          | A customer information updated                        |
+| Event Name               | Description                                     |
+| ------------------------ | ----------------------------------------------- |
+| Subscription Created     | A customer has created a subscription           |
+| Subscription Updated     | A customer has updated a subscription           |
+| Subscription Cancelled   | A customer has cancelled a subscription         |
+| Order Processed          | A recurring order is processed                  |
+| Charge Failed            | A failed to charge customer                     |
+| Charge Max Tries Reached | The maximum tries to charge customer is reached |
+| Payment Method Updated   | A customer has updated the payment method       |
+| Customer Update          | A customer information updated                  |
 
 ## Event Properties
 
@@ -154,7 +154,7 @@ The list below outlines the properties included in the events listed above.
 | `step`                            | The checkout step                                                      | Integer       |
 | `paymentMethod`                   | The payment method chosen for checkout                                 | String        |
 | `shipping_method`                 | The shipping method chosen for checkout                                | String        |
-| context.Google Analytics.clientId | Th user's Google Analytics Client ID                                   | String        |
+| context.Google Analytics.clientId | The user's Google Analytics Client ID                                  | String        |
 | context.Google Analytics.geoid    | The user's location                                                    | String        |
 | `context.uip`                     | The user's IP address                                                  | String        |
 | `sent_from`                       | A unique property to identify events sent by Littledata                | String        |
