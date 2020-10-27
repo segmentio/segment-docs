@@ -79,7 +79,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 
 ## Identify calls
 
-For every event where there is an identifiable Shopify customer (from both the device-mode and cloud-mode) Segment also send an Identify call. This happens when the customer logs into the storefront, on the last step of the checkout, with the order, and also after purchase with any customer update in Shopify admin.
+For every event where there is an identifiable Shopify customer (from both the device-mode and cloud-mode) Littledata also sends an Identify call. This happens when the customer logs into the storefront, on the last step of the checkout, with the order, and also after purchase with any customer update in Shopify admin.
 
 The following traits are included with an Identify call:
 
