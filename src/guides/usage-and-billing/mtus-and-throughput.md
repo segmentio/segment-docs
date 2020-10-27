@@ -36,7 +36,7 @@ Imagine that you have both a website and a mobile app. Both the website and mobi
 
 ##### Deduplication across sources
 
-As a simple example, imagine that a user is already logged in on both the website and the mobile app. When the user's activity generates events on the website, these events are sent using Analytics.js, and include the user's `userId`. When they do things on the mobile app, these events are sent from a mobile sources, and also include the `userId`. When Segment counts the MTUs at the end of the month, all the events from the same `userId` only generate one MTU, regardless of the source it came from.
+As a simple example, imagine that a user is already logged in on both the website and the mobile app. When the user's activity generates events on the website, these events are sent using Analytics.js, and include the user's `userId`. When they do things on the mobile app, these events are sent from a mobile source, and also include the `userId`. When Segment counts the MTUs, all the events from the same `userId` only generate one MTU, regardless of the source it came from.
 
 
 ##### Deduplication after log-in
