@@ -82,7 +82,7 @@ Here are a few signs you may be ready to lock your schema:
 
 ### Schema Default Blocking support across connection modes
 
-Track events blocked by Schema filters are prevented from delivering to both device-mode and cloud-mode Destinations. That means if you send a blocked event from a client side library like analytics.js, it is not delivered to any device-mode Destinations.
+Track events blocked by Schema filters are prevented from delivering to both device-mode and cloud-mode Destinations. That means if you send a blocked event from a client side library like Analytics.js, it is not delivered to any device-mode Destinations.
 
 Identify and group call traits blocked by Schema filters **only** blocked from delivering to cloud-mode Destinations. Device-mode destinations receive all traits regardless of whether they are blocked in Schema.
 
