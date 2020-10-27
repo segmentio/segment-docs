@@ -63,7 +63,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment via t
    <td>Product Image Clicked</td>
    <td>User has clicked a product image</td>
   </tr>
-  </table>
+</table>
 <br>
 
 In addition to the events tracked as standard, the following hits can be tracked based on page path:
@@ -90,12 +90,13 @@ In addition to the events tracked as standard, the following hits can be tracked
    <td>Prospect has completed registration</td>
   </tr>
 </table>
+<br>
 
 ## Cloud-mode events
 
 Below is a table of events that **Shopify by Littledata** sends to Segment via Littledata's servers. These events will show up as tables in your warehouse, and as regular events in your other Destinations supporting cloud-mode. They will include the `anonymousId` linking them to the device-mode events where the event was part of a previous user session, or associated with a `userId` that was previously linked with an `anonymousId`. See Littledata's [troubleshooting guide on attribution](https://blog.littledata.io/help/posts/troubleshooting-marketing-attribution-for-shopify/) for more details.
 
-  <table>
+<table>
   <tr>
    <td>Event Name</td>
    <td>Description</td>
@@ -234,6 +235,7 @@ The following traits are included with an Identify call:
 <td>Boolean</td>
 </tr>
 </table>
+<br>
 
 ## Alias calls
 
@@ -281,6 +283,7 @@ Additional events available via Littledata's [ReCharge connection](https://www.l
 <td>Customer information updated</td>
 </tr>
 </table>
+<br>
 
 ## Event Properties
 
