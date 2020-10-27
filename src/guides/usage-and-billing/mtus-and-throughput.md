@@ -16,7 +16,7 @@ Each data blob (with its properties or traits) goes through this endpoint, and i
 
 Depending on your Segment account type, your plan might include a throughput limit. The throughput limit tells you how many API calls, and how many Objects Segment allots you per MTU.
 
-For example, if your workspace's throughput limit is set to 250, this means that you can send 250 API calls and 250 Objects to Segment each month per MTU you've paid for in your plan. If you have a 10,000 MTU plan, this means you can send up to 2.5 million API calls and 2.5 million objects each month.
+For example, if your workspace's throughput limit is set to 250, this means that you can send a combined total of 250 API calls and Objects to Segment each month per MTU you've paid for in your plan. If you have a 10,000 MTU plan, this means you can send up to a total of 2.5 million API calls and objects each month.
 
 These objects and API calls are not tied to a specific user, but are an aggregate number applied to your workspace. Most customers never hit this limit, and Business tier plans are often have custom limits.
 
@@ -29,7 +29,19 @@ You can sometimes "batch" API calls to reduce send times, however batching doesn
 
 Segment counts the number of **unique** `userId`s, and then adds the number of **unique** `anonymousId`s that were not associated with a `userId` during the billing period. Segment counts these IDs over all calls made from all sources in your workspace, over a billing month. Segment only counts each user once per month, even if they perform more than one action or are active across more than one source.
 
-For example, a user might visit your website, and use your mobile app. Both the website and mobile app have pages that you can use without being logged in, and send Identify calls when you do log in. At first, a user would have two `anonymousId`s, one for each platform. However, if they log in during the course of the month, that `anonymousId` gets attached to a `userId`.
+
+#### Example MTU counts
+
+Imagine that you have both a website and a mobile app. Both the website and mobile app have pages that you can use without being logged in, and both send Identify calls when a user _does_ log in.
+
+##### Deduplication across sources
+
+As a simple example, imagine that a user is already logged in on both the website and the mobile app. When the user's activity generates events on the website, these events are sent using Analytics.js, and include the user's `userId`. When they do things on the mobile app, these events are sent from a mobile sources, and also include the `userId`. When Segment counts the MTUs at the end of the month, all the events from the same `userId` only generate one MTU, regardless of the source it came from.
+
+
+##### Deduplication after log-in
+
+Now imagine a new user, who has never logged in. At first, they have two `anonymousId`s, one for the mobile app and one for the website. However, if they log in during the course of the month, you now know who they are, and can attach their `anonymousId` to a `userId`.
 If the user logs in on _just_ the app, you would still see two MTUs: one `anonymousId` for the website source, and one `anonymousId` with an attached `userId` from the mobile app source.
 If the user logs in on _both_ the app and website, they would count as one MTU: two different `anonymousId`s attached to one `userId`.
 
