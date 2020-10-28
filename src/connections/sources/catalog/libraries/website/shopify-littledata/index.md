@@ -37,7 +37,6 @@ Here's an architecture diagram that shows how the Littledata app mediates data f
 
 Below is a table of events that **Shopify by Littledata** sends to Segment through the analytics.js libary. These events will show up as tables in your warehouse, and as regular events in your other Destinations supporting device-mode.
 
-
 | Event Name            | Description                                                           |
 | --------------------- | --------------------------------------------------------------------- |
 | Page Viewed           | The user has viewed a page                                            |
@@ -45,7 +44,6 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Product Clicked       | The user has clicked a product within a product list                  |
 | Product Viewed        | The user has viewed a product page                                    |
 | Product Image Clicked | The user has clicked a product image                                  |
-
 
 In addition to the events tracked as standard, the following hits can be tracked based on page path:
 
@@ -55,7 +53,6 @@ In addition to the events tracked as standard, the following hits can be tracked
 | Cart Viewed            | A prospect has viewed the cart              |
 | Blog Viewed            | A prospect has viewed the blog              |
 | Registration Completed | A prospect has completed registration       |
-
 
 ## Cloud-mode events
 
@@ -75,7 +72,6 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 | Payment Failure (v2)    | A user completed checkout step 3 but the payment method failed (for example, the card details were valid but the [charge did not succeed(https://stripe.com/docs/testing#cards-responses)]) |
 | Customer Enabled (v2)   | A user has confirmed their email address and created a Shopify customer account with verified_email set as true                                                                             |
 | Fulfilment Update (v2)  | An order fulfilment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                         |
-
 
 ## Identify calls
 
@@ -100,7 +96,6 @@ The following traits are included with an Identify call:
 | `state`                 | Whether the customer account is enabled or disabled                                                                                             | String        |
 | `verified_email` (v2)   | Whether the customer has verified their email                                                                                                   | Boolean       |
 
-
 ## Alias calls
 
 To support seamless customer tracking the [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias), [Vero](/docs/connections/destinations/catalog/vero/#alias) and [KISSMetrics](docs/connections/destinations/catalog/kissmetrics/#alias) destinations, Littledata ensures the pre-checkout `anonymousId`is added as an alias of the `userId` (used from checkout step 2 onwards).
@@ -120,43 +115,50 @@ Additional events available through Littledata's [ReCharge connection](https://w
 | Payment Method Updated   | A customer has updated the payment method       |
 | Customer Update          | A customer information updated                  |
 
-## Event Properties
+## Event properties
 
 The list below outlines the properties included in the events listed above.
 
-| Property                          | Description                                                            | Property Type |
-| --------------------------------- | ---------------------------------------------------------------------- | ------------- |
-| `userId`                          | A Shopify Customer ID (after checkout step 2)                          | Double        |
-| `email`                           | A Shopify email address (after checkout step 2)                        | String        |
-| `order_id`                        | The ID of the order                                                    | String        |
-| `checkoutId`                      | The ID of the checkout session                                         | String        |
-| `shipping`                        | The shipping cost                                                      | Float         |
-| `tax`                             | The amount of tax on the order                                         | Float         |
-| `total`                           | The total value of the order                                           | Float         |
-| `affiliation`                     | The affiliation of the order                                           | String        |
-| `coupon`                          | A discount coupon, if applicable                                       | String        |
-| `currency`                        | The currency of the order                                              | String        |
-| `discount`                        | The discounted amount                                                  | Float         |
-| `products`                        | A list of all the product details                                      | Array         |
-| `category`                        | The category of the product                                            | String        |
-| `brand`                           | The brand of the product                                               | String        |
-| `list_id`                         | The ID of the product collection                                       | String        |
-| `list_name`                       | The name of the product collection                                     | String        |
-| `list_position`                   | The product position in the collection                                 | Integer       |
-| `name`                            | The product name                                                       | String        |
-| `price`                           | The product price                                                      | Float         |
-| `product_id`                      | The Shopify product ID (also called shopify_product_id on client side) | String        |
-| `sku`                             | The product SKU                                                        | String        |
-| `variant`                         | The product variant name                                               | String        |
-| `variants`                        | A property that holds product variant IDs and SKUs                     | String        |
-| `shopify_variant_id`              | The Shopify variant ID                                                 | String        |
-| `quantity`                        | The quantity of the related product on the order                       | Integer       |
-| `step`                            | The checkout step                                                      | Integer       |
-| `paymentMethod`                   | The payment method chosen for checkout                                 | String        |
-| `shipping_method`                 | The shipping method chosen for checkout                                | String        |
-| context.Google Analytics.clientId | The user's Google Analytics Client ID                                  | String        |
-| context.Google Analytics.geoid    | The user's location                                                    | String        |
-| `context.uip`                     | The user's IP address                                                  | String        |
-| `sent_from`                       | A unique property to identify events sent by Littledata                | String        |
-| `presentment_currency`            | The user's local currency                                              | String        |
-| `presentment_total`               | The order total in local currency                                      | String        |
+| Property                               | Description                                             | Property Type |
+| -------------------------------------- | ------------------------------------------------------- | ------------- |
+| `userId`                               | A Shopify Customer ID (after checkout step 2)           | Double        |
+| `email`                                | A Shopify email address (after checkout step 2)         | String        |
+| `order_id`                             | The ID of the order                                     | String        |
+| `checkoutId`                           | The ID of the checkout session                          | String        |
+| `shipping`                             | The shipping cost                                       | Float         |
+| `tax`                                  | The amount of tax on the order                          | Float         |
+| `total`                                | The total value of the order                            | Float         |
+| `affiliation`                          | The affiliation of the order                            | String        |
+| `coupon`                               | A discount coupon, if applicable                        | String        |
+| `currency`                             | The currency of the order                               | String        |
+| `discount`                             | The discounted amount                                   | Float         |
+| `products`                             | A list of all the product at that step of the funnel    | Array         |
+| `step`                                 | The checkout step                                       | Integer       |
+| `paymentMethod`                        | The payment method chosen for checkout                  | String        |
+| `shipping_method`                      | The shipping method chosen for checkout                 | String        |
+| `context['Google Analytics'].clientId` | The user's Google Analytics Client ID                   | String        |
+| `context['Google Analytics'].geoid`    | The user's location                                     | String        |
+| `context.uip`                          | The user's IP address                                   | String        |
+| `sent_from`                            | A unique property to identify events sent by Littledata | String        |
+| `presentment_currency`                 | The user's local currency                               | String        |
+| `presentment_total`                    | The order total in local currency                       | String        |
+
+## Product properties
+
+Each item in the `products` array may have the following properties:
+
+| Property             | Description                                      | Property Type |
+| -------------------- | ------------------------------------------------ | ------------- |
+| `product_id`         | The Shopify product ID                           | String        |
+| `shopify_product_id` | Also Shopify product ID, with device-mode events | String        |
+| `sku`                | The product SKU                                  | String        |
+| `variant`            | The product variant name                         | String        |
+| `shopify_variant_id` | The Shopify variant ID                           | String        |
+| `category`           | The category of the product (defaults to `all`)  | String        |
+| `brand`              | The brand of the product                         | String        |
+| `list_id`            | The ID of the product collection                 | String        |
+| `list_name`          | The name of the product collection               | String        |
+| `list_position`      | The product position in the collection           | Integer       |
+| `name`               | The product name                                 | String        |
+| `price`              | The product price                                | Float         |
+| `quantity`           | The quantity of products                         | Integer       |
