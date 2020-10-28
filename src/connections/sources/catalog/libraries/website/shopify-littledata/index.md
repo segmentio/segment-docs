@@ -54,7 +54,7 @@ In addition to the events tracked as standard, the following hits can be tracked
 | Blog Viewed            | A prospect has viewed the blog              |
 | Registration Completed | A prospect has completed registration       |
 
-## Cloud-mode events
+## Cloud-mode Events
 
 Below is a table of events that **Shopify by Littledata** sends to Segment from Littledata's servers. These events appear as tables in your warehouse, and as regular events in your other Destinations that support cloud-mode. They include the `anonymousId` that links them to the device-mode events where the event was part of a previous user session, or associated with a `userId` that was previously linked with an `anonymousId`. See Littledata's [troubleshooting guide on attribution](https://blog.littledata.io/help/posts/troubleshooting-marketing-attribution-for-shopify/) for more details.
 
@@ -73,7 +73,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment from 
 | Customer Enabled (v2)   | A user has confirmed their email address and created a Shopify customer account with verified_email set as true                                                                             |
 | Fulfilment Update (v2)  | An order fulfilment status has changed (including status, tracking_numbers and tracking_urls where the shipping integration allows)                                                         |
 
-## Identify calls
+## Identify Calls
 
 For every event where there is an identifiable Shopify customer (from both the device-mode and cloud-mode) Littledata also sends an Identify call. This happens when the customer logs into the storefront, on the last step of the checkout, with the order, and also after purchase with any customer update in Shopify admin.
 
@@ -96,11 +96,11 @@ The following traits are included with an Identify call:
 | `state`                 | Whether the customer account is enabled or disabled                                                                                             | String        |
 | `verified_email` (v2)   | Whether the customer has verified their email                                                                                                   | Boolean       |
 
-## Alias calls
+## Alias Calls
 
 To support seamless customer tracking the [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias), [Vero](/docs/connections/destinations/catalog/vero/#alias) and [KISSMetrics](docs/connections/destinations/catalog/kissmetrics/#alias) destinations, Littledata ensures the pre-checkout `anonymousId`is added as an alias of the `userId` (used from checkout step 2 onwards).
 
-## Subscription ecommerce events
+## Subscription Ecommerce Events
 
 Additional events available through Littledata's [ReCharge connection](https://www.littledata.io/connections/recharge), and available in cloud-mode destinations.
 
@@ -115,7 +115,7 @@ Additional events available through Littledata's [ReCharge connection](https://w
 | Payment Method Updated   | A customer has updated the payment method       |
 | Customer Update          | A customer information updated                  |
 
-## Event properties
+## Event Properties
 
 The list below outlines the properties included in the events listed above.
 
@@ -143,7 +143,7 @@ The list below outlines the properties included in the events listed above.
 | `presentment_currency`                 | The user's local currency                               | String        |
 | `presentment_total`                    | The order total in local currency                       | String        |
 
-## Product properties
+## Product Properties
 
 Each item in the `products` array may have the following properties:
 
