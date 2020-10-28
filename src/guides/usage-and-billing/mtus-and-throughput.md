@@ -14,15 +14,15 @@ Each data blob (with its properties or traits) goes through this endpoint, and i
 
 ## What is throughput?
 
-Depending on your Segment account type, your plan might include a throughput limit. The throughput limit tells you how many API calls, and how many Objects Segment allots you per MTU.
+Depending on your Segment account type, your plan might include a throughput limit. The throughput limit tells you how many API calls and objects Segment allows you per MTU.
 
-For example, if your workspace's throughput limit is set to 250, this means that you can send a combined total of 250 API calls and Objects to Segment each month per MTU you've paid for in your plan. If you have a 10,000 MTU plan, this means you can send up to a total of 2.5 million API calls and objects each month.
+For example, if your workspace's throughput limit is set to 250, this means that you can send a combined total of 250 API calls and objects to Segment each month per MTU you've paid for in your plan. If you have a 10,000 MTU plan, this means you can send up to a total of 2.5 million API calls and objects each month.
 
 These objects and API calls are not tied to a specific user, but are an aggregate number applied to your workspace. Most customers never hit this limit, and Business tier plans are often have custom limits.
 
 #### Batching and throughput limits
 
-You can sometimes "batch" API calls to reduce send times, however batching doesn't reduce your throughput usage. Batched calls are unpacked as they are received, and the objects are counted individually. While batching does not reduce your throughput, it does reduce the possibility of rate limit errors.
+You can sometimes "batch" API calls to reduce send times, however batching doesn't reduce your throughput usage. Batched calls are unpacked as they are received, and the objects and calls the batch contains are counted individually. While batching does not reduce your throughput, it does reduce the possibility of rate limit errors.
 
 
 ## How does Segment calculate MTUs?
@@ -42,6 +42,7 @@ As a simple example, imagine that a user is already logged in on both the websit
 ##### Deduplication after log-in
 
 Now imagine a new user, who has never logged in. At first, they have two `anonymousId`s, one for the mobile app and one for the website. However, if they log in during the course of the month, you now know who they are, and can attach their `anonymousId` to a `userId`.
+
 If the user logs in on _just_ the app, you would still see two MTUs: one `anonymousId` for the website source, and one `anonymousId` with an attached `userId` from the mobile app source.
 If the user logs in on _both_ the app and website, they would count as one MTU: two different `anonymousId`s attached to one `userId`.
 
@@ -60,6 +61,8 @@ We know this sounds like a non-sequitur, but understanding the difference betwee
 An event is a data collection triggered in response to a user action: a [Track call](/docs/connections/spec/track/) (or a [Page](/docs/connections/spec/page/)/[Screen](/docs/connections/spec/screen/) call if the action was to navigate to a new page). Events take place in a single moment in time, and include a name, timestamp, and **properties**. When an event happens more than once, it creates a new Event record (with a new timestamp) rather than updating an existing one. For example, a user browsing a product catalog might generate several "Product Viewed" events, which might include the product name, price, and category.
 
 This is in contrast to "Objects" which represent a single thing that persists over time and can be updated. Objects have "traits" (instead of properties) which record information about that object, and which can change over time. For example a "user" object could have a trait of "email" which doesn't change often, but could also have a [computed trait](/docs/personas/computed-traits/) like `logged_in_last_7_days` that changes between `true` and `false` based on how much they use your site.
+
+
 
 ## MTUs, object throughput, and Cloud sources
 
