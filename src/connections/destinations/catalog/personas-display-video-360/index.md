@@ -7,7 +7,7 @@ hide-settings: true
 Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/) service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements. 
 
 > info ""
-> **Note**: You can connect to a Google Ad Manager account. For more information, see [4. Create an audience and finish DV360 configuration](#) below.
+> **Note**: You can connect to a Google Ad Manager account. For more information, see [4. Create an audience and finish DV360 configuration](#4-create-an-audience-and-finish-dv360-configuration) below.
 
 Segment's integration with DV360 enables Segment customers to sync audiences created in Personas with DV360 to enable centralized audience management and improved retargeting.
 
@@ -168,14 +168,14 @@ Your selection here depends on the type of business you plan to support wit hthe
 ### 2. Configure client integration for web traffic
 
 > info ""
-> **Note**: This step is necessary only if you want ot use Google User IDs to build audiences based on website traffic. If you plan to use mobile identifiers only, continue to [Configure the DV360 destination](#).
+> **Note**: This step is necessary only if you want ot use Google User IDs to build audiences based on website traffic. If you plan to use mobile identifiers only, continue to [3. Enable and configure the DV360 destination](#3-enable-and-configure-the-dv360-destination).
 
 Segment requires the [DoubleClick Floodlight](/docs/connections/destinations/catalog/doubleclick-floodlight/) tag on your website to enable the creation of audiences based on website traffic. This allows Segment to send Google the appropriate identifier (typically `anonymousId`) for users that are in an audience. Google stores these identifiers on its servers and matches them against `google_id`.
 
 To configure DoubleClick Floodlight:
 
 > warning ""
-> **Prerequisite**: Createa a [Javascript Website](/docs/sources/website/analytics.js/quickstart/) source in your Segment workspace if one does not exist. Ensure that this source is configured to track visitors to your website. For more information about configuring Javascript sources, see the [Analytics.js Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
+> **Prerequisite**: Createa a [Javascript Website](/docs/connections/sources/catalog/libraries/website/javascript/) source in your Segment workspace if one does not exist. Ensure that this source is configured to track visitors to your website. For more information about configuring Javascript sources, see the [Analytics.js Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
 
 1. In your workspace, visit the **Catalog** and search for the **DoubleClick Floodlight** destination.
 2. Connect your Javascript Website source to the DoubleClick Floodlight destination, and configure the following settings:
