@@ -57,7 +57,7 @@ sections:
   - path: /connections/destinations/catalog/google-cloud-pubsub
     title: Google Cloud Pubsub destination
 
-slug: salesforce
+- slug: salesforce
   section_title: Salesforce Integrations
   section:
   - path: /connections/destinations/catalog/salesforce
