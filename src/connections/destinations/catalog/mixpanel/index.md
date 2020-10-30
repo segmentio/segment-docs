@@ -148,6 +148,8 @@ You won't see server-side `traits` appear as super-properties on any events you 
 
 For Mixpanel People, it's important to `identify` a user before you call `track`. A `track` without an `identify` won't create a user in Mixpanel People.
 
+if you're using Cloud-mode you must explicitly include the grouping value as an event property on any event you wish to analyze with Mixpanel's Group Analytics.
+
 ### Register Super Properties
 
 By default, each trait (i.e. properties in an `identify` call) is registered as a super property. This does not require passing a `userId` in the `identify` call. You can pass a `traits` object by itself and it will still register the traits as super properties.
