@@ -40,6 +40,7 @@ When you first create an audience, Personas sends an Identify call for every use
 {% endunless %}
 {% endunless %}
 
+{% unless page.hide-settings == true %}
 ## Settings
 
 Segment lets you change these destination settings from the Segment app without having to touch any code.
@@ -52,7 +53,7 @@ Segment lets you change these destination settings from the Segment app without 
 
   {% endunless %}
 {% endfor %}
-
+{% endunless %}
 {% if currentIntegration.previous_names.size > 1 %}
 
 ## Adding {{ currentIntegration.display_name }} to the integrations object

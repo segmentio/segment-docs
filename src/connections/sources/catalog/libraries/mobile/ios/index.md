@@ -724,7 +724,7 @@ configuration.requestFactory = ^(NSURL *url) {
 
 ## Ad Tracking and IDFA
 
-Starting iOS14, applications must prompt users if that app needs to collect their Identifier for Advertisers (IDFA). Going forward with analytics-ios-4.1 and later, Segment doesn't auto-collect IDFA. If your app or any integrations require the use of IDFA, you need to:
+Starting iOS 14, applications must prompt users if that app needs to collect their Identifier for Advertisers (IDFA). Going forward with analytics-ios-4.1 and later, Segment doesn't auto-collect IDFA. If your app or any integrations require the use of IDFA, you need to:
 
 1. import the [AdSupport](https://developer.apple.com/documentation/adsupport) and [App Tracking Transparency](https://developer.apple.com/documentation/apptrackingtransparency) Frameworks by Apple
 2. pass the below code snippet to Segment config and start tracking events

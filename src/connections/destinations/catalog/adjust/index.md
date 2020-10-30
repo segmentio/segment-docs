@@ -47,7 +47,7 @@ In cases where the Adjust integration sometimes does not track the install attri
 
 #### Additional device-mode set up for iOS 14 support
 
-Segment’s Adjust SDK was updated to use Adjust version 4.23.0 to prepare for iOS 14. The updated Adjust SDK offers iOS14 support, AppTrackingTransparency (ATT) and SKAdNetwork dashboard features.
+Segment’s Adjust SDK was updated to use Adjust version 4.23.0 to prepare for iOS 14. The updated Adjust SDK offers iOS 14 support, AppTrackingTransparency (ATT) and SKAdNetwork dashboard features.
 
 See Adjust's [Steps to Support iOS 14 documentation](https://help.adjust.com/manage-data/data-privacy/ios-14-user-privacy-frameworks#Steps-to-support-iOS-14) for more information.
 
