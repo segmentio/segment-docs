@@ -1,5 +1,7 @@
 ---
 title: Shopify by Littledata Source
+redirect_from:
+  - '/connections/sources/catalog/cloud-apps/shopify-littledata/'
 ---
 
 <!-- LR Note: the working copy of the source catalog YML we built on showed this in the `website` source though as of Nov 18 it's labeled cloud-source -->
