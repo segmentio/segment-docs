@@ -101,10 +101,10 @@ analytics.group('813', {
     postalCode: '02818',
     street: '9000 Forest Lane'
   },
-  phone: '222-333-4444',
+  phone: '222-555-4444',
   description: 'Makes great husky products',
   employees: 4,
-  website: 'https://teemothewolf.com'
+  website: 'https://example.com'
 }, {
   'integrations': {
     'Salesforce': true
@@ -123,8 +123,8 @@ The above call will be sent like the following, in accordance with [Salesforce's
   BillingState: 'RI',
   BillingStreet: '9000 Forest Lane',
   NumberOfEmployees: 4,
-  Phone: '222-333-4444',
-  Website: 'https://teemothewolf.com',
+  Phone: '222-555-4444',
+  Website: 'https://example.com',
   Description: 'Makes great husky products'
 }
 ```
