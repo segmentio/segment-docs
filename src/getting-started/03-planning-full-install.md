@@ -8,8 +8,17 @@ Now that we’ve shown you Segment in action, let’s step back and think throug
 
 - [Define Business Objectives](#define-business-objectives)
 - [Decide what to collect](#decide-what-to-collect)
+  - [Shortcut! Check if a Business Spec meets your needs](#shortcut-check-if-a-business-spec-meets-your-needs)
+    - [B2B Spec](#b2b-spec)
+    - [Ecommerce Spec](#ecommerce-spec)
+    - [Mobile Spec](#mobile-spec)
+    - [Video Spec](#video-spec)
 - [Create naming conventions](#create-naming-conventions)
 - [Develop a Tracking Plan](#develop-a-tracking-plan)
+  - [Using the Tracking Plan Google Sheets template](#using-the-tracking-plan-google-sheets-template)
+  - [Plan your Identify and Group calls](#plan-your-identify-and-group-calls)
+  - [Plan your Track events](#plan-your-track-events)
+  - [Define your Track event properties](#define-your-track-event-properties)
 - [Plan for destination tools](#plan-for-destination-tools)
 
 <!-- /TOC -->
@@ -91,7 +100,7 @@ Regardless of approach, here are some important best practices to keep in mind:
 
 - **Don’t create property keys dynamically:** Avoid creating property names like `"feature_1":"true"`,`"feature_2":"false"` as these are ambiguous and very difficult to analyze
 
-![](/docs/protocols/data-quality/images/asset_nVdJ3ZyA.png)
+![](/docs/protocols/images/asset_nVdJ3ZyA.png)
 
 
 Got all that? Great! You’re now ready to develop a Tracking Plan.
@@ -116,7 +125,7 @@ The template includes all of our Business-case ("semantic") Specs (which we ment
 
 With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](/docs/connections/sources/catalog/libraries/website/javascript/#page) and skip over that tab.
 
-The Identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](/docs/protocols/data-quality/whats-a-tracking-plan/#identifying-your-users).
+The Identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](/docs/protocols/tracking-plan/best-practices/#identify-your-users).
 
 From there, we recommend you specify Track events in the **Track (Custom)** tab. The template includes preexisting events with different numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While this might be more challenging to work with at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
 
@@ -148,7 +157,7 @@ The Group call is similar to the Identify call, but it adds traits associated wi
 
 ### Plan your Track events
 
-We recommend starting with fewer events that are directly tied to one of your [business objectives](/docs/protocols/data-quality/whats-a-tracking-plan/#define-business-objectives), to help avoid becoming overwhelmed by endless number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer more specialized questions.
+We recommend starting with fewer events that are directly tied to one of your [business objectives](/docs/protocols/tracking-plan/best-practices/#define-business-objectives), to help avoid becoming overwhelmed by endless number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer more specialized questions.
 
 At Segment, we started out tracking these events:
 

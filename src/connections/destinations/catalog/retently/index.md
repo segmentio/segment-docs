@@ -7,14 +7,13 @@ title: Retently Destination
 
 This destination is maintained by Retently. For any issues with the destination, [contact the Retently Support team](mailto:support@retently.com).
 
-> note "Note:"
-> The Retently Destination is currently in beta, which means that they are still actively developing the destination. To join their beta program, or if you have any feedback to help improve the Retently Destination and its documentation, [contact the Retently support team](mailto:support@retently.com)!
+{% include content/beta-note.md %}
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+{% include content/connection-modes.md %}
 
-The Retently destination allows you to send transactional surveys when an event is triggered in Segment. 
+The Retently destination allows you to send transactional surveys when an event is triggered in Segment.
 
 It takes only three steps to set everything up and start surveying your audience:
 
@@ -34,7 +33,7 @@ It takes only three steps to set everything up and start surveying your audience
 
 1. In the Retently destination settings in the Segment app, go to the **Map Retently campaigns with Segment events** section.
 2. In the left input field, enter the ID of the survey campaign. [Learn how to configure the survey campaign.](https://help.retently.com/en/articles/4097690-set-up-segment-transactional-email-surveys)
-3. In the right field, list the name of one or more Segment Track events that should trigger the survey in the specified campaign. 
+3. In the right field, list the name of one or more Segment Track events that should trigger the survey in the specified campaign.
    Write the name of the event exactly as it's written in the `analytics.track` method (more details in the section below). You can enter multiple Track events by separating them with a comma symbol (for example Order Placed, Dashboard Visited).
 
 Save your changes to activate the Retently destination. After you complete these steps, Retently sends a survey in your transactional campaign every time one of the specified Track events is triggered in Segment.
@@ -44,7 +43,7 @@ Save your changes to activate the Retently destination. After you complete these
 
 When a Segment Track event fires, Retently performs the following actions:
 
-1. Identifies the Track event name, and attempts to match it with the campaign ID from the Retently destination settings in Segment. If no campaign ID lists this track event name, then Retently dismisses the event. 
+1. Identifies the Track event name, and attempts to match it with the campaign ID from the Retently destination settings in Segment. If no campaign ID lists this track event name, then Retently dismisses the event.
 2. If the Track event name matches a campaign ID, Retently looks for the `properties` object passed with the track event, and creates a new customer record in Retently using the properties listed in the object.
 
 The only property that Retently  **requires** is `email`. All other properties can be assigned as optional customer properties in Retently. To learn how to manage customer properties using Segment track events [see the Retently documentation](https://help.retently.com/en/articles/4097690-set-up-segment-transactional-email-surveys).

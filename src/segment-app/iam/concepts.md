@@ -38,5 +38,5 @@ To create or configure labels, go to the **Labels** tab in your workspace settin
 
 ### Quick Links:
 
-- [Label-based Access Management](/docs/iam/labels/)
-- [Labels Best Practices](/docs/iam/labels/)
+- [Label-based Access Management](/docs/segment-app/iam/labels/)
+- [Labels Best Practices](/docs/segment-app/iam/labels/)

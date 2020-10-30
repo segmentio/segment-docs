@@ -4,17 +4,17 @@ rewrite: true
 ---
 [CustomFit.ai](https://customfit.ai/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is an intelligent `App Experience Engine` for B2C apps(Mobile/Web/IoT), with which one can effortlessly craft hyper-personalized app experiences & alternative user journeys to each of their user or segment of users with zero code. Every user is unique, so should be your app.
 
-This destination is maintained by CustomFit.ai. For any issues with the destination, [contact their team](mailto:reach@customfit.ai).
+This destination is maintained by CustomFit.ai. For any issues with the destination, [contact the CustomFit Support team](mailto:reach@customfit.ai).
 
-_**NOTE:** The CustomFit.ai Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on August 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the CustomFit.ai Destination and its documentation, [let their team know](mailto:reach@customfit.ai)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "CustomFit.ai" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "Server Key" into your Segment Settings UI which you can find from your [CustomFit.ai dashboard](https://dashboard.customfit.ai/settings/app-settings).
+1. From the Segment web app, click **Catalog**.
+2. Search for "CustomFit.ai" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "Server Key" into your Segment Settings UI which you can find from your [CustomFit.ai dashboard](https://dashboard.customfit.ai/settings/app-settings).
 
 ## Identify
 

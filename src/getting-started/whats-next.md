@@ -12,7 +12,7 @@ The [Privacy Portal](/docs/privacy/portal/) allows you to easily audit, monitor,
 
 ## Improve data quality with Protocols
 
-You had a taste of the planning needed to set up clear, consistent, reliable and extensible data schemas in [Planning a Full Install](03-planning-full-install).
+You had a taste of the planning needed to set up clear, consistent, reliable and extensible data schemas in [Planning a Full Install](/docs/getting-started/03-planning-full-install/).
 
 Business tier customers can use Segment's [Protocols](/docs/protocols/) package to help with this process, to keep track of what data is being collected where, and to normalize their data as it flows through Segment. Clean, consistent data helps you move faster to build marketing campaigns and act on analytics insights.
 

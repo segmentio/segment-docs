@@ -2,15 +2,15 @@
 title: Identity Warehouse (Limited Availability)
 ---
 
-
-> note ""
-> **NOTE:** The Identity warehouse currently has limited availability. contact your Segment customer success manager to enable this feature.
+> warning ""
+> **Note:** The Identity warehouse currently has limited availability, and does not support GDPR deletion requests. Contact your Segment customer success manager to enable this feature.
 
 The Personas Identity Warehouse allows customers to export all the identifiers associated with any one user.
 
 When enabled, customers see a source called Personas Identities `<space_name>`. This automatically synchronizes to warehouses in a customer’s workspace. To disable, use Selective Sync.
 
 To query the underlying data, customers can query:
+
 ```sql
 SELECT * FROM personas_<space_name>_identities.users_identities
 ```
@@ -29,6 +29,7 @@ The columns in the tables are:
 | created_at        | when the mapping or merging was created                                    |
 
 ## Example Queries
+
 To see all the identifiers associated with a certain user, first look up the `segment_id` associated with the `external_id_value`. Then, query all `external_id_value`'s associated with the `segment_id`.
 
 ```sql

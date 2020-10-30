@@ -6,7 +6,7 @@ sourceCategory: 'Mobile'
 
 Analytics for React Native makes it simple to send your data to any analytics or marketing tool without having to learn, test or implement a new API every time.
 
-All of Segment's libraries are open-source, so you can [view Analytics for React Native on Github](https://github.com/segmentio/analytics-react-native), or check out our [browser and server-side libraries](/sources) too.
+All of Segment's libraries are open-source, so you can [view Analytics for React Native on GitHub](https://github.com/segmentio/analytics-react-native), or check out our [browser and server-side libraries](/docs/connections/sources/catalog/) too.
 
 Subscribe to the [release feed](https://github.com/segmentio/analytics-react-native/tags.atom).
 
@@ -69,7 +69,7 @@ Note, if you are choosing to not use a dependency manager, you must keep files u
 
 In the interest of keeping our SDK lightweight, Analytics only installs the Segment destination. This means that all your data is sent using Segment's servers to any tools you've enabled using the default Cloud-mode.
 
-[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](/docs/connections/sources/catalog/libraries/mobile/react-native#packaging-integrations).
+[As described here](/docs/connections/destinations/#connection-modes), some integrations require or offer Device-mode connections. In those cases, you'll need to take some additional steps as [shown in the source documentation here](#packaging-destinations-using-device-mode).
 
 Now that the SDK is installed and setup, you're ready to...
 
@@ -208,7 +208,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -284,7 +284,7 @@ analytics.setup('YOUR_WRITE_KEY', {
 
 ### Native configuration
 
-You can also use the native Analytics API to configure the Analytics instance by calling `analytics.useNativeConfiguration()` in your JavaScript code. This prevents the Analytics instance from waiting for additional configuration. 
+You can also use the native Analytics API to configure the Analytics instance by calling `analytics.useNativeConfiguration()` in your JavaScript code. This prevents the Analytics instance from waiting for additional configuration.
 You should wrap the call under a conditional, as in the following example:
 
 ```js
@@ -515,11 +515,14 @@ Yep! Our SDK is [open-source](https://github.com/segmentio/analytics-react-nativ
 
 ### IDFA
 
-Some destinations, particularly mobile attribution tools (e.g. Kochava), require the IDFA (identifier for advertisers). The IDFA shows up in Segment calls in the debugger under `context.device.advertisingId`. In order for this value to be captured by the Segment SDK, ensure that you include the [iAd framework](https://developer.apple.com/reference/iad).
+Some destinations, especially mobile attribution tools (such as Kochava), require the IDFA (identifier for advertisers). The IDFA appears in Segment calls in the debugger as `context.device.advertisingId`. In the [React Native library version 1.3.0](https://github.com/segmentio/analytics-react-native/blob/master/CHANGELOG.md) and later Segment no longer automatically collects the IDFA. IDFA collection must be done outside of Segment, and can be set using the following method:
 
-Once you enable this, you will see the `context.device.advertisingId` populate and the `context.device.adTrackingEnabled` flag set to `true`.
+```java
+import analytics from '@segment/analytics-react-native';
+analytics.setIDFA("123");
+```
 
-_Note_: While the network is deprecated, the relevant [framework](https://developer.apple.com/reference/iad) is not.
+To get the IDFA you can use an external package such as [react-native-idfa](https://www.npmjs.com/package/react-native-idfa).
 
 ### Using a custom anonymousID
 

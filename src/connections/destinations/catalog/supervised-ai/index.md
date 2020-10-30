@@ -24,7 +24,7 @@ This destination is maintained by Supervised AI. For any issues with the destina
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page()
@@ -34,7 +34,7 @@ Segment sends Page calls to Supervised AI as a `pageview`.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -46,7 +46,7 @@ Segment sends Identify calls to Supervised AI as an `identify` event.
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')
@@ -72,3 +72,22 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 }
 ```
 Segment sends Screen calls to Supervised AI as a `screenview`.
+
+## Group
+
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+
+```js
+{
+  "type": "group",
+  "groupId": "0e8c78ea9d97a7b8185e8632",
+  "traits": {
+    "name": "FooBar",
+    "industry": "Insurance",
+    "employees": 329,
+    "plan": "enterprise",
+    "total billed": 830
+  }
+}
+```
+Segment sends Group calls to Supervised AI as a `group` event.

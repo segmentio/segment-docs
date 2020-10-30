@@ -6,10 +6,10 @@ beta: true
 
 [Exponea](https://exponea.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a Customer Data & Experience Platform (CDXP) which creates a unified source of customer intelligence in real-time, ready for immediate activation using its own built‑in omnichannel marketing systems (web, email, push, mobile, text messages,etc.) powered by customer-centric analytics and artificial intelligence (product recommendations and predictions).
 
-This destination is maintained by Exponea. For any issues with the destination, contact your dedicated Exponea team or [support](mailto:support@exponea.com).
+This destination is maintained by Exponea. For any issues with the destination, contact [the Exponea Support team](mailto:support@exponea.com).
 
 
-_**NOTE:** The Exponea Destination is currently in a beta stage, which means that they are still actively developing the destination. This doc was last updated on January 20, 2020. If you are interested in joining their beta program or have any feedback to help improve the Exponea Destination and its documentation, [let their team know](mailto:support@exponea.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
@@ -17,8 +17,8 @@ _**NOTE:** The Exponea Destination is currently in a beta stage, which means tha
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Exponea" within the Destinations Catalog and confirm the Source you would like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Exponea" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Create a [public API group](https://docs.exponea.com/reference#setting-up-access-keys) for your Segment integration in your Exponea project. Don't forget to set the appropriate [group permissions](https://docs.exponea.com/v2/reference#section-modifying-the-access-of-your-api-group) to allow recieveing events and customer updates.
 4. Fill in the "API Base URL", "API key" and "Project Token" into your Segment Settings UI. You can find all of the above in the API settings page of your Exponea project.
 5. Enter your Exponea hard ID and soft ID names into the corresponding fields to specify Segment's userId and anonymousId mapping into your Exponea ID structure.
@@ -48,7 +48,7 @@ Other common fields are used only for `track`, `page` and `screen` calls which a
 
 ## Page
 
-If you have not had a chance to review our spec, take a look tounderstand what the [Page method](https://segment.com/docs/spec/page/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Page method](https://segment.com/docs/connections/spec/page/) does.
 
 Page calls will be sent to Exponea as a `page_visit` event with the `properties` field mapped into event properties and the `name` field mapped into the `page_name` property.
 
@@ -74,7 +74,7 @@ An optional event `session_ping` can be tracked along with `page_visit` for [aut
 
 ## Screen
 
-If you have not had a chance to review our spec, take a look tounderstand what the [Screen method](https://segment.com/docs/spec/screen/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does.
 
 Screen calls will be sent to Exponea as a `screen_visit` event with the `properties` field mapped into event properties and the`name` field mapped into the `screen_name` property.
 
@@ -96,7 +96,7 @@ An optional event `session_ping` can be tracked along with `screen_visit` for [a
 
 ## Track
 
-If you have not had a chance to review our spec, take a look tounderstand what the [Track method](https://segment.com/docs/spec/track/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 Track calls will be sent to Exponea as events under name provided in the event field. The `properties` field will be mapped into event properties (objects will be flattened using underscore).
 
@@ -118,7 +118,7 @@ This track call is translated into a `Registered` event with the following prope
 
 ## Identify
 
-If you have not had a chance to review our spec, take a look tounderstand what the [Identify method](https://segment.com/docs/spec/identify/) does.
+If you have not had a chance to review our spec, take a look tounderstand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.
 
 Identify calls will be sent to Exponea as customer updates with traits set as customer properties.
 

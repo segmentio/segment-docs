@@ -4,9 +4,7 @@ title: Ramen Destination
 
 ## Getting Started
 
-When you toggle on Ramen in Segment, this is what happens:
-​
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Ramen's JavaScript library onto your page. This means you should remove Ramen's snippet from your page if you already have it there.
+When you enable Ramen in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Ramen's JavaScript library onto your page. This means you should remove Ramen's snippet from your page if you already have it there.
 ​
 + As of March 2016, Ramen supports asking questions of anonymous website visitors in addition to logged-in users. Calling [`page`](#page), [`track`](#track), and [`group`](#group) will work without calling [`identify`](#identify). However, when you call [`identify`](#identify) you _must_ pass in an `id` or else the Ramen destination will ignore the call.
 ​

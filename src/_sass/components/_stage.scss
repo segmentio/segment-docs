@@ -14,7 +14,6 @@
     display: none;
     flex: 0 0 230px;
     max-width: 230px;
-    padding-right: 25px;
 
     @include breakpoint(large up) {
       display: block;

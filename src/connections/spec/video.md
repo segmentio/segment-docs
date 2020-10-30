@@ -73,7 +73,7 @@ The type of ad playing at the time of the event. Values can include 'pre-roll', 
 
 #### Position: `Integer`
 
-The current index position **in seconds** of the playhead. If the playback is a livestream, check the documentation for relevant destinations for details on how to correctly pass the playhead position.
+The current index position **in seconds** of the playhead, including the duration of any ads seen (if available). If the playback is a livestream, check the documentation for relevant destinations for details on how to correctly pass the playhead position.
 
 #### Seek Position: `Integer`
 
@@ -90,7 +90,7 @@ The current `kbps`.
 The average `fps`.
 
 #### Video Player: `String`
-The name of the video player (ie 'youtube', 'vimeo').
+The name of the video player (for example `youtube`, `vimeo`).
 
 #### Sound `Integer`
 The sound level of the playback represented in a 0 to 100 scale where 0 is muted and 100 is full volume.
@@ -618,10 +618,12 @@ The channel in which the video content is playing, ie. 'espn', 'my blog'.
 An [ISO 8601 Date String](https://en.wikipedia.org/wiki/ISO_8601) representing the original air date or published date.
 
 #### Position: `Integer`
-The current index position **in seconds** of the playhead. If the playback is a livestream, check the documentation for relevant destinations for details on how to correctly pass the playhead position.
+The current index position **in seconds** of the playhead into the content/asset. This position must exclude the duration of any ads played.
+
+If the playback is a livestream, check the documentation for relevant destinations for details on how to correctly pass the playhead position.
 
 #### Total Length: `Integer`
-The total duration of the playback in seconds. This should include the duration of all your content and ad included in this playback session. For livestream playback, send `null`.
+The total duration of the content/asset in seconds. This should exclude the duration of any ads included in the playback of this asset. For livestream playback, send `null`.
 
 #### Bitrate: `Integer`
 The current `kbps`.

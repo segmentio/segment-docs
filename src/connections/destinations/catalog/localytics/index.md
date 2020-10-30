@@ -2,7 +2,7 @@
 title: Localytics Destination
 ---
 
-Our Localytics mobile destination code is open sourced on Github. Feel free to
+Our Localytics mobile destination code is open sourced on GitHub. Feel free to
 check it out:
 [iOS](https://github.com/segment-integrations/analytics-ios-integration-localytics),
 [Android](https://github.com/segment-integrations/analytics-android-integration-localytics).
@@ -29,7 +29,7 @@ is not yet supported.
 of our client-side libraries
 ([Analytics.js](/docs/connections/sources/catalog/libraries/website/javascript/),
 [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/)/[Android](/docs/connections/sources/catalog/libraries/mobile/android/) SDKs
-with Localytics [bundled](/docs/faqs/sources/bundled-SDK-vs-server) to send data
+with Localytics [bundled](/docs/connections/spec/mobile-packaging-sdks/) to send data
 to Localytics.
 
 You will also need to add the Maven Localytics repo (since Localytics doesn't
@@ -57,8 +57,7 @@ optional properties you want to associate with the event.
 Push notifications on Android require a bit of extra work to setup.
 
 * First, you need to make sure Localytics is being bundled. You can find out
-  more information about bundled integrations in our [Android
-  documentation](/docs/connections/sources/catalog/libraries/mobile/android/#bundled-integrations).
+  more information about bundled integrations in our [Android documentation](/docs/connections/sources/catalog/libraries/mobile/android/#about-mobile-connection-modes).
 
 * Follow Localytics' documentation to [set up the permission in your
   AndroidManifest.xml](http://docs.localytics.com/dev/android.html#modify-androidmanifest-push-android).

@@ -8,11 +8,11 @@
 
 ## Personas
 
-You can send computed traits and audiences generated through [Segment Personas](/docs/personas) to this destination as a **user property**. To learn more about Personas, contact us for a [demo](https://segment.com/contact/demo).
+You can send computed traits and audiences generated using [Segment Personas](/docs/personas) to this destination as a **user property**. To learn more about Personas, contact us for a [demo](https://segment.com/contact/demo).
 
-For user-property destinations, an [identify](/docs/connections/spec/identify) call will be sent to the destination for each user being added and removed. The property name will be the snake_cased version of the audience name you provide with a true/false value. For example, when a user first completes an order in the last 30 days, we will send an identify call with the property `order_completed_last_30days: true`, and when this user no longer satisfies we will set that value to `false`.
+For user-property destinations, an [identify](/docs/connections/spec/identify/) call is sent to the destination for each user being added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Personas sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it's been more than 30 days since their last order), Personas sets that value to `false`.
 
-When the audience is first created an identify call is sent for every user in the audience. Subsequent syncs will only send updates for those users which were added or removed since the last sync.
+When you first create an audience, Personas sends an Identify call for every user in that audience. Later audience syncs only send updates for users whose membership has changed since the last sync.
 
 {% endunless %}
 
@@ -23,26 +23,27 @@ When the audience is first created an identify call is sent for every user in th
 {% if currentIntegration.components.size > 0 %}
 {% include content/connection-modes.md %}
 
-To learn more about about Connection Modes and what dictates which we support, [see here](https://segment.com/docs/connections/destinations/#connection-modes).
-
 {% endif %}
 
 {% if currentIntegration.browserUnbundlingSupported == true and currentIntegration.browserUnbundlingPublic == true %}
-  We offer an optional **Cloud-based** Connection Mode for **Web** data with {{ currentIntegration.display_name }}. As a reminder, this removes the {{ currentIntegration.display_name }} javascript library from your site, improving performance.
+  Segment offers an optional **Cloud-based** Connection Mode for **Web** data with {{ currentIntegration.display_name }}. As a reminder, this removes the {{ currentIntegration.display_name }} javascript library from your site, improving performance.
 {% endif %}
 
+{% unless page.hide-device == true %}
 {% if currentIntegration.platforms.mobile == true %}
   {% if currentIntegration.platforms.server == true %}
-  Segment offers an *optional* **Device-based** Connection Mode for **Mobile** data going to {{ currentIntegration.display_name }}, so that you can use {{ currentIntegration.display_name }} features that collect data directly from the mobile device. To do this, you must package the Segment-{{ currentIntegration.display_name }} mobile SDK with the Segment mobile SDK.
+  Segment offers an *optional* **Device-based** Connection Mode for **Mobile** data going to {{ currentIntegration.display_name }}, so that you can use {{ currentIntegration.display_name }} features that collect data directly from the mobile device. To do this, you must package the Segment-{{ currentIntegration.display_name }} mobile SDK with the Segment mobile library.
   {% else %}
   This destination *requires* that you use a **Device-based** Connection Mode for **Mobile** data. Make sure you package the {{ currentIntegration.display_name }} mobile SDK with the Segment mobile library.
   {% endif %}
 {% endif %}
 {% endunless %}
+{% endunless %}
 
+{% unless page.hide-settings == true %}
 ## Settings
 
-Segment lets you change these destination settings from your Segment dashboard without having to touch any code.
+Segment lets you change these destination settings from the Segment app without having to touch any code.
 
 {% for item in currentIntegration.settings %}
   {% unless item.deprecated == true %}
@@ -52,7 +53,7 @@ Segment lets you change these destination settings from your Segment dashboard w
 
   {% endunless %}
 {% endfor %}
-
+{% endunless %}
 {% if currentIntegration.previous_names.size > 1 %}
 
 ## Adding {{ currentIntegration.display_name }} to the integrations object

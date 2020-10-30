@@ -58,4 +58,4 @@ You can, but the sooner you switch to the spec'd events, the further back you'll
 
 ### How will I be able to take advantage of new campaign events?
 
-In the coming months, we'll be updating our mobile marketing destinations to automatically capture campaign events around attribution, deep linking, and push notifications. These events will go to [destinations](/docs/connections/destinations/), including [warehouses](https://segment.com/docs/warehouses/).
+In the coming months, we'll be updating our mobile marketing destinations to automatically capture campaign events around attribution, deep linking, and push notifications. These events will go to [destinations](/docs/connections/destinations/), including [warehouses](/docs/connections/storage/catalog/).

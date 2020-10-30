@@ -4,14 +4,9 @@ hide-cmodes: true
 hide-personas-partial: true
 ---
 
-[Intercom](https://www.intercom.com/) makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination is open-source. You can browse the code for [analytics.js](https://github.com/segment-integrations/analytics.js-integration-intercom), [iOS](https://github.com/segment-integrations/analytics-ios-integration-intercom) and [Android](https://github.com/segment-integrations/analytics-android-integration-intercom) on Github.
+[Intercom](https://www.intercom.com/) makes customer messaging apps for sales, marketing, and support, connected on one platform. The Intercom Destination is open-source. You can browse the code for [analytics.js](https://github.com/segment-integrations/analytics.js-integration-intercom), [iOS](https://github.com/segment-integrations/analytics-ios-integration-intercom) and [Android](https://github.com/segment-integrations/analytics-android-integration-intercom) on GitHub.
 
 This document was last updated on March 11, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
-
-**Use Cases**
-
-* [Trigger Intercom messages when users are likely to upgrade with ClearBrain](https://segment.com/recipes/trigger-upgrade-messages-intent-intercom-clearbrain/)
-* [Personalize Intercom welcome messages by incorporating a visitor's company](https://segment.com/recipes/personalize-intercom-live-chat-with-company-name/)
 
 ## Getting Started
 
@@ -27,8 +22,11 @@ This document was last updated on March 11, 2020. If you notice any gaps, outdat
 
 ### Client
 
-1. Activate your Intercom Destination and our CDN is updated within 45 minutes.
-2. Our snippet starts asynchronously loading Intercom's `library.js` onto your page. This means you should remove Intercom's snippet from your page.
+
+Enable the Intercom Destination from the Segment web app.
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Intercom's `library.js` onto your page.
+
+This means you should remove Intercom's snippet from your page.
 
 ### Mobile
 
@@ -243,7 +241,7 @@ Segment supports Intercom's `reset` method only for Device-mode Mobile sources. 
 
 On iOS:
 
-```objective-c
+```objc
   [Intercom reset];
 ```
 
@@ -316,7 +314,7 @@ Analytics.with(context).identify("123", traits, options);
 
 #### Identity verification plus filtering using Destinations Object
 
-If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-integrations), the context object looks like this:
+If using Intercom identity verification AND [selective destinations functionality](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#selecting-destinations-with-the-integrations-object), the context object looks like this:
 
 ```js
 {
@@ -402,7 +400,7 @@ Our API doesn't support Intercom tags. Traits can be used instead of tags to cre
 
 ### Conditionally show the Intercom chat widget (Browser only)
 
-You can take advantage of Intercom's `hide_default_launcher` option to selectively show the chat widget. According to Intercom's [docs](https://docs.intercom.io/configure-intercom-for-your-product-or-site/customize-the-intercom-messenger/customize-the-intercom-messenger-technical#show-the-intercom-messenger-to-selected-users-for-web-), you want to first hide the Messenger for all users inside their UI using Messenger settings. Then think about how you want to programmatically decide which users you'd like to show the widget to. Then you can pass an Intercom specific destination setting like this:
+You can take advantage of Intercom's `hide_default_launcher` option to selectively show the chat widget. According to Intercom's [docs](https://www.intercom.com/help/en/articles/178-customize-the-intercom-messenger-basics), you want to first hide the Messenger for all users inside their UI using Messenger settings. Then think about how you want to programmatically decide which users you'd like to show the widget to. Then you can pass an Intercom specific destination setting like this:
 
 ```js
 // with analytics.js
@@ -429,7 +427,7 @@ analytics.onIntegrationReady("Intercom", new Callback() {
 });
 ```
 
-```objective-c
+```objc
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(integrationDidStart:) name:SEGAnalyticsIntegrationDidStart object:nil];
 
 - (void)integrationDidStart:(nonnull NSNotification *)notification
@@ -442,7 +440,7 @@ analytics.onIntegrationReady("Intercom", new Callback() {
 }
 ```
 
-You can read more about tapping into destination-specific methods on [Android here](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) and on [iOS here](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-know-when-an-destination-is-initialized-).
+You can read more about tapping into destination-specific methods on [Android here](/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) and on [iOS here](/docs/connections/sources/catalog/libraries/mobile/ios/#how-do-i-know-when-a-destination-is-initialized).
 
 ### Push notification and deep linking
 
@@ -466,14 +464,14 @@ If you are sending those two calls, then check that the CSS selector for the wid
 
 ### My client-side and server-side calls are going to one Segment source, but different Intercom projects
 
-Server-side calls go the the project selected when you authenticated your Intercom account while setting up the destination. Client-side calls go to the project referenced with the [App ID setting](#app-id-required-for-analytics-js-).
+Server-side calls go the the project selected when you authenticated your Intercom account while setting up the destination. Client-side calls go to the project referenced with the [App ID setting](#app-id-required-for-analyticsjs-and-mobile).
 Make sure those projects are the same.
 
 ### I'm seeing a "Cannot have more than 120 active event names" error
 
 Intercom only allows a total of [120 unique event names](http://docs.intercom.io/Intercom-for-user-analysis/Tracking-User-Events-in-Intercom#events-faqs). That means if you are sending Segment more than 120 unique event names, Intercom only accepts the first 120 events that hit their servers, and the rest throw an error.
 
-If you want to prevent some of your events from being passed to Intercom and thus prevent the error, you can filter out Intercom in those events using the [Selecting Destinations](https://segment.com/docs/guides/best-practices/should-i-instrument-data-collection-on-the-client-or-server/#selecting-destinations) feature available on all of Segment's libraries.
+If you want to prevent some of your events from being passed to Intercom and thus prevent the error, you can filter out Intercom in those events using the [Selecting Destinations](/docs/guides/how-to-guides/collect-on-client-or-server/#selecting-destinations) feature available on all of Segment's libraries.
 
 ## Using Intercom with Personas
 

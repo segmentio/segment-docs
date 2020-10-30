@@ -6,6 +6,9 @@ icon: symbols/connections.svg
 excerpt: Detailed information about each destination. Learn how our API methods are implemented for that destination.
 layout: catalog
 menu_icon: "read-more"
+redirect_from:
+  - '/docs/connections/sources/catalog/cloud-apps/'
+  - '/docs/connections/sources/catalog/cloud-apps/'
 ---
 
 <div class="destinations-catalog">

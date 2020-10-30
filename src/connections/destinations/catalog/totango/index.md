@@ -63,7 +63,7 @@ analytics.identify('29ej29d', {
 });
 ```
 
-To learn more about how [`identify`](/docs/connections/spec/identify/) works, check out our [Identify docs](/docs/connections/spec/identify/). For example, `email` and `name` are two of our [special traits](/docs/connections/spec/identify/#special-traits) that we recognize semantically.
+To learn more about how [`identify`](/docs/connections/spec/identify/) works, check out our [Identify docs](/docs/connections/spec/identify/). For example, `email` and `name` are two of our [special traits](/docs/connections/spec/identify/#traits) that we recognize semantically.
 
 **If you're sending data using the server-side or mobile libraries**, you'll need to include `context.groupId`. Check out the [server-side](#server-side-methods-require-group-id) section to see how.
 

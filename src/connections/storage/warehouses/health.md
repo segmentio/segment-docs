@@ -15,7 +15,7 @@ You can use this feature to answer questions such as:
 > **Note**: Warehouse Health is available for all Warehouse customers.
 
 
-The Warehouse Health dashboards are available at both the [warehouse level](#warehouse-dashboard), and at the [warehouse-source connection level](#warehouse-source-dashboard), explained below.
+The Warehouse Health dashboards are available at both the [warehouse level](#warehouse-dashboards), and at the [warehouse-source connection level](#warehouse-source-dashboards), explained below.
 
 Data in the dashboards updates in real-time, and covers the previous 30 days. The timezones displayed in the dashboards are converted to the viewer's local time.
 

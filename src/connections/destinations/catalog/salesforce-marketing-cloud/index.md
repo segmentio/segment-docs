@@ -34,11 +34,9 @@ Segment sends data to SFMC using [Data Extensions](https://help.salesforce.com/a
 
 ## SFMC prerequisites
 
-Before you start working with SFMC, work through the followins sections to confirm that the destination will work as you expect, and set up any authentication requirements.
+Before you start working with SFMC, work through the following sections to confirm that the destination will work as you expect, and set up any authentication requirements.
 
 ### Confirm that Salesforce Marketing Cloud supports your source type and connection mode
-
-Before you use this Destination, confirm that SFMC supports the source type and connection mode that you chose to implement. You can learn more about what [connection modes Segment supports here](https://segment.com/docs/connections/destinations/#connection-modes).
 
 {% include content/connection-modes.md %}
 
@@ -62,6 +60,7 @@ Before you use this Destination, confirm that SFMC supports the source type and 
 
 Once you save the API integration and add permissions, SFMC shows a Summary page with a Components section. This section lists your *Client ID* and *Client Secret* settings.
 
+
 ### Find your SFMC subdomain
 
 Segment uses your unique Salesforce subdomain to make API calls to SFMC. Your subdomain is a 28-character string that starts with the letters "mc" in any of your base URIs. For example, in the base URI `mc563885gzs27c5t9-63k636ttgm.rest.marketingcloudapis.com`, the subdomain is `mc563885gzs27c5t9-63k636ttgm`. When you find your subdomain, record it as you will use it in the SFMC Destination Settings in the Segment App.
@@ -81,7 +80,7 @@ To use the SFMC Batch feature:
 
 1. **Make sure you don’t need to use [API Events](#segment-and-sfmc) or create contacts from Identify calls**. If you have the SFMC Batch Integration enabled, you cannot use these two features at all.
 2. **Enable the SFMC Data Extensions Async API on your account**. SFMC requires that each customer specifically request access to the Salesforce API that allows Segment to send batched data to SFMC. Contact your account representative to [enable the asynchronous REST API endpoints](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/data-extensions-api.htm). **This step is required.** If you do not enable these endpoints, your data will be dropped. This setting is configured by Salesforce per account, so if the account can already access these endpoints, go to the next step.
-3. **Contact Segment to enable batching for each SFMC destination**. Once you confirm that you have access to the async API endpoints, contact your Segment CSM or [Segment Product Support](http://segment.com/help/contact/) to request that batching be enabled on your Segment account. You must do this step for each instance of the SFMC destination that you create in your Segment workspace.
+3. **Contact Segment to enable batching for each SFMC destination**. Once you confirm that you have access to the async API endpoints, contact your Segment CSM or [Segment Product Support](http://segment.com/help/contact/) to request that batching be enabled on your Segment account. You must do this step for each instance of the SFMC destination that you create in your Segment workspace. Provide the Support team with a link to the SFMC destination you want to enable this functionality on.
 4. Once you complete these enablement steps, follow the standard set up instructions for the SFMC destination below.
 
 If possible, you should enable batching for your SFMC destination before you send it any data. If you enable batching for an existing SFMC destination that has already received Segment data, you must work with [Segment Product Support](http://segment.com/help/contact/) to migrate that data.
@@ -296,7 +295,7 @@ If you sync to an existing Data Extension, there are additional requirements:
 
 ### Syncing Personas Audiences to SFMC
 
-When you add an audience to SFMC, the first sync contains all the users in that audience. A user is added as a new row to the Data Extension the first time they enter an audience. For example, let’s say you have an "Active Users" audience. When you send this audience to SFMC, all the users in the audience are added to a Data Extension, with a column that indicates their audience membership with `true`.  **T****o work correctly****, the Personas audience name should be Title Cased in the Data Extension column. Segment automatically creates the column name in Title Case. Do not change the column casing.
+When you add an audience to SFMC, the first sync contains all the users in that audience. A user is added as a new row to the Data Extension the first time they enter an audience. For example, let’s say you have an "Active Users" audience. When you send this audience to SFMC, all the users in the audience are added to a Data Extension, with a column that indicates their audience membership with `true`.  **To work correctly**, the Personas audience name should be Title Cased in the Data Extension column. Segment automatically creates the column name in Title Case. Do not change the column casing.
 
 If a user leaves that audience, the value is automatically updated to `false`, but the user is not removed from the Extension. This allows you to see all users who have ever been in the audience, and then optionally create a filtered Data Extension if you want a subset. See the SFMC documentation for more details:
 

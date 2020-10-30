@@ -20,8 +20,8 @@ Because the VWO destination needs to be on the page right away, there are two wa
 
 Additionaly, to enable the destination  follow these instructions:
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Visual Web Optimizer" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Visual Web Optimizer" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Toggle the destination on!
 
 
@@ -47,7 +47,7 @@ analytics.track('Experiment Viewed', {
 });
 ```
 
-However, you can also send the Experiment data as traits of an identify call that can be routed to all other destinations you have enabled. You'll just need to toggle on the "Send experiment data to other tools (as an identify call)" setting and we will send those experiment values as traits of the user. An example would look like this:
+However, you can also send the Experiment data as traits of an identify call that can be routed to all other destinations you have enabled. You'll just need to enable the "Send experiment data to other tools (as an identify call)" setting and we will send those experiment values as traits of the user. An example would look like this:
 
 ```javascript
 'Experiment: Home CTA': 'Create free account now'
@@ -62,7 +62,7 @@ For example, if you have an experiment called Home CTA and a visitor sees a vari
 
 ### Track Revenue Goals
 
-The Track Revenue goal allows you to track revenue from purchases and other transactions on your website by attributing the revenue amount for every valid and successful transaction. In other to track these transactions, you'll need to use our `Order Completed` ecommerce track event and include the revenue data as `total`. An example call would look like this:
+The Track Revenue goal allows you to track revenue from purchases and other transactions on your website by attributing the revenue amount for every valid and successful transaction. In order to track these transactions, you'll need to use our `Order Completed` ecommerce track event and include the revenue data as `total`. An example call would look like this:
 
 ```javascript
 analytics.track('Order Completed', {

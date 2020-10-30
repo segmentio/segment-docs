@@ -22,7 +22,7 @@ In order to send data to our HTTP API, a content-type header must be set to `'ap
 
 ## Errors
 
-We currently return a `200` response for all API requests so debugging should be done in the Segment Debugger. The only exception is if the request is too large / json is invalid it will respond with a `400`.
+We currently return a `200` response for all API requests so debugging should be done in the Segment Debugger. The only exception is if the request is too large / JSON is invalid it will respond with a `400`.
 
 We're hard at work surfacing more errors and more helpful responses to our users. If you have any suggestions, [let us know](https://segment.com/help/contact/)!
 
@@ -33,7 +33,7 @@ There is no hard rate limit at which point Segment will drop your data. We ask t
 
 ## Max Request Size
 
-There is a maximum of `32KB` per call (our `batch` endpoint accepts a maximum of `500KB` per batch and `32KB` per call). Server-side, Segment's API will respond with `400 Bad Request` if these limits are exceeded.
+There is a maximum of `32KB` per normal API request.  The `batch` API endpoint accepts a maximum of `500KB` per request, with a limit of `32KB` per event in the batch.  If you are sending data from a server source, Segment's API responds with `400 Bad Request` if these limits are exceeded.
 
 ## Identify
 
@@ -223,7 +223,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -348,7 +348,7 @@ POST https://api.segment.io/v1/batch
 
 The `alias`, `group`, `identify`, `page` and `track` calls can all be passed an object of `integrations` that lets you turn certain destinations on or off. By default all destinations are enabled.
 
-Here's an example showing an `identify` call that only goes to Mixpanel and KISSmetrics:
+Here's an example showing an `identify` call that only goes to Mixpanel and Kissmetrics:
 
 ```
 POST https://api.segment.io/v1/identify
@@ -368,13 +368,13 @@ POST https://api.segment.io/v1/identify
   "integrations": {
     "All": false,
     "Mixpanel": true,
-    "KISSmetrics": true,
+    "Kissmetrics": true,
     "Google Analytics": false
   }
 }
 ```
 
-In this case, we're specifying that we want this identify to only go to Mixpanel and KISSmetrics. `'All': false` says that no destination should be enabled unless otherwise specified. `'Mixpanel': true` turns on Mixpanel, etc.
+In this case, we're specifying that we want this identify to only go to Mixpanel and Kissmetrics. `'All': false` says that no destination should be enabled unless otherwise specified. `'Mixpanel': true` turns on Mixpanel, etc.
 
 Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/catalog/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 

@@ -3,28 +3,25 @@ rewrite: true
 title: OwnerIQ Destination
 ---
 
-## OwnerIQ Destination
-
 [OwnerIQ](https://www.owneriq.com/platform-coex) allows marketers to use transparent, directly sourced, deterministic, shopping and purchasing data from retailers and brands.
 
-This destination is maintained by OwnerIQ. For any issues with the destination, [contact their team](mailto:coex-support@owneriq.com).
+This destination is maintained by OwnerIQ. For any issues with the destination, [contact the OwnerIQ Support team](mailto:coex-support@owneriq.com).
 
-_**NOTE:** The OwnerIQ Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on September 20, 2019. If you are interested in joining their beta program or have any feedback to help improve the OwnerIQ Destination and its documentation, [let their team know](mailto:coex-support@owneriq.com)!_
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "OwnerIQ" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the `dataGroupId`,`analyticsTagId`,`dctTagId` into your Segment Settings UI which you can find from  [My Data Tab under My Audience in CoEx](https://coex.owneriq.com/app/myaudience/data-management/datasources).
+1. From the Segment web app, click **Catalog**.
+2. Search for "OwnerIQ" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the `dataGroupId`,`analyticsTagId`,`dctTagId` into your Segment Settings UI which you can find from  [My Data Tab under My Audience in CoEx](https://coex.owneriq.com/app/myaudience/data-management/datasources).
 
 ## Page
 
 If you aren't familiar with the Segment Spec, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
-```
+```js
 analytics.page()
 ```
 
@@ -64,9 +61,10 @@ Since track events by default do not require you to send user metadata, it is st
 
 
 ### Order Completed
+
 For each order completed you must include an `orderId`. All other properties are optional.
 
-```
+```js
 analytics.track({
   userId: '019mr8mf4r',
   event: 'Order Completed',

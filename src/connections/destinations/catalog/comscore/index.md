@@ -8,10 +8,8 @@ Our comScore destination code is open-source on GitHub if you want to check it o
 
 ## Analytics.js
 
-When you toggle on comScore in Segment, this is what happens:
-
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading comScore's beacon.js onto your page. **This means you should remove comScore's snippet from your page.**
-+ comScore will automatically start recording data.
+When you enable comScore in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading comScore's `beacon.js` onto your page. **This means you should remove comScore's snippet from your page.**
++ comScore automatically starts recording data.
 
 ## Mobile
 
@@ -163,7 +161,7 @@ Note that iOS and Android expect different casing. We expect `snake_case` for iO
 
 Example on passing destination specific option values through on iOS:
 
-```objective-c
+```objc
 options:@{
   @"integrations": @{
    @"com-score" : @{
@@ -188,7 +186,7 @@ Analytics.with(context).track("Video Playback Started", new Properties(), new Op
 ```
 
 ### Video Metrix Dictionary Classification
-Represented with the labels `c3`, `c4`, `c6`, these labels determine which entity the clip will credit to in the Video Metrix dictionary. Segment allows you to pass values for these labels as an destination specific option, since these values will.
+Represented with the labels `c3`, `c4`, `c6`, these labels determine which entity the clip will credit to in the Video Metrix dictionary. Segment allows you to pass values for these labels as a destination-specific option, since these values will.
 
 These are required fields, so all three of these labels must always be passed. Unused labels must still be passed with the literal string value `*null`. These values should ONLY appear as part of the video destination, they should not appear or be set in the general mobile destination.
 
@@ -241,7 +239,7 @@ Media that a user may intentionally view (like content), or it may be served to 
 
 #### Content Classification Type
 
-You can pass in a value for `contentClassificationType` as an destination specific option. Segment defaults to value `vc00` on all Content related video tracking events. The values you may dynamically pass in are described by comScore below.
+You can pass in a value for `contentClassificationType` as a destination-specific option. Segment defaults to value `vc00` on all Content related video tracking events. The values you may dynamically pass in are described by comScore below.
 
 **PREMIUM**
 Content with strong brand equity or brand recognition. Premium content is usually created or produced by media and entertainment companies using professional-grade equipment, talent, and production crews that hold or maintain the rights for distribution and syndication.

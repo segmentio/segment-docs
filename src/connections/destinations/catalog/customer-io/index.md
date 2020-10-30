@@ -11,24 +11,14 @@ This document was last updated on January 26, 2018. If you notice any gaps, out-
 > success ""
 > **Good to know**: This page is about the Customer.io Segment destination, which receives data from Segment. There's also a page about the [Customer.io Segment source](/docs/connections/sources/catalog/cloud-apps/customer-io/), which sends data _to_ Segment!
 
-**Use Cases**
-
-* [Send emails to users based on topics of interest with Customer.io](https://segment.com/recipes/emails-topic-interest-customerio/)
-* [Send users an email that summarizes recent product usage with Customer.io](https://segment.com/recipes/product-summary-email-customerio/)
-* [Automatically send an autoresponder email when your initial email goes unopened with Customer.io](https://segment.com/recipes/autoresponder-email-customerio/)
-* [Use email to move users through your onboarding funnel with Customer.io](https://segment.com/recipes/onboarding-email-customerio/)
-* [Ask engaged users to take an NPS survey with Customer.io](https://segment.com/recipes/nps-email-active-users-customerio/)
-* [Get users to your Aha moment faster with email using Customer.io](https://segment.com/recipes/aha-activation-customerio/)
-* [Ask your best customers to leave a review at just the right moment with Customer.io](https://segment.com/recipes/automate-customer-reviews-customerio/)
-
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Customer.io" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your Customer.io `API Key` and `Site ID`, which you can retrieve from Settings > [API Credentials](https://fly.customer.io/account/api_credentials) in Customer.io, into the Segment UI Settings.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Customer.io" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Customer.io `API Key` and `Site ID`, which you can retrieve from Settings > [API Credentials](https://fly.customer.io/account/api_credentials) in Customer.io, into the Segment UI Settings.
 4. Alternatively, you can automatically sync your Customer.io connection settings to your desired Segment source by following the flow within the Customer.io set up Guide.
 
 ![customerio set up guide screenshot](images/customerio_setup_guide.png)

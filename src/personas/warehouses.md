@@ -138,7 +138,7 @@ Although Personas can compute audiences and traits in real-time, these calculati
 
 ### Can I prevent a table, a computed trait, or audience from syncing to my warehouse?
 
-Yes! You can use [Warehouses Selective Sync](/docs/connections/storage/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse/) to manage which traits, audiences, and tables get synced from Personas.
+Yes! You can use [Warehouses Selective Sync](/docs/connections/storage/warehouses/faq/#can-i-control-what-data-is-sent-to-my-warehouse) to manage which traits, audiences, and tables get synced from Personas.
 
 ### Why are some users missing from the `users` table?
 
@@ -150,5 +150,5 @@ Not yet. We're working on this feature, and if you're interested, let your CSM k
 
 ### Why are there multiple schemas prefixed with `personas_` in my warehouse when I only have one space?
 
-Segment currently can only connect a source to one instance of each destination, for example, one source cannot send to two different Amplitude instances. To get around this restriction, Personas creates multiple sources to send events to the destinations connected to your Personas space. 
+Segment currently can only connect a source to one instance of each destination, for example, one source cannot send to two different Amplitude instances. To get around this restriction, Personas creates multiple sources to send events to the destinations connected to your Personas space.
 For example, if you have three webhook destinations in your Personas space, Personas creates three different sources to send events to them. This creates three different warehouse schemas, and is usually the reason you have more schemas than spaces!

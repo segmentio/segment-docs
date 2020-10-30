@@ -217,7 +217,7 @@ This event supports the following semantic properties:
 
 ### Signed Out
 
-This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) to refresh the cookie when a Signed Out event occurs.
+This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) to refresh the cookie when a Signed Out event occurs.
 
 > success ""
 > **Good to know**: Segment's best practice is to use an "Object-Action" naming convention, which in this case would be "User Signed Out". However, because in the B2B case this may not be a specific user, we omit that noun in our example. You may include or omit it as needed for your implementation.

@@ -2,7 +2,7 @@
 title: "How do I add a team member?"
 ---
 
-**This section is being deprecated, refer to [IAM](/docs/iam) going forward**
+**This section is being deprecated, refer to [IAM](/docs/segment-app/iam) going forward**
 
 If you are on our Team or Business plan you can add a Team member in your workspace team page and inviting any team members by email. If you are on a Free plan you will need to upgrade to invite more than one Team member to the account. 
 

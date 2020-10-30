@@ -3,12 +3,15 @@ title: Setting up Adobe Analytics Heartbeat
 strat: adobe
 ---
 
-Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and Javascript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/). At this time, Adobe Heartbeat is only available for events sent device mode.
+Adobe Heartbeat is an Adobe Analytics add-on that allows you to collect video analytics data from [mobile applications, and Javascript or website sources](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/).
+
+> info ""
+> At this time, Adobe Heartbeat is only available for events sent using [device mode](/docs/connections/destinations/#connection-modes).
 
 Before you start, complete these required steps.
 
 First, connect your Adobe heartbeat server URL to Segment:
-1. Find your Adobe Analytics heartbeat tracking server URL and copy it.
+1. Find your Adobe Analytics heartbeat tracking server URL and copy it. If you don’t know where to find your heartbeat tracking server URL, contact your Adobe representative.
 2. Log in to your Segment workspace, and go to the Adobe Analytics settings.
    If you have multiple sources sending to Adobe Analytics, click the one that you'll be using with Adobe Heartbeat. If you'll be using Heartbeat with more than one source, repeat these steps for each source.
 3. Open the **Heartbeat Tracking Server URL** setting, and paste your server URL in the field. Click Save.
@@ -23,16 +26,17 @@ Then, set up your mobile libraries:
 
 For Android:
 
-- Download the latest version of the `AdobeHeartbeat.jar` file and include it in your Android project, as outlined in [Adobe's documentation here](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/android_2.0/c_vhl_download_android_sdk.html).
-- Follow the remaining set up steps [outlined here](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/android_2.0/r_vhl_getting-started-android.html).
+1. If you haven’t done so already, go to the Adobe Mobile Services UI and follow [these steps](https://docs.adobe.com/content/help/en/mobile-services/android/getting-started-android/requirements.html#section_044C17DF82BC4FD8A3E409C456CE9A46) to download the core `adobeMobileLibrary` and configure in your Android project. Add the `ABDMobileConfig.json` to your project from the downloaded SDK.
+2. Download the latest version of the `MediaSDK.jar` file and [include it in your Android project using Adobe's documentation steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html).
+3. Follow the [remaining set up steps](https://docs.adobe.com/content/help/en/media-analytics/using/sdk-implement/setup/set-up-android.html) to complete the installation.
 
-For iOS: the Adobe Heartbeat SDK is already included with the Segment-Adobe-Analytics SDK.
+For iOS: the Adobe Heartbeat SDK is already included with the Segment-Adobe-Analytics SDK. Ensure you have added the `ABDMobileConfig.json` for your iOS project from the Adobe Mobile Services UI.
 
 
 
 ## Configure the MediaHeartbeat Instance
 
-Segment instantiates a `MediaHeartbeat` object to track video data, but you need more information about each video session to make sure we configure the instance properly.
+Segment instantiates a `MediaHeartbeat` object to track video data, but you need more information about each video session to make sure Segment configures the instance properly.
 
 A "Video Playback Started" begins a new video session and destroys any existing MediaHeartbeat instances. This means that you can only track one video session at a time.
 
@@ -61,7 +65,16 @@ Analytics.with(this).track("Video Playback Started",
 
 The following example shows how to set an integration-specific option on iOS:
 
-```objective-c
+```objc
+[[SEGAnalytics sharedAnalytics] track:@"Video Playback Started"
+  properties:@{}
+  options:@{ @"integrations": @{
+                @"Adobe Analytics" : @{
+                    @"ovp_name": @"ovp name",
+                    @"debug" : @YES
+                  }
+              },
+              @"context":@{}}];
 options:@{
   @"integrations": @{
    @"Adobe Analytics" : @{
@@ -74,7 +87,7 @@ options:@{
 
 ## Supported Video Events
 
-Adobe Analytics supports many - but not all - of our [specced video events](/docs/connections/spec/video/). Note, too, that **some events required for Adobe Analytics are not specced as part of Segment's standard video tracking**, so read the documentation closely. The list below includes supported events, as well as the corresponding Adobe method(s) triggered. In the next section, we go into more detail on the functionality of each event, as well as list any required properties:
+Adobe Analytics supports many - but not all - of the [Segment video spec events](/docs/connections/spec/video/), however **some events required for Adobe Analytics are not included as part of Segment's standard video tracking**, so read the documentation closely. The list below shows supported events and the corresponding Adobe method(s) they trigger. The next section explains the function of each event in more detail, and lists any required properties.
 
 <table>
   <tr>
@@ -111,7 +124,7 @@ Adobe Analytics supports many - but not all - of our [specced video events](/doc
   </tr>
   <tr>
     <td>Video Playback Completed</td>
-    <td>`trackSessionEnd`</td>
+    <td>`trackComplete`<br>`trackSessionEnd`</td>
   </tr>
   <tr>
     <td>Video Playback Interrupted</td>
@@ -127,7 +140,7 @@ Adobe Analytics supports many - but not all - of our [specced video events](/doc
   </tr>
   <tr>
     <td>Video Content Completed</td>
-    <td>`trackEvent(chapterComplete)`<br>`trackComplete`</td>
+    <td>`trackEvent(chapterComplete)`</td>
   </tr>
   <tr>
     <td>Video Ad Break Started</td>
@@ -153,7 +166,7 @@ Adobe Analytics supports many - but not all - of our [specced video events](/doc
 
 ### Video Playback Started
 
-"Video Playback Started" is required to begin a new video session. This event **must** include the appropriate properties and options to configure the `MediaHeartbeat` instance for this video session. Although all the properties and options listed below are also **required**, you may send additional standard and custom video properties with this event.
+"Video Playback Started" is required to begin a new video session. This event **must** include the appropriate properties and options to configure the `MediaHeartbeat` instance for this video session. Although all the properties and options listed below are also **required**, you can also send additional standard and custom video properties with this event. See the [Custom Video Metadata section below.](#custom-video-metadata)
 
 <table>
   <tr>
@@ -339,7 +352,7 @@ This event is required to set quality of service information in the `MediaHeartb
 
 ## Standard Video Metadata
 
-We map the following Segment-specced properties to Adobe constants. Note you don't need to set up standard video properties in your Adobe dashboard as with `contextData` values.
+Segment maps the following [Segment-spec properties](/docs/connections/spec/) to Adobe constants. Note you don't need to set up standard video properties in your Adobe dashboard as with `contextData` values.
 
 <table>
   <tr>
@@ -390,11 +403,66 @@ We map the following Segment-specced properties to Adobe constants. Note you don
 
 ## Standard Ad Metadata
 
-At the moment, Segment only passes `publisher` as standard ad metadata. We map this property to Adobe constant `MediaHeartbeat.AdMetadataKeys.ADVERTISER`.
+At the moment, Segment only passes `publisher` as standard ad metadata. Segment maps this property to Adobe constant `MediaHeartbeat.AdMetadataKeys.ADVERTISER`.
 
 ## Custom Video Metadata
 
-You may send any custom metadata you wish along with any video event that accepts metadata. Remember that although you do not need to set up standard video or ad metadata in your Adobe dashboard first, you **must** set up all custom video and ad metadata in Adobe before sending it. Adobe discards all metadata that have not been set up before being received in their system.
+You can send custom metadata with any video event that accepts metadata. To send Custom Video Metadata, map the values you want to send in the **Context Data Variable mappings** setting in the Adobe Destination settings in the Segment web app.
+
+> warning ""
+> You do not need to map _standard_ video or ad metadata in your Adobe dashboard, you **must** set up all _custom_ video and ad metadata in Adobe before sending it. Adobe discards any metadata it receives that does not have a mapping.
+
+### Custom Video Metadata Formatting
+
+For custom Context Data Variables, including custom video metadata, use the following notation when mapping your Segment payload properties. The formatting for these mapings is different for iOS and Android components, so read the documentation below carefully.
+
+<table>
+  <tr>
+    <td>**Segment Payload Field**</td>
+    <td>**iOS Mapping Notation**</td>
+    <td>**Android Mapping Notation**</td>
+  </tr>
+  <tr>
+    <td>`anonymousId`</td>
+    <td>`anonymousId`</td>
+    <td>`.anonymousId`</td>
+  </tr>
+  <tr>
+    <td>`messageId`</td>
+    <td>`messageId`</td>
+    <td>`.messageId`</td>
+  </tr>
+  <tr>
+    <td>`event`<br>`.track()` calls only</td>
+    <td>`event`</td>
+    <td>`.event`</td>
+  </tr>
+  <tr>
+    <td>`name`<br>`screen()` calls only</td>
+    <td>`name`</td>
+    <td>`.name`</td>
+  </tr>
+  <tr>
+    <td>`context.traits.key`</td>
+    <td>`traits.key`</td>
+    <td>`.context.traits.key`</td>
+  </tr>
+  <tr>
+    <td>`context.key`</td>
+    <td>`key`</td>
+    <td>`.context.key`</td>
+  </tr>
+  <tr>
+    <td>`context.arrayKey.key`<br>ie. `context.device.id`</td>
+    <td>`arrayKey.key`<br>ie. `device.id`</td>
+    <td>`.context.arrayKey.key`</td>
+  </tr>
+  <tr>
+    <td>`properties.key`</td>
+    <td>`key`</td>
+    <td>`key`</td>
+  </tr>
+</table>
 
 ## Troubleshooting and Logging Heartbeat
 

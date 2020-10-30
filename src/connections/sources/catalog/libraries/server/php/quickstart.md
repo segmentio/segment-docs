@@ -3,16 +3,28 @@ title: 'Quickstart: PHP'
 hidden: true
 ---
 
-<!-- LR 4/21/2020: TODO: none of the quickstarts actually walk you through creating the source in the workspace -->
 
 This tutorial gets you started sending data from your website to Segment and any of our destinations, using Segment's PHP library. As soon as you're set up you can turn on new destinations with the flip of a switch!
 
 If you want to dive deeper at any point, check out the [PHP reference](/docs/connections/sources/catalog/libraries/server/php).
 
 
-## Step 1: Download the library
+## Step 1: Create a Source in the Segment app
 
-To install the library, clone the repository from Github into your desired application directory. (psst, composer users: we've [got you covered too](https://packagist.org/packages/segmentio/analytics-php)!)
+Before you begin, you need a Workspace (which is a container that holds all of the sources and destinations which are billed together for an organization). If you already created one, great! If not, you can sign up for a free Segment account and create one.
+
+Next, create a PHP source from your Workspace:
+
+1. Click **Add Source**.
+2. From the source catalog page, click **PHP**.
+3. Click **Add Source** again from the informational panel that appears to the right.
+4. Give the source a display name, and enter the URL the source will collect data from.
+
+When you create a Source in the Segment web app, it tells the Segment servers that you'll be sending data from a specific source type. When you create (or change!) a Source in the Segment app, Segment generates a new Write Key for that source. You use the write key in your code to tell the Segment servers where the data is coming from, so Segment can route it to your destinations and other tools.
+
+## Step 2: Download the library
+
+To install the library, clone the repository from GitHub into your desired application directory. (psst, composer users: we've [got you covered too](https://packagist.org/packages/segmentio/analytics-php)!)
 
 ```bash
 git clone https://github.com/segmentio/analytics-php /my/application/folders/
@@ -43,9 +55,12 @@ You only need to call `init` once when your php file is requested. All of your f
 
 All set? Nice, the library's fully installed! We're now primed and ready to start recording our first analytics calls about our users.
 
-## Step 2: Identify Users
+## Step 3: Identify Users
 
-The [`identify`](/docs/connections/spec/identify) method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits that you might know about them.
+> note ""
+> **Good to know**: For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
+
+The [Identify method](/docs/connections/spec/identify) is how you tell Segment who the current user is. It includes a unique User ID and any optional traits that you might know about them.
 
 Here's what a basic call to [`identify`](/docs/connections/spec/identify) might look like:
 
@@ -80,7 +95,7 @@ If you only want to use a basic CRM set up, you can stop here. Just enable Sales
 Of course, lots of analytics tools record more than just _identities_... they record the actions each user performs too! If you're looking for a complete event tracking analytics setup, keep reading...
 
 
-## Step 3: Track Actions
+## Step 4: Track Actions
 
 The `track` method is how you tell Segment about the actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties.
 
@@ -117,7 +132,7 @@ To get started, we recommend tracking just a few important events. You can alway
 Once you've added a few [`track`](/docs/connections/spec/track) calls, you're almost done.
 
 
-## Step 4: Flush the data
+## Step 5: Flush the data
 
 Finally, call the Segment `flush()` method. This manually sends all the queued call data, to make sure it makes it to the Segment servers. This is normally done automatically by the runtime, but some PHP installations won't do it for you, so it's worth calling at the end of your script, just to be safe.
 

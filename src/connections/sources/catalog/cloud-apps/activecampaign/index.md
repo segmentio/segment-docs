@@ -3,9 +3,9 @@ title: ActiveCampaign Source
 ---
 Active Campaign is an email marketing & marketing automation solution for small businesses. [Visit Website](http://www.activecampaign.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
-Take your company's email analysis to the next level by **adding ActiveCampaign as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding ActiveCampaign as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your ActiveCampaign data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use ActiveCampaign with Segment.](/sources/active-campaign)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your ActiveCampaign data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. 
 
 ## Getting Started
 
@@ -106,4 +106,4 @@ from activecampaign.email_delivered
 
 ## Send data to ActiveCampaign
 
-The ActiveCampaign Source works better when you also connect ActiveCampaign as an destination. With the ActiveCampaign **Destination**, you can use Segment to send ActiveCampaign user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** ActiveCampaign? Head on over to our [ActiveCampaign destination docs](/docs/connections/destinations/catalog/activecampaign/).
+The ActiveCampaign Source works better when you also connect ActiveCampaign as a destination. With the ActiveCampaign **Destination**, you can use Segment to send ActiveCampaign user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** ActiveCampaign? Head on over to our [ActiveCampaign destination docs](/docs/connections/destinations/catalog/activecampaign/).

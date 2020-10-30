@@ -7,18 +7,12 @@ rewrite: true
 
 This document was last updated on April 20th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
-**Use Cases**
-
-* [Identify what industries drive the highest LTV with Amplitude and Clearbit](https://segment.com/recipes/ltv-by-industry-amplitude/)
-* [Identify what industries drive the highest LTV with Mixpanel and Clearbit](https://segment.com/recipes/ltv-by-industry-mixpanel/)
-
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Clearbit Enrichment" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Clearbit Enrichment" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. In your Segment UI's destination settings, enter your Clearbit **secret** API key (note: it should start with "sk_"). You can find this in the API section of your [Clearbit dashboard](https://dashboard.clearbit.com/api).
 
 To verify that the destination has been set up correctly, check the Debugger section of your Segment Source. Assuming everything is as it should be, you should start seeing Clearbit Enrichment data populate in the `identify` events – click on the specific event you're interested in to see Clearbit Enrichment traits. These traits will now be available to other Segment destinations in your account. Notice that all Clearbit Enrichment traits are prefixed with `clearbit_` to ensure they don't conflict with existing traits.

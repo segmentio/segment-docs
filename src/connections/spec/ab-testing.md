@@ -3,7 +3,7 @@ title: 'Spec: A/B Testing Events'
 hidden: true
 ---
 
-This guide explains what data should be sent to Segment *from* A/B Testing tools and hence is targeted to partners who send A/B testing data back into Segment rather than targeted to customers themselves. The [semantic events](/docs/connections/spec/semantic) detailed below represent the ideal for A/B Testing events.
+This guide explains what data should be sent to Segment *from* A/B Testing tools and hence is targeted to partners who send A/B testing data back into Segment rather than targeted to customers themselves. The [semantic events](/docs/connections/spec/semantic/) detailed below represent the ideal for A/B Testing events.
 
 ## Overview
 

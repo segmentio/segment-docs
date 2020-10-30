@@ -84,6 +84,9 @@ const getConnectionModes = (destination) => {
         if (destination.platforms.server) {
           connectionModes.cloud.server = true
         }
+        if (destination.platforms.browser) {
+          connectionModes.cloud.web = true
+        }
         break
     }
   })

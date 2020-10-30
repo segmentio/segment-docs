@@ -5,19 +5,23 @@ title: Mabl Destination
 
 Only [mabl](https://mabl.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) offers scriptless cross-browser web testing, auto-healing tests, visual testing, and diagnostics in one simple service. mabl helps you improve the speed and quality of your release pipeline by allowing you to test every release, at scale, on a single platform, with no infrastructure to manage.
 
-This destination is maintained by mabl. For any issues with the destination, [contact the mabl team](mailto:support@mabl.com).
+This destination is maintained by mabl. For any issues with the destination, [contact the Mabl  Support team](mailto:support@mabl.com).
 
-_**NOTE:** The mabl Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on 10 June, 2019. If you are interested in joining their beta program or have any feedback to help improve the mabl Destination and its documentation, [let their team know](mailto:support@mabl.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "mabl" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop the "API Key," accessible from into your from your mabl workspace's [API keys page](https://app-dev.mabl.com/workspaces/-/settings/apis), into the Segment Settings UI.
-4. mabl processes the usage data into rolling 24 hour summaries hourly.  It may take up to an hour for usage to begin to populate in your test coverage metrics.
+
+1. From the Destinations catalog page in the Segment App, click **Add Destination**.
+2. Search for "mabl" in the Destinations Catalog, and select the mabl destination.
+3. Choose which Source should send data to the mabl destination.
+4. Go to the [mabl api settings page](https://app.mabl.com/workspaces/-/settings/apis) (or navigate in the mabl app to **Settings > APIs**), find and copy the API key.
+5. Enter the API Key in the mabl destination settings in Segment.
+
+mabl processes the usage data into rolling 24 hour summaries, every hour.  It can take up to an hour for usage to appear in your test coverage metrics.
 
 ## Page
 

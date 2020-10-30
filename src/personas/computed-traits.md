@@ -7,13 +7,18 @@ Computed Traits allow you to quickly create user or account-level calculations t
 ## Types of Computed Traits
 
 Personas currently supports the following types of computed traits:
-- [Event Counter](#event-counter)
-- [Aggregation](#aggregation)
-- [Most Frequent](#most-frequent)
-- [First](#first)
-- [Last](#last)
-- [Unique List](#unique-list)
-- [Unique List Count](#unique-list-count)
+- [Types of Computed Traits](#types-of-computed-traits)
+  - [Event Counter](#event-counter)
+  - [Aggregation](#aggregation)
+  - [Most Frequent](#most-frequent)
+  - [First](#first)
+  - [Last](#last)
+  - [Unique List](#unique-list)
+  - [Unique List Count](#unique-list-count)
+- [Conditions](#conditions)
+- [Connecting your Computed Trait to a Destination](#connecting-your-computed-trait-to-a-destination)
+- [Accessing your Computed Traits using the Profiles API](#accessing-your-computed-traits-using-the-profiles-api)
+- [Downloading your Computed Trait as a CSV](#downloading-your-computed-trait-as-a-csv)
 
 ### Event Counter
 
@@ -143,7 +148,7 @@ The following operators are available.
 
 ## Connecting your Computed Trait to a Destination
 
-User-level computed Traits are sent to destinations on our platform through the [identify](/docs/connections/spec/identify/) call as a user trait. The trait name will correspond to the snake-cased name that you can find in the trait settings, for e.g. `most_viewed_page_category`. You can find the list of destinations [here](/docs/personas/using-personas-data/#compatible-personas-destinations)
+Personas sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Learn more about [Computed trait generated events here](/docs/personas/using-personas-data/#computed-trait-generated-events). The trait name corresponds to the snake cased name that you see in the trait settings, for example `most_viewed_page_category`. See the [list of Personas-compatible destinations](/docs/personas/using-personas-data/#compatible-personas-destinations)
 
 ![](images/1525837601768.png)
 

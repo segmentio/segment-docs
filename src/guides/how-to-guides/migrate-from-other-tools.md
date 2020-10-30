@@ -43,7 +43,7 @@ Since Event Category is required we'll populate it with `All` if you don't speci
 
 ### Ecommerce
 
-Segment has full support for the Google Analytics E-Commere API and the [Enhanced E-Commerce API](/docs/connections/destinations/catalog/google-analytics/#enhanced-ecommerce) as well. Make sure you follow [our e-commerce tracking plan](/docs/connections/spec/ecommerce-tracking-plan/) to make sure you'll be able to use all e-commerce features in the tools we support.
+Segment has full support for the Google Analytics E-Commere API and the [Enhanced E-Commerce API](/docs/connections/destinations/catalog/google-analytics/#enabling-enhanced-e-commerce-tracking) as well. Make sure you follow [our e-commerce tracking plan](/docs/connections/spec/ecommerce-tracking-plan/) to make sure you'll be able to use all e-commerce features in the tools we support.
 
 For an e-commerce transaction to appear in Google Analytics you'll need to enable e-commerce for your Google Analytics view and send an Order Completed event to Segment. This simplifies things a lot compared to the direct Google Analytics code.
 
@@ -288,7 +288,7 @@ For more information check out [our Mixpanel docs](/docs/connections/destination
 
 To use Mixpanel increment through Segment you won't event need anything in your code! All you have to do is list the events you'd like to increment automatically in your Mixpanel destination settings.
 
-Read more in [our Mixpanel Increment Docs](/docs/connections/destinations/catalog/mixpanel#increment).
+Read more in [our Mixpanel Increment Docs](/docs/connections/destinations/catalog/mixpanel/#incrementing-events).
 
 ### Revenue
 

@@ -25,9 +25,9 @@ Before you enable Selligent Marketing Cloud in your Destination page, validate w
 
 You can then proceed to configure your destination.
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "*Selligent Marketing Cloud*" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "*API Key*" and "*API Secret*" into your Segment Settings UI.
+1. From the Segment web app, click **Catalog**.
+2. Search for "*Selligent Marketing Cloud*" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "*API Key*" and "*API Secret*" into your Segment Settings UI.
 4. *SMC Admin URL* - Copy the link you use to log into the SMC admin should look like https://**{you company}**.slgnt.us
 ![adminURL](images/adminurl.jpg)
 5. *Organization* - You will find the organization name on the top-right hand corner next to the menu icon.
@@ -37,7 +37,7 @@ You can then proceed to configure your destination.
 
 ## Identify
 
-If you aren't familiar with the Segment Spec, take a look to understand what the [`identify` method](https://segment.com/docs/spec/identify/) does.
+If you aren't familiar with the Segment Spec, take a look to understand what the [`identify` method](/docs/connections/spec/identify/) does.
 
 An example call looks like:
 ```js
@@ -53,7 +53,7 @@ The `userId` field, `userId123`, is mapped to the Business Key defined for the S
 
 ## Track
 
-If you aren't familiar with the Segment Spec, take a look to understand what the [`track` method](https://segment.com/docs/spec/track/) can do.
+If you aren't familiar with the Segment Spec, take a look to understand what the [`track` method](/docs/connections/spec/track/) can do.
 
 An example call looks like:
 ```js
@@ -67,7 +67,7 @@ analytics.track('userId123', {
 
 ## Group
 
-If you aren't familiar with the Segment Spec, take a look to understand what the [`group` method](https://segment.com/docs/spec/group/) can do.
+If you aren't familiar with the Segment Spec, take a look to understand what the [`group` method](/docs/connections/spec/group/) can do.
 
 An example call looks like:
 ```js
@@ -83,7 +83,7 @@ analytics.group("0e8c78ea9d97a7b8185e8632", {
 
 ## Alias
 
-If you aren't familiar with the Segment Spec, take a look to understand what the [`alias` method](https://segment.com/docs/spec/alias/) can do.
+If you aren't familiar with the Segment Spec, take a look to understand what the [`alias` method](/docs/connections/spec/alias/) can do.
 
 An example call looks like:
 ```js
@@ -93,7 +93,7 @@ analytics.alias("507f191e81");
 
 ## Page
 
-If you aren't familiar with the Segment Spec, take a look to understand what the [`page` method](https://segment.com/docs/spec/[page]/) can do.
+If you aren't familiar with the Segment Spec, take a look to understand what the [`page` method](/docs/connections/spec/page/) can do.
 
 An example call looks like:
 ```js
@@ -103,7 +103,7 @@ analytics.page("Home");
 
 ## Screen
 
-If you aren't familiar with the Segment Spec, take a look to understand what the [`screen` method](https://segment.com/docs/spec/screen/) can do.
+If you aren't familiar with the Segment Spec, take a look to understand what the [`screen` method](/docs/connections/spec/screen/) can do.
 
 An example call in Objective C looks like:
 

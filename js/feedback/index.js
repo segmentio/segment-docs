@@ -8,14 +8,24 @@ const CONTENT_SELECTOR = '[data-feedback-content]'
 const ACTIVE_CLASS = 'data-active-class'
 const typewriter = require('analytics')
 
-export default function () {
+export default function() {
   const buttons = document.querySelectorAll(BUTTON_SELECTOR)
   const templates = document.querySelectorAll(TEMPLATE_SELECTOR)
-  const helpfulTemplate = [...templates].filter(template => template.dataset.feedbackTemplate === 'helpful')
-  const unhelpfulTemplate = [...templates].filter(template => template.dataset.feedbackTemplate === 'unhelpful')
-  const alternateTemplate = [...templates].filter(template => template.dataset.feedbackTemplate === 'alternate')
-  const helpfulButtons = [...buttons].filter(button => button.dataset.feedbackButton === 'helpful')
-  const unhelpfulButtons = [...buttons].filter(button => button.dataset.feedbackButton === 'unhelpful')
+  const helpfulTemplate = [...templates].filter(
+    (template) => template.dataset.feedbackTemplate === 'helpful'
+  )
+  const unhelpfulTemplatte = [...templates].filter(
+    (template) => template.dataset.feedbackTemplate === 'unhelpful'
+  )
+  const alternateTemplate = [...templates].filter(
+    (template) => template.dataset.feedbackTemplate === 'alternate'
+  )
+  const helpfulButtons = [...buttons].filter(
+    (button) => button.dataset.feedbackButton === 'helpful'
+  )
+  const unhelpfulButtons = [...buttons].filter(
+    (button) => button.dataset.feedbackButton === 'unhelpful'
+  )
   const contents = document.querySelectorAll(CONTENT_SELECTOR)
 
   let sent = false
@@ -33,13 +43,15 @@ export default function () {
         const feedbackValue = feedbackText.value
 
         if (feedbackValue) {
-          let { section = 'footer', helpful = false } = JSON.parse(window.localStorage.getItem('docsFeedback'))
-          typewriter.feedbackProvided({
+          let { section = 'footer', helpful = false } = JSON.parse(
+            window.localStorage.getItem('docsFeedback')
+          )
+          typewriter.feedbackCommentProvided({
             section,
             helpful,
             title: `${document.title}`,
             url: document.url,
-            comment: feedbackValue
+            comment: feedbackValue,
           })
 
           tooltip.hide()
@@ -64,7 +76,7 @@ export default function () {
           contents[i].children[0].hidden = true
         }
       }
-    }
+    },
   }
 
   const trackFeedback = (helpful, section) => {
@@ -97,14 +109,19 @@ export default function () {
     buttons[i].addEventListener('click', (event) => {
       event.preventDefault()
 
-      const section = buttons[i].hasAttribute('data-section') ? 'right-nav' : 'footer'
+      const section = buttons[i].hasAttribute('data-section')
+        ? 'right-nav'
+        : 'footer'
       const helpful = buttons[i].dataset.feedbackButton === 'helpful'
       const alternate = buttons[i].dataset.feedbackButton === 'alternate'
 
-      window.localStorage.setItem('docsFeedback', JSON.stringify({
-        section,
-        helpful
-      }))
+      window.localStorage.setItem(
+        'docsFeedback',
+        JSON.stringify({
+          section,
+          helpful,
+        })
+      )
 
       if (alternate) {
         tooltips[i].setContent(alternateTemplate[0].innerHTML)

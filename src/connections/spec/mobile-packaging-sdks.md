@@ -10,8 +10,8 @@ We bundle certain SDKs, instead of just proxying your data to them through our s
 
 We've worked hard to make our mobile SDKs as modular as possible so that you only need to include the SDKs for tools you plan to use.
 
-Custom builds allow us to offer the native functionality of all of our destinations without having to include hefty third-party SDKs by default. This gives you control over size and method bloat. Check out how to use custom builds for both [Android](/docs/connections/sources/catalog/libraries/mobile/android/quickstart/#step-1-install-the-sdk) and [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/#step-1-install-the-sdk).
+Custom builds allow us to offer the native functionality of all of our destinations without having to include hefty third-party SDKs by default. This gives you control over size and method bloat. Check out how to use custom builds for both [Android](/docs/connections/sources/catalog/libraries/mobile/android/quickstart/) and [iOS](/docs/connections/sources/catalog/libraries/mobile/ios/quickstart/).
 
 ### Which SDKs are bundled?
 
-To check if an destination is bundled or not, take a look at our [documentation](/docs/connections/destinations/) for that specific destination.
+To check if a destination is bundled or not, take a look at our [documentation](/docs/connections/destinations/) for that specific destination.

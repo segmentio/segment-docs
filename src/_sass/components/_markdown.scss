@@ -126,8 +126,10 @@
     margin-bottom: 18px;
 
     @include breakpoint(medium up) {
-      margin-top: 24px;
-      margin-bottom: 24px;
+      border: 1px solid #ddd;
+      display: block;
+      margin: 24px auto;
+      border-radius: 5px;;
     }
   }
 
@@ -231,6 +233,7 @@
 
       &:first-of-type {
         padding-left: 5px;
+        min-width: 150px;
       }
 
       &:last-of-type {

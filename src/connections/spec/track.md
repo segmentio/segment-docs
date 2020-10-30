@@ -86,7 +86,7 @@ Every `track` call records a single user action. We call these "events". We reco
 Do not use nondescript names like **Event 12** or **TMDropd**. Instead, use unique but recognizable names like **Video Recorded** and **Order Completed**.
 
 **We recommend event names built from a noun and past-tense verb.**
-For more information about best practices in event naming, check out our [Analytics Academy lesson on best practices for naming conventions for clean data](/academy/collecting-data/naming-conventions-for-clean-data/).
+For more information about best practices in event naming, check out our [Analytics Academy lesson on best practices for naming conventions for clean data](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/).
 
 We have standardized a series of reserved event names that have special semantic meaning. We map these events to tools that support them whenever possible. See the [Semantic Events docs](/docs/connections/spec/semantic/) for more detail.
 

@@ -3,7 +3,7 @@ title: Manage Workspace Access
 redirect_from: '/segment-app/iam/groups/'
 ---
 
-This page explains how to add [Team Members](/docs/segment-app/iam/concepts/#team-members) and [User Groups](/docs/segment-app/iam/concepts/#user-groups/) to your team's workspace, how to assign them [roles](/docs/segment-app/iam/concepts/#roles/), and how to remove them.
+This page explains how to add [Team Members](/docs/segment-app/iam/concepts/#team-members) and [User Groups](/docs/segment-app/iam/concepts/#user-groups) to your team's workspace, how to assign them [roles](/docs/segment-app/iam/roles), and how to remove them.
 
 > info ""
 > **Note**: Only Workspace Owners can change a workspace's Access Management settings.

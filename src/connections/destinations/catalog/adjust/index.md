@@ -5,15 +5,15 @@ title: Adjust Destination
 
 [Adjust](https://adjust.com) is the mobile attribution provider of choice for hundreds of organizations across the globe. They unify all your marketing activities into one powerful platform, giving you the insights you need to scale your business. The Adjust Destination is open-source. You can browse the code on GitHub for [iOS](https://github.com/segment-integrations/analytics-ios-integration-adjust) and [Android](https://github.com/segment-integrations/analytics-android-integration-adjust).
 
-This document was last updated on January 31, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Adjust" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Adjust" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Do not need to include Adjust's SDK natively as this prevent you from successfully implementing the Adjust.
 4. Depending on the source you've selected, include Adjust's library by adding the following lines to your dependency configuration.
 
@@ -27,13 +27,13 @@ pod "Segment-Adjust"
 
 After adding the dependency, you must register the destination with our SDK.  To do this, import the Adjust destination in your `AppDelegate`:
 
-```objective-c
+```objc
 #import <Segment-Adjust/SEGAdjustIntegrationFactory.h>
 ```
 
 And add the following lines:
 
-```objective-c
+```objc
 NSString *const SEGMENT_WRITE_KEY = @" ... ";
 SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
 
@@ -45,6 +45,40 @@ SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWith
 
 In cases where the Adjust integration sometimes does not track the install attribution properly, you can configure a delay for the Adjust reporting to ensure all session parameters have been loaded properly. Segment allows you to configure this using our UI by enabling `setDelay` and providing a `delayTime` in seconds. Segment then calls the [Adjust iOS SDK's configuration](https://github.com/adjust/ios_sdk#delay-start) to set a delay. The maximum delay start time of the Adjust SDK is 10 seconds.
 
+#### Additional device-mode set up for iOS 14 support
+
+Segment’s Adjust SDK was updated to use Adjust version 4.23.0 to prepare for iOS 14. The updated Adjust SDK offers iOS 14 support, AppTrackingTransparency (ATT) and SKAdNetwork dashboard features.
+
+See Adjust's [Steps to Support iOS 14 documentation](https://help.adjust.com/manage-data/data-privacy/ios-14-user-privacy-frameworks#Steps-to-support-iOS-14) for more information.
+
+To use the latest Adjust SDK to collect IDFAs you must do the following:
+
+1. Upgrade to use Xcode12.
+2. Update your Segment Adjust SDK to version 3.0.0 or later.
+   The latest SDK has integrated support for the SKAdNetwork, which is enabled by default. For access to the SKAdNetwork, make sure your ad networks are registered with Apple. Adjust automatically registers for SKAdNetwork attribution on SDK initialization, and can handle the conversion value update. You can choose to disable this by calling `[adjustConfig deactivateSKAdNetworkHandling];` on the config object in your `AppDelegate.m` file.
+3. Import and implement the AppTrackingTransparency (ATT) Framework.
+   Navigate to your project `Info.plist` and add a “Privacy - Tracking Usage Description”. This description appears in a popup when the application initializes in iOS 14. Users are prompted to indicate whether or not they want to allow tracking.
+4. Launch an opt-in popup using Adjust’s SDK wrapper, built on top of `requestTrackingAuthorizationWithCompletionHandler` for the ATT Framework. An iOS pop-up launches when the wrapper is called the first time. When it is called again, the wrapper retrieves the tracking authorization status, which is sent to the Adjust backend. Adjust relays the information directly to you. The example below shows how to use this wrapper.
+
+   ```swift
+   [Adjust requestTrackingAuthorizationWithCompletionHandler:^(NSUInteger status) {
+       switch (status) {
+           case 0:
+               // ATTrackingManagerAuthorizationStatusNotDetermined case
+               break;
+           case 1:
+               // ATTrackingManagerAuthorizationStatusRestricted case
+               break;
+           case 2:
+               // ATTrackingManagerAuthorizationStatusDenied case
+               break;
+           case 3:
+               // ATTrackingManagerAuthorizationStatusAuthorized case
+               break;
+     }];
+   ```
+
+5. Follow [Segment's guide for collecting IDFA](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
 
 ### Android
 
@@ -70,7 +104,7 @@ analytics = new Analytics.Builder(this, "write_key")
                 .build();
 ```
 
-After you build and release to the App Store, we'll automatically start translating and sending your data to Adjust.
+After you build and release to the App Store, Segment automatically starts translating and sending your data to Adjust.
 
 ### Server
 

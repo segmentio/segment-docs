@@ -18,7 +18,7 @@ Once you've collected your interaction data, there are several different things 
 - Send it to [Destinations](/docs/connections/destinations/), which receive the data from any number of sources in real time
 - Send it to [Warehouses](/docs/connections/storage/) (and other bulk storage tools), which hold your raw event schemas and update on regular intervals
 
-You can also enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-sources), and then collect it in a warehouse it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use [Personas](/docs/personas/), our identity resolution tool, to unify data from individual users to gain a holistic understanding of their actions.
+You can also enrich the customer data you collect by [connecting data from your other tools](/docs/connections/sources/catalog/#cloud-apps), and then collect it in a warehouse it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use [Personas](/docs/personas/), our identity resolution tool, to unify data from individual users to gain a holistic understanding of their actions.
 
 
 ## Where data comes from
@@ -33,7 +33,7 @@ We also offer other source libraries to cover less straightforward cases:
 
 - Use the [HTTP Tracking API](/docs/connections/sources/catalog/libraries/server/http-api/) if Segment doesn't offer a library for your specific environment yet.
 - The [Pixel Tracking API](/docs/connections/sources/catalog/libraries/server/pixel-tracking-api/) lets you track events from environments where you can’t execute code - for example, tracking when an email has been opened.
-- The [Querystring API](/docs/connections/sources/catalog/libraries/website/javascript/#querystring-api) lets you use querystrings to load API methods when a user first visits a Segment-enabled site. Use this API for tracking events like email clicks, and identifying users associated with those clicks on the destination page.
+- The [Querystring API](/docs/connections/sources/catalog/libraries/website/javascript/querystring/) lets you use querystrings to load API methods when a user first visits a Segment-enabled site. Use this API for tracking events like email clicks, and identifying users associated with those clicks on the destination page.
 
 Segment also offers [Cloud App Sources](/docs/connections/sources/about-cloud-sources/) to integrate data from your third-party tools:
 

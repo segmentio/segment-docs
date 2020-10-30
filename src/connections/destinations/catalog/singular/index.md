@@ -13,8 +13,8 @@ This destination is maintained by Singular. For any issues with the destination,
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Singular" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Singular" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your Singular "API KEY", found in your Singular Dashboard under 'Settings' > 'SDK Keys', to the Segment Settings UI.
 
 ## What's supported

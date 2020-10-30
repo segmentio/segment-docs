@@ -17,8 +17,8 @@ This document was last updated on September 6, 2018. If you notice any gaps, out
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Klaviyo" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Klaviyo" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Navigate to your [Account > Settings > API Keys](https://www.klaviyo.com/account#api-keys-tab) in the Klaviyo's UI and copy your "API Key" into the Segment Settings UI.
 5. **Note:** Private API Key is required to use the List API. You can find this by going to Klaviyo's UI and clicking [Account > Settings > API Keys > Create API Key](https://www.klaviyo.com/account#api-keys-tab) in order to generate a Private API Key and copy it into the Segment Settings UI.
 
@@ -51,7 +51,7 @@ analytics.identify({
 
 When you call `identify` on analytics.js, we call Klaviyo's `identify` with the `traits` object. We augment the `traits` object to have `traits.$id` be the `userId` since Klaviyo takes the user ID on the `traits` object itself.
 
-**Note:** When sending data to Klaviyo using `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet).
+**Note:** When sending data to Klaviyo using `analytics.js`, an initial `page` call is required. By default, this is already added in your [Segment snippet](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
 We will map the following Segment spec'd traits to Klaviyo [special people properties](http://www.klaviyo.com/docs):
 

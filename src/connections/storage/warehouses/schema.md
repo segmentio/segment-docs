@@ -9,46 +9,46 @@ The table below describes the schema in Segment Warehouses:
 <table>
   <tr>
     <td>`<source>.aliases`</td>
-    <td>A table with all of your `alias` method calls. This table will include all of the `traits` you identify users by as top-level columns, for example `<source>.aliases.email`.</td>
+    <td>A table with your `alias` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.aliases.email`.</td>
   </tr>
   <tr>
     <td>`<source>.groups`</td>
-    <td>A table with all of your `group` method calls. This table will include all of the `traits` you record for groups as top-level columns, for example `<source>.groups.employee_count`.</td>
+    <td>A table with your `group` method calls. This table includes the `traits` you record for groups as top-level columns, for example `<source>.groups.employee_count`.</td>
   </tr>
   <tr>
     <td>`<source>.accounts`</td>
-    <td>*CURRENTLY IN BETA* A table with unique `group` method calls. Group calls are upserted into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a group.</td>
+    <td>*IN BETA* A table with unique `group` method calls. Group calls are upserted into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a group.</td>
   </tr>
   <tr>
     <td>`<source>.identifies`</td>
-    <td>A table with all of your `identify` method calls. This table will include all of the `traits` you identify users by as top-level columns, for example `<source>.identifies.email`.</td>
+    <td>A table with your `identify` method calls. This table includes the `traits` you identify users by as top-level columns, for example `<source>.identifies.email`.</td>
   </tr>
   <tr>
     <td>`<source>.users`</td>
-    <td>A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of of a user. The `id` column in the users table is equivalent to the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To get at a user's anonymousIds, you'll need to query the identifies table. *If you observe any duplicates in the users table, [contact us](https://segment.com/help/contact/).*</td>
+    <td>A table with unique `identify` calls. `identify` calls are upserted on `user_id` into this table (updated if an existing entry exists, appended otherwise). This table holds the latest state of a user. The `id` column in the users table is the same as the `user_id` column in the identifies table. Also note that this table won't have an `anonymous_id` column since a user can have multiple anonymousIds. To get at a user's anonymousIds, you'll need to query the identifies table. *If you observe any duplicates in the users table, [contact us](https://segment.com/help/contact/).*</td>
   </tr>
   <tr>
     <td>`<source>.pages`</td>
-    <td>A table with all of your `page` method calls. This table will include all of the `properties` you record for pages as top-level columns, for example `<source>.pages.title`.</td>
+    <td>A table with your `page` method calls. This table includes the `properties` you record for pages as top-level columns, for example `<source>.pages.title`.</td>
   </tr>
   <tr>
     <td>`<source>.screens`</td>
-    <td>A table with all of your `screen` method calls. This table will include all of the `properties` you record for screens as top-level columns, for example `<source>.screens.title`.</td>
+    <td>A table with your `screen` method calls. This table includes `properties` you record for screens as top-level columns, for example `<source>.screens.title`.</td>
   </tr>
   <tr>
     <td>`<source>.tracks`</td>
-    <td>A table with all of your `track` method calls. This table will only include a few standardized properties that are all common to all events: `anonymous_id`, `context_*`, `event`, `event_text`, `received_at`, `sent_at`, and `user_id`.  This is because every event that you send to Segment has completely different properties.  For querying by the custom properties, use the `<source>.<event>` tables instead.</td>
+    <td>A table with your `track` method calls. This table includes standardized properties that are all common to all events: `anonymous_id`, `context_*`, `event`, `event_text`, `received_at`, `sent_at`, and `user_id`.  This is because every event that you send to Segment has different properties.  For querying by the custom properties, use the `<source>.<event>` tables instead.</td>
   </tr>
   <tr>
     <td>`<source>.<event>`</td>
-    <td>For `track` calls, each event like `Signed Up` or `Order Completed` also has it's own table (eg. `initech.clocked_in`) with columns for each of the event's distinct `properties` (eg. `initech.clocked_in.time`).</td>
+    <td>For `track` calls, each event like `Signed Up` or `Order Completed` also has it's own table (for example. `initech.clocked_in`) with columns for each of the event's distinct `properties` (for example. `initech.clocked_in.time`).</td>
   </tr>
 </table>
 
 
 ## Identifies table
 
-Your `identifies` table is where all of your `.identify()` method calls are stored. Query it to find out user-level information. It has the following columns:
+The `identifies` table stores the `.identify()` method calls =. Query it to find out user-level information. It has the following columns:
 
 <table>
   <tr>
@@ -65,11 +65,11 @@ Your `identifies` table is where all of your `.identify()` method calls are stor
   </tr>
   <tr>
     <td>`received_at`</td>
-    <td>When the identify call was received by Segment.</td>
+    <td>When Segment received the identify call.</td>
   </tr>
   <tr>
     <td>`sent_at`</td>
-    <td>When the identify call was triggered by the user.</td>
+    <td>When a user triggered the identify call.</td>
   </tr>
   <tr>
     <td>`user_id`</td>
@@ -77,7 +77,7 @@ Your `identifies` table is where all of your `.identify()` method calls are stor
   </tr>
   <tr>
     <td>`<trait>`</td>
-    <td>Each trait of the user you record is created as it's own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `first_name`.</td>
+    <td>Each trait of the user you record creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `first_name`.</td>
   </tr>
 </table>
 
@@ -106,7 +106,7 @@ ORDER by column_name
   </tbody>
 </table>
 
-Your `identifies` table is where you can do all sorts of querying about your users and their traits. For example, if you wanted to see the number of unique users you've seen on your site each day:
+The `identifies` table is where you can query information about your users and their traits. For example, if you wanted to see the number of unique users you've seen on your site each day:
 
 ```sql
 SELECT DATE(sent_at) AS Day, COUNT(DISTINCT(user_id)) AS Users
@@ -118,7 +118,7 @@ ORDER BY day
 
 ## Groups table
 
-Your `groups` table is where all of your `group` method calls are stored. Query it to find out group-level information. It has the following columns:
+The  `groups` table stores the `group` method calls. Query it to find out group-level information. It has the following columns:
 
 <table>
   <tr>
@@ -139,11 +139,11 @@ Your `groups` table is where all of your `group` method calls are stored. Query 
   </tr>
   <tr>
     <td>`received_at`</td>
-    <td>When the group call was received by Segment.</td>
+    <td>When Segment receives the group call.</td>
   </tr>
   <tr>
     <td>`sent_at`</td>
-    <td>When the group call was triggered by the user.</td>
+    <td>When a user triggered the group call.</td>
   </tr>
   <tr>
     <td>`user_id`</td>
@@ -151,7 +151,7 @@ Your `groups` table is where all of your `group` method calls are stored. Query 
   </tr>
   <tr>
     <td>`<trait>`</td>
-    <td>Each trait of the group you record is created as it's own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `name`.</td>
+    <td>Each trait of the group you record creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `email` and `name`.</td>
   </tr>
 </table>
 
@@ -180,7 +180,7 @@ ORDER by column_name
   </tbody>
 </table>
 
-To see a list of all of the groups using your product run:
+To see a list of the groups using your product run:
 
 ```sql
 SELECT name AS Company
@@ -204,7 +204,7 @@ GROUP BY name
 
 ## Pages and Screens tables
 
-Your `pages` and `screens` tables are where all of your `page` and `screen` method calls are stored. Query it to find out information about page views or screen views. It has the following columns:
+The `pages` and `screens` tables store the `page` and `screen` method calls. Query it to find out information about page views or screen views. It has the following columns:
 
 <table>
   <tr>
@@ -221,11 +221,11 @@ Your `pages` and `screens` tables are where all of your `page` and `screen` meth
   </tr>
   <tr>
     <td>`received_at`</td>
-    <td>When the page or screen call was received by Segment.</td>
+    <td>When Segment received the page or screen call.</td>
   </tr>
   <tr>
     <td>`sent_at`</td>
-    <td>When the page or screen call was triggered by the user.</td>
+    <td>When a user triggered the page or screen call.</td>
   </tr>
   <tr>
     <td>`user_id`</td>
@@ -233,7 +233,7 @@ Your `pages` and `screens` tables are where all of your `page` and `screen` meth
   </tr>
   <tr>
     <td>`<property>`</td>
-    <td>Each property of your pages or screens is created as it's own column, and the column type is automatically inferred from your data. For example, you might have columns like `referrer` and `title`.</td>
+    <td>Each property of your pages or screens creates its own column, and the column type is automatically inferred from your data. For example, you might have columns like `referrer` and `title`.</td>
   </tr>
 </table>
 
@@ -300,7 +300,7 @@ ORDER BY day
 
 ## Tracks table
 
-Your `tracks` table is where all of your `track` method calls are stored. Query it to find out information about the events your users have triggered. It has the following columns:
+The `tracks` table stores the `track` method calls. Query it to find out information about the events your users have triggered. It has the following columns:
 
 <table>
   <tr>
@@ -325,11 +325,11 @@ Your `tracks` table is where all of your `track` method calls are stored. Query 
   </tr>
   <tr>
     <td>`received_at`</td>
-    <td>When the track call was received by Segment.</td>
+    <td>When Segment received the track call.</td>
   </tr>
   <tr>
     <td>`sent_at`</td>
-    <td>When the track call was triggered by the user.</td>
+    <td>When a user triggered the track call.</td>
   </tr>
   <tr>
     <td>`user_id`</td>
@@ -340,7 +340,7 @@ Your `tracks` table is where all of your `track` method calls are stored. Query 
 ### Querying the Tracks table
 
 
-Your `tracks` table is a rollup of all of the different event-specific tables, for quick querying of just a single type. For example, you could see the count of how many unique users signed up each day:
+Your `tracks` table is a rollup of the different event-specific tables, for quick querying of just a single type. For example, you could see the number of unique users signed up each day:
 
 ```sql
 SELECT DATE(sent_at) AS Day, COUNT(DISTINCT(user_id)) AS Users
@@ -404,25 +404,25 @@ Your event tables are a series of table for each custom event you record to Segm
   </tr>
   <tr>
     <td>`received_at`</td>
-    <td>When the track call was received by Segment.</td>
+    <td>When Segment received the track call.</td>
   </tr>
   <tr>
     <td>`sent_at`</td>
-    <td>When the track call was triggered by the user.</td>
+    <td>When a user triggered the track call.</td>
   </tr>
   <tr>
     <td>`user_id`</td>
     <td>The unique ID of the user.</td>
   </tr>
     <td>`<property>`</td>
-    <td>Each property of your track calls is created as it's own column, and the column type is automatically inferred from your data.</td>
+    <td>Each property of your track calls creates its own column, and the column type is automatically inferred from your data.</td>
   </tr>
 </table>
 
 ### Querying the Events tables
 
 
-To see a list of all of the event tables for a given `<source>` you can run:
+To see a list of the event tables for a given `<source>` you can run:
 
 ```sql
 SELECT schema as source, "table" as Event
@@ -483,11 +483,11 @@ ORDER by column_name
   </tbody>
 </table>
 
-**Note:** If you send us an array, we will stringify it in Redshift. That way you don't end up having to pollute your events. It won't work perfectly if you have a lot of array elements but should work decently to store and query those. We also flatten nested objects. 
+**Note:** If you send us an array, we will stringify it in Redshift. That way you don't end up having to pollute your events. It won't work if you have a lot of array elements but should work decently to store and query those. We also flatten nested objects. 
 
 ## Tracks vs. Events Tables
 
-To see all of the tables for your organization, you can run this query:
+To see the tables for your organization, you can run this query:
 
 ```sql
 SELECT schema || '.' || "table" AS table, rows
@@ -495,9 +495,9 @@ FROM disk
 ORDER BY 1
 ```
 
-The  source.event tables have all of the same columns as the source.track tables, but they also include columns specific to the properties of each event.
+The source.event tables have the same columns as the source.track tables, but they also include columns specific to the properties of each event.
 
-So if you're recording an event like:
+If you're recording an event like:
 
 ```js
 analytics.track('Register', {
@@ -508,11 +508,11 @@ analytics.track('Register', {
 
 Then you can expect to see columns named `plan` and `account_type` as well as the default `event`, `id`, etc. That way you can write queries against any of the custom data send in track calls.
 
-**Note:** Because `properties` and `traits` are added as un-prefixed columns to your tables, there is a chance of collision with our reserved column names. For this reason, properties with the same name as reserved column name (eg. `user_id`) will be discarded.
+**Note:** Because `properties` and `traits` are added as un-prefixed columns to your tables, there is a chance of collision with our reserved column names. For this reason, properties with the same name as reserved column name (for example. `user_id`) are discarded.
 
-Your event tables are one of the more powerful datasets in Segment SQL. They allow you to clearly see which actions users are performing when interacting with your product.
+Your event tables are one of the more powerful datasets in Segment SQL. They allow you to see which actions users are performing when interacting with your product.
 
-Because every source has different events, what you can do with them will vary. Here's an example where you can see how many "Enterprise" users signed up for each day:
+Because every source has different events, what you can do with them will vary. Here's an example where you can see the number of "Enterprise" users signed up for each day:
 
 ```sql
 SELECT DATE(sent_at) AS Day, COUNT(DISTINCT(user_id)) AS Users
@@ -581,19 +581,20 @@ ORDER BY day
 
 ### New Columns
 
-Columns are created for new event properties and traits. Segment processes the incoming data in batches, based on either data size or an interval of time. If the table doesn't exist we lock and create the table. If the table exists but new columns need to be created, we perform a diff and alter the table to append new columns.
+New event properties and traits create columns. Segment processes the incoming data in batches, based on either data size or an interval of time. If the table doesn't exist we lock and create the table. If the table exists but new columns need to be created, we perform a diff and alter the table to append new columns.
 
-**Note:** We create tables for each of your custom events, and columns for each event's custom properties. Redshift itself has limits on how many can be created, so we do not allow unbounded event or property spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar._
+> note "Column creation in Redshift"
+> **Note:** Segment creates tables for each of your custom events, and columns for each event's custom properties. Redshift has limits on the number of columns in a table, so Segment does not allow unbounded event or property spaces in your data. Instead of recording events like "Ordered Product 15", use a single property of "Product Number" or similar.
 
-When we process a new batch and discover a new column needs to be added, we take the most recent occurrence of a column and choose its datatype.
+When Segment process a new batch and discover a new column to add, we take the most recent occurrence of a column and choose its datatype.
 
 The datatypes that we support right now are: 
 
--`timestamp`
--`integer` 
--`float`
--`boolean`
--`varchar`
+- `timestamp`
+- `integer` 
+- `float`
+- `boolean`
+- `varchar`
 
 ## Column Sizing
 
@@ -601,13 +602,13 @@ After analyzing the data from dozens of customers we set the string column lengt
 
 We special-case compression for some known columns like event names and timestamps. The others default to LZO. We may add look-ahead sampling down the road, but from inspecting the datasets today this would be unnecessary complexity.
 
-After a column is created, Redshift doesn't allow altering. Swapping and renaming may work down the road, but this would likely cause thrashing and performance issues. If you would like to change the column size, see our [docs here](/docs/faqs/warehouses/redshift-limitations/#varchar-size-limits-).
+After a column is created, Redshift doesn't allow altering. Swapping and renaming may work down the road, but this would cause thrashing and performance issues. If you would like to change the column size, see our [docs here](/docs/connections/storage/warehouses/redshift-faq/#varchar-size-limits).
 
 ## Timestamps
 
-There are four timestamps associated with every Segment API call: `timestamp`, `original_timestamp`, `sent_at` and `received_at`.
+The Segment API associates four timestamps with every call: `timestamp`, `original_timestamp`, `sent_at` and `received_at`.
 
-All four timestamps are passed through to your Warehouse for every ETL'd event. In most cases the timestamps are fairly close together, but they have different meanings which are important.
+All four timestamps pass through to your Warehouse for every ETL'd event. In most cases the timestamps are close together, but they have different meanings which are important.
 
 `timestamp` is the UTC-converted timestamp which is set by the Segment library. If you are importing historical events using a server-side library, this is the timestamp you'll want to reference in your queries!
 
@@ -617,9 +618,10 @@ All four timestamps are passed through to your Warehouse for every ETL'd event. 
 
 `received_at` is UTC timestamp set by the Segment API when the API receives the payload from client or server. All tables use `received_at` for the sort key.
 
-**IMPORTANT:** We highly recommend using the `received_at` timestamp for all queries based on time. The reason for this is two-fold. First, the `sent_at` timestamp relies on a client's device clock being accurate, which is generally unreliable. Secondly, we set `received_at` as the sort key in Redshift schemas, which means queries will execute much faster when using `received_at`. You can continue to use `timestamp` or `sent_at` timestamps in queries if `received_at` doesn't work for your analysis, but the queries will take longer to complete.
+> info ""
+> We recommend using the `received_at` timestamp for all queries based on time. The reason for this is two-fold. First, the `sent_at` timestamp relies on a client's device clock being accurate, which is generally unreliable. Secondly, we set `received_at` as the sort key in Redshift schemas, which means queries will execute much faster when using `received_at`. You can continue to use `timestamp` or `sent_at` timestamps in queries if `received_at` doesn't work for your analysis, but the queries will take longer to complete.
 
-However, `received_at` does not ensure chronology of events.  For queries based on event chronology, `timestamp` should be used.
+`received_at` does not ensure chronology of events.  For queries based on event chronology, `timestamp` should be used.
 
 [Here's additional documentation](/docs/connections/spec/common/#timestamps) on timestamps in the context of our spec.
 
@@ -639,7 +641,7 @@ All tables use `received_at` for the sort key. Amazon Redshift stores your data 
 
 ## More Help
 
-[How do I send custom data to my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse/)
+[How do I send custom data to my warehouse?](/docs/connections/storage/warehouses/faq/#what-if-i-want-to-add-custom-data-to-my-warehouse)
 
 [How do I give users permissions to my warehouse?](/docs/connections/storage/warehouses/add-warehouse-users/)
 

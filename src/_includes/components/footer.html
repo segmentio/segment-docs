@@ -21,15 +21,15 @@
         <div class="footer__aside">
           {% include icons/segment.svg %}
 
-          <p>© 2019 Segment.io, Inc.</p>
+          <p>© {{ site.time | date: "%Y" }} Segment.io, Inc.</p>
 
           <div class="nav">
             <ul class="nav-list">
               <li>
-                <a class="nav-list__link" href="{{ site.baseurl }}/legal/privacy/">Privacy</a>
+                <a class="nav-list__link" href="https://segment.com/legal/privacy/">Privacy</a>
               </li>
               <li>
-                <a class="nav-list__link" href="{{ site.baseurl }}/legal/terms/">Terms</a>
+                <a class="nav-list__link" href="https://segment.com/legal/terms/">Terms</a>
               </li>
               <li>
                 <a class="nav-list__link" href="#" id="open-consent-manager">Website Data Collection Preferences</a>
@@ -68,7 +68,7 @@
 
 <div class="footer-mobile">
   <div class="footer__aside">
-    <p>© Copyright 2019 Segment</p>
+    <p>© Copyright {{ site.time | date:"%Y" }} Segment</p>
   </div>
 
   <ul class="social-list social-list--dark flex flex--middle flex--center gutter gutter--xlarge">

@@ -3,7 +3,7 @@ title: Amazon Lambda Destination
 rewrite: true
 ---
 
-Segment makes it easy to send your data to AWS Lambda (and lots of other destinations). Once you've tracked your data using our open source [libraries](https://segment.com/libraries) we'll translate and route your data to AWS Lambda in the format they understand.
+Segment makes it easy to send your data to AWS Lambda (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to AWS Lambda in the format it can use.
 
 [AWS Lambda](https://aws.amazon.com/lambda/) lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
 

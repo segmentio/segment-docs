@@ -13,12 +13,12 @@ Segment's libraries generate and send messages to our tracking API in JSON forma
 
 There are six calls in the basic tracking API, which answer specific questions:
 
-- [Identify](/docs/spec/identify/): Who is the user?
-- [Track](/docs/spec/track/): What are they doing?
-- [Page](/docs/spec/page/): What web page are they on?
-- [Screen](/docs/spec/screen/): What app screen are they on?
-- [Group](/docs/spec/group/): What account or organization are they part of?
-- [Alias](/docs/spec/alias/): What was their past identity?
+- [Identify](/docs/connections/spec/identify/): Who is the user?
+- [Track](/docs/connections/spec/track/): What are they doing?
+- [Page](/docs/connections/spec/page/): What web page are they on?
+- [Screen](/docs/connections/spec/screen/): What app screen are they on?
+- [Group](/docs/connections/spec/group/): What account or organization are they part of?
+- [Alias](/docs/connections/spec/alias/): What was their past identity?
 
 Among these calls, you can think of Identify, Group, and Alias as similar types of calls, all to do with updating our understanding of the user who is triggering Segment messages. You can think of these calls as adding information to, or updating an object record in a database. **Objects** are described using "traits", which you can collect as part of your calls.
 
@@ -104,7 +104,7 @@ analytics.identify( user_id: "12345abcde",
 
 When a user explicitly signs out of one of your applications, you can call `analytics.reset()` to stop logging further event activity to that user, and create a new `anonymousId` for subsequent activity (until the user logins in again and is subsequently `identify`-ed). **This call is most relevant for client-side Segment libraries**, as it clears cookies in the user’s browser.
 
-Make a `Reset()` call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out). For more info on this call, [see the Javascript source documentation](/docs/connections/sources/website/javascript#reset-logout).
+Make a `Reset()` call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out). For more info on this call, [see the Javascript source documentation](/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout).
 
 ## Page and Screen
 
@@ -164,7 +164,7 @@ If the presentation of user interface components don’t substantially change th
 > note ""
 > **Note**: When you trigger a Page call manually, make sure the call happens _after_ the UI element is successfully displayed, not when it is called. It shouldn’t be called as part of the click event that initiates it.
 
-For more info on Page calls, review [Page spec](/docs/spec/page/) and [Analytics.js docs](/docs/connections/sources/catalog/libraries/website/javascript/#page).
+For more info on Page calls, review [Page spec](/docs/connections/spec/page/) and [Analytics.js docs](/docs/connections/sources/catalog/libraries/website/javascript/#page).
 
 ### When to call Screen
 
@@ -209,7 +209,7 @@ Each event you track must have a name that describes the event, like 'Article Bo
 
 Segment’s best practice is to use an “Object Action” (Noun<>Verb) naming convention for all **Track** events, for example, 'Article Bookmarked'.
 
-Segment maintains a set of [**Business Specs**](/docs/spec/semantic/) which follow this naming convention around different use cases such as eCommerce, B2B SaaS, and Mobile.
+Segment maintains a set of [**Business Specs**](/docs/connections/spec/semantic/) which follow this naming convention around different use cases such as eCommerce, B2B SaaS, and Mobile.
 
 Let’s dive deeper into the Object Action syntax that all Segment Track events should use.
 
@@ -262,7 +262,7 @@ Ultimately, you can decide to use a casing different from our recommendations; h
 
 You can read more about [best practices for Track calls](/docs/connections/spec/best-practices-event/), .
 
-All of the basic [Segment methods](/docs/spec/) have a common structure and common fields which are automatically collected on every call. You can see these in the [common fields documentation](/docs/spec/common/).
+All of the basic [Segment methods](/docs/connections/spec/) have a common structure and common fields which are automatically collected on every call. You can see these in the [common fields documentation](/docs/connections/spec/common/).
 
 ### Common properties to send with Track call
 

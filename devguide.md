@@ -21,6 +21,17 @@ If using OSX:
   * Run server, `make dev`
   * Visit http://localhost:4000/docs/
 
+## Changing a DevCenter Destination's name
+
+Occasionally, a destination will change names. This shouldn't be too difficult to handle, but make sure you do the following:
+- Change the name of the file **to match destination's new slug**
+- Check in the Partner Portal that the name change has appropriately filled out the `previousNames` field. There should be two (or more if this has aliases/many name changes).
+- Add a `redirect_from` frontmatter item, with the url of the old doc. This funnels anyone arriving at the old page from a link outside the docs site to the page at the new name.
+- Run a `make catalog` to pick up the name change.
+- Run `make docs` and test that:
+  1. The page shows up correctly at the url you specified using the new slug.
+  2. The programmatic content appears (cmodes, settings, previous names)
+  3. The redirect from the old page URL works.
 
 
 ## Developer information
@@ -132,3 +143,5 @@ There is as also some manual testing scripts that can be run to validate the bui
 3. `tests/imageSizes/getImageSizes.js`: used to get the 10 largest images in the repo.
 
 4. `npx mdspell 'src/**/*.md' -r --en-us`: used to validate spelling in docs, needs to be configured to add Segment terms.
+
+5. Included is the [Hyperlink](https://www.npmjs.com/package/hyperlink) NPM module. Run `bundle install` to install that, plus the tap-spot plugin for pretty output. To check all links on the site, prior to build, run `yarn run hyperlink ./_site/index.html --canonicalroot https://segment.com/docs -i -r --skip 0.0.0.0 | yarn run tap-spot`. This module checks hyper links, images, and anchor tags to ensure that everything linked internally resolves to a location. **TODO**: Add support for external links.

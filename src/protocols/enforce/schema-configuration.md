@@ -12,7 +12,7 @@ To enable blocking, go to the **Settings** tab for your source, and click on **S
 ![](../images/event_blocking.png)
 
 ## Track Calls - Unplanned Events
-When you set this dropdown to Block Event, Segment drops any events that are not defined in your Tracking Plan. Only whitelisted `track` calls in your Tracking Plan flow through Segment to your Destinations.
+When you set this dropdown to Block Event, Segment drops any events that are not defined in your Tracking Plan. Only allowlisted `track` calls in your Tracking Plan flow through Segment to your Destinations.
 
 For example, if you include a `Subscription Cancelled` event in your Tracking Plan, the example track call below would be blocked by Protocols because the event name does not match the event name casing in your Tracking Plan.
 

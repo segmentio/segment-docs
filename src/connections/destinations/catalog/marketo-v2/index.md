@@ -4,7 +4,7 @@ title: Marketo V2 Destination
 
 ## Getting Started
 
-To start sending data to Marketo, there are two things you must do. **Both of these steps require you to log in with the Admin Marketo Account.**
+To start sending data to Marketo, there are two things you must do. **Both of these steps require that you to log in with the Admin Marketo Account.**
 
 ### 1. Enter your Marketo Credentials into your Destination settings.
 We'll need your Munchkin Account ID, Client Secret, and Client ID.
@@ -208,7 +208,7 @@ Marketo allows you to upsert leads based on any field. We use email and userId a
 You can do one of the following to prevent duplicate leads:
 
 
-1. **Recommended:** Upload a CSV adding your userId to all your leads in Marketo **before** enabling the destination. After you've [created the userId field](/docs/connections/destinations/catalog/marketo-v2/#-2-you-must-create-a-user-id-and-an-anonymous-id-field-in-marketo-) in Marketo, you can upload a list of all your users with an email column and a userId column. Your CSV should look like this:
+1. **Recommended:** Upload a CSV adding your userId to all your leads in Marketo **before** enabling the destination. After you [create the userId field](/docs/connections/destinations/catalog/marketo-v2/#2-you-must-create-a-user-id-and-an-anonymous-id-field-in-marketo) in Marketo, you can upload a list of all your users with an email column and a userId column. Your CSV should look like this:
 
 | **email**         | **userId** |
 | ----------------- | ---------- |
@@ -228,8 +228,8 @@ There are a few necessary steps that have to be taken to Migrate from Marketo to
 **Important: Make sure you disable Marketo once you are done getting set up with Marketo V2. If you leave both enabled, there will likely be duplicate data in your Marketo account.**
 
 
-1. Your Marketo credentials in your Segment Destination settings need to be updated. Our Marketo Destination used Marketo's SOAP API and Marketo V2 uses Marketo's REST API which requires different credentials. Check out the [Getting Started](/docs/connections/destinations/catalog/marketo-v2/#-1-enter-your-marketo-credentials-into-your-destination-settings-we-ll-need-your-munchkin-account-id-client-secret-and-client-id-) guide for what credentials you'll need.
-2. Two custom fields must be created in Marketo: userId and anonymousId. Check out [Getting Started](/docs/connections/destinations/catalog/marketo-v2/#-2-you-must-create-a-user-id-and-an-anonymous-id-field-in-marketo-) for exact details on how to create these custom fields in Marketo.
+1. Your Marketo credentials in your Segment Destination settings need to be updated. Our Marketo Destination used Marketo's SOAP API and Marketo V2 uses Marketo's REST API which requires different credentials. Check out the [Getting Started](/docs/connections/destinations/catalog/marketo-v2/#getting-started) guide for what credentials you'll need.
+2. Two custom fields must be created in Marketo: userId and anonymousId. Check out [Getting Started](/docs/connections/destinations/catalog/marketo-v2/#2-you-must-create-a-user-id-and-an-anonymous-id-field-in-marketo) for exact details on how to create these custom fields in Marketo.
 3. `Track` calls must be mapped in your Destination settings. Our Marketo Destination sent `track` calls as a Munchkin Visit WebPage event in Marketo. In Marketo V2, we'll send your track calls to your Marketo Custom Activities. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#track).
 4. If there are any custom Lead fields that you'd like sent to Marketo in your `Identify` calls, you must add them in your Destination settings. Detailed instructions [here](/docs/connections/destinations/catalog/marketo-v2/#identify).
 5. Update anything in Marketo that rely on the way V1 sends `.track()` events to be triggered by your custom activities. For example, our V1 Marketo destination sent track events as a "Visit Web Page" event with `/event/<your_event_name>`. So if you a workflow that is triggered by a "Visit Web Page" event where the web page contains `/event/<your_event_name>`, you'll have to swap out the "Visit Web Page" event trigger you have with your Custom Attribute Trigger. In the right side bar, click the "Custom" folder under "Triggers" and select the trigger that you set for your custom activity:

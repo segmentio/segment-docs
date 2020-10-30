@@ -8,16 +8,13 @@ This document was last updated on November 08, 2018. If you notice any gaps, out
 
 **Use Cases**
 
-* [Send in-app notifications based on topics of interest with Appcues](https://segment.com/recipes/in-app-notifications-topic-interest-appcues/)
-* [Trigger in-app notifications based on user intent to upgrade with Appcues and ClearBrain](https://segment.com/recipes/trigger-upgrade-notifications-appcues-clearbrain/)
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Appcues" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your `Appcues Id` (for client-side integration functionality) and/or your `API Key` (for server-side integration functionality) from the [Appcues account page](https://my.appcues.com/account).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Appcues" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your `Appcues Id` (for client-side integration functionality) and/or your `API Key` (for server-side integration functionality) from the [Appcues account page](https://my.appcues.com/account).
 
 ### Server
 
@@ -30,7 +27,7 @@ For example, using the server-side destination, customer profile and event data 
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page();
@@ -40,7 +37,7 @@ Appcues will check to see if a user qualifies for an experience every time the p
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('12091906-01011992', {
@@ -58,7 +55,7 @@ To get the most out of Appcues, you should send as much user data as possible in
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("step_activated", {
@@ -93,4 +90,4 @@ By default, Appcues will target based on the path of the URL. So if we created a
 
 ## Delete
 
-When you trigger a user deletion using our [Privacy features](https://segment.com/docs/privacy-portal/user-deletion-and-suppression/), we will forward a delete notification to Appcues, who will act on the notification. You can read more about how Appcues handles deletion requests [in their docs here.](https://docs.appcues.com/article/443-gdpr-deletion-api)
+When you trigger a user deletion using our [Privacy features](/docs/privacy/user-deletion-and-suppression/), we will forward a delete notification to Appcues, who will act on the notification. You can read more about how Appcues handles deletion requests [in their docs here.](https://docs.appcues.com/article/443-gdpr-deletion-api)

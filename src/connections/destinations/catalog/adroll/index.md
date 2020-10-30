@@ -7,18 +7,12 @@ title: AdRoll Destination
 
 This document was last updated on January 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
-**Use Cases**
-
-* [Retarget users who abandon signup with AdRoll](https://segment.com/recipes/retarget-users-abandoned-signup-adroll/)
-* [Personalize retargeting display ads by company size with AdRoll](https://segment.com/recipes/personalize-ads-by-company-size-adroll/)
-* [Retarget shopping cart abandoners with AdRoll to increase conversions](https://segment.com/recipes/abandon-cart-retargeting-adroll/)
-
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Adroll" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Adroll" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Locate both your AdRoll Advertiser ID and Pixel ID in AdRoll's "Audience" tab, "AdRoll Pixel" section. Click on "View Pixel". Your Advertiser ID will be listed beside `adroll_adv_id` and your AdRoll Pixel will be listed beside `adroll_pix_id`.
 
     ![](images/adroll-pixel.png)

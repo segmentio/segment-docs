@@ -37,6 +37,14 @@ Your source slug can be found in the URL when you're looking at the source desti
 
 `https://segment.com/[my-workspace]/sources/[my-source-slug]/overview`
 
+
+## How do I find my warehouse id?
+
+Your warehouse id appears in the URL when you look at the [warehouse destinations page](https://app.segment.com/goto-my-workspace/warehouses/). The URL structure looks like this:
+
+​​`app.segment.com/[my-workspace]/warehouses/[my-warehouse-id]/overview`
+
+
 ## How fresh is the data in Segment Warehouses?
 
 Your data will be available in Warehouses within 24-48 hours. The underlying Redshift datastore has a subtle tradeoff between data freshness, robustness, and query speed. For the best experience we need to balance all three of these.
@@ -89,3 +97,12 @@ For full historical backfills you'll need to be a Segment Business plan customer
 Heroku's simple set up and administration process make it a great option to get up and running quickly.
 
 Amazon's service has some more powerful features and will be more cost-effective for most cases. However, first time users of Amazon Web Services (AWS) will likely need to spend some time with the documentation to get set up properly.
+
+## How do I prevent a source from syncing to some or all warehouses?
+
+When you create a new source, the source syncs to all warehouse(s) in the workspace by default. You can prevent the source from syncing to some or all warehouses in the workspace in two ways:
+
+- **Segment app**: When you add a source from the Workspace Overview page, deselect the warehouse(s) you don't want the source to sync to as part of the "Add Source" process. All warehouses are automatically selected by default.
+- **Config API**: Send a [PATCH Connected Warehouse request](https://reference.segmentapis.com/?version=latest#ec12dae0-1a3e-4bd0-bf1c-840f43537ee2) to update the settings for the warehouse(s) you want to prevent from syncing.
+
+After a source is created, you can enable or disable a warehouse sync within the Warehouse Settings page.

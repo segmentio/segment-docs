@@ -4,7 +4,7 @@ title: Analytics for Python
 
 Our Python library lets you record analytics data from your Python code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
-This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-python).
+This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-python).
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers using a separate thread.
 
@@ -48,6 +48,9 @@ analytics.on_error = on_error
 **Using Django?** Check out the [Django docs](/docs/connections/sources/catalog/libraries/server/python/#django).
 
 ## Identify
+
+> note ""
+> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 The `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them.
 
@@ -319,7 +322,7 @@ Find more details about `group` including the **`group` method payload** in our 
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Trak.io](/docs/connections/destinations/catalog/trak.io/#alias) if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -479,12 +482,12 @@ Here's an example `track` call with the `integrations` object shown.
 ```python
 analytics.track('9742', 'Song Played', integrations={
   'all': False,
-  'KISSmetrics': True,
+  'Kissmetrics': True,
   'Google Analytics': False
 })
 ```
 
-In this case, we're specifying that we want this identify to only go to KISSmetrics. `'all': False` says that no destination should be enabled unless otherwise specified. `'KISSmetrics': True` turns on KISSmetrics, etc.
+In this case, we're specifying that we want this identify to only go to Kissmetrics. `'all': False` says that no destination should be enabled unless otherwise specified. `'Kissmetrics': True` turns on Kissmetrics, etc.
 
 Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 

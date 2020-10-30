@@ -27,7 +27,7 @@ Replays are currently only available for Business Tier customers, and due to the
 
 Replays can process an unlimited amount of data, however they are rate limited to respect the limitations in downstream partner tools. The replay time depends on the tool we're replaying to, and the amount of data included in the replay.
 
-Replays do not affect your MTU count, unless you are using a Repeater destination. Notify your team before initiating a Replay if you're using a Repeater destination.
+Replays do not affect your [MTU count](/docs/guides/usage-and-billing/mtus-and-throughput/), unless you are using a [Repeater destination](/docs/connections/destinations/catalog/repeater/). Notify your team before initiating a Replay if you're using a Repeater destination.
 
 ### Replay-eligible destinations
 

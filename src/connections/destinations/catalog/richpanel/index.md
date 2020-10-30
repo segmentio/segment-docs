@@ -5,26 +5,25 @@ rewrite: true
 
 [Richpanel](https://richpanel.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the helpdesk software built for Ecommerce teams to support customers at scale in a fun, easy, collaborative way.
 
-This destination is maintained by Richpanel. For any issues with the destination, [contact their team](mailto:support@richpanel.com).
+This destination is maintained by Richpanel. For any issues with the destination, [contact the Richpanel Support team](mailto:support@richpanel.com).
 
-
-_**NOTE:** The Richpanel Destination is currently in beta, which means that they are still actively developing the destination. If you have any feedback to help improve the Richpanel Destination and its documentation, [let their team know](mailto:support@richpanel.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Richpanel" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Richpanel" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. If this is the first time setting up Richpanel as a destination, you’ll need to install the Segment App in your Richpanel Account.
 4. In your Richpanel account, go to Data Sources > Integrations and install the Segment Connector.
-5. Drop in the "API Key" into your Segment Settings UI which you can find from your [Richpanel data sources](https://app.richpanel.com/connectors/my/list).
+5. Enter the "API Key" into your Segment Settings UI which you can find from your [Richpanel data sources](https://app.richpanel.com/connectors/my/list).
 
 **NOTE**: Richpanel accepts anonymous users, or [Visitors](http://event.richpanel.com/#/customers/understanding-customers), but they will not appear in the Richpanel Customer Section UI unless the customer is first identified using an `identify` call or customer actvity through Richpanel Channels, thereby becoming a [Customer](http://event.richpanel.com/#/customers/understanding-customers).
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [`identify` method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`identify` method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -49,7 +48,7 @@ See [Richpanel's User Properties](http://event.richpanel.com/#/properties) and [
 
 ## Page
 
-If you're not familiar with the Segment Specs, take a look to understand what the [`page` method](https://segment.com/docs/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`page` method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page('Pricing', {
@@ -65,7 +64,7 @@ If no `richpanel_session_id` is supplied, Richpanel will automatically generate 
 
 ## Track
 
-If you're not familiar with the Segment Specs, take a look to understand what the [`track` method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [`track` method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Clicked Login Button', {

@@ -28,9 +28,11 @@ Sources are functionally comprised of either one or both of the following compon
 
 ### Sync frequency
 
-When you enable a source and grant us access by pasting an API key or authenticating with OAuth, Segment starts a scheduled job on your behalf which makes requests to the downstream tool, normalizes and transforms the data, and forwards the data to the Segment API. We make an effort to use as few API calls as possible, opting to fetch only data that has changed since the previous sync where possible. This can be an intensive process, especially on first sync, so we have lots of affordances in place for retries and to respect rate limits imposed by the partner.
+You enable a cloud source from the Segment web app, and grant Segment access by pasting an API key or authenticating with OAuth. Segment then starts a scheduled job on your behalf which makes requests to the downstream tool, normalizes and transforms the data, and forwards that data to the Segment API.
 
-### API Call Usage and Collection Selection
+Cloud sources attempt to use as few API calls as possible, and (where possible) only fetch data that changed since the last sync. The syncs might take a long time (especially on the first sync), so the cloud source syncs have robust retry and rate limiting logic.
+
+### API call use and collection selection
 
 We make an effort to be respectful of your API call allotments and limits. For example, in the case of Salesforce, we issue only one query per collection per run, using the absolute minimum number of API calls possible (typically about 350/day).
 
@@ -55,7 +57,7 @@ To use cloud sources, we suggest going through the following steps.
 
 Before you connect a source, check out the [sources documentation](/docs/connections/sources/). See what kind of credentials you will need to enable the source. Different sources require different levels of permissioning.
 
-Next, you'll also need to get the credentials for your [warehouse](/docs/warehouses/).
+Next, you'll also need to get the credentials for your [warehouse](/docs/connections/storage/catalog/).
 
 Once you have the necessary credentials (or are logged in to OAuth for your cloud source), you should be ready to go!
 
@@ -83,7 +85,7 @@ Sometimes, when the sync job fails due to an unhandled error or is mysteriously 
 
 In general, we've focused on pulling all of the collections directly related to the customer experience. We do not automatically pull all collections available from a partner API, since many of them aren't relevant to the customer journey. You can see a list of the collections we pull in the docs [for each cloud source](/docs/connections/sources/catalog/#cloud-apps). Each collection reflects a table in your database.
 
-[Let us know](https://segment.com/help/contact) if you need additional data collected or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
+[Contact Segment Product Support](https://segment.com/help/contact) if you need additional data collected, or to change the schema to do the analysis you want. We'd love to know what analysis you're trying to run, what additional data you need, and we'll share with the product team to evaluate.
 
 ### What questions can you answer with data from cloud, web, and mobile sources combined in a single warehouse?
 
@@ -100,8 +102,8 @@ Generally, you need intermediate- to advanced SQL experience to explore and anal
 <!-- LR 4.20.2020 I think these have been missing for a long time. :(
 **Entity Relationship Diagrams** The links to the ER (entity relationship) diagrams [in the documentation](/docs/connections/sources/#cloud-app) will really help you fast track your queries. They show the relationship between each table in a particular source, and how each table can be joined based on particular keys. -->
 
-**Joining IDs** As you start to get into joining across different types of sources, you'll need a way to join user IDs. This [help article](/docs/faqs/sources/join-user-profiles) explains how to do this in detail.
+**Joining IDs** As you start to get into joining across different types of sources, you'll need a way to join user IDs. This [help article](/docs/guides/how-to-guides/join-user-profiles/) explains how to do this in detail.
 
-**Getting Started Queries** We've created a number of queries for common use cases to help you get started – you can copy and paste them to start querying your data. Find them in the Warehouse section of the [Segment Community](https://segment.forumbee.com/category/warehouses).
+<!-- LR 7.8.2020 - Community shut down pending ??? so hiding this for now **Getting Started Queries** We've created a number of queries for common use cases to help you get started – you can copy and paste them to start querying your data. Find them in the Warehouse section of the [Segment Community](https://segment.forumbee.com/category/warehouses).-->
 
 **Partner Dashboards** Our BI partners at Mode, Looker, BIME, Periscope, and Chartio have created out of the box dashboards that work on top of our source schemas.

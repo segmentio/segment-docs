@@ -22,7 +22,7 @@ title: Zapier Destination
     ![](images/zapier-choose-action.png)
 
 6. From your Segment UI's Destinations page click on "Add Destination".
-7. Search for "Zapier" within the Destinations Catalog and confirm the Source you'd like to connect to.
+7. Search for "Zapier" in the Catalog, select it, and choose which of your sources to connect the destination to.
 8. Add your custom Webhook URLs to your destination settings as desired.
 9. Starting sending data!
 

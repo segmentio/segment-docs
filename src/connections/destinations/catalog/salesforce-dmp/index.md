@@ -107,7 +107,7 @@ SFDMP dashboard or by contacting your Salesforce representative.
 If you are unsure of where to find your SFDMP settings or are unsure of what
 your SFDMP settings are, contact your Salesforce representative.
 
-### Whitelisting and Blacklisting Properties
+### Allowlisting and Blocklisting Properties
 
 SFDMP manages its own filters and settings, which you must adjust either in the
 SFDMP dashboard or by contacting a Salesforce representative. Note that SFDMP
@@ -115,9 +115,9 @@ settings are independent of Segment UI settings. Updating a setting in SFDMP
 will not affect settings in Segment and vice versa. Therefore, it is important
 to ensure that SFDMP and Segment settings do not conflict.
 
-SFDMP has its own property whitelisting and blacklisting rules. For example,
-you could set up a blacklist rule in SFDMP. This means that Salesforce will
-accept any attributes save for those that have been explicitly blacklisted in
+SFDMP has its own property allowlisting and blocklisting rules. For example,
+you could set up a blocklist rule in SFDMP. This means that Salesforce will
+accept any attributes save for those that have been explicitly blocklisted in
 their system.
 
 A whitelist works the opposite way. Setting up a whitelist rule means that

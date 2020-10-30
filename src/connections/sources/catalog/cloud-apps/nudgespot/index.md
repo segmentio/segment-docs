@@ -3,9 +3,9 @@ title: 'Nudgespot Source'
 ---
 Nudgespot is the easiest way to trigger emails, SMS, push notifications or in-app messages to your customers, at the right time.  [Visit Website](http://www.nudgespot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners)
 
-Take your company's email analysis to the next level by **adding Nudgespot as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Nudgespot as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Nudgespot data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Nudgespot with Segment.](/sources/nudgespot)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Nudgespot data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. 
 
 ## Getting Started
 
@@ -90,4 +90,4 @@ from nudgespot.email_delivered
 
 ## Send data to Nudgespot
 
-The Nudgespot Source works better when you also connect Nudgespot as an destination. With the Nudgespot **Destination**, you can use Segment to send Nudgespot user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Nudgespot? Head on over to our [Nudgespot destination docs](/docs/connections/destinations/catalog/nudgespot/).
+The Nudgespot Source works better when you also connect Nudgespot as a destination. With the Nudgespot **Destination**, you can use Segment to send Nudgespot user and event data from which you trigger email campaigns. Want to start sending website or mobile data **_TO_** Nudgespot? Head on over to our [Nudgespot destination docs](/docs/connections/destinations/catalog/nudgespot/).

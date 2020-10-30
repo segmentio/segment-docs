@@ -10,7 +10,7 @@ We do not currently support Cloud Object Sources in the Privacy Portal, but it's
 
 ### Why is Segment suggesting my fields should be classified as Yellow or Red?
 
-You can see a full list of the fields we exact-match and fuzzy-match against [by default](#default-pii-matchers). These classifications are our best-guess suggestions, and you can easily change them by following the instructions to [change a recommended classification](#change-a-recommended-classification).
+You can see a full list of the fields we exact-match and fuzzy-match against [by default](/docs/privacy/portal/#default-pii-matchers). These classifications are our best-guess suggestions, and you can easily change them by following the instructions to [change a recommended classification](/docs/privacy/portal/#change-a-recommended-classification).
 
 ### Who can access the Privacy Portal?
 

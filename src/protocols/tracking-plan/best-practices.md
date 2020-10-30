@@ -29,7 +29,7 @@ As an example, you may end up with a list like the following:
 * Link Clicked
 * Article Completed
 * Campaign Opened
-* From Initiated
+* Form Initiated
 * Form Submitted
 * User Signed Up
 

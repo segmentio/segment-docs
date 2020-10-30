@@ -6,24 +6,23 @@ beta: true
 
 [ProfitWell](https://www.profitwell.com) provides free subscription metrics to help you identify opportunities and then tools to help you reduce churn, optimize pricing, and grow your subscription business end-to-end. This integration enables ProfitWell users to use it's Retain product and Engagement Tracking capabilities.
 
-This destination is maintained by ProfitWell. For any issues with the destination, [contact their team](mailto:product@profitwell.com).
+This destination is maintained by ProfitWell. For any issues with the destination, [contact the ProfitWell Support team](mailto:product@profitwell.com).
 
-> note ""
-> **NOTE:** The ProfitWell Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 19, 2020. If you are interested in joining their beta program or have any feedback to help improve the ProfitWell Destination and its documentation, [let their team know](mailto:product@profitwell.com)!
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "ProfitWell" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "ProfitWell" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Drop your token into the Segment destination settings for "Public API Token".
 You can find your public token in the [Retain control center](https://www2.profitwell.com/app/engagement) under preview snippet.
 4. Select "wep app" in the dropdown if you're tracking inside the app or "marketing" for your marketing site.
 
 ## Identify
 
-If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('userId123', {

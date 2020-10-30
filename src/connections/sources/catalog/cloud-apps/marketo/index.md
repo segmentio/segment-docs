@@ -9,7 +9,7 @@ source-type: object
 
 This will allow you to write SQL to analyze your analyze your email marketing campaigns ROI, or join your email data to other data sources like web and mobile events, Salesforce, and Zendesk to tie nurture emails to re-activation rates in your app.
 
-_**NOTE:** Marketo is currently in beta and this doc was last updated on April 30, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you have any feedback to help us improve the Marketo Source and its documentation, and [let us know](https://segment.com/help/contact)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -289,7 +289,7 @@ We're primarily using the REST API, but also use the Lead Activity Bulk API to r
 
 ### Can I get other collections not default synced by the source?
 
-Yes! [contact us](/help/contact) to request additional collections.
+Yes! [contact us]https://segment.com/help/contact/ to request additional collections.
 
 ### Can I get other columns not default synced by the source?
 Yes! For leads and activities, we've introduced a custom fields setting where you can enter comma-separated (no spaces, etc.) custom fields to sync by their REST API name.
@@ -306,4 +306,4 @@ Yes! For leads and activities, we've introduced a custom fields setting where yo
 - createdAt
 - updatedAt
 
-You can find a full list of standard fields and their REST API names [here](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/). If there are other fields you're interested in, [contact us](/help/contact) and we'll get you setup.
+You can find a full list of standard fields and their REST API names [here](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/). If there are other fields you're interested in, [contact us]https://segment.com/help/contact/ and we'll get you setup.

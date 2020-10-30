@@ -183,7 +183,7 @@ The source syncs and warehouse syncs are independent processes. Source runs pull
 |  ------ | ------- |
 | rating |	Numeric rating left by customer |
 | rating_type |	Rating type used to generate this feedback, either yes_no or four_star  |
-| additonal_feedback |	An optional additional feedback text field |
+| additional_feedback |	An optional additional feedback text field |
 | created_at |	Date the feedback was created |
 | updated_at |	Date the feedback was updated |
 | user | The user who created this feedback |

@@ -3,22 +3,19 @@ rewrite: true
 title: Wigzo Destination
 ---
 
-[Wigzo](https://www.wigzo.com/) is a Contextual Marketing Platform that helps marketers send Smarter Communication in Email or In-App.
-Which means changing content dynamically based on User behaviour on Website and App.
-Using Wigzo's predictive technologies companies can produce Dynamic content blocks which automatically populates in emails based on User behaviour and Context.
-This destination is maintained by Wigzo. For any issues with the destination, [contact their team](mailto:support@wigzo.com)
+[Wigzo](https://www.wigzo.com/) is a Contextual Marketing Platform that helps marketers send smarter communication through email or in-app, by changing content dynamically based on User behavior. Using Wigzo's predictive technologies, companies can produce Dynamic content blocks which automatically populate in emails based on User behavior and Context.
 
-This document was last updated on November 7, 2018.
-If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
+This destination is maintained by Wigzo. For any issues with the destination, [contact the Wigzo Support team](mailto:support@wigzo.com)
+
 
 ## Getting Started
 
 The first step is to make sure Wigzo supports the source type and connection mode you've chosen to implement. You can learn more about what dictates the connection modes we support [here](https://segment.com/docs/connections/destinations/#connection-modes).
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Wigzo" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Wigzo" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Copy, then paste in your Wigzo `Organization Token`, which you can find inside the auto generated snippet under Wigzo Settings > Integration.
-4. We'll automatically initialize Wigzo with your Organization Token upon loading analytics.js.
+4. Segment automatically initializes Wigzo with your Organization Token upon loading analytics.js.
 
 ## Page
 

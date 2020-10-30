@@ -1,13 +1,13 @@
 ---
 title: Cxense Destination
-beta: true
+hidden: true
 ---
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-Currently this destination supports events originating from Web sources (not Server or Mobile). You can read more about how define a source [here](/docs/guides/getting-started/what-is-a-source/).
+Currently this destination supports events originating from Web sources (not Server or Mobile). You can read more about how define a source [here](/docs/connections/sources/#what-is-a-source).
 
 To get started with Cxense and Segment, you'll need the following:
 
@@ -42,7 +42,7 @@ By default, Cxense captures location information about a user using their IP add
 
 By default, Cxense provides basic anonymous user identity management but it also allows events to be associated with a custom user identifier. Our `identify()` method is used to integrate with this through the use of Cxense's `addExternalId` method. Two things to note:
 
-1. In order to use this functionality, you must have a customer prefix registered with Cxense and defined as an [integration setting](/docs/connections/destinations/catalog/cxense/#customer-prefix).
+1. In order to use this functionality, you must have a customer prefix registered with Cxense and defined as a destination setting.
 2. The User Id you are using with Segment `.identify()` events must be less than 40 characters. This is a limit enfored by Cxense's API.
 3. The User Id will be sent to Cxense with the subsequent `.page()` event the user triggers.
 

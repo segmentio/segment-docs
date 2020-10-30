@@ -10,8 +10,8 @@ This document was last updated on January 28, 2018. If you notice any gaps, out-
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Webhooks" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Webhooks" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Specify up to five different Webhook URLs, you would like to forward data to.
 4. Add in any header values you would like to add to the HTTP requests
 5. If you require authentication, add in a [shared secret](https://segment.com/docs/connections/destinations/catalog/webhooks/#authentication).
@@ -222,7 +222,7 @@ If your server is using HTTPS, note that our webhooks destination does not work 
 
 Under 'Connection Settings', you can provide up to 5 webhooks.
 
-**Note:** If sending a message to any of the webhooks succeed, we consider the message to be successfully processed and won't retry the request to the other webhooks. If your webhooks aren't robust, you should consider using our [Iron.io](/docs/connections/destinations/catalog/iron.io/) destination.
+**Note:** If sending a message to any of the webhooks succeed, we consider the message to be successfully processed and won't retry the request to the other webhooks. If your webhooks aren't robust, you should consider using our [Iron.io](/docs/connections/destinations/catalog/iron-io/) destination.
 
 ### Retries
 

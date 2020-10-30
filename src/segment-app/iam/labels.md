@@ -7,7 +7,7 @@ Labels allow workspace owners to assign permissions to users to grant them acces
 To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels for the entire workspace.
 
 > note ""
-> All workspaces include labels for `Dev` (development) and `Prod` (production) environments. Free and Team plan customers can create up to five labels additional. Customers with the Enterprise pricing package can create an unlimited number of labels.
+> All workspaces include labels for `Dev` (development) and `Prod` (production) environments. Business Tier customers can create an unlimited number of labels.
 
 ## Custom Environments
 
@@ -24,7 +24,7 @@ Once a label is in use (either assigned to a resource or used to restrict permis
 > note ""
 > **Note**: While only Workspace Owners can bulk-edit labels, Source and Space admins can edit the labels on the sources and spaces they have access to. To do this, go to the **Settings** tab for each item.
 
-Workspace owners can also grant specific [Roles](/docs/segment-app/iams/roles/) access to specific labels. For example, you might give a Source Admin access to only Sources that have the `Prod` label.
+Workspace owners can also grant specific [Roles](/docs/segment-app/iam/roles/) access to specific labels. For example, you might give a Source Admin access to only Sources that have the `Prod` label.
 
 Permissions can then be assigned to users in Access Management by label, on the Source Admin, Source Read-Only, Personas Admin, Personas User and Personas Read-Only users.
 

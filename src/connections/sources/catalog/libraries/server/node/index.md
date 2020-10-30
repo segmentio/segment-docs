@@ -5,7 +5,7 @@ redirect_from: '/connections/sources/catalog/libraries/server/node-js/'
 
 Our Node.js library lets you record analytics data from your node code. The requests hit our servers, and then we route your data to any destinations you have enabled.
 
-The [Segment Node.js library is open-source](https://github.com/segmentio/analytics-node) on Github.
+The [Segment Node.js library is open-source](https://github.com/segmentio/analytics-node) on GitHub.
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
@@ -33,6 +33,9 @@ Of course, you'll want to replace `YOUR_WRITE_KEY` with your actual **Write Key*
 This will create an instance of `Analytics` that you can use to send data to Segment for your project. The default initialization settings are production-ready and queue 20 messages before sending any requests. In development you might want to use [development settings](/docs/connections/sources/catalog/libraries/server/node/#development).
 
 ## Identify
+
+> note ""
+> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 `identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and/or anonymous ID, and any optional traits you know about them.
 
@@ -277,7 +280,7 @@ Find more details about `group`, including the **`group` payload**, in our [Spec
 
 The `alias` call allows you to associate one identity with another. This is an advanced method and should not be widely used, but is required to manage user identities in _some_  destinations. Other destinations do not support the alias call.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 

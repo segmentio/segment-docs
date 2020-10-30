@@ -15,7 +15,7 @@ Tray supports all message types. You can filter the message type when you config
 
 ### Delete
 
-When you trigger a user deletion using our [Privacy features](/docs/guides/best-practices/user-deletion-and-suppression/), we will forward a delete notification to tray so that you can automate further deletion and compliance workflows using tray.
+When you trigger a user deletion using our [Privacy features](/docs/privacy/user-deletion-and-suppression/), we will forward a delete notification to tray so that you can automate further deletion and compliance workflows using tray.
 
 The payload will consist of:
 

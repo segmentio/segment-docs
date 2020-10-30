@@ -32,7 +32,7 @@ For tracking on Web, you will need your...
 
 ### Web / Server
 
-To track events from web / server locations, you will need to choose the Action Trackers you would like to map your Segment events to. Action Tracker / Segment Event mappings are established in your [integration settings](#settings/action-trackers).
+To track events from web / server locations, you will need to choose the Action Trackers you would like to map your Segment events to. Action Tracker / Segment Event mappings are established in your [destination settings](#settings).
 
 #### Click Id
 
