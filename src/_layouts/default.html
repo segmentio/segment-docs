@@ -60,32 +60,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+  <style>
+    .algolia-autocomplete .ds-dropdown-menu {
+        width: 682px;
+      }
+      .algolia-autocomplete {
+        width: 100%;
+      }
+  </style>
 </head>
 <body>
   {% if jekyll.environment == "testing" %}
   <!-- This section displays on Netlify only -->
   <div style="height:30px; background-color:#fbfb81; width:100%; border-bottom: 1px solid #888; position: sticky; top:0; z-index: 1000;">
     <div class="stage" style="min-height: 30px;">
-      <p>This site is meant for preview only. Please do not share outside of Segment.<span id="ghtext"> This page previews pull request <strong><a id="ghlink" href="" target="_blank"></a></strong></span></p>
+      <p>This site tests the Algolia DocSearch search engine.</p>
     </div>
-    <script>
-      const page =  window.location.hostname;  
-      const regex = /(?!(preview-))(\d+)/g;
-      var span = document.getElementById("ghtext");
-      const found = page.match(regex);
-      const gh_base = "https://github.com/segmentio/segment-docs/pull/"
-    
-      if (found == null) {
-        span.style.display = "none";
-      } else {
-        const pr = found[0]
-        const full_url = gh_base.concat(pr);
-        const link = document.getElementById("ghlink");
-        
-        link.href = full_url;
-        link.innerHTML = pr;
-      }
-      </script>
   </div>
   {% endif %}
   <div id="consent-manager"></div>
@@ -112,14 +103,14 @@
   {%- comment -%}
     Swifttype
   {%- endcomment -%}
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
     (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
     e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
     })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
     _st('install','{{swiftype_key}}','2.0.0');
-  </script>
+  </script> -->
   {%- comment -%}
     Google Search Results Metadata
   {%- endcomment -%}
@@ -263,6 +254,15 @@
         analytics.page(`{{page.title}}`);
         // analytics.identify();
       }}();
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js">
+    </script><script type="text/javascript">
+    docsearch({
+      apiKey: '2432b98eda553de7c15a587b3ebffc12',
+      indexName: 'segment',
+      inputSelector: '.DocsNav-search-input',
+      debug: true // Set debug to true if you want to inspect the dropdown
+    });
     </script>
 </body>
 </html>
