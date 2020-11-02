@@ -90,12 +90,13 @@ Below are tables outlining the properties included in the collections listed abo
 
 ### application_fee_refunds
 
-| Property Name | Description                                                                    |
-| ------------- | ------------------------------------------------------------------------------ |
-| `amount`      | Amount, in cents                                                               |
-| `currency`    | Three-letter ISO currency code, in lowercase                                   |
-| `fee_id`      | ID of the application fee that was refunded                                    |
-| `metadata`    | A set of key-value pairs that describe additional information about the object |
+| Property Name | Description                                                                     |
+| ------------- | ------------------------------------------------------------------------------- |
+| `amount`      | Amount, in cents                                                                |
+| `created`     | Time at which the object was created. Measured in seconds since the Unix epoch. |
+| `currency`    | Three-letter ISO currency code, in lowercase                                    |
+| `fee_id`      | ID of the application fee that was refunded                                     |
+| `metadata`    | A set of key-value pairs that describe additional information about the object  |
 
 
 ### application_fees
@@ -106,12 +107,17 @@ Below are tables outlining the properties included in the collections listed abo
 | `amount_refunded`         | Amount in pence refunded                                                                                |
 | `amount`                  | Amount earned, in pence                                                                                 |
 | `application_id`          | ID of the Connect application that earned the fee                                                       |
+| `available`               | The date on which the transaction's net funds become available to the balance                           |
 | `balance_transaction_id`  | Balance transaction that describes the impact of this collected application fee on your account balance |
 | `charge_id`               | ID of the charge that the application fee was taken from                                                |
+| `created`                 | Time at which the object was created. Measured in seconds since the Unix epoch.                         |
+| `created`                 | Time at which the object was created. Measured in seconds since the Unix epoch.                         |
 | `currency`                | Three-letter ISO currency code, in lowercase                                                            |
+| `metadata`                | A set of key-value pairs that describe additional information about the object                          |
 | `metadata`                | A set of key-value pairs that describe additional information about the object                          |
 | `originating_transaction` | ID of the corresponding charge on the platform account                                                  |
 | `refunded`                | Whether the fee has been fully refunded                                                                 |
+| `transfer_id`             | A reference to the related transaction, if enabled                                                      |
 
 ### balance_transactions
 
@@ -145,6 +151,7 @@ Below are tables outlining the properties included in the collections listed abo
 | `country`              | Two-letter ISO code representing the country the bank account is located in    |
 | `currency`             | Three-letter ISO code for the currency paid out to the bank account            |
 | `default_for_currency` | Currency default                                                               |
+| `is_deleted`           | Whether the bank account is active or has been deleted                         |
 | `metadata`             | A set of key-value pairs that describe additional information about the object |
 | `status`               | Status of account                                                              |
 
@@ -243,7 +250,10 @@ Below are tables outlining the properties included in the collections listed abo
 
 | Property Name  | Description                                                                                    |
 | -------------- | ---------------------------------------------------------------------------------------------- |
+| `coupon_id`    | The ID of the discount                                                                         |
 | `customer_id`  | ID of the customer                                                                             |
+| `end`          | The end date of the discount, unless the discount is applied either `once` or `forever`        |
+| `start`        | The date the discount was applied                                                              |
 | `subscription` | The subscription that this coupon is applied to, if it is applied to a particular subscription |
 
 ### disputes
@@ -445,14 +455,17 @@ Segment flattens Stripes `inventory`, `package_dimensions` objects. See Stripe's
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `active`              | Whether the SKU is available for purchase                                                                                                                                                                |
 | `attributes_`         | A dictionary of attributes and values defined by the product                                                                                                                                             |
+| `created`             | Time at which the object was created. Measured in seconds since the Unix epoch                                                                                                                           |
 | `currency`            | Three-letter ISO currency code, in lowercase                                                                                                                                                             |
 | `image`               | The URL of an image for this SKU                                                                                                                                                                         |
 | `inventory_`          | A description of the SKU's inventory, as described in Stripe's [documentation](https://stripe.com/docs/api/skus/object#sku_object-inventory). For example, `inventory_quantity`.                         |
+| `is_deleted`          | Whether the object is active or has been deleted                                                                                                                                                         |
 | `livemode`            | Whether the object exist in live mode or test mode                                                                                                                                                       |
 | `metadata`            | A set of key-value pairs that describe additional information about the object                                                                                                                           |
 | `package_dimensions_` | The dimensions of a SKU's package dimensions, as described in Stripe's [documentation](https://stripe.com/docs/api/skus/object#sku_object-package_dimensions). For example, `package_dimensions_height`. |
 | `price`               | The cost of the item in the smallest currency unit                                                                                                                                                       |
 | `product_id`          | The ID of the product this SKU is associated with                                                                                                                                                        |
+| `updated`             | Time at which the object was last updated. Measured in seconds since the Unix epoch                                                                                                                      |
 
 ### subscriptions
 
@@ -465,9 +478,13 @@ Segment flattens Stripes `inventory`, `package_dimensions` objects. See Stripe's
 | `current_period_end`      | End of the current period that the subscription has been invoiced for. At the end of this period, a new invoice will be created.                                                                                                                                                                                        |
 | `current_period_start`    | Start of the current period that the subscription has been invoiced for.                                                                                                                                                                                                                                                |
 | `customer_id`             | ID of the customer who owns the subscription                                                                                                                                                                                                                                                                            |
+| `discount_id`             | References the associated discount, if available                                                                                                                                                                                                                                                                        |
 | `ended_at`                | If the subscription has ended, the date the subscription ended.                                                                                                                                                                                                                                                         |
+| `is_deleted`              | Whether the object is active or has been deleted                                                                                                                                                                                                                                                                        |
+| `plan_id`                 | References the associated plan, if available                                                                                                                                                                                                                                                                            |
 | `quantity`                | The quantity of the plan to which the customer is subscribed.                                                                                                                                                                                                                                                           |
 | `quantity`                | The quantity of the plan to which the customer should be subscribed                                                                                                                                                                                                                                                     |
+| `start`                   | Date when the subscription was first created                                                                                                                                                                                                                                                                            |
 | `status`                  | Possible values are trialing, active, past_due, canceled, or unpaid                                                                                                                                                                                                                                                     |
 | `tax_percent`             | If provided, each invoice created by this subscription will apply the tax rate, increasing the amount billed to the customer                                                                                                                                                                                            |
 | `trial_end`               | If the subscription has a trial, the end of that trial.                                                                                                                                                                                                                                                                 |
@@ -475,22 +492,26 @@ Segment flattens Stripes `inventory`, `package_dimensions` objects. See Stripe's
 
 ### subscription_items
 
-| Property Name     | Description                                                                    |
-| ----------------- | ------------------------------------------------------------------------------ |
-| `metadata`        | A set of key-value pairs that describe additional information about the object |
-| `quantity`        | The quantity of the plan to which the customer is subscribed                   |
-| `subscription_id` | The ID of the subscription this item belongs to                                |
+| Property Name     | Description                                                                     |
+| ----------------- | ------------------------------------------------------------------------------- |
+| `created`         | Time at which the object was created. Measured in seconds since the Unix epoch. |
+| `metadata`        | A set of key-value pairs that describe additional information about the object  |
+| `plan_id`         | References the associated plan, if available                                    |
+| `quantity`        | The quantity of the plan to which the customer is subscribed                    |
+| `subscription_id` | The ID of the subscription this item belongs to                                 |
+
 
 
 ### transfer_reversals
 
-| Property Name            | Description                                                                    |
-| ------------------------ | ------------------------------------------------------------------------------ |
-| `amount`                 | Amount, in cents                                                               |
-| `balance_transaction_id` | Balance transaction that describes the impact on your account balance          |
-| `currency`               | Three-letter ISO currency code, in lowercase                                   |
-| `metadata`               | A set of key-value pairs that describe additional information about the object |
-| `transfer_id`            | ID of the transfer that was reversed                                           |
+| Property Name            | Description                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------- |
+| `amount`                 | Amount, in cents                                                                |
+| `balance_transaction_id` | Balance transaction that describes the impact on your account balance           |
+| `created`                | Time at which the object was created. Measured in seconds since the Unix epoch. |
+| `currency`               | Three-letter ISO currency code, in lowercase                                    |
+| `metadata`               | A set of key-value pairs that describe additional information about the object  |
+| `transfer_id`            | ID of the transfer that was reversed                                            |
 
 
 ### transfers
@@ -501,11 +522,13 @@ Segment flattens Stripes `inventory`, `package_dimensions` objects. See Stripe's
 | `amount`                 | Amount in cents to be transferred                                                                                                 |
 | `application_fee`        | application_fee                                                                                                                   |
 | `balance_transaction_id` | Balance transaction that describes the impact of this transfer on your account balance                                            |
+| `bank_account_id`        | ID of the bank account used for the transaction                                                                                   |
+| `created`                | Time at which the object was created. Measured in seconds since the Unix epoch.                                                   |
 | `currency`               | Three-letter ISO currency code, in lowercase                                                                                      |
+| `date`                   | Time at which the transfer was completed                                                                                          |
 | `description`            | An arbitrary string attached to the object                                                                                        |
 | `destination_id`         | ID of the Stripe account the transfer was sent to                                                                                 |
 | `destination_payment`    | If the destination is a Stripe account, this will be the ID of the payment that the destination account received for the transfer |
 | `metadata`               | A set of key-value pairs that describe additional information about the object                                                    |
 | `reversed`               | Whether the transfer has been fully reversed. If the transfer is only partially reversed, this attribute will still be false      |
 | `source_transaction`     | ID of the charge or payment that was used to fund the transfer. If null, the transfer was funded from the available balance       |
-
