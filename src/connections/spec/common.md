@@ -392,4 +392,4 @@ The `receivedAt` timestamp is most important as the sort key in our Warehouses p
 
 The `timestamp` timestamp specifies when the datapoint occurred, corrected for client-device clock skew. This is the timestamp that is passed to downstream destinations and used for historical replays. It is important to use this timestamp for importing historical data to the API.
 
-The `timestamp` field is settable from our server-side libs or if passing info directly to the HTTP endpoints.
+The `timestamp` field is settable from our server-side libs or if passing info directly to the HTTP endpoints.  From the client-side, a `timestamp` will be generated but cannot be manually set in order to import historical data to the Seegment API.
