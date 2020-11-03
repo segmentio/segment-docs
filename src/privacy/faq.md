@@ -23,12 +23,6 @@ privacy should be a right, not an add-on. However, advanced customizable control
 up-level your privacy posture are available for Business Plan customers who also
 have Protocols.
 
-### What can Advanced Controls do that standard controls can't?
-
-While Standard controls allow you to block Red data on the Source-level for any
-of your Sources, Advanced controls give you the ability to block *or hash* data
-on both the Source *and* the Destination-level.
-
 ### If I block data at the Source level, can I reverse it or get that data back using Segment's Data Replay feature?
 
 If you use Privacy Controls to block data at the Source level, the data never
