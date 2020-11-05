@@ -4,7 +4,7 @@ title: Convertro Destination
 
 ## Getting Started
 
-Our Convertro destination lets you track customer data from either your website data or your mobile data. When you send data via `analytics.js` Segment uses Convertro's JS library to send `.identify()` and `.track()` data.
+Our Convertro destination lets you track customer data from either your website data or your mobile data. When you send data using `analytics.js` Segment uses Convertro's JS library to send `.identify()` and `.track()` data.
 
 If you are sending data using our mobile libraries, Segment uses their server to server API to send `.identify()` and `.track()` data.
 

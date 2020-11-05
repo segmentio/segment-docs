@@ -4,22 +4,22 @@ rewrite: true
 ---
 [ConvertFlow](https://www.convertflow.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the all-in-one platform for converting your website visitors. From one builder, you can create, personalize and launch dynamic website content, forms, popups, sticky bars, surveys, quizzes and landing pages, without coding.
 
-This destination is maintained by ConvertFlow. For any issues with the destination, please [reach out to their team](mailto:support@convertflow.com).
+This destination is maintained by ConvertFlow. For any issues with the destination, [contact the ConvertFlow Support team](mailto:support@convertflow.com).
 
-_**NOTE:** The ConvertFlow Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 23, 2019. If you are interested in joining their beta program or have any feedback to help improve the ConvertFlow Destination and its documentation, please [let  their team know](mailto:support@convertflow.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "ConvertFlow" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "ConvertFlow" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Paste in your ConvertFlow website's ID into your Segment Settings UI, which you can find by heading into your [ConvertFlow account](https://app.convertflow.com/), selecting a website and copying the website ID from the website dashboard's URL. This will enable the ConvertFlow website's tracking snippet as a Destination for your selected Segment source. Your ConvertFlow website campaigns can then be fully managed from the ConvertFlow dashboard.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {

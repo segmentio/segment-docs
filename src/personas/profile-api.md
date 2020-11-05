@@ -18,7 +18,7 @@ This document has four parts…
 1. [**Product Highlights**](/docs/personas/profile-api/#product-highlights)
 2. [**Quickstart**](/docs/personas/profile-api/#quickstart): Walks you through how to get started querying your user profile in <1 min
 3. [**API Reference**](/docs/personas/profile-api/#api-reference): Retrieve a list of users sorted by recent activity or find a particular user
-4. [**Personalization**](/docs/personas/profile-api/#recommended-implementation): Example personalization solution built on Personas via server-side personalization
+4. [**Personalization**](/docs/personas/profile-api/#recommended-implementation): Example personalization solution built on Personas using server-side personalization
 
 ## Product Highlights
 1. **Realtime Access** - fetch your entire user profile
@@ -38,7 +38,7 @@ Your access secret allows you to call the Segment API and access customer data. 
 
     ![](images/1516309197043.png)
 
-3.  Press Generate. Copy the resulting **Access Secret** and store it in a file on your computer as it's only shown once. You'll pass in the **Access Secret** into the Profile API for authorization (via the HTTP basic auth username).
+3.  Press Generate. Copy the resulting **Access Secret** and store it in a file on your computer as it's only shown once. You'll pass in the **Access Secret** into the Profile API for authorization (using the HTTP basic auth username).
     ![](images/1526362840437.png)
 
 4.  Profile API request URLs require your space ID. For example:
@@ -124,7 +124,7 @@ If you are looking to find all the users linked to an account, you can search fo
 
 ### cURL
 
-You can also request via cURL:
+You can also request using cURL:
 
 ```bash
 export SEGMENT_ACCESS_SECRET="YOUR_API_ACCESS_TOKEN_SECRET_HERE"
@@ -200,7 +200,7 @@ Every Access Secret has a default rate limit of 60,000 requests/min. That limit 
 
 ### Pagination
 
-All top-level API resources have support for bulk fetches via "list" API methods. For instance you can list profiles, a profile's events, a profile's traits, and a profile's external_ids. These list API methods share a common structure, taking at least two parameters: `next` and `limit`.
+All top-level API resources have support for bulk fetches using "list" API methods. For instance you can list profiles, a profile's events, a profile's traits, and a profile's external_ids. These list API methods share a common structure, taking at least two parameters: `next` and `limit`.
 
 #### Request Arguments
 
@@ -624,7 +624,7 @@ If you want to display the most relevant blog posts given a reader's favorite bl
 
 1.  **Create a computed trait** `favorite_blog_category` **in Segment UI** [Marketer or Engineer]
 2.  **Create** `/api/recommended-posts` **in customer-built personalization service** [Engineer]
-    - Accept `user_id`, `email` or `anonymous_id` to fetch `favorite_blog_category` via API
+    - Accept `user_id`, `email` or `anonymous_id` to fetch `favorite_blog_category` using API
     - Return array of most recent posts of that category to render in recommended section
 3.  **Add recommended section to the blog** [Engineer]
     - Client-side by making a request to `/recommended-posts` if it accepts CORS (recommended for static blogs, WordPress plugin, or other CMS solutions)

@@ -3,7 +3,7 @@ title: Analytics for Roku
 sourceTitle: 'Roku'
 ---
 
-The Segment Roku SDK makes it easy to send data to Segment from any Roku enabled device. This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-roku).
+The Segment Roku SDK makes it easy to send data to Segment from any Roku enabled device. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-roku).
 
 **NOTE:** The Roku SDK is currently in alpha. We recommend using this version for development, test or QA builds. 
 
@@ -253,7 +253,7 @@ m.library.alias(userId, options)
 ## FAQ
 
 ### Does this library support single calls?
-Currently, this library leverages the Segment batch API endpoint, which is why you are able to set a queue limit on the config object before a method gets sent out as a request. You simply set the queueSize to 1 on config object to get the same effect for a message sending a single request.
+Currently, this library uses the Segment batch API endpoint, which is why you are able to set a queue limit on the config object before a method gets sent out as a request. You simply set the queueSize to 1 on config object to get the same effect for a message sending a single request.
 
 ### What is the size limit of each request?
 The size limit is 500k characters on the data body per request as noted on Segment batch API, which would be the parameters you're using for each message (identify, track, screen, group, alias). The size limit takes precedence over the queue limit in determining when a request gets sent out.
@@ -266,4 +266,4 @@ If you want to see how big your request is getting you can use set the debug pro
 You can follow [this guide](https://www.howtogeek.com/290787/how-to-enable-developer-mode-and-sideload-roku-apps/) to set your device into developer mode and [this one](https://sdkdocs.roku.com/display/sdkdoc/Debugging+Your+Application) to debug and surface logs out of your app. There are currently two levels of debugging which are "DEBUG" and "ERROR".
 
 ### Does the Roku library support device-mode integrations?
-The Roku library only supports cloud-mode destinations. If you have a need for a device-mode integration in your Roku application please [reach out](https://segment.com/help/contact/). 
+The Roku library only supports cloud-mode destinations. If you have a need for a device-mode integration in your Roku application  [contact us](https://segment.com/help/contact/). 

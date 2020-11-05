@@ -8,7 +8,7 @@ But these off-domain and cross-device brand interactions are equally, if not mor
 
 In this guide, we'll share where and how to track these critical events so that you can understand your customer's journey before they even get to your storefront, as well as their preferred shopping experiences.
 
-_If you're interested in learning about what to track,_ [check out our guide on creating an e-commerce tracking plan](/docs/protocols/ecommerce-tracking-plan/).
+_If you're interested in learning about what to track,_ [check out our guide on creating an e-commerce tracking plan](/docs/connections/spec/ecommerce-tracking-plan/).
 
 [Talk to a product specialist today](https://segment.com/contact/sales) about building a clean, high-quality data spec so you can focus on brand engagement and sales growth.
 
@@ -83,7 +83,7 @@ UTM parameters are types of query strings added to the end of a URL. When clicke
 
 ![](images/x-channel_GWqnp2I6.png)
 
-UTM parameters are only used when linking to your site from outside of your domain. When a visitor arrives to your site via a link containing UTM parameters, Segment's client-side analytics.js library will automatically parse the URL's query strings, and store them within the `context` object as outlined [here](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected). These parameters do not persist to subsequent calls unless you pass them explicitly.
+UTM parameters are only used when linking to your site from outside of your domain. When a visitor arrives to your site using a link containing UTM parameters, Segment's client-side analytics.js library will automatically parse the URL's query strings, and store them within the `context` object as outlined [here](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected). These parameters do not persist to subsequent calls unless you pass them explicitly.
 
 UTM parameters contain three essential components:
 
@@ -147,7 +147,7 @@ It's common for customers to discover you on their desktop before making the pur
 
 Tracking with JavaScript in the browser has its benefits, such as leveraging browser technologies to automatically track things like UTM parameters, referring domain, IP address, and user agent. But here are a few reasons why it might make sense for your store to track on the server side.
 
-*   Are your customers technically savvy and use ad blockers? Ad blockers restrict requests from a list of blacklisted domains to your browser, which means that none of your event tracking will work properly. If you sell to a technical audience, it is possible that you may be underreporting your analytics by a material amount.
+*   Are your customers technically savvy and use ad blockers? Ad blockers restrict requests from a list of blocklisted domains to your browser, which means that none of your event tracking will work properly. If you sell to a technical audience, it is possible that you may be underreporting your analytics by a material amount.
 
 *   Do you have multiple devices? If you have multiple devices with the same customer check out flow, moving those events to the server-side will reduce your surface area of your code base. This means less maintenance and faster changes.
 
@@ -171,7 +171,7 @@ If your store allows user registration and users are logged in when they shop on
 
 This works by using a `userId` instead of an `anonymousId` to track key events and where they occur. This `userId` serves as the primary key in your downstream tools and data warehouse, allowing you to join all of her anonymous activities with her logged in ones. You also can get a complete picture of where she is and what device she is on, while she is using your apps or website.
 
-[Learn more about pulling the entire user journey for a single user given a userId.](https://segment.com/docs/guides/sources/joining-user-profiles/)
+[Learn more about pulling the entire user journey for a single user given a userId.](https://segment.com/docs/guides/how-to-guides/join-user-profiles/)
 
 Unfortunately, tracking the same user across devices only works if she logs into each device. Anonymous browsing in each distinct "experience" (e.g. mobile safari, native iPhone, browser on laptop) generates its own unique `anonymousId` . Each `anonymousId` is limited to the scope of that browser or app, only measuring activities in those sessions. It's not until the user logs in when the `userId` is generated (if she is registering for a new account) or the `userId` is retrieved from your database, and then mapped to the `anonymousId` of that session. Segment will keep a table of `anonymousId` s mapped to a single `userId`so you can analyze a user's activity across multiple devices.
 

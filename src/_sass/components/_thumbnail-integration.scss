@@ -42,10 +42,12 @@
     img {
       max-width: 50px;
       max-height: 50px;
+      border: none!important;
 
       @include breakpoint(medium up) {
         max-width: 70px;
         max-height: 70px;
+        border: none!important;
       }
     }
   }

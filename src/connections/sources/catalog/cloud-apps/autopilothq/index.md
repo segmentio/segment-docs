@@ -3,20 +3,19 @@ title: Autopilot Source
 ---
 [Autopilot](https://autopilothq.com/) makes automating customer journeys as simple as drawing on a whiteboard. Engage at just the right time with personalized emails, in-app messages, SMS, and postcards.
 
-Take your company's email analysis to the next level by adding Autopilot as a Source to Segment. We'll automatically collect email events like Email Delivered and Email Opened, forward them to your destinations, and load them into your data warehouse.
+Take your company's email analysis to the next level by adding Autopilot as a Source to Segment. Segment automatically collects email events like Email Delivered and Email Opened, forwards them to your destinations, and loads them into your data warehouse.
 
-This source is maintained by Autopilot. For any issues with the source, you may [contact their team](mailto:support@autopilothq.com).
+This source is maintained by Autopilot. For any issues with the source, you can [contact the AutopilotHQ Support team](mailto:support@autopilothq.com).
 
-This document was last updated on October 19, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
 1. From your Segment UI's Sources page click on "Add Source".
 2. Search for AutopilotHQ within the Sources Catalog and confirm by clicking "Connect".
-3. Give the Source a nickname and follow the setup flow to "Add Source". The nickname is a label used in the Segment interface, and Segment creates a related schema name, which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+3. Give the Source a nickname and follow the set up flow to "Add Source". The nickname is a label used in the Segment interface, and Segment creates a related schema name, which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Sign in to your Autopilot account and visit the [Segment destination](https://app.autopilothq.com/#settings/app-connections/segment-sync) to connect.
 
-![](images/4764ec5d9aeb26bd0e503604db243dae.gif)
+![](/docs/connections/destinations/catalog/autopilothq/images/4764ec5d9aeb26bd0e503604db243dae.gif)
 
 ## Components
 **Stream**
@@ -27,7 +26,7 @@ Autopilot uses our stream Source component to send events to Segment. These even
 
 Below is a table of events that Autopilot sends to Segment. These events will show up as tables in your warehouse, and as regular events in your other Destinations.
 
-Autopilot will send the `userID` if the contact has passed through the system before via Segment; otherwise Autopilot will send the email of the contact through as `anonymousID`.
+Autopilot will send the `userID` if the contact has passed through the system before using Segment; otherwise Autopilot will send the email of the contact through as `anonymousID`.
 
 Additionally, Autopilot also sends `email` and `contact_id` under `context.traits`.
 
@@ -116,7 +115,7 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Autopilot team](mailto:support@autopilothq.com).
+If you experience any issues with how the events arrive in Segment, [contact the Autopilot team](mailto:support@autopilothq.com).
 
 ## Sending data to AutopilotHQ
 

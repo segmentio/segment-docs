@@ -1,20 +1,22 @@
 ---
 title: Building a Subscription Webhook
+redirect_from: '/partners/build-webhook/'
 ---
 
 Subscription Webhooks allow Segment Partners to ingest Segment Event Data using a webhook. This guide explains how to set up your webhook with Segment.
 
 ## Getting Started
 
-Please review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a Subscription Webhook. 
+Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a Subscription Webhook.
 
 1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](https://segment.com/docs/connections/spec).
-2. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
-3. Create an App.
-4. Build and test your Component(s).
-5. Publish documentation.
-6. Submit your App for review.
-7. Launch into _Public Beta_!
+2. Follow Segment's security guidance.
+3. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
+4. Create an App.
+5. Build and test your Component(s).
+6. Publish documentation.
+7. Submit your App for review.
+8. Launch into _Public Beta_!
 
 ## Build
 

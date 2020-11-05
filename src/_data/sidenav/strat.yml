@@ -1,0 +1,109 @@
+---
+sections:
+- slug: adobe
+  section_title: Adobe Analytics
+  section:
+  - path: /connections/destinations/catalog/adobe-analytics
+    title: Adobe Analytics destination
+  - path: /connections/destinations/catalog/adobe-analytics/settings
+    title: Mapping Segment to Adobe Analytics
+  - path: /connections/destinations/catalog/adobe-analytics/identity
+    title: Identity Resolution in Segment Adobe Analytics
+  - path: /connections/destinations/catalog/adobe-analytics/mobile
+    title: Adobe Analytics for mobile
+  - path: /connections/destinations/catalog/adobe-analytics/heartbeat
+    title: Adobe Analytics Heartbeat
+  - path: /connections/destinations/catalog/adobe-analytics/best-practices
+    title: Adobe Analytics Best Practices
+
+- slug: facebook
+  section_title: Facebook Integrations
+  section:
+  - path: /connections/destinations/catalog/facebook-pixel
+    title: Facebook Pixel destination
+  - path: /connections/destinations/catalog/facebook-pixel-server-side
+    title: Facebook Pixel Server destination (Beta)
+  - path: /connections/destinations/catalog/facebook-app-events
+    title: Facebook App Events destination
+  - path: /connections/destinations/catalog/facebook-offline-conversions
+    title: Facebook Offline Conversions destination
+  - path: /connections/sources/catalog/cloud-apps/facebook-ads
+    title: Facebook Ads Cloud Source
+  - path: /connections/sources/catalog/cloud-apps/facebook-lead-ads
+    title: Facebook Lead Ads Cloud Source
+
+- slug: google
+  section_title: Google Integrations
+  section:
+  - path: /connections/sources/catalog/libraries/mobile/android
+    title: Segment Android mobile source library
+  - path: /connections/destinations/catalog/firebase
+    title: Google Firebase (mobile analytics) destination
+  - path: /connections/destinations/catalog/google-analytics
+    title: Google Analytics destination
+  - path: /connections/destinations/catalog/google-tag-manager
+    title: Google Tag Manager destination
+  - path: /connections/destinations/catalog/doubleclick-floodlight
+    title: DoubleClick Floodlight destination
+  - path: /connections/destinations/catalog/personas-display-video-360
+    title: 'Using Personas with Google DV360 (Beta)'
+  - path: /connections/destinations/catalog/google-ads-classic
+    title: 'Google Ads (Classic) destination'
+  - path: /connections/destinations/catalog/google-ads-gtag
+    title: 'Google Ads (Gtag) destination'
+  - path: /connections/destinations/catalog/google-cloud-function
+    title: Google Cloud Function destination
+  - path: /connections/destinations/catalog/google-cloud-pubsub
+    title: Google Cloud Pubsub destination
+
+
+- slug: ajs
+  section_title: Analytics.js Documentation
+  section:
+  - path: /connections/sources/catalog/libraries/website/javascript
+    title: Analytics.js (Javascript) Source
+  - path: /connections/sources/catalog/libraries/website/javascript/supported-browsers
+    title: Analytics.js Supported Browsers
+  - path: /connections/sources/catalog/libraries/website/javascript/quickstart
+    title: Quickstart Tutorial
+  - path: /connections/sources/catalog/libraries/website/javascript/custom-proxy
+    title: Custom Proxy for Analytics.js
+  - path: /connections/sources/catalog/libraries/website/javascript/identity
+    title: Managing identity in Analytics.js
+  - path: /connections/sources/catalog/libraries/website/javascript/middleware
+    title: Middlewares for Analytics.js
+  - path: /connections/sources/catalog/libraries/website/javascript/querystring
+    title: Querystring API
+  - path: /connections/sources/catalog/libraries/website/javascript/troubleshooting
+    title: Troubleshooting
+
+
+- slug: ios
+  section_title: Analytics-iOS Documentation
+  section:
+  - path: /connections/sources/catalog/libraries/mobile/ios
+    title: Analytics-iOS mobile source
+  - path: /connections/sources/catalog/libraries/mobile/ios/quickstart
+    title: iOS Quickstart tutorial
+  - path: /connections/sources/catalog/libraries/mobile/ios/ios14-guide
+    title: iOS 14 guide
+  - path: /connections/sources/catalog/libraries/mobile/ios/middleware
+    title: Middlewares for iOS
+  - path: /connections/sources/catalog/libraries/mobile/ios/troubleshooting
+    title: Troubleshooting Analytics-iOS
+  - path: /connections/sources/catalog/libraries/mobile/ios/ios-faqs
+    title: iOS Frequently asked questions
+
+- slug: android
+  section_title: Analytics-Android Documentation
+  section:
+  - path: /connections/sources/catalog/libraries/mobile/android
+    title: Analytics-Android mobile source
+  - path: /connections/sources/catalog/libraries/mobile/android/quickstart
+    title: Analytics-Android Quickstart tutorial
+  - path: /connections/sources/catalog/libraries/mobile/android/middleware
+    title: Middlewares for Android
+  - path: /connections/sources/catalog/libraries/mobile/android/troubleshooting
+    title: Troubleshooting Analytics-Android
+  - path: /connections/sources/catalog/libraries/mobile/android/android-faqs
+    title: Android Frequently asked questions

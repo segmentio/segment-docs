@@ -3,15 +3,15 @@ title: Klenty Source
 ---
 [Klenty](https://www.klenty.com/) helps sales teams to send personalized emails and automated follow-ups at scale. With Klenty, your sales team can completely automate their email outreach and focus on closing more deals.
 
-This source is maintained by Klenty. For any issues with the destination, please [reach out to their team](mailto:support@klenty.com).
+This source is maintained by Klenty. For any issues with the destination, [contact the Klenty Support team](mailto:support@klenty.com).
 
-_**NOTE:** The Klenty Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on May 7, 2019. If you are interested in joining their beta program or have any feedback to help improve the Klenty Destination and its documentation, please [let  their team know](mailto:support@klenty.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 1. From your Segment UI's Sources page click on "Add Source".
 2. Search for "Klenty" within the Sources Catalog and confirm by clicking "Connect".
-3. Give the Source a nickname and follow the setup flow to "Add Source". The nickname is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+3. Give the Source a nickname and follow the set up flow to "Add Source". The nickname is a label used in the Segment interface, and Segment creates a related schema name which you query against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (Eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Copy the Write key from the Segment UI and log in to your Klenty account - navigate to Settings > Integrations > Segment Integration and paste the key to connect.
 
 ## Events
@@ -90,4 +90,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Klenty team](mailto:support@klenty.com).
+If you experience any issues with how the events arrive in Segment, [contact the Klenty team](mailto:support@klenty.com).

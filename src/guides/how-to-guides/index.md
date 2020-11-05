@@ -17,7 +17,7 @@ Segment’s How-to Guides provide an in-depth walk through and examples of the m
 - [How do I automate multi-channel re-engagement campaigns?](automated-multichannel-reengagement)
 - [How do I create a push notification?](create-push-notification)
 - [How do we track customers across channels and devices?](cross-channel-tracking)
-- [How do I setup a dynamic coupon program to reward loyal customers?](dynamic-coupon-program)
+- [How do I set up a dynamic coupon program to reward loyal customers?](dynamic-coupon-program)
 - [How do we set up event-triggered notifications or alerts?](set-up-notifications-alerts)
 
 ## Analytics

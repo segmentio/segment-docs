@@ -1,27 +1,27 @@
 ---
 title: 'Spec: Identify'
 related:
-  - "/connections/sources/catalog/"
+  - "/docs/connections/sources/catalog/"
 ---
 
-`identify` lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about them like their email, name, etc.
+The Segment Identify call lets you tie a user to their actions and record traits about them.  It includes a unique User ID and any optional traits you know about the user, like their email, name, etc.
 
 {% include components/media-icon.html href="https://university.segment.com/introduction-to-segment/299968?reg=1&referrer=docs" icon="media/icon-academy.svg" title="Segment University: The Identify Method" content="Check out our high-level overview of the Identify method in Segment University. (Must be logged in to access.)" %}
 
-Our recommendation for when and how often you should call `identify` is as follows:
+Segment recommends that you make an Identify call:
 
-- After a user registers
+- After a user first registers
 - After a user logs in
-- When a user updates their info (eg changes or adds a new address)
+- When a user updates their info (for example, they change or add a new address)
 - Upon loading any pages that are accessible by a logged in user (optional)
 
-The first three examples are pretty self-explanatory, but many might ask: why you would call identify on every page load if we're storing the userId in the cookie/local storage?
+The first three examples are pretty self-explanatory, but many might ask: why you would call identify on every page load if we're storing the `userId` in the cookie/local storage?
 
 Let's imagine this scenario:
 
 I log into your app. Identify is called. For whatever reason, I close the browser and don't return until later. There's no way of knowing where I will reenter your app from. I could start my session from anywhere. And because there are many tools out there that require an initial identify call for certain features (e.g. Intercom chat widget) it's important to tell your end tools who the user is when they first start their session.
 
-Calling `identify` in one of our [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Please refer to library-specific documentation for more details.
+Calling `identify` in one of our [libraries](/docs/connections/sources/) is one of the first steps to getting started with Segment. Refer to library-specific documentation for more details.
 
 Here's the payload of a typical `identify` call with most [common fields](/docs/connections/spec/common/) removed:
 
@@ -174,7 +174,7 @@ Reserved traits we've standardized:
   <tr>
     <td>`createdAt`</td>
     <td>Date</td>
-    <td>Date the user's account was first created. We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.</td>
+    <td>Date the user's account was first created. Segment recommends using [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings.</td>
   </tr>
   <tr>
     <td>`description`</td>
@@ -209,7 +209,7 @@ Reserved traits we've standardized:
   <tr>
     <td>`name`</td>
     <td>String</td>
-    <td>Full name of a user. If you only pass a first and last name we'll automatically fill in the full name for you.
+    <td>Full name of a user. If you only pass a first and last name Segment automatically fills in the full name for you.
     </td>
   </tr>
   <tr>

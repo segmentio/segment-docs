@@ -9,23 +9,33 @@ This guide maps out the standard data Segment expects to see from ecommerce comp
 
 Segment now supports a fully **backwards compatible** V2 of our Ecommerce Spec. You can still use V1 but we recommend upgrading to V2 as it includes many more spec'd ecommerce events!
 
-Please refer to our V2 docs [here](/docs/connections/spec/ecommerce/v2/).
+Refer to our V2 docs [here](/docs/connections/spec/ecommerce/v2/).
 
 ## V1 Overview
 
 One of the core components of the Segment [Spec](/docs/connections/spec/) is the [`track`](/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Ecommerce tracking, you will be sending **specific event names** that we recognize semantically. That way we can transform them before sending them off to each different tool.
 
-The `properties` listed in the sections below are **required** for some destinations to function. You can always add your own custom properties (product color, size, etc.) in additon to the required ones.
+The `properties` listed in the sections below are **required** for some destinations to function. You can always add your own custom properties (product color, size, etc.) in addition to the required ones.
 
 
 ## Events
 
 The ecommerce category includes the following semantic events:
 
+- [V2](#v2)
+- [V1 Overview](#v1-overview)
+- [Events](#events)
 - [Viewed Product Category](#viewed-product-category)
+  - [Properties](#properties)
+  - [Example](#example)
 - [Viewed Product](#viewed-product)
-- [Added Product](#added-removed-product)
-- [Order Completed](#completing-an-order)
+  - [Properties](#properties-1)
+  - [Example](#example-1)
+- [Added / Removed Product](#added--removed-product)
+  - [Properties](#properties-2)
+  - [Example](#example-2)
+- [Completing an Order](#completing-an-order)
+- [Google Analytics Enhanced Ecommerce](#google-analytics-enhanced-ecommerce)
 
 
 ## Viewed Product Category
@@ -271,4 +281,4 @@ Be sure to **include all items in the cart as event properties**, with the same 
 
 ## Google Analytics Enhanced Ecommerce
 
-If you're using Google Analytics enhanced ecommerce there are some special events you might also want to add. Details in [our GA docs](/docs/connections/destinations/catalog/google-analytics/#enhanced-ecommerce).
+If you're using Google Analytics enhanced ecommerce there are some special events you might also want to add. Details in [our GA docs](/docs/connections/destinations/catalog/google-analytics/#enabling-enhanced-e-commerce-tracking).

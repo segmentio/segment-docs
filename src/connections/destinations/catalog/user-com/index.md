@@ -1,7 +1,7 @@
 ---
 title: 'User.com Destination'
 beta: true
-redirect_from: '/connections/destinations/catalog/userengage'
+redirect_from: '/connections/destinations/catalog/userengage/'
 ---
 
 This integration is maintained by contact@userengage.com.
@@ -40,20 +40,20 @@ Such request results in:
 * `custom_integer` attribute will be set to `123` in user's profile because `custom_integer` is already defined in User.com with type `number`
 * `custom_integer_new` attribute will be created and set to `'999'` in user profile, because it did not exists before we use default `string` type for attribute
 
-To define custom attributes for application, please visit **App settings > User data & events > Client attributes** at [app.user.com](https://user.com/en/).
+To define custom attributes for application, visit **App settings > User data & events > Client attributes** at [app.user.com](https://user.com/en/).
 
 ## Page
 Sending a `.page()` request increments `page_views` counter and updates `last_seen` timestamp if it is newer than the existing timestamp on a user's profile. It also records a new 'Page view' that can be used for filtering and aggregation.
 
 ## Track
-Sending a `.track()` request records a new 'Event occurrence' that can be used to filter and bucket users. **NOTE**: if an event with a given name is not defined in User.com, it will be created automatically, as will its properties. This mechanism works exactly the same as custom traits that have been explained in `Identify` section. To make sure type of data recorded in database reflects your expectations, please visit **App settings > User data & events > Events** or **App settings > User data & events > Event attributes** at [app.user.com](https://user.com/en/).
+Sending a `.track()` request records a new 'Event occurrence' that can be used to filter and bucket users. **NOTE**: if an event with a given name is not defined in User.com, it will be created automatically, as will its properties. This mechanism works exactly the same as custom traits that have been explained in `Identify` section. To make sure type of data recorded in database reflects your expectations, visit **App settings > User data & events > Events** or **App settings > User data & events > Event attributes** at [app.user.com](https://user.com/en/).
 
 ## Group
 Sending a `.group()` request allows to create or update a company profile and associate a user with it. We will use the `groupId`. If a company is not found, we will automatically create new company instance and set its `groupId` to that that identifier.
 
 The user that owns the `userId` on this event will be associated with this company.
 
-Any custom traits of the `.group()` call will follow same logic as `Identify` method. Semantic traits that are mapped are: `address`, `description`, `email`, `employees`, `name`, `phone`. **NOTE**: to make sure types of custom traits defined in database reflect your expectations, please visit **App settings > Companies > Company attributes** at [app.user.com](https://user.com/en/).
+Any custom traits of the `.group()` call will follow same logic as `Identify` method. Semantic traits that are mapped are: `address`, `description`, `email`, `employees`, `name`, `phone`. **NOTE**: to make sure types of custom traits defined in database reflect your expectations, visit **App settings > Companies > Company attributes** at [app.user.com](https://user.com/en/).
 
 ## Troubleshooting
 

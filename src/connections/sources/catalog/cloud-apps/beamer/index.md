@@ -5,15 +5,18 @@ beta: true
 
 [Beamer](https://www.getbeamer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a changelog and notification center that lets you announce new features, product updates, special offers and more.
 
-This source is maintained by Beamer. For any issues with the source, please [reach out to their team](mailto:info@getbeamer.com).
+This source is maintained by Beamer. For any issues with the source, [contact the Beamer Support team](mailto:info@getbeamer.com).
 
-_**NOTE:** The Beamer Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on January 28, 2020. If you are interested in joining their beta program or have any feedback to help improve the Beamer Source and its documentation, please [let  their team know](mailto:info@getbeamer.com)!_
+> success ""
+> **Good to know**: This page is about the Beamer Segment source, which sends data _into_ Segment. There's also a page about the [Beamer Segment destination](/docs/connections/destinations/catalog/beamer/), which receives data from Segment!
+
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 1. From your Segment UI's Sources page click on "Add Source".
 2. Search for "Beamer" within the Sources Catalog and confirm the Source you'd like to connect to.
-3. Give the Source a nickname and follow the setup flow to “Add Source”. The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you’ll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
+3. Give the Source a nickname and follow the set up flow to “Add Source”. The nickname will be used to designate the source in the Segment interface, and Segment will create a related schema name. The schema name is the namespace you’ll be querying against in your warehouse. The nickname can be whatever you like, but we recommend sticking to something that reflects the source itself and distinguishes amongst your environments (eg. SourceName_Prod, SourceName_Staging, SourceName_Dev).
 4. Copy the Write key from the Segment UI and go to [Integrations](https://app.getbeamer.com/integrations) in your Beamer dashboard, then paste your write key in the **Integrate with Segment** section.
 5. Click on **Save** and that's it!
 
@@ -87,4 +90,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Beamer team](mailto:info@getbeamer.com).
+If you experience any issues with how the events arrive in Segment, [contact the Beamer team](mailto:info@getbeamer.com).

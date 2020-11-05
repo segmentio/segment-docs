@@ -5,9 +5,9 @@ title: Vitally Destination
 
 [Vitally](https://vitally.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a customer success platform for B2B SaaS companies that wraps your unified customer data with powerful analytics, alerts, and workflows to help you build successful customers.
 
-This destination is maintained by Vitally. For any issues with the destination, please [reach out to their team](mailto:support@vitally.io).
+This destination is maintained by Vitally. For any issues with the destination, [contact the Vitally Support team](mailto:support@vitally.io).
 
-_**NOTE:** Vitally is currently in beta, and this doc was last updated on February 7, 2019. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Vitally destination and its documentation, please [let us know](mailto:support@vitally.io)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
@@ -21,7 +21,7 @@ Enabling Vitally as a destination in Segment can be done in one click from your 
   ![](images/6fztyvS.png)
 
 2. In a separate tab/window, make sure you are logged into your Segment account
-3. Configure the Segment integration via the one-click "Enable with Segment" button. Choose the primary source of product usage data in Segment and Segment will automatically create a destination for Vitally:
+3. Configure the Segment integration using the one-click "Enable with Segment" button. Choose the primary source of product usage data in Segment and Segment will automatically create a destination for Vitally:
 
   ![](images/uGHrIvX.gif)
 
@@ -29,11 +29,11 @@ Enabling Vitally as a destination in Segment can be done in one click from your 
 
   ![](images/2JQwIBK.png)
 
-5. That's it! Once we receive at least 1 event from Segment, you'll be able to proceed with the setup process and configure how to [create accounts from Segment](http://docs.vitally.io/en/articles/4)
+5. That's it! Once we receive at least 1 event from Segment, you'll be able to proceed with the set up process and configure how to [create accounts from Segment](http://docs.vitally.io/en/articles/4)
 
 ## Identify
 
-If you haven't had a chance to review the spec, please take a look to understand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
+If you haven't had a chance to review the spec, take a look tounderstand what the [Identify method](/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -53,7 +53,7 @@ Passing along the following traits will correspond to what is displayed in Vital
 
 ## Track
 
-If you haven't had a chance to review the spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you haven't had a chance to review the spec, take a look tounderstand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('enabled-slack-integration', {
@@ -66,7 +66,7 @@ Track calls are used in Vitally to [track and analyze](http://docs.vitally.io/en
 
 ## Group
 
-If you haven't had a chance to review the spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
+If you haven't had a chance to review the spec, take a look tounderstand what the [Group method](https://segment.com/docs/connections/spec/group/) does. An example call would look like:
 
 ```js
 analytics.group("accountId123", {

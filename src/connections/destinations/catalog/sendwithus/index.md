@@ -6,7 +6,7 @@ title: SendwithUs Destination
 
 ## Identify
 
-When you call [`identify`](/docs/connections/spec/identify) from one of our libraries, this will create a customer in Sendwithus. If you'd like to associate an email to a `userId`, you can send it via the [`identify`](/docs/connections/spec/identify) call by sending `traits.email`:
+When you call [`identify`](/docs/connections/spec/identify) from one of our libraries, this will create a customer in Sendwithus. If you'd like to associate an email to a `userId`, you can send it using the [`identify`](/docs/connections/spec/identify) call by sending `traits.email`:
 
 ```js
 analytics.identify('userId12345', { email: 'teemo@segment.com' });

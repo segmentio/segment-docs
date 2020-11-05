@@ -8,21 +8,22 @@ A Subscription gives you complete control over how you want to store, transform 
 
 ## Getting Started
 
-Please review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a subscription. 
+Review the steps outlined in the [Developer Center Overview](/docs/partners). This document outlines specific details for Step 4 as it relates to building a subscription.
 
-1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model).
-2. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
-3. Create an App.
-4. Build and test your Component(s).
-5. Publish documentation.
-6. Submit your App for review.
-7. Launch into _Public Beta_!
+1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](https://segment.com/docs/connections/spec).
+2. Follow Segment's security guidance.
+3. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
+4. Create an App.
+5. Build and test your Component(s).
+6. Publish documentation.
+7. Submit your App for review.
+8. Launch into _Public Beta_!
 
 ## Build & Test
 
 You can subscribe to customer data in two ways:
 
-1. **[Webhook](/docs/partners/build-webhook)**: Build a new HTTP service that receives Webhook POSTs from Segment.
-2. **[Functions](/docs/partners/build-functions)**: Write JavaScript functions that run on Segment to translate and send data to your existing API. [Get started...](/docs/partners/build-functions)
+1. **[Webhook](/docs/partners/subscriptions/build-webhook)**: Build a new HTTP service that receives Webhook POSTs from Segment.
+2. **[Functions](/docs/partners/subscriptions/build-functions)**: Write JavaScript functions that run on Segment to translate and send data to your existing API. [Get started...](/docs/partners/subscriptions/build-functions)
 
-See the [Webhook](/docs/partners/build-webhook) and [Functions](/docs/partners/build-webhook) docs in-depth technical details about building.
+See the [Webhook](/docs/partners/subscriptions/build-webhook) and [Functions](/docs/partners/build-functions/) docs in-depth technical details about building.

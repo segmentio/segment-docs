@@ -2,7 +2,7 @@
 title: 'Personas Facebook Custom Audiences Destination'
 beta: true
 hide-boilerplate: true
-redirect_from: '/connections/destinations/catalog/personas-facebook-ads'
+redirect_from: '/connections/destinations/catalog/personas-facebook-ads/'
 ---
 
 
@@ -27,7 +27,6 @@ This page is about the **Facebook Custom Audiences** destination developed speci
 | **[Facebook Offline Conversions](/docs/connections/destinations/catalog/facebook-offline-conversions/)** | Yes                   |
 | **[Facebook Pixel](/docs/connections/destinations/catalog/facebook-pixel/)**                             | No                    |
 | **[Facebook Custom Audiences](/docs/connections/destinations/catalog/personas-facebook-custom-audiences/)**      | Yes                   |
-| **Facebook Custom Audiences Website**    | Yes                   |
 
 
 ## Quick Info
@@ -71,13 +70,11 @@ Facebook Custom Audiences allows you to efficiently run several marketing and ad
 > note ""
 > **Note**: Re-targeting can also mean targeting anonymous visitors (those with no known personally identifiable information, such as email). The Personas Facebook Custom Audiences Integration feature for this use case is currently in beta. See below.
 
-## Use Cases - Anonymous Users (Beta)
+## Use Cases - Anonymous Users (Facebook Pixel support only)
 
 Sometimes, users visit your website and perform high-intent activities such as looking at a product or pricing page multiple times, but they don’t convert (buy), and they don’t provide any personally identifiable information so you can contact them.
 
-Facebook Custom Audiences allows you to retarget these anonymous users using the Website Custom Audience. This is an audience that you can build in Facebook based on the Facebook Pixel, which identifies users based on a cookie set in their browser.
-
-Segment Personas supports this use case with the **Facebook Custom Audiences Device-Side Integration. This Personas destination is currently in Early Access**. To access join the Early Access program, email beta@segment.com.
+Facebook offers the Facebook Pixel, which allows you to retarget these types of anonymous users with advertising. This works by identifying users based on a cookie set in their browser. You can create a Website Custom Audience in Facebook for this use case. Segment today does not provide a way to sync audiences of anonymous users from Personas to Facebook to automatically create one of these Website Custom Audiences, though this feature is currently under development.
 
 ## How it works
 
@@ -128,11 +125,16 @@ Once created, the audience should be available in Facebook in ten minutes unless
 
 
 
-## Early Access (Alpha) Feature: Additional identifier matching
-Previously, Segment only sent email and mobile ids to Facebook. Segment is now able to send an expanded list of identifiers to Facebook, so that Facebook can try to use these additional identifiers to match to their user profiles. If you have implemented any of these identifiers in your Segment tracking, Personas is able to send the identifiers to Facebook. Segment can now also sync multiple emails if the profile contains more than one. This feature is in Early Access. If you would like access, contact your CSM or email us at beta@segment.com.
+## Public Preview Feature: Additional traits matching
+
+> note ""
+> This feature is in Public Preview and usage is subject to the terms contained in the [First Access and Beta Preview Terms](https://segment.com/legal/first-access-beta-preview/). If you would like access, contact your CSM or email us at [friends@segment.com](mailto:friends@segment.com).
+
+Previously, Segment only sent email and mobile ids to Facebook. A new beta feature can send an expanded list of identifiers or traits to Facebook, so that Facebook can try to use these additional datapoints to match to their user profiles. If you have this feature enabled and implemented any of these traits in your Segment tracking, Personas can send this data to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this feature, Segment hashes fields before sending them downstream to Facebook, if required. (See the table below for hashing requirements.) Please note that the trait data implemented in your Segment tracking must match the naming convention and format specified in the table below, otherwise we are not able to send it to Facebook.
+
 
 | **Name**        | **Trait Key formats supported**   | **Facebook Keys**  | **FB Hashing Required** | **FB Guidelines**     |
-| Email       |                                                              | EMAIL                | Yes                 | Trim leading, trail whitespace, and convert all characters to lowercase.                                                                                  |
+| Email       |                                                              | EMAIL                | Yes (Segment does the hashing for you. In case you are *already* hashing emails, emails will get sent to Facebook double-hashed. Facebook will still match on double-hashed emails, but this is *not* recommended.                  | Trim leading, trail whitespace, and convert all characters to lowercase.                                                                                  |
 | Mobile ID   |                                                              | MADID                | No                  | Use all lowercase, keep hyphens.                                                                                                                          |
 | First Name  | first_name<br>firstname<br>firstName<br>first                | FN                   | Yes                 | Use `a`-`z` only. Lowercase only, no punctuation. Special characters in UTF8 format.                                                                      |
 | Last Name   | last_name<br>lastname<br>lastName<br>last                    | LN                   | Yes                 | Use `a`-`z` only. Lowercase only, no punctuation. Special characters in UTF8 format.                                                                      |
@@ -156,6 +158,8 @@ Make sure you authorized Facebook and selected the correct account id.
 ### Audience size smaller than expected
 
 Segment sends lists of users with identifiers that Facebook supports to Facebook. The matching logic itself occurs within Facebook. Facebook is more likely to be able to match a user profile if you track as many identifiers as possible, including email, mobile advertising identifiers (IDFA, Google advertising id), and others. If Facebook is unable to identify users based on the data that you provide, then the match rate will be low.
+
+Note that emails must be in a plaintext format. Facebook also provides these guidelines for the emails that you send to them: Trim leading, trail whitespace, and convert all characters to lowercase.
 
 For example: many B2B SaaS business have users that sign up for their products with a work email address, like `jane.doe@segment.com`. However, most Facebook users sign up for Facebook with a personal email only, like `janedoe@gmail.com`. If you only provide the work email address, and no other identifiers, then Facebook can’t match your user to the Jane Doe Facebook profile. This is the case for all identifiers: Facebook must have the identifier somewhere in a user's profile, or else they can't match on it.
 

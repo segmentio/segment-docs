@@ -6,20 +6,20 @@ redirect_from: '/connections/destinations/catalog/piwik/'
 
 [Matomo](https://matomo.org/), formerly Piwik, is the leading open source web analytics platform that gives you valuable insights into your website's visitors, your marketing campaigns and much more, so you can optimize your strategy and online experience of your visitors.
 
-This document was last updated on July 18th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on July 18th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Matomo" within the Destinations Catalog and confirm the Source you'd like to connect to. Please note the source must be sending events via our Javascript library Analytics.js.
-3. Drop in your Site Id. You can find your Site ID in your Matomo snippet.
-4. Drop in your Server URL. You can find your Server URL in your snippet, we will append /matomo.php to the URL automatically.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Matomo" in the Catalog, select it, and choose which of your sources to connect the destination to. Note the source must be sending events using our Javascript library Analytics.js.
+3. In the destination settings, enter your Site Id. You can find your Site ID in your Matomo snippet.
+4. In the destination settings, enter your Server URL. You can find your Server URL in your snippet, we will append /matomo.php to the URL automatically.
   5. When you enable Matomo in your Segment settings, Segment's CDN is updated within 45 minutes. Once that happens, Segment asynchronously loads `matomo.js` on your page whenever it is loaded. This means you should remove Matomo's snippet from your page.
 
 ## Page
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page();
@@ -28,7 +28,7 @@ analytics.page();
 Our Page method triggers a call to Matomo's `trackPageView` method.
 
 ## Identify
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('97980cfea0068');
@@ -36,7 +36,7 @@ analytics.identify('97980cfea0068');
 Our Identify method triggers a call to Matomo's `setUserId` method and will send the `userId` to Matomo.
 
 ## Track
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Logged In');

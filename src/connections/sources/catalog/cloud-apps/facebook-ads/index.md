@@ -1,11 +1,12 @@
 ---
 title: Facebook Ads Source
 rewrite: true
+strat: facebook
 ---
 
 Facebook is one of the most efficient ways to advertise online. Take your company's analysis to the next level by adding [Facebook Ads](https://www.facebook.com/business/products/ads) as a Source to Segment.
 
-This document was last updated on July 6, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on July 6, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -36,7 +37,7 @@ If your Facebook user has read permissions to Facebook Ads account's data, you s
 
 Facebook Ads has a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Facebook objects (and their corresponding properties) according to the Collections table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation. For example, if you went with `fb_ads`, the `ads` collection will be accessible at `fb_ads.ads` in SQL.
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Facebook Ads.  For example,  if `budget` from `0` to `100` between syncs, on its next sync that tickets status will be `100`.
+Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Facebook Ads.  For example, if `budget` from `0` to `100` between syncs, on its next sync that tickets status will be `100`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 

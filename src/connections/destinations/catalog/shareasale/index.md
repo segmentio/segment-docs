@@ -4,9 +4,7 @@ title: ShareASale Destination
 
 ## Getting Started
 
-When you toggle on ShareASale in Segment, this is what happens:
-
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading ShareASale tag onto your page. This means you should remove ShareASale's snippet from your page.
+When you enable ShareASale in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the ShareASale tag onto your page. This means you should remove ShareASale's snippet from your page.
 + Your ShareASale sidebar will begin appearing for your team.
 
 ShareASale is a destination that is only supported on the client-side.
@@ -14,7 +12,7 @@ ShareASale is a destination that is only supported on the client-side.
 
 ## Identify
 
-When you call [`identify`](/docs/connections/spec/identify) on analytics.js and you have enabled "Create Leads" in the [advanced options](/segment/testing/integrations#shareasale), then we will create a lead for the user with the `userId` that you specify. Note that if the `userId` is not specified, then no lead is created.
+When you call [Identify](/docs/connections/spec/identify/) on analytics.js and you have enabled "Create Leads" in the advanced options, then we will create a lead for the user with the `userId` that you specify. Note that if the `userId` is not specified, then no lead is created.
 
 ## Track
 

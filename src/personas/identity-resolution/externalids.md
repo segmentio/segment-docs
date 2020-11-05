@@ -1,13 +1,17 @@
 ---
 title: Identity Resolution ExternalIDs
 ---
+
+> note ""
+> **NOTE:** The steps in this guide pertain to spaces created before September 27th, 2020. For spaces created after September 27th, 2020, please refer to the onboarding guide [here](/docs/personas/identity-resolution/identity-resolution-onboarding/).
+
 ## Default ExternalIDs
 
 The Identity Graph creates or merges profiles based on externalIDs. ExternalIDs will become the Identities attached to a User Profile in the User Explorer:
 
 ![](images/jane_doe_new_identities.png)
 
-We automatically promote the following traits and IDs in track and identify calls to externalIDs:
+Segment automatically promotes the following traits and IDs in track and identify calls to externalIDs:
 
 | External ID Type   | Message Location in Track or Identify Call                                                                    |
 | ------------------ | ------------------------------------------------------------------------------------------------------------- |
@@ -69,7 +73,7 @@ For example, the following user had anonymous_id and user_id promoted as identif
 
 ## Example
 
-Let's say a new anonymous user visits your Pricing page:
+For example, a new anonymous user visits your Pricing page:
 
 ``` js
 analytics.page('Pricing', {
@@ -84,9 +88,9 @@ At this point, the Identity Graph will create a new user with external id (anony
 
 ![](images/identity_resolution_2.png)
 
-Any new events received with the same external id (anonymous_id: `anon_123`) will be appended to same user `use_4paotyretuj4Ta2bEYQ0vKOq1e7`.
+Any new events received with the same external id (anonymous_id: `anon_123`) are appended to same user `use_4paotyretuj4Ta2bEYQ0vKOq1e7`.
 
-Next, the user goes to a signup form and signs up:
+Next, the user goes to a sign up form and signs up:
 
 ``` js
 analytics.track('User Signup', {

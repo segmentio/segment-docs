@@ -21,7 +21,7 @@ title: Mailchimp Source
    ![](images/3032880_ChimpKey.png)
 
 
-5. Paste the newly created key into the Segment setup flow:
+5. Paste the newly created key into the Segment set up flow:
 
    ![](images/3146819_Screen+Shot+2016-02-16+at+2.52.00+PM.png)
 
@@ -31,11 +31,11 @@ title: Mailchimp Source
 
 Mailchimp has a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Mailchimp objects (and their corresponding properties) according to the Collections table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation. For example, if you went with `mailchimp`, the `lists` collection will be accessible at `mailchimp.lists` in SQL.
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Mailchimp.  For example,  if `status` goes from `subscribed` to `unsubscribed` between syncs, on its next sync that tickets status will be `unsubscribed`.
+Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Mailchimp.  For example, if `status` goes from `subscribed` to `unsubscribed` between syncs, on its next sync that tickets status will be `unsubscribed`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
-At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, please let us know!
+At the moment, we don't support filtering which objects or properties get synced. If you're interested in this feature, [let us know](https://segment.com/help/contact/)!
 
 
 ## Collections
@@ -45,7 +45,7 @@ Collections are the groupings of resources we pull from your source. In your war
 
 |  Collection | Type | Description |
 |  ------ | ------ | ------ |
-|  `conversations` | object | Conversation tracking is a [paid feature](http://kb.mailchimp.com/accounts/billing/how-mailchimp-pricing-plans-work) that lets you view subscribers' replies to your campaigns from inside your MailChimp account. Fetched via Mailchimp's [`/conversations`endpoint](https://mailchimp.com/developer/reference/conversations/). |
-|  `lists` | object | The state of your various lists in Mailchimp. Fetched via Mailchimp's [`/lists` endpoint](https://mailchimp.com/developer/reference/lists/). |
-|  `campaigns` | object | Your Mailchimp campaigns. Fetched via Mailchimp's [`/campaigns` endpoint](https://mailchimp.com/developer/reference/campaigns/). |
-|  `subscriber activity` | object | **Currently unavailable** Mailchimp's subscriber activity endpoint cannot support our Sources product. If you are interested in this collection, please reach out to your MailChimp Client Success Manager and request that they update their export API functionality.* |
+|  `conversations` | object | Conversation tracking is a [paid feature](http://kb.mailchimp.com/accounts/billing/how-mailchimp-pricing-plans-work) that lets you view subscribers' replies to your campaigns from inside your MailChimp account. Fetched using Mailchimp's [`/conversations`endpoint](https://mailchimp.com/developer/reference/conversations/). |
+|  `lists` | object | The state of your various lists in Mailchimp. Fetched using Mailchimp's [`/lists` endpoint](https://mailchimp.com/developer/reference/lists/). |
+|  `campaigns` | object | Your Mailchimp campaigns. Fetched using Mailchimp's [`/campaigns` endpoint](https://mailchimp.com/developer/reference/campaigns/). |
+|  `subscriber activity` | object | **Currently unavailable** Mailchimp's subscriber activity endpoint cannot support our Sources product. If you are interested in this collection, contact your MailChimp Client Success Manager and request that they update their export API functionality.* |

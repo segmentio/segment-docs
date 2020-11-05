@@ -2,7 +2,7 @@
 title: How do we set up event-triggered notifications or alerts?
 ---
 
-Below you'll find a bunch of ways to setup notifications for yourself based on the data you're sending through Segment. 
+Below you'll find a bunch of ways to set up notifications for yourself based on the data you're sending through Segment. 
 
 ### Google Analytics custom alerts
 
@@ -12,10 +12,10 @@ You can use Google Analytics Custom Alerts to send yourself emails whenever a sp
 
 ### Analytics email summaries
 
-In tools like Amplitude, KISSmetrics, Mixpanel you can setup email reports delivered to you on a daily basis. They are completely customizable, so you can keep an eye on as many events or other metrics you'd like. 
+In tools like Amplitude, Kissmetrics, Mixpanel you can set up email reports delivered to you on a daily basis. They are completely customizable, so you can keep an eye on as many events or other metrics you'd like. 
 
 *   [Mixpanel email reports](https://mixpanel.com/blog/2011/04/14/email-reports/)
-*   [KISSmetrics daily metrics email](http://support.kissmetrics.com/tools/daily-metrics-email.html)
+*   [Kissmetrics daily metrics email](http://support.kissmetrics.com/tools/daily-metrics-email.html)
 *   [Amplitude email alerts (scroll down a bit)](https://amplitude.com/blog/2015/03/20/new-features-stickiness-team-access-controls-email-alerts-redshift-playbook/)
 
 ### Realtime Traffic Monitoring
@@ -29,7 +29,7 @@ Note: GoSquared also offers in-depth historical and user analysis. Chartbeat sti
 
 ### Webhook-based Alerts
 
-The last option we recommend is to use a monitoring tool like [PagerDuty](https://www.pagerduty.com/) or [Data Dog](https://www.datadoghq.com/) and point our [webhooks](/docs/connections/destinations/catalog/webhooks/) destination at them. That way you can setup custom alerts in their system.
+The last option we recommend is to use a monitoring tool like [PagerDuty](https://www.pagerduty.com/) or [Data Dog](https://www.datadoghq.com/) and point our [webhooks](/docs/connections/destinations/catalog/webhooks/) destination at them. That way you can set up custom alerts in their system.
 
 ### Event-Triggered Emails
 

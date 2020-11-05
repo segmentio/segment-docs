@@ -1,7 +1,6 @@
 ---
 title: Spec Overview
-redirect_from:
-- '/docs/partners/spec/'
+redirect_from: '/docs/partners/spec/'
 ---
 
 The Segment Spec provides guidance on meaningful data to capture, and the best format for it, across all of Segment's libraries and APIs. If you implement Segment using these formats, it's simple to translate your data to downstream tools.

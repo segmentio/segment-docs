@@ -9,7 +9,7 @@ source-type: object
 
 This will allow you to write SQL to analyze your analyze your email marketing campaigns ROI, or join your email data to other data sources like web and mobile events, Salesforce, and Zendesk to tie nurture emails to re-activation rates in your app.
 
-_**NOTE:** Marketo is currently in beta and this doc was last updated on April 30, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you have any feedback to help us improve the Marketo Source and its documentation, and please [let us know](https://segment.com/help/contact)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -47,7 +47,7 @@ You're done! Data should start flowing into your Warehouse in the next few hours
 
 The Marketo source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Marketo objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation (ie. my_source.charges).
 
-Our sync component uses an upsert API, so the data in your warehouse loaded via sync will reflect the latest state of the corresponding resource in Marketo. For example, if `first_name` goes from `Jess` to `Jessica` between syncs, on its next sync that field will be `Jessica`.
+Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Marketo. For example, if `first_name` goes from `Jess` to `Jessica` between syncs, on its next sync that field will be `Jessica`.
 
 The source syncs and warehouse syncs are independent processes. Source runs pull your data into the Segment Hub, and warehouse runs flush that data to your warehouse. Sources will sync with Segment every 3 hours. Depending on your Warehouses plan, we will push the Source data to your warehouse on the interval associated with your billing plan.
 
@@ -275,7 +275,7 @@ Currently, Warehouses are the only supported destination for object-cloud source
 
 The Marketo API has different limits for the number of objects returned by different endpoints, but usually 100-300 objects per call.
 
-At setup time, you have the option to specify a cap to the API calls that our source can consume. If no cap is specified, we will by default consume as many API calls that are available to sync the entire source.
+At set up time, you have the option to specify a cap to the API calls that our source can consume. If no cap is specified, we will by default consume as many API calls that are available to sync the entire source.
 
 We also use the Lead Activities bulk API to reduce the number of requests needed to sync the data; this however, also has a limit of 500MB worth of files downloaded per day.
 
@@ -289,7 +289,7 @@ We're primarily using the REST API, but also use the Lead Activity Bulk API to r
 
 ### Can I get other collections not default synced by the source?
 
-Yes! Please [contact us](/help/contact) to request additional collections.
+Yes! [contact us]https://segment.com/help/contact/ to request additional collections.
 
 ### Can I get other columns not default synced by the source?
 Yes! For leads and activities, we've introduced a custom fields setting where you can enter comma-separated (no spaces, etc.) custom fields to sync by their REST API name.
@@ -306,4 +306,4 @@ Yes! For leads and activities, we've introduced a custom fields setting where yo
 - createdAt
 - updatedAt
 
-You can find a full list of standard fields and their REST API names [here](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/). If there are other fields you're interested in, [contact us](/help/contact) and we'll get you setup.
+You can find a full list of standard fields and their REST API names [here](http://developers.marketo.com/rest-api/lead-database/fields/list-of-standard-fields/). If there are other fields you're interested in, [contact us]https://segment.com/help/contact/ and we'll get you setup.

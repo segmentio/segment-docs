@@ -4,7 +4,7 @@ title: Rollbar Destination
 
 ## Getting Started
 
-When you toggle on Rollbar in Segment, we'll start sending data to the Rollbar API for your account. Currently, Rollbar will send data from our analytics.js library.
+When you enable Rollbar in Segment, we'll start sending data to the Rollbar API for your account. Currently, Rollbar will send data from our analytics.js library.
 
 To start pushing user data to Rollbar, toggle the destination on and add your Rollbar access token. Your access token can be found in your Rollbar Settings > Access Tokens.
 
@@ -26,6 +26,6 @@ This feature makes use of JavaScript Source Maps to translate the minified code 
   //# sourceMappingURL=URL_TO_SOURCE_MAP
   ```
 
-  b. Upload pre-deploy: at the beginning of your deploy script, upload a source map package via Rollbar's API.
+  b. Upload pre-deploy: at the beginning of your deploy script, upload a source map package using Rollbar's API.
 
   For more detail on providing your source map, checkout [Rollbar's documentation here](https://rollbar.com/docs/source-maps/#step-2-provide-your-source-map).

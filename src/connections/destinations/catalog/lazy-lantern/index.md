@@ -6,10 +6,10 @@ rewrite: true
 
 We ingest your analytics through Segment, perform state-of-the-art anomaly detection on each of your metrics, and  alert you on Slack when something doesn't look right. You get full-coverage over your product and the confidence that you will be notified of any significant variation.
 
-This destination is maintained by Lazy Lantern. For any issues with the destination, please reach out to [Lazy Lantern's support](mailto:support@lazylantern.com).
+This destination is maintained by Lazy Lantern. For any issues with the destination, contact [Lazy Lantern's support](mailto:support@lazylantern.com).
 
 
-_**NOTE:** The Lazy Lantern Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 31, 2019. If you are interested in joining their beta program or have any feedback to help improve the Lazy Lantern Destination and its documentation, please [let them know](mailto:support@lazylantern.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
@@ -24,9 +24,9 @@ _**NOTE:** The Lazy Lantern Destination is currently in beta, which means that t
 
 ### Manual Setup
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Lazy Lantern" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your Lazy Lantern dashboard [settings page](https://app.lazylantern.com).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Lazy Lantern" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your Lazy Lantern dashboard [settings page](https://app.lazylantern.com).
 
 ### Next Steps
  - Lazy Lantern needs one week of training on your data before it can perform accurate anomaly detection. The countdown on the Lazy Lantern dashboard lets you know when the training period will be completed.
@@ -37,7 +37,7 @@ _**NOTE:** The Lazy Lantern Destination is currently in beta, which means that t
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page();
@@ -48,7 +48,7 @@ Lazy Lantern will monitor `page` events and send you alerts when an anomaly occu
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An iOS example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An iOS example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -59,7 +59,7 @@ Lazy Lantern will monitor `screen` events and send you alerts when an anomaly oc
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -72,7 +72,7 @@ Lazy Lantern does not store any information that links to a user's personal iden
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Products Searched', {

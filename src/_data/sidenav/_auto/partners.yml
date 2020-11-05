@@ -2,10 +2,10 @@ sections:
 - section_title: Partners
   section:
   - path: /partners
-    title: Join the Segment Platform
-  - path: /partners/build-functions
+    title: Developer Center Overview
+  - path: /partners/subscriptions/build-functions
     title: Building a Subscription Function
-  - path: /partners/build-webhook
+  - path: /partners/subscriptions/build-webhook
     title: Building a Subscription Webhook
   - path: /partners/checklist
     title: Public Beta Checklist

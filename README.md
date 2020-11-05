@@ -53,7 +53,7 @@ See the [Contributor Guide](contributors.md) for more info.
 
 **At minimum you must open a PR so the docs team gets a notification. Do not merge directly to master.**
 
-- **Just fixing a typo**? -> No review needed, you can admin-merge your PR with our blessings.
+- **Just fixing a typo**? -> No review needed, but please label it FIX in the PR subject so we know not to worry. You can then admin-merge your PR with our blessings.
 
 - **Delta of <20 words or ~150 characters**? -> Yes, but a minor review. Open a PR and tag @sanscontext, who'll review mostly for formatting and copy issues.
 
@@ -98,7 +98,7 @@ Once the PR is merged, the docs site rebuilds and the changes are live!
 
 ### Draft PRs
 
-If you're doing a substantial change and you're going to want to spend a few weeks on it, use [Github's Draft PRs feature](https://help.github.com/en/articles/about-pull-requests#draft-pull-requests), or add `WIP` to the title of your PR. This lets us know to ignore the PR until you're ready.
+If you're doing a substantial change and you're going to want to spend a few weeks on it, use [Github's Draft PRs feature](https://help.github.com/en/articles/about-pull-requests#draft-pull-requests), or add `WIP` to the title of your PR. This lets us know to ignore the PR until you're ready (otherwise Laura will ping you weekly about it!).
 
 
 ## How the docs build works
@@ -134,7 +134,7 @@ The most interesting ones are:
 
 ### Images
 
-**All images should be saved locally! No linking to 3rd party-hosted images!** Images are published to our CDN from the build step.
+**Save all images locally! No linking to 3rd party-hosted images!** Images are published to our CDN from the build step, and this means they won't go missing if the hosting service dujour goes out of business.
 
 There are no _enforced_ naming conventions at this time. Files that start with an underscore are ignored by Jekyll. Anything you see with `asset` was dowloaded by a script to migrate it out of Contents.io.
 

@@ -17,7 +17,7 @@ Enhance your existing Segment configuration with Callexa to collect valuable Cus
 - To enable sync back capabilities copy back your "Write Key" (found unter Source Keys) to Callexa
 - Back in Callexa enable the Automation and hit "Save"
 
-That's it, new customer records added with the `identify` method will now automatically be surveyed via email.
+That's it, new customer records added with the `identify` method will now automatically be surveyed using email.
 
 ## Identify
 

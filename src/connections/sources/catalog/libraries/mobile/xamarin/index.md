@@ -15,12 +15,13 @@ Our [Xamarin](http://xamarin.com/) Portable Class Library ([PCL](http://develope
 - Xamarin.Android
 - Xamarin.iOS
 
-The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on Github](https://github.com/segmentio/Analytics.Xamarin).
+The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/Analytics.Xamarin).
 
-**Note:** Since Xamarin requires our library to be portable to different builds, we can only enable server-side destinations, as opposed to bundling select native SDKs like we do for iOS and Android. Look for the "Server" icon when selecting destinations. For tools for which we offer both bundled and server-side destinations, like Mixpanel, Amplitude, and Google Analytics, our Xamarin library will only be able to leverage their server-side functionality. [Read this help article for more information](https://help.segment.com/hc/en-us/articles/204892879).
+**Note:** Since Xamarin requires our library to be portable to different builds, we can only enable server-side destinations, as opposed to bundling select native SDKs like we do for iOS and Android. Look for the "Server" icon when selecting destinations. For tools for which we offer both bundled and server-side destinations, like Mixpanel, Amplitude, and Google Analytics, our Xamarin library will only be able to use their server-side functionality.
 
 ## Getting Started
-Clone `Analytics.Xamarin` from [Github](https://github.com/segmentio/Analytics.Xamarin)...
+
+Clone `Analytics.Xamarin` from [GitHub](https://github.com/segmentio/Analytics.Xamarin)...
 
 ```bash
 git clone https://github.com/segmentio/Analytics.Xamarin.git
@@ -72,7 +73,7 @@ The `identify` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -115,7 +116,7 @@ The `track` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -158,7 +159,7 @@ The `screen` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -195,7 +196,7 @@ The `group` call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations), or [send additional context](#context).</td>
+    <td>An `Options` object lets you set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations), or [send additional context](#context).</td>
   </tr>
 </table>
 
@@ -205,7 +206,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -244,7 +245,7 @@ Don't forget to set async back to `true` for production, so that you can advanta
 
 An `Options` object lets you:
 
-1. Set a [timestamp](#historical-import), [enable or disable destinations](#selecting-integrations)
+1. Set a [timestamp](#historical-import), [enable or disable destinations](#selecting-destinations)
 2. [Send additional context](#context)
 3. [Send an anoymousId](#anonymous-id)
 
@@ -260,11 +261,11 @@ Analytics.Client.Identify("hj2kf92ds212", new Traits() {
     { "name", "Tom Smykowski" },
 }, new Options()
     .SetIntegration("all", false)
-    .SetIntegration("KISSmetrics", true)
+    .SetIntegration("Kissmetrics", true)
 );
 ```
 
-In this case, we're specifying that we want this identify to only go to KISSmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "KISSmetrics", true }` turns on KISSmetrics, etc.
+In this case, we're specifying that we want this identify to only go to Kissmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "Kissmetrics", true }` turns on Kissmetrics, etc.
 
 destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 

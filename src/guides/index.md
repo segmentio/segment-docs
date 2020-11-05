@@ -1,12 +1,12 @@
 ---
-title: Getting Started with Segment
+title: An introduction to Segment
 ---
 
 Welcome! This page is a high-level introduction to the Segment Platform, including what it does and how. (If you're looking for detailed information about architecture, setup, or maintenance, you can **[skip ahead](#where-can-i-learn-more).**)
 
 ## What is Segment?
 
-Segment is a Customer Data Infrastructure (CDI) service provider, which means that we provide a service that simplifies collecting and using data from the users of your digital properties (websites, apps, etc). With Segment, you can collect, transform, send, and archive your [first-party customer data](https://segment.com/books/customer-data/first-party-data/). We simplify the process of collecting data and hooking up new tools, allowing you to spend more time using your data, and less time trying to collect it.
+Segment is a Customer Data Platform (CDP), which means that we provide a service that simplifies collecting and using data from the users of your digital properties (websites, apps, etc). With Segment, you can collect, transform, send, and archive your [first-party customer data](https://segment.com/books/customer-data/first-party-data/). We simplify the process of collecting data and hooking up new tools, allowing you to spend more time using your data, and less time trying to collect it.
 
 You can also enrich the customer data you collect by connecting data from your other tools, and then aggregate it to monitor performance, inform decision-making processes, and create uniquely customized user experiences. You can also use Personas, our identity resolution tool, to unify data from individual users to gain a wholistic understanding of their actions.
 
@@ -15,7 +15,7 @@ https://university.segment.com/introduction-to-segment/299955?reg=1&referrer=doc
 
 ## What does it do?
 
-In its very simplest form, Segment helps you generate messages about what's happening in your site or app, then translates those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and transmits messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/warehouses) (such as databases, warehouses, or bulk-storage buckets).
+In its very simplest form, Segment generates messages about what's happening in your site or app, then translates the content of those messages into different formats for use by other tools (which we call '[Destinations](/docs/connections/destinations)'), and transmits messages to those tools. The Segment servers also archive a copy of the data, and can [send data to your storage systems](/docs/connections/storage/) (such as databases, warehouses, or bulk-storage buckets).
 
 ## How does Segment work?
 
@@ -34,16 +34,16 @@ Segment has [Sources](/docs/connections/sources/) and [Destinations](/docs/conne
 
 ### Segment Sources
 
-Segment provides several types of Sources which you can use to collect your data, and which you can choose among based on the needs of your app or site. For websites, you can embed a library which loads on the page to create the Segment messages. If you have a mobile app, you can embed one of our Mobile libraries, and if you'd like to create messages directly on a server (if you have, for example a dedicated .NET server that processes payments), we have several server-based libraries that you can embed directly into your backend code. (You can also use [cloud-sources](/docs/connections/sources/what-are-cloud-sources/) to import data about your app or site from other tools like Zendesk or Salesforce, to enrich the data sent through Segment.)
+Segment provides several types of Sources which you can use to collect your data, and which you can choose among based on the needs of your app or site. For websites, you can embed a library which loads on the page to create the Segment messages. If you have a mobile app, you can embed one of our Mobile libraries, and if you'd like to create messages directly on a server (if you have, for example a dedicated .NET server that processes payments), we have several server-based libraries that you can embed directly into your backend code. (You can also use [cloud-sources](/docs/connections/sources/about-cloud-sources/) to import data about your app or site from other tools like Zendesk or Salesforce, to enrich the data sent through Segment.)
 
 ### Destinations
+
 Once Segment generates the messages, it can send them directly to the Segment servers for translation and forwarding on to the Destinations you're using, or it can make calls directly from the app or site to the APIs of your Destination tools. Which of these methods you choose depends on which Destinations you're using and other factors. You can read more about these considerations in our [Connection Modes documentation](/docs/connections/destinations/#connection-modes)
 
 
 ## What happens next?
 
 Messages sent to the Segment servers using the tracking API can then be translated and forwarded on to Destination tools, inspected to make sure that they're in the correct format or schema, inspected to make sure they don't contain any Personally Identifying Information (PII), aggregated to illustrate overall performance or metrics, and archived for later analysis and reuse.
-
 
 ## What are the other parts of the Segment platform?
 

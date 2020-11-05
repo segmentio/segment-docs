@@ -7,13 +7,18 @@ Computed Traits allow you to quickly create user or account-level calculations t
 ## Types of Computed Traits
 
 Personas currently supports the following types of computed traits:
-- [Event Counter](#event-counter)
-- [Aggregation](#aggregation)
-- [Most Frequent](#most-frequent)
-- [First](#first)
-- [Last](#last)
-- [Unique List](#unique-list)
-- [Unique List Count](#unique-list-count)
+- [Types of Computed Traits](#types-of-computed-traits)
+  - [Event Counter](#event-counter)
+  - [Aggregation](#aggregation)
+  - [Most Frequent](#most-frequent)
+  - [First](#first)
+  - [Last](#last)
+  - [Unique List](#unique-list)
+  - [Unique List Count](#unique-list-count)
+- [Conditions](#conditions)
+- [Connecting your Computed Trait to a Destination](#connecting-your-computed-trait-to-a-destination)
+- [Accessing your Computed Traits using the Profiles API](#accessing-your-computed-traits-using-the-profiles-api)
+- [Downloading your Computed Trait as a CSV](#downloading-your-computed-trait-as-a-csv)
 
 ### Event Counter
 
@@ -143,15 +148,15 @@ The following operators are available.
 
 ## Connecting your Computed Trait to a Destination
 
-User-level computed Traits are sent to destinations on our platform through the [identify](/docs/connections/spec/identify/) call as a user trait. The trait name will correspond to the snake-cased name that you can find in the trait settings, for e.g. `most_viewed_page_category`. You can find the list of destinations [here](/docs/personas/activation/)
+Personas sends user-level computed Traits to destinations using the [Identify call](/docs/connections/spec/identify/) for user traits, or using the [Track call](/docs/connections/spec/track/) for event properties. Learn more about [Computed trait generated events here](/docs/personas/using-personas-data/#computed-trait-generated-events). The trait name corresponds to the snake cased name that you see in the trait settings, for example `most_viewed_page_category`. See the [list of Personas-compatible destinations](/docs/personas/using-personas-data/#compatible-personas-destinations)
 
 ![](images/1525837601768.png)
 
-For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group) call and/or [identify](/docs/connections/spec/identify) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
+For account-level computed traits, you have the option to send either a [group](/docs/connections/spec/group/) call and/or [identify](/docs/connections/spec/identify/) call. Group calls will send one event per account, whereas identify calls will send an identify call for each user in the account. This means that even if a user hasn't performed an event, we will still set the account-level computed trait on that user. Because most marketing tools are still based at the user level, it is often important to map this account-level trait onto each user within an account.
 
-## Accessing your Computed Traits via the Profiles API
+## Accessing your Computed Traits using the Profiles API
 
-You can access your computed traits via the Profile API by querying the `/traits` endpoint. For example, if you can query for the `emails_opened_last_30_days` with the following GET request:
+You can access your computed traits using the Profile API by querying the `/traits` endpoint. For example, if you can query for the `emails_opened_last_30_days` with the following GET request:
 
 ```
 https://profiles.segment.com/v1/spaces/<workspace_id>/collections/users/profiles/email:john.doe@segment.com/traits?include=emails_opened_last_30_days
@@ -173,3 +178,19 @@ returns:
 ```
 
 You can read the [full Profile API docs](/docs/personas/profile-api/) to learn more.
+
+## Downloading your Computed Trait as a CSV
+
+You can download a copy of your trait by visiting the the computed trait overview page.
+![](images/trait_overview.png)
+Computed Trait CSVs are generated on demand. Before you can download the CSV, you will need to generate it. There are three different options for formatting:
+- **Unformatted:** Contains three columns. The first contains the user or account key, the second contains the trait value and the third is a JSON object containing the external IDs. Generating this CSV is by far the fastest of the three options. [Download example unformatted CSV](files/trait_csv_format_a.csv)
+- **Distinct columns for unique external IDs (with indexed columns for ID types with multiple values):** Contains the same first three columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a single row has more than one value for a given external ID type, for example a user with three email addresses, _additional columns with indexed headers are added_, (`email`, `email_1`, `email_2`). [Download example formatted CSV with indexed columns](files/trait_csv_format_b.csv)
+- **Distinct columns for unique external IDs (with additional rows for ID types with multiple values):** Contains the same first three columns as the unformatted CSV. Additional columns are added for each distinct external ID type. When a single row has more than one value for a given external ID type, for example a user with two email addresses, _additional rows are added with the first three columns repeated (user or account key, trait value and external IDs JSON)._ [Download example formatted CSV with additional rows](files/trait_csv_format_c.csv)
+<table>
+    <tr>
+        <td>![](images/large_trait_csv.png)</td>
+        <td width="45%">Generating a CSV can take a substantial amount of time for large traits (around 30 seconds for a formatted CSV with 1 million rows). For CSVs that are expected to take over 20 seconds, the Segment app displays an estimated generation time. After clicking Generate, it is recommended that you leave the modal and page open while the CSV is created.
+        (If the trait recalculates between when you click Generate and when you download the file, you might want to regenerate the file. The CSV is a snapshot from when you clicked Generate, and could be outdated.)</td>
+    </tr>
+</table>

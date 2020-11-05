@@ -3,32 +3,34 @@
 {% assign currentIntegration = site.data.catalog.warehouse.items | where: "slug", currentSlug | first %}
 
 <div class="sidebar sidebar--dark">
-  <nav class="menu">
-    <ul class="menu__list list list--unstyle">
-      <li class="menu-item menu-item--separated">
-        <a href="{{ site.baseurl }}/connections/warehouses/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--icon flex flex--middle">
-          <div class="menu-item__icon flex__column">
-            {% include icons/menu/icon-back.svg %}
-          </div>
-
-          <div class="flex__column">Back to Connections</div>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-  <nav class="menu menu--compact">
-    {% assign integrations = site.data.catalog.warehouse.items %}
-    <ul class="menu__list list list--unstyle" data-ref="accordion[body]">
-      {% for integration in integrations %}
-        {% if integration.hidden != true %}
-          <li class="menu-item menu-item--left-aligned menu-item--compact">
-            <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link">
-              {{ integration.display_name }}
-            </a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </nav>
+  <div class="sidebar__content">
+    <nav class="menu">
+      <ul class="menu__list list list--unstyle">
+        <li class="menu-item">
+          <a href="{{ site.baseurl }}/connections/storage/catalog/" class="menu-item__link menu-item__link--small menu-item__link--highlight menu-item__link--icon flex flex--middle">
+            <div class="menu-item__icon flex__column">
+              {% include icons/menu/icon-back.svg %}
+            </div>
+  
+            <div class="flex__column">Back to Connections</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  
+    <nav class="menu menu--compact">
+      {% assign integrations = site.data.catalog.warehouse.items %}
+      <ul class="menu__list list list--unstyle" data-ref="accordion[body]">
+        {% for integration in integrations %}
+          {% if integration.hidden != true %}
+            <li class="menu-item menu-item--left-aligned menu-item--compact">
+              <a href="{{ site.baseurl }}/{{ integration.url }}/" class="menu-item__link">
+                {{ integration.display_name }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
 </div>

@@ -7,7 +7,11 @@ layout: default
     <div class="docs__aside stage__aside">
       {% include_cached navbar/logo.html %}
 
-      {% include_cached menu/menu-{{ page.integration_type }}.html %}
+      {% if page.strat %}
+        {% include menu/menu-strat.html %}
+      {% else %}
+        {% include_cached menu/menu-{{ page.integration_type }}.html %}
+      {% endif %}
     </div>
 
     <main class="docs__body stage__body">
@@ -33,7 +37,7 @@ layout: default
             {%- endif -%}
             <div class="flex__column">
               {%- if page.title -%}
-                <h1 id="{{ page.title | downcase }}" class="page__heading">
+                <h1 id="{{ page.title | slugify }}" class="page__heading">
                   {{ page.title }}
                 </h1>
               {%- endif -%}

@@ -1,10 +1,17 @@
 sections:
+- section_title: false
+  section_col: 12
+  section:
+  - name: Getting started with Segment
+    icon: icon-getting-started.svg
+    description: "Learn about Segment, work through a basic implementation, plan a full implementation and learn about features and extensions. "
+    path: /getting-started/
 - section_title: How can Segment help you?
   section_col: 6
   section:
   - name: Simplify data collection
     icon: icon-connections.svg
-    description: "Integrate the tools you needs for analytics, growth, marketing, and more."
+    description: "Integrate the tools you need for analytics, growth, marketing, and more."
     path: /connections/
   - name: Protect data integrity
     icon: icon-protocols.svg
@@ -33,13 +40,13 @@ sections:
     description: "Use our business-case specs to ensure that your tools get the most from your data."
     path: /connections/spec/semantic/
 
-- section_title: Learn the basics
+- section_title: Learning about Segment
   section_col: 6
   section:
-  - name: Getting Started
-    icon: icon-getting-started.svg
-    description: "An overview of Segment: the problems it solves, how it works, and its important features."
-    path: /guides/
+  - name: Segment for Developers
+    icon: icon-guides.svg
+    description: "An overview of the basics of your Segment implementation."
+    path: /guides/intro-impl/
   - name: How-To Guides
     icon: icon-guides.svg
     description: "Over a dozen how-to guides to help you accomplish common tasks."

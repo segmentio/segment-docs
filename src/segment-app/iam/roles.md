@@ -2,71 +2,125 @@
 title: Roles
 ---
 
-Roles are assigned to each member of a team.
+## Overview
 
-## Global roles
+A role is used to give a user access to resources within a workspace. Roles are additive, and can be combined to configure a custom policy for a Team Member or a Group. A policy is at least one role plus one resource applied to an individual user or group.
+
+## Global Roles
 
 All Segment workspaces have the following roles, regardless of account type.
 
-  - **Workspace Owner**
-    Owners have full read and edit access to everything in the workspace, including sources, destinations, add-on products, and settings. Owners have full edit access to all team permissions.
+- **Workspace Owner**
+  Owners have full read and edit access to everything in the workspace, including sources, destinations, add-on products, and settings. Owners have full edit access to all team permissions.
 
-  - **Source admin**
-    Source admins have edit access to assigned source(s), the source settings, connected streaming destinations, schema, live data in the debugger, and connected tracking plan(s). Source admins can be granted access to either all sources (current and future sources, with the ability to create new sources), or to specific sources.
+- **Source admin**
+  Source admins have edit access to assigned source(s), to the settings for that source, to any connected streaming destinations, schema, and live data from the source in the [debugger](/docs/connections/sources/debugger/). A user with the Source Admin role can be granted access to either all current and future Sources, or a specific list of Sources, or Sources with a specific Label (BT only).
 
 
-## Business Tier roles
+## Business Tier Roles
 
 The following roles are only available to Segment Business Tier accounts.
 
-### Connections
+#### Source Admin
 
-| Role                | Description                                                                                                                                                   | Scope                                                                                            |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| Source read-only    | Read-only access to assigned source(s), source settings, connected streaming destinations, schema, live data in the debugger, and connected tracking plan(s). | Can be granted admin access to either 1) All current and future sources, or 2) Specific sources  |
-| Warehouse admin     | Edit access to assigned warehouse(s) and warehouse settings.                                                                                                  | Can be granted to all current and future warehouses (including the ability to create new sources |
-| Warehouse read-only | Read-only access to assigned warehouse(s) and warehouse settings.                                                                                             | Can be granted to all current and future warehouses                                              |
+Edit access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.
+
+**Scope:** Can be granted access to either: all current and future Sources, or  only specific Sources, or Sources with a specific Label (BT only).
+
+#### Source Read-only
+
+Read access to assigned source(s), source settings, connected streaming destinations, schema, transformations, and live data in the debugger.
+
+**Scope:** Can be granted access to either: all current and future Sources, or  only specific Sources, or Sources with a specific Label (BT only).
+
+#### Warehouse Admin
+
+Edit access to all warehouses and warehouse settings.
+
+**Scope:** Grants access to **all** warehouses.
+
+##### Warehouse Read-only
+
+Read access to all warehouses and warehouse settings.
+
+**Scope:** Grants access to **all** warehouses.
+
+#### Functions Admin
+
+Create, edit and delete access to assigned function(s).
+
+**Scope:** Can be granted access to either all current and future functions, or to a specific list of functions.
+
+#### Functions Read-only
+
+Read access to assigned function(s).
+
+**Scope:** Can be granted access to either all current and future functions, or to a specific list of functions.
+
+#### Tracking Plan Admin
+
+Edit access to all Tracking Plans in Protocols.
+
+**Scope:** Grants access to **all** Tracking Plans.
+
+#### Tracking Plan Read-only
+
+Read access to all Tracking Plans in Protocols.
+
+**Scope:** Grants access to **all** Tracking Plans.
+
+#### Personas Admin
+
+Edit access to assigned Personas Space(s), including all audiences and computed traits. Personas admins can update settings from the Personas screens of the Segment App.
+
+**Scope:** Can be granted access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
+
+#### Personas User
+Edit access to all traits and audiences within assigned Personas Space(s). Cannot change settings in Personas.
+
+**Scope:** Can be granted access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
+
+#### Personas Read-only
+Read-only access to assigned Personas Space(s), including all audiences and computed traits.
+
+**Scope:** Can be granted access to either: all current and future Spaces, or a specific list of Spaces, or Spaces with a specific Label (BT only).
+
+#### Identity Admin
+
+Edit access to Identity settings in Personas.
+
+**Scope:** Grants access to **all** Identity settings.
+
+#### End User Privacy Admin
+
+Edit access to [End User Privacy Settings](/docs/privacy/user-deletion-and-suppression). Includes access to Data Privacy Agreement, and user suppression and deletion workflows.
+
+**Scope:** Grants access to only End User Privacy Settings in the App.
+
+## PII Access
+
+The Segment App does not show detected Personally Identifiable Information (PII) to workspace members if the information matches specific expected formats for PII. When PII Access is turned “off”, detected PII is masked based on [red or yellow default matchers](/docs/privacy/portal/#default-pii-matchers) and any [custom matchers](/docs/privacy/portal/#custom-pii-matchers) defined in the Privacy Portal.
+
+Workspace Owners can grant specific individuals or groups access to PII from their Access Management settings. PII Access only applies to the resources a user or user group has access to; it does not expand a user's access beyond the original scope. All Workspace Owners have PII access by default.
 
 
-### Protocols
+## Roles for managing Personas destinations
+
+Personas destinations are not included in the Personas roles by default. Users with Personas roles (including Personas Admin) need additional permissions for each Personas space they work with in order to manage that Personas space's destinations.
+
+Grant these users `Source Admin` on the source named `Personas (personas space name)` to grant them access to the Personas destinations for that Personas space.
+
+## Roles for connecting resources
+
+To connect two resource instances, you must have access to both. This access can either be granted to all resources, or to the specific resources you want to connect.
+
+**To connect a source to warehouse** you must have `Source Admin` and `Warehouse Admin` access for the source and the warehouse.
+
+**To connect source to tracking plan** requires `Source Admin` and `Tracking Plan Admin` access for the source and the tracking plan.
 
 
-| Role                | Description                                      | Scope                                                                                                       |
-| ------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
-| Protocols admin     | Edit access to tracking plans in Protocols.      | Can be granted to either all current and future tracking plans (including the ability to create new sources |
-| Protocols read-only | Read-only access to tracking plans in Protocols. | Can be granted to all current and future tracking plans                                                     |
+## Roles for Protocols Transformations
 
-### Personas
+To **view** transformations, you only need `Source Read-only`, either for all Sources or the specific Sources using Protocols.
 
-| Role               | Description                                                                                                                 | Scope                          |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| Personas admin     | Edit access to Personas, including all audiences and computed traits. Personas admin can also view PII and change settings. | All audiences, computed traits |
-| Personas user      | Edit access to traits and audiences. Cannot change settings in Personas.                                        | The entire workspace           |
-| Personas read-only | Read-only access to Personas,  including all audiences and computed traits.                                                 | The entire workspace           |
-
-
-
-### Minimal Workspace Access
-
-Administrators can grant users "Minimal Workspace Access". Users with minimal workspace access can only view the workspace. They do not have access to any sub-resources and cannot edit the workspace.
-
-
-## Connecting resources
-
-Connecting two resource instances requires access to both:
-
-<table>
-  <tr>
-    <td>Connect source to warehouse</td>
-    <td>Requires Source Admin and Warehouse Admin. Either granted on the specific resources being connected or granted for all resources.</td>
-  </tr>
-  <tr>
-    <td>Connect source to tracking plan</td>
-    <td>Requires Source Admin and Tracking Plan Admin. Either granted on the specific resources being connected or granted for all resources. </td>
-  </tr>
-</table>
-
-
-## Personas Destinations
-
-Personas destinations are not included in the Personas roles, instead managing these destinations require `Source Admin` on the source named `Personas Default`.
+To **create or edit** transformations you must have either `Source Admin` for all Sources, or for the specific Sources used with Protocols.

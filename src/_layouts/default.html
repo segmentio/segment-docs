@@ -39,7 +39,7 @@
   <meta name="robots" content="noindex" />
   {%- else -%}
   <meta class="swiftype" name="section" data-type="enum" content="{{ sectionName }}" />
-  <meta class="swiftype" name="info" data-type="enum" content="{{description}}" />
+  <meta class="swiftype" name="info" data-type="string" content="{{description}}" />
   <meta class="swiftype" name="description" data-type="enum" content="{{description}}" />
   <meta class="swiftype" name="title" data-type="string" content="{{page.title}}" />
   <meta class="swiftype" name="priority" data-type="integer" content="{{priority}}" />
@@ -62,6 +62,32 @@
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
 </head>
 <body>
+  {% if jekyll.environment == "testing" %}
+  <!-- This section displays on Netlify only -->
+  <div style="height:30px; background-color:#fbfb81; width:100%; border-bottom: 1px solid #888; position: sticky; top:0; z-index: 1000;">
+    <div class="stage" style="min-height: 30px;">
+      <p>This site is meant for preview only. Please do not share outside of Segment.<span id="ghtext"> This page previews pull request <strong><a id="ghlink" href="" target="_blank"></a></strong></span></p>
+    </div>
+    <script>
+      const page =  window.location.hostname;  
+      const regex = /(?!(preview-))(\d+)/g;
+      var span = document.getElementById("ghtext");
+      const found = page.match(regex);
+      const gh_base = "https://github.com/segmentio/segment-docs/pull/"
+    
+      if (found == null) {
+        span.style.display = "none";
+      } else {
+        const pr = found[0]
+        const full_url = gh_base.concat(pr);
+        const link = document.getElementById("ghlink");
+        
+        link.href = full_url;
+        link.innerHTML = pr;
+      }
+      </script>
+  </div>
+  {% endif %}
   <div id="consent-manager"></div>
   {{ content }}
   <a class="back-scrolling" data-back-scrolling data-active-class="back-scrolling--active">
@@ -70,13 +96,13 @@
   {%- comment -%}
     A.JS
     Production: https://app.segment.com/segment_prod/sources/segment_docs_v2_prod
-    Everything else: https://app.segment.com/segment_prod/sources/segment_docs_v2
+    Everything else: https://app.segment.com/segment-engineering/sources/segment_docs
   {%- endcomment -%}
   {%- if jekyll.environment == "production" -%}
     {%- assign write_key = "QAKKJEtNsXpsNfCCBeWCLNxkaaLO7pgp" -%}
     {%- assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" -%}
   {%- else -%}
-    {%- assign write_key = "czNFQFqlure7fgXq3JdzY0MrWNzF1wLX" -%}
+    {%- assign write_key = "f5c1iWVVwikUDoh5NuVq0G52EPFrMmrX" -%}
     {%- assign swiftype_key = "_s4VzQxzJDw1zYB3HzEC" -%}
   {%- endif -%}
   {%- comment -%}
@@ -233,8 +259,8 @@
 </script>
   <script>
       window.analytics = null
-      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
-        analytics.page('{{page.title}}');
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://ajs.cd.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+        analytics.page(`{{page.title}}`);
         // analytics.identify();
       }}();
     </script>

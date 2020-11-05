@@ -6,7 +6,7 @@ The Watsi destination gives you the ability to create a trigger which will send 
 
 # Getting Started
 
-First of all, make sure you have a [Watsi](https://watsi.org) account. Once you have an account, you must have access to this destination. To get access, please email Watsi at connect@watsi.org with your account information, and we'll turn on this feature on for you.
+First of all, make sure you have a [Watsi](https://watsi.org) account. Once you have an account, you must have access to this destination. To get access, email Watsi at connect@watsi.org with your account information, and we'll turn on this feature on for you.
 
 Now we can go to the [Segment settings](https://watsi.org/donor/api) page - you need to be logged in to view it - where you will see a few tabs:
 
@@ -38,10 +38,11 @@ When you call [track](), Segment will send the event to Watsi with the `event na
 
 If you'd like to send a Watsi gift card to one of your customers, all you have to do is send us this `track` event along with the following properties:
 
-property |	description
----|----
-`name` | The name of the customer who will receive a gift card.
-`email` | The customer's email to send the gift card to.
+| property | description                                            |
+| -------- | ------------------------------------------------------ |
+| `name`   | The name of the customer who will receive a gift card. |
+| `email`  | The customer's email to send the gift card to.         |
+|          |                                                        |
 
 ### *Responses*
 

@@ -4,7 +4,7 @@ items:
   slug: redshift
   name: catalog/warehouses/redshift
   description: ''
-  url: connections/warehouses/catalog/redshift
+  url: connections/storage/catalog/redshift
   status: PUBLIC
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/redshift-default.svg'
@@ -12,11 +12,24 @@ items:
     url: ''
   categories:
     - Warehouses
+
+- display_name: Segment Data Lakes
+  slug: data-lakes
+  name: catalog/warehouse/data-lakes
+  description: ''
+  url: connections/storage/catalog/data-lakes
+  status: PUBLIC_BETA
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/YR7dKXAiQWyYvBiVOZNX'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/zKQw43MuQjmTtXBXs4VL'
+  categories:
+    - Warehouses
 - display_name: BigQuery
   slug: bigquery
   name: catalog/warehouses/bigquery
   description: ''
-  url: connections/warehouses/catalog/bigquery
+  url: connections/storage/catalog/bigquery
   status: PUBLIC
   logo:
     url: 'https://cdn.filepicker.io/api/file/bDzeRa75SZc6FfgfoUK6'
@@ -28,7 +41,7 @@ items:
   slug: postgres
   name: catalog/warehouses/postgres
   description: ''
-  url: connections/warehouses/catalog/postgres
+  url: connections/storage/catalog/postgres
   status: PUBLIC
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/postgres-default.svg'
@@ -40,7 +53,7 @@ items:
   slug: snowflake
   name: catalog/warehouses/snowflake
   description: ''
-  url: connections/warehouses/catalog/snowflake
+  url: connections/storage/catalog/snowflake
   status: PUBLIC
   logo:
     url: 'https://cdn.filepicker.io/api/file/JrQWOYvMRRCVvSHp4HL0'
@@ -52,7 +65,7 @@ items:
   slug: db2
   name: catalog/warehouses/db2
   description: ''
-  url: connections/warehouses/catalog/db2
+  url: connections/storage/catalog/db2
   status: PUBLIC
   logo:
     url: 'https://image.ibb.co/i4rS3K/IBM_Db2_logotype_pos_RGB.jpg'
@@ -64,7 +77,7 @@ items:
   slug: azuresqldw
   name: catalog/warehouses/azuresqldw
   description: ''
-  url: connections/warehouses/catalog/azuresqldw
+  url: connections/storage/catalog/azuresqldw
   status: PUBLIC
   logo:
     url: 'https://cdn.filepicker.io/api/file/VKbuWjNjQPKOnOWijFe4'
@@ -78,7 +91,7 @@ items:
   description: >-
     Our Amazon S3 copies our log files of your raw API calls from our S3 bucket
     to yours, where you can then perform custom analysis on them.
-  url: connections/warehouses/catalog/amazon-s3
+  url: connections/storage/catalog/amazon-s3
   status: PUBLIC
   logo:
     url: 'https://d3hotuclm6if1r.cloudfront.net/logos/amazon-s3-default.svg'

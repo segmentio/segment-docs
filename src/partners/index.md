@@ -1,5 +1,5 @@
 ---
-title: Join the Segment Platform
+title: Developer Center Overview
 ---
 
 > note ""
@@ -18,36 +18,46 @@ Segment's core feature is our Connections Catalog:
 
 ![](images/catalog.gif)
 
-Customers discover your Sources and Destinations via the Connections Catalog and can enable them from there.
+Customers discover your Sources and Destinations using the Connections Catalog and can enable them from there.
 
 The development process is simple:
 
 1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](https://segment.com/docs/connections/spec).
-2. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
-3. Create an App.
-4. Build and test your Component(s).
-5. Publish documentation.
-6. Submit your App for review.
-7. Launch into _Public Beta_!
+2. Follow Segment's security guidance.
+3. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
+4. Create an App.
+5. Build and test your Component(s).
+6. Publish documentation.
+7. Submit your App for review.
+8. Launch into _Public Beta_!
 
 ### 1. Understand Segment's Conceptual Model
 
 It's important to understand Segment's [Conceptual Model](/docs/partners/conceptual-model) to begin planning your integration. This will help you understand how data will flow from or into your integration.
 
-### 2. Request Access 
+### 2. Follow Segment's security guidance
+
+Security is a priority for us at Segment for both our customers and our partners. Before you start building on the Developer Center, please review our [Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/) and ensure you're following the below guidance:
+
+- Follow a secure software-development lifecycle, which enables you to create code that is safe for Segment customers and their end users, and that enables you to maintain and raise the security of that code over time
+- If you or your code comes into contact with Segment customer- or end-user data for any reason, protect it with commercially reasonable methods throughout its data lifecycle, including creation, handling, transporting, storing and destruction.
+- If you suspect a security event, incident or breach while working on this project or afterward, contact [Segment Security](mailto:security@segment.com?subject=Developer%20Center%20Security) for assistance with your investigation and communications
+- Practice modern and common-sense security for any scenario not explicitly stated  
+
+### 3. Request Access
 
 During _Developer Preview_, you will need to [request access to Developer Center](https://segment.com/partners/developer-center/). A Segment account is required for this step.
 
 We receive a large volume of requests so we encourage you to include a valid company website and email address, answer all questions with details about integration's use case as well as highlighting specific customer requests to expedite the approval process.
 
-### 3. Create your App
+### 4. Create your App
 
 Once approved, you can create your first [App](/docs/partners/conceptual-model/#apps). This represents a tile in the [Segment catalog](https://segment.com/catalog/) irrespective of which [Component](/docs/partners/conceptual-model/#components) type you choose to build so it should reflect your tool's name (eg. Zendesk Chat, Zendesk Sell).
 
 > info ""
-> The Developer Center currently only supports new Partner integrations (ie. Currently does not exist on the [Segment catalog](https://segment.com/catalog/)) in _Developer Preview_. If you're an existing Partner looking to build a new Component or make changes to your existing integration, please fill in [your details here](https://airtable.com/shrSweuRx5jspwsw7) and we will reach out once this is made available!
+> The Developer Center currently only supports new Partner integrations (ie. Currently does not exist on the [Segment catalog](https://segment.com/catalog/)) in _Developer Preview_. If you're an existing Partner looking to build a new Component or make changes to your existing integration, fill in [your details here](https://airtable.com/shrSweuRx5jspwsw7) and we'll contact you once this is made available!
 
-### 4. Build & Test
+### 5. Build & Test
 
 Now you can start building! Depending on your use case you can build a:
 
@@ -56,13 +66,13 @@ Now you can start building! Depending on your use case you can build a:
 - [Stream](/docs/partners/streams)
 
 > info ""
-> The Developer Center currently only supports the [Subscription](/docs/partners/subscriptions) component in _Developer Preview_. If you're looking to build a [Web Plugin](https://airtable.com/shrT3b4C7agUEBKVS) or [Stream](https://airtable.com/shrj3BkHMhdeaPYWt) please fill out the respective form and we will reach out once this is made available!
+> The Developer Center currently only supports the [Subscription](/docs/partners/subscriptions) component in _Developer Preview_. If you're looking to build a [Web Plugin](https://airtable.com/shrT3b4C7agUEBKVS) or [Stream](https://airtable.com/shrj3BkHMhdeaPYWt)  fill out the respective form and we'll contact you once this is made available!
 
 No matter which Component you decide to build, make it aligns with the [Segment Spec](https://segment.com/docs/connections/spec). This is a critical component in preserving logical continuity between disparate writers and readers of data. If you encourage customers to break the spec, you are breaking the promise of Segment, and is grounds for removal from the catalog.
 
 It's important that we provide a great experience for our mutual customers so we ask that you also conduct thorough testing of your integration using the tooling provided to you through the Developer Center. We also encourage you to use your Segment sandbox in the shoes of a user to polish the experience of implementing and using your integration.
 
-### 5. Document
+### 6. Document
 
 Finally, make sure you prepare documentation and relevant marketing material for easy discovery and reference. We ask that you provide the following documentation about your integration by making a copy of the below templates:
 
@@ -72,13 +82,13 @@ Finally, make sure you prepare documentation and relevant marketing material for
 4. Draft blog post announcing your new integration
 
 
-### 6. Submission
+### 7. Submission
 
 You can submit your Component in the Developer Center for review. We strive to respond to your submission within 2 business days to kickstart the review process.
 
-Our team will test your integration and review your documentation and marketing material. In order to keep this review feedback loop short, please make sure that your integration:
+Our team will test your integration and review your documentation and marketing material. In order to keep this review feedback loop short, make sure that your integration:
 
-- Adheres to the [Segment Spec](/docs/partners/spec/)
+- Adheres to the [Segment Spec](/docs/connections/spec/)
 - Adheres to your published documentation
 - Supports high data volumes
 - Meets all [launch requirements](/docs/partners/#launch-requirements)
@@ -93,22 +103,22 @@ In a nutshell you need:
 
 2. Complete the fields under the _App Info_ tab with your App including both _Basic Info_ and _Launch Info_. This includes:
 
-  - **Segment Documentation:** Using these templates ([subscription](https://hackmd.io/t7amLXluS7-39rg7ARZgSA?both=)/[stream](https://hackmd.io/TV8cZR6tRnKwGtkvSexeag), document how our mutual customers can utilize your integration.
+  - **Segment Documentation:** Using these templates ([subscription](https://hackmd.io/t7amLXluS7-39rg7ARZgSA?both=)/[stream](https://hackmd.io/TV8cZR6tRnKwGtkvSexeag), document how our mutual customers can use your integration.
   - **Your Documentation:** Similar to the above but hosted on your own website.
   - **Catalog Details:** Details for our [catalog](https://segment.com/catalog) material including screenshots by making a copy of [this template](https://docs.google.com/document/d/1kvAvAHLyM3pOq-lBcZJhP_X_KivHlk1eiFy-5ERWDXc/copy).
   - **Integrations / Partners Page:** Add your Segment integration to your integrations or partners page, like [this](https://success.clearbrain.com/connections/import-connections/connect-to-your-data-in-segment).
   - **Blog Post:** Publish a launch blog post about your integration, like [this](https://www.kustomer.com/blog/kustomer-segment-integration/). Make sure you share it on Twitter and LinkedIn too! (If you don't have a blog, an email is okay)
 
-Please be sure to use our [brand kit](https://brandfolder.com/segment/press-kit) for logos, and our [UTM guide](https://docs.google.com/document/d/1L0MHYdF2SYaMMiodQCYlZELF7pN0TXiZbD22nnlGhEk/copy) any time you link to a Segment page.
+Be sure to use our [brand kit](https://brandfolder.com/segment/press-kit) for logos, and our [UTM guide](https://docs.google.com/document/d/1L0MHYdF2SYaMMiodQCYlZELF7pN0TXiZbD22nnlGhEk/copy) any time you link to a Segment page.
 
-You can reach out to us at [partner-support@segment.com](mailto:partner-support@segment.com) once you have all these elements ready for review. Once we approve them, your Destination goes live on Catalog in Public Beta 🎉
+You can contact us at [partner-support@segment.com](mailto:partner-support@segment.com) once you have all these elements ready for review. Once we approve them, your Destination goes live on Catalog in Public Beta 🎉
 
 ## Post Launch
 
 Congratulations on launching your integration in Public Beta - welcome aboard! Here are the next steps to move out from Public Beta to Public:
 
 1. Implement the [Enable with Segment OAuth](/docs/partners/enable-with-segment) button - this makes it much easier for our mutual customers to get started with your integration!
-2. Onboard at least 3 customers to actively utilize your integration
+2. Onboard at least 3 customers to actively use your integration
 
 Bonus points if you join the [Segment Select](/docs/partners/#segment-select) Partner Program!
 

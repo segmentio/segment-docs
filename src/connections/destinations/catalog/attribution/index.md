@@ -4,24 +4,23 @@ rewrite: true
 ---
 [Attribution](http://attributionapp.com/) is an easy to use one stop dashboard for multi-touch attribution across all marketing channels. Attribution prides itself on high-fidelity and allows marketers to trace every visit, conversion or revenue dollar to the source. Marketers can easily integrate Attribution and Segment to begin measuring the effectiveness of their campaigns today.
 
-This destination is maintained by Attribution. For any issues with the destination, please [reach out to their team](Support@attribtutionapp.com).
+This destination is maintained by Attribution. For any issues with the destination, [contact the Attribution App Support team](mailto:support@attribtutionapp.com).
 
-This document was last updated on March 9, 2020. If you notice any gaps, out-dated information, or simply want to leave some feedback to help us improve our documentation, please [let us know](Support@attribtutionapp.com)!
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Attribution" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "Project ID" into your Segment Settings UI which you can find from your [Attribution settings](https://dashboard.attributionapp.com/v1/#!/settings).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Attribution" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "Project ID" into your Segment Settings UI which you can find from your [Attribution settings](https://dashboard.attributionapp.com/v1/#!/settings).
 4. It will take 15 - 30 minutes for data to begin populating on your Attribution dashboard.
 
 ![gettingstarted](images/att1.png)
 
 ## Page
 
-If you haven’t had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you haven’t had a chance to review our spec, take a look tounderstand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
 analytics.page("pageLoaded");
@@ -33,7 +32,7 @@ Page calls are sent to Attribution to record visits on your dashboard.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify("userId123", {
@@ -47,7 +46,7 @@ Identify calls are sent to Attribution as an `identify` event and are used to as
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track("Clicked Login Button")
@@ -58,7 +57,7 @@ Track calls are sent to Attribution as a `conversion event`. You should add a `c
 ![page](images/att5.png)
 
 ## Alias
-If you haven't had a chance to review our spec, please take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Alias method](https://segment.com/docs/connections/spec/alias/) does. An example call would look like:
 
 ```js
 analytics.alias('507f191e81');

@@ -6,9 +6,14 @@ This doc is for keeping track of [style decisions](#style-decisions), [structure
 
 ## General text style
 
+- Titles and headings should be in sentence case, meaning you only capitalize the first word, and any product names and proper nouns.
+
 - UI items are described by their text label in **Bold**. We don't add an explicit reference to what type of affordance it is (button, toggle, etc) unless needed for clarity.  "Click **Send**." rather than "Click the **Send**  button."
-- Use single-backtick `code format` for variables, for commands or values that need to be entered by the user, and the names of methods or calls when referring to them in context of an impementation (for example: "You'll make an identify call to capture this information" vs "In your code, edit the `identify` call...").
+
+- Use single-backtick `code format` for variables, for commands or values that need to be entered by the user, and the names of methods or calls when referring to them in context of an implementation (for example: "You'll make an identify call to capture this information" vs "In your code, edit the `identify` call...").
+
 - One-line or less of code can be formatted using single-backtick "code format". For more than one line of code, use a code block.
+
 - Code blocks must use the triple-backtick format, and must include a syntax highlighter cue (even if that cue is "text" or "none".)
 
 ### Use Active Voice / Write in the Present / Yes We Do
@@ -17,7 +22,8 @@ Write in the active voice.
 This one is harder to encapsulate.
 
 Instead of saying "Segment will create..." use "Segment creates..."
-Instead of saying "You should see your data in..." use "Your data arrives within..."
+Instead of saying "You should see your data in (x) minutes..." use "Your data arrives within..."
+Instead of saying "You will see a new dialog with your key..." use "A diaglog appears and displays your key..."
 
 ### We and they
 
@@ -37,11 +43,41 @@ These three often have overlapping understandings of meaning, but in technical d
 
 - **Can** implies ability to do something. "You can use..."  Or "If your implementation needs it, you can..."
 
+### Styling the Segment Methods
+
+We've traditionally been pretty scattered about how we describe the Segment Methods in our running text. In general: capitalize it when referring to the method in general ("You use a Page call to..."), but capitalization is optional when referring to a specific call in an implementation or code snippet ("The page call on line 38...")
+
+Omit the empty parentheses. :)
+
+This styling guidance applies to any prose mention of the methods that is *not* styled as code, including fenced code blocks, and longer phrases contained in code-format backtics.
+
+✅
+- Page call, Page method
+- Identify call, Identify method
+- ...etc
+
+👎
+- Page() method
+- `page()`
+- `.identify()`
+- `Identify` call
+
+
+
+
 ### When to capitalize
 
 Capitalize Segment (obviously ;) ) and Segment product names. For example, "privacy" by itself isn't capitalized, but "Segment Privacy Portal" is. Page titles Other UI text should be in lower case.
 
 Capitalize the words "Sources", "Destinations", and "Warehouses" when referring them as product names (for example: “You can use Sources to…”) but decap them when referring to them generically (“You can connect your warehouse to…”)
+
+Other items that can be capitalized:
+- Segment Methods (when referring to the Spec methods collectively)
+- Page, Screen, Track, Identify, Group, Alias calls, when referring to them as a class of calls.
+
+Don't capitalize these:
+- partners
+- write key
 
 ### Connection modes
 Device-mode, Client Side, Cloud-mode, Server side

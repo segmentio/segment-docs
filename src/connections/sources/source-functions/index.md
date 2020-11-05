@@ -1,8 +1,8 @@
 ---
 title: Source Functions
 redirect_from:
-  - '/connections/sources/custom'
-  - '/connections/sources/custom-sources'
+  - '/connections/sources/custom/'
+  - '/connections/sources/custom-sources/'
 ---
 
 > note ""
@@ -202,7 +202,7 @@ You can test your code directly from the Functions Editor in two ways:
 
 #### Webhook Catcher
 
-Start by copying the webhook URL from the sidebar or "Auto-fill via webhook" dialog to your upstream tool or service. This allows you to receive payloads which you can use to test your function code.
+Start by copying the webhook URL from the sidebar or "Auto-fill using webhook" dialog to your upstream tool or service. This allows you to receive payloads which you can use to test your function code.
 
 ![Capture events to test your function](images/webhook-capture.gif)
 
@@ -212,7 +212,7 @@ Click **Run** to test the event against your function code.
 
 #### Manual Input
 
-You can also manually include your own JSON payload with relevant headers before you click **Run**. In this view, you also have the option to switch back to the webhook catcher by clicking **Auto-fill via Webhook**.
+You can also manually include your own JSON payload with relevant headers before you click **Run**. In this view, you also have the option to switch back to the webhook catcher by clicking **Auto-fill using Webhook**.
 
 ## Creation & Deployment
 
@@ -278,7 +278,7 @@ Source Functions created before September 11, 2019 were written with a different
 
 These interfaces are now deprecated, so we recommend re-creating and managing your functions with the latest interfaces.
 
-We still support these legacy functions but will be deprecating this support and removing your legacy function from your workspace on April 1, 2020. If you didn't receive an email about this change, please [reach out to us](https://segment.com/help/contact/).
+We still support these legacy functions but will be deprecating this support and removing your legacy function from your workspace on April 1, 2020. If you didn't receive an email about this change, [contact us](https://segment.com/help/contact/).
 
 **Accessing the webhook payload (Legacy)**
 
@@ -345,7 +345,7 @@ This behavior has now been deprecated and all existing Source Functions have bee
 
 The webhook payload retries up to 5 times with an exponential backoff for the function in the event of a failure with the function. After 5 attempts, the message is dropped.
 
-**What is the maxium payload size for the incoming webhook?**
+**What is the maximum payload size for the incoming webhook?**
 
 The maximum payload size for an incoming webhook payload is 2MB.
 

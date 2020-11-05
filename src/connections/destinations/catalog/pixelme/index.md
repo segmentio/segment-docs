@@ -1,26 +1,28 @@
 ---
 rewrite: true
 title: PixelMe Destination
+hidden: true
 ---
 [PixelMe](https://pixelme.me/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Smart Attribution works by gathering all your traffic from any source and attributing it instantly using UTMs. Combined with our event tracking, you can easily see which traffic is causing which conversions on your website.
 
-This destination is maintained by PixelMe. For any issues with the destination, please [reach out to their team](mailto:team@pixelme.me).
+This destination is maintained by PixelMe. For any issues with the destination, [contact the PixelMe team](mailto:team@pixelme.me).
 
-_**NOTE:** The PixelMe Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on August 7, 2019. If you are interested in joining their beta program or have any feedback to help improve the PixelMe Destination and its documentation, please [let  their team know](mailto:team@pixelme.me)!_
+{% include content/beta-note.md %}
+
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "PixelMe" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can directly copy-paste from your [PixelMe dashboard](https://app.pixelme.me).
+1. From the Segment web app, click **Catalog**.
+2. Search for "PixelMe" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can directly copy-paste from your [PixelMe dashboard](https://app.pixelme.me).
 4. To find the API Key, go to Settings > Integrations
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -31,19 +33,19 @@ Unique page calls will be sent to PixelMe as a `Visitor`.
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
 ```
 
-`Screen` calls are saved but not processed by default. If you want to use `screen` calls with PixelMe, please [let  their team know](mailto:team@pixelme.me).
+`Screen` calls are saved but not processed by default. If you want to use `screen` calls with PixelMe, [let  the PixelMe team know](mailto:team@pixelme.me).
 
 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -56,7 +58,7 @@ analytics.identify('userId123', {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('SignUp')

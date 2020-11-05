@@ -5,24 +5,26 @@ title: Perfect Audience Destination
 
 [Perfect audience](http://www.perfectaudience.com/) is a retargeting platform that lets marketers bring back lost web visitors through Facebook ads and banner ads in the web.
 
-This document was last updated on October 24th, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Perfect Audience" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Perfect Audience" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your `Advertiser ID` (located in the User tracking session in Perfect Audience) and enable the destination in Segment.
-4. We'll automatically start recording data.
+4. Segment automatically starts sending data from the source you selected
 
-When Perfect Audience in enabled in Segment, our CDN will update within 45 minutes, and Perfect Audience's javascript is asynchronously loaded onto your page. Please remember to remove Perfect Audience's snippet from your page.
+When you enable Perfect Audience from the Segment web app,Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Perfect Audience's javascript onto your page.
+
+Remember to remove Perfect Audience's snippet from your page.
 
 Perfect Audience is only supported on the client-side.
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```javascript
 analytics.track("My Custom Event", {

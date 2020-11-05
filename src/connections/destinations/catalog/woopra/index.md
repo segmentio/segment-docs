@@ -6,10 +6,8 @@ Our Woopra destination code is all open-source on GitHub if you want to check it
 
 ## Getting Started
 
-When you toggle on Woopra in Segment, this is what happens:
-
-+ Our CDN is updated within 45 minutes. Then our snippet will start asynchronously loading Woopra's javascript onto your page. This means you should remove Woopra's snippet from your page.
-+ Woopra will start automatically collecting data on your site.
+When you enable Woopra in the Segment web app, your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Woopra's javascript onto your page. This means you should remove Woopra's snippet from your page.
++ Woopra starts automatically collecting data on your site.
 
 Woopra is supported on client-side and server-side.
 
@@ -19,7 +17,7 @@ Woopra is supported on client-side and server-side.
 
 When you call `.page()` in the browser, we will pass all the properties of the page such as `url`, `referrer`, `path`, and etc. If you pass a `name` in your `.page()` call, we will send that as `title` to Woopra.
 
-*Note*: `.page()` calls are not supported when sending those events server side or via mobile libraries.
+*Note*: `.page()` calls are not supported when sending those events server side or using mobile libraries.
 
 
 ## Identify
@@ -37,7 +35,7 @@ When you call `identify` from the server-side languages, we call Woopra's [HTTP 
 
 ## Group
 
-Woopra does not accept data sent via the Segment `group` method.
+Woopra does not accept data sent using the Segment `group` method.
 
 
 ## Track

@@ -1,16 +1,16 @@
 ---
 title: Criteo App & Web Events Destination
 rewrite: true
-redirect_from: '/connections/destinations/catalog/criteo'
+redirect_from: '/connections/destinations/catalog/criteo/'
 ---
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-Currently this destination supports events originating from Mobile or Web sources (not Server). You can read more about how define a source [here](/docs/guides/getting-started/what-is-a-source/).
+Currently this destination supports events originating from Mobile or Web sources (not Server). You can read more [about sources here](/docs/connections/sources/).
 
-**Our web integration with Criteo Events is currently in public beta. Please use carefully and [contact us](https://segment.com/help/contact) if you are having any issues.**
+**Our web integration with Criteo Events is currently in public beta. Use carefully and [contact us](https://segment.com/help/contact) if you are having any issues.**
 
 To get started with Criteo Events and Segment, you'll need:
 
@@ -19,7 +19,7 @@ To get started with Criteo Events and Segment, you'll need:
 
 Assuming both of these criteria are met, you can add Criteo Events as a destination for your desired source in your Segment account.
 
-**If you are using our mobile integration with Criteo Events please ensure your app is properly registered with them.**
+**If you are using our mobile integration with Criteo Events make sure your app is properly registered with them.**
 
 
 - - -
@@ -29,7 +29,7 @@ Assuming both of these criteria are met, you can add Criteo Events as a destinat
 
 Criteo Events is built to help you track key purchase funnel events and details. To accomplish that, you'll want to [`track`](/docs/connections/spec/track/) your user's actions using the following spec'd events to ensure you're following Criteo's best practices.
 
-We use the context fields that we capture with our SDKs automatically to populate Criteo Events' tag with the app's name, user's language, locale, userId, deviceType and deviceId so you just need to make sure that the event names and properties match up! Please refer to our [common fields guide](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected) to identify which context fields we collect automatically for each of our client-side libraries (analytics.js, analytics-ios or analytics-android).
+We use the context fields that we capture with our SDKs automatically to populate Criteo Events' tag with the app's name, user's language, locale, userId, deviceType and deviceId so you just need to make sure that the event names and properties match up! Refer to our [common fields guide](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected) to identify which context fields we collect automatically for each of our client-side libraries (analytics.js, analytics-ios or analytics-android).
 
 ### Product Viewed
 
@@ -165,7 +165,7 @@ You will need to have a products array of product objects in your Segment [Cart 
       sku: '46493-32',
       name: 'Uno Card Game',
       price: 3,
-      position: 2,       quantity: 2,
+      position: 2,      quantity: 2,
       category: 'Games'
     }
   ]
@@ -192,7 +192,7 @@ analytics.track('Cart Viewed', {
       sku: '46493-32',
       name: 'Uno Card Game',
       price: 3,
-      position: 2, 
+      position: 2,
       quantity: 2,
       category: 'Games'
     }
@@ -318,7 +318,7 @@ Our [Application Opened](/docs/connections/spec/mobile/#application-opened) even
 
 ## Page
 
-Criteo Events' `viewHome` tag tracks top of funnel visits to your site's home page. We integrate with this functionality on web via the use of our `.page` method.
+Criteo Events' `viewHome` tag tracks top of funnel visits to your site's home page. We integrate with this functionality on web using the use of our `.page` method.
 
 There are two ways of letting Segment know which `.page` event should trigger this tag:
 
@@ -328,19 +328,19 @@ There are two ways of letting Segment know which `.page` event should trigger th
 analytics.page('Home')
 ```
 
-2. You can give us the URL of your home page as an integration setting. Please reference the [settings](/docs/connections/destinations/catalog/criteo/#settings) section for more info.
+2. You can give us the URL of your home page as an integration setting. Reference the [settings](#settings) section for more info.
 
 ## Other Features
 
 ### Extra Data
 
-**This functionality is currently only available via our web integration with Criteo. We are working on adding it for mobile.**
+**This functionality is currently only available using our web integration with Criteo. We are working on adding it for mobile.**
 
 Criteo Events supports the ability to send extra data with events about a page or user to supply your events with more context (This is a feature that is set up with the assistance of your Crtieo Account Manager).
 
 To enable this functionality, you will need to provide us with the names of the Criteo Events data parameters you would like us to pass along as well as the name of the properties or traits of the Segment `.page` or `.identify` events that you would like us to map them from.
 
-This is setup via the **Supporting User Data** and **Supporting Page Data** settings in your Criteo Events integration settings. In each of these, you can provide us with a list of key/value mappings designating the name of the Segment property/trait on the left and the corresponding Criteo Events parameter it should map to on the right.
+This is set up using the **Supporting User Data** and **Supporting Page Data** settings in your Criteo Events integration settings. In each of these, you can provide us with a list of key/value mappings designating the name of the Segment property/trait on the left and the corresponding Criteo Events parameter it should map to on the right.
 
 Here is an example of Supporting Page Data:
 
@@ -352,7 +352,7 @@ Here is an example of Supporting User Data:
 
 Once this is complete, we will do the following:
 
-We will compare the properties of any `.page` events you invoke with the **Supporting Page Data** mappings. If a match is found, we will set the values of those properties as the values of Criteo Events data parameters you defined and pass them along with any future events that occur on the page. **If you are using this functionality, please ensure the `.page` event is being invoked on the page before any subsequent `.track` events.**
+We will compare the properties of any `.page` events you invoke with the **Supporting Page Data** mappings. If a match is found, we will set the values of those properties as the values of Criteo Events data parameters you defined and pass them along with any future events that occur on the page. **If you are using this functionality, make sure the `.page` event is being invoked on the page before any subsequent `.track` events.**
 
 For example, if you set the page event mappings defined above and triggered a page event like this:
 
@@ -360,7 +360,7 @@ For example, if you set the page event mappings defined above and triggered a pa
 analytics.page('Team Page', { team: 'New York Giants' })
 ```
 
-And then on that same page triggered one of the `.track` events documented above ([Product Viewed](/docs/connections/destinations/catalog/criteo/#product-viewed) for example) the subsequent Criteo tag would look like this:
+And then on that same page triggered one of the `.track` events documented above ([Product Viewed](#product-viewed) for example) the subsequent Criteo tag would look like this:
 
 ```js
 window.criteo_q.push({ event: 'viewItem', item: 'PRODUCT-ID', team_page: 'New York Giants' })
@@ -380,7 +380,7 @@ Any future `.track` events documented above would have `sub_status` as an extra 
 window.criteo_q.push({ event: 'viewItem', item: 'PRODUCT-ID', sub_status: 'trial' })
 ```
 
-**Note: Of course if you later change the user's `subscriptionStatus` to be a different value via the use of another `identify` call, the `sub_status` value will also be updated.**
+**Note: Of course if you later change the user's `subscriptionStatus` to be a different value using the use of another `identify` call, the `sub_status` value will also be updated.**
 
 ### Setting Emails
 
@@ -400,4 +400,4 @@ Criteo Events can receive dates in a specific format, in order for us to pass al
 
 ### Is the mobile integration bundled?
 
-Even though we don't support integrating with Criteo Events via Segment from a server source, it's still not necessary for you to [bundle](https://segment.com/docs/guides/sources/bundled-SDK-vs-server/) the Criteo Events SDK into the Segment SDK! This is because while our mobile integration with them is powered from our servers, the integration requires metadata that can only be supplied by the user's mobile device (which is collected and passed along automatically by the Segment mobile SDK).
+Even though we don't support integrating with Criteo Events using Segment from a server source, it's still not necessary for you to [bundle](/docs/connections/spec/mobile-packaging-sdks//) the Criteo Events SDK into the Segment SDK! This is because while our mobile integration with them is powered from our servers, the integration requires metadata that can only be supplied by the user's mobile device (which is collected and passed along automatically by the Segment mobile SDK).

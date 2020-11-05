@@ -5,10 +5,9 @@ rewrite: true
 
 [EMMA](https://emma.io/en/features/) helps you track campaigns from your trusted networks, Google Ads campaigns, Facebook and Instagram campaigns, and Twitter campaigns. You can also track user activities in your app, so you can send personalizes push notifications and in-app campaigns like banners, start-views etc.
 
-This destination is maintained by EMMA. For any issues with the destination, please [reach out to their team](mailto:support@emma.io).
+This destination is maintained by EMMA. For any issues with the destination, [contact the EMMA Support team](mailto:support@emma.io).
 
-_**NOTE:** The EMMA Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on March 11, 2019. If you are interested in joining their beta program or have any feedback to help improve the EMMA Destination and its documentation, please [let  their team know](mailto:support@emma.io)!_
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -17,11 +16,11 @@ _**NOTE:** The EMMA Destination is currently in beta, which means that they are 
 1. From your Segment UI's Destinations page, click "Add Destination".
 2. Search for "EMMA" in the Destinations Catalog, and confirm the Source you'd like to connect to.
 3. Copy and paste the "API Key" into your Segment Settings UI.
-    You can find your API key on your [EMMA Dashboard](https://in.emma.io/index/login/). To fin out you API Key please follow the steps on [this guide](https://support.emma.io/hc/en-us/articles/360019026214).
+    You can find your API key on your [EMMA Dashboard](https://in.emma.io/index/login/). To find your API Key follow the steps on [this guide](https://support.emma.io/hc/en-us/articles/360019026214).
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {

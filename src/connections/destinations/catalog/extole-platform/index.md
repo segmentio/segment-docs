@@ -2,14 +2,14 @@
 title: Extole Destination
 rewrite: true
 beta: true
-redirect_from: '/connections/destinations/catalog/extole'
+redirect_from: '/connections/destinations/catalog/extole/'
 ---
 
 
 Brands use Extole to turn customers into advocates. Our enterprise platform and team of experts create beautiful referral and customer engagement programs, so brands can harness the power of sharing to the benefit of their bottom line. Extole enables marketers to engage thousands of advocates, scaling word-of-mouth to acquire new customers and increase loyalty using their greatest competitive advantage: their customers.
 
 
-This destination is maintained by Extole. For any issues with the destination, please [reach out to Extole Support](mailto:support@extole.com).
+This destination is maintained by Extole. For any issues with the destination, [contact Extole Support](mailto:support@extole.com).
 
 
 
@@ -27,7 +27,7 @@ This destination is maintained by Extole. For any issues with the destination, p
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls are sent to Extole as an `identify` event. 
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls are sent to Extole as an `identify` event.
 Segment sends Identify calls to Extole as an `identify` event. Extole creates a new profile or updates an existing one. The table below lists how the basic traits are mapped:
 
 | Segment Traits | Extole Properties |
@@ -55,7 +55,7 @@ analytics.identify('userId123', {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Login Button Clicked')

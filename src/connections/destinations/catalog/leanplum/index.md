@@ -5,32 +5,36 @@ rewrite: true
 
 [Leanplum](https://www.leanplum.com/) helps mobile teams orchestrate multi-channel campaigns — from messaging to the in-app experience — all from a single mobile marketing platform.
 
-This document was last updated on January 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on January 29, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+
+> success ""
+> **Good to know**: This page is about the Leanplum Segment destination, which receives data from Segment. There's also a page about the [Leanplum Segment source](https://segment.com/docs/connections/sources/catalog/cloud-apps/leanplum/), which sends data _to_ Segment!
+
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Leanplum" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Leanplum" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Navigate to your "App Settings" within the Leanplum UI and open up your "Keys & Settings"
 4. Copy the "App ID" into the Segment Settings UI under "Leanplum Application ID"
 5. We recommend creating 2 Leanplum Destinations, 1 for production and 1 for development.
 6. Copy the "Production" or "Development" value into the corresponding Leanplum destination and add it to the Segment Settings UI under "Leanplum Client Key" depending on your chosen environment.
 
-If you have opted to utilize our [server-side sources](https://segment.com/docs/connections/sources/#server), we will begin passing data through our servers or from your users' devices to Leanplum within minutes after you enable it on your source destinations page.
+If you have opted to use our [server-side sources](https://segment.com/docs/connections/sources/#server), we will begin passing data through our servers or from your users' devices to Leanplum within minutes after you enable it on your source destinations page.
 
-In order to utilize Leanplum's Push Notifications, Messaging channels or A/B testing in your mobile app, you will need to use our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/) SDKs. Read on to find out how to set this up.
+In order to use Leanplum's Push Notifications, Messaging channels or A/B testing in your mobile app, you will need to use our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/) or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/) SDKs. Read on to find out how to set this up.
 
 ### iOS
 
-CocoaPods is the dependency manager we use for Objective-C projects. If you already have CocoaPods installed and have a podfile, please skip to step 3.
+CocoaPods is the dependency manager we use for Objective-C projects. If you already have CocoaPods installed and have a podfile, skip to step 3.
 
 1. Install CocoaPods by running the following command:
 
     `sudo gem install cocoapods`
 
-    For issues with installing CocoaPods, please refer [here](https://cocoapods.org/)
+    For issues with installing CocoaPods, refer [here](https://cocoapods.org/)
 
 2. Add a podfile. In your terminal, navigate to your app's directory. Add a podfile to your app by running the following command:
 
@@ -54,7 +58,7 @@ CocoaPods is the dependency manager we use for Objective-C projects. If you alre
 
     Add the following lines into your AppDelegate:
 
-    ```objective-c
+    ```objc
     String *const SEGMENT_WRITE_KEY = @" [YOUR_SEGMENT_WRITE_KEY] ";
     SEGAnalyticsConfiguration *config =
         [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
@@ -97,7 +101,7 @@ For addition documentation you can also check [Leanplum docs](https://support.le
     <uses-permission android:name="android.permission.INTERNET"/>
     ```
 
-    If you want to use the advanced features of Leanplum, please also add the additional permissions, as described [here](https://www.leanplum.com/docs#/setup/android).
+    If you want to use the advanced features of Leanplum, also add the additional permissions, as described [here](https://www.leanplum.com/docs#/setup/android).
 
 4. Add the following lines to your Application or Controller:
 
@@ -128,7 +132,7 @@ That's it! Now you can use the Segment SDK and also the [advanced features](http
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```javascript
 analytics.page()
@@ -139,7 +143,7 @@ When you call `page` as a user moves to a new area, you can advance your user's 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 ```javascript
 analytics.identify({
   userId: 'user123',
@@ -154,7 +158,7 @@ As soon as a user logs-in or signs-up, you'll want to make an `identify` call wh
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 ```javascript
 analytics.track({
   userId: 'user123',

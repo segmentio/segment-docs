@@ -3,17 +3,17 @@ title: Batch Destination
 beta: true
 ---
 
-The Batch.com integration code is open sourced on Github. Feel free to check it out: [iOS](https://github.com/BatchLabs/ios-segment-integration),  [Android](https://github.com/BatchLabs/android-segment-integration).
+The Batch.com integration code is open sourced on GitHub. Feel free to check it out: [iOS](https://github.com/BatchLabs/ios-segment-integration), [Android](https://github.com/BatchLabs/android-segment-integration).
 
 ## Getting Started
 
 * Batch.com supports the `screen`, `track`, `identify` and `group` methods.
 
 * Make a Batch.com account.
-* Turn on Batch.com via Segment dashboard.
+* Turn on Batch.com using Segment dashboard.
 * Enter your Batch LIVE API Key. You can find it in your dashboard, under 'settings'.
 
-Events tracked via Segment's `track`/`screen` will automatically be tracked. `Identify` and `group` calls will also be mapped to Batch user data.
+Events tracked using Segment's `track`/`screen` will automatically be tracked. `Identify` and `group` calls will also be mapped to Batch user data.
 
 ## Android
 
@@ -95,4 +95,4 @@ All of our supported Segment integration features will work automatically, with 
 
 Batch's other features are available directly by using the native SDK, which comes bundled with this integration.
 
-To use the Batch native SDK through Segment, follow the [instructions for Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-an-destination-specific-feature-e-g-mixpanel-s-push-notifications-) and [instructions for iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesn-t-support-feature-x-).
+To use the Batch native SDK through Segment, follow the [instructions for Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#how-can-i-use-a-destination-specific-feature) and [instructions for iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#what-if-your-sdk-doesnt-support-feature-x).

@@ -32,7 +32,7 @@ defaults:
       integration_type: source
       layout: integration
   - scope:
-      path: "connections/warehouses/catalog"
+      path: "connections/storage/catalog"
     values:
       integration_type: warehouse
       landing: true

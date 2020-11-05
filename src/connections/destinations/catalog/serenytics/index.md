@@ -6,12 +6,10 @@ title: Serenytics Destination
 
 When the Serenytics destination is enabled in Segment, messages from Segment will be stored in the Serenytics Redshift and will be available for transformation and to create dashboards.
 
-
-This destination is maintained by the company Serenytics. For any issues with the destination, please [reach out to their team](mailto:support@serenytics.com).
-
+This destination is maintained by the company Serenytics. For any issues with the destination, [contact the Serenytics Support team](mailto:support@serenytics.com).
 
 
-_**NOTE:** The Serenytics Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 5, 2019. If you are interested in joining their beta program or have any feedback to help improve the Serenytics Destination and its documentation, please [let  their team know](mailto:support@serenytics.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
@@ -24,16 +22,16 @@ From Serenytics app using OAuth:
 3. Once you have choosen the Segment source, you are redirected to Serenytics in a newly created datasources folder called 'Segment integration'. It contains all the Serenytics datasources where your data will be available to create dashboards.
 
 From Segment Destinations Catalog:
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Serenytics" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Serenytics account page](https://app.serenytics.com/studio/account).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Serenytics" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Serenytics account page](https://app.serenytics.com/studio/account).
 4. In the [Serenytics datasources list](https://app.serenytics.com/studio/data_sources), when the first message from Segment is received, a new folder named 'Segment integration' will be automatically created with datasources that contain your data.
 
 
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -44,7 +42,7 @@ To view your page calls in Serenytics, open the datasource called `Segment_Pages
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];
@@ -54,7 +52,7 @@ To view your screen calls in Serenytics, open the datasource called `Segment_Scr
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -67,7 +65,7 @@ To view your identify calls in Serenytics, open the datasource called `Segment_I
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Article Completed')

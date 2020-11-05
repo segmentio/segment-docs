@@ -7,7 +7,7 @@
 
   &__content {
     font-size: 14px;
-    line-height: 1.71;
+    line-height: 20px;
     color: color(gray);
 
     a {
@@ -17,6 +17,6 @@
   }
 
   & > * + * {
-    margin-top: 6px;
+    margin-top: 8px;
   }
 }

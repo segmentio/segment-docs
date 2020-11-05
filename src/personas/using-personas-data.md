@@ -1,6 +1,6 @@
 ---
 title: Using your Personas data
-redirect_from: 'personas/activation'
+redirect_from: '/personas/activation/'
 ---
 
 You can send the Computed Traits and Audiences you create in Personas to your Segment Destinations, and use that it to personalize messages across channels, optimize ad spend, and improve targeting. This page provides an overview of different ways to activate Personas data in Segment Destinations.
@@ -228,7 +228,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Amazon Kinesis](/docs/connections/destinations/catalog/amazon-kinesis/)
 - [Amazon Lambda](/docs/connections/destinations/catalog/amazon-lambda/)
 - [Amazon Personalize](/docs/connections/destinations/catalog/amazon-personalize/)
-- [Amazon S3](/docs/connections/warehouses/catalog/amazon-s3/)
+- [Amazon S3](/docs/connections/storage/catalog/amazon-s3/)
 - [Amplitude](/docs/connections/destinations/catalog/amplitude/)
 - [Appcues](/docs/connections/destinations/catalog/appcues/)
 - [AppsFlyer](/docs/connections/destinations/catalog/appsflyer/)
@@ -255,8 +255,8 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Criteo](/docs/connections/destinations/catalog/criteo/)
 - [Cruncher](/docs/connections/destinations/catalog/cruncher/)
 - [Custify](/docs/connections/destinations/catalog/custify/)
-- [CustomFit.ai](/docs/connections/destinations/catalog/customfitai/)
-- [Customer.io](/docs/connections/destinations/catalog/customer.io/)
+- [CustomFit.ai](/docs/connections/destinations/catalog/customfit-ai/)
+- [Customer.io](/docs/connections/destinations/catalog/customer-io/)
 - [CustomerSuccessBox](/docs/connections/destinations/catalog/customersuccessbox/)
 - [Delighted](/docs/connections/destinations/catalog/delighted/)
 - [DoubleClick Floodlight](/docs/connections/destinations/catalog/doubleclick-floodlight/)
@@ -289,11 +289,11 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Indicative](/docs/connections/destinations/catalog/indicative/)
 - [Intellimize](/docs/connections/destinations/catalog/intellimize/)
 - [Intercom](/docs/connections/destinations/catalog/intercom/)
-- [Iron.io](/docs/connections/destinations/catalog/iron.io/)
+- [Iron.io](/docs/connections/destinations/catalog/iron-io/)
 - [Iterable](/docs/connections/destinations/catalog/iterable/)
-- [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/)
+- [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/)
 - [Kahuna](/docs/connections/destinations/catalog/kahuna/)
-- [Keen](/docs/connections/destinations/catalog/keen-io/)
+- [Keen](/docs/connections/destinations/catalog/keen/)
 - [Kitemetrics](/docs/connections/destinations/catalog/kitemetrics/)
 - [Klaviyo](/docs/connections/destinations/catalog/klaviyo/)
 - [Kochava](/docs/connections/destinations/catalog/kochava/)
@@ -317,7 +317,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Nanigans](/docs/connections/destinations/catalog/nanigans/)
 - [Natero](/docs/connections/destinations/catalog/natero/)
 - [New Relic](/docs/connections/destinations/catalog/new-relic/)
-- [NorthStar by Growthhackers](/docs/connections/destinations/catalog/northstar-by-growthhackers/)
+- [Experiments by Growthhackers](/docs/connections/destinations/catalog/experiments-by-growthhackers/)
 - [Nudgespot](/docs/connections/destinations/catalog/nudgespot/)
 - [OneSignal](/docs/connections/destinations/catalog/onesignal/)
 - [Optimizely Full Stack](/docs/connections/destinations/catalog/optimizelyx/)
@@ -331,8 +331,8 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Planhat](/docs/connections/destinations/catalog/planhat/)
 - [Podsights](/docs/connections/destinations/catalog/podsights/)
 - [Pointillist](/docs/connections/destinations/catalog/pointillist/)
-- [Promoter.io](/docs/connections/destinations/catalog/promoter.io/)
-- [Proof Experiences](/docs/connections/destinations/catalog/proof/)
+- [Promoter.io](/docs/connections/destinations/catalog/promoter-io/)
+- [Proof Experiences](/docs/connections/destinations/catalog/proof-experiences/)
 - [QuanticMind](/docs/connections/destinations/catalog/quanticmind/)
 - [RadiumOne Connect](/docs/connections/destinations/catalog/radiumone-connect/)
 - [Ramen](/docs/connections/destinations/catalog/ramen/)
@@ -387,10 +387,10 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Zapier](/docs/connections/destinations/catalog/zapier/)
 - [Zendesk Connect](/docs/connections/destinations/catalog/outbound/)
 - [Zendesk](/docs/connections/destinations/catalog/zendesk/)
-- [goedle.io](/docs/connections/destinations/catalog/goedle/)
+- [goedle.io](/docs/connections/destinations/catalog/goedle-io/)
 - [hydra](/docs/connections/destinations/catalog/hydra/)
 - [mabl](/docs/connections/destinations/catalog/mabl/)
-- [tray.io](/docs/connections/destinations/catalog/tray.io/)
+- [tray.io](/docs/connections/destinations/catalog/tray-io/)
 
 ## Personas Compatible Destinations: List Type
 

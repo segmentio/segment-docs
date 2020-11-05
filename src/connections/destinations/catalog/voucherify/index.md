@@ -6,19 +6,17 @@ beta: true
 
 [Voucherify](https://voucherify.io?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps developers integrate digital promotions across any marketing channel or customer touchpoint - eventually giving full control over campaigns back to the marketing team.
 
-This destination is maintained by Voucherify. For any issues with the destination, please [reach out to their team](mailto:support@voucherify.io).
+This destination is maintained by Voucherify. For any issues with the destination, [contact the Voucherify Support team](mailto:support@voucherify.io).
 
-> note "Note:"
-> The Voucherify Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 27, 2020. If you are interested in joining their beta program or have any feedback to help improve the Voucherify Destination and its documentation, please [let  their team know](mailto:support@voucherify.io)!
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+{% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Voucherify" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" and "API Token" into your Segment Settings UI which you can find from your [Voucherify dashboard](https://voucherify.io/dashboard).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Voucherify" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" and "API Token" into your Segment Settings UI which you can find from your [Voucherify dashboard](https://voucherify.io/dashboard).
 
 #### Getting API Key and API Token
 On the Voucherify Dashboard page:
@@ -29,7 +27,7 @@ On the Voucherify Dashboard page:
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('cust_9032_re_3234', {
@@ -63,7 +61,7 @@ With setting _Identify Mapping_ you can customize the conversion from the event 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Registration Completed', {

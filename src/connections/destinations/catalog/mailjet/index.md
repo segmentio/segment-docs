@@ -2,11 +2,11 @@
 title: Mailjet Destination
 ---
 
-This destination is maintained by Mailjet. For any issues with the destination, you may [contact their team](mailto:support@mailjet.com).
+This destination is maintained by Mailjet. For any issues with the destination, you may [contact the Mailjet Support team](mailto:support@mailjet.com).
 
 ## Getting Started
 
-Navigate to the "App Connections" page* (Account -> App Connections) and click on the "Segment" destination block to find your Segment Authentication key. * If you do not see the App Connections page for any reason, please contact us at plugins@mailjet.com. Select a Contact list from the drop down menu that you wish to have Segment send contact property data to.
+Navigate to the "App Connections" page* (Account -> App Connections) and click on the "Segment" destination block to find your Segment Authentication key. * If you do not see the App Connections page for any reason, contact us at plugins@mailjet.com. Select a Contact list from the drop down menu that you wish to have Segment send contact property data to.
 
 Be sure and note the contact list id inside the field below the chosen list because you will need to paste it into your Segment account so Segment knows where to send the data to.
 

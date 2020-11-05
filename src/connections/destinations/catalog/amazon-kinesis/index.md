@@ -4,7 +4,7 @@ title: Amazon Kinesis Destination
 ---
 [Amazon Kinesis](https://aws.amazon.com/kinesis/) enables you to build custom applications that process or analyze streaming data for specialized needs. Amazon Kinesis Streams can continuously capture and store terabytes of data per hour from hundreds of thousands of sources such as website clickstreams, financial transactions, social media feeds, IT logs, and location-tracking events.
 
-This document was last updated on February 05, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on February 05, 2020. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
@@ -15,6 +15,7 @@ This document was last updated on February 05, 2020. If you notice any gaps, out
 2. Create an IAM policy.
    Sign in to the [Identity and Access Management (IAM) console](https://console.aws.amazon.com/iam/) and follow these instructions to [Create an IAM policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) to allow Segment permission to write to your Kinesis Stream.
    Select the **Create Policy from JSON** option and use the following template policy in the `Policy Document` field. Be sure to change the {region}, {account-id} and {stream-name} with the applicable values.
+
    ```json
    {
       "Version": "2012-10-17",
@@ -22,7 +23,8 @@ This document was last updated on February 05, 2020. If you notice any gaps, out
           {
               "Effect": "Allow",
               "Action": [
-                  "kinesis:PutRecord"
+                  "kinesis:PutRecord",
+                  "kinesis:PutRecords"
               ],
               "Resource": [
                   "arn:aws:kinesis:{region}:{account-id}:stream/{stream-name}"
@@ -31,6 +33,8 @@ This document was last updated on February 05, 2020. If you notice any gaps, out
       ]
    }
    ```
+   **Note:** A previous version of this policy document only granted `PutRecord` access, which could slow down Kinesis write times by disallowing file batching. Substitute the updated policy document above to grant Kinesis `PutRecords` (plural) and allow batching.
+
 3. Create an IAM role.
    Follow these instructions to [Create an IAM role](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html#roles-creatingrole-user-console) to allow Segment permission to write to your Kinesis Stream. When prompted to enter an Account ID, enter "595280932656". Make sure to enable 'Require External ID' and enter your Segment Source ID as the External ID*. This can be found by navigating to Settings > API Keys from your Segment source homepage. When adding permissions to your new role, find the policy you created above and attach it.
 
@@ -40,14 +44,14 @@ This document was last updated on February 05, 2020. If you notice any gaps, out
    In the Segment source that you want to connect to your Kinesis destination, click the "Add Destination" button. Search and select the Amazon Kinesis destination and enter the options: `Role Address`, `region`, `stream`.
 
 ## Page
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```js
   analytics.page();
 ```
 
 ## Identify
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.  An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does.  An example call would look like:
 
 ```js
 analytics.identify('97980cfea0085', {
@@ -57,7 +61,7 @@ analytics.identify('97980cfea0085', {
 ```
 
 ## Track
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track("User Registered", {
@@ -93,7 +97,7 @@ Segment uses the the `userId || anonymousId` as the `PartitionKey`. The partitio
 **Note:** The JSON payload is base64 stringified.
 
 ## Group
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does.
 
 An example group call is shown below:
 ```js

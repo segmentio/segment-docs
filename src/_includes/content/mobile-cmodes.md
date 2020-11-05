@@ -1,5 +1,3 @@
-### About mobile connection modes
-
 Segment defaults to using cloud-based [connection mode](/docs/connections/destinations/#connection-modes) ("cloud-mode") for any destination connected to a mobile source, because this can help [decrease the size of your final app package](https://segment.com/blog/mobile-app-size-effect-on-downloads/). When you use cloud-mode, Segment sends messages to the Segment servers, and then translates and forwards that data on to the downstream tools. This way, you only package the Segment mobile library with your app.
 
 However, many destination tools that specifically deal with mobile interactions require that you use a device-based connection mode ("device-mode") so that they can collect information directly on the mobile device. (You can check the full list of destinations and [which connection modes they support](/docs/connections/destinations/cmodes-compare/).)

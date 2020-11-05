@@ -4,8 +4,13 @@
 
 <!--Tell us what you did and why-->
 
+### Merge timing
+<!-- When should this get merged/published?
+- ASAP once approved?
+- On a specific date?
+- Depending on a specific project?-->
 
 ### Related issues (optional)
 
-<!--Refer to related PRs or issues: #1234, or 'Fixes #1234' or 'Closes #1234'.
-    Or link to full URLs to issues or pull requests in other Github projects -->
+<!--Refer to related PRs or issues: #1234 or 'Closes #1234'.
+    Or paste full URLs to issues or pull requests in other Github projects -->

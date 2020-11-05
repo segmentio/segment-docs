@@ -1,6 +1,6 @@
 ---
 title: What are best practices for identifying users?
-redirect_from: 'guides/how-to-guides/best-practices-identify'
+redirect_from: '/guides/how-to-guides/best-practices-identify/'
 ---
 
 Tracking sign ups correctly is a key step in your marketing funnels. The process of shifting from an anonymous visitor to an identified user requires some special tracking. This tutorial will help you track newly registered users the right way.
@@ -34,13 +34,13 @@ Let's look at Rdio as an example. When a new visitor goes to their site that v
 As part of that new user record the person is assigned a userId. Let's say the new userId is `12345`. Rdio will then need to fire the following calls on the welcome page:
 
 ```js
-analytics.identify('12345',{  name:'Jake Peterson',  email:'jake.peterson@example.com'});
+analytics.identify('12345',{  name:'Jake Peterson', email:'jake.peterson@example.com'});
 analytics.track('Account Created',{  authentication:'Facebook'})
 ```
 
 [Identify](https://segment.com/docs/connections/sources/catalog/libraries/server/http/#identify) signals that the user of this browser is user `12345`. And also sets name and email as traits of user `12345`.
 
-[Track](/docs/connections/spec/track) records an event that says `12345` registered for an account via Facebook.
+[Track](/docs/connections/spec/track) records an event that says `12345` registered for an account using Facebook.
 
 ### Advanced
 
@@ -57,7 +57,7 @@ analytics.identify('12345');
 analytics.track('Account Created', { authentication:'Facebook'})
 ```
 
-So far the user is only identified by their userId. Later, all the user's traits can be filled in via Python (or any of our other server-side [sources](https://segment.com/docs/connections/sources/catalog/libraries/server)).
+So far the user is only identified by their userId. Later, all the user's traits can be filled in using Python (or any of our other server-side [sources](https://segment.com/docs/connections/sources/catalog/libraries/server)).
 
 ```js
 analytics.identify('12345',{
@@ -73,7 +73,7 @@ analytics.identify('12345',{
 
 #### Aliasing server-side
 
-If you plan on tracking anonymous visitors from the browser and only calling [identify](/docs/connections/spec/identify)from your servers you'll need to call [alias](/docs/connections/spec/alias) for KISSmetrics and Mixpanel. That call links client-side anonymous visitors with server-side identified users. This isn't recommended, but if you must go down this road, read the [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#aliasing-new-users-server-side)and[Mixpanel](/docs/connections/destinations/catalog/mixpanel/#aliasing-server-side) specific [alias](/docs/connections/spec/alias) docs.
+If you plan on tracking anonymous visitors from the browser and only calling [identify](/docs/connections/spec/identify)from your servers you'll need to call [alias](/docs/connections/spec/alias) for Kissmetrics and Mixpanel. That call links client-side anonymous visitors with server-side identified users. This isn't recommended, but if you must go down this road, read the [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#aliasing-new-users-server-side)and[Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias-using-cloud-mode) specific [alias](/docs/connections/spec/alias) docs.
 
 ### Common questions
 
@@ -97,9 +97,9 @@ One of the most important things when it comes to tracking analytics is to ident
 
 Since `analytics.js` puts the `userId`, `anonymousId`, and traits in localStorage, you will want to be sure to call `identify` on the client if you are passing in the UUID value for the `userId` on the server. This way, subsequent `track` and `page` calls will stamp the `userId` value passed through the client-side `identify` call.
 
-**Note**: The user data will remain cached until you explicitly clear the browser cache or call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout).
+**Note**: The user data will remain cached until you explicitly clear the browser cache or call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout).
 
-So don't forget to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-logout) upon user log out!
+So don't forget to call [reset](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#reset-or-logout) upon user log out!
 
 Our recommendation for when and how often you should call [identify](/docs/connections/spec/identify) is as follows:
 

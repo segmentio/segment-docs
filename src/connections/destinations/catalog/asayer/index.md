@@ -4,22 +4,26 @@ title: Asayer Destination
 ---
 [Asayer](https://asayer.io) is a session replay tool for engineering teams. It lets you capture the full picture of each user session on your website so you can quickly solve issues and improve your customer experience.
 
-This destination is maintained by Asayer. For any issues with the destination, please [reach out to their team](mailto:support@asayer.io).
+This destination is maintained by Asayer. For any issues with the destination, [contact the Asayer Support team](mailto:support@asayer.io).
 
-_**NOTE:** The Asayer Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 8, 2019. If you are interested in joining their beta program or have any feedback to help improve the Asayer Destination and its documentation, please [let  their team know](mailto:support@asayer.io)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Asayer" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Set your Asayer Site ID - which you can find in your Asayer dashboard after clicking on Tracking Code in [Preferences -> Sites](https://app.asayer.io/client/sites) - into your Destination settings. Site ID is a whole number (e.g. 435).
-4. The CDN takes about 45 minutes to update. Right after that, Asayer's tracking code will automatically initialize onto your website. In the meantime, make sure to remove Asayer's snippet from your site, if there's any.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Asayer" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Set your Asayer Site ID into your Destination settings. You can find in your [Asayer dashboard](https://app.asayer.io/client/sites) by clicking **Preferences > Sites > Tracking Code**. The Site ID is a whole number (e.g. 435).
+
+
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Asayer's tracking code onto your website.
+
+In the meantime, remove Asayer's native snippet from your site.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to Asayer's `asayer.vars` method.
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. Identify calls sent to Segment will be transformed and sent to Asayer's `asayer.vars` method.
 
 An example call which does not include a `userId` will transmit Asayer the value of the `anonymousId` and would look like:
 ```js
@@ -44,7 +48,7 @@ analytics.identify("userId123", {
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('New Order', {
@@ -55,4 +59,4 @@ analytics.track('New Order', {
 });
 ```
 
-Track calls will be sent to Asayer via its `asayer.event` method as a `track` event.
+Track calls will be sent to Asayer using its `asayer.event` method as a `track` event.

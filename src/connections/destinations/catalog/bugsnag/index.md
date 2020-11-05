@@ -11,7 +11,7 @@ Web | [Analytics.js SDK 2.1.0](https://github.com/segment-integrations/analytics
 Android | [Android SDK 2.0.0](https://github.com/segment-integrations/analytics-android-integration-bugsnag)
 iOS | [iOS SDK 1.0.3](https://github.com/segment-integrations/analytics-ios-integration-bugsnag)
 
-This document was last updated on July 11th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on July 11th, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 
 ## Getting Started
@@ -20,10 +20,10 @@ This document was last updated on July 11th, 2018. If you notice any gaps, outda
 
 ### Web
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Bugsnag" within the Destinations Catalog and confirm the project you'd like to connect to
+1. From the Segment web app, click **Catalog**.
+2. Search for "Bugsnag" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Add your API key to your connection settings. You can find your API key in your Bugsnag dashboard under "Settings", which is located in the upper left-hand corner
-4. We'll automatically initialize Bugsnag's javascript script with your API key upon loading analytics.js
+4. Segment automatically initializes Bugsnag's javascript script with your API key upon loading analytics.js
 
 ### Mobile
 
@@ -39,7 +39,7 @@ If you'd like to integrate with Bugsnag's iOS and/or Android SDKs, in addition t
 
 Once you've correctly set up your Bugsnag integration, you should [`identify`](/docs/connections/spec/identify/) each of your users as soon as you know their identity (this typically happens after log in or sign up), so that Bugsnag can provide you with more visibility into which user is encountering which error.
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```javascript
 analytics.identify('ze8rt1u89', {

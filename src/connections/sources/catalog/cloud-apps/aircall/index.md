@@ -4,9 +4,9 @@ title: Aircall Source
 
 Connect [Aircall](https://aircall.io) with Segment to bring Aircall events and phone call data to your data warehouse. Improve your knowledge of customer touchpoints by leveraging call activity.
 
-This source is maintained by Aircall. For any issues with the source, please [reach out to their team](mailto:support@aircall.io).
+This source is maintained by Aircall. For any issues with the source, [contact the Aircall Support team](mailto:support@aircall.io).
 
-_**NOTE:** The Aircall Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on October 4, 2019. If you are interested in joining their beta program or have any feedback to help improve the Aircall Source and its documentation, please [let  their team know](mailto:support@aircall.io)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -52,7 +52,7 @@ Click on **Connect to Segment**
 ![](images/cUPCM42.png)
 ![](images/uLu70VP.png)
 
-        - Note: if you see a field to input a **Personas Key**, please note that this field is not required and you can leave this field blank. We are working to remove it from the installation flow.
+        - Note: if you see a field to input a **Personas Key**, note that this field is not required and you can leave this field blank. We are working to remove it from the installation flow.
 
     * When finished, click on **Add**.
 
@@ -62,7 +62,7 @@ If the integration is successful, you will see a message that says "Authenticati
 ## **Step 3: Select Aircall events to send to Segment**
 - There are up to [26 Aircall events](https://developer.aircall.io/api-references/#events) that can be pushed to Segment. As such, you will see a list of 26 possible events pre-populated for you as the default setting is for all and every Aircall event to be pushed to Segment.
 
-- **If there are events that you do not want to be sent to Segment**, please delete the default value(s) shown in the list of 26 events (or write "null") if you determine that certain events should not be a source for Segment.
+- **If there are events that you do not want to be sent to Segment**, delete the default value(s) shown in the list of 26 events (or write "null") if you determine that certain events should not be a source for Segment.
 ![](images/qgbkbvA.png)
 
 - Click on **Finish**.
@@ -193,4 +193,4 @@ Now that your Source is set up, you can connect it with Destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the Destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the Aircall team](mailto:support@aircall.io).
+If you experience any issues with how the events arrive in Segment, [contact the Aircall team](mailto:support@aircall.io).

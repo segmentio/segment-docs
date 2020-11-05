@@ -1,7 +1,8 @@
 ---
 title: 'Google Ads (Gtag) Destination'
 beta: true
-redirect_from: '/connections/destinations/catalog/google-adwords-new'
+redirect_from: '/connections/destinations/catalog/google-adwords-new/'
+strat: google
 ---
 
 ## Before you begin...

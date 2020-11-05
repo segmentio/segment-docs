@@ -7,7 +7,7 @@ sourceCategory: 'Server'
 
 Our Go library lets you record analytics data from your Go code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
-This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-go).
+This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-go).
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses a tunable buffer to batch messages, optimized for throughput and reduced network activity.
 
@@ -15,7 +15,7 @@ All of Segment's server-side libraries are built for high-performance, so you ca
 
 ### Install the Package
 
-Install `analytics-go` via `go get`:
+Install `analytics-go` using `go get`:
 
 ```bash
 go get gopkg.in/segmentio/analytics-go.v3
@@ -41,6 +41,9 @@ That will create a `client` that you can use to send data to Segment for your so
 The default initialization settings are production-ready and queue 20 messages before sending a batch request, and a 5 second interval.
 
 ## Identify
+
+> note ""
+> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 `identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
@@ -118,7 +121,7 @@ Find details on **best practices in event naming** as well as the **`track` meth
 
 The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side setup in combination with the Go library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using our client-side set up in combination with the Go library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
 Example `page` call:
 
@@ -184,7 +187,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -434,7 +437,7 @@ client.Enqueue(analytics.Track{
     SetCategory("Enterprise").
     Set("application", "Segment Desktop"),
 })
-```  
+```
 
 ```go
 client.Enqueue(analytics.Track{
@@ -445,7 +448,7 @@ client.Enqueue(analytics.Track{
     "application": "Segment Desktop",
   },
 })
-```  
+```
 
 Lastly, you'll notice that configuration is provided during initialization and cannot be changed after initialization. The various configuration options are documented in the [GoDocs](https://godoc.org/gopkg.in/segmentio/analytics-go.v3#Config).
 

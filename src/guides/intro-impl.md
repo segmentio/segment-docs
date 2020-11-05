@@ -19,18 +19,21 @@ Segment's libraries generate and send messages to our tracking API in JSON forma
 
 There are six calls in the basic tracking API, which answer specific questions:
 
-- [Identify](/docs/spec/identify/): Who is the user?
-- [Track](/docs/spec/track/): What are they doing?
-- [Page](/docs/spec/page/): What web page are they on?
-- [Screen](/docs/spec/screen/): What app screen are they on?
-- [Group](/docs/spec/group/): What account or organization are they part of?
-- [Alias](/docs/spec/alias/): What was their past identity?
+- [Identify](/docs/connections/spec/identify/): Who is the user?
+- [Track](/docs/connections/spec/track/): What are they doing?
+- [Page](/docs/connections/spec/page/): What web page are they on?
+- [Screen](/docs/connections/spec/screen/): What app screen are they on?
+- [Group](/docs/connections/spec/group/): What account or organization are they part of?
+- [Alias](/docs/connections/spec/alias/): What was their past identity?
 
 Among these calls, you can think of Identify, Group, and Alias as similar types of calls, all to do with updating our understanding of the user who is triggering Segment messages. You can think of these calls as adding information to, or updating an object record in a database. **Objects** are described using "traits", which you can collect as part of your calls.
 
 The other three, Track, Page, and Screen, can be considered as increasingly specific types of events. **Events** can occur multiple times, but generate separate records which append to a list, instead of being updated over time.
 
-A Track call is the most basic type of call, and can represent any type of event. Page and Screen are similar and are triggered by a user viewing a page or screen, however Page calls can come from both web and mobile-web views, while Screen calls *only* occur on mobile devices. Because of the difference in platform, the context information collected is very different between the two platforms.
+A Track call is the most basic type of call, and can represent any type of event. Page and Screen are similar and are triggered by a user viewing a page or screen, however Page calls can come from both web and mobile-web views, while Screen calls *only* occur on mobile devices. Because of the difference in platform, the context information collected is very different between the two types of calls.
+
+> success ""
+> **Tip**! Segment recommends that you always use the Page and Screen calls when recording a page-view, rather than creating a "Page Viewed" event, because the Page/Screen calls automatically collect much better context information.
 
 ## Anatomy of a Segment message
 
@@ -64,14 +67,14 @@ To learn more about connection modes and when you should use each, see the [deta
 
 ## Planning your Segment implementation
 
-The journey of a thousand miles begins, ideally, with a plan. Regardless of if you're a new company just implementing analytics for the first time, or a multi--national corporation modernizing your analytics stack, it's a great idea to [start with a Tracking Plan](/docs/protocols/data-quality/whats-a-tracking-plan/). For new implementations, this can be as simple as a document where you write down these four things for each item you track:
+The journey of a thousand miles begins, ideally, with a plan. Regardless of if you're a new company just implementing analytics for the first time, or a multi--national corporation modernizing your analytics stack, it's a great idea to [start with a Tracking Plan](/docs/protocols/tracking-plan/create/). For new implementations, this can be as simple as a document where you write down these four things for each item you track:
 
 - What am I tracking? (What is the event name or type?)
 - Why am I tracking it? (What questions does this data answer?)
 - For whom am I tracking it? (Who owns this question, tool, or business area?)
 - Where (which destination tools) do I want to send this data to?
 
-If you're a large or long-established organization and you're replacing existing tools, you'll want to spend more time on this to maintain analytic parity and continuity of tooling. We highly recommend [reading up on tracking plans and schemas](/docs/protocols/), looking at [example tracking plans](/docs/protocols/example-tracking-plan/) including the sample [e-commerce tracking plan](/docs/protocols/ecommerce-tracking-plan/) and considering [Protocols](/docs/protocols/), our tool for managing and sharing tracking plans and enforcing schemas.
+If you're a large or long-established organization and you're replacing existing tools, you'll want to spend more time on this to maintain analytic parity and continuity of tooling. We highly recommend [reading up on tracking plans](/docs/protocols/tracking-plan/create/) and [schemas](/docs/protocols/enforce/schema-configuration/) for [Protocols](/docs/protocols/), our tool for managing and sharing tracking plans and enforcing schemas.
 
 Regardless of your organization's size or age, you'll want to take an inventory of the destination tools you'll be using with Segment, and make a list of the connection modes each one accepts. This makes it easier to check off when you've implemented each one, so you're not missing anything.
 
@@ -85,7 +88,9 @@ then hook up to destinations in the app -->
 
 ## How do I test if it's working?
 
-There are several ways to check if your data is flowing. One is the Debugger tab in each Source in the Segment web app. Another is the [Event Delivery tool](/docs/connections/event-delivery/). For monitoring purposes, you'll also see alerts in the [Workspace Health](/docs/segment-app/#health) tool if your sources or destinations produce repeated errors.
+There are several ways to check if your data is flowing. One is the [Debugger tab in each Source](/docs/connections/sources/debugger/) in the Segment web app, where you can see data coming from a source into Segment. Another is the [Event Delivery tool](/docs/connections/event-delivery/) which shows which data is arriving at specific destinations.
+
+For monitoring purposes, you'll also see alerts in the [Workspace Health](/docs/segment-app/#health) tool if your sources or destinations produce repeated errors.
 
 ## How do I filter my data?
 

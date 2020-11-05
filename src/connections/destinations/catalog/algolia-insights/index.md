@@ -11,18 +11,18 @@ redirect_from: '/connections/destinations/catalog/algolia/'
 - A/B Testing
 - Personalization
 
-This destination is maintained by [Algolia](https://www.algolia.com/). For any issues with the destination, please [reach out to their team](mailto:hey@algolia.com).
+This destination is maintained by [Algolia](https://www.algolia.com/). For any issues with the destination, [contact the Algolia team](mailto:hey@algolia.com).
 
-_**NOTE:** The Algolia Insights Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on February 20, 2020. If you are interested in joining their beta program or have any feedback to help improve the Algolia Insights Destination and its documentation, please [let their team know](mailto:hey@algolia.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Algolia" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "App ID" & "API Key" into your Segment Settings UI which you can find from your [Algolia Dashboard](https://www.algolia.com/apps/), under API Keys menu.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Algolia" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "App ID" & "API Key" into your Segment Settings UI which you can find from your [Algolia Dashboard](https://www.algolia.com/apps/), under API Keys menu.
 
 _**NOTE:** The Algolia Insights Destination is not a plug-and-play integration. It requires you to modify your frontend code to send additional Algolia-related data like index name, queryID, etc._
 
@@ -32,7 +32,7 @@ You can read more about how to send Algolia-related data to Segment from [the do
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/spec/track/) does.
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does.
 
 Algolia supports the following six events from Segment's [Ecommerce Spec](https://segment.com/docs/connections/spec/ecommerce/v2/).
 
@@ -71,7 +71,7 @@ Algolia supports the following six events from Segment's [Ecommerce Spec](https:
 analytics.track('Product List Viewed', {
     products: [{
         objectID: "hit objectID",
-        position: "hit position on index",
+        position: hitPositionOnIndex,  // number
         index: "my-index-name",
         queryID: "Algolia queryID" // required only for Click Analytics,
     }]
@@ -86,7 +86,7 @@ analytics.track('Product List Filtered', {
 
 analytics.track('Product Viewed', {
     objectID: "hit objectID",
-    position: "hit position on index",
+    position: hitPositionOnIndex,  // number
     index: "my-index-name",
     queryID: "Algolia queryID" // required only for Click Analytics,
 })
@@ -94,7 +94,7 @@ analytics.track('Product Viewed', {
 
 analytics.track('Product Clicked', {
     objectID: "hit objectID",
-    position: "hit position on index",
+    position: hitPositionOnIndex,  // number
     index: "my-index-name",
     queryID: "Algolia queryID" // required only for Click Analytics,
 })

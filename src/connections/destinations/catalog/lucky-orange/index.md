@@ -5,20 +5,20 @@ rewrite: true
 
 [Lucky Orange](https://www.luckyorange.com/) lets you quickly see who is on your site and interact with them in many ways. With Lucky Orange, you can chat with visitors on your site, actually watch their mouse move around the screen and click in real time, play them back as recording, generate beautiful heat maps of clicks, mouse movements (eye tracking), and scroll depth, create quick insightful polls, and more. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-lucky-orange).
 
-This document was last updated on October 16, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, please [let us know](https://segment.com/help/contact)!
+This document was last updated on October 16, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Lucky Orange" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your Site ID from the Lucky Orange.
-4. We'll automatically initialize Lucky Orange's library upon loading analytics.js.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Lucky Orange" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Site ID from the Lucky Orange.
+4. Segment automatically initializes Lucky Orange's library upon loading analytics.js.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify("97980cfea0067", {

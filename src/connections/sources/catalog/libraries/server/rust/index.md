@@ -4,12 +4,11 @@ sourceTitle: 'Rust'
 sourceCategory: 'Server'
 ---
 
-
 Our Rust library lets you record analytics data from your Rust code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
-This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-rust).
+This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-rust).
 
-All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library contains the building blocks to batch and efficiently send data to Segment.
+All of Segment's server libraries are built for high-performance, so you can use them in your web server controller code. This library contains the building blocks to batch and efficiently send data to Segment.
 
 ## Getting Started
 
@@ -21,7 +20,8 @@ Install `analytics-rust` using `cargo` to your project:
 cargo add analytics
 ```
 
-which will add the following to you `Cargo.toml` file:
+which adds the following to you `Cargo.toml` file:
+
 ```toml
 [dependencies]
 analytics = "0.2"
@@ -71,6 +71,9 @@ This outlines the primitive building blocks used in creating an ETL-like operati
 The default initialization settings are production-ready.
 
 ## Identify
+
+> note ""
+> **Good to know**: For any of the different methods described on this page, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
 `identify` lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
@@ -152,7 +155,7 @@ Find details on **best practices in event naming** as well as the **`track` meth
 
 The [`page`](/docs/connections/spec/page/) method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-If you're using our client-side setup in combination with the Rust library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
+If you're using our client-side set up in combination with the Rust library, **page calls are already tracked for you** by default. However, if you want to record your own page views manually and aren't using our client-side library, read on!
 
 Example `page` call:
 
@@ -221,7 +224,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
 Example `alias` call:
 
@@ -367,7 +370,7 @@ Identify{
 
 ## Batching
 
-Our libraries are built to support high performance environments using Batch Message. Until Rust's async IO story matures we're 
+Our libraries are built to support high performance environments using Batch Message. Until Rust's async IO story matures we're
 leaving the flushing of Messages up to you to implement.
 
 There is a maximum of `500KB` per batch request and `32KB` per call.

@@ -5,23 +5,23 @@ rewrite: true
 
 [Learndot](https://www.learndot.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a product focussed customer education platform that enables companies to rapidly produce and distribute engaging training content.
 
-This destination is maintained by Learndot. For any issues with the destination, please [reach out to their team](mailto:help@learndot.com).
+This destination is maintained by Learndot. For any issues with the destination, [contact the Learndot Support team](mailto:help@learndot.com).
 
-_**NOTE:** The Learndot Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on September 26, 2019. If you are interested in joining their beta program or have any feedback to help improve the Learndot Destination and its documentation, please [let  their team know](mailto:support@learndot.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Learndot" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Learndot admin](https://admin.learndotx.com/settings).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Learndot" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Learndot admin](https://admin.learndotx.com/settings).
 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -29,14 +29,14 @@ analytics.identify('userId123', {
 });
 ```
 
-Learndot leverages the `identify` event in order to map events in Segment back to learners in Learndot.
+Learndot uses the `identify` event in order to map events in Segment back to learners in Learndot.
 
 **IMPORTANT:** `email` is a required trait as Learndot will use this as the primary field to complete the mapping.
 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')
@@ -48,7 +48,7 @@ The `track` and `identify` are tightly coupled in Learndot. We use the `identify
 
 ## Page
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:
 
 ```
 analytics.page()
@@ -58,7 +58,7 @@ Page calls will be sent to Learndot as a `pageview`and will be used to help furt
 
 ## Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Screen method](https://segment.com/docs/connections/spec/screen/) does. An example call would look like:
 
 ```
 [[SEGAnalytics sharedAnalytics] screen:@"Home"];

@@ -8,7 +8,7 @@ platform for your web and mobile apps. By analyzing the actions your users
 perform, you can gain a better understanding to drive retention, engagement,
 and conversion.
 
-Our Amplitude destination code is open sourced on Github. Feel free to check it
+Our Amplitude destination code is open sourced on GitHub. Feel free to check it
 out:
 [iOS](https://github.com/segment-integrations/analytics-ios-integration-amplitude),
 [Android](https://github.com/segment-integrations/analytics-android-integration-amplitude) and
@@ -22,24 +22,21 @@ NOTE: If you're trying to delete users based on GDPR regulations, Amplitude requ
 
 This document was last updated on September 17th, 2019. If you notice any gaps,
 outdated information or simply want to leave some feedback to help us improve
-our documentation, please [let us know](https://segment.com/help/contact)!
+our documentation, [let us know](https://segment.com/help/contact)!
 
 **Use Cases**
 
-- [Use Optimizely and Amplitude to A/B test which CTAs lead to more signups](https://segment.com/recipes/ab-test-cta-signups-optimizely/)
-- [Test which call to action (CTA) results in more shopping cart conversions with Optimizely and Amplitude](https://segment.com/recipes/ab-test-cta-conversions-optimizely/)
-- [Identify what industries drive the highest LTV with Amplitude](https://segment.com/recipes/ltv-by-industry-amplitude/)
+{% include components/media-icon.html href="https://segment.com/recipes/ab-test-cta-conversions-optimizely/" icon="media/icon-academy.svg" title="Optimizing page performance using heatmaps" content="Test which call to action (CTA) results in more shopping cart conversions with Optimizely and Amplitude." %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
+1. From the Segment web app, click **Catalog**.
 
-2. Search for "Amplitude" within the Destinations Catalog and confirm the
-   Source you'd like to connect to.
+2. Search for "Amplitude" in the Catalog, select it, and choose which of your sources to connect the destination to.
 
-3. Drop in your Amplitude API key.
+3. In the destination settings, enter your Amplitude API key.
 
    You can find the your Amplitude API key from the [Amplitude project
 settings](https://analytics.amplitude.com/settings/projects). Find the project
@@ -58,7 +55,7 @@ will appear in your Amplitude project.
 
 ## Page and Screen
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Page](https://segment.com/docs/connections/spec/page/) and [Screen](https://segment.com/docs/connections/spec/screen/) method does. By default, Segment won't send these standard calls to Amplitude. However, you can enable them with the destination settings outlined below, which
+If you're not familiar with the Segment Specs, take a look to understand what the [Page](https://segment.com/docs/connections/spec/page/) and [Screen](https://segment.com/docs/connections/spec/screen/) method does. By default, Segment won't send these standard calls to Amplitude. However, you can enable them with the destination settings outlined below, which
 you can find under the "Optional Settings" tab. An example call would look like with a server-side call:
 
 ```js
@@ -128,7 +125,7 @@ and `screen` calls from our [`screen` spec](/docs/connections/spec/screen/).
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 // On server-side
@@ -231,7 +228,7 @@ with your `identify` call. Otherwise, Amplitude will create two separate users: 
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. Amplitude supports a number of special properties, all of which are included in the example below:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. Amplitude supports a number of special properties, all of which are included in the example below:
 
 ```javascript
 // On server-side
@@ -281,7 +278,7 @@ For a complete list of special `context` keys see [our common fields spec](/docs
 
 ### Log Revenue V2
 
-Our iOS and Android components support sending revenue via Amplitude's preferred `logRevenueV2` method. Segment will set Amplitude's special revenue properties, such as `revenueType` and `productIdentifier`, which are used in Amplitude's Revenue Analysis and Revenue LTV charts. Any properties not mapped to Amplitude's special properties will be sent via the Amplitude
+Our iOS and Android components support sending revenue using Amplitude's preferred `logRevenueV2` method. Segment will set Amplitude's special revenue properties, such as `revenueType` and `productIdentifier`, which are used in Amplitude's Revenue Analysis and Revenue LTV charts. Any properties not mapped to Amplitude's special properties will be sent using the Amplitude
 `eventProperties` field.
 
 | Amplitude Property | Segment Property | Description |
@@ -294,7 +291,7 @@ Our iOS and Android components support sending revenue via Amplitude's preferred
 | `receipt` | `receipt` | This is required if you want to verify the revenue event. |
 | `eventProperties` | Any remaining properties | A NSDictionary or Map of event properties to include in the revenue event. |
 
-^ If `properties.price` is not present, Segment will fallback to `revenue` and send that as `price`. In our iOS and Android components, if `revenue` isn't present either,  we'll do an additional fallback to `total`.
+^ If `properties.price` is not present, Segment will fallback to `revenue` and send that as `price`. In our iOS and Android components, if `revenue` isn't present either, we'll do an additional fallback to `total`.
 
 Property names should be `camelCase` for Android implementations and `snake_case` for iOS implementations.
 
@@ -317,7 +314,9 @@ In our client side, iOS, and Android components, if the preferred `logRevenueV2`
 | `revenueType` | `revenueType` (Server-side only)| The type of revenue (e.g. tax, refund, income). |
 | `revenue`  |  `reveue` (Server-side only) | The revenue collected.  |
 | `eventProperties` | Any remaining properties (Server-side only) | A NSDictionary or Map of event properties to include in the revenue event. |
-^ In our A.js, iOS and Android components, if `properties.price` is not present, Segment will fallback to `revenue` and send that as `price`. In addition, in our iOS and Android components, if `revenue` isn't present either,  we'll do an additional fallback to `total`.
+
+
+^ In our A.js, iOS and Android components, if `properties.price` is not present, Segment will fallback to `revenue` and send that as `price`. In addition, in our iOS and Android components, if `revenue` isn't present either, we'll do an additional fallback to `total`.
 
 **Note:** If your site allows for users to perform a single transaction with multiple different products (such as a shopping cart checkout), we recommend using an [Order Completed](/docs/connections/destinations/catalog/amplitude/#order-completed) event to track revenue with Amplitude.
 
@@ -379,20 +378,20 @@ on the individual "Product Purchased" events.
 **Track Revenue Per Product**
 
 Amplitude has two different ways to track revenue associated with a
-multi-product purchase. You can choose which method you want to use via the
+multi-product purchase. You can choose which method you want to use using the
 [Track Revenue Per Product](#track-revenue-per-product) destination setting:
 
 1. Disable the setting ("off"): Log a single revenue event with the total amount purchased. Revenue data will be added to the Amplitude "Order Completed" event. The "Product Purchased" events will not have any native Amplitude revenue data.
 
 2. Enable the setting ("on"): Log a single revenue event for each product that was purchased. Revenue data will be added to each "Product Purchased" event, and the "Order Completed" event will not have any native Amplitude revenue data.
 
-Please ensure you are adhering to our event spec and pass at minimum a
+Make sure you are adhering to our event spec and pass at minimum a
 `revenue` property, as well as a `price` and `quantity` property for each
 product in the products list.
 
 ## Group
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. Note that groups are an enterprise-only feature in Amplitude,
+If you're not familiar with the Segment Specs, take a look to understand what the [Group method](https://segment.com/docs/connections/spec/group/) does. Note that groups are an enterprise-only feature in Amplitude,
 and are only available if you've purchased the Accounts add-on. An example call would look like:
 
 ```js
@@ -427,21 +426,21 @@ it's how you tell Segment which trait should be used as the group type.
   `.group()` calls will contain the Amplitude "group value". It's how you tell
 Segment which trait should be used as the group value.
 
-For example, if you specified `industry` as the "Amplitude Group Type Trait",
+For example, if you specified `group_type` as the "Amplitude Group Type Trait",
 and `name` as the "Amplitude Group Value Trait", then the following call:
 
 ```js
 analytics.group("082108c8-f51e-485f-9d2d-b6ba57ee2c40", {
-  industry: "Placeholding",
+  group_type: "Organization",
   name: "ExampleCorp, LLC",
   employees: "20",
   email: "hello@example.com"
 });
 ```
 
-Would associate the current user with the group with type `"Placeholding"` and
+Would associate the current user with the group with type `"Organization"` and
 value `"ExampleCorp, LLC"`. On client-side, that's all that happens. On
-server-side and Android, the traits you pass (in this case, `industry`, `name`,
+server-side and Android, the traits you pass (in this case, `group_type`, `name`,
 `employees`, and `email`) will be provided as `group_properties` of that group.
 
 What you provide as group ID doesn't matter, but Segment requires that all
@@ -571,7 +570,7 @@ as an integration-specific option like so:
 
 You will need to pass the start time of a session as `<Timestamp>`.
 
-### Setting event-level groups via .track()
+### Setting event-level groups using .track()
 
 Amplitude supports setting event-level groups, meaning the group designation
 only applies for the specific event being logged and does not persist on the
@@ -609,7 +608,7 @@ analytics.identify('testUser', {
 });
 ```
 
-### Legacy group assignment via .identify()
+### Legacy group assignment using .identify()
 
 **Note:** While this behavior will continue to be supported, the recommended
 way to associate a user with a group in Amplitude is to use a `.group()` call.
@@ -638,7 +637,7 @@ This `identify` event would create or update a new user in Amplitude and set
 
 ### Location Tracking
 
-Supported via our iOS and Android components.
+Supported using our iOS and Android components.
 
 Defaults to enabled. If a user has granted your app location permissions,
 enable this setting so that the SDK will also grab the location of the user.
@@ -646,7 +645,7 @@ Amplitude will never prompt the user for location permission, so this must be
 done by your app.
 
 The user's location is only fetched once per session on iOS. If you need to
-force update the location in Amplitude, you can leverage the native method
+force update the location in Amplitude, you can use the native method
 `updateLocation` (iOS only) as documented
 [here](https://amplitude.zendesk.com/hc/en-us/articles/115002278527#location-tracking).
 Also note that calling `enableLocationListening` on the iOS SDK forces the SDK
@@ -655,15 +654,15 @@ to update the initial location that was cached during app startup.
 On Android, when enabled, this setting adds a latitude and longitude property
 to each track event reflecting where geographically the event was triggered.
 
-Please take note that even you disable location listening, Amplitude's server
+Note that even you disable location listening, Amplitude's server
 side ingestion layer will attempt to determine the user's location from their
 IP address.  If you would like to block all location information from being
-tracked, please reach out to your CSM at amplitude to disable all location
+tracked, contact your CSM at amplitude to disable all location
 tracking.
 
 ### Set AdvertisingId for DeviceId
 
-Supported via our iOS and Android components.
+Supported using our iOS and Android components.
 
 Segment supports Amplitude's `useAdvertisingIdForDeviceId` method. For iOS,
 this will allow you to use the `advertisingIdentifier` instead of
@@ -697,17 +696,17 @@ object for the configured `trait` when `identify` is called.
 
 ### Log out of sessions
 
-Supported via our iOS and Android components.
+Supported using our iOS and Android components.
 
 Out-of-session events have a `session_id` of -1 and are not considered part of
 the current session, meaning they do not extend the current session. This might
 be useful if you are logging events triggered by push notifications, for
 example.  To set an out of session event, pass in `true` for the key
-`outOfSession` on a `track` call via the integration specific option.
+`outOfSession` on a `track` call using the integration specific option.
 
 iOS Example:
 
-```objective-c
+```objc
 [[SEGAnalytics sharedAnalytics]
   track: @"Push Notification Viewed"
   properties: nil
@@ -739,7 +738,7 @@ method.
 
 ### Reset
 
-Our mobile components support logging out users in Amplitude via Segment's
+Our mobile components support logging out users in Amplitude using Segment's
 `reset` method. There is no need to worry about aliasing users, as Amplitude
 will merge user data on the backend so that any events up to that point from the
 same client will be tracked under the same user.
@@ -760,5 +759,3 @@ Have a question about the Amplitude/Segment integration that's already been answ
 ### I Don't See My Data In Amplitude
 
 If you aren't seeing your data arrive in Amplitude, we recommend you start by taking a look at our [Analytics.js Guide on validating data being transmitted](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#is-data-being-transmitted-to-your-third-party-destinations) to your third-party destination .
-
-

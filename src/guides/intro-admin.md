@@ -45,7 +45,7 @@ As an administrator, you might be asked to help other members of your organizati
 
 ### Setting up destinations
 
-Destinations are the endpoint to which Segment sends data flowing from your Sources, and represent external tools (such as Google Analytics, Mixpanel, etc) and sometimes bulk-storage destinations like warehouses. You can set up a Destination from within the Segment App, by navigating to the [Destination Catalog](https://app.segment.com/goto-my-workspace/destinations/catalog) and selecting the tool you want to set up. In most cases, you'll need an existing API key or token, so Segment can send the data to the correct account. If you're setting up a Warehouse or other storage destination, more steps might be required, so see the [Warehouses documentation](/docs/connections/warehouses/) for more details.
+Destinations are the endpoint to which Segment sends data flowing from your Sources, and represent external tools (such as Google Analytics, Mixpanel, etc) and sometimes bulk-storage destinations like warehouses. You can set up a Destination from within the Segment App, by navigating to the [Destination Catalog](https://app.segment.com/goto-my-workspace/destinations/catalog) and selecting the tool you want to set up. In most cases, you'll need an existing API key or token, so Segment can send the data to the correct account. If you're setting up a Warehouse or other storage destination, more steps might be required, so see the [Warehouses documentation](/docs/connections/storage/warehouses/) for more details.
 
 ### Troubleshooting
 
@@ -57,7 +57,7 @@ Segment contains several ways to see what's going on in your Workspace:
 - Last but not least, check out our list of [integration error codes](/docs/connections/integration_error_codes/) for clues about what might be causing an error.
 
 > info ""
-> Still stumped? [Contact us](segment.com/help/contact/) for more help troubleshooting!
+> Still stumped? [Contact us](https://segment.com/help/contact/) for more help troubleshooting!
 
 
 <!-- TODO
@@ -66,7 +66,7 @@ warehouses, sync, replay
 ## Premium feature tasks
 
 personas spaces, workspaces
-protocols setup and maintenance
+protocols set up and maintenance
 Privacy monitoring
 -->
 > success ""

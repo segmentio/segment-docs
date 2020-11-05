@@ -1,11 +1,10 @@
 ---
 title: Firebase Destination
+strat: google
 ---
 
 
-## Getting Started
-
-### Android
+## Getting Started on Android
 
 To start sending data to Firebase Analytics from your Android project, you'll need to follow a few simple steps:
 
@@ -19,7 +18,7 @@ buildscript {
     dependencies {
         // Add these lines
         implementation 'com.segment.analytics.android:analytics:4.+'
-        implementation 'com.segment.analytics.android.integrations:firebase:+'
+        implementation 'com.segment.analytics.android.integrations:firebase:+@aar'
     }
 }
 
@@ -27,9 +26,12 @@ buildscript {
 apply plugin: 'com.google.gms.google-services'
 ```
 
+> note ""
+> **Note:** The Firebase SDK requires android resources which are available on `aar` packages. Use the `aar` package when adding the Segment-Firebase SDK.
+
 ***Project-level build.gradle***: Add Google Services dependency and their Maven repo location to repositories:
 
-```
+```js
 buildscript {
     dependencies {
         // Add this line
@@ -54,7 +56,7 @@ Add these permissions to your AndroidManifest.xml:
 
 Finally, register the dependency with the Segment SDK in your application subclass, as [seen here in our Android library documentation](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#packaging-sdks-for-device-mode-destinations):
 
-Periodically, Firebase updates the Android configuration requirements for loading their SDK in your app. To validate that your Android configuration is sufficient for your version of Firebase, please consult [Google's Firebase release notes](https://firebase.google.com/support/release-notes/android#). You can find the corresponding verison of the Firebase SDK Segment requires in each of the Segment-Firebase SDK versions by consulting the [Segment-Firebase changelog](https://github.com/segment-integrations/analytics-android-integration-firebase/blob/master/CHANGELOG.md). For example, Segment-Firebase 1.3.1 includes Firebase Core 17.0.1 as a dependency.
+Periodically, Firebase updates the Android configuration requirements for loading their SDK in your app. To validate that your Android configuration is sufficient for your version of Firebase, consult [Google's Firebase release notes](https://firebase.google.com/support/release-notes/android). You can find the corresponding verison of the Firebase SDK Segment requires in each of the Segment-Firebase SDK versions by consulting the [Segment-Firebase changelog](https://github.com/segment-integrations/analytics-android-integration-firebase/blob/master/CHANGELOG.md). For example, Segment-Firebase 1.3.1 includes Firebase Core 17.0.1 as a dependency.
 
 ```java
 Analytics analytics = new Analytics.Builder(context, writeKey)
@@ -65,7 +67,7 @@ Analytics analytics = new Analytics.Builder(context, writeKey)
 
 By default, we bundle only `Firebase/Core` which is [Firebase's Analytics offering](https://firebase.google.com/docs/analytics/). You can see the other available [Firebase dependencies and features here](https://firebase.google.com/docs/android/setup).
 
-### iOS
+## Getting Started on iOS
 
 1. Register your app in the [Firebase console](https://console.firebase.google.com/) and add the `GoogleService-Info.plist` to the root of your Xcode project.
 
@@ -91,7 +93,7 @@ By default, Segment only bundles `Firebase/Core` which is [Firebase's Analytics 
 
 When you call `identify` Segment will map to the corresponding Firebase Analytics calls:
 
-- If there is a `userId` on your `identify` call, Segment triggers `setUserId` via the Firebase SDK
+- If there is a `userId` on your `identify` call, Segment triggers `setUserId` using the Firebase SDK
 - If there are traits included, Segment will set user properties for each trait you include on the `identify` call
 
 You can use these traits to create audiences and views to analyze your users' behavior.
@@ -122,7 +124,7 @@ Firebase automatically collects [these user properties](https://support.google.c
 
 When you call `track` Segment will log the event with Firebase. Firebase automatically tracks [the events listed here](https://support.google.com/firebase/answer/6317485) and it will still do so when bundling with Segment.
 
-Firebase has a limit of 500 distinctly named events so it pays off to be [intentional in what you track](/docs/faqs/sources/what-to-track/).
+Firebase has a limit of 500 distinctly named events so it pays off to be [intentional in what you track](/docs/protocols/tracking-plan/best-practices/).
 
 When you call `track`, Segment maps from the [Segment spec](/docs/connections/spec/) to those that match Firebase's spec. For anything that does not match, Segment will pass the event to Firebase as a custom event. Custom parameters cannot be seen directly in the Firebase Analytics dashboard but they can be used as filters in **Audiences**.
 
@@ -140,7 +142,7 @@ Segment adheres to Firebase's semantic event specification and maps the followin
 
 | Segment Event     | Firebase Event    |
 |-------------------|-------------------|
-| [Products Searched](/docs/connections/spec/ecommerce/v2/#product-searched) | search |
+| [Products Searched](/docs/connections/spec/ecommerce/v2/#products-searched) | search |
 | [Product List Viewed](/docs/connections/spec/ecommerce/v2/#product-list-viewed)| view_item_list |
 | [Product Viewed](/docs/connections/spec/ecommerce/v2/#product-viewed) | view_item |
 | [Product Clicked](/docs/connections/spec/ecommerce/v2/#product-clicked) | select_content |
@@ -192,14 +194,14 @@ Segment doesn't map screen events to Firebase - that's because Firebase's SDK co
 
 For Android, Segment passes contextual screen information into each screen view on each activity's `onResume` callback. To ensure that screen names are labeled properly, Segment recommends adding a `label` value to each of your activities in your app's `AndroidManifest.xml` file. At the moment, Firebase does not allow disabling automatic screen tracking for Android.
 
-For iOS, you can configure `recordScreenViews` which will automatically track screen views, or pass in a screen manually via a [screen](/docs/connections/spec/screen/) call. You should be able to disable the Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
+For iOS, you can configure `recordScreenViews` which will automatically track screen views, or pass in a screen manually using a [screen](/docs/connections/spec/screen/) call. You should be able to disable the Automatic Screen reporting by adding the plist flag `FirebaseScreenReportingEnabled` to `Info.plist` and set its value to `NO` (Boolean).
 
 Google Analytics for Firebase iOS does NOT support the case of manual-only screen reporting. Firebase only supports automatic + manual screen reporting or no screen reporting at all.
 
 
 #### **Firebase Dynamic Linking** (iOS only)
 
-Firebase Dynamic Links are smart URLs that can change behavior dynamically depending on the platform where the user clicks them. Use them in web, email, social media, referral and physical promotions to increase user acquisition, retention and lifetime value. Key features include ability to survive app installs, controlling user experience depending on what platform they access the link on and knowing which content and campaigns are working via tracking in the Firebase console. [Check out Firebase's Docs here](https://firebase.google.com/docs/dynamic-links/).
+Firebase Dynamic Links are smart URLs that can change behavior dynamically depending on the platform where the user clicks them. Use them in web, email, social media, referral and physical promotions to increase user acquisition, retention and lifetime value. Key features include ability to survive app installs, controlling user experience depending on what platform they access the link on and knowing which content and campaigns are working using tracking in the Firebase console. [Check out Firebase's Docs here](https://firebase.google.com/docs/dynamic-links/).
 
 To use Firebase Dynamic Links, add the below to your podfile.
 
@@ -234,4 +236,4 @@ As a current user of Segment-Firebase iOS, you will be able to pull in the lates
 
 For details on the new mapping, you can check out our documentation [here](https://segment.com/docs/connections/destinations/catalog/firebase/#event-mappings).
 
-Please let us know if you have any questions. We recommend upgrading as soon as possible, and please [let us know](/contact) if you have any feedback about both the Firebase iOS and Android betas.
+Let us know if you have any questions. We recommend upgrading as soon as possible, and [let us know](https://segment.com/help/contact/) if you have any feedback about both the Firebase iOS and Android betas.

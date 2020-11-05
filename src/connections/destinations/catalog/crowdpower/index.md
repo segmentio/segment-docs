@@ -6,24 +6,23 @@ beta: true
 
 [CrowdPower](https://crowdpower.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a growth marketing platform that enables businesses to track key customer actions and deliver automated tailored communications to drive sales and increase engagement.
 
-This destination is maintained by CrowdPower. For any issues with the destination, please [reach out to their team](mailto:support@crowdpower.io).
+This destination is maintained by CrowdPower. For any issues with the destination, [contact the CrowdPower Support team](mailto:support@crowdpower.io).
 
-> note "Note:"
-> The CrowdPower Destination is currently in beta, which means that they are still actively developing the destination. If you are interested in joining their beta program or have any feedback to help improve the CrowdPower Destination and its documentation, please [let  their team know](mailto:support@crowdpower.io)!
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
-{% include content/connection-modes.md %} 
+{% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "CrowdPower" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the API Key into your Segment Settings UI which you can find from your [CrowdPower Project Settings](https://app.crowdpower.io).
+1. From the Segment web app, click **Catalog**.
+2. Search for "CrowdPower" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the API Key into your Segment Settings UI which you can find from your [CrowdPower Project Settings](https://app.crowdpower.io).
 4. To find your CrowdPower API Key, go to the CrowdPower Console and click **Settings** in the sidebar menu. Use your CrowdPower project's Public Key as the API key for Segment.
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```js
 analytics.identify('userId123', {
@@ -40,7 +39,7 @@ Identify calls in Segment create or update customers and their attributes in Cro
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```js
 analytics.track('Purchased Item', {

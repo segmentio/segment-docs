@@ -5,9 +5,9 @@ rewrite: true
 
 [FunnelEnvy](https://www.funnelenvy.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) helps marketers optimize revenue by delivering personalized experiences and offers for every customer across their unique journey.
 
-This destination is maintained by FunnelEnvy. For any issues with the destination, please [reach out to their team](mailto:support@funnelenvy.com).
+This destination is maintained by FunnelEnvy. For any issues with the destination, [contact the FunnelEnvy Support team](mailto:support@funnelenvy.com).
 
-_**NOTE:** The FunnelEnvy Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on September 13, 2019. If you are interested in joining their beta program or have any feedback to help improve the FunnelEnvy Destination and its documentation, please [let  their team know](mailto:support@funnelenvy.com)!_
+{% include content/beta-note.md %}
 
 ## Implementation Prerequisite
 
@@ -20,15 +20,15 @@ The FunnelEnvy snippet can be found in your settings within FunnelEnvy which is 
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "FunnelEnvy" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "FunnelEnvy" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Head over to your [FunnelEnvy integration settings](https://backstage.funnelenvy.com/#/integrationsNew) and add "Segment Souce" as a source integration.
 4. Copy the "API Key" from the Segment Source integration in FunnelEnvy into your Segment Settings UI.
 
 
 ## Identify
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Identify method](https://segment.com/docs/connections/spec/identify/) does. An example call would look like:
 
 ```
 analytics.identify('userId123', {
@@ -42,7 +42,7 @@ FunnelEnvy will use the id sent in the identify call to associate individuals to
 
 ## Track
 
-If you haven't had a chance to review our spec, please take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
+If you're not familiar with the Segment Specs, take a look to understand what the [Track method](https://segment.com/docs/connections/spec/track/) does. An example call would look like:
 
 ```
 analytics.track('Clicked Login Button')

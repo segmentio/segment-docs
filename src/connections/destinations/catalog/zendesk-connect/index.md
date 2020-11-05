@@ -1,16 +1,16 @@
 ---
 title: 'Zendesk Connect Destination'
-redirect_from: '/connections/destinations/catalog/outbound'
+redirect_from: '/connections/destinations/catalog/outbound/'
 ---
 
 ## Getting Started
 
-When you toggle on Zendesk Connect in Segment, this is what happens:
+When you enable Zendesk Connect from the Segment web app:
 
-- Our CDN is updated within 5-10 minutes. Then our snippet starts sending all your analytics data to Segment's servers, where we'll send the data onwards to Connect.
-- Your Zendesk Connect real-time feed will start showing visitor data.
+- Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously sending all your analytics data to Segment's servers, and onwards to Connect.
+- Your Zendesk Connect real-time feed starts showing visitor data.
 
-If you plan on having both a production and development environment, you will want enter your Connect API keys into the corresponding Segment sources.
+If you plan on having both a production and development environment, make sure you enter your Connect API keys into the corresponding Segment sources.
 
 Connect is supported on the client-side, server-side and on mobile.
 

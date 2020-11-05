@@ -6,11 +6,12 @@ hidden: true
 
 YOUBORA is the most advanced and holistic suite of integrated video analytics and business intelligence for broadcasters, OTTs, telcos and media companies to help you make data-driven, business, operational and technical decisions to drive performance and maximize revenue across your entire video service. The latest version of YOUBORA has been thought through from the ground up to deliver the most detailed intelligence for your service.
 
-This source is maintained by YOUBORA. For any issues with the source, you may [contact their team](https://nicepeopleatwork.com/contactus).
+This source is maintained by YOUBORA. For any issues with the source, [contact the YOUBORA Support team](https://nicepeopleatwork.com/contactus).
 
-_**NOTE:** Youbora is currently in private beta and this doc was last updated on July 2nd, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the Youbora Destination and its documentation, and please [let us know](https://segment.com/help/contact) and your YOUBORA representative know!_
+{% include content/beta-note.md %}
 
-Adding YOUBORA as a Source to Segment will allow you to leverage YOUBORA data with other Segment collected data.
+
+Adding YOUBORA as a Source to Segment will allow you to use YOUBORA data with other Segment collected data.
 
 These events can be passed to your Segment Destinations such as data warehouses and analytics tools. Joined with data from other marketing programs, you can start telling a unified story of each customer's journey and tailor your reporting to the KPIs that matter most.
 
@@ -21,7 +22,7 @@ These events can be passed to your Segment Destinations such as data warehouses 
 3. Click Connect.
 4. Give the Source a nickname. The nickname is a label used in the Segment interface.
 5. Copy the Segment `write_key` for YOUBORA from the Overview page.
-6. Reach out to your YOUBORA representative to enable the event-source with the `write_key` provided.
+6. contact your YOUBORA representative to enable the event-source with the `write_key` provided.
 7. Click Save.
 8. From your Segment account, click into your YOUBORA Source and you will be able to add other downstream Destinations where you want to see the YOUBORA auto-tracked events.
 
@@ -559,7 +560,7 @@ Now that your Source is set up, you can connect it with destinations.
 
 Log into your downstream tools and check to see that your events are populating and they contains all the properties you expect. If all your events and properties are not showing up, refer to the destination docs for troubleshooting.
 
-If there are any issues with how the events are arriving to Segment, please [contact the YOUBORA team](https://nicepeopleatwork.com/contactus).
+If you experience any issues with how the events arrive in Segment, [contact the YOUBORA team](https://nicepeopleatwork.com/contactus).
 
 ## User Identification
 
