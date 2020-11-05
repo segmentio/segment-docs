@@ -392,4 +392,4 @@ The `receivedAt` timestamp is most important as the sort key in our Warehouses p
 
 The `timestamp` timestamp specifies when the datapoint occurred, corrected for client-device clock skew. This is the timestamp that is passed to downstream destinations and used for historical replays. It is important to use this timestamp for importing historical data to the API.
 
-The `timestamp` field is settable from our server-side libs or if passing info directly to the HTTP endpoints.  From the client-side, the Segment library generates `timestamp` so you cannot manually one set to import historical data to the Segment API.
+If you are using the Segment server Source libraries, or passing calls directly to the HTTP API endpoint, you can manually set the `timestamp` field.  If you are using a Segment Source in device mode (including the mobile sources), the library generates `timestamp` and you cannot manually set one.  (You might manually set or override a timestamp to import historical data to the Segment API).
