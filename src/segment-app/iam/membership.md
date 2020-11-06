@@ -96,4 +96,4 @@ Segment does not support programmatic de-provisioning at this time. However, if 
 
 If you are a [workspace member](/segment-app/iam/roles), you might encounter a section of the Segment App that you do not have access to view. If you need expanded permissions, you can request access directly in the Segment App. Once submitted, Access requests are sent to all workspace owners by email.
 
-To review an access request, workspace owners may click the link in the access request email to navigate to Segment's Access Management Settings. The requestor's request access message will appear directly within the Segment Access Management page. Once permissions have been updated, the request access message will be dismissed.
+To review an access request, workspace owners click the link in the access request email to go to their workspace's Access Management Settings. The requestor's access request message appears on the Segment Access Management page, and the workspace owner can adjust the user's permissions. The access request message disappears after the permissions are updated.
