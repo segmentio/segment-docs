@@ -91,3 +91,9 @@ Segment supports "Just-In-Time" user provisioning using SSO. Any users with acce
 Once they have been created, Workspace Owners can update these users' access from the **Access Management** page in the Segment App.
 
 Segment does not support programmatic de-provisioning at this time. However, if your workspace uses SSO, a user that cannot authenticate to your IDP cannot view or edit any of your workspaces or their contents.
+
+## Request Access
+
+If you are a [workspace member](/segment-app/iam/roles), you may encounter a section of the Segment App you do not have access to view. If you require expanded permissions, you may request access directly in the Segment App. Once submitted, Access requests are sent to all workspace owners via email.
+
+To review an access request, workspace owners may click the link in the access request email to navigate to Segment's Access Management Settings. The requestor's request access message will appear directly within the Segment Access Management page. Once permissions have been updated, the request access message will be dismissed.
