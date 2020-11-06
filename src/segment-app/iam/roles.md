@@ -17,7 +17,7 @@ All Segment workspaces have the following roles, regardless of account type.
 Members inherit bespoke permissions based on [individual roles](/segment-app/iam/roles/##business-tier-roles) assigned.
 
     - **Source admin**
-      Source admins have edit access to assigned source(s), to the settings for that source, to any connected streaming destinations, schema, and live data from the source in the [debugger](/docs/connections/sources/debugger/). A user with the Source Admin role can be granted access to either all current and future Sources, or a specific list of Sources, or Sources with a specific Label (BT only).
+      Source admins have edit access to assigned source(s), to the settings for that source, to any connected streaming destinations, schema, and live data from the source in the [debugger](/docs/connections/sources/debugger/). A user with the Source Admin role can be granted access to either all current and future Sources, or a specific list of Sources, or (if you are on a Business plan) to Sources with a specific Label.
 
 
 ## Business Tier Roles
