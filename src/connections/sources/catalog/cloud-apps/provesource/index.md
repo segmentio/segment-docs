@@ -3,9 +3,9 @@ title: ProveSouce Source
 ---
 [ProveSource](https://provesrc.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a social proof platform, that lets you show recent activities and reviews that happen on your website - signups, purchases, positive reviews and more, this helps build trust with your visitors and ultimately increases your conversions rates.
 
-This source is maintained by ProveSource. For any issues with the source, [contact their team](mailto:support@provesrc.com).
+This source is maintained by ProveSource. For any issues with the source, [contact the ProveSouce Support team](mailto:support@provesrc.com).
 
-_**NOTE:** The ProveSource Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on June 14, 2019. If you are interested in joining their beta program or have any feedback to help improve the ProveSource Source and its documentation, [let their team know](mailto:support@provesrc.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

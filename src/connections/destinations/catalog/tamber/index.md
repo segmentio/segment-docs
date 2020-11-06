@@ -4,9 +4,9 @@ title: Tamber Destination
 ---
 [Tamber](https://tamber.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) enables you to build your own Google-scale recommendation features in minutes. Deploy cutting edge deep learning models, and run A/B tests to optimize results.
 
-This destination is maintained by Tamber. For any issues with the destination, [contact their team](mailto:support@tamber.com).
+This destination is maintained by Tamber. For any issues with the destination, [contact the Tambler Support team](mailto:support@tamber.com).
 
-_**NOTE:** The Tamber Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 4, 2019. If you are interested in joining their beta program or have any feedback to help improve the Tamber Destination and its documentation, [let their team know](mailto:support@tamber.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ _**NOTE:** The Tamber Destination is currently in beta, which means that they ar
 2. Follow the instructions to configure your Destination and optionally defined a custom name for your `item` and click save.
 3. You may now use either the one-click activation button to complete your set up or continue reading the below steps to manually add the Tamber Destination from within Segment using the "API Key" displayed.
 4. From your Segment UI's Destinations page click on "Add Destination".
-5. Search for "Tamber" within the Destinations Catalog and confirm the Source you'd like to connect to.
+5. Search for "Tamber" in the Catalog, select it, and choose which of your sources to connect the destination to.
 6. Drop the "API Key" into your Segment Settings UI. If you do not have the key from the steps above, you can find it in your [Tamber dashboard](https://dashboard.tamber.com) as the "Project Key" in your project's dashboard.
 
 

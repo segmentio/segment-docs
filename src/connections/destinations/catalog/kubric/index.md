@@ -4,18 +4,18 @@ rewrite: true
 ---
 [Kubric](https://kubric.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) allows you to create personalised creatives for your users and deliver them using emails, push-notifications, Facebook & various other channels.
 
-This destination is maintained by Kubric. For any issues with the destination, [contact their team](mailto:tom@kubric.io).
+This destination is maintained by Kubric. For any issues with the destination, [contact the Kubric Support team](mailto:tom@kubric.io).
 
-_**NOTE:** The Kubric Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on Feburary 28, 2019. If you are interested in joining their beta program or have any feedback to help improve the Kubric Destination and its documentation, [let their team know](mailto:tom@kubric.io)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Kubric" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Kubric dashboard](https://app.kubric.io/profile).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Kubric" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Kubric dashboard](https://app.kubric.io/profile).
 
 
 ## Page

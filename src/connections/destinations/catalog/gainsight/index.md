@@ -12,8 +12,8 @@ This document was last updated on October 18, 2018. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for Gainsight within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for Gainsight in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Copy your Gainsight Access Key and paste it into to the Access Key field in your Segment settings for Gainsight. This key can be generated from the integrations page under the `admin` area in Gainsight. It should be 36 characters long, for reference. If you need more information, visit the [relevant documentation provided by Gainsight](https://support.gainsight.com/Connectors/API_Integration/Generate_API_Access_Key).
 4. Start sending events!
 

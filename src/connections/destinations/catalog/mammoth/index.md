@@ -4,12 +4,11 @@ title: Mammoth Destination
 ---
 [Mammoth](https://mammoth.io/integrations/segment-com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides self-serve analytics for analysts, businesses, and developers who can use Mammoth's data warehousing, data discovery & data preparation abilities to arrive at insights.
 
-[Mammoth](https://mammoth.io) allows you to blend your data from Segment with other sources of data such as databases and files. Using Mammoth, you can build multiple data pipelines, which are constructed by applying transforms through a no coding interface. Mammoth also allows for the visual discovery of the data and easy exports to databases such as MySQL, elasticsearch, and PostgreSQL.
+Mammoth allows you to blend your data from Segment with other sources of data such as databases and files. Using Mammoth, you can build multiple data pipelines, which are constructed by applying transforms through a no coding interface. Mammoth also allows for the visual discovery of the data and easy exports to databases such as MySQL, elasticsearch, and PostgreSQL.
 
+This destination is maintained by [Mammoth](https://mammoth.io). For any issues with Mammoth Destination, [contact the Mammoth Support team](mailto:support@mammoth.io).
 
-This destination is maintained by [Mammoth](https://mammoth.io). For any issues with Mammoth Destination, [contact their team](mailto:support@mammoth.io).
-
-_**NOTE:** The Mammoth Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on June 6, 2019. If you are interested in joining their beta program or have any feedback to help improve the Mammoth and its documentation, [let their team know](mailto:support@mammoth.io)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

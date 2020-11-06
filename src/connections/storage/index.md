@@ -16,7 +16,7 @@ Segment offers several [Data Storage Destinations](/docs/connections/storage/cat
 
 
 
-{% include components/media-icon.html href="https://segment.com/academy/intro/why-you-should-own-your-data/&referrer=docs" icon="media/icon-academy.svg" title="Analytics Academy: Why you should own your data" content="Although the sharing economy is eroding the idea of “ownership,” when it comes to analytics data, we strongly believe that you should own it." %}
+{% include components/media-icon.html href="https://segment.com/academy/intro/why-you-should-own-your-data/?referrer=docs" icon="media/icon-academy.svg" title="Analytics Academy: Why you should own your data" content="Although the sharing economy is eroding the idea of “ownership,” when it comes to analytics data, we strongly believe that you should own it." %}
 
 <!-- TODO:
 

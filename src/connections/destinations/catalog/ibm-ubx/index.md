@@ -29,9 +29,8 @@ endpoint from Segment's support team._
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "IBM UBX" within the Destinations Catalog and confirm the Source
-   you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "IBM UBX" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter your UBX API URL and your publisher's endpoint authentication key in
    the Segment Settings UI. You should have received an email with this URL
    shortly after setting up your UBX account. If you can't locate your URL,
@@ -49,7 +48,7 @@ endpoint from Segment's support team._
     ![](images/ubx-register-endpoint.png)
 
 5. Once registered, the new endpoint's status will remain "Pending" in the
-   "Endpoints" tab until it has been activated. To activate an endpoint, 
+   "Endpoints" tab until it has been activated. To activate an endpoint,
    include your UBX account's API URL and your endpoint authentication key in an
    email to Segment using our [tech support form](https://segment.com/help/contact/).
 

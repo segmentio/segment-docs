@@ -10,9 +10,10 @@ This document was last updated on January 18, 2019. If you notice any gaps, outd
 
 ## Getting Started
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Yandex.Metrica" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Yandex.Metrica" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Enter your Counter ID that you can find in your Yandex.Metrica UI navigating to Settings > Tag.
-4. In about 45 minutes the CDN will be updated and Yandex.Metrica's snippet will be initialized onto your page.
 
-Once you've followed these steps you should be good to go! No additional code will be required for your Yandex.Metrica Destination to start tracking activity on your page.
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading Yandex.Metrica's snippet on your page and sending data.
+
+Once you've followed these steps you should be good to go! No additional code is required for your Yandex.Metrica Destination to start tracking activity on your page.
