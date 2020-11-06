@@ -3,9 +3,9 @@ title: Pendo Source
 ---
 [Pendo](https://pendo.io) is a product cloud that helps product teams deliver software users love. With Pendo, product teams can understand product usage, collect feedback, measure NPS, onboard users, and announce new features in app—all without requiring engineering resources.
 
-This source is maintained by Pendo. For any issues with the source, [contact their team](mailto:integrations@pendo.io).
+This source is maintained by Pendo. For any issues with the source, [contact the Pendo Support team](mailto:integrations@pendo.io).
 
-*NOTE: The Pendo Source will continue to be adding new events sources as it is still in active development. This doc was last updated on September 13, 2019. If you have any feedback to help improve the Pendo Source and its documentation, [let their team know](mailto:integrations@pendo.io)!*
+*NOTE: The Pendo Source will continue to be adding new events sources as it is still in active development. If you have any feedback to help improve the Pendo Source and its documentation, [let the Pendo Support team know](mailto:integrations@pendo.io)!*
 
 ## Getting Started
 

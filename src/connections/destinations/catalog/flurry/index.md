@@ -13,9 +13,9 @@ This document was last updated on January 10, 2019. If you notice any gaps, outd
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Flurry" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your Flurry "API Key" in Segment's Settings UI. You can retrieve this from your Flurry Admin > Apps > API Key. It should look like "4KKKGS3BAK4WW8WJ93DN".
+1. From the Segment web app, click **Catalog**.
+2. Search for "Flurry" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Flurry "API Key" in Segment's Settings UI. You can retrieve this from your Flurry Admin > Apps > API Key. It should look like "4KKKGS3BAK4WW8WJ93DN".
 4. Follow the instructions in the GitHub repos: [iOS SDK](https://github.com/segment-integrations/analytics-ios-integration-flurry) and [Android SDK](https://github.com/segment-integrations/analytics-android-integration-flurry).
 5. Once the Segment library is integrated with your app, toggle Flurry on in your Segment UI.
 

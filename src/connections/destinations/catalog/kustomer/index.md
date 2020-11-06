@@ -4,16 +4,16 @@ rewrite: true
 ---
 [Kustomer](https://www.kustomer.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is the next-generation customer management platform for the people-first enterprise. It enables support teams to get a holistic view of the customers they are engaging with, resulting in meaningful interactions between businesses and customers.
 
-This destination is maintained by Kustomer. For any issues with the destination, [contact their team](mailto:support@kustomer.com).
+This destination is maintained by Kustomer. For any issues with the destination, [contact the Kustomer Support team](mailto:support@kustomer.com).
 
-_**NOTE:** The Kustomer data source is currently in beta, which means that they are still actively developing the integration. This doc was last updated on Feb 28, 2019. If you are interested in joining their beta program or have any feedback to help improve the Kustomer Destination and its documentation, [let their team know](mailto:support@kustomer.com)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Kustomer" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Kustomer" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. If this is the first time setting up Kustomer as a destination, you'll need to install the Segment App in your Kustomer Account.
 4. In your Kustomer account, go to **Settings** > **Apps Directory** and install the **Segment** App.
 5. After installing the Segment App, you need to go to the **Segment App Settings Page** listed directly underneath the Apps Directory page. From this page you will need to click the large green "Enable with Segment" button.

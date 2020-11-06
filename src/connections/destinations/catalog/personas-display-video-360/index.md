@@ -1,185 +1,316 @@
 ---
-title: Google DV360 Personas Destination
-hide-boilerplate: true
-beta: true
+title: Personas Google Display & Video 360 Destination
 strat: google
+hide-settings: true
 ---
 
-[Google Display & Video 360 (DV360)](https://marketingplatform.google.com/about/display-video-360/), previously called ‘DoubleClick’ and part of the Google Marketing Platform, is an end-to-end campaign management tool for small businesses and enterprises. It can help with anything from media planning and creative development to measurement and optimization. When paired with [Segment’s Personas](https://segment.com/product/personas/), you now have the ability to sync [audience lists](https://segment.com/docs/personas/audiences/) straight to DV360’s platform and perform in-depth analysis on your customer’s browsing and purchasing activities across various client-side platforms.
-
-You must have Personas in your Segment plan to use this destination. [Contact](https://segment.com/contact/demo) our sales team to try this out.
+Google's [Display & Video (DV360)](https://marketingplatform.google.com/about/display-video-360/) service is an end-to-end campaign management tool that enables enterprise customers to plan, measure, and run display and video advertisements. 
 
 > info ""
-> **Note**: DV360 is currently in beta. This means that there may still be some bugs for us to iron out, and we’re excited to hear your thoughts. If you are interested in joining or have any feedback to help us improve the DV360 Destination, and its documentation, [let us know](https://segment.com/help/contact)!
+> **Note**: You can connect to a Google Ad Manager account. For more information, see [4. Create an audience and finish DV360 configuration](#4-create-an-audience-and-finish-dv360-configuration) below.
 
-## How It Works
-
-When you create an audience in Personas and connect it to DV360, Segment creates a corresponding user list in DV360 with the same name as the audience in Personas. It can take 24 to 48 hours for Google to process the audience list. Once processed, Segment starts syncing either [google user_ids](https://developers.google.com/authorized-buyers/rtb/cookie-guide) or mobile identifiers (`IDFA` on iOS, and Google `advertisingId` on Android). Segment sends the entire audience on each sync to DV360. As users enter and exit the audience, they are added to, or removed from the csv Segment sends to Google’s API.
-
-### Using Google User ID
-
-This integration requires manual set up, both on your end (requesting access from Google) and on the Segment backend. When a customer visits your website, Segment triggers the DV360 cookie id client-side using a cookie-sync, and stores the ID on the Personas user profile. You should see an identifier type `google_gid` on a user’s identities. Then, when you build an audience, Personas uses that cookie ID as the main identifier when it pushes lists of ids to DV360 list endpoints.
-
-> success ""
-> **Tip**! The client cookie may use the name “Doubleclick”, a previous version of the DV360 product name.
-
-## Quick Info
-
-- **Personas Destination type**: List
-- **Must create audience_name field before Personas can update those values?**: No, Personas creates the audience for you.
-- **Audience appears as**: An audience list with the name of your Personas Audience on the DV360 “All Audiences” screen.
-- **Destination rate limit**: None.
-- **Lookback window allowed**: Unlimited
-- **Identifiers required** : One of `ios.idfa`, `andriod.idfa`, or `google_gid`
-- **Identifiers accepted** : `ios.idfa`, `andriod.idfa`, and `google_gid`
-- **Client or Server-Side Connection**: Server-side
-- **Aliasing supported:** No
-
-
-## Use Cases
-
-DV360 is a new type of integration that uses a client-side component (cookie syncing) and a list-destination component (sending cookies to a list) to expand on your use cases. It is especially useful for re-marketing.
-
-### Suppression Audiences
-
-Create an audience of users that have signed up, purchased a product, or otherwise performed some conversion event. Getting those users into Google in a timely manner (hourly syncs) ensures that marketers aren’t spending extra ad money to target users that have already completed a conversion event.
-
-### Re-targeting Audiences
-
-Another use case is to target everyone who completes an initial action, but doesn’t follow through on a purchase or conversion event. Marketers can create audiences to re-target these individuals and remind them to complete that transaction.
-
-> info ""
-> Re-targeting can also mean targeting anonymous visitors (for example, those with no known identifier like email or mobile IDFA). DV360 supports re-targeting using a a cookie-syncing mechanism.
-
-### Connect between Google Products
-
-One benefit of using Google is the [exchange of information between the different Google platforms](https://support.google.com/displayvideo/answer/6339564?hl=en). Once your audience list exists in Google’s Marketing Platform it’s easy to connect to other Google products, and this allows you to reach the specific audiences you care about with greater precision.
-
-## Set Up
-
-### 1. Request that Google grant Segment access
-
-You can grant two levels of permissions:
-- access for Segment to push lists to DV360 as a partner as a whole, or
-- access for Segment to push lists to specific advertiser or partner IDs in DV360.
-
-Once you decide what level of permissions work best for you, contact your Google account manager and request that Segment be given access your DV360 account. You can use this template:
-
-```
-Hi there,
-
-I'd like to request that you allow Segment to push user lists into DV360 for our ad account <insert your account id>.
-Segment's Google account ID is 262932431.
-
-Thanks.
-```
-
-Google response with an email agreement you must sign to confirm that you want to grant Segment permission to access your account.
-
-Once you accept, Google changes your back-end settings to give Segment the access level you requested.
-
-### 2. Set up client integration
-
-> info ""
-> **Note**: This step is only needed if you want to use Google User IDs to build audiences based on website traffic. If you only plan to use _mobile identifiers_, skip to step 3.
-
-To create audiences based on website browsing events, set up the Segment-to-Google cookie-syncing feature. This step allows Segment to retrieve the Google user id using our client-side Analytics.js library.
-
-1. Create a “[Javascript Website](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/)” source in Segment.
-2. Follow [the Analytics.js Quickstart guide](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
-3. In your workspace, click **Catalog**, and search for **DoubleClick Floodlight**.
-4. Select the source you created in the first step, so that it sends data to the Doubleclick Floodlight destination.
-5. Enter or enable the following destination settings for the Doubleclick destination:
-    - Set **Get DoubleclickId** to `On`
-    - For the **Google Network Id** enter `segment`.
-    - Enter the write key from the source you created in step 1 as your **Segment Write Key**.
-      You can get this from source's Settings page, and usually looks something like `k8mJ77kAbCNMOgmj1OFfVphvqXd8mLCx.
-5. Turn the DoubleClick Floodlight destination on.
-
-> success ""
-> **Tip**: The field "DoubleClick Advertiser ID” is required, but you can enter any value.
-
-### 3. Set up DV360 Destination in Personas
-
-The DV360 Personas destination is in beta, and so you must access it using a special link.
-
-Copy the example link below, replace all three slugs with your workspace information: replace the instance of `<workspace_slug>` with your Segment workspace slug. You can find your `<source_slug>` and `<personas_space_slug>` right after `spaces/` in the URL when viewing your personas space.
-
-```text
-https://app.segment.com/<workspace_slug>/destinations/catalog/personas-display-video-360?sourceSlug=personas_<source_slug>&spaceSlug=<personas_space_slug>`
-```
-Paste the resulting url into your browser’s URL bar and press Enter.
-
-On the screen that appears, click **Configure Display & Video 360**.
-
-![](images/dv360-0x-beta-find-pdest.png)
-
-<!-- 4/17/2020, still in beta these instructions aren't possible yet
-1. Go to the Personas space you want to connect to DV360, and go to the **Destinations** tab.
-2. Click **+ Add Destination**, and then search for “display” in the catalog.
-3. Click **Configure Display & Video 360**.
-
-![](images/dv360-01-find-pdest.png)
-
-![](images/dv360-02-enable-pdest.png)-->
-
-
-### 4. Contact the Segment Support Engineering team to request access
-
-The last configuration item you need is a signature generated by the Segment Support Engineering team. Segment uses this signature as a protective measure so that only _you_ can send audiences to your account.
-
-Submit a ticket using [our contact form](https://segment.com/help/contact) to request this signature.
-
-In the ticket, provide a link to the personas space that will use DV360, the connection entity (or permission type) you want to push lists to (`INVITE_ADVERTISER` or `INVITE_PARTNER`), and the entity (or account) ID.
-
-If you plan to push Google User IDs, also include a link to the source you set up in step 2.
-
-### 5. Create your first DV360 audience
-
-Once you receive the signature, you can create your first audience!
+Segment's integration with DV360 enables Segment customers to sync audiences created in Personas with DV360 to enable centralized audience management and improved retargeting.
 
 > warning ""
-> **Note**: You must set up DV360 as a destination in your Personas space _before_ you create the audience, or else it won’t appear as an option in the list.
+> **Important**: You must meet certain implementation criteria to use the DV360 integration:
+> - For web traffic, you must have a client-side `analytics.js` source.
+> - For mobile app traffic, you must have a mobile source.
 
-1. Go to your Personas space, click the **Audiences** tab, then click **New Audience**.
-2. Build your audience!
-The audience in the example image below includes all users who complete “DV360 Test Event 1” once in the last seven days:
+> info ""
+> **Note**: Since the release of `analytics-ios` version 4, Segment no longer collects IDFA automatically. To collect and pass IDFA to your DV360 integration, follow the steps for Ad Tracking and IDFA in the [Analytics-iOS mobile source](/docs/connections/sources/catalog/libraries/mobile/ios#ad-tracking-and-idfa) documentation.
 
-   ![Create & preview an audience](images/dv360-03-create-audience.png)
+## Quick info
+ {% comment %}
+<table>
+<tr>
+<td>
+**Requirements**
+</td>
+<td markdown=1>
+ - Business tier Segment customers with Personas
+ - One of the following sources, depending on type:
+   - For web: analytics.js
+   - For mobile app: a mobile source that passes an advertising identifier
+ - A personas space. Non-Personas spaces are not compatible with DV360.
+ - A Google Marketing Platform account
+</td>
+</tr>
+<tr>
+<td>
+**Audience appears as**
+</td>
+<td>
+An audience list with the name of your Personas Audience on the DV360 **All Audiences** screen
+</td>
+</tr>
+<tr>
+<td>
+**Destination rate limit**
+</td>
+<td>
+None
+</td>
+</tr>
+<tr>
+<td>
+**Lookback window allowed**
+</td>
+<td>
+30 days
+</td>
+</tr>
+<tr>
+<td>
+**Historical backfill supported**
+</td>
+<td>
+No
+</td>
+</tr>
+<tr>
+<td>
+**Identifiers required**
+</td>
+<td markdown=1>
+One of:
+- `idfa` (iOS)
+- `advertisingId` (Android)
+- `anonymousId` (Web)
+</td>
+</tr>
+<tr>
+<td>
+**Connection type**
+</td>
+<td markdown=1>
+- Client-side (DoubleClick Floodlight)
+- Server-side (DV360)
+</td>
+</tr>
+<tr>
+<td>
+**Aliasing supported**
+</td>
+<td>
+No
+</td>
+</tr>
+</table>
+{% endcomment %}
 
-3. When you save the audience, pick **Personas Display & Video 360** as the destination to connect to the audience.
+- **Requirements**:
+  - Business tier Segment customers with Personas
+  - One of the following sources, depending on type:
+    - For web: analytics.js
+    - For mobile app: a mobile source that passes an advertising identifier
+  - A Personas space. Non-personas spaces are not compatible with DV360.
+  - A Google Marketing Platform account
+- **Audience appears as**: An audience list with the name of your Personas Audience on the **DV360 All Audiences** screen
+- **Destination rate limit**: None
+- **Lookback window allowed**: 30 days
+- **Historical backfill supported**: No
+- **Identifiers required (one of the following)**:
+  - `idfa` (iOS)
+  - `advertisingId` (Android)
+  - `anonymousId` (Web)
+- **Connection type**: 
+  - Client-side (DoubleClick Floodlight)
+  - Server-side (DV360)
+- **Aliasing supported**: No
 
-   ![Select Display & Video 360](images/dv360-04-audience-to-pdest.png)
+## Components
 
-4. Finally, the audience requires three settings:
-  - List Provider Type (connected entity/permission type)
-  - List Provider ID
-  - Signature that you received from Segment
+The Segment DV360 integration uses two components, the [DoubleClick Floodlight tag](/docs/connections/destinations/catalog/doubleclick-floodlight/) and Personas Display & Video 360 integration
 
-   ![Specify the settings for this audience](images/dv360-05-pdest-settings.png)
+### DoubleClick Floodlight tag
 
-Google may take 24 to 48 hours to process your audience, and for audience lists to appear in their platform. Because of this, the first few audience syncs after you create the audience might fail.
+Segment users must add this tag to their web properties. The tag performs several functions, but when enabled for the DV360 integration, it allows Segment to send information about users directly to Google client-side.
 
-## Troubleshooting
+> info ""
+> **Note**: This component is required only if you want to sync audiences based on web traffic.
 
-### Not seeing an audience in Google
+### DV360 destination
 
-Make sure you successfully authorized Segment to sync audiences to Google, and that you authorized the Google account you are trying to use, along with the Personas space you are trying to use.
+The DV360 destination syncs audience data between Segment and Google Display & Video 360. For more information about enabling the DV360 destination, see [Set up](#set-up) below.
 
-Google has two levels of permissions that you can authorize:
+## Set up
 
-- authorize Segment to push list to DV360 as a partner as a whole
-- authorize Segment to push lists to a specific advertiser/partner ID.
+Configuring this integration requires action by both you in your Segment workspace, and Google in your Google Marketing Platform account. As a result, the time required to finish configuration and set up can vary.
 
-Contact your Google representative to determine which permissions you enabled, and if they match the settings you configured in Segment.
+### 1. Enable Segment to create user lists in DV360
+
+Before you begin the integration steps, Google must provide permission for Segment to push user lists to your organization's DV360 account on your behalf. Once requested, Google provides an email form to sign and finalize the permission grant.
+
+You can use this template to draft an email to your account representative.
+
+```
+ Hi there,
+    
+    I'd like to request access for Segment (account id 262932431) to push user lists into DV360 for our ad account [insert your account id]. 
+    
+    Could you please provide guidance on which permission level should be granted to Segment for our case? (`invite_partner` or `invite_advertiser`).
+    
+    Thanks.
+```
+
+Your Google account representative will suggest one of the following permission levels:
+
+| Permission          | Business type                                                                  | Audience list availability                    |
+| ------------------- | ------------------------------------------------------------------------------ | --------------------------------------------- |
+| `invite_partner`    | An agency, trading desk, or large individual advertiser (with many sub-brands) | Any advertiser within your organization.      |
+| `invite_advertiser` | A single business that runs its own advertising campaigns                      | The single advertiser linked to your account. |
+
+Your selection here depends on the type of business you plan to support wit hthe DV360 destination.
+
+> info ""
+> **Note**: The permission level and numeric connectionID are required in later steps. Be sure to have these available before you continue.
+
+### 2. Configure client integration for web traffic
+
+> info ""
+> **Note**: This step is necessary only if you want ot use Google User IDs to build audiences based on website traffic. If you plan to use mobile identifiers only, continue to [3. Enable and configure the DV360 destination](#3-enable-and-configure-the-dv360-destination).
+
+Segment requires the [DoubleClick Floodlight](/docs/connections/destinations/catalog/doubleclick-floodlight/) tag on your website to enable the creation of audiences based on website traffic. This allows Segment to send Google the appropriate identifier (typically `anonymousId`) for users that are in an audience. Google stores these identifiers on its servers and matches them against `google_id`.
+
+To configure DoubleClick Floodlight:
 
 > warning ""
-> **Note**: Segment generates signatures based on the Personas space, list provider type, and list provider ID. Signatures are **not** transferable between Personas spaces, and must be regenerated if you change either your list provider type or ID.
+> **Prerequisite**: Createa a [Javascript Website](/docs/connections/sources/catalog/libraries/website/javascript/) source in your Segment workspace if one does not exist. Ensure that this source is configured to track visitors to your website. For more information about configuring Javascript sources, see the [Analytics.js Quickstart guide](/docs/connections/sources/catalog/libraries/website/javascript/quickstart/).
 
-### Audience size larger than expected
+1. In your workspace, visit the **Catalog** and search for the **DoubleClick Floodlight** destination.
+2. Connect your Javascript Website source to the DoubleClick Floodlight destination, and configure the following settings:
+   1. **Get DoubleClickID**: `On`
+   2. **Google Network Id**: `segment`
+   3. Your [Segment Write Key](/docs/connections/find-writekey/). You can retrieve your write key from the Settings tab on the Source.
+   4. **DoubleClick Advertiser ID**
+      - If you use DoubleClick Floodlight for DV360 only, enter `DV360`.
+      - If you use DoubleClick Floodlight for other use cases in addition to DV360, enter the Advertiser ID from your Doubleclick Floodlight account.
+3.  Switch the toggle to enable the destination.
 
-Personas syncs every IDFA for every user in the audience separately. If a user has multiple IDFAs, they might be associated with more than one IDFA in the Google systems. This might make Google’s user list larger than your audience size in Segment.
+### 3. Enable and configure the DV360 destination
 
-### Audience size smaller than expected
+Connect the DV360 destination to the Personas source from which you'll send data to DV360.
 
-If you see fewer users in Google than you see in your audience in Segment, it may be because of Google denying some IDFAs or Google user ids. DV360 denies any IDFAs that Google considers invalid or inactive.
+To enable the DV360 destination:
+
+1. Searh for and select **Personas Display & Video 360** in the destinations catalog.
+2. Select the Personas space you want to connect to the destination.
+3. Switch the toggle to enable the destination.
+
+> info ""
+> **Note**: The destination does not have configurable settings until you create an audience, described [here](#4-create-an-audience-and-finish-dv360-configuration)
+
+### 4. Create an audience and finish DV360 configuration
+
+Create an [Audience](/docs/personas/audiences) in a new or existing Personas space. After you create the audience, you can select the Personas Display & Video 360 destination.
+
+![Select the destination](images/dv360-1-select-destination.png)
+
+> info ""
+> **Note**: These settings are tied to a single audience. Each additional audience you send to DV360 requires you to input these values.
+
+When you select the destination, you're prompted to complete the destination settings. The settings you enter must match the information you shared when you [requested access](#1-enable-segment-to-create-user-lists-in-dv360) for Segment to post to your DV360 account:
+
+| Setting                        | Description                                                                                                                                                               |               
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| User Role Granted              | The permission you requested from Google. Either `Advertiser`, `Partner`, or `Publisher`. **Note:** Select `Publisher` only if you plan to connect to Google Ad Manager.  |
+| Account ID                     | The ID of your DV360 or Ad Manager account.                                                                                                                               |
+
+On Step 3: Review & Create, **deselect** the Historical Backfill option to ensure that audience sizes between Personas and DV360 align more closely.
+
+> info ""
+> **Note**: When you create a new audience based on a web source,  and select the Historical Backfill option, Segment computes the audience based on data already received, and sends that computed audience data to the destination, regardless of when a user actually joined the audience.
+> 
+> In the case of the DV360 destination, due to DV360’s reliance on browser cookies from Doubleclick Floodlight, only users who visited the site *after* Doubleclick Floodlight was added to the site are eligible to sync to the DV360 destination.
+> 
+> As a result, if you select Historical Backfill for the DV360 Personas audience, the audience you first send to DV360 might be significantly smaller than the size displayed in Personas. 
+
+After you complete the set up process, allow up to 24 hours for Google to create the new audience list. Once the list is created, Segment can begin to sync users to that list. Google may require additional time to process the initial audience additions. The entire first sync to DV360 may require 24-48 hours to complete. As a result, the first few audience syncs after you create the audience may fail.
+
+Extra information from the API (settings, connection modes, etc.) are automatically pulled in here.
+
+## FAQ
+### What is Segment’s relationship with Google DV360 and is the data that Segment sends considered to be First or Third party?
+
+Google considers Segment to be a DMP or Data Onboarder. Audience information pushed from Segment to your DV360 account is considered to be **First-Party** data.
+
+
+### I am a publisher, not an advertiser or agency. Is there a Google Ad Manager integration?
+
+Segment’s Google DV360 Destination is compatible with Google Ad Manager. To send audience data to Ad Manager, select `Publisher` as the **User Role Granted** as described [above](https://paper.dropbox.com/doc/Google-DV360-Personas-Destination--A9Fw9vhscekAnHIWRPtmXK~MAg-uvbuDlyY03HJYZAFvS6UZ#:uid=445237064167468263180208&h2=Create-an-audience-and-finish-).
+
+
+### When will my data appear in DV360?
+
+When you complete the connection between Segment and DV360, it can take from 24 to 48 hours for Google to create the user list. This must complete before Segment can begin to sync users into that list.
+
+
+### What identifiers are needed to enable this integration?
+
+Google’s [documentation](https://developers.google.com/authorized-buyers/rtb/downloads/cookie-bulk-upload-proto) provides information about the accepted identifiers for this integration.
+
+- To use DV360 with web traffic, you must collect `anon``ymous``_id` through the client-side `analytics.js` Source. 
+- To use DV360 with mobile traffic, you must collect  `IDFA`s through Segment’s mobile sources.
+
+
+### Why is my audience in DV360 smaller than the audience that I see in Personas? What affects match rates?
+
+Match rates may differ between Personas and DV360 for the following reasons:
+
+#### Go-forward data
+
+When you first preview and create an audience in Personas, the audience may contain many audience members. This is more likely if you select the **Historical Backfill** option. This does not reflect the audience that syncs to DV360 for the following reasons:
+
+
+1. During an audience sync, Segment sends a list of `anon_id` values to Google. Google attempts to match those values in their match table, to find an associated `google_user_id`.
+2. To complete this lookup, Google must have both the `anon_id` and have it store along side a matched `google_user_id`. This occurs when a user visits your website with both the Doubleclick Floodlight tag installed, and the DV360 integration completed.
+
+As a result, you must have Doubleclick Floodlight and the DV360 integration in place before Google can match users and make them available for retargeting.
+
+To help reduce the difference between Personas and DV360 audience sizes, Segment recommends that you deselect the `Historical Backfill` option when you create the audience that syncs to DV360. 
+
+#### Impact to third-party cookies: Browser Policies
+
+The DV360 integration for web traffic relies on Doubleclick Floodlight, which itself relies on a `google_user_id` cookie. While this cookie is “yours”, browsers treat this as a third-party cookie because it is served from Google’s servers, and not the same domain as your website. As browsers become more privacy-oriented, they block third-party cookies by default.
+
+Users who visit your website in Firefox and Safari, and who do not specifically allow third-party cookies, are not identifiable by Doubleclick Floodlight (`google_user_id`). This prevents Google from identifying a match between an `anon_id` sent from Segment, and results in lower match rates.
+
+#### Impact to third-party cookies: Adblockers
+
+All browser-based adblocking software intentionally blocks most third-party cookies, including the Doubleclick Floodlight cookie necessary for identification. As a result, Google cannot match users who employ adblocking software in their browsers.
+
+#### IDFA impact: Recent Apple announcements
+
+Apple has announced an updated privacy policy that, while not rolled out yet, impacts the way businesses collect IDFA data. When enacted, this privacy policy will significantly reduce the percentage of users for which IDFA data is collected. This change will result in lower match rates, as both Segment and Google will see a decline in the number of IDFA values sent by Segment, and matched by Google.
+
+#### Invalid Google IDs
+
+Sometimes, Google denies IDFA or `google_user_id` values when they consider them to be invalid or inactive.
+
+
+### Why is the audience size larger in DV360 than in Personas?
+
+Personas syncs every IDFA or `anonymous_id` value for each user in an audience. When DV360 receives this data, it does not de-duplicate in the event that multiple identifiers map to the same unique user. This may result in a larger audience list in Google compared to Personas.
+
+
+### Why don’t I see matches in DV360?
+
+The most common cause of matches not appearing in DV360 is an error with Doubleclick Floodlight. From the website where tracking is enabled, open the Network inspector, and confirm that outgoing requests to `idsync.segment.com` appear.
+
+
+### How does third-party cookie eradication impact the DV360 Destination?
+
+Google Chrome has committed to replacing third-party cookies with an alternative, but has not announced a timeframe for that alternative. Segment will not update this integration until these updates from Google are announced.
+
+
+### Can I use Personas audiences to target YouTube ads with this integration?
+
+No. YouTube (through DV360) does not support the type of lists that Segment provides.
+
+### Why do I see destination settings after I add my audience, but not when I first enable the destination?
+
+The DV360 Destination works on a per-audience basis. This enables you to:
+
+- Send data from different audiences to different DV360 accounts.
+- Send data to Google Ad Manager with the same destination.
+

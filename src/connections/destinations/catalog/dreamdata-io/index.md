@@ -4,18 +4,17 @@ rewrite: true
 ---
 [Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) uses your Segment data to deliver multitouch, per account attribution. This enables B2B companies to understand the impact on revenue of every touch in their customer journey.
 
-This destination is maintained by [Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners). For any issues with the destination, [contact their team](mailto:friends@dreamdata.io).
+This destination is maintained by Dreamdata IO. For any issues with the destination, [contact the Dreamdata Support team](mailto:friends@dreamdata.io).
 
-_**NOTE:** [Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is currently in beta, which means that there may still be some bugs for us to iron out. This doc was last updated on February 21, 2019, and we would love to hear your feedback. If you are interested in joining our beta program or have any feedback to help us improve the [Dreamdata IO](https://dreamdata.io/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) Destination and its documentation, [let us know](mailto:friends@dreamdata.io)!_
-
+{% include content/beta-note.md %}
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Dreamdata IO" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [Dreamdata IO settings](https://app.dreamdata.io/settings).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Dreamdata IO" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [Dreamdata IO settings](https://app.dreamdata.io/settings).
 4. You will be able to verify that data is flowing into Dreamdata IO from your [Dreamdata IO settings](https://app.dreamdata.io/settings).
 
 

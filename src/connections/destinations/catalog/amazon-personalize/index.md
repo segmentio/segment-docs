@@ -3,9 +3,7 @@ rewrite: true
 title: Amazon Personalize Destination
 ---
 
-Segment makes it easy to send your data to Amazon Personalize (and lots of other destinations). Once you track your data using our open-source [libraries](/docs/connections/sources/catalog/) we'll translate and route your data to Amazon Personalize in the format they understand. [Learn more about how to use Amazon Personalize with Segment.](/docs/connections/destinations/catalog/amazon-personalize)
-
-[Amazon Personalize](https://aws.amazon.com/personalize/) is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications. AWS Personalize enables…
+Segment makes it easy to send your data to Amazon Personalize (and lots of other destinations). Once you collect your data using Segment's [open source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Amazon Personalize in the format it can use. [Amazon Personalize](https://aws.amazon.com/personalize/) is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications. AWS Personalize enables…
 
   - Media companies to provide recommended content for viewers based on their viewing history
   - Retailers can provide personalized product recommendations based on shopping behavior

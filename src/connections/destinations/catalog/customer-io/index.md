@@ -2,6 +2,7 @@
 title: Customer.io Destination
 rewrite: true
 redirect_from: "/connections/destinations/catalog/customer.io/"
+hide-personas-partial: true
 ---
 
 [Customer.io](https://customer.io/) lets you send automated email, push, SMS, letters, and webhooks based on your customer's activities in your app or product. It makes conversion tracking, optimization and remarketing easier than ever. The `analytics.js` Customer.io Destination is open-source. You can browse the code [on GitHub](https://github.com/segment-integrations/analytics.js-integration-customerio).
@@ -16,9 +17,9 @@ This document was last updated on January 26, 2018. If you notice any gaps, out-
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Customer.io" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your Customer.io `API Key` and `Site ID`, which you can retrieve from Settings > [API Credentials](https://fly.customer.io/account/api_credentials) in Customer.io, into the Segment UI Settings.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Customer.io" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Customer.io `API Key` and `Site ID`, which you can retrieve from Settings > [API Credentials](https://fly.customer.io/account/api_credentials) in Customer.io, into the Segment UI Settings.
 4. Alternatively, you can automatically sync your Customer.io connection settings to your desired Segment source by following the flow within the Customer.io set up Guide.
 
 ![customerio set up guide screenshot](images/customerio_setup_guide.png)
@@ -223,3 +224,15 @@ Remember that before we can send events to Customer.io from client-side Javascri
 
 ### Page events not being associated with user
 Page events will only be associated to a user if the user has been previously identified in Customer.io. If you identify a user after making Page calls, the previous page events will not be associated to the user in Customer.io.
+
+
+## Personas
+
+You can send computed traits and audiences generated using [Segment Personas](/docs/personas) to this destination as a **user property**. To learn more about Personas, contact us for a [demo](https://segment.com/contact/demo).
+
+For user-property destinations, an [identify](/docs/connections/spec/identify/) call is sent to the destination for each user being added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Personas sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it's been more than 30 days since their last order), Personas sets that value to `false`. 
+
+> note ""
+> Customer.io requires you to pass a `userId` value when you sync Audiences or Computed Traits.
+
+When you first create an audience, Personas sends an Identify call for every user in that audience. Later audience syncs only send updates for users whose membership has changed since the last sync.

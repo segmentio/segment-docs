@@ -9,7 +9,7 @@ source-type: object
 
 This will allow you to write SQL to analyze your analyze your email marketing campaigns ROI, or join your email data to other data sources like web and mobile events, Salesforce, and Zendesk to tie nurture emails to re-activation rates in your app.
 
-_**NOTE:** Marketo is currently in beta and this doc was last updated on April 30, 2018. This means that there may still be some bugs for us to iron out and we're excited to hear your thoughts. If you have any feedback to help us improve the Marketo Source and its documentation, and [let us know](https://segment.com/help/contact)!_
+{% include content/beta-note.md %}
 
 ## Getting Started
 

@@ -2,9 +2,11 @@
   <div class="field__icon field__icon--left flex flex--middle flex--center">
     {% include icons/symbols/search.svg %}
   </div>
-
+  {% if jekyll.environment == "testing" %}
+  <input class="field__input input DocsNav-search-input st-search-input" disabled type="text" placeholder="Search disabled for previews"/>
+  {% else %}
   <input class="field__input input DocsNav-search-input st-search-input" type="text" placeholder="{{ include.placeholder }}"/>
-
+  {% endif %}
   {% unless include.mobile %}
     <div class="field__icon field__icon--right flex flex--middle flex--center">
       <button class="field__button" data-ref="search-navbar[trigger]">

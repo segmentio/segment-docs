@@ -12,12 +12,20 @@ This document was last updated on 18th January, 2018. If you notice any gaps, ou
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Crazy Egg" within the Destinations Catalog and confirm the Source you'd like to connect to.
+1. From the Segment web app, click **Catalog**.
+2. Search for "Crazy Egg" in the Catalog, select it, and choose which of your sources to connect the destination to.
 3. Navigate to the [set up page within your Crazy Egg UI](https://app.crazyegg.com/v2/install/manually) and copy the Account Number which should be a series of 8-9 numbers in bold.
-4. Enter this within the Segment UI under "Account Number" and Crazy Egg will automatically start recording heatmap data once the CDN updates in 45 minutes.
-5. Complete the set-up flow by entering the URL of the page you want heatmap tracking implemented for.
-6. Navigate to the [Crazy Egg Dashboard](https://app.crazyegg.com/v2/dashboard) to track the data. It's worth noting that it may take up to 24-48 hours for initial data to show up.
+4. Enter this in the Segment app's destination settings under "Account Number".
+5. Enter the URL of the page you want to use heatmap tracking on to complete the set up process.
+
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Crazy Egg snippet and recording heatmap data.
+
+You can navigate to the [Crazy Egg Dashboard](https://app.crazyegg.com/v2/dashboard) to track the data.
+
+> note ""
+> **Note**: It may take up to 24-48 hours for initial data to show up.
+
+
 
 ## Page
 If you're not familiar with the Segment Specs, take a look to understand what the [Page method](https://segment.com/docs/connections/spec/page/) does. An example call would look like:

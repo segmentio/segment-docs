@@ -45,7 +45,7 @@ Data Lakes uses an IAM role to grant Segment secure access to your AWS account. 
 
 ## Data Lakes schema
 
-Segment Data Lakes applies a standard schema to make the raw data easier and faster to query. Partitions are applied to the S3 data for grnaular access to subsets of the data, schema components such as data types are inferred, and a map of the underlying data structure is stored in a Glue Database.
+Segment Data Lakes applies a standard schema to make the raw data easier and faster to query. Partitions are applied to the S3 data for granular access to subsets of the data, schema components such as data types are inferred, and a map of the underlying data structure is stored in a Glue Database.
 <!--
 TODO:
 add schema overview (tables/columns generated)
