@@ -10,33 +10,33 @@ Subscribe to the [release feed](https://github.com/segmentio/analytics-react-nat
 
 
 <!-- TODO: normalize headings about Unique IDs and queueing-->
-### How Do You Handle Unique Identifiers?
+### Analytics-React and Unique Identifiers
 
-A key component of any analytics platform is consistently and accurately identifying users. Some kind of ID must be assigned and persisted on the device so that user actions can be effectively studied. This is especially important for funnel conversion analysis and retention analysis. Naturally the Analytics SDK needs a unique ID for each user.
+One of the most important parts of any analytics platform is the ability to consistently and accurately identify users. To do this, the platform must assign and persist some form of identification on the device, so you can analyze user actions effectively. This is especially important for funnel conversion analysis and retention analysis.
 
 #### iOS
 
-To protect end-users' privacy, Apple places restrictions on how these IDs can be generated and used. Here's an explanation of these policies from Apple, and how we generate IDs in compliance.
+Apple restricts how you can generate and use unique IDs to help protect end-users' privacy. Segment generates IDs while remaining in compliance with Apple's policies.
 
-Before iOS 5 developers had access to uniqueIdentifier which was a hardware-specific serial number that was consistent across different apps, vendors and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a). In iOS 6 Apple introduced the identifierForVendor which protects end-users from cross-app identification. In iOS 7 Apple [restricted access to the device's MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/), which was being used by many developers as a workaround to get a device-specific serial number similar to like uniqueIdentifier.
+Before iOS 5 developers had access to `uniqueIdentifier`, which was a hardware-specific serial number that was consistent across different apps, vendors and installs. Starting with iOS 5, however, [Apple deprecated access to this identifier](https://developer.apple.com/news/?id=3212013a). In iOS 6 Apple introduced the `identifierForVendor` which protects end-users from cross-app identification. In iOS 7 Apple [restricted access to the device’s MAC address](http://techcrunch.com/2013/06/14/ios-7-eliminates-mac-address-as-tracking-option-signaling-final-push-towards-apples-own-ad-identifier-technology/), which many developers used as a workaround to get a similar device-specific serial number to replace  `uniqueIdentifier`.
 
-Segment's iOS library supports iOS 7+ by generating a UUID and storing it on disk. This is in line with the privacy policies required by Apple, maintains compatibility, and leaves open the option for multiple users on one device since the UUID can be regenerated.
+Segment’s iOS library supports iOS 7+ by generating a UUID and storing it on disk. This complies with Apple’s required privacy policies, maintains compatibility, and also enables correct tracking in situations where multiple people use the same device, since the UUID can be regenerated.
 
 #### Android
 
-Our SDK also collects the [Advertising ID](https://developer.android.com/google/play-services/id.html) provided by Play Services. Make sure the Play Services Ads library is included as a dependency for your application. This is the ID that should be used for advertising purposes. This value will be set to `context.device.advertisingId`.
+The Segment SDK<!-- TODO which? Android or RN?--> also collects the [Advertising ID](https://developer.android.com/google/play-services/id.html) provided by Play Services. Make sure you include the Play Services Ads library as a dependency for your application. <!-- TODO what?-->This is the ID that should be used for advertising purposes. This value is set to `context.device.advertisingId`.
 
-We also collect the [Android ID](http://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID) as `context.device.id`. Some destinations rely on this field being the Android ID, so take care if you choose to override the default value.
+Segment also collects the [Android ID](http://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID) as `context.device.id`. Some destinations rely on this field being the Android ID. Check the documentation for the destinations you use and consider if you really want to override the default value.
 
 ### How does the SDK queue API calls?
 
-Our library queues API calls and uploads them in batches so that we don't drain your user's battery life by making a network request for each event tracked.
+The Analytics-React library queues API calls and uploads them in batches. This limits the number of network calls made, and helps save battery on the user's device.
 
-As soon as you send as an event, we'll save it to disk, and if queue size reaches your specified maximum queue size (which is 20 by default), we flush the queue and upload all the events in a single batch. Since the data is persisted right away, there is no data loss even if the app is killed, or the operating system crashes.
+When you send an event, the library saves it to disk. When the queue size reaches the maximum size you specify (20 by default), the library flushes the queue and uploads the events in a single batch. Since the data is saved immediately, it isn't lost even if the app is killed or the operating system crashes.
 
-The queue behavior may differ for Device-mode destinations. For instance, Mixpanel's SDK queues events and then flushes them when the app goes to the background only.
+The queue behavior might differ for Device-mode destinations. For example, Mixpanel's SDK queues events and then flushes them only when the app goes to the background.
 
-This is why even if you see events in the debugger, the Device-mode destination may not show them on their dashboards yet, simply because their mobile SDK may still have them queued. The opposite may also happen, that we have some events queued so they haven't shown up in the debugger, but the Device-mode destination has already sent the events to their servers.
+This is why even if you see events in the debugger, the Device-mode destination may not show them on their dashboards yet because they might still be in their mobile SDK's queue. The opposite may also happen: the Device-mode destination SDK might send events to its servers before Segment sends its queue, so events could show up in the destination's dashboard before they appear in the Segment debugger.
 
 ## Getting Started
 
@@ -55,14 +55,14 @@ To add CocoaPods to your app, follow [these instructions](https://facebook.githu
 
 Segment recommends that you use NPM to install Analytics for React Native. This allows you to create a build with specific destinations, and makes it much easier to install and upgrade the library and any components.
 
-First, add the `@segment/analytics-react-native` dependency to your `dependencies` and link it using `react-native-cli`, like so:
+First, add the `@segment/analytics-react-native` dependency to your `dependencies` and link it using `react-native-cli`, using the example commands below.
 
 ```bash
 $ yarn add @segment/analytics-react-native
 $ yarn react-native link
 ```
 
-Then somewhere your application, set up the SDK as in the example below.
+Then in your application set up the SDK as in the example below.
 
 ```js
 await analytics.setup('YOUR_WRITE_KEY', {
@@ -73,7 +73,7 @@ await analytics.setup('YOUR_WRITE_KEY', {
 })
 ```
 
-Next, make sure you import the SDK in the files that you use want to it in:
+Next, make sure you import the SDK in any files that you use want to it in. You can use an `import` statement like the example below.
 
 ```js
 import analytics from '@segment/analytics-react-native'
@@ -81,9 +81,9 @@ import analytics from '@segment/analytics-react-native'
 
 ### Dynamic Framework for Manual Installation
 
-Segment **highly recommend** using Cocoapods.
+Segment **highly recommend** using Cocoapods. Segment does not support sending data to bundled, device-mode integrations unless you are using Cocoapods.
 
-However, if you cannot use Cocoapods, you can manually install our dynamic framework which allows you to send data to Segment, and have Segment send it on to enabled cloud-mode destinations. Segment does not support sending data to bundled, device-mode integrations unless you are using Cocoapods.
+If you absolutely cannot use Cocoapods, you can manually install our dynamic framework which allows you to send data to Segment, and have Segment send it on to enabled cloud-mode destinations.
 
 To install Analytics-React-native manually:
 
@@ -96,60 +96,60 @@ To install Analytics-React-native manually:
 
 ### Including SDKs for destinations using Device-mode
 
-To keep the library lightweight for mobile use, the Analytics-React-Native only installs the Segment destination. By default, the library sends all of your data first to the Segment servers, which forwards the data on to any tools you enabled from the Segment web app. This is known as using "Cloud-mode".
+To keep the Analytics-React library lightweight, it only installs the Segment destination by default. By default, the library sends all of your data first to the Segment servers, which forward the data on to any tools you enabled from the Segment web app. This is known as using "Cloud-mode".
 
-Some destinations offer (and some require) that you include a specific SDK in your build to access features of the destination that must run on the user's device. This is known as a "Device-mode" connection mode. For these destinations, you must take a few additional steps to [package the device-mode destinations](#packaging-destinations-using-device-mode). You can read [more about connection modes](/docs/connections/destinations/#connection-modes) in the Destination documentation.
+Some destinations offer (and some require) that you include a specific SDK in your build to access features of the destination that must run on the user's device. This is known as a "Device-mode" connection mode. For these destinations, you must take a few additional steps to [include the device-mode destinations SDKs in your project](#packaging-destinations-using-device-mode). You can read [more about connection modes](/docs/connections/destinations/#connection-modes) in the Destination documentation.
 
-Now that the SDK is installed and setup, you're ready to learn about the Segment Tracking methods.
+Now that the SDK is installed and set up, you're ready to learn about the Segment Tracking methods.
 
 ## Tracking methods
 
 ### Identify
 
-Segment Identify calls let you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
+The [Identify call](/docs/connections/spec/identify/) lets you tie a user to their actions, and record traits about them. It includes a unique User ID, and any optional traits you know about them.
 
 Segment recommends that you make an Identify call when the user first creates an account, and when they update their information.  If users can log out of your app, you should call `identify` when a user logs back in.
 
+Analytics-React works on its own background thread, so it never blocks the main thread for the UI or a calling thread.
+
 **Note:** Segment automatically assigns an `anonymousId` to users before you identify them. The `userId` is what connects anonymous activities across devices.
 
-Example `identify` call:
+The example Identify call below identifies a user by their unique User ID (the one you know them by in your database), and labels them with a `name` and `email` traits.
 
 ```js
 analytics.identify("a user's id", {
-  email: "a user's email address"
+  email: "jsmith@example.com"
+  name: "John Smith"
 })
 ```
-
-This call identifies a user by his unique User ID (the one you know him by in your database) and labels him with `name` and `email` traits.
 
 The `identify` call has the following arguments:
 
 <table class="api-table">
   <tr>
     <td>`userId` _string_</td>
-    <td>The database ID for this user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more in the [identify reference](/docs/connections/spec/identify).</td>
+    <td>The database ID for this user. If you don't know who the user is yet, you can omit the `userId` and just record `traits`. You can read more in the [identify reference](/docs/connections/spec/identify/).</td>
   </tr>
   <tr>
     <td>`traits` _JSONMap, optional_</td>
-    <td>A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [identify reference](/docs/connections/spec/identify).</td>
+    <td>A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [Identify documentation](/docs/connections/spec/identify/).</td>
   </tr>
 </table>
 
-Analytics works on its own background thread, so it will never block the main thread for the UI or the calling thread.
 
-Calling `identify` with a `userId` will write that ID to disk to be used in subsequent calls. That ID can be removed either by uninstalling the app or by calling [`reset`](#reset).
+When you call Identify with a `userId`, the library writes that ID to disk so it can be used in subsequent calls. That ID can be removed either when the user uninstalls the app, or when you call [`reset`](#reset).
 
 Find details on the **identify method payload** in our [Spec](/docs/connections/spec/identify/).
 
 ## Track
 
-Segment's Track call lets you record the actions your users perform.  Every action triggers what Segment calls an "event", which can also have associated properties.
+Then [Track call](/docs/connections/spec/track/) lets you record the actions your users perform. Every action triggers what Segment calls an "event", which can also have associated properties.
 
-To get started, our SDK can automatically track a few key common events with our [Native Mobile Spec](/docs/connections/spec/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. These events are required for attribution tracking in several commonly used Segment destinations. Simply enable this option during initialization.
+To get started, Segment's SDK <!-- TODO which? confirm Analytics-React?--> can automatically track a few common events using Segment's [Native Mobile Spec](/docs/connections/spec/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. These events are required for attribution tracking in several frequently-used Segment destinations. Simply enable this option during initialization. <!-- TODO enable which?!? How?-->
 
-You should track events that are indicators of success for your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. Segment recommends that you track just a few important events. You can always add more later!
+You should track events that are indicators of success for your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. Segment recommends that you track just a few important events when you first start out. You can always add more later!
 
-Example `track` call:
+The example Track call below tells us that a user just triggered the **Item Purchased** event, which recorded the `item` name of "Sword of Heracles" and a `revenue` of 2.95.
 
 ```js
 analytics.track('Item Purchased', {
@@ -157,10 +157,7 @@ analytics.track('Item Purchased', {
   revenue: 2.95
 })
 ```
-
-This example `track` call tells us that your user just triggered the **Item Purchased** event recording the `item` name of "Sword of Heracles" and `revenue` of 2.95.
-
-`track` event properties can be anything you want to record. In this case, item and revenue.
+Track event properties can be anything you want to record. In this case, item and revenue.
 
 The Track call has the following fields:
 
@@ -175,14 +172,16 @@ The Track call has the following fields:
   </tr>
 </table>
 
+You can read more about the Track call fields on [the Segment Spec page about the Track call](/docs/connections/spec/track/).
+
 
 ### Screen
 
-Segment's [Screen call](/docs/connections/spec/screen/) lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
+The [Screen call](/docs/connections/spec/screen/) lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed. This is very similar to the [Page call](/docs/connections/spec/page/) that you would use for non-mobile users.
 
-You'll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
+Record a screen event an event whenever the user opens or navigates to a new screen in your app. This could be a view, fragment, dialog or activity depending on your app.
 
-Example `screen` call:
+The example Screen call below shows a user viewed the Photo Feed, and that the page was private.
 
 ```js
 analytics.screen('Photo Feed', {
@@ -203,18 +202,18 @@ The `screen` call has the following fields:
   </tr>
 </table>
 
-Find details on the **`screen` payload** in our [Spec](/docs/connections/spec/screen/).
+You can read more about the Screen call fields on [the Segment Spec page about the Screen call](/docs/connections/spec/screen/).
 
 ### Group
 
-`group` lets you associate an [identified user](/docs/connections/sources/catalog/libraries/server/java/#identify) user with a group. A group could be a company, organization, account, project or team! It also lets you record custom traits about the group, like industry or number of employees.
+The [Group call](/docs/connections/spec/group/) lets you associate an [identified user](#identify) user with a group. A group could be a company, organization, account, project or team. The call also lets you record custom traits about the group, like industry or number of employees.
 
-This is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
+The Group call is useful for tools like [Intercom](/docs/connections/destinations/catalog/intercom/), [Preact](/docs/connections/destinations/catalog/preact/) and [Totango](/docs/connections/destinations/catalog/totango/), as it ties the user to a **group** of other users.
 
-Example `group` call:
+The example Group call below adds the current user to the `myGroup` group, and adds a name and description.
 
 ```js
-analytics.group('group123', {
+analytics.group('myGroup', {
   name: 'Initech',
   description: 'Accounting Software'
 })
@@ -233,11 +232,11 @@ The `group` call has the following fields:
   </tr>
 </table>
 
-Find more details about `group` including the **`group` payload** in our [Spec](/docs/connections/spec/group/).
+You can read more about the Group method, including the group call payload, in [the Segment Spec page on the Group call](/docs/connections/spec/group/).
 
 ### Alias
 
-`alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
+You can use Alias calls to link one identity with another. This is an advanced method, but it is required to manage user identities correctly in *some* destinations.
 
 In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias), if your user switches IDs, you can use 'alias' to rename the 'userId'.
 
@@ -256,14 +255,14 @@ The `alias` call has the following fields:
   </tr>
 </table>
 
-For more details about `alias`, including the **`alias` call payload**, check out our [Spec](/docs/connections/spec/alias/)
+To learn more about the Alias method, including the alias call payload, read through [the Segment Spec page on the Alias call](/docs/connections/spec/alias/)
 
 
 ## Utility methods
 
 ## Reset
 
-The `reset` method clears the SDK's internal stores for the current `user` and `group`. This is useful for apps where users can log in and out with different identities over time.
+The `reset` method clears the SDK's internal stores for the current `user` and `group`. If users can use different accounts in your app on the same device, you should call this when they log out.
 
 Clearing all information about the user is as simple as calling:
 
@@ -272,9 +271,9 @@ analytics.reset()
 ```
 
 
-### Flushing
+### Flush
 
-You can set the number of events should queue before flushing. Setting this to `1` will send events as they come in (i.e. not send batched events) and will use more battery. `20` by default.
+By default, the library collects 20 events in the queue before flushing (sending) them. You can set the number of events should queue before flushing. Set this to `1` to send events as they come in and not in batches. This uses more battery. <!-- TODO mark-->
 
 ```js
 await analytics.setup('YOUR_WRITE_KEY', {
@@ -305,7 +304,7 @@ Note, you should *not* check the box labeled "Serve advertisements within the ap
 
 You might see some of your destinations set to `false` in the raw version of requests in the Segment live debugger, even if you haven't added that specific flag to your requests. You might see an integrations object that looks like the example below.
 
-```javascript
+```json
 "integrations": {
   "Segment.io": false,
   "Google Analytics": false,
