@@ -97,10 +97,11 @@ This is a known bug https://code.google.com/p/analytics-issues/issues/detail?id=
 ## How should I configure Proguard?
 
 For the Segment SDKs, you can add the following snippet to your Proguard configuration:
-```
+```java
 -keep class com.segment.analytics.** { *; }
 -keep class androidx.lifecycle.DefaultLifecycleObserver
 ```
+
 You should also check the vendor documentation for any Device-mode destinations you are bundling, to see if they include any recommended Proguard configurations.
 
 ## How should I use Outbound's push notifications?
