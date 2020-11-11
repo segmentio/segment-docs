@@ -9,7 +9,6 @@ All of Segment's libraries are open-source, and you can [view Analytics for Reac
 Subscribe to the [release feed](https://github.com/segmentio/analytics-react-native/tags.atom).
 
 
-<!-- TODO: normalize headings about Unique IDs and queueing-->
 ### Analytics-React and Unique Identifiers
 
 One of the most important parts of any analytics platform is the ability to consistently and accurately identify users. To do this, the platform must assign and persist some form of identification on the device, so you can analyze user actions effectively. This is especially important for funnel conversion analysis and retention analysis.
@@ -273,7 +272,9 @@ analytics.reset()
 
 ### Flush
 
-By default, the library collects 20 events in the queue before flushing (sending) them. You can set the number of events should queue before flushing. Set this to `1` to send events as they come in and not in batches. This uses more battery. <!-- TODO mark-->
+By default, the library collects 20 events in the queue before flushing (sending) them, but you modify this number.
+
+You can set `flushAt` to `1` to send events as they come in, and not in batches. This approach uses more battery.
 
 ```js
 await analytics.setup('YOUR_WRITE_KEY', {
@@ -291,8 +292,9 @@ analytics.flush()
 ---
 
 ## Submitting to the App Store
+<!-- TODO mark-->
 
-When you submit to the app store, be aware that Segment collects the IDFA for use in doing mobile install attribution with destinations like Mobile App Tracking. Even if you're not currently doing mobile install attribution, if you get asked, "Does this app use the Advertising Identifier (IDFA)?" on [this](http://www.brianjcoleman.com/wp-content/uploads/2014/07/IDFA_Page2-1.jpg) page, you'll want to **check** the following three boxes:
+When you submit your app to the app store, be aware that Segment collects the IDFA for mobile install attribution with destinations like Mobile App Tracking. Even if you're not currently doing mobile install attribution, if you are asked, "Does this app use the Advertising Identifier (IDFA)?" on [this page](images/IDFA_Page2-1.jpg), you'll want to **check** the following three boxes:
 
 1. "Attribute this app installation to a previously served advertisement"
 2. "Attribute an action taken within this app to a previously served advertisement"

@@ -104,7 +104,7 @@ import Segment
 
 ### Including the SDKs for destinations using Device-mode
 
-In the interest of keeping the Analytics-iOS SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data is sent through Segment's servers to any tools you enable using the default Cloud-mode.
+To keep the Analytics-iOS SDK lightweight, the Analytics pod only installs the Segment destination. This means that all your data is sent through Segment's servers to any tools you enable using the default Cloud-mode.
 
 Some destinations [require or offer Device-mode connections](/docs/connections/destinations/#connection-modes). For those destinations, you must take some additional steps as [to package the device-mode SDKs](/docs/connections/sources/catalog/libraries/mobile/ios/#packaging-device-mode-destination-sdks).
 
