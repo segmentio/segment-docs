@@ -195,7 +195,7 @@ Segment  uses conventional HTTP response codes to indicate the success or failur
 
 ### Rate Limit
 
-Every Access Secret has a default rate limit of 60,000 requests/min. That limit can be adjusted over time.
+Every Space has a default rate limit of 60,000 requests/min. That limit can be adjusted over time.
 
 
 ### Pagination

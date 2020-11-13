@@ -1,4 +1,6 @@
 [build]
+  # Ignore builds unless [netlify-build] is present in commit message
+  # ignore = "git log -1 --pretty=%B | ( ! grep -q '\[netlify\-build\]' )"
 
 [[redirects]]
   from = "/docs/*"
