@@ -1,6 +1,6 @@
 ---
 title: Analytics-React FAQs
-strat: react
+strat: react-native
 ---
 
 

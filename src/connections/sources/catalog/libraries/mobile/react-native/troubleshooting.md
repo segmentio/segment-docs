@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting Analytics-React
-strat: react
+strat: react-native
 ---
 
 ## No events in the debugger

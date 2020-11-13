@@ -1,6 +1,6 @@
 ---
 title: Analytics for React Native
-strat: react
+strat: react-native
 ---
 
 
