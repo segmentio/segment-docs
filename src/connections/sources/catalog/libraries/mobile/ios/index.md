@@ -438,7 +438,7 @@ The Group call has the following fields:
   </tr>
   <tr>
     <td>`options` _Options, optional_</td>
-    <td>An `Options` object lets you set a [timestamp](/docs/connections/spec/common/#timestamps), [enable or disable destinations](#selecting-destinations), or [send additional context](/docs/connections/spec/common/#context).</td>
+    <td>An `Options` object lets you [enable or disable destinations](#selecting-destinations), or [send additional context](/docs/connections/spec/common/#context).</td>
   </tr>
 </table>
 

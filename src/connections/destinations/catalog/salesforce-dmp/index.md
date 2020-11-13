@@ -1,8 +1,9 @@
 ---
+title: Salesforce DMP Destination
+strat: salesforce
 rewrite: true
 beta: true
 hidden: true
-title: Salesforce DMP Destination
 ---
 
 [Salesforce DMP](https://konsole.zendesk.com/hc/en-us) allows website operators

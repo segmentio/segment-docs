@@ -1,5 +1,6 @@
 ---
 title: Salesforce Live Agent Destination
+strat: salesforce
 ---
 
 ## Getting Started
