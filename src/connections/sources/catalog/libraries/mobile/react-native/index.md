@@ -8,7 +8,8 @@ Analytics for React Native makes it easy to send your data to any analytics or m
 
 All of Segment's libraries are open-source, and you can [view Analytics for React Native on GitHub](https://github.com/segmentio/analytics-react-native), or see a list of the other [Segment browser and server libraries](/docs/connections/sources/catalog/) too.
 
-Subscribe to the [release feed](https://github.com/segmentio/analytics-react-native/tags.atom).
+> info ""
+> You can subscribe to the [release feed](https://github.com/segmentio/analytics-react-native/tags.atom) to keep up to date with the latest releases.
 
 In cloud-mode, Analytics-React-Native functions as a normal Segment library. In device-mode it wraps the Segment [Analytics-iOS](/docs/connections/sources/catalog/libraries/mobile/ios/) and [Analytics-Android](/docs/connections/sources/catalog/libraries/mobile/android/) libraries, and loads the appropriate mobile library depending on the user's platform. Because of this, Analytics-React-Native includes the two mobile libraries as dependencies.
 
@@ -24,7 +25,7 @@ Before iOS 5 developers had access to `uniqueIdentifier`, which was a hardware-s
 
 Segment’s iOS library supports iOS 7+ by generating a UUID and storing it on disk. This complies with Apple’s required privacy policies, maintains compatibility, and also enables correct tracking in situations where multiple people use the same device, since the UUID can be regenerated.
 
-####  Unique Identifiers in Android
+#### Unique Identifiers in Android
 
 Analytics-React-Native also collects the [Advertising ID](https://developer.android.com/google/play-services/id.html) provided by Play Services. This is the ID that should be used for advertising purposes. This value is set to `context.device.advertisingId`.
 
@@ -98,9 +99,9 @@ To install Analytics-React-native manually:
 
 ### Packaging Destinations using Device-mode
 
-By default, Analytics-React-Native does not package any external destination SDKs, and sends all of your data first to the Segment servers, which forward the data on to any tools you enabled from the Segment web app. This is known as using "Cloud-mode".
+By default, Analytics-React-Native sends all of your data first to the Segment servers, which forward the data on to any tools you enabled from the Segment web app. It does not package any external destination SDKs by default. This is known as using "Cloud-mode", and it helps reduce the size of your project.
 
-This helps reduce the size of your project. However, in order to function correctly, some destinations require that you include code in your project that can be executed on the user's device. This is known as "device-mode". Other destinations offer a device-mode SDK, but still work (with reduced features) in cloud-mode.
+However, in order to function correctly some destinations require that you include code in your project that can be executed on the user's device. This is known as "device-mode". Other destinations offer a device-mode SDK, but still work (with reduced features) in cloud-mode.
 
 You can read [more about connection modes](/docs/connections/destinations/#connection-modes) in the Destination documentation.
 
