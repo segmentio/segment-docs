@@ -124,3 +124,13 @@ sections:
     title: Troubleshooting Analytics-Android
   - path: /connections/sources/catalog/libraries/mobile/android/android-faqs
     title: Android Frequently asked questions
+
+- slug: react-native
+  section_title: Analytics-React-Native Documentation
+  section:
+  - path: /connections/sources/catalog/libraries/mobile/react-native
+    title: Analytics-React-Native mobile source
+  - path: /connections/sources/catalog/libraries/mobile/react-native/troubleshooting
+    title: Troubleshooting Analytics-React-Native
+  - path: /connections/sources/catalog/libraries/mobile/android/react-faqs
+    title: React-Native Frequently asked questions

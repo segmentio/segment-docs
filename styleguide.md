@@ -62,7 +62,15 @@ This styling guidance applies to any prose mention of the methods that is *not* 
 - `.identify()`
 - `Identify` call
 
+### Libraries vs SDKs
 
+We want to help readers distinguish between Segment's software, and the device-mode destination-specific pieces they may need to bundle. Using language very specifically here will help readers distinguish between them.
+
+For our purposes:
+- The Segment Source libraries are libraries, _not_ SDKs.
+- The bundled destination dependencies are SDKs.
+
+NB, LR 11/12/2020: Technically, an SDK often contains a hardware component, or is closely tied to a unique developer key or development-only hardware device - for example, an PlayStation SDK includes a software license key and test hardware linked to that account, an Apple SDK includes a developer key. A library is any modularlized piece of code that can be added to or invoked by a larger project.
 
 
 ### When to capitalize
