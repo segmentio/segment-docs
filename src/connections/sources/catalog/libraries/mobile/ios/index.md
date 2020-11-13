@@ -503,7 +503,7 @@ Analytics.shared().getAnonymousId
 
 The `- reset` method clears the SDK's internal stores for the current `user` and `group`. This is useful for apps where users can log in and out with different identities over time.
 
-Clearing all information about the user is as simple as calling:
+The example code below clears all information about the user.
 
 {% codeexample %}
 {% codeexampletab Swift %}
@@ -518,7 +518,8 @@ Analytics.shared().reset()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-**Events in the queue are not cleared**, and are sent to Segment the next time the app starts. You might want to call Flush in combination before you call Reset.
+
+**Reset does not clear events in the queue**, and any remaining events in the queue are sent the next time the app starts. You might want to call [Flush](#flush) before you call Reset.
 
 
 > info ""
