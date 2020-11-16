@@ -13,7 +13,7 @@ All Segment workspaces have the following roles, regardless of account type.
 - **Workspace Owner**
   Owners have full read and edit access to everything in the workspace, including sources, destinations, add-on products, and settings. Owners have full edit access to all team permissions.
 
--**Workspace Member**
+- **Workspace Member**
 Members inherit custom permissions based on [individual roles](/docs/segment-app/iam/roles/##business-tier-roles) assigned.
 
 - **Source admin**
