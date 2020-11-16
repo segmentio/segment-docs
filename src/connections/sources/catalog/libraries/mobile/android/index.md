@@ -755,7 +755,8 @@ Analytics.with(context).reset()
 {% endcodeexampletab %}
 {% endcodeexample %}
 
-Events queued on disk are _not_ cleared and are uploaded the next time the app starts.
+
+**Reset does not clear events in the queue**, and any remaining events in the queue are sent the next time the app starts. You might want to call [Flush](#flush) before you call Reset.
 
 > warning ""
 > **Note**: When you call `reset`, the next time the app opens Segment generates a new AnonymousId. This can impact the number of Monthly Tracked Users (MTUs) you process.
