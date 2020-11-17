@@ -49,7 +49,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Product Shared        | User has shared a product via social links                            |
 | Thank you page        | User has viewed the thank you page after completing an order \*       |
 
-- This is less reliable than the de-duplicated `Order Completed` event sent from our servers, but it can be used in device-mode destinations to trigger a conversion. `payment_method` and `shipping_method` properties are not available with this event.
+\* This is less reliable than the de-duplicated `Order Completed` event sent from our servers, but it can be used in device-mode destinations to trigger a conversion. `payment_method` and `shipping_method` properties are not available with this event.
 
 In addition to the events tracked as standard, the following hits can be tracked based on page path:
 
@@ -104,11 +104,11 @@ The following traits are included with an Identify call:
 
 ## Support for email marketing destinations
 
-Email marketing platforms such as [Klaviyo](/docs/connections/destinations/catalog/klaviyo/#server-side-track), [Iterable](/docs/connections/destinations/catalog/iterable/#track) and [Hubspot](/docs/connections/destinations/catalog/hubspot/#server) require an email property with any server-side event in order to associate events with a customer (they cannot use an `anonymousId`). Littledata adds that property whenever an email address is set in the user `traits()` object (in device-mode) or from the Shopify customer record (in cloud-mode).
+Email marketing platforms such as [Klaviyo](/docs/connections/destinations/catalog/klaviyo/#server-side-track), [Iterable](/docs/connections/destinations/catalog/iterable/#track) and [Hubspot](/docs/connections/destinations/catalog/hubspot/#server) require an email property with any server-side event in order to associate events with a customer (they cannot use an `anonymousId`). Littledata adds that `email` property whenever an email address is set in the user `traits()` object (in device-mode) or from the Shopify customer record (in cloud-mode).
 
 ## Alias Calls
 
-To support seamless customer tracking the [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias), [Vero](/docs/connections/destinations/catalog/vero/#alias) and [KISSMetrics](docs/connections/destinations/catalog/kissmetrics/#alias) destinations, Littledata ensures the pre-checkout `anonymousId`is added as an alias of the `userId` (used from checkout step 2 onwards).
+To support seamless customer tracking the [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias), [Vero](/docs/connections/destinations/catalog/vero/#alias) and [KISSMetrics](docs/connections/destinations/catalog/kissmetrics/#alias) destinations, Littledata ensures the pre-checkout `anonymousId` is added as an alias of the `userId` (used from checkout step 2 onwards).
 
 ## Subscription Ecommerce Events
 
