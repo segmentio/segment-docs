@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting Analytics-React
+title: Troubleshooting Analytics-React-Native
 strat: react-native
 ---
 
