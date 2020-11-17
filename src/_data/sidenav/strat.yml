@@ -132,5 +132,5 @@ sections:
     title: Analytics-React-Native mobile source
   - path: /connections/sources/catalog/libraries/mobile/react-native/troubleshooting
     title: Troubleshooting Analytics-React-Native
-  - path: /connections/sources/catalog/libraries/mobile/android/react-faqs
+  - path: /connections/sources/catalog/libraries/mobile/react-native/react-faqs
     title: React-Native Frequently asked questions
