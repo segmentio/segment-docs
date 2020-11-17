@@ -49,7 +49,7 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Product Shared        | User has shared a product via social links                            |
 | Thank you page        | User has viewed the thank you page after completing an order \*       |
 
-\* This is less reliable than the de-duplicated `Order Completed` event sent from our servers, but it can be used in device-mode destinations to trigger a conversion. `payment_method` and `shipping_method` properties are not available with this event.
+\* This is less reliable than the de-duplicated `Order Completed` event sent from the Littledata servers, but you can use it in device-mode destinations to trigger a conversion. The `payment_method` and `shipping_method` properties are not available with this event.
 
 In addition to the events tracked as standard, the following hits can be tracked based on page path:
 
