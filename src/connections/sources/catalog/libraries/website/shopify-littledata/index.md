@@ -1,7 +1,7 @@
 ---
 title: Shopify by Littledata Source
 redirect_from:
-  - '/connections/sources/catalog/cloud-apps/shopify-littledata/'
+  - "/connections/sources/catalog/cloud-apps/shopify-littledata/"
 ---
 
 <!-- LR Note: the working copy of the source catalog YML we built on showed this in the `website` source though as of Nov 18 it's labeled cloud-source -->
@@ -46,6 +46,10 @@ Below is a table of events that **Shopify by Littledata** sends to Segment throu
 | Product Clicked       | The user has clicked a product within a product list                  |
 | Product Viewed        | The user has viewed a product page                                    |
 | Product Image Clicked | The user has clicked a product image                                  |
+| Product Shared        | User has shared a product via social links                            |
+| Thank you page        | User has viewed the thank you page after completing an order \*       |
+
+- This is less reliable than the de-duplicated `Order Completed` event sent from our servers, but it can be used in device-mode destinations to trigger a conversion. `payment_method` and `shipping_method` properties are not available with this event.
 
 In addition to the events tracked as standard, the following hits can be tracked based on page path:
 
@@ -98,6 +102,10 @@ The following traits are included with an Identify call:
 | `state`                 | Whether the customer account is enabled or disabled                                                                                             | String        |
 | `verified_email` (v2)   | Whether the customer has verified their email                                                                                                   | Boolean       |
 
+## Support for email marketing destinations
+
+Email marketing platforms such as [Klaviyo](/docs/connections/destinations/catalog/klaviyo/#server-side-track), [Iterable](/docs/connections/destinations/catalog/iterable/#track) and [Hubspot](/docs/connections/destinations/catalog/hubspot/#server) require an email property with any server-side event in order to associate events with a customer (they cannot use an `anonymousId`). Littledata adds that property whenever an email address is set in the user `traits()` object (in device-mode) or from the Shopify customer record (in cloud-mode).
+
 ## Alias Calls
 
 To support seamless customer tracking the [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias), [Vero](/docs/connections/destinations/catalog/vero/#alias) and [KISSMetrics](docs/connections/destinations/catalog/kissmetrics/#alias) destinations, Littledata ensures the pre-checkout `anonymousId`is added as an alias of the `userId` (used from checkout step 2 onwards).
@@ -121,29 +129,29 @@ Additional events available through Littledata's [ReCharge connection](https://w
 
 The list below outlines the properties included in the events listed above.
 
-| Property                               | Description                                             | Property Type |
-| -------------------------------------- | ------------------------------------------------------- | ------------- |
-| `userId`                               | A Shopify Customer ID (after checkout step 2)           | Double        |
-| `email`                                | A Shopify email address (after checkout step 2)         | String        |
-| `order_id`                             | The ID of the order                                     | String        |
-| `checkoutId`                           | The ID of the checkout session                          | String        |
-| `shipping`                             | The shipping cost                                       | Float         |
-| `tax`                                  | The amount of tax on the order                          | Float         |
-| `total`                                | The total value of the order                            | Float         |
-| `affiliation`                          | The affiliation of the order                            | String        |
-| `coupon`                               | A discount coupon, if applicable                        | String        |
-| `currency`                             | The currency of the order                               | String        |
-| `discount`                             | The discounted amount                                   | Float         |
-| `products`                             | A list of all the product at that step of the funnel    | Array         |
-| `step`                                 | The checkout step                                       | Integer       |
-| `paymentMethod`                        | The payment method chosen for checkout                  | String        |
-| `shipping_method`                      | The shipping method chosen for checkout                 | String        |
-| `context['Google Analytics'].clientId` | The user's Google Analytics Client ID                   | String        |
-| `context['Google Analytics'].geoid`    | The user's location                                     | String        |
-| `context.uip`                          | The user's IP address                                   | String        |
-| `sent_from`                            | A unique property to identify events sent by Littledata | String        |
-| `presentment_currency`                 | The user's local currency                               | String        |
-| `presentment_total`                    | The order total in local currency                       | String        |
+| Property                               | Description                                                    | Property Type |
+| -------------------------------------- | -------------------------------------------------------------- | ------------- |
+| `userId`                               | A Shopify Customer ID (after checkout step 2)                  | Double        |
+| `email`                                | Shopify email address, or email submitted on a storefront form | String        |
+| `order_id`                             | The ID of the order                                            | String        |
+| `checkoutId`                           | The ID of the checkout session                                 | String        |
+| `shipping`                             | The shipping cost                                              | Float         |
+| `tax`                                  | The amount of tax on the order                                 | Float         |
+| `total`                                | The total value of the order                                   | Float         |
+| `affiliation`                          | The affiliation of the order                                   | String        |
+| `coupon`                               | A discount coupon, if applicable                               | String        |
+| `currency`                             | The currency of the order                                      | String        |
+| `discount`                             | The discounted amount                                          | Float         |
+| `products`                             | A list of all the product at that step of the funnel           | Array         |
+| `step`                                 | The checkout step                                              | Integer       |
+| `payment_method`                       | The payment method chosen for checkout                         | String        |
+| `shipping_method`                      | The shipping method chosen for checkout                        | String        |
+| `context['Google Analytics'].clientId` | The user's Google Analytics Client ID                          | String        |
+| `context['Google Analytics'].geoid`    | The user's location                                            | String        |
+| `context.uip`                          | The user's IP address                                          | String        |
+| `sent_from`                            | A unique property to identify events sent by Littledata        | String        |
+| `presentment_currency`                 | The user's local currency                                      | String        |
+| `presentment_total`                    | The order total in local currency                              | String        |
 
 ## Product Properties
 
