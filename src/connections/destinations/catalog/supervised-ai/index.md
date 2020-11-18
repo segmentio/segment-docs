@@ -1,6 +1,7 @@
 ---
 title: DataBrain Destination
 rewrite: true
+redirect_from: '/connections/destinations/catalog/supervised-ai/'
 ---
 
 [DataBrain](https://supervisedai.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) provides proactive customer health monitoring for customer facing teams, using machine learning to automate churn prediction and generating playbook recommendations.
