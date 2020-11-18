@@ -18,7 +18,7 @@ This destination is maintained by DataBrain. For any issues with the destination
 4. Back in the Segment app, paste the API key into the settings for the DataBrain destination.
 
 > info ""
-> You should see data in DataBrain within 48 hours. SupervisedAI notifies you by email when your model is generated.
+> You should see data in DataBrain within 48 hours. DataBrain notifies you by email when your model is generated.
 
 *Optional:* You can use Segment [Replays](https://segment.com/docs/guides/what-is-replay/) to sync your past events which were sent through Segment into your DataBrain instance.
 
