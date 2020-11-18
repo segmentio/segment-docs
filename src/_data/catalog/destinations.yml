@@ -5965,6 +5965,63 @@ items:
       server: true
   previous_names:
   - Data Lakes
+- display_name: DataBrain
+  slug: databrain
+  name: catalog/destinations/supervised-ai
+  description: >-
+    Supervised AI helps manage customers proactively. Enable this destination to
+    increase your revenue by predicting churn, retention and conversion from
+    your data.
+  hidden: false
+  url: connections/destinations/catalog/databrain
+  status: PUBLIC_BETA
+  logo:
+    url: 'https://cdn.filepicker.io/api/file/5LrbSw94RjaLx9liRxUo'
+  mark:
+    url: 'https://cdn.filepicker.io/api/file/4SVtUXSKQ5W98Pyf47GC'
+  categories:
+  - Analytics
+  - Customer Success
+  - Personalization
+  - CRM
+  components:
+  - type: CLOUD
+  platforms:
+    browser: true
+    server: true
+    mobile: true
+  browserUnbundlingSupported: false
+  browserUnbundlingPublic: false
+  methods:
+    alias: false
+    group: true
+    identify: true
+    page_view: true
+    track: true
+  settings:
+  - name: apiKey
+    display_name: API Key
+    type: STRING
+    deprecated: false
+    required: true
+    string_validators:
+      regexp: '^.{8,}$'
+    description: >-
+      You can find your Segment API Key by signing in and going to
+      https://supervisedai.com/integrations
+    settings: []
+  connection_modes:
+    device:
+      web: false
+      mobile: false
+      server: false
+    cloud:
+      web: true
+      mobile: true
+      server: true
+  previous_names:
+  - Supervised AI
+  - DataBrain
 - display_name: Delighted
   slug: delighted
   name: catalog/destinations/delighted
@@ -13156,6 +13213,26 @@ items:
       required: false
       description: Map your Segment properties to the Marketo Activity Fields
       settings:
+      - name: marketoAttributeType
+        display_name: Marketo Field Type
+        type: SELECT
+        deprecated: false
+        required: true
+        select_validators:
+          select_options:
+          - string
+          - boolean
+          - number
+          - date
+        description: Enter the Marketo Field type.
+        settings: []
+      - name: primaryKey
+        display_name: Set as Primary Key
+        type: BOOLEAN
+        deprecated: false
+        required: false
+        description: Mark this property as the Primary field in Marketo.
+        settings: []
       - name: segmentProperty
         display_name: Segment Property Name
         type: STRING
@@ -13177,26 +13254,6 @@ items:
         description: >-
           Enter the Marketo Field name. Make sure to copy and paste the exact
           API Name for your field as it appears in Marketo.
-        settings: []
-      - name: marketoAttributeType
-        display_name: Marketo Field Type
-        type: SELECT
-        deprecated: false
-        required: true
-        select_validators:
-          select_options:
-          - string
-          - boolean
-          - number
-          - date
-        description: Enter the Marketo Field type.
-        settings: []
-      - name: primaryKey
-        display_name: Set as Primary Key
-        type: BOOLEAN
-        deprecated: false
-        required: false
-        description: Mark this property as the Primary field in Marketo.
         settings: []
     - name: event
       display_name: Segment Event Name
@@ -20276,62 +20333,6 @@ items:
       server: true
   previous_names:
   - Strikedeck
-- display_name: Supervised AI
-  slug: supervised-ai
-  name: catalog/destinations/supervised-ai
-  description: >-
-    Supervised AI helps manage customers proactively. Enable this destination to
-    increase your revenue by predicting churn, retention and conversion from
-    your data.
-  hidden: false
-  url: connections/destinations/catalog/supervised-ai
-  status: PUBLIC_BETA
-  logo:
-    url: 'https://cdn.filepicker.io/api/file/5LrbSw94RjaLx9liRxUo'
-  mark:
-    url: 'https://cdn.filepicker.io/api/file/4SVtUXSKQ5W98Pyf47GC'
-  categories:
-  - Analytics
-  - Customer Success
-  - Personalization
-  - CRM
-  components:
-  - type: CLOUD
-  platforms:
-    browser: true
-    server: true
-    mobile: true
-  browserUnbundlingSupported: false
-  browserUnbundlingPublic: false
-  methods:
-    alias: false
-    group: true
-    identify: true
-    page_view: true
-    track: true
-  settings:
-  - name: apiKey
-    display_name: API Key
-    type: STRING
-    deprecated: false
-    required: true
-    string_validators:
-      regexp: '^.{8,}$'
-    description: >-
-      You can find your Segment API Key by signing in and going to
-      https://supervisedai.com/integrations
-    settings: []
-  connection_modes:
-    device:
-      web: false
-      mobile: false
-      server: false
-    cloud:
-      web: true
-      mobile: true
-      server: true
-  previous_names:
-  - Supervised AI
 - display_name: Survicate
   slug: survicate
   name: catalog/destinations/survicate
