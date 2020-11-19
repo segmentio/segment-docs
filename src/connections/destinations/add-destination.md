@@ -2,18 +2,63 @@
 title: Sending Segment data to destinations
 ---
 
-You've thought through and decided how you want to format your data, and collected it using Segment Sources. Now what do you do with it? Send the data on to Destinations!
+You've decided how to format your data, and collected it using [Segment Sources](/docs/connections/sources/). Now what do you do with it? Send the data to Destinations!
 
-Destinations are tools or services which can use the data sent from Segment to power analytics, marketing, outreach, and more.
+Destinations are tools or services which can use the data sent from Segment to power analytics, marketing, customer outreach, and more.
+
+> info ""
+> Each Segment Workspace has its own set of destinations, which are connected to the workspace's sources. When you add or modify a destination, make sure you're working with the correct workspace!
 
 
-## Adding a destination from the Segment web app
+## Adding a destination
 
-- from catalog
+There are two ways to add a destination to your deployment: from the Segment web app, or using the Config API.
 
-tied to workspace
 
-add using api - tied to workspace by token
+#### Adding a destination from the Segment web app
+
+> warning ""
+> Some third-party tools (such as Customer.io, Leanplum, and Airship) can both consume Segment data (as destinations), and send their data to Segment Warehouses as [Cloud-Sources](/docs/connections/sources/about-cloud-sources/). When you add a destination, make sure you're viewing the Destinations tab in the catalog so you add the correct one.
+
+1. Before you start, log in to your account on the destination tool, and get the token or other credentials needed to access the tool. You'll use these to give Segment permission to send data to the tool.
+2. Log in to the Segment web app, and select the workspace you want to add the destination to.
+3. Click **Catalog** in the left navigation, and click the **Destinations** tab.
+4. Search for the destination you want to add, and click it in the results.
+   If there are multiple results for your search, you can click each result to read more about them until you find the one you're looking for.
+5. In the panel that appears, click **Configure**.
+6. On the next page, select a source to connect to the destination, and click **Confirm Source**.
+7. On the next page, find the **Connection Settings** section, and enter the token or credentials for that destination tool.
+8. Click the toggle at the top of the Settings page to enable the destination.
+
+> success ""
+> If you have more than one instance of a destination, you can click Copy Settings From Other Destination to save yourself time entering the settings values.
+
+#### Adding a destination using the Config APIs
+
+You can use the Segment Config API to add destinations to your workspace using the [Create Destination endpoint](https://reference.segmentapis.com/#51d965d3-4a67-4542-ae2c-eb1fdddc3df6). The API requires an authorization token, and uses the `name` field as a namespace that defines which _source_ the destination is connected to. You send the rest of the destination's configuration as a JSON blob. View the documentation page in the Segment Catalog, or query the [Segment Catalog API](https://reference.segmentapis.com/#7a63ac88-43af-43db-a987-7ed7d677a8c8), for a destination to see the available settings.
+
+> success ""
+> You must use an authorization token to access the Config API, and these tokens are tied to specific workspaces. If you use the Config API to access multiple workspaces, make sure you're using the token for the workspace you want to access before proceeding.
+
+
+## What happens when you add a destination
+
+Adding a destination can have a few different effects, depending on which sources you set up to collect your data, and how you configured them.
+
+#### Analytics.js
+
+If you are using [Segment's javascript library, Analytics.js](), then Segment handles any configuration changes you need for you. If you're using Analytics.js in cloud-mode, it sends its tracking data to the Segment servers, which route it to your destinations. When you change which destinations you're sending data to, the Segment servers automatically add that destination to the distribution list.
+
+If you're using Analytics.js in device-mode, then Analytics.js serves as a wrapper around additional code used by the individual destinations to run on the user's device. When you add a destination, the Segment servers update a list of destinations that your AJS library queries. When a user next loads your site, AJS checks the list of destinations to load code for, and adds the new destination's code to what it loads. This can take up to 30 minutes due to CDN caching. 
+
+#### Mobile sources
+
+By default, mobile sources send data to Segment in cloud-mode to help minimize the size of your apps. In cloud-mode the mobile source libraries forward the tracking data to the Segment servers, which route the data to the destinations. Since the Segment servers know which destinations you're using, you don't need to take any action to add destinations to mobile apps using cloud-mode.
+
+However, if the destination you're adding has features that run on the user's device, you might need to update the app to package that destination's SDK with the library. Some destinations require that you package the SDK, and some only offer it
+
+
+#### Library sources
 
 ## Destination authentication
 
