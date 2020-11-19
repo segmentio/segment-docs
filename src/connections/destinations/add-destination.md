@@ -31,7 +31,7 @@ There are two ways to add a destination to your deployment: from the Segment web
 8. Click the toggle at the top of the Settings page to enable the destination.
 
 > success ""
-> If you have more than one instance of a destination, you can click Copy Settings From Other Destination to save yourself time entering the settings values.
+> If you have more than one instance of a destination, you can click **Copy Settings From Other Destination** to save yourself time entering the settings values.
 
 #### Adding a destination using the Config APIs
 
@@ -49,7 +49,7 @@ Adding a destination can have a few different effects, depending on which source
 
 If you are using [Segment's javascript library, Analytics.js](), then Segment handles any configuration changes you need for you. If you're using Analytics.js in cloud-mode, it sends its tracking data to the Segment servers, which route it to your destinations. When you change which destinations you're sending data to, the Segment servers automatically add that destination to the distribution list.
 
-If you're using Analytics.js in device-mode, then Analytics.js serves as a wrapper around additional code used by the individual destinations to run on the user's device. When you add a destination, the Segment servers update a list of destinations that your AJS library queries. When a user next loads your site, AJS checks the list of destinations to load code for, and adds the new destination's code to what it loads. This can take up to 30 minutes due to CDN caching. 
+If you're using Analytics.js in device-mode, then Analytics.js serves as a wrapper around additional code used by the individual destinations to run on the user's device. When you add a destination, the Segment servers update a list of destinations that your AJS library queries. When a user next loads your site, AJS checks the list of destinations to load code for, and adds the new destination's code to what it loads. This can take up to 30 minutes due to CDN caching.
 
 #### Mobile sources
 
@@ -60,13 +60,20 @@ However, if the destination you're adding has features that run on the user's de
 
 #### Library sources
 
+<!--TODO  -->
+
 ## Destination authentication
+
+<!--TODO  -->
 
 ## Destination settings
 
+<!--TODO  -->
+
+<!-- TODO: Project Demux
 ## Multiple instances of the same destination
 
 > note ""
 > Multiple-destination support is available for all Segment customers on all plan tiers.
 
-You can now connect a single Source to more than one instance of a destination. For example, if you have two different Google Analytics accounts for different parts of your business, but are using the same Library Source to track events, you might want to send that data to both Google Analytics accounts. This was not previously possible.
+You can now connect a single Source to more than one instance of a destination. For example, if you have two different Google Analytics accounts for different parts of your business, but are using the same Library Source to track events, you might want to send that data to both Google Analytics accounts. This was not previously possible. -->
