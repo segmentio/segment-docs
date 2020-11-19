@@ -4,17 +4,17 @@ title: Kahuna Destination
 
 ## Getting Started
 
-Segment makes it easy to send your data to Kahuna. Once you're tracking data through our iOS, Android or server side libraries, we'll translate and route your data to Kahuna in the format they can process.
+Segment makes it easy to send your data to Kahuna. When you tracking your data using Segment's [open-source libraries](/docs/connections/sources/catalog/), Segment translates and routes your data to Kahuna in a format it can process.
 
-If you have mobile apps, then Kahuna recommends using the Segment [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios) and or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android) library and bundling Kahuna (see [Mobile](#mobile) section below).
+If you have mobile apps, then Kahuna recommends that you use the Segment [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios) and or [Android](https://segment.com/docs/connections/sources/catalog/libraries/mobile/android) library and bundling Kahuna (see [Mobile](#mobile) section below).
 
 If you are sending data from a server side library, read the [Server side](#server-side) section.
 
-Be sure to enable Kahuna in your Segment destinations page and provide your **Kahuna Secret Key**, which can be found in the Settings page of the Kahuna Dashboard.
+Be sure to enable Kahuna in your Segment destinations page and provide your **Kahuna Secret Key**, which you can find in the Settings page of the Kahuna Dashboard.
 
 ## Mobile
 
-In order to use the full capability of Kahuna's Push Messaging and In-App features, you will have to bundle the Kahuna SDK while configuring your Segment mobile SDKs.
+To use the full capability of Kahuna's Push Messaging and In-App features, you will have to bundle the Kahuna SDK while configuring your Segment mobile SDKs.
 
 ### Android
 
@@ -56,7 +56,7 @@ pod "Segment-Kahuna
 
 Then, bundle Kahuna during your Segment Analytics initialization, with more details [here](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#bundling-integrations):
 
-```
+```objc
 #import <Segment-Kahuna/SEGKahunaIntegrationFactory.h>
 SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
 

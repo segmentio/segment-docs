@@ -3,7 +3,7 @@ title: Crittercism Destination
 redirect_from: '/connections/destinations/catalog/apteligent/'
 ---
 
-Our Crittercism destination code is open sourced on Github. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-crittercism), [Android](https://github.com/segment-integrations/analytics-android-integration-crittercism).
+Our Crittercism destination code is open sourced on GitHub. Feel free to check it out: [iOS](https://github.com/segment-integrations/analytics-ios-integration-crittercism), [Android](https://github.com/segment-integrations/analytics-android-integration-crittercism).
 
 ## Getting Started
 

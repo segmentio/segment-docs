@@ -7,7 +7,7 @@ Labels allow workspace owners to assign permissions to users to grant them acces
 To create or configure labels, go to the **Labels** tab in your workspace settings. Only workspace Owners can manage labels for the entire workspace.
 
 > note ""
-> All workspaces include labels for `Dev` (development) and `Prod` (production) environments. Free and Team plan customers can create up to five labels additional. Customers with the Enterprise pricing package can create an unlimited number of labels.
+> All workspaces include labels for `Dev` (development) and `Prod` (production) environments. Business Tier customers can create an unlimited number of labels.
 
 ## Custom Environments
 

@@ -51,27 +51,18 @@ In the below image, we use Google Analytics as an example. Our `page` call forms
 
 If this outbound request is not showing up in the network when you fire an `identify` call, then check the following:
 
-## Do you have any ad blockers enabled in your browser?
-
-Segment and many destination partners use cookies/local storage to store information about users in the browser. Ad blockers prevent cookies and other data these tools rely on to make valid analytics requests. Some portion of your users are probably using ad blockers, which prevent the Segment script from fully executing. Both desktop and mobile browsers are impacted.
-
-One particular issue is Safari private browsing mode which allows Analytics.js Identify calls to be made, but the traits object is stripped from the call. This results in identify calls missing email address and other traits.
-
-## Internet Explorer Support
-
-We guarantee support for Internet Explorer 9 and higher for Analytics.js. Keep in mind that different tools may have different compatibility guarantees for their own products. Refer to the vendor's documents to see what their browser compatibility looks like.
 
 ## Is your web site deployed under a domain on the Public Suffix List?
 
 The [Public Suffix List](https://publicsuffix.org/list/) is a catalog of certain Internet effective top-level domains, enumerating all domain suffixes controlled by registrars.
 
-The implications of these domain suffixes is that first party cookies cannot be set on them. Meaning, foo.example.co.uk can share cookie access with bar.example.co.uk, but example.co.uk should be walled off from cookies at example2.co.uk. The latter two domains could be registered by different owners.
+The implications of these domain suffixes is that first party cookies cannot be set on them. Meaning, `foo.example.co.uk` can share cookie access with `bar.example.co.uk`, but `example.co.uk` should be walled off from cookies at `example2.co.uk`. The latter two domains could be registered by different owners.
 
 Examples of domains on the Public Suffix List that are common in troubleshooting include:
 
-- *.github.io
-- *.herokuapp.com
-- *.appspot.com
+- `*.github.io`
+- `*.herokuapp.com`
+- `*.appspot.com`
 
 
 ## How do I open the Javascript console in your debugger?
@@ -112,10 +103,19 @@ console.log(JSON.stringify({ x: undefined, y: 6 }));
 // expected output: "{"y":6}"
 ```
 
+## Why am I seeing a "SameSite" warning?
+
+If you see a warning like the following, it could have one of several causes:
+"A cookie associated with a cross-site resource at http://segment.com/ was set without the `SameSite` attribute [...]"
+
+Segment correctly sets cookies with the 'SameSite' attribute with Analytics.js.
+
+If you see this warning, it is because you previously visited http://segment.com, and are getting the warning due to unrelated cookies. To verify that this is the issue, visit your page in Incognito Mode and confirm that the warning no longer occurs. Your users won't see this warning unless they _also_  visited http://segment.com.
+
 
 ### Can I overwrite the context fields?
 
-Yes.  This can be useful if some of these fields contain information you don't want to collect.  
+Yes.  This can be useful if some of these fields contain information you don't want to collect.
 
 For example, imagine that your website allows users to view a receipt for purchases at the URL `https://mywebsite.com/store/purchases`.  Your users click a link that redirects to that specific URL, your app sets a `receiptId` in the query string, and returns the appropriate receipt.  You also send a Track call to Segment from this page.
 
@@ -125,7 +125,7 @@ Since this `receiptId` might contain sensitive information, you can prevent the 
 analytics.track("Receipt Viewed", {}, {
     page: {
         url: null
-    }   
+    }
 })
 ```
 
@@ -137,4 +137,4 @@ Our cloudfront distribution caches files for 5 minutes, so sometimes it may take
 
 ## Known Issues:
 
-[Review and contribute to these on Github](https://github.com/segmentio/analytics.js/issues)
+[Review and contribute to these on GitHub](https://github.com/segmentio/analytics.js/issues)

@@ -1,11 +1,10 @@
 ---
 title: Salesforce Source
+strat: salesforce
 ---
 Salesforce is a leader in on-demand customer relationship management. [Visit Website](http://salesforce.com)
 
-Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** We'll automatically collect objects like `Accounts`, `Campaigns`, and `Tasks` and load them into your data warehouse. 
-
-This document was last updated on April 26, 2018. If you notice any gaps, outdated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact)!
+Take your company's analysis to the next level by **adding Salesforce as a Source to Segment.** Segment automatically  collects objects like `Accounts`, `Campaigns`, and `Tasks` and load them into your data warehouse. 
 
 ## Getting Started
 
@@ -28,7 +27,7 @@ This document was last updated on April 26, 2018. If you notice any gaps, outdat
 
 ### Sync
 
-The Salesforce source is built with a sync component, which means we'll make requests to their API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Salesforce objects (and their corresponding properties) according to the Collections Table below. The objects will be written into a separate schema, corresponding to the source instance's schema name you designated upon creation. For example, if you went with `sfdc_prod`, the `leads` collection will be accessible at `sfdc_prod.leads` in SQL.
+The Salesforce source contains a sync component, which means Segment makes requests to the Salesforce API on your behalf on a 3 hour interval to pull the latest data into Segment. In the initial sync, we'll grab all the Salesforce objects (and their corresponding properties) according to the Collections Table below. Segment writes the objects into a separate schema, corresponding to the source instance's schema name you designated upon creation. For example, you name the schema `sfdc_prod`, the `leads` collection is accessible at `sfdc_prod.leads` in SQL.
 
 Our sync component uses an upsert API, so the data in your warehouse loaded using sync will reflect the latest state of the corresponding resource in Salesforce. For example, if `ticket_status` goes from `open` to `closed` between syncs, on its next sync that tickets status will be `closed`.
 
@@ -92,17 +91,21 @@ Collections are the groupings of resources we pull from your source. In your war
 
 ### Custom Objects
 
-If you'd like to sync any SFDC custom objects, just [contact us]https://segment.com/help/contact/ and we'll get it set up. Include the [API names](https://help.salesforce.com/articleView?id=000007594&language=en_US&type=1) of the custom objects. We'll add support for this to the UI soon!
+Business tier customers can select and add custom objects from the Selective Sync page in the Salesforce source settings. 
+
+Self service customers, please contact us with the [API names](https://help.salesforce.com/articleView?id=000007594&language=en_US&type=1) of the custom objects you want to add.
+
 
 ### Deleting Records
 
-Segment supports the use of soft deletes in Salesforce. If you perform a soft delete on a record in Salesforce, your next one to two warehouses syncs will change the value of `is_deleted` for the assoicated record to `True`.
+Segment supports the use of soft deletes in Salesforce. If you perform a soft delete on a record in Salesforce, your next one to two warehouses syncs will change the value of `is_deleted` for the associated record to `True`.
 
-At this time, we do not support hard deletes in Salesforce. Use of hard deletes will result in the data remaining in the warehouse with `is_deleted` set to `False`.
+Segment does not support hard deletes in Salesforce. Use of hard deletes will result in the data remaining in the warehouse with `is_deleted` set to `False`.
 
 ## Collection Properties
 
-Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Saleforce field documentation linked in each collection above. If you've added custom fields to an existing collection, [contact us]https://segment.com/help/contact/ and we'll get those set up to sync. You do not need to include the field names.
+Segment performs a one-to-one mapping of all publicly available fields (standard and custom) from Salesforce. To see the full list of the standard fields refer to the Salesforce field documentation linked in each collection above. If you've added custom fields to an existing collection, [contact us](https://segment.com/help/contact/) and we'll get those set up to sync. You do not need to include the field names.
 
 ## Adding Destinations
-Currently, Warehouses are the only supported destination for object-cloud sources.
+
+Warehouses are the only supported destination for object-cloud sources.

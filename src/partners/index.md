@@ -23,31 +23,41 @@ Customers discover your Sources and Destinations using the Connections Catalog a
 The development process is simple:
 
 1. Understand Segment's [Conceptual Model](/docs/partners/conceptual-model) and [Spec](https://segment.com/docs/connections/spec).
-2. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
-3. Create an App.
-4. Build and test your Component(s).
-5. Publish documentation.
-6. Submit your App for review.
-7. Launch into _Public Beta_!
+2. Follow Segment's security guidance.
+3. Request [access to the Segment Developer Center](https://segment.com/partners/developer-center/).
+4. Create an App.
+5. Build and test your Component(s).
+6. Publish documentation.
+7. Submit your App for review.
+8. Launch into _Public Beta_!
 
 ### 1. Understand Segment's Conceptual Model
 
 It's important to understand Segment's [Conceptual Model](/docs/partners/conceptual-model) to begin planning your integration. This will help you understand how data will flow from or into your integration.
 
-### 2. Request Access
+### 2. Follow Segment's security guidance
+
+Security is a priority for us at Segment for both our customers and our partners. Before you start building on the Developer Center, please review our [Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/) and ensure you're following the below guidance:
+
+- Follow a secure software-development lifecycle, which enables you to create code that is safe for Segment customers and their end users, and that enables you to maintain and raise the security of that code over time
+- If you or your code comes into contact with Segment customer- or end-user data for any reason, protect it with commercially reasonable methods throughout its data lifecycle, including creation, handling, transporting, storing and destruction.
+- If you suspect a security event, incident or breach while working on this project or afterward, contact [Segment Security](mailto:security@segment.com?subject=Developer%20Center%20Security) for assistance with your investigation and communications
+- Practice modern and common-sense security for any scenario not explicitly stated  
+
+### 3. Request Access
 
 During _Developer Preview_, you will need to [request access to Developer Center](https://segment.com/partners/developer-center/). A Segment account is required for this step.
 
 We receive a large volume of requests so we encourage you to include a valid company website and email address, answer all questions with details about integration's use case as well as highlighting specific customer requests to expedite the approval process.
 
-### 3. Create your App
+### 4. Create your App
 
 Once approved, you can create your first [App](/docs/partners/conceptual-model/#apps). This represents a tile in the [Segment catalog](https://segment.com/catalog/) irrespective of which [Component](/docs/partners/conceptual-model/#components) type you choose to build so it should reflect your tool's name (eg. Zendesk Chat, Zendesk Sell).
 
 > info ""
 > The Developer Center currently only supports new Partner integrations (ie. Currently does not exist on the [Segment catalog](https://segment.com/catalog/)) in _Developer Preview_. If you're an existing Partner looking to build a new Component or make changes to your existing integration, fill in [your details here](https://airtable.com/shrSweuRx5jspwsw7) and we'll contact you once this is made available!
 
-### 4. Build & Test
+### 5. Build & Test
 
 Now you can start building! Depending on your use case you can build a:
 
@@ -62,7 +72,7 @@ No matter which Component you decide to build, make it aligns with the [Segment 
 
 It's important that we provide a great experience for our mutual customers so we ask that you also conduct thorough testing of your integration using the tooling provided to you through the Developer Center. We also encourage you to use your Segment sandbox in the shoes of a user to polish the experience of implementing and using your integration.
 
-### 5. Document
+### 6. Document
 
 Finally, make sure you prepare documentation and relevant marketing material for easy discovery and reference. We ask that you provide the following documentation about your integration by making a copy of the below templates:
 
@@ -72,7 +82,7 @@ Finally, make sure you prepare documentation and relevant marketing material for
 4. Draft blog post announcing your new integration
 
 
-### 6. Submission
+### 7. Submission
 
 You can submit your Component in the Developer Center for review. We strive to respond to your submission within 2 business days to kickstart the review process.
 

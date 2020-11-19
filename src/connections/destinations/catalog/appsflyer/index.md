@@ -10,19 +10,19 @@ This document was last updated on April 27, 2018. If you notice any gaps, outdat
 
 {% include content/connection-modes.md %}
 
-  1. From your Segment UI's Destinations page click on "Add Destination".
-  2. Search for "AppsFlyer" within the Destinations Catalog and confirm the Source you'd like to connect to.
-  3. Drop in your `AppsFlyer Dev Key`, which can be retrieved from the App Settings section of your AppsFlyer account.
-  4. Follow the instructions in the Github repos: [iOS SDK](https://github.com/AppsFlyerSDK/segment-appsflyer-ios) and [Android SDK](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration).
+  1. From the Segment web app, click **Catalog**.
+  2. Search for "AppsFlyer" in the Catalog, select it, and choose which of your sources to connect the destination to.
+  3. In the destination settings, enter your `AppsFlyer Dev Key`, which can be retrieved from the App Settings section of your AppsFlyer account.
+  4. Follow the instructions in the GitHub repos: [iOS SDK](https://github.com/AppsFlyerSDK/segment-appsflyer-ios) and [Android SDK](https://github.com/AppsFlyerSDK/AppsFlyer-Segment-Integration).
   5. After you build and release to the app store, we start translating and sending your data to AppsFlyer automatically.
 
 **Important:** If you plan on using the server-side destination for an Android project, make sure to enter your **Android App ID**. If you are using only the mobile SDK, Android projects only require the **AppsFlyer Dev Key**. iOS projects always require both the **AppsFlyer Dev Key** and the **Apple App ID**. Also, note that if you do use the server-side destination, you will not be able to selectively disable calls sent to AppsFlyer using your Segment dashboard.
 
 #### Additional device-mode set up for iOS 14 support
 
-Segment’s AppsFlyer iOS SDK was updated to use AppsFlyer version 6.0 beta to prepare for iOS 14. The SDK beta is compatible with the beta version of iOS 14, and supports AppsFlyer's aggregate attribution, and Apple's AppTrackingTransperancy framework, and more. See [the AppsFlyer blog post](https://www.appsflyer.com/blog/privacy-centric-attribution-ios14/] about AppsFlyer's new privacy-centric attribution model.
+Segment updated the AppsFlyer iOS SDK to use version `6.0 beta` to prepare for tracking changes in iOS 14. The SDK beta version is compatible with the beta version of iOS 14 released by Apple, and supports both AppsFlyer's aggregate attribution, and Apple's `AppTrackingTransperancy` framework, and more. See [the AppsFlyer blog post](https://www.appsflyer.com/blog/privacy-centric-attribution-ios14/) about AppsFlyer's new privacy-centric attribution model.
 
-To use the latest AppsFlyer SDK to collect IDFAs you must do the following:
+To use the latest AppsFlyer SDK to collect IDFAs, do the following:
 
 1. Upgrade to use Xcode12.
 2. Update your Segment AppsFlyer SDK to version 6.0.2 or later.
@@ -45,6 +45,14 @@ To use the latest AppsFlyer SDK to collect IDFAs you must do the following:
    }
    ```
 5. Follow [Segment's guide for collecting IDFA](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#idfa-collection-in-40-beta-and-later)
+
+#### Additional iOS Cloud Mode Set up for iOS 14
+
+With the release of Segment’s latest Analytics-iOS SDK, which includes support for upcoming iOS 14 tracking changes, you must decide if you _need_ to collect the user's IDFA or not. If you do not need to collect IDFA, you can update your Analytics-iOS SDK to the next version, and Segment sets `device.adTrackingEnabled` to `false`, and starts deleting the `device.advertisingId` from the context object in your payloads. If you _do_ need to collect the IDFA, you must import the IDFA closure as a config to the library, or import the Ad Tracking Transparency framework from Apple.
+
+If you have the **Can Omit AppsFlyerID** setting enabled, but aren't sending an IDFA (either because you aren't passing one, or the user denied permission to collect it), AppsFlyer rejects the event.
+
+To prevent this, you can enable the new **Fallback to send IDFV when advertisingId key not present** setting in your AppsFlyer destination settings. With this enabled, when you send data using cloud-mode (through the Segment servers), Segment sends the user's IDFV (the `device.id`) when `device.advertisingId` is missing or blank AND “Can Omit AppsFlyerID” is enabled.
 
 ### Server
 

@@ -70,7 +70,7 @@ Streams are the basis for sending events to Segment directly as an [Event Source
 
 Subscriptions are the basis for [Cloud-mode Destinations](/docs/connections/destinations/#connection-modes), and are the starting point for our partnership. Subscriptions can be created, configured, and managed in the Segment Developer Center.
 
-Subscriptions give you complete control over how you want to store, transform and process your customers' data. It means that our customers can immediately start sending you data from any one of our [sources](/docs/connections/sources/)—from the browser, from their mobile apps, or from their servers—with no added work. Segment [Business Plan](https://segment.com/pricing/) customers can also [**replay**](/docs/guides/destinations/what-are-my-data-export-options/) historical data from our archives, which means you can demonstrate the full value of your tool immediately upon enablement.
+Subscriptions give you complete control over how you want to store, transform and process your customers' data. It means that our customers can immediately start sending you data from any one of our [sources](/docs/connections/sources/)—from the browser, from their mobile apps, or from their servers—with no added work. Segment [Business Plan](https://segment.com/pricing/) customers can also [**replay**](/docs/connections/data-export-options/) historical data from our archives, which means you can demonstrate the full value of your tool immediately upon enablement.
 
 Note that Object data collected from Cloud Object Sources (such as Stripe, Zendesk, and Salesforce) currently only targets customer Warehouse Destinations and is not not made available to Destinations through Subscriptions.
 

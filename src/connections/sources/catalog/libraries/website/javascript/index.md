@@ -17,7 +17,7 @@ Read through the [Analytics.js QuickStart Guide](/docs/connections/sources/catal
 
 The basic tracking methods below are the building blocks of your Segment tracking. They include [Identify](#identify), [Track](#track), [Page](#page), [Group](#group), and [Alias](#alias), as described below.
 
-These names may seem familar because these are the basic methods covered by the [Segment Spec](/docs/connections/spec/). The documentation on this page explains how to use these methods in Analytics.js specifically.
+These names might be familiar, because they are the basic methods covered by the [Segment Spec](/docs/connections/spec/). The documentation on this page explains how to use these methods in Analytics.js specifically.
 
 > note ""
 > **Good to know**: For any of the different methods described in this page, you can replace the properties in the code samples with variables that represent the data collected.
@@ -54,7 +54,7 @@ The Identify call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a *traits* object, pass an empty object (ie, '{}') before *options*_</td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a *traits* object, pass an empty object (as an '{}') before *options*_</td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -125,7 +125,7 @@ The `track` call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a *properties* object, pass an empty object (ie, '{}') before *options*_</td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a *properties* object, pass an empty object (like '{}') before *options*_</td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -269,7 +269,7 @@ The `page` call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (ie, '{}') before `options`_ </td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_ </td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -349,7 +349,7 @@ The Group call has the following fields:
     <td>`options`</td>
     <td>optional</td>
     <td>Object</td>
-    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (ie, '{}') before `options`_</td>
+    <td>A dictionary of options. For example, [enable or disable specific destinations](#selecting-destinations-with-the-integrations-object) for the call. _Note: If you do not pass a `properties` object, pass an empty object (like '{}') before `options`_</td>
   </tr>
   <tr>
     <td>`callback`</td>
@@ -379,7 +379,7 @@ Find more details about `group` including the **`group` payload** in [the Group 
 
 The Alias method combines two previously unassociated user identities. Segment usually handles aliasing automatically when you call Identify on a user, however some tools require an explicit `alias` call.
 
-This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations such as [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias). <!-- TODO: LR Dests question: is this still true? Is there a list of the ones that require this?-->
+This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations such as [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) and [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias). <!-- TODO: LR Dests question: is this still true? Is there a list of the ones that require this?-->
 
 The Alias method follows the format below:
 
@@ -411,7 +411,7 @@ The Alias call has the following fields:
   <tr>
     <td>`callback`</td>
     <td>optional</td>
-    <td>Fucntion</td>
+    <td>Function</td>
     <td>A function that is executed after a short timeout, giving the browser time to make outbound requests first.</td>
   </tr>
 </table>
@@ -547,7 +547,7 @@ Segment does not share `localStorage` across subdomains. If you use Segment trac
 ## Managing data flow with the Integrations object
 
 > success ""
-> **Tip**: There are many ways to change how your data flows without having to change your code. See [Filtering Data](/docs/guides/filtering-data/) to learn more.
+> **Tip**: You can change how your data flows in several different ways without having to change your code. See [Filtering Data](/docs/guides/filtering-data/) to learn more.
 
 You can pass an `integrations` object in the `options` of Alias, Group, Identify, Page and Track <!--TODO: Lr note, not screen?--> methods to send data to only the selected destinations. By default all destinations are enabled.
 
@@ -603,7 +603,7 @@ analytics.load('writekey', { integrations: { All: false, 'Google Analytics': tru
 > info ""
 > **Note:** To use this feature, you must be on snippet version 4.1.0 or later. You can get the latest version of the snippet [here](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-2-copy-the-segment-snippet).
 
-This way, you can conditionally load integrations based on what customers opt into on your site. The pseudocode example below shows how you might load only the tools the user consented to.
+This way, you can conditionally load integrations based on what customers opt into on your site. The example below shows how you might load only the tools that the user agreed to use.
 
 ```js
 onConsentDialogClosed(function(consentedTools){
@@ -619,18 +619,13 @@ When enabled, Analytics.js automatically retries network and server errors. With
 - **Support offline tracking**. Analytics.js queues your events and delivers them when the user comes back online.
 - **Better handle network issues**. If there happens to be a time where your application can't connect to Segment's API, we'll continue to store the events on the browser to ensure you don't lose any data.
 
-Analytics.js stores events in `localStorage` and falls back to in-memory storage when `localStorage` is unavailable. It retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. See the [destination Retries documentation](/docs/connections/destinations/#retries) to learn more.
-
-
-## Proxying Analytics.js
-
-To use a proxy server with Analytics.js, first change the `cdn.segment.com` address in the snippet to use your own host. Next, [contact Segment Product Support](https://segment.com/help/contact/) and request to change the endpoint Segment sends your events to so that is uses your proxy instead. Make sure that your proxy behaves exactly like the Segment APIs. You can use [the Segment proxy server](https://github.com/segmentio/segment-proxy) as an example of a correctly-working proxy.
+Analytics.js stores events in `localStorage` and falls back to in-memory storage when `localStorage` is unavailable. It retries up to 10 times with an incrementally increasing back-off time between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device's local storage. See the [destination Retries documentation](/docs/connections/destinations/#retries) to learn more.
 
 ## Plugins
 
 Segment offers video player 'plugins' so you can quickly collect video events using Analytics.js. See the specific documentation below to learn more:
 
-- [Youtube](/docs/connections/sources/catalog/libraries/website/plugins/youtube)
+- [YouTube](/docs/connections/sources/catalog/libraries/website/plugins/youtube)
 - [Vimeo](/docs/connections/sources/catalog/libraries/website/plugins/vimeo)
 
 ## Cross-Subdomain Analytics
@@ -652,8 +647,19 @@ One option, if you don't want to use any bundled third-party tools, is to use ou
 
 ### Bundle size
 
-Segment's Analytics.js javascript snippet only increases the page size by about 1.1KB.
+Segment's Analytics.js Javascript snippet only increases the page size by about 1.1KB.
 
-However, the snippet asynchronously requests and loads a customized javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your [device-mode destinations](/docs/connections/destinations/#connection-modes). The size of this file changes depending on how many and which destinations you enable.
+However, the snippet asynchronously requests and loads a customized Javascript bundle (`analytics.min.js`), which contains the code and settings needed to load your [device-mode destinations](/docs/connections/destinations/#connection-modes). The size of this file changes depending on how many and which destinations you enable.
 
 Without any destinations enabled, the `analytics.min.js` file is about 62KB. Each time you enable a destination, the file's size may increase slightly.
+
+### Local storage cookies used by Analytics.js
+
+Analytics.js uses a few `localstorage` cookies if you have retries enabled, to keep track of retry timing.
+- The `ack` cookie is a timer used to see if another tab should claim the retry queue.
+- The `reclaimStart` and `reclaimEnd` cookies determine if a tab takes over the queue from another tab.
+- The `inProgress` and `queue` cookies track events in progress, and events that are queued to be retried.
+
+For more information, visit the [Segment localstorage-retry library](https://github.com/segmentio/localstorage-retry).
+
+You can set the `debug` cookie to `analytics.js` to log debug messages from Analytics.js to the console.

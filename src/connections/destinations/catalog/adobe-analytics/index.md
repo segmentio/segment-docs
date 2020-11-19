@@ -32,11 +32,11 @@ We strongly recommend that you create a tracking plan for both your Segment and 
 
 If you're using device-mode javascript, by default Segment "bundles" (mobile) or "wraps" (when using Analytics.js) the Adobe libraries. In this configuration, Segment sends Events directly from the client using the Adobe Analytics [`Appmeasurement.js` library](https://docs.adobe.com/content/help/en/analytics/implementation/js/overview.html). Adobe's client-side libraries can provide services to other Adobe suites and products, however they can also increase the size of your page.
 
-If you prefer, you can enable [Cloud-mode](/docs/connections/destinations/#connection-modes), and send data through the Segment servers where it is then mapped and sent on to Adobe Analytics. You enable Cloud-mode for Javascript or Legacy sources from the Adobe Analytics source settings in the Segment app.
+If you prefer, you can enable [Cloud-mode](/docs/connections/destinations/#connection-modes), and send data through the Segment servers where it is then mapped and sent on to Adobe Analytics. By default, mobile and server sources will use Adobe Analytics in Cloud-mode. You can enable Cloud-mode for Javascript sources from the Adobe Analytics source settings in the Segment app.
 
 Our Cloud-mode Adobe Analytics destination also provides support for **Adobe Mobile Services** "states", "actions", and lifecycle events, metrics, and dimensions.
 
-*Note*: Segment only supports Adobe Heartbeat through device-mode implementations, using Segment's javascript source or mobile SDKs unbundled.
+*Note*: Segment only supports Adobe Heartbeat through device-mode implementations, using Segment's Javascript source or mobile SDKs bundled.
 
 ### Connecting Segment to Adobe Analytics
 
@@ -64,7 +64,7 @@ Adobe Analytics has a real-time reporting feature which displays web page traffi
 
 Device-mode web data is sent using Analytics.js, with Analytics.js either serving as a wrapper/bundle around the Adobe Analytics code, or sending directly to Segment servers where the data is then sent on to the Adobe destination.
 
-Our Adobe Analytics device-mode destination code is open sourced on Github. Feel free to check it out:
+Our Adobe Analytics device-mode destination code is open sourced on GitHub. Feel free to check it out:
 [iOS](https://github.com/segment-integrations/analytics-ios-integration-adobe-analytics),
 [Android](https://github.com/segment-integrations/analytics-android-integration-adobe-analytics) and
 [JS](https://github.com/segmentio/analytics.js-integrations/tree/master/integrations/adobe-analytics).
@@ -93,7 +93,7 @@ To use Adobe's Marketing Cloud Visitor ID Service, enter your **Marketing Cloud 
 
 *For more information on mobile native integrations using Segment's iOS and Android Adobe Analytics SDKs, see the [section "Setting up Adobe Analytics for Mobile"](mobile/).*
 
-**Important**: For data sent from server-side libraries, you must define your events and custom properties BEFOER you send events to Adobe Analytics server-side destination. However, *for data sent from mobile devices*, Segment sends *every* event along automatically, and you can use the Adobe Analytics [processing rules](https://marketing.adobe.com/resources/help/en_US/reference/processing_rules.html) UI to map actions, lifecycle dimensions, and custom properties from `contextData` to events, props and eVars.
+**Important**: For data sent from server-side libraries, you must define your events and custom properties BEFORE you send events to Adobe Analytics server-side destination. However, *for data sent from mobile devices*, Segment sends *every* event along automatically, and you can use the Adobe Analytics [processing rules](https://marketing.adobe.com/resources/help/en_US/reference/processing_rules.html) UI to map actions, lifecycle dimensions, and custom properties from `contextData` to events, props and eVars.
 
 Segment's server-side integration is not open-source. Let's explore what happens when Segment generates the XML to send to Adobe:
 

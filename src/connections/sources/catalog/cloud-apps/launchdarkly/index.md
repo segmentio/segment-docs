@@ -3,9 +3,9 @@ title: LaunchDarkly Source
 ---
 [LaunchDarkly](https://launchdarkly.com) is a feature management platform that empowers development teams to safely deliver and control software through feature flags.
 
-This source is maintained by LaunchDarkly. For any issues with the source, [contact their team](mailto:support@launchdarkly.com).
+This source is maintained by LaunchDarkly. For any issues with the source, [contact the LaunchDarkly Support team](mailto:support@launchdarkly.com).
 
-_**NOTE:** The LaunchDarkly Source is currently in beta, which means that they are still actively developing the source. This doc was last updated on November 8, 2019. If you are interested in joining their beta program or have any feedback to help improve the LaunchDarkly Source and its documentation, [let their team know](mailto:support@launchdarkly.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started

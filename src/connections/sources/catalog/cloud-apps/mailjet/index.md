@@ -3,9 +3,9 @@ title: 'Mailjet Source'
 ---
 Mailjet is a powerful email service provider that enables you to send, deliver and track transactional and marketing emails all from one single account. With Mailjet, Marketers and Developers can send and track emails using API, User Interface or SMTP Relay. <!-- [Visit Website]() -->
 
-Take your company's email analysis to the next level by **adding Mailjet as a Source to Segment.** We'll automatically collect email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
+Take your company's email analysis to the next level by **adding Mailjet as a Source to Segment.** Segment automatically  collects email events like `Email Delivered` and `Email Opened`, forward them to your destinations, and load them into your data warehouse. 
 
-In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Mailjet data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. [Learn more about how you can use Mailjet with Segment.](/docs/connections/destinations/catalog/mailjet)
+In your favorite BI or analytics tool, you'll be able to analyze your email campaigns in SQL or through drag-and-drop reports. And, you'll be able to join your Mailjet data with the event data you're already sending through Segment to analyze the down-funnel effects of your emails. 
 
 ## Getting Started
 

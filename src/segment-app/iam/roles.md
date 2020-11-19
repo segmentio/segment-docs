@@ -13,8 +13,11 @@ All Segment workspaces have the following roles, regardless of account type.
 - **Workspace Owner**
   Owners have full read and edit access to everything in the workspace, including sources, destinations, add-on products, and settings. Owners have full edit access to all team permissions.
 
+- **Workspace Member**
+Members inherit custom permissions based on [individual roles](/docs/segment-app/iam/roles/##business-tier-roles) assigned.
+
 - **Source admin**
-  Source admins have edit access to assigned source(s), to the settings for that source, to any connected streaming destinations, schema, and live data from the source in the [debugger](/docs/connections/sources/debugger/). A user with the Source Admin role can be granted access to either all current and future Sources, or a specific list of Sources, or Sources with a specific Label (BT only).
+  Source admins have edit access to assigned source(s), to the settings for that source, to any connected streaming destinations, schema, and live data from the source in the [debugger](/docs/connections/sources/debugger/). A user with the Source Admin role can be granted access to either all current and future Sources, or a specific list of Sources, or (if you are on a Business plan) to Sources with a specific Label.
 
 
 ## Business Tier Roles
@@ -98,9 +101,6 @@ Edit access to [End User Privacy Settings](/docs/privacy/user-deletion-and-suppr
 **Scope:** Grants access to only End User Privacy Settings in the App.
 
 ## PII Access
-
-> info "PII Access is in Public Preview"
-> To join the Public Preview, send an email to [beta@segment.com](mailto:beta@segment.com). The use of this feature is governed by the [Segment Acceptable Use Policy](https://segment.com/legal/acceptable-use-policy/).
 
 The Segment App does not show detected Personally Identifiable Information (PII) to workspace members if the information matches specific expected formats for PII. When PII Access is turned “off”, detected PII is masked based on [red or yellow default matchers](/docs/privacy/portal/#default-pii-matchers) and any [custom matchers](/docs/privacy/portal/#custom-pii-matchers) defined in the Privacy Portal.
 

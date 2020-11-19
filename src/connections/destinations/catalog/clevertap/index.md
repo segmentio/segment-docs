@@ -28,7 +28,9 @@ All other traits will be sent to CleverTap as custom attributes. Please also not
 
 ## Track
 
-When you `track` an event, we will send that event to CleverTap as a custom event.  Note that CleverTap does not support arrays or nested objects for custom track event properties. Please also note that the default logic will lower case and snake_case any event properties passed to CleverTap.
+When you `track` an event, we will send that event to CleverTap as a custom event.  Note that CleverTap does not support arrays or nested objects for custom track event properties. 
+
+Please also note that the default logic for our cloud mode connection to CleverTap will lower case and snake_case any event properties passed from Segment's servers to CleverTap. Our device mode connection will not lower case or snake_case any event properties passed directly to CleverTap from the client.
 
 ### Order Completed
 
@@ -99,7 +101,7 @@ When you send a `screen` event using the server-side destination or the iOS bund
 
 ### Sample App
 
-CleverTap has created a sample Android application that integrates CleverTap using Segment. Check it out at the [Github repo](https://github.com/CleverTap/clevertap-segment-android-example).
+CleverTap has created a sample Android application that integrates CleverTap using Segment. Check it out at the [GitHub repo](https://github.com/CleverTap/clevertap-segment-android-example).
 
 ## iOS
 
@@ -143,7 +145,7 @@ No further action is required to integrate in-app notifications, which are regis
 
 ### Sample App
 
-CleverTap has created a sample iOS application that integrates CleverTap using Segment. Check it out at the [Github repo](https://github.com/CleverTap/clevertap-segment-ios/tree/master/Example).
+CleverTap has created a sample iOS application that integrates CleverTap using Segment. Check it out at the [GitHub repo](https://github.com/CleverTap/clevertap-segment-ios/tree/master/Example).
 
 ## Server-Side
 

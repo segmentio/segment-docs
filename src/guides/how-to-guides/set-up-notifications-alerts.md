@@ -12,10 +12,10 @@ You can use Google Analytics Custom Alerts to send yourself emails whenever a sp
 
 ### Analytics email summaries
 
-In tools like Amplitude, KISSmetrics, Mixpanel you can set up email reports delivered to you on a daily basis. They are completely customizable, so you can keep an eye on as many events or other metrics you'd like. 
+In tools like Amplitude, Kissmetrics, Mixpanel you can set up email reports delivered to you on a daily basis. They are completely customizable, so you can keep an eye on as many events or other metrics you'd like. 
 
 *   [Mixpanel email reports](https://mixpanel.com/blog/2011/04/14/email-reports/)
-*   [KISSmetrics daily metrics email](http://support.kissmetrics.com/tools/daily-metrics-email.html)
+*   [Kissmetrics daily metrics email](http://support.kissmetrics.com/tools/daily-metrics-email.html)
 *   [Amplitude email alerts (scroll down a bit)](https://amplitude.com/blog/2015/03/20/new-features-stickiness-team-access-controls-email-alerts-redshift-playbook/)
 
 ### Realtime Traffic Monitoring

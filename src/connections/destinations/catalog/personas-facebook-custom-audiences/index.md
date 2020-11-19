@@ -125,12 +125,12 @@ Once created, the audience should be available in Facebook in ten minutes unless
 
 
 
-## Early Access (Alpha) Feature: Additional identifier matching
+## Public Preview Feature: Additional traits matching
 
 > note ""
-> This feature is in Early Access. If you would like access, contact your CSM or email us at [beta@segment.com](mailto:beta@segment.com).
+> This feature is in Public Preview and usage is subject to the terms contained in the [First Access and Beta Preview Terms](https://segment.com/legal/first-access-beta-preview/). If you would like access, contact your CSM or email us at [friends@segment.com](mailto:friends@segment.com).
 
-Previously, Segment only sent email and mobile ids to Facebook. A new, early-access feature can send an expanded list of identifiers to Facebook, so that Facebook can try to use these additional identifiers to match to their user profiles. If you have this feature enabled and implemented any of these identifiers in your Segment tracking, Personas can send the identifiers to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this new alpha feature, Segment hashes fields before sending them downstream to Facebook, if required. (See the table below for hashing requirements.)
+Previously, Segment only sent email and mobile ids to Facebook. A new beta feature can send an expanded list of identifiers or traits to Facebook, so that Facebook can try to use these additional datapoints to match to their user profiles. If you have this feature enabled and implemented any of these traits in your Segment tracking, Personas can send this data to Facebook. Segment can now also sync multiple emails if the profile contains more than one. Additionally as part of this feature, Segment hashes fields before sending them downstream to Facebook, if required. (See the table below for hashing requirements.) Please note that the trait data implemented in your Segment tracking must match the naming convention and format specified in the table below, otherwise we are not able to send it to Facebook.
 
 
 | **Name**        | **Trait Key formats supported**   | **Facebook Keys**  | **FB Hashing Required** | **FB Guidelines**     |

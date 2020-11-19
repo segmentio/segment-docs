@@ -35,8 +35,6 @@ sections:
     title: How does Segment handle duplicate data?
   - path: /guides/ignore-bots
     title: How can I ignore internet bots?
-  - path: /guides/intelligent-tracking-prevention
-    title: Is Segment impacted by Intelligent Tracking Prevention?
   - path: /guides/segment-vs-tag-managers
     title: What is the difference between Segment and tag managers?
   - path: /guides/what-is-replay
@@ -169,25 +167,25 @@ sections:
       title: Functions environment
     - path: /connections/functions/usage
       title: Functions usage limits
-  - section_title: Data Storage
+  - section_title: Storage Destinations
     slug: connections/storage
     section:
     - path: /connections/storage
-      title: Data Storage overview
+      title: Storage Destinations overview
     - path: /connections/storage/catalog
-      title: Data Storage catalog
+      title: Storage Destinations catalog
       menu_icon: read-more
     - section_title: Segment Data Lakes
       slug: connections/storage/data-lakes
       section:
       - path: /connections/storage/data-lakes
         title: Data Lakes overview
-      - path: /connections/storage/data-lakes/comparison
-        title: Data Lakes vs Warehouses
       - path: /connections/storage/catalog/data-lakes
         title: Set up Data Lakes
       - path: /connections/storage/data-lakes/sync-reports
         title: Sync Reports and error reporting
+      - path: /connections/storage/data-lakes/comparison
+        title: Data Lakes vs Warehouses
     - section_title: Data Warehouses
       slug: connections/storage/warehouses
       section:
@@ -237,15 +235,17 @@ sections:
     slug: personas/personas-identity-resolution
     section:
     - path: /personas/identity-resolution
-      title: Identity Resolution Overview
+      title: Overview
+    - path: /personas/identity-resolution/identity-resolution-onboarding
+      title: Onboarding
     - path: /personas/identity-resolution/use-cases
-      title: Identity Resolution Use Cases
+      title: Use Cases
     - path: /personas/identity-resolution/externalids
-      title: Identity Resolution External IDs
+      title: External IDs
     - path: /personas/identity-resolution/identity-resolution-settings
-      title: Identity Resolution Settings
+      title: Settings
     - path: /personas/identity-resolution/ecommerce-example
-      title: Identity Resolution E-Commerce Example
+      title: E-Commerce Example
     - path: /personas/identity-resolution/personas-space-set-up
       title: Personas Space Set Up
   - path: /personas/computed-traits
@@ -276,11 +276,11 @@ sections:
       title: Detect PII
     - path: /privacy/data-controls
       title: Data Controls and Alerts
-  - section_title: GDPR & CCPA
-    slug: protocols/preparing-for-the-gdpr
+  - section_title: GDPR
+    slug: protocols/complying-with-the-gdpr
     expanded: true
     section:
-    - path: /privacy/preparing-for-the-gdpr
+    - path: /privacy/complying-with-the-gdpr
       title: Complying with GDPR
     - path: /privacy/user-deletion-and-suppression
       title: User Deletion and Suppression

@@ -291,7 +291,7 @@ When you create a new Computed Trait or Audience in Personas, you can choose to 
 - [Intercom](/docs/connections/destinations/catalog/intercom/)
 - [Iron.io](/docs/connections/destinations/catalog/iron-io/)
 - [Iterable](/docs/connections/destinations/catalog/iterable/)
-- [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/)
+- [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/)
 - [Kahuna](/docs/connections/destinations/catalog/kahuna/)
 - [Keen](/docs/connections/destinations/catalog/keen/)
 - [Kitemetrics](/docs/connections/destinations/catalog/kitemetrics/)

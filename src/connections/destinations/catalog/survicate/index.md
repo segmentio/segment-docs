@@ -4,18 +4,18 @@ title: Survicate Destination
 ---
 [Survicate](https://survicate.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a complete toolkit for customer feedback. From website optimization and customer satisfaction surveys to complex customer insight processes integrated with your email campaigns.
 
-This destination is maintained by Survicate. For any issues with the destination, [contact their team](mailto:help@survicate.com).
+This destination is maintained by Survicate. For any issues with the destination, [contact the Survicate Support team](mailto:help@survicate.com).
 
-_**NOTE:** The Survicate Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on April 15, 2019. If you are interested in joining their beta program or have any feedback to help improve the Survicate Destination and its documentation, [let their team know](mailto:help@survicate.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Survicate" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "Workspace Key" into your Segment Settings UI which you can find from your [Survicate Workspace Settings](https://panel.survicate.com/).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Survicate" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "Workspace Key" into your Segment Settings UI which you can find from your [Survicate Workspace Settings](https://panel.survicate.com/).
 
 ## Identify
 

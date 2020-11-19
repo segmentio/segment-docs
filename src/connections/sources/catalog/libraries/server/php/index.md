@@ -4,7 +4,7 @@ title: Analytics for PHP
 
 Our PHP library lets you record analytics data from your PHP code. The requests hit our servers, and then we route your data to any analytics service you enable on your destinations page.
 
-This library is open-source, so you can [check it out on Github](https://github.com/segmentio/analytics-php).
+This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/analytics-php).
 
 PHP is a little different than our other server-side libraries because it is a single-threaded language. We've done everything we can to make our library as performant as possible, while still leaving you room to tune the settings for your application. If you want to learn more about tuning your settings for high performance, be sure to read through our section on [configuration](#configuration) at the end of this guide.
 
@@ -194,7 +194,7 @@ The `page` call has the following fields:
   </tr>
   <tr>
     <td>`properties` _Object, optional_</td>
-    <td>A dictionary of properties of the page. We'll automatically send the `url`, `title`, `referrer` and `path`, but you can add your own too!</td>
+    <td>A dictionary of properties of the page. Segment automatically sends the `url`, `title`, `referrer` and `path`, but you can add your own too!</td>
   </tr>
   <tr>
     <td>`anonymousId` _String, optional_</td>
@@ -257,7 +257,7 @@ Find more details about `group` including the **`group` payload** in our [Spec](
 
 `alias` is how you associate one identity with another. This is an advanced method, but it is required to manage user identities successfully in *some* of our destinations.
 
-In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [KISSmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) if your user switches IDs, you can use `alias` to rename the `userId`.
+In [Mixpanel](/docs/connections/destinations/catalog/mixpanel/#alias) it's used to associate an anonymous user with an identified user once they sign up. For [Kissmetrics](/docs/connections/destinations/catalog/kissmetrics/#alias) if your user switches IDs, you can use `alias` to rename the `userId`.
 
 Example `alias` call:
 

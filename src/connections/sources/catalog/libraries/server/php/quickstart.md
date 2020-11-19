@@ -24,7 +24,7 @@ When you create a Source in the Segment web app, it tells the Segment servers th
 
 ## Step 2: Download the library
 
-To install the library, clone the repository from Github into your desired application directory. (psst, composer users: we've [got you covered too](https://packagist.org/packages/segmentio/analytics-php)!)
+To install the library, clone the repository from GitHub into your desired application directory. (psst, composer users: we've [got you covered too](https://packagist.org/packages/segmentio/analytics-php)!)
 
 ```bash
 git clone https://github.com/segmentio/analytics-php /my/application/folders/

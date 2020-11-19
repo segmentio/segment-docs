@@ -13,8 +13,8 @@ This document was last updated on June 11th, 2018. If you notice any gaps, outda
 
 {% include content/connection-modes.md %}
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Zopim" within the Destinations Catalog and confirm the Source you'd like to connect to. (This is the old name.)
+1. From the Segment web app, click **Catalog**.
+2. Search for "Zopim" in the Catalog, select it, and choose which of your sources to connect the destination to. (This is the old name.)
 3. Add your Zendesk Chat ID (Zopim ID) to your Destination Settings. If you are using the `Chat Widget`, you can find your ID in the widget script itself. See example below:
 
 ```js
@@ -38,7 +38,7 @@ If you are using the `Web Widget` (see example below), **you will need to contac
 <!-- End of Zendesk Widget script -->
 ```
 
-4. In about 45 minutes the CDN updates and the Zendesk Chat snippet is initialized onto your page.
+Your changes appear in the Segment CDN in about 45 minutes, and then Analytics.js starts asynchronously loading the Zendesk Chat snippet on your page and sending data.
 
 ## Identify
 

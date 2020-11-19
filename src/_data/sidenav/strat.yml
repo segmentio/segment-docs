@@ -32,6 +32,7 @@ sections:
   - path: /connections/sources/catalog/cloud-apps/facebook-lead-ads
     title: Facebook Lead Ads Cloud Source
 
+
 - slug: google
   section_title: Google Integrations
   section:
@@ -56,14 +57,34 @@ sections:
   - path: /connections/destinations/catalog/google-cloud-pubsub
     title: Google Cloud Pubsub destination
 
+- slug: salesforce
+  section_title: Salesforce Integrations
+  section:
+  - path: /connections/destinations/catalog/salesforce
+    title: Salesforce destintation
+  - path: /connections/destinations/catalog/salesforce-live-agent
+    title: Salesforce Live Agent destintation
+  - path: /connections/destinations/catalog/salesforce-marketing-cloud
+    title: Salesforce Marketing Cloud destination
+  - path: /connections/destinations/catalog/salesforce-dmp
+    title: Salesforce DMP destintation (beta)
+  - path: /connections/sources/catalog/cloud-apps/salesforce
+    title: Salesforce Cloud Source
+  - path: /connections/sources/catalog/cloud-apps/salesforce-marketing-cloud
+    title: Salesforce Marketing Cloud cloud-app Source
+
 
 - slug: ajs
   section_title: Analytics.js Documentation
   section:
   - path: /connections/sources/catalog/libraries/website/javascript
     title: Analytics.js (Javascript) Source
+  - path: /connections/sources/catalog/libraries/website/javascript/supported-browsers
+    title: Analytics.js Supported Browsers
   - path: /connections/sources/catalog/libraries/website/javascript/quickstart
     title: Quickstart Tutorial
+  - path: /connections/sources/catalog/libraries/website/javascript/custom-proxy
+    title: Custom Proxy for Analytics.js
   - path: /connections/sources/catalog/libraries/website/javascript/identity
     title: Managing identity in Analytics.js
   - path: /connections/sources/catalog/libraries/website/javascript/middleware
@@ -81,9 +102,35 @@ sections:
     title: Analytics-iOS mobile source
   - path: /connections/sources/catalog/libraries/mobile/ios/quickstart
     title: iOS Quickstart tutorial
+  - path: /connections/sources/catalog/libraries/mobile/ios/ios14-guide
+    title: iOS 14 guide
   - path: /connections/sources/catalog/libraries/mobile/ios/middleware
     title: Middlewares for iOS
   - path: /connections/sources/catalog/libraries/mobile/ios/troubleshooting
     title: Troubleshooting Analytics-iOS
   - path: /connections/sources/catalog/libraries/mobile/ios/ios-faqs
     title: iOS Frequently asked questions
+
+- slug: android
+  section_title: Analytics-Android Documentation
+  section:
+  - path: /connections/sources/catalog/libraries/mobile/android
+    title: Analytics-Android mobile source
+  - path: /connections/sources/catalog/libraries/mobile/android/quickstart
+    title: Analytics-Android Quickstart tutorial
+  - path: /connections/sources/catalog/libraries/mobile/android/middleware
+    title: Middlewares for Android
+  - path: /connections/sources/catalog/libraries/mobile/android/troubleshooting
+    title: Troubleshooting Analytics-Android
+  - path: /connections/sources/catalog/libraries/mobile/android/android-faqs
+    title: Android Frequently asked questions
+
+- slug: react-native
+  section_title: Analytics-React-Native Documentation
+  section:
+  - path: /connections/sources/catalog/libraries/mobile/react-native
+    title: Analytics-React-Native mobile source
+  - path: /connections/sources/catalog/libraries/mobile/react-native/troubleshooting
+    title: Troubleshooting Analytics-React-Native
+  - path: /connections/sources/catalog/libraries/mobile/react-native/react-faqs
+    title: React-Native Frequently asked questions

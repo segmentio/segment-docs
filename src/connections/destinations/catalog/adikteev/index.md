@@ -3,9 +3,10 @@ hide-cmodes: true
 title: Adikteev Destination
 ---
 
-This destination is maintained by Adikteev. For any issues with the destination, [contact their team](mailto:contact@adikteev.com).
+This destination is maintained by Adikteev. For any issues with the destination, [contact the Adikteev support team](mailto:contact@adikteev.com).
 
-**NOTE:** The Adikteev Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 23, 2019. If you are interested in joining their beta program or have any feedback to help improve the Adikteev Destination and its documentation, [contact their team](mailto:contact@adikteev.com).
+{% include content/beta-note.md %}
+
 
 ## Getting Started
 

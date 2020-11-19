@@ -5,12 +5,9 @@ title: MSG91 Destination
 
 [MSG91](https://msg91.com/) provides SMS marketing/transactional automation for businesses. With Segment you can send SMS with a single call.
 
-This document was last updated on April 05, 2019. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
+This destination is maintained by MSG91. For any issues with the destination, [contact the MSG91 Support team](mailto:support@msg91.com).
 
-This destination is maintained by MSG91. For any issues with the destination, [contact their team](mailto:support@msg91.com).
-
-_**NOTE:** The MSG91 Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on January 23, 2019. If you are interested in joining their beta program or have any feedback to help improve the MSG91 Destination and its documentation, [let their team know](mailto:support@msg91.com)!_
-
+{% include content/beta-note.md %}
 
 
 ## Getting Started
@@ -19,9 +16,9 @@ _**NOTE:** The MSG91 Destination is currently in beta, which means that they are
 
 1.  From your Segment UI's Destinations page click on "Add Destination".
 
-2.  Search for "MSG91" within the Destinations Catalog and confirm the Source you'd like to connect to.
+2.  Search for "MSG91" in the Catalog, select it, and choose which of your sources to connect the destination to.
 
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your [MSG91 dashboard](https://control.msg91.com/signin/) in the API page using the ['API' option in the sidebar](https://help.msg91.com/article/177-where-can-i-find-my-authentication-key). It is recommended that you create a brand new API key for the Segment destination.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your [MSG91 dashboard](https://control.msg91.com/signin/) in the API page using the ['API' option in the sidebar](https://help.msg91.com/article/177-where-can-i-find-my-authentication-key). It is recommended that you create a brand new API key for the Segment destination.
 
 
 ## Identify

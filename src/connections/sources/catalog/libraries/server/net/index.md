@@ -5,7 +5,7 @@ sourceCategory: Server
 shortName: 'net'
 ---
 
-Our .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on Github](https://github.com/segmentio/Analytics.NET).
+Our .NET library is the best way to integrate analytics into your .NET application or website. It lets you record analytics data from your ASP.NET, C#, F#, and Visual Basic code. The library issues requests that hit our servers, and then we route your data to any analytics service you enable on our destinations page. This library is open-source, so you can [check it out on GitHub](https://github.com/segmentio/Analytics.NET).
 
 All of Segment's server-side libraries are built for high-performance, so you can use them in your web server controller code. This library uses an internal queue to make `identify` and `track` calls non-blocking and fast. It also batches messages and flushes asynchronously to our servers.
 
@@ -335,11 +335,11 @@ Analytics.Client.Identify("hj2kf92ds212", new Traits() {
     { "name", "Tom Smykowski" },
 }, new Options()
     .SetIntegration("all", false)
-    .SetIntegration("KISSmetrics", true)
+    .SetIntegration("Kissmetrics", true)
 );
 ```
 
-In this case, we're specifying that we want this identify to only go to KISSmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "KISSmetrics", true }` turns on KISSmetrics, etc.
+In this case, we're specifying that we want this identify to only go to Kissmetrics. `"all", false` says that no destination should be enabled unless otherwise specified. `{ "Kissmetrics", true }` turns on Kissmetrics, etc.
 
 Destination flags are **case sensitive** and match [the destination's name in the docs](/docs/connections/destinations/) (i.e. "AdLearn Open Platform", "awe.sm", "MailChimp", etc.).
 
@@ -514,7 +514,7 @@ Note: the logger requires a minimum version of .NET Core 2.1.
 
 ### Json.NET
 
-`Analytics.NET` uses [Json.NET](http://json.codeplex.com/) to serialize json payloads. If you have an older version of `Json.NET` in your build path, `Analytics.NET` could create incomplete json payloads, which can cause strange API responses. If you're seeing issues, try updating `Json.NET`.
+`Analytics.NET` uses [Json.NET](http://json.codeplex.com/) to serialize JSON payloads. If you have an older version of `Json.NET` in your build path, `Analytics.NET` could create incomplete JSON payloads, which can cause strange API responses. If you're seeing issues, try updating `Json.NET`.
 
 
 ### Mono
@@ -522,4 +522,4 @@ Note: the logger requires a minimum version of .NET Core 2.1.
 `Analytics.NET` has been tested and works in Mono.
 
 ### .NET Core
-`Analytics.NET` is not officially supported using the .NET Core runtime.
+`Analytics.NET` has been tested and works with .NET Core 3.1 and 3.4.2 beta.

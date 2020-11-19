@@ -9,7 +9,7 @@ We ingest your analytics through Segment, perform state-of-the-art anomaly detec
 This destination is maintained by Lazy Lantern. For any issues with the destination, contact [Lazy Lantern's support](mailto:support@lazylantern.com).
 
 
-_**NOTE:** The Lazy Lantern Destination is currently in beta, which means that they are still actively developing the destination. This doc was last updated on July 31, 2019. If you are interested in joining their beta program or have any feedback to help improve the Lazy Lantern Destination and its documentation, [let them know](mailto:support@lazylantern.com)!_
+{% include content/beta-note.md %}
 
 
 ## Getting Started
@@ -24,9 +24,9 @@ _**NOTE:** The Lazy Lantern Destination is currently in beta, which means that t
 
 ### Manual Setup
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "Lazy Lantern" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in the "API Key" into your Segment Settings UI which you can find from your Lazy Lantern dashboard [settings page](https://app.lazylantern.com).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Lazy Lantern" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. Enter the "API Key" into your Segment Settings UI which you can find from your Lazy Lantern dashboard [settings page](https://app.lazylantern.com).
 
 ### Next Steps
  - Lazy Lantern needs one week of training on your data before it can perform accurate anomaly detection. The countdown on the Lazy Lantern dashboard lets you know when the training period will be completed.

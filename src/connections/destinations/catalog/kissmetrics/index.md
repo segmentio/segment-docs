@@ -1,8 +1,8 @@
 ---
-title: KISSmetrics Destination
+title: Kissmetrics Destination
 rewrite: true
 ---
-[KISSmetrics](https://www.kissmetricshq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a behavioral email and analytics platofrm. It pulls cross-platform behavior reports so marketers can analyze key audience growth segments. It also provides an overview of custom populations, population change and growth, so marketers can analyze populations from customers who have completed actions or events.
+[Kissmetrics](https://www.kissmetricshq.com/?utm_source=segmentio&utm_medium=docs&utm_campaign=partners) is a behavioral email and analytics platofrm. It pulls cross-platform behavior reports so marketers can analyze key audience growth segments. It also provides an overview of custom populations, population change and growth, so marketers can analyze populations from customers who have completed actions or events.
 
 This document was last updated on July 3, 2018. If you notice any gaps, out-dated information or simply want to leave some feedback to help us improve our documentation, [let us know](https://segment.com/help/contact/)!
 
@@ -10,12 +10,14 @@ This document was last updated on July 3, 2018. If you notice any gaps, out-date
 
 {% include content/connection-modes.md %}
 
-When you toggle on KISSmetrics in Segment, this is what happens:
+To enable Kissmetrics in Segment:
 
-1. From your Segment UI's Destinations page click on "Add Destination".
-2. Search for "KISSmetrics" within the Destinations Catalog and confirm the Source you'd like to connect to.
-3. Drop in your KISSmetrics "API Key" into the connection settings.
-4. If you are using KISSmetrics using Segment's client-side analytics.js library, we asynchronously load KISSmetrics Javascript library onto the page. This means you should remove KISSmetrics's snippet from your page. Your KISSmetrics source will start automatically collecting "Visited Site" events and [other automatically tracked events](http://support.kissmetrics.com/article/show/javascript-settings).
+1. From the Segment web app, click **Catalog**.
+2. Search for "Kissmetrics" in the Catalog, select it, and choose which of your sources to connect the destination to.
+3. In the destination settings, enter your Kissmetrics "API Key".
+4. If you are using Kissmetrics using Segment's client-side analytics.js library, Segment asynchronously loads Kissmetrics Javascript library onto the page. (This means you should remove Kissmetrics's snippet from your page.)
+
+Your Kissmetrics source starts automatically collecting "Visited Site" events and [other automatically tracked events](http://support.kissmetrics.com/article/show/javascript-settings).
 
 ## Page
 
@@ -40,7 +42,7 @@ This [`page`](/docs/connections/spec/page/) call is translated into an event lab
 'Page - referrer': 'http://google.com'
 ```
 
-__Note:__ KISSmetrics requires an initial pageview to load the library. By default we include a call to [`page`](/docs/connections/spec/page/) in your snippet. This call must be made at least once on any page where you expect KISSmetrics to be loaded.
+__Note:__ Kissmetrics requires an initial pageview to load the library. By default we include a call to [`page`](/docs/connections/spec/page/) in your snippet. This call must be made at least once on any page where you expect Kissmetrics to be loaded.
 
 ## Identify
 
@@ -50,7 +52,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.identify('userId123');
 ```
 
-When you call [`identify`](/docs/connections/spec/identify/), we first call KISSmetrics' `identify` method to store the `userId`. Then we call `set` to store the `traits`.
+When you call [`identify`](/docs/connections/spec/identify/), we first call Kissmetrics' `identify` method to store the `userId`. Then we call `set` to store the `traits`.
 
 ## Track
 
@@ -60,11 +62,11 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.track('Clicked Button');
 ```
 
-When you call [`track`](/docs/connections/spec/track/) or one of its helper functions ([`trackLink`](/docs/connections/sources/catalog/libraries/website/javascript/#track-link,[`trackForm`](/docs/connections/sources/catalog/libraries/website/javascript/#track-form), we will call KISSmetrics' `record` with the exact same parameters.
+When you call [`track`](/docs/connections/spec/track/) or one of its helper functions ([`trackLink`](/docs/connections/sources/catalog/libraries/website/javascript/#track-link,[`trackForm`](/docs/connections/sources/catalog/libraries/website/javascript/#track-form), we will call Kissmetrics' `record` with the exact same parameters.
 
-The KISSmetrics javascript library automatically tracks a bunch of events (Visited Site, Ad Campaign Hit, Search Engine Hit, Form Submit, Pageview, etc.) These will all still work when you use KISSmetrics through Segment.
+The Kissmetrics javascript library automatically tracks a bunch of events (Visited Site, Ad Campaign Hit, Search Engine Hit, Form Submit, Pageview, etc.) These will all still work when you use Kissmetrics through Segment.
 
-**Note:** If you send us an event with a property called "revenue" and we'll pass that on to KISSmetrics as `Billing amount`.
+**Note:** If you send us an event with a property called "revenue" and we'll pass that on to Kissmetrics as `Billing amount`.
 
 ## Group
 
@@ -74,7 +76,7 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.group('123');
 ```
 
-When you call [`group`](/docs/connections/spec/group/), we first call KISSmetrics' `identify` method to store the `userId`. Then we call `set` to store the company `traits` on the user. We prefix these traits with 'Group -'. For example,
+When you call [`group`](/docs/connections/spec/group/), we first call Kissmetrics' `identify` method to store the `userId`. Then we call `set` to store the company `traits` on the user. We prefix these traits with 'Group -'. For example,
 
 ```javascript
 analytics.group('123', {
@@ -99,20 +101,20 @@ If you're not familiar with the Segment Specs, take a look to understand what th
 analytics.alias();
 ```
 
-KISSmetrics automatically aliases anonymous visitors the first time you call [`identify`](/docs/connections/spec/identify/) from the browser. That means there's no need to explicitly call [`alias`](/docs/connections/spec/alias/) if you're tracking anonymous visitors and identified users in client-side javascript.
+Kissmetrics automatically aliases anonymous visitors the first time you call [`identify`](/docs/connections/spec/identify/) from the browser. That means there's no need to explicitly call [`alias`](/docs/connections/spec/alias/) if you're tracking anonymous visitors and identified users in client-side javascript.
 
 ### Aliasing on iOS
 
 We will automatically call [`alias`](/docs/connections/spec/alias/) for you the first time you [`identify`](/docs/connections/spec/identify/) users from our iOS SDK. That way it works exactly like web browser tracking - you don't have to manually [`alias`](/docs/connections/spec/alias/) new users.
 
-You can read more about how KISSmetrics recommends using [`alias`](/docs/connections/spec/alias/) [in their docs](http://support.kissmetrics.com/article/show/understanding-identities).
+You can read more about how Kissmetrics recommends using [`alias`](/docs/connections/spec/alias/) [in their docs](http://support.kissmetrics.com/article/show/understanding-identities).
 
 
 
 ## Best Practices
 ### Merging Identities
 
-A common use of [`alias`](/docs/connections/spec/alias/) for KISSmetrics is when an already identified user's unique `id` changes. In this case you need to merge the old identity with a new one.
+A common use of [`alias`](/docs/connections/spec/alias/) for Kissmetrics is when an already identified user's unique `id` changes. In this case you need to merge the old identity with a new one.
 
 For example, if you're identifying people by their email address and they change it. In that case you'll need to alias from the previous `id` (their old email address) to the new `userId` (their new email address). Here's an example in `node`:
 
@@ -127,15 +129,15 @@ analytics.alias({
 
 In order to [`identify`](/docs/connections/spec/identify/) **new users** server side and connect that user profile to an existing anonymous visitor profile there's some work to be done.
 
-**Remember:** KISSmetrics aliases automatically the first time you call [`identify`](/docs/connections/spec/identify/) in client-side javascript, so in most cases you don't have to call [`alias`](/docs/connections/spec/alias/) at all.
+**Remember:** Kissmetrics aliases automatically the first time you call [`identify`](/docs/connections/spec/identify/) in client-side javascript, so in most cases you don't have to call [`alias`](/docs/connections/spec/alias/) at all.
 
 We don't recommend handling [`alias`](/docs/connections/spec/alias/) server side, but if you must, here's how to make it happen. There are two options: aliasing **in conjunction with client-side tracking** or aliasing when **tracking exclusively server side**.
 
 ### In Conjunction with Client-Side Tracking
 
-If you're already tracking anonymous users on the client side you'll need to pass the KISSmetrics identity from the browser to your servers in order to [`alias`](/docs/connections/spec/alias/) it to the new `userId`.
+If you're already tracking anonymous users on the client side you'll need to pass the Kissmetrics identity from the browser to your servers in order to [`alias`](/docs/connections/spec/alias/) it to the new `userId`.
 
-First, use [`analytics.ready`](/docs/connections/sources/catalog/libraries/website/javascript#ready) to grab the KISSmetrics identity:
+First, use [`analytics.ready`](/docs/connections/sources/catalog/libraries/website/javascript#ready) to grab the Kissmetrics identity:
 
 ```javascript
 analytics.ready(function(){
@@ -169,7 +171,7 @@ analytics.track('Registered')
 
 ###  User Properties
 
-You can set KISSmetrics user properties in 2 ways with Segment:
+You can set Kissmetrics user properties in 2 ways with Segment:
 
 1. Make an [`identify`](/docs/connections/spec/identify/) call and include a `traits` object.
 2. Make a [`track`](/docs/connections/spec/track/) call and include a `properties` object.
@@ -205,4 +207,4 @@ In order to enable this feature,
 
 ### E-Commerce
 
-If you are using our ecommerce api, we will forward that data along to KISSmetrics following the [KISSmetrics Ecommerce Essentials Guide](http://support.kissmetrics.com/article/show/ecommerce-essentials).
+If you are using our ecommerce api, we will forward that data along to Kissmetrics following the [Kissmetrics Ecommerce Essentials Guide](http://support.kissmetrics.com/article/show/ecommerce-essentials).
